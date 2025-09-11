@@ -10396,6 +10396,9 @@
       "Signed up": [
         "Înscris"
       ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Conectarea cu o cheie de securitate nu este încă suportată în toate aplicațiile. Fără TOTP, conectarea la unele aplicații poate eșua."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
       ],
@@ -11182,6 +11185,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Urmează să deschideți navigatorul web implicit și să vizitați:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "V-ați conectat cu ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Servere dedicate folosite: ${ ipCount } din ${ ipAddresses } disponibile.",

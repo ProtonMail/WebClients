@@ -1027,6 +1027,9 @@
       "Refer a friend": [
         "Kerro kaverille"
       ],
+      "Refresh": [
+        "Päivitä"
+      ],
       "Refresh status": [
         "Päivitä tila"
       ],
@@ -1146,6 +1149,9 @@
       ],
       "Revoke ${ name }": [
         "Mitätöi ${ name }"
+      ],
+      "Revoke access": [
+        "Peru käyttöoikeus"
       ],
       "Revoke all other sessions": [
         "Mitätöi kaikki muut istunnot"
@@ -1860,6 +1866,9 @@
       ],
       "Secure your communications": [
         "Suojaa viestintäsi"
+      ],
+      "Talk confidentially": [
+        "Keskustele luottamuksellisesti"
       ]
     },
     "Apps dropdown": {
@@ -1923,6 +1932,16 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "En ole töissä, enkä tarkasta sähköpostiani aktiivisesti."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Maksutiedot"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Kun peruutat, ilmainen kokeilujaksosi ei muutu maksulliseksi tilaukseksi, mutta voit silti nauttia tilauseduista kokeilujakson loppuun asti. Sen jälkeen sinut alennetaan ${ BRAND_NAME } Free -tilaukseen."
       ]
     },
     "b2b_trials_Action": {
@@ -2669,6 +2688,23 @@
       ],
       "Expand": [
         "Laajenna"
+      ]
+    },
+    "collider_2025: Info": {
+      "Access to advanced AI models": [
+        "Pääsy kehittyneisiin tekoälymalleihin"
+      ],
+      "AI assistant that respects your privacy": [
+        "Tekoälyavustaja, joka kunnioittaa yksityisyyttäsi"
+      ],
+      "Basic chat history": [
+        "Perus keskusteluhistoria"
+      ],
+      "Limited daily chats": [
+        "Rajoitetut päivittäiset keskustelut"
+      ],
+      "Web search access": [
+        "Verkkohakuun pääsy"
       ]
     },
     "color": {
@@ -4155,6 +4191,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
+      ],
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Saat ${ referralInfo.referrerRewardAmount } ${ BRAND_NAME } -krediitteinä, kun kutsumasi henkilö rekisteröityy ${ BRAND_NAME } -tilaukseen, ja he saavat alkuun myös ${ referralInfo.refereeRewardAmount } krediittiä."
       ]
     },
     "description": {
@@ -4998,9 +5037,24 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME }-tilin sähköpostiosoite"
       ],
+      "${ days } day left": [
+        "${ days } päivä jäljellä",
+        "${ days } päivää jäljellä"
+      ],
+      "${ hours } hour left": [
+        "${ hours } tunti jäljellä",
+        "${ hours } tuntia jäljellä"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } minuutti jäljellä",
+        "${ minutes } minuuttia jäljellä"
+      ],
       "${ n } day": [
         "${ n } vuorokausi",
         "${ n } vuorokautta"
+      ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } pyytää hätäpääsyä tilillesi"
       ],
       "Access granted": [
         "Käyttöoikeus myönnettiin"
@@ -5041,11 +5095,21 @@
       "Only ": [
         "Vain "
       ],
+      "Refuse access": [
+        "Evää käyttöoikeus"
+      ],
       "Remove trusted contact": [
         "Poista luotettu yhteyshenkilö"
       ],
       "Request access?": [
         "Pyydä käyttöoikeutta?"
+      ],
+      "They may ask to access my account in case of an emergency.": [
+        "He voivat pyytää pääsyä tililleni hätätilanteessa."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "He saavat pääsyn automaattisesti **${ days } päivän** kuluttua, **${ formattedAccessibleAt }**. Voit hylätä heidän pyyntönsä, tai antaa heille välittömän pääsyn milloin tahansa.",
+        "He saavat pääsyn automaattisesti **${ days } päivän** kuluttua, **${ formattedAccessibleAt }**. Voit hylätä heidän pyyntönsä, tai antaa heille välittömän pääsyn milloin tahansa."
       ],
       "Time required before automatically granting them access": [
         "Vaadittu aika ennen automaattisen pääsyn myöntämistä heille."
@@ -5074,6 +5138,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Et voi enää pyytää pääsyä käyttäjän ${ user } tilille hätätilanteessa."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "Voit edelleen pyytää pääsyä käyttäjän ${ user } tilille myöhemmin."
       ],
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "Saat heidän tiliinsä käyttöoikeuden **${ days } päivän** kuluessa, tai kun he hyväksyvät pyyntösi.",
@@ -7525,6 +7592,18 @@
         "${ n } osoite",
         "${ n } osoitetta"
       ],
+      "${ name } for GNU/Linux": [
+        "${ name } GNU/Linuxille"
+      ],
+      "${ name } for macOS": [
+        "${ name } macOS:lle"
+      ],
+      "${ name } for Web": [
+        "${ name } verkkoon"
+      ],
+      "${ name } for Windows": [
+        "${ name } Windowsille"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: älä merkitse roskapostiksi tai hylkää luvattomia sähköposteja. Tätä politiikkaa käytetään yleensä vianhakuun ja testaamiseen."
       ],
@@ -7839,6 +7918,9 @@
       "Allocated": [
         "Varattu"
       ],
+      "Allow logging of location and connection details": [
+        "Salli sijainnin ja yhteyden tietojen lokikirjaus."
+      ],
       "Allow recovery by email": [
         "Salli palautus sähköpostitse"
       ],
@@ -7868,6 +7950,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Sähköpostialias toimii tavallisen sähköpostiosoitteen tavoin, mutta vähentää roskapostia ja pitää todellisen osoitteesi ja identiteettisi piilossa."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Virhe viestittäessä **${ applicationName }**n kanssa"
       ],
       "An error occurred while communicating with the extension": [
         "Virhe viestittäessä laajennuksen kanssa"
@@ -8522,6 +8607,9 @@
       "free up space by deleting older messages or other data": [
         "vapauttaa tilaa poistamalla vanhoja viestejä tai muita tietoja"
       ],
+      "Gateway monitor": [
+        "Yhdyskäytävän valvonta"
+      ],
       "Gateways": [
         "Yhdyskäytävät"
       ],
@@ -8693,6 +8781,9 @@
       ],
       "inactive": [
         "ei käytössä"
+      ],
+      "Include device, location, and IP details": [
+        "Sisällytä laite-, sijainti- ja IP-tiedot"
       ],
       "Increase your account security by verifying your email address.": [
         "Paranna tilisi suojausta vahvistamalla sähköpostiosoitteesi."
@@ -9110,6 +9201,9 @@
       ],
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "Organisaation jäsenten on avattava ${ PASS_APP_NAME } salasanalla, PIN-koodilla, jne."
+      ],
+      "Organization monitor": [
+        "Organisaatiovalvonta"
       ],
       "Organization size": [
         "Organisaation koko"
@@ -9993,6 +10087,9 @@
       "URL link": [
         "URL-linkki"
       ],
+      "URL settings updated.": [
+        "URL-asetukset päivitetty."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Salasanahallinnan avulla luot erilaisia salasanoja ja säilytät ne turvallisesti, jolloin käytät aina vahvoja salasanoja ja helpotat sisäänkirjautumisia."
       ],
@@ -10073,6 +10170,9 @@
       ],
       "View and manage your groups.": [
         "Tarkastele ja hallinnoi ryhmiäsi."
+      ],
+      "View VPN session details for your organization.": [
+        "Tarkastele organisaatiosi VPN-istunnon tietoja."
       ],
       "View, download, and manage your invoices.": [
         "Tarkastele, lataa ja hallinnoi laskujasi."
@@ -10382,6 +10482,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Sinut voidaan ohjata pankkisi verkkosivuille."
+      ],
+      "You may now start using **${ applicationName }**": [
+        "Voit nyt aloittaa sovelluksen **${ applicationName }** käytön."
       ],
       "You may now start using the extension": [
         "Voit nyt aloittaa laajennuksen käytön"
@@ -11105,6 +11208,9 @@
       ],
       "Account storage": [
         "Tilin tallennustila"
+      ],
+      "Action": [
+        "Toiminto"
       ],
       "Actions": [
         "Toiminnot"
@@ -12889,6 +12995,9 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Määritä omia sähköpostiosoitteita (esim. nimesi@yrityksesi.fi) yhdistämällä oma verkkotunnuksesi ${ BRAND_NAME }iin. Ohjattu toiminto opastaa määrityksessä."
       ],
+      "View user sign-in, recovery and security events.": [
+        "Tarkastele käyttäjän kirjautumis-, palautus- ja turvallisuustapahtumia."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ilmainen kokeilusi on päättynyt. Tilisi käyttöoikeus päättyy pian. ${ action }"
       ]
@@ -13142,6 +13251,9 @@
       ],
       "Back": [
         "Takaisin"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Palaa ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Palaa kalenteriin"
@@ -14322,6 +14434,9 @@
       ],
       "Email notifications have been enabled": [
         "Sähköposti-ilmoitukset ovat käytössä"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "${ MEET_APP_NAME } videoneuvotteluasetusten päivitys epäonnistui."
       ],
       "Invalid code": [
         "Virheellinen koodi"
@@ -16113,6 +16228,9 @@
       "Delete": [
         "Poista"
       ],
+      "Delete this scope": [
+        "Poista tämä viitealue"
+      ],
       "Edit": [
         "Muokkaa"
       ],
@@ -16142,9 +16260,15 @@
       ],
       "${ remainingCount } more": [
         "${ remainingCount } enemmän"
+      ],
+      "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
+        "Luo organisaatiosi tietojensäilytyskäytännön mukaiset säilytyssäännöt. Käynnistää myös vanhentuneen tiedon automaattisen poiston."
       ]
     },
     "retention_policy_2025_Label": {
+      "After retention period expires": [
+        "Säilytysajan päättymisen jälkeen"
+      ],
       "day": [
         "päivän",
         "päivän"
@@ -17148,6 +17272,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "Ja mikäli tilaat, saat ${ referralInfo.uiData.refereeRewardAmount } krediitteinä."
+      ],
       "Billing Cycle": [
         "Laskutusjakso"
       ],
@@ -17259,6 +17386,9 @@
       ],
       "Total": [
         "Summa"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Kokeile ${ BRAND_NAME } -palvelua ${ TRIAL_DURATION_DAYS } päivää ilmaiseksi"
       ],
       "Ultra fast and private VPN": [
         "Huippunopea ja yksityinen VPN"
@@ -20632,6 +20762,9 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Ylläpitäjät voivat hallita käyttäjätilejä ja antaa ylläpito-oikeuksia muille käyttäjille. Vain ensisijainen ylläpitäjä voi muokata organisaation tilausta."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Mahdollistaa saumattoman Zoom-videoneuvottelulinkkien lisäämisen kalenterikutsuihin."
       ],
       "Any protection applied to suspicious activity": [
         "Epäilyttävään toimintaan kohdistetut suojaustoimenpiteet"
