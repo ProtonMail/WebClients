@@ -6753,6 +6753,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "${ MAIL_APP_NAME } にサインインしてアドレスを有効にしてください"
       ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "セキュリティキーでのサインインは、まだすべてのアプリではサポートされていません。TOTPなしでは、一部のアプリへのサインインが失敗する可能性があります。"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
@@ -7268,6 +7271,9 @@
       ],
       "You already have a free account": [
         "あなたはすでに無料アカウントをお持ちです"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "現在 ${ username } としてサインインしています。"
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "現在、${ ipAddresses } 個の利用可能な専用サーバーのうち ${ ipCount } 個を使用しています。"
