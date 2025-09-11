@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Banner, BannerVariants, Button, InlineLinkButton, Tooltip } from '@proton/atoms';
+import { Banner, BannerVariants, Button, Href, InlineLinkButton, Tooltip } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
@@ -106,6 +106,8 @@ const TwoFactorSection = () => {
             <SettingsParagraph large>
                 {c('Info')
                     .jt`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.`}
+                <br />
+                <Href href={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
             </SettingsParagraph>
             {hasTOTPEnabled && hasRecoveryMethod && (
                 <SettingsParagraph>
@@ -133,7 +135,7 @@ const TwoFactorSection = () => {
                 <div className="mb-4">
                     <Banner variant={BannerVariants.WARNING_OUTLINE}>
                         {c('Info')
-                            .t`Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.`}
+                            .t`Signing in with a security key is not yet supported in all applications. Without TOTP via authenticator app, signing in to some applications may fail.`}
                     </Banner>
                 </div>
             )}
