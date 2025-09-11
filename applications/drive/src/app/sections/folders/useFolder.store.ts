@@ -43,6 +43,7 @@ type FolderPermissions = {
     canShareNode: boolean;
     canMove: boolean;
     canRename: boolean;
+    canTrash: boolean;
 };
 
 type FolderState = {
@@ -87,6 +88,7 @@ const initialState: FolderState = {
         canShareNode: false,
         canMove: false,
         canRename: false,
+        canTrash: false,
     },
 };
 

@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import { NodeType, useDrive } from '@proton/drive/index';
 
@@ -14,24 +13,11 @@ import { useSidebarStore } from './useSidebar.store';
 
 export const useSidebarFolders = () => {
     const { drive } = useDrive();
-    const { setItem, getItem, updateItem, toggleExpanded } = useSidebarStore(
-        useShallow((state) => ({
-            setItem: state.setItem,
-            getItem: state.getItem,
-            updateItem: state.updateItem,
-            toggleExpanded: state.toggleExpanded,
-        }))
-    );
 
-    const { setDevice, setDeviceLoading } = useDeviceStore(
-        useShallow((state) => ({
-            setDevice: state.setDevice,
-            setDeviceLoading: state.setLoading,
-        }))
-    );
     const { handleError } = useSdkErrorHandler();
 
     const loadFolderChildren = async (folderUid: string) => {
+        const { setItem, getItem, updateItem } = useSidebarStore.getState();
         const parent = getItem(folderUid);
         if (!parent) {
             return handleSdkError(
@@ -63,6 +49,8 @@ export const useSidebarFolders = () => {
     };
 
     const loadDevicesRoot = useCallback(async () => {
+        const { setItem } = useSidebarStore.getState();
+        const { setDevice, setLoading: setDeviceLoading } = useDeviceStore.getState();
         setDeviceLoading(true);
         try {
             for await (const device of drive.iterateDevices()) {
@@ -84,9 +72,11 @@ export const useSidebarFolders = () => {
             handleError(e, { fallbackMessage: errorNotiticationText });
         }
         setDeviceLoading(false);
-    }, [setDeviceLoading, drive, setDevice, setItem, handleError]);
+    }, [drive, handleError]);
 
     const loadFoldersRoot = useCallback(async () => {
+        const { setItem } = useSidebarStore.getState();
+
         const maybeRootFolder = await drive.getMyFilesRootFolder();
         const { node } = getNodeEntity(maybeRootFolder);
         const item = {
@@ -100,9 +90,11 @@ export const useSidebarFolders = () => {
         };
         setItem(item);
         return item;
-    }, [drive, setItem]);
+    }, [drive]);
 
     const toggleExpand = async (uid: string) => {
+        const { getItem, toggleExpanded } = useSidebarStore.getState();
+
         const item = getItem(uid);
         const wasExpanded = item?.isExpanded ?? false;
         toggleExpanded(uid);

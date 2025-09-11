@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
+import { useParams } from 'react-router-dom-v5-compat';
 
 import { useShallow } from 'zustand/react/shallow';
 
@@ -14,6 +15,7 @@ import UploadDragDrop from '../../components/uploads/UploadDragDrop/UploadDragDr
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { useUserSettings } from '../../store';
 import { useControlledSorting } from '../../store/_views/utils';
+import { useDeviceStore } from '../devices/devices.store';
 import { FolderBrowser } from './FolderBrowser/FolderBrowser';
 import { FolderToolbar } from './FolderBrowser/FolderToolbar';
 import { useFolder } from './useFolder';
@@ -33,21 +35,32 @@ export function FolderView() {
             items: state.getFolderItems(),
         }))
     );
+    const { isLoadingDevices } = useDeviceStore(
+        useShallow((state) => ({
+            isLoadingDevices: state.isLoading,
+        }))
+    );
 
     const { layout, sort, changeSort } = useUserSettings();
     const { sortedList, sortParams, setSorting } = useControlledSorting(folderItems, sort, changeSort);
     const sortedUids = sortedList.map((item) => item.uid);
     const browserViewProps = { layout, sortParams, setSorting, sortedList };
     const activeFolderShareId = activeFolder.shareId;
+    const params = useParams();
+
+    const paramsHash = useMemo(() => `${params.shareId}-${params.linkId}`, [params]);
 
     useEffect(() => {
         const ac = new AbortController();
-        void load(parentUid, activeFolderShareId, ac);
 
+        // Temporary fix while we have to use activeFolder instead of relying on params as the only source of truth
+        if (params.shareId === activeFolder.shareId && params.linkId === activeFolder.linkId && !isLoadingDevices) {
+            void load(parentUid, activeFolderShareId, ac);
+        }
         return () => {
             ac.abort();
         };
-    }, [parentUid, activeFolderShareId, load]);
+    }, [parentUid, activeFolder, load, paramsHash, isLoadingDevices]);
 
     const breadcrumbs = activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />;
 
