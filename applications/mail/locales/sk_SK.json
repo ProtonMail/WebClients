@@ -492,6 +492,9 @@
       "Edit address": [
         "Upraviť adresu"
       ],
+      "Edit categories": [
+        "Upraviť kategórie"
+      ],
       "Edit draft": [
         "Upraviť koncept"
       ],
@@ -1466,6 +1469,9 @@
       ],
       "Trust": [
         "Dôverovať"
+      ],
+      "Trust key": [
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -5285,6 +5291,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliasy nie je možné použiť, ak je v ${ PASS_APP_NAME } povolené dodatočné heslo."
       ],
+      "An error occurred with the categories": [
+        "Došlo k chybe v kategóriách"
+      ],
       "App currently unavailable": [
         "Aplikácia momentálne nie je k dispozícii"
       ],
@@ -7563,7 +7572,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -8729,6 +8741,9 @@
       "You are about to open your default browser and visit:": [
         "Chystáte sa otvoriť váš predvolený prehliadač a navštíviť:"
       ],
+      "You are currently signed in as ${ username }.": [
+        "V súčasnosti používate účet ako ${ username }."
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Využívate viac úložiska než je zahrnuté v pláne ${ downgradedPlanName }. Vymažte alebo odstráňte údaje, aby ste mohli plán znížiť, prosím."
       ],
@@ -9402,6 +9417,9 @@
       "Authenticator app": [
         "Overovacia aplikácia"
       ],
+      "Automated confirmations and alerts": [
+        "Automatické potvrdenia a upozornenia"
+      ],
       "BCC": [
         "Skrytá kópia (BCC)"
       ],
@@ -9413,6 +9431,9 @@
       ],
       "Blind Carbon Copy": [
         "Skrytá kópia"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervácie, fakturácie a objednávky"
       ],
       "Browser": [
         "Prehliadač"
@@ -9510,6 +9531,9 @@
       "Date:": [
         "Dátum:"
       ],
+      "Deals, offers, marketing emails": [
+        "Ponuky, akcie, marketingové emaily"
+      ],
       "Delete": [
         "Odstrániť"
       ],
@@ -9521,6 +9545,9 @@
       ],
       "Did not follow instructions": [
         "Nezodpovedalo inštrukciám"
+      ],
+      "Discussion board posts and threads": [
+        "Príspevky a vlákna diskusného fóra"
       ],
       "Do you have any suggestions for our team?": [
         "Máte nejaké návrhy pre náš tím?"
@@ -9750,6 +9777,9 @@
       "No results found": [
         "Neboli nájdené žiadne výsledky"
       ],
+      "Non-promotional content and news": [
+        "Nepropagačný obsah a správy"
+      ],
       "Not factually correct": [
         "Faktuálne nesprávne"
       ],
@@ -9861,6 +9891,9 @@
       "Search in": [
         "Hľadať v"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Vyberte kategórie, ktoré chcete zahrnúť, a povoľte notifikácie, aby ste boli upozornení na nové emaily v kategórii."
+      ],
       "Send auto-reply": [
         "Poslať automatickú odpoveď"
       ],
@@ -9875,6 +9908,9 @@
       ],
       "Social": [
         "Sociálne siete"
+      ],
+      "Social media updates and activity": [
+        "Aktualizácie a aktivita na sociálnych médiách"
       ],
       "Starred": [
         "S hviezdičkou"
@@ -9995,6 +10031,9 @@
       ],
       "Writing assistant": [
         "Asistent písania"
+      ],
+      "You cannot disable all categories": [
+        "Nemôžete deaktivovať všetky kategórie"
       ],
       "Your alias": [
         "Váš alias"
@@ -15021,6 +15060,9 @@
       ],
       "Customize calendar import": [
         "Prispôsobiť import kalendára"
+      ],
+      "Customize categories": [
+        "Prispôsobenie kategórií"
       ],
       "Customize your mail import": [
         "Prispôsobiť import vášho emailu"

@@ -96,6 +96,9 @@
       "Add phone number": [
         "Agregar número telefónico"
       ],
+      "Add secret passphrase": [
+        "Añadir una frase de contraseña secreta"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Agregar a ${ CALENDAR_APP_NAME }"
       ],
@@ -483,6 +486,9 @@
       "Edit address": [
         "Editar dirección"
       ],
+      "Edit categories": [
+        "Editar categorías"
+      ],
       "Edit draft": [
         "Editar el borrador"
       ],
@@ -757,6 +763,9 @@
       "Italic": [
         "Cursiva"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Unirse con ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Mantener mi suscripción"
       ],
@@ -1011,6 +1020,9 @@
       ],
       "Page ${ pageNumber }": [
         "Página ${ pageNumber }"
+      ],
+      "Passphrase": [
+        "Frase de contraseña"
       ],
       "Pause": [
         "Pausar"
@@ -1451,8 +1463,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1513,6 +1524,9 @@
       ],
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
+      ],
+      "Update secret passphrase": [
+        "Actualizar la frase de contraseña secreta"
       ],
       "Upgrade": [
         "Actualizar"
@@ -2229,6 +2243,9 @@
       ],
       "Manual setup problem": [
         "Problema de configuración manual"
+      ],
+      "Meet problem": [
+        "Problema de Meet"
       ],
       "Other": [
         "Otro"
@@ -4607,6 +4624,9 @@
       "Failed to open to contact": [
         "Error al abrir el contacto"
       ],
+      "Failed to update secret passphrase": [
+        "Error al actualizar la frase de contraseña secreta"
+      ],
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre"
       ],
@@ -4735,6 +4755,9 @@
       ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada"
+      ],
+      "Passphrase unavailable": [
+        "Frase de contraseña no disponible"
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -7184,6 +7207,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para acceder a su correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descargue nuestra aplicación desde ${ androidAppLink } o ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Para más seguridad, puede establecer una frase de contraseña. No se incluirá en la invitación del calendario, recuerde compartirla con sus invitados por separado."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Para mensajes más nuevos que ${ oldestDate }"
       ],
@@ -7314,7 +7340,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8468,6 +8495,9 @@
       "You are about to open your default browser and visit:": [
         "Está a punto de abrir su navegador por defecto y consultar:"
       ],
+      "You are currently signed in as ${ username }.": [
+        "Actualmente inició sesión como ${ username }."
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Está usando más almacenamiento del que se incluye en un plan ${ downgradedPlanName }. Elimine o borre datos para poder cambiar de plan."
       ],
@@ -9095,6 +9125,9 @@
       "Authenticator app": [
         "Aplicación de autenticación"
       ],
+      "Automated confirmations and alerts": [
+        "Confirmaciones y alertas automatizadas"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -9206,6 +9239,9 @@
       "Date:": [
         "Fecha:"
       ],
+      "Deals, offers, marketing emails": [
+        "Correos de promociones, ofertas y mercadeo"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -9217,6 +9253,9 @@
       ],
       "Did not follow instructions": [
         "Las instrucciones no fueron seguidas."
+      ],
+      "Discussion board posts and threads": [
+        "Publicaciones e hilos del foro de discusión"
       ],
       "Do you have any suggestions for our team?": [
         "¿Tiene alguna sugerencia para nuestro equipo?"
@@ -9307,6 +9346,27 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "Ir a Foros"
+      ],
+      "Go to Newsletters": [
+        "Ir a Boletines"
+      ],
+      "Go to Primary": [
+        "Ir a Principal"
+      ],
+      "Go to Promotions": [
+        "Ir a Promociones"
+      ],
+      "Go to Social": [
+        "Ir a Sociales"
+      ],
+      "Go to Transactions": [
+        "Ir a Transacciones"
+      ],
+      "Go to Updates": [
+        "Ir a Actualizaciones"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Ayúdenos a mejorar las categorías eligiendo la que mejor se adapte a este correo electrónico. ¡Gracias por su ayuda!"
@@ -9443,6 +9503,9 @@
       "No label found": [
         "Ninguna etiqueta encontrada"
       ],
+      "No results found": [
+        "No se encontraron resultados"
+      ],
       "Non-promotional content and news": [
         "Noticias y contenido no promocional"
       ],
@@ -9484,6 +9547,9 @@
       ],
       "Participants": [
         "Participantes"
+      ],
+      "Passphrase:": [
+        "Frase de contraseña:"
       ],
       "Password": [
         "Contraseña"
@@ -9554,6 +9620,9 @@
       "Search in": [
         "Buscar en"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Seleccione las categorías para incluir y active las notificaciones sobre correos nuevos en una categoría."
+      ],
       "Send auto-reply": [
         "Enviar respuesta automática"
       ],
@@ -9568,6 +9637,9 @@
       ],
       "Social": [
         "Redes Sociales"
+      ],
+      "Social media updates and activity": [
+        "Actualizaciones y actividad de redes sociales"
       ],
       "Starred": [
         "Destacados"
@@ -9690,7 +9762,7 @@
         "Asistente de escritura"
       ],
       "You cannot disable all categories": [
-        "No puedes desactivar todas las categorías"
+        "No puede desactivar todas las categorías"
       ],
       "Your alias": [
         "Su alias"
@@ -11323,6 +11395,9 @@
       "Passcode copied to clipboard": [
         "Código de acceso copiado al portapapeles"
       ],
+      "Passphrase copied to clipboard": [
+        "Frase de contraseña copiada al portapapeles"
+      ],
       "Password has been set successfully": [
         "La contraseña se ha cambiado."
       ],
@@ -12106,6 +12181,9 @@
       ],
       "End date": [
         "Fecha final"
+      ],
+      "Enter passphrase": [
+        "Ingresar la frase de contraseña"
       ],
       "Filter folders": [
         "Filtrar carpetas"
@@ -14103,6 +14181,9 @@
         "Se recategorizó ${ elementsCount } mensaje.",
         "Se recategorizaron ${ elementsCount } mensajes."
       ],
+      "Secret passphrase updated": [
+        "Frase de contraseña secreta actualizada"
+      ],
       "Self-destruction removed": [
         "Se eliminó la destrucción automática."
       ],
@@ -14793,6 +14874,10 @@
       "Label as": [
         "Etiquetar como"
       ],
+      "Label message as": [
+        "Etiquetar mensaje como",
+        "Etiquetar mensajes como"
+      ],
       "Label options": [
         "Opciones de etiqueta"
       ],
@@ -14876,6 +14961,13 @@
       ],
       "Move all messages to trash": [
         "Mover todos los mensajes a la papelera"
+      ],
+      "Move message to": [
+        "Mover mensaje a",
+        "Mover mensajes a"
+      ],
+      "Move messages to": [
+        "Mover mensajes a"
       ],
       "Move to": [
         "Mover a"

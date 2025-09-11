@@ -1459,10 +1459,6 @@
       "Trust": [
         "Confiar"
       ],
-      "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
-      ],
       "Trust public key": [
         "Confiar en la clave pública"
       ],
@@ -7288,7 +7284,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -8441,6 +8438,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "Estás a punto de abrir tu navegador por defecto y visitar:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Actualmente estás conectado como ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Estás usando más almacenamiento del que se incluye en un plan ${ downgradedPlanName }. Elimina o borra datos para poder cambiar de plan."

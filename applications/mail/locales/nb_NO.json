@@ -486,6 +486,9 @@
       "Edit address": [
         "Rediger adresse"
       ],
+      "Edit categories": [
+        "Rediger kategorier"
+      ],
       "Edit draft": [
         "Rediger utkast"
       ],
@@ -1459,10 +1462,6 @@
       "Trust": [
         "Klarér"
       ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
-      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -1985,10 +1984,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes ${ formattedDate }, vil det gå over til å bli et betalt abonnement som fornyes automatisk månedlig ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
@@ -2243,7 +2242,7 @@
         "Problem med manuell installasjon"
       ],
       "Meet problem": [
-        "Meet-problem"
+        "Problem med Meet"
       ],
       "Other": [
         "Annet"
@@ -2696,10 +2695,10 @@
         "Ubegrenset antall favoritter for rask tilgang"
       ],
       "Upload and query multiple large files": [
-        "Last opp og søk i flere store filer"
+        "Last opp og vis flere store filer"
       ],
       "Upload and query small files": [
-        "Last opp og søk i små filer"
+        "Last opp og vis små filer"
       ],
       "Web search access": [
         "Tilgang til nettsøk"
@@ -5219,6 +5218,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliaser kan ikke brukes når et ekstra passord er aktivert i ${ PASS_APP_NAME }."
       ],
+      "An error occurred with the categories": [
+        "Det oppstod en feil med kategoriene"
+      ],
       "App currently unavailable": [
         "App er for øyeblikket utilgjengelig"
       ],
@@ -7335,7 +7337,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -8489,6 +8492,9 @@
       "You are about to open your default browser and visit:": [
         "Du er i ferd med å åpne standardnettleseren din og besøke:"
       ],
+      "You are currently signed in as ${ username }.": [
+        "Du er for øyeblikket pålogget som ${ username }."
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruker mer lagringsplass enn det som er inkludert i en ${ downgradedPlanName }-plan. Slett eller fjern data for å nedgradere."
       ],
@@ -9116,6 +9122,9 @@
       "Authenticator app": [
         "Autentiseringsapp"
       ],
+      "Automated confirmations and alerts": [
+        "Automatiserte bekreftelser og varsler"
+      ],
       "BCC": [
         "Blindkopi"
       ],
@@ -9127,6 +9136,9 @@
       ],
       "Blind Carbon Copy": [
         "Blindkopi"
+      ],
+      "Bookings, billings, and orders": [
+        "Reservasjoner, faktureringer og ordrer"
       ],
       "Browser": [
         "Nettleser"
@@ -9224,6 +9236,9 @@
       "Date:": [
         "Dato:"
       ],
+      "Deals, offers, marketing emails": [
+        "Kampanjer, tilbud, markedsførings-e-poster"
+      ],
       "Delete": [
         "Slett"
       ],
@@ -9235,6 +9250,9 @@
       ],
       "Did not follow instructions": [
         "Fulgte ikke instruksjoner"
+      ],
+      "Discussion board posts and threads": [
+        "Innlegg og tråder i diskusjonsforum"
       ],
       "Do you have any suggestions for our team?": [
         "Har du noen forslag til teamet vårt?"
@@ -9325,6 +9343,27 @@
       ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "Gå til forum"
+      ],
+      "Go to Newsletters": [
+        "Gå til nyhetsbrev"
+      ],
+      "Go to Primary": [
+        "Gå til primær"
+      ],
+      "Go to Promotions": [
+        "Gå til kampanjer"
+      ],
+      "Go to Social": [
+        "Gå til sosialt"
+      ],
+      "Go to Transactions": [
+        "Gå til transaksjoner"
+      ],
+      "Go to Updates": [
+        "Gå til oppdateringer"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Hjelp oss med å forbedre kategorier ved å velge den som passer best til denne e-posten. Takk for hjelpen!"
@@ -9464,6 +9503,9 @@
       "No results found": [
         "Ingen resultater funnet"
       ],
+      "Non-promotional content and news": [
+        "Ikke-salgsfremmende innhold og nyheter"
+      ],
       "Not factually correct": [
         "Ikke faktisk korrekt"
       ],
@@ -9575,6 +9617,9 @@
       "Search in": [
         "Søk i"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Velg kategoriene som skal inkluderes, og aktiver varsler for å bli varslet om nye e-poster i en kategori."
+      ],
       "Send auto-reply": [
         "Send autosvar"
       ],
@@ -9589,6 +9634,9 @@
       ],
       "Social": [
         "Sosiale medier"
+      ],
+      "Social media updates and activity": [
+        "Oppdateringer og aktivitet på sosiale medier"
       ],
       "Starred": [
         "Stjernemerket"
@@ -9709,6 +9757,9 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "You cannot disable all categories": [
+        "Du kan ikke deaktivere alle kategorier"
       ],
       "Your alias": [
         "Aliaset ditt"
@@ -14487,6 +14538,9 @@
       ],
       "Customize calendar import": [
         "Tilpass kalenderimport"
+      ],
+      "Customize categories": [
+        "Tilpass kategorier"
       ],
       "Customize your mail import": [
         "Tilpass e-postimporten din"

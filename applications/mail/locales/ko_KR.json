@@ -483,6 +483,9 @@
       "Edit address": [
         "주소 편집"
       ],
+      "Edit categories": [
+        "카테고리 편집"
+      ],
       "Edit draft": [
         "초안 편집"
       ],
@@ -5180,6 +5183,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } 에서 추가 비밀번호 설정 시, 별칭을 사용할 수 없습니다."
       ],
+      "An error occurred with the categories": [
+        "카테고리에서 오류가 발생했습니다."
+      ],
       "App currently unavailable": [
         "앱에서는 현재 사용 불가합니다."
       ],
@@ -6825,7 +6831,7 @@
         "만들기"
       ],
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
-        "여러개의 무료 계정을 만드는 것은 당사의 ${ termsLink }에 따라 허용되지 않습니다."
+        "여러개의 무료 계정을 생성하는 행위는 당사의 ${ termsLink }에 따라 허용되지 않습니다."
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "이전 플랜 구독으로 사용하지 않은 부분에 대한 크레딧"
@@ -8363,6 +8369,9 @@
       "You are about to open your default browser and visit:": [
         "기본 브라우저를 열고 다음을 방문합니다:"
       ],
+      "You are currently signed in as ${ username }.": [
+        "현재 ${ username }(으)로 로그인 했습니다."
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } 플랜에 포함된 저장 공간보다 더 많이 사용하고 계십니다. 다운그레이드를 진행하려면 일부 데이터를 지우거나 완전 삭제하세요."
       ],
@@ -8967,6 +8976,9 @@
       "Authenticator app": [
         "인증 앱"
       ],
+      "Automated confirmations and alerts": [
+        "자동화된 확인 및 알림"
+      ],
       "BCC": [
         "숨은참조"
       ],
@@ -8978,6 +8990,9 @@
       ],
       "Blind Carbon Copy": [
         "숨김 참조"
+      ],
+      "Bookings, billings, and orders": [
+        "예약, 청구 및 주문"
       ],
       "Browser": [
         "브라우저"
@@ -9075,6 +9090,9 @@
       "Date:": [
         "날짜:"
       ],
+      "Deals, offers, marketing emails": [
+        "거래, 혜택, 마케팅 이메일"
+      ],
       "Delete": [
         "삭제"
       ],
@@ -9086,6 +9104,9 @@
       ],
       "Did not follow instructions": [
         "지시사항을 따르지 않습니다"
+      ],
+      "Discussion board posts and threads": [
+        "토론 게시판 게시물 및 스레드"
       ],
       "Do you have any suggestions for our team?": [
         "저희 팀에 질문이 있으신가요?"
@@ -9176,6 +9197,27 @@
       ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "포럼으로 이동"
+      ],
+      "Go to Newsletters": [
+        "뉴스레터로 이동"
+      ],
+      "Go to Primary": [
+        "중요로 이동"
+      ],
+      "Go to Promotions": [
+        "프로모션으로 이동"
+      ],
+      "Go to Social": [
+        "소셜으로 이동"
+      ],
+      "Go to Transactions": [
+        "거래로 이동"
+      ],
+      "Go to Updates": [
+        "업데이트로 이동"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "이 이메일에 적합한 카테고리를 선택하여 기능 성능을 향상하는데 도와주세요. 도움에 감사드립니다!"
@@ -9315,6 +9357,9 @@
       "No results found": [
         "결과를 찾을 수 없습니다"
       ],
+      "Non-promotional content and news": [
+        "홍보성 없는 콘텐츠 및 뉴스"
+      ],
       "Not factually correct": [
         "별로 정확하지 않습니다"
       ],
@@ -9426,6 +9471,9 @@
       "Search in": [
         "검색"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "포함할 카테고리를 선택한 다음 알림을 활성화하여 해당 카테고리의 새 이메일에 대해 알림을 받아보세요."
+      ],
       "Send auto-reply": [
         "자동 회신 보내기"
       ],
@@ -9440,6 +9488,9 @@
       ],
       "Social": [
         "소셜"
+      ],
+      "Social media updates and activity": [
+        "소셜 미디어 업데이트 및 활동"
       ],
       "Starred": [
         "별표 메일함"
@@ -9560,6 +9611,9 @@
       ],
       "Writing assistant": [
         "글쓰기 도우미"
+      ],
+      "You cannot disable all categories": [
+        "전체 카테고리를 비활성화할 수 없습니다"
       ],
       "Your alias": [
         "내 별칭"
@@ -14214,6 +14268,9 @@
       ],
       "Customize calendar import": [
         "사용자 캘린더 가져오기"
+      ],
+      "Customize categories": [
+        "카테고리 맞춤 설정"
       ],
       "Customize your mail import": [
         "사용자 메일 가져오기"
