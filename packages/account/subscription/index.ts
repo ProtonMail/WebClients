@@ -7,7 +7,7 @@ import {
     original,
 } from '@reduxjs/toolkit';
 
-import { FREE_SUBSCRIPTION, type Subscription, getSubscription, getSubscriptionV5DynamicPlans } from '@proton/payments';
+import { FREE_SUBSCRIPTION, type Subscription, getSubscription } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { CacheType } from '@proton/redux-utilities';
 import {
@@ -48,10 +48,6 @@ const freeSubscription = FREE_SUBSCRIPTION as unknown as Subscription;
 
 const canFetch = (user: User) => {
     return isAdmin(user) && isPaid(user);
-};
-
-const catFetchSecondarySubscriptions = (user: User) => {
-    return isAdmin(user) && isPaid(user) && user.HasMultipleSubscriptions;
 };
 
 const initialState: SliceState = {
@@ -172,32 +168,10 @@ const modelThunk = (options?: {
                 return defaultValue;
             }
             try {
-                const primarySubscriptionPromise = extraArgument.api<{
-                    Subscription: Subscription;
-                    UpcomingSubscription: Subscription;
-                }>(getSubscription());
-
-                const secondarySubscriptionsPromise = catFetchSecondarySubscriptions(user)
-                    ? getSubscriptionV5DynamicPlans(extraArgument.api).catch(() => undefined)
-                    : undefined;
-
-                const [{ Subscription, UpcomingSubscription }, secondarySubscriptions] = await Promise.all([
-                    primarySubscriptionPromise,
-                    secondarySubscriptionsPromise,
-                ]);
-
-                const filteredSecondarySubscriptions = secondarySubscriptions?.filter(
-                    (it) => it.ID !== Subscription.ID
-                );
+                const subscription = await getSubscription(extraArgument.api, user);
 
                 return {
-                    value: formatSubscription(
-                        Subscription,
-                        UpcomingSubscription,
-                        filteredSecondarySubscriptions && filteredSecondarySubscriptions.length > 0
-                            ? filteredSecondarySubscriptions
-                            : undefined
-                    ),
+                    value: subscription,
                     type: ValueType.complete,
                 };
             } catch (e: any) {

@@ -3,6 +3,7 @@ import type { EitherOr, Organization } from '@proton/shared/lib/interfaces';
 import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_TYPES } from './constants';
 import type { FreeSubscription, PlanIDs } from './interface';
 import { getSupportedAddons, isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './plan/addons';
+import { getPlanFeatureLimit, getPlanMembers } from './plan/feature-limits';
 import { getPlanNameFromIDs } from './plan/helpers';
 import type { Plan, PlansMap } from './plan/interface';
 import { getPricePerCycle, getPricePerMember } from './price-helpers';
@@ -10,9 +11,7 @@ import {
     type AggregatedPricing,
     type PricingForCycles,
     allCycles,
-    getPlanFeatureLimit,
     getPlanIDs,
-    getPlanMembers,
     getSubscriptionsArray,
     hasLumoPlan,
     isManagedExternally,

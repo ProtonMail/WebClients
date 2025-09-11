@@ -12,7 +12,7 @@ import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import type { FreeSubscription, FullPlansMap } from '@proton/payments';
-import { CYCLE, type FreePlanDefault, type Subscription, hasLumoPlan } from '@proton/payments';
+import { CYCLE, type FreePlanDefault, type Subscription, getCanAccessFamilyPlans, hasLumoPlan } from '@proton/payments';
 import { FREE_PLAN } from '@proton/payments';
 import { hasBundle, hasDeprecatedVPN, hasDuo, hasFamily, hasVPN2024 } from '@proton/payments';
 import { PaymentsContextProvider, usePaymentsPreloaded } from '@proton/payments/ui';
@@ -267,7 +267,10 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasBundle(subscription) && subscription?.Cycle !== CYCLE.MONTHLY,
+            enabled:
+                hasBundle(subscription) &&
+                subscription?.Cycle !== CYCLE.MONTHLY &&
+                getCanAccessFamilyPlans(subscription),
             element: <ExploreGroupPlansBanner app={app} subscription={subscription as Subscription} />,
         },
         {
@@ -282,7 +285,8 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasDuo(subscription) && subscription?.Cycle !== CYCLE.MONTHLY,
+            enabled:
+                hasDuo(subscription) && subscription?.Cycle !== CYCLE.MONTHLY && getCanAccessFamilyPlans(subscription),
             element: <FamilyBanner app={app} subscription={subscription as Subscription} />,
         },
         {

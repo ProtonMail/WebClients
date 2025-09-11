@@ -68,9 +68,9 @@ import {
     hasDeprecatedVPN,
     hasLumoPlan,
     hasPlanIDs,
-    isCheckForbidden,
     isFreeSubscription,
     isManagedExternally,
+    isSubcriptionCheckForbidden,
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
 } from '@proton/payments';
@@ -639,7 +639,7 @@ const SubscriptionContainerInner = ({
             .filter((cycle) => cycle !== checkResult.Cycle)
 
             // skip cycles of the currently active subscription, because the backend doesn't allows to check them
-            .filter((cycle) => !isCheckForbidden(subscription, newModel.planIDs, cycle));
+            .filter((cycle) => !isSubcriptionCheckForbidden(subscription, newModel.planIDs, cycle));
 
         const additionalPayloads = additionalCycles.map(
             (Cycle) =>
@@ -764,7 +764,7 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        if (isCheckForbidden(subscription, copyNewModel.planIDs, copyNewModel.cycle)) {
+        if (isSubcriptionCheckForbidden(subscription, copyNewModel.planIDs, copyNewModel.cycle)) {
             setCheckResult({
                 ...getOptimisticCheckResult({
                     plansMap,

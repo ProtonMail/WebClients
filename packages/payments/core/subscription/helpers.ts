@@ -9,7 +9,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import {
     ADDON_NAMES,
-    ADDON_PREFIXES,
     COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
@@ -17,34 +16,24 @@ import {
     PLAN_NAMES,
     type PLAN_SERVICES,
     PLAN_TYPES,
-    TRIAL_MAX_DEDICATED_IPS,
-    TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
-    TRIAL_MAX_LUMO_SEATS,
-    TRIAL_MAX_SCRIBE_SEATS,
-    TRIAL_MAX_USERS,
 } from '../constants';
 import { isRegionalCurrency } from '../helpers';
-import type { Currency, FeatureLimitKey, FreeSubscription, PlanIDs, Pricing } from '../interface';
-import { getSupportedAddons, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from '../plan/addons';
-import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from '../plan/helpers';
-import type { Plan, PlansMap, SubscriptionPlan } from '../plan/interface';
+import type { Currency, FreeSubscription, PlanIDs } from '../interface';
+import { getSupportedAddons, hasLumoAddonFromPlanIDs, isIpAddon, isLumoAddon, isMemberAddon } from '../plan/addons';
+import {
+    getHasPlusPlan,
+    getIsB2BAudienceFromPlan,
+    getPlanFromPlanIDs,
+    getPlanNameFromIDs,
+    isForbiddenModification,
+} from '../plan/helpers';
+import type { PlansMap, SubscriptionPlan } from '../plan/interface';
 import { clearPlanIDs } from '../planIDs';
-import { getPricePerCycle, getPricePerMember, isMultiUserPersonalPlan } from '../price-helpers';
 import { isFreeSubscription } from '../type-guards';
 import { SubscriptionPlatform, TaxInclusive } from './constants';
 import { FREE_PLAN } from './freePlans';
 import type { Subscription, SubscriptionCheckResponse } from './interface';
 import { SelectedPlan } from './selected-plan';
-
-export function getAddonNameByPlan(addonPrefix: ADDON_PREFIXES, planName: PLANS) {
-    return Object.values(ADDON_NAMES)
-        .filter((addonName) => addonName.startsWith(addonPrefix))
-        .find((addonName) => addonName.includes(planName));
-}
-
-export const getScribeAddonNameByPlan = (planName: PLANS) => {
-    return getAddonNameByPlan(ADDON_PREFIXES.SCRIBE, planName);
-};
 
 export function getPlan(subscription: Subscription | FreeSubscription | undefined, service?: PLAN_SERVICES) {
     const result = (subscription?.Plans || []).find(
@@ -118,19 +107,6 @@ export function getSubscriptionPlanTitles(
         ...(subscription?.SecondarySubscriptions?.map((sub) => getSubscriptionPlanTitle(user, sub)) ?? []),
     ];
 }
-
-export const getLumoAddonNameByPlan = (planName: PLANS) => {
-    return getAddonNameByPlan(ADDON_PREFIXES.LUMO, planName);
-};
-
-const lifetimePlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS_LIFETIME]);
-export const isLifetimePlan = (planName: PLANS | ADDON_NAMES | undefined) => {
-    if (!planName) {
-        return false;
-    }
-
-    return lifetimePlans.has(planName);
-};
 
 const blackFriday2024Discounts: Set<string> = new Set([
     COUPON_CODES.BLACK_FRIDAY_2024,
@@ -314,63 +290,26 @@ export const canCheckItemGetStarted = (subscription: Subscription | undefined) =
     return subscription?.Plans?.some(({ Name }) => canCheckItemGetStartedCondition.has(Name));
 };
 
-const getIsVpnB2BPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PLANS.VPN_PRO, PLANS.VPN_BUSINESS]);
-export const getIsVpnB2BPlan = (planName: PLANS | ADDON_NAMES) => getIsVpnB2BPlanCondition.has(planName);
-
-const getIsVpnPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
-    PLANS.VPN,
-    PLANS.VPN2024,
-    PLANS.VPN_PASS_BUNDLE,
-    PLANS.VPN_PRO,
-    PLANS.VPN_BUSINESS,
-]);
-export const getIsVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
-    if (!planName) {
+export const hasLumoMobileSubscription = (subscription?: MaybeFreeSubscription) => {
+    if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
-    return getIsVpnPlanCondition.has(planName);
+
+    if (isManagedExternally(subscription) && hasLumoPlan(subscription)) {
+        return true;
+    }
+
+    for (const secondarySubscription of subscription.SecondarySubscriptions ?? []) {
+        if (isManagedExternally(secondarySubscription) && hasLumoPlan(secondarySubscription)) {
+            return true;
+        }
+    }
+
+    return false;
 };
 
-const getIsConsumerVpnPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
-    PLANS.VPN,
-    PLANS.VPN2024,
-    PLANS.VPN_PASS_BUNDLE,
-]);
-export const getIsConsumerVpnPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
-    if (!planName) {
-        return false;
-    }
-    return getIsConsumerVpnPlanCondition.has(planName);
-};
-
-const getIsPassB2BPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS_PRO, PLANS.PASS_BUSINESS]);
-export const getIsPassB2BPlan = (planName?: PLANS | ADDON_NAMES) => {
-    if (!planName) {
-        return false;
-    }
-    return getIsPassB2BPlanCondition.has(planName);
-};
-
-const getIsPassPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
-    PLANS.PASS,
-    PLANS.PASS_FAMILY,
-    PLANS.VPN_PASS_BUNDLE,
-    PLANS.PASS_PRO,
-    PLANS.PASS_BUSINESS,
-]);
-export const getIsPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
-    if (!planName) {
-        return false;
-    }
-    return getIsPassPlanCondition.has(planName);
-};
-
-const consumerPassPlanSet: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS, PLANS.PASS_FAMILY, PLANS.VPN_PASS_BUNDLE]);
-export const getIsConsumerPassPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
-    if (!planName) {
-        return false;
-    }
-    return consumerPassPlanSet.has(planName);
+export const getCanAccessFamilyPlans = (subscription?: MaybeFreeSubscription) => {
+    return !hasLumoMobileSubscription(subscription);
 };
 
 const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
@@ -390,13 +329,6 @@ const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.BUNDLE_PRO_2024,
 ]);
 
-export const hasLumoMobileSubscription = (subscription?: MaybeFreeSubscription) =>
-    isManagedExternally(subscription) && hasLumoPlan(subscription);
-
-export const getCanAccessFamilyPlans = (subscription?: MaybeFreeSubscription) => {
-    return !hasLumoMobileSubscription(subscription);
-};
-
 export const getCanSubscriptionAccessDuoPlan = (subscription?: MaybeFreeSubscription) => {
     if (hasLumoMobileSubscription(subscription)) {
         return false;
@@ -412,75 +344,12 @@ export const getCanSubscriptionAccessPassFamilyPlan = (subscription?: MaybeFreeS
     );
 };
 
-const getIsSentinelPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
-    PLANS.VISIONARY,
-    PLANS.BUNDLE,
-    PLANS.FAMILY,
-    PLANS.DUO,
-    PLANS.BUNDLE_PRO,
-    PLANS.BUNDLE_PRO_2024,
-    PLANS.PASS,
-    PLANS.PASS_FAMILY,
-    PLANS.VPN_PASS_BUNDLE,
-    PLANS.PASS_BUSINESS,
-    PLANS.MAIL_BUSINESS,
-]);
-export const getIsSentinelPlan = (planName: PLANS | ADDON_NAMES | undefined) => {
-    if (!planName) {
-        return false;
-    }
-    return getIsSentinelPlanCondition.has(planName);
-};
-
 export const getIsB2BAudienceFromSubscription = (subscription: Subscription | undefined) => {
     return !!subscription?.Plans?.some(({ Name }) => getIsB2BAudienceFromPlan(Name));
 };
 
 export const getHasVpnB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasVpnPro(subscription) || hasVpnBusiness(subscription);
-};
-
-export const planSupportsSSO = (planName: PLANS | undefined, isSsoForPbsEnabled: boolean) => {
-    if (!planName) {
-        return;
-    }
-    const plans = [PLANS.VPN_BUSINESS, PLANS.PASS_BUSINESS];
-    if (isSsoForPbsEnabled) {
-        plans.push(PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_PRO);
-    }
-    return plans.some((ssoPlanName) => ssoPlanName === planName);
-};
-
-export const upsellPlanSSO = (planName?: PLANS) => {
-    return planName && [PLANS.VPN_PRO, PLANS.PASS_PRO].some((ssoPlanName) => ssoPlanName === planName);
-};
-
-export const getHasProPlan = (planName?: PLANS) => {
-    return (
-        planName &&
-        [PLANS.VPN_PRO, PLANS.PASS_PRO, PLANS.MAIL_PRO, PLANS.DRIVE_PRO].some((ssoPlanName) => ssoPlanName === planName)
-    );
-};
-
-export const getHasSomeDrivePlusPlan = (planName?: PLANS | ADDON_NAMES) => {
-    return planName && [PLANS.DRIVE, PLANS.DRIVE_1TB].some((otherPlanName) => otherPlanName === planName);
-};
-
-export const getHasPlusPlan = (planName?: PLANS | ADDON_NAMES) => {
-    return (
-        planName &&
-        [
-            PLANS.MAIL,
-            PLANS.VPN,
-            PLANS.VPN2024,
-            PLANS.PASS,
-            PLANS.DRIVE,
-            PLANS.DRIVE_1TB,
-            PLANS.VPN_PASS_BUNDLE,
-            PLANS.PASS_LIFETIME,
-            PLANS.LUMO,
-        ].some((otherPlanName) => otherPlanName === planName)
-    );
 };
 
 export const getHasSomeVpnPlan = (subscription: MaybeFreeSubscription) => {
@@ -523,24 +392,6 @@ export const getHasMailB2BPlan = (subscription: MaybeFreeSubscription) => {
 
 export const getHasInboxB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasAnyBundlePro(subscription) || getHasMailB2BPlan(subscription);
-};
-
-export const getBaseAmount = (
-    name: PLANS | ADDON_NAMES,
-    plansMap: PlansMap,
-    subscription: Subscription | undefined,
-    cycle = CYCLE.MONTHLY
-) => {
-    const base = plansMap[name];
-    if (!base) {
-        return 0;
-    }
-    return (subscription?.Plans || [])
-        .filter(({ Name }) => Name === name)
-        .reduce((acc) => {
-            const pricePerCycle = base.Pricing[cycle] || 0;
-            return acc + pricePerCycle;
-        }, 0);
 };
 
 export const getPlanIDs = (subscription: MaybeFreeSubscription | null): PlanIDs => {
@@ -690,78 +541,6 @@ export interface AggregatedPricing {
     plans: PricingForCycles;
 }
 
-export function getPlanMembers(plan: Plan, quantity: number, view = true): number {
-    const hasMembers = plan.Type === PLAN_TYPES.PLAN || (plan.Type === PLAN_TYPES.ADDON && isMemberAddon(plan.Name));
-
-    let membersNumberInPlan = 0;
-    if (isMultiUserPersonalPlan(plan) && view) {
-        membersNumberInPlan = 1;
-    } else if (hasMembers) {
-        membersNumberInPlan = plan.MaxMembers || 1;
-    }
-
-    return membersNumberInPlan * quantity;
-}
-
-export function getMembersFromPlanIDs(planIDs: PlanIDs, plansMap: PlansMap, view = true): number {
-    return (Object.entries(planIDs) as [PLANS | ADDON_NAMES, number][]).reduce((acc, [name, quantity]) => {
-        const plan = plansMap[name];
-        if (!plan) {
-            return acc;
-        }
-
-        return acc + getPlanMembers(plan, quantity, view);
-    }, 0);
-}
-
-export function getPricingPerMember(plan: Plan): Pricing {
-    return allCycles.reduce((acc, cycle) => {
-        acc[cycle] = getPricePerMember(plan, cycle);
-
-        // If the plan doesn't have custom cycles, we need to remove it from the resulting Pricing object
-        const isNonDefinedCycle = acc[cycle] === undefined || acc[cycle] === null || acc[cycle] === 0;
-        if (customCycles.includes(cycle) && isNonDefinedCycle) {
-            delete acc[cycle];
-        }
-
-        return acc;
-    }, {} as Pricing);
-}
-
-interface OfferResult {
-    pricing: Pricing;
-    cycles: CYCLE[];
-    valid: boolean;
-}
-
-export const getPlanOffer = (plan: Plan) => {
-    const result = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].reduce<OfferResult>(
-        (acc, cycle) => {
-            acc.pricing[cycle] = (plan.DefaultPricing?.[cycle] ?? 0) - (getPricePerCycle(plan, cycle) ?? 0);
-            return acc;
-        },
-        {
-            valid: false,
-            cycles: [],
-            pricing: {
-                [CYCLE.MONTHLY]: 0,
-                [CYCLE.YEARLY]: 0,
-                [CYCLE.THREE]: 0,
-                [CYCLE.TWO_YEARS]: 0,
-                [CYCLE.FIFTEEN]: 0,
-                [CYCLE.EIGHTEEN]: 0,
-                [CYCLE.THIRTY]: 0,
-            },
-        }
-    );
-    const sortedResults = (Object.entries(result.pricing) as unknown as [CYCLE, number][]).sort((a, b) => b[1] - a[1]);
-    result.cycles = sortedResults.map(([cycle]) => cycle);
-    if (sortedResults[0][1] > 0) {
-        result.valid = true;
-    }
-    return result;
-};
-
 export const getHasCoupon = (subscription: Subscription | undefined, coupon: string) => {
     return [subscription?.CouponCode, subscription?.UpcomingSubscription?.CouponCode].includes(coupon);
 };
@@ -820,68 +599,6 @@ export const getMaximumCycleForApp = (app: ProductParam, currency?: Currency) =>
     return currency && isRegionalCurrency(currency) ? CYCLE.YEARLY : CYCLE.TWO_YEARS;
 };
 
-export const getPlanMaxIPs = (plan: Plan) => {
-    if (plan.Name === PLANS.VPN_BUSINESS) {
-        return 1;
-    }
-
-    if (isIpAddon(plan.Name)) {
-        return 1;
-    }
-
-    return 0;
-};
-
-export const getPlanMaxLumo = (plan: Plan) => {
-    return isLumoAddon(plan.Name) ? 1 : 0;
-};
-
-const getPlanMaxAIs = (plan: Plan) => {
-    return isScribeAddon(plan.Name) ? 1 : 0;
-};
-
-export const getPlanFeatureLimit = (plan: Plan, key: FeatureLimitKey): number => {
-    let result: number;
-
-    if (key === 'MaxIPs') {
-        result = getPlanMaxIPs(plan);
-    } else if (key === 'MaxAI') {
-        result = getPlanMaxAIs(plan);
-    } else if (key === 'MaxLumo') {
-        result = getPlanMaxLumo(plan);
-    } else {
-        result = plan[key];
-    }
-
-    return result ?? 0;
-};
-
-type PlanQuantity = {
-    plan: Plan;
-    quantity: number;
-};
-
-type PlansQuantity = PlanQuantity[];
-
-export function getPlansQuantity(planIDs: PlanIDs, plansMap: PlansMap): PlansQuantity {
-    return Object.entries(planIDs)
-        .map(([planName, quantity]) => {
-            const plan = plansMap[planName as PLANS | ADDON_NAMES];
-            return plan === undefined ? undefined : { plan, quantity };
-        })
-        .filter((elem) => elem !== undefined);
-}
-
-export function getPlansLimit(plans: PlansQuantity, maxKey: FeatureLimitKey): number {
-    return plans.reduce((acc, { plan, quantity }) => {
-        return acc + quantity * getPlanFeatureLimit(plan, maxKey);
-    }, 0);
-}
-
-export function getAddonMultiplier(addonMaxKey: FeatureLimitKey, addon: Plan): number {
-    return Math.max(1, getPlanFeatureLimit(addon, addonMaxKey));
-}
-
 export function isTaxInclusive(checkResponse?: Pick<SubscriptionCheckResponse, 'TaxInclusive'>): boolean {
     return checkResponse?.TaxInclusive === TaxInclusive.INCLUSIVE;
 }
@@ -931,29 +648,6 @@ export function getRenewalTime(subscription: Subscription): number {
     return upcoming && isUpcomingSubscriptionUnpaid ? upcoming.PeriodStart : latestSubscription.PeriodEnd;
 }
 
-function isSubscriptionPrepaid(subscription: Subscription): boolean {
-    // InvoiceID idicates whether the subscription was alread prepaid. If there is no InvoiceID, then the upcoming
-    // subscription is unpaid.
-    return !!subscription?.InvoiceID;
-}
-
-/**
- * Variable cycle offers are marked by automatically created unpaid scheduled subscriptions with different cycles than
- * the current susbcription. For example when user subscribes to vpn2024 24m then the backend will create a scheduled
- * 12m subscription. User will be billed when the upcoming 12m term starts. Another example is when user subscribes to
- * bundle2022 6m - the backend will also create scheduled 12m subscription. P2-634 is the relevant ticket.
- */
-function isVariableCycleOffer(subscription: Subscription | FreeSubscription | null | undefined): boolean {
-    if (!subscription || isFreeSubscription(subscription)) {
-        return false;
-    }
-
-    const current = subscription;
-    const upcoming = subscription.UpcomingSubscription;
-
-    return !!upcoming && current.Cycle !== upcoming.Cycle && !isSubscriptionPrepaid(upcoming);
-}
-
 export function isSubscriptionUnchanged(
     subscription: Subscription | FreeSubscription | null | undefined,
     planIds: PlanIDs,
@@ -967,10 +661,6 @@ export function isSubscriptionUnchanged(
 
     return planIdsUnchanged && cycleUnchanged;
 }
-
-export const hasLumoAddonFromPlanIDs = (planIDs: PlanIDs) => {
-    return Object.keys(planIDs).some((key) => isLumoAddon(key as any));
-};
 
 export const hasLumoAddon = (subscription: MaybeFreeSubscription) => {
     const currentPlanIDs = getPlanIDs(subscription);
@@ -1116,7 +806,30 @@ export function getIsPlanTransitionForbidden({
     return null;
 }
 
-export function isCheckForbidden(
+function isSubscriptionPrepaid(subscription: Subscription): boolean {
+    // InvoiceID idicates whether the subscription was alread prepaid. If there is no InvoiceID, then the upcoming
+    // subscription is unpaid.
+    return !!subscription?.InvoiceID;
+}
+
+/**
+ * Variable cycle offers are marked by automatically created unpaid scheduled subscriptions with different cycles than
+ * the current susbcription. For example when user subscribes to vpn2024 24m then the backend will create a scheduled
+ * 12m subscription. User will be billed when the upcoming 12m term starts. Another example is when user subscribes to
+ * bundle2022 6m - the backend will also create scheduled 12m subscription. P2-634 is the relevant ticket.
+ */
+function isVariableCycleOffer(subscription: Subscription | FreeSubscription | null | undefined): boolean {
+    if (!subscription || isFreeSubscription(subscription)) {
+        return false;
+    }
+
+    const current = subscription;
+    const upcoming = subscription.UpcomingSubscription;
+
+    return !!upcoming && current.Cycle !== upcoming.Cycle && !isSubscriptionPrepaid(upcoming);
+}
+
+export function isSubcriptionCheckForbidden(
     subscription: Subscription | FreeSubscription | null | undefined,
     planIDs: PlanIDs,
     cycle: CYCLE
@@ -1144,7 +857,7 @@ export function isCheckForbidden(
 
     const managedExternally = isManagedExternally(subscription);
 
-    return (
+    const forbiddenSubscriptionMode =
         /**
          * Consider the table with possible cases:
          * |                                | selectedSameAsCurrent | selectedSameAsUpcoming        |
@@ -1182,11 +895,20 @@ export function isCheckForbidden(
          */
         (selectedSameAsCurrent && !isScheduledUnpaidModification) ||
         selectedSameAsUpcoming ||
-        (selectedSameAsCurrentIgnorringCycle && managedExternally)
-    );
+        (selectedSameAsCurrentIgnorringCycle && managedExternally);
+
+    // It's forbidden to change from certain plans to other plans. This constant reflects that.
+    const forbiddenModificationAttempt = isForbiddenModification(subscription, planIDs);
+
+    return forbiddenSubscriptionMode || forbiddenModificationAttempt;
 }
 
-export function isMobileMultiSubSupported(subscription: Subscription) {
+/**
+ * Checks if the current plan can be eligible for multi-subs. It works this way: If user has a mobile Lumo subscription
+ * then they can buy another subscription on web. So this function checks if another subscription can be added to the
+ * existing susbcription that has one of the plans listed in this function.
+ */
+function isMobileMultiSubSupported(subscription: Subscription) {
     return hasLumoPlan(subscription);
 }
 
@@ -1238,59 +960,3 @@ export function getAvailableSubscriptionActions(subscription: Subscription): Sub
         cantCancelReason: managedExternally ? ('subscription_managed_externally' as const) : undefined,
     } as SubscriptionActions;
 }
-
-/**
- * @param downgradeIsTrial - if true, then downgrading from 24/12 months to 1 month is allowed to be a trial
- */
-export const shouldPassIsTrial = ({
-    plansMap,
-    newPlanIDs,
-    oldPlanIDs,
-    newCycle,
-    oldCycle,
-    downgradeIsTrial,
-}: {
-    plansMap: PlansMap;
-    newPlanIDs: PlanIDs;
-    oldPlanIDs: PlanIDs;
-    newCycle: CYCLE;
-    oldCycle: CYCLE;
-    downgradeIsTrial: boolean;
-}) => {
-    if (newCycle !== oldCycle && (!downgradeIsTrial || newCycle !== CYCLE.MONTHLY)) {
-        return false;
-    }
-
-    const newPrimaryPlan = getPlanFromPlanIDs(plansMap, newPlanIDs);
-    const oldPrimaryPlan = getPlanFromPlanIDs(plansMap, oldPlanIDs);
-    if (!newPrimaryPlan || !oldPrimaryPlan) {
-        return false;
-    }
-
-    if (newPrimaryPlan.Name !== oldPrimaryPlan.Name) {
-        return false;
-    }
-
-    const newPlans = getPlansQuantity(newPlanIDs, plansMap);
-    const oldPlans = getPlansQuantity(oldPlanIDs, plansMap);
-
-    const maxBaseDomains = newPrimaryPlan.MaxDomains;
-    const limits = Object.entries({
-        MaxMembers: TRIAL_MAX_USERS,
-        MaxDomains: maxBaseDomains + TRIAL_MAX_EXTRA_CUSTOM_DOMAINS,
-        MaxIPs: TRIAL_MAX_DEDICATED_IPS,
-        MaxAI: TRIAL_MAX_SCRIBE_SEATS,
-        MaxLumo: TRIAL_MAX_LUMO_SEATS,
-    }) as [FeatureLimitKey, number][];
-
-    for (const [maxKey, limit] of limits) {
-        const newLimit = getPlansLimit(newPlans, maxKey);
-        const oldLimit = getPlansLimit(oldPlans, maxKey);
-
-        if (newLimit > limit || newLimit < oldLimit) {
-            return false;
-        }
-    }
-
-    return true;
-};

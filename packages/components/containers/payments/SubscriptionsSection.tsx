@@ -181,10 +181,12 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                 ) : (
                     <div className="flex items-center">
                         {renewalTextElement}
-                        <Info
-                            className="ml-2"
-                            title={c('Payments').t`Credits and discounts are reflected in your invoice`}
-                        />
+                        {!isManagedExternally(subscription) && (
+                            <Info
+                                className="ml-2"
+                                title={c('Payments').t`Credits and discounts are reflected in your invoice`}
+                            />
+                        )}
                     </div>
                 )}
             </TableCell>

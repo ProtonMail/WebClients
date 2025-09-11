@@ -76,28 +76,8 @@ export const isLumoAddon: AddonGuard = (addonOrName): boolean => {
     return isAddonType(addonOrName, ADDON_PREFIXES.LUMO);
 };
 
-export const removeAddon = (originalPlanIDs: PlanIDs, addonGuard: AddonGuard): PlanIDs => {
-    const planIDs: PlanIDs = { ...originalPlanIDs };
-
-    // if guard returns true, it means that the addon should be removed
-    for (const addonName of Object.keys(planIDs) as (ADDON_NAMES | PLANS)[]) {
-        if (addonGuard(addonName)) {
-            delete planIDs[addonName];
-        }
-    }
-
-    return planIDs;
-};
-
-export const countAddonsByType = (planIDs: PlanIDs, addonGuard: AddonGuard): number => {
-    return Object.keys(planIDs).reduce((acc, key) => {
-        const addonName = key as ADDON_NAMES | PLANS;
-
-        if (addonGuard(addonName)) {
-            return acc + (planIDs[addonName] ?? 0);
-        }
-        return acc;
-    }, 0);
+export const hasLumoAddonFromPlanIDs = (planIDs: PlanIDs) => {
+    return Object.keys(planIDs).some((key) => isLumoAddon(key as any));
 };
 
 export type SupportedAddons = Partial<Record<ADDON_NAMES, boolean>>;
