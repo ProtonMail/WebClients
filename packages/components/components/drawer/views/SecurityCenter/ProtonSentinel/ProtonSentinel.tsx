@@ -16,11 +16,10 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
 import { TelemetrySecurityCenterEvents } from '@proton/shared/lib/api/telemetry';
-import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import { PROTON_SENTINEL_NAME, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
-import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import ProtonSentinelLogo from '@proton/styles/assets/img/illustrations/proton-sentinel-shield.svg';
 
 import DrawerAppSection from '../../shared/DrawerAppSection';
