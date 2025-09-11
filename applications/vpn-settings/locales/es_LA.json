@@ -1775,6 +1775,9 @@
       "Manual setup problem": [
         "Problema de configuración manual"
       ],
+      "Meet problem": [
+        "Problema de Meet"
+      ],
       "Other": [
         "Otro"
       ],
@@ -6837,6 +6840,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sesión en ${ MAIL_APP_NAME } para activar la dirección"
       ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Aún no se permite iniciar sesión con una llave de seguridad en todas las aplicaciones. Sin TOTP, es posible que no se pueda iniciar sesión en algunas aplicaciones."
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, la cuenta tiene activadas funciones adicionales."
       ],
@@ -7357,6 +7363,9 @@
       ],
       "You already have a free account": [
         "Ya tiene una cuenta gratuita"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "Actualmente inició sesión como ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Actualmente está usando ${ ipCount } de ${ ipAddresses } servidor dedicado disponible.",
@@ -8417,6 +8426,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferencias con ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Videoconferencia por Zoom"
@@ -10076,6 +10088,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Se actualizaron los ajustes de videoconferencia de ${ MEET_APP_NAME }"
+      ],
       "${ reason } has been disabled": [
         "Se ha desactivado ${ reason }."
       ],
@@ -10093,6 +10108,9 @@
       ],
       "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
         "Error al actualizar los ajustes de la videoconferencia de ${ MEET_APP_NAME }"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Error al actualizar los ajustes de la videoconferencia de Zoom"
       ],
       "Invalid code": [
         "Código inválido"
@@ -10129,6 +10147,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "La autenticación de dos factores ya no es requerida"
+      ],
+      "Zoom video conferencing settings have been updated": [
+        "Se actualizaron los ajustes de videoconferencia de Zoom"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
