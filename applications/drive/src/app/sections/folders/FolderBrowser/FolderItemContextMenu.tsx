@@ -68,12 +68,7 @@ export function FolderItemContextMenu({
                 <DownloadButton type="context" selectedItems={selectedItems} onClick={downloadItems} close={close} />
                 {isAdmin && <CopyLinkContextButton selectedItems={selectedItems} close={close} />}
                 {isAdmin && isOnlyOneItem && (
-                    <ShareLinkButton
-                        type="context"
-                        selectedItems={selectedItems}
-                        onClick={showLinkSharingModal}
-                        close={close}
-                    />
+                    <ShareLinkButton type="context" onClick={showLinkSharingModal} close={close} />
                 )}
                 <ContextSeparator />
                 {permissions.canMove ? (
@@ -104,7 +99,7 @@ export function FolderItemContextMenu({
                         <ContextSeparator />
                     </>
                 )}
-                {permissions.canEdit && <TrashButton type="context" selectedItems={selectedItems} close={close} />}
+                {permissions.canTrash && <TrashButton type="context" selectedItems={selectedItems} close={close} />}
                 {children}
             </ItemContextMenu>
             {modals.detailsModal}

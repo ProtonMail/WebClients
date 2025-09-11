@@ -6,14 +6,12 @@ import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import type { FolderButtonProps } from './types';
 
 export const CreateNewFolderButton = ({ type, close, onClick }: FolderButtonProps) => {
-    const title = c('Action').t`Create new folder`;
-
     if (type === 'toolbar') {
         return (
             <ToolbarButton
                 data-testid="toolbar-new-folder"
-                icon={<Icon name="folder-plus" alt={title} />}
-                title={title}
+                icon={<Icon name="folder-plus" alt={c('Action').t`Create new folder`} />}
+                title={c('Action').t`Create new folder`}
                 onClick={onClick}
             />
         );
@@ -24,7 +22,7 @@ export const CreateNewFolderButton = ({ type, close, onClick }: FolderButtonProp
             <ContextMenuButton
                 testId="context-menu-new-folder"
                 icon="folder-plus"
-                name={title}
+                name={c('Action').t`New folder`}
                 action={onClick}
                 close={close}
             />
