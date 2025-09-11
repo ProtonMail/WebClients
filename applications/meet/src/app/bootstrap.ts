@@ -35,7 +35,7 @@ const initializeWasmApp = async (authentication: ProtonThunkArguments['authentic
     const uid = authentication.UID ?? '';
 
     const baseHostName = window.location.hostname.split('.').slice(1).join('.');
-    const mlsSubdomain = baseHostName.includes('proton.me') ? 'meet-mls' : 'mls';
+    const mlsSubdomain = 'meet-mls';
     const env = `${window.location.origin}/api`;
     const appVersion = 'web-meet@5.0.999.999';
     const userAgent = navigator.userAgent;
