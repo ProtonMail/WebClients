@@ -1,6 +1,14 @@
-import { CYCLE, FREE_PLAN, PLANS, PLAN_TYPES, type Subscription, getPlansMap } from '@proton/payments';
+import {
+    CYCLE,
+    FREE_PLAN,
+    PLANS,
+    PLAN_TYPES,
+    type Subscription,
+    SubscriptionPlatform,
+    getPlansMap,
+} from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
-import { buildUser } from '@proton/testing/builders';
+import { buildSubscription, buildUser } from '@proton/testing/builders';
 import { getTestPlans } from '@proton/testing/data';
 
 import {
@@ -361,6 +369,25 @@ describe('resolveUpsellsToDisplay', () => {
                 telemetryFlow: 'subscription',
             });
         });
+
+        it('should not return multi user personal plans if user has Lumo mobile subscription', () => {
+            const upsells = resolveUpsellsToDisplay({
+                ...base,
+                isFree: false,
+                hasPaidMail: true,
+                subscription: buildSubscription(PLANS.BUNDLE, {
+                    External: SubscriptionPlatform.Default,
+                    SecondarySubscriptions: [
+                        buildSubscription(PLANS.LUMO, {
+                            External: SubscriptionPlatform.Android,
+                        }),
+                    ],
+                }),
+            });
+
+            expect(upsells).not.toMatchObject([familyUpsell, duoUpsell]);
+            expect(upsells).toEqual([]);
+        });
     });
 
     describe('Duo', () => {
@@ -439,6 +466,25 @@ describe('resolveUpsellsToDisplay', () => {
                 },
                 telemetryFlow: 'subscription',
             });
+        });
+
+        it('should not return multi user personal plans if user has Lumo mobile subscription', () => {
+            const upsells = resolveUpsellsToDisplay({
+                ...base,
+                isFree: false,
+                hasPaidMail: true,
+                subscription: buildSubscription(PLANS.DUO, {
+                    External: SubscriptionPlatform.Default,
+                    SecondarySubscriptions: [
+                        buildSubscription(PLANS.LUMO, {
+                            External: SubscriptionPlatform.Android,
+                        }),
+                    ],
+                }),
+            });
+
+            expect(upsells).not.toMatchObject([familyUpsell, duoUpsell]);
+            expect(upsells).toEqual([]);
         });
     });
 

@@ -9,12 +9,11 @@ import {
     canModify,
     getAvailableSubscriptionActions,
     getIsPlanTransitionForbidden,
-    getLumoAddonNameByPlan,
     getPlanIDs,
-    getScribeAddonNameByPlan,
     getSubscriptionPlanTitle,
-    isCheckForbidden,
+    hasLumoMobileSubscription,
     isManagedExternally,
+    isSubcriptionCheckForbidden,
     isSubscriptionUnchanged,
 } from './helpers';
 
@@ -190,10 +189,10 @@ describe('isSubscriptionUnchanged', () => {
     });
 });
 
-describe('isCheckForbidden', () => {
+describe('isSubcriptionCheckForbidden', () => {
     it('returns false when subscription is null or undefined', () => {
-        expect(isCheckForbidden(null, {}, CYCLE.MONTHLY)).toBe(false);
-        expect(isCheckForbidden(undefined, {}, CYCLE.MONTHLY)).toBe(false);
+        expect(isSubcriptionCheckForbidden(null, {}, CYCLE.MONTHLY)).toBe(false);
+        expect(isSubcriptionCheckForbidden(undefined, {}, CYCLE.MONTHLY)).toBe(false);
     });
 
     it('returns true when selected plan is same as current with no upcoming subscription', () => {
@@ -201,14 +200,14 @@ describe('isCheckForbidden', () => {
         const planIds = getPlanIDs(subscription);
 
         // No upcoming subscription scenario
-        expect(isCheckForbidden(subscription, planIds, subscription.Cycle)).toBe(true);
+        expect(isSubcriptionCheckForbidden(subscription, planIds, subscription.Cycle)).toBe(true);
     });
 
     it('returns false for free subscription', () => {
         const freeSubscription = FREE_SUBSCRIPTION;
         const planIds = {};
 
-        expect(isCheckForbidden(freeSubscription, planIds, CYCLE.MONTHLY)).toBe(false);
+        expect(isSubcriptionCheckForbidden(freeSubscription, planIds, CYCLE.MONTHLY)).toBe(false);
     });
 
     it('handles variable cycle offer correctly (automatic unpaid scheduled subscription)', () => {
@@ -237,8 +236,8 @@ describe('isCheckForbidden', () => {
         const currentPlanIds = getPlanIDs(subscription);
         const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
 
-        expect(isCheckForbidden(subscription, currentPlanIds, CYCLE.TWO_YEARS)).toBe(true);
-        expect(isCheckForbidden(subscription, upcomingPlanIds, CYCLE.YEARLY)).toBe(true);
+        expect(isSubcriptionCheckForbidden(subscription, currentPlanIds, CYCLE.TWO_YEARS)).toBe(true);
+        expect(isSubcriptionCheckForbidden(subscription, upcomingPlanIds, CYCLE.YEARLY)).toBe(true);
     });
 
     it('handles scheduled unpaid modification correctly (addon downgrade/downcycling)', () => {
@@ -277,9 +276,9 @@ describe('isCheckForbidden', () => {
         const currentPlanIds = getPlanIDs(subscription);
         const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
 
-        expect(isCheckForbidden(subscription, currentPlanIds, Cycle)).toBe(false);
+        expect(isSubcriptionCheckForbidden(subscription, currentPlanIds, Cycle)).toBe(false);
 
-        expect(isCheckForbidden(subscription, upcomingPlanIds, Cycle)).toBe(true);
+        expect(isSubcriptionCheckForbidden(subscription, upcomingPlanIds, Cycle)).toBe(true);
     });
 
     it('handles prepaid upcoming subscription correctly', () => {
@@ -302,8 +301,8 @@ describe('isCheckForbidden', () => {
         const currentPlanIds = getPlanIDs(subscription);
         const upcomingPlanIds = getPlanIDs(UpcomingSubscription);
 
-        expect(isCheckForbidden(subscription, currentPlanIds, CYCLE.MONTHLY)).toBe(true);
-        expect(isCheckForbidden(subscription, upcomingPlanIds, CYCLE.YEARLY)).toBe(true);
+        expect(isSubcriptionCheckForbidden(subscription, currentPlanIds, CYCLE.MONTHLY)).toBe(true);
+        expect(isSubcriptionCheckForbidden(subscription, upcomingPlanIds, CYCLE.YEARLY)).toBe(true);
     });
 
     it('returns false when selected plan is different from both current and upcoming', () => {
@@ -325,8 +324,8 @@ describe('isCheckForbidden', () => {
 
         const differentPlanIds = { [PLANS.DRIVE]: 1 };
 
-        expect(isCheckForbidden(subscription, differentPlanIds, CYCLE.MONTHLY)).toBe(false);
-        expect(isCheckForbidden(subscription, differentPlanIds, CYCLE.YEARLY)).toBe(false);
+        expect(isSubcriptionCheckForbidden(subscription, differentPlanIds, CYCLE.MONTHLY)).toBe(false);
+        expect(isSubcriptionCheckForbidden(subscription, differentPlanIds, CYCLE.YEARLY)).toBe(false);
     });
 
     it('should return true when user has externally managed Lumo subscription and selects the same plan', () => {
@@ -334,9 +333,9 @@ describe('isCheckForbidden', () => {
             External: SubscriptionPlatform.iOS,
         });
 
-        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.MONTHLY)).toBe(true);
-        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.YEARLY)).toBe(true);
-        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.TWO_YEARS)).toBe(true);
+        expect(isSubcriptionCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.MONTHLY)).toBe(true);
+        expect(isSubcriptionCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.YEARLY)).toBe(true);
+        expect(isSubcriptionCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.TWO_YEARS)).toBe(true);
     });
 
     it('should return false when user has externally managed Lumo subscription and selects a different plan', () => {
@@ -344,9 +343,9 @@ describe('isCheckForbidden', () => {
             External: SubscriptionPlatform.iOS,
         });
 
-        expect(isCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.MONTHLY)).toBe(false);
-        expect(isCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.YEARLY)).toBe(false);
-        expect(isCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.TWO_YEARS)).toBe(false);
+        expect(isSubcriptionCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.MONTHLY)).toBe(false);
+        expect(isSubcriptionCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.YEARLY)).toBe(false);
+        expect(isSubcriptionCheckForbidden(subscription, { [PLANS.MAIL]: 1 }, CYCLE.TWO_YEARS)).toBe(false);
     });
 
     it('should work with lumo the usual way if it is managed internally', () => {
@@ -361,10 +360,52 @@ describe('isCheckForbidden', () => {
             }
         );
 
-        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.MONTHLY)).toBe(true);
-        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.YEARLY)).toBe(false);
-        expect(isCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.TWO_YEARS)).toBe(false);
+        expect(isSubcriptionCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.MONTHLY)).toBe(true);
+        expect(isSubcriptionCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.YEARLY)).toBe(false);
+        expect(isSubcriptionCheckForbidden(subscribtion, { [PLANS.LUMO]: 1 }, CYCLE.TWO_YEARS)).toBe(false);
     });
+
+    it.each([
+        {
+            case: 'User has only Lumo mobile subscription',
+            subscription: buildSubscription(
+                {
+                    planName: PLANS.LUMO,
+                    cycle: CYCLE.MONTHLY,
+                    currency: 'USD',
+                },
+                {
+                    External: SubscriptionPlatform.Android,
+                }
+            ),
+        },
+        {
+            case: 'User has Lumo mobile subscription and a web bundle subscription',
+            subscription: buildSubscription(
+                {
+                    planName: PLANS.BUNDLE,
+                    cycle: CYCLE.MONTHLY,
+                    currency: 'USD',
+                },
+                {
+                    External: SubscriptionPlatform.Default,
+                    SecondarySubscriptions: [
+                        buildSubscription(PLANS.LUMO, {
+                            External: SubscriptionPlatform.Android,
+                        }),
+                    ],
+                }
+            ),
+        },
+    ])(
+        'should return true if user has Lumo mobile subscription adn tries to subscribe to a multi-user personal plan',
+        ({ subscription }) => {
+            expect(isSubcriptionCheckForbidden(subscription, { [PLANS.DUO]: 1 }, CYCLE.MONTHLY)).toBe(true);
+            expect(isSubcriptionCheckForbidden(subscription, { [PLANS.FAMILY]: 1 }, CYCLE.MONTHLY)).toBe(true);
+            expect(isSubcriptionCheckForbidden(subscription, { [PLANS.VISIONARY]: 1 }, CYCLE.MONTHLY)).toBe(true);
+            expect(isSubcriptionCheckForbidden(subscription, { [PLANS.PASS_FAMILY]: 1 }, CYCLE.MONTHLY)).toBe(true);
+        }
+    );
 });
 
 describe('isManagedExternally', () => {
@@ -685,47 +726,42 @@ describe('forbidden plan transitions', () => {
     });
 });
 
-describe('getLumoAddonNameByPlan', () => {
-    it.each<[plan: PLANS, expectedAddon: ADDON_NAMES]>([
-        // B2C
-        [PLANS.MAIL, ADDON_NAMES.LUMO_MAIL],
-        [PLANS.DRIVE, ADDON_NAMES.LUMO_DRIVE],
-        [PLANS.DRIVE_1TB, ADDON_NAMES.LUMO_DRIVE_1TB],
-        [PLANS.PASS, ADDON_NAMES.LUMO_PASS],
-        [PLANS.PASS_FAMILY, ADDON_NAMES.LUMO_PASS_FAMILY],
-        [PLANS.VPN2024, ADDON_NAMES.LUMO_VPN2024],
-        [PLANS.BUNDLE, ADDON_NAMES.LUMO_BUNDLE],
-        [PLANS.FAMILY, ADDON_NAMES.LUMO_FAMILY],
-        [PLANS.DUO, ADDON_NAMES.LUMO_DUO],
-
-        // B2B
-        [PLANS.MAIL_PRO, ADDON_NAMES.LUMO_MAIL_PRO],
-        [PLANS.MAIL_BUSINESS, ADDON_NAMES.LUMO_MAIL_BUSINESS],
-        [PLANS.DRIVE_PRO, ADDON_NAMES.LUMO_DRIVE_PRO],
-        [PLANS.DRIVE_BUSINESS, ADDON_NAMES.LUMO_DRIVE_BUSINESS],
-        [PLANS.BUNDLE_PRO, ADDON_NAMES.LUMO_BUNDLE_PRO],
-        [PLANS.BUNDLE_PRO_2024, ADDON_NAMES.LUMO_BUNDLE_PRO_2024],
-        [PLANS.VPN_PRO, ADDON_NAMES.LUMO_VPN_PRO],
-        [PLANS.VPN_BUSINESS, ADDON_NAMES.LUMO_VPN_BUSINESS],
-        [PLANS.PASS_PRO, ADDON_NAMES.LUMO_PASS_PRO],
-        [PLANS.PASS_BUSINESS, ADDON_NAMES.LUMO_PASS_BUSINESS],
-    ])('returns %s -> %s', (plan, expectedAddon) => {
-        expect(getLumoAddonNameByPlan(plan)).toBe(expectedAddon);
-    });
-});
-
-describe('getScribeAddonNameByPlan', () => {
-    it.each<[plan: PLANS, expectedAddon: ADDON_NAMES]>([
-        [PLANS.MAIL_PRO, ADDON_NAMES.MEMBER_SCRIBE_MAIL_PRO],
-        [PLANS.BUNDLE_PRO, ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO],
-        [PLANS.BUNDLE_PRO_2024, ADDON_NAMES.MEMBER_SCRIBE_BUNDLE_PRO_2024],
-        [PLANS.MAIL_BUSINESS, ADDON_NAMES.MEMBER_SCRIBE_MAIL_BUSINESS],
-    ])('returns %s -> %s', (plan, expectedAddon) => {
-        expect(getScribeAddonNameByPlan(plan)).toBe(expectedAddon);
+describe('hasLumoMobileSubscription', () => {
+    it('should return false for free subscription', () => {
+        expect(hasLumoMobileSubscription(FREE_SUBSCRIPTION)).toBe(false);
     });
 
-    it('returns undefined for plans without scribe addon mapping', () => {
-        expect(getScribeAddonNameByPlan(PLANS.MAIL)).toBeUndefined();
-        expect(getScribeAddonNameByPlan(PLANS.VPN2024)).toBeUndefined();
+    it('should return false if subscription is undefined or null', () => {
+        expect(hasLumoMobileSubscription(undefined)).toBe(false);
+        expect(hasLumoMobileSubscription(null as any)).toBe(false);
+    });
+
+    it('should return false if subscription is not externally managed', () => {
+        const subscription = buildSubscription(PLANS.LUMO, {
+            External: SubscriptionPlatform.Default,
+        });
+        expect(hasLumoMobileSubscription(subscription)).toBe(false);
+    });
+
+    it('should return true if subscription is externally managed and has Lumo', () => {
+        const subscription = buildSubscription(PLANS.LUMO, {
+            External: SubscriptionPlatform.Android,
+        });
+        expect(hasLumoMobileSubscription(subscription)).toBe(true);
+    });
+
+    it('should return false if user does not have secondary subscriptions', () => {
+        const subscription = buildSubscription(PLANS.BUNDLE, {});
+        expect(hasLumoMobileSubscription(subscription)).toBe(false);
+    });
+
+    it('should return true if user has secondary subscriptions and at least one of them is externally managed and has Lumo', () => {
+        const subscription = buildSubscription(PLANS.BUNDLE, {
+            SecondarySubscriptions: [
+                buildSubscription(PLANS.VPN2024, { External: SubscriptionPlatform.Default }),
+                buildSubscription(PLANS.LUMO, { External: SubscriptionPlatform.Android }),
+            ],
+        });
+        expect(hasLumoMobileSubscription(subscription)).toBe(true);
     });
 });

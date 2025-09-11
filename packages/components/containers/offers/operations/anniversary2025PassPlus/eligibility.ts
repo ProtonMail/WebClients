@@ -6,7 +6,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime, hasPassViaSimpleLogin } from '@proton/shared/lib/user/helpers';
 
-import isCheckAllowed from '../../helpers/isCheckAllowed';
+import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import { FREE_DOWNGRADER_LIMIT } from '../../helpers/offerPeriods';
 import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
@@ -36,7 +36,7 @@ export const getIsEligible = ({
         (protonConfig.APP_NAME === APPS.PROTONACCOUNT && parentApp === APPS.PROTONPASS);
     const noPassViaSimpleLogin = !hasPassViaSimpleLogin(user);
     const noPassLifetime = !hasPassLifetime(user);
-    const checkAllowed = isCheckAllowed(subscription, offerConfig);
+    const subscriptionCheckAllowed = isSubscriptionCheckAllowed(subscription, offerConfig);
 
     if (user.isPaid) {
         const offerSubscription = new OfferSubscription(subscription);
@@ -45,7 +45,7 @@ export const getIsEligible = ({
 
         return (
             hasValidApp &&
-            checkAllowed &&
+            subscriptionCheckAllowed &&
             hasPassMonthly &&
             canModifySubscription &&
             noPassLifetime &&
@@ -57,7 +57,7 @@ export const getIsEligible = ({
 
     return (
         hasValidApp &&
-        checkAllowed &&
+        subscriptionCheckAllowed &&
         isBefore(fromUnixTime(previousSubscriptionEndTime), FREE_DOWNGRADER_LIMIT) &&
         noPassLifetime &&
         noPassViaSimpleLogin &&

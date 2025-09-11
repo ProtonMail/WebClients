@@ -362,7 +362,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
 
                                     const offerUnavailableError = {
                                         title: c('bf2023: Title').t`Offer unavailable`,
-                                        message: c('bf2023: info')
+                                        message: c('Payments')
                                             .t`Sorry, this offer is not available with your current plan.`,
                                         error: '',
                                     };

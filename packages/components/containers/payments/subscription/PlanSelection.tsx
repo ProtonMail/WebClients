@@ -48,9 +48,9 @@ import {
     hasSomeAddonOrPlan,
     hasVisionary,
     isAnyManagedExternally,
-    isCheckForbidden,
     isFreeSubscription,
     isRegionalCurrency,
+    isSubcriptionCheckForbidden,
     mainCurrencies,
     switchPlan,
 } from '@proton/payments';
@@ -180,7 +180,9 @@ function excludingPlansWithAllChecksFordidden(
         const planIDs = { [planName]: 1 };
         const allowedCycles = getAllowedCycles({ subscription, planIDs, currency: subscription.Currency, plansMap });
 
-        const allChecksForbidden = allowedCycles.every((cycle) => isCheckForbidden(subscription, planIDs, cycle));
+        const allChecksForbidden = allowedCycles.every((cycle) =>
+            isSubcriptionCheckForbidden(subscription, planIDs, cycle)
+        );
         return !allChecksForbidden;
     };
 }

@@ -4,7 +4,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { hasPassLifetime, hasPassViaSimpleLogin } from '@proton/shared/lib/user/helpers';
 
-import isCheckAllowed from '../../helpers/isCheckAllowed';
+import isSubscriptionCheckAllowed from '../../helpers/isSubscriptionCheckAllowed';
 import OfferSubscription from '../../helpers/offerSubscription';
 import type { OfferConfig } from '../../interface';
 
@@ -22,7 +22,7 @@ export const getIsEligible = ({ user, subscription, protonConfig, offerConfig }:
 
     if (subscription) {
         const offerSubscription = new OfferSubscription(subscription);
-        if (offerSubscription.usedBackToSchoolPromo() || !isCheckAllowed(subscription, offerConfig)) {
+        if (offerSubscription.usedBackToSchoolPromo() || !isSubscriptionCheckAllowed(subscription, offerConfig)) {
             return false;
         }
     }

@@ -1,7 +1,8 @@
 import { ADDON_NAMES, CYCLE, PLANS } from './constants';
-import type { Cycle, PlanIDs } from './interface';
+import type { Cycle, PlanIDs, Pricing } from './interface';
+import { isLifetimePlan, isMultiUserPersonalPlan } from './plan/helpers';
 import type { Plan, PlansMap } from './plan/interface';
-import { isLifetimePlan } from './subscription/helpers';
+import { allCycles, customCycles } from './subscription/helpers';
 
 export const INCLUDED_IP_PRICING = {
     [CYCLE.MONTHLY]: 4999,
@@ -39,13 +40,6 @@ export function getPrice(planIDs: PlanIDs, cycle: CYCLE, plansMap: PlansMap): nu
         const price = getPricePerCycle(plan, cycle) ?? 0;
         return acc + price * quantity;
     }, 0);
-}
-
-export function isMultiUserPersonalPlan(plan: Plan) {
-    // even though Duo, Family, Visionary, and Pass Family plans can have up to 6 users in the org,
-    // for the price displaying purposes we count it as 1 member.
-    const plans = [PLANS.DUO, PLANS.FAMILY, PLANS.VISIONARY, PLANS.PASS_FAMILY];
-    return plans.includes(plan.Name as PLANS);
 }
 
 export function getPricePerMember(plan: Plan, cycle: CYCLE): number {
@@ -117,3 +111,51 @@ export function getPriceStartsFromPerMonth(plan: Plan, cycle: Cycle, plansMap: P
 
     return price / cycle;
 }
+
+export function getPricingPerMember(plan: Plan): Pricing {
+    return allCycles.reduce((acc, cycle) => {
+        acc[cycle] = getPricePerMember(plan, cycle);
+
+        // If the plan doesn't have custom cycles, we need to remove it from the resulting Pricing object
+        const isNonDefinedCycle = acc[cycle] === undefined || acc[cycle] === null || acc[cycle] === 0;
+        if (customCycles.includes(cycle) && isNonDefinedCycle) {
+            delete acc[cycle];
+        }
+
+        return acc;
+    }, {} as Pricing);
+}
+
+interface OfferResult {
+    pricing: Pricing;
+    cycles: CYCLE[];
+    valid: boolean;
+}
+
+export const getPlanOffer = (plan: Plan) => {
+    const result = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].reduce<OfferResult>(
+        (acc, cycle) => {
+            acc.pricing[cycle] = (plan.DefaultPricing?.[cycle] ?? 0) - (getPricePerCycle(plan, cycle) ?? 0);
+            return acc;
+        },
+        {
+            valid: false,
+            cycles: [],
+            pricing: {
+                [CYCLE.MONTHLY]: 0,
+                [CYCLE.YEARLY]: 0,
+                [CYCLE.THREE]: 0,
+                [CYCLE.TWO_YEARS]: 0,
+                [CYCLE.FIFTEEN]: 0,
+                [CYCLE.EIGHTEEN]: 0,
+                [CYCLE.THIRTY]: 0,
+            },
+        }
+    );
+    const sortedResults = (Object.entries(result.pricing) as unknown as [CYCLE, number][]).sort((a, b) => b[1] - a[1]);
+    result.cycles = sortedResults.map(([cycle]) => cycle);
+    if (sortedResults[0][1] > 0) {
+        result.valid = true;
+    }
+    return result;
+};
