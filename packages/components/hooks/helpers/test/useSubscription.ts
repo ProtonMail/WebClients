@@ -1,4 +1,4 @@
-import { CYCLE, PLANS, type Subscription, getSubscription } from '@proton/payments';
+import { CYCLE, PLANS, type Subscription } from '@proton/payments';
 import formatSubscription from '@proton/shared/lib/subscription/format';
 import { addApiMock } from '@proton/testing';
 import { buildSubscription } from '@proton/testing/builders';
@@ -18,7 +18,7 @@ export const subscriptionDefaultResponse: {
 };
 
 export function mockSubscriptionApi(subscription: typeof subscriptionDefaultResponse = subscriptionDefaultResponse) {
-    addApiMock(getSubscription().url, () => subscription);
+    addApiMock('payments/v5/subscription', () => subscription);
 }
 
 export const defaultSubscriptionCache = formatSubscription(
