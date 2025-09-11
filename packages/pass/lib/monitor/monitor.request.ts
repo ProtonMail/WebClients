@@ -9,7 +9,7 @@ import type {
     BreachesResponse,
     UpdateUserMonitorStateRequest,
 } from '@proton/pass/types/api/pass';
-import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
+import type { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 
 /** Toggle the ProtonSentinel setting */
 export const toggleSentinel = (value: SETTINGS_PROTON_SENTINEL_STATE) =>
