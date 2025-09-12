@@ -189,7 +189,11 @@ const IncomingTable = ({
                         <TableHeaderCell key={title} className={className}>
                             <div className="flex items-center flex-nowrap">
                                 {title}
-                                {info && <Info className="ml-2 shrink-0" title={info} />}
+                                {info && (
+                                    <span className="ml-2 inline-flex">
+                                        <Info className="shrink-0" title={info} />
+                                    </span>
+                                )}
                             </div>
                         </TableHeaderCell>
                     ))}
