@@ -4,18 +4,18 @@ import type {} from 'react'
 import { type ComponentPropsWithoutRef, forwardRef, useEffect, useRef } from 'react'
 import { c } from 'ttag'
 import { ZOOM_DEFAULT, ZOOM_MAX, ZOOM_MIN, ZOOM_SUGGESTIONS } from '../../constants'
-import { useStringifier } from '../../stringifier'
-import type { ProtonSheetsUIState } from '../../ui-state'
+import { createStringifier } from '../../stringifier'
 import * as UI from '../ui'
+import { useUI } from '../../ui-store'
 
-export interface ZoomComboboxProps extends ComponentPropsWithoutRef<'div'> {
-  ui: ProtonSheetsUIState
-}
+const { s } = createStringifier(strings)
 
-export const ZoomCombobox = forwardRef<HTMLDivElement, ZoomComboboxProps>(function ZoomCombobox({ ui, ...props }, ref) {
-  const s = useStrings()
-  const realValue = ui.zoom.value ?? ZOOM_DEFAULT
+export interface ZoomComboboxProps extends ComponentPropsWithoutRef<'div'> {}
+
+export const ZoomCombobox = forwardRef<HTMLDivElement, ZoomComboboxProps>(function ZoomCombobox(props, ref) {
+  const realValue = useUI((ui) => ui.zoom.value) ?? ZOOM_DEFAULT
   const comboboxRef = useRef<HTMLInputElement>(null)
+  const setZoom = useUI.$.zoom.set
 
   function commitValue(combobox: Ariakit.ComboboxStore) {
     if (!combobox) {
@@ -30,7 +30,7 @@ export const ZoomCombobox = forwardRef<HTMLDivElement, ZoomComboboxProps>(functi
     const roundedValue = Math.round(value)
     const scaleValue = zoomToScale(roundedValue)
     const clippedValue = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, scaleValue))
-    ui.zoom.set(clippedValue)
+    setZoom(clippedValue)
   }
 
   // Create a combobox store with a few custom behaviors.
@@ -69,7 +69,7 @@ export const ZoomCombobox = forwardRef<HTMLDivElement, ZoomComboboxProps>(functi
     setSelectedValue(value) {
       if (value) {
         commitValue(combobox)
-        queueMicrotask(ui.focusGrid)
+        queueMicrotask(useUI.$.focusGrid)
       }
     },
   })
@@ -111,7 +111,7 @@ export const ZoomCombobox = forwardRef<HTMLDivElement, ZoomComboboxProps>(functi
                       if (event.key === 'Enter') {
                         commitValue(combobox)
                         preventDefault = true
-                        ui.focusGrid()
+                        useUI.$.focusGrid()
                       }
 
                       // On escape, reset the value to the real value.
@@ -179,8 +179,8 @@ function scaleToPercentage(scale: number) {
   return `${scaleToZoom(scale)}%`
 }
 
-function useStrings() {
-  return useStringifier(() => ({
+function strings() {
+  return {
     Zoom: c('sheets_2025:Spreadsheet editor toolbar').t`Zoom`,
-  }))
+  }
 }

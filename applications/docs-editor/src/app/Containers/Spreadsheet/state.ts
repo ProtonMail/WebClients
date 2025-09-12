@@ -57,6 +57,7 @@ type LocalState = {
 function getValueFromUpdateAction<T>(updateAction: UpdateAction<T>, prevValue: T): T {
   return typeof updateAction === 'function' ? (updateAction as (state: T) => T)(prevValue) : updateAction
 }
+// TODO: this shouldn't be a singleton
 const useLocalSpreadsheetState = create<LocalState>()((set) => ({
   sheets: [],
   sheetData: {},
@@ -212,6 +213,7 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
 
+// TODO: refactor into a lazy approach to avoid perf issues
 export function useLogState(state: ProtonSheetsState, updateLatestStateToLog: (stateToLog: unknown) => void) {
   const getStateToLog = useCallback(
     () => ({
