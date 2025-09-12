@@ -169,6 +169,8 @@ export enum TelemetryAccountSecurityCheckupEvents {
     completeRecoveryMultiple = 'cohort_change.complete_recovery_multiple',
     completeRecoverySingle = 'cohort_change.complete_recovery_single',
     accountRecoveryEnabled = 'cohort_change.account_recovery_enabled',
+    completeRecoverySentinel = 'cohort_change.complete_recovery_sentinel',
+    sentinelRecommendations = 'cohort_change.sentinel_recommendations',
 }
 
 export enum TelemetryAccountDashboardEvents {
