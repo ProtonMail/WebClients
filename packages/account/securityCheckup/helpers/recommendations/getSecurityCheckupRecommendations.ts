@@ -7,11 +7,15 @@ import {
     getIsPerfectPhraseState,
 } from '@proton/shared/lib/helpers/securityCheckup';
 import type { SecurityCheckupAction } from '@proton/shared/lib/interfaces/securityCheckup';
-import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import { SecurityCheckupCohort } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 import type SecurityState from '@proton/shared/lib/interfaces/securityCheckup/SecurityState';
 
-class Actions {
-    private actionsSet: Set<SecurityCheckupAction>;
+import { AbstractActions, type IActions } from './Actions';
+import type SecurityCheckupHealth from './SecurityCheckupHealth';
+import getSentinelSecurityCheckupRecommendations from './getSentinelSecurityCheckupRecommendations';
+
+class Actions extends AbstractActions implements IActions {
+    public actionsSet: Set<SecurityCheckupAction>;
 
     private securityState: SecurityState;
 
@@ -26,6 +30,8 @@ class Actions {
     public shouldActionDevice: boolean;
 
     constructor(securityState: SecurityState) {
+        super();
+
         this.actionsSet = new Set<SecurityCheckupAction>();
 
         this.securityState = securityState;
@@ -51,13 +57,13 @@ class Actions {
 
     public email() {
         if (!this.isPerfectEmailState) {
-            this.actionsSet.add('email');
+            this.actionsSet.add('set-email');
         }
     }
 
     public phone() {
         if (!this.isPerfectPhoneState) {
-            this.actionsSet.add('phone');
+            this.actionsSet.add('set-phone');
         }
     }
 
@@ -75,19 +81,13 @@ class Actions {
             this.actionsSet.add('device');
         }
     }
-
-    public toArray() {
-        return Array.from(this.actionsSet);
-    }
-}
-
-interface SecurityCheckupHealth {
-    cohort: SecurityCheckupCohort;
-    actions: SecurityCheckupAction[];
-    furtherActions: SecurityCheckupAction[];
 }
 
 const getSecurityCheckupRecommendations = (securityState: SecurityState): SecurityCheckupHealth => {
+    if (securityState.hasSentinelEnabled) {
+        return getSentinelSecurityCheckupRecommendations(securityState);
+    }
+
     const isPerfectPhraseState = getIsPerfectPhraseState(securityState);
 
     const isPerfectEmailState = getIsPerfectEmailState(securityState);
@@ -108,7 +108,7 @@ const getSecurityCheckupRecommendations = (securityState: SecurityState): Securi
         actions,
         furtherActions,
     }: {
-        cohort: SecurityCheckupCohort;
+        cohort: SecurityCheckupCohort.Common | SecurityCheckupCohort.Default;
         actions: Actions;
         furtherActions: Actions;
     }) => {
@@ -127,7 +127,7 @@ const getSecurityCheckupRecommendations = (securityState: SecurityState): Securi
         furtherActions.emailOrPhone();
 
         return serialize({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_MULTIPLE,
+            cohort: SecurityCheckupCohort.Common.COMPLETE_RECOVERY,
             actions,
             furtherActions,
         });
@@ -140,7 +140,7 @@ const getSecurityCheckupRecommendations = (securityState: SecurityState): Securi
         actions.emailOrPhone();
 
         return serialize({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE,
+            cohort: SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE,
             actions,
             furtherActions,
         });
@@ -152,7 +152,7 @@ const getSecurityCheckupRecommendations = (securityState: SecurityState): Securi
         furtherActions.emailOrPhone();
 
         return serialize({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE,
+            cohort: SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE,
             actions,
             furtherActions,
         });
@@ -164,7 +164,7 @@ const getSecurityCheckupRecommendations = (securityState: SecurityState): Securi
         furtherActions.emailOrPhone();
 
         return serialize({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE,
+            cohort: SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE,
             actions,
             furtherActions,
         });
@@ -180,7 +180,7 @@ const getSecurityCheckupRecommendations = (securityState: SecurityState): Securi
         furtherActions.emailOrPhone();
 
         return serialize({
-            cohort: SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED,
+            cohort: SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED,
             actions,
             furtherActions,
         });
@@ -209,7 +209,7 @@ const getSecurityCheckupRecommendations = (securityState: SecurityState): Securi
     }
 
     return serialize({
-        cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+        cohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
         actions,
         furtherActions,
     });

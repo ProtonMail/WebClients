@@ -6,11 +6,13 @@ export default interface SecurityState {
     };
     email: {
         value?: string;
+        // always false when there is no value
         isEnabled: boolean;
         verified: boolean;
     };
     phone: {
         value?: string;
+        // always false when there is no value
         isEnabled: boolean;
         verified: boolean;
     };
@@ -18,4 +20,5 @@ export default interface SecurityState {
         isAvailable: boolean;
         isEnabled: boolean;
     };
+    hasSentinelEnabled: boolean;
 }

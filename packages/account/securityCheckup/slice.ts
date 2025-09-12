@@ -7,18 +7,21 @@ import type {
     SecurityCheckupSession,
     SecurityCheckupSource,
 } from '@proton/shared/lib/interfaces/securityCheckup';
-import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import {
+    SecurityCheckupCohort,
+    type SecurityCheckupCohortType,
+} from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 import type SecurityState from '@proton/shared/lib/interfaces/securityCheckup/SecurityState';
 
 import getBackLink from './helpers/getBackLink';
-import getSecurityCheckupRecommendations from './helpers/getSecurityCheckupRecommendations';
 import getValidSecurityCheckupSession from './helpers/getValidSecurityCheckupSession';
+import getSecurityCheckupRecommendations from './helpers/recommendations/getSecurityCheckupRecommendations';
 
 const name = 'securityCheckup' as const;
 
 interface SecurityCheckupState {
     securityState: SecurityState;
-    cohort: SecurityCheckupCohort | undefined;
+    cohort: SecurityCheckupCohortType | undefined;
     session: SecurityCheckupSession | undefined;
     actions: SecurityCheckupAction[];
     furtherActions: SecurityCheckupAction[];
@@ -52,6 +55,7 @@ const initialState: SecurityCheckupState = {
             isAvailable: false,
             isEnabled: false,
         },
+        hasSentinelEnabled: false,
     },
     loading: true,
     cohort: undefined,
@@ -103,7 +107,7 @@ export const securityCheckupSlice = createSlice({
 
             state.session = getValidSecurityCheckupSession({
                 currentSession: session,
-                currentCohort: state.cohort || SecurityCheckupCohort.NO_RECOVERY_METHOD,
+                currentCohort: state.cohort || SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
             });
         },
         clearSession: (state) => {

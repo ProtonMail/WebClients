@@ -1,4 +1,4 @@
-import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import { SecurityCheckupCohort } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 import type SecurityState from '@proton/shared/lib/interfaces/securityCheckup/SecurityState';
 
 import getSecurityCheckupRecommendations from './getSecurityCheckupRecommendations';
@@ -23,6 +23,7 @@ const defaultSecurityState: SecurityState = {
         isAvailable: true,
         isEnabled: false,
     },
+    hasSentinelEnabled: false,
 };
 
 const perfectPhrase: Pick<SecurityState, 'phrase'> = {
@@ -70,7 +71,7 @@ describe('Multi recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_MULTIPLE,
+            cohort: SecurityCheckupCohort.Common.COMPLETE_RECOVERY,
             actions: [],
             furtherActions: [],
         });
@@ -88,9 +89,9 @@ describe('Multi recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_MULTIPLE,
+            cohort: SecurityCheckupCohort.Common.COMPLETE_RECOVERY,
             actions: [],
-            furtherActions: ['phone'],
+            furtherActions: ['set-phone'],
         });
     });
 
@@ -106,9 +107,9 @@ describe('Multi recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_MULTIPLE,
+            cohort: SecurityCheckupCohort.Common.COMPLETE_RECOVERY,
             actions: [],
-            furtherActions: ['email'],
+            furtherActions: ['set-email'],
         });
     });
 });
@@ -124,8 +125,8 @@ describe('Single recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE,
-            actions: ['email', 'phone'],
+            cohort: SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE,
+            actions: ['set-email', 'set-phone'],
             furtherActions: [],
         });
     });
@@ -141,9 +142,9 @@ describe('Single recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE,
+            cohort: SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE,
             actions: ['device'],
-            furtherActions: ['phone'],
+            furtherActions: ['set-phone'],
         });
     });
 
@@ -158,9 +159,9 @@ describe('Single recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE,
+            cohort: SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE,
             actions: ['device'],
-            furtherActions: ['email'],
+            furtherActions: ['set-email'],
         });
     });
 
@@ -176,7 +177,7 @@ describe('Single recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE,
+            cohort: SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE,
             actions: ['device'],
             furtherActions: [],
         });
@@ -193,9 +194,9 @@ describe('Single recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE,
+            cohort: SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE,
             actions: ['phrase'],
-            furtherActions: ['phone'],
+            furtherActions: ['set-phone'],
         });
     });
 
@@ -210,9 +211,9 @@ describe('Single recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE,
+            cohort: SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE,
             actions: ['phrase'],
-            furtherActions: ['email'],
+            furtherActions: ['set-email'],
         });
     });
 });
@@ -229,7 +230,7 @@ describe('Account recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED,
+            cohort: SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED,
             actions: ['device'],
             furtherActions: ['phrase'],
         });
@@ -245,9 +246,9 @@ describe('Account recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED,
+            cohort: SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED,
             actions: ['device'],
-            furtherActions: ['phrase', 'phone'],
+            furtherActions: ['phrase', 'set-phone'],
         });
     });
 
@@ -261,9 +262,9 @@ describe('Account recovery', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED,
+            cohort: SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED,
             actions: ['device'],
-            furtherActions: ['phrase', 'email'],
+            furtherActions: ['phrase', 'set-email'],
         });
     });
 });
@@ -273,9 +274,9 @@ describe('No recovery method', () => {
         const result = getSecurityCheckupRecommendations(defaultSecurityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+            cohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
             actions: ['phrase'],
-            furtherActions: ['email', 'phone'],
+            furtherActions: ['set-email', 'set-phone'],
         });
     });
 
@@ -289,9 +290,9 @@ describe('No recovery method', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+            cohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
             actions: ['phrase'],
-            furtherActions: ['email', 'phone'],
+            furtherActions: ['set-email', 'set-phone'],
         });
     });
 
@@ -310,9 +311,9 @@ describe('No recovery method', () => {
             const result = getSecurityCheckupRecommendations(securityState);
 
             expect(result).toEqual({
-                cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
-                actions: ['email', 'phrase'],
-                furtherActions: ['phone'],
+                cohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
+                actions: ['set-email', 'phrase'],
+                furtherActions: ['set-phone'],
             });
         });
 
@@ -330,9 +331,9 @@ describe('No recovery method', () => {
             const result = getSecurityCheckupRecommendations(securityState);
 
             expect(result).toEqual({
-                cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
-                actions: ['email', 'phrase'],
-                furtherActions: ['phone'],
+                cohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
+                actions: ['set-email', 'phrase'],
+                furtherActions: ['set-phone'],
             });
         });
     });
@@ -352,9 +353,9 @@ describe('No recovery method', () => {
             const result = getSecurityCheckupRecommendations(securityState);
 
             expect(result).toEqual({
-                cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
-                actions: ['phone', 'phrase'],
-                furtherActions: ['email'],
+                cohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
+                actions: ['set-phone', 'phrase'],
+                furtherActions: ['set-email'],
             });
         });
 
@@ -372,9 +373,9 @@ describe('No recovery method', () => {
             const result = getSecurityCheckupRecommendations(securityState);
 
             expect(result).toEqual({
-                cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
-                actions: ['phone', 'phrase'],
-                furtherActions: ['email'],
+                cohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
+                actions: ['set-phone', 'phrase'],
+                furtherActions: ['set-email'],
             });
         });
     });
@@ -394,9 +395,9 @@ describe('Availability', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+            cohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
             actions: [],
-            furtherActions: ['email', 'phone'],
+            furtherActions: ['set-email', 'set-phone'],
         });
     });
 
@@ -415,7 +416,7 @@ describe('Availability', () => {
         const result = getSecurityCheckupRecommendations(securityState);
 
         expect(result).toEqual({
-            cohort: SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED,
+            cohort: SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED,
             actions: [],
             furtherActions: ['phrase'],
         });
