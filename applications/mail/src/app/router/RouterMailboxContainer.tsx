@@ -45,7 +45,7 @@ export const RouterMailboxContainer = () => {
     const actions = useElementActions({ params, navigation, elementsData });
 
     const [user] = useUser();
-    const { isColumnModeActive, messageContainerRef, mainAreaRef, listContainerRef } = useMailboxLayoutProvider();
+    const { isColumnModeActive, messageContainerRef, mainAreaRef, scrollContainerRef } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
     const { selectedIDs } = actions;
@@ -76,7 +76,13 @@ export const RouterMailboxContainer = () => {
     const searchParams = getSearchParams(location.hash);
     const sort = useMemo<Sort>(() => sortFromUrl(location, labelID), [searchParams.sort, labelID]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
-    useScrollToTop(listContainerRef as RefObject<HTMLElement>, [urlPage, labelID, sort, filter, elementsParams.search]);
+    useScrollToTop(scrollContainerRef as RefObject<HTMLElement>, [
+        urlPage,
+        labelID,
+        sort,
+        filter,
+        elementsParams.search,
+    ]);
     const breakpoints = useActiveBreakpoint();
 
     if (!labelID) {

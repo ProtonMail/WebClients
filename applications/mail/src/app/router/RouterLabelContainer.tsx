@@ -80,6 +80,7 @@ export const RouterLabelContainer = ({
         labelDropdownToggleRef,
         resizeAreaRef,
         moveDropdownToggleRef,
+        scrollContainerRef,
     } = useMailboxLayoutProvider();
 
     const composersCount = useMailSelector(selectComposersCount);
@@ -218,6 +219,7 @@ export const RouterLabelContainer = ({
                         </>
                     }
                     listRef={listRef}
+                    scrollContainerRef={scrollContainerRef}
                     noBorder={hasRowMode || !showContentPanel}
                     setFocusID={setFocusID}
                 />

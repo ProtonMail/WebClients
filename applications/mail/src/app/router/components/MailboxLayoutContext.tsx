@@ -14,6 +14,7 @@ export interface MailboxProviderProps {
     mainAreaRef: RefObject<HTMLDivElement>;
     resizeAreaRef: RefObject<HTMLButtonElement>;
     listContainerRef: RefObject<HTMLDivElement>;
+    scrollContainerRef: RefObject<HTMLDivElement>;
     messageContainerRef: RefObject<HTMLElement>;
     isColumnModeActive: boolean;
     isColumnLayoutPreferred: boolean;
@@ -38,6 +39,7 @@ export const MailboxLayoutProvider = ({ children }: PropsWithChildren) => {
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const resizeAreaRef = useRef<HTMLButtonElement>(null);
     const listContainerRef = useRef<HTMLDivElement>(null);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
 
     const [mailSettings] = useMailSettings();
     const breakpoints = useActiveBreakpoint();
@@ -59,6 +61,7 @@ export const MailboxLayoutProvider = ({ children }: PropsWithChildren) => {
                 mainAreaRef,
                 resizeAreaRef,
                 listContainerRef,
+                scrollContainerRef,
                 isColumnModeActive: isColumnMode(mailSettings) && !forceRowMode,
                 isColumnLayoutPreferred: isColumnMode(mailSettings) || forceRowMode,
                 isConversationGroupingEnabled,
