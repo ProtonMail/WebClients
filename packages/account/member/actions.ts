@@ -26,7 +26,7 @@ import {
     validateUnprivatizationData,
 } from '@proton/shared/lib/keys';
 
-import { addressKeysThunk } from '../addressKeys';
+import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
 import { type AddressesState, addressesThunk } from '../addresses';
 import { type InactiveKeysState, selectInactiveKeys } from '../inactiveKeys';
 import type { KtState } from '../kt';
@@ -96,8 +96,20 @@ export const deleteAllInactiveKeys = ({
     api,
 }: {
     api: Api;
-}): ThunkAction<Promise<boolean>, AddressesState & InactiveKeysState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<
+    Promise<boolean>,
+    AddressesState & AddressKeysState & InactiveKeysState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch, getState) => {
+        const addressesToDecrypt = await dispatch(addressesThunk());
+        await Promise.all(
+            addressesToDecrypt.map(async (address) => {
+                await dispatch(addressKeysThunk({ addressID: address.ID }));
+            })
+        );
+
         const inactiveKeys = selectInactiveKeys(getState());
 
         const inactiveUserKeys = inactiveKeys.user;
