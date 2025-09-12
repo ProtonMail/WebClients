@@ -4,7 +4,7 @@ import type { DecryptedLink, useActions } from '../../../../store';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
-    selectedLink: DecryptedLink;
+    selectedLink: Pick<DecryptedLink, 'sharingDetails'>;
     //TODO: Migrate to sdk stopSharing
     stopSharing: ReturnType<typeof useActions>['stopSharing'];
     close: () => void;
