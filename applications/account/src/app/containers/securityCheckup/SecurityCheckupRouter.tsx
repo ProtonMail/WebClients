@@ -13,9 +13,11 @@ import { useAccountDispatch } from '../../store/hooks';
 import SecurityCheckupLayout from './components/SecurityCheckupLayout';
 import SecurityCheckupRoot from './routes/SecurityCheckupRoot';
 import EnableDeviceRecoveryContainer from './routes/device/EnableDeviceRecoveryContainer';
+import DisableEmailContainer from './routes/email/DisableEmailContainer';
 import EnableEmailContainer from './routes/email/EnableEmailContainer';
 import SetEmailContainer from './routes/email/SetEmailContainer';
 import VerifyEmailContainer from './routes/email/VerifyEmailContainer';
+import DisablePhoneContainer from './routes/phone/DisablePhoneContainer';
 import EnablePhoneContainer from './routes/phone/EnablePhoneContainer';
 import SetPhoneContainer from './routes/phone/SetPhoneContainer';
 import VerifyPhoneContainer from './routes/phone/VerifyPhoneContainer';
@@ -68,6 +70,11 @@ const SecurityCheckupRouter = () => {
                     <EnableEmailContainer />
                 </SecurityCheckupLayout>
             </Route>
+            <Route exact path={SECURITY_CHECKUP_PATHS.DISABLE_EMAIL}>
+                <SecurityCheckupLayout>
+                    <DisableEmailContainer />
+                </SecurityCheckupLayout>
+            </Route>
 
             <Route exact path={SECURITY_CHECKUP_PATHS.SET_PHONE}>
                 <SecurityCheckupLayout>
@@ -82,6 +89,12 @@ const SecurityCheckupRouter = () => {
             <Route exact path={SECURITY_CHECKUP_PATHS.ENABLE_PHONE}>
                 <SecurityCheckupLayout>
                     <EnablePhoneContainer />
+                </SecurityCheckupLayout>
+            </Route>
+
+            <Route exact path={SECURITY_CHECKUP_PATHS.DISABLE_PHONE}>
+                <SecurityCheckupLayout>
+                    <DisablePhoneContainer />
                 </SecurityCheckupLayout>
             </Route>
 

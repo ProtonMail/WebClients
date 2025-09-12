@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { userSettingsActions } from '@proton/account/userSettings';
+import { userSettingsActions, userSettingsThunk } from '@proton/account/userSettings';
 import type { Input } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
@@ -14,7 +14,9 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
-import { updateEmail } from '@proton/shared/lib/api/settings';
+import { CacheType } from '@proton/redux-utilities';
+import { updateEmail, updateResetEmail } from '@proton/shared/lib/api/settings';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
@@ -95,7 +97,15 @@ const RecoveryEmail = ({
                 PersistPasswordScope: persistPasswordScope,
             })
         );
+
         dispatch(userSettingsActions.set({ UserSettings }));
+
+        // TODO: temporarily included until BE takes care of it
+        if (UserSettings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED) {
+            await api(updateResetEmail({ Reset: 0, PersistPasswordScope: persistPasswordScope }));
+            await dispatch(userSettingsThunk({ cache: CacheType.None }));
+        }
+
         createNotification({ text: c('Success').t`Email updated` });
         onSuccess?.();
     };

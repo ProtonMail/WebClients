@@ -1,7 +1,7 @@
 import { add } from 'date-fns';
 
 import type { SecurityCheckupSession } from '@proton/shared/lib/interfaces/securityCheckup';
-import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import { SecurityCheckupCohort } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 
 import getValidSecurityCheckupSession from './getValidSecurityCheckupSession';
 
@@ -11,7 +11,7 @@ jest.useFakeTimers().setSystemTime(today);
 describe('getValidSecurityCheckupSession', () => {
     test('returns new session if current session is undefined', () => {
         const currentSession = undefined;
-        const currentCohort = SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED;
+        const currentCohort = SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED;
 
         const result = getValidSecurityCheckupSession({ currentSession, currentCohort });
 
@@ -24,12 +24,12 @@ describe('getValidSecurityCheckupSession', () => {
 
     test('returns current session if it has not expired', () => {
         const currentSession: SecurityCheckupSession = {
-            initialCohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+            initialCohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
             createdTimestamp: add(today, {
                 hours: -1,
             }).getTime(),
         };
-        const currentCohort = SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED;
+        const currentCohort = SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED;
 
         const result = getValidSecurityCheckupSession({ currentSession, currentCohort });
 
@@ -38,13 +38,13 @@ describe('getValidSecurityCheckupSession', () => {
 
     test('returns new session if current session has expired', () => {
         const currentSession: SecurityCheckupSession = {
-            initialCohort: SecurityCheckupCohort.NO_RECOVERY_METHOD,
+            initialCohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
             createdTimestamp: add(today, {
                 hours: -1,
                 seconds: -1,
             }).getTime(),
         };
-        const currentCohort = SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED;
+        const currentCohort = SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED;
 
         const result = getValidSecurityCheckupSession({ currentSession, currentCohort });
 
