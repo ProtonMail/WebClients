@@ -1,4 +1,4 @@
-import type { CYCLE, PLANS } from '@proton/payments';
+import type { BillingAddress, CYCLE, PLANS } from '@proton/payments';
 
 import type { ReferralData } from '../../interfaces';
 
@@ -76,12 +76,20 @@ const getPlanData = (plan: ReferralRegistrationPlan | undefined) => {
     };
 };
 
+export interface ReferralRegistrationSubscription {
+    paymentToken: string;
+    billingAddress: BillingAddress;
+    code?: string;
+}
+
 export const postReferralRegistration = ({
     plan,
     referralData,
+    referralRegistrationSubscription,
 }: {
     plan: ReferralRegistrationPlan | undefined;
     referralData: ReferralData;
+    referralRegistrationSubscription: ReferralRegistrationSubscription | undefined;
 }) => ({
     method: 'post',
     url: `core/v4/referrals/register`,
@@ -89,5 +97,8 @@ export const postReferralRegistration = ({
         ...getPlanData(plan),
         ReferralIdentifier: referralData.referralIdentifier,
         ReferralID: referralData.referralID,
+        PaymentToken: referralRegistrationSubscription?.paymentToken,
+        BillingAddress: referralRegistrationSubscription?.billingAddress,
+        Codes: referralRegistrationSubscription?.code ? [referralRegistrationSubscription.code] : undefined,
     },
 });
