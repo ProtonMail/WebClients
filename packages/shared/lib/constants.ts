@@ -423,9 +423,11 @@ export const SECURITY_CHECKUP_PATHS = {
     SET_EMAIL: '/safety-review/email',
     VERIFY_EMAIL: '/safety-review/email/verify',
     ENABLE_EMAIL: '/safety-review/email/enable',
+    DISABLE_EMAIL: '/safety-review/email/disable',
     SET_PHONE: '/safety-review/phone',
     VERIFY_PHONE: '/safety-review/phone/verify',
     ENABLE_PHONE: '/safety-review/phone/enable',
+    DISABLE_PHONE: '/safety-review/phone/disable',
     ENABLE_DEVICE_RECOVERY: '/safety-review/device',
 };
 

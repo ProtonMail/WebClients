@@ -50,7 +50,7 @@ const PhraseAction = () => {
     );
 };
 
-const EmailAction = () => {
+const SetEmailAction = () => {
     const { securityState } = useSecurityCheckup();
     const { email } = securityState;
     const isPerfectEmailState = getIsPerfectEmailState(securityState);
@@ -100,7 +100,55 @@ const EmailAction = () => {
     return null;
 };
 
-const PhoneAction = () => {
+const SentinelEmailRecoveryAction = () => {
+    const { securityState } = useSecurityCheckup();
+    const { email } = securityState;
+
+    const history = useHistory();
+
+    if (!email.value) {
+        return (
+            <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.SET_EMAIL)}>
+                <SecurityCheckupCardButtonInner
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="danger" />}
+                    title={c('Safety review').t`Add a email address`}
+                    subTitle={
+                        // TODO: copy: intend to convey x
+                        c('Safety review').t`To stay in touch`
+                    }
+                />
+            </SecurityCheckupCardButton>
+        );
+    }
+
+    if (email.isEnabled) {
+        return (
+            <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.DISABLE_EMAIL)}>
+                <SecurityCheckupCardButtonInner
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="danger" />}
+                    title={c('Safety review').t`Disable recovery by email`}
+                    subTitle={c('Safety review').t`to ensure highest possible security of your account`}
+                />
+            </SecurityCheckupCardButton>
+        );
+    }
+
+    if (!email.verified) {
+        return (
+            <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.VERIFY_EMAIL)}>
+                <SecurityCheckupCardButtonInner
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="warning" />}
+                    title={c('Safety review').t`Verify your email address`}
+                    subTitle={email.value}
+                />
+            </SecurityCheckupCardButton>
+        );
+    }
+
+    return null;
+};
+
+const SetPhoneAction = () => {
     const { securityState } = useSecurityCheckup();
     const { phone } = securityState;
     const isPerfectPhoneState = getIsPerfectPhoneState(securityState);
@@ -152,6 +200,56 @@ const PhoneAction = () => {
     return null;
 };
 
+const SentinelPhoneRecoveryAction = () => {
+    const { securityState } = useSecurityCheckup();
+    const { phone } = securityState;
+
+    const history = useHistory();
+
+    if (!phone.value) {
+        return (
+            <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.SET_PHONE)}>
+                <SecurityCheckupCardButtonInner
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="danger" />}
+                    title={c('Safety review').t`Add a phone number`}
+                    subTitle={
+                        // TODO: copy: intend to convey x
+                        c('Safety review').t`To stay in touch`
+                    }
+                />
+            </SecurityCheckupCardButton>
+        );
+    }
+
+    const formattedPhoneNumber = <FormattedPhoneValue value={phone.value} />;
+
+    if (phone.isEnabled) {
+        return (
+            <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.DISABLE_PHONE)}>
+                <SecurityCheckupCardButtonInner
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="danger" />}
+                    title={c('Safety review').t`Disable recovery by phone`}
+                    subTitle={formattedPhoneNumber}
+                />
+            </SecurityCheckupCardButton>
+        );
+    }
+
+    if (!phone.verified) {
+        return (
+            <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.VERIFY_PHONE)}>
+                <SecurityCheckupCardButtonInner
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="warning" />}
+                    title={c('Safety review').t`Verify your phone number`}
+                    subTitle={formattedPhoneNumber}
+                />
+            </SecurityCheckupCardButton>
+        );
+    }
+
+    return null;
+};
+
 const DeviceAction = () => {
     const { securityState } = useSecurityCheckup();
     const { deviceRecovery } = securityState;
@@ -185,12 +283,19 @@ const Actions = ({ actions }: { actions: SecurityCheckupAction[] }) => {
                     return <PhraseAction key="phrase-action" />;
                 }
 
-                if (action === 'email') {
-                    return <EmailAction key="email-action" />;
+                if (action === 'set-email') {
+                    return <SetEmailAction key="email-action" />;
+                }
+                if (action === 'sentinel-email') {
+                    return <SentinelEmailRecoveryAction key="email-action" />;
                 }
 
-                if (action === 'phone') {
-                    return <PhoneAction key="phone-action" />;
+                if (action === 'set-phone') {
+                    return <SetPhoneAction key="phone-action" />;
+                }
+
+                if (action === 'sentinel-phone') {
+                    return <SentinelPhoneRecoveryAction key="phone-action" />;
                 }
 
                 if (action === 'device') {

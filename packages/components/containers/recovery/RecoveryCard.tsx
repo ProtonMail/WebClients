@@ -20,7 +20,8 @@ import useRecoveryStatus from '@proton/components/hooks/useRecoveryStatus';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import { SecurityCheckupCohort } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -308,7 +309,7 @@ const SecurityCheckupCard = () => {
 
     const { actions, furtherActions, cohort } = securityCheckup;
 
-    if (cohort === SecurityCheckupCohort.COMPLETE_RECOVERY_MULTIPLE) {
+    if (cohort === SecurityCheckupCohort.Common.COMPLETE_RECOVERY) {
         return (
             <GenericSecurityCheckupCard
                 title={c('Safety review').t`Your account and data can be recovered`}
@@ -322,7 +323,7 @@ const SecurityCheckupCard = () => {
         );
     }
 
-    if (cohort === SecurityCheckupCohort.COMPLETE_RECOVERY_SINGLE) {
+    if (cohort === SecurityCheckupCohort.Default.COMPLETE_RECOVERY_SINGLE) {
         return (
             <GenericSecurityCheckupCard
                 title={c('Safety review').t`Safeguard your account`}
@@ -336,7 +337,7 @@ const SecurityCheckupCard = () => {
         );
     }
 
-    if (cohort === SecurityCheckupCohort.ACCOUNT_RECOVERY_ENABLED) {
+    if (cohort === SecurityCheckupCohort.Default.ACCOUNT_RECOVERY_ENABLED) {
         return (
             <GenericSecurityCheckupCard
                 title={c('Safety review').t`Safeguard your account`}
@@ -352,7 +353,39 @@ const SecurityCheckupCard = () => {
         );
     }
 
-    if (cohort === SecurityCheckupCohort.NO_RECOVERY_METHOD) {
+    if (cohort === SecurityCheckupCohort.Sentinel.COMPLETE_RECOVERY_SENTINEL) {
+        return (
+            <GenericSecurityCheckupCard
+                title={c('Safety review').t`Safeguard your account`}
+                subtitle={c('Safety review').t`Your account and data can be recovered.`}
+                icon="pass-shield-warning"
+                color="info"
+                description={
+                    // TODO: copy:
+                    c('Safety review').t`You have recommended actions to safeguard your account further.`
+                }
+                cta={c('Safety review').t`Safeguard account now`}
+            />
+        );
+    }
+
+    if (cohort === SecurityCheckupCohort.Sentinel.SENTINEL_RECOMMENDATIONS) {
+        return (
+            <GenericSecurityCheckupCard
+                title={c('Safety review').t`Safeguard your account`}
+                subtitle={c('Safety review').t`You have recommended actions.`}
+                icon="pass-shield-warning"
+                color="warning"
+                description={getBoldFormattedText(
+                    // TODO: copy:
+                    c('Safety review').t`You have recommended actions to safeguard your account further.`
+                )}
+                cta={c('Safety review').t`Safeguard account now`}
+            />
+        );
+    }
+
+    if (cohort === SecurityCheckupCohort.Common.NO_RECOVERY_METHOD) {
         return (
             <GenericSecurityCheckupCard
                 title={c('Safety review').t`Safeguard your account`}
@@ -402,6 +435,11 @@ interface RecoveryCardProps {
 const RecoveryCard = ({ ids, canDisplayNewSentinelSettings }: RecoveryCardProps) => {
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
     const isSecurityCheckupAvailable = useIsSecurityCheckupAvailable();
+
+    const isSentineSafetyReviewEnabled = useFlag('SentinelSafetyReview');
+    if (isSentineSafetyReviewEnabled) {
+        return <SecurityCheckupCard />;
+    }
 
     if (loadingIsSentinelUser) {
         return <Loader />;

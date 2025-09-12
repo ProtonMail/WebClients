@@ -2,7 +2,7 @@ import { isValid } from 'date-fns';
 
 import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
 import type { SecurityCheckupSession } from '@proton/shared/lib/interfaces/securityCheckup';
-import type SecurityCheckupCohort from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
+import type { SecurityCheckupCohortType } from '@proton/shared/lib/interfaces/securityCheckup/SecurityCheckupCohort';
 
 const getSecurityCheckupSessionStorageId = (userId: string) => `SC:${userId}:session`;
 
@@ -27,7 +27,7 @@ export const getSecurityCheckupSessionItem = (userId: string): SecurityCheckupSe
         }
 
         return {
-            initialCohort: initialCohort as SecurityCheckupCohort,
+            initialCohort: initialCohort as SecurityCheckupCohortType,
             createdTimestamp,
         };
     } catch (error) {

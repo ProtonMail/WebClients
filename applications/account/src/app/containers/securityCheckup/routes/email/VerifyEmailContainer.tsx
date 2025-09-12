@@ -23,7 +23,7 @@ enum STEPS {
 
 const VerifyEmailContainer = () => {
     const { securityState } = useSecurityCheckup();
-    const { email } = securityState;
+    const { email, hasSentinelEnabled } = securityState;
 
     const [step, setStep] = useState(STEPS.CODE);
 
@@ -31,7 +31,9 @@ const VerifyEmailContainer = () => {
         return (
             <SecurityCheckupMain>
                 <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={emailIcon} color="success" />}>
-                    {c('Safety review').t`Your recovery email is set`}
+                    {hasSentinelEnabled
+                        ? c('Safety review').t`Your email is set`
+                        : c('Safety review').t`Your recovery email is set`}
                 </SecurityCheckupMainTitle>
 
                 <div className="border rounded flex flex-column gap-2 items-center justify-center p-6">
@@ -40,8 +42,12 @@ const VerifyEmailContainer = () => {
                 </div>
 
                 <div className="mt-6">
-                    {c('Safety review')
-                        .t`${BRAND_NAME} will use this address to send a reset code by email when you reset your password.`}
+                    {hasSentinelEnabled
+                        ? // TODO: copy:
+                          c('Safety review')
+                              .t`${BRAND_NAME} will use this address to keep you updated on your account security..`
+                        : c('Safety review')
+                              .t`${BRAND_NAME} will use this address to send a reset code by email when you reset your password.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm" replace>
@@ -59,12 +65,17 @@ const VerifyEmailContainer = () => {
                 </div>
 
                 <SecurityCheckupMainTitle>
-                    {c('Safety review').t`There was an error verifying your recovery email`}
+                    {hasSentinelEnabled
+                        ? c('Safety review').t`There was an error verifying your email`
+                        : c('Safety review').t`There was an error verifying your recovery email`}
                 </SecurityCheckupMainTitle>
 
                 <div>
-                    {c('Safety review')
-                        .t`We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.`}
+                    {hasSentinelEnabled
+                        ? c('Safety review')
+                              .t`We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.`
+                        : c('Safety review')
+                              .t`We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.`}
                 </div>
 
                 <ButtonLike className="mt-8" fullWidth as={Link} to={SECURITY_CHECKUP_PATHS.ROOT} color="norm">
@@ -87,7 +98,9 @@ const VerifyEmailContainer = () => {
     return (
         <SecurityCheckupMain>
             <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={emailIcon} color="warning" />}>
-                {c('Safety review').t`Verify your recovery email address`}
+                {hasSentinelEnabled
+                    ? c('Safety review').t`Verify your email address`
+                    : c('Safety review').t`Verify your recovery email address`}
             </SecurityCheckupMainTitle>
 
             <div className="mb-12">
