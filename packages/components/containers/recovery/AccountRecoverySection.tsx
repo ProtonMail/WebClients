@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Loader from '@proton/components/components/loader/Loader';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import SettingsDivider from '@proton/components/containers/account/SettingsDivider';
@@ -20,6 +21,7 @@ import { CacheType } from '@proton/redux-utilities';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 import noop from '@proton/utils/noop';
 
+import SecureYourAccountModal from './SecureYourAccountModal';
 import SignInWithAnotherDeviceSettings from './SignInWithAnotherDeviceSettings';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
@@ -32,6 +34,9 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
     const { createNotification } = useNotifications();
     const defaultCountry = useMyCountry();
     const [authModal, showAuthModal] = useModalTwoPromise<{ config: any }, AuthModalResult>();
+
+    const [recoveryModalProps, setRecoveryModal /* , renderRecoveryModal */] = useModalState();
+    (window as any).setRecoveryModal = setRecoveryModal; // For testing - setRecoveryModal(true) // TODO remove
 
     if (loadingUserSettings || !userSettings) {
         return <Loader />;
@@ -58,6 +63,7 @@ export const AccountRecoverySection = ({ divider = true }: { divider?: boolean }
 
     return (
         <>
+            <SecureYourAccountModal {...recoveryModalProps} /> {/* placed here only for testing */}
             {authModal(({ onResolve, onReject, ...props }) => {
                 return <AuthModal {...props} scope="password" onCancel={onReject} onSuccess={onResolve} />;
             })}

@@ -33,7 +33,7 @@ import SecurityCheckupMain from '../../components/SecurityCheckupMain';
 import SecurityCheckupMainIcon from '../../components/SecurityCheckupMainIcon';
 import SecurityCheckupMainTitle from '../../components/SecurityCheckupMainTitle';
 import { phraseIcon } from '../../methodIcons';
-import recoveryKitSrc from './recovery-kit.svg';
+import recoveryKitSrc from '@proton/styles/assets/img/illustrations/recovery-kit.svg';
 
 enum STEPS {
     DOWNLOAD,
