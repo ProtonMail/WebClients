@@ -45,7 +45,7 @@ const DisableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             )}
             <Prompt
                 {...rest}
-                title={c('Title').t`Disable authenticator app 2FA`}
+                title={c('Title').t`Disable two-factor authentication app?`}
                 onClose={onClose}
                 buttons={[
                     <Button
