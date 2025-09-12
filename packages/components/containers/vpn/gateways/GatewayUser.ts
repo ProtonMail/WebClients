@@ -5,5 +5,4 @@ export interface GatewayUser {
     Email: string;
     Name: string | null;
     Role?: USER_ROLES;
-    Subscriber?: boolean;
 }

@@ -100,7 +100,7 @@ export const GatewayUserSelection = ({ loading, users, model, changeModel }: Pro
                         ]}
                     />
                     <TableBody loading={!users} colSpan={4}>
-                        {sortedList.map(({ ID, Name, Email, Role, Subscriber }: GatewayUser) => (
+                        {sortedList.map(({ ID, Name, Email, Role }: GatewayUser) => (
                             <TableRow
                                 key={`select-user--${ID}`}
                                 cells={[
@@ -111,15 +111,7 @@ export const GatewayUserSelection = ({ loading, users, model, changeModel }: Pro
                                     />,
                                     <div className="text-ellipsis">{Name}</div>,
                                     <div className="text-ellipsis">{Email}</div>,
-                                    Role === USER_ROLES.ADMIN_ROLE
-                                        ? Subscriber
-                                            ? /* Current status of a user being admin of their organization */ c('Role')
-                                                  .t`Primary admin`
-                                            : /* Current status of a user being admin of their organization */ c('Role')
-                                                  .t`Admin`
-                                        : /* Current status of a user being simple member in their organization */ c(
-                                              'Role'
-                                          ).t`User`,
+                                    Role === USER_ROLES.ADMIN_ROLE ? c('Role').t`Admin` : c('Role').t`User`,
                                 ]}
                             />
                         ))}
