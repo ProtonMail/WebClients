@@ -1,6 +1,7 @@
 import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { ThumbnailType, useDrive } from '@proton/drive/index';
@@ -83,7 +84,12 @@ export function Trash({ shareId, trashView }: Props) {
     const { drive } = useDrive();
     const { trashNodes, isLoading, sortParams, setSorting } = trashView;
     const { handleError } = useSdkErrorHandler();
-    const { thumbnails, setThumbnail } = useThumbnailStore();
+    const { thumbnails, setThumbnail } = useThumbnailStore(
+        useShallow((state) => ({
+            thumbnails: state.thumbnails,
+            setThumbnail: state.setThumbnail,
+        }))
+    );
     const { layout } = useUserSettings();
     const selectedItems = getSelectedItemsId(trashNodes, selectionControls!.selectedItemIds);
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
