@@ -11,6 +11,8 @@ import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getNodeLocation } from '../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
+import { getRootNode } from '../../utils/sdk/mapNodeToLegacyItem';
+import { getOldestShareCreationTime } from './utils/getOldestShareCreationTime';
 
 export type SharedByMeItem = {
     nodeUid: string;
@@ -18,6 +20,8 @@ export type SharedByMeItem = {
     type: NodeType;
     mediaType: string | undefined;
     thumbnailId: string | undefined;
+    size: number | undefined;
+    parentUid: string | undefined;
     location?: string;
     creationTime?: Date;
     haveSignatureIssues: boolean | undefined;
@@ -31,6 +35,8 @@ export type SharedByMeItem = {
     isFromLegacy?: boolean;
     /** @deprecated belongs to legacy, prefer using nodeUid */
     shareId: string;
+    /** @deprecated belongs to legacy, prefer using parentUid */
+    rootShareId: string;
     /** @deprecated belongs to legacy, related to link state from store */
     isLocked?: boolean;
 };
@@ -218,14 +224,23 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                                 const location = await getNodeLocation(drive, sharedByMeMaybeNode);
 
                                 const shareResult = await drive.getSharingInfo(node.uid);
+                                // TODO: Update or remove that once we figure out what product want in "Created" column
+                                const oldestCreationTime = shareResult
+                                    ? getOldestShareCreationTime(shareResult)
+                                    : undefined;
+
+                                const rootNode = await getRootNode(node, drive);
 
                                 setSharedByMeItem({
                                     nodeUid: node.uid,
                                     name: node.name,
                                     type: node.type,
                                     mediaType: node.mediaType,
+                                    size: node.activeRevision?.storageSize || node.totalStorageSize,
+                                    parentUid: node.parentUid,
                                     thumbnailId: node.activeRevision?.uid || node.uid,
                                     location,
+                                    creationTime: oldestCreationTime,
                                     publicLink: shareResult?.publicLink
                                         ? {
                                               numberOfInitializedDownloads:
@@ -235,6 +250,7 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                                           }
                                         : undefined,
                                     shareId: node.deprecatedShareId,
+                                    rootShareId: rootNode.deprecatedShareId || node.deprecatedShareId,
                                     haveSignatureIssues: !signatureResult.ok,
                                 });
                             }
@@ -250,10 +266,11 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                         try {
                             if (!item.isShared && getSharedByMeItem(item.uid)) {
                                 removeSharedByMeItem(item.uid);
-                            } else if (item.isTrashed) {
+                            } else if (item.isShared) {
                                 const sharedByMeMaybeNode = await drive.getNode(item.uid);
                                 const signatureResult = getSignatureIssues(sharedByMeMaybeNode);
                                 const { node } = getNodeEntity(sharedByMeMaybeNode);
+
                                 if (!node.deprecatedShareId) {
                                     handleSdkError(
                                         new EnrichedError(
@@ -271,13 +288,23 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
 
                                 const shareResult = await drive.getSharingInfo(node.uid);
 
+                                // TODO: Update or remove that once we figure out what product want in "Created" column
+                                const oldestCreationTime = shareResult
+                                    ? getOldestShareCreationTime(shareResult)
+                                    : undefined;
+
+                                const rootNode = await getRootNode(node, drive);
+
                                 setSharedByMeItem({
                                     nodeUid: node.uid,
                                     name: node.name,
                                     type: node.type,
                                     mediaType: node.mediaType,
+                                    size: node.activeRevision?.storageSize || node.totalStorageSize,
+                                    parentUid: node.parentUid,
                                     thumbnailId: node.activeRevision?.uid || node.uid,
                                     location,
+                                    creationTime: oldestCreationTime,
                                     publicLink: shareResult?.publicLink
                                         ? {
                                               numberOfInitializedDownloads:
@@ -287,6 +314,7 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                                           }
                                         : undefined,
                                     shareId: node.deprecatedShareId,
+                                    rootShareId: rootNode.deprecatedShareId || node.deprecatedShareId,
                                     haveSignatureIssues: !signatureResult.ok,
                                 });
                             }
