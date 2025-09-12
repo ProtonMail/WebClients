@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Banner, BannerVariants, Button, InlineLinkButton, Tooltip } from '@proton/atoms';
+import { Banner, BannerVariants, Button, Href, InlineLinkButton, Tooltip } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
@@ -33,6 +33,7 @@ import RemoveSecurityKeyModal from './fido/RemoveSecurityKeyModal';
 import { maxSecurityKeyLength } from './fido/constants';
 import DisableTOTPModal from './totp/DisableTOTPModal';
 import EnableTOTPModal from './totp/EnableTOTPModal';
+import { getSecurityKeySigningWarning } from './totp/getSecurityKeySigningWarning';
 
 const defaultTmpRemove = { keys: [], type: 'all' as const };
 
@@ -106,8 +107,8 @@ const TwoFactorSection = () => {
             <SettingsParagraph large>
                 {c('Info')
                     .jt`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.`}
-
-                <AuthenticatorPromotionBanner className="mt-4" flowId="2fa-settings" />
+                <br />
+                <Href href={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
             </SettingsParagraph>
             {hasTOTPEnabled && hasRecoveryMethod && (
                 <SettingsParagraph>
@@ -133,10 +134,7 @@ const TwoFactorSection = () => {
             </SettingsLayout>
             {hasFIDO2Enabled && !hasTOTPEnabled && (
                 <div className="mb-4">
-                    <Banner variant={BannerVariants.WARNING_OUTLINE}>
-                        {c('Info')
-                            .t`Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.`}
-                    </Banner>
+                    <Banner variant={BannerVariants.WARNING_OUTLINE}>{getSecurityKeySigningWarning()}</Banner>
                 </div>
             )}
             {hasSecurityKeySupport && (
@@ -269,6 +267,8 @@ const TwoFactorSection = () => {
                     )}
                 </>
             )}
+
+            <AuthenticatorPromotionBanner className="mt-8" flowId="2fa-settings" />
         </SettingsSection>
     );
 };
