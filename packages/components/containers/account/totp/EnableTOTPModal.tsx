@@ -322,7 +322,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
 
     return (
         <Modal as={Form} onSubmit={onSubmit} onClose={handleClose} size="medium" {...rest}>
-            <ModalHeader title={c('Title').t`Setup authenticator app 2FA`} />
+            <ModalHeader title={c('Title').t`Set up authenticator app`} />
             <ModalContent>{section}</ModalContent>
             <ModalFooter>
                 {cancelButtonText !== null ? (
