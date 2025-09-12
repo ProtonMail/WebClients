@@ -7,6 +7,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
 import { useInvitationsLoader } from '../../sharedWith/loaders/useInvitationsLoader';
+import { useLegacyLoader } from '../../sharedWith/loaders/useLegacyLoader';
 import { DriveSidebarListItem } from '../DriveSidebarListItem';
 
 interface DriveSidebarSharedWithMeProps {
@@ -15,6 +16,7 @@ interface DriveSidebarSharedWithMeProps {
 }
 export const DriveSidebarSharedWithMe = ({ shareId, collapsed }: DriveSidebarSharedWithMeProps) => {
     const { loadInvitations } = useInvitationsLoader();
+    const { loadLegacyInvitations } = useLegacyLoader();
 
     const { subscribeToEvents, unsubscribeToEvents, invitationsCount } = useSharedWithMeListingStore(
         useShallow((state) => ({
@@ -27,23 +29,25 @@ export const DriveSidebarSharedWithMe = ({ shareId, collapsed }: DriveSidebarSha
     useEffect(() => {
         const abortController = new AbortController();
         void loadInvitations(abortController.signal);
+        void loadLegacyInvitations(abortController.signal);
         return () => {
             abortController.abort();
         };
-    }, [loadInvitations]);
+    }, [loadLegacyInvitations, loadInvitations]);
 
     useEffect(() => {
         const abortController = new AbortController();
         void subscribeToEvents('driveSidebar', {
             onRefreshSharedWithMe: async () => {
                 await loadInvitations(abortController.signal);
+                await loadLegacyInvitations(abortController.signal);
             },
         });
         return () => {
             abortController.abort();
             void unsubscribeToEvents('driveSidebar');
         };
-    }, [subscribeToEvents, unsubscribeToEvents, loadInvitations]);
+    }, [subscribeToEvents, unsubscribeToEvents, loadInvitations, loadLegacyInvitations]);
 
     const invitationsCountTitle = c('Info').ngettext(
         msgid`${invitationsCount} pending invitation`,
