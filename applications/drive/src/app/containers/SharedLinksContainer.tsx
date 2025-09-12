@@ -29,7 +29,7 @@ const SharedLinksContainer = () => {
         }
         const abortController = new AbortController();
         void subscribeToEvents('sharedLinksContainer');
-        loadSharedByMeNodes(abortController.signal);
+        void loadSharedByMeNodes(abortController.signal);
 
         return () => {
             abortController.abort();

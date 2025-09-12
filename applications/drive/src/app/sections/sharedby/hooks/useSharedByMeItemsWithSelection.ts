@@ -5,8 +5,9 @@ import { useShallow } from 'zustand/react/shallow';
 import { splitNodeUid } from '@proton/drive/index';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
+import isTruthy from '@proton/utils/isTruthy';
 
-import type { BrowserItemId } from '../../../components/FileBrowser';
+import { type BrowserItemId, useSelection } from '../../../components/FileBrowser';
 import { useDocumentActions } from '../../../hooks/docs/useDocumentActions';
 import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
@@ -23,14 +24,19 @@ const DEFAULT_SORT = {
     sortOrder: SORT_DIRECTION.ASC,
 };
 
+const getSelectedItemsId = (items: { id: string }[], selectedItemIds: string[]) =>
+    selectedItemIds.map((selectedItemId) => items.find((item) => selectedItemId === item.id)).filter(isTruthy);
+
 export const useSharedByMeItemsWithSelection = () => {
     const { layout } = useUserSettings();
     const { openDocument } = useDocumentActions();
     const { navigateToAlbum, navigateToLink } = useDriveNavigation();
     const { loadThumbnail } = useBatchThumbnailLoader();
+    const selectionControls = useSelection();
 
-    const { sharedByMeItems, isLoading } = useSharedByMeStore(
+    const { sharedByMeItems, isLoading, getSharedByMeItem } = useSharedByMeStore(
         useShallow((state) => ({
+            getSharedByMeItem: state.getSharedByMeItem,
             sharedByMeItems: state.getAllSharedByMeItems(),
             isLoading: state.isLoading(),
         }))
@@ -52,13 +58,13 @@ export const useSharedByMeItemsWithSelection = () => {
                 uid: item.nodeUid,
                 trashed: null,
                 volumeId,
-                parentLinkId: '',
-                rootShareId: item.shareId,
+                parentLinkId: item.parentUid ? splitNodeUid(item.parentUid).nodeId : '',
+                rootShareId: item.rootShareId,
                 mimeType: item.mediaType || '',
                 linkId: nodeId,
                 isFile: item.type === 'file',
                 name: item.name,
-                size: 0,
+                size: item.size || 0,
                 metaDataModifyTime: item.creationTime ? item.creationTime.getTime() : 0,
                 fileModifyTime: item.creationTime ? item.creationTime.getTime() : 0,
                 shareUrl: item.publicLink
@@ -110,11 +116,11 @@ export const useSharedByMeItemsWithSelection = () => {
             }
 
             if (storeItem.mediaType === 'Album') {
-                navigateToAlbum(storeItem.shareId, nodeId);
+                navigateToAlbum(storeItem.rootShareId, nodeId);
                 return;
             }
 
-            navigateToLink(storeItem.shareId, nodeId, storeItem.type === 'file');
+            navigateToLink(storeItem.rootShareId, nodeId, storeItem.type === 'file');
         },
         [sharedByMeItems, openDocument, navigateToAlbum, navigateToLink]
     );
@@ -146,14 +152,21 @@ export const useSharedByMeItemsWithSelection = () => {
 
     const handleSorting = useCallback(
         async (sortParams: { sortField: SortField; sortOrder: SORT_DIRECTION }) => {
-            setSorting(sortParams);
+            void setSorting(sortParams);
         },
         [setSorting]
     );
 
+    const selectedItemIds = selectionControls?.selectedItemIds || [];
+    const selectedItemsIds = getSelectedItemsId(mappedItems, selectedItemIds);
+    const selectedItems = useMemo(
+        () => selectedItemsIds.map(({ id }) => getSharedByMeItem(id)).filter(isTruthy),
+        [selectedItemsIds, getSharedByMeItem]
+    );
+
     return {
         items: sortedList,
-        selectedItems: [], // TODO: Implement selection when needed
+        selectedItems,
         isLoading,
         layout,
         sortParams,
