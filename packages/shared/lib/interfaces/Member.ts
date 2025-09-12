@@ -108,6 +108,11 @@ export type MemberUnprivatizationManualApproveState = {
     InvitationEmail: null;
 };
 
+export enum TwoFactorStatusFlags {
+    Totp = 1 << 0,
+    Fido2 = 1 << 1,
+}
+
 export interface Member {
     ID: string;
     Role: MEMBER_ROLE;

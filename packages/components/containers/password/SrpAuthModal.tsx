@@ -352,7 +352,9 @@ const SrpAuthModal = ({
     return (
         <Modal {...rest} size="small" onClose={handleClose}>
             <ModalHeader
-                title={step === Step.TWO_FA ? c('Title').t`Enter 2FA code` : c('Title').t`Enter your password`}
+                title={
+                    step === Step.TWO_FA ? c('Title').t`Two-factor authentication` : c('Title').t`Enter your password`
+                }
             />
             <ModalContent>
                 {step === Step.Password && (
