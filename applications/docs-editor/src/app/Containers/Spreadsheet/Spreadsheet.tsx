@@ -19,17 +19,17 @@ import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLo
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useApplication } from '../ApplicationProvider'
 import { LOCALE } from './constants'
-import { useLogState, useProtonSheetsState } from './state'
+import { type ProtonSheetsState, useLogState, useProtonSheetsState } from './state'
 
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import { Menubar } from './components/Menubar/Menubar'
 import { Toolbar } from './components/Toolbar/Toolbar'
-import { WithFallback, useSetupWithFallback } from './components/WithFallback'
 import { LegacyBottomBar } from './components/legacy/LegacyBottomBar'
 import { LegacyDialogs } from './components/legacy/LegacyDialogs'
 import { LegacyGrid } from './components/legacy/LegacyGrid'
 import { LegacyToolbar } from './components/legacy/LegacyToolbar'
-import { useProtonSheetsUIState } from './ui-state'
+import { ProtonSheetsUIStoreProvider } from './ui-store'
+import { useNewUIEnabled } from './new-ui-enabled'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -65,7 +65,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isReadonly = editingLocked || isRevisionMode
 
   const state = useProtonSheetsState({ docState, locale: LOCALE, functions })
-  const uiState = useProtonSheetsUIState(state)
   const { getStateToLog } = useLogState(state, updateLatestStateToLog)
 
   const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
@@ -174,8 +173,70 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     downloadLogsAsJSON(editorAdapter as EditorControllerInterface, 'sheet').catch(console.error)
   }
 
-  useSetupWithFallback()
+  if (useNewUIEnabled()) {
+    return <UI hidden={hidden} state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
+  }
+  return (
+    <LegacyUI
+      hidden={hidden}
+      state={state}
+      isReadonly={isReadonly}
+      isRevisionMode={isRevisionMode}
+      downloadLogs={downloadLogs}
+    />
+  )
+})
 
+type UIProps = {
+  hidden: boolean
+  state: ProtonSheetsState
+  isReadonly: boolean
+  isRevisionMode: boolean
+}
+
+function UI({ hidden, state, isReadonly, isRevisionMode }: UIProps) {
+  return (
+    <ProtonSheetsUIStoreProvider state={state}>
+      {hidden && (
+        <div
+          className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[#F9FBFC]"
+          data-testid="editor-curtain"
+        />
+      )}
+      <div className="flex h-full w-full flex-1 flex-col bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
+        {!isRevisionMode && (
+          <>
+            <Menubar className="mb-2" />
+            <Toolbar />
+            {/* TODO: formula bar */}
+          </>
+        )}
+        {/* TODO: replace with new UI */}
+        <LegacyGrid
+          state={state}
+          isReadonly={isReadonly}
+          users={state.yjsState.users}
+          userName={state.yjsState.userName}
+        />
+
+        {/* TODO: replace with new UI */}
+        <LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
+        {/* TODO: replace with new UI */}
+        <LegacyDialogs state={state} />
+      </div>
+    </ProtonSheetsUIStoreProvider>
+  )
+}
+
+type LegacyUIProps = {
+  hidden: boolean
+  state: ProtonSheetsState
+  isReadonly: boolean
+  isRevisionMode: boolean
+  downloadLogs: () => void
+}
+
+function LegacyUI({ hidden, state, isReadonly, isRevisionMode, downloadLogs }: LegacyUIProps) {
   return (
     <>
       {hidden && (
@@ -185,42 +246,16 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         />
       )}
       <div className="flex h-full w-full flex-1 flex-col bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
-        {!isRevisionMode && (
-          <WithFallback fallback={<LegacyToolbar state={state} downloadLogs={downloadLogs} isReadonly={isReadonly} />}>
-            <Menubar ui={uiState} className="mb-2" />
-            <Toolbar ui={uiState} />
-          </WithFallback>
-        )}
-        <WithFallback
-          fallback={
-            <LegacyGrid
-              state={state}
-              isReadonly={isReadonly}
-              users={state.yjsState.users}
-              userName={state.yjsState.userName}
-            />
-          }
-        >
-          {/* TODO: replace with new UI */}
-          <LegacyGrid
-            state={state}
-            isReadonly={isReadonly}
-            users={state.yjsState.users}
-            userName={state.yjsState.userName}
-          />
-        </WithFallback>
-
-        <WithFallback
-          fallback={<LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />}
-        >
-          {/* TODO: replace with new UI */}
-          <LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
-        </WithFallback>
-        <WithFallback fallback={<LegacyDialogs state={state} />}>
-          {/* TODO: replace with new UI */}
-          <LegacyDialogs state={state} />
-        </WithFallback>
+        {!isRevisionMode && <LegacyToolbar state={state} downloadLogs={downloadLogs} isReadonly={isReadonly} />}
+        <LegacyGrid
+          state={state}
+          isReadonly={isReadonly}
+          users={state.yjsState.users}
+          userName={state.yjsState.userName}
+        />
+        <LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
+        <LegacyDialogs state={state} />
       </div>
     </>
   )
-})
+}
