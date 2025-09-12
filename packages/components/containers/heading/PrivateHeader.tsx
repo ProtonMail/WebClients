@@ -1,14 +1,6 @@
 import type { ReactNode } from 'react';
 
-import Hamburger from '@proton/components/components/sidebar/Hamburger';
-import TopNavbar from '@proton/components/components/topnavbar/TopNavbar';
-import TopNavbarB2BOnboardingButton from '@proton/components/components/topnavbar/TopNavbarB2BOnboardingButton';
-import TopNavbarList from '@proton/components/components/topnavbar/TopNavbarList';
-import TopNavbarListItem from '@proton/components/components/topnavbar/TopNavbarListItem';
-import TopNavbarUpsell from '@proton/components/components/topnavbar/TopNavbarUpsell';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import useConfig from '@proton/components/hooks/useConfig';
-import useIsPaidUserCookie from '@proton/components/hooks/useIsPaidUserCookie';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
@@ -16,6 +8,15 @@ import clsx from '@proton/utils/clsx';
 
 import type { Props as HeaderProps } from '../../components/header/Header';
 import Header from '../../components/header/Header';
+import Hamburger from '../../components/sidebar/Hamburger';
+import TopNavbar from '../../components/topnavbar/TopNavbar';
+import TopNavbarB2BOnboardingButton from '../../components/topnavbar/TopNavbarB2BOnboardingButton';
+import TopNavbarList from '../../components/topnavbar/TopNavbarList';
+import TopNavbarListItem from '../../components/topnavbar/TopNavbarListItem';
+import TopNavbarUpsell from '../../components/topnavbar/TopNavbarUpsell';
+import useSubscriptionStateCookie from '../../hooks/subscriptionStateCookie/useSubscriptionStateCookie';
+import useConfig from '../../hooks/useConfig';
+import useIsPaidUserCookie from '../../hooks/useIsPaidUserCookie';
 
 interface Props extends HeaderProps {
     settingsButton?: ReactNode;
@@ -47,6 +48,7 @@ const PrivateHeader = ({
     app,
     className,
 }: Props) => {
+    useSubscriptionStateCookie();
     useIsPaidUserCookie();
 
     const { APP_NAME } = useConfig();
