@@ -14,7 +14,6 @@ import { useMailSelector } from '../../store/hooks';
 import MailboxListBannersWrapper from './MailboxListBannersWrapper';
 import MailboxListContainer from './MailboxListContainer';
 import MailboxListItems from './MailboxListItems';
-import MailboxListPaginationWrapper from './MailboxListPaginationWrapper';
 import { MailboxListProvider } from './MailboxListProvider';
 
 import './MailboxList.scss';
@@ -28,6 +27,7 @@ interface MailboxListProps {
 
     toolbar?: ReactNode;
     listRef?: RefObject<HTMLDivElement>;
+    scrollContainerRef?: RefObject<HTMLDivElement>;
     noBorder?: boolean;
     noPlaceholder?: boolean;
     setFocusID?: Dispatch<SetStateAction<string | undefined>>;
@@ -38,6 +38,7 @@ export default function MailboxList({
     toolbar,
     actions,
     listRef: externalListRef,
+    scrollContainerRef,
     noBorder = false,
     overrideColumnMode = false,
     noPlaceholder = false,
@@ -108,6 +109,7 @@ export default function MailboxList({
                 />
                 <MailboxListItems
                     listRef={listRefToUse}
+                    scrollContainerRef={scrollContainerRef}
                     onClick={handleElement}
                     onFocus={handleFocus}
                     onCheckOne={handleCheckOne}
@@ -116,7 +118,6 @@ export default function MailboxList({
                     labels={labels}
                     noPlaceholder={noPlaceholder}
                 />
-                <MailboxListPaginationWrapper />
             </MailboxListContainer>
         </MailboxListProvider>
     );
