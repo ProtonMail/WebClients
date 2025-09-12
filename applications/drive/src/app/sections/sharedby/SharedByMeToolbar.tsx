@@ -1,58 +1,59 @@
+import { useShallow } from 'zustand/react/shallow';
+
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../components/FileBrowser';
-import {
-    DetailsButton,
-    DownloadButton,
-    LayoutButton,
-    OpenInDocsButton,
-    PreviewButton,
-    RenameButton,
-    ShareButton,
-    ShareLinkButton,
-} from '../../components/sections/ToolbarButtons';
+import { useDetailsModal } from '../../components/modals/DetailsModal';
+import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
+import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
+import { LayoutButton, ShareButton } from '../../components/sections/ToolbarButtons';
+import { useRenameModal } from '../../modals/RenameModal';
 import { useActions } from '../../store';
-import type { LegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
-import { getSelectedItems } from './SharedByMe';
-import { StopSharingButton } from './ToolbarButtons';
+import { SharedByMeActions } from './actions/SharedByMeActions';
+import { useSharedByMeStore } from './useSharedByMe.store';
 
-interface Props {
+interface SharedByMeToolbarProps {
+    uids: string[];
     shareId: string;
-    items: LegacyItem[];
 }
 
-export const SharedByMeToolbar = ({ shareId, items }: Props) => {
-    const selectionControls = useSelection()!;
-    const { renameLink } = useActions();
-    const selectedItems = getSelectedItems(items, selectionControls.selectedItemIds);
-    const selectedItem = selectedItems.length === 1 ? selectedItems[0] : undefined;
+const getSelectedItemsId = (uids: string[], selectedItemIds: string[]) =>
+    selectedItemIds.map((selectedItemId) => uids.find((uid) => selectedItemId === uid)).filter(isTruthy);
+
+const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
+    const [renameModal, showRenameModal] = useRenameModal();
+    const [detailsModal, showDetailsModal] = useDetailsModal();
+    const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
+    const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
+    // TODO: Migrate this to SDK
+    const { stopSharing, confirmModal } = useActions();
+    const selectionControls = useSelection();
+    const { getSharedByMeItem } = useSharedByMeStore(
+        useShallow((state) => ({
+            getSharedByMeItem: state.getSharedByMeItem,
+        }))
+    );
+
+    const selectedItemsIds = selectionControls ? getSelectedItemsId(uids, selectionControls.selectedItemIds) : [];
+    const selectedItems = selectedItemsIds.map((uid) => getSharedByMeItem(uid)).filter(isTruthy);
+
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             return <ShareButton shareId={shareId} />;
         }
 
         return (
-            <>
-                <PreviewButton selectedBrowserItems={selectedItems} />
-                <OpenInDocsButton selectedBrowserItems={selectedItems} />
-                <DownloadButton selectedBrowserItems={selectedItems} />
-                <Vr />
-                <RenameButton selectedLinks={selectedItems} renameLink={renameLink} />
-                <DetailsButton selectedBrowserItems={selectedItems} />
-                {selectedItem && (
-                    <>
-                        <Vr />
-                        <ShareLinkButton
-                            volumeId={selectedItem.volumeId}
-                            shareId={selectedItem.rootShareId}
-                            linkId={selectedItem.linkId}
-                        />
-                    </>
-                )}
-
-                {selectedItem && <StopSharingButton shareId={shareId} />}
-            </>
+            <SharedByMeActions
+                selectedItems={selectedItems}
+                showDetailsModal={showDetailsModal}
+                showLinkSharingModal={showLinkSharingModal}
+                showFilesDetailsModal={showFilesDetailsModal}
+                showRenameModal={showRenameModal}
+                stopSharing={stopSharing}
+                buttonType="toolbar"
+            />
         );
     };
 
@@ -63,6 +64,13 @@ export const SharedByMeToolbar = ({ shareId, items }: Props) => {
                 <Vr className="hidden lg:flex mx-2" />
                 <LayoutButton />
             </span>
+            {renameModal}
+            {detailsModal}
+            {filesDetailsModal}
+            {linkSharingModal}
+            {confirmModal}
         </Toolbar>
     );
 };
+
+export default SharedByMeToolbar;

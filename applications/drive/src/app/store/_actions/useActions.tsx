@@ -332,7 +332,8 @@ export default function useActions() {
     };
 
     // TODO: This can support multiple links in the future
-    const stopSharing = (shareId: string) => {
+    // onSuccess is for legacy/sdk compatibility
+    const stopSharing = (shareId: string, onSuccess?: () => void) => {
         void showConfirmModal({
             title: c('Title').t`Stop sharing?`,
             submitText: c('Title').t`Stop sharing`,
@@ -344,6 +345,7 @@ export default function useActions() {
                         createNotification({
                             text: c('Notification').t`You stopped sharing this item`,
                         });
+                        onSuccess?.();
                     })
                     .catch(() => {
                         createNotification({

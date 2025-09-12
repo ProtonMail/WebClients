@@ -10,7 +10,9 @@ import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHand
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getNodeLocation } from '../../../utils/sdk/getNodeLocation';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
+import { getRootNode } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useSharedByMeStore } from '../useSharedByMe.store';
+import { getOldestShareCreationTime } from '../utils/getOldestShareCreationTime';
 
 export const useSharedByMeNodesLoader = () => {
     const { drive } = useDrive();
@@ -59,10 +61,13 @@ export const useSharedByMeNodesLoader = () => {
                                 return;
                             }
                             const { updateSharedByMeItem } = useSharedByMeStore.getState();
+                            // TODO: Update or remove that once we figure out what product want in "Created" column
+                            const oldestCreationTime = getOldestShareCreationTime(shareResult);
+
                             if (shareResult.publicLink) {
                                 updateSharedByMeItem(node.uid, {
                                     nodeUid: node.uid,
-                                    creationTime: shareResult.publicLink.creationTime,
+                                    creationTime: oldestCreationTime,
                                     publicLink: {
                                         expirationTime: shareResult.publicLink.expirationTime,
                                         numberOfInitializedDownloads:
@@ -70,8 +75,15 @@ export const useSharedByMeNodesLoader = () => {
                                         url: shareResult.publicLink.url,
                                     },
                                 });
+                            } else if (oldestCreationTime) {
+                                updateSharedByMeItem(node.uid, {
+                                    nodeUid: node.uid,
+                                    creationTime: oldestCreationTime,
+                                });
                             }
                         });
+
+                        const rootNode = await getRootNode(node, drive);
 
                         setSharedByMeItem({
                             nodeUid: node.uid,
@@ -80,6 +92,9 @@ export const useSharedByMeNodesLoader = () => {
                             mediaType: node.mediaType,
                             thumbnailId: node.activeRevision?.uid || node.uid,
                             shareId: node.deprecatedShareId,
+                            rootShareId: rootNode.deprecatedShareId || node.deprecatedShareId,
+                            size: node.activeRevision?.storageSize || node.totalStorageSize,
+                            parentUid: node.parentUid,
                             haveSignatureIssues: !signatureResult.ok,
                         });
                     } catch (e) {
