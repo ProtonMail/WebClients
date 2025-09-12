@@ -7,11 +7,11 @@ import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import { DevicesSidebar as DevicesSidebarSDK } from '../../../../sections/devices/DevicesSidebar';
+import { DriveSidebarSharedWithMe } from '../../../../sections/sidebar/DriveSidebarSharedWithMe/DriveSidebarSharedWithMe';
 import { type ShareWithKey, useDriveSharingFlags, useUserSettings } from '../../../../store';
 import { DriveSidebarDevicesDeprecated } from './DriveSidebarDevices';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
 import DriveSidebarListItem from './DriveSidebarListItem';
-import { DriveSidebarSharedWithMe } from './DriveSidebarSharedWithMe/DriveSidebarSharedWithMe';
 import { DriveSidebarSharedWithMeDeprecated } from './DriveSidebarSharedWithMe/DriveSidebarSharedWithMeDeprecated';
 
 interface DriveSidebarListProps {

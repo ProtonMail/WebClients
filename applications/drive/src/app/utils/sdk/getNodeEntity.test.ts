@@ -78,7 +78,7 @@ describe('getNodeEntity', () => {
             expect(result.errors.has('name')).toBe(true);
             expect(result.errors.get('name')).toBe(nameError);
             expect(result.errors.has('activeRevision')).toBe(false);
-            expect(result.node.name).toBe(nameError.name);
+            expect(result.node.name).toBe('⚠️ Undecryptable name');
             expect(result.node.activeRevision).toBe(mockNodeEntity.activeRevision);
         });
 
@@ -132,7 +132,7 @@ describe('getNodeEntity', () => {
             expect(result.errors.get('name')).toBe(nameError);
             expect(result.errors.has('activeRevision')).toBe(true);
             expect(result.errors.get('activeRevision')).toBe(revisionError);
-            expect(result.node.name).toBe(nameError.name);
+            expect(result.node.name).toBe('⚠️ Undecryptable name');
             expect(result.node.activeRevision).toBeUndefined();
         });
 
@@ -209,7 +209,7 @@ describe('getNodeEntity', () => {
             const result = getNodeEntity(maybeNode);
 
             expect(result.node.uid).toBe('error-node-id');
-            expect(result.node.name).toBe(nameError.name);
+            expect(result.node.name).toBe('⚠️ Undecryptable name');
             expect(result.node.activeRevision).toBe(mockNodeEntity.activeRevision);
         });
     });
