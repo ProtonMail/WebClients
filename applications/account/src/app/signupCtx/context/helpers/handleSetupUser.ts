@@ -13,7 +13,7 @@ import {
 } from '@proton/payments';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';
-import type { ReferralRegistrationPlan} from '@proton/shared/lib/api/core/referrals';
+import type { ReferralRegistrationPlan } from '@proton/shared/lib/api/core/referrals';
 import { postReferralRegistration } from '@proton/shared/lib/api/core/referrals';
 import { updateLocale } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
@@ -232,10 +232,22 @@ export const handleSetupUser = async ({
     }
 
     if (referralData) {
+        const referralRegistrationSubscription = (() => {
+            if (subscriptionData && subscriptionData.paymentToken?.Details?.Token) {
+                return {
+                    paymentToken: subscriptionData.paymentToken.Details.Token,
+                    billingAddress: subscriptionData.billingAddress,
+                    code: subscriptionData.checkResult.Coupon?.Code,
+                };
+            }
+            return undefined;
+        })();
+
         await api(
             postReferralRegistration({
                 plan: referralRegistrationPlan,
                 referralData,
+                referralRegistrationSubscription,
             })
         );
     }
