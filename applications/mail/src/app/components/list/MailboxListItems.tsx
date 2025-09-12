@@ -13,6 +13,7 @@ import { PLACEHOLDER_ID_PREFIX } from '../../hooks/usePlaceholders';
 import UserOnboardingMessageListPlaceholder from '../onboarding/checklist/messageListPlaceholder/UserOnboardingMessageListPlaceholder';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
+import MailboxListPaginationWrapper from './MailboxListPaginationWrapper';
 import { useMailboxListContext } from './MailboxListProvider';
 import SkeletonItem from './SkeletonItem';
 
@@ -24,6 +25,7 @@ interface MailboxListItemsProps {
     labels: Label[];
     columnLayout?: boolean;
     listRef?: RefObject<HTMLDivElement>;
+    scrollContainerRef?: RefObject<HTMLDivElement>;
     noPlaceholder?: boolean;
 }
 
@@ -35,6 +37,7 @@ const MailboxListItems = ({
     labels = [],
     columnLayout = true,
     listRef,
+    scrollContainerRef,
     noPlaceholder = false,
 }: MailboxListItemsProps) => {
     const [userSettings] = useUserSettings();
@@ -75,7 +78,7 @@ const MailboxListItems = ({
         !mailboxListLoading && !(total > 1) && canDisplayChecklist && displayState === CHECKLIST_DISPLAY_TYPE.FULL;
 
     return (
-        <>
+        <div className="overflow-auto h-full" ref={scrollContainerRef}>
             <div className="w-full shrink-0" ref={listRef}>
                 {elements.map((element, index) => {
                     return (
@@ -122,7 +125,8 @@ const MailboxListItems = ({
 
                 {useLoadingElement && loadingElement}
             </div>
-        </>
+            <MailboxListPaginationWrapper />
+        </div>
     );
 };
 
