@@ -70,7 +70,7 @@ const getLegacyIsAnonymous = (node: NodeEntity) => {
 // For proton docs or spreadsheets we get the revision size empty and we will instead read totalStorageSize
 const getLegacySize = (node: NodeEntity) => node.activeRevision?.storageSize || node.totalStorageSize || 0;
 
-const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<NodeEntity> => {
+export const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<NodeEntity> => {
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
         const { node: parentNode } = getNodeEntity(parent);
