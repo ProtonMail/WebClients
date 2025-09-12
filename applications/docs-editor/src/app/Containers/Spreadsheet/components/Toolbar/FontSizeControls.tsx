@@ -4,65 +4,62 @@ import type { ComponentPropsWithoutRef } from 'react'
 import { forwardRef, useEffect, useRef } from 'react'
 import { c } from 'ttag'
 import { FONT_SIZE_DEFAULT, FONT_SIZE_MAX, FONT_SIZE_MIN, FONT_SIZE_SUGGESTIONS } from '../../constants'
-import { useStringifier } from '../../stringifier'
-import type { ProtonSheetsUIState } from '../../ui-state'
+import { createStringifier } from '../../stringifier'
 import * as Atoms from '../atoms'
 import * as UI from '../ui'
 import * as T from './primitives'
+import { useUI } from '../../ui-store'
 
-export interface FontSizeControlsProps extends ComponentPropsWithoutRef<'div'> {
-  ui: ProtonSheetsUIState
-}
+const { s } = createStringifier(strings)
 
-export const FontSizeControls = forwardRef<HTMLDivElement, FontSizeControlsProps>(function FontSizeControls(
-  { ui, ...props },
-  ref,
-) {
-  const s = useStrings()
-  const realValue = ui.format.text.fontSize.value ?? FONT_SIZE_DEFAULT
-  return (
-    <div ref={ref} {...props} className={clsx('flex shrink-0 items-center gap-2', props.className)}>
-      <T.Item
-        variant="icon-small"
-        legacyIconName="minus"
-        onClick={ui.withFocusGrid(() => ui.format.text.fontSize.set(realValue - 1))}
-        shortcut={
-          <Atoms.KbdShortcut>
-            <Atoms.Kbd>⌘</Atoms.Kbd>
-            <Atoms.Kbd>Shift</Atoms.Kbd>
-            <Atoms.Kbd>,</Atoms.Kbd>
-          </Atoms.KbdShortcut>
-        }
-      >
-        {s('Decrease font size')}
-      </T.Item>
-      <FontSizeCombobox ui={ui} realValue={realValue} />
-      <T.Item
-        variant="icon-small"
-        legacyIconName="plus"
-        onClick={ui.withFocusGrid(() => ui.format.text.fontSize.set(realValue + 1))}
-        shortcut={
-          <Atoms.KbdShortcut>
-            <Atoms.Kbd>⌘</Atoms.Kbd>
-            <Atoms.Kbd>Shift</Atoms.Kbd>
-            <Atoms.Kbd>.</Atoms.Kbd>
-          </Atoms.KbdShortcut>
-        }
-      >
-        {s('Increase font size')}
-      </T.Item>
-    </div>
-  )
-})
+export interface FontSizeControlsProps extends ComponentPropsWithoutRef<'div'> {}
 
-type FontSizeComboboxProps = {
-  ui: ProtonSheetsUIState
-  realValue: number
-}
+export const FontSizeControls = forwardRef<HTMLDivElement, FontSizeControlsProps>(
+  function FontSizeControls(props, ref) {
+    const { $ } = useUI
+    const realValue = useUI((ui) => ui.format.text.fontSize.value) ?? FONT_SIZE_DEFAULT
+    return (
+      <div ref={ref} {...props} className={clsx('flex shrink-0 items-center gap-2', props.className)}>
+        <T.Item
+          variant="icon-small"
+          legacyIconName="minus"
+          onClick={$.withFocusGrid(() => $.format.text.fontSize.set(realValue - 1))}
+          shortcut={
+            <Atoms.KbdShortcut>
+              <Atoms.Kbd>⌘</Atoms.Kbd>
+              <Atoms.Kbd>Shift</Atoms.Kbd>
+              <Atoms.Kbd>,</Atoms.Kbd>
+            </Atoms.KbdShortcut>
+          }
+        >
+          {s('Decrease font size')}
+        </T.Item>
+        <FontSizeCombobox realValue={realValue} />
+        <T.Item
+          variant="icon-small"
+          legacyIconName="plus"
+          onClick={$.withFocusGrid(() => $.format.text.fontSize.set(realValue + 1))}
+          shortcut={
+            <Atoms.KbdShortcut>
+              <Atoms.Kbd>⌘</Atoms.Kbd>
+              <Atoms.Kbd>Shift</Atoms.Kbd>
+              <Atoms.Kbd>.</Atoms.Kbd>
+            </Atoms.KbdShortcut>
+          }
+        >
+          {s('Increase font size')}
+        </T.Item>
+      </div>
+    )
+  },
+)
 
-function FontSizeCombobox({ ui, realValue }: FontSizeComboboxProps) {
-  const s = useStrings()
+type FontSizeComboboxProps = { realValue: number }
+
+function FontSizeCombobox({ realValue }: FontSizeComboboxProps) {
+  const { $ } = useUI
   const comboboxRef = useRef<HTMLInputElement>(null)
+  const setFontSize = $.format.text.fontSize.set
 
   function commitValue(combobox: Ariakit.ComboboxStore) {
     if (!combobox) {
@@ -75,7 +72,7 @@ function FontSizeCombobox({ ui, realValue }: FontSizeComboboxProps) {
       return
     }
     const clippedValue = Math.max(FONT_SIZE_MIN, Math.min(FONT_SIZE_MAX, value))
-    ui.format.text.fontSize.set(clippedValue)
+    setFontSize(clippedValue)
   }
 
   // Create a combobox store with a few custom behaviors.
@@ -114,7 +111,7 @@ function FontSizeCombobox({ ui, realValue }: FontSizeComboboxProps) {
     setSelectedValue(value) {
       if (value) {
         commitValue(combobox)
-        queueMicrotask(ui.focusGrid)
+        queueMicrotask($.focusGrid)
       }
     },
   })
@@ -155,7 +152,7 @@ function FontSizeCombobox({ ui, realValue }: FontSizeComboboxProps) {
                     if (event.key === 'Enter') {
                       commitValue(combobox)
                       preventDefault = true
-                      ui.focusGrid()
+                      $.focusGrid()
                     }
 
                     // On escape, reset the value to the real value.
@@ -206,10 +203,10 @@ function FontSizeComboboxPopover() {
   )
 }
 
-function useStrings() {
-  return useStringifier(() => ({
+function strings() {
+  return {
     'Decrease font size': c('sheets_2025:Spreadsheet editor toolbar').t`Decrease font size`,
     'Font size': c('sheets_2025:Spreadsheet editor toolbar').t`Font size`,
     'Increase font size': c('sheets_2025:Spreadsheet editor toolbar').t`Increase font size`,
-  }))
+  }
 }

@@ -3,8 +3,8 @@ import type { ReactElement } from 'react'
 import { c } from 'ttag'
 import type { FontValue } from '../../constants'
 import { FONTS, FONT_FAMILY_DEFAULT, FONT_LABEL_BY_VALUE } from '../../constants'
-import type { ProtonSheetsUIState } from '../../ui-state'
 import * as UI from '../ui'
+import { useUI } from '../../ui-store'
 
 // A special value to represent the default font.
 const DEFAULT_VALUE = '$default$' as const
@@ -15,7 +15,6 @@ function renderDefaultLabel() {
 
 export type FontSelectValue = FontValue | typeof DEFAULT_VALUE
 export interface FontSelectProps extends Ariakit.SelectProviderProps<FontSelectValue> {
-  ui: ProtonSheetsUIState
   renderSelect: ReactElement
 }
 
@@ -30,12 +29,13 @@ function InnerSelect(props: Ariakit.SelectProps) {
   return <Ariakit.Select {...props}>{label}</Ariakit.Select>
 }
 
-export function FontSelect({ ui, renderSelect, ...props }: FontSelectProps) {
+export function FontSelect({ renderSelect, ...props }: FontSelectProps) {
+  const setFont = useUI.$.format.text.fontFamily.set
   const select = Ariakit.useSelectStore({
-    value: ui.format.text.fontFamily.value ?? DEFAULT_VALUE,
+    value: useUI((ui) => ui.format.text.fontFamily.value) ?? DEFAULT_VALUE,
     focusLoop: true,
     setValue(value) {
-      ui.format.text.fontFamily.set(value === DEFAULT_VALUE ? undefined : value)
+      setFont(value === DEFAULT_VALUE ? undefined : value)
     },
   })
   const mounted = Ariakit.useStoreState(select, 'mounted')

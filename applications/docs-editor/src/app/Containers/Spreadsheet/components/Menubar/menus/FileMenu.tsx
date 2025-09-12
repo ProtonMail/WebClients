@@ -2,17 +2,16 @@ import * as Ariakit from '@ariakit/react'
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants'
 import type { ReactElement } from 'react'
 import { c } from 'ttag'
-import { useStringifier } from '../../../stringifier'
-import type { ProtonSheetsUIState } from '../../../ui-state'
+import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
 
+const { s } = createStringifier(strings)
+
 export interface FileMenuProps extends Ariakit.MenuProviderProps {
-  ui: ProtonSheetsUIState
   renderMenuButton: ReactElement
 }
 
-export function FileMenu({ ui, renderMenuButton, ...props }: FileMenuProps) {
-  const s = useStrings()
+export function FileMenu({ renderMenuButton, ...props }: FileMenuProps) {
   return (
     <Ariakit.MenuProvider {...props}>
       <Ariakit.MenuButton render={renderMenuButton} />
@@ -54,8 +53,8 @@ export function FileMenu({ ui, renderMenuButton, ...props }: FileMenuProps) {
   )
 }
 
-function useStrings() {
-  return useStringifier(() => ({
+function strings() {
+  return {
     'New spreadsheet': c('sheets_2025:Spreadsheet editor menubar file menu').t`New spreadsheet`,
     Import: c('sheets_2025:Spreadsheet editor menubar file menu').t`Import`,
     'Make a copy': c('sheets_2025:Spreadsheet editor menubar file menu').t`Make a copy`,
@@ -72,5 +71,5 @@ function useStrings() {
     'View recent spreadsheets': c('sheets_2025:Spreadsheet editor menubar file menu').t`View recent spreadsheets`,
     'Open Proton Drive': c('sheets_2025:Spreadsheet editor menubar file menu').t`Open ${DRIVE_APP_NAME}`,
     'Download logs': c('sheets_2025:Spreadsheet editor menubar file menu').t`Download logs`,
-  }))
+  }
 }
