@@ -3,13 +3,15 @@ import { c } from 'ttag';
 //TODO: remove this file if we dont want to do this on the legacy app
 
 import { Icon, ToolbarButton } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 
 import { useActiveShare } from '../../../../hooks/drive/useActiveShare';
 import { useSdkFileUploadInput } from '../../../../hooks/drive/useSdkUploadInput';
 
 const UploadSdkFileButton = () => {
     const { activeFolder } = useActiveShare();
-    const { inputRef: fileInput, handleClick, handleChange } = useSdkFileUploadInput(activeFolder.volumeId);
+    const uid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
+    const { inputRef: fileInput, handleClick, handleChange } = useSdkFileUploadInput(uid);
 
     return (
         <>
