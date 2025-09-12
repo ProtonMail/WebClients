@@ -65,6 +65,7 @@ export const DirectSharingAutocomplete = ({
                     autocomplete={
                         <AddressesAutocompleteTwo
                             hasAddOnBlur
+                            hasEmailPasting
                             id={inputId}
                             compact
                             disabled={disabled}
