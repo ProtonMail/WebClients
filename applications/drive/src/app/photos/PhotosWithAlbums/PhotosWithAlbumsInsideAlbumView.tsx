@@ -192,6 +192,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                                 volumeId: album.volumeId,
                                 shareId: albumShareId,
                                 linkId: album.linkId,
+                                isAlbum: true,
                             });
                         }}
                         onAddAlbumPhotos={() => {
