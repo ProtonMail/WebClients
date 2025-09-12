@@ -52,11 +52,10 @@ const RemoveSecurityKeyModal = ({ onClose, type, keys, ...rest }: Props) => {
                         const run = async () => {
                             try {
                                 const api = getSilentApi(normalApi);
-                                await Promise.all(
-                                    keys.map((key) => {
-                                        return api(removeSecurityKey(key.id));
-                                    })
-                                );
+                                for (const key of keys) {
+                                    // Sequentially to avoid race conditions
+                                    await api(removeSecurityKey(key.id));
+                                }
                                 await api(lockSensitiveSettings());
                                 await dispatch(userSettingsThunk({ cache: CacheType.None }));
                                 if (type === 'single') {
