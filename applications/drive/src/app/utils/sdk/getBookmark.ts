@@ -1,5 +1,7 @@
 import type { Bookmark, InvalidNameError, MaybeBookmark } from '@proton/drive/index';
 
+import { getBookmarkNodeName } from './getNodeName';
+
 type GetBookmarkType = {
     bookmark: Bookmark;
     errors: Map<'name' | 'url', Error | InvalidNameError>;
@@ -24,9 +26,7 @@ export const getBookmark = (maybeBookmark: MaybeBookmark): GetBookmarkType => {
             ...maybeBookmark.error,
             node: {
                 ...maybeBookmark.error.node,
-                name: maybeBookmark.error.node.name.ok
-                    ? maybeBookmark.error.node.name.value
-                    : maybeBookmark.error.node.name.error.name,
+                name: getBookmarkNodeName(maybeBookmark),
             },
             url: maybeBookmark.error.url?.ok ? maybeBookmark.error.url.value : '',
             customPassword: maybeBookmark.error.customPassword.ok
