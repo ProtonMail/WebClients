@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { type IconName, ModalTwoContent, ModalTwoFooter, useNotifications } from '@proton/components';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { useOnCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
+import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { getOccurrenceString } from '@proton/pass/lib/i18n/helpers';
 import type { SecureLink } from '@proton/pass/types';
 import { epochToRemainingDuration } from '@proton/pass/utils/time/format';
@@ -15,13 +15,13 @@ import clsx from '@proton/utils/clsx';
 type SecureLinkCard = { title: string; subtitle: string; icon: IconName; className?: string };
 
 export const SecureLinkDetails: FC<SecureLink> = ({ active, secureLink, readCount, maxReadCount, expirationDate }) => {
-    const onCopyToClipboard = useOnCopyToClipboard();
+    const copyToClipboard = useCopyToClipboard();
     const { createNotification } = useNotifications();
     const [linkCopied, setLinkCopied] = useState(false);
     const ref = useRef<HTMLButtonElement>(null);
 
     const copyLink = async () => {
-        await onCopyToClipboard(secureLink);
+        await copyToClipboard(secureLink);
         ref.current?.focus();
         setLinkCopied(true);
         createNotification({ text: c('Label').t`The URL has been copied to the clipboard` });
