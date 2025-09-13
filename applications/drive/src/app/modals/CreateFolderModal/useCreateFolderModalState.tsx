@@ -72,16 +72,17 @@ export const useCreateFolderModalState = ({
             const newFolder = await drive.createFolder(parentFolderUid, name);
             const { volumeId } = splitNodeUid(parentFolderUid);
             await events.pollEvents.volumes(volumeId);
+            // Needs to pass nodeId because the same callback is called by the legacy app component
+            // in public pages we don't have the ability to get the uid from the shareId
+
+            const { node } = getNodeEntity(newFolder);
+            const { nodeId } = splitNodeUid(node.uid);
+            onSuccess?.({ uid: node.uid, nodeId, name });
             createNotification({
                 type: 'success',
                 text: c('Notification').jt`"${name}" created successfully`,
             });
 
-            const { node } = getNodeEntity(newFolder);
-            const { nodeId } = splitNodeUid(node.uid);
-            // Needs to pass nodeId because the same callback is called by the legacy app component
-            // in public pages we don't have the ability to get the uid from the shareId
-            onSuccess?.({ uid: node.uid, nodeId, name });
             onClose();
         } catch (error) {
             handleError(error, { fallbackMessage: c('Error').t`Failed to create folder`, extra: { parentFolderUid } });

@@ -17,7 +17,6 @@ export enum ActionEventName {
     TRASHED_NODES = 'TRASHED_NODES',
     RESTORED_NODES = 'RESTORED_NODES',
     RENAMED_NODES = 'RENAMED_NODES',
-    SHARE_CHANGED_NODES = 'SHARE_CHANGED_NODES',
 
     // Generic events that update the whole node
     UPDATED_NODES = 'UPDATED_NODES_EVENT',
@@ -41,11 +40,6 @@ export enum ActionEventName {
 export interface MovedNodesEvent {
     type: ActionEventName.MOVED_NODES;
     items: { uid: string; parentUid: string | undefined }[];
-}
-
-export interface ShareChangedEvent {
-    type: ActionEventName.SHARE_CHANGED_NODES;
-    items: { uid: string; isShared: boolean }[];
 }
 
 export interface TrashedNodesEvent {
@@ -98,7 +92,6 @@ export interface RefreshShareWithMeEvent {
 
 export type ActionEvent =
     | MovedNodesEvent
-    | ShareChangedEvent
     | TrashedNodesEvent
     | RestoredNodesEvent
     | RenamedNodesEvent
@@ -114,7 +107,6 @@ export type ActionEventListener<T extends ActionEvent> = (event: T) => Promise<v
 
 export type ActionEventMap = {
     [ActionEventName.MOVED_NODES]: MovedNodesEvent;
-    [ActionEventName.SHARE_CHANGED_NODES]: ShareChangedEvent;
     [ActionEventName.TRASHED_NODES]: TrashedNodesEvent;
     [ActionEventName.RESTORED_NODES]: RestoredNodesEvent;
     [ActionEventName.RENAMED_NODES]: RenamedNodesEvent;
