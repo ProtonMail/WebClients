@@ -189,7 +189,7 @@ const getPassCoreProviderProps = (
             if (clipboardTTL && clipboardTTL > 0 && permissionGranted) {
                 await sendMessage(
                     messageFactory({
-                        type: WorkerMessageType.CLIPBOARD_START_CLEAR_TIMEOUT,
+                        type: WorkerMessageType.CLIPBOARD_AUTOCLEAR,
                         payload: { timeoutMs: clipboardTTL, content },
                     })
                 );

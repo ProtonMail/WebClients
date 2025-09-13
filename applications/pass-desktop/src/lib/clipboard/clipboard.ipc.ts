@@ -1,7 +1,7 @@
 import noop from '@proton/utils/noop';
 
-import { clipboard as clipboardNative } from '../../native';
-import { setupIpcHandler } from './ipc';
+import { clipboard as clipboardNative } from '../../../native';
+import { setupIpcHandler } from '../ipc';
 
 declare module 'proton-pass-desktop/lib/ipc' {
     interface IPCChannels {

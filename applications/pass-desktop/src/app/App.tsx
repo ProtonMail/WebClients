@@ -118,10 +118,8 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
         }),
 
     writeToClipboard: async (content, clipboardTTL) => {
-        await window.ctxBridge?.writeToClipboard(content);
-        if (clipboardTTL && clipboardTTL > 0) {
-            clipboard.startClearTimeout(clipboardTTL, content);
-        }
+        await clipboard.write(content);
+        if (clipboardTTL && clipboardTTL > 0) clipboard.autoClear(clipboardTTL, content);
     },
 
     isFirstLaunch,

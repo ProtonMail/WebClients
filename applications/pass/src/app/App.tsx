@@ -136,10 +136,8 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
             }),
 
         writeToClipboard: async (content, clipboardTTL) => {
-            await navigator.clipboard.writeText(content);
-            if (clipboardTTL && clipboardTTL > 0) {
-                clipboard.startClearTimeout(clipboardTTL, content);
-            }
+            await clipboard.write(content);
+            if (clipboardTTL && clipboardTTL > 0) clipboard.autoClear(clipboardTTL, content);
         },
 
         supportsBiometrics: isPRFSupported,
