@@ -53,7 +53,7 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
             });
         } catch (err) {
             createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
-            logger.error(`[Popup] unable to copy to clipboard`, err);
+            logger.error(`[ClipboardProvider] unable to copy to clipboard`);
         }
     }, []);
 
