@@ -1,6 +1,6 @@
 import type { FC, PropsWithChildren } from 'react';
-import { createContext, useMemo, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { createContext, useCallback, useMemo, useState } from 'react';
+import { useDispatch, useStore } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -11,91 +11,84 @@ import { ClipboardSettingsModal } from '@proton/pass/components/Settings/Clipboa
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';
+import type { State } from '@proton/pass/store/types';
 import type { MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 export type ClipboardAction = 'settings';
 
 export type ClipboardContextValue = {
-    modal: MaybeNull<ClipboardAction>;
-    setModal: (modal: MaybeNull<ClipboardAction>) => void;
-    onCopyToClipboard: (content: string) => Promise<void>;
-    onSettingsChange: (timeoutMs: number, silent?: boolean) => Promise<void>;
+    copyToClipboard: (content: string) => Promise<void>;
+    setClipboardTTL: (timeoutMs: number, silent?: boolean) => void;
 };
 
 export const ClipboardContext = createContext<MaybeNull<ClipboardContextValue>>(null);
+
 export const useClipboardContext = createUseContext(ClipboardContext);
-export const useOnCopyToClipboard = () => useClipboardContext().onCopyToClipboard;
-export const useOnClipboardSettingsChange = () => useClipboardContext().onSettingsChange;
+export const useOnCopyToClipboard = () => useClipboardContext().copyToClipboard;
+export const useOnClipboardSettingsChange = () => useClipboardContext().setClipboardTTL;
 
 export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
-    const dispatch = useDispatch();
-    const { createNotification } = useNotifications();
     const { writeToClipboard } = usePassCore();
-    const settingsClipboardTTL = useSelector(selectClipboardTTL);
+    const { createNotification } = useNotifications();
+    const dispatch = useDispatch();
+    const store = useStore<State>();
 
     const [cachedCopy, setCachedCopy] = useState<MaybeNull<string>>(null);
     const [modal, setModal] = useState<MaybeNull<ClipboardAction>>(null);
 
-    const handleActualCopy = async (value: string, overrideClipboardTTL?: number) => {
+    const onCopyToClipboard = useCallback(async (value: string, clipboardTTL?: number) => {
         try {
-            const clipboardTTL = overrideClipboardTTL ?? settingsClipboardTTL;
-
+            const timeoutDurationHumanReadable = getClipboardTTLOptions().find(([ttl]) => ttl === clipboardTTL)?.[1];
             await writeToClipboard(value, clipboardTTL);
 
-            const timeoutDurationHumanReadable = getClipboardTTLOptions().find(
-                ([value]) => value === clipboardTTL
-            )?.[1];
-
-            const text =
-                clipboardTTL === undefined
-                    ? c('Info').t`Copied to clipboard`
-                    : // translator: `timeoutDurationHumanReadable` may be 15 seconds, 1 minute or 2 minutes
-                      c('Info').t`Copied to clipboard, automatically deleted after ${timeoutDurationHumanReadable}`;
-
-            createNotification({ type: 'success', text, showCloseButton: false });
+            createNotification({
+                showCloseButton: false,
+                type: 'success',
+                text:
+                    clipboardTTL === undefined
+                        ? c('Info').t`Copied to clipboard`
+                        : // translator: `timeoutDurationHumanReadable` may be 15 seconds, 1 minute or 2 minutes
+                          c('Info').t`Copied to clipboard, automatically deleted after ${timeoutDurationHumanReadable}`,
+            });
         } catch (err) {
             createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
             logger.error(`[Popup] unable to copy to clipboard`, err);
         }
-    };
+    }, []);
 
-    const onCopyToClipboard = async (value: string) => {
-        if (BUILD_TARGET !== 'web' && settingsClipboardTTL === undefined) {
-            setCachedCopy(value);
-            setModal('settings');
-            return;
-        }
+    const ctx = useMemo<ClipboardContextValue>(
+        () => ({
+            copyToClipboard: async (value) => {
+                const ttl = selectClipboardTTL(store.getState());
 
-        await handleActualCopy(value);
-    };
-
-    const onSettingsChange = async (timeoutMs: number, silent = false) => {
-        dispatch(settingsEditIntent('behaviors', { clipboard: { timeoutMs } }, silent));
-    };
-
-    const onClose = async (overrideClipboardTTL: number) => {
-        setModal(null);
-
-        if (cachedCopy !== null) {
-            setCachedCopy(null);
-            await handleActualCopy(cachedCopy, overrideClipboardTTL);
-        }
-    };
-
-    const contextValue = useMemo(() => {
-        return {
-            modal,
-            setModal,
-            onCopyToClipboard,
-            onSettingsChange,
-        };
-    }, [modal, settingsClipboardTTL]);
+                if (BUILD_TARGET !== 'web' && ttl === undefined) {
+                    setCachedCopy(value);
+                    setModal('settings');
+                } else await onCopyToClipboard(value, ttl);
+            },
+            setClipboardTTL: (timeoutMs, silent = false) => {
+                dispatch(settingsEditIntent('behaviors', { clipboard: { timeoutMs } }, silent));
+            },
+        }),
+        []
+    );
 
     return (
-        <ClipboardContext.Provider value={contextValue}>
+        <ClipboardContext.Provider value={ctx}>
             {children}
-            {modal === 'settings' ? <ClipboardSettingsModal onClose={onClose} /> : null}
+            {modal === 'settings' && (
+                <ClipboardSettingsModal
+                    onClose={async (overrideClipboardTTL: number) => {
+                        setModal(null);
+
+                        if (cachedCopy !== null) {
+                            setCachedCopy(null);
+                            await onCopyToClipboard(cachedCopy, overrideClipboardTTL);
+                        }
+                    }}
+                />
+            )}
         </ClipboardContext.Provider>
     );
 };
