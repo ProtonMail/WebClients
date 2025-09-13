@@ -11,13 +11,14 @@ import {
     SidebarPrimaryButton,
     usePopperAnchor,
 } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
-import { useCreateFolderModal } from '../../../components/modals/CreateFolderModal';
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
-import { useActions, useFileUploadInput, useFolderUploadInput, useFolderView } from '../../../store';
+import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
+import { useFileUploadInput, useFolderUploadInput, useFolderView } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import { CreateDocumentButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 import { CreateSheetButton } from './ActionMenuButtons/CreateSheetButton';
@@ -35,7 +36,6 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
     const isDesktop = !getDevice()?.type;
 
     const { activeFolder } = useActiveShare();
-    const { createFolder } = useActions();
     const folderView = useFolderView(activeFolder);
     const isEditor = useMemo(() => getCanWrite(folderView.permissions), [folderView.permissions]);
     const {
@@ -52,6 +52,7 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
     const { createDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
+    const parentFolderUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
 
     return (
         <>
@@ -99,9 +100,7 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
                     <UploadFileButton onClick={fileClick} />
                     {isDesktop && <UploadFolderButton onClick={folderClick} />}
                     <hr className="my-2" />
-                    <CreateNewFolderButton
-                        onClick={() => showCreateFolderModal({ folder: activeFolder, createFolder })}
-                    />
+                    <CreateNewFolderButton onClick={() => showCreateFolderModal({ parentFolderUid })} />
                     {isDocsEnabled && (
                         <CreateDocumentButton
                             onClick={() => {

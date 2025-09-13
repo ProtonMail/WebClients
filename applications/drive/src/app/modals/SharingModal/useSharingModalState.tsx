@@ -22,6 +22,8 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPublicSharing';
 // TODO: Remove this when events will be managed by sdk
 import { useDriveEventManager } from '../../store';
+import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
+import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
@@ -32,7 +34,6 @@ export type SharingModalInnerProps = {
     linkId: string;
     onPublicLinkToggle?: (enabled: boolean) => void;
     isAlbum?: boolean;
-    onShareChange?: (item: { uid: string; isShared: boolean }) => void;
 };
 
 export type UseSharingModalProps = ModalStateProps & SharingModalInnerProps;
@@ -52,7 +53,6 @@ export const useSharingModalState = ({
     isAlbum,
     open,
     onExit,
-    onShareChange,
 }: UseSharingModalProps): SharingModalViewProps => {
     const events = useDriveEventManager();
 
@@ -76,6 +76,8 @@ export const useSharingModalState = ({
 
     const [name, setName] = useState('');
 
+    const [parentUid, setParentUid] = useState<string | undefined>(undefined);
+
     const [isPublicLinkEnabled, setIsPublicLinkEnabled] = useState(!isAlbum);
 
     const isDirectShared =
@@ -84,6 +86,17 @@ export const useSharingModalState = ({
         sharingInfo.members.length > 0;
     const isPublicShared = !!sharingInfo.publicLink;
     const isShared = isDirectShared || isPublicShared;
+
+    //TODO: We need to move that somewhere else to be able to reuse the modal with event system
+    const updateSharingState = async (updatedShareResult: ShareResult | undefined) => {
+        await getActionEventManager().emit({
+            type: ActionEventName.UPDATED_NODES,
+            items: [{ uid: nodeUid, parentUid }],
+        });
+        setSharingInfo(updatedShareResult || defaultSharingInfo);
+        //TODO: Remove when we will get rid of legacy
+        void events.pollEvents.volumes(volumeId);
+    };
 
     const unshareNode = async (email: string) => {
         try {
@@ -96,10 +109,7 @@ export const useSharingModalState = ({
             } else {
                 createNotification({ type: 'info', text: c('Notification').t`Access updated` });
             }
-            setSharingInfo(updatedShareResult || defaultSharingInfo);
-            onShareChange?.({ uid: nodeUid, isShared: true });
-
-            void events.pollEvents.volumes(volumeId); // TODO:EVENTS remove once views are all ported to sdk
+            await updateSharingState(updatedShareResult);
         } catch (e) {
             handleError(e, { fallbackMessage: c('Error').t`Failed to unshare node`, extra: { nodeUid } });
         }
@@ -110,11 +120,8 @@ export const useSharingModalState = ({
             const updatedShareResult = await drive.unshareNode(nodeUid, {
                 publicLink: 'remove',
             });
-            onShareChange?.({ uid: nodeUid, isShared: false });
             createNotification({ text: c('Notification').t`The link to your item was deleted` });
-            setSharingInfo(updatedShareResult || defaultSharingInfo);
-
-            void events.pollEvents.volumes(volumeId); // TODO:EVENTS remove once views are all ported to sdk
+            await updateSharingState(updatedShareResult);
         } catch (e) {
             handleError(e, {
                 fallbackMessage: c('Error').t`The link to your item failed to be deleted`,
@@ -130,11 +137,8 @@ export const useSharingModalState = ({
                     role: MemberRole.Viewer,
                 },
             });
-            onShareChange?.({ uid: nodeUid, isShared: true });
 
-            setSharingInfo(updatedShareResult);
-
-            void events.pollEvents.volumes(volumeId); // TODO:EVENTS remove once views are all ported to sdk
+            await updateSharingState(updatedShareResult);
         } catch (e) {
             handleError(e, { fallbackMessage: c('Error').t`Failed to create public share node`, extra: { nodeUid } });
         }
@@ -165,17 +169,13 @@ export const useSharingModalState = ({
                 },
             });
 
-            onShareChange?.({ uid: nodeUid, isShared: true });
-
             if (publicLinkSettings.role) {
                 createNotification({ text: c('Notification').t`Public link access updated` });
             } else {
                 createNotification({ text: c('Notification').t`Your settings have been changed successfully` });
             }
 
-            setSharingInfo(updatedShareResult);
-
-            void events.pollEvents.volumes(volumeId); // TODO:EVENTS remove once views are all ported to sdk
+            await updateSharingState(updatedShareResult);
         } catch (e) {
             handleError(e, { fallbackMessage: c('Error').t`Failed to update public share node`, extra: { nodeUid } });
         }
@@ -185,10 +185,8 @@ export const useSharingModalState = ({
         try {
             const updatedShareResult = await drive.shareNode(nodeUid, directShareSettings);
             createNotification({ type: 'info', text: c('Notification').t`Access updated and shared` });
-            onShareChange?.({ uid: nodeUid, isShared: true });
-            setSharingInfo(updatedShareResult);
 
-            void events.pollEvents.volumes(volumeId); // TODO:EVENTS remove once views are all ported to sdk
+            await updateSharingState(updatedShareResult);
         } catch (e) {
             handleError(e, { fallbackMessage: c('Error').t`Failed to update direct share node`, extra: { nodeUid } });
         }
@@ -197,10 +195,8 @@ export const useSharingModalState = ({
     const stopSharingWithPollEvents = async () => {
         try {
             const updatedShareResult = await drive.unshareNode(nodeUid);
-            setSharingInfo(updatedShareResult || defaultSharingInfo);
-            onShareChange?.({ uid: nodeUid, isShared: false });
-
-            await events.pollEvents.volumes(volumeId); // TODO:EVENTS remove once views are all ported to sdk
+            await updateSharingState(updatedShareResult);
+            await events.pollEvents.volumes(volumeId);
             createNotification({ text: c('Notification').t`You stopped sharing this item` });
         } catch (e) {
             handleError(e, {
@@ -241,6 +237,7 @@ export const useSharingModalState = ({
                 }
                 if (nodeInfo.ok) {
                     setName(nodeInfo.value.name);
+                    setParentUid(nodeInfo.value.parentUid);
                     if (nodeInfo.value.mediaType && isProtonDocsDocument(nodeInfo.value.mediaType)) {
                         setIsPublicLinkEnabled(isDocsPublicSharingEnabled);
                     }

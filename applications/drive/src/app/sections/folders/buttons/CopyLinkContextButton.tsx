@@ -1,37 +1,31 @@
 import { c } from 'ttag';
 
-import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import type { LinkShareUrl} from '../../../store';
-import { useActions } from '../../../store';
+import { useNotifications } from '@proton/components';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
-type Item = {
-    rootShareId: string;
-    linkId: string;
-    shareUrl?: LinkShareUrl;
-    isExpired?: boolean;
-    trashed: number | null;
-};
+import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 
 interface Props {
-    selectedItems: Item[];
+    publicLinkUrl: string;
     close: () => void;
 }
 
-export const CopyLinkContextButton = ({ selectedItems, close }: Props) => {
-    const { copyShareLinkToClipboard } = useActions(); // We can use it here since we don't need confirmModal
-    const item = selectedItems[0];
-    const hasLink = selectedItems.length === 1 && item?.shareUrl && !item.shareUrl.isExpired && !item.trashed;
+export const CopyLinkContextButton = ({ publicLinkUrl, close }: Props) => {
+    const { createNotification } = useNotifications();
 
-    if (!copyShareLinkToClipboard || !hasLink) {
-        return null;
-    }
+    const handleCopyURLClick = () => {
+        textToClipboard(publicLinkUrl);
+        createNotification({
+            text: c('Success').t`Secure link copied`,
+        });
+    };
 
     return (
         <ContextMenuButton
             name={c('Action').t`Copy link`}
             icon="link"
             testId="context-menu-copy-link"
-            action={() => copyShareLinkToClipboard(new AbortController().signal, item.rootShareId, item.linkId)}
+            action={handleCopyURLClick}
             close={close}
         />
     );
