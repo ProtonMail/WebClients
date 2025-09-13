@@ -30,10 +30,10 @@ export const ClipboardSettings: FC = () => {
                 ))}
             </SelectTwo>
             {value !== -1 && (
-                <span className="block color-weak text-sm">
+                <span className="block color-weak text-sm mt-2">
                     {DESKTOP_BUILD
-                        ? c('Info').t`Please keep ${PASS_APP_NAME} open so the clipboard can be cleared automatically.`
-                        : c('Info').t`Please keep your browser open so the clipboard can be cleared automatically.`}
+                        ? c('Info').t`Please keep ${PASS_APP_NAME} open so the clipboard can be automatically cleared.`
+                        : c('Info').t`Please keep your browser open so the clipboard can be automatically cleared.`}
                 </span>
             )}
         </>

@@ -46,10 +46,10 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
                 showCloseButton: false,
                 type: 'success',
                 text:
-                    clipboardTTL === undefined
+                    !clipboardTTL || clipboardTTL === -1
                         ? c('Info').t`Copied to clipboard`
                         : // translator: `timeoutDurationHumanReadable` may be 15 seconds, 1 minute or 2 minutes
-                          c('Info').t`Copied to clipboard, automatically deleted after ${timeoutDurationHumanReadable}`,
+                          c('Info').t`Copied to clipboard (expires in ${timeoutDurationHumanReadable})`,
             });
         } catch (err) {
             createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
