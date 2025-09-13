@@ -7,16 +7,14 @@ import { Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@prot
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { useOnClipboardSettingsChange } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 
-type Props = {
-    onClose: (overrideClipboardTTL: number) => void;
-};
+type Props = { onClose: (overrideClipboardTTL: number) => void };
 
 export const ClipboardSettingsModal: FC<Props> = ({ onClose }) => {
     const [notAgain, setNotAgain] = useState(false);
     const onClipboardSettingsChange = useOnClipboardSettingsChange();
 
     const handleClose = async (overrideClipboardTTL: number) => {
-        if (notAgain) await onClipboardSettingsChange(overrideClipboardTTL);
+        if (notAgain) onClipboardSettingsChange(overrideClipboardTTL);
         onClose(overrideClipboardTTL);
     };
 
