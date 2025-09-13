@@ -3,6 +3,7 @@ import type { Reducer } from 'redux';
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { PASS_DEFAULT_THEME } from '@proton/pass/constants';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
+import type { ClipboardSettings } from '@proton/pass/lib/clipboard/types';
 import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import {
@@ -16,7 +17,7 @@ import {
     userEvent,
 } from '@proton/pass/store/actions';
 import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
-import type { ClipboardStoreProperties, MaybeNull, Unpack } from '@proton/pass/types';
+import type { MaybeNull, Unpack } from '@proton/pass/types';
 import type {
     AutoFillSettings,
     AutoSaveSettings,
@@ -33,7 +34,7 @@ export type SettingsState = {
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;
     beta?: boolean;
-    clipboard?: ClipboardStoreProperties;
+    clipboard?: ClipboardSettings;
     createdItemsCount: number /* explicitly created, not including import */;
     disallowedDomains: DomainCriterias;
     extraPassword?: boolean;
