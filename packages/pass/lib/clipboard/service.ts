@@ -5,19 +5,17 @@ import noop from '@proton/utils/noop';
 export const createClipboardService = (clipboard: ClipboardApi): ClipboardService => {
     let clipboardTimer: Maybe<NodeJS.Timeout>;
 
-    const service = {
-        startClearTimeout: (timeoutMs: number, content: string) => {
+    return {
+        ...clipboard,
+        autoClear: (timeoutMs, value) => {
             if (clipboardTimer !== undefined) clearTimeout(clipboardTimer);
 
             if (timeoutMs <= 0) return;
 
             clipboardTimer = setTimeout(async () => {
-                const currentText = await clipboard.read().catch(noop());
-                if (currentText !== content) return;
-                clipboard.write('').catch(noop);
+                const current = await clipboard.read().catch(noop());
+                if (current === value) clipboard.write('').catch(noop);
             }, timeoutMs);
         },
     };
-
-    return service;
 };
