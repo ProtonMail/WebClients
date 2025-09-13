@@ -7,8 +7,8 @@ import { createClipboardService as createCoreClipboardService } from '@proton/pa
 export const createClipboardService = () => {
     const service = createCoreClipboardService(clipboardWorker);
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.CLIPBOARD_START_CLEAR_TIMEOUT, async ({ payload }) => {
-        service.startClearTimeout(payload.timeoutMs, payload.content);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.CLIPBOARD_AUTOCLEAR, async ({ payload }) => {
+        service.autoClear(payload.timeoutMs, payload.content);
         return true;
     });
 
