@@ -20,5 +20,3 @@ export type ContextBridgeApi = {
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';
-
-export type ClipboardStoreProperties = { timeoutMs: number };
