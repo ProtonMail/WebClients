@@ -310,9 +310,6 @@
       "Copy alias “${ name }”": [
         "Kopioi alias \"${ name }\""
       ],
-      "Copy email address": [
-        "Kopioi sähköpostiosoite"
-      ],
       "Copy email to clipboard": [
         "Kopioi sähköpostiosoite leikepöydälle"
       ],
@@ -787,9 +784,6 @@
       "Make it friendly": [
         "Tee siitä ystävällisempi"
       ],
-      "Manage addresses": [
-        "Hallitse osoitteita"
-      ],
       "Manage advanced account protections": [
         "Hallitse edistynyttä tilisuojausta"
       ],
@@ -1152,6 +1146,9 @@
       ],
       "Resume downloading": [
         "Jatka latausta"
+      ],
+      "Retry": [
+        "Yritä uudelleen"
       ],
       "Revert to original display": [
         "Palauta alkuperäinen näkymä"
@@ -5152,9 +5149,6 @@
       "customer support": [
         "asiakaspalveluun"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Perhetilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME } -osoite ennen liittymistä. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jos hyväksyt kutsun, siirrämme sinut nykyisestä tilauksestasi ja hyvitämme tilillesi jäljellä olevan saldon."
       ],
@@ -7063,9 +7057,6 @@
       "Included for free with your plan": [
         "Sisältyy ilmaiseksi tilaukseesi"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } sisältäen: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
       ],
@@ -8216,9 +8207,6 @@
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaintasi sivustolle:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Olet kirjautuneena ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Käytät enemmän tallennustilaa kuin ${ downgradedPlanName }-tilaus sisältyy. Sinun on poistettava tietoja tilauksesi alentamiseksi."
       ],
@@ -8795,12 +8783,6 @@
       "Also archive": [
         "Siirrä samalla arkistoon"
       ],
-      "Always label sender's emails": [
-        "Merkitse lähettäjän viestit aina"
-      ],
-      "Always move sender's emails": [
-        "Siirrä lähettäjän viestit aina"
-      ],
       "AND": [
         "JA"
       ],
@@ -9125,9 +9107,6 @@
       "Move ${ sidebarElementName }": [
         "Siirrä ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Siirrä viestit kansioon"
-      ],
       "Move to": [
         "Siirrä kohteeseen"
       ],
@@ -9353,9 +9332,6 @@
       "Undisclosed Recipients": [
         "Piilotetut vastaanottajat"
       ],
-      "Unknown": [
-        "Tuntematon"
-      ],
       "Unsafe or problematic": [
         "Epäturvallinen tai ongelmallinen"
       ],
@@ -9370,9 +9346,6 @@
       ],
       "Username": [
         "Käyttäjätunnus"
-      ],
-      "VAT": [
-        "ALV"
       ],
       "Verification code": [
         "Vahvistuskoodi"
@@ -13900,12 +13873,6 @@
       "Create contact": [
         "Luo yhteystieto"
       ],
-      "Create folder \"${ search }\"": [
-        "Luo kansio \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Luo tunniste \"${ search }\""
-      ],
       "Create new group": [
         "Luo uusi ryhmä"
       ],
@@ -14278,6 +14245,9 @@
       "Newsletters view": [
         "Uutiskirjenäkymä"
       ],
+      "Next": [
+        "Seuraava"
+      ],
       "Next conversation": [
         "Seuraava keskustelu"
       ],
@@ -14323,6 +14293,9 @@
       "Open actions dropdown": [
         "Avaa toimintovalikko"
       ],
+      "Open pagination": [
+        "Avaa sivunavigaatio"
+      ],
       "Org setup": [
         "Organisaation määritys"
       ],
@@ -14352,6 +14325,9 @@
       ],
       "Preview": [
         "Esikatselu"
+      ],
+      "Previous": [
+        "Edellinen"
       ],
       "Previous conversation": [
         "Edellinen keskustelu"
@@ -14873,9 +14849,6 @@
       "${ n } wallet": [
         "${ n } lompakko",
         "${ n } lompakkoa"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Turvallisempi tapa säilyttää Bitcoineja"
       ],
       "Bitcoin via Email": [
         "Bitcoin sähköpostitse"

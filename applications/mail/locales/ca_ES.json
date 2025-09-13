@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adreça",
-        "${ numberOfAddresses } adreces"
-      ],
       "A to Z": [
         "De la A a la Z"
       ],
@@ -100,6 +96,9 @@
       "Add phone number": [
         "Afegeix número de telèfon"
       ],
+      "Add secret passphrase": [
+        "Afegiu una frase de contrasenya secreta"
+      ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Afegeix al ${ CALENDAR_APP_NAME }"
       ],
@@ -137,7 +136,7 @@
         "Aplica"
       ],
       "Archive": [
-        "Arxivar"
+        "Arxiva"
       ],
       "As Scheduled": [
         "Tal com s'ha programat"
@@ -150,7 +149,7 @@
         "Adjunta una o més captures de pantalla"
       ],
       "Attachment": [
-        "Fitxer adjunt"
+        "Adjunt"
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
@@ -326,9 +325,6 @@
       "Copy alias “${ name }”": [
         "Copia l'àlies «${ name }»"
       ],
-      "Copy email address": [
-        "Copia l'adreça de correu electrònic"
-      ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
@@ -489,6 +485,9 @@
       ],
       "Edit address": [
         "Edita l'adreça"
+      ],
+      "Edit categories": [
+        "Editar categories"
       ],
       "Edit draft": [
         "Edita l'esborrany"
@@ -764,6 +763,9 @@
       "Italic": [
         "Cursiva"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Afegiu-vos-hi amb ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Mantén la subscripció"
       ],
@@ -811,9 +813,6 @@
       ],
       "Make it friendly": [
         "Més amigable"
-      ],
-      "Manage addresses": [
-        "Gestionar adreces"
       ],
       "Manage advanced account protections": [
         "Gestiona les proteccions avançades del compte"
@@ -910,6 +909,9 @@
       ],
       "More search options": [
         "Més opcions de cerca"
+      ],
+      "Most frequent": [
+        "Més freqüent"
       ],
       "Most read": [
         "El més llegit"
@@ -1019,6 +1021,9 @@
       "Page ${ pageNumber }": [
         "Pàgina ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Frase de contrasenya"
+      ],
       "Pause": [
         "Pausa"
       ],
@@ -1072,6 +1077,9 @@
       ],
       "Read receipt sent": [
         "S\"ha enviat la confirmació de lectura."
+      ],
+      "Recently read": [
+        "Llegit recentment"
       ],
       "Recently received": [
         "Rebuts recentment"
@@ -1177,6 +1185,9 @@
       ],
       "Resume downloading": [
         "Repreneu la descàrrega"
+      ],
+      "Retry": [
+        "Reintenta"
       ],
       "Revert to original display": [
         "Torneu a la vista original"
@@ -1513,6 +1524,9 @@
       ],
       "Update recovery phrase": [
         "Actualitza la frase de recuperació"
+      ],
+      "Update secret passphrase": [
+        "Actualitzeu la frase de contrasenya secreta"
       ],
       "Upgrade": [
         "Millora"
@@ -1971,6 +1985,32 @@
         "S'ha aprovat la verificació del remitent"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzat el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos el ${ formattedDate }. No se us carregarà cap import si la cancel·leu abans del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes el ${ formattedDate }. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències Scribe durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No podeu afegir dominis personalitzats durant el període de prova."
+      ],
+      "You have reached the trial limit.": [
+        "Heu arribat al límit de la prova."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Cancel·la la subscripció"
@@ -2203,6 +2243,9 @@
       ],
       "Manual setup problem": [
         "Problema de configuració manual"
+      ],
+      "Meet problem": [
+        "Coneixeu el problema"
       ],
       "Other": [
         "Altres"
@@ -2629,6 +2672,52 @@
         "Amplia"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accés a models d'IA avançats"
+      ],
+      "Basic chat history": [
+        "Historial de xat bàsic"
+      ],
+      "Full chat history with search": [
+        "Historial de xat complet amb cerca"
+      ],
+      "Large file upload support": [
+        "Suport per a la càrrega de fitxers grans"
+      ],
+      "Limited daily chats": [
+        "Nombre de xats diaris limitat"
+      ],
+      "Limited favorites": [
+        "Nombre de preferits limitat"
+      ],
+      "Unlimited daily chats": [
+        "Xats diaris sense límits"
+      ],
+      "Unlimited favorites for quick access": [
+        "Preferits il·limitats per a un accés ràpid"
+      ],
+      "Upload and query multiple large files": [
+        "Carregueu i consulteu múltiples fitxers grans"
+      ],
+      "Upload and query small files": [
+        "Carregueu i consulteu fitxers petits"
+      ],
+      "Web search access": [
+        "Accés a la cerca web"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } és una IA que prioritza la privadesa i que us ajuda a fer més coses mantenint les vostres dades segures. Activeu-ne tot el potencial i gaudiu d'accés anticipat a noves característiques a mesura que s'introdueixin."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Afegiu ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Xats d'alta velocitat i característiques d'IA avançades."
+      ]
+    },
     "color": {
       "apple": [
         "poma"
@@ -2851,7 +2940,7 @@
         "Xifrat PGP. ${ warningsText }"
       ],
       "PGP-signed": [
-        "S'ha signat amb PGP"
+        "Signat amb PGP"
       ],
       "The address might be misspelled": [
         "És possible que l'adreça estigui mal escrita."
@@ -3837,7 +3926,7 @@
     },
     "CustomFilter": {
       "Attachment": [
-        "Fitxer adjunt"
+        "Adjunt"
       ],
       "Filter on": [
         "Filtra per"
@@ -4051,9 +4140,6 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiqueu la sincronització i la programació amb calendaris compartits."
-      ],
-      "This view shows messages sent to the following addresses:": [
-        "Aquesta vista mostra missatges enviats a les següents adreces:"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Per continuar utilitzant l'assistent d'escriptura, afegiu-lo a la vostra subscripció."
@@ -4538,6 +4624,9 @@
       "Failed to open to contact": [
         "No s'ha pogut obrir el contacte"
       ],
+      "Failed to update secret passphrase": [
+        "No s'ha pogut actualitzar la frase de contrasenya secreta"
+      ],
       "Filter with this name already exists": [
         "Ja existeix un filtre amb aquest nom"
       ],
@@ -4666,6 +4755,9 @@
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
+      ],
+      "Passphrase unavailable": [
+        "La frase de contrasenya no està disponible"
       ],
       "Password is required": [
         "La contrasenya és obligatòria"
@@ -5129,6 +5221,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Els àlies no es poden utilitzar quan s'ha activat una contrasenya addicional a ${ PASS_APP_NAME }."
       ],
+      "An error occurred with the categories": [
+        "S'ha produït un error amb les categories"
+      ],
       "App currently unavailable": [
         "L'aplicació no està disponible actualment."
       ],
@@ -5282,8 +5377,8 @@
       "customer support": [
         "atenció al client"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Els plans familiars actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Els plans familiars actualment no suporten comptes externs. Creeu una adreça ${ BRAND_NAME } abans d'unir-vos-hi. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
@@ -5730,7 +5825,7 @@
         "Seguiu utilitzant ${ MAIL_APP_NAME } per a descobrir més formes amb què ${ BRAND_NAME } protegeix la vostra privacitat i simplifica l'enviament de correus electrònics."
       ],
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ],
       "Nice! You've updated all services in this category.": [
         "Perfecte! Heu actualitzat tots els serveis d'aquesta categoria."
@@ -5833,11 +5928,17 @@
       "Contacts": [
         "Contactes"
       ],
+      "Domain": [
+        "Domini"
+      ],
       "Drawer": [
         "Panell lateral"
       ],
       "Hardware not compatible": [
         "Aquest maquinari no és compatible."
+      ],
+      "Password ends with": [
+        "La contrasenya acaba amb"
       ],
       "Report an issue": [
         "Informeu d'un problema"
@@ -5856,6 +5957,9 @@
       ],
       "Tell us more": [
         "Expliqueu-nos més"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ]
     },
     "Hint": {
@@ -7103,6 +7207,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedir en qualsevol moment al correu electrònic i a una experiència mòbil optimitzada, descarregueu la nostra aplicació ${ androidAppLink } o ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Per més seguretat, podeu establir una frase de contrasenya. No s'inclourà a la invitació del calendari, recordeu compartir-la amb els vostres convidats per separat."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Per missatges posteriors al ${ oldestDate }"
       ],
@@ -7225,9 +7332,6 @@
       ],
       "Included for free with your plan": [
         "S'inclou de franc amb el vostre pla"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incloent ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
@@ -7972,6 +8076,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "S'ha produït un error amb la signatura utilitzada per verificar els detalls del contacte. Això podria ser com a resultat d'un restabliment de contrasenya."
       ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Aquestes converses es guarden aquí d'acord amb la política de conservació de dades de la vostra organització."
+      ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "No us poden enviar correu brossa si no saben la vostra adreça de correu electrònic. Protegiu la safata d'entrada amb els àlies de hide-my-email."
       ],
@@ -8388,8 +8495,8 @@
       "You are about to open your default browser and visit:": [
         "Esteu a punt d'obrir el navegador per defecte i visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Heu iniciat sessió com a ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Esteu utilitzant més emmagatzematge del que hi ha inclòs al pla ${ downgradedPlanName }. Elimineu o traieu dades per a poder degradar."
@@ -8988,12 +9095,6 @@
       "Also archive": [
         "Voleu arxivar també"
       ],
-      "Always label sender's emails": [
-        "Etiqueteu sempre els correus electrònics del remitent"
-      ],
-      "Always move sender's emails": [
-        "Mou sempre els correus electrònics d'aquest remitent"
-      ],
       "AND": [
         "I"
       ],
@@ -9024,6 +9125,9 @@
       "Authenticator app": [
         "Aplicació d'autenticació"
       ],
+      "Automated confirmations and alerts": [
+        "Confirmacions i alertes automatitzades"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -9035,6 +9139,9 @@
       ],
       "Blind Carbon Copy": [
         "Còpia oculta"
+      ],
+      "Bookings, billings, and orders": [
+        "Reserves, factures i comandes"
       ],
       "Browser": [
         "Navegador"
@@ -9068,6 +9175,9 @@
       ],
       "Cash": [
         "Efectiu"
+      ],
+      "Categories badge": [
+        "Insígnia de categories"
       ],
       "Category": [
         "Categoria"
@@ -9129,6 +9239,9 @@
       "Date:": [
         "Data:"
       ],
+      "Deals, offers, marketing emails": [
+        "Ofertes, promocions, correus electrònics de màrqueting"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -9140,6 +9253,9 @@
       ],
       "Did not follow instructions": [
         "No s'han seguit les instruccions"
+      ],
+      "Discussion board posts and threads": [
+        "Publicacions i fils del fòrum de discussió"
       ],
       "Do you have any suggestions for our team?": [
         "Teniu algun suggeriment pel nostre equip?"
@@ -9231,6 +9347,33 @@
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
+      "Go to Forums": [
+        "Aneu als fòrums"
+      ],
+      "Go to Newsletters": [
+        "Aneu als butlletins"
+      ],
+      "Go to Primary": [
+        "Aneu al primari"
+      ],
+      "Go to Promotions": [
+        "Aneu a les promocions"
+      ],
+      "Go to Social": [
+        "Aneu al canal de continguts"
+      ],
+      "Go to Transactions": [
+        "Aneu a les transaccions"
+      ],
+      "Go to Updates": [
+        "Aneu a les actualitzacions"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Ajudeu-nos a millorar les categories escollint la que millor s'ajusti a aquest correu electrònic. Gràcies per la vostra col·laboració!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ajudeu-nos a millorar la pròxima categorització del correu"
+      ],
       "Hide password": [
         "Amaga la contrasenya"
       ],
@@ -9321,9 +9464,6 @@
       "Move ${ sidebarElementName }": [
         "Mou ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Mou els missatges a"
-      ],
       "Move to": [
         "Moure a"
       ],
@@ -9363,6 +9503,12 @@
       "No label found": [
         "No s'ha trobat cap etiqueta"
       ],
+      "No results found": [
+        "No s'ha trobat cap resultat"
+      ],
+      "Non-promotional content and news": [
+        "Contingut i notícies no promocionals"
+      ],
       "Not factually correct": [
         "Els fets no són correctes"
       ],
@@ -9401,6 +9547,9 @@
       ],
       "Participants": [
         "Participants"
+      ],
+      "Passphrase:": [
+        "Frase de contrasenya:"
       ],
       "Password": [
         "Contrasenya"
@@ -9471,6 +9620,9 @@
       "Search in": [
         "Cerca a"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Seleccioneu les categories a incloure, i habiliteu-ne les notificacions per rebre alertes sobre correus electrònics nous en cada una."
+      ],
       "Send auto-reply": [
         "Enviar resposta automàtica"
       ],
@@ -9485,6 +9637,9 @@
       ],
       "Social": [
         "Social"
+      ],
+      "Social media updates and activity": [
+        "Actualitzacions i activitat de les xarxes socials"
       ],
       "Starred": [
         "Destacats"
@@ -9519,6 +9674,9 @@
       "System information": [
         "Informació del sistema"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "La categoria s'ha actualitzat, gràcies pels vostres comentaris!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "El filtre està desactivat. ${ enableButton }"
       ],
@@ -9549,9 +9707,6 @@
       "Undisclosed Recipients": [
         "Destinataris ocults"
       ],
-      "Unknown": [
-        "Desconegut"
-      ],
       "Unsafe or problematic": [
         "És insegur o problemàtic"
       ],
@@ -9566,9 +9721,6 @@
       ],
       "Username": [
         "Nom d'usuari"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -9585,11 +9737,20 @@
       "Weak password": [
         "Contrasenya feble."
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Estem millorant com es categoritzen els correus electrònics. Els vostres comentaris ajuden a fer-ho més intel·ligent i precís."
+      ],
       "What happened?": [
         "Què ha passat?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Quin és el vostre principal motiu per cancel·lar o reduir la subscripció?"
+      ],
+      "Which category should this be recategorized under?": [
+        "En quina categoria s'hauria de recategoritzar?"
+      ],
+      "Why am I seeing this?": [
+        "Per què veig això?"
       ],
       "With attachment": [
         "Amb adjunt"
@@ -9599,6 +9760,9 @@
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
+      ],
+      "You cannot disable all categories": [
+        "No podeu desactivar totes les categories"
       ],
       "Your alias": [
         "El vostre àlies"
@@ -9738,7 +9902,7 @@
         "Tot el correu"
       ],
       "Archive": [
-        "Arxivar"
+        "Arxiva"
       ],
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
@@ -9757,6 +9921,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Creeu un calendari nou per gestionar les vostres invitacions"
+      ],
+      "Deleted": [
+        "S'ha eliminat"
       ],
       "Drafts": [
         "Esborranys"
@@ -9990,7 +10157,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
         "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el pla."
@@ -11228,6 +11395,9 @@
       "Passcode copied to clipboard": [
         "El codi d'accés s'ha copiat al porta-retalls."
       ],
+      "Passphrase copied to clipboard": [
+        "La frase de contrasenya s'ha copiat al porta-retalls"
+      ],
       "Password has been set successfully": [
         "La contrasenya s'ha establert."
       ],
@@ -11798,11 +11968,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+      ],
       "Got it": [
         "Fet"
       ],
       "I'm purchasing as a business": [
         "Estic comprant com a empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -11818,6 +12000,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
+      ],
+      "Taxes": [
+        "Impostos"
       ],
       "terms & conditions": [
         "els termes i condicions"
@@ -11849,6 +12034,9 @@
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número d'IVA"
@@ -11936,7 +12124,7 @@
         "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
-        "NIF"
+        "Número d'IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -11993,6 +12181,9 @@
       ],
       "End date": [
         "Data de fi"
+      ],
+      "Enter passphrase": [
+        "Introduïu la frase de contrasenya"
       ],
       "Filter folders": [
         "Filtra les carpetes"
@@ -12623,7 +12814,7 @@
         "Fet"
       ],
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -13425,7 +13616,7 @@
         "Mantingueu el vostre equip segur en qualsevol lloc amb les nostres aplicacions per a web, iOS, Android, Windows, Mac i Linux."
       ],
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ],
       "Learn more about our impact": [
         "Descobriu més sobre el nostre impacte"
@@ -13764,6 +13955,10 @@
       "Conversation removed from Starred.": [
         "Aquesta conversa s'ha eliminat de Destacats."
       ],
+      "Conversation updated": [
+        "La conversa s'ha actualitzat",
+        "Les converses s'han actualitzat"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Les converses de ${ sendersList } s'etiquetaran com a ${ labelsList }"
       ],
@@ -13839,6 +14034,10 @@
       "Message removed from Starred.": [
         "S'ha eliminat aquest missatge de Destacats."
       ],
+      "Message updated": [
+        "El missatge s'ha actualitzat",
+        "Els missatges s'han s actualitzat"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Els missatges de ${ sendersList } s'etiquetaran com a ${ labelsList }"
       ],
@@ -13886,6 +14085,9 @@
       "Recategorized ${ elementsCount } message.": [
         "S'ha canviat de categoria ${ elementsCount } missatge.",
         "S'han canviat de categoria ${ elementsCount } missatges."
+      ],
+      "Secret passphrase updated": [
+        "S'ha actualitzat la frase de contrasenya secreta"
       ],
       "Self-destruction removed": [
         "S'ha suprimit la destrucció automàtica"
@@ -14224,7 +14426,7 @@
         "N'esteu segur?"
       ],
       "Attachments": [
-        "Fitxers adjunts"
+        "Adjunts"
       ],
       "Auto-deletion is active": [
         "La supressió automàtica està activada."
@@ -14322,12 +14524,6 @@
       "Create contact": [
         "Crea un contacte"
       ],
-      "Create folder \"${ search }\"": [
-        "Crea una carpeta \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Crea una etiqueta \"${ search }\""
-      ],
       "Create new group": [
         "Crea un grup nou"
       ],
@@ -14345,6 +14541,9 @@
       ],
       "Customize calendar import": [
         "Personalitzeu la importació del calendari"
+      ],
+      "Customize categories": [
+        "Personalitzar categories"
       ],
       "Customize your mail import": [
         "Personalitzeu la importació del vostre correu electrònic"
@@ -14460,7 +14659,7 @@
         "Configuració del correu"
       ],
       "Enable 2FA": [
-        "Activi l'autenticació 2FA"
+        "Activa el 2FA"
       ],
       "Enable advanced account protection": [
         "Activació de la protecció avançada del compte"
@@ -14580,6 +14779,10 @@
       "Label as": [
         "Etiqueta com a"
       ],
+      "Label message as": [
+        "Etiqueteu el missatge com",
+        "Etiqueta els missatges com"
+      ],
       "Label options": [
         "Opcions d\"etiqueta"
       ],
@@ -14664,6 +14867,13 @@
       "Move all messages to trash": [
         "Mou tots els missatges a la paperera"
       ],
+      "Move message to": [
+        "Mou el missatge a",
+        "Mou els missatges a"
+      ],
+      "Move messages to": [
+        "Mou els missatges a"
+      ],
       "Move to": [
         "Moure a"
       ],
@@ -14695,13 +14905,16 @@
         "Error de xarxa"
       ],
       "New message": [
-        "Nou missatge"
+        "Missatge nou"
       ],
       "Newsletters": [
         "Butlletins"
       ],
       "Newsletters view": [
         "Vista de butlletins"
+      ],
+      "Next": [
+        "Següent"
       ],
       "Next conversation": [
         "Conversa següent"
@@ -14748,6 +14961,9 @@
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
+      "Open pagination": [
+        "Obrir paginació"
+      ],
       "Org setup": [
         "Configuració de l'organització"
       ],
@@ -14777,6 +14993,9 @@
       ],
       "Preview": [
         "Vista prèvia"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Previous conversation": [
         "Conversa anterior"
@@ -15080,9 +15299,6 @@
       "Your account is protected": [
         "El compte està protegit"
       ],
-      "Your addresses": [
-        "Les vostres adreces"
-      ],
       "Your changes are not synced yet": [
         "Els vostres canvis encara no estan sincronitzats"
       ],
@@ -15100,6 +15316,9 @@
       ],
       "Your subscriptions in one place": [
         "Les vostres subscripcions en un sol lloc"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Arriben les categories!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15310,9 +15529,6 @@
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteres"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Una manera més segura de mantenir el vostre Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via correu electrònic"

@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
-import { Icon, useModalState } from '@proton/components';
-import { useApi } from '@proton/components';
+import { Icon, useApi, useModalState } from '@proton/components';
 import { TelemetryMailEvents } from '@proton/shared/lib/api/telemetry';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';

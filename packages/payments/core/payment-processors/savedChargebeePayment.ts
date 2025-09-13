@@ -1,12 +1,13 @@
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from '../constants';
 import { type PaymentVerificatorV5, createPaymentTokenForExistingChargebeePayment } from '../createPaymentToken';
-import type { ChargebeeIframeEvents, ChargebeeIframeHandles } from '../interface';
 import type {
     AmountAndCurrency,
     ChargeablePaymentParameters,
     ChargeableV5PaymentParameters,
+    ChargebeeIframeEvents,
+    ChargebeeIframeHandles,
     SavedPaymentMethod,
     SavedPaymentMethodExternal,
     SavedPaymentMethodInternal,

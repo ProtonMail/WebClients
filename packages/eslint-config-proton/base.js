@@ -5,21 +5,27 @@ import lodash from 'eslint-plugin-lodash';
 import monorepoCop from 'eslint-plugin-monorepo-cop';
 import noOnlyTests from 'eslint-plugin-no-only-tests';
 import testingLibrary from 'eslint-plugin-testing-library';
-import { globalIgnores } from 'eslint/config';
-import tseslint from 'typescript-eslint';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import { configs, parser, plugin } from 'typescript-eslint';
 
-//import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+const typeScriptExtensions = ['.ts', '.cts', '.mts', '.tsx'];
+const allExtensions = [...typeScriptExtensions, '.js', '.jsx', '.mjs', '.cjs'];
 
-export default tseslint.config(
+const typescriptGlobs = typeScriptExtensions.map((ext) => `**/*${ext}`);
+const allGlobs = allExtensions.map((ext) => `**/*${ext}`);
+
+export default defineConfig(
     {
         name: 'register-all-plugins',
         plugins: {
-            '@typescript-eslint': tseslint.plugin,
+            '@typescript-eslint': plugin,
             import: importPlugin,
             // @ts-expect-error -- Temporary types incompatibility pending flat config support
             'monorepo-cop': monorepoCop,
             'no-only-tests': noOnlyTests,
+            // @ts-expect-error -- Temporary types incompatibility pending flat config support
             lodash,
+            // @ts-expect-error -- Temporary types incompatibility pending flat config support
             '@protontech/enforce-uint8array-arraybuffer': protontechEnforceUint8ArrayArraybuffer,
             testingLibrary,
         },
@@ -37,22 +43,12 @@ export default tseslint.config(
     // base config
     {
         name: 'base-config',
-        files: [
-            /* JS also needed so that we can lint JS files in the monorepo*/
-            '**/*.js',
-            '**/*.mjs',
-            '**/*.jsx',
-            '**/*.ts',
-            '**/*.tsx',
-            '**/*.mts',
-            '**/*.cts',
-        ],
+        files: allGlobs,
         languageOptions: {
-            parser: tseslint.parser,
+            parser: parser,
             sourceType: 'module',
             parserOptions: {
                 projectService: true, // auto-detect nearest tsconfig
-                tsconfigRootDir: import.meta.dirname,
             },
         },
         rules: {
@@ -145,26 +141,13 @@ export default tseslint.config(
             '@typescript-eslint/return-await': 'error',
 
             '@typescript-eslint/consistent-type-imports': 'error',
+            '@typescript-eslint/no-import-type-side-effects': 'error',
 
             'prefer-const': ['error', { ignoreReadBeforeAssign: true, destructuring: 'all' }],
 
             'arrow-body-style': 'off',
             'consistent-return': 'off',
             curly: ['error', 'all'],
-
-            'import/export': 2,
-            'import/named': 'off',
-            'import/default': 'off',
-            'import/namespace': 'off',
-            'import/order': 'off',
-            'import/no-extraneous-dependencies': 'off',
-            'import/no-named-as-default': 'off',
-            'import/no-named-as-default-member': 'off',
-            'import/no-mutable-exports': 'off',
-
-            'import/no-unresolved': [2, { amd: true, commonjs: true }],
-
-            'import/prefer-default-export': 'off',
 
             'no-redeclare': 'off',
 
@@ -175,47 +158,6 @@ export default tseslint.config(
             'no-nested-ternary': 'warn',
             'no-param-reassign': 'off',
             'no-plusplus': 'off',
-
-            'no-restricted-imports': [
-                'error',
-                {
-                    paths: [
-                        {
-                            name: 'reselect',
-                            importNames: ['createSelector'],
-                            message: 'Please use createSelector from @redux/toolkit instead.',
-                        },
-                    ],
-                    patterns: [
-                        {
-                            group: ['pmcrypto'],
-                            message:
-                                'You should probably import from `@proton/crypto` instead: using `pmcrypto` directly is only needed for crypto-specific use cases.',
-                        },
-                        {
-                            group: ['@proton/payments/index'],
-                            message: 'You should import from `@proton/payments` instead.',
-                        },
-                        {
-                            group: ['@proton/payments/core/*'],
-                            message: 'You should import from `@proton/payments` instead.',
-                        },
-                        {
-                            group: ['@proton/payments/ui/*'],
-                            message: 'You should import from `@proton/payments/ui` instead.',
-                        },
-                        { group: ['@proton/atoms/*'], message: 'You should import from `@proton/atoms` instead.' },
-                        {
-                            group: ['@proton/components/index'],
-                            message: 'You should import from `@proton/components` instead.',
-                        },
-                        {
-                            group: ['@proton/unleash/index'],
-                            message: 'You should import from `@proton/unleash` instead.',
-                        },
-                    ],
-                },
-            ],
 
             'no-restricted-syntax': [
                 'error',
@@ -277,25 +219,127 @@ export default tseslint.config(
 
             '@protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer': 'error',
         },
-        settings: {
-            'import/extensions': ['.js', '.mjs', '.jsx', '.ts', '.tsx', '.d.ts'],
+    },
+    {
+        name: 'global-import-rules',
+        files: allGlobs,
+        rules: {
+            'import/no-unresolved': 'error',
+            'import/named': 'error',
+            'import/namespace': 'error',
+            'import/default': 'error',
+            'import/export': 'error',
 
-            'import/resolver': {
-                typescript: {},
-                node: {
-                    extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+            'import/no-named-as-default': 'warn',
+            'import/no-named-as-default-member': 'warn',
+
+            /**
+             * NOTE: We use `no-duplicate-imports` with `allowSeparateTypeImports: true`
+             * instead of `import/no-duplicates` because the import plugin's fixer is
+             * broken in certain cases.
+             *
+             * With `prefer-inline: true`, it transforms valid code like:
+             *   import type { Compiler, WebpackPluginInstance } from 'webpack';
+             *   import webpack from 'webpack';
+             *
+             * Into invalid syntax:
+             *   import webpack, type { Compiler, WebpackPluginInstance } from 'webpack';
+             *
+             * With `prefer-inline: false`, it also breaks by transforming:
+             *   import type { Foo, Bar } from 'module';
+             *   import { Baz, Qux } from 'module';
+             *
+             * Into invalid syntax:
+             *   import type { Foo, Bar, type Baz, type Qux } from 'module';
+             *
+             * WORKAROUND: Using `no-duplicate-imports` allows separate type and value
+             * imports to coexist without broken auto-fixing, but we lose auto-fixing
+             * capabilities. Waiting for https://github.com/import-js/eslint-plugin-import/pull/3194
+             * to be merged into `import/no-duplicates`, which should fix this.
+             */
+            'no-duplicate-imports': ['warn', { allowSeparateTypeImports: true }],
+
+            'no-restricted-imports': [
+                'error',
+                {
+                    paths: [
+                        {
+                            name: 'reselect',
+                            importNames: ['createSelector'],
+                            message: 'Please use createSelector from @redux/toolkit instead.',
+                        },
+                    ],
+                    patterns: [
+                        {
+                            group: ['pmcrypto'],
+                            message:
+                                'You should probably import from `@proton/crypto` instead: using `pmcrypto` directly is only needed for crypto-specific use cases.',
+                        },
+                        {
+                            group: ['@proton/payments/index'],
+                            message: 'You should import from `@proton/payments` instead.',
+                        },
+                        {
+                            group: ['@proton/payments/core/*'],
+                            message: 'You should import from `@proton/payments` instead.',
+                        },
+                        {
+                            group: ['@proton/payments/ui/*'],
+                            message: 'You should import from `@proton/payments/ui` instead.',
+                        },
+                        { group: ['@proton/atoms/*'], message: 'You should import from `@proton/atoms` instead.' },
+                        {
+                            group: ['@proton/components/index'],
+                            message: 'You should import from `@proton/components` instead.',
+                        },
+                        {
+                            group: ['@proton/unleash/index'],
+                            message: 'You should import from `@proton/unleash` instead.',
+                        },
+                    ],
                 },
+            ],
+        },
+        settings: {
+            'import/extensions': allExtensions,
+            'import/external-module-folders': ['node_modules', 'node_modules/@types'],
+            'import/parsers': {
+                '@typescript-eslint/parser': typeScriptExtensions,
             },
-
-            react: {
-                version: 'detect',
+            'import/resolver': {
+                node: {
+                    extensions: allExtensions,
+                },
+                typescript: true,
             },
+        },
+    },
+    {
+        name: 'typescript-import-rules',
+        files: typescriptGlobs,
+        rules: {
+            // TypeScript provides the same checks as part of standard type checking:
+            'import/named': 'off',
+            'import/namespace': 'off',
+            'import/default': 'off',
+            'import/order': 'off',
+            'import/no-named-as-default-member': 'off',
+            'import/no-unresolved': 'off',
         },
     },
     {
         // disable type-aware linting on JS files
         files: ['**/*.js'],
-        extends: [tseslint.configs.disableTypeChecked],
+        extends: [configs.disableTypeChecked],
     },
-    globalIgnores(['dist', 'public/assets', 'eslint.config.mjs'])
+    globalIgnores([
+        '.yarn/',
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/.*/',
+        '**/public/assets/**',
+        '**/coverage/**',
+        '**/__snapshots__/**',
+        'eslint.config.mjs',
+    ])
 );

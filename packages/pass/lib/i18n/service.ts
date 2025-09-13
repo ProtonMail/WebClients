@@ -7,7 +7,7 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import { getClosestLocaleCode, getLanguageCode } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
-import { type TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import type { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import noop from '@proton/utils/noop';
 
 type I18nServiceOptions = {

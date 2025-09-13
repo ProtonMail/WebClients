@@ -89,6 +89,9 @@
       "Add public holidays": [
         "添加公众假期"
       ],
+      "Add secret passphrase": [
+        "添加密码短语"
+      ],
       "Add to group": [
         "添加至群组"
       ],
@@ -461,6 +464,9 @@
       "Join calendar": [
         "加入日历"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "加入${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "保留当前时区"
       ],
@@ -587,6 +593,9 @@
       "Open settings": [
         "打开设置"
       ],
+      "Passphrase": [
+        "密码短语"
+      ],
       "Pause indexing": [
         "暂停索引"
       ],
@@ -679,6 +688,9 @@
       ],
       "Resume indexing": [
         "恢复索引"
+      ],
+      "Retry": [
+        "重试"
       ],
       "Save": [
         "保存"
@@ -835,6 +847,9 @@
       ],
       "Update recovery phrase": [
         "更新恢复密语"
+      ],
+      "Update secret passphrase": [
+        "更新密码短语"
       ],
       "Upgrade": [
         "升级账户"
@@ -1200,6 +1215,14 @@
         "非必填"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You have reached the trial limit.": [
+        "您已达到试用上限。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消订阅"
@@ -1408,6 +1431,9 @@
       ],
       "Manual setup problem": [
         "手动设置问题"
+      ],
+      "Meet problem": [
+        "遇到问题"
       ],
       "Other": [
         "其他"
@@ -1725,6 +1751,11 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "collider_2025: feature": {
+      "Unlimited daily chats": [
+        "无限聊天次数"
       ]
     },
     "colon": {
@@ -3391,6 +3422,9 @@
       "Failed to load OAuth modal.": [
         "无法加载 OAuth 模式。"
       ],
+      "Failed to update secret passphrase": [
+        "更新密码短语失败"
+      ],
       "First name is too long": [
         "名字太长。"
       ],
@@ -3516,6 +3550,9 @@
       ],
       "Organization key is not decrypted": [
         "机构密钥尚未解密"
+      ],
+      "Passphrase unavailable": [
+        "密码短语不可用"
       ],
       "Password is required": [
         "密码必须填写"
@@ -4077,9 +4114,6 @@
       "customer support": [
         "客户支持"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "家庭计划目前不支持外部账户。请在加入前创建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "如果您接受邀请，我们将为您退订当前账户等级，并将剩余时长折算为余额存入您的账户。"
       ],
@@ -4303,11 +4337,17 @@
       "Contacts": [
         "通讯录"
       ],
+      "Domain": [
+        "域名"
+      ],
       "Drawer": [
         "侧边栏"
       ],
       "Name": [
         "名称"
+      ],
+      "Password ends with": [
+        "密码结尾是"
       ],
       "Repeat event": [
         "重复事件"
@@ -4317,6 +4357,9 @@
       ],
       "Security Center": [
         "安全中心"
+      ],
+      "Username": [
+        "用户名"
       ]
     },
     "Hint": {
@@ -5109,6 +5152,9 @@
       "finance": [
         "金融"
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "为了增强安全性，您可以设置一个密码短语。它不会包含在日历邀请中，请记住单独与您的客人分享。"
+      ],
       "Frequency modifications will be lost.": [
         "频率修改将丢失"
       ],
@@ -5171,9 +5217,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步中，您将能够使用比特币地址提交存款。"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Indexing events: ${ current }/${ total }": [
         "正在索引事件：${ current }/${ total }"
@@ -5756,9 +5799,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "您即将打开默认浏览器并访问："
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您使用的存储空间超过了 ${ downgradedPlanName } 计划中包含的存储空间。请删除一些数据以便降级。"
@@ -6445,6 +6485,9 @@
       "Participants": [
         "参与者"
       ],
+      "Passphrase:": [
+        "密码短语:"
+      ],
       "Password": [
         "密码"
       ],
@@ -6555,9 +6598,6 @@
       ],
       "Username": [
         "用户名"
-      ],
-      "VAT": [
-        "增值税"
       ],
       "Verification code": [
         "验证码"
@@ -7999,6 +8039,9 @@
       ],
       "Passcode copied to clipboard": [
         "将密码复制到剪贴板"
+      ],
+      "Passphrase copied to clipboard": [
+        "将密码短语复制到剪贴板"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8183,7 +8226,7 @@
         "按年支付，确保我们的最佳优惠"
       ],
       "Save": [
-        "保存"
+        "节省"
       ],
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
@@ -8705,6 +8748,9 @@
       ],
       "E.g., ": [
         "例如："
+      ],
+      "Enter passphrase": [
+        "输入密码短语"
       ],
       "Filter groups": [
         "查找群组"
@@ -10170,6 +10216,9 @@
       "Problem reported": [
         "问题报告"
       ],
+      "Secret passphrase updated": [
+        "密码短语已更新"
+      ],
       "Undo in progress": [
         "正在撤销"
       ],
@@ -10689,6 +10738,9 @@
       "Network error": [
         "网络错误"
       ],
+      "Next": [
+        "下一页"
+      ],
       "Night theme": [
         "夜间模式"
       ],
@@ -10703,6 +10755,9 @@
       ],
       "Open actions dropdown": [
         "展开操作菜单"
+      ],
+      "Open pagination": [
+        "选择页码"
       ],
       "Org setup": [
         "组织设置"
@@ -10733,6 +10788,9 @@
       ],
       "Phone numbers": [
         "电话号码"
+      ],
+      "Previous": [
+        "上一页"
       ],
       "Private browsing vs VPN": [
         "隐私浏览模式与 VPN 对比"
@@ -11170,9 +11228,6 @@
       ],
       "${ n } wallet": [
         "${ n } 个钱包"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "更安全持有比特币的方式"
       ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"

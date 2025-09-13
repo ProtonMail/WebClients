@@ -22,8 +22,10 @@ const getLegacyItemFromUid = async (uid: string, folder: FolderViewData) => {
     return legacyItem;
 };
 
-export const subscribeToFolderEvents = () =>
-    getActionEventManager().subscribe(ActionEventName.ALL, async (event) => {
+export const subscribeToFolderEvents = () => {
+    void getActionEventManager().subscribeSdkEventsMyUpdates('folders');
+
+    const unsubscribeFromEvents = getActionEventManager().subscribe(ActionEventName.ALL, async (event) => {
         const store = useFolderStore.getState();
         const { folder } = store;
         if (!folder) {
@@ -53,12 +55,14 @@ export const subscribeToFolderEvents = () =>
                 });
                 break;
             case ActionEventName.RESTORED_NODES:
-                event.uids.forEach(async (uid) => {
-                    const legacyItem = await getLegacyItemFromUid(uid, folder);
-                    if (legacyItem?.parentUid === folder.uid) {
-                        store.setItem(legacyItem);
+                event.items.forEach(async (item) => {
+                    if (item.parentUid === folder.uid) {
+                        const legacyItem = await getLegacyItemFromUid(item.uid, folder);
+                        if (legacyItem) {
+                            store.setItem(legacyItem);
+                        }
                     } else {
-                        store.removeItem(uid);
+                        store.removeItem(item.uid);
                     }
                 });
                 break;
@@ -93,3 +97,9 @@ export const subscribeToFolderEvents = () =>
                 console.warn('Unhandled folders UI event', event);
         }
     });
+
+    return () => {
+        unsubscribeFromEvents();
+        getActionEventManager().unsubscribeSdkEventsMyUpdates('folders');
+    };
+};

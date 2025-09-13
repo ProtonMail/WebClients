@@ -6,7 +6,7 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
 import { hasFoldersSelected, isMultiSelect } from '../../../components/sections/ToolbarButtons/utils';
 import useOpenPreview from '../../../components/useOpenPreview';
-import { type FolderButtonProps } from './types';
+import type { FolderButtonProps } from './types';
 
 type Item = {
     uid: string;

@@ -165,6 +165,9 @@
       "Claim this address": [
         "Aconseguiu aquesta adreça"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Aconseguiu la vostra adreça gratuïta de ${ BRAND_NAME }"
+      ],
       "Clear": [
         "Neteja"
       ],
@@ -1106,6 +1109,9 @@
       "Upload file": [
         "Puja un fitxer"
       ],
+      "Upload File": [
+        "Carrega un fitxer"
+      ],
       "Upload files": [
         "Carrega fitxers"
       ],
@@ -1403,6 +1409,32 @@
         "Esdeveniment no suportat"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzat el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos el ${ formattedDate }. No se us carregarà cap import si la cancel·leu abans del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes el ${ formattedDate }. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_LUMO_SEATS } llicències de ${ LUMO_SHORT_APP_NAME } durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_SCRIBE_SEATS } llicències Scribe durant el període de prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_USERS } usuaris durant el període de prova."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "No podeu afegir dominis personalitzats durant el període de prova."
+      ],
+      "You have reached the trial limit.": [
+        "Heu arribat al límit de la prova."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Cancel·la la subscripció"
@@ -1641,6 +1673,9 @@
       "Manual setup problem": [
         "Problema de configuració manual"
       ],
+      "Meet problem": [
+        "Coneixeu el problema"
+      ],
       "Other": [
         "Altres"
       ],
@@ -1787,6 +1822,52 @@
       ],
       "Expand": [
         "Amplia"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accés a models d'IA avançats"
+      ],
+      "Basic chat history": [
+        "Historial de xat bàsic"
+      ],
+      "Full chat history with search": [
+        "Historial de xat complet amb cerca"
+      ],
+      "Large file upload support": [
+        "Suport per a la càrrega de fitxers grans"
+      ],
+      "Limited daily chats": [
+        "Nombre de xats diaris limitat"
+      ],
+      "Limited favorites": [
+        "Nombre de preferits limitat"
+      ],
+      "Unlimited daily chats": [
+        "Xats diaris sense límits"
+      ],
+      "Unlimited favorites for quick access": [
+        "Preferits il·limitats per a un accés ràpid"
+      ],
+      "Upload and query multiple large files": [
+        "Carregueu i consulteu múltiples fitxers grans"
+      ],
+      "Upload and query small files": [
+        "Carregueu i consulteu fitxers petits"
+      ],
+      "Web search access": [
+        "Accés a la cerca web"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } és una IA que prioritza la privadesa i que us ajuda a fer més coses mantenint les vostres dades segures. Activeu-ne tot el potencial i gaudiu d'accés anticipat a noves característiques a mesura que s'introdueixin."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Afegiu ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Xats d'alta velocitat i característiques d'IA avançades."
       ]
     },
     "color": {
@@ -3702,9 +3783,6 @@
       "We were not able to load some of your shared items": [
         "No s'han pogut carregar alguns dels vostres elements compartits"
       ],
-      "We were not able to load some of your shared items details": [
-        "No s'han pogut carregar alguns detalls dels vostres elements compartits."
-      ],
       "We were not able to load some of your shared items info": [
         "No s'ha pogut carregar la informació d'alguns dels vostres elements compartits."
       ],
@@ -4021,8 +4099,8 @@
       "customer support": [
         "atenció al client"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Els plans familiars actualment no admeten comptes externs. Creeu una adreça de ${ BRAND_NAME } abans d'unir-vos-hi. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Els plans familiars actualment no suporten comptes externs. Creeu una adreça ${ BRAND_NAME } abans d'unir-vos-hi. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si accepteu la invitació, us canviarem del vostre pla actual i abonarem el saldo restant al vostre compte."
@@ -4231,14 +4309,23 @@
       "Create new shared album": [
         "Crea un àlbum compartit nou"
       ],
+      "Domain": [
+        "Domini"
+      ],
       "Drawer": [
         "Panell lateral"
+      ],
+      "Password ends with": [
+        "La contrasenya acaba amb"
       ],
       "Rename album": [
         "Canvia el nom de l'àlbum"
       ],
       "Security Center": [
         "Centre de seguretat"
+      ],
+      "Username": [
+        "Nom d'usuari"
       ]
     },
     "Heading": {
@@ -5398,9 +5485,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Al següent pas, podreu enviar un dipòsit utilitzant una adreça de Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incloent ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "S'estan indexant ${ esProgress } elements de ${ totalProgressToShow }"
       ],
@@ -6399,8 +6483,8 @@
       "You are about to open your default browser and visit:": [
         "Esteu a punt d'obrir el navegador per defecte i visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Heu iniciat sessió com a ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Esteu utilitzant més emmagatzematge del que hi ha inclòs al pla ${ downgradedPlanName }. Elimineu o traieu dades per a poder degradar."
@@ -7276,9 +7360,6 @@
       "Username": [
         "Nom d'usuari"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Codi de verificació"
       ],
@@ -7518,7 +7599,7 @@
     },
     "locked_state_storage_banner: info": {
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ],
       "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
         "Per continuar utilitzant ${ BRAND_NAME }, assegureu-vos que les vostres característiques prèmium ja no s'utilitzen o milloreu el pla."
@@ -9597,11 +9678,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
+      ],
       "Got it": [
         "Fet"
       ],
       "I'm purchasing as a business": [
         "Estic comprant com a empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclòs el ${ taxRate }% d'impostos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -9617,6 +9710,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
+      ],
+      "Taxes": [
+        "Impostos"
       ],
       "terms & conditions": [
         "els termes i condicions"
@@ -9648,6 +9744,9 @@
       ],
       "Timeout exceeded": [
         "S'ha superat el temps d'espera."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número d'IVA"
@@ -9735,7 +9834,7 @@
         "Número d’identificació fiscal (EIN)"
       ],
       "VAT number": [
-        "NIF"
+        "Número d'IVA"
       ]
     },
     "PGP key encryption warning": {
@@ -10204,7 +10303,7 @@
         "Fet"
       ],
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ]
     },
     "session_recovery:in_progress:info": {
@@ -10900,7 +10999,7 @@
         "Mantingueu el vostre equip segur en qualsevol lloc amb les nostres aplicacions per a web, iOS, Android, Windows, Mac i Linux."
       ],
       "Learn more": [
-        "Per saber-ne més"
+        "Més informació"
       ],
       "Learn more about our impact": [
         "Descobriu més sobre el nostre impacte"
@@ -11741,7 +11840,7 @@
         "Buida la paperera"
       ],
       "Enable 2FA": [
-        "Activi l'autenticació 2FA"
+        "Activa el 2FA"
       ],
       "Enable advanced account protection": [
         "Activació de la protecció avançada del compte"
@@ -11910,6 +12009,9 @@
       "Network error": [
         "Error de xarxa"
       ],
+      "Next": [
+        "Següent"
+      ],
       "Night theme": [
         "Tema de nit"
       ],
@@ -11970,6 +12072,9 @@
       "Open actions dropdown": [
         "Obrir el desplegable d'accions"
       ],
+      "Open pagination": [
+        "Obrir paginació"
+      ],
       "Org setup": [
         "Configuració de l'organització"
       ],
@@ -12011,6 +12116,9 @@
       ],
       "Preview": [
         "Vista prèvia"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Private browsing vs VPN": [
         "Navegació privada i VPN"
@@ -12554,9 +12662,6 @@
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteres"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Una manera més segura de mantenir el vostre Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via correu electrònic"

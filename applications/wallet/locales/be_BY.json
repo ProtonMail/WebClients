@@ -531,6 +531,32 @@
         "Выведзіце прадукцыйнасць электроннай пошты на новыя ўзроўні. Дазвольце ${ BRAND_NAME } Scribe дапамагаць з напісаннем, адказамі і вычыткай вашых лістоў."
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска стане платнай і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска стане платнай і будзе аўтаматычна падаўжацца штомесяц ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_LUMO_SEATS } ліцэнзій ${ LUMO_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_SCRIBE_SEATS } ліцэнзій Scribe на працягу пробнага перыяду."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_USERS } карыстальнікаў на працягу пробнага перыяду."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "У вас няма магчымасці дадаваць карыстальніцкія дамены падчас пробнага перыяду."
+      ],
+      "You have reached the trial limit.": [
+        "Дасягнута абмежаванне пробнага перыяду."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Скасаваць падпіску"
@@ -737,7 +763,7 @@
         "Сума"
       ],
       "An error occurred while confirming this quote, please select another provider and try again.": [
-        "Падчас пацвярджэння гэтай каціроўкі адбылася памылка. Выберыце іншага пастаўшчыка і паўтарыце спробу."
+        "Адбылася памылка пры пацвярджэнні гэтай каціроўкі. Выберыце іншага пастаўшчыка і паўтарыце спробу."
       ],
       "As a paid user, you are saving ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } on Azteco service fee!": [
         "Вы эканоміце ${ serviceFeeAmount } ${ selectedQuote.FiatCurrencySymbol } на плаце сэрвісу Azteco, бо вы з'яўляецеся платным карыстальнікам!"
@@ -997,6 +1023,9 @@
       "Manual setup problem": [
         "Праблема падчас наладжвання ўручную"
       ],
+      "Meet problem": [
+        "Праблема з Meet"
+      ],
       "Other": [
         "Іншае"
       ],
@@ -1161,6 +1190,52 @@
       ],
       "Expand": [
         "Разгарнуць"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Доступ да перадавых мадэляў ШІ"
+      ],
+      "Basic chat history": [
+        "Базавая гісторыя чата"
+      ],
+      "Full chat history with search": [
+        "Поўная гісторыя чатаў з пошукам"
+      ],
+      "Large file upload support": [
+        "Падтрымка запамоўвання вялікіх файлаў"
+      ],
+      "Limited daily chats": [
+        "Абмежаваная колькасць штодзённых чатаў"
+      ],
+      "Limited favorites": [
+        "Абмежаваная колькасць абраных"
+      ],
+      "Unlimited daily chats": [
+        "Неабмежаваныя штодзённыя чаты"
+      ],
+      "Unlimited favorites for quick access": [
+        "Неабмежаваная колькасць абраных для хуткага доступу"
+      ],
+      "Upload and query multiple large files": [
+        "Запампаваць і запытаць некалькі вялікіх файлаў"
+      ],
+      "Upload and query small files": [
+        "Запампаваць і запытаць маленькія файлы"
+      ],
+      "Web search access": [
+        "Доступ да пошуку ў інтэрнэце"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } — гэта ШІ, які арыентаваны на прыватнасць. Ён дапамагае рашаць больш задач і пры гэтым захоўвае вашы даныя ў бяспецы. Раскрыйце поўны патэнцыял праграмы і атрымлівайце асалоду ад ранняга доступу да новых функцый па меры іх укаранення."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Дадайце праграму ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Высокахуткасныя чаты і перадавыя функцыі ШІ."
       ]
     },
     "color": {
@@ -2209,7 +2284,7 @@
         "Я не змог падключыцца"
       ],
       "I only needed a VPN short-term": [
-        "Мне VPN быў патрэбны толькі на вызначаны тэрмін"
+        "Мне VPN быў патрэбны толькі на кароткі тэрмін"
       ],
       "I use a different ${ BRAND_NAME } account": [
         "Я выкарыстоўваю іншы ўліковы запіс ${ BRAND_NAME }"
@@ -2707,7 +2782,7 @@
         "${ BRAND_NAME } Scribe памочнік у напісанні"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
-        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME }"
+        "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
@@ -2903,9 +2978,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Уключае ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
@@ -3422,9 +3494,6 @@
       "Thomas": [
         "Янка"
       ],
-      "VAT": [
-        "ПДВ"
-      ],
       "Verification code": [
         "Код спраўджання"
       ],
@@ -3735,7 +3804,7 @@
         "${ options }-дзённая гісторыя версій файла"
       ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
-        "Пажыццёвая прапанова ${ PASS_APP_NAME } + SimpleLogin"
+        "${ PASS_APP_NAME } + пажыццёвая прапанова SimpleLogin"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } псеўданімам hide-my-email",
@@ -4122,7 +4191,7 @@
         "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
       ],
       "All ${ BRAND_NAME } business apps and premium features to protect your entire business.": [
-        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсяго вашага бізнесу."
+        "Усе праграмы для бізнесу ${ BRAND_NAME } і прэміяльныя функцыі для абароны ўсё вашай кампаніі."
       ],
       "Early access to new apps and features": [
         "Ранні доступ да новых праграм і функцый"
@@ -4152,13 +4221,13 @@
         "Наш тарыфны план ${ visionary } больш недаступны для новых падпісчыкаў і зараз ён з'яўляецца спецыяльным тарыфным планам для карыстальнікаў ${ BRAND_NAME } і прадугледжвае для іх спецыяльныя функцыі і перавагі."
       ],
       "Pay once, secure your passwords and identity forever.": [
-        "Заплаціце адзін раз, засцеражыце свае паролі і ідэнтычнасць назаўжды."
+        "Заплаціце адзін раз і абараніце свае паролі і ідэнтычнасць назаўсёды."
       ],
       "Popular": [
         "Папулярны"
       ],
       "Protect sensitive business information and collaborate securely.": [
-        "Абарона адчувальных звестак бізнесу і бяспечнае супрацоўніцтва."
+        "Абарона адчувальнай інфармацыі бізнесу і бяспечнае супрацоўніцтва."
       ],
       "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
         "Абараніце сваю сям'ю з прэміяльнымі функцыямі ${ plusTitle } для 6 карыстальнікаў."
@@ -4300,7 +4369,7 @@
         "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
-        "Пажыццёвы доступ да прэміяльных функцый ${ PASS_APP_NAME } + SimpleLogin."
+        "Пажыццёвы доступ да ${ PASS_APP_NAME } + прэміяльныя функцыі SimpleLogin."
       ],
       "Like a folder, a vault is a convenient way to organize your items": [
         "Як і папка, сховішча з'яўляецца зручным спосаб арганізацыі вашых элементаў"
@@ -4321,7 +4390,7 @@
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
       ],
       "Organization management tool that lets admins add and remove users, manage their access to ${ BRAND_NAME } services, and perform other tasks.": [
-        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць сваім доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
+        "Інструмент кіравання арганізацыяй, з дапамогай якога адміністратары могуць дадаваць/выдаляць карыстальнікаў, кіраваць іх доступам да сэрвісаў ${ BRAND_NAME }, а таксама выконваць іншыя задачы."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Наша надзейная інфраструктура гарантуе вам пастаянны доступ да вашага ўліковага запісу"
@@ -4348,7 +4417,7 @@
         "Абараніце сваю сям'ю ад шкодных вэб-сайтаў і атрымайце доступ да нашых высакахуткасных сервераў VPN для прагляду абранага змесціва"
       ],
       "Protect your real email address from being disclosed or leaked with aliases (a randomly-generated email address that forwards emails to your main inbox).": [
-        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенерыраваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
+        "Абараніце свой сапраўдны адрас электроннай пошты ад раскрыцця або ўцечкі з дапамогай псеўданімаў (адвольна згенераваных адрасоў электроннай пошты, якія перасылаюць лісты ў вашу асноўную паштовую скрыню)."
       ],
       "Provides the highest level of account security protection and specialist support": [
         "Забяспечвае найвышэйшы ўзровень бяспекі, а таксама адмысловую падтрымку"
@@ -4408,7 +4477,7 @@
         "Падтрымка пратаколаў абмену файламі, такіх як BitTorrent"
       ],
       "Upload your business' logo to customize your teams experience on the ${ BRAND_NAME } web apps": [
-        "Запампуйце ваш лагатып для бізнесу, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
+        "Запампуйце свой лагатып кампаніі, каб персаналізаваць досвед вашых каманд у вэб-праграме ${ BRAND_NAME }"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Выкарыстоўвайце свой уласны карыстальніцкі дамен электроннай пошты. Напрыклад, you@yourname.com"
@@ -4625,13 +4694,13 @@
     },
     "Payments": {
       "Billing Country": [
-        "Краіна выстаўлення рахунка"
+        "Краіна выстаўлення рахунку"
       ],
       "Card number": [
         "Нумар карткі"
       ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
-        "У цяперашні час аўтаматычнае падаўжэнне падпіскі адключана. Калі змяніць падпіску цяпер, то аўтаматычнае падаўжэнне будзе ўключана паўторна."
+        "У цяперашні час аўтаматычнае падаўжэнне падпіскі адключана. Аўтаматычнае падаўжэнне будзе ўключана паўторна, калі змяніць падпіску цяпер."
       ],
       "CVC": [
         "CVC"
@@ -4639,11 +4708,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Без уліку падатка ў ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Зразумела"
       ],
       "I'm purchasing as a business": [
         "Я купляю як юрыдычная асоба"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "З улікам падатка ў ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -4659,6 +4740,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
+      ],
+      "Taxes": [
+        "Падаткі"
       ],
       "terms & conditions": [
         "умовы выкарыстання"
@@ -4694,10 +4778,13 @@
         "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
       "This payment method will become your new default for all future renewals.": [
-        "Гэты спосаб аплаты стане новым прадвызначаным для ўсіх будучых падаўжэнняў."
+        "Гэты спосаб аплаты стане новым прадвызначаным спосабам для ўсіх будучых падаўжэнняў."
       ],
       "Timeout exceeded": [
         "Перавышаны час чакання"
+      ],
+      "VAT": [
+        "ПДВ"
       ],
       "VAT number": [
         "Нумар ПДВ"
@@ -4977,10 +5064,10 @@
         "${ passwordReset } цяпер даступна."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
-        "Калі вы выйдзеце з сістэмы да скідання пароля, вы можаце страціць доступ да вашага ўліковага запісу."
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзеце з сістэмы да скідання пароля."
       ],
       "If you sign out without resetting your password, you could lose access to your account.": [
-        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйсці з сістэмы без скідання пароля."
+        "Вы можаце страціць доступ да вашага ўліковага запісу, калі выйдзіце з сістэмы без скідання пароля."
       ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "Вы зможаце скінуць свой пароль праз ${ boldTimeLeft }."
@@ -5012,7 +5099,7 @@
         "Увядзіце або ўстаўце паведамленне, якое хочаце падпісаць."
       ],
       "Generate signature": [
-        "Згенерыраваць подпіс"
+        "Згенераваць подпіс"
       ],
       "Message": [
         "Паведамленне"
@@ -5877,7 +5964,7 @@
     },
     "Wallet": {
       "An error occurred whilst syncing your wallet. Please try again.": [
-        "Падчас сінхранізацыі вашага кашалька адбылася памылка. Паспрабуйце яшчэ раз."
+        "Адбылася памылка пры сінхранізацыі вашага кашалька. Паспрабуйце яшчэ раз."
       ],
       "Close": [
         "Закрыць"
@@ -6250,7 +6337,7 @@
         "Згенерыруйце новы адрас для кожнай трансакцыі для лепшай прыватнасці"
       ],
       "Generate new address": [
-        "Згенерыраваць новы адрас"
+        "Згенераваць новы адрас"
       ],
       "Import paper wallet": [
         "Імпартаваць папяровы кашалёк"
@@ -6459,7 +6546,7 @@
         "Уліковы запіс быў выдалены"
       ],
       "An error occurred while modifying with your Bitcoin via Email address. Please check details and try again.": [
-        "Падчас змянення вашага адраса Bitcoin праз электронную пошту адбылася памылка. Праверце падрабязнасці і паспрабуйце яшчэ раз."
+        "Адбылася памылка пры змяненні вашага адраса Bitcoin праз электронную пошту. Праверце падрабязнасці і паспрабуйце яшчэ раз."
       ],
       "Bitcoin via Email": [
         "Bitcoin праз электронную пошту"
@@ -6946,9 +7033,6 @@
         "${ n } кашалькі",
         "${ n } кашалькоў",
         "${ n } кашалькоў"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Больш бяспечны спосаб захоўвання Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin праз электронную пошту"

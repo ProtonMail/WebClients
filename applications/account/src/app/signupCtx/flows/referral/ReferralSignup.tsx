@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { usePaymentOptimistic, usePaymentsInner } from '@proton/payments/ui';
@@ -15,14 +16,17 @@ import ReferralPlans from './ReferralPlans';
 import {
     REFERRAL_DEAFULT_CYCLE,
     REFERRAL_DEFAULT_PLAN,
+    type SupportedReferralPlans,
     availableReferralPlans,
     getAppIntentFromReferralPlan,
-    getReferralPlanIDsFromPlan,
+    getReferralSelectedPlan,
+    plansRequiringPaymentToken,
 } from './helpers/plans';
+import PaymentStep from './steps/PaymentStep';
 import RecoveryPhraseStep from './steps/RecoveryPhraseStep';
 import AccountDetailsStep from './steps/accountDetails/AccountDetailsStep';
 
-type Step = 'account-details' | 'org-name' | 'recovery' | 'display-name' | 'creating-account';
+type Step = 'account-details' | 'payment' | 'recovery' | 'display-name' | 'creating-account';
 
 const ReferralSignupInner = () => {
     const [step, setStep] = useState<Step>('account-details');
@@ -31,6 +35,7 @@ const ReferralSignupInner = () => {
     const signup = useSignup();
 
     const notifyError = useNotifyErrorHandler();
+    const payments = usePaymentOptimistic();
 
     /**
      * We have a recovery step in this flow, so let's prefetch the recovery kit
@@ -45,6 +50,29 @@ const ReferralSignupInner = () => {
                         history.goBack();
                     }}
                     onSuccess={async () => {
+                        if (plansRequiringPaymentToken.includes(payments.selectedPlan.name as SupportedReferralPlans)) {
+                            setStep('payment');
+                            return;
+                        }
+
+                        try {
+                            await signup.createUser();
+                            setStep('creating-account');
+
+                            await signup.setupUser();
+                            setStep('recovery');
+                        } catch (error) {
+                            notifyError(error);
+                        }
+                    }}
+                />
+            )}
+            {step === 'payment' && (
+                <PaymentStep
+                    onBack={() => {
+                        setStep('account-details');
+                    }}
+                    onPaymentTokenProcessed={async () => {
                         try {
                             await signup.createUser();
                             setStep('creating-account');
@@ -100,6 +128,11 @@ const ReferralSignupRouter = () => {
 };
 
 const ReferralSignup = (props: BaseSignupContextProps) => {
+    /**
+     * Ensure redux has initialized referral info
+     */
+    useReferralInfo();
+
     const payments = usePaymentsInner();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -107,6 +140,8 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
     const history = useHistory();
 
     const defaultEmail = searchParams.get('email') || undefined;
+
+    const planParam = signupSearchParams.getPlan(searchParams) || REFERRAL_DEFAULT_PLAN;
 
     return (
         <SignupContextProvider
@@ -123,10 +158,8 @@ const ReferralSignup = (props: BaseSignupContextProps) => {
             paymentsDataConfig={{
                 availablePlans: availableReferralPlans,
                 plan: {
-                    planIDs: getReferralPlanIDsFromPlan(
-                        signupSearchParams.getPlan(searchParams) || REFERRAL_DEFAULT_PLAN
-                    ),
                     cycle: REFERRAL_DEAFULT_CYCLE,
+                    ...getReferralSelectedPlan(planParam as SupportedReferralPlans),
                 },
             }}
             accountFormDataConfig={{

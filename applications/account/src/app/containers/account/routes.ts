@@ -7,15 +7,17 @@ import {
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { referralReward } from '@proton/components/containers/referral/constants';
-import { DEFAULT_CURRENCY, hasLumoPlan, isManagedExternally } from '@proton/payments';
-import { Renew, type Subscription } from '@proton/payments';
 import {
+    DEFAULT_CURRENCY,
+    Renew,
+    type Subscription,
     getHasExternalMemberCapableB2BPlan,
     getHasVpnB2BPlan,
     getIsConsumerPassPlan,
     hasCancellablePlan,
+    hasLumoPlan,
     isCancellableOnlyViaSupport,
+    isManagedExternally,
 } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
@@ -58,9 +60,10 @@ export const getAccountAppRoutes = ({
     isUserGroupsMembershipFeatureEnabled,
     memberships,
     isZoomIntegrationEnabled,
+    isProtonMeetIntegrationEnabled,
     isB2BTrial,
-    isEmergencyAccessAvailable: isEmergencyAccessFeatureAvailable,
     isReferralExpansionEnabled,
+    referralInfo,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -79,9 +82,13 @@ export const getAccountAppRoutes = ({
     isUserGroupsMembershipFeatureEnabled: boolean;
     memberships: GroupMembershipReturn[] | undefined;
     isZoomIntegrationEnabled: boolean;
+    isProtonMeetIntegrationEnabled: boolean;
     isB2BTrial: boolean;
-    isEmergencyAccessAvailable: boolean;
     isReferralExpansionEnabled: boolean;
+    referralInfo: {
+        refereeRewardAmount: string;
+        referrerRewardAmount: string;
+    };
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
     const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
@@ -104,7 +111,7 @@ export const getAccountAppRoutes = ({
 
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
-    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const cancellablePlan = hasCancellablePlan(subscription);
     const cancellableOnlyViaSupport = isCancellableOnlyViaSupport(subscription);
 
     const planIsManagedExternally = isManagedExternally(subscription);
@@ -119,14 +126,15 @@ export const getAccountAppRoutes = ({
     const showEasySwitchSection = (!isExternalUser || isBYOEUser) && app !== APPS.PROTONPASS && !isSSOUser;
 
     const showVideoConferenceSection =
-        isZoomIntegrationEnabled &&
+        (isZoomIntegrationEnabled || isProtonMeetIntegrationEnabled) &&
         !isExternalUser &&
-        (organization?.Settings.VideoConferencingEnabled || !hasPaidMail);
+        (organization?.Settings.VideoConferencingEnabled ||
+            organization?.Settings.MeetVideoConferencingEnabled ||
+            !hasPaidMail);
 
     const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
-    const isEmergencyAccessAvailable = isEmergencyAccessFeatureAvailable && getIsOutgoingDelegatedAccessAvailable(user);
-    const isNonPrivateEmergencyAccessAvailable =
-        isEmergencyAccessFeatureAvailable && !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
+    const isEmergencyAccessAvailable = getIsOutgoingDelegatedAccessAvailable(user);
+    const isNonPrivateEmergencyAccessAvailable = !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
 
     const paymentsSectionAvailable =
         user.isSelf &&
@@ -514,7 +522,7 @@ export const getAccountAppRoutes = ({
                 description: isReferralExpansionEnabled
                     ? // translator: Full sentence 'You’ll receive US$20 in Proton credit when the person you invite signs up for a Proton plan, and they’ll also get US$20 in credits to get started.'
                       c('Description')
-                          .t`You’ll receive ${referralReward} in ${BRAND_NAME} credit when the person you invite signs up for a ${BRAND_NAME} plan, and they’ll also get ${referralReward} in credits to get started.`
+                          .t`You’ll receive ${referralInfo.referrerRewardAmount} in ${BRAND_NAME} credit when the person you invite signs up for a ${BRAND_NAME} plan, and they’ll also get ${referralInfo.refereeRewardAmount} in credits to get started.`
                     : c('Description').t`Get up to ${credits} in credits by inviting friends to ${BRAND_NAME}.`,
                 to: '/referral',
                 icon: isReferralExpansionEnabled ? 'money-bills' : 'heart',

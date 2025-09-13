@@ -98,6 +98,8 @@ export enum TelemetryCalendarVideoConferencing {
     video_conference_widget = 'video_conference_widget',
     video_conference_settings_toggle = 'video_conference_settings_toggle',
     video_conference_zoom_integration = 'video_conference_zoom_integration',
+    video_conference_proton_meet_integration = 'video_conference_proton_meet_integration',
+    video_conference_proton_meet_settings_toggle = 'video_conference_proton_meet_settings_toggle',
 }
 
 export enum TelemetryMailNewsletterSubscriptions {
@@ -167,6 +169,8 @@ export enum TelemetryAccountSecurityCheckupEvents {
     completeRecoveryMultiple = 'cohort_change.complete_recovery_multiple',
     completeRecoverySingle = 'cohort_change.complete_recovery_single',
     accountRecoveryEnabled = 'cohort_change.account_recovery_enabled',
+    completeRecoverySentinel = 'cohort_change.complete_recovery_sentinel',
+    sentinelRecommendations = 'cohort_change.sentinel_recommendations',
 }
 
 export enum TelemetryAccountDashboardEvents {

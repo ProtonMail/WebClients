@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -12,7 +12,6 @@ import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS, UPSELL_COMPONENT } from '@proto
 import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import lumoCatPlusCollar from '@proton/styles/assets/img/lumo/lumo-cat-plus-collar.svg';
 import lumoLogoFull from '@proton/styles/assets/img/lumo/lumo-logo-full.svg';
-import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
 
 import { LUMO_PLUS_FREE_PATH_TO_ACCOUNT, LUMO_UPGRADE_TRIGGER_CLASS } from '../../../constants';
 import { useLumoCommon } from '../../../hooks/useLumoCommon';
@@ -20,6 +19,7 @@ import { useLumoPlan } from '../../../hooks/useLumoPlan';
 import { getInitials } from '../../../util/username';
 import CreateFreeAccountLink from '../CreateFreeAccountLink/CreateFreeAccountLink';
 import GetLumoPlusGuestButton from '../GetLumoPlusGuestButton/GetLumoPlusGuestButton';
+import LumoPlusLogoInline from '../LumoPlusLogoInline';
 import { SignInLinkButton } from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 
@@ -138,15 +138,15 @@ const LumoSettingsUpgradePanel = ({ isGuest = false }: { isGuest?: boolean }) =>
     return (
         <div
             className={
-                'settings-modal-panel flex flex-row gap-6 p-6 rounded-lg lumo-plus-settings-gradient ' +
-                (isGuest ? 'hidden sm:block' : '')
+                'settings-modal-panel flex flex-row gap-6 p-6 rounded-lg lumo-plus-settings-gradient border border-weak flex-nowrap '
+                // (isGuest ? 'hidden sm:block' : '')
             }
         >
             {/* Left side - Content */}
-            <div className="flex flex-column flex-nowrap gap-4 flex-1">
+            <div className="flex flex-column flex-nowrap gap-4 flex-1 w-1/2">
                 {/* Header */}
                 <div className="flex items-center gap-2">
-                    <img src={lumoPlusLogo} alt="lumo+" style={{ height: '20px' }} />
+                    <LumoPlusLogoInline height="20px" />
                 </div>
 
                 {/* Subscription status message */}
@@ -173,12 +173,12 @@ const LumoSettingsUpgradePanel = ({ isGuest = false }: { isGuest?: boolean }) =>
                 </ul>
 
                 {/* Action area - button or message */}
-                <div className="mt-2">{getActionContent()}</div>
+                <div className="mt-2 w-fit-content">{getActionContent()}</div>
             </div>
 
             {/* Right side - Lumo cat illustration */}
-            <div className="flex items-end justify-end shrink-0" style={{ width: '60%' }}>
-                <img src={lumoCatPlusCollar} alt="Lumo Plus Cat" style={{ width: '69%', height: 'auto' }} />
+            <div className="flex items-end justify-end shrink-0 w-1/2">
+                <img src={lumoCatPlusCollar} alt="Lumo Plus Cat" style={{ width: '80%', height: 'auto' }} />
             </div>
         </div>
     );
@@ -296,7 +296,6 @@ const LumoSettingsSidebar = ({
 
 const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?: () => void }) => {
     const { DATE_VERSION } = useConfig();
-    // const date = <Time format="PPP">{new Date(DATE_VERSION).getTime()}</Time>;
     return (
         <div>
             {!isGuest && (

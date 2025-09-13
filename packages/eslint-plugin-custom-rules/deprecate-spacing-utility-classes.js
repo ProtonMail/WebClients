@@ -19,7 +19,6 @@ const deprecatedClasses = [
 
 export default {
     meta: {
-        type: 'suggestion',
         docs: {
             description:
                 'The old spacing system classes are deprecated, please use the new mobile-first spacing system.',

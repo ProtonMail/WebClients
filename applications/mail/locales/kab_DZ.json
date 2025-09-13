@@ -247,9 +247,6 @@
       "Copy addresses": [
         "Nɣel tansiwin"
       ],
-      "Copy email address": [
-        "Nɣel tansa n yimayl"
-      ],
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
       ],
@@ -610,9 +607,6 @@
       "Loading${ ellipsis }": [
         "Asali${ ellipsis }"
       ],
-      "Manage addresses": [
-        "Sefrek tansiwin"
-      ],
       "Manage folders": [
         "Sefrek ikaramen"
       ],
@@ -906,6 +900,9 @@
       ],
       "Resume": [
         "Kemmel"
+      ],
+      "Retry": [
+        "Ɛref̣ tikelt-nniḍen"
       ],
       "Revert to original display": [
         "Uɣal s abeqqeḍ n tazwara"
@@ -5660,9 +5657,6 @@
       "You are about to open another browser tab and visit:": [
         "Atan ad teldiḍ iccer-nniḍen n iminig sakin ad terzuḍ ɣer:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Aql-ak.kem teqqneḍ s yisem ${ user.Name } (${ user.Email })."
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Tzemreḍ ad tesneqdeḍ asesfer n ${ importProgressLink }."
       ],
@@ -6071,12 +6065,6 @@
       ],
       "Also archive": [
         "Γber daɣen"
-      ],
-      "Always label sender's emails": [
-        "Sebzem yal tikkelt imaylen n yimazanen"
-      ],
-      "Always move sender's emails": [
-        "Asenkez yal tikkelt imaylen n yimazanen"
       ],
       "AND": [
         "AKKED"
@@ -6545,9 +6533,6 @@
       ],
       "Undisclosed Recipients": [
         "Iɣerwaḍen ur ttwaskanen ara"
-      ],
-      "Unknown": [
-        "Arussin"
       ],
       "Unsafe or problematic": [
         "Meḥsud neɣ d ugur"
@@ -7506,7 +7491,7 @@
         "Ahat ticki"
       ],
       "Save": [
-        "Sekles"
+        "Sellek"
       ],
       "Special offer": [
         "Asefk ufrin"
@@ -9041,12 +9026,6 @@
       "Create contact": [
         "Snulfu-d anermis"
       ],
-      "Create folder \"${ search }\"": [
-        "Rnu akaram \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Rnu tabzimt \"${ search }\""
-      ],
       "Create new group": [
         "Snulfu-d agraw amaynut"
       ],
@@ -9302,6 +9281,9 @@
       "New message": [
         "Izen amaynut"
       ],
+      "Next": [
+        "Ɣer sdat"
+      ],
       "Next conversation": [
         "Tadiwennit d-iteddun"
       ],
@@ -9323,6 +9305,9 @@
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
       ],
+      "Open pagination": [
+        "Ldi tissubtert"
+      ],
       "Other information": [
         "Talɣut nniḍen"
       ],
@@ -9343,6 +9328,9 @@
       ],
       "Preview": [
         "Taskant"
+      ],
+      "Previous": [
+        "Γer deffir"
       ],
       "Previous conversation": [
         "Adiwenni yezrin"

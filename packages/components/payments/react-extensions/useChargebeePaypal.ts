@@ -8,11 +8,10 @@ import {
     type ChargebeeIframeHandles,
     type ChargebeePaypalModalHandles,
     ChargebeePaypalPaymentProcessor,
-    type ForceEnableChargebee,
     type PaymentVerificatorV5,
 } from '@proton/payments';
-import { type PaymentProcessorHook } from '@proton/payments';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { PaymentProcessorHook } from '@proton/payments';
+import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { usePaymentProcessor } from './usePaymentProcessor';
@@ -28,7 +27,6 @@ export interface Dependencies {
     handles: ChargebeeIframeHandles;
     events: ChargebeeIframeEvents;
     chargebeePaypalModalHandles: ChargebeePaypalModalHandles | undefined;
-    forceEnableChargebee: ForceEnableChargebee;
 }
 
 type Overrides = {
@@ -46,7 +44,7 @@ export type ChargebeePaypalProcessorHook = Omit<PaymentProcessorHook, keyof Over
 
 export const useChargebeePaypal = (
     { amountAndCurrency, onChargeable }: Props,
-    { api, verifyPayment, handles, events, chargebeePaypalModalHandles, forceEnableChargebee }: Dependencies
+    { api, verifyPayment, handles, events, chargebeePaypalModalHandles }: Dependencies
 ): ChargebeePaypalProcessorHook => {
     const paypalIframeLoadedRef = useRef(false);
 
@@ -58,7 +56,6 @@ export const useChargebeePaypal = (
                 amountAndCurrency,
                 handles,
                 events,
-                forceEnableChargebee,
                 chargebeePaypalModalHandles,
                 onChargeable
             )

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Icon, WalletLogo } from '@proton/components';
 import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
-import { type PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getNDomainsFeatureText } from '@proton/components/containers/payments/features/mail';
 import {
     FREE_WALLETS,

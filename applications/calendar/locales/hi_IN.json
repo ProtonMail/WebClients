@@ -580,6 +580,9 @@
       "Resume indexing": [
         "सूचीकरण फिर से शुरू करें"
       ],
+      "Retry": [
+        "वापस कोशिश करें"
+      ],
       "Save": [
         "सेव करें"
       ],
@@ -2884,6 +2887,9 @@
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
       ],
+      "Passphrase unavailable": [
+        "पासफ्रेज़ अनुपलब्ध"
+      ],
       "Password is required": [
         "पासवर्ड चाहिए"
       ],
@@ -4337,9 +4343,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } सहित: ${ price }"
-      ],
       "Indexing events: ${ current }/${ total }": [
         "कार्यक्रमों का सूचीकरण: ${ current }/${ total }"
       ],
@@ -4815,9 +4818,6 @@
       ],
       "You are about to open another browser tab and visit:": [
         "आप एक और ब्राउज़र टैब खोलने वाले हैं और जाएँ:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "आप वर्तमान में ${ user.Name } (${ user.Email }) के रूप में साइन इन हैं।"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "आप ${ downgradedPlanName } योजना में शामिल से अधिक स्टोरेज का उपयोग कर रहे हैं। कृपया डाउनग्रेड करने के लिए डेटा को मिटाएं या हटाएं।"
@@ -5512,9 +5512,6 @@
       ],
       "Username": [
         "उपयोगकर्ता का नाम"
-      ],
-      "VAT": [
-        "VAT"
       ],
       "Verification code": [
         "पुष्टि संख्या"
@@ -6826,7 +6823,7 @@
         "शायद बाद में"
       ],
       "Save": [
-        "सहेजें"
+        "बचाएँ"
       ],
       "Special offer": [
         "खास ऑफर"
@@ -8648,6 +8645,9 @@
       "Network error": [
         "नेटवर्क एरर"
       ],
+      "Next": [
+        "अगला"
+      ],
       "Night theme": [
         "रात की थीम"
       ],
@@ -8659,6 +8659,9 @@
       ],
       "Open actions dropdown": [
         "खुली कार्रवाई ड्रॉपडाउन"
+      ],
+      "Open pagination": [
+        "खुला पाग"
       ],
       "Organizer cannot be notified": [
         "आयोजक को सूचना नहीं दे सकते"
@@ -8683,6 +8686,9 @@
       ],
       "Phone numbers": [
         "फोन नंबर"
+      ],
+      "Previous": [
+        "पिछला"
       ],
       "Processing...": [
         "प्रोसेस हो रहा है..."

@@ -26,7 +26,8 @@ const BreachInformationCard = ({ breachData, onResolve, isMutating, onOpen, load
         return;
     }
 
-    const { name, createdAt, severity, resolvedState, actions, exposedData } = breachData;
+    const { name, createdAt, severity, resolvedState, actions, exposedData, breachedCombos } = breachData;
+
     const hasActions = actions && actions?.length > 0;
     const isResolved = resolvedState === BREACH_STATE.RESOLVED;
 
@@ -41,7 +42,7 @@ const BreachInformationCard = ({ breachData, onResolve, isMutating, onOpen, load
             />
             <div className="flex flex-column flex-nowrap gap-2">
                 <BreachInfo exposedData={exposedData} />
-                <UserBreachInfo exposedData={exposedData} />
+                <UserBreachInfo exposedData={exposedData} breachedCombos={breachedCombos} />
                 {hasActions && <BreachRecommendations actions={actions} />}
 
                 <BreachInfoNote />

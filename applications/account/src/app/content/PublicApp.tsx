@@ -20,7 +20,6 @@ import {
 } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { AuthType } from '@proton/components/containers/login/interface';
-import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useApi from '@proton/components/hooks/useApi';
 import { initMainHost } from '@proton/cross-storage/lib';
@@ -28,14 +27,13 @@ import useInstance from '@proton/hooks/useInstance';
 import { getHas2024OfferCoupon } from '@proton/payments';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import {
     getEmailSessionForkSearchParameter,
     getLocalIDForkSearchParameter,
     produceOAuthFork,
 } from '@proton/shared/lib/authentication/fork';
-import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -57,6 +55,7 @@ import locales from '../locales';
 import LoginContainer, { type LoginContainerState } from '../login/LoginContainer';
 import { getLoginMeta } from '../login/loginPagesJson';
 import AppSwitcherContainer from '../public/AppSwitcherContainer';
+import AuthDesktop from '../public/AuthDesktop';
 import AuthExtension from '../public/AuthExtension';
 import CallScheduledPage from '../public/CallScheduledPage';
 import CloseTicketContainer from '../public/CloseTicketContainer';
@@ -90,10 +89,12 @@ import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
+import { type ProduceForkData, SSOType } from './actions/forkInterface';
 import { getActiveSessionLoginResult } from './actions/getActiveSessionLoginResult';
 import { getLoginResult } from './actions/getLoginResult';
 import { getSanitizedLocationDescriptorObject } from './actions/getSanitizedLocationDescriptorObject';
 import type { LoginLocationState, LoginResult } from './actions/interface';
+import { handleDesktopFork } from './fork/handleDesktopFork';
 import { handleOAuthFork } from './fork/handleOAuthFork';
 import { handleProtonFork } from './fork/handleProtonFork';
 import { UNAUTHENTICATED_ROUTES, getPaths, getPreAppIntent } from './helper';
@@ -201,6 +202,7 @@ const loginPaths = [
     SSO_PATHS.PASS_SIGN_IN,
     SSO_PATHS.WALLET_SIGN_IN,
     SSO_PATHS.LUMO_SIGN_IN,
+    SSO_PATHS.MEET_SIGN_IN,
 ];
 
 const ephemeralLoginPaths = [SSO_PATHS.APP_SWITCHER, SSO_PATHS.REAUTH];
@@ -407,6 +409,16 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                         {loader}
                     </AccountEffect>
                 </Route>
+                <Route path={SSO_PATHS.DESKTOP_SIGN_IN}>
+                    <AccountEffect
+                        onEffect={async () => {
+                            const result = await handleDesktopFork({ api: silentApi, paths });
+                            await handleActiveSessions(result.payload.activeSessionsResult, result.payload.fork);
+                        }}
+                    >
+                        {loader}
+                    </AccountEffect>
+                </Route>
                 <Route path={[SSO_PATHS.EXTERNAL_SSO_LOGIN, SSO_PATHS.EXTERNAL_SSO_REAUTH]}>
                     <UnAuthenticated>
                         <ExternalSSOConsumer
@@ -511,6 +523,11 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                         <AuthExtension state={locationState.payload} />
                     </Route>
                 )}
+                {locationState?.type === 'auth-desktop' && (
+                    <Route path="/auth-desktop">
+                        <AuthDesktop state={locationState.payload} />
+                    </Route>
+                )}
                 {locationState?.type === 'oauth-partners' && (
                     <Route path={SSO_PATHS.OAUTH_PARTNERS}>
                         <UnAuthenticated>
@@ -557,279 +574,273 @@ const BasePublicApp = ({ sessions }: { sessions: ReturnType<typeof bootstrapApp>
                 <Route path="*">
                     <UnauthenticatedApiProvider unauthenticatedApi={extraThunkArguments.unauthenticatedApi}>
                         <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
-                            <PaymentSwitcher>
-                                <PublicAppSetup>
-                                    <ForceRefreshContext.Provider value={refresh}>
-                                        <AccountPublicApp
-                                            pathLocale={location.fullLocale}
-                                            location={location}
-                                            locales={locales}
-                                            onPreload={handlePreload}
-                                            loader={loader}
-                                        >
-                                            <UnleashFlagStarter location={location} />
-                                            <Switch location={location}>
-                                                <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>
-                                                    <UnAuthenticated>
-                                                        <JoinMagicLinkContainer
-                                                            api={extraThunkArguments.api}
-                                                            unauthenticatedApi={extraThunkArguments.unauthenticatedApi}
-                                                            onPreload={handlePreload}
-                                                            onPreSubmit={handlePreSubmit}
-                                                            onLogin={handleLogin}
-                                                            productParam={productParam}
-                                                            toAppName={toAppName}
-                                                            toApp={maybePreAppIntent}
-                                                            onUsed={() => {
-                                                                history.replace(
-                                                                    (activeSessions || []).length >= 1
-                                                                        ? SSO_PATHS.SWITCH
-                                                                        : paths.login
-                                                                );
-                                                            }}
-                                                        />
-                                                    </UnAuthenticated>
-                                                </Route>
-                                                <Route path={SSO_PATHS.SIGN_IN_WITH_ANOTHER_DEVICE}>
-                                                    <UnAuthenticated>
-                                                        <SignInWithAnotherDeviceContainer
-                                                            paths={paths}
-                                                            api={extraThunkArguments.api}
-                                                            onStartAuth={handleStartAuth}
-                                                            onLogin={handleLogin}
-                                                            productParam={productParam}
-                                                            toAppName={toAppName}
-                                                            toApp={maybePreAppIntent}
-                                                        />
-                                                    </UnAuthenticated>
-                                                </Route>
-                                                <Route path={SSO_PATHS.SWITCH}>
-                                                    <UnAuthenticated>
-                                                        <SwitchAccountContainer
-                                                            api={extraThunkArguments.api}
-                                                            metaTags={getLoginMeta(maybePreAppIntent)}
-                                                            initialSessionsLength={sessions.initialSessionsLength}
-                                                            onGetActiveSessions={handleGetActiveSessions}
-                                                            activeSessions={activeSessions}
-                                                            onActiveSessions={setActiveSessions}
-                                                            toApp={maybePreAppIntent}
-                                                            toAppName={toAppName}
-                                                            onLogin={handleLogin}
-                                                            onAddAccount={handleAddAccount}
-                                                            onEmptySessions={() => {
-                                                                history.replace(paths.login);
-                                                            }}
-                                                        />
-                                                    </UnAuthenticated>
-                                                </Route>
-                                                <Route
-                                                    path={[
-                                                        SSO_PATHS.SIGNUP,
-                                                        SSO_PATHS.START,
-                                                        SSO_PATHS.REFERAL_PLAN_SELECTION,
-                                                        SSO_PATHS.BUSINESS_SIGNUP,
-                                                        SSO_PATHS.CALENDAR_SIGNUP,
-                                                        SSO_PATHS.CALENDAR_SIGNUP_B2B,
-                                                        SSO_PATHS.MAIL_SIGNUP,
-                                                        SSO_PATHS.MAIL_SIGNUP_B2B,
-                                                        SSO_PATHS.DRIVE_SIGNUP,
-                                                        SSO_PATHS.DRIVE_SIGNUP_B2B,
-                                                        SSO_PATHS.DOCS_SIGNUP,
-                                                        SSO_PATHS.PASS_SIGNUP,
-                                                        SSO_PATHS.PASS_SIGNUP_B2B,
-                                                        SSO_PATHS.WALLET_SIGNUP,
-                                                        SSO_PATHS.LUMO_SIGNUP,
-                                                        SSO_PATHS.PORKBUN_SIGNUP,
-                                                        SSO_PATHS.PORKBUN_SIGN_IN,
-                                                    ]}
-                                                >
-                                                    <SingleSignupSwitchContainer
-                                                        initialSessionsLength={sessions.initialSessionsLengthBool}
-                                                        hasBFCoupon={hasBFCoupon}
-                                                        maybePreAppIntent={maybePreAppIntent}
-                                                        initialSearchParams={initialSearchParams}
-                                                        paths={paths}
-                                                        metaTags={getSignupMeta(maybePreAppIntent)}
-                                                        activeSessions={activeSessions}
-                                                        onGetActiveSessions={handleGetActiveSessions}
+                            <PublicAppSetup>
+                                <ForceRefreshContext.Provider value={refresh}>
+                                    <AccountPublicApp
+                                        pathLocale={location.fullLocale}
+                                        location={location}
+                                        locales={locales}
+                                        onPreload={handlePreload}
+                                        loader={loader}
+                                    >
+                                        <UnleashFlagStarter location={location} />
+                                        <Switch location={location}>
+                                            <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>
+                                                <UnAuthenticated>
+                                                    <JoinMagicLinkContainer
+                                                        api={extraThunkArguments.api}
+                                                        unauthenticatedApi={extraThunkArguments.unauthenticatedApi}
+                                                        onPreload={handlePreload}
+                                                        onPreSubmit={handlePreSubmit}
+                                                        onLogin={handleLogin}
                                                         productParam={productParam}
-                                                        clientType={clientType}
+                                                        toAppName={toAppName}
+                                                        toApp={maybePreAppIntent}
+                                                        onUsed={() => {
+                                                            history.replace(
+                                                                (activeSessions || []).length >= 1
+                                                                    ? SSO_PATHS.SWITCH
+                                                                    : paths.login
+                                                            );
+                                                        }}
+                                                    />
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route path={SSO_PATHS.SIGN_IN_WITH_ANOTHER_DEVICE}>
+                                                <UnAuthenticated>
+                                                    <SignInWithAnotherDeviceContainer
+                                                        paths={paths}
+                                                        api={extraThunkArguments.api}
+                                                        onStartAuth={handleStartAuth}
+                                                        onLogin={handleLogin}
+                                                        productParam={productParam}
+                                                        toAppName={toAppName}
+                                                        toApp={maybePreAppIntent}
+                                                    />
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route path={SSO_PATHS.SWITCH}>
+                                                <UnAuthenticated>
+                                                    <SwitchAccountContainer
+                                                        api={extraThunkArguments.api}
+                                                        metaTags={getLoginMeta(maybePreAppIntent)}
+                                                        initialSessionsLength={sessions.initialSessionsLength}
+                                                        onGetActiveSessions={handleGetActiveSessions}
+                                                        activeSessions={activeSessions}
+                                                        onActiveSessions={setActiveSessions}
                                                         toApp={maybePreAppIntent}
                                                         toAppName={toAppName}
-                                                        searchParams={searchParams}
-                                                        handleLogin={handleLogin}
-                                                        fork={!!forkState}
-                                                        onBack={
-                                                            hasBackToSwitch
-                                                                ? () => history.push(paths.login)
-                                                                : undefined
+                                                        onLogin={handleLogin}
+                                                        onAddAccount={handleAddAccount}
+                                                        onEmptySessions={() => {
+                                                            history.replace(paths.login);
+                                                        }}
+                                                    />
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route
+                                                path={[
+                                                    SSO_PATHS.SIGNUP,
+                                                    SSO_PATHS.START,
+                                                    SSO_PATHS.REFERAL_PLAN_SELECTION,
+                                                    SSO_PATHS.BUSINESS_SIGNUP,
+                                                    SSO_PATHS.CALENDAR_SIGNUP,
+                                                    SSO_PATHS.CALENDAR_SIGNUP_B2B,
+                                                    SSO_PATHS.MAIL_SIGNUP,
+                                                    SSO_PATHS.MAIL_SIGNUP_B2B,
+                                                    SSO_PATHS.DRIVE_SIGNUP,
+                                                    SSO_PATHS.DRIVE_SIGNUP_B2B,
+                                                    SSO_PATHS.DOCS_SIGNUP,
+                                                    SSO_PATHS.PASS_SIGNUP,
+                                                    SSO_PATHS.PASS_SIGNUP_B2B,
+                                                    SSO_PATHS.WALLET_SIGNUP,
+                                                    SSO_PATHS.LUMO_SIGNUP,
+                                                    SSO_PATHS.PORKBUN_SIGNUP,
+                                                    SSO_PATHS.PORKBUN_SIGN_IN,
+                                                ]}
+                                            >
+                                                <SingleSignupSwitchContainer
+                                                    initialSessionsLength={sessions.initialSessionsLengthBool}
+                                                    hasBFCoupon={hasBFCoupon}
+                                                    maybePreAppIntent={maybePreAppIntent}
+                                                    initialSearchParams={initialSearchParams}
+                                                    paths={paths}
+                                                    metaTags={getSignupMeta(maybePreAppIntent)}
+                                                    activeSessions={activeSessions}
+                                                    onGetActiveSessions={handleGetActiveSessions}
+                                                    productParam={productParam}
+                                                    clientType={clientType}
+                                                    toApp={maybePreAppIntent}
+                                                    toAppName={toAppName}
+                                                    searchParams={searchParams}
+                                                    handleLogin={handleLogin}
+                                                    fork={!!forkState}
+                                                    onBack={
+                                                        hasBackToSwitch ? () => history.push(paths.login) : undefined
+                                                    }
+                                                    onPreSubmit={handlePreSubmit}
+                                                    onStartAuth={handleStartAuth}
+                                                />
+                                            </Route>
+                                            <Route path={[SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]}>
+                                                <SingleSignupContainer
+                                                    metaTags={getSignupMeta(APPS.PROTONVPN_SETTINGS)}
+                                                    loader={loader}
+                                                    productParam={APPS.PROTONVPN_SETTINGS}
+                                                    clientType={CLIENT_TYPES.VPN}
+                                                    toApp={APPS.PROTONVPN_SETTINGS}
+                                                    toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
+                                                    onLogin={handleLogin}
+                                                    onBack={
+                                                        hasBackToSwitch ? () => history.push(paths.login) : undefined
+                                                    }
+                                                    onPreSubmit={handlePreSubmit}
+                                                    onStartAuth={handleStartAuth}
+                                                />
+                                            </Route>
+                                            <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
+                                                <UnAuthenticated>
+                                                    <SignupInviteContainer
+                                                        loader={loader}
+                                                        clientType={clientType}
+                                                        onValid={(inviteData) =>
+                                                            history.replace(
+                                                                getSanitizedLocationDescriptorObject({
+                                                                    pathname: paths.signup,
+                                                                    search: '?mode=sps',
+                                                                    state: { invite: inviteData },
+                                                                })
+                                                            )
                                                         }
+                                                        onInvalid={() => history.push(paths.signup)}
+                                                    />
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route path={SSO_PATHS.SIGNIN_HELP}>
+                                                <UnAuthenticated>
+                                                    <SigninHelpContainer toApp={maybePreAppIntent} paths={paths} />
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route path={SSO_PATHS.RESET_PASSWORD}>
+                                                <UnAuthenticated>
+                                                    <ResetPasswordContainer
+                                                        metaTags={resetPasswordPage()}
+                                                        toApp={maybePreAppIntent}
+                                                        onLogin={handleLogin}
+                                                        setupVPN={setupVPN}
+                                                        loginUrl={paths.login}
+                                                        productParam={productParam}
                                                         onPreSubmit={handlePreSubmit}
                                                         onStartAuth={handleStartAuth}
                                                     />
-                                                </Route>
-                                                <Route path={[SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]}>
-                                                    <SingleSignupContainer
-                                                        metaTags={getSignupMeta(APPS.PROTONVPN_SETTINGS)}
-                                                        loader={loader}
-                                                        productParam={APPS.PROTONVPN_SETTINGS}
-                                                        clientType={CLIENT_TYPES.VPN}
-                                                        toApp={APPS.PROTONVPN_SETTINGS}
-                                                        toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route path={SSO_PATHS.FORGOT_USERNAME}>
+                                                <UnAuthenticated>
+                                                    <ForgotUsernameContainer
+                                                        toApp={maybePreAppIntent}
+                                                        metaTags={forgotUsernamePage()}
+                                                        loginUrl={paths.login}
+                                                        onStartAuth={handleStartAuth}
+                                                    />
+                                                </UnAuthenticated>
+                                            </Route>
+                                            <Route path={loginPaths} exact>
+                                                <UnAuthenticated>
+                                                    <LoginContainer
+                                                        initialSearchParams={initialSearchParams}
+                                                        metaTags={getLoginMeta(maybePreAppIntent)}
+                                                        toAppName={toAppName}
+                                                        toApp={maybePreAppIntent}
+                                                        productParam={productParam}
+                                                        showContinueTo={!!toOAuthName}
                                                         onLogin={handleLogin}
                                                         onBack={
                                                             hasBackToSwitch
-                                                                ? () => history.push(paths.login)
+                                                                ? () => history.push(SSO_PATHS.SWITCH)
                                                                 : undefined
                                                         }
+                                                        setupVPN={setupVPN}
+                                                        paths={paths}
                                                         onPreSubmit={handlePreSubmit}
                                                         onStartAuth={handleStartAuth}
                                                     />
-                                                </Route>
-                                                <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
+                                                </UnAuthenticated>
+                                            </Route>
+                                            {locationState?.type === 'confirm-oauth' && (
+                                                <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
                                                     <UnAuthenticated>
-                                                        <SignupInviteContainer
-                                                            loader={loader}
-                                                            clientType={clientType}
-                                                            onValid={(inviteData) =>
-                                                                history.replace(
-                                                                    getSanitizedLocationDescriptorObject({
-                                                                        pathname: paths.signup,
-                                                                        search: '?mode=sps',
-                                                                        state: { invite: inviteData },
-                                                                    })
-                                                                )
+                                                        <OAuthConfirmForkContainer
+                                                            name={toAppName}
+                                                            image={
+                                                                locationState.payload.data.payload.oauthData.clientInfo
+                                                                    .Logo
                                                             }
-                                                            onInvalid={() => history.push(paths.signup)}
-                                                        />
-                                                    </UnAuthenticated>
-                                                </Route>
-                                                <Route path={SSO_PATHS.SIGNIN_HELP}>
-                                                    <UnAuthenticated>
-                                                        <SigninHelpContainer toApp={maybePreAppIntent} paths={paths} />
-                                                    </UnAuthenticated>
-                                                </Route>
-                                                <Route path={SSO_PATHS.RESET_PASSWORD}>
-                                                    <UnAuthenticated>
-                                                        <ResetPasswordContainer
-                                                            metaTags={resetPasswordPage()}
-                                                            toApp={maybePreAppIntent}
-                                                            onLogin={handleLogin}
-                                                            setupVPN={setupVPN}
-                                                            loginUrl={paths.login}
-                                                            productParam={productParam}
-                                                            onPreSubmit={handlePreSubmit}
-                                                            onStartAuth={handleStartAuth}
-                                                        />
-                                                    </UnAuthenticated>
-                                                </Route>
-                                                <Route path={SSO_PATHS.FORGOT_USERNAME}>
-                                                    <UnAuthenticated>
-                                                        <ForgotUsernameContainer
-                                                            toApp={maybePreAppIntent}
-                                                            metaTags={forgotUsernamePage()}
-                                                            loginUrl={paths.login}
-                                                            onStartAuth={handleStartAuth}
-                                                        />
-                                                    </UnAuthenticated>
-                                                </Route>
-                                                <Route path={loginPaths} exact>
-                                                    <UnAuthenticated>
-                                                        <LoginContainer
-                                                            initialSearchParams={initialSearchParams}
-                                                            metaTags={getLoginMeta(maybePreAppIntent)}
-                                                            toAppName={toAppName}
-                                                            toApp={maybePreAppIntent}
-                                                            productParam={productParam}
-                                                            showContinueTo={!!toOAuthName}
-                                                            onLogin={handleLogin}
-                                                            onBack={
-                                                                hasBackToSwitch
-                                                                    ? () => history.push(SSO_PATHS.SWITCH)
-                                                                    : undefined
-                                                            }
-                                                            setupVPN={setupVPN}
-                                                            paths={paths}
-                                                            onPreSubmit={handlePreSubmit}
-                                                            onStartAuth={handleStartAuth}
-                                                        />
-                                                    </UnAuthenticated>
-                                                </Route>
-                                                {locationState?.type === 'confirm-oauth' && (
-                                                    <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
-                                                        <UnAuthenticated>
-                                                            <OAuthConfirmForkContainer
-                                                                name={toAppName}
-                                                                image={
-                                                                    locationState.payload.data.payload.oauthData
-                                                                        .clientInfo.Logo
+                                                            onConfirm={async () => {
+                                                                if (locationState?.type !== 'confirm-oauth') {
+                                                                    throw new Error('Missing state');
                                                                 }
-                                                                onConfirm={async () => {
-                                                                    if (locationState?.type !== 'confirm-oauth') {
-                                                                        throw new Error('Missing state');
-                                                                    }
-                                                                    const url = await produceOAuthFork({
-                                                                        api: normalApi,
-                                                                        oauthData:
-                                                                            locationState.payload.data.payload
-                                                                                .oauthData,
-                                                                        UID: locationState.payload.session.data.UID,
-                                                                    });
-                                                                    replaceUrl(url);
-                                                                }}
-                                                                onCancel={() => {
-                                                                    // Force a hard refresh to get active sessions to refresh when signing up
-                                                                    window.location.pathname = SSO_PATHS.SWITCH;
-                                                                }}
-                                                            />
-                                                        </UnAuthenticated>
-                                                    </Route>
-                                                )}
-                                                {locationState?.type === 'reauth' && (
-                                                    <Route path={SSO_PATHS.REAUTH}>
-                                                        <UnAuthenticated>
-                                                            <ReAuthContainer
-                                                                toApp={maybePreAppIntent}
-                                                                onSwitch={() => {
-                                                                    history.push(SSO_PATHS.SWITCH);
-                                                                }}
-                                                                paths={paths}
-                                                                onLogin={handleLogin}
-                                                                state={locationState.payload}
-                                                                onPreSubmit={handlePreSubmit}
-                                                            />
-                                                        </UnAuthenticated>
-                                                    </Route>
-                                                )}
-                                                {locationState?.type === 'app-switcher' && (
-                                                    <Route path={SSO_PATHS.APP_SWITCHER}>
-                                                        <UnAuthenticated>
-                                                            <AppSwitcherContainer
-                                                                onLogin={handleLogin}
-                                                                onSwitch={() => {
-                                                                    history.push(SSO_PATHS.SWITCH);
-                                                                }}
-                                                                state={locationState.payload}
-                                                            />
-                                                        </UnAuthenticated>
-                                                    </Route>
-                                                )}
-                                                <Redirect
-                                                    to={{
-                                                        pathname: hasBackToSwitch ? SSO_PATHS.SWITCH : paths.login,
-                                                        state: {
-                                                            ...(typeof location.state === 'object'
-                                                                ? location.state
-                                                                : {}),
-                                                            from: location,
-                                                        },
-                                                    }}
-                                                />
-                                            </Switch>
-                                        </AccountPublicApp>
-                                    </ForceRefreshContext.Provider>
-                                </PublicAppSetup>
-                            </PaymentSwitcher>
+                                                                const uidApi = getUIDApi(
+                                                                    locationState.payload.session.data.UID,
+                                                                    normalApi
+                                                                );
+                                                                const url = await produceOAuthFork({
+                                                                    api: uidApi,
+                                                                    oauthData:
+                                                                        locationState.payload.data.payload.oauthData,
+                                                                });
+                                                                replaceUrl(url);
+                                                            }}
+                                                            onCancel={() => {
+                                                                // Force a hard refresh to get active sessions to refresh when signing up
+                                                                window.location.pathname = SSO_PATHS.SWITCH;
+                                                            }}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                            )}
+                                            {locationState?.type === 'reauth' && (
+                                                <Route path={SSO_PATHS.REAUTH}>
+                                                    <UnAuthenticated>
+                                                        <ReAuthContainer
+                                                            toApp={maybePreAppIntent}
+                                                            onSwitch={() => {
+                                                                history.push(SSO_PATHS.SWITCH);
+                                                            }}
+                                                            paths={paths}
+                                                            onLogin={handleLogin}
+                                                            state={locationState.payload}
+                                                            onPreSubmit={handlePreSubmit}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                            )}
+                                            {locationState?.type === 'app-switcher' && (
+                                                <Route path={SSO_PATHS.APP_SWITCHER}>
+                                                    <UnAuthenticated>
+                                                        <AppSwitcherContainer
+                                                            onLogin={handleLogin}
+                                                            onSwitch={() => {
+                                                                history.push(SSO_PATHS.SWITCH);
+                                                            }}
+                                                            state={locationState.payload}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                            )}
+                                            <Redirect
+                                                to={{
+                                                    pathname: hasBackToSwitch ? SSO_PATHS.SWITCH : paths.login,
+                                                    state: {
+                                                        ...(typeof location.state === 'object' ? location.state : {}),
+                                                        from: location,
+                                                    },
+                                                }}
+                                            />
+                                        </Switch>
+                                    </AccountPublicApp>
+                                </ForceRefreshContext.Provider>
+                            </PublicAppSetup>
                         </FlagProvider>
                     </UnauthenticatedApiProvider>
                 </Route>

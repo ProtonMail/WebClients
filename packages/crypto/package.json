@@ -14,7 +14,7 @@
     },
     "dependencies": {
         "comlink": "^4.4.2",
-        "pmcrypto": "npm:@protontech/pmcrypto@^8.7.0"
+        "pmcrypto": "npm:@protontech/pmcrypto@^8.8.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
@@ -22,8 +22,8 @@
         "@types/chai-as-promised": "^7.1.8",
         "chai": "^5.3.3",
         "chai-as-promised": "^7.1.2",
-        "eslint": "^9.34.0",
-        "eslint-plugin-chai-friendly": "^0.8.0",
+        "eslint": "^9.35.0",
+        "eslint-plugin-chai-friendly": "^1.1.0",
         "eslint-plugin-jasmine": "^4.2.2",
         "karma": "^6.4.4",
         "karma-chrome-launcher": "^3.2.0",

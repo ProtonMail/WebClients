@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
@@ -172,7 +173,7 @@ export const getNotificationTextLabelAdded = ({
         return getNotificationTextStarred({ isMessage, elementsCount });
     }
 
-    if (CATEGORY_LABEL_IDS_SET.has(destinationLabelID as MAILBOX_LABEL_IDS)) {
+    if (isCategoryLabel(destinationLabelID)) {
         return c('Success').ngettext(
             msgid`Recategorized ${elementsCount} message.`,
             `Recategorized ${elementsCount} messages.`,
@@ -244,4 +245,17 @@ export const getNotificationTextLabelAdded = ({
         `${elementsCount} conversations moved to ${labelName}.`,
         elementsCount
     );
+};
+
+export const getNotificationTextUpdated = ({
+    isMessage,
+    elementsCount,
+}: {
+    isMessage: boolean;
+    elementsCount: number;
+}) => {
+    if (isMessage) {
+        return c('Success').ngettext(msgid`Message updated`, `Messages updated`, elementsCount);
+    }
+    return c('Success').ngettext(msgid`Conversation updated`, `Conversations updated`, elementsCount);
 };

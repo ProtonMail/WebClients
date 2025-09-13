@@ -1,6 +1,3 @@
-/* eslint-disable class-methods-use-this */
-/* eslint-disable max-classes-per-file */
-/* eslint-disable no-underscore-dangle */
 import {
     SHA256,
     SHA512,
@@ -40,7 +37,7 @@ import {
     verifyMessage,
 } from 'pmcrypto';
 import type { Argon2Options, Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import { type UserID, config, enums } from 'pmcrypto/lib/openpgp';
+import { type UserID, enums } from 'pmcrypto/lib/openpgp';
 
 import { ARGON2_PARAMS, KeyCompatibilityLevel } from '../constants';
 import { arrayToHexString } from '../utils';
@@ -447,21 +444,9 @@ class KeyManagementApi {
 export class Api extends KeyManagementApi {
     /**
      * Init pmcrypto and set the underlying global OpenPGP config.
-     * The `pluggableGrammarErrorReporter` needs to be passed outside of the InitOptions
-     * to have it handled properly by Comlik's default transfer handlers.
-     *
-     * If we need to pass other functions as part of the config in the future,
-     * we should write custom transfer handlers
-     * (see original handler: https://github.com/GoogleChromeLabs/comlink/blob/60737ad76e8e4d5d8abe2c0c5809f11c72edcbe7/src/comlink.ts#L48-L62)
      */
-    static init(
-        { enforceOpenpgpGrammar }: InitOptions,
-        pluggableGrammarErrorReporter: ((errorMessage: string) => any) | null = null
-    ) {
+    static init({}: InitOptions) {
         initPmcrypto();
-        // if false, errors are still logged to `pluggableGrammarErrorReporter`
-        config.enforceGrammar = enforceOpenpgpGrammar;
-        config.pluggableGrammarErrorReporter = pluggableGrammarErrorReporter;
     }
 
     /**
@@ -1003,8 +988,8 @@ export class Api extends KeyManagementApi {
         }
 
         targetKey.users = sourceKey.users.map((sourceUser) => {
-            // @ts-ignore missing .clone() definition
             const destUser = sourceUser.clone();
+            // @ts-ignore as `mainKey` is supposed to be read-only
             destUser.mainKey = targetKey;
             return destUser;
         });
@@ -1031,6 +1016,7 @@ export class Api extends KeyManagementApi {
         // we first reformat the key to add & sign the new userIDs, then replace the userIDs of the original key.
         // To improve reformatting performance, we can drop subkeys beforehand, as they are not needed for the UserID
         const updatedSubkeys = updatedKey.subkeys;
+        updatedKey.subkeys = [];
         // NB: the private key params of the returned reformatted keys point to the same ones as `updatedKey`.
         // Hence, they will be cleared once the corresponding ref is cleared by the app -- no need to clear them now.
         const { publicKey: temporaryKeyWithNewUsers } = await reformatKey({
@@ -1042,8 +1028,8 @@ export class Api extends KeyManagementApi {
 
         // same process as `updateUserIDs`
         updatedKey.users = temporaryKeyWithNewUsers.users.map((newUser) => {
-            // @ts-ignore missing .clone() definition
             const destUser = newUser.clone();
+            // @ts-ignore as `mainKey` is supposed to be read-only
             destUser.mainKey = updatedKey;
             return destUser;
         });

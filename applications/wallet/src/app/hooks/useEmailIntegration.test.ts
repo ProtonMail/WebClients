@@ -7,7 +7,7 @@ import { type WasmApiEmailAddress, WasmNetwork } from '@proton/andromeda';
 import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { mockUseAddresses, mockUseNotifications } from '@proton/testing/lib/vitest';
-import { type DecryptedApiWalletKey, type IWasmApiWalletData } from '@proton/wallet';
+import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet';
 import { apiWalletsData, getAddressKey, mockUseWalletApiClients, mockUseWalletDispatch } from '@proton/wallet/tests';
 
 import { formatToSubset, getWalletsChainDataInit } from '../contexts/BitcoinBlockchainContext/useWalletsChainData';

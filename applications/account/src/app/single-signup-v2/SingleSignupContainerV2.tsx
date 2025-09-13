@@ -115,6 +115,7 @@ import { SignupMode, Steps } from './interface';
 import type { TelemetryMeasurementData } from './measure';
 import { getPaymentMethodsAvailable, getPlanNameFromSession, getSignupTelemetryData } from './measure';
 import AccessModal from './modals/AccessModal';
+import PlanUnavailableModal from './modals/PlanUnavailableModal';
 import SubUserModal from './modals/SubUserModal';
 import UnlockModal from './modals/UnlockModal';
 import UpsellModal from './modals/UpsellModal';
@@ -246,6 +247,7 @@ const SingleSignupContainerV2 = ({
     const [visionaryModalProps, setVisionaryModal, renderVisionaryModal] = useModalState();
     const [subUserModalProps, setSubUserModal, renderSubUserModal] = useModalState();
     const [accessModalProps, setHasAccessModal, renderAccessModal] = useModalState();
+    const [planUnavailableModalProps, setHasPlanUnavailableModal, renderPlanUnavailableModal] = useModalState();
 
     const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
         return getSignupParameters({
@@ -413,6 +415,11 @@ const SingleSignupContainerV2 = ({
 
         if (session.state.access) {
             setHasAccessModal(true);
+            return;
+        }
+
+        if (session.state.unavailable) {
+            setHasPlanUnavailableModal(true);
             return;
         }
 
@@ -669,7 +676,7 @@ const SingleSignupContainerV2 = ({
                 });
 
                 const planName = getPlanNameFromSession(session);
-                measure({
+                void measure({
                     event: TelemetryAccountSignupEvents.pageLoad,
                     dimensions: {
                         signedin: 'yes',
@@ -678,7 +685,7 @@ const SingleSignupContainerV2 = ({
                     },
                 });
             } else {
-                measure({
+                void measure({
                     event: TelemetryAccountSignupEvents.pageLoad,
                     dimensions: {
                         signedin: 'no',
@@ -687,7 +694,7 @@ const SingleSignupContainerV2 = ({
                     },
                 });
             }
-            measure({
+            void measure({
                 event: TelemetryAccountSignupEvents.bePaymentMethods,
                 dimensions: getPaymentMethodsAvailable(paymentMethodStatus.VendorStates),
             });
@@ -789,7 +796,7 @@ const SingleSignupContainerV2 = ({
                 paymentStatusPromise,
             ]);
 
-            measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
+            void measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
 
             setModelDiff({
                 optimistic: {},
@@ -905,7 +912,7 @@ const SingleSignupContainerV2 = ({
             });
 
             triggerModals({ planParameters: model.planParameters, session, upsell, subscriptionData });
-            measure({
+            void measure({
                 event: TelemetryAccountSignupEvents.beSignInSuccess,
                 dimensions: { plan: getPlanNameFromSession(session) },
             });
@@ -1173,7 +1180,7 @@ const SingleSignupContainerV2 = ({
             });
         }
 
-        measure(getSignupTelemetryData(model.plansMap, cache));
+        void measure(getSignupTelemetryData(model.plansMap, cache));
 
         return result.cache;
     };
@@ -1298,6 +1305,19 @@ const SingleSignupContainerV2 = ({
                     }}
                 />
             )}
+            {renderPlanUnavailableModal && (
+                <PlanUnavailableModal
+                    {...planUnavailableModalProps}
+                    user={model.session?.resumedSessionResult.User}
+                    app={product}
+                    onSignOut={() => {
+                        return handleSignOut(true);
+                    }}
+                    onContinue={async () => {
+                        await handleStartUserOnboarding(getFreeSubscriptionData(model.subscriptionData));
+                    }}
+                />
+            )}
             <UnAuthenticated theme={theme.type}>
                 {model.step === Steps.Account && (
                     <Step1
@@ -1321,7 +1341,7 @@ const SingleSignupContainerV2 = ({
                         onOpenLogin={(options) => {
                             setTmpLoginEmail(options.email);
                             setLoginModal(true);
-                            measure({
+                            void measure({
                                 event: TelemetryAccountSignupEvents.userSignIn,
                                 dimensions: { location: options.location },
                             });
@@ -1441,6 +1461,7 @@ const SingleSignupContainerV2 = ({
                         }}
                         mode={signupParameters.mode}
                         signupTrial={signupTrial}
+                        subscription={model.session?.subscription}
                     />
                 )}
                 {model.step === Steps.Loading && (

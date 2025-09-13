@@ -141,6 +141,9 @@
       "Claim this address": [
         "Gør krav på denne adresse"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gør krav på din gratis ${ BRAND_NAME } address"
+      ],
       "Clear": [
         "Ryd"
       ],
@@ -688,6 +691,9 @@
       ],
       "Resume indexing": [
         "Genoptag indeksering"
+      ],
+      "Retry": [
+        "Prøv igen"
       ],
       "Save": [
         "Gem"
@@ -4103,9 +4109,6 @@
       "customer support": [
         "kundeservice"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familieabonnementer understøtter i øjeblikket ikke eksterne konti. Opret en ${ BRAND_NAME } adresse for du tilmelder dig. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
       ],
@@ -5247,9 +5250,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inklusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Indexing events: ${ current }/${ total }": [
         "Indekserer begivenheder: ${ current }/${ total }"
       ],
@@ -5840,9 +5840,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Du er ved at åbne din standardbrowser og besøge:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruger mere lagerplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
@@ -6649,9 +6646,6 @@
       ],
       "Username": [
         "Brugernavn"
-      ],
-      "VAT": [
-        "Moms"
       ],
       "Verification code": [
         "Verifikationskode"
@@ -8324,7 +8318,7 @@
         "Betal årligt for at sikre vores bedste tilbud"
       ],
       "Save": [
-        "Gem"
+        "Spar"
       ],
       "Save big when you pay annually": [
         "Få stor besparelse ved at betale årligt"
@@ -10912,6 +10906,9 @@
       "Network error": [
         "Netværksfejl"
       ],
+      "Next": [
+        "Næste"
+      ],
       "Night theme": [
         "Nattetema"
       ],
@@ -10926,6 +10923,9 @@
       ],
       "Open actions dropdown": [
         "Åbn handlings-dropdownmenuen"
+      ],
+      "Open pagination": [
+        "Åbn sidenummerering"
       ],
       "Org setup": [
         "Organisationsopsætning"
@@ -10956,6 +10956,9 @@
       ],
       "Phone numbers": [
         "Telefonnumre"
+      ],
+      "Previous": [
+        "Forrige"
       ],
       "Private browsing vs VPN": [
         "Privat browsing vs. VPN"
@@ -11412,9 +11415,6 @@
       "${ n } wallet": [
         "${ n } wallet",
         "${ n } wallets"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "En sikrere måde at gemme dine Bitcoin på"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

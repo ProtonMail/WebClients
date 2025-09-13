@@ -1,7 +1,7 @@
 import { subDays } from 'date-fns';
 
 import { CYCLE, PLANS, PLAN_TYPES, type Subscription, SubscriptionPlatform } from '@proton/payments';
-import { type ProtonConfig, type UserModel } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 import { getIsEligible } from './eligibility';
 

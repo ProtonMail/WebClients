@@ -43,14 +43,19 @@ enum CommonFeatureFlag {
     SubscriberNudgeDriveMonthly = 'SubscriberNudgeDriveMonthly',
     B2BOnboarding = 'B2BOnboarding',
     InboxBringYourOwnEmail = 'InboxBringYourOwnEmail',
+    InboxBringYourOwnEmailClient = 'InboxBringYourOwnEmailClient',
     InboxBringYourOwnEmailSignup = 'InboxBringYourOwnEmailSignup',
-    CryptoEnforceOpenpgpGrammar = 'CryptoEnforceOpenpgpGrammar',
     ReferralExpansion = 'ReferralExpansion',
     AlwaysOnUpsell = 'AlwaysOnUpsell',
     LumoEarlyAccess = 'LumoEarlyAccess',
     LumoTooling = 'LumoTooling',
     LumoHighLoad = 'LumoHighLoad',
     LumoDeactivateGuestModeFrontend = 'LumoDeactivateGuestModeFrontend',
+    ScheduleInAdvance = 'ScheduleInAdvance',
+    AllowGuestInit = 'AllowGuestInit',
+    NewScheduleOption = 'NewScheduleOption',
+    PMVC2025 = 'PMVC2025',
+    SentinelSafetyReview = 'SentinelSafetyReview',
 }
 
 enum AccountFlag {
@@ -71,16 +76,17 @@ enum AccountFlag {
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',
     EasySwitchConsentExperiment = 'EasySwitchConsentExperiment',
     EduGainSSO = 'EduGainSSO',
+    Fido2WithoutTotp = 'Fido2WithoutTotp',
     PassB2BPasswordGenerator = 'PassB2BPasswordGenerator',
     SharedServerFeature = 'SharedServerFeature',
     PassB2BVaultCreation = 'PassB2BVaultCreation',
     PassB2BItemSharing = 'PassB2BItemSharing',
     CryptoPostQuantumOptIn = 'CryptoPostQuantumOptIn',
     PassB2BReports = 'PassB2BReports',
+    PassB2BPauseList = 'PassB2BPauseList',
     DeleteAccountMergeReason = 'DeleteAccountMergeReason',
     VPNDashboard = 'VPNDashboard',
     PasswordPolicy = 'PasswordPolicy',
-    EmergencyAccess = 'EmergencyAccess',
     SsoForPbs = 'SsoForPbs',
     DataRetentionPolicy = 'DataRetentionPolicy',
 }
@@ -143,6 +149,7 @@ enum DriveFeatureFlag {
     DriveWebSDKFolders = 'DriveWebSDKFolders',
     DriveWebSDKSharedByMe = 'DriveWebSDKSharedByMe',
     DriveWebSDKSharedWithMe = 'DriveWebSDKSharedWithMe',
+    DriveWebSDKSidebar = 'DriveWebSDKSidebar',
     // Video Preview
     DriveWebVideoAutoPlay = 'DriveWebVideoAutoPlay',
 }
@@ -182,12 +189,10 @@ enum MailFeatureFlag {
     ProtonTips = 'ProtonTips',
     ReplayOnboardingModal = 'ReplayOnboardingModal',
     MailMetrics = 'MailMetrics',
-    RemoveImageMetadata = 'RemoveImageMetadata',
     MailWebListTelemetry = 'MailWebListTelemetry',
     MailPostSignupOneDollarPromo = 'MailPostSignupOneDollarPromo',
     SubscriberNudgeMailMonthly = 'SubscriberNudgeMailMonthly',
     RemoveReplyStyles = 'RemoveReplyStyles',
-    MailboxOptimisticRefactoring = 'MailboxOptimisticRefactoring',
     // Category view flags
     // Used to control the whole category view
     CategoryView = 'CategoryView',
@@ -207,6 +212,13 @@ enum WalletFlag {
     WalletExportTransaction = 'WalletExportTransaction',
 }
 
+enum MeetFeatureFlag {
+    MeetEarlyAccess = 'MeetEarlyAccess',
+    MeetEarlyAccessPublic = 'MeetEarlyAccessPublic',
+    MeetErrorReporting = 'MeetErrorReporting',
+    MeetPassphraseEnabled = 'MeetPassphraseEnabled',
+}
+
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
@@ -216,4 +228,5 @@ export type FeatureFlag =
     | `${DocsFeatureFlag}`
     | `${MailFeatureFlag}`
     | `${AdminFeatureFlag}`
-    | `${WalletFlag}`;
+    | `${WalletFlag}`
+    | `${MeetFeatureFlag}`;

@@ -14,6 +14,7 @@ export interface GetAvailableAppsByUserTypeArguments {
     user?: User;
     context: AppContext;
     isDocsHomepageAvailable: boolean;
+    isMeetAvailable: boolean;
     oauth?: boolean;
 }
 
@@ -31,6 +32,7 @@ const allApps: APP_NAMES[] = [
     APPS.PROTONDOCS,
     APPS.PROTONWALLET,
     APPS.PROTONLUMO,
+    APPS.PROTONMEET,
 ];
 
 const allAppsSet: Set<APP_NAMES> = new Set(allApps);
@@ -57,11 +59,12 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
         return new Set([APPS.PROTONVPN_SETTINGS]);
     }
 
+    if (getIsGlobalSSOAccount(options.user)) {
+        // Drive is blocked for Global SSO users as of 22.02.2025. Only Pass and VPN are allowed for these users.
+        return new Set([APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS]);
+    }
+
     if (getIsExternalUserWithoutProtonAddressCreation(options.user)) {
-        if (getIsGlobalSSOAccount(options.user)) {
-            // Drive is blocked for Global SSO users as of 22.02.2025. Only Pass and VPN are allowed for these users.
-            return new Set([APPS.PROTONPASS, APPS.PROTONVPN_SETTINGS]);
-        }
         // Public users without a proton address can't create a proton address themselves, so only these apps are ok
         return new Set([
             APPS.PROTONVPN_SETTINGS,
@@ -70,6 +73,7 @@ const getAvailableAppsByUser = (options: GetAvailableAppsByUserTypeArguments): A
             APPS.PROTONDOCS,
             APPS.PROTONWALLET,
             APPS.PROTONLUMO,
+            APPS.PROTONMEET,
         ]);
     }
 
@@ -88,6 +92,9 @@ export const getAvailableApps = (
 
     if (options.context === 'dropdown' && !options.isDocsHomepageAvailable) {
         removeApps.add(APPS.PROTONDOCS);
+    }
+    if (options.context === 'dropdown' && !options.isMeetAvailable) {
+        removeApps.add(APPS.PROTONMEET);
     }
     const availableAppsByUser = getAvailableAppsByUser(options);
     const availableAppsByOrganization = getAvailableAppsByOrganization(options);

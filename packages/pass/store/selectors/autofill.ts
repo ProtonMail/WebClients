@@ -1,18 +1,11 @@
-import {
-    belongsToShares,
-    hasOTP,
-    hasUserIdentifier,
-    isActive,
-    isPasskeyItem,
-    itemEq,
-} from '@proton/pass/lib/items/item.predicates';
+import { belongsToShares, hasOTP, hasUserIdentifier, isActive, isPasskeyItem, itemEq } from '@proton/pass/lib/items/item.predicates';
 import type { PasskeyQueryPayload, SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { SelectAutofillCandidatesOptions, SelectOTPAutofillCandidateOptions } from '@proton/pass/lib/search/types';
 import { isAutofillableShare } from '@proton/pass/lib/shares/share.predicates';
-import { selectAllItems, selectItemsByType } from '@proton/pass/store/selectors/items';
+import { selectVisibleItems, selectVisibleItemsByType } from '@proton/pass/store/selectors/items';
 import { selectVaultLimits } from '@proton/pass/store/selectors/limits';
 import { createMatchDomainItemsSelector } from '@proton/pass/store/selectors/match';
-import { selectAllShares } from '@proton/pass/store/selectors/shares';
+import { selectVisibleShares } from '@proton/pass/store/selectors/shares';
 import { selectPassPlan } from '@proton/pass/store/selectors/user';
 import { NOOP_LIST_SELECTOR, createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
@@ -25,7 +18,7 @@ import { sortOn } from '@proton/pass/utils/fp/sort';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
 export const selectAutofillableShareIDs = createUncachedSelector(
-    [selectAllShares, selectVaultLimits, selectPassPlan, (_: State, writableFilter?: boolean) => writableFilter],
+    [selectVisibleShares, selectVaultLimits, selectPassPlan, (_: State, writableFilter?: boolean) => writableFilter],
     (shares, { didDowngrade }, plan, writableFilter): ShareId[] => {
         const writableOnly = writableFilter || didDowngrade || plan === UserPassPlan.FREE;
         return shares.filter((share) => isAutofillableShare(share, writableOnly)).map(prop('shareId'));
@@ -33,7 +26,7 @@ export const selectAutofillableShareIDs = createUncachedSelector(
 );
 
 export const selectAutofillIdentityCandidates = (shareIds?: string[]) =>
-    createUncachedSelector(selectItemsByType('identity'), (items) =>
+    createUncachedSelector(selectVisibleItemsByType('identity'), (items) =>
         items.filter(and(isActive, belongsToShares(shareIds))).sort(sortOn('lastUseTime'))
     );
 
@@ -63,6 +56,7 @@ export const selectAutofillLoginCandidates = ({
                       shareIds,
                       sortOn: 'priority',
                       strict,
+                      visible: true,
                   }),
                   createMatchDomainItemsSelector(subdomain ?? '', {
                       isPrivate,
@@ -71,6 +65,7 @@ export const selectAutofillLoginCandidates = ({
                       shareIds,
                       sortOn: 'lastUseTime',
                       strict,
+                      visible: true,
                   }),
               ],
               (domainMatches, subdomainMatches) => deduplicate(subdomainMatches.concat(domainMatches), itemEq)
@@ -86,7 +81,7 @@ export const selectOTPCandidate = ({ submission, ...options }: SelectOTPAutofill
     });
 
 export const selectPasskeys = (payload: PasskeyQueryPayload) =>
-    createUncachedSelector(selectAllItems, (items): SelectedPasskey[] => {
+    createUncachedSelector(selectVisibleItems, (items): SelectedPasskey[] => {
         const { credentialIds } = payload;
         const { domain } = parseUrl(payload.domain);
 

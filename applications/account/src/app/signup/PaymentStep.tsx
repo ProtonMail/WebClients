@@ -18,7 +18,6 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers';
 import { useCurrencies, usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import type { ExtendedTokenPayment, PaymentProcessorHook, PaymentStatus, TokenPayment } from '@proton/payments';
@@ -39,6 +38,7 @@ import {
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
 import {
+    ExclusiveVatText,
     InclusiveVatText,
     type OnBillingAddressChange,
     PayButton,
@@ -93,8 +93,6 @@ const PaymentStep = ({
 
     const plansMap = getPlansMap(plans, subscriptionData.currency, false);
     const hasGuarantee = getIsConsumerVpnPlan(plan?.Name);
-
-    const chargebeeContext = useChargebeeContext();
 
     const paymentFacade = usePaymentFacade({
         checkResult: subscriptionData.checkResult,
@@ -175,7 +173,6 @@ const PaymentStep = ({
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                     };
 
                     captureMessage('Payments: failed to handle classic signup', {
@@ -244,13 +241,9 @@ const PaymentStep = ({
         taxCountry,
     });
 
-    const taxNote = paymentFacade.showInclusiveTax ? (
-        <InclusiveVatText
-            tax={subscriptionData.checkResult?.Taxes?.[0]}
-            currency={subscriptionData.currency}
-            className="text-sm text-center color-weak mt-1"
-        />
-    ) : null;
+    const taxNote = (
+        <InclusiveVatText checkResult={subscriptionData.checkResult} className="text-sm text-center color-weak mt-1" />
+    );
 
     return (
         <div className="sign-layout-mobile-columns w-full flex items-start justify-center gap-7">
@@ -291,7 +284,11 @@ const PaymentStep = ({
                             allowedCycles={allowedCycles}
                         />
                     )}
-                    <div className="text-sm color-weak">
+                    <ExclusiveVatText
+                        checkResult={subscriptionData.checkResult}
+                        className="text-sm text-center color-weak my-1"
+                    />
+                    <div className="text-sm text-center color-weak">
                         {getCheckoutRenewNoticeTextFromCheckResult({
                             checkResult: subscriptionData.checkResult,
                             plansMap,

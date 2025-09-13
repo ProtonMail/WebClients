@@ -55,6 +55,8 @@ export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
 export const AUTHENTICATOR_SHORT_APP_NAME = 'Authenticator';
 export const AUTHENTICATOR_APP_NAME = `${BRAND_NAME} ${AUTHENTICATOR_SHORT_APP_NAME}`;
+export const MEET_SHORT_APP_NAME = 'Meet';
+export const MEET_APP_NAME = `${BRAND_NAME} ${MEET_SHORT_APP_NAME}`;
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -77,6 +79,7 @@ export const APPS = {
     PROTONSHEETSEDITOR: 'proton-sheets-editor',
     PROTONLUMO: 'proton-lumo',
     PROTONAUTHENTICATOR: 'proton-authenticator',
+    PROTONMEET: 'proton-meet',
 } as const;
 
 interface AppConfiguration {
@@ -309,6 +312,16 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         settingsSlug: '',
         product: Product.Authenticator,
     },
+    [APPS.PROTONMEET]: {
+        publicPath: '',
+        subdomain: 'meet',
+        name: MEET_APP_NAME,
+        bareName: 'Meet',
+        clientID: 'web-meet',
+        icon: 'brand-proton',
+        settingsSlug: 'meet',
+        product: Product.Meet,
+    },
 };
 
 export enum PRODUCT {
@@ -331,6 +344,7 @@ export enum PRODUCT_BIT {
     WALLET = 16,
     NEUTRON = 32,
     LUMO = 64,
+    MEET = 256,
 }
 
 export type APP_KEYS = keyof typeof APPS;
@@ -388,6 +402,9 @@ export const SSO_PATHS = {
     WALLET_SIGN_IN: '/wallet',
     LUMO_SIGNUP: '/lumo/signup',
     LUMO_SIGN_IN: '/lumo',
+    DESKTOP_SIGN_IN: '/desktop/login',
+    MEET_SIGNUP: '/meet/signup',
+    MEET_SIGN_IN: '/meet',
     SIGNUP: '/signup',
     START: '/start',
     INVITE: '/pre-invite',
@@ -406,9 +423,11 @@ export const SECURITY_CHECKUP_PATHS = {
     SET_EMAIL: '/safety-review/email',
     VERIFY_EMAIL: '/safety-review/email/verify',
     ENABLE_EMAIL: '/safety-review/email/enable',
+    DISABLE_EMAIL: '/safety-review/email/disable',
     SET_PHONE: '/safety-review/phone',
     VERIFY_PHONE: '/safety-review/phone/verify',
     ENABLE_PHONE: '/safety-review/phone/enable',
+    DISABLE_PHONE: '/safety-review/phone/disable',
     ENABLE_DEVICE_RECOVERY: '/safety-review/device',
 };
 
@@ -595,6 +614,11 @@ export enum DRAFT_TYPE {
     PLAIN_TEXT = 'text/plain',
 }
 
+export enum SETTINGS_PROTON_SENTINEL_STATE {
+    DISABLED = 0,
+    ENABLED = 1,
+}
+
 export enum ORGANIZATION_FLAGS {
     LOYAL = 1,
     COVID = 2,
@@ -616,6 +640,11 @@ export enum ORGANIZATION_TWOFA_SETTING {
 export enum ORGANIZATION_STATE {
     ACTIVE = 1,
     DELINQUENT = 2,
+}
+
+export enum ORGANIZATION_POLICY_ENFORCED {
+    NO = 0,
+    YES = 1,
 }
 
 export enum APP_UPSELL_REF_PATH {
@@ -904,6 +933,7 @@ export enum CLIENT_TYPES {
     WALLET = 6,
     LUMO = 9,
     AUTHENTICATOR = 10,
+    MEET = 11,
 }
 
 export enum TOKEN_TYPES {
@@ -939,7 +969,7 @@ export enum MAILBOX_LABEL_IDS {
     SOFT_DELETED = '40',
 }
 
-export const CATEGORY_LABEL_IDS: MAILBOX_LABEL_IDS[] = [
+export const CATEGORY_LABEL_IDS = [
     MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
     MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
     MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,

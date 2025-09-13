@@ -6,7 +6,7 @@ import { useFolders } from '@proton/mail';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
-import { type SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
 import { isElementMessage } from 'proton-mail/helpers/elements';
 import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
@@ -19,7 +19,7 @@ import { ComposeTypes } from 'proton-mail/hooks/composer/useCompose';
 import { type ElementsStructure, useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { useMailECRTMetric } from 'proton-mail/metrics/useMailECRTMetric';
-import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
+import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { convertCustomViewLabelsToAlmostAllMail, getFolderName } from '../../helpers/labels';

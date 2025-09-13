@@ -6,17 +6,15 @@ import pick from 'lodash/pick';
 import set from 'lodash/set';
 import { c } from 'ttag';
 
-import { WasmAccountSyncer, type WasmNetwork } from '@proton/andromeda';
-import { WasmWallet, getDefaultStopGap } from '@proton/andromeda';
+import { WasmAccountSyncer, type WasmNetwork, WasmWallet, getDefaultStopGap } from '@proton/andromeda';
 import usePrevious from '@proton/hooks/usePrevious';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { type SimpleMap } from '@proton/shared/lib/interfaces';
+import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 import generateUID from '@proton/utils/generateUID';
 import type { IWasmApiWalletData } from '@proton/wallet';
-import { getYesterday, useWalletApiClients } from '@proton/wallet';
-import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet';
+import { SYNCING_MINIMUM_COOLDOWN_MINUTES, getYesterday, useWalletApiClients } from '@proton/wallet';
 import { useGetBitcoinNetwork } from '@proton/wallet/store';
 import { getWalletAccountMetrics, updateWalletAccountActivityMetrics } from '@proton/wallet/utils/cache';
 

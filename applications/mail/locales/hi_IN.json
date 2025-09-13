@@ -273,9 +273,6 @@
       "Copy addresses": [
         "पते कॉपी करें"
       ],
-      "Copy email address": [
-        "ईमेल पता कॉपी करें"
-      ],
       "Copy email to clipboard": [
         "ईमेल क्लिपबोर्ड पे कॉपी करें"
       ],
@@ -654,9 +651,6 @@
       "Make it friendly": [
         "और मित्रवत"
       ],
-      "Manage addresses": [
-        "पते प्रबंधित करें"
-      ],
       "Manage folders": [
         "फोल्डर संभाले"
       ],
@@ -965,6 +959,9 @@
       ],
       "Resume": [
         "जारी रखें"
+      ],
+      "Retry": [
+        "वापस कोशिश करें"
       ],
       "Revert to original display": [
         "मूल प्रदर्शन पर वापस जाएं"
@@ -3712,6 +3709,9 @@
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
       ],
+      "Passphrase unavailable": [
+        "पासफ्रेज़ अनुपलब्ध"
+      ],
       "Password is required": [
         "पासवर्ड चाहिए"
       ],
@@ -5629,9 +5629,6 @@
       "Include Spam/Trash.": [
         "स्पैम/कचरा शामिल करें"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } सहित: ${ price }"
-      ],
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
       ],
@@ -6431,9 +6428,6 @@
       "You are about to open another browser tab and visit:": [
         "आप एक और ब्राउज़र टैब खोलने वाले हैं और जाएँ:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "आप वर्तमान में ${ user.Name } (${ user.Email }) के रूप में साइन इन हैं।"
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "आप ${ downgradedPlanName } योजना में शामिल से अधिक स्टोरेज का उपयोग कर रहे हैं। कृपया डाउनग्रेड करने के लिए डेटा को मिटाएं या हटाएं।"
       ],
@@ -6907,12 +6901,6 @@
       "Also archive": [
         "पुरालेख भी"
       ],
-      "Always label sender's emails": [
-        "प्रेषक के हर ईपत्र पर परची लगाएं"
-      ],
-      "Always move sender's emails": [
-        "भेजनेवाले के ईमेल हमेशा ले जाएं"
-      ],
       "AND": [
         "और"
       ],
@@ -7372,9 +7360,6 @@
       "Undisclosed Recipients": [
         "अनजान प्राप्तकर्ता"
       ],
-      "Unknown": [
-        "अज्ञात"
-      ],
       "Updates": [
         "अपडेट"
       ],
@@ -7383,9 +7368,6 @@
       ],
       "Username": [
         "उपयोगकर्ता का नाम"
-      ],
-      "VAT": [
-        "VAT"
       ],
       "Verification code": [
         "पुष्टि संख्या"
@@ -8717,7 +8699,7 @@
         "शायद बाद में"
       ],
       "Save": [
-        "सहेजें"
+        "बचाएँ"
       ],
       "Special offer": [
         "खास ऑफर"
@@ -10664,12 +10646,6 @@
       "Create contact": [
         "संपर्क बनाएं"
       ],
-      "Create folder \"${ search }\"": [
-        "\"${ search }\" फोल्डर बनाएं"
-      ],
-      "Create label \"${ search }\"": [
-        "\"${ search }\" लेबल बनाएं"
-      ],
       "Create new group": [
         "नया ग्रुप बनाएं"
       ],
@@ -10943,6 +10919,9 @@
       "New message": [
         "नया संदेश"
       ],
+      "Next": [
+        "अगला"
+      ],
       "Next conversation": [
         "अगली बातचीत"
       ],
@@ -10967,6 +10946,9 @@
       "Open actions dropdown": [
         "खुली कार्रवाई ड्रॉपडाउन"
       ],
+      "Open pagination": [
+        "खुला पाग"
+      ],
       "Other information": [
         "अन्य जानकारी"
       ],
@@ -10987,6 +10969,9 @@
       ],
       "Preview": [
         "प्रिव्यू करें"
+      ],
+      "Previous": [
+        "पिछला"
       ],
       "Previous conversation": [
         "पिछली बातचीत"

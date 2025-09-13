@@ -5,11 +5,11 @@ import {
     getIsDriveApp,
     getIsLumoApp,
     getIsMailApp,
+    getIsMeetApp,
     getIsPassApp,
     getIsVPNApp,
     getIsWalletApp,
 } from '@proton/shared/lib/authentication/apps';
-import { type ProduceForkData, SSOType } from '@proton/shared/lib/authentication/fork/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
@@ -17,6 +17,7 @@ import { localeCode } from '@proton/shared/lib/i18n';
 
 import { getLocaleMapping } from '../locales';
 import { getLocalePathPrefix } from '../useLocationWithoutLocale';
+import { type ProduceForkData, SSOType } from './actions/forkInterface';
 import type { LocalRedirect } from './localRedirect';
 
 export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
@@ -44,6 +45,9 @@ export const getLoginUrl = (localePath: string, app: APP_NAMES | undefined) => {
         }
         if (getIsLumoApp(app)) {
             return { path: SSO_PATHS.LUMO_SIGN_IN };
+        }
+        if (getIsMeetApp(app)) {
+            return { path: SSO_PATHS.MEET_SIGN_IN };
         }
 
         return { path: SSO_PATHS.LOGIN };

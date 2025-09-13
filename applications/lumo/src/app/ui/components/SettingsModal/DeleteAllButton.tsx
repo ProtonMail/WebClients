@@ -3,8 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useNotifications } from '@proton/components';
-import { useModalStateObject } from '@proton/components';
+import { useModalStateObject, useNotifications } from '@proton/components';
 
 import { useLumoNavigate } from '../../../hooks/useLumoNavigate';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';

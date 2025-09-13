@@ -49,11 +49,8 @@ export const generateAddress = async (keys: Key[], email = 'test@pm.me'): Promis
 export async function setupCryptoProxyForTesting() {
     // dynamic import to avoid loading the library unless required
     const { Api: CryptoApi } = await import('@proton/crypto/lib/worker/api');
-    CryptoApi.init({ enforceOpenpgpGrammar: true });
-    CryptoProxy.setEndpoint(
-        new CryptoApi(),
-        (endpoint) => endpoint.clearKeyStore()
-    );
+    CryptoApi.init({});
+    CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 }
 
 export function releaseCryptoProxy() {

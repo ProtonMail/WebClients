@@ -31,7 +31,7 @@ type HandleErrorOptions = {
 
 export const handleSdkError = (
     error: Error | unknown,
-    { fallbackMessage = '', extra = {} }: HandleErrorOptions = {}
+    { fallbackMessage = '', extra = {} }: Omit<HandleErrorOptions, 'showNotification'> = {}
 ) => {
     const errorToHandle = error instanceof Error ? error : new Error(fallbackMessage);
     const message = error instanceof ProtonDriveError ? errorToHandle.message : fallbackMessage;
@@ -43,7 +43,7 @@ export const handleSdkError = (
                 component: 'drive-sdk',
             },
             extra: {
-                fallbackMessage,
+                // Do not use fallbackMessage here, as it might include PII in some cases.
                 ...(error instanceof ServerError && {
                     serverErrorCode: error.code,
                     serverErrorStatusCode: error.statusCode,

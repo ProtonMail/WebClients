@@ -7,6 +7,7 @@ import { useMembers } from '@proton/account/members/hooks';
 import { organizationActions } from '@proton/account/organization';
 import { Button } from '@proton/atoms';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
+import Icon from '@proton/components/components/icon/Icon';
 import DateInput from '@proton/components/components/input/DateInput';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
@@ -30,13 +31,16 @@ import noop from '@proton/utils/noop';
 import SettingsSectionWide from '../account/SettingsSectionWide';
 import RecipientsLimitationModal from '../b2bDashboard/ActivityMonitor/RecipientsLimitationModal';
 import { updateMonitoringSetting } from '../b2bDashboard/ActivityMonitor/api';
+import {
+    type AuthLogsQueryParams,
+    handleDownload,
+    mapMembersToRecipients,
+} from '../b2bDashboard/ActivityMonitor/helpers';
 import { getLocalTimeStringFromDate, getSearchType } from '../b2bDashboard/Pass/helpers';
 import B2BAuthLogsTable from '../logs/B2BAuthLogsTable';
 import { convertEnhancedMembersToContactEmails } from './groups/NewGroupMemberInput';
 import useAuthLogsDateFilter from './useAuthLogsFilter';
 import useOrgAuthLogs from './useOrgAuthLogs';
-import Icon from '@proton/components/components/icon/Icon';
-import { type AuthLogsQueryParams, handleDownload, mapMembersToRecipients } from '../b2bDashboard/ActivityMonitor/helpers';
 
 interface Props {
     organization?: OrganizationExtended;
@@ -161,7 +165,7 @@ const AuthenticationLogs = ({
         const Emails = membersArray.map((member) => member.Email);
         const newRecipients = mapMembersToRecipients(members, Emails);
         setRecipient(newRecipients);
-        
+
         setQuery({ Emails: [] });
         reset();
     };

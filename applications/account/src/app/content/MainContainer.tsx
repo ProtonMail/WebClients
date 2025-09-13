@@ -9,6 +9,7 @@ import OutgoingEmergencyAccessTopBanner from '@proton/account/delegatedAccess/em
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import AuthDevicesTopBanner from '@proton/account/sso/AuthDevicesTopBanner';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -93,6 +94,10 @@ const WalletSettingsRouter = lazy(
     () => import(/* webpackChunkName: "routers/WalletSettingsRouter" */ '../containers/wallet/WalletSettingsRouter')
 );
 
+const MeetSettingsRouter = lazy(
+    () => import(/* webpackChunkName: "routers/MeetSettingsRouter" */ '../containers/meet/MeetSettingsRouter')
+);
+
 const mailSlug = getSlugFromApp(APPS.PROTONMAIL);
 const calendarSlug = getSlugFromApp(APPS.PROTONCALENDAR);
 const vpnSlug = getSlugFromApp(APPS.PROTONVPN_SETTINGS);
@@ -100,6 +105,7 @@ const driveSlug = getSlugFromApp(APPS.PROTONDRIVE);
 const docsSlug = getSlugFromApp(APPS.PROTONDOCS);
 const walletSlug = getSlugFromApp(APPS.PROTONWALLET);
 const passSlug = getSlugFromApp(APPS.PROTONPASS);
+const meetSlug = getSlugFromApp(APPS.PROTONMEET);
 
 const getDefaultPassRedirect = (
     user: UserModel,
@@ -157,6 +163,7 @@ const MainContainer = () => {
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
     const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
+    const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
     const isCalendarHotkeysEnabled = useFlag('CalendarHotkeys');
     const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
@@ -167,7 +174,9 @@ const MainContainer = () => {
     const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');
     const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
-    const isEmergencyAccessAvailable = useFlag('EmergencyAccess');
+    const isMeetAvailable = useFlag('PMVC2025');
+
+    const [referralInfo] = useReferralInfo();
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -221,6 +230,7 @@ const MainContainer = () => {
         isB2BAuthLogsEnabled,
         isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
         isZoomIntegrationEnabled,
+        isProtonMeetIntegrationEnabled,
         isSharedServerFeatureEnabled,
         isCryptoPostQuantumOptInEnabled,
         isCalendarHotkeysEnabled,
@@ -228,8 +238,8 @@ const MainContainer = () => {
         isB2BTrial,
         isReferralExpansionEnabled,
         isRetentionPoliciesEnabled,
-        isEmergencyAccessAvailable,
         isSsoForPbsEnabled,
+        referralInfo: referralInfo.uiData,
     });
 
     useEffect(() => {
@@ -389,6 +399,7 @@ const MainContainer = () => {
         context: 'app',
         organization,
         isDocsHomepageAvailable,
+        isMeetAvailable,
     });
 
     // Should never happen that available apps is empty, but just as a safety mechanism anyway
@@ -478,6 +489,11 @@ const MainContainer = () => {
                     <Route path={`/${passSlug}`}>
                         <Suspense fallback={<PrivateMainAreaLoading />}>
                             <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
+                        </Suspense>
+                    </Route>
+                    <Route path={`/${meetSlug}`}>
+                        <Suspense fallback={<PrivateMainAreaLoading />}>
+                            <MeetSettingsRouter meetAppRoutes={routes.meet} redirect={redirect} />
                         </Suspense>
                     </Route>
                     {redirect}

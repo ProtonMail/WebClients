@@ -4032,6 +4032,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "A(z) ${ MAIL_APP_NAME } az alapértelmezett levelező alkalmazás."
       ],
+      "A checked box means the feature is disabled.": [
+        "Egy bejelölt mező azt jelenti, hogy a funkció le van tiltva."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adjon hozzá mappákat és fájlokat a ${ DRIVE_APP_NAME }-hoz, és hívjon meg csapattagokat megtekinteni vagy szerkeszteni."
       ],
@@ -4451,7 +4454,7 @@
         "**Biztonságos** végpontok közti titkosítás"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
-        "**Egyszerű és felhasználóbarát:** importáld fájljaidat és állítsd be percek alatt"
+        "**Egyszerű és felhasználó-barát:** importálja a fájljait és állítson be mindent percek alatt"
       ],
       "Advanced protection that goes beyond industry standards": [
         "Fejlett védelem, amely túlmutat az iparági szabványokon"
@@ -5320,6 +5323,9 @@
       "Invalid Sieve code": [
         "Érvénytelen Sieve kód"
       ],
+      "Invalid URL": [
+        "Érvénytelen URL cím"
+      ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
@@ -6104,9 +6110,6 @@
       ],
       "customer support": [
         "ügyfélszolgálat"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "A családi csomagok jelenleg nem támogatják a külső fiókokat. Hozzon létre egy ${ BRAND_NAME } címet a csatlakozás előtt. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ha elfogadja a meghívást, a csomagja átállításra kerül és kreditként jóváírjuk a fennmaradó egyenleget."
@@ -8718,9 +8721,6 @@
       "inactive": [
         "kikapcsolva"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName }-t tartalmaz: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Növelje fiókja biztonságát azzal, hogy hitelesíti e-mail címét."
       ],
@@ -9287,9 +9287,6 @@
       ],
       "Please use another browser or download the file.": [
         "Kérjük, használjon másik böngészőt, vagy töltse le a fájlt."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Ellenőrizze a fizetést a megnyílt új böngészőfülön."
       ],
       "Please wait till your changes are synced with the server.": [
         "Várjon, amíg módosításai szinkronizálódnak a szerverrel."
@@ -10089,9 +10086,6 @@
       "Vault updated": [
         "Tároló frissítve"
       ],
-      "Verification can take a few minutes.": [
-        "Az ellenőrzés néhány percet is igénybe vehet."
-      ],
       "Verification link expired": [
         "Az ellenőrzési hivatkozás lejárt"
       ],
@@ -10189,7 +10183,7 @@
         "Ebben a böngészőben mentettünk egy biztonsági másolatot, mert engedélyezte az adatvisszaállítást ezen a ${ deviceLink } eszközön. Ha a biztonsági mentési fájl érvényes, azonnal visszanyeri a titkosított adatokhoz való teljes vagy részleges hozzáférést."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Fizetéseidet a 3-D Secure technológia védi"
+        "Fizetéseit a 3-D Secure technológia védi"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
@@ -10301,9 +10295,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Ön jelenleg a rendelkezésre álló ${ ipAddresses } dedikált szerverből ennyit használ: ${ ipCount }.",
@@ -11309,8 +11300,20 @@
       "Auto-unsubscribe": [
         "Automatikus leiratkozás"
       ],
+      "Autofill": [
+        "Automatikus kitöltés"
+      ],
+      "Autofill 2FA": [
+        "Kétlépcsős kód automatikus kitöltése"
+      ],
       "Automatically save contacts": [
         "Névjegyek automatikus mentése"
+      ],
+      "Autosave": [
+        "Automatikus mentés"
+      ],
+      "Autosuggest": [
+        "Automatikus javaslatok"
       ],
       "Awarded": [
         "Megszerezve"
@@ -11551,6 +11554,9 @@
       ],
       "Domain name": [
         "Domain név"
+      ],
+      "Domains": [
+        "Domain nevek"
       ],
       "Don't ask again": [
         "Ne kérdezze újra"
@@ -11927,6 +11933,9 @@
       "Other amount": [
         "Más összeg"
       ],
+      "Passkeys": [
+        "Hozzáférési kulcsok"
+      ],
       "Password": [
         "Jelszó"
       ],
@@ -12230,9 +12239,6 @@
       ],
       "Value": [
         "Érték"
-      ],
-      "VAT": [
-        "ÁFA"
       ],
       "Verification code": [
         "Ellenőrző kód"
@@ -14447,9 +14453,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "A kétlépcsős hitelesítés használata már nem szükséges"
-      ],
-      "Video conferencing settings have been updated": [
-        "A videokonferencia beállításai frissültek"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14586,7 +14589,7 @@
         "Fizessen évente, és használja ki legjobb ajánlatunkat"
       ],
       "Save": [
-        "Mentés"
+        "Spóroljon"
       ],
       "Save big when you pay annually": [
         "Spóroljon sokat, ha éves fizetést választ"
@@ -15316,7 +15319,7 @@
         "Töltse le az alkalmazást és a kiegészítőt a böngészőkhöz."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
-        "Csatlakozz a több mint 100 millió emberhez akik a ${ BRAND_NAME }t választották az online biztonság érdekében"
+        "Csatlakozzon a több mint 100 millió emberhez akik a ${ BRAND_NAME }t választották az online biztonság érdekében"
       ],
       "Launching ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } indítása"
@@ -20729,9 +20732,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Az adminisztrátorok kezelhetik a felhasználói fiókokat, és adminisztrátori jogosultságokat adhatnak más felhasználóknak. Csak az elsődleges adminisztrátor szerkesztheti a szervezet előfizetését."
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Lehetővé teszi a videokonferencia hivatkozások hozzáadását a naptármeghívókhoz."
       ],
       "Any protection applied to suspicious activity": [
         "Bármilyen védelem alkalmazása gyanús tevékenységre"

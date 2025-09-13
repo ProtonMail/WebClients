@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Resmi tatilleri ekle"
       ],
+      "Add secret passphrase": [
+        "Gizli parola ifadesi ekle"
+      ],
       "Add to group": [
         "Gruba ekle"
       ],
@@ -140,6 +143,9 @@
       ],
       "Claim this address": [
         "Bu adresi al"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ücretsiz ${ BRAND_NAME } adresinizi alın"
       ],
       "Clear": [
         "Temizle"
@@ -470,6 +476,9 @@
       "Join calendar": [
         "Takvime katıl"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } ile katıl"
+      ],
       "Keep current time zone": [
         "Geçerli saat dilimi korunsun"
       ],
@@ -596,6 +605,9 @@
       "Open settings": [
         "Ayarları aç"
       ],
+      "Passphrase": [
+        "Parola ifadesi"
+      ],
       "Pause indexing": [
         "Dizine eklemeyi duraklat"
       ],
@@ -688,6 +700,9 @@
       ],
       "Resume indexing": [
         "Dizine eklemeyi sürdür"
+      ],
+      "Retry": [
+        "Yeniden dene"
       ],
       "Save": [
         "Kaydet"
@@ -844,6 +859,9 @@
       ],
       "Update recovery phrase": [
         "Kurtarma ifadesini güncelle"
+      ],
+      "Update secret passphrase": [
+        "Gizli parola ifadesini güncelle"
       ],
       "Upgrade": [
         "Yükselt"
@@ -1220,26 +1238,29 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde her ${ cycle } ayda bir otomatik olarak yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ${ formattedDate } tarihinde başlayarak her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir aboneliğe dönüşecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinden başlayarak otomatik olarak her ay yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcıya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcınız olabilir."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Deneme süresi boyunca özel alan adları ekleyemezsiniz."
+        "Deneme süresi boyunca özel etki alanları ekleyemezsiniz."
       ],
       "You have reached the trial limit.": [
-        "Deneme limitine ulaştınız."
+        "Deneme süresi sayısı sınırına ulaştınız."
       ]
     },
     "b2b_trials_Action": {
@@ -1479,6 +1500,9 @@
       ],
       "Manual setup problem": [
         "El ile kurulum sorunu"
+      ],
+      "Meet problem": [
+        "Meet sorunu"
       ],
       "Other": [
         "Diğer"
@@ -1806,12 +1830,50 @@
         "Genişlet"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Gelişmiş yapay zeka modellerine erişim"
+      ],
+      "Basic chat history": [
+        "Temel sohbet geçmişi"
+      ],
+      "Full chat history with search": [
+        "Arama ile tüm sohbet geçmişi"
+      ],
+      "Large file upload support": [
+        "Büyük dosya yükleme desteği"
+      ],
+      "Limited daily chats": [
+        "Sınırlı sayıda günlük sohbet"
+      ],
+      "Limited favorites": [
+        "Sınırlı sayıda sık kullanılan"
+      ],
+      "Unlimited daily chats": [
+        "Günlük sınırsız sayıda sohbet"
+      ],
+      "Unlimited favorites for quick access": [
+        "Hızlı erişim için sınırsız sayıda sık kullanılan"
+      ],
+      "Upload and query multiple large files": [
+        "Birden fazla büyük dosyayı yükleyip sorgulayın"
+      ],
+      "Upload and query small files": [
+        "Küçük dosyaları yükleyin ve sorgulayın"
+      ],
+      "Web search access": [
+        "Site arama erişimi"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
       ]
     },
     "colon": {
@@ -3482,8 +3544,14 @@
       "Event not found": [
         "Etkinlik bulunamadı"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME } görüntülü görüşmesi oluşturulamadı"
+      ],
       "Failed to create meeting": [
         "Görüşme oluşturulamadı"
+      ],
+      "Failed to decrypt session key": [
+        "Oturum anahtarının şifresi çözülemedi"
       ],
       "Failed to get event": [
         "Etkinlik alınamadı"
@@ -3496,6 +3564,9 @@
       ],
       "Failed to open to contact": [
         "Kişiye açılamadı"
+      ],
+      "Failed to update secret passphrase": [
+        "Gizli parola ifadesi güncellenemedi"
       ],
       "First name is too long": [
         "Ad çok uzun"
@@ -3625,6 +3696,9 @@
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
+      ],
+      "Passphrase unavailable": [
+        "Parola ifadesi kullanılamıyor"
       ],
       "Password is required": [
         "Parolanın yazılması zorunludur"
@@ -4192,8 +4266,8 @@
       "customer support": [
         "müşteri desteği"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi alın. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -4427,11 +4501,17 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Domain": [
+        "Etki alanı"
+      ],
       "Drawer": [
         "Çekmece"
       ],
       "Name": [
         "Ad"
+      ],
+      "Password ends with": [
+        "Parola şununla bitiyor"
       ],
       "Repeat event": [
         "Etkinliği yinele"
@@ -4441,6 +4521,9 @@
       ],
       "Security Center": [
         "Güvenlik merkezi"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ]
     },
     "Hint": {
@@ -5272,8 +5355,17 @@
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
+      "Failed to update meeting name": [
+        "Toplantı adı güncellenemedi"
+      ],
+      "Failed to update meeting password": [
+        "Toplantı parolası güncellenemedi"
+      ],
       "finance": [
         "finans"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Ek güvenlik için bir parola ayarlayabilirsiniz. Bu parola, takvim davetine eklenmez. Konuklarınızla ayrıca paylaşmayı unutmayın."
       ],
       "Frequency modifications will be lost.": [
         "Yinelenme değişiklikleri kaybolacak."
@@ -5338,9 +5430,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Etkinlikler dizine ekleniyor: ${ current }/${ total }"
@@ -5933,8 +6022,8 @@
       "You are about to open your default browser and visit:": [
         "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
+      "You are currently signed in as ${ username }.": [
+        "Şu anda ${ username } olarak oturum açmışsınız."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } tarifesinin depolama alanından fazlasını kullanıyorsunuz. Tarifeyi düşürebilmek için lütfen bazı verileri silin ya da taşıyın."
@@ -6321,6 +6410,9 @@
       "Account holder": [
         "Hesap sahibi"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "${ MEET_APP_NAME } görüşmesi ekle"
+      ],
       "Add email address": [
         "E-posta adresi ekle"
       ],
@@ -6329,6 +6421,9 @@
       ],
       "Add to group": [
         "Gruba ekle"
+      ],
+      "Add Zoom meeting": [
+        "Zoom görüşmesi ekle"
       ],
       "Address": [
         "Adres"
@@ -6634,6 +6729,9 @@
       "Participants": [
         "Katılımcılar"
       ],
+      "Passphrase:": [
+        "Parola ifadesi:"
+      ],
       "Password": [
         "Parola"
       ],
@@ -6745,11 +6843,11 @@
       "Username": [
         "Kullanıcı adı"
       ],
-      "VAT": [
-        "KDV"
-      ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Video conference": [
+        "Görüntülü görüşme"
       ],
       "Vulnerable": [
         "Çok zayıf"
@@ -6795,6 +6893,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Zoom meeting": [
+        "Zoom görüşmesi"
       ]
     },
     "Label for contact group color": {
@@ -8232,6 +8333,9 @@
       ],
       "Passcode copied to clipboard": [
         "Parola panoya kopyalandı"
+      ],
+      "Passphrase copied to clipboard": [
+        "Parola ifadesi panoya kopyalandı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8809,11 +8913,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi hariç: ${ taxAmount }"
+      ],
       "Got it": [
         "Anladım"
       ],
       "I'm purchasing as a business": [
         "Kurumsal olarak satın alıyorum"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi dahil: ${ taxAmount }"
       ],
       "MM/YY": [
         "AA/YY"
@@ -8829,6 +8945,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Taxes": [
+        "Vergiler"
       ],
       "terms & conditions": [
         "hükümler ve koşullar"
@@ -8860,6 +8979,9 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "VAT": [
+        "KDV"
       ],
       "VAT number": [
         "KDV numarası"
@@ -9013,6 +9135,9 @@
       ],
       "E.g., ": [
         "Örneğin, "
+      ],
+      "Enter passphrase": [
+        "Parola ifadesini yazın"
       ],
       "Filter groups": [
         "Grupları süz"
@@ -9211,6 +9336,96 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } tarafından gelen resmi e-posta"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "YAZ SONU İNDİRİMİ"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-%${ discountPercent }"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /ay"
+      ],
+      "/month": [
+        "/ay"
+      ],
+      "1 TB data storage": [
+        "1 TB veri depolama alanı"
+      ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "Dosyalar, fotoğraflar ve belgeler için 200 GB depolama alanı"
+      ],
+      "3 TB data storage": [
+        "3 TB veri depolama alanı"
+      ],
+      "500 GB storage": [
+        "500 GB depolama alanı"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Mail, Pass, Drive, VPN ve Takvim'in tüm ücretli özellikleri"
+      ],
+      "Built-in 2FA authenticator": [
+        "Hazır iki adımlı kimlik doğrulayıcı"
+      ],
+      "Connect 10 devices at once": [
+        "Aynı anda 10 aygıta bağlanın"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırmaya dayanmaktadır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "En yüksek VPN hızlarının keyfini çıkarın"
+      ],
+      "Individual accounts for 6 users": [
+        "6 kullanıcı için bireysel hesaplar"
+      ],
+      "Individual accounts for you and a partner": [
+        "Siz ve bir partneriniz için bireysel hesaplar"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükleyin"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "${ totalSavings } tasarruf edin ve mevcut tüm özelliklerinizi koruyun!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Güvenli bağlantı, kasa ve öge paylaşımı"
+      ],
+      "Stronger protection against cyber threats": [
+        "Siber tehditlere karşı daha güçlü koruma"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız dosya, etiket ve filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Yaz Sonu İndirimi"
+      ],
+      "for 12 months": [
+        "12 aylığına"
       ]
     },
     "Reload event button tooltip": {
@@ -9821,6 +10036,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } eklendi!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Gününüzü daha iyi düzenlemek, zamanınızı izlemek ve daha fazlası için takviminizi renklerle kodlayın."
       ],
@@ -9832,6 +10050,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Takviminizden doğrudan ${ MEET_APP_NAME } aramaları planlayın ve katılın."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Etkinlikleriniz için kolayca görüntülü görüşme bağlantıları oluşturun."
@@ -10541,6 +10762,9 @@
       "Problem reported": [
         "Sorun bildirildi"
       ],
+      "Secret passphrase updated": [
+        "Gizli parola ifadesi güncellendi"
+      ],
       "Undo in progress": [
         "Geri alınıyor"
       ],
@@ -11081,6 +11305,9 @@
       "Network error": [
         "Ağ sorunu"
       ],
+      "Next": [
+        "Sonraki"
+      ],
       "Night theme": [
         "Gece teması"
       ],
@@ -11095,6 +11322,9 @@
       ],
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
+      ],
+      "Open pagination": [
+        "Sayfalandırmayı aç"
       ],
       "Org setup": [
         "Kuruluş ayarları"
@@ -11125,6 +11355,9 @@
       ],
       "Phone numbers": [
         "Telefon numaraları"
+      ],
+      "Previous": [
+        "Önceki"
       ],
       "Private browsing vs VPN": [
         "Gizli gezinme ile VPN karşılaştırması"
@@ -11581,9 +11814,6 @@
       "${ n } wallet": [
         "${ n } cüzdan",
         "${ n } cüzdan"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
       ],
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"

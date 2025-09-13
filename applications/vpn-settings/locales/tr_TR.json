@@ -153,6 +153,9 @@
       "Claim this address": [
         "Bu adresi al"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ücretsiz ${ BRAND_NAME } adresinizi alın"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -1117,6 +1120,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "“${ emailAddress }” adresinin eksik anahtarlarını oluştur"
       ],
+      "Reconnect": [
+        "Yeniden bağlan"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "“${ emailAddress }” adresini yeniden bağla"
+      ],
       "Saving": [
         "Kaydediliyor"
       ],
@@ -1139,6 +1148,9 @@
       ],
       "Disabled": [
         "Kullanım dışı"
+      ],
+      "Disconnected": [
+        "Bağlı değil"
       ],
       "External": [
         "Dış"
@@ -1349,41 +1361,50 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde her ${ cycle } ayda bir otomatik olarak yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ${ formattedDate } tarihinde başlayarak her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir aboneliğe dönüşecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinden başlayarak otomatik olarak her ay yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
-        "\"Deneyin\" seçeneğine tıklayarak ${ termsAndConditions } kabul etmiş olursunuz."
+        "\"Dene\" seçeneğine tıklayarak ${ termsAndConditions } kapsamını kabul etmiş olursunuz."
       ],
       "During the trial period, you can have up to 10 users.": [
-        "Deneme süresi boyunca 10 kullanıcıya kadar sahip olabilirsiniz."
+        "Deneme süresi boyunca 10 kullanıcınız olabilir."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS } gün süreyle ücretsiz"
       ],
       "on ${ formattedDate }": [
         "${ formattedDate } tarihinde"
       ],
-      "Try it free for 14 days": [
-        "14 gün boyunca ücretsiz deneyin"
+      "Try ${ selected } ${ freeForNDays }": [
+        "${ selected } ${ freeForNDays } deneyin"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS } gün süreyle ücretsiz deneme"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "İptal ettiğinizde, ücretsiz denemeniz ücretli aboneliğe dönüştürülmez, ancak deneme süresi sonuna kadar plan avantajlarından yararlanmaya devam edebilirsiniz. Bundan sonra, ${ BRAND_NAME } Ücretsiz planına düşürüleceksiniz."
+        "İptal ettiğinizde, ücretsiz deneme süreniz ücretli aboneliğe dönüştürülmez. Ancak deneme süresinin sonuna kadar tarifenizdeki özellikleri kullanmayı sürdürebilirsiniz. Bundan sonra, ${ BRAND_NAME } Free tarifesine düşürüleceksiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcıya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcınız olabilir."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Deneme süresi boyunca özel alan adları ekleyemezsiniz."
+        "Deneme süresi boyunca özel etki alanları ekleyemezsiniz."
       ],
       "You have reached the trial limit.": [
-        "Deneme limitine ulaştınız."
+        "Deneme süresi sayısı sınırına ulaştınız."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -1754,6 +1775,9 @@
       "Manual setup problem": [
         "El ile kurulum sorunu"
       ],
+      "Meet problem": [
+        "Meet sorunu"
+      ],
       "Other": [
         "Diğer"
       ],
@@ -1902,12 +1926,50 @@
         "Genişlet"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Gelişmiş yapay zeka modellerine erişim"
+      ],
+      "Basic chat history": [
+        "Temel sohbet geçmişi"
+      ],
+      "Full chat history with search": [
+        "Arama ile tüm sohbet geçmişi"
+      ],
+      "Large file upload support": [
+        "Büyük dosya yükleme desteği"
+      ],
+      "Limited daily chats": [
+        "Sınırlı sayıda günlük sohbet"
+      ],
+      "Limited favorites": [
+        "Sınırlı sayıda sık kullanılan"
+      ],
+      "Unlimited daily chats": [
+        "Günlük sınırsız sayıda sohbet"
+      ],
+      "Unlimited favorites for quick access": [
+        "Hızlı erişim için sınırsız sayıda sık kullanılan"
+      ],
+      "Upload and query multiple large files": [
+        "Birden fazla büyük dosyayı yükleyip sorgulayın"
+      ],
+      "Upload and query small files": [
+        "Küçük dosyaları yükleyin ve sorgulayın"
+      ],
+      "Web search access": [
+        "Site arama erişimi"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
       ]
     },
     "color": {
@@ -4306,8 +4368,8 @@
       "customer support": [
         "müşteri desteği"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi alın. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -6209,9 +6271,6 @@
       "Include device, location, and IP details": [
         "Aygıt, konum ve IP adresi ayrıntıları katılsın"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "E-posta adresinizi doğrulayarak hesap güvenliğinizi artırın."
       ],
@@ -6612,9 +6671,6 @@
       "Please use another browser or download the file.": [
         "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
       ],
-      "Please verify payment at the new tab which was opened.": [
-        "Lütfen açılan yeni sekmede ödemeyi doğrulayın."
-      ],
       "Please wait till your changes are synced with the server.": [
         "Lütfen değişiklikleriniz sunucu ile eşitlenene kadar bekleyin."
       ],
@@ -6783,6 +6839,9 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Adresinizi kullanıma almak için ${ MAIL_APP_NAME } adresinde oturum açın"
+      ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Güvenlik anahtarı ile oturum açılması henüz tüm uygulamalarda desteklenmiyor. Tek kullanımlık parola olmadan, bazı uygulamalarda oturum açılamayabilir."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
@@ -7149,9 +7208,6 @@
       "Vault updated": [
         "Kasa güncellendi"
       ],
-      "Verification can take a few minutes.": [
-        "Doğrulama işlemi birkaç dakika sürebilir."
-      ],
       "Verification may take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
       ],
@@ -7308,8 +7364,8 @@
       "You already have a free account": [
         "Zaten ücretsiz bir hesabınız var"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
+      "You are currently signed in as ${ username }.": [
+        "Şu anda ${ username } olarak oturum açmışsınız."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz.",
@@ -7672,6 +7728,9 @@
       ],
       "Donation": [
         "Bağış"
+      ],
+      "Manual": [
+        "El ile"
       ],
       "Modification": [
         "Değişiklik"
@@ -8361,11 +8420,11 @@
       "Value": [
         "Değer"
       ],
-      "VAT": [
-        "KDV"
-      ],
       "Verification code": [
         "Doğrulama kodu"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } ile görüntülü görüşme"
       ],
       "Video conferencing with Zoom": [
         "Zoom ile görüntülü görüşme"
@@ -10006,6 +10065,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "${ MEET_APP_NAME } görüntülü görüşme ayarları güncellendi"
+      ],
       "${ reason } has been disabled": [
         "${ reason } kullanım dışı bırakıldı"
       ],
@@ -10020,6 +10082,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "İki adımlı doğrulama kodları indirildi"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "${ MEET_APP_NAME } görüntülü görüşme ayarları güncellenemedi."
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Zoom görüntülü görüşme ayarları güncellenemedi"
       ],
       "Invalid code": [
         "Kod geçersiz"
@@ -10057,8 +10125,8 @@
       "Two-factor authentication is not required anymore": [
         "İki adımlı doğrulama artık zorunlu değil"
       ],
-      "Video conferencing settings have been updated": [
-        "Görüntülü görüşme ayarları güncellendi"
+      "Zoom video conferencing settings have been updated": [
+        "Zoom görüntülü görüşme ayarları güncellendi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10719,11 +10787,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi hariç: ${ taxAmount }"
+      ],
       "Got it": [
         "Anladım"
       ],
       "I'm purchasing as a business": [
         "Kurumsal olarak satın alıyorum"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi dahil: ${ taxAmount }"
       ],
       "MM/YY": [
         "AA/YY"
@@ -10742,6 +10822,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Taxes": [
+        "Vergiler"
       ],
       "terms & conditions": [
         "hükümler ve koşullar"
@@ -10776,6 +10859,9 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "VAT": [
+        "KDV"
       ],
       "VAT number": [
         "KDV numarası"
@@ -11143,6 +11229,96 @@
       ],
       "Unknown": [
         "Bilinmiyor"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "YAZ SONU İNDİRİMİ"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-%${ discountPercent }"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /ay"
+      ],
+      "/month": [
+        "/ay"
+      ],
+      "1 TB data storage": [
+        "1 TB veri depolama alanı"
+      ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "Dosyalar, fotoğraflar ve belgeler için 200 GB depolama alanı"
+      ],
+      "3 TB data storage": [
+        "3 TB veri depolama alanı"
+      ],
+      "500 GB storage": [
+        "500 GB depolama alanı"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Mail, Pass, Drive, VPN ve Takvim'in tüm ücretli özellikleri"
+      ],
+      "Built-in 2FA authenticator": [
+        "Hazır iki adımlı kimlik doğrulayıcı"
+      ],
+      "Connect 10 devices at once": [
+        "Aynı anda 10 aygıta bağlanın"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırmaya dayanmaktadır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "En yüksek VPN hızlarının keyfini çıkarın"
+      ],
+      "Individual accounts for 6 users": [
+        "6 kullanıcı için bireysel hesaplar"
+      ],
+      "Individual accounts for you and a partner": [
+        "Siz ve bir partneriniz için bireysel hesaplar"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükleyin"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "${ totalSavings } tasarruf edin ve mevcut tüm özelliklerinizi koruyun!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Güvenli bağlantı, kasa ve öge paylaşımı"
+      ],
+      "Stronger protection against cyber threats": [
+        "Siber tehditlere karşı daha güçlü koruma"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız dosya, etiket ve filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Yaz Sonu İndirimi"
+      ],
+      "for 12 months": [
+        "12 aylığına"
       ]
     },
     "Recovery Email": {
@@ -14386,8 +14562,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir. Yalnızca birincil yönetici kuruluşun tarifesini değiştirebilir."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Takvim davetlerinize kolayca görüntülü görüşme bağlantıları eklemenizi sağlar."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Takvim davetlerinize kolayca görüntülü ${ MEET_APP_NAME } görüşmesi bağlantıları eklemenizi sağlar."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Takvim davetlerinize kolayca görüntülü Zoom görüşmesi bağlantıları eklemenizi sağlar."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sisteminizin gündüz veya gece kipinde olmasına göre gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
@@ -14460,6 +14639,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
+      ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresin bağlantısı kesildi. İleti gönderimi ve alımı duraklatıldı. Bu adresi kullanıma almak için yeniden bağlanın."
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
@@ -15011,9 +15193,6 @@
       "${ n } wallet": [
         "${ n } cüzdan",
         "${ n } cüzdan"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
       ],
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"

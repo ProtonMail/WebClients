@@ -26,3 +26,5 @@ export {
     useMessageCounts,
     useGetMessageCounts,
 } from './store/counts/messageCountsSlice';
+
+export { selectCategoriesLabel } from './store/labels/selector';

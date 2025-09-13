@@ -3,9 +3,11 @@ import type { ThunkAction } from 'redux-thunk';
 
 import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { type CacheType, cacheHelper, createPromiseStore, previousSelector } from '@proton/redux-utilities';
+import { CacheType, cacheHelper, createPromiseStore, previousSelector } from '@proton/redux-utilities';
+import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
+import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { getPrimaryAddress } from '@proton/shared/lib/helpers/address';
 import type { Address, Api, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 import { isPrivate, isSelf } from '@proton/shared/lib/user/helpers';
@@ -66,6 +68,35 @@ export const listOutgoingDelegatedAccess = (options?: {
             }
         };
         return cacheHelper({ store: promiseStore, select, cb, cache: options?.cache });
+    };
+};
+
+const getOutgoingDelegatedAccess = async (api: Api, id: string) => {
+    const { DelegatedAccess } = await api<{ DelegatedAccess: OutgoingDelegatedAccessOutput }>({
+        url: `account/v1/access/outgoing/${id}`,
+        method: 'get',
+    });
+    return DelegatedAccess;
+};
+
+export const outgoingEventLoopV6Thunk = ({
+    event,
+    api,
+}: {
+    event: CoreEventV6Response;
+    api: Api;
+}): ThunkAction<Promise<void>, DelegatedAccessState, ProtonThunkArguments, UnknownAction> => {
+    return async (dispatch) => {
+        const user = await dispatch(userThunk());
+        if (!canFetch(user)) {
+            return;
+        }
+        await updateCollectionAsyncV6({
+            events: event.OutgoingDelegatedAccess,
+            get: (ID) => getOutgoingDelegatedAccess(api, ID),
+            refetch: () => dispatch(listOutgoingDelegatedAccess({ cache: CacheType.None })),
+            update: (result) => dispatch(delegatedAccessActions.outgoingEventLoopV6(result)),
+        });
     };
 };
 

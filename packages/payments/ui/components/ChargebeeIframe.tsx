@@ -40,11 +40,10 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { type ThemeCode } from '@proton/components/payments/client-extensions';
-import { useChargebeeContext } from '@proton/components/payments/client-extensions/useChargebeeContext';
-import { type ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
-import { type ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
-import { type ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
+import type { ThemeCode } from '@proton/components/payments/client-extensions';
+import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
+import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
+import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -56,7 +55,7 @@ import type {
     InitializeCreditCardOptions,
     RemoveEventListener,
 } from '../../core/interface';
-import { type ApplePayProcessorHook } from '../../core/payment-processors/useApplePay';
+import type { ApplePayProcessorHook } from '../../core/payment-processors/useApplePay';
 
 /**
  * Small helper to identify the messages sent to iframe.
@@ -574,8 +573,6 @@ export function getIframeUrl() {
 export const useCbIframe = (): CbIframeHandles => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
-    const chargebeeContext = useChargebeeContext();
-
     const iframeUrl = getIframeUrl();
     const iframeSrc = iframeUrl.toString();
     const targetOrigin = iframeUrl.origin;
@@ -701,7 +698,6 @@ export const useCbIframe = (): CbIframeHandles => {
             if (error) {
                 const context = {
                     paymentsVersion: getPaymentsVersion(),
-                    chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                 };
 
                 captureMessage('Payments: Unhandled Chargebee error', {

@@ -1,6 +1,4 @@
 import { getAutoCoupon } from '@proton/components/containers/payments/subscription/helpers';
-import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
-import type { SubscriptionCheckResponse } from '@proton/payments';
 import {
     type ADDON_NAMES,
     type BillingAddress,
@@ -22,6 +20,7 @@ import {
     type SavedPaymentMethod,
     type StrictPlan,
     type Subscription,
+    type SubscriptionCheckResponse,
     type SubscriptionPlan,
     getFreeCheckResult,
     getHas2024OfferCoupon,
@@ -36,7 +35,10 @@ import {
     getPricingFromPlanIDs,
     getSubscription,
     hasPlanIDs,
+    isForbiddenLumoPlus,
+    isForbiddenModification,
     isLifetimePlanSelected,
+    isSubcriptionCheckForbidden,
     isValidPlanName,
     switchPlan,
 } from '@proton/payments';
@@ -103,18 +105,34 @@ export const getSubscriptionData = async (
     options: Options & {
         info?: boolean;
         trial?: boolean;
+        subscription?: Subscription;
     }
 ): Promise<SubscriptionData> => {
-    const { planIDs, checkResult } = await getSubscriptionPrices({
-        paymentsApi,
-        planIDs: options.planIDs || {},
-        currency: options.currency,
-        cycle: options.cycle,
-        billingAddress: options.billingAddress,
-        coupon: options.coupon,
-        trial: options.trial,
-        ValidateZipCode: options.ValidateZipCode,
-    })
+    const checkResultPromise = (async () => {
+        const planIDs = options.planIDs ?? {};
+
+        if (isSubcriptionCheckForbidden(options.subscription, planIDs, options.cycle)) {
+            return getOptimisticCheckResult({
+                plansMap: options.plansMap,
+                planIDs,
+                cycle: options.cycle,
+                currency: options.currency,
+            });
+        }
+
+        return getSubscriptionPrices({
+            paymentsApi,
+            planIDs,
+            currency: options.currency,
+            cycle: options.cycle,
+            billingAddress: options.billingAddress,
+            coupon: options.coupon,
+            trial: options.trial,
+            ValidateZipCode: options.ValidateZipCode,
+        });
+    })();
+
+    const { checkResult, planIDs } = await checkResultPromise
         .then((checkResult) => {
             return {
                 checkResult,
@@ -142,6 +160,7 @@ export const getSubscriptionData = async (
                 planIDs: options.planIDs,
             };
         });
+
     return {
         cycle: checkResult.Cycle,
         currency: checkResult.Currency,
@@ -269,6 +288,14 @@ const getUpsell = ({
     }
 
     if (currentPlan && planParameters.defined) {
+        // if this is the case when user has a subscription and wants to buy Lumo Plus then we don't need to block them
+        // by showing the upsell. Insted, this situation will be handled in another function that will call
+        // `isForbiddenLumoPlus()` again and will replace the plan with PlanIDs { [currentPlanName]: 1,
+        // [lumo-addon-for-current-plan]: 1 }
+        if (isForbiddenLumoPlus({ subscription, newPlanName: planParameters.plan.Name, plansMap })) {
+            return noUpsell;
+        }
+
         if (planParameters.plan.Name === PLANS.VISIONARY) {
             return getUpsellData(planParameters.plan.Name);
         }
@@ -557,6 +584,7 @@ export const getUserInfo = async ({
                 subscribed: false,
                 admin: false,
                 access: false,
+                unavailable: false,
             },
             upsell: getUpsell({ audience, plansMap, upsellPlanCard, options, planParameters, toApp, user }),
         };
@@ -567,16 +595,13 @@ export const getUserInfo = async ({
         admin: getIsAdmin(user),
         subscribed: Boolean(user.Subscribed),
         access: false,
+        unavailable: false,
     };
 
-    const forcePaymentsVersion = getMaybeForcePaymentsVersion(user);
-
     const [paymentMethods, subscription, organization] = await Promise.all([
-        state.payable ? getPaymentMethods(api, forcePaymentsVersion) : [],
+        state.payable ? getPaymentMethods(api) : [],
         state.payable && state.admin && state.subscribed
-            ? api<{ Subscription: Subscription; UpcomingSubscription: Subscription }>(
-                  getSubscription(forcePaymentsVersion)
-              ).then(({ Subscription, UpcomingSubscription }) => UpcomingSubscription ?? Subscription)
+            ? getSubscription(api, user).then((subscription) => subscription.UpcomingSubscription ?? subscription)
             : (FREE_SUBSCRIPTION as unknown as Subscription),
         state.subscribed ? getOrganization({ api }) : undefined,
     ]);
@@ -624,6 +649,7 @@ export const getUserInfo = async ({
 
     let optionsWithSubscriptionDefaults = {
         ...options,
+        subscription,
         cycle,
         currency: options.currency,
         coupon: subscription.CouponCode || options.coupon,
@@ -656,6 +682,11 @@ export const getUserInfo = async ({
     }
     if (result?.planIDs) {
         optionsWithSubscriptionDefaults.planIDs = result.planIDs;
+    }
+
+    if (state.payable && isForbiddenModification(subscription, optionsWithSubscriptionDefaults.planIDs ?? {})) {
+        state.access = false;
+        state.unavailable = true;
     }
 
     const subscriptionData = await (() => {
@@ -693,6 +724,7 @@ export const getSessionDataFromSignup = (cache: SignupCacheResult): SessionData 
             admin: false,
             subscribed: false,
             access: false,
+            unavailable: false,
         },
     };
 };
@@ -797,11 +829,6 @@ export const getPlanCardSubscriptionData = async ({
             cycles
                 .map((cycle) => [planIDs, cycle] as const)
                 .map(async ([planIDs, cycle]): Promise<SubscriptionData> => {
-                    const coupon =
-                        maybeCoupon === null
-                            ? undefined
-                            : getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle, trial });
-
                     // make sure that the plan and all its addons exist
                     const plansToCheck = Object.keys(planIDs) as (PLANS | ADDON_NAMES)[];
                     const plansExist = plansToCheck.every(
@@ -810,6 +837,11 @@ export const getPlanCardSubscriptionData = async ({
 
                     // we extract the currency of the currently selected plan in plansMap.
                     const currency = plansMap[plansToCheck[0]]?.Currency ?? DEFAULT_CURRENCY;
+
+                    const coupon =
+                        maybeCoupon === null
+                            ? undefined
+                            : getAutoCoupon({ coupon: maybeCoupon, planIDs, cycle, trial, currency });
 
                     // If there's no coupon we can optimistically calculate the price.
                     // In addition, if the selected plan doesn't exist, then we don't do the live check call.

@@ -22,18 +22,17 @@ import {
     getPaymentMethodStatus,
     getPaymentsVersion,
     getPlanName,
-    isCheckForbidden,
     isLifetimePlanSelected,
+    isSubcriptionCheckForbidden,
     normalizeBillingAddress,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { useGetFlag } from '@proton/unleash';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useChargebeeContext } from '../client-extensions/useChargebeeContext';
 import { InvalidZipCodeError } from './errors';
 
 const checkSubscriptionQuery = (
@@ -124,7 +123,6 @@ export const useReportRoutingError = () => {
         'This operation is not supported for users on a legacy subscription',
     ];
 
-    const chargebeeContext = useChargebeeContext();
     const { APP_NAME } = useConfig();
 
     const [alreadyReported, setAlreadyReported] = useState(false);
@@ -142,7 +140,6 @@ export const useReportRoutingError = () => {
         const context = {
             app: APP_NAME,
             paymentsVersion: getPaymentsVersion(),
-            chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
             ...additionalContext,
         };
 
@@ -182,7 +179,8 @@ export const useMultiCheckCache = () => {
             `.codes-${data.Codes?.join(',') ?? ''}` +
             `.cc-${data.BillingAddress?.CountryCode}` +
             `.s-${data.BillingAddress?.State}` +
-            `.z-${data.BillingAddress?.ZipCode}`;
+            `.z-${data.BillingAddress?.ZipCode}` +
+            `.trial-${data.IsTrial ?? false}`;
 
         return btoa(id);
     };
@@ -408,7 +406,7 @@ export const usePaymentsApiWithCheckFallback = () => {
     const checkV5Fallback = (data: CheckSubscriptionData): EnrichedCheckResponse | null => {
         const { Cycle, Currency, Plans } = data;
 
-        const checkForbidden = isCheckForbidden(subscription, Plans, Cycle);
+        const checkForbidden = isSubcriptionCheckForbidden(subscription, Plans, Cycle);
         if (!checkForbidden) {
             return null;
         }

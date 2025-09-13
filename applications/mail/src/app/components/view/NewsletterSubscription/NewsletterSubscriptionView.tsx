@@ -12,7 +12,7 @@ import {
     type MARK_AS_STATUS,
 } from '@proton/shared/lib/mail/constants';
 
-import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
+import { ResizableWrapper } from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
 import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';

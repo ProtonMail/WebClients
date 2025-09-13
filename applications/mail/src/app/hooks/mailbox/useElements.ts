@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { useGetMessageCounts, useMessageCounts } from '@proton/mail';
-import { useConversationCounts, useGetConversationCounts } from '@proton/mail';
+import { useConversationCounts, useGetConversationCounts, useGetMessageCounts, useMessageCounts } from '@proton/mail';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -11,7 +10,7 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { HUMAN_TO_LABEL_IDS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
-import { type MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';

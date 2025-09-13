@@ -101,16 +101,7 @@ import {
     getVPNConnections,
     getVPNSpeed,
 } from './vpn';
-import {
-    WALLET_PLUS_WALLETS,
-    WALLET_PLUS_WALLET_ACCOUNTS,
-    WALLET_PLUS_WALLET_EMAIL,
-    getBitcoinViaEmail,
-    getWalletAccounts,
-    getWalletAppFeature,
-    getWalletEmailAddresses,
-    getWallets,
-} from './wallet';
+import { getWalletAppFeature } from './wallet';
 
 export const getAllAppsFeature = (): PlanCardFeatureDefinition => {
     return {
@@ -760,23 +751,6 @@ export const getVPNEnterprisePlan = (serversCount: VPNServersCountData | undefin
     };
 };
 
-export const getWalletPlan = (plan: Plan): ShortPlan => {
-    return {
-        plan: PLANS.WALLET,
-        title: plan.Title,
-        label: '',
-        description: c('wallet_signup_2024: Info').t`A safer way to hold your Bitcoin`,
-        cta: getCTA(plan.Title),
-        features: [
-            getWallets(WALLET_PLUS_WALLETS),
-            getWalletAccounts(WALLET_PLUS_WALLET_ACCOUNTS),
-            getWalletEmailAddresses(WALLET_PLUS_WALLET_EMAIL),
-            getBitcoinViaEmail(),
-            getSentinel(true),
-        ],
-    };
-};
-
 export const getLumoPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.LUMO,
@@ -857,8 +831,6 @@ export const getShortPlan = (
             return getPassFamilyPlan(planData);
         case PLANS.PASS_BUSINESS:
             return getPassBusinessPlan(planData);
-        case PLANS.WALLET:
-            return getWalletPlan(planData);
         case PLANS.LUMO:
             return getLumoPlan(planData);
         default:

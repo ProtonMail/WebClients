@@ -130,6 +130,9 @@
       "Clear search": [
         "ძებნის გასუფთავება"
       ],
+      "Clone item": [
+        "ელემენტის კლონირება"
+      ],
       "Close": [
         "დახურვა"
       ],
@@ -426,6 +429,9 @@
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
+      ],
+      "Organize vaults": [
+        "საცავების დალაგება"
       ],
       "Pass for Android": [
         "Pass-ი Android-სთვის"
@@ -1261,6 +1267,17 @@
       "Terabyte": [
         "ტერაბაიტი",
         "ტერაბაიტი"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "დომენი"
+      ],
+      "Password ends with": [
+        "პაროლი მთავრდება"
+      ],
+      "Username": [
+        "მომხმარებლის სახელი"
       ]
     },
     "Info": {
@@ -2245,6 +2262,9 @@
       ],
       "Unverified": [
         "გადაუმოწმებელი"
+      ],
+      "Updating vault organization...": [
+        "საცავის ორგანიზაციის განახლება..."
       ],
       "Upgrade Now to Unlock Premium Features": [
         "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა ახლავე"
@@ -4268,6 +4288,9 @@
       "MX record": [
         "MX ჩანაწერი"
       ],
+      "Next": [
+        "შემდეგი"
+      ],
       "No excluded items": [
         "ამოღებული ელემენტების გარეშე"
       ],
@@ -4288,6 +4311,12 @@
       ],
       "No shared secure links": [
         "გაზიარებული დაცული ბმულების გარეშე"
+      ],
+      "Open pagination": [
+        "გვერდების დანომრვა"
+      ],
+      "Organize vaults": [
+        "საცავების დალაგება"
       ],
       "Our welcome gift to you": [
         "ჩვენი მისალმების საჩუქარი"
@@ -4319,6 +4348,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმს წაშლით, მას ვერ აღადგენთ.",
         "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმებს წაშლით, მას ვერ აღადგენთ."
+      ],
+      "Previous": [
+        "წინა"
       ],
       "Random Prefix Generation": [
         "შემთხვევითი პრეფიქსის შექმნა"
@@ -4474,6 +4506,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი.",
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "კოპირება"
       ]
     },
     "Today icon tooltip in mini calendar": {

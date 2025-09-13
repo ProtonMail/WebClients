@@ -21,7 +21,7 @@ import {
 } from '@proton/payments';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Organization } from '@proton/shared/lib/interfaces';
-import { Audience, ChargebeeEnabled } from '@proton/shared/lib/interfaces';
+import { Audience } from '@proton/shared/lib/interfaces';
 import {
     addApiMock,
     apiMock,
@@ -33,7 +33,7 @@ import {
 } from '@proton/testing';
 import { buildUser } from '@proton/testing/builders';
 import { getLongTestPlans } from '@proton/testing/data';
-import { type FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
+import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 
 import type { SubscriptionContainerProps } from './SubscriptionContainer';
 import SubscriptionContainer from './SubscriptionContainer';
@@ -53,7 +53,7 @@ jest.mock('@proton/components/hooks/assistant/useAssistantFeatureEnabled', () =>
 
 const ContextSubscriptionContainer = applyHOCs(
     withReduxStore({
-        user: buildUser({ ChargebeeUser: ChargebeeEnabled.CHARGEBEE_FORCED }),
+        user: buildUser(),
     }),
     withDeprecatedModals(),
     withPaymentContext()

@@ -1,13 +1,12 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { type NodeType, getDrive, splitNodeUid } from '@proton/drive';
+import { type NodeType, getDrive } from '@proton/drive';
 
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManagerTypes';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../utils/errorHandling/useSdkErrorHandler';
-import { getIsAnonymousUser } from '../../utils/sdk/getIsAnonymousUser';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 
@@ -23,13 +22,9 @@ type BaseSharedWithMeItem = {
     size: number | undefined;
     mediaType: string | undefined;
     thumbnailId: string | undefined;
-    legacy: {
-        isFromLegacy?: boolean;
-        linkId: string;
-        shareId: string;
-        volumeId: string;
-        isLocked?: boolean;
-    };
+
+    // Help us knowing if the item is loaded from legacy loader
+    isFromLegacy?: boolean;
 };
 
 export type BookmarkItem = BaseSharedWithMeItem & {
@@ -49,6 +44,10 @@ export type DirectShareItem = BaseSharedWithMeItem & {
         sharedOn: Date;
         sharedBy: string;
     };
+    /** @deprecated belongs to legacy, prefer using nodeUid */
+    shareId: string;
+    /** @deprecated belongs to legacy, related to link state from store */
+    isLocked?: boolean;
 };
 
 export type InvitationItem = BaseSharedWithMeItem & {
@@ -58,6 +57,8 @@ export type InvitationItem = BaseSharedWithMeItem & {
         uid: string;
         sharedBy: string;
     };
+    /** @deprecated belongs to legacy, prefer using nodeUid */
+    shareId: string;
 };
 
 export type SharedWithMeListingItemUI = BookmarkItem | DirectShareItem | InvitationItem;
@@ -219,7 +220,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                         const shouldCleanup =
                             item.itemType === itemType &&
                             !loadedUids.has(getKeyUid(item)) &&
-                            (options?.legacyCleanup ? !!item.legacy.isFromLegacy : !item.legacy.isFromLegacy);
+                            (options?.legacyCleanup ? !!item.isFromLegacy : !item.isFromLegacy);
 
                         if (shouldCleanup) {
                             newSharedWithMeItems.delete(uid);
@@ -294,9 +295,6 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
             },
 
             subscribeToEvents: async (context: string, options?: { onRefreshSharedWithMe?: () => Promise<void> }) => {
-                const eventManager = getActionEventManager();
-                await eventManager.subscribeSdkDriveEvents(context);
-
                 const { activeContexts, eventSubscriptions, refreshCallbacks } = get();
 
                 const newActiveContexts = new Set(activeContexts);
@@ -315,6 +313,9 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                 if (eventSubscriptions) {
                     return;
                 }
+
+                const eventManager = getActionEventManager();
+                await eventManager.subscribeSdkDriveEvents(context);
 
                 const deleteBookmarksSubscription = eventManager.subscribe(
                     ActionEventName.DELETE_BOOKMARKS,
@@ -345,15 +346,12 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                             const maybeNode = await drive.getNode(uid);
                             const { node } = getNodeEntity(maybeNode);
                             const signatureResult = getSignatureIssues(maybeNode);
-                            const isAnonymousUser = getIsAnonymousUser(maybeNode);
-                            const { volumeId, nodeId } = splitNodeUid(node.uid);
                             if (!node.deprecatedShareId) {
                                 handleSdkError(
                                     new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
                                         tags: { component: 'drive-sdk' },
                                         extra: { uid: node.uid },
-                                    }),
-                                    { showNotification: false }
+                                    })
                                 );
                                 continue;
                             }
@@ -366,8 +364,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                                             message:
                                                 'The shared with me node entity is missing membershif info. It could be race condition and means it is probably not shared anymore.',
                                         },
-                                    }),
-                                    { showNotification: false }
+                                    })
                                 );
 
                                 continue;
@@ -388,12 +385,8 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                                             ? node.membership.sharedBy.value
                                             : node.membership.sharedBy.error.claimedAuthor) || '',
                                 },
-                                haveSignatureIssues: !isAnonymousUser && !signatureResult.ok,
-                                legacy: {
-                                    linkId: nodeId,
-                                    shareId: node.deprecatedShareId,
-                                    volumeId: volumeId,
-                                },
+                                haveSignatureIssues: !signatureResult.ok,
+                                shareId: node.deprecatedShareId,
                             });
                         }
                     }

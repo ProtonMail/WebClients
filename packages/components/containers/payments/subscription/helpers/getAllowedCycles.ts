@@ -12,9 +12,9 @@ import {
     isRegularCycle,
     isTrial,
 } from '@proton/payments';
-import { type ProductParam } from '@proton/shared/lib/apps/product';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
 
-import { type CouponConfigRendered } from '../coupon-config/useCouponConfig';
+import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { isSamePlanCheckout } from './isSamePlanCheckout';
 import { notHigherThanAvailableOnBackend } from './payment';
 
@@ -34,7 +34,6 @@ const defaultRules: PlanCapRule[] = [
     { plan: PLANS.MAIL, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.VPN2024, cycle: CYCLE.TWO_YEARS },
     { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY },
-    { plan: PLANS.WALLET, cycle: CYCLE.YEARLY },
     { plan: PLANS.LUMO, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_FAMILY, cycle: CYCLE.YEARLY },

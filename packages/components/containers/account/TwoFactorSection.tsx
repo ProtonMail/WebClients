@@ -3,8 +3,7 @@ import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import { Button, InlineLinkButton } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Banner, BannerVariants, Button, Href, InlineLinkButton, Tooltip } from '@proton/atoms';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
@@ -15,8 +14,9 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
-import { getHasFIDO2Support } from '@proton/shared/lib/webauthn/helper';
+import { getHasFIDO2Support, getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useAvailableRecoveryMethods } from '../../hooks/useSessionRecovery';
@@ -33,6 +33,7 @@ import RemoveSecurityKeyModal from './fido/RemoveSecurityKeyModal';
 import { maxSecurityKeyLength } from './fido/constants';
 import DisableTOTPModal from './totp/DisableTOTPModal';
 import EnableTOTPModal from './totp/EnableTOTPModal';
+import { getSecurityKeySigningWarning } from './totp/getSecurityKeySigningWarning';
 
 const defaultTmpRemove = { keys: [], type: 'all' as const };
 
@@ -53,11 +54,12 @@ const TwoFactorSection = () => {
 
     const hasTOTPEnabled = getHasTOTPSettingEnabled(userSettings);
     const hasFIDO2Enabled = getHasFIDO2SettingEnabled(userSettings);
+    const fido2WithoutTotp = useFlag('Fido2WithoutTotp');
 
     const registeredKeys = userSettings['2FA']?.RegisteredKeys || [];
-    const canEnableFido2 = hasTOTPEnabled;
+    const canEnableFido2 = hasTOTPEnabled || fido2WithoutTotp;
 
-    const canDisableTOTP = hasTOTPEnabled && !registeredKeys.length;
+    const canDisableTOTP = (hasTOTPEnabled && !registeredKeys.length) || fido2WithoutTotp;
 
     const [availableRecoveryMethods] = useAvailableRecoveryMethods();
     const hasRecoveryMethod = availableRecoveryMethods.length > 0;
@@ -92,7 +94,8 @@ const TwoFactorSection = () => {
             ? 'https://protonvpn.com/support/two-factor-authentication'
             : getKnowledgeBaseUrl('/two-factor-authentication-2fa');
 
-    const hasSecurityKeySupport = getHasFIDO2Support(APP_NAME, location.hostname);
+    const hasSecurityKeySupport =
+        getHasWebAuthnSupport() && getHasFIDO2Support({ appName: APP_NAME, hostname: location.hostname });
 
     return (
         <SettingsSection>
@@ -104,8 +107,8 @@ const TwoFactorSection = () => {
             <SettingsParagraph large>
                 {c('Info')
                     .jt`Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.`}
-
-                <AuthenticatorPromotionBanner className="mt-4" flowId="2fa-settings" />
+                <br />
+                <Href href={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
             </SettingsParagraph>
             {hasTOTPEnabled && hasRecoveryMethod && (
                 <SettingsParagraph>
@@ -129,6 +132,11 @@ const TwoFactorSection = () => {
                     <Toggle checked={hasTOTPEnabled} id="twoFactorToggle" onChange={handleChangeTOTP} />
                 </SettingsLayoutRight>
             </SettingsLayout>
+            {hasFIDO2Enabled && !hasTOTPEnabled && (
+                <div className="mb-4">
+                    <Banner variant={BannerVariants.WARNING_OUTLINE}>{getSecurityKeySigningWarning()}</Banner>
+                </div>
+            )}
             {hasSecurityKeySupport && (
                 <>
                     {renderAddSecurityKeyModal && <AddSecurityKeyModal {...addSecurityKeyModal} />}
@@ -259,6 +267,8 @@ const TwoFactorSection = () => {
                     )}
                 </>
             )}
+
+            <AuthenticatorPromotionBanner className="mt-8" flowId="2fa-settings" />
         </SettingsSection>
     );
 };

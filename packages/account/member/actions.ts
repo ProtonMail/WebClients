@@ -10,8 +10,14 @@ import {
     deleteMemberUnprivatizationInfo,
     queryMemberUnprivatizationInfo,
 } from '@proton/shared/lib/api/members';
-import type { Address, Api, InactiveKey, Member, Organization } from '@proton/shared/lib/interfaces';
-import { type MemberUnprivatizationOutput } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    Api,
+    InactiveKey,
+    Member,
+    MemberUnprivatizationOutput,
+    Organization,
+} from '@proton/shared/lib/interfaces';
 import {
     type ParsedUnprivatizationData,
     acceptUnprivatization,
@@ -20,7 +26,7 @@ import {
     validateUnprivatizationData,
 } from '@proton/shared/lib/keys';
 
-import { addressKeysThunk } from '../addressKeys';
+import { type AddressKeysState, addressKeysThunk } from '../addressKeys';
 import { type AddressesState, addressesThunk } from '../addresses';
 import { type InactiveKeysState, selectInactiveKeys } from '../inactiveKeys';
 import type { KtState } from '../kt';
@@ -90,8 +96,21 @@ export const deleteAllInactiveKeys = ({
     api,
 }: {
     api: Api;
-}): ThunkAction<Promise<boolean>, AddressesState & InactiveKeysState, ProtonThunkArguments, UnknownAction> => {
+}): ThunkAction<
+    Promise<boolean>,
+    AddressesState & AddressKeysState & InactiveKeysState,
+    ProtonThunkArguments,
+    UnknownAction
+> => {
     return async (dispatch, getState) => {
+        // Ensure all address keys are decrypted so that it fills the inactive keys for the selector below.
+        const addresses = await dispatch(addressesThunk());
+        await Promise.all(
+            addresses.map(async (address) => {
+                await dispatch(addressKeysThunk({ addressID: address.ID }));
+            })
+        );
+
         const inactiveKeys = selectInactiveKeys(getState());
 
         const inactiveUserKeys = inactiveKeys.user;
@@ -106,7 +125,6 @@ export const deleteAllInactiveKeys = ({
             return false;
         }
 
-        const addresses = await dispatch(addressesThunk());
         const addressesMap = addresses.reduce<{ [id: string]: Address }>((acc, address) => {
             acc[address.ID] = address;
             return acc;

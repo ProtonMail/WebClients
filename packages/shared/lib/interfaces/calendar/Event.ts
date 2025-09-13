@@ -21,6 +21,7 @@ import type {
 import type { API_CODES } from '../../constants';
 import type { Address } from '../Address';
 import type { Nullable } from '../utils';
+import type { VIDEO_CONFERENCE_PROVIDER } from './Api';
 import type { NotificationModel } from './Notification';
 import type { VcalRrulePropertyValue, VcalVeventComponent } from './VcalModel';
 
@@ -203,7 +204,9 @@ export interface EventModelView {
     conferenceUrl?: string;
     conferencePassword?: string;
     conferenceHost?: string;
+    conferenceProvider?: VIDEO_CONFERENCE_PROVIDER;
     isConferenceTmpDeleted?: boolean;
+    encryptedTitle?: string;
     rest?: any;
 }
 

@@ -9,7 +9,7 @@ import { Button, Card } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { UpsellRef } from '@proton/pass/constants';
-import { type ImportPayload, type ImportVault } from '@proton/pass/lib/import/types';
+import type { ImportPayload, ImportVault } from '@proton/pass/lib/import/types';
 import {
     selectDefaultVault,
     selectOrganizationVaultCreationDisabled,

@@ -5,6 +5,7 @@ import { useDetailsModal } from '../../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../components/modals/FilesDetailsModal';
 import { useRevisionsModal } from '../../../components/modals/RevisionsModal/RevisionsModal';
 import { useFileSharingModal } from '../../../components/modals/SelectLinkToShareModal/SelectLinkToShareModal';
+import { useSdkFileUploadInput } from '../../../hooks/drive/useSdkUploadInput';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
@@ -21,6 +22,7 @@ type Props = {
 
 export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: Props) => {
     const { createDocument } = useDocumentActions();
+    const uid = generateNodeUid(volumeId, linkId);
 
     // Upload hooks
     const {
@@ -30,12 +32,16 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
     } = useFileUploadInput(shareId, linkId);
 
     const {
+        inputRef: sdkFileInputRef,
+        handleClick: sdkHandleFileClick,
+        handleChange: sdkHandleFileChange,
+    } = useSdkFileUploadInput(uid);
+
+    const {
         inputRef: folderInputRef,
         handleClick: handleFolderClick,
         handleChange: handleFolderChange,
     } = useFolderUploadInput(shareId, linkId);
-
-    const uid = generateNodeUid(volumeId, linkId);
 
     // Modal hooks
     const [createFolderModal, showCreateFolderModal] = useCreateFolderModal();
@@ -90,6 +96,13 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
                 shareId: item.rootShareId,
                 linkId: item.linkId,
             });
+        } else {
+            // In case nothing is selected we share the active folder
+            showLinkSharingModal({
+                volumeId,
+                shareId,
+                linkId,
+            });
         }
     };
 
@@ -97,6 +110,7 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
 
     return {
         // Upload
+        uploadSdkFile: { sdkFileInputRef, sdkHandleFileClick, sdkHandleFileChange },
         uploadFile: { fileInputRef, handleFileClick, handleFileChange },
         uploadFolder: { folderInputRef, handleFolderClick, handleFolderChange },
         // Modal actions

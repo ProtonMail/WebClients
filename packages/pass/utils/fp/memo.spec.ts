@@ -62,7 +62,6 @@ describe('`maxAgeMemoize`', () => {
     });
 
     test('should not cache a result who throwed error', async () => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const asyncFn = jest.fn((value: number) => Promise.resolve(value * Math.random()));
         const memoizedFunction = maxAgeMemoize(asyncFn);
 

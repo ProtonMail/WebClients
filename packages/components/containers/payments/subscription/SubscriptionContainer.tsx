@@ -18,7 +18,7 @@ import useHandler from '@proton/components/hooks/useHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import { InvalidZipCodeError } from '@proton/components/payments/react-extensions/errors';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -68,9 +68,9 @@ import {
     hasDeprecatedVPN,
     hasLumoPlan,
     hasPlanIDs,
-    isCheckForbidden,
     isFreeSubscription,
     isManagedExternally,
+    isSubcriptionCheckForbidden,
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
 } from '@proton/payments';
@@ -92,7 +92,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { usePaymentFacade } from '../../../../components/payments/client-extensions';
-import { useChargebeeContext } from '../../../../components/payments/client-extensions/useChargebeeContext';
 import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
 import type { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
@@ -275,7 +274,6 @@ const SubscriptionContainerInner = ({
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
     const [additionalCheckResults, setAdditionalCheckResults] = useState<SubscriptionCheckResponse[]>();
-    const chargebeeContext = useChargebeeContext();
     const scribeEnabled = useAssistantFeatureEnabled();
     const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
     const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
@@ -545,8 +543,6 @@ const SubscriptionContainerInner = ({
         currency: selectedPlanCurrency,
         selectedPlanName,
         billingAddress: model.taxBillingAddress,
-        billingPlatform: subscription?.BillingPlatform,
-        chargebeeUserExists: user.ChargebeeUserExists,
         paymentStatus,
         onChargeable: (operations, { paymentProcessorType, source }) => {
             const context: SubscriptionContext = {
@@ -643,7 +639,7 @@ const SubscriptionContainerInner = ({
             .filter((cycle) => cycle !== checkResult.Cycle)
 
             // skip cycles of the currently active subscription, because the backend doesn't allows to check them
-            .filter((cycle) => !isCheckForbidden(subscription, newModel.planIDs, cycle));
+            .filter((cycle) => !isSubcriptionCheckForbidden(subscription, newModel.planIDs, cycle));
 
         const additionalPayloads = additionalCycles.map(
             (Cycle) =>
@@ -768,7 +764,7 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        if (isCheckForbidden(subscription, copyNewModel.planIDs, copyNewModel.cycle)) {
+        if (isSubcriptionCheckForbidden(subscription, copyNewModel.planIDs, copyNewModel.cycle)) {
             setCheckResult({
                 ...getOptimisticCheckResult({
                     plansMap,
@@ -796,6 +792,7 @@ const SubscriptionContainerInner = ({
                     coupon: copyNewModel.coupon,
                     planIDs: copyNewModel.planIDs,
                     cycle: copyNewModel.cycle,
+                    currency: copyNewModel.currency,
                 });
 
                 // PAY-1822. To put it simply, this code removes all the previously applied coupons or gift codes
@@ -982,7 +979,6 @@ const SubscriptionContainerInner = ({
                         paymentMethod: paymentFacade.selectedMethodType,
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
-                        chargebeeEnabled: chargebeeContext.enableChargebeeRef.current,
                         tokenDidntHaveEmail,
                     };
                     captureMessage('Payments: failed to handle subscription', {
@@ -1100,13 +1096,7 @@ const SubscriptionContainerInner = ({
                 taxCountry={taxCountry}
                 paymentFacade={paymentFacade}
             />
-            {paymentFacade.showInclusiveTax && (
-                <InclusiveVatText
-                    tax={checkResult?.Taxes?.[0]}
-                    currency={selectedPlanCurrency}
-                    className="text-sm color-weak text-center mt-1"
-                />
-            )}
+            <InclusiveVatText checkResult={checkResult} className="text-sm color-weak text-center mt-1" />
         </>
     );
 

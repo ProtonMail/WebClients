@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { Redirect, type RouteChildrenProps } from 'react-router-dom';
 
 import { CircleLoader } from '@proton/atoms';

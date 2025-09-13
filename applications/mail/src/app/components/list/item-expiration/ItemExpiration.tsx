@@ -1,7 +1,8 @@
 import { Tooltip } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
-import { isFrozenExpiration } from '@proton/shared/lib/mail/messages';
+import { isExpiringByRetentionRule, isFrozenExpiration } from '@proton/shared/lib/mail/messages';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -23,8 +24,12 @@ interface Props {
 const ItemExpiration = ({ className, expirationTime, element, labelID }: Props) => {
     const { tooltipMessage, shortMessage, expiresInLessThan24Hours } = useItemExpiration(element, expirationTime);
     const mailSettings = useMailModel('MailSettings');
+    const dataRetentionPolicyEnabled = useFlag('DataRetentionPolicy');
 
     if (!expirationTime) {
+        return null;
+    }
+    if (dataRetentionPolicyEnabled && isExpiringByRetentionRule(element)) {
         return null;
     }
 

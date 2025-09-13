@@ -230,9 +230,6 @@
       "Copy addresses": [
         "Kopiraj adrese"
       ],
-      "Copy email address": [
-        "Kopiraj adresu e-pošte"
-      ],
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
@@ -584,9 +581,6 @@
       "Loading${ ellipsis }": [
         "Učitavanje${ ellipsis }"
       ],
-      "Manage addresses": [
-        "Upravljanje adresama"
-      ],
       "Manage folders": [
         "Upravljanje mapama"
       ],
@@ -646,6 +640,9 @@
       ],
       "More search options": [
         "Više opcija pretraživanja"
+      ],
+      "Most frequent": [
+        "Najčešće"
       ],
       "Move": [
         "Premjesti"
@@ -797,6 +794,9 @@
       "Read receipt sent": [
         "Poslana potvrda o čitanju"
       ],
+      "Recently read": [
+        "Nedavno pročitano"
+      ],
       "Reconnect": [
         "Ponovno poveži"
       ],
@@ -868,6 +868,9 @@
       ],
       "Resume": [
         "Nastavi"
+      ],
+      "Retry": [
+        "Pokušaj ponovno"
       ],
       "Save": [
         "Spremi"
@@ -3134,6 +3137,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Neuspješno šifriranje privitka. Molimo pokušajte ponovno."
       ],
+      "Failed to open to contact": [
+        "Neuspješno otvaranje kontakta"
+      ],
       "Filter with this name already exists": [
         "Filtar s ovim nazivom već postoji"
       ],
@@ -3556,6 +3562,9 @@
       "customer support": [
         "korisnička podrška"
       ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Obiteljski planovi pretplate trenutačno ne podržavaju vanjske korisničke račune. Izradite ${ BRAND_NAME } adresu prije pridraživanja. ${ link }"
+      ],
       "Manage addresses": [
         "Upravljanje adresama"
       ]
@@ -3898,6 +3907,12 @@
       "Contacts": [
         "Kontakti"
       ],
+      "Domain": [
+        "Domena"
+      ],
+      "Password ends with": [
+        "Lozinka završava sa"
+      ],
       "Report an issue": [
         "Prijavite problem"
       ],
@@ -3906,6 +3921,9 @@
       ],
       "Security Center": [
         "Sigurnosni centar"
+      ],
+      "Username": [
+        "Korisničko ime"
       ]
     },
     "Hint": {
@@ -5519,6 +5537,9 @@
       "Cash": [
         "Gotovina"
       ],
+      "Categories badge": [
+        "Oznaka kategorija"
+      ],
       "Category": [
         "Kategorija"
       ],
@@ -5632,6 +5653,12 @@
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Pomozite nam poboljšati kategorije odabirom one koja najbolje odgovara ovoj e-pošti. Hvala Vam na pomoći!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Pomozite nam da poboljšamo nadolazeću kategorizaciju pošte"
       ],
       "Hide password": [
         "Sakrij lozinku"
@@ -5864,6 +5891,9 @@
       "System information": [
         "Informacije o sustavu"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategorija je ažurirana, hvala na povratnoj informaciji!"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -5891,9 +5921,6 @@
       "Undisclosed Recipients": [
         "Nedefinirani primatelji"
       ],
-      "Unknown": [
-        "Nepoznato"
-      ],
       "Updates": [
         "Ažuriranja"
       ],
@@ -5902,9 +5929,6 @@
       ],
       "Username": [
         "Korisničko ime"
-      ],
-      "VAT": [
-        "PDV"
       ],
       "Verification code": [
         "Kôd za provjeru"
@@ -5915,8 +5939,17 @@
       "Weak password": [
         "Slaba lozinka"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Poboljšavamo način na koji su e-pošte kategorizirane. Vaše povratne informacije pomažu da to bude pametnije i točnije."
+      ],
       "What happened?": [
         "Što se dogodilo?"
+      ],
+      "Which category should this be recategorized under?": [
+        "U koju kategoriju ovo treba prekategorizirati?"
+      ],
+      "Why am I seeing this?": [
+        "Zašto ovo vidim?"
       ],
       "With attachment": [
         "S privitkom"
@@ -6042,6 +6075,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Stvorite novi kalendar za upravljanje vašim pozivnicama"
+      ],
+      "Deleted": [
+        "Izbrisano"
       ],
       "Drafts": [
         "Skice"
@@ -6188,6 +6224,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Više informacija"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Za nastavak korištenja ${ BRAND_NAME }, provjerite da vaše premium značajke više nisu u upotrebi ili nadogradite svoj plan."
       ]
     },
     "Log preference": {
@@ -6864,7 +6903,7 @@
         "Možda kasnije"
       ],
       "Save": [
-        "Spremi"
+        "Uštedite"
       ],
       "Special offer": [
         "Posebna ponuda"
@@ -7064,17 +7103,35 @@
       "CVC": [
         "CVC"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% poreza: ${ taxAmount }"
+      ],
       "Got it": [
         "Razumijem"
       ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Uključujući ${ taxRate }% poreza: ${ taxAmount }"
+      ],
       "MM/YY": [
         "MM/GG"
+      ],
+      "Taxes": [
+        "Porezi"
       ],
       "terms & conditions": [
         "uvjeti i odredbe"
       ],
       "Timeout exceeded": [
         "Prekoračeno je vremensko ograničenje"
+      ],
+      "VAT": [
+        "Porez"
       ]
     },
     "Payments.Error": {
@@ -8168,6 +8225,11 @@
       "Message removed from ${ labelName }.": [
         "Poruka uklonjena iz ${ labelName }."
       ],
+      "Message updated": [
+        "Poruka ažurirana",
+        "Poruke ažurirane",
+        "Poruka ažurirano"
+      ],
       "Move ${ selectionCount } conversation": [
         "Premjesti ${ selectionCount } razgovor",
         "Premjesti ${ selectionCount } razgovora",
@@ -8732,6 +8794,9 @@
       "Newsletters": [
         "Bilteni"
       ],
+      "Next": [
+        "Sljedeće"
+      ],
       "Next conversation": [
         "Sljedeći razgovor"
       ],
@@ -8749,6 +8814,9 @@
       ],
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
+      ],
+      "Open pagination": [
+        "Otvori paginaciju"
       ],
       "Org setup": [
         "Postavljanje organizacije"
@@ -8773,6 +8841,9 @@
       ],
       "Preview": [
         "Pregled"
+      ],
+      "Previous": [
+        "Prethodno"
       ],
       "Previous conversation": [
         "Prethodni razgovor"
@@ -8946,6 +9017,9 @@
       ],
       "Your plan": [
         "Vaš plan"
+      ],
+      "✨ Categories are coming!": [
+        "✨Kategorije stižu!"
       ]
     },
     "Today icon tooltip in mini calendar": {

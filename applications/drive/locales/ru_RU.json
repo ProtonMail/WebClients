@@ -1300,9 +1300,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается раз в ${ cycle } мес. ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
       ],
@@ -3864,9 +3861,6 @@
       "customer support": [
         "служба поддержки"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Семейные тарифы в настоящее время не поддерживают внешние аккаунты. Создайте адрес ${ BRAND_NAME } перед тем, как присоединиться. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
       ],
@@ -5317,9 +5311,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Включая ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Индексирование элементов: ${ esProgress } из ${ totalProgressToShow }"
       ],
@@ -6295,9 +6286,6 @@
       "You are about to open your default browser and visit:": [
         "Вы собираетесь открыть браузер по умолчанию и посетить:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Вы используете больше места в хранилище, чем включено в тариф ${ downgradedPlanName }. Удалите данные, чтобы перейти на более дешевую версию."
       ],
@@ -7159,9 +7147,6 @@
       ],
       "Username": [
         "Имя пользователя"
-      ],
-      "VAT": [
-        "НДС"
       ],
       "Verification code": [
         "Код подтверждения"
@@ -9006,7 +8991,7 @@
         "Платите ежегодно, получите наше лучшее предложение"
       ],
       "Save": [
-        "Сохранить"
+        "Сэкономьте"
       ],
       "Save big when you pay annually": [
         "Экономьте больше, когда платите ежегодно"
@@ -9698,6 +9683,96 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Официальное письмо от ${ BRAND_NAME }"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "РАСПРОДАЖА В КОНЦЕ ЛЕТА"
+      ],
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent } %"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /месяц"
+      ],
+      "/month": [
+        "/месяц"
+      ],
+      "1 TB data storage": [
+        "1 ТБ для хранения данных"
+      ],
+      "15 GB storage": [
+        "Хранилище 15 ГБ"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 ГБ для хранения файлов, фотографий и документов"
+      ],
+      "3 TB data storage": [
+        "Хранилище на 3 ТБ"
+      ],
+      "500 GB storage": [
+        "500 ГБ хранилища"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Доступ к более чем 15 000 серверам в более чем 120 странах"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Все платные функции Mail, Pass, Drive, VPN и Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Встроенная функция двухфакторной аутентификации"
+      ],
+      "Connect 10 devices at once": [
+        "Подключение 10 устройств одновременно"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются от стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платёжного цикла."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Наслаждайтесь самой высокой скоростью VPN"
+      ],
+      "Individual accounts for 6 users": [
+        "Индивидуальные аккаунты для 6 пользователей"
+      ],
+      "Individual accounts for you and a partner": [
+        "Индивидуальные аккаунты для вас и партнёра"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Recover previous file versions": [
+        "Восстановление предыдущих версий файлов"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Сэкономьте ${ totalSavings } и сохраните все ваши текущие функции!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Защищённый общий доступ к ссылкам, хранилищам и элементам"
+      ],
+      "Stronger protection against cyber threats": [
+        "Усиленная защита от киберугроз"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "неограниченное количество папок, ярлыков и фильтров;"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Используйте собственный домен электронной почты"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Распродажа в конце лета"
+      ],
+      "for 12 months": [
+        "на 12 месяцев"
       ]
     },
     "Safety review": {
@@ -11639,6 +11714,9 @@
       "Network error": [
         "Ошибка сети"
       ],
+      "Next": [
+        "Далее"
+      ],
       "Night theme": [
         "Ночная тема"
       ],
@@ -11696,6 +11774,9 @@
       "Open actions dropdown": [
         "Показать список доступных действий"
       ],
+      "Open pagination": [
+        "Открыть нумерацию страниц"
+      ],
       "Org setup": [
         "Настройки организации"
       ],
@@ -11731,6 +11812,9 @@
       ],
       "Preview": [
         "Предварительный просмотр"
+      ],
+      "Previous": [
+        "Назад"
       ],
       "Private browsing vs VPN": [
         "Приватный просмотр по сравнению с VPN"
@@ -12247,9 +12331,6 @@
         "${ n } кошелька",
         "${ n } кошельков",
         "${ n } кошельков"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Безопасный способ держать свои Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin по электронной почте"

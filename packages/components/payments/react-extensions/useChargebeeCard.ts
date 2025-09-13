@@ -8,12 +8,11 @@ import {
     type ChargebeeCardPaymentProcessorState,
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
-    type ForceEnableChargebee,
     type PaymentStatus,
     type PaymentVerificatorV5,
 } from '@proton/payments';
 import type { PaymentProcessorHook, PaymentProcessorType } from '@proton/payments';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { usePaymentProcessor } from './usePaymentProcessor';
@@ -32,7 +31,6 @@ export interface Dependencies {
     verifyPayment: PaymentVerificatorV5;
     handles: ChargebeeIframeHandles;
     events: ChargebeeIframeEvents;
-    forceEnableChargebee: ForceEnableChargebee;
 }
 
 type Overrides = {
@@ -59,7 +57,7 @@ export const useChargebeeCard = (
         onProcessPaymentTokenFailed,
         paymentStatus,
     }: Props,
-    { api, verifyPayment, handles, events, forceEnableChargebee }: Dependencies
+    { api, verifyPayment, handles, events }: Dependencies
 ): ChargebeeCardProcessorHook => {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [submitted, setSubmitted] = useState(false);
@@ -80,7 +78,6 @@ export const useChargebeeCard = (
                 handles,
                 events,
                 !!verifyOnly,
-                forceEnableChargebee,
                 paymentStatus,
                 onChargeable
             )

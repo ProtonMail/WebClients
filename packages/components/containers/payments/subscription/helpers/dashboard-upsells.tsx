@@ -3,7 +3,7 @@ import { type ReactNode, useEffect } from 'react';
 import { c } from 'ttag';
 
 import type { ButtonLikeProps } from '@proton/atoms';
-import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import {
     CYCLE,
@@ -14,11 +14,9 @@ import {
     PLANS,
     type Plan,
     type Subscription,
+    getHasConsumerVpnPlan,
     getIsB2BAudienceFromPlan,
     getPricePerCycle,
-} from '@proton/payments';
-import {
-    getHasConsumerVpnPlan,
     hasBundle,
     hasDeprecatedVPN,
     hasDrive,
@@ -34,7 +32,7 @@ import {
     hasVPNPassBundle,
     hasVpnBusiness,
     hasVpnPro,
-    hasWallet,
+    isForbiddenModification,
     isTrial,
 } from '@proton/payments';
 import { type PreloadedPaymentsContextType, getPlanToCheck, usePaymentsPreloaded } from '@proton/payments/ui';
@@ -725,7 +723,6 @@ const hasOnePlusSubscription = (subscription: Subscription) => {
         hasMail(subscription) ||
         hasDrive(subscription) ||
         hasPass(subscription) ||
-        hasWallet(subscription) ||
         hasDeprecatedVPN(subscription) ||
         hasVPNPassBundle(subscription) ||
         hasVPN2024(subscription)
@@ -862,7 +859,11 @@ export const resolveUpsellsToDisplay = ({
         }
     };
 
-    return resolve().filter((maybeUpsell): maybeUpsell is Upsell => isTruthy(maybeUpsell));
+    const upsells = resolve()
+        .filter((maybeUpsell): maybeUpsell is Upsell => isTruthy(maybeUpsell))
+        .filter((upsell) => !subscription || !upsell.plan || !isForbiddenModification(subscription, upsell.plan));
+
+    return upsells;
 };
 
 export const useUpsellsToDisplay = (

@@ -1,5 +1,5 @@
 import { RadioGroup } from '@proton/components';
-import { type MONTHLY_TYPE } from '@proton/shared/lib/calendar/constants';
+import type { MONTHLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import capitalize from '@proton/utils/capitalize';
 
 import useMonthlyOptions from './useMonthlyOptions';

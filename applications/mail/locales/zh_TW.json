@@ -36,9 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } 個電郵位址"
-      ],
       "A to Z": [
         "從 A 到 Z"
       ],
@@ -311,9 +308,6 @@
       ],
       "Copy addresses": [
         "複製電郵位址"
-      ],
-      "Copy email address": [
-        "複製電子郵件位址"
       ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
@@ -774,9 +768,6 @@
       "Make it friendly": [
         "使其更友善"
       ],
-      "Manage addresses": [
-        "管理電郵位址"
-      ],
       "Manage folders": [
         "管理資料夾"
       ],
@@ -1118,6 +1109,9 @@
       ],
       "Resume downloading": [
         "繼續下載"
+      ],
+      "Retry": [
+        "重試"
       ],
       "Revert to original display": [
         "不要用暗黑模式顯示郵件"
@@ -4080,6 +4074,11 @@
         "零存取防護加密。收件者已替帳號停用端對端加密端對端加密。"
       ]
     },
+    "emergency_access": {
+      "Trusted contact": [
+        "信任的聯絡人"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "已加密標頭檔案名稱"
@@ -4244,6 +4243,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗。請再試一次。"
+      ],
+      "Failed to open to contact": [
+        "無法開啟聯絡人"
       ],
       "Filter with this name already exists": [
         "已經有一個相同名稱的篩選器"
@@ -4970,8 +4972,8 @@
       "customer support": [
         "客服"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 地址。${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "若您接受邀請，我們會將您從目前的方案轉出，並將所有剩餘金額存入的您的帳號。"
@@ -6731,9 +6733,6 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "包含您的提示詞與回應將使我們變的更好"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
@@ -7796,8 +7795,8 @@
       "You are about to open your default browser and visit:": [
         "您將要開啟預設瀏覽器並造訪："
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "您目前已登入為 ${ user.Name } (${ user.Email })。"
+      "You are currently signed in as ${ username }.": [
+        "您目前已登入為 ${ username }。"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您已使用超出 ${ downgradedPlanName } 方案的空間，請刪除一些檔案來釋放空間方可降級。"
@@ -8014,6 +8013,9 @@
       ],
       "Your subscription will automatically renew on ${ renewalTime }.": [
         "您的訂購授權將於 ${ renewalTime } 自動更新。"
+      ],
+      "You’re just a few clicks away from a clutter-free inbox": [
+        "輕點幾下滑鼠，即可擁有整潔的收件匣"
       ]
     },
     "info": {
@@ -8330,12 +8332,6 @@
       ],
       "Also archive": [
         "同時封存"
-      ],
-      "Always label sender's emails": [
-        "總是標籤寄件者的電子郵件"
-      ],
-      "Always move sender's emails": [
-        "總是移動寄件者的電子郵件"
       ],
       "AND": [
         "且"
@@ -8655,9 +8651,6 @@
       "Move ${ sidebarElementName }": [
         "移動 ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "移動郵件至"
-      ],
       "Move to": [
         "移至"
       ],
@@ -8687,6 +8680,9 @@
       ],
       "No label found": [
         "找不到標籤"
+      ],
+      "No results found": [
+        "找不到相符的結果"
       ],
       "Not factually correct": [
         "與事實不符"
@@ -8865,9 +8861,6 @@
       "Undisclosed Recipients": [
         "隱名收件者"
       ],
-      "Unknown": [
-        "未知的"
-      ],
       "Unsafe or problematic": [
         "不安全或有問題的"
       ],
@@ -8882,9 +8875,6 @@
       ],
       "Username": [
         "使用者名稱"
-      ],
-      "VAT": [
-        "增值稅"
       ],
       "Verification code": [
         "驗證碼"
@@ -8906,6 +8896,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "請問退訂或降級的主要理由?"
+      ],
+      "Why am I seeing this?": [
+        "為什麼我會看到此訊息？"
       ],
       "With attachment": [
         "連同附件"
@@ -9065,6 +9058,9 @@
       "Create a new calendar to manage your invitations": [
         "創建一個新的行事曆，以管理您的邀請"
       ],
+      "Deleted": [
+        "已刪除"
+      ],
       "Drafts": [
         "草稿"
       ],
@@ -9145,6 +9141,9 @@
       ],
       "Request an invite": [
         "需求邀請"
+      ],
+      "Resume now": [
+        "立即恢復"
       ],
       "Scheduled": [
         "已排定"
@@ -10487,7 +10486,7 @@
         "每年付款，安全及最適方案"
       ],
       "Save": [
-        "儲存"
+        "節省"
       ],
       "Special offer": [
         "特別優惠"
@@ -10895,11 +10894,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "目前您將暫時無法修改或取消您的訂購授權。請等待付款完成後，再進行修改。感謝您耐心等候。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "不包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "不包含 ${ taxRate }% 稅金：${ taxAmount }"
+      ],
       "Got it": [
         "瞭解"
       ],
       "I'm purchasing as a business": [
         "我以公司名義購買"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "包含 ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "包含 ${ taxRate }% 稅金：${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY"
@@ -10912,6 +10923,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
+      "Taxes": [
+        "稅金"
       ],
       "terms & conditions": [
         "條款及細則"
@@ -10936,6 +10950,9 @@
       ],
       "Timeout exceeded": [
         "已經逾時"
+      ],
+      "VAT": [
+        "增值稅"
       ],
       "VAT number": [
         "增值稅編號（VAT）"
@@ -10990,8 +11007,14 @@
       "Business Number": [
         "營業人統一編號"
       ],
+      "Edit ABN": [
+        "編輯 ABN"
+      ],
       "Edit Business Number": [
         "編輯營業人統一編號"
+      ],
+      "Edit EIN": [
+        "編輯 EIN"
       ],
       "Edit VAT number": [
         "編輯增值稅編號（VAT）"
@@ -12667,6 +12690,9 @@
       "Conversation removed from Starred.": [
         "已移除對話的星號。"
       ],
+      "Conversation updated": [
+        "對話內容已更新"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "與 ${ sendersList } 的往來對話將會被標示為 ${ labelsList }"
       ],
@@ -12738,6 +12764,9 @@
       ],
       "Message removed from ${ labelName }.": [
         "${ labelName } 標籤已移除。"
+      ],
+      "Message updated": [
+        "訊息已更新"
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "由 ${ sendersList } 發送的信息將會被標示為 ${ labelsList }"
@@ -13175,12 +13204,6 @@
       "Create contact": [
         "創建聯絡人"
       ],
-      "Create folder \"${ search }\"": [
-        "創建資料夾「${ search }」"
-      ],
-      "Create label \"${ search }\"": [
-        "創建標籤「${ search }」"
-      ],
       "Create new group": [
         "創建新群組"
       ],
@@ -13409,6 +13432,9 @@
       "Label as": [
         "套用標籤"
       ],
+      "Label message as": [
+        "將郵件加上標籤"
+      ],
       "Label options": [
         "標籤選項"
       ],
@@ -13487,6 +13513,12 @@
       "Move all messages to trash": [
         "把所有郵件移至垃圾桶"
       ],
+      "Move message to": [
+        "移動郵件至"
+      ],
+      "Move messages to": [
+        "移動郵件至"
+      ],
       "Move to": [
         "移至"
       ],
@@ -13525,6 +13557,9 @@
       ],
       "Newsletters view": [
         "電子報檢視"
+      ],
+      "Next": [
+        "下一頁"
       ],
       "Next conversation": [
         "下一則往來對話"
@@ -13565,6 +13600,9 @@
       "Open actions dropdown": [
         "展開操作下拉選單"
       ],
+      "Open pagination": [
+        "開啟分頁"
+      ],
       "Organization setup": [
         "組織機構設定"
       ],
@@ -13591,6 +13629,9 @@
       ],
       "Preview": [
         "預覽"
+      ],
+      "Previous": [
+        "上一頁"
       ],
       "Previous conversation": [
         "上一則往來對話"
@@ -14056,9 +14097,6 @@
       ],
       "${ n } wallet": [
         "${ n } 錢包"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "更安全的方法持有Bitcoin"
       ],
       "Bitcoin via Email": [
         "透過電子郵件的比特幣"

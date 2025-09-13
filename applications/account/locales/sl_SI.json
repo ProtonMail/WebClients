@@ -3874,6 +3874,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } v ${ DRIVE_APP_NAME } vam omogočata varno in šifrirano sodelovanje z drugimi."
       ],
+      "A checked box means the feature is disabled.": [
+        "Potrjeno polje pomeni, da je funkcija onemogočena."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Dodajte mape in datoteke v ${ DRIVE_APP_NAME } ter povabite člane ekipe, da si jih ogledajo ali jih uredijo."
       ],
@@ -4708,12 +4711,6 @@
         "${ n } dni",
         "${ n } dnevi"
       ],
-      "${ n } day left": [
-        "Še ${ n } dan",
-        "Še ${ n } dneva",
-        "Še ${ n } dni",
-        "Še ${ n } dni"
-      ],
       "Access granted": [
         "Dostop odobren"
       ],
@@ -4969,6 +4966,9 @@
       ],
       "Invalid Sieve code": [
         "Neveljavna Sieve koda"
+      ],
+      "Invalid URL": [
+        "Neveljaven URL"
       ],
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
@@ -5726,9 +5726,6 @@
       ],
       "customer support": [
         "podpora strankam"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Družinski paket trenutno ne omogoča uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Če sprejmete povabilo, vas bomo preklopili iz vašega trenutnega paketa in vašemu računu pripisali morebitno preostalo stanje."
@@ -8217,9 +8214,6 @@
       "inactive": [
         "neaktivno"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Vključno z ${ formattedTaxRate } % ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Povečajte varnost svojega računa s potrditvijo svojega e-poštnega naslova."
       ],
@@ -8657,9 +8651,6 @@
       ],
       "Please use another browser or download the file.": [
         "Prosimo, uporabite drug brskalnik ali prenesite datoteko."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Preverite plačilo na novem zavihku, ki je bil odprt."
       ],
       "Please wait till your changes are synced with the server.": [
         "Počakajte, spremembe se sinhronizirajo s strežnikom."
@@ -9348,9 +9339,6 @@
       "Vault updated": [
         "Trezor posodobljen"
       ],
-      "Verification can take a few minutes.": [
-        "Preverjanje lahko traja nekaj minut."
-      ],
       "Verification link expired": [
         "Povezava za preverjanje je potekla."
       ],
@@ -9545,9 +9533,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Odprli boste svoj privzeti brskalnik in obiskali:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Trenutno ste prijavljeni kot ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Trenutno uporabljate ${ ipCount } od vašega ${ ipAddresses } razpoložljivega namenskega strežnika.",
@@ -10468,8 +10453,20 @@
       "Auto-unsubscribe": [
         "Samodejno odjavite"
       ],
+      "Autofill": [
+        "Samodejno izpolnjevanje"
+      ],
+      "Autofill 2FA": [
+        "Samodejno izpolnjevanje 2FA"
+      ],
       "Automatically save contacts": [
         "Samodejno shrani stike"
+      ],
+      "Autosave": [
+        "Samodejno shranjevanje"
+      ],
+      "Autosuggest": [
+        "Samodejni predlog"
       ],
       "Awarded": [
         "Podeljeno."
@@ -10701,6 +10698,9 @@
       ],
       "Domain name": [
         "Ime domene"
+      ],
+      "Domains": [
+        "Domene"
       ],
       "Don't ask again": [
         "Ne sprašuj več"
@@ -11065,6 +11065,9 @@
       "Other amount": [
         "Druga vrednost"
       ],
+      "Passkeys": [
+        "Identifikacijski ključi"
+      ],
       "Password": [
         "Geslo"
       ],
@@ -11355,9 +11358,6 @@
       ],
       "Value": [
         "Vrednost"
-      ],
-      "VAT": [
-        "DDV"
       ],
       "Verification code": [
         "Koda za preverjanje"
@@ -13558,9 +13558,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Dvojno preverjanje pristnosti ni več zahtevano."
-      ],
-      "Video conferencing settings have been updated": [
-        "Nastavitve videokonferenc so bile posodobljene"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -16135,9 +16132,6 @@
       ],
       "Free": [
         "Brezplačno"
-      ],
-      "Free for 14 days": [
-        "Preizkusi brezplačno za 14 dni"
       ],
       "Highest VPN speed": [
         "Najhitrejši VPN"
@@ -19344,9 +19338,6 @@
     "Tooltip": {
       "Account is disconnected": [
         "Povezava z računom je prekinjena"
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Omogoča nemoteno dodajanje povezav za videokonference v vaša povabila v koledar."
       ],
       "Any protection applied to suspicious activity": [
         "Katera koli zaščita, ki je uporabljena za sumljive aktivnosti"

@@ -26,7 +26,7 @@ import {
     isUsingRandomPassword,
     usePasswordGenerator,
 } from '@proton/pass/hooks/usePasswordGenerator';
-import { type Maybe } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
 

@@ -13,7 +13,7 @@ import type { DocumentAction } from '@proton/drive-store'
 import { PopoverPill } from './PopoverPill'
 import { useDocsContext } from '../../context'
 import { HeaderPublicOptions } from '../../public/HeaderPublicOptions'
-import { type EditorControllerInterface } from '@proton/docs-core'
+import type { EditorControllerInterface } from '@proton/docs-core'
 import type {
   AuthenticatedDocControllerInterface,
   DocumentState,

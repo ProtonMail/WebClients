@@ -165,6 +165,9 @@
       "Claim this address": [
         "Gjør krav på denne adressen"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gjør krav på din gratis ${ BRAND_NAME }-adresse"
+      ],
       "Clear": [
         "Tøm"
       ],
@@ -1106,6 +1109,9 @@
       "Upload file": [
         "Last opp fil"
       ],
+      "Upload File": [
+        "Last opp fil"
+      ],
       "Upload files": [
         "Last opp filer"
       ],
@@ -1403,6 +1409,32 @@
         "Ikke støttet hendelse"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke legge til egendefinerte domener i prøveperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nådd prøveperiodegrensen."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Avbryt abonnement"
@@ -1641,6 +1673,9 @@
       "Manual setup problem": [
         "Problem med manuell installasjon"
       ],
+      "Meet problem": [
+        "Problem med Meet"
+      ],
       "Other": [
         "Annet"
       ],
@@ -1787,6 +1822,52 @@
       ],
       "Expand": [
         "Utvid"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "Basic chat history": [
+        "Grunnleggende chatlogg"
+      ],
+      "Full chat history with search": [
+        "Full chatlogg med søk"
+      ],
+      "Large file upload support": [
+        "Støtte for opplasting av store filer"
+      ],
+      "Limited daily chats": [
+        "Begrenset antall daglige chatter"
+      ],
+      "Limited favorites": [
+        "Begrenset antall favoritter"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited favorites for quick access": [
+        "Ubegrenset antall favoritter for rask tilgang"
+      ],
+      "Upload and query multiple large files": [
+        "Last opp og vis flere store filer"
+      ],
+      "Upload and query small files": [
+        "Last opp og vis små filer"
+      ],
+      "Web search access": [
+        "Tilgang til nettsøk"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } er en personvernfokusert KI som hjelper deg å få mer gjort samtidig som dataene dine holdes sikre. Lås opp dens fulle potensial og nyt tidlig tilgang til nye funksjoner når de introduseres."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Høyhastighetschatter og avanserte KI-funksjoner."
       ]
     },
     "color": {
@@ -3702,9 +3783,6 @@
       "We were not able to load some of your shared items": [
         "Noen av dine delte elementer kunne ikke lastes inn"
       ],
-      "We were not able to load some of your shared items details": [
-        "Vi kunne ikke laste inn detaljer for noen av dine delte elementer"
-      ],
       "We were not able to load some of your shared items info": [
         "Vi kunne ikke laste inn informasjon om enkelte av dine delte elementer"
       ],
@@ -4021,8 +4099,8 @@
       "customer support": [
         "kundestøtte"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
@@ -4231,14 +4309,23 @@
       "Create new shared album": [
         "Opprett nytt delt album"
       ],
+      "Domain": [
+        "Domene"
+      ],
       "Drawer": [
         "Sidepanel"
+      ],
+      "Password ends with": [
+        "Passordet slutter med"
       ],
       "Rename album": [
         "Gi album nytt navn"
       ],
       "Security Center": [
         "Sikkerhetssenter"
+      ],
+      "Username": [
+        "Brukernavn"
       ]
     },
     "Heading": {
@@ -5398,9 +5485,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I neste trinn, vil du kunne sende inn et innskudd ved å bruke en Bitcoin-adresse."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inkludert ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indekserer elementer ${ esProgress } av ${ totalProgressToShow }"
       ],
@@ -6399,8 +6483,8 @@
       "You are about to open your default browser and visit:": [
         "Du er i ferd med å åpne standardnettleseren din og besøke:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du er for øyeblikket pålogget som ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Du er for øyeblikket pålogget som ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruker mer lagringsplass enn det som er inkludert i en ${ downgradedPlanName }-plan. Slett eller fjern data for å nedgradere."
@@ -7272,9 +7356,6 @@
       ],
       "Username": [
         "Brukernavn"
-      ],
-      "VAT": [
-        "MVA"
       ],
       "Verification code": [
         "Verifiseringskode"
@@ -9594,11 +9675,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
       "Got it": [
         "Skjønner"
       ],
       "I'm purchasing as a business": [
         "Jeg kjøper som en bedrift."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% avgifter: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -9614,6 +9707,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
+      ],
+      "Taxes": [
+        "Avgifter"
       ],
       "terms & conditions": [
         "vilkår og betingelser"
@@ -9645,6 +9741,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "VAT": [
+        "MVA"
       ],
       "VAT number": [
         "MVA-nummer"
@@ -11907,6 +12006,9 @@
       "Network error": [
         "Nettverksfeil"
       ],
+      "Next": [
+        "Neste"
+      ],
       "Night theme": [
         "Natt-tema"
       ],
@@ -11967,6 +12069,9 @@
       "Open actions dropdown": [
         "Åpne rullegardinmeny for handlinger"
       ],
+      "Open pagination": [
+        "Åpne sidenummerering"
+      ],
       "Org setup": [
         "Organisasjonskonfigurasjon"
       ],
@@ -12008,6 +12113,9 @@
       ],
       "Preview": [
         "Forhåndsvis"
+      ],
+      "Previous": [
+        "Forrige"
       ],
       "Private browsing vs VPN": [
         "Privat surfing kontra VPN"
@@ -12551,9 +12659,6 @@
       "${ n } wallet": [
         "${ n } lommebok",
         "${ n } lommebøker"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "En tryggere måte å oppbevare bitcoinene dine på"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"

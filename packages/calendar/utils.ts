@@ -1,5 +1,4 @@
-import { calendarUrlQueryParams } from './constants';
-import { calendarUrlQueryParamsActions } from './constants';
+import { calendarUrlQueryParams, calendarUrlQueryParamsActions } from './constants';
 
 export const getQueryParamsStatus = (search: string) => {
     const searchParams = new URLSearchParams(search);

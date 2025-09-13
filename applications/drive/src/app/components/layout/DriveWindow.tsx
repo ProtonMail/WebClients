@@ -21,15 +21,17 @@ import { Product } from '@proton/shared/lib/ProductEnum';
 import { APPS } from '@proton/shared/lib/constants';
 import { isAppInView } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
+import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { DriveSidebar } from '../../sections/sidebar/DriveSidebar';
 import { useIsActiveLinkReadOnly } from '../../store/_views/utils';
 import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
 import DriveQuickSettings from '../drawer/DriveQuickSettings';
 import { DriveHeaderPrivate } from './DriveHeader';
 import { getDriveDrawerPermissions } from './drawerPermissions';
-import DriveSidebar from './sidebar/DriveSidebar';
+import { DriveSidebarDeprecated } from './sidebar/DriveSidebar/DriveSidebar';
 
 interface Props {
     children?: JSX.Element | JSX.Element[];
@@ -43,6 +45,7 @@ const DriveWindow = ({ children }: Props) => {
     const { isReadOnly } = useIsActiveLinkReadOnly();
     useOpenDrawerOnLoad();
     const { appInView, showDrawerSidebar } = useDrawer();
+    const shouldUseSidebarSDK = useFlag('DriveWebSDKSidebar');
 
     const [allowedProducts, loadingAllowedProducts] = useAllowedProducts();
 
@@ -83,8 +86,14 @@ const DriveWindow = ({ children }: Props) => {
 
     const isNewUploadDisabled = location.pathname === '/devices' || isReadOnly;
 
-    const sidebar = (
+    const sidebar = shouldUseSidebarSDK ? (
         <DriveSidebar
+            isNewUploadDisabled={isNewUploadDisabled || false}
+            isHeaderExpanded={expanded}
+            toggleHeaderExpanded={toggleExpanded}
+        />
+    ) : (
+        <DriveSidebarDeprecated
             isNewUploadDisabled={isNewUploadDisabled || false}
             isHeaderExpanded={expanded}
             toggleHeaderExpanded={toggleExpanded}

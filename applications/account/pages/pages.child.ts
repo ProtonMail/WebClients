@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { type LocaleData, addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
 
-import { type Parameters } from '../src/pages/interface';
+import type { Parameters } from '../src/pages/interface';
 import { getLangAttribute, getLocaleMap } from '../src/static/localeMapping';
 import type { HrefLang, LocalizedPage } from './interface';
 

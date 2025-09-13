@@ -32,7 +32,6 @@ it('should render', () => {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: {} as ChargebeeIframeHandles,
-        forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
     };
 
@@ -67,7 +66,6 @@ it('should fetch payment token', async () => {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
     };
 
@@ -131,7 +129,6 @@ it('should not request payment token if onBeforeSepaPayment returns false', asyn
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
     };
 
@@ -188,7 +185,6 @@ it('should verify payment token', async () => {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn().mockImplementation((data) => {
             return {
                 PaymentToken: data.token.PaymentToken,
@@ -252,7 +248,6 @@ it('should not verify token if amount is 0', async () => {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
     };
 
@@ -310,7 +305,6 @@ it('should reset token if verification fails', async () => {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
         // rejects the promise
         verifyPayment: jest.fn().mockImplementation(() => {
             return Promise.reject(new Error('Verification failed'));
@@ -361,7 +355,6 @@ it('automatically sets customer name type to company if plan is B2B', () => {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
     };
 
@@ -401,7 +394,6 @@ it('should throw an error when email is not provided', async () => {
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
     };
 
@@ -464,7 +456,6 @@ it('should report the errors reported by the validator - B2B plan', async () => 
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
     };
 
@@ -503,7 +494,6 @@ it('should report the errors reported by the validator - B2C plan', async () => 
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
     };
 
@@ -542,7 +532,6 @@ it('should report the errors reported by the validator - no address provided', a
         api: apiMock,
         events: {} as ChargebeeIframeEvents,
         handles: getMockedIframeHandles(),
-        forceEnableChargebee: jest.fn(),
         verifyPayment: jest.fn(),
     };
 

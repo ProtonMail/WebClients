@@ -153,6 +153,9 @@
       "Claim this address": [
         "Nárokovat tuto adresu"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Získejte vaší bezplatnou adresu ${ BRAND_NAME }"
+      ],
       "Close": [
         "Zavřít"
       ],
@@ -1369,6 +1372,61 @@
         "Událost není podporována"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců, počínaje ${ formattedDate }. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude vám nic účtováno."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Kliknutím na \"Vyzkoušet\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Během zkušební doby můžete mít až 10 uživatelů."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "zdarma na ${ TRIAL_DURATION_DAYS } dnů"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Vyzkoušejte ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Vyzkoušejte to zdarma na ${ TRIAL_DURATION_DAYS } dnů"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Když zrušíte bezplatnou zkušební verzi, nebude převedena na placené předplatné, ale výhody tarifu můžete využívat až do konce zkušební doby. Poté budete převedeni na tarif ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_LUMO_SEATS } licencí ${ LUMO_SHORT_APP_NAME } během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_SCRIBE_SEATS } licencí Scribe během zkušební doby."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_USERS } uživatelů během zkušební doby."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Ve zkušební verzi nelze přidávat vlastní domény."
+      ],
+      "You have reached the trial limit.": [
+        "Dosáhli jste limitu zkušební verze."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Částka splatná po zkušebním období"
+      ],
+      "Amount due now": [
+        "Částka splatná nyní"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Zrušit předplatné"
@@ -1737,6 +1795,9 @@
       "Manual setup problem": [
         "Problém s ručním nastavením"
       ],
+      "Meet problem": [
+        "Problém s Meet"
+      ],
       "Other": [
         "Ostatní"
       ],
@@ -1887,6 +1948,52 @@
       ],
       "Expand": [
         "Rozbalit"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Přístup k pokročilým modelům AI"
+      ],
+      "Basic chat history": [
+        "Základní historie konverzací"
+      ],
+      "Full chat history with search": [
+        "Úplná historie konverzací s vyhledáním"
+      ],
+      "Large file upload support": [
+        "Podpora nahrávání velkých souborů"
+      ],
+      "Limited daily chats": [
+        "Omezený denní limit konverzací"
+      ],
+      "Limited favorites": [
+        "Omezený počet oblíbených"
+      ],
+      "Unlimited daily chats": [
+        "Neomezený denní limit konverzací"
+      ],
+      "Unlimited favorites for quick access": [
+        "Neomezený počet oblíbených pro rychlý přístup"
+      ],
+      "Upload and query multiple large files": [
+        "Nahrávání a dotazování více velkých souborů"
+      ],
+      "Upload and query small files": [
+        "Nahrávání a dotazování malých souborů"
+      ],
+      "Web search access": [
+        "Přístup k vyhledávání na webu"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } je umělá inteligence s prioritou ochrany soukromí, která vám pomáhá zvládnout více a zároveň chrání vaše data. Využijte její plný potenciál a získejte přístup k novým funkcím ihned po jejich představení."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Přidat ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Velmi rychlé konverzace a pokročilé funkce AI."
       ]
     },
     "color": {
@@ -4303,8 +4410,8 @@
       "customer support": [
         "zákaznická podpora"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Rodinné tarify v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Tarify Family v současné době nepodporují externí účty. Před připojením si vytvořte adresu ${ BRAND_NAME }. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Pokud pozvánku přijmete, převedeme Vás ze stávajícího tarifu a na váš účet připíšeme zbývající částku."
@@ -5729,7 +5836,7 @@
         "Přiděleno"
       ],
       "Allow logging of location and connection details": [
-        "Povolit ligování polohy a detailů připojení"
+        "Povolit logování polohy a detailů připojení"
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožňuje uživatelům připojit se k bezpečným sdíleným serverům ze sekce **Země** v aplikaci ${ VPN_APP_NAME }."
@@ -6328,9 +6435,6 @@
       "Include device, location, and IP details": [
         "Zahrnout detaily zařízení, polohu a IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Včetně ${ formattedTaxRate } % ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Zvyšte zabezpečení svého účtu ověřením vaší e-mailové adresy."
       ],
@@ -6742,9 +6846,6 @@
       "Please use another browser or download the file.": [
         "Použijte jiný prohlížeč nebo si soubor stáhněte."
       ],
-      "Please verify payment at the new tab which was opened.": [
-        "Ověřte prosím platbu v nové záložce, která je již otevřena."
-      ],
       "Please wait till your changes are synced with the server.": [
         "Počkejte prosím, dokud se vaše změny nesynchronizují se serverem."
       ],
@@ -6915,6 +7016,9 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Přihlaste se do ${ MAIL_APP_NAME } pro aktivaci adresy"
+      ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Přihlašování bezpečnostním klíčem zatím není podporováno ve všech aplikacích. Bez TOTP se přihlášení do některých aplikací nemusí podařit."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
@@ -7291,9 +7395,6 @@
       "Vault updated": [
         "Trezor aktualizován"
       ],
-      "Verification can take a few minutes.": [
-        "Ověřování může trvat několik minut."
-      ],
       "Verification may take a few minutes.": [
         "Ověřování může trvat několik minut."
       ],
@@ -7450,8 +7551,8 @@
       "You already have a free account": [
         "Již máte bezplatný účet"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Aktuálně jste přihlášeni jako ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "V současné době využíváte ${ ipCount } z vašeho ${ ipAddresses } dostupného dedikovaného serveru.",
@@ -7848,7 +7949,7 @@
         "Finanční příspěvky"
       ],
       "Manual": [
-        "Manuálně"
+        "Ruční"
       ],
       "Modification": [
         "Změna"
@@ -8548,11 +8649,11 @@
       "Value": [
         "Hodnota"
       ],
-      "VAT": [
-        "DPH"
-      ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonference pomocí ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Videokonference s aplikací Zoom"
@@ -10248,6 +10349,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Nastavení videokonference ${ MEET_APP_NAME } byla aktualizována"
+      ],
       "${ reason } has been disabled": [
         "${ reason } byl deaktivován"
       ],
@@ -10262,6 +10366,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Stažené obnovovací kódy 2FA"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Nepodařilo se aktualizovat nastavení videokonference ${ MEET_APP_NAME }"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Nepodařilo se aktualizovat nastavení videokonference Zoom"
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -10299,8 +10409,8 @@
       "Two-factor authentication is not required anymore": [
         "Dvoufázové ověření již není vyžadováno"
       ],
-      "Video conferencing settings have been updated": [
-        "Bylo aktualizováno nastavení videokonferencí"
+      "Zoom video conferencing settings have been updated": [
+        "Nastavení videokonference Zoom byla aktualizována"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10993,11 +11103,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Bez ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Bez ${ taxRate }% daně: ${ taxAmount }"
+      ],
       "Got it": [
         "Rozumím"
       ],
       "I'm purchasing as a business": [
         "Kupuji jako firma"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Včetně ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Včetně ${ taxRate }% daně: ${ taxAmount }"
       ],
       "MM/YY": [
         "00/00"
@@ -11016,6 +11138,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
+      ],
+      "Taxes": [
+        "Daně"
       ],
       "terms & conditions": [
         "smluvních podmínek užívání"
@@ -11058,6 +11183,9 @@
       ],
       "Timeout exceeded": [
         "Byl překročen časový limit"
+      ],
+      "VAT": [
+        "DPH"
       ],
       "VAT number": [
         "DIČ"
@@ -14803,8 +14931,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správci mohou spravovat uživatelské účty a udělovat práva správce ostatním uživatelům. Tarif organizace může upravovat pouze hlavní správce."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Umožňuje snadno přidávat odkazy na videokonference do vašich pozvánek kalendáře."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Umožňuje snadno přidávat odkazy na videokonference ${ MEET_APP_NAME } do vašich pozvánek kalendáře."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Umožňuje snadno přidávat odkazy na videokonference Zoom do vašich pozvánek kalendáře."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
@@ -14878,8 +15009,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Adresa byla odpojena. Odesílání zpráv je pozastaveno. Znovu se připojte, abyste tuto adresu znovu aktivovali."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresa byla odpojena. Odesílání a přijímání zpráv je pozastaveno. Znovu se připojte, abyste tuto adresu znovu povolili."
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."
@@ -15486,9 +15617,6 @@
         "${ n } peněženky",
         "${ n } peněženek",
         "${ n } peněženek"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bezpečnější způsob jak vlastnit Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin přes e-mail"

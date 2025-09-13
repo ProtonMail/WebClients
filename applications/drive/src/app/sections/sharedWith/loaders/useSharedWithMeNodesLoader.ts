@@ -8,8 +8,7 @@ import { splitNodeUid, useDrive } from '@proton/drive/index';
 
 import useVolumesState from '../../../store/_volumes/useVolumesState';
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
-import { handleSdkError, useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
-import { getIsAnonymousUser } from '../../../utils/sdk/getIsAnonymousUser';
+import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
 import { ItemType, useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
@@ -43,9 +42,8 @@ export const useSharedWithMeNodesLoader = () => {
                     try {
                         const { node } = getNodeEntity(sharedWithMeMaybeNode);
                         const signatureResult = getSignatureIssues(sharedWithMeMaybeNode);
-                        const isAnonymousUser = getIsAnonymousUser(sharedWithMeMaybeNode);
                         if (!node.deprecatedShareId) {
-                            handleSdkError(
+                            handleError(
                                 new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
                                     tags: { component: 'drive-sdk' },
                                     extra: { uid: node.uid },
@@ -55,7 +53,7 @@ export const useSharedWithMeNodesLoader = () => {
                             continue;
                         }
                         if (!node.membership) {
-                            handleSdkError(
+                            handleError(
                                 new EnrichedError('Shared with me node have missing membership', {
                                     tags: { component: 'drive-sdk' },
                                     extra: {
@@ -68,7 +66,7 @@ export const useSharedWithMeNodesLoader = () => {
                             );
                             continue;
                         }
-                        const { nodeId, volumeId } = splitNodeUid(node.uid);
+                        const { volumeId } = splitNodeUid(node.uid);
 
                         // TODO: Remove that when we will fully migrate to upload using sdk
                         // Basically for upload we need to have the volume inside our volume state
@@ -95,12 +93,8 @@ export const useSharedWithMeNodesLoader = () => {
                                         ? node.membership.sharedBy.value
                                         : node.membership.sharedBy.error.claimedAuthor) || '',
                             },
-                            haveSignatureIssues: !isAnonymousUser && !signatureResult.ok,
-                            legacy: {
-                                linkId: nodeId,
-                                shareId: node.deprecatedShareId,
-                                volumeId: volumeId,
-                            },
+                            haveSignatureIssues: !signatureResult.ok,
+                            shareId: node.deprecatedShareId,
                         });
                     } catch (e) {
                         handleError(e, {
@@ -123,7 +117,7 @@ export const useSharedWithMeNodesLoader = () => {
 
                 cleanupStaleItems(ItemType.DIRECT_SHARE, loadedUids);
             } catch (e) {
-                handleError(e, { fallbackMessage: c('Error').t`We were not able to load some of your shared items` });
+                handleError(e, { fallbackMessage: c('Error').t`We were not able to load some items shared with you` });
             } finally {
                 setLoadingNodes(false);
             }

@@ -11,6 +11,7 @@ export type SelectItemsOptions = {
     sort?: MaybeNull<ItemSortFilter>;
     trashed?: boolean;
     type?: MaybeNull<ItemType>;
+    visible?: boolean;
 };
 
 export type SelectItemsByDomainOptions = {
@@ -20,6 +21,7 @@ export type SelectItemsByDomainOptions = {
     shareIds?: string[];
     sortOn?: 'priority' | 'lastUseTime';
     strict?: boolean;
+    visible?: boolean;
 };
 
 export type GetLoginCandidatesOptions = { url?: string; shareIds?: string[]; strict?: boolean };

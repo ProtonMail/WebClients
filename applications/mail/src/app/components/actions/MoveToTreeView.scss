@@ -1,0 +1,16 @@
+@import '~@proton/styles/scss/lib';
+
+.move-tree-view {
+	[data-level='1'] {
+		padding-inline-start: 1em;
+	}
+
+	[data-level='2'] {
+		padding-inline-start: 2em;
+	}
+
+	@include media('>small') {
+		max-block-size: 13.5em;
+		min-block-size: 10em;
+	}
+}

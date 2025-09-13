@@ -19,7 +19,6 @@ import {
     SUBSCRIPTION_STEPS,
     VpnLogo,
 } from '@proton/components';
-import PaymentSwitcher from '@proton/components/containers/payments/PaymentSwitcher';
 import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
@@ -73,7 +72,7 @@ interface Props {
     childOverride?: ReactNode;
 }
 
-const plusPlans = [PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE, PLANS.WALLET, PLANS.LUMO];
+const plusPlans = [PLANS.VPN2024, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS, PLANS.VPN_PASS_BUNDLE, PLANS.LUMO];
 
 export const SubscribeAccountHeader = ({
     title,
@@ -363,7 +362,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
 
                                     const offerUnavailableError = {
                                         title: c('bf2023: Title').t`Offer unavailable`,
-                                        message: c('bf2023: info')
+                                        message: c('Payments')
                                             .t`Sorry, this offer is not available with your current plan.`,
                                         error: '',
                                     };
@@ -475,11 +474,7 @@ const SubscribeAccount = ({ app, redirect, searchParams, loader, layout, childOv
 };
 
 const SubscribeAccountWithProviders = (props: Props) => {
-    return (
-        <PaymentSwitcher>
-            <SubscribeAccount {...props} />
-        </PaymentSwitcher>
-    );
+    return <SubscribeAccount {...props} />;
 };
 
 export default SubscribeAccountWithProviders;

@@ -310,9 +310,6 @@
       "Copy alias “${ name }”": [
         "„${ name }” e-mail álnév másolása"
       ],
-      "Copy email address": [
-        "Email cím másolása"
-      ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
@@ -784,9 +781,6 @@
       "Make it friendly": [
         "Legyen barátságos"
       ],
-      "Manage addresses": [
-        "Címek kezelése"
-      ],
       "Manage advanced account protections": [
         "A speciális fiókvédelmek kezelése"
       ],
@@ -1146,6 +1140,9 @@
       ],
       "Resume downloading": [
         "Letöltés folytatása"
+      ],
+      "Retry": [
+        "Újra"
       ],
       "Revert to original display": [
         "Visszatérés az eredeti megjelenéshez"
@@ -5152,9 +5149,6 @@
       "customer support": [
         "ügyfélszolgálat"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "A családi csomagok jelenleg nem támogatják a külső fiókokat. Hozzon létre egy ${ BRAND_NAME } címet a csatlakozás előtt. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Ha elfogadja a meghívást, a csomagja átállításra kerül és kreditként jóváírjuk a fennmaradó egyenleget."
       ],
@@ -7069,9 +7063,6 @@
       "Included for free with your plan": [
         "Az ingyenes csomag is tartalmazza"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName }-t tartalmaz: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Örökölve a tartalmazó mappáról"
       ],
@@ -8139,7 +8130,7 @@
         "Eltávolítottuk a nyomkövető információkat a következő hivatkozásokról, annak megakadályozására, hogy hirdetők és mások az online tevékenységét nyomon követhessék."
       ],
       "We use 3-D Secure to protect your payments": [
-        "Fizetéseidet a 3-D Secure technológia védi"
+        "Fizetéseit a 3-D Secure technológia védi"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A tranzakció befejezéséhez átirányítjuk a PayPalhoz egy új böngészőfülön. Kérjük engedélyezze a felugró ablakokat."
@@ -8209,9 +8200,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Jelenleg több tárhelyet használ mint a ${ downgradedPlanName } csomagban elérhető. Töröljön vagy távolítson el adatokat a csomagváltáshoz."
@@ -8801,12 +8789,6 @@
       "Also archive": [
         "Archiválás is"
       ],
-      "Always label sender's emails": [
-        "A feladó leveleit mindig jelölje címkékkel"
-      ],
-      "Always move sender's emails": [
-        "A feladó leveleit mindig helyezze mappába"
-      ],
       "AND": [
         "ÉS"
       ],
@@ -9125,9 +9107,6 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } áthelyezése"
       ],
-      "Move messages to": [
-        "Üzenetek áthelyezése ide:"
-      ],
       "Move to": [
         "Áthelyezés ide"
       ],
@@ -9338,9 +9317,6 @@
       "Undisclosed Recipients": [
         "Címzettek nem láthatók"
       ],
-      "Unknown": [
-        "Ismeretlen"
-      ],
       "Unsafe or problematic": [
         "Nem biztonságos vagy problémás"
       ],
@@ -9355,9 +9331,6 @@
       ],
       "Username": [
         "Felhasználónév"
-      ],
-      "VAT": [
-        "ÁFA"
       ],
       "Verification code": [
         "Ellenőrző kód"
@@ -11065,7 +11038,7 @@
         "Fizessen évente, és használja ki legjobb ajánlatunkat"
       ],
       "Save": [
-        "Mentés"
+        "Spóroljon"
       ],
       "Save big when you pay annually": [
         "Spóroljon sokat, ha éves fizetést választ"
@@ -13940,12 +13913,6 @@
       "Create contact": [
         "Névjegy létrehozása"
       ],
-      "Create folder \"${ search }\"": [
-        "\"${ search }\" mappa létrehozása"
-      ],
-      "Create label \"${ search }\"": [
-        "\"${ search }\" címke létrehozása"
-      ],
       "Create new group": [
         "Új csoport létrehozása"
       ],
@@ -14318,6 +14285,9 @@
       "Newsletters view": [
         "Hírlevelek nézet"
       ],
+      "Next": [
+        "Következő"
+      ],
       "Next conversation": [
         "Következő beszélgetés"
       ],
@@ -14357,6 +14327,9 @@
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
       ],
+      "Open pagination": [
+        "Lapozó megnyitása"
+      ],
       "Org setup": [
         "Szervezet beállítása"
       ],
@@ -14386,6 +14359,9 @@
       ],
       "Preview": [
         "Előnézet"
+      ],
+      "Previous": [
+        "Előző"
       ],
       "Previous conversation": [
         "Előző beszélgetés"

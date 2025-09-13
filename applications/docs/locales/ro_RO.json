@@ -155,6 +155,9 @@
       "Claim this address": [
         "Revendicați această adresă"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Revendicați adresa gratuită ${ BRAND_NAME }"
+      ],
       "Clear data": [
         "Ștergere date"
       ],
@@ -1141,6 +1144,32 @@
         "Eveniment nesuportat"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nu puteți adăuga domenii personale în perioada de probare."
+      ],
+      "You have reached the trial limit.": [
+        "Ați atins limita perioadei de probare."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Anulare abonament"
@@ -1376,6 +1405,9 @@
       "Manual setup problem": [
         "Problemă setare manuală"
       ],
+      "Meet problem": [
+        "Problemă Meet"
+      ],
       "Other": [
         "Altele"
       ],
@@ -1513,6 +1545,52 @@
       ],
       "Expand": [
         "Extindere"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "Basic chat history": [
+        "Istoric de bază conversații"
+      ],
+      "Full chat history with search": [
+        "Istoric complet al conversațiilor cu căutare"
+      ],
+      "Large file upload support": [
+        "Acceptare încărcare fișiere mari"
+      ],
+      "Limited daily chats": [
+        "Conversații zilnice limitate"
+      ],
+      "Limited favorites": [
+        "Favorite limitate"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favorite nelimitate pentru o accesare rapidă"
+      ],
+      "Upload and query multiple large files": [
+        "Încărcați și interogați mai multe fișiere mari"
+      ],
+      "Upload and query small files": [
+        "Încărcați și interogați fișiere mici"
+      ],
+      "Web search access": [
+        "Acces la căutare pe internet"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } este o aplicație de inteligență artificială axată pe confidențialitate, care vă ajută să realizați mai mult, păstrându-vă în același timp datele în siguranță. Deblocați-i întregul potențial și bucurați-vă de acces timpuriu la noile funcții pe măsură ce sunt introduse."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Conversații rapide și funcții avansate de inteligență artificială."
       ]
     },
     "color": {
@@ -3643,8 +3721,8 @@
       "customer support": [
         "suportul tehnic"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -3850,8 +3928,17 @@
       ]
     },
     "Header": {
+      "Domain": [
+        "Domeniu"
+      ],
       "Drawer": [
         "Panou lateral"
+      ],
+      "Password ends with": [
+        "Parola se termină cu"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ]
     },
     "Hint": {
@@ -4848,9 +4935,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "În pasul următor, veți putea trimite o depunere folosind o adresă de Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
       ],
@@ -5568,8 +5652,8 @@
       "You are about to open your default browser and visit:": [
         "Urmează să deschideți navigatorul web implicit și să vizitați:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "V-ați conectat cu ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "V-ați conectat cu ${ username }."
       ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "În prezent, accesați acest document în modul de doar vizualizare. Contactați proprietarul pentru a solicita acces pentru editare și comentare."
@@ -6314,9 +6398,6 @@
       ],
       "Username": [
         "Nume utilizator"
-      ],
-      "VAT": [
-        "TVA"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -8388,11 +8469,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Am înțeles"
       ],
       "I'm purchasing as a business": [
         "Achiziționez în calitate de companie"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "LL/AA"
@@ -8408,6 +8501,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
+      ],
+      "Taxes": [
+        "Taxe"
       ],
       "terms & conditions": [
         "termeni și condiții"
@@ -8443,6 +8539,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "VAT": [
+        "TVA"
       ],
       "VAT number": [
         "Valoare TVA"
@@ -10306,6 +10405,9 @@
       "Network error": [
         "Eroare de rețea"
       ],
+      "Next": [
+        "Următoare"
+      ],
       "Night theme": [
         "Temă neagră"
       ],
@@ -10323,6 +10425,9 @@
       ],
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
+      ],
+      "Open pagination": [
+        "Deschidere paginare"
       ],
       "Org setup": [
         "Setare organizație"
@@ -10353,6 +10458,9 @@
       ],
       "Photos": [
         "Fotografii"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Private browsing vs VPN": [
         "Navigare privată versus un VPN"
@@ -10765,9 +10873,6 @@
         "Portofele: ${ n }",
         "Portofele: ${ n }",
         "Portofele: ${ n }"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "O metodă mai sigură de a vă păstra monedele Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

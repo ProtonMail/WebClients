@@ -9,7 +9,7 @@ import {
     splitNodeUid,
 } from '@proton/drive';
 
-import { type FileBrowserBaseItem } from '../../components/FileBrowser';
+import type { FileBrowserBaseItem } from '../../components/FileBrowser';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../store';
 import { getNodeEntity } from './getNodeEntity';
 import { dateToLegacyTimestamp, getLegacyModifiedTime, getLegacyTrashedTime } from './legacyTime';
@@ -68,10 +68,9 @@ const getLegacyIsAnonymous = (node: NodeEntity) => {
 // totalStorageSize is the sum of the sizes of all revisions, so it's not the size of the single file
 // Because of this we want to get the file size from the active revision and we use totalStorageSize only as a fallback
 // For proton docs or spreadsheets we get the revision size empty and we will instead read totalStorageSize
-const getLegacySize = (node: NodeEntity) =>
-    node.activeRevision?.claimedSize || node.activeRevision?.storageSize || node.totalStorageSize || 0;
+const getLegacySize = (node: NodeEntity) => node.activeRevision?.storageSize || node.totalStorageSize || 0;
 
-const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<NodeEntity> => {
+export const getRootNode = async (node: NodeEntity, drive: ProtonDriveClient): Promise<NodeEntity> => {
     if (node.parentUid) {
         const parent = await drive.getNode(node.parentUid);
         const { node: parentNode } = getNodeEntity(parent);

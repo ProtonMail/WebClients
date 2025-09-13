@@ -40,7 +40,7 @@ import type { WalletStore } from '@proton/wallet/store';
 import { extraThunkArguments } from '@proton/wallet/store/thunk';
 import { isWasmSupported } from '@proton/wallet/utils/wasm';
 
-import { type bootstrapApp } from './bootstrap';
+import type { bootstrapApp } from './bootstrap';
 import { WalletThemeProvider } from './components/Layout/Theme/WalletThemeProvider';
 import config from './config';
 

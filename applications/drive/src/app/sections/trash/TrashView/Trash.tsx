@@ -1,6 +1,7 @@
 import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { ThumbnailType, useDrive } from '@proton/drive/index';
@@ -19,7 +20,7 @@ import { useUserSettings } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
-import { type LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
+import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { TrashItemContextMenu } from '../menus/TrashItemContextMenu';
 import type { useTrashNodes } from '../useTrashNodes';
@@ -83,7 +84,12 @@ export function Trash({ shareId, trashView }: Props) {
     const { drive } = useDrive();
     const { trashNodes, isLoading, sortParams, setSorting } = trashView;
     const { handleError } = useSdkErrorHandler();
-    const { thumbnails, setThumbnail } = useThumbnailStore();
+    const { thumbnails, setThumbnail } = useThumbnailStore(
+        useShallow((state) => ({
+            thumbnails: state.thumbnails,
+            setThumbnail: state.setThumbnail,
+        }))
+    );
     const { layout } = useUserSettings();
     const selectedItems = getSelectedItemsId(trashNodes, selectionControls!.selectedItemIds);
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
@@ -96,7 +102,9 @@ export function Trash({ shareId, trashView }: Props) {
         try {
             for await (const thumbResult of drive.iterateThumbnails([item.uid], ThumbnailType.Type1)) {
                 if (thumbResult.ok) {
-                    const url = URL.createObjectURL(new Blob([thumbResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' }));
+                    const url = URL.createObjectURL(
+                        new Blob([thumbResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' })
+                    );
                     setThumbnail(item.thumbnailId, { sdUrl: url });
                 } else {
                     setThumbnail(item.thumbnailId, {});

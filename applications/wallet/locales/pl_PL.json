@@ -532,9 +532,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } mies. w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
@@ -2935,9 +2932,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "W następnym kroku wyślesz środki za pomocą adresu Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Zawiera ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Zastosowano z folderu nadrzędnego"
       ],
@@ -3452,9 +3446,6 @@
       ],
       "Thomas": [
         "Jan"
-      ],
-      "VAT": [
-        "podatku VAT"
       ],
       "Verification code": [
         "Kod weryfikacyjny"
@@ -5069,7 +5060,7 @@
         "${ n } miesiąc ZA DARMO",
         "${ n } miesiące ZA DARMO",
         "${ n } miesięcy ZA DARMO",
-        "${ n } miesiąca BEZPŁATNIE"
+        "${ n } miesiąca ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -6964,16 +6955,13 @@
         "${ n } konto na portfel",
         "${ n } konta na portfel",
         "${ n } kont na portfel",
-        "${ n } kont na portfel"
+        "${ n } konta na portfel"
       ],
       "${ n } wallet": [
         "${ n } portfel",
         "${ n } portfele",
         "${ n } portfeli",
         "${ n } portfela"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ],
       "Bitcoin via Email": [
         "Bitcoin na adres e-mail"

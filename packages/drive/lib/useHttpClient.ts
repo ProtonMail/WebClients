@@ -2,8 +2,8 @@ import { useRef } from 'react';
 
 import type {
     ProtonDriveHTTPClient,
-    ProtonDriveHTTPClientBlobOptions,
-    ProtonDriveHTTPClientJsonOptions,
+    ProtonDriveHTTPClientBlobRequest,
+    ProtonDriveHTTPClientJsonRequest,
 } from '@protontech/drive-sdk';
 import { AbortError } from '@protontech/drive-sdk';
 
@@ -18,7 +18,7 @@ import { withTimeout } from './withTimeout';
 export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDriveHTTPClient {
     const api = useApi();
 
-    const fetchJson = async (options: ProtonDriveHTTPClientJsonOptions) => {
+    const fetchJson = async (options: ProtonDriveHTTPClientJsonRequest) => {
         try {
             const result = await api({
                 url: options.url,
@@ -54,7 +54,7 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
     // Both upload and download can avoid using useApi hook, as they don't
     // need to pass credentials. The credentials to storage are passed via
     // headers for each request from the SDK.
-    const fetchBlob = async (options: ProtonDriveHTTPClientBlobOptions) => {
+    const fetchBlob = async (options: ProtonDriveHTTPClientBlobRequest) => {
         options.url = replaceLocalURL(options.url);
         options.headers = new Headers([...defaultHeaders, ...options.headers.entries()]);
 
@@ -91,7 +91,7 @@ export function useHttpClient(defaultHeaders: [string, string][] = []): ProtonDr
     return httpClient.current;
 }
 
-async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobOptions) {
+async function postXmlHttpRequest(options: ProtonDriveHTTPClientBlobRequest) {
     let listener: () => void;
 
     return new Promise<void>((resolve, reject) => {

@@ -23,8 +23,8 @@ export const readZIP = async (file: File): Promise<ImportFileReader> => {
         },
         close: () => {
             try {
-                reader.close();
-                zip.terminateWorkers();
+                void reader.close();
+                void zip.terminateWorkers();
             } catch {}
         },
     };

@@ -4,13 +4,15 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import { Collapsible, CollapsibleContent, CollapsibleHeader, Copy, Icon, IconRow } from '@proton/components';
+import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcVideoCamera } from '@proton/icons';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';
 
-import type { BaseMeetingUrls } from './constants';
+import { ProtonMeetPassword } from '../protonMeetIntegration/ProtonMeetPassword';
+import { EventDetailsRow } from './EventDetailsRow';
+import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from './constants';
 import { getVideoConfCopy, isVideoConfOnlyLink } from './videoConfHelpers';
 
 import './VideoConferencing.scss';
@@ -24,55 +26,11 @@ interface Props {
     overrideJoinButton?: ReactNode;
 }
 
-const EventDetailsRow = ({
-    prefix,
-    suffix,
-    copySuccessText,
-    linkMode,
-}: {
-    prefix: string;
-    suffix: string;
-    copySuccessText: string;
-    linkMode?: boolean;
-}) => {
-    const { createNotification } = useNotifications();
-    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.stopPropagation();
-
-        textToClipboard(suffix);
-        createNotification({ text: copySuccessText });
-    };
-
-    if (linkMode) {
-        return (
-            <div className="flex flex-column items-start mb-2">
-                <p className="m-0">{prefix}</p>
-                <Button
-                    shape="underline"
-                    color="norm"
-                    size="small"
-                    className="p-0 block text-ellipsis max-w-full"
-                    onClick={handleClick}
-                >
-                    {suffix}
-                </Button>
-            </div>
-        );
-    }
-
-    return (
-        <button type="button" className="flex text-ellipsis max-w-full" onClick={handleClick}>
-            <p className="m-0 mr-1">{prefix}</p>
-            <p className="m-0 text-ellipsis color-weak max-w-full" title={suffix}>
-                {suffix}
-            </p>
-        </button>
-    );
-};
-
 export const VideoConferencingWidget = ({ data, location, handleDelete, overrideJoinButton }: Props) => {
     const { createNotification } = useNotifications();
     const [isExpanded, setIsExpanded] = useState(false);
+
+    const { isDrawerApp } = useDrawer();
 
     if (!data.meetingUrl) {
         return null;
@@ -104,7 +62,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                 className="group-hover-opacity-container"
                 onClick={toggleExpanded}
             >
-                <div className={clsx('flex flex-col items-center justify-space-between', !hasOnlyLink && 'mb-2')}>
+                <div className={clsx('flex items-center justify-space-between flex-nowrap', !hasOnlyLink && 'mb-2')}>
                     {overrideJoinButton ? (
                         overrideJoinButton
                     ) : (
@@ -113,7 +71,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                         </ButtonLike>
                     )}
 
-                    <div className="flex gap-2">
+                    <div className={clsx('flex flex-nowrap', isDrawerApp ? 'gap-1' : 'gap-2')}>
                         <Copy
                             value={data.meetingUrl}
                             shape="ghost"
@@ -128,20 +86,21 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                         )}
                     </div>
                 </div>
-                {data.meetingId && (
+                {data.meetingId && data.service === VIDEO_CONF_SERVICES.ZOOM && (
                     <EventDetailsRow
                         prefix={c('Zoom Meeting').t`Meeting ID:`}
                         suffix={data.meetingId}
                         copySuccessText={c('Notification').t`Meeting ID copied to clipboard`}
                     />
                 )}
-                {data.password && (
+                {data.password && data.service === VIDEO_CONF_SERVICES.ZOOM && (
                     <EventDetailsRow
                         prefix={c('Zoom Meeting').t`Passcode:`}
                         suffix={data.password}
                         copySuccessText={c('Notification').t`Passcode copied to clipboard`}
                     />
                 )}
+                {data.service === VIDEO_CONF_SERVICES.PROTON_MEET && <ProtonMeetPassword />}
                 {!hasOnlyLink && (
                     <Collapsible className="mt-2" expandByDefault={isExpanded} externallyControlled>
                         <CollapsibleHeader
@@ -158,6 +117,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                                 <Icon name="chevron-down" className={isExpanded ? 'rotateX-180' : ''} />
                             </button>
                         </CollapsibleHeader>
+
                         <CollapsibleContent onClick={(e) => e.stopPropagation()}>
                             <section className="mt-2">
                                 {data.meetingHost && validateEmailAddress(data.meetingHost) && (

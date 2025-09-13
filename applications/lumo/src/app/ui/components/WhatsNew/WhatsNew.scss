@@ -1,0 +1,38 @@
+.whats-new-section {
+	position: relative;
+	background: linear-gradient(86.85deg, #fda63a 0.01%, #dc5ecc 29.82%, #4893f2 64.92%, #4e31ab 100.01%);
+	padding: 2px;
+	border-radius: 0.75rem !important; /* matches rounded-xl */
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 2px;
+		background: var(--background-norm);
+		border-radius: 10px; /* 0.75rem - 2px = 12px - 2px = 10px */
+		z-index: 0;
+	}
+
+	/* Ensure content is above the pseudo-element */
+	> * {
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.whats-new-modal {
+	.modal-two-header-title {
+		h1 {
+			font-family: Syne, Inter, system-ui, sans-serif !important;
+			color: var(--primary) !important;
+		}
+	}
+
+	h2 {
+		font-family: Syne, Inter, system-ui, sans-serif !important;
+	}
+
+	p {
+		line-height: 2;
+	}
+}

@@ -3554,6 +3554,9 @@
       ]
     },
     "Description": {
+      "A checked box means the feature is disabled.": [
+        "एक चेक्ड बॉक्स का अर्थ है कि यह खासियत अक्षम है।"
+      ],
       "Create a Zoom meeting and add joining details to your event with one click.": [
         "एक क्लिक के साथ ज़ूम मीटिंग बनाएं और अपने कार्यक्रम में जॉइनिंग विवरण जोड़ें।"
       ],
@@ -4523,6 +4526,9 @@
       ],
       "Invalid Sieve code": [
         "अमान्य चलनी कोड"
+      ],
+      "Invalid URL": [
+        "अमान्य यूआरएल"
       ],
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
@@ -7623,9 +7629,6 @@
       "inactive": [
         "निष्क्रिय"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } सहित: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "अपने खाते की सुरक्षा बढ़ा के लिए अपने ईमेल पते की पुष्टि करें।"
       ],
@@ -8135,9 +8138,6 @@
       ],
       "Please use another browser or download the file.": [
         "कृपया किसी अन्य ब्राउज़र का उपयोग करें या फाइल डाउनलोड करें।"
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "कृपया खोले गए नए टैब पर भुगतान सत्यापित करें।"
       ],
       "Please wait till your changes are synced with the server.": [
         "कृपया बदलावो का सर्वर से सिंक होने का इंतज़ार करें।"
@@ -8855,9 +8855,6 @@
       "Vault updated": [
         "तिजोरी अपडेट हुई"
       ],
-      "Verification can take a few minutes.": [
-        "सत्यापन में कुछ मिनट लग सकते हैं।"
-      ],
       "Verification link expired": [
         "सत्यापन लिंक एक्सपायर हुआ"
       ],
@@ -9049,9 +9046,6 @@
       ],
       "You are about to open another browser tab and visit:": [
         "आप एक और ब्राउज़र टैब खोलने वाले हैं और जाएँ:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "आप वर्तमान में ${ user.Name } (${ user.Email }) के रूप में साइन इन हैं।"
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "वर्तमान में ${ ipAddresses } उपलब्ध समर्पित सर्वर में से ${ ipCount } का उपयोग कर रहे हैं।",
@@ -9962,8 +9956,20 @@
       "Auto-unsubscribe": [
         "ऑटो-सदस्यता-हटाना"
       ],
+      "Autofill": [
+        "ऑटोफिल"
+      ],
+      "Autofill 2FA": [
+        "ऑटोफिल 2FA"
+      ],
       "Automatically save contacts": [
         "संपर्कों को स्वचालित रूप से सहेजें"
+      ],
+      "Autosave": [
+        "ऑटोसेव"
+      ],
+      "Autosuggest": [
+        "ऑटोसलाह"
       ],
       "Awarded": [
         "इनाम"
@@ -10192,6 +10198,9 @@
       ],
       "Domain name": [
         "डोमेन नाम"
+      ],
+      "Domains": [
+        "डोमेन"
       ],
       "Don't ask again": [
         "फिर से ना पूछें"
@@ -10556,6 +10565,9 @@
       "Other amount": [
         "दूसरा रकम"
       ],
+      "Passkeys": [
+        "पासकी"
+      ],
       "Password": [
         "पासवर्ड"
       ],
@@ -10835,9 +10847,6 @@
       ],
       "Value": [
         "मान"
-      ],
-      "VAT": [
-        "VAT"
       ],
       "Verification code": [
         "पुष्टि संख्या"
@@ -12727,9 +12736,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "अब टू फैक्टर ऑथेंटिकेशन की आवश्यकता नहीं है"
-      ],
-      "Video conferencing settings have been updated": [
-        "वीडियो कॉन्फ्रेंसिंग सेटिंग्स अपडेट कर दी गई हैं"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -12826,7 +12832,7 @@
         "शायद बाद में"
       ],
       "Save": [
-        "सहेजें"
+        "बचाएँ"
       ],
       "Special offer": [
         "खास ऑफर"
@@ -18033,9 +18039,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "व्यवस्थापक उपयोगकर्ता खातों को प्रबंधित कर सकते हैं और अन्य उपयोगकर्ताओं को व्यवस्थापक अधिकार दे सकते हैं। केवल प्राथमिक व्यवस्थापक संगठन की योजना संपादित कर सकता है।"
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "आपकी कैलेंडर निमंत्रणों में वीडियो कॉन्फ्रेंसिंग लिंक सहजता से जोड़ने की अनुमति देता है।"
       ],
       "Any protection applied to suspicious activity": [
         "संदिग्ध गतिविधि पर लागू कोई भी सुरक्षा"

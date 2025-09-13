@@ -5,7 +5,7 @@ import { type AddressesState, addressThunk } from '@proton/account/addresses';
 import { replaceSelfAddressTokensIfNeeded } from '@proton/account/addresses/replaceAddressToken';
 import type { KtState } from '@proton/account/kt';
 import { getKTActivation, getKTUserContext } from '@proton/account/kt/actions';
-import { type OrganizationKeyState } from '@proton/account/organizationKey';
+import type { OrganizationKeyState } from '@proton/account/organizationKey';
 import { userThunk } from '@proton/account/user';
 import { type UserKeysState, userKeysThunk } from '@proton/account/userKeys';
 import { createKTVerifier } from '@proton/key-transparency/lib';

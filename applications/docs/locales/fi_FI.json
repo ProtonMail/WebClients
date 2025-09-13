@@ -3505,9 +3505,6 @@
       "customer support": [
         "asiakaspalveluun"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Perhetilaukset eivät tällä hetkellä tue ulkoisia tilejä. Luo ${ BRAND_NAME } -osoite ennen liittymistä. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jos hyväksyt kutsun, siirrämme sinut nykyisestä tilauksestasi ja hyvitämme tilillesi jäljellä olevan saldon."
       ],
@@ -4645,9 +4642,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } sisältäen: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
       ],
@@ -5355,9 +5349,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Olet avaamassa oletusselaintasi sivustolle:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Olet kirjautuneena ${ user.Name } (${ user.Email })."
       ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "Tarkastelet tätä dokumenttia tällä hetkellä vain tarkastelu -tilassa. Ota yhteyttä omistajaan ja pyydä muokkaus- ja kommentointioikeuksia."
@@ -6075,9 +6066,6 @@
       "Username": [
         "Käyttäjätunnus"
       ],
-      "VAT": [
-        "ALV"
-      ],
       "Verification code": [
         "Vahvistuskoodi"
       ],
@@ -6384,7 +6372,7 @@
         "AAC-ääni"
       ],
       "AbiWord document": [
-        "AbiWord-dokumentti"
+        "AbiWord-asiakirja"
       ],
       "Adobe Portable Document Format (PDF)": [
         "PDF (Adobe Portable Document Format)"
@@ -6402,7 +6390,7 @@
         "Apple Installer -paketti"
       ],
       "Archive document": [
-        "Arkistodokumentti"
+        "Arkistoasiakirja"
       ],
       "Audio file": [
         "Ääni"
@@ -9749,6 +9737,9 @@
       "Network error": [
         "Verkkovirhe"
       ],
+      "Next": [
+        "Seuraava"
+      ],
       "Night theme": [
         "Yöteema"
       ],
@@ -9766,6 +9757,9 @@
       ],
       "Open actions dropdown": [
         "Avaa toimintovalikko"
+      ],
+      "Open pagination": [
+        "Avaa sivunavigaatio"
       ],
       "Org setup": [
         "Organisaation määritys"
@@ -9796,6 +9790,9 @@
       ],
       "Photos": [
         "Kuvat"
+      ],
+      "Previous": [
+        "Edellinen"
       ],
       "Private browsing vs VPN": [
         "Yksityinen selaus vs VPN"
@@ -10188,9 +10185,6 @@
       "${ n } wallet": [
         "${ n } lompakko",
         "${ n } lompakkoa"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Turvallisempi tapa säilyttää Bitcoineja"
       ],
       "Bitcoin via Email": [
         "Bitcoin sähköpostitse"

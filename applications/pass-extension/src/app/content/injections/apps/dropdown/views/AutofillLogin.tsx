@@ -25,7 +25,7 @@ import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import type { MaybeNull } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
-import { type AutofillLoginResult } from '@proton/pass/types/worker/autofill';
+import type { AutofillLoginResult } from '@proton/pass/types/worker/autofill';
 import { partOf, truthy } from '@proton/pass/utils/fp/predicates';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

@@ -1,24 +1,25 @@
 import { pick } from '@proton/shared/lib/helpers/object';
-import { type Organization } from '@proton/shared/lib/interfaces';
+import type { Organization } from '@proton/shared/lib/interfaces';
 import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP, getLongTestPlans } from '@proton/testing/data';
 
 import { ADDON_NAMES, CYCLE, PLANS } from './constants';
-import { type PlanIDs } from './interface';
+import type { PlanIDs } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
-import { type PlansMap } from './plan/interface';
+import type { PlansMap } from './plan/interface';
 import {
     clearPlanIDs,
     getPlanFromIDs,
     getPricingFromPlanIDs,
     getTotalFromPricing,
     hasPlanIDs,
+    planIDsPositiveDifference,
     setQuantity,
     switchPlan,
 } from './planIDs';
 import { SubscriptionPlatform } from './subscription/constants';
-import { type AggregatedPricing } from './subscription/helpers';
-import { type SubscriptionCheckResponse } from './subscription/interface';
+import type { AggregatedPricing } from './subscription/helpers';
+import type { SubscriptionCheckResponse } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
 
 const MOCK_ORGANIZATION = {} as Organization;
@@ -1844,5 +1845,36 @@ describe('getPlanFromIDs', () => {
 
         const result = getPlanFromIDs(planIDs, {});
         expect(result).toBeUndefined();
+    });
+});
+
+describe('planIDsPositiveDifference', () => {
+    it('should return empty object if plans are undefined', () => {
+        expect(planIDsPositiveDifference(null as any, null as any)).toEqual({});
+        expect(planIDsPositiveDifference(null as any, {})).toEqual({});
+        expect(planIDsPositiveDifference({}, null as any)).toEqual({});
+
+        expect(planIDsPositiveDifference(undefined as any, undefined as any)).toEqual({});
+        expect(planIDsPositiveDifference(undefined as any, {})).toEqual({});
+        expect(planIDsPositiveDifference({}, undefined as any)).toEqual({});
+    });
+
+    it('should return empty object if plans are the same', () => {
+        const planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 };
+        expect(planIDsPositiveDifference(planIDs, planIDs)).toEqual({});
+    });
+
+    it('should return difference if it is positive', () => {
+        const planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 };
+        const newPlanIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 2 };
+        expect(planIDsPositiveDifference(planIDs, newPlanIDs)).toEqual({
+            [ADDON_NAMES.MEMBER_MAIL_PRO]: 1,
+        });
+    });
+
+    it('should NOT return difference if it is negative', () => {
+        const planIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 2 };
+        const newPlanIDs = { [PLANS.MAIL_PRO]: 1, [ADDON_NAMES.MEMBER_MAIL_PRO]: 1 };
+        expect(planIDsPositiveDifference(planIDs, newPlanIDs)).toEqual({});
     });
 });

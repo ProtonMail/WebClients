@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms';
 import { Icon } from '@proton/components';
 
-import { type SignatureIssues } from '../store';
+import type { SignatureIssues } from '../store';
 import { hasValidAnonymousSignature } from './hasValidAnonymousSignature';
 
 interface Props {

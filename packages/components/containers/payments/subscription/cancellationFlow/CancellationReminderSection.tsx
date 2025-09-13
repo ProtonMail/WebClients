@@ -4,7 +4,6 @@ import { addDays, fromUnixTime, isBefore } from 'date-fns';
 import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { Button, ButtonLike } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
@@ -12,7 +11,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { PLANS } from '@proton/payments';
-import { type APP_NAMES } from '@proton/shared/lib/constants';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
@@ -33,7 +32,6 @@ interface Props {
 }
 
 export const CancellationReminderSection = ({ app }: Props) => {
-    const [user] = useUser();
     const [subscription] = useSubscription();
     const { reportCancellationOnSameDay } = useSubscriptionModalTelemetry();
     const [openSubscriptionModal] = useSubscriptionModal();
@@ -49,13 +47,13 @@ export const CancellationReminderSection = ({ app }: Props) => {
     const [redirectModalProps, setRedirectModalOpen, redirectRenderModal] = useModalState();
 
     const [config, setConfig] = useState<ReturnType<typeof getReminderPageConfig> | null>(
-        getReminderPageConfig({ app, subscription, user })
+        getReminderPageConfig({ app, subscription })
     );
 
     const goToSettings = useSettingsLink();
 
     useEffect(() => {
-        const newConfig = getReminderPageConfig({ app, subscription, user });
+        const newConfig = getReminderPageConfig({ app, subscription });
         setConfig(newConfig);
     }, [b2bAccess, b2cAccess, paid]);
 

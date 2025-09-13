@@ -2,7 +2,7 @@ import valid from 'card-validator';
 import creditCardType from 'credit-card-type';
 import { c } from 'ttag';
 
-import { type CreateCardDetailsBackend } from './interface';
+import type { CreateCardDetailsBackend } from './interface';
 import { isSavedCardDetails } from './type-guards';
 
 const formatYear = (year: any) => {

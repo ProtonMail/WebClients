@@ -1287,6 +1287,17 @@
         "Terabytes"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domene"
+      ],
+      "Password ends with": [
+        "Passordet slutter med"
+      ],
+      "Username": [
+        "Brukernavn"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\"-element ble avvist"
@@ -4319,6 +4330,9 @@
       "MX record": [
         "MX-post"
       ],
+      "Next": [
+        "Neste"
+      ],
       "No excluded items": [
         "Ingen ekskluderte elementer"
       ],
@@ -4339,6 +4353,9 @@
       ],
       "No shared secure links": [
         "Ingen delte sikre koblinger"
+      ],
+      "Open pagination": [
+        "Åpne sidenummerering"
       ],
       "Organize vaults": [
         "Organiser hvelv"
@@ -4373,6 +4390,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet.",
         "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet."
+      ],
+      "Previous": [
+        "Forrige"
       ],
       "Random Prefix Generation": [
         "Generering av tilfeldig prefiks"

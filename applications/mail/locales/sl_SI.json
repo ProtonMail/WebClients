@@ -309,9 +309,6 @@
       "Copy addresses": [
         "Kopiraj naslove"
       ],
-      "Copy email address": [
-        "Kopiraj e-poštni naslov"
-      ],
       "Copy email to clipboard": [
         "Kopiraj e-poštni naslov v odložišče"
       ],
@@ -795,9 +792,6 @@
       "Make it friendly": [
         "Prijateljski ton besedila"
       ],
-      "Manage addresses": [
-        "Upravljanje naslovov"
-      ],
       "Manage advanced account protections": [
         "Upravljajte z naprednimi zaščitami računa"
       ],
@@ -1160,6 +1154,9 @@
       ],
       "Resume downloading": [
         "Nadaljuj s prenašanjem"
+      ],
+      "Retry": [
+        "Poskusite znova"
       ],
       "Revert to original display": [
         "Povrni na prvotni prikaz"
@@ -5155,9 +5152,6 @@
       "customer support": [
         "podpora strankam"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Družinski paket trenutno ne omogoča uporabe zunanjih računov. Pred pridružitvijo ustvarite naslov ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Če sprejmete povabilo, vas bomo preklopili iz vašega trenutnega paketa in vašemu računu pripisali morebitno preostalo stanje."
       ],
@@ -7183,9 +7177,6 @@
       "Included for free with your plan": [
         "Vključeno brezplačno v vaš paket"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Vključno z ${ formattedTaxRate } % ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Podedovano od nadrejene mape"
       ],
@@ -8323,9 +8314,6 @@
       "You are about to open your default browser and visit:": [
         "Odprli boste svoj privzeti brskalnik in obiskali:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Trenutno ste prijavljeni kot ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Uporabljate več prostora za shranjevanje, kot je vključenega v paketu ${ downgradedPlanName }. Za spremembo paketa izbrišite ali odstranite podatke."
       ],
@@ -8933,12 +8921,6 @@
       "Also archive": [
         "Tudi arhiv"
       ],
-      "Always label sender's emails": [
-        "Vedno dodaj oznako pošiljateljevim sporočilom"
-      ],
-      "Always move sender's emails": [
-        "Vedno premakni pošiljateljeva sporočila"
-      ],
       "AND": [
         "IN"
       ],
@@ -9263,9 +9245,6 @@
       "Move ${ sidebarElementName }": [
         "Premakni ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Premakni sporočila v"
-      ],
       "Move to": [
         "Premakni v"
       ],
@@ -9485,9 +9464,6 @@
       "Undisclosed Recipients": [
         "nerazkriti prejemniki"
       ],
-      "Unknown": [
-        "Neznano"
-      ],
       "Unsafe or problematic": [
         "Ni varno ali problematično"
       ],
@@ -9499,9 +9475,6 @@
       ],
       "Username": [
         "Uporabniško ime"
-      ],
-      "VAT": [
-        "DDV"
       ],
       "Verification code": [
         "Koda za preverjanje"
@@ -14217,12 +14190,6 @@
       "Create contact": [
         "Ustvari stik"
       ],
-      "Create folder \"${ search }\"": [
-        "Ustvari mapo \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Ustvari oznako \"${ search }\""
-      ],
       "Create new group": [
         "Ustvari novo skupino"
       ],
@@ -14604,6 +14571,9 @@
       "Newsletters view": [
         "Pogled glasil"
       ],
+      "Next": [
+        "Naprej"
+      ],
       "Next conversation": [
         "Naslednji pogovor"
       ],
@@ -14646,6 +14616,9 @@
       "Open actions dropdown": [
         "Spustno okno \"Dejanja\""
       ],
+      "Open pagination": [
+        "Odpri krmarjenje"
+      ],
       "Org setup": [
         "Nastavitev organizacije"
       ],
@@ -14675,6 +14648,9 @@
       ],
       "Preview": [
         "Predogled"
+      ],
+      "Previous": [
+        "Prejšnja stran"
       ],
       "Previous conversation": [
         "Prejšnji pogovor"
@@ -15209,9 +15185,6 @@
         "${ n } denarnici",
         "${ n } denarnice",
         "${ n } denarnic"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Varnejši način shranjevanja Bitcoina"
       ],
       "Bitcoin via Email": [
         "Bitcoin prek e-pošte"

@@ -1,4 +1,8 @@
-import type { EventModelReadView, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import type {
+    EventModelReadView,
+    VIDEO_CONFERENCE_PROVIDER,
+    VcalVeventComponent,
+} from '@proton/shared/lib/interfaces/calendar';
 
 const isVcalEvent = (model: EventModelReadView | VcalVeventComponent): model is VcalVeventComponent => {
     return 'component' in model;
@@ -7,6 +11,9 @@ const isVcalEvent = (model: EventModelReadView | VcalVeventComponent): model is 
 export const getVideoConferencingData = (model: EventModelReadView | VcalVeventComponent) => {
     // The model is a VcalVeventComponent if it has a 'component' property
     if (isVcalEvent(model)) {
+        const provider = model?.['x-pm-conference-id']?.parameters?.['x-pm-provider'];
+        const encryptedTitle = model?.['x-pm-conference-id']?.parameters?.['x-pm-encrypted-title'];
+
         return {
             description: model.description?.value.trim(),
             location: model.location?.value.trim(),
@@ -18,6 +25,8 @@ export const getVideoConferencingData = (model: EventModelReadView | VcalVeventC
             meetingHost:
                 model?.['x-pm-conference-url']?.parameters?.['x-pm-host'] ||
                 model?.['x-pm-conference-url']?.parameters?.host,
+            meetingProvider: provider ? (Number(provider) as VIDEO_CONFERENCE_PROVIDER) : undefined,
+            encryptedTitle: encryptedTitle,
         };
     }
 

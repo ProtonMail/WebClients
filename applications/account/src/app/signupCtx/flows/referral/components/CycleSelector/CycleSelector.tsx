@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { type CycleSelectorProps, getRestrictedCycle } from '@proton/components/containers/payments/CycleSelector';
-import { type CYCLE } from '@proton/payments';
+import type { CYCLE } from '@proton/payments';
 
 import { type ToggleOption, ToggleSelector } from '../ToggleSelector/ToggleSelector';
 

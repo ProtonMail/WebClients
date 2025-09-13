@@ -10,8 +10,8 @@ import {
     DropdownMenuButton,
     DropdownSizeUnit,
     useModalState,
+    usePopperAnchor,
 } from '@proton/components';
-import { usePopperAnchor } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import type { IWasmApiWalletData } from '@proton/wallet';

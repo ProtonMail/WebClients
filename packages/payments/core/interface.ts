@@ -18,9 +18,8 @@ import type {
     ThreeDsChallengePayload,
 } from '@proton/chargebee/lib';
 
-import type { PaymentsVersion } from './api';
-import { type CheckSubscriptionData } from './api';
-import { type BillingAddress, type FullBillingAddress } from './billing-address/billing-address';
+import type { CheckSubscriptionData, PaymentsVersion } from './api';
+import type { BillingAddress, FullBillingAddress } from './billing-address/billing-address';
 import type {
     ADDON_NAMES,
     Autopay,
@@ -351,14 +350,6 @@ export interface PaymentsApi {
     getCachedCheck: (data: CheckSubscriptionData) => EnrichedCheckResponse | undefined;
     getCachedCheckByPlans: (plans: CheckSubscriptionData['Plans']) => EnrichedCheckResponse[];
 }
-
-export type ChargebeeKillSwitchData = {
-    reason: string;
-    data?: any;
-    error?: any;
-};
-export type ChargebeeKillSwitch = (data?: ChargebeeKillSwitchData) => boolean;
-export type ForceEnableChargebee = () => void;
 
 export type RemoveEventListener = () => void;
 

@@ -153,6 +153,9 @@
       "Claim this address": [
         "Uzyskaj ten adres"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Uzyskaj darmowy adres ${ BRAND_NAME }"
+      ],
       "Close": [
         "Zamknij"
       ],
@@ -1358,9 +1361,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co ${ cycle } mies. w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
       ],
@@ -1372,9 +1372,6 @@
       ],
       "on ${ formattedDate }": [
         "dnia ${ formattedDate }"
-      ],
-      "Try it free for 14 days": [
-        "Wypróbuj za darmo przez 14 dni"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Kiedy anulujesz, Twoja bezpłatna wersja próbna nie zostanie przekształcona w płatną subskrypcję, ale nadal możesz korzystać z funkcji planu do końca okresu próbnego. Następnie zostaniesz przeniesiony(-a) do planu ${ BRAND_NAME } Free."
@@ -4345,9 +4342,6 @@
       "customer support": [
         "wsparcie klienta"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Plany rodzinne nie są obsługiwane dla kont zewnętrznych. Przed dołączeniem utwórz adres ${ BRAND_NAME }. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Jeśli zaakceptujesz zaproszenie, zmienimy obecny plan i obciążymy Twoje konto kwotą pozostałego salda."
       ],
@@ -6349,9 +6343,6 @@
       "inactive": [
         "nieaktywna"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Zawiera ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Zwiększ bezpieczeństwo konta, weryfikując adres pomocniczy."
       ],
@@ -6753,9 +6744,6 @@
       ],
       "Please use another browser or download the file.": [
         "Użyj innej przeglądarki lub pobierz plik."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Zweryfikuj płatność w nowej karcie przeglądarki."
       ],
       "Please wait till your changes are synced with the server.": [
         "Poczekaj na synchronizację zmian z serwerem."
@@ -7303,9 +7291,6 @@
       "Vault updated": [
         "Zaktualizowanie sejfu"
       ],
-      "Verification can take a few minutes.": [
-        "Weryfikacja może zająć kilka minut."
-      ],
       "Verification may take a few minutes.": [
         "Weryfikacja może zająć kilka minut."
       ],
@@ -7458,9 +7443,6 @@
       ],
       "You already have a free account": [
         "Posiadasz już darmowe konto"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Zalogowano jako ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Używasz ${ ipCount } z ${ ipAddresses } dostępnego dedykowanego serwera.",
@@ -8556,9 +8538,6 @@
       ],
       "Value": [
         "Wartość"
-      ],
-      "VAT": [
-        "podatku VAT"
       ],
       "Verification code": [
         "Kod weryfikacyjny"
@@ -10277,9 +10256,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Uwierzytelnianie dwustopniowe nie jest wymagane"
-      ],
-      "Video conferencing settings have been updated": [
-        "Ustawienia wideokonferencji zostały zaktualizowane"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10346,7 +10322,7 @@
         "Płać rocznie i uzyskaj najlepszą ofertę"
       ],
       "Save": [
-        "Zapisz"
+        "Oszczędź"
       ],
       "Save big when you pay annually": [
         "Zaoszczędź więcej przy płatności rocznej"
@@ -11377,6 +11353,96 @@
         "Nieznane"
       ]
     },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "WYPRZEDAŻ NA KONIEC LATA"
+      ],
+      "Get the deal": [
+        "Skorzystaj z oferty"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent }%"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } / miesiąc"
+      ],
+      "/month": [
+        "/miesiąc"
+      ],
+      "1 TB data storage": [
+        "1 TB przestrzeni dyskowej na dane"
+      ],
+      "15 GB storage": [
+        "15 GB przestrzeni dyskowej"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB przestrzeni dyskowej na pliki, zdjęcia i dokumenty"
+      ],
+      "3 TB data storage": [
+        "3 TB przestrzeni dyskowej na dane"
+      ],
+      "500 GB storage": [
+        "500 GB przestrzeni dyskowej"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Dostęp do ponad 15 000 serwerów w ponad 120 krajach"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Wszystkie funkcje premium usług Mail, Pass, Drive, VPN i Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Wbudowana aplikacja uwierzytelniająca"
+      ],
+      "Connect 10 devices at once": [
+        "Połącz 10 urządzeń jednocześnie"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Zniżki są naliczane na podstawie standardowych cen miesięcznych. Twoja subskrypcja odnowi się po standardowej stawce rocznej, gdy zakończy się cykl rozliczeniowy."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Ciesz się najszybszą prędkością VPN"
+      ],
+      "Individual accounts for 6 users": [
+        "Indywidualne konta dla 6 użytkowników"
+      ],
+      "Individual accounts for you and a partner": [
+        "Indywidualne konta dla Ciebie i partnera"
+      ],
+      "Online document editor": [
+        "Edytor dokumentów online"
+      ],
+      "Recover previous file versions": [
+        "Odzyskaj poprzednie wersje pliku"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Oszczędź ${ totalSavings } i zachowaj wszystkie obecne funkcje!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Bezpieczne udostępnianie linków, sejfów i elementów"
+      ],
+      "Stronger protection against cyber threats": [
+        "Silniejsza ochrona przed cyberzagrożeniami"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Nieograniczona liczba folderów, etykiet i filtrów"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nieograniczona liczba aliasów hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Możliwość użycia własnej domeny e-mail"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Wyprzedaż na koniec lata"
+      ],
+      "for 12 months": [
+        "na 12 miesięcy"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Anuluj"
@@ -11961,25 +12027,25 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Masz ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
         "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
         "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
         "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła."
+        "Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
         "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła."
+        "Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
         "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła."
       ]
     },
@@ -12065,7 +12131,7 @@
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzinę.",
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny.",
         "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godzin.",
-        "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours."
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało wysłane. Hasło możesz zmienić za ${ hoursRemaining } godziny."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Aby upewnić się, że to Ty próbujesz zresetować hasło, czekamy 72 godziny przed zatwierdzeniem żądań. Hasło możesz zmienić za ${ boldTimeLeft }. ${ viewRequest }"
@@ -12251,7 +12317,7 @@
         "${ n } miesiąc ZA DARMO",
         "${ n } miesiące ZA DARMO",
         "${ n } miesięcy ZA DARMO",
-        "${ n } miesiąca BEZPŁATNIE"
+        "${ n } miesiąca ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -13031,7 +13097,7 @@
         "${ planNumberOfCalendars } kalendarz na użytkownika",
         "${ planNumberOfCalendars } kalendarze na użytkownika",
         "${ planNumberOfCalendars } kalendarzy na użytkownika",
-        "${ planNumberOfCalendars } kalendarzy na użytkownika"
+        "${ planNumberOfCalendars } kalendarza na użytkownika"
       ],
       "${ planNumberOfDomains } custom email domain": [
         "${ planNumberOfDomains } niestandardowa domena",
@@ -14728,9 +14794,6 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorzy mogą zarządzać kontami użytkowników i nadawać uprawnienia administratora innym użytkownikom. Tylko główny administrator może edytować plan organizacji."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Zezwalaj na dodawanie linków do wideokonferencji w zaproszeniach."
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Przełączaj się między motywami na dzień i noc, synchronizując je z systemowymi trybami dziennymi i nocnymi"
       ],
@@ -15384,16 +15447,13 @@
         "${ n } konto na portfel",
         "${ n } konta na portfel",
         "${ n } kont na portfel",
-        "${ n } kont na portfel"
+        "${ n } konta na portfel"
       ],
       "${ n } wallet": [
         "${ n } portfel",
         "${ n } portfele",
         "${ n } portfeli",
         "${ n } portfela"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bezpieczniejszy sposób na przechowywanie Bitcoinów"
       ],
       "Bitcoin via Email": [
         "Bitcoin na adres e-mail"

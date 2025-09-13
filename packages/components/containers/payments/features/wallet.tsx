@@ -9,10 +9,6 @@ export const FREE_WALLETS = 3;
 export const FREE_WALLET_ACCOUNTS = 3;
 export const FREE_WALLET_EMAIL = 1;
 
-export const WALLET_PLUS_WALLETS = 10;
-export const WALLET_PLUS_WALLET_ACCOUNTS = 10;
-export const WALLET_PLUS_WALLET_EMAIL = 10;
-
 export const UNLIMITED_WALLETS = 10;
 export const UNLIMITED_WALLET_ACCOUNTS = 10;
 export const UNLIMITED_WALLET_EMAIL = 15;
@@ -90,7 +86,6 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
             name: 'wallets',
             plans: {
                 [PLANS.FREE]: getWallets(FREE_WALLETS),
-                [PLANS.WALLET]: getWallets(WALLET_PLUS_WALLETS),
                 [PLANS.BUNDLE]: getWallets(UNLIMITED_WALLETS),
                 [PLANS.MAIL]: getWallets(FREE_WALLETS),
                 [PLANS.VPN2024]: getWallets(FREE_WALLETS),
@@ -118,7 +113,6 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
             name: 'wallet-accounts',
             plans: {
                 [PLANS.FREE]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
-                [PLANS.WALLET]: getWalletAccounts(WALLET_PLUS_WALLET_ACCOUNTS),
                 [PLANS.BUNDLE]: getWalletAccounts(UNLIMITED_WALLET_ACCOUNTS),
                 [PLANS.MAIL]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
                 [PLANS.VPN2024]: getWalletAccounts(FREE_WALLET_ACCOUNTS),
@@ -146,7 +140,6 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
             name: 'wallet-email-addresses',
             plans: {
                 [PLANS.FREE]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
-                [PLANS.WALLET]: getWalletEmailAddresses(WALLET_PLUS_WALLET_EMAIL),
                 [PLANS.BUNDLE]: getWalletEmailAddresses(UNLIMITED_WALLET_EMAIL),
                 [PLANS.MAIL]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
                 [PLANS.VPN2024]: getWalletEmailAddresses(FREE_WALLET_EMAIL),
@@ -174,7 +167,6 @@ export const getWalletFeatures = (): PlanCardFeature[] => {
             name: 'wallet-bitcoin-via-email',
             plans: {
                 [PLANS.FREE]: getBitcoinViaEmail(),
-                [PLANS.WALLET]: getBitcoinViaEmail(),
                 [PLANS.BUNDLE]: getBitcoinViaEmail(),
                 [PLANS.MAIL]: getBitcoinViaEmail(),
                 [PLANS.VPN2024]: getBitcoinViaEmail(),

@@ -9,14 +9,15 @@ import {
     PrivateMainArea,
     useActiveBreakpoint,
 } from '@proton/components';
-import { CATEGORY_LABEL_IDS_SET, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
-import { useCategoryViewAccess } from 'proton-mail/components/categoryView/useCategoryViewAccess';
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import MailHeader from 'proton-mail/components/header/MailHeader';
 import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
@@ -44,7 +45,7 @@ export const RouterMailboxContainer = () => {
     const actions = useElementActions({ params, navigation, elementsData });
 
     const [user] = useUser();
-    const { isColumnModeActive, messageContainerRef, mainAreaRef, listContainerRef } = useMailboxLayoutProvider();
+    const { isColumnModeActive, messageContainerRef, mainAreaRef, scrollContainerRef } = useMailboxLayoutProvider();
 
     const { labelID, elementID } = params;
     const { selectedIDs } = actions;
@@ -55,7 +56,7 @@ export const RouterMailboxContainer = () => {
 
     const [isResizing, setIsResizing] = useState(false);
 
-    const categoryViewControl = useCategoryViewAccess();
+    const categoryViewControl = useCategoriesView();
 
     /**
      * Temporary: Router mailbox side effects
@@ -75,28 +76,28 @@ export const RouterMailboxContainer = () => {
     const searchParams = getSearchParams(location.hash);
     const sort = useMemo<Sort>(() => sortFromUrl(location, labelID), [searchParams.sort, labelID]);
     const filter = useMemo<Filter>(() => filterFromUrl(location), [searchParams.filter]);
-    useScrollToTop(listContainerRef as RefObject<HTMLElement>, [urlPage, labelID, sort, filter, elementsParams.search]);
+    useScrollToTop(scrollContainerRef as RefObject<HTMLElement>, [
+        urlPage,
+        labelID,
+        sort,
+        filter,
+        elementsParams.search,
+    ]);
     const breakpoints = useActiveBreakpoint();
 
-    if (!labelID || (categoryViewControl.categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX)) {
-        return (
-            <Redirect
-                to={`/${
-                    LABEL_IDS_TO_HUMAN[
-                        categoryViewControl.categoryViewAccess
-                            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
-                            : MAILBOX_LABEL_IDS.INBOX
-                    ]
-                }`}
-            />
-        );
-    } else if (!categoryViewControl.categoryViewAccess && CATEGORY_LABEL_IDS_SET.has(labelID as MAILBOX_LABEL_IDS)) {
+    if (!labelID) {
+        const destination = categoryViewControl.categoryViewAccess
+            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
+            : MAILBOX_LABEL_IDS.INBOX;
+
+        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[destination]}`} />;
+    } else if (!categoryViewControl.categoryViewAccess && isCategoryLabel(labelID)) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
     // Prevent non-admin users from accessing the Deleted folder via URL
     if (labelID === MAILBOX_LABEL_IDS.SOFT_DELETED && !isAdminOrLoginAsAdmin(user)) {
-        return <Redirect to="/inbox" />;
+        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 
     const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;

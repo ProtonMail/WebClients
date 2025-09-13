@@ -8,7 +8,7 @@ import type {
     DriveFileRevisionResult,
     DriveFileRevisionThumbnailResult,
 } from '@proton/shared/lib/interfaces/drive/file';
-import { type SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
+import type { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import { TransferState } from '../../components/TransferManager/transfer';
 import { logError } from '../../utils/errorHandling';

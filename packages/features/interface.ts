@@ -53,6 +53,7 @@ export enum FeatureCode {
     ElectronConvPreloadAmount = 'ElectronConvPreloadAmount',
     InboxDesktopFreeTrialDates = 'InboxDesktopFreeTrialDates',
     InboxDesktopFreeTrialReminders = 'InboxDesktopFreeTrialReminders',
+    LumoWhatsNewCard = 'LumoWhatsNewCard',
     MailActionsChunkSize = 'MailActionsChunkSize',
     MailServiceWorker = 'MailServiceWorker',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
@@ -76,6 +77,9 @@ export enum FeatureCode {
     // Flags for the newsletter subscription view
     NewsletterSubscriptionViewOnboarding = 'NewsletterSubscriptionViewOnboarding',
     NewsletterSubscriptionSpotlight = 'NewsletterSubscriptionSpotlight',
+
+    // Flags for the category views
+    CategoryViewBadgeSpotlight = 'CategoryViewBadgeSpotlight',
 
     OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
@@ -103,6 +107,18 @@ export enum FeatureCode {
     OfferAnniversary2025PassPlus = 'OfferAnniversary2025PassPlus',
     OfferAnniversary2025VPNPlus = 'OfferAnniversary2025VPNPlus',
 
+    // Back to school
+    OfferBackToSchoolMailPlus = 'OfferBackToSchoolMailPlus',
+    OfferBackToSchoolMailPlusToYearly = 'OfferBackToSchoolMailPlusToYearly', // user already pays on monthly basis
+    OfferBackToSchoolDrivePlus = 'OfferBackToSchoolDrivePlus', // does not have "to-yearly" offer!
+    OfferBackToSchoolVPNPlus = 'OfferBackToSchoolVPNPlus',
+    OfferBackToSchoolVPNPlusToYearly = 'OfferBackToSchoolVPNPlusToYearly',
+    OfferBackToSchoolPassPlus = 'OfferBackToSchoolPassPlus',
+    OfferBackToSchoolPassPlusToYearly = 'OfferBackToSchoolPassPlusToYearly',
+    OfferBackToSchoolBundle = 'OfferBackToSchoolBundle',
+    OfferBackToSchoolDuo = 'OfferBackToSchoolDuo',
+    OfferBackToSchoolFamily = 'OfferBackToSchoolFamily',
+
     Offers = 'Offers',
     PrivacyDropdownOpened = 'PrivacyDropdownOpened',
     ProtonBadge = 'ProtonBadge',
@@ -129,4 +145,7 @@ export enum FeatureCode {
     // Go unlimited 2025
     OfferGoUnlimited2025 = 'OfferGoUnlimited2025',
     OfferUnlimitedRotationState = 'OfferUnlimitedRotationState',
+
+    // Meet
+    NewScheduleOptionSpotlight = 'NewScheduleOptionSpotlight',
 }

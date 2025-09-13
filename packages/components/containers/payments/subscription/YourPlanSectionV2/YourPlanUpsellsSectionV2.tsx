@@ -9,10 +9,10 @@ import Loader from '@proton/components/components/loader/Loader';
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
-import { type TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
+import type { TelemetryPaymentFlow } from '@proton/components/payments/client-extensions/usePaymentsTelemetry';
 import useLoading from '@proton/hooks/useLoading';
 import type { FreeSubscription, FullPlansMap } from '@proton/payments';
-import { CYCLE, type FreePlanDefault, type Subscription, hasLumoPlan } from '@proton/payments';
+import { CYCLE, type FreePlanDefault, type Subscription, getCanAccessFamilyPlans, hasLumoPlan } from '@proton/payments';
 import { FREE_PLAN } from '@proton/payments';
 import { hasBundle, hasDeprecatedVPN, hasDuo, hasFamily, hasVPN2024 } from '@proton/payments';
 import { PaymentsContextProvider, usePaymentsPreloaded } from '@proton/payments/ui';
@@ -23,7 +23,7 @@ import useVariant from '@proton/unleash/useVariant';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { type Upsell } from '../helpers';
+import type { Upsell } from '../helpers';
 import CurrentPlanInfoWithUpsellSection from './Upsells/CurrentPlanInfoSection';
 import DuoBanner from './Upsells/DuoBanner';
 import DuoBannerExtendSubscription, { useDuoBannerExtendSubscription } from './Upsells/DuoBannerExtendSubscription';
@@ -267,7 +267,10 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasBundle(subscription) && subscription?.Cycle !== CYCLE.MONTHLY,
+            enabled:
+                hasBundle(subscription) &&
+                subscription?.Cycle !== CYCLE.MONTHLY &&
+                getCanAccessFamilyPlans(subscription),
             element: <ExploreGroupPlansBanner app={app} subscription={subscription as Subscription} />,
         },
         {
@@ -282,7 +285,8 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             ),
         },
         {
-            enabled: hasDuo(subscription) && subscription?.Cycle !== CYCLE.MONTHLY,
+            enabled:
+                hasDuo(subscription) && subscription?.Cycle !== CYCLE.MONTHLY && getCanAccessFamilyPlans(subscription),
             element: <FamilyBanner app={app} subscription={subscription as Subscription} />,
         },
         {

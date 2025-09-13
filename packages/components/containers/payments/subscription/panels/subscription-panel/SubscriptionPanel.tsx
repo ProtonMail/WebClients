@@ -25,15 +25,13 @@ import {
     hasVPNPassBundle,
     hasVisionary,
     hasVpnBusiness,
-    hasWallet,
     isTrial,
 } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import type { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { type Organization, type VPNServersCountData } from '@proton/shared/lib/interfaces';
+import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
@@ -61,15 +59,6 @@ import {
     getVaults,
 } from '../../../features/pass';
 import { getVPNConnectionsFeature } from '../../../features/vpn';
-import {
-    WALLET_PLUS_WALLETS,
-    WALLET_PLUS_WALLET_ACCOUNTS,
-    WALLET_PLUS_WALLET_EMAIL,
-    getBitcoinViaEmail,
-    getWalletAccounts,
-    getWalletEmailAddresses,
-    getWallets,
-} from '../../../features/wallet';
 import type { Upsell } from '../../../subscription/helpers';
 import SubscriptionPanelManageUserButton from '../../SubscriptionPanelManageUserButton';
 import { getSubscriptionPanelText } from '../../helpers/subscriptionPanelHelpers';
@@ -168,7 +157,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         maxVPNDevicesText,
         writingAssistantText,
         lumoText,
-    } = getSubscriptionPanelText(user, organization, addresses, subscription);
+    } = getSubscriptionPanelText(user, organization, addresses);
 
     const getVpnPlusItems = (): Item[] => {
         return [
@@ -285,22 +274,6 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         );
     };
 
-    const getWalletAppWalletPlus = () => {
-        const items: Item[] = [
-            getWallets(WALLET_PLUS_WALLETS),
-            getWalletAccounts(WALLET_PLUS_WALLET_ACCOUNTS),
-            getWalletEmailAddresses(WALLET_PLUS_WALLET_EMAIL),
-            getBitcoinViaEmail(),
-        ];
-
-        return (
-            <StripedList alternate={alternate}>
-                {storageItem}
-                <SubscriptionItems user={user} items={items} />
-            </StripedList>
-        );
-    };
-
     const getLumoFree = () => {
         return (
             <StripedList alternate={alternate}>
@@ -355,10 +328,10 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                 actionElement: getMoreButtonVpnUpsell,
                 dataTestId: 'users',
             },
-            {
+            hasVpnBusiness(subscription) && {
                 icon: 'servers',
                 text: serverText,
-                actionElement: hasVpnBusiness(subscription) ? getMoreButtonVpnUpsell : null,
+                actionElement: getMoreButtonVpnUpsell,
                 dataTestId: 'servers',
             },
         ].filter(isTruthy) as Item[];
@@ -504,9 +477,6 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                     }
                     if (getHasVpnB2BPlan(subscription)) {
                         return getVpnB2B();
-                    }
-                    if (hasWallet(subscription)) {
-                        return getWalletAppWalletPlus();
                     }
                     if (hasLumoPlan(subscription)) {
                         return getLumoPlus();

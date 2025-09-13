@@ -1,23 +1,22 @@
-import { type EitherOr, type Organization } from '@proton/shared/lib/interfaces';
+import type { EitherOr, Organization } from '@proton/shared/lib/interfaces';
 
 import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_TYPES } from './constants';
-import { type FreeSubscription, type PlanIDs } from './interface';
+import type { FreeSubscription, PlanIDs } from './interface';
 import { getSupportedAddons, isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './plan/addons';
+import { getPlanFeatureLimit, getPlanMembers } from './plan/feature-limits';
 import { getPlanNameFromIDs } from './plan/helpers';
-import { type Plan, type PlansMap } from './plan/interface';
+import type { Plan, PlansMap } from './plan/interface';
 import { getPricePerCycle, getPricePerMember } from './price-helpers';
 import {
     type AggregatedPricing,
     type PricingForCycles,
     allCycles,
-    getPlanFeatureLimit,
     getPlanIDs,
-    getPlanMembers,
     getSubscriptionsArray,
     hasLumoPlan,
     isManagedExternally,
 } from './subscription/helpers';
-import { type Subscription, type SubscriptionCheckResponse } from './subscription/interface';
+import type { Subscription, SubscriptionCheckResponse } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
 import { isFreeSubscription } from './type-guards';
 
@@ -479,4 +478,24 @@ export function getTotals(
         acc[cycle] = getTotalFromPricing(pricing, cycle, mode, additionalCheckResults, selectedPlan);
         return acc;
     }, {} as any);
+}
+
+export function planIDsPositiveDifference(oldPlanIDs: PlanIDs, newPlanIDs: PlanIDs): PlanIDs {
+    if (!oldPlanIDs || !newPlanIDs) {
+        return {};
+    }
+
+    const increasedPlanIDs: PlanIDs = {};
+
+    for (const key of Object.keys(newPlanIDs) as (keyof PlanIDs)[]) {
+        const newQuantity = newPlanIDs[key] ?? 0;
+        const oldQuantity = oldPlanIDs[key] ?? 0;
+
+        const increase = newQuantity - oldQuantity;
+        if (increase > 0) {
+            increasedPlanIDs[key] = increase;
+        }
+    }
+
+    return increasedPlanIDs;
 }

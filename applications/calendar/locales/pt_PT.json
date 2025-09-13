@@ -636,7 +636,7 @@
         "Referencie um amigo"
       ],
       "Refresh the page": [
-        "Actualizar a página"
+        "Atualizar página"
       ],
       "Remove": [
         "Remover"
@@ -682,6 +682,9 @@
       ],
       "Resume indexing": [
         "Retomar indexação"
+      ],
+      "Retry": [
+        "Repetir"
       ],
       "Save": [
         "Guardar"
@@ -831,7 +834,7 @@
         "Não confiar"
       ],
       "Update": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Update recovery file": [
         "Actualizar o ficheiro de recuperação"
@@ -840,7 +843,7 @@
         "Actualizar a frase de recuperação"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Upgrade Now": [
         "Atualizar agora"
@@ -4105,9 +4108,6 @@
       "customer support": [
         "apoio ao cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de família não suportam atualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, mudá-lo-emos do seu plano actual e creditaremos na sua conta qualquer saldo remanescente."
       ],
@@ -5243,9 +5243,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "No passo seguinte, poderá efetuar um depósito utilizando um endereço Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Indexing events: ${ current }/${ total }": [
         "A indexar eventos: ${ current }/${ total }"
       ],
@@ -5831,9 +5828,6 @@
       "You are about to open your default browser and visit:": [
         "Está prestes a abrir o seu navegador predefinido e a visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Tem actualmente sessão iniciada como ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Está a utilizar mais armazenamento do que o incluído no plano ${ downgradedPlanName }. Elimine ou remova dados para optar por um plano inferior."
       ],
@@ -6140,6 +6134,9 @@
       ],
       "Expired": [
         "Expirada"
+      ],
+      "KOO": [
+        "KOO"
       ],
       "Obsolete": [
         "Obsoleta"
@@ -6639,9 +6636,6 @@
       ],
       "Username": [
         "Nome de utilizador"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Código de verificação"
@@ -8323,7 +8317,7 @@
         "Paga anualmente e garante a nossa melhor oferta"
       ],
       "Save": [
-        "Salvar"
+        "Poupe"
       ],
       "Save big when you pay annually": [
         "Poupe em grande ao pagar anualmente!"
@@ -8698,6 +8692,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renovação por ${ renewPriceStr } com possibilidade de cancelar a qualquer momento."
       ],
+      "Taxes": [
+        "Impostos"
+      ],
       "terms & conditions": [
         "os termos e condições"
       ],
@@ -8728,6 +8725,9 @@
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
@@ -8780,6 +8780,9 @@
     "Payments.VAT number name": {
       "ABN": [
         "Número de empresa australiano (ABN)"
+      ],
+      "Add ABN": [
+        "Adicionar ABN"
       ],
       "Business Number": [
         "Número da empresa"
@@ -9520,7 +9523,7 @@
         "Desfrute do streaming sem limites"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Upgrade for ${ pricingTitle }": [
         "Melhore por ${ pricingTitle }"
@@ -10896,6 +10899,9 @@
       "Network error": [
         "Erro de rede"
       ],
+      "Next": [
+        "Seguinte"
+      ],
       "Night theme": [
         "Tema noturno"
       ],
@@ -10910,6 +10916,9 @@
       ],
       "Open actions dropdown": [
         "Abrir lista de acções"
+      ],
+      "Open pagination": [
+        "Abrir paginação"
       ],
       "Org setup": [
         "Configuração da organização"
@@ -10940,6 +10949,9 @@
       ],
       "Phone numbers": [
         "Números de telefone"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Private browsing vs VPN": [
         "Navegação privada e VPN"
@@ -11390,9 +11402,6 @@
       "${ n } wallet": [
         "${ n } carteira",
         "${ n } carteiras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Uma maneira mais segura de conservar o seu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

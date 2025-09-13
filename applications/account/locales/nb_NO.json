@@ -262,6 +262,9 @@
       "Claim this address": [
         "Gjør krav på denne adressen"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Gjør krav på din gratis ${ BRAND_NAME }-adresse"
+      ],
       "Clear all formatting": [
         "Fjern all formattering"
       ],
@@ -787,9 +790,6 @@
       "Get verification code": [
         "Få verifiseringskode"
       ],
-      "Give access now": [
-        "Gi tilgang nå"
-      ],
       "Go back": [
         "Gå tilbake"
       ],
@@ -1011,6 +1011,9 @@
       ],
       "Open": [
         "Åpne"
+      ],
+      "Open ${ applicationName }": [
+        "Åpne ${ applicationName }"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
@@ -1407,6 +1410,9 @@
       ],
       "Spam": [
         "Søppelpost"
+      ],
+      "Start free trial": [
+        "Start gratis prøveperiode"
       ],
       "Start import": [
         "Start importen"
@@ -1982,6 +1988,9 @@
       ],
       "Secure your communications": [
         "Sikre kommunikasjonen din"
+      ],
+      "Talk confidentially": [
+        "Snakk konfidensielt"
       ]
     },
     "Apps dropdown": {
@@ -2045,6 +2054,66 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jeg er borte fra kontoret med begrenset tilgang til e-posten min."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Betalingsinformasjon"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Ved å klikke på \"Prøv\", sier du deg enig med våre ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "I prøveperioden kan du ha opptil 10 brukere."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratis i ${ TRIAL_DURATION_DAYS } dager"
+      ],
+      "on ${ formattedDate }": [
+        "på ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Prøv ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Prøv det gratis i ${ TRIAL_DURATION_DAYS } dager"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Når du avbryter, vil din gratis prøveversjon ikke bli konvertert til et betalt abonnement, men du kan fortsatt dra nytte av planfordeler til slutten av prøveperioden. Etter det blir du nedgradert til ${ BRAND_NAME } Free-planen."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-lisenser i prøveperioden."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_USERS } brukere i prøveperioden."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Du kan ikke legge til egendefinerte domener i prøveperioden."
+      ],
+      "You have reached the trial limit.": [
+        "Du har nådd prøveperiodegrensen."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Beløp som forfaller etter prøvetiden"
+      ],
+      "Amount due now": [
+        "Beløp å betale nå"
       ]
     },
     "b2b_trials_Action": {
@@ -2451,6 +2520,9 @@
       "Manual setup problem": [
         "Problem med manuell installasjon"
       ],
+      "Meet problem": [
+        "Problem med Meet"
+      ],
       "Other": [
         "Annet"
       ],
@@ -2814,6 +2886,112 @@
       ],
       "Expand": [
         "Utvid"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Chat med en privat KI-assistent"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "Basic chat history": [
+        "Grunnleggende chatlogg"
+      ],
+      "Full chat history with search": [
+        "Full chatlogg med søk"
+      ],
+      "Large file upload support": [
+        "Støtte for opplasting av store filer"
+      ],
+      "Limited daily chats": [
+        "Begrenset antall daglige chatter"
+      ],
+      "Limited favorites": [
+        "Begrenset antall favoritter"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited favorites for quick access": [
+        "Ubegrenset antall favoritter for rask tilgang"
+      ],
+      "Upload and query multiple large files": [
+        "Last opp og vis flere store filer"
+      ],
+      "Upload and query small files": [
+        "Last opp og vis små filer"
+      ],
+      "Web search access": [
+        "Tilgang til nettsøk"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Utviklet og basert i Europa"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } er en personvernfokusert KI som hjelper deg å få mer gjort samtidig som dataene dine holdes sikre. Lås opp dens fulle potensial og nyt tidlig tilgang til nye funksjoner når de introduseres."
+      ],
+      "Access to advanced AI models": [
+        "Tilgang til avanserte KI-modeller"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Legg til ${ LUMO_APP_NAME }"
+      ],
+      "AI assistant that respects your privacy": [
+        "KI-assistent som respekterer personvernet ditt"
+      ],
+      "Basic chat history": [
+        "Grunnleggende chatlogg"
+      ],
+      "Data never used for AI training": [
+        "Data blir aldri brukt til KI-trening"
+      ],
+      "Full chat history with search": [
+        "Full chatlogg med søk"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Høyhastighetschatter og avanserte KI-funksjoner."
+      ],
+      "Limited daily chats": [
+        "Begrenset antall daglige chatter"
+      ],
+      "Limited favorites": [
+        "Begrenset antall favoritter"
+      ],
+      "Open source": [
+        "Åpen kildekode"
+      ],
+      "Strict no-logs policy": [
+        "Strenge retningslinjer mot loggføring"
+      ],
+      "Unlimited daily chats": [
+        "Ubegrenset antall daglige chatter"
+      ],
+      "Unlimited favorites for quick access": [
+        "Ubegrenset antall favoritter for rask tilgang"
+      ],
+      "Upload and query multiple large files": [
+        "Last opp og vis flere store filer"
+      ],
+      "Upload and query small files": [
+        "Last opp og vis små filer"
+      ],
+      "Web search access": [
+        "Tilgang til nettsøk"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Tilbake til samtaler"
+      ],
+      "Conversations": [
+        "Samtaler"
       ]
     },
     "color": {
@@ -4165,6 +4343,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } er din standard e-postapplikasjon."
       ],
+      "A checked box means the feature is disabled.": [
+        "En avmerket boks betyr at funksjonen er deaktivert."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Legg til mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til å se eller redigere."
       ],
@@ -4307,14 +4488,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Du kan fortsette med å invitere venner, men du vil ikke være i stand til å tjene flere kreditter"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Du kan tilpasse listen over domener der visse autofunksjoner i ${ PASS_APP_NAME }-nettleserutvidelse (automatisk utfylling, automatisk forslag, automatisk lagring) ikke skal kjøres."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Du kan håndheve passordreglene som organisasjonsmedlemmer skal bruke når de genererer et passord i ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Du vil motta ${ referralReward } i ${ BRAND_NAME }-kreditt når personen du inviterer registrerer seg for en ${ BRAND_NAME }-plan, og de vil også få ${ referralReward } i kreditter for å komme i gang."
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Du vil motta ${ referralInfo.referrerRewardAmount } i ${ BRAND_NAME }-kreditt når personen du inviterer registrerer seg for en ${ BRAND_NAME }-plan, og de vil også få ${ referralInfo.refereeRewardAmount } i kreditter for å komme i gang."
       ]
     },
     "description": {
@@ -5205,13 +5389,21 @@
       "${ BRAND_NAME } Account email": [
         "Kontoens e-postadresse ${ BRAND_NAME }"
       ],
+      "${ days } day left": [
+        "${ days } dag igjen",
+        "${ days } dager igjen"
+      ],
+      "${ hours } hour left": [
+        "${ hours } time igjen",
+        "${ hours } timer igjen"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } minutt igjen",
+        "${ minutes } minutter igjen"
+      ],
       "${ n } day": [
         "${ n } dag",
         "${ n } dager"
-      ],
-      "${ n } day left": [
-        "${ n } dag igjen",
-        "${ n } dager igjen"
       ],
       "${ user } is requesting emergency access to your account": [
         "${ user } ber om nødtilgang til kontoen din"
@@ -5318,6 +5510,9 @@
       "Less than a day": [
         "Mindre enn en dag"
       ],
+      "Less than a minute left": [
+        "Under ett minutt igjen"
+      ],
       "None": [
         "Ingen"
       ],
@@ -5381,6 +5576,9 @@
       ],
       "Time required before automatically giving access": [
         "Tid som kreves før automatisk tilgang gis"
+      ],
+      "Time required before automatically giving you access": [
+        "Tid som kreves før du automatisk får tilgang"
       ],
       "Time required before automatically granting them access": [
         "Tid som kreves før de automatisk får tilgang"
@@ -5683,6 +5881,9 @@
       ],
       "Invalid Sieve code": [
         "Ugyldig Sieve-kode"
+      ],
+      "Invalid URL": [
+        "Ugyldig nettadresse"
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
@@ -6493,8 +6694,8 @@
       "customer support": [
         "kundestøtte"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familieplaner støtter for øyeblikket ikke eksterne kontoer. Opprett en ${ BRAND_NAME }-adresse før du blir med. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du godtar invitasjonen, bytter vi deg fra den nåværende planen og krediterer kontoen din med eventuell gjenværende saldo."
@@ -7266,6 +7467,9 @@
       "Device": [
         "Enhet"
       ],
+      "Domain": [
+        "Domene"
+      ],
       "Enter your email address": [
         "Skriv inn din e-postadresse"
       ],
@@ -7298,6 +7502,9 @@
       ],
       "Organization key fingerprint": [
         "Organisasjonsnøkkelfingeravtrykk"
+      ],
+      "Password ends with": [
+        "Passordet slutter med"
       ],
       "Payment details": [
         "Betalingsinformasjon"
@@ -7340,6 +7547,9 @@
       ],
       "User": [
         "Bruker"
+      ],
+      "Username": [
+        "Brukernavn"
       ]
     },
     "Header for addresses table": {
@@ -7942,6 +8152,24 @@
         "${ n } adresse",
         "${ n } adresser"
       ],
+      "${ name } for Android": [
+        "${ name } for Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } for GNU/Linux"
+      ],
+      "${ name } for iOS": [
+        "${ name } for iOS"
+      ],
+      "${ name } for macOS": [
+        "${ name } for macOS"
+      ],
+      "${ name } for Web": [
+        "${ name } for Web"
+      ],
+      "${ name } for Windows": [
+        "${ name } for Windows"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: ikke sett uautoriserte e-poster i karantene eller avvis e-poster. Vanligvis bruker folk bare denne policyen til å feilsøke eller teste."
       ],
@@ -8037,6 +8265,12 @@
       ],
       "${ storage } storage": [
         "${ storage } lagringsplass"
+      ],
+      "${ url } added.": [
+        "${ url } lagt til."
+      ],
+      "${ url } deleted.": [
+        "${ url } slettet."
       ],
       "${ userFound } user found": [
         "${ userFound } bruker funnet",
@@ -8309,6 +8543,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-postalias fungerer som en e-postadresse, men reduserer søppelpost og holder den faktiske e-postadressen og identiteten din skjult."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Det oppstod en feil under kommunikasjon med **${ applicationName }**"
       ],
       "An error occurred while communicating with the extension": [
         "Det oppstod en feil under kommunikasjon med utvidelsen"
@@ -9029,11 +9266,11 @@
       "Get ${ upsellPlanName }": [
         "Skaff deg ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Få **${ referrerRewardAmount } kreditter** for hver venn som abonnerer."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få tilgang ved å opprette en ${ BRAND_NAME }-konto og akseptere invitasjonen."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Få og gi **${ referralReward } kreditter** for hver venn som abonnerer."
       ],
       "Get it on Google Play": [
         "Hent den på Google Play"
@@ -9203,9 +9440,6 @@
       ],
       "Include device, location, and IP details": [
         "Inkluder enhet, plassering og IP-detaljer"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inkludert ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Øk kontosikkerheten ved å verifisere e-postadressen din."
@@ -9798,9 +10032,6 @@
       "Please use another browser or download the file.": [
         "Bruk en annen nettleser eller last ned filen."
       ],
-      "Please verify payment at the new tab which was opened.": [
-        "Bekreft betaling i den nye fanen som ble åpnet."
-      ],
       "Please wait till your changes are synced with the server.": [
         "Vent til endringene dine er synkronisert med tjeneren."
       ],
@@ -10059,6 +10290,9 @@
       ],
       "Signed up": [
         "Registrert"
+      ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Pålogging med en sikkerhetsnøkkel er ennå ikke støttet i alle applikasjoner. Uten TOTP kan pålogging til enkelte applikasjoner mislykkes."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
@@ -10575,6 +10809,9 @@
       "URL link": [
         "Kobling til nettadresse"
       ],
+      "URL settings updated.": [
+        "Nettadresseinnstillinger oppdatert."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Bruk en passordbehandler til å generere og lagre passordene dine på en sikker måte, noe som sikrer sterke passord og enklere pålogginger."
       ],
@@ -10619,9 +10856,6 @@
       ],
       "Vault updated": [
         "Hvelv oppdatert"
-      ],
-      "Verification can take a few minutes.": [
-        "Verifisering kan ta noen minutter."
       ],
       "Verification link expired": [
         "Verifiseringskoblingen er utløpt"
@@ -10842,8 +11076,8 @@
       "You are about to open your default browser and visit:": [
         "Du er i ferd med å åpne standardnettleseren din og besøke:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du er for øyeblikket pålogget som ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Du er for øyeblikket pålogget som ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Du bruker for øyeblikket ${ ipCount } tilgjengelig dedikert tjener ut av ${ ipAddresses }.",
@@ -10985,6 +11219,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Du kan bli omdirigert til din banks nettside."
+      ],
+      "You may now start using **${ applicationName }**": [
+        "Du kan nå begynne å bruke **${ applicationName }**"
       ],
       "You may now start using the extension": [
         "Du kan nå begynne å bruke utvidelsen."
@@ -11185,6 +11422,9 @@
       ],
       "You’re all set": [
         "Du er klar"
+      ],
+      "Zero charge today": [
+        "Null kostnad i dag"
       ],
       "Zoom meeting": [
         "Zoom-møte"
@@ -11777,6 +12017,9 @@
       "Account storage": [
         "Kontolagring"
       ],
+      "Action": [
+        "Handling"
+      ],
       "Actions": [
         "Handlinger"
       ],
@@ -11918,8 +12161,20 @@
       "Auto-unsubscribe": [
         "Auto-avmelding"
       ],
+      "Autofill": [
+        "Autofyll"
+      ],
+      "Autofill 2FA": [
+        "Autofyll 2FA"
+      ],
       "Automatically save contacts": [
         "Lagre automatisk kontakter"
+      ],
+      "Autosave": [
+        "Lagre automatisk"
+      ],
+      "Autosuggest": [
+        "Foreslå automatisk"
       ],
       "Awarded": [
         "Belønnet"
@@ -12163,6 +12418,9 @@
       ],
       "Domain name": [
         "Domenenavn"
+      ],
+      "Domains": [
+        "Domener"
       ],
       "Don't ask again": [
         "Ikke spør igjen"
@@ -12542,6 +12800,9 @@
       "Other amount": [
         "Annet beløp"
       ],
+      "Passkeys": [
+        "Tilgangsnøkler"
+      ],
       "Password": [
         "Passord"
       ],
@@ -12852,14 +13113,14 @@
       "Value": [
         "Verdi"
       ],
-      "VAT": [
-        "MVA"
-      ],
       "Verification code": [
         "Verifiseringskode"
       ],
       "Verify keys with Key Transparency": [
         "Verifiser nøkler med Key Transparency"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferanser med ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Videokonferanser med Zoom"
@@ -13636,8 +13897,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Logg på din ${ BRAND_NAME }-konto for å få tilgang til alle krypterte ${ BRAND_NAME }-tjenester slik som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer. Har du ikke en konto? Opprett en GRATIS."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Ta kontroll over dataene dine med ende-til-ende-kryptering. Ingen bankkort påkrevd."
+      "Take control of your data with end-to-end encryption": [
+        "Ta kontroll over dataene dine med ende-til-ende-kryptering"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Prøv ${ BRAND_NAME } gratis med denne koblingen"
@@ -13846,6 +14107,9 @@
       ],
       "Back": [
         "Tilbake"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Tilbake til ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Tilbake til kalender"
@@ -15039,6 +15303,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } opprettet"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Videokonferanseinnstillinger for ${ MEET_APP_NAME } er oppdatert"
+      ],
       "${ reason } has been disabled": [
         "${ reason } er deaktivert"
       ],
@@ -15059,6 +15326,12 @@
       ],
       "Email notifications have been enabled": [
         "E-postvarsler er aktivert"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Kunne ikke oppdatere videokonferanseinnstillinger for ${ MEET_APP_NAME }"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Kunne ikke oppdatere videokonferanseinnstillinger for Zoom"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -15108,8 +15381,8 @@
       "Two-factor authentication is not required anymore": [
         "Tofaktorautentisering kreves ikke lenger"
       ],
-      "Video conferencing settings have been updated": [
-        "Innstillingene for videokonferanser er oppdatert"
+      "Zoom video conferencing settings have been updated": [
+        "Videokonferanseinnstillinger for Zoom er oppdatert"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -16357,11 +16630,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ekskludert ${ taxRate }% avgifter: ${ taxAmount }"
+      ],
       "Got it": [
         "Skjønner"
       ],
       "I'm purchasing as a business": [
         "Jeg kjøper som en bedrift."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inkludert ${ taxRate }% avgifter: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/ÅÅ"
@@ -16380,6 +16665,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
+      ],
+      "Taxes": [
+        "Avgifter"
       ],
       "terms & conditions": [
         "vilkår og betingelser"
@@ -16414,6 +16702,9 @@
       ],
       "Timeout exceeded": [
         "Tidsavbrudd overskredet"
+      ],
+      "VAT": [
+        "MVA"
       ],
       "VAT number": [
         "MVA-nummer"
@@ -18272,8 +18563,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "Og få ${ referralReward } i kreditter, hvis du abonnerer."
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "Og få ${ referralInfo.uiData.refereeRewardAmount } i kreditter, hvis du abonnerer."
       ],
       "Billing Cycle": [
         "Faktureringssyklus"
@@ -18338,11 +18629,11 @@
       "Free": [
         "Free"
       ],
-      "Free for 14 days": [
-        "Gratis i 14 dager"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Gratis i ${ TRIAL_DURATION_DAYS } dager"
       ],
-      "Get ${ referralReward } in credits": [
-        "Få ${ referralReward } i kreditter"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Få ${ referralInfo.uiData.refereeRewardAmount } i kreditter"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Skaff deg en sikker ${ MAIL_APP_NAME }-adresse, eller ${ internalButton }"
@@ -18423,8 +18714,8 @@
       "Select ${ title }": [
         "Velg ${ title }"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Velg en tjeneste og nyt premiumversjonen i 14 dager gratis. Ingen kredittkort påkrevd."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Velg en tjeneste og nyt premiumversjonen i ${ TRIAL_DURATION_DAYS } dager gratis. Ingen kredittkort kreves."
       ],
       "Selected": [
         "Valgt"
@@ -18470,6 +18761,9 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Prøv ${ BRAND_NAME } gratis i ${ TRIAL_DURATION_DAYS } dager"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Prøv ${ BRAND_NAME } gratis i 14 dager"
@@ -21083,8 +21377,8 @@
       "Gift code": [
         "Gavekode"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Gi ${ referralReward } og 2 uker gratis. Få ${ referralReward } kreditter."
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Gi ${ refereeRewardAmount } og 2 uker gratis. Få ${ referrerRewardAmount } kreditter."
       ],
       "Group": [
         "Gruppe"
@@ -21317,6 +21611,9 @@
       ],
       "Passwords made easy": [
         "Passord på en enkel måte"
+      ],
+      "Pause list": [
+        "Pauseliste"
       ],
       "Pay invoice": [
         "Betal faktura"
@@ -21808,6 +22105,9 @@
       "You have no resolved alerts": [
         "Du har ingen løste varsler"
       ],
+      "You've successfully signed in!": [
+        "Du har logget inn!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis prøveperiode av ${ planName } slutter på ${ textDate }."
       ],
@@ -21970,8 +22270,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Gjør det mulig å sømløst legge til videokonferansekoblinger i kalenderinvitasjonene dine."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Gjør det mulig å sømløst legge til ${ MEET_APP_NAME }-videokonferansekoblinger i kalenderinvitasjonene dine."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Gjør det mulig å sømløst legge til Zoom-videokonferansekoblinger i kalenderinvitasjonene dine."
       ],
       "Any protection applied to suspicious activity": [
         "Enhver beskyttelse som brukes på mistenkelig aktivitet"
@@ -22105,8 +22408,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }."
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Adressen er koblet fra. Sending av meldinger er satt på pause. Koble til på nytt for å aktivere denne adressen igjen."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adressen er koblet fra. Sending og mottak av meldinger er satt på pause. Koble til på nytt for å aktivere denne adressen igjen."
       ],
       "The import will start with the most recent messages.": [
         "Importen starter med de nyeste meldingene."

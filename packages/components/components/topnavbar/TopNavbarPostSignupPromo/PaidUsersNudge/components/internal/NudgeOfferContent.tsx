@@ -8,7 +8,7 @@ import { useAutomaticCurrency } from '@proton/components/payments/client-extensi
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { type PriceData } from '../../helpers/interface';
+import type { PriceData } from '../../helpers/interface';
 import { getSubscriptionAge } from '../../helpers/paidUserNudgeHelper';
 import { getWindowEndDate } from '../../helpers/paidUserNudgeHelper';
 import { NudgeOfferPromoChild } from './NudgeOfferPromoChild';

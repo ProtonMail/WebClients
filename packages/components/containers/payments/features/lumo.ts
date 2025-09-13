@@ -106,7 +106,6 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
             name: 'daily-chats',
             plans: {
                 [PLANS.FREE]: getDailyChats('limited'),
-                [PLANS.WALLET]: getDailyChats('limited'),
                 [PLANS.BUNDLE]: getDailyChats('limited'),
                 [PLANS.MAIL]: getDailyChats('limited'),
                 [PLANS.VPN2024]: getDailyChats('limited'),
@@ -134,7 +133,6 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
             name: 'web-search-access',
             plans: {
                 [PLANS.FREE]: getWebSearchAccess(),
-                [PLANS.WALLET]: getWebSearchAccess(),
                 [PLANS.BUNDLE]: getWebSearchAccess(),
                 [PLANS.MAIL]: getWebSearchAccess(),
                 [PLANS.VPN2024]: getWebSearchAccess(),
@@ -162,7 +160,6 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
             name: 'chat-history',
             plans: {
                 [PLANS.FREE]: getChatHistory('basic'),
-                [PLANS.WALLET]: getChatHistory('basic'),
                 [PLANS.BUNDLE]: getChatHistory('basic'),
                 [PLANS.MAIL]: getChatHistory('basic'),
                 [PLANS.VPN2024]: getChatHistory('basic'),
@@ -190,7 +187,6 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
             name: 'favourites',
             plans: {
                 [PLANS.FREE]: getFavourites('limited'),
-                [PLANS.WALLET]: getFavourites('limited'),
                 [PLANS.BUNDLE]: getFavourites('limited'),
                 [PLANS.MAIL]: getFavourites('limited'),
                 [PLANS.VPN2024]: getFavourites('limited'),
@@ -218,7 +214,6 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
             name: 'upload-and-query-files',
             plans: {
                 [PLANS.FREE]: getUploadAndQuery('small'),
-                [PLANS.WALLET]: getUploadAndQuery('small'),
                 [PLANS.BUNDLE]: getUploadAndQuery('small'),
                 [PLANS.MAIL]: getUploadAndQuery('small'),
                 [PLANS.VPN2024]: getUploadAndQuery('small'),
@@ -246,7 +241,6 @@ export const getLumoFeatures = (): PlanCardFeature[] => {
             name: 'access-to-advanced-ai',
             plans: {
                 [PLANS.FREE]: getAccessToAdvancedAI(false),
-                [PLANS.WALLET]: getAccessToAdvancedAI(false),
                 [PLANS.BUNDLE]: getAccessToAdvancedAI(false),
                 [PLANS.MAIL]: getAccessToAdvancedAI(false),
                 [PLANS.VPN2024]: getAccessToAdvancedAI(false),

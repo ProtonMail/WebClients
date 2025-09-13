@@ -1,6 +1,6 @@
 import cloneDeep from 'lodash/cloneDeep';
 
-import { type User, type UserModel } from '@proton/shared/lib/interfaces';
+import type { User, UserModel } from '@proton/shared/lib/interfaces';
 import { formatUser } from '@proton/shared/lib/user/helpers';
 
 const user: User = {
@@ -53,8 +53,6 @@ const user: User = {
         'has-a-byoe-address': false,
         'delegated-access': false,
     },
-    ChargebeeUser: 0,
-    ChargebeeUserExists: 0,
     DriveEarlyAccess: 0,
     Idle: 0,
     HasMultipleSubscriptions: false,

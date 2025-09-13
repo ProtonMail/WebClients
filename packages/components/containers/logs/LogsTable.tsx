@@ -9,7 +9,8 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
 import type { AuthLog } from '@proton/shared/lib/authlog';
-import { SETTINGS_LOG_AUTH_STATE, SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
+import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
+import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
 import emptySearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import isTruthy from '@proton/utils/isTruthy';
 

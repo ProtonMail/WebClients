@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import useConfig from '@proton/components/hooks/useConfig';
 import metrics from '@proton/metrics';
-import { type PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, User } from '@proton/shared/lib/interfaces';
@@ -27,7 +27,7 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
     const { APP_NAME } = useConfig();
 
     const isDocsHomepageAvailable = useFlag('DriveDocsLandingPageEnabled');
-
+    const isMeetAvailable = useFlag('PMVC2025');
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
             step: 'recovery',
@@ -48,6 +48,7 @@ const ExploreStep = ({ onExplore, user, organization, plan }: Props) => {
                         user,
                         organization,
                         isDocsHomepageAvailable,
+                        isMeetAvailable,
                     })}
                     onExplore={onExplore}
                 />

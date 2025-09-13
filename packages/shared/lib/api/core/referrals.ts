@@ -1,4 +1,4 @@
-import type { CYCLE, PLANS } from '@proton/payments';
+import type { BillingAddress, CYCLE, PLANS } from '@proton/payments';
 
 import type { ReferralData } from '../../interfaces';
 
@@ -19,6 +19,14 @@ export const getReferrals = (params?: GetReferralsProps) => ({
 export const getReferralsStatus = () => ({
     method: 'get',
     url: 'core/v4/referrals/status',
+});
+
+/**
+ * Get referral info
+ */
+export const getReferralInfo = () => ({
+    method: 'get',
+    url: 'core/v4/referrals/info',
 });
 
 interface SendEmailInvationProps {
@@ -52,12 +60,12 @@ export const checkReferrer = (identifier: string) => ({
     url: `core/v4/referrals/identifiers/${identifier}`,
 });
 
-interface Plan {
+export interface ReferralRegistrationPlan {
     name: PLANS;
     cycle: CYCLE;
 }
 
-const getPlanData = (plan: Plan | undefined) => {
+const getPlanData = (plan: ReferralRegistrationPlan | undefined) => {
     if (!plan) {
         return {};
     }
@@ -68,12 +76,29 @@ const getPlanData = (plan: Plan | undefined) => {
     };
 };
 
-export const postReferralRegistration = ({ plan, referralData }: { plan?: Plan; referralData: ReferralData }) => ({
+export interface ReferralRegistrationSubscription {
+    paymentToken: string;
+    billingAddress: BillingAddress;
+    code?: string;
+}
+
+export const postReferralRegistration = ({
+    plan,
+    referralData,
+    referralRegistrationSubscription,
+}: {
+    plan: ReferralRegistrationPlan | undefined;
+    referralData: ReferralData;
+    referralRegistrationSubscription: ReferralRegistrationSubscription | undefined;
+}) => ({
     method: 'post',
     url: `core/v4/referrals/register`,
     data: {
         ...getPlanData(plan),
         ReferralIdentifier: referralData.referralIdentifier,
         ReferralID: referralData.referralID,
+        PaymentToken: referralRegistrationSubscription?.paymentToken,
+        BillingAddress: referralRegistrationSubscription?.billingAddress,
+        Codes: referralRegistrationSubscription?.code ? [referralRegistrationSubscription.code] : undefined,
     },
 });

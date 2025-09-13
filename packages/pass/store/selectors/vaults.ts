@@ -25,9 +25,9 @@ const createVaultsWithItemsCountSelector = (vaultSelector: Selector<State, Vault
         }))
     );
 
-export const selectVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectAllVaults);
-export const selectWritableVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableVaults);
-export const selectWritableSharedVaultsWithItemsCount = createVaultsWithItemsCountSelector(selectWritableSharedVaults);
+export const selectVaultsWithCount = createVaultsWithItemsCountSelector(selectAllVaults);
+export const selectWritableVaultsWithCount = createVaultsWithItemsCountSelector(selectWritableVaults);
+export const selectWritableSharedVaultsWithCount = createVaultsWithItemsCountSelector(selectWritableSharedVaults);
 
 export const selectVaultItemsCount = (shareId: MaybeNull<string>) =>
     createSelector(
@@ -59,9 +59,6 @@ export const selectMostRecentVaultShareID = createSelector(
          * in which case non-owned writable vaults can also be considered */
         const vaults = ownWritableVaults.length > 0 ? ownWritableVaults : writableVaults;
         const shareIds = new Set(vaults.map(prop('shareId')));
-        return (
-            items.filter((item) => shareIds.has(item.shareId)).sort(sortOn('createTime'))?.[0]?.shareId ??
-            defaultVault?.shareId
-        );
+        return items.filter((item) => shareIds.has(item.shareId)).sort(sortOn('createTime'))?.[0]?.shareId ?? defaultVault?.shareId;
     }
 );

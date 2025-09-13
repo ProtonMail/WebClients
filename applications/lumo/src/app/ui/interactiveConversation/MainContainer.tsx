@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import LottieView from 'lottie-react';
 import { c } from 'ttag';
 
@@ -22,6 +22,7 @@ import type { Message } from '../../types';
 import { FilesManagementView } from '../components/Files';
 import { NewGhostChatButton } from '../components/NewGhostChatButton';
 import OnboardingModal from '../components/OnboardingModal';
+import WhatsNew from '../components/WhatsNew/WhatsNew';
 import { HeaderWrapper } from '../header/HeaderWrapper';
 import { ComposerComponent } from './composer/ComposerComponent';
 
@@ -356,6 +357,7 @@ const MainContainer = ({
                         isSmallScreen={isSmallScreen}
                     />
                 </div>
+                {!isGuest && <WhatsNew />}
 
                 {!isSmallScreen &&
                     (!isOnboardingCompleted ? (
@@ -379,7 +381,7 @@ const MainContainer = ({
 
             {/* Legal disclaimer for desktop - only shown in guest mode and before user starts typing */}
             {isGuest && !isSmallScreen && (
-                <div className="fixed bottom-0 left-0 right-0 text-center py-5 z-10">
+                <div className="fixed bottom-0 left-0 right-0 text-center py-5 z-1">
                     <p className="text-sm color-weak m-0">
                         {c('collider_2025: Legal disclaimer').t`By using ${LUMO_SHORT_APP_NAME}, you agree to our`}{' '}
                         <InlineLinkButton

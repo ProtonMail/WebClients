@@ -1239,9 +1239,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается раз в ${ cycle } мес. ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
       ],
@@ -1253,9 +1250,6 @@
       ],
       "on ${ formattedDate }": [
         "в ${ formattedDate }"
-      ],
-      "Try it free for 14 days": [
-        "Попробуйте бесплатно в течение 14 дней"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "После отмены ваша бесплатная пробная версия не будет преобразована в платную подписку, но вы все равно сможете пользоваться преимуществами плана до конца пробного периода. После этого вы будете переведены на бесплатный план ${ BRAND_NAME }."
@@ -4158,9 +4152,6 @@
       "customer support": [
         "служба поддержки"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Семейные тарифы в настоящее время не поддерживают внешние аккаунты. Создайте адрес ${ BRAND_NAME } перед тем, как присоединиться. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Если вы примете приглашение, тарифный план будет изменен. Неиспользованный баланс возвратится на счет аккаунта."
       ],
@@ -6099,9 +6090,6 @@
       "inactive": [
         "неактивный"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Включая ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Повысьте защищенность своего аккаунта, подтвердив адрес вашей электронной почты."
       ],
@@ -6488,9 +6476,6 @@
       ],
       "Please use another browser or download the file.": [
         "Пожалуйста, воспользуйтесь другим браузером или загрузите файл."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Пожалуйста, подтвердите оплату в новой открывшейся вкладке."
       ],
       "Please wait till your changes are synced with the server.": [
         "Ожидайте пока изменения синхронизируются с сервером."
@@ -7017,9 +7002,6 @@
       "Vault updated": [
         "Хранилище обновлено"
       ],
-      "Verification can take a few minutes.": [
-        "Проверка может занять несколько минут."
-      ],
       "Verification may take a few minutes.": [
         "Проверка может занять несколько минут."
       ],
@@ -7169,9 +7151,6 @@
       ],
       "You already have a free account": [
         "У вас уже есть бесплатная учётная запись"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступного выделенного сервера.",
@@ -8231,9 +8210,6 @@
       ],
       "Value": [
         "Значение"
-      ],
-      "VAT": [
-        "НДС"
       ],
       "Verification code": [
         "Код подтверждения"
@@ -9955,9 +9931,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Двухфакторная аутентификация более не требуется"
-      ],
-      "Video conferencing settings have been updated": [
-        "Настройки видеоконференций обновлены"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10018,7 +9991,7 @@
         "Платите ежегодно, получите наше лучшее предложение"
       ],
       "Save": [
-        "Сохранить"
+        "Сэкономьте"
       ],
       "Save big when you pay annually": [
         "Экономьте больше, когда платите ежегодно"
@@ -10908,6 +10881,96 @@
       ],
       "Unknown": [
         "Неизвестное"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "РАСПРОДАЖА В КОНЦЕ ЛЕТА"
+      ],
+      "Get the deal": [
+        "Воспользоваться предложением"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent } %"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /месяц"
+      ],
+      "/month": [
+        "/месяц"
+      ],
+      "1 TB data storage": [
+        "1 ТБ для хранения данных"
+      ],
+      "15 GB storage": [
+        "Хранилище 15 ГБ"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 ГБ для хранения файлов, фотографий и документов"
+      ],
+      "3 TB data storage": [
+        "Хранилище на 3 ТБ"
+      ],
+      "500 GB storage": [
+        "500 ГБ хранилища"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Доступ к более чем 15 000 серверам в более чем 120 странах"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Все платные функции Mail, Pass, Drive, VPN и Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Встроенная функция двухфакторной аутентификации"
+      ],
+      "Connect 10 devices at once": [
+        "Подключение 10 устройств одновременно"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Скидки рассчитываются от стандартной ежемесячной цены. Ваша подписка будет продлена по стандартному годовому тарифу в конце платёжного цикла."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Наслаждайтесь самой высокой скоростью VPN"
+      ],
+      "Individual accounts for 6 users": [
+        "Индивидуальные аккаунты для 6 пользователей"
+      ],
+      "Individual accounts for you and a partner": [
+        "Индивидуальные аккаунты для вас и партнёра"
+      ],
+      "Online document editor": [
+        "Онлайн-редактор документов"
+      ],
+      "Recover previous file versions": [
+        "Восстановление предыдущих версий файлов"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Сэкономьте ${ totalSavings } и сохраните все ваши текущие функции!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Защищённый общий доступ к ссылкам, хранилищам и элементам"
+      ],
+      "Stronger protection against cyber threats": [
+        "Усиленная защита от киберугроз"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "неограниченное количество папок, ярлыков и фильтров;"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Используйте собственный домен электронной почты"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Распродажа в конце лета"
+      ],
+      "for 12 months": [
+        "на 12 месяцев"
       ]
     },
     "Recovery Email": {
@@ -14040,9 +14103,6 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Администраторы могут управлять аккаунтами пользователей и предоставлять права администратора другим пользователям. Только основной администратор может изменить тариф организации."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Позволяет бесшовно добавлять ссылки на видеоконференции в приглашения календаря."
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
       ],
@@ -14670,9 +14730,6 @@
         "${ n } кошелька",
         "${ n } кошельков",
         "${ n } кошельков"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Безопасный способ держать свои Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin по электронной почте"

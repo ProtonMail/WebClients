@@ -1,13 +1,13 @@
 import { type ElementType, type ReactNode, useMemo } from 'react';
 
 import { Button, type ButtonProps, Tooltip } from '@proton/atoms';
-import { type PaymentFacade } from '@proton/components/payments/client-extensions';
+import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
 
 import { PAYMENT_METHOD_TYPES } from '../../core/constants';
-import { type PlainPaymentMethodType } from '../../core/interface';
-import { type TaxCountryHook } from '../hooks/useTaxCountry';
+import type { PlainPaymentMethodType } from '../../core/interface';
+import type { TaxCountryHook } from '../hooks/useTaxCountry';
 import { ApplePayButton } from './ApplePayButton';
 import { ChargebeePaypalButton } from './ChargebeePaypalButton';
 

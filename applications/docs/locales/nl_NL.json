@@ -154,6 +154,9 @@
       "Claim this address": [
         "Claim dit adres"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Claim uw gratis ${ BRAND_NAME }-adres"
+      ],
       "Clear data": [
         "Gegevens wissen"
       ],
@@ -1131,14 +1134,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ cycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -1386,6 +1392,9 @@
       "Manual setup problem": [
         "Probleem met eigen setup"
       ],
+      "Meet problem": [
+        "Meet probleem"
+      ],
       "Other": [
         "Anders"
       ],
@@ -1523,12 +1532,47 @@
         "Uitvouwen"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Toegang tot geavanceerde AI-modellen"
+      ],
+      "Basic chat history": [
+        "Basis gespreksgeschiedenis"
+      ],
+      "Full chat history with search": [
+        "Volledige chatgeschiedenis met zoeken"
+      ],
+      "Large file upload support": [
+        "Ondersteuning voor het uploaden van grote bestanden"
+      ],
+      "Limited daily chats": [
+        "Beperkt aantal dagelijkse gesprekken"
+      ],
+      "Limited favorites": [
+        "Beperkte favorieten"
+      ],
+      "Unlimited daily chats": [
+        "Onbeperkt aantal dagelijkse gesprekken"
+      ],
+      "Unlimited favorites for quick access": [
+        "Onbeperkt favorieten voor snelle toegang"
+      ],
+      "Upload and query multiple large files": [
+        "Meerdere grote bestanden uploaden en opvragen"
+      ],
+      "Upload and query small files": [
+        "Kleine bestanden uploaden en opvragen"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } toevoegen"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats op hoge snelheid en geavanceerde AI-functies."
       ]
     },
     "color": {
@@ -3650,8 +3694,8 @@
       "customer support": [
         "klantondersteuning"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
@@ -3851,8 +3895,17 @@
       ]
     },
     "Header": {
+      "Domain": [
+        "Domein"
+      ],
       "Drawer": [
         "Zijpaneel"
+      ],
+      "Password ends with": [
+        "Wachtwoord eindigt met"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ]
     },
     "Hint": {
@@ -4816,9 +4869,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
       ],
@@ -5533,8 +5583,8 @@
       "You are about to open your default browser and visit:": [
         "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "U bent momenteel aangemeld als ${ username }."
       ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "U bekijkt momenteel dit document in alleen-bekijken modus. Neem contact op met de eigenaar om toegang tot bewerken en commentaar te vragen."
@@ -6272,9 +6322,6 @@
       ],
       "Username": [
         "Gebruikersnaam"
-      ],
-      "VAT": [
-        "BTW"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -8012,7 +8059,7 @@
         "Betaal jaarlijks om te genieten van ons beste aanbod"
       ],
       "Save": [
-        "Opslaan"
+        "Bespaar"
       ],
       "Save big when you pay annually": [
         "Bespaar veel wanneer u jaarlijks betaalt"
@@ -8297,11 +8344,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% belastingen: ${ taxAmount }"
+      ],
       "Got it": [
         "Begrepen"
       ],
       "I'm purchasing as a business": [
         "Ik koop dit voor mijn bedrijf."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% belastingen: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -8317,6 +8376,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
+      ],
+      "Taxes": [
+        "Belastingen"
       ],
       "terms & conditions": [
         "algemene voorwaarden"
@@ -8348,6 +8410,9 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
+      ],
+      "VAT": [
+        "BTW"
       ],
       "VAT number": [
         "BTW-nummer"
@@ -8676,6 +8741,96 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiële e-mail van ${ BRAND_NAME }"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "EINDEZOMERSALE"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent }%"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /maand"
+      ],
+      "/month": [
+        "/maand"
+      ],
+      "1 TB data storage": [
+        "1 TB dataopslag"
+      ],
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB opslag voor bestanden, foto's en documenten"
+      ],
+      "3 TB data storage": [
+        "3 TB dataopslag"
+      ],
+      "500 GB storage": [
+        "500 GB opslagruimte"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Toegang tot 15.000+ servers in 120+ landen"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle premium functies van Mail, Pass, Drive, VPN en Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ingebouwde 2FA-authenticator"
+      ],
+      "Connect 10 devices at once": [
+        "Verbind 10 apparaten tegelijkertijd"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Geniet van de hoogste VPN-snelheden"
+      ],
+      "Individual accounts for 6 users": [
+        "Afzonderlijke accounts voor 6 gebruikers"
+      ],
+      "Individual accounts for you and a partner": [
+        "Afzonderlijke accounts voor u en een partner"
+      ],
+      "Online document editor": [
+        "Online documenteditor"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Bespaar ${ totalSavings } en behoud al uw huidige functies!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Beveiligd delen van koppelingen, kluizen en items"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere bescherming tegen cyberdreigingen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde mappen, labels en filters"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Eindezomeruitverkoop"
+      ],
+      "for 12 months": [
+        "voor 12 maanden"
       ]
     },
     "Recent documents table header": {
@@ -10220,6 +10375,9 @@
       "Network error": [
         "Netwerkfout"
       ],
+      "Next": [
+        "Volgende"
+      ],
       "Night theme": [
         "Nacht thema"
       ],
@@ -10237,6 +10395,9 @@
       ],
       "Open actions dropdown": [
         "Open dropdown-menu voor acties"
+      ],
+      "Open pagination": [
+        "Paginering openen"
       ],
       "Org setup": [
         "Org instelling"
@@ -10267,6 +10428,9 @@
       ],
       "Photos": [
         "Foto's"
+      ],
+      "Previous": [
+        "Vorige"
       ],
       "Private browsing vs VPN": [
         "Privé browsen versus VPN"
@@ -10665,9 +10829,6 @@
       "${ n } wallet": [
         "${ n } portemonnee",
         "${ n } portemonnees"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Een veiligere manier om uw Bitcoin vast te houden"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

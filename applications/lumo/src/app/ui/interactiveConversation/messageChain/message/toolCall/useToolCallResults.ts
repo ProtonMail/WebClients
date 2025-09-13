@@ -5,7 +5,7 @@ import type { Message } from 'applications/lumo/src/app/types';
 import { useApi } from '@proton/components';
 import { getLogo } from '@proton/shared/lib/api/images';
 
-import { type SearchItem } from '../../../../../lib/toolCall/types';
+import type { SearchItem } from '../../../../../lib/toolCall/types';
 
 interface EnhancedToolCallResults {
     enhancedResults: EnhancedSearchItem[] | null;
@@ -80,7 +80,7 @@ export const useToolCallResults = (results: SearchItem[] | null, message: Messag
             setEnhancedResults(withLogos);
         };
 
-        processResults();
+        void processResults();
     }, [message.status, resultsKey, api]); // Use resultsKey instead of results array
 
     return {

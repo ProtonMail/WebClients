@@ -1327,6 +1327,14 @@
         "不支持的日程"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You have reached the trial limit.": [
+        "您已达到试用上限。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消订阅"
@@ -1656,6 +1664,9 @@
       "Manual setup problem": [
         "手动设置问题"
       ],
+      "Meet problem": [
+        "遇到问题"
+      ],
       "Other": [
         "其他"
       ],
@@ -1797,6 +1808,11 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "collider_2025: feature": {
+      "Unlimited daily chats": [
+        "无限聊天次数"
       ]
     },
     "color": {
@@ -4178,9 +4194,6 @@
       "customer support": [
         "客户支持"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "家庭计划目前不支持外部账户。请在加入前创建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "如果您接受邀请，我们将为您退订当前账户等级，并将剩余时长折算为余额存入您的账户。"
       ],
@@ -5963,9 +5976,6 @@
       "inactive": [
         "未启用"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "验证您的邮箱地址，提升账户安全性。"
       ],
@@ -6349,9 +6359,6 @@
       ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "请在打开的新标签页中完成验证。"
       ],
       "Please wait till your changes are synced with the server.": [
         "请稍候，数据正在与服务器同步。"
@@ -6872,9 +6879,6 @@
       "Vault updated": [
         "保险库已更新"
       ],
-      "Verification can take a few minutes.": [
-        "验证可能需要数分钟。"
-      ],
       "Verification may take a few minutes.": [
         "验证过程可能需要数分钟。"
       ],
@@ -7024,9 +7028,6 @@
       ],
       "You already have a free account": [
         "您的账户已经是免费版了"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "有 ${ ipAddresses } 台专用服务器可以使用，其中有 ${ ipCount } 台正在使用。"
@@ -8059,9 +8060,6 @@
       ],
       "Value": [
         "值"
-      ],
-      "VAT": [
-        "增值税"
       ],
       "Verification code": [
         "验证码"
@@ -9717,9 +9715,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "双因素身份验证已设为非必需"
-      ],
-      "Video conferencing settings have been updated": [
-        "视频会议设置已更新"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9783,7 +9778,7 @@
         "按年支付，确保我们的最佳优惠"
       ],
       "Save": [
-        "保存"
+        "节省"
       ],
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
@@ -13806,9 +13801,6 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理员可以管理用户账户，并授予其他用户管理员权限。只有主要管理员可以编辑组织的计划。"
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "允许在日历邀请中无缝添加视频会议链接。"
-      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "根据系统设置自动调整日间或夜间模式。"
       ],
@@ -14409,9 +14401,6 @@
       ],
       "${ n } wallet": [
         "${ n } 个钱包"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "更安全持有比特币的方式"
       ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"

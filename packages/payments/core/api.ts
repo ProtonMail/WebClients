@@ -1,7 +1,8 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getProductHeaders } from '@proton/shared/lib/apps/product';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api, User } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
+import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
 import {
     type BillingAddress,
@@ -16,6 +17,7 @@ import type {
     Currency,
     Cycle,
     ExistingPayment,
+    PaymentStatus,
     PlanIDs,
     SavedPaymentMethod,
     TokenPayment,
@@ -25,7 +27,6 @@ import type {
     WrappedCryptoPayment,
     WrappedPaypalPayment,
 } from './interface';
-import { type PaymentStatus } from './interface';
 import { formatPaymentMethods } from './methods';
 import { normalizePaymentMethodStatus } from './payment-status';
 import { PlanState } from './plan/constants';
@@ -75,11 +76,6 @@ export const getFreePlan = ({ api, currency }: { api: Api; currency?: Currency }
             };
         })
         .catch(() => FREE_PLAN);
-
-export const getSubscription = (forceVersion?: PaymentsVersion) => ({
-    url: `payments/${forceVersion ?? paymentsVersion}/subscription`,
-    method: 'get',
-});
 
 export interface FeedbackDowngradeData {
     Reason: string;
@@ -588,13 +584,13 @@ export const queryTransactions = (params: QueryTransactionsParams) => ({
 });
 
 // Do not export this function. Use getPaymentMethods instead.
-const queryPaymentMethods = (forceVersion?: PaymentsVersion) => ({
-    url: `payments/${forceVersion ?? paymentsVersion}/methods`,
+const queryPaymentMethods = () => ({
+    url: `payments/v5/methods`,
     method: 'get',
 });
 
-export async function getPaymentMethods(api: Api, forceVersion?: PaymentsVersion): Promise<SavedPaymentMethod[]> {
-    const response = await api<{ PaymentMethods: SavedPaymentMethod[] }>(queryPaymentMethods(forceVersion));
+export async function getPaymentMethods(api: Api): Promise<SavedPaymentMethod[]> {
+    const response = await api<{ PaymentMethods: SavedPaymentMethod[] }>(queryPaymentMethods());
     return formatPaymentMethods(response.PaymentMethods ?? []);
 }
 
@@ -643,7 +639,7 @@ export const querySubscriptionV5DynamicPlans = () => ({
     method: 'get',
 });
 
-export const getSubscriptionV5DynamicPlans = async (api: Api) => {
+const getSubscriptionV5DynamicPlans = async (api: Api) => {
     // Please note that this api actually DOES NOT return the proper Subscription objects.
     // The response is very close to Subscription type, but not completely. The most significant problems:
     // - Upcoming subscriptions must be manually linked to their parents
@@ -665,4 +661,38 @@ export const getSubscriptionV5DynamicPlans = async (api: Api) => {
             undefined
         );
     });
+};
+
+const canFetchSecondarySubscriptions = (user: User) => {
+    return isAdmin(user) && isPaid(user) && user.HasMultipleSubscriptions;
+};
+
+export const getSubscription = async (api: Api, user: User | undefined) => {
+    const primarySubscriptionPromise = api<{
+        Subscription: Subscription;
+        UpcomingSubscription: Subscription;
+    }>({
+        url: `payments/v5/subscription`,
+        method: 'get',
+    });
+
+    const secondarySubscriptionsPromise =
+        user && canFetchSecondarySubscriptions(user)
+            ? getSubscriptionV5DynamicPlans(api).catch(() => undefined)
+            : undefined;
+
+    const [{ Subscription, UpcomingSubscription }, secondarySubscriptions] = await Promise.all([
+        primarySubscriptionPromise,
+        secondarySubscriptionsPromise,
+    ]);
+
+    const filteredSecondarySubscriptions = secondarySubscriptions?.filter((it) => it.ID !== Subscription.ID);
+
+    return formatSubscription(
+        Subscription,
+        UpcomingSubscription,
+        filteredSecondarySubscriptions && filteredSecondarySubscriptions.length > 0
+            ? filteredSecondarySubscriptions
+            : undefined
+    );
 };

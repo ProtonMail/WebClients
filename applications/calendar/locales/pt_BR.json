@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Adicionar feriados"
       ],
+      "Add secret passphrase": [
+        "Adicionar passphrase secreta"
+      ],
       "Add to group": [
         "Adicionar ao grupo"
       ],
@@ -140,6 +143,9 @@
       ],
       "Claim this address": [
         "Confirmar este endereço"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Confirmar seu endereço de ${ BRAND_NAME }"
       ],
       "Clear": [
         "Limpar"
@@ -470,6 +476,9 @@
       "Join calendar": [
         "Juntar ao calendário"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Participar com ${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "Manter fuso horário atual"
       ],
@@ -596,6 +605,9 @@
       "Open settings": [
         "Abrir configurações"
       ],
+      "Passphrase": [
+        "Passphrase"
+      ],
       "Pause indexing": [
         "Pausar indexação"
       ],
@@ -688,6 +700,9 @@
       ],
       "Resume indexing": [
         "Retomar indexação"
+      ],
+      "Retry": [
+        "Tentar novamente"
       ],
       "Save": [
         "Salvar"
@@ -844,6 +859,9 @@
       ],
       "Update recovery phrase": [
         "Atualizar frase de recuperação"
+      ],
+      "Update secret passphrase": [
+        "Atualizar passphrase secreta"
       ],
       "Upgrade": [
         "Fazer upgrade"
@@ -1220,14 +1238,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ cycle } meses em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Após a avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que se renova automaticamente a cada ${ renewCycle } meses em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_LUMO_SEATS } licenças do ${ LUMO_SHORT_APP_NAME } durante o período de avaliação."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_SCRIBE_SEATS } licenças do Scribe durante o período de avaliação."
@@ -1479,6 +1500,9 @@
       ],
       "Manual setup problem": [
         "Problema de configuração manual"
+      ],
+      "Meet problem": [
+        "Problema no Meet"
       ],
       "Other": [
         "Outro"
@@ -1806,12 +1830,50 @@
         "Expandir"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acesso a modelos de IA avançados"
+      ],
+      "Basic chat history": [
+        "Histórico de bate-papo básico"
+      ],
+      "Full chat history with search": [
+        "Histórico completo de bate-papos com pesquisa"
+      ],
+      "Large file upload support": [
+        "Suporte para envio de arquivos grandes"
+      ],
+      "Limited daily chats": [
+        "Bate-papos diários limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Bate-papos diários ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para acesso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Enviar e consultar vários arquivos grandes"
+      ],
+      "Upload and query small files": [
+        "Enviar e consultar arquivos pequenos"
+      ],
+      "Web search access": [
+        "Acesso à pesquisa na web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } é uma IA que prioriza a privacidade e ajuda você a fazer mais, mantendo seus dados seguros. Desbloqueie todo o potencial e tenha acesso antecipado a novas funcionalidades conforme forem lançadas."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Adicionar ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Bate-papos de alta velocidade e recursos avançados de IA."
       ]
     },
     "colon": {
@@ -3482,8 +3544,14 @@
       "Event not found": [
         "Evento não encontrado"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Falha ao criar videoconferência do ${ MEET_APP_NAME }"
+      ],
       "Failed to create meeting": [
         "Falha ao criar a reunião"
+      ],
+      "Failed to decrypt session key": [
+        "Falha ao descriptografar a chave de sessão"
       ],
       "Failed to get event": [
         "Falha ao obter o evento"
@@ -3496,6 +3564,9 @@
       ],
       "Failed to open to contact": [
         "Não foi possível abrir o contato."
+      ],
+      "Failed to update secret passphrase": [
+        "Falha ao atualizar a passphrase secreta"
       ],
       "First name is too long": [
         "Primeiro nome é muito longo"
@@ -3625,6 +3696,9 @@
       ],
       "Organization key is not decrypted": [
         "A chave de organização não está descriptografada"
+      ],
+      "Passphrase unavailable": [
+        "Passphrase indisponível"
       ],
       "Password is required": [
         "A senha é obrigatória"
@@ -4192,8 +4266,8 @@
       "customer support": [
         "suporte ao cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de família não oferecem suporte a contas externas no momento. Crie um endereço da ${ BRAND_NAME } antes de participar. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Os planos familiares não suportam contas externas no momento. Crie um endereço para ${ BRAND_NAME } antes de participar.${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, seu plano atual será alterado e você receberá um crédito em sua conta com o saldo restante, se houver."
@@ -4427,11 +4501,17 @@
       "Contacts": [
         "Contatos"
       ],
+      "Domain": [
+        "Domínio"
+      ],
       "Drawer": [
         "Painel lateral"
       ],
       "Name": [
         "Nome"
+      ],
+      "Password ends with": [
+        "Senha termina com"
       ],
       "Repeat event": [
         "Repetir evento"
@@ -4441,6 +4521,9 @@
       ],
       "Security Center": [
         "Central de segurança"
+      ],
+      "Username": [
+        "Nome de usuário"
       ]
     },
     "Hint": {
@@ -4803,6 +4886,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "O ${ CALENDAR_APP_NAME } exige um endereço ${ BRAND_NAME } para sincronização segura de eventos e criptografia. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
@@ -5223,6 +5309,9 @@
       "Enabling auto-deletion…": [
         "Ativando a exclusão automática…"
       ],
+      "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
+        "Garanta uma comunicação totalmente privada e criptografada. Resgate seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+      ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo de autenticação."
       ],
@@ -5266,8 +5355,17 @@
       "Expired": [
         "Expirado"
       ],
+      "Failed to update meeting name": [
+        "Não foi possível atualizar o nome da reunião"
+      ],
+      "Failed to update meeting password": [
+        "Não foi possível atualizar a senha da reunião"
+      ],
       "finance": [
         "finança"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Para segurança extra, você pode definir uma passphrase. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
       ],
       "Frequency modifications will be lost.": [
         "As modificações de frequência serão perdidas."
@@ -5332,9 +5430,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Na próxima etapa, poderá enviar um depósito usando um endereço Bitcoin."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indexando eventos: ${ current }/${ total }"
@@ -5927,8 +6022,8 @@
       "You are about to open your default browser and visit:": [
         "Você está prestes a abrir seu navegador padrão e visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Você está atualmente iniciado sessão como ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Você está usando mais armazenamento do que o incluído em um plano ${ downgradedPlanName }. Exclua ou remova dados para fazer o downgrade."
@@ -6315,6 +6410,9 @@
       "Account holder": [
         "Titular da conta"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Adicionar conferência do ${ MEET_APP_NAME }"
+      ],
       "Add email address": [
         "Adicionar endereços de e-mail"
       ],
@@ -6323,6 +6421,9 @@
       ],
       "Add to group": [
         "Adicionar ao grupo"
+      ],
+      "Add Zoom meeting": [
+        "Adicionar uma reunião do Zoom"
       ],
       "Address": [
         "Endereço"
@@ -6628,6 +6729,9 @@
       "Participants": [
         "Participantes"
       ],
+      "Passphrase:": [
+        "Passphrase:"
+      ],
       "Password": [
         "Senha"
       ],
@@ -6739,11 +6843,11 @@
       "Username": [
         "Nome de usuário"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Código de verificação"
+      ],
+      "Video conference": [
+        "Videoconferência"
       ],
       "Vulnerable": [
         "Vulnerável"
@@ -6789,6 +6893,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Zoom meeting": [
+        "Reunião no Zoom"
       ]
     },
     "Label for contact group color": {
@@ -6986,6 +7093,9 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "Saiba mais"
+      ],
+      "To continue using ${ BRAND_NAME }, please make sure your premium features are no longer in use or upgrade your plan.": [
+        "Para continuar usando ${ BRAND_NAME }, certifique-se de que seus recursos do plano premium não estão mais em uso ou faça um upgrade no seu plano."
       ],
       "upgrade for more storage": [
         "faça upgrade para mais armazenamento"
@@ -8228,6 +8338,9 @@
       ],
       "Passcode copied to clipboard": [
         "Código de acesso copiado para a área de transferência"
+      ],
+      "Passphrase copied to clipboard": [
+        "Passphrase copiada para a área de transferência"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8436,7 +8549,7 @@
         "Pague anualmente e assegure nossa melhor oferta"
       ],
       "Save": [
-        "Salvar"
+        "Economize"
       ],
       "Save big when you pay annually": [
         "Aproveite descontos incríveis ao pagar anualmente!"
@@ -8811,11 +8924,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluindo ${ taxRate }% de impostos: ${ taxAmount }"
+      ],
       "Got it": [
         "Entendi"
       ],
       "I'm purchasing as a business": [
         "Estou comprando como empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluindo ${ taxRate }${ taxName }${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluindo ${ taxRate }% de impostos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -8831,6 +8956,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renova por ${ renewPriceStr }, cancele a qualquer momento."
+      ],
+      "Taxes": [
+        "Impostos"
       ],
       "terms & conditions": [
         "termos e condições"
@@ -8862,6 +8990,9 @@
       ],
       "Timeout exceeded": [
         "Tempo limite excedido"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -9015,6 +9146,9 @@
       ],
       "E.g., ": [
         "Ex., "
+      ],
+      "Enter passphrase": [
+        "Digite a passphrase"
       ],
       "Filter groups": [
         "Filtrar grupos"
@@ -9213,6 +9347,96 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "E-mail oficial da ${ BRAND_NAME }"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "PROMOÇÃO DE FIM DE VERÃO"
+      ],
+      "Get the deal": [
+        "Aproveitar a oferta"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "${ discountPercent }% OFF"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /mês"
+      ],
+      "/month": [
+        "/mês"
+      ],
+      "1 TB data storage": [
+        "1 TB de armazenamento de dados"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB de armazenamento para arquivos, fotos e documentos"
+      ],
+      "3 TB data storage": [
+        "3 TB de armazenamento de dados"
+      ],
+      "500 GB storage": [
+        "500 GB de armazenamento"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Acesse mais de 15.000 servidores em mais de 120 países"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Todos os recursos premium do Mail, Pass, Drive, VPN e Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador A2F integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Conecte 10 dispositivos de uma só vez"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Os descontos são baseados nos preços mensais padrão. Sua assinatura será renovada pela taxa anual padrão quando o ciclo de faturamento terminar."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Aproveite as velocidades de VPN mais rápidas"
+      ],
+      "Individual accounts for 6 users": [
+        "Contas individuais para 6 usuários"
+      ],
+      "Individual accounts for you and a partner": [
+        "Contas individuais para você e um parceiro"
+      ],
+      "Online document editor": [
+        "Editor de documentos on-line"
+      ],
+      "Recover previous file versions": [
+        "Recupere versões anteriores de arquivos"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Economize ${ totalSavings } e mantenha todos os seus recursos atuais!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Compartilhamento seguro de links, cofres e itens"
+      ],
+      "Stronger protection against cyber threats": [
+        "Proteção mais forte contra ameaças cibernéticas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Aliases ilimitados do hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Use seu próprio domínio de e-mail"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Promoção de fim de verão"
+      ],
+      "for 12 months": [
+        "por 12 meses"
       ]
     },
     "Reload event button tooltip": {
@@ -9823,6 +10047,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } chegou!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Codifique seu calendário por cor para organizar melhor o seu dia, controlar seu tempo e muito mais."
       ],
@@ -9834,6 +10061,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Convide amigos para ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Agende e participe de chamadas do ${ MEET_APP_NAME } diretamente do seu calendário."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Crie e adicione facilmente links de videoconferência aos seus eventos."
@@ -10543,6 +10773,9 @@
       "Problem reported": [
         "Problema reportado"
       ],
+      "Secret passphrase updated": [
+        "Passphrase secreta atualizada"
+      ],
       "Undo in progress": [
         "Desfazer em andamento"
       ],
@@ -11083,6 +11316,9 @@
       "Network error": [
         "Erro de rede"
       ],
+      "Next": [
+        "Próximo"
+      ],
       "Night theme": [
         "Tema noturno"
       ],
@@ -11097,6 +11333,9 @@
       ],
       "Open actions dropdown": [
         "Abrir menu de ações"
+      ],
+      "Open pagination": [
+        "Abrir paginação"
       ],
       "Org setup": [
         "Configuração da organização"
@@ -11127,6 +11366,9 @@
       ],
       "Phone numbers": [
         "Números de telefone"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Private browsing vs VPN": [
         "Navegação privada vs VPN"
@@ -11583,9 +11825,6 @@
       "${ n } wallet": [
         "${ n } carteira",
         "${ n } carteiras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Uma maneira mais segura de guardar seu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

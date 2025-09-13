@@ -162,6 +162,9 @@
       "Claim this address": [
         "このアドレスを取得"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "無料の${ BRAND_NAME }アドレスを取得"
+      ],
       "Clear": [
         "消去"
       ],
@@ -1101,6 +1104,9 @@
       "Upload file": [
         "ファイルをアップロード"
       ],
+      "Upload File": [
+        "ファイルをアップロード"
+      ],
       "Upload files": [
         "ファイルをアップロード"
       ],
@@ -1391,6 +1397,32 @@
         "サポートされていない予定です"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }にトライアルが終了すると、${ formattedDate }に${ renewCycle }ヶ月ごとに自動更新される有料のサブスクリプションに移行します。${ formattedDate }までにキャンセルした場合、料金は請求されません。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月 ${ formattedDate } に自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_LUMO_SEATS }の${ LUMO_SHORT_APP_NAME }シートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_SCRIBE_SEATS }のスライブシートをご利用いただけます。"
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "トライアル期間中、最大${ TRIAL_MAX_USERS }ユーザーまでご利用いただけます。"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "トライアル期間中にカスタムドメインを追加することはできません。"
+      ],
+      "You have reached the trial limit.": [
+        "トライアルの制限に達しました。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "サブスクリプションをキャンセル"
@@ -1627,6 +1659,9 @@
       "Manual setup problem": [
         "手動セットアップに関する問題"
       ],
+      "Meet problem": [
+        "Meetの問題"
+      ],
       "Other": [
         "その他"
       ],
@@ -1771,6 +1806,52 @@
       ],
       "Expand": [
         "開く"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "高度なAIモデルへのアクセス"
+      ],
+      "Basic chat history": [
+        "基本チャット履歴"
+      ],
+      "Full chat history with search": [
+        "検索機能付きの完全なチャット履歴"
+      ],
+      "Large file upload support": [
+        "大容量ファイルアップロードサポート"
+      ],
+      "Limited daily chats": [
+        "毎日のチャットの制限"
+      ],
+      "Limited favorites": [
+        "お気に入りの制限"
+      ],
+      "Unlimited daily chats": [
+        "無制限の毎日のチャット"
+      ],
+      "Unlimited favorites for quick access": [
+        "無制限のクイックアクセスのお気に入り"
+      ],
+      "Upload and query multiple large files": [
+        "複数大容量ファイルのアップロードと検索"
+      ],
+      "Upload and query small files": [
+        "小さなファイルのアップロードと検索"
+      ],
+      "Web search access": [
+        "ウェブ検索アクセス"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } は、プライバシーを第一に考えたAIで、お客様のデータを安全に保ちながら、より多くのことを達成するのに役立ちます。その可能性を最大限に引き出し、導入される新しい機能への早期アクセスをお楽しみください。"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }を追加"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速チャットと高度なAI機能。"
       ]
     },
     "color": {
@@ -3670,14 +3751,14 @@
       "We were not able to load some of your invitation to shared items": [
         "共有アイテムへの招待の一部を読み込むことができませんでした"
       ],
+      "We were not able to load some of your invitations": [
+        "お客様の招待の一部を読み込めませんでした"
+      ],
       "We were not able to load some of your saved shared links": [
         "保存済みの共有リンクの一部を読み込むことができませんでした"
       ],
       "We were not able to load some of your shared items": [
         "共有アイテムの一部を読み込むことができませんでした"
-      ],
-      "We were not able to load some of your shared items details": [
-        "共有アイテムの一部の詳細を読み込むことができませんでした。"
       ],
       "We were not able to load some of your shared items info": [
         "共有アイテムの一部の情報を読み込むことができませんでした。"
@@ -3992,8 +4073,8 @@
       "customer support": [
         "カスタマーサポート"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "ファミリープランは現在外部のアカウントをサポートしていません。参加する前に${ BRAND_NAME }アドレスを作成してください。${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "招待を受けると、あなたの現在のプランは変更され、残高があればあなたのアカウントクレジットに追加されます。"
@@ -4196,14 +4277,23 @@
       "Create new shared album": [
         "新しい共有アルバムを作成"
       ],
+      "Domain": [
+        "ドメイン"
+      ],
       "Drawer": [
         "サイドパネル"
+      ],
+      "Password ends with": [
+        "パスワードの末尾"
       ],
       "Rename album": [
         "アルバム名を変更"
       ],
       "Security Center": [
         "セキュリティセンター"
+      ],
+      "Username": [
+        "ユーザー名"
       ]
     },
     "Heading": {
@@ -5313,9 +5403,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "次のステップでは、Bitcoin アドレスを使用してデポジットを送信することができます。"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName }: ${ price } を含む"
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ totalProgressToShow }件のうち${ esProgress }件目のアイテムをインデックス中"
       ],
@@ -6309,8 +6396,8 @@
       "You are about to open your default browser and visit:": [
         "既定のブラウザーで次のページにアクセスしようとしています"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "現在 ${ user.Name } (${ user.Email }) でサインインしています。"
+      "You are currently signed in as ${ username }.": [
+        "現在 ${ username } としてサインインしています。"
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } プランに含まれるストレージを超えるストレージを使用しています。 ダウングレードするには、データを削除してください。"
@@ -7170,9 +7257,6 @@
       ],
       "Username": [
         "ユーザー名"
-      ],
-      "VAT": [
-        "付加価値税"
       ],
       "Verification code": [
         "認証コード"
@@ -8948,7 +9032,7 @@
         "毎年払い、安全な私たちの最高のオファー"
       ],
       "Save": [
-        "節約"
+        "お得"
       ],
       "Save big when you pay annually": [
         "年払いで大幅に節約"
@@ -9380,11 +9464,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "この期間中、サブスクリプションを変更またはキャンセルすることはできません。 変更を試みる前にお支払いが完了するまでお待ちください。お待ちください。"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }を除く: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金を除く: ${ taxAmount }"
+      ],
       "Got it": [
         "分かりました"
       ],
       "I'm purchasing as a business": [
         "法人として購入します"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName }: ${ taxAmount } を含む"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% の税金込み: ${ taxAmount }"
       ],
       "MM/YY": [
         "月/年"
@@ -9400,6 +9496,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
+      "Taxes": [
+        "税金"
       ],
       "terms & conditions": [
         "利用規約"
@@ -9427,6 +9526,9 @@
       ],
       "Timeout exceeded": [
         "タイムアウトを超えました"
+      ],
+      "VAT": [
+        "付加価値税"
       ],
       "VAT number": [
         "VAT番号"
@@ -11631,6 +11733,9 @@
       "Network error": [
         "ネットワークエラー"
       ],
+      "Next": [
+        "次へ"
+      ],
       "Night theme": [
         "夜間のテーマ"
       ],
@@ -11691,6 +11796,9 @@
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"
       ],
+      "Open pagination": [
+        "ページネーションを開く"
+      ],
       "Org setup": [
         "組織設定"
       ],
@@ -11732,6 +11840,9 @@
       ],
       "Preview": [
         "プレビュー"
+      ],
+      "Previous": [
+        "前へ"
       ],
       "Private browsing vs VPN": [
         "プライベートブラウジング vs VPN"
@@ -12260,9 +12371,6 @@
       ],
       "${ n } wallet": [
         "${ n } 個のウォレット"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin を保持する安全な方法"
       ],
       "Bitcoin via Email": [
         "メールで Bitcoin"

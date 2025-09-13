@@ -6,10 +6,10 @@ import { ButtonLike, InlineLinkButton } from '@proton/atoms';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import type { UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import lumoPlusLogo from '@proton/styles/assets/img/lumo/lumo-plus-logo.svg';
 
 import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';
 import useLumoPlusUpgradeWithTelemetry from '../../hooks/useLumoPlusUpgradeWithTelemetry';
+import LumoPlusLogoInline from '../components/LumoPlusLogoInline';
 import LumoPlusUpsellModal from '../upsells/LumoPlusUpsellModal';
 
 type BaseProps = {
@@ -54,12 +54,9 @@ const LumoUpgradeButton = ({
 
     const GetLumoPlusContent = () => (
         <span className="flex items-center gap-2">
-            <span className="text-bold" style={{ fontFamily: 'Syne, sans-serif' }}>Get</span>
-            <img
-                src={lumoPlusLogo}
-                alt="lumo+"
-                style={{ height: '12px' }}
-            />
+            <span className="text-bold" style={{ fontFamily: 'Syne, sans-serif' }}>{c('collider_2025: Upsell Title')
+                .t`Get`}</span>
+            <LumoPlusLogoInline height="12px" />
         </span>
     );
 

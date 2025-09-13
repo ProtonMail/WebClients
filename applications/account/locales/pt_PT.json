@@ -1048,11 +1048,14 @@
       "Refer a friend": [
         "Referencie um amigo"
       ],
+      "Refresh": [
+        "Atualizar"
+      ],
       "Refresh status": [
         "Atualizar estado"
       ],
       "Refresh the page": [
-        "Actualizar a página"
+        "Atualizar página"
       ],
       "refresh the page": [
         "actualizar a página"
@@ -1445,7 +1448,7 @@
         "Cancelar subscrição"
       ],
       "Update": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Update recovery file": [
         "Actualizar o ficheiro de recuperação"
@@ -1454,7 +1457,7 @@
         "Actualizar a frase de recuperação"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Upgrade now": [
         "Actualizar agora"
@@ -4075,6 +4078,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "O ${ MAIL_APP_NAME } é a sua aplicação de e-mail predefinida."
       ],
+      "A checked box means the feature is disabled.": [
+        "Uma caixa assinalada significa que a funcionalidade está desativada."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adicione pastas e ficheiros ao ${ DRIVE_APP_NAME } e convide membros da equipa a visualizar ou editar."
       ],
@@ -4222,9 +4228,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pode importar eventos em formato iCal (ficheiro ICS). O ficheiro deve ter um tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu ficheiro for maior, divida-o."
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Receberá ${ referralReward } em créditos de ${ BRAND_NAME } quando a pessoa que convidar se inscrever num plano de ${ BRAND_NAME }, e ela também receberá ${ referralReward } em créditos para começar."
       ]
     },
     "description": {
@@ -5116,10 +5119,6 @@
         "${ n } dia",
         "${ n } dias"
       ],
-      "${ n } day left": [
-        "${ n } dia restante",
-        "${ n } dias restantes"
-      ],
       "Access granted": [
         "O acesso foi concedido."
       ],
@@ -5380,6 +5379,9 @@
       ],
       "Invalid Sieve code": [
         "O código Sieve não é válido."
+      ],
+      "Invalid URL": [
+        "O URL não é válido."
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -6186,9 +6188,6 @@
       ],
       "customer support": [
         "apoio ao cliente"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de família não suportam atualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, mudá-lo-emos do seu plano actual e creditaremos na sua conta qualquer saldo remanescente."
@@ -8652,9 +8651,6 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obtenha acesso criando uma conta ${ BRAND_NAME } e aceitando o convite."
       ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Obtenha e dê **${ referralReward } créditos** por cada amigo que subscreva."
-      ],
       "Get it on Google Play": [
         "Obtenha-a no Google Play"
       ],
@@ -8820,9 +8816,6 @@
       ],
       "inactive": [
         "inativa"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Aumente a segurança da sua conta verificando o seu endereço de e-mail."
@@ -9399,9 +9392,6 @@
       ],
       "Please use another browser or download the file.": [
         "Utilize outro navegador ou transfira o ficheiro."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verifique o pagamento no separador que abriu."
       ],
       "Please wait till your changes are synced with the server.": [
         "Aguarde até que as suas alterações sejam sincronizadas com o servidor."
@@ -10207,9 +10197,6 @@
       "Vault updated": [
         "O cofre foi atualizado."
       ],
-      "Verification can take a few minutes.": [
-        "A verificação pode levar alguns minutos."
-      ],
       "Verification link expired": [
         "A ligação de verificação expirou."
       ],
@@ -10419,9 +10406,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Está prestes a abrir o seu navegador predefinido e a visitar:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Tem actualmente sessão iniciada como ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Utiliza atualmente ${ ipCount } de ${ ipAddresses } servidor dedicado disponível.",
@@ -10911,6 +10895,9 @@
       "Donation": [
         "Donativo"
       ],
+      "Manual": [
+        "Manual"
+      ],
       "Modification": [
         "Modificação"
       ],
@@ -10973,6 +10960,11 @@
       ],
       "Primary": [
         "Primária"
+      ]
+    },
+    "Key type hint": {
+      "Faster": [
+        "Mais rápido"
       ]
     },
     "Keyboard shortcut name": {
@@ -11445,8 +11437,20 @@
       "Auto-unsubscribe": [
         "Cancelar inscrição automaticamente"
       ],
+      "Autofill": [
+        "Preenchimento automático"
+      ],
+      "Autofill 2FA": [
+        "Preenchimento automático de A2F"
+      ],
       "Automatically save contacts": [
         "Guardar contactos automaticamente"
+      ],
+      "Autosave": [
+        "Guardar automaticamente"
+      ],
+      "Autosuggest": [
+        "Sugestão automática"
       ],
       "Awarded": [
         "Premiado"
@@ -11687,6 +11691,9 @@
       ],
       "Domain name": [
         "Nome do domínio"
+      ],
+      "Domains": [
+        "Domínios"
       ],
       "Don't ask again": [
         "Não perguntar novamente"
@@ -12066,6 +12073,9 @@
       "Other amount": [
         "Outro valor"
       ],
+      "Passkeys": [
+        "Chaves de acesso"
+      ],
       "Password": [
         "Palavra-passe"
       ],
@@ -12375,9 +12385,6 @@
       ],
       "Value": [
         "Valor"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Código de verificação"
@@ -13138,9 +13145,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Entre na sua conta ${ BRAND_NAME } para aceder a todos os serviços ${ BRAND_NAME } como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e outros. Não tem uma conta? Crie uma GRÁTIS."
-      ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Assuma o controlo dos seus dados com encriptação de ponta a ponta. Não é necessário cartão de crédito."
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Experimente o ${ BRAND_NAME } gratuitamente com esta ligação"
@@ -14607,9 +14611,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "A autenticação de dois fatores não é mais necessária."
-      ],
-      "Video conferencing settings have been updated": [
-        "As definições da videoconferência foram atualizadas."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14749,7 +14750,7 @@
         "Paga anualmente e garante a nossa melhor oferta"
       ],
       "Save": [
-        "Salvar"
+        "Poupe"
       ],
       "Save big when you pay annually": [
         "Poupe em grande ao pagar anualmente!"
@@ -15833,6 +15834,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renovação por ${ renewPriceStr } com possibilidade de cancelar a qualquer momento."
       ],
+      "Taxes": [
+        "Impostos"
+      ],
       "terms & conditions": [
         "os termos e condições"
       ],
@@ -15866,6 +15870,9 @@
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Será faturado ${ amountToCharge } com o método de pagamento selecionado."
@@ -15921,6 +15928,9 @@
     "Payments.VAT number name": {
       "ABN": [
         "Número de empresa australiano (ABN)"
+      ],
+      "Add ABN": [
+        "Adicionar ABN"
       ],
       "Business Number": [
         "Número da empresa"
@@ -17493,9 +17503,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "E ganhe ${ referralReward } em créditos, se subscrever."
-      ],
       "Billing Cycle": [
         "Ciclo de facturação"
       ],
@@ -17558,12 +17565,6 @@
       ],
       "Free": [
         "Free"
-      ],
-      "Free for 14 days": [
-        "Gratuito por 14 dias"
-      ],
-      "Get ${ referralReward } in credits": [
-        "Obtenha ${ referralReward } em créditos"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Crie um endereço seguro do ${ MAIL_APP_NAME } ou ${ internalButton }"
@@ -17639,9 +17640,6 @@
       ],
       "Select ${ title }": [
         "Selecionar ${ title }"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Selecione um serviço e aproveite a versão premium por 14 dias grátis. Nenhum cartão de crédito é necessário."
       ],
       "Selected": [
         "Selecionado"
@@ -17988,7 +17986,7 @@
         "Desfrute do streaming sem limites"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Upgrade for ${ pricingTitle }": [
         "Melhore por ${ pricingTitle }"
@@ -20007,6 +20005,9 @@
       "Desktop": [
         "Área de trabalho"
       ],
+      "Details": [
+        "Detalhes"
+      ],
       "Device": [
         "Dispositivo"
       ],
@@ -20271,9 +20272,6 @@
       ],
       "Gift code": [
         "Código de oferta"
-      ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Dê ${ referralReward } e 2 semanas de graça. Obtenha créditos de ${ referralReward }."
       ],
       "Group": [
         "Grupo"
@@ -21143,9 +21141,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Os administradores podem gerir as contas de utilizador e atribuir privilégios de administrador a outros utilizadores. Apenas o administrador principal pode editar o plano da organização."
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Permite adicionar facilmente ligações de videoconferência aos convites da sua agenda."
       ],
       "Any protection applied to suspicious activity": [
         "Qualquer proteção aplicada a atividade suspeita"

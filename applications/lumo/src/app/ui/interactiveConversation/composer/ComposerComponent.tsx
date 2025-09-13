@@ -1,17 +1,19 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { EditorContent } from '@tiptap/react';
-import clsx from 'clsx';
+import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button, Tooltip } from '@proton/atoms';
 import { Icon, useNotifications } from '@proton/components';
 import { IcGlobe, IcMicrophone, IcPaperClip } from '@proton/icons';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import lumoStart from '@proton/styles/assets/img/illustrations/lumo-arrow.svg';
 import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
 import useFlag from '@proton/unleash/useFlag';
 
+import { MAX_FILE_SIZE } from '../../../constants';
 import type { HandleSendMessage } from '../../../hooks/useLumoActions';
 import { useTierErrors } from '../../../hooks/useTierErrors';
 import useTipTapEditor from '../../../hooks/useTipTapEditor';
@@ -161,6 +163,18 @@ export const ComposerComponent = ({
     const handleFileProcessing = useCallback(
         async (file: File) => {
             try {
+                // Check file size limit first
+                if (file.size > MAX_FILE_SIZE) {
+                    const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+                    const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
+                    createNotification({
+                        text: c('collider_2025: Error')
+                            .t`File "${file.name}" is too large (${fileSizeFormatted}). Maximum allowed size is ${maxSizeFormatted}.`,
+                        type: 'error',
+                    });
+                    return;
+                }
+
                 // Log file processing start for user feedback
                 console.log(`Starting file processing: ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`);
 
@@ -184,11 +198,22 @@ export const ComposerComponent = ({
                         type: 'warning',
                     });
                 } else if (result.isUnsupported) {
-                    // Show toast notification for unsupported file
-                    createNotification({
-                        text: c('collider_2025: Error').t`File format not supported: ${result.fileName}`,
-                        type: 'error',
-                    });
+                    // Special message for PPTX files with conversion suggestions
+                    if (file.type === 'application/vnd.openxmlformats-officedocument.presentationml.presentation' || 
+                        file.type === 'application/vnd.ms-powerpoint' ||
+                        file.name.toLowerCase().endsWith('.pptx') ||
+                        file.name.toLowerCase().endsWith('.ppt')) {
+                        createNotification({
+                            text: c('collider_2025: Error').t`PowerPoint files are not supported. Please convert to PDF and upload the PDF version for better text extraction.`,
+                            type: 'warning',
+                        });
+                    } else {
+                        // Show generic unsupported file notification
+                        createNotification({
+                            text: c('collider_2025: Error').t`File format not supported: ${result.fileName}`,
+                            type: 'error',
+                        });
+                    }
                 } else if (!result.success && result.errorMessage) {
                     // Show toast notification for processing error
                     createNotification({
@@ -206,7 +231,7 @@ export const ComposerComponent = ({
                 });
             }
         },
-        [dispatch, createNotification]
+        [dispatch, createNotification, messageChain]
     );
 
     const handleFileInputChange = useCallback(
@@ -386,14 +411,14 @@ export const ComposerComponent = ({
                                         ref={uploadButtonRef}
                                         icon
                                         className={clsx(
-                                            'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center color-weak',
+                                            'border-0 shrink-0 flex flex-row flex-nowrap gap-1 items-center color-weak p-2',
                                             showUploadMenu && 'is-active'
                                         )}
                                         onClick={handleUploadButtonClick}
                                         shape="ghost"
                                         size="small"
                                     >
-                                        <IcPaperClip size={6}></IcPaperClip>
+                                        <IcPaperClip size={isSmallScreen ? 6 : 4}></IcPaperClip>
                                         <span className="hidden sm:block text-sm mt-0.5">{c('collider_2025: Button')
                                             .t`Upload`}</span>
                                     </Button>
@@ -409,7 +434,7 @@ export const ComposerComponent = ({
                                     <Button
                                         icon
                                         className={clsx(
-                                            'web-search-button order-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak',
+                                            'web-search-button order-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak p-2',
                                             isWebSearchButtonToggled && 'is-active'
                                         )}
                                         disabled={hasAttachments}
@@ -417,7 +442,7 @@ export const ComposerComponent = ({
                                         shape="ghost"
                                         size="small"
                                     >
-                                        <IcGlobe size={6}></IcGlobe>
+                                        <IcGlobe size={isSmallScreen ? 6 : 4}></IcGlobe>
                                         <span className=" hidden sm:block text-sm mt-0.5">{c('collider_2025: Button')
                                             .t`Web search`}</span>
                                     </Button>
@@ -443,14 +468,13 @@ export const ComposerComponent = ({
                                     <Button
                                         icon
                                         id="voice-entry-mobile-button"
-                                        className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak"
+                                        className="border-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak p-2"
                                         shape="ghost"
                                         size="small"
                                     >
                                         <IcMicrophone size={6}></IcMicrophone>
                                     </Button>
                                 </div>
-
                             </div>
                         </div>
                     </div>

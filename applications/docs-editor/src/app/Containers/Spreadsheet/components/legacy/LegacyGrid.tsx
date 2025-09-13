@@ -145,6 +145,8 @@ export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridPro
       onDragOver={state.onDragOver}
       onDrop={state.onDrop}
       onCreateTable={state.onCreateTable}
+      basicFilter={state.basicFilter}
+      onCreateBasicFilter={state.onCreateBasicFilter}
       onRequestEditTable={state.onRequestEditTable}
       onRequestDefineNamedRange={state.onRequestDefineNamedRange}
       onFreezeColumn={state.onFreezeColumn}

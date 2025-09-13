@@ -165,6 +165,9 @@
       "Claim this address": [
         "Diese Adresse beanspruchen"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Deine kostenlose ${ BRAND_NAME }-Adresse beanspruchen"
+      ],
       "Clear": [
         "Löschen"
       ],
@@ -1106,6 +1109,9 @@
       "Upload file": [
         "Datei hochladen"
       ],
+      "Upload File": [
+        "Datei hochladen"
+      ],
       "Upload files": [
         "Dateien hochladen"
       ],
@@ -1404,14 +1410,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ cycle } Monate am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem die Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate am ${ formattedDate } automatisch verlängert. Dir wird nichts berechnet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-Lizenzen haben."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-Lizenzen haben."
@@ -1664,6 +1673,9 @@
       "Manual setup problem": [
         "Problem mit der manuellen Einrichtung"
       ],
+      "Meet problem": [
+        "Meet-Problem"
+      ],
       "Other": [
         "Andere"
       ],
@@ -1812,12 +1824,50 @@
         "Erweitern"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Zugang zu erweiterten KI-Modellen"
+      ],
+      "Basic chat history": [
+        "Einfacher Chatverlauf"
+      ],
+      "Full chat history with search": [
+        "Vollständiger Chat-Verlauf mit Suche"
+      ],
+      "Large file upload support": [
+        "Unterstützt große Dateiuploads"
+      ],
+      "Limited daily chats": [
+        "Begrenzte tägliche Chats"
+      ],
+      "Limited favorites": [
+        "Begrenzte Favoriten"
+      ],
+      "Unlimited daily chats": [
+        "Unbegrenzte tägliche Chats"
+      ],
+      "Unlimited favorites for quick access": [
+        "Unbegrenzte Favoriten für schnellen Zugriff"
+      ],
+      "Upload and query multiple large files": [
+        "Mehrere große Dateien hochladen und abfragen"
+      ],
+      "Upload and query small files": [
+        "Kleine Dateien hochladen und abfragen"
+      ],
+      "Web search access": [
+        "Websuche-Zugriff"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } ist eine datenschutzorientierte KI, die dir hilft, mehr zu erledigen und gleichzeitig dafür sorgt, dass deine Daten sicher bleiben. Entfalte ihr volles Potenzial und genieße den Vorabzugriff auf neue Funktionen, sobald sie eingeführt werden."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } hinzufügen"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Schnelle Chats und erweiterte KI-Funktionen."
       ]
     },
     "color": {
@@ -3733,9 +3783,6 @@
       "We were not able to load some of your shared items": [
         "Wir konnten einige deiner geteilten Einträge nicht laden."
       ],
-      "We were not able to load some of your shared items details": [
-        "Wir konnten einige Details deiner geteilten Einträge nicht laden."
-      ],
       "We were not able to load some of your shared items info": [
         "Wir konnten die Informationen zu einigen deiner geteilten Einträge nicht laden."
       ],
@@ -4052,8 +4099,8 @@
       "customer support": [
         "Kundendienst"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familienabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-Adresse. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Familienabonnements unterstützen derzeit keine externen Konten. Erstelle vor dem Beitritt eine ${ BRAND_NAME }-E-Mail-Adresse. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Wenn du die Einladung annimmst, wechseln wir dein aktuelles Abonnement und schreiben deinem Konto das verbleibende Guthaben gut."
@@ -4262,14 +4309,23 @@
       "Create new shared album": [
         "Neues geteiltes Album erstellen"
       ],
+      "Domain": [
+        "Domain"
+      ],
       "Drawer": [
         "Seitenleiste"
+      ],
+      "Password ends with": [
+        "Passwort endet mit"
       ],
       "Rename album": [
         "Album umbenennen"
       ],
       "Security Center": [
         "Sicherheitszentrum"
+      ],
+      "Username": [
+        "Benutzername"
       ]
     },
     "Heading": {
@@ -5429,9 +5485,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Im nächsten Schritt kann eine Einzahlung mit einer Bitcoin-Adresse getätigt werden."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Einschließlich ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ esProgress } von ${ totalProgressToShow } Elementen wurden indiziert"
       ],
@@ -6430,8 +6483,8 @@
       "You are about to open your default browser and visit:": [
         "Du bist dabei, deinen Standardbrowser zu öffnen und folgende Seite zu besuchen:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
+      "You are currently signed in as ${ username }.": [
+        "Du bist derzeit als „${ username }“ angemeldet."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du verwendest mehr Speicherplatz, als in einem ${ downgradedPlanName }-Abonnement enthalten sind. Bitte lösche einige Daten, um zu downgraden."
@@ -7303,9 +7356,6 @@
       ],
       "Username": [
         "Benutzername"
-      ],
-      "VAT": [
-        "MwSt."
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -9192,7 +9242,7 @@
         "Jährlich zahlen, unser bestes Angebot sichern"
       ],
       "Save": [
-        "Speichern"
+        "Sparen"
       ],
       "Save big when you pay annually": [
         "Spare kräftig, wenn du jährlich bezahlst"
@@ -9625,11 +9675,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Während dieser Zeit kannst du dein Abonnement nicht ändern oder kündigen. Bitte warte, bis deine Zahlung abgeschlossen ist, bevor du versuchst, Änderungen vorzunehmen. Wir danken dir für deine Geduld."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Ohne ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Ohne ${ taxRate } % Steuern: ${ taxAmount }"
+      ],
       "Got it": [
         "Verstanden"
       ],
       "I'm purchasing as a business": [
         "Ich kaufe als Unternehmen"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Einschließlich ${ taxRate } % ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Einschließlich ${ taxRate } % Steuern: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -9645,6 +9707,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
+      ],
+      "Taxes": [
+        "Steuern"
       ],
       "terms & conditions": [
         "Allgemeine Geschäftsbedingungen"
@@ -9676,6 +9741,9 @@
       ],
       "Timeout exceeded": [
         "Zeitlimit überschritten"
+      ],
+      "VAT": [
+        "Mehrwertsteuer"
       ],
       "VAT number": [
         "Umsatzsteuernummer"
@@ -10016,6 +10084,96 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offizielle E-Mail von ${ BRAND_NAME }"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "SOMMEREND-SALE"
+      ],
+      "Get the deal": [
+        "Jetzt zugreifen"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent } %"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth }/Monat"
+      ],
+      "/month": [
+        "/Monat"
+      ],
+      "1 TB data storage": [
+        "1 TB Datenspeicher"
+      ],
+      "15 GB storage": [
+        "15 GB Speicher"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB Speicher für Dateien, Fotos und Dokumente"
+      ],
+      "3 TB data storage": [
+        "3 TB Datenspeicher"
+      ],
+      "500 GB storage": [
+        "500 GB Speicherplatz"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Auf über 15.000 Server in mehr als 120 Ländern zugreifen"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle Premium-Funktionen von Mail, Pass, Drive, VPN und Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Integrierter 2FA-Authentifikator"
+      ],
+      "Connect 10 devices at once": [
+        "Verbinde 10 Geräte gleichzeitig"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Die Rabatte basieren auf den monatlichen Standardpreisen. Dein Abonnement wird am Ende des Abrechnungszeitraums zum jährlichen Standardtarif verlängert."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Genieße die schnellsten VPN-Geschwindigkeiten"
+      ],
+      "Individual accounts for 6 users": [
+        "Eigene Konten für 6 Benutzer"
+      ],
+      "Individual accounts for you and a partner": [
+        "Eigene Konten für dich und einen Partner"
+      ],
+      "Online document editor": [
+        "Editor für Onlinedokumente"
+      ],
+      "Recover previous file versions": [
+        "Vorherige Dateiversionen wiederherstellen"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Spare ${ totalSavings } und behalte alle deine aktuellen Funktionen!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Sicheres Teilen von Links, Tresoren und Einträgen"
+      ],
+      "Stronger protection against cyber threats": [
+        "Stärkerer Schutz vor Cyber-Bedrohungen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Unbegrenzte Anzahl von Ordnern, Kategorien und Filtern"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Unbegrenzte Hide-my-email-Aliasse"
+      ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Sommer-Sale"
+      ],
+      "for 12 months": [
+        "für 12 Monate"
       ]
     },
     "Safety review": {
@@ -11946,6 +12104,9 @@
       "Network error": [
         "Netzwerkfehler"
       ],
+      "Next": [
+        "Weiter"
+      ],
       "Night theme": [
         "Dunkles Design"
       ],
@@ -12006,6 +12167,9 @@
       "Open actions dropdown": [
         "Auswahlliste „Aktionen“ öffnen"
       ],
+      "Open pagination": [
+        "Seitennummerierung öffnen"
+      ],
       "Org setup": [
         "Organisationseinrichtung"
       ],
@@ -12047,6 +12211,9 @@
       ],
       "Preview": [
         "Vorschau"
+      ],
+      "Previous": [
+        "Zurück"
       ],
       "Private browsing vs VPN": [
         "Privates Surfen vs. VPN"
@@ -12590,9 +12757,6 @@
       "${ n } wallet": [
         "${ n } Wallet",
         "${ n } Wallets"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Eine sicherere Möglichkeit, deinen Bitcoin zu halten"
       ],
       "Bitcoin via Email": [
         "Bitcoin via E-Mail"

@@ -154,6 +154,9 @@
       "Claim this address": [
         "ამ მისამართის გამოთხოვა"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის უფასო მისამართის გამოთხოვა"
+      ],
       "Clear data": [
         "მონაცემების გასუფთავება"
       ],
@@ -380,6 +383,9 @@
       ],
       "Get ${ planOrAppName }": [
         "${ planOrAppName }-ის მიღება"
+      ],
+      "Get a free ${ BRAND_NAME } address": [
+        "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
       ],
       "Get in touch": [
         "დაგვიკავშირდით"
@@ -1112,6 +1118,11 @@
         "გაუთვალისწინებელი შემთხვევა"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You have reached the trial limit.": [
+        "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "გამოწერის გაუქმება"
@@ -1345,6 +1356,9 @@
       "Manual setup problem": [
         "ხელით დაყენების პრობლემა"
       ],
+      "Meet problem": [
+        "Meet-ის პრობლემა"
+      ],
       "Other": [
         "სხვა"
       ],
@@ -1477,6 +1491,46 @@
       ],
       "Expand": [
         "ამოკეცვა"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Basic chat history": [
+        "საბაზისო ჩატის ისტორია"
+      ],
+      "Full chat history with search": [
+        "სრული ჩატის ისტორია ძებნით"
+      ],
+      "Large file upload support": [
+        "დიდი ფაილის ატვირთვის მხარდაჭერა"
+      ],
+      "Limited daily chats": [
+        "შეზღუდული ყოველდღიური ჩატები"
+      ],
+      "Limited favorites": [
+        "შეზღუდული რჩეულები"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ],
+      "Unlimited favorites for quick access": [
+        "განუსაზღვრელი რჩეულები სწრაფი წვდომისთვის"
+      ],
+      "Upload and query multiple large files": [
+        "ატვირთეთ და დაამუშავეთ ბევრი დიდი ფაილი"
+      ],
+      "Upload and query small files": [
+        "ატვირტეთ და მოითხოვეთ პატარა ფაილები"
+      ],
+      "Web search access": [
+        "წვდომა ვებში ძებნასთან"
+      ]
+    },
+    "collider_2025: Info": {
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }-ის დამატება"
       ]
     },
     "color": {
@@ -3572,9 +3626,6 @@
       "customer support": [
         "მხარდაჭერის გუნდი"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ოჯახის გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
       ],
@@ -3773,8 +3824,17 @@
       ]
     },
     "Header": {
+      "Domain": [
+        "დომენი"
+      ],
       "Drawer": [
         "უჯრა"
+      ],
+      "Password ends with": [
+        "პაროლი მთავრდება"
+      ],
+      "Username": [
+        "მომხმარებლის სახელი"
       ]
     },
     "Hint": {
@@ -4702,9 +4762,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }%-ის ჩათვლით ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
       ],
@@ -5382,9 +5439,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "თქვენ ახლა თქვენი ნაგულისხმევი ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "შესული ხართ როგორც ${ user.Name } (${ user.Email })."
       ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "ამჟამად დოკუმენტი მხოლოდ-კითხვის რეჟიმში გაქვთ ღია. მსწერეთ მფლობელს, თუ დოკუმენტის ჩასწორების წვდომა გრჭირდებათ."
@@ -6104,9 +6158,6 @@
       ],
       "Username": [
         "მომხმარებლის სახელი"
-      ],
-      "VAT": [
-        "დღგ"
       ],
       "Verification code": [
         "შემოწმების კოდი"
@@ -7823,7 +7874,7 @@
         "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
       ],
       "Save": [
-        "შენახვა"
+        "დაზოგეთ"
       ],
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
@@ -8102,6 +8153,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
+      "Taxes": [
+        "გადასახადები"
+      ],
       "terms & conditions": [
         "პირობები და წესები"
       ],
@@ -8122,6 +8176,9 @@
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
+      ],
+      "VAT": [
+        "დღგ"
       ],
       "VAT number": [
         "დღგ ნომერი"
@@ -9630,6 +9687,9 @@
       "Change password": [
         "პაროლის შეცვლა"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME }-ის მისამართის გამოთხოვა"
+      ],
       "Clearing data": [
         "მონაცემების გასუფთავება"
       ],
@@ -9915,6 +9975,9 @@
       "Network error": [
         "ქსელის შეცდომა"
       ],
+      "Next": [
+        "შემდეგი"
+      ],
       "Night theme": [
         "ღამის თემა"
       ],
@@ -9932,6 +9995,9 @@
       ],
       "Open actions dropdown": [
         "ქმედებების ჩამოსაშლელი მენიუდან აღება"
+      ],
+      "Open pagination": [
+        "გვერდების დანომრვა"
       ],
       "Org setup": [
         "ორგ.-ის მორგება"
@@ -9962,6 +10028,9 @@
       ],
       "Photos": [
         "ფოტოები"
+      ],
+      "Previous": [
+        "წინა"
       ],
       "Private browsing vs VPN": [
         "კონფიდენციალური რეჟიმი vs VPN"
@@ -10354,9 +10423,6 @@
       "${ n } wallet": [
         "${ n } საფულე",
         "${ n } საფულე"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
       ],
       "Bitcoin via Email": [
         "Bitcoin ელფოსტით"

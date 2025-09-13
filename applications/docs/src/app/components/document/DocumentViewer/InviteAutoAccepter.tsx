@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { type NodeMeta, type PublicNodeMeta } from '@proton/drive-store'
+import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store'
 import { useDocInvites } from '@proton/drive-store'
 
 export type InviteAutoAcceptResult =

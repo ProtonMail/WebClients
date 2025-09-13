@@ -153,6 +153,9 @@
       "Claim this address": [
         "Ottieni questo indirizzo"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Ottieni il tuo indirizzo ${ BRAND_NAME } gratuito"
+      ],
       "Close": [
         "Chiudi"
       ],
@@ -1358,8 +1361,8 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ cycle } mesi il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Dopo la prova termina il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnoverà automaticamente ogni ${ renewCycle } mesi il ${ formattedDate }. Non ti verrà addebitato nulla se annulli prima del ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
@@ -1370,17 +1373,26 @@
       "During the trial period, you can have up to 10 users.": [
         "Durante il periodo di prova, puoi avere fino a 10 utenti."
       ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "prova gratuita di ${ TRIAL_DURATION_DAYS } giorni"
+      ],
       "on ${ formattedDate }": [
         "il ${ formattedDate }"
       ],
-      "Try it free for 14 days": [
-        "Provalo gratis per 14 giorni"
+      "Try ${ selected } ${ freeForNDays }": [
+        "Prova ${ selected } gratis per ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Prova gratuita di ${ TRIAL_DURATION_DAYS } giorni"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Quando annulli, la tua prova gratuita non verrà convertita in un abbonamento a pagamento, ma potrai comunque usufruire dei benefici del piano fino alla fine del periodo di prova. Successivamente, verrà effettuato il downgrade al piano ${ BRAND_NAME } Free."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puoi avere fino a ${ TRIAL_MAX_LUMO_SEATS } licenze ${ LUMO_SHORT_APP_NAME } durante il periodo di prova."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_SCRIBE_SEATS } licenze Scribe durante il periodo di prova."
@@ -1763,6 +1775,9 @@
       "Manual setup problem": [
         "Problema di configurazione manuale"
       ],
+      "Meet problem": [
+        "Si è verificato un problema"
+      ],
       "Other": [
         "Altro"
       ],
@@ -1911,12 +1926,50 @@
         "Espandi"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accesso a modelli IA avanzati"
+      ],
+      "Basic chat history": [
+        "Cronologia chat di base"
+      ],
+      "Full chat history with search": [
+        "Cronologia chat completa con ricerca"
+      ],
+      "Large file upload support": [
+        "Caricamenti di file di grandi dimensioni"
+      ],
+      "Limited daily chats": [
+        "Numero limitato di chat al giorno"
+      ],
+      "Limited favorites": [
+        "Numero limitato di preferiti"
+      ],
+      "Unlimited daily chats": [
+        "Numero illimitato di chat al giorno"
+      ],
+      "Unlimited favorites for quick access": [
+        "Preferiti senza limiti per consultazione rapida"
+      ],
+      "Upload and query multiple large files": [
+        "Carica e consulta più file grandi"
+      ],
+      "Upload and query small files": [
+        "Carica e consulta file piccoli"
+      ],
+      "Web search access": [
+        "Accesso alla Ricerca Web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } è un'IA orientata alla privacy che ti aiuta a fare di più, mantenendo sicuri i tuoi dati. Sblocca tutto il suo potenziale e goditi l'accesso anticipato alle nuove funzionalità non appena saranno introdotte."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Aggiungi ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chat veloci e funzioni AI avanzate."
       ]
     },
     "color": {
@@ -4315,8 +4368,8 @@
       "customer support": [
         "assistenza clienti"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "I piani famiglia non supportano account esterni al momento. Crea un indirizzo con ${ BRAND_NAME } prima di unirti. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se accetti l'invito, ti cambieremo piano. Il saldo eventualmente rimasto sarà accreditato sul tuo account."
@@ -6218,9 +6271,6 @@
       "Include device, location, and IP details": [
         "Includi dettagli relativi a dispositivo, posizione e indirizzo IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluso il ${ formattedTaxRate }% di ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Aumenta la sicurezza del tuo account verificando il tuo indirizzo email."
       ],
@@ -6623,9 +6673,6 @@
       ],
       "Please use another browser or download the file.": [
         "Usa un altro browser o scarica il file."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Per favore verifica il pagamento nella nuova scheda che è stata aperta."
       ],
       "Please wait till your changes are synced with the server.": [
         "Attendi che le tue modifiche siano sincronizzate con il server."
@@ -7161,9 +7208,6 @@
       "Vault updated": [
         "Cassaforte aggiornata"
       ],
-      "Verification can take a few minutes.": [
-        "La verifica può richiedere alcuni minuti."
-      ],
       "Verification may take a few minutes.": [
         "La verifica potrebbe richiedere qualche minuto."
       ],
@@ -7320,8 +7364,8 @@
       "You already have a free account": [
         "Hai già un account gratuito"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Al momento hai effettuato l'accesso come ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Sei attualmente connesso come ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Stai utilizzando ${ ipCount } del tuo ${ ipAddresses } server dedicato disponibile.",
@@ -7688,6 +7732,9 @@
       ],
       "Donation": [
         "Donazione"
+      ],
+      "Manual": [
+        "Manuale"
       ],
       "Modification": [
         "Modifica"
@@ -8377,11 +8424,11 @@
       "Value": [
         "Valore"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Codice di verifica"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferenza con ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Videoconferenze con Zoom"
@@ -10044,6 +10091,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Le impostazioni di videoconferenza di ${ MEET_APP_NAME } sono state aggiornate"
+      ],
       "${ reason } has been disabled": [
         "${ reason } è stato disabilitato"
       ],
@@ -10058,6 +10108,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Codici di ripristino A2F scaricati"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Aggiornamento delle impostazioni di videoconferenza di ${ MEET_APP_NAME } non riuscito"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Aggiornamento delle impostazioni di videoconferenza di Zoom non riuscito"
       ],
       "Invalid code": [
         "Codice non valido"
@@ -10095,8 +10151,8 @@
       "Two-factor authentication is not required anymore": [
         "L'autenticazione a due fattori non è più necessaria"
       ],
-      "Video conferencing settings have been updated": [
-        "Le impostazioni della videoconferenza sono state aggiornate"
+      "Zoom video conferencing settings have been updated": [
+        "Le impostazioni della videoconferenza di Zoom sono state aggiornate"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10163,7 +10219,7 @@
         "Paga annualmente, assicurati la nostra migliore offerta"
       ],
       "Save": [
-        "Salva"
+        "Risparmia"
       ],
       "Save big when you pay annually": [
         "Risparmia di più pagando annualmente"
@@ -10781,11 +10837,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante questo periodo non sarà possibile modificare o annullare l'abbonamento. Si prega di attendere il completamento del pagamento prima di tentare qualsiasi modifica. Grazie per la pazienza."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Escludendo il ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Escluse tasse del ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Tutto chiaro"
       ],
       "I'm purchasing as a business": [
         "Sto acquistando come azienda"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluso il ${ taxRate }% di ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluse tasse del ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -10804,6 +10872,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
+      ],
+      "Taxes": [
+        "Tasse"
       ],
       "terms & conditions": [
         "termini e condizioni"
@@ -10838,6 +10909,9 @@
       ],
       "Timeout exceeded": [
         "Limite di tempo superato"
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Numero partita IVA"
@@ -11205,6 +11279,96 @@
       ],
       "Unknown": [
         "Sconosciuto"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "SCONTI DI FINE ESTATE"
+      ],
+      "Get the deal": [
+        "Ottieni l'offerta"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent }%"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } al mese"
+      ],
+      "/month": [
+        "/mese"
+      ],
+      "1 TB data storage": [
+        "1 TB di archiviazione dati"
+      ],
+      "15 GB storage": [
+        "15 GB di archiviazione"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB di archiviazione per file, foto e documenti"
+      ],
+      "3 TB data storage": [
+        "3 TB di archiviazione dati"
+      ],
+      "500 GB storage": [
+        "500 GB di archiviazione"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accedi a oltre 15.000 server in oltre 120 Paesi"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Tutte le funzionalità premium di Mail, Pass, Drive, VPN e Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Strumento di autenticazione 2FA integrato"
+      ],
+      "Connect 10 devices at once": [
+        "Connetti 10 dispositivi contemporaneamente"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Gli sconti si basano sui prezzi mensili standard. Il tuo abbonamento si rinnoverà alla tariffa annuale standard al termine del ciclo di fatturazione."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Goditi le velocità VPN più elevate"
+      ],
+      "Individual accounts for 6 users": [
+        "Account individuali per 6 utenti"
+      ],
+      "Individual accounts for you and a partner": [
+        "Account individuali per te e un'altra persona"
+      ],
+      "Online document editor": [
+        "Editor di documenti online"
+      ],
+      "Recover previous file versions": [
+        "Recupera le versioni precedenti dei file"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Risparmia ${ totalSavings } e mantieni tutte le tue funzionalità attuali."
+      ],
+      "Secure link, vault & item sharing": [
+        "Condivisione sicura di link, casseforti ed elementi"
+      ],
+      "Stronger protection against cyber threats": [
+        "Protezione più efficace dalle minacce informatiche"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Cartelle, etichette e filtri illimitati"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Alias hide-my-email illimitati"
+      ],
+      "Use your own email domain": [
+        "Usa il tuo dominio email personale"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Sconti di fine estate"
+      ],
+      "for 12 months": [
+        "per 12 mesi"
       ]
     },
     "Recovery Email": {
@@ -14460,7 +14624,10 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Gli amministratori possono gestire gli account utente e concedere privilegi di amministratore ad altri utenti. Solo l'amministratore principale può modificare il piano dell'organizzazione."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Consente di aggiungere facilmente collegamenti per videoconferenze di ${ MEET_APP_NAME } agli inviti del tuo calendario."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
         "Consente di aggiungere facilmente collegamenti di videoconferenza agli inviti del tuo calendario."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
@@ -14535,8 +14702,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "L'indirizzo è stato disconnesso. L'invio dei messaggi è stato sospeso. Ricollegarsi per riattivare l'indirizzo."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "L'indirizzo è stato disconnesso. L'invio e la ricezione dei messaggi sono stati sospesi. Riconnettiti per riattivare questo indirizzo."
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
@@ -15100,9 +15267,6 @@
       "${ n } wallet": [
         "${ n } portafoglio",
         "${ n } portafogli"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Un modo più sicuro per conservare il tuo Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via email"

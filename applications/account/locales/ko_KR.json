@@ -220,6 +220,9 @@
       "Cancel": [
         "취소"
       ],
+      "Cancel request": [
+        "요청 취소"
+      ],
       "Cancel subscription": [
         "구독 취소"
       ],
@@ -258,6 +261,9 @@
       ],
       "Claim this address": [
         "주소 얻기"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "무료 ${ BRAND_NAME } 주소를 받으세요"
       ],
       "Clear all formatting": [
         "모든 서식 지우기"
@@ -784,9 +790,6 @@
       "Get verification code": [
         "인증코드 전송"
       ],
-      "Give access now": [
-        "즉시 접근 권한 부여"
-      ],
       "Go back": [
         "뒤로 가기"
       ],
@@ -1009,6 +1012,9 @@
       "Open": [
         "열기"
       ],
+      "Open ${ applicationName }": [
+        "${ applicationName } 열기"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } 설정 열기"
       ],
@@ -1080,6 +1086,9 @@
       ],
       "refresh the page": [
         "페이지 새로고침"
+      ],
+      "Refuse access": [
+        "접근 권한 거부"
       ],
       "Reject": [
         "거절"
@@ -1191,6 +1200,9 @@
       ],
       "Revoke ${ name }": [
         "${ name } 취소하기"
+      ],
+      "Revoke access": [
+        "접근 권한 회수"
       ],
       "Revoke all other sessions": [
         "모든 세션 비활성화"
@@ -1398,6 +1410,9 @@
       ],
       "Spam": [
         "스팸"
+      ],
+      "Start free trial": [
+        "무료 체험 시작"
       ],
       "Start import": [
         "가져오기 시작"
@@ -1967,6 +1982,9 @@
       ],
       "Secure your communications": [
         "안전하게 소통하세요"
+      ],
+      "Talk confidentially": [
+        "비밀리에 대화"
       ]
     },
     "Apps dropdown": {
@@ -2030,6 +2048,66 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "사무실에 가지 못해 이메일을 열람할 수 없는 상황입니다. 양해 부탁합니다."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "결제 수단 상세 정보"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, ${ formattedDate }에 ${ renewCycle }개월마다 자동 갱신되는 유료 구독으로 전환됩니다. ${ formattedDate } 이전에 취소시 요금이 부과되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매월 ${ formattedDate }에 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "무료 체험 기간동안 최대 10명의 사용자를 추가할 수 있습니다."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }일 무료 체험"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }에"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "${ selected }을(를) ${ freeForNDays }로 사용해 보세요"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }일 무료 체험하세요"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "취소시 무료 체험이 유료 구독으로 전환되지 않지만, 체험 기간이 끝날 때까지 플랜의 혜택을 계속 누리실 수 있습니다. 기간 종료 후 ${ BRAND_NAME } 무료 요금제로 자동 다운그레이드됩니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_LUMO_SEATS }개의 ${ LUMO_SHORT_APP_NAME } 계정을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_SCRIBE_SEATS }개의 Scribe 사용 권한을 추가할 수 있습니다."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "체험 기간 동안 최대 ${ TRIAL_MAX_USERS }명의 사용자를 추가할 수 있습니다."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "체험 기간 동안 사용자 지정 도메인을 추가할 수 없습니다."
+      ],
+      "You have reached the trial limit.": [
+        "무료 체험 한도에 도달했습니다."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "무료 체험 후 납부할 금액"
+      ],
+      "Amount due now": [
+        "지금 납부할 금액"
       ]
     },
     "b2b_trials_Action": {
@@ -2792,6 +2870,112 @@
       ],
       "Expand": [
         "펼치기"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "개인형 AI 어시스턴트와 대화하세요"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "Basic chat history": [
+        "기본 채팅 기록"
+      ],
+      "Full chat history with search": [
+        "검색 기능이 포함된 전체 채팅 기록"
+      ],
+      "Large file upload support": [
+        "대용량 파일 업로드 지원"
+      ],
+      "Limited daily chats": [
+        "제한된 일일 채팅"
+      ],
+      "Limited favorites": [
+        "제한된 즐겨찾기"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ],
+      "Unlimited favorites for quick access": [
+        "빠른 접근을 위한 무제한 즐겨찾기"
+      ],
+      "Upload and query multiple large files": [
+        "다중 대용량 파일 업로드 및 확인"
+      ],
+      "Upload and query small files": [
+        "저용량 파일 업로드 및 확인"
+      ],
+      "Web search access": [
+        "웹 검색 접근"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "유럽에서 개발 및 기반을 두고 있는 AI"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME }는 사용자의 데이터를 안전하게 보호하면서 더 많은 작업을 수행할 수 있도록 돕는 개인 정보 보호 중심 AI입니다. 모든 잠재력을 활용하고 새로운 기능이 출시될 때 얼리 액세스 혜택을 누려보세요."
+      ],
+      "Access to advanced AI models": [
+        "고급 AI 모델 이용"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME } 추가"
+      ],
+      "AI assistant that respects your privacy": [
+        "당신의 프라이버시를 존중하는 AI 어시스턴트"
+      ],
+      "Basic chat history": [
+        "기본 채팅 기록"
+      ],
+      "Data never used for AI training": [
+        "대화 데이터가 AI학습에 절대 사용되지 않음"
+      ],
+      "Full chat history with search": [
+        "검색 기능이 포함된 전체 채팅 기록"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "고속 채팅 및 고급 AI 기능"
+      ],
+      "Limited daily chats": [
+        "제한된 일일 채팅"
+      ],
+      "Limited favorites": [
+        "제한된 즐겨찾기"
+      ],
+      "Open source": [
+        "오픈 소스"
+      ],
+      "Strict no-logs policy": [
+        "엄격한 노로그 정책"
+      ],
+      "Unlimited daily chats": [
+        "무제한 일일 채팅"
+      ],
+      "Unlimited favorites for quick access": [
+        "빠른 접근을 위한 무제한 즐겨찾기"
+      ],
+      "Upload and query multiple large files": [
+        "다중 대용량 파일 업로드 및 확인"
+      ],
+      "Upload and query small files": [
+        "저용량 파일 업로드 및 확인"
+      ],
+      "Web search access": [
+        "웹 검색 접근"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "대화로 돌아가기"
+      ],
+      "Conversations": [
+        "대화"
       ]
     },
     "color": {
@@ -4137,6 +4321,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME }이 기본 메일 애플리케이션으로 설정되어 있지 않습니다."
       ],
+      "A checked box means the feature is disabled.": [
+        "해당 체크박스가 이 기능이 비활성화 상태임을 의미합니다."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME }에 폴더와 파일을 추가한 뒤 팀원을 초대하여 확인하거나 편집합니다."
       ],
@@ -4278,14 +4465,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "계속 친구들을 초대할 수 있으나, 더 이상 크레딧을 얻을 수 없습니다"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "${ PASS_APP_NAME } 브라우저 확장 프로그램에서 특정 자동 기능(자동 완성, 자동 제안, 자동 저장)이 실행되지 않아야 하는 도메인 목록을 사용자 지정할 수 있습니다."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME }에서 비밀번호를 생성할 때 조직 구성원이 사용할 비밀번호에 대한 규칙을 강제할 수 있습니다."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷(ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING }개의 이벤트를 포함하고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "초대한 사용자가 ${ BRAND_NAME } 플랜을 구입하면 사용자는 ${ BRAND_NAME } 크레딧 ${ referralReward }을(를) 받게 되며, 초대한 사람 또한 처음 시작하는 데 필요한 ${ referralReward } 크레딧을 받게 됩니다."
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "초대한 사용자가 ${ BRAND_NAME } 플랜을 구입하면 사용자는 ${ BRAND_NAME } 크레딧 ${ referralInfo.referrerRewardAmount }을(를) 받게 되며, 초대한 사람 또한 처음 시작하는 데 필요한 ${ referralInfo.refereeRewardAmount } 크레딧을 받게 됩니다."
       ]
     },
     "description": {
@@ -5174,23 +5364,41 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME } 계정 이메일"
       ],
+      "${ days } day left": [
+        "${ days }일 남음"
+      ],
+      "${ hours } hour left": [
+        "${ hours }시간 남음"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes }분 남음"
+      ],
       "${ n } day": [
         "${ n }일"
       ],
-      "${ n } day left": [
-        "${ n }일 남음"
+      "${ user } is requesting emergency access to your account": [
+        "${ user }님이 계정에 대한 비상 접근을 요청 중입니다"
       ],
       "${ user } will be able to use your account and change your data.": [
         "${ user }님이 사용자의 계정을 사용 및 데이터를 변경할 수 있게 됩니다."
       ],
+      "${ user } will be signed out of your account, and will not be able to access it again until the next emergency access.": [
+        "${ user }님이 사용자의 계정에서 로그아웃되며, 다음 긴급 접근 시까지 다시 접근할 수 없게 됩니다."
+      ],
       "${ user } will no longer be able to request access to your account in case of emergency.": [
         "비상시 ${ user }님이 사용자의 계정에 대한 접근을 더 이상 요청할 수 없게 됩니다."
+      ],
+      "${ user } will not be able to access your account until the next emergency access.": [
+        "${ user }님이 다음 비상 접근시까지 사용자의 계정에 접근할 수 없게 됩니다."
       ],
       "Access granted": [
         "엑세스 승인됨."
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "${ formattedAccessibleAt }에 접근이 허용됨"
+      ],
+      "Access request canceled": [
+        "접근 요청이 취소되었습니다"
       ],
       "Access requested": [
         "접근 요청됨"
@@ -5207,6 +5415,9 @@
       "Added on ${ formattedDate }": [
         "${ formattedDate }에 추가됨"
       ],
+      "Cancel request?": [
+        "요청을 취소합니까?"
+      ],
       "Change access wait time": [
         "접근 대기 시간 변경"
       ],
@@ -5217,7 +5428,7 @@
         "접근 대기 시간 변경"
       ],
       "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
-        "데이터를 신뢰할 수 있는 사람을 선택하십시오. 해당 사용자들이 이미 ${ BRAND_NAME } 계정을 가지고 있어야 합니다."
+        "데이터 접근에 신뢰할 수 있는 사람을 선택하십시오. 해당 사용자들이 이미 ${ BRAND_NAME } 계정을 가지고 있어야 합니다."
       ],
       "Disabled": [
         "비활성화됨"
@@ -5234,8 +5445,17 @@
       "Emergency access granted": [
         "긴급 접근이 승인됨"
       ],
+      "Emergency access refused": [
+        "긴급 접근 거부됨"
+      ],
+      "Emergency access request": [
+        "긴급 접근 요청"
+      ],
       "Emergency access requested": [
         "긴급 접근 요청됨"
+      ],
+      "Emergency access revoked": [
+        "긴급 접근 취소됨"
       ],
       "Emergency contact added": [
         "비상 연락처 추가됨"
@@ -5261,6 +5481,9 @@
       "Less than a day": [
         "하루 미만"
       ],
+      "Less than a minute left": [
+        "1분 미만 남음"
+      ],
       "None": [
         "없음"
       ],
@@ -5270,11 +5493,20 @@
       "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
         "긴급 접근은 **유효한 상황**이 발생하여 사용자가 다른 사용자의 계정을 관리해야 할 경우에만 요청하십시오."
       ],
+      "People I trust": [
+        "내가 신뢰하는 사용자"
+      ],
       "People who trust me": [
-        "나를 신뢰하는 사람들"
+        "나를 신뢰하는 사용자"
       ],
       "Protect your legacy with emergency access": [
         "긴급 접근으로 당신의 유산을 보호하세요"
+      ],
+      "Refuse access": [
+        "접근 권한 거부"
+      ],
+      "Refuse access?": [
+        "접근 권한을 거부합니까?"
       ],
       "Remove trusted contact": [
         "신뢰된 연락처 제거"
@@ -5288,6 +5520,12 @@
       "Requesting access": [
         "접근 권한 요청 중"
       ],
+      "Revoke access": [
+        "접근 권한 회수"
+      ],
+      "Revoke access?": [
+        "접근 권한을 회수합니까?"
+      ],
       "Stop being trusted contact?": [
         "신뢰할 수 있는 연락처에서 해제합니까?"
       ],
@@ -5298,13 +5536,19 @@
         "저는 신뢰할 수 있는 연락처로 추가되었습니다. 비상 상황 발생 시 상대방의 계정에 접근할 수 있습니다."
       ],
       "They may ask to access my account in case of an emergency.": [
-        "해당 사용자들이 비상 시에 제 계정에 접근하도록 요청할 수 있습니다."
+        "아래 사용자들이 비상 시에 사용자의 계정에 접근하도록 요청할 수 있습니다."
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "**${ days }**일 **${ formattedAccessibleAt }**일 후에 접근 권한이 자동으로 부여됩니다. 언제든지 요청을 거부하거나 즉시 접근 권한을 부여할 수 있습니다."
       ],
       "This will take effect immediately.": [
         "이 효력은 즉시 발생합니다."
       ],
       "Time required before automatically giving access": [
         "자동으로 접근 권한을 부여하기까지 필요한 시간"
+      ],
+      "Time required before automatically giving you access": [
+        "자동으로 사용자에게 접근 권한을 부여하기까지 필요한 시간"
       ],
       "Time required before automatically granting them access": [
         "자동으로 접근 권한을 부여하기 전에 필요한 시간"
@@ -5343,7 +5587,7 @@
         "언제든지 접근 권한을 삭제하여 사용자의 계정에 대한 독점적인 통제권을 되찾을 수 있습니다."
       ],
       "You have not been designated as an emergency contact for anyone yet.": [
-        "아직 긴급 연락처로 지정한 사람이 없습니다."
+        "아직 나를 비상 연락처로 지정한 사용자가 없습니다."
       ],
       "You reached the maximum of ${ controller.meta.count } trusted contact.": [
         "최대 신뢰할 수 있는 연락처 개수, ${ controller.meta.count }개에 도달했습니다."
@@ -5353,6 +5597,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "비상시 ${ user }의 계정에 대한 접근을 더 이상 요청할 수 없게 됩니다"
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "추후에 ${ user }의 계정에 대한 접근을 여전히 요청할 수 있습니다."
       ],
       "You'll receive access to their account immediately.": [
         "즉시 사용자의 계정에 접근할 수 있게 됩니다."
@@ -5600,6 +5847,9 @@
       ],
       "Invalid Sieve code": [
         "유효하지 않은 Sieve 코드"
+      ],
+      "Invalid URL": [
+        "유효하지 않은 URL"
       ],
       "Invalid verification code": [
         "잘못된 검증 코드"
@@ -6405,8 +6655,8 @@
       "customer support": [
         "고객 지원"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "현재 가족 요금제는 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "현재 가족 플랜이 추가 계정을 지원하지 않습니다. 그룹 합류 전 ${ BRAND_NAME } 계정을 생성하세요. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "초대를 수락하면, 현재 요금제에서 전환되고 남은 잔액이 사용자의 계좌로 환불됩니다."
@@ -7164,6 +7414,9 @@
       "Device": [
         "기기"
       ],
+      "Domain": [
+        "도메인"
+      ],
       "Enter your email address": [
         "이메일 주소를 입력하세요"
       ],
@@ -7196,6 +7449,9 @@
       ],
       "Organization key fingerprint": [
         "조직 키 지문"
+      ],
+      "Password ends with": [
+        "비밀번호 마지막 글자"
       ],
       "Payment details": [
         "결제 수단 상세 정보"
@@ -7238,6 +7494,9 @@
       ],
       "User": [
         "사용자"
+      ],
+      "Username": [
+        "사용자 이름"
       ]
     },
     "Header for addresses table": {
@@ -7824,6 +8083,24 @@
       "${ n } address": [
         "${ n }개 주소"
       ],
+      "${ name } for Android": [
+        "안드로이드용 ${ name }"
+      ],
+      "${ name } for GNU/Linux": [
+        "GNU/리눅스용 ${ name }"
+      ],
+      "${ name } for iOS": [
+        "iOS용 ${ name }"
+      ],
+      "${ name } for macOS": [
+        "맥용 ${ name }"
+      ],
+      "${ name } for Web": [
+        "웹용 ${ name }"
+      ],
+      "${ name } for Windows": [
+        "윈도우용 ${ name }"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: 무단 이메일을 격리하거나 거부하지 마세요. 보통, 이 정책을 문제 해결이나 테스트에만 사용합니다."
       ],
@@ -7904,6 +8181,12 @@
       ],
       "${ storage } storage": [
         "저장공간 ${ storage }"
+      ],
+      "${ url } added.": [
+        "${ url } 추가됨."
+      ],
+      "${ url } deleted.": [
+        "${ url } 삭제됨."
       ],
       "${ userFound } user found": [
         "${ userFound }명 사용자 찾음"
@@ -8165,6 +8448,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "이메일 별칭은 이메일 주소와 같이 동작하지만 스팸을 줄여주고 당신의 실제 이메일 주소와 신원을 감추어 줍니다."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "**${ applicationName }** 대화 중 오류 발생"
       ],
       "An error occurred while communicating with the extension": [
         "확장과 통신하는데 문제가 발생했습니다"
@@ -8880,11 +9166,11 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } 받기"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "구독하는 친구 한 명당 **${ referrerRewardAmount } 크레딧**을 받아보세요."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "${ BRAND_NAME } 계정 생성 및 초대 수락하여 접근하세요."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "구독하는 친구 한 명당 **${ referralReward } 크레딧**을 서로 주고받으세요."
       ],
       "Get it on Google Play": [
         "Google Play에서 다운로드"
@@ -9053,9 +9339,6 @@
       ],
       "Include device, location, and IP details": [
         "기기, 위치 및 IP 정보 포함"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } 포함: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "이메일 인증을 통해 계정 보안을 한차원 더 끌어올리세요."
@@ -9642,9 +9925,6 @@
       "Please use another browser or download the file.": [
         "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
       ],
-      "Please verify payment at the new tab which was opened.": [
-        "열린 새 탭에서 결제를 확인하세요."
-      ],
       "Please wait till your changes are synced with the server.": [
         "사용자의 변경이 서버에 동기화 될 때 까지 기다려 주세요."
       ],
@@ -9902,6 +10182,9 @@
       ],
       "Signed up": [
         "가입 완료"
+      ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "보안 키로 로그인하는 기능은 모든 어플리케이션에서 아직 지원되지 않습니다. TOTP 없이는 일부 어플리케이션에서 로그인하지 못할 수 있습니다."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
@@ -10413,6 +10696,9 @@
       "URL link": [
         "URL 링크"
       ],
+      "URL settings updated.": [
+        "URL 설정 업데이트되었습니다."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "비밀번호 관리자를 이용하면 비밀번호를 생성하고 안전하게 보관하여 강력한 비밀번호를 보장받고 로그인이 편리해집니다."
       ],
@@ -10457,9 +10743,6 @@
       ],
       "Vault updated": [
         "금고를 업데이트했습니다"
-      ],
-      "Verification can take a few minutes.": [
-        "인증에 몇 분이 소요될 수 있습니다."
       ],
       "Verification link expired": [
         "인증 링크 만료됨"
@@ -10680,8 +10963,8 @@
       "You are about to open your default browser and visit:": [
         "기본 브라우저를 열고 다음을 방문합니다:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "현재 ${ user.Name } (${ user.Email })로 로그인 했습니다."
+      "You are currently signed in as ${ username }.": [
+        "현재 ${ username }(으)로 로그인 했습니다."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "현재 사용 가능한 전용 서버 ${ ipAddresses }개 중 ${ ipCount }개를 사용 중입니다."
@@ -10814,6 +11097,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "은행 웹사이트로 리다이렉트 됩니다."
+      ],
+      "You may now start using **${ applicationName }**": [
+        "이제 **${ applicationName }** 사용이 가능합니다."
       ],
       "You may now start using the extension": [
         "확장을 사용할 수 있습니다"
@@ -11009,6 +11295,9 @@
       ],
       "You’re all set": [
         "모든 준비가 완료되었어요"
+      ],
+      "Zero charge today": [
+        "오늘 요금은 부과되지 않음"
       ],
       "Zoom meeting": [
         "Zoom 미팅"
@@ -11594,6 +11883,9 @@
       "Account storage": [
         "계정 저장공간"
       ],
+      "Action": [
+        "동작"
+      ],
       "Actions": [
         "작업"
       ],
@@ -11735,8 +12027,20 @@
       "Auto-unsubscribe": [
         "자동 구독 취소"
       ],
+      "Autofill": [
+        "자동 완성"
+      ],
+      "Autofill 2FA": [
+        "2단계 인증 자동 완성"
+      ],
       "Automatically save contacts": [
         "자동으로 연락처 저장"
+      ],
+      "Autosave": [
+        "자동 저장"
+      ],
+      "Autosuggest": [
+        "자동 제안"
       ],
       "Awarded": [
         "지급 완료"
@@ -11980,6 +12284,9 @@
       ],
       "Domain name": [
         "도메인 이름"
+      ],
+      "Domains": [
+        "도메인"
       ],
       "Don't ask again": [
         "다시 묻지 않기"
@@ -12359,6 +12666,9 @@
       "Other amount": [
         "다른 금액"
       ],
+      "Passkeys": [
+        "패스키"
+      ],
       "Password": [
         "암호"
       ],
@@ -12668,14 +12978,14 @@
       "Value": [
         "값"
       ],
-      "VAT": [
-        "부가세"
-      ],
       "Verification code": [
         "인증 코드"
       ],
       "Verify keys with Key Transparency": [
         "Key Transparency로 키 인증하기"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }으로 화상 회의"
       ],
       "Video conferencing with Zoom": [
         "Zoom 화상 회의"
@@ -13445,8 +13755,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "${ BRAND_NAME } 계정에 로그인하여 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등의 모든 암호화 된 ${ BRAND_NAME } 서비스를 사용해보세요. 계정이 없으신가요? 무료로 계정을 만들 수 있어요."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "종단간 암호화로 당신의 데이터에 주도권을 잡으세요. 신용카드 정보는 필요하지 않습니다."
+      "Take control of your data with end-to-end encryption": [
+        "종단간 암호화로 당신의 데이터에 주도권을 잡으세요"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "${ BRAND_NAME }을(를) 이 링크로 무료 체험하세요."
@@ -13652,6 +13962,9 @@
       ],
       "Back": [
         "이전"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "${ MEET_SHORT_APP_NAME }으로 돌아가기"
       ],
       "Back to calendar": [
         "캘린더로 돌아가기"
@@ -14817,6 +15130,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } 생성됨"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "${ MEET_APP_NAME } 화상 회의 설정이 업데이트 되었습니다"
+      ],
       "${ reason } has been disabled": [
         "${ reason }이(가) 비활성화 되었습니다."
       ],
@@ -14837,6 +15153,12 @@
       ],
       "Email notifications have been enabled": [
         "이메일 알림이 활성화되었습니다."
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "${ MEET_APP_NAME } 화상 회의 설정 업데이트 실패"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "줌 화상 회의 설정 업데이트 실패"
       ],
       "Invalid code": [
         "잘못된 코드입니다."
@@ -14886,8 +15208,8 @@
       "Two-factor authentication is not required anymore": [
         "2단계 인증이 모든 구성원에게 요구되지 않습니다."
       ],
-      "Video conferencing settings have been updated": [
-        "화상 회의 설정이 변경되었습니다."
+      "Zoom video conferencing settings have been updated": [
+        "줌 화상 회의 설정이 업데이트 되었습니다"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15025,7 +15347,7 @@
         "매년 결제로 구독하여 최고의 할인 혜택을 받아가세요"
       ],
       "Save": [
-        "절약되는 가격:"
+        "할인"
       ],
       "Save big when you pay annually": [
         "매년 결제로 더 크게 절약하세요"
@@ -16126,11 +16448,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "이 기간 동안 구독을 수정하거나 취소할 수 없습니다. 변경을 시도하기 전에 결제가 완료될 때까지 기다려 주세요. 기다려 주셔서 감사합니다."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 제외: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 제외: ${ taxAmount }"
+      ],
       "Got it": [
         "확인했습니다"
       ],
       "I'm purchasing as a business": [
         "사업체 용도로 구매합니다"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }% ${ taxName } 포함: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% 세금 포함: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/YY (월/년)"
@@ -16149,6 +16483,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
+      "Taxes": [
+        "세금"
       ],
       "terms & conditions": [
         "이용 약관"
@@ -16179,6 +16516,9 @@
       ],
       "Timeout exceeded": [
         "응답 시간 초과"
+      ],
+      "VAT": [
+        "부가세"
       ],
       "VAT number": [
         "부가가치세 번호"
@@ -18006,8 +18346,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "모든 기본 ${ BRAND_NAME } 서비스 (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "그리고 구독시 크레딧으로 ${ referralReward }(을)를 받으세요."
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "그리고 구독시 크레딧으로 ${ referralInfo.uiData.refereeRewardAmount }(을)를 받으세요."
       ],
       "Billing Cycle": [
         "결제 주기"
@@ -18072,11 +18412,11 @@
       "Free": [
         "Free"
       ],
-      "Free for 14 days": [
-        "14일간 무료"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "${ TRIAL_DURATION_DAYS }일 무료 체험"
       ],
-      "Get ${ referralReward } in credits": [
-        "${ referralReward }의 크레딧 받기"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "${ referralInfo.uiData.refereeRewardAmount }의 크레딧 받기"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "안전한 ${ MAIL_APP_NAME } 주소를 받거나 ${ internalButton }"
@@ -18156,8 +18496,8 @@
       "Select ${ title }": [
         "${ title } 선택"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "서비스를 선택하여 프리미엄 버전을 14일간 무료로 경험해 보세요. 신용카드 정보는 필요하지 않습니다."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "서비스를 선택하여 프리미엄 버전을 ${ TRIAL_DURATION_DAYS }일간 무료로 경험해 보세요. 신용카드 정보는 필요하지 않습니다."
       ],
       "Selected": [
         "선택됨"
@@ -18198,8 +18538,14 @@
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "구독시 매월 ${ priceWithDiscountPerMonth }(으)로 갱신됩니다."
       ],
+      "To redeem on your next paid subscription.": [
+        "다음 유료 구독 시 사용하실 수 있습니다."
+      ],
       "Total": [
         "합계"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "${ BRAND_NAME }을(를) ${ TRIAL_DURATION_DAYS }일간 무료로 체험해 보세요."
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "14일 동안 무료로 ${ BRAND_NAME } 체험하기"
@@ -20758,8 +21104,8 @@
       "Gift code": [
         "기프트 코드"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "${ referralReward }을(를) 드리고 2주간 무료로 제공합니다. ${ referralReward } 크레딧을 받으세요."
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "${ refereeRewardAmount }을(를) 드리고 2주간 무료로 제공합니다. ${ referrerRewardAmount } 크레딧을 받아보세요."
       ],
       "Group": [
         "그룹"
@@ -20991,6 +21337,9 @@
       ],
       "Passwords made easy": [
         "간편해진 비밀번호"
+      ],
+      "Pause list": [
+        "중단 목록"
       ],
       "Pay invoice": [
         "청구서 지불"
@@ -21481,6 +21830,9 @@
       "You have no resolved alerts": [
         "해결된 알림 없음"
       ],
+      "You've successfully signed in!": [
+        "로그인 성공!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "사용자의 ${ planName } 무료 체험이 ${ textDate }에 종료됩니다."
       ],
@@ -21643,8 +21995,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "조직 관리자는 다른 구성원의 사용자 계정을 관리하고 관리자 권한을 부여할 수 있습니다. 주 관리자만 조직의 플랜을 수정할 수 있습니다."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "캘린더 초대장에 화상 회의 링크를 원활하게 추가할 수 있습니다."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "캘린더 초대장에 ${ MEET_APP_NAME } 화상 회의 링크를 손쉽게 추가할 수 있습니다."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "캘린더 초대장에 줌 화상 회의 링크를 손쉽게 추가할 수 있습니다."
       ],
       "Any protection applied to suspicious activity": [
         "의심스러운 활동에 적용되는 모든 보호"
@@ -21778,8 +22133,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }의 시스템 하위폴더가 별도로 폴더를 표시합니다"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "주소가 연결 해제되었습니다. 메시지 전송이 일시 중지되었습니다. 다시 연결하여 주소를 다시 활성화하십시오."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "주소가 연결 해제되었습니다. 메시지 송수신이 일시 정지되었습니다. 이 주소를 다시 활성화하려면 재로그인이 필요합니다."
       ],
       "The import will start with the most recent messages.": [
         "최근의 주된 메시지 불러오기가 곧 시작됩니다."

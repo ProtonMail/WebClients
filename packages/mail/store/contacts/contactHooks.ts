@@ -36,7 +36,7 @@ export const useContact = (contactID?: string) => {
         if (!contactID) {
             return;
         }
-        dispatch(contactThunk({ contactID }));
+        void dispatch(contactThunk({ contactID }));
     }, [contactID]);
     return [selectedValue.value, selectedValue.loading] as const;
 };

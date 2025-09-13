@@ -3,7 +3,7 @@ import React from 'react';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DocsLogo from '@proton/components/components/logo/DocsLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
-import { type LogoProps } from '@proton/components/components/logo/LogoBase';
+import type { LogoProps } from '@proton/components/components/logo/LogoBase';
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';

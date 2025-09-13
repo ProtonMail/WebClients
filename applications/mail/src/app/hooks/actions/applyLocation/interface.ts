@@ -19,6 +19,11 @@ export enum APPLY_LOCATION_TYPES {
     STAR = 'STAR',
 }
 
+export interface ApplyMultipleLocationsParams {
+    elements: Element[];
+    changes: { [labelID: string]: boolean };
+}
+
 export interface ApplyLocationMoveProps extends ApplyLocationParams {
     type: APPLY_LOCATION_TYPES.MOVE;
 }

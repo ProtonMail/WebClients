@@ -505,9 +505,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается раз в ${ cycle } мес. ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
       ],
@@ -2861,9 +2858,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Включая ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
       ],
@@ -3369,9 +3363,6 @@
       ],
       "Thomas": [
         "Томас"
-      ],
-      "VAT": [
-        "НДС"
       ],
       "Verification code": [
         "Код подтверждения"
@@ -6767,9 +6758,6 @@
         "${ n } кошелька",
         "${ n } кошельков",
         "${ n } кошельков"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Безопасный способ держать свои Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin по электронной почте"

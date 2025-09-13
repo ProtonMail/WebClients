@@ -4269,9 +4269,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "अगले चरण में, आप बिटकॉइन पते का उपयोग करके राशि जमा करने में सक्षम होंगे।"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }% ${ taxName } सहित: ${ price }"
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ totalProgressToShow } में से ${ esProgress } चीज़े लिस्ट कर रहे"
       ],
@@ -5077,9 +5074,6 @@
       "You are about to open another browser tab and visit:": [
         "आप एक और ब्राउज़र टैब खोलने वाले हैं और जाएँ:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "आप वर्तमान में ${ user.Name } (${ user.Email }) के रूप में साइन इन हैं।"
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "आप ${ downgradedPlanName } योजना में शामिल से अधिक स्टोरेज का उपयोग कर रहे हैं। कृपया डाउनग्रेड करने के लिए डेटा को मिटाएं या हटाएं।"
       ],
@@ -5829,9 +5823,6 @@
       ],
       "Username": [
         "उपयोगकर्ता का नाम"
-      ],
-      "VAT": [
-        "VAT"
       ],
       "Verification code": [
         "पुष्टि संख्या"
@@ -7246,7 +7237,7 @@
         "शायद बाद में"
       ],
       "Save": [
-        "सहेजें"
+        "बचाएँ"
       ],
       "Special offer": [
         "खास ऑफर"
@@ -9088,6 +9079,9 @@
       "Network error": [
         "नेटवर्क एरर"
       ],
+      "Next": [
+        "अगला"
+      ],
       "Night theme": [
         "रात की थीम"
       ],
@@ -9105,6 +9099,9 @@
       ],
       "Open actions dropdown": [
         "खुली कार्रवाई ड्रॉपडाउन"
+      ],
+      "Open pagination": [
+        "खुला पाग"
       ],
       "Original size": [
         "असली साइज़"
@@ -9135,6 +9132,9 @@
       ],
       "Preview": [
         "प्रिव्यू करें"
+      ],
+      "Previous": [
+        "पिछला"
       ],
       "Processing...": [
         "प्रोसेस हो रहा है..."

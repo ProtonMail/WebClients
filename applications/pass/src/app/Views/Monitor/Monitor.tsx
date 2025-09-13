@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { Route, type RouteChildrenProps, Switch } from 'react-router-dom';
 
 import { Content } from '@proton/pass/components/Layout/Section/Content';

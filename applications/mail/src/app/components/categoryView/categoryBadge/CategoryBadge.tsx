@@ -1,5 +1,8 @@
 import { useState } from 'react';
 
+import { clsx } from 'clsx';
+import { c } from 'ttag';
+
 import { Button, CircleLoader } from '@proton/atoms';
 import {
     Badge,
@@ -7,6 +10,7 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     Icon,
+    Spotlight,
     useApi,
     useEventManager,
     useNotifications,
@@ -17,29 +21,38 @@ import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark, IcCrossBig } from '@proton/icons';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { labelMessages } from '@proton/shared/lib/api/messages';
-import clsx from '@proton/utils/clsx';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
+import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import { isElementMessage } from 'proton-mail/helpers/elements';
 import type { Element } from 'proton-mail/models/element';
 
-import { categoryBadgeMapping } from './categoryViewConstants';
-import { isLabelIDCaregoryKey } from './categoryViewHelpers';
+import { CategoryBadgeInfo } from './CategoryBadgeInfo';
+import { CategoryBadgeSpotlightContent, useCategoryBadgeSpotlight } from './CategoryBadgeSpotlight';
+import { type CategoryBadgeMapping, DISABLED_BADGE, getCategoriesBadgeMapping } from './categoryViewConstants';
+import { isLabelIDCategoryKey } from './categoryViewHelpers';
+import { useCategoryPing } from './useCategoryPing';
 import { useCategoryViewExperiment } from './useCategoryViewExperiment';
 
 interface Props {
+    index: number;
     element?: Element;
     labelIDs?: string[];
     className?: string;
 }
 
-export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
+export const CategoryBadge = ({ element, labelIDs, className, index }: Props) => {
     const theme = useTheme();
     const { canSeeCategoryLabel } = useCategoryViewExperiment();
 
+    useCategoryPing();
+
     const api = useApi();
 
+    const spotlight = useCategoryBadgeSpotlight();
+
     const [labelValue, setLabelValue] = useState(() =>
-        (labelIDs || []).find((labelID) => isLabelIDCaregoryKey(labelID))
+        (labelIDs || []).find((labelID) => isLabelIDCategoryKey(labelID))
     );
 
     const { call } = useEventManager();
@@ -47,16 +60,20 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
     const { createNotification } = useNotifications();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
+    if (getItem(DISABLED_BADGE)) {
+        return null;
+    }
+
     if (!labelValue || !canSeeCategoryLabel) {
         return null;
     }
 
-    const data = categoryBadgeMapping[labelValue];
+    const data = getCategoriesBadgeMapping()[labelValue];
     if (!data) {
         return null;
     }
 
-    const handleCategoryClick = async (category: string) => {
+    const handleCategoryClick = async (category: CategoryLabelID) => {
         if (!element) {
             return;
         }
@@ -81,7 +98,7 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
         setLabelValue(category);
 
         createNotification({
-            text: 'The category has been updated, thanks for your feedback!',
+            text: c('Label').t`The category has been updated, thanks for your feedback!`,
         });
 
         await call();
@@ -89,23 +106,32 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
 
     return (
         <>
-            <button
-                ref={anchorRef}
-                onClick={(e) => {
-                    e.stopPropagation();
-
-                    toggle();
-                }}
-                disabled={loading}
-                className={clsx(
-                    'badge-label-norm text-semibold w-fit-content shrink-0 flex items-center gap-2',
-                    theme.information.dark ? data.darkClassName : data.className,
-                    className
-                )}
+            <Spotlight
+                borderRadius="xl"
+                closeIcon="cross-big"
+                show={spotlight.shouldShowSpotlight && index === 0}
+                content={<CategoryBadgeSpotlightContent />}
+                onDisplayed={spotlight.onDisplayed}
+                onClose={spotlight.onClose}
             >
-                {loading && <CircleLoader size="small" />}
-                {data.label}
-            </button>
+                <button
+                    ref={anchorRef}
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        spotlight.onClose();
+                        toggle();
+                    }}
+                    disabled={loading}
+                    className={clsx(
+                        'badge-label-norm text-semibold w-fit-content shrink-0 flex items-center gap-2',
+                        theme.information.dark ? data.darkClassName : data.className,
+                        className
+                    )}
+                >
+                    {loading && <CircleLoader size="small" />}
+                    {data.label}
+                </button>
+            </Spotlight>
 
             <Dropdown
                 anchorRef={anchorRef}
@@ -117,7 +143,7 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
                 <DropdownMenu className="p-3">
                     <div className="flex justify-between items-center flex-nowrap mb-2 gap-2">
                         <p className="p-0 pl-4 text-sm color-weak">
-                            Which category should this be recategorized under?
+                            {c('Label').t`Which category should this be recategorized under?`}
                         </p>
                         <Button
                             icon
@@ -132,7 +158,9 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
                             <IcCrossBig />
                         </Button>
                     </div>
-                    {Object.entries(categoryBadgeMapping).map(([key, value]) => {
+                    {Object.entries(getCategoriesBadgeMapping()).map(([key, value]) => {
+                        const typedKey = key as keyof CategoryBadgeMapping;
+
                         const icon =
                             key === labelValue ? (
                                 <>
@@ -148,7 +176,7 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
                                 key={key}
                                 onClick={(e) => {
                                     e.stopPropagation();
-                                    void withLoading(handleCategoryClick(key));
+                                    void withLoading(handleCategoryClick(typedKey));
                                 }}
                                 className="text-left"
                                 disabled={loading}
@@ -167,6 +195,8 @@ export const CategoryBadge = ({ element, labelIDs, className }: Props) => {
                             </DropdownMenuButton>
                         );
                     })}
+
+                    <CategoryBadgeInfo className="ml-4 mt-2" />
                 </DropdownMenu>
             </Dropdown>
         </>

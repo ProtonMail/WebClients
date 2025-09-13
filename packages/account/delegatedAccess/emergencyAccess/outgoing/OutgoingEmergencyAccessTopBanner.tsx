@@ -3,11 +3,12 @@ import { c } from 'ttag';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import TopBanner from '@proton/components/containers/topBanners/TopBanner';
 
-import { getViewTrustedContactRoute } from '../../available';
+import { useUser } from '../../../user/hooks';
+import { getIsOutgoingDelegatedAccessAvailable, getViewTrustedContactRoute } from '../../available';
 import { getMetaOutgoingDelegatedAccess } from './helper';
 import { useOutgoingItems } from './useOutgoingItems';
 
-const OutgoingEmergencyAccessTopBanner = () => {
+const InnerOutgoingEmergencyAccessTopBanner = () => {
     const { items } = useOutgoingItems();
 
     const now = Date.now();
@@ -37,6 +38,14 @@ const OutgoingEmergencyAccessTopBanner = () => {
             </SettingsLink>
         </TopBanner>
     );
+};
+
+const OutgoingEmergencyAccessTopBanner = () => {
+    const [user] = useUser();
+    if (!getIsOutgoingDelegatedAccessAvailable(user)) {
+        return null;
+    }
+    return <InnerOutgoingEmergencyAccessTopBanner />;
 };
 
 export default OutgoingEmergencyAccessTopBanner;

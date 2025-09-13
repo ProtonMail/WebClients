@@ -21,7 +21,7 @@ import { replaceSelfAddressTokensIfNeeded } from '../addresses/replaceAddressTok
 import { acceptMembership } from '../groupMemberships';
 import type { KtState } from '../kt';
 import { getKTActivation, getKTUserContext } from '../kt/actions';
-import { type OrganizationKeyState } from '../organizationKey';
+import type { OrganizationKeyState } from '../organizationKey';
 import { userThunk } from '../user';
 import { type UserKeysState, userKeysThunk } from '../userKeys';
 

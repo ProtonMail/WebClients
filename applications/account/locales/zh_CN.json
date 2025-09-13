@@ -991,6 +991,9 @@
       "Open": [
         "检查"
       ],
+      "Open ${ applicationName }": [
+        "打开 ${ applicationName }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "打开 ${ CALENDAR_APP_NAME } 设置"
       ],
@@ -1990,6 +1993,14 @@
         "您好，我现在有事不在，暂时无法处理邮件。"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You have reached the trial limit.": [
+        "您已达到试用上限。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消订阅"
@@ -2363,6 +2374,9 @@
       "Manual setup problem": [
         "手动设置问题"
       ],
+      "Meet problem": [
+        "遇到问题"
+      ],
       "Other": [
         "其他"
       ],
@@ -2720,6 +2734,11 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "collider_2025: feature": {
+      "Unlimited daily chats": [
+        "无限聊天次数"
       ]
     },
     "color": {
@@ -4065,6 +4084,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } 是您的默认邮件应用。"
       ],
+      "A checked box means the feature is disabled.": [
+        "选中复选框表示禁用该功能。"
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "在 ${ DRIVE_APP_NAME } 中添加文件夹和文件，并邀请团队成员查看或编辑。"
       ],
@@ -4212,8 +4234,8 @@
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "当您邀请他人注册 ${ BRAND_NAME } 时，您将获得 ${ referralReward } 的 ${ BRAND_NAME } 余额奖励，并且被邀请人也将获得 ${ referralReward } 余额奖励以供使用。"
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "当您邀请他人注册${ BRAND_NAME }时，您将获得${ referralInfo.referrerRewardAmount }的${ BRAND_NAME }余额奖励，并且被邀请人也将获得${ referralInfo.refereeRewardAmount }余额奖励以供使用。"
       ]
     },
     "description": {
@@ -4499,7 +4521,7 @@
         "超越行业标准的高级保护功能"
       ],
       "Join the 50,000+ organizations already benefiting from ${ BRAND_NAME }'s security": [
-        "加入已受益于 ${ BRAND_NAME } 安全性的 50,000 多个组织的行列"
+        "加入50000+已受 ${ BRAND_NAME } 安全性保护的组织"
       ],
       "Protect sensitive business information and collaborate securely": [
         "保护敏感的商业信息并进行安全合作。"
@@ -5099,11 +5121,17 @@
       ]
     },
     "emergency_access": {
+      "${ days } day left": [
+        "剩${ days }天"
+      ],
+      "${ hours } hour left": [
+        "剩${ hours }小时"
+      ],
+      "${ minutes } minute left": [
+        "剩${ minutes }分钟"
+      ],
       "${ n } day": [
         "${ n }天"
-      ],
-      "${ n } day left": [
-        "剩余 ${ n } 天"
       ],
       "Access granted": [
         "已批准访问"
@@ -5113,6 +5141,9 @@
       ],
       "Disabled": [
         "未启用"
+      ],
+      "Less than a minute left": [
+        "剩不到一分钟"
       ],
       "None": [
         "无"
@@ -5366,6 +5397,9 @@
       ],
       "Invalid Sieve code": [
         "Sieve 代码无效"
+      ],
+      "Invalid URL": [
+        "链接无效"
       ],
       "Invalid verification code": [
         "验证码无效"
@@ -6168,9 +6202,6 @@
       "customer support": [
         "客户支持"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "家庭计划目前不支持外部账户。请在加入前创建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "如果您接受邀请，我们将为您退订当前账户等级，并将剩余时长折算为余额存入您的账户。"
       ],
@@ -6910,6 +6941,9 @@
       "Device": [
         "设备"
       ],
+      "Domain": [
+        "域名"
+      ],
       "Enter your email address": [
         "输入邮箱地址"
       ],
@@ -6942,6 +6976,9 @@
       ],
       "Organization key fingerprint": [
         "机构密钥指纹"
+      ],
+      "Password ends with": [
+        "密码结尾是"
       ],
       "Payment details": [
         "付款详情"
@@ -6978,6 +7015,9 @@
       ],
       "User": [
         "用户"
+      ],
+      "Username": [
+        "用户名"
       ]
     },
     "Header for addresses table": {
@@ -7561,6 +7601,24 @@
       "${ n } address": [
         "${ n } 个地址"
       ],
+      "${ name } for Android": [
+        "${ name } Android 版"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } GNU/Linux 版"
+      ],
+      "${ name } for iOS": [
+        "${ name } iOS 版"
+      ],
+      "${ name } for macOS": [
+        "${ name } macOS 版"
+      ],
+      "${ name } for Web": [
+        "${ name }网页版"
+      ],
+      "${ name } for Windows": [
+        "${ name } Windows 版"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }：不隔离也不拒收未经授权的电子邮件，通常只用于调试。"
       ],
@@ -7884,6 +7942,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "邮箱别名类似邮箱地址，但是可以用于减少垃圾邮件并隐藏您的真实邮箱地址和身份信息。"
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "与**${ applicationName }**沟通出现错误"
       ],
       "An error occurred while communicating with the extension": [
         "与扩展程序传输数据失败"
@@ -8563,11 +8624,11 @@
       "Get ${ upsellPlanName }": [
         "开通 ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "每当一位朋友订阅，您将获得**${ referrerRewardAmount }余额奖励**。"
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "创建 ${ BRAND_NAME } 账户并接受邀请即可查看。"
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "获得并赠送 **${ referralReward } 余额奖励** 给每位订阅的朋友"
       ],
       "Get it on Google Play": [
         "前往 Google Play 下载"
@@ -8733,9 +8794,6 @@
       ],
       "inactive": [
         "未启用"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "验证您的邮箱地址，提升账户安全性。"
@@ -9303,9 +9361,6 @@
       ],
       "Please use another browser or download the file.": [
         "请使用其他浏览器或下载文件。"
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "请在打开的新标签页中完成验证。"
       ],
       "Please wait till your changes are synced with the server.": [
         "请稍候，数据正在与服务器同步。"
@@ -10105,9 +10160,6 @@
       "Vault updated": [
         "保险库已更新"
       ],
-      "Verification can take a few minutes.": [
-        "验证可能需要数分钟。"
-      ],
       "Verification link expired": [
         "验证链接已过期"
       ],
@@ -10318,9 +10370,6 @@
       "You are about to open your default browser and visit:": [
         "您即将打开默认浏览器并访问："
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
-      ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "有 ${ ipAddresses } 台专用服务器可以使用，其中有 ${ ipCount } 台正在使用。"
       ],
@@ -10449,6 +10498,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "您可能将转至银行网站。"
+      ],
+      "You may now start using **${ applicationName }**": [
+        "您现在可以开始使用**${ applicationName }**"
       ],
       "You may now start using the extension": [
         "扩展程序可以使用了"
@@ -11322,8 +11374,20 @@
       "Auto-unsubscribe": [
         "自动退订邮件"
       ],
+      "Autofill": [
+        "自动填充"
+      ],
+      "Autofill 2FA": [
+        "自动填充 2FA"
+      ],
       "Automatically save contacts": [
         "自动保存联系人"
+      ],
+      "Autosave": [
+        "自动保存"
+      ],
+      "Autosuggest": [
+        "自动提示"
       ],
       "Awarded": [
         "已奖励"
@@ -11563,6 +11627,9 @@
         "域名"
       ],
       "Domain name": [
+        "域名"
+      ],
+      "Domains": [
         "域名"
       ],
       "Don't ask again": [
@@ -11943,6 +12010,9 @@
       "Other amount": [
         "其他金额"
       ],
+      "Passkeys": [
+        "通行密钥"
+      ],
       "Password": [
         "密码"
       ],
@@ -12251,9 +12321,6 @@
       ],
       "Value": [
         "值"
-      ],
-      "VAT": [
-        "增值税"
       ],
       "Verification code": [
         "验证码"
@@ -13007,9 +13074,6 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "登录到您的 ${ BRAND_NAME } 帐户以访问所有加密的 ${ BRAND_NAME } 服务，例如 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等等。 没有帐户？免费创建一个帐户。"
-      ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "通过端到端加密技术，全面掌控您的数据。无需银行卡。"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "使用此链接免费试用 ${ BRAND_NAME }"
@@ -14445,9 +14509,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "双因素身份验证已设为非必需"
-      ],
-      "Video conferencing settings have been updated": [
-        "视频会议设置已更新"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14582,7 +14643,7 @@
         "按年支付，确保我们的最佳优惠"
       ],
       "Save": [
-        "保存"
+        "节省"
       ],
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
@@ -17302,8 +17363,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "所有基本 ${ BRAND_NAME } 服务 (${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "若您选择订阅，将获得 ${ referralReward } 余额奖励。"
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "若您选择订阅，将获得 ${ referralInfo.uiData.refereeRewardAmount } 余额奖励。"
       ],
       "Billing Cycle": [
         "计费周期"
@@ -17368,11 +17429,8 @@
       "Free": [
         "Free"
       ],
-      "Free for 14 days": [
-        "免费试用 14 天"
-      ],
-      "Get ${ referralReward } in credits": [
-        "获取 ${ referralReward } 余额奖励"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "获得${ referralInfo.uiData.refereeRewardAmount }余额奖励。"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "获取一个安全的 ${ MAIL_APP_NAME } 邮箱地址，或点击 ${ internalButton }"
@@ -17451,9 +17509,6 @@
       ],
       "Select ${ title }": [
         "选择 ${ title }"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "选择一项服务，即可免费享受 14 天高级版体验。无需信用卡。"
       ],
       "Selected": [
         "已选择"
@@ -17664,7 +17719,7 @@
         "自我保管——只有您才能使用钱包密钥"
       ],
       "The only business solution that is:": [
-        "唯一商业解决方案："
+        "是唯一拥有以下优势的商业解决方案："
       ],
       "The only cloud storage with:": [
         "唯一具有以下功能的云储存："
@@ -20033,8 +20088,8 @@
       "Gift code": [
         "礼品码"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "支付 ${ referralReward } 即可享受 2 周免费服务。获得 ${ referralReward } 余额奖励。"
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "给予${ refereeRewardAmount }余额奖励及2周免费服务，获得${ referrerRewardAmount }余额奖励。"
       ],
       "Group": [
         "群组"
@@ -20741,6 +20796,9 @@
       "You have no resolved alerts": [
         "您没有已解决的提醒"
       ],
+      "You've successfully signed in!": [
+        "登入成功！"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "您的 ${ planName } 免费试用期将于 ${ textDate } 结束"
       ],
@@ -20902,9 +20960,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "管理员可以管理用户账户，并授予其他用户管理员权限。只有主要管理员可以编辑组织的计划。"
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "允许在日历邀请中无缝添加视频会议链接。"
       ],
       "Any protection applied to suspicious activity": [
         "对于可疑操作所采取的所有防护措施"

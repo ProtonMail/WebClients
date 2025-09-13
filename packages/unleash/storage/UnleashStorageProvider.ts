@@ -1,7 +1,7 @@
 import type { IStorageProvider } from '@unleash/proxy-client-react';
 
 import { FLAGS_WITH_VARIANT } from '../UnleashFeatureFlagsVariants';
-import { type FeatureFlagToggle } from '../interface';
+import type { FeatureFlagToggle } from '../interface';
 import saveWhitelistedFlagInCookies from './UnleashCookiesProvider';
 
 export default class ProtonUnleashStorageProvider implements IStorageProvider {

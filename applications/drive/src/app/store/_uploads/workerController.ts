@@ -1,6 +1,6 @@
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy, serverTime, updateServerTime } from '@proton/crypto';
-import { type ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import type { SafeErrorObject } from '@proton/utils/getSafeErrorObject';
 import { getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
@@ -261,9 +261,7 @@ export class UploadWorker {
 
                         const { Api: CryptoApi } = module;
 
-                        // The data being uploaded is client generated, so we avoid binding
-                        // the UploadWorker logic to the enforceGrammar feature flag.
-                        CryptoApi.init({ enforceOpenpgpGrammar: false });
+                        CryptoApi.init({});
                         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
 
                         // align serverTime in worker with the main thread (received from API)

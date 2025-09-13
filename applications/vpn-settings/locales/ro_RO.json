@@ -153,6 +153,9 @@
       "Claim this address": [
         "Revendicați această adresă"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Revendicați adresa gratuită ${ BRAND_NAME }"
+      ],
       "Close": [
         "Închidere"
       ],
@@ -1122,6 +1125,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "Generare chei lipsă pentru adresa „${ emailAddress }”"
       ],
+      "Reconnect": [
+        "Reconectare"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "Reconectați adresa „${ emailAddress }”"
+      ],
       "Saving": [
         "Se salvează"
       ],
@@ -1144,6 +1153,9 @@
       ],
       "Disabled": [
         "Dezactivată"
+      ],
+      "Disconnected": [
+        "Deconectat"
       ],
       "External": [
         "Extern"
@@ -1352,6 +1364,61 @@
       ],
       "Unsupported event": [
         "Eveniment nesuportat"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Făcând clic pe «Încercare», sunteți de acord cu ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "În perioada de probare, puteți avea până la 10 utilizatori."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
+      ],
+      "on ${ formattedDate }": [
+        "la ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Încercați ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Încercați-l gratuit timp de ${ TRIAL_DURATION_DAYS } zile"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Dacă anulați, perioada de probare gratuită nu va fi convertită într-un abonament cu plată, dar vă puteți bucura în continuare de beneficiile planului până la sfârșitul perioadei de probare. După aceea, planul va fi retrogradat la ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nu puteți adăuga domenii personale în perioada de probare."
+      ],
+      "You have reached the trial limit.": [
+        "Ați atins limita perioadei de probare."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Suma datorată după probare"
+      ],
+      "Amount due now": [
+        "Suma datorată acum"
       ]
     },
     "b2b_trials_Action": {
@@ -1718,6 +1785,9 @@
       "Manual setup problem": [
         "Problemă setare manuală"
       ],
+      "Meet problem": [
+        "Problemă Meet"
+      ],
       "Other": [
         "Altele"
       ],
@@ -1866,6 +1936,52 @@
       ],
       "Expand": [
         "Extindere"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "Basic chat history": [
+        "Istoric de bază conversații"
+      ],
+      "Full chat history with search": [
+        "Istoric complet al conversațiilor cu căutare"
+      ],
+      "Large file upload support": [
+        "Acceptare încărcare fișiere mari"
+      ],
+      "Limited daily chats": [
+        "Conversații zilnice limitate"
+      ],
+      "Limited favorites": [
+        "Favorite limitate"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favorite nelimitate pentru o accesare rapidă"
+      ],
+      "Upload and query multiple large files": [
+        "Încărcați și interogați mai multe fișiere mari"
+      ],
+      "Upload and query small files": [
+        "Încărcați și interogați fișiere mici"
+      ],
+      "Web search access": [
+        "Acces la căutare pe internet"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } este o aplicație de inteligență artificială axată pe confidențialitate, care vă ajută să realizați mai mult, păstrându-vă în același timp datele în siguranță. Deblocați-i întregul potențial și bucurați-vă de acces timpuriu la noile funcții pe măsură ce sunt introduse."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Conversații rapide și funcții avansate de inteligență artificială."
       ]
     },
     "color": {
@@ -4273,8 +4389,8 @@
       "customer support": [
         "suportul tehnic"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -6237,9 +6353,6 @@
       "Include device, location, and IP details": [
         "Includere dispozitiv, loc și detalii IP"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Măriți securitatea contului prin verificarea adresei de e-mail."
       ],
@@ -6647,9 +6760,6 @@
       "Please use another browser or download the file.": [
         "Folosiți alt tip de navigator web sau descărcați fișierul."
       ],
-      "Please verify payment at the new tab which was opened.": [
-        "Verificați efectuarea plății în noua filă deschisă."
-      ],
       "Please wait till your changes are synced with the server.": [
         "Așteptați până când modificările se sincronizează cu serverul."
       ],
@@ -6819,6 +6929,9 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
+      ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Conectarea cu o cheie de securitate nu este încă suportată în toate aplicațiile. Fără TOTP, conectarea la unele aplicații poate eșua."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
@@ -7190,9 +7303,6 @@
       "Vault updated": [
         "Seiful a fost actualizat."
       ],
-      "Verification can take a few minutes.": [
-        "Verificarea poate dura câteva minute."
-      ],
       "Verification may take a few minutes.": [
         "Verificarea ar putea dura câteva minute."
       ],
@@ -7349,8 +7459,8 @@
       "You already have a free account": [
         "Deja aveți un cont gratuit"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "V-ați conectat cu ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "V-ați conectat cu ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Servere dedicate folosite: ${ ipCount } din ${ ipAddresses } disponibile.",
@@ -7731,6 +7841,9 @@
       ],
       "Donation": [
         "Donație"
+      ],
+      "Manual": [
+        "Manuală"
       ],
       "Modification": [
         "Modificare"
@@ -8425,11 +8538,11 @@
       "Value": [
         "Valoare"
       ],
-      "VAT": [
-        "TVA"
-      ],
       "Verification code": [
         "Cod de verificare"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferință cu ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Conferință video cu Zoom"
@@ -10097,6 +10210,9 @@
       ]
     },
     "Notification": {
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Setările conferințelor video ${ MEET_APP_NAME } au fost actualizate."
+      ],
       "${ reason } has been disabled": [
         "${ reason } a fost dezactivat"
       ],
@@ -10111,6 +10227,12 @@
       ],
       "Downloaded 2FA recovery codes": [
         "Codurile de recuperare A2F s-au descărcat."
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Nu s-au putut actualiza setările de conferință video ${ MEET_APP_NAME }."
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Nu s-au putut actualiza setările de conferință video Zoom."
       ],
       "Invalid code": [
         "Cod nevalid"
@@ -10148,8 +10270,8 @@
       "Two-factor authentication is not required anymore": [
         "Autentificarea cu doi factori nu mai este obligatorie."
       ],
-      "Video conferencing settings have been updated": [
-        "Setările conferințelor video au fost actualizate."
+      "Zoom video conferencing settings have been updated": [
+        "Setările conferințelor video Zoom au fost actualizate."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10835,11 +10957,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Am înțeles"
       ],
       "I'm purchasing as a business": [
         "Achiziționez în calitate de companie"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "LL/AA"
@@ -10858,6 +10992,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
+      ],
+      "Taxes": [
+        "Taxe"
       ],
       "terms & conditions": [
         "termeni și condiții"
@@ -10896,6 +11033,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "VAT": [
+        "TVA"
       ],
       "VAT number": [
         "Valoare TVA"
@@ -14570,8 +14710,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorii pot gestiona conturile de utilizatori și să acorde drepturi de administrare altor utilizatori. Doar administratorul principal poate modifica planul organizației."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Permite adăugarea de legături web spre conferințe video la invitațiile din calendar."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permite adăugarea fără probleme a legăturilor de conferințe video ${ MEET_APP_NAME } la invitațiile personale din calendar."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Permite adăugarea fără probleme a legăturilor de conferințe video Zoom la invitațiile personale din calendar."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
@@ -14644,6 +14787,9 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Subfolderele de sistem vor fi afișate ca foldere separate în ${ MAIL_APP_NAME }."
+      ],
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Adresa a fost deconectată. Trimiterea și primirea mesajelor sunt suspendate. Reconectați-vă pentru a activa din nou această adresă."
       ],
       "The import will start with the most recent messages.": [
         "Importarea va începe cu cele mai recente mesaje."
@@ -15229,9 +15375,6 @@
         "Portofele: ${ n }",
         "Portofele: ${ n }",
         "Portofele: ${ n }"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "O metodă mai sigură de a vă păstra monedele Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

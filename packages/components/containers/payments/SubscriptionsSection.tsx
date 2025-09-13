@@ -4,7 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import { useUser } from '@proton/account/user/hooks';
 import { Tooltip } from '@proton/atoms';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -32,7 +31,6 @@ import {
     getRenewalTime,
     isFreeSubscription,
     isManagedExternally,
-    onSessionMigrationPaymentsVersion,
 } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import isTruthy from '@proton/utils/isTruthy';
@@ -51,7 +49,6 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const [reactivating, withReactivating] = useLoading();
     const api = useApi();
     const { sendDashboardReactivateReport } = useCancellationTelemetry();
-    const [user] = useUser();
     const eventManager = useEventManager();
     const upcoming = subscription?.UpcomingSubscription ?? undefined;
     const [organization] = useOrganization();
@@ -103,7 +100,7 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                             {
                                 RenewalState: Renew.Enabled,
                             },
-                            onSessionMigrationPaymentsVersion(user, subscription)
+                            'v5'
                         )
                     );
 
@@ -120,13 +117,16 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
     const { renewAmount, renewCurrency, renewLength } = (() => {
         if (upcoming && isUpcomingSubscriptionUnpaid) {
             return {
-                renewAmount: upcoming.BaseRenewAmount,
+                // using RenewAmount if BaseRenewAmount is not present. It's a fallback that can be removed in the
+                // future.
+                renewAmount: upcoming.BaseRenewAmount ?? upcoming.RenewAmount,
                 renewCurrency: upcoming.Currency,
                 renewLength: upcoming.Cycle,
             };
         }
 
         return {
+            // using RenewAmount if BaseRenewAmount is not present. It's a fallback that can be removed in the future.
             renewAmount: latestSubscription.BaseRenewAmount ?? latestSubscription.RenewAmount,
             renewCurrency: latestSubscription.Currency,
             renewLength: latestSubscription.Cycle,
@@ -181,10 +181,12 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
                 ) : (
                     <div className="flex items-center">
                         {renewalTextElement}
-                        <Info
-                            className="ml-2"
-                            title={c('Payments').t`Credits and discounts are reflected in your invoice`}
-                        />
+                        {!isManagedExternally(subscription) && (
+                            <Info
+                                className="ml-2"
+                                title={c('Payments').t`Credits and discounts are reflected in your invoice`}
+                            />
+                        )}
                     </div>
                 )}
             </TableCell>

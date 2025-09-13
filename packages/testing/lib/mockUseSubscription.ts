@@ -1,5 +1,5 @@
 import * as useSubscriptionModule from '@proton/account/subscription/hooks';
-import { type Subscription } from '@proton/payments';
+import type { Subscription } from '@proton/payments';
 
 import { buildSubscription } from '../builders';
 

@@ -1,6 +1,6 @@
 import { getModelState } from '@proton/account/test';
 import { userDefault } from '@proton/components/hooks/helpers/test';
-import { BillingPlatform, CYCLE, PLANS, type Subscription } from '@proton/payments';
+import { CYCLE, PLANS, type Subscription } from '@proton/payments';
 import { renderWithProviders } from '@proton/testing';
 import { applyHOCs, getSubscriptionState, withApi, withCache } from '@proton/testing';
 import { buildSubscription } from '@proton/testing/builders';
@@ -56,17 +56,6 @@ it('should display the number of available credits', () => {
     expect(getByTestId('available-credits')).toHaveTextContent('119.88');
 });
 
-it('should render 0 credits if the amount of credits is the same as upcoming subscription price', () => {
-    subscription.UpcomingSubscription = upcoming;
-    const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
-        preloadedState: {
-            user: getModelState(user),
-            subscription: getSubscriptionState(subscription),
-        },
-    });
-    expect(getByTestId('available-credits')).toHaveTextContent('0');
-});
-
 it('should render positive amount of credits if there are more credits than upcoming subscription price', () => {
     user.Credit = 12988;
     subscription.UpcomingSubscription = upcoming;
@@ -76,25 +65,11 @@ it('should render positive amount of credits if there are more credits than upco
             subscription: getSubscriptionState(subscription),
         },
     });
-    expect(getByTestId('available-credits')).toHaveTextContent('10');
-});
-
-it('should render 0 if the number of available credits is less than price of upcoming subscription', () => {
-    user.Credit = 10000;
-    subscription.UpcomingSubscription = upcoming;
-    const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {
-        preloadedState: {
-            user: getModelState(user),
-            subscription: getSubscriptionState(subscription),
-        },
-    });
-    expect(getByTestId('available-credits')).toHaveTextContent('0');
+    expect(getByTestId('available-credits')).toHaveTextContent('129.88');
 });
 
 it('should render credits as-is if subscription is managed by Chargebee', () => {
-    subscription.BillingPlatform = BillingPlatform.Chargebee;
     subscription.UpcomingSubscription = upcoming;
-    subscription.UpcomingSubscription!.BillingPlatform = BillingPlatform.Chargebee;
     user.Credit = 12988;
 
     const { getByTestId } = renderWithProviders(<ContextCreditsSection />, {

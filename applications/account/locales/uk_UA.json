@@ -3731,6 +3731,9 @@
       ]
     },
     "Description": {
+      "A checked box means the feature is disabled.": [
+        "Відмічена галочка означає, що функція вимкнена."
+      ],
       "Also included": [
         "Також включено"
       ],
@@ -4529,12 +4532,6 @@
         "${ n } днів",
         "${ n } днів"
       ],
-      "${ n } day left": [
-        "Залишився ${ n } день",
-        "Залишилось ${ n } дні",
-        "Залишилось ${ n } днів",
-        "Залишилось ${ n } днів"
-      ],
       "Access granted": [
         "Доступ надано"
       ],
@@ -4784,6 +4781,9 @@
       ],
       "Invalid Sieve code": [
         "Неприпустимий код Sieve"
+      ],
+      "Invalid URL": [
+        "Недійсна URL-адреса"
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
@@ -5574,9 +5574,6 @@
       ],
       "customer support": [
         "клієнтська підтримка"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Сімейні плани наразі не підтримують зовнішні облікові записи. Створіть адресу ${ BRAND_NAME } перед приєднанням. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Якщо ви приймете запрошення, ми змінимо ваш поточний тарифний план і зарахуємо невикористану частину коштів на ваш обліковий запис."
@@ -8133,9 +8130,6 @@
       "inactive": [
         "неактивний"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Включно з ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Increase your account security by verifying your email address.": [
         "Покращте безпеку вашого облікового запису підтвердивши адресу електронної пошти."
       ],
@@ -8648,9 +8642,6 @@
       ],
       "Please use another browser or download the file.": [
         "Скористайтеся іншим браузером або завантажте файл."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "Підтвердьте платіж у новій вкладці, яку було відкрито."
       ],
       "Please wait till your changes are synced with the server.": [
         "Будь ласка, зачекайте, поки ваші зміни будуть синхронізовані з сервером."
@@ -9378,9 +9369,6 @@
       "Vault updated": [
         "Сховище оновлено"
       ],
-      "Verification can take a few minutes.": [
-        "Перевірка може тривати декілька хвилин."
-      ],
       "Verification link expired": [
         "Термін дії посилання для підтвердження завершився"
       ],
@@ -9578,9 +9566,6 @@
       ],
       "You are about to open your default browser and visit:": [
         "Ви хочете відкрити типовий браузер і відвідати:"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Наразі ви використовуєте ${ ipCount } виділений сервер із ${ ipAddresses } доступного.",
@@ -10520,8 +10505,20 @@
       "Auto-unsubscribe": [
         "Автовідписування"
       ],
+      "Autofill": [
+        "Автозаповнення"
+      ],
+      "Autofill 2FA": [
+        "Автозаповнення 2FA"
+      ],
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
+      ],
+      "Autosave": [
+        "Автозбереження"
+      ],
+      "Autosuggest": [
+        "Автопропозиція"
       ],
       "Awarded": [
         "Нагороди"
@@ -10753,6 +10750,9 @@
       ],
       "Domain name": [
         "Ім'я домену"
+      ],
+      "Domains": [
+        "Домени"
       ],
       "Don't ask again": [
         "Не питати знову"
@@ -11111,6 +11111,9 @@
       "Other amount": [
         "Інша сума"
       ],
+      "Passkeys": [
+        "Ключі доступу"
+      ],
       "Password": [
         "Пароль"
       ],
@@ -11389,9 +11392,6 @@
       ],
       "Value": [
         "Значення"
-      ],
-      "VAT": [
-        "ПДВ"
       ],
       "Verification code": [
         "Код підтвердження"
@@ -13571,9 +13571,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Двоетапна перевірка більше не обов'язкова"
-      ],
-      "Video conferencing settings have been updated": [
-        "Налаштування відеоконференцій було оновлено"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13693,7 +13690,7 @@
         "Можливо пізніше"
       ],
       "Save": [
-        "Зберегти"
+        "Заощаджуйте"
       ],
       "Special offer": [
         "Спеціальна пропозиція"
@@ -19500,9 +19497,6 @@
       ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратори можуть керувати обліковими записами користувачів і надавати права адміністратора іншим користувачам. Тільки головний адміністратор може редагувати план організації."
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Дозволяє легко додавати посилання на відеоконференції до запрошень календаря."
       ],
       "Any protection applied to suspicious activity": [
         "Будь-який захист, застосований до підозрілої активності"

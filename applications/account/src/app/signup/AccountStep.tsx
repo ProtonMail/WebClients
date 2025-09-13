@@ -21,8 +21,7 @@ import {
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import type { APP_NAMES, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { APPS } from '@proton/shared/lib/constants';
-import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     emailValidator,

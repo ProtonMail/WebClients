@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adres",
-        "${ numberOfAddresses } adres"
-      ],
       "A to Z": [
         "A-Z"
       ],
@@ -99,6 +95,9 @@
       ],
       "Add phone number": [
         "Telefon numarası ekle"
+      ],
+      "Add secret passphrase": [
+        "Gizli parola ifadesi ekle"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } üzerine ekle"
@@ -326,9 +325,6 @@
       "Copy alias “${ name }”": [
         "“${ name }” takma adını kopyala"
       ],
-      "Copy email address": [
-        "E-posta adresini kopyala"
-      ],
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
@@ -489,6 +485,9 @@
       ],
       "Edit address": [
         "Adresi düzenle"
+      ],
+      "Edit categories": [
+        "Kategorileri düzenle"
       ],
       "Edit draft": [
         "Taslağı düzenle"
@@ -764,6 +763,9 @@
       "Italic": [
         "Yatık"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } ile katıl"
+      ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
       ],
@@ -811,9 +813,6 @@
       ],
       "Make it friendly": [
         "Samimileştir"
-      ],
-      "Manage addresses": [
-        "Adres yönetimi"
       ],
       "Manage advanced account protections": [
         "Gelişmiş hesap korumalarını yönetin"
@@ -910,6 +909,9 @@
       ],
       "More search options": [
         "Diğer arama seçenekleri"
+      ],
+      "Most frequent": [
+        "En sık"
       ],
       "Most read": [
         "En çok okunan"
@@ -1019,6 +1021,9 @@
       "Page ${ pageNumber }": [
         "${ pageNumber }. sayfa"
       ],
+      "Passphrase": [
+        "Parola ifadesi"
+      ],
       "Pause": [
         "Duraklat"
       ],
@@ -1072,6 +1077,9 @@
       ],
       "Read receipt sent": [
         "Okundu bilgisi gönderildi"
+      ],
+      "Recently read": [
+        "Son okunanlar"
       ],
       "Recently received": [
         "Son alınanlar"
@@ -1177,6 +1185,9 @@
       ],
       "Resume downloading": [
         "İndirmeyi sürdür"
+      ],
+      "Retry": [
+        "Yeniden dene"
       ],
       "Revert to original display": [
         "Özgün görünüme geri dön"
@@ -1513,6 +1524,9 @@
       ],
       "Update recovery phrase": [
         "Kurtarma ifadesini güncelle"
+      ],
+      "Update secret passphrase": [
+        "Gizli parola ifadesini güncelle"
       ],
       "Upgrade": [
         "Yükselt"
@@ -1972,26 +1986,29 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde her ${ cycle } ayda bir otomatik olarak yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ${ formattedDate } tarihinde başlayarak her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir aboneliğe dönüşecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } tarihinde deneme sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinde aylık olarak otomatik yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücretlendirilmezsiniz."
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinden başlayarak otomatik olarak her ay yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucuya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğuna sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_SCRIBE_SEATS } Scribe koltuğunuz olabilir."
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
-        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcıya sahip olabilirsiniz."
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_USERS } kullanıcınız olabilir."
       ],
       "You cannot add custom domains during the trial period.": [
-        "Deneme süresi boyunca özel alan adları ekleyemezsiniz."
+        "Deneme süresi boyunca özel etki alanları ekleyemezsiniz."
       ],
       "You have reached the trial limit.": [
-        "Deneme limitine ulaştınız."
+        "Deneme süresi sayısı sınırına ulaştınız."
       ]
     },
     "b2b_trials_Action": {
@@ -2226,6 +2243,9 @@
       ],
       "Manual setup problem": [
         "El ile kurulum sorunu"
+      ],
+      "Meet problem": [
+        "Meet sorunu"
       ],
       "Other": [
         "Diğer"
@@ -2652,12 +2672,50 @@
         "Genişlet"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Gelişmiş yapay zeka modellerine erişim"
+      ],
+      "Basic chat history": [
+        "Temel sohbet geçmişi"
+      ],
+      "Full chat history with search": [
+        "Arama ile tüm sohbet geçmişi"
+      ],
+      "Large file upload support": [
+        "Büyük dosya yükleme desteği"
+      ],
+      "Limited daily chats": [
+        "Sınırlı sayıda günlük sohbet"
+      ],
+      "Limited favorites": [
+        "Sınırlı sayıda sık kullanılan"
+      ],
+      "Unlimited daily chats": [
+        "Günlük sınırsız sayıda sohbet"
+      ],
+      "Unlimited favorites for quick access": [
+        "Hızlı erişim için sınırsız sayıda sık kullanılan"
+      ],
+      "Upload and query multiple large files": [
+        "Birden fazla büyük dosyayı yükleyip sorgulayın"
+      ],
+      "Upload and query small files": [
+        "Küçük dosyaları yükleyin ve sorgulayın"
+      ],
+      "Web search access": [
+        "Site arama erişimi"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } verilerinizin güvenliğini sağlarken, daha fazla iş yapmanıza yardımcı olan gizliliğe öncelik veren bir yapay zekadır. Tam potansiyelini açığa çıkarın ve yeni özellikler tanıtıldıkça erken erişimin keyfini çıkarın."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } uygulamasını ekle"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
       ]
     },
     "color": {
@@ -4083,9 +4141,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Bu görünüm, şu adreslere gönderilen iletileri görüntüler:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Yazma yardımcısını kullanmayı sürdürmek için aboneliğinize ekleyin."
       ],
@@ -4569,6 +4624,9 @@
       "Failed to open to contact": [
         "Kişiye açılamadı"
       ],
+      "Failed to update secret passphrase": [
+        "Gizli parola ifadesi güncellenemedi"
+      ],
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
       ],
@@ -4697,6 +4755,9 @@
       ],
       "Organization key is not decrypted": [
         "Kuruluş anahtarının şifresi çözülmedi"
+      ],
+      "Passphrase unavailable": [
+        "Parola ifadesi kullanılamıyor"
       ],
       "Password is required": [
         "Parolanın yazılması zorunludur"
@@ -5160,6 +5221,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "${ PASS_APP_NAME } bir ek parola ile kullanılırken takma adlar kullanılamaz."
       ],
+      "An error occurred with the categories": [
+        "Kategoriler ile ilgili bir sorun çıktı."
+      ],
       "App currently unavailable": [
         "Uygulama şu anda kullanılamıyor"
       ],
@@ -5313,8 +5377,8 @@
       "customer support": [
         "müşteri desteği"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi oluşturun. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family tarifeleri şu anda dış hesapları desteklemiyor. Katılmadan önce bir ${ BRAND_NAME } adresi alın. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Daveti kabul ederseniz, sizi geçerli tarifenizde çıkarırız ve kalan tutarı hesabınıza yatırırız."
@@ -5864,11 +5928,17 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Domain": [
+        "Etki alanı"
+      ],
       "Drawer": [
         "Çekmece"
       ],
       "Hardware not compatible": [
         "Donanım uyumlu değil"
+      ],
+      "Password ends with": [
+        "Parola şununla bitiyor"
       ],
       "Report an issue": [
         "Sorun bildireceğim"
@@ -5887,6 +5957,9 @@
       ],
       "Tell us more": [
         "Bize daha fazla bilgi verin"
+      ],
+      "Username": [
+        "Kullanıcı adı"
       ]
     },
     "Hint": {
@@ -7134,6 +7207,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Ek güvenlik için bir parola ayarlayabilirsiniz. Bu parola, takvim davetine eklenmez. Konuklarınızla ayrıca paylaşmayı unutmayın."
+      ],
       "For messages newer than ${ oldestDate }": [
         "${ oldestDate } tarihinden yeni iletiler için"
       ],
@@ -7256,9 +7332,6 @@
       ],
       "Included for free with your plan": [
         "Tarifenizde ücretsiz olarak bulunur"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "%${ formattedTaxRate } ${ taxName } dahil: ${ price }"
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
@@ -8003,6 +8076,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Kişi bilgilerini doğrulamak için kullanılan imza ile ilgili bir sorun çıktı. Bu durum parola sıfırlama işleminden kaynaklanıyor olabilir."
       ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Bu yazışmalar, kuruluşunuzun veri tutma ilkesine göre burada saklanır."
+      ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. hide-my-email takma adları ile e-posta kutunuzu koruyun."
       ],
@@ -8419,8 +8495,8 @@
       "You are about to open your default browser and visit:": [
         "Varsayılan tarayıcınızı açarak şu adrese gitmek üzeresiniz:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Şu anda ${ user.Name } (${ user.Email }) olarak oturum açmış durumdasınız."
+      "You are currently signed in as ${ username }.": [
+        "Şu anda ${ username } olarak oturum açmışsınız."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "${ downgradedPlanName } tarifesinin depolama alanından fazlasını kullanıyorsunuz. Tarifeyi düşürebilmek için lütfen bazı verileri silin ya da taşıyın."
@@ -9019,12 +9095,6 @@
       "Also archive": [
         "Ayrıca arşivlensin"
       ],
-      "Always label sender's emails": [
-        "Göndericinin e-postaları şu şekilde etiketlensin"
-      ],
-      "Always move sender's emails": [
-        "Göndericinin e-postaları her zaman taşınsın"
-      ],
       "AND": [
         "VE"
       ],
@@ -9055,6 +9125,9 @@
       "Authenticator app": [
         "Kimlik doğrulama uygulaması"
       ],
+      "Automated confirmations and alerts": [
+        "Otomatik onaylar ve uyarılar"
+      ],
       "BCC": [
         "Gizli kopya"
       ],
@@ -9066,6 +9139,9 @@
       ],
       "Blind Carbon Copy": [
         "Gizli kopya"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervasyonlar, faturalar ve siparişler"
       ],
       "Browser": [
         "Tarayıcı"
@@ -9099,6 +9175,9 @@
       ],
       "Cash": [
         "Nakit"
+      ],
+      "Categories badge": [
+        "Kategoriler etiketi"
       ],
       "Category": [
         "Kategori"
@@ -9160,6 +9239,9 @@
       "Date:": [
         "Tarih:"
       ],
+      "Deals, offers, marketing emails": [
+        "Fırsatlar, teklifler, pazarlama e-postaları"
+      ],
       "Delete": [
         "Sil"
       ],
@@ -9171,6 +9253,9 @@
       ],
       "Did not follow instructions": [
         "Yönergeleri izlemedi"
+      ],
+      "Discussion board posts and threads": [
+        "Tartışma panosu gönderileri ve konuları"
       ],
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
@@ -9262,6 +9347,33 @@
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
       ],
+      "Go to Forums": [
+        "Forumlara git"
+      ],
+      "Go to Newsletters": [
+        "Duyurulara git"
+      ],
+      "Go to Primary": [
+        "Birincil e-postalara git"
+      ],
+      "Go to Promotions": [
+        "Fırsatlara git"
+      ],
+      "Go to Social": [
+        "Sosyal ağlara git"
+      ],
+      "Go to Transactions": [
+        "Hesap işlemlerine git"
+      ],
+      "Go to Updates": [
+        "Güncellemelere git"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Kategoriler özelliğini geliştirmemize yardımcı olmak için bu e-postaya en uygun olanı seçin. Yardımınız için teşekkür ederiz!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Yakında kullanılacak e-posta kategorilere ayırma özelliğini geliştirmemize yardımcı olun."
+      ],
       "Hide password": [
         "Parolayı gizle"
       ],
@@ -9352,9 +9464,6 @@
       "Move ${ sidebarElementName }": [
         "${ sidebarElementName } ögesini taşı"
       ],
-      "Move messages to": [
-        "İletileri şuraya taşı"
-      ],
       "Move to": [
         "Şuraya taşı"
       ],
@@ -9394,6 +9503,12 @@
       "No label found": [
         "Herhangi bir etiket bulunamadı"
       ],
+      "No results found": [
+        "Herhangi bir sonuç bulunamadı"
+      ],
+      "Non-promotional content and news": [
+        "Fırsatlar dışındaki içerikler ve haberler"
+      ],
       "Not factually correct": [
         "Aslında doğru değil"
       ],
@@ -9432,6 +9547,9 @@
       ],
       "Participants": [
         "Katılımcılar"
+      ],
+      "Passphrase:": [
+        "Parola ifadesi:"
       ],
       "Password": [
         "Parola"
@@ -9502,6 +9620,9 @@
       "Search in": [
         "Şurada ara"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Katılacak kategorileri seçin ve bir kategorideki yeni e-postaların bildirilmesi için bildirimleri açın."
+      ],
       "Send auto-reply": [
         "Otomatik yanıtlansın"
       ],
@@ -9516,6 +9637,9 @@
       ],
       "Social": [
         "Sosyal ağ"
+      ],
+      "Social media updates and activity": [
+        "Sosyal ağ güncellemeleri ve etkinlikleri"
       ],
       "Starred": [
         "Yıldızlı"
@@ -9550,6 +9674,9 @@
       "System information": [
         "Sistem bilgileri"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Kategori güncellendi. Geri bildiriminiz için teşekkür ederiz!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Süzgeç kapalı. ${ enableButton }"
       ],
@@ -9580,9 +9707,6 @@
       "Undisclosed Recipients": [
         "Gizli alıcılar"
       ],
-      "Unknown": [
-        "Bilinmiyor"
-      ],
       "Unsafe or problematic": [
         "Güvenli değil ya da sorunlu"
       ],
@@ -9597,9 +9721,6 @@
       ],
       "Username": [
         "Kullanıcı adı"
-      ],
-      "VAT": [
-        "KDV"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -9616,11 +9737,20 @@
       "Weak password": [
         "Zayıf parola"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "E-postaların kategorilere ayrılma şeklini geliştiriyoruz. Geri bildiriminiz, bunu daha akıllı ve daha doğru yapmamıza yardımcı olacak."
+      ],
       "What happened?": [
         "Ne oldu?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "İptal etmenizin ya da tarifenizi düşürmenizin temel nedeni nedir?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Bu e-posta hangi kategori altına taşınmalı?"
+      ],
+      "Why am I seeing this?": [
+        "Bunu neden görüyorsunuz?"
       ],
       "With attachment": [
         "Ek dosyası olan"
@@ -9630,6 +9760,9 @@
       ],
       "Writing assistant": [
         "Yazma yardımcısı"
+      ],
+      "You cannot disable all categories": [
+        "Tüm kategorileri kapatamazsınız"
       ],
       "Your alias": [
         "Takma adınız"
@@ -9788,6 +9921,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Davetlerinizi yönetmek için yeni bir takvim ekleyin"
+      ],
+      "Deleted": [
+        "Silinmiş"
       ],
       "Drafts": [
         "Taslaklar"
@@ -11259,6 +11395,9 @@
       "Passcode copied to clipboard": [
         "Parola panoya kopyalandı"
       ],
+      "Passphrase copied to clipboard": [
+        "Parola ifadesi panoya kopyalandı"
+      ],
       "Password has been set successfully": [
         "Parola ayarlandı"
       ],
@@ -11829,11 +11968,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } hariç: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi hariç: ${ taxAmount }"
+      ],
       "Got it": [
         "Anladım"
       ],
       "I'm purchasing as a business": [
         "Kurumsal olarak satın alıyorum"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "%${ taxRate } ${ taxName } dahil: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "%${ taxRate } vergi dahil: ${ taxAmount }"
       ],
       "MM/YY": [
         "AA/YY"
@@ -11849,6 +12000,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Taxes": [
+        "Vergiler"
       ],
       "terms & conditions": [
         "hükümler ve koşullar"
@@ -11880,6 +12034,9 @@
       ],
       "Timeout exceeded": [
         "Zaman aşımı süresi aşıldı"
+      ],
+      "VAT": [
+        "KDV"
       ],
       "VAT number": [
         "KDV numarası"
@@ -12024,6 +12181,9 @@
       ],
       "End date": [
         "Bitiş tarihi"
+      ],
+      "Enter passphrase": [
+        "Parola ifadesini yazın"
       ],
       "Filter folders": [
         "Klasörleri süz"
@@ -12271,6 +12431,96 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } tarafından gelen resmi e-posta"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "YAZ SONU İNDİRİMİ"
+      ],
+      "Get the deal": [
+        "Tekliften yararlanın"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-%${ discountPercent }"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /ay"
+      ],
+      "/month": [
+        "/ay"
+      ],
+      "1 TB data storage": [
+        "1 TB veri depolama alanı"
+      ],
+      "15 GB storage": [
+        "15 GB depolama alanı"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "Dosyalar, fotoğraflar ve belgeler için 200 GB depolama alanı"
+      ],
+      "3 TB data storage": [
+        "3 TB veri depolama alanı"
+      ],
+      "500 GB storage": [
+        "500 GB depolama alanı"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "120'den fazla ülkede 15.000'den fazla sunucuya erişin"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Mail, Pass, Drive, VPN ve Takvim'in tüm ücretli özellikleri"
+      ],
+      "Built-in 2FA authenticator": [
+        "Hazır iki adımlı kimlik doğrulayıcı"
+      ],
+      "Connect 10 devices at once": [
+        "Aynı anda 10 aygıta bağlanın"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "İndirimler standart aylık fiyatlandırmaya dayanmaktadır. Aboneliğiniz, fatura dönemi bittiğinde standart yıllık ücret üzerinden yenilenir."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "En yüksek VPN hızlarının keyfini çıkarın"
+      ],
+      "Individual accounts for 6 users": [
+        "6 kullanıcı için bireysel hesaplar"
+      ],
+      "Individual accounts for you and a partner": [
+        "Siz ve bir partneriniz için bireysel hesaplar"
+      ],
+      "Online document editor": [
+        "Çevrim içi belge düzenleyici"
+      ],
+      "Recover previous file versions": [
+        "Önceki dosya sürümlerini geri yükleyin"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "${ totalSavings } tasarruf edin ve mevcut tüm özelliklerinizi koruyun!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Güvenli bağlantı, kasa ve öge paylaşımı"
+      ],
+      "Stronger protection against cyber threats": [
+        "Siber tehditlere karşı daha güçlü koruma"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız dosya, etiket ve filtre"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Use your own email domain": [
+        "Kendi e-posta etki alanınızı kullanın"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Yaz Sonu İndirimi"
+      ],
+      "for 12 months": [
+        "12 aylığına"
       ]
     },
     "Received email icon": {
@@ -13800,6 +14050,10 @@
       "Conversation removed from Starred.": [
         "Yazışmanın yıldızı kaldırıldı."
       ],
+      "Conversation updated": [
+        "Yazışma güncellendi",
+        "Yazışmalar güncellendi"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } tarafından gönderilen yazışmalar ${ labelsList } olarak etiketlenecek"
       ],
@@ -13875,6 +14129,10 @@
       "Message removed from Starred.": [
         "İletinin yıldızı kaldırıldı."
       ],
+      "Message updated": [
+        "İleti güncellendi",
+        "İletiler güncellendi"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } tarafından gönderilen iletiler ${ labelsList } olarak etiketlenecek"
       ],
@@ -13918,6 +14176,13 @@
       ],
       "Read receipt sent": [
         "Okundu bilgisi gönderildi"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } ileti yeniden düzenlendi.",
+        "${ elementsCount } ileti yeniden düzenlendi."
+      ],
+      "Secret passphrase updated": [
+        "Gizli parola ifadesi güncellendi"
       ],
       "Self-destruction removed": [
         "Kendini yok etme kaldırıldı"
@@ -14354,12 +14619,6 @@
       "Create contact": [
         "Kişi ekle"
       ],
-      "Create folder \"${ search }\"": [
-        "\"${ search }\" klasörü ekle"
-      ],
-      "Create label \"${ search }\"": [
-        "\"${ search }\" etiketi ekle"
-      ],
       "Create new group": [
         "Yeni grup ekle"
       ],
@@ -14377,6 +14636,9 @@
       ],
       "Customize calendar import": [
         "Takvim içe aktarma işlemini özelleştirin"
+      ],
+      "Customize categories": [
+        "Kategorileri özelleştir"
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
@@ -14612,6 +14874,10 @@
       "Label as": [
         "Etiketle"
       ],
+      "Label message as": [
+        "İleti şu şekilde etiketlensin",
+        "İletiler şu şekilde etiketlensin"
+      ],
       "Label options": [
         "Etiket ayarları"
       ],
@@ -14696,6 +14962,13 @@
       "Move all messages to trash": [
         "Tüm iletileri çöpe at"
       ],
+      "Move message to": [
+        "İletiyi şuraya taşı",
+        "İletileri şuraya taşı"
+      ],
+      "Move messages to": [
+        "İletileri şuraya taşı"
+      ],
       "Move to": [
         "Taşı"
       ],
@@ -14734,6 +15007,9 @@
       ],
       "Newsletters view": [
         "Duyurular görünümü"
+      ],
+      "Next": [
+        "Sonraki"
       ],
       "Next conversation": [
         "Sonraki yazışma"
@@ -14780,6 +15056,9 @@
       "Open actions dropdown": [
         "İşlemler menüsünü aç"
       ],
+      "Open pagination": [
+        "Sayfalandırmayı aç"
+      ],
       "Org setup": [
         "Kuruluş ayarları"
       ],
@@ -14809,6 +15088,9 @@
       ],
       "Preview": [
         "Ön izleme"
+      ],
+      "Previous": [
+        "Önceki"
       ],
       "Previous conversation": [
         "Önceki yazışma"
@@ -15112,9 +15394,6 @@
       "Your account is protected": [
         "Hesabınız korunuyor"
       ],
-      "Your addresses": [
-        "Adresleriniz"
-      ],
       "Your changes are not synced yet": [
         "Değişiklikleriniz henüz eşitlenmedi"
       ],
@@ -15132,6 +15411,9 @@
       ],
       "Your subscriptions in one place": [
         "Abonelikleriniz tek bir yerde"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategoriler özelliği geliyor!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15342,9 +15624,6 @@
       "${ n } wallet": [
         "${ n } cüzdan",
         "${ n } cüzdan"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Bitcoin birikimlerinizi saklamanın daha güvenli bir yolu"
       ],
       "Bitcoin via Email": [
         "E-posta ile Bitcoin"

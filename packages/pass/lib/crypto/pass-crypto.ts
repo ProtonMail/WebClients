@@ -198,49 +198,59 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
             }
         },
 
-        /* Opening a new share has the side-effect of registering a
-         * shareManager for this share. When opening a pre-registered
-         * share (most likely hydrated from a snapshot) - filter the
-         * vault keys to only open those we haven't already processed.
-         * This can happen during a vault  share content update or during
-         * a full data sync. */
+        /** Opening a new share has the side-effect of registering a shareManager for this
+         * share. When opening a pre-registered share (most likely hydrated from a snapshot)
+         * - filter the vault keys to only open those we haven't already processed. This can
+         * happen during a vault share content update or during a full data sync. */
         openShare: async <T extends ShareType = ShareType>(data: {
             encryptedShare: ShareGetResponse;
-            shareKeys: ShareKeyResponse[];
+            encryptedShareKeys?: ShareKeyResponse[];
         }) => {
             assertHydrated(context);
 
             try {
-                const { encryptedShare, shareKeys } = data;
+                const { encryptedShare, encryptedShareKeys } = data;
+                const { ShareID: shareId } = encryptedShare;
+                const shareManager = hasShareManager(shareId) ? getShareManager(shareId) : undefined;
 
-                if (shareKeys.length === 0) throw new PassCryptoShareError('Empty share keys');
+                /** Check if share can be opened with available keys - either from existing
+                 * `shareManager` or provided `encryptedShareKeys` matched against user keys. */
+                const canOpenShare = ((): boolean => {
+                    if (!encryptedShareKeys) {
+                        if (!shareManager) throw new PassCryptoShareError('Missing share manager');
+                        return shareManager.isActive(context.userKeys);
+                    } else {
+                        if (encryptedShareKeys.length === 0) throw new PassCryptoShareError('Empty share keys');
+                        const latestKey = encryptedShareKeys.reduce((acc, curr) =>
+                            curr.KeyRotation > acc.KeyRotation ? curr : acc
+                        );
+                        return context.userKeys.some(({ ID }) => ID === latestKey.UserKeyID);
+                    }
+                })();
 
-                /* before processing the current encryptedShare - ensure the
-                 * latest rotation key can be decrypted with an active userKey */
-                const latestKey = shareKeys.reduce((acc, curr) => (curr.KeyRotation > acc.KeyRotation ? curr : acc));
-                const canOpenShare = context.userKeys.some(({ ID }) => ID === latestKey.UserKeyID);
-
+                /** Return null if share cannot be opened - typically occurs
+                 * during password reset when user keys are unavailable. */
                 if (!canOpenShare) return null;
-
-                const shareId = encryptedShare.ShareID;
-                const maybeShareManager = hasShareManager(shareId) ? getShareManager(shareId) : undefined;
 
                 const share = await (async () => {
                     switch (encryptedShare.TargetType) {
                         case ShareType.Vault: {
-                            const vaultKeys = await Promise.all(
-                                shareKeys.map((shareKey) =>
-                                    maybeShareManager?.hasVaultShareKey(shareKey.KeyRotation)
-                                        ? maybeShareManager.getVaultShareKey(shareKey.KeyRotation)
-                                        : processes.openShareKey({ shareKey, userKeys: context.userKeys })
-                                )
-                            );
+                            /** For vaults, resolve share keys from existing manager or decrypt
+                             * new ones, then find the key matching the content rotation */
+                            const vaultKeys = encryptedShareKeys
+                                ? await Promise.all(
+                                      encryptedShareKeys.map((shareKey) =>
+                                          shareManager?.hasVaultShareKey(shareKey.KeyRotation)
+                                              ? shareManager.getVaultShareKey(shareKey.KeyRotation)
+                                              : processes.openShareKey({ shareKey, userKeys: context.userKeys })
+                                      )
+                                  )
+                                : shareManager!.getVaultShareKeys();
 
                             const rotation = encryptedShare.ContentKeyRotation!;
                             const vaultKey = vaultKeys.find((key) => key.rotation === rotation);
-                            if (vaultKey === undefined) {
-                                throw new PassCryptoShareError(`Missing vault key for rotation ${rotation}`);
-                            }
+                            if (!vaultKey) throw new PassCryptoShareError(`Missing vault key for rotation ${rotation}`);
+
                             return processes.openShare({ type: ShareType.Vault, encryptedShare, vaultKey });
                         }
 
@@ -252,11 +262,11 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
                     }
                 })();
 
-                const manager = maybeShareManager ?? createShareManager(share);
-
+                /** Register or update `shareManager` and sync share keys if provided */
+                const manager = shareManager ?? createShareManager(share);
                 context.shareManagers.set(shareId, manager);
-                manager.setShare(share); /* handle update when recyling */
-                await worker.updateShareKeys({ shareId, shareKeys });
+                if (encryptedShareKeys) await worker.updateShareKeys({ shareId, encryptedShareKeys });
+                manager.setShare(share);
 
                 return manager.getShare() as TypedOpenedShare<T>;
             } catch (err: any) {
@@ -264,7 +274,7 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
             }
         },
 
-        async updateShareKeys({ shareId, shareKeys }) {
+        async updateShareKeys({ shareId, encryptedShareKeys }) {
             assertHydrated(context);
 
             const manager = getShareManager(shareId);
@@ -272,13 +282,13 @@ export const createPassCrypto = (core?: PassCoreProxy): PassCryptoWorker => {
 
             switch (manager.getType()) {
                 case ShareType.Vault: {
-                    const keys = shareKeys.filter(({ KeyRotation }) => !manager.hasVaultShareKey(KeyRotation));
+                    const keys = encryptedShareKeys.filter(({ KeyRotation }) => !manager.hasVaultShareKey(KeyRotation));
                     const newKeys = keys.map((shareKey) => processes.openShareKey({ shareKey, userKeys }));
                     return (await Promise.all(newKeys)).forEach(manager.addVaultShareKey);
                 }
 
                 case ShareType.Item: {
-                    const keys = shareKeys.filter(({ KeyRotation }) => !manager.hasItemShareKey(KeyRotation));
+                    const keys = encryptedShareKeys.filter(({ KeyRotation }) => !manager.hasItemShareKey(KeyRotation));
                     const newKeys = keys.map((shareKey) => processes.openShareKey({ shareKey, userKeys }));
                     return (await Promise.all(newKeys)).forEach(manager.addItemShareKey);
                 }

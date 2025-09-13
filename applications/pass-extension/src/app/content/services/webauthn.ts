@@ -4,7 +4,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientHasSession, clientNeedsSession } from '@proton/pass/lib/client';
 import type { SanitizedPublicKeyRequest } from '@proton/pass/lib/passkeys/types';
-import { type MaybeNull } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import type { Predicate } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';

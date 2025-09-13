@@ -1287,6 +1287,17 @@
         "Terabyte"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Dominio"
+      ],
+      "Password ends with": [
+        "La password termina con"
+      ],
+      "Username": [
+        "Utente"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "L'elemento «${ payload.itemName }» è stato ignorato."
@@ -4319,6 +4330,9 @@
       "MX record": [
         "Record MX"
       ],
+      "Next": [
+        "Successivo"
+      ],
       "No excluded items": [
         "Nessun elemento escluso"
       ],
@@ -4339,6 +4353,9 @@
       ],
       "No shared secure links": [
         "Nessun link sicuro condiviso"
+      ],
+      "Open pagination": [
+        "Apri paginazione"
       ],
       "Organize vaults": [
         "Gestisci le casseforti"
@@ -4373,6 +4390,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato.",
         "Tieni presente che una volta eliminati, gli alias non potranno essere ripristinati."
+      ],
+      "Previous": [
+        "Precedente"
       ],
       "Random Prefix Generation": [
         "Generazione casuale del prefisso"

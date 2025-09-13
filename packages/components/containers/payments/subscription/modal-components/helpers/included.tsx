@@ -29,14 +29,6 @@ import {
     getSecureSharingText,
     getUnlimitedHideMyEmailAliasesText,
 } from '../../../features/pass';
-import {
-    WALLET_PLUS_WALLETS,
-    WALLET_PLUS_WALLET_ACCOUNTS,
-    getBitcoinViaEmailText,
-    getWalletAccountsText,
-    getWalletEmailAddressesText,
-    getWalletsText,
-} from '../../../features/wallet';
 
 export const getWhatsIncluded = ({
     planIDs,
@@ -213,28 +205,6 @@ export const getWhatsIncluded = ({
             {
                 type: 'text',
                 text: get2FAAuthenticatorText(),
-            },
-        ];
-    }
-
-    const walletPremium = planIDs[PLANS.WALLET];
-    if (walletPremium !== undefined && walletPremium > 0) {
-        included = [
-            {
-                type: 'text',
-                text: getWalletsText(WALLET_PLUS_WALLETS),
-            },
-            {
-                type: 'text',
-                text: getWalletAccountsText(WALLET_PLUS_WALLET_ACCOUNTS),
-            },
-            {
-                type: 'text',
-                text: getWalletEmailAddressesText(WALLET_PLUS_WALLETS),
-            },
-            {
-                type: 'text',
-                text: getBitcoinViaEmailText(),
             },
         ];
     }

@@ -1,11 +1,11 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 import type { IconSize } from '@proton/components';
-import { DriveLogo, Logo, MailLogo, PassLogo, VpnLogo, WalletLogo } from '@proton/components';
+import { DriveLogo, Logo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getUsersFeature } from '@proton/components/containers/payments/features/highlights';
-import { type PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
 import { getPassAppFeature } from '@proton/components/containers/payments/features/pass';
 import {
@@ -29,7 +29,6 @@ import {
     getPassPlan,
     getVPNPlan,
     getVisionaryPlan,
-    getWalletPlan,
 } from '@proton/components/containers/payments/features/plan';
 import {
     getAllPlatforms,
@@ -304,15 +303,6 @@ export const getSummaryPlan = ({
             ...shortPlan,
             plan,
             features: [],
-        };
-    }
-
-    if (plan && plan?.Name === PLANS.WALLET) {
-        const shortPlan = getWalletPlan(plan);
-        return {
-            logo: <WalletLogo variant="glyph-only" size={iconSize} />,
-            ...shortPlan,
-            plan,
         };
     }
 

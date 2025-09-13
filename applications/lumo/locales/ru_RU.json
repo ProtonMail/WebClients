@@ -59,9 +59,6 @@
       "Collaborate on documents": [
         "Совместно работайте над документами"
       ],
-      "Collapse navigation bar": [
-        "Свернуть панель навигации"
-      ],
       "Confirm": [
         "Подтвердить"
       ],
@@ -97,9 +94,6 @@
       ],
       "Dismiss": [
         "Отклонить"
-      ],
-      "Display navigation bar": [
-        "Показать панель навигации"
       ],
       "Done": [
         "Готово"
@@ -257,9 +251,6 @@
       "Show more": [
         "Показать больше"
       ],
-      "Show navigation bar": [
-        "Показать панель навигации"
-      ],
       "Sign out": [
         "Выйти"
       ],
@@ -387,9 +378,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается раз в ${ cycle } мес. ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
       ],
@@ -1130,65 +1118,6 @@
         "Вы собираетесь посетить внешний веб-сайт:"
       ]
     },
-    "collider_2025: Invite": {
-      "Email address is not valid": [
-        "Некорректный адрес электронной почты"
-      ],
-      "Email address is required": [
-        "Требует адрес эл. почты"
-      ]
-    },
-    "collider_2025: Invite Button": {
-      "Close": [
-        "Закрыть"
-      ],
-      "Invite friends": [
-        "Пригласить друзей"
-      ],
-      "Maybe later": [
-        "Может быть позже"
-      ],
-      "Send invitation": [
-        "Отправить приглашение"
-      ]
-    },
-    "collider_2025: Invite Email Placeholder": {
-      "Your friend's email": [
-        "Электронная почта вашего друга"
-      ]
-    },
-    "collider_2025: Invite Info": {
-      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Знаете кого-то, кому пригодился бы ИИ, ориентированный на конфиденциальность? Пригласите их присоединиться к списку ожидания ${ LUMO_SHORT_APP_NAME }. У вас осталось ${ remainingInvitesText } приглашений."
-      ],
-      "You have ${ remainingInvitesText } invitations remaining.": [
-        "У вас осталось ${ remainingInvitesText } приглашений."
-      ]
-    },
-    "collider_2025: Invite Sent": {
-      "Invitation sent": [
-        "Приглашение отправлено"
-      ]
-    },
-    "collider_2025: Invite Success": {
-      "Invite sent!": [
-        "Приглашение отправлено!"
-      ],
-      "No invites left  ": [
-        "Приглашений не осталось"
-      ],
-      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Спасибо, что помогаете другим открыть для себя ${ LUMO_SHORT_APP_NAME }! Если появятся новые приглашения, мы сообщим вам."
-      ],
-      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Мы пригласили ${ emailText }. Они получат инструкции о том, как присоединиться к списку ожидания."
-      ]
-    },
-    "collider_2025: Invite Title": {
-      "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Пригласите друзей попробовать ${ LUMO_APP_NAME }"
-      ]
-    },
     "collider_2025: Label": {
       "Did not follow instructions": [
         "Не следовал инструкциям"
@@ -1380,23 +1309,11 @@
       "Favorite": [
         "Избранное"
       ],
-      "Favorites": [
-        "Избранное"
-      ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Получить ${ LUMO_SHORT_APP_NAME } Plus"
       ],
-      "Help and support ": [
-        "Справочный центр "
-      ],
-      "History": [
-        "История"
-      ],
       "New chat": [
         "Новый чат"
-      ],
-      "Search chats": [
-        "Поиск чатов"
       ],
       "Send": [
         "Отправить"
@@ -1447,9 +1364,6 @@
       ],
       "Processing files, please wait...": [
         "Обработка файлов, подождите..."
-      ],
-      "Search history": [
-        "История поиска"
       ]
     },
     "collider_2025:Title": {
@@ -1491,9 +1405,6 @@
       ],
       "No result.": [
         "Нет результата."
-      ],
-      "Star a chat to save it as a favorite.": [
-        "Отметьте чат звёздочкой, чтобы сохранить его в избранное."
       ],
       "The AI that respects your privacy": [
         "ИИ, который уважает вашу конфиденциальность"
@@ -3092,9 +3003,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Включая ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
       ],
@@ -3520,12 +3428,6 @@
       "Last name": [
         "Фамилия"
       ],
-      "Main": [
-        "Главная"
-      ],
-      "Navigation": [
-        "Навигация"
-      ],
       "Notification": [
         "Уведомление"
       ],
@@ -3582,9 +3484,6 @@
       ],
       "Thomas": [
         "Томас"
-      ],
-      "VAT": [
-        "НДС"
       ],
       "Verification code": [
         "Код подтверждения"
@@ -5725,9 +5624,6 @@
         "${ n } кошелька",
         "${ n } кошельков",
         "${ n } кошельков"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Безопасный способ держать свои Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin по электронной почте"

@@ -3,6 +3,7 @@ import { addDays, subDays } from 'date-fns';
 import type { Location } from 'history';
 import loudRejection from 'loud-rejection';
 
+import { useRetentionPolicies } from '@proton/account/retentionPolicies/hooks';
 import { getModelState } from '@proton/account/test';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import useEventManager from '@proton/components/hooks/useEventManager';
@@ -10,8 +11,7 @@ import { conversationCountsActions } from '@proton/mail';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { ChecklistKey, type Label } from '@proton/shared/lib/interfaces';
-import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
+import { CHECKLIST_DISPLAY_TYPE, ChecklistKey, type Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { buildUser } from '@proton/testing/builders';
 import { useFlag } from '@proton/unleash';
@@ -27,6 +27,9 @@ jest.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
 
 jest.mock('@proton/account/userSettings/hooks');
 const mockedUserSettings = useUserSettings as jest.MockedFunction<any>;
+
+jest.mock('@proton/account/retentionPolicies/hooks');
+const mockedUseRetentionPolicies = useRetentionPolicies as jest.MockedFunction<any>;
 
 loudRejection();
 
@@ -105,6 +108,7 @@ describe('MailSidebar', () => {
     beforeEach(() => {
         mockedUseGetStartedChecklist = jest.spyOn(GetStartedChecklistProviderModule, 'useGetStartedChecklist');
         mockedUserSettings.mockReturnValue([{}]);
+        mockedUseRetentionPolicies.mockReturnValue([[], false]);
     });
 
     const setupTest = () => {
@@ -169,6 +173,8 @@ describe('MailSidebar', () => {
             return false;
         });
 
+        mockedUseRetentionPolicies.mockReturnValue([[{ id: '1', name: 'Test Policy' }], false]);
+
         setupTest();
 
         await mailTestRender(<MailSidebar {...props} />, {
@@ -190,6 +196,8 @@ describe('MailSidebar', () => {
             }
             return false;
         });
+
+        mockedUseRetentionPolicies.mockReturnValue([[{ id: '1', name: 'Test Policy' }], false]);
 
         setupTest();
         await mailTestRender(<MailSidebar {...props} />, {
@@ -217,6 +225,29 @@ describe('MailSidebar', () => {
         await mailTestRender(<MailSidebar {...props} />, {
             preloadedState: {
                 user: getModelState(buildUser({ ID: undefined, isAdmin: false })),
+                categories: getModelState(systemFolders),
+            },
+        });
+
+        const deletedFolder = screen.queryByTestId('navigation-link:deleted');
+        expect(deletedFolder).toBeNull();
+    });
+
+    it('should not show Deleted folder for admin user when no retention policies exist', async () => {
+        mockUseFlag.mockImplementation((flag) => {
+            if (flag === 'DataRetentionPolicy') {
+                return true;
+            }
+            return false;
+        });
+
+        mockedUseRetentionPolicies.mockReturnValue([[], false]);
+
+        setupTest();
+
+        await mailTestRender(<MailSidebar {...props} />, {
+            preloadedState: {
+                user: getModelState(buildUser({ ID: undefined, isAdmin: true })),
                 categories: getModelState(systemFolders),
             },
         });

@@ -513,6 +513,14 @@
         "将电子邮件工作效率提升到新水平。让 ${ BRAND_NAME } Scribe 帮您撰写、回复和校对电子邮件。"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You have reached the trial limit.": [
+        "您已达到试用上限。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消订阅"
@@ -946,6 +954,9 @@
       "Manual setup problem": [
         "手动设置问题"
       ],
+      "Meet problem": [
+        "遇到问题"
+      ],
       "Other": [
         "其他"
       ],
@@ -1101,6 +1112,11 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "collider_2025: feature": {
+      "Unlimited daily chats": [
+        "无限聊天次数"
       ]
     },
     "color": {
@@ -2806,9 +2822,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步中，您将能够使用比特币地址提交存款。"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
       ],
@@ -3305,9 +3318,6 @@
       ],
       "Thomas": [
         "Thomas"
-      ],
-      "VAT": [
-        "增值税"
       ],
       "Verification code": [
         "验证码"
@@ -6600,9 +6610,6 @@
       ],
       "${ n } wallet": [
         "${ n } 个钱包"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "更安全持有比特币的方式"
       ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"

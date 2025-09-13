@@ -1,4 +1,4 @@
-import { type AnyAction, type Middleware } from '@reduxjs/toolkit';
+import type { AnyAction, Middleware } from '@reduxjs/toolkit';
 import { createMemoryHistory } from 'history';
 import createSagaMiddleware from 'redux-saga';
 import { v4 as uuidv4 } from 'uuid';
@@ -10,7 +10,6 @@ import createApi from '@proton/shared/lib/api/createApi';
 import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';
 
-import { APP_NAME, APP_VERSION } from '../../config';
 import { base64ToMasterKey, generateMasterKeyBase64, generateSpaceKeyBase64 } from '../../crypto';
 import type { AesKwCryptoKey } from '../../crypto/types';
 import { DbApi } from '../../indexedDb/db';
@@ -21,9 +20,9 @@ import { addConversation, newConversationId, pushConversationRequest } from '../
 import { addMasterKey } from '../../redux/slices/core/credentials';
 import { addMessage, finishMessage, newMessageId, pushMessageRequest } from '../../redux/slices/core/messages';
 import { addSpace, newSpaceId, pushSpaceRequest } from '../../redux/slices/core/spaces';
-import { type LumoDispatch, type LumoSaga, type LumoSagaContext } from '../../redux/store';
+import type { LumoDispatch, LumoSaga, LumoSagaContext } from '../../redux/store';
 import { LumoApi } from '../../remote/api';
-import { type RemoteId } from '../../remote/types';
+import type { RemoteId } from '../../remote/types';
 import { serializeSpace } from '../../serialization';
 import type { AttachmentId } from '../../types';
 import {
@@ -42,8 +41,7 @@ import {
     cleanSpace,
 } from '../../types';
 import { sleep } from '../../util/date';
-import type { MockDatabase } from './mock-server';
-import { type MockDbSpace } from './mock-server';
+import type { MockDatabase, MockDbSpace } from './mock-server';
 
 export const USER_TEST_UID = 'test-uid';
 
@@ -193,9 +191,9 @@ export async function setupTestEnvironment({
 
     const userId = existingUserId || generateFakeUserId();
     const mockUser = { ID: userId } as User;
-    const config: ProtonConfig = {
-        APP_VERSION,
-        APP_NAME,
+    const testConfig: ProtonConfig = {
+        APP_VERSION: '5.0.999.999',
+        APP_NAME: 'proton-lumo',
         API_URL: 'http://localhost',
         COMMIT: 'test-commit',
         DATE_VERSION: 'test-date',
@@ -208,7 +206,7 @@ export async function setupTestEnvironment({
         SSO_URL: '',
     };
 
-    const api = createApi({ config });
+    const api = createApi({ config: testConfig });
     const authentication = bootstrap.createAuthentication();
     authentication.setPersistent(false);
     const history = createMemoryHistory();
@@ -220,7 +218,7 @@ export async function setupTestEnvironment({
 
     const listenerMiddleware = createLumoListenerMiddleware({
         extra: {
-            config,
+            config: testConfig,
             api,
             authentication,
             history,

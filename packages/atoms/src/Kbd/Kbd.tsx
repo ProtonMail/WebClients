@@ -7,7 +7,7 @@ import clsx from '@proton/utils/clsx';
 import './Kbd.scss';
 
 export interface KbdProps extends ComponentPropsWithoutRef<'kbd'> {
-    shortcut: String;
+    shortcut: string;
 }
 
 export const Kbd = ({ shortcut, className, ...rest }: KbdProps) => {

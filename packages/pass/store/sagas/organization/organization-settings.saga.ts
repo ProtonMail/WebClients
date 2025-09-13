@@ -6,7 +6,7 @@ import { lockSync } from '@proton/pass/store/actions';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import { selectOrganization } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import { type MaybeNull, type OrganizationGetResponse } from '@proton/pass/types';
+import type { MaybeNull, OrganizationGetResponse } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { type useConfirmActionModal } from '@proton/components';
+import type { useConfirmActionModal } from '@proton/components';
 
 import usePublicToken from '../../../../hooks/drive/usePublicToken';
 import { type DecryptedLink, usePublicActions } from '../../../../store';

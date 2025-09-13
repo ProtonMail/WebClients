@@ -1068,6 +1068,9 @@
       "Upload file": [
         "上传文件"
       ],
+      "Upload File": [
+        "上传档案"
+      ],
       "Upload files": [
         "上传文件"
       ],
@@ -1358,6 +1361,14 @@
         "不支持的日程"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
+      ],
+      "You have reached the trial limit.": [
+        "您已达到试用上限。"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "取消订阅"
@@ -1567,6 +1578,9 @@
       "Manual setup problem": [
         "手动设置问题"
       ],
+      "Meet problem": [
+        "遇到问题"
+      ],
       "Other": [
         "其他"
       ],
@@ -1708,6 +1722,11 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "collider_2025: feature": {
+      "Unlimited daily chats": [
+        "无限聊天次数"
       ]
     },
     "color": {
@@ -3882,9 +3901,6 @@
       "customer support": [
         "客户支持"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "家庭计划目前不支持外部账户。请在加入前创建 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "如果您接受邀请，我们将为您退订当前账户等级，并将剩余时长折算为余额存入您的账户。"
       ],
@@ -4083,14 +4099,23 @@
       "Create new shared album": [
         "创建新的共享相册"
       ],
+      "Domain": [
+        "域名"
+      ],
       "Drawer": [
         "侧边栏"
+      ],
+      "Password ends with": [
+        "密码结尾是"
       ],
       "Rename album": [
         "重命名相册"
       ],
       "Security Center": [
         "安全中心"
+      ],
+      "Username": [
+        "用户名"
       ]
     },
     "Heading": {
@@ -5185,9 +5210,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步中，您将能够使用比特币地址提交存款。"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "包含 ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "为项目编制索引：${ esProgress } 条 / 共 ${ totalProgressToShow } 条"
       ],
@@ -6163,9 +6185,6 @@
       "You are about to open your default browser and visit:": [
         "您即将打开默认浏览器并访问："
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您使用的存储空间超过了 ${ downgradedPlanName } 计划中包含的存储空间。请删除一些数据以便降级。"
       ],
@@ -7018,9 +7037,6 @@
       ],
       "Username": [
         "用户名"
-      ],
-      "VAT": [
-        "增值税"
       ],
       "Verification code": [
         "验证码"
@@ -8775,7 +8791,7 @@
         "按年支付，确保我们的最佳优惠"
       ],
       "Save": [
-        "保存"
+        "节省"
       ],
       "Save big when you pay annually": [
         "按年付费可节省大量费用"
@@ -11330,6 +11346,9 @@
       "Network error": [
         "网络错误"
       ],
+      "Next": [
+        "下一页"
+      ],
       "Night theme": [
         "夜间模式"
       ],
@@ -11387,6 +11406,9 @@
       "Open actions dropdown": [
         "展开操作菜单"
       ],
+      "Open pagination": [
+        "选择页码"
+      ],
       "Org setup": [
         "组织设置"
       ],
@@ -11425,6 +11447,9 @@
       ],
       "Preview": [
         "预览"
+      ],
+      "Previous": [
+        "上一页"
       ],
       "Private browsing vs VPN": [
         "隐私浏览模式与 VPN 对比"
@@ -11908,9 +11933,6 @@
       ],
       "${ n } wallet": [
         "${ n } 个钱包"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "更安全持有比特币的方式"
       ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"

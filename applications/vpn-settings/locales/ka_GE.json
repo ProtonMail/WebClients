@@ -153,6 +153,9 @@
       "Claim this address": [
         "ამ მისამართის გამოთხოვა"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "${ BRAND_NAME }-ის უფასო მისამართის გამოთხოვა"
+      ],
       "Close": [
         "დახურვა"
       ],
@@ -423,6 +426,9 @@
       "Get ${ planOrAppName }": [
         "${ planOrAppName }-ის მიღება"
       ],
+      "Get a free ${ BRAND_NAME } address": [
+        "მიიღეთ უფასო ${ BRAND_NAME }-ის მისამართი"
+      ],
       "Get a new encrypted email address": [
         "მიიღეთ ახალი დაშიფრული ელფოსტის მისამართი"
       ],
@@ -638,6 +644,9 @@
       ],
       "Refer a friend": [
         "მიმართეთ მეგობარს"
+      ],
+      "Refresh": [
+        "განახლება"
       ],
       "Refresh status": [
         "სტატუსის განახლება"
@@ -1111,6 +1120,12 @@
       "Generate missing keys for address “${ emailAddress }”": [
         "ნაკლული გასაღებების გენერაცია მისამართისთვის \"${ emailAddress }\""
       ],
+      "Reconnect": [
+        "თავიდან დაკავშირება"
+      ],
+      "Reconnect address “${ emailAddress }”": [
+        "მისამართზე \"${ emailAddress }\" თავიდან მიერთება"
+      ],
       "Saving": [
         "შენახვა"
       ],
@@ -1132,6 +1147,9 @@
         "ნაგულისხმევი"
       ],
       "Disabled": [
+        "გათიშულია"
+      ],
+      "Disconnected": [
         "გათიშულია"
       ],
       "External": [
@@ -1325,6 +1343,28 @@
       ],
       "Unsupported event": [
         "გაუთვალისწინებელი შემთხვევა"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "უფასო ${ TRIAL_DURATION_DAYS } დღით"
+      ],
+      "on ${ formattedDate }": [
+        "${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "სცადეთ ${ selected } ${ freeForNDays }"
+      ],
+      "You have reached the trial limit.": [
+        "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "გადასახდელი თანხა გამოსაცდელი პერიოდის შემდეგ"
+      ],
+      "Amount due now": [
+        "ახლა გადასახდელი თანხა"
       ]
     },
     "b2b_trials_Action": {
@@ -1678,6 +1718,9 @@
       "Manual setup problem": [
         "ხელით დაყენების პრობლემა"
       ],
+      "Meet problem": [
+        "Meet-ის პრობლემა"
+      ],
       "Other": [
         "სხვა"
       ],
@@ -1821,6 +1864,46 @@
       ],
       "Expand": [
         "ამოკეცვა"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "წვდომა განვითარებულ ხი მოდელებთან"
+      ],
+      "Basic chat history": [
+        "საბაზისო ჩატის ისტორია"
+      ],
+      "Full chat history with search": [
+        "სრული ჩატის ისტორია ძებნით"
+      ],
+      "Large file upload support": [
+        "დიდი ფაილის ატვირთვის მხარდაჭერა"
+      ],
+      "Limited daily chats": [
+        "შეზღუდული ყოველდღიური ჩატები"
+      ],
+      "Limited favorites": [
+        "შეზღუდული რჩეულები"
+      ],
+      "Unlimited daily chats": [
+        "შეუზღუდავი ყოველდღიური ჩატები"
+      ],
+      "Unlimited favorites for quick access": [
+        "განუსაზღვრელი რჩეულები სწრაფი წვდომისთვის"
+      ],
+      "Upload and query multiple large files": [
+        "ატვირთეთ და დაამუშავეთ ბევრი დიდი ფაილი"
+      ],
+      "Upload and query small files": [
+        "ატვირტეთ და მოითხოვეთ პატარა ფაილები"
+      ],
+      "Web search access": [
+        "წვდომა ვებში ძებნასთან"
+      ]
+    },
+    "collider_2025: Info": {
+      "Add ${ LUMO_APP_NAME }": [
+        "${ LUMO_APP_NAME }-ის დამატება"
       ]
     },
     "color": {
@@ -4187,9 +4270,6 @@
       "customer support": [
         "მხარდაჭერის გუნდი"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "ოჯახის გეგმებს, ამჟამად, გარე ანგარიშების მხარდაჭერა არ გააჩნიათ. შეერთებამდე ${ BRAND_NAME }-ის ანგარიში შექმენით. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "თუ მოსაწევევს მიიღებთ, ჩვენ თქვენი მიმდინარე ტრიფიდან გადაგრთავთ და დარჩენილ ბალანსს ანგარიშზე დაგირიცხავთ."
       ],
@@ -5363,6 +5443,9 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**მიიღეთ ${ BRAND_NAME }-ის მისამართი** ${ BRAND_NAME_TWO }-ის ყველა სერვისის, ${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_SHORT_APP_NAME }-ის ჩათვლით, გამოსაყენებლად."
       ],
+      "**Sync codes** to all your devices": [
+        "**დაასინქრონიზეთ კოდები** ყველა თქვენს მოწყობილობაზე"
+      ],
       "+ ${ invisibleCount } More": [
         "+ კიდევ ${ invisibleCount }",
         "+ კიდევ ${ invisibleCount }"
@@ -5400,6 +5483,9 @@
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "ანგარიშთან წვდომა აკრძალულია გადაუხდელი ინვოისების გამო. დაუკავშირდით თქვენს ადმინისტრატორს."
+      ],
+      "Account monitor": [
+        "ანგარიშის მონიტორინგი"
       ],
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
@@ -5718,6 +5804,9 @@
       "Disabled countries": [
         "გამორთული ქვეყნები"
       ],
+      "Disabled on ${ boldValue }": [
+        "გათიშვის თარიღი ${ boldValue }"
+      ],
       "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
         "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
       ],
@@ -5830,6 +5919,9 @@
       "Enabled countries": [
         "ჩართული ქვეყნები"
       ],
+      "Enabled on ${ boldValue }": [
+        "ჩართვის თარიღი ${ boldValue }"
+      ],
       "Enabling auto-deletion…": [
         "ავტოამოცნობის ჩართვა…"
       ],
@@ -5931,6 +6023,9 @@
       ],
       "Gain visibility across your organization": [
         "აიმაღლეთ ხილვადობა თქვენს ორიგანიზაციაში"
+      ],
+      "Gateway monitor": [
+        "რაუტერის მონიტორი"
       ],
       "Gateways": [
         "რაუტერები"
@@ -6034,9 +6129,6 @@
       ],
       "inactive": [
         "არააქტიური"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "${ formattedTaxRate }%-ის ჩათვლით ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "გაზარდეთ თქვენი ანგარიშის უსაფრთხოება თქვენი ელფოსტის მისამართის გადამოწმებით."
@@ -6331,6 +6423,9 @@
       "Or select a particular server:": [
         "ან აირჩიეთ სერვერი:"
       ],
+      "Organization monitor": [
+        "ორგანიზაციის მონიტორინგი"
+      ],
       "Organization size": [
         "ორგანიზაციის ზომა"
       ],
@@ -6351,6 +6446,9 @@
       ],
       "Pass Monitor - custom email deleted": [
         "Pass Monitor - მორგებული ელფოსტა წაიშალა"
+      ],
+      "Pass usage logs": [
+        "Pass-ის გამოყენების ჟურნალი"
       ],
       "password": [
         "პაროლი"
@@ -6425,9 +6523,6 @@
       ],
       "Please use another browser or download the file.": [
         "სცადეთ სხვა ბრაუზერი ან ფაილი გადმოწერეთ."
-      ],
-      "Please verify payment at the new tab which was opened.": [
-        "შეამოწმეთ გადახდა ახალგახსნილ ჩანართში."
       ],
       "Please wait till your changes are synced with the server.": [
         "მოითმინეთ, მიმდინარეობს თქვენი ცვლილებების სერვერთან სინქრონიზაცია."
@@ -6945,9 +7040,6 @@
       "Vault updated": [
         "საცავი განახლდა"
       ],
-      "Verification can take a few minutes.": [
-        "შემოწმებას რამდენიმე წუთი შეიძლება, დასჭირდეს."
-      ],
       "Verification may take a few minutes.": [
         "გადამოწმებას შეიძლება, რამდენიმე წუთი დასჭირდეს."
       ],
@@ -7091,9 +7183,6 @@
       ],
       "You already have a free account": [
         "თქვენ უკვე გაქვთ უფასო ანგარიში"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "შესული ხართ როგორც ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ.",
@@ -7439,6 +7528,9 @@
       ],
       "Donation": [
         "შეწირულობა"
+      ],
+      "Manual": [
+        "ხელით"
       ],
       "Modification": [
         "ჩასწორება"
@@ -8124,9 +8216,6 @@
       ],
       "Value": [
         "მნიშვნელობა"
-      ],
-      "VAT": [
-        "დღგ"
       ],
       "Verification code": [
         "შემოწმების კოდი"
@@ -9800,9 +9889,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "2FA ავთენტიკაცია აუცილებელი აღარაა"
-      ],
-      "Video conferencing settings have been updated": [
-        "ვიდეოკონფერენციის პარამეტრები განახლდა"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9863,7 +9949,7 @@
         "გადაიხადეთ წელიწადში ერთხელ, მიიღეთ ჩვენ საუკეთესო შეთავაზება"
       ],
       "Save": [
-        "შენახვა"
+        "დაზოგეთ"
       ],
       "Save big when you pay annually": [
         "დაზოგეთ ბევრი, როცა წელიწადში ერთხელ იხდით"
@@ -10454,6 +10540,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
+      "Taxes": [
+        "გადასახადები"
+      ],
       "terms & conditions": [
         "პირობები და წესები"
       ],
@@ -10477,6 +10566,9 @@
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
+      ],
+      "VAT": [
+        "დღგ"
       ],
       "VAT number": [
         "დღგ ნომერი"
@@ -10677,6 +10769,9 @@
       ],
       "Search users": [
         "მომხმარებლების ძებნა"
+      ],
+      "Search users or details": [
+        "მომხმარებლების ან დეტალების ძებნა"
       ],
       "Select": [
         "აირჩიეთ"
@@ -13241,6 +13336,9 @@
       "Choose user affiliations": [
         "აირჩიეთ მომხმარებლის წევრობა"
       ],
+      "Claim your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME }-ის მისამართის გამოთხოვა"
+      ],
       "Close": [
         "დახურვა"
       ],
@@ -13383,6 +13481,9 @@
       ],
       "Description": [
         "აღწერა"
+      ],
+      "Details": [
+        "დეტალები"
       ],
       "Device": [
         "მოწყობილობა"
@@ -13852,6 +13953,9 @@
       "There are no groups": [
         "ჯგუფები არ არსებობს"
       ],
+      "Try ${ AUTHENTICATOR_APP_NAME }": [
+        "სცადეთ ${ AUTHENTICATOR_APP_NAME }"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
       ],
@@ -14030,9 +14134,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "ადმინებს შეუძლიათ მომხმარებლის ანგარიშებს მართვა და სხვა მომხმარებლებისთვის ადმინის პრივილეგიების მიცემა. ორგანიზაციის სატარიფო გეგმის ჩასწორება, მხოლოდ, ძირითად ადმინს შეუძლია."
-      ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "საშუალებას გაძლევთ, თქვენი კალენდრის მოსაწვევებში ვიდეოკონფერენციების ბმულები უპრობლემოდ ჩაამატოთ."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "ავტომატურად გადაერთეთ რჩეულ თემებს შორის დღისა და ღამისთვის თქვენი სისტემის დღისა და ღამის რეჟიმებთან ერთად"
@@ -14645,9 +14746,6 @@
       "${ n } wallet": [
         "${ n } საფულე",
         "${ n } საფულე"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "უფრო უსაფრთხო გზა თქვენი Bitcoin-ის შესანახად"
       ],
       "Bitcoin via Email": [
         "Bitcoin ელფოსტით"

@@ -162,7 +162,6 @@ export enum PLANS {
      */
     VPN = 'vpn2022',
     VPN2024 = 'vpn2024',
-    WALLET = 'wallet2024',
     BUNDLE = 'bundle2022',
     /**
      * @deprecated.
@@ -307,7 +306,6 @@ export const PLAN_NAMES: { [key in PLANS]: string } = {
     [PLANS.MAIL]: 'Mail Plus',
     [PLANS.MAIL_PRO]: 'Mail Essentials',
     [PLANS.MAIL_BUSINESS]: 'Mail Professional',
-    [PLANS.WALLET]: 'Wallet Plus',
     [PLANS.LUMO]: 'Lumo Plus',
     [PLANS.BUNDLE]: 'Proton Unlimited',
     [PLANS.BUNDLE_PRO]: 'Proton Business Suite',
@@ -416,6 +414,8 @@ export enum COUPON_CODES {
     PREMIUM_DEAL = 'PREMIUM_DEAL',
     TRYDRIVEPLUS2024 = 'DRIVEPLUSINTRO2024',
     PASSPLUSINTRO2024 = 'PASSPLUSINTRO2024',
+    VPN_INTRO_2025 = 'VPNINTROPRICE2025',
+    VPN_INTRO_2025_UK = 'VPNUKINTROPRICE2025',
 
     // VPN + Pass bundle coupons (vpnpass2023)
     TECHRADARVPNPASS = 'TECHRADARVPNPASS',
@@ -433,6 +433,12 @@ export enum COUPON_CODES {
     PROTONBDAYSALE25 = 'PROTONBDAYSALE25', // Used by website only
     PROTONBDAYSALEB25 = 'PROTONBDAYSALEB25',
     COMMUNITYSPECIALDEAL25 = 'COMMUNITYSPECIALDEAL25',
+
+    /** Back to school */
+    SEP25SALE = 'SEP25SALE',
+    SEP25BUNDLESALE = 'SEP25BUNDLESALE',
+    SEP25SALECS = 'SEP25SALECS',
+    SEP25BUNDLESALECS = 'SEP25BUNDLESALECS',
 
     TLDRPROMO072025 = 'TLDRPROMO072025',
 }

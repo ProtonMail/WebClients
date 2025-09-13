@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adresse",
-        "${ numberOfAddresses } adresser"
-      ],
       "A to Z": [
         "A til Z"
       ],
@@ -325,9 +321,6 @@
       ],
       "Copy alias “${ name }”": [
         "Kopier alias \"${ name }\""
-      ],
-      "Copy email address": [
-        "Kopiér e-mailadresse"
       ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
@@ -812,9 +805,6 @@
       "Make it friendly": [
         "Gør det venligt"
       ],
-      "Manage addresses": [
-        "Administrer adresser"
-      ],
       "Manage advanced account protections": [
         "Administrer avancerede kontobeskyttelser"
       ],
@@ -1177,6 +1167,9 @@
       ],
       "Resume downloading": [
         "Genoptag overførsel"
+      ],
+      "Retry": [
+        "Prøv igen"
       ],
       "Revert to original display": [
         "Vend tilbage til oprindelig visning"
@@ -4000,9 +3993,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Denne visning viser beskeder sendt til følgende adresser:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Du kan fortsætte med at bruge skriveassistenten ved at tilføje den til dit abonnement."
       ],
@@ -5220,9 +5210,6 @@
       ],
       "customer support": [
         "kundeservice"
-      ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Familieabonnementer understøtter i øjeblikket ikke eksterne konti. Opret en ${ BRAND_NAME } adresse for du tilmelder dig. ${ addressSettingsLink }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Hvis du accepterer invitationen, overflytter vi dig fra dit nuværende abonnement og krediterer din konto med en eventuel restsaldo."
@@ -7162,9 +7149,6 @@
       "Included for free with your plan": [
         "Inkluderet gratis i dit abonnement"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inklusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
       ],
@@ -8324,9 +8308,6 @@
       "You are about to open your default browser and visit:": [
         "Du er ved at åbne din standardbrowser og besøge:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du er i øjeblikket logget ind som ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Du bruger mere lagerplads end inkluderet i et ${ downgradedPlanName }-abonnement. Slet eller fjern data for at fortsætte nedgraderingen."
       ],
@@ -8921,12 +8902,6 @@
       "Also archive": [
         "Arkivér også"
       ],
-      "Always label sender's emails": [
-        "Giv altid afsenders e-mails en etikette"
-      ],
-      "Always move sender's emails": [
-        "Flyt altid afsenders e-mails"
-      ],
       "AND": [
         "OG"
       ],
@@ -9254,9 +9229,6 @@
       "Move ${ sidebarElementName }": [
         "Flyt ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Flyt beskeder til"
-      ],
       "Move to": [
         "Flyt til"
       ],
@@ -9482,9 +9454,6 @@
       "Undisclosed Recipients": [
         "Oplyste modtagere"
       ],
-      "Unknown": [
-        "Ukendt"
-      ],
       "Unsafe or problematic": [
         "Usikkert eller problematisk"
       ],
@@ -9499,9 +9468,6 @@
       ],
       "Username": [
         "Brugernavn"
-      ],
-      "VAT": [
-        "Moms"
       ],
       "Verification code": [
         "Verifikationskode"
@@ -11220,7 +11186,7 @@
         "Betal årligt for at sikre vores bedste tilbud"
       ],
       "Save": [
-        "Gem"
+        "Spar"
       ],
       "Save big when you pay annually": [
         "Få stor besparelse ved at betale årligt"
@@ -14177,12 +14143,6 @@
       "Create contact": [
         "Opret kontakt"
       ],
-      "Create folder \"${ search }\"": [
-        "Opret mappe \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Opret etiket \"${ search }\""
-      ],
       "Create new group": [
         "Opret ny gruppe"
       ],
@@ -14558,6 +14518,9 @@
       "Newsletters view": [
         "Visning af nyhedsbreve"
       ],
+      "Next": [
+        "Næste"
+      ],
       "Next conversation": [
         "Næste samtale"
       ],
@@ -14603,6 +14566,9 @@
       "Open actions dropdown": [
         "Åbn handlings-dropdownmenuen"
       ],
+      "Open pagination": [
+        "Åbn sidenummerering"
+      ],
       "Org setup": [
         "Organisationsopsætning"
       ],
@@ -14632,6 +14598,9 @@
       ],
       "Preview": [
         "Forhåndsvisning"
+      ],
+      "Previous": [
+        "Forrige"
       ],
       "Previous conversation": [
         "Forrige samtale"
@@ -14935,9 +14904,6 @@
       "Your account is protected": [
         "Din konto er beskyttet"
       ],
-      "Your addresses": [
-        "Dine adresser"
-      ],
       "Your changes are not synced yet": [
         "Dine ændringer er endnu ikke synkroniseret"
       ],
@@ -15165,9 +15131,6 @@
       "${ n } wallet": [
         "${ n } wallet",
         "${ n } wallets"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "En sikrere måde at gemme dine Bitcoin på"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

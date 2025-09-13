@@ -89,6 +89,9 @@
       "Add public holidays": [
         "Añadir calendario de días festivos"
       ],
+      "Add secret passphrase": [
+        "Añadir una frase de contraseña secreta"
+      ],
       "Add to group": [
         "Añadir al grupo"
       ],
@@ -140,6 +143,9 @@
       ],
       "Claim this address": [
         "Obtén esta dirección"
+      ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Obtén tu dirección gratuita de ${ BRAND_NAME }"
       ],
       "Clear": [
         "Borrar"
@@ -470,6 +476,9 @@
       "Join calendar": [
         "Unirse al calendario"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Únete con ${ MEET_APP_NAME }"
+      ],
       "Keep current time zone": [
         "Mantener la zona horaria actual"
       ],
@@ -596,6 +605,9 @@
       "Open settings": [
         "Abrir configuración"
       ],
+      "Passphrase": [
+        "Frase de contraseña"
+      ],
       "Pause indexing": [
         "Pausar la indexación"
       ],
@@ -688,6 +700,9 @@
       ],
       "Resume indexing": [
         "Reanudar la indexación"
+      ],
+      "Retry": [
+        "Reintentar"
       ],
       "Save": [
         "Guardar"
@@ -844,6 +859,9 @@
       ],
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
+      ],
+      "Update secret passphrase": [
+        "Actualizar la frase de contraseña secreta"
       ],
       "Upgrade": [
         "Cambiar de plan"
@@ -1220,9 +1238,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ cycle } meses el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
@@ -3482,8 +3497,14 @@
       "Event not found": [
         "No se ha encontrado el evento."
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Error al crear videoconferencia de ${ MEET_APP_NAME }"
+      ],
       "Failed to create meeting": [
         "Error al crear la reunión"
+      ],
+      "Failed to decrypt session key": [
+        "Error al descifrar la clave de sesión"
       ],
       "Failed to get event": [
         "Error al obtener el evento"
@@ -3496,6 +3517,9 @@
       ],
       "Failed to open to contact": [
         "Error al abrir el contacto"
+      ],
+      "Failed to update secret passphrase": [
+        "Error al actualizar la frase de contraseña secreta"
       ],
       "First name is too long": [
         "El nombre es demasiado largo."
@@ -3625,6 +3649,9 @@
       ],
       "Organization key is not decrypted": [
         "La clave de la organización no está descifrada."
+      ],
+      "Passphrase unavailable": [
+        "Frase de contraseña no disponible"
       ],
       "Password is required": [
         "Contraseña requerida"
@@ -4192,8 +4219,8 @@
       "customer support": [
         "atención al cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Los planes familiares actualmente no admiten cuentas externas. Crea una dirección de ${ BRAND_NAME } antes de unirte. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si aceptas la invitación, te cambiaremos de plan y abonaremos en tu cuenta el saldo que quede restante."
@@ -4427,11 +4454,17 @@
       "Contacts": [
         "Contactos"
       ],
+      "Domain": [
+        "Dominio"
+      ],
       "Drawer": [
         "Casilla"
       ],
       "Name": [
         "Nombre"
+      ],
+      "Password ends with": [
+        "La contraseña termina con"
       ],
       "Repeat event": [
         "Repetir el evento"
@@ -4441,6 +4474,9 @@
       ],
       "Security Center": [
         "Centro de seguridad"
+      ],
+      "Username": [
+        "Nombre de usuario"
       ]
     },
     "Hint": {
@@ -5272,8 +5308,17 @@
       "Expired": [
         "Expirado"
       ],
+      "Failed to update meeting name": [
+        "Error al actualizar el nombre de la reunión"
+      ],
+      "Failed to update meeting password": [
+        "Error al actualizar la contraseña de la reunión"
+      ],
       "finance": [
         "finanzas"
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Para mayor seguridad, puedes establecer una frase de contraseña (passphrase). No se incluirá en la invitación del calendario, recuerda compartirla con tus invitados por separado."
       ],
       "Frequency modifications will be lost.": [
         "Se perderán las modificaciones de frecuencia."
@@ -5338,9 +5383,6 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indexando eventos: ${ current }/${ total }"
@@ -5933,8 +5975,8 @@
       "You are about to open your default browser and visit:": [
         "Estás a punto de abrir tu navegador por defecto y visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualmente estás conectado como ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Actualmente estás conectado como ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Estás usando más almacenamiento del que se incluye en un plan ${ downgradedPlanName }. Elimina o borra datos para poder cambiar de plan."
@@ -6321,6 +6363,9 @@
       "Account holder": [
         "Titular de la cuenta"
       ],
+      "Add ${ MEET_APP_NAME } conferencing": [
+        "Añadir conferencia de ${ MEET_APP_NAME }"
+      ],
       "Add email address": [
         "Añadir correo electrónico"
       ],
@@ -6329,6 +6374,9 @@
       ],
       "Add to group": [
         "Añadir al grupo"
+      ],
+      "Add Zoom meeting": [
+        "Añadir una reunión de Zoom"
       ],
       "Address": [
         "Dirección"
@@ -6634,6 +6682,9 @@
       "Participants": [
         "Participantes"
       ],
+      "Passphrase:": [
+        "Frase de contraseña:"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -6745,11 +6796,11 @@
       "Username": [
         "Nombre de usuario"
       ],
-      "VAT": [
-        "IVA"
-      ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Video conference": [
+        "Videoconferencia"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -6795,6 +6846,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Zoom meeting": [
+        "Reunión de Zoom"
       ]
     },
     "Label for contact group color": {
@@ -8232,6 +8286,9 @@
       ],
       "Passcode copied to clipboard": [
         "Se ha copiado el código de acceso al portapapeles."
+      ],
+      "Passphrase copied to clipboard": [
+        "Frase de contraseña copiada al portapapeles"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8440,7 +8497,7 @@
         "Paga anualmente y asegúrate nuestra mejor oferta."
       ],
       "Save": [
-        "Guardar"
+        "Ahorra"
       ],
       "Save big when you pay annually": [
         "¡Ahorra a lo grande pagando anualmente!"
@@ -8809,11 +8866,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
       "Got it": [
         "Entiendo"
       ],
       "I'm purchasing as a business": [
         "Estoy comprando como empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -8829,6 +8898,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
+      ],
+      "Taxes": [
+        "Impuestos"
       ],
       "terms & conditions": [
         "los términos y condiciones"
@@ -8860,6 +8932,9 @@
       ],
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -9013,6 +9088,9 @@
       ],
       "E.g., ": [
         "P. ej., "
+      ],
+      "Enter passphrase": [
+        "Introducir la frase de contraseña"
       ],
       "Filter groups": [
         "Filtrar grupos"
@@ -9211,6 +9289,96 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Correo oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "OFERTA DE FINAL DE VERANO"
+      ],
+      "Get the deal": [
+        "Aprovecha la oferta"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent }%"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /mes"
+      ],
+      "/month": [
+        "/mes"
+      ],
+      "1 TB data storage": [
+        "1 TB de almacenamiento de datos"
+      ],
+      "15 GB storage": [
+        "15 GB de espacio de almacenamiento"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB de almacenamiento para archivos, fotos y documentos"
+      ],
+      "3 TB data storage": [
+        "3 TB de almacenamiento de datos"
+      ],
+      "500 GB storage": [
+        "500 GB de almacenamiento"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Acceso a más de 15 000 servidores en más de 120 países"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Todas las funciones prémium de Mail, Pass, Drive, VPN y Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
+      "Connect 10 devices at once": [
+        "Conecta 10 dispositivos a la vez"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Los descuentos se basan en el precio mensual estándar. Tu suscripción se renovará a la tarifa anual estándar cuando finalice el ciclo de facturación."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Disfruta de las velocidades de VPN más rápidas"
+      ],
+      "Individual accounts for 6 users": [
+        "Cuentas individuales para 6 usuarios"
+      ],
+      "Individual accounts for you and a partner": [
+        "Cuentas individuales para ti y otra persona"
+      ],
+      "Online document editor": [
+        "Editor de documentos online"
+      ],
+      "Recover previous file versions": [
+        "Recupera las versiones previas de los archivos"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "¡Ahorra ${ totalSavings } y conserva todas tus funciones actuales!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Uso compartido seguro de enlaces, cajas fuertes y elementos"
+      ],
+      "Stronger protection against cyber threats": [
+        "Mayor protección contra las ciberamenazas"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetas, etiquetas y filtros ilimitados"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Número ilimitado de alias de hide-my-email"
+      ],
+      "Use your own email domain": [
+        "Usa tu propio dominio de correo electrónico"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Oferta de final de verano"
+      ],
+      "for 12 months": [
+        "durante 12 meses"
       ]
     },
     "Reload event button tooltip": {
@@ -9821,6 +9989,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } ya está aquí"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Codifica con colores tu calendario para organizar mejor tu día, realizar un seguimiento de tu tiempo y más."
       ],
@@ -9832,6 +10003,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invita amigos a ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Programa y únete a las llamadas de ${ MEET_APP_NAME } directamente desde tu calendario."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Crea y añade fácilmente enlaces de reuniones de vídeo a tus eventos."
@@ -10541,6 +10715,9 @@
       "Problem reported": [
         "Se ha notificado el problema."
       ],
+      "Secret passphrase updated": [
+        "Frase de contraseña secreta actualizada"
+      ],
       "Undo in progress": [
         "Deshacer en progreso"
       ],
@@ -11081,6 +11258,9 @@
       "Network error": [
         "Error de red"
       ],
+      "Next": [
+        "Siguiente"
+      ],
       "Night theme": [
         "Tema de noche"
       ],
@@ -11095,6 +11275,9 @@
       ],
       "Open actions dropdown": [
         "Abrir lista desplegable de acciones"
+      ],
+      "Open pagination": [
+        "Abrir paginación"
       ],
       "Org setup": [
         "Configuración de la organización"
@@ -11125,6 +11308,9 @@
       ],
       "Phone numbers": [
         "Números de teléfono"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Private browsing vs VPN": [
         "Navegación privada y VPN"
@@ -11581,9 +11767,6 @@
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Una forma más segura de mantener tu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin vía correo electrónico"

@@ -1,5 +1,5 @@
 import { type PaymentIntent, chargebeeValidationErrorName, isMessageBusResponseFailure } from '@proton/chargebee/lib';
-import { type Api } from '@proton/shared/lib/interfaces';
+import type { Api } from '@proton/shared/lib/interfaces';
 
 import { getTokenStatusV5 } from '../api';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
@@ -11,7 +11,6 @@ import type {
     ChargebeeFetchedPaymentToken,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
-    ForceEnableChargebee,
     RemoveEventListener,
 } from '../interface';
 import { PaymentProcessor } from './paymentProcessor';
@@ -40,7 +39,6 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
         amountAndCurrency: AmountAndCurrency,
         private handles: ChargebeeIframeHandles,
         private events: ChargebeeIframeEvents,
-        private forceEnableChargebee: ForceEnableChargebee,
         public paypalModalHandles: ChargebeePaypalModalHandles | undefined,
         public onTokenIsChargeable?: (data: ChargeableV5PaymentParameters) => Promise<unknown>
     ) {
@@ -63,7 +61,6 @@ export class ChargebeePaypalPaymentProcessor extends PaymentProcessor<ChargebeeP
                     api: this.api,
                     handles: this.handles,
                     events: this.events,
-                    forceEnableChargebee: this.forceEnableChargebee,
                 }
             );
 

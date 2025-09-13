@@ -36,11 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "Adrese: ${ numberOfAddresses }",
-        "Adrese: ${ numberOfAddresses }",
-        "Adrese: ${ numberOfAddresses }"
-      ],
       "A to Z": [
         "De la A la Z"
       ],
@@ -100,6 +95,9 @@
       ],
       "Add phone number": [
         "Adăugare număr de telefon"
+      ],
+      "Add secret passphrase": [
+        "Adăugare frază de acces secretă"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Adăugare la ${ CALENDAR_APP_NAME }"
@@ -328,9 +326,6 @@
       "Copy alias “${ name }”": [
         "Copiază aliasul „${ name }”"
       ],
-      "Copy email address": [
-        "Copiere adresă e-mail"
-      ],
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
@@ -493,6 +488,9 @@
       ],
       "Edit address": [
         "Editare adresă"
+      ],
+      "Edit categories": [
+        "Editare categorii"
       ],
       "Edit draft": [
         "Editare schiță"
@@ -769,6 +767,9 @@
       "Italic": [
         "Înclinat"
       ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Alăturați-vă cu ${ MEET_APP_NAME }"
+      ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
       ],
@@ -816,9 +817,6 @@
       ],
       "Make it friendly": [
         "Acceptare ca legitim"
-      ],
-      "Manage addresses": [
-        "Gestionare adrese"
       ],
       "Manage advanced account protections": [
         "Gestionați protecții avansate cont"
@@ -915,6 +913,9 @@
       ],
       "More search options": [
         "Mai multe opțiuni de căutare"
+      ],
+      "Most frequent": [
+        "Cele mai frecvente"
       ],
       "Most read": [
         "Cel mai citit"
@@ -1024,6 +1025,9 @@
       "Page ${ pageNumber }": [
         "Pagina ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Fraza de acces"
+      ],
       "Pause": [
         "Suspendare"
       ],
@@ -1077,6 +1081,9 @@
       ],
       "Read receipt sent": [
         "Confirmare de citire trimisă"
+      ],
+      "Recently read": [
+        "Citite recent"
       ],
       "Recently received": [
         "Primite recent"
@@ -1182,6 +1189,9 @@
       ],
       "Resume downloading": [
         "Reluare descărcare"
+      ],
+      "Retry": [
+        "Reîncercare"
       ],
       "Revert to original display": [
         "Revenire la afișarea inițială"
@@ -1515,6 +1525,9 @@
       ],
       "Update recovery phrase": [
         "Actualizare frază de recuperare"
+      ],
+      "Update secret passphrase": [
+        "Actualizare frază secretă de acces"
       ],
       "Upgrade": [
         "Modificare"
@@ -1980,6 +1993,32 @@
         "Expeditor verificat cu succes"
       ]
     },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licențe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_SCRIBE_SEATS } licențe Scribe în perioada de probare."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_USERS } utilizatori în perioada de probare."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Nu puteți adăuga domenii personale în perioada de probare."
+      ],
+      "You have reached the trial limit.": [
+        "Ați atins limita perioadei de probare."
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Anulare abonament"
@@ -2214,6 +2253,9 @@
       ],
       "Manual setup problem": [
         "Problemă setare manuală"
+      ],
+      "Meet problem": [
+        "Problemă Meet"
       ],
       "Other": [
         "Altele"
@@ -2640,6 +2682,52 @@
       ],
       "Expand": [
         "Extindere"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acces la modele AI avansate"
+      ],
+      "Basic chat history": [
+        "Istoric de bază conversații"
+      ],
+      "Full chat history with search": [
+        "Istoric complet al conversațiilor cu căutare"
+      ],
+      "Large file upload support": [
+        "Acceptare încărcare fișiere mari"
+      ],
+      "Limited daily chats": [
+        "Conversații zilnice limitate"
+      ],
+      "Limited favorites": [
+        "Favorite limitate"
+      ],
+      "Unlimited daily chats": [
+        "Conversații zilnice nelimitate"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favorite nelimitate pentru o accesare rapidă"
+      ],
+      "Upload and query multiple large files": [
+        "Încărcați și interogați mai multe fișiere mari"
+      ],
+      "Upload and query small files": [
+        "Încărcați și interogați fișiere mici"
+      ],
+      "Web search access": [
+        "Acces la căutare pe internet"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } este o aplicație de inteligență artificială axată pe confidențialitate, care vă ajută să realizați mai mult, păstrându-vă în același timp datele în siguranță. Deblocați-i întregul potențial și bucurați-vă de acces timpuriu la noile funcții pe măsură ce sunt introduse."
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Adăugare ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Conversații rapide și funcții avansate de inteligență artificială."
       ]
     },
     "color": {
@@ -4070,9 +4158,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplificați sincronizarea și programarea cu calendare partajate."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Această vizualizare afișează mesaje trimise către următoarele adrese:"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pentru a continua să utilizați asistentul de scriere, adăugați-l la abonament."
       ],
@@ -4561,6 +4646,9 @@
       "Failed to open to contact": [
         "Nu s-a putut deschide contactul."
       ],
+      "Failed to update secret passphrase": [
+        "Nu s-a putut actualiza fraza de acces secretă."
+      ],
       "Filter with this name already exists": [
         "Filtrul cu acest nume există deja."
       ],
@@ -4692,6 +4780,9 @@
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
+      ],
+      "Passphrase unavailable": [
+        "Frază de acces indisponibilă"
       ],
       "Password is required": [
         "Parola este obligatorie"
@@ -5162,6 +5253,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Aliasurile nu pot fi folosite atunci când este activată o parolă suplimentară în ${ PASS_APP_NAME }."
       ],
+      "An error occurred with the categories": [
+        "A apărut o eroare cu categoriile."
+      ],
       "App currently unavailable": [
         "Aplicație momentan indisponibilă"
       ],
@@ -5315,8 +5409,8 @@
       "customer support": [
         "suportul tehnic"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Planurile de familie nu acceptă în prezent conturi externe. Creați o adresă ${ BRAND_NAME } înainte de a vă alătura. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Dacă acceptați invitația, se va schimba planul curent, iar soldul rămas va fi returnat ca și credit în cont."
@@ -5874,11 +5968,17 @@
       "Contacts": [
         "Contacte"
       ],
+      "Domain": [
+        "Domeniu"
+      ],
       "Drawer": [
         "Panou lateral"
       ],
       "Hardware not compatible": [
         "Dispozitiv incompatibil"
+      ],
+      "Password ends with": [
+        "Parola se termină cu"
       ],
       "Report an issue": [
         "Raportare problemă"
@@ -5897,6 +5997,9 @@
       ],
       "Tell us more": [
         "Spuneți-ne mai multe"
+      ],
+      "Username": [
+        "Nume de utilizator"
       ]
     },
     "Hint": {
@@ -7214,6 +7317,9 @@
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Pentru acces oricând la e-mail și experiență mobilă optimizată, descărcați aplicația ${ androidAppLink } sau ${ iosAppLink }."
       ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Pentru un plus de securitate, puteți seta o frază de acces. Aceasta nu va fi inclusă în invitația de calendar, nu uitați să o partajați separat cu invitații."
+      ],
       "For messages newer than ${ oldestDate }": [
         "Pentru mesaje mai noi de ${ oldestDate }"
       ],
@@ -7339,9 +7445,6 @@
       ],
       "Included for free with your plan": [
         "Inclus gratuit cu planul actual"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inclusiv ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
@@ -8091,6 +8194,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "A apărut o eroare la semnătura folosită pentru a verifica datele de contact, care poate fi rezultatul resetării parolei."
       ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Aceste conversații sunt păstrate aici pe baza politicii de păstrare a datelor organizației."
+      ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Ceilalți nu vă pot trimite mesaje nedorite dacă nu vă cunosc adresa de e-mail. Protejați-vă adresa folosind aliasuri hide-my-email."
       ],
@@ -8509,8 +8615,8 @@
       "You are about to open your default browser and visit:": [
         "Urmează să deschideți navigatorul web implicit și să vizitați:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "V-ați conectat cu ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "V-ați conectat cu ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Utilizați mai mult spațiu de stocare decât este inclus într-un plan ${ downgradedPlanName }. Ștergeți din date pentru a putea retrograda contul."
@@ -9132,12 +9238,6 @@
       "Also archive": [
         "Și arhivare"
       ],
-      "Always label sender's emails": [
-        "Etichetare întotdeauna mesajele expeditorului"
-      ],
-      "Always move sender's emails": [
-        "Mutare întotdeauna mesajele expeditorului"
-      ],
       "AND": [
         "ȘI"
       ],
@@ -9168,6 +9268,9 @@
       "Authenticator app": [
         "Aplicația Authenticator"
       ],
+      "Automated confirmations and alerts": [
+        "Confirmări și alerte automate"
+      ],
       "BCC": [
         "Ca"
       ],
@@ -9179,6 +9282,9 @@
       ],
       "Blind Carbon Copy": [
         "Copie ascunsă"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervări, facturări și comenzi"
       ],
       "Browser": [
         "Navigator"
@@ -9212,6 +9318,9 @@
       ],
       "Cash": [
         "Numerar"
+      ],
+      "Categories badge": [
+        "Etichetă categorii"
       ],
       "Category": [
         "Categoria"
@@ -9273,6 +9382,9 @@
       "Date:": [
         "Data:"
       ],
+      "Deals, offers, marketing emails": [
+        "Oferte, promoții, e-mailuri de marketing"
+      ],
       "Delete": [
         "Ștergere"
       ],
@@ -9284,6 +9396,9 @@
       ],
       "Did not follow instructions": [
         "Nu a urmat instrucțiunile"
+      ],
+      "Discussion board posts and threads": [
+        "Publicări și fire de discuție pe forum"
       ],
       "Do you have any suggestions for our team?": [
         "Aveți sugestii pentru echipa noastră?"
@@ -9375,6 +9490,33 @@
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
+      "Go to Forums": [
+        "Accesare forumuri"
+      ],
+      "Go to Newsletters": [
+        "Accesare buletine informative"
+      ],
+      "Go to Primary": [
+        "Accesare principal"
+      ],
+      "Go to Promotions": [
+        "Accesare promoții"
+      ],
+      "Go to Social": [
+        "Accesare rețele sociale"
+      ],
+      "Go to Transactions": [
+        "Accesare tranzacții"
+      ],
+      "Go to Updates": [
+        "Accesare actualizări"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Ajutați-ne să îmbunătățim categoriile alegând-o pe cea care se potrivește cel mai bine acestui e-mail. Vă mulțumim pentru ajutor!"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Ajutați-ne să îmbunătățim viitoarea clasificare a mesajelor"
+      ],
       "Hide password": [
         "Ascundere parolă"
       ],
@@ -9465,9 +9607,6 @@
       "Move ${ sidebarElementName }": [
         "Mutare ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Mutare mesaje în"
-      ],
       "Move to": [
         "Mutare în"
       ],
@@ -9507,6 +9646,12 @@
       "No label found": [
         "Nu există etichete"
       ],
+      "No results found": [
+        "Nu s-au găsit rezultate."
+      ],
+      "Non-promotional content and news": [
+        "Conținut și știri non-promoționale"
+      ],
       "Not factually correct": [
         "Nu este corect din punct de vedere faptic"
       ],
@@ -9545,6 +9690,9 @@
       ],
       "Participants": [
         "Participanți"
+      ],
+      "Passphrase:": [
+        "Fraza de acces:"
       ],
       "Password": [
         "Parola"
@@ -9615,6 +9763,9 @@
       "Search in": [
         "Căutare în"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Selectați categoriile de inclus și activați notificările pentru a primi alerte despre e-mailurile noi dintr-o categorie."
+      ],
       "Send auto-reply": [
         "Trimitere autorăspuns"
       ],
@@ -9629,6 +9780,9 @@
       ],
       "Social": [
         "Rețele sociale"
+      ],
+      "Social media updates and activity": [
+        "Actualizări și activitate pe rețelele sociale"
       ],
       "Starred": [
         "Cu stea"
@@ -9663,6 +9817,9 @@
       "System information": [
         "Informații sistem"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "Categoria a fost actualizată, vă mulțumim pentru feedback!"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Filtrul este dezactivat. ${ enableButton }"
       ],
@@ -9693,9 +9850,6 @@
       "Undisclosed Recipients": [
         "Destinatari nedivulgați"
       ],
-      "Unknown": [
-        "Necunoscut"
-      ],
       "Unsafe or problematic": [
         "Nesigur sau problematic"
       ],
@@ -9710,9 +9864,6 @@
       ],
       "Username": [
         "Nume utilizator"
-      ],
-      "VAT": [
-        "TVA"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -9729,11 +9880,20 @@
       "Weak password": [
         "Parolă slabă"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Îmbunătățim modul în care sunt categorizate mesajele. Feedbackul dvs. ne ajută ca acesta să devină mai inteligent și mai precis."
+      ],
       "What happened?": [
         "Ce s-a întâmplat?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Care este motivul principal pentru anulare sau retrogradare?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Sub ce categorie ar trebui să fie recategorizat?"
+      ],
+      "Why am I seeing this?": [
+        "De ce văd asta?"
       ],
       "With attachment": [
         "Cu atașamente"
@@ -9743,6 +9903,9 @@
       ],
       "Writing assistant": [
         "Asistent de scriere"
+      ],
+      "You cannot disable all categories": [
+        "Nu puteți dezactiva toate categoriile"
       ],
       "Your alias": [
         "Aliasuri personale"
@@ -9901,6 +10064,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Creați un calendar nou pentru a vă gestiona invitațiile"
+      ],
+      "Deleted": [
+        "Șterse"
       ],
       "Drafts": [
         "Ciorne"
@@ -11407,6 +11573,9 @@
       "Passcode copied to clipboard": [
         "Codul de acces s-a copiat în memorie."
       ],
+      "Passphrase copied to clipboard": [
+        "Fraza de acces s-a copiat în memorie."
+      ],
       "Password has been set successfully": [
         "S-a reușit setarea parolei."
       ],
@@ -11978,11 +12147,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluzând taxe de ${ taxRate }%: ${ taxAmount }"
+      ],
       "Got it": [
         "Am înțeles"
       ],
       "I'm purchasing as a business": [
         "Achiziționez în calitate de companie"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusiv ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluzând taxe de ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "LL/AA"
@@ -11998,6 +12179,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
+      ],
+      "Taxes": [
+        "Taxe"
       ],
       "terms & conditions": [
         "termeni și condiții"
@@ -12033,6 +12217,9 @@
       ],
       "Timeout exceeded": [
         "Limită de timp depășită"
+      ],
+      "VAT": [
+        "TVA"
       ],
       "VAT number": [
         "Valoare TVA"
@@ -12177,6 +12364,9 @@
       ],
       "End date": [
         "Data de sfârșit"
+      ],
+      "Enter passphrase": [
+        "Introduceți fraza de acces"
       ],
       "Filter folders": [
         "Filtrare foldere"
@@ -14013,6 +14203,11 @@
       "Conversation removed from Starred.": [
         "Conversația a fost eliminată din favorite."
       ],
+      "Conversation updated": [
+        "Conversație actualizată",
+        "Conversații actualizate",
+        "Conversații actualizate"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Conversațiile din ${ sendersList } vor fi etichetate cu ${ labelsList }."
       ],
@@ -14088,6 +14283,11 @@
       "Message removed from Starred.": [
         "Mesajul a fost eliminat din „Favorite”."
       ],
+      "Message updated": [
+        "Mesaj actualizat",
+        "Mesaje actualizate",
+        "Mesaje actualizate"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Mesajele de la ${ sendersList } vor fi etichetate cu ${ labelsList }."
       ],
@@ -14133,6 +14333,14 @@
       ],
       "Read receipt sent": [
         "Confirmare de citire trimisă"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Mesaje recategorizate: ${ elementsCount }",
+        "Mesaje recategorizate: ${ elementsCount }",
+        "Mesaje recategorizate: ${ elementsCount }"
+      ],
+      "Secret passphrase updated": [
+        "Frază de acces secretă s-a actualizat."
       ],
       "Self-destruction removed": [
         "Autodistrugere eliminată"
@@ -14583,12 +14791,6 @@
       "Create contact": [
         "Creare contact"
       ],
-      "Create folder \"${ search }\"": [
-        "Creare folder „${ search }”"
-      ],
-      "Create label \"${ search }\"": [
-        "Creare etichetă „${ search }”"
-      ],
       "Create new group": [
         "Creare grup"
       ],
@@ -14606,6 +14808,9 @@
       ],
       "Customize calendar import": [
         "Personalizare importare calendar"
+      ],
+      "Customize categories": [
+        "Personalizare categorii"
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
@@ -14847,6 +15052,11 @@
       "Label as": [
         "Etichetare cu"
       ],
+      "Label message as": [
+        "Etichetare mesaj cu",
+        "Etichetare mesaje cu",
+        "Etichetare mesaje cu"
+      ],
       "Label options": [
         "Opțiuni etichetă"
       ],
@@ -14931,6 +15141,14 @@
       "Move all messages to trash": [
         "Mutare toate mesajele în „Gunoi”"
       ],
+      "Move message to": [
+        "Mutare mesaj în",
+        "Mutare mesaje în",
+        "Mutare mesaje în"
+      ],
+      "Move messages to": [
+        "Mutare mesaje în"
+      ],
       "Move to": [
         "Mutare în"
       ],
@@ -14969,6 +15187,9 @@
       ],
       "Newsletters view": [
         "Afișare buletine informative"
+      ],
+      "Next": [
+        "Următoare"
       ],
       "Next conversation": [
         "Conversația următoare"
@@ -15015,6 +15236,9 @@
       "Open actions dropdown": [
         "Deschidere meniu acțiuni"
       ],
+      "Open pagination": [
+        "Deschidere paginare"
+      ],
       "Org setup": [
         "Setare organizație"
       ],
@@ -15044,6 +15268,9 @@
       ],
       "Preview": [
         "Examinare"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Previous conversation": [
         "Conversația anterioară"
@@ -15349,9 +15576,6 @@
       "Your account is protected": [
         "Contul este protejat"
       ],
-      "Your addresses": [
-        "Adresele mele"
-      ],
       "Your changes are not synced yet": [
         "Modificările nu sunt încă sincronizate"
       ],
@@ -15369,6 +15593,9 @@
       ],
       "Your subscriptions in one place": [
         "Abonamentele personale într-un singur loc"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Sosesc categoriile!"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15592,9 +15819,6 @@
         "Portofele: ${ n }",
         "Portofele: ${ n }",
         "Portofele: ${ n }"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "O metodă mai sigură de a vă păstra monedele Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

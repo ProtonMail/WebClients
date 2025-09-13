@@ -1,9 +1,8 @@
 import { useCallback } from 'react';
 
-import { MemberRole } from '@proton/drive/index';
-import { useDrive } from '@proton/drive/index';
+import { MemberRole, useDrive } from '@proton/drive/index';
 
-import { useActiveShare } from '../../hooks/drive/useActiveShare';
+import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
@@ -14,83 +13,68 @@ import { useDeviceStore } from '../devices/devices.store';
 import { useFolderStore } from './useFolder.store';
 
 export function useFolder() {
-    const { setIsLoading, setError, reset, setItem, setFolder, setRole, setPermissions } = useFolderStore((state) => ({
-        setIsLoading: state.setIsLoading,
-        setError: state.setError,
-        reset: state.reset,
-        setItem: state.setItem,
-        setFolder: state.setFolder,
-        setRole: state.setRole,
-        setPermissions: state.setPermissions,
-    }));
     const { drive } = useDrive();
     const { handleError } = useSdkErrorHandler();
-    const { activeFolder } = useActiveShare();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
-    const { devices } = useDeviceStore();
-    // const { navigateToRoot, navigateToLink } = useDriveNavigation();
+    const { navigateToRoot } = useDriveNavigation();
 
-    const handleNodeError = useCallback(
-        (error?: Error) => {
-            if (!error) {
-                return;
-            }
+    const handleFolderError = useCallback((error?: Error) => {
+        if (!error) {
+            return;
+        }
+        const { setError } = useFolderStore.getState();
 
-            const errorMessage = error
-                ? ('message' in error ? error.message : error) || 'Unknown node error'
-                : 'Unknown node error';
+        const errorMessage = error
+            ? ('message' in error ? error.message : error) || 'Unknown node error'
+            : 'Unknown node error';
 
-            const enrichedError = new EnrichedError(errorMessage, {
-                tags: { component: 'drive-sdk' },
-                extra: { originalError: error },
-            });
+        const enrichedError = new EnrichedError(errorMessage, {
+            tags: { component: 'drive-sdk' },
+            extra: { originalError: error },
+        });
 
-            setError(enrichedError);
+        handleError(error);
+        setError(enrichedError);
+        navigateToRoot();
+    }, []);
 
-            if (error) {
-                // TODO:WIP check if the error codes are the same
-                // if (error.name === RESPONSE_CODE.INVALID_LINK_TYPE) {
-                //     navigateToLink(activeFolder.shareId, activeFolder.linkId, true);
-                // } else if (code === RESPONSE_CODE.NOT_FOUND || code === RESPONSE_CODE.INVALID_ID) {
-                //     navigateToRoot();
-                // } else {
-                //     handleError(error);
-                // }
-            }
-        },
-        [setError]
-    );
     const load = useCallback(
         async (folderNodeUid: string, folderShareId: string, ac: AbortController) => {
+            const { setIsLoading, reset, setItem, setFolder, setRole, setPermissions } = useFolderStore.getState();
+            const { getByRootFolderUid } = useDeviceStore.getState();
             reset();
             setIsLoading(true);
 
             try {
                 const { node, errors } = getNodeEntity(await drive.getNode(folderNodeUid));
                 const error = Array.from(errors.values()).at(0);
-                handleNodeError(error as Error);
-                const legacyNode = await mapNodeToLegacyItem(node, activeFolder.shareId, drive);
-                const isDeviceRoot = !node.parentUid && devices.has(folderNodeUid);
-                const isDeviceFolder = isDeviceRoot || (legacyNode.rootUid && devices.has(legacyNode.rootUid));
+                handleFolderError(error as Error);
+                const legacyNode = await mapNodeToLegacyItem(node, folderShareId, drive);
+                const isDeviceRoot = !node.parentUid && !!getByRootFolderUid(folderNodeUid);
+                const isDeviceFolder = isDeviceRoot || (legacyNode.rootUid && !!getByRootFolderUid(legacyNode.rootUid));
                 const role = await getNodeEffectiveRole(node, drive);
                 const canEdit = role !== MemberRole.Viewer && !isDeviceRoot;
+                const canTrash = role !== MemberRole.Viewer;
+                const isRoot = !node.parentUid;
+                const isAdmin = role === MemberRole.Admin;
 
                 setFolder({
                     ...legacyNode,
                     isRoot: !node.parentUid,
-                    shareId: activeFolder.shareId,
+                    shareId: folderShareId,
                 });
                 setRole(role);
                 setPermissions({
-                    canEdit: canEdit,
-                    canShare: role === MemberRole.Admin,
+                    canEdit,
+                    canShare: isAdmin && (isDeviceRoot || isRoot),
                     canCreateNode: canEdit,
                     canCreateDocs: isDocsEnabled && canEdit && !isDeviceFolder,
                     canCreateSheets: isSheetsEnabled && canEdit && !isDeviceFolder,
-                    canShareNode: role === MemberRole.Admin,
+                    canShareNode: isAdmin && !isDeviceRoot && !isRoot,
                     canMove: canEdit,
                     canRename: canEdit,
+                    canTrash,
                 });
 
                 for await (const maybeNode of drive.iterateFolderChildren(folderNodeUid, ac.signal)) {
@@ -100,34 +84,16 @@ export function useFolder() {
                         setItem(legacyItem);
                     }
                     if (!maybeNode.ok) {
-                        /**
-                         * TODO:WIP
-                         * are we interested in tracking every single node erroring?
-                         */
-                        handleError(maybeNode.error);
+                        // error on loading a single node inside the folder should not show notification
+                        handleError(maybeNode.error, { showNotification: false });
                     }
                 }
             } catch (e) {
-                handleError(e);
-                handleNodeError(e as Error);
+                handleFolderError(e as Error);
             }
             setIsLoading(false);
         },
-        [
-            drive,
-            handleError,
-            handleNodeError,
-            isDocsEnabled,
-            isSheetsEnabled,
-            reset,
-            setFolder,
-            setIsLoading,
-            setItem,
-            setPermissions,
-            setRole,
-            activeFolder.shareId,
-            devices,
-        ]
+        [drive, handleError, handleFolderError, isDocsEnabled, isSheetsEnabled]
     );
 
     return {

@@ -17,6 +17,13 @@ export const useLabelActions = (labelID: string): [primaryActions: Actions[], se
         case MAILBOX_LABEL_IDS.STARRED:
         case MAILBOX_LABEL_IDS.ALL_MAIL:
         case MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL:
+        case MAILBOX_LABEL_IDS.CATEGORY_SOCIAL:
+        case MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS:
+        case MAILBOX_LABEL_IDS.CATEGORY_UPDATES:
+        case MAILBOX_LABEL_IDS.CATEGORY_FORUMS:
+        case MAILBOX_LABEL_IDS.CATEGORY_DEFAULT:
+        case MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS:
+        case MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS:
             primaryActions = ['trash', 'archive', 'spam'];
             break;
         case MAILBOX_LABEL_IDS.DRAFTS:

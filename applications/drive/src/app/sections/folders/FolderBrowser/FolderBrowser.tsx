@@ -7,8 +7,7 @@ import { MemberRole, ThumbnailType, splitNodeUid, useDrive } from '@proton/drive
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import type {
-    SortParams} from '../../../components/FileBrowser';
+import type { SortParams } from '../../../components/FileBrowser';
 import FileBrowser, {
     type BrowserItemId,
     Cells,
@@ -44,7 +43,7 @@ import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store'
 import { EmptyDeviceRoot } from '../EmptyFolder/EmptyDeviceRoot';
 import { EmptyFolder } from '../EmptyFolder/EmptyFolder';
 import { getSelectedItems } from '../getSelectedItems';
-import type { FolderViewItem} from '../useFolder.store';
+import type { FolderViewItem } from '../useFolder.store';
 import { useFolderStore } from '../useFolder.store';
 import { FolderContextMenu } from './FolderContextMenu';
 import { FolderItemContextMenu } from './FolderItemContextMenu';
@@ -117,7 +116,12 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
     const { openDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const { thumbnails, setThumbnail } = useThumbnailStore();
+    const { thumbnails, setThumbnail } = useThumbnailStore(
+        useShallow((state) => ({
+            thumbnails: state.thumbnails,
+            setThumbnail: state.setThumbnail,
+        }))
+    );
     const openPreview = useOpenPreview();
     const { permissions, isLoading, role, folder } = useFolderStore(
         useShallow((state) => ({
@@ -174,7 +178,9 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
         try {
             for await (const thumbResult of drive.iterateThumbnails([item.uid], ThumbnailType.Type1)) {
                 if (thumbResult.ok) {
-                    const url = URL.createObjectURL(new Blob([thumbResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' }));
+                    const url = URL.createObjectURL(
+                        new Blob([thumbResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' })
+                    );
                     setThumbnail(item.thumbnailId, { sdUrl: url });
                 } else {
                     setThumbnail(item.thumbnailId, {});

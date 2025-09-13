@@ -62,9 +62,6 @@
       "Collaborate on documents": [
         "Colabora en documentos"
       ],
-      "Collapse navigation bar": [
-        "Minimizar la barra de navegación"
-      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -100,9 +97,6 @@
       ],
       "Dismiss": [
         "Descartar"
-      ],
-      "Display navigation bar": [
-        "Mostrar la barra de navegación"
       ],
       "Done": [
         "Hecho"
@@ -272,9 +266,6 @@
       "Show more benefits": [
         "Mostrar más ventajas"
       ],
-      "Show navigation bar": [
-        "Mostrar la barra de navegación"
-      ],
       "Sign out": [
         "Cerrar sesión"
       ],
@@ -396,9 +387,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ cycle } meses el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
-      ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
@@ -1162,7 +1150,7 @@
         "Quizá más tarde"
       ],
       "Send invitation": [
-        "Enviar invitación"
+        "Enviar la invitación"
       ]
     },
     "collider_2025: Invite Email Placeholder": {
@@ -1180,7 +1168,7 @@
     },
     "collider_2025: Invite Sent": {
       "Invitation sent": [
-        "Invitación enviada"
+        "Se ha enviado la invitación"
       ]
     },
     "collider_2025: Invite Success": {
@@ -1188,7 +1176,7 @@
         "Invitación enviada"
       ],
       "No invites left  ": [
-        "No quedan invitaciones "
+        "No quedan invitaciones  "
       ],
       "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
         "¡Gracias por ayudar a otros a descubrir ${ LUMO_SHORT_APP_NAME }! Si hay más invitaciones disponibles, te lo haremos saber."
@@ -1391,23 +1379,11 @@
       "Favorite": [
         "Favoritos"
       ],
-      "Favorites": [
-        "Favoritos"
-      ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Obtener ${ LUMO_SHORT_APP_NAME } Plus"
       ],
-      "Help and support ": [
-        "Ayuda y soporte "
-      ],
-      "History": [
-        "Historial"
-      ],
       "New chat": [
         "Nuevo chat"
-      ],
-      "Search chats": [
-        "Buscar chats"
       ],
       "Send": [
         "Enviar"
@@ -1458,9 +1434,6 @@
       ],
       "Processing files, please wait...": [
         "Procesando archivos, espera..."
-      ],
-      "Search history": [
-        "Historial de búsqueda"
       ]
     },
     "collider_2025:Title": {
@@ -1502,9 +1475,6 @@
       ],
       "No result.": [
         "Sin resultados."
-      ],
-      "Star a chat to save it as a favorite.": [
-        "Destaca un chat para guardarlo como favorito."
       ],
       "The AI that respects your privacy": [
         "La IA que respeta tu privacidad"
@@ -3122,9 +3092,6 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluyendo ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
       ],
@@ -3547,12 +3514,6 @@
       "Last name": [
         "Apellido"
       ],
-      "Main": [
-        "Principal"
-      ],
-      "Navigation": [
-        "Navegación"
-      ],
       "Notification": [
         "Notificación"
       ],
@@ -3609,9 +3570,6 @@
       ],
       "Thomas": [
         "Andrea"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Código de verificación"
@@ -4755,11 +4713,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrás modificar o cancelar tu suscripción. Espera hasta que tu pago se complete antes de intentar cualquier cambio. Gracias por tu paciencia."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
+      ],
       "Got it": [
         "Entiendo"
       ],
       "I'm purchasing as a business": [
         "Estoy comprando como empresa"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Incluyendo ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Incluyendo el ${ taxRate }% de impuestos: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -4775,6 +4745,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
+      ],
+      "Taxes": [
+        "Impuestos"
       ],
       "terms & conditions": [
         "los términos y condiciones"
@@ -4806,6 +4779,9 @@
       ],
       "Timeout exceeded": [
         "Se ha agotado el tiempo de espera."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "VAT number": [
         "Número de IVA"
@@ -5759,9 +5735,6 @@
       "${ n } wallet": [
         "${ n } cartera",
         "${ n } carteras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Una forma más segura de mantener tu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin vía correo electrónico"

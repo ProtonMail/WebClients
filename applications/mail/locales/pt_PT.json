@@ -313,9 +313,6 @@
       "Copy alias “${ name }”": [
         "Copiar o alias «${ name }»"
       ],
-      "Copy email address": [
-        "Copiar o endereço de e-mail"
-      ],
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
@@ -796,9 +793,6 @@
       "Make it friendly": [
         "Torná-lo amigável"
       ],
-      "Manage addresses": [
-        "Gerir endereços"
-      ],
       "Manage advanced account protections": [
         "Gerir as proteções avançadas da conta"
       ],
@@ -1073,7 +1067,7 @@
         "Refine"
       ],
       "Refresh the page": [
-        "Actualizar a página"
+        "Atualizar página"
       ],
       "Remove": [
         "Remover"
@@ -1161,6 +1155,9 @@
       ],
       "Resume downloading": [
         "Retomar transferência"
+      ],
+      "Retry": [
+        "Repetir"
       ],
       "Revert to original display": [
         "Regressar ao ecrã original"
@@ -1490,7 +1487,7 @@
         "Não confiar"
       ],
       "Update": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Update recovery file": [
         "Actualizar o ficheiro de recuperação"
@@ -1499,7 +1496,7 @@
         "Actualizar a frase de recuperação"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Upgrade Now": [
         "Atualizar agora"
@@ -5207,9 +5204,6 @@
       "customer support": [
         "apoio ao cliente"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Os planos de família não suportam atualmente contas externas. Crie um endereço ${ BRAND_NAME } antes de aderir. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Se aceitar o convite, mudá-lo-emos do seu plano actual e creditaremos na sua conta qualquer saldo remanescente."
       ],
@@ -7136,9 +7130,6 @@
       "Included for free with your plan": [
         "Incluído gratuitamente no seu plano"
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Incluindo ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Herdado da pasta principal"
       ],
@@ -8289,9 +8280,6 @@
       "You are about to open your default browser and visit:": [
         "Está prestes a abrir o seu navegador predefinido e a visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Tem actualmente sessão iniciada como ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Está a utilizar mais armazenamento do que o incluído no plano ${ downgradedPlanName }. Elimine ou remova dados para optar por um plano inferior."
       ],
@@ -8606,6 +8594,9 @@
       "Expired": [
         "Expirada"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Obsoleta"
       ],
@@ -8885,12 +8876,6 @@
       ],
       "Also archive": [
         "Arquivar também"
-      ],
-      "Always label sender's emails": [
-        "Etiquetar sempre as mensagens de e-mail do remetente"
-      ],
-      "Always move sender's emails": [
-        "Mover sempre os e-mails do remetente"
       ],
       "AND": [
         "E"
@@ -9219,9 +9204,6 @@
       "Move ${ sidebarElementName }": [
         "Mover ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Mover mensagens para"
-      ],
       "Move to": [
         "Mover para"
       ],
@@ -9447,9 +9429,6 @@
       "Undisclosed Recipients": [
         "Destinatários não divulgados"
       ],
-      "Unknown": [
-        "Desconhecido"
-      ],
       "Unsafe or problematic": [
         "Inseguro ou problemático"
       ],
@@ -9464,9 +9443,6 @@
       ],
       "Username": [
         "Nome de utilizador"
-      ],
-      "VAT": [
-        "IVA"
       ],
       "Verification code": [
         "Código de verificação"
@@ -9652,6 +9628,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Crie um calendário para gerir os seus convites."
+      ],
+      "Deleted": [
+        "Eliminado"
       ],
       "Drafts": [
         "Rascunhos"
@@ -11194,7 +11173,7 @@
         "Paga anualmente e garante a nossa melhor oferta"
       ],
       "Save": [
-        "Salvar"
+        "Poupe"
       ],
       "Save big when you pay annually": [
         "Poupe em grande ao pagar anualmente!"
@@ -11690,6 +11669,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renovação por ${ renewPriceStr } com possibilidade de cancelar a qualquer momento."
       ],
+      "Taxes": [
+        "Impostos"
+      ],
       "terms & conditions": [
         "os termos e condições"
       ],
@@ -11720,6 +11702,9 @@
       ],
       "Timeout exceeded": [
         "O tempo limite foi excedido."
+      ],
+      "VAT": [
+        "IVA"
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "A sua moeda foi alterada para euros (€) porque as transferências bancárias SEPA apenas aceitam pagamentos em euros."
@@ -11772,6 +11757,9 @@
     "Payments.VAT number name": {
       "ABN": [
         "Número de empresa australiano (ABN)"
+      ],
+      "Add ABN": [
+        "Adicionar ABN"
       ],
       "Business Number": [
         "Número da empresa"
@@ -12706,7 +12694,7 @@
         "Desfrute do streaming sem limites"
       ],
       "Upgrade": [
-        "Actualizar"
+        "Atualizar"
       ],
       "Upgrade for ${ pricingTitle }": [
         "Melhore por ${ pricingTitle }"
@@ -14122,12 +14110,6 @@
       "Create contact": [
         "Criar contacto"
       ],
-      "Create folder \"${ search }\"": [
-        "Criar pasta \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Criar etiqueta \"${ search }\""
-      ],
       "Create new group": [
         "Criar um grupo"
       ],
@@ -14500,6 +14482,9 @@
       "Newsletters view": [
         "Visualização de boletins informativos"
       ],
+      "Next": [
+        "Seguinte"
+      ],
       "Next conversation": [
         "Conversa seguinte"
       ],
@@ -14545,6 +14530,9 @@
       "Open actions dropdown": [
         "Abrir lista de acções"
       ],
+      "Open pagination": [
+        "Abrir paginação"
+      ],
       "Org setup": [
         "Configuração da organização"
       ],
@@ -14574,6 +14562,9 @@
       ],
       "Preview": [
         "Pré-visualização"
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Previous conversation": [
         "Conversa anterior"
@@ -15098,9 +15089,6 @@
       "${ n } wallet": [
         "${ n } carteira",
         "${ n } carteiras"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Uma maneira mais segura de conservar o seu Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

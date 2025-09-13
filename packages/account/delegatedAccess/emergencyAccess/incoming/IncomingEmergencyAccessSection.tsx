@@ -17,7 +17,8 @@ import { SECOND } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ContactCell } from '../ContactCell';
-import { getFormattedAccessibleAtDate, getFormattedRemainingDays, getFormattedTriggerDelay } from '../date';
+import { DateCountdown } from '../DateCountdown';
+import { getFormattedAccessibleAtDate, getFormattedTriggerDelay } from '../date';
 import { type IncomingController, useIncomingController } from './IncomingController';
 import { getMetaIncomingDelegatedAccess } from './helper';
 import type { MetaIncomingDelegatedAccess } from './interface';
@@ -35,7 +36,7 @@ const IncomingDelegatedAccessCell = ({
     value: {
         parsedIncomingDelegatedAccess: { accessibleAtDate, isDisabled },
     },
-    meta: { canLogin, hasRequestedAccess, accessibleAtTimeDiff },
+    meta: { canLogin, hasRequestedAccess },
 }: Pick<IncomingItemProps, 'value' | 'meta'>) => {
     if (isDisabled) {
         return (
@@ -75,10 +76,12 @@ const IncomingDelegatedAccessCell = ({
                         className="text-semibold mr-1 text-center"
                     >{c('emergency_access').t`Access requested`}</Pill>
                 </Tooltip>
-                <span title={tooltip} className="inline-flex items-center">
-                    <IcHourglass className="color-weak shrink-0 mr-1" />
-                    {getFormattedRemainingDays(accessibleAtTimeDiff)}
-                </span>
+                {accessibleAtDate && (
+                    <span title={tooltip} className="inline-flex items-center">
+                        <IcHourglass className="color-weak shrink-0 mr-1" />
+                        <DateCountdown date={accessibleAtDate} />
+                    </span>
+                )}
             </div>
         );
     }
@@ -170,7 +173,7 @@ const IncomingTable = ({
         { title: c('Title').t`Name`, className: 'w-1/3' },
         {
             title: c('emergency_access').t`Wait time`,
-            info: c('emergency_access').t`Time required before automatically granting them access`,
+            info: c('emergency_access').t`Time required before automatically giving you access`,
         },
         { title: c('Title').t`Status`, className: 'w-1/3' },
         { title: '' },
@@ -186,7 +189,11 @@ const IncomingTable = ({
                         <TableHeaderCell key={title} className={className}>
                             <div className="flex items-center flex-nowrap">
                                 {title}
-                                {info && <Info className="ml-2 shrink-0" title={info} />}
+                                {info && (
+                                    <span className="ml-2 inline-flex">
+                                        <Info className="shrink-0" title={info} />
+                                    </span>
+                                )}
                             </div>
                         </TableHeaderCell>
                     ))}

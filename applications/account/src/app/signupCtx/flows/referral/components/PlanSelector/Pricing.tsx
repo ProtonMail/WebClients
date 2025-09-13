@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 import { c } from 'ttag';
 
 import { Price, SkeletonLoader } from '@proton/components';
-import { type PLANS } from '@proton/payments';
+import type { PLANS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 
 const Pricing = ({ plan }: { plan: PLANS }) => {
@@ -16,7 +16,7 @@ const Pricing = ({ plan }: { plan: PLANS }) => {
         currency: payments.options.currency,
     };
     const coupon = payments.getCoupon(planToCheck);
-    const price = payments.getPriceOrFallback(merge(planToCheck, { coupon }));
+    const price = payments.getPriceOrFallback(merge(planToCheck, { coupon, trial: false }));
 
     const currency = price.checkResult.Currency;
 
@@ -27,7 +27,7 @@ const Pricing = ({ plan }: { plan: PLANS }) => {
             className="text-sm color-weak"
             suffix={c('Suffix').t`/month`}
         >
-            {price?.uiData.withDiscountPerMonth ?? 0}
+            {price.uiData.withDiscountPerMonth}
         </Price>
     ) : (
         <SkeletonLoader width="3rem" height="1.25rem" />

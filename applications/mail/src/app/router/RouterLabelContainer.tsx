@@ -7,6 +7,8 @@ import { Commander, useActiveBreakpoint, useModalState } from '@proton/component
 import { useFolders } from '@proton/mail/index';
 import clsx from '@proton/utils/clsx';
 
+import { CategoriesTabs } from 'proton-mail/components/categoryView/categoriesTabs/CategoriesTabs';
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import MailboxList from 'proton-mail/components/list/MailboxList';
 import ResizableWrapper from 'proton-mail/components/list/ResizableWrapper';
 import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
@@ -22,7 +24,7 @@ import { useMailboxHotkeys } from 'proton-mail/hooks/mailbox/useMailboxHotkeys';
 import { useWelcomeFlag } from 'proton-mail/hooks/mailbox/useWelcomeFlag';
 import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from 'proton-mail/hooks/useResizableUtils';
 import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
-import { type ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
+import type { ElementsStateParams } from 'proton-mail/store/elements/elementsTypes';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { getFolderName } from '../helpers/labels';
@@ -78,10 +80,13 @@ export const RouterLabelContainer = ({
         labelDropdownToggleRef,
         resizeAreaRef,
         moveDropdownToggleRef,
+        scrollContainerRef,
     } = useMailboxLayoutProvider();
 
     const composersCount = useMailSelector(selectComposersCount);
     const breakpoints = useActiveBreakpoint();
+
+    const categoryViewControl = useCategoriesView();
 
     const [commanderModalProps, showCommander, commanderRender] = useModalState();
     const welcomeFlag = useWelcomeFlag([labelID, selectedIDs.length]);
@@ -203,14 +208,18 @@ export const RouterLabelContainer = ({
                     actions={actions}
                     elementsData={elementsData}
                     toolbar={
-                        <MailboxToolbar
-                            params={params}
-                            navigation={navigation}
-                            elementsData={elementsData}
-                            actions={{ ...actions, handleMove }}
-                        />
+                        <>
+                            <MailboxToolbar
+                                params={params}
+                                navigation={navigation}
+                                elementsData={elementsData}
+                                actions={{ ...actions, handleMove }}
+                            />
+                            {categoryViewControl.shouldShowTabs && <CategoriesTabs categoryLabelID={labelID} />}
+                        </>
                     }
                     listRef={listRef}
+                    scrollContainerRef={scrollContainerRef}
                     noBorder={hasRowMode || !showContentPanel}
                     setFocusID={setFocusID}
                 />

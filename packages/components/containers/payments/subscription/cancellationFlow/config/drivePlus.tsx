@@ -8,7 +8,7 @@ import type { ConfirmationModal, PlanConfig, PlanConfigFeatures, PlanConfigTesti
 import { getDefaultConfirmationModal, getDefaultReminder, getDefaultTestimonial } from './b2cCommonConfig';
 import type { ConfigProps } from './types';
 
-export const getDrivePlusConfig = ({ plan, subscription, user }: ConfigProps): PlanConfig => {
+export const getDrivePlusConfig = ({ plan, subscription }: ConfigProps): PlanConfig => {
     const currentPlan = PLANS.DRIVE;
     const planName = PLAN_NAMES[currentPlan];
     const planMaxSpace = humanSize({ bytes: plan.MaxSpace, unit: 'GB', fraction: 0 });
@@ -16,7 +16,7 @@ export const getDrivePlusConfig = ({ plan, subscription, user }: ConfigProps): P
     const reminder = getDefaultReminder(planName);
     const testimonials: PlanConfigTestimonial = getDefaultTestimonial();
 
-    const cancellablePlan = hasCancellablePlan(subscription, user);
+    const cancellablePlan = hasCancellablePlan(subscription);
 
     const confirmationModal: ConfirmationModal = {
         ...getDefaultConfirmationModal(subscription, planName, cancellablePlan),

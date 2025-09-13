@@ -1,9 +1,8 @@
 import { apiMock } from '@proton/testing/lib/api';
 import { MOCK_TOKEN_RESPONSE, addTokensResponse } from '@proton/testing/lib/payments/api-endpoints';
 
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
-import { Autopay } from '../constants';
-import { type AmountAndCurrency, type SavedPaymentMethodInternal, type V5PaymentToken } from '../interface';
+import { Autopay, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../constants';
+import type { AmountAndCurrency, SavedPaymentMethodInternal, V5PaymentToken } from '../interface';
 import { SavedPaymentProcessor } from './savedPayment';
 
 describe('SavedPaymentProcessor', () => {
@@ -59,7 +58,7 @@ describe('SavedPaymentProcessor', () => {
     });
 
     it('should throw error when verifyPaymentToken is called before fetchPaymentToken', async () => {
-        await expect(savedPaymentProcessor.verifyPaymentToken()).rejects.toThrowError(
+        await expect(savedPaymentProcessor.verifyPaymentToken()).rejects.toThrow(
             'Payment token was not fetched. Please call fetchPaymentToken() first.'
         );
     });
@@ -142,7 +141,7 @@ describe('SavedPaymentProcessor', () => {
         mockVerifyPayment.mockRejectedValue(new Error('error'));
 
         await savedPaymentProcessor.fetchPaymentToken();
-        await expect(savedPaymentProcessor.verifyPaymentToken()).rejects.toThrowError('error');
+        await expect(savedPaymentProcessor.verifyPaymentToken()).rejects.toThrow('error');
     });
 
     it('should reset payment token', async () => {

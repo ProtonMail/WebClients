@@ -294,9 +294,6 @@
       "Copy addresses": [
         "Копіювати адреси"
       ],
-      "Copy email address": [
-        "Копіювати адресу електронної пошти"
-      ],
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
@@ -741,9 +738,6 @@
       "Make it friendly": [
         "Зробити дружнім"
       ],
-      "Manage addresses": [
-        "Керувати адресами"
-      ],
       "Manage folders": [
         "Керувати теками"
       ],
@@ -1070,6 +1064,9 @@
       ],
       "Resume downloading": [
         "Відновити завантаження"
+      ],
+      "Retry": [
+        "Повторити спробу"
       ],
       "Revert to original display": [
         "Повернути оригінальний вигляд"
@@ -4945,9 +4942,6 @@
       "customer support": [
         "клієнтська підтримка"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Сімейні плани наразі не підтримують зовнішні облікові записи. Створіть адресу ${ BRAND_NAME } перед приєднанням. ${ addressSettingsLink }"
-      ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Якщо ви приймете запрошення, ми змінимо ваш поточний тарифний план і зарахуємо невикористану частину коштів на ваш обліковий запис."
       ],
@@ -6877,9 +6871,6 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Вкажіть свій запит і отриману відповідь, щоб допомогти нам підвищити точність."
       ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Включно з ${ formattedTaxRate }% ${ taxName }: ${ price }"
-      ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
       ],
@@ -7900,9 +7891,6 @@
       "You are about to open your default browser and visit:": [
         "Ви хочете відкрити типовий браузер і відвідати:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Наразі ви ввійшли як ${ user.Name } (${ user.Email })."
-      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Ви використовуєте більший обсяг сховища, ніж передбачено планом ${ downgradedPlanName }. Щоб перейти на нижчий тарифний план, звільніть місце в сховищі."
       ],
@@ -8466,12 +8454,6 @@
       "Also archive": [
         "Також архівувати"
       ],
-      "Always label sender's emails": [
-        "Завжди позначати мітками е-пошту відправника"
-      ],
-      "Always move sender's emails": [
-        "Завжди переміщувати е-пошту відправника"
-      ],
       "AND": [
         "ТА"
       ],
@@ -8970,9 +8952,6 @@
       "Undisclosed Recipients": [
         "Приховані отримувачі"
       ],
-      "Unknown": [
-        "Невідомий"
-      ],
       "Unsafe or problematic": [
         "Небезпечний або проблемний"
       ],
@@ -8984,9 +8963,6 @@
       ],
       "Username": [
         "Ім'я користувача"
-      ],
-      "VAT": [
-        "ПДВ"
       ],
       "Verification code": [
         "Код підтвердження"
@@ -10650,7 +10626,7 @@
         "Можливо пізніше"
       ],
       "Save": [
-        "Зберегти"
+        "Заощаджуйте"
       ],
       "Special offer": [
         "Спеціальна пропозиція"
@@ -13455,12 +13431,6 @@
       "Create contact": [
         "Створити контакт"
       ],
-      "Create folder \"${ search }\"": [
-        "Створити теку \"${ search }\""
-      ],
-      "Create label \"${ search }\"": [
-        "Створити мітку \"${ search }\""
-      ],
       "Create new group": [
         "Створити нову групу"
       ],
@@ -13803,6 +13773,9 @@
       "New message": [
         "Нове повідомлення"
       ],
+      "Next": [
+        "Далі"
+      ],
       "Next conversation": [
         "Наступна розмова"
       ],
@@ -13836,6 +13809,9 @@
       "Open actions dropdown": [
         "Випадне меню дій"
       ],
+      "Open pagination": [
+        "Показати нумерацію сторінок"
+      ],
       "Other information": [
         "Інша інформація"
       ],
@@ -13856,6 +13832,9 @@
       ],
       "Preview": [
         "Попередній перегляд"
+      ],
+      "Previous": [
+        "Назад"
       ],
       "Previous conversation": [
         "Попередня розмова"
@@ -14347,9 +14326,6 @@
         "${ n } гаманці",
         "${ n } гаманців",
         "${ n } гаманців"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Безпечніший спосіб зберігання Bitcoin"
       ],
       "Bitcoin via Email": [
         "Bitcoin через пошту"

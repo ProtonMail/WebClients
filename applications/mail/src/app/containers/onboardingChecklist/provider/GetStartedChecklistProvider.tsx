@@ -8,8 +8,13 @@ import { useApi, useEventManager } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { seenCompletedChecklist, updateChecklistDisplay, updateChecklistItem } from '@proton/shared/lib/api/checklist';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { type ChecklistApiResponse, type ChecklistKeyType, ChecklistType } from '@proton/shared/lib/interfaces';
-import { CHECKLIST_DISPLAY_TYPE, ChecklistKey } from '@proton/shared/lib/interfaces';
+import {
+    CHECKLIST_DISPLAY_TYPE,
+    type ChecklistApiResponse,
+    ChecklistKey,
+    type ChecklistKeyType,
+    ChecklistType,
+} from '@proton/shared/lib/interfaces';
 
 import useCanCheckItem from '../hooks/useCanCheckItem';
 import type { GetStartedChecklistApiResponse } from '../hooks/useChecklist';

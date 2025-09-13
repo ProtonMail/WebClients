@@ -262,6 +262,9 @@
       "Claim this address": [
         "Διεκδικήστε αυτή τη διεύθυνση"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Δημιουργήστε τη δωρεάν ${ BRAND_NAME } διεύθυνσή σας"
+      ],
       "Clear all formatting": [
         "Απαλοιφή μορφοποιήσεων"
       ],
@@ -787,9 +790,6 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
-      "Give access now": [
-        "Δώστε πρόσβαση τώρα"
-      ],
       "Go back": [
         "Επιστροφή"
       ],
@@ -1011,6 +1011,9 @@
       ],
       "Open": [
         "Άνοιγμα"
+      ],
+      "Open ${ applicationName }": [
+        "Άνοιγμα ${ applicationName }"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
@@ -1407,6 +1410,9 @@
       ],
       "Spam": [
         "Ανεπιθύμητο"
+      ],
+      "Start free trial": [
+        "Εκκίνηση δωρεάν δοκιμής"
       ],
       "Start import": [
         "Έναρξη εισαγωγής"
@@ -1982,6 +1988,9 @@
       ],
       "Secure your communications": [
         "Ασφαλίστε τις επικοινωνίες σας"
+      ],
+      "Talk confidentially": [
+        "Μιλήστε εμπιστευτικά"
       ]
     },
     "Apps dropdown": {
@@ -2045,6 +2054,66 @@
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο ηλεκτρονικό ταχυδρομείο μου."
+      ]
+    },
+    "b2b_trials_2025: Header": {
+      "Payment details": [
+        "Στοιχεία Πληρωμής"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες στις ${ formattedDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα στις ${ formattedDate }. Δεν θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "Κάνοντας κλικ στο \"Δοκιμή\", συμφωνείτε με τους ${ termsAndConditions }."
+      ],
+      "During the trial period, you can have up to 10 users.": [
+        "Κατά τη δοκιμαστική περίοδο, μπορείτε να έχετε έως και 10 χρήστες."
+      ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "δωρεάν για ${ TRIAL_DURATION_DAYS } ημέρες"
+      ],
+      "on ${ formattedDate }": [
+        "στις ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Δοκιμάστε ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Δοκιμάστε το δωρεάν για ${ TRIAL_DURATION_DAYS } ημέρες"
+      ],
+      "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
+        "Όταν ακυρώσετε, η δωρεάν δοκιμή σας δε θα μετατραπεί σε συνδρομή επί πληρωμή, αλλά θα εξακολουθείτε να απολαμβάνετε τα οφέλη του πλάνου μέχρι το τέλος της δοκιμαστικής περιόδου. Μετά από αυτό, θα υποβαθμιστείτε στο ${ BRAND_NAME } Free πλάνο."
+      ],
+      "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
+        "Μπορείτε να έχετε έως ${ TRIAL_MAX_DEDICATED_IPS } αφιερωμένο διακομιστή κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_LUMO_SEATS } θέσεις ${ LUMO_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_SCRIBE_SEATS } θέσεις Scribe κατά τη δοκιμαστική περίοδο."
+      ],
+      "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_USERS } χρήστες κατά τη δοκιμαστική περίοδο."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "Δεν μπορείτε να προσθέσετε προσαρμοσμένους τομείς κατά τη δοκιμαστική περίοδο."
+      ],
+      "You have reached the trial limit.": [
+        "Έχετε φτάσει το όριο της δοκιμής."
+      ]
+    },
+    "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Οφειλόμενο ποσό μετά τη δοκιμαστική περίοδο"
+      ],
+      "Amount due now": [
+        "Οφειλόμενο ποσό τώρα"
       ]
     },
     "b2b_trials_Action": {
@@ -2451,6 +2520,9 @@
       "Manual setup problem": [
         "Πρόβλημα χειροκίνητης ρύθμισης"
       ],
+      "Meet problem": [
+        "Πρόβλημα Meet"
+      ],
       "Other": [
         "Άλλο"
       ],
@@ -2814,6 +2886,112 @@
       ],
       "Expand": [
         "Ανάπτυξη"
+      ]
+    },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Συνομιλία με έναν ιδιωτικό βοήθημα τεχνητής νοημοσύνης"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
+      ],
+      "Basic chat history": [
+        "Βασικό ιστορικό συνομιλιών"
+      ],
+      "Full chat history with search": [
+        "Πλήρης ιστορία συνομιλίας με αναζήτηση"
+      ],
+      "Large file upload support": [
+        "Υποστήριξη για μεταφόρτωση μεγάλων αρχείων"
+      ],
+      "Limited daily chats": [
+        "Περιορισμένες καθημερινές συνομιλίες"
+      ],
+      "Limited favorites": [
+        "Περιορισμένα αγαπημένα"
+      ],
+      "Unlimited daily chats": [
+        "Απεριόριστες καθημερινές συνομιλίες"
+      ],
+      "Unlimited favorites for quick access": [
+        "Απεριόριστα αγαπημένα για γρήγορη πρόσβαση"
+      ],
+      "Upload and query multiple large files": [
+        "Ανεβάστε και αναζητήσετε πολλαπλά μεγάλα αρχεία"
+      ],
+      "Upload and query small files": [
+        "Ανεβάστε και αναζητήστε μικρά αρχεία"
+      ],
+      "Web search access": [
+        "Πρόσβαση στην αναζήτηση ιστού"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Κατασκευασμένο και βασισμένο στην Ευρώπη"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } είναι μια τεχνητή νοημοσύνη που δίνει προτεραιότητα στην ιδιωτικότητα και σας βοηθά να ολοκληρώσετε περισσότερα ενώ διατηρείτε τα δεδομένα σας ασφαλή. Ξεκλειδώστε όλες τις δυνατότητές της και απολαύστε πρόωρη πρόσβαση σε νέες δυνατότητες καθώς αυτές παρουσιάζονται."
+      ],
+      "Access to advanced AI models": [
+        "Πρόσβαση σε προηγμένα μοντέλα Τεχνητής Νοημοσύνης"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Προσθήκη ${ LUMO_APP_NAME }"
+      ],
+      "AI assistant that respects your privacy": [
+        "Βοηθός τεχνητής νοημοσύνης που σέβεται την ιδιωτικότητά σας"
+      ],
+      "Basic chat history": [
+        "Βασικό ιστορικό συνομιλιών"
+      ],
+      "Data never used for AI training": [
+        "Δεδομένα που δεν έχουν χρησιμοποιηθεί για την εκπαίδευση της τεχνητής νοημοσύνης"
+      ],
+      "Full chat history with search": [
+        "Πλήρης ιστορία συνομιλίας με αναζήτηση"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
+      ],
+      "Limited daily chats": [
+        "Περιορισμένες καθημερινές συνομιλίες"
+      ],
+      "Limited favorites": [
+        "Περιορισμένα αγαπημένα"
+      ],
+      "Open source": [
+        "Ανοιχτού κώδικα"
+      ],
+      "Strict no-logs policy": [
+        "Αυστηρή πολιτική μη διατήρησης αρχείων καταγραφής"
+      ],
+      "Unlimited daily chats": [
+        "Απεριόριστες καθημερινές συνομιλίες"
+      ],
+      "Unlimited favorites for quick access": [
+        "Απεριόριστα αγαπημένα για γρήγορη πρόσβαση"
+      ],
+      "Upload and query multiple large files": [
+        "Ανεβάστε και αναζητήσετε πολλαπλά μεγάλα αρχεία"
+      ],
+      "Upload and query small files": [
+        "Ανεβάστε και αναζητήστε μικρά αρχεία"
+      ],
+      "Web search access": [
+        "Πρόσβαση στην αναζήτηση ιστού"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Πίσω στις συνομιλίες"
+      ],
+      "Conversations": [
+        "Συνομιλίες"
       ]
     },
     "color": {
@@ -4165,6 +4343,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "Το ${ MAIL_APP_NAME } είναι η προεπιλεγμένη εφαρμογή αλληλογραφίας σας."
       ],
+      "A checked box means the feature is disabled.": [
+        "Ένα επιλεγμένο πλαίσιο σημαίνει ότι η δυνατότητα είναι απενεργοποιημένη."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Προσθέστε φακέλους και αρχεία στο ${ DRIVE_APP_NAME } και προσκαλέστε μέλη της ομάδας για προβολή ή επεξεργασία."
       ],
@@ -4307,14 +4488,17 @@
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Μπορείτε να συνεχίσετε να προσκαλείτε φίλους, αλλά δεν θα μπορείτε να κερδίσετε περισσότερες πιστώσεις"
       ],
+      "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
+        "Μπορείτε να προσαρμόσετε τη λίστα των τομέων στους οποίους ορισμένες αυτόματες λειτουργίες στην προέκταση προγράματος περιήγησης ${ PASS_APP_NAME } (Αυτόματη συμπλήρωση, Αυτόματη πρόταση, Αυτόματη αποθήκευση) δε θα πρέπει να εκτελούνται."
+      ],
       "You can enforce the password rules that organization members will use when they generate a password in ${ PASS_APP_NAME }.": [
         "Μπορείτε να επιβάλετε τους κανόνες κωδικού πρόσβασης που θα χρησιμοποιούν τα μέλη του οργανισμού όταν δημιουργούν έναν κωδικό πρόσβασης στο ${ PASS_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
       ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "Θα λάβετε ${ referralReward } σε πίστωση στο ${ BRAND_NAME } όταν το άτομο που προσκαλείτε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }, και θα λάβουν επίσης ${ referralReward } σε πιστώσεις για να ξεκινήσουν."
+      "You’ll receive ${ referralInfo.referrerRewardAmount } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralInfo.refereeRewardAmount } in credits to get started.": [
+        "Θα λάβετε ${ referralInfo.referrerRewardAmount } σε πίστωση στο ${ BRAND_NAME } όταν το άτομο που προσκαλείτε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }, και θα λάβουν επίσης ${ referralInfo.refereeRewardAmount } σε πιστώσεις για να ξεκινήσουν."
       ]
     },
     "description": {
@@ -5205,13 +5389,21 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME } ηλεκτρονική διεύθυνση Λογαριασμού"
       ],
+      "${ days } day left": [
+        "${ days } ημέρα απομένει",
+        "${ days } ημέρες απομένουν"
+      ],
+      "${ hours } hour left": [
+        "${ hours } ώρα απομένει",
+        "${ hours } ώρες απομένουν"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } λεπτό απομένει",
+        "${ minutes } λεπτά απομένουν"
+      ],
       "${ n } day": [
         "${ n } ημέρα",
         "${ n } ημέρες"
-      ],
-      "${ n } day left": [
-        "${ n } ημέρα απομένει",
-        "${ n } ημέρες απομένουν"
       ],
       "${ user } is requesting emergency access to your account": [
         "${ user } ζητάει επείγουσα πρόσβαση στον λογαριασμό σας"
@@ -5318,6 +5510,9 @@
       "Less than a day": [
         "Λιγότερο από μία ημέρα"
       ],
+      "Less than a minute left": [
+        "Απομένει λιγότερο από ένα λεπτό"
+      ],
       "None": [
         "Κανένας"
       ],
@@ -5381,6 +5576,9 @@
       ],
       "Time required before automatically giving access": [
         "Απαιτούμενος χρόνος πριν την αυτόματη παροχή πρόσβασης"
+      ],
+      "Time required before automatically giving you access": [
+        "Απαιτούμενος χρόνος πριν σας δοθεί αυτόματα πρόσβαση"
       ],
       "Time required before automatically granting them access": [
         "Απαιτούμενος χρόνος πριν την αυτόματη παροχή πρόσβασης σε αυτούς"
@@ -5683,6 +5881,9 @@
       ],
       "Invalid Sieve code": [
         "Μη έγκυρος κωδικός Sieve"
+      ],
+      "Invalid URL": [
+        "Μη έγκυρη διεύθυνση URL"
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
@@ -6493,8 +6694,8 @@
       "customer support": [
         "εξυπηρέτηση πελατών"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Τα οικογενειακά πλάνα δεν υποστηρίζουν προς το παρόν εξωτερικούς λογαριασμούς. Δημιουργήστε μια διεύθυνση ${ BRAND_NAME } πριν εγγραφείτε. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Εάν αποδεχτείτε την πρόσκληση, θα σας αλλάξουμε από το τρέχον πλάνο σας και θα πιστώσουμε στον λογαριασμό σας τυχόν υπόλοιπο."
@@ -7266,6 +7467,9 @@
       "Device": [
         "Συσκευή"
       ],
+      "Domain": [
+        "Τομέας"
+      ],
       "Enter your email address": [
         "Εισάγετε τη διεύθυνση του ηλεκτρονικού ταχυδρομείου σας"
       ],
@@ -7298,6 +7502,9 @@
       ],
       "Organization key fingerprint": [
         "Αποτύπωμα κλειδιού οργανισμού"
+      ],
+      "Password ends with": [
+        "Ο κωδικός πρόσβασης τελειώνει με"
       ],
       "Payment details": [
         "Στοιχεία Πληρωμής"
@@ -7340,6 +7547,9 @@
       ],
       "User": [
         "Χρήστης"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
       ]
     },
     "Header for addresses table": {
@@ -7942,6 +8152,24 @@
         "${ n } διεύθυνση",
         "${ n } διευθύνσεις"
       ],
+      "${ name } for Android": [
+        "${ name } για Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } για GNU/Linux"
+      ],
+      "${ name } for iOS": [
+        "${ name } για iOS"
+      ],
+      "${ name } for macOS": [
+        "${ name } για macOS"
+      ],
+      "${ name } for Web": [
+        "${ name } για Web"
+      ],
+      "${ name } for Windows": [
+        "${ name } για Windows"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: μη βάζετε σε καραντίνα ή απορρίπτετε μη εξουσιοδοτημένα μηνύματα ηλεκτρονικού ταχυδρομείου. Συνήθως, οι χρήστες χρησιμοποιούν αυτήν την πολιτική μόνο για την αντιμετώπιση προβλημάτων ή τη δοκιμή."
       ],
@@ -8037,6 +8265,12 @@
       ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
+      ],
+      "${ url } added.": [
+        "${ url } προστέθηκε."
+      ],
+      "${ url } deleted.": [
+        "${ url } διαγράφηκε."
       ],
       "${ userFound } user found": [
         "${ userFound } χρήστης βρέθηκε",
@@ -8309,6 +8543,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ένα ψευδώνυμο ηλεκτρονικού ταχυδρομείου λειτουργεί όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου, αλλά μειώνει τα ανεπιθύμητα μηνύματα και διατηρεί κρυφή την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου και την ταυτότητά σας."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Παρουσιάστηκε σφάλμα κατά την επικοινωνία με το **${ applicationName }**"
       ],
       "An error occurred while communicating with the extension": [
         "Παρουσιάστηκε σφάλμα κατά την επικοινωνία με την επέκταση"
@@ -9029,11 +9266,11 @@
       "Get ${ upsellPlanName }": [
         "Απόκτηση ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Κερδίστε **${ referrerRewardAmount } πιστώσεις** για κάθε φίλο που κάνει εγγραφή."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Αποκτήστε πρόσβαση με τη δημιουργία ενός λογαριασμού ${ BRAND_NAME } και με αποδοχή της πρόσκλησης."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Κερδίστε και προσφέρετε **${ referralReward } πιστώσεις** για κάθε φίλο που κάνει εγγραφή."
       ],
       "Get it on Google Play": [
         "Αποκτήστε το στο Google Play"
@@ -9203,9 +9440,6 @@
       ],
       "Include device, location, and IP details": [
         "Περίληψη στοιχεία συσκευής, τοποθεσίας και IP"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Συμπεριλαμβανομένου ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Αυξήστε την ασφάλεια του λογαριασμού σας επαληθεύοντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -9795,9 +10029,6 @@
       "Please use another browser or download the file.": [
         "Χρησιμοποιήστε άλλο πρόγραμμα περιήγησης ή κατεβάστε το αρχείο."
       ],
-      "Please verify payment at the new tab which was opened.": [
-        "Παρακαλώ επαληθεύστε τη πληρωμή που βρίσκεται στη νέα καρτέλα που έχει ανοιχτεί."
-      ],
       "Please wait till your changes are synced with the server.": [
         "Παρακαλούμε περιμένετε έως ότου οι αλλαγές σας συγχρονιστούν με τον διακομιστή."
       ],
@@ -10056,6 +10287,9 @@
       ],
       "Signed up": [
         "Εγγράφηκε"
+      ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Η είσοδος με ένα κλειδί ασφαλείας δεν υποστηρίζεται ακόμα σε όλες τις εφαρμογές. Χωρίς TOTP, η είσοδος σε κάποιες εφαρμογές μπορεί να αποτύχει."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
@@ -10572,6 +10806,9 @@
       "URL link": [
         "Σύνδεσμος URL"
       ],
+      "URL settings updated.": [
+        "Οι ρυθμίσεις URL ενημερώθηκαν."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Χρησιμοποιήστε έναν διαχειριστή κωδικών πρόσβασης για να δημιουργήσετε και να αποθηκεύσετε με ασφάλεια τους κωδικούς πρόσβασής σας, εξασφαλίζοντας ισχυρούς κωδικούς πρόσβασης και ευκολότερες συνδέσεις."
       ],
@@ -10616,9 +10853,6 @@
       ],
       "Vault updated": [
         "Η κρύπτη ενημερώθηκε"
-      ],
-      "Verification can take a few minutes.": [
-        "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
       ],
       "Verification link expired": [
         "Ο σύνδεσμος επαλήθευσης έληξε"
@@ -10839,8 +11073,8 @@
       "You are about to open your default browser and visit:": [
         "Πρόκειται να ανοίξετε το προεπιλεγμένο πρόγραμμα περιήγησής σας και να επισκεφθείτε:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Είστε συνδεδεμένος/η ως ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμου αποκλειστικού διακομιστή.",
@@ -10982,6 +11216,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Ενδέχεται να ανακατευθυνθείτε στον ιστότοπο της τράπεζάς σας."
+      ],
+      "You may now start using **${ applicationName }**": [
+        "Μπορείτε τώρα να αρχίσετε να χρησιμοποιείτε το **${ applicationName }**"
       ],
       "You may now start using the extension": [
         "Μπορείτε τώρα να αρχίσετε να χρησιμοποιείτε την προέκταση"
@@ -11182,6 +11419,9 @@
       ],
       "You’re all set": [
         "Όλα έτοιμα!"
+      ],
+      "Zero charge today": [
+        "Μηδενική χρέωση σήμερα"
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
@@ -11774,6 +12014,9 @@
       "Account storage": [
         "Χωρητικότητα λογαριασμού"
       ],
+      "Action": [
+        "Ενέργεια"
+      ],
       "Actions": [
         "Ενέργειες"
       ],
@@ -11915,8 +12158,20 @@
       "Auto-unsubscribe": [
         "Αυτόματη κατάργηση εγγραφής"
       ],
+      "Autofill": [
+        "Αυτόματη συμπλήρωση"
+      ],
+      "Autofill 2FA": [
+        "Αυτόματη συμπλήρωση 2FA"
+      ],
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
+      ],
+      "Autosave": [
+        "Αυτόματη αποθήκευση"
+      ],
+      "Autosuggest": [
+        "Αυτόματη πρόταση"
       ],
       "Awarded": [
         "Βραβευμένα"
@@ -12160,6 +12415,9 @@
       ],
       "Domain name": [
         "Όνομα domain"
+      ],
+      "Domains": [
+        "Τομείς"
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
@@ -12539,6 +12797,9 @@
       "Other amount": [
         "Άλλο ποσό"
       ],
+      "Passkeys": [
+        "Κλειδιά πρόσβασης"
+      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
@@ -12849,14 +13110,14 @@
       "Value": [
         "Τιμή"
       ],
-      "VAT": [
-        "ΦΠΑ"
-      ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
       ],
       "Verify keys with Key Transparency": [
         "Επαλήθευση κλειδιών με το Key Transparency"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Τηλεδιάσκεψη με ${ MEET_APP_NAME }"
       ],
       "Video conferencing with Zoom": [
         "Τηλεδιάσκεψη με Zoom"
@@ -13630,8 +13891,8 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Συνδεθείτε στον λογαριασμό σας ${ BRAND_NAME } για να αποκτήσετε πρόσβαση σε όλες τις κρυπτογραφημένες υπηρεσίες του ${ BRAND_NAME }, όπως ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και περισσότερα. Δεν έχετε λογαριασμό; Δημιουργήστε ένα ΔΩΡΕΑΝ."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Πάρτε τον έλεγχο των δεδομένων σας με διατερματική κρυπτογράφηση. Δεν απαιτείται τραπεζική κάρτα."
+      "Take control of your data with end-to-end encryption": [
+        "Πάρτε τον έλεγχο των δεδομένων σας με κρυπτογράφηση από άκρο σε άκρο"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "Δοκιμάστε το ${ BRAND_NAME } δωρεάν με αυτόν τον σύνδεσμο"
@@ -13840,6 +14101,9 @@
       ],
       "Back": [
         "Πίσω"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Πίσω στη ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Πίσω στο Ημερολόγιο"
@@ -15033,6 +15297,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } δημιουργήθηκε"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Οι ρυθμίσεις τηλεδιάσκεψης του ${ MEET_APP_NAME } έχουν ενημερωθεί."
+      ],
       "${ reason } has been disabled": [
         "${ reason } έχει απενεργοποιηθεί"
       ],
@@ -15053,6 +15320,12 @@
       ],
       "Email notifications have been enabled": [
         "Οι ειδοποιήσεις μέσω ηλεκτρονικού ταχυδρομείου έχουν ενεργοποιηθεί"
+      ],
+      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
+        "Αποτυχία ενημέρωσης των ρυθμίσεων τηλεδιάσκεψης του ${ MEET_APP_NAME }"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Αποτυχία ενημέρωσης των ρυθμίσεων τηλεδιάσκεψης Zoom"
       ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
@@ -15102,8 +15375,8 @@
       "Two-factor authentication is not required anymore": [
         "Ο έλεγχος ταυτότητας δύο παραγόντων δεν απαιτείται πλέον"
       ],
-      "Video conferencing settings have been updated": [
-        "Οι ρυθμίσεις τηλεδιάσκεψης έχουν ενημερωθεί"
+      "Zoom video conferencing settings have been updated": [
+        "Οι ρυθμίσεις τηλεδιάσκεψης του Zoom έχουν ενημερωθεί."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15246,7 +15519,7 @@
         "Πληρώστε ετησίως, εξασφαλίστε την καλύτερη προσφορά μας"
       ],
       "Save": [
-        "Αποθήκευση"
+        "Εξοικονομήστε"
       ],
       "Save big when you pay annually": [
         "Εξοικονομήστε χρήματα όταν πληρώνετε ετησίως"
@@ -16330,11 +16603,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Εξαιρουμένων ${ taxRate }% φόρων ${ taxAmount }"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
       "I'm purchasing as a business": [
         "Αγοράζω ως επιχείρηση"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Συμπεριλαμβανομένου ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Συμπεριλαμβανομένων ${ taxRate }% φόρων ${ taxAmount }"
       ],
       "MM/YY": [
         "ΜΜ/ΕΕ"
@@ -16353,6 +16638,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Ανανεώνει σε ${ renewPriceStr }, ακυρώστε ανά πάσα στιγμή."
+      ],
+      "Taxes": [
+        "Φόροι"
       ],
       "terms & conditions": [
         "όροι και προϋποθέσεις"
@@ -16387,6 +16675,9 @@
       ],
       "Timeout exceeded": [
         "Υπέρβαση χρονικού ορίου"
+      ],
+      "VAT": [
+        "ΦΠΑ"
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
@@ -18245,8 +18536,8 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "Και λάβετε ${ referralReward } σε πιστώσεις, αν εγγραφείτε."
+      "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
+        "Και λάβετε ${ referralInfo.uiData.refereeRewardAmount } σε πιστώσεις, αν εγγραφείτε."
       ],
       "Billing Cycle": [
         "Κύκλος Χρέωσης"
@@ -18311,11 +18602,11 @@
       "Free": [
         "Δωρεάν"
       ],
-      "Free for 14 days": [
-        "Δωρεάν για 14 ημέρες"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Δωρεάν για ${ TRIAL_DURATION_DAYS } ημέρες"
       ],
-      "Get ${ referralReward } in credits": [
-        "Λάβετε ${ referralReward } σε πιστώσεις"
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "Λάβετε ${ referralInfo.uiData.refereeRewardAmount } σε πιστώσεις"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Αποκτήστε μια ασφαλή διεύθυνση ${ MAIL_APP_NAME }, ή ${ internalButton }"
@@ -18396,8 +18687,8 @@
       "Select ${ title }": [
         "Επιλογή ${ title }"
       ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Επιλέξτε μια υπηρεσία και απολαύστε την premium έκδοση δωρεάν για 14 ημέρες. Δεν απαιτείται πιστωτική κάρτα."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
+        "Επιλέξτε μια υπηρεσία και απολαύστε την premium έκδοση για ${ TRIAL_DURATION_DAYS } ημέρες δωρεάν. Δεν απαιτείται πιστωτική κάρτα."
       ],
       "Selected": [
         "Επιλεγμένο"
@@ -18443,6 +18734,9 @@
       ],
       "Total": [
         "Σύνολο"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "Δοκιμάστε ${ BRAND_NAME } για ${ TRIAL_DURATION_DAYS } ημέρες δωρεάν"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "Δοκιμάστε το ${ BRAND_NAME } δωρεάν για 14 ημέρες"
@@ -21056,8 +21350,8 @@
       "Gift code": [
         "Κωδικός δώρου"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Δώστε ${ referralReward } και 2 εβδομάδες δωρεάν. Λάβετε ${ referralReward } πιστώσεις."
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Δώστε ${ refereeRewardAmount } και 2 εβδομάδες δωρεάν. Λάβετε ${ referrerRewardAmount } πιστώσεις."
       ],
       "Group": [
         "Ομάδα"
@@ -21290,6 +21584,9 @@
       ],
       "Passwords made easy": [
         "Οι κωδικοί πρόσβασης γίνονται εύκολοι"
+      ],
+      "Pause list": [
+        "Παύση λίστας"
       ],
       "Pay invoice": [
         "Πληρωμή τιμολογίου"
@@ -21781,6 +22078,9 @@
       "You have no resolved alerts": [
         "Δεν έχετε επιλυμένες ειδοποιήσεις"
       ],
+      "You've successfully signed in!": [
+        "Έχετε συνδεθεί επιτυχώς!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
       ],
@@ -21943,8 +22243,11 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το πλάνο του οργανισμού."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης στις προσκλήσεις ημερολογίου σας."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης ${ MEET_APP_NAME } στις προσκλήσεις ημερολογίου σας."
+      ],
+      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
+        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης Zoom στις προσκλήσεις ημερολογίου σας."
       ],
       "Any protection applied to suspicious activity": [
         "Οποιαδήποτε προστασία εφαρμόζεται σε ύποπτη δραστηριότητα"
@@ -22078,8 +22381,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Η διεύθυνση έχει αποσυνδεθεί. Η αποστολή μηνυμάτων έχει τεθεί σε παύση. Επανασυνδεθείτε για να ενεργοποιήσετε ξανά αυτή τη διεύθυνση."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Η διεύθυνση έχει αποσυνδεθεί. Η αποστολή και η λήψη μηνυμάτων έχει τεθεί σε παύση. Επανασυνδεθείτε για να ενεργοποιήσετε ξανά αυτή τη διεύθυνση."
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."

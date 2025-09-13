@@ -259,6 +259,9 @@
       "Claim this address": [
         "Claim dit adres"
       ],
+      "Claim your free ${ BRAND_NAME } address": [
+        "Claim uw gratis ${ BRAND_NAME }-adres"
+      ],
       "Clear all formatting": [
         "Alle opmaak wissen"
       ],
@@ -783,9 +786,6 @@
       ],
       "Get verification code": [
         "Krijg verificatie code"
-      ],
-      "Give access now": [
-        "Nu toegang geven"
       ],
       "Go back": [
         "Ga terug"
@@ -1404,6 +1404,9 @@
       ],
       "Spam": [
         "Spam"
+      ],
+      "Start free trial": [
+        "Start gratis proefperiode"
       ],
       "Start import": [
         "Begin met importeren"
@@ -2050,8 +2053,8 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ cycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
@@ -2065,14 +2068,17 @@
       "on ${ formattedDate }": [
         "op ${ formattedDate }"
       ],
-      "Try it free for 14 days": [
-        "Probeer het 14 dagen gratis uit"
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Probeer het gratis voor ${ TRIAL_DURATION_DAYS } dagen"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Wanneer u opzegt, wordt uw gratis proefabonnement niet omgezet in een betaald abonnement, maar kunt u nog steeds van de voordelen van het abonnement genieten tot het einde van de proefperiode. Daarna wordt u gedowngraded naar het ${ BRAND_NAME } gratis abonnement."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_SCRIBE_SEATS } Scribe-plaatsen hebben tijdens de proefperiode."
@@ -2499,6 +2505,9 @@
       "Manual setup problem": [
         "Probleem met eigen setup"
       ],
+      "Meet problem": [
+        "Meet probleem"
+      ],
       "Other": [
         "Anders"
       ],
@@ -2864,12 +2873,81 @@
         "Uitvouwen"
       ]
     },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Chat met een privé AI-assistent"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Toegang tot geavanceerde AI-modellen"
+      ],
+      "Basic chat history": [
+        "Basis gespreksgeschiedenis"
+      ],
+      "Full chat history with search": [
+        "Volledige chatgeschiedenis met zoeken"
+      ],
+      "Large file upload support": [
+        "Ondersteuning voor het uploaden van grote bestanden"
+      ],
+      "Limited daily chats": [
+        "Beperkt aantal dagelijkse gesprekken"
+      ],
+      "Limited favorites": [
+        "Beperkte favorieten"
+      ],
+      "Unlimited daily chats": [
+        "Onbeperkt aantal dagelijkse gesprekken"
+      ],
+      "Unlimited favorites for quick access": [
+        "Onbeperkt favorieten voor snelle toegang"
+      ],
+      "Upload and query multiple large files": [
+        "Meerdere grote bestanden uploaden en opvragen"
+      ],
+      "Upload and query small files": [
+        "Kleine bestanden uploaden en opvragen"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } is een privacygerichte AI die u helpt meer gedaan te krijgen, terwijl uw gegevens veilig blijven. Ontgrendel het volledige potentieel en geniet van vroege toegang tot nieuwe functies zodra ze worden geïntroduceerd."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } toevoegen"
+      ],
+      "Data never used for AI training": [
+        "Gegevens nooit gebruikt voor AI-training"
+      ],
+      "Full chat history with search": [
+        "Volledige chatgeschiedenis met zoeken"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats op hoge snelheid en geavanceerde AI-functies."
+      ],
+      "Limited daily chats": [
+        "Beperkt aantal dagelijkse gesprekken"
+      ],
+      "Limited favorites": [
+        "Beperkte favorieten"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Strict no-logs policy": [
+        "Strikt zero-loggingsbeleid"
+      ],
+      "Unlimited daily chats": [
+        "Onbeperkt aantal dagelijkse gesprekken"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Terug naar gesprekken"
+      ],
+      "Conversations": [
+        "Gesprekken"
       ]
     },
     "color": {
@@ -4221,6 +4299,9 @@
       "${ MAIL_APP_NAME } is your default mail application.": [
         "${ MAIL_APP_NAME } is uw standaard e-mailapplicatie."
       ],
+      "A checked box means the feature is disabled.": [
+        "Een selectievakje betekent dat de functie is uitgeschakeld."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Voeg mappen en bestanden toe aan ${ DRIVE_APP_NAME } en nodig teamleden uit om ze te bekijken of te bewerken."
       ],
@@ -4368,9 +4449,6 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
-      ],
-      "You’ll receive ${ referralReward } in ${ BRAND_NAME } credit when the person you invite signs up for a ${ BRAND_NAME } plan, and they’ll also get ${ referralReward } in credits to get started.": [
-        "U ontvangt ${ referralReward } aan ${ BRAND_NAME } tegoed wanneer de persoon die u uitnodigt zich inschrijft voor een ${ BRAND_NAME } abonnement, en zij ontvangen ook ${ referralReward } aan tegoed om van start te gaan."
       ]
     },
     "description": {
@@ -5265,10 +5343,6 @@
         "${ n } dag",
         "${ n } dagen"
       ],
-      "${ n } day left": [
-        "${ n } dag resterend",
-        "${ n } dagen resterend"
-      ],
       "${ user } is requesting emergency access to your account": [
         "${ user } vraagt om noodtoegang tot uw account"
       ],
@@ -5289,6 +5363,9 @@
       ],
       "Access granted on ${ formattedAccessibleAt }": [
         "Toegang verleend op ${ formattedAccessibleAt }"
+      ],
+      "Access request canceled": [
+        "Toegangsaanvraag geannuleerd"
       ],
       "Access requested": [
         "Toegang aangevraagd"
@@ -5432,6 +5509,9 @@
       "Time required before automatically giving access": [
         "Benodigde tijd voordat automatisch toegang wordt verleend"
       ],
+      "Time required before automatically giving you access": [
+        "Benodigde tijd voordat u automatisch toegang wordt verleend"
+      ],
       "Time required before automatically granting them access": [
         "Benodigde tijd voordat hen automatisch toegang wordt verleend"
       ],
@@ -5480,6 +5560,9 @@
       ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "U kunt niet langer toegang aanvragen tot het account van ${ user } in geval van een noodgeval."
+      ],
+      "You will still be able to request access to the account of ${ user } at a later time.": [
+        "U kunt nog steeds toegang aanvragen tot het account van ${ user } op een later tijdstip."
       ],
       "You'll receive access to their account immediately.": [
         "U ontvangt onmiddellijk toegang tot hun account."
@@ -5730,6 +5813,9 @@
       ],
       "Invalid Sieve code": [
         "Ongeldige Sieve-code"
+      ],
+      "Invalid URL": [
+        "Ongeldige URL"
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
@@ -6540,8 +6626,8 @@
       "customer support": [
         "klantondersteuning"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Als u de uitnodiging accepteert, zetten we uw huidige abonnement om en wordt een eventueel resterend saldo teruggestort."
@@ -7313,6 +7399,9 @@
       "Device": [
         "Apparaat"
       ],
+      "Domain": [
+        "Domein"
+      ],
       "Enter your email address": [
         "Voer uw e-mailadres in"
       ],
@@ -7345,6 +7434,9 @@
       ],
       "Organization key fingerprint": [
         "Vingerafdruk van organisatiesleutel"
+      ],
+      "Password ends with": [
+        "Wachtwoord eindigt met"
       ],
       "Payment details": [
         "Betalingsgegevens"
@@ -7387,6 +7479,9 @@
       ],
       "User": [
         "Gebruiker"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ]
     },
     "Header for addresses table": {
@@ -7989,6 +8084,15 @@
         "${ n } adres",
         "${ n } adressen"
       ],
+      "${ name } for Android": [
+        "${ name } voor Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } voor GNU/Linux"
+      ],
+      "${ name } for macOS": [
+        "${ name } voor macOS"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: niet quarantaine of afwijzing van ongeautoriseerde e-mails. Meestal gebruiken mensen dit beleid alleen om problemen te krijgen of te testen."
       ],
@@ -8356,6 +8460,9 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Een e-mailadres alias werkt als een e-mailadres, maar vermindert spam en houdt uw werkelijke e-mailadres en identiteit verborgen."
+      ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Er is een fout opgetreden tijdens de communicatie met **${ applicationName }**"
       ],
       "An error occurred while communicating with the extension": [
         "Er is een fout opgetreden tijdens de communicatie met de extensie"
@@ -9076,11 +9183,11 @@
       "Get ${ upsellPlanName }": [
         "Kies ${ upsellPlanName }"
       ],
+      "Get **${ referrerRewardAmount } credits** for every friend that subscribes.": [
+        "Ontvang en geef **${ referrerRewardAmount } tegoed** voor elke vriend die zich abonneert."
+      ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Krijg toegang door een ${ BRAND_NAME }-account te maken en de uitnodiging te accepteren."
-      ],
-      "Get and give **${ referralReward } credits** for every friend that subscribes.": [
-        "Ontvang en geef **${ referralReward } tegoed** voor elke vriend die zich abonneert."
       ],
       "Get it on Google Play": [
         "Download op Google Play"
@@ -9250,9 +9357,6 @@
       ],
       "Include device, location, and IP details": [
         "Inclusief apparaat-, locatie- en IP-gegevens"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Inclusief ${ formattedTaxRate }% ${ taxName }: ${ price }"
       ],
       "Increase your account security by verifying your email address.": [
         "Verhoog de beveiliging van uw account door uw e-mailadres te verifiëren."
@@ -9842,9 +9946,6 @@
       "Please use another browser or download the file.": [
         "Gebruik een andere browser of download het bestand."
       ],
-      "Please verify payment at the new tab which was opened.": [
-        "Controleer de betaling op het nieuwe tabblad dat is geopend."
-      ],
       "Please wait till your changes are synced with the server.": [
         "Wacht tot uw wijzigingen gesynchroniseerd zijn met de server."
       ],
@@ -10103,6 +10204,9 @@
       ],
       "Signed up": [
         "Geregistreerd"
+      ],
+      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
+        "Inloggen met een beveiligingssleutel wordt nog niet in alle toepassingen ondersteund. Zonder TOTP kan inloggen bij sommige toepassingen mislukken."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
@@ -10619,6 +10723,9 @@
       "URL link": [
         "Website (URL)"
       ],
+      "URL settings updated.": [
+        "URL-instellingen bijgewerkt."
+      ],
       "Use a password manager to generate and securely store your passwords, ensuring strong passwords and easier sign-ins.": [
         "Gebruik een wachtwoordbeheerder om voor u sterke wachtwoorden te genereren en veilig op te slaan en gemakkelijker in te loggen."
       ],
@@ -10663,9 +10770,6 @@
       ],
       "Vault updated": [
         "Kluis bijgewerkt"
-      ],
-      "Verification can take a few minutes.": [
-        "Verificatie kan een paar minuten duren."
       ],
       "Verification link expired": [
         "Verificatielink is verlopen"
@@ -10886,8 +10990,8 @@
       "You are about to open your default browser and visit:": [
         "U staat op het punt uw standaardbrowser te openen om te bezoeken:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "U bent momenteel aangemeld als ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde server.",
@@ -11229,6 +11333,9 @@
       ],
       "You’re all set": [
         "U bent helemaal klaar"
+      ],
+      "Zero charge today": [
+        "Geen kosten vandaag"
       ],
       "Zoom meeting": [
         "Zoom meeting"
@@ -11962,8 +12069,20 @@
       "Auto-unsubscribe": [
         "Auto-afmelden"
       ],
+      "Autofill": [
+        "Automatisch aanvullen"
+      ],
+      "Autofill 2FA": [
+        "Automatisch invullen 2FA"
+      ],
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
+      ],
+      "Autosave": [
+        "Automatisch opslaan"
+      ],
+      "Autosuggest": [
+        "Automatische suggestie"
       ],
       "Awarded": [
         "Toegekend"
@@ -12207,6 +12326,9 @@
       ],
       "Domain name": [
         "Domeinnaam"
+      ],
+      "Domains": [
+        "Domeinen"
       ],
       "Don't ask again": [
         "Niet opnieuw vragen"
@@ -12586,6 +12708,9 @@
       "Other amount": [
         "Ander bedrag"
       ],
+      "Passkeys": [
+        "Passkeys"
+      ],
       "Password": [
         "Wachtwoord"
       ],
@@ -12895,9 +13020,6 @@
       ],
       "Value": [
         "Waarde"
-      ],
-      "VAT": [
-        "BTW"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -13677,9 +13799,6 @@
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Log in in uw ${ BRAND_NAME }-account om toegang te krijgen tot al uw geëncrypteerde ${ BRAND_NAME } diensten zoals ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer. Geen account? Maak er GRATIS een."
       ],
-      "Take control of your data with end-to-end encryption. No bank card required.": [
-        "Neem de controle over uw gegevens met end-to-end versleuteling. Geen bankkaart vereist."
-      ],
       "Try ${ BRAND_NAME } for free with this link": [
         "U kan ${ BRAND_NAME } gratis proberen met deze link."
       ]
@@ -13887,6 +14006,9 @@
       ],
       "Back": [
         "Terug"
+      ],
+      "Back to ${ MEET_SHORT_APP_NAME }": [
+        "Terug naar ${ MEET_SHORT_APP_NAME }"
       ],
       "Back to calendar": [
         "Terug naar agenda"
@@ -15080,6 +15202,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } aangemaakt"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "${ MEET_APP_NAME } Instellingen voor videoconferenties zijn bijgewerkt"
+      ],
       "${ reason } has been disabled": [
         "${ reason } is uitgezet"
       ],
@@ -15100,6 +15225,9 @@
       ],
       "Email notifications have been enabled": [
         "E-mailmeldingen zijn ingeschakeld"
+      ],
+      "Failed to update Zoom video conferencing settings": [
+        "Bijwerken van Zoom-videoconferentie-instellingen mislukt"
       ],
       "Invalid code": [
         "Ongeldige code"
@@ -15148,9 +15276,6 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tweestapsverificatie is niet langer vereist"
-      ],
-      "Video conferencing settings have been updated": [
-        "Instellingen voor videoconferenties zijn bijgewerkt"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15293,7 +15418,7 @@
         "Betaal jaarlijks om te genieten van ons beste aanbod"
       ],
       "Save": [
-        "Opslaan"
+        "Bespaar"
       ],
       "Save big when you pay annually": [
         "Bespaar veel wanneer u jaarlijks betaalt"
@@ -16377,11 +16502,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% belastingen: ${ taxAmount }"
+      ],
       "Got it": [
         "Begrepen"
       ],
       "I'm purchasing as a business": [
         "Ik koop dit voor mijn bedrijf."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% belastingen: ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/JJ"
@@ -16400,6 +16537,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Wordt verlengd voor ${ renewPriceStr }, altijd opzegbaar."
+      ],
+      "Taxes": [
+        "Belastingen"
       ],
       "terms & conditions": [
         "algemene voorwaarden"
@@ -16434,6 +16574,9 @@
       ],
       "Timeout exceeded": [
         "Time-out overschreden"
+      ],
+      "VAT": [
+        "BTW"
       ],
       "VAT number": [
         "BTW-nummer"
@@ -16934,6 +17077,96 @@
       ],
       "Unknown": [
         "Onbekend"
+      ]
+    },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "EINDEZOMERSALE"
+      ],
+      "Get the deal": [
+        "Pak deze deal"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "-${ discountPercent }%"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth } /maand"
+      ],
+      "/month": [
+        "/maand"
+      ],
+      "1 TB data storage": [
+        "1 TB dataopslag"
+      ],
+      "15 GB storage": [
+        "15 GB opslagruimte"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 GB opslag voor bestanden, foto's en documenten"
+      ],
+      "3 TB data storage": [
+        "3 TB dataopslag"
+      ],
+      "500 GB storage": [
+        "500 GB opslagruimte"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Toegang tot 15.000+ servers in 120+ landen"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Alle premium functies van Mail, Pass, Drive, VPN en Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Ingebouwde 2FA-authenticator"
+      ],
+      "Connect 10 devices at once": [
+        "Verbind 10 apparaten tegelijkertijd"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Kortingen zijn gebaseerd op de standaard maandelijkse prijzen. Uw abonnement wordt verlengd tegen het standaard jaartarief wanneer de factureringscyclus eindigt."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Geniet van de hoogste VPN-snelheden"
+      ],
+      "Individual accounts for 6 users": [
+        "Afzonderlijke accounts voor 6 gebruikers"
+      ],
+      "Individual accounts for you and a partner": [
+        "Afzonderlijke accounts voor u en een partner"
+      ],
+      "Online document editor": [
+        "Online documenteditor"
+      ],
+      "Recover previous file versions": [
+        "Herstel vorige bestandsversies"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Bespaar ${ totalSavings } en behoud al uw huidige functies!"
+      ],
+      "Secure link, vault & item sharing": [
+        "Beveiligd delen van koppelingen, kluizen en items"
+      ],
+      "Stronger protection against cyber threats": [
+        "Sterkere bescherming tegen cyberdreigingen"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Ongelimiteerde mappen, labels en filters"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Onbeperkt aantal hide-my-email-aliassen"
+      ],
+      "Use your own email domain": [
+        "Gebruik uw eigen e-maildomein"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Eindezomeruitverkoop"
+      ],
+      "for 12 months": [
+        "voor 12 maanden"
       ]
     },
     "Recovery Email": {
@@ -18297,9 +18530,6 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
-      "And get ${ referralReward } in credits, if you subscribe.": [
-        "En ontvang ${ referralReward } aan tegoed, als u zich abonneert."
-      ],
       "Billing Cycle": [
         "Facturatiefrequentie"
       ],
@@ -18363,11 +18593,8 @@
       "Free": [
         "Free"
       ],
-      "Free for 14 days": [
-        "14 dagen gratis"
-      ],
-      "Get ${ referralReward } in credits": [
-        "Krijg ${ referralReward } in tegoed"
+      "Free for ${ TRIAL_DURATION_DAYS } days": [
+        "Beschikbaar voor ${ TRIAL_DURATION_DAYS } dagen."
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Krijg een veilig ${ MAIL_APP_NAME }-adres, of ${ internalButton }"
@@ -18447,9 +18674,6 @@
       ],
       "Select ${ title }": [
         "Selecteer ${ title }"
-      ],
-      "Select a service and enjoy the premium version for 14 days free. No credit card required.": [
-        "Selecteer een dienst en geniet 14 dagen gratis van de premiumversie. Geen kredietkaart vereist."
       ],
       "Selected": [
         "Geselecteerd"
@@ -21108,8 +21332,8 @@
       "Gift code": [
         "Geschenkcode"
       ],
-      "Give ${ referralReward } and 2 weeks for free. Get ${ referralReward } credits.": [
-        "Geef ${ referralReward } en 2 weken gratis. Ontvang ${ referralReward } tegoed."
+      "Give ${ refereeRewardAmount } and 2 weeks for free. Get ${ referrerRewardAmount } credits.": [
+        "Geef ${ refereeRewardAmount } en 2 weken gratis. Ontvang ${ referrerRewardAmount } tegoed."
       ],
       "Group": [
         "Groep"
@@ -21342,6 +21566,9 @@
       ],
       "Passwords made easy": [
         "Gemakkelijk wachtwoorden gemaakt"
+      ],
+      "Pause list": [
+        "Pauze lijst"
       ],
       "Pay invoice": [
         "Factuur betalen"
@@ -21995,8 +22222,8 @@
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Beheerders kunnen gebruikersaccounts beheren en beheerdersrechten geven aan andere gebruikers. Alleen de primaire beheerder kan het abonnement van de organisatie bewerken."
       ],
-      "Allows to seamlessly add video conferencing links to your calendar invitations.": [
-        "Maakt het mogelijk om naadloos koppelingen voor videoconferenties toe te voegen aan uw agenda-uitnodigingen."
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Maakt het mogelijk om naadloos ${ MEET_APP_NAME } koppelingen voor videoconferenties toe te voegen aan uw agenda-uitnodigingen."
       ],
       "Any protection applied to suspicious activity": [
         "Enige bescherming toegepast op verdachte activiteit"
@@ -22130,8 +22357,8 @@
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
       ],
-      "The address has been disconnected. Message sending is paused. Reconnect to enable this address again.": [
-        "Het adres is losgekoppeld. Berichten verzenden is gepauzeerd. Maak opnieuw verbinding om dit adres opnieuw in te schakelen."
+      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
+        "Het adres is losgekoppeld. Berichten verzenden en ontvangen is gepauzeerd. Maak opnieuw verbinding om dit adres opnieuw in te schakelen."
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."

@@ -36,10 +36,6 @@
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
       ],
-      "${ numberOfAddresses } address": [
-        "${ numberOfAddresses } adresse",
-        "${ numberOfAddresses } adresses"
-      ],
       "A to Z": [
         "De A à Z"
       ],
@@ -92,13 +88,16 @@
         "Ajouter un nouveau groupe"
       ],
       "Add note": [
-        "Ajoutez une note."
+        "Ajouter une note"
       ],
       "Add participant": [
         "Ajouter des participants"
       ],
       "Add phone number": [
         "Ajouter un numéro de téléphone"
+      ],
+      "Add secret passphrase": [
+        "Ajouter une phrase secrète"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Ajouter à ${ CALENDAR_APP_NAME }"
@@ -326,9 +325,6 @@
       "Copy alias “${ name }”": [
         "Copier l'alias « ${ name } »"
       ],
-      "Copy email address": [
-        "Copier l’adresse e-mail"
-      ],
       "Copy email to clipboard": [
         "Copier l’adresse e-mail dans le presse-papiers"
       ],
@@ -489,6 +485,9 @@
       ],
       "Edit address": [
         "Modifier l'adresse"
+      ],
+      "Edit categories": [
+        "Modifier les catégories"
       ],
       "Edit draft": [
         "Modifier le brouillon"
@@ -737,7 +736,7 @@
         "Augmenter"
       ],
       "Inline": [
-        "Intégrée"
+        "dans le message"
       ],
       "Insert": [
         "Insérer"
@@ -763,6 +762,9 @@
       ],
       "Italic": [
         "Italique"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Rejoindre avec ${ MEET_APP_NAME }"
       ],
       "Keep my subscription": [
         "Conserver mon abonnement"
@@ -811,9 +813,6 @@
       ],
       "Make it friendly": [
         "Plus amical"
-      ],
-      "Manage addresses": [
-        "Gérer les adresses"
       ],
       "Manage advanced account protections": [
         "Gérer les protections avancées du compte"
@@ -910,6 +909,9 @@
       ],
       "More search options": [
         "Plus d'options de recherche"
+      ],
+      "Most frequent": [
+        "Les plus fréquentes"
       ],
       "Most read": [
         "Les plus lus"
@@ -1019,6 +1021,9 @@
       "Page ${ pageNumber }": [
         "Page ${ pageNumber }"
       ],
+      "Passphrase": [
+        "Phrase secrète"
+      ],
       "Pause": [
         "Suspendre"
       ],
@@ -1072,6 +1077,9 @@
       ],
       "Read receipt sent": [
         "La confirmation de lecture a été envoyée."
+      ],
+      "Recently read": [
+        "Récemment lu"
       ],
       "Recently received": [
         "Récemment reçus"
@@ -1177,6 +1185,9 @@
       ],
       "Resume downloading": [
         "Reprendre le téléchargement"
+      ],
+      "Retry": [
+        "Réessayer"
       ],
       "Revert to original display": [
         "Revenir à l'affichage d'origine"
@@ -1513,6 +1524,9 @@
       ],
       "Update recovery phrase": [
         "Mettre à jour la phrase de récupération"
+      ],
+      "Update secret passphrase": [
+        "Mettre à jour la phrase secrète"
       ],
       "Upgrade": [
         "Changer d'abonnement"
@@ -1972,14 +1986,17 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ cycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ cycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la version d'essai terminée le ${ formattedDate }, elle deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
         "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_LUMO_SEATS } accès à ${ LUMO_SHORT_APP_NAME } pendant la période d’essai."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_SCRIBE_SEATS } accès maximum à Scribe pendant la période d’essai."
@@ -2226,6 +2243,9 @@
       ],
       "Manual setup problem": [
         "Problème avec la configuration manuelle"
+      ],
+      "Meet problem": [
+        "Problème avec Meet"
       ],
       "Other": [
         "Autre"
@@ -2652,12 +2672,50 @@
         "Développer"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Accès aux modèles d'IA avancés"
+      ],
+      "Basic chat history": [
+        "Historique de chat basique"
+      ],
+      "Full chat history with search": [
+        "Historique complet des discussions avec recherche"
+      ],
+      "Large file upload support": [
+        "Prise en charge du chargement de fichiers volumineux"
+      ],
+      "Limited daily chats": [
+        "Chats quotidiens limités"
+      ],
+      "Limited favorites": [
+        "Favoris limités"
+      ],
+      "Unlimited daily chats": [
+        "Chats quotidiens illimités"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoris illimités pour un accès rapide"
+      ],
+      "Upload and query multiple large files": [
+        "Importer et consulter plusieurs fichiers volumineux"
+      ],
+      "Upload and query small files": [
+        "Importer et consulter les petits fichiers"
+      ],
+      "Web search access": [
+        "Accès à la recherche web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } est une IA axée sur la confidentialité qui vous aide à accomplir davantage tout en garantissant la sécurité de vos données. Libérez tout son potentiel et profitez d'un accès anticipé aux nouvelles fonctionnalités dès leur introduction."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Ajouter ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Discussions rapides et fonctionnalités d'IA avancées."
       ]
     },
     "color": {
@@ -2841,7 +2899,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boite de réception"
+        "Déplacer vers le dossier Boîte de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -4083,9 +4141,6 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiez la synchronisation et la planification grâce aux calendriers partagés."
       ],
-      "This view shows messages sent to the following addresses:": [
-        "Cette vue montre les messages envoyés aux adresses suivantes :"
-      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pour continuer à utiliser l'assistant d'écriture, ajoutez-le à votre abonnement"
       ],
@@ -4569,6 +4624,9 @@
       "Failed to open to contact": [
         "Le contact n'a pas pu être ouvert."
       ],
+      "Failed to update secret passphrase": [
+        "La mise à jour de la phrase secrète n'a pas abouti."
+      ],
       "Filter with this name already exists": [
         "Un filtre avec ce nom existe déjà."
       ],
@@ -4697,6 +4755,9 @@
       ],
       "Organization key is not decrypted": [
         "La clé de l'organisation n'est pas déchiffrée."
+      ],
+      "Passphrase unavailable": [
+        "La phrase secrète n'est pas disponible"
       ],
       "Password is required": [
         "Le mot de passe est nécessaire."
@@ -5015,7 +5076,7 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Les brouillons ne peuvent pas être déplacés dans le dossier Boite de réception."
+        "Les brouillons ne peuvent pas être déplacés dans le dossier Boîte de réception."
       ],
       "Drafts cannot be moved to Spam": [
         "Les brouillons ne peuvent pas être déplacées vers le dossier pourriels."
@@ -5160,6 +5221,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Les alias ne peuvent pas être utilisés lorsqu'un mot de passe supplémentaire est activé dans ${ PASS_APP_NAME }."
       ],
+      "An error occurred with the categories": [
+        "Une erreur est survenue avec les catégories"
+      ],
       "App currently unavailable": [
         "L'application n'est pas disponible actuellement."
       ],
@@ -5278,7 +5342,7 @@
         "Refuser l'invitation"
       ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "Switch plans": [
         "Changer d'abonnement"
@@ -5313,8 +5377,8 @@
       "customer support": [
         "service client"
       ],
-      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Actuellement, les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ addressSettingsLink }"
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Actuellement, les abonnements familiaux ne prennent pas en charge les comptes externes. Créez une adresse ${ BRAND_NAME } avant de rejoindre l'un de ces abonnements. ${ link }"
       ],
       "If you accept the invitation, we'll switch you from your current plan and credit your account with any remaining balance.": [
         "Si vous acceptez l'invitation, nous changerons votre abonnement actuel et nous créditerons votre compte de l'éventuel solde restant."
@@ -5690,8 +5754,8 @@
         "${ MAIL_APP_NAME } sur Play Store"
       ],
       "${ remainingDaysCount } day": [
-        "${ remainingDaysCount } jour restant",
-        "${ remainingDaysCount } jours restants"
+        "${ remainingDaysCount } jour",
+        "${ remainingDaysCount } jours"
       ],
       "${ remainingDaysCount } day left": [
         "${ remainingDaysCount } jour restant.",
@@ -5864,11 +5928,17 @@
       "Contacts": [
         "Contacts"
       ],
+      "Domain": [
+        "Domaine"
+      ],
       "Drawer": [
         "Menu latéral"
       ],
       "Hardware not compatible": [
         "Le matérial n'est pas compatible."
+      ],
+      "Password ends with": [
+        "Le mot de passe se termine par"
       ],
       "Report an issue": [
         "Signaler un problème"
@@ -5887,6 +5957,9 @@
       ],
       "Tell us more": [
         "Dites-nous-en plus"
+      ],
+      "Username": [
+        "Nom d'utilisateur"
       ]
     },
     "Hint": {
@@ -6324,12 +6397,12 @@
         "${ currentProgress } sur ${ totalProgress }"
       ],
       "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount } la conversation sera marquée comme :",
-        "${ elementsCount } les conversations seront marquées comme :"
+        "${ elementsCount } conversation aura ce label :",
+        "${ elementsCount } conversations auront ce label :"
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "${ elementsCount } la conversation sera marquée comme lue.",
-        "${ elementsCount } les conversations seront marquées comme lues."
+        "${ elementsCount } conversation sera marquée comme lue.",
+        "${ elementsCount } conversations seront marquées comme lues."
       ],
       "${ elementsCount } conversation will be marked as unread.": [
         "${ elementsCount } conversation sera marquée comme non lue.",
@@ -6340,8 +6413,8 @@
         "${ elementsCount } les conversations seront déplacées"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount } la conversation sera classée comme:",
-        "${ elementsCount } les conversations seront classées comme :"
+        "${ elementsCount } conversation n'aura plus ce label :",
+        "${ elementsCount } conversations n'auront plus ce label :"
       ],
       "${ elementsCount } message will be labelled as:": [
         "Le message ${ elementsCount } sera étiqueté comme suit :",
@@ -6476,8 +6549,8 @@
         "${ total } conversations"
       ],
       "${ total } message": [
-        "${ total } de message",
-        "${ total } des messages"
+        "${ total } message",
+        "${ total } messages"
       ],
       "${ trackersCount } email tracker blocked": [
         "${ trackersCount } traqueur d'e-mail verrouillé",
@@ -7116,8 +7189,8 @@
         "Expire dans moins de ${ hoursDiff } heures"
       ],
       "file attached": [
-        "Fichier joint",
-        "Fichiers joints"
+        "fichier joint",
+        "fichiers joints"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Les filtres fonctionnent sur tous les messages, y compris les messages entrants et envoyés. Chaque filtre doit contenir au moins un nom, une condition et une action."
@@ -7133,6 +7206,9 @@
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Pour un accès à vos e-mails à tout moment et une expérience mobile optimisée, téléchargez notre ${ androidAppLink } ou ${ iosAppLink }."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Pour plus de sécurité, vous pouvez définir une phrase secrète. Elle ne sera pas incluse dans l'invitation de calendrier, n'oubliez pas de la partager avec vos invités séparément."
       ],
       "For messages newer than ${ oldestDate }": [
         "Pour les messages après le ${ oldestDate }"
@@ -7256,9 +7332,6 @@
       ],
       "Included for free with your plan": [
         "Inclus gratuitement dans votre abonnement"
-      ],
-      "Including ${ formattedTaxRate }% ${ taxName }: ${ price }": [
-        "Comprenant ${ formattedTaxRate } % de ${ taxName } : ${ price }"
       ],
       "Inherited from parent folder": [
         "Similaire au dossier principal"
@@ -8003,6 +8076,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Il y a eu une erreur dans la signature utilisée pour vérifier les coordonnées. Cette erreur peut être due à une réinitialisation du mot de passe.\n"
       ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Ces conversations sont conservées ici conformément à la politique de conservation des données de votre organisation."
+      ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "On ne peut pas vous spammer si l'on ne connaît pas votre adresse e-mail. Protégez votre messagerie avec les alias « hide-my-email »."
       ],
@@ -8419,8 +8495,8 @@
       "You are about to open your default browser and visit:": [
         "Vous allez ouvrir votre navigateur par défaut et consulter :"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email })."
+      "You are currently signed in as ${ username }.": [
+        "Vous êtes actuellement connecté en tant que ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "Vous utilisez plus d'espace de stockage que ce qui est prévu dans l'abonnement ${ downgradedPlanName }. Nous vous invitons à supprimer ou à retirer des données pour pouvoir passer à un abonnement inférieur."
@@ -8479,15 +8555,15 @@
         "Vous recevrez une notification lorsque votre mot de passe ou d'autres données ont été exposées par un service tiers."
       ],
       "You have ${ unread } in your inbox.": [
-        "Vous avez ${ unread } dans votre boite de réception."
+        "Vous avez ${ unread } dans votre boîte de réception."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Vous avez ** ${ count } de conversation ** stockée dans ce fichier",
         "Vous avez **${ count } de conversations ** stockées dans ce fichier"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Vous avez **${ count } de conversation** associée à ce libellé",
-        "Vous avez.** ${ count } des conversations ** associées à ce libellé"
+        "Vous avez **${ count } conversation** marqué avec ce label.",
+        "Vous avez **${ count } conversations** marqué avec ce label."
       ],
       "You have **${ count } message** stored in this folder": [
         "Vous avez **${ count } message** stocké dans ce dossier",
@@ -8820,7 +8896,7 @@
         "Déplacer vers le dossier Brouillons"
       ],
       "Go to Inbox": [
-        "Déplacer vers le dossier Boite de réception"
+        "Déplacer vers le dossier Boîte de réception"
       ],
       "Go to Sent": [
         "Déplacer vers le dossier Envoyés"
@@ -8874,7 +8950,7 @@
         "Déplacer vers les archives"
       ],
       "Move to Inbox": [
-        "Déplacer vers la boite de réception"
+        "Déplacer vers la boîte de réception"
       ],
       "Move to Spam": [
         "Déplacer vers le dossier Indésirables/spam"
@@ -9019,12 +9095,6 @@
       "Also archive": [
         "Et archiver"
       ],
-      "Always label sender's emails": [
-        "Toujours labelliser les messages des expéditeurs"
-      ],
-      "Always move sender's emails": [
-        "Toujours déplacer les messages des expéditeurs"
-      ],
       "AND": [
         "ET"
       ],
@@ -9055,6 +9125,9 @@
       "Authenticator app": [
         "Application d'authentification"
       ],
+      "Automated confirmations and alerts": [
+        "Confirmations et alertes automatisées"
+      ],
       "BCC": [
         "Cci"
       ],
@@ -9066,6 +9139,9 @@
       ],
       "Blind Carbon Copy": [
         "Copie carbone invisible"
+      ],
+      "Bookings, billings, and orders": [
+        "Réservations, facturations et commandes"
       ],
       "Browser": [
         "Navigateur"
@@ -9099,6 +9175,9 @@
       ],
       "Cash": [
         "Espèces"
+      ],
+      "Categories badge": [
+        "Étiquette des catégories"
       ],
       "Category": [
         "Catégorie"
@@ -9160,6 +9239,9 @@
       "Date:": [
         "Date :"
       ],
+      "Deals, offers, marketing emails": [
+        "Offres, promotions, messages marketing"
+      ],
       "Delete": [
         "Supprimer"
       ],
@@ -9171,6 +9253,9 @@
       ],
       "Did not follow instructions": [
         "Les instructions n'ont pas été suivies."
+      ],
+      "Discussion board posts and threads": [
+        "Publications et fils de discussion du forum"
       ],
       "Do you have any suggestions for our team?": [
         "Avez-vous des suggestions pour notre équipe ?"
@@ -9262,6 +9347,30 @@
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
       ],
+      "Go to Forums": [
+        "Accéder aux forums"
+      ],
+      "Go to Newsletters": [
+        "Accéder aux newsletters"
+      ],
+      "Go to Promotions": [
+        "Accéder aux promotions"
+      ],
+      "Go to Social": [
+        "Accéder aux réseaux sociaux"
+      ],
+      "Go to Transactions": [
+        "Accéder aux transactions"
+      ],
+      "Go to Updates": [
+        "Accéder aux mises à jour"
+      ],
+      "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
+        "Aidez-nous à améliorer les catégories en choisissant celle qui correspond le mieux à ce message. Merci pour votre aide !"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "Aidez-nous à améliorer la prochaine catégorisation des e-mails"
+      ],
       "Hide password": [
         "Masquer le mot de passe"
       ],
@@ -9352,9 +9461,6 @@
       "Move ${ sidebarElementName }": [
         "Déplacer ${ sidebarElementName }"
       ],
-      "Move messages to": [
-        "Déplacer les messages vers"
-      ],
       "Move to": [
         "Déplacer vers"
       ],
@@ -9394,6 +9500,12 @@
       "No label found": [
         "Aucun label n'a été trouvé."
       ],
+      "No results found": [
+        "Aucun résultat trouvé."
+      ],
+      "Non-promotional content and news": [
+        "Contenu non-promotionnel et actualités"
+      ],
       "Not factually correct": [
         "Les faits ne sont pas corrects."
       ],
@@ -9432,6 +9544,9 @@
       ],
       "Participants": [
         "Participants"
+      ],
+      "Passphrase:": [
+        "Phrase secrète :"
       ],
       "Password": [
         "Mot de passe"
@@ -9502,6 +9617,9 @@
       "Search in": [
         "Rechercher dans"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Sélectionnez les catégories à inclure, et activez les notifications pour être alerté des nouveaux messages dans une catégorie."
+      ],
       "Send auto-reply": [
         "Envoyer une réponse automatique"
       ],
@@ -9516,6 +9634,9 @@
       ],
       "Social": [
         "Réseaux sociaux"
+      ],
+      "Social media updates and activity": [
+        "Mises à jour et activité des réseaux sociaux"
       ],
       "Starred": [
         "Favoris"
@@ -9550,6 +9671,9 @@
       "System information": [
         "Informations système"
       ],
+      "The category has been updated, thanks for your feedback!": [
+        "La catégorie a été mise à jour. Merci pour votre commentaire !"
+      ],
       "The filter is disabled. ${ enableButton }": [
         "Le filtre est désactivé. ${ enableButton }"
       ],
@@ -9580,9 +9704,6 @@
       "Undisclosed Recipients": [
         "Destinataires non divulgués"
       ],
-      "Unknown": [
-        "Inconnu"
-      ],
       "Unsafe or problematic": [
         "Dangereux ou problématique"
       ],
@@ -9597,9 +9718,6 @@
       ],
       "Username": [
         "Nom d'utilisateur"
-      ],
-      "VAT": [
-        "TVA"
       ],
       "Verification code": [
         "Code de vérification"
@@ -9616,11 +9734,20 @@
       "Weak password": [
         "Mot de passe peu sécurisé"
       ],
+      "We’re improving how emails are categorized. Your feedback helps make it smarter and more accurate.": [
+        "Nous améliorons la façon dont les messages sont catégorisés. Vos commentaires aident à le rendre plus intelligent et plus précis."
+      ],
       "What happened?": [
         "Que s'est-il passé ?"
       ],
       "What is your main reason for canceling or downgrading?": [
         "Quelle est la principale raison pour laquelle vous annulez votre abonnement ou passez à un abonnement inférieur ?"
+      ],
+      "Which category should this be recategorized under?": [
+        "Dans quelle catégorie reclasser ceci ?"
+      ],
+      "Why am I seeing this?": [
+        "Pourquoi voyez-vous ceci ?"
       ],
       "With attachment": [
         "Avec pièce jointe"
@@ -9630,6 +9757,9 @@
       ],
       "Writing assistant": [
         "Assistant d'écriture"
+      ],
+      "You cannot disable all categories": [
+        "Vous ne pouvez pas désactiver toutes les catégories"
       ],
       "Your alias": [
         "Vos alias"
@@ -9769,7 +9899,7 @@
         "Tous les messages"
       ],
       "Archive": [
-        "Déplacer vers les archives"
+        "Archives"
       ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
@@ -9788,6 +9918,9 @@
       ],
       "Create a new calendar to manage your invitations": [
         "Créez un nouveau calendrier pour gérer vos invitations."
+      ],
+      "Deleted": [
+        "Supprimé"
       ],
       "Drafts": [
         "Brouillons"
@@ -11259,6 +11392,9 @@
       "Passcode copied to clipboard": [
         "Le code d’accès a été copié dans le presse-papiers."
       ],
+      "Passphrase copied to clipboard": [
+        "La phrase secrète a été copiée dans le presse-papiers."
+      ],
       "Password has been set successfully": [
         "Le mot de passe a été défini."
       ],
@@ -11339,7 +11475,7 @@
         "Payez à l'année et assurez-vous de bénéficier de notre meilleure offre."
       ],
       "Save": [
-        "Sauvegarder"
+        "Économisez"
       ],
       "Save big when you pay annually": [
         "Économisez un maximum en optant pour le paiement annuel !"
@@ -11829,11 +11965,23 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Excluant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Excluant ${ taxRate } % de taxes : ${ taxAmount }"
+      ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "I'm purchasing as a business": [
         "J'achète en tant qu'entreprise."
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Comprenant ${ taxRate } % de ${ taxName } : ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Comprenant ${ taxRate } % de taxes : ${ taxAmount }"
       ],
       "MM/YY": [
         "MM/AA"
@@ -11849,6 +11997,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renouvellement au prix de ${ renewPriceStr } avec possibilité de résiliation à tout moment."
+      ],
+      "Taxes": [
+        "Taxes"
       ],
       "terms & conditions": [
         "les conditions générales d’utilisation"
@@ -11880,6 +12031,9 @@
       ],
       "Timeout exceeded": [
         "Le délai est dépassé."
+      ],
+      "VAT": [
+        "TVA"
       ],
       "VAT number": [
         "Numéro de TVA"
@@ -12024,6 +12178,9 @@
       ],
       "End date": [
         "Date de fin"
+      ],
+      "Enter passphrase": [
+        "Saisir la phrase secrète"
       ],
       "Filter folders": [
         "Filtrez les dossiers."
@@ -12273,6 +12430,96 @@
         "Message officiel de ${ BRAND_NAME }"
       ]
     },
+    "q3campaign_2025: Action": {
+      "END-OF-SUMMER SALE": [
+        "PROMOTION DE FIN D'ÉTÉ"
+      ],
+      "Get the deal": [
+        "Profitez de l'offre"
+      ]
+    },
+    "q3campaign_2025: Info": {
+      "${ discountPercent }% off": [
+        "- ${ discountPercent } %"
+      ],
+      "${ normalPricePerMonth } /month": [
+        "${ normalPricePerMonth }/mois"
+      ],
+      "/month": [
+        "/mois"
+      ],
+      "1 TB data storage": [
+        "1 To d'espace de stockage de données"
+      ],
+      "15 GB storage": [
+        "15 Go d'espace de stockage"
+      ],
+      "200 GB storage for files, photos & docs": [
+        "200 Go d'espace de stockage pour les fichiers, photos et documents"
+      ],
+      "3 TB data storage": [
+        "3 To d'espace de stockage de données"
+      ],
+      "500 GB storage": [
+        "500 Go d'espace de stockage"
+      ],
+      "Access 15,000+ servers in 120+ countries": [
+        "Accédez à plus de 15 000 serveurs dans plus de 120 pays"
+      ],
+      "All premium features of Mail, Pass, Drive, VPN, and Calendar": [
+        "Toutes les fonctionnalités premium de Mail, Pass, Drive, VPN et Calendar"
+      ],
+      "Built-in 2FA authenticator": [
+        "Authentificateur 2FA intégré"
+      ],
+      "Connect 10 devices at once": [
+        "Connectez 10 appareils en même temps"
+      ],
+      "Discounts are based on standard monthly pricing. Your subscription will renew at the standard annual rate when the billing cycle ends.": [
+        "Les réductions sont calculées sur la base du tarif mensuel standard. Votre abonnement sera renouvelé au tarif annuel standard à la fin du cycle de facturation."
+      ],
+      "Enjoy the fastest VPN speeds": [
+        "Profitez des vitesses VPN les plus rapides"
+      ],
+      "Individual accounts for 6 users": [
+        "Comptes individuels pour 6 utilisateurs"
+      ],
+      "Individual accounts for you and a partner": [
+        "Comptes individuels pour vous et un partenaire"
+      ],
+      "Online document editor": [
+        "Éditeur de documents en ligne"
+      ],
+      "Recover previous file versions": [
+        "Récupérez les versions précédentes des fichiers"
+      ],
+      "Save ${ totalSavings } and keep all your current features!": [
+        "Économisez ${ totalSavings } et conservez toutes vos fonctionnalités actuelles !"
+      ],
+      "Secure link, vault & item sharing": [
+        "Partage sécurisé de liens, de coffres-forts et d'éléments"
+      ],
+      "Stronger protection against cyber threats": [
+        "Une protection renforcée contre les cybermenaces"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Des dossiers, labels et filtres illimités"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
+      ],
+      "Use your own email domain": [
+        "Utilisez votre propre domaine de messagerie"
+      ]
+    },
+    "q3campaign_2025: Title": {
+      "End-of-summer sale": [
+        "Soldes de fin d'été"
+      ],
+      "for 12 months": [
+        "pendant 12 mois"
+      ]
+    },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
         "Message signé et chiffré de bout en bout"
@@ -12310,8 +12557,8 @@
     },
     "Remaining days before the message expire": {
       "${ remainingDays } d": [
-        "${ remainingDays } jour/s",
-        "${ remainingDays } jour/s"
+        "${ remainingDays } j",
+        "${ remainingDays } j"
       ],
       "<1 d": [
         "<1 j"
@@ -12651,7 +12898,7 @@
         "Annuler la demande"
       ],
       "Got it": [
-        "Je l'ai"
+        "J'ai compris"
       ],
       "Learn more": [
         "En savoir plus"
@@ -12688,7 +12935,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "Déconnexion"
+        "Se déconnecter"
       ],
       "Stay signed in": [
         "Rester connecté"
@@ -13641,8 +13888,8 @@
         "${ count } les conversations ont été supprimées"
       ],
       "${ count } draft deleted": [
-        "${ count } le brouillon a été supprimé",
-        "${ count } les brouillons ont été supprimés"
+        "${ count } brouillon supprimé",
+        "${ count } brouillons supprimés"
       ],
       "${ count } message deleted": [
         "${ count } message supprimé",
@@ -13721,8 +13968,8 @@
         "${ elementsCount } messages ont été déplacés dans ${ labelName }."
       ],
       "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } message déplacé dans les spams et l'expéditeur a été ajouté à la liste de courrier indésirable.",
-        "${ elementsCount } messages déplacés dans les spams et les expéditeurs ont été ajoutés dans la liste de courrier indésirable."
+        "${ elementsCount } message déplacé dans le dossier Indésirables/spam et l'expéditeur ajouté à votre liste d'indésirables/spam.",
+        "${ elementsCount } messages déplacés dans le dossier Indésirables/spam et les expéditeurs ajoutés à votre liste d'indésirables/spam."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message supprimé de ${ labelName }.",
@@ -13800,6 +14047,10 @@
       "Conversation removed from Starred.": [
         "La conversation a été retirée des favoris."
       ],
+      "Conversation updated": [
+        "La conversation a été mise à jour",
+        "Les conversations ont été mise à jour"
+      ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Les conversations de ${ sendersList } seront labellisées comme ${ labelsList }"
       ],
@@ -13875,6 +14126,10 @@
       "Message removed from Starred.": [
         "Le message a été retiré des favoris."
       ],
+      "Message updated": [
+        "Le message a été mise à jour",
+        "Les messages ont été mise à jour"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Les messages de ${ sendersList } seront labellisés comme ${ labelsList }"
       ],
@@ -13922,6 +14177,9 @@
       "Recategorized ${ elementsCount } message.": [
         "${ elementsCount } message recatégorisé.",
         "${ elementsCount } message recatégorisés."
+      ],
+      "Secret passphrase updated": [
+        "Phrase secrète mise à jour"
       ],
       "Self-destruction removed": [
         "L'autodestruction a été retirée."
@@ -14155,7 +14413,7 @@
         "Obtenir mon adresse « @${ PM_DOMAIN } »"
       ],
       "Open ": [
-        "En cours "
+        "Ouvrir "
       ],
       "Show me how": [
         "Montrez-moi comment faire"
@@ -14358,12 +14616,6 @@
       "Create contact": [
         "Créer un contact"
       ],
-      "Create folder \"${ search }\"": [
-        "Créer un dossier « ${ search } »"
-      ],
-      "Create label \"${ search }\"": [
-        "Créer un label « ${ search } »"
-      ],
       "Create new group": [
         "Créer un nouveau groupe"
       ],
@@ -14381,6 +14633,9 @@
       ],
       "Customize calendar import": [
         "Personnaliser l'importation du calendrier"
+      ],
+      "Customize categories": [
+        "Personnaliser les catégories"
       ],
       "Customize your mail import": [
         "Personnalisez votre importation de messagerie"
@@ -14616,6 +14871,10 @@
       "Label as": [
         "Labelliser"
       ],
+      "Label message as": [
+        "Labelliser le message comme",
+        "Labelliser les messages comme"
+      ],
       "Label options": [
         "Options de label"
       ],
@@ -14700,6 +14959,13 @@
       "Move all messages to trash": [
         "Déplacer tous les messages vers la corbeille"
       ],
+      "Move message to": [
+        "Déplacer le message vers",
+        "Déplacer les messages vers"
+      ],
+      "Move messages to": [
+        "Déplacer les messages vers"
+      ],
       "Move to": [
         "Déplacer vers"
       ],
@@ -14738,6 +15004,9 @@
       ],
       "Newsletters view": [
         "Vue Newsletters"
+      ],
+      "Next": [
+        "Suivant"
       ],
       "Next conversation": [
         "Conversation suivante"
@@ -14784,6 +15053,9 @@
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
       ],
+      "Open pagination": [
+        "Ouvrir la pagination"
+      ],
       "Org setup": [
         "Configuration de l’organisation"
       ],
@@ -14813,6 +15085,9 @@
       ],
       "Preview": [
         "Aperçu"
+      ],
+      "Previous": [
+        "Précédent"
       ],
       "Previous conversation": [
         "Conversation précédente"
@@ -14974,7 +15249,7 @@
         "Mise en attente d'un message"
       ],
       "Snooze:": [
-        "Mise en attente:"
+        "Mise en attente :"
       ],
       "Sort conversations": [
         "Trier les conversations"
@@ -15116,9 +15391,6 @@
       "Your account is protected": [
         "Votre compte est protégé."
       ],
-      "Your addresses": [
-        "Vos adresses"
-      ],
       "Your changes are not synced yet": [
         "Vos modifications ne sont pas encore synchronisées."
       ],
@@ -15136,6 +15408,9 @@
       ],
       "Your subscriptions in one place": [
         "Vos abonnements au même endroit"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Les catégories arrivent !"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15346,9 +15621,6 @@
       "${ n } wallet": [
         "${ n } portefeuille",
         "${ n } portefeuilles"
-      ],
-      "A safer way to hold your Bitcoin": [
-        "Un moyen plus sûr de conserver vos bitcoins"
       ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"

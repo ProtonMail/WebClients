@@ -1,4 +1,4 @@
-import { type FC, type ReactElement } from 'react';
+import type { FC, ReactElement } from 'react';
 
 import type { FormikContextType } from 'formik';
 import { c } from 'ttag';
@@ -15,7 +15,7 @@ import { usePasswordHistoryActions } from '@proton/pass/components/Password/Pass
 import type { AliasForLoginProps } from '@proton/pass/hooks/useAliasForLogin';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
-import { type LoginItemFormValues } from '@proton/pass/types';
+import type { LoginItemFormValues } from '@proton/pass/types';
 import { merge, withMerge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { intoCleanHostname } from '@proton/pass/utils/url/utils';
