@@ -70,6 +70,8 @@ export interface LinkShareUrl {
     // heavy for API. This number needs to be loaded explicitely with route
     // to get info about share URL.
     numAccesses?: number;
+    /** @deprecated This is for sdk compatibility */
+    url?: string;
 }
 
 interface LinkSharingDetails {
