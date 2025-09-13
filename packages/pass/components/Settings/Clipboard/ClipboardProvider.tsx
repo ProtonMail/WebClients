@@ -25,8 +25,8 @@ export type ClipboardContextValue = {
 export const ClipboardContext = createContext<MaybeNull<ClipboardContextValue>>(null);
 
 export const useClipboardContext = createUseContext(ClipboardContext);
-export const useOnCopyToClipboard = () => useClipboardContext().copyToClipboard;
-export const useOnClipboardSettingsChange = () => useClipboardContext().setClipboardTTL;
+export const useCopyToClipboard = () => useClipboardContext().copyToClipboard;
+export const useSetClipboardTTL = () => useClipboardContext().setClipboardTTL;
 
 export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     const { writeToClipboard } = usePassCore();

@@ -10,7 +10,7 @@ import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/Field
 import { useAliasContacts } from '@proton/pass/components/Item/Alias/Contact/AliasContactsContext';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useOnCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
+import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { aliasBlockContact, aliasDeleteContact } from '@proton/pass/store/actions';
 import type { AliasContactWithStatsGetResponse } from '@proton/pass/types';
@@ -22,8 +22,8 @@ type Props = { contact: AliasContactWithStatsGetResponse };
 export const AliasContactCard: FC<Props> = ({ contact }) => {
     const { onUpdate, onDelete, shareId, itemId } = useAliasContacts();
     const { onLink } = usePassCore();
-    const onCopyToClipboard = useOnCopyToClipboard();
     const { createNotification } = useNotifications();
+    const copyToClipboard = useCopyToClipboard();
 
     const {
         CreateTime,
@@ -40,7 +40,7 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
     const deleteContact = useRequest(aliasDeleteContact, { onSuccess: onDelete });
 
     const handleCopyAddress = async () => {
-        await onCopyToClipboard(ReverseAlias);
+        await copyToClipboard(ReverseAlias);
         createNotification({
             text: c('Info')
                 .t`Forwarding address copied to clipboard. Send an email to this address and ${Email} will receive it.`,

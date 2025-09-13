@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Option, SelectTwo } from '@proton/components';
-import { useOnClipboardSettingsChange } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
+import { useSetClipboardTTL } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -17,14 +17,14 @@ export const getClipboardTTLOptions = (): [ttl: number, label: string][] => [
 
 export const ClipboardSettings: FC = () => {
     const storedValue = useSelector(selectClipboardTTL);
-    const onSettingsChange = useOnClipboardSettingsChange();
+    const setClipboardTTL = useSetClipboardTTL();
 
     const options = getClipboardTTLOptions();
     const value = useMemo(() => options.find(([ttl]) => ttl === storedValue)?.[0] ?? -1, [storedValue]);
 
     return (
         <>
-            <SelectTwo onValue={onSettingsChange} value={value}>
+            <SelectTwo onValue={setClipboardTTL} value={value}>
                 {options.map(([ttl, label]) => (
                     <Option key={ttl} value={ttl} title={label} />
                 ))}

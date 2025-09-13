@@ -5,16 +5,16 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useOnClipboardSettingsChange } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
+import { useSetClipboardTTL } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 
 type Props = { onClose: (overrideClipboardTTL: number) => void };
 
 export const ClipboardSettingsModal: FC<Props> = ({ onClose }) => {
     const [notAgain, setNotAgain] = useState(false);
-    const onClipboardSettingsChange = useOnClipboardSettingsChange();
+    const setClipboardTTL = useSetClipboardTTL();
 
     const handleClose = async (overrideClipboardTTL: number) => {
-        if (notAgain) onClipboardSettingsChange(overrideClipboardTTL);
+        if (notAgain) setClipboardTTL(overrideClipboardTTL);
         onClose(overrideClipboardTTL);
     };
 
