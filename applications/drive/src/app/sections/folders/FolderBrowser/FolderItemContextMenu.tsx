@@ -54,6 +54,8 @@ export function FolderItemContextMenu({
     const openInDocs = useOpenInDocs(selectedItem);
     const hasPreviewAvailable =
         isOnlyOneFileItem && selectedItem?.mimeType && isPreviewAvailable(selectedItem.mimeType, selectedItem.size);
+    const canCopyPublicLink = isAdmin && isOnlyOneItem && selectedItem && !selectedItem.shareUrl?.isExpired;
+
     const {
         actions: { showDetailsModal, showRevisionsModal, showRenameModal, showMoveModal, showLinkSharingModal },
         modals,
@@ -66,7 +68,9 @@ export function FolderItemContextMenu({
                 {isOnlyOneFileItem && <OpenInDocsButton type="context" selectedItems={selectedItems} close={close} />}
                 {(hasPreviewAvailable || (isOnlyOneFileItem && openInDocs.canOpen)) && <ContextSeparator />}
                 <DownloadButton type="context" selectedItems={selectedItems} onClick={downloadItems} close={close} />
-                {isAdmin && <CopyLinkContextButton selectedItems={selectedItems} close={close} />}
+                {canCopyPublicLink && selectedItem.shareUrl?.url && (
+                    <CopyLinkContextButton publicLinkUrl={selectedItem.shareUrl?.url} close={close} />
+                )}
                 {isAdmin && isOnlyOneItem && (
                     <ShareLinkButton type="context" onClick={showLinkSharingModal} close={close} />
                 )}
