@@ -88,9 +88,6 @@ export const subscribeToSidebarEvents = () => {
                     store.removeItem(uid);
                 });
                 break;
-
-            default:
-                console.warn('Unhandled folders UI event', event);
         }
     });
 
