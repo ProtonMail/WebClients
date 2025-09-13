@@ -1,13 +1,15 @@
 import { useCallback } from 'react';
 
-import { MemberRole, useDrive } from '@proton/drive/index';
+import { MemberRole, splitPublicLinkUid, useDrive } from '@proton/drive/index';
 
 import useDriveNavigation from '../../hooks/drive/useNavigate';
+import type { LinkShareUrl } from '../../store';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../store/_documents';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
+import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { useDeviceStore } from '../devices/devices.store';
 import { useFolderStore } from './useFolder.store';
@@ -81,7 +83,30 @@ export function useFolder() {
                     const { node } = getNodeEntity(maybeNode);
                     if (node) {
                         const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive);
-                        setItem(legacyItem);
+                        let shareUrl: LinkShareUrl | undefined;
+                        if (node.isShared) {
+                            const shareResult = await drive.getSharingInfo(node.uid);
+                            if (shareResult && shareResult.publicLink) {
+                                const { shareId, publicLinkId } = splitPublicLinkUid(shareResult.publicLink.uid);
+                                shareUrl = {
+                                    id: shareId,
+                                    token: publicLinkId,
+                                    isExpired: Boolean(
+                                        shareResult.publicLink?.expirationTime &&
+                                            new Date(shareResult.publicLink.expirationTime) < new Date()
+                                    ),
+                                    url: shareResult.publicLink.url,
+                                    createTime: dateToLegacyTimestamp(shareResult.publicLink.creationTime),
+                                    expireTime: shareResult.publicLink.expirationTime
+                                        ? dateToLegacyTimestamp(shareResult.publicLink.expirationTime)
+                                        : null,
+                                };
+                            }
+                        }
+                        setItem({
+                            ...legacyItem,
+                            shareUrl,
+                        });
                     }
                     if (!maybeNode.ok) {
                         // error on loading a single node inside the folder should not show notification
