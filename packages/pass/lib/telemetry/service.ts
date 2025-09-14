@@ -1,9 +1,10 @@
 import type { AnyStorage, Maybe } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
-import type { EventDispatcher, EventDispatcherAlarm } from '@proton/pass/utils/event/dispatcher';
+import type { EventDispatcher } from '@proton/pass/utils/event/dispatcher';
 import { createEventDispatcher } from '@proton/pass/utils/event/dispatcher';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
+import type { AbstractAlarm } from '@proton/pass/utils/time/alarm';
 import { UNIX_HOUR, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 
@@ -13,7 +14,7 @@ const MIN_DT = ENV === 'production' ? 6 * UNIX_HOUR : UNIX_MINUTE; /* DEV: chrom
 const MAX_DT = ENV === 'production' ? 12 * UNIX_HOUR : 2 * UNIX_MINUTE;
 
 type TelemetryServiceOptions<StorageKey extends string> = {
-    alarm: EventDispatcherAlarm;
+    alarm: AbstractAlarm;
     storage: AnyStorage<Record<StorageKey, string>>;
     getStorageKey: () => StorageKey;
     getEnabled: () => boolean;
