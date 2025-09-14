@@ -1,6 +1,7 @@
-import type { AnyStorage, Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
+import type { AnyStorage, MaybeNull } from '@proton/pass/types';
 import { asyncLock, asyncQueue } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
+import type { AbstractAlarm } from '@proton/pass/utils/time/alarm';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import identity from '@proton/utils/identity';
@@ -10,22 +11,10 @@ export type EventBundle<Event> = { sendTime: number; events: Event[]; retryCount
 export type EventDispatcherState<Event> = { buffer: Event[]; job: MaybeNull<Promise<void>> };
 export type EventDispatchResult = { ok: true } | { ok: false; retry: boolean };
 
-/** Alarm creation is abstracted away behind a simple interface
- * allowing both extension alarms and standard timeouts to be
- * used for implementing the event dispatch triggers */
-export type EventDispatcherAlarm = {
-    /**  `when` is a UNIX timestamp in milliseconds.  */
-    set: (when: number, onAlarm: () => MaybePromise<void>) => MaybePromise<void>;
-    /** Resets the alarm */
-    reset: () => MaybePromise<any>;
-    /** Should return the next scheduled alarm time as a UNIX timestamp in milliseconds */
-    when: () => MaybePromise<Maybe<number>>;
-};
-
 export type EventDispatcherOptions<Event, StorageKey extends string> = {
     id: string;
     storage: AnyStorage<Record<StorageKey, string>>;
-    alarm: EventDispatcherAlarm;
+    alarm: AbstractAlarm;
     maxRetries: number;
     dispatch: (bundle: EventBundle<Event>) => Promise<void>;
     getEnabled: () => boolean;
@@ -115,7 +104,7 @@ export const createEventDispatcher = <Event, StorageKey extends string = string>
             log(`New dispatcher alarm in ${when}s`);
 
             await alarm.reset();
-            await alarm.set((getEpoch() + when) * 1000, send);
+            await alarm.set((getEpoch() + when) * 1000);
         }
     };
 
