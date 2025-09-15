@@ -784,7 +784,7 @@
         "Установить методы восстановления"
       ],
       "Set up 2FA": [
-        "Настроить двухфакторную аутентификацию"
+        "Настроить 2FA"
       ],
       "Set up a custom domain": [
         "Настроить пользовательский домен"
@@ -1201,7 +1201,7 @@
         "12 месяцев"
       ],
       "15 months": [
-        "15 месяца"
+        "15 месяцев"
       ],
       "24 months": [
         "24 месяца"
@@ -1346,9 +1346,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяц.",
         "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца.",
@@ -1400,7 +1397,7 @@
         "3 ТБ"
       ],
       "6 user accounts": [
-        "6 аккаунтов пользователей"
+        "6 аккаунтов пользователя"
       ],
       "6 users": [
         "6 пользователей"
@@ -3654,7 +3651,7 @@
         "Выберите страну"
       ],
       "Please select a state": [
-        "Пожалуйста, выберите штат"
+        "Выберите штат"
       ],
       "Please select at least one location before continuing.": [
         "Выберите по крайней мере одно место, прежде чем продолжить."
@@ -5778,9 +5775,6 @@
       "Disabled countries": [
         "Выключенные страны"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Отключение двухфакторной аутентификации сделает вашу учетную запись менее защищенной. Продолжайте только при крайней необходимости."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Откройте для себя новые доступные функции и начните использовать их прямо сейчас!"
       ],
@@ -6039,9 +6033,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Если у вас есть подарочный код, введите его ниже, чтобы применить скидку."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Если вы никогда не использовали двухфакторную аутентификацию, мы настоятельно рекомендуем вам ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Если вы потеряете устройство, привязанное к двухфакторной аутентификации, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации для входа в аккаунт. Каждый код можно использовать только один раз."
       ],
@@ -6260,9 +6251,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Управляйте тем, к каким приложениям ${ BRAND_NAME } могут получить доступ члены вашей организации. В отключенном состоянии доступ будет только у администраторов."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Введите эту информацию вручную в устройство двухфакторной аутентификации, чтобы настроить учетную запись. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
@@ -6510,9 +6498,6 @@
       "Public sharing of documents is not yet supported.": [
         "Публичный обмен документами пока не поддерживается."
       ],
-      "read our two-factor authentication guide first": [
-        "сначала прочитайте наше руководство по двухфакторной аутентификации"
-      ],
       "Recently used servers:": [
         "Недавно использованные серверы:"
       ],
@@ -6560,9 +6545,6 @@
       ],
       "Scan QR code instead": [
         "Вместо этого отсканируйте QR-код"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Чтобы настроить свою учётную запись, просканируйте этот код своим устройством двухфакторной аутентификации. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Интеграция SCIM отключена"
@@ -6849,9 +6831,6 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Это выведет вас из всех активных сеансов и отключит двухфакторную аутентификацию."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Этот мастер включит двухфакторную аутентификацию (2FA) для вашей учетной записи ${ BRAND_NAME }. Двухфакторная аутентификация сделает ваш аккаунт ${ BRAND_NAME_TWO } более безопасным, поэтому мы рекомендуем включить ее."
-      ],
       "to ${ product } Business": [
         "на ${ product } Business"
       ],
@@ -6914,12 +6893,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Попробуйте ${ productName } совершенно без риска - если по какой-то причине вы передумаете, вам вернут деньги. Никаких вопросов."
-      ],
-      "Two-factor authentication disabled": [
-        "Двухфакторная аутентификация отключена"
-      ],
-      "Two-factor authentication enabled": [
-        "Двухфакторная аутентификация включена"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "В режиме двух паролей требуется два пароля: один для входа в аккаунт и один для расшифровки данных. (Дополнительно)"
@@ -10352,9 +10325,9 @@
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } аккаунт пользователя",
-        "${ n } аккаунта пользователей",
-        "${ n } аккаунтов пользователей",
-        "${ n } аккаунтов пользователей"
+        "${ n } аккаунта пользователя",
+        "${ n } аккаунтов пользователя",
+        "${ n } аккаунтов пользователя"
       ],
       "Activity log": [
         "Журнал действий"
@@ -10531,7 +10504,7 @@
         "В течение этого времени вы не сможете изменить или отменить свою подписку. Дождитесь завершения оплаты, прежде чем пытаться внести какие-либо изменения. Благодарим вас за терпение."
       ],
       "Got it": [
-        "Применить"
+        "Понятно"
       ],
       "MM/YY": [
         "MM/YY"
@@ -11116,9 +11089,6 @@
     "Role": {
       "Admin": [
         "Администратор"
-      ],
-      "Primary admin": [
-        "Основной администратор"
       ],
       "User": [
         "Пользователь"
@@ -11808,7 +11778,7 @@
         "1 год"
       ],
       "15 months": [
-        "15 месяца"
+        "15 месяцев"
       ],
       "2 years": [
         "2 года"
@@ -13555,9 +13525,6 @@
       "Enhance security with 2FA": [
         "Повысьте безопасность с двухфакторной аутентификацией"
       ],
-      "Enter 2FA code": [
-        "Введите код двухфакторной аутентификации"
-      ],
       "Enter endpoints into your identity provider": [
         "Введите конечные точки в провайдер личных данных"
       ],
@@ -13845,9 +13812,6 @@
       ],
       "Set up email forwarding": [
         "Настройка пересылки писем"
-      ],
-      "Set up two-factor authentication": [
-        "Настройка двухфакторной аутентификации"
       ],
       "Set up your organization": [
         "Настройка организации"
@@ -14497,9 +14461,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "Двухфакторная аутентификация"
-      ],
       "Administrators can't access the data of private users": [
         "Администраторы не могут получить доступ к данным частных пользователей"
       ],

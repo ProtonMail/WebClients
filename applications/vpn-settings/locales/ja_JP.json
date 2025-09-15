@@ -1482,9 +1482,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "申し訳ありませんがこれらの要請は現在のあなたのプランでは許可されていません。${ cycle }ヶ月間のサブスクリプションで${ plan.Title }を${ discountPercentage }割引でご利用いただけます。"
       ]
@@ -5670,6 +5667,12 @@
       "Attention required": [
         "注意が必要です"
       ],
+      "Authenticator app 2FA disabled": [
+        "認証システムアプリの2要素認証が無効になりました。"
+      ],
+      "Authenticator app 2FA enabled": [
+        "認証システムアプリの2要素認証が有効になりました。"
+      ],
       "Awaiting transaction": [
         "取引待ち"
       ],
@@ -5853,8 +5856,8 @@
       "Disabled on ${ boldValue }": [
         "${ boldValue }に無効"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "2段階認証を無効にすると、アカウントの安全性が低下します。必要に応じてのみ続行してください。"
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "認証アプリの2FAを無効化すると、お客様のアカウントの安全性が低下します。必要に応じてのみ続行してください。"
       ],
       "Discover new features unlocked and start using them right away!": [
         "アンロックされた新機能を見つけて、すぐに使い始めましょう！"
@@ -6138,9 +6141,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "ギフトコードをお持ちの場合は、以下に入力して割引を適用できます。"
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "2要素認証を初めて使う場合、${ guideButton }を強くお勧めします。"
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "2 要素認証デバイスを紛失した場合、6 桁の 2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
       ],
@@ -6366,8 +6366,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "組織のメンバーがアクセスできる ${ BRAND_NAME } アプリケーションを管理します。無効にすると、管理者のみがアクセスできます。"
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "アカウント設定のために、2 要素認証デバイスに手動でこの情報を入力してください。${ switchButton }。"
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "アカウント設定のために、お客様の認証アプリにこの情報を手動で入力してください。${ switchButton }。"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode ロゴ"
@@ -6621,9 +6621,6 @@
       "Public sharing of documents is not yet supported.": [
         "ドキュメントの公開共有はまだサポートされていません。"
       ],
-      "read our two-factor authentication guide first": [
-        "はじめに 2 要素認証ガイドをお読みください"
-      ],
       "Recently used servers:": [
         "最近使用したサーバー:"
       ],
@@ -6672,8 +6669,8 @@
       "Scan QR code instead": [
         "代わりに QR コードをスキャン"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "アカウント設定のために、2 要素認証デバイスでこのコードをスキャンしてしてください。${ switchButton }"
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "アカウント設定のために、認証アプリでこのコードをスキャンしてください。${ switchButton }"
       ],
       "SCIM integration disabled": [
         "SCIM統合が無効"
@@ -6752,9 +6749,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "${ MAIL_APP_NAME } にサインインしてアドレスを有効にしてください"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "セキュリティキーでのサインインは、まだすべてのアプリではサポートされていません。TOTPなしでは、一部のアプリへのサインインが失敗する可能性があります。"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
@@ -6960,9 +6954,6 @@
       "This will wipe all logs for your organization members.": [
         "これにより、お客様の組織のメンバーのすべてのログが消去されます。"
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "このウィザードでは、あなたの ${ BRAND_NAME } アカウントの 2 要素認証 (2FA) を有効にします。2 要素認証を使用することで、${ BRAND_NAME_TWO } アカウントのセキュリティがより高まるため、有効にすることをおすすめします。"
-      ],
       "to ${ product } Business": [
         "${ product }ビジネスへ"
       ],
@@ -7025,12 +7016,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } を完全にリスクなしでお試しください もし何らかの理由で気が変わった場合には、質問なしで全額返金を受け取ることができます。"
-      ],
-      "Two-factor authentication disabled": [
-        "2 要素認証が無効になりました"
-      ],
-      "Two-factor authentication enabled": [
-        "2 要素認証が有効になりました"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "2つのパスワードモードには 2つのパスワードが必要です: 1つはアカウントにサインインするため、そしてもう1つはデータを複号化するためです。(高度)"
@@ -7259,6 +7244,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "有効化しない限り、新規ユーザーの作成、既存ユーザーへのメールアドレスの追加並びに、ユーザーのアカウントへのアクセスはできません。"
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "認証アプリがないと、まだセキュリティキーをサポートしていない${ BRAND_NAME }のアプリにサインインできなくなります。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
@@ -10695,6 +10683,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
+      ],
       "Taxes": [
         "税金"
       ],
@@ -11373,9 +11364,6 @@
     "Role": {
       "Admin": [
         "管理者"
-      ],
-      "Primary admin": [
-        "プライマリ管理者"
       ],
       "User": [
         "ユーザー"
@@ -13642,6 +13630,9 @@
       "Disable two-factor authentication": [
         "2要素認証を無効化"
       ],
+      "Disable two-factor authentication app?": [
+        "2要素認証アプリを無効にしますか？"
+      ],
       "Disable two-factor authentication?": [
         "2要素認証を無効にしますか？"
       ],
@@ -13722,9 +13713,6 @@
       ],
       "Enhance security with 2FA": [
         "2要素認証でセキュリティを強化"
-      ],
-      "Enter 2FA code": [
-        "2要素認証コードを入力"
       ],
       "Enter endpoints into your identity provider": [
         "IDプロバイダーにエンドポイントを入力します"
@@ -14008,11 +13996,11 @@
       "Set recovery methods": [
         "回復手段を設定"
       ],
+      "Set up authenticator app": [
+        "認証アプリを設定"
+      ],
       "Set up email forwarding": [
         "メール転送の設定"
-      ],
-      "Set up two-factor authentication": [
-        "2 要素認証の設定"
       ],
       "Set up your organization": [
         "組織を設定"
@@ -14695,11 +14683,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2要素認証"
-      ],
       "Administrators can't access the data of private users": [
         "管理者がプライベートユーザーのデータにアクセスすることはできません。"
+      ],
+      "Authenticator app": [
+        "認証アプリ"
       ],
       "Inactive": [
         "非アクティブ"
@@ -14718,6 +14706,9 @@
       ],
       "Private": [
         "プライベート"
+      ],
+      "Security key": [
+        "セキュリティキー"
       ],
       "SSO": [
         "SSO"

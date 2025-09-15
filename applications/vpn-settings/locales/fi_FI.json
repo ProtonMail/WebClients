@@ -1350,9 +1350,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi.",
         "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi."
@@ -5637,9 +5634,6 @@
       "Disabled countries": [
         "Käytöstä poistetut maat"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Kaksivaiheisen tunnistautumisen käytöstä poistaminen heikentää tilisi suojausta. Jatka vain, jos se on välttämätöntä."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Tutustu uusiin avattuihin ominaisuuksiin ja aloita niiden käyttö heti!"
       ],
@@ -5899,9 +5893,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Jos sinulla on lahjakoodi, syötä se alle hyödyntääksesi alennuksen."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Jos et ole koskaan käyttänyt kaksivaiheista tunnistautumista, suosittelemme vahvasti, että ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen vahvistuskoodin sijaan. Koodit ovat kertakäyttöisiä."
       ],
@@ -6121,9 +6112,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Hallitse, mitä ${ BRAND_NAME } -sovelluksia organisaatiosi jäsenet voivat käyttää. Jos tämä on poistettu käytöstä, vain järjestelmänvalvojilla on pääsy."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Määritä tilisi syöttämällä nämä tiedot todennuslaitteellesi. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
@@ -6366,9 +6354,6 @@
       "Public sharing of documents is not yet supported.": [
         "Dokumenttien julkista jakamista ei vielä tueta."
       ],
-      "read our two-factor authentication guide first": [
-        "luet ensin kaksivaiheisen tunnistautumisen oppaamme"
-      ],
       "Recently used servers:": [
         "Viimeksi käytetyt palvelimet:"
       ],
@@ -6416,9 +6401,6 @@
       ],
       "Scan QR code instead": [
         "Skannaa sen sijaan QR-koodi"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Määritä tilisi skannaamalla tämä koodi todennuslaitteellasi. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-integraatio poistettu käytöstä"
@@ -6696,9 +6678,6 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Tämä kirjaa ulos kaikki aktiiviset istuntosi ja poistaa kaksivaiheisen todennuksen käytöstä."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Tämä ohjattu toiminto aktivoi kaksivaiheisen tunnistautumisen (2FA) ${ BRAND_NAME }-tilillesi. Se vahvistaa ${ BRAND_NAME_TWO }-tilisi suojausta, joten suosittelemme käyttöönottoa."
-      ],
       "to ${ product } Business": [
         "palveluun ${ product } Business"
       ],
@@ -6755,12 +6734,6 @@
       ],
       "trusted device": [
         "luotetulla laitteella"
-      ],
-      "Two-factor authentication disabled": [
-        "Kaksivaiheinen tunnistautuminen poistettiin käytöstä"
-      ],
-      "Two-factor authentication enabled": [
-        "Kaksivaiheinen tunnistautuminen otettiin käyttöön"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Kahden salasanan tila vaatii kaksi salasanaa: Yhden tilillesi kirjautumiseen ja toisen tietojesi salauksen purkuun. (Edistynyt)"
@@ -10789,9 +10762,6 @@
       "Admin": [
         "Ylläpitäjä"
       ],
-      "Primary admin": [
-        "Ensisijainen ylläpitäjä"
-      ],
       "User": [
         "Käyttäjä"
       ]
@@ -13122,9 +13092,6 @@
       "Enhance security with 2FA": [
         "Paranna tietoturvaa 2FA:lla"
       ],
-      "Enter 2FA code": [
-        "Syötä vahvistuskoodi"
-      ],
       "Enter endpoints into your identity provider": [
         "Syötä päätepisteet identiteetintarjoajaasi"
       ],
@@ -13408,9 +13375,6 @@
       ],
       "Set up email forwarding": [
         "Määritä sähköpostin ohjaus"
-      ],
-      "Set up two-factor authentication": [
-        "Määritä kaksivaiheinen tunnistautuminen"
       ],
       "Set up your organization": [
         "Määritä organisaatiosi"
@@ -14059,9 +14023,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin"
       ],

@@ -1488,9 +1488,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Siamo spiacenti, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto di ${ discountPercentage } su ${ plan.Title } se ti abboni per ${ cycle } mese.",
         "Siamo spiacenti, questa offerta non è disponibile con il tuo piano attuale. Ma puoi ottenere uno sconto di ${ discountPercentage } su ${ plan.Title } se ti abboni per ${ cycle } mesi."
@@ -5933,9 +5930,6 @@
       "Disabled on ${ boldValue }": [
         "Disabilitato il ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Disabilitare l'autenticazione a due fattori renderà il tuo account meno sicuro. Procedere solo se assolutamente necessario."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Scopri le nuove funzionalità sbloccate e inizia a usarle subito!"
       ],
@@ -6219,9 +6213,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Se hai un codice regalo, inseriscilo qui sotto per applicare lo sconto."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Se non hai mai usato l'autenticazione a 2 fattori prima, ti consigliamo vivamente di ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se perdi il tuo dispositivo abilitato al secondo fattore, questi codici possono essere usati al posto del codice di 6 cifre dell'autenticazione a due fattori per accedere al tuo account. Ogni codice può essere usato una sola volta."
       ],
@@ -6447,9 +6438,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestisci le applicazioni ${ BRAND_NAME } alle quali possono accedere i membri della tua organizzazione. Se disabilitato, solo gli amministratori avranno accesso."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Inserisci manualmente queste informazioni di autenticazione a due fattori nel tuo dispositivo per impostare il tuo account. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -6710,9 +6698,6 @@
       "Public sharing of documents is not yet supported.": [
         "La condivisione pubblica dei documenti non è ancora supportata."
       ],
-      "read our two-factor authentication guide first": [
-        "leggere la nostra guida sull'autenticazione a due fattori"
-      ],
       "Recently used servers:": [
         "Server usati di recente:"
       ],
@@ -6760,9 +6745,6 @@
       ],
       "Scan QR code instead": [
         "Oppure scansiona il codice QR"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Scansiona questo codice con il tuo dispositivo di autenticazione a due fattori per impostare il tuo account. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integrazione SCIM disabilitata"
@@ -7052,9 +7034,6 @@
       "This will wipe all logs for your organization members.": [
         "Questo eliminerà tutti i log per i membri della tua organizzazione."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Questa procedura guidata abiliterà l'autenticazione a due fattori (2FA) sul tuo account ${ BRAND_NAME }. L'autenticazione a due fattori renderà il tuo account ${ BRAND_NAME_TWO } molto più sicuro e per questo ti raccomandiamo di abilitarla."
-      ],
       "to ${ product } Business": [
         "su ${ product } Business"
       ],
@@ -7117,12 +7096,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prova ${ productName } senza alcun rischio: se per qualsiasi motivo cambi idea, riceverai un rimborso completo. Nessuna domanda."
-      ],
-      "Two-factor authentication disabled": [
-        "Autenticazione a due fattori disabilitata"
-      ],
-      "Two-factor authentication enabled": [
-        "Autenticazione a due fattori attivata"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "La modalità a due password richiede due password: una per accedere al tuo account e una per decrittografare i tuoi dati. (Avanzato)"
@@ -10873,6 +10846,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Rinnova a ${ renewPriceStr }, annulla in qualsiasi momento."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Scusa, questa offerta non è disponibile con il tuo piano attuale."
+      ],
       "Taxes": [
         "Tasse"
       ],
@@ -11652,9 +11628,6 @@
     "Role": {
       "Admin": [
         "Amministratore"
-      ],
-      "Primary admin": [
-        "Amministratore principale"
       ],
       "User": [
         "Utente"
@@ -14064,9 +14037,6 @@
       "Enhance security with 2FA": [
         "Migliora la sicurezza con l'autenticazione a due fattori 2FA"
       ],
-      "Enter 2FA code": [
-        "Inserisci il codice di autenticazione a due fattori"
-      ],
       "Enter endpoints into your identity provider": [
         "Inserisci gli endpoint nel tuo fornitore di identità"
       ],
@@ -14353,9 +14323,6 @@
       ],
       "Set up email forwarding": [
         "Configura l'inoltro delle email"
-      ],
-      "Set up two-factor authentication": [
-        "Abilita l'autenticazione a due fattori"
       ],
       "Set up your organization": [
         "Configura la tua organizzazione"
@@ -15040,9 +15007,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Gli amministratori non possono accedere ai dati degli utenti privati"
       ],
