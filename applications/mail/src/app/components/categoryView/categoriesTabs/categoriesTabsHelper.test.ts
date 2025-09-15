@@ -1,7 +1,7 @@
+import type { CategoryTab } from '@proton/mail';
+import { CATEGORIES_COLOR_SHADES } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import type { CategoryTab } from '../categoriesConstants';
-import { CATEGORIES_COLOR_SHADES } from '../categoriesConstants';
 import { mockActiveCategoriesData } from '../testUtils/helpers';
 import { getTabState } from './categoriesTabsHelper';
 import { TabState } from './tabsInterface';

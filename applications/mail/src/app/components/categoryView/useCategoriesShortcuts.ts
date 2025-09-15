@@ -4,11 +4,11 @@ import { c } from 'ttag';
 
 import type { CommanderItemInterface, HotkeyTuple } from '@proton/components';
 import type { Hotkey } from '@proton/components/hooks/useHotkeys';
+import { getCategoryCommanderKeyboardShortcut } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
-import { getCategoryCommanderKeyboardShortcut } from './categoriesHelpers';
 import { getLabelFromCategoryIdInCommander } from './categoriesStringHelpers';
 import { useCategoriesView } from './useCategoriesView';
 
