@@ -6,10 +6,10 @@ import { Button, Tooltip } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalContent, ModalTwo, ModalTwoFooter, useApi } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import type { CategoryTab } from '@proton/mail';
 import { updateLabel } from '@proton/shared/lib/api/labels';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import type { CategoryTab } from '../categoriesConstants';
 import { useCategoriesView } from '../useCategoriesView';
 import { EditCategoriesList } from './EditCategoriesList';
 

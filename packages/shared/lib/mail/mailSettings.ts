@@ -228,4 +228,5 @@ export const DEFAULT_MAILSETTINGS: MailSettings = {
     NextMessageOnMove: NEXT_MESSAGE_ON_MOVE.DEFAULT,
     RemoveImageMetadata: false,
     KT: KEY_TRANSPARENCY_SETTING.DISABLED,
+    MailCategoryView: false,
 };

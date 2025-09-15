@@ -93,4 +93,5 @@ export interface MailSettings {
     NextMessageOnMove: NEXT_MESSAGE_ON_MOVE;
     RemoveImageMetadata: boolean;
     KT: KEY_TRANSPARENCY_SETTING;
+    MailCategoryView: boolean;
 }
