@@ -2105,9 +2105,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "抱歉，此优惠不适用于您当前的套餐。但当您订阅 ${ cycle } 个月的 ${ plan.Title } 时可享受 ${ discountPercentage } 的折扣。"
       ]
@@ -4484,10 +4481,10 @@
     },
     "Download link": {
       ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu (.deb)"
+        "Debian / Ubuntu 的 .deb"
       ],
       ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat (.rpm)"
+        "Fedora / Red Hat 的 .rpm"
       ]
     },
     "drive_signup_2023: Title": {
@@ -8309,9 +8306,6 @@
       "Disabled countries": [
         "已禁用国家/地区"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "禁用双因素身份验证会降低账户的安全性。只有在绝对必要的情况下才进行操作。"
-      ],
       "Discount": [
         "优惠"
       ],
@@ -8562,7 +8556,7 @@
         "获取日志失败。"
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "邮件和日程尽在您的桌面呈现，为您带来快捷而专注的体验。"
+        "快捷又专注，邮件与日历尽在您桌面。"
       ],
       "Featured in": [
         "推荐"
@@ -8725,9 +8719,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "如果您有礼品码，可以在此处使用。"
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "如果您从未使用过双因素身份验证，我们强烈建议您 ${ guideButton }。"
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "如果您忘记了密码并需要恢复您的帐户，${ boldImperative } 您有一个 ${ boldAccountRecovery }。"
@@ -9040,9 +9031,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "管理您的 ${ DOCS_APP_NAME } 电子邮件通知首选项。"
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "在双因素身份验证设备上手动输入下列信息，以便设置您的账户。换一种方式 ${ switchButton }。"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 图标"
@@ -9413,9 +9401,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "如需任何帮助，请联系我们 ${ BRAND_NAME }"
       ],
-      "read our two-factor authentication guide first": [
-        "首先请阅读我们的双因素身份验证指南"
-      ],
       "Recently used servers:": [
         "近期使用的服务器："
       ],
@@ -9499,9 +9484,6 @@
       ],
       "Scan QR code instead": [
         "扫描二维码"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "使用您的双因素身份验证设备扫描下方二维码，以便设置您的账户。换一种方式 ${ switchButton }。"
       ],
       "SCIM integration disabled": [
         "已禁用 SCIM 集成"
@@ -9938,9 +9920,6 @@
       "This will wipe all logs for your organization members.": [
         "这将清除您组织所有成员的日志。"
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "此向导将为您的 ${ BRAND_NAME } 账户启用双因素身份验证 (2FA)。双因素身份验证将使您的 ${ BRAND_NAME_TWO } 账户更加安全，因此我们建议启用它。"
-      ],
       "to ${ product } Business": [
         "使用 ${ product } Business"
       ],
@@ -10030,12 +10009,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "试用 ${ productName } 完全无风险 - 如果你因任何原因改变主意，你将获得全额退款。无任何问题。"
-      ],
-      "Two-factor authentication disabled": [
-        "已禁用双因素身份验证"
-      ],
-      "Two-factor authentication enabled": [
-        "已启用双因素身份验证"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "双密码模式需要两个密码：一个用于登录账户，另一个用于解密数据。(高级)"
@@ -10369,6 +10342,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "您即将打开默认浏览器并访问："
+      ],
+      "You are currently signed in as ${ username }.": [
+        "您当前登入的用户为 ${ username }。"
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "有 ${ ipAddresses } 台专用服务器可以使用，其中有 ${ ipCount } 台正在使用。"
@@ -12137,7 +12113,7 @@
         "副密码"
       ],
       "Select Linux package format": [
-        "请选择 Linux 软件包格式"
+        "选择 Linux 软件包格式"
       ],
       "Select Linux platform": [
         "选择 Linux 平台"
@@ -16408,9 +16384,6 @@
       "Admin": [
         "管理员"
       ],
-      "Primary admin": [
-        "主管理员"
-      ],
       "User": [
         "用户"
       ]
@@ -19959,9 +19932,6 @@
       "Enhance security with 2FA": [
         "通过 2FA 增强安全性"
       ],
-      "Enter 2FA code": [
-        "输入 2FA 验证码"
-      ],
       "Enter endpoints into your identity provider": [
         "将端点输入身份认证"
       ],
@@ -20525,9 +20495,6 @@
       ],
       "Set up email forwarding": [
         "设置邮件转发"
-      ],
-      "Set up two-factor authentication": [
-        "设置双因素身份验证"
       ],
       "Set up your family account": [
         "设置您的家庭账户"
@@ -21575,9 +21542,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "管理员无法访问私人用户的数据"
       ],

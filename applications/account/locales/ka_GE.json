@@ -2047,6 +2047,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "During the trial period, you can have up to 10 users.": [
+        "გამოსაცდელ პერიოდში შეგიძლიათ, გქონდეთ 10-მდე მომხმარებელი."
+      ],
       "free for ${ TRIAL_DURATION_DAYS } days": [
         "უფასო ${ TRIAL_DURATION_DAYS } დღით"
       ],
@@ -2055,6 +2058,12 @@
       ],
       "Try ${ selected } ${ freeForNDays }": [
         "სცადეთ ${ selected } ${ freeForNDays }"
+      ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "სცადეთ უფასოდ ${ TRIAL_DURATION_DAYS } დღით"
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
       ],
       "You have reached the trial limit.": [
         "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
@@ -2172,9 +2181,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentage } ფასდაკლება ${ plan.Title }-დან, თუ გამოწერა ${ cycle } თვე იქნება.",
         "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ ${ discountPercentage } ფასდაკლება ${ plan.Title }-დან, თუ გამოწერა ${ cycle } თვე იქნება."
@@ -2880,6 +2886,9 @@
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }-ის დამატება"
       ],
+      "AI assistant that respects your privacy": [
+        "დამხმარე ხი, რომელიც თქვენს კონფიდენციალობას ითვალისწინებს"
+      ],
       "Basic chat history": [
         "საბაზისო ჩატის ისტორია"
       ],
@@ -2888,6 +2897,9 @@
       ],
       "Full chat history with search": [
         "სრული ჩატის ისტორია ძებნით"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
       ],
       "Limited daily chats": [
         "შეზღუდული ყოველდღიური ჩატები"
@@ -5289,14 +5301,23 @@
         "${ n } დღე",
         "${ n } დღე"
       ],
+      "${ user } is requesting emergency access to your account": [
+        "${ user } ითხოვს სასწრაფო წვდომას თქვენ ანგარიშზე"
+      ],
       "Access granted": [
         "წვდომა მონიჭებულია"
+      ],
+      "Access granted on ${ formattedAccessibleAt }": [
+        "წვდომა მინიჭებულია ${ formattedAccessibleAt }-ზე"
       ],
       "Access request canceled": [
         "წვდომის მოთხოვნა გაუქმდა"
       ],
       "Access requested": [
         "წვდომა მოთხოვნილია"
+      ],
+      "Access will be granted on ${ formattedAccessibleAt }": [
+        "წვდომა მინიჭებული იქნება ${ formattedAccessibleAt }-ზე"
       ],
       "Add": [
         "დამატება"
@@ -5318,6 +5339,9 @@
       ],
       "Disabled": [
         "გათიშული"
+      ],
+      "Don't lose emergency access. Enable auto-renew today.": [
+        "არ დაკარგოთ სასწრაფო წვდომა. ჩართეთ ავტოგანახლება დღეს."
       ],
       "Emergency access": [
         "სასწრაფო წვდომა"
@@ -5379,6 +5403,9 @@
       "People who trust me": [
         "ხალხი, რომელიც მენდობა"
       ],
+      "Protect your legacy with emergency access": [
+        "დაიცავით თქვენი მემკვიდრეობა სასწრაფო წვდომით"
+      ],
       "Refuse access": [
         "წვდომის უარყოფა"
       ],
@@ -5412,6 +5439,15 @@
       "This will take effect immediately.": [
         "ეს ძალაში დაუყოვნებლივ შევა."
       ],
+      "Time required before automatically giving access": [
+        "ავტომატურად წვდომის მიცემისთვის საჭირო დრო"
+      ],
+      "Time required before automatically giving you access": [
+        "თქვენთვის ავტომატურად წვდომის მიცემისთვის საჭირო დრო"
+      ],
+      "Time required before automatically granting them access": [
+        "მათთვის წვდომის ავტომატურად მინიჭებისთვის საჭირო დრო"
+      ],
       "Trusted contact": [
         "სანდო კონტაქტი"
       ],
@@ -5435,6 +5471,12 @@
       ],
       "You are signed in to the account ${ account }.": [
         "შესული ბრძანდებით ანგარიშში ${ account }."
+      ],
+      "You can now access and manage their account.": [
+        "ახლა შეგიძლიათ, შეხვიდეთ და მართოთ მათი ანგარიშები."
+      ],
+      "You'll receive access to their account immediately.": [
+        "მათ ანგარიშებთან წვდომას დაუყოვნებლივ მიიღებთ."
       ]
     },
     "Empty group name": {
@@ -8086,6 +8128,9 @@
       "**${ appName }** is not supported.": [
         "**${ appName }** მხარდაჭერილი არაა."
       ],
+      "**Enable automatic backups** for peace of mind": [
+        "**ჩართეთ ავტომატური მარქაფები**, რომ ღამით მშვიდად გეძინოთ"
+      ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**მიიღეთ ${ BRAND_NAME }-ის მისამართი** ${ BRAND_NAME_TWO }-ის ყველა სერვისის, ${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_SHORT_APP_NAME }-ის ჩათვლით, გამოსაყენებლად."
       ],
@@ -8265,6 +8310,9 @@
       ],
       "Allocated": [
         "გამოყოფილი"
+      ],
+      "Allow logging of location and connection details": [
+        "მდებარეობის და მიერთების დეტალების ჟურნალში ჩაწერის დაშვება"
       ],
       "Allow recovery by email": [
         "ელფოსტით აღდგენის ჩართვა"
@@ -8672,9 +8720,6 @@
       "Disabled on ${ boldValue }": [
         "გათიშვის თარიღი ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "2FA-ის გათიშვა თქვენს ანგარიშს ნაკლებად დაცულს გახდის. გააგრძელეთ, თუ ზუსტად იცით, რას აკეთებთ."
-      ],
       "Discount": [
         "ფასდაკლება"
       ],
@@ -8747,6 +8792,9 @@
       ],
       "Download recovery file": [
         "აღდგენის ფაილის გადმოწერა"
+      ],
+      "Download the app and import existing codes.": [
+        "გადმოწერეთ აპი და შეიტანეთ არსებული კოდები."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "გადმოწერეთ თქვენი რჩეული აპლიკაცია დღეს და გქონდეთ თქვენი კონფიდენციალობა თან, სადაც უნდა წახვიდეთ."
@@ -8931,9 +8979,6 @@
       "Failed to fetch logs.": [
         "ჟურნალის მოთხოვნის შეცდომა."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "სწრაფი და ფოკუსის მქონე. ელფოსტა და კალენდარი პირდაპირ თქვენს სამუშაო მაგიდაზე."
-      ],
       "Featured in": [
         "მოიცავს"
       ],
@@ -8993,6 +9038,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "აღდგენის ახალი ფრაზის გენერაცია ძველ ფრაზას გათიშავს."
+      ],
+      "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
+        "მიიღეთ ${ AUTHENTICATOR_APP_NAME } ყველა თქვენი მოწყობილობისთვის."
       ],
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName }-ის მიღება"
@@ -9090,9 +9138,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "სასაჩუქრე კოდის ქონის შემთხვევაში ფასდაკლების მისაღებად მისი კოდი ქვემოთ შეიყვანეთ."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "თუ 2FA არასდროს გამოგიყენებიათ, დაჟინებით გირჩევთ ეწვიოთ ${ guideButton }."
-      ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "თუ დაკარგავთ თქვენს პაროლს და გჭირდებათ, აღადგინოთ თქვენი ანგარიში, ${ boldImperative } რომ გაქვთ ${ boldAccountRecovery }."
       ],
@@ -9159,6 +9204,9 @@
       ],
       "inactive": [
         "არააქტიური"
+      ],
+      "Include device, location, and IP details": [
+        "შეიცავს მოწყობილობას, მდებარეობას და IP-ის დეტალებს"
       ],
       "Increase your account security by verifying your email address.": [
         "გაზარდეთ თქვენი ანგარიშის უსაფრთხოება თქვენი ელფოსტის მისამართის გადამოწმებით."
@@ -9403,9 +9451,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "მართეთ თქვენი ელფოსტის გაფრთხილებების პარამეტრები ${ DOCS_APP_NAME }-სთვის"
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "ანგარიშის მოსარგებად ეს ინფორმაცია 2FA მოწყობილობაში ხელით შეიყვანეთ. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode-ის ლოგო"
@@ -9790,9 +9835,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "გამოაღწიეთ ჩვენამდე, თუ ${ BRAND_NAME }-ის შესახებ ნებისმიერი კითხვა გაგიჩნდათ."
       ],
-      "read our two-factor authentication guide first": [
-        "გთხოვთ, ჯერ თვალი გადაავლოთ ჩვენს 2FA-ის დოკუმენტაციას"
-      ],
       "Recently used servers:": [
         "ახლახან გამოყენებული სერვერები:"
       ],
@@ -9876,9 +9918,6 @@
       ],
       "Scan QR code instead": [
         "QR კოდის სკანირება"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "ანგარიშის დასაყენებლად ეს კოდი 2FA ავთენტიკაციის მქონე მოწყობილობით უნდა დაასკანეროთ. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-თან ინტეგრაცია გათიშულია"
@@ -10312,9 +10351,6 @@
       "This will wipe all logs for your organization members.": [
         "ეს წაშლის ყველა ჟურნალს თქვენი ორგანიზაციის წევრებისთვის."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "დაგეხმარებათ ${ BRAND_NAME }-ის თქვენს ანგარიშზე 2FA-ის ჩართვაში. 2FA-ი ${ BRAND_NAME_TWO }-ის თქვენს ანგარიშს უფრო დაცულს ხდის, ამიტომ რეკომენდებულია, ჩართოთ ის."
-      ],
       "to ${ product } Business": [
         "${ product } Business"
       ],
@@ -10401,12 +10437,6 @@
       ],
       "trusted device": [
         "სანდო მოწყობილობა"
-      ],
-      "Two-factor authentication disabled": [
-        "2FA გამორთულია"
-      ],
-      "Two-factor authentication enabled": [
-        "2FA ჩართულია"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "ორპაროლიან რეჟიმს ორი პაროლი ესაჭიროება. ერთი - ანგარიშში შესასვლელად, მეორე კი მონაცემების გასაშიფრად. (დამატებით)"
@@ -10570,6 +10600,9 @@
       "View and manage your groups.": [
         "ნახეთ და მართეთ თქვენი ჯგუფები."
       ],
+      "View VPN session details for your organization.": [
+        "VPN სესიის დეტალების ნახვა თქვენი ორგანიზაციისთვის."
+      ],
       "View, download, and manage your invoices.": [
         "ნახეთ, გადმოწერეთ და მართეთ თქვენი ინვოისები."
       ],
@@ -10702,6 +10735,9 @@
       "Why?": [
         "რატომ?"
       ],
+      "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
+        "${ AUTHENTICATOR_APP_NAME }-ისთან ერთად შეგიძლიათ:"
+      ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Business ან Enterprise ტარიფით შეგიძლიათ, თქვენი ორგანიზაციისთვის ${ boldDedicatedServers } შეიძინოთ და ააწყოთ ${ boldGateways }, რათა აკონტროლოთ, რომელ მომხმარებელს აქვს წვდომა."
       ],
@@ -10737,6 +10773,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "თქვენ ახლა თქვენი ნაგულისხმევი ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "შესული ბრძანდებით, როგორც ${ username }."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
         "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ.",
@@ -10875,6 +10914,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "შეიძლება, თქვენი ბანკის ვებგვერდზე გადამისამართდეთ."
+      ],
+      "You may now start using **${ applicationName }**": [
+        "ახლა შეგიძლიათ გამოიყენოთ აპლიკაცია **${ applicationName }**"
       ],
       "You may now start using the extension": [
         "ახლა შეგიძლიათ, დაიწყოთ გაფართოების გამოყენება"
@@ -12739,6 +12781,9 @@
       "Verify keys with Key Transparency": [
         "გასაღებების გადამოწმება Key Transparency-ით"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "ვიდეოკონფერენცია ${ MEET_APP_NAME }-ისთან ერთად"
+      ],
       "Video conferencing with Zoom": [
         "ვიდეოკონფერენციები Zoom-ით"
       ],
@@ -13450,6 +13495,9 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "მიუერთეთ თქვენი დომენი ${ BRAND_NAME }-ს და იქონიეთ ელფოსტის თქვენი მისამართები (მაგ: you@yourcompany.com). ჩვენი დამხმარე მთელს პროცესს გაგატარებთ."
       ],
+      "View user sign-in, recovery and security events.": [
+        "ნახეთ მომხმარებლის შესვლები, აღდგენის და უსაფრთხოების მოვლენები."
+      ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "თქვენს უფასო სატესტო ვერსიას ვადა გაუვიდა. მალე ანგარიშთან წვდომა გაგეთიშებათ. ${ action }"
       ]
@@ -13495,6 +13543,9 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "შედით თქვენს ${ BRAND_NAME }-ის კალენდარში და იქონიეთ წვდომა ყველა დაშიფრულ ${ BRAND_NAME }-ის სერვისთან, როგორებიცაა ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } და სხვ. არ გაქვთ ანგარიში? შექმენით ის უფასოდ."
+      ],
+      "Take control of your data with end-to-end encryption": [
+        "აიღეთ ხელში თქვენი მონაცემების მართვა გამჭოლი დაშიფვრით"
       ],
       "Try ${ BRAND_NAME } for free with this link": [
         "სცადეთ ${ BRAND_NAME } უფასოდ ამ ბმულით"
@@ -14911,8 +14962,14 @@
       "Email notifications have been enabled": [
         "ელფოსტის გაფრთხილებები ჩართულია"
       ],
+      "Failed to update Zoom video conferencing settings": [
+        "Zoom-ის ვიდეოკონფერენციის პარამეტრების განახლება ჩავარდა"
+      ],
       "Invalid code": [
         "არასწორი კოდი"
+      ],
+      "Invalid input. Search an email or detail.": [
+        "არასწორი შეყვანა. მოძებნეთ ელფოსტა, ან დეტალი."
       ],
       "Invalid input. Search an email or IP address.": [
         "არასწორი შეყვანა. მოძებნეთ ელფოსტა ან IP მისამართი."
@@ -14955,6 +15012,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "2FA ავთენტიკაცია აუცილებელი აღარაა"
+      ],
+      "Zoom video conferencing settings have been updated": [
+        "Zoom-ის ვიდეოკონფერენციის პარამეტრები განახლდა"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15075,11 +15135,17 @@
       "Get the deal": [
         "ფასდაკლების მიღება"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan }-დან."
+      ],
       "Last day to save": [
         "ბოლო დღე შესანახად"
       ],
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "შეთავაზება შეზღუდული დროით. ხელმისაწვდომია, მხოლოდ, თქვენი პირველი თვისთვის"
       ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
@@ -15666,6 +15732,11 @@
         "ტარიფის გაუმჯობესება"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "${ appName }-ზე გაგრძელება"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "გამჭოლი შიფრაცია"
@@ -16134,11 +16205,20 @@
       "Card number": [
         "ბარათის ნომერი"
       ],
+      "Credits and discounts are reflected in your invoice": [
+        "კრედიტები და ფასდაკლებები ასახულია თქვენს ინვოისში"
+      ],
       "Currently the automatic renewal of subscription is disabled. If you change the subscription now, then the automatic renewal will be re-enabled.": [
         "ამჟამად გამოწერის ავტომატური განახლება გათიშულია. თუ გამოწერას ახლა შეცვლით, ავტომატური განახლება თავიდან ჩაირთვება."
       ],
       "CVC": [
         "CVC"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის არჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% გადასახადების ამოღებით: ${ taxAmount }"
       ],
       "Got it": [
         "გავიგე"
@@ -16146,11 +16226,20 @@
       "I'm purchasing as a business": [
         "ვაპირებ შევიძინო ბიზნესისთვის"
       ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% გადასახადის გათვალისწინებით: ${ taxAmount }"
+      ],
       "MM/YY": [
         "თთ/წწ"
       ],
       "More plans are available in other currencies": [
         "მეტი სატარიფო გეგმა ხელმისაწვდომია სხვა ვალუტებში"
+      ],
+      "Offer unavailable": [
+        "შეთავაზება ხელმიუწვდომელია"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "ჯერ თავიდან გაააქტიურეთ გამოწერა, რომ შეამციროთ დამატებების რაოდენობა."
@@ -16187,6 +16276,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
+      ],
+      "This number will be shown on all future invoices": [
+        "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -16761,6 +16853,9 @@
       "download PDF": [
         "PDF-ის გადმოწერა"
       ],
+      "It’s the only way to recover everything—store it safely.": [
+        "ეს ერთად-ერთი გზაა ყველაფრის აღსადგენად - შეინახეთ ის უსაფრთხოდ."
+      ],
       "Or ${ copyRecoverySwitchButton } as text.": [
         "ან ${ copyRecoverySwitchButton } ტექსტის სახით."
       ],
@@ -16882,6 +16977,10 @@
       ]
     },
     "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "სიცოცხლის დრო ${ MIN_LIFETIME } დღეზე მეტი უნდა იყოს",
+        "სიცოცხლის დრო ${ MIN_LIFETIME } დღეზე მეტი უნდა იყოს"
+      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "ქმედებისთვის \"ყველას შენარჩუნება\" სიცოცხლის დრო დაყენებული არ უნდა იყოს"
       ],
@@ -17019,9 +17118,6 @@
     "Role": {
       "Admin": [
         "ადმინისტრატორი"
-      ],
-      "Primary admin": [
-        "ძირითადი ადმინისტრატორი"
       ],
       "User": [
         "მომხმარებელი"
@@ -20650,9 +20746,6 @@
       "Enhance security with 2FA": [
         "გააფართოვეთ უსაფრთხოება 2FA-ით"
       ],
-      "Enter 2FA code": [
-        "შეიყვანეთ 2FA კოდი"
-      ],
       "Enter endpoints into your identity provider": [
         "შეიყვანეთ ბოლოწერტილები თქვენი იდენტიფიკატორის მომწოდებელში"
       ],
@@ -21221,9 +21314,6 @@
       ],
       "Set up email forwarding": [
         "ელფოსტის გადაგზავნის მორგება"
-      ],
-      "Set up two-factor authentication": [
-        "2FA-ის დაყენება"
       ],
       "Set up your family account": [
         "მოირგეთ თქვენი საოჯახო ანგარიში"
@@ -22274,9 +22364,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "ადმინისტრატორებს კონფიდენციალური მომხმარებლების მონაცემებთან წვდომა არ აქვთ"
       ],

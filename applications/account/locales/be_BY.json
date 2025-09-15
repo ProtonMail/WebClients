@@ -2232,9 +2232,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяц.",
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцы.",
@@ -8818,6 +8815,12 @@
       "Attention required": [
         "Патрабуецца ўвага"
       ],
+      "Authenticator app 2FA disabled": [
+        "Праграма аўтэнтыфікацыі 2ФА адключана"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Праграма аўтэнтыфікацыі 2ФА уключана"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Аўтаадказ актыўны кожны месяц з пачатковага па канчатковы час."
       ],
@@ -9121,8 +9124,8 @@
       "Disabled on ${ boldValue }": [
         "Адключана ў ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Адключэнне двухфактарнай аўтэнтыфікацыі зробіць ваш уліковы запіс менш бяспечным. Працягвайце толькі ў тым выпадку, калі гэта сапраўды неабходна."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Адключэнне праграмы аўтэнтыфікацыі 2ФА зробіць ваш уліковы запіс менш бяспечным. Працягвайце толькі ў тым выпадку, калі гэта сапраўды неабходна."
       ],
       "Discount": [
         "Скідка"
@@ -9562,9 +9565,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Калі ў вас ёсць падарункавы код, то вы можаце ўжыць яго ніжэй для атрымання скідкі."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Калі вы ніколі раней не выкарыстоўвалі двухфактарную аўтэнтыфікацыю, то мы настойліва рэкамендуем вам ${ guideButton }."
-      ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Калі вы страціце свой пароль і вам неабходна будзе аднавіць уліковы запіс ${ boldImperative }, пераканайцеся, што ў вас ёсць ${ boldAccountRecovery }."
       ],
@@ -9889,8 +9889,8 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Кіраванне вашымі параметрамі апавяшчэнняў па электроннай пошце для ${ DOCS_APP_NAME }"
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Для налады свайго ўліковага запісу ўвядзіце гэту інфармацыю ўручную ў сваю прыладу двухфактарнай аўтэнтыфікацыі. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Для налады свайго ўліковага запісу ўвядзіце гэту інфармацыю ўручную ў праграму аўтэнтыфікацыі. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
@@ -10288,9 +10288,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Звяртайцеся да нас з любымі пытаннямі, якія датычацца ${ BRAND_NAME }"
       ],
-      "read our two-factor authentication guide first": [
-        "спачатку прачытаць наш дапаможнік па двухфактарнай аўтэнтыфікацыі"
-      ],
       "Recently used servers:": [
         "Серверы, якімі вы нядаўна карысталіся:"
       ],
@@ -10375,8 +10372,8 @@
       "Scan QR code instead": [
         "Сканіраваць QR-код"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Адсканіруйце гэты код сваёй прыладай з двухфактарнай аўтэнтыфікацыяй, каб наладзіць свой уліковы запіс. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Адсканіруйце гэты код з дапамогай праграмы аўтэнтыфікацыі, каб наладзіць свой уліковы запіс. ${ switchButton }"
       ],
       "SCIM integration disabled": [
         "Інтэграцыя SCIM адключана"
@@ -10497,9 +10494,6 @@
       ],
       "Signed up": [
         "Зарэгістраваліся"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Уваход з дапамогай ключа бяспекі яшчэ не падтрымліваецца ва ўсіх праграмах. Без TOTP уваход у некаторыя праграмы можа не атрымацца."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
@@ -10849,9 +10843,6 @@
       "This will wipe all logs for your organization members.": [
         "Гэта прывядзе да сцірання ўсіх журналаў для ўдзельнікаў вашай арганізацыі."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Гэты майстар дапаможа ўключыць двухфактарную аўтэнтыфікацыю (2ФА) для вашага ўліковага запісу ${ BRAND_NAME }. Мы рэкамендуем уключыць яе для таго, каб павялічыць бяспеку вашага ўліковага запісу ${ BRAND_NAME_TWO }."
-      ],
       "to ${ product } Business": [
         "у ${ product } Business"
       ],
@@ -10941,12 +10932,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Паспрабуйце ${ productName } абсалютна нічым не рызыкуючы. Вы атрымаеце поўнае вяртанне грашовых сродкаў, калі па нейкай прычыне зменіце сваё меркаванне. Без ніякіх пытанняў."
-      ],
-      "Two-factor authentication disabled": [
-        "Двухфактарная аўтэнтыфікацыя адключана"
-      ],
-      "Two-factor authentication enabled": [
-        "Двухфактарная аўтэнтыфікацыя ўключана"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Для рэжыму двух пароляў патрабуюцца два паролі: першы для ўваходу ва ўліковы запіс, а другі для расшыфроўкі вашых даных (дадатковая функцыя бяспекі)"
@@ -11271,6 +11256,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Без праграмы аўтэнтыфікацыі вы не зможаце ўвайсці ў праграмы ${ BRAND_NAME }, якія яшчэ не падтрымліваюць ключы бяспекі."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
@@ -16479,6 +16467,11 @@
         "Палепшыць мой тарыфны план"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Працягнуць у ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Зашыфравана скразным метадам"
@@ -16965,7 +16958,7 @@
         "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Без уліку падатка ў ${ taxRate }%: ${ taxAmount }"
+        "Без уліку падаткаў у ${ taxRate }%: ${ taxAmount }"
       ],
       "Got it": [
         "Зразумела"
@@ -16977,13 +16970,16 @@
         "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "З улікам падатка ў ${ taxRate }%: ${ taxAmount }"
+        "З улікам падаткаў у ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "ММ/ГГ"
       ],
       "More plans are available in other currencies": [
         "Больш тарыфных планаў даступна з іншымі валютамі"
+      ],
+      "Offer unavailable": [
+        "Прапанова недаступна"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
@@ -16996,6 +16992,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
       ],
       "Taxes": [
         "Падаткі"
@@ -17937,16 +17936,19 @@
       "Admin": [
         "Адміністратар"
       ],
-      "Primary admin": [
-        "Асноўны адміністратар"
-      ],
       "User": [
         "Карыстальнік"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **Адключыць аднаўленне па нумары тэлефона**, каб забяспечыць максімальны ўзровень бяспекі вашаму ўліковаму запісу."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Уключыць аднаўленне па нумары тэлефона** для вяртання доступу да ўліковага запісу, калі вы забудзеце свой пароль."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } будзе выкарыстоўваць гэты адрас, каб трымаць вас у курсе аб бяспецы вашага ўліковага запісу."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } будзе выкарыстоўваць гэты адрас для адпраўкі кода скідання па электроннай пошце пры скіданні вашага пароля."
@@ -17957,11 +17959,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery }, каб пераканацца ў тым, што вашы даныя могуць быць адноўлены."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Адключыць скіданне ўліковага запісу па электроннай пошце**, каб забяспечыць максімальны ўзровень бяспекі вашаму ўліковаму запісу."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Уключыць аднаўленне па электроннай пошце** для вяртання доступу да ўліковага запісу, калі вы забудзеце свой пароль."
       ],
+      "Account reset by email has been disabled": [
+        "Скіданне ўліковага запісу па электроннай пошце было адключана"
+      ],
+      "Account reset by phone has been disabled": [
+        "Скіданне ўліковага запісу па нумары тэлефона было адключана"
+      ],
       "Account safety review": [
         "Агляд бяспекі ўліковага запісу"
+      ],
+      "Add a email address": [
+        "Дадаць адрас электроннай пошты"
+      ],
+      "Add a phone number": [
+        "Дадаць нумар тэлефона"
       ],
       "Add a recovery email": [
         "Дадаць электронную пошту для аднаўлення"
@@ -17971,6 +17988,9 @@
       ],
       "Add a recovery phone number": [
         "Дадаць нумар тэлефона для аднаўлення"
+      ],
+      "Add an email": [
+        "Дадаць электронную пошту"
       ],
       "Back to Safety Review": [
         "Вярнуцца да бяспечнага агляду"
@@ -17993,11 +18013,23 @@
       "Device-based recovery enabled": [
         "Аднаўленне на падставе прылады ўключана"
       ],
+      "Disable account reset by email": [
+        "Адключыць скіданне ўліковага запісу па электроннай пошце"
+      ],
+      "Disable recovery by email": [
+        "Адключыць аднаўленне па электроннай пошце"
+      ],
+      "Disable recovery by phone": [
+        "Адключыць аднаўленне па нумары тэлефона"
+      ],
       "Download ${ size }": [
         "Спампаваць ${ size }"
       ],
       "Download your Recovery Kit": [
         "Спампаваць камплект аднаўлення"
+      ],
+      "Email address": [
+        "Адрас электроннай пошты"
       ],
       "Enable device-based recovery": [
         "Уключыце аднаўленне на падставе прылады"
@@ -18062,6 +18094,9 @@
       "There was an error generating your Recovery Kit": [
         "Адбылася памылка генерацыі вашага камплекта аднаўлення"
       ],
+      "There was an error verifying your email": [
+        "Адбылася памылка спраўджання вашай электроннай пошты"
+      ],
       "There was an error verifying your recovery email": [
         "Адбылася памылка спраўджання вашай электроннай пошты для аднаўлення"
       ],
@@ -18070,6 +18105,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         "для аўтаматычнага аднаўлення вашых даных пры ўваходзе ў давераную прыладу"
+      ],
+      "to ensure highest possible security of your account": [
+        ", каб забеспечыць вашаму ўліковаму запісу максімальны ўзровень бяспекі"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Увядзіце код спраўджання адпраўлены на электронную пошту ${ boldEmail } спраўдзіць, што яна належыць менавіта вам."
@@ -18083,6 +18121,9 @@
       "to recover your account if you're ever locked out": [
         "для аднаўлення вашага ўліковага запісу пры магчымай блакіроўцы"
       ],
+      "To stay in touch": [
+        "Для падтрымання сувязі"
+      ],
       "Update your Recovery Kit": [
         "Абнавіць камплект аднаўлення"
       ],
@@ -18092,6 +18133,12 @@
       "Verify": [
         "Спраўджанне"
       ],
+      "Verify your email address": [
+        "Спраўдзіце свой адрас электроннай пошты"
+      ],
+      "Verify your phone number": [
+        "Спраўдзіце свой нумар тэлефона"
+      ],
       "Verify your recovery email address": [
         "Спраўдзіць ваш адрас электроннай пошты для аднаўлення"
       ],
@@ -18100,6 +18147,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Мы сутыкнуліся з памылкай падчас генерацыі вашага камплекта аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "Адбылася памылка пры спраўджанні вашай электроннай пошты. Паспрабуйце яшчэ раз пазней або звярніцеся ў службу падтрымкі, калі праблема застанецца."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Мы сутыкнуліся з памылкай падчас спраўджання вашай электроннай пошты для аднаўлення. Паспрабуйце яшчэ раз пазней або звярніцеся ў нашу падтрымку, калі праблема застанецца."
@@ -18122,6 +18172,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Вы можаце скарыстацца фразай аднаўлення ў гэтым наборы для поўнага аднаўлення вашага ўліковага запісу, калі вы скінулі свой пароль. Пераканайцеся, што гэта інфармацыя захоўваецца ў надзейным месцы."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Вы можаце выкарыстоўваць сваю электронную пошту для аднаўлення доступу да ўліковага запісу, калі забудзеце пароль."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Вы можаце выкарыстоўваць сваю электронную пошту для вяртання доступу да ўліковага запісу, калі забудзеце пароль."
       ],
@@ -18131,11 +18184,26 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Вы ўжо спампоўвалі камплект аднаўлення. Паўторнае спампоўванне **дэактывуе папярэдні экзэмпляр**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "У вас ёсць рэкамендаваныя дзеянні для далейшай абароны вашага ўліковага запісу."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "У вас ёсць рэкамендаваныя дзеянні, каб абараніць свой уліковы запіс."
+      ],
       "You have recommended actions.": [
         "У вас ёсць рэкамендаваныя дзеянні."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Вы больш не зможаце выкарыстоўваць гэты адрас, каб скінуць свой уліковы запіс."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Вы больш не зможаце выкарыстоўваць гэты нумар тэлефона, каб скінуць свой уліковы запіс."
+      ],
       "Your account and data can be recovered": [
         "Ваш уліковы запіс і даныя могуць быць адноўлены"
+      ],
+      "Your account and data can be recovered.": [
+        "Ваш уліковы запіс і даныя могуць быць адноўлены."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Ваш уліковы запіс і даныя могуць быць адноўлены. Праверце, ці ёсць у вас доступ да метадаў аднаўлення."
@@ -18151,6 +18219,12 @@
       ],
       "Your account is secure.": [
         "Ваш уліковы запіс абаронены."
+      ],
+      "Your email address is:": [
+        "Ваш адрас электроннай пошты:"
+      ],
+      "Your email is set": [
+        "У вас зададзена электронная пошта"
       ],
       "Your recovery email": [
         "Ваша электронная пошта для аднаўлення"
@@ -21629,6 +21703,9 @@
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"
       ],
+      "Disable two-factor authentication app?": [
+        "Адключыць праграму двухфактарнай аўтэнтыфікацыі?"
+      ],
       "Disable two-factor authentication?": [
         "Адключыць двухфактарную аўтэнтыфікацыю?"
       ],
@@ -21751,9 +21828,6 @@
       ],
       "Enhance security with 2FA": [
         "Паляпшэнне бяспекі з дапамогай 2ФА"
-      ],
-      "Enter 2FA code": [
-        "Увядзіце код 2ФА"
       ],
       "Enter endpoints into your identity provider": [
         "Увядзіце канцавыя пункты ў свайго пастаўшчыка пасведчанняў"
@@ -22328,11 +22402,11 @@
       "Set up a recovery method": [
         "Наладзіць спосаб аднаўлення"
       ],
+      "Set up authenticator app": [
+        "Наладзіць праграму аўтэнтыфікацыі"
+      ],
       "Set up email forwarding": [
         "Наладжванне перасылкі лістоў"
-      ],
-      "Set up two-factor authentication": [
-        "Наладжванне двухфактарнай аўтэнтыфікацыі"
       ],
       "Set up your family account": [
         "Наладзіць сямейны ўліковы запіс"
@@ -23419,11 +23493,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2ФА"
-      ],
       "Administrators can't access the data of private users": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў"
+      ],
+      "Authenticator app": [
+        "Праграма аўтэнтыфікацыі"
       ],
       "Inactive": [
         "Неактыўны"
@@ -23442,6 +23516,9 @@
       ],
       "Private": [
         "Прыватны"
+      ],
+      "Security key": [
+        "Ключ бяспекі"
       ],
       "SSO": [
         "SSO"
