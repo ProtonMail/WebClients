@@ -165,6 +165,12 @@ export const updateConfirmLink = (ConfirmLink: number) => ({
     data: { ConfirmLink },
 });
 
+export const updateMailCategoryView = (MailCategoryView: boolean) => ({
+    url: 'mail/v4/settings/mail-category-view',
+    method: 'put',
+    data: { MailCategoryView },
+});
+
 export const updateDelaySend = (DelaySendSeconds: number) => ({
     url: 'mail/v4/settings/delaysend',
     method: 'put',

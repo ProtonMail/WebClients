@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import type { CategoryTab } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import type { CategoryTab } from '../categoryView/categoriesConstants';
 import { getLabelFromCategoryId } from '../categoryView/categoriesStringHelpers';
 
 export const getInboxCategoriesItems = ({

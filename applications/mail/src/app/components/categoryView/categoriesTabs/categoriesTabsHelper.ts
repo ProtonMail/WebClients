@@ -1,4 +1,5 @@
-import type { CategoryTab } from '../categoriesConstants';
+import type { CategoryTab } from '@proton/mail';
+
 import { TabState } from './tabsInterface';
 
 export const getTabState = ({

@@ -1,6 +1,5 @@
+import { getCategoryData } from '@proton/mail';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-
-import { getCategoryData } from '../categoriesHelpers';
 
 export const mockActiveCategoriesData = [
     MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
