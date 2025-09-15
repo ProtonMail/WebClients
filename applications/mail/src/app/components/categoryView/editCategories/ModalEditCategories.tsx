@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Tooltip } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { ModalContent, ModalTwo, ModalTwoFooter, useApi } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
@@ -13,13 +13,16 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useCategoriesView } from '../useCategoriesView';
 import { EditCategoriesList } from './EditCategoriesList';
 
-export const ModalEditCategories = ({ ...rest }: ModalProps) => {
+interface Props extends ModalProps {
+    onDisableAll: () => void;
+}
+
+export const ModalEditCategories = ({ onDisableAll, ...rest }: Props) => {
     const api = useApi();
     const { categoriesTabs, categoriesStore } = useCategoriesView();
 
     const initialCheckedCategoriesIdsRef = useRef<string[] | undefined>(undefined);
 
-    const [disabled, setDisabled] = useState(false);
     const [categoriesListState, setCategoriesListState] = useState<CategoryTab[]>(
         categoriesTabs?.filter((category) => category.id !== MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) || []
     );
@@ -65,6 +68,11 @@ export const ModalEditCategories = ({ ...rest }: ModalProps) => {
     };
 
     const handleSaveCategories = async () => {
+        if (categoriesListState.every((cat) => !cat.checked)) {
+            onDisableAll();
+            return;
+        }
+
         const currentChecked = categoriesListState
             .filter((category) => category.checked)
             .map((category) => category.id);
@@ -84,7 +92,6 @@ export const ModalEditCategories = ({ ...rest }: ModalProps) => {
             cat.id === category.id ? { ...cat, checked: !cat.checked } : cat
         );
 
-        setDisabled(newState.every((cat) => !cat.checked));
         setCategoriesListState(newState);
     };
 
@@ -100,13 +107,11 @@ export const ModalEditCategories = ({ ...rest }: ModalProps) => {
                 />
             </ModalContent>
             <ModalTwoFooter>
-                <Tooltip title={disabled ? c('Label').t`You cannot disable all categories` : undefined}>
-                    <span className="w-full">
-                        <Button fullWidth onClick={handleSaveCategories} loading={loading} disabled={disabled}>
-                            {c('Action').t`Done`}
-                        </Button>
-                    </span>
-                </Tooltip>
+                <span className="w-full">
+                    <Button fullWidth onClick={handleSaveCategories} loading={loading}>
+                        {c('Action').t`Done`}
+                    </Button>
+                </span>
             </ModalTwoFooter>
         </ModalTwo>
     );
