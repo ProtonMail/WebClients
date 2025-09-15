@@ -431,6 +431,8 @@ $container-to-width: 4em !default;
 }
 
 .message-iframe {
+	--selection-background-color: transparent;
+
 	opacity: 1;
 	transition: 0.1s easing(ease-out-sine);
 	transition-property: opacity;
