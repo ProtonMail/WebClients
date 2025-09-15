@@ -1109,8 +1109,8 @@
       "Upload file": [
         "Cargar archivo"
       ],
-      "Upload File": [
-        "Cargar archivo"
+      "Upload file via SDK": [
+        "Cargar archivo vía SDK"
       ],
       "Upload files": [
         "Cargar archivos"
@@ -1126,6 +1126,9 @@
       ],
       "Upload picture": [
         "Cargar imagen"
+      ],
+      "Upload SDK file": [
+        "Cargar archivo SDK"
       ],
       "Use ${ label } theme": [
         "Utilizar tema ${ label }"
@@ -1416,6 +1419,9 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
       ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licencias durante el periodo de prueba."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
       ],
@@ -1667,6 +1673,9 @@
       "Manual setup problem": [
         "Problema de configuración manual"
       ],
+      "Meet problem": [
+        "Problema de Meet"
+      ],
       "Other": [
         "Otro"
       ],
@@ -1815,12 +1824,47 @@
         "Expandir"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
+      "Basic chat history": [
+        "Historial de chat básico"
+      ],
+      "Full chat history with search": [
+        "Historial de chat completo con búsqueda"
+      ],
+      "Large file upload support": [
+        "Soporte para la carga de archivos grandes"
+      ],
+      "Limited daily chats": [
+        "Chats diarios limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para un acceso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Cargar y consultar múltiples archivos de gran tamaño"
+      ],
+      "Web search access": [
+        "Acceso a la búsqueda web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Añadir ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats de alta velocidad y funciones de IA avanzadas."
       ]
     },
     "color": {
@@ -11902,9 +11946,6 @@
       "Enhance security with 2FA": [
         "Mejora la seguridad con 2FA"
       ],
-      "Enter 2FA code": [
-        "Ingresa el código 2FA"
-      ],
       "Enter your password": [
         "Introduce tu contraseña"
       ],
@@ -12360,6 +12401,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activar ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Autenticación de dos factores"
       ],
       "Type": [
         "Tipo"
