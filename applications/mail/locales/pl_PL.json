@@ -8937,7 +8937,7 @@
         "Znaleziono ${ filteredList.length } polecenie.",
         "Znaleziono ${ filteredList.length } polecenia.",
         "Znaleziono ${ filteredList.length } poleceń.",
-        "Znaleziono ${ filteredList.length } poleceń."
+        "Znaleziono ${ filteredList.length } polecenia."
       ],
       "Optional": [
         "Opcjonalne"
@@ -14514,26 +14514,26 @@
       "${ ceilDays } day": [
         "${ ceilDays } dzień",
         "${ ceilDays } dni",
-        "${ ceilDays } dnia",
+        "${ ceilDays } dni",
         "${ ceilDays } dnia"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } godzina",
         "${ ceilHours } godziny",
         "${ ceilHours } godzin",
-        "${ ceilHours } godzin"
+        "${ ceilHours } godziny"
       ],
       "${ ceilMinutes } minute": [
         "${ ceilMinutes } minuta",
         "${ ceilMinutes } minuty",
         "${ ceilMinutes } minut",
-        "${ ceilMinutes } minut"
+        "${ ceilMinutes } minuty"
       ],
       "${ seconds } second": [
         "${ seconds } sekunda",
         "${ seconds } sekundy",
         "${ seconds } sekund",
-        "${ seconds } sekund"
+        "${ seconds } sekundy"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -14965,9 +14965,6 @@
       ],
       "Enhance security with 2FA": [
         "Zwiększ bezpieczeństwo za pomocą uwierzytelniania dwustopniowego"
-      ],
-      "Enter 2FA code": [
-        "Wpisz kod uwierzytelniający"
       ],
       "Enter your password": [
         "Wpisz hasło"
@@ -15499,6 +15496,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Włącz ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Uwierzytelnianie dwustopniowe"
       ],
       "Unsubscribe": [
         "Anuluj subskrypcję"
