@@ -7,11 +7,12 @@ import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { VerticalStep, VerticalSteps } from '@proton/atoms';
 import { SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { getTrialRenewalNoticeText } from '@proton/components/containers/payments/RenewalNotice';
+import { getTrialRenewalNoticeTextWithTermsAndConditions } from '@proton/components/containers/payments/RenewalNotice';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { getReferrerName } from '../../../../helpers/signupSearchParams';
@@ -146,8 +147,9 @@ const PricingFooter = () => {
                 {hasFullCheckoutDetails ? (
                     <p className="m-0">
                         {willAutoRenew
-                            ? getTrialRenewalNoticeText({
+                            ? getTrialRenewalNoticeTextWithTermsAndConditions({
                                   renewCycle: uiData.renewCycle,
+                                  app: getAppFromPathnameSafe(location.pathname) || APPS.PROTONMAIL,
                               })
                             : c('Signup').t`Then ${priceWithDiscountPerMonth} per month, if you subscribe.`}
                     </p>
