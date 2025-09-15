@@ -18,7 +18,7 @@ import { retryHandler } from './retryHandler';
 /**
  * Attach a catch handler to every API call to handle 401, 403, and other errors.
  */
-export default ({ call, onMissingScopes, onVerification, onForcePasswordChange }) => {
+export default ({ call, onMissingScopes, onVerification, onUserRestricted }) => {
     let loggedOut = false;
     let appVersionBad = false;
 
@@ -187,7 +187,7 @@ export default ({ call, onMissingScopes, onVerification, onForcePasswordChange }
                     ignoreHandler.includes(API_CUSTOM_ERROR_CODES.USER_RESTRICTED_STATE);
                 if (code === API_CUSTOM_ERROR_CODES.USER_RESTRICTED_STATE && !ignoreUserRestrictedState) {
                     const errorMessage = getApiErrorMessage(e);
-                    return onForcePasswordChange({
+                    return onUserRestricted({
                         error: e,
                         message: errorMessage,
                     });
