@@ -1,7 +1,7 @@
 import type { Device } from '../../../../store';
 import type { ContextMenuProps } from '../../../FileBrowser/interface';
-import { useRemoveDeviceModal } from '../../../modals/RemoveDeviceModal';
-import { useRenameDeviceModal } from '../../../modals/RenameDeviceModal';
+import { useRemoveDeviceModal } from '../../../modals/RemoveDeviceModal/RemoveDeviceModal';
+import { useRenameDeviceModal } from '../../../modals/RenameDeviceModal/RenameDeviceModal';
 import { ItemContextMenu } from '../../ContextMenu/ItemContextMenu';
 import { DeviceRemoveButton, DeviceRenameButton } from './buttons';
 

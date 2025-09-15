@@ -10,11 +10,13 @@ type ThumbnailType = {
 type ThumbnailsStore = {
     thumbnails: Record<string, ThumbnailType>;
     setThumbnail: (uid: string, obj: ThumbnailType) => void;
+    getThumbnail: (uid: string) => ThumbnailType | undefined;
 };
 
 export const useThumbnailStore = create<ThumbnailsStore>()(
-    devtools((set) => ({
+    devtools((set, get) => ({
         thumbnails: {},
+        getThumbnail: (revId: string) => get().thumbnails[revId],
         setThumbnail: (revId: string, obj: ThumbnailType) =>
             set((state) => {
                 const newThumbnails = { ...state.thumbnails };
