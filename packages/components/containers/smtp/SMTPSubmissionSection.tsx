@@ -33,6 +33,7 @@ import {
     MAIL_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
+import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { hasSMTPSubmission } from '@proton/shared/lib/helpers/organization';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl, getSupportContactURL } from '@proton/shared/lib/helpers/url';
@@ -57,7 +58,9 @@ const SMTPSubmissionSection = () => {
     const [user] = useUser();
     const [addresses = []] = useAddresses();
     const addressMap = new Map(addresses.map((address) => [address.ID, address.Email]));
-    const hasCustomAddress = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN);
+    const hasActiveCustomAddress = addresses.some(
+        (address) => address.Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN && getIsAddressEnabled(address)
+    );
     const [organization, loadingOrganization] = useOrganization();
     const isSMPTEligible = getIsSMPTEligible(organization);
     const [tokenIDToRemove, setTokenIDToRemove] = useState('');
@@ -84,11 +87,11 @@ const SMTPSubmissionSection = () => {
     const headersLength = headers.length;
 
     const openGenerateTokenModal = () => {
-        if (!hasCustomAddress) {
+        if (!hasActiveCustomAddress) {
             createNotification({
                 type: 'error',
                 text: c('Error')
-                    .t`You need to have a custom domain address in order to generate an SMTP submission token.`,
+                    .t`You need to have an active custom domain address in order to generate an SMTP submission token.`,
             });
             return;
         }
