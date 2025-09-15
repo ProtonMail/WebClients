@@ -6050,7 +6050,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/canvas@npm:^0.1.65, @napi-rs/canvas@npm:^0.1.74":
+"@napi-rs/canvas@npm:^0.1.65":
   version: 0.1.77
   resolution: "@napi-rs/canvas@npm:0.1.77"
   dependencies:
@@ -10957,7 +10957,7 @@ __metadata:
     "@rowsncolumns/fast-formula-parser": "workspace:^"
     "@rowsncolumns/toolkit": "workspace:^"
     "@rowsncolumns/utils": "workspace:^"
-    xlsx: "npm:^0.18.5"
+    exceljs: "npm:^4.4.0"
   peerDependencies:
     "@rowsncolumns/calculator": "workspace:^"
     "@rowsncolumns/common-types": "workspace:^"
@@ -11019,11 +11019,11 @@ __metadata:
     "@rowsncolumns/toolkit": "workspace:^"
     "@rowsncolumns/ui": "workspace:^"
     "@rowsncolumns/utils": "workspace:^"
+    exceljs: "npm:^4.4.0"
     formik: "npm:^2.4.6"
     immer: "npm:^10.1.1"
     jotai: "npm:^2.12.4"
     rxjs: "npm:^7.8.2"
-    xlsx: "npm:^0.18.5"
     yup: "npm:^1.6.1"
   peerDependencies:
     "@rowsncolumns/calculator": "workspace:^"
@@ -11112,10 +11112,10 @@ __metadata:
     "@rowsncolumns/utils": "workspace:^"
     "@types/uzip": "npm:^0.20201231.2"
     "@wmakeev/exceljs": "npm:^4.4.5"
+    exceljs: "npm:^4.4.0"
     fast-xml-parser: "npm:^5.2.3"
     rxjs: "npm:^7.8.2"
     uzip: "npm:^0.20201231.0"
-    xlsx: "npm:^0.18.5"
   languageName: unknown
   linkType: soft
 
@@ -14378,15 +14378,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/pdfjs-dist@npm:^2.10.378":
-  version: 2.10.378
-  resolution: "@types/pdfjs-dist@npm:2.10.378"
-  dependencies:
-    pdfjs-dist: "npm:*"
-  checksum: 10c0/7bda78e866b43a0fa50191975d05070950035551a36d208ba35edd6bbb8808518943c3e2ed9503c4d430b6f0d9a0f2c9a3762032a3a52a29d277d136c6a91ea7
-  languageName: node
-  linkType: hard
-
 "@types/pg-pool@npm:2.0.6":
   version: 2.0.6
   resolution: "@types/pg-pool@npm:2.0.6"
@@ -14824,13 +14815,6 @@ __metadata:
   version: 0.0.6
   resolution: "@types/use-sync-external-store@npm:0.0.6"
   checksum: 10c0/77c045a98f57488201f678b181cccd042279aff3da34540ad242f893acc52b358bd0a8207a321b8ac09adbcef36e3236944390e2df4fcedb556ce7bb2a88f2a8
-  languageName: node
-  linkType: hard
-
-"@types/uuid@npm:8.3.4":
-  version: 8.3.4
-  resolution: "@types/uuid@npm:8.3.4"
-  checksum: 10c0/b9ac98f82fcf35962317ef7dc44d9ac9e0f6fdb68121d384c88fe12ea318487d5585d3480fa003cf28be86a3bbe213ca688ba786601dce4a97724765eb5b1cf2
   languageName: node
   linkType: hard
 
@@ -16074,13 +16058,6 @@ __metadata:
     loader-utils: "npm:^2.0.0"
     regex-parser: "npm:^2.2.11"
   checksum: 10c0/6a6e5bb8b670e4e1238c708f6163e92aa2ad0308fe5913de73c89e4cbf41738ee0bcc5552b94d0b7bf8be435ee49b78c6de8a6db7badd80762051e843c8aa14f
-  languageName: node
-  linkType: hard
-
-"adler-32@npm:~1.3.0":
-  version: 1.3.1
-  resolution: "adler-32@npm:1.3.1"
-  checksum: 10c0/c1b7185526ee1bbe0eac8ed414d5226af4cd02a0540449a72ec1a75f198c5e93352ba4d7b9327231eea31fd83c2d080d13baf16d8ed5710fb183677beb85f612
   languageName: node
   linkType: hard
 
@@ -19280,16 +19257,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cfb@npm:~1.2.1":
-  version: 1.2.2
-  resolution: "cfb@npm:1.2.2"
-  dependencies:
-    adler-32: "npm:~1.3.0"
-    crc-32: "npm:~1.2.0"
-  checksum: 10c0/87f6d9c3878268896ed6ca29dfe32a2aa078b12d0f21d8405c95911b74ab6296823d7312bbf5e18326d00b16cc697f587e07a17018c5edf7a1ba31dd5bc6da36
-  languageName: node
-  linkType: hard
-
 "chai-as-promised@npm:^7.1.2":
   version: 7.1.2
   resolution: "chai-as-promised@npm:7.1.2"
@@ -20002,13 +19969,6 @@ __metadata:
   version: 5.65.20
   resolution: "codemirror@npm:5.65.20"
   checksum: 10c0/a1efc27d6c550f65b8ebe9c4229b7c4bb99e3856595779573597773f72aa576750f67765a598cb881d9238128d7b43be287f26e8a83bb2d42c2b2f0c0decb190
-  languageName: node
-  linkType: hard
-
-"codepage@npm:~1.15.0":
-  version: 1.15.0
-  resolution: "codepage@npm:1.15.0"
-  checksum: 10c0/2455b482302cb784b46dea60a8ee83f0c23e794bdd979556bdb107abe681bba722af62a37f5c955ff4efd68fdb9688c3986e719b4fd536c0e06bb25bc82abea3
   languageName: node
   linkType: hard
 
@@ -20814,7 +20774,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"crc-32@npm:^1.2.0, crc-32@npm:~1.2.0, crc-32@npm:~1.2.1":
+"crc-32@npm:^1.2.0":
   version: 1.2.2
   resolution: "crc-32@npm:1.2.2"
   bin:
@@ -24178,6 +24138,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"exceljs@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "exceljs@npm:4.4.0"
+  dependencies:
+    archiver: "npm:^5.0.0"
+    dayjs: "npm:^1.8.34"
+    fast-csv: "npm:^4.3.1"
+    jszip: "npm:^3.10.1"
+    readable-stream: "npm:^3.6.0"
+    saxes: "npm:^5.0.1"
+    tmp: "npm:^0.2.0"
+    unzipper: "npm:^0.10.11"
+    uuid: "npm:^8.3.0"
+  checksum: 10c0/47aa3e2b1238719946b788bbe00ea7068e746df64697ec7b93662061f10c8081a69190f0c2110a69af8b0eedf26e40120479f4e93b8ce3957a83ab92dfe57f10
+  languageName: node
+  linkType: hard
+
 "execa@npm:5.1.1, execa@npm:^5.0.0, execa@npm:^5.1.1":
   version: 5.1.1
   resolution: "execa@npm:5.1.1"
@@ -25470,13 +25447,6 @@ __metadata:
   version: 0.2.0
   resolution: "forwarded@npm:0.2.0"
   checksum: 10c0/9b67c3fac86acdbc9ae47ba1ddd5f2f81526fa4c8226863ede5600a3f7c7416ef451f6f1e240a3cc32d0fd79fcfe6beb08fd0da454f360032bde70bf80afbb33
-  languageName: node
-  linkType: hard
-
-"frac@npm:~1.1.2":
-  version: 1.1.2
-  resolution: "frac@npm:1.1.2"
-  checksum: 10c0/640740eb58b590eb38c78c676955bee91cd22d854f5876241a15c49d4495fa53a84898779dcf7eca30aabfe1c1a4a705752b5f224934257c5dda55c545413ba7
   languageName: node
   linkType: hard
 
@@ -34889,18 +34859,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"pdfjs-dist@npm:*":
-  version: 5.4.54
-  resolution: "pdfjs-dist@npm:5.4.54"
-  dependencies:
-    "@napi-rs/canvas": "npm:^0.1.74"
-  dependenciesMeta:
-    "@napi-rs/canvas":
-      optional: true
-  checksum: 10c0/7f709185439351457c646e63ea19c42dbc4752fb2a61dd57857d1882f6f066bf3da4b4534a29aa0b4a218ffd9f751d9ad54e247772f90d0a2a1ed11648b4287b
-  languageName: node
-  linkType: hard
-
 "pdfjs-dist@npm:^3.11.174":
   version: 3.11.174
   resolution: "pdfjs-dist@npm:3.11.174"
@@ -36958,7 +36916,6 @@ __metadata:
     "@tiptap/starter-kit": "npm:^2.26.1"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^22.18.1"
-    "@types/pdfjs-dist": "npm:^2.10.378"
     "@types/react": "npm:^18.3.24"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-syntax-highlighter": "npm:^15.5.13"
@@ -36971,6 +36928,7 @@ __metadata:
     cross-env: "npm:^10.0.0"
     eslint: "npm:^9.35.0"
     eslint-config-prettier: "npm:^10.1.8"
+    exceljs: "npm:^4.4.0"
     fake-indexeddb: "npm:^6.2.2"
     jest: "npm:^30.1.3"
     jest-environment-jsdom: "npm:^30.1.2"
@@ -37000,9 +36958,8 @@ __metadata:
     ttag: "npm:^1.8.12"
     turndown: "npm:^7.2.1"
     typescript: "npm:^5.9.2"
-    uuidv4: "npm:^6.2.13"
+    uuid: "npm:^13.0.0"
     vite: "npm:^5.4.20"
-    xlsx: "npm:^0.18.5"
   languageName: unknown
   linkType: soft
 
@@ -41497,15 +41454,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ssf@npm:~0.11.2":
-  version: 0.11.2
-  resolution: "ssf@npm:0.11.2"
-  dependencies:
-    frac: "npm:~1.1.2"
-  checksum: 10c0/c3fd24a90dc37a9dc5c4154cb4121e27507c33ebfeee3532aaf03625756b2c006cf79c0a23db0ba16c4a6e88e1349455327867e03453fc9d54b32c546bc18ca6
-  languageName: node
-  linkType: hard
-
 "ssri@npm:^12.0.0":
   version: 12.0.0
   resolution: "ssri@npm:12.0.0"
@@ -44838,15 +44786,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:8.3.2, uuid@npm:^8.3.0, uuid@npm:^8.3.2":
-  version: 8.3.2
-  resolution: "uuid@npm:8.3.2"
-  bin:
-    uuid: dist/bin/uuid
-  checksum: 10c0/bcbb807a917d374a49f475fae2e87fdca7da5e5530820ef53f65ba1d12131bd81a92ecf259cc7ce317cbe0f289e7d79fdfebcef9bfa3087c8c8a2fa304c9be54
-  languageName: node
-  linkType: hard
-
 "uuid@npm:9.0.1, uuid@npm:^9.0.0, uuid@npm:^9.0.1":
   version: 9.0.1
   resolution: "uuid@npm:9.0.1"
@@ -44865,13 +44804,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuidv4@npm:^6.2.13":
-  version: 6.2.13
-  resolution: "uuidv4@npm:6.2.13"
-  dependencies:
-    "@types/uuid": "npm:8.3.4"
-    uuid: "npm:8.3.2"
-  checksum: 10c0/33287c7c71e19c5a9fe0d936c0df648338965442c80b5b26e51c13ec9a9c524a72c718355e0cea8a9431a78680d72a41a236b87046ecc0a05f518c8e22df9e35
+"uuid@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "uuid@npm:13.0.0"
+  bin:
+    uuid: dist-node/bin/uuid
+  checksum: 10c0/950e4c18d57fef6c69675344f5700a08af21e26b9eff2bf2180427564297368c538ea11ac9fb2e6528b17fc3966a9fd2c5049361b0b63c7d654f3c550c9b3d67
+  languageName: node
+  linkType: hard
+
+"uuid@npm:^8.3.0, uuid@npm:^8.3.2":
+  version: 8.3.2
+  resolution: "uuid@npm:8.3.2"
+  bin:
+    uuid: dist/bin/uuid
+  checksum: 10c0/bcbb807a917d374a49f475fae2e87fdca7da5e5530820ef53f65ba1d12131bd81a92ecf259cc7ce317cbe0f289e7d79fdfebcef9bfa3087c8c8a2fa304c9be54
   languageName: node
   linkType: hard
 
@@ -46111,24 +46058,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wmf@npm:~1.0.1":
-  version: 1.0.2
-  resolution: "wmf@npm:1.0.2"
-  checksum: 10c0/3fa5806f382632cadfe65d4ef24f7a583b0c0720171edb00e645af5248ad0bb6784e8fcee1ccd9f475a1a12a7523e2512e9c063731fbbdae14dc469e1c033d93
-  languageName: node
-  linkType: hard
-
 "word-wrap@npm:^1.2.3, word-wrap@npm:^1.2.5":
   version: 1.2.5
   resolution: "word-wrap@npm:1.2.5"
   checksum: 10c0/e0e4a1ca27599c92a6ca4c32260e8a92e8a44f4ef6ef93f803f8ed823f486e0889fc0b93be4db59c8d51b3064951d25e43d434e95dc8c960cc3a63d65d00ba20
-  languageName: node
-  linkType: hard
-
-"word@npm:~0.3.0":
-  version: 0.3.0
-  resolution: "word@npm:0.3.0"
-  checksum: 10c0/c6da2a9f7a0d81a32fa6768a638d21b153da2be04f94f3964889c7cc1365d74b6ecb43b42256c3f926cd59512d8258206991c78c21000c3da96d42ff1238b840
   languageName: node
   linkType: hard
 
@@ -46523,23 +46456,6 @@ __metadata:
   version: 5.1.0
   resolution: "xdg-basedir@npm:5.1.0"
   checksum: 10c0/c88efabc71ffd996ba9ad8923a8cc1c7c020a03e2c59f0ffa72e06be9e724ad2a0fccef488757bc6ed3d8849d753dd25082d1035d95cb179e79eae4d034d0b80
-  languageName: node
-  linkType: hard
-
-"xlsx@npm:^0.18.5":
-  version: 0.18.5
-  resolution: "xlsx@npm:0.18.5"
-  dependencies:
-    adler-32: "npm:~1.3.0"
-    cfb: "npm:~1.2.1"
-    codepage: "npm:~1.15.0"
-    crc-32: "npm:~1.2.1"
-    ssf: "npm:~0.11.2"
-    wmf: "npm:~1.0.1"
-    word: "npm:~0.3.0"
-  bin:
-    xlsx: bin/xlsx.njs
-  checksum: 10c0/787cfa77034a3e86fdcde21572f1011c8976f87823a5e0ee5057f13b2f6e48f17a1710732a91b8ae15d7794945c7cba8a3ca904ea7150e028260b0ab8e1158c8
   languageName: node
   linkType: hard
 
