@@ -4,10 +4,10 @@ import { clsx } from 'clsx';
 
 import { Icon } from '@proton/components';
 import type { IconName } from '@proton/icons';
+import type { CATEGORIES_COLOR_SHADES } from '@proton/mail';
 import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
-import type { CATEGORIES_COLOR_SHADES } from '../categoriesConstants';
 import { getLabelFromCategoryId } from '../categoriesStringHelpers';
 import { TabState } from './tabsInterface';
 

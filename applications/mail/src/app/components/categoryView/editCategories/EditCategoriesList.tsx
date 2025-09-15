@@ -1,8 +1,8 @@
 import { clsx } from 'clsx';
 
 import { Checkbox, Icon, Label } from '@proton/components';
+import type { CategoryTab } from '@proton/mail';
 
-import type { CategoryTab } from '../categoriesConstants';
 import { getDescriptionFromCategoryId, getLabelFromCategoryId } from '../categoriesStringHelpers';
 
 interface Props {
