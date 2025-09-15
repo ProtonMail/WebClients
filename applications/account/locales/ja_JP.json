@@ -2214,9 +2214,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "申し訳ありませんがこれらの要請は現在のあなたのプランでは許可されていません。${ cycle }ヶ月間のサブスクリプションで${ plan.Title }を${ discountPercentage }割引でご利用いただけます。"
       ]
@@ -8542,6 +8539,12 @@
       "Attention required": [
         "注意が必要です"
       ],
+      "Authenticator app 2FA disabled": [
+        "認証システムアプリの2要素認証が無効になりました。"
+      ],
+      "Authenticator app 2FA enabled": [
+        "認証システムアプリの2要素認証が有効になりました。"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "自動返信は、毎月、選択した開始時刻と終了時刻の間で有効になります。"
       ],
@@ -8833,8 +8836,8 @@
       "Disabled on ${ boldValue }": [
         "${ boldValue }に無効"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "2段階認証を無効にすると、アカウントの安全性が低下します。必要に応じてのみ続行してください。"
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "認証アプリの2FAを無効化すると、お客様のアカウントの安全性が低下します。必要に応じてのみ続行してください。"
       ],
       "Discount": [
         "割引"
@@ -9271,9 +9274,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "ギフトコードをお持ちの場合は、以下に入力して割引を適用できます。"
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "2要素認証を初めて使う場合、${ guideButton }を強くお勧めします。"
-      ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "パスワードを紛失し、アカウントを回復する必要がある場合、${ boldImperative }${ boldAccountRecovery } を設定していることを確認してください。"
       ],
@@ -9592,8 +9592,8 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "メールの通知設定を${ DOCS_APP_NAME }で管理する。"
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "アカウント設定のために、2 要素認証デバイスに手動でこの情報を入力してください。${ switchButton }。"
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "アカウント設定のために、お客様の認証アプリにこの情報を手動で入力してください。${ switchButton }。"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode ロゴ"
@@ -9976,9 +9976,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "何かお困りの際は、${ BRAND_NAME }までお問い合わせください。"
       ],
-      "read our two-factor authentication guide first": [
-        "はじめに 2 要素認証ガイドをお読みください"
-      ],
       "Recently used servers:": [
         "最近使用したサーバー:"
       ],
@@ -10063,8 +10060,8 @@
       "Scan QR code instead": [
         "代わりに QR コードをスキャン"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "アカウント設定のために、2 要素認証デバイスでこのコードをスキャンしてしてください。${ switchButton }"
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "アカウント設定のために、認証アプリでこのコードをスキャンしてください。${ switchButton }"
       ],
       "SCIM integration disabled": [
         "SCIM統合が無効"
@@ -10182,9 +10179,6 @@
       ],
       "Signed up": [
         "サインアップ済み"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "セキュリティキーでのサインインは、まだすべてのアプリではサポートされていません。TOTPなしでは、一部のアプリへのサインインが失敗する可能性があります。"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
@@ -10519,9 +10513,6 @@
       "This will wipe all logs for your organization members.": [
         "これにより、お客様の組織のメンバーのすべてのログが消去されます。"
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "このウィザードでは、あなたの ${ BRAND_NAME } アカウントの 2 要素認証 (2FA) を有効にします。2 要素認証を使用することで、${ BRAND_NAME_TWO } アカウントのセキュリティがより高まるため、有効にすることをおすすめします。"
-      ],
       "to ${ product } Business": [
         "${ product }ビジネスへ"
       ],
@@ -10611,12 +10602,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } を完全にリスクなしでお試しください もし何らかの理由で気が変わった場合には、質問なしで全額返金を受け取ることができます。"
-      ],
-      "Two-factor authentication disabled": [
-        "2 要素認証が無効になりました"
-      ],
-      "Two-factor authentication enabled": [
-        "2 要素認証が有効になりました"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "2つのパスワードモードには 2つのパスワードが必要です: 1つはアカウントにサインインするため、そしてもう1つはデータを複号化するためです。(高度)"
@@ -10941,6 +10926,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "有効化しない限り、新規ユーザーの作成、既存ユーザーへのメールアドレスの追加並びに、ユーザーのアカウントへのアクセスはできません。"
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "認証アプリがないと、まだセキュリティキーをサポートしていない${ BRAND_NAME }のアプリにサインインできなくなります。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
@@ -12049,7 +12037,7 @@
         "バックアップパスワード"
       ],
       "Beta": [
-        "ベータ"
+        "ベータ版"
       ],
       "Billing cycle": [
         "支払い間隔"
@@ -15945,6 +15933,11 @@
         "プランをアップグレード"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "${ appName } で続行"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "エンドツーエンド暗号化"
@@ -16448,6 +16441,9 @@
       "More plans are available in other currencies": [
         "他の通貨でも利用できるプランが増えています"
       ],
+      "Offer unavailable": [
+        "オファーは利用できません"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "アドオンを減らすには、まずサブスクリプションを再有効化してください。"
       ],
@@ -16459,6 +16455,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }で更新、いつでもキャンセル可能。"
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ありませんが、この特典は現在のプランではご利用いただけません。"
       ],
       "Taxes": [
         "税金"
@@ -17367,16 +17366,19 @@
       "Admin": [
         "管理者"
       ],
-      "Primary admin": [
-        "プライマリ管理者"
-      ],
       "User": [
         "ユーザー"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **電話番号による復元を無効化**し、お客様のアカウントのセキュリティを最大限に確保します。"
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **電話番号での回復を有効化**することでパスワードを忘れた場合に、アカウントへのアクセスを取り戻すことができます。"
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } は、お客様のアカウントセキュリティに関する更新情報をお届けするために、このアドレスを使用します。"
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "パスワードをリセットした時、${ BRAND_NAME }はこのアドレスにメールでリセットコードをお送りします。"
@@ -17387,11 +17389,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery }でデータを復元できるようにします。"
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**メールアドレスによるアカウントのリセットを無効化**し、お客様のアカウントのセキュリティを最大限に確保します。"
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**メールでの回復を有効化**することでパスワードを忘れた場合に、アカウントへのアクセスを取り戻すことができます。"
       ],
+      "Account reset by email has been disabled": [
+        "メールによるアカウントのリセットは無効化されました"
+      ],
+      "Account reset by phone has been disabled": [
+        "電話によるアカウントのリセットは無効化されました"
+      ],
       "Account safety review": [
         "アカウント安全性レビュー"
+      ],
+      "Add a email address": [
+        "メールアドレスを追加"
+      ],
+      "Add a phone number": [
+        "電話番号を追加"
       ],
       "Add a recovery email": [
         "回復用メールアドレスを追加"
@@ -17401,6 +17418,9 @@
       ],
       "Add a recovery phone number": [
         "回復用電話番号を追加"
+      ],
+      "Add an email": [
+        "新しいメールアドレスを追加"
       ],
       "Back to Safety Review": [
         "安全性レビューに戻る"
@@ -17423,11 +17443,23 @@
       "Device-based recovery enabled": [
         "デバイスベースの回復が有効になりました"
       ],
+      "Disable account reset by email": [
+        "メールによるアカウントリセットの無効化"
+      ],
+      "Disable recovery by email": [
+        "メールアドレスでの回復を無効にする"
+      ],
+      "Disable recovery by phone": [
+        "電話番号での回復を無効化"
+      ],
       "Download ${ size }": [
         "${ size } をダウンロード"
       ],
       "Download your Recovery Kit": [
         "回復キットをダウンロード"
+      ],
+      "Email address": [
+        "メールアドレス"
       ],
       "Enable device-based recovery": [
         "デバイスベースの回復を有効にする"
@@ -17492,6 +17524,9 @@
       "There was an error generating your Recovery Kit": [
         "回復キットの生成中にエラーが発生しました"
       ],
+      "There was an error verifying your email": [
+        "お客様のメールアドレスの確認中にエラーが発生しました"
+      ],
       "There was an error verifying your recovery email": [
         "回復用メールアドレスの確認中にエラーが発生しました"
       ],
@@ -17500,6 +17535,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         "信頼されたデバイスからログインした時に自動で回復するために"
+      ],
+      "to ensure highest possible security of your account": [
+        "アカウントのセキュリティを最大限確保するために"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "メールアドレスがあなたのものであることを確認するため、${ boldEmail }に送信された確認コードを入力してください。"
@@ -17513,6 +17551,9 @@
       "to recover your account if you're ever locked out": [
         "締め出された場合にアカウントを回復するために"
       ],
+      "To stay in touch": [
+        "連絡を取り合う"
+      ],
       "Update your Recovery Kit": [
         "回復キットを更新"
       ],
@@ -17522,6 +17563,12 @@
       "Verify": [
         "検証"
       ],
+      "Verify your email address": [
+        "メールアドレスを認証"
+      ],
+      "Verify your phone number": [
+        "電話番号を認証"
+      ],
       "Verify your recovery email address": [
         "復旧用メールアドレスを確認してください"
       ],
@@ -17530,6 +17577,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "回復キットの生成中にエラーが発生しました。後ほど再度試してください、あるいは問題が続く場合はサポートに連絡をしてください。"
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "お客様のメールアドレスの確認中にエラーが発生しました。後ほど再度お試しいただくか、問題が続く場合はサポートにお問い合わせください。"
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "回復用メールアドレスの確認中にエラーが発生しました。後ほど再度試してください、あるいは問題が続く場合はサポートに連絡をしてください。"
@@ -17552,6 +17602,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "この回復キットにあるリカバリーフレーズを使用すると、パスワードをリセットした際にアカウントを完全に復元することができるので、安全な場所に保管してください。"
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "パスワードを忘れた場合、お客様のメールアドレスを使用してアカウントへのアクセスを回復できます。"
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "パスワードを忘れた場合、回復用メールアドレスを使用してアカウントへのアクセスを回復できます。"
       ],
@@ -17561,11 +17614,26 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "以前にリカバリーキットはダウンロードされました。新しいものをダウンろどーすると、**古いものは非アクティベートされます**。"
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "お客様のアカウントをさらに保護するための推奨事項があります。"
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "お客様のアカウントを保護するための推奨事項があります。"
+      ],
       "You have recommended actions.": [
         "推奨されるアクションがあります。"
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "このアドレスを使用してアカウントをリセットすることはできなくなります。"
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "この電話番号を使用してお客様のアカウントをリセットすることはできなくなります。"
+      ],
       "Your account and data can be recovered": [
         "アカウントとデータは回復できます"
+      ],
+      "Your account and data can be recovered.": [
+        "アカウントとデータは回復できます。"
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "アカウントとデータは回復できます。回復手段にアクセスできるか確認してください。"
@@ -17581,6 +17649,12 @@
       ],
       "Your account is secure.": [
         "あなたのアカウントは安全です。"
+      ],
+      "Your email address is:": [
+        "あなたのメールアドレス："
+      ],
+      "Your email is set": [
+        "メールが設定済みです"
       ],
       "Your recovery email": [
         "回復用メールアドレス"
@@ -20831,6 +20905,9 @@
       "Disable two-factor authentication": [
         "2要素認証を無効化"
       ],
+      "Disable two-factor authentication app?": [
+        "2要素認証アプリを無効にしますか？"
+      ],
       "Disable two-factor authentication?": [
         "2要素認証を無効にしますか？"
       ],
@@ -20954,9 +21031,6 @@
       "Enhance security with 2FA": [
         "2要素認証でセキュリティを強化"
       ],
-      "Enter 2FA code": [
-        "2要素認証コードを入力"
-      ],
       "Enter endpoints into your identity provider": [
         "IDプロバイダーにエンドポイントを入力します"
       ],
@@ -21015,10 +21089,10 @@
         "フォルダーとラベル"
       ],
       "For Linux": [
-        "Linuxの場合"
+        "Linux用"
       ],
       "For macOS": [
-        "macOSの場合"
+        "macOS用"
       ],
       "For Windows": [
         "Windowsの場合"
@@ -21524,11 +21598,11 @@
       "Set up a recovery method": [
         "リカバリー方法を設定する"
       ],
+      "Set up authenticator app": [
+        "認証アプリを設定"
+      ],
       "Set up email forwarding": [
         "メール転送の設定"
-      ],
-      "Set up two-factor authentication": [
-        "2 要素認証の設定"
       ],
       "Set up your family account": [
         "家族アカウントの設定"
@@ -22606,11 +22680,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2要素認証"
-      ],
       "Administrators can't access the data of private users": [
         "管理者がプライベートユーザーのデータにアクセスすることはできません。"
+      ],
+      "Authenticator app": [
+        "認証アプリ"
       ],
       "Inactive": [
         "非アクティブ"
@@ -22629,6 +22703,9 @@
       ],
       "Private": [
         "プライベート"
+      ],
+      "Security key": [
+        "セキュリティキー"
       ],
       "SSO": [
         "SSO"

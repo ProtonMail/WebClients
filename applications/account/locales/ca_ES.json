@@ -557,7 +557,7 @@
         "Descarrega una mostra de CSV"
       ],
       "Download for macOS": [
-        "Descarrega per al macOS"
+        "Descarrega per macOS"
       ],
       "Download for Windows": [
         "Descarregueu-lo per Windows"
@@ -2220,9 +2220,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Aquesta oferta no està disponible amb el vostre pla actual. Però podeu obtenir un ${ discountPercentage } de descompte en ${ plan.Title } quan us subscriviu per ${ cycle } mes.",
         "Aquesta oferta no està disponible amb el vostre pla actual. Però podeu obtenir un ${ discountPercentage } de descompte en ${ plan.Title } quan us subscriviu per ${ cycle } mesos."
@@ -4747,10 +4744,10 @@
     },
     "Download link": {
       ".deb for Debian / Ubuntu": [
-        ".deb per al Debian/Ubuntu"
+        ".deb per a Debian/Ubuntu"
       ],
       ".rpm for Fedora / Red Hat": [
-        ".rpm per al Fedora/Red Hat"
+        ".rpm per a Fedora/Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -8634,6 +8631,12 @@
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
+      "Authenticator app 2FA disabled": [
+        "S'ha desactivat l'aplicació d'autenticació 2FA"
+      ],
+      "Authenticator app 2FA enabled": [
+        "S'ha habilitat l'aplicació autenticadora 2FA"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La resposta automàtica està activa durant cada mes entre l'hora inicial i final seleccionada."
       ],
@@ -8929,8 +8932,8 @@
       "Disabled on ${ boldValue }": [
         "S'ha desactivat el ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Si desactiveu l'autenticació de doble factor, el vostre compte serà menys segur. Només procediu si és absolutament necessari."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Si desactiveu l'aplicació d'autenticació 2FA, el vostre compte serà menys segur. Feu-ho només si és absolutament necessari."
       ],
       "Discount": [
         "Descompte"
@@ -9368,9 +9371,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Si teniu un codi regal, introduïu-lo a sota per aplicar el vostre descompte."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Si mai no heu utilitzat l'autenticació de doble factor abans, us recomanem ${ guideButton }."
-      ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Si perdeu la contrasenya i necessiteu recuperar el compte, ${ boldImperative } que teniu un ${ boldAccountRecovery } al seu lloc."
       ],
@@ -9691,8 +9691,8 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestioneu les vostres preferències de notificació per correu electrònic per a ${ DOCS_APP_NAME }."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduïu manualment aquesta informació al vostre dispositiu d'autenticació de doble factor per a configurar el compte. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Introduïu manualment aquesta informació a l'aplicació d'autenticació per configurar el vostre compte. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -10080,9 +10080,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Poseu-vos en contacte amb nosaltres per a qualsevol ajuda relacionada amb ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "llegir primer la nostra guia d’autenticació de doble factor"
-      ],
       "Recently used servers:": [
         "Servidors utilitzats recentment:"
       ],
@@ -10167,8 +10164,8 @@
       "Scan QR code instead": [
         "Escanejar codi QR"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Escaneja aquest codi Qr amb el teu disposiu d'autenticació en dos passos per a configurar el vostre compte. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Escanegeu aquest codi amb l'aplicació d'autenticació per configurar el vostre compte. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "S'ha desactivat la integració SCIM."
@@ -10287,9 +10284,6 @@
       ],
       "Signed up": [
         "Registat"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "L'inici de sessió amb una clau de seguretat encara no és compatible amb totes les aplicacions. Sense TOTP, és possible que l'inici de sessió en algunes aplicacions no funcioni."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
@@ -10629,9 +10623,6 @@
       "This will wipe all logs for your organization members.": [
         "Això esborrarà tots els registres dels membres de la vostra organització."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Aquest assistent activarà l'autenticació de doble factor (2FA) al vostre compte de ${ BRAND_NAME }. L’autenticació de doble factor farà que el compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
-      ],
       "to ${ product } Business": [
         "a ${ product } Business"
       ],
@@ -10721,12 +10712,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Proveu ${ productName } totalment sense riscos. Si per qualsevol motiu canvieu d'opinió, rebreu un reemborsament complet. Sense preguntes."
-      ],
-      "Two-factor authentication disabled": [
-        "S'ha desactivat l'autenticació de doble factor"
-      ],
-      "Two-factor authentication enabled": [
-        "S'ha activat l'autenticació de doble factor"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "El mode de dues contrasenyes requereix: una contrasenya per a iniciar la sessió al compte i una altra per a desxifrar les dades. (Avançat)"
@@ -11051,6 +11036,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Sense una aplicació d'autenticació, no podreu iniciar sessió a les aplicacions de ${ BRAND_NAME } que encara no admeten claus de seguretat."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -12180,7 +12168,7 @@
         "Contrasenya de recuperació"
       ],
       "Beta": [
-        "Beta"
+        "Versió beta"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -12924,7 +12912,7 @@
         "Segona contrasenya"
       ],
       "Select Linux package format": [
-        "Seleccioneu el format de paquet Linux"
+        "Seleccioneu el format del paquet Linux"
       ],
       "Select Linux platform": [
         "Seleccioneu la distribució Linux"
@@ -16123,6 +16111,11 @@
         "Millora el meu pla"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Continua amb ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Xifrat d'extrem a extrem"
@@ -16627,6 +16620,9 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
+      "Offer unavailable": [
+        "Aquesta oferta no està disponible"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
@@ -16638,6 +16634,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Ens sap greu, aquesta oferta no està disponible amb el pla actual."
       ],
       "Taxes": [
         "Impostos"
@@ -17557,16 +17556,19 @@
       "Admin": [
         "Administardor"
       ],
-      "Primary admin": [
-        "Administrador principal"
-      ],
       "User": [
         "Usuari"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **Desactiveu la recuperació per telèfon** per garantir la màxima seguretat possible del vostre compte."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Activeu la recuperació per telèfon** per recuperar l'accés al vostre compte si oblideu la contrasenya."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } utilitzarà aquesta adreça per mantenir-vos actualitzat sobre la seguretat del vostre compte."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } utilitzarà aquesta adreça per enviar un codi de restabliment per correu electrònic quan restabliu la contrasenya."
@@ -17577,11 +17579,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } per garantir que les vostres dades es puguin recuperar."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Desactiveu el restabliment del compte pel correu ** per garantir-ne la màxima seguretat possible."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Activeu la recuperació per correu electrònic** per recuperar l'accés al vostre compte si oblideu la contrasenya."
       ],
+      "Account reset by email has been disabled": [
+        "El restabliment del compte per correu s'ha desactivat"
+      ],
+      "Account reset by phone has been disabled": [
+        "El restabliment del compte per telèfon s'ha desactivat"
+      ],
       "Account safety review": [
         "Revisió de seguretat del compte"
+      ],
+      "Add a email address": [
+        "Afegiu una adreça de correu"
+      ],
+      "Add a phone number": [
+        "Afegiu un número de telèfon"
       ],
       "Add a recovery email": [
         "Afegeix un correu electrònic de recuperació"
@@ -17591,6 +17608,9 @@
       ],
       "Add a recovery phone number": [
         "Afegeix un número de telèfon de recuperació"
+      ],
+      "Add an email": [
+        "Afegiu un correu electrònic"
       ],
       "Back to Safety Review": [
         "Torna a la revisió de seguretat"
@@ -17613,11 +17633,23 @@
       "Device-based recovery enabled": [
         "S'ha activat la recuperació basada en un dispositiu"
       ],
+      "Disable account reset by email": [
+        "Desactiveu el restabliment del compte per correu"
+      ],
+      "Disable recovery by email": [
+        "Desactiveu la recuperació per correu"
+      ],
+      "Disable recovery by phone": [
+        "Desactiveu la recuperació per telèfon"
+      ],
       "Download ${ size }": [
         "Descarrega ${ size }"
       ],
       "Download your Recovery Kit": [
         "Descarregueu el vostre kit de recuperació"
+      ],
+      "Email address": [
+        "Adreça de correu"
       ],
       "Enable device-based recovery": [
         "Activeu la recuperació basada en un dispositiu"
@@ -17682,6 +17714,9 @@
       "There was an error generating your Recovery Kit": [
         "S'ha produït un error en generar el vostre kit de recuperació."
       ],
+      "There was an error verifying your email": [
+        "S'ha produït un error en verificar el vostre correu"
+      ],
       "There was an error verifying your recovery email": [
         "S'ha produït un error en verificar el vostre correu electrònic de recuperació."
       ],
@@ -17690,6 +17725,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         "per recuperar automàticament les vostres dades quan inicieu sessió en un dispositiu de confiança."
+      ],
+      "to ensure highest possible security of your account": [
+        "per garantir-vos la màxima seguretat possible del compte"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Per a assegurar-nos que l'adreça de correu electrònic és vostra, introduïu el codi de verificació enviat a ${ boldEmail }."
@@ -17703,6 +17741,9 @@
       "to recover your account if you're ever locked out": [
         "per recuperar el vostre compte si ja no hi teniu accés."
       ],
+      "To stay in touch": [
+        "Per mantenir el contacte"
+      ],
       "Update your Recovery Kit": [
         "Actualitzeu el kit de recuperació"
       ],
@@ -17712,6 +17753,12 @@
       "Verify": [
         "Verifica"
       ],
+      "Verify your email address": [
+        "Verifiqueu l'adreça de correu"
+      ],
+      "Verify your phone number": [
+        "Verifiqueu el vostre número de telèfon"
+      ],
       "Verify your recovery email address": [
         "Verifiqueu l'adreça de correu electrònic de recuperació"
       ],
@@ -17720,6 +17767,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Hem trobat un error en generar el vostre kit de recuperació. Torneu-ho a provar més tard o poseu-vos en contacte amb el servei d'atenció al client si el problema continua."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "Hi ha hagut un error en verificar el vostre correu. Torneu-ho a provar més tard o poseu-vos en contacte amb el servei d'atenció al client si el problema continua."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Hem trobat un error en verificar el vostre correu electrònic de recuperació. Torneu-ho a provar més tard o poseu-vos en contacte amb el servei d'atenció al client si el problema continua."
@@ -17742,6 +17792,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Podeu utilitzar la frase de recuperació d'aquest kit de recuperació per restaurar completament el vostre compte quan restabliu la contrasenya, així que assegureu-vos de mantenir-la en un lloc segur."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Podeu utilitzar el correu per recuperar l'accés al vostre compte si oblideu la contrasenya."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Podeu utilitzar el correu electrònic de recuperació per recuperar l'accés al vostre compte si oblideu la contrasenya."
       ],
@@ -17751,10 +17804,25 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Abans heu baixat un kit de recuperació. Descarregar-ne un de nou **desactivarà l'antic**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "Teniu accions recomanades per protegir el compte encara més."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "Teniu accions recomanades per protegir el vostre compte."
+      ],
       "You have recommended actions.": [
         "Teniu accions recomanades."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Ja no podreu utilitzar aquesta adreça per restablir el vostre compte."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Ja no podreu utilitzar aquest número de telèfon per restablir el vostre compte."
+      ],
       "Your account and data can be recovered": [
+        "El vostre compte i les dades es poden recuperar."
+      ],
+      "Your account and data can be recovered.": [
         "El vostre compte i les dades es poden recuperar."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
@@ -17771,6 +17839,12 @@
       ],
       "Your account is secure.": [
         "El vostre compte és segur."
+      ],
+      "Your email address is:": [
+        "La vostra adreça de correu és:"
+      ],
+      "Your email is set": [
+        "El vostre correu està configurat"
       ],
       "Your recovery email": [
         "El vostre correu electrònic de recuperació"
@@ -21100,6 +21174,9 @@
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
       ],
+      "Disable two-factor authentication app?": [
+        "Voleu desactivar l'aplicació d'autenticació de doble factor?"
+      ],
       "Disable two-factor authentication?": [
         "Voleu desactivar l'autenticació de doble factor?"
       ],
@@ -21223,9 +21300,6 @@
       "Enhance security with 2FA": [
         "Milloreu la seguretat amb 2FA"
       ],
-      "Enter 2FA code": [
-        "Introduïu el codi 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Introduïu els punts finals al vostre proveïdor d'identitat"
       ],
@@ -21288,7 +21362,7 @@
         "Per Linux"
       ],
       "For macOS": [
-        "Per al macOS"
+        "Per a macOS"
       ],
       "For Windows": [
         "Per Windows"
@@ -21795,11 +21869,11 @@
       "Set up a recovery method": [
         "Configura un mètode de recuperació"
       ],
+      "Set up authenticator app": [
+        "Configureu l'aplicació d'autenticació"
+      ],
       "Set up email forwarding": [
         "Configuració del reenviament de correu"
-      ],
-      "Set up two-factor authentication": [
-        "Configura l'autenticació de doble factor"
       ],
       "Set up your family account": [
         "Configureu el vostre compte familiar"
@@ -22880,11 +22954,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Els administradors no poden accedir a les dades dels usuaris privats"
+      ],
+      "Authenticator app": [
+        "Aplicació d'autenticació"
       ],
       "Inactive": [
         "Inactiva"
@@ -22903,6 +22977,9 @@
       ],
       "Private": [
         "Privat"
+      ],
+      "Security key": [
+        "Clau de seguretat"
       ],
       "SSO": [
         "Inici de sessió únic (SSO)"

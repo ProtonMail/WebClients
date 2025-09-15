@@ -472,9 +472,6 @@
       "Download CSV sample": [
         "Завантажити зразок CSV"
       ],
-      "Download for Windows": [
-        "Завантажити для Windows"
-      ],
       "Download ICS": [
         "Завантажити ICS"
       ],
@@ -1823,9 +1820,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяць.",
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяці.",
@@ -4007,14 +4001,6 @@
       ],
       "Windows": [
         "Windows"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb для Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm для Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -6215,14 +6201,6 @@
         "Безплатний пробний період вашої програми для комп'ютера завершився"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } в App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } у Play Маркеті"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Автоматичне пересилання"
@@ -7716,9 +7694,6 @@
       "Disable recovery by phone number": [
         "Вимкнути відновлення за номером телефону"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Вимкнення двофакторної автентифікації зробить ваш обліковий запис менш захищеним. Вмикайте її лише в разі крайньої потреби."
-      ],
       "Discount": [
         "Знижка"
       ],
@@ -7941,9 +7916,6 @@
       "Failed to fetch logs.": [
         "Помилка отримання журналів."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Швидкість і зосередження. Електронна пошта й календар безпосередньо на вашому робочому столі."
-      ],
       "Fill in user details": [
         "Заповніть дані користувача"
       ],
@@ -8057,9 +8029,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Якщо у вас є подарунковий код, введіть його внизу, щоб застосувати свою знижку."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Якщо раніше ви ніколи не використовували двоетапну перевірку, ми наполегливо рекомендуємо вам ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Якщо ви втратили пароль і вам потрібно відновити свій обліковий запис, ${ boldImperative }, щоб у вас був ${ boldAccountRecovery }."
@@ -8360,9 +8329,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Керуйте вашими налаштуваннями сповіщень електронної пошти для ${ DOCS_APP_NAME }."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
@@ -8688,9 +8654,6 @@
       "purchase additional storage": [
         "придбати додатковий простір"
       ],
-      "read our two-factor authentication guide first": [
-        "прочитайте спершу нашу інструкцію про двоетапну перевірку"
-      ],
       "Recently used servers:": [
         "Недавно використані сервери:"
       ],
@@ -8774,9 +8737,6 @@
       ],
       "Scan QR code instead": [
         "Cканувати QR-код натомість"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Скануйте цей код своїм пристроєм двоетапної перевірки, щоб налаштувати обліковий запис. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Інтеграція SCIM вимкнена"
@@ -9162,9 +9122,6 @@
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Це відв'яже пристрій **${ name } (створений у ${ date })** з вашим обліковим записом ${ BRAND_NAME }."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Цей помічник увімкне двоетапну перевірку (2FA) для вашого облікового запису ${ BRAND_NAME }. Двоетапна перевірка забезпечує додатковий рівень захисту вашого облікового запису ${ BRAND_NAME_TWO }, тому рекомендуємо ввімкнути її."
-      ],
       "to ${ product } Business": [
         "у ${ product } Business"
       ],
@@ -9245,12 +9202,6 @@
       ],
       "Total VPN connections": [
         "Усього VPN-з'єднань"
-      ],
-      "Two-factor authentication disabled": [
-        "Двоетапну перевірку вимкнено"
-      ],
-      "Two-factor authentication enabled": [
-        "Двоетапна перевірка увімкнена"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Двопарольний режим вимагає двох паролів: один для входу в обліковий запис, а другий для розшифрування даних. (Розширений)"
@@ -10525,9 +10476,6 @@
       ],
       "Backup password": [
         "Резервний пароль"
-      ],
-      "Beta": [
-        "Бета"
       ],
       "Billing cycle": [
         "Платіжний цикл"
@@ -15204,9 +15152,6 @@
       "Admin": [
         "Адміністратор"
       ],
-      "Primary admin": [
-        "Головний адміністратор"
-      ],
       "User": [
         "Користувач"
       ]
@@ -18592,9 +18537,6 @@
       "Encryption and keys": [
         "Шифрування та ключі"
       ],
-      "Enter 2FA code": [
-        "Введіть код 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Введіть кінцеві точки у вашого провайдера ідентифікації"
       ],
@@ -18654,15 +18596,6 @@
       ],
       "Folders and labels": [
         "Теки й мітки"
-      ],
-      "For Linux": [
-        "Для Linux"
-      ],
-      "For macOS": [
-        "Для macOS"
-      ],
-      "For Windows": [
-        "Для Windows"
       ],
       "Forgot password": [
         "Не пам’ятаю пароль"
@@ -19113,9 +19046,6 @@
       ],
       "Set up email forwarding": [
         "Налаштувати пересилання пошти"
-      ],
-      "Set up two-factor authentication": [
-        "Налаштувати двоетапну перевірку"
       ],
       "Set up your family account": [
         "Налаштувати родинний обліковий запис"
@@ -20036,9 +19966,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2ЕП"
-      ],
       "Administrators can't access the data of private users": [
         "Адміністратори не можуть отримати доступ до даних приватних користувачів"
       ],

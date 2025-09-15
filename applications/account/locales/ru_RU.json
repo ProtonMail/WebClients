@@ -520,12 +520,6 @@
       "Download CSV sample": [
         "Скачать образец файла CSV"
       ],
-      "Download for macOS": [
-        "Скачать для macOS"
-      ],
-      "Download for Windows": [
-        "Скачать для Windows"
-      ],
       "Download ICS": [
         "Скачать ICS"
       ],
@@ -1247,7 +1241,7 @@
         "Установить фразу для восстановления"
       ],
       "Set up 2FA": [
-        "Настроить двухфакторную аутентификацию"
+        "Настроить 2FA"
       ],
       "Set up a custom domain": [
         "Настроить пользовательский домен"
@@ -1779,7 +1773,7 @@
         "12 месяцев"
       ],
       "15 months": [
-        "15 месяца"
+        "15 месяцев"
       ],
       "24 months": [
         "24 месяца"
@@ -2015,9 +2009,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Извини, это предложение недоступно с твоим текущим планом."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяц.",
         "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца.",
@@ -2069,7 +2060,7 @@
         "3 ТБ"
       ],
       "6 user accounts": [
-        "6 аккаунтов пользователей"
+        "6 аккаунтов пользователя"
       ],
       "6 users": [
         "6 пользователей"
@@ -4440,14 +4431,6 @@
         "Windows 8/8.1/7 или Windows 32-разрядная версия (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb для Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm для Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Создайте бесплатный аккаунт ${ DRIVE_APP_NAME } для защищенного доступа к файлу"
@@ -5451,7 +5434,7 @@
         "Выберите страну"
       ],
       "Please select a state": [
-        "Пожалуйста, выберите штат"
+        "Выберите штат"
       ],
       "Please select at least one location before continuing.": [
         "Выберите по крайней мере одно место, прежде чем продолжить."
@@ -6775,14 +6758,6 @@
         "Бесплатный пробный период вашего приложения для настольных компьютеров закончился"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } на App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } в Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Автоматическая пересылка"
@@ -7778,10 +7753,10 @@
         "**Получите адрес** ${ BRAND_NAME } для использования всех служб ${ BRAND_NAME_TWO }, включая ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "+ ${ invisibleCount } More": [
-        "Еще ${ invisibleCount }",
-        "Еще ${ invisibleCount }",
-        "Еще ${ invisibleCount }",
-        "Еще ${ invisibleCount }"
+        "+ Ещё ${ invisibleCount }",
+        "+ Ещё ${ invisibleCount }",
+        "+ Ещё ${ invisibleCount }",
+        "+ Ещё ${ invisibleCount }"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
@@ -8365,9 +8340,6 @@
       "Disabled countries": [
         "Выключенные страны"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Отключение двухфакторной аутентификации сделает вашу учетную запись менее защищенной. Продолжайте только при крайней необходимости."
-      ],
       "Discount": [
         "Скидка"
       ],
@@ -8617,9 +8589,6 @@
       "Failed to fetch logs.": [
         "Не удалось загрузить журналы."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Быстро и целенаправленно. Электронная почта и календарь прямо на вашем компьютере."
-      ],
       "Featured in": [
         "Опубликовано в"
       ],
@@ -8769,9 +8738,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Если у вас есть подарочный код, введите его ниже, чтобы применить скидку."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Если вы никогда не использовали двухфакторную аутентификацию, мы настоятельно рекомендуем вам ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Если вы потеряете пароль и вам необходимо будет восстановить аккаунт, ${ boldImperative } убедитесь, что у вас есть ${ boldAccountRecovery }."
@@ -9087,9 +9053,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Управление настройками уведомлений электронной почты для ${ DOCS_APP_NAME }."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Введите эту информацию вручную в устройство двухфакторной аутентификации, чтобы настроить учетную запись. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
@@ -9460,9 +9423,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Обращайтесь к нам за помощью по любому вопросу, связанному с ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "сначала прочитайте наше руководство по двухфакторной аутентификации"
-      ],
       "Recently used servers:": [
         "Недавно использованные серверы:"
       ],
@@ -9546,9 +9506,6 @@
       ],
       "Scan QR code instead": [
         "Вместо этого отсканируйте QR-код"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Чтобы настроить свою учётную запись, просканируйте этот код своим устройством двухфакторной аутентификации. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Интеграция SCIM отключена"
@@ -9994,9 +9951,6 @@
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Это позволит отвязать устройство **${ name } (созданное ${ date })** от вашего аккаунта ${ BRAND_NAME }."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Этот мастер включит двухфакторную аутентификацию (2FA) для вашей учетной записи ${ BRAND_NAME }. Двухфакторная аутентификация сделает ваш аккаунт ${ BRAND_NAME_TWO } более безопасным, поэтому мы рекомендуем включить ее."
-      ],
       "to ${ product } Business": [
         "на ${ product } Business"
       ],
@@ -10086,12 +10040,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Попробуйте ${ productName } совершенно без риска - если по какой-то причине вы передумаете, вам вернут деньги. Никаких вопросов."
-      ],
-      "Two-factor authentication disabled": [
-        "Двухфакторная аутентификация отключена"
-      ],
-      "Two-factor authentication enabled": [
-        "Двухфакторная аутентификация включена"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "В режиме двух паролей требуется два пароля: один для входа в аккаунт и один для расшифровки данных. (Дополнительно)"
@@ -11469,9 +11417,6 @@
       "Backup password": [
         "Пароль резервной копии"
       ],
-      "Beta": [
-        "Бета"
-      ],
       "Billing cycle": [
         "Платежный цикл"
       ],
@@ -12218,9 +12163,9 @@
       ],
       "Show ${ n } administrator": [
         "Показать ${ n } администратора",
+        "Показать ${ n } администратора",
         "Показать ${ n } администраторов",
-        "Показать ${ n } администраторов",
-        "Показать ${ n } администратора"
+        "Показать ${ n } администраторов"
       ],
       "Show others when I'm busy": [
         "Показывать другим, когда я занят"
@@ -15613,9 +15558,9 @@
     "pass_signup_2024: Info": {
       "${ n } user account": [
         "${ n } аккаунт пользователя",
-        "${ n } аккаунта пользователей",
-        "${ n } аккаунтов пользователей",
-        "${ n } аккаунтов пользователей"
+        "${ n } аккаунта пользователя",
+        "${ n } аккаунтов пользователя",
+        "${ n } аккаунтов пользователя"
       ],
       "Activity log": [
         "Журнал действий"
@@ -15804,7 +15749,7 @@
         "В течение этого времени вы не сможете изменить или отменить свою подписку. Дождитесь завершения оплаты, прежде чем пытаться внести какие-либо изменения. Благодарим вас за терпение."
       ],
       "Got it": [
-        "Применить"
+        "Понятно"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -16526,9 +16471,6 @@
     "Role": {
       "Admin": [
         "Администратор"
-      ],
-      "Primary admin": [
-        "Основной администратор"
       ],
       "User": [
         "Пользователь"
@@ -17936,7 +17878,7 @@
         "1 год"
       ],
       "15 months": [
-        "15 месяца"
+        "15 месяцев"
       ],
       "2 years": [
         "2 года"
@@ -18499,10 +18441,10 @@
         "${ n } календарей на пользователя"
       ],
       "${ n } free VPN connection per user": [
-        "${ n } бесплатное подключение к VPN для одного пользователя",
-        "${ n } бесплатных подключения к VPN для одного пользователя",
-        "${ n } бесплатных подключений к VPN для одного пользователя",
-        "${ n } бесплатных подключений к VPN для одного пользователя"
+        "${ n } бесплатное подключение к VPN на пользователя",
+        "${ n } бесплатных подключения к VPN на пользователя",
+        "${ n } бесплатных подключений к VPN на пользователя",
+        "${ n } бесплатных подключений к VPN на пользователя"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } высокоскоростное подключение к VPN",
@@ -20116,9 +20058,6 @@
       "Enhance security with 2FA": [
         "Повысьте безопасность с двухфакторной аутентификацией"
       ],
-      "Enter 2FA code": [
-        "Введите код двухфакторной аутентификации"
-      ],
       "Enter endpoints into your identity provider": [
         "Введите конечные точки в провайдер личных данных"
       ],
@@ -20178,15 +20117,6 @@
       ],
       "Folders and labels": [
         "Папки и ярлыки"
-      ],
-      "For Linux": [
-        "Для Linux"
-      ],
-      "For macOS": [
-        "Для macOS"
-      ],
-      "For Windows": [
-        "Для Windows"
       ],
       "Forgot password": [
         "Забыл пароль"
@@ -20679,9 +20609,6 @@
       ],
       "Set up email forwarding": [
         "Настройка пересылки писем"
-      ],
-      "Set up two-factor authentication": [
-        "Настройка двухфакторной аутентификации"
       ],
       "Set up your family account": [
         "Настройте семейный аккаунт"
@@ -21705,9 +21632,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "Двухфакторная аутентификация"
-      ],
       "Administrators can't access the data of private users": [
         "Администраторы не могут получить доступ к данным частных пользователей"
       ],
@@ -22413,7 +22337,7 @@
         "Каждый ${ interval } год, ${ timesString }",
         "Каждые ${ interval } года, ${ timesString }",
         "Каждые ${ interval } лет, ${ timesString }",
-        "Каждые ${ interval } года, ${ timesString }"
+        "Каждые ${ interval } лет, ${ timesString }"
       ],
       "Yearly, ${ timesString }": [
         "Ежегодно в ${ timesString }"
@@ -22423,8 +22347,8 @@
       "Every ${ interval } year, ${ untilString }": [
         "Каждый ${ interval } год, ${ untilString }",
         "Каждые ${ interval } года, ${ untilString }",
-        "Каждые ${ interval } года, ${ untilString }",
-        "Каждые ${ interval } года, ${ untilString }"
+        "Каждые ${ interval } лет, ${ untilString }",
+        "Каждые ${ interval } лет, ${ untilString }"
       ],
       "Yearly, ${ untilString }": [
         "Ежегодно ${ untilString }"

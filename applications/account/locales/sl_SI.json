@@ -496,12 +496,6 @@
       "Download CSV sample": [
         "Prenesi vzorčno CSV datoteko"
       ],
-      "Download for macOS": [
-        "Naloži za macOS"
-      ],
-      "Download for Windows": [
-        "Naloži za Windows"
-      ],
       "Download ICS": [
         "Prenesi ICS"
       ],
@@ -1933,11 +1927,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Paket ${ plan } je nazaj samo za omejen čas."
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
       ]
     },
     "bf2023: Offers": {
@@ -4212,14 +4201,6 @@
         "Windows 10/11 (x64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb za Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm za Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
         "**Sodelovalni:** urejevalnik spletnih dokumentov"
@@ -6340,14 +6321,6 @@
         "Brezplačni preizkus namizne aplikacije je potekel."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } v App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } v Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Samodejno posredujte"
@@ -8007,9 +7980,6 @@
       "Failed to fetch logs.": [
         "Pridobivanje dnevniških zapisov ni uspelo."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Hitrost in osredotočenost. E-pošta in koledar na vašem namizju."
-      ],
       "Featured in": [
         "Predstavljeno v"
       ],
@@ -8147,9 +8117,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Če imate darilno kodo, jo vnesite spodaj, da uveljavite svoj popust."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Če še nikoli niste uporabljali dvojnega preverjanja pristnosti, vam močno priporočamo, da si ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Če izgubite svojo napravo z omogočenim dvojnim preverjanjem pristnosti, lahko te kode uporabite namesto 6-mestne kode za dvojno preverjanje pristnosti za prijavo v svoj račun. Vsako kodo lahko uporabite samo enkrat."
@@ -8378,9 +8345,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Upravljajte, do katerih aplikacij ${ BRAND_NAME } lahko dostopajo člani vaše organizacije. Če je to onemogočeno, bodo imeli dostop samo skrbniki."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Ročno vnesite te podatke v napravo za dvojno preverjanje pristnosti, da nastavite svoj račun. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logotip"
@@ -8697,9 +8661,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Za pomoč pri vsem, kar je povezano z ${ BRAND_NAME }, se obrnite na nas."
       ],
-      "read our two-factor authentication guide first": [
-        "najprej preberite naš vodnik o dvostopenjskem preverjanju pristnosti"
-      ],
       "Recently used servers:": [
         "Nedavno uporabljeni strežniki:"
       ],
@@ -8783,9 +8744,6 @@
       ],
       "Scan QR code instead": [
         "Namesto tega skenirajte kodo QR"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Skenirajte ta kodo s svojo napravo za dvojno preverjanje pristnosti in nastavite svoj račun. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM integracija je onemogočena"
@@ -9147,9 +9105,6 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "To bo odjavilo vašo sejo in onemogočilo dvojno preverjanje pristnosti."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Ta čarovnik bo omogočil dvojno preverjanje pristnosti (2FA) na vašem računu ${ BRAND_NAME }. Dvojno preverjanje pristnosti bo vaš račun ${ BRAND_NAME_TWO } naredilo še bolj varno, zato vam priporočamo, da ga omogočite."
-      ],
       "to ${ product } Business": [
         "pri ${ product } Business"
       ],
@@ -9227,12 +9182,6 @@
       ],
       "trusted device": [
         "zaupanja vredna naprava"
-      ],
-      "Two-factor authentication disabled": [
-        "Dvojno preverjanje pristnosti je onemogočeno"
-      ],
-      "Two-factor authentication enabled": [
-        "Dvojno preverjanje pristnosti je omogočeno"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Način z dvema gesloma zahteva dve gesli: eno za prijavo v vaš račun in drugo za dešifriranje vaših podatkov. (Napredno)"
@@ -10473,9 +10422,6 @@
       ],
       "Backup password": [
         "Varnostno geslo"
-      ],
-      "Beta": [
-        "Beta različica"
       ],
       "Billing cycle": [
         "Cikel obračunavanja"
@@ -15257,9 +15203,6 @@
       "Admin": [
         "Administrator"
       ],
-      "Primary admin": [
-        "Glavni skrbnik"
-      ],
       "User": [
         "Uporabnik"
       ]
@@ -18391,9 +18334,6 @@
       "Encryption and keys": [
         "Šifriranje in ključi"
       ],
-      "Enter 2FA code": [
-        "Vnesite kodo 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Vnesite končne točke v ponudnika identitete"
       ],
@@ -18453,15 +18393,6 @@
       ],
       "Folders and labels": [
         "Mape in oznake"
-      ],
-      "For Linux": [
-        "Za Linux"
-      ],
-      "For macOS": [
-        "Za macOS"
-      ],
-      "For Windows": [
-        "Za Windows"
       ],
       "Forgot password": [
         "Pozabljeno geslo"
@@ -18930,9 +18861,6 @@
       ],
       "Set up email forwarding": [
         "Nastavi posredovanje pošte"
-      ],
-      "Set up two-factor authentication": [
-        "Nastavite dvojno preverjanje pristnosti."
       ],
       "Set up your family account": [
         "Ustvarite svoj družinski račun."
@@ -19771,9 +19699,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Inactive": [
         "Neaktivno"
       ],

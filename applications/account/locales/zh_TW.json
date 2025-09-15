@@ -505,12 +505,6 @@
       "Download CSV sample": [
         "下載 CSV 範本"
       ],
-      "Download for macOS": [
-        "適用於 macOS 的下載"
-      ],
-      "Download for Windows": [
-        "適用於 Windows 的下載"
-      ],
       "Download ICS": [
         "下載 ICS"
       ],
@@ -1879,14 +1873,6 @@
         "選擇你的年終優惠"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "抱歉，你目前的方案無法使用此優惠。但若您訂購 ${ cycle } 月時，你可以取得 ${ plan.Title } 的 ${ discountPercentage } 優惠。"
-      ]
-    },
     "bf2023: Info": {
       "6 TB storage (2x more than any other plan)": [
         "6TB 的儲存空間 (比其他方案多兩倍)"
@@ -1902,6 +1888,11 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "此${ plan }方案為時間限定"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "抱歉，你目前的方案無法使用此優惠。但若您訂購 ${ cycle } 月時，你可以取得 ${ plan.Title } 的 ${ discountPercentage } 優惠。"
       ]
     },
     "bf2023: Offers": {
@@ -4096,14 +4087,6 @@
         "Windows 10/11 (x64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb 適用於 Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm 給 Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2024: Info": {
       "**Collaborative:** online document editor": [
         "**協作：**多人共用線上文件編輯器"
@@ -6148,14 +6131,6 @@
         "您的桌面應用程式試用已結束。"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "App Store的${ appName }"
-      ],
-      "${ appName } on Play Store": [
-        "Play 商店的${ appName }"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "自動轉寄"
@@ -7530,9 +7505,6 @@
       "Disable recovery by phone number": [
         "停用備援電話號碼復原"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "關閉雙重驗證將使帳號降低安全。只有在必要時再關閉。"
-      ],
       "Discount": [
         "折扣"
       ],
@@ -7767,9 +7739,6 @@
       "Failed to fetch logs.": [
         "擷取紀錄檔失敗。"
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "快速和專注。電子郵件及行事曆，直接於桌面。"
-      ],
       "Fill in user details": [
         "填入使用者詳細資料"
       ],
@@ -7898,9 +7867,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "若您有禮品代碼，請在下方輸入以套用折扣。"
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "如果您先前從未用過兩步驟驗證，我們強烈推薦您閱讀 ${ guideButton }。"
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "若你遺失登入帳號所需的資訊且需要重設你的帳號，${ boldImperative }您同時擁有${ boldAccountRecovery }。"
@@ -8204,9 +8170,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "管理您電子郵件的${ DOCS_APP_NAME }通知偏好設定"
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。${ switchButton }。"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 標誌"
@@ -8544,9 +8507,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "聯繫我們以取得任何關於${ BRAND_NAME }的協助。"
       ],
-      "read our two-factor authentication guide first": [
-        "先閱讀我們的兩步驟驗證指南"
-      ],
       "Recently used servers:": [
         "最近使用的伺服器:"
       ],
@@ -8630,9 +8590,6 @@
       ],
       "Scan QR code instead": [
         "改為掃描 QR 代碼"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "請使用您的兩步驟驗證裝置掃描此代碼，以便設定您的帳號。又或者，${ switchButton }。"
       ],
       "SCIM integration disabled": [
         "整合SCIM關閉"
@@ -9021,9 +8978,6 @@
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "此將取消連結至裝置**${ name }(於${ date }創建)**從您的${ BRAND_NAME }帳號。"
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "本精靈將會在您的 ${ BRAND_NAME } 帳號上啟用兩步驟驗證 (2FA)。兩步驟驗證讓您的 ${ BRAND_NAME_TWO } 帳號更安全，所以我們建議啟用它。"
-      ],
       "to ${ product } Business": [
         "至${ product }商業版"
       ],
@@ -9107,12 +9061,6 @@
       ],
       "Total VPN connections": [
         "總 VPN 連線數量"
-      ],
-      "Two-factor authentication disabled": [
-        "兩步驟驗證已停用"
-      ],
-      "Two-factor authentication enabled": [
-        "兩步驟驗證已啟用"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "雙重密碼模式需要兩個密碼：一個用來登入您的帳號，另一個用來解密您的資料(進階)"
@@ -10382,9 +10330,6 @@
       ],
       "Backup password": [
         "備份密碼"
-      ],
-      "Beta": [
-        "測試版"
       ],
       "Billing cycle": [
         "繳款單週期"
@@ -13928,6 +13873,11 @@
         "升級我的方案"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "繼續使用 ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "端對端加密"
@@ -14315,6 +14265,9 @@
       "More plans are available in other currencies": [
         "其他貨幣有更多的方案"
       ],
+      "Offer unavailable": [
+        "優惠不再提供"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "請先重新啟用訂閱以減少添加數量。"
       ],
@@ -14323,6 +14276,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
       ],
       "Taxes": [
         "稅金"
@@ -14937,9 +14893,6 @@
     "Role": {
       "Admin": [
         "管理員"
-      ],
-      "Primary admin": [
-        "主要系統管理員"
       ],
       "User": [
         "使用者"
@@ -17931,9 +17884,6 @@
       "Encryption and keys": [
         "加密和金鑰"
       ],
-      "Enter 2FA code": [
-        "輸入雙重驗證碼"
-      ],
       "Enter endpoints into your identity provider": [
         "請前往您的身分提供者輸入端點"
       ],
@@ -17990,15 +17940,6 @@
       ],
       "Folders and labels": [
         "資料夾和標籤"
-      ],
-      "For Linux": [
-        "適用於 Linux"
-      ],
-      "For macOS": [
-        "適用於 macOS"
-      ],
-      "For Windows": [
-        "適用於 Windows"
       ],
       "Forgot password": [
         "忘記密碼"
@@ -18476,9 +18417,6 @@
       ],
       "Set up email forwarding": [
         "設定電子郵件轉發"
-      ],
-      "Set up two-factor authentication": [
-        "啟用二步驟驗證 (2FA)"
       ],
       "Set up your family account": [
         "設定您的家庭帳號"
@@ -19302,9 +19240,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "雙重驗證"
-      ],
       "Inactive": [
         "未啟用"
       ],
@@ -19316,6 +19251,9 @@
       ],
       "Private": [
         "不公開"
+      ],
+      "Security key": [
+        "安全金鑰"
       ],
       "SSO": [
         "單一登入"

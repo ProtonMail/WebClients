@@ -2232,9 +2232,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
         "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
@@ -8818,6 +8815,12 @@
       "Attention required": [
         "Vyžadována pozornost"
       ],
+      "Authenticator app 2FA disabled": [
+        "Ověřovací aplikace 2FA deaktivována."
+      ],
+      "Authenticator app 2FA enabled": [
+        "Ověřovací aplikace 2FA povolena"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatická odpověď je aktivní každý měsíc ve vybraném časovém rozsahu."
       ],
@@ -9121,8 +9124,8 @@
       "Disabled on ${ boldValue }": [
         "Deaktivováno ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Vypnutím dvoufázového ověřování bude váš účet méně bezpečný. Vypněte toto ověřování pouze pokud je to nezbytně nutné."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Deaktivováním dvoufázového ověření bude váš účet méně zabezpečený. Pokračujte pouze zda je to úplně nezbytné."
       ],
       "Discount": [
         "Sleva"
@@ -9562,9 +9565,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Pokud máte dárkový kód, zadejte jej níže pro použití Vaší slevy."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Pokud jste ještě nikdy nepoužívali dvoufázové ověřování, důrazně doporučujeme ${ guideButton }."
-      ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Pokud ztratíte své heslo a potřebujete obnovit svůj účet, ${ boldImperative } že máte k dispozici ${ boldAccountRecovery }."
       ],
@@ -9889,8 +9889,8 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Správa předvoleb e-mailových upozornění pro ${ DOCS_APP_NAME }."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Ručně zadejte tyto informace do zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Ručně zadejte tuto informaci do své ověřovací aplikace a nastavte svůj účet. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -10291,9 +10291,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obraťte se na nás pro pomoc s čímkoli od ${ BRAND_NAME }"
       ],
-      "read our two-factor authentication guide first": [
-        "přečtěte si nejprve našeho průvodce dvoufázovým ověřováním"
-      ],
       "Recently used servers:": [
         "Nedávno použité servery:"
       ],
@@ -10378,8 +10375,8 @@
       "Scan QR code instead": [
         "Namísto toho naskenujte QR kód"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Naskenujte tento kód pomocí zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Naskenujte tento kód vaší ověřovací aplikací pro nastavení vašeho účtu. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integrace SCIM deaktivována"
@@ -10500,9 +10497,6 @@
       ],
       "Signed up": [
         "Zaregistrováno"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Přihlašování bezpečnostním klíčem zatím není podporováno ve všech aplikacích. Bez TOTP se přihlášení do některých aplikací nemusí podařit."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
@@ -10852,9 +10846,6 @@
       "This will wipe all logs for your organization members.": [
         "Tím se smažou všechny logy členů vaší organizace."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ${ BRAND_NAME } účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ${ BRAND_NAME_TWO } účet."
-      ],
       "to ${ product } Business": [
         "do ${ product } Business"
       ],
@@ -10944,12 +10935,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Vyzkoušejte ${ productName } zcela bez rizika - pokud si to z jakéhokoli důvodu rozmyslíte, dostanete zpět plnou částku. Bez otázek."
-      ],
-      "Two-factor authentication disabled": [
-        "Dvoufázové ověřování je vypnuto"
-      ],
-      "Two-factor authentication enabled": [
-        "Dvoufázové ověřování zapnuto"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Režim dvou hesel vyžaduje dvě hesla: jedno pro přihlášení k účtu a druhé pro dešifrování dat. (Pokročilé)"
@@ -11274,6 +11259,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Bez aplikace dvoufázového ověření se nebudete moci přihlásit do ${ BRAND_NAME } aplikací které zatím nepodporují bezpečnostní klíče."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
@@ -16506,6 +16494,11 @@
         "Přejít na vyšší tarif"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Pokračovat na ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Koncově šifrováno"
@@ -17012,6 +17005,9 @@
       "More plans are available in other currencies": [
         "Další tarify jsou k dispozici v jiných měnách"
       ],
+      "Offer unavailable": [
+        "Nabídka je nedostupná"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
@@ -17023,6 +17019,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
       ],
       "Taxes": [
         "Daně"
@@ -17964,16 +17963,19 @@
       "Admin": [
         "Správce"
       ],
-      "Primary admin": [
-        "Hlavní správce"
-      ],
       "User": [
         "Uživatel"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **Deaktivujte obnovení telefonem** pro zajištění maximální možné bezpečnosti vašeho účtu."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Povolte obnovení telefonem** pro opětovné získání přístupu ke svému účtu, pokud zapomenete heslo."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } bude tuto adresu používat k zasílání informací o zabezpečení vašeho účtu."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } použije tuto adresu v případě žádosti o reset hesla k tomu, aby vám na ni poslal kód pro resetování vašeho hesla."
@@ -17984,11 +17986,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } pro zajištění možnosti obnovy vašich dat."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Deaktivujte resetování účtu e-mailem** pro zajištění maximální možné bezpečnosti vašeho účtu."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Povolte obnovení e-mailem** pro opětovné získání přístupu ke svému účtu, pokud zapomenete heslo."
       ],
+      "Account reset by email has been disabled": [
+        "Resetování účtu e-mailem bylo deaktivováno"
+      ],
+      "Account reset by phone has been disabled": [
+        "Resetování účtu telefonem bylo deaktivováno"
+      ],
       "Account safety review": [
         "Kontrola bezpečnosti účtu"
+      ],
+      "Add a email address": [
+        "Přidejte e-mailovou adresu"
+      ],
+      "Add a phone number": [
+        "Přidat telefonní číslo"
       ],
       "Add a recovery email": [
         "Přidat e-mail pro obnovení"
@@ -17998,6 +18015,9 @@
       ],
       "Add a recovery phone number": [
         "Přidejte telefonní číslo určené pro obnovení"
+      ],
+      "Add an email": [
+        "Přidejte e-mail"
       ],
       "Back to Safety Review": [
         "Zpět ke kontrole bezpečnosti"
@@ -18020,11 +18040,23 @@
       "Device-based recovery enabled": [
         "Obnovení založené na zařízení je povoleno"
       ],
+      "Disable account reset by email": [
+        "Deaktivovat resetování účtu e-mailem"
+      ],
+      "Disable recovery by email": [
+        "Deaktivovat obnovení e-mailem"
+      ],
+      "Disable recovery by phone": [
+        "Deaktivovat obnovení telefonem"
+      ],
       "Download ${ size }": [
         "Stáhnout ${ size }"
       ],
       "Download your Recovery Kit": [
         "Stáhněte si svou sadu pro obnovení"
+      ],
+      "Email address": [
+        "E-mailová adresa"
       ],
       "Enable device-based recovery": [
         "Povolte obnovení založené na zařízení"
@@ -18089,6 +18121,9 @@
       "There was an error generating your Recovery Kit": [
         "Došlo k chybě při generování vaší sady pro obnovení"
       ],
+      "There was an error verifying your email": [
+        "Došlo k chybě při ověřování vašeho e-mailu"
+      ],
       "There was an error verifying your recovery email": [
         "Došlo k chybě při ověřování vašeho e-mailu pro obnovení"
       ],
@@ -18097,6 +18132,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         "pro automatické obnovení vašich dat, když se přihlásíte do důvěryhodného zařízení"
+      ],
+      "to ensure highest possible security of your account": [
+        "pro zajištění maximální možné bezpečnosti vašeho účtu"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Pro ověření, že jde o vaší e-mailovou adresu, prosím zadejte ověřovací kód zaslaný na adresu ${ boldEmail }."
@@ -18110,6 +18148,9 @@
       "to recover your account if you're ever locked out": [
         "pro obnovení vašeho účtu, pokud kdykoli ztratíte přístup"
       ],
+      "To stay in touch": [
+        "Zůstat v kontaktu"
+      ],
       "Update your Recovery Kit": [
         "Aktualizujte si svou sadu pro obnovení"
       ],
@@ -18119,6 +18160,12 @@
       "Verify": [
         "Ověřit"
       ],
+      "Verify your email address": [
+        "Ověřit svou e-mailovou adresu"
+      ],
+      "Verify your phone number": [
+        "Ověřte své telefonní číslo"
+      ],
       "Verify your recovery email address": [
         "Ověřte svou e-mailovou adresu určenou pro obnovení"
       ],
@@ -18127,6 +18174,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Došlo k chybě při generování vaší sady pro obnovení. Zkuste to prosím později nebo kontaktujte podporu, pokud problém přetrvává."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "Došlo k chybě při ověřování vašeho e-mailu. Zkuste to prosím později nebo kontaktujte podporu, pokud problém přetrvává."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Došlo k chybě při ověřování vašeho e-mailu pro obnovení. Zkuste to prosím později nebo kontaktujte podporu, pokud problém přetrvává."
@@ -18149,6 +18199,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Obnovovací frázi této sady pro obnovení můžete použít k úplnému obnovení účtu po resetu hesla, takže ji nezapomeňte uložit na bezpečném místě."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Váš e-mail můžete použít k opětovnému získání přístupu ke svému účtu, pokud zapomenete heslo."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Váš e-mail pro obnovení můžete použít k opětovnému získání přístupu ke svému účtu, pokud zapomenete heslo."
       ],
@@ -18158,11 +18211,26 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Již jste si v minulosti stáhli sadu pro obnovení. Stažením nové sady se **stará sada deaktivuje**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "Doporučili jsme vám opatření, která vám pomohou ještě lépe zabezpečit váš účet."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "Máte doporučená opatření k zabezpečení vašeho účtu."
+      ],
       "You have recommended actions.": [
         "Jsou zde některé doporučené akce."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Tuto adresu již nebudete moci použít k resetování vašeho účtu."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Toto telefonní číslo již nebudete moci použít k resetování vašeho účtu."
+      ],
       "Your account and data can be recovered": [
         "Váš účet a data je možné obnovit"
+      ],
+      "Your account and data can be recovered.": [
+        "Váš účet a data je možné obnovit."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Váš účet a data je možné obnovit. Zkontrolujte, zda máte stále přístup k metodám obnovení."
@@ -18178,6 +18246,12 @@
       ],
       "Your account is secure.": [
         "Váš účet je zabezpečen."
+      ],
+      "Your email address is:": [
+        "Vaši e-mailová adresa je:"
+      ],
+      "Your email is set": [
+        "Váš e-mail je nastaven"
       ],
       "Your recovery email": [
         "Váš e-mail pro obnovení"
@@ -21656,6 +21730,9 @@
       "Disable two-factor authentication": [
         "Zakázat dvoufázové ověření"
       ],
+      "Disable two-factor authentication app?": [
+        "Deaktivovat aplikaci pro dvoufázové ověření?"
+      ],
       "Disable two-factor authentication?": [
         "Deaktivovat dvoufázové ověření?"
       ],
@@ -21778,9 +21855,6 @@
       ],
       "Enhance security with 2FA": [
         "Zvýšení zabezpečení pomocí 2FA"
-      ],
-      "Enter 2FA code": [
-        "Zadejte kód 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Zadejte endpointy do vašeho poskytovatele indetity"
@@ -22355,11 +22429,11 @@
       "Set up a recovery method": [
         "Nastavit metodu obnovení"
       ],
+      "Set up authenticator app": [
+        "Nastavit ověřovací aplikaci"
+      ],
       "Set up email forwarding": [
         "Nastavit přeposílání e-mailů"
-      ],
-      "Set up two-factor authentication": [
-        "Nastavit dvoufázové ověření"
       ],
       "Set up your family account": [
         "Nastavte si rodinný účet"
@@ -23446,11 +23520,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Správci nemají přístup k datům soukromých uživatelů"
+      ],
+      "Authenticator app": [
+        "Ověřovací aplikace"
       ],
       "Inactive": [
         "Neaktivní"
@@ -23469,6 +23543,9 @@
       ],
       "Private": [
         "Soukromý"
+      ],
+      "Security key": [
+        "Bezpečnostní klíč"
       ],
       "SSO": [
         "SSO"
