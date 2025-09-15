@@ -116,9 +116,9 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
     const { openDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const { thumbnails, setThumbnail } = useThumbnailStore(
+    const { getThumbnail, setThumbnail } = useThumbnailStore(
         useShallow((state) => ({
-            thumbnails: state.thumbnails,
+            getThumbnail: state.getThumbnail,
             setThumbnail: state.setThumbnail,
         }))
     );
@@ -138,7 +138,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
     const browserItems = sortedList.map((node) => ({
         ...node,
         isAdmin,
-        cachedThumbnailUrl: thumbnails[node.thumbnailId]?.sdUrl,
+        cachedThumbnailUrl: getThumbnail(node.thumbnailId)?.sdUrl,
         // TODO:FILEBROWSER Not super ideal but to avoid passing onShareClick inside the item we need to modify FB
         onShareClick: node.isShared
             ? () => showLinkSharingModal({ volumeId: node.volumeId, shareId: shareId, linkId: node.linkId })
@@ -172,7 +172,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
     const handleItemRender = async (item: ItemWithAdditionalProps) => {
         incrementItemRenderedCounter();
         // TODO:WIP integrate with useBatchThumbnailLoader when available
-        if (!item.hasThumbnail || item.cachedThumbnailUrl || thumbnails[item.thumbnailId] !== undefined) {
+        if (!item.hasThumbnail || item.cachedThumbnailUrl || getThumbnail(item.thumbnailId) !== undefined) {
             return;
         }
         try {
