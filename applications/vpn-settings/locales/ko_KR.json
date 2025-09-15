@@ -1482,9 +1482,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "죄송하지만 이 제안은 현재 플랜으로 받을 수 없습니다. 하지만 ${ plan.Title }(을)를 ${ cycle }개월간 구독하면 ${ discountPercentage } 할인을 받을 수 있습니다."
       ]
@@ -5850,9 +5847,6 @@
       "Disabled on ${ boldValue }": [
         "${ boldValue }에 비활성화됨"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "2단계 인증을 비활성화하면 계정의 보안이 약해집니다. 꼭 필요한 경우에만 진행하세요."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "잠금해제된 새 기능들을 둘러보고 바로 사용해보세요!"
       ],
@@ -6135,9 +6129,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "기프트 코드가 있을 경우 아래에 입력해 할인을 적용하세요."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "만약 이중인증을 사용하지 않았다면, ${ guideButton } 사용하는 것을 강력하게 권장합니다."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "2단계 인증 기기를 분실한 경우, 6자리 인증코드 대신 이 코드들을 사용하여 계정에 로그인 할 수 있습니다. 각 코드는 한번씩만 사용이 가능합니다."
       ],
@@ -6362,9 +6353,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "조직 구성원이 접근할 수 있는 ${ BRAND_NAME } 응용 프로그램을 관리합니다. 비활성화된 경우 관리자만 접근할 수 있습니다."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "2단계 인증 기기에 본 정보를 직접 입력하여 계정을 설정하세요. ${ switchButton }"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
@@ -6621,9 +6609,6 @@
       "Public sharing of documents is not yet supported.": [
         "문서의 공개 공유가 아직 지원되지 않습니다."
       ],
-      "read our two-factor authentication guide first": [
-        "이중 인증에 대한 가이드를 먼저 읽은 뒤에"
-      ],
       "Recently used servers:": [
         "최근 사용된 서버:"
       ],
@@ -6671,9 +6656,6 @@
       ],
       "Scan QR code instead": [
         "QR 코드 스캔하기"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "계정을 설정하기 위해 2단계 인증기기로 코드를 스캔하세요. ${ switchButton }"
       ],
       "SCIM integration disabled": [
         "SCIM 통합 비활성화"
@@ -6752,9 +6734,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인하십시오"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "보안 키로 로그인하는 기능은 모든 어플리케이션에서 아직 지원되지 않습니다. TOTP 없이는 일부 어플리케이션에서 로그인하지 못할 수 있습니다."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
@@ -6960,9 +6939,6 @@
       "This will wipe all logs for your organization members.": [
         "사용자의 조직 구성원에 대한 모든 로그가 삭제됩니다."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "이 마법사는 ${ BRAND_NAME } 계정의 2단계 인증 (2FA)을 활성화 시킵니다. 2단계 인증은 ${ BRAND_NAME_TWO } 계정을 더욱 안전하게 할 수 있으므로 사용하는 것을 권장합니다."
-      ],
       "to ${ product } Business": [
         "${ product } 비즈니스로"
       ],
@@ -7025,12 +7001,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName }을(를) 걱정 없이 사용해 보세요 - 만약 어떠한 이유로든 회원님의 마음이 바뀌었다면, 전액 환불 받으실 수 있어요. 환불 사유를 묻지 않습니다."
-      ],
-      "Two-factor authentication disabled": [
-        "2단계 인증이 비활성화 되었습니다"
-      ],
-      "Two-factor authentication enabled": [
-        "2단계 인증이 활성화되었습니다."
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "2차 비밀번호 모드는 두 개의 비밀번호를 필요로 합니다. 하나는 계정에 로그인하기 위한 것이고, 하나는 데이터의 복호화를 위한 것입니다. (고급 사용자용)"
@@ -10719,6 +10689,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 플랜에서는 이 제안이 제공되지 않습니다."
+      ],
       "Taxes": [
         "세금"
       ],
@@ -11397,9 +11370,6 @@
     "Role": {
       "Admin": [
         "관리자"
-      ],
-      "Primary admin": [
-        "기본 관리자"
       ],
       "User": [
         "사용자"
@@ -13747,9 +13717,6 @@
       "Enhance security with 2FA": [
         "2단계 인증으로 보안 강화시키기"
       ],
-      "Enter 2FA code": [
-        "2단계 인증 코드 입력"
-      ],
       "Enter endpoints into your identity provider": [
         "사용자의 인증 제공자로 부터 엔드포인트를 입력하십시오."
       ],
@@ -14034,9 +14001,6 @@
       ],
       "Set up email forwarding": [
         "이메일 가져오기 설정"
-      ],
-      "Set up two-factor authentication": [
-        "2단계 인증 설정"
       ],
       "Set up your organization": [
         "내 조직 설정하기"
@@ -14719,9 +14683,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "관리자가 개인 사용자의 데이터에 접근할 수 없습니다."
       ],
