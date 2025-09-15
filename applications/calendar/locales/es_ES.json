@@ -1258,6 +1258,9 @@
       ],
       "You have reached the trial limit.": [
         "Has alcanzado el límite del periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licencias durante el periodo de prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -1533,6 +1536,9 @@
       ],
       "Website access problem": [
         "Problema de acceso al sitio web"
+      ],
+      "Meet problem": [
+        "Problema de Meet"
       ]
     },
     "Button": {
@@ -1830,6 +1836,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Añadir ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats de alta velocidad y funciones de IA avanzadas."
       ]
     },
     "colon": {
@@ -11479,6 +11488,9 @@
       ],
       "Previous": [
         "Anterior"
+      ],
+      "Two-factor authentication": [
+        "Autenticación de dos factores"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12139,6 +12151,38 @@
       ],
       "for 12 months": [
         "durante 12 meses"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
+      "Basic chat history": [
+        "Historial de chat básico"
+      ],
+      "Full chat history with search": [
+        "Historial de chat completo con búsqueda"
+      ],
+      "Large file upload support": [
+        "Soporte para la carga de archivos grandes"
+      ],
+      "Limited daily chats": [
+        "Chats diarios limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para un acceso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Cargar y consultar múltiples archivos de gran tamaño"
+      ],
+      "Web search access": [
+        "Acceso a la búsqueda web"
       ]
     }
   }

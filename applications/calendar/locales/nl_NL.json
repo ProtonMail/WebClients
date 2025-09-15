@@ -932,6 +932,18 @@
       ],
       "Retry": [
         "Opnieuw proberen"
+      ],
+      "Add secret passphrase": [
+        "Geheime wachtwoordzin toevoegen"
+      ],
+      "Join with ${ MEET_APP_NAME }": [
+        "Deelnemen met ${ MEET_APP_NAME }"
+      ],
+      "Passphrase": [
+        "Wachtwoordzin"
+      ],
+      "Update secret passphrase": [
+        "Geheime wachtwoordzin updaten"
       ]
     },
     "action": {
@@ -1246,6 +1258,12 @@
       ],
       "You have reached the trial limit.": [
         "U hebt de proeflimiet bereikt."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ]
     },
     "b2b_trials_Action": {
@@ -1521,6 +1539,9 @@
       ],
       "Website access problem": [
         "Probleem met toegang tot website"
+      ],
+      "Meet problem": [
+        "Meet probleem"
       ]
     },
     "Button": {
@@ -1818,6 +1839,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME } toevoegen"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats op hoge snelheid en geavanceerde AI-functies."
       ]
     },
     "colon": {
@@ -3862,6 +3886,12 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ],
+      "Failed to update secret passphrase": [
+        "Niet gelukt om geheime wachtwoordzin te updaten"
+      ],
+      "Passphrase unavailable": [
+        "Wachtwoordzin niet beschikbaar"
       ]
     },
     "Error accepting calendar invitation": {
@@ -4251,6 +4281,9 @@
       ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "Uw account gebruikt ${ usedSpace } aan opslagruimte. Dat is meer dan de ${ inviteSpace } die aan u is toegewezen. Verwijder gegevens of vraag de abonnementsbeheerder uw opslagruimte uit te breiden."
+      ],
+      "Family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ link }": [
+        "Family-abonnementen bieden op dit moment geen ondersteuning voor externe accounts. Maak een ${ BRAND_NAME }-adres aan voor u zich hierbij aansluit. ${ link }"
       ]
     },
     "familyOffer_2023:Label": {
@@ -4447,6 +4480,15 @@
       ],
       "Security Center": [
         "Beveiligingscentrum"
+      ],
+      "Domain": [
+        "Domein"
+      ],
+      "Password ends with": [
+        "Wachtwoord eindigt met"
+      ],
+      "Username": [
+        "Gebruikersnaam"
       ]
     },
     "Hint": {
@@ -6143,6 +6185,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "U kunt nog steeds uw eigen accountgegevens bekijken, maar alle gebruikersaccounts worden verwijderd uit uw organisatie."
+      ],
+      "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
+        "Voor extra veiligheid kunt u een wachtwoordzin instellen. Deze zal niet worden opgenomen in de agenda-uitnodiging, denk eraan om deze apart met uw gasten te delen."
+      ],
+      "You are currently signed in as ${ username }.": [
+        "U bent momenteel aangemeld als ${ username }."
       ]
     },
     "info": {
@@ -6801,6 +6849,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Passphrase:": [
+        "Wachtwoordzin:"
       ]
     },
     "Label for contact group color": {
@@ -8238,6 +8289,9 @@
       ],
       "Passcode copied to clipboard": [
         "Passcode gekopieerd naar klembord"
+      ],
+      "Passphrase copied to clipboard": [
+        "Wachtwoordzin gekopieerd naar klembord"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -8875,6 +8929,24 @@
       ],
       "Your payment is still being processed": [
         "Uw betaling wordt nog verwerkt"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "Exclusief ${ taxRate }% belastingen: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "Inclusief ${ taxRate }% belastingen: ${ taxAmount }"
+      ],
+      "Taxes": [
+        "Belastingen"
+      ],
+      "VAT": [
+        "BTW"
       ]
     },
     "Payments.Error": {
@@ -9112,6 +9184,9 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Enter passphrase": [
+        "Voer wachtwoordzin in"
       ]
     },
     "Placeholder for contact group name": {
@@ -10558,6 +10633,9 @@
       ],
       "You have successfully unsubscribed": [
         "U bent succesvol afgemeld"
+      ],
+      "Secret passphrase updated": [
+        "Geheime wachtwoordzin bijgewerkt"
       ]
     },
     "Suffix": {
@@ -11383,6 +11461,9 @@
       ],
       "Previous": [
         "Vorige"
+      ],
+      "Two-factor authentication": [
+        "Tweestapsverificatie"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12043,6 +12124,38 @@
       ],
       "for 12 months": [
         "voor 12 maanden"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Toegang tot geavanceerde AI-modellen"
+      ],
+      "Basic chat history": [
+        "Basis gespreksgeschiedenis"
+      ],
+      "Full chat history with search": [
+        "Volledige chatgeschiedenis met zoeken"
+      ],
+      "Large file upload support": [
+        "Ondersteuning voor het uploaden van grote bestanden"
+      ],
+      "Limited daily chats": [
+        "Beperkt aantal dagelijkse gesprekken"
+      ],
+      "Limited favorites": [
+        "Beperkte favorieten"
+      ],
+      "Unlimited daily chats": [
+        "Onbeperkt aantal dagelijkse gesprekken"
+      ],
+      "Unlimited favorites for quick access": [
+        "Onbeperkt favorieten voor snelle toegang"
+      ],
+      "Upload and query multiple large files": [
+        "Meerdere grote bestanden uploaden en opvragen"
+      ],
+      "Upload and query small files": [
+        "Kleine bestanden uploaden en opvragen"
       ]
     }
   }
