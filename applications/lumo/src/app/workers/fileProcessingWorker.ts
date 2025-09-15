@@ -1,7 +1,7 @@
 import { PandocConverter } from '../lib/attachments/pandoc-wasm';
 import pdfParse from '../lib/attachments/pdfParse';
-import { mimeTypeToPandocFormat, shouldProcessAsPlainText, needsPandocConversion } from '../util/mimetype';
 import { isFileTypeSupported } from '../util/filetypes';
+import { mimeTypeToPandocFormat, needsPandocConversion, shouldProcessAsPlainText } from '../util/mimetype';
 
 export interface FileProcessingRequest {
     id: string;
@@ -36,15 +36,15 @@ function truncateContent(content: string, maxChars: number = 500000): { content:
     if (content.length <= maxChars) {
         return { content, wasTruncated: false };
     }
-    
+
     console.log(`[Performance] Truncating content from ${content.length} to ${maxChars} characters`);
-    
+
     const truncated = content.substring(0, maxChars);
     const truncatedWithNotice = truncated + '\n\n--- Content truncated due to size limitations ---';
-    
+
     return {
         content: truncatedWithNotice,
-        wasTruncated: true
+        wasTruncated: true,
     };
 }
 
@@ -60,32 +60,59 @@ async function convertXlsxToCsv(fileData: FileProcessingRequest['file']): Promis
     try {
         console.log(`Converting Excel file: ${fileData.name} (${(fileData.size / 1024 / 1024).toFixed(2)} MB)`);
 
-        // Import xlsx library dynamically
-        const XLSX = await import('xlsx');
+        // Import exceljs library dynamically
+        const ExcelJS = await import('exceljs');
 
         // Read the Excel file
-        const workbook = XLSX.read(fileData.data, {
-            type: 'array',
-            // Performance optimizations
-            cellDates: false, // Don't parse dates
-            cellNF: false, // Don't parse number formats
-            cellStyles: false, // Don't parse styles
-            sheetStubs: false, // Don't create stubs for empty cells
-        });
+        const workbook = new ExcelJS.Workbook();
+        await workbook.xlsx.load(fileData.data);
 
         // Get the first worksheet
-        const sheetName = workbook.SheetNames[0];
-        if (!sheetName) {
+        const worksheet = workbook.getWorksheet(1);
+        if (!worksheet) {
             throw new Error('Excel file contains no worksheets');
         }
 
-        const worksheet = workbook.Sheets[sheetName];
-        if (!worksheet) {
-            throw new Error('Could not read Excel worksheet');
-        }
+        // Convert the worksheet to CSV format
+        const csvRows: string[] = [];
+        worksheet.eachRow((row, rowNumber) => {
+            // ExcelJS row.values is an array where index 0 is empty, actual values start at index 1
+            const rowValues = row.values as any[];
+            const csvRow = rowValues
+                .slice(1)
+                .map((value: any) => {
+                    // Handle different cell value types
+                    if (value === null || value === undefined) {
+                        return '';
+                    }
+                    // Handle ExcelJS cell objects with rich text or formulas
+                    if (typeof value === 'object' && value !== null) {
+                        if (value.richText) {
+                            // Handle rich text cells
+                            return value.richText.map((rt: any) => rt.text || '').join('');
+                        } else if (value.text !== undefined) {
+                            // Handle simple text cells
+                            return String(value.text);
+                        } else if (value.result !== undefined) {
+                            // Handle formula cells
+                            return String(value.result);
+                        } else {
+                            // Handle other object types
+                            return String(value);
+                        }
+                    }
+                    const stringValue = String(value);
+                    // Escape commas and quotes in CSV
+                    if (stringValue.includes(',') || stringValue.includes('"') || stringValue.includes('\n')) {
+                        return `"${stringValue.replace(/"/g, '""')}"`;
+                    }
+                    return stringValue;
+                })
+                .join(',');
+            csvRows.push(csvRow);
+        });
 
-        // Convert the entire sheet to CSV
-        const csvData = XLSX.utils.sheet_to_csv(worksheet);
+        const csvData = csvRows.join('\n');
 
         if (!csvData.trim()) {
             throw new Error('Excel file appears to be empty or contains no readable data');
@@ -103,25 +130,29 @@ async function convertXlsxToCsv(fileData: FileProcessingRequest['file']): Promis
 async function processFile(fileData: FileProcessingRequest['file']): Promise<FileProcessingResponse['result'] | null> {
     const startTime = performance.now();
     const fileSizeMB = fileData.size / (1024 * 1024);
-    console.log(`[Performance] Starting processing for ${fileData.name} (${fileData.type}, ${fileSizeMB.toFixed(2)}MB)`);
-    
+    console.log(
+        `[Performance] Starting processing for ${fileData.name} (${fileData.type}, ${fileSizeMB.toFixed(2)}MB)`
+    );
+
     // Performance optimization: Set size limits for different file types
     const SIZE_LIMITS = {
         'text/plain': 50, // 50MB
-        'text/csv': 100, // 100MB  
+        'text/csv': 100, // 100MB
         'application/pdf': 200, // 200MB
         'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': 150, // 150MB
         'application/vnd.ms-excel': 150, // 150MB
-        'default': 50 // 50MB for other types
+        default: 50, // 50MB for other types
     };
-    
+
     const sizeLimit = SIZE_LIMITS[fileData.type as keyof typeof SIZE_LIMITS] || SIZE_LIMITS.default;
-    
+
     if (fileSizeMB > sizeLimit) {
-        console.warn(`[Performance] File ${fileData.name} (${fileSizeMB.toFixed(2)}MB) exceeds size limit (${sizeLimit}MB)`);
+        console.warn(
+            `[Performance] File ${fileData.name} (${fileSizeMB.toFixed(2)}MB) exceeds size limit (${sizeLimit}MB)`
+        );
         throw new Error(`File too large: ${fileSizeMB.toFixed(1)}MB exceeds ${sizeLimit}MB limit for ${fileData.type}`);
     }
-    
+
     try {
         switch (fileData.type) {
             case 'text/plain': {
@@ -154,7 +185,9 @@ async function processFile(fileData: FileProcessingRequest['file']): Promise<Fil
                     convertedSize: truncated.content.length,
                     truncated: truncated.wasTruncated,
                     originalRowCount: lines.length,
-                    processedRowCount: truncated.wasTruncated ? Math.floor(lines.length * (truncated.content.length / csvContent.length)) : lines.length,
+                    processedRowCount: truncated.wasTruncated
+                        ? Math.floor(lines.length * (truncated.content.length / csvContent.length))
+                        : lines.length,
                 };
             }
 
@@ -186,7 +219,9 @@ async function processFile(fileData: FileProcessingRequest['file']): Promise<Fil
                     convertedSize: truncated.content.length,
                     truncated: truncated.wasTruncated,
                     originalRowCount: lines.length,
-                    processedRowCount: truncated.wasTruncated ? Math.floor(lines.length * (truncated.content.length / csvData.length)) : lines.length,
+                    processedRowCount: truncated.wasTruncated
+                        ? Math.floor(lines.length * (truncated.content.length / csvData.length))
+                        : lines.length,
                 };
             }
 
@@ -202,11 +237,13 @@ async function processFile(fileData: FileProcessingRequest['file']): Promise<Fil
                         convertedSize: converted.length,
                     };
                 }
-                
+
                 // For files with ambiguous MIME types like text/plain, check the file extension
                 if (fileData.type === 'text/plain' || fileData.type === '') {
                     if (isFileTypeSupported(fileData.name)) {
-                        console.log(`Processing ${fileData.name} (${fileData.type}) as plain text based on file extension`);
+                        console.log(
+                            `Processing ${fileData.name} (${fileData.type}) as plain text based on file extension`
+                        );
                         const converted = new TextDecoder('utf-8').decode(fileData.data);
                         return {
                             originalContent: converted,
@@ -216,18 +253,17 @@ async function processFile(fileData: FileProcessingRequest['file']): Promise<Fil
                         };
                     }
                 }
-                
+
                 // Check if this file actually needs Pandoc conversion
                 if (needsPandocConversion(fileData.type)) {
                     const pandocFormat = mimeTypeToPandocFormat(fileData.type);
                     if (pandocFormat) {
                         console.log(`Processing ${fileData.type} with Pandoc (format: ${pandocFormat})`);
-                        
-                        
+
                         return await processFileWithPandoc(fileData, pandocFormat);
                     }
                 }
-                
+
                 // Unsupported file type
                 console.log(`Unsupported file format: ${fileData.type} for file: ${fileData.name}`);
                 return null;
@@ -284,7 +320,6 @@ async function processFileWithPandoc(
         throw error instanceof Error ? error : new Error(String(error));
     }
 }
-
 
 async function convertPdfToText(fileData: FileProcessingRequest['file']): Promise<string> {
     const parseResult = await pdfParse(fileData.data);
