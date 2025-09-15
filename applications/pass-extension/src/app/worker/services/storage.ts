@@ -1,6 +1,9 @@
 import { getExtensionLocalStorage, getExtensionSessionStorage } from '@proton/pass/lib/extension/storage';
 import { fileStorageReady } from '@proton/pass/lib/file-storage/fs';
 import type { ExtensionStorage, LocalStoreData, SessionStoreData } from '@proton/pass/types';
+import { first } from '@proton/pass/utils/array/first';
+import { logger } from '@proton/pass/utils/logger';
+import { isObject } from '@proton/pass/utils/object/is-object';
 import noop from '@proton/utils/noop';
 
 type StorageState = { storageFull: boolean };
@@ -30,7 +33,14 @@ export const createStorageService = () => {
                         }
                     }
 
-                    throw err;
+                    const keys = ((): string[] => {
+                        const fst = first(args);
+                        if (typeof fst === 'string') return [fst];
+                        if (isObject(fst)) return Object.keys(fst);
+                        return [];
+                    })();
+
+                    logger.warn(`[Storage::local] Failed writing ${keys.join(',')}`);
                 })) as T;
 
     const local: ExtensionStorage<LocalStoreData> = {
