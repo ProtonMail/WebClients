@@ -119,6 +119,8 @@
 		bg-promotion-bw-button: var(--background-invert),
   		text-promotion-bw-button: var(--text-invert),
 
+		toggle-container-unchecked-loader-color: var(--interaction-norm-contrast),
+
 	) {
 		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
 		--#{$variable}: var(--optional-#{$variable}, #{$default});
