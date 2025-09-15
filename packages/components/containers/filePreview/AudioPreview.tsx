@@ -37,7 +37,7 @@ const AudioPreview = ({ contents, mimeType, onDownload }: Props) => {
     }
     return (
         <div className="flex w-full h-full">
-            <div className="m-auto w-1/2">
+            <div className="m-auto w-full md:w-1/2">
                 {url ? <audio className="w-full" onError={handleBrokenAudio} src={url} controls /> : <CircleLoader />}
             </div>
         </div>
