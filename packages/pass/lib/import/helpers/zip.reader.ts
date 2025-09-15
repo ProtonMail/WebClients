@@ -4,7 +4,10 @@ import { not } from '@proton/pass/utils/fp/predicates';
 
 export const readZIP = async (file: File): Promise<ImportFileReader> => {
     const zip = await import(/* webpackChunkName: "zip.reader" */ '@zip.js/zip.js');
-    const reader = new zip.ZipReader(new zip.BlobReader(file), { useWebWorkers: !EXTENSION_BUILD });
+    const reader = new zip.ZipReader(new zip.BlobReader(file), {
+        useWebWorkers: !EXTENSION_BUILD,
+        useCompressionStream: false,
+    });
 
     const entries = await reader.getEntries();
     const files = new Set(entries.filter(not(prop('directory'))).map(prop('filename')));
@@ -16,7 +19,7 @@ export const readZIP = async (file: File): Promise<ImportFileReader> => {
         getFile: async (filename: string) => {
             try {
                 const match = entries.find((entry) => entry.filename === filename);
-                return match ? ((await match.getData?.(new zip.BlobWriter())) ?? null) : null;
+                return match && !match.directory ? ((await match.getData?.(new zip.BlobWriter())) ?? null) : null;
             } catch (err) {
                 return null;
             }
