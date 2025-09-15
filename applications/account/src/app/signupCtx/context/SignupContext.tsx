@@ -44,7 +44,7 @@ import { InvalidReferrerError, useReferralData } from './accountData/useReferral
 import { useSignupDomains } from './accountData/useSignupDomains';
 import { getClientType } from './helpers/getClientType';
 import { handleCreateUser } from './helpers/handleCreateUser';
-import { type SignupContextSubscriptionData, handleSetupUser } from './helpers/handleSetupUser';
+import { type SignupContextSubscriptionData, handleSetupUser, handleSubscribeUser } from './helpers/handleSetupUser';
 
 interface AccountFormDataConfig {
     /**
@@ -95,6 +95,7 @@ interface SignupContextType {
      * Sets up the newly created user account
      */
     setupUser: () => Promise<void>;
+    afterSetupSubscribe: () => Promise<void>;
     setOrgName: (orgName: string) => Promise<void>;
     setDisplayName: (displayName: string) => Promise<void>;
     login: () => Promise<void>;
@@ -540,6 +541,14 @@ export const InnerSignupContextProvider = ({
         }
     };
 
+    const afterSetupSubscribe = async () => {
+        const subscriptionData = signupDataRef.current?.paymentData?.subscriptionData;
+
+        if (subscriptionData) {
+            await handleSubscribeUser(api, subscriptionData, app, hasZipCodeValidation);
+        }
+    };
+
     const setOrgName = async (orgName: string) => {
         if (stageRef.current !== 'userSetup') {
             captureSentryMessage(
@@ -761,6 +770,7 @@ export const InnerSignupContextProvider = ({
         },
         createUser,
         setupUser,
+        afterSetupSubscribe,
         setOrgName,
         setDisplayName,
         flowId,
