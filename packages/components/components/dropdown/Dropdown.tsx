@@ -114,9 +114,15 @@ const Dropdown = ({
      * as the synthetically generated click event contains 0 for these value.
      */
     const handleClickContent = (event: ReactMouseEvent<HTMLDivElement>) => {
-        const isRealClick = event.clientX !== 0 && event.clientY !== 0;
+        const node = event.target;
+        const isSyntheticClickOnRadio =
+            event.clientX === 0 &&
+            event.clientY === 0 &&
+            node instanceof HTMLInputElement &&
+            node.tagName === 'INPUT' &&
+            node.type === 'radio';
 
-        if (isRealClick && autoClose) {
+        if (!isSyntheticClickOnRadio && autoClose) {
             onClose(event);
         }
     };

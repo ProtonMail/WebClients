@@ -73,7 +73,93 @@ describe('<Dropdown />', () => {
         expect(getByTestId('dropdown')).toBeVisible();
         await userEvent.click(getByTestId('outside'));
         fireEvent.animationEnd(getByTestId('dropdown'), { animationName: 'anime-dropdown-out' });
-        expect(queryByTestId('dropdown-test')).toBeNull();
+        expect(queryByTestId('dropdown')).toBeNull();
+    });
+
+    it('should auto close when clicked inside a dropdown', async () => {
+        const { getByTestId, queryByTestId } = render(
+            <div>
+                <div data-testid="outside">outside dropdown</div>
+                <Test data-testid="dropdown-open" dropdownProps={{ 'data-testid': 'dropdown' }}>
+                    <div data-testid="dropdown-inner">Hello world</div>
+                </Test>
+            </div>
+        );
+
+        await userEvent.click(getByTestId('dropdown-open'));
+        expect(getByTestId('dropdown')).toBeVisible();
+        await userEvent.click(getByTestId('dropdown-inner'));
+        fireEvent.animationEnd(getByTestId('dropdown'), { animationName: 'anime-dropdown-out' });
+        expect(queryByTestId('dropdown')).toBeNull();
+    });
+
+    it('should auto close when clicked inside a dropdown through keyboard event', async () => {
+        const { getByTestId, queryByTestId } = render(
+            <div>
+                <div data-testid="outside">outside dropdown</div>
+                <Test data-testid="dropdown-open" dropdownProps={{ 'data-testid': 'dropdown' }}>
+                    <button data-testid="dropdown-inner">Hello world</button>
+                </Test>
+            </div>
+        );
+
+        await userEvent.click(getByTestId('dropdown-open'));
+        expect(getByTestId('dropdown')).toBeVisible();
+        const button = getByTestId('dropdown-inner');
+        button.focus();
+        await userEvent.keyboard('{Enter}');
+        fireEvent.animationEnd(getByTestId('dropdown'), { animationName: 'anime-dropdown-out' });
+        expect(queryByTestId('dropdown')).toBeNull();
+    });
+
+    it('should not auto close when clicked inside a dropdown through keyboard event', async () => {
+        const Test2 = () => {
+            const [state, setState] = useState('1');
+            return (
+                <div>
+                    <div data-testid="outside">outside dropdown</div>
+                    <Test data-testid="dropdown-open" dropdownProps={{ 'data-testid': 'dropdown' }}>
+                        <input
+                            type="radio"
+                            data-testid="dropdown-inner-1"
+                            value="1"
+                            name="inputs"
+                            checked={state === '1'}
+                            onChange={() => setState('1')}
+                        />
+                        <input
+                            type="radio"
+                            data-testid="dropdown-inner-2"
+                            value="2"
+                            name="inputs"
+                            checked={state === '2'}
+                            onChange={() => setState('2')}
+                        />
+                        <button data-testid="dropdown-inner-button">Submit</button>
+                    </Test>
+                </div>
+            );
+        };
+        const { getByTestId, queryByTestId } = render(<Test2 />);
+
+        await userEvent.click(getByTestId('dropdown-open'));
+        expect(getByTestId('dropdown')).toBeVisible();
+        const input1 = getByTestId('dropdown-inner-1');
+        const input2 = getByTestId('dropdown-inner-2');
+        expect(input1).toBeChecked();
+        expect(input2).not.toBeChecked();
+        input1.focus();
+        await userEvent.keyboard('{ArrowRight}');
+        expect(input2).toBeChecked();
+        expect(getByTestId('dropdown')).toBeVisible();
+        fireEvent.animationEnd(getByTestId('dropdown'), { animationName: 'anime-dropdown-out' });
+        expect(getByTestId('dropdown')).toBeVisible();
+
+        const button = getByTestId('dropdown-inner-button');
+        button.focus();
+        await userEvent.keyboard('{Enter}');
+        fireEvent.animationEnd(getByTestId('dropdown'), { animationName: 'anime-dropdown-out' });
+        expect(queryByTestId('dropdown')).toBeNull();
     });
 
     describe('dropdown size', () => {
