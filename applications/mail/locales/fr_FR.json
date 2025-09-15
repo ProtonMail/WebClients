@@ -6457,8 +6457,8 @@
         "${ MAIL_APP_NAME } peut également protéger votre entreprise."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "Le message ${ messagesNotAuthorizedToMove } n'a pas pu être déplacé.",
-        "Les messages ${ messagesNotAuthorizedToMove } n'ont pas pu être déplacés."
+        "${ messagesNotAuthorizedToMove } message n'a pas pu être déplacé.",
+        "${ messagesNotAuthorizedToMove } messages n'ont pas pu être déplacés."
       ],
       "${ n } unread conversation": [
         "${ n } conversation non lue",
@@ -8611,12 +8611,12 @@
         "Vous avez sélectionné **${ count } messages** avec ce tag"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Vous avez sélectionné(e) **${ elementsCount } conversation** dans ${ location }",
-        "Vous avez sélectionné(e) **${ elementsCount } conversations** dans ${ location }"
+        "Vous avez sélectionné **${ elementsCount } conversation** dans ${ location }",
+        "Vous avez sélectionné **${ elementsCount } conversations** dans ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
-        "Vous avez sélectionné(e) **${ elementsCount } conversation**.",
-        "Vous avez sélectionné(e) **${ elementsCount } conversations**."
+        "Vous avez sélectionné **${ elementsCount } conversation**.",
+        "Vous avez sélectionné **${ elementsCount } conversations**."
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
         "Vous avez sélectionné(e) **${ elementsCount } messages** dans ${ location }",
@@ -9353,6 +9353,9 @@
       "Go to Newsletters": [
         "Accéder aux newsletters"
       ],
+      "Go to Primary": [
+        "Accéder à l'élément principal"
+      ],
       "Go to Promotions": [
         "Accéder aux promotions"
       ],
@@ -10052,7 +10055,7 @@
         "Programmés"
       ],
       "Sent": [
-        "Envoyée"
+        "Envoyés"
       ],
       "settings": [
         "paramètres"
@@ -13976,8 +13979,8 @@
         "${ elementsCount } messages supprimés de ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
-        "Message ${ elementsCount } supprimé de la liste étoilée.",
-        "${ elementsCount } messages supprimés de la liste étoilée."
+        "${ elementsCount } message a été retiré des favoris.",
+        "${ elementsCount } messages ont été retirés de la liste des favoris."
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -14762,9 +14765,6 @@
       "Enhance security with 2FA": [
         "Améliorez la sécurité avec l’A2F"
       ],
-      "Enter 2FA code": [
-        "Entrez le code A2F"
-      ],
       "Enter your password": [
         "Saisissez votre mot de passe"
       ],
@@ -15302,6 +15302,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activer ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
       ],
       "Unsubscribe": [
         "Se désabonner"

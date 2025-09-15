@@ -1760,9 +1760,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीने के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।",
         "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीनों के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।"
@@ -3813,14 +3810,6 @@
         "Windows 8/8.1/7 या Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        "Debian / Ubuntu के लिए .deb"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        "Fedora / Red Hat के लिए .rpm"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "फाइल तक सुरक्षित पहुँच के लिए एक मुफ्त ${ DRIVE_APP_NAME } खाता बनाएं"
@@ -5815,14 +5804,6 @@
         "आपका डेस्कटॉप ऐप मुफ्त ट्रायल समाप्त हो गया है"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "App Store पर ${ appName }"
-      ],
-      "${ appName } on Play Store": [
-        "Play Store पर ${ appName }"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "अपनेआप फॉरवर्ड"
@@ -7204,9 +7185,6 @@
       "Disable recovery by phone number": [
         "फोन नंबर द्वारा पुनर्प्राप्ति अक्षम करें"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "दो-फैक्टर सत्यापन अक्षम करने से आपका खाता कम सुरक्षित हो जाएगा। केवल तभी आगे बढ़ें यदि यह बिल्कुल आवश्यक हो।"
-      ],
       "Discount": [
         "छूट"
       ],
@@ -7433,9 +7411,6 @@
       "Failed to fetch logs.": [
         "लॉग लाने में विफल।"
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "तेज़ और केंद्रित। ईमेल और कैलेंडर, सीधे आपके डेस्कटॉप पर।"
-      ],
       "Fill in user details": [
         "उपयोगकर्ता जानकारी भरें"
       ],
@@ -7558,9 +7533,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "यदि आपके पास कोई उपहार कोड है, तो अपनी छूट लागू करने के लिए उसे नीचे दर्ज करें।"
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "यदि आपने पहले कभी दो-कारक प्रमाणीकरण का उपयोग नहीं किया है, तो हम आपको दृढ़ता से ${ guideButton } की सलाह देते हैं।"
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "यदि आप अपना पासवर्ड खो देते हैं और अपने खाते को पुनः प्राप्त करने की आवश्यकता होती है, तो ${ boldImperative } कि आपके पास ${ boldAccountRecovery } स्थापित हो।"
@@ -7857,9 +7829,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "अपने ${ DOCS_APP_NAME } के लिए अपनी ईमेल सूचना प्राथमिकताएँ संभाले।"
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "अपने खाते को सेट करने के लिए इस जानकारी को अपने दो-फैक्टर सत्यापन डिवाइस में खुद डालें। ${ switchButton }।"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode लोगो"
@@ -8175,9 +8144,6 @@
       "purchase additional storage": [
         "अतिरिक्त भंडारण खरीद"
       ],
-      "read our two-factor authentication guide first": [
-        "पहले हमारे दो-फैक्टर सत्यापन गाइड को पढ़े"
-      ],
       "Recently used servers:": [
         "हाल में उपयोग किए गए सर्वर:"
       ],
@@ -8258,9 +8224,6 @@
       ],
       "Scan QR code instead": [
         "इसके बजाय QR कोड स्कैन करें"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "अपना खाता सेट करने के लिए अपने दो-कारक प्रमाणीकरण उपकरण के साथ इस कोड को स्कैन करें। ${ switchButton }।"
       ],
       "SCIM integration disabled": [
         "SCIM एकीकरण अक्षम कर दिया गया है"
@@ -8645,9 +8608,6 @@
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "यह आपके ${ BRAND_NAME } खाते से डिवाइस **${ name } (जिसकी रचना ${ date } पर हुई थी)** को अनलिंक कर देगा।"
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "ये प्रक्रिया आपके ${ BRAND_NAME } खाते पे दो-कदम सत्यापन (2-एफए) सक्षम करेगा। दो-कदम सत्यापन आपके ${ BRAND_NAME_TWO } खाते को और सुरक्षित बना देगा और इसलिए हम इसे सक्षम करने की सलाह देते हैं।"
-      ],
       "to ${ product } Business": [
         "${ product } व्यवसाय में"
       ],
@@ -8728,12 +8688,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } को पूरी तरह से जोखिम मुक्त आज़माएँ - यदि किसी भी कारण से आप अपना मन बदलते हैं, तो आपको पूरा रिफंड मिलेगा। कोई सवाल नहीं।"
-      ],
-      "Two-factor authentication disabled": [
-        "दो-कारक प्रमाणीकरण अक्षम"
-      ],
-      "Two-factor authentication enabled": [
-        "दो-कारक प्रमाणीकरण सक्षम"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "दो-पासवर्ड मोड में दो पासवर्ड की आवश्यकता होती है: एक अपने खाते में साइन इन करने के लिए और एक अपने डेटा को डिक्रिप्ट करने के लिए। (उन्नत)"
@@ -9976,9 +9930,6 @@
       ],
       "Backup password": [
         "बैकअप पासवर्ड"
-      ],
-      "Beta": [
-        "बीटा"
       ],
       "Billing cycle": [
         "बिल चक्र"
@@ -14256,9 +14207,6 @@
       "Admin": [
         "एडमिन"
       ],
-      "Primary admin": [
-        "प्राथमिक व्यवस्थापक"
-      ],
       "User": [
         "यूज़र"
       ]
@@ -17149,9 +17097,6 @@
       "Encryption and keys": [
         "एन्क्रिप्शन और कुंजियाँ"
       ],
-      "Enter 2FA code": [
-        "2-एफए कोड डालें"
-      ],
       "Enter endpoints into your identity provider": [
         "अपने पहचान प्रदाता में एंडपॉइंट दर्ज करें"
       ],
@@ -17203,15 +17148,6 @@
       ],
       "Folders and labels": [
         "फ़ोल्डर्स और लेबल"
-      ],
-      "For Linux": [
-        "Linux के लिए"
-      ],
-      "For macOS": [
-        "macOS के लिए"
-      ],
-      "For Windows": [
-        "Windows के लिए"
       ],
       "Forgot password": [
         "पासवर्ड भूल गए"
@@ -17657,9 +17593,6 @@
       ],
       "Set up email forwarding": [
         "ईमेल फॉरवर्ड सेट अप करें"
-      ],
-      "Set up two-factor authentication": [
-        "दो-कारक प्रमाणीकरण सेट करें"
       ],
       "Set up your family account": [
         "अपना परिवार खाता सेट करें"
@@ -18609,9 +18542,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2-एफए"
-      ],
       "Administrators can't access the data of private users": [
         "प्रशासक निजी उपयोगकर्ताओं का डाटा एक्सेस नहीं कर सकते"
       ],

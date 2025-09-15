@@ -1488,9 +1488,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz.",
         "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz."
@@ -5746,6 +5743,12 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
+      "Authenticator app 2FA disabled": [
+        "Uygulama ile iki adımlı doğrulama kapatıldı"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Kimlik doğrulama uygulaması ile iki adımlı doğrulama açıldı"
+      ],
       "Awaiting transaction": [
         "Ödemenin tamamlanması bekleniyor"
       ],
@@ -5933,8 +5936,8 @@
       "Disabled on ${ boldValue }": [
         "${ boldValue } zamanında kapatıldı"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "İki adımlı doğrulamayı kapatmak hesabınızın güvenliğini azaltacak. Bu işlemi yalnızca gerçekten gerekliyse yapın."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Kimlik doğrulama uygulaması ile iki adımlı doğrulamayı kapatmak hesabınızın güvenliğini azaltır. Bu işlemi yalnızca gerçekten gerekiyorsa yapın."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Erişebileceğiniz yeni özellikleri keşfedin ve hemen kullanmaya başlayın!"
@@ -6219,9 +6222,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "İki adımlı kimlik doğrulamayı daha önce kullanmadıysanız, kesinlikle ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "İki adımlı doğrulama aygıtınızı kaybederseniz, hesabınıza oturum açmak için 6 rakamlı iki adımlı doğrulama kodu yerine bu kodları kullanabilirsiniz. Her kod yalnızca bir kez kullanılabilir."
       ],
@@ -6448,8 +6448,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Hesabınızı kurmak için bu bilgileri iki adımlı doğrulama aygıtınıza el ile yazın. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Hesabınızı ayarlamak için bu bilgileri kimlik doğrulama uygulamanıza el ile yazın. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
@@ -6707,9 +6707,6 @@
       "Public sharing of documents is not yet supported.": [
         "Henüz belgeleri herkese açık olarak paylaşma özelliği yok."
       ],
-      "read our two-factor authentication guide first": [
-        "önce iki adımlı doğrulama rehberimizi okuyun"
-      ],
       "Recently used servers:": [
         "Son kullanılan sunucular:"
       ],
@@ -6758,8 +6755,8 @@
       "Scan QR code instead": [
         "Bunun yerine QR kodunu tarayın"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Hesabınızı kurmak için bu kodu iki adımlı doğrulama aygıtınızla tarayın. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Hesabınızı kurmak için kimlik doğrulama uygulamanızla bu kodu tarayın. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM bütünleştirmesi kullanılmıyor"
@@ -6839,9 +6836,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Adresinizi kullanıma almak için ${ MAIL_APP_NAME } adresinde oturum açın"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Güvenlik anahtarı ile oturum açılması henüz tüm uygulamalarda desteklenmiyor. Tek kullanımlık parola olmadan, bazı uygulamalarda oturum açılamayabilir."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
@@ -7052,9 +7046,6 @@
       "This will wipe all logs for your organization members.": [
         "Bu işlem, kuruluşunuzun üyelerine ait tüm günlükleri siler."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki adımlı doğrulamayı (2FA) açar. ${ BRAND_NAME_TWO } hesabınızı daha güvenli kılacağından iki adımlı doğrulamayı açmanızı öneririz."
-      ],
       "to ${ product } Business": [
         "${ product } Business"
       ],
@@ -7117,12 +7108,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } uygulamasını risk almadan deneyin. Herhangi bir nedenle fikrinizi değiştirirseniz tam geri ödeme alabilirsiniz. Herhangi bir soru sorulmaz."
-      ],
-      "Two-factor authentication disabled": [
-        "İki adımlı doğrulama kapatıldı"
-      ],
-      "Two-factor authentication enabled": [
-        "İki adımlı doğrulama açıldı"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "İki parola kipi açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri verilerinizin şifresini çözmek için kullanılır. (Gelişmiş)"
@@ -7351,6 +7336,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Kullanıma almadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Bir kimlik doğrulama uygulaması olmadan, henüz güvenlik anahtarlarını desteklemeyen ${ BRAND_NAME } uygulamalarında oturum açamazsınız."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -10823,6 +10811,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
+      ],
       "Taxes": [
         "Vergiler"
       ],
@@ -11602,9 +11593,6 @@
     "Role": {
       "Admin": [
         "Yönetici"
-      ],
-      "Primary admin": [
-        "Birincil yönetici"
       ],
       "User": [
         "Kullanıcı"
@@ -13921,6 +13909,9 @@
       "Disable two-factor authentication": [
         "İki adımlı doğrulamayı kapat"
       ],
+      "Disable two-factor authentication app?": [
+        "Uygulama ile iki adımlı doğrulama kapatılsın mı?"
+      ],
       "Disable two-factor authentication?": [
         "İki adımlı doğrulama kapatılsın mı?"
       ],
@@ -14001,9 +13992,6 @@
       ],
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
-      ],
-      "Enter 2FA code": [
-        "İki adımlı doğrulama kodunu yazın"
       ],
       "Enter endpoints into your identity provider": [
         "Kimlik hizmeti sağlayıcınızın uç noktalarını ekleyin"
@@ -14289,11 +14277,11 @@
       "Set recovery methods": [
         "Kurtarma yöntemlerini ayarlayın"
       ],
+      "Set up authenticator app": [
+        "Kimlik doğrulama uygulamasını ayarlayın"
+      ],
       "Set up email forwarding": [
         "E-posta iletmeyi ayarlayın"
-      ],
-      "Set up two-factor authentication": [
-        "İki adımlı doğrulamayı ayarla"
       ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
@@ -14978,11 +14966,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "İki adımlı doğrulama"
-      ],
       "Administrators can't access the data of private users": [
         "Yöneticiler korunan kullanıcıların verilerine erişemez"
+      ],
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
       ],
       "Inactive": [
         "Etkin değil"
@@ -15001,6 +14989,9 @@
       ],
       "Private": [
         "Korunan"
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
       ],
       "SSO": [
         "Tek oturum açma"

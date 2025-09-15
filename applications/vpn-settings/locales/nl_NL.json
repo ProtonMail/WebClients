@@ -1482,9 +1482,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sorry, deze aanbieding is niet beschikbaar met uw huidige abonnement."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting ${ plan.Title } krijgen wanneer u zich voor ${ cycle } maand abonneert.",
         "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting krijgen ${ plan.Title } wanneer u zich voor ${ cycle } maanden abonneert."
@@ -5924,9 +5921,6 @@
       "Disabled on ${ boldValue }": [
         "Uitgeschakeld op ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Het uitschakelen van tweestapsverificatie maakt uw account minder veilig. Ga alleen verder als het absoluut nodig is."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Ontdek nieuwe functies ontgrendeld en begin direct met het gebruik ervan!"
       ],
@@ -6210,9 +6204,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Als u een geschenkcode heeft, voer deze hieronder in om uw korting toe te passen."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Als u nog nooit eerder tweestapsverificatie heeft gebruikt, raden we u aan om ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Als u uw tweestapsverificatie-apparaat kwijtraakt, kunnen deze codes worden gebruikt in plaats van de 6-cijferige tweestapsverificatiecode om in te loggen op uw account. Elke code kan slechts één keer worden gebruikt."
       ],
@@ -6438,9 +6429,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Beheer welke ${ BRAND_NAME } applicaties toegankelijk zijn voor de leden van uw organisatie. Indien uitgeschakeld, hebben alleen beheerders toegang."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Vul deze informatie handmatig in op uw tweestapsverificatieapparaat om uw account te configureren. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -6698,9 +6686,6 @@
       "Public sharing of documents is not yet supported.": [
         "Publiek delen van documenten is nog niet ondersteund."
       ],
-      "read our two-factor authentication guide first": [
-        "lees eerst de instructies over tweestapsverificatie (2FA)"
-      ],
       "Recently used servers:": [
         "Recent gebruikte servers:"
       ],
@@ -6748,9 +6733,6 @@
       ],
       "Scan QR code instead": [
         "Scan QR-code in plaats daarvan"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Scan deze QR-code met uw tweestapsverificatieapparaat om uw account in te stellen. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-integratie uitgeschakeld"
@@ -6830,9 +6812,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren."
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Inloggen met een beveiligingssleutel wordt nog niet in alle toepassingen ondersteund. Zonder TOTP kan inloggen bij sommige toepassingen mislukken."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
@@ -7043,9 +7022,6 @@
       "This will wipe all logs for your organization members.": [
         "Hiermee worden alle logboeken gewist voor de leden van uw organisatie."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw ${ BRAND_NAME }-account. Tweestapsverificatie zal uw ${ BRAND_NAME_TWO }-account veiliger maken en daarom raden we aan om het in te schakelen."
-      ],
       "to ${ product } Business": [
         "naar ${ product } Business"
       ],
@@ -7108,12 +7084,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Probeer ${ productName } volledig risicoloos - als u om een andere reden van gedachten verandert, krijgt u een volledige terugbetaling. Zonder vragen."
-      ],
-      "Two-factor authentication disabled": [
-        "Tweestapsverificatie uitgeschakeld"
-      ],
-      "Two-factor authentication enabled": [
-        "Tweestapsverificatie ingeschakeld"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Twee wachtwoorden modus vereist twee wachtwoorden: één om in te loggen op uw account en één om uw gegevens te ontsleutelen. (Geavanceerd)"
@@ -11585,9 +11555,6 @@
       "Admin": [
         "Beheerder"
       ],
-      "Primary admin": [
-        "Primaire beheerder"
-      ],
       "User": [
         "Gebruiker"
       ]
@@ -13984,9 +13951,6 @@
       "Enhance security with 2FA": [
         "Verbeter de beveiliging met 2FA"
       ],
-      "Enter 2FA code": [
-        "Voer 2FA-code in"
-      ],
       "Enter endpoints into your identity provider": [
         "Voer eindpunten in bij uw identiteitsprovider"
       ],
@@ -14273,9 +14237,6 @@
       ],
       "Set up email forwarding": [
         "E-mail doorsturen instellen"
-      ],
-      "Set up two-factor authentication": [
-        "Tweestapsverificatie instellen"
       ],
       "Set up your organization": [
         "Stel uw organisatie in"
@@ -14957,9 +14918,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "Tweestapsverificatie"
-      ],
       "Administrators can't access the data of private users": [
         "Administrators hebben geen toegang tot de gegevens van privégebruikers"
       ],

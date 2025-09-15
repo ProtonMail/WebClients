@@ -1269,9 +1269,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此優惠無法在您的方案中使用。"
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "抱歉，你目前的方案無法使用此優惠。但若您訂購 ${ cycle } 月時，你可以取得 ${ plan.Title } 的 ${ discountPercentage } 優惠。"
       ]
@@ -5197,9 +5194,6 @@
       "Did you know?": [
         "您知道嗎？"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "關閉雙重驗證將使帳號降低安全。只有在必要時再關閉。"
-      ],
       "Discover new features unlocked and start using them right away!": [
         "探索解鎖的新功能並立即使用!"
       ],
@@ -5452,9 +5446,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "若您有禮品代碼，請在下方輸入以套用折扣。"
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "如果您先前從未用過兩步驟驗證，我們強烈推薦您閱讀 ${ guideButton }。"
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "萬一您的兩步驟驗證裝置遺失，這些代碼可代替 6 位數的兩步驟驗證碼用來登入您的帳號。每個代碼只能使用一次。"
       ],
@@ -5667,9 +5658,6 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "請確保 ${ addARecoveryMethod } ，如果忘記密碼您還能恢復存取帳號。"
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。${ switchButton }。"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 標誌"
@@ -5896,9 +5884,6 @@
       "Public sharing of documents is not yet supported.": [
         "公開分享尚未支援。"
       ],
-      "read our two-factor authentication guide first": [
-        "先閱讀我們的兩步驟驗證指南"
-      ],
       "Recently used servers:": [
         "最近使用的伺服器:"
       ],
@@ -5946,9 +5931,6 @@
       ],
       "Scan QR code instead": [
         "改為掃描 QR 代碼"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "請使用您的兩步驟驗證裝置掃描此代碼，以便設定您的帳號。又或者，${ switchButton }。"
       ],
       "SCIM integration disabled": [
         "整合SCIM關閉"
@@ -6187,9 +6169,6 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "這將會使您登出所有裝置並停用雙重驗證。"
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "本精靈將會在您的 ${ BRAND_NAME } 帳號上啟用兩步驟驗證 (2FA)。兩步驟驗證讓您的 ${ BRAND_NAME_TWO } 帳號更安全，所以我們建議啟用它。"
-      ],
       "to ${ product } Business": [
         "至${ product }商業版"
       ],
@@ -6246,12 +6225,6 @@
       ],
       "Total VPN connections": [
         "總 VPN 連線數量"
-      ],
-      "Two-factor authentication disabled": [
-        "兩步驟驗證已停用"
-      ],
-      "Two-factor authentication enabled": [
-        "兩步驟驗證已啟用"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "雙重密碼模式需要兩個密碼：一個用來登入您的帳號，另一個用來解密您的資料(進階)"
@@ -9505,6 +9478,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "更新價 ${ renewPriceStr }，任何時間都可取消。"
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
       "Taxes": [
         "稅金"
       ],
@@ -9999,9 +9975,6 @@
     "Role": {
       "Admin": [
         "管理員"
-      ],
-      "Primary admin": [
-        "主要系統管理員"
       ],
       "User": [
         "使用者"
@@ -12093,9 +12066,6 @@
       "Enable for all users": [
         "為所有使用者啟用"
       ],
-      "Enter 2FA code": [
-        "輸入雙重驗證碼"
-      ],
       "Enter endpoints into your identity provider": [
         "請前往您的身分提供者輸入端點"
       ],
@@ -12365,9 +12335,6 @@
       ],
       "Set up email forwarding": [
         "設定電子郵件轉發"
-      ],
-      "Set up two-factor authentication": [
-        "啟用二步驟驗證 (2FA)"
       ],
       "Set up your organization": [
         "設定您的組織"
@@ -12855,9 +12822,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "雙重驗證"
-      ],
       "Inactive": [
         "未啟用"
       ],
@@ -12869,6 +12833,9 @@
       ],
       "Private": [
         "不公開"
+      ],
+      "Security key": [
+        "安全金鑰"
       ],
       "SSO": [
         "單一登入"

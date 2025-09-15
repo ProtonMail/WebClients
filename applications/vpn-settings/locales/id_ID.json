@@ -1458,9 +1458,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh diskon ${ discountPercentage } untuk ${ plan.Title } pada saat Anda berlangganan selama ${ cycle } bulan."
       ]
@@ -1888,6 +1885,11 @@
       ],
       "Expand": [
         "Lebarkan"
+      ]
+    },
+    "collider_2025: Info": {
+      "Add ${ LUMO_APP_NAME }": [
+        "Tambah ${ LUMO_APP_NAME }"
       ]
     },
     "color": {
@@ -5783,9 +5785,6 @@
       "Disabled on ${ boldValue }": [
         "Dinonaktifkan pada ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Menonaktifkan autentikasi dua faktor akan membuat akun Anda kurang aman. Hanya lanjutkan jika benar-benar diperlukan."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Telusuri berbagai fitur yang terbuka dan gunakan fitur-fitur ini sekarang juga!"
       ],
@@ -6068,9 +6067,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Apabila Anda memiliki kode hadiah, masukkan kode Anda pada kolom di bawah ini untuk menerapkan diskon Anda."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Apabila Anda belum pernah menggunakan autentikasi dua faktor sebelumnya, kami sangat menyarankan Anda untuk ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses autentikasi dua faktor, kode berikut akan dapat digunakan sebagai pengganti kode autentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
       ],
@@ -6295,9 +6291,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kelola aplikasi ${ BRAND_NAME } mana saja yang dapat diakses oleh anggota organisasi Anda. Apabila dinonaktifkan, aplikasi hanya akan dapat diakses oleh administrator."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Masukkan informasi ini secara manual ke perangkat autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -6551,9 +6544,6 @@
       "Public sharing of documents is not yet supported.": [
         "Pembagian dokumen secara publik belum didukung."
       ],
-      "read our two-factor authentication guide first": [
-        "baca panduan autentikasi dua faktor kami terlebih dahulu"
-      ],
       "Recently used servers:": [
         "Server yang baru digunakan:"
       ],
@@ -6601,9 +6591,6 @@
       ],
       "Scan QR code instead": [
         "Pindai kode QR"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Pindai kode berikut dengan perangkat autentikasi dua faktor yang Anda miliki untuk mengatur akun Anda. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integrasi SCIM dinonaktifkan"
@@ -6887,9 +6874,6 @@
       "This will wipe all logs for your organization members.": [
         "Tindakan ini akan menghapus seluruh log untuk anggota organisasi Anda."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Wisaya ini akan mengaktifkan Autentikasi Dua Faktor (2FA) di akun ${ BRAND_NAME } Anda. Autentikasi dua faktor akan membuat akun ${ BRAND_NAME_TWO } Anda lebih aman, jadi kami menyarankan untuk mengaktifkannya."
-      ],
       "to ${ product } Business": [
         "ke ${ product } Business"
       ],
@@ -6952,12 +6936,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Coba ${ productName } tanpa risiko apa pun - apabila karena satu dan lain hal Anda berubah pikiran, uang Anda akan dikembalikan sepenuhnya. Tanpa ada basa-basi."
-      ],
-      "Two-factor authentication disabled": [
-        "Autentikasi dua faktor dinonaktifkan"
-      ],
-      "Two-factor authentication enabled": [
-        "Autentikasi dua faktor diaktifkan"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Mode kata sandi ganda mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi data Anda. (Fitur lanjutan)"
@@ -11301,9 +11279,6 @@
       "Admin": [
         "Admin"
       ],
-      "Primary admin": [
-        "Admin utama"
-      ],
       "User": [
         "Pengguna"
       ]
@@ -13650,9 +13625,6 @@
       "Enhance security with 2FA": [
         "Tingkatkan keamanan dengan 2FA"
       ],
-      "Enter 2FA code": [
-        "Masukkan kode 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Masukkan endpoint ke penyedia identitas Anda"
       ],
@@ -13937,9 +13909,6 @@
       ],
       "Set up email forwarding": [
         "Atur penerusan email"
-      ],
-      "Set up two-factor authentication": [
-        "Atur autentikasi dua faktor"
       ],
       "Set up your organization": [
         "Siapkan organisasi Anda"
@@ -14622,11 +14591,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administrator tidak dapat mengakses data pengguna privat"
+      ],
+      "Authenticator app": [
+        "Aplikasi autentikator"
       ],
       "Inactive": [
         "Tidak aktif"

@@ -2214,9 +2214,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "죄송합니다, 현재 사용자의 플랜에서는 이 제안이 제공되지 않습니다."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "죄송하지만 이 제안은 현재 플랜으로 받을 수 없습니다. 하지만 ${ plan.Title }(을)를 ${ cycle }개월간 구독하면 ${ discountPercentage } 할인을 받을 수 있습니다."
       ]
@@ -8830,9 +8827,6 @@
       "Disabled on ${ boldValue }": [
         "${ boldValue }에 비활성화됨"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "2단계 인증을 비활성화하면 계정의 보안이 약해집니다. 꼭 필요한 경우에만 진행하세요."
-      ],
       "Discount": [
         "할인"
       ],
@@ -9268,9 +9262,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "기프트 코드가 있을 경우 아래에 입력해 할인을 적용하세요."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "만약 2단계 인증을 사용한 적이 없다면, ${ guideButton } 사용을 강력히 권장합니다."
-      ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "로그인 비밀번호를 잃어버리거나 계정 초기화가 필요할시, ${ boldImperative } ${ boldAccountRecovery } 가 있습니다."
       ],
@@ -9588,9 +9579,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "${ DOCS_APP_NAME }의 이메일 알림 설정을 관리하세요."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "2단계 인증 기기에 본 정보를 직접 입력하여 계정을 설정하세요. ${ switchButton }"
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
@@ -9976,9 +9964,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME }에 대한 도움이 필요하면 저희에게 연락하세요."
       ],
-      "read our two-factor authentication guide first": [
-        "2단계 인증에 대한 가이드를 먼저 읽은 뒤에"
-      ],
       "Recently used servers:": [
         "최근 사용된 서버:"
       ],
@@ -10062,9 +10047,6 @@
       ],
       "Scan QR code instead": [
         "QR 코드 스캔하기"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "계정을 설정하기 위해 2단계 인증기기로 코드를 스캔하세요. ${ switchButton }"
       ],
       "SCIM integration disabled": [
         "SCIM 통합 비활성화"
@@ -10182,9 +10164,6 @@
       ],
       "Signed up": [
         "가입 완료"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "보안 키로 로그인하는 기능은 모든 어플리케이션에서 아직 지원되지 않습니다. TOTP 없이는 일부 어플리케이션에서 로그인하지 못할 수 있습니다."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
@@ -10519,9 +10498,6 @@
       "This will wipe all logs for your organization members.": [
         "사용자의 조직 구성원에 대한 모든 로그가 삭제됩니다."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "이 마법사는 ${ BRAND_NAME } 계정의 2단계 인증 (2FA)을 활성화 시킵니다. 2단계 인증은 ${ BRAND_NAME_TWO } 계정을 더욱 안전하게 할 수 있으므로 사용하는 것을 권장합니다."
-      ],
       "to ${ product } Business": [
         "${ product } 비즈니스로"
       ],
@@ -10611,12 +10587,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName }을(를) 걱정 없이 사용해 보세요 - 만약 어떠한 이유로든 회원님의 마음이 바뀌었다면, 전액 환불 받으실 수 있어요. 환불 사유를 묻지 않습니다."
-      ],
-      "Two-factor authentication disabled": [
-        "2단계 인증이 비활성화 되었습니다"
-      ],
-      "Two-factor authentication enabled": [
-        "2단계 인증이 활성화되었습니다."
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "2차 비밀번호 모드는 두 개의 비밀번호를 필요로 합니다. 하나는 계정에 로그인하기 위한 것이고, 하나는 데이터의 복호화를 위한 것입니다. (고급 사용자용)"
@@ -15969,6 +15939,11 @@
         "내 플랜 업그레이드"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "${ appName }(으)로 계속하기"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "종단간 암호화됨"
@@ -16472,6 +16447,9 @@
       "More plans are available in other currencies": [
         "더 많은 플랜을 다른 통화로 사용할 수 있습니다."
       ],
+      "Offer unavailable": [
+        "제안을 사용할 수 없음"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "애드온 수량을 줄이려면 먼저 구독을 재활성화하십시오."
       ],
@@ -16483,6 +16461,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "죄송합니다, 현재 플랜에서는 이 제안이 제공되지 않습니다."
       ],
       "Taxes": [
         "세금"
@@ -17391,16 +17372,19 @@
       "Admin": [
         "관리자"
       ],
-      "Primary admin": [
-        "기본 관리자"
-      ],
       "User": [
         "사용자"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **휴대전화를 통한 복구를 비활성화**하여 계정의 최고 수준 보안을 유지하세요."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " 비밀번호를 잊어버린 경우 **스마트폰으로 복구**를 활성화하여 계정에 다시 액세스할 수 있습니다."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME }은 사용자의 계정 보안에 대한 최신 정보를 제공하기 위해 이 주소를 사용합니다."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME }은 비밀번호를 재설정할 때 이 주소를 사용하여 이메일로 재설정 코드를 전송합니다."
@@ -17411,11 +17395,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery }를 설정하여 데이터를 복구할 수 있는지 확인하세요."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**이메일을 통한 계정 초기화를 비활성화**하여 계정의 최고 수준 보안을 유지하세요."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "비밀번호를 잊어버린 경우 **이메일로 복구**를 활성화하여 계정에 다시 액세스할 수 있습니다."
       ],
+      "Account reset by email has been disabled": [
+        "이메일을 통한 계정 재설정이 비활성화되었습니다."
+      ],
+      "Account reset by phone has been disabled": [
+        "휴대전화를 통한 계정 재설정이 비활성화되었습니다."
+      ],
       "Account safety review": [
         "계정 안전 검토"
+      ],
+      "Add a email address": [
+        "이메일 주소 추가"
+      ],
+      "Add a phone number": [
+        "휴대전화 번호 추가"
       ],
       "Add a recovery email": [
         "복구 이메일 추가"
@@ -17425,6 +17424,9 @@
       ],
       "Add a recovery phone number": [
         "복구 전화번호 추가"
+      ],
+      "Add an email": [
+        "이메일 추가"
       ],
       "Back to Safety Review": [
         "안전 검토로 돌아가기"
@@ -17447,11 +17449,23 @@
       "Device-based recovery enabled": [
         "장치 기반 복구 활성화됨"
       ],
+      "Disable account reset by email": [
+        "이메일로 계정 초기화 비활성화"
+      ],
+      "Disable recovery by email": [
+        "이메일을 통한 복구 비활성화"
+      ],
+      "Disable recovery by phone": [
+        "휴대전화를 통한 복구 비활성화"
+      ],
       "Download ${ size }": [
         "${ size } 다운로드"
       ],
       "Download your Recovery Kit": [
         "복구 키트 다운로드"
+      ],
+      "Email address": [
+        "이메일 주소"
       ],
       "Enable device-based recovery": [
         "기기 기반 복구 활성화"
@@ -17516,6 +17530,9 @@
       "There was an error generating your Recovery Kit": [
         "복구 키트를 생성하는 동안 오류가 발생했습니다."
       ],
+      "There was an error verifying your email": [
+        "복구 이메일 확인 중 오류가 발생했습니다."
+      ],
       "There was an error verifying your recovery email": [
         "복구 이메일을 확인하는 동안 오류가 발생했습니다."
       ],
@@ -17546,6 +17563,12 @@
       "Verify": [
         "인증"
       ],
+      "Verify your email address": [
+        "이메일 주소 인증"
+      ],
+      "Verify your phone number": [
+        "전화번호 인증"
+      ],
       "Verify your recovery email address": [
         "복구 이메일 주소로 인증하세요"
       ],
@@ -17554,6 +17577,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "복구 키트를 생성하는 동안 오류가 발생했습니다. 나중에 다시 시도하거나 문제가 계속되면 지원팀에 문의하세요."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "이메일 주소를 확인하는 동안 오류가 발생했습니다. 나중에 다시 시도하거나 문제가 계속되면 지원팀에 문의하시기 바랍니다."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "복구 이메일을 확인하는 동안 오류가 발생했습니다. 나중에 다시 시도하거나 문제가 계속되면 지원팀에 문의하세요."
@@ -17576,6 +17602,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "이 복구 키트의 복구 문구를 사용하면 비밀번호를 재설정할 때 계정을 완전히 복원할 수 있으므로 안전한 곳에 보관하세요."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "비밀번호를 잊어버린 경우 이메일을 사용하여 계정에 다시 접근할 수 있습니다."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "비밀번호를 잊어버린 경우 복구 이메일을 사용하여 계정에 다시 액세스할 수 있습니다."
       ],
@@ -17585,11 +17614,26 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "이전에 복구 키트를 다운로드한 적이 있습니다. 새 키트를 다운로드하면 이전 키트가 **비활성화**됩니다."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "계정을 더욱 안전하게 보호하기 위한 권장 조치가 있습니다."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "회원님의 계정을 안전하게 보호하기 위한 권장 조치가 있습니다."
+      ],
       "You have recommended actions.": [
         "권장 조치가 있습니다."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "더 이상 이 주소를 사용하여 계정을 재설정할 수 없습니다."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "더 이상 이 전화번호를 사용하여 계정을 재설정할 수 없게 됩니다."
+      ],
       "Your account and data can be recovered": [
         "계정 및 데이터 복구 가능"
+      ],
+      "Your account and data can be recovered.": [
+        "계정 및 데이터를 복구할 수 있습니다."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "계정과 데이터를 복구할 수 있습니다. 복구 방법에 계속 접근할 수 있는지 확인하세요."
@@ -17605,6 +17649,12 @@
       ],
       "Your account is secure.": [
         "계정은 안전합니다."
+      ],
+      "Your email address is:": [
+        "회원님의 이메일 주소는:"
+      ],
+      "Your email is set": [
+        "이메일이 설정되어 있습니다"
       ],
       "Your recovery email": [
         "내 복구 이메일"
@@ -20975,9 +21025,6 @@
       "Enhance security with 2FA": [
         "2단계 인증으로 보안 강화시키기"
       ],
-      "Enter 2FA code": [
-        "2단계 인증 코드 입력"
-      ],
       "Enter endpoints into your identity provider": [
         "사용자의 인증 제공자로 부터 엔드포인트를 입력하십시오."
       ],
@@ -21547,9 +21594,6 @@
       ],
       "Set up email forwarding": [
         "이메일 가져오기 설정"
-      ],
-      "Set up two-factor authentication": [
-        "2단계 인증 설정"
       ],
       "Set up your family account": [
         "가족 계정 설정하기"
@@ -22627,9 +22671,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "관리자가 개인 사용자의 데이터에 접근할 수 없습니다."
       ],

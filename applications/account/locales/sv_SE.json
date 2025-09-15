@@ -2194,9 +2194,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad.",
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månader."
@@ -8844,8 +8841,8 @@
       "Disabled on ${ boldValue }": [
         "Inaktiverad på ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Inaktivering av tvåfaktorsautentisering kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Inaktivering av 2FA via autentiseringsapp kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
       ],
       "Discount": [
         "Rabatt"
@@ -9280,9 +9277,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Om du har en presentkod, ange den nedan för att tillämpa din rabatt."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Om du aldrig har använt tvåfaktorsautentisering tidigare rekommenderar vi starkt dig ${ guideButton }."
-      ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Om du tappar bort ditt lösenord och behöver återställa ditt konto, ${ boldImperative } att du har en ${ boldAccountRecovery } tillhands."
       ],
@@ -9603,8 +9597,8 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Hantera dina preferenser för e-postavisering för ${ DOCS_APP_NAME }."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Ange denna information manuellt i din tvåfaktorsautentiseringsenhet för att ställa in ditt konto. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Ange denna information manuellt i din autentiseringsapp för att ställa in ditt konto. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
@@ -9992,9 +9986,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakta oss för att få hjälp med allt om ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "läs vår guide om tvåfaktorsautentisering först"
-      ],
       "Recently used servers:": [
         "Nyligen använda servrar:"
       ],
@@ -10079,8 +10070,8 @@
       "Scan QR code instead": [
         "Skanna QR-kod istället"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Skanna denna kod med din tvåfaktorsautentiseringsenhet för att konfigurera ditt konto. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Skanna denna kod med din autentiseringsapp för att ställa in ditt konto. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-integration inaktiverad"
@@ -10199,9 +10190,6 @@
       ],
       "Signed up": [
         "Registrerade sig"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Inloggning med en säkerhetsnyckel stöds inte ännu i alla applikationer. Utan TOTP kan inloggningen till vissa applikationer misslyckas."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
@@ -10532,9 +10520,6 @@
       "This will wipe all logs for your organization members.": [
         "Detta kommer rensa bort alla loggar för dina organisationsmedlemmar."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Den här guiden aktiverar tvåfaktorsautentisering (2FA) på ditt ${ BRAND_NAME }-konto. Tvåfaktorsautentisering gör ditt ${ BRAND_NAME_TWO }-konto säkrare så vi rekommenderar att du aktiverar det."
-      ],
       "to ${ product } Business": [
         "till ${ product } Business"
       ],
@@ -10624,12 +10609,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prova ${ productName } helt riskfritt - om du av någon anledning ångrar dig får du en fullständig återbetalning. Utan några frågor."
-      ],
-      "Two-factor authentication disabled": [
-        "Tvåfaktorsautentisering inaktiverad"
-      ],
-      "Two-factor authentication enabled": [
-        "Tvåfaktorsautentisering aktiverad"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tvålösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera dina data. (Avancerat)"
@@ -12803,9 +12782,6 @@
       ],
       "Second password": [
         "Andra lösenord"
-      ],
-      "Select Linux package format": [
-        "Välj Linux paketformat"
       ],
       "Select Linux platform": [
         "Välj Linux-plattform"
@@ -16005,6 +15981,11 @@
         "Uppgradera mitt paket"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Fortsätt till ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "End-to-end-krypterat"
@@ -16515,6 +16496,9 @@
       "More plans are available in other currencies": [
         "Fler paket är tillgängliga i andra valutor"
       ],
+      "Offer unavailable": [
+        "Erbjudande otillgängligt"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Återaktivera först din prenumeration för att minska antalet utökningar."
       ],
@@ -16526,6 +16510,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
       ],
       "Taxes": [
         "Moms"
@@ -17329,16 +17316,19 @@
       "Admin": [
         "Admin"
       ],
-      "Primary admin": [
-        "Primär admin"
-      ],
       "User": [
         "Användare"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **Inaktivera återställning med telefon** för att säkerställa högsta möjliga säkerhet för ditt konto."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Aktivera telefon för återställning** för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } kommer använda denna adress för att hålla dig uppdaterad om din kontosäkerhet."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } kommer använda denna adress för att skicka en återställningskod via e-post när du återställer ditt lösenord."
@@ -17349,11 +17339,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } för att säkerställa att din data kan återställas."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Inaktivera kontoåterställning med e-post** för att säkerställa högsta möjliga säkerhet för ditt konto."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Aktivera e-post för återställning** för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
       ],
+      "Account reset by email has been disabled": [
+        "Kontoåterställning med e-post har inaktiverats"
+      ],
+      "Account reset by phone has been disabled": [
+        "Kontoåterställning med telefon har inaktiverats"
+      ],
       "Account safety review": [
         "Säkerhetsgranska konto"
+      ],
+      "Add a email address": [
+        "Lägg till en e-postadress"
+      ],
+      "Add a phone number": [
+        "Lägg till ett telefonnummer"
       ],
       "Add a recovery email": [
         "Lägg till en e-post för återställning"
@@ -17363,6 +17368,9 @@
       ],
       "Add a recovery phone number": [
         "Lägg till ett telefonnummer för återställning"
+      ],
+      "Add an email": [
+        "Lägg till en e-post"
       ],
       "Back to Safety Review": [
         "Tillbaka till säkerhetsgranskning"
@@ -17385,11 +17393,23 @@
       "Device-based recovery enabled": [
         "Enhetsbaserad återställning aktiverad"
       ],
+      "Disable account reset by email": [
+        "Inaktivera kontoåterställning med e-post"
+      ],
+      "Disable recovery by email": [
+        "Inaktivera återställning med e-post"
+      ],
+      "Disable recovery by phone": [
+        "Inaktivera återställning med telefon"
+      ],
       "Download ${ size }": [
         "Ladda ner ${ size }"
       ],
       "Download your Recovery Kit": [
         "Ladda ner ditt återställningskit"
+      ],
+      "Email address": [
+        "E-postadress"
       ],
       "Enable device-based recovery": [
         "Aktivera enhetsbaserad återställning"
@@ -17454,6 +17474,9 @@
       "There was an error generating your Recovery Kit": [
         "Det var ett fel vid generering av ditt återställningskit"
       ],
+      "There was an error verifying your email": [
+        "Det var ett fel att verifiera din e-post"
+      ],
       "There was an error verifying your recovery email": [
         "Det var ett fel att verifiera din e-post för återställning"
       ],
@@ -17462,6 +17485,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         "för att automatiskt återställa din data när du loggar in på en betrodd enhet"
+      ],
+      "to ensure highest possible security of your account": [
+        "för att säkerställa högsta möjliga säkerhet för ditt konto"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "För att vara säker på att e-postadressen är din, ange verifieringskoden som skickats till ${ boldEmail }."
@@ -17475,6 +17501,9 @@
       "to recover your account if you're ever locked out": [
         "för att återställa ditt konto om du någon gång blir utelåst"
       ],
+      "To stay in touch": [
+        "För att hålla kontakten"
+      ],
       "Update your Recovery Kit": [
         "Uppdatera ditt återställningskit"
       ],
@@ -17483,6 +17512,12 @@
       ],
       "Verify": [
         "Verifiera"
+      ],
+      "Verify your email address": [
+        "Verifiera din e-postadress"
+      ],
+      "Verify your phone number": [
+        "Verifiera ditt telefonnummer"
       ],
       "Verify your recovery email address": [
         "Verifiera din e-postadress för återställning"
@@ -17514,6 +17549,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Du kan använda återställningsfrasen i detta återställningskit för att helt återställa ditt konto när du återställer ditt lösenord, så se till att du förvarar det någonstans säkert."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Du kan använda din e-post för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Du kan använda din e-post för återställning för att återfå åtkomst till ditt konto om du glömmer ditt lösenord."
       ],
@@ -17523,11 +17561,26 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Du har tidigare laddat ner ett återställningskit. Att ladda ner ett nytt kommer **inaktivera det gamla**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "Du har rekommenderade åtgärder för att skydda ditt konto ytterligare."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "Du har rekommenderade åtgärder för att skydda ditt konto."
+      ],
       "You have recommended actions.": [
         "Du har rekommenderade åtgärder."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Du kommer inte längre att kunna använda denna adress för att återställa ditt konto."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Du kommer inte längre att kunna använda detta telefonnummer för att återställa ditt konto."
+      ],
       "Your account and data can be recovered": [
         "Ditt konto och data kan återställas"
+      ],
+      "Your account and data can be recovered.": [
+        "Ditt konto och data kan återställas."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Ditt konto och data kan återställas. Kontrollera om du fortfarande kan komma åt dina återställningsmetoder."
@@ -17543,6 +17596,12 @@
       ],
       "Your account is secure.": [
         "Ditt konto är säkert."
+      ],
+      "Your email address is:": [
+        "Din e-postadress är:"
+      ],
+      "Your email is set": [
+        "Din e-postadress är inställd"
       ],
       "Your recovery email": [
         "Din e-post för återställning"
@@ -20992,9 +21051,6 @@
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
-      "Enter 2FA code": [
-        "Ange 2FA-kod"
-      ],
       "Enter endpoints into your identity provider": [
         "Ange ändpunkter hos din identitetsleverantör"
       ],
@@ -21567,11 +21623,11 @@
       "Set up a recovery method": [
         "Konfigurera en återställningsmetod"
       ],
+      "Set up authenticator app": [
+        "Ställ in autentiseringsapp"
+      ],
       "Set up email forwarding": [
         "Ställ in vidarebefordran av e-post"
-      ],
-      "Set up two-factor authentication": [
-        "Ställ in tvåfaktorsautentisering"
       ],
       "Set up your family account": [
         "Ställ in ditt familjekonto"
@@ -22646,11 +22702,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratörer kan inte komma åt privata användares data"
+      ],
+      "Authenticator app": [
+        "Autentiseringsapp"
       ],
       "Inactive": [
         "Inaktiva"
@@ -22669,6 +22725,9 @@
       ],
       "Private": [
         "Privat"
+      ],
+      "Security key": [
+        "Säkerhetsnyckel"
       ],
       "SSO": [
         "SSO"

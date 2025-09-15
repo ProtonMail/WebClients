@@ -1465,9 +1465,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månad.",
         "Detta erbjudande är inte tillgängligt med ditt nuvarande paket. Men du kan få ${ discountPercentage } rabatt på ${ plan.Title } när du prenumererar för ${ cycle } månader."
@@ -5885,8 +5882,8 @@
       "Disabled on ${ boldValue }": [
         "Inaktiverad på ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Inaktivering av tvåfaktorsautentisering kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Inaktivering av 2FA via autentiseringsapp kommer göra ditt konto mindre säkert. Fortsätt endast om det är absolut nödvändigt."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Upptäck nya funktioner upplåsta och börja använda dem direkt!"
@@ -6168,9 +6165,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Om du har en presentkod, ange den nedan för att tillämpa din rabatt."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Om du aldrig har använt tvåfaktorsautentisering tidigare rekommenderar vi starkt dig ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Om du förlorar din tvåfaktorsaktiverade enhet kan dessa koder användas istället för den 6-siffriga tvåfaktorsautentiseringskoden för att logga in på ditt konto. Varje kod kan bara användas en gång."
       ],
@@ -6397,8 +6391,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Hantera vilka ${ BRAND_NAME }-applikationer som medlemmarna i din organisation har åtkomst till. Om funktionen är inaktiverad har endast administratörer åtkomst."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Ange denna information manuellt i din tvåfaktorsautentiseringsenhet för att ställa in ditt konto. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Ange denna information manuellt i din autentiseringsapp för att ställa in ditt konto. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logga för Mastercard SecureCode"
@@ -6659,9 +6653,6 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig delning av dokument stöds ännu inte."
       ],
-      "read our two-factor authentication guide first": [
-        "läs vår guide om tvåfaktorsautentisering först"
-      ],
       "Recently used servers:": [
         "Nyligen använda servrar:"
       ],
@@ -6710,8 +6701,8 @@
       "Scan QR code instead": [
         "Skanna QR-kod istället"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Skanna denna kod med din tvåfaktorsautentiseringsenhet för att konfigurera ditt konto. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Skanna denna kod med din autentiseringsapp för att ställa in ditt konto. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-integration inaktiverad"
@@ -6791,9 +6782,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logga in på ${ MAIL_APP_NAME } för att aktivera din adress"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Inloggning med en säkerhetsnyckel stöds inte ännu i alla applikationer. Utan TOTP kan inloggningen till vissa applikationer misslyckas."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
@@ -6998,9 +6986,6 @@
       "This will wipe all logs for your organization members.": [
         "Detta kommer rensa bort alla loggar för dina organisationsmedlemmar."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Den här guiden aktiverar tvåfaktorsautentisering (2FA) på ditt ${ BRAND_NAME }-konto. Tvåfaktorsautentisering gör ditt ${ BRAND_NAME_TWO }-konto säkrare så vi rekommenderar att du aktiverar det."
-      ],
       "to ${ product } Business": [
         "till ${ product } Business"
       ],
@@ -7063,12 +7048,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prova ${ productName } helt riskfritt - om du av någon anledning ångrar dig får du en fullständig återbetalning. Utan några frågor."
-      ],
-      "Two-factor authentication disabled": [
-        "Tvåfaktorsautentisering inaktiverad"
-      ],
-      "Two-factor authentication enabled": [
-        "Tvåfaktorsautentisering aktiverad"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tvålösenordsläge kräver två lösenord: ett för att logga in på ditt konto och ett för att dekryptera dina data. (Avancerat)"
@@ -10781,6 +10760,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Förnyas med ${ renewPriceStr }, avbryt när som helst."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
       "Taxes": [
         "Moms"
       ],
@@ -11397,9 +11379,6 @@
     "Role": {
       "Admin": [
         "Admin"
-      ],
-      "Primary admin": [
-        "Primär admin"
       ],
       "User": [
         "Användare"
@@ -13801,9 +13780,6 @@
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
-      "Enter 2FA code": [
-        "Ange 2FA-kod"
-      ],
       "Enter endpoints into your identity provider": [
         "Ange ändpunkter hos din identitetsleverantör"
       ],
@@ -14088,11 +14064,11 @@
       "Set recovery methods": [
         "Ställ in återställningsmetoder"
       ],
+      "Set up authenticator app": [
+        "Ställ in autentiseringsapp"
+      ],
       "Set up email forwarding": [
         "Ställ in vidarebefordran av e-post"
-      ],
-      "Set up two-factor authentication": [
-        "Ställ in tvåfaktorsautentisering"
       ],
       "Set up your organization": [
         "Ställ in din organisation"
@@ -14768,11 +14744,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratörer kan inte komma åt privata användares data"
+      ],
+      "Authenticator app": [
+        "Autentiseringsapp"
       ],
       "Inactive": [
         "Inaktiva"
@@ -14791,6 +14767,9 @@
       ],
       "Private": [
         "Privat"
+      ],
+      "Security key": [
+        "Säkerhetsnyckel"
       ],
       "SSO": [
         "SSO"

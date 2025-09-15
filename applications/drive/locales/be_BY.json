@@ -1119,8 +1119,8 @@
       "Upload file": [
         "Запампаваць файл"
       ],
-      "Upload File": [
-        "Запампаваць файл"
+      "Upload file via SDK": [
+        "Запампаваць файл праз SDK"
       ],
       "Upload files": [
         "Запампаваць файлы"
@@ -1136,6 +1136,9 @@
       ],
       "Upload picture": [
         "Запампаваць малюнак"
+      ],
+      "Upload SDK file": [
+        "Запампаваць файл SDK"
       ],
       "Use ${ label } theme": [
         "Выкарыстоўваць тэму ${ label }"
@@ -9981,7 +9984,7 @@
         "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Без уліку падатка ў ${ taxRate }%: ${ taxAmount }"
+        "Без уліку падаткаў у ${ taxRate }%: ${ taxAmount }"
       ],
       "Got it": [
         "Зразумела"
@@ -9993,7 +9996,7 @@
         "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "З улікам падатка ў ${ taxRate }%: ${ taxAmount }"
+        "З улікам падаткаў у ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -12270,9 +12273,6 @@
       "Enhance security with 2FA": [
         "Паляпшэнне бяспекі з дапамогай 2ФА"
       ],
-      "Enter 2FA code": [
-        "Увядзіце код 2ФА"
-      ],
       "Enter your password": [
         "Увядзіце свой пароль"
       ],
@@ -12734,6 +12734,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Двухфактарная аўтэнтыфікацыя"
       ],
       "Type": [
         "Тып"

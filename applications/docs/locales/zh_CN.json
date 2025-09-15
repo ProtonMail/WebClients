@@ -5390,6 +5390,9 @@
       "You are about to open your default browser and visit:": [
         "您即将打开默认浏览器并访问："
       ],
+      "You are currently signed in as ${ username }.": [
+        "您当前登入的用户为 ${ username }。"
+      ],
       "You are currently viewing this document in view-only mode. Reach out to the owner to request access to edit and comment.": [
         "您当前正在以只读模式查看此文档。请联系所有者以请求编辑和评论权限。"
       ],
@@ -9717,9 +9720,6 @@
       "Enhance security with 2FA": [
         "通过 2FA 增强安全性"
       ],
-      "Enter 2FA code": [
-        "输入 2FA 验证码"
-      ],
       "Enter your password": [
         "输入密码"
       ],
@@ -9995,6 +9995,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "双因素身份验证"
       ],
       "Untitled document ${ date }": [
         "无标题文档 ${ date }"

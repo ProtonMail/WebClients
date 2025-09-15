@@ -544,12 +544,6 @@
       "Download CSV sample": [
         "Transferir a amostra CSV"
       ],
-      "Download for macOS": [
-        "Transferir para MacOS"
-      ],
-      "Download for Windows": [
-        "Transferir para Windows"
-      ],
       "Download ICS": [
         "Transferir ICS"
       ],
@@ -2103,9 +2097,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Esta oferta não está disponível com o seu plano atual."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mês.",
         "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mese."
@@ -4474,14 +4465,6 @@
         "Windows 8/8.1/7 ou Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb para Debian/Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm para Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Crie uma conta gratuita no ${ DRIVE_APP_NAME } para aceder ao ficheiro com segurança."
@@ -6815,14 +6798,6 @@
         "A sua avaliação gratuita da aplicação para desktop terminou."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } na App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } na Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Encaminhe automaticamente"
@@ -8332,9 +8307,6 @@
       "Disabled countries": [
         "Países desativados"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "A desativação da autenticação de dois fatores tornará a sua conta menos segura. Só continue se for absolutamente necessário."
-      ],
       "Discount": [
         "Desconto"
       ],
@@ -8585,9 +8557,6 @@
       "Failed to fetch logs.": [
         "Erro na obtenção dos registos."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rápido e focado. E-mail e calendário, diretamente no seu ambiente de trabalho."
-      ],
       "Featured in": [
         "Em destaque em"
       ],
@@ -8746,9 +8715,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se tiver um código de oferta, introduza-o abaixo para aplicar o desconto."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Se nunca utilizou autenticação em dois passos antes, recomendamos vivamente ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Se perder a sua palavra-passe e precisar de recuperar a sua conta, ${ boldImperative } que tenha um ${ boldAccountRecovery } em vigor."
@@ -9063,9 +9029,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gere as suas preferências de notificação por e-mail para o ${ DOCS_APP_NAME }."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduza manualmente esta informação no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
@@ -9444,9 +9407,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contacte-nos para obter ajuda com qualquer coisa relacionada com a ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "leia primeiro o nosso guia de autenticação de dois fatores"
-      ],
       "Recently used servers:": [
         "Servidores recentemente utilizados:"
       ],
@@ -9530,9 +9490,6 @@
       ],
       "Scan QR code instead": [
         "Ler antes código QR"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Leia este código com o seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "A integração SCIM foi desativada."
@@ -9975,9 +9932,6 @@
       "This will wipe all logs for your organization members.": [
         "Isto irá apagar todos os registos dos membros da sua organização."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Este assistente ativará a autenticação de dois fatores (A2F) na sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará a sua conta da ${ BRAND_NAME_TWO } mais segura. Por isto recomendamos ativá-la."
-      ],
       "to ${ product } Business": [
         "ao ${ product } para negócios"
       ],
@@ -10067,12 +10021,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Experimente ${ productName } sem riscos. Se por algum motivo mudar de ideia, receberá um reembolso total. Sem perguntas."
-      ],
-      "Two-factor authentication disabled": [
-        "Autenticação de dois fatores desativada"
-      ],
-      "Two-factor authentication enabled": [
-        "Autenticação de dois fatores ativada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "O modo de duas palavras-passe requer duas palavras-passe: uma para iniciar sessão na sua conta e outra para desencriptar os seus dados. (Avançado)"
@@ -11458,9 +11406,6 @@
       "Backup password": [
         "Palavra-passe de backup"
       ],
-      "Beta": [
-        "Versão beta"
-      ],
       "Billing cycle": [
         "Ciclo de faturação"
       ],
@@ -12198,9 +12143,6 @@
       ],
       "Second password": [
         "Segunda palavra-passe"
-      ],
-      "Select Linux package format": [
-        "Selecione o formato do pacote Linux"
       ],
       "Select Linux platform": [
         "Selecionar a distribuição Linux"
@@ -16536,9 +16478,6 @@
       "Admin": [
         "Administrador"
       ],
-      "Primary admin": [
-        "Administrador principal"
-      ],
       "User": [
         "Utilizador"
       ]
@@ -20143,9 +20082,6 @@
       "Enhance security with 2FA": [
         "Aumente a segurança com a A2F"
       ],
-      "Enter 2FA code": [
-        "Introduza o código 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Introduza os endpoints no seu fornecedor de identidade"
       ],
@@ -20203,15 +20139,6 @@
       ],
       "Folders and labels": [
         "Pastas e etiquetas"
-      ],
-      "For Linux": [
-        "Para Linux"
-      ],
-      "For macOS": [
-        "Para macOS"
-      ],
-      "For Windows": [
-        "Para Windows"
       ],
       "Forgot password": [
         "Esqueceu-se da palavra-passe"
@@ -20708,9 +20635,6 @@
       ],
       "Set up email forwarding": [
         "Configurar o encaminhamento de e-mail"
-      ],
-      "Set up two-factor authentication": [
-        "Definir autenticação em dois passos"
       ],
       "Set up your family account": [
         "Configure a sua conta familiar"
@@ -21758,9 +21682,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "A2F"
-      ],
       "Administrators can't access the data of private users": [
         "Os administradores não podem aceder aos dados de utilizadores privados."
       ],

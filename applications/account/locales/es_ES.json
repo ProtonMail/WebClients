@@ -2071,11 +2071,17 @@
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
       ],
+      "Try it free for ${ TRIAL_DURATION_DAYS } days": [
+        "Pruébalo gratis durante ${ TRIAL_DURATION_DAYS } días"
+      ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Cuando canceles, tu prueba gratuita no se convertirá en una suscripción de pago, pero podrás seguir disfrutando de los beneficios del plan hasta el final del periodo de prueba. Después de eso, pasarás al plan ${ BRAND_NAME } Free."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licencias durante el periodo de prueba."
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
@@ -2202,9 +2208,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Esta oferta no está disponible con tu plan actual."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener ${ discountPercentage } de ${ plan.Title } al suscribirte durante ${ cycle } mes.",
         "Lo sentimos, esta oferta no está disponible con tu plan actual. Pero puedes obtener ${ discountPercentage } de ${ plan.Title } al suscribirte durante ${ cycle } meses."
@@ -2501,6 +2504,9 @@
       ],
       "Manual setup problem": [
         "Problema de configuración manual"
+      ],
+      "Meet problem": [
+        "Problema de Meet"
       ],
       "Other": [
         "Otro"
@@ -2867,12 +2873,93 @@
         "Expandir"
       ]
     },
+    "collider_2025: app-switcher": {
+      "Chat with a private AI assistant": [
+        "Chatea con un asistente de IA privado"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
+      "Basic chat history": [
+        "Historial de chat básico"
+      ],
+      "Full chat history with search": [
+        "Historial de chat completo con búsqueda"
+      ],
+      "Large file upload support": [
+        "Soporte para la carga de archivos grandes"
+      ],
+      "Limited daily chats": [
+        "Chats diarios limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para un acceso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Cargar y consultar múltiples archivos de gran tamaño"
+      ],
+      "Web search access": [
+        "Acceso a la búsqueda web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
       ],
+      "Access to advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
       "Add ${ LUMO_APP_NAME }": [
         "Añadir ${ LUMO_APP_NAME }"
+      ],
+      "AI assistant that respects your privacy": [
+        "Asistente de IA que respeta tu privacidad"
+      ],
+      "Basic chat history": [
+        "Historial de chat básico"
+      ],
+      "Data never used for AI training": [
+        "Datos nunca utilizados para entrenar la IA"
+      ],
+      "Full chat history with search": [
+        "Historial de chat completo con búsqueda"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats de alta velocidad y funciones de IA avanzadas."
+      ],
+      "Limited daily chats": [
+        "Chats diarios limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Open source": [
+        "Código abierto"
+      ],
+      "Strict no-logs policy": [
+        "Política estricta de cero registros"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Web search access": [
+        "Acceso a la búsqueda web"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Volver a las conversaciones"
+      ],
+      "Conversations": [
+        "Conversaciones"
       ]
     },
     "color": {
@@ -5269,6 +5356,18 @@
     "emergency_access": {
       "${ BRAND_NAME } Account email": [
         "Cuenta de correo electrónico de ${ BRAND_NAME }"
+      ],
+      "${ days } day left": [
+        "queda ${ days } día",
+        "quedan ${ days } días"
+      ],
+      "${ hours } hour left": [
+        "queda ${ hours } hora",
+        "quedan ${ hours } horas"
+      ],
+      "${ minutes } minute left": [
+        "queda ${ minutes } minuto",
+        "quedan ${ minutes } minutos"
       ],
       "${ n } day": [
         "${ n } día",
@@ -8021,6 +8120,21 @@
         "${ n } dirección",
         "${ n } direcciones"
       ],
+      "${ name } for Android": [
+        "${ name } para Android"
+      ],
+      "${ name } for GNU/Linux": [
+        "${ name } para GNU/Linux"
+      ],
+      "${ name } for macOS": [
+        "${ name } para macOS"
+      ],
+      "${ name } for Web": [
+        "${ name } para web"
+      ],
+      "${ name } for Windows": [
+        "${ name } para Windows"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: no pone en cuarentena o rechaza los correos no autorizados. Usualmente las personas solo usan esta política como prueba."
       ],
@@ -8395,6 +8509,9 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de correo funciona como una dirección de correo electrónico, pero reduce el spam y mantiene tu dirección e identidad real ocultas."
       ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "Error de comunicación con **${ applicationName }**"
+      ],
       "An error occurred while communicating with the extension": [
         "Error de comunicación con la extensión"
       ],
@@ -8481,6 +8598,12 @@
       ],
       "Attention required": [
         "Atención requerida"
+      ],
+      "Authenticator app 2FA disabled": [
+        "Aplicación autenticadora 2FA desactivada"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Aplicación autenticadora 2FA activada"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La respuesta automática estará activa cada mes entre la fecha inicial y la fecha final seleccionadas."
@@ -8777,8 +8900,8 @@
       "Disabled on ${ boldValue }": [
         "Desactivado el ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Desactivar la autenticación de dos factores hará que tu cuenta sea menos segura. Procede solo si es absolutamente necesario."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Desactivar la aplicación de autenticación 2FA hará que tu cuenta sea menos segura. Procede solo si es absolutamente necesario."
       ],
       "Discount": [
         "Descuento"
@@ -9046,7 +9169,7 @@
         "Error el obtener los registros."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rápido y enfocado. Tu correo electrónico y calendario directamente en tu escritorio."
+        "Rápido y eficiente. Correo electrónico y calendario, directamente en tu escritorio."
       ],
       "Featured in": [
         "Publicado en"
@@ -9215,9 +9338,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Si tienes un código promocional, introdúcelo abajo para aplicar tu descuento."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Si nunca has utilizado la autenticación de dos factores anteriormente, te recomendamos encarecidamente ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Si pierdes la contraseña y necesitas recuperar la cuenta, ${ boldImperative } que tengas un ${ boldAccountRecovery } configurado."
@@ -9539,8 +9659,8 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestiona tus preferencias de notificaciones por correo electrónico para ${ DOCS_APP_NAME }."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduce manualmente esta información en tu dispositivo de autenticación de dos factores para configurar tu cuenta. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Introduce manualmente esta información en tu aplicación de autenticación para configurar tu cuenta. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -9928,9 +10048,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contáctanos para obtener ayuda con cualquier cosa de ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "lee primero nuestra guía de autenticación de dos factores"
-      ],
       "Recently used servers:": [
         "Servidores usados recientemente:"
       ],
@@ -10015,8 +10132,8 @@
       "Scan QR code instead": [
         "Escanear código QR en su lugar"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Escanea este código con tu dispositivo de autenticación de dos factores para configurar tu cuenta. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Escanea este código con tu aplicación de autenticación para configurar tu cuenta. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integración SCIM desactivada"
@@ -10474,9 +10591,6 @@
       "This will wipe all logs for your organization members.": [
         "Esto borrará todos los registros de los miembros de tu organización."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Este asistente activará la autenticación de dos factores (2FA) en tu cuenta de ${ BRAND_NAME }. La autenticación de dos factores hará que tu cuenta de ${ BRAND_NAME_TWO } sea más segura, por lo que te recomendamos activarla."
-      ],
       "to ${ product } Business": [
         "a ${ product }·Business"
       ],
@@ -10566,12 +10680,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prueba ${ productName } totalmente sin riesgos. Si por cualquier motivo cambias de opinión, recibirás un reembolso completo. Sin preguntas."
-      ],
-      "Two-factor authentication disabled": [
-        "Autenticación de dos factores desactivada"
-      ],
-      "Two-factor authentication enabled": [
-        "Autenticación de dos factores activada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión en tu cuenta y otra para descifrar tus datos. (Avanzado)"
@@ -10897,6 +11005,9 @@
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sin activación, no podrás crear nuevos usuarios, añadir direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
       ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Sin una aplicación autenticadora, no podrás iniciar sesión en las aplicaciones de ${ BRAND_NAME } que aún no soportan llaves de seguridad."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
       ],
@@ -11061,6 +11172,9 @@
       ],
       "You may be redirected to your bank’s website.": [
         "Puedes ser redirigido al sitio web de tu banco."
+      ],
+      "You may now start using **${ applicationName }**": [
+        "Ya puedes empezar a utilizar **${ applicationName }**"
       ],
       "You may now start using the extension": [
         "Ya puedes empezar a utilizar esta extensión"
@@ -12766,7 +12880,7 @@
         "Segunda contraseña"
       ],
       "Select Linux package format": [
-        "Selecciona el formato de paquete de Linux"
+        "Selecciona el formato de paquete para Linux"
       ],
       "Select Linux platform": [
         "Seleccionar la distribución Linux"
@@ -15965,6 +16079,11 @@
         "Mejorar mi plan"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Continuar con ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
@@ -16480,6 +16599,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr } y cancela cuando quieras."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Lo sentimos, esta oferta no está disponible con tu plan actual."
       ],
       "Taxes": [
         "Impuestos"
@@ -17489,16 +17611,19 @@
       "Admin": [
         "Administrador"
       ],
-      "Primary admin": [
-        "Administrador principal"
-      ],
       "User": [
         "Usuario"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **Desactiva el restablecimiento por teléfono** para garantizar la mayor seguridad de tu cuenta."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Activa la recuperación por teléfono** para volver a acceder a tu cuenta si olvidas la contraseña."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } usará esta dirección para mantenerte actualizado sobre la seguridad de tu cuenta."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } usará esta dirección para enviarte un código de restablecimiento por correo electrónico cuando restablezcas tu contraseña."
@@ -17509,11 +17634,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } para garantizar la recuperación de tus datos."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Desactiva el restablecimiento de la cuenta por correo electrónico** para garantizar la mayor seguridad de tu cuenta."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Activa la recuperación por correo electrónico** para volver a acceder a tu cuenta si olvidas la contraseña."
       ],
+      "Account reset by email has been disabled": [
+        "Se ha desactivado el restablecimiento de la cuenta por correo electrónico"
+      ],
+      "Account reset by phone has been disabled": [
+        "Se ha desactivado el restablecimiento de la cuenta por teléfono"
+      ],
       "Account safety review": [
         "Verificación de seguridad de la cuenta"
+      ],
+      "Add a email address": [
+        "Añadir una dirección de correo electrónico"
+      ],
+      "Add a phone number": [
+        "Añade un número de teléfono"
       ],
       "Add a recovery email": [
         "Añadir un correo de recuperación"
@@ -17523,6 +17663,9 @@
       ],
       "Add a recovery phone number": [
         "Añadir un número de teléfono de recuperación"
+      ],
+      "Add an email": [
+        "Añadir un correo"
       ],
       "Back to Safety Review": [
         "Volver a la verificación de seguridad"
@@ -17545,11 +17688,23 @@
       "Device-based recovery enabled": [
         "Se ha activado la recuperación desde un dispositivo."
       ],
+      "Disable account reset by email": [
+        "Desactivar el restablecimiento de la cuenta por correo electrónico"
+      ],
+      "Disable recovery by email": [
+        "Desactivar recuperación por correo electrónico"
+      ],
+      "Disable recovery by phone": [
+        "Desactivar la recuperación por teléfono"
+      ],
       "Download ${ size }": [
         "Descargar ${ size }"
       ],
       "Download your Recovery Kit": [
         "Descarga el kit de recuperación"
+      ],
+      "Email address": [
+        "Dirección de correo electrónico"
       ],
       "Enable device-based recovery": [
         "Activar la recuperación desde un dispositivo"
@@ -17614,6 +17769,9 @@
       "There was an error generating your Recovery Kit": [
         "Se ha producido un error al generar el kit de recuperación."
       ],
+      "There was an error verifying your email": [
+        "Se ha producido un error al verificar tu correo electrónico"
+      ],
       "There was an error verifying your recovery email": [
         "Se ha producido un error al verificar tu correo electrónico de recuperación."
       ],
@@ -17622,6 +17780,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         "para recuperar automáticamente tus datos cuando inicies sesión en un dispositivo de confianza"
+      ],
+      "to ensure highest possible security of your account": [
+        "para garantizar la mayor seguridad de tu cuenta"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Para comprobar que la dirección de correo electrónico es tuya, introduce el código de verificación enviado a ${ boldEmail }."
@@ -17635,6 +17796,9 @@
       "to recover your account if you're ever locked out": [
         "para recuperar la cuenta si alguna vez se bloqueara"
       ],
+      "To stay in touch": [
+        "Para estar en contacto"
+      ],
       "Update your Recovery Kit": [
         "¿Actualizar el kit de recuperación?"
       ],
@@ -17644,6 +17808,12 @@
       "Verify": [
         "Verificar"
       ],
+      "Verify your email address": [
+        "Verifica tu dirección de correo electrónico"
+      ],
+      "Verify your phone number": [
+        "Verifica tu número de teléfono"
+      ],
       "Verify your recovery email address": [
         "Verifica la dirección de correo de recuperación"
       ],
@@ -17652,6 +17822,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Hemos encontrado un error al generar tu kit de recuperación. Inténtalo de nuevo más tarde o ponte en contacto con el servicio de asistencia si el problema persiste."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "Se ha producido un error al verificar tu correo electrónico. Inténtalo de nuevo más tarde o ponte en contacto con atención al cliente si el problema persiste."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Se ha producido un error al verificar tu correo electrónico de recuperación. Inténtalo de nuevo más tarde o ponte en contacto con el servicio de asistencia si el problema persiste."
@@ -17674,6 +17847,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Puedes usar la frase de recuperación de este kit de recuperación para restaurar completamente tu cuenta cuando restablezcas tu contraseña, así que asegúrate de guardarla en un lugar seguro."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Puedes usar tu correo electrónico para volver a acceder a tu cuenta si olvidas tu contraseña."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Puedes usar tu correo electrónico de recuperación para volver a acceder a tu cuenta si olvidas la contraseña."
       ],
@@ -17683,11 +17859,26 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Ya has descargado un kit de recuperación. La descarga de uno nuevo **desactivará el anterior**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "Tienes recomendaciones para proteger aún más tu cuenta."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "Tienes acciones recomendadas para proteger tu cuenta."
+      ],
       "You have recommended actions.": [
         "Tienes acciones recomendadas."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Ya no podrás usar esta dirección para restablecer tu cuenta."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Ya no podrás usar este número de teléfono para restablecer tu cuenta."
+      ],
       "Your account and data can be recovered": [
         "Tu cuenta y tus datos se pueden recuperar"
+      ],
+      "Your account and data can be recovered.": [
+        "Tu cuenta y tus datos se pueden recuperar."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Tu cuenta y tus datos pueden recuperarse. Comprueba si aún puedes acceder a tus métodos de recuperación."
@@ -17703,6 +17894,12 @@
       ],
       "Your account is secure.": [
         "Tu cuenta está segura."
+      ],
+      "Your email address is:": [
+        "Tu dirección de correo electrónico es:"
+      ],
+      "Your email is set": [
+        "Tu correo electrónico está configurado"
       ],
       "Your recovery email": [
         "Correo electrónico de recuperación"
@@ -21037,6 +21234,9 @@
       "Disable two-factor authentication": [
         "Desactivar la autenticación de dos factores"
       ],
+      "Disable two-factor authentication app?": [
+        "¿Desactivar la aplicación de autenticación de dos factores?"
+      ],
       "Disable two-factor authentication?": [
         "¿Desactivar la autenticación de dos factores?"
       ],
@@ -21159,9 +21359,6 @@
       ],
       "Enhance security with 2FA": [
         "Mejora la seguridad con 2FA"
-      ],
-      "Enter 2FA code": [
-        "Ingresa el código 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Entra los puntos finales en tu proveedor de identidad."
@@ -21525,6 +21722,9 @@
       "Passwords made easy": [
         "Contraseñas fáciles de crear"
       ],
+      "Pause list": [
+        "Lista de pausa"
+      ],
       "Pay invoice": [
         "Pagar factura"
       ],
@@ -21729,11 +21929,11 @@
       "Set up a recovery method": [
         "Establece un método de recuperación"
       ],
+      "Set up authenticator app": [
+        "Configurar aplicación de autenticación"
+      ],
       "Set up email forwarding": [
         "Configurar el reenvío de correo electrónico"
-      ],
-      "Set up two-factor authentication": [
-        "Configurar autenticación de dos factores"
       ],
       "Set up your family account": [
         "Configura la cuenta familiar"
@@ -22811,11 +23011,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Los administradores no pueden acceder a los datos de usuarios privados."
+      ],
+      "Authenticator app": [
+        "Aplicación de autenticación"
       ],
       "Inactive": [
         "Inactiva"
@@ -22834,6 +23034,9 @@
       ],
       "Private": [
         "Privado"
+      ],
+      "Security key": [
+        "Clave de seguridad"
       ],
       "SSO": [
         "Inicio de sesión único (SSO)"

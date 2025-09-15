@@ -474,6 +474,9 @@
       "Edit address": [
         "编辑地址"
       ],
+      "Edit categories": [
+        "编辑分类"
+      ],
       "Edit draft": [
         "编辑草稿"
       ],
@@ -5059,6 +5062,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "在 ${ PASS_APP_NAME } 中启用额外密码时，不能使用别名。"
       ],
+      "An error occurred with the categories": [
+        "类别发生错误"
+      ],
       "App currently unavailable": [
         "应用当前不可用"
       ],
@@ -8200,6 +8206,9 @@
       "You are about to open your default browser and visit:": [
         "您即将打开默认浏览器并访问："
       ],
+      "You are currently signed in as ${ username }.": [
+        "您当前登入的用户为 ${ username }。"
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您使用的存储空间超过了 ${ downgradedPlanName } 计划中包含的存储空间。请删除一些数据以便降级。"
       ],
@@ -8801,6 +8810,9 @@
       "Authenticator app": [
         "身份验证应用"
       ],
+      "Automated confirmations and alerts": [
+        "自动确认和提醒"
+      ],
       "BCC": [
         "密送"
       ],
@@ -8812,6 +8824,9 @@
       ],
       "Blind Carbon Copy": [
         "密送"
+      ],
+      "Bookings, billings, and orders": [
+        "预订、账单和订单"
       ],
       "Browser": [
         "浏览器"
@@ -8906,6 +8921,9 @@
       "Date:": [
         "日期："
       ],
+      "Deals, offers, marketing emails": [
+        "优惠、促销、营销邮件"
+      ],
       "Delete": [
         "删除"
       ],
@@ -8917,6 +8935,9 @@
       ],
       "Did not follow instructions": [
         "未遵循指令"
+      ],
+      "Discussion board posts and threads": [
+        "讨论版帖子和讨论串"
       ],
       "Do you have any suggestions for our team?": [
         "您对我们的团队有什么建议吗？"
@@ -9007,6 +9028,27 @@
       ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "转到论坛"
+      ],
+      "Go to Newsletters": [
+        "转到通讯"
+      ],
+      "Go to Primary": [
+        "转至主要"
+      ],
+      "Go to Promotions": [
+        "转到优惠促销"
+      ],
+      "Go to Social": [
+        "转到社交"
+      ],
+      "Go to Transactions": [
+        "转到交易"
+      ],
+      "Go to Updates": [
+        "转到更新"
       ],
       "Hide password": [
         "隐藏密码"
@@ -9140,6 +9182,9 @@
       "No results found": [
         "没有找到相关结果"
       ],
+      "Non-promotional content and news": [
+        "非促销内容和新闻"
+      ],
       "Not factually correct": [
         "事实错误"
       ],
@@ -9251,6 +9296,9 @@
       "Search in": [
         "搜索范围"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "选择包含的类别，并开启通知已收到关于此类别新邮件的提醒。"
+      ],
       "Send auto-reply": [
         "自动回复"
       ],
@@ -9265,6 +9313,9 @@
       ],
       "Social": [
         "社交媒体"
+      ],
+      "Social media updates and activity": [
+        "社交媒体更新与活动"
       ],
       "Starred": [
         "星标邮件"
@@ -9373,6 +9424,9 @@
       ],
       "Writing assistant": [
         "写作助手"
+      ],
+      "You cannot disable all categories": [
+        "无法停用所有分类"
       ],
       "Your alias": [
         "您的别名"
@@ -13897,6 +13951,9 @@
       "Customize calendar import": [
         "自定义日历导入"
       ],
+      "Customize categories": [
+        "自定义分类"
+      ],
       "Customize your mail import": [
         "自定义您的邮件导入"
       ],
@@ -14016,9 +14073,6 @@
       ],
       "Enhance security with 2FA": [
         "通过 2FA 增强安全性"
-      ],
-      "Enter 2FA code": [
-        "输入 2FA 验证码"
       ],
       "Enter your password": [
         "请输入您的密码"
@@ -14550,6 +14604,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "双因素身份验证"
       ],
       "Unsubscribe": [
         "退订"

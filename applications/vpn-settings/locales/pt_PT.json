@@ -1409,9 +1409,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Esta oferta não está disponível com o seu plano atual."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mês.",
         "Esta oferta não está disponível no seu plano atual. No entanto, pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao subscrever por ${ cycle } mese."
@@ -5725,9 +5722,6 @@
       "Disabled countries": [
         "Países desativados"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "A desativação da autenticação de dois fatores tornará a sua conta menos segura. Só continue se for absolutamente necessário."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Descubra novas funcionalidades desbloqueadas e comece a usá-las imediatamente!"
       ],
@@ -5993,9 +5987,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Se tiver um código de oferta, introduza-o abaixo para aplicar o desconto."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Se nunca utilizou autenticação em dois passos antes, recomendamos vivamente ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se perder o seu dispositivo habilitado com a autenticação de dois fatores, estes códigos poderão ser utilizados no lugar do código de 6 dígitos para iniciar sessão na sua conta. Cada código poderá ser utilizado apenas uma vez."
       ],
@@ -6215,9 +6206,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gere quais aplicações da ${ BRAND_NAME } os membros da sua organização podem aceder. Se desativado, apenas os administradores terão acesso."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduza manualmente esta informação no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
@@ -6469,9 +6457,6 @@
       "Public sharing of documents is not yet supported.": [
         "A partilha pública de documentos ainda não é suportada."
       ],
-      "read our two-factor authentication guide first": [
-        "leia primeiro o nosso guia de autenticação de dois fatores"
-      ],
       "Recently used servers:": [
         "Servidores recentemente utilizados:"
       ],
@@ -6519,9 +6504,6 @@
       ],
       "Scan QR code instead": [
         "Ler antes código QR"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Leia este código com o seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "A integração SCIM foi desativada."
@@ -6802,9 +6784,6 @@
       "This will wipe all logs for your organization members.": [
         "Isto irá apagar todos os registos dos membros da sua organização."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Este assistente ativará a autenticação de dois fatores (A2F) na sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará a sua conta da ${ BRAND_NAME_TWO } mais segura. Por isto recomendamos ativá-la."
-      ],
       "to ${ product } Business": [
         "ao ${ product } para negócios"
       ],
@@ -6867,12 +6846,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Experimente ${ productName } sem riscos. Se por algum motivo mudar de ideia, receberá um reembolso total. Sem perguntas."
-      ],
-      "Two-factor authentication disabled": [
-        "Autenticação de dois fatores desativada"
-      ],
-      "Two-factor authentication enabled": [
-        "Autenticação de dois fatores ativada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "O modo de duas palavras-passe requer duas palavras-passe: uma para iniciar sessão na sua conta e outra para desencriptar os seus dados. (Avançado)"
@@ -11086,9 +11059,6 @@
       "Admin": [
         "Administrador"
       ],
-      "Primary admin": [
-        "Administrador principal"
-      ],
       "User": [
         "Utilizador"
       ]
@@ -13476,9 +13446,6 @@
       "Enhance security with 2FA": [
         "Aumente a segurança com a A2F"
       ],
-      "Enter 2FA code": [
-        "Introduza o código 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Introduza os endpoints no seu fornecedor de identidade"
       ],
@@ -13765,9 +13732,6 @@
       ],
       "Set up email forwarding": [
         "Configurar o encaminhamento de e-mail"
-      ],
-      "Set up two-factor authentication": [
-        "Definir autenticação em dois passos"
       ],
       "Set up your organization": [
         "Configure a sua organização"
@@ -14425,9 +14389,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "A2F"
-      ],
       "Administrators can't access the data of private users": [
         "Os administradores não podem aceder aos dados de utilizadores privados."
       ],

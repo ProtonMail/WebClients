@@ -526,12 +526,6 @@
       "Download CSV sample": [
         "Lataa CSV-näyte"
       ],
-      "Download for macOS": [
-        "Lataa macOS:lle"
-      ],
-      "Download for Windows": [
-        "Lataa Windowsille"
-      ],
       "Download ICS": [
         "Lataa ICS-tiedosto"
       ],
@@ -2043,9 +2037,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Valitettavasti tämä tarjous ei ole saatavilla nykyisen tilauksesi kanssa."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi.",
         "Valitettavasti tätä tarjousta ei ole saatavilla nykyisellä tilauksellasi. Voit kuitenkin saada ${ discountPercentage } alennuksen ${ plan.Title } -tilauksesta ${ cycle } kuukaudeksi."
@@ -4440,14 +4431,6 @@
         "Windows 8/8.1/7 tai Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb Debianille/Ubuntulle"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm Fedoralle/Red Hatille"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Luo ilmainen ${ DRIVE_APP_NAME } -tili päästäksesi tiedostoon turvallisesti käsiksi"
@@ -6804,14 +6787,6 @@
         "Ilmainen työpöytäsovelluksen kokeilujaksosi on päättynyt"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } App Storessa"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } Play Kaupassa"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Automaattiohjaa"
@@ -8312,9 +8287,6 @@
       "Disabled countries": [
         "Käytöstä poistetut maat"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Kaksivaiheisen tunnistautumisen käytöstä poistaminen heikentää tilisi suojausta. Jatka vain, jos se on välttämätöntä."
-      ],
       "Discount": [
         "Alennus"
       ],
@@ -8559,9 +8531,6 @@
       "Failed to fetch logs.": [
         "Lokien nouto epäonnistui."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Nopea ja kohdistettu. Sähköposti ja kalenteri suoraan työpöydälläsi."
-      ],
       "Featured in": [
         "Esittelyssä"
       ],
@@ -8711,9 +8680,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Jos sinulla on lahjakoodi, syötä se alle hyödyntääksesi alennuksen."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Jos et ole koskaan käyttänyt kaksivaiheista tunnistautumista, suosittelemme vahvasti, että ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Jos kadotat salasanasi ja joudut palauttamaan tilisi, ${ boldImperative }, että olet määrittänyt ${ boldAccountRecovery }."
@@ -9028,9 +8994,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Hallitse ${ DOCS_APP_NAME }in sähköposti-ilmoitusvalintoja."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Määritä tilisi syöttämällä nämä tiedot todennuslaitteellesi. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
@@ -9394,9 +9357,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ota meihin yhteyttä saadaksesi apua mihin tahansa ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "luet ensin kaksivaiheisen tunnistautumisen oppaamme"
-      ],
       "Recently used servers:": [
         "Viimeksi käytetyt palvelimet:"
       ],
@@ -9480,9 +9440,6 @@
       ],
       "Scan QR code instead": [
         "Skannaa sen sijaan QR-koodi"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Määritä tilisi skannaamalla tämä koodi todennuslaitteellasi. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-integraatio poistettu käytöstä"
@@ -9919,9 +9876,6 @@
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Tämä irrottaa laitteen **${ name } (luotu ${ date })** ${ BRAND_NAME }-tilistäsi."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Tämä ohjattu toiminto aktivoi kaksivaiheisen tunnistautumisen (2FA) ${ BRAND_NAME }-tilillesi. Se vahvistaa ${ BRAND_NAME_TWO }-tilisi suojausta, joten suosittelemme käyttöönottoa."
-      ],
       "to ${ product } Business": [
         "palveluun ${ product } Business"
       ],
@@ -10005,12 +9959,6 @@
       ],
       "trusted device": [
         "luotetulla laitteella"
-      ],
-      "Two-factor authentication disabled": [
-        "Kaksivaiheinen tunnistautuminen poistettiin käytöstä"
-      ],
-      "Two-factor authentication enabled": [
-        "Kaksivaiheinen tunnistautuminen otettiin käyttöön"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Kahden salasanan tila vaatii kaksi salasanaa: Yhden tilillesi kirjautumiseen ja toisen tietojesi salauksen purkuun. (Edistynyt)"
@@ -11373,9 +11321,6 @@
       ],
       "Backup password": [
         "Varasalasana"
-      ],
-      "Beta": [
-        "Beta-versio"
       ],
       "Billing cycle": [
         "Laskutusjakso"
@@ -16299,9 +16244,6 @@
       "Admin": [
         "Ylläpitäjä"
       ],
-      "Primary admin": [
-        "Ensisijainen ylläpitäjä"
-      ],
       "User": [
         "Käyttäjä"
       ]
@@ -19779,9 +19721,6 @@
       "Enhance security with 2FA": [
         "Paranna tietoturvaa 2FA:lla"
       ],
-      "Enter 2FA code": [
-        "Syötä vahvistuskoodi"
-      ],
       "Enter endpoints into your identity provider": [
         "Syötä päätepisteet identiteetintarjoajaasi"
       ],
@@ -19839,15 +19778,6 @@
       ],
       "Folders and labels": [
         "Kansiot ja tunnisteet"
-      ],
-      "For Linux": [
-        "Linuxille"
-      ],
-      "For macOS": [
-        "MacOS:lle"
-      ],
-      "For Windows": [
-        "Windowsille"
       ],
       "Forgot password": [
         "Unohtunut salasana"
@@ -20341,9 +20271,6 @@
       ],
       "Set up email forwarding": [
         "Määritä sähköpostin ohjaus"
-      ],
-      "Set up two-factor authentication": [
-        "Määritä kaksivaiheinen tunnistautuminen"
       ],
       "Set up your family account": [
         "Määritä perhetilisi"
@@ -21367,9 +21294,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin"
       ],

@@ -2226,9 +2226,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
         "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
@@ -8726,6 +8723,12 @@
       "Attention required": [
         "Necesită atenție"
       ],
+      "Authenticator app 2FA disabled": [
+        "Aplicație de autentificare A2F dezactivată"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Aplicație de autentificare A2F activată"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Răspunsul automat este activ în fiecare lună între data de activare și de dezactivare."
       ],
@@ -9025,8 +9028,8 @@
       "Disabled on ${ boldValue }": [
         "Dezactivat de la ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Dezactivarea autentificării cu doi factori vă va face contul mai puțin sigur. Continuați doar dacă este absolut necesar."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Dezactivarea aplicației de autentificare A2F vă va face contul mai puțin sigur. Continuați doar dacă este absolut necesar."
       ],
       "Discount": [
         "Reducere"
@@ -9465,9 +9468,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Dacă aveți un cod cadou, introduceți-l mai jos pentru a aplica reducerea."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Dacă nu ați mai folosit autentificarea cu doi factori, vă recomandăm insistent să ${ guideButton }."
-      ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Dacă vă pierdeți parola și trebuie să vă recuperați contul, ${ boldImperative } să aveți o ${ boldAccountRecovery }."
       ],
@@ -9790,8 +9790,8 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestionați preferințele notificărilor pe e-mail pentru ${ DOCS_APP_NAME }."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduceți manual această informație în dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Introduceți manual această informație în aplicația de autentificare pentru a vă configura contul. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -10187,9 +10187,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Contactați-ne pentru ajutor despre orice din ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "citiți mai întâi ghidul nostru de autentificare cu doi factori"
-      ],
       "Recently used servers:": [
         "Servere utilizate recent:"
       ],
@@ -10274,8 +10271,8 @@
       "Scan QR code instead": [
         "Scanați în schimb codul QR"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Scanați acest cod cu dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Scanați acest cod cu aplicația de autentificare pentru a vă configura contul. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integrare SCIM dezactivată"
@@ -10395,9 +10392,6 @@
       ],
       "Signed up": [
         "Înscris"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Conectarea cu o cheie de securitate nu este încă suportată în toate aplicațiile. Fără TOTP, conectarea la unele aplicații poate eșua."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
@@ -10742,9 +10736,6 @@
       "This will wipe all logs for your organization members.": [
         "Aceasta va șterge toate jurnalele pentru membrii organizației."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Acest asistent va activa „autentificarea cu doi factori” (A2F) pentru acest cont ${ BRAND_NAME }. A2F va face contul ${ BRAND_NAME_TWO } mai sigur astfel încât vă recomandăm s-o activați."
-      ],
       "to ${ product } Business": [
         "la ${ product } Business"
       ],
@@ -10834,12 +10825,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Încercați ${ productName } fără riscuri - dacă din orice motiv vă răzgândiți, veți primi o rambursare completă. Fără întrebări."
-      ],
-      "Two-factor authentication disabled": [
-        "Autentificare cu doi factori dezactivată"
-      ],
-      "Two-factor authentication enabled": [
-        "Autentificare cu doi factori activată"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Modul cu două parole necesită două parole: una pentru a vă autentifica în cont și una pentru a decripta datele. (Avansat)"
@@ -11164,6 +11149,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Fără o aplicație de autentificare, nu vă veți putea conecta la aplicațiile ${ BRAND_NAME } care nu au încă suport pentru cheile de securitate."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -16328,6 +16316,11 @@
         "Modificare plan"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Continuare cu ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Criptat bilateral"
@@ -16833,6 +16826,9 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
+      "Offer unavailable": [
+        "Ofertă indisponibilă"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
       ],
@@ -16844,6 +16840,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual."
       ],
       "Taxes": [
         "Taxe"
@@ -17774,16 +17773,19 @@
       "Admin": [
         "Administrator"
       ],
-      "Primary admin": [
-        "Administrator principal"
-      ],
       "User": [
         "Utilizator"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        "**Dezactivați recuperarea prin telefon** pentru a asigura cea mai mare securitate posibilă a contului."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         "**Activați recuperarea prin telefon** pentru a vă recâștiga accesul la cont dacă vă uitați parola."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } va folosi această adresă pentru a vă menține la zi cu privire la securitatea contului."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } va folosi această adresă pentru a trimite un cod de resetare când vă veți resetați parola."
@@ -17794,11 +17796,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } pentru a vă asigura că vă puteți recupera datele."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Dezactivați resetarea contului prin e-mail** pentru a asigura cea mai mare securitate posibilă a contului."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Activați recuperarea prin e-mail** pentru a vă recâștiga accesul la cont dacă vă uitați parola."
       ],
+      "Account reset by email has been disabled": [
+        "Resetarea contului prin e-mail a fost dezactivată"
+      ],
+      "Account reset by phone has been disabled": [
+        "Resetarea contului prin telefon a fost dezactivată."
+      ],
       "Account safety review": [
         "Revizuire securitate cont"
+      ],
+      "Add a email address": [
+        "Adăugați o adresă de e-mail"
+      ],
+      "Add a phone number": [
+        "Adăugare număr de telefon"
       ],
       "Add a recovery email": [
         "Adăugați un e-mail de recuperare"
@@ -17808,6 +17825,9 @@
       ],
       "Add a recovery phone number": [
         "Adăugați un număr de telefon de recuperare"
+      ],
+      "Add an email": [
+        "Adăugați un e-mail"
       ],
       "Back to Safety Review": [
         "Înapoi la revizuire securitate"
@@ -17830,11 +17850,23 @@
       "Device-based recovery enabled": [
         "Activarea pe bază de dispozitiv este activată"
       ],
+      "Disable account reset by email": [
+        "Dezactivați resetarea contului prin e-mail"
+      ],
+      "Disable recovery by email": [
+        "Dezactivare recuperare prin e-mail"
+      ],
+      "Disable recovery by phone": [
+        "Dezactivare recuperare cu număr de telefon"
+      ],
       "Download ${ size }": [
         "Descărcare ${ size }"
       ],
       "Download your Recovery Kit": [
         "Descărcare pachet de recuperare"
+      ],
+      "Email address": [
+        "Adresa de e-mail"
       ],
       "Enable device-based recovery": [
         "Activați recuperarea pe bază de dispozitiv"
@@ -17899,6 +17931,9 @@
       "There was an error generating your Recovery Kit": [
         "A apărut o eroare la generarea pachetului de recuperare."
       ],
+      "There was an error verifying your email": [
+        "A apărut o eroare la verificarea adresei de e-mail."
+      ],
       "There was an error verifying your recovery email": [
         "A apărut o eroare la verificarea adresei de e-mail de recuperare."
       ],
@@ -17907,6 +17942,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         "pentru a vă recupera automat datele când vă conectați de pe un dispozitiv de încredere"
+      ],
+      "to ensure highest possible security of your account": [
+        "pentru a asigura cea mai mare securitate posibilă a contului."
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Pentru a ne asigura că adresa de e-mail vă aparține, introduceți codul de verificare trimis la ${ boldEmail }."
@@ -17920,6 +17958,9 @@
       "to recover your account if you're ever locked out": [
         "pentru a vă recupera contul dacă nu îl mai puteți accesa"
       ],
+      "To stay in touch": [
+        "Pentru a păstra legătura"
+      ],
       "Update your Recovery Kit": [
         "Actualizați pachetul de recuperare"
       ],
@@ -17929,6 +17970,12 @@
       "Verify": [
         "Verificare"
       ],
+      "Verify your email address": [
+        "Verificați-vă adresa de e-mail"
+      ],
+      "Verify your phone number": [
+        "Verificați numărul de telefon"
+      ],
       "Verify your recovery email address": [
         "Verificați adresa de e-mai de recuperare"
       ],
@@ -17937,6 +17984,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "A apărut o eroare la generarea pachetului de recuperare. Reîncercați mai târziu sau contactați asistența dacă problema continuă."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "A apărut o eroare la verificarea adresei de e-mail. Reîncercați mai târziu sau contactați asistența dacă problema continuă."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "A apărut o eroare la verificarea adresei de e-mail de recuperare. Reîncercați mai târziu sau contactați asistența dacă problema continuă."
@@ -17959,6 +18009,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Puteți folosi fraza de recuperare din acest pachet de recuperare pentru a vă restabili complet contul atunci când vă resetați parola, așa că asigurați-vă că o păstrați în siguranță."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Vă puteți folosi adresa de e-mail pentru a vă recâștiga accesul la cont dacă vă uitați parola."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Vă puteți folosi adresa de e-mail de recuperare pentru a vă recâștiga accesul la cont dacă vă uitați parola."
       ],
@@ -17968,11 +18021,26 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Ați descărcat anterior pachetul de recuperare. Descărcarea unui nou pachet îl va **dezactiva pe cel vechi**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "Aveți acțiuni recomandate pentru a vă spori protecția contului."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "Aveți acțiuni recomandate pentru a vă proteja contul."
+      ],
       "You have recommended actions.": [
         "Aveți acțiuni recomandate."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Nu veți mai putea utiliza această adresă pentru a vă reseta contul."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Nu veți mai putea utiliza acest număr de telefon pentru a vă reseta contul."
+      ],
       "Your account and data can be recovered": [
         "Contul și datele vă pot fi recuperate"
+      ],
+      "Your account and data can be recovered.": [
+        "Contul și datele vă pot fi recuperate."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Contul și datele vă pot fi recuperate. Verificați dacă încă vă puteți accesa metodele de recuperare."
@@ -17988,6 +18056,12 @@
       ],
       "Your account is secure.": [
         "Contul este sigur."
+      ],
+      "Your email address is:": [
+        "Adresa de e-mail este:"
+      ],
+      "Your email is set": [
+        "Adresa de e-mail a fost setată."
       ],
       "Your recovery email": [
         "E-mail de recuperare"
@@ -21390,6 +21464,9 @@
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
       ],
+      "Disable two-factor authentication app?": [
+        "Dezactivați aplicația de autentificare cu doi factori?"
+      ],
       "Disable two-factor authentication?": [
         "Dezactivați autentificarea cu doi factori?"
       ],
@@ -21512,9 +21589,6 @@
       ],
       "Enhance security with 2FA": [
         "Îmbunătățiți securitatea cu A2F"
-      ],
-      "Enter 2FA code": [
-        "Introduceți codul de A2F"
       ],
       "Enter endpoints into your identity provider": [
         "Introduceți puncte finale în furnizorul de identitate"
@@ -22087,11 +22161,11 @@
       "Set up a recovery method": [
         "Configurați o metodă de recuperare"
       ],
+      "Set up authenticator app": [
+        "Configurați aplicația de autentificare"
+      ],
       "Set up email forwarding": [
         "Setare redirecționare mesaje"
-      ],
-      "Set up two-factor authentication": [
-        "Setare autentificare cu doi factori"
       ],
       "Set up your family account": [
         "Configurare cont de familie"
@@ -23175,11 +23249,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "A2F"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorii nu pot accesa datele utilizatorilor privați."
+      ],
+      "Authenticator app": [
+        "Aplicația Authenticator"
       ],
       "Inactive": [
         "Inactiv"
@@ -23198,6 +23272,9 @@
       ],
       "Private": [
         "Privat"
+      ],
+      "Security key": [
+        "Cheia de securitate"
       ],
       "SSO": [
         "Autentificare unică (SSO)"

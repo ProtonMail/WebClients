@@ -1488,9 +1488,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Desculpe, mas essa oferta não está disponível com seu plano atual."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Desculpe, esta oferta não está disponível no seu plano atual. Mas você pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao assinar por ${ cycle } mês.",
         "Desculpe, esta oferta não está disponível no seu plano atual. Mas você pode obter ${ discountPercentage } de desconto no ${ plan.Title } ao assinar por ${ cycle } meses."
@@ -5933,9 +5930,6 @@
       "Disabled on ${ boldValue }": [
         "Desativado em ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Desabilitar a autenticação de dois fatores tornará sua conta menos segura. Só prossiga se for absolutamente necessário."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Descubra novos recursos desbloqueados e comece a usá-los agora mesmo!"
       ],
@@ -6219,9 +6213,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Se você tem um vale-presente, insira-o abaixo para aplicar o desconto."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Se você nunca usou a autenticação de dois fatores antes, nós recomendamos você ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se você perder seu dispositivo ativado com a autenticação de dois fatores, estes códigos poderão ser usados no lugar do código de 6 dígitos para iniciar sessão em sua conta. Cada código poderá ser usado apenas uma vez."
       ],
@@ -6447,9 +6438,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gerencie quais aplicativos da ${ BRAND_NAME } os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
@@ -6710,9 +6698,6 @@
       "Public sharing of documents is not yet supported.": [
         "O compartilhamento público de documentos ainda não é suportado."
       ],
-      "read our two-factor authentication guide first": [
-        "leia nosso guia de autenticação de dois fatores primeiro"
-      ],
       "Recently used servers:": [
         "Servidores usados recentemente:"
       ],
@@ -6760,9 +6745,6 @@
       ],
       "Scan QR code instead": [
         "Escaneie o código QR"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Escaneie este código com seu dispositivo de autenticação de dois fatores para configurar sua conta. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integração SCIM desativada"
@@ -6842,9 +6824,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sessão no ${ MAIL_APP_NAME } para ativar seu endereço"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Iniciar sessão com uma chave de segurança ainda não é suportado em todos os aplicativos. Sem TOTP, iniciar sessão em alguns aplicativos pode falhar."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
@@ -7055,9 +7034,6 @@
       "This will wipe all logs for your organization members.": [
         "Isso vai limpar todos os registros dos membros da sua organização."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Este assistente ativará a autenticação de dois fatores (A2F) em sua conta da ${ BRAND_NAME }. A autenticação de dois fatores tornará sua conta da ${ BRAND_NAME_TWO } mais segura, portanto, recomendamos ativá-la."
-      ],
       "to ${ product } Business": [
         "para ${ product } Business"
       ],
@@ -7120,12 +7096,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Experimente ${ productName } totalmente sem riscos - se por algum motivo você mudar de ideia, você receberá um reembolso total. Sem perguntas."
-      ],
-      "Two-factor authentication disabled": [
-        "Autenticação de dois fatores desativada"
-      ],
-      "Two-factor authentication enabled": [
-        "Autenticação de dois fatores ativada"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "O modo de duas senhas requer duas senhas: uma para iniciar sessão na sua conta e uma para descriptografar seus dados. (Avançado)"
@@ -10864,6 +10834,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Renova por ${ renewPriceStr }, cancele a qualquer momento."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Desculpe, mas essa oferta não está disponível com seu plano atual."
+      ],
       "Taxes": [
         "Impostos"
       ],
@@ -11643,9 +11616,6 @@
     "Role": {
       "Admin": [
         "Administrador"
-      ],
-      "Primary admin": [
-        "Administrador principal"
       ],
       "User": [
         "Usuário"
@@ -13974,6 +13944,9 @@
       "Disable two-factor authentication": [
         "Desativar autenticação de dois fatores"
       ],
+      "Disable two-factor authentication app?": [
+        "Desativar aplicativo autenticação de dois fatores?"
+      ],
       "Disable two-factor authentication?": [
         "Desativar autenticação de dois fatores?"
       ],
@@ -14054,9 +14027,6 @@
       ],
       "Enhance security with 2FA": [
         "Aumente a segurança com 2FA"
-      ],
-      "Enter 2FA code": [
-        "Insira o código A2F"
       ],
       "Enter endpoints into your identity provider": [
         "Insira endpoints em seu provedor de identidade"
@@ -14342,11 +14312,11 @@
       "Set recovery methods": [
         "Definir um métodos de recuperação"
       ],
+      "Set up authenticator app": [
+        "Configurar aplicativo de autenticação"
+      ],
       "Set up email forwarding": [
         "Configurar encaminhamento de e-mail"
-      ],
-      "Set up two-factor authentication": [
-        "Configurar autenticação de dois fatores"
       ],
       "Set up your organization": [
         "Configure a sua organização"
@@ -15031,11 +15001,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "A2F"
-      ],
       "Administrators can't access the data of private users": [
         "Os administradores não podem acessar os dados de usuários privados"
+      ],
+      "Authenticator app": [
+        "Aplicativo de autenticação"
       ],
       "Inactive": [
         "Inativa"
@@ -15054,6 +15024,9 @@
       ],
       "Private": [
         "Privado"
+      ],
+      "Security key": [
+        "Chave de segurança"
       ],
       "SSO": [
         "SSO"
