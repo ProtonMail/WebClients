@@ -10,7 +10,7 @@ import { IcShield2CheckFilled } from '@proton/icons';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SignupType } from '../../../../signup/interfaces';
-import { usePasswordInputInline } from '../../../containers/password/usePasswordInput';
+import { usePasswordInputSpotlight } from '../../../containers/password/usePasswordInput';
 import useEmailInput from '../../../containers/username/useEmailInput';
 import { useSignup } from '../../../context/SignupContext';
 import { Layout } from '../components/Layout/Layout';
@@ -68,7 +68,7 @@ export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
 
     const handleRequestSubmit = () => signup.accountForm.refs.form.current?.requestSubmit();
     const { emailInput, loadingChallenge } = useEmailInput({ autoFocus: true, onSubmit: handleRequestSubmit, loading });
-    const { passwordInputs } = usePasswordInputInline({ loading });
+    const { passwordInputs } = usePasswordInputSpotlight({ loading });
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         try {
