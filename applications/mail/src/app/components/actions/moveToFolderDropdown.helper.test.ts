@@ -1,6 +1,6 @@
+import { CATEGORIES_COLOR_SHADES } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { CATEGORIES_COLOR_SHADES } from '../categoryView/categoriesConstants';
 import { getInboxCategoriesItems } from './moveToFolderDropdown.helper';
 
 describe('MoveToFolderDropdownHelper', () => {
