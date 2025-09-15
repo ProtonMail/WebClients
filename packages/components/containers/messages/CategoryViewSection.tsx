@@ -11,6 +11,7 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateMailCategoryView } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
 
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -22,8 +23,12 @@ export const CategoryViewSection = () => {
     const [mailSettings] = useMailSettings();
     const { state, toggle } = useToggle(mailSettings?.MailCategoryView);
     const { createNotification } = useNotifications();
-
     const dispatch = useDispatch();
+
+    const isCategoryViewEnabled = useFlag('CategoryView');
+    if (!isCategoryViewEnabled) {
+        return null;
+    }
 
     const handleChange = async (checked: boolean) => {
         const response = await api<{ MailSettings: MailSettings }>(updateMailCategoryView(checked));
