@@ -1781,6 +1781,11 @@
         "Lebarkan"
       ]
     },
+    "collider_2025: Info": {
+      "Add ${ LUMO_APP_NAME }": [
+        "Tambah ${ LUMO_APP_NAME }"
+      ]
+    },
     "colon": {
       ": ": [
         ": "
@@ -9671,6 +9676,9 @@
       ]
     },
     "Spotlight": {
+      "${ MEET_APP_NAME } is here!": [
+        "${ MEET_APP_NAME } telah hadir!"
+      ],
       "Color-code your calendar to better organize your day, track your time, and more.": [
         "Warnai kalender Anda agar Anda dapat mengorganisir hari Anda secara lebih baik, melacak waktu Anda, dan masih banyak lagi."
       ],
@@ -9682,6 +9690,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Undang teman ke ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Jadwalkan dan gabung ke panggilan ${ MEET_APP_NAME } langsung dari kalender Anda."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Buat dan tambahkan tautan rapat video ke acara Anda secara terpadu."
@@ -10789,9 +10800,6 @@
       "Enhance security with 2FA": [
         "Tingkatkan keamanan dengan 2FA"
       ],
-      "Enter 2FA code": [
-        "Masukkan kode 2FA"
-      ],
       "Enter your password": [
         "Masukkan kata sandi Anda"
       ],
@@ -11106,6 +11114,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktifkan ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Autentikasi dua faktor"
       ],
       "Update event": [
         "Perbarui acara"
