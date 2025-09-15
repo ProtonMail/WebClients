@@ -102,7 +102,7 @@ export const toggleVisibility = async (
         await Promise.all(
             encryptedShares.map((share) =>
                 parseShareResponse<ShareType.Vault>(share, {
-                    eventId: shares[share.ShareID].eventId,
+                    eventId: shares[share.ShareID]?.eventId,
                 })
             )
         )
