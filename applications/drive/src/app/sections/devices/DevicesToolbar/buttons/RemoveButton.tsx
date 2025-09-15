@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton, useModalTwoStatic } from '@proton/components';
+import { Icon, ToolbarButton } from '@proton/components';
 
 import { isMultiSelect } from '../../../../components/sections/ToolbarButtons/utils';
-import { RemoveDeviceModal } from '../../../../modals/RemoveDeviceModal';
+import { useRemoveDeviceModal } from '../../../../modals/RemoveDeviceModal';
 import type { StoreDevice } from '../../devices.store';
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const DeviceRemoveButton = ({ selectedDevices }: Props) => {
-    const [removeDeviceModal, showRemoveDeviceModal] = useModalTwoStatic(RemoveDeviceModal);
+    const [removeDeviceModal, showRemoveDeviceModal] = useRemoveDeviceModal();
 
     const isDisabled = isMultiSelect(selectedDevices);
 

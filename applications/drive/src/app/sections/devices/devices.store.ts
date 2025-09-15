@@ -14,6 +14,7 @@ interface DeviceStore {
     devices: Map<string, StoreDevice>;
     deviceList: StoreDevice[];
     isLoading: boolean;
+    updateDevice: (deviceUid: string, device: Partial<StoreDevice>) => void;
     setLoading: (isLoading: boolean) => void;
     setDevice: (device: Device) => void;
     removeDevice: (id: string) => void;
@@ -27,12 +28,25 @@ export const useDeviceStore = create<DeviceStore>()(
         devices: new Map(),
         deviceList: [],
         isLoading: true,
-        setLoading: (isLoading: boolean) =>
+        updateDevice: (deviceUid: string, item: Partial<StoreDevice>) =>
             set((state) => {
-                return {
-                    ...state,
-                    isLoading,
-                };
+                const updatedDevices = new Map(state.devices);
+                const existingDevice = updatedDevices.get(deviceUid);
+                if (existingDevice) {
+                    updatedDevices.set(deviceUid, {
+                        ...existingDevice,
+                        ...item,
+                    });
+                    return {
+                        devices: updatedDevices,
+                        deviceList: Array.from(updatedDevices.values()),
+                    };
+                }
+                return {};
+            }),
+        setLoading: (isLoading: boolean) =>
+            set(() => {
+                return { isLoading };
             }),
         setDevice: (device: Device) =>
             set((state) => {
@@ -44,7 +58,6 @@ export const useDeviceStore = create<DeviceStore>()(
                 newDevices.set(device.uid, storeDevice);
 
                 return {
-                    ...state,
                     devices: newDevices,
                     deviceList: Array.from(newDevices.values()),
                 };
@@ -59,7 +72,6 @@ export const useDeviceStore = create<DeviceStore>()(
                     throw new Error(`Device not found ${id}`);
                 }
                 return {
-                    ...state,
                     devices: devicesCopy,
                     deviceList: Array.from(devicesCopy.values()),
                 };
@@ -74,7 +86,6 @@ export const useDeviceStore = create<DeviceStore>()(
                     throw new Error(`Device not found ${id}`);
                 }
                 return {
-                    ...state,
                     devices: devicesCopy,
                     deviceList: Array.from(devicesCopy.values()),
                 };
