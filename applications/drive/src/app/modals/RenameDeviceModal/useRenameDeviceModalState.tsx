@@ -1,33 +1,34 @@
 import { useState } from 'react';
 
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import { type ModalStateProps, useFormErrors, useNotifications } from '@proton/components';
 import { useDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { useDeviceStore } from '../../sections/devices/devices.store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 
-export type UseRenameDeviceModalProps = ModalStateProps & {
+export type UseRenameDeviceInnerProps = {
     deviceUid: string;
     deviceName: string;
     onClose?: () => void;
+    onSubmit?: (newName: string) => void;
 };
+
+export type UseRenameDeviceModalProps = ModalStateProps & UseRenameDeviceInnerProps;
 
 export const useRenameDeviceModalState = ({
     deviceUid,
     deviceName,
     onClose,
+    onSubmit,
     ...modalProps
 }: UseRenameDeviceModalProps) => {
     const [submitting, withSubmitting] = useLoading();
     const { drive } = useDrive();
     const { validator, onFormSubmit } = useFormErrors();
     const { createNotification } = useNotifications();
-    const { renameDevice } = useDeviceStore(useShallow((state) => ({ renameDevice: state.renameDevice })));
 
     const { handleError } = useSdkErrorHandler();
     const [inputName, setInputName] = useState(() => deviceName);
@@ -39,11 +40,10 @@ export const useRenameDeviceModalState = ({
 
         const successNotificationText = c('Notification').t`Device renamed`;
         const unhandledErrorNotificationText = c('Notification').t`Failed to rename device`;
-
+        onSubmit?.(inputName);
         await drive
             .renameDevice(deviceUid, inputName)
             .then(async () => {
-                renameDevice(deviceUid, inputName);
                 createNotification({ text: successNotificationText });
             })
             .catch((e) => {
