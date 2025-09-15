@@ -3814,6 +3814,9 @@
       ],
       "Passphrase unavailable": [
         "საკვანძო ფრაზა ხელმიუწვდომელია"
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME }-ის ვიდეოკონფერენციის შექმნა ჩავარდა"
       ]
     },
     "Error accepting calendar invitation": {
@@ -6026,6 +6029,9 @@
       ],
       "Failed to update meeting password": [
         "შეხვედრის პაროლის განახლება ჩავარდა"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "შესული ბრძანდებით, როგორც ${ username }."
       ]
     },
     "info": {
@@ -8342,6 +8348,12 @@
       ],
       "Your subscription renews soon": [
         "თქვენი გამოწერა მალე განახლდება"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan }-დან."
+      ],
+      "Limited-time offer, valid for your first month": [
+        "შეთავაზება შეზღუდული დროით. ხელმისაწვდომია, მხოლოდ, თქვენი პირველი თვისთვის"
       ]
     },
     "Offer fearue": {
@@ -8718,6 +8730,21 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის არჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% გადასახადების ამოღებით: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% გადასახადის გათვალისწინებით: ${ taxAmount }"
+      ],
+      "This number will be shown on all future invoices": [
+        "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ]
     },
     "Payments.Error": {
@@ -11206,6 +11233,9 @@
       ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-ის მისამართის გამოთხოვა"
+      ],
+      "Two-factor authentication": [
+        "2FA"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11772,6 +11802,9 @@
     "b2b_trials_2025_Info": {
       "You have reached the trial limit.": [
         "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
       ]
     },
     "collider_2025: feature": {
@@ -11812,6 +11845,9 @@
     "collider_2025: Info": {
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }-ის დამატება"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
       ]
     }
   }
