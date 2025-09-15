@@ -10,7 +10,7 @@ export const unlimited: { planIDs: PlanIDs } = {
 };
 
 export const family: { planIDs: PlanIDs } = {
-    planIDs: { [PLANS.FAMILY]: 1 },
+    planIDs: { [PLANS.PASS_FAMILY]: 1 },
 };
 
 export const passLifetime: { planIDs: PlanIDs } = {
