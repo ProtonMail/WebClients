@@ -486,6 +486,9 @@
       "Edit address": [
         "Editar la dirección"
       ],
+      "Edit categories": [
+        "Editar categorías"
+      ],
       "Edit draft": [
         "Editar borrador"
       ],
@@ -1986,6 +1989,9 @@
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
       ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licencias durante el periodo de prueba."
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_SCRIBE_SEATS } licencias de Scribe durante el período de prueba."
       ],
@@ -2231,6 +2237,9 @@
       ],
       "Manual setup problem": [
         "Problema de configuración manual"
+      ],
+      "Meet problem": [
+        "Problema de Meet"
       ],
       "Other": [
         "Otro"
@@ -2657,12 +2666,47 @@
         "Expandir"
       ]
     },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
+      "Basic chat history": [
+        "Historial de chat básico"
+      ],
+      "Full chat history with search": [
+        "Historial de chat completo con búsqueda"
+      ],
+      "Large file upload support": [
+        "Soporte para la carga de archivos grandes"
+      ],
+      "Limited daily chats": [
+        "Chats diarios limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para un acceso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Cargar y consultar múltiples archivos de gran tamaño"
+      ],
+      "Web search access": [
+        "Acceso a la búsqueda web"
+      ]
+    },
     "collider_2025: Info": {
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Añadir ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats de alta velocidad y funciones de IA avanzadas."
       ]
     },
     "color": {
@@ -5167,6 +5211,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Los alias no pueden usarse cuando la contraseña adicional está activa en ${ PASS_APP_NAME }."
+      ],
+      "An error occurred with the categories": [
+        "Se ha producido un error con las categorías"
       ],
       "App currently unavailable": [
         "La aplicación no está disponible actualmente."
@@ -9069,6 +9116,9 @@
       "Authenticator app": [
         "Aplicación de autenticación"
       ],
+      "Automated confirmations and alerts": [
+        "Confirmaciones y alertas automatizadas"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -9080,6 +9130,9 @@
       ],
       "Blind Carbon Copy": [
         "Con copia oculta"
+      ],
+      "Bookings, billings, and orders": [
+        "Reservaciones, facturas y órdenes"
       ],
       "Browser": [
         "Navegador"
@@ -9177,6 +9230,9 @@
       "Date:": [
         "Fecha:"
       ],
+      "Deals, offers, marketing emails": [
+        "Ofertas, promociones, correos electrónicos de publicidad"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -9188,6 +9244,9 @@
       ],
       "Did not follow instructions": [
         "No se han seguido las instrucciones."
+      ],
+      "Discussion board posts and threads": [
+        "Publicaciones e hilos del foro de debate"
       ],
       "Do you have any suggestions for our team?": [
         "¿Tienes alguna sugerencia para nuestro equipo?"
@@ -9278,6 +9337,27 @@
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "Ir a Foros"
+      ],
+      "Go to Newsletters": [
+        "Ir a Boletines"
+      ],
+      "Go to Primary": [
+        "Ir a Principal"
+      ],
+      "Go to Promotions": [
+        "Ir a Promociones"
+      ],
+      "Go to Social": [
+        "Ir a Sociales"
+      ],
+      "Go to Transactions": [
+        "Ir a Operaciones"
+      ],
+      "Go to Updates": [
+        "Ir a Actualizaciones"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Ayúdanos a mejorar las categorías eligiendo la que mejor se adapte a este correo electrónico. ¡Gracias por tu ayuda!"
@@ -9417,6 +9497,9 @@
       "No results found": [
         "No se encontraron resultados"
       ],
+      "Non-promotional content and news": [
+        "Contenido no promocional y noticias"
+      ],
       "Not factually correct": [
         "Los hechos no son correctos"
       ],
@@ -9528,6 +9611,9 @@
       "Search in": [
         "Buscar en"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Selecciona las categorías a incluir y activa las notificaciones para recibir alertas sobre nuevos correos electrónicos en una categoría."
+      ],
       "Send auto-reply": [
         "Enviar respuesta automática"
       ],
@@ -9542,6 +9628,9 @@
       ],
       "Social": [
         "Redes Sociales"
+      ],
+      "Social media updates and activity": [
+        "Actualizaciones y actividad en redes sociales"
       ],
       "Starred": [
         "Destacados"
@@ -9662,6 +9751,9 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
+      ],
+      "You cannot disable all categories": [
+        "No puedes desactivar todas las categorías"
       ],
       "Your alias": [
         "Tu alias"
@@ -14076,6 +14168,10 @@
       "Read receipt sent": [
         "Confirmación de lectura enviada"
       ],
+      "Recategorized ${ elementsCount } message.": [
+        "Recategorizado ${ elementsCount } mensaje.",
+        "Recategorizados ${ elementsCount } mensajes."
+      ],
       "Secret passphrase updated": [
         "Frase de contraseña secreta actualizada"
       ],
@@ -14532,6 +14628,9 @@
       "Customize calendar import": [
         "Personalizar la importación de tu calendario"
       ],
+      "Customize categories": [
+        "Personalizar categorías"
+      ],
       "Customize your mail import": [
         "Personalizar la importación de tu correo"
       ],
@@ -14656,9 +14755,6 @@
       ],
       "Enhance security with 2FA": [
         "Mejora la seguridad con 2FA"
-      ],
-      "Enter 2FA code": [
-        "Ingresa el código 2FA"
       ],
       "Enter your password": [
         "Introduce tu contraseña"
@@ -15197,6 +15293,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activar ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Autenticación de dos factores"
       ],
       "Unsubscribe": [
         "Cancelar la suscripción"
