@@ -1154,9 +1154,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "माफ़ कीजिए, यह ऑफ़र आपकी वर्तमान योजना के साथ उपलब्ध नहीं है।"
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीने के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।",
         "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीनों के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।"
@@ -4876,9 +4873,6 @@
       "Did you know?": [
         "क्या आप जानते हैं?"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "दो-फैक्टर सत्यापन अक्षम करने से आपका खाता कम सुरक्षित हो जाएगा। केवल तभी आगे बढ़ें यदि यह बिल्कुल आवश्यक हो।"
-      ],
       "Discover new features unlocked and start using them right away!": [
         "अनलॉक की गई नई सुविधाएँ खोजें और तुरंत उनका उपयोग शुरू करें!"
       ],
@@ -5126,9 +5120,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "यदि आपके पास कोई उपहार कोड है, तो अपनी छूट लागू करने के लिए उसे नीचे दर्ज करें।"
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "यदि आपने पहले कभी दो-कारक प्रमाणीकरण का उपयोग नहीं किया है, तो हम आपको दृढ़ता से ${ guideButton } की सलाह देते हैं।"
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "अगर आप अपना दो-फैक्टर पे चल रहे डिवाइस को खो देते है, तो 6-अंक के दो-फैक्टर सत्यापन कोड की जगह ये कोड इस्तेमाल करके आप अपने खाते में साइन इन कर सकते है। हर कोड सिर्फ एक बार इस्तेमाल किया जा सकता है।"
       ],
@@ -5340,9 +5331,6 @@
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "ध्यान रखें की आप ${ addARecoveryMethod } कर लें ताकि अगर आप पासवर्ड भूल जाए तो आप अपने खाते पे वापिस जा सके।"
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "अपने खाते को सेट करने के लिए इस जानकारी को अपने दो-फैक्टर सत्यापन डिवाइस में खुद डालें। ${ switchButton }।"
-      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode लोगो"
       ],
@@ -5545,9 +5533,6 @@
       "Protected by Swiss privacy laws": [
         "स्विस निजता कानूनो से सुरक्षित रखा गया"
       ],
-      "read our two-factor authentication guide first": [
-        "पहले हमारे दो-फैक्टर सत्यापन गाइड को पढ़े"
-      ],
       "Recently used servers:": [
         "हाल में उपयोग किए गए सर्वर:"
       ],
@@ -5592,9 +5577,6 @@
       ],
       "Scan QR code instead": [
         "इसके बजाय QR कोड स्कैन करें"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "अपना खाता सेट करने के लिए अपने दो-कारक प्रमाणीकरण उपकरण के साथ इस कोड को स्कैन करें। ${ switchButton }।"
       ],
       "SCIM integration disabled": [
         "SCIM एकीकरण अक्षम कर दिया गया है"
@@ -5841,9 +5823,6 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "यह आपको किसी भी सक्रिय सत्र से साइन आउट कर देगा और 2-कारक प्रमाणीकरण को अक्षम कर देगा।"
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "ये प्रक्रिया आपके ${ BRAND_NAME } खाते पे दो-कदम सत्यापन (2-एफए) सक्षम करेगा। दो-कदम सत्यापन आपके ${ BRAND_NAME_TWO } खाते को और सुरक्षित बना देगा और इसलिए हम इसे सक्षम करने की सलाह देते हैं।"
-      ],
       "to ${ product } Business": [
         "${ product } व्यवसाय में"
       ],
@@ -5897,12 +5876,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } को पूरी तरह से जोखिम मुक्त आज़माएँ - यदि किसी भी कारण से आप अपना मन बदलते हैं, तो आपको पूरा रिफंड मिलेगा। कोई सवाल नहीं।"
-      ],
-      "Two-factor authentication disabled": [
-        "दो-कारक प्रमाणीकरण अक्षम"
-      ],
-      "Two-factor authentication enabled": [
-        "दो-कारक प्रमाणीकरण सक्षम"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "दो-पासवर्ड मोड में दो पासवर्ड की आवश्यकता होती है: एक अपने खाते में साइन इन करने के लिए और एक अपने डेटा को डिक्रिप्ट करने के लिए। (उन्नत)"
@@ -9338,9 +9311,6 @@
       "Admin": [
         "एडमिन"
       ],
-      "Primary admin": [
-        "प्राथमिक व्यवस्थापक"
-      ],
       "User": [
         "यूज़र"
       ]
@@ -11247,9 +11217,6 @@
       "Enable for all users": [
         "सभी उपयोगकर्ताओं के लिए सक्षम करें"
       ],
-      "Enter 2FA code": [
-        "2-एफए कोड डालें"
-      ],
       "Enter endpoints into your identity provider": [
         "अपने पहचान प्रदाता में एंडपॉइंट दर्ज करें"
       ],
@@ -11512,9 +11479,6 @@
       ],
       "Set up email forwarding": [
         "ईमेल फॉरवर्ड सेट अप करें"
-      ],
-      "Set up two-factor authentication": [
-        "दो-कारक प्रमाणीकरण सेट करें"
       ],
       "Set up your organization": [
         "अपना संगठन स्थापित करें"
@@ -12127,9 +12091,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2-एफए"
-      ],
       "Administrators can't access the data of private users": [
         "प्रशासक निजी उपयोगकर्ताओं का डाटा एक्सेस नहीं कर सकते"
       ],

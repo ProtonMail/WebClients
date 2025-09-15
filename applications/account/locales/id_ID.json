@@ -556,12 +556,6 @@
       "Download CSV sample": [
         "Unduh sampel CSV"
       ],
-      "Download for macOS": [
-        "Unduh untuk macOS"
-      ],
-      "Download for Windows": [
-        "Unduh untuk Windows"
-      ],
       "Download ICS": [
         "Unduh ICS"
       ],
@@ -2190,9 +2184,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini. Meskipun demikian, Anda dapat memperoleh diskon ${ discountPercentage } untuk ${ plan.Title } pada saat Anda berlangganan selama ${ cycle } bulan."
       ]
@@ -2864,6 +2855,9 @@
     "collider_2025: Info": {
       "Access to advanced AI models": [
         "Akses ke berbagai model AI lanjutan"
+      ],
+      "Add ${ LUMO_APP_NAME }": [
+        "Tambah ${ LUMO_APP_NAME }"
       ],
       "AI assistant that respects your privacy": [
         "Asisten AI yang menghargai privasi Anda"
@@ -4655,14 +4649,6 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 atau Windows 32-bit (ARM64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb untuk Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm untuk Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -7217,14 +7203,6 @@
         "Masa uji coba aplikasi desktop Anda telah berakhir"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } di App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } di Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Teruskan"
@@ -8756,9 +8734,6 @@
       "Disabled on ${ boldValue }": [
         "Dinonaktifkan pada ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Menonaktifkan autentikasi dua faktor akan membuat akun Anda kurang aman. Hanya lanjutkan jika benar-benar diperlukan."
-      ],
       "Discount": [
         "Diskon"
       ],
@@ -9023,9 +8998,6 @@
       "Failed to fetch logs.": [
         "Log gagal diperoleh."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Cepat dan terfokus. Email dan kalender, langsung di desktop Anda."
-      ],
       "Featured in": [
         "Terliput di"
       ],
@@ -9193,9 +9165,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Apabila Anda memiliki kode hadiah, masukkan kode Anda pada kolom di bawah ini untuk menerapkan diskon Anda."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Apabila Anda belum pernah menggunakan autentikasi dua faktor sebelumnya, kami sangat menyarankan Anda untuk ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Apabila Anda kehilangan kata sandi Anda dan perlu untuk memulihkan akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountRecovery } yang aktif."
@@ -9514,9 +9483,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Kelola preferensi notifikasi email Anda untuk ${ DOCS_APP_NAME }."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Masukkan informasi ini secara manual ke perangkat autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -9899,9 +9865,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Hubungi kami untuk bantuan seputar segala sesuatunya yang berhubungan dengan ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "baca panduan autentikasi dua faktor kami terlebih dahulu"
-      ],
       "Recently used servers:": [
         "Server yang baru digunakan:"
       ],
@@ -9985,9 +9948,6 @@
       ],
       "Scan QR code instead": [
         "Pindai kode QR"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Pindai kode berikut dengan perangkat autentikasi dua faktor yang Anda miliki untuk mengatur akun Anda. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integrasi SCIM dinonaktifkan"
@@ -10439,9 +10399,6 @@
       "This will wipe all logs for your organization members.": [
         "Tindakan ini akan menghapus seluruh log untuk anggota organisasi Anda."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Wisaya ini akan mengaktifkan Autentikasi Dua Faktor (2FA) di akun ${ BRAND_NAME } Anda. Autentikasi dua faktor akan membuat akun ${ BRAND_NAME_TWO } Anda lebih aman, jadi kami menyarankan untuk mengaktifkannya."
-      ],
       "to ${ product } Business": [
         "ke ${ product } Business"
       ],
@@ -10531,12 +10488,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Coba ${ productName } tanpa risiko apa pun - apabila karena satu dan lain hal Anda berubah pikiran, uang Anda akan dikembalikan sepenuhnya. Tanpa ada basa-basi."
-      ],
-      "Two-factor authentication disabled": [
-        "Autentikasi dua faktor dinonaktifkan"
-      ],
-      "Two-factor authentication enabled": [
-        "Autentikasi dua faktor diaktifkan"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Mode kata sandi ganda mengharuskan Anda untuk mengatur dua kata sandi: satu untuk masuk ke akun Anda, dan satu untuk mendekripsi data Anda. (Fitur lanjutan)"
@@ -11965,9 +11916,6 @@
       "Backup password": [
         "Kata sandi cadangan"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -12708,9 +12656,6 @@
       ],
       "Second password": [
         "Kata sandi kedua"
-      ],
-      "Select Linux package format": [
-        "Pilih format paket Linux"
       ],
       "Select Linux platform": [
         "Pilih platform Linux"
@@ -15862,6 +15807,11 @@
         "Tingkatkan paket saya"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Lanjut ke ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Terenkripsi end-to-end"
@@ -17284,9 +17234,6 @@
       "Admin": [
         "Admin"
       ],
-      "Primary admin": [
-        "Admin utama"
-      ],
       "User": [
         "Pengguna"
       ]
@@ -17498,6 +17445,9 @@
       ],
       "Your account is secure.": [
         "Akun Anda aman."
+      ],
+      "Your email is set": [
+        "Email Anda telah siap"
       ],
       "Your recovery email": [
         "Email pemulihan Anda"
@@ -20871,9 +20821,6 @@
       "Enhance security with 2FA": [
         "Tingkatkan keamanan dengan 2FA"
       ],
-      "Enter 2FA code": [
-        "Masukkan kode 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Masukkan endpoint ke penyedia identitas Anda"
       ],
@@ -20930,15 +20877,6 @@
       ],
       "Folders and labels": [
         "Folder dan label"
-      ],
-      "For Linux": [
-        "Untuk Linux"
-      ],
-      "For macOS": [
-        "Untuk macOS"
-      ],
-      "For Windows": [
-        "Untuk Windows"
       ],
       "Forgot password": [
         "Lupa kata sandi"
@@ -21443,9 +21381,6 @@
       ],
       "Set up email forwarding": [
         "Atur penerusan email"
-      ],
-      "Set up two-factor authentication": [
-        "Atur autentikasi dua faktor"
       ],
       "Set up your family account": [
         "Siapkan akun keluarga Anda"
@@ -22523,11 +22458,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administrator tidak dapat mengakses data pengguna privat"
+      ],
+      "Authenticator app": [
+        "Aplikasi autentikator"
       ],
       "Inactive": [
         "Tidak aktif"

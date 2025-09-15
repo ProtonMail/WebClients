@@ -1378,6 +1378,65 @@
         "Stai per visitare un sito web esterno:"
       ]
     },
+    "collider_2025: Invite": {
+      "Email address is not valid": [
+        "Indirizzo email non valido"
+      ],
+      "Email address is required": [
+        "Indirizzo email richiesto"
+      ]
+    },
+    "collider_2025: Invite Button": {
+      "Close": [
+        "Chiudi"
+      ],
+      "Invite friends": [
+        "Invita degli amici"
+      ],
+      "Maybe later": [
+        "Forse più tardi"
+      ],
+      "Send invitation": [
+        "Spedisci l'invito"
+      ]
+    },
+    "collider_2025: Invite Email Placeholder": {
+      "Your friend's email": [
+        "L'email del tuo amico"
+      ]
+    },
+    "collider_2025: Invite Info": {
+      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
+        "Conosci qualcuno che trarrebbe beneficio da un'AI attenta alla privacy? Invitalo a entrare nella lista d'attesa di ${ LUMO_SHORT_APP_NAME }. Ti rimangono ${ remainingInvitesText } inviti."
+      ],
+      "You have ${ remainingInvitesText } invitations remaining.": [
+        "Ti rimangono ${ remainingInvitesText } inviti."
+      ]
+    },
+    "collider_2025: Invite Sent": {
+      "Invitation sent": [
+        "Invito spedito"
+      ]
+    },
+    "collider_2025: Invite Success": {
+      "Invite sent!": [
+        "Invito spedito!"
+      ],
+      "No invites left  ": [
+        "Nessun invito rimasto  "
+      ],
+      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
+        "Grazie per aver aiutato gli altri a scoprire ${ LUMO_SHORT_APP_NAME }! Se saranno disponibili altri inviti, ti faremo sapere."
+      ],
+      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
+        "Abbiamo invitato ${ emailText }. Riceverà istruzioni su come entrare in lista d'attesa."
+      ]
+    },
+    "collider_2025: Invite Title": {
+      "Invite friends to experience ${ LUMO_APP_NAME }": [
+        "Invita amici a provare ${ LUMO_APP_NAME }"
+      ]
+    },
     "collider_2025: Label": {
       "Did not follow instructions": [
         "Non ha seguito le istruzioni"
@@ -5857,9 +5916,6 @@
       "Enhance security with 2FA": [
         "Migliora la sicurezza con l'autenticazione a due fattori 2FA"
       ],
-      "Enter 2FA code": [
-        "Inserisci il codice di autenticazione a due fattori"
-      ],
       "Enter your password": [
         "Inserisci la tua password"
       ],
@@ -5940,6 +5996,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Autenticazione a due fattori"
       ],
       "Upgrade complete!": [
         "Aggiornamento completato!"

@@ -2220,9 +2220,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz.",
         "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz."
@@ -8634,6 +8631,12 @@
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
+      "Authenticator app 2FA disabled": [
+        "Uygulama ile iki adımlı doğrulama kapatıldı"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Kimlik doğrulama uygulaması ile iki adımlı doğrulama açıldı"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Otomatik yanıt, her ay seçilmiş başlangıç ve bitiş saatleri arasında açılır."
       ],
@@ -8929,8 +8932,8 @@
       "Disabled on ${ boldValue }": [
         "${ boldValue } zamanında kapatıldı"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "İki adımlı doğrulamayı kapatmak hesabınızın güvenliğini azaltacak. Bu işlemi yalnızca gerçekten gerekliyse yapın."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Kimlik doğrulama uygulaması ile iki adımlı doğrulamayı kapatmak hesabınızın güvenliğini azaltır. Bu işlemi yalnızca gerçekten gerekiyorsa yapın."
       ],
       "Discount": [
         "İndirim"
@@ -9368,9 +9371,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "İki adımlı kimlik doğrulamayı daha önce kullanmadıysanız, kesinlikle ${ guideButton }."
-      ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Parolanızı kaybederseniz ve ${ boldImperative } hesabınızı kurtarmanız gerekirse, bir ${ boldAccountRecovery } olması gerekir."
       ],
@@ -9691,8 +9691,8 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "${ DOCS_APP_NAME } için e-posta bildirimi tercihlerinizi ayarlayın."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Hesabınızı kurmak için bu bilgileri iki adımlı doğrulama aygıtınıza el ile yazın. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Hesabınızı ayarlamak için bu bilgileri kimlik doğrulama uygulamanıza el ile yazın. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logosu"
@@ -10080,9 +10080,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "${ BRAND_NAME } ile ilgili her konuda yardım almak için bizimle görüşün."
       ],
-      "read our two-factor authentication guide first": [
-        "önce iki adımlı doğrulama rehberimizi okuyun"
-      ],
       "Recently used servers:": [
         "Son kullanılan sunucular:"
       ],
@@ -10167,8 +10164,8 @@
       "Scan QR code instead": [
         "Bunun yerine QR kodunu tarayın"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Hesabınızı kurmak için bu kodu iki adımlı doğrulama aygıtınızla tarayın. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Hesabınızı kurmak için kimlik doğrulama uygulamanızla bu kodu tarayın. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM bütünleştirmesi kullanılmıyor"
@@ -10287,9 +10284,6 @@
       ],
       "Signed up": [
         "Hesap açtı"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Güvenlik anahtarı ile oturum açılması henüz tüm uygulamalarda desteklenmiyor. Tek kullanımlık parola olmadan, bazı uygulamalarda oturum açılamayabilir."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sadık bir kullanıcı olduğunuz için, hesabınızda yeni özellikler eklendi."
@@ -10629,9 +10623,6 @@
       "This will wipe all logs for your organization members.": [
         "Bu işlem, kuruluşunuzun üyelerine ait tüm günlükleri siler."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Bu yardımcı, ${ BRAND_NAME } hesabınızda iki adımlı doğrulamayı (2FA) açar. ${ BRAND_NAME_TWO } hesabınızı daha güvenli kılacağından iki adımlı doğrulamayı açmanızı öneririz."
-      ],
       "to ${ product } Business": [
         "${ product } Business"
       ],
@@ -10721,12 +10712,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "${ productName } uygulamasını risk almadan deneyin. Herhangi bir nedenle fikrinizi değiştirirseniz tam geri ödeme alabilirsiniz. Herhangi bir soru sorulmaz."
-      ],
-      "Two-factor authentication disabled": [
-        "İki adımlı doğrulama kapatıldı"
-      ],
-      "Two-factor authentication enabled": [
-        "İki adımlı doğrulama açıldı"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "İki parola kipi açıldığında iki ayrı parola gerekir: Biri hesabınızda oturum açmak için diğeri verilerinizin şifresini çözmek için kullanılır. (Gelişmiş)"
@@ -11051,6 +11036,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Kullanıma almadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Bir kimlik doğrulama uygulaması olmadan, henüz güvenlik anahtarlarını desteklemeyen ${ BRAND_NAME } uygulamalarında oturum açamazsınız."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -16123,6 +16111,11 @@
         "Tarifemi yükselt"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "${ appName } ile ilerle"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Uçtan uca şifrelenmiş"
@@ -16627,6 +16620,9 @@
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
       ],
+      "Offer unavailable": [
+        "Teklif kullanılamıyor"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
@@ -16638,6 +16634,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor."
       ],
       "Taxes": [
         "Vergiler"
@@ -17647,16 +17646,19 @@
       "Admin": [
         "Yönetici"
       ],
-      "Primary admin": [
-        "Birincil yönetici"
-      ],
       "User": [
         "Kullanıcı"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " Hesabınızda olabilecek en yüksek güvenliği sağlamak için **telefon ile kurtarma özelliğini kapatın**."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " Parolanızı unutursanız hesabınıza yeniden erişebilmek için **Telefon ile kurtarmayı açın**."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } bu adresi, size hesap güvenliğinizle ilgili bildirimler göndermek için kullanır."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "Parolanızı sıfırladığınızda ${ BRAND_NAME } e-posta ile bir sıfırlama kodu göndermek için bu adresi kullanacak."
@@ -17667,11 +17669,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "Verilerinizi kurtarabileceğinizden emin olmak için ${ enableDeviceRecovery }."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "Hesabınızda olabilecek en yüksek güvenliği sağlamak için **e-posta ile hesap sıfırlamayı kapatın**."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza yeniden erişebilmek için **E-posta ile kurtarmayı açın**."
       ],
+      "Account reset by email has been disabled": [
+        "E-posta ile hesap sıfırlama kapatıldı"
+      ],
+      "Account reset by phone has been disabled": [
+        "Telefon ile hesap sıfırlama kapatıldı"
+      ],
       "Account safety review": [
         "Hesap güvenliği değerlendirmesi"
+      ],
+      "Add a email address": [
+        "E-posta adresi ekle"
+      ],
+      "Add a phone number": [
+        "Telefon numarası ekle"
       ],
       "Add a recovery email": [
         "Bir kurtarma e-posta adresi ekleyin"
@@ -17681,6 +17698,9 @@
       ],
       "Add a recovery phone number": [
         "Bir kurtarma telefonu numarası ekleyin"
+      ],
+      "Add an email": [
+        "E-posta ekle"
       ],
       "Back to Safety Review": [
         "Güvenlik değerlendirmesine dön"
@@ -17703,11 +17723,23 @@
       "Device-based recovery enabled": [
         "Aygıt ile kurtarma açık"
       ],
+      "Disable account reset by email": [
+        "E-posta ile hesap sıfırlamayı kapatın"
+      ],
+      "Disable recovery by email": [
+        "E-posta ile kurtarmayı kapat"
+      ],
+      "Disable recovery by phone": [
+        "Telefon ile hesap kurtarmayı kapatın"
+      ],
       "Download ${ size }": [
         "${ size } indir"
       ],
       "Download your Recovery Kit": [
         "Kurtarma paketinizi indirin"
+      ],
+      "Email address": [
+        "E-posta adresi"
       ],
       "Enable device-based recovery": [
         "Aygıt ile kurtarmayı açın"
@@ -17772,6 +17804,9 @@
       "There was an error generating your Recovery Kit": [
         "Kurtarma paketiniz oluşturulurken bir sorun çıktı"
       ],
+      "There was an error verifying your email": [
+        "E-postanız doğrulanırken bir sorun çıktı"
+      ],
       "There was an error verifying your recovery email": [
         "Kurtarma e-posta adresiniz doğrulanırken bir sorun çıktı"
       ],
@@ -17780,6 +17815,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         "güvenilen bir aygıtla oturum açtığınızda verilerinizi otomatik olarak kurtarmak için"
+      ],
+      "to ensure highest possible security of your account": [
+        "hesabınızda olabilecek en yüksek güvenliği sağlamak için"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "E-posta adresinin size ait olduğundan emin olmak için ${ boldEmail } adresine bir doğrulama kodu gönderdik."
@@ -17793,6 +17831,9 @@
       "to recover your account if you're ever locked out": [
         "kilitlenirse hesabınızı kurtarmak için"
       ],
+      "To stay in touch": [
+        "İletişimde kalmak için"
+      ],
       "Update your Recovery Kit": [
         "Kurtarma paketinizi güncelleyin"
       ],
@@ -17802,6 +17843,12 @@
       "Verify": [
         "Doğrula"
       ],
+      "Verify your email address": [
+        "E-posta adresinizi doğrulayın"
+      ],
+      "Verify your phone number": [
+        "Telefon numaranızı doğrulayın"
+      ],
       "Verify your recovery email address": [
         "Kurtarma e-posta adresinizi doğrulayın"
       ],
@@ -17810,6 +17857,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Kurtarma paketiniz oluşturulurken bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin ya da sorun sürüyorsa destek ekibimizle görüşün."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "E-posta adresiniz doğrulanırken bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin ya da sorun sürüyorsa destek ekibimizle görüşün."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Kurtarma e-posta adresiniz doğrulanırken bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin ya da sorun sürüyorsa destek ekibimizle görüşün."
@@ -17832,6 +17882,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Parolanızı sıfırlarsanız hesabınızı tümüyle kurtarabilmek için bu kurtarma paketindeki kurtarma ifadesini kullanabilirsiniz. Bu nedenle onu güvenli bir yerde sakladığınızdan emin olun."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Parolanızı unutursanız hesabınıza yeniden erişebilmek için e-posta adresinizi kullanabilirsiniz."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Parolanızı unutursanız hesabınıza yeniden erişebilmek için e-posta ile kurtarmayı kullanabilirsiniz."
       ],
@@ -17841,11 +17894,26 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Daha önce bir kurtarma paketi indirmişsiniz. Yeni bir paket indirdiğinizde **eskisi kullanımdan kaldırılır**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "Hesabınızın güvenliğini artırmak için yapabileceğiniz işlemler var."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "Hesabınızı korumak için yapabileceğiniz işlemler var."
+      ],
       "You have recommended actions.": [
         "Yapmanız önerilen işlemler var."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Bundan sonra bu adresi hesabınızı sıfırlamak için kullanamayacaksınız."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Bundan sonra bu telefon numarasını hesabınızı sıfırlamak için kullanamayacaksınız."
+      ],
       "Your account and data can be recovered": [
         "Hesap verileriniz kurtarılabilir"
+      ],
+      "Your account and data can be recovered.": [
+        "Hesabınız ve verileriniz kurtarılabilir."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Hesabınız ve verileriniz kurtarılabilir. Kurtarma yöntemlerinizin erişilebilir olduğundan emin olun."
@@ -17861,6 +17929,12 @@
       ],
       "Your account is secure.": [
         "Hesabınız güvende."
+      ],
+      "Your email address is:": [
+        "E-posta adresiniz:"
+      ],
+      "Your email is set": [
+        "E-posta adresiniz ayarlandı"
       ],
       "Your recovery email": [
         "Kurtarma e-posta adresiniz"
@@ -21192,6 +21266,9 @@
       "Disable two-factor authentication": [
         "İki adımlı doğrulamayı kapat"
       ],
+      "Disable two-factor authentication app?": [
+        "Uygulama ile iki adımlı doğrulama kapatılsın mı?"
+      ],
       "Disable two-factor authentication?": [
         "İki adımlı doğrulama kapatılsın mı?"
       ],
@@ -21314,9 +21391,6 @@
       ],
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
-      ],
-      "Enter 2FA code": [
-        "İki adımlı doğrulama kodunu yazın"
       ],
       "Enter endpoints into your identity provider": [
         "Kimlik hizmeti sağlayıcınızın uç noktalarını ekleyin"
@@ -21887,11 +21961,11 @@
       "Set up a recovery method": [
         "Bir kurtarma yöntemi ayarlayın"
       ],
+      "Set up authenticator app": [
+        "Kimlik doğrulama uygulamasını ayarlayın"
+      ],
       "Set up email forwarding": [
         "E-posta iletmeyi ayarlayın"
-      ],
-      "Set up two-factor authentication": [
-        "İki adımlı doğrulamayı ayarla"
       ],
       "Set up your family account": [
         "Aile hesabınızı ayarlayın"
@@ -22972,11 +23046,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "İki adımlı doğrulama"
-      ],
       "Administrators can't access the data of private users": [
         "Yöneticiler korunan kullanıcıların verilerine erişemez"
+      ],
+      "Authenticator app": [
+        "Kimlik doğrulama uygulaması"
       ],
       "Inactive": [
         "Etkin değil"
@@ -22995,6 +23069,9 @@
       ],
       "Private": [
         "Korunan"
+      ],
+      "Security key": [
+        "Güvenlik anahtarı"
       ],
       "SSO": [
         "Tek oturum açma"

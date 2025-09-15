@@ -2220,9 +2220,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monat anmeldest.",
         "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar. Du kannst aber ${ discountPercentage } auf ${ plan.Title } erhalten, wenn du dich für ${ cycle } Monate anmeldest."
@@ -8634,6 +8631,12 @@
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
+      "Authenticator app 2FA disabled": [
+        "2FA-Authentifizierungs-App deaktiviert"
+      ],
+      "Authenticator app 2FA enabled": [
+        "2FA-Authentifizierungs-App aktiviert"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatische Antworten sind jeden Monat zwischen der gewählten Start- und Endzeit aktiv."
       ],
@@ -8929,8 +8932,8 @@
       "Disabled on ${ boldValue }": [
         "Deaktiviert am ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Wenn du die Zwei-Faktor-Authentifizierung deaktivierst, wird dein Konto weniger sicher. Fahre nur fort, wenn es unbedingt notwendig ist."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Das Deaktivieren der 2FA-Authentifizierungs-App wird dein Konto weniger sicher machen. Fahre nur fort, wenn es absolut notwendig ist."
       ],
       "Discount": [
         "Rabatt"
@@ -9198,7 +9201,7 @@
         "Protokolle konnten nicht abgerufen werden."
       ],
       "Fast and focused. Email and calendar, right on your desktop.": [
-        "Schnell und konzentriert. E-Mail und Kalender, direkt auf deinem Desktop."
+        "Schnell und konzentriert. E-Mail und Kalender direkt auf deinem Desktop."
       ],
       "Featured in": [
         "Vorgestellt in"
@@ -9367,9 +9370,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Wenn du einen Geschenkgutschein hast, gib den Code unten ein, um deinen Rabatt einzulösen."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Wenn du Zwei-Faktor-Authentifizierung noch nie zuvor verwendet hast, empfehlen wir dir dringend ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Wenn du dein Passwort verlierst und dein Konto wiederherstellen musst, ist es ${ boldImperative } wichtig, dass du eine ${ boldAccountRecovery } eingerichtet hast."
@@ -9691,8 +9691,8 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "E-Mail-Benachrichtigung für ${ DOCS_APP_NAME } verwalten."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Gib diese Informationen manuell in dein Zwei‐Faktor‐Authentifizierungsgerät ein, um dein Konto einzurichten. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Gib diese Informationen manuell in deine Authentifizierungs-App ein, um dein Konto einzurichten. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode Logo"
@@ -10080,9 +10080,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Wende dich an uns, wenn du Hilfe zu ${ BRAND_NAME } benötigst."
       ],
-      "read our two-factor authentication guide first": [
-        "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
-      ],
       "Recently used servers:": [
         "Zuletzt genutzte Server:"
       ],
@@ -10167,8 +10164,8 @@
       "Scan QR code instead": [
         "Stattdessen QR-Code scannen"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Scanne diesen Code mit deinem Zwei-Faktor-Authentifizierungsgerät, um dein Konto einzurichten. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Scanne diesen Code mit deiner Authentifizierungs-App, um dein Konto einzurichten. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-Integration deaktiviert"
@@ -10287,9 +10284,6 @@
       ],
       "Signed up": [
         "Registriert"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Das Anmelden mit einem Sicherheitsschlüssel wird noch nicht in allen Anwendungen unterstützt. Ohne TOTP kann das Anmelden bei einigen Anwendungen fehlschlagen."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
@@ -10629,9 +10623,6 @@
       "This will wipe all logs for your organization members.": [
         "Dadurch werden alle Protokolle für die Mitglieder deiner Organisation gelöscht."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Dieser Wizard wird die Zwei-Faktor-Authentifizierung (2FA) auf deinem ${ BRAND_NAME }-Konto aktivieren. Zwei-Faktor-Authentifizierung macht dein ${ BRAND_NAME_TWO }-Konto sicherer, wir empfehlen deshalb, sie zu aktivieren."
-      ],
       "to ${ product } Business": [
         "bei ${ product } Business"
       ],
@@ -10721,12 +10712,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Teste ${ productName } völlig risikofrei - wenn du aus irgendeinem Grund deine Meinung änderst, erhältst du eine volle Rückerstattung. Es werden keine Fragen gestellt."
-      ],
-      "Two-factor authentication disabled": [
-        "Zwei‐Faktor‐Authentifizierung deaktiviert"
-      ],
-      "Two-factor authentication enabled": [
-        "Zwei-Faktor-Authentifizierung aktiviert"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Der Modus Zwei-Passwort-Modus erfordert zwei Passwörter: eines zum Anmelden in Ihrem Konto und eines zum Entschlüsseln deines Postfachs. (Erweitert)"
@@ -11051,6 +11036,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Ohne Aktivierung ist es dir nicht möglich, neue Benutzer anzulegen, E-Mail-Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Ohne eine Authentifizierungs-App kannst du dich nicht bei den ${ BRAND_NAME }-Anwendungen anmelden, die noch keine Sicherheitsschlüssel unterstützen."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -16123,6 +16111,11 @@
         "Abonnement upgraden"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Weiter zu ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Ende-zu-Ende-verschlüsselt"
@@ -16627,6 +16620,9 @@
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
+      "Offer unavailable": [
+        "Angebot nicht verfügbar"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
       ],
@@ -16638,6 +16634,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Verlängert sich zu ${ renewPriceStr }, jederzeit kündbar."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement leider nicht verfügbar."
       ],
       "Taxes": [
         "Steuern"
@@ -17647,16 +17646,19 @@
       "Admin": [
         "Administrator"
       ],
-      "Primary admin": [
-        "Hauptadministrator"
-      ],
       "User": [
         "Benutzer"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **Deaktiviere die Wiederherstellung per Telefon**, um die größtmögliche Sicherheit deines Kontos zu gewährleisten."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Aktiviere die Wiederherstellung per Mobiltelefon**, um den Zugang zu deinem Konto wiederzuerlangen, wenn du dein Passwort vergisst."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } wird diese E-Mail-Adresse nutzen, um dich bezüglich deiner Kontosicherheit auf dem Laufenden zu halten."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "Wenn du dein Passwort zurücksetzt, nutzt ${ BRAND_NAME } diese Adresse, um einen Wiederherstellungscode per E-Mail zuzusenden."
@@ -17667,11 +17669,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery }, um sicherzustellen, dass deine Daten wiederhergestellt werden können."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Deaktiviere das Zurücksetzen des Kontos per E-Mail**, um die größtmögliche Sicherheit deines Kontos zu gewährleisten."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Aktiviere die Wiederherstellung per E-Mail**, um wieder Zugang zu deinem Konto zu erhalten, wenn du dein Passwort vergessen hast."
       ],
+      "Account reset by email has been disabled": [
+        "Wiederherstellung des Kontos per E-Mail wurde deaktiviert."
+      ],
+      "Account reset by phone has been disabled": [
+        "Wiederherstellung des Kontos per Telefon wurde deaktiviert."
+      ],
       "Account safety review": [
         "Überprüfung der Kontosicherheit"
+      ],
+      "Add a email address": [
+        "E-Mail-Adresse hinzufügen"
+      ],
+      "Add a phone number": [
+        "Telefonnummer hinzufügen"
       ],
       "Add a recovery email": [
         "Wiederherstellungs-E-Mail-Adresse hinzufügen"
@@ -17681,6 +17698,9 @@
       ],
       "Add a recovery phone number": [
         "Füge eine Wiederherstellungs-Telefonnummer hinzu"
+      ],
+      "Add an email": [
+        "E-Mail-Adresse hinzufügen"
       ],
       "Back to Safety Review": [
         "Zurück zur Sicherheitsüberprüfung"
@@ -17703,11 +17723,23 @@
       "Device-based recovery enabled": [
         "Gerätebasierte Wiederherstellung aktiviert"
       ],
+      "Disable account reset by email": [
+        "Kontozurücksetzung per E-Mail deaktivieren"
+      ],
+      "Disable recovery by email": [
+        "Wiederherstellung per E-Mail deaktivieren"
+      ],
+      "Disable recovery by phone": [
+        "Deaktiviere die Wiederherstellung per Telefon"
+      ],
       "Download ${ size }": [
         "${ size } herunterladen"
       ],
       "Download your Recovery Kit": [
         "Dein Wiederherstellungskit herunterladen"
+      ],
+      "Email address": [
+        "E-Mail-Adresse"
       ],
       "Enable device-based recovery": [
         "Aktiviere die gerätebasierte Wiederherstellung"
@@ -17772,6 +17804,9 @@
       "There was an error generating your Recovery Kit": [
         "Fehler beim Generieren deines Wiederherstellungskits."
       ],
+      "There was an error verifying your email": [
+        "Fehler beim Verifizieren deiner E-Mail-Adresse."
+      ],
       "There was an error verifying your recovery email": [
         "Fehler beim Verifizieren deiner Wiederherstellungs-E-Mail-Adresse."
       ],
@@ -17780,6 +17815,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         ", um deine Daten automatisch wiederherzustellen, wenn du dich bei einem vertrauenswürdigen Gerät anmeldest."
+      ],
+      "to ensure highest possible security of your account": [
+        "um die größtmögliche Sicherheit deines Kontos zu gewährleisten"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Um sicherzugehen, dass es sich um deine E-Mail-Adresse handelt, gib den an ${ boldEmail } gesendeten Verifizierungscode ein."
@@ -17793,6 +17831,9 @@
       "to recover your account if you're ever locked out": [
         ", um dein Konto wiederherzustellen, falls du jemals ausgesperrt wirst."
       ],
+      "To stay in touch": [
+        "In Kontakt bleiben"
+      ],
       "Update your Recovery Kit": [
         "Aktualisiere dein Wiederherstellungskit"
       ],
@@ -17802,6 +17843,12 @@
       "Verify": [
         "Verifizieren"
       ],
+      "Verify your email address": [
+        "E-Mail-Adresse bestätigen"
+      ],
+      "Verify your phone number": [
+        "Deine Telefonnummer bestätigen"
+      ],
       "Verify your recovery email address": [
         "Verifiziere deine Wiederherstellungs-E-Mail-Adresse"
       ],
@@ -17810,6 +17857,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Bei der Erstellung deines Wiederherstellungskits ist ein Fehler aufgetreten. Bitte versuche es später noch einmal, oder wende dich an den Support, wenn das Problem weiterhin besteht."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "Bei der Verifizierung deiner E-Mail-Adresse ist ein Fehler aufgetreten. Bitte versuche es später noch einmal oder kontaktiere den Support, wenn das Problem weiterhin besteht."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Bei der Verifizierung deiner Wiederherstellungs-E-Mail-Adresse ist ein Fehler aufgetreten. Bitte versuche es später noch einmal oder kontaktiere den Support, wenn das Problem weiterhin besteht."
@@ -17832,6 +17882,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Du kannst die Wiederherstellungsphrase in diesem Wiederherstellungskit verwenden, um dein Konto vollständig wiederherzustellen, wenn du dein Passwort zurücksetzst."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Du kannst deine E-Mail verwenden, um wieder Zugang zu deinem Konto zu erhalten, wenn du dein Passwort vergessen hast."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Du kannst deine Wiederherstellungs-E-Mail verwenden, um wieder Zugang zu deinem Konto zu erhalten, wenn du dein Passwort vergessen hast."
       ],
@@ -17841,10 +17894,25 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Du hast bereits ein Wiederherstellungskit heruntergeladen. Wenn du ein neues herunterlädst, wird das alte Kit **deaktiviert**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "Es gibt empfohlene Maßnahmen, um dein Konto weiter zu schützen."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "Es gibt empfohlene Maßnahmen, um dein Konto zu schützen."
+      ],
       "You have recommended actions.": [
         "Es gibt empfohlene Maßnahmen."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Du wirst diese Adresse nicht mehr nutzen können, um dein Konto zurückzusetzen."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Du wirst diese Telefonnummer nicht mehr nutzen können, um dein Konto wiederherzustellen."
+      ],
       "Your account and data can be recovered": [
+        "Dein Konto und deine Daten können wiederhergestellt werden."
+      ],
+      "Your account and data can be recovered.": [
         "Dein Konto und deine Daten können wiederhergestellt werden."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
@@ -17861,6 +17929,12 @@
       ],
       "Your account is secure.": [
         "Dein Konto ist sicher"
+      ],
+      "Your email address is:": [
+        "Deine E-Mail-Adresse ist:"
+      ],
+      "Your email is set": [
+        "Deine E-Mail-Adresse ist eingerichtet"
       ],
       "Your recovery email": [
         "Deine Wiederherstellungs-E-Mail-Adresse"
@@ -21192,6 +21266,9 @@
       "Disable two-factor authentication": [
         "Zwei-Faktor-Authentifizierung deaktivieren"
       ],
+      "Disable two-factor authentication app?": [
+        "Zwei-Faktor-Authentifizierungs-App deaktivieren?"
+      ],
       "Disable two-factor authentication?": [
         "Zwei-Faktor-Authentifizierung deaktivieren?"
       ],
@@ -21314,9 +21391,6 @@
       ],
       "Enhance security with 2FA": [
         "Verbessere die Sicherheit mit 2FA"
-      ],
-      "Enter 2FA code": [
-        "2FA Code eingeben"
       ],
       "Enter endpoints into your identity provider": [
         "Trage die Endpunkte bei deinem Identitätsanbieter ein."
@@ -21887,11 +21961,11 @@
       "Set up a recovery method": [
         "Wiederherstellungsmethode einrichten"
       ],
+      "Set up authenticator app": [
+        "Authentifizierungs-App einrichten"
+      ],
       "Set up email forwarding": [
         "E-Mail-Weiterleitung einrichten"
-      ],
-      "Set up two-factor authentication": [
-        "Zwei‐Faktor‐Authentifizierung einrichten"
       ],
       "Set up your family account": [
         "Richte dein Family-Konto ein"
@@ -22972,11 +23046,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratoren können nicht auf die Daten von privaten Benutzern zugreifen."
+      ],
+      "Authenticator app": [
+        "Authentifizierungs-App"
       ],
       "Inactive": [
         "Inaktiv"
@@ -22995,6 +23069,9 @@
       ],
       "Private": [
         "Privat"
+      ],
+      "Security key": [
+        "Sicherheitsschlüssel"
       ],
       "SSO": [
         "SSO"

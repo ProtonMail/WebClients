@@ -553,12 +553,6 @@
       "Download CSV sample": [
         "Pobierz przykładowy plik CSV"
       ],
-      "Download for macOS": [
-        "Pobierz na macOS"
-      ],
-      "Download for Windows": [
-        "Pobierz na Windowsa"
-      ],
       "Download ICS": [
         "Pobierz plik ICS"
       ],
@@ -2187,9 +2181,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
         "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
@@ -4631,14 +4622,6 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8 / 8.1 / 7 lub Windows 32-bit (ARM64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb dla Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm dla Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -7226,14 +7209,6 @@
         "Darmowa wersja próbna aplikacji desktopowej zakończyła się"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } w App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } w Google Play"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Automatyczne przekierowanie"
@@ -8870,9 +8845,6 @@
       "Disabled countries": [
         "Wyłączone kraje"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Wyłączenie uwierzytelniania dwustopniowego obniży bezpieczeństwo konta. Zrób to tylko wtedy, jeśli jest to absolutnie konieczne."
-      ],
       "Discount": [
         "Rabat"
       ],
@@ -9137,9 +9109,6 @@
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Szybkość i skupienie. Poczta i kalendarz na pulpicie."
-      ],
       "Featured in": [
         "Wyróżniony w"
       ],
@@ -9301,9 +9270,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Jeśli posiadasz kod podarunkowy, wpisz go poniżej."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Jeśli nigdy wcześniej nie korzystałeś z uwierzytelniania dwustopniowego, zdecydowanie zalecamy ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Jeśli zapomnisz hasła, ${ boldAccountRecovery } ${ boldImperative }, aby odzyskać konto."
@@ -9625,9 +9591,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Zarządzaj powiadomieniami e-mail dla ${ DOCS_APP_NAME }"
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Wpisz ręcznie te informacje do urządzenia uwierzytelniania dwustopniowego. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -10019,9 +9982,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Skontaktuj się z nami, aby uzyskać pomoc ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "wcześniejsze zapoznanie się z naszym przewodnikiem"
-      ],
       "Recently used servers:": [
         "Ostatnio używane serwery:"
       ],
@@ -10105,9 +10065,6 @@
       ],
       "Scan QR code instead": [
         "Zamiast tego zeskanuj kod QR"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Zeskanuj kod QR za pomocą aplikacji uwierzytelniania dwustopniowego. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integracja SCIM została wyłączona"
@@ -10577,9 +10534,6 @@
       "This will wipe all logs for your organization members.": [
         "Spowoduje to usunięcie wszystkich logów użytkowników organizacji."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie ${ BRAND_NAME }. Ta funkcja poprawi bezpieczeństwo Twojego konta ${ BRAND_NAME_TWO }, dlatego zalecamy włączenie tej opcji."
-      ],
       "to ${ product } Business": [
         "w ${ product } Business"
       ],
@@ -10669,12 +10623,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Wypróbuj ${ productName } bez ryzyka — jeśli zmienisz zdanie, otrzymasz pełny zwrot pieniędzy. Bez zadawania pytań."
-      ],
-      "Two-factor authentication disabled": [
-        "Uwierzytelnianie dwustopniowe zostało wyłączone"
-      ],
-      "Two-factor authentication enabled": [
-        "Uwierzytelnianie dwustopniowe zostało włączone"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tryb podwójnego hasła wymaga podania dwóch haseł: jedno do zalogowania się, drugie do odszyfrowania danych. (Opcja zaawansowana)"
@@ -12151,9 +12099,6 @@
       "Backup password": [
         "Hasło zapasowe"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
       ],
@@ -12894,9 +12839,6 @@
       ],
       "Second password": [
         "Drugie hasło"
-      ],
-      "Select Linux package format": [
-        "Wybierz format pakietu Linux"
       ],
       "Select Linux platform": [
         "Wybierz platformę Linux"
@@ -17668,9 +17610,6 @@
       "Admin": [
         "Administrator"
       ],
-      "Primary admin": [
-        "Główny administrator"
-      ],
       "User": [
         "Użytkownik"
       ]
@@ -20740,26 +20679,26 @@
       "${ ceilDays } day": [
         "${ ceilDays } dzień",
         "${ ceilDays } dni",
-        "${ ceilDays } dnia",
+        "${ ceilDays } dni",
         "${ ceilDays } dnia"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } godzina",
         "${ ceilHours } godziny",
         "${ ceilHours } godzin",
-        "${ ceilHours } godzin"
+        "${ ceilHours } godziny"
       ],
       "${ ceilMinutes } minute": [
         "${ ceilMinutes } minuta",
         "${ ceilMinutes } minuty",
         "${ ceilMinutes } minut",
-        "${ ceilMinutes } minut"
+        "${ ceilMinutes } minuty"
       ],
       "${ seconds } second": [
         "${ seconds } sekunda",
         "${ seconds } sekundy",
         "${ seconds } sekund",
-        "${ seconds } sekund"
+        "${ seconds } sekundy"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -21441,9 +21380,6 @@
       "Enhance security with 2FA": [
         "Zwiększ bezpieczeństwo za pomocą uwierzytelniania dwustopniowego"
       ],
-      "Enter 2FA code": [
-        "Wpisz kod uwierzytelniający"
-      ],
       "Enter endpoints into your identity provider": [
         "Wpisz punkty końcowe do dostawcy tożsamości"
       ],
@@ -21503,15 +21439,6 @@
       ],
       "Folders and labels": [
         "Foldery i etykiety"
-      ],
-      "For Linux": [
-        "Linux"
-      ],
-      "For macOS": [
-        "macOS"
-      ],
-      "For Windows": [
-        "Windows"
       ],
       "Forgot password": [
         "Przypomnij hasło"
@@ -22013,9 +21940,6 @@
       ],
       "Set up email forwarding": [
         "Ustaw przekierowanie"
-      ],
-      "Set up two-factor authentication": [
-        "Ustaw uwierzytelnianie dwustopniowe"
       ],
       "Set up your family account": [
         "Skonfiguruj konto rodzinne"
@@ -23090,9 +23014,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "Uwierzytelnianie dwustopniowe"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorzy nie mogą uzyskać dostępu do danych prywatnych użytkowników"
       ],
