@@ -98,6 +98,7 @@
   --optional-promotion-secondary-color: #d783ff;
   --optional-bg-promotion-bw-button: var(--background-invert);
   --optional-text-promotion-bw-button: var(--text-invert);
+  --optional-toggle-container-unchecked-loader-color: var(--text-invert);
 }
 
 .ui-prominent {

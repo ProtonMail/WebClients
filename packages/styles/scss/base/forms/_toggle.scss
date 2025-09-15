@@ -241,6 +241,11 @@ $toggle-width-button: em(24) !default;
 		}
 	}
 
+	// not checked that is loading, we need to override the color for example for Ebony theme
+	&.toggle-container--loading:not(.toggle-container--checked) .toggle-container-loader {
+		color: var(--toggle-container-unchecked-loader-color);
+	}
+
 	/**
 	 * Sizes
 	 */
