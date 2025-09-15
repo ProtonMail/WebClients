@@ -1473,9 +1473,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oferta nie jest dostępna w obecnym planie."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiąc.",
         "Oferta nie jest dostępna w obecnym planie. Możesz jednak uzyskać ${ discountPercentage } zniżki na plan ${ plan.Title } przy subskrypcji na ${ cycle } miesiące.",
@@ -6010,9 +6007,6 @@
       "Disabled countries": [
         "Wyłączone kraje"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Wyłączenie uwierzytelniania dwustopniowego obniży bezpieczeństwo konta. Zrób to tylko wtedy, jeśli jest to absolutnie konieczne."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Poznaj nowe funkcje i zacznij z nich korzystać!"
       ],
@@ -6292,9 +6286,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Jeśli posiadasz kod podarunkowy, wpisz go poniżej."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Jeśli nigdy wcześniej nie korzystałeś z uwierzytelniania dwustopniowego, zdecydowanie zalecamy ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Jeśli zgubisz urządzenie z przypisanym uwierzytelnianiem dwustopniowym, możesz użyć poniższych kodów zapasowych, zamiast 6-cyfrowego kodu uwierzytelniającego, aby zalogować się na swoje konto. Każdy kod może zostać użyty tylko jeden raz."
       ],
@@ -6519,9 +6510,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Zarządzaj aplikacjami ${ BRAND_NAME }, do których mają dostęp użytkownicy organizacji. Jeśli opcja zostanie wyłączona, dostęp będą mieli tylko administratorzy."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Wpisz ręcznie te informacje do urządzenia uwierzytelniania dwustopniowego. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -6781,9 +6769,6 @@
       "Public sharing of documents is not yet supported.": [
         "Publiczne udostępnianie dokumentów nie jest obsługiwane."
       ],
-      "read our two-factor authentication guide first": [
-        "wcześniejsze zapoznanie się z naszym przewodnikiem"
-      ],
       "Recently used servers:": [
         "Ostatnio używane serwery:"
       ],
@@ -6831,9 +6816,6 @@
       ],
       "Scan QR code instead": [
         "Zamiast tego zeskanuj kod QR"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Zeskanuj kod QR za pomocą aplikacji uwierzytelniania dwustopniowego. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integracja SCIM została wyłączona"
@@ -7135,9 +7117,6 @@
       "This will wipe all logs for your organization members.": [
         "Spowoduje to usunięcie wszystkich logów użytkowników organizacji."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Ten kreator umożliwi włączenie uwierzytelniania dwustopniowego (2FA) na koncie ${ BRAND_NAME }. Ta funkcja poprawi bezpieczeństwo Twojego konta ${ BRAND_NAME_TWO }, dlatego zalecamy włączenie tej opcji."
-      ],
       "to ${ product } Business": [
         "w ${ product } Business"
       ],
@@ -7200,12 +7179,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Wypróbuj ${ productName } bez ryzyka — jeśli zmienisz zdanie, otrzymasz pełny zwrot pieniędzy. Bez zadawania pytań."
-      ],
-      "Two-factor authentication disabled": [
-        "Uwierzytelnianie dwustopniowe zostało wyłączone"
-      ],
-      "Two-factor authentication enabled": [
-        "Uwierzytelnianie dwustopniowe zostało włączone"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tryb podwójnego hasła wymaga podania dwóch haseł: jedno do zalogowania się, drugie do odszyfrowania danych. (Opcja zaawansowana)"
@@ -11735,9 +11708,6 @@
       "Admin": [
         "Administrator"
       ],
-      "Primary admin": [
-        "Główny administrator"
-      ],
       "User": [
         "Użytkownik"
       ]
@@ -13761,26 +13731,26 @@
       "${ ceilDays } day": [
         "${ ceilDays } dzień",
         "${ ceilDays } dni",
-        "${ ceilDays } dnia",
+        "${ ceilDays } dni",
         "${ ceilDays } dnia"
       ],
       "${ ceilHours } hour": [
         "${ ceilHours } godzina",
         "${ ceilHours } godziny",
         "${ ceilHours } godzin",
-        "${ ceilHours } godzin"
+        "${ ceilHours } godziny"
       ],
       "${ ceilMinutes } minute": [
         "${ ceilMinutes } minuta",
         "${ ceilMinutes } minuty",
         "${ ceilMinutes } minut",
-        "${ ceilMinutes } minut"
+        "${ ceilMinutes } minuty"
       ],
       "${ seconds } second": [
         "${ seconds } sekunda",
         "${ seconds } sekundy",
         "${ seconds } sekund",
-        "${ seconds } sekund"
+        "${ seconds } sekundy"
       ]
     },
     "Title": {
@@ -14228,9 +14198,6 @@
       "Enhance security with 2FA": [
         "Zwiększ bezpieczeństwo za pomocą uwierzytelniania dwustopniowego"
       ],
-      "Enter 2FA code": [
-        "Wpisz kod uwierzytelniający"
-      ],
       "Enter endpoints into your identity provider": [
         "Wpisz punkty końcowe do dostawcy tożsamości"
       ],
@@ -14521,9 +14488,6 @@
       ],
       "Set up email forwarding": [
         "Ustaw przekierowanie"
-      ],
-      "Set up two-factor authentication": [
-        "Ustaw uwierzytelnianie dwustopniowe"
       ],
       "Set up your organization": [
         "Skonfiguruj organizację"
@@ -15203,9 +15167,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "Uwierzytelnianie dwustopniowe"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorzy nie mogą uzyskać dostępu do danych prywatnych użytkowników"
       ],
