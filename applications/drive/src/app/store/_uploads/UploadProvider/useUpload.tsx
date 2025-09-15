@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useGetUser } from '@proton/account/user/hooks';
 import { useEventManager, useNotifications, useOnline, usePreventLeave } from '@proton/components';
-import { useDrive } from '@proton/drive/index';
+import { useDrive } from '@proton/drive';
 import { APPS } from '@proton/shared/lib/constants';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -89,7 +89,7 @@ function useBaseUpload(
     const shouldUseSdk = useSDK && !isPublicContext;
     const { handleError } = useSdkErrorHandler();
 
-    const { drive } = useDrive();
+    const { drive, unsafeRemoveNodeFromCache } = useDrive();
     const metrics = useUploadMetrics(plan);
     const { log, downloadLogs, clearLogs } = useTransferLog('upload');
     const queue = useUploadQueue((id, message) => log(id, `queue: ${message}`));
@@ -256,7 +256,7 @@ function useBaseUpload(
                                 nextFolderUpload.shareId,
                                 nextFolderUpload.parentId
                             );
-                            getActionEventManager().emit({
+                            await getActionEventManager().emit({
                                 type: ActionEventName.CREATED_NODES,
                                 items: [{ uid, parentUid }],
                             });
@@ -330,8 +330,13 @@ function useBaseUpload(
                         try {
                             const uid = await drive.getNodeUid(nextFileUpload.shareId, file.fileId);
                             const parentUid = await drive.getNodeUid(nextFileUpload.shareId, nextFileUpload.parentId);
-                            getActionEventManager().emit({
-                                type: ActionEventName.CREATED_NODES,
+                            // In case we upload a new revision of a file, remove the node cache to get the latest version.
+                            // This is only with legacy upload and sdk file browser
+                            if (!file.isNewFile) {
+                                await unsafeRemoveNodeFromCache(uid);
+                            }
+                            await getActionEventManager().emit({
+                                type: file.isNewFile ? ActionEventName.CREATED_NODES : ActionEventName.UPDATED_NODES,
                                 items: [{ uid, parentUid }],
                             });
                         } catch (e) {

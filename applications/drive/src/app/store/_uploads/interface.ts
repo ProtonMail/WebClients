@@ -8,6 +8,7 @@ export type OnFileUploadSuccessCallbackData = {
     fileId: string;
     fileName: string;
     photo?: PhotoUpload;
+    isNewFile?: boolean;
 } | void;
 export type OnFileSkippedSuccessCallbackData = { shareId: string; fileId: string; fileName: string };
 export type OnFolderUploadSuccessCallbackData = { folderId: string; folderName: string };
