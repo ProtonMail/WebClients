@@ -1622,6 +1622,9 @@
       ],
       "Trust key": [
         "信任密钥"
+      ],
+      "Edit categories": [
+        "编辑分类"
       ]
     },
     "action": {
@@ -5081,6 +5084,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "您还没有任何联系人。首先创建一个新的联系人。"
+      ],
+      "An error occurred with the categories": [
+        "类别发生错误"
       ]
     },
     "Error notification": {
@@ -8438,6 +8444,9 @@
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "为了增强安全性，您可以设置一个密码短语。它不会包含在日历邀请中，请记住单独与您的客人分享。"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "您当前登入的用户为 ${ username }。"
       ]
     },
     "info": {
@@ -9393,6 +9402,51 @@
       ],
       "Passphrase:": [
         "密码短语:"
+      ],
+      "Automated confirmations and alerts": [
+        "自动确认和提醒"
+      ],
+      "Bookings, billings, and orders": [
+        "预订、账单和订单"
+      ],
+      "Deals, offers, marketing emails": [
+        "优惠、促销、营销邮件"
+      ],
+      "Discussion board posts and threads": [
+        "讨论版帖子和讨论串"
+      ],
+      "Go to Forums": [
+        "转到论坛"
+      ],
+      "Go to Newsletters": [
+        "转到通讯"
+      ],
+      "Go to Primary": [
+        "转至主要"
+      ],
+      "Go to Promotions": [
+        "转到优惠促销"
+      ],
+      "Go to Social": [
+        "转到社交"
+      ],
+      "Go to Transactions": [
+        "转到交易"
+      ],
+      "Go to Updates": [
+        "转到更新"
+      ],
+      "Non-promotional content and news": [
+        "非促销内容和新闻"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "选择包含的类别，并开启通知已收到关于此类别新邮件的提醒。"
+      ],
+      "Social media updates and activity": [
+        "社交媒体更新与活动"
+      ],
+      "You cannot disable all categories": [
+        "无法停用所有分类"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14657,6 +14711,12 @@
       ],
       "Move messages to": [
         "把邮件移动到"
+      ],
+      "Customize categories": [
+        "自定义分类"
+      ],
+      "Two-factor authentication": [
+        "双因素身份验证"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1649,6 +1649,9 @@
       ],
       "Update secret passphrase": [
         "საიდუმლო ფრაზის განახლება"
+      ],
+      "Edit categories": [
+        "კატეგორიების ჩასწორება"
       ]
     },
     "action": {
@@ -5141,6 +5144,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "კონტაქტები ჯერ არ გაქვთ. დაიწყეთ მათი შექმნა"
+      ],
+      "An error occurred with the categories": [
+        "შეცდომა კატეგორიებთან დაკავშირებით"
       ]
     },
     "Error notification": {
@@ -8540,6 +8546,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "შესული ბრძანდებით, როგორც ${ username }."
       ]
     },
     "info": {
@@ -9513,6 +9522,57 @@
       ],
       "Passphrase:": [
         "საკვანძო ფრაზა:"
+      ],
+      "Automated confirmations and alerts": [
+        "ავტომატიზებული დადასტურება და განგაშები"
+      ],
+      "Bookings, billings, and orders": [
+        "ჯავშნები, ბილინგი და შეკვეთები"
+      ],
+      "Deals, offers, marketing emails": [
+        "შეთანხმებები, შეთავაზებები და მარკეტინგის ელფოსტები"
+      ],
+      "Discussion board posts and threads": [
+        "ფორუმის პოსტები და საუბრები"
+      ],
+      "Go to Forums": [
+        "ფორუმებზე გადასვლა"
+      ],
+      "Go to Newsletters": [
+        "ახალ ამბებზე გადასვლა"
+      ],
+      "Go to Primary": [
+        "ძირითადზე გადასვლა"
+      ],
+      "Go to Promotions": [
+        "რეკლამებზე გადსავლა"
+      ],
+      "Go to Social": [
+        "სოციალურ ქსელებზე გადასვლა"
+      ],
+      "Go to Transactions": [
+        "ტრანზაქციებზე გადასვლა"
+      ],
+      "Go to Updates": [
+        "განახლებებზე გადასვლა"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "დაგვეხმარეთ მომავალი ელფოსტის კატეგორიზაციაში"
+      ],
+      "Non-promotional content and news": [
+        "არასარეკლამო შემცველობა და ახალი ამბები"
+      ],
+      "Social media updates and activity": [
+        "სოციალური მედიის განახლებები და აქტივობა"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "კატეგორია განახლდა. მადლობა უკუკავშირისთვის!"
+      ],
+      "Which category should this be recategorized under?": [
+        "რომელ კატეგორიაში მოხდეს ამის რეკლასიფიკაცია?"
+      ],
+      "You cannot disable all categories": [
+        "ყველა კატეგორიას ვერ გამორთავთ"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9784,7 +9844,7 @@
         "დაგეგმილია"
       ],
       "Sent": [
-        "გაგზავნილები"
+        "გაგზავნილი"
       ],
       "settings": [
         "მორგება"
@@ -11205,6 +11265,12 @@
       ],
       "Your subscription renews soon": [
         "თქვენი გამოწერა მალე განახლდება"
+      ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan }-დან."
+      ],
+      "Limited-time offer, valid for your first month": [
+        "შეთავაზება შეზღუდული დროით. ხელმისაწვდომია, მხოლოდ, თქვენი პირველი თვისთვის"
       ]
     },
     "Offer fearue": {
@@ -11699,6 +11765,21 @@
       ],
       "Your payment is still being processed": [
         "თქვენი გადახდა ჯერ კიდევ მუშავდება"
+      ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის არჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% გადასახადების ამოღებით: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% გადასახადის გათვალისწინებით: ${ taxAmount }"
+      ],
+      "This number will be shown on all future invoices": [
+        "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ]
     },
     "Payments.Error": {
@@ -13744,6 +13825,10 @@
       ],
       "Secret passphrase updated": [
         "საიდუმლო ფრაზა განახლდა"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "კატეგორია შეეცვალა ${ elementsCount } შეტყობინებას.",
+        "კატეგორია შეეცვალა ${ elementsCount } შეტყობინებას."
       ]
     },
     "Success notification": {
@@ -14939,6 +15024,15 @@
       ],
       "✨ Categories are coming!": [
         "✨ კატეგორიები გზაშია!"
+      ],
+      "Customize categories": [
+        "კატეგორიების მორგება"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "მიიღეთ სრული წვდომა ${ CALENDAR_APP_NAME }-ზე"
+      ],
+      "Two-factor authentication": [
+        "2FA"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15509,6 +15603,9 @@
     "b2b_trials_2025_Info": {
       "You have reached the trial limit.": [
         "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
+      ],
+      "You cannot add custom domains during the trial period.": [
+        "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
       ]
     },
     "collider_2025: feature": {
@@ -15549,6 +15646,9 @@
     "collider_2025: Info": {
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }-ის დამატება"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
       ]
     }
   }
