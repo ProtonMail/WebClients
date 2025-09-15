@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
@@ -10,12 +10,21 @@ import { getDevicesSectionName } from '../../../components/sections/Devices/cons
 import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import { DevicesToolbar } from '../DevicesToolbar/DevicesToolbar';
 import { useDeviceStore } from '../devices.store';
+import { subscribeToDevicesEvents } from '../subscribeToDevicesEvents';
 import { DevicesBrowser } from './DevicesBrowser';
 
 export function DevicesView() {
     const sectionTitle = getDevicesSectionName();
     useAppTitle(sectionTitle);
     const { deviceList } = useDeviceStore(useShallow((state) => ({ deviceList: state.deviceList })));
+
+    useEffect(() => {
+        const unsubscribe = subscribeToDevicesEvents();
+
+        return () => {
+            unsubscribe();
+        };
+    });
 
     // Uses the legacy Device-Id because that's how the global file selection works right now
     const itemIds = useMemo(() => deviceList.map((device) => splitNodeUid(device.uid).nodeId), [deviceList]);
