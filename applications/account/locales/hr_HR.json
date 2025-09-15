@@ -407,9 +407,6 @@
       "Download": [
         "Preuzmi"
       ],
-      "Download for macOS": [
-        "Učitaj za macOS"
-      ],
       "Download ICS": [
         "Preuzmi ICS datoteku"
       ],
@@ -1499,11 +1496,6 @@
       ],
       "The ${ plan } plan is back for a limited time only": [
         "Plan ${ plan } je ponovno dostupan samo ograničeno vrijeme"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Oprostite, ova ponuda nije dostupna s Vašim trenutnim planom."
       ]
     },
     "bf2023: Offers": {
@@ -3308,11 +3300,6 @@
         "Windows"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb za Debian/Ubuntu"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Izradite besplatan ${ DRIVE_APP_NAME } korisnički račun za siguran pristup datoteci"
@@ -4847,14 +4834,6 @@
         "Nastavite uživati u brzom, fokusiranom i sigurnom iskustvu na računalu. Nadogradite kako biste otključali neograničen pristup i druge premium značajke."
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } na App Storeu"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } na Play Storeu"
-      ]
-    },
     "Gmail forwarding": {
       "Gmail messages to your inbox": [
         "Gmail poruke u svoju pristiglu poštu"
@@ -5920,9 +5899,6 @@
       "Failed to fetch logs.": [
         "Dohvaćanje zapisa nije uspjelo."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Brzo i usredotočeno. E-pošta i kalendar, izravno na Vašoj radnoj površini."
-      ],
       "Featured in": [
         "Objavljeno u"
       ],
@@ -6012,9 +5988,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Ako imate darovni kôd, unesite ga ispod za primjenu popusta."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Ukoliko prije niste upotrebljavali dvofaktorsku autentikaciju, preporučujemo da ${ guideButton }."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ukoliko izgubite svoj uređaj za dvofaktorsku autentikaciju, ovi kôdovi se mogu upotrijebiti umjesto 6-znamenkastog kôda dvofaktorske autentikacije da bi se prijavili na vaš korisnički račun. Svaki kôd može se upotrijebiti samo jednom."
@@ -6194,9 +6167,6 @@
       ],
       "Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not setup properly.": [
         "Velike usluge e-pošte mogu odbiti ili filtrirati Vašu e-poštu u neželjenu poštu ako SPF/DKIM/DMARC nedostaju ili nisu pravilno postavljeni."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logotip"
@@ -6437,9 +6407,6 @@
       "Scan QR code instead": [
         "Skenirajte QR kôd"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Za postavljanje računa, skenirajte ovaj kôd pomoću uređaja za dvofaktorsku autentikaciju. ${ switchButton }."
-      ],
       "SCIM integration disabled": [
         "SCIM integracija onemogućena"
       ],
@@ -6655,9 +6622,6 @@
       "This will unlink the device **${ name } (created at ${ date })** from your ${ BRAND_NAME } account.": [
         "Ovo će odspojiti uređaj **${ name } (stvoren ${ date })** s Vašeg ${ BRAND_NAME } računa."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Ovaj čarobnjak omogućiti će dvofaktorsku autentikaciju na ${ BRAND_NAME } računu. Dvofaktorska autentikacija će vaš ${ BRAND_NAME_TWO } račun učiniti sigurnijim pa vam preporučujemo da opciju omogućite."
-      ],
       "to ${ product } Business": [
         "u ${ product } za posao"
       ],
@@ -6702,12 +6666,6 @@
       ],
       "trusted device": [
         "pouzdani uređaj"
-      ],
-      "Two-factor authentication disabled": [
-        "Onemogućena je provjera autentičnosti u dva koraka"
-      ],
-      "Two-factor authentication enabled": [
-        "Omogućena je dvofaktorska autentikacija"
       ],
       "Unable to check gateways monitoring current status.": [
         "Nije moguće provjeriti trenutačno stanje nadzora pristupnika."
@@ -7647,9 +7605,6 @@
       ],
       "Backup password": [
         "Rezervna lozinka"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing cycle": [
         "Ciklus naplate"
@@ -11080,9 +11035,6 @@
       "Admin": [
         "Administrator"
       ],
-      "Primary admin": [
-        "Glavni Admin"
-      ],
       "User": [
         "Korisnik"
       ]
@@ -13277,15 +13229,6 @@
       "Folders and labels": [
         "Mape i oznake"
       ],
-      "For Linux": [
-        "Za Linux"
-      ],
-      "For macOS": [
-        "Za macOS"
-      ],
-      "For Windows": [
-        "Za Windows"
-      ],
       "Forgot password": [
         "Zaboravili ste lozinku"
       ],
@@ -13666,9 +13609,6 @@
       ],
       "Set up a recovery method": [
         "Postavite način oporavka"
-      ],
-      "Set up two-factor authentication": [
-        "Postavite dvofaktorsku autentikaciju"
       ],
       "Set up your organization": [
         "Postavite vašu organizaciju"
@@ -14347,9 +14287,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Inactive": [
         "Neaktivano"
       ],
