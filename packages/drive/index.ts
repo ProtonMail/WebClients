@@ -79,6 +79,9 @@ let driveSingleton: ProtonDriveClient;
 let memoryLogHandlerSingleton: MemoryLogHandler | undefined;
 let latestEventIdProvider: LatestEventIdProvider;
 
+/** @deprecated only for transition to sdk */
+let entitiesCacheSingleton: MemoryCache<string> | undefined;
+
 /**
  * Provides access to Drive SDK connected to the clients monorepo.
  *
@@ -121,9 +124,11 @@ export function useDrive() {
 
             latestEventIdProvider = new LatestEventIdProvider();
 
+            const entitiesCache = new MemoryCache<string>();
+
             const driveClient = new ProtonDriveClient({
                 httpClient,
-                entitiesCache: new MemoryCache(),
+                entitiesCache,
                 cryptoCache: new MemoryCache(),
                 account,
                 openPGPCryptoModule,
@@ -138,6 +143,9 @@ export function useDrive() {
             driveSingleton = proxyDriveClientWithEventTracking(driveClient, latestEventIdProvider);
 
             memoryLogHandlerSingleton = memoryLogHandler;
+
+            /** @deprecated only for transition to sdk */
+            entitiesCacheSingleton = entitiesCache;
         },
         [setAppVersionHeaders, debug, httpClient, account, openPGPCryptoModule]
     );
@@ -159,6 +167,10 @@ export function useDrive() {
          */
         getLogs: useCallback(() => {
             return memoryLogHandlerSingleton?.getLogs() || [];
+        }, []),
+        /** @deprecated only for transition to sdk */
+        unsafeRemoveNodeFromCache: useCallback((nodeUid: string) => {
+            return entitiesCacheSingleton?.removeEntities([`node-${nodeUid}`]);
         }, []),
     };
 }
