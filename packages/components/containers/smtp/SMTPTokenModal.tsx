@@ -19,6 +19,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
 import { createToken } from '@proton/shared/lib/api/smtptokens';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
+import { getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
 import { maxLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -48,7 +49,9 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
     const [tokenName, setTokenName] = useState('');
     const [token, setToken] = useState('');
     // This modal can be open only if it has at least one custom address
-    const customAddresses = addresses.filter(({ Type }) => Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN);
+    const customAddresses = addresses.filter(
+        (address) => address.Type === ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN && getIsAddressEnabled(address)
+    );
     const [addressID, setAddressID] = useState(customAddresses[0].ID);
     const api = useApi();
     const title = step === Steps.TokenForm ? c('Title').t`Generate SMTP token` : c('Title').t`Your SMTP token`;
