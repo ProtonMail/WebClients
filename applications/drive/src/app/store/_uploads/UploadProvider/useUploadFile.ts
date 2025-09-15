@@ -279,7 +279,11 @@ export default function useUploadFile() {
             clientUid?: string
         ) => {
             await deleteChildrenLinks(abortSignal, shareId, parentId, [linkId]);
-            return createFile(abortSignal, filename, mimeType, hash, keys, clientUid);
+            const result = await createFile(abortSignal, filename, mimeType, hash, keys, clientUid);
+            return {
+                ...result,
+                isNewFile: false, // This is a replacement, not a new file
+            };
         };
 
         const handleNameConflict = async (
@@ -618,6 +622,7 @@ export default function useUploadFile() {
                             fileId: createdFileRevision.fileID,
                             fileName: createdFileRevision.filename,
                             photo,
+                            isNewFile: createdFileRevision.isNewFile,
                         };
                     },
                     5
