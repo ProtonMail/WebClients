@@ -574,7 +574,7 @@ describe('Trials (from check result)', () => {
             />
         );
         expect(container).toHaveTextContent(
-            'After the trial ends on Nov 15, 2023, it will become a paid subscription that auto-renews monthly on Nov 15, 2023. You won’t be charged if you cancel before Nov 15, 2023. Renewal pricing subject to change according to terms & conditions.'
+            'After the trial ends on Nov 15, 2023, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before Nov 15, 2023. Renewal pricing subject to change according to terms & conditions.'
         );
     });
 
@@ -603,7 +603,7 @@ describe('Trials (from check result)', () => {
             />
         );
         expect(container).toHaveTextContent(
-            'After the trial ends on Nov 15, 2023, it will become a paid subscription that auto-renews every 3 months on Nov 15, 2023. You won’t be charged if you cancel before Nov 15, 2023. Renewal pricing subject to change according to terms & conditions.'
+            'After the trial ends on Nov 15, 2023, it will become a paid subscription that auto-renews every 3 months. You won’t be charged if you cancel before Nov 15, 2023. Renewal pricing subject to change according to terms & conditions.'
         );
     });
 });
