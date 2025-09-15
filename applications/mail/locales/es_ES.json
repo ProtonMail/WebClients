@@ -1659,6 +1659,9 @@
       ],
       "Update secret passphrase": [
         "Actualizar la frase de contraseña secreta"
+      ],
+      "Edit categories": [
+        "Editar categorías"
       ]
     },
     "action": {
@@ -2014,6 +2017,9 @@
       ],
       "You have reached the trial limit.": [
         "Has alcanzado el límite del periodo de prueba."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licencias durante el periodo de prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -2284,6 +2290,9 @@
       ],
       "Website access problem": [
         "Problema de acceso al sitio web"
+      ],
+      "Meet problem": [
+        "Problema de Meet"
       ]
     },
     "Button": {
@@ -2680,6 +2689,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Añadir ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats de alta velocidad y funciones de IA avanzadas."
       ]
     },
     "color": {
@@ -5223,6 +5235,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Aún no tienes ningún contacto. Empieza creando un contacto."
+      ],
+      "An error occurred with the categories": [
+        "Se ha producido un error con las categorías"
       ]
     },
     "Error notification": {
@@ -9727,6 +9742,51 @@
       ],
       "Why am I seeing this?": [
         "¿Por qué veo esto?"
+      ],
+      "Automated confirmations and alerts": [
+        "Confirmaciones y alertas automatizadas"
+      ],
+      "Bookings, billings, and orders": [
+        "Reservaciones, facturas y órdenes"
+      ],
+      "Deals, offers, marketing emails": [
+        "Ofertas, promociones, correos electrónicos de publicidad"
+      ],
+      "Discussion board posts and threads": [
+        "Publicaciones e hilos del foro de debate"
+      ],
+      "Go to Forums": [
+        "Ir a Foros"
+      ],
+      "Go to Newsletters": [
+        "Ir a Boletines"
+      ],
+      "Go to Primary": [
+        "Ir a Principal"
+      ],
+      "Go to Promotions": [
+        "Ir a Promociones"
+      ],
+      "Go to Social": [
+        "Ir a Sociales"
+      ],
+      "Go to Transactions": [
+        "Ir a Operaciones"
+      ],
+      "Go to Updates": [
+        "Ir a Actualizaciones"
+      ],
+      "Non-promotional content and news": [
+        "Contenido no promocional y noticias"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Selecciona las categorías a incluir y activa las notificaciones para recibir alertas sobre nuevos correos electrónicos en una categoría."
+      ],
+      "Social media updates and activity": [
+        "Actualizaciones y actividad en redes sociales"
+      ],
+      "You cannot disable all categories": [
+        "No puedes desactivar todas las categorías"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14062,6 +14122,10 @@
       ],
       "Secret passphrase updated": [
         "Frase de contraseña secreta actualizada"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Recategorizado ${ elementsCount } mensaje.",
+        "Recategorizados ${ elementsCount } mensajes."
       ]
     },
     "Success notification": {
@@ -15269,6 +15333,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ ¡Llegan las categorías!"
+      ],
+      "Customize categories": [
+        "Personalizar categorías"
+      ],
+      "Two-factor authentication": [
+        "Autenticación de dos factores"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15933,6 +16003,38 @@
       ],
       "for 12 months": [
         "durante 12 meses"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
+      "Basic chat history": [
+        "Historial de chat básico"
+      ],
+      "Full chat history with search": [
+        "Historial de chat completo con búsqueda"
+      ],
+      "Large file upload support": [
+        "Soporte para la carga de archivos grandes"
+      ],
+      "Limited daily chats": [
+        "Chats diarios limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para un acceso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Cargar y consultar múltiples archivos de gran tamaño"
+      ],
+      "Web search access": [
+        "Acceso a la búsqueda web"
       ]
     }
   }

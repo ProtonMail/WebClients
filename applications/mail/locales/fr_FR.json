@@ -2292,6 +2292,9 @@
       ],
       "Website access problem": [
         "Problème d'accès au site web"
+      ],
+      "Meet problem": [
+        "Problème avec Meet"
       ]
     },
     "Button": {
@@ -6438,8 +6441,8 @@
         "${ MAIL_APP_NAME } peut également protéger votre entreprise."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "Le message ${ messagesNotAuthorizedToMove } n'a pas pu être déplacé.",
-        "Les messages ${ messagesNotAuthorizedToMove } n'ont pas pu être déplacés."
+        "${ messagesNotAuthorizedToMove } message n'a pas pu être déplacé.",
+        "${ messagesNotAuthorizedToMove } messages n'ont pas pu être déplacés."
       ],
       "${ n } unread conversation": [
         "${ n } conversation non lue",
@@ -8589,12 +8592,12 @@
         "Vous avez sélectionné **${ count } messages** avec ce tag"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Vous avez sélectionné(e) **${ elementsCount } conversation** dans ${ location }",
-        "Vous avez sélectionné(e) **${ elementsCount } conversations** dans ${ location }"
+        "Vous avez sélectionné **${ elementsCount } conversation** dans ${ location }",
+        "Vous avez sélectionné **${ elementsCount } conversations** dans ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
-        "Vous avez sélectionné(e) **${ elementsCount } conversation**.",
-        "Vous avez sélectionné(e) **${ elementsCount } conversations**."
+        "Vous avez sélectionné **${ elementsCount } conversation**.",
+        "Vous avez sélectionné **${ elementsCount } conversations**."
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
         "Vous avez sélectionné(e) **${ elementsCount } messages** dans ${ location }",
@@ -9765,6 +9768,27 @@
       ],
       "You cannot disable all categories": [
         "Vous ne pouvez pas désactiver toutes les catégories"
+      ],
+      "Go to Forums": [
+        "Accéder aux forums"
+      ],
+      "Go to Newsletters": [
+        "Accéder aux newsletters"
+      ],
+      "Go to Primary": [
+        "Accéder à l'élément principal"
+      ],
+      "Go to Promotions": [
+        "Accéder aux promotions"
+      ],
+      "Go to Social": [
+        "Accéder aux réseaux sociaux"
+      ],
+      "Go to Transactions": [
+        "Accéder aux transactions"
+      ],
+      "Go to Updates": [
+        "Accéder aux mises à jour"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9883,7 +9907,7 @@
         "Tous les messages"
       ],
       "Archive": [
-        "Déplacer vers les archives"
+        "Archives"
       ],
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
@@ -10033,7 +10057,7 @@
         "Programmés"
       ],
       "Sent": [
-        "Envoyée"
+        "Envoyés"
       ],
       "settings": [
         "paramètres"
@@ -13870,8 +13894,8 @@
         "${ elementsCount } messages supprimés de ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
-        "Message ${ elementsCount } supprimé de la liste étoilée.",
-        "${ elementsCount } messages supprimés de la liste étoilée."
+        "${ elementsCount } message a été retiré des favoris.",
+        "${ elementsCount } messages ont été retirés de la liste des favoris."
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -15314,6 +15338,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Les catégories arrivent !"
+      ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
       ]
     },
     "Today icon tooltip in mini calendar": {
