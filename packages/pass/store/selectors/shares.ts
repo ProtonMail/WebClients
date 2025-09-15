@@ -23,6 +23,7 @@ import type { State } from '@proton/pass/store/types';
 import type { BulkSelectionDTO, Maybe, MaybeNull, ShareId, ShareType } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { not } from '@proton/pass/utils/fp/predicates';
+import { logId } from '@proton/pass/utils/logger';
 
 import { SelectorError } from './errors';
 
@@ -61,7 +62,7 @@ export const selectShareOrThrow =
     <T extends ShareType = ShareType>(shareId: string) =>
     (state: State): ShareItem<T> => {
         const share = selectShare<T>(shareId)(state);
-        if (!share) throw new SelectorError(`Share ${shareId} not found`);
+        if (!share) throw new SelectorError(`Share ${logId(shareId)} not found`);
 
         return share;
     };
