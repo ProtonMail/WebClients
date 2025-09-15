@@ -15,10 +15,13 @@ import {
     useFormErrors,
     useModalTwoStatic,
 } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import { RenameDeviceModal } from '../../../modals/RenameDeviceModal';
 import type { Device } from '../../../store';
 import { useActions } from '../../../store';
 
@@ -94,5 +97,14 @@ export const RenameDeviceModalDeprecated = ({ device, onClose, ...modalProps }: 
 };
 
 export const useRenameDeviceModal = () => {
-    return useModalTwoStatic(RenameDeviceModalDeprecated);
+    const shouldUseSDK = useFlag('DriveWebSDKDevices');
+
+    return useModalTwoStatic(({ device, ...modalProps }: Props & ModalStateProps) => {
+        if (shouldUseSDK) {
+            const uid = generateNodeUid(device.volumeId, device.linkId);
+            return <RenameDeviceModal deviceUid={uid} deviceName={device.name} {...modalProps} />;
+        }
+
+        return <RenameDeviceModalDeprecated device={device} {...modalProps} />;
+    });
 };

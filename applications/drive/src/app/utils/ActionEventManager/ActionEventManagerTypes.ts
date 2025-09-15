@@ -18,6 +18,10 @@ export enum ActionEventName {
     RESTORED_NODES = 'RESTORED_NODES',
     RENAMED_NODES = 'RENAMED_NODES',
 
+    // Device Events
+    RENAMED_DEVICES = 'RENAMED_DEVICES',
+    REMOVED_DEVICES = 'REMOVED_DEVICES',
+
     // Generic events that update the whole node
     UPDATED_NODES = 'UPDATED_NODES_EVENT',
     DELETED_NODES = 'DELETED_NODES_EVENT',
@@ -71,6 +75,15 @@ export interface DeletedNodesEvent {
     uids: string[];
 }
 
+export interface RenamedDevicesEvent {
+    type: ActionEventName.RENAMED_DEVICES;
+    items: { newName: string; deviceUid: string }[];
+}
+
+export interface RemovedDevicesEvent {
+    type: ActionEventName.REMOVED_DEVICES;
+    deviceUids: string[];
+}
 export interface DeleteBookmarksEvent {
     type: ActionEventName.DELETE_BOOKMARKS;
     uids: string[];
@@ -98,6 +111,8 @@ export type ActionEvent =
     | UpdatedNodesEvent
     | CreatedNodesEvent
     | DeletedNodesEvent
+    | RenamedDevicesEvent
+    | RemovedDevicesEvent
     | DeleteBookmarksEvent
     | AcceptInvitationsEvent
     | RejectInvitationsEvent
@@ -113,6 +128,8 @@ export type ActionEventMap = {
     [ActionEventName.UPDATED_NODES]: UpdatedNodesEvent;
     [ActionEventName.CREATED_NODES]: CreatedNodesEvent;
     [ActionEventName.DELETED_NODES]: DeletedNodesEvent;
+    [ActionEventName.RENAMED_DEVICES]: RenamedDevicesEvent;
+    [ActionEventName.REMOVED_DEVICES]: RemovedDevicesEvent;
     [ActionEventName.DELETE_BOOKMARKS]: DeleteBookmarksEvent;
     [ActionEventName.ACCEPT_INVITATIONS]: AcceptInvitationsEvent;
     [ActionEventName.REJECT_INVITATIONS]: RejectInvitationsEvent;

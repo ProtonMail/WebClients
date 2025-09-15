@@ -84,9 +84,9 @@ export function Trash({ shareId, trashView }: Props) {
     const { drive } = useDrive();
     const { trashNodes, isLoading, sortParams, setSorting } = trashView;
     const { handleError } = useSdkErrorHandler();
-    const { thumbnails, setThumbnail } = useThumbnailStore(
+    const { getThumbnail, setThumbnail } = useThumbnailStore(
         useShallow((state) => ({
-            thumbnails: state.thumbnails,
+            getThumbnail: state.getThumbnail,
             setThumbnail: state.setThumbnail,
         }))
     );
@@ -96,7 +96,7 @@ export function Trash({ shareId, trashView }: Props) {
 
     const handleItemRender = async (item: LegacyItem) => {
         incrementItemRenderedCounter();
-        if (!item.hasThumbnail || item.cachedThumbnailUrl || thumbnails[item.thumbnailId] !== undefined) {
+        if (!item.hasThumbnail || item.cachedThumbnailUrl || getThumbnail(item.thumbnailId) !== undefined) {
             return;
         }
         try {
@@ -117,7 +117,7 @@ export function Trash({ shareId, trashView }: Props) {
 
     const nodesWithThumbnail = trashNodes.map((node) => ({
         ...node,
-        cachedThumbnailUrl: thumbnails[node.thumbnailId]?.sdUrl,
+        cachedThumbnailUrl: getThumbnail(node.thumbnailId)?.sdUrl,
     }));
 
     const handleClick = (id: BrowserItemId) => {

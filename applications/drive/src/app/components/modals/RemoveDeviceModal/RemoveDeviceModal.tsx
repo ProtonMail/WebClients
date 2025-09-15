@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import type { ModalStateProps } from '@proton/components';
 import {
     Form,
     InputFieldTwo,
@@ -14,11 +15,14 @@ import {
     useFormErrors,
     useModalTwoStatic,
 } from '@proton/components';
+import { generateNodeUid } from '@proton/drive/index';
 import { useLoading } from '@proton/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
+import { RemoveDeviceModal } from '../../../modals/RemoveDeviceModal';
 import type { Device } from '../../../store';
 import { useActions } from '../../../store';
 
@@ -107,5 +111,14 @@ export const RemoveDeviceModalDeprecated = ({ device, onClose, ...modalProps }: 
 };
 
 export const useRemoveDeviceModal = () => {
-    return useModalTwoStatic(RemoveDeviceModalDeprecated);
+    const shouldUseSDK = useFlag('DriveWebSDKDevices');
+
+    return useModalTwoStatic(({ device, ...modalProps }: Props & ModalStateProps) => {
+        if (shouldUseSDK) {
+            const uid = generateNodeUid(device.volumeId, device.linkId);
+            return <RemoveDeviceModal deviceUid={uid} deviceName={device.name} {...modalProps} />;
+        }
+
+        return <RemoveDeviceModalDeprecated device={device} {...modalProps} />;
+    });
 };
