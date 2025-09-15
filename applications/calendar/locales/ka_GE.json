@@ -1223,6 +1223,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "You cannot add custom domains during the trial period.": [
+        "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
+      ],
       "You have reached the trial limit.": [
         "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
       ]
@@ -1829,6 +1832,9 @@
     "collider_2025: Info": {
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }-ის დამატება"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
       ]
     },
     "colon": {
@@ -3475,6 +3481,9 @@
       ],
       "Event not found": [
         "მოვლენა ნაპოვნი არაა"
+      ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME }-ის ვიდეოკონფერენციის შექმნა ჩავარდა"
       ],
       "Failed to create meeting": [
         "შეხვედრის შექმნა ჩავარდა"
@@ -5881,6 +5890,9 @@
       ],
       "You are about to open your default browser and visit:": [
         "თქვენ ახლა თქვენი ნაგულისხმევი ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
+      ],
+      "You are currently signed in as ${ username }.": [
+        "შესული ბრძანდებით, როგორც ${ username }."
       ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "იყენებთ უფრო მეტ საცავს, ვიდრე ${ downgradedPlanName } ტარიფი შეიცავს. წაშალეთ მონაცემები იმისთვის, რომ ტარიფის ჩამოწევა შეძლოთ."
@@ -8349,11 +8361,17 @@
       "Get the deal": [
         "ფასდაკლების მიღება"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan }-დან."
+      ],
       "Last day to save": [
         "ბოლო დღე შესანახად"
       ],
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "შეთავაზება შეზღუდული დროით. ხელმისაწვდომია, მხოლოდ, თქვენი პირველი თვისთვის"
       ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
@@ -8707,11 +8725,23 @@
       "CVC": [
         "CVC"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის არჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% გადასახადების ამოღებით: ${ taxAmount }"
+      ],
       "Got it": [
         "გავიგე"
       ],
       "I'm purchasing as a business": [
         "ვაპირებ შევიძინო ბიზნესისთვის"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% გადასახადის გათვალისწინებით: ${ taxAmount }"
       ],
       "MM/YY": [
         "თთ/წწ"
@@ -8748,6 +8778,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
+      ],
+      "This number will be shown on all future invoices": [
+        "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -10843,9 +10876,6 @@
       "Enhance security with 2FA": [
         "გააფართოვეთ უსაფრთხოება 2FA-ით"
       ],
-      "Enter 2FA code": [
-        "შეიყვანეთ 2FA კოდი"
-      ],
       "Enter your password": [
         "შეიყვანეთ თქვენი პაროლი"
       ],
@@ -11161,6 +11191,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
+      ],
+      "Two-factor authentication": [
+        "2FA"
       ],
       "Update event": [
         "მოვლენის განახლება"

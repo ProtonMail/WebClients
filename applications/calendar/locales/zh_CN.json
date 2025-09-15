@@ -5800,6 +5800,9 @@
       "You are about to open your default browser and visit:": [
         "您即将打开默认浏览器并访问："
       ],
+      "You are currently signed in as ${ username }.": [
+        "您当前登入的用户为 ${ username }。"
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "您使用的存储空间超过了 ${ downgradedPlanName } 计划中包含的存储空间。请删除一些数据以便降级。"
       ],
@@ -10624,9 +10627,6 @@
       "Enhance security with 2FA": [
         "通过 2FA 增强安全性"
       ],
-      "Enter 2FA code": [
-        "输入 2FA 验证码"
-      ],
       "Enter your password": [
         "请输入您的密码"
       ],
@@ -10941,6 +10941,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "双因素身份验证"
       ],
       "Update event": [
         "更新日程"
