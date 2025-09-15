@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton, useModalTwoStatic } from '@proton/components';
+import { Icon, ToolbarButton } from '@proton/components';
 
 import { isMultiSelect } from '../../../../components/sections/ToolbarButtons/utils';
-import { RenameDeviceModal } from '../../../../modals/RenameDeviceModal';
+import { useRenameDeviceModal } from '../../../../modals/RenameDeviceModal';
 import type { StoreDevice } from '../../devices.store';
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const DeviceRenameButton = ({ selectedDevices }: Props) => {
-    const [renameDeviceModal, showRenameDeviceModal] = useModalTwoStatic(RenameDeviceModal);
+    const [renameDeviceModal, showRenameDeviceModal] = useRenameDeviceModal();
 
     const isDisabled = isMultiSelect(selectedDevices);
 
