@@ -18,17 +18,7 @@ export interface Props extends Omit<ComponentPropsWithRef<'button'>, 'color'> {
 
 const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
     (
-        {
-            className = '',
-            isSelected,
-            disabled,
-            loading,
-            children,
-            fakeDisabled,
-            liClassName, // eslint-disable-line no-unused-vars, @typescript-eslint/no-unused-vars
-            actionType, // eslint-disable-line no-unused-vars, @typescript-eslint/no-unused-vars
-            ...rest
-        },
+        { className = '', isSelected, disabled, loading, children, fakeDisabled, liClassName, actionType, ...rest },
         ref
     ) => {
         return (
@@ -43,9 +33,6 @@ const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
                     className,
                 ])}
                 aria-busy={loading}
-                onClick={(e) => {
-                    rest.onClick?.(e);
-                }}
                 {...rest}
             >
                 {loading ? (
