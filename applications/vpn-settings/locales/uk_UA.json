@@ -1204,9 +1204,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "На жаль, ця пропозиція недоступна з вашим поточним тарифним планом."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяць.",
         "На жаль, ця пропозиція недоступна для вашого поточного тарифного плану. Але ви можете отримати ${ discountPercentage } від ${ plan.Title } при підписці на ${ cycle } місяці.",
@@ -5282,9 +5279,6 @@
         "Видалення ${ deletedServerCount } шлюзових серверів",
         "Видалення ${ deletedServerCount } шлюзових серверів"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Вимкнення двофакторної автентифікації зробить ваш обліковий запис менш захищеним. Вмикайте її лише в разі крайньої потреби."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Відкрийте для себе нові функції, які стали доступними, та почніть користуватися ними просто зараз!"
       ],
@@ -5519,9 +5513,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Якщо у вас є подарунковий код, введіть його внизу, щоб застосувати свою знижку."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Якщо раніше ви ніколи не використовували двоетапну перевірку, ми наполегливо рекомендуємо вам ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Якщо ви втратите свій пристрій двоетапної перевірки, можна скористатися цими кодами замість 6-значного коду перевірки для входу в обліковий запис. Кожен код можна використати лише один раз."
       ],
@@ -5734,9 +5725,6 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Обов'язково ${ addARecoveryMethod }, щоб мати можливість отримати доступ до свого облікового запису в разі втрати пароля."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Для налаштування свого облікового запису, введіть ці дані у свій пристрій двоетапної перевірки власноруч. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
@@ -5954,9 +5942,6 @@
       "Public sharing of documents is not yet supported.": [
         "Загальнодоступний обмін документами наразі не підтримується."
       ],
-      "read our two-factor authentication guide first": [
-        "прочитайте спершу нашу інструкцію про двоетапну перевірку"
-      ],
       "Recently used servers:": [
         "Недавно використані сервери:"
       ],
@@ -6004,9 +5989,6 @@
       ],
       "Scan QR code instead": [
         "Cканувати QR-код натомість"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Скануйте цей код своїм пристроєм двоетапної перевірки, щоб налаштувати обліковий запис. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Інтеграція SCIM вимкнена"
@@ -6251,9 +6233,6 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "При цьому виконається вихід з системи в будь-яких активних сеансах та вимкнеться двоетапна перевірка."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Цей помічник увімкне двоетапну перевірку (2FA) для вашого облікового запису ${ BRAND_NAME }. Двоетапна перевірка забезпечує додатковий рівень захисту вашого облікового запису ${ BRAND_NAME_TWO }, тому рекомендуємо ввімкнути її."
-      ],
       "to ${ product } Business": [
         "у ${ product } Business"
       ],
@@ -6307,12 +6286,6 @@
       ],
       "Total VPN connections": [
         "Усього VPN-з'єднань"
-      ],
-      "Two-factor authentication disabled": [
-        "Двоетапну перевірку вимкнено"
-      ],
-      "Two-factor authentication enabled": [
-        "Двоетапна перевірка увімкнена"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Двопарольний режим вимагає двох паролів: один для входу в обліковий запис, а другий для розшифрування даних. (Розширений)"
@@ -10098,9 +10071,6 @@
       "Admin": [
         "Адміністратор"
       ],
-      "Primary admin": [
-        "Головний адміністратор"
-      ],
       "User": [
         "Користувач"
       ]
@@ -12429,9 +12399,6 @@
       "Enable for all users": [
         "Увімкнути для всіх користувачів"
       ],
-      "Enter 2FA code": [
-        "Введіть код 2FA"
-      ],
       "Enter endpoints into your identity provider": [
         "Введіть кінцеві точки у вашого провайдера ідентифікації"
       ],
@@ -12695,9 +12662,6 @@
       ],
       "Set up email forwarding": [
         "Налаштувати пересилання пошти"
-      ],
-      "Set up two-factor authentication": [
-        "Налаштувати двоетапну перевірку"
       ],
       "Set up your organization": [
         "Налаштуйте свою організацію"
@@ -13276,9 +13240,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2ЕП"
-      ],
       "Administrators can't access the data of private users": [
         "Адміністратори не можуть отримати доступ до даних приватних користувачів"
       ],

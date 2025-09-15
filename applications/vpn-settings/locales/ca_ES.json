@@ -1488,9 +1488,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Aquesta oferta no està disponible amb el pla actual."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Aquesta oferta no està disponible amb el vostre pla actual. Però podeu obtenir un ${ discountPercentage } de descompte en ${ plan.Title } quan us subscriviu per ${ cycle } mes.",
         "Aquesta oferta no està disponible amb el vostre pla actual. Però podeu obtenir un ${ discountPercentage } de descompte en ${ plan.Title } quan us subscriviu per ${ cycle } mesos."
@@ -5746,6 +5743,12 @@
       "Attention required": [
         "Es requereix la vostra atenció"
       ],
+      "Authenticator app 2FA disabled": [
+        "S'ha desactivat l'aplicació d'autenticació 2FA"
+      ],
+      "Authenticator app 2FA enabled": [
+        "S'ha habilitat l'aplicació autenticadora 2FA"
+      ],
       "Awaiting transaction": [
         "S'està esperant la transacció"
       ],
@@ -5933,8 +5936,8 @@
       "Disabled on ${ boldValue }": [
         "S'ha desactivat el ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Si desactiveu l'autenticació de doble factor, el vostre compte serà menys segur. Només procediu si és absolutament necessari."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Si desactiveu l'aplicació d'autenticació 2FA, el vostre compte serà menys segur. Feu-ho només si és absolutament necessari."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Descobriu les noves característiques desbloquejades i comenceu a utilitzar-les de seguida!"
@@ -6219,9 +6222,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Si teniu un codi regal, introduïu-lo a sota per aplicar el vostre descompte."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Si mai no heu utilitzat l'autenticació de doble factor abans, us recomanem ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si perdeu el dispositiu activat per a l'autenticació de doble factor, es poden utilitzar aquests codis en lloc del codi d’autenticació de doble factor de 6 dígits per a iniciar la sessió al vostre compte. Cada codi només es pot fer servir una vegada."
       ],
@@ -6448,8 +6448,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestioneu a quines aplicacions ${ BRAND_NAME } poden accedir els membres de la teva organització. Si està desactivat, només els administradors tindran accés."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduïu manualment aquesta informació al vostre dispositiu d'autenticació de doble factor per a configurar el compte. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Introduïu manualment aquesta informació a l'aplicació d'autenticació per configurar el vostre compte. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
@@ -6707,9 +6707,6 @@
       "Public sharing of documents is not yet supported.": [
         "L'intercanvi públic de documents encara no està suportat."
       ],
-      "read our two-factor authentication guide first": [
-        "llegir primer la nostra guia d’autenticació de doble factor"
-      ],
       "Recently used servers:": [
         "Servidors utilitzats recentment:"
       ],
@@ -6758,8 +6755,8 @@
       "Scan QR code instead": [
         "Escanejar codi QR"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Escaneja aquest codi Qr amb el teu disposiu d'autenticació en dos passos per a configurar el vostre compte. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Escanegeu aquest codi amb l'aplicació d'autenticació per configurar el vostre compte. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "S'ha desactivat la integració SCIM."
@@ -6839,9 +6836,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicieu la sessió a ${ MAIL_APP_NAME } per activar la vostra adreça"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "L'inici de sessió amb una clau de seguretat encara no és compatible amb totes les aplicacions. Sense TOTP, és possible que l'inici de sessió en algunes aplicacions no funcioni."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
@@ -7052,9 +7046,6 @@
       "This will wipe all logs for your organization members.": [
         "Això esborrarà tots els registres dels membres de la vostra organització."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Aquest assistent activarà l'autenticació de doble factor (2FA) al vostre compte de ${ BRAND_NAME }. L’autenticació de doble factor farà que el compte ${ BRAND_NAME_TWO } sigui més segur, de manera que us recomanem que l’activeu."
-      ],
       "to ${ product } Business": [
         "a ${ product } Business"
       ],
@@ -7117,12 +7108,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Proveu ${ productName } totalment sense riscos. Si per qualsevol motiu canvieu d'opinió, rebreu un reemborsament complet. Sense preguntes."
-      ],
-      "Two-factor authentication disabled": [
-        "S'ha desactivat l'autenticació de doble factor"
-      ],
-      "Two-factor authentication enabled": [
-        "S'ha activat l'autenticació de doble factor"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "El mode de dues contrasenyes requereix: una contrasenya per a iniciar la sessió al compte i una altra per a desxifrar les dades. (Avançat)"
@@ -7351,6 +7336,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sense activació no podreu crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Sense una aplicació d'autenticació, no podreu iniciar sessió a les aplicacions de ${ BRAND_NAME } que encara no admeten claus de seguretat."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -10849,6 +10837,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Es renovarà per ${ renewPriceStr } i ho podreu cancel·lar en qualsevol moment."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Ens sap greu, aquesta oferta no està disponible amb el pla actual."
+      ],
       "Taxes": [
         "Impostos"
       ],
@@ -11538,9 +11529,6 @@
     "Role": {
       "Admin": [
         "Administardor"
-      ],
-      "Primary admin": [
-        "Administrador principal"
       ],
       "User": [
         "Usuari"
@@ -13864,6 +13852,9 @@
       "Disable two-factor authentication": [
         "Desactiva l'autenticació en dos passos"
       ],
+      "Disable two-factor authentication app?": [
+        "Voleu desactivar l'aplicació d'autenticació de doble factor?"
+      ],
       "Disable two-factor authentication?": [
         "Voleu desactivar l'autenticació de doble factor?"
       ],
@@ -13944,9 +13935,6 @@
       ],
       "Enhance security with 2FA": [
         "Milloreu la seguretat amb 2FA"
-      ],
-      "Enter 2FA code": [
-        "Introduïu el codi 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Introduïu els punts finals al vostre proveïdor d'identitat"
@@ -14232,11 +14220,11 @@
       "Set recovery methods": [
         "Configuració dels mètodes de recuperació"
       ],
+      "Set up authenticator app": [
+        "Configureu l'aplicació d'autenticació"
+      ],
       "Set up email forwarding": [
         "Configuració del reenviament de correu"
-      ],
-      "Set up two-factor authentication": [
-        "Configura l'autenticació de doble factor"
       ],
       "Set up your organization": [
         "Configuració de la vostra organització"
@@ -14921,11 +14909,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Els administradors no poden accedir a les dades dels usuaris privats"
+      ],
+      "Authenticator app": [
+        "Aplicació d'autenticació"
       ],
       "Inactive": [
         "Inactiva"
@@ -14944,6 +14932,9 @@
       ],
       "Private": [
         "Privat"
+      ],
+      "Security key": [
+        "Clau de seguretat"
       ],
       "SSO": [
         "Inici de sessió únic (SSO)"

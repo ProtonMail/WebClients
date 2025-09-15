@@ -1397,9 +1397,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement, men du kan spare ${ discountPercentage } på ${ plan.Title }, når du abonnerer for ${ cycle } måned.",
         "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement, men du kan spare ${ discountPercentage } på ${ plan.Title }, når du abonnerer for ${ cycle } måneder."
@@ -5509,9 +5506,6 @@
       "Disabled countries": [
         "Deaktiverede lande"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Hvis du deaktiverer totrins-godkendelse, bliver din konto mindre sikker. Gør kun dette med det største forbehold."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Oplev nye funktioner, der er låst op, og begynd at bruge dem med det samme!"
       ],
@@ -5762,9 +5756,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skal du indtaste den nedenfor for at anvende din rabat."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Hvis du aldrig tidligere har benyttet to-faktor-godkendelse, anbefaler vi dig stærkt at ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Mister du din to-faktor-aktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede to-faktor-godkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
       ],
@@ -5978,9 +5969,6 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for ${ addARecoveryMethod }, så du kan få adgang til din konto igen, hvis du glemmer din adgangskode."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Angiv manuelt disse oplysninger i din to-faktor-godkendelsesenhed for at oprette din konto. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -6206,9 +6194,6 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling af dokumenter understøttes ikke endnu."
       ],
-      "read our two-factor authentication guide first": [
-        "læser vores to-faktor-godkendelsesguide først"
-      ],
       "Recently used servers:": [
         "Nyligt anvendte servere:"
       ],
@@ -6256,9 +6241,6 @@
       ],
       "Scan QR code instead": [
         "Skan i stedet QR-kode"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Skan denne kode med din to-faktor-godkendelsesenhed for at oprette din konto. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-integration slået fra"
@@ -6508,9 +6490,6 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dette vil logge dig ud af alle aktive sessioner og deaktivere to-faktor-godkendelse."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Denne guide aktiverer to-faktor-godkendelse (2FA) på din ${ BRAND_NAME }-konto. To-faktor-godkendelse vil gøre din ${ BRAND_NAME_TWO }-konto mere sikker, så vi anbefaler, at du aktiverer det."
-      ],
       "to ${ product } Business": [
         "til ${ product } Business"
       ],
@@ -6567,12 +6546,6 @@
       ],
       "trusted device": [
         "betroet enhed"
-      ],
-      "Two-factor authentication disabled": [
-        "To-faktor-godkendelse deaktiveret"
-      ],
-      "Two-factor authentication enabled": [
-        "To-faktor-godkendelse aktiveret"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tilstanden med to adgangskoder kræver to adgangskoder: en til at logge ind på din konto og en til at dekryptere dine data. (Avanceret)"
@@ -10617,9 +10590,6 @@
       "Admin": [
         "Admin"
       ],
-      "Primary admin": [
-        "Primær admin"
-      ],
       "User": [
         "Bruger"
       ]
@@ -12880,9 +12850,6 @@
       "Enhance security with 2FA": [
         "Forøg sikkerheden med 2FA"
       ],
-      "Enter 2FA code": [
-        "Indtast 2FA-kode"
-      ],
       "Enter endpoints into your identity provider": [
         "Angiv slutpunkter i din identitetsudbyder"
       ],
@@ -13154,9 +13121,6 @@
       ],
       "Set up email forwarding": [
         "Indstil videresendelse af e-mail"
-      ],
-      "Set up two-factor authentication": [
-        "Indstil to-faktor-godkendelse"
       ],
       "Set up your organization": [
         "Konfigurer din organisation"
@@ -13754,9 +13718,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorer kan ikke tilgå private brugeres data"
       ],

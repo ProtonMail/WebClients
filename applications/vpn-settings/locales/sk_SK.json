@@ -1500,9 +1500,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiac.",
         "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiace.",
@@ -6093,9 +6090,6 @@
       "Disabled on ${ boldValue }": [
         "Deaktivované ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Vypnutím dvojstupňového overenia bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
-      ],
       "Discover new features unlocked and start using them right away!": [
         "Objavte nové odomknuté funkcie a začnite ich hneď používať!"
       ],
@@ -6381,9 +6375,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Ak máte darčekový kód, zadajte ho nižšie, aby ste mohli uplatniť zľavu."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Ak ste ešte nikdy nepoužívali dvojstupňové overovanie, dôrazne vám odporúčame, ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ak stratíte zariadenie určené pre dvojstupňové overenie, tieto kódy môžete použiť namiesto 6-miestneho dvojstupňového overovacieho kódu na prihlásenie do svojho účtu. Každý kód je možné použiť iba raz."
       ],
@@ -6611,9 +6602,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Spravujte, ku ktorým ${ BRAND_NAME } aplikáciám majú členovia vašej organizácie prístup. Ak je táto možnosť vypnutá, prístup budú mať len správcovia."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Manuálne zadajte túto informáciu do vášho zariadenia určeného pre dvojstupňové overenie a nastavte svoj účet. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -6879,9 +6867,6 @@
       "Public sharing of documents is not yet supported.": [
         "Verejné zdieľanie dokumentov zatiaľ nie je podporované."
       ],
-      "read our two-factor authentication guide first": [
-        "aby ste si najprv prečítali nášho sprievodcu dvojstupňovým overovaním"
-      ],
       "Recently used servers:": [
         "Nedávno použité servery:"
       ],
@@ -6929,9 +6914,6 @@
       ],
       "Scan QR code instead": [
         "Namiesto toho naskenovať QR kód"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Naskenujte tento kód pomocou zariadenia určeného pre dvojstupňové overenie a nastavte svoj účet. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM integrácia deaktivovaná"
@@ -7013,9 +6995,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Prihláste sa do ${ MAIL_APP_NAME } pre aktivovanie vašej adresy"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Prihlásenie bezpečnostným kľúčom zatiaľ nie je podporované vo všetkých aplikáciách. Bez TOTP môže prihlásenie do niektorých aplikácií zlyhať."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
@@ -7236,9 +7215,6 @@
       "This will wipe all logs for your organization members.": [
         "Toto vymaže všetky záznamy pre členov vašej organizácie."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Tento sprievodca povolí na vašom účte ${ BRAND_NAME } dvojstupňové overenie (2FA). Dvojstupňové overenie zvýši bezpečnosť vášho účtu ${ BRAND_NAME_TWO }, preto vám ho odporúčame povoliť."
-      ],
       "to ${ product } Business": [
         "na ${ product } Business"
       ],
@@ -7301,12 +7277,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Vyskúšajte ${ productName } úplne bez rizika - ak si to z akéhokoľvek dôvodu rozmyslíte, dostanete plnú náhradu. Bez otázok."
-      ],
-      "Two-factor authentication disabled": [
-        "Dvojstupňové overenie vypnuté"
-      ],
-      "Two-factor authentication enabled": [
-        "Dvojstupňové overenie zapnuté"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Režim dvoch hesiel vyžaduje dve heslá: jedno na prihlásenie do konta a druhé na dešifrovanie údajov. (Rozšírené)"
@@ -11827,9 +11797,6 @@
       "Admin": [
         "Administrátor"
       ],
-      "Primary admin": [
-        "Hlavný administrátor"
-      ],
       "User": [
         "Používateľ"
       ]
@@ -14347,9 +14314,6 @@
       "Enhance security with 2FA": [
         "Zvýšte zabezpečenie pomocou 2FA"
       ],
-      "Enter 2FA code": [
-        "Zadajte 2FA kód"
-      ],
       "Enter endpoints into your identity provider": [
         "Zadajte koncové body do vášho poskytovateľa identity"
       ],
@@ -14640,9 +14604,6 @@
       ],
       "Set up email forwarding": [
         "Nastaviť preposielanie emailov"
-      ],
-      "Set up two-factor authentication": [
-        "Nastavenie dvojstupňového overenia"
       ],
       "Set up your organization": [
         "Nastaviť svoju organizáciu"
@@ -15331,9 +15292,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administrátori nemajú prístup k údajom súkromných používateľov"
       ],
