@@ -15,7 +15,7 @@ export const useRenameModal = () => {
     const handleShowRenameModal = ({ onSubmit, ...rest }: RenameModalInnerProps) => {
         const submitCallback = async (newName: string) => {
             const uid = generateNodeUid(rest.volumeId, rest.linkId);
-            getActionEventManager().emit({ type: ActionEventName.RENAMED_NODES, items: [{ uid, newName }] });
+            await getActionEventManager().emit({ type: ActionEventName.RENAMED_NODES, items: [{ uid, newName }] });
             await onSubmit?.(newName);
         };
         void showRenameModal({ onSubmit: submitCallback, ...rest });
