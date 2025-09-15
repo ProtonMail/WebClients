@@ -6,7 +6,7 @@ import { isFocusable, tabbable } from 'tabbable';
 
 import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 
-const findParentElement = (el: Element | null | undefined, cb: (el: Element) => boolean) => {
+const findParentElement = <T extends Element>(el: Element | null | undefined, cb: (el: Element) => el is T) => {
     let nextEl = el;
     while (nextEl) {
         if (cb(nextEl)) {
@@ -16,12 +16,14 @@ const findParentElement = (el: Element | null | undefined, cb: (el: Element) => 
     }
 };
 
-const getTargetRootElement = (start: Element | null | undefined) => {
-    const result = findParentElement(start, (el) => {
-        const htmlEl = el as HTMLElement;
-        return htmlEl.dataset?.focusRoot === '1';
+const getTargetRootElement = (start: Element | null | undefined): HTMLElement | undefined => {
+    return findParentElement(start, (el): el is HTMLElement => {
+        try {
+            return el instanceof HTMLElement && el.dataset?.focusRoot === '1';
+        } catch {
+            return false;
+        }
     });
-    return result as HTMLElement | undefined;
 };
 
 const manager = (() => {
