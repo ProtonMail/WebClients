@@ -486,6 +486,9 @@
       "Edit address": [
         "მისამართის ჩასწორება"
       ],
+      "Edit categories": [
+        "კატეგორიების ჩასწორება"
+      ],
       "Edit draft": [
         "მონახაზის ჩასწორება"
       ],
@@ -1965,6 +1968,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "You cannot add custom domains during the trial period.": [
+        "გამოსაცდელი პერიოდის მიმდინარეობისას თქვენს დომენებს ვერ დაამატებთ."
+      ],
       "You have reached the trial limit.": [
         "მიაღწიეთ გამოსაცდელი პერიოდის ზღვარს."
       ]
@@ -2665,6 +2671,9 @@
     "collider_2025: Info": {
       "Add ${ LUMO_APP_NAME }": [
         "${ LUMO_APP_NAME }-ის დამატება"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
       ]
     },
     "color": {
@@ -5146,6 +5155,9 @@
     "Error message": {
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "ფსევდონიმებს ვერ გამოიყენებთ, როცა ${ PASS_APP_NAME }-ში დამატებითი პაროლია ჩართული."
+      ],
+      "An error occurred with the categories": [
+        "შეცდომა კატეგორიებთან დაკავშირებით"
       ],
       "App currently unavailable": [
         "აპი ამჟამად ხელმიუწვდომელია"
@@ -8328,6 +8340,9 @@
       "You are about to open your default browser and visit:": [
         "თქვენ ახლა თქვენი ნაგულისხმევი ბრაუზერის ახალ ჩანართს გახსნით და ეწვევით:"
       ],
+      "You are currently signed in as ${ username }.": [
+        "შესული ბრძანდებით, როგორც ${ username }."
+      ],
       "You are using more storage than what is included in a ${ downgradedPlanName } plan. Please delete or remove data in order to downgrade.": [
         "იყენებთ უფრო მეტ საცავს, ვიდრე ${ downgradedPlanName } ტარიფი შეიცავს. წაშალეთ მონაცემები იმისთვის, რომ ტარიფის ჩამოწევა შეძლოთ."
       ],
@@ -8940,6 +8955,9 @@
       "Authenticator app": [
         "ავთენტიკატორი აპი"
       ],
+      "Automated confirmations and alerts": [
+        "ავტომატიზებული დადასტურება და განგაშები"
+      ],
       "BCC": [
         "ბრმა ასლი"
       ],
@@ -8951,6 +8969,9 @@
       ],
       "Blind Carbon Copy": [
         "ბრმა ასლი"
+      ],
+      "Bookings, billings, and orders": [
+        "ჯავშნები, ბილინგი და შეკვეთები"
       ],
       "Browser": [
         "ბრაუზერი"
@@ -9048,6 +9069,9 @@
       "Date:": [
         "თარიღი:"
       ],
+      "Deals, offers, marketing emails": [
+        "შეთანხმებები, შეთავაზებები და მარკეტინგის ელფოსტები"
+      ],
       "Delete": [
         "წაშლა"
       ],
@@ -9059,6 +9083,9 @@
       ],
       "Did not follow instructions": [
         "არ მიჰყვა ინსტრუქციებს"
+      ],
+      "Discussion board posts and threads": [
+        "ფორუმის პოსტები და საუბრები"
       ],
       "Do you have any suggestions for our team?": [
         "გაქვთ რაიმე რჩევა ჩვენი გუნდისთვის?"
@@ -9149,6 +9176,30 @@
       ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "ფორუმებზე გადასვლა"
+      ],
+      "Go to Newsletters": [
+        "ახალ ამბებზე გადასვლა"
+      ],
+      "Go to Primary": [
+        "ძირითადზე გადასვლა"
+      ],
+      "Go to Promotions": [
+        "რეკლამებზე გადსავლა"
+      ],
+      "Go to Social": [
+        "სოციალურ ქსელებზე გადასვლა"
+      ],
+      "Go to Transactions": [
+        "ტრანზაქციებზე გადასვლა"
+      ],
+      "Go to Updates": [
+        "განახლებებზე გადასვლა"
+      ],
+      "Help us improve the upcoming mail categorization": [
+        "დაგვეხმარეთ მომავალი ელფოსტის კატეგორიზაციაში"
       ],
       "Hide password": [
         "პაროლის დამალვა"
@@ -9282,6 +9333,9 @@
       "No results found": [
         "შედეგების გარეშე"
       ],
+      "Non-promotional content and news": [
+        "არასარეკლამო შემცველობა და ახალი ამბები"
+      ],
       "Not factually correct": [
         "ფაქტიურად სწორი არაა"
       ],
@@ -9408,6 +9462,9 @@
       "Social": [
         "სოციალური"
       ],
+      "Social media updates and activity": [
+        "სოციალური მედიის განახლებები და აქტივობა"
+      ],
       "Starred": [
         "ვარსკვლავიანები"
       ],
@@ -9440,6 +9497,9 @@
       ],
       "System information": [
         "სისტემის ინფორმაცია"
+      ],
+      "The category has been updated, thanks for your feedback!": [
+        "კატეგორია განახლდა. მადლობა უკუკავშირისთვის!"
       ],
       "The filter is disabled. ${ enableButton }": [
         "ფილტრი გათიშულია. ${ enableButton }"
@@ -9507,6 +9567,9 @@
       "What is your main reason for canceling or downgrading?": [
         "რა არის მიზეზი სატარიფო გეგმის გაუქმების ან მისი დონის ჩამოწევის?"
       ],
+      "Which category should this be recategorized under?": [
+        "რომელ კატეგორიაში მოხდეს ამის რეკლასიფიკაცია?"
+      ],
       "Why am I seeing this?": [
         "რატომ ვხედავ ამას?"
       ],
@@ -9518,6 +9581,9 @@
       ],
       "Writing assistant": [
         "წერაში დამხმარე"
+      ],
+      "You cannot disable all categories": [
+        "ყველა კატეგორიას ვერ გამორთავთ"
       ],
       "Your alias": [
         "თქვენი ფსევდონიმი"
@@ -9810,7 +9876,7 @@
         "დაგეგმილია"
       ],
       "Sent": [
-        "გაგზავნილები"
+        "გაგზავნილი"
       ],
       "settings": [
         "მორგება"
@@ -11196,11 +11262,17 @@
       "Get the deal": [
         "ფასდაკლების მიღება"
       ],
+      "Last chance to get 80% off your first month of ${ plan }.": [
+        "ბოლო შანსი, მიიღოთ 80% ფასდაკლება პირველ თვეში თქვენი ${ plan }-დან."
+      ],
       "Last day to save": [
         "ბოლო დღე შესანახად"
       ],
       "Limited-time offer": [
         "დროში შეზღუდული შეთავაზება"
+      ],
+      "Limited-time offer, valid for your first month": [
+        "შეთავაზება შეზღუდული დროით. ხელმისაწვდომია, მხოლოდ, თქვენი პირველი თვისთვის"
       ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
@@ -11672,11 +11744,23 @@
       "CVC": [
         "CVC"
       ],
+      "Excluding ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის არჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% გადასახადების ამოღებით: ${ taxAmount }"
+      ],
       "Got it": [
         "გავიგე"
       ],
       "I'm purchasing as a business": [
         "ვაპირებ შევიძინო ბიზნესისთვის"
+      ],
+      "Including ${ taxRate }% ${ taxName }: ${ taxAmount }": [
+        "${ taxRate }%-ის ჩათვლით ${ taxName }: ${ taxAmount }"
+      ],
+      "Including ${ taxRate }% taxes: ${ taxAmount }": [
+        "${ taxRate }% გადასახადის გათვალისწინებით: ${ taxAmount }"
       ],
       "MM/YY": [
         "თთ/წწ"
@@ -11713,6 +11797,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
         "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
+      ],
+      "This number will be shown on all future invoices": [
+        "ეს რიცხვი ყველა მომავალ ინვოისზე გამოჩნდება"
       ],
       "Timeout exceeded": [
         "მოლოდინის ვადა ამოიწურა"
@@ -13738,6 +13825,10 @@
       "Read receipt sent": [
         "წაკითხულობის ანგარიში გაიგზავნა"
       ],
+      "Recategorized ${ elementsCount } message.": [
+        "კატეგორია შეეცვალა ${ elementsCount } შეტყობინებას.",
+        "კატეგორია შეეცვალა ${ elementsCount } შეტყობინებას."
+      ],
       "Secret passphrase updated": [
         "საიდუმლო ფრაზა განახლდა"
       ],
@@ -14194,6 +14285,9 @@
       "Customize calendar import": [
         "კალენდრის შემოტანის მორგება"
       ],
+      "Customize categories": [
+        "კატეგორიების მორგება"
+      ],
       "Customize your mail import": [
         "თქვენი ელფოსტის შემოტანის მორგება"
       ],
@@ -14319,9 +14413,6 @@
       "Enhance security with 2FA": [
         "გააფართოვეთ უსაფრთხოება 2FA-ით"
       ],
-      "Enter 2FA code": [
-        "შეიყვანეთ 2FA კოდი"
-      ],
       "Enter your password": [
         "შეიყვანეთ თქვენი პაროლი"
       ],
@@ -14348,6 +14439,9 @@
       ],
       "Forward": [
         "გადაგზავნა"
+      ],
+      "Get full access to ${ CALENDAR_APP_NAME }": [
+        "მიიღეთ სრული წვდომა ${ CALENDAR_APP_NAME }-ზე"
       ],
       "Get more from your VPN": [
         "მიიღეთ მეტი თქვენი VPN-სგან"
@@ -14856,6 +14950,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME }-ის ჩართვა"
+      ],
+      "Two-factor authentication": [
+        "2FA"
       ],
       "Unsubscribe": [
         "გამოწერის გაუქმება"

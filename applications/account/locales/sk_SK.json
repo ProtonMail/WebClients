@@ -556,12 +556,6 @@
       "Download CSV sample": [
         "Stiahnuť ukážku CSV"
       ],
-      "Download for macOS": [
-        "Stiahnuť pre macOS"
-      ],
-      "Download for Windows": [
-        "Stiahnuť pre Windows"
-      ],
       "Download ICS": [
         "Stiahnuť ICS"
       ],
@@ -2232,9 +2226,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiac.",
         "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať zľavu ${ discountPercentage } na ${ plan.Title } pri predplatení na ${ cycle } mesiace.",
@@ -4783,14 +4774,6 @@
       ],
       "Windows 8/8.1/7 or Windows 32-bit (ARM64)": [
         "Windows 8/8.1/7 alebo Windows 32-bit (ARM64)"
-      ]
-    },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb pre Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm pre Fedora / Red Hat"
       ]
     },
     "drive_signup_2023: Title": {
@@ -7432,14 +7415,6 @@
         "Bezplatná skúšobná verzia aplikácie pre počítače sa skončila"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } v App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } v Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Automaticky preposielajte"
@@ -9121,9 +9096,6 @@
       "Disabled on ${ boldValue }": [
         "Deaktivované ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Vypnutím dvojstupňového overenia bude váš účet menej bezpečný. Vypnite toto overovanie iba ak je to nevyhnutné."
-      ],
       "Discount": [
         "Zľava"
       ],
@@ -9391,9 +9363,6 @@
       "Failed to fetch logs.": [
         "Načítanie záznamov zlyhalo."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Rýchle a cielené. Email a kalendár, priamo na vašej pracovnej ploche."
-      ],
       "Featured in": [
         "Odporúčané v"
       ],
@@ -9561,9 +9530,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Ak máte darčekový kód, zadajte ho nižšie, aby ste mohli uplatniť zľavu."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Ak ste ešte nikdy nepoužívali dvojstupňové overovanie, dôrazne vám odporúčame, ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Ak stratíte svoje heslo a potrebujete obnoviť svoj účet, ${ boldImperative } že máte k dispozícii ${ boldAccountRecovery }."
@@ -9888,9 +9854,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Spravujte svoje preferencie emailových notifikácií pre ${ DOCS_APP_NAME }."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Manuálne zadajte túto informáciu do vášho zariadenia určeného pre dvojstupňové overenie a nastavte svoj účet. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -10288,9 +10251,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Obráťte sa na nás, ak potrebujete pomoc s čímkoľvek od ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "aby ste si najprv prečítali nášho sprievodcu dvojstupňovým overovaním"
-      ],
       "Recently used servers:": [
         "Nedávno použité servery:"
       ],
@@ -10374,9 +10334,6 @@
       ],
       "Scan QR code instead": [
         "Namiesto toho naskenovať QR kód"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Naskenujte tento kód pomocou zariadenia určeného pre dvojstupňové overenie a nastavte svoj účet. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM integrácia deaktivovaná"
@@ -10497,9 +10454,6 @@
       ],
       "Signed up": [
         "Prihlásený"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Prihlásenie bezpečnostným kľúčom zatiaľ nie je podporované vo všetkých aplikáciách. Bez TOTP môže prihlásenie do niektorých aplikácií zlyhať."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
@@ -10849,9 +10803,6 @@
       "This will wipe all logs for your organization members.": [
         "Toto vymaže všetky záznamy pre členov vašej organizácie."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Tento sprievodca povolí na vašom účte ${ BRAND_NAME } dvojstupňové overenie (2FA). Dvojstupňové overenie zvýši bezpečnosť vášho účtu ${ BRAND_NAME_TWO }, preto vám ho odporúčame povoliť."
-      ],
       "to ${ product } Business": [
         "na ${ product } Business"
       ],
@@ -10941,12 +10892,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Vyskúšajte ${ productName } úplne bez rizika - ak si to z akéhokoľvek dôvodu rozmyslíte, dostanete plnú náhradu. Bez otázok."
-      ],
-      "Two-factor authentication disabled": [
-        "Dvojstupňové overenie vypnuté"
-      ],
-      "Two-factor authentication enabled": [
-        "Dvojstupňové overenie zapnuté"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Režim dvoch hesiel vyžaduje dve heslá: jedno na prihlásenie do konta a druhé na dešifrovanie údajov. (Rozšírené)"
@@ -12441,9 +12386,6 @@
       "Backup password": [
         "Záložné heslo"
       ],
-      "Beta": [
-        "Beta"
-      ],
       "Billing cycle": [
         "Fakturačné obdobie"
       ],
@@ -13184,9 +13126,6 @@
       ],
       "Second password": [
         "Druhé heslo"
-      ],
-      "Select Linux package format": [
-        "Vyberte formát balíka Linux"
       ],
       "Select Linux platform": [
         "Vyberte platformu Linux"
@@ -17937,9 +17876,6 @@
       "Admin": [
         "Administrátor"
       ],
-      "Primary admin": [
-        "Hlavný administrátor"
-      ],
       "User": [
         "Používateľ"
       ]
@@ -21752,9 +21688,6 @@
       "Enhance security with 2FA": [
         "Zvýšte zabezpečenie pomocou 2FA"
       ],
-      "Enter 2FA code": [
-        "Zadajte 2FA kód"
-      ],
       "Enter endpoints into your identity provider": [
         "Zadajte koncové body do vášho poskytovateľa identity"
       ],
@@ -21814,15 +21747,6 @@
       ],
       "Folders and labels": [
         "Priečinky a štítky"
-      ],
-      "For Linux": [
-        "Pre Linux"
-      ],
-      "For macOS": [
-        "Pre macOS"
-      ],
-      "For Windows": [
-        "Pre Windows"
       ],
       "Forgot password": [
         "Zabudol/la som heslo"
@@ -22330,9 +22254,6 @@
       ],
       "Set up email forwarding": [
         "Nastaviť preposielanie emailov"
-      ],
-      "Set up two-factor authentication": [
-        "Nastavenie dvojstupňového overenia"
       ],
       "Set up your family account": [
         "Nastavte si rodinný účet"
@@ -23419,9 +23340,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administrátori nemajú prístup k údajom súkromných používateľov"
       ],

@@ -1500,9 +1500,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяц.",
         "Гэта прапанова недаступна з вашым бягучым тарыфным планам, але вы можаце атрымаць скідку ў памеры ${ discountPercentage } на тарыфны план ${ plan.Title } пры падпісцы на ${ cycle } месяцы.",
@@ -5898,6 +5895,12 @@
       "Attention required": [
         "Патрабуецца ўвага"
       ],
+      "Authenticator app 2FA disabled": [
+        "Праграма аўтэнтыфікацыі 2ФА адключана"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Праграма аўтэнтыфікацыі 2ФА уключана"
+      ],
       "Awaiting transaction": [
         "Чаканне трансакцыі"
       ],
@@ -6093,8 +6096,8 @@
       "Disabled on ${ boldValue }": [
         "Адключана ў ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Адключэнне двухфактарнай аўтэнтыфікацыі зробіць ваш уліковы запіс менш бяспечным. Працягвайце толькі ў тым выпадку, калі гэта сапраўды неабходна."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Адключэнне праграмы аўтэнтыфікацыі 2ФА зробіць ваш уліковы запіс менш бяспечным. Працягвайце толькі ў тым выпадку, калі гэта сапраўды неабходна."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Пазнаёмцеся з новымі функцыямі і пачніце выкарыстоўваць іх неадкладна!"
@@ -6381,9 +6384,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Калі ў вас ёсць падарункавы код, то вы можаце ўжыць яго ніжэй для атрымання скідкі."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Калі вы ніколі раней не выкарыстоўвалі двухфактарную аўтэнтыфікацыю, то мы настойліва рэкамендуем вам ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
       ],
@@ -6612,8 +6612,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Кіруйце, да якіх праграм ${ BRAND_NAME } могуць атрымліваць доступ удзельнікі вашай арганізацыі. Калі выключана, то толькі адміністратары будуць мець доступ да іх."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Для налады свайго ўліковага запісу ўвядзіце гэту інфармацыю ўручную ў сваю прыладу двухфактарнай аўтэнтыфікацыі. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Для налады свайго ўліковага запісу ўвядзіце гэту інфармацыю ўручную ў праграму аўтэнтыфікацыі. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Лагатып Mastercard SecureCode"
@@ -6879,9 +6879,6 @@
       "Public sharing of documents is not yet supported.": [
         "Публічнае абагульванне дакументаў пакуль не падтрымліваецца."
       ],
-      "read our two-factor authentication guide first": [
-        "спачатку прачытаць наш дапаможнік па двухфактарнай аўтэнтыфікацыі"
-      ],
       "Recently used servers:": [
         "Серверы, якімі вы нядаўна карысталіся:"
       ],
@@ -6930,8 +6927,8 @@
       "Scan QR code instead": [
         "Сканіраваць QR-код"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Адсканіруйце гэты код сваёй прыладай з двухфактарнай аўтэнтыфікацыяй, каб наладзіць свой уліковы запіс. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Адсканіруйце гэты код з дапамогай праграмы аўтэнтыфікацыі, каб наладзіць свой уліковы запіс. ${ switchButton }"
       ],
       "SCIM integration disabled": [
         "Інтэграцыя SCIM адключана"
@@ -7013,9 +7010,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Увайдзіце ў ${ MAIL_APP_NAME }, каб актываваць свой адрас"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Уваход з дапамогай ключа бяспекі яшчэ не падтрымліваецца ва ўсіх праграмах. Без TOTP уваход у некаторыя праграмы можа не атрымацца."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
@@ -7236,9 +7230,6 @@
       "This will wipe all logs for your organization members.": [
         "Гэта прывядзе да сцірання ўсіх журналаў для ўдзельнікаў вашай арганізацыі."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Гэты майстар дапаможа ўключыць двухфактарную аўтэнтыфікацыю (2ФА) для вашага ўліковага запісу ${ BRAND_NAME }. Мы рэкамендуем уключыць яе для таго, каб павялічыць бяспеку вашага ўліковага запісу ${ BRAND_NAME_TWO }."
-      ],
       "to ${ product } Business": [
         "у ${ product } Business"
       ],
@@ -7301,12 +7292,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Паспрабуйце ${ productName } абсалютна нічым не рызыкуючы. Вы атрымаеце поўнае вяртанне грашовых сродкаў, калі па нейкай прычыне зменіце сваё меркаванне. Без ніякіх пытанняў."
-      ],
-      "Two-factor authentication disabled": [
-        "Двухфактарная аўтэнтыфікацыя адключана"
-      ],
-      "Two-factor authentication enabled": [
-        "Двухфактарная аўтэнтыфікацыя ўключана"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Для рэжыму двух пароляў патрабуюцца два паролі: першы для ўваходу ва ўліковы запіс, а другі для расшыфроўкі вашых даных (дадатковая функцыя бяспекі)"
@@ -7535,6 +7520,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Без праграмы аўтэнтыфікацыі вы не зможаце ўвайсці ў праграмы ${ BRAND_NAME }, якія яшчэ не падтрымліваюць ключы бяспекі."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным спосабам праверкі?"
@@ -11092,7 +11080,7 @@
         "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Без уліку падатка ў ${ taxRate }%: ${ taxAmount }"
+        "Без уліку падаткаў у ${ taxRate }%: ${ taxAmount }"
       ],
       "Got it": [
         "Зразумела"
@@ -11104,7 +11092,7 @@
         "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "З улікам падатка ў ${ taxRate }%: ${ taxAmount }"
+        "З улікам падаткаў у ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -11123,6 +11111,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Падаўжаецца за ${ renewPriceStr }. Скасаваць можна ў любы час."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
       ],
       "Taxes": [
         "Падаткі"
@@ -11835,9 +11826,6 @@
     "Role": {
       "Admin": [
         "Адміністратар"
-      ],
-      "Primary admin": [
-        "Асноўны адміністратар"
       ],
       "User": [
         "Карыстальнік"
@@ -14269,6 +14257,9 @@
       "Disable two-factor authentication": [
         "Адключыць двухфактарную аўтэнтыфікацыю"
       ],
+      "Disable two-factor authentication app?": [
+        "Адключыць праграму двухфактарнай аўтэнтыфікацыі?"
+      ],
       "Disable two-factor authentication?": [
         "Адключыць двухфактарную аўтэнтыфікацыю?"
       ],
@@ -14349,9 +14340,6 @@
       ],
       "Enhance security with 2FA": [
         "Паляпшэнне бяспекі з дапамогай 2ФА"
-      ],
-      "Enter 2FA code": [
-        "Увядзіце код 2ФА"
       ],
       "Enter endpoints into your identity provider": [
         "Увядзіце канцавыя пункты ў свайго пастаўшчыка пасведчанняў"
@@ -14641,11 +14629,11 @@
       "Set recovery methods": [
         "Прызначэнне спосабаў аднаўлення"
       ],
+      "Set up authenticator app": [
+        "Наладзіць праграму аўтэнтыфікацыі"
+      ],
       "Set up email forwarding": [
         "Наладжванне перасылкі лістоў"
-      ],
-      "Set up two-factor authentication": [
-        "Наладзіць двухфактарную аўтэнтыфікацыю"
       ],
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
@@ -15334,11 +15322,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2ФА"
-      ],
       "Administrators can't access the data of private users": [
         "Адміністратары не могуць атрымліваць доступ да даных прыватных карыстальнікаў"
+      ],
+      "Authenticator app": [
+        "Праграма аўтэнтыфікацыі"
       ],
       "Inactive": [
         "Неактыўны"
@@ -15357,6 +15345,9 @@
       ],
       "Private": [
         "Прыватны"
+      ],
+      "Security key": [
+        "Ключ бяспекі"
       ],
       "SSO": [
         "SSO"
