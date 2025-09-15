@@ -1378,6 +1378,65 @@
         "Bir dış siteyi ziyaret etmek üzeresiniz:"
       ]
     },
+    "collider_2025: Invite": {
+      "Email address is not valid": [
+        "E-posta adresi geçersiz"
+      ],
+      "Email address is required": [
+        "E-posta adresinin yazılması zorunludur"
+      ]
+    },
+    "collider_2025: Invite Button": {
+      "Close": [
+        "Kapat"
+      ],
+      "Invite friends": [
+        "Arkadaşlarınızı davet edin"
+      ],
+      "Maybe later": [
+        "Belki daha sonra"
+      ],
+      "Send invitation": [
+        "Davet gönder"
+      ]
+    },
+    "collider_2025: Invite Email Placeholder": {
+      "Your friend's email": [
+        "Arkadaşınızın e-posta adresi"
+      ]
+    },
+    "collider_2025: Invite Info": {
+      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
+        "Gizlilik odaklı bir yapay zekadan faydalanacak birilerini tanıyor musunuz? Onları ${ LUMO_SHORT_APP_NAME } bekleme listesine katılmaya davet edin. Gönderebileceğiniz ${ remainingInvitesText } davetiyeniz var."
+      ],
+      "You have ${ remainingInvitesText } invitations remaining.": [
+        "${ remainingInvitesText } davet hakkınız kaldı."
+      ]
+    },
+    "collider_2025: Invite Sent": {
+      "Invitation sent": [
+        "Davet gönderildi"
+      ]
+    },
+    "collider_2025: Invite Success": {
+      "Invite sent!": [
+        "Davet gönderildi!"
+      ],
+      "No invites left  ": [
+        "Gönderilebilecek bir davet kalmamış  "
+      ],
+      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
+        "Başkalarının ${ LUMO_SHORT_APP_NAME } yardımcısını keşfetmesine yardım ettiğiniz için teşekkür ederiz! Daha fazla davet hakkı verebilirsek, sizi bilgilendireceğiz."
+      ],
+      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
+        "${ emailText } davet edildi. Bekleme listesine nasıl katılacağı ile ilgili yönerge gönderildi."
+      ]
+    },
+    "collider_2025: Invite Title": {
+      "Invite friends to experience ${ LUMO_APP_NAME }": [
+        "Arkadaşlarınızı ${ LUMO_APP_NAME } deneyimlemeye davet edin"
+      ]
+    },
     "collider_2025: Label": {
       "Did not follow instructions": [
         "Yönergeleri izlemedi"
@@ -5852,9 +5911,6 @@
       "Enhance security with 2FA": [
         "İki adımlı doğrulama ile güvenliği artırın"
       ],
-      "Enter 2FA code": [
-        "İki adımlı doğrulama kodunu yazın"
-      ],
       "Enter your password": [
         "Parolanızı yazın"
       ],
@@ -5935,6 +5991,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } özelliğini açın"
+      ],
+      "Two-factor authentication": [
+        "İki adımlı doğrulama"
       ],
       "Upgrade complete!": [
         "Yükseltme tamamlandı!"
