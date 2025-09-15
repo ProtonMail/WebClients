@@ -1,5 +1,6 @@
 import type { ExternalE2EEKeyProvider } from '@proton-meet/livekit-client';
 import { Room } from '@proton-meet/livekit-client';
+import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
 import { qualityConstants } from '../qualityConstants';
@@ -52,8 +53,17 @@ export const useMeetingJoin = () => {
 
             return room;
         } catch (error: any) {
-            console.error(error);
-            throw new Error(error.message ?? c('Error').t`Failed to join meeting. Please try again later`);
+            switch (error) {
+                // TODO: Show a custom error message to the user for each error
+                case MeetCoreErrorEnum.MlsServerVersionNotSupported:
+                    throw new Error(c('Error').t`This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.`);
+                case MeetCoreErrorEnum.MaxRetriesReached:
+                case MeetCoreErrorEnum.MlsGroupError:
+                case MeetCoreErrorEnum.HttpClientError:
+                default:
+                    console.error(error);
+                    throw new Error(c('Error').t`Failed to join meeting. Please try again later.`);
+            }
         }
     };
 
