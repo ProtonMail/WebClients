@@ -4,6 +4,7 @@ import { Button } from '@proton/atoms';
 import { ErrorBoundary, Icon, useModalState } from '@proton/components';
 
 import { ModalEditCategories } from '../editCategories/ModalEditCategories';
+import { PromptDisableCategories } from '../editCategories/PromptDisableCategories';
 import { useCategoriesView } from '../useCategoriesView';
 import { useRecategorizeElement } from '../useRecategorizeElement';
 import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrors';
@@ -22,6 +23,7 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
     const { activeCategoriesTabs } = useCategoriesView();
 
     const [editModalProps, setEditModal, renderEditModal] = useModalState();
+    const [disableModalProps, setDisableModal, renderDisableModal] = useModalState();
 
     const handleCategoryDrop = (categoryId: string, itemIds: string[]) => {
         void recategorizeElement(categoryId, itemIds);
@@ -80,7 +82,15 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
                     <Icon name="sliders-2" alt={c('Action').t`Edit categories`} />
                 </Button>
             </div>
-            {renderEditModal && <ModalEditCategories {...editModalProps} />}
+            {renderEditModal && (
+                <ModalEditCategories
+                    onDisableAll={() => {
+                        setDisableModal(true);
+                    }}
+                    {...editModalProps}
+                />
+            )}
+            {renderDisableModal && <PromptDisableCategories {...disableModalProps} />}
         </>
     );
 };
