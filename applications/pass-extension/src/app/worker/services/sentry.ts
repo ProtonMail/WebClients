@@ -1,5 +1,6 @@
 import config from 'proton-pass-extension/app/config';
 import 'proton-pass-extension/lib/utils/polyfills';
+import { isRuntimeActive, isRuntimeStale } from 'proton-pass-extension/lib/utils/runtime';
 
 import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -13,8 +14,10 @@ export const createSentryService = () => {
 
     wait(50)
         .then(() => {
-            setSentryEnabled(true);
-            logger.info(`[Sentry] Sentry service enabled`);
+            if (isRuntimeActive()) {
+                setSentryEnabled(true);
+                logger.info(`[Sentry] Sentry service enabled`);
+            }
         })
         .catch(noop);
 
@@ -25,7 +28,8 @@ export const createSentryService = () => {
             release: config.APP_VERSION,
             environment: `browser-pass::worker`,
         },
-        ignore: () => false,
+        setupIgnore: () => false,
+        beforeSendIgnore: isRuntimeStale,
         denyUrls: [],
     });
 
