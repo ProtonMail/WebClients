@@ -22,7 +22,7 @@ export const OfferModal: FC<OfferModalProps> = ({ uiData, loading, onClose, onCo
     const offerPrice = getSimplePriceString(uiData.currency, uiData.withDiscountPerCycle);
 
     const features = [
-        c('Label').t`Unlimited Hide-my-email aliases`,
+        c('Label').t`Unlimited hide-my-email aliases`,
         c('Label').t`Built-in 2FA authenticator`,
         c('Label').t`Vault, item & secure link sharing`,
     ];

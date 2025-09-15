@@ -41,7 +41,7 @@ export interface SignupContextSubscriptionData {
     trial?: boolean;
 }
 
-const handleSubscribeUser = async (
+export const handleSubscribeUser = async (
     api: Api,
     subscriptionData: SignupContextSubscriptionData,
     productParam: ProductParam,

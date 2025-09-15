@@ -74,7 +74,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             buttonAction: openOfferModal,
             features: [
                 c('Label').t`Secure password generator`,
-                c('Label').t`10 Hide-my-email aliases`,
+                c('Label').t`10 hide-my-email aliases`,
                 c('Label').t`Unlimited logins and devices`,
             ],
         },
@@ -93,7 +93,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
                 c('Label').t`Vault, item & secure link sharing`,
                 c('Label').t`Credit cards`,
                 DARK_WEB_MONITORING_NAME,
-                c('Label').t`File attachments`,
+                c('Label').t`File attachments (up to 10GB)`,
             ],
         },
         {

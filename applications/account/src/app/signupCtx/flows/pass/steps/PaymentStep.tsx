@@ -43,6 +43,7 @@ export const PaymentStep: FC<Props> = ({ onContinue, onBack }) => {
         onChargeable: async (operations, data) => {
             try {
                 signup.submitPaymentData(options, data);
+                await signup.afterSetupSubscribe();
                 await onContinue();
             } catch (error) {
                 setLoading(false);
