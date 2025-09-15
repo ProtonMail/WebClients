@@ -1,10 +1,10 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
 
 import type {
+    ApiUserRestrictedEvent,
     ApiListenerCallback,
     ApiMissingScopeEvent,
     ApiVerificationEvent,
-    ApiForcePasswordChangeEvent,
     ApiWithListener,
 } from '@proton/shared/lib/api/createApi';
 import { queryUnlock } from '@proton/shared/lib/api/user';
@@ -32,11 +32,11 @@ const AuthModal = lazy(
         )
 );
 
-const ForcePasswordChangeModal = lazy(
+const UserRestrictedModal = lazy(
     () =>
         import(
-            /* webpackChunkName: "force-password-change-modal" */
-            './ForcePasswordChangeModal'
+            /* webpackChunkName: "user-restricted-modal" */
+            './UserRestrictedModal'
         )
 );
 
@@ -47,8 +47,8 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
     const [verificationModals, setVerificationModals] = useState<ApiModalPayload<ApiVerificationEvent['payload']>[]>(
         []
     );
-    const [forcePasswordChangeModals, setForcePasswordChangeModals] = useState<
-        ApiModalPayload<ApiForcePasswordChangeEvent['payload']>[]
+    const [userRestrictedModals, setUserRestrictedModals] = useState<
+        ApiModalPayload<ApiUserRestrictedEvent['payload']>[]
     >([]);
 
     useEffect(() => {
@@ -78,8 +78,8 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
                 return true;
             }
 
-            if (event.type === 'force-password-change') {
-                setForcePasswordChangeModals((prev) => [...prev, { open: true, payload: event.payload }]);
+            if (event.type === 'user-restricted') {
+                setUserRestrictedModals((prev) => [...prev, { open: true, payload: event.payload }]);
                 return true;
             }
 
@@ -95,7 +95,7 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
     const reauth = reauthModals[0];
     const unlock = unlockModals[0];
     const verification = verificationModals[0];
-    const forcePasswordChange = forcePasswordChangeModals[0];
+    const userRestricted = userRestrictedModals[0];
 
     return (
         <>
@@ -196,20 +196,21 @@ const ApiProvider = ({ api }: { api: ApiWithListener }) => {
                     />
                 </Suspense>
             )}
-            {forcePasswordChange && (
+            {userRestricted && (
                 <Suspense fallback={null}>
-                    <ForcePasswordChangeModal
-                        open={forcePasswordChange.open}
-                        message={forcePasswordChange.payload.message}
+                    <UserRestrictedModal
+                        open={userRestricted.open}
+                        message={userRestricted.payload.message}
+                        actions={userRestricted.payload.error?.data?.Details?.Actions ?? []}
                         onClose={() => {
-                            forcePasswordChange.payload.error.cancel = true;
-                            forcePasswordChange.payload.reject(forcePasswordChange.payload.error);
-                            setForcePasswordChangeModals((arr) =>
-                                replace(arr, forcePasswordChange, { ...forcePasswordChange, open: false })
+                            userRestricted.payload.error.cancel = true;
+                            userRestricted.payload.reject(userRestricted.payload.error);
+                            setUserRestrictedModals((arr) =>
+                                replace(arr, userRestricted, { ...userRestricted, open: false })
                             );
                         }}
                         onExit={() => {
-                            setForcePasswordChangeModals((arr) => remove(arr, forcePasswordChange));
+                            setUserRestrictedModals((arr) => remove(arr, userRestricted));
                         }}
                     />
                 </Suspense>
