@@ -74,8 +74,8 @@ export type ApiVerificationEvent = {
     };
 };
 
-export type ApiForcePasswordChangeEvent = {
-    type: 'force-password-change';
+export type ApiUserRestrictedEvent = {
+    type: 'user-restricted';
     payload: {
         error: any;
         message: string | undefined;
@@ -91,7 +91,7 @@ export type ApiEvent =
     | ApiLogoutEvent
     | ApiMissingScopeEvent
     | ApiVerificationEvent
-    | ApiForcePasswordChangeEvent;
+    | ApiUserRestrictedEvent;
 
 export type ApiListenerCallback = (event: ApiEvent) => boolean;
 
@@ -165,13 +165,13 @@ const createApi = ({
         });
     };
 
-    const handleForcePasswordChange = (data: any) => {
+    const handleUserRestricted = (data: any) => {
         if (!listeners.length) {
             return Promise.reject(data.error);
         }
         return new Promise((resolve, reject) => {
             const handled = notify({
-                type: 'force-password-change',
+                type: 'user-restricted',
                 payload: {
                     ...data,
                     resolve,
@@ -189,7 +189,7 @@ const createApi = ({
         call,
         onMissingScopes: handleMissingScopes,
         onVerification: handleVerification,
-        onForcePasswordChange: handleForcePasswordChange,
+        onUserRestricted: handleUserRestricted,
     }) as any;
 
     const offlineSet = new Set<string>();
