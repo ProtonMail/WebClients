@@ -8,6 +8,7 @@ import {
     captureMessage as sentryCaptureMessage,
 } from '@sentry/browser';
 import type { BrowserTransportOptions } from '@sentry/browser/types/transports/types';
+import type { ErrorEvent, EventHint } from '@sentry/types/types/event';
 
 import { Availability, AvailabilityTypes } from '@proton/utils/availability';
 
@@ -33,13 +34,14 @@ type SentryDenyUrls = BrowserOptions['denyUrls'];
 type SentryIgnoreErrors = BrowserOptions['ignoreErrors'];
 
 type SentryOptions = {
-    sessionTracking?: boolean;
     config: ProtonConfig;
-    UID?: string;
-    sentryConfig?: SentryConfig;
-    ignore?: (config: SentryConfig) => boolean;
     denyUrls?: SentryDenyUrls;
     ignoreErrors?: SentryIgnoreErrors;
+    sentryConfig?: SentryConfig;
+    sessionTracking?: boolean;
+    UID?: string;
+    beforeSendIgnore?: (event: ErrorEvent, hint: EventHint) => boolean;
+    setupIgnore?: (config: SentryConfig) => boolean;
 };
 
 const context: SentryContext = {
@@ -177,20 +179,21 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
 };
 
 function main({
-    UID,
     config,
-    sessionTracking = false,
-    sentryConfig = getDefaultSentryConfig(config),
-    ignore = ({ host }) => isLocalhost(host),
     denyUrls = getDefaultDenyUrls(),
     ignoreErrors = getDefaultIgnoreErrors(),
+    sentryConfig = getDefaultSentryConfig(config),
+    sessionTracking = false,
+    UID,
+    beforeSendIgnore,
+    setupIgnore = ({ host }) => isLocalhost(host),
 }: SentryOptions) {
     const { SENTRY_DSN, SENTRY_DESKTOP_DSN, APP_VERSION } = config;
     const sentryDSN = isElectronApp ? SENTRY_DESKTOP_DSN || SENTRY_DSN : SENTRY_DSN;
     const { host, release, environment } = sentryConfig;
 
     // No need to configure it if we don't load the DSN
-    if (!sentryDSN || ignore(sentryConfig)) {
+    if (!sentryDSN || setupIgnore(sentryConfig)) {
         return;
     }
 
@@ -217,6 +220,10 @@ function main({
         // Unfortunately Sentry does not use the custom transport for those, and thus fails to add the headers the API requires.
         sendClientReports: false,
         beforeSend(event, hint) {
+            if (beforeSendIgnore?.(event, hint)) {
+                return null;
+            }
+
             const error = hint?.originalException as any;
             const stack = typeof error === 'string' ? error : error?.stack;
             // Filter out broken ferdi errors
