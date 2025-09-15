@@ -1645,6 +1645,9 @@
       "Extra password successfully removed": [
         "დამატებითი პაროლი წარმატებით წაიშალა"
       ],
+      "Failed updating your vault organization": [
+        "თქვენი საცავის ორგანიზაციის განახლება ჩავარდა"
+      ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
       ],
@@ -2292,6 +2295,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "საცავი \"${ share.content.name }\" წაიშალა"
+      ],
+      "Vault organization successfully updated": [
+        "საცავის ორგანიზაცია წარმატებით განახლდა"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "საცავის გაზიარება: ${ vaultMembersCount } წევრი",
