@@ -529,12 +529,6 @@
       "Download CSV sample": [
         "Hent CSV-eksempel"
       ],
-      "Download for macOS": [
-        "Download til macOS"
-      ],
-      "Download for Windows": [
-        "Download til Windows"
-      ],
       "Download ICS": [
         "Download ICS"
       ],
@@ -2061,9 +2055,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement, men du kan spare ${ discountPercentage } på ${ plan.Title }, når du abonnerer for ${ cycle } måned.",
         "Dette tilbud er ikke tilgængeligt med dit nuværende abonnement, men du kan spare ${ discountPercentage } på ${ plan.Title }, når du abonnerer for ${ cycle } måneder."
@@ -4345,14 +4336,6 @@
         "Windows 8/8.1/7 eller Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb til Debian/Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm til Fedora/Red Hat"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Opret en gratis ${ DRIVE_APP_NAME }-konto for at få sikker adgang til filen"
@@ -6536,14 +6519,6 @@
         "Din desktop app's gratis prøveperiode er slut"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } i App Store"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } i Play Store"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Videresend automatisk"
@@ -7976,9 +7951,6 @@
       "Disabled countries": [
         "Deaktiverede lande"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Hvis du deaktiverer totrins-godkendelse, bliver din konto mindre sikker. Gør kun dette med det største forbehold."
-      ],
       "Discount": [
         "Rabat"
       ],
@@ -8211,9 +8183,6 @@
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Hurtigt og fokuseret. E-mail og kalender, lige på skrivebordet."
-      ],
       "Featured in": [
         "Fremhævet i"
       ],
@@ -8354,9 +8323,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skal du indtaste den nedenfor for at anvende din rabat."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Hvis du aldrig tidligere har benyttet to-faktor-godkendelse, anbefaler vi dig stærkt at ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Hvis du mister din adgangskode og har brug for at gendanne din konto, ${ boldImperative } at du har en ${ boldAccountRecovery } indstillet."
@@ -8662,9 +8628,6 @@
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
         "Sørg for ${ addARecoveryMethod }, så du kan få adgang til din konto igen, hvis du glemmer din adgangskode."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Angiv manuelt disse oplysninger i din to-faktor-godkendelsesenhed for at oprette din konto. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -8999,9 +8962,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Kontakt os for at få hjælp til hvad som helst ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "læser vores to-faktor-godkendelsesguide først"
-      ],
       "Recently used servers:": [
         "Nyligt anvendte servere:"
       ],
@@ -9085,9 +9045,6 @@
       ],
       "Scan QR code instead": [
         "Skan i stedet QR-kode"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Skan denne kode med din to-faktor-godkendelsesenhed for at oprette din konto. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-integration slået fra"
@@ -9490,9 +9447,6 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "Dette vil logge dig ud af alle aktive sessioner og deaktivere to-faktor-godkendelse."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Denne guide aktiverer to-faktor-godkendelse (2FA) på din ${ BRAND_NAME }-konto. To-faktor-godkendelse vil gøre din ${ BRAND_NAME_TWO }-konto mere sikker, så vi anbefaler, at du aktiverer det."
-      ],
       "to ${ product } Business": [
         "til ${ product } Business"
       ],
@@ -9576,12 +9530,6 @@
       ],
       "trusted device": [
         "betroet enhed"
-      ],
-      "Two-factor authentication disabled": [
-        "To-faktor-godkendelse deaktiveret"
-      ],
-      "Two-factor authentication enabled": [
-        "To-faktor-godkendelse aktiveret"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Tilstanden med to adgangskoder kræver to adgangskoder: en til at logge ind på din konto og en til at dekryptere dine data. (Avanceret)"
@@ -10890,9 +10838,6 @@
       ],
       "Backup password": [
         "Backupadgangskode"
-      ],
-      "Beta": [
-        "Beta"
       ],
       "Billing cycle": [
         "Faktureringsperiode"
@@ -15793,9 +15738,6 @@
       "Admin": [
         "Admin"
       ],
-      "Primary admin": [
-        "Primær admin"
-      ],
       "User": [
         "Bruger"
       ]
@@ -19116,9 +19058,6 @@
       "Enhance security with 2FA": [
         "Forøg sikkerheden med 2FA"
       ],
-      "Enter 2FA code": [
-        "Indtast 2FA-kode"
-      ],
       "Enter endpoints into your identity provider": [
         "Angiv slutpunkter i din identitetsudbyder"
       ],
@@ -19176,15 +19115,6 @@
       ],
       "Folders and labels": [
         "Mapper og etiketter"
-      ],
-      "For Linux": [
-        "Til Linux"
-      ],
-      "For macOS": [
-        "Til macOS"
-      ],
-      "For Windows": [
-        "Til Windows"
       ],
       "Forgot password": [
         "Glemt adgangskode"
@@ -19660,9 +19590,6 @@
       ],
       "Set up email forwarding": [
         "Indstil videresendelse af e-mail"
-      ],
-      "Set up two-factor authentication": [
-        "Indstil to-faktor-godkendelse"
       ],
       "Set up your family account": [
         "Opsæt din familie-konto"
@@ -20623,9 +20550,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorer kan ikke tilgå private brugeres data"
       ],

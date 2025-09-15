@@ -1494,9 +1494,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Această ofertă nu este disponibilă pentru planul curent."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } lună.",
         "Ne pare rău, această ofertă nu este disponibilă cu planul actual. Dar puteți obține o reducere de ${ discountPercentage } cu planul ${ plan.Title } dacă vă abonați pentru ${ cycle } luni.",
@@ -5822,6 +5819,12 @@
       "Attention required": [
         "Necesită atenție"
       ],
+      "Authenticator app 2FA disabled": [
+        "Aplicație de autentificare A2F dezactivată"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Aplicație de autentificare A2F activată"
+      ],
       "Awaiting transaction": [
         "Se așteaptă tranzacția"
       ],
@@ -6013,8 +6016,8 @@
       "Disabled on ${ boldValue }": [
         "Dezactivat de la ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Dezactivarea autentificării cu doi factori vă va face contul mai puțin sigur. Continuați doar dacă este absolut necesar."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Dezactivarea aplicației de autentificare A2F vă va face contul mai puțin sigur. Continuați doar dacă este absolut necesar."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Descoperiți funcțiile noi deblocate și începeți să le folosiți chiar acum!"
@@ -6300,9 +6303,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Dacă aveți un cod cadou, introduceți-l mai jos pentru a aplica reducerea."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Dacă nu ați mai folosit autentificarea cu doi factori, vă recomandăm insistent să ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Dacă vă pierdeți dispozitivul pentru autentificarea cu doi factori (A2F), puteți folosi aceste coduri în locul celor 6 cifre pentru autentificarea cu doi factori pentru a vă conecta la cont. Fiecare cod e de unică folosință."
       ],
@@ -6530,8 +6530,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestionați aplicațiile ${ BRAND_NAME } pe care membrii organizației proprii le pot accesa. Dacă este dezactivat, numai administratorii vor avea acces."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Introduceți manual această informație în dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Introduceți manual această informație în aplicația de autentificare pentru a vă configura contul. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -6796,9 +6796,6 @@
       "Public sharing of documents is not yet supported.": [
         "Partajarea publică a documentelor nu este încă implementată."
       ],
-      "read our two-factor authentication guide first": [
-        "citiți mai întâi ghidul nostru de autentificare cu doi factori"
-      ],
       "Recently used servers:": [
         "Servere utilizate recent:"
       ],
@@ -6847,8 +6844,8 @@
       "Scan QR code instead": [
         "Scanați în schimb codul QR"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Scanați acest cod cu dispozitivul pentru autentificarea cu doi factori pentru a configura contul. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Scanați acest cod cu aplicația de autentificare pentru a vă configura contul. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integrare SCIM dezactivată"
@@ -6929,9 +6926,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Conectarea cu o cheie de securitate nu este încă suportată în toate aplicațiile. Fără TOTP, conectarea la unele aplicații poate eșua."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
@@ -7147,9 +7141,6 @@
       "This will wipe all logs for your organization members.": [
         "Aceasta va șterge toate jurnalele pentru membrii organizației."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Acest asistent va activa „autentificarea cu doi factori” (A2F) pentru acest cont ${ BRAND_NAME }. A2F va face contul ${ BRAND_NAME_TWO } mai sigur astfel încât vă recomandăm s-o activați."
-      ],
       "to ${ product } Business": [
         "la ${ product } Business"
       ],
@@ -7212,12 +7203,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Încercați ${ productName } fără riscuri - dacă din orice motiv vă răzgândiți, veți primi o rambursare completă. Fără întrebări."
-      ],
-      "Two-factor authentication disabled": [
-        "Autentificare cu doi factori dezactivată"
-      ],
-      "Two-factor authentication enabled": [
-        "Autentificare cu doi factori activată"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Modul cu două parole necesită două parole: una pentru a vă autentifica în cont și una pentru a decripta datele. (Avansat)"
@@ -7446,6 +7431,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Fără o aplicație de autentificare, nu vă veți putea conecta la aplicațiile ${ BRAND_NAME } care nu au încă suport pentru cheile de securitate."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -10993,6 +10981,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Reînnoire cu ${ renewPriceStr }, anulați oricând."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Ne pare rău, această ofertă nu este disponibilă cu planul actual."
+      ],
       "Taxes": [
         "Taxe"
       ],
@@ -11693,9 +11684,6 @@
     "Role": {
       "Admin": [
         "Administrator"
-      ],
-      "Primary admin": [
-        "Administrator principal"
       ],
       "User": [
         "Utilizator"
@@ -14066,6 +14054,9 @@
       "Disable two-factor authentication": [
         "Dezactivare autentificare cu doi factori"
       ],
+      "Disable two-factor authentication app?": [
+        "Dezactivați aplicația de autentificare cu doi factori?"
+      ],
       "Disable two-factor authentication?": [
         "Dezactivați autentificarea cu doi factori?"
       ],
@@ -14146,9 +14137,6 @@
       ],
       "Enhance security with 2FA": [
         "Îmbunătățiți securitatea cu A2F"
-      ],
-      "Enter 2FA code": [
-        "Introduceți codul de A2F"
       ],
       "Enter endpoints into your identity provider": [
         "Introduceți puncte finale în furnizorul de identitate"
@@ -14436,11 +14424,11 @@
       "Set recovery methods": [
         "Setați metodele de recuperare"
       ],
+      "Set up authenticator app": [
+        "Configurați aplicația de autentificare"
+      ],
       "Set up email forwarding": [
         "Setare redirecționare mesaje"
-      ],
-      "Set up two-factor authentication": [
-        "Setare autentificare cu doi factori"
       ],
       "Set up your organization": [
         "Setați organizația"
@@ -15127,11 +15115,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "A2F"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorii nu pot accesa datele utilizatorilor privați."
+      ],
+      "Authenticator app": [
+        "Aplicația Authenticator"
       ],
       "Inactive": [
         "Inactiv"
@@ -15150,6 +15138,9 @@
       ],
       "Private": [
         "Privat"
+      ],
+      "Security key": [
+        "Cheia de securitate"
       ],
       "SSO": [
         "Autentificare unică (SSO)"

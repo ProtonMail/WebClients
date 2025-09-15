@@ -1488,9 +1488,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måned.",
         "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måneder."
@@ -5746,6 +5743,12 @@
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
+      "Authenticator app 2FA disabled": [
+        "Autentiseringsapp 2FA deaktivert"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Autentiseringsapp 2FA aktivert"
+      ],
       "Awaiting transaction": [
         "Avventer transaksjon"
       ],
@@ -5933,8 +5936,8 @@
       "Disabled on ${ boldValue }": [
         "Deaktivert på ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Deaktivering av tofaktorautentisering vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Deaktivering av autentiseringsapp 2FA vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Oppdag nye opplåste funksjoner og begynn å bruke dem med en gang!"
@@ -6219,9 +6222,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skriv den inn nedenfor for å legge til rabatten din."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Hvis du aldri har brukt tofaktorautentisering før, anbefaler vi deg sterkt ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Hvis du mister den tofaktoraktiverte enheten din, kan disse kodene brukes i stedet for den 6-sifrede tofaktorautentiseringskoden for å logge på kontoen din. Hver kode kan bare brukes én gang."
       ],
@@ -6448,8 +6448,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrer hvilke ${ BRAND_NAME }-applikasjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Angi denne informasjonen manuelt i tofaktorautentiseringsenheten for å konfigurere kontoen din. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Angi denne informasjonen manuelt i autentiseringsappen for å konfigurere kontoen din. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -6710,9 +6710,6 @@
       "Public sharing of documents is not yet supported.": [
         "Offentlig deling av dokumenter støttes enda ikke."
       ],
-      "read our two-factor authentication guide first": [
-        "les vår tofaktorautentiseringsguide først"
-      ],
       "Recently used servers:": [
         "Nylig brukte tjenere:"
       ],
@@ -6761,8 +6758,8 @@
       "Scan QR code instead": [
         "Skann QR-kode i stedet"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Skann denne koden med din to-faktor-autentiseringsenhet for å sette opp din konto. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Skann denne koden med autentiseringsappen din for å konfigurere kontoen. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-integrasjon deaktivert"
@@ -6842,9 +6839,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logg på ${ MAIL_APP_NAME } for å aktivere din adresse"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Pålogging med en sikkerhetsnøkkel er ennå ikke støttet i alle applikasjoner. Uten TOTP kan pålogging til enkelte applikasjoner mislykkes."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
@@ -7055,9 +7049,6 @@
       "This will wipe all logs for your organization members.": [
         "Dette vil slette alle logger for organisasjonens medlemmer."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Denne veiviseren vil aktivere tofaktorautentisering (2FA) på din ${ BRAND_NAME }-konto. Tofaktorautentisering vil gjøre din ${ BRAND_NAME_TWO }-konto sikrere, så vi anbefaler å aktivere den."
-      ],
       "to ${ product } Business": [
         "til ${ product } Business"
       ],
@@ -7120,12 +7111,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prøv ${ productName } helt risikofritt - hvis du av en eller annen grunn ombestemmer deg, vil du motta full refusjon. Ingen spørsmål."
-      ],
-      "Two-factor authentication disabled": [
-        "Tofaktorautentisering deaktivert"
-      ],
-      "Two-factor authentication enabled": [
-        "Tofaktorautentisering aktivert"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "To-passordmodus krever to passord: et for å logge på kontoen din og et for å dekryptere dataene dine (avansert)."
@@ -7354,6 +7339,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uten aktivering kan du ikke opprette nye brukere, legge til adresser til eksisterende brukere, eller få tilgang til ikke-private brukerkontoer."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Uten en autentiseringsapp vil du ikke kunne logge på ${ BRAND_NAME }-applikasjonene som ennå ikke støtter sikkerhetsnøkler."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -10858,6 +10846,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
+      ],
       "Taxes": [
         "Avgifter"
       ],
@@ -11547,9 +11538,6 @@
     "Role": {
       "Admin": [
         "Administrator"
-      ],
-      "Primary admin": [
-        "Primær administrator"
       ],
       "User": [
         "Bruker"
@@ -13869,6 +13857,9 @@
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
       ],
+      "Disable two-factor authentication app?": [
+        "Deaktivere tofaktorautentiseringsapp?"
+      ],
       "Disable two-factor authentication?": [
         "Deaktivere tofaktorautentisering?"
       ],
@@ -13949,9 +13940,6 @@
       ],
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
-      ],
-      "Enter 2FA code": [
-        "Angi 2FA-kode"
       ],
       "Enter endpoints into your identity provider": [
         "Angi endepunkter i identitetsleverandøren"
@@ -14237,11 +14225,11 @@
       "Set recovery methods": [
         "Angi gjenopprettingsmetoder"
       ],
+      "Set up authenticator app": [
+        "Konfigurer autentiseringsapp"
+      ],
       "Set up email forwarding": [
         "Konfigurer videresending av e-post"
-      ],
-      "Set up two-factor authentication": [
-        "Konfigurer tofaktorautentisering"
       ],
       "Set up your organization": [
         "Konfigurer organisasjonen din"
@@ -14926,11 +14914,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorer har ikke tilgang til dataene til private brukere"
+      ],
+      "Authenticator app": [
+        "Autentiseringsapp"
       ],
       "Inactive": [
         "Inaktiv"
@@ -14949,6 +14937,9 @@
       ],
       "Private": [
         "Privat"
+      ],
+      "Security key": [
+        "Sikkerhetsnøkkel"
       ],
       "SSO": [
         "SSO"

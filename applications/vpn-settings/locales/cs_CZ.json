@@ -1500,9 +1500,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
         "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
@@ -5898,6 +5895,12 @@
       "Attention required": [
         "Vyžadována pozornost"
       ],
+      "Authenticator app 2FA disabled": [
+        "Ověřovací aplikace 2FA deaktivována."
+      ],
+      "Authenticator app 2FA enabled": [
+        "Ověřovací aplikace 2FA povolena"
+      ],
       "Awaiting transaction": [
         "Čekání na transakci"
       ],
@@ -6093,8 +6096,8 @@
       "Disabled on ${ boldValue }": [
         "Deaktivováno ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Vypnutím dvoufázového ověřování bude váš účet méně bezpečný. Vypněte toto ověřování pouze pokud je to nezbytně nutné."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Deaktivováním dvoufázového ověření bude váš účet méně zabezpečený. Pokračujte pouze zda je to úplně nezbytné."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Objevte nové odemčené funkce a začněte je ihned používat!"
@@ -6381,9 +6384,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Pokud máte dárkový kód, zadejte jej níže pro použití Vaší slevy."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Pokud jste ještě nikdy nepoužívali dvoufázové ověřování, důrazně doporučujeme ${ guideButton }."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ztratíte-li zařízení určené pro dvoufázové ověření, můžete pro přihlášení použít následující kódy místo 6-místného 2FA kódu. Každý kód může být použit pouze jednou."
       ],
@@ -6612,8 +6612,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Spravujte, ke kterým aplikacím ${ BRAND_NAME } mají členové vaší organizace přístup. Pokud je deaktivováno, budou mít přístup pouze správci."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Ručně zadejte tyto informace do zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Ručně zadejte tuto informaci do své ověřovací aplikace a nastavte svůj účet. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -6882,9 +6882,6 @@
       "Public sharing of documents is not yet supported.": [
         "Veřejné sdílení dokumentů ještě není podporováno."
       ],
-      "read our two-factor authentication guide first": [
-        "přečtěte si nejprve našeho průvodce dvoufázovým ověřováním"
-      ],
       "Recently used servers:": [
         "Nedávno použité servery:"
       ],
@@ -6933,8 +6930,8 @@
       "Scan QR code instead": [
         "Namísto toho naskenujte QR kód"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Naskenujte tento kód pomocí zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Naskenujte tento kód vaší ověřovací aplikací pro nastavení vašeho účtu. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "Integrace SCIM deaktivována"
@@ -7016,9 +7013,6 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Přihlaste se do ${ MAIL_APP_NAME } pro aktivaci adresy"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Přihlašování bezpečnostním klíčem zatím není podporováno ve všech aplikacích. Bez TOTP se přihlášení do některých aplikací nemusí podařit."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
@@ -7239,9 +7233,6 @@
       "This will wipe all logs for your organization members.": [
         "Tím se smažou všechny logy členů vaší organizace."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem ${ BRAND_NAME } účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější ${ BRAND_NAME_TWO } účet."
-      ],
       "to ${ product } Business": [
         "do ${ product } Business"
       ],
@@ -7304,12 +7295,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Vyzkoušejte ${ productName } zcela bez rizika - pokud si to z jakéhokoli důvodu rozmyslíte, dostanete zpět plnou částku. Bez otázek."
-      ],
-      "Two-factor authentication disabled": [
-        "Dvoufázové ověřování je vypnuto"
-      ],
-      "Two-factor authentication enabled": [
-        "Dvoufázové ověřování zapnuto"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "Režim dvou hesel vyžaduje dvě hesla: jedno pro přihlášení k účtu a druhé pro dešifrování dat. (Pokročilé)"
@@ -7538,6 +7523,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Bez aplikace dvoufázového ověření se nebudete moci přihlásit do ${ BRAND_NAME } aplikací které zatím nepodporují bezpečnostní klíče."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
@@ -11139,6 +11127,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje se za ${ renewPriceStr }, zrušit lze kdykoli."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
       "Taxes": [
         "Daně"
       ],
@@ -11850,9 +11841,6 @@
     "Role": {
       "Admin": [
         "Správce"
-      ],
-      "Primary admin": [
-        "Hlavní správce"
       ],
       "User": [
         "Uživatel"
@@ -14284,6 +14272,9 @@
       "Disable two-factor authentication": [
         "Zakázat dvoufázové ověření"
       ],
+      "Disable two-factor authentication app?": [
+        "Deaktivovat aplikaci pro dvoufázové ověření?"
+      ],
       "Disable two-factor authentication?": [
         "Deaktivovat dvoufázové ověření?"
       ],
@@ -14364,9 +14355,6 @@
       ],
       "Enhance security with 2FA": [
         "Zvýšení zabezpečení pomocí 2FA"
-      ],
-      "Enter 2FA code": [
-        "Zadejte kód 2FA"
       ],
       "Enter endpoints into your identity provider": [
         "Zadejte endpointy do vašeho poskytovatele indetity"
@@ -14656,11 +14644,11 @@
       "Set recovery methods": [
         "Nastavit metody obnovení"
       ],
+      "Set up authenticator app": [
+        "Nastavit ověřovací aplikaci"
+      ],
       "Set up email forwarding": [
         "Nastavit přeposílání e-mailů"
-      ],
-      "Set up two-factor authentication": [
-        "Nastavit dvoufázové ověření"
       ],
       "Set up your organization": [
         "Nastavte svou organizaci"
@@ -15349,11 +15337,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Správci nemají přístup k datům soukromých uživatelů"
+      ],
+      "Authenticator app": [
+        "Ověřovací aplikace"
       ],
       "Inactive": [
         "Neaktivní"
@@ -15372,6 +15360,9 @@
       ],
       "Private": [
         "Soukromý"
+      ],
+      "Security key": [
+        "Bezpečnostní klíč"
       ],
       "SSO": [
         "SSO"

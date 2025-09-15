@@ -529,12 +529,6 @@
       "Download CSV sample": [
         "CSV minta letöltése"
       ],
-      "Download for macOS": [
-        "Letöltés macOS rendszerre"
-      ],
-      "Download for Windows": [
-        "Letöltés Windows rendszerre"
-      ],
       "Download ICS": [
         "ICS letöltése"
       ],
@@ -2067,9 +2061,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Sajnáljuk, de ez az ajánlat nem elérhető az ön előfizetésével."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Sajnáljuk, ez az ajánlat nem érhető el a jelenlegi csomagjához. De ${ discountPercentage } kedvezményt kaphat a ${ plan.Title } ${ cycle } hónapra történő feliratkozásakor.",
         "Sajnáljuk, ez az ajánlat nem érhető el a jelenlegi csomagjához. De ${ discountPercentage } kedvezményt kaphat a ${ plan.Title } ${ cycle } hónapra történő feliratkozásakor."
@@ -4421,14 +4412,6 @@
         "Windows 8/8.1/7 vagy Windows 32-bit (ARM64)"
       ]
     },
-    "Download link": {
-      ".deb for Debian / Ubuntu": [
-        ".deb Debian / Ubuntu"
-      ],
-      ".rpm for Fedora / Red Hat": [
-        ".rpm Fedora / Red Hat"
-      ]
-    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Hozzon létre egy ingyenes ${ DRIVE_APP_NAME } fiókot, a fájl biztonságos eléréséhez"
@@ -6737,14 +6720,6 @@
         "Az asztali alkalmazás ingyenes kipróbálásának vége"
       ]
     },
-    "Get started checklist instructions": {
-      "${ appName } on App Store": [
-        "${ appName } az App Store-ban"
-      ],
-      "${ appName } on Play Store": [
-        "${ appName } a Play Áruházban"
-      ]
-    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Továbbítsa automatikusan a"
@@ -8242,9 +8217,6 @@
       "Disabled countries": [
         "Tiltott országok"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "A kétlépcsős hitelesítés kikapcsolása csökkenti a fiókja biztonságát. Csak akkor folytassa, ha feltétlen szükséges."
-      ],
       "Discount": [
         "Kedvezmény"
       ],
@@ -8492,9 +8464,6 @@
       "Failed to fetch logs.": [
         "Naplók betöltése sikertelen."
       ],
-      "Fast and focused. Email and calendar, right on your desktop.": [
-        "Gyors és koncentrált. E-mail és naptár, közvetlenül az asztalon."
-      ],
       "Featured in": [
         "Kiemelve"
       ],
@@ -8650,9 +8619,6 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Ha van ajándék kódja, adja meg itt, a kedvezmény eléréséért."
-      ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Ha még sosem használt kétlépcsős hitelesítést, javasolt ${ guideButton }."
       ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Ha elveszíti a jelszavát és vissza kell állítania a fiókját, ${ boldImperative } hogy legyen ${ boldAccountRecovery } beállítva."
@@ -8967,9 +8933,6 @@
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "${ DOCS_APP_NAME } e-mailes értesítési beállításainak kezelése."
-      ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Fiókjának beállításához írja be ezt a kódot a kétlépcsős hitelesítéshez használt eszközén. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard Biztonsági Kód logó"
@@ -9336,9 +9299,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Forduljon hozzánk segítségért bármilyen ${ BRAND_NAME } témában."
       ],
-      "read our two-factor authentication guide first": [
-        "először olvassa el a kétlépcsős hitelesítésről szóló útmutatót"
-      ],
       "Recently used servers:": [
         "Nemrég használt szerverek:"
       ],
@@ -9422,9 +9382,6 @@
       ],
       "Scan QR code instead": [
         "QR kód beolvasása"
-      ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Fiókjának beállításához olvassa be ezt a kódot a kétlépcsős hitelesítéshez használt eszközén. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM integráció kikapcsolva"
@@ -9867,9 +9824,6 @@
       "This will wipe all logs for your organization members.": [
         "Ez törli az összes naplót a szervezet tagjaitól."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Ezzel a funkcióval bekapcsolhatja a kétlépcsős hitelesítést a ${ BRAND_NAME } fiókjában. A kétlépcsős hitelesítés biztonságosabbá teszi a ${ BRAND_NAME_TWO } fiókját, ezért javasolt engedélyezni."
-      ],
       "to ${ product } Business": [
         "a ${ product } Business"
       ],
@@ -9959,12 +9913,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Próbálja ki a ${ productName } terméket teljesen kockázatmentesen - ha bármilyen okból meggondolja magát, teljes visszatérítést kap. Kérdések nélkül."
-      ],
-      "Two-factor authentication disabled": [
-        "Kétlépcsős azonosítás kikapcsolva"
-      ],
-      "Two-factor authentication enabled": [
-        "Kétlépcsős hitelesítés bekapcsolva"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "A két jelszavas mód két jelszó megadását kívánja meg: egy jelszó a bejelentkezéshez és egy másik az adatok visszafejtéséhez. (Speciális)"
@@ -11321,9 +11269,6 @@
       "Backup password": [
         "Biztonsági jelszó"
       ],
-      "Beta": [
-        "Béta"
-      ],
       "Billing cycle": [
         "Számlázási ciklus"
       ],
@@ -12055,9 +12000,6 @@
       ],
       "Second password": [
         "Második jelszó"
-      ],
-      "Select Linux package format": [
-        "Válassza ki a Linux csomagformátumot"
       ],
       "Select Linux platform": [
         "Válassza ki a Linux felületet"
@@ -16251,9 +16193,6 @@
       "Admin": [
         "Adminisztrátor"
       ],
-      "Primary admin": [
-        "Elsődleges adminisztrátor"
-      ],
       "User": [
         "Felhasználó"
       ]
@@ -19746,9 +19685,6 @@
       "Enhance security with 2FA": [
         "Növelje a biztonságot a kétlépcsős hitelesítés segítségével"
       ],
-      "Enter 2FA code": [
-        "Írja be a kétlépcsős hitelesítési kódot"
-      ],
       "Enter endpoints into your identity provider": [
         "Adja meg a végpontokat a személyazonosság-szolgáltatójának"
       ],
@@ -19806,15 +19742,6 @@
       ],
       "Folders and labels": [
         "Mappák és címkék"
-      ],
-      "For Linux": [
-        "Linux rendszerre"
-      ],
-      "For macOS": [
-        "macOS rendszerre"
-      ],
-      "For Windows": [
-        "Windows rendszerre"
       ],
       "Forgot password": [
         "Elfelejtett jelszó"
@@ -20305,9 +20232,6 @@
       ],
       "Set up email forwarding": [
         "E-mail továbbítás beállítása"
-      ],
-      "Set up two-factor authentication": [
-        "Kétlépcsős hitelesítés beállítása"
       ],
       "Set up your family account": [
         "Family csomag beállítása"
@@ -21343,9 +21267,6 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "Kétlépcsős hitelesítés"
-      ],
       "Administrators can't access the data of private users": [
         "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz"
       ],

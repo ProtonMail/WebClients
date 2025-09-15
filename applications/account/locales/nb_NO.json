@@ -2220,9 +2220,6 @@
       ]
     },
     "bf2023: info": {
-      "Sorry, this offer is not available with your current plan.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
-      ],
       "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
         "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måned.",
         "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan. Men du kan få ${ discountPercentage } av ${ plan.Title } når du abonnerer for ${ cycle } måneder."
@@ -8634,6 +8631,12 @@
       "Attention required": [
         "Oppmerksomhet kreves"
       ],
+      "Authenticator app 2FA disabled": [
+        "Autentiseringsapp 2FA deaktivert"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Autentiseringsapp 2FA aktivert"
+      ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Autosvar er aktiv hver måned mellom valgt starttidspunkt og sluttidspunkt."
       ],
@@ -8929,8 +8932,8 @@
       "Disabled on ${ boldValue }": [
         "Deaktivert på ${ boldValue }"
       ],
-      "Disabling two-factor authentication will make your account less secure. Only proceed if absolutely necessary.": [
-        "Deaktivering av tofaktorautentisering vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Deaktivering av autentiseringsapp 2FA vil gjøre kontoen din mindre sikker. Fortsett bare hvis det er absolutt nødvendig."
       ],
       "Discount": [
         "Rabatt"
@@ -9368,9 +9371,6 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skriv den inn nedenfor for å legge til rabatten din."
       ],
-      "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Hvis du aldri har brukt tofaktorautentisering før, anbefaler vi deg sterkt ${ guideButton }."
-      ],
       "If you lose your password and need to recover your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Hvis du mister passordet og behøver å gjenopprette kontoen din, ${ boldImperative } at du har en ${ boldAccountRecovery } på plass."
       ],
@@ -9691,8 +9691,8 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Administrer innstillingene for e-postvarsler for ${ DOCS_APP_NAME }."
       ],
-      "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Angi denne informasjonen manuelt i tofaktorautentiseringsenheten for å konfigurere kontoen din. ${ switchButton }."
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Angi denne informasjonen manuelt i autentiseringsappen for å konfigurere kontoen din. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
@@ -10083,9 +10083,6 @@
       "Reach out to us for help on anything ${ BRAND_NAME }.": [
         "Ta kontakt med oss for å få hjelp med hva som helst ${ BRAND_NAME }."
       ],
-      "read our two-factor authentication guide first": [
-        "les vår tofaktorautentiseringsguide først"
-      ],
       "Recently used servers:": [
         "Nylig brukte tjenere:"
       ],
@@ -10170,8 +10167,8 @@
       "Scan QR code instead": [
         "Skann QR-kode i stedet"
       ],
-      "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Skann denne koden med din to-faktor-autentiseringsenhet for å sette opp din konto. ${ switchButton }."
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Skann denne koden med autentiseringsappen din for å konfigurere kontoen. ${ switchButton }."
       ],
       "SCIM integration disabled": [
         "SCIM-integrasjon deaktivert"
@@ -10290,9 +10287,6 @@
       ],
       "Signed up": [
         "Registrert"
-      ],
-      "Signing in with a security key is not yet supported in all applications. Without TOTP, signing in to some applications may fail.": [
-        "Pålogging med en sikkerhetsnøkkel er ennå ikke støttet i alle applikasjoner. Uten TOTP kan pålogging til enkelte applikasjoner mislykkes."
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Siden du er en lojal bruker, har din konto tilleggsfunksjoner aktivert."
@@ -10632,9 +10626,6 @@
       "This will wipe all logs for your organization members.": [
         "Dette vil slette alle logger for organisasjonens medlemmer."
       ],
-      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Denne veiviseren vil aktivere tofaktorautentisering (2FA) på din ${ BRAND_NAME }-konto. Tofaktorautentisering vil gjøre din ${ BRAND_NAME_TWO }-konto sikrere, så vi anbefaler å aktivere den."
-      ],
       "to ${ product } Business": [
         "til ${ product } Business"
       ],
@@ -10724,12 +10715,6 @@
       ],
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prøv ${ productName } helt risikofritt - hvis du av en eller annen grunn ombestemmer deg, vil du motta full refusjon. Ingen spørsmål."
-      ],
-      "Two-factor authentication disabled": [
-        "Tofaktorautentisering deaktivert"
-      ],
-      "Two-factor authentication enabled": [
-        "Tofaktorautentisering aktivert"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your data. (Advanced)": [
         "To-passordmodus krever to passord: et for å logge på kontoen din og et for å dekryptere dataene dine (avansert)."
@@ -10876,7 +10861,7 @@
         "Bekreft mobilnummer"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
-        "Verifiser din identitet med en tids-basert en-time passord fra en autentiseringsapp."
+        "Bekreft identiteten din med et tidsbasert engangspassord fra en autentiseringsapp"
       ],
       "Verifying your payment": [
         "Verifiserer betalingen din"
@@ -11054,6 +11039,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uten aktivering kan du ikke opprette nye brukere, legge til adresser til eksisterende brukere, eller få tilgang til ikke-private brukerkontoer."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Uten en autentiseringsapp vil du ikke kunne logge på ${ BRAND_NAME }-applikasjonene som ennå ikke støtter sikkerhetsnøkler."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -16150,6 +16138,11 @@
         "Oppgrader min plan"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Fortsett til ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Ende-til-ende-kryptert"
@@ -16654,6 +16647,9 @@
       "More plans are available in other currencies": [
         "Flere planer er tilgjengelige i andre valutaer"
       ],
+      "Offer unavailable": [
+        "Tilbudet er utilgjengelig"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktiver abonnementet på nytt først for å redusere antall tillegg."
       ],
@@ -16665,6 +16661,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
       ],
       "Taxes": [
         "Avgifter"
@@ -17584,16 +17583,19 @@
       "Admin": [
         "Administrator"
       ],
-      "Primary admin": [
-        "Primær administrator"
-      ],
       "User": [
         "Bruker"
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **Deaktiver gjenoppretting via telefon** for å sikre høyest mulig sikkerhet for kontoen din."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         "**Aktiver gjenoppretting via telefon** for å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } vil bruke denne adressen for å holde deg oppdatert om kontosikkerheten din."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } vil bruke denne adressen til å sende en tilbakestillingskode på e-post når du tilbakestiller passordet ditt."
@@ -17604,11 +17606,26 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } for å sikre at dataene dine kan gjenopprettes."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Deaktiver kontotilbakestilling via e-post** for å sikre høyest mulig sikkerhet for kontoen din."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Aktiver gjenoppretting via e-post** for å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
       ],
+      "Account reset by email has been disabled": [
+        "Kontotilbakestilling via e-post er deaktivert"
+      ],
+      "Account reset by phone has been disabled": [
+        "Kontotilbakestilling via telefon er deaktivert"
+      ],
       "Account safety review": [
         "Gjennomgang av kontosikkerhet"
+      ],
+      "Add a email address": [
+        "Legg til en e-postadresse"
+      ],
+      "Add a phone number": [
+        "Legg til et telefonnummer"
       ],
       "Add a recovery email": [
         "Legg til e-postadresse for gjenoppretting"
@@ -17618,6 +17635,9 @@
       ],
       "Add a recovery phone number": [
         "Legg til et gjenopprettingstelefonnummer"
+      ],
+      "Add an email": [
+        "Legg til en e-post"
       ],
       "Back to Safety Review": [
         "Tilbake til gjennomgang av sikkerhet"
@@ -17640,11 +17660,23 @@
       "Device-based recovery enabled": [
         "Enhetsbasert gjenoppretting aktivert"
       ],
+      "Disable account reset by email": [
+        "Deaktiver tilbakestilling av konto ved e-post"
+      ],
+      "Disable recovery by email": [
+        "Deaktiver gjenoppretting via e-post"
+      ],
+      "Disable recovery by phone": [
+        "Deaktiver gjenoppretting via telefon"
+      ],
       "Download ${ size }": [
         "Last ned ${ size }"
       ],
       "Download your Recovery Kit": [
         "Last ned gjenopprettingssettet ditt"
+      ],
+      "Email address": [
+        "E-postadresse"
       ],
       "Enable device-based recovery": [
         "Aktiver enhetsbasert gjenoppretting"
@@ -17709,6 +17741,9 @@
       "There was an error generating your Recovery Kit": [
         "Det oppstod en feil under generering av gjenopprettingssettet"
       ],
+      "There was an error verifying your email": [
+        "Det oppstod en feil under bekreftelse av e-posten din"
+      ],
       "There was an error verifying your recovery email": [
         "Det oppstod en feil under bekreftelse av gjenopprettings-e-posten din"
       ],
@@ -17717,6 +17752,9 @@
       ],
       "to automatically recover your data when you log into a trusted device": [
         "for å automatisk gjenopprette dataene dine når du logger på en pålitelig enhet"
+      ],
+      "to ensure highest possible security of your account": [
+        "for å sikre høyest mulig sikkerhet for kontoen din"
       ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "For å være sikker på at e-postadressen er din, skriv inn verifiseringskoden som ble sendt til ${ boldEmail }."
@@ -17730,6 +17768,9 @@
       "to recover your account if you're ever locked out": [
         "for å gjenopprette kontoen din hvis du noen gang blir utestengt"
       ],
+      "To stay in touch": [
+        "For å holde kontakten"
+      ],
       "Update your Recovery Kit": [
         "Oppdater gjenopprettingssettet ditt"
       ],
@@ -17739,6 +17780,12 @@
       "Verify": [
         "Verifiser"
       ],
+      "Verify your email address": [
+        "Verifiser e-postadressen din"
+      ],
+      "Verify your phone number": [
+        "Bekreft mobilnummeret ditt"
+      ],
       "Verify your recovery email address": [
         "Verifiser e-postadressen for gjenoppretting"
       ],
@@ -17747,6 +17794,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Det oppstod en feil under generering av gjenopprettingssettet. Prøv på nytt senere, eller kontakt kundestøtte hvis problemet vedvarer."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "Vi oppdaget en feil under bekreftelsen av e-posten din. Prøv igjen senere, eller kontakt brukerstøtte hvis problemet vedvarer."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Vi oppdaget en feil under bekreftelse av gjenopprettings-e-posten din. Prøv på nytt senere, eller kontakt kundestøtte hvis problemet vedvarer."
@@ -17769,6 +17819,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Du kan bruke gjenopprettingsfrasen i dette gjenopprettingssettet til å gjenopprette kontoen din fullstendig når du tilbakestiller passordet, så sørg for at du oppbevarer den på et trygt sted."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Du kan bruke e-posten din til å få tilgang til kontoen igjen hvis du glemmer passordet ditt."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Du kan bruke gjenopprettings-e-posten din til å få tilgang til kontoen din igjen hvis du glemmer passordet ditt."
       ],
@@ -17778,11 +17831,26 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Du har tidligere lastet ned et gjenopprettingssett. Nedlasting av en ny vil **deaktivere det gamle**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "Du har anbefalte tiltak for å beskytte kontoen din ytterligere."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "Du har anbefalte tiltak for å beskytte kontoen din."
+      ],
       "You have recommended actions.": [
         "Du har anbefalte handlinger."
       ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Du vil ikke lenger kunne bruke denne adressen til å tilbakestille kontoen din."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Du vil ikke lenger kunne bruke dette telefonnummeret til å tilbakestille kontoen din."
+      ],
       "Your account and data can be recovered": [
         "Kontoen din og dataene dine kan gjenopprettes"
+      ],
+      "Your account and data can be recovered.": [
+        "Kontoen og dataene dine kan gjenopprettes."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Kontoen din og dataene dine kan gjenopprettes. Sjekk om du fortsatt har tilgang til gjenopprettingsmetodene dine."
@@ -17798,6 +17866,12 @@
       ],
       "Your account is secure.": [
         "Kontoen din er sikker."
+      ],
+      "Your email address is:": [
+        "Din e-postadresse:"
+      ],
+      "Your email is set": [
+        "E-posten din er konfigurert"
       ],
       "Your recovery email": [
         "Gjenopprettings-e-posten din"
@@ -21124,6 +21198,9 @@
       "Disable two-factor authentication": [
         "Deaktiver tofaktorautentisering"
       ],
+      "Disable two-factor authentication app?": [
+        "Deaktivere tofaktorautentiseringsapp?"
+      ],
       "Disable two-factor authentication?": [
         "Deaktivere tofaktorautentisering?"
       ],
@@ -21246,9 +21323,6 @@
       ],
       "Enhance security with 2FA": [
         "Forbedre sikkerheten med 2FA"
-      ],
-      "Enter 2FA code": [
-        "Angi 2FA-kode"
       ],
       "Enter endpoints into your identity provider": [
         "Angi endepunkter i identitetsleverandøren"
@@ -21819,11 +21893,11 @@
       "Set up a recovery method": [
         "Angi en gjenopprettingsmetode"
       ],
+      "Set up authenticator app": [
+        "Konfigurer autentiseringsapp"
+      ],
       "Set up email forwarding": [
         "Konfigurer videresending av e-post"
-      ],
-      "Set up two-factor authentication": [
-        "Konfigurer tofaktorautentisering"
       ],
       "Set up your family account": [
         "Konfigurer familiekontoen din"
@@ -22904,11 +22978,11 @@
       ]
     },
     "Users table: badge": {
-      "2FA": [
-        "2FA"
-      ],
       "Administrators can't access the data of private users": [
         "Administratorer har ikke tilgang til dataene til private brukere"
+      ],
+      "Authenticator app": [
+        "Autentiseringsapp"
       ],
       "Inactive": [
         "Inaktiv"
@@ -22927,6 +23001,9 @@
       ],
       "Private": [
         "Privat"
+      ],
+      "Security key": [
+        "Sikkerhetsnøkkel"
       ],
       "SSO": [
         "SSO"
