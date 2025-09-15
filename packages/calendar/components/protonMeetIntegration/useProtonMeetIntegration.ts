@@ -273,13 +273,13 @@ export const useProtonMeetIntegration = ({
 
         setSessionKey(decryptedSessionKey as Uint8Array<ArrayBuffer>);
 
-        setMeetingDetails({
+        setMeetingDetails((prev) => ({
+            ...prev,
             id: meetingId ?? '',
             passwordBase: urlPassword,
             passphrase,
             failed: false,
-            hidePassphrase: false,
-        });
+        }));
 
         setMeetingObject(meeting as Meeting);
 
