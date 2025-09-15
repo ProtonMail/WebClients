@@ -486,6 +486,9 @@
       "Edit address": [
         "Modifica indirizzo"
       ],
+      "Edit categories": [
+        "Modifica categorie"
+      ],
       "Edit draft": [
         "Modifica la bozza"
       ],
@@ -5215,6 +5218,9 @@
       "Aliases cannot be used when an extra password is enabled in ${ PASS_APP_NAME }.": [
         "Gli alias non possono essere usati quando è abilitata la password aggiuntiva in ${ PASS_APP_NAME }."
       ],
+      "An error occurred with the categories": [
+        "Si è verificato un errore con le categorie"
+      ],
       "App currently unavailable": [
         "App attualmente non disponibile"
       ],
@@ -9116,6 +9122,9 @@
       "Authenticator app": [
         "App di autenticazione"
       ],
+      "Automated confirmations and alerts": [
+        "Conferme e avvisi automatici"
+      ],
       "BCC": [
         "CCN"
       ],
@@ -9127,6 +9136,9 @@
       ],
       "Blind Carbon Copy": [
         "Copia conoscenza nascosta"
+      ],
+      "Bookings, billings, and orders": [
+        "Prenotazioni, fatturazioni e ordini"
       ],
       "Browser": [
         "Browser"
@@ -9224,6 +9236,9 @@
       "Date:": [
         "Data:"
       ],
+      "Deals, offers, marketing emails": [
+        "Offerte, promozioni, email di marketing"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -9235,6 +9250,9 @@
       ],
       "Did not follow instructions": [
         "Non ha seguito le istruzioni"
+      ],
+      "Discussion board posts and threads": [
+        "Messaggi e discussioni del forum"
       ],
       "Do you have any suggestions for our team?": [
         "Hai qualche suggerimento per il nostro team?"
@@ -9325,6 +9343,27 @@
       ],
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
+      ],
+      "Go to Forums": [
+        "Vai ai forum"
+      ],
+      "Go to Newsletters": [
+        "Vai alle newsletter"
+      ],
+      "Go to Primary": [
+        "Vai su Principale"
+      ],
+      "Go to Promotions": [
+        "Vai a Promozioni"
+      ],
+      "Go to Social": [
+        "Vai al Social Feed"
+      ],
+      "Go to Transactions": [
+        "Vai a Transazioni"
+      ],
+      "Go to Updates": [
+        "Vai agli aggiornamenti"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Aiutaci a migliorare le categorie scegliendo quella che si adatta meglio a questa email. Grazie per il tuo aiuto!"
@@ -9464,6 +9503,9 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
+      "Non-promotional content and news": [
+        "Contenuti non promozionali e notizie"
+      ],
       "Not factually correct": [
         "Non è veritiero"
       ],
@@ -9575,6 +9617,9 @@
       "Search in": [
         "Cerca in"
       ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Seleziona le categorie da includere e attiva le notifiche per ricevere avvisi sulle nuove email in una categoria."
+      ],
       "Send auto-reply": [
         "Invia risposta automatica"
       ],
@@ -9589,6 +9634,9 @@
       ],
       "Social": [
         "Social"
+      ],
+      "Social media updates and activity": [
+        "Aggiornamenti e attività sui social media"
       ],
       "Starred": [
         "Importante"
@@ -9709,6 +9757,9 @@
       ],
       "Writing assistant": [
         "Assistente alla scrittura"
+      ],
+      "You cannot disable all categories": [
+        "Non puoi disattivare tutte le categorie"
       ],
       "Your alias": [
         "Il tuo alias"
@@ -10001,7 +10052,7 @@
         "Programmata"
       ],
       "Sent": [
-        "Inviate"
+        "Inviata"
       ],
       "settings": [
         "impostazioni"
@@ -14588,6 +14639,9 @@
       "Customize calendar import": [
         "Personalizza l'importazione del calendario"
       ],
+      "Customize categories": [
+        "Personalizza le categorie"
+      ],
       "Customize your mail import": [
         "Personalizza l'importazione della tua mail"
       ],
@@ -14712,9 +14766,6 @@
       ],
       "Enhance security with 2FA": [
         "Migliora la sicurezza con l'autenticazione a due fattori 2FA"
-      ],
-      "Enter 2FA code": [
-        "Inserisci il codice di autenticazione a due fattori"
       ],
       "Enter your password": [
         "Inserisci la tua password"
@@ -15253,6 +15304,9 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "Two-factor authentication": [
+        "Autenticazione a due fattori"
       ],
       "Unsubscribe": [
         "Annulla l'iscrizione"
