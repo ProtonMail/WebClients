@@ -101,4 +101,4 @@ export const HEARTBEAT_WAIT_TIME = HEARTBEAT_INTERVAL * 2; // ms
  *
  * On Chrome, we have no way to know if a worker fetch was successful.
  */
-export const WORKER_INIT_WAIT_TIME = 5 * 1000; // ms
+export const WORKER_INIT_WAIT_TIME = 30 * 1000; // ms
