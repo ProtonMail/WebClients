@@ -20,8 +20,8 @@ export const useMoveItemsModal = () => {
         if (!shareId || !selectedItems.length) {
             return;
         }
-        const successCallback = (items: NodeEventMeta[]) => {
-            getActionEventManager().emit({ type: ActionEventName.MOVED_NODES, items });
+        const successCallback = async (items: NodeEventMeta[]) => {
+            await getActionEventManager().emit({ type: ActionEventName.MOVED_NODES, items });
             onSuccess?.(items);
         };
         void showMoveToFolderModal({ shareId, selectedItems, onSuccess: successCallback, ...rest });
