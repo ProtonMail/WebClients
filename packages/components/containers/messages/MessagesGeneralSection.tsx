@@ -29,6 +29,7 @@ import SettingsSection from '../account/SettingsSection';
 import ToggleAssistantContainer from '../general/ToggleAssistant/ToggleAssistantContainer';
 import DailyEmailNotificationToggle from '../recovery/DailyEmailNotificationToggle';
 import RecoveryEmail from '../recovery/email/RecoveryEmail';
+import { CategoryViewSection } from './CategoryViewSection';
 
 const LazyInboxDesktopDefaultAppSettings = lazy(
     () => import('@proton/components/containers/desktop/defaultApp/InboxDesktopDefaultAppSettings')
@@ -110,6 +111,7 @@ const MessagesGeneralSection = () => {
                         </div>
                     </SettingsLayoutRight>
                 </SettingsLayout>
+                <CategoryViewSection />
                 <ToggleAssistantContainer />
                 {isElectronMail && (
                     <Suspense fallback="">
