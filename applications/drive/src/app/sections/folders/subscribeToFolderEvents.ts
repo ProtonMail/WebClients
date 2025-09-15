@@ -92,6 +92,17 @@ export const subscribeToFolderEvents = () => {
                 break;
 
             case ActionEventName.UPDATED_NODES:
+                event.items.forEach(async (item) => {
+                    if (item.parentUid === folder.uid && !item.isTrashed) {
+                        const legacyItem = await getLegacyItemFromUid(item.uid, folder);
+                        if (legacyItem) {
+                            store.updateItem(item.uid, legacyItem);
+                        }
+                    } else {
+                        store.removeItem(item.uid);
+                    }
+                });
+                break;
             case ActionEventName.CREATED_NODES:
                 event.items.forEach(async (item) => {
                     if (item.parentUid === folder.uid && !item.isTrashed) {
