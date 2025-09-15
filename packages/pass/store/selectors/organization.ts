@@ -8,17 +8,14 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 
 export const selectOrganizationState = ({ organization }: State): MaybeNull<OrganizationState> => organization;
 
-export const selectOrganization = ({ organization }: State): MaybeNull<Organization> =>
-    organization?.organization ?? null;
+export const selectOrganization = ({ organization }: State): MaybeNull<Organization> => organization?.organization ?? null;
 
-export const selectOrganizationSettings = ({ organization }: State): MaybeNull<OrganizationSettings> =>
-    organization?.settings ?? null;
+export const selectOrganizationSettings = ({ organization }: State): MaybeNull<OrganizationSettings> => organization?.settings ?? null;
 
 export const selectCanUpdateOrganization = ({ organization }: State): boolean => organization?.canUpdate ?? false;
 
-export const selectOrganizationPasswordGeneratorPolicy = ({
-    organization,
-}: State): MaybeNull<OrganizationUpdatePasswordPolicyRequest> => organization?.settings?.PasswordPolicy ?? null;
+export const selectOrganizationPasswordGeneratorPolicy = ({ organization }: State): MaybeNull<OrganizationUpdatePasswordPolicyRequest> =>
+    organization?.settings?.PasswordPolicy ?? null;
 
 export const selectOrganizationVaultCreationDisabled = ({ organization, user: { user, plan } }: State): boolean =>
-    organization?.settings.VaultCreateMode === BitField.ACTIVE && user !== null && !isB2BAdmin(user, getPassPlan(plan));
+    user !== null && !isB2BAdmin(user, getPassPlan(plan)) && organization?.settings?.VaultCreateMode === BitField.ACTIVE;
