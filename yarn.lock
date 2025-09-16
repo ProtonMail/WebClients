@@ -5799,6 +5799,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@livekit/track-processors@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "@livekit/track-processors@npm:0.6.1"
+  dependencies:
+    "@mediapipe/tasks-vision": "npm:0.10.14"
+  peerDependencies:
+    "@types/dom-mediacapture-transform": ^0.1.9
+    livekit-client: ^1.12.0 || ^2.1.0
+  checksum: 10c0/80f54663c7e13de299de9e2565b6cbd2ba74ea0a4a8adf8a366e8cfd0e19dedfb9d699899137f1a6133414f28779877eeb3200074c03893bc63aeb0d8c912a91
+  languageName: node
+  linkType: hard
+
 "@lukeed/ms@npm:^2.0.1":
   version: 2.0.2
   resolution: "@lukeed/ms@npm:2.0.2"
@@ -5889,6 +5901,13 @@ __metadata:
     "@types/react": ">=16"
     react: ">=16"
   checksum: 10c0/381ed1211ba2b8491bf0ad9ef0d8d1badcdd114e1931d55d44019d4b827cc2752586708f9c7d2f9c3244150ed81f1f671a6ca95fae0edd5797fb47a22e06ceca
+  languageName: node
+  linkType: hard
+
+"@mediapipe/tasks-vision@npm:0.10.14":
+  version: 0.10.14
+  resolution: "@mediapipe/tasks-vision@npm:0.10.14"
+  checksum: 10c0/dea1d094153fcb91e76d1a266b6a79baf9cbdd106a786adc0236ded87099b5242c89e0e5b73a3f5d57d7e23ff657dd37f40b9261e12a330762041cd9549fadcc
   languageName: node
   linkType: hard
 
@@ -37074,6 +37093,7 @@ __metadata:
   resolution: "proton-meet@workspace:applications/meet"
   dependencies:
     "@livekit/components-react": "npm:^2.9.14"
+    "@livekit/track-processors": "npm:^0.6.1"
     "@proton-meet/livekit-client": "npm:2.15.9"
     "@proton-meet/proton-meet-core": "npm:0.3.1"
     "@proton/components": "workspace:packages/components"
