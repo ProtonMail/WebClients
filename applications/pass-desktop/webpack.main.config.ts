@@ -1,3 +1,5 @@
+import path from 'path';
+
 import plugins from './webpack.plugins';
 import rules from './webpack.rules';
 
@@ -19,6 +21,9 @@ export default {
     },
     plugins,
     resolve: {
+        alias: {
+            'proton-pass-desktop': path.resolve(__dirname, 'src/'),
+        },
         extensions: ['.js', '.ts', '.jsx', '.tsx', '.css', '.json'],
     },
 };

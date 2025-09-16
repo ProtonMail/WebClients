@@ -4,8 +4,7 @@ import { chmodSync, copyFileSync, existsSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import os from 'os';
 import path from 'path';
-
-import { isMac } from '../../../utils/platform';
+import { isMac } from 'proton-pass-desktop/utils/platform';
 
 const homeDir = os.homedir();
 const launchAgentDir = path.join(homeDir, 'Library/LaunchAgents');
