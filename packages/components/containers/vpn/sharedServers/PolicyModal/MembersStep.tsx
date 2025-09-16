@@ -14,6 +14,7 @@ import { ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import type { Organization } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash';
 
 import ApplyPolicyButton from '../ApplyPolicyButton';
 import type { SharedServerGroup, SharedServerUser } from '../useSharedServers';
@@ -107,13 +108,16 @@ const MembersStep = ({
     applyPolicyTo,
     onChangeApplyPolicyTo,
 }: SharedServersMembersStepProps) => {
+    const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
 
-    const canCreateGroupsPolicy =
-        !!organization &&
-        ((hasActiveOrganizationKey && canUseGroups(organization?.PlanName)) || (groups?.length ?? 0) > 0);
+    const allowedToUseGroups =
+        hasActiveOrganizationKey && canUseGroups(organization?.PlanName, { isUserGroupsNoCustomDomainEnabled });
+    const hasAtLeastOneGroup = (groups?.length ?? 0) > 0;
+
+    const canCreateGroupsPolicy = !!organization && (allowedToUseGroups || hasAtLeastOneGroup);
 
     const [searchQuery, setSearchQuery] = useState('');
 
