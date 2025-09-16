@@ -165,7 +165,7 @@ export const createActivationService = () => {
      * On vivaldi, fallback to the default badge theme */
     const setupExtensionBadge = async () => {
         if (!(await isVivaldiBrowser())) {
-            return browser.action.setBadgeBackgroundColor({ color: '#FFFFFF' });
+            return browser.action.setBadgeBackgroundColor({ color: '#FFFFFF' }).catch(noop);
         }
     };
 
