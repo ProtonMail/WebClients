@@ -1,3 +1,4 @@
+import { setupIpcHandlers as autotype } from './lib/autotype';
 import biometrics from './lib/biometrics';
 import { setupIpcHandlers as clipboard } from './lib/clipboard';
 import { setupIpcHandlers as info } from './lib/install-info';
@@ -16,4 +17,5 @@ export const startup = async (ctx: PassElectronContext) => {
     clipboard();
     info();
     theming();
+    autotype(() => ctx.window);
 };

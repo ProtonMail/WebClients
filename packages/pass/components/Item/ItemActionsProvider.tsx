@@ -15,10 +15,12 @@ import {
     ConfirmLeaveItem,
     ConfirmMoveItem,
 } from '@proton/pass/components/Item/Actions/ConfirmItemActions';
+import { ConfirmAutotype, ConfirmAutotypeShortcut } from '@proton/pass/components/Item/Autotype/ConfirmAutotype';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { VaultSelect, VaultSelectMode, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
+import { useAutotypeExecute } from '@proton/pass/hooks/autotype/useAutotypeExecute';
 import type { ItemCloneLocationState } from '@proton/pass/hooks/items/useInitialValues';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
@@ -45,6 +47,7 @@ import {
 import type { State } from '@proton/pass/store/types';
 import type { ItemMoveIntent } from '@proton/pass/types';
 import { type BulkSelectionDTO, type ItemRevision, type MaybeNull, ShareType } from '@proton/pass/types';
+import type { AutotypeConfirmProps } from '@proton/pass/types/desktop/autotype';
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
 /** Ongoing: move every item action definition to this
@@ -60,6 +63,8 @@ interface ItemActionsContextType {
     restoreMany: (items: BulkSelectionDTO) => void;
     trash: (item: ItemRevision) => void;
     trashMany: (items: BulkSelectionDTO) => void;
+    autotypeConfirm: (autotypeProps: AutotypeConfirmProps) => void;
+    autotypeConfirmShortcut: (autotypeProps: AutotypeConfirmProps) => void;
 }
 
 const ItemActionsContext = createContext<MaybeNull<ItemActionsContextType>>(null);
@@ -70,6 +75,7 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const navigate = useNavigate();
     const store = useStore<State>();
     const scope = useStatefulRef(useItemScope());
+    const executeAutotype = useAutotypeExecute();
 
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
 
@@ -124,6 +130,17 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
     const moveTitle = (numberOfItems: number) =>
         c('Vault Select').ngettext(msgid`Move item to`, `Move items to`, numberOfItems);
+
+    const confirmAutotype = useCallback(({ autotypeProps: { fields, enterAtTheEnd } }: AutotypeConfirmProps) => {
+        void executeAutotype?.({
+            fields,
+            enterAtTheEnd,
+        });
+    }, []);
+
+    const autotypeConfirm = useConfirm(confirmAutotype);
+
+    const autotypeConfirmFromShortcut = useConfirm(confirmAutotype);
 
     const context = useMemo<ItemActionsContextType>(() => {
         return {
@@ -201,6 +218,10 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
                     },
                 });
             },
+
+            autotypeConfirm: autotypeConfirm.prompt,
+
+            autotypeConfirmShortcut: autotypeConfirmFromShortcut.prompt,
         };
     }, []);
 
@@ -256,6 +277,22 @@ export const ItemActionsProvider: FC<PropsWithChildren> = ({ children }) => {
 
             {leaveItem.pending && (
                 <ConfirmLeaveItem onCancel={leaveItem.cancel} onConfirm={leaveItem.confirm} item={leaveItem.param} />
+            )}
+
+            {autotypeConfirm.pending && (
+                <ConfirmAutotype
+                    onClose={autotypeConfirm.cancel}
+                    onConfirm={autotypeConfirm.confirm}
+                    spotlightToClose={autotypeConfirm.param.spotlightToClose}
+                />
+            )}
+
+            {autotypeConfirmFromShortcut.pending && (
+                <ConfirmAutotypeShortcut
+                    onClose={autotypeConfirmFromShortcut.cancel}
+                    onConfirm={autotypeConfirmFromShortcut.confirm}
+                    spotlightToClose={autotypeConfirmFromShortcut.param.spotlightToClose}
+                />
             )}
         </ItemActionsContext.Provider>
     );
