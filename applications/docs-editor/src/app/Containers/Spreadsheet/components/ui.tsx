@@ -174,6 +174,24 @@ export const MenuItemRadio = forwardRef<HTMLDivElement, MenuItemRadioProps>(func
   )
 })
 
+/** `MenuGroup` options. Extends `Atoms.DropdownGroupOptions`. */
+export interface MenuGroupOptions extends Atoms.DropdownGroupOptions {}
+/** `MenuGroup` props. Extends `Ariakit.MenuGroupProps`. */
+export interface MenuGroupProps extends Ariakit.MenuGroupProps, MenuGroupOptions {}
+/** Extends `Atoms.DropdownGroup` and `Ariakit.MenuGroup`. */
+export const MenuGroup = forwardRef<HTMLDivElement, MenuGroupProps>(function MenuGroup(props: MenuGroupProps, ref) {
+  return <Atoms.DropdownGroup ref={ref} {...props} render={<Ariakit.MenuGroup render={props.render} />} />
+})
+
+/** `MenuGroupLabel` options. Extends `Ariakit.MenuGroupLabelOptions`. */
+export interface MenuGroupLabelOptions extends Ariakit.MenuGroupLabelOptions {}
+/** `MenuGroupLabel` props. Extends `Ariakit.MenuGroupLabelProps`. */
+export interface MenuGroupLabelProps extends Ariakit.MenuGroupLabelProps {}
+/** Extends `Ariakit.MenuGroupLabel`. */
+export const MenuGroupLabel = forwardRef<HTMLDivElement, MenuGroupLabelProps>(function MenuGroupLabel(props, ref) {
+  return <Atoms.DropdownGroupLabel ref={ref} {...props} render={<Ariakit.MenuGroupLabel render={props.render} />} />
+})
+
 // select
 // ------
 

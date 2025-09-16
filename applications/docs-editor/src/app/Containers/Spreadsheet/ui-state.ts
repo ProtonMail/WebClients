@@ -1,4 +1,5 @@
-import { type CellFormat, type TextFormat, getCurrencySymbol, useFocusSheet } from '@rowsncolumns/spreadsheet'
+import type { CellFormat, TextFormat } from '@rowsncolumns/spreadsheet'
+import { getCurrencySymbol, useFocusSheet } from '@rowsncolumns/spreadsheet'
 import { ssfFormat } from '@rowsncolumns/utils'
 import {
   CURRENCY,
@@ -149,7 +150,28 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
     note: useEvent(() => state.onInsertNote?.(state.activeSheetId, state.activeCell, state.selections)),
   }
 
-  return { focusGrid, withFocusGrid, history, zoom, search, format, insert }
+  const legacy = {
+    activeSheetId: state.activeSheetId,
+    onChangeActiveSheet: state.onChangeActiveSheet,
+    activeCell: state.activeCell,
+    onChangeActiveCell: state.onChangeActiveCell,
+    selections: state.selections,
+    onChangeSelections: state.onChangeSelections,
+    namedRanges: state.namedRanges,
+    rowCount: state.rowCount,
+    columnCount: state.columnCount,
+    merges: state.merges,
+    onRequestDefineNamedRange: state.onRequestDefineNamedRange,
+    sheets: state.sheets,
+    onSelectRange: state.onSelectRange,
+    onSelectNamedRange: state.onSelectNamedRange,
+    onRequestUpdateNamedRange: state.onRequestUpdateNamedRange,
+    onDeleteNamedRange: state.onDeleteNamedRange,
+    tables: state.tables,
+    onSelectTable: state.onSelectTable,
+  }
+
+  return { focusGrid, withFocusGrid, history, zoom, search, format, insert, legacy }
 }
 
 export type ProtonSheetsUIState = ReturnType<typeof useProtonSheetsUIState>
