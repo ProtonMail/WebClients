@@ -36,6 +36,11 @@ export interface SerializedGroupFormData {
     flags: GroupFlags;
 }
 
+export interface DomainSuggestion {
+    domain: string | null;
+    source: 'customdomain' | 'group' | 'pm.me' | null;
+}
+
 export interface GroupsManagementReturn {
     groups: Group[];
     members: EnhancedMember[];
@@ -47,6 +52,7 @@ export interface GroupsManagementReturn {
     domainData: DomainData;
     suggestedAddressDomainName: string;
     suggestedAddressDomainPart: string;
+    suggestedAddressDomainSource: 'customdomain' | 'group' | 'pm.me' | null;
     addressToMemberMap: { [key: string]: EnhancedMember | undefined };
     getSerializedGroup: () => { type: 'new' | 'edit'; payload: SerializedGroupFormData } | undefined;
     actions: {
