@@ -20,7 +20,8 @@ import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { SessionSource } from '@proton/shared/lib/authentication/SessionInterface';
+import { type ResumedSessionResult, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Optional, ReferralData } from '@proton/shared/lib/interfaces';
@@ -550,6 +551,19 @@ export const InnerSignupContextProvider = ({
 
         if (subscriptionData) {
             await handleSubscribeUser(api, subscriptionData, app, hasZipCodeValidation);
+        }
+
+        if (setupUserResponseRef.current) {
+            await persistSession({
+                ...setupUserResponseRef.current.authResponse,
+                keyPassword: setupUserResponseRef.current.keyPassword,
+                clearKeyPassword: setupUserResponseRef.current.clearKeyPassword,
+                User: setupUserResponseRef.current.user,
+                api,
+                persistent,
+                trusted,
+                source: SessionSource.Proton,
+            });
         }
     };
 
