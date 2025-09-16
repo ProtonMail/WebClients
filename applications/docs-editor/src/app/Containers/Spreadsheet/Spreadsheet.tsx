@@ -30,6 +30,7 @@ import { LegacyGrid } from './components/legacy/LegacyGrid'
 import { LegacyToolbar } from './components/legacy/LegacyToolbar'
 import { ProtonSheetsUIStoreProvider } from './ui-store'
 import { useNewUIEnabled } from './new-ui-enabled'
+import { Dialogs } from './components/Dialogs/Dialogs'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -218,11 +219,9 @@ function UI({ hidden, state, isReadonly, isRevisionMode }: UIProps) {
           users={state.yjsState.users}
           userName={state.yjsState.userName}
         />
-
         {/* TODO: replace with new UI */}
         <LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
-        {/* TODO: replace with new UI */}
-        <LegacyDialogs state={state} />
+        <Dialogs state={state} />
       </div>
     </ProtonSheetsUIStoreProvider>
   )
