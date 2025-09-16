@@ -23,22 +23,22 @@ type ExcludedProviders = 'Unsupported' | 'Azteco';
 const websiteUrlByGatewayProvider: Record<Exclude<WasmGatewayProvider, ExcludedProviders>, string> = {
     Banxa: 'https://banxa.com',
     MoonPay: 'https://www.moonpay.com',
-    Ramp: 'https://ramp.network',
+    Ramp: 'https://rampnetwork.com',
 };
 const termOfUseUrlByGatewayProvider: Record<Exclude<WasmGatewayProvider, ExcludedProviders>, string> = {
     Banxa: 'https://banxa.com/terms-of-use',
     MoonPay: 'https://www.moonpay.com/legal/terms_of_use_row',
-    Ramp: 'https://ramp.network/terms-of-service',
+    Ramp: 'https://rampnetwork.com/terms-of-service',
 };
 const privacyAndCookiesPolicyUrlByGatewayProvider: Record<Exclude<WasmGatewayProvider, ExcludedProviders>, string> = {
     Banxa: 'https://banxa.com/privacy-and-cookies-policy',
     MoonPay: 'https://www.moonpay.com/legal/cookie_policy',
-    Ramp: 'https://ramp.network/cookie-policy',
+    Ramp: 'https://rampnetwork.com/cookie-policy',
 };
 const supportEmailByGatewayProvider: Record<Exclude<WasmGatewayProvider, ExcludedProviders>, string> = {
     Banxa: 'support@banxa.com',
     MoonPay: 'support@moonpay.com',
-    Ramp: 'support@ramp.network',
+    Ramp: 'support@rampnetwork.com',
 };
 
 export const DisclaimerModal = ({ provider, onConfirm, onClose, loading, ...modalProps }: Props) => {
@@ -103,7 +103,7 @@ export const DisclaimerModal = ({ provider, onConfirm, onClose, loading, ...moda
         );
 
         return [
-            // translator: This is generic disclaimer we want to print before redirecting to any provider currently support: MoonPay, Banxa and Ramp Network. The text contains the name of the provider as well as links to their own policies. An example with Ramp Network: You are now leaving Proton Wallet for Ramp Network (https://ramp.network). Services related to card payments, bank transfers, and any other fiat transactions are provided by Ramp Network, a separate third-party platform. By proceeding and procuring services from Ramp Network, you acknowledge that you have read and agreed to Ramp Network's Terms of Service (https://ramp.network/terms-of-service) and Privacy and Cookies Policy (https://ramp.network/cookie-policy). For any questions related to Ramp Network's services, please contact Ramp Network at support.ramp.network.
+            // translator: This is generic disclaimer we want to print before redirecting to any provider currently support: MoonPay, Banxa and Ramp Network. The text contains the name of the provider as well as links to their own policies. An example with Ramp Network: You are now leaving Proton Wallet for Ramp Network (https://rampnetwork.com). Services related to card payments, bank transfers, and any other fiat transactions are provided by Ramp Network, a separate third-party platform. By proceeding and procuring services from Ramp Network, you acknowledge that you have read and agreed to Ramp Network's Terms of Service (https://rampnetwork.com/terms-of-service) and Privacy and Cookies Policy (https://rampnetwork.com/cookie-policy). For any questions related to Ramp Network's services, please contact Ramp Network at support@rampnetwork.com.
             c('Gateway disclaimer').jt`You are now leaving ${WALLET_APP_NAME} for ${providerName} (${websiteLink}).
             Services related to card payments, bank transfers, and any other fiat transactions are provided by ${providerName},
             a separate third-party platform. By proceeding and procuring services from ${providerName},
@@ -154,7 +154,11 @@ export const DisclaimerModal = ({ provider, onConfirm, onClose, loading, ...moda
             <h1 className="text-bold text-break text-3xl mt-3 mb-4 text-center">
                 {c('Gateway disclaimer').t`Disclaimer`}
             </h1>
-            <ModalParagraph>{content?.map((paragraph, index) => <p key={index}>{paragraph}</p>)}</ModalParagraph>
+            <ModalParagraph>
+                {content?.map((paragraph, index) => (
+                    <p key={index}>{paragraph}</p>
+                ))}
+            </ModalParagraph>
         </Prompt>
     );
 };
