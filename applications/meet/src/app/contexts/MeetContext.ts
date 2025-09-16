@@ -60,6 +60,14 @@ export interface MeetContextValues {
         forceUpdate?: boolean;
     }) => Promise<void>;
     toggleAudio: ({ isEnabled, audioDeviceId }: { isEnabled: boolean; audioDeviceId: string | null }) => Promise<void>;
+    backgroundBlur: boolean;
+    toggleBackgroundBlur: ({
+        isEnabled,
+        videoDeviceId,
+    }: {
+        isEnabled: boolean;
+        videoDeviceId: string;
+    }) => Promise<void>;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -108,6 +116,8 @@ export const MeetContext = createContext<MeetContextValues>({
     screenShareParticipant: null,
     toggleVideo: () => Promise.resolve(),
     toggleAudio: () => Promise.resolve(),
+    backgroundBlur: false,
+    toggleBackgroundBlur: () => Promise.resolve(),
 });
 
 export const useMeetContext = () => {

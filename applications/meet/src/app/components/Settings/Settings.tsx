@@ -11,7 +11,8 @@ import { MeetingSideBars } from '../../types';
 import './Settings.scss';
 
 export const Settings = () => {
-    const { disableVideos, setDisableVideos } = useMeetContext();
+    const { disableVideos, setDisableVideos, backgroundBlur, toggleBackgroundBlur, isVideoEnabled, videoDeviceId } =
+        useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
 
@@ -30,7 +31,24 @@ export const Settings = () => {
         >
             <div className="flex flex-column w-full gap-6 pr-4">
                 <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
-                    <span className="setting-label color-weak text-ellipsis">{c('Action').t`Stop incoming video`}</span>
+                    <label className="setting-label color-weak text-ellipsis" htmlFor="blur-background">{c('Action')
+                        .t`Blur background`}</label>
+                    <Toggle
+                        id="blur-background"
+                        checked={backgroundBlur}
+                        onChange={() =>
+                            toggleBackgroundBlur({
+                                isEnabled: isVideoEnabled,
+                                videoDeviceId: videoDeviceId ?? '',
+                            })
+                        }
+                        className={clsx('settings-toggle', backgroundBlur ? '' : 'settings-toggle-inactive')}
+                        aria-label={c('Alt').t`Blur background`}
+                    />
+                </div>
+                <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
+                    <label className="setting-label color-weak text-ellipsis" htmlFor="disable-videos">{c('Action')
+                        .t`Stop incoming video`}</label>
                     <Toggle
                         id="disable-videos"
                         checked={disableVideos}
