@@ -12,9 +12,10 @@ import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 
 interface Props {
     organization?: Organization;
+    organizationMonitor?: boolean;
 }
 
-const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
+const B2BOrganizationUpsellBanner = ({ organization, organizationMonitor }: Props) => {
     const [user] = useUser();
     const [openSubscriptionModal] = useSubscriptionModal();
 
@@ -40,7 +41,7 @@ const B2BOrganizationUpsellBanner = ({ organization }: Props) => {
                         <b>{c('Info').t`Gain visibility across your organization`}</b>
                         <div>
                             {c('Info').t`Upgrade to Professional or a higher plan to unlock`}{' '}
-                            <b>{c('Info').t`Activity Monitor`}</b>
+                            {organizationMonitor ? <b>{c('Info').t`Organization Monitor`}</b> : <b>{c('Info').t`Accounts`}</b>}
                             {c('Info').t` and other security features.`}{' '}
                             <Href
                                 href="https://proton.me/support/business-activity-monitor"
