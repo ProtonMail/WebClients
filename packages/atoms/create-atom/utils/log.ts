@@ -1,27 +1,29 @@
-import chalk from 'chalk';
+import { styleText } from 'util';
 
 export const logIntro = (name: string) => {
     console.info('\n');
-    console.info(`${chalk.bold.yellowBright('⚛')} Creating ${chalk.bold.yellowBright(name)} atom`);
+    console.log();
+    console.info(
+        `${styleText(['yellowBright', 'bold'], '⚛')} Creating ${styleText(['yellowBright', 'bold'], name)} atom`
+    );
     console.info('\n');
 };
 
 export const logItemCompletion = (successText: string) => {
-    const checkMark = chalk.green('✓');
-    console.info(`${checkMark} ${successText}`);
+    console.info(`${styleText(['green'], '✓')} ${successText}`);
 };
 
 export const logConclusion = () => {
     console.info('\n');
-    console.info(chalk.bold.green('Atom created! 🚀 '));
+    console.info(styleText(['green', 'bold'], 'Atom created! 🚀'));
     console.info('\n');
 };
 
 export const logError = (error: string) => {
-    console.info(chalk.bold.redBright('Error creating atom.'));
-    console.info(chalk.redBright(error));
+    console.info(styleText(['redBright', 'bold'], 'Error creating atom.'));
+    console.info(styleText(['redBright'], error));
 };
 
 export const logComponentCreationError = (componentName: string) => {
-    logError(`Component ${chalk.bold.redBright(componentName)} already exists.`);
+    console.info(`${styleText(['redBright', 'bold'], componentName)} already exists.`);
 };
