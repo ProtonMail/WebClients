@@ -34,6 +34,9 @@ export enum ActionEventName {
     ACCEPT_INVITATIONS = 'ACCEPT_INVITATIONS',
     REJECT_INVITATIONS = 'REJECT_INVITATIONS',
 
+    // Direct share specific events
+    REMOVE_ME = 'REMOVE_ME',
+
     // Refresh events
     REFRESH_SHARED_WITH_ME = 'REFRESH_SHARED_WITH_ME',
 
@@ -99,6 +102,11 @@ export interface RejectInvitationsEvent {
     uids: string[];
 }
 
+export interface RemoveMeEvent {
+    type: ActionEventName.REMOVE_ME;
+    uids: string[];
+}
+
 export interface RefreshShareWithMeEvent {
     type: ActionEventName.REFRESH_SHARED_WITH_ME;
 }
@@ -116,6 +124,7 @@ export type ActionEvent =
     | DeleteBookmarksEvent
     | AcceptInvitationsEvent
     | RejectInvitationsEvent
+    | RemoveMeEvent
     | RefreshShareWithMeEvent;
 
 export type ActionEventListener<T extends ActionEvent> = (event: T) => Promise<void>;
@@ -133,6 +142,7 @@ export type ActionEventMap = {
     [ActionEventName.DELETE_BOOKMARKS]: DeleteBookmarksEvent;
     [ActionEventName.ACCEPT_INVITATIONS]: AcceptInvitationsEvent;
     [ActionEventName.REJECT_INVITATIONS]: RejectInvitationsEvent;
+    [ActionEventName.REMOVE_ME]: RemoveMeEvent;
     [ActionEventName.REFRESH_SHARED_WITH_ME]: RefreshShareWithMeEvent;
     [ActionEventName.ALL]: ActionEvent;
 };

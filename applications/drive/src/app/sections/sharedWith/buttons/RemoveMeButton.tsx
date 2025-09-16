@@ -5,7 +5,7 @@ import { Icon, ToolbarButton } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { useSharedWithMeActions } from '../../../hooks/drive/useSharedWithMeActions';
+import { useSharingActions } from '../../../hooks/drive/useSharingActions';
 import { useSharedWithMeActions as useLegacySharedWithMeActions } from '../../../store';
 import { useSharedWithMeListingStore } from '../../../zustand/sections/sharedWithMeListing.store';
 
@@ -30,7 +30,7 @@ interface ToolbarProps extends BaseProps {
 type Props = ContextMenuProps | ToolbarProps;
 
 export const RemoveMeButton = ({ nodeUid, shareId, isAlbum, showConfirmModal, close, buttonType }: Props) => {
-    const { removeMe } = useSharedWithMeActions();
+    const { removeMe } = useSharingActions();
     const { removeMe: legacyRemoveMe } = useLegacySharedWithMeActions();
     const removeSharedWithMeItemFromStore = useSharedWithMeListingStore(
         useShallow((state) => state.removeSharedWithMeItem)
@@ -42,7 +42,7 @@ export const RemoveMeButton = ({ nodeUid, shareId, isAlbum, showConfirmModal, cl
                 removeSharedWithMeItemFromStore(nodeUid);
             });
         } else {
-            removeMe(showConfirmModal, nodeUid, removeSharedWithMeItemFromStore);
+            removeMe(showConfirmModal, nodeUid);
         }
     };
 

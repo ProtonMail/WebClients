@@ -84,7 +84,7 @@ export function useFolder() {
                     if (node) {
                         const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive);
                         let shareUrl: LinkShareUrl | undefined;
-                        if (node.isShared) {
+                        if (node.isShared && isAdmin) {
                             const shareResult = await drive.getSharingInfo(node.uid);
                             if (shareResult && shareResult.publicLink) {
                                 const { shareId, publicLinkId } = splitPublicLinkUid(shareResult.publicLink.uid);
@@ -115,8 +115,9 @@ export function useFolder() {
                 }
             } catch (e) {
                 handleFolderError(e as Error);
+            } finally {
+                setIsLoading(false);
             }
-            setIsLoading(false);
         },
         [drive, handleError, handleFolderError, isDocsEnabled, isSheetsEnabled]
     );
