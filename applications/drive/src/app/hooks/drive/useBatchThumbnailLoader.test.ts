@@ -8,12 +8,12 @@ import { renderHook, waitFor } from '@testing-library/react';
 import { ThumbnailType, useDrive } from '@proton/drive/index';
 
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
-import { useThumbnailStore } from '../../zustand/thumbnail/thumbnail.store';
+import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { useBatchThumbnailLoader } from './useBatchThumbnailLoader';
 
 jest.mock('@proton/drive/index');
 jest.mock('../../utils/errorHandling/useSdkErrorHandler');
-jest.mock('../../zustand/thumbnail/thumbnail.store');
+jest.mock('../../zustand/thumbnails/thumbnails.store');
 
 const mockUseDrive = jest.mocked(useDrive);
 const mockUseSdkErrorHandler = jest.mocked(useSdkErrorHandler);
@@ -24,6 +24,7 @@ const mockDriveClient = {
 };
 
 const mockSetThumbnail = jest.fn();
+const mockGetThumbnail = jest.fn();
 const mockHandleError = jest.fn();
 
 const mockThumbnailItem = {
@@ -48,12 +49,18 @@ describe('useBatchThumbnailLoader', () => {
     beforeEach(() => {
         jest.clearAllMocks();
         jest.useFakeTimers();
+        mockGetThumbnail.mockReturnValue(undefined);
 
         mockUseDrive.mockReturnValue({ drive: mockDriveClient } as any);
         mockUseSdkErrorHandler.mockReturnValue({ handleError: mockHandleError });
         mockUseThumbnailStore.mockReturnValue({
+            setThumbnail: mockSetThumbnail,
+            getThumbnail: mockGetThumbnail,
+        });
+        mockUseThumbnailStore.getState = jest.fn().mockReturnValue({
             thumbnails: {},
             setThumbnail: mockSetThumbnail,
+            getThumbnail: mockGetThumbnail,
         });
 
         global.URL.createObjectURL = jest.fn(() => 'blob:test-url');
@@ -96,9 +103,12 @@ describe('useBatchThumbnailLoader', () => {
         });
 
         it('should not load thumbnail if already in store', () => {
-            mockUseThumbnailStore.mockReturnValue({
-                thumbnails: { 'test-thumbnail-1': { sdUrl: 'stored-url' } },
+            const storedThumbnail = { sdUrl: 'stored-url' };
+            mockGetThumbnail.mockReturnValue(storedThumbnail);
+            mockUseThumbnailStore.getState = jest.fn().mockReturnValue({
+                thumbnails: { 'test-thumbnail-1': storedThumbnail },
                 setThumbnail: mockSetThumbnail,
+                getThumbnail: mockGetThumbnail,
             });
 
             const { result } = renderHook(() => useBatchThumbnailLoader());

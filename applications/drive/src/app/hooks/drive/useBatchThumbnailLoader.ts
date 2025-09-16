@@ -1,11 +1,9 @@
 import { useCallback, useEffect, useRef } from 'react';
 
-import { useShallow } from 'zustand/react/shallow';
-
 import { ThumbnailType, useDrive } from '@proton/drive/index';
 
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
-import { useThumbnailStore } from '../../zustand/thumbnail/thumbnail.store';
+import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 
 interface ThumbnailItem {
     uid: string;
@@ -31,13 +29,6 @@ export const useBatchThumbnailLoader = ({
     const { drive } = useDrive();
     const { handleError } = useSdkErrorHandler();
 
-    const { thumbnails, setThumbnail } = useThumbnailStore(
-        useShallow((state) => ({
-            thumbnails: state.thumbnails,
-            setThumbnail: state.setThumbnail,
-        }))
-    );
-
     const pendingItems = useRef<Map<string, ThumbnailItem>>(new Map());
     const isProcessing = useRef(false);
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -47,6 +38,7 @@ export const useBatchThumbnailLoader = ({
         if (isProcessing.current || pendingItems.current.size === 0) {
             return;
         }
+        const { setThumbnail } = useThumbnailStore.getState();
         isProcessing.current = true;
         const itemsToProcess = Array.from(pendingItems.current.values());
         const uidsToProcess = itemsToProcess.map((item) => item.uid);
@@ -61,7 +53,9 @@ export const useBatchThumbnailLoader = ({
                 }
 
                 if (thumbnailResult.ok) {
-                    const url = URL.createObjectURL(new Blob([thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' }));
+                    const url = URL.createObjectURL(
+                        new Blob([thumbnailResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' })
+                    );
                     setThumbnail(item.thumbnailId, { sdUrl: url });
                 } else {
                     setThumbnail(item.thumbnailId, {});
@@ -80,7 +74,7 @@ export const useBatchThumbnailLoader = ({
                 intervalRef.current = null;
             }
         }
-    }, [drive, thumbnailType, setThumbnail, handleError]);
+    }, [drive, thumbnailType, handleError]);
 
     processBatchRef.current = processBatch;
 
@@ -106,7 +100,9 @@ export const useBatchThumbnailLoader = ({
 
     const loadThumbnail = useCallback(
         (item: ThumbnailItem) => {
-            if (!item.hasThumbnail || item.cachedThumbnailUrl || thumbnails[item.thumbnailId] !== undefined) {
+            const { getThumbnail } = useThumbnailStore.getState();
+
+            if (!item.hasThumbnail || item.cachedThumbnailUrl || getThumbnail(item.thumbnailId) !== undefined) {
                 return;
             }
 
@@ -119,7 +115,7 @@ export const useBatchThumbnailLoader = ({
                 }
             }
         },
-        [thumbnails, startInterval]
+        [startInterval]
     );
 
     return { loadThumbnail };

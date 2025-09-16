@@ -13,7 +13,7 @@ import { LocationCell } from '../../components/cells/LocationCell';
 import { NameCell } from '../../components/cells/NameCell';
 import { TimeCell } from '../../components/cells/TimeCell';
 import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
-import { useThumbnailStore } from '../../zustand/thumbnail/thumbnail.store';
+import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { type SharedByMeItem, useSharedByMeStore } from './useSharedByMe.store';
 
 const NameCellWithThumbnail = ({
@@ -29,7 +29,7 @@ const NameCellWithThumbnail = ({
     thumbnailId: string | undefined;
     haveSignatureIssues: boolean | undefined;
 }) => {
-    const thumbnail = useThumbnailStore((state) => (thumbnailId ? state.thumbnails[thumbnailId] : undefined));
+    const thumbnail = useThumbnailStore((state) => (thumbnailId ? state.getThumbnail(thumbnailId) : undefined));
 
     return (
         <NameCell
