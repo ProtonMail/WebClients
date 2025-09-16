@@ -28,6 +28,7 @@
     },
     "dependencies": {
         "@livekit/components-react": "^2.9.14",
+        "@livekit/track-processors": "^0.6.1",
         "@proton-meet/livekit-client": "2.15.9",
         "@proton-meet/proton-meet-core": "0.3.1",
         "@proton/components": "workspace:packages/components",
