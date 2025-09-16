@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo } from 'react'
 
 import type { CellXfs, SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
+import type { CellInterface } from '@rowsncolumns/grid'
 import { useSearch, useSpreadsheetState as useSpreadsheetStateOriginal } from '@rowsncolumns/spreadsheet-state'
 import type {
   CellData,
@@ -13,14 +14,16 @@ import type {
   SpreadsheetTheme,
   NamedRange,
   DataValidationRuleRecord,
+  SheetRange,
 } from '@rowsncolumns/spreadsheet'
-import { defaultSpreadsheetTheme } from '@rowsncolumns/spreadsheet'
+import { defaultSpreadsheetTheme, useSpreadsheet } from '@rowsncolumns/spreadsheet'
 import { useCharts } from '@rowsncolumns/charts'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import type { DocStateInterface } from '@proton/docs-shared'
 import { DocProvider } from '@proton/docs-shared'
 import { useSyncedState } from '../../Hooks/useSyncedState'
 import { create } from 'zustand'
+import { useEvent } from './components/utils'
 
 // local state
 // -----------
@@ -209,7 +212,39 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const yjsState = useYjsState(depsWithBaseState)
 
   const baseState = { ...localState, ...spreadsheetState, ...computedValues }
-  return { ...baseState, chartsState, searchState, yjsState }
+
+  const { scrollToCell } = useSpreadsheet()
+  const onSelectRange = useEvent((range: SheetRange) => {
+    const activeCell: CellInterface | null = {
+      rowIndex: range.startRowIndex,
+      columnIndex: range.startColumnIndex,
+    }
+
+    if (baseState.activeSheetId !== range.sheetId) {
+      // Update sheet
+      baseState.onChangeActiveSheet(range.sheetId)
+    }
+
+    // Update active cell
+    baseState.onChangeActiveCell(range.sheetId, activeCell)
+
+    // Update selections
+    baseState.onChangeSelections(range.sheetId, [{ range }])
+
+    // Scroll to cell
+    scrollToCell?.(activeCell)
+  })
+  const onSelectNamedRange = useEvent(({ range }: NamedRange) => {
+    if (range) {
+      onSelectRange(range)
+    }
+  })
+  const onSelectTable = useEvent((table: TableView) => {
+    const { sheetId, range } = table
+    onSelectRange({ ...range, sheetId })
+  })
+
+  return { ...baseState, chartsState, searchState, yjsState, onSelectRange, onSelectNamedRange, onSelectTable }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
 
