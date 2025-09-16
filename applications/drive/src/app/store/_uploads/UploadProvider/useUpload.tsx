@@ -247,8 +247,6 @@ function useBaseUpload(
             controls
                 .start()
                 .then(async ({ folderId, folderName }) => {
-                    queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId, name: folderName });
-                    nextFolderUpload.callbacks.onFolderUpload?.({ folderId, folderName });
                     if (shouldUseSdk) {
                         try {
                             const uid = await drive.getNodeUid(nextFolderUpload.shareId, folderId);
@@ -264,6 +262,8 @@ function useBaseUpload(
                             handleError(e);
                         }
                     }
+                    queue.updateWithData(nextFolderUpload.id, TransferState.Done, { folderId, name: folderName });
+                    nextFolderUpload.callbacks.onFolderUpload?.({ folderId, folderName });
                 })
                 .catch((error) => {
                     if (isTransferCancelError(error)) {
