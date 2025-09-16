@@ -7,7 +7,7 @@ import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/trans
 import type { ItemsByShareId } from '@proton/pass/store/reducers/items';
 import { withOptimisticItemsByShareId } from '@proton/pass/store/reducers/items';
 import { SelectorError } from '@proton/pass/store/selectors/errors';
-import { selectVisibleShareIds } from '@proton/pass/store/selectors/shares';
+import { createVisibilityFilterSelector } from '@proton/pass/store/selectors/shares';
 import type { State } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionWithOptimistic, ItemType, Maybe, MaybeNull, SelectedItem } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
@@ -25,20 +25,20 @@ export const selectNonFailedItems = createSelector(selectItemsState, asIfNotFail
 export const selectNonOptimisticItems = createSelector(selectItemsState, asIfNotOptimistic);
 export const selectItems = createSelector(selectItemsState, unwrapOptimisticState);
 export const selectAllItems = createSelector(selectItems, flattenItemsByShareId);
+export const selectVisibleItems = createVisibilityFilterSelector(selectAllItems);
 
-export const selectVisibleItems = createSelector([selectAllItems, selectVisibleShareIds], (items, shareIds) =>
-    items.filter(({ shareId }) => shareIds.has(shareId))
-);
-
-export const selectTrashedItems = createSelector(selectAllItems, (items) => items.filter(isTrashed));
+export const selectTrashedItems = createSelector(selectVisibleItems, (items) => items.filter(isTrashed));
 export const selectPinnedItems = createSelector(selectVisibleItems, (items) => items.filter(and(isActive, isPinned)));
 export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => first(drafts));
 
-export const selectVisibleItemsByType = <T extends ItemType>(type: T) =>
-    createSelector(selectVisibleItems, (items) => items.filter(isItemType<T>(type)));
+export const selectItemsFactory = <T extends ItemType>(type: T, visibleOnly: boolean) =>
+    createSelector(visibleOnly ? selectVisibleItems : selectAllItems, (items) => items.filter(isItemType<T>(type)));
 
-export const selectLoginItems = selectVisibleItemsByType('login');
-export const selectAliasItems = selectVisibleItemsByType('alias');
+export const selectAllLoginItems = selectItemsFactory('login', false);
+export const selectVisibleLoginItems = selectItemsFactory('login', true);
+
+export const selectAllAliasItems = selectItemsFactory('alias', false);
+export const selectVisibleAliasItems = selectItemsFactory('alias', true);
 
 export const itemsFromSelection =
     (selection: SelectedItem[]) =>
@@ -95,10 +95,10 @@ export const selectItemsByShareId = (shareId?: string) =>
     );
 
 export const selectItemsByUserIdentifier = (userIdentifier: string) =>
-    createSelector(selectLoginItems, filterItemsByUserIdentifier(userIdentifier));
+    createSelector(selectVisibleLoginItems, filterItemsByUserIdentifier(userIdentifier));
 
 export const selectItemsByEmail = (itemEmail?: MaybeNull<string>) =>
-    createSelector(selectLoginItems, (items) => {
+    createSelector(selectVisibleLoginItems, (items) => {
         if (!itemEmail) return;
         return items.find(hasEmail(itemEmail));
     });

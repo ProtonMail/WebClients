@@ -32,8 +32,17 @@ export const selectShareState = ({ shares }: State) => shares;
 export const selectAllShares = createSelector(selectShareState, (s) => Object.values(s));
 export const selectAllVaults = createSelector([selectAllShares], (s) => s.filter(isVaultShare).sort(sortVaults));
 
-export const selectVisibleShares = createSelector(selectAllShares, (shares) => shares.filter(isShareVisible));
-export const selectVisibleShareIds = createSelector(selectVisibleShares, (shares) => new Set(shares.map(prop('shareId'))));
+export const selectVisibleVaults = createSelector([selectAllVaults], (v) => v.filter(isShareVisible));
+export const selectVisibleShares = createSelector(selectAllShares, (s) => s.filter(isShareVisible));
+export const selectVisibleShareIds = createSelector(selectVisibleShares, (s) => new Set(s.map(prop('shareId'))));
+
+/** Creates a selector that filters items by share visibility.
+ * Takes any selector returning "entries" with `shareId` and
+ * filters them to only include visible shareId references. */
+export const createVisibilityFilterSelector = <T extends { shareId: string }>(filterableSelector: (state: State) => T[]) =>
+    createSelector([filterableSelector, selectVisibleShareIds], (entries, shareIds) => {
+        return entries.filter(({ shareId }) => shareIds.has(shareId));
+    });
 
 export const selectItemShares = createSelector([selectAllShares], (s) => s.filter(isItemShare));
 export const selectWritableShares = createSelector([selectAllShares], (v) => v.filter(isShareWritable));

@@ -16,13 +16,8 @@ import {
     selectedItemKey,
 } from '@proton/pass/store/actions/requests';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
-import type { Draft, DraftBase } from '@proton/pass/store/reducers';
-import {
-    withRequest,
-    withRequestFailure,
-    withRequestProgress,
-    withRequestSuccess,
-} from '@proton/pass/store/request/enhancers';
+import type { Draft, DraftBase } from '@proton/pass/store/reducers/drafts';
+import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
     BatchItemRevisionIDs,
@@ -88,9 +83,7 @@ export const itemCreateDismiss = createOptimisticAction(
     ({ payload }) => getItemEntityID(payload)
 );
 
-export const itemEdit = requestActionsFactory<ItemEditIntent, { item: ItemRevision } & SelectedItem, SelectedItem>(
-    'item::edit'
-)({
+export const itemEdit = requestActionsFactory<ItemEditIntent, { item: ItemRevision } & SelectedItem, SelectedItem>('item::edit')({
     key: getItemEntityID,
     intent: { prepare: (payload) => withSynchronousAction({ payload }) },
     success: {
@@ -123,9 +116,7 @@ export const itemEditDismiss = createOptimisticAction(
     ({ payload }) => getItemEntityID(payload)
 );
 
-export const itemsEditSync = createAction('items::edit::sync', (items: ItemRevision[]) =>
-    withCache({ payload: { items } })
-);
+export const itemsEditEvent = createAction('items::edit::event', (items: ItemRevision[]) => withCache({ payload: { items } }));
 
 export const itemMove = requestActionsFactory<ItemMoveIntent, ItemMoveDTO>('item::move')({
     key: getItemKey<UniqueItem>,
@@ -149,18 +140,16 @@ export const itemMove = requestActionsFactory<ItemMoveIntent, ItemMoveDTO>('item
     },
 });
 
-export const itemBulkMoveIntent = createAction(
-    'item::bulk::move::intent',
-    (payload: { selected: BulkSelectionDTO; shareId: string }) =>
-        pipe(
-            withRequest({ status: 'start', id: itemsBulkMoveRequest(), data: payload.selected }),
-            withNotification({
-                expiration: -1,
-                type: 'info',
-                loading: true,
-                text: c('Info').t`Moving items`,
-            })
-        )({ payload })
+export const itemBulkMoveIntent = createAction('item::bulk::move::intent', (payload: { selected: BulkSelectionDTO; shareId: string }) =>
+    pipe(
+        withRequest({ status: 'start', id: itemsBulkMoveRequest(), data: payload.selected }),
+        withNotification({
+            expiration: -1,
+            type: 'info',
+            loading: true,
+            text: c('Info').t`Moving items`,
+        })
+    )({ payload })
 );
 
 export const itemBulkMoveFailure = createAction(
@@ -176,9 +165,7 @@ export const itemBulkMoveFailure = createAction(
 
 export const itemBulkMoveProgress = createAction(
     'item::bulk::move::progress',
-    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }) =>
-        withCache({ payload })
-    )
+    withRequestProgress((payload: BatchItemRevisions & { movedItems: ItemRevision[]; targetShareId: string }) => withCache({ payload }))
 );
 
 export const itemBulkMoveSuccess = createAction(
@@ -213,18 +200,16 @@ export const itemTrash = requestActionsFactory<SelectedRevision, SelectedRevisio
     },
 });
 
-export const itemBulkTrashIntent = createAction(
-    'item::bulk::trash::intent',
-    (payload: { selected: BulkSelectionDTO }) =>
-        pipe(
-            withRequest({ status: 'start', id: itemsBulkTrashRequest(), data: payload.selected }),
-            withNotification({
-                expiration: -1,
-                type: 'info',
-                loading: true,
-                text: c('Info').t`Moving items to trash`,
-            })
-        )({ payload })
+export const itemBulkTrashIntent = createAction('item::bulk::trash::intent', (payload: { selected: BulkSelectionDTO }) =>
+    pipe(
+        withRequest({ status: 'start', id: itemsBulkTrashRequest(), data: payload.selected }),
+        withNotification({
+            expiration: -1,
+            type: 'info',
+            loading: true,
+            text: c('Info').t`Moving items to trash`,
+        })
+    )({ payload })
 );
 
 export const itemBulkTrashFailure = createAction(
@@ -275,9 +260,7 @@ export const itemDelete = requestActionsFactory<SelectedItem, SelectedItem & { h
     },
 });
 
-export const itemDeleteRevisions = requestActionsFactory<SelectedItem, { item: ItemRevision } & SelectedItem>(
-    'item::delete::revisions'
-)({
+export const itemDeleteRevisions = requestActionsFactory<SelectedItem, { item: ItemRevision } & SelectedItem>('item::delete::revisions')({
     key: getItemKey,
     failure: {
         prepare: (error, payload) =>
@@ -299,18 +282,16 @@ export const itemDeleteRevisions = requestActionsFactory<SelectedItem, { item: I
     },
 });
 
-export const itemBulkDeleteIntent = createAction(
-    'item::bulk::delete::intent',
-    (payload: { selected: BulkSelectionDTO }) =>
-        pipe(
-            withRequest({ status: 'start', id: itemsBulkDeleteRequest(), data: payload.selected }),
-            withNotification({
-                expiration: -1,
-                type: 'info',
-                loading: true,
-                text: c('Info').t`Permanently deleting selected items`,
-            })
-        )({ payload })
+export const itemBulkDeleteIntent = createAction('item::bulk::delete::intent', (payload: { selected: BulkSelectionDTO }) =>
+    pipe(
+        withRequest({ status: 'start', id: itemsBulkDeleteRequest(), data: payload.selected }),
+        withNotification({
+            expiration: -1,
+            type: 'info',
+            loading: true,
+            text: c('Info').t`Permanently deleting selected items`,
+        })
+    )({ payload })
 );
 
 export const itemBulkDeleteFailure = createAction(
@@ -339,7 +320,7 @@ export const itemBulkDeleteSuccess = createAction(
     )
 );
 
-export const itemsDeleteSync = createAction('items::delete::sync', (shareId: string, itemIds: string[]) =>
+export const itemsDeleteEvent = createAction('items::delete::event', (shareId: string, itemIds: string[]) =>
     withCache({ payload: { shareId, itemIds } })
 );
 
@@ -365,18 +346,16 @@ export const itemRestore = requestActionsFactory<SelectedItem, SelectedItem>('it
     },
 });
 
-export const itemBulkRestoreIntent = createAction(
-    'item::bulk:restore::intent',
-    (payload: { selected: BulkSelectionDTO }) =>
-        pipe(
-            withRequest({ status: 'start', id: itemsBulkRestoreRequest(), data: payload.selected }),
-            withNotification({
-                expiration: -1,
-                type: 'info',
-                loading: true,
-                text: c('Info').t`Restoring items from trash`,
-            })
-        )({ payload })
+export const itemBulkRestoreIntent = createAction('item::bulk:restore::intent', (payload: { selected: BulkSelectionDTO }) =>
+    pipe(
+        withRequest({ status: 'start', id: itemsBulkRestoreRequest(), data: payload.selected }),
+        withNotification({
+            expiration: -1,
+            type: 'info',
+            loading: true,
+            text: c('Info').t`Restoring items from trash`,
+        })
+    )({ payload })
 );
 
 export const itemBulkRestoreFailure = createAction(
@@ -407,7 +386,7 @@ export const itemBulkRestoreSuccess = createAction(
 
 export const itemAutofilled = createAction('item::autofilled', (payload: SelectedItem) => ({ payload }));
 
-export const itemsUsedSync = createAction('items::used::sync', (items: (SelectedItem & { lastUseTime: number })[]) =>
+export const itemsUsedEvent = createAction('items::used::event', (items: (SelectedItem & { lastUseTime: number })[]) =>
     withCache({ payload: { items } })
 );
 
@@ -552,8 +531,7 @@ export const secureLinkRemove = requestActionsFactory<SecureLinkDeleteDTO, Secur
         prepare: (error, payload) =>
             withNotification({
                 type: 'error',
-                text: c('Error')
-                    .t`There was an error while removing the secure link. Please try again in a few minutes.`,
+                text: c('Error').t`There was an error while removing the secure link. Please try again in a few minutes.`,
                 error,
             })({ payload }),
     },
