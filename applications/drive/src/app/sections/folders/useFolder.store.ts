@@ -76,7 +76,7 @@ type FolderActions = {
 type FolderStore = FolderState & FolderActions;
 
 const initialState: FolderState = {
-    isLoading: true,
+    isLoading: false,
     items: new Map(),
     itemUids: new Set(),
     folder: undefined,
