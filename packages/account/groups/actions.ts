@@ -32,6 +32,8 @@ export const addSubdomain = async (api: Api, domainName: string) => {
     return Domain;
 };
 
+const GROUPS_DOMAIN_REGEX = /^groups\.(proton\.me|protonmail\.dev|.+\.proton\.black)$/;
+
 const saveGroup =
     ({ editMode = false }: { editMode: boolean }) =>
     ({
@@ -46,7 +48,10 @@ const saveGroup =
         return async (dispatch) => {
             const [domains] = await Promise.all([dispatch(domainsThunk())]);
 
-            if (!domains?.some((domain) => domain.DomainName === groupPayload.domain)) {
+            const isGroupDomain = GROUPS_DOMAIN_REGEX.test(groupPayload.domain);
+            const isDomainInDomains = domains?.some((domain) => domain.DomainName === groupPayload.domain);
+
+            if (!isGroupDomain && !isDomainInDomains) {
                 await addSubdomain(api, groupPayload.domain);
             }
 

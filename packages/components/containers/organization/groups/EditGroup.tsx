@@ -4,6 +4,7 @@ import { Form, FormikProvider } from 'formik';
 import isEmpty from 'lodash/isEmpty';
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { Button, CircleLoader, Panel, PanelHeader } from '@proton/atoms';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
@@ -31,6 +32,7 @@ import WillDisableE2eePrompt from './WillDisableE2eePrompt';
 import E2EEToggle from './components/E2EEToggle';
 import { getAddressSuggestedLocalPart } from './helpers';
 import useTriggerDiscardModal from './hooks/useTriggerDiscardModal';
+import shouldShowMail from './shouldShowMail';
 import type { GroupsManagementReturn } from './types';
 
 interface Props {
@@ -91,6 +93,7 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
 
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
+    const [organization] = useOrganization();
     const [newGroupMembers, setNewGroupMembers] = useState<NewGroupMember[]>([]);
     const handleWillNotDisableE2ee = () => {
         setWillDisableE2eeModal(false);
@@ -131,6 +134,14 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
         const initialIsE2EEEnabled = !hasBit(updatedGroupAddressFlags, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
         setE2eeWillBeDisabled(!initialIsE2EEEnabled);
     }, [updatedGroupAddressFlags]);
+
+    const hideMail = !shouldShowMail(organization?.PlanName);
+    useEffect(() => {
+        if (hideMail && uiState === 'new') {
+            const suggestedLocalPart = getAddressSuggestedLocalPart(formValues.name, organization?.Name, hideMail);
+            setFieldValue('address', suggestedLocalPart);
+        }
+    }, [formValues.name]);
 
     const handleAddNewMembers = async (newMembers: NewGroupMember[]) => {
         const willDisableE2ee = newMembers.some((member) => member.GroupMemberType !== GROUP_MEMBER_TYPE.INTERNAL);
@@ -226,13 +237,15 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                     />
                 }
             >
-                <E2EEDisabledWarning
-                    groupMembers={groupMembers}
-                    loadingGroupMembers={loadingGroupMembers}
-                    newGroupMembers={newGroupMembers}
-                    group={groupData}
-                    groupsManagement={groupsManagement}
-                />
+                {!hideMail && (
+                    <E2EEDisabledWarning
+                        groupMembers={groupMembers}
+                        loadingGroupMembers={loadingGroupMembers}
+                        newGroupMembers={newGroupMembers}
+                        group={groupData}
+                        groupsManagement={groupsManagement}
+                    />
+                )}
                 <FormikProvider value={form}>
                     <Form id="groups" className="flex flex-column gap-4">
                         <InputFieldStackedGroup>
@@ -251,7 +264,9 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                         setFieldValue('name', name);
                                     }}
                                     onBlur={() => {
-                                        if (formValues.name !== '' && formValues.address === '') {
+                                        const hasName = formValues.name !== '';
+                                        const hasAddress = formValues.address !== '';
+                                        if (hasName && !hasAddress) {
                                             const suggestedLocalPart = getAddressSuggestedLocalPart(formValues.name);
                                             setFieldValue('address', suggestedLocalPart);
                                         }
@@ -275,67 +290,72 @@ const EditGroup = ({ groupsManagement, groupData }: Props) => {
                                 />
                             </InputFieldStacked>
                         </InputFieldStackedGroup>
-                        <InputFieldStackedGroup>
-                            <InputFieldStacked isGroupElement icon="earth">
-                                <InputFieldTwo
-                                    label={c('Label').t`Group address`}
-                                    unstyled
-                                    className="rounded-none"
-                                    name="address"
-                                    placeholder={c('placeholder').t`e.g. marketing`}
-                                    value={
-                                        uiState === 'new'
-                                            ? formValues.address
-                                            : formValues.address.substring(0, formValues.address.indexOf('@'))
-                                    }
-                                    onValue={(address: string) => {
-                                        setFieldValue('address', address);
-                                    }}
-                                    error={errors.address}
-                                    disabled={uiState === 'edit'} // disable until BE supports address change
-                                    suffix={(() => {
-                                        if (loadingCustomDomains) {
-                                            return <CircleLoader />;
+                        {!hideMail && (
+                            <InputFieldStackedGroup>
+                                <InputFieldStacked isGroupElement icon="earth">
+                                    <InputFieldTwo
+                                        label={c('Label').t`Group address`}
+                                        unstyled
+                                        className="rounded-none"
+                                        name="address"
+                                        placeholder={c('placeholder').t`e.g. marketing`}
+                                        value={
+                                            uiState === 'new'
+                                                ? formValues.address
+                                                : formValues.address.substring(0, formValues.address.indexOf('@'))
                                         }
+                                        onValue={(address: string) => {
+                                            setFieldValue('address', address);
+                                        }}
+                                        error={errors.address}
+                                        disabled={uiState === 'edit'} // disable until BE supports address change
+                                        suffix={(() => {
+                                            if (loadingCustomDomains) {
+                                                return <CircleLoader />;
+                                            }
 
-                                        return (
-                                            <GroupAddressDomainSelect
-                                                domains={verifiedCustomDomains}
-                                                selectedDomain={selectedDomain}
-                                                suggestedDomainName={suggestedAddressDomainName}
-                                                onChange={(value: string) => setSelectedDomain(value)}
-                                                setSelectedDomain={setSelectedDomain}
-                                                disabled={uiState === 'edit'} // disable until BE supports address change
-                                            />
-                                        );
-                                    })()}
-                                />
-                            </InputFieldStacked>
-                            <InputFieldStacked isGroupElement icon="lock">
-                                <InputFieldTwo
-                                    label={c('Label').t`Who can send to this group address?`}
-                                    as={SelectTwo}
-                                    unstyled
-                                    className="rounded-none"
-                                    name="permissions"
-                                    placeholder={c('placeholder').t`Members`}
-                                    value={formValues.permissions}
-                                    onValue={(permissions: any) => {
-                                        setFieldValue('permissions', permissions);
-                                    }}
-                                >
-                                    <Option title={c('option').t`Everyone`} value={GroupPermissions.EveryoneCanSend} />
-                                    <Option title={c('option').t`No one`} value={GroupPermissions.NobodyCanSend} />
-                                    <Option
-                                        title={c('option').t`Group members`}
-                                        value={GroupPermissions.GroupMembersCanSend}
+                                            return (
+                                                <GroupAddressDomainSelect
+                                                    domains={verifiedCustomDomains}
+                                                    selectedDomain={selectedDomain}
+                                                    suggestedDomainName={suggestedAddressDomainName}
+                                                    onChange={(value: string) => setSelectedDomain(value)}
+                                                    setSelectedDomain={setSelectedDomain}
+                                                    disabled={uiState === 'edit'} // disable until BE supports address change
+                                                />
+                                            );
+                                        })()}
                                     />
-                                </InputFieldTwo>
-                            </InputFieldStacked>
-                        </InputFieldStackedGroup>
+                                </InputFieldStacked>
+                                <InputFieldStacked isGroupElement icon="lock">
+                                    <InputFieldTwo
+                                        label={c('Label').t`Who can send to this group address?`}
+                                        as={SelectTwo}
+                                        unstyled
+                                        className="rounded-none"
+                                        name="permissions"
+                                        placeholder={c('placeholder').t`Members`}
+                                        value={formValues.permissions}
+                                        onValue={(permissions: any) => {
+                                            setFieldValue('permissions', permissions);
+                                        }}
+                                    >
+                                        <Option
+                                            title={c('option').t`Everyone`}
+                                            value={GroupPermissions.EveryoneCanSend}
+                                        />
+                                        <Option title={c('option').t`No one`} value={GroupPermissions.NobodyCanSend} />
+                                        <Option
+                                            title={c('option').t`Group members`}
+                                            value={GroupPermissions.GroupMembersCanSend}
+                                        />
+                                    </InputFieldTwo>
+                                </InputFieldStacked>
+                            </InputFieldStackedGroup>
+                        )}
                     </Form>
                 </FormikProvider>
-                {uiState === 'edit' && groupData && (
+                {!hideMail && uiState === 'edit' && groupData && (
                     <E2EEToggle group={groupData} groupsManagement={groupsManagement} />
                 )}
                 <NewGroupMemberInput

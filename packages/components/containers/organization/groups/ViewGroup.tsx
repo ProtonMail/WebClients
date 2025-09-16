@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { Button, Panel, PanelHeader } from '@proton/atoms';
 import Copy from '@proton/components/components/button/Copy';
 import Icon from '@proton/components/components/icon/Icon';
@@ -8,6 +9,7 @@ import type { Group } from '@proton/shared/lib/interfaces';
 
 import E2EEDisabledWarning from './E2EEDisabledWarning';
 import GroupMemberList from './GroupMemberList';
+import shouldShowMail from './shouldShowMail';
 import type { GroupsManagementReturn } from './types';
 
 interface Props {
@@ -23,6 +25,7 @@ const ViewGroup = ({
     canOnlyDelete,
 }: Props) => {
     const { createNotification } = useNotifications();
+    const [organization] = useOrganization();
 
     const handleCopy = () => {
         createNotification({ text: c('Info').t`Copied to clipboard` });
@@ -31,6 +34,8 @@ const ViewGroup = ({
     if (!selectedGroup) {
         return null;
     }
+
+    const showMail = shouldShowMail(organization?.PlanName);
 
     return (
         <Panel
@@ -56,12 +61,14 @@ const ViewGroup = ({
                 />
             }
         >
-            <E2EEDisabledWarning
-                groupMembers={groupMembers}
-                loadingGroupMembers={loadingGroupMembers}
-                group={groupData}
-                groupsManagement={groupsManagement}
-            />
+            {showMail && (
+                <E2EEDisabledWarning
+                    groupMembers={groupMembers}
+                    loadingGroupMembers={loadingGroupMembers}
+                    group={groupData}
+                    groupsManagement={groupsManagement}
+                />
+            )}
             <div className="flex-col text-left p-1">
                 {groupData.Name && (
                     <div className="mb-6">
@@ -69,7 +76,7 @@ const ViewGroup = ({
                         {groupData.Description !== '' && groupData.Description}
                     </div>
                 )}
-                {groupData.Address.Email && (
+                {showMail && groupData.Address.Email && (
                     <div className="mb-4">
                         <div className="color-weak text-sm">{c('Group address title').t`Group address`}</div>
                         <div className="text-left">

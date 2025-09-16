@@ -90,6 +90,7 @@ enum AccountFlag {
     PasswordPolicy = 'PasswordPolicy',
     SsoForPbs = 'SsoForPbs',
     DataRetentionPolicy = 'DataRetentionPolicy',
+    UserGroupsNoCustomDomain = 'UserGroupsNoCustomDomain',
 }
 
 enum PaymentsFlag {
