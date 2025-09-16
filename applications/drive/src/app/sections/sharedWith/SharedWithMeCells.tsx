@@ -20,7 +20,7 @@ import {
     type SharedWithMeListingItemUI,
     useSharedWithMeListingStore,
 } from '../../zustand/sections/sharedWithMeListing.store';
-import { useThumbnailStore } from '../../zustand/thumbnail/thumbnail.store';
+import { useThumbnailStore } from '../../zustand/thumbnails/thumbnails.store';
 import { useInvitationsActions } from './hooks/useInvitationsActions';
 import { useLegacyInvitationsActions } from './legacy/useLegacyInvitationsActions';
 
@@ -59,7 +59,7 @@ const NameCellWithThumbnail = ({
     isInvitation?: boolean;
     haveSignatureIssues: boolean | undefined;
 }) => {
-    const thumbnail = useThumbnailStore((state) => (thumbnailId ? state.thumbnails[thumbnailId] : undefined));
+    const thumbnail = useThumbnailStore((state) => (thumbnailId ? state.getThumbnail(thumbnailId) : undefined));
 
     return (
         <NameCell
