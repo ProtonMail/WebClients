@@ -245,6 +245,15 @@ export const persistSession = async ({
     };
 };
 
+export const extendPersistedSessionOfflineBypass = async (localID: number) => {
+    const persistedSession = getPersistedSession(localID);
+
+    if (persistedSession) {
+        persistedSession.persistedAt = +serverTime();
+        await setPersistedSession(persistedSession);
+    }
+};
+
 export const findPersistedSession = ({
     persistedSessions,
     UserID,
