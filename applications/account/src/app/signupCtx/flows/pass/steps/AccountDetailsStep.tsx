@@ -59,7 +59,7 @@ const SwitchSignupType = () => {
 };
 
 type Props = {
-    onContinue: () => void;
+    onContinue: () => Promise<void>;
 };
 
 export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
@@ -79,7 +79,7 @@ export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
             setLoading(true);
             const accountData = await signup.accountForm.getValidAccountData({ passwords: true });
             signup.submitAccountData(accountData);
-            onContinue();
+            await onContinue();
         } finally {
             setLoading(false);
         }
