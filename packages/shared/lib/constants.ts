@@ -477,8 +477,8 @@ export enum EVENT_ACTIONS {
     DELETE = 0,
     CREATE = 1,
     UPDATE = 2,
-    UPDATE_DRAFT = 2,
-    UPDATE_FLAGS = 3,
+    UPDATE_DRAFT = 2, // Only concern message draft
+    UPDATE_FLAGS = 3, // Only concern message metadata
 }
 
 export enum USER_ROLES {
