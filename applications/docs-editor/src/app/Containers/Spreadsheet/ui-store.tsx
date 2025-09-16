@@ -93,9 +93,8 @@ function useProtonSheetsUIStore() {
  */
 // biome-ignore lint/suspicious/noExplicitAny: it's fine.
 export const useUI = ((...args: any[]) => {
-  const { useUI } = useProtonSheetsUIStore()
   // @ts-expect-error it's fine
-  return useUI(...args)
+  return useProtonSheetsUIStore().useUI(...args)
 }) as ProtonSheetsUIStore & {
   /**
    * Setters for the UI state. Technically a hook, so it must follow the rules of hooks.

@@ -133,6 +133,13 @@ export const DropdownGroup = forwardRef<HTMLDivElement, DropdownGroupProps>(func
   )
 })
 
+export type DropdownGroupLabelProps = Ariakit.RoleProps
+export const DropdownGroupLabel = forwardRef<HTMLDivElement, DropdownGroupLabelProps>(
+  function DropdownGroupLabel(props, ref) {
+    return <Ariakit.Role ref={ref} {...props} className={clsx('mb-2 mt-3 px-4 text-sm font-bold', props.className)} />
+  },
+)
+
 // tooltip
 // -------
 

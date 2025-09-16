@@ -95,6 +95,7 @@ declared inside a `@media all` */
 }
 
 /* 🙃 */
-input[type='checkbox'] {
+input[type='checkbox'],
+input[type='radio'] {
 	opacity: unset;
 }
