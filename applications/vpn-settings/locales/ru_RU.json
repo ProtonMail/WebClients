@@ -11036,7 +11036,7 @@
     },
     "retention_policy_2025_Action": {
       "Cancel": [
-        "Отмена"
+        "Отменить"
       ],
       "Confirm": [
         "Подтвердить"
@@ -11057,9 +11057,9 @@
     "retention_policy_2025_Info": {
       "${ n } day": [
         "${ n } день",
+        "${ n } дня",
         "${ n } дней",
-        "${ n } дня",
-        "${ n } дня"
+        "${ n } дней"
       ],
       "${ remainingCount } more": [
         "${ remainingCount } больше"
@@ -11068,9 +11068,9 @@
     "retention_policy_2025_Label": {
       "day": [
         "день",
-        "дни",
-        "дни",
-        "дни"
+        "дня",
+        "дней",
+        "дней"
       ]
     },
     "retention_policy_2025_Option": {
