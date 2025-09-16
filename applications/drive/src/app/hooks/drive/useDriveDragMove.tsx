@@ -4,7 +4,9 @@ import * as React from 'react';
 import { c } from 'ttag';
 
 import { useGlobalLoader } from '@proton/components';
+import { generateNodeUid } from '@proton/drive';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
+import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -13,6 +15,7 @@ import type { DragMoveControls } from '../../components/FileBrowser/interface';
 import type { DriveItem } from '../../components/sections/Drive/Drive';
 import { useActions } from '../../store';
 import type { LinkInfo } from '../../store/_actions/interface';
+import { type MoveNodesItemMap, useMoveNodes } from '../sdk/useMoveNodes';
 
 type DragAndDropItem = DriveItem;
 
@@ -23,6 +26,8 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
     const [activeDropTarget, setActiveDropTarget] = useState<DragAndDropItem>();
     const dragEnterCounter = useRef(0);
     const selectionControls = useSelection();
+    const useSDKFolders = useFlag('DriveWebSDKFolders');
+    const { moveNodes } = useMoveNodes();
 
     const selectedItems = React.useMemo(
         () =>
@@ -58,9 +63,20 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
             rootShareId: shareId,
         }));
 
-        await withGlobalLoader(
-            moveLinks(new AbortController().signal, { shareId, linksToMove: toMoveInfo, newParentLinkId })
-        );
+        if (useSDKFolders) {
+            const itemMap: MoveNodesItemMap = selectedItems.reduce((acc, item) => {
+                const uid = generateNodeUid(item.volumeId, item.linkId);
+                const parentUid = generateNodeUid(item.volumeId, item.parentLinkId);
+                return { ...acc, [uid]: { name: item.name, parentUid } };
+            }, {});
+
+            // newParentLinkId will be a uid when passed from sdk folders
+            await withGlobalLoader(moveNodes(itemMap, newParentLinkId));
+        } else {
+            await withGlobalLoader(
+                moveLinks(new AbortController().signal, { shareId, linksToMove: toMoveInfo, newParentLinkId })
+            );
+        }
     };
 
     const getDragMoveControls = (item: DragAndDropItem): DragMoveControls => {
