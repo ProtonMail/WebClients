@@ -10,6 +10,7 @@ import { ZoomCombobox } from './ZoomCombobox'
 import * as T from './primitives'
 import { useUI } from '../../ui-store'
 import { createComponent } from '../utils'
+import { FormulaBar } from './FormulaBar'
 
 export interface ToolbarProps extends ComponentPropsWithRef<'div'> {}
 
@@ -17,7 +18,7 @@ const { s } = createStringifier(strings)
 
 export const Toolbar = createComponent(function Toolbar(props: ToolbarProps) {
   return (
-    <T.Container {...props}>
+    <T.Container {...props} formulaBarSlot={<FormulaBar />}>
       <Undo />
       <Redo />
       <ZoomCombobox />
