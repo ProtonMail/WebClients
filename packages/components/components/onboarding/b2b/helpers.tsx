@@ -52,7 +52,7 @@ export const getFeatures = (
     onClickCTA?: (item: B2BFeaturesID) => Promise<void>
 ): B2BOnboardingFeature[] => {
     const plan = getPlan(subscription)?.Name;
-    const canSeeGroupsSection = canUseGroups(plan);
+    const canSeeGroupsSection = canUseGroups(plan, { isUserGroupsNoCustomDomainEnabled: false });
 
     return [
         {
