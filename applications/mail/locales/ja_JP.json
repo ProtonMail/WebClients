@@ -1985,7 +1985,7 @@
         "トライアル期間中、最大${ TRIAL_MAX_LUMO_SEATS }の${ LUMO_SHORT_APP_NAME }シートをご利用いただけます。"
       ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
-        "トライアル期間中、最大${ TRIAL_MAX_SCRIBE_SEATS }のスライブシートをご利用いただけます。"
+        "トライアル期間中、最大${ TRIAL_MAX_SCRIBE_SEATS }のScribeシートをご利用いただけます。"
       ],
       "You can have up to ${ TRIAL_MAX_USERS } users during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_USERS }ユーザーまでご利用いただけます。"
@@ -2590,7 +2590,7 @@
     },
     "Cancellation upsell": {
       "${ maxSpaceTB } storage": [
-        "${ maxSpaceTB }容量"
+        "${ maxSpaceTB } ストレージ"
       ],
       "${ planMaxSpace } email storage": [
         "${ planMaxSpace }メール容量"
@@ -3761,7 +3761,7 @@
         "スヴァールバル諸島およびヤンマイエン島"
       ],
       "Swaziland": [
-        "エスワティニ"
+        "スワジランド"
       ],
       "Sweden": [
         "スウェーデン"
@@ -3785,7 +3785,7 @@
         "タンザニア"
       ],
       "Tanzania, United Republic of": [
-        "タンザニア"
+        "タンザニア、連合共和国"
       ],
       "Thailand": [
         "タイ"
@@ -4008,7 +4008,7 @@
         "設定の${ manageBlockedAddressesSettingsLink }"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated 24/7 monitoring of suspicious activity — including escalation to security specialists.": [
-        "${ PROTON_SENTINEL_NAME } は、疑わしい活動の 24 時間年中無休の専用監視であなたのアカウントを保護します ー 専任のセキュリティスペシャリストへのエスカレーションを含んでいます。"
+        "${ PROTON_SENTINEL_NAME } は、疑わしい活動の専用の 24 時間年中無休の監視を通じて、あなたのアカウントを保護します — セキュリティ専門家へのエスカレーションを含む。"
       ],
       "2FA adds an extra security layer, preventing unauthorized access.": [
         "2要素認証は、不正アクセスを防止するための追加のセキュリティ層です。"
@@ -5437,7 +5437,7 @@
         "65 か国以上の 2700 台のサーバー、最大 10 台のデバイスの接続、世界中のストリーミングサービスへのアクセス、マルウェアと広告ブロッカーなどが含まれます。"
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "3 の独自メールドメイン対応、90 のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+        "3 つの独自メールドメイン対応、90 個のメールアドレス、無制限の hide-my-email エイリアス、カレンダー共有などが含まれます。"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
@@ -5519,7 +5519,7 @@
         "受信トレイ - 既定"
       ],
       "Select a folder": [
-        "フォルダーを選択"
+        "フォルダを選択"
       ],
       "Spam": [
         "迷惑メール"
@@ -5600,7 +5600,7 @@
         "既読"
       ],
       "starred": [
-        "星印付き"
+        "スター付き"
       ]
     },
     "filter: Label": {
@@ -5976,7 +5976,7 @@
         "定期的な予定に繰り返しがありません"
       ],
       "Recurring rule not supported": [
-        "繰り返しルールがサポートされていません"
+        "繰り返しルールはサポートされていません"
       ],
       "Start time out of bounds": [
         "開始日時が指定可能な範囲を超えています"
@@ -6543,7 +6543,7 @@
         "アクティベーションが進行中です"
       ],
       "Active": [
-        "転送中"
+        "アクティブ"
       ],
       "Ad targeting": [
         "広告ターゲティング"
@@ -8917,7 +8917,7 @@
         "アカウント所有者"
       ],
       "Actions": [
-        "行動"
+        "アクション"
       ],
       "Active filter:": [
         "有効なフィルター:"
@@ -10815,7 +10815,7 @@
         "新しいアプリや機能への早期アクセス"
       ],
       "Encrypted email and calendar to get you started.": [
-        "暗号化済みのメールとカレンダーで始めましょう"
+        "暗号化済みのメールとカレンダーで始めましょう。"
       ],
       "Enhanced security and premium features for teams.": [
         "チーム向けの強化されたセキュリティとプレミアム機能。"
@@ -10880,7 +10880,7 @@
     },
     "new_plans: Subtext": {
       "Starting from ${ priceLine }": [
-        "${ priceLine } から"
+        "${ priceLine }から始めましょう"
       ],
       "The discounted price of ${ priceCoupon } is valid for the first month. Then it will automatically be renewed at ${ priceLine }. You can cancel at any time.": [
         "${ priceCoupon }の割引価格は最初の月のみ有効です。そのあとは${ priceLine }で自動更新されます。いつでもキャンセル可能です。"
@@ -11061,7 +11061,7 @@
         "ユーザーのパスワードとユーザーの 2 段階認証をリセットします"
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        "ワンクリックでインターネットトラフィックをTorネットワーク経由にルーティング"
+        "ワンクリックでインターネットトラフィックをTorネットワーク経由でルーティング"
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "暗号化クラウドストレージでファイルの安全を保ちます。自動同期、暗号化ファイル共有などが含まれます。"
@@ -11713,7 +11713,7 @@
         "${ passFamilyPlanName }をご紹介"
       ],
       "Limited-time deal.": [
-        "期間限定"
+        "期間限定割引"
       ]
     },
     "passwordless": {
@@ -11908,13 +11908,13 @@
         "ABNを追加する"
       ],
       "Add Business Number": [
-        "事業番号を追加する"
+        "法人番号を追加する"
       ],
       "Add EIN": [
         "EINを追加する"
       ],
       "Add VAT number": [
-        "VAT番号を追加してください。"
+        "VAT番号を追加する"
       ],
       "Business Number": [
         "法人番号"
@@ -11923,7 +11923,7 @@
         "ABNを編集する"
       ],
       "Edit Business Number": [
-        "事業番号を編集する"
+        "法人番号を編集する"
       ],
       "Edit EIN": [
         "EIN を編集する"
@@ -12009,7 +12009,7 @@
         "クイックアクションのフィルター"
       ],
       "First name": [
-        "名"
+        "名前"
       ],
       "Generating": [
         "生成中"
@@ -12640,7 +12640,7 @@
     },
     "session_recovery:sign_out:action": {
       "Sign out": [
-        "ログアウト"
+        "サインアウト"
       ],
       "Stay signed in": [
         "サインインを維持"
@@ -13331,7 +13331,7 @@
         "デバイスから写真をバックアップ"
       ],
       "Build trust and brand recognition with professional email addresses at your own domain.": [
-        "独自ドメインでプロフェッショナルなメール アドレスを使用して、信頼とブランド認知を構築します。"
+        "独自ドメインでプロフェッショナルなメールアドレスを使用して、信頼とブランド認知を構築します。"
       ],
       "Catch-all email address": [
         "キャッチオールメールアドレス"
@@ -13979,7 +13979,7 @@
     },
     "Teams": {
       "Join Teams meeting": [
-        "Teamsに参加する"
+        "Teamsミーティングに参加する"
       ]
     },
     "Time": {
@@ -14450,7 +14450,7 @@
         "アカウントの高度なセキュリティ"
       ],
       "How does it all work?": [
-        "機能説明"
+        "どのように機能しますか？"
       ],
       "How to update your email address": [
         "メールアドレスの更新方法"
