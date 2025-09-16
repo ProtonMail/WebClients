@@ -72,15 +72,16 @@ if (typeof browser !== 'undefined') {
     }
 
     if (BUILD_TARGET === 'firefox' && ENV === 'production') {
-        /* Block direct access to certain `web_accessible_resources`
-         * at their direct runtime url: only allow through page actions
-         * or iframe injections. Only works on FF as we don't have access
-         * to tab information on chrome for `web_accessible_resources` */
-        browser.tabs.onUpdated.addListener(async (tabId, _, { url, status }) => {
+        const BLOCKING_PATHS = ['/dropdown.html', '/notification.html'];
+        const BLOCKING_REGEX = new RegExp(`^(${BLOCKING_PATHS.map((p) => browser.runtime.getURL(p)).join('|')})`);
+
+        browser.tabs.onUpdated.addListener(async (tabId, _, tab) => {
             try {
-                const BLOCKING = ['/dropdown.html', '/notification.html'];
-                const regex = new RegExp(`^(${BLOCKING.map((path) => browser.runtime.getURL(path)).join('|')})`);
-                return await (status === 'complete' && regex.test(url ?? '') && browser.tabs.remove(tabId));
+                /* Block direct access to certain `web_accessible_resources`
+                 * at their direct runtime url: only allow through page actions
+                 * or iframe injections. Only works on FF as we don't have access
+                 * to tab information on chrome for `web_accessible_resources` */
+                if (tab.status === 'complete' && BLOCKING_REGEX.test(tab.url ?? '')) await browser.tabs.remove(tabId);
             } catch (_) {}
         });
     }
