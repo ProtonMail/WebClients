@@ -5,6 +5,7 @@ import { FIBONACCI_LIST, INTERVAL_EVENT_TIMER } from '../constants';
 import type { Listener } from '../helpers/listeners';
 import createListeners from '../helpers/listeners';
 import { onceWithQueue } from '../helpers/onceWithQueue';
+import { eventLoopTimingTracker } from '../metrics/eventLoopMetrics';
 
 interface DefaultEventResult {
     More: 0 | 1;
@@ -222,11 +223,17 @@ const createEventManager = <EventResult = DefaultEventResult>({
                     throw error;
                 }
 
+                // Start timing for v5 event processing (data received, starting processing)
+                eventLoopTimingTracker.startV5Processing();
+
                 await Promise.all(listeners.notify(result)).catch(noop);
 
                 const { nextEventID, more } = parseResults(result);
                 setEventID(nextEventID);
                 setRetryIndex(0);
+
+                // End timing for v5 event processing (new EventID is set)
+                eventLoopTimingTracker.endV5Processing(more === 1);
 
                 if (!more) {
                     break;
