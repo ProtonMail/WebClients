@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { ThumbnailType, useDrive } from '@proton/drive/index';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -14,12 +13,12 @@ import { GridViewItem } from '../../../components/sections/FileBrowser/GridViewI
 import { DeletedCell, LocationCell, NameCell, SizeCell } from '../../../components/sections/FileBrowser/contentCells';
 import headerItems from '../../../components/sections/FileBrowser/headerCells';
 import { translateSortField } from '../../../components/sections/SortDropdown';
+import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
 import { useUserSettings } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { TrashItemContextMenu } from '../menus/TrashItemContextMenu';
@@ -81,38 +80,26 @@ export function Trash({ shareId, trashView }: Props) {
     const { openDocument } = useDocumentActions();
     const { navigateToLink } = useDriveNavigation();
     const selectionControls = useSelection();
-    const { drive } = useDrive();
     const { trashNodes, isLoading, sortParams, setSorting } = trashView;
-    const { handleError } = useSdkErrorHandler();
-    const { getThumbnail, setThumbnail } = useThumbnailStore(
+    const { getThumbnail } = useThumbnailStore(
         useShallow((state) => ({
             getThumbnail: state.getThumbnail,
-            setThumbnail: state.setThumbnail,
         }))
     );
+    const { loadThumbnail } = useBatchThumbnailLoader();
     const { layout } = useUserSettings();
     const selectedItems = getSelectedItemsId(trashNodes, selectionControls!.selectedItemIds);
     const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
 
     const handleItemRender = async (item: LegacyItem) => {
         incrementItemRenderedCounter();
-        if (!item.hasThumbnail || item.cachedThumbnailUrl || getThumbnail(item.thumbnailId) !== undefined) {
-            return;
-        }
-        try {
-            for await (const thumbResult of drive.iterateThumbnails([item.uid], ThumbnailType.Type1)) {
-                if (thumbResult.ok) {
-                    const url = URL.createObjectURL(
-                        new Blob([thumbResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' })
-                    );
-                    setThumbnail(item.thumbnailId, { sdUrl: url });
-                } else {
-                    setThumbnail(item.thumbnailId, {});
-                }
-            }
-        } catch (e) {
-            handleError(e);
-        }
+
+        loadThumbnail({
+            uid: item.uid,
+            thumbnailId: item.thumbnailId || item.uid,
+            hasThumbnail: !!item.thumbnailId,
+            cachedThumbnailUrl: undefined,
+        });
     };
 
     const nodesWithThumbnail = trashNodes.map((node) => ({

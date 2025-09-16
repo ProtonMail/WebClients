@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { MemberRole, ThumbnailType, splitNodeUid, useDrive } from '@proton/drive/index';
+import { MemberRole, NodeType, splitNodeUid } from '@proton/drive/index';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
@@ -18,18 +18,15 @@ import FileBrowser, {
     useItemContextMenu,
     useSelection,
 } from '../../../components/FileBrowser';
+import { NameCell } from '../../../components/cells/NameCell';
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
 import { GridViewItem } from '../../../components/sections/FileBrowser/GridViewItemLink';
-import {
-    ModifiedCell,
-    NameCell,
-    ShareOptionsCell,
-    SizeCell,
-} from '../../../components/sections/FileBrowser/contentCells';
+import { ModifiedCell, ShareOptionsCell, SizeCell } from '../../../components/sections/FileBrowser/contentCells';
 import headerItems from '../../../components/sections/FileBrowser/headerCells';
 import { translateSortField } from '../../../components/sections/SortDropdown';
 import useOpenPreview from '../../../components/useOpenPreview';
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
+import { useBatchThumbnailLoader } from '../../../hooks/drive/useBatchThumbnailLoader';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
@@ -37,7 +34,6 @@ import type { EncryptedLink, LinkShareUrl, SignatureIssues } from '../../../stor
 import { useDocumentActions } from '../../../store';
 import { useDriveDocsFeatureFlag } from '../../../store/_documents';
 import { SortField } from '../../../store/_views/utils/useSorting';
-import { useSdkErrorHandler } from '../../../utils/errorHandling/useSdkErrorHandler';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { EmptyDeviceRoot } from '../EmptyFolder/EmptyDeviceRoot';
@@ -81,12 +77,28 @@ type ItemWithAdditionalProps = LegacyItem & {
     isAdmin: boolean;
 };
 
+const NameCellWithThumbnail = ({ item }: { item: ItemWithAdditionalProps }) => {
+    const thumbnail = useThumbnailStore((state) =>
+        item.thumbnailId ? state.getThumbnail(item.thumbnailId) : undefined
+    );
+    return (
+        <NameCell
+            name={item.name}
+            mediaType={item.mimeType}
+            type={item.isFile ? NodeType.File : NodeType.Folder}
+            thumbnailUrl={thumbnail?.sdUrl}
+            isInvitation={false}
+            haveSignatureIssues={undefined}
+        />
+    );
+};
+
 const { CheckboxCell, ContextMenuCell } = Cells;
 
 const myFilesLargeScreenCells: React.FC<{
     item: ItemWithAdditionalProps;
-}>[] = [CheckboxCell, NameCell, ModifiedCell, SizeCell, ShareOptionsCell, ContextMenuCell];
-const myFilesSmallScreenCells = [CheckboxCell, NameCell, ContextMenuCell];
+}>[] = [CheckboxCell, NameCellWithThumbnail, ModifiedCell, SizeCell, ShareOptionsCell, ContextMenuCell];
+const myFilesSmallScreenCells = [CheckboxCell, NameCellWithThumbnail, ContextMenuCell];
 
 const headerItemsLargeScreen: ListViewHeaderItem[] = [
     headerItems.checkbox,
@@ -108,20 +120,19 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
 
     const browserContextMenu = useContextMenuControls();
     const browserItemContextMenu = useItemContextMenu();
-    const { drive } = useDrive();
-    const { handleError } = useSdkErrorHandler();
     const { navigateToLink } = useDriveNavigation();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
     const { openDocument } = useDocumentActions();
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    const { getThumbnail, setThumbnail } = useThumbnailStore(
+    const { getThumbnail } = useThumbnailStore(
         useShallow((state) => ({
             getThumbnail: state.getThumbnail,
-            setThumbnail: state.setThumbnail,
         }))
     );
+    const { loadThumbnail } = useBatchThumbnailLoader();
+
     const openPreview = useOpenPreview();
     const { permissions, isLoading, role, folder } = useFolderStore(
         useShallow((state) => ({
@@ -169,27 +180,19 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
         [sortParams.sortField, sortParams.sortOrder, isLoading]
     );
 
-    const handleItemRender = async (item: ItemWithAdditionalProps) => {
-        incrementItemRenderedCounter();
-        // TODO:WIP integrate with useBatchThumbnailLoader when available
-        if (!item.hasThumbnail || item.cachedThumbnailUrl || getThumbnail(item.thumbnailId) !== undefined) {
-            return;
-        }
-        try {
-            for await (const thumbResult of drive.iterateThumbnails([item.uid], ThumbnailType.Type1)) {
-                if (thumbResult.ok) {
-                    const url = URL.createObjectURL(
-                        new Blob([thumbResult.thumbnail as Uint8Array<ArrayBuffer>], { type: 'image/jpeg' })
-                    );
-                    setThumbnail(item.thumbnailId, { sdUrl: url });
-                } else {
-                    setThumbnail(item.thumbnailId, {});
-                }
-            }
-        } catch (e) {
-            handleError(e);
-        }
-    };
+    const handleItemRender = useCallback(
+        async (item: ItemWithAdditionalProps) => {
+            incrementItemRenderedCounter();
+
+            loadThumbnail({
+                uid: item.uid,
+                thumbnailId: item.thumbnailId || item.uid,
+                hasThumbnail: !!item.thumbnailId,
+                cachedThumbnailUrl: undefined,
+            });
+        },
+        [incrementItemRenderedCounter, loadThumbnail]
+    );
 
     const handleClick = useCallback(
         (uid: BrowserItemId) => {
