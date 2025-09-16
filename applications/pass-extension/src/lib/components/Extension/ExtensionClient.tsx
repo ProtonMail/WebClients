@@ -6,6 +6,7 @@ import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useEx
 import { useExtensionClientInit } from 'proton-pass-extension/lib/hooks/useExtensionClientInit';
 import { isExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
+import { isRuntimeStale } from 'proton-pass-extension/lib/utils/runtime';
 import type { WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
@@ -77,13 +78,14 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     useEffect(() => {
         sentry({
             config,
+            denyUrls: [],
             sentryConfig: {
                 host: new URL(config.API_URL).host,
                 release: config.APP_VERSION,
                 environment: `browser-pass::${endpoint}`,
             },
-            ignore: () => false,
-            denyUrls: [],
+            beforeSendIgnore: isRuntimeStale,
+            setupIgnore: () => false,
         });
 
         setExtensionClientState?.({ url, tabId: senderTabId, port: port.name });

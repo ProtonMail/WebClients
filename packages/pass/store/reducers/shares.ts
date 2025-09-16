@@ -33,11 +33,12 @@ export const shares: Reducer<SharesState> = (state = {}, action: Action) => {
 
     if (shareEvent.match(action) && state !== null) {
         const { shareId, Events } = action.payload;
-        const currentEventId = state[shareId].eventId;
+        const share = state[shareId];
+        if (!share) return state;
 
-        return Events.LatestEventID === currentEventId
+        return Events.LatestEventID === share?.eventId
             ? state
-            : partialMerge(state, { [action.payload.shareId]: { eventId: action.payload.Events.LatestEventID } });
+            : partialMerge(state, { [action.payload.shareId]: { eventId: Events.LatestEventID } });
     }
 
     if (vaultCreationSuccess.match(action)) {
