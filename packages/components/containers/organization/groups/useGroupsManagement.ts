@@ -23,7 +23,8 @@ import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/fo
 import type { Address, EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 
-import type { GroupFormData, GroupsManagementReturn } from './types';
+import type { DomainSuggestion, GroupFormData, GroupsManagementReturn } from './types';
+import useGroupsProtonMeDomain from './useGroupsProtonMeDomain';
 import usePmMeDomain from './usePmMeDomain';
 
 export type GROUPS_STATE = 'empty' | 'view' | 'new' | 'edit';
@@ -46,7 +47,6 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const [selectedGroup, setSelectedGroup] = useState<Group | undefined>(undefined);
     const [uiState, setUiState] = useState<GROUPS_STATE>('empty');
     const [customDomains, loadingCustomDomains] = useCustomDomains();
-    const pmMeDomain = usePmMeDomain();
     const { getMemberPublicKeys } = useGroupKeys();
 
     const addGroupMember = async (group: { ID: string; Address: Address }, email: string) => {
@@ -56,6 +56,8 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             handleError(e);
         }
     };
+    const [pmMeDomain, loadingPmMeDomain] = usePmMeDomain();
+    const [groupsProtonMeDomain, loadingGroupsProtonMeDomain] = useGroupsProtonMeDomain();
 
     const addressToMemberMap = useMemo(() => {
         const value: { [id: string]: EnhancedMember | undefined } = {};
@@ -80,30 +82,56 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     const suggestedAddressDomainName = useMemo(getSuggestedAddressDomainName, [organization]);
 
-    const getSuggestedAddressDomainPart = () => {
-        if (pmMeDomain === null) {
-            return ''; // return empty string to avoid error, this will never be returned in practice
+    const getSuggestedAddressDomainPart = (): DomainSuggestion => {
+        // case 1: simplest case, prefer custom domain if available
+        if (customDomains && customDomains.length > 0) {
+            return {
+                domain: customDomains[0].DomainName,
+                source: 'customdomain',
+            };
         }
 
-        if (!organization) {
-            createNotification({ type: 'error', text: 'Organization data is missing' });
-            return pmMeDomain.substring(1);
+        // case 2: use the pm.me domain, if available
+        if (loadingPmMeDomain || !organization) {
+            return {
+                domain: null,
+                source: null,
+            };
         }
 
-        const organizationName = organization?.DisplayName.toLowerCase().replace(/\s+/g, '');
+        // case 3: use the groups proton.me domain
+        if (loadingGroupsProtonMeDomain) {
+            return {
+                domain: null,
+                source: null,
+            };
+        }
 
-        return customDomains && customDomains.length > 0
-            ? customDomains[0].DomainName
-            : `${organizationName}${pmMeDomain}`;
+        if (groupsProtonMeDomain) {
+            return {
+                domain: groupsProtonMeDomain,
+                source: 'group',
+            };
+        }
+
+        if (!pmMeDomain) {
+            // We tried cases 1, 2 and 3, and none of them worked. This should normally not happen.
+            throw new Error('No domain available for groups.');
+        }
+
+        const organizationName = organization.DisplayName.toLowerCase().replace(/\s+/g, '');
+        return {
+            domain: `${organizationName}${pmMeDomain}`,
+            source: 'pm.me',
+        };
     };
 
-    const suggestedAddressDomainPart = useMemo(getSuggestedAddressDomainPart, [
-        organization,
-        customDomains,
-        pmMeDomain,
-    ]);
+    const { domain: suggestedAddressDomainPart, source: suggestedAddressDomainSource } = useMemo(
+        getSuggestedAddressDomainPart,
+        [organization, customDomains, pmMeDomain, loadingPmMeDomain, groupsProtonMeDomain, loadingGroupsProtonMeDomain]
+    );
 
-    const [selectedDomain, setSelectedDomain] = useState<string | undefined>(undefined);
+    const [selectedDomain, setSelectedDomain] = useState<string | null>(null);
 
     useEffect(() => {
         setSelectedDomain(suggestedAddressDomainPart);
@@ -117,7 +145,9 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         groupMembers !== undefined ? Object.values(groupMembers) : [];
 
     const hasDuplicateNameValidator = (name: string): string => {
-        return !!groups?.some(({ Name }) => Name === name) ? c('Error').t`Name already exists` : '';
+        const countGroupsWithName = groups?.filter(({ Name }) => Name === name).length ?? 0;
+        const groupNameLimit = uiState === 'new' ? 0 : 1;
+        return countGroupsWithName > groupNameLimit ? c('Error').t`Name already exists` : '';
     };
 
     const form = useFormik({
@@ -145,7 +175,16 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     const { resetForm, values: formValues } = form;
 
-    if (!organization || loadingGroups || !groups || !members || !pmMeDomain || !selectedDomain) {
+    if (
+        !organization ||
+        loadingGroups ||
+        loadingPmMeDomain ||
+        loadingGroupsProtonMeDomain ||
+        !groups ||
+        !members ||
+        !selectedDomain ||
+        !suggestedAddressDomainPart
+    ) {
         return undefined;
     }
 
@@ -196,7 +235,10 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         const { type, payload } = serializedGroup;
         const isNewGroup = type === 'new';
 
-        if (isNewGroup) {
+        const isGroupsProtonMeDomain = selectedDomain === groupsProtonMeDomain;
+
+        // Don't check address availability for groups created on the groups.proton.me domain
+        if (isNewGroup && !isGroupsProtonMeDomain) {
             // Check address availablity if address changed - not supported when in edit mode yet
             if (selectedGroup?.Address.Email !== payload.email) {
                 await api(
@@ -298,6 +340,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         domainData,
         suggestedAddressDomainName,
         suggestedAddressDomainPart,
+        suggestedAddressDomainSource,
         getSerializedGroup,
         actions: {
             onDiscardChanges: handleDiscardChanges,

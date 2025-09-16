@@ -29,6 +29,7 @@ interface Props {
     subscription?: Subscription;
     canDisplayB2BLogsVPN: boolean;
     isUserGroupsFeatureEnabled: boolean;
+    isUserGroupsNoCustomDomainEnabled: boolean;
     isB2BAuthLogsEnabled: boolean;
     groups: Group[] | undefined;
     isScribeEnabled?: boolean;
@@ -50,6 +51,7 @@ export const getOrganizationAppRoutes = ({
     subscription,
     canDisplayB2BLogsVPN,
     isUserGroupsFeatureEnabled,
+    isUserGroupsNoCustomDomainEnabled,
     isB2BAuthLogsEnabled,
     groups,
     isScribeEnabled,
@@ -93,10 +95,12 @@ export const getOrganizationAppRoutes = ({
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
     const isPassFamilyPlan = isOrganizationPassFamily(organization);
 
+    const hasGroups = (groups?.length ?? 0) > 0;
     const canShowGroupsSection =
         isUserGroupsFeatureEnabled &&
         !!organization &&
-        ((hasActiveOrganizationKey && canUseGroups(organization?.PlanName)) || (groups?.length ?? 0) > 0);
+        (hasActiveOrganizationKey || hasGroups) &&
+        canUseGroups(organization?.PlanName, { isUserGroupsNoCustomDomainEnabled, hasGroups });
 
     const canShowUsersAndAddressesSection =
         // The user must have a plan that supports multi-user

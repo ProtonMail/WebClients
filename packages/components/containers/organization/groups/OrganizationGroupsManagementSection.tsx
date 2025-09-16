@@ -10,6 +10,7 @@ import canUseGroups from '@proton/components/containers/organization/groups/canU
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Organization } from '@proton/shared/lib/interfaces';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
+import { useFlag } from '@proton/unleash';
 
 import GroupForm from './GroupForm';
 import GroupList from './GroupList';
@@ -23,6 +24,7 @@ interface Props {
 
 const OrganizationGroupsManagementSection = ({ organization }: Props) => {
     const groupsManagement = useGroupsManagement(organization);
+    const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
 
     if (!groupsManagement) {
         return <Loader />;
@@ -30,15 +32,21 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
     const {
         groups,
         domainData: { customDomains },
+        suggestedAddressDomainSource,
         actions,
     } = groupsManagement;
-    const hasAtLeastOneVerifiedCustomDomain = customDomains?.some(getIsDomainActive);
+    const hasUsableDomain = customDomains?.some(getIsDomainActive) || isUserGroupsNoCustomDomainEnabled;
 
     const linkToDomainPage = (
         <SettingsLink key="link-to-domain-page" path="/domain-names">{c('Action').t`Domain name`}</SettingsLink>
     );
 
-    const canOnlyDelete = !canUseGroups(organization?.PlanName) && (groups?.length ?? 0) > 0;
+    const usingGroupsDomainButNotActive =
+        suggestedAddressDomainSource === 'group' && !isUserGroupsNoCustomDomainEnabled;
+    const canOnlyDelete =
+        (!canUseGroups(organization?.PlanName, { isUserGroupsNoCustomDomainEnabled }) ||
+            usingGroupsDomainButNotActive) &&
+        (groups?.length ?? 0) > 0;
 
     return (
         <SettingsSectionWide className="h-full groups-management">
@@ -46,7 +54,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                 {c('Info')
                     .t`With groups, you can quickly and easily send emails to all the people in a specified group.`}
             </SettingsParagraph>
-            {!hasAtLeastOneVerifiedCustomDomain && (
+            {!hasUsableDomain && (
                 <SettingsParagraph>
                     {c('Info')
                         .jt`A custom domain is required to create groups. If you don’t have a custom domain set up, do so first under ${linkToDomainPage}.`}
@@ -66,7 +74,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
             )}
             <Button
                 className="group-button flex flex-row flex-nowrap items-center px-3"
-                disabled={!hasAtLeastOneVerifiedCustomDomain || canOnlyDelete}
+                disabled={!hasUsableDomain || canOnlyDelete}
                 onClick={() => {
                     actions.onCreateGroup();
                 }}
@@ -74,7 +82,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                 <Icon className="shrink-0 mr-2" name="plus" />
                 {c('Action').t`New group`}
             </Button>
-            {hasAtLeastOneVerifiedCustomDomain && (
+            {(hasUsableDomain || usingGroupsDomainButNotActive) && (
                 <div className="content flex-1 overflow-hidden mt-4 h-custom" style={{ '--h-custom': '95%' }}>
                     <div className="flex flex-nowrap flex-column h-full">
                         <div className="flex items-center justify-start flex-nowrap w-full h-full">
