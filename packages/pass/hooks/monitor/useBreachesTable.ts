@@ -9,7 +9,7 @@ import { MAX_CUSTOM_ADDRESSES } from '@proton/pass/constants';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { filterItemsByUserIdentifier } from '@proton/pass/lib/items/item.utils';
 import { AddressType, type MonitorAddress } from '@proton/pass/lib/monitor/types';
-import { selectLoginItems, selectNonAliasedLoginItems } from '@proton/pass/store/selectors';
+import { selectNonAliasedLoginItems, selectVisibleLoginItems } from '@proton/pass/store/selectors';
 import type { ItemRevision, LoginItem, MaybeNull } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -121,7 +121,7 @@ export const useBreachesTable = (type: AddressType): MaybeNull<MonitorTable> => 
     const monitor = useMonitor();
 
     const [table, setTable] = useState<MaybeNull<MonitorTable>>(null);
-    const logins = useSelector(selectLoginItems);
+    const logins = useSelector(selectVisibleLoginItems);
     const nonAliasedLogins = useSelector(selectNonAliasedLoginItems);
 
     useEffect(() => {
