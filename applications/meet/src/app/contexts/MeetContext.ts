@@ -68,6 +68,8 @@ export interface MeetContextValues {
         isEnabled: boolean;
         videoDeviceId: string;
     }) => Promise<void>;
+    noiseFilter: boolean;
+    toggleNoiseFilter: ({ isEnabled, audioDeviceId }: { isEnabled: boolean; audioDeviceId: string }) => Promise<void>;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -118,6 +120,8 @@ export const MeetContext = createContext<MeetContextValues>({
     toggleAudio: () => Promise.resolve(),
     backgroundBlur: false,
     toggleBackgroundBlur: () => Promise.resolve(),
+    noiseFilter: false,
+    toggleNoiseFilter: () => Promise.resolve(),
 });
 
 export const useMeetContext = () => {
