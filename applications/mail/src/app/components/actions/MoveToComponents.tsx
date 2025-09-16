@@ -27,9 +27,10 @@ interface MoveToDropdownButtonsProps {
     loading: boolean;
     disabled: boolean;
     onClose: () => void;
+    ctaText: string;
 }
 
-export const MoveToDropdownButtons = ({ loading, disabled, onClose }: MoveToDropdownButtonsProps) => {
+export const MoveToDropdownButtons = ({ loading, disabled, onClose, ctaText }: MoveToDropdownButtonsProps) => {
     return (
         <div className="m-4 shrink-0">
             <Button
@@ -42,7 +43,7 @@ export const MoveToDropdownButtons = ({ loading, disabled, onClose }: MoveToDrop
                 data-prevent-arrow-navigation
                 type="submit"
             >
-                {c('Action').t`Move`}
+                {ctaText}
             </Button>
             <Button fullWidth data-testid="move-to-cancel" data-prevent-arrow-navigation onClick={() => onClose()}>
                 {c('Action').t`Cancel`}

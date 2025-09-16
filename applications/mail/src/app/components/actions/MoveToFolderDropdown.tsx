@@ -225,6 +225,7 @@ export const MoveToFolderDropdown = ({
                 loading={loading}
                 disabled={selectedFolder?.ID === undefined}
                 onClose={() => onClose()}
+                ctaText={c('Action').t`Move`}
             />
             {moveScheduledModal}
             {moveSnoozedModal}
