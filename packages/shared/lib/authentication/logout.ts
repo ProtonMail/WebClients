@@ -104,7 +104,7 @@ export const handleLogout = async ({
 
     // If it's not a full logout on account, we just strip the local id from the path in order to get redirected back
     if (appName === APPS.PROTONACCOUNT && type === 'local') {
-        replaceUrl(getLocalAccountLogoutUrl({ appName, localID }));
+        replaceUrl(getLocalAccountLogoutUrl({ appName, localID, extra }));
         return;
     }
 
