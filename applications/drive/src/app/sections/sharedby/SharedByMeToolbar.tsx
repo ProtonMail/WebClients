@@ -1,7 +1,7 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms';
-import { Toolbar } from '@proton/components';
+import { Toolbar, useConfirmActionModal } from '@proton/components';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useSelection } from '../../components/FileBrowser';
@@ -10,7 +10,6 @@ import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal'
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import { LayoutButton, ShareButton } from '../../components/sections/ToolbarButtons';
 import { useRenameModal } from '../../modals/RenameModal';
-import { useActions } from '../../store';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import { useSharedByMeStore } from './useSharedByMe.store';
 
@@ -27,8 +26,7 @@ const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    // TODO: Migrate this to SDK
-    const { stopSharing, confirmModal } = useActions();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const selectionControls = useSelection();
     const { getSharedByMeItem } = useSharedByMeStore(
         useShallow((state) => ({
@@ -51,7 +49,7 @@ const SharedByMeToolbar = ({ uids, shareId }: SharedByMeToolbarProps) => {
                 showLinkSharingModal={showLinkSharingModal}
                 showFilesDetailsModal={showFilesDetailsModal}
                 showRenameModal={showRenameModal}
-                stopSharing={stopSharing}
+                showConfirmModal={showConfirmModal}
                 buttonType="toolbar"
             />
         );

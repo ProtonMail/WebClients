@@ -1,10 +1,11 @@
+import { useConfirmActionModal } from '@proton/components';
+
 import type { ContextMenuProps } from '../../components/FileBrowser';
 import { useDetailsModal } from '../../components/modals/DetailsModal';
 import { useFilesDetailsModal } from '../../components/modals/FilesDetailsModal';
 import { useLinkSharingModal } from '../../components/modals/ShareLinkModal/ShareLinkModal';
 import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemContextMenu';
 import { useRenameModal } from '../../modals/RenameModal';
-import { useActions } from '../../store';
 import { SharedByMeActions } from './actions/SharedByMeActions';
 import type { SharedByMeItem } from './useSharedByMe.store';
 
@@ -22,8 +23,8 @@ export function SharedByMeItemContextMenu({
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [filesDetailsModal, showFilesDetailsModal] = useFilesDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
-    // TODO: Migrate this to SDK, and move to StopSharingButton
-    const { stopSharing, confirmModal } = useActions();
+    const [confirmModal, showConfirmModal] = useConfirmActionModal();
+
     return (
         <>
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
@@ -35,7 +36,7 @@ export function SharedByMeItemContextMenu({
                     showLinkSharingModal={showLinkSharingModal}
                     showFilesDetailsModal={showFilesDetailsModal}
                     showRenameModal={showRenameModal}
-                    stopSharing={stopSharing}
+                    showConfirmModal={showConfirmModal}
                 />
             </ItemContextMenu>
             {renameModal}

@@ -1,5 +1,5 @@
 import { Vr } from '@proton/atoms';
-import { ContextSeparator } from '@proton/components';
+import { ContextSeparator, type useConfirmActionModal } from '@proton/components';
 import { NodeType, splitNodeUid } from '@proton/drive/index';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
@@ -33,7 +33,7 @@ interface BaseSharedByMeActionsProps {
     showLinkSharingModal: ReturnType<typeof useLinkSharingModal>[1];
     showRenameModal: ReturnType<typeof useRenameModal>[1];
     showFilesDetailsModal: (props: { selectedItems: { rootShareId: string; linkId: string }[] }) => void;
-    stopSharing: (shareId: string) => void;
+    showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
 }
 
 interface ContextMenuSharedByMeActionsProps extends BaseSharedByMeActionsProps {
@@ -56,7 +56,7 @@ export const SharedByMeActions = ({
     showRenameModal,
     showFilesDetailsModal,
     showLinkSharingModal,
-    stopSharing,
+    showConfirmModal,
 }: SharedByMeActionsProps) => {
     const itemChecker = createItemChecker(selectedItems);
     const singleItem = selectedItems.at(0);
@@ -98,10 +98,9 @@ export const SharedByMeActions = ({
                         />
                     </>
                 )}
-                {itemChecker.canStopSharing && singleItem?.shareId && (
+                {itemChecker.canStopSharing && singleItem && (
                     <StopSharingButton
-                        stopSharing={stopSharing}
-                        shareId={singleItem.shareId}
+                        showConfirmModal={showConfirmModal}
                         uid={singleItem.nodeUid}
                         parentUid={singleItem.parentUid}
                         buttonType="toolbar"
@@ -153,12 +152,11 @@ export const SharedByMeActions = ({
                     close={close}
                 />
             )}
-            {itemChecker.canStopSharing && singleItem?.shareId && (
+            {itemChecker.canStopSharing && singleItem && (
                 <>
                     <ContextSeparator />
                     <StopSharingButton
-                        stopSharing={stopSharing}
-                        shareId={singleItem.shareId}
+                        showConfirmModal={showConfirmModal}
                         uid={singleItem.nodeUid}
                         parentUid={singleItem.parentUid}
                         buttonType="contextMenu"

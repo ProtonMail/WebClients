@@ -1,16 +1,14 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { Icon, ToolbarButton, type useConfirmActionModal } from '@proton/components';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
-import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
+import { useSharingActions } from '../../../hooks/drive/useSharingActions';
 
 interface BaseProps {
-    stopSharing: (shareId: string, onSuccess?: () => void) => void;
-    shareId: string;
     uid: string;
     parentUid: string | undefined;
+    showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
 }
 
 interface ContextMenuProps extends BaseProps {
@@ -24,15 +22,13 @@ interface ToolbarProps extends BaseProps {
 }
 
 type Props = ContextMenuProps | ToolbarProps;
-export const StopSharingButton = ({ uid, parentUid, shareId, stopSharing, close, buttonType }: Props) => {
+export const StopSharingButton = ({ uid, parentUid, showConfirmModal, close, buttonType }: Props) => {
+    const { stopSharing } = useSharingActions();
+
     const handleClick = () => {
-        stopSharing(shareId, () => {
-            void getActionEventManager().emit({
-                type: ActionEventName.UPDATED_NODES,
-                items: [{ uid, parentUid, isShared: false }],
-            });
-        });
+        stopSharing(showConfirmModal, uid, parentUid);
     };
+
     if (buttonType === 'toolbar') {
         return (
             <ToolbarButton
