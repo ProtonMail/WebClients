@@ -11,17 +11,14 @@ import type { Organization } from '@proton/shared/lib/interfaces';
 import { unwrapOptimisticState } from './optimistic/utils/transformers';
 import { INITIAL_ORGANIZATION_SETTINGS } from './reducers/organization';
 import { INITIAL_HIGHSECURITY_SETTINGS } from './reducers/user';
-import { selectLoginItems, selectPassPlan, selectUser } from './selectors';
+import { selectAllLoginItems, selectPassPlan, selectUser } from './selectors';
 import type { State } from './types';
 
 /** Ensures cache compatibility during rollbacks by ignoring cached state
  * if it was created by a newer app version than the one currently running.
  * This prevents potential data structure mismatches or incompatibilities
  * in the event of an application rollback. */
-export const cacheGuard = (
-    encryptedCache: Partial<EncryptedPassCache>,
-    appVersion: string
-): Partial<EncryptedPassCache> => {
+export const cacheGuard = (encryptedCache: Partial<EncryptedPassCache>, appVersion: string): Partial<EncryptedPassCache> => {
     const { version } = encryptedCache;
     if (version && semver(version) <= semver(appVersion)) return encryptedCache;
     return {};
@@ -70,7 +67,7 @@ export const migrate = (state: State, versions: { from?: string; to: string }) =
     }
 
     /** v1.20.0 migration */
-    selectLoginItems(state).forEach(({ data: { content: item } }) => {
+    selectAllLoginItems(state).forEach(({ data: { content: item } }) => {
         if ('username' in item) {
             item.itemEmail = item.username as XorObfuscation;
             item.itemUsername = obfuscate('');
