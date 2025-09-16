@@ -36,6 +36,9 @@ const contextBridgeApi: ContextBridgeApi = {
     /* install info */
     getInstallInfo: () => invoke('installInfo:getInfo'),
     setInstallSourceReported: () => invoke('installInfo:setInstallSourceReported'),
+
+    /* autotype fields */
+    autotype: (props) => invoke('autotype:execute', props),
 };
 
 contextBridge.exposeInMainWorld('ctxBridge', contextBridgeApi);

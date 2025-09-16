@@ -1,14 +1,10 @@
-use anyhow::{ ensure, bail, Result };
+use anyhow::{bail, ensure, Result};
 use rand::RngCore;
 use widestring::U16CString;
 use windows::{
     core::{factory, HSTRING, PCWSTR, PWSTR},
     Foundation::IAsyncOperation,
-    Security::{
-        Credentials::{
-            UI::{UserConsentVerificationResult, UserConsentVerifier, UserConsentVerifierAvailability},
-        }
-    },
+    Security::Credentials::UI::{UserConsentVerificationResult, UserConsentVerifier, UserConsentVerifierAvailability},
     Win32::{
         Foundation::{FILETIME, HWND},
         Security::Credentials::{

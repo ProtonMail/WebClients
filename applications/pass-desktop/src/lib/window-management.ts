@@ -1,5 +1,4 @@
-import type { BrowserWindow, Rectangle } from 'electron';
-import { screen } from 'electron';
+import { type BrowserWindow, type Rectangle, app, screen } from 'electron';
 
 import type { Optional } from '@proton/shared/lib/interfaces';
 import debounce from '@proton/utils/debounce';
@@ -91,4 +90,14 @@ export const registerWindowManagementHandlers = (window: BrowserWindow) => {
     window.on('move', debouncedSave);
     window.on('unmaximize', debouncedSave);
     window.webContents.on('zoom-changed', debouncedSave);
+};
+
+export const hideWindow = (window: BrowserWindow) => {
+    /* on macOS, `window.minimize()` does not give back focus to the previous window
+     * so we use `app.hide()` instead (only available on macOS). */
+    if (process.platform === 'darwin') {
+        app.hide();
+    } else {
+        window.minimize();
+    }
 };

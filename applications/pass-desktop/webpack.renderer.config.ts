@@ -33,6 +33,7 @@ const config: Configuration = {
         },
         alias: {
             'proton-pass-web': path.resolve(__dirname, '../pass/src/'),
+            'proton-pass-desktop': path.resolve(__dirname, 'src/'),
         },
     },
     module: {
