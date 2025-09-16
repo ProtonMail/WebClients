@@ -9,8 +9,10 @@ import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { Domain } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
 
 import AddSubdomainModal from './AddSubdomainModal';
+import useGroupsProtonMeDomain from './useGroupsProtonMeDomain';
 import usePmMeDomain from './usePmMeDomain';
 
 interface DomainOption {
@@ -66,14 +68,22 @@ const GroupAddressDomainSelect = ({
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     // setAddSubdomainModal is removed for now until add pm.me domain option can be supported
     const [addSubdomainModal, , renderAddSubdomainModal] = useModalState();
-    const pmMeDomain = usePmMeDomain();
+    const groupsWithoutCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
+    const [pmMeDomain, loadingPmMeDomain] = usePmMeDomain();
+    const [groupsProtonMeDomain, loadingGroupsProtonMeDomain] = useGroupsProtonMeDomain();
 
-    if (pmMeDomain === null) {
+    if (loadingPmMeDomain || loadingGroupsProtonMeDomain) {
         return null;
     }
 
-    const defaultDomain = { DomainName: `${suggestedDomainName}${pmMeDomain}` };
-    const domains = domainsArg.length > 0 ? domainsArg : [defaultDomain];
+    const defaultDomains = pmMeDomain === null ? [] : [{ DomainName: `${suggestedDomainName}${pmMeDomain}` }];
+    const domains = domainsArg.length > 0 ? [...domainsArg] : defaultDomains;
+
+    if (groupsProtonMeDomain && groupsWithoutCustomDomainEnabled) {
+        const groupsDomain = { DomainName: groupsProtonMeDomain };
+        domains.push(groupsDomain);
+    }
+
     const domainOptions: DomainOption[] = domains.map((domain) => ({
         label: `@${domain.DomainName}`,
         value: domain.DomainName,
@@ -85,7 +95,7 @@ const GroupAddressDomainSelect = ({
 
     return (
         <>
-            {renderAddSubdomainModal && (
+            {renderAddSubdomainModal && pmMeDomain && (
                 <AddSubdomainModal
                     prefilledDomainName={suggestedDomainName}
                     setSelectedDomain={setSelectedDomain}
