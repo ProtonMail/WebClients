@@ -61,6 +61,7 @@ import {
 } from '@proton/components';
 import NonPrivateRecoverySection from '@proton/components/containers/account/NonPrivateRecoveySection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import SignInWithAnotherDeviceSettings from '@proton/components/containers/recovery/SignInWithAnotherDeviceSettings';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
 
@@ -194,7 +195,9 @@ const AccountSettingsRouter = ({
                             <PasswordsSection />
                         </>
                         <TwoFactorSection />
+                        {/* The following two sections are for non-private users */}
                         <NonPrivateRecoverySection />
+                        <SignInWithAnotherDeviceSettings />
                         <NonPrivateEmergencyAccessSection app={app} />
                         <FamilyPlanSection />
                         {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}

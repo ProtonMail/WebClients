@@ -71,6 +71,7 @@ enum AccountFlag {
     B2BLogsPass = 'B2BLogsPass',
     B2BLogsVPN = 'B2BLogsVPN',
     B2BOrganizationMonitor = 'B2BOrganizationMonitor',
+    B2BNonPrivateEmailPhone = 'B2BNonPrivateEmailPhone',
     UserGroupsPermissionCheck = 'UserGroupsPermissionCheck',
     UserGroupsMembersPermissionCheck = 'UserGroupsMembersPermissionCheck',
     B2BAuthenticationLogs = 'B2BAuthenticationLogs',

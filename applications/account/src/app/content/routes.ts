@@ -54,6 +54,7 @@ export const getRoutes = ({
     isSsoForPbsEnabled,
     isRetentionPoliciesEnabled,
     referralInfo,
+    canDisplayNonPrivateEmailPhone,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -78,6 +79,7 @@ export const getRoutes = ({
             isB2BTrial,
             isReferralExpansionEnabled,
             referralInfo,
+            canDisplayNonPrivateEmailPhone,
         }),
         mail: getMailAppRoutes({
             app,
