@@ -1,5 +1,6 @@
 import { type FC, useMemo } from 'react';
 
+import { dismissFirstLaunch } from 'proton-pass-desktop/app/firstLaunch';
 import { useAuthService } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { c } from 'ttag';
 
@@ -18,8 +19,6 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { APPS, BRAND_NAME, DARK_WEB_MONITORING_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import protonPassIcon from '@proton/styles/assets/img/pass/protonpass-icon.svg';
-
-import { dismissFirstLaunch } from '../../firstLaunch';
 
 import './WelcomeScreen.scss';
 
