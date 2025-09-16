@@ -39,12 +39,16 @@ import type { HttpsProtonMeDocsTimeLoadDocumentHistogramV1SchemaJson } from './t
 import type { HttpsProtonMeDocsUsersSuccessRateTotalV1SchemaJson } from './types/docs_users_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveDownloadErroringUsersTotalV1SchemaJson } from './types/drive_download_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson } from './types/drive_download_errors_total_v2.schema';
+import type { HttpsProtonMeDriveDownloadSpeedHistogramV1SchemaJson } from './types/drive_download_speed_histogram_v1.schema';
 import type { HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson } from './types/drive_download_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveFilePreviewErrorsTotalV1SchemaJson } from './types/drive_file_preview_errors_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityBlockVerificationErrorsTotalV1SchemaJson } from './types/drive_integrity_block_verification_errors_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityDecryptionErrorsTotalV1SchemaJson } from './types/drive_integrity_decryption_errors_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityErroringUsersTotalV1SchemaJson } from './types/drive_integrity_erroring_users_total_v1.schema';
 import type { HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson } from './types/drive_integrity_verification_errors_total_v1.schema';
+import type { HttpsProtonMeDriveMobilePerformancePreviewToFullContentHistogramV1SchemaJson } from './types/drive_mobile_performance_previewToFullContent_histogram_v1.schema';
+import type { HttpsProtonMeDriveMobilePerformancePreviewToThumbnailHistogramV1SchemaJson } from './types/drive_mobile_performance_previewToThumbnail_histogram_v1.schema';
+import type { HttpsProtonMeDriveMobilePerformanceTabToFirstItemHistogramV1SchemaJson } from './types/drive_mobile_performance_tabToFirstItem_histogram_v1.schema';
 import type { HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson } from './types/drive_photos_transfer_to_photo_stream_histogram_v1.schema';
 import type { HttpsProtonMeDriveSdkApiRetrySucceededTotalV1SchemaJson } from './types/drive_sdk_api_retry_succeeded_total_v1.schema';
 import type { HttpsProtonMeDriveSdkDownloadErroringUsersTotalV1SchemaJson } from './types/drive_sdk_download_erroring_users_total_v1.schema';
@@ -74,6 +78,7 @@ import type { HttpsProtonMeDriveUploadErroringUsersTotalV2SchemaJson } from './t
 import type { HttpsProtonMeDriveUploadErrorsFileSizeHistogramV1SchemaJson } from './types/drive_upload_errors_file_size_histogram_v1.schema';
 import type { HttpsProtonMeDriveUploadErrorsTotalV2SchemaJson } from './types/drive_upload_errors_total_v2.schema';
 import type { HttpsProtonMeDriveUploadErrorsTransferSizeHistogramV1SchemaJson } from './types/drive_upload_errors_transfer_size_histogram_v1.schema';
+import type { HttpsProtonMeDriveUploadSpeedHistogramV1SchemaJson } from './types/drive_upload_speed_histogram_v1.schema';
 import type { HttpsProtonMeDriveUploadSuccessRateTotalV2SchemaJson } from './types/drive_upload_success_rate_total_v2.schema';
 import type { HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson } from './types/drive_users_success_rate_total_v1.schema';
 import type { HttpsProtonMeDriveVolumeEventsSubscriptionsHistogramV1SchemaJson } from './types/drive_volume_events_subscriptions_histogram_v1.schema';
@@ -86,6 +91,8 @@ import type { WebCoreDeleteAccountTotal } from './types/web_core_delete_account_
 import type { WebCoreEdmPullSeconds } from './types/web_core_edm_pull_histogram_v1.schema';
 import type { WebCoreEdmPullTotal } from './types/web_core_edm_pull_total_v1.schema';
 import type { WebCoreEdmPushTotal } from './types/web_core_edm_push_total_v1.schema';
+import type { EventLoopProcessingTimeV5 } from './types/web_core_event_loop_five_processing_time_histogram_v1.schema';
+import type { EventLoopProcessingTimeV6 } from './types/web_core_event_loop_six_processing_time_histogram_v1.schema';
 import type { WebCoreLightLabellingImageProcessingTotal } from './types/web_core_lightLabelling_imageProcessing_total_v1.schema';
 import type { WebCoreLightLabellingLogoRemovalTotal } from './types/web_core_lightLabelling_logoRemoval_total_v1.schema';
 import type { WebCoreLightLabellingLogoUploadTotal } from './types/web_core_lightLabelling_logoUpload_total_v1.schema';
@@ -236,6 +243,8 @@ class Metrics extends MetricsBase {
 
     public drive_download_errors_total: Counter<HttpsProtonMeDriveDownloadErrorsTotalV2SchemaJson>;
 
+    public drive_download_speed_histogram: Histogram<HttpsProtonMeDriveDownloadSpeedHistogramV1SchemaJson>;
+
     public drive_download_success_rate_total: Counter<HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson>;
 
     public drive_file_preview_errors_total: Counter<HttpsProtonMeDriveFilePreviewErrorsTotalV1SchemaJson>;
@@ -247,6 +256,12 @@ class Metrics extends MetricsBase {
     public drive_integrity_erroring_users_total: Counter<HttpsProtonMeDriveIntegrityErroringUsersTotalV1SchemaJson>;
 
     public drive_integrity_verification_errors_total: Counter<HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson>;
+
+    public drive_mobile_performance_previewToFullContent_histogram: Histogram<HttpsProtonMeDriveMobilePerformancePreviewToFullContentHistogramV1SchemaJson>;
+
+    public drive_mobile_performance_previewToThumbnail_histogram: Histogram<HttpsProtonMeDriveMobilePerformancePreviewToThumbnailHistogramV1SchemaJson>;
+
+    public drive_mobile_performance_tabToFirstItem_histogram: Histogram<HttpsProtonMeDriveMobilePerformanceTabToFirstItemHistogramV1SchemaJson>;
 
     public drive_photos_transfer_to_photo_stream_histogram: Histogram<HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson>;
 
@@ -306,6 +321,8 @@ class Metrics extends MetricsBase {
 
     public drive_upload_errors_transfer_size_histogram: Histogram<HttpsProtonMeDriveUploadErrorsTransferSizeHistogramV1SchemaJson>;
 
+    public drive_upload_speed_histogram: Histogram<HttpsProtonMeDriveUploadSpeedHistogramV1SchemaJson>;
+
     public drive_upload_success_rate_total: Counter<HttpsProtonMeDriveUploadSuccessRateTotalV2SchemaJson>;
 
     public drive_users_success_rate_total: Counter<HttpsProtonMeDriveUsersSuccessRateTotalV1SchemaJson>;
@@ -329,6 +346,10 @@ class Metrics extends MetricsBase {
     public core_edm_pull_total: Counter<WebCoreEdmPullTotal>;
 
     public core_edm_push_total: Counter<WebCoreEdmPushTotal>;
+
+    public core_event_loop_five_processing_time_histogram: Histogram<EventLoopProcessingTimeV5>;
+
+    public core_event_loop_six_processing_time_histogram: Histogram<EventLoopProcessingTimeV6>;
 
     public core_lightLabelling_imageProcessing_total: Counter<WebCoreLightLabellingImageProcessingTotal>;
 
@@ -670,6 +691,11 @@ class Metrics extends MetricsBase {
             this.requestService
         );
 
+        this.drive_download_speed_histogram = new Histogram<HttpsProtonMeDriveDownloadSpeedHistogramV1SchemaJson>(
+            { name: 'drive_download_speed_histogram', version: 1 },
+            this.requestService
+        );
+
         this.drive_download_success_rate_total = new Counter<HttpsProtonMeDriveDownloadSuccessRateTotalV1SchemaJson>(
             { name: 'drive_download_success_rate_total', version: 1 },
             this.requestService
@@ -701,6 +727,24 @@ class Metrics extends MetricsBase {
         this.drive_integrity_verification_errors_total =
             new Counter<HttpsProtonMeDriveIntegrityVerificationErrorsTotalV1SchemaJson>(
                 { name: 'drive_integrity_verification_errors_total', version: 1 },
+                this.requestService
+            );
+
+        this.drive_mobile_performance_previewToFullContent_histogram =
+            new Histogram<HttpsProtonMeDriveMobilePerformancePreviewToFullContentHistogramV1SchemaJson>(
+                { name: 'drive_mobile_performance_previewToFullContent_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_mobile_performance_previewToThumbnail_histogram =
+            new Histogram<HttpsProtonMeDriveMobilePerformancePreviewToThumbnailHistogramV1SchemaJson>(
+                { name: 'drive_mobile_performance_previewToThumbnail_histogram', version: 1 },
+                this.requestService
+            );
+
+        this.drive_mobile_performance_tabToFirstItem_histogram =
+            new Histogram<HttpsProtonMeDriveMobilePerformanceTabToFirstItemHistogramV1SchemaJson>(
+                { name: 'drive_mobile_performance_tabToFirstItem_histogram', version: 1 },
                 this.requestService
             );
 
@@ -864,6 +908,11 @@ class Metrics extends MetricsBase {
                 this.requestService
             );
 
+        this.drive_upload_speed_histogram = new Histogram<HttpsProtonMeDriveUploadSpeedHistogramV1SchemaJson>(
+            { name: 'drive_upload_speed_histogram', version: 1 },
+            this.requestService
+        );
+
         this.drive_upload_success_rate_total = new Counter<HttpsProtonMeDriveUploadSuccessRateTotalV2SchemaJson>(
             { name: 'drive_upload_success_rate_total', version: 2 },
             this.requestService
@@ -922,6 +971,16 @@ class Metrics extends MetricsBase {
 
         this.core_edm_push_total = new Counter<WebCoreEdmPushTotal>(
             { name: 'web_core_edm_push_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_event_loop_five_processing_time_histogram = new Histogram<EventLoopProcessingTimeV5>(
+            { name: 'web_core_event_loop_five_processing_time_histogram', version: 1 },
+            this.requestService
+        );
+
+        this.core_event_loop_six_processing_time_histogram = new Histogram<EventLoopProcessingTimeV6>(
+            { name: 'web_core_event_loop_six_processing_time_histogram', version: 1 },
             this.requestService
         );
 
