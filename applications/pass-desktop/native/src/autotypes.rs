@@ -13,14 +13,17 @@ impl Autotype {
     }
 
     pub fn text(&mut self, text: &str) -> Result<(), Error> {
-        self.enigo.text(text).map_err(|e| e.into())
+        self.enigo.text(text)?;
+        Ok(())
     }
 
     pub fn tab(&mut self) -> Result<(), Error> {
-        self.enigo.key(Key::Tab, Click).map_err(|e| e.into())
+        self.enigo.key(Key::Tab, Click)?;
+        Ok(())
     }
 
     pub fn enter(&mut self) -> Result<(), Error> {
-        self.enigo.key(Key::Return, Click).map_err(|e| e.into())
+        self.enigo.key(Key::Return, Click)?;
+        Ok(())
     }
 }
