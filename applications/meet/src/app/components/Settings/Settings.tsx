@@ -11,8 +11,18 @@ import { MeetingSideBars } from '../../types';
 import './Settings.scss';
 
 export const Settings = () => {
-    const { disableVideos, setDisableVideos, backgroundBlur, toggleBackgroundBlur, isVideoEnabled, videoDeviceId } =
-        useMeetContext();
+    const {
+        disableVideos,
+        setDisableVideos,
+        backgroundBlur,
+        toggleBackgroundBlur,
+        isVideoEnabled,
+        videoDeviceId,
+        noiseFilter,
+        toggleNoiseFilter,
+        isAudioEnabled,
+        audioDeviceId,
+    } = useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
 
@@ -44,6 +54,19 @@ export const Settings = () => {
                         }
                         className={clsx('settings-toggle', backgroundBlur ? '' : 'settings-toggle-inactive')}
                         aria-label={c('Alt').t`Blur background`}
+                    />
+                </div>
+                <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
+                    <label className="setting-label color-weak text-ellipsis" htmlFor="noise-filter">{c('Action')
+                        .t`Noise filter`}</label>
+                    <Toggle
+                        id="noise-filter"
+                        checked={noiseFilter}
+                        onChange={() =>
+                            toggleNoiseFilter({ isEnabled: isAudioEnabled, audioDeviceId: audioDeviceId ?? '' })
+                        }
+                        className={clsx('settings-toggle', noiseFilter ? '' : 'settings-toggle-inactive')}
+                        aria-label={c('Alt').t`Noise filter`}
                     />
                 </div>
                 <div className="flex items-center justify-space-between gap-2 setting-container w-full flex-nowrap">
