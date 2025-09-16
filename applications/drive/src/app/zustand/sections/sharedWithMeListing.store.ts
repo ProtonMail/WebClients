@@ -337,6 +337,13 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                     }
                 );
 
+                const removeMeSubscription = eventManager.subscribe(ActionEventName.REMOVE_ME, async (event) => {
+                    const store = get();
+                    event.uids.forEach((uid) => {
+                        store.removeSharedWithMeItem(uid);
+                    });
+                });
+
                 const acceptInvitationsSubscription = eventManager.subscribe(
                     ActionEventName.ACCEPT_INVITATIONS,
                     async (event) => {
@@ -407,6 +414,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                         rejectInvitationsSubscription,
                         acceptInvitationsSubscription,
                         refreshSharedWithMeSubscription,
+                        removeMeSubscription,
                     ],
                 });
             },
