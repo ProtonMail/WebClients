@@ -99,7 +99,7 @@ export const MeetContainer = ({
     );
 
     const { toggleVideo, handleRotateCamera, backgroundBlur, toggleBackgroundBlur } = useVideoToggle(setIsVideoEnabled);
-    const toggleAudio = useAudioToggle();
+    const { toggleAudio, noiseFilter, toggleNoiseFilter } = useAudioToggle();
 
     return (
         <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
@@ -150,6 +150,8 @@ export const MeetContainer = ({
                     screenShareParticipant,
                     toggleVideo,
                     toggleAudio,
+                    noiseFilter,
+                    toggleNoiseFilter,
                     backgroundBlur,
                     toggleBackgroundBlur,
                 }}
