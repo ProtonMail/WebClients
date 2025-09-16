@@ -64,6 +64,7 @@ export const getAccountAppRoutes = ({
     isB2BTrial,
     isReferralExpansionEnabled,
     referralInfo,
+    canDisplayNonPrivateEmailPhone,
 }: {
     app: APP_NAMES;
     user: UserModel;
@@ -89,6 +90,7 @@ export const getAccountAppRoutes = ({
         refereeRewardAmount: string;
         referrerRewardAmount: string;
     };
+    canDisplayNonPrivateEmailPhone: boolean;
 }) => {
     const { isFree, canPay, isPaid, isMember, isAdmin, Currency, Type, hasPaidMail } = user;
     const credits = getSimplePriceString(Currency || DEFAULT_CURRENCY, REFERRAL_PROGRAM_MAX_AMOUNT);
@@ -402,6 +404,11 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Two-factor authentication`,
                         id: 'two-fa',
                         available: !user.Flags.sso,
+                    },
+                    {
+                        text: c('Title').t`Notifications`,
+                        id: 'two-fa',
+                        available: !user.isPrivate && !isAccountRecoveryAvailable && canDisplayNonPrivateEmailPhone,
                     },
                     {
                         text: c('Title').t`Account recovery`,
