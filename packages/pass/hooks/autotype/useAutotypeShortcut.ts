@@ -1,4 +1,4 @@
-import { useKeyPress } from '@proton/components';
+import useKeyPress from '@proton/components/hooks/useKeyPress';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
 import { useSpotlightFor } from '@proton/pass/components/Spotlight/WithSpotlight';
 import { useAutotypeActions } from '@proton/pass/hooks/autotype/useAutotypeActions';
