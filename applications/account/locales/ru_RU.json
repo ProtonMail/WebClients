@@ -3003,9 +3003,9 @@
     "CountriesStep:Info": {
       "${ selectedCitiesCount } cities selected": [
         "Выбран ${ selectedCitiesCount } город",
-        "Выбраны ${ selectedCitiesCount } города",
-        "Выбраны ${ selectedCitiesCount } городов",
-        "Выбраны ${ selectedCitiesCount } городов"
+        "Выбрано ${ selectedCitiesCount } города",
+        "Выбрано ${ selectedCitiesCount } городов",
+        "Выбрано ${ selectedCitiesCount } городов"
       ],
       "${ selectedCountriesCount } selected": [
         "Выбрана ${ selectedCountriesCount }",
@@ -5056,9 +5056,9 @@
     "emergency_access": {
       "${ n } day": [
         "${ n } день",
+        "${ n } дня",
         "${ n } дней",
-        "${ n } дня",
-        "${ n } дня"
+        "${ n } дней"
       ],
       "Access granted": [
         "Доступ разрешён"
@@ -6486,10 +6486,10 @@
         "Подтвердите свою личность физическим ключом безопасности U2F или FIDO2"
       ],
       "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }."
+        "Достигнут предел в ${ maxSecurityKeyLength } ключ безопасности.",
+        "Достигнут предел в ${ maxSecurityKeyLength } ключа безопасности.",
+        "Достигнут предел в ${ maxSecurityKeyLength } ключей безопасности.",
+        "Достигнут предел в ${ maxSecurityKeyLength } ключей безопасности."
       ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш ключ двухфакторной аутентификации готов к использованию."
@@ -10489,10 +10489,10 @@
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
       ],
       "You have ${ availableCount } new server available.": [
-        "Вам доступен ${ availableCount } выделенный сервер.",
-        "Вам доступно ${ availableCount } выделенных сервера.",
-        "Вам доступны ${ availableCount } выделенных серверов.",
-        "Вам доступно ${ availableCount } выделенных сервера."
+        "Доступен ${ availableCount } новый сервер.",
+        "Доступны ${ availableCount } новых сервера.",
+        "Доступно ${ availableCount } новых серверов.",
+        "Доступно ${ availableCount } новых серверов."
       ],
       "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
         "Вы недавно пользовались ${ unassignedAvailableCount } сервером. Чтобы перевести эти серверы в другую страну, необходимо подождать завершения деактивации.",
@@ -12201,7 +12201,7 @@
         "SMTP-сервер"
       ],
       "SMTP token": [
-        "SMTP токен"
+        "SMTP-токен"
       ],
       "SMTP username": [
         "Имя пользователя SMTP"
@@ -14818,7 +14818,7 @@
         "11-ое число месяца"
       ],
       "12th of the month": [
-        "12-ое число месяца"
+        "12-е число месяца"
       ],
       "13th of the month": [
         "13-ое число месяца"
@@ -16418,7 +16418,7 @@
     },
     "retention_policy_2025_Action": {
       "Cancel": [
-        "Отмена"
+        "Отменить"
       ],
       "Confirm": [
         "Подтвердить"
@@ -16439,9 +16439,9 @@
     "retention_policy_2025_Info": {
       "${ n } day": [
         "${ n } день",
+        "${ n } дня",
         "${ n } дней",
-        "${ n } дня",
-        "${ n } дня"
+        "${ n } дней"
       ],
       "${ remainingCount } more": [
         "${ remainingCount } больше"
@@ -16450,9 +16450,9 @@
     "retention_policy_2025_Label": {
       "day": [
         "день",
-        "дни",
-        "дни",
-        "дни"
+        "дня",
+        "дней",
+        "дней"
       ]
     },
     "retention_policy_2025_Option": {
@@ -17985,10 +17985,10 @@
         "${ n } пользователя преобразовано в SSO"
       ],
       "${ n } user detached from SSO": [
-        "${ n } пользователь отсоединён от SSO",
-        "${ n } пользователя отсоединёно от SSO",
-        "${ n } пользователей отсоединёно от SSO",
-        "${ n } пользователя отсоединёно от SSO"
+        "${ n } пользователь отключён от SSO",
+        "${ n } пользователя отключены от SSO",
+        "${ n } пользователей отключены от SSO",
+        "${ n } пользователей отключены от SSO"
       ],
       "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
         "${ n } пользователь присоединился к вашей организации через поставщика личных данных. Проверьте этот аккаунт сейчас:",
