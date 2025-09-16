@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
@@ -8,6 +9,7 @@ import type { Group } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import GroupItemMoreOptionsDropdown from './GroupItemMoreOptionsDropdown';
+import shouldShowMail from './shouldShowMail';
 import type { GroupsManagementReturn } from './types';
 
 interface Props {
@@ -23,6 +25,8 @@ interface Props {
 
 const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGroup, canOnlyDelete }: Props) => {
     const api = useApi();
+    const [organization] = useOrganization();
+    const showMail = shouldShowMail(organization?.PlanName);
 
     const memberCount = group && Number.isInteger(group.MemberCount) ? group.MemberCount : undefined;
 
@@ -61,7 +65,7 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
                         <span className="block max-w-full text-bold text-lg text-ellipsis" title={name}>
                             {name}
                         </span>
-                        {email && (
+                        {showMail && email && (
                             <span className="block max-w-full text-ellipsis" title={email}>
                                 {email}
                             </span>

@@ -156,6 +156,7 @@ const MainContainer = () => {
     const canDisplayB2BLogsPass = useFlag('B2BLogsPass');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
+    const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
     const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
     const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
     const isPasswordPolicyEnabled = useFlag('PasswordPolicy');
@@ -227,6 +228,7 @@ const MainContainer = () => {
         memberships,
         groups,
         isUserGroupsMembershipFeatureEnabled,
+        isUserGroupsNoCustomDomainEnabled,
         canB2BHidePhotos,
         isB2BDrive,
         isB2BAuthLogsEnabled,
