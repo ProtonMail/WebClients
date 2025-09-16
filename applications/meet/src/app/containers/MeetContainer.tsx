@@ -98,7 +98,7 @@ export const MeetContainer = ({
         [setParticipantSettings]
     );
 
-    const { toggleVideo, handleRotateCamera } = useVideoToggle(setIsVideoEnabled);
+    const { toggleVideo, handleRotateCamera, backgroundBlur, toggleBackgroundBlur } = useVideoToggle(setIsVideoEnabled);
     const toggleAudio = useAudioToggle();
 
     return (
@@ -150,6 +150,8 @@ export const MeetContainer = ({
                     screenShareParticipant,
                     toggleVideo,
                     toggleAudio,
+                    backgroundBlur,
+                    toggleBackgroundBlur,
                 }}
             >
                 <UIStateProvider instantMeeting={instantMeeting}>
