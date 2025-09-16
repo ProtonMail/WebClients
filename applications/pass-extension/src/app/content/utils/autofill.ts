@@ -1,5 +1,6 @@
 import type { FieldType } from '@proton/pass/fathom';
 import { seq } from '@proton/pass/utils/fp/promises';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import noop from '@proton/utils/noop';
 
 export type AutofillOptions = {
@@ -26,39 +27,40 @@ const dispatchEvents =
  * Dispatched events need to bubble up as certain websites
  * attach their event listeners not directly on the input
  * elements (ie: account.google.com) */
-export const createAutofill = (input: HTMLInputElement) => async (data: string, options?: AutofillOptions) => {
-    const dispatch = dispatchEvents(input);
+export const createAutofill = (input: HTMLInputElement) =>
+    safeCall(async (data: string, options?: AutofillOptions) => {
+        const dispatch = dispatchEvents(input);
 
-    if (typeof input?.click === 'function') input.click();
-    if (isFocused(input)) await dispatch([new FocusEvent('focusin'), new FocusEvent('focus')]);
-    else input.focus();
+        if (typeof input?.click === 'function') input.click();
+        if (isFocused(input)) await dispatch([new FocusEvent('focusin'), new FocusEvent('focus')]);
+        else input.focus();
 
-    if (options?.paste) {
-        const clipboardData = new DataTransfer();
-        clipboardData.setData('text/plain', data);
+        if (options?.paste) {
+            const clipboardData = new DataTransfer();
+            clipboardData.setData('text/plain', data);
 
-        await dispatch([
-            new ClipboardEvent('paste', {
-                bubbles: true,
-                cancelable: true,
-                clipboardData,
-            }),
-        ]);
-    } else {
-        input.value = data;
+            await dispatch([
+                new ClipboardEvent('paste', {
+                    bubbles: true,
+                    cancelable: true,
+                    clipboardData,
+                }),
+            ]);
+        } else {
+            input.value = data;
 
-        await dispatch([
-            new KeyboardEvent('keydown', { bubbles: true }),
-            /* `keypress` event for legacy websites support */
-            new KeyboardEvent('keypress', { bubbles: true }),
-            new KeyboardEvent('keyup', { bubbles: true }),
-        ]);
+            await dispatch([
+                new KeyboardEvent('keydown', { bubbles: true }),
+                /* `keypress` event for legacy websites support */
+                new KeyboardEvent('keypress', { bubbles: true }),
+                new KeyboardEvent('keyup', { bubbles: true }),
+            ]);
 
-        if (input.value !== data) input.value = data;
+            if (input.value !== data) input.value = data;
 
-        await dispatch([new Event('input', { bubbles: true }), new Event('change', { bubbles: true })]);
-    }
+            await dispatch([new Event('input', { bubbles: true }), new Event('change', { bubbles: true })]);
+        }
 
-    if (isFocused(input)) input.blur();
-    else await dispatch([new FocusEvent('focusout'), new FocusEvent('blur')]);
-};
+        if (isFocused(input)) input.blur();
+        else await dispatch([new FocusEvent('focusout'), new FocusEvent('blur')]);
+    });
