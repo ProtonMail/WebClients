@@ -1,5 +1,6 @@
 import type { SharedStartListening } from '@proton/redux-shared-store-types';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { eventLoopTimingTracker } from '@proton/shared/lib/metrics/eventLoopMetrics';
 
 import { addressesLoop } from '../addresses/eventLoopV6';
 import type { CoreEventLoopV6Callback, CoreEventLoopV6RequiredState } from '../coreEventLoop/interface';
@@ -44,11 +45,27 @@ export const coreEventLoopV6Listener = (startListening: SharedStartListening<Cor
             const event = action.payload.event;
             const api = getSilentApi(extra.api);
 
+            eventLoopTimingTracker.startV6Processing('core');
+
+            let apiCallsCount = 0;
+            let apiFailuresCount = 0;
+
             loops.forEach((callback) => {
                 const promise = callback({ event, state, dispatch, api });
+
                 if (promise) {
-                    promises.push(promise);
+                    // Wrap the promise to count failures
+                    const wrappedPromise = promise.catch((error) => {
+                        apiFailuresCount++;
+                        throw error; // Re-throw to maintain original behavior
+                    });
+                    promises.push(wrappedPromise);
+                    apiCallsCount++;
                 }
+            });
+
+            void Promise.all(promises).finally(() => {
+                eventLoopTimingTracker.endV6Processing(event.More, apiCallsCount, 'core', apiFailuresCount);
             });
         },
     });
