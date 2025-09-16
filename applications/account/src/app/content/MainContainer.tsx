@@ -203,6 +203,8 @@ const MainContainer = () => {
 
     const isB2BTrial = useIsB2BTrial(subscription, organization);
 
+    const canDisplayNonPrivateEmailPhone = useFlag('B2BNonPrivateEmailPhone');
+
     const routes = getRoutes({
         app,
         user,
@@ -240,6 +242,7 @@ const MainContainer = () => {
         isRetentionPoliciesEnabled,
         isSsoForPbsEnabled,
         referralInfo: referralInfo.uiData,
+        canDisplayNonPrivateEmailPhone,
     });
 
     useEffect(() => {
