@@ -95,7 +95,11 @@ interface SignupContextType {
      * Sets up the newly created user account
      */
     setupUser: () => Promise<void>;
-    afterSetupSubscribe: () => Promise<void>;
+    /**
+     * Setup the subsciption when it has been made after `setupUser`
+     * If subscription is done before `setupUser`, it will be done automatically
+     */
+    setupSubscription: () => Promise<void>;
     setOrgName: (orgName: string) => Promise<void>;
     setDisplayName: (displayName: string) => Promise<void>;
     login: () => Promise<void>;
@@ -541,7 +545,7 @@ export const InnerSignupContextProvider = ({
         }
     };
 
-    const afterSetupSubscribe = async () => {
+    const setupSubscription = async () => {
         const subscriptionData = signupDataRef.current?.paymentData?.subscriptionData;
 
         if (subscriptionData) {
@@ -770,7 +774,7 @@ export const InnerSignupContextProvider = ({
         },
         createUser,
         setupUser,
-        afterSetupSubscribe,
+        setupSubscription,
         setOrgName,
         setDisplayName,
         flowId,
