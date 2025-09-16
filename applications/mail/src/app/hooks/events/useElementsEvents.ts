@@ -1,16 +1,80 @@
 import { useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
+import type { ElementsState } from 'proton-mail/store/elements/elementsTypes';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
 import type { Element } from '../../models/element';
-import type { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../models/event';
+import type { ConversationEvent, Event, MessageEvent } from '../../models/event';
 import { eventUpdates, invalidate } from '../../store/elements/elementsActions';
 import {
     shouldInvalidateElementsState as shouldInvalidateElementsStateSelector,
     taskRunning as taskRunningSelector,
 } from '../../store/elements/elementsSelectors';
-import type { EventUpdates } from '../../store/elements/elementsTypes';
+
+const elementExists = (elementsState: ElementsState, ID: string): boolean => {
+    return !!elementsState.elements[ID];
+};
+
+export const processElementEvents = ({
+    conversationEvents,
+    messageEvents,
+    elementsState,
+    isTaskRunning,
+}: {
+    conversationEvents: ConversationEvent[];
+    messageEvents: MessageEvent[];
+    elementsState: ElementsState;
+    isTaskRunning: boolean;
+}) => {
+    const toCreate: Element[] = [];
+    const toUpdate: Element[] = [];
+    const toLoad: Element[] = [];
+    const toDelete: string[] = [];
+
+    const handleCreate = (element: Element) => {
+        toCreate.push(element);
+
+        // Long tasks trigger too much element update to be able to load them all
+        if (isTaskRunning) {
+            toLoad.push(element);
+        }
+    };
+
+    const handleUpdateMetadata = (element: Element) => {
+        if (elementExists(elementsState, element.ID)) {
+            toUpdate.push(element);
+        } else {
+            handleCreate(element);
+        }
+    };
+
+    conversationEvents.forEach(({ ID, Action, Conversation }) => {
+        if (Action === EVENT_ACTIONS.CREATE) {
+            handleCreate(Conversation as Element);
+        } else if (Action === EVENT_ACTIONS.UPDATE) {
+            handleUpdateMetadata(Conversation as Element);
+        } else if (Action === EVENT_ACTIONS.DELETE) {
+            toDelete.push(ID);
+        }
+    });
+
+    messageEvents.forEach(({ ID, Action, Message }) => {
+        if (Action === EVENT_ACTIONS.CREATE) {
+            handleCreate(Message as Element);
+        } else if (Action === EVENT_ACTIONS.UPDATE_DRAFT) {
+            // Concern update for draft, so we need to load the latest version of the message body
+            toLoad.push(Message as Element);
+        } else if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+            // Only concern message metadata
+            handleUpdateMetadata(Message as Element);
+        } else if (Action === EVENT_ACTIONS.DELETE) {
+            toDelete.push(ID);
+        }
+    });
+
+    return { toCreate, toUpdate, toLoad, toDelete };
+};
 
 export const useElementsEvents = (conversationMode: boolean) => {
     const store = useMailStore();
@@ -19,10 +83,8 @@ export const useElementsEvents = (conversationMode: boolean) => {
     const taskRunning = useMailSelector(taskRunningSelector);
 
     // Listen to event manager and update the cache
-    useSubscribeEventManager(async ({ Conversations = [], Messages = [] }: Event) => {
-        const Elements: ElementEvent[] = [...Conversations, ...Messages];
-
-        if (!Elements.length) {
+    useSubscribeEventManager(({ Conversations: conversationEvents = [], Messages: messageEvents = [] }: Event) => {
+        if (!conversationEvents.length && !messageEvents.length) {
             return;
         }
 
@@ -31,40 +93,12 @@ export const useElementsEvents = (conversationMode: boolean) => {
             return;
         }
 
-        // Not the elements ids "in view" but all in the cache
-        const elementIDs = Object.keys(store.getState().elements.elements);
-
-        const { toCreate, toUpdate, toDelete, toLoad } = Elements.reduce<
-            Pick<EventUpdates, 'toCreate' | 'toUpdate' | 'toDelete' | 'toLoad'>
-        >(
-            ({ toCreate, toUpdate, toDelete, toLoad }, event) => {
-                const { ID, Action } = event;
-                const Element = (event as ConversationEvent)?.Conversation || (event as MessageEvent)?.Message;
-
-                if (Action === EVENT_ACTIONS.CREATE) {
-                    toCreate.push(Element as Element);
-
-                    // Long tasks trigger too much element update to be able to load them all
-                    if (taskRunning.labelIDs.length === 0) {
-                        toLoad.push(Element as Element);
-                    }
-                } else if (Action === EVENT_ACTIONS.UPDATE_DRAFT || Action === EVENT_ACTIONS.UPDATE_FLAGS) {
-                    const existingElement = elementIDs.includes(ID);
-
-                    if (existingElement) {
-                        toUpdate.push(Element as Element);
-                    } else {
-                        // We do not load since it's an update
-                        toCreate.push(Element as Element);
-                    }
-                } else if (Action === EVENT_ACTIONS.DELETE) {
-                    toDelete.push(ID);
-                }
-
-                return { toCreate, toUpdate, toDelete, toLoad };
-            },
-            { toCreate: [], toLoad: [], toUpdate: [], toDelete: [] }
-        );
+        const { toCreate, toUpdate, toLoad, toDelete } = processElementEvents({
+            conversationEvents,
+            messageEvents,
+            elementsState: store.getState().elements,
+            isTaskRunning: taskRunning.labelIDs.length === 0,
+        });
 
         void dispatch(eventUpdates({ conversationMode, toCreate, toUpdate, toLoad, toDelete }));
     });
