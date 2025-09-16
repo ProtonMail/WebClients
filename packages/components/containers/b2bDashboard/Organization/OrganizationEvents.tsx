@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { Pagination, usePaginationAsync } from '@proton/components/components/pagination';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useApi from '@proton/components/hooks/useApi';
@@ -20,6 +21,7 @@ import noop from '@proton/utils/noop';
 
 import { toCamelCase } from '../../credentialLeak/helpers';
 import GenericError from '../../error/GenericError';
+import B2BOrganizationUpsellBanner from '../ActivityMonitor/B2BOrganizationUpsellBanner';
 import { FilterAndSortEventsBlock } from '../FilterAndSortEventBlock';
 import {
     ALL_EVENTS_DEFAULT,
@@ -56,6 +58,7 @@ const getQueryParams = (filter: FilterModel, searchType: 'ip' | 'email' | 'searc
 
 export const OrganizationEvents = () => {
     const api = useApi();
+    const [organization] = useOrganization();
     const handleError = useErrorHandler();
 
     const { page, onNext, onPrevious, onSelect, reset } = usePaginationAsync(1);
@@ -70,6 +73,7 @@ export const OrganizationEvents = () => {
     const [error, setError] = useState<string | null>(null);
     const [sortDirection, setSortDirection] = useState(SORT_DIRECTION.DESC);
     const [reloadTrigger, setReloadTrigger] = useState(0);
+    const isEnforced = organization?.Settings?.OrganizationPolicy?.Enforced === 1;
 
     const fetchOrganizationEvents = async () => {
         const { Items } = await api(getOrganizationEventTypes());
@@ -81,8 +85,11 @@ export const OrganizationEvents = () => {
     };
 
     useEffect(() => {
-        fetchOrganizationEvents();
-    }, []);
+        // Fetch organization logs only if organization policy is enforced
+        if (isEnforced) {
+            fetchOrganizationEvents();
+        }
+    }, [isEnforced]);
 
     const fetchOrganizationLogs = async (params: B2BLogsQuery) => {
         try {
@@ -100,8 +107,11 @@ export const OrganizationEvents = () => {
     };
 
     useEffect(() => {
-        withLoading(fetchOrganizationLogs({ ...query, Page: page - 1 }).catch(noop));
-    }, [page, query, sortDirection, reloadTrigger]);
+        // Fetch organization logs only if organization policy is enforced
+        if (isEnforced) {
+            withLoading(fetchOrganizationLogs({ ...query, Page: page - 1 }).catch(noop));
+        }
+    }, [page, query, sortDirection, reloadTrigger, isEnforced]);
 
     const handleSearchSubmit = () => {
         setError(null);
@@ -206,7 +216,14 @@ export const OrganizationEvents = () => {
         setReloadTrigger((prev) => prev + 1);
     };
 
-    return (
+    // Defensive protection, ensure that the settings are available
+    if (!organization || !organization.Settings || !organization.Settings.OrganizationPolicy) {
+        return null;
+    }
+
+    return organization.Settings.OrganizationPolicy.Enforced === 0 ? (
+        <B2BOrganizationUpsellBanner organizationMonitor={true} organization={organization} />
+    ) : (
         <SettingsSectionWide customWidth="90em">
             <div className="flex flex-row justify-space-between items-center my-4">
                 <div className="flex *:min-size-auto flex-column gap-2 w-full">

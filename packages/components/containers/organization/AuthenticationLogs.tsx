@@ -1,11 +1,11 @@
-import { type FormEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { type FormEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { endOfDay, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useMembers } from '@proton/account/members/hooks';
 import { organizationActions } from '@proton/account/organization';
-import { Button } from '@proton/atoms';
+import { Banner, Button } from '@proton/atoms';
 import AddressesInput, { AddressesInputItem } from '@proton/components/components/addressesInput/AddressesInput';
 import Icon from '@proton/components/components/icon/Icon';
 import DateInput from '@proton/components/components/input/DateInput';
@@ -70,9 +70,6 @@ const AuthenticationLogs = ({
     const [loadingDownload, withLoadingDownload] = useLoading();
     const [reloadTrigger, setReloadTrigger] = useState(0);
     const dispatch = useDispatch();
-
-    const detailedMonitoring = organization?.Settings?.LogAuth === 2;
-
     const { viewportWidth } = useActiveBreakpoint();
 
     const items = useMemo(() => {
@@ -91,6 +88,8 @@ const AuthenticationLogs = ({
             );
         });
     }, [recipients]);
+
+    const detailedMonitoring = organization?.Settings?.LogAuth === 2;
 
     const handleSetDetailedMonitoring = async () => {
         const enabling = !detailedMonitoring;
@@ -114,41 +113,50 @@ const AuthenticationLogs = ({
         setRecipient([...recipients, ...newRecipients]);
     };
 
-    const handleSearchSubmit = (initialLoad?: boolean): Promise<void> | undefined => {
-        if (members) {
-            if (members.length > 100) {
-                createNotification({ text: c('error').t`Select users to view their activity` });
-                return Promise.resolve();
+    const handleSearchSubmit = useCallback(
+        async (initialLoad?: boolean) => {
+            if (!members) {
+                return; // still loading, do nothing
             }
 
-            let Emails: string[] = [];
+            let Emails: string[];
 
             if (initialLoad || recipients.length === 0) {
                 const membersArray = convertEnhancedMembersToContactEmails(members);
-                Emails = membersArray.map((member) => member.Email);
+                Emails = membersArray.map((member) => member.Email).slice(0, 50);
             } else {
-                Emails = recipients.map((recipient) => recipient.Address);
+                Emails = recipients.map((recipient) => recipient.Address).slice(0, 50);
             }
 
             const StartTime = filter.start ? getLocalTimeStringFromDate(filter.start) : undefined;
             const EndTime = filter.end ? getLocalTimeStringFromDate(endOfDay(filter.end)) : undefined;
 
-            setQuery({
-                Emails,
-                StartTime,
-                EndTime,
-            });
-            const newRecipients = mapMembersToRecipients(members, Emails);
+            setQuery({ Emails, StartTime, EndTime });
+
+            const newRecipients = mapMembersToRecipients(members, Emails).slice(0, 50);
             setRecipient(newRecipients);
+
             reset();
+        },
+        [members, recipients, filter.start, filter.end, setQuery, reset, createNotification]
+    );
+
+    useEffect(() => {
+        if (members && members.length) {
+            withSubmitting(() => handleSearchSubmit(true)).catch(noop);
         }
-    };
+    }, [members]);
 
     useEffect(() => {
         withSubmitting(handleSearchSubmit(true)).catch(noop);
     }, [reloadTrigger]);
 
-    if (!organization || !members) {
+    if (!organization) {
+        return <Loader />;
+    }
+
+    // Defensive protection, ensure that fetched members are available
+    if (!members || members.length === 0) {
         return <Loader />;
     }
 
@@ -163,7 +171,7 @@ const AuthenticationLogs = ({
         // Map members and display them in the user filter
         const membersArray = convertEnhancedMembersToContactEmails(members);
         const Emails = membersArray.map((member) => member.Email);
-        const newRecipients = mapMembersToRecipients(members, Emails);
+        const newRecipients = mapMembersToRecipients(members, Emails).slice(0, 50); // Map and limit to first 50 members
         setRecipient(newRecipients);
 
         setQuery({ Emails: [] });
@@ -221,7 +229,10 @@ const AuthenticationLogs = ({
                                 style={{ '--max-w-custom': '90rem' }}
                             >
                                 <div className="flex flex-column md:flex-row gap-2 *:min-size-auto md:flex-shrink">
-                                    <div className="md:flex-1 flex flex-column *:min-size-auto w-full leading-10 w-custom" style={{ '--w-custom': '16rem' }}>
+                                    <div
+                                        className="md:flex-1 flex flex-column *:min-size-auto w-full leading-10 w-custom"
+                                        style={{ '--w-custom': '16rem' }}
+                                    >
                                         <Label className="text-semibold p-0 h-6 mb-1" htmlFor="search">
                                             {c('Label').t`Search`}
                                         </Label>
@@ -263,7 +274,10 @@ const AuthenticationLogs = ({
                                             viewportWidth['<=small'] && '*:min-size-auto flex-nowrap',
                                         ])}
                                     >
-                                        <div className="flex-1 flex flex-column *:min-size-auto leading-10 w-custom" style={{ '--w-custom': '8rem' }}>
+                                        <div
+                                            className="flex-1 flex flex-column *:min-size-auto leading-10 w-custom"
+                                            style={{ '--w-custom': '8rem' }}
+                                        >
                                             <Label className="text-semibold p-0 h-6 mb-1" htmlFor="begin-date">
                                                 {c('Label (begin date/advanced search)').t`From`}
                                             </Label>
@@ -281,7 +295,10 @@ const AuthenticationLogs = ({
                                         >
                                             -
                                         </span>
-                                        <div className="flex-1 flex flex-column *:min-size-auto leading-10 w-custom" style={{ '--w-custom': '8rem' }}>
+                                        <div
+                                            className="flex-1 flex flex-column *:min-size-auto leading-10 w-custom"
+                                            style={{ '--w-custom': '8rem' }}
+                                        >
                                             <Label className="text-semibold p-0 h-6 mb-1" htmlFor="end-date">
                                                 {c('Label (end date/advanced search)').t`To`}
                                             </Label>
@@ -296,7 +313,12 @@ const AuthenticationLogs = ({
                                     </div>
                                     <div className="flex lg:inline-flex flex-nowrap flex-row gap-2 shrink-0 items-end">
                                         <div className="flex content-center">
-                                            <Button color="norm" type="submit" loading={submitting} className="self-end">
+                                            <Button
+                                                color="norm"
+                                                type="submit"
+                                                loading={submitting}
+                                                className="self-end"
+                                            >
                                                 {c('Action').t`Search`}
                                             </Button>
                                         </div>
@@ -342,7 +364,7 @@ const AuthenticationLogs = ({
                         </div>
                     </div>
                 </div>
-                <div className='flex self-end mb-4'>
+                <div className="flex self-end mb-4">
                     <div className="flex flex-row flex-nowrap items-center gap-2">
                         <Toggle
                             id="detailed-monitoring-toggle"
@@ -355,31 +377,36 @@ const AuthenticationLogs = ({
                             {c('Info').t`Include device, location, and IP details`}
                             <Info
                                 className="ml-2 shrink-0"
-                                title={c('Info')
-                                    .t`Allow logging of location and connection details`}
+                                title={c('Info').t`Allow logging of location and connection details`}
                             />
                         </div>
                     </div>
                     <div className="h-custom" style={{ '--h-custom': '2.5rem' }}></div>
                 </div>
             </div>
-            <B2BAuthLogsTable
-                logs={authLogs}
-                loading={loading}
-                error={error}
-                onTimeClick={handleClickableTime}
-                onEmailOrIPClick={handleClickableEmailOrIP}
-            />
-            <div className="flex flex-column items-center justify-space-around">
-                <Pagination
-                    page={page}
-                    total={total}
-                    limit={10}
-                    onSelect={onSelect}
-                    onNext={onNext}
-                    onPrevious={onPrevious}
-                />
-            </div>
+            {members.length > 100 && recipients.length === 0 ? (
+                <Banner variant="info-outline">{c('Info').t`Select users to view their activity`}</Banner>
+            ) : (
+                <>
+                    <B2BAuthLogsTable
+                        logs={authLogs}
+                        loading={loading}
+                        error={error}
+                        onTimeClick={handleClickableTime}
+                        onEmailOrIPClick={handleClickableEmailOrIP}
+                    />
+                    <div className="flex flex-column items-center justify-space-around">
+                        <Pagination
+                            page={page}
+                            total={total}
+                            limit={10}
+                            onSelect={onSelect}
+                            onNext={onNext}
+                            onPrevious={onPrevious}
+                        />
+                    </div>
+                </>
+            )}
         </SettingsSectionWide>
     );
 };
