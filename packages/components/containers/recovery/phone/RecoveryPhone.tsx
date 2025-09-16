@@ -25,6 +25,7 @@ import VerifyRecoveryPhoneModal from './VerifyRecoveryPhoneModal';
 
 interface RenderFormProps {
     className?: string;
+    inputWidth?: string;
     onSubmit: (e: FormEvent<HTMLFormElement>) => void;
     input: ReactNode;
     submitButtonProps: {
@@ -34,10 +35,13 @@ interface RenderFormProps {
     };
 }
 
-const defaultRenderForm = ({ className, onSubmit, input, submitButtonProps }: RenderFormProps) => {
+const defaultRenderForm = ({ className, inputWidth, onSubmit, input, submitButtonProps }: RenderFormProps) => {
     return (
         <form className={clsx(['flex flex-wrap flex-column md:flex-row', className])} onSubmit={onSubmit}>
-            <div className="mr-0 mb-4 md:mr-4 md:flex-1 min-w-custom" style={{ '--min-w-custom': '14em' }}>
+            <div
+                className="mr-0 mb-4 md:mr-4 md:flex-1 min-w-custom"
+                style={{ '--min-w-custom': inputWidth ?? '14em' }}
+            >
                 {input}
             </div>
             <div className="mb-2">
@@ -54,6 +58,7 @@ interface Props {
     hasReset: boolean;
     defaultCountry?: string;
     className?: string;
+    inputWidth?: string;
     onSuccess?: () => void;
     autoFocus?: boolean;
     renderForm?: (props: RenderFormProps) => ReactNode;
@@ -68,6 +73,7 @@ const RecoveryPhone = ({
     hasReset,
     defaultCountry,
     className,
+    inputWidth,
     onSuccess,
     autoFocus,
     inputProps,
@@ -107,6 +113,7 @@ const RecoveryPhone = ({
             {renderVerifyRecoveryPhoneModal && <VerifyRecoveryPhoneModal phone={phone} {...verifyRecoveryPhoneModal} />}
             {renderForm({
                 className,
+                inputWidth,
                 onSubmit: (e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {
