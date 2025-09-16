@@ -30,11 +30,6 @@ const PassSignup = () => {
     const payments = usePaymentOptimistic();
     const [step, setStep] = useState<Step>(Step.Signup);
 
-    const accountCreation = async () => {
-        await signup.createUser();
-        await signup.setupUser();
-    };
-
     useEffect(() => {
         /**
          * A limitation of the payments context initialisation means we need to
@@ -48,7 +43,8 @@ const PassSignup = () => {
             {step === Step.Signup && (
                 <AccountDetailsStep
                     onContinue={async () => {
-                        await accountCreation();
+                        await signup.createUser();
+                        await signup.setupUser();
                         setStep(Step.RecoveryKit);
                     }}
                 />
@@ -66,11 +62,20 @@ const PassSignup = () => {
             )}
             {step === Step.Payment && (
                 <PaymentStep
-                    onContinue={async () => setStep(Step.InstallExtension)}
+                    onContinue={async () => {
+                        await signup.setupSubscription();
+                        setStep(Step.InstallExtension);
+                    }}
                     onBack={() => setStep(Step.UpgradePlan)}
                 />
             )}
-            {step === Step.InstallExtension && <InstallExtensionStep />}
+            {step === Step.InstallExtension && (
+                <InstallExtensionStep
+                    onContinue={async () => {
+                        await signup.login();
+                    }}
+                />
+            )}
         </main>
     );
 };

@@ -79,7 +79,12 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             ],
         },
         {
-            title: PLAN_NAMES[PLANS.PASS],
+            title: (
+                <div className="flex items-center gap-2">
+                    {PLAN_NAMES[PLANS.PASS]}
+                    <Icon name="checkmark-circle-filled" size={5} color="var(--optional-promotion-text-weak)" />
+                </div>
+            ),
             price: getPrice(passPlus.planIDs),
             priceSubtitle: c('Subtitle').t`per month, billed annually`,
             buttonText: c('Action').t`Get Pass Plus`,
@@ -88,7 +93,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             recommended: true,
             featuresTitle: c('Label').t`Get everything in Free, plus:`,
             features: [
-                c('Label').t`Unlimited Hide-my-email aliases`,
+                c('Label').t`Unlimited hide-my-email aliases`,
                 c('Label').t`Built-in 2FA authenticator`,
                 c('Label').t`Vault, item & secure link sharing`,
                 c('Label').t`Credit cards`,
@@ -106,12 +111,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
             features: [c('Label').t`6 Pass Plus accounts`, c('Label').t`Admin panel for your family`],
         },
         {
-            title: (
-                <div className="flex items-center gap-2">
-                    {PLAN_NAMES[PLANS.BUNDLE]}
-                    <Icon name="checkmark-circle-filled" size={5} color="var(--optional-promotion-text-weak)" />
-                </div>
-            ),
+            title: PLAN_NAMES[PLANS.BUNDLE],
             price: getPrice(unlimited.planIDs),
             priceSubtitle: c('Subtitle').t`per month, billed annually`,
             buttonText: c('Action').t`Get the full suite`,

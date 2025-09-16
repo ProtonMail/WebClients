@@ -256,6 +256,7 @@ export const handleSetupUser = async ({
         session,
         user,
         keyPassword: keySetupData.keyPassword,
+        clearKeyPassword: keySetupData.clearKeyPassword,
         addresses,
         authResponse,
         subscription,

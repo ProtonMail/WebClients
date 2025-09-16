@@ -119,7 +119,7 @@ export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
                     type="submit"
                     fullWidth
                     pill
-                    className="mt-2 py-4 text-semibold"
+                    className="mt-4 py-4 text-semibold"
                 >
                     {c('Action').t`Create free account now`}
                 </Button>

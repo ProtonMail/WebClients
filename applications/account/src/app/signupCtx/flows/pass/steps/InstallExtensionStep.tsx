@@ -9,13 +9,14 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 import { Clients, clients } from '@proton/shared/lib/pass/constants';
 
-import { useSignup } from '../../../context/SignupContext';
 import browserImage from '../assets/images/browser.svg';
 import { Layout } from '../components/Layout/Layout';
 
-export const InstallExtensionStep: FC = () => {
-    const signup = useSignup();
+type Props = {
+    onContinue: () => Promise<void>;
+};
 
+export const InstallExtensionStep: FC<Props> = ({ onContinue }) => {
     const browser = useMemo(() => {
         const supportedBrowser = getExtensionSupportedBrowser();
 
@@ -49,7 +50,7 @@ export const InstallExtensionStep: FC = () => {
                     {c('Action').t`Get the extension for ${browser.title}`}
                 </ButtonLike>
             )}
-            <Button className="mt-4" shape="ghost" color="norm" pill onClick={signup.login}>
+            <Button className="mt-4" shape="ghost" color="norm" pill onClick={onContinue}>
                 {c('Action').t`Open ${PASS_APP_NAME} in your browser`}
             </Button>
             <div className="divider-gradient mt-20 w-full h-custom" style={{ '--h-custom': '1px' }} />
