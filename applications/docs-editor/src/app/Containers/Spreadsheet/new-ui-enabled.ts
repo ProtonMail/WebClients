@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 
-const LOCAL_STORAGE_KEY = 'new-ui-enabled'
+const LOCAL_STORAGE_KEY = 'new-ui-enabled-new-key'
 const EVENT_NAME = 'konami-time'
 function isEnabled() {
-  return localStorage.getItem(LOCAL_STORAGE_KEY) === 'true'
+  const value = localStorage.getItem(LOCAL_STORAGE_KEY) ?? 'true'
+  return value === 'true'
 }
 const KONAMI_SEQUENCE = [
   'ArrowUp',
