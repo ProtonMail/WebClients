@@ -139,7 +139,7 @@ describe('addresses with user', () => {
             addresses: [address3, address1, address2, address4],
             member: undefined,
         });
-        expect(getFirstAddress(container)?.innerHTML).toBe('a1@proton.me');
+        expect(getFirstAddress(container)?.textContent).toBe('a1@proton.me');
     });
 
     describe('set as default', () => {
@@ -166,7 +166,7 @@ describe('addresses with user', () => {
                 type: 'error',
                 text: 'An external address cannot be default',
             });
-            expect(getFirstAddress(container)?.innerHTML).toBe('a@proton.me');
+            expect(getFirstAddress(container)?.textContent).toBe('a@proton.me');
         });
 
         it('should not be able to set a disabled address as default', () => {
@@ -178,7 +178,7 @@ describe('addresses with user', () => {
                 type: 'error',
                 text: 'A disabled address cannot be default',
             });
-            expect(getFirstAddress(container)?.innerHTML).toBe('a@proton.me');
+            expect(getFirstAddress(container)?.textContent).toBe('a@proton.me');
         });
     });
 });

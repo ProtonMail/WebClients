@@ -38,6 +38,7 @@ import move from '@proton/utils/move';
 
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
+import ExternalAddressInfo from './ExternalAddressInfo';
 import { getPermissions, getStatus } from './helper';
 
 interface Props {
@@ -208,7 +209,8 @@ const AddressesUser = ({
                                                 data-testid="users-and-addresses-table:address"
                                                 onClick={() => handleCopyEmail(address.Email)}
                                             >
-                                                {address.Email}
+                                                <div>{address.Email}</div>
+                                                <ExternalAddressInfo address={address} />
                                             </button>
                                         </Tooltip>,
                                         <AddressStatus key={1} {...addressStatuses} />,
