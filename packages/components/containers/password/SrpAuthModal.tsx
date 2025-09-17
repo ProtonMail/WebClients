@@ -35,7 +35,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import TotpInputs from '../account/totp/TotpInputs';
-import { getTwoFactorTypes } from './getTwoFactorTypes';
+import { getReAuthTwoFactorTypes } from './getReAuthTwoFactorTypes';
 import type { OwnAuthModalProps, SrpAuthModalResult } from './interface';
 
 const FORM_ID = 'auth-form';
@@ -195,14 +195,14 @@ const getInitialInfoResultRef = ({
     scope,
     userSettings,
     app,
-}: Parameters<typeof getTwoFactorTypes>[0]): {
-    data?: { infoResult?: InfoAuthedResponse; twoFactor: ReturnType<typeof getTwoFactorTypes> };
+}: Parameters<typeof getReAuthTwoFactorTypes>[0]): {
+    data?: { infoResult?: InfoAuthedResponse; twoFactor: ReturnType<typeof getReAuthTwoFactorTypes> };
 } => {
     if (!infoResult) {
         return {};
     }
 
-    const twoFactor = getTwoFactorTypes({ scope, infoResult, userSettings, app });
+    const twoFactor = getReAuthTwoFactorTypes({ scope, infoResult, userSettings, app });
     return {
         data: {
             infoResult,
@@ -274,7 +274,7 @@ const SrpAuthModal = ({
         }
 
         const infoResult = await getInfoResult();
-        const twoFactor = getTwoFactorTypes({ scope, infoResult, userSettings, app: APP_NAME });
+        const twoFactor = getReAuthTwoFactorTypes({ scope, infoResult, userSettings, app: APP_NAME });
 
         infoResultRef.current.data = { infoResult, twoFactor };
 

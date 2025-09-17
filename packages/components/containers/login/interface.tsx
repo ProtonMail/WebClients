@@ -35,6 +35,7 @@ export interface AuthTypes {
     twoFactor: {
         totp: boolean;
         fido2: boolean;
+        enabled: boolean;
     };
     unlock: boolean;
 }
