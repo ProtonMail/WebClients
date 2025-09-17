@@ -218,7 +218,7 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
     const { authType, authTypes, ignoreUnlock, authResponse, loginPassword } = cache;
 
     if (from === AuthStep.LOGIN) {
-        if (authTypes.twoFactor.fido2 || authTypes.twoFactor.totp) {
+        if (authTypes.twoFactor.enabled) {
             return {
                 cache,
                 to: AuthStep.TWO_FA,
