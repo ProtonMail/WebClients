@@ -4,7 +4,7 @@ const execa = require('execa');
 const path = require('path');
 const { Command } = require('commander');
 const portfinder = require('portfinder');
-const chalk = require('chalk');
+const { styleText } = require('node:util');
 
 const program = new Command();
 
@@ -52,14 +52,14 @@ const getWebpackArgs = (options, env) => {
 };
 
 const commandWithLog = (...args) => {
-    console.log(chalk.cyan(args[0]), `\n`);
+    console.log(styleText('cyan', args[0]), '\n');
     return execa.command(...args);
 };
 
 addGlobalOptions(program.command('build').description('create an optimized production build'))
     .option('--no-sri', 'disable sri')
     .action(async (options, env) => {
-        console.log(chalk.magenta('Creating a production build...\n'));
+        console.log(styleText('magenta', 'Creating a production build...\n'));
 
         const webpackArgs = getWebpackArgs(options, env);
 
@@ -97,7 +97,7 @@ addGlobalOptions(program.command('dev-server').description('run locally'))
     .option('--overlay-runtime-errors', 'show a full screen overlay when there are runtime errors')
     .option('--overlay-errors', 'show a full screen overlay when there are compiler errors')
     .action(async (options, env) => {
-        console.log(chalk.magenta('Starting development server...\n'));
+        console.log(styleText('magenta', 'Starting development server...\n'));
 
         const webpackArgs = getWebpackArgs(options, env);
 
