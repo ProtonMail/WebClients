@@ -12,6 +12,7 @@ import { isVisibleOnScreen } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
@@ -23,7 +24,7 @@ import {
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { isStarred } from '../../helpers/elements';
+import { hasLabel, isStarred } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import type { Element } from '../../models/element';
@@ -97,6 +98,7 @@ export const useMessageHotkeys = (
     const star = useStar();
 
     const onCompose = useOnCompose();
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const isMessageReady = messageLoaded && bodyLoaded;
     const hotkeysEnabledAndMessageReady =
@@ -180,7 +182,9 @@ export const useMessageHotkeys = (
         [
             'Enter',
             (e) => {
-                if (draft) {
+                const isInDeletedFolder =
+                    isRetentionPoliciesEnabled && hasLabel(message.data, MAILBOX_LABEL_IDS.SOFT_DELETED);
+                if (draft && !isInDeletedFolder) {
                     e.stopPropagation();
                     e.preventDefault();
                     void onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
