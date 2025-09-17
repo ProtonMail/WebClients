@@ -11,6 +11,7 @@ import { getMeetingLink } from '@proton/meet';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { MeetingType } from '@proton/shared/lib/interfaces/Meet';
 import useFlag from '@proton/unleash/useFlag';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { CardButton } from '../atoms/CardButton/CardButton';
 import { MeetingRow } from '../components/MeetingRow/MeetingRow';
@@ -145,7 +146,13 @@ export const DashboardContainer = () => {
                     {meetings && upcomingMeetings.length > 0 && (
                         <>
                             {upcomingMeetings.map((meeting, index) => (
-                                <MeetingRow key={meeting.ID} meeting={meeting} index={index} />
+                                <MeetingRow
+                                    key={[meeting.ID, meeting.CalendarID, meeting.CalendarEventID]
+                                        .filter(isTruthy)
+                                        .join('-')}
+                                    meeting={meeting}
+                                    index={index}
+                                />
                             ))}
                         </>
                     )}
