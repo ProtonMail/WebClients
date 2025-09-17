@@ -51,6 +51,7 @@ export const WALLET_SHORT_APP_NAME = 'Wallet';
 export const WALLET_APP_NAME = `${BRAND_NAME} ${WALLET_SHORT_APP_NAME}`;
 export const LUMO_SHORT_APP_NAME = 'Lumo';
 export const LUMO_APP_NAME = LUMO_SHORT_APP_NAME;
+export const PROTON_SENTINEL_SHORT_NAME = 'Sentinel';
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
 export const AUTHENTICATOR_SHORT_APP_NAME = 'Authenticator';

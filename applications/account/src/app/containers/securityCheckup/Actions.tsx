@@ -12,6 +12,7 @@ import {
 } from '@proton/shared/lib/helpers/securityCheckup';
 import type { SecurityCheckupAction } from '@proton/shared/lib/interfaces/securityCheckup';
 
+import { SentinelBadge } from './SentinelBadge';
 import SecurityCheckupCardButton, { SecurityCheckupCardButtonInner } from './components/SecurityCheckupCardButton';
 import SecurityCheckupMainIcon from './components/SecurityCheckupMainIcon';
 import { deviceIcon, emailIcon, phoneIcon, phraseIcon } from './methodIcons';
@@ -110,12 +111,13 @@ const SentinelEmailRecoveryAction = () => {
         return (
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.SET_EMAIL)}>
                 <SecurityCheckupCardButtonInner
-                    prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="danger" />}
-                    title={c('Safety review').t`Add a email address`}
-                    subTitle={
-                        // TODO: copy: intend to convey x
-                        c('Safety review').t`To stay in touch`
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="warning" />}
+                    title={
+                        <div className="flex items-center gap-3">
+                            {c('Safety review').t`Add an alternative email address`} <SentinelBadge />
+                        </div>
                     }
+                    subTitle={c('Safety review').t`in case we need to contact you`}
                 />
             </SecurityCheckupCardButton>
         );
@@ -126,8 +128,12 @@ const SentinelEmailRecoveryAction = () => {
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.DISABLE_EMAIL)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="danger" />}
-                    title={c('Safety review').t`Disable recovery by email`}
-                    subTitle={c('Safety review').t`to ensure highest possible security of your account`}
+                    title={
+                        <div className="flex items-center gap-3">
+                            {c('Safety review').t`Disable recovery by email`} <SentinelBadge />
+                        </div>
+                    }
+                    subTitle={c('Safety review').t`to prevent attackers from taking over your account`}
                 />
             </SecurityCheckupCardButton>
         );
@@ -211,29 +217,34 @@ const SentinelPhoneRecoveryAction = () => {
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.SET_PHONE)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="danger" />}
-                    title={c('Safety review').t`Add a phone number`}
-                    subTitle={
-                        // TODO: copy: intend to convey x
-                        c('Safety review').t`To stay in touch`
+                    title={
+                        <div className="flex items-center gap-3">
+                            {c('Safety review').t`Add a phone number`} <SentinelBadge />
+                        </div>
                     }
+                    subTitle={c('Safety review').t`in case we need to contact you`}
                 />
             </SecurityCheckupCardButton>
         );
     }
-
-    const formattedPhoneNumber = <FormattedPhoneValue value={phone.value} />;
 
     if (phone.isEnabled) {
         return (
             <SecurityCheckupCardButton onClick={() => history.push(SECURITY_CHECKUP_PATHS.DISABLE_PHONE)}>
                 <SecurityCheckupCardButtonInner
                     prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="danger" />}
-                    title={c('Safety review').t`Disable recovery by phone`}
-                    subTitle={formattedPhoneNumber}
+                    title={
+                        <div className="flex items-center gap-3">
+                            {c('Safety review').t`Disable recovery by phone`} <SentinelBadge />
+                        </div>
+                    }
+                    subTitle={c('Safety review').t`to prevent attackers from taking over your account`}
                 />
             </SecurityCheckupCardButton>
         );
     }
+
+    const formattedPhoneNumber = <FormattedPhoneValue value={phone.value} />;
 
     if (!phone.verified) {
         return (
