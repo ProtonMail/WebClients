@@ -27,6 +27,8 @@ import duotoneTheme from '@proton/colors/themes/dist/duotone.theme.css';
 // @ts-ignore
 import legacyTheme from '@proton/colors/themes/dist/legacy.theme.css';
 // @ts-ignore
+import lumoDarkTheme from '@proton/colors/themes/dist/lumo-dark.theme.css';
+// @ts-ignore
 import lumoLightTheme from '@proton/colors/themes/dist/lumo-light.theme.css';
 // @ts-ignore
 import monokaiTheme from '@proton/colors/themes/dist/monokai.theme.css';
@@ -262,6 +264,18 @@ export const PROTON_THEMES_MAP: Record<ThemeTypes, ThemeDefinition> = {
             weak: '#9186BE',
         },
         theme: lumoLightTheme.toString(),
+    },
+    [ThemeTypes.LumoDark]: {
+        label: 'Proton',
+        identifier: ThemeTypes.LumoDark,
+        themeColorMeta: '#1b1340',
+        thumbColors: {
+            prominent: '#44348C',
+            standard: '#ffffff',
+            primary: '#936DFF',
+            weak: '#9186BE',
+        },
+        theme: lumoDarkTheme.toString(),
     },
 } as const;
 

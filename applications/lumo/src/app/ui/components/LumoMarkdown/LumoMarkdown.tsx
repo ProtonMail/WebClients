@@ -2,19 +2,22 @@ import React, { useMemo } from 'react';
 import Markdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import remarkGfm from 'remark-gfm';
 
-import './LumoMarkdown.scss';
-
 import { ButtonLike } from '@proton/atoms';
 import { Copy } from '@proton/components';
+import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
 import type { SearchItem } from '../../../lib/toolCall/types';
+import { useLumoTheme } from '../../../providers/LumoThemeProvider';
 import type { Message } from '../../../types';
 import { parseInteger } from '../../../util/number';
 import { convertRefTokensToSpans } from '../../../util/tokens';
 import { getDomain } from '../../interactiveConversation/messageChain/message/toolCall/helpers';
+
+import './LumoMarkdown.scss';
 
 const RefLink = React.memo(
     ({
@@ -90,13 +93,18 @@ const RefLink = React.memo(
 // Memoized code block component for better performance
 const CodeBlock = React.memo(
     ({ language, value, onCopy }: { language: string; value: string; onCopy?: () => void }) => {
+        const { theme } = useLumoTheme();
+
         // For very large code blocks, use optimization settings to prevent UI lag
         const isLargeCodeBlock = value.length > 3000;
+
+        // Determine syntax highlighter theme based on Lumo theme
+        const syntaxTheme = theme === ThemeTypes.LumoDark ? oneDark : oneLight;
 
         // Performance optimization options
         const highlighterOptions = useMemo(
             () => ({
-                style: oneLight,
+                style: syntaxTheme,
                 customStyle: { margin: 0, padding: 0 },
                 codeTagProps: {
                     style: {
@@ -115,7 +123,7 @@ const CodeBlock = React.memo(
                     lineProps: { style: { whiteSpace: 'pre' } },
                 }),
             }),
-            [isLargeCodeBlock]
+            [syntaxTheme, isLargeCodeBlock]
         );
 
         return (

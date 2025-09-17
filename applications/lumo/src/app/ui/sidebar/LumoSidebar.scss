@@ -7,6 +7,11 @@
 	padding: 12px;
 	gap: 8px;
 
+	// background-color: var(--background-norm);
+	@include media('<=small') {
+		background-color: var(--background-composer-mobile);
+	}
+
 	// Remove list styling from Lumo Plus button
 	li {
 		list-style: none !important;
@@ -32,8 +37,10 @@
 			padding: 8px !important;
 			padding-inline: 6px !important;
 
+			// background-color: var(--background-upsell-button) !important;
+
 			&:hover {
-				background-color: var(--background-weak) !important;
+				background-color: var(--interaction-default-hover) !important;
 			}
 		}
 	}
@@ -42,12 +49,12 @@
 .sidebar-section {
 	display: flex;
 	flex-direction: column;
-	gap: 2px;
+	gap: 4px;
 
 	&.sidebar-bottom {
 		margin-block-start: auto;
 		padding-block-start: 12px;
-		gap: 2px;
+		gap: 4px;
 	}
 }
 
@@ -181,6 +188,48 @@
 	min-block-size: 0;
 	margin-block: 8px;
 	margin-inline: 0;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out;
+	position: relative;
+	overflow: hidden; // Prevent content from expanding beyond boundaries
+
+	// Ensure smooth transitions without affecting layout
+	pointer-events: auto;
+
+	// When content should be visible (shouldShowContent is true)
+	&.content-visible {
+		opacity: 1;
+	}
+
+	// When content should be hidden (shouldShowContent is false)
+	&:not(.content-visible) {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	// Additional opacity control for text visibility during sidebar transitions
+	&.content-visible:not(.text-visible) {
+		opacity: 0.3; // Partially visible during sidebar collapse/expand
+	}
+}
+
+// Prevent text reflow during sidebar transitions by maintaining fixed layout
+// Target the ChatHistory container to prevent responsive width changes
+.chat-history-section .chat-history-container {
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	block-size: 100%;
+
+	// Fixed width prevents text reflow as sidebar animates from 64px to 260px
+	inline-size: 236px; // 260px (expanded sidebar) - 24px (padding)
+	max-inline-size: 236px;
+
+	// Enable scrolling for content overflow
+	overflow: hidden auto;
+
+	// Hardware acceleration for smooth transitions
+	transform: translateZ(0);
 }
 
 // Base sidebar item styling

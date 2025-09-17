@@ -62,9 +62,9 @@ const LumoPlusSidebarContent = ({ collapsed }: { collapsed: boolean }) => {
     // When expanded, show "Get" + Lumo+ logo + chevron
     return (
         <SidebarListItemContent
-            className="flex items-center w-full"
+            className="flex items-center w-full group-hover-opacity-container"
             collapsed={collapsed}
-            right={<Icon name="chevron-right" className="shrink-0" />}
+            right={<Icon name="chevron-right" className="shrink-0 group-hover:opacity-100" />}
         >
             <span className="flex items-center gap-2">
                 <span className="text-bold" style={{ fontFamily: 'Syne, sans-serif' }}>{c('collider_2025: Upsell Title')
@@ -88,7 +88,7 @@ const SidebarButtonWrapper = ({ collapsed, children }: SidebarButtonWrapperProps
 
 const getButtonClasses = (collapsed: boolean, includePadding = true) => {
     const padding = includePadding ? '' : '';
-    return `w-full ${padding} ${!collapsed ? 'bg-white rounded-lg p-4 lumo-plus-button-shadow' : ''}`.trim();
+    return `w-full ${padding} ${!collapsed ? 'lumo-plus-button rounded-lg p-4 lumo-plus-button-shadow' : ''}`.trim();
 };
 
 const LumoPlusSidebarButtonAuthenticated = ({ collapsed }: { collapsed: boolean }) => {

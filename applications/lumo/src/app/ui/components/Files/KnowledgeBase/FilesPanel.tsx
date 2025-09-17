@@ -171,7 +171,7 @@ export const FilesPanel = ({
         if (isGuest) {
             return (
                 <div
-                    className={`files-panel h-full ${isModal ? 'w-full modal-files-panel' : isMediumScreen ? 'w-1/2 pt-2 pr-4 pb-6' : 'w-1/3 pt-2 pr-4 pb-6'}`}
+                    className={`files-panel h-full ${isModal ? 'w-full modal-files-panel' : isMediumScreen ? 'w-1/2 pt-2 pr-4 pb-6 bg-weak' : 'w-1/3 pt-2 pr-4 pb-6 bg-weak'}`}
                     ref={filesContainerRef}
                 >
                     <div
@@ -275,27 +275,30 @@ export const FilesPanel = ({
             ref={filesContainerRef}
         >
             <div
-                className={`files-panel-content flex flex-column flex-nowrap w-full rounded-xl bg-norm shadow-lifted w-full h-full ${isModal ? '' : 'p-4'}`}
+                className={`files-panel-content flex flex-column flex-nowrap w-full rounded-xl bg-norm shadow-lifted w-full h-full ${isModal ? '' : 'p-4 bg-weak'}`}
             >
                 <div className="mb-4">
-                    <div className="flex flex-row flex-nowrap items-center justify-space-between mb-2">
-                        <p className="m-0 text-lg text-bold">{c('collider_2025: Info').t`Chat knowledge`}</p>
-
-                        <div className="flex flex-row items-center gap-1">
-                            <Button
-                                size="medium"
-                                shape="solid"
-                                onClick={() => setShowDriveBrowser(true)}
-                                className="shrink-0 button-bg-weak"
-                            >
-                                <IcBrandProtonDrive size={4} />
-                                <span className="text-sm ml-2">{c('collider_2025: Action')
-                                    .t`Browse ${DRIVE_SHORT_APP_NAME}`}</span>
-                            </Button>
-                            <Button icon className="shrink-0 " size="medium" shape="ghost" onClick={onClose}>
+                    <div className="flex flex-row items-center justify-space-between mb-2">
+                        <div className="flex flex-row flex-nowrap items-center gap-1">
+                            <Button icon className="shrink-0 " size="small" shape="ghost" onClick={onClose}>
                                 <IcCross />
                             </Button>
+                            <p className="m-0 text-lg text-bold">{c('collider_2025: Info').t`Chat knowledge`}</p>
                         </div>
+
+                        {/* <div className="flex flex-row items-center gap-1"> */}
+                        <Button
+                            size="medium"
+                            shape="solid"
+                            onClick={() => setShowDriveBrowser(true)}
+                            className="shrink-0 bg-strong flex flex-row flex-nowrap items-center"
+                            title={c('collider_2025: Action').t`Browse ${DRIVE_SHORT_APP_NAME}`}
+                        >
+                            <IcBrandProtonDrive size={4} />
+                            <span className="text-sm ml-2 hidden md:flex">{c('collider_2025: Action')
+                                .t`Browse ${DRIVE_SHORT_APP_NAME}`}</span>
+                        </Button>
+                        {/* </div> */}
                     </div>
                 </div>
 

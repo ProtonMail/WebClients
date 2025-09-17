@@ -29,6 +29,7 @@ import { bootstrapApp } from '../../bootstrap';
 import LumoLoader from '../../components/LumoLoader';
 import config from '../../config';
 import locales from '../../locales';
+import { LumoThemeProvider } from '../../providers/LumoThemeProvider';
 import type { LumoStore } from '../../redux/store';
 import { extraThunkArguments } from '../../redux/thunk';
 
@@ -106,7 +107,9 @@ const AuthApp = () => {
                                                         // @ts-ignore
                                                         loader={loader}
                                                     >
-                                                        <state.MainContainer />
+                                                        <LumoThemeProvider>
+                                                            <state.MainContainer />
+                                                        </LumoThemeProvider>
                                                     </StandardPrivateApp>
                                                 </ErrorBoundary>
                                             </EventManagerProvider>

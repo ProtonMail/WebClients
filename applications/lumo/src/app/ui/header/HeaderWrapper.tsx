@@ -1,65 +1,15 @@
 import type { ReactNode } from 'react';
-import { memo } from 'react';
-import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { Hamburger } from '@proton/components';
-import { BRAND_NAME, LUMO_SHORT_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import lumoLogo from '@proton/styles/assets/img/lumo/lumo-logo-V3.svg';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 // import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useIsGuest } from '../../providers/IsGuestProvider';
-import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
-import { GuestChatDisclaimerModal } from '../components/GuestChatDisclaimerModal';
-import LumoPlusLogoInline from '../components/LumoPlusLogoInline';
-
-export const LumoLogo = memo(() => {
-    const { isGuest, handleGuestClick, handleDisclaimerClose, disclaimerModalProps } = useGuestChatHandler();
-    const { hasLumoSeat } = useLumoPlan();
-
-    const onGuestClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        handleGuestClick();
-    };
-
-    if (isGuest) {
-        return (
-            <>
-                <Link to="/" onClick={onGuestClick}>
-                    <img src={lumoLogo} alt={LUMO_SHORT_APP_NAME} />
-                </Link>
-                {disclaimerModalProps.render && (
-                    <GuestChatDisclaimerModal onClick={handleDisclaimerClose} {...disclaimerModalProps.modalProps} />
-                )}
-            </>
-        );
-    }
-
-    return (
-        <Link to="/">
-            {hasLumoSeat ? <LumoPlusLogoInline height="21px" /> : <img src={lumoLogo} alt={LUMO_SHORT_APP_NAME} />}
-        </Link>
-    );
-});
-
-// // Separate component for authenticated users to avoid calling hooks in guest context
-// const AuthenticatedLumoLogo = memo(() => {
-//     const { hasLumoSeat } = useLumoPlan();
-
-//     const logoSrc = useMemo(() => {
-//         return hasLumoSeat ? lumoPlusLogo : lumoLogo;
-//     }, [hasLumoSeat]);
-
-//     return (
-//         <Link to="/">
-//             <img src={logoSrc} alt={LUMO_SHORT_APP_NAME} />
-//         </Link>
-//     );
-// });
+import LumoLogoHeader from './LumoLogo';
 
 const HeaderRightSide = ({ children }: { children: React.ReactNode }) => {
     return <div className="flex flex-nowrap items-center gap-4 no-print">{children}</div>;
@@ -86,11 +36,11 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
             <header className="w-full max-w-full flex flex-nowrap items-center justify-space-between mx-auto p-3 header-lumo">
                 <div className="md:flex-1 flex flex-row flex-nowrap items-center gap-2">
                     <Hamburger onToggle={toggleSideMenu} expanded={isSideMenuOpen} iconSize={5} />
-                    {isSmallScreen && <LumoLogo />}
+                    {isSmallScreen && <LumoLogoHeader />}
                     {!isSmallScreen && (
                         <ul className="flex-1 unstyled flex flex-row items-center m-0 mr-4 gap-2">
                             <li>
-                                <LumoLogo />
+                                <LumoLogoHeader />
                             </li>
                             <li className="pt-1 ml-5 no-print">
                                 <Href href="/about" className="inline-flex py-3 px-4 color-weak text-no-decoration">{c(

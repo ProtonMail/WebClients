@@ -149,7 +149,7 @@ const ThemeProvider = ({ children, appName }: Props) => {
             return {
                 ...themeSetting,
                 LightTheme: ThemeTypes.LumoLight,
-                DarkTheme: ThemeTypes.LumoLight,
+                DarkTheme: ThemeTypes.LumoDark,
             };
         }
 
