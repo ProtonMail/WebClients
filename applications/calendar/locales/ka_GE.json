@@ -11236,6 +11236,9 @@
       ],
       "Two-factor authentication": [
         "2FA"
+      ],
+      "Account restricted": [
+        "ანგარიში შეზღუდულია"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11848,6 +11851,980 @@
       ],
       "High-speed chats and advanced AI features.": [
         "სწრაფი ჩატები და დამატებითი ხი-ის ფუნქციები"
+      ]
+    },
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } ელ-ფოსტის მისამართი",
+        "${ addressCount } ელ-ფოსტის მისამართი"
+      ],
+      "${ admins } admin": [
+        "${ admins } ადმინისტრატორი",
+        "${ admins } ადმინისტრატორი"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } ახალი კალენდარი",
+        "${ calendarsToBeCreatedCount } ახალი კალენდარი"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } შერწყმული კალენდარი",
+        "${ calendarsToBeMergedCount } შერწყმული კალენდარი"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } დღე",
+        "${ ceilDays } დღე"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } საათი",
+        "${ ceilHours } საათი"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } წუთი",
+        "${ ceilMinutes } წუთი"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } კონტაქტი ელფოსტის მრავალ მისამართს შეიცავს.",
+        "${ contactCount } კონტაქტი ელფოსტის მრავალ მისამართს შეიცავს."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } წევრი",
+        "${ contactEmailsLength } წევრი"
+      ],
+      "${ contactsCount } contact found": [
+        "ნაპოვნია ${ contactsCount } კონტაქტი",
+        "ნაპოვნია ${ contactsCount } კონტაქტი"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ countContacts }-დან ${ contactsExported.length } კონტაქტის გატანა წარმატებულია.",
+        "${ countContacts }-დან ${ contactsExported.length } კონტაქტის გატანა წარმატებულია."
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } კონტაქტი",
+        "${ contactsLength } კონტაქტი"
+      ],
+      "${ count } time": [
+        "${ count }-ჯერ",
+        "${ count } ჯერ"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } ერთნაირია.",
+        "${ countMergeableContacts } ერთნაირია."
+      ],
+      "${ dayDiff } day left": [
+        "დარჩენილია ${ dayDiff } დღე",
+        "დარჩენილია ${ dayDiff } დღე"
+      ],
+      "${ days } day": [
+        "${ days } დღე",
+        "${ days } დღე"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } დამატებითი მორგებული დომენი",
+        "${ domains } დამატებითი მორგებული დომენი"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } ელფოსტის მისამართი",
+        "${ emailsCount } ელფოსტის მისამართი"
+      ],
+      "${ filteredList.length } command found.": [
+        "აღმოჩენილია ${ filteredList.length } ბრძანება.",
+        "აღმოჩენილია ${ filteredList.length } ბრძანება."
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } საათი",
+        "${ gracePeriodHoursRemaining } საათი"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "კიდევ ${ gracePeriodHoursRemaining } საათი",
+        "კიდევ ${ gracePeriodHoursRemaining } საათი"
+      ],
+      "${ groupCounts } group found": [
+        "ნაპოვნია ${ groupCounts } ჯგუფი",
+        "ნაპოვნია ${ groupCounts } ჯგუფი"
+      ],
+      "${ hours } h": [
+        "${ hours } საათი",
+        "${ hours } საათი"
+      ],
+      "${ hours } hour": [
+        "${ hours } საათი",
+        "${ hours } საათი"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 სთ",
+        "${ hoursInt }.5 სთ"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 საათი",
+        "${ hoursInt }.5 საათი"
+      ],
+      "${ ips } server": [
+        "${ ips } სერვერი",
+        "${ ips } სერვერი"
+      ],
+      "${ list } doesn't have a valid email address": [
+        "${ list } კონტაქტს ელფოსტის სწორი მისამართი არ გააჩნია",
+        "${ list } კონტაქტს ელფოსტის სწორი მისამართი არ გააჩნია"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } კონტაქტს ელფოსტის მისამართი არ გააჩნია",
+        "${ list } კონტაქტს ელფოსტის მისამართი არ გააჩნია"
+      ],
+      "${ list } has invalid emails": [
+        "${ list } ჯგუფს არასწორი ელფოსტები აქვს",
+        "${ list } ჯგუფს არასწორი ელფოსტები აქვს"
+      ],
+      "${ list } has no contacts": [
+        "${ list }-ს კონტაქტები არ გააჩნია",
+        "${ list }-ს კონტაქტები არ გააჩნია"
+      ],
+      "${ minutes } min": [
+        "${ minutes } წთ",
+        "${ minutes } წთ"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } წუთი",
+        "${ minutes } წუთი"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ totalBeDeleted }-დან ${ model.deleted.length } კონტაქტი წარმატებით წაიშალა.",
+        "${ totalBeDeleted }-დან ${ model.deleted.length } კონტაქტი წარმატებით წაიშალა."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ totalBeMerged }-დან ${ model.submitted.length } კონტაქტი წარმატებით იქნა შერწყმული.",
+        "${ totalBeMerged }-დან ${ model.submitted.length } კონტაქტი წარმატებით იქნა შერწყმული."
+      ],
+      "${ more } more": [
+        "კიდევ ${ more }",
+        "კიდევ ${ more }"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n }${ BRAND_NAME }-ის ელფოსტის მისმაართი",
+        "${ n }${ BRAND_NAME }-ის ელფოსტის მისმაართი"
+      ],
+      "${ n } account per wallet": [
+        "${ n } ანგარიში თითოეული საფულისთვის",
+        "${ n } ანგარიში თითოეული საფულისთვის"
+      ],
+      "${ n } calendar": [
+        "${ n } კალენდარი",
+        "${ n } კალენდარი"
+      ],
+      "${ n } calendar per user": [
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის"
+      ],
+      "${ n } custom email domain": [
+        "ელფოსტის ${ n } ხელით მითითებული დომენი",
+        "ელფოსტის ${ n } ხელით მითითებული დომენი"
+      ],
+      "${ n } device": [
+        "${ n } მოწყობილობა",
+        "${ n } მოწყობილობა"
+      ],
+      "${ n } email address": [
+        "ელფოსტის ${ n } მისამართი",
+        "ელფოსტის ${ n } მისამართი"
+      ],
+      "${ n } email address per user": [
+        "ელფოსტის ${ n } მისამართი თითოეული მომხმარებლისთვის",
+        "ელფოსტის ${ n } მისამართი თითოეული მომხმარებლისთვის"
+      ],
+      "${ n } filter": [
+        "${ n } ფილტრი",
+        "${ n } ფილტრი"
+      ],
+      "${ n } folder": [
+        "${ n } საქაღალდე",
+        "${ n } საქაღალდე"
+      ],
+      "${ n } folder and label": [
+        "${ n } საქაღალდე და ჭდე",
+        "${ n } საქაღალდე და ჭდე"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } უფასო VPN კავშირი თითოეული მომხმარებლისთვის",
+        "${ n } უფასო VPN კავშირი თითოეული მომხმარებლისთვის"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } მეტსახელი Hide-my-email-სთვის",
+        "${ n } მეტსახელი Hide-my-email-სთვის"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } ჩქაროსნული VPN შეერთება",
+        "${ n } ჩქაროსნული VPN შეერთება"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } ჩქაროსნული VPN შეერთება თითოეული მომხმარებლისთვის",
+        "${ n } ჩქაროსნული VPN შეერთება თითოეული მომხმარებლისთვის"
+      ],
+      "${ n } label": [
+        "${ n } ჭდე",
+        "${ n } ჭდე"
+      ],
+      "${ n } message per day": [
+        "${ n }-მდე შეტყობინება დღეში",
+        "${ n }-მდე შეტყობინება დღეში"
+      ],
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ n } month FREE": [
+        "${ n } თვე უფასოდ",
+        "${ n } თვე უფასოდ"
+      ],
+      "${ n } server": [
+        "${ n } სერვერი",
+        "${ n } სერვერი"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის",
+        "${ n } გაზიარებული ${ PASS_SHORT_APP_NAME }-ის საცავი თითოეული მომხმარებლისთვის"
+      ],
+      "${ n } user account": [
+        "${ n } მომხმარებლის ანგარიში",
+        "${ n } მომხმარებლის ანგარიში"
+      ],
+      "${ n } vault": [
+        "${ n } საცავი",
+        "${ n } საცავი"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN კავშირი",
+        "${ n } VPN კავშირი"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN კავშირი თითოეული მომხმარებლისთვის",
+        "${ n } VPN კავშირი თითოეული მომხმარებლისთვის"
+      ],
+      "${ n } wallet": [
+        "${ n } საფულე",
+        "${ n } საფულე"
+      ],
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } მონაწილე",
+        "${ numberOfAttendees } მონაწილე"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } ქვეყანა",
+        "${ numberOfCountries } ქვეყანა"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } ${ numberOfCountries } ქვეყანაში",
+        "${ numberOfServers } ${ numberOfCountries } ქვეყანაში"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში",
+        "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } მომხმარებელი",
+        "${ numberOfUsers } მომხამრებელი"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-დღიანი ფაილის ვერსიის ისტორია",
+        "${ options }-დღიანი ფაილის ვერსიის ისტორია"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით",
+        "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში.",
+        "${ planName }-ის ვადა იწურება ${ daysLeft } დღეში."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ planNumberOfCalendars } კალენდარი თითოეული მომხმარებლისათვის"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი",
+        "ელფოსტის ${ planNumberOfDomains } ხელით მითითებული დომენი"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ელფოსტის მისამართი",
+        "${ planNumberOfEmails } ელფოსტის მისამართი"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "ელფოსტის ${ planNumberOfEmails } მისამართი თითოეული მომხმარებლისთვის",
+        "ელფოსტის ${ planNumberOfEmails } მისამართი თითოეული მომხმარებლისთვის"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } მომხმარებელი",
+        "${ planNumberOfUsers } მომხმარებელი"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "ნაპოვნია ${ providerFoldersNumLocalized } საქაღალდე",
+        "ნაპოვნია ${ providerFoldersNumLocalized } საქაღალდე"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Gmail-ში ნაპოვნია ${ providerFoldersNumLocalized } ჭდე",
+        "Gmail-ში ნაპოვნია ${ providerFoldersNumLocalized } ჭდე"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია",
+        "${ seats }${ LUMO_APP_NAME } ლიცენზია"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } წერის დამხმარის ლიცენზია",
+        "${ seats } წერის დამხმარის ლიცენზია"
+      ],
+      "${ seconds } second": [
+        "${ seconds } წამი",
+        "${ seconds } წამი"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან",
+        "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი",
+        "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "მონიშნულია ${ selectedFoldersCount } საქაღალდე",
+        "მონიშნულია ${ selectedFoldersCount } საქაღალდე"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "მონიშნულია ${ selectedFoldersCount } ჭდე",
+        "მონიშნულია ${ selectedFoldersCount } ჭდე"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე",
+        "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე",
+        "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } დღე",
+        "${ timeRemaining.inDays } დღე"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } საათი",
+        "${ timeRemaining.inHours } საათი"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } კონტაქტი",
+        "${ totalContacts } კონტაქტი"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents }-დან ${ totalEventsDiscarded } მოვლენა არ იქნება შემოტანილი. დეტალებისთვის ჩამოშალეთ.",
+        "${ totalEvents }-დან ${ totalEventsDiscarded } მოვლენა არ იქნება შემოტანილი. დეტალებისთვის ჩამოშალეთ."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } კონტაქტი დაშიფრული და დამატებულია თქვენი კონტაქტების სიაში",
+        "${ totalImported }/${ totalToImport } კონტაქტი დაშიფრული და დამატებულია თქვენი კონტაქტების სიაში"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } მოვლენა დაიშიფრა და ჩაემატა თქვენს კალენდარში",
+        "${ totalImported }/${ totalToImport } მოვლენა დაიშიფრა და ჩაემატა თქვენს კალენდარში"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } კონტაქტი წარმატებით განახლდა.",
+        "${ updated } კონტაქტი წარმატებით განახლდა."
+      ],
+      "${ users } user": [
+        "${ users } მომხმარებელი",
+        "${ users } მომხმარებელი"
+      ],
+      "${ value } day after": [
+        "${ value } დღის შემდეგ",
+        "${ value } დღის შემდეგ"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } დღე ${ time }-ის შემდეგ",
+        "${ value } დღე ${ time }-ის შემდეგ"
+      ],
+      "${ value } day before": [
+        "${ value } დღით ადრე",
+        "${ value } დღით ადრე"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ value } დღე ${ time }-მდე",
+        "${ value } დღე ${ time }-მდე"
+      ],
+      "${ value } hour after": [
+        "${ value } საათის შემდეგ",
+        "${ value } საათის შემდეგ"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ value } საათი ${ time }-ის შემდეგ",
+        "${ value } საათი ${ time }-ის შემდეგ"
+      ],
+      "${ value } hour before": [
+        "${ value } საათით ადრე",
+        "${ value } საათით ადრე"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ value } საათი ${ time }-მდე",
+        "${ value } საათი ${ time }-მდე"
+      ],
+      "${ value } minute after": [
+        "${ value } წუთის შემდეგ",
+        "${ value } წუთის შემდეგ"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ value } წუთი ${ time }-ის შემდეგ",
+        "${ value } წუთი ${ time }-ის შემდეგ"
+      ],
+      "${ value } minute before": [
+        "${ value } წუთით ადრე",
+        "${ value } წუთით ადრე"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ value } წუთი ${ time }-მდე",
+        "${ value } წუთი ${ time }-მდე"
+      ],
+      "${ value } week after": [
+        "${ value } კვირის შემდეგ",
+        "${ value } კვირის შემდეგ"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ value } კვირა ${ time }-ის შემდეგ",
+        "${ value } კვირა ${ time }-ის შემდეგ"
+      ],
+      "${ value } week before": [
+        "${ value } კვირით ადრე",
+        "${ value } კვირით ადრე"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ value } კვირა ${ time }-მდე",
+        "${ value } კვირა ${ time }-მდე"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } წევრი)",
+        "(${ memberCount } წევრი)"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )",
+        "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )"
+      ],
+      "Add to ${ groupCount } group": [
+        "${ groupCount } ჯგუფში ჩამატება",
+        "${ groupCount } ჯგუფში ჩამატება"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "ყველა (${ totalFoldersCount } საქაღალდე)",
+        "ყველა (${ totalFoldersCount } საქაღალდე)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "ყველა (${ totalFoldersCount } ჭდე)",
+        "ყველა (${ totalFoldersCount } ჭდე)"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "მთელი დღე. ძლებს ${ plusDaysToEnd } დღე",
+        "მთელი დღე. ძლებს ${ plusDaysToEnd } დღე"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
+        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "შექმნილი კალენდრების რაოდენობა: ${ createdCalendarCount } ${ calendarsToBeCreated }-დან",
+        "შექმნილი კალენდრების რაოდენობა: ${ createdCalendarCount } ${ calendarsToBeCreated }-დან"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "შეცდომა დაშიფვრისა და მოვლენაში დამატებისას. წარმატებით შემოტანილია ${ totalImported } კონტაქტი ${ totalToImport }-დან.",
+        "შეცდომა დაშიფვრისა და მოვლენაში დამატებისას. წარმატებით შემოტანილია ${ totalImported } კონტაქტი ${ totalToImport }-დან."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "დარწმუნებული ბრძანდებთ, რომ გნებავთ, სამუდამოდ წაშალოთ ${ count } კონტაქტი?",
+        "დარწმუნებული ბრძანდებთ, რომ გნებავთ, სამუდამოდ წაშალოთ ${ count } კონტაქტი?"
+      ],
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "მოსაწვევში, მაქსიმუმ, ${ maxAttendees } მონაწილე შეიძლება იყოს",
+        "მოსაწვევში, მაქსიმუმ, ${ maxAttendees } მონაწილე შეიძლება იყოს"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
+        "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "ავტოარჩეულია ${ numberOfCountries } ქვეყნიდან",
+        "ავტოარჩეულია ${ numberOfCountries } ქვეყნიდან"
+      ],
+      "byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
+      "Byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
+      "Contact deleted": [
+        "კონტაქტი წაიშალა",
+        "კონტაქტები წაიშალა"
+      ],
+      "Contact group deleted": [
+        "კონტაქტების ჯგუფი წაიშალა",
+        "კონტაქტების ჯგუფები წაიშალა"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი",
+        "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის",
+        "დაცული ღრუბლის შექმნა ${ value } წევრისთვის"
+      ],
+      "Create up to ${ n } calendar": [
+        "შექმენით ${ n }-მდე კალენდარი",
+        "შექმენით ${ n }-მდე კალენდარი"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები",
+        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები"
+      ],
+      "Day": [
+        "დღე",
+        "დღე"
+      ],
+      "day before": [
+        "წინა დღეს",
+        "დღით ადრე"
+      ],
+      "Delete ${ count } contact": [
+        "${ count } კონტაქტის წაშლა",
+        "${ count } კონტაქტის წაშლა"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } კონტაქტების ჯგუფის წაშლა",
+        "${ count } კონტაქტების ჯგუფის წაშლა"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } კონტაქტის წაშლა",
+        "${ selectedCount } კონტაქტის წაშლა"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } კონტაქტების ჯგუფის წაშლა",
+        "${ selectedCount } კონტაქტების ჯგუფის წაშლა"
+      ],
+      "Deleting event...": [
+        "მოვლენის წაშლა...",
+        "მოვლენების წაშლა..."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე",
+        "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "მოხსენით მონიშვნა სულ ცოტა ${ calendarsToFixCount } კალენდარზე, ან",
+        "მოხსენით მონიშვნა სულ ცოტა ${ calendarsToFixCount } კალენდარზე, ან"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "მიახლოებითი დარჩენილი დრო: ${ estimatedMinutes } წთ",
+        "მიახლოებითი დარჩენილი დრო: ${ estimatedMinutes } წთ"
+      ],
+      "event": [
+        "მოვლენა",
+        "მოვლენა"
+      ],
+      "Every ${ interval } day": [
+        "ყოველ ${ interval } დღეში",
+        "ყოველ ${ interval } დღეში"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "ყოველ ${ interval } დღეში, ${ timesString }-ზე",
+        "ყოველ ${ interval } დღეში, ${ timesString }-ზე"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "ყოველ ${ interval } დღეში, ${ untilString }-მდე",
+        "ყოველ ${ interval } დღეში, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "ყოველ ${ interval } თვეში ${ onDayString }",
+        "ყოველ ${ interval } თვეში ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "ყოველ ${ interval } თვეში ერთხელ, ${ onDayString }, ${ timesString }-ზე",
+        "ყოველ ${ interval } თვეში ერთხელ, ${ onDayString }, ${ timesString }-ზე"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "ყოველ ${ interval } თვეში, ${ onDayString }, ${ untilString }-მდე",
+        "ყოველ ${ interval } თვეში, ${ onDayString }, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "ყოველ ${ interval } კვირას ${ multipleDaysString }-ზე",
+        "ყოველ ${ interval } კვირას ${ multipleDaysString }-ზე"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "ყოველ ${ interval } კვირაში, ${ multipleDaysString }, ${ timesString }-ზე",
+        "ყოველ ${ interval } კვირაში, ${ multipleDaysString }, ${ timesString }-ზე"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "ყოველ ${ interval } კვირაში, ${ multipleDaysString }, ${ untilString }-მდე",
+        "ყოველ ${ interval } კვირაში, ${ multipleDaysString }, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } week on all days": [
+        "ყოველ ${ interval }-ე კვირის ყოველ დღეს",
+        "ყოველ ${ interval }-ე კვირის ყოველ დღეს"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "ყოველ ${ interval } კვირაში, ყოველდღე, ${ timesString }-ზე",
+        "ყოველ ${ interval } კვირაში, ყოველდღე, ${ timesString }-ზე"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "ყოველ ${ interval } კვირაში ერთხელ, ყოველდღე, ${ untilString }-მდე",
+        "ყოველ ${ interval } კვირაში ერთხელ, ყოველდღე, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } week on Friday": [
+        "ყოველ ${ interval } კვირაში ერთხელ, პარასკეობით",
+        "ყოველ ${ interval } კვირაში ერთხელ, პარასკეობით"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "ყოველ ${ interval } კვირაში, პარასკეობით, ${ timesString }",
+        "ყოველ ${ interval } კვირაში, პარასკეობით, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "ყოველ ${ interval } კვირაში, პარასკეობით, ${ untilString }-მდე",
+        "ყოველ ${ interval } კვირაში, პარასკეობით, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } week on Monday": [
+        "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით",
+        "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით, ${ timesString }",
+        "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით, ${ untilString }-მდე",
+        "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით",
+        "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით, ${ timesString }",
+        "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით, ${ untilString }-მდე",
+        "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "ყოველ ${ interval } კვირაში, კვირაობით",
+        "ყოველ ${ interval } კვირაში, კვირაობით"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "ყოველ ${ interval } კვირაში, კვირაობით, ${ timesString }",
+        "ყოველ ${ interval } კვირაში, კვირაობით, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "ყოველ ${ interval } კვირაში, კვირაობით, ${ untilString }-მდე",
+        "ყოველ ${ interval } კვირაში, კვირაობით, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით",
+        "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით, ${ timesString }",
+        "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით, ${ untilString }-მდე",
+        "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით",
+        "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით, ${ timesString }",
+        "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით, ${ untilString }-მდე",
+        "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "ყოველ ${ interval } კვირაში, ოთხშაბათობით",
+        "ყოველ ${ interval } კვირაში, ოთხშაბათობით"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "ყოველ ${ interval } კვირაში, ოთხშაბათობით, ${ timesString }",
+        "ყოველ ${ interval } კვირაში, ოთხშაბათობით, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "ყოველ ${ interval } კვირაში, ოთხშაბათობით, ${ untilString }-მდე",
+        "ყოველ ${ interval } კვირაში, ოთხშაბათობით, ${ untilString }-მდე"
+      ],
+      "Every ${ interval } year": [
+        "ყოველ ${ interval } წელიწადში",
+        "ყოველ ${ interval } წელიწადში"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "ყოველ ${ interval } წელიწადში, ${ timesString }-ზე",
+        "ყოველ ${ interval } წელიწადში, ${ timesString }-ზე"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "ყოველ ${ interval } წელიწადში, ${ untilString }-მდე",
+        "ყოველ ${ interval } წელიწადში, ${ untilString }-მდე"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "ნაპოვნია ${ itemsCount } მინიშნება. აირჩიეთ კლავიატურით.",
+        "ნაპოვნია ${ itemsCount } მინიშნება. აირჩიეთ კლავიატურით."
+      ],
+      "Gigabyte": [
+        "გიგაბაიტი",
+        "გიგაბაიტი"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "ჩქაროსნული VPN ${ n } მოწყობილობაზე",
+        "ჩქაროსნული VPN ${ n } მოწყობილობაზე"
+      ],
+      "hour before": [
+        "საათით ადრე",
+        "საათით ადრე"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount }-დან ${ totalCalendarsCount } კალენდრის შემოტანა",
+        "${ calendarCount }-დან ${ totalCalendarsCount } კალენდრის შემოტანა"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "შემოიტანეთ ყველა შეტყობინება ${ itemsToImportCount } საქაღალდეებიდან და მონიშნეთ ისინი როგორც",
+        "შემოიტანეთ ყველა შეტყობინება ${ itemsToImportCount } საქაღალდეებიდან და მონიშნეთ ისინი როგორც"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } ჭდიდან ყველა შეტყობინების შემოტანა და მათი მონიშვნა, როგორც",
+        "${ itemsToImportCount } ჭდიდან ყველა შეტყობინების შემოტანა და მათი მონიშვნა, როგორც"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "ყველა შეტყობინების შემოტანა ${ selectedItemsToImportCount }/${ itemsToImportCount } საქაღალდიდან და მათი მონიშვნა, როგორც",
+        "ყველა შეტყობინების შემოტანა ${ selectedItemsToImportCount }/${ itemsToImportCount } საქაღალდიდან და მათი მონიშვნა, როგორც"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც",
+        "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც"
+      ],
+      "Import as simple event?": [
+        "შემოვიტანო მარტივი მოვლენის სახით?",
+        "შემოვიტანო მარტივი მოვლენების სახით?"
+      ],
+      "Kilobyte": [
+        "კილობაიტი",
+        "კილობაიტი"
+      ],
+      "Megabyte": [
+        "მეგაბაიტი",
+        "მეგაბაიტი"
+      ],
+      "Member added": [
+        "წევრი დაემატა",
+        "წევრი დაემატა"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ",
+        "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ"
+      ],
+      "minute before": [
+        "წუთით ადრე",
+        "წუთით ადრე"
+      ],
+      "Month": [
+        "თვე",
+        "თვე"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "კონტაქტებიდან ერთ-ერთს ელფოსტის მისამართი არ გააჩნია: ${ noEmailsContactNamesList }",
+        "რამდენიმე კონტაქტს ელფოსტის მისამართი არ გააჩნია: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "ერთ-ერთ ჯგუფში კონტაქტები არაა: ${ noContactGroupList }",
+        "ზოგიერთ ჯგუფში კონტაქტები არაა: ${ noContactGroupList } "
+      ],
+      "participant": [
+        "მონაწილე",
+        "მონაწილე"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ MIN_PASSWORD_LENGTH } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "პაროლის შეცვლა მოთხოვნილია (${ user.Email }) პაროლის შეცვლა ${ hoursRemaining } საათში შეგეძლებათ.",
+        "პაროლის შეცვლა მოთხოვნილია (${ user.Email }) პაროლის შეცვლა ${ hoursRemaining } საათში შეგეძლებათ."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
+        "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "აირჩიეთ, ${ groupCount } ჯგუფში ელფოსტის რომელი მისამართ(ებ)-ის დამატება გსურთ.",
+        "აირჩიეთ, ${ groupCount } ჯგუფში ელფოსტის რომელი მისამართ(ებ)-ის დამატება გსურთ."
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "წაშლილია ${ joinedRecipients } გამეორებადი მიმღები",
+        "წაშლილია ${ joinedRecipients } გამეორებადი მიმღები"
+      ],
+      "Saving event...": [
+        "მოვლენების შენახვა...",
+        "მოვლენების შენახვა..."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ.",
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს ${ addresses } ელფოსტის მისამართებს, მომხმარებლის ელფოსტის დომენების მხარდაჭერას, ${ BRAND_NAME } Scribe დაწერვის ასისტენტს, განუსაზღვრელ hide-my-email-ის ფსევდონიმებს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა.",
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. მოიცავს ${ addresses } ელფოსტის მისამართს, მომხმარებლის ელფოსტა დომენების მხარდაჭერას, უნაყოფო hide-my-email-ის ფსევდონიმებს და სხვა."
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "სერვერები ${ numberOfCountries }+ ქვეყანაში",
+        "სერვერები ${ numberOfCountries }+ ქვეყანაში"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "გამოწერა ყოველ ${ cycle } თვეში განახლდება.",
+        "გამოწერა ყოველ ${ cycle } თვეში განახლდება."
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } მომხმარებლის დომენის მხარდაჭერა",
+        "${ n } მომხმარებლის დომენის მხარდაჭერა"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
+        "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "სპეციალურად დაკლებული ფასები ${ priceWithDiscount }-მდე ვარგისია პირველი ${ subscriptionLength } თვეში.",
+        "სპეციალურად დაკლებული ფასები ${ priceWithDiscount }-მდე ვარგისია პირველი ${ subscriptionLength } თვეში."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ.",
+        "შემდეტ ის ავტომატურად განახლდება ${ renewPriceStr }-ზე ${ renewalLength } თვის განმავლობაში. გაუქმება ყოველთვის შეგეძლებათ."
+      ],
+      "This file contains an event invitation:": [
+        "ეს ფაილი შეიცავს მოსაწვევს:",
+        "ეს ფაილი შეიცავს მოსაწვევებს:"
+      ],
+      "This file contains an invitation response:": [
+        "ეს ფაილი მოსაწვევზე პასუხს შეიცავს:",
+        "ეს ფაილი მოსაწვევზე პასუხს შეიცავს:"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება",
+        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება",
+        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება"
+      ],
+      "Total for ${ n } month": [
+        "ჯამში ${ n } თვის",
+        "ჯამში ${ n } თვის"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
+      ],
+      "Up to ${ n } user": [
+        "${ n }-მდე მომხმარებელი",
+        "${ n }-მდე მომხმარებელი"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "${ n }-მდე მომხამრებელი (${ adminsText }, ${ usersText })",
+        "${ n }-მდე მომხამრებელი (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "ერთდროულად ${ n }-მდე მოწყობილობა",
+        "ერთდროულად ${ n }-მდე მოწყობილობა"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
+        "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის",
+        "VPN კავშირები ${ n } მოწყობილობაზე თითოქული მომხმარებლისთვის"
+      ],
+      "Week": [
+        "კვირა",
+        "კვირა"
+      ],
+      "week before": [
+        "კვირით ადრე",
+        "კვირით ადრე"
+      ],
+      "Year": [
+        "წელი",
+        "წელი"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით.",
+        "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "შეგიძლიათ, გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ გამოწერას გააუქმებდით.",
+        "შეგიძლიათ, გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ გამოწერას გააუქმებდით."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
+        "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
+        "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
+        "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "გაქვთ ${ timeRemaining.inHours } საათი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inHours } საათი ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inMinutes } წუთი ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "გაქვთ ${ timeRemaining.inSeconds } წამი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inSeconds } წამი ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "გადააჭარბეთ, მაქსიმუმ, ${ MAX_CALENDAR_MEMBERS } წევრს თითოეული კალენდრისთვის",
+        "გადააჭარბეთ, მაქსიმუმ, ${ MAX_CALENDAR_MEMBERS } წევრს თითოეული კალენდრისთვის"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "თქვენ მიაღწიეთ ამ კალენდრისთვის დაშვებულ ${ MAX_CALENDAR_MEMBERS } წევრს.\nკალენდრის ${ BRAND_NAME }-ის მეტი წევრისთვის გასაზიარებლად ზოგიერთი წევრის წაშლა დაგჭირდებათ.",
+        "თქვენ მიაღწიეთ ამ კალენდრისთვის დაშვებულ ${ MAX_CALENDAR_MEMBERS } წევრს.\nკალენდრის ${ BRAND_NAME }-ის მეტი წევრისთვის გასაზიარებლად ზოგიერთი წევრის წაშლა დაგჭირდებათ."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "მიაღწიეთ ამ კალენდრისთვის დაშვებულ ${ MAX_LINKS_PER_CALENDAR } ბმულს.\nამ კალენდრამდე ახალი ბმულის შესაქმნელად ერთ-ერთი არსებულის წაშლა მოგიწევთ.",
+        "მიაღწიეთ ამ კალენდრისთვის დაშვებულ ${ MAX_LINKS_PER_CALENDAR } ბმულს.\nამ კალენდრამდე ახალი ბმულის შესაქმნელად ერთ-ერთი არსებულის წაშლა მოგიწევთ."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "**${ currentPlanName }**-ის ანგარიშზე **${ daysRemaining }** დაგრჩათ.",
+        "**${ currentPlanName }**-ის ანგარიშზე **${ daysRemaining }** დაგრჩათ."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
+        "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS }-ზე მეტ მოვლენას შეიცავს.",
+        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS }-ზე მეტ მოვლენას შეიცავს."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ.",
+        "თქვენი გეგმის დაწყების დროა ${ renewalTime } და ის ავტომატურად განახლდება ${ cycle } თვეში ერთხელ."
+      ]
+    },
+    "Tooltip; share calendar modal": {
+      "Shared end-to-end encrypted": [
+        "გაზიარებული გამჭოლად დაშიფრულია"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "გაზიარებულია გამჭოლი შიფრაციით სანდო კონტაქტთან"
       ]
     }
   }

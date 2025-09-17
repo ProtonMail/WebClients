@@ -9385,6 +9385,832 @@
       "Passcode:": [
         "पासकोड:"
       ]
+    },
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } ईमेल पता",
+        "${ addressCount } ईमेल पते"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } नया कैलेंडर",
+        "${ calendarsToBeCreatedCount } नए कैलेंडर"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } मर्ज किया गया कैलेंडर",
+        "${ calendarsToBeMergedCount } मर्ज किए गए कैलेंडर"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } दिन",
+        "${ ceilDays } दिन"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } घंटा",
+        "${ ceilHours } घंटे"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } मिनट",
+        "${ ceilMinutes } मिनट"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } संपर्क के एक से अधिक ईपत्र पते हैं।",
+        "${ contactCount } संपर्क के एक से अधिक ईपत्र पते हैं।"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } सदस्य",
+        "${ contactEmailsLength } सदस्य"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } संपर्क मिला",
+        "${ contactsCount } संपर्क मिले"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ countContacts } में से ${ contactsExported.length } संपर्क सफलतापूर्वक निर्यात किया",
+        "${ countContacts } में से ${ contactsExported.length } संपर्क सफलतापूर्वक निर्यात किए"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } संपर्क",
+        "${ contactsLength } संपर्क"
+      ],
+      "${ count } time": [
+        "${ count } समय",
+        "${ count } बार"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } संपर्क एक जैसा है।",
+        "${ countMergeableContacts } संपर्क एक जैसे है।"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } दिन बाकी",
+        "${ dayDiff } दिन बाकी"
+      ],
+      "${ days } day": [
+        "${ days } दिन",
+        "${ days } दिन"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } ईमेल पता",
+        "${ emailsCount } ईमेल पते"
+      ],
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } कमांड मिला।",
+        "${ filteredList.length } कमांड मिले।"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } घंटा",
+        "${ gracePeriodHoursRemaining } घंटे"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } समूह मिला",
+        "${ groupCounts } समूह मिले"
+      ],
+      "${ hours } h": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ hours } hour": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 घंटा",
+        "${ hoursInt }.5 घंटे"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 घंटा",
+        "${ hoursInt }.5 घंटे"
+      ],
+      "${ ips } server": [
+        "${ ips } सर्वर",
+        "${ ips } सर्वर"
+      ],
+      "${ list } doesn't have a valid email address": [
+        "${ list } के पास मान्य ईमेल पता नहीं है",
+        "कुछ संपर्क के पास मान्य ईमेल पते नहीं है: ${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } के पास ईमेल पता नहीं है",
+        "कुछ संपर्क के पास ईमेल पते नहीं है: ${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "${ list } में अमान्य ईमेल है",
+        "कुछ समुह में अमान्य ईमेल है: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } में कोई संपर्क नहीं",
+        "कुछ समूह में कोई संपर्क नहीं: ${ list }"
+      ],
+      "${ minutes } min": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } में से ${ totalBeDeleted } संपर्क सफलतापूर्वक हटा दिया गया।",
+        "${ model.deleted.length } में से ${ totalBeDeleted } संपर्कों सफलतापूर्वक हटा दिया गया।"
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } में से ${ totalBeMerged } संपर्क सफलतापूर्वक मर्ज हो गया।",
+        "${ model.submitted.length } में से ${ totalBeMerged } संपर्कों सफलतापूर्वक मर्ज हो गए।"
+      ],
+      "${ more } more": [
+        "${ more } और",
+        "${ more } और"
+      ],
+      "${ n } calendar": [
+        "${ n } कैलेंडर",
+        "${ n } कैलेंडर"
+      ],
+      "${ n } calendar per user": [
+        "${ n } कैलेंडर हर यूज़र पे",
+        "${ n } कैलेंडर हर यूज़र पे"
+      ],
+      "${ n } custom email domain": [
+        "${ n } कस्टम ईमेल डोमेन",
+        "${ n } कस्टम ईमेल डोमेन"
+      ],
+      "${ n } device": [
+        "${ n } डिवाइस",
+        "${ n } डिवाइस"
+      ],
+      "${ n } email address": [
+        "${ n } ईमेल पता",
+        "${ n } ईमेल पता/उपनाम"
+      ],
+      "${ n } email address per user": [
+        "प्रति उपयोगकर्ता ${ n } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ n } ईमेल पते"
+      ],
+      "${ n } filter": [
+        "${ n } फिल्टर",
+        "${ n } फिल्टर"
+      ],
+      "${ n } folder": [
+        "${ n } फोल्डर",
+        "${ n } फोल्डर"
+      ],
+      "${ n } folder and label": [
+        "${ n } फोल्डर और लेबल",
+        "${ n } फोल्डर और लेबल"
+      ],
+      "${ n } free VPN connection per user": [
+        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email नकली-नाम",
+        "${ n } hide-my-email नकली-नाम"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } तेज़ वीपीएन कनेक्शन",
+        "${ n } तेज़ वीपीएन कनेक्शन"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "प्रति उपयोगकर्ता ${ n } उच्च गति वाला VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } उच्च गति वाले VPN कनेक्शन"
+      ],
+      "${ n } label": [
+        "${ n } लेबल",
+        "${ n } लेबल"
+      ],
+      "${ n } message per day": [
+        "प्रतिदिन ${ n } संदेश",
+        "प्रतिदिन ${ n } संदेश"
+      ],
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
+      ],
+      "${ n } month FREE": [
+        "${ n } महीना मुफ्त",
+        "${ n } महीने मुफ्त"
+      ],
+      "${ n } server": [
+        "${ n } सर्वर",
+        "${ n }+ सर्वर"
+      ],
+      "${ n } vault": [
+        "${ n } तिजोरी",
+        "${ n } तिजोरी"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN कनेक्शन",
+        "${ n } VPN कनेक्शन"
+      ],
+      "${ n } VPN connection per user": [
+        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन"
+      ],
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } प्रतिभागी",
+        "${ numberOfAttendees } प्रतिभागी"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } देश",
+        "${ numberOfCountries } देश"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfCountries } देशों में ${ numberOfServers }",
+        "${ numberOfCountries }+ देशों में ${ numberOfServers }"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfCountries } देश में ${ numberOfServers }",
+        "${ numberOfCountries } देशों में ${ numberOfServers }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } यूज़र",
+        "${ numberOfUsers } उपयोगकर्ता तक"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } with ${ n } hide-my-email नकली-नाम",
+        "${ PASS_APP_NAME } with ${ n } hide-my-email नकली-नाम"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "प्रति उपयोगकर्ता ${ planNumberOfCalendars } कैलेंडर",
+        "प्रति उपयोगकर्ता ${ planNumberOfCalendars } कैलेंडर"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } कस्टम ईमेल डोमेन",
+        "${ planNumberOfDomains } कस्टम ईमेल डोमेन"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ईमेल पता",
+        "${ planNumberOfEmails } ईमेल पते"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "प्रति उपयोगकर्ता ${ planNumberOfEmails } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ planNumberOfEmails } ईमेल पते"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } यूज़र",
+        "${ planNumberOfUsers } यूज़र"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } फोल्डर मिला",
+        "${ providerFoldersNumLocalized } फोल्डर मिले"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } लेबल Gmail में मिला",
+        "${ providerFoldersNumLocalized } लेबल Gmail में मिले"
+      ],
+      "${ seconds } second": [
+        "${ seconds } सेकंड",
+        "${ seconds } सेकंड"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर",
+        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } फ़ोल्डर चयनित",
+        "${ selectedFoldersCount } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } लेबल चयनित",
+        "${ selectedFoldersCount } लेबल चयनित"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } फ़ोल्डर का चयन किया",
+        "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } लेबल चयनित",
+        "${ selectedFoldersCountLocalized } लेबल चयनित"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } दिन",
+        "${ timeRemaining.inDays } दिन"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } घंटा",
+        "${ timeRemaining.inHours } घंटे"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } संपर्क",
+        "${ totalContacts } संपर्क"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किया जाएगा। जानकारी के लिए फैलाए।",
+        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किए जाएगे। जानकारी के लिए फैलाए।"
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } संपर्क एन्क्रिप्ट किया गया और आपकी संपर्क सूची में जोड़ा गया",
+        "${ totalImported }/${ totalToImport } ईवेंट एन्क्रिप्ट किया गया और आपके कैलेंडर में जोड़ा गया"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए",
+        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } संपर्क सफलतापूर्वक अपडेट किया गया।",
+        "${ updated } संपर्क सफलतापूर्वक अपडेट किए गए।"
+      ],
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
+      ],
+      "${ value } day after": [
+        "${ value } दिन बाद",
+        "${ value } दिन बाद"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } दिन बाद ${ time } पे",
+        "${ value } दिन बाद ${ time } पे"
+      ],
+      "${ value } day before": [
+        "${ value } दिन पहले",
+        "${ value } दिन पहले"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ time } पर ${ value } दिन पहले",
+        "${ time } पर ${ value } दिन पहले"
+      ],
+      "${ value } hour after": [
+        "${ value } घंटे बाद",
+        "${ value } घंटे बाद"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ time } पे ${ value } घंटे बाद",
+        "${ time } पे ${ value } घंटे बाद"
+      ],
+      "${ value } hour before": [
+        "${ value } घंटा पहले",
+        "${ value } घंटे पहले"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ time } पे ${ value } घंटे पहले",
+        "${ time } पे ${ value } घंटे पहले"
+      ],
+      "${ value } minute after": [
+        "${ value } मिनट बाद",
+        "${ value } मिनट बाद"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ time } पे ${ value } मिनट बाद",
+        "${ time } पे ${ value } मिनट बाद"
+      ],
+      "${ value } minute before": [
+        "${ value } मिनट पहले",
+        "${ value } मिनट पहले"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ time } पे ${ value } मिनट पहले",
+        "${ time } पे ${ value } मिनट पहले"
+      ],
+      "${ value } week after": [
+        "${ value } हफ्ते बाद",
+        "${ value } हफ्ते बाद"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ time } पे ${ value } हफ्ते बाद",
+        "${ time } प ${ value } हफ्ते बाद"
+      ],
+      "${ value } week before": [
+        "${ value } हफ्ते पहले",
+        "${ value } हफ्ते पहले"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ time } पे ${ value } हफ्ते पहले",
+        "${ time } पे ${ value } हफ्ते पहले"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } सदस्य)",
+        "(${ memberCount } सदस्य)"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)",
+        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)"
+      ],
+      "Add to ${ groupCount } group": [
+        "${ groupCount } समूह में जोड़ें",
+        "${ groupCount } समूह में जोड़ें"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "सभी (${ totalFoldersCount } फोल्डर)",
+        "सभी (${ totalFoldersCount } फोल्डर)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "सभी (${ totalFoldersCount } लेबल)",
+        "सभी (${ totalFoldersCount } लेबल)"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "पूरे दिन, ${ plusDaysToEnd } दिन तक",
+        "पूरे दिन, ${ plusDaysToEnd } दिनों तक"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }",
+        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किया गया।",
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किए गए।"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "क्या आप वाकई ${ count } संपर्क को स्थायी रूप से हटाना चाहते हैं?",
+        "क्या आप वाकई ${ count } संपर्कों को स्थायी रूप से हटाना चाहते हैं?"
+      ],
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "हर न्योते पे ज़्यादा-से-ज़्यादा ${ maxAttendees } प्रतिभागी के होने की अनुमति है",
+        "हर न्योते पे ज़्यादा-से-ज़्यादा ${ maxAttendees } प्रतिभागीयों के होने की अनुमति है"
+      ],
+      "byte": [
+        "बाइट",
+        "बाइट"
+      ],
+      "Byte": [
+        "बाइट",
+        "बाइट"
+      ],
+      "Contact deleted": [
+        "संपर्क हटाया गया",
+        "संपर्क हटा दिए गए"
+      ],
+      "Contact group deleted": [
+        "संपर्क समूह हटाया गया",
+        "संपर्क समूह हटा दिए गए"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
+        "${ calendarsToBeCreatedCount } नए कैलेंडर बनाएं"
+      ],
+      "Create up to ${ n } calendar": [
+        "${ n } कैलेंडर तक बनाएं",
+        "${ n } कैलेंडर तक बनाएं"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।",
+        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।"
+      ],
+      "Day": [
+        "दिन",
+        "दिन"
+      ],
+      "day before": [
+        "एक दिन पहले",
+        "एक दिन पहले"
+      ],
+      "Delete ${ count } contact": [
+        "${ count } संपर्क हटाएं",
+        "${ count } संपर्क हटाएं"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } संपर्क समूह हटाएं",
+        "${ count } संपर्क समूह हटाएं"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } संपर्क हटाएं",
+        "${ selectedCount } संपर्क हटाएं"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } संपर्क समूह हटाएं",
+        "${ selectedCount } संपर्क समूह हटाएं"
+      ],
+      "Deleting event...": [
+        "कार्यक्रम मिटा रहें है...",
+        "कार्यक्रम मिटा रहें है..."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले",
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या",
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "अनुमानित समय शेष: ${ estimatedMinutes } मिनट",
+        "अनुमानित समय शेष: ${ estimatedMinutes } मिनट"
+      ],
+      "event": [
+        "कार्यक्रम",
+        "कार्यक्रम"
+      ],
+      "Every ${ interval } day": [
+        "हर ${ interval } दिन",
+        "हर ${ interval } दिन"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "हर ${ interval } दिन, ${ timesString }",
+        "हर ${ interval } दिन, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "हर ${ interval } दिन, ${ untilString }",
+        "हर ${ interval } दिन, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "प्रत्येक ${ interval } माह ${ onDayString }",
+        "प्रत्येक ${ interval } महीने ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ timesString } पर",
+        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ timesString } पर"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ untilString } पर",
+        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ untilString } पर"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "${ multipleDaysString } पर हर ${ interval } सप्ताह",
+        "${ multipleDaysString } पर हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर",
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर",
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर"
+      ],
+      "Every ${ interval } week on all days": [
+        "सभी दिनों पर हर ${ interval } सप्ताह",
+        "सभी दिनों पर हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }",
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "सोमवार को प्रत्येक ${ interval } सप्ताह",
+        "सोमवार को हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "शनिवार को प्रत्येक ${ interval } सप्ताह",
+        "प्रति ${ interval } शनिवार को"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह शनिवार को, ${ timesString }",
+        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "हर ${ interval } हफ्ते शनिवार को, ${ untilString }",
+        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "प्रत्येक ${ interval } सप्ताह रविवार को",
+        "रविवार को हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को",
+        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "बुधवार को हर ${ interval } सप्ताह",
+        "प्रति ${ interval } बुधवार को"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }"
+      ],
+      "Every ${ interval } year": [
+        "हर ${ interval } साल",
+        "हर ${ interval } साल"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "हर ${ interval } साल, ${ timesString }",
+        "हर ${ interval } वर्षों, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "हर ${ interval } साल, ${ untilString }",
+        "हर ${ interval } वर्षों, ${ untilString }"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } सुझाव मिला, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।",
+        "${ itemsCount } सुझाव मिले, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।"
+      ],
+      "Gigabyte": [
+        "महार्बुदाष्टक",
+        "महार्बुदाष्टकों"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "तेज़ वीपीएन ${ n } डिवाइस पे",
+        "तेज़ वीपीएन ${ n } डिवाइस पे"
+      ],
+      "hour before": [
+        "घंटा पहले",
+        "घंटे पहले"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
+        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import as simple event?": [
+        "साधारण ईवेंट के रूप में आयात करें?",
+        "साधारण ईवेंट के रूप में आयात करें?"
+      ],
+      "Kilobyte": [
+        "सहस्राष्टकों",
+        "सहस्राष्टकों"
+      ],
+      "Megabyte": [
+        "प्रयुताष्टक",
+        "प्रयुताष्टक"
+      ],
+      "Member added": [
+        "मेंबर जोड़ा गया",
+        "मेंबर जोड़े गए"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें",
+        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें"
+      ],
+      "minute before": [
+        "मिनट पहले",
+        "मिनट पहले"
+      ],
+      "Month": [
+        "महीना",
+        "महीने"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "किसी एक संपर्क का कोई ईमेल पता नहीं है: ${ noEmailsContactNamesList }",
+        "कुछ संपर्कों का कोई ईमेल पता नहीं है: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "समूह में से एक का कोई संपर्क नहीं है: ${ noContactGroupList }",
+        "किसी एक समूह का कोई संपर्क नहीं है: ${ noContactGroupList } "
+      ],
+      "participant": [
+        "प्रतिभागी",
+        "प्रतिभागी"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होने चाहिए"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "कृपया ${ groupCount } समूह में जोड़ने के लिए ईमेल पता या पते चुनें।",
+        "कृपया ${ groupCount } समूहों में जोड़ने के लिए ईमेल पता या पते चुनें।"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedRecipients }",
+        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedRecipients }"
+      ],
+      "Saving event...": [
+        "कार्यक्रम सहेज रहें है...",
+        "कार्यक्रम सहेज रहें है..."
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }+ देश में सर्वर",
+        "${ numberOfCountries }+ देशों में सर्वर"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट",
+        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट"
+      ],
+      "Terabyte": [
+        "टेराबाइट",
+        "टेराबाइट"
+      ],
+      "This file contains an event invitation:": [
+        "इस फाइल में इवेंट का एक न्योता है:",
+        "इस फाइल में इवेंट के न्योते है:"
+      ],
+      "This file contains an invitation response:": [
+        "इस फाइल में न्योते के जवाब है:",
+        "इस फाइल में न्योते के जवाब है:"
+      ],
+      "Total for ${ n } month": [
+        "${ n } महीने के लिए कुल",
+        "${ n } महीनों के लिए कुल"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
+      ],
+      "Up to ${ n } user": [
+        "${ n } उपयोगकर्ता तक",
+        "${ n } उपयोगकर्ता तक"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "तिजोरी शेयर करें (अधिकतम ${ n } व्यक्ति को)",
+        "तिजोरी शेयर करें (अधिकतम ${ n } लोगों को)"
+      ],
+      "Week": [
+        "हफ्ता",
+        "हफ्ते"
+      ],
+      "week before": [
+        "सप्ताह पहले",
+        "सप्ताह पहले"
+      ],
+      "Year": [
+        "साल",
+        "साल"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
+        "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते"
+      ],
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "आपने हर कैलेंडर पे ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पार कर ली हैं",
+        "आपने हर कैलेंडर पे ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पार कर ली हैं"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "आप इस कैलेंडर के ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पे पहुंच गए है।\nइस कैलेंडर को और ${ BRAND_NAME } खातो के साथ शेयर करने के लिए, कुछ सदस्य हटाएं।",
+        "आप इस कैलेंडर के ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पे पहुंच गए है।\nइस कैलेंडर को और ${ BRAND_NAME } खातो के साथ शेयर करने के लिए, कुछ सदस्य हटाएं।"
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "आप इस कैलेंडर के लिए ${ MAX_LINKS_PER_CALENDAR } लिंक के लिमिट पे पहुंच चुके है।\nइस कैलेंडर के लिए नया लिंक बनाने के लिए, एक मौजूदा लिंक मिटाएं।",
+        "आप इस कैलेंडर के लिए ${ MAX_LINKS_PER_CALENDAR } लिंक के लिमिट पे पहुंच चुके है।\nइस कैलेंडर के लिए नया लिंक बनाने के लिए, एक मौजूदा लिंक मिटाएं।"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।",
+        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।",
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।"
+      ]
+    },
+    "Tooltip; share calendar modal": {
+      "Shared end-to-end encrypted": [
+        "एंड-टू-एंड एन्क्रिप्टेड साझा किया गया"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "सत्यापित संपर्क के साथ शुरु-से-अंत तक एन्क्रिप्ट किये तरीके से शेयर किया"
+      ]
     }
   }
 }

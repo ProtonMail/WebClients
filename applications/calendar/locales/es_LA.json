@@ -11482,6 +11482,9 @@
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
+      ],
+      "Account restricted": [
+        "Cuenta restringida"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12174,6 +12177,984 @@
       ],
       "for 12 months": [
         "durante 12 meses"
+      ]
+    },
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } dirección de correo",
+        "${ addressCount } direcciones de correo"
+      ],
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradores"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } calendario nuevo",
+        "${ calendarsToBeCreatedCount } calendarios nuevos"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } calendario fusionado",
+        "${ calendarsToBeMergedCount } calendarios fusionados"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } día",
+        "${ ceilDays } días"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hora",
+        "${ ceilHours } horas"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuto",
+        "${ ceilMinutes } minutos"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "El contacto ${ contactCount } contiene múltiples direcciones de correo.",
+        "Los contactos ${ contactCount } contienen múltiples direcciones de correo."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } miembro",
+        "${ contactEmailsLength } miembros"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } contacto encontrado",
+        "${ contactsCount } contacto encontrado"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } de ${ countContacts } contacto fue exportado.",
+        "${ contactsExported.length } de ${ countContacts } contactos fueron exportados."
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacto",
+        "${ contactsLength } contactos"
+      ],
+      "${ count } time": [
+        "${ count } vez",
+        "${ count } vez"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacto parece idéntico.",
+        "${ countMergeableContacts } contactos parecen idénticos."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } día restante",
+        "${ dayDiff } días restantes"
+      ],
+      "${ days } day": [
+        "${ days } día",
+        "${ days } días"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } dominio personalizado adicional",
+        "${ domains } dominios personalizados adicionales"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } dirección de correo",
+        "${ emailsCount } direcciones de correo"
+      ],
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } comando encontrado.",
+        "${ filteredList.length } comandos encontrados."
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora más",
+        "${ gracePeriodHoursRemaining } horas más"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grupo encontrado",
+        "${ groupCounts } grupo encontrado"
+      ],
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 horas",
+        "${ hoursInt },5 horas"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ list } doesn't have a valid email address": [
+        "${ list } no tiene una dirección de correo válida",
+        "${ list } no tiene una dirección de correo válida"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } no tiene una dirección de correo",
+        "Algunos contactos no tienen direcciones de correo: ${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "${ list } tiene correos electrónicos inválidos",
+        "Algunos grupos tienen correos electrónicos inválidos: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } no tiene contactos",
+        "Algunos grupos no tienen contactos: ${ list }"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } de ${ totalBeDeleted } contacto eliminado.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactos eliminados."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } de ${ totalBeMerged } contacto combinado.",
+        "${ model.submitted.length } de ${ totalBeMerged } contactos combinados."
+      ],
+      "${ more } more": [
+        "${ more } más",
+        "${ more } más"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } dirección de correo electrónico de ${ BRAND_NAME }",
+        "${ n } direcciones de correo electrónico de ${ BRAND_NAME }"
+      ],
+      "${ n } account per wallet": [
+        "${ n } cuenta por cartera",
+        "${ n } cuentas por cartera"
+      ],
+      "${ n } calendar": [
+        "${ n } calendario",
+        "${ n } calendarios"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendario por usuario",
+        "${ n } calendarios por usuario"
+      ],
+      "${ n } custom email domain": [
+        "${ n } dominio de correo electrónico personalizado",
+        "${ n } dominios de correo electrónico personalizados"
+      ],
+      "${ n } device": [
+        "${ n } dispositivo",
+        "${ n } dispositivos"
+      ],
+      "${ n } email address": [
+        "${ n } dirección de correo",
+        "${ n } direcciones/alias de correo"
+      ],
+      "${ n } email address per user": [
+        "${ n } dirección de correo por usuario",
+        "${ n } direcciones de correo por usuario"
+      ],
+      "${ n } filter": [
+        "${ n } filtro",
+        "${ n } filtros"
+      ],
+      "${ n } folder": [
+        "${ n } carpeta",
+        "${ n } carpetas"
+      ],
+      "${ n } folder and label": [
+        "${ n } carpeta y etiqueta",
+        "${ n } carpetas y etiquetas"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } conexión VPN gratis por usuario",
+        "${ n } conexiones VPN gratis por usuario"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias de hide-my-email",
+        "${ n } alias de hide-my-email"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } conexión VPN de gran velocidad",
+        "${ n } conexiones VPN de gran velocidad"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } conexión VPN de gran velocidad por usuario",
+        "${ n } conexiones VPN de gran velocidad por usuario"
+      ],
+      "${ n } label": [
+        "${ n } etiqueta",
+        "${ n } etiquetas"
+      ],
+      "${ n } message per day": [
+        "${ n } mensaje al día",
+        "${ n } mensajes al día"
+      ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ],
+      "${ n } month FREE": [
+        "${ n } mes gratis",
+        "${ n } meses gratis"
+      ],
+      "${ n } server": [
+        "${ n } servidor",
+        "Más de ${ n } servidores"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } bóveda compartida de ${ PASS_SHORT_APP_NAME } por usuario",
+        "${ n } bóvedas compartidas de ${ PASS_SHORT_APP_NAME } por usuario"
+      ],
+      "${ n } user account": [
+        "${ n } cuenta de usuario",
+        "${ n } cuentas de usuario"
+      ],
+      "${ n } vault": [
+        "${ n } bóveda",
+        "${ n } bóvedas"
+      ],
+      "${ n } VPN connection": [
+        "${ n } conexión VPN",
+        "${ n } conexiones VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } conexión VPN por usuario",
+        "${ n } conexiones VPN por usuario"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteras"
+      ],
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } participante",
+        "${ numberOfAttendees } participantes"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } país",
+        "${ numberOfCountries } países"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } en ${ numberOfCountries } país",
+        "${ numberOfServers } en más de ${ numberOfCountries } países"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } en ${ numberOfCountries } país",
+        "${ numberOfServers } en ${ numberOfCountries } países"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuario",
+        "Hasta ${ numberOfUsers } usuarios"
+      ],
+      "${ options }-day file version history": [
+        "Historial de ${ options } días de las versiones de los archivos",
+        "Historial de ${ options } días de las versiones de los archivos"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
+        "${ PASS_APP_NAME } con ${ n } alias hide-my-email"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } expira en ${ daysLeft } día.",
+        "${ planName } expira en ${ daysLeft } días."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } calendario por usuario",
+        "${ planNumberOfCalendars } calendarios por usuario"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } dominio de correo personalizado",
+        "${ planNumberOfDomains } dominios de correo personalizados"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } dirección de correo",
+        "${ planNumberOfEmails } direcciones de correo"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } dirección de correo por usuario",
+        "${ planNumberOfEmails } direcciones de correo por usuario"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } usuario",
+        "${ planNumberOfUsers } usuarios"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } carpeta encontrada",
+        "${ providerFoldersNumLocalized } carpeta encontrada"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etiqueta encontrada en Gmail",
+        "${ providerFoldersNumLocalized } etiquetas encontradas en Gmail"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } licencia de ${ LUMO_APP_NAME }",
+        "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licencia del asistente de escritura",
+        "${ seats } licencias del asistente de escritura"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendario",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendarios"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contacto seleccionado",
+        "${ selectedContactsLength }/${ contactsLength } contactos seleccionados"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } carpeta seleccionada",
+        "${ selectedFoldersCount } carpetas seleccionadas"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetas seleccionadas"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } carpeta seleccionada",
+        "${ selectedFoldersCountLocalized } carpeta seleccionada"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
+        "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } día",
+        "${ timeRemaining.inDays } días"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } contacto",
+        "${ totalContacts } contacto"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } de ${ totalEvents } evento no será importado. Haga clic para más detalles.",
+        "${ totalEventsDiscarded } de ${ totalEvents } eventos no serán importados. Haga clic para más detalles."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contacto cifrado y agregado a la lista de contactos",
+        "${ totalImported }/${ totalToImport } contactos cifrados y agregados a la lista de contactos"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } evento cifrado y agregado a el calendario",
+        "${ totalImported }/${ totalToImport } eventos cifrados y agregados a el calendario"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } contacto actualizado.",
+        "${ updated } contacto actualizado."
+      ],
+      "${ users } user": [
+        "${ users } usuario",
+        "${ users } usuarios"
+      ],
+      "${ value } day after": [
+        "${ value } día después",
+        "${ value } día después"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } día después a las ${ time }",
+        "${ value } día después a las ${ time }"
+      ],
+      "${ value } day before": [
+        "${ value } día antes",
+        "${ value } día antes"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ value } día antes a las ${ time }",
+        "${ value } día antes a las ${ time }"
+      ],
+      "${ value } hour after": [
+        "${ value } hora después",
+        "${ value } horas después"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ value } hora después a las ${ time }",
+        "${ value } hora después a las ${ time }"
+      ],
+      "${ value } hour before": [
+        "${ value } hora antes",
+        "${ value } hora antes"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ value } hora antes a las ${ time }",
+        "${ value } hora antes a las ${ time }"
+      ],
+      "${ value } minute after": [
+        "${ value } minuto después",
+        "${ value } minuto después"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ value } minuto después a las ${ time }",
+        "${ value } minuto después a las ${ time }"
+      ],
+      "${ value } minute before": [
+        "${ value } minuto antes",
+        "${ value } minuto antes"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ value } minuto antes a las ${ time }",
+        "${ value } minuto antes a las ${ time }"
+      ],
+      "${ value } week after": [
+        "${ value } semana después",
+        "${ value } semana después"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ value } semana después a las ${ time }",
+        "${ value } semana después a las ${ time }"
+      ],
+      "${ value } week before": [
+        "${ value } semana antes",
+        "${ value } semana antes"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ value } semana antes a las ${ time }",
+        "${ value } semana antes a las ${ time }"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } miembro)",
+        "(${ memberCount } miembro)"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)",
+        "Más de ${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
+      ],
+      "Add to ${ groupCount } group": [
+        "Agregar a ${ groupCount } grupo",
+        "Agregar a ${ groupCount } grupos"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Todo (${ totalFoldersCount } carpeta)",
+        "Todo (${ totalFoldersCount } carpetas)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Todo (${ totalFoldersCount } etiqueta)",
+        "Todo (${ totalFoldersCount } etiquetas)"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Todo el día, último ${ plusDaysToEnd } día",
+        "Todo el día, últimos ${ plusDaysToEnd } días"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos los contactos serán importados, hasta un límite de ${ MAX_CONTACTS_PER_USER }",
+        "Todos los contactos serán importados, hasta un límite de ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
+        "Cantidad de calendarios creados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Ocurrió un error al cifrar y agregar su evento. ${ totalImported } de ${ totalToImport } evento fue importado.",
+        "Ocurrió un error al cifrar y agregar los eventos. ${ totalImported } de ${ totalToImport } eventos fueron importados."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "¿Está seguro de que quiere eliminar permanentemente ${ count } contacto?",
+        "¿Está seguro de que quiere eliminar permanentemente ${ count } contactos?"
+      ],
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Se permite hasta ${ maxAttendees } participante por invitación.",
+        "Se permiten hasta ${ maxAttendees } participantes por invitación."
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
+        "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Selección automática de ${ numberOfCountries } país",
+        "Selección automática de ${ numberOfCountries } países"
+      ],
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Contact deleted": [
+        "Contacto eliminado",
+        "Contacto eliminado"
+      ],
+      "Contact group deleted": [
+        "Grupo de contactos eliminado",
+        "Grupo de contactos eliminado"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Crear ${ calendarsToBeCreatedCount } calendario nuevo",
+        "Crear ${ calendarsToBeCreatedCount } calendarios nuevos"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crear una nube segura para ${ value } miembro",
+        "Crear una nube segura para ${ value } miembros"
+      ],
+      "Create up to ${ n } calendar": [
+        "Cree hasta ${ n } calendario",
+        "Cree hasta ${ n } calendarios"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Cree ${ n } calendario o agregue calendarios de amistades, familiares, colegas y organizaciones.",
+        "Cree hasta ${ n } calendarios o agregue calendarios de amistades, familiares, colegas y organizaciones."
+      ],
+      "Day": [
+        "Día",
+        "Día"
+      ],
+      "day before": [
+        "día antes",
+        "día antes"
+      ],
+      "Delete ${ count } contact": [
+        "Eliminar ${ count } contacto",
+        "Eliminar ${ count } contacto"
+      ],
+      "Delete ${ count } contact group": [
+        "Eliminar ${ count } grupo de contactos",
+        "Eliminar ${ count } grupo de contactos"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Eliminar ${ selectedCount } contacto",
+        "Eliminar ${ selectedCount } contacto"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Eliminar ${ selectedCount } grupo de contactos",
+        "Eliminar ${ selectedCount } grupo de contactos"
+      ],
+      "Deleting event...": [
+        "Eliminando el evento...",
+        "Eliminando los eventos..."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deseleccione al menos ${ calendarsToFixCount } calendario",
+        "Deseleccione al menos ${ calendarsToFixCount } calendarios"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deseleccione al menos ${ calendarsToFixCount } calendario o",
+        "Deseleccione al menos ${ calendarsToFixCount } calendarios o"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Tiempo restante estimado: ${ estimatedMinutes } minuto",
+        "Tiempo restante estimado: ${ estimatedMinutes } minutos"
+      ],
+      "event": [
+        "evento",
+        "eventos"
+      ],
+      "Every ${ interval } day": [
+        "Cada ${ interval } día",
+        "Cada ${ interval } días"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Cada ${ interval } día a las ${ timesString }",
+        "Cada ${ interval } días a las ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Cada ${ interval } día hasta ${ untilString }",
+        "Cada ${ interval } días hasta ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Cada mes los ${ onDayString } ${ interval }",
+        "Cada mes los ${ onDayString } ${ interval }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Cada ${ interval } mes el ${ onDayString } a las ${ timesString }",
+        "Cada ${ interval } meses el ${ onDayString } a las ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Cada ${ interval } mes el ${ onDayString } hasta ${ untilString }",
+        "Cada ${ interval } meses el ${ onDayString } hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Cada ${ interval } semana los ${ multipleDaysString }",
+        "Cada ${ interval } semanas los ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Cada ${ interval } semana los ${ multipleDaysString } a las ${ timesString }",
+        "Cada ${ interval } semanas los ${ multipleDaysString } a las ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Cada ${ interval } semana los ${ multipleDaysString } hasta ${ untilString }",
+        "Cada ${ interval } semanas los ${ multipleDaysString } hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Cada ${ interval } semana todos los días",
+        "Cada ${ interval } semanas todos los días"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Cada ${ interval } semana todos los días a las ${ timesString }",
+        "Cada ${ interval } semanas todos los días a las ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Cada ${ interval } semana todos los días hasta ${ untilString }",
+        "Cada ${ interval } semanas todos los días hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Cada semana los viernes ${ interval }",
+        "Cada semana los viernes ${ interval }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Cada ${ interval } semana el viernes a las ${ timesString }",
+        "Cada ${ interval } semanas el viernes a las ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Cada ${ interval } semana los viernes hasta ${ untilString }",
+        "Cada ${ interval } semanas los viernes hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Cada ${ interval } semana los lunes",
+        "Cada ${ interval } semanas los lunes"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Cada semana los lunes, ${ timesString } ${ interval }",
+        "Cada semana los lunes, ${ timesString } ${ interval }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Cada ${ interval } semana los lunes hasta ${ untilString }",
+        "Cada ${ interval } semanas los lunes hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Cada semana los sábados ${ interval }",
+        "Cada semana los sábados ${ interval }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Cada ${ interval } semana el sábado a las ${ timesString }",
+        "Cada ${ interval } semanas el sábado a las ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Cada ${ interval } semana los sábados hasta ${ untilString }",
+        "Cada ${ interval } semanas los sábados hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Cada ${ interval } semana los domingos",
+        "Cada ${ interval } semanas los domingos"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Cada semana los domingos, ${ timesString } ${ interval }",
+        "Cada semana los domingos, ${ timesString } ${ interval }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Cada ${ interval } semana los domingos hasta ${ untilString }",
+        "Cada ${ interval } semanas los domingos hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Cada semana los jueves ${ interval }",
+        "Cada semana los jueves ${ interval }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Cada ${ interval } semana el jueves a las ${ timesString }",
+        "Cada ${ interval } semanas el jueves a las ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Cada ${ interval } semana los jueves hasta ${ untilString }",
+        "Cada ${ interval } semanas los jueves hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Cada semana los martes ${ interval }",
+        "Cada semana los martes ${ interval }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Cada semana los martes, ${ timesString } ${ interval }",
+        "Cada semana los martes, ${ timesString } ${ interval }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Cada ${ interval } semana los martes hasta ${ untilString }",
+        "Cada ${ interval } semanas los martes hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Cada semana los miércoles ${ interval }",
+        "Cada semana los miércoles ${ interval }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Cada ${ interval } semana el miércoles a las ${ timesString }",
+        "Cada ${ interval } semanas el miércoles a las ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Cada ${ interval } semana los miércoles hasta ${ untilString }",
+        "Cada ${ interval } semanas los miércoles hasta ${ untilString }"
+      ],
+      "Every ${ interval } year": [
+        "Cada año ${ interval }",
+        "Cada año ${ interval }"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Cada ${ interval } año, ${ timesString }",
+        "Cada ${ interval } años, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Cada ${ interval } año hasta ${ untilString }",
+        "Cada ${ interval } años hasta ${ untilString }"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Se encontró ${ itemsCount } sugerencia. Use el teclado para navegar.",
+        "Se encontraron ${ itemsCount } sugerencias. Use el teclado para navegar."
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "VPN de alta velocidad en ${ n } dispositivo",
+        "VPN de alta velocidad en ${ n } dispositivos"
+      ],
+      "hour before": [
+        "hora antes",
+        "hora antes"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendarios"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importar todos los mensajes de ${ itemsToImportCount } carpeta y etiquetarlos como",
+        "Importar todos los mensajes de ${ itemsToImportCount } carpetas y etiquetarlos como"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importar todos los mensajes de ${ itemsToImportCount } etiqueta y etiquetarlos como",
+        "Importar todos los mensajes de ${ itemsToImportCount } etiquetas y etiquetarlos como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importar todos los mensajes de ${ selectedItemsToImportCount } de ${ itemsToImportCount } carpeta y etiquetarlos como",
+        "Importar todos los mensajes de ${ selectedItemsToImportCount } de ${ itemsToImportCount } carpetas y etiquetarlos como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importar todos los mensajes de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiqueta y etiquetarlos como",
+        "Importar todos los mensajes de ${ selectedItemsToImportCount } de ${ itemsToImportCount } etiquetas y etiquetarlos como"
+      ],
+      "Import as simple event?": [
+        "¿Importar como evento sin detalles?",
+        "¿Importar como eventos sin detalles?"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Member added": [
+        "Miembro agregado",
+        "Miembros agregados"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fusione al menos ${ calendarsToFixCount } calendario con un calendario existente de ${ BRAND_NAME }",
+        "Fusione al menos ${ calendarsToFixCount } calendarios con calendarios existentes de ${ BRAND_NAME }"
+      ],
+      "minute before": [
+        "minuto antes",
+        "minuto antes"
+      ],
+      "Month": [
+        "Mes",
+        "Mes"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Uno de los contactos no tiene dirección de correo: ${ noEmailsContactNamesList }",
+        "Algunos contactos no tienen dirección de correo: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
+        "Uno de los grupos no tiene contactos: ${ noContactGroupList }"
+      ],
+      "participant": [
+        "participante",
+        "participantes"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracter",
+        "La contraseña debe tener al menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Restablecimiento de contraseña solicitado (${ user.Email }). Puede cambiar la contraseña en ${ hoursRemaining } hora.",
+        "Restablecimiento de contraseña solicitado (${ user.Email }). Puede cambiar la contraseña en ${ hoursRemaining } horas."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Solucione el conflicto resaltado para continuar.",
+        "Solucione los conflictos resaltados para continuar."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Seleccione qué dirección o direcciones de correo agregar al grupo ${ groupCount }.",
+        "Seleccione qué dirección o direcciones de correo agregar a los grupos ${ groupCount }."
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Destinatario duplicado eliminado: ${ joinedRecipients }",
+        "Destinatarios duplicados eliminados: ${ joinedRecipients }"
+      ],
+      "Saving event...": [
+        "Guardando el evento...",
+        "Guardando los eventos..."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos electrónicos y programe con cifrado de extremo a extremo. Incluye ${ addresses } dirección de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo electrónico personalizados, asistente de escritura Scribe ${ BRAND_NAME }, alias de hide-my-email ilimitados y más."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses }dirección de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más.",
+        "Asegure sus correos y programe con cifrado de extremo a extremo. Incluye ${ addresses } direcciones de correo, soporte para dominios de correo personalizados, alias de hide-my-email ilimitados y más."
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servidores en ${ numberOfCountries } país",
+        "Servidores en más de ${ numberOfCountries } países"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "La suscripción se renueva automáticamente cada ${ cycle } mes.",
+        "La suscripción se renueva automáticamente cada ${ cycle } meses."
+      ],
+      "Support for ${ n } custom email domain": [
+        "Soporte para ${ n } dominio de correo electrónico personalizado",
+        "Soporte para ${ n } dominios de correo personalizados"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "El cupón es válido por ${ couponRedemptions } renovación.",
+        "El cupón es válido por ${ couponRedemptions } renovaciones."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "El precio especial de descuento de ${ priceWithDiscount } es válido para el primer ${ subscriptionLength } mes",
+        "El precio especial de descuento de ${ priceWithDiscount } es válido para los primeros ${ subscriptionLength } meses"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "La oferta especial por ${ priceWithDiscount } es válida para el primer mes. El cupón es válido para ${ couponRedemptions } renovación. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento.",
+        "La oferta especial por ${ priceWithDiscount } es válida para el primer mes. El cupón es válido para ${ couponRedemptions } renovaciones. Después se renovará automáticamente a ${ renewPriceStr } por 1 mes. Puede cancelarlo en cualquier momento."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puede cancelar en cualquier momento.",
+        "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puede cancelar en cualquier momento."
+      ],
+      "This file contains an event invitation:": [
+        "Este archivo contiene una invitación de evento:",
+        "Este archivo contiene invitaciones de eventos:"
+      ],
+      "This file contains an invitation response:": [
+        "Este archivo contiene una respuesta de invitación:",
+        "Este archivo contiene respuestas de invitaciones:"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Este permiso expira en ${ timeRemaining.inDays } día",
+        "Este permiso expira en ${ timeRemaining.inDays } días"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Este permiso expira en ${ timeRemaining.inHours } hora",
+        "Este permiso expira en ${ timeRemaining.inHours } horas"
+      ],
+      "Total for ${ n } month": [
+        "Total por ${ n } mes",
+        "Total por ${ n } meses"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Intente con un nombre de usuario corto (${ n } caracter máx.)",
+        "Intente con un nombre de usuario corto (${ n } caracteres máx.)"
+      ],
+      "Up to ${ n } user": [
+        "Hasta ${ n } usuario",
+        "Hasta ${ n } usuarios"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Hasta ${ n } usuario (${ adminsText }, ${ usersText })",
+        "Hasta ${ n } usuarios (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Uso en hasta ${ n } dispositivo a la vez",
+        "Uso en hasta ${ n } dispositivos a la vez"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Compartir bóveda (hasta ${ n } persona)",
+        "Compartir bóveda (hasta ${ n } personas)"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Conexión VPN para ${ n } dispositivo por usuario",
+        "Conexión VPN para ${ n } dispositivos por usuario"
+      ],
+      "Week": [
+        "Semana",
+        "Semana"
+      ],
+      "week before": [
+        "semana antes",
+        "semana antes"
+      ],
+      "Year": [
+        "Año",
+        "Año"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }.",
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción de ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción.",
+        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimine enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido los calendarios antes de cancelar la suscripción."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "No puede enviar un correo a más de ${ maxContacts } destinatario.",
+        "No puede enviar un correo a más de ${ maxContacts } destinatarios."
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "No puede enviar archivos vCard de más de ${ maxAttachments } contacto.",
+        "No puede enviar archivos vCard de más de ${ maxAttachments } contacto."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Tiene ${ timeRemaining.inDays } día para restablecer la contraseña.",
+        "Tiene ${ timeRemaining.inDays } días para restablecer la contraseña."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tiene ${ timeRemaining.inHours } hora para restablecer la contraseña.",
+        " Tiene ${ timeRemaining.inHours } horas para restablecer la contraseña."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tiene ${ timeRemaining.inMinutes } minuto para restablecer la contraseña.",
+        " Tiene ${ timeRemaining.inMinutes } minutos para restablecer la contraseña."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tiene ${ timeRemaining.inSeconds } segundo para restablecer la contraseña.",
+        " Tiene ${ timeRemaining.inSeconds } segundos para restablecer la contraseña."
+      ],
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Ha excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembro por calendario",
+        "Ha excedido el máximo de ${ MAX_CALENDAR_MEMBERS } miembros por calendario"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Ha alcanzado el límite de ${ MAX_CALENDAR_MEMBERS } miembro para este calendario.\nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, elimine algunos miembros.",
+        "Ha alcanzado el límite de ${ MAX_CALENDAR_MEMBERS } miembros para este calendario.\nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, elimine algunos miembros."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Ha alcanzado el máximo de ${ MAX_LINKS_PER_CALENDAR } enlace para este calendario.\nPara crear un enlace nuevo a este calendario, elimine uno existe.",
+        "Ha alcanzado el máximo de ${ MAX_LINKS_PER_CALENDAR } enlaces para este calendario.\nPara crear un enlace nuevo a este calendario, elimine uno existe."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Aún le queda **${ daysRemaining }** día en el plan de **${ currentPlanName }**.",
+        "Aún le quedan **${ daysRemaining }** días en el plan de **${ currentPlanName }**."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Después se le facturará cada ${ renewCycle } mes por ${ renewAmountStr }.",
+        "Después se le facturará cada ${ renewCycle } meses por ${ renewAmountStr }."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "El archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_EVENTS } evento.",
+        "El archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_EVENTS } eventos."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } mes.",
+        "Su plan programado comienza el ${ renewalTime } y se renovará automáticamente cada ${ cycle } meses."
+      ]
+    },
+    "Tooltip; share calendar modal": {
+      "Shared end-to-end encrypted": [
+        "Compartido con cifrado de extremo a extremo"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Compartido con cifrado de extremo a extremo con contacto verificado"
       ]
     }
   }

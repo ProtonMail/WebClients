@@ -11024,6 +11024,9 @@
       ],
       "Two-factor authentication": [
         "双因素身份验证"
+      ],
+      "Account restricted": [
+        "账户受限"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11549,11 +11552,750 @@
       ],
       "You have reached the trial limit.": [
         "您已达到试用上限。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } 试用期结束后，您的订阅将自动改成每 ${ renewCycle } 个月自动续订的付费订阅。 若在 ${ formattedDate } 之前取消，您将不用付费。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } 试用期结束后，您的订阅将自动改成按月自动续订的付费订阅。若在${ formattedDate }之前取消，您将不用付费。"
       ]
     },
     "collider_2025: feature": {
       "Unlimited daily chats": [
         "无限聊天次数"
+      ]
+    },
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } 个邮箱地址"
+      ],
+      "${ admins } admin": [
+        "管理员 ${ admins }"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } 个新日历"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } 个合并日历"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } 天"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } 小时"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } 分"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } 名联系人各有多个邮箱地址。"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } 位成员"
+      ],
+      "${ contactsCount } contact found": [
+        "找到 ${ contactsCount } 位联系人"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length }/${ countContacts } 名联系人已成功导出。"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } 位联系人"
+      ],
+      "${ count } time": [
+        "${ count } 次"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } 位联系人信息似乎完全相同。"
+      ],
+      "${ dayDiff } day left": [
+        "剩余 ${ dayDiff } 天"
+      ],
+      "${ days } day": [
+        "${ days } 天"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } 个额外的自有域名"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } 个邮箱地址"
+      ],
+      "${ filteredList.length } command found.": [
+        "找到 ${ filteredList.length } 条命令。"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } 小时"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "剩余 ${ gracePeriodHoursRemaining } 小时"
+      ],
+      "${ groupCounts } group found": [
+        "找到 ${ groupCounts } 个群组"
+      ],
+      "${ hours } h": [
+        "${ hours } 小时"
+      ],
+      "${ hours } hour": [
+        "${ hours } 小时"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 小时"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 小时"
+      ],
+      "${ ips } server": [
+        "${ ips } 台服务器"
+      ],
+      "${ list } doesn't have a valid email address": [
+        "部分联系人邮箱地址无效：${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "部分联系人缺少邮箱地址：${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "部分群组包含无效的邮箱地址：${ list }"
+      ],
+      "${ list } has no contacts": [
+        "某些群组没有联系人：${ list }"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分钟"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分钟"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length }/${ totalBeDeleted } 联系人已成功删除"
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "共 ${ totalBeMerged } 名联系人，成功合并 ${ model.submitted.length } 名联系人。"
+      ],
+      "${ more } more": [
+        "还有 ${ more } 个"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } 个 ${ BRAND_NAME } 邮箱地址"
+      ],
+      "${ n } account per wallet": [
+        "每个钱包 ${ n } 个账户"
+      ],
+      "${ n } calendar": [
+        "${ n } 份日历"
+      ],
+      "${ n } calendar per user": [
+        "每位用户 ${ n } 份日历"
+      ],
+      "${ n } custom email domain": [
+        "${ n } 个自有域名"
+      ],
+      "${ n } device": [
+        "${ n } 台设备"
+      ],
+      "${ n } email address": [
+        "${ n } 个邮箱地址"
+      ],
+      "${ n } email address per user": [
+        "每位用户 ${ n } 个邮箱地址"
+      ],
+      "${ n } filter": [
+        "${ n } 条筛选规则"
+      ],
+      "${ n } folder": [
+        "${ n } 个文件夹"
+      ],
+      "${ n } folder and label": [
+        "${ n } 个文件夹和标签"
+      ],
+      "${ n } free VPN connection per user": [
+        "每位用户可通过 ${ n } 台设备同时接入免费 VPN"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } 个 hide-my-email 别名"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } 台设备可同时接入高速 VPN"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "每位用户可通过 ${ n } 台设备同时接入高速 VPN"
+      ],
+      "${ n } label": [
+        "${ n } 个标签"
+      ],
+      "${ n } message per day": [
+        "每天可发 ${ n } 封邮件"
+      ],
+      "${ n } month": [
+        "${ n } 个月"
+      ],
+      "${ n } month FREE": [
+        "免费 ${ n } 个月"
+      ],
+      "${ n } server": [
+        "${ n } 台服务器"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "每个用户 ${ n } 个共享的 ${ PASS_SHORT_APP_NAME } 保险库"
+      ],
+      "${ n } user account": [
+        "${ n } 个用户账户"
+      ],
+      "${ n } vault": [
+        "${ n } 个保险库"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 台设备可同时接入 VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "每位用户可通过 ${ n } 台设备同时接入 VPN"
+      ],
+      "${ n } wallet": [
+        "${ n } 个钱包"
+      ],
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } 名参与者"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } 个国家/地区"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "遍布 ${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
+      ],
+      "${ numberOfUsers } user": [
+        "最多 ${ numberOfUsers } 位用户"
+      ],
+      "${ options }-day file version history": [
+        "${ options } 天文件版本历史记录"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } 带有 ${ n } 个 hide-my-email 别名"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 在 ${ daysLeft } 天后到期。"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "每位用户 ${ planNumberOfCalendars } 份日历"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } 个自定义邮箱域名"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } 个邮箱地址"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "每位用户 ${ planNumberOfEmails } 个邮箱地址"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } 位用户"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "已找到 ${ providerFoldersNumLocalized } 个文件夹"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } 席位"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } 个写作助手许可证"
+      ],
+      "${ seconds } second": [
+        "${ seconds } 秒"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "已选择 ${ selectedContactsLength }/${ contactsLength } 位联系人"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "已选择 ${ selectedFoldersCount } 个文件夹"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "已选择 ${ selectedFoldersCount } 个标签"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "已选择 ${ selectedFoldersCountLocalized } 个标签"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } 天"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } 小时"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } 名联系人"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } 个日程有 ${ totalEventsDiscarded } 个将不会被导入，展开查看详情。"
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
+      ],
+      "${ updated } contact updated successfully.": [
+        "已成功更新 ${ updated } 位联系人。"
+      ],
+      "${ users } user": [
+        "${ users } 位用户"
+      ],
+      "${ value } day after": [
+        "${ value } 天后"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } 天后 ${ time }"
+      ],
+      "${ value } day before": [
+        "${ value } 天前"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ value } 天前 ${ time }"
+      ],
+      "${ value } hour after": [
+        "${ value } 小时后"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ value } 小时后 ${ time }"
+      ],
+      "${ value } hour before": [
+        "${ value } 小时前"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ value } 小时前 ${ time }"
+      ],
+      "${ value } minute after": [
+        "${ value } 分钟后"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ value } 分钟后 ${ time }"
+      ],
+      "${ value } minute before": [
+        "${ value } 分钟前"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ value } 分钟前 ${ time }"
+      ],
+      "${ value } week after": [
+        "${ value } 周后"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ value } 周后 ${ time }"
+      ],
+      "${ value } week before": [
+        "${ value } 周前"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ value } 周前 ${ time }"
+      ],
+      "(${ memberCount } member)": [
+        "（${ memberCount } 位成员）"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } 连接数（允许您将更多设备连接至VPN）"
+      ],
+      "Add to ${ groupCount } group": [
+        "添加到 ${ groupCount } 个群组"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "全部（${ totalFoldersCount } 个文件夹）"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "全部（${ totalFoldersCount } 个标签）"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "全天，持续 ${ plusDaysToEnd } 天"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "您的所有联系人都将被导入，直至达到 ${ MAX_CONTACTS_PER_USER } 人的上限"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "已创建的日历数量: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "您确定要永久删除 ${ count } 联系人吗？"
+      ],
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "每次邀请最多允许 ${ maxAttendees } 名参与者"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "每个群组最多只能有 ${ maxContacts } 位联系人"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "从 ${ numberOfCountries } 个地域中自动选择"
+      ],
+      "byte": [
+        "B"
+      ],
+      "Byte": [
+        "B"
+      ],
+      "Contact deleted": [
+        "已删除联系人"
+      ],
+      "Contact group deleted": [
+        "联系人群组已删除"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "创建 ${ calendarsToBeCreatedCount } 份新日历"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "为 ${ value } 成员创建一个安全云端"
+      ],
+      "Create up to ${ n } calendar": [
+        "最多可创建 ${ n } 份日历"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
+      ],
+      "Day": [
+        "天"
+      ],
+      "day before": [
+        "天前"
+      ],
+      "Delete ${ count } contact": [
+        "删除 ${ count } 联系人"
+      ],
+      "Delete ${ count } contact group": [
+        "删除 ${ count } 个联系人组"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "删除 ${ selectedCount } 位联系人"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "删除 ${ selectedCount } 个联系人组"
+      ],
+      "Deleting event...": [
+        "正在删除事件..."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "至少取消选择 ${ calendarsToFixCount } 份日历"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "至少取消选择 ${ calendarsToFixCount } 份日历或"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "预计剩余时间：${ estimatedMinutes } 分钟"
+      ],
+      "event": [
+        "事件"
+      ],
+      "Every ${ interval } day": [
+        "每 ${ interval } 天"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "每 ${ interval } 天，${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "每 ${ interval } 天，${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "每 ${ interval } 个月的 ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "每 ${ interval } 月的 ${ onDayString }，${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "每 ${ interval } 月的 ${ onDayString }，直到 ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "每 ${ interval } 周的${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "每${ interval } 周的${ multipleDaysString }，${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "每${ interval } 周的${ multipleDaysString }，知道${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "每 ${ interval } 周整周"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "每 ${ interval } 周整周，${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "每 ${ interval } 周所有天，${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "每 ${ interval } 周的星期五"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "每 ${ interval } 周星期五，${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "每 ${ interval } 周星期五，${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "每 ${ interval } 周的星期一"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "每 ${ interval } 周星期一，${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "每 ${ interval } 周星期一，${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "每 ${ interval } 周的星期六"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "每 ${ interval } 周星期六，${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "每 ${ interval } 周星期六，${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "每 ${ interval } 周的星期日"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "每 ${ interval } 周星期日，${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "每 ${ interval } 周星期日，${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "每 ${ interval } 周的星期四"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "每 ${ interval } 周星期四，${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "每 ${ interval } 周星期四，${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "每 ${ interval } 周的星期二"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "每 ${ interval } 周星期二，${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "每 ${ interval } 周星期二，${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "每 ${ interval } 周的星期三"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "每 ${ interval } 周星期三，${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "每 ${ interval } 周星期三，${ untilString }"
+      ],
+      "Every ${ interval } year": [
+        "每 ${ interval } 年"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "每 ${ interval } 年，${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "每 ${ interval } 年，直到 ${ untilString }"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "已找到 ${ itemsCount } 个建议，您可使用键盘进行导航浏览。"
+      ],
+      "Gigabyte": [
+        "GB"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "${ n } 台设备可同时接入高速 VPN"
+      ],
+      "hour before": [
+        "小时前"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "导入 ${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "导入带有 ${ itemsToImportCount } 类标签的邮件并加标签"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "导入 ${ selectedItemsToImportCount }/${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
+      ],
+      "Import as simple event?": [
+        "导入为简单活动？"
+      ],
+      "Kilobyte": [
+        "KB"
+      ],
+      "Megabyte": [
+        "MB"
+      ],
+      "Member added": [
+        "成员已添加"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
+      ],
+      "minute before": [
+        "分钟前"
+      ],
+      "Month": [
+        "月"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "部分联系人没有邮箱地址：${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "某个/些群组没有联系人：${ noContactGroupList } "
+      ],
+      "participant": [
+        "参与者"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "重置密码的请求已收到 (${ user.Email })。 您可以在 ${ hoursRemaining } 小时内更改密码。"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "请修复高亮的冲突以继续。"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "请选择将哪些邮箱地址加入这 ${ groupCount } 个群组。"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "已删除重复收件人：${ joinedRecipients }"
+      ],
+      "Saving event...": [
+        "正在保存事件..."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 hide-my-email邮箱别名等高级功能。"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } 个国家/地区的服务器"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "订阅服务每 ${ cycle } 个月自动续费。"
+      ],
+      "Support for ${ n } custom email domain": [
+        "支持 ${ n } 个自定义域"
+      ],
+      "Terabyte": [
+        "TB"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "该优惠券适用于${ couponRedemptions }次续费升级。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "专享折扣价${ priceWithDiscount }仅限首月有效。本优惠券适用于${ couponRedemptions }次续费周期。之后将自动以1个月${ renewPriceStr }的价格续费，您可随时取消。"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
+      ],
+      "This file contains an event invitation:": [
+        "此文件包含活动邀请："
+      ],
+      "This file contains an invitation response:": [
+        "此文件包含邀请回复："
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "此权限将在 ${ timeRemaining.inDays } 天后过期"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "此权限将在 ${ timeRemaining.inHours } 小时后过期"
+      ],
+      "Total for ${ n } month": [
+        "每${ n }月支付"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
+      ],
+      "Up to ${ n } user": [
+        "最多 ${ n } 位用户"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "最多 ${ n } 位用户（${ adminsText }，${ usersText }）"
+      ],
+      "Use on up to ${ n } device at once": [
+        "最多可同时在 ${ n } 台设备上使用"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "密码分享（最多 ${ n } 个人）"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "每位用户 ${ n } 个设备的 VPN 连接"
+      ],
+      "Week": [
+        "周"
+      ],
+      "week before": [
+        "周前"
+      ],
+      "Year": [
+        "年"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。退订 ${ MAIL_SHORT_APP_NAME } 前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。降级前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "邮件收件人不能超过 ${ maxContacts } 位"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "您不能发送超过 ${ maxAttachments } 个联系人的 vCard 文件"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "您有 ${ timeRemaining.inDays } 天重置您的密码。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " 您有 ${ timeRemaining.inHours } 小时重置您的密码。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " 您有 ${ timeRemaining.inMinutes } 分钟重置您的密码。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " 您有 ${ timeRemaining.inSeconds } 秒重置您的密码。"
+      ],
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "每份日历最多只能有 ${ MAX_CALENDAR_MEMBERS } 名成员"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "一份日历最多只能有 ${ MAX_CALENDAR_MEMBERS } 人加入。要与更多 ${ BRAND_NAME } 账户分享该日历，请移除部分用户。"
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "你已经达到了该日历最大${ MAX_LINKS_PER_CALENDAR } 链接数。\n若要创建此日历的新链接，请删除一个现有的链接。"
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "您的 **${ currentPlanName }** 账户等级还有 **${ daysRemaining }** 天的有效期。"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS }。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "您订阅的套餐将于 ${ renewalTime } 开始生效，并且每隔 ${ cycle } 个月自动续订。"
+      ]
+    },
+    "Tooltip; share calendar modal": {
+      "Shared end-to-end encrypted": [
+        "共享已经过端到端加密"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "与经过验证的联系人端对端加密共享"
       ]
     }
   }
