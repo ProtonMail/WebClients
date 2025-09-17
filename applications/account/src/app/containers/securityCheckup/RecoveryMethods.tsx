@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useSecurityCheckup } from '@proton/components';
+import { Icon, useSecurityCheckup } from '@proton/components';
 import FormattedPhoneValue from '@proton/components/components/v2/phone/LazyFormattedPhoneValue';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
@@ -14,6 +14,7 @@ import {
 } from '@proton/shared/lib/helpers/securityCheckup';
 import type SecurityState from '@proton/shared/lib/interfaces/securityCheckup/SecurityState';
 
+import { SentinelBadge } from './SentinelBadge';
 import SecurityCheckupCard from './components/SecurityCheckupCard';
 import SecurityCheckupCardInner from './components/SecurityCheckupCardInner';
 import SecurityCheckupMainIcon from './components/SecurityCheckupMainIcon';
@@ -50,6 +51,41 @@ const Email = () => {
         return;
     }
 
+    if (securityState.hasSentinelEnabled) {
+        const disableEmail = (
+            <Link key="enable-device-recovery" to={SECURITY_CHECKUP_PATHS.DISABLE_EMAIL} className="color-weak">
+                {
+                    // translator: full sentence "Disable recovery by email to increase your account security."
+                    c('Safety review').t`Disable recovery by email `
+                }
+            </Link>
+        );
+        return (
+            <SecurityCheckupCard>
+                <SecurityCheckupCardInner
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={emailIcon} color="info" />}
+                    title={
+                        <>
+                            {c('Safety review').t`Your recovery email`} &nbsp;
+                            <Icon className="shrink-0 color-danger mb-0.5" size={4} name="exclamation-circle-filled" />
+                        </>
+                    }
+                    subTitle={email.value}
+                />
+                <div className="px-4 py-3  flex items-center justify-between border-top border-weak">
+                    <div className="flex-1 color-weak text-sm">
+                        {
+                            // translator: full sentence "You recovery email could be abused by attackers to take over your account. Disable recovery by email to increase your account security."
+                            c('Safety review')
+                                .jt`You recovery email could be abused by attackers to take over your account. ${disableEmail} to increase your account security.`
+                        }
+                    </div>
+                    <SentinelBadge className="ml-4" />
+                </div>
+            </SecurityCheckupCard>
+        );
+    }
+
     return (
         <SecurityCheckupCard>
             <SecurityCheckupCardInner
@@ -80,6 +116,41 @@ const Phone = () => {
     }
 
     const formattedPhoneNumber = <FormattedPhoneValue value={phone.value} />;
+
+    if (securityState.hasSentinelEnabled) {
+        const disablePhone = (
+            <Link key="enable-device-recovery" to={SECURITY_CHECKUP_PATHS.DISABLE_PHONE} className="color-weak">
+                {
+                    // translator: full sentence "Disable recovery by phone to increase your account security."
+                    c('Safety review').t`Disable recovery by phone `
+                }
+            </Link>
+        );
+        return (
+            <SecurityCheckupCard>
+                <SecurityCheckupCardInner
+                    prefix={<SecurityCheckupMainIcon className="self-start" icon={phoneIcon} color="info" />}
+                    title={
+                        <>
+                            {c('Safety review').t`Your recovery phone`} &nbsp;
+                            <Icon className="shrink-0 color-danger mb-0.5" size={4} name="exclamation-circle-filled" />
+                        </>
+                    }
+                    subTitle={formattedPhoneNumber}
+                />
+                <div className="px-4 py-3  flex items-center justify-between border-top border-weak">
+                    <div className="flex-1 color-weak text-sm">
+                        {
+                            // translator: full sentence "You recovery phone could be abused by attackers to take over your account. Disable recovery by phone to increase your account security."
+                            c('Safety review')
+                                .jt`You recovery phone could be abused by attackers to take over your account. ${disablePhone} to increase your account security.`
+                        }
+                    </div>
+                    <SentinelBadge className="ml-4" />
+                </div>
+            </SecurityCheckupCard>
+        );
+    }
 
     return (
         <SecurityCheckupCard>

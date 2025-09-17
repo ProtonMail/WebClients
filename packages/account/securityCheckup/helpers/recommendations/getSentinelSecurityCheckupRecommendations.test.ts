@@ -299,6 +299,28 @@ describe('Non perfect sentinel email state', () => {
                     furtherActions: ['sentinel-phone'],
                 });
             });
+
+            test('Enabled but not verified phone with phrase', () => {
+                const securityState = {
+                    ...defaultSecurityState,
+
+                    ...perfectPhrase,
+                    ...perfectSentinelEmail,
+                    phone: {
+                        value: '123456789',
+                        isEnabled: true,
+                        verified: false,
+                    },
+                };
+
+                const result = getSentinelSecurityCheckupRecommendations(securityState);
+
+                expect(result).toEqual({
+                    cohort: SecurityCheckupCohort.Sentinel.COMPLETE_RECOVERY_SENTINEL,
+                    actions: ['sentinel-phone'],
+                    furtherActions: [],
+                });
+            });
         });
 
         describe('With phrase', () => {
@@ -358,8 +380,8 @@ test('Perfect sentinel email with phrase', () => {
     const result = getSentinelSecurityCheckupRecommendations(securityState);
 
     expect(result).toEqual({
-        cohort: SecurityCheckupCohort.Common.COMPLETE_RECOVERY,
-        actions: [],
+        cohort: SecurityCheckupCohort.Sentinel.COMPLETE_RECOVERY_SENTINEL,
+        actions: ['sentinel-phone'],
         furtherActions: [],
     });
 });
@@ -391,9 +413,27 @@ test('Perfect sentinel phone with phrase', () => {
     const result = getSentinelSecurityCheckupRecommendations(securityState);
 
     expect(result).toEqual({
+        cohort: SecurityCheckupCohort.Sentinel.COMPLETE_RECOVERY_SENTINEL,
+        actions: ['sentinel-email'],
+        furtherActions: [],
+    });
+});
+
+test('Perfect sentinel email and phone with phrase', () => {
+    const securityState = {
+        ...defaultSecurityState,
+
+        ...perfectPhrase,
+        ...perfectSentinelEmail,
+        ...perfectSentinelPhone,
+    };
+
+    const result = getSentinelSecurityCheckupRecommendations(securityState);
+
+    expect(result).toEqual({
         cohort: SecurityCheckupCohort.Common.COMPLETE_RECOVERY,
         actions: [],
-        furtherActions: ['sentinel-email'],
+        furtherActions: [],
     });
 });
 
@@ -424,8 +464,8 @@ test('Recommend setting email if only the phrase is set', () => {
 
     expect(result).toEqual({
         cohort: SecurityCheckupCohort.Sentinel.SENTINEL_RECOMMENDATIONS,
-        actions: [],
-        furtherActions: ['sentinel-email'],
+        actions: ['sentinel-email'],
+        furtherActions: [],
     });
 });
 
@@ -460,8 +500,8 @@ describe('Availability', () => {
 
         expect(result).toEqual({
             cohort: SecurityCheckupCohort.Common.NO_RECOVERY_METHOD,
-            actions: [],
-            furtherActions: ['sentinel-email'],
+            actions: ['sentinel-email'],
+            furtherActions: [],
         });
     });
 });
