@@ -34,15 +34,10 @@ interface SentinelUserRecoveryCardProps {
         account: string;
         data: string;
     };
-    canDisplayNewSentinelSettings?: boolean;
     isSentinelUser: boolean;
 }
 
-const SentinelUserRecoveryCard = ({
-    ids,
-    canDisplayNewSentinelSettings,
-    isSentinelUser,
-}: SentinelUserRecoveryCardProps) => {
+const SentinelUserRecoveryCard = ({ ids, isSentinelUser }: SentinelUserRecoveryCardProps) => {
     const [user] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [{ accountRecoveryStatus, dataRecoveryStatus }, loadingRecoveryStatus] = useRecoveryStatus();
@@ -235,7 +230,7 @@ const SentinelUserRecoveryCard = ({
             <h3 className="text-bold text-rg mb-4">{c('Title').t`Your recovery status`}</h3>
 
             <ul className="unstyled m-0">
-                {canDisplayNewSentinelSettings && isSentinelUser ? (
+                {isSentinelUser ? (
                     <li>
                         <RecoveryCardStatus {...sentinelAccountProps} />
                     </li>
@@ -429,10 +424,9 @@ interface RecoveryCardProps {
         account: string;
         data: string;
     };
-    canDisplayNewSentinelSettings?: boolean;
 }
 
-const RecoveryCard = ({ ids, canDisplayNewSentinelSettings }: RecoveryCardProps) => {
+const RecoveryCard = ({ ids }: RecoveryCardProps) => {
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
     const isSecurityCheckupAvailable = useIsSecurityCheckupAvailable();
 
@@ -446,13 +440,7 @@ const RecoveryCard = ({ ids, canDisplayNewSentinelSettings }: RecoveryCardProps)
     }
 
     if (isSentinelUser || !isSecurityCheckupAvailable) {
-        return (
-            <SentinelUserRecoveryCard
-                ids={ids}
-                canDisplayNewSentinelSettings={canDisplayNewSentinelSettings}
-                isSentinelUser={isSentinelUser}
-            />
-        );
+        return <SentinelUserRecoveryCard ids={ids} isSentinelUser={isSentinelUser} />;
     }
 
     return <SecurityCheckupCard />;
