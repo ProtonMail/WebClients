@@ -4,7 +4,7 @@ import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 export interface SecurityCheckupCardInnerProps {
-    title: string;
+    title: ReactNode;
     subTitle?: ReactNode;
     prefix?: ReactNode;
     suffix?: ReactNode;
