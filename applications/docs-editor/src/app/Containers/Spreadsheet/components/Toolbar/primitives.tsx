@@ -16,10 +16,12 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
 ) {
   return (
     <div ref={ref} {...props} className={clsx('px-4 pb-3', props.className)}>
-      <Ariakit.Toolbar className="border-weak flex items-center gap-[.125rem] rounded-t-[1rem] border bg-[white] px-3 py-[.375rem]">
-        {props.children}
-      </Ariakit.Toolbar>
-      {formulaBarSlot}
+      <div className="border-weak rounded-[1rem] border bg-[white] shadow-[0_4px_10px_0_rgba(0,0,0,0.06)]">
+        <Ariakit.Toolbar className="flex items-center gap-[.125rem] px-3 py-[.375rem]">
+          {props.children}
+        </Ariakit.Toolbar>
+        {formulaBarSlot}
+      </div>
     </div>
   )
 })
