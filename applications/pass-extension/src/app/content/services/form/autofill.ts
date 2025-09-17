@@ -149,7 +149,7 @@ export const createAutofillService = () => {
             }
         }
 
-        autofillIdentityFields(fields, selectedField, data);
+        await autofillIdentityFields(fields, selectedField, data);
     };
 
     /** Checks for OTP fields in tracked forms and prompts for autofill
