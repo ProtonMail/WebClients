@@ -59,5 +59,5 @@ export const useMailboxContainerSideEffects = ({
     usePreLoadElements({ elements, labelID, loading });
 
     // Handle the redirection to /primary if the user tries to access /inbox when cateogries are enabled
-    useMailCategoriesRedirection();
+    useMailCategoriesRedirection({ labelID });
 };

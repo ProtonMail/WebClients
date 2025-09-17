@@ -6,7 +6,11 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import { useCategoriesView } from './useCategoriesView';
 
-export const useMailCategoriesRedirection = () => {
+interface Props {
+    labelID: string;
+}
+
+export const useMailCategoriesRedirection = ({ labelID }: Props) => {
     const location = useLocation();
     const { push } = useHistory();
     const categoryViewControl = useCategoriesView();
@@ -18,5 +22,10 @@ export const useMailCategoriesRedirection = () => {
         ) {
             push(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]);
         }
-    }, [location.pathname, categoryViewControl.categoryViewAccess, push]);
+
+        const currentCategory = categoryViewControl.categoriesStore.find((cat) => cat.ID === labelID);
+        if (currentCategory && !currentCategory.Display) {
+            push(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]);
+        }
+    }, [location.pathname, categoryViewControl.categoryViewAccess, push, labelID]);
 };
