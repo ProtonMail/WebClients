@@ -7,6 +7,7 @@ import { ZOOM_DEFAULT, ZOOM_MAX, ZOOM_MIN, ZOOM_SUGGESTIONS } from '../../consta
 import { createStringifier } from '../../stringifier'
 import * as UI from '../ui'
 import { useUI } from '../../ui-store'
+import { scaleToPercentage } from '../utils'
 
 const { s } = createStringifier(strings)
 
@@ -167,16 +168,8 @@ function ComboboxPopover() {
   )
 }
 
-function scaleToZoom(scale: number) {
-  return scale * 100
-}
-
 function zoomToScale(zoom: number) {
   return zoom / 100
-}
-
-function scaleToPercentage(scale: number) {
-  return `${scaleToZoom(scale)}%`
 }
 
 function strings() {
