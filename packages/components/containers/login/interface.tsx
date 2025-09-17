@@ -32,8 +32,10 @@ export enum AuthStep {
 }
 
 export interface AuthTypes {
-    totp: boolean;
-    fido2: boolean;
+    twoFactor: {
+        totp: boolean;
+        fido2: boolean;
+    };
     unlock: boolean;
 }
 
