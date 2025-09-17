@@ -1,7 +1,10 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { useCallback } from 'react';
 
-import { isElementMessage } from '../../../helpers/elements';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
+
+import { hasLabel, isElementMessage } from '../../../helpers/elements';
 import type { ApplyLabelsParams } from './interface';
 import { useApplyLabelsToAll } from './useApplyLabelsToAll';
 import { useApplyLabelsToSelection } from './useApplyLabelsToSelection';
@@ -9,6 +12,7 @@ import { useApplyLabelsToSelection } from './useApplyLabelsToSelection';
 export const useApplyLabels = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const applyLabelsToSelection = useApplyLabelsToSelection();
     const { applyLabelsToAll, applyLabelsToAllModal } = useApplyLabelsToAll(setContainFocus);
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const applyLabels = useCallback(
         async ({
@@ -22,6 +26,9 @@ export const useApplyLabels = (setContainFocus?: Dispatch<SetStateAction<boolean
             onCheckAll,
         }: ApplyLabelsParams) => {
             if (!elements.length) {
+                return;
+            }
+            if (isRetentionPoliciesEnabled && hasLabel(elements[0], MAILBOX_LABEL_IDS.SOFT_DELETED)) {
                 return;
             }
 

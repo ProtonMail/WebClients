@@ -9,12 +9,13 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { hasAttachments, isDraft, isOutbox, isSent } from '@proton/shared/lib/mail/messages';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { LOAD_RETRY_COUNT } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { isUnread } from '../../helpers/elements';
+import { hasLabel, isUnread } from '../../helpers/elements';
 import type { MessageViewIcons } from '../../helpers/message/icon';
 import { getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
 import { isElementReminded } from '../../helpers/snooze';
@@ -115,6 +116,8 @@ const MessageView = (
 
     const onCompose = useOnCompose();
 
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
+
     const draft = !loading && isDraft(message.data);
     const outbox = !loading && (isOutbox(message.data) || message.draftFlags?.sending);
     const sent = isSent(message.data);
@@ -146,7 +149,8 @@ const MessageView = (
     };
 
     const handleToggle = (value: boolean) => () => {
-        if (draft && !outbox) {
+        const isInDeletedFolder = isRetentionPoliciesEnabled && hasLabel(message.data, MAILBOX_LABEL_IDS.SOFT_DELETED);
+        if (draft && !outbox && !isInDeletedFolder) {
             void onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
             return;
         }
