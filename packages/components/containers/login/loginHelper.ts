@@ -3,12 +3,11 @@ import { c } from 'ttag';
 import type { AuthTypes } from '@proton/components/containers/login/interface';
 import { CryptoProxy } from '@proton/crypto';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { getTwoFactorTypes } from '@proton/shared/lib/authentication/twoFactor';
 import { type APP_NAMES, PASSWORD_MODE } from '@proton/shared/lib/constants';
 import type { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import type { User as tsUser } from '@proton/shared/lib/interfaces/User';
 import { getPrimaryKeyWithSalt } from '@proton/shared/lib/keys/keys';
-import { getHasFIDO2Enabled, getHasTOTPEnabled } from '@proton/shared/lib/settings/twoFactor';
-import { assertFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 import { computeKeyPassword } from '@proton/srp';
 
 /**
@@ -16,16 +15,8 @@ import { computeKeyPassword } from '@proton/srp';
  */
 export const getAuthTypes = ({ info, app }: { info: AuthResponse; app: APP_NAMES }): AuthTypes => {
     const Enabled = info?.['2FA']?.Enabled || 0;
-
-    const twoFactor = {
-        totp: getHasTOTPEnabled(Enabled),
-        fido2: getHasFIDO2Enabled(Enabled),
-    };
-
-    assertFIDO2Support({ twoFactor, app, hostname: location.hostname });
-
     return {
-        twoFactor,
+        twoFactor: getTwoFactorTypes({ enabled: Enabled, app, hostname: location.hostname }),
         unlock: info?.PasswordMode === PASSWORD_MODE.TWO_PASSWORD,
     };
 };

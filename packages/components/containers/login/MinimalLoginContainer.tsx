@@ -237,7 +237,7 @@ const TwoFactorStep = ({ onSubmit, fido2, authTypes, cancelButton }: TwoFactorSt
             value={tabIndex}
             onChange={setTabIndex}
             tabs={[
-                authTypes.fido2 &&
+                authTypes.twoFactor.fido2 &&
                     fido2 && {
                         title: c('fido2: Label').t`Security key`,
                         content: (
@@ -248,7 +248,7 @@ const TwoFactorStep = ({ onSubmit, fido2, authTypes, cancelButton }: TwoFactorSt
                             />
                         ),
                     },
-                authTypes.totp && {
+                authTypes.twoFactor.totp && {
                     title: c('Label').t`Authenticator app`,
                     content: (
                         <TOTPForm
