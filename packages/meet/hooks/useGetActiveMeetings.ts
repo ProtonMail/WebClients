@@ -1,5 +1,5 @@
 import { useApi } from '@proton/components';
-import { getActiveMeetingsQuery } from '@proton/shared/lib/api/meet';
+import { getUpcomingMeetingsQuery } from '@proton/shared/lib/api/meet';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 export const useGetActiveMeetings = () => {
@@ -7,7 +7,7 @@ export const useGetActiveMeetings = () => {
 
     const getActiveMeetings = async () => {
         try {
-            const response = await api<{ Meetings: Meeting[] }>(getActiveMeetingsQuery);
+            const response = await api<{ Meetings: Meeting[] }>(getUpcomingMeetingsQuery);
 
             return response.Meetings;
         } catch (error) {
