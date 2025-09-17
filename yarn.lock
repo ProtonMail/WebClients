@@ -8924,7 +8924,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/i18n@workspace:packages/i18n"
   dependencies:
-    chalk: "npm:^4.1.2"
     cross-env: "npm:^10.0.0"
     eslint: "npm:^9.35.0"
     execa: "npm:^5.1.1"
@@ -9513,7 +9512,6 @@ __metadata:
   resolution: "@proton/testpackage-gmail-token@workspace:tests/packages/gmail-token"
   dependencies:
     "@inquirer/prompts": "npm:^4.3.3"
-    chalk: "npm:^5.6.0"
     googleapis: "npm:^131.0.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.9.2"
