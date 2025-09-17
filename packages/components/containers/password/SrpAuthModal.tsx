@@ -273,8 +273,15 @@ const SrpAuthModal = ({
             return;
         }
 
-        const infoResult = await getInfoResult();
-        const twoFactor = getReAuthTwoFactorTypes({ scope, infoResult, userSettings, app: APP_NAME });
+        let infoResult: Unwrap<ReturnType<typeof getInfoResult>>;
+        let twoFactor: ReturnType<typeof getReAuthTwoFactorTypes>;
+        try {
+            infoResult = await getInfoResult();
+            twoFactor = getReAuthTwoFactorTypes({ scope, infoResult, userSettings, app: APP_NAME });
+        } catch (error) {
+            errorHandler(error);
+            return;
+        }
 
         infoResultRef.current.data = { infoResult, twoFactor };
 
@@ -364,7 +371,7 @@ const SrpAuthModal = ({
                             accessType={user?.accessType}
                             defaultPassword={password}
                             onSubmit={(password) => {
-                                return withSubmitting(handleSubmit({ step, password, twoFa: undefined }));
+                                return withSubmitting(handleSubmit({ step, password, twoFa: undefined })).catch(noop);
                             }}
                             loading={submitting}
                         />
@@ -418,7 +425,7 @@ const SrpAuthModal = ({
                                             step,
                                             password,
                                             twoFa: { type: 'code', payload },
-                                        })
+                                        }).catch(noop)
                                     )
                                 }
                             />
