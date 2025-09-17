@@ -68,11 +68,8 @@ const SecurityCheckupSummaryTitle = ({ className }: { className?: string }) => {
     if (cohort === SecurityCheckupCohort.Sentinel.COMPLETE_RECOVERY_SENTINEL) {
         return (
             <Title
-                subline={
-                    // TODO: copy:
-                    c('Safety review').t`Your account and data can be recovered.`
-                }
-                icon="pass-shield-warning"
+                subline={c('Safety review').t`Your account and data can be recovered. You have recommended actions.`}
+                icon="pass-shield-ok"
                 color="info"
                 className={className}
             />
@@ -82,11 +79,7 @@ const SecurityCheckupSummaryTitle = ({ className }: { className?: string }) => {
     if (cohort === SecurityCheckupCohort.Sentinel.SENTINEL_RECOMMENDATIONS) {
         return (
             <Title
-                subline={
-                    // TODO: copy:
-
-                    c('Safety review').t`You have recommended actions to safeguard your account.`
-                }
+                subline={c('Safety review').t`You have recommended actions to safeguard your account.`}
                 icon="pass-shield-warning"
                 color="warning"
                 className={className}

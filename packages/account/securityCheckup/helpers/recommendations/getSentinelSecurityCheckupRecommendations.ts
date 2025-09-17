@@ -103,7 +103,7 @@ const getSentinelSecurityCheckupRecommendations = (securityState: SecurityState)
         };
     };
 
-    const { phone, email } = securityState;
+    const { phone } = securityState;
 
     /**
      * SENTINEL_RECOMMENDATIONS
@@ -127,25 +127,25 @@ const getSentinelSecurityCheckupRecommendations = (securityState: SecurityState)
      * COMPLETE_RECOVERY
      **/
     if (isPerfectPhraseState && isPerfectSentinelEmailOrPhoneState) {
-        furtherActions.email();
+        actions.email();
+        actions.phone();
 
         return serialize({
-            cohort: SecurityCheckupCohort.Common.COMPLETE_RECOVERY,
+            cohort:
+                actions.toArray().length === 0
+                    ? SecurityCheckupCohort.Common.COMPLETE_RECOVERY
+                    : SecurityCheckupCohort.Sentinel.COMPLETE_RECOVERY_SENTINEL,
             actions,
             furtherActions,
         });
     }
 
     if (isPerfectPhraseState && !isPerfectSentinelEmailOrPhoneState) {
-        if (phone.value && phone.isEnabled) {
+        if (phone.value) {
             // Prioritise removing the phone
             actions.phone();
-        }
-
-        if (email.value && email.isEnabled) {
+        } else {
             actions.email();
-        } else if (!(phone.value && phone.isEnabled)) {
-            furtherActions.email();
         }
 
         return serialize({
@@ -178,9 +178,17 @@ const getSentinelSecurityCheckupRecommendations = (securityState: SecurityState)
     actions.phrase();
 
     if (phone.value) {
-        furtherActions.phone();
+        if (actions.toArray().length === 0) {
+            actions.phone();
+        } else {
+            furtherActions.phone();
+        }
     } else {
-        furtherActions.email();
+        if (actions.toArray().length === 0) {
+            actions.email();
+        } else {
+            furtherActions.email();
+        }
     }
 
     return serialize({

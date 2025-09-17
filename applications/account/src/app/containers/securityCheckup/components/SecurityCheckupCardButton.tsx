@@ -15,12 +15,12 @@ interface SecurityCheckupCardButtonInnerProps extends Omit<SecurityCheckupCardIn
 
 export const SecurityCheckupCardButtonInner = ({
     loading,
-    icon = 'chevron-right',
+    icon = 'arrow-right',
     ...rest
 }: SecurityCheckupCardButtonInnerProps) => {
     return (
         <SecurityCheckupCardInner
-            suffix={<div className="p-2">{loading ? <CircleLoader /> : <Icon name={icon} size={5} />}</div>}
+            suffix={<div className="p-2">{loading ? <CircleLoader /> : <Icon name={icon} size={4} />}</div>}
             {...rest}
         />
     );
