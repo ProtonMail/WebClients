@@ -11066,6 +11066,9 @@
       ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
+      ],
+      "Account restricted": [
+        "Fiók korlátozva"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11628,6 +11631,976 @@
       ],
       "Passcode:": [
         "Belépési kód:"
+      ]
+    },
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } e-mail cím",
+        "${ addressCount } e-mail cím"
+      ],
+      "${ admins } admin": [
+        "${ admins } adminisztrátor",
+        "${ admins } adminisztrátorok"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } új naptár",
+        "${ calendarsToBeCreatedCount } új naptár"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } egyesített naptár",
+        "${ calendarsToBeMergedCount } egyesített naptár"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } nap",
+        "${ ceilDays } nap"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } óra",
+        "${ ceilHours } óra"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } perc",
+        "${ ceilMinutes } perc"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } névjegy több e-mail címet tartalmaz.",
+        "${ contactCount } névjegy több e-mail címet tartalmaz."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } tag",
+        "${ contactEmailsLength } tag"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } névjegy található",
+        "${ contactsCount } névjegy található"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts }).",
+        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts })."
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } névjegy",
+        "${ contactsLength } névjegy"
+      ],
+      "${ count } time": [
+        "${ count } alkalommal",
+        "${ count } alkalommal"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } névjegy azonosnak tűnik.",
+        "${ countMergeableContacts } névjegy azonosnak tűnik."
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } nap van hátra",
+        "${ dayDiff } nap van hátra"
+      ],
+      "${ days } day": [
+        "${ days } nap",
+        "${ days } nap"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } további saját domain név",
+        "${ domains } további saját domain név"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mail cím",
+        "${ emailsCount } e-mail cím"
+      ],
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } parancs található.",
+        "${ filteredList.length } parancs található."
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } óra",
+        "${ gracePeriodHoursRemaining } óra"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } óra maradt.",
+        "${ gracePeriodHoursRemaining } óra maradt."
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } csoport található",
+        "${ groupCounts } csoport található"
+      ],
+      "${ hours } h": [
+        "${ hours } ó",
+        "${ hours } ó"
+      ],
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ó",
+        "${ hoursInt }.5 ó"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 óra",
+        "${ hoursInt }.5 óra"
+      ],
+      "${ ips } server": [
+        "${ ips } szerver",
+        "${ ips } szerver"
+      ],
+      "${ list } doesn't have a valid email address": [
+        "${ list } nem tartalmaz egy érvényes e-mail címet",
+        "Néhány névjegy nem tartalmaz egy érvényes e-mail címet: ${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } nem tartalmaz e-mail címet",
+        "Néhány névjegyhez nincs e-mail cím: ${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "${ list } érvénytelen e-mail címet tartalmaz",
+        "Némelyik csoport érvénytelen e-mail címet tartalmaz: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } nem tartalmaz névjegyeket",
+        "Néhány csoportban nincsenek névjegyek: ${ list }"
+      ],
+      "${ minutes } min": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }.",
+        "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } névjegy sikeresen egyesítve (összesen: ${ totalBeMerged }).",
+        "${ model.submitted.length } névjegy sikeresen egyesítve (összesen: ${ totalBeMerged })."
+      ],
+      "${ more } more": [
+        "${ more } további",
+        "${ more } további"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mail cím",
+        "${ n } ${ BRAND_NAME } e-mail cím"
+      ],
+      "${ n } account per wallet": [
+        "Tárolónként ${ n } fiók",
+        "Tárolónként ${ n } fiók"
+      ],
+      "${ n } calendar": [
+        "${ n } naptár",
+        "${ n } naptár"
+      ],
+      "${ n } calendar per user": [
+        "${ n } naptár felhasználónként",
+        "${ n } naptár felhasználónként"
+      ],
+      "${ n } custom email domain": [
+        "${ n } saját e-mail domain név",
+        "${ n } saját e-mail domain név"
+      ],
+      "${ n } device": [
+        "${ n } eszköz",
+        "${ n } eszköz"
+      ],
+      "${ n } email address": [
+        "${ n } e-mail cím",
+        "${ n } e-mail cím / alias"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mail cím felhasználónként",
+        "${ n } e-mail cím felhasználónként"
+      ],
+      "${ n } filter": [
+        "${ n } szűrő",
+        "${ n } szűrő"
+      ],
+      "${ n } folder": [
+        "${ n } mappa",
+        "${ n } mappa"
+      ],
+      "${ n } folder and label": [
+        "${ n } mappa és címke",
+        "${ n } mappa és címke"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } ingyenes VPN kapcsolat felhasználónként",
+        "${ n } ingyenes VPN kapcsolat felhasználónként"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email e-mail álnév",
+        "${ n } hide-my-email e-mail álnév"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } nagysebességű VPN kapcsolat",
+        "${ n } nagysebességű VPN kapcsolat"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } nagysebességű VPN kapcsolat felhasználónként",
+        "${ n } nagysebességű VPN kapcsolat felhasználónként"
+      ],
+      "${ n } label": [
+        "${ n } címke",
+        "${ n } címke"
+      ],
+      "${ n } message per day": [
+        "${ n } üzenet naponta",
+        "${ n } üzenet naponta"
+      ],
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
+      "${ n } month FREE": [
+        "${ n } hónap INGYEN",
+        "${ n } hónap INGYEN"
+      ],
+      "${ n } server": [
+        "${ n } kiszolgáló",
+        "${ n }+ kiszolgáló"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként",
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként"
+      ],
+      "${ n } user account": [
+        "${ n } felhasználói fiók",
+        "${ n } felhasználói fiókok"
+      ],
+      "${ n } vault": [
+        "${ n } tároló",
+        "${ n } tároló"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN kapcsolat",
+        "${ n } VPN kapcsolat"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN kapcsolat felhasználónként",
+        "${ n } VPN kapcsolat felhasználónként"
+      ],
+      "${ n } wallet": [
+        "${ n } tároló",
+        "${ n } tároló"
+      ],
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } résztvevő",
+        "${ numberOfAttendees } résztvevő"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } ország",
+        "${ numberOfCountries } ország"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers }, ${ numberOfCountries } országban",
+        "${ numberOfServers }, ${ numberOfCountries }+ országban"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } ${ numberOfCountries } országban",
+        "${ numberOfServers } ${ numberOfCountries } országban"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
+      ],
+      "${ options }-day file version history": [
+        "Fájlok változtatási előzményeinek megtartása ${ options } napig",
+        "Fájlok változtatási előzményeinek megtartása ${ options } napig"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
+        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } lejár ${ daysLeft } nap múlva.",
+        "${ planName } lejár ${ daysLeft } nap múlva."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } naptár felhasználónként",
+        "${ planNumberOfCalendars } naptár felhasználónként"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } saját e-mail domain név",
+        "${ planNumberOfDomains } saját e-mail domain név"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } email cím",
+        "${ planNumberOfEmails } e-mail cím"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mail cím felhasználónként",
+        "${ planNumberOfEmails } e-mail cím felhasználónként"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } felhasználó",
+        "${ planNumberOfUsers } felhasználó"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mappa található",
+        "${ providerFoldersNumLocalized } mappa található"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } címke található a Gmailben",
+        "${ providerFoldersNumLocalized } címke található a Gmailben"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } írási segéd licenc",
+        "${ seats } írási segéd licenc"
+      ],
+      "${ seconds } second": [
+        "${ seconds } másodperc",
+        "${ seconds } másodperc"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
+        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva",
+        "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mappa kiválasztva",
+        "${ selectedFoldersCount } mappa kiválasztva"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } címke kiválasztva",
+        "${ selectedFoldersCount } címke kiválasztva"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mappa kiválasztva",
+        "${ selectedFoldersCountLocalized } mappa kiválasztva"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } címke kiválasztva",
+        "${ selectedFoldersCountLocalized } címke kiválasztva"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } nap",
+        "${ timeRemaining.inDays } nap"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } óra",
+        "${ timeRemaining.inHours } óra"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } névjegy",
+        "${ totalContacts } névjegy"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért.",
+        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez",
+        "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a naptárba",
+        "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a naptárba"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } névjegy sikeresen frissítve.",
+        "${ updated } névjegy sikeresen frissítve."
+      ],
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
+      ],
+      "${ value } day after": [
+        "${ value } nappal utána",
+        "${ value } nappal utána"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } nappal utána, ekkor: ${ time }",
+        "${ value } nappal utána, ekkor: ${ time }"
+      ],
+      "${ value } day before": [
+        "${ value } nappal előtte",
+        "${ value } nappal előtte"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ value } nappal előtte, ekkor: ${ time }",
+        "${ value } nappal előtte, ekkor: ${ time }"
+      ],
+      "${ value } hour after": [
+        "${ value } órával utána",
+        "${ value } órával utána"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ value } órával előtte, ekkor: ${ time }",
+        "${ value } órával előtte, ekkor: ${ time }"
+      ],
+      "${ value } hour before": [
+        "${ value } órával előtte",
+        "${ value } órával előtte"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ value } órával előtte, ekkor: ${ time }",
+        "${ value } órával előtte, ekkor: ${ time }"
+      ],
+      "${ value } minute after": [
+        "${ value } perccel utána",
+        "${ value } perccel utána"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ value } perccel előtte, ekkor: ${ time }",
+        "${ value } perccel előtte, ekkor: ${ time }"
+      ],
+      "${ value } minute before": [
+        "${ value } perccel előtte",
+        "${ value } perccel előtte"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ value } perccel előtte, ekkor: ${ time }",
+        "${ value } perccel előtte, ekkor: ${ time }"
+      ],
+      "${ value } week after": [
+        "${ value } héttel utána",
+        "${ value } héttel utána"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ value } héttel utána, ekkor: ${ time }",
+        "${ value } héttel utána, ekkor: ${ time }"
+      ],
+      "${ value } week before": [
+        "${ value } héttel előtte",
+        "${ value } héttel előtte"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ value } héttel előtte, ekkor: ${ time }",
+        "${ value } héttel előtte, ekkor: ${ time }"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } tag)",
+        "(${ memberCount } tag)"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolatok (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
+      ],
+      "Add to ${ groupCount } group": [
+        "Hozzáadás ${ groupCount } csoporthoz",
+        "Hozzáadás ${ groupCount } csoporthoz"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Mind (${ totalFoldersCount } mappa)",
+        "Mind (${ totalFoldersCount } mappa)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Mind (${ totalFoldersCount } címke)",
+        "Mind (${ totalFoldersCount } címke)"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Egész nap, ${ plusDaysToEnd } napig tart",
+        "Egész nap, ${ plusDaysToEnd } napig tart"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig",
+        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Létrehozott naptárak száma: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
+        "Létrehozott naptárak száma: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
+        "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Biztos, hogy véglegesen töröl ${ count } névjegyet?",
+        "Biztos, hogy véglegesen töröl ${ count } névjegyet?"
+      ],
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Legfeljebb ${ maxAttendees } résztvevő megengedett meghívónként",
+        "Legfeljebb ${ maxAttendees } résztvevő megengedett meghívónként"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban",
+        "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatikus kiválasztás ${ numberOfCountries } országból",
+        "Automatikus kiválasztás ${ numberOfCountries } országból"
+      ],
+      "byte": [
+        "bájt",
+        "bájt"
+      ],
+      "Byte": [
+        "Bájt",
+        "Bájt"
+      ],
+      "Contact deleted": [
+        "Névjegy törölve",
+        "Névjegyek törölve"
+      ],
+      "Contact group deleted": [
+        "Névjegy csoport törölve",
+        "Névjegy csoport törölve"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } új naptár létrehozása",
+        "${ calendarsToBeCreatedCount } új naptár létrehozása"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Hozzon létre biztonságos felhőárhelyet ${ value } tagnak",
+        "Hozzon létre biztonságos felhőárhelyet ${ value } tagnak"
+      ],
+      "Create up to ${ n } calendar": [
+        "Akár ${ n } naptár létrehozása",
+        "Akár ${ n } naptár létrehozása"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
+      ],
+      "Day": [
+        "Nap",
+        "Nap"
+      ],
+      "day before": [
+        "nappal előtte",
+        "nappal előtte"
+      ],
+      "Delete ${ count } contact": [
+        "${ count } névjegy törlése",
+        "${ count } névjegy törlése"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } névjegy csoport törlése",
+        "${ count } névjegy csoport törlése"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } névjegy törlése",
+        "${ selectedCount } névjegy törlése"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } névjegy csoport törlése",
+        "${ selectedCount } névjegy csoport törlése"
+      ],
+      "Deleting event...": [
+        "Esemény törlése...",
+        "Események törlése..."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál",
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál vagy",
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál vagy"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Becsült hátralévő idő: ${ estimatedMinutes } perc",
+        "Becsült hátralévő idő: ${ estimatedMinutes } perc"
+      ],
+      "event": [
+        "esemény",
+        "esemény"
+      ],
+      "Every ${ interval } day": [
+        "Minden ${ interval }. napon",
+        "Minden ${ interval }. napon"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Minden ${ interval }. napon, ${ timesString }",
+        "Minden ${ interval }. napon, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Minden ${ interval }. napon, ${ untilString }",
+        "Minden ${ interval }. napon, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Minden ${ interval } héten, minden nap",
+        "Minden ${ interval } héten, minden nap"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Minden ${ interval }. héten, minden nap, ${ timesString }",
+        "Minden ${ interval }. héten, minden nap, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Minden ${ interval }. héten, minden nap, ${ untilString }",
+        "Minden ${ interval }. héten, minden nap, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Minden ${ interval }. héten, pénteken",
+        "Minden ${ interval }. héten, pénteken"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Minden ${ interval }. héten, pénteken, ${ timesString }",
+        "Minden ${ interval }. héten, pénteken, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Minden ${ interval }. héten, pénteken, ${ untilString }",
+        "Minden ${ interval }. héten, pénteken, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Minden ${ interval } héten, hétfőn",
+        "Minden ${ interval } héten, hétfőn"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Minden ${ interval }. héten, hétfőn, ${ timesString }",
+        "Minden ${ interval }. héten, hétfőn, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Minden ${ interval }. héten, hétfőn, ${ untilString }",
+        "Minden ${ interval }. héten, hétfőn, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Minden ${ interval }. héten, szombaton",
+        "Minden ${ interval }. héten, szombaton"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Minden ${ interval }. héten, szombaton, ${ untilString }",
+        "Minden ${ interval }. héten, szombaton, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Minden ${ interval }. héten, vasárnap",
+        "Minden ${ interval } héten, vasárnap"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ untilString }",
+        "Minden ${ interval }. héten, vasárnap, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Minden ${ interval }. héten, csütörtökön",
+        "Minden ${ interval }. héten, csütörtökön"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Minden ${ interval }. héten, csütörtökön, ${ timesString }",
+        "Minden ${ interval }. héten, csütörtökön, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Minden ${ interval }. héten, csütörtökön, ${ untilString }",
+        "Minden ${ interval }. héten, csütörtökön, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Minden ${ interval }. héten, kedden",
+        "Minden ${ interval }. héten, kedden"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Minden ${ interval }. héten, kedden, ${ timesString }",
+        "Minden ${ interval }. héten, kedden, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Minden ${ interval }. héten, kedden, ${ untilString }",
+        "Minden ${ interval }. héten, kedden, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Minden ${ interval }. héten, szerdán",
+        "Minden ${ interval }. héten, szerdán"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Minden ${ interval }. héten, szerdán, ${ timesString }",
+        "Minden ${ interval }. héten, szerdán, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Minden ${ interval }. héten, szerdán, ${ untilString }",
+        "Minden ${ interval }. héten, szerdán, ${ untilString }"
+      ],
+      "Every ${ interval } year": [
+        "Minden ${ interval }. évben",
+        "Minden ${ interval }. évben"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Minden ${ interval }. évben, ${ timesString }",
+        "Minden ${ interval }. évben, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Minden ${ interval }. évben, ${ untilString }",
+        "Minden ${ interval }. évben, ${ untilString }"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz",
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz"
+      ],
+      "Gigabyte": [
+        "Gigabájt",
+        "Gigabájt"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "Nagysebességű VPN ${ n } eszközön",
+        "Nagysebességű VPN ${ n } eszközön"
+      ],
+      "hour before": [
+        "órával előtte",
+        "órával előtte"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount } naptár importálása a(z) ${ totalCalendarsCount } naptárból",
+        "${ calendarCount } naptár importálása a(z) ${ totalCalendarsCount } naptárból"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint",
+        "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Minden üzenet importálása ${ itemsToImportCount } címkéből és megjelölés mint",
+        "Minden üzenet importálása ${ itemsToImportCount } címkéből és megjelölés mint"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összes: ${ itemsToImportCount }) és megjelölés mint",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összes: ${ itemsToImportCount }) és megjelölés mint"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint"
+      ],
+      "Import as simple event?": [
+        "Importálás egyszerű eseményként?",
+        "Importálás egyszerű eseményekként?"
+      ],
+      "Kilobyte": [
+        "Kilobájt",
+        "Kilobájt"
+      ],
+      "Megabyte": [
+        "Megabájt",
+        "Megabájt"
+      ],
+      "Member added": [
+        "Tag hozzáadva",
+        "Tagok hozzáadva"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral",
+        "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral"
+      ],
+      "minute before": [
+        "perccel előtte",
+        "perccel előtte"
+      ],
+      "Month": [
+        "Hónap",
+        "Hónap"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Az egyik névjegyhez nincs e-mail cím: ${ noEmailsContactNamesList }",
+        "Néhány névjegyhez nincs e-mail cím: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Az egyik csoportban nincsenek névjegyek: ${ noContactGroupList }",
+        "Néhány csoportban nincsenek névjegyek: ${ noContactGroupList } "
+      ],
+      "participant": [
+        "résztvevő",
+        "résztvevő"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Jelszó visszaállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg.",
+        "Jelszó visszaállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Javítsa ki a megjelölt hibát a folytatáshoz.",
+        "Javítsa ki a megjelölt hibákat a folytatáshoz."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Válasszon ki e-mail címet vagy címeket ${ groupCount } csoporthoz adáshoz.",
+        "Válasszon ki e-mail címet vagy címeket ${ groupCount } csoporthoz adáshoz."
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Kettőzött címzett eltávolítása: ${ joinedRecipients }",
+        "Kettőzött címzettek eltávolítása: ${ joinedRecipients }"
+      ],
+      "Saving event...": [
+        "Esemény mentése...",
+        "Események mentése..."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Védje e-mailjeit és ütemezze végponttól-végpontig tartó titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail tartományok támogatását, korlátlan számú hide-my-email e-mail álnevet és még sok mást.",
+        "Védje e-mailjeit és ütemezze végponttól-végpontig tartó titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail tartományok támogatását, korlátlan számú hide-my-email e-mail álnevet és még sok mást."
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Szerverek ${ numberOfCountries }+ országban",
+        "Szerverek ${ numberOfCountries }+ országban"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Az előfizetés automatikusan megújul minden ${ cycle } hónapban.",
+        "Az előfizetés automatikusan megújul minden ${ cycle } hónapban."
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } saját e-mail domain név használata",
+        "${ n } saját e-mail domain név használata"
+      ],
+      "Terabyte": [
+        "Terabájt",
+        "Terabájt"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "A kupon ${ couponRedemptions } megújításra érvényes.",
+        "A kupon ${ couponRedemptions } megújításra érvényes."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes.",
+        "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A kedvezményes ár ${ priceWithDiscount } az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron 1 hónapra. Bármikor lemondhatja.",
+        "A kedvezményes ár ${ priceWithDiscount } az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron 1 hónapra. Bármikor lemondhatja."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja.",
+        "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja."
+      ],
+      "This file contains an event invitation:": [
+        "Ez a fájl egy esemény meghívót tartalmaz:",
+        "Ez a fájl esemény meghívókat tartalmaz:"
+      ],
+      "This file contains an invitation response:": [
+        "Ez a fájl egy meghívó választ tartalmaz:",
+        "Ez a fájl meghívó válaszokat tartalmaz:"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Ez az engedély${ timeRemaining.inDays } nap múlva lejár",
+        "Ez az engedély ${ timeRemaining.inDays } nap múlva lejár"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Ez az engedély ${ timeRemaining.inHours } óra múlva lejár",
+        "Ez az engedély${ timeRemaining.inHours } óra múlva lejár"
+      ],
+      "Total for ${ n } month": [
+        "Összesen ${ n } hónapra",
+        "Összesen ${ n } hónapra"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
+      ],
+      "Up to ${ n } user": [
+        "Akár ${ n } felhasználó",
+        "Akár ${ n } felhasználó"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })",
+        "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Használja egyszerre legfeljebb ${ n } eszközön",
+        "Használja egyszerre legfeljebb ${ n } eszközön"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Tároló megosztás (${ n } személyig)",
+        "Tároló megosztás (${ n } személyig)"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN kapcsolat felhasználónként ${ n } eszközre",
+        "VPN kapcsolat felhasználónként ${ n } eszközre"
+      ],
+      "Week": [
+        "Hét",
+        "Hét"
+      ],
+      "week before": [
+        "héttel előtte",
+        "héttel előtte"
+      ],
+      "Year": [
+        "Év",
+        "Év"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Nem küldhet emailt több, mint ${ maxContacts } címzettnek",
+        "Nem küldhet emailt több, mint ${ maxContacts } címzettnek"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
+        "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "${ timeRemaining.inDays } nap áll rendelkezésére, hogy visszaállítsa jelszavát.",
+        "${ timeRemaining.inDays } nap áll rendelkezésére, hogy visszaállítsa jelszavát."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "${ timeRemaining.inHours } óra áll rendelkezésére, hogy visszaállítsa jelszavát.",
+        " ${ timeRemaining.inHours } óra áll rendelkezésére, hogy visszaállítsa jelszavát."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "${ timeRemaining.inMinutes } perc áll rendelkezésére, hogy visszaállítsa jelszavát.",
+        " ${ timeRemaining.inMinutes } perc áll rendelkezésére, hogy visszaállítsa jelszavát."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "${ timeRemaining.inSeconds } másodperc áll rendelkezésére, hogy visszaállítsa jelszavát.",
+        " ${ timeRemaining.inSeconds } másodperc áll rendelkezésére, hogy visszaállítsa jelszavát."
+      ],
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Túllépte a naptáranként maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot",
+        "Túllépte a naptáranként maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Elérte a naptárhoz maximálisan hozzáadható ${ MAX_CALENDAR_MEMBERS } tagot.\nAhhoz, hogy további ${ BRAND_NAME } fiókokkal megoszthassa, törölnie kell néhány tagot.",
+        "Elérte a naptárhoz maximálisan hozzáadható ${ MAX_CALENDAR_MEMBERS } tagot.\nAhhoz, hogy további ${ BRAND_NAME } fiókokkal megoszthassa, törölnie kell néhány tagot."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Elérte a naptárhoz maximálisan létrehozható ${ MAX_LINKS_PER_CALENDAR } hivatkozást.\nÚjabb hivatkozás létrehozása előtt, törölnie kell egy meglévőt.",
+        "Elérte a naptárhoz maximálisan létrehozható ${ MAX_LINKS_PER_CALENDAR } hivatkozást.\nÚjabb hivatkozás létrehozása előtt, törölnie kell egy meglévőt."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből.",
+        "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
+        "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "A fájl több mint ${ MAX_IMPORT_EVENTS } eseményt tartalmaz: ${ formattedFilename }.",
+        "A fájl több mint ${ MAX_IMPORT_EVENTS } eseményt tartalmaz: ${ formattedFilename }."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Az ütemezett csomagja ${ renewalTime } időpontban indul, és ${ cycle } havonta automatikusan megújul.",
+        "Az ütemezett csomagja ${ renewalTime } időpontban indul, és ${ cycle } havonta automatikusan megújul."
+      ]
+    },
+    "Tooltip; share calendar modal": {
+      "Shared end-to-end encrypted": [
+        "Megosztva végpontok közti titkosítással"
+      ],
+      "Shared end-to-end encrypted with verified contact": [
+        "Megosztva végpontok közti titkosítással, ellenőrzött partnerrel"
       ]
     }
   }
