@@ -25,10 +25,10 @@ import { partialMerge } from '@proton/pass/utils/object/merge';
 
 export type SecureLinkState = IndexedByShareIdAndItemId<SecureLink[]>;
 
-const removeSecureLinksForItems = (state: SecureLinkState, shareId: ShareId, itemIds: ItemId[]): SecureLinkState =>
+export const removeSecureLinksForItems = (state: SecureLinkState, shareId: ShareId, itemIds: ItemId[]): SecureLinkState =>
     objectMap(state, (key, value) => (key === shareId ? objectFilter(value, notIn(itemIds)) : value));
 
-const removeSecureLinksForShare = (state: SecureLinkState, shareId: ShareId) => objectFilter(state, not(eq(shareId)));
+export const removeSecureLinksForShare = (state: SecureLinkState, shareId: ShareId) => objectFilter(state, not(eq(shareId)));
 
 export const secureLinksReducer: Reducer<SecureLinkState> = (state = {}, action) => {
     if (or(secureLinksGet.success.match, secureLinksRemoveInactive.success.match)(action)) {
