@@ -4,8 +4,10 @@ import { memo } from 'react';
 import { useActiveBreakpoint } from '@proton/components';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { isInDeletedFolder } from '../../helpers/elements';
 import { isLabelIDNewsletterSubscription } from '../../helpers/labels';
 import type { Props as ListSettingsProps } from '../list/ListSettings';
 import type { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
@@ -47,6 +49,7 @@ export interface Props extends ListSettingsProps {
     toolbarInHeader?: boolean;
     onCheckAll?: (check: boolean) => void;
     addressesDropdown?: ReactElement;
+    isInDeletedFolder?: boolean;
 }
 
 type Variant =
@@ -59,8 +62,10 @@ type Variant =
     | undefined;
 
 const Toolbar = (props: Props) => {
-    const { elementID, columnMode, selectedIDs = defaultSelectedIDs, toolbarInHeader } = props;
+    const { elementID, columnMode, selectedIDs = defaultSelectedIDs, toolbarInHeader, labelID } = props;
     const breakpoints = useActiveBreakpoint();
+
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
     const listInView = columnMode || !elementID;
@@ -88,6 +93,7 @@ const Toolbar = (props: Props) => {
         classname,
         selectAll: <SelectAll {...selectAllProps} />,
         addressesDropdown: <ClaimProtonAddressToolbarButton />,
+        isInDeletedFolder: isInDeletedFolder(isRetentionPoliciesEnabled, labelID),
     };
 
     switch (variant) {

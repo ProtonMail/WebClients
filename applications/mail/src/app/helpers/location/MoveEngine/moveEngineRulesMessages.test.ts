@@ -25,6 +25,7 @@ import {
     messageScheduleRules,
     messageSentRules,
     messageSnoozedRules,
+    messageSoftDeletedRules,
     messageSpamRules,
     messageStarredRules,
     messageTrashRules,
@@ -51,6 +52,7 @@ describe('moveEngineRulesMessages', () => {
             messageSpamRules,
             messageStarredRules,
             messageTrashRules,
+            messageSoftDeletedRules,
         ])('should throw an error when element is not a message', (run) => {
             const conversation = {} as Conversation;
 
@@ -579,6 +581,18 @@ describe('moveEngineRulesMessages', () => {
                 LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
                 destinationLabelID: MAILBOX_LABEL_IDS.SNOOZED,
             },
+            {
+                name: 'softDeletedRules, soft deleted',
+                run: messageSoftDeletedRules,
+                LabelIDs: [MAILBOX_LABEL_IDS.SOFT_DELETED],
+                destinationLabelID: MAILBOX_LABEL_IDS.SOFT_DELETED,
+            },
+            {
+                name: 'softDeletedRules, inbox',
+                run: messageSoftDeletedRules,
+                LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                destinationLabelID: MAILBOX_LABEL_IDS.SOFT_DELETED,
+            },
         ])('should return denied if the element is in the label, $name', ({ run, LabelIDs, destinationLabelID }) => {
             const result = run({
                 element: {
@@ -625,6 +639,11 @@ describe('moveEngineRulesMessages', () => {
                 name: 'snoozedRules, scheduled',
                 run: messageSnoozedRules,
                 destinationLabelID: MAILBOX_LABEL_IDS.SNOOZED,
+            },
+            {
+                name: 'softDeletedRules, scheduled',
+                run: messageSoftDeletedRules,
+                destinationLabelID: MAILBOX_LABEL_IDS.SOFT_DELETED,
             },
             {
                 name: 'categoryRules, scheduled',

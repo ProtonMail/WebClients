@@ -44,6 +44,7 @@ const NO_DROP_SET: Set<string> = new Set([
     MAILBOX_LABEL_IDS.SCHEDULED,
     MAILBOX_LABEL_IDS.SNOOZED,
     MAILBOX_LABEL_IDS.OUTBOX,
+    MAILBOX_LABEL_IDS.SOFT_DELETED,
 ]);
 
 const defaultShortcutHandlers: HotkeyTuple[] = [];

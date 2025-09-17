@@ -6,13 +6,14 @@ import { Kbd, Tooltip } from '@proton/atoms';
 import Icon, { type IconSize } from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { isElementMessage, isStarred as testIsStarred } from '../../helpers/elements';
+import { isElementMessage, isInDeletedFolder, isStarred as testIsStarred } from '../../helpers/elements';
 import { useStar } from '../../hooks/actions/useStar';
 import type { Element } from '../../models/element';
 import type { SOURCE_ACTION } from './list-telemetry/useListTelemetry';
@@ -29,6 +30,7 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
     const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const star = useStar();
     const { Shortcuts } = useMailModel('MailSettings');
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const isStarred = testIsStarred(element || ({} as Element));
 
@@ -63,6 +65,10 @@ const ItemStar = ({ element, size, labelID, sourceAction }: Props) => {
             void withLoading(star([element || ({} as Element)], !isStarred, labelID, sourceAction));
         }
     };
+
+    if (isInDeletedFolder(isRetentionPoliciesEnabled, labelID)) {
+        return null;
+    }
 
     return (
         <Tooltip

@@ -59,6 +59,7 @@ const ToolbarRowWide = ({
     onPage,
     total,
     onCheckAll,
+    isInDeletedFolder,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
@@ -84,41 +85,41 @@ const ToolbarRowWide = ({
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
                     {addressesDropdown}
 
-                    <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
-
-                    <MoveButtons
-                        labelID={labelID}
-                        isExtraTiny={localIsExtraTiny}
-                        selectedIDs={selectedIDs}
-                        onMove={onMove}
-                        onDelete={onDelete}
-                    />
-
-                    {!localIsTiny ? (
-                        <LabelsAndFolders
-                            labelID={labelID}
-                            selectedIDs={selectedIDs}
-                            labelDropdownToggleRef={labelDropdownToggleRef}
-                            moveDropdownToggleRef={moveDropdownToggleRef}
-                            onCheckAll={onCheckAll}
-                        />
-                    ) : null}
-
-                    {!localIsTiny ? <SnoozeToolbarDropdown selectedIDs={selectedIDs} labelID={labelID} /> : null}
-
-                    <MoreDropdown
-                        labelID={labelID}
-                        elementIDs={elementIDs}
-                        selectedIDs={selectedIDs}
-                        isSearch={isSearch}
-                        isNarrow={localIsNarrow}
-                        isTiny={localIsTiny}
-                        isExtraTiny={localIsExtraTiny}
-                        onMove={onMove}
-                        onDelete={onDelete}
-                    />
-
-                    <MoreActions selectedIDs={selectedIDs} />
+                    {!isInDeletedFolder && (
+                        <>
+                            <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
+                            <MoveButtons
+                                labelID={labelID}
+                                isExtraTiny={localIsExtraTiny}
+                                selectedIDs={selectedIDs}
+                                onMove={onMove}
+                                onDelete={onDelete}
+                            />
+                            {!localIsTiny && (
+                                <LabelsAndFolders
+                                    labelID={labelID}
+                                    selectedIDs={selectedIDs}
+                                    labelDropdownToggleRef={labelDropdownToggleRef}
+                                    moveDropdownToggleRef={moveDropdownToggleRef}
+                                    onCheckAll={onCheckAll}
+                                />
+                            )}
+                            {!localIsTiny && <SnoozeToolbarDropdown selectedIDs={selectedIDs} labelID={labelID} />}
+                            <MoreDropdown
+                                labelID={labelID}
+                                elementIDs={elementIDs}
+                                selectedIDs={selectedIDs}
+                                isSearch={isSearch}
+                                isNarrow={localIsNarrow}
+                                isTiny={localIsTiny}
+                                isExtraTiny={localIsExtraTiny}
+                                onMove={onMove}
+                                onDelete={onDelete}
+                                onCheckAll={onCheckAll}
+                            />
+                            <MoreActions selectedIDs={selectedIDs} />
+                        </>
+                    )}
                 </div>
 
                 <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">

@@ -117,6 +117,9 @@ export const hasLabel = (element: Element | undefined, labelID: string) =>
 
 export const isStarred = (element: Element) => hasLabel(element, MAILBOX_LABEL_IDS.STARRED);
 
+export const isInDeletedFolder = (isRetentionPoliciesEnabled?: boolean, labelID?: string): boolean =>
+    !!(isRetentionPoliciesEnabled && labelID === MAILBOX_LABEL_IDS.SOFT_DELETED);
+
 export const getSize = (element: Element) => element.Size || 0;
 
 export const sort = (elements: Element[], sort: Sort, labelID: string) => {
