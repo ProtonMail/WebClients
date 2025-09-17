@@ -41,7 +41,9 @@ const assertTwoFactorSupport = ({
     // For example, it's not supported on account.protonvpn.com atm.
     if (fido2) {
         if (!twoFactorSupport.fido2.application) {
-            throw new Error('Security key sign-in is not supported on this application');
+            throw new Error(
+                'Security key sign-in is not supported on this application, please use https://account.proton.me'
+            );
         }
         if (!twoFactorSupport.fido2.webAuthnSupport) {
             throw new Error('WebAuthn support is not available on this device');
