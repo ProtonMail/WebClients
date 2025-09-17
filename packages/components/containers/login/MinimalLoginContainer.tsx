@@ -391,7 +391,6 @@ interface Props {
     hasChallenge?: boolean;
     ignoreUnlock?: boolean;
     onStartAuth: () => Promise<void>;
-    fido2Support?: boolean;
 }
 
 const MinimalLoginContainer = ({
@@ -401,7 +400,6 @@ const MinimalLoginContainer = ({
     ignoreUnlock = false,
     needHelp,
     footer,
-    fido2Support,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
@@ -488,7 +486,6 @@ const MinimalLoginContainer = ({
                                 password,
                                 api: silentApi,
                                 ignoreUnlock,
-                                fido2Support,
                                 persistent: false,
                                 setupVPN: false,
                                 ktActivation: KeyTransparencyActivation.DISABLED,

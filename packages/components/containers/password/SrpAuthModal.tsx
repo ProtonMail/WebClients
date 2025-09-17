@@ -35,7 +35,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import TotpInputs from '../account/totp/TotpInputs';
-import { getAuthTypes } from './getAuthTypes';
+import { getTwoFactorTypes } from './getTwoFactorTypes';
 import type { OwnAuthModalProps, SrpAuthModalResult } from './interface';
 
 const FORM_ID = 'auth-form';
@@ -195,18 +195,18 @@ const getInitialInfoResultRef = ({
     scope,
     userSettings,
     app,
-}: Parameters<typeof getAuthTypes>[0]): {
-    data?: { infoResult?: InfoAuthedResponse; authTypes: ReturnType<typeof getAuthTypes> };
+}: Parameters<typeof getTwoFactorTypes>[0]): {
+    data?: { infoResult?: InfoAuthedResponse; twoFactor: ReturnType<typeof getTwoFactorTypes> };
 } => {
     if (!infoResult) {
         return {};
     }
 
-    const authTypes = getAuthTypes({ scope, infoResult, userSettings, app });
+    const twoFactor = getTwoFactorTypes({ scope, infoResult, userSettings, app });
     return {
         data: {
             infoResult,
-            authTypes,
+            twoFactor,
         },
     };
 };
@@ -274,11 +274,11 @@ const SrpAuthModal = ({
         }
 
         const infoResult = await getInfoResult();
-        const authTypes = getAuthTypes({ scope, infoResult, userSettings, app: APP_NAME });
+        const twoFactor = getTwoFactorTypes({ scope, infoResult, userSettings, app: APP_NAME });
 
-        infoResultRef.current.data = { infoResult, authTypes };
+        infoResultRef.current.data = { infoResult, twoFactor };
 
-        if (step === Step.Password && authTypes.twoFactor) {
+        if (step === Step.Password && twoFactor.enabled) {
             setPassword(password);
             setStep(Step.TWO_FA);
             return;
@@ -342,12 +342,12 @@ const SrpAuthModal = ({
     const handleClose = loading ? noop : cancelClose;
 
     const infoResult = infoResultRef.current.data?.infoResult;
-    const authTypes = infoResultRef.current.data?.authTypes;
+    const twoFactor = infoResultRef.current.data?.twoFactor;
     const fido2 = infoResult?.['2FA']?.FIDO2;
     // This is optimistically determining if we should show "Continue" or "Authenticate" since we don't have the /info result yet
     // by looking at user settings.
     // NOTE: This will give wrong values for admins signed in as sub-users.
-    const optimisticTwoFactorEnabled = authTypes ? authTypes.twoFactor : Boolean(userSettings?.['2FA']?.Enabled);
+    const optimisticTwoFactorEnabled = twoFactor ? twoFactor.enabled : Boolean(userSettings?.['2FA']?.Enabled);
 
     return (
         <Modal {...rest} size="small" onClose={handleClose}>
@@ -381,7 +381,7 @@ const SrpAuthModal = ({
                         return null;
                     }
 
-                    const fido2Tab = authTypes?.fido2 &&
+                    const fido2Tab = twoFactor?.fido2 &&
                         fido2 && {
                             title: c('fido2: Label').t`Security key`,
                             content: (
@@ -405,7 +405,7 @@ const SrpAuthModal = ({
                             ),
                         };
 
-                    const totpTab = authTypes?.totp && {
+                    const totpTab = twoFactor?.totp && {
                         title: c('Label').t`Authenticator app`,
                         content: (
                             <TOTPForm

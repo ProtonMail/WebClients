@@ -2,9 +2,12 @@ import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/inter
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { getHasFIDO2Enabled, getHasTOTPEnabled } from '@proton/shared/lib/settings/twoFactor';
-import { getHasFIDO2Support, getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
+import { assertFIDO2Support } from '@proton/shared/lib/webauthn/helper';
 
-export const getAuthTypes = ({
+/**
+ * Get two-factor types based on scope and infoResult for a signed-in user.
+ */
+export const getTwoFactorTypes = ({
     scope,
     infoResult,
     app,
@@ -17,11 +20,17 @@ export const getAuthTypes = ({
 }) => {
     // locked scope doesn't require 2fa
     const enabled = scope === 'locked' ? 0 : (infoResult?.['2FA']?.Enabled ?? userSettings?.['2FA']?.Enabled) || 0;
-    const hasTOTPEnabled = getHasTOTPEnabled(enabled);
-    const hasFido2Enabled =
-        getHasWebAuthnSupport() &&
-        getHasFIDO2Support({ appName: app, hostname: location.hostname }) &&
-        getHasFIDO2Enabled(enabled);
 
-    return { totp: hasTOTPEnabled, fido2: hasFido2Enabled, twoFactor: hasFido2Enabled || hasTOTPEnabled };
+    const hasTOTPEnabled = getHasTOTPEnabled(enabled);
+    const hasFido2Enabled = getHasFIDO2Enabled(enabled);
+
+    const result = {
+        totp: hasTOTPEnabled,
+        fido2: hasFido2Enabled,
+        enabled: hasFido2Enabled || hasTOTPEnabled,
+    };
+
+    assertFIDO2Support({ twoFactor: result, app, hostname: location.hostname });
+
+    return result;
 };

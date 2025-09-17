@@ -2,13 +2,13 @@ import type { InfoAuthedResponse } from '@proton/shared/lib/authentication/inter
 import { APPS } from '@proton/shared/lib/constants';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 
-import { getAuthTypes } from './getAuthTypes';
+import { getTwoFactorTypes } from './getTwoFactorTypes';
 
-describe('getAuthTypes', () => {
+describe('getTwoFactorTypes', () => {
     const app = APPS.PROTONACCOUNT;
 
     it('returns all false for locked scope when 2fa enabled', () => {
-        const res = getAuthTypes({
+        const res = getTwoFactorTypes({
             scope: 'locked',
             infoResult: { ['2FA']: { Enabled: 1, FIDO2: null, TOTP: 1 } } as InfoAuthedResponse,
             userSettings: { ['2FA']: { Enabled: 1 } } as UserSettings,
@@ -18,7 +18,7 @@ describe('getAuthTypes', () => {
     });
 
     it('returns totp true for password scope, when 2fa enabled', () => {
-        const res = getAuthTypes({
+        const res = getTwoFactorTypes({
             scope: 'password',
             infoResult: { ['2FA']: { Enabled: 1, FIDO2: null, TOTP: 1 } } as InfoAuthedResponse,
             userSettings: { ['2FA']: { Enabled: 1 } } as UserSettings,
@@ -28,7 +28,7 @@ describe('getAuthTypes', () => {
     });
 
     it('returns totp true for password scope, when 2fa enabled for info and disabled for settings', () => {
-        const res = getAuthTypes({
+        const res = getTwoFactorTypes({
             scope: 'password',
             infoResult: { ['2FA']: { Enabled: 1, FIDO2: null, TOTP: 1 } } as InfoAuthedResponse,
             userSettings: { ['2FA']: { Enabled: 0 } } as UserSettings,
@@ -38,7 +38,7 @@ describe('getAuthTypes', () => {
     });
 
     it('returns totp false for password scope, when 2fa disabled for info and enabled for settings', () => {
-        const res = getAuthTypes({
+        const res = getTwoFactorTypes({
             scope: 'password',
             infoResult: { ['2FA']: { Enabled: 0, FIDO2: null, TOTP: 1 } } as InfoAuthedResponse,
             userSettings: { ['2FA']: { Enabled: 1 } } as UserSettings,
