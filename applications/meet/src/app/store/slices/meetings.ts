@@ -4,7 +4,7 @@ import type { ModelState } from '@proton/account';
 import { getInitialModelState } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { getActiveMeetingsQuery } from '@proton/shared/lib/api/meet';
+import { getUpcomingMeetingsQuery } from '@proton/shared/lib/api/meet';
 import type { Meeting } from '@proton/shared/lib/interfaces/Meet';
 
 const name = 'meet_meetings' as const;
@@ -23,7 +23,7 @@ export const selectMeetings = (state: MeetingsState) => {
 const modelThunk = createAsyncModelThunk<Model, MeetingsState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) =>
         extraArgument
-            .api<{ Meetings: Meeting[] }>(getActiveMeetingsQuery)
+            .api<{ Meetings: Meeting[] }>(getUpcomingMeetingsQuery)
             .then(({ Meetings }) => Meetings)
             .catch((err) => {
                 throw err;
