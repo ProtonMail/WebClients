@@ -11,10 +11,11 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { getHasFIDO2Support } from '@proton/shared/lib/authentication/twoFactor';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getHasFIDO2SettingEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
-import { getHasFIDO2Support, getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
+import { getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
