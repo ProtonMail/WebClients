@@ -4,13 +4,13 @@
 	// Ensure full screen on mobile
 	@include media('<=small') {
 		.modal-two {
-			height: 100vh;
-			max-height: 100vh;
+			block-size: 100vh;
+			max-block-size: 100vh;
 		}
 
 		.modal-two-inner {
-			height: 100vh;
-			max-height: 100vh;
+			block-size: 100vh;
+			max-block-size: 100vh;
 			margin: 0;
 			border-radius: 0;
 			display: flex;
@@ -20,7 +20,7 @@
 		.modal-two-content {
 			flex: 1;
 			overflow-y: auto;
-			min-height: 0;
+			min-block-size: 0;
 		}
 
 		.modal-two-header {
@@ -41,13 +41,13 @@
 
 	// Ensure proper scrolling in modal
 	&.modal-files-panel {
-		height: 100%;
+		block-size: 100%;
 		overflow: visible;
 		padding: 0 !important; // Override the pt-2 pr-4 pb-6 classes in modal
 
 		.files-panel-content {
-			height: 100%;
-			max-height: none;
+			block-size: 100%;
+			max-block-size: none;
 			border-radius: 0;
 			box-shadow: none;
 			display: flex;
@@ -56,12 +56,11 @@
 			// Make the scrollable area take remaining space
 			> div:last-child {
 				flex: 1;
-				min-height: 0;
+				min-block-size: 0;
 				overflow-y: auto;
 			}
 		}
 	}
-
 }
 
 .active-files-area {
@@ -71,11 +70,12 @@
 }
 
 .knowledge-info-area {
-	background-color: rgba(229, 228, 225, 0.3);
+	background-color: rgb(229 228 225 / 0.3);
 }
 
-.file-item-card:hover, .knowledge-file-item:hover {
-	background-color: rgba(194, 193, 192, 0.2);
+.file-item-card:hover,
+.knowledge-file-item:hover {
+	background-color: rgb(194 193 192 / 0.2);
 	transition: all 0.2s;
 }
 
@@ -85,12 +85,9 @@
 		transform: translateX(100%);
 		opacity: 0;
 	}
+
 	to {
 		transform: translateX(0);
 		opacity: 1;
 	}
-}
-
-.button-bg-weak {
-	background-color: var(--background-weak);
 }

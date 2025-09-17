@@ -15,6 +15,7 @@ export enum ThemeTypes {
     PassLight = 12,
     WalletDark = 13,
     LumoLight = 14,
+    LumoDark = 15,
 }
 
 export enum ThemeModeSetting {

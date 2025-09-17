@@ -84,11 +84,6 @@
 		color: var(--text-weak);
 	}
 
-	// Content container without extra padding
-	.content-container {
-		// No padding since we control it in the top bar and content areas
-	}
-
 	// Top bar with border that extends full width to edges
 	.top-bar {
 		margin-block-end: 1.5rem;
@@ -188,14 +183,10 @@
 	}
 }
 
-.settings-modal-panel {
-	background-color: #f7f5ff;
-}
-
 .lumo-plus-settings-gradient {
 	background:
 		linear-gradient(132.7deg, rgb(109 74 255 / 0) 58%, rgb(109 74 255 / 0.2) 100.13%),
-		linear-gradient(0deg, #f9fafb, #f9fafb);
+		linear-gradient(0deg, var(--settings-modal-upsell-background), var(--settings-modal-upsell-background));
 	color: #4b5563;
 
 	// Mobile adjustments for better proportions
@@ -291,7 +282,7 @@
 	}
 
 	.avatar {
-		background-color: white !important;
+		background-color: var(--background-norm) !important;
 		border: 1px solid var(--border-weak) !important;
 		color: var(--text-norm) !important;
 	}
@@ -302,7 +293,7 @@
 }
 
 .settings-section-icon {
-	background-color: white;
+	background-color: var(--background-norm);
 	border: 1px solid var(--border-weak);
 	inline-size: 2.5rem;
 	block-size: 2.5rem;

@@ -1,0 +1,90 @@
+:root,
+.ui-standard {
+    --primary: #8A6EFF;
+    --signal-danger: #DC3251;
+    --signal-warning: #FF9900;
+    --signal-success: #1EA885;
+    --signal-info: #239ECE;
+
+    --interaction-norm: #6D4AFF;
+    --interaction-norm-hover: #7C5CFF;
+    --interaction-norm-active: #8A6EFF;
+    
+
+    --interaction-weak: #4A4658;
+    --interaction-weak-hover: #5C5969;
+    --interaction-weak-active: #6E6B79;
+
+    --text-norm: white;
+    --text-weak: #A7A4B5;
+    --text-hint: #6D697D;
+    --text-disabled: #5B576B;
+    --text-invert: #343140;
+    --text-markdown: white;
+     /* Emphasized text */
+    --text-strong: white;
+
+    --field-norm: #5B576B;
+    --field-hover: #6D697D;
+    --field-disabled: #3F3B4C;
+
+    --focus-outline: #6D4AFF;
+    --focus-ring: rgba(109, 74, 255, 0.3);
+
+    --border-norm: #4A4658;
+    --border-weak: #343140;
+
+    --background-norm: #16141C;
+    --background-weak: #292733;
+    --background-strong: #3F3B4C;
+    --background-invert: white;
+     /* composer background for small screens */
+      --background-composer-mobile: #292733;
+     /* lumo plus upsell sidebar button background */
+    --background-upsell-button: #292733;
+     /* lumo plus toggle container background */
+    --background-upsell-toggle: rgba(91, 87, 107, 0.6);
+      /* lumo plus toggle background */
+      --background-upsell-toggle-button: var(--background-weak);
+
+
+    --interaction-default: transparent;
+    --interaction-default-hover: rgba(91, 87, 107, 0.2);
+    --interaction-default-active: rgba(91, 87, 107, 0.4);
+
+    --shadow-norm-opacity: 0.1;
+    --shadow-raised-opacity: 0.1;
+    --shadow-lifted-opacity: 0.16;
+
+    --backdrop-norm: rgb(38 42 51 / 0.48);
+
+    /*  new colors */
+    --interaction-secondary: #E57031;
+    --interaction-secondary-hover: #F97316;
+    --interaction-secondary-active: #FB923C;
+
+    --reinforce-norm: #5C3BE7;
+    --reinforce-hover: #6D4AFF;
+    --reinforce-active: #7C5CFF;
+
+    --link-norm: #9880FF;
+    --link-hover: #A898ED;
+    --link-active: #BBABFF;
+
+    --optional-promotion-background-start: rgb(109 74 255 / 0.15);
+    --optional-promotion-background-end: rgb(70 26 255 / 0.04);
+    --optional-upgrade-color-1: #FFAC2E;
+    --optional-upgrade-color-2: #6D4AFF;
+
+    --text-error-banner-title: #15006F;
+    --text-error-banner-message: #50409B;
+    --text-error-banner-button: var(--interaction-norm);
+
+     /* lumo markdown */
+    --markdown-code-background: #282C34;
+     --markdown-pre-background: #282C34;
+     --markdown-pre-border: #343140;
+
+     /* lumo settings modal */
+    --settings-modal-upsell-background: var(--backdrop-norm);
+}

@@ -13,7 +13,6 @@ import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
-import ChatHistorySkeleton from '../components/ChatHistorySkeleton';
 import { GuestChatDisclaimerModal } from '../components/GuestChatDisclaimerModal';
 import GuestDisclaimer from '../components/GuestDisclaimer';
 import SettingsModal from '../components/SettingsModal/SettingsModal';
@@ -95,32 +94,17 @@ const NewChatButton = ({ showText }: { showText: boolean }) => {
 };
 
 // Chat History Section
-const ChatHistorySection = ({ searchValue }: { searchValue: string }) => {
+const ChatHistorySection = ({ searchValue, showText }: { searchValue: string; showText: boolean }) => {
     const { shouldShowContent, closeOnItemClick } = useSidebar();
-    const [showContent, setShowContent] = useState(false);
-
-    useEffect(() => {
-        if (shouldShowContent) {
-            const timer = setTimeout(() => setShowContent(true), 300);
-            return () => clearTimeout(timer);
-        } else {
-            setShowContent(false);
-        }
-    }, [shouldShowContent]);
-
-    if (!shouldShowContent) return null;
 
     return (
-        <div className="chat-history-section">
-            {showContent ? (
-                <ChatHistory
-                    refInputSearch={{ current: null }}
-                    onItemClick={closeOnItemClick}
-                    searchInput={searchValue}
-                />
-            ) : (
-                <ChatHistorySkeleton />
-            )}
+        <div
+            className={clsx('chat-history-section', {
+                'content-visible': shouldShowContent,
+                'text-visible': showText,
+            })}
+        >
+            <ChatHistory refInputSearch={{ current: null }} onItemClick={closeOnItemClick} searchInput={searchValue} />
         </div>
     );
 };
@@ -243,7 +227,7 @@ const LumoSidebarContent = () => {
                 )}
 
                 {/* Chat History Section */}
-                <ChatHistorySection searchValue={searchValue} />
+                <ChatHistorySection searchValue={searchValue} showText={showText} />
 
                 {/* Bottom Section */}
                 <div className="sidebar-section sidebar-bottom">
