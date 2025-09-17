@@ -77,6 +77,6 @@ describe('getReAuthTwoFactorTypes', () => {
                 userSettings: { ['2FA']: { Enabled: 2 } } as UserSettings,
                 app: APPS.PROTONVPN_SETTINGS,
             })
-        ).toThrow('Security key sign-in is not supported on this application');
+        ).toThrow('Security key sign-in is not supported on this application, please use https://account.proton.me');
     });
 });
