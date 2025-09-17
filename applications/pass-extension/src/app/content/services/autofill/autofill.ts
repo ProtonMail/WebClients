@@ -14,11 +14,12 @@ import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array/first';
-import { asyncLock } from '@proton/pass/utils/fp/promises';
+import { asyncLock, seq } from '@proton/pass/utils/fp/promises';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
+import noop from '@proton/utils/noop';
 
 import { autofillIdentityFields } from './autofill.identity';
 
@@ -203,10 +204,11 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                     const url = ctx?.getExtensionContext()?.url;
                     if (!url || resolveDomain(url) !== payload.origin) return;
 
-                    ctx?.service.formManager.getTrackedForms().forEach((form) => {
-                        const ccFields = form.getFieldsFor(FieldType.CREDIT_CARD);
-                        autofillCCFields(ccFields, payload.data);
-                    });
+                    const ccFields = ctx?.service.formManager
+                        .getTrackedForms()
+                        .map((form) => form.getFieldsFor(FieldType.CREDIT_CARD));
+
+                    if (ccFields) seq(ccFields, (fields) => autofillCCFields(fields, payload.data)).catch(noop);
             }
         }
     );
