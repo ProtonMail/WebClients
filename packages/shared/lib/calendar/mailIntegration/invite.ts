@@ -175,10 +175,11 @@ export const buildPartyCrasherParticipantData = (
     }
 
     if (getIsBYOEAddress(selfAddress)) {
-        // We are using the BYOE address to determine if the user is the originalTo.
-        // However, the BYOE address is not linked to a calendar, so we have to use the default proton address to create the participant.
-        const selfAddressBYOE = ownAddresses.find((address) => !getIsAddressExternal(address));
-        const fakeOriginalTo = selfAddressBYOE?.Email;
+        // To determine if the user is the originalTo, we need to use the BYOE address, since that's the email on which the invitation has been received.
+        // However, BYOE addresses are not linked to a calendar.
+        // To reply to the invitation, we'll need to use the user default Proton address. That's why we're creating the participant using the default address
+        const defaultSelfAddress = ownAddresses.find((address) => !getIsAddressExternal(address));
+        const fakeOriginalTo = defaultSelfAddress?.Email;
 
         const selfAttendee: VcalAttendeeProperty = {
             value: buildMailTo(fakeOriginalTo),
@@ -191,14 +192,14 @@ export const buildPartyCrasherParticipantData = (
         return {
             participant: getParticipant({
                 participant: selfAttendee,
-                selfAddress,
+                selfAddress: defaultSelfAddress,
                 selfAttendee,
                 contactEmails,
                 index: attendees.length,
                 emailTo: fakeOriginalTo,
             }),
             selfAttendee,
-            selfAddress: selfAddressBYOE || selfAddress,
+            selfAddress: defaultSelfAddress || selfAddress,
         };
     }
 
