@@ -24,7 +24,6 @@ import type {
 import { getRequiresPasswordSetup, getSentryError, migrateUser } from '@proton/shared/lib/keys';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
-import { getHasFIDO2Support, getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 
 import type { ChallengeResult } from '../challenge/interface';
 import { finalizeLogin } from './finalizeLogin';
@@ -219,7 +218,7 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
     const { authType, authTypes, ignoreUnlock, authResponse, loginPassword } = cache;
 
     if (from === AuthStep.LOGIN) {
-        if (authTypes.fido2 || authTypes.totp) {
+        if (authTypes.twoFactor.fido2 || authTypes.twoFactor.totp) {
             return {
                 cache,
                 to: AuthStep.TWO_FA,
@@ -336,7 +335,6 @@ export const handleNextLogin = async ({
     persistent,
     api,
     ignoreUnlock,
-    fido2Support,
     appName,
     toApp,
     setupVPN,
@@ -367,12 +365,7 @@ export const handleNextLogin = async ({
         productParam,
         data: {},
         api,
-        authTypes: getAuthTypes({
-            info: authResponse,
-            fido2Support:
-                getHasWebAuthnSupport() &&
-                (fido2Support ?? getHasFIDO2Support({ appName, hostname: location.hostname })),
-        }),
+        authTypes: getAuthTypes({ info: authResponse, app: appName }),
         ktActivation,
         username,
         persistent,
