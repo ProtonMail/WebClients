@@ -1651,6 +1651,15 @@
       ],
       "Edit categories": [
         "Επεξεργασία κατηγοριών"
+      ],
+      "Disable categories": [
+        "Απενεργοποίηση κατηγοριών"
+      ],
+      "Keep categories": [
+        "Διατήρηση κατηγοριών"
+      ],
+      "Label": [
+        "Ετικέτα"
       ]
     },
     "action": {
@@ -8697,6 +8706,9 @@
       ],
       "You are currently signed in as ${ username }.": [
         "Είστε συνδεδεμένος/η ως ${ username }."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Όλα τα μηνύματα θα εμφανίζονται στα Εισερχόμενα, και οι καρτέλες κατηγοριών και οι ετικέτες δε θα είναι πλέον ορατές. "
       ]
     },
     "info": {
@@ -15274,6 +15286,9 @@
       ],
       "Two-factor authentication": [
         "Έλεγχος ταυτότητας δύο παραγόντων"
+      ],
+      "Disable categories?": [
+        "Απενεργοποίηση κατηγοριών;"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15871,6 +15886,12 @@
       ],
       "You have reached the trial limit.": [
         "Έχετε φτάσει το όριο της δοκιμής."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
       ]
     },
     "collider_2025: feature": {
@@ -15917,6 +15938,1272 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Υψηλής ταχύτητας συνομιλίες και προηγμένα χαρακτηριστικά AI."
+      ]
+    },
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ admins } admin": [
+        "${ admins } διαχειριστής",
+        "${ admins } διαχειριστές"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
+        "${ calendarsToBeCreatedCount } νέα ημερολόγια"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
+        "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } ημέρα",
+        "${ ceilDays } ημέρες"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } ώρα",
+        "${ ceilHours } ώρες"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } λεπτό",
+        "${ ceilMinutes } λεπτά"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } επαφή περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
+        "${ contactCount } επαφές περιέχουν πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Μέλος",
+        "${ contactEmailsLength } Μέλη"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } μέλη)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } μέλη)"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } επαφή βρέθηκε",
+        "${ contactsCount } επαφές βρέθηκαν"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } από τις ${ countContacts } επαφές έχουν εξαχθεί με επιτυχία.",
+        "${ contactsExported.length } από τις ${ countContacts } επαφές έχουν εξαχθεί με επιτυχία."
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } επαφή",
+        "${ contactsLength } επαφές"
+      ],
+      "${ count } conversation deleted": [
+        "${ count } συνομιλία διαγράφηκε",
+        "${ count } συνομιλίες διαγράφηκαν"
+      ],
+      "${ count } draft deleted": [
+        "${ count } πρόχειρο διαγράφηκε",
+        "${ count } πρόχειρα διαγράφηκαν"
+      ],
+      "${ count } message deleted": [
+        "${ count } μήνυμα διαγράφηκε",
+        "${ count } μηνύματα διαγράφηκαν"
+      ],
+      "${ count } time": [
+        "${ count } φορά",
+        "${ count } φορές"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } επαφή φαίνεται πανομοιότυπη.",
+        "${ countMergeableContacts } επαφές φαίνονται πανομοιότυπες."
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } από ${ totalProgress }",
+        "${ currentProgress } από ${ totalProgress }"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } ημέρα απομένει",
+        "${ dayDiff } ημέρες απομένουν"
+      ],
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } πρόσθετος προσαρμοσμένος τομέας",
+        "${ domains } πρόσθετοι προσαρμοσμένοι τομείς"
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } συνομιλία προστέθηκε σε ${ labelName }.",
+        "${ elementsCount } συνομιλίες προστέθηκαν σε ${ labelName }."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } συνομιλία σημάνθηκε ως διαβασμένη.",
+        "${ elementsCount } συνομιλίες σημάνθηκαν ως διαβασμένες."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } συνομιλία σημάνθηκε με Αστέρι.",
+        "${ elementsCount } συνομιλίες σημάνθηκαν με Αστέρι."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } συνομιλία σημάνθηκε ως μη διαβασμένη.",
+        "${ elementsCount } συνομιλίες σημάνθηκαν ως μη διαβασμένες."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } συνομιλία μετακινήθηκε σε ${ labelName } και ο αποστολέας προστέθηκε στη λίστα επιθυμητών.",
+        "${ elementsCount } συνομιλίες μετακινήθηκαν σε ${ labelName } και οι αποστολείς προστέθηκαν στη λίστα επιθυμητών."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } συνομιλία μετακινήθηκε στο ${ labelName }.",
+        "${ elementsCount } συνομιλίες μεταφέρθηκαν σε ${ labelName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } συνομιλία μετακινήθηκε στα Ενοχλητικά και ο αποστολέας προστέθηκε στη λίστα ενοχλητικών.",
+        "${ elementsCount } συνομιλίες μετακινήθηκαν στα Ενοχλητικά και οι αποστολείς προστέθηκαν στη λίστα ενοχλητικών."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } συνομιλία αφαιρέθηκε από ${ labelName }.",
+        "${ elementsCount } συνομιλίες αφαιρέθηκαν από ${ labelName }."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } συνομιλία αφαιρέθηκε από τις Σημασμένες.",
+        "${ elementsCount } συνομιλίες αφαιρέθηκαν από τις Σημασμένες."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } συνομιλία αναβλήθηκε",
+        "${ elementsCount } συνομιλίες αναβλήθηκαν"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } συνομιλία με ακυρωμένη αναβολή",
+        "${ elementsCount } συνομιλίες με ακυρωμένη αναβολή"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } συνομιλία θα λάβει την ετικέτα:",
+        "${ elementsCount } συνομιλίες θα λάβουν την ετικέτα:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } συνομιλία θα σημανθεί ως διαβασμένη.",
+        "${ elementsCount } συνομιλίες θα σημανθούν ως διαβασμένες."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } συνομιλία θα σημανθεί ως μη διαβασμένη.",
+        "${ elementsCount } συνομιλίες θα σημανθούν ως μη διαβασμένες."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } συνομιλία θα μετακινηθεί",
+        "${ elementsCount } συνομιλίες θα μετακινηθούν"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } συνομιλία θα χάσει την ετικέτα:",
+        "${ elementsCount } συνομιλίες θα χάσουν την ετικέτα:"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } μήνυμα προστέθηκε στο ${ labelName }.",
+        "${ elementsCount } μηνύματα προστέθηκαν σε ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } μήνυμα σημάνθηκε ως διαβασμένο.",
+        "${ elementsCount } μηνύματα σημάνθηκαν ως διαβασμένα."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } μήνυμα σημάνθηκε με Αστέρι.",
+        "${ elementsCount } μηνύματα σημάνθηκαν με Αστέρι."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } μήνυμα σημάνθηκε ως μη διαβασμένο.",
+        "${ elementsCount } μηνύματα σημάνθηκαν ως μη διαβασμένα."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } μήνυμα μετακινήθηκε σε ${ labelName } και ο αποστολέας προστέθηκε στη λίστα επιθυμητών.",
+        "${ elementsCount } μηνύματα μετακινήθηκαν σε ${ labelName } και οι αποστολείς προστέθηκαν στη λίστα επιθυμητών."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } μήνυμα μετακινήθηκε σε ${ labelName }.",
+        "${ elementsCount } μηνύματα μετακινήθηκαν σε ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } μήνυμα μετακινήθηκε στα Ενοχλητικά και ο αποστολέας προστέθηκε στη λίστα ενοχλητικών.",
+        "${ elementsCount } μηνύματα μετακινήθηκαν στα Ενοχλητικά και οι αποστολείς προστέθηκαν στη λίστα ενοχλητικών."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } μήνυμα αφαιρέθηκε από ${ labelName }.",
+        "${ elementsCount } μηνύματα αφαιρέθηκαν από ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } μήνυμα αφαιρέθηκε από τα Σημασμένα.",
+        "${ elementsCount } μηνύματα αφαιρέθηκαν από τα Σημασμένα."
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } μήνυμα θα λάβει την ετικέτα:",
+        "${ elementsCount } μηνύματα θα λάβουν την ετικέτα:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } μήνυμα θα σημανθεί ως διαβασμένο.",
+        "${ elementsCount } μηνύματα θα σημανθούν ως διαβασμένα."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } μήνυμα θα σημανθεί ως μη διαβασμένο.",
+        "${ elementsCount } μηνύματα θα σημανθούν ως μη διαβασμένα."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } μήνυμα θα μετακινηθεί",
+        "${ elementsCount } μηνύματα θα μετακινηθούν"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } μήνυμα θα χάσει την ετικέτα:",
+        "${ elementsCount } μηνύματα θα χάσουν την ετικέτα:"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } ηλεκτρονική διεύθυνση",
+        "${ emailsCount } ηλεκτρονικές διευθύνσεις"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } ενσωματωμένη εικόνα",
+        "${ embeddedAttachmentsCount } ενσωματωμένες εικόνες"
+      ],
+      "${ filteredList.length } command found.": [
+        "Βρέθηκε ${ filteredList.length } εντολή.",
+        "Βρέθηκαν ${ filteredList.length } εντολές."
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ώρα",
+        "${ gracePeriodHoursRemaining } ώρες"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } περισσότερη ώρα",
+        "${ gracePeriodHoursRemaining } περισσότερες ώρες"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } ομάδα βρέθηκε",
+        "${ groupCounts } ομάδες βρέθηκαν"
+      ],
+      "${ hours } h": [
+        "${ hours } ώ",
+        "${ hours } ώ"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ώ",
+        "${ hoursInt }.5 ώ"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }μιση ώρα",
+        "${ hoursInt }μιση ώρες"
+      ],
+      "${ ips } server": [
+        "${ ips } διακομιστής",
+        "${ ips } διακομιστές"
+      ],
+      "${ messagesNotAuthorizedToMove } message could not be moved.": [
+        "${ messagesNotAuthorizedToMove } μήνυμα δεν μπόρεσε να μετακινηθεί.",
+        "${ messagesNotAuthorizedToMove } μηνύματα δεν μπόρεσαν να μετακινηθούν."
+      ],
+      "${ minutes } min": [
+        "${ minutes } λ.",
+        "${ minutes } λ."
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "Το ${ model.deleted.length } από την ${ totalBeDeleted } επαφή διαγράφηκε με επιτυχία.",
+        "Το ${ model.deleted.length } από τις ${ totalBeDeleted } επαφές διαγράφηκε με επιτυχία."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } από ${ totalBeMerged } επαφή συγχωνεύτηκε με επιτυχία.",
+        "${ model.submitted.length } από ${ totalBeMerged } επαφές συγχωνεύτηκαν με επιτυχία."
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "${ n } ${ BRAND_NAME } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ n } account per wallet": [
+        "${ n } λογαριασμό ανά πορτοφόλι",
+        "${ n } λογαριασμούς ανά πορτοφόλι"
+      ],
+      "${ n } calendar": [
+        "${ n } ημερολόγιο",
+        "${ n } ημερολόγια"
+      ],
+      "${ n } calendar per user": [
+        "${ n } ημερολόγιο ανά χρήστη",
+        "${ n } ημερολόγια ανά χρήστη"
+      ],
+      "${ n } custom email domain": [
+        "${ n } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ n } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ n } device": [
+        "${ n } συσκευή",
+        "${ n } συσκευές"
+      ],
+      "${ n } email address": [
+        "${ n } διεύθυνση email",
+        "${ n } διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "${ n } email address per user": [
+        "${ n } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
+        "${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
+      "${ n } filter": [
+        "${ n } φίλτρο",
+        "${ n } φίλτρα"
+      ],
+      "${ n } folder": [
+        "${ n } φάκελος",
+        "${ n } φάκελοι"
+      ],
+      "${ n } folder and label": [
+        "${ n } φάκελος και ετικέτα",
+        "${ n } φάκελοι και ετικέτες"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } δωρεάν σύνδεση VPN ανά χρήστη",
+        "${ n } δωρεάν συνδέσεις VPN ανά χρήστη"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email ψευδώνυμο",
+        "${ n } hide-my-email ψευδώνυμα"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } σύνδεση VPN υψηλής ταχύτητας",
+        "${ n } συνδέσεις VPN υψηλής ταχύτητας"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } σύνδεση VPN υψηλής ταχύτητας ανά χρήστη",
+        "${ n } συνδέσεις VPN υψηλής ταχύτητας ανά χρήστη"
+      ],
+      "${ n } label": [
+        "${ n } ετικέτα",
+        "${ n } ετικέτες"
+      ],
+      "${ n } message per day": [
+        "${ n } μήνυμα ανά ημέρα",
+        "${ n } μηνύματα ανά ημέρα"
+      ],
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
+      "${ n } month FREE": [
+        "${ n } μήνας ΔΩΡΕΑΝ",
+        "${ n } μήνες ΔΩΡΕΑΝ"
+      ],
+      "${ n } server": [
+        "${ n } διακομιστής",
+        "${ n }+ διακομιστές"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } κοινόχρηστη ${ PASS_SHORT_APP_NAME } κρύπτη ανά χρήστη",
+        "${ n } κοινόχρηστες ${ PASS_SHORT_APP_NAME } κρύπτες ανά χρήστη"
+      ],
+      "${ n } unread conversation": [
+        "${ n } μη διαβασμένη συνομιλία",
+        "${ n } μη διαβασμένες συνομιλίες"
+      ],
+      "${ n } user account": [
+        "${ n } λογαριασμός χρήστη",
+        "${ n } λογαριασμοί χρηστών"
+      ],
+      "${ n } vault": [
+        "${ n } κρύπτη",
+        "${ n } κρύπτες"
+      ],
+      "${ n } VPN connection": [
+        "${ n } σύνδεση VPN",
+        "${ n } συνδέσεις VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } σύνδεση VPN ανά χρήστη",
+        "${ n } συνδέσεις VPN ανά χρήστη"
+      ],
+      "${ n } wallet": [
+        "${ n } πορτοφόλι",
+        "${ n } πορτοφόλια"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } νέο μήνυμα",
+        "${ notificationsToShow.length } νέα μηνύματα"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } χώρα",
+        "${ numberOfCountries } χώρες"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } σε ${ numberOfCountries } χώρα",
+        "${ numberOfServers } σε ${ numberOfCountries }+ χώρες"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } σε ${ numberOfCountries } χώρα",
+        "${ numberOfServers } σε ${ numberOfCountries } χώρες"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } χρήστης",
+        "Έως ${ numberOfUsers } χρήστες"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } σύνδεσμος καθαρίστηκε",
+        "${ numberOfUTMTrackers } σύνδεσμοι καθαρίστηκαν"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } μήνυμα",
+        "${ numMessages } μηνύματα"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } μήνυμα στη συνομιλία",
+        "${ NumMessages } μηνύματα στη συνομιλία"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "βρέθηκε ${ numOccurrences } φορά",
+        "βρέθηκε ${ numOccurrences } φορές"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "Βρέθηκε ${ numOccurrences } φορά στο περιεχόμενο του μηνύματος",
+        "Βρέθηκε ${ numOccurrences } φορές στο περιεχόμενο του μηνύματος"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμο",
+        "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμα"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Το ${ planName } λήγει σε ${ daysLeft } ημέρα.",
+        "Το ${ planName } λήγει σε ${ daysLeft } ημέρες."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } ημερολόγιο ανά χρήστη",
+        "${ planNumberOfCalendars } ημερολόγια ανά χρήστη"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ planNumberOfDomains } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } διεύθυνση email",
+        "${ planNumberOfEmails } διευθύνσεις email"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
+        "${ planNumberOfEmails } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } χρήστης",
+        "${ planNumberOfUsers } χρήστες"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
+        "${ providerFoldersNumLocalized } φάκελοι βρέθηκαν"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } ετικέτα βρέθηκε στο Gmail",
+        "${ providerFoldersNumLocalized } ετικέτες βρέθηκαν στο Gmail"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } συνημμένο αρχείο",
+        "${ pureAttachmentsCount } συνημμένα αρχεία"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } ηλεκτρονικό μήνυμα τον περασμένο μήνα",
+        "${ receivedMessagesCount } ηλεκτρονικά μηνύματα τον περασμένο μήνα"
+      ],
+      "${ remainingDays } d": [
+        "${ remainingDays } μ",
+        "${ remainingDays } μ"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } ημέρα",
+        "${ remainingDaysCount } ημέρες"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } ημέρα απομένει",
+        "${ remainingDaysCount } ημέρες απομένουν"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } θέση",
+        "${ seats } ${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } άδεια βοηθού γραφής",
+        "${ seats } άδειες βοηθού γραφής"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
+        "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } επιλεγμένη επαφή",
+        "${ selectedContactsLength }/${ contactsLength } επιλεγμένες επαφές"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } επιλεγμένος φάκελος",
+        "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } επιλεγμένη ετικέτα",
+        "${ selectedFoldersCount } επιλεγμένες ετικέτες"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } επιλεγμένος φάκελος",
+        "${ selectedFoldersCountLocalized } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
+        "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } μη αναγνωσμένα",
+        "${ subscription.UnreadMessageCount } μη αναγνωσμένα"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } ημέρα",
+        "${ timeRemaining.inDays } ημέρες"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } ώρα",
+        "${ timeRemaining.inHours } ώρες"
+      ],
+      "${ total } conversation": [
+        "${ total } συνομιλία",
+        "${ total } συνομιλίες"
+      ],
+      "${ total } message": [
+        "${ total } μήνυμα",
+        "${ total } μηνύματα"
+      ],
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } συμμετέχων",
+        "${ totalAttendees } συμμετέχοντες"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } επαφή",
+        "${ totalContacts } επαφές"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονός δεν θα εισαχθεί. Αναπτύξτε για λεπτομέρειες.",
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονότα δεν θα εισαχθούν. Αναπτύξτε για λεπτομέρειες."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } επαφή κρυπτογραφήθηκε και προστέθηκε στη λίστα επαφών σας",
+        "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
+        "${ totalImported }/${ totalToImport } γεγονότα κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } ιχνηλάτης μηνυμάτων αποκλείστηκε",
+        "${ trackersCount } εφαρμογές παρακολούθησης email αποκλείστηκαν"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } ιχνηλάτης εμποδίστηκε",
+        "${ trackersCount } ιχνηλάτες εμποδίστηκαν"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } ενημερωτικό δελτίο",
+        "${ unreadCount } ενημερωτικά δελτία"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } προγραμματισμένο μήνυμα",
+        "${ unreadCount } προγραμματισμένα μηνύματα"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } μη διαβασμένο μήνυμα",
+        "${ unreads } μη διαβασμένα μηνύματα"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } επαφή ενημερώθηκε επιτυχώς.",
+        "${ updated } επαφές ενημερώθηκαν επιτυχώς."
+      ],
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } μέλος)",
+        "(${ memberCount } μέλη)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** αποτέλεσμα βρέθηκε στη ${ labelName }",
+        "**${ total }** αποτελέσματα βρέθηκαν στη ${ labelName }"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } σύνδεση για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)",
+        "+${ organization.BonusVPN } συνδέσεις για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)"
+      ],
+      "Add to ${ groupCount } group": [
+        "Προσθέστε στη ${ groupCount } ομάδα επαφών",
+        "Προσθέστε στις ${ groupCount } ομάδες επαφών"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Όλοι (${ totalFoldersCount } φάκελος)",
+        "Όλοι (${ totalFoldersCount } φάκελοι)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Όλες (${ totalFoldersCount } ετικέτα)",
+        "Όλες (${ totalFoldersCount } ετικέτες)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο της ${ MAX_CONTACTS_PER_USER }",
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }",
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονός εισήχθηκε επιτυχώς.",
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη των γεγονότων. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } συνομιλία;",
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } συνομιλίες;"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα ${ count } πρόχειρο;",
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε μόνιμα ${ count } πρόχειρα;"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } μήνυμα;",
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ count } μηνύματα;"
+      ],
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Το πολύ ${ maxAttendees } συμμετέχων επιτρέπεται ανά πρόσκληση",
+        "Το πολύ ${ maxAttendees } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Το πολύ ${ maxContacts } επαφή επιτρέπεται ανά ομάδα επαφών",
+        "Το πολύ ${ maxContacts } επαφές επιτρέπονται ανά ομάδα επαφών"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Αυτόματη επιλογή από ${ numberOfCountries } χώρα",
+        "Αυτόματη επιλογή από ${ numberOfCountries } χώρες"
+      ],
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Επιλέξτε μια ημερομηνία εντός της επόμενης ${ n } ημέρας",
+        "Επιλέξτε μια ημερομηνία εντός των επόμενων ${ n } ημερών."
+      ],
+      "Contact deleted": [
+        "Η επαφή διαγράφηκε",
+        "Οι επαφές διαγράφηκαν"
+      ],
+      "Contact group deleted": [
+        "Η ομάδα επαφών διαγράφηκε",
+        "Η ομάδες επαφών διαγράφηκαν"
+      ],
+      "Conversation updated": [
+        "Η συνομιλία ενημερώθηκε",
+        "Η συνομιλίες ενημερώθηκαν"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Δημιουργήστε ${ calendarsToBeCreatedCount } νέο ημερολόγιο",
+        "Δημιουργήστε ${ calendarsToBeCreatedCount } νέα ημερολόγια"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλος",
+        "Δημιουργήστε ένα ασφαλές νέφος για ${ value } μέλη"
+      ],
+      "Create up to ${ n } calendar": [
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Δημιουργήστε έως και ${ n } ημερολόγιο ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς",
+        "Δημιουργήστε έως και ${ n } ημερολόγια ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς"
+      ],
+      "Delete ${ count } contact": [
+        "Διαγραφή ${ count } επαφής",
+        "Διαγραφή ${ count } επαφών"
+      ],
+      "Delete ${ count } contact group": [
+        "Διαγραφή ${ count } ομάδα επαφών",
+        "Διαγραφή ${ count } ομάδες επαφών"
+      ],
+      "Delete ${ count } conversation": [
+        "Διαγραφή ${ count } συνομιλίας",
+        "Διαγραφή ${ count } συνομιλιών"
+      ],
+      "Delete ${ count } draft": [
+        "Διαγραφή ${ count } πρόχειρου",
+        "Διαγραφή ${ count } πρόχειρων"
+      ],
+      "Delete ${ count } message": [
+        "Διαγραφή ${ count } μηνύματος",
+        "Διαγραφή ${ count } μηνυμάτων"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Διαγραφή ${ selectedCount } επαφής",
+        "Διαγραφή ${ selectedCount } επαφών"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Διαγραφή ${ selectedCount } ομάδα επαφών",
+        "Διαγραφή ${ selectedCount } ομάδες επαφών"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο ή",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια ή"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Θέλετε να κατεβάσετε αυτό το συνημμένο ούτως ή άλλως;",
+        "Θέλετε να κατεβάσετε αυτά τα συνημμένα ούτως ή άλλως;"
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Θέλετε να εμπιστευθείτε το κύριο δημόσιο κλειδί με το ακόλουθο αποτύπωμα;",
+        "Θέλετε να εμπιστευθείτε τα κύρια δημόσια κλειδιά με τα ακόλουθα αποτυπώματα;"
+      ],
+      "embedded image": [
+        "ενσωματωμένη εικόνα",
+        "ενσωματωμένες εικόνες"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
+        "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτά"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Η εκδήλωση ξεκινά σε ${ minutesUntilEvent } λεπτό",
+        "Η εκδήλωση ξεκινά σε ${ minutesUntilEvent } λεπτά"
+      ],
+      "Every ${ interval } day": [
+        "Κάθε ${ interval } μέρα",
+        "Κάθε ${ interval } μέρες"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Κάθε ${ interval } ημέρα, ${ timesString }",
+        "Κάθε ${ interval } ημέρες, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Κάθε ${ interval } ημέρα, ${ untilString }",
+        "Κάθε ${ interval } ημέρες, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Κάθε ${ interval } μήνα ${ onDayString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Κάθε ${ interval } μήνα ${ onDayString }, ${ timesString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Κάθε ${ interval } μήνα ${ onDayString }, ${ untilString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα στις ${ multipleDaysString }, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την ${ multipleDaysString }, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Κάθε ${ interval } εβδομάδα όλες τις ημέρες",
+        "Κάθε ${ interval } εβδομάδες, σε όλες τις μέρες"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα όλες τις ημέρες, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες όλες τις ημέρες, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες όλες τις μέρες, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Κάθε ${ interval } εβδομάδα τη Δευτέρα",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Δευτέρα, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα τη Δευτέρα, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ untilString }"
+      ],
+      "Every ${ interval } year": [
+        "Κάθε ${ interval } χρόνο",
+        "Κάθε ${ interval } χρόνια"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Κάθε ${ interval } χρόνο, ${ timesString }",
+        "Κάθε ${ interval } χρόνια, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Κάθε ${ interval } χρόνο, ${ untilString }",
+        "Κάθε ${ interval } χρόνια, ${ untilString }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Λήγει σε ${ minutesDiff } λεπτό",
+        "Λήγουν σε ${ minutesDiff } λεπτά"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Λήγει σε λιγότερο από ${ hoursDiff } ώρα",
+        "Λήγει σε λιγότερο από ${ hoursDiff } ώρες"
+      ],
+      "file attached": [
+        "συνημμένο αρχείο",
+        "συνημμένα αρχεία"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Βρέθηκε ${ itemsCount } υπόδειξη, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ itemsCount } υποδείξεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Δωρεάν δοκιμή για ${ ASSISTANT_TRIAL_TIME_DAYS } ημέρα",
+        "Δωρεάν δοκιμή για ${ ASSISTANT_TRIAL_TIME_DAYS } ημέρες"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Έχει ${ numAttachments } συνημμένο (${ numAttachmentsSize })",
+        "Έχει ${ numAttachments } συνημμένα (${ numAttachmentsSize })"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
+        "VPN υψηλής ταχύτητας σε ${ n } συσκευές"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
+        "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγια"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φακέλους και επισημάνετέ τα ως"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτες και επισημάνετέ τα ως"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φάκελο και επισημάνετε τα με ετικέτα",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φακέλους και επισημάνετε τα με ετικέτα"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτες και επισημάνετε τα ως"
+      ],
+      "Import as simple event?": [
+        "Εισαγωγή ως απλή εκδήλωση;",
+        "Εισαγωγή ως απλές εκδηλώσεις;"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Εισαγωγή επαφής ${ totalChecked }",
+        "Εισαγάγετε ${ totalChecked } επαφές"
+      ],
+      "Insert image": [
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Label message as": [
+        "Επισήμανση μηνύματος ως",
+        "Επισήμανση μηνυμάτων ως"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
+      ],
+      "Message updated": [
+        "Το μήνυμα ενημερώθηκε",
+        "Τα μηνύματα ενημερώθηκαν"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "Μετακίνηση συνομιλίας ${ selectionCount }",
+        "Μετακίνηση ${ selectionCount } συνομιλιών"
+      ],
+      "Move ${ selectionCount } message": [
+        "Μετακίνηση μηνύματος ${ selectionCount }",
+        "Μετακίνηση ${ selectionCount } μηνυμάτων"
+      ],
+      "Move message to": [
+        "Μετακίνηση μηνύματος σε",
+        "Μετακίνηση μηνυμάτων σε"
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Νέα μηνύματα από ${ senderEmailAddress } και άλλο ${ otherSendersCount } δεν θα αποσταλούν και θα διαγραφούν οριστικά.",
+        "Νέα μηνύματα από ${ senderEmailAddress } και άλλα ${ otherSendersCount } δεν θα αποσταλούν και θα διαγραφούν οριστικά."
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Μία από τις επαφές δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }",
+        "Ορισμένες επαφές δεν έχουν διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
+        "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList } "
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρα.",
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρες."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
+        "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε σε ${ groupCount } ομάδα.",
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε σε ${ groupCount } ομάδες."
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Ανακατηγοριοποιήθηκε ${ elementsCount } μήνυμα.",
+        "Ανακατηγοριοποιήθηκε ${ elementsCount } μηνύματα."
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Αφαιρέθηκε διπλότυπος παραλήπτης: ${ recipents }",
+        "Αφαιρέθηκαν διπλότυποι παραλήπτες: ${ recipents }"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, ${ BRAND_NAME } Scribe βοηθός γραφής, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση . Περιλαμβάνει ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα.",
+        "Ασφαλίστε τα email σας και προγραμματίστε με διατερματική κρυπτογράφηση. Περιλαμβάνει ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, υποστήριξη για προσαρμοσμένους τομείς email, απεριόριστα hide-my-email ψευδώνυμα και πολλά άλλα."
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Επιλογή όλων ${ elementsCount } σε ${ location }",
+        "Επιλογή όλων ${ elementsCount } σε ${ location }"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Σταλμένο από ${ MAIL_APP_NAME } με κρυπτογράφηση μηδενικής πρόσβασης προς επαληθευμένο παραλήπτη",
+        "Σταλμένο από ${ MAIL_APP_NAME } με κρυπτογράφηση μηδενικής πρόσβασης προς επαληθευμένους παραλήπτες"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση προς επαληθευμένο παραλήπτη",
+        "Στάλθηκε από εσάς με διατερματική κρυπτογράφηση προς επαληθευμένους παραλήπτες"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Διακομιστές σε ${ numberOfCountries }+ χώρα",
+        "Διακομιστές σε ${ numberOfCountries }+ χώρες"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε ${ cycle } μήνα.",
+        "Η συνδρομή ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
+      ],
+      "Support for ${ n } custom email domain": [
+        "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
+        "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Δεν ήταν δυνατή η αποκρυπτογράφηση του συνημμένου.\nΑν έχετε το αντίστοιχο ιδιωτικό κλειδί, θα μπορείτε να αποκρυπτογραφήσετε\nτο αρχείο με ένα πρόγραμμα όπως το GnuPG.",
+        "Ορισμένα από τα συνημμένα δεν μπόρεσαν να αποκρυπτογραφηθούν.\nΑν έχετε το αντίστοιχο ιδιωτικό κλειδί, θα μπορείτε να αποκρυπτογραφήσετε\nτα αρχεία με ένα πρόγραμμα όπως το GnuPG."
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Η επαλήθευση της υπογραφής του συνημμένου απέτυχε.\nΜπορείτε ακόμα να κατεβάσετε αυτό το συνημμένο αλλά μπορεί να έχει παραβιαστεί.",
+        "Μερικές από τις υπογραφές των συνημμένων απέτυχαν στην επαλήθευση.\nΜπορείτε ακόμα να κατεβάσετε αυτά τα συνημμένα, αλλά μπορεί να έχουν παραποιηθεί."
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση.",
+        "Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις."
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Η ακόλουθη διεύθυνση δεν είναι έγκυρη: ${ invalidAddresses }",
+        "Οι ακόλουθες διευθύνσεις δεν είναι έγκυρες: ${ invalidAddresses }"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο ${ subscriptionLength } μήνα.",
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τους πρώτους ${ subscriptionLength } μήνες."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανέωση. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
+        "Η ειδικά μειωμένη τιμή του ${ priceWithDiscount } ισχύει για τον πρώτο μήνα. Το κουπόνι ισχύει για ${ couponRedemptions } ανανεώσεις. Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για 1 μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Η επαλήθευση του ${ contactNames } απέτυχε: η επαφή δεν έχει υπογραφεί σωστά.\nΑυτό μπορεί να είναι αποτέλεσμα επαναφοράς κωδικού πρόσβασης.\nΠρέπει να υπογράψετε ξανά την επαφή για να στείλετε ένα μήνυμα ${ contactAddresses } ή επεξεργαστείτε την επαφή.",
+        "Η επαλήθευση των ${ contactNames } απέτυχε: οι επαφές δεν έχουν υπογραφεί σωστά.\nΑυτό μπορεί να είναι αποτέλεσμα επαναφοράς κωδικού πρόσβασης.\nΠρέπει να υπογράψετε ξανά τις επαφές για να στείλετε ένα μήνυμα ${ contactAddresses } ή επεξεργαστείτε τις επαφές."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
+        "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Αυτή η συνομιλία θα επισημανθεί ως ανεπιθύμητη. Θα θέλατε επίσης να κάνετε απεγγραφή από μελλοντικά μηνύματα;",
+        "Αυτές οι συνομιλίες θα επισημανθούν ως ανεπιθύμητες. Θα θέλατε επίσης να κάνετε απεγγραφή από μελλοντικά μηνύματα;"
+      ],
+      "This file contains an event invitation:": [
+        "Αυτό το αρχείο περιέχει μια πρόσκληση σε γεγονός:",
+        "Αυτό το αρχείο περιέχει προσκλήσεις σε γεγονότα:"
+      ],
+      "This file contains an invitation response:": [
+        "Αυτό το αρχείο περιέχει μια απάντηση πρόσκλησης:",
+        "Αυτό το αρχείο περιέχει απαντήσεις πρόσκλησης:"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Αυτό το μήνυμα θα σημανθεί ως ενοχλητικό. Θα θέλατε επίσης να απεγγραφείτε από μελλοντικά μηνύματα;",
+        "Αυτά τα μηνύματα θα σημανθούν ως ενοχλητικά. Θα θέλατε επίσης να απεγγραφείτε από μελλοντικά μηνύματα;"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inDays } ημέρα",
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inDays } ημέρες"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inHours } ώρα",
+        "Αυτή η άδεια λήγει σε ${ timeRemaining.inHours } ώρες"
+      ],
+      "Total for ${ n } month": [
+        "Σύνολο για ${ n } μήνα",
+        "Σύνολο για ${ n } μήνες"
+      ],
+      "Trust new key?": [
+        "Εμπιστοσύνη στο νέο κλειδί;",
+        "Εμπιστοσύνη στα νέα κλειδιά;"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
+      ],
+      "Up to ${ n } user": [
+        "Μέχρι και ${ n } χρήστη",
+        "Μέχρι και ${ n } χρήστες"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Έως ${ n } χρήστη (${ adminsText }, ${ usersText })",
+        "Έως ${ n } χρήστες (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Χρήση σε έως και ${ n } συσκευή ταυτόχρονα",
+        "Χρήση σε έως και ${ n } συσκευές ταυτόχρονα"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
+        "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Σύνδεση VPN για ${ n } συσκευή ανά χρήστη",
+        "Σύνδεση VPN για ${ n } συσκευές ανά χρήστη"
+      ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Έχουμε εντοπίσει σφάλματα. Το email σας δεν μπορεί να σταλεί στη διεύθυνση ηλεκτρονικού ταχυδρομείου που εισάγεται για τον ακόλουθο λόγο:",
+        "Έχουμε εντοπίσει σφάλματα. Το email σας δεν μπορεί να σταλεί σε καμία από τις διευθύνσεις ηλεκτρονικού ταχυδρομείου που έχουν εισαχθεί για τους ακόλουθους λόγους:"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Εντοπίσαμε κάποιες προειδοποιήσεις. Η ακόλουθη διεύθυνση ηλεκτρονικού ταχυδρομείου μπορεί να μην λαμβάνει email:",
+        "Εντοπίσαμε κάποιες προειδοποιήσεις. Οι ακόλουθες διευθύνσεις ηλεκτρονικού ταχυδρομείου μπορεί να μην λάβουν email:"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Σας προστατέψαμε από ${ trackersCount } ιχνηλάτη",
+        "Σας προστατέψαμε από ${ trackersCount } ιχνηλάτες"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε ${ BRAND_NAME } χρήστη με τον οποίο μοιραστήκατε τα ημερολόγιά σας πριν ακυρώσετε τη συνδρομή σας.",
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε ${ BRAND_NAME } χρήστη με τον οποίο μοιραστήκατε τα ημερολόγιά σας πριν ακυρώσετε τη συνδρομή σας."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτες"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφή",
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρο συντάκτη τη φορά",
+        "Δεν μπορείτε να ανοίξετε πάνω από ${ maxActiveComposer } παράθυρα συντάκτη τη φορά"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Έχετε ${ timeRemaining.inMinutes } λεπτό για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτο για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Έχετε **${ count } συνομιλία** αποθηκευμένη σε αυτόν το φάκελο",
+        "Έχετε **${ count } συνομιλίες** αποθηκευμένες σε αυτόν το φάκελο"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Έχετε **${ count } συνομιλία** με ετικέτα με αυτή την ετικέτα",
+        "Έχετε **${ count } συνομιλίες** με ετικέτα με αυτή την ετικέτα"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Έχετε **${ count } μήνυμα** αποθηκευμένο σε αυτόν το φάκελο",
+        "Έχετε **${ count } μηνύματα** αποθηκευμένα σε αυτόν το φάκελο"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Έχετε **${ count } μήνυμα** με ετικέτα με αυτή την ετικέτα",
+        "Έχετε **${ count } μηνύματα** με ετικέτα με αυτή την ετικέτα"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Έχετε ενεργοποιήσει την επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά για αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου,\nαλλά δεν έχει εμπιστευτεί κανένα ενεργό κλειδί κρυπτογράφησης.\nΠρέπει να εμπιστευτείτε ένα έγκυρο κλειδί για την αποστολή για να στείλετε ένα μήνυμα σε αυτή τη διεύθυνση ηλεκτρονικού ταχυδρομείου.",
+        "Έχετε ενεργοποιήσει την επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά για αυτές τις διευθύνσεις email,\nαλλά δεν έχουν εμπιστευτεί ενεργά κλειδιά κρυπτογράφησης.\nΠρέπει να εμπιστεύεστε τα κλειδιά που είναι έγκυρα για να στείλετε ένα μήνυμα σε αυτές τις διευθύνσεις email."
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Επιλέξατε **${ count } συνομιλία** από αυτόν το φάκελο",
+        "Επιλέξατε **${ count } συνομιλίες** από αυτόν το φάκελο"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Επιλέξατε **${ count } συνομιλία** με αυτή την ετικέτα",
+        "Επιλέξατε **${ count } συνομιλίες** με αυτή την ετικέτα"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Επιλέξατε **${ count } μήνυμα** από αυτόν το φάκελο",
+        "Επιλέξατε **${ count } μηνύματα** από αυτόν το φάκελο"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Επιλέξατε **${ count } μήνυμα** με αυτή την ετικέτα",
+        "Επιλέξατε **${ count } μηνύματα** με αυτή την ετικέτα"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Επιλέξατε **${ elementsCount } συνομιλία** σε ${ location }",
+        "Επιλέξατε **${ elementsCount } συνομιλίες** σε ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Επιλέξατε **${ elementsCount } συνομιλία**.",
+        "Επιλέξατε **${ elementsCount } συνομιλίες**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Επιλέξατε **${ elementsCount } μήμυμα** σε ${ location }",
+        "Επιλέξατε **${ elementsCount } μηνύματα** σε ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Επιλέξατε **${ elementsCount } μήνυμα**.",
+        "Επιλέξατε **${ elementsCount } μηνύματα**."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Έχετε ακόμα **${ daysRemaining }** απομένουσα ημέρα στο **${ currentPlanName }** πλάνο σας.",
+        "Έχετε ακόμα **${ daysRemaining }** απομένουσες ημέρες στο **${ currentPlanName }** πλάνο σας."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνα στα ${ renewAmountStr }.",
+        "Στη συνέχεια, θα χρεώνεστε κάθε ${ renewCycle } μήνες στα ${ renewAmountStr }."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερη από ${ MAX_IMPORT_EVENTS } εκδήλωση.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερες από ${ MAX_IMPORT_EVENTS } εκδηλώσεις."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Το μήνυμά σας θα λήξει σε ${ numberOfDays } ημέρα.",
+        "Το μήνυμά σας θα λήξει σε ${ numberOfDays } ημέρες."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνα.",
+        "Το προγραμματισμένο πλάνο σας ξεκινά από ${ renewalTime } και θα ανανεώνεται αυτόματα κάθε ${ cycle } μήνες."
       ]
     }
   }

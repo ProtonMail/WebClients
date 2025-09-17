@@ -1661,6 +1661,15 @@
       ],
       "Update secret passphrase": [
         "Абнавіць сакрэтную парольную фразу"
+      ],
+      "Disable categories": [
+        "Адключыць катэгорыі"
+      ],
+      "Keep categories": [
+        "Захоўваць катэгорыі"
+      ],
+      "Label": [
+        "Метка"
       ]
     },
     "action": {
@@ -8977,6 +8986,9 @@
       ],
       "You are currently signed in as ${ username }.": [
         "Вы ўжо ўвайшлі як ${ username }."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Усе паведамленні будуць паказвацца ў паштовай скрыні, а ўкладкі катэгорый і тэгі больш не будуць бачныя. "
       ]
     },
     "info": {
@@ -15834,6 +15846,9 @@
       ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
+      ],
+      "Disable categories?": [
+        "Адключыць катэгорыі?"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16521,6 +16536,12 @@
       ],
       "You have reached the trial limit.": [
         "Дасягнута абмежаванне пробнага перыяду."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
       ]
     },
     "collider_2025: feature": {
@@ -16567,6 +16588,1904 @@
       ],
       "High-speed chats and advanced AI features.": [
         "Высокахуткасныя чаты і перадавыя функцыі ШІ."
+      ]
+    },
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } адрас электроннай пошты",
+        "${ addressCount } адрасы электроннай пошты",
+        "${ addressCount } адрасоў электроннай пошты",
+        "${ addressCount } адрасоў электроннай пошты"
+      ],
+      "${ admins } admin": [
+        "${ admins } адміністратар",
+        "${ admins } адміністратары",
+        "${ admins } адміністратараў",
+        "${ admins } адміністратараў"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } новы каляндар",
+        "${ calendarsToBeCreatedCount } новыя календары",
+        "${ calendarsToBeCreatedCount } новых календароў",
+        "${ calendarsToBeCreatedCount } новых календароў"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } аб'яднаны каляндар",
+        "${ calendarsToBeMergedCount } аб'яднаныя календары",
+        "${ calendarsToBeMergedCount } аб'яднаных календароў",
+        "${ calendarsToBeMergedCount } аб'яднаных календароў"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } дзень",
+        "${ ceilDays } дні",
+        "${ ceilDays } дзён",
+        "${ ceilDays } дзён"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } гадзіна",
+        "${ ceilHours } гадзіны",
+        "${ ceilHours } гадзін",
+        "${ ceilHours } гадзін"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } хвіліна",
+        "${ ceilMinutes } хвіліны",
+        "${ ceilMinutes } хвілін",
+        "${ ceilMinutes } хвілін"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } кантакт змяшчае некалькі адрасоў электроннай пошты.",
+        "${ contactCount } кантакты змяшчаюць некалькі адрасоў электроннай пошты.",
+        "${ contactCount } кантактаў змяшчаюць некалькі адрасоў электроннай пошты.",
+        "${ contactCount } кантактаў змяшчаюць некалькі адрасоў электроннай пошты."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } удзельнік",
+        "${ contactEmailsLength } удзельнікі",
+        "${ contactEmailsLength } удзельнікаў",
+        "${ contactEmailsLength } удзельнікаў"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts } удзельнік з ${ numberOfContactsInGroup })",
+        "${ contactGroupName } (${ numberOfSelectedContacts } удзельнікі з ${ numberOfContactsInGroup })",
+        "${ contactGroupName } (${ numberOfSelectedContacts } удзельнікаў з ${ numberOfContactsInGroup })",
+        "${ contactGroupName } (${ numberOfSelectedContacts } удзельнікаў з ${ numberOfContactsInGroup })"
+      ],
+      "${ contactsCount } contact found": [
+        "Знойдзены ${ contactsCount } кантакт",
+        "Знойдзены ${ contactsCount } кантакты",
+        "Знойдзены ${ contactsCount } кантактаў",
+        "Знойдзены ${ contactsCount } кантактаў"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } кантакт з ${ countContacts } паспяхова экспартаваны.",
+        "${ contactsExported.length } кантакты з ${ countContacts } паспяхова экспартаваны.",
+        "${ contactsExported.length } кантактаў з ${ countContacts } паспяхова экспартаваны.",
+        "${ contactsExported.length } кантактаў з ${ countContacts } паспяхова экспартаваны."
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } кантакт",
+        "${ contactsLength } кантакты",
+        "${ contactsLength } кантактаў",
+        "${ contactsLength } кантактаў"
+      ],
+      "${ count } conversation deleted": [
+        "Выдалена ${ count } размова",
+        "Выдалена ${ count } размовы",
+        "Выдалена ${ count } размоў",
+        "Выдалена ${ count } размоў"
+      ],
+      "${ count } draft deleted": [
+        "Выдалены ${ count } чарнавік",
+        "Выдалены ${ count } чарнавікі",
+        "Выдалены ${ count } чарнавікоў",
+        "Выдалены ${ count } чарнавікоў"
+      ],
+      "${ count } message deleted": [
+        "Выдалена ${ count } паведамленне",
+        "Выдалена ${ count } паведамленні",
+        "Выдалена ${ count } паведамленняў",
+        "Выдалена ${ count } паведамленняў"
+      ],
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } разы",
+        "${ count } разоў",
+        "${ count } разоў"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } кантакт выглядае ідэнтычна.",
+        "${ countMergeableContacts } кантакты выглядаюць ідэнтычна.",
+        "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна.",
+        "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна."
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }"
+      ],
+      "${ dayDiff } day left": [
+        "Застаўся ${ dayDiff } дзень",
+        "Засталося ${ dayDiff } дні",
+        "Засталося ${ dayDiff } дзён",
+        "Засталося ${ dayDiff } дзён"
+      ],
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дзён"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } дадатковы карыстальніцкі дамен",
+        "${ domains } дадатковыя карыстальніцкія дамены",
+        "${ domains } дадатковых карыстальніцкіх даменаў",
+        "${ domains } дадатковых карыстальніцкіх даменаў"
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размова",
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размовы",
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размоў",
+        "Да меткі ${ labelName } дададзена ${ elementsCount } размоў"
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "Пазначана як прачытанае ${ elementsCount } размова",
+        "Пазначана як прачытанае ${ elementsCount } размовы",
+        "Пазначана як прачытанае ${ elementsCount } размоў",
+        "Пазначана як прачытанае ${ elementsCount } размоў"
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "Пазначана зорачкай ${ elementsCount } размова",
+        "Пазначана зорачкай ${ elementsCount } размовы",
+        "Пазначана зорачкай ${ elementsCount } размоў",
+        "Пазначана зорачкай ${ elementsCount } размоў"
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } размова пазначана як непрачытаная.",
+        "Пазначана як непрачытанае ${ elementsCount } размовы.",
+        "Пазначана як непрачытанае ${ elementsCount } размоў.",
+        "Пазначана як непрачытанае ${ elementsCount } размоў."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } размова перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размовы перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размоў перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } размоў перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } размова перамешчана ў ${ labelName }.",
+        "${ elementsCount } размовы перамешчана ў ${ labelName }.",
+        "${ elementsCount } размоў перамешчана ў ${ labelName }.",
+        "${ elementsCount } размоў перамешчана ў ${ labelName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "Перамешчана ў спам ${ elementsCount } размова, а адпраўнік дададзены ў ваш спіс са спамам.",
+        "Перамешчана ў спам ${ elementsCount } размовы, а адпраўнік дададзены ў ваш спіс са спамам.",
+        "Перамешчана ў спам ${ elementsCount } размоў, а адпраўнік дададзены ў ваш спіс са спамам.",
+        "Перамешчана ў спам ${ elementsCount } размоў, а адпраўнік дададзены ў ваш спіс са спамам."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "Выдалена ${ elementsCount } размова з ${ labelName }.",
+        "Выдалена ${ elementsCount } размовы з ${ labelName }.",
+        "Выдалена ${ elementsCount } размоў з ${ labelName }.",
+        "Выдалена ${ elementsCount } размоў з ${ labelName }."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "З пазначаных зорачкай выдалена ${ elementsCount } размова.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } размовы.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } размоў.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } размоў."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "Адкладзена ${ elementsCount } размова",
+        "Адкладзена ${ elementsCount } размовы",
+        "Адкладзена ${ elementsCount } размоў",
+        "Адкладзена ${ elementsCount } размоў"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "У ${ elementsCount } размове скасавана адкладанне",
+        "У ${ elementsCount } размовах скасавана адкладанне",
+        "У ${ elementsCount } размовах скасавана адкладанне",
+        "У ${ elementsCount } размовах скасавана адкладанне"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } размова будзе пазначана як:",
+        "${ elementsCount } размовы будзе пазначана як:",
+        "${ elementsCount } размоў будзе пазначана як:",
+        "${ elementsCount } размоў будзе пазначана як:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "Будзе пазначана прачытанай ${ elementsCount } размова",
+        "Будзе пазначана прачытанай ${ elementsCount } размовы",
+        "Будзе пазначана прачытанай ${ elementsCount } размоў",
+        "Будзе пазначана як прачытаная ${ elementsCount } размоў"
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "Будзе пазначана непрачытанай ${ elementsCount } размова",
+        "Будзе пазначана непрачытанай ${ elementsCount } размовы",
+        "Будзе пазначана непрачытанай ${ elementsCount } размоў",
+        "Будзе пазначана непрачытанай ${ elementsCount } размоў"
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "Будзе перамешчана ${ elementsCount } размова",
+        "Будзе перамешчана ${ elementsCount } размовы",
+        "Будзе перамешчана ${ elementsCount } размоў",
+        "Будзе перамешчана ${ elementsCount } размоў"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "З ${ elementsCount } размовы будзе знята пазнака:",
+        "З ${ elementsCount } размоў будзе знята пазнака:",
+        "З ${ elementsCount } размоў будзе знята пазнака:",
+        "З ${ elementsCount } размоў будзе знята пазнака:"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } паведамленне дададзена да ${ labelName }.",
+        "${ elementsCount } паведамленні дададзена да ${ labelName }.",
+        "${ elementsCount } паведамленняў дададзена да ${ labelName }.",
+        "${ elementsCount } паведамленняў дададзена да ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "Пазначана як прачытанае ${ elementsCount } паведамленне.",
+        "Пазначана як прачытанае ${ elementsCount } паведамленні.",
+        "Пазначана як прачытанае ${ elementsCount } паведамленняў.",
+        "Пазначана як прачытанае ${ elementsCount } паведамленняў."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "Пазначана зорачкай ${ elementsCount } паведамленне.",
+        "Пазначана зорачкай ${ elementsCount } паведамленні.",
+        "Пазначана зорачкай ${ elementsCount } паведамленняў.",
+        "Пазначана зорачкай ${ elementsCount } паведамленняў."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "Пазначана як непрачытанае ${ elementsCount } паведамленне",
+        "Пазначана як непрачытанае ${ elementsCount } паведамленні",
+        "Пазначана як непрачытанае ${ elementsCount } паведамленняў",
+        "Пазначана як непрачытанае ${ elementsCount } паведамленняў"
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } паведамленне перамешчана ў ${ labelName }, а адпраўнік дададзены ў ваш спіс не спам.",
+        "${ elementsCount } паведамленні перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } паведамленняў перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам.",
+        "${ elementsCount } паведамленняў перамешчана ў ${ labelName }, а адпраўнікі дададзены ў ваш спіс не спам."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } паведамленне перамешчана ў ${ labelName }.",
+        "${ elementsCount } паведамленні перамешчана ў ${ labelName }.",
+        "${ elementsCount } паведамленняў перамешчана ў ${ labelName }.",
+        "${ elementsCount } паведамленняў перамешчана ў ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "Перамешчана ў спам ${ elementsCount } паведамленне, а адпраўнік дададзены ў ваш спіс са спамам.",
+        "Перамешчана ў спам ${ elementsCount } паведамленні, а адпраўнік дададзены ў ваш спіс са спамам.",
+        "Перамешчана ў спам ${ elementsCount } паведамленняў, а адпраўнік дададзены ў ваш спіс са спамам.",
+        "Перамешчана ў спам ${ elementsCount } паведамленняў, а адпраўнік дададзены ў ваш спіс са спамам."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "Выдалена ${ elementsCount } паведамленне з ${ labelName }.",
+        "Выдалена ${ elementsCount } паведамленні з ${ labelName }.",
+        "Выдалена ${ elementsCount } паведамленняў з ${ labelName }.",
+        "Выдалена ${ elementsCount } паведамленняў з ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "З пазначаных зорачкай выдалена ${ elementsCount } паведамленне.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } паведамленні.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } паведамленняў.",
+        "З пазначаных зорачкай выдалена ${ elementsCount } паведамленняў."
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } паведамленне будзе пазначана як:",
+        "${ elementsCount } паведамленні будуць пазначаны як:",
+        "${ elementsCount } паведамленняў будуць пазначаны як:",
+        "${ elementsCount } паведамленняў будуць пазначаны як:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "Будзе пазначана як прачытанае ${ elementsCount } паведамленне.",
+        "Будзе пазначана як прачытанае ${ elementsCount } паведамленні.",
+        "Будзе пазначана як прачытанае ${ elementsCount } паведамленняў.",
+        "Будзе пазначана як прачытанае ${ elementsCount } паведамленняў."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "Будзе пазначана як непрачытанае ${ elementsCount } паведамленне",
+        "Будзе пазначана як непрачытанае ${ elementsCount } паведамленні",
+        "Будзе пазначана як непрачытанае ${ elementsCount } паведамленняў",
+        "Будзе пазначана як непрачытанае ${ elementsCount } паведамленняў"
+      ],
+      "${ elementsCount } message will be moved": [
+        "Будзе перамешчана ${ elementsCount } паведамленне",
+        "Будзе перамешчана ${ elementsCount } паведамленні",
+        "Будзе перамешчана ${ elementsCount } паведамленняў",
+        "Будзе перамешчана ${ elementsCount } паведамленняў"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "З ${ elementsCount } паведамлення будзе знята пазнака:",
+        "З ${ elementsCount } паведамленняў будзе знята пазнака:",
+        "З ${ elementsCount } паведамленняў будзе знята пазнака:",
+        "З ${ elementsCount } паведамленняў будзе знята пазнака:"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } адрас электроннай пошты",
+        "${ emailsCount } адрасы электроннай пошты",
+        "${ emailsCount } адрасоў электроннай пошты",
+        "${ emailsCount } адрасоў электроннай пошты"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } убудаваны відарыс",
+        "${ embeddedAttachmentsCount } убудаваныя відарысы",
+        "${ embeddedAttachmentsCount } убудаваных відарысаў",
+        "${ embeddedAttachmentsCount } убудаваных відарысаў"
+      ],
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } каманда знойдзена.",
+        "${ filteredList.length } каманды знойдзена.",
+        "${ filteredList.length } каманд знойдзена.",
+        "${ filteredList.length } каманд знойдзена."
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } гадзіна",
+        "${ gracePeriodHoursRemaining } гадзіны",
+        "${ gracePeriodHoursRemaining } гадзін",
+        "${ gracePeriodHoursRemaining } гадзін"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "яшчэ ${ gracePeriodHoursRemaining } гадзіна",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзіны",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзін",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзін"
+      ],
+      "${ groupCounts } group found": [
+        "Знойдзена ${ groupCounts } група",
+        "Знойдзена ${ groupCounts } групы",
+        "Знойдзена ${ groupCounts } груп",
+        "Знойдзена ${ groupCounts } груп"
+      ],
+      "${ hours } h": [
+        "${ hours } гадз",
+        "${ hours } гадз",
+        "${ hours } гадз",
+        "${ hours } г"
+      ],
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзін"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г",
+        "${ hoursInt },5 г"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 гадзіны",
+        "${ hoursInt },5 гадзіны",
+        "${ hoursInt },5 гадзіны",
+        "${ hoursInt },5 гадзіны"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } серверы",
+        "${ ips } сервераў",
+        "${ ips } сервераў"
+      ],
+      "${ messagesNotAuthorizedToMove } message could not be moved.": [
+        "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленне.",
+        "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленні.",
+        "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленняў.",
+        "Не ўдалося перамясціць ${ messagesNotAuthorizedToMove } паведамленняў."
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвілін"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } кантакт з ${ totalBeDeleted } паспяхова выдалены.",
+        "${ model.deleted.length } кантакты з ${ totalBeDeleted } паспяхова выдалены.",
+        "${ model.deleted.length } кантактаў з ${ totalBeDeleted } паспяхова выдалены.",
+        "${ model.deleted.length } кантактаў з ${ totalBeDeleted } паспяхова выдалены."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } кантакт з ${ totalBeMerged } паспяхова аб'яднаны.",
+        "${ model.submitted.length } кантакты з ${ totalBeMerged } паспяхова аб'яднаны.",
+        "${ model.submitted.length } кантактаў з ${ totalBeMerged } паспяхова аб'яднаны.",
+        "${ model.submitted.length } кантактаў з ${ totalBeMerged } паспяхова аб'яднаны."
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } адрас электроннай пошты ${ BRAND_NAME }",
+        "${ n } адрасы электроннай пошты ${ BRAND_NAME }",
+        "${ n } адрасоў электроннай пошты ${ BRAND_NAME }",
+        "${ n } адрасоў электроннай пошты ${ BRAND_NAME }"
+      ],
+      "${ n } account per wallet": [
+        "${ n } уліковы запіс на кашалёк",
+        "${ n } уліковыя запісы на кашалёк",
+        "${ n } уліковых запісаў на кашалёк",
+        "${ n } уліковых запісаў на кашалёк"
+      ],
+      "${ n } calendar": [
+        "${ n } каляндар",
+        "${ n } календары",
+        "${ n } календароў",
+        "${ n } календароў"
+      ],
+      "${ n } calendar per user": [
+        "${ n } каляндар на карыстальніка",
+        "${ n } календары на карыстальніка",
+        "${ n } календароў на карыстальніка",
+        "${ n } календароў на карыстальніка"
+      ],
+      "${ n } custom email domain": [
+        "${ n } карыстальніцкі дамен электроннай пошты",
+        "${ n } карыстальніцкія дамены электроннай пошты",
+        "${ n } карыстальніцкіх даменаў электроннай пошты",
+        "${ n } карыстальніцкіх даменаў электроннай пошты"
+      ],
+      "${ n } device": [
+        "${ n } прылада",
+        "${ n } прылады",
+        "${ n } прылад",
+        "${ n } прылад"
+      ],
+      "${ n } email address": [
+        "${ n } адрас электроннай пошты",
+        "${ n } адрасы электроннай пошты/псеўданімаў",
+        "${ n } адрасоў электроннай пошты/псеўданімаў",
+        "${ n } адрасоў электроннай пошты/псеўданімаў"
+      ],
+      "${ n } email address per user": [
+        "${ n } адрас электроннай пошты на карыстальніка",
+        "${ n } адрасы электроннай пошты на карыстальніка",
+        "${ n } адрасоў электроннай пошты на карыстальніка",
+        "${ n } адрасоў электроннай пошты на карыстальніка"
+      ],
+      "${ n } filter": [
+        "${ n } фільтр",
+        "${ n } фільтры",
+        "${ n } фільтраў",
+        "${ n } фільтраў"
+      ],
+      "${ n } folder": [
+        "${ n } папка",
+        "${ n } папкі",
+        "${ n } папак",
+        "${ n } папак"
+      ],
+      "${ n } folder and label": [
+        "${ n } папка і метка",
+        "${ n } папкі і меткі",
+        "${ n } папак і метак",
+        "${ n } папак і метак"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } бясплатнае падключэнне па VPN на карыстальніка",
+        "${ n } бясплатныя падключэнні па VPN на карыстальніка",
+        "${ n } бясплатных падключэнняў па VPN на карыстальніка",
+        "${ n } бясплатных падключэнняў па VPN на карыстальніка"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } псеўданім hide-my-email",
+        "${ n } псеўданімы hide-my-email",
+        "${ n } псеўданімаў hide-my-email",
+        "${ n } псеўданімаў hide-my-email"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } высакахуткаснае падключэнне па VPN",
+        "${ n } высакахуткасныя падключэнні па VPN",
+        "${ n } высакахуткасных падключэнняў па VPN",
+        "${ n } высакахуткасных падключэнняў па VPN"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } высакахуткаснае падключэнне па VPN на карыстальніка",
+        "${ n } высакахуткасныя падключэнні па VPN на карыстальніка",
+        "${ n } высакахуткасных падключэнняў па VPN на карыстальніка",
+        "${ n } высакахуткасных падключэнняў па VPN на карыстальніка"
+      ],
+      "${ n } label": [
+        "${ n } метка",
+        "${ n } меткі",
+        "${ n } метак",
+        "${ n } метак"
+      ],
+      "${ n } message per day": [
+        "${ n } паведамленне ў дзень",
+        "${ n } паведамленні ў дзень",
+        "${ n } паведамленняў у дзень",
+        "${ n } паведамленняў у дзень"
+      ],
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
+      "${ n } month FREE": [
+        "${ n } месяц БЯСПЛАТНА",
+        "${ n } месяцы БЯСПЛАТНА",
+        "${ n } месяцаў БЯСПЛАТНА",
+        "${ n } месяцаў БЯСПЛАТНА"
+      ],
+      "${ n } server": [
+        "${ n } сервер",
+        "${ n } серверы",
+        "${ n } сервераў",
+        "${ n } сервераў"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } абагуленае сховішча ${ PASS_SHORT_APP_NAME } на карыстальніка",
+        "${ n } абагуленыя сховішчы ${ PASS_SHORT_APP_NAME } на карыстальніка",
+        "${ n } абагуленых сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка",
+        "${ n } абагуленых сховішчаў ${ PASS_SHORT_APP_NAME } на карыстальніка"
+      ],
+      "${ n } unread conversation": [
+        "${ n } непрачытаная размова",
+        "${ n } непрачытаныя размовы",
+        "${ n } непрачытаных размоў",
+        "${ n } непрачытаных размоў"
+      ],
+      "${ n } user account": [
+        "${ n } уліковы запіс карыстальніка",
+        "${ n } уліковыя запісы карыстальніка",
+        "${ n } уліковых запісаў карыстальніка",
+        "${ n } уліковых запісаў карыстальніка"
+      ],
+      "${ n } vault": [
+        "${ n } сховішча",
+        "${ n } сховішчы",
+        "${ n } сховішчаў",
+        "${ n } сховішчаў"
+      ],
+      "${ n } VPN connection": [
+        "${ n } падключэнне па VPN",
+        "${ n } падключэнні па VPN",
+        "${ n } падключэнняў па VPN",
+        "${ n } падключэнняў па VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } падключэнне па VPN на карыстальніка",
+        "${ n } падключэнні па VPN на карыстальніка",
+        "${ n } падключэнняў па VPN на карыстальніка",
+        "${ n } падключэнняў па VPN на карыстальніка"
+      ],
+      "${ n } wallet": [
+        "${ n } кашалёк",
+        "${ n } кашалькі",
+        "${ n } кашалькоў",
+        "${ n } кашалькоў"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } новае паведамленне",
+        "${ notificationsToShow.length } новыя паведамленні",
+        "${ notificationsToShow.length } новых паведамленняў",
+        "${ notificationsToShow.length } новых паведамленняў"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } краіна",
+        "${ numberOfCountries } краіны",
+        "${ numberOfCountries } краін",
+        "${ numberOfCountries } краін"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } у ${ numberOfCountries } краіне",
+        "${ numberOfServers } у больш чым ${ numberOfCountries } краінах",
+        "${ numberOfServers } у больш чым ${ numberOfCountries } краінах",
+        "${ numberOfServers } у больш чым ${ numberOfCountries } краінах"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } у ${ numberOfCountries } краіне",
+        "${ numberOfServers } у ${ numberOfCountries } краінах",
+        "${ numberOfServers } у ${ numberOfCountries } краінах",
+        "${ numberOfServers } у ${ numberOfCountries } краінах"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } карыстальнік",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў",
+        "Да ${ numberOfUsers } карыстальнікаў"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "Ачышчана ${ numberOfUTMTrackers } спасылка",
+        "Ачышчана ${ numberOfUTMTrackers } спасылкі",
+        "Ачышчана ${ numberOfUTMTrackers } спасылак",
+        "Ачышчана ${ numberOfUTMTrackers } спасылак"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } паведамленне",
+        "${ numMessages } паведамленні",
+        "${ numMessages } паведамленняў",
+        "${ numMessages } паведамленняў"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } паведамленне ў размове",
+        "${ NumMessages } паведамленні ў размове",
+        "${ NumMessages } паведамленняў у размове",
+        "${ NumMessages } паведамленняў у размове"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "Знойдзена ${ numOccurrences } паўтарэнне",
+        "Знойдзена ${ numOccurrences } паўтарэнні",
+        "Знойдзена ${ numOccurrences } паўтарэнняў",
+        "Знойдзена ${ numOccurrences } паўтарэнняў"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "Знойдзена ${ numOccurrences } паўтарэнне ў змесціве пошты",
+        "Знойдзена ${ numOccurrences } паўтарэнні ў змесціве пошты",
+        "Знойдзена ${ numOccurrences } паўтарэнняў у змесціве пошты",
+        "Знойдзена ${ numOccurrences } паўтарэнняў у змесціве пошты"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-дзённая гісторыя версій файла",
+        "${ options }-дзённая гісторыя версій файла",
+        "${ options }-дзённая гісторыя версій файла",
+        "${ options }-дзённая гісторыя версій файла"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } з ${ n } псеўданімам hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псеўданімамі hide-my-email"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } міне праз ${ daysLeft } дзень.",
+        "${ planName } міне праз ${ daysLeft } дні.",
+        "${ planName } міне праз ${ daysLeft } дзён.",
+        "${ planName } міне праз ${ daysLeft } дзён."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } каляндар на карыстальніка",
+        "${ planNumberOfCalendars } календары на карыстальніка",
+        "${ planNumberOfCalendars } календароў на карыстальніка",
+        "${ planNumberOfCalendars } календароў на карыстальніка"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } карыстальніцкі дамен электроннай пошты",
+        "${ planNumberOfDomains } карыстальніцкія дамены электроннай пошты",
+        "${ planNumberOfDomains } карыстальніцкіх даменаў электроннай пошты",
+        "${ planNumberOfDomains } карыстальніцкіх даменаў электроннай пошты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрас электроннай пошты",
+        "${ planNumberOfEmails } адрасы электроннай пошты",
+        "${ planNumberOfEmails } адрасоў электроннай пошты",
+        "${ planNumberOfEmails } адрасоў электроннай пошты"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } адрас электроннай пошты на карыстальніка",
+        "${ planNumberOfEmails } адрасы электроннай пошты на карыстальніка",
+        "${ planNumberOfEmails } адрасоў электроннай пошты на карыстальніка",
+        "${ planNumberOfEmails } адрасоў электроннай пошты на карыстальніка"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } карыстальнік",
+        "${ planNumberOfUsers } карыстальнікі",
+        "${ planNumberOfUsers } карыстальнікаў",
+        "${ planNumberOfUsers } карыстальнікаў"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "Знойдзена ${ providerFoldersNumLocalized } папка",
+        "Знойдзены ${ providerFoldersNumLocalized } папкі",
+        "Знойдзены ${ providerFoldersNumLocalized } папак",
+        "Знойдзены ${ providerFoldersNumLocalized } папкі"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "У Gmail знойдзена ${ providerFoldersNumLocalized } метка",
+        "У Gmail знойдзена ${ providerFoldersNumLocalized } меткі",
+        "У Gmail знойдзена ${ providerFoldersNumLocalized } метак",
+        "У Gmail знойдзена ${ providerFoldersNumLocalized } метак"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "Далучаны ${ pureAttachmentsCount } файл",
+        "Далучаны ${ pureAttachmentsCount } файлы",
+        "Далучаны ${ pureAttachmentsCount } файлаў",
+        "Далучаны ${ pureAttachmentsCount } файлаў"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } ліст у мінулым месяцы",
+        "${ receivedMessagesCount } лісты ў мінулым месяцы",
+        "${ receivedMessagesCount } лістоў у мінулым месяцы",
+        "${ receivedMessagesCount } лістоў у мінулым месяцы"
+      ],
+      "${ remainingDays } d": [
+        "${ remainingDays } дзень",
+        "${ remainingDays } дні",
+        "${ remainingDays } дзён",
+        "${ remainingDays } дзён"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } дзень",
+        "${ remainingDaysCount } дні",
+        "${ remainingDaysCount } дзён",
+        "${ remainingDaysCount } дзён"
+      ],
+      "${ remainingDaysCount } day left": [
+        "Застаўся ${ remainingDaysCount } дзень",
+        "Засталося ${ remainingDaysCount } дні",
+        "Засталося ${ remainingDaysCount } дзён",
+        "Засталося ${ remainingDaysCount } дзён"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
+        "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } ліцэнзія памочніка ў напісанні",
+        "${ seats } ліцэнзіі памочніка ў напісанні",
+        "${ seats } ліцэнзій памочніка ў напісанні",
+        "${ seats } ліцэнзій памочніка ў напісанні"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } каляндар з ${ providerCalendars.length }",
+        "${ selectedCalendarsTotal } календары з ${ providerCalendars.length }",
+        "${ selectedCalendarsTotal } календароў з ${ providerCalendars.length }",
+        "${ selectedCalendarsTotal } календароў з ${ providerCalendars.length }"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Выбраны ${ selectedContactsLength } кантакт з ${ contactsLength }",
+        "Выбраны ${ selectedContactsLength } кантакты з ${ contactsLength }",
+        "Выбраны ${ selectedContactsLength } кантактаў з ${ contactsLength }",
+        "Выбраны ${ selectedContactsLength } кантактаў з ${ contactsLength }"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "Выбрана ${ selectedFoldersCount } папка",
+        "Выбрана ${ selectedFoldersCount } папкі",
+        "Выбрана ${ selectedFoldersCount } папак",
+        "Выбрана ${ selectedFoldersCount } папак"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "Выбрана ${ selectedFoldersCount } метка",
+        "Выбрана ${ selectedFoldersCount } меткі",
+        "Выбрана ${ selectedFoldersCount } метак",
+        "Выбрана ${ selectedFoldersCount } метак"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Выбрана ${ selectedFoldersCountLocalized } папка",
+        "Выбрана ${ selectedFoldersCountLocalized } папкі",
+        "Выбрана ${ selectedFoldersCountLocalized } папак",
+        "Выбрана ${ selectedFoldersCountLocalized } папак"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "Выбрана ${ selectedFoldersCountLocalized } метка",
+        "Выбрана ${ selectedFoldersCountLocalized } меткі",
+        "Выбрана ${ selectedFoldersCountLocalized } метак",
+        "Выбрана ${ selectedFoldersCountLocalized } метак"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } непрачытанае",
+        "${ subscription.UnreadMessageCount } непрачытаныя",
+        "${ subscription.UnreadMessageCount } непрачытаных",
+        "${ subscription.UnreadMessageCount } непрачытаных"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } дзень",
+        "${ timeRemaining.inDays } дні",
+        "${ timeRemaining.inDays } дзён",
+        "${ timeRemaining.inDays } дзён"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } гадзіна",
+        "${ timeRemaining.inHours } гадзіны",
+        "${ timeRemaining.inHours } гадзін",
+        "${ timeRemaining.inHours } гадзін"
+      ],
+      "${ total } conversation": [
+        "${ total } размова",
+        "${ total } размовы",
+        "${ total } размоў",
+        "${ total } размоў"
+      ],
+      "${ total } message": [
+        "${ total } паведамленне",
+        "${ total } паведамленні",
+        "${ total } паведамленняў",
+        "${ total } паведамленняў"
+      ],
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } удзельнік",
+        "${ totalAttendees } удзельнікі",
+        "${ totalAttendees } удзельнікаў",
+        "${ totalAttendees } удзельнікаў"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } кантакт",
+        "${ totalContacts } кантакты",
+        "${ totalContacts } кантактаў",
+        "${ totalContacts } кантактаў"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } падзея з ${ totalEvents } не будзе імпартавана. Разгарніце, каб даведацца больш.",
+        "${ totalEventsDiscarded } падзеі з ${ totalEvents } не будзе імпартавана. Разгарніце, каб даведацца больш.",
+        "${ totalEventsDiscarded } падзей з ${ totalEvents } не будзе імпартавана. Разгарніце, каб даведацца больш.",
+        "${ totalEventsDiscarded } падзей з ${ totalEvents } не будзе імпартавана. Разгарніце, каб даведацца больш."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported } кантакт з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported } кантакты з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported } кантактаў з ${ totalToImport } зашыфраваны і дададзены ў ваш спіс кантактаў"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported } падзея з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар",
+        "${ totalImported } падзеі з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар",
+        "${ totalImported } падзей з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар",
+        "${ totalImported } падзей з ${ totalToImport } зашыфравана і дададзена ў ваш каляндар"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "Заблакіравана ${ trackersCount } праграма сачэння электроннай пошты",
+        "Заблакіравана ${ trackersCount } праграмы сачэння электроннай пошты",
+        "Заблакіравана ${ trackersCount } праграм сачэння электроннай пошты",
+        "Заблакіравана ${ trackersCount } праграм сачэння электроннай пошты"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "Заблакіравана ${ trackersCount } праграма сачэння",
+        "Заблакіравана ${ trackersCount } праграмы сачэння",
+        "Заблакіравана ${ trackersCount } праграм сачэння",
+        "Заблакіравана ${ trackersCount } праграм сачэння"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } рассылка",
+        "${ unreadCount } рассылкі",
+        "${ unreadCount } рассылак",
+        "${ unreadCount } рассылак"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } запланаванае паведамленне",
+        "${ unreadCount } запланаваныя паведамленні",
+        "${ unreadCount } запланаваных паведамленняў",
+        "${ unreadCount } запланаваных паведамленняў"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } непрачытанае паведамленне",
+        "${ unreads } непрачытаныя паведамленні",
+        "${ unreads } непрачытаных паведамленняў",
+        "${ unreads } непрачытаных паведамленняў"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } кантакт паспяхова абноўлены.",
+        "${ updated } кантакты паспяхова абноўлены.",
+        "${ updated } кантактаў паспяхова абноўлены.",
+        "${ updated } кантактаў паспяхова абноўлены."
+      ],
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікаў"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } удзельнік)",
+        "(${ memberCount } удзельнікі)",
+        "(${ memberCount } удзельнікаў)",
+        "(${ memberCount } удзельнікаў)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** вынік знойдзены ў ${ labelName }",
+        "**${ total }** вынікі знойдзены ў ${ labelName }",
+        "**${ total }** вынікаў знойдзены ў ${ labelName }",
+        "**${ total }** вынікаў знойдзены ў ${ labelName }"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } падключэнне па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
+        "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
+        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
+        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
+      ],
+      "Add to ${ groupCount } group": [
+        "Дадаць у ${ groupCount } групу",
+        "Дадаць у ${ groupCount } групы",
+        "Дадаць у ${ groupCount } груп",
+        "Дадаць у ${ groupCount } груп"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Усе (${ totalFoldersCount } папка)",
+        "Усе (${ totalFoldersCount } папкі)",
+        "Усе (${ totalFoldersCount } папак)",
+        "Усе (${ totalFoldersCount } папкі)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Усе (${ totalFoldersCount } метка)",
+        "Усе (${ totalFoldersCount } меткі)",
+        "Усе (${ totalFoldersCount } метак)",
+        "Усе (${ totalFoldersCount } метак)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Адбылася памылка пры шыфравання і дадавання падзеі. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана.",
+        "Адбылася памылка пры шыфраванні і дадаванні падзей. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартавана."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } размову?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } размовы?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } размоў?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } размоў?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } чарнавік?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } чарнавікі?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } чарнавікоў?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } чарнавікоў?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } паведамленне?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } паведамленні?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } паведамленняў?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } паведамленняў?"
+      ],
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельніка",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікі",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў",
+        "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельнікаў"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакт",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакты",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Аўтавыбар з ${ numberOfCountries } краіны",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін",
+        "Аўтавыбар з ${ numberOfCountries } краін"
+      ],
+      "byte": [
+        "байт",
+        "байты",
+        "байтаў",
+        "байтаў"
+      ],
+      "Byte": [
+        "Байт",
+        "Байты",
+        "Байтаў",
+        "Байтаў"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Выберыце дату ў межах наступнага ${ n } дня.",
+        "Выберыце дату ў межах наступных ${ n } дзён.",
+        "Выберыце дату ў межах наступных ${ n } дзён.",
+        "Выберыце дату ў межах наступных ${ n } дзён."
+      ],
+      "Contact deleted": [
+        "Кантакт выдалены",
+        "Кантакты выдалены",
+        "Кантакты выдалены",
+        "Кантакты выдалены"
+      ],
+      "Contact group deleted": [
+        "Група кантактаў выдалена",
+        "Група кантактаў выдалена",
+        "Група кантактаў выдалена",
+        "Група кантактаў выдалена"
+      ],
+      "Conversation updated": [
+        "Размова абноўлена",
+        "Размовы абноўлены",
+        "Размовы абноўлены",
+        "Размовы абноўлены"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Стварыць ${ calendarsToBeCreatedCount } новы каляндар",
+        "Стварыць ${ calendarsToBeCreatedCount } новыя календары",
+        "Стварыць ${ calendarsToBeCreatedCount } новых календароў",
+        "Стварыць ${ calendarsToBeCreatedCount } новыя календары"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Стварыць бяспечнае воблака для ${ value } удзельніка",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў",
+        "Стварыць бяспечнае воблака для ${ value } удзельнікаў"
+      ],
+      "Create up to ${ n } calendar": [
+        "Стварыць да ${ n } календара",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Стварайце да ${ n } календара або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
+      ],
+      "Delete ${ count } contact": [
+        "Выдаліць ${ count } кантакт",
+        "Выдаліць ${ count } кантакты",
+        "Выдаліць ${ count } кантактаў",
+        "Выдаліць ${ count } кантактаў"
+      ],
+      "Delete ${ count } contact group": [
+        "Выдаліць ${ count } групу кантактаў",
+        "Выдаліць ${ count } групы кантактаў",
+        "Выдаліць ${ count } груп кантактаў",
+        "Выдаліць ${ count } груп кантактаў"
+      ],
+      "Delete ${ count } conversation": [
+        "Выдаліць ${ count } размову",
+        "Выдаліць ${ count } размовы",
+        "Выдаліць ${ count } размоў",
+        "Выдаліць ${ count } размоў"
+      ],
+      "Delete ${ count } draft": [
+        "Выдаліць ${ count } чарнавік",
+        "Выдаліць ${ count } чарнавікі",
+        "Выдаліць ${ count } чарнавікоў",
+        "Выдаліць ${ count } чарнавікоў"
+      ],
+      "Delete ${ count } message": [
+        "Выдаліць ${ count } паведамленне",
+        "Выдаліць ${ count } паведамленні",
+        "Выдаліць ${ count } паведамленняў",
+        "Выдаліць ${ count } паведамленняў"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Выдаліць ${ selectedCount } кантакт",
+        "Выдаліць ${ selectedCount } кантакты",
+        "Выдаліць ${ selectedCount } кантактаў",
+        "Выдаліць ${ selectedCount } кантактаў"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Выдаліць ${ selectedCount } групу кантактаў",
+        "Выдаліць ${ selectedCount } групы кантактаў",
+        "Выдаліць ${ selectedCount } груп кантактаў",
+        "Выдаліць ${ selectedCount } груп кантактаў"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Вы сапраўды хочаце спампаваць гэта далучэнне?",
+        "Вы сапраўды хочаце спампаваць гэтыя далучэнні?",
+        "Вы сапраўды хочаце спампаваць гэтыя далучэнні?",
+        "Вы сапраўды хочаце спампаваць гэтыя далучэнні?"
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Вы сапраўды хочаце давяраць асноўнаму публічнаму ключу з наступным адбіткам?",
+        "Вы сапраўды хочаце давяраць асноўным публічным ключам з наступнымі адбіткамі?",
+        "Вы сапраўды хочаце давяраць асноўным публічным ключам з наступнымі адбіткамі?",
+        "Вы сапраўды хочаце давяраць асноўным публічным ключам з наступнымі адбіткамі?"
+      ],
+      "embedded image": [
+        "убудаваны відарыс",
+        "убудаваныя відарысы",
+        "убудаваных відарысаў",
+        "убудаваных відарысаў"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Прыблізна засталося часу: ${ estimatedMinutes } хвіліна",
+        "Прыблізна засталося часу: ${ estimatedMinutes } хвіліны",
+        "Прыблізна засталося часу: ${ estimatedMinutes } хвілін",
+        "Прыблізна засталося часу: ${ estimatedMinutes } хвілін"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Падзея пачнецца праз ${ minutesUntilEvent } хвіліну",
+        "Падзея пачнецца праз ${ minutesUntilEvent } хвіліны",
+        "Падзея пачнецца праз ${ minutesUntilEvent } хвілін",
+        "Падзея пачнецца праз ${ minutesUntilEvent } хвілін"
+      ],
+      "Every ${ interval } day": [
+        "Кожны ${ interval } дзень",
+        "Кожныя ${ interval } дні",
+        "Кожных ${ interval } дзён",
+        "Кожныя ${ interval } дні"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Кожны ${ interval } дзень, ${ timesString }",
+        "Кожныя ${ interval } дні, ${ timesString }",
+        "Кожных ${ interval } дзён, ${ timesString }",
+        "Кожных ${ interval } дзён, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Кожны ${ interval } дзень, ${ untilString }",
+        "Кожныя ${ interval } дні, ${ untilString }",
+        "Кожных ${ interval } дзён, ${ untilString }",
+        "Кожных ${ interval } дзён, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Кожны ${ interval } месяц ${ onDayString }",
+        "Кожныя ${ interval } месяцы ${ onDayString }",
+        "Кожных ${ interval } месяцаў ${ onDayString }",
+        "Кожныя ${ interval } месяцы ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Кожны ${ interval } месяц у ${ onDayString }, ${ timesString }",
+        "Кожныя ${ interval } месяцы ў ${ onDayString }, ${ timesString }",
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ timesString }",
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Кожны ${ interval } месяц у ${ onDayString }, ${ untilString }",
+        "Кожныя ${ interval } месяцы ў ${ onDayString }, ${ untilString }",
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ untilString }",
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Кожны ${ interval } тыдзень у ${ multipleDaysString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у ${ multipleDaysString }, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }, ${ timesString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString }, ${ timesString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у ${ multipleDaysString }, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }, ${ untilString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString }, ${ untilString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Кожны ${ interval } тыдзень ва ўсе дні",
+        "Кожныя ${ interval } тыдні ва ўсе дні",
+        "Кожных ${ interval } тыдняў ва ўсе дні",
+        "Кожныя ${ interval } тыдні ва ўсе дні"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Кожны ${ interval } тыдзень ва ўсе дні, ${ timesString }",
+        "Кожныя ${ interval } тыдні ва ўсе дні, ${ timesString }",
+        "Кожных ${ interval } тыдняў ва ўсе дні, ${ timesString }",
+        "Кожных ${ interval } тыдняў ва ўсе дні, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Кожны ${ interval } тыдзень ва ўсе дні, ${ untilString }",
+        "Кожныя ${ interval } тыдні ва ўсе дні, ${ untilString }",
+        "Кожных ${ interval } тыдняў ва ўсе дні, ${ untilString }",
+        "Кожных ${ interval } тыдняў ва ўсе дні, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Кожны ${ interval } тыдзень у пятніцу",
+        "Кожныя ${ interval } тыдні ў пятніцу",
+        "Кожных ${ interval } тыдняў у пятніцу",
+        "Кожныя ${ interval } тыдні ў пятніцу"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у пятніцу, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў пятніцу, ${ timesString }",
+        "Кожных ${ interval } тыдняў у пятніцу, ${ timesString }",
+        "Кожных ${ interval } тыдняў у пятніцу, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у пятніцу, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў пятніцу, ${ untilString }",
+        "Кожных ${ interval } тыдняў у пятніцу, ${ untilString }",
+        "Кожных ${ interval } тыдняў у пятніцу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Кожны ${ interval } тыдзень у панядзелак",
+        "Кожныя ${ interval } тыдні ў панядзелак",
+        "Кожных ${ interval } тыдняў у панядзелак",
+        "Кожныя ${ interval } тыдні ў панядзелак"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у панядзелак, ${ timesString }",
+        "Кожны ${ interval } тыдні ў панядзелак, ${ timesString }",
+        "Кожных ${ interval } тыдняў у панядзелак, ${ timesString }",
+        "Кожных ${ interval } тыдняў у панядзелак, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у панядзелак, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў панядзелак, ${ untilString }",
+        "Кожных ${ interval } тыдняў у панядзелак, ${ untilString }",
+        "Кожных ${ interval } тыдняў у панядзелак, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Кожны ${ interval } тыдзень у суботу",
+        "Кожныя ${ interval } тыдні ў суботу",
+        "Кожных ${ interval } тыдняў у суботу",
+        "Кожныя ${ interval } тыдні ў суботу"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у суботу, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў суботу, ${ timesString }",
+        "Кожных ${ interval } тыдняў у суботу, ${ timesString }",
+        "Кожных ${ interval } тыдняў у суботу, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у суботу, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў суботу, ${ untilString }",
+        "Кожных ${ interval } тыдняў у суботу, ${ untilString }",
+        "Кожных ${ interval } тыдняў у суботу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Кожны ${ interval } тыдзень у нядзелю",
+        "Кожныя ${ interval } тыдні ў нядзелю",
+        "Кожных ${ interval } тыдняў у нядзелю",
+        "Кожныя ${ interval } тыдні ў нядзелю"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у нядзелю, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў нядзелю, ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю, ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у нядзелю, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў нядзелю, ${ untilString }",
+        "Кожных ${ interval } тыдняў у нядзелю, ${ untilString }",
+        "Кожных ${ interval } тыдняў у нядзелю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Кожны ${ interval } тыдзень у чацвер",
+        "Кожныя ${ interval } тыдні ў чацвер",
+        "Кожных ${ interval } тыдняў у чацвер",
+        "Кожныя ${ interval } тыдні ў чацвер"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у чацвер, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў чацвер, ${ timesString }",
+        "Кожных ${ interval } тыдняў у чацвер, ${ timesString }",
+        "Кожных ${ interval } тыдняў у чацвер, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у чацвер, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў чацвер, ${ untilString }",
+        "Кожных ${ interval } тыдняў у чацвер, ${ untilString }",
+        "Кожных ${ interval } тыдняў у чацвер, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Кожны ${ interval } тыдзень у аўторак",
+        "Кожныя ${ interval } тыдні ў аўторак",
+        "Кожных ${ interval } тыдняў у аўторак",
+        "Кожныя ${ interval } тыдні ў аўторак"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у аўторак, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак, ${ timesString }",
+        "Кожных ${ interval } тыдняў у аўторак, ${ timesString }",
+        "Кожных ${ interval } тыдняў у аўторак, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у аўторак, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў аўторак, ${ untilString }",
+        "Кожных ${ interval } тыдняў у аўторак, ${ untilString }",
+        "Кожных ${ interval } тыдняў у аўторак, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Кожны ${ interval } тыдзень у сераду",
+        "Кожныя ${ interval } тыдні ў сераду",
+        "Кожных ${ interval } тыдняў у сераду",
+        "Кожныя ${ interval } тыдні ў сераду"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у сераду, ${ timesString }",
+        "Кожныя ${ interval } тыдні ў сераду, ${ timesString }",
+        "Кожных ${ interval } тыдняў у сераду, ${ timesString }",
+        "Кожных ${ interval } тыдняў у сераду, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у сераду, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў сераду, ${ untilString }",
+        "Кожных ${ interval } тыдняў у сераду, ${ untilString }",
+        "Кожных ${ interval } тыдняў у сераду, ${ untilString }"
+      ],
+      "Every ${ interval } year": [
+        "Кожны ${ interval } год",
+        "Кожныя ${ interval } гады",
+        "Кожных ${ interval } гадоў",
+        "Кожныя ${ interval } гады"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Кожны ${ interval } год, ${ timesString }",
+        "Кожныя ${ interval } гады, ${ timesString }",
+        "Кожных ${ interval } гадоў, ${ timesString }",
+        "Кожных ${ interval } гадоў, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Кожны ${ interval } год, ${ untilString }",
+        "Кожныя ${ interval } гады, ${ untilString }",
+        "Кожных ${ interval } гадоў, ${ untilString }",
+        "Кожных ${ interval } гадоў, ${ untilString }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвіліну",
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвіліны",
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвілін",
+        "Тэрмін дзеяння міне праз ${ minutesDiff } хвілін"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзіну",
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзіны",
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзін",
+        "Тэрмін дзеяння міне менш чым праз ${ hoursDiff } гадзін"
+      ],
+      "file attached": [
+        "файл далучаны",
+        "файлы далучаны",
+        "файлаў далучаны",
+        "файлаў далучаны"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Знойдзена ${ itemsCount } прапанова. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапановы. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзена ${ itemsCount } прапаноў. Выкарыстоўвайце клавіятуру для навігацыі."
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дня",
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дзён",
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дзён",
+        "Бясплатна паспрабуйце на працягу ${ ASSISTANT_TRIAL_TIME_DAYS } дзён"
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайты",
+        "Гігабайтаў",
+        "Гігабайтаў"
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Змяшчае ${ numAttachments } далучэнне (${ numAttachmentsSize })",
+        "Змяшчае ${ numAttachments } далучэнні (${ numAttachmentsSize })",
+        "Змяшчае ${ numAttachments } далучэнняў (${ numAttachmentsSize })",
+        "Змяшчае ${ numAttachments } далучэнняў (${ numAttachmentsSize })"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "Высакахуткасны VPN на ${ n } прыладзе",
+        "Высакахуткасны VPN на ${ n } прыладах",
+        "Высакахуткасны VPN на ${ n } прыладах",
+        "Высакахуткасны VPN на ${ n } прыладах"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
+        "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
+        "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
+        "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папкі і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папак і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папак і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папак і пазначыць іх як"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткай і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папка з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папкі з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папак з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } папак з ${ itemsToImportCount }) і пазначыць іх як"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метка з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } меткі з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метак з ${ itemsToImportCount }) і пазначыць іх як",
+        "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метак з ${ itemsToImportCount }) і пазначыць іх як"
+      ],
+      "Import as simple event?": [
+        "Імпартаваць як простую падзею?",
+        "Імпартаваць як простыя падзеі?",
+        "Імпартаваць як простыя падзеі?",
+        "Імпартаваць як простыя падзеі?"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Уставіць ${ totalChecked } кантакт",
+        "Уставіць ${ totalChecked } кантакты",
+        "Уставіць ${ totalChecked } кантактаў",
+        "Уставіць ${ totalChecked } кантактаў"
+      ],
+      "Insert image": [
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
+      ],
+      "Kilobyte": [
+        "Кілабайт",
+        "Кілабайты",
+        "Кілабайтаў",
+        "Кілабайтаў"
+      ],
+      "Label message as": [
+        "Пазначыць паведамленне як",
+        "Пазначыць паведамленні як",
+        "Пазначыць паведамленні як",
+        "Пазначыць паведамленні як"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайты",
+        "Мегабайтаў",
+        "Мегабайтаў"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }"
+      ],
+      "Message updated": [
+        "Паведамленне абноўлена",
+        "Паведамленні абноўлены",
+        "Паведамленні абноўлены",
+        "Паведамленні абноўлены"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "Перамясціць ${ selectionCount } размову",
+        "Перамясціць ${ selectionCount } размовы",
+        "Перамясціць ${ selectionCount } размоў",
+        "Перамясціць ${ selectionCount } размоў"
+      ],
+      "Move ${ selectionCount } message": [
+        "Перамясціць ${ selectionCount } паведамленне",
+        "Перамясціць ${ selectionCount } паведамленні",
+        "Перамясціць ${ selectionCount } паведамленняў",
+        "Перамясціць ${ selectionCount } паведамленняў"
+      ],
+      "Move message to": [
+        "Перамясціць паведамленне ў",
+        "Перамясціць паведамленні ў",
+        "Перамясціць паведамленні ў",
+        "Перамясціць паведамленні ў"
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўніка не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены.",
+        "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўнікоў не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены.",
+        "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўнікоў не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены.",
+        "Новыя лісты ад ${ senderEmailAddress } і яшчэ ад ${ otherSendersCount } адпраўнікоў не будуць дастаўляцца, а замест гэтага будуць незваротна выдалены."
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "У аднаго з кантактаў няма адраса электроннай пошты: ${ noEmailsContactNamesList }",
+        "У некаторых кантактаў няма адрасоў электроннай пошты: ${ noEmailsContactNamesList } ",
+        "У некаторых кантактаў няма адрасоў электроннай пошты: ${ noEmailsContactNamesList } ",
+        "У некаторых кантактаў няма адрасоў электроннай пошты: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "У адной з груп няма кантактаў: ${ noContactGroupList }",
+        "У некаторых групах няма кантактаў: ${ noContactGroupList } ",
+        "У некаторых групах няма кантактаў: ${ noContactGroupList } ",
+        "У некаторых групах няма кантактаў: ${ noContactGroupList } "
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвал",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалы",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў",
+        "Пароль павінен змяшчаць прынамсі ${ MIN_PASSWORD_LENGTH } сімвалаў"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзіны.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Выпраўце вылучаны канфлікт, каб працягнуць.",
+        "Выпраўце вылучаныя канфлікты, каб працягнуць.",
+        "Выпраўце вылучаныя канфлікты, каб працягнуць.",
+        "Выпраўце вылучаныя канфлікты, каб працягнуць."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } групу.",
+        "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } групы.",
+        "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } груп.",
+        "Выберыце, які адрас або адрасы электроннай пошты неабходна дадаць у ${ groupCount } груп."
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Перакласіфікавана ${ elementsCount } паведамленне.",
+        "Перакласіфікавана ${ elementsCount } паведамленні.",
+        "Перакласіфікавана ${ elementsCount } паведамленняў.",
+        "Перакласіфікавана ${ elementsCount } паведамленняў."
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Выдалены дублікат атрымальніка: ${ recipents }",
+        "Выдалены дублікаты атрымальнікаў: ${ recipents }",
+        "Выдалены дублікаты атрымальнікаў: ${ recipents }",
+        "Выдалены дублікаты атрымальнікаў: ${ recipents }"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, памочніка ў напісанні ${ BRAND_NAME } Scribe, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрас электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасы электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае.",
+        "Абараніце свае лісты і расклад з дапамогай скразнога шыфравання. Уключае ${ addresses } адрасоў электроннай пошты, падтрымку карыстальніцкіх даменаў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email і многае іншае."
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Выберыце ўсе ${ elementsCount } у ${ location }",
+        "Выберыце ўсе ${ elementsCount } у ${ location }",
+        "Выберыце ўсе ${ elementsCount } у ${ location }",
+        "Выберыце ўсе ${ elementsCount } у ${ location }"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання нулявога доступу праверанаму атрымальніку",
+        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання нулявога доступу правераным атрымальнікам",
+        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання з нулявым доступам правераным атрымальнікам",
+        "Адпраўлена ${ MAIL_APP_NAME } з дапамогай шыфравання з нулявым доступам правераным атрымальнікам"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Адпраўлена вамі з дапамогай скразнога шыфравання праверанаму атрымальніку",
+        "Адпраўлена вамі з дапамогай скразнога шыфравання правераным атрымальнікам",
+        "Адпраўлена вамі з дапамогай скразнога шыфравання правераным атрымальнікам",
+        "Адпраўлена вамі з дапамогай скразнога шыфравання правераным атрымальнікам"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Серверы ў больш, чым ${ numberOfCountries } краіне",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах",
+        "Серверы ў больш, чым ${ numberOfCountries } краінах"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Падпіска аўтаматычна падаўжаецца кожны ${ cycle } месяц.",
+        "Падпіска аўтаматычна падаўжаецца кожныя ${ cycle } месяцы.",
+        "Падпіска аўтаматычна падаўжаецца кожныя ${ cycle } месяцаў.",
+        "Падпіска аўтаматычна падаўжаецца кожныя ${ cycle } месяцаў."
+      ],
+      "Support for ${ n } custom email domain": [
+        "Падтрымка для ${ n } карыстальніцкага дамена электроннай пошты",
+        "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты",
+        "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты",
+        "Падтрымка для ${ n } карыстальніцкіх даменаў электроннай пошты"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "Тэрабайтаў"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Не ўдалося расшыфраваць далучэнне.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайл з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG.",
+        "Не ўдалося расшыфраваць некаторыя далучэнні.\nКалі ў вас ёсць адпаведны прыватны ключ, вы зможаце расшыфраваць \nфайлы з дапамогай праграмы, напрыклад, GnuPG."
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Не ўдалося праверыць подпіс далучэння.\nВы ўсё роўна можаце спампаваць яго, але яно можа быць падробленым.",
+        "Не ўдалося праверыць подпісы некаторых далучэнняў.\nВы ўсё роўна можаце спампаваць іх, але яны могуць быць падробленымі.",
+        "Не ўдалося праверыць подпісы некаторых далучэнняў.\nВы ўсё роўна можаце спампаваць іх, але яны могуць быць падробленымі.",
+        "Не ўдалося праверыць подпісы некаторых далучэнняў.\nВы ўсё роўна можаце спампаваць іх, але яны могуць быць падробленымі."
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
+        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
+        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў.",
+        "Купон дзейнічае для ${ couponRedemptions } падаўжэнняў."
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Наступны адрас з'яўляецца несапраўдным: ${ invalidAddresses }",
+        "Наступныя адрасы з'яўляюцца несапраўднымі: ${ invalidAddresses }",
+        "Наступныя адрасы з'яўляюцца несапраўднымі: ${ invalidAddresses }",
+        "Наступныя адрасы з'яўляюцца несапраўднымі: ${ invalidAddresses }"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага ${ subscriptionLength } месяца.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першых ${ subscriptionLength } месяцаў."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэння. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант.",
+        "Спецыяльны зніжаны кошт у памеры ${ priceWithDiscount } дзейнічае на працягу першага месяца. Гэты купон дзейнічае для ${ couponRedemptions } падаўжэнняў. Пасля гэтага будзе выканана аўтаматычнае падаўжэнне з коштам у памеры ${ renewPriceStr } за 1 месяц. Скасаваць можна ў любы момант."
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Не ўдалося праверыць ${ contactNames }: кантакт падпісаны няправільна.\nГэта можа быць вынікам скідання пароля.\nВы павінны паўторна падпісаць кантакт, каб адправіць паведамленне на ${ contactAddresses } або рэдагаваць яго.",
+        "Не ўдалося праверыць ${ contactNames }: кантакты падпісаны няправільна.\nГэта можа быць вынікам скідання пароля.\nВы павінны паўторна падпісаць кантакты, каб адправіць паведамленне на ${ contactAddresses } або адрэдагаваць іх.",
+        "Не ўдалося праверыць ${ contactNames }: кантакты падпісаны няправільна.\nГэта можа быць вынікам скідання пароля.\nВы павінны паўторна падпісаць кантакты, каб адправіць паведамленне на ${ contactAddresses } або адрэдагаваць іх.",
+        "Не ўдалося праверыць ${ contactNames }: кантакты падпісаны няправільна.\nГэта можа быць вынікам скідання пароля.\nВы павінны паўторна падпісаць кантакты, каб адправіць паведамленне на ${ contactAddresses } або адрэдагаваць іх."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } на ${ renewalLength } месяц. Скасаваць можна ў любы час.",
+        "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцы. Скасаваць можна ў любы час.",
+        "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцаў. Скасаваць можна ў любы час.",
+        "Затым ён будзе аўтаматычна падоўжаны за ${ renewPriceStr } на ${ renewalLength } месяцаў. Вы можаце скасаваць у любы час."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Гэта размова будзе пазначана як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
+        "Гэтыя размовы будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
+        "Гэтыя размовы будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
+        "Гэтыя размовы будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?"
+      ],
+      "This file contains an event invitation:": [
+        "Гэты файл змяшчае запрашэнне на падзею:",
+        "Гэты файл змяшчае запрашэнні на падзею:",
+        "Гэты файл змяшчае запрашэнні на падзею:",
+        "Гэты файл змяшчае запрашэнні на падзею:"
+      ],
+      "This file contains an invitation response:": [
+        "Гэты файл змяшчае адказ на запрашэнне:",
+        "Гэты файл змяшчае адказы на запрашэнне:",
+        "Гэты файл змяшчае адказы на запрашэнне:",
+        "Гэты файл змяшчае адказы на запрашэнне:"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Гэта паведамленне будзе пазначана як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
+        "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
+        "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
+        "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзень",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дні",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзён",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзён"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзіну",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзіны",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін"
+      ],
+      "Total for ${ n } month": [
+        "Усяго за ${ n } месяц",
+        "Усяго за ${ n } месяцы",
+        "Усяго за ${ n } месяцаў",
+        "Усяго за ${ n } месяцы"
+      ],
+      "Trust new key?": [
+        "Давяраць новаму ключу?",
+        "Давяраць новым ключам?",
+        "Давяраць новым ключам?",
+        "Давяраць новым ключам?"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)"
+      ],
+      "Up to ${ n } user": [
+        "Да ${ n } карыстальніка",
+        "Да ${ n } карыстальнікаў",
+        "Да ${ n } карыстальнікаў",
+        "Да ${ n } карыстальнікаў"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Да ${ n } карыстальніка (${ adminsText }, ${ usersText })",
+        "Да ${ n } карыстальнікаў (${ adminsText }, ${ usersText })",
+        "Да ${ n } карыстальнікаў (${ adminsText }, ${ usersText })",
+        "Да ${ n } карыстальнікаў (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Выкарыстоўвайце на ${ n } прыладзе адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова",
+        "Выкарыстоўвайце на ${ n } прыладах адначасова"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Абагуленае сховішча (да ${ n } асобы)",
+        "Абагуленае сховішча (да ${ n } асоб)",
+        "Абагуленае сховішча (да ${ n } асоб)",
+        "Абагуленае сховішча (да ${ n } асоб)"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Падключэнне па VPN для ${ n } прылады на карыстальніка",
+        "Падключэнне па VPN для ${ n } прылад на карыстальніка",
+        "Падключэнне па VPN для ${ n } прылад на карыстальніка",
+        "Падключэнне па VPN для ${ n } прылад на карыстальніка"
+      ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Выяўлены памылкі. Ваш ліст немагчыма адправіць на ўведзены адрас электроннай пошты з прычыны:",
+        "Выяўлены памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:",
+        "Выяўлены памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:",
+        "Выяўлены памылкі. Ваш ліст немагчыма адправіць на любы з уведзеных адрасоў электроннай пошты з прычыны:"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Выяўлены некаторыя папярэджанні. Атрымальнік з наступным адрасам можа не атрымаць ваш ліст:",
+        "Выяўлены некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:",
+        "Выяўлены некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:",
+        "Выяўлены некаторыя папярэджанні. Атрымальнікі з наступнымі адрасамі могуць не атрымаць ваш ліст:"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Мы абаранілі вас ад ${ trackersCount } праграмы сачэння",
+        "Мы абаранілі вас ад ${ trackersCount } праграм сачэння",
+        "Мы абаранілі вас ад ${ trackersCount } праграм сачэння",
+        "Мы абаранілі вас ад ${ trackersCount } праграм сачэння"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантакту",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Вы не можаце адкрыць адначасова больш за ${ maxActiveComposer } акно рэдактара",
+        "Вы не можаце адкрыць адначасова больш за ${ maxActiveComposer } акны рэдактара",
+        "Вы не можаце адкрыць адначасова больш за ${ maxActiveComposer } вокнаў рэдактара",
+        "Вы не можаце адкрыць адначасова больш за ${ maxActiveComposer } вокнаў рэдактара"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "У вас ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
+        "У вас ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "У вас ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "У вас ${ timeRemaining.inMinutes } хвіліна, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } хвіліны, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } хвілін, каб скінуць свой пароль."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "У вас ${ timeRemaining.inSeconds } секунда, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунды, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунд, каб скінуць свой пароль."
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "У гэтай папцы ў вас захоўваецца **${ count } размова**",
+        "У гэтай папцы ў вас захоўваецца **${ count } размовы**",
+        "У гэтай папцы ў вас захоўваецца **${ count } размоў**",
+        "У гэтай папцы ў вас захоўваецца **${ count } размоў**"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "У вас **${ count } размова** пазначана гэтай меткай",
+        "У вас **${ count } размовы** пазначаны гэтай меткай",
+        "У вас **${ count } размоў** пазначаны гэтай меткай",
+        "У вас **${ count } размоў** пазначаны гэтай меткай"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "У гэтай папцы ў вас захоўваецца **${ count } паведамленне**",
+        "У гэтай папцы ў вас захоўваецца **${ count } паведамленні**",
+        "У гэтай папцы ў вас захоўваецца **${ count } паведамленняў**",
+        "У гэтай папцы ў вас захоўваецца **${ count } паведамленняў**"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "У вас **${ count } паведамленне** пазначана гэтай меткай",
+        "У вас **${ count } паведамленні** пазначана гэтай меткай",
+        "У вас **${ count } паведамленняў** пазначана гэтай меткай",
+        "У вас **${ count } паведамленняў** пазначана гэтай меткай"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Вы ўключылі праверку адраса з даверанымі ключамі для гэтага адраса электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўднаму ключу для адпраўкі, каб адпраўляць паведамленні на гэты адрас электроннай пошты.",
+        "Вы ўключылі праверку адраса з даверанымі ключамі для гэтых адрасоў электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўдным ключам для адпраўкі, каб адпраўляць паведамленні на гэтыя адрасы электроннай пошты.",
+        "Вы ўключылі праверку адраса з даверанымі ключамі для гэтых адрасоў электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўдным ключам для адпраўкі, каб адпраўляць паведамленні на гэтыя адрасы электроннай пошты.",
+        "Вы ўключылі праверку адраса з даверанымі ключамі для гэтых адрасоў электроннай пошты, \nале ніводны з актыўных ключоў для шыфравання не з'яўляецца давераным.\nВы павінны давяраць сапраўдным ключам для адпраўкі, каб адпраўляць паведамленні на гэтыя адрасы электроннай пошты."
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Вы выбралі **${ count } размову** з гэтай папкі",
+        "Вы выбралі **${ count } размовы** з гэтай папкі",
+        "Вы выбралі **${ count } размоў** з гэтай папкі",
+        "Вы выбралі **${ count } размоў** з гэтай папкі"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Вы выбралі **${ count } размову** з гэтай меткай",
+        "Вы выбралі **${ count } размовы** з гэтай меткай",
+        "Вы выбралі **${ count } размоў** з гэтай меткай",
+        "Вы выбралі **${ count } размоў** з гэтай меткай"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Вы выбралі **${ count } паведамленне** з гэтай папкі",
+        "Вы выбралі **${ count } паведамленні** з гэтай папкі",
+        "Вы выбралі **${ count } паведамленняў** з гэтай папкі",
+        "Вы выбралі **${ count } паведамленняў** з гэтай папкі"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Вы выбралі **${ count } паведамленне** з гэтай меткай",
+        "Вы выбралі **${ count } паведамленні** з гэтай меткай",
+        "Вы выбралі **${ count } паведамленняў** з гэтай меткай",
+        "Вы выбралі **${ count } паведамленняў** з гэтай меткай"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Вы выбралі **${ elementsCount } размову** ў ${ location }",
+        "Вы выбралі **${ elementsCount } размовы** ў ${ location }",
+        "Вы выбралі **${ elementsCount } размоў** у ${ location }",
+        "Вы выбралі **${ elementsCount } размоў** у ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Вы выбралі **${ elementsCount } размову**.",
+        "Вы выбралі **${ elementsCount } размовы**.",
+        "Вы выбралі **${ elementsCount } размоў**.",
+        "Вы выбралі **${ elementsCount } размоў**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Вы выбралі **${ elementsCount } паведамленне** ў ${ location }",
+        "Вы выбралі **${ elementsCount } паведамленні** ў ${ location }",
+        "Вы выбралі **${ elementsCount } паведамленняў** у ${ location }",
+        "Вы выбралі **${ elementsCount } паведамленняў** у ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Вы выбралі **${ elementsCount } паведамленне**.",
+        "Вы выбралі **${ elementsCount } паведамленні**.",
+        "Вы выбралі **${ elementsCount } паведамленняў**.",
+        "Вы выбралі **${ elementsCount } паведамленняў**."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "У вас яшчэ застаўся **${ daysRemaining }** дзень тарыфнага плана **${ currentPlanName }**.",
+        "У вас яшчэ засталося **${ daysRemaining }** дні тарыфнага плана **${ currentPlanName }**.",
+        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }**.",
+        "У вас яшчэ засталося **${ daysRemaining }** дзён тарыфнага плана **${ currentPlanName }**."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяц у памеры ${ renewAmountStr }.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцы ў памеры ${ renewAmountStr }.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }.",
+        "Пасля гэтага вам будзе выстаўляцца рахунак кожныя ${ renewCycle } месяцаў у памеры ${ renewAmountStr }."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзею.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзеі.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзей.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзей."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Тэрмін дзеяння вашага паведамлення міне праз ${ numberOfDays } дзень.",
+        "Тэрмін дзеяння вашага паведамлення міне праз ${ numberOfDays } дні.",
+        "Тэрмін дзеяння вашага паведамлення міне праз ${ numberOfDays } дзён.",
+        "Тэрмін дзеяння вашага паведамлення міне праз ${ numberOfDays } дзён."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожны ${ cycle } месяц.",
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцы.",
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцаў.",
+        "Ваш запланаваны тарыфны план пачынаецца ${ renewalTime } і будзе аўтаматычна падаўжацца кожныя ${ cycle } месяцаў."
       ]
     }
   }
