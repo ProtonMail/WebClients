@@ -5,6 +5,7 @@ import { functionDescriptions } from '@rowsncolumns/functions'
 import { ChartComponent } from '@rowsncolumns/charts'
 import { isDevOrBlack } from '@proton/utils/env'
 import { useEffect, useRef } from 'react'
+import { useUI } from '../../ui-store'
 
 export type LegacyGridProps = {
   state: ProtonSheetsState
@@ -72,6 +73,7 @@ export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridPro
         canvasGridRef.current = instance
         exposeCanvasGrid(instance, state)
       }}
+      showGridLines={useUI((ui) => ui.view.gridLines.enabled)}
       borderStyles={state.searchState.borderStyles}
       scale={state.scale}
       conditionalFormats={state.conditionalFormats}

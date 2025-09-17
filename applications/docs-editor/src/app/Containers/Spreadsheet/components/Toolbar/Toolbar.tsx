@@ -5,7 +5,7 @@ import * as Atoms from '../atoms'
 import * as Icons from '../icons'
 import { FontSelect } from './FontSelect'
 import { FontSizeControls } from './FontSizeControls'
-import { MoreFormatsMenu } from './MoreFormatsMenu'
+import { NumberFormatsMenu } from '../shared/NumberFormatsMenu'
 import { ZoomCombobox } from './ZoomCombobox'
 import * as T from './primitives'
 import { useUI } from '../../ui-store'
@@ -22,14 +22,14 @@ export const Toolbar = createComponent(function Toolbar(props: ToolbarProps) {
       <Undo />
       <Redo />
       <ZoomCombobox />
-      <Search />
+      <Find />
       <ClearFormatting />
       <T.Separator />
       <FormatAsCurrency />
       <FormatAsPercent />
       <DecreaseDecimalPlaces />
       <IncreaseDecimalPlaces />
-      <MoreFormatsMenu renderMenuButton={<T.Item icon={Icons.numbers}>{s('More formats')}</T.Item>} />
+      <NumberFormatsMenu renderMenuButton={<T.Item icon={Icons.numbers}>{s('More formats')}</T.Item>} />
       <T.Separator />
       <FontSelect
         renderSelect={<T.Item variant="label" dropdownIndicator className="w-[8rem]" accessibilityLabel={s('Font')} />}
@@ -59,6 +59,9 @@ export const Toolbar = createComponent(function Toolbar(props: ToolbarProps) {
     </T.Container>
   )
 })
+
+// TODO: most things should be using withFocusGrid
+// TODO: should there be a withFocusGridExceptKeyboard? maybe not if going back to the toolbar is easy with the keyboard, and we remember the last element that was focused
 
 function Undo() {
   return (
@@ -98,10 +101,10 @@ function Redo() {
   )
 }
 
-function Search() {
+function Find() {
   return (
     <T.Item legacyIconName="magnifier" onClick={useUI.$.search.open}>
-      {s('Search')}
+      {s('Find')}
     </T.Item>
   )
 }
@@ -199,7 +202,7 @@ function strings() {
   return {
     Undo: c('sheets_2025:Spreadsheet editor toolbar').t`Undo`,
     Redo: c('sheets_2025:Spreadsheet editor toolbar').t`Redo`,
-    Search: c('sheets_2025:Spreadsheet editor toolbar').t`Search`,
+    Find: c('sheets_2025:Spreadsheet editor toolbar').t`Find`,
     'Clear formatting': c('sheets_2025:Spreadsheet editor toolbar').t`Clear formatting`,
     Bold: c('sheets_2025:Spreadsheet editor toolbar').t`Bold`,
     Italic: c('sheets_2025:Spreadsheet editor toolbar').t`Italic`,
