@@ -13,6 +13,7 @@ import {
 import type { CCItemData, Maybe } from '@proton/pass/types';
 import { isInputElement, isSelectElement } from '@proton/pass/utils/dom/predicates';
 import { prop } from '@proton/pass/utils/fp/lens';
+import { seq } from '@proton/pass/utils/fp/promises';
 
 type CCFieldValueExtract = (data: CCItemData, el: FieldElement) => Maybe<string>;
 
@@ -58,14 +59,14 @@ export const CC_FIELDS_CONFIG: Partial<Record<CCFieldType, CCFieldValueExtract>>
     [CCFieldType.NUMBER]: prop('number'),
 };
 
-export const autofillCCFields = (fields: FieldHandle[], data: CCItemData) => {
+export const autofillCCFields = async (fields: FieldHandle[], data: CCItemData) => {
     fields.forEach(({ element }) => actionTrap(element, 250));
 
-    fields.forEach((field, idx) => {
+    await seq(fields, async (field) => {
         const ccType = getCCFieldType(field.element);
         if (!ccType) return;
 
         const value = CC_FIELDS_CONFIG[ccType]?.(data, field.element);
-        if (value) setTimeout(() => field.autofill(value), idx);
+        if (value) await field.autofill(value);
     });
 };
