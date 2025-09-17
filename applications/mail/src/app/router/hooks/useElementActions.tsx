@@ -3,12 +3,14 @@ import { useHistory } from 'react-router-dom';
 
 import { useItemsSelection } from '@proton/components';
 import { useFolders } from '@proton/mail';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
+import useFlag from '@proton/unleash/useFlag';
 
 import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { useOnCompose } from 'proton-mail/containers/ComposeProvider';
-import { isElementMessage } from 'proton-mail/helpers/elements';
+import { hasLabel, isElementMessage } from 'proton-mail/helpers/elements';
 import { setParamsInLocation } from 'proton-mail/helpers/mailboxUrl';
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
@@ -55,6 +57,7 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
     const { moveToFolder, moveToSpamModal, moveSnoozedModal, moveScheduledModal, selectAllMoveModal } =
         useMoveToFolder();
     const onCompose = useOnCompose();
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const [folders] = useFolders();
 
@@ -97,8 +100,10 @@ export const useElementActions = ({ params, navigation, elementsData }: Params) 
             const fetchElementThenCompose = async () => {
                 // Using the getter to prevent having elements in dependency of the callback
                 const [element] = getElementsFromIDs([elementID || '']);
+                const isInDeletedFolder =
+                    isRetentionPoliciesEnabled && hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED);
 
-                if (isElementMessage(element) && isDraft(element) && !preventComposer) {
+                if (isElementMessage(element) && isDraft(element) && !isInDeletedFolder && !preventComposer) {
                     void onCompose({
                         type: ComposeTypes.existingDraft,
                         existingDraft: { localID: element.ID as string, data: element },

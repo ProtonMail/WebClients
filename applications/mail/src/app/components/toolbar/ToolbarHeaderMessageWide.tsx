@@ -56,6 +56,7 @@ const ToolbarHeaderMessageWide = ({
     labelDropdownToggleRef,
     moveDropdownToggleRef,
     onCheckAll,
+    isInDeletedFolder,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
@@ -76,25 +77,26 @@ const ToolbarHeaderMessageWide = ({
                         data-testid="toolbar:back-button"
                     />
 
-                    <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
-
-                    <MoveButtons
-                        labelID={labelID}
-                        isExtraTiny={breakpoint === 'extratiny'}
-                        selectedIDs={selectedIDs}
-                        onMove={onMove}
-                        onDelete={onDelete}
-                    />
-
-                    <LabelsAndFolders
-                        labelID={labelID}
-                        selectedIDs={selectedIDs}
-                        labelDropdownToggleRef={labelDropdownToggleRef}
-                        moveDropdownToggleRef={moveDropdownToggleRef}
-                        onCheckAll={onCheckAll}
-                    />
-
-                    <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
+                    {!isInDeletedFolder && (
+                        <>
+                            <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
+                            <MoveButtons
+                                labelID={labelID}
+                                isExtraTiny={breakpoint === 'extratiny'}
+                                selectedIDs={selectedIDs}
+                                onMove={onMove}
+                                onDelete={onDelete}
+                            />
+                            <LabelsAndFolders
+                                labelID={labelID}
+                                selectedIDs={selectedIDs}
+                                labelDropdownToggleRef={labelDropdownToggleRef}
+                                moveDropdownToggleRef={moveDropdownToggleRef}
+                                onCheckAll={onCheckAll}
+                            />
+                            <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
+                        </>
+                    )}
 
                     {!localIsTiny ? (
                         <>

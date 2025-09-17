@@ -49,10 +49,12 @@ const ToolbarHeaderMessageNarrow = ({
     moveDropdownToggleRef,
     isSearch,
     onCheckAll,
+    isInDeletedFolder,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const { localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
+
     // We override this value because the "more" dropdown is not displayed in the toolbar otherwise
     const isTiny = localIsNarrow;
 
@@ -73,43 +75,43 @@ const ToolbarHeaderMessageNarrow = ({
                         data-testid="toolbar:back-button"
                     />
 
-                    <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
+                    {!isInDeletedFolder && (
+                        <>
+                            <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
+                            <MoveButtons
+                                labelID={labelID}
+                                isExtraTiny={localIsExtraTiny}
+                                viewportIsNarrow={viewportBreakpoint.viewportWidth['<=small']}
+                                selectedIDs={selectedIDs}
+                                onMove={onMove}
+                                onDelete={onDelete}
+                            />
 
-                    <MoveButtons
-                        labelID={labelID}
-                        isExtraTiny={localIsExtraTiny}
-                        viewportIsNarrow={viewportBreakpoint.viewportWidth['<=small']}
-                        selectedIDs={selectedIDs}
-                        onMove={onMove}
-                        onDelete={onDelete}
-                    />
-
-                    {!isTiny ? (
-                        <LabelsAndFolders
-                            labelID={labelID}
-                            selectedIDs={selectedIDs}
-                            labelDropdownToggleRef={labelDropdownToggleRef}
-                            moveDropdownToggleRef={moveDropdownToggleRef}
-                            onCheckAll={onCheckAll}
-                        />
-                    ) : null}
-
-                    {!isTiny ? <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} /> : null}
-
-                    <MoreDropdown
-                        labelID={labelID}
-                        elementIDs={elementIDs}
-                        selectedIDs={selectedIDs}
-                        isSearch={isSearch}
-                        isNarrow={localIsNarrow}
-                        isTiny={isTiny}
-                        isExtraTiny={localIsExtraTiny}
-                        onMove={onMove}
-                        onDelete={onDelete}
-                        onCheckAll={onCheckAll}
-                    />
-
-                    <MoreActions selectedIDs={selectedIDs} />
+                            {!isTiny ? (
+                                <LabelsAndFolders
+                                    labelID={labelID}
+                                    selectedIDs={selectedIDs}
+                                    labelDropdownToggleRef={labelDropdownToggleRef}
+                                    moveDropdownToggleRef={moveDropdownToggleRef}
+                                    onCheckAll={onCheckAll}
+                                />
+                            ) : null}
+                            {!isTiny ? <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} /> : null}
+                            <MoreDropdown
+                                labelID={labelID}
+                                elementIDs={elementIDs}
+                                selectedIDs={selectedIDs}
+                                isSearch={isSearch}
+                                isNarrow={localIsNarrow}
+                                isTiny={isTiny}
+                                isExtraTiny={localIsExtraTiny}
+                                onMove={onMove}
+                                onDelete={onDelete}
+                                onCheckAll={onCheckAll}
+                            />
+                            <MoreActions selectedIDs={selectedIDs} />
+                        </>
+                    )}
 
                     <NavigationControls
                         loading={loading}
