@@ -32,8 +32,6 @@ jest.mock('@proton/account/userSettings/hooks', () => ({
     ]),
 }));
 
-const canDisplayNewSentinelSettings = true; //for feature flag
-
 const setupMocks = (isSentinelUser: boolean) => {
     require('../../hooks/useIsSentinelUser').mockReturnValue([{ isSentinelUser }, false]);
     require('../../hooks/useRecoveryStatus').mockReturnValue([
@@ -59,12 +57,7 @@ describe('RecoveryCard component', () => {
     test('renders one RecoveryCardStatus when isSentinelUser is true', () => {
         setupMocks(true);
 
-        const { getAllByTestId } = render(
-            <RecoveryCard
-                ids={{ data: 'someData', account: `someAccount` }}
-                canDisplayNewSentinelSettings={canDisplayNewSentinelSettings}
-            />
-        );
+        const { getAllByTestId } = render(<RecoveryCard ids={{ data: 'someData', account: `someAccount` }} />);
         const recoveryCardStatusComponents = getAllByTestId('mocked-recovery-card-status');
         expect(recoveryCardStatusComponents).toHaveLength(1);
         expect(require('./RecoveryCardStatus')).toHaveBeenCalledTimes(1);

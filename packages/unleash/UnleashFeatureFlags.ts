@@ -23,7 +23,6 @@ enum CommonFeatureFlag {
     InboxDesktopManualUpdateBannerDisabled = 'InboxDesktopManualUpdateBannerDisabled',
     BreachAlertsNotificationsCommon = 'BreachAlertsNotificationsCommon',
     WalletAutoSetup = 'WalletAutoSetup',
-    SentinelRecoverySettings = 'SentinelRecoverySettings',
     InboxDesktopWinLinNewAppSwitcher = 'InboxDesktopWinLinNewAppSwitcher',
     DarkWebEmailNotifications = 'DarkWebEmailNotifications',
     InboxWebPostSubscriptionFlow = 'InboxWebPostSubscriptionFlow',
