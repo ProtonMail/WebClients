@@ -1,11 +1,11 @@
 Usage: $ proton-i18n <command>
 Available commands:
-  - [blue]validate[/blue] [yellow]<type>[/yellow]
+  - validate <type>
       To validate the translations, check if we have contexts
         - type: default (default) validate we don't have missing context
         - type: lint-functions check if we use the right format for ttag
 
-  - [blue]extract[/blue] [yellow]<type>[/yellow]
+  - extract <type>
       Extract all translations from the projet
       - type: default (app) extract translations from the app and reactComponents + shared
       - type: reactComponents extract only translations from @proton/components
