@@ -5,6 +5,7 @@ import type { ItemContent, Maybe } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { oneOf, truthy } from '@proton/pass/utils/fp/predicates';
+import { seq } from '@proton/pass/utils/fp/promises';
 import lastItem from '@proton/utils/lastItem';
 
 export interface IdentityFieldConfig {
@@ -63,7 +64,7 @@ export const IDENTITY_FIELDS_CONFIG: Record<IdentityFieldType, (data: ItemConten
  * track of previously filled field types to avoid duplicates within the same section.
  * This approach is particularly useful for forms with multiple sections that may require
  * different sets of information (e.g., separate billing and shipping addresses). */
-export const autofillIdentityFields = (
+export const autofillIdentityFields = async (
     fields: FieldHandle[],
     selectedField: FieldHandle,
     data: ItemContent<'identity'>
@@ -77,7 +78,11 @@ export const autofillIdentityFields = (
             ? [...sectionFields.slice(selectedFieldIndex), ...sectionFields.slice(0, selectedFieldIndex)]
             : sectionFields;
 
-    reorderedFields.forEach((field, idx) => {
+    /** Use async sequence to stagger autofill operations across multiple fields.
+     * This helps avoid potential blocking by browsers or websites that may
+     * detect and prevent rapid, simultaneous field autofill. The delay increases
+     * for each field, mimicking human-like interaction. */
+    await seq(reorderedFields, async (field) => {
         const { identityType } = field;
         const shouldAutofill = oneOf(null, FieldType.IDENTITY)(field.autofilled);
 
@@ -88,11 +93,7 @@ export const autofillIdentityFields = (
         const getValue = IDENTITY_FIELDS_CONFIG[identityType];
         const value = getValue(data);
 
-        /** Use setTimeout to stagger autofill operations across multiple frames.
-         * This helps avoid potential blocking by browsers or websites that may
-         * detect and prevent rapid, simultaneous field autofill. The delay increases
-         * for each field, mimicking human-like interaction */
-        if (value) setTimeout(() => field.autofill(value, { type: FieldType.IDENTITY }), idx);
+        if (value) await field.autofill(value, { type: FieldType.IDENTITY });
         autofilled.add(identityType);
     });
 };
