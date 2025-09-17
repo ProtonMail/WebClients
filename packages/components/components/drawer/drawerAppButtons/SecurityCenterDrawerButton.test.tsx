@@ -53,7 +53,6 @@ jest.mock('@proton/components/hooks/drawer/useDrawer', () => ({
 
 const setupMocks = ({
     canDisplayBreachNotifications = true,
-    canDisplayNewSentinelSettings = true,
     hasSentinelEnabled = true,
     recoveryPhraseSet = false,
     hasAccountSecurityWarning = true,
@@ -64,9 +63,6 @@ const setupMocks = ({
     (useFlag as jest.Mock).mockImplementation((flag: string) => {
         if (flag === 'BreachAlertsNotificationsCommon') {
             return canDisplayBreachNotifications;
-        }
-        if (flag === 'SentinelRecoverySettings') {
-            return canDisplayNewSentinelSettings;
         }
     });
 
@@ -106,7 +102,7 @@ describe('SecurityCenterDrawerAppButton', () => {
         expect(DrawerAppButton).toHaveBeenCalledWith(
             expect.objectContaining({
                 notificationDotColor: ThemeColor.Danger,
-                notificationDotCounter: 4, // unreadBreachesCount + 1 (for recoveryPhraseSet false and canDisplayNewSentinelSettings true)
+                notificationDotCounter: 4, // unreadBreachesCount + 1 (for recoveryPhraseSet false)
             }),
             {}
         );
@@ -120,7 +116,7 @@ describe('SecurityCenterDrawerAppButton', () => {
         expect(DrawerAppButton).toHaveBeenCalledWith(
             expect.objectContaining({
                 notificationDotColor: ThemeColor.Warning,
-                notificationDotCounter: 5, // unreadBreachesCount + accountSecurityCardsCount (for recoveryPhraseSet false and canDisplayNewSentinelSettings true)
+                notificationDotCounter: 5, // unreadBreachesCount + accountSecurityCardsCount (for recoveryPhraseSet false)
             }),
             {}
         );
