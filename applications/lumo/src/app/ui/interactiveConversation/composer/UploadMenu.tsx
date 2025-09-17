@@ -76,7 +76,7 @@ export const UploadMenu: ({
                 }}
             >
                 <div className="flex items-center gap-3">
-                    <IcBrandProtonDriveFilled size={5} className="text-purple-500" />
+                    <IcBrandProtonDriveFilled size={5} className="color-weak" />
                     <div className="flex flex-column">
                         <span className="text-sm font-medium">
                             {c('collider_2025: Action').t`Add from ${DRIVE_APP_NAME}`}
@@ -94,7 +94,7 @@ export const UploadMenu: ({
                 }}
             >
                 <div className="flex items-center gap-3">
-                    <IcArrowUpLine size={5} className="text-gray-600" />
+                    <IcArrowUpLine size={5} className="color-weak" />
                     <div className="flex flex-column">
                         <span className="text-sm font-medium">{c('collider_2025: Action').t`Upload from device`}</span>
                     </div>

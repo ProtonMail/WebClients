@@ -4,23 +4,14 @@
 	color: var(--text-primary);
 }
 
-.bg-white {
-	background-color: white;
-	// Smooth transitions for background and styling changes
-	transition: 
-		background-color 0.2s ease-in-out,
-		box-shadow 0.2s ease-in-out,
-		border-radius 0.2s ease-in-out,
-		padding 0.2s ease-in-out;
-	
-	// Hardware acceleration for smooth transitions
-	will-change: background-color, box-shadow;
-	backface-visibility: hidden;
-	transform: translateZ(0);
+.lumo-plus-button-shadow {
+	box-shadow:
+		0 4px 12px rgb(0 0 0 / 0.04),
+		0 2px 4px rgb(0 0 0 / 0.02);
 }
 
-.lumo-plus-button-shadow {
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.02);
+.lumo-plus-button {
+	background-color: var(--background-upsell-button) !important;
 }
 
 // Smooth content transitions for the upgrade button
@@ -29,10 +20,10 @@
 	will-change: opacity, transform;
 	backface-visibility: hidden;
 	transform: translateZ(0);
-	
+
 	// Smooth content transitions
 	transition: opacity 0.15s ease-in-out;
-	
+
 	&.is-transitioning {
 		opacity: 0.9;
 	}

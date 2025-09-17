@@ -32,6 +32,7 @@ import { GuestTrackingProvider } from '../../providers/GuestTrackingProvider';
 import { IsGuestProvider } from '../../providers/IsGuestProvider';
 import LumoCommonProvider from '../../providers/LumoCommonProvider';
 import { LumoPlanProvider } from '../../providers/LumoPlanProvider';
+import { LumoThemeProvider } from '../../providers/LumoThemeProvider';
 import { OnboardingProvider } from '../../providers/OnboardingProvider';
 import { createLumoListenerMiddleware } from '../../redux/listeners';
 import type { LumoStore } from '../../redux/store';
@@ -156,7 +157,9 @@ const GuestApp = () => {
                                             <OnboardingProvider>
                                                 <IsGuestProvider isGuest={true}>
                                                     <LumoPlanProvider>
-                                                        <BasePublicApp />
+                                                        <LumoThemeProvider>
+                                                            <BasePublicApp />
+                                                        </LumoThemeProvider>
                                                     </LumoPlanProvider>
                                                 </IsGuestProvider>
                                             </OnboardingProvider>

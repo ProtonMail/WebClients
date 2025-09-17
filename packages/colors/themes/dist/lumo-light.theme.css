@@ -63,7 +63,8 @@
   --text-hint: #8f8d8a;
   --text-disabled: #9e9b98;
   --text-invert: white;
-  --field-norm: #adaba8;
+  --text-markdown: #24292e;
+  --text-strong: rgb(186 186 247 / 0.3) --field-norm: #adaba8;
   --field-hover: #8f8d8a;
   --field-disabled: #d1cfcd;
   --focus-outline: var(--primary);
@@ -74,6 +75,10 @@
   --background-weak: #f8fafc;
   --background-strong: #e5e8eb;
   --background-invert: #1a1a1a;
+  --background-composer-mobile: white;
+  --background-upsell-button: white;
+  --background-upsell-toggle: #e5e1f5;
+  --background-upsell-toggle-button: white;
   --interaction-default: transparent;
   --interaction-default-hover: rgb(186 190 199 / 0.2);
   --interaction-default-active: rgb(186 190 199 / 0.3);
@@ -97,4 +102,8 @@
   --text-error-banner-title: #15006f;
   --text-error-banner-message: #50409b;
   --text-error-banner-button: var(--interaction-norm);
+  --markdown-code-background: #f1f3f5;
+  --markdown-pre-background: #f8f9fa;
+  --markdown-pre-border: #e1e4e8;
+  --settings-modal-upsell-background: #f9fafb;
 }

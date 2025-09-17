@@ -10,16 +10,20 @@ import { Icon, ModalTwo, ModalTwoContent, SettingsLink, useConfig } from '@proto
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import lumoAvatarNeutral from '@proton/styles/assets/img/lumo/lumo-avatar-neutral.svg';
 import lumoCatPlusCollar from '@proton/styles/assets/img/lumo/lumo-cat-plus-collar.svg';
-import lumoLogoFull from '@proton/styles/assets/img/lumo/lumo-logo-full.svg';
+import useFlag from '@proton/unleash/useFlag';
 
 import { LUMO_PLUS_FREE_PATH_TO_ACCOUNT, LUMO_UPGRADE_TRIGGER_CLASS } from '../../../constants';
 import { useLumoCommon } from '../../../hooks/useLumoCommon';
 import { useLumoPlan } from '../../../hooks/useLumoPlan';
+import { useLumoTheme } from '../../../providers/LumoThemeProvider';
 import { getInitials } from '../../../util/username';
 import CreateFreeAccountLink from '../CreateFreeAccountLink/CreateFreeAccountLink';
 import GetLumoPlusGuestButton from '../GetLumoPlusGuestButton/GetLumoPlusGuestButton';
+import { LumoLogoThemeAware } from '../LumoLogoThemeAware';
 import LumoPlusLogoInline from '../LumoPlusLogoInline';
+import LumoThemeButton from '../LumoThemeButton';
 import { SignInLinkButton } from '../SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 
@@ -212,7 +216,7 @@ const SettingsSectionItem = ({
     return (
         <div className="flex flex-row flex-nowrap gap-4 items-start p-2">
             <Avatar color="weak" className="settings-section-icon">
-                <Icon className="shrink-0" name={icon} size={5} />
+                <Icon className="shrink-0 color-weak" name={icon} size={5} />
             </Avatar>
             <div className="flex-1 flex flex-column *:min-size-auto sm:flex-row flex-nowrap gap-2">
                 <div className="flex flex-column flex-nowrap flex-1 min-w-0">
@@ -265,8 +269,9 @@ const LumoSettingsSidebar = ({
             style={{ '--md-max-w-custom': '14rem', '--md-w-custom': '10rem' }}
         >
             {/* Lumo Logo */}
-            <div className="hidden md:block">
-                <img src={lumoLogoFull} alt="Lumo" height="50px" />
+            <div className="hidden md:flex gap-2">
+                <img src={lumoAvatarNeutral} alt="Lumo" height="50px" />
+                <LumoLogoThemeAware height="32px" />
             </div>
 
             {/* Navigation Items */}
@@ -296,8 +301,18 @@ const LumoSettingsSidebar = ({
 
 const GeneralSettingsPanel = ({ isGuest, onClose }: { isGuest: boolean; onClose?: () => void }) => {
     const { DATE_VERSION } = useConfig();
+    const { isDarkLumoTheme } = useLumoTheme();
+    const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
     return (
         <div>
+            {isLumoDarkModeEnabled && (
+                <SettingsSectionItem
+                    icon={isDarkLumoTheme ? 'moon' : 'sun'}
+                    text={c('collider_2025: Title').t`Theme`}
+                    subtext={c('collider_2025: Description').t`Switch between light and dark mode`}
+                    button={<LumoThemeButton />}
+                />
+            )}
             {!isGuest && (
                 <SettingsSectionItem
                     icon="speech-bubble"
