@@ -13,8 +13,8 @@ import {
 } from '@rowsncolumns/spreadsheet-state'
 import type { ProtonSheetsState } from '../../state'
 import { functionDescriptions } from '@rowsncolumns/functions'
-import { SheetSearch } from '@rowsncolumns/spreadsheet'
 import { ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
+import { SheetSearch } from './SheetSearch'
 
 export type DialogsProps = {
   state: ProtonSheetsState
