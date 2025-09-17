@@ -15,7 +15,10 @@ export function FileMenu({ renderMenuButton, ...props }: FileMenuProps) {
   return (
     <Ariakit.MenuProvider {...props}>
       <Ariakit.MenuButton render={renderMenuButton} />
-      <UI.Menu>
+      <UI.Menu unmountOnHide>
+        <UI.MenuItem>MENU UNIMPLEMENTED!</UI.MenuItem>
+        <UI.MenuItem>Use the dropdown above (title)</UI.MenuItem>
+        <UI.MenuSeparator />
         {/* TODO: basically all actions */}
         {/* TODO: which icon do we want here? */}
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="file" />}>{s('New spreadsheet')}</UI.MenuItem>
@@ -29,16 +32,7 @@ export function FileMenu({ renderMenuButton, ...props }: FileMenuProps) {
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="trash" />}>{s('Move to trash')}</UI.MenuItem>
         <UI.MenuSeparator />
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="printer" />}>{s('Print')}</UI.MenuItem>
-        <Ariakit.MenuProvider>
-          <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="arrow-down-to-square" />}>
-            {s('Download')}
-          </UI.SubMenuButton>
-          <UI.SubMenu>
-            <UI.MenuItem>{s('Microsoft Excel (.xlsx)')}</UI.MenuItem>
-            <UI.MenuItem>{s('Comma Separated Values (.csv)')}</UI.MenuItem>
-            <UI.MenuItem>{s('Tab Separated Values (.tsv)')}</UI.MenuItem>
-          </UI.SubMenu>
-        </Ariakit.MenuProvider>
+        <DownloadSubmenu />
         <UI.MenuSeparator />
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="info-circle" />}>{s('Help')}</UI.MenuItem>
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="brand-proton-sheets" />}>
@@ -49,6 +43,21 @@ export function FileMenu({ renderMenuButton, ...props }: FileMenuProps) {
         </UI.MenuItem>
         {/* TODO: add download logs option */}
       </UI.Menu>
+    </Ariakit.MenuProvider>
+  )
+}
+
+function DownloadSubmenu() {
+  return (
+    <Ariakit.MenuProvider>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="arrow-down-to-square" />}>
+        {s('Download')}
+      </UI.SubMenuButton>
+      <UI.SubMenu unmountOnHide>
+        <UI.MenuItem>{s('Microsoft Excel (.xlsx)')}</UI.MenuItem>
+        <UI.MenuItem>{s('Comma Separated Values (.csv)')}</UI.MenuItem>
+        <UI.MenuItem>{s('Tab Separated Values (.tsv)')}</UI.MenuItem>
+      </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
 }
