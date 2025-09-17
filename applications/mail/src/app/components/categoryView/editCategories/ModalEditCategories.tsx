@@ -9,6 +9,7 @@ import useLoading from '@proton/hooks/useLoading';
 import type { CategoryTab } from '@proton/mail';
 import { updateLabel } from '@proton/shared/lib/api/labels';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 
 import { useCategoriesView } from '../useCategoriesView';
 import { EditCategoriesList } from './EditCategoriesList';
@@ -83,7 +84,7 @@ export const ModalEditCategories = ({ onDisableAll, ...rest }: Props) => {
         // We reload if the user made any change in the list of categories
         if (currentChecked && (!areSameSize || !areSameContent)) {
             await toggleCategories();
-            window.location.reload();
+            window.location.replace(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]}`);
         }
     };
 
