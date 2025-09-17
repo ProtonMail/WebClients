@@ -17,7 +17,7 @@ interface SourcesPanelProps {
 export const SourcesPanel = ({ message, sourcesContainerRef, onClose, handleLinkClick }: SourcesPanelProps) => {
     return (
         <div className="sources-panel h-full w-1/4 pt-2 pr-4 pb-6" ref={sourcesContainerRef}>
-            <div className="flex flex-column flex-nowrap w-full rounded-xl p-4 bg-norm shadow-lifted w-full h-full">
+            <div className="flex flex-column flex-nowrap w-full rounded-xl p-4 bg-weak shadow-lifted w-full h-full">
                 <div className="flex flex-row flex-nowrap items-center justify-space-between">
                     <p className="m-0 text-lg text-bold">{c('collider_2025: Web Search').t`Sources`}</p>
                     <Button icon className="shrink-0" size="small" shape="ghost" onClick={onClose}>

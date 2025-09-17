@@ -61,8 +61,9 @@
 	background-color: inherit;
 
 	// Smooth width transitions for desktop
-	transition: inline-size 0.3s ease-in-out,
-	transform 0.3s ease-in-out;
+	transition:
+		inline-size 0.3s ease-in-out,
+		transform 0.3s ease-in-out;
 
 	// Hardware acceleration
 	will-change: inline-size, transform;
@@ -143,8 +144,9 @@
 	transform: translateZ(0);
 
 	// Smooth backdrop transitions
-	transition: opacity 0.3s ease-in-out,
-	backdrop-filter 0.3s ease-in-out;
+	transition:
+		opacity 0.3s ease-in-out,
+		backdrop-filter 0.3s ease-in-out;
 }
 
 // Smooth content transitions in sidebar
@@ -169,9 +171,7 @@
 	}
 }
 
-.navigation-link.is-active,
-.is-active {
-	background-color: transparent !important;
+.navigation-link.is-active {
 	color: var(--text-norm) !important;
 
 	&.navigation-link {
@@ -182,7 +182,7 @@
 
 .sidebar button:hover,
 .sidebar .navigation-link:hover {
-	background-color: var(--background-weak) !important;
+	background-color: var(--interaction-default-hover) !important;
 	border-radius: 8px;
 }
 
@@ -318,7 +318,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 0.75rem;
-	color: #24292e;
+	color: var(--text-markdown);
 	contain: layout style;
 	word-break: break-word;
 
@@ -454,7 +454,7 @@ body {
 		padding-block: 1.25rem;
 		padding-inline: 1rem;
 		inline-size: 100%;
-		background-color: #f8f9fa;
+		background-color: var(--markdown-pre-background);
 		position: relative;
 	}
 
@@ -472,16 +472,16 @@ body {
 	pre code {
 		white-space: pre-wrap;
 		word-break: break-word;
-		color: #24292e;
+		color: var(--text-markdown);
 	}
 
 	code:not(pre code) {
-		color: #24292e;
-		background-color: #f1f3f5;
+		color: var(--text-markdown);
+		background-color: var(--markdown-code-background);
 		padding-inline: 0.25rem;
 		padding-block: 0.125rem;
 		border-radius: 0.25rem;
-		border: 1px solid #e1e4e8;
+		border: 1px solid var(--markdown-pre-border);
 		font-family: 'SF Mono', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 		font-size: 0.98em;
 	}
@@ -658,4 +658,9 @@ body {
 	.border-top {
 		border-block-start: none !important;
 	}
+}
+
+.dropdown {
+	--selection-background-color: var(--interaction-default-hover);
+	--selection-text-color: var(--interaction-weak-contrast);
 }

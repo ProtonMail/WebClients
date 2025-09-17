@@ -254,6 +254,15 @@ const config: ThemeConfig[] = [
             },
         ],
     },
+    {
+        output: './themes/dist/lumo-dark.theme.css',
+        files: [
+            {
+                path: './themes/src/lumo-dark/dark-base.css',
+                type: 'dark',
+            },
+        ],
+    },
 ];
 
 export default config;
