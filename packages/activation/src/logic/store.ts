@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import type { TypedUseSelectorHook } from 'react-redux';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import type { EventLoop } from '@proton/account/eventLoop';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
@@ -16,6 +16,8 @@ import importers from './importers/importers.slice';
 import reports from './reports/reports.slice';
 import sync from './sync/sync.slice';
 
+export const listenerMiddleware = createListenerMiddleware();
+
 export const useGenerateEasySwitchStore = () => {
     const api = useApi();
     const notificationManager = useNotifications();
@@ -27,7 +29,7 @@ export const useGenerateEasySwitchStore = () => {
             middleware: (getDefaultMiddleware) =>
                 getDefaultMiddleware({
                     thunk: { extraArgument: { api, notificationManager, eventManager } },
-                }),
+                }).prepend(listenerMiddleware.middleware),
         });
     }, []);
 

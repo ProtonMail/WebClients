@@ -2,6 +2,8 @@ import type { FunctionComponent } from 'react';
 import { useState } from 'react';
 import { Router } from 'react-router-dom';
 
+import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
+import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
 import {
     ApiProvider,
     AuthenticationProvider,
@@ -80,12 +82,16 @@ const App = () => {
                                         >
                                             <ApiProvider api={extraThunkArguments.api}>
                                                 <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
-                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                        <StandardPrivateApp noModals>
-                                                            <NotificationManagerInjector />
-                                                            <state.MainContainer />
-                                                        </StandardPrivateApp>
-                                                    </ErrorBoundary>
+                                                    <EasySwitchStoreProvider>
+                                                        <EasySwitchStoreInitializer>
+                                                            <ErrorBoundary component={<StandardErrorPage big />}>
+                                                                <StandardPrivateApp noModals>
+                                                                    <NotificationManagerInjector />
+                                                                    <state.MainContainer />
+                                                                </StandardPrivateApp>
+                                                            </ErrorBoundary>
+                                                        </EasySwitchStoreInitializer>
+                                                    </EasySwitchStoreProvider>
                                                 </DrawerProvider>
                                             </ApiProvider>
                                         </CalendarModelEventManagerProvider>

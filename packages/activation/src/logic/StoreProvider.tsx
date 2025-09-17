@@ -5,6 +5,7 @@ import { useEventManagerV6 } from '@proton/components/containers/eventManager/Ev
 import useEventManager from '@proton/components/hooks/useEventManager';
 
 import MainModal from '../components/Modals/MainModal';
+import SyncLostListener from './SyncLostListener';
 import { event, eventLoopV6 } from './actions';
 import { useEasySwitchDispatch, useGenerateEasySwitchStore } from './store';
 
@@ -19,7 +20,7 @@ const EasySwitchEventListener = ({ children }: Props) => {
     const { coreEventV6Manager } = useEventManagerV6();
 
     useEffect(() => {
-        const unsubcribe = subscribe((apiEvent) => {
+        const unsubscribe = subscribe((apiEvent) => {
             dispatch(event(apiEvent));
         });
 
@@ -28,12 +29,17 @@ const EasySwitchEventListener = ({ children }: Props) => {
         });
 
         return () => {
-            unsubcribe?.();
+            unsubscribe?.();
             unsubscribeV6?.();
         };
     }, [dispatch]);
 
-    return <>{children}</>;
+    return (
+        <>
+            {children}
+            <SyncLostListener />
+        </>
+    );
 };
 
 const EasySwitchStoreProvider = ({ children }: Props) => {
