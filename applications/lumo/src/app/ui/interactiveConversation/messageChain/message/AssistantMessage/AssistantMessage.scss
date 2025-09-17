@@ -55,7 +55,14 @@
 .rectangle-skeleton {
 	inline-size: 200px;
 	block-size: 16px;
-	background: linear-gradient(90deg, #e5e7eb 0%, #e5e7eb 35%, #fff 50%, #e5e7eb 65%, #e5e7eb 100%);
+	background: linear-gradient(
+		90deg,
+		rgb(167 146 255 / 0.3) 0%,
+		rgb(167 146 255 / 0.3) 35%,
+		#fff 50%,
+		rgb(167 146 255 / 0.3) 65%,
+		rgb(167 146 255 / 0.3) 100%
+	);
 	background-size: 200% 100%;
 	animation: shine 2s ease-in-out infinite;
 }
