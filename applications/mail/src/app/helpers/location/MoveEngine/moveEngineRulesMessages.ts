@@ -5,7 +5,7 @@ import { hasLabel, isElementMessage } from 'proton-mail/helpers/elements';
 
 import { ERROR_ELEMENT_NOT_MESSAGE, type MoveEngineRule, MoveEngineRuleResult } from './moveEngineInterface';
 
-// Sent, drafts and scheduled messages cannot move to INBOX
+// Sent, drafts, soft-deleted, and scheduled messages cannot move to INBOX
 export const messageInboxRules: MoveEngineRule = ({ element }) => {
     if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -15,6 +15,10 @@ export const messageInboxRules: MoveEngineRule = ({ element }) => {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+        return MoveEngineRuleResult.DENIED;
+    }
+
     if (isSent(element) || isDraft(element) || isScheduled(element)) {
         return MoveEngineRuleResult.DENIED;
     }
@@ -22,7 +26,7 @@ export const messageInboxRules: MoveEngineRule = ({ element }) => {
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// Sent, scheduled, and received messages cannot move to ALL_DRAFTS
+// Sent, scheduled, soft-deleted, and received messages cannot move to ALL_DRAFTS
 export const messageAllDraftRules: MoveEngineRule = ({ element }) => {
     if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -36,10 +40,14 @@ export const messageAllDraftRules: MoveEngineRule = ({ element }) => {
         return MoveEngineRuleResult.DENIED;
     }
 
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+        return MoveEngineRuleResult.DENIED;
+    }
+
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// Drafts and received messages cannot move to ALL_SENT
+// Drafts, soft-deleted, and received messages cannot move to ALL_SENT
 export const messageAllSentRules: MoveEngineRule = ({ element }) => {
     if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -53,10 +61,14 @@ export const messageAllSentRules: MoveEngineRule = ({ element }) => {
         return MoveEngineRuleResult.DENIED;
     }
 
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+        return MoveEngineRuleResult.DENIED;
+    }
+
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// Any message can move to TRASH
+// Any message can move to TRASH except from SOFT_DELETED
 export const messageTrashRules: MoveEngineRule = ({ element }) => {
     if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -66,10 +78,14 @@ export const messageTrashRules: MoveEngineRule = ({ element }) => {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+        return MoveEngineRuleResult.DENIED;
+    }
+
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// scheduled messages cannot move to SPAM
+// Scheduled, soft-deleted messages cannot move to SPAM
 export const messageSpamRules: MoveEngineRule = ({ element }) => {
     if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -77,6 +93,10 @@ export const messageSpamRules: MoveEngineRule = ({ element }) => {
 
     if (hasLabel(element, MAILBOX_LABEL_IDS.SPAM)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
+    }
+
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+        return MoveEngineRuleResult.DENIED;
     }
 
     if (isScheduled(element)) {
@@ -96,7 +116,7 @@ export const messageAllMailRules: MoveEngineRule = () => {
     return MoveEngineRuleResult.NOT_APPLICABLE;
 };
 
-// Any message can move to STARRED
+// Any message can move to STARRED except from SOFT_DELETED
 export const messageStarredRules: MoveEngineRule = ({ element }) => {
     if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -106,10 +126,14 @@ export const messageStarredRules: MoveEngineRule = ({ element }) => {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+        return MoveEngineRuleResult.DENIED;
+    }
+
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// Except SCHEDULED messages, any message can move to ARCHIVE
+// Except SCHEDULED, SOFT_DELETED messages, any message can move to ARCHIVE
 export const messageArchiveRules: MoveEngineRule = ({ element }) => {
     if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -119,6 +143,10 @@ export const messageArchiveRules: MoveEngineRule = ({ element }) => {
         return MoveEngineRuleResult.NOT_APPLICABLE;
     }
 
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+        return MoveEngineRuleResult.DENIED;
+    }
+
     if (isScheduled(element)) {
         return MoveEngineRuleResult.DENIED;
     }
@@ -126,7 +154,7 @@ export const messageArchiveRules: MoveEngineRule = ({ element }) => {
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// Draft and received messages cannot move to SENT
+// Draft, soft-deleted, and received messages cannot move to SENT
 export const messageSentRules: MoveEngineRule = ({ element }) => {
     if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -140,10 +168,14 @@ export const messageSentRules: MoveEngineRule = ({ element }) => {
         return MoveEngineRuleResult.DENIED;
     }
 
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+        return MoveEngineRuleResult.DENIED;
+    }
+
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// Sent, scheduled, and received messages cannot move to drafts
+// Sent, scheduled, soft-deleted, and received messages cannot move to drafts
 export const messageDraftRules: MoveEngineRule = ({ element }) => {
     if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -155,6 +187,10 @@ export const messageDraftRules: MoveEngineRule = ({ element }) => {
 
     // Scheduled are sent messages, but we can move them to draft to get canceled
     if (isSent(element) || isScheduled(element) || isReceived(element)) {
+        return MoveEngineRuleResult.DENIED;
+    }
+
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
         return MoveEngineRuleResult.DENIED;
     }
 
@@ -208,6 +244,19 @@ export const messageSnoozedRules: MoveEngineRule = ({ element }) => {
     return MoveEngineRuleResult.DENIED;
 };
 
+/**
+ * No messages can be moved to the soft deleted label
+ *
+ * @returns DENIED
+ */
+export const messageSoftDeletedRules: MoveEngineRule = ({ element }) => {
+    if (!isElementMessage(element)) {
+        throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
+    }
+
+    return MoveEngineRuleResult.DENIED;
+};
+
 // Sent, drafts and scheduled messages cannot move to a category (which should be a "children of INBOX)
 export const messageCategoryRules: MoveEngineRule = ({ element, destinationLabelID }) => {
     if (!isElementMessage(element)) {
@@ -225,7 +274,7 @@ export const messageCategoryRules: MoveEngineRule = ({ element, destinationLabel
     return MoveEngineRuleResult.ALLOWED;
 };
 
-// Any message can move to a custom folder
+// Any message can move to a custom folder except from SOFT_DELETED
 export const messageCustomFolderRules: MoveEngineRule = ({ element, destinationLabelID }) => {
     if (!isElementMessage(element)) {
         throw new Error(ERROR_ELEMENT_NOT_MESSAGE);
@@ -233,6 +282,10 @@ export const messageCustomFolderRules: MoveEngineRule = ({ element, destinationL
 
     if (hasLabel(element, destinationLabelID)) {
         return MoveEngineRuleResult.NOT_APPLICABLE;
+    }
+
+    if (hasLabel(element, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+        return MoveEngineRuleResult.DENIED;
     }
 
     return MoveEngineRuleResult.ALLOWED;

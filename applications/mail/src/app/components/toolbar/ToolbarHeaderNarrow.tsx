@@ -4,8 +4,10 @@ import { c } from 'ttag';
 
 import { useActiveBreakpoint, useElementBreakpoints } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { isInDeletedFolder } from '../../helpers/elements';
 import { getLabelName } from '../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
@@ -45,6 +47,7 @@ const ToolbarHeaderNarrow = ({
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
     const { localIsTiny, localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -63,43 +66,44 @@ const ToolbarHeaderNarrow = ({
                 <div className={clsx('flex items-center toolbar-inner gap-2', !selectedIDs.length && 'pl-2')}>
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
 
-                    <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
-
-                    <MoveButtons
-                        labelID={labelID}
-                        isExtraTiny={localIsExtraTiny}
-                        viewportIsNarrow={viewportBreakpoint.viewportWidth['<=small']}
-                        selectedIDs={selectedIDs}
-                        onMove={onMove}
-                        onDelete={onDelete}
-                    />
-
-                    {!localIsTiny ? (
-                        <LabelsAndFolders
-                            labelID={labelID}
-                            selectedIDs={selectedIDs}
-                            labelDropdownToggleRef={labelDropdownToggleRef}
-                            moveDropdownToggleRef={moveDropdownToggleRef}
-                            onCheckAll={onCheckAll}
-                        />
-                    ) : null}
-
-                    {!localIsTiny ? <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} /> : null}
-
-                    <MoreDropdown
-                        labelID={labelID}
-                        elementIDs={elementIDs}
-                        selectedIDs={selectedIDs}
-                        isSearch={isSearch}
-                        isNarrow={localIsNarrow}
-                        isTiny={localIsTiny}
-                        isExtraTiny={localIsExtraTiny}
-                        onMove={onMove}
-                        onDelete={onDelete}
-                        onCheckAll={onCheckAll}
-                    />
-
-                    <MoreActions selectedIDs={selectedIDs} />
+                    {!isInDeletedFolder(isRetentionPoliciesEnabled, labelID) && (
+                        <>
+                            <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
+                            <MoveButtons
+                                labelID={labelID}
+                                isExtraTiny={localIsExtraTiny}
+                                viewportIsNarrow={viewportBreakpoint.viewportWidth['<=small']}
+                                selectedIDs={selectedIDs}
+                                onMove={onMove}
+                                onDelete={onDelete}
+                            />
+                            {!localIsTiny ? (
+                                <LabelsAndFolders
+                                    labelID={labelID}
+                                    selectedIDs={selectedIDs}
+                                    labelDropdownToggleRef={labelDropdownToggleRef}
+                                    moveDropdownToggleRef={moveDropdownToggleRef}
+                                    onCheckAll={onCheckAll}
+                                />
+                            ) : null}
+                            {!localIsTiny ? (
+                                <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />
+                            ) : null}
+                            <MoreDropdown
+                                labelID={labelID}
+                                elementIDs={elementIDs}
+                                selectedIDs={selectedIDs}
+                                isSearch={isSearch}
+                                isNarrow={localIsNarrow}
+                                isTiny={localIsTiny}
+                                isExtraTiny={localIsExtraTiny}
+                                onMove={onMove}
+                                onDelete={onDelete}
+                                onCheckAll={onCheckAll}
+                            />
+                            <MoreActions selectedIDs={selectedIDs} />
+                        </>
+                    )}
                 </div>
             </nav>
         </div>
