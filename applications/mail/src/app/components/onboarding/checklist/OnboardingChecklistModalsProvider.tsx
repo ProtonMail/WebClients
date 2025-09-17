@@ -1,7 +1,7 @@
 import { type ReactNode, createContext, useContext } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
-import { EasySwitchProvider, GmailSyncModal } from '@proton/activation';
+import { GmailSyncModal } from '@proton/activation';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { useModalState } from '@proton/components';
@@ -84,31 +84,29 @@ const OnboardingChecklistModalsProvider = ({ children }: { children: ReactNode }
     };
 
     return (
-        <EasySwitchProvider>
-            <ModalContext.Provider value={{ displayModal, isModalOpened }}>
-                {children}
-                {renderProtectInbox && <ProtectInboxModal {...protectLoginProps} />}
-                {renderLogin && <AccountsLoginModal {...loginModalProps} />}
-                {renderMobileApps && <MobileAppModal {...mobileAppsProps} />}
-                {renderStorageReward && <StorageRewardModal {...storageRewardProps} />}
-                {renderGmailForward && (
-                    <GmailSyncModal
-                        source={EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST}
-                        noSkip
-                        onSyncCallback={(hasError?: boolean) => {
-                            if (!hasError) {
-                                setGmailForwardOpen(false);
-                            }
-                        }}
-                        hasAccessToBYOE={hasAccessToBYOE}
-                        {...gmailForwardProps}
-                    />
-                )}
-                {renderClaimProtonAddressModal && (
-                    <BYOEClaimProtonAddressModal toApp={APPS.PROTONMAIL} {...claimProtonAddressModalProps} />
-                )}
-            </ModalContext.Provider>
-        </EasySwitchProvider>
+        <ModalContext.Provider value={{ displayModal, isModalOpened }}>
+            {children}
+            {renderProtectInbox && <ProtectInboxModal {...protectLoginProps} />}
+            {renderLogin && <AccountsLoginModal {...loginModalProps} />}
+            {renderMobileApps && <MobileAppModal {...mobileAppsProps} />}
+            {renderStorageReward && <StorageRewardModal {...storageRewardProps} />}
+            {renderGmailForward && (
+                <GmailSyncModal
+                    source={EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST}
+                    noSkip
+                    onSyncCallback={(hasError?: boolean) => {
+                        if (!hasError) {
+                            setGmailForwardOpen(false);
+                        }
+                    }}
+                    hasAccessToBYOE={hasAccessToBYOE}
+                    {...gmailForwardProps}
+                />
+            )}
+            {renderClaimProtonAddressModal && (
+                <BYOEClaimProtonAddressModal toApp={APPS.PROTONMAIL} {...claimProtonAddressModalProps} />
+            )}
+        </ModalContext.Provider>
     );
 };
 
