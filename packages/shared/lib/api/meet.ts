@@ -35,9 +35,9 @@ export const queryMeetAccessToken = (meetingLinkName: string) => {
     };
 };
 
-export const getActiveMeetingsQuery = {
+export const getUpcomingMeetingsQuery = {
     method: 'get',
-    url: `meet/v1/meetings/active`,
+    url: `meet/v1/meetings/upcoming`,
 };
 
 export const deleteMeetingCall = (meetingId: string) => {
