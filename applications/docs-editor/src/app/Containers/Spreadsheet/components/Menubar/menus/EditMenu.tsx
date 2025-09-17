@@ -4,6 +4,7 @@ import { c } from 'ttag'
 import { createStringifier } from '../../../stringifier'
 import * as UI from '../../ui'
 import * as Icons from '../../icons'
+import { useUI } from '../../../ui-store'
 
 const { s } = createStringifier(strings)
 
@@ -15,31 +16,85 @@ export function EditMenu({ renderMenuButton, ...props }: EditMenuProps) {
   return (
     <Ariakit.MenuProvider {...props}>
       <Ariakit.MenuButton render={renderMenuButton} />
-      <UI.Menu>
-        {/* TODO: basically all actions */}
-        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="arrow-up-and-left" />}>{s('Undo')}</UI.MenuItem>
-        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="arrow-up-and-left" className="scale-x-[-1]" />}>
-          {s('Redo')}
-        </UI.MenuItem>
+      <UI.Menu unmountOnHide>
+        <Undo />
+        <Redo />
         <UI.MenuSeparator />
-        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.scissors} />}>{s('Cut')}</UI.MenuItem>
-        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="squares" />}>{s('Copy')}</UI.MenuItem>
-        <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.notepadChecklist} />}>{s('Paste')}</UI.MenuItem>
-        <Ariakit.MenuProvider>
-          <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.notepadChecklist} />}>
-            {s('Paste special')}
-          </UI.SubMenuButton>
-          <UI.SubMenu>
-            <UI.MenuItem>{s('Values only')}</UI.MenuItem>
-            <UI.MenuItem>{s('Formatting only')}</UI.MenuItem>
-            <UI.MenuSeparator />
-            <UI.MenuItem>{s('Transposed')}</UI.MenuItem>
-          </UI.SubMenu>
-        </Ariakit.MenuProvider>
+        <Cut />
+        <Copy />
+        <Paste />
+        <PasteSpecialSubmenu />
         <UI.MenuSeparator />
-        <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="magnifier" />}>{s('Find')}</UI.MenuItem>
+        <Find />
       </UI.Menu>
     </Ariakit.MenuProvider>
+  )
+}
+
+function Undo() {
+  return (
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon legacyName="arrow-up-and-left" />}
+      onClick={useUI.$.withFocusGrid(useUI.$.history.undo)}
+      disabled={useUI((ui) => ui.history.undoDisabled)}
+    >
+      {s('Undo')}
+    </UI.MenuItem>
+  )
+}
+
+function Redo() {
+  return (
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon legacyName="arrow-up-and-left" className="scale-x-[-1]" />}
+      onClick={useUI.$.withFocusGrid(useUI.$.history.redo)}
+      disabled={useUI((ui) => ui.history.redoDisabled)}
+    >
+      {s('Redo')}
+    </UI.MenuItem>
+  )
+}
+
+function Cut() {
+  // TODO: need RnC to provide useCopyPasteCut
+  return <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.scissors} />}>{s('Cut')} (unimplemented)</UI.MenuItem>
+}
+
+function Copy() {
+  // TODO: need RnC to provide useCopyPasteCut
+  return <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="squares" />}>{s('Copy')} (unimplemented)</UI.MenuItem>
+}
+
+function Paste() {
+  // TODO: need RnC to provide useCopyPasteCut
+  return (
+    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.notepadChecklist} />}>{s('Paste')} (unimplemented)</UI.MenuItem>
+  )
+}
+
+function PasteSpecialSubmenu() {
+  // TODO: need RnC to provide useCopyPasteCut
+  return (
+    <Ariakit.MenuProvider>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.notepadChecklist} />}>
+        {s('Paste special')}
+      </UI.SubMenuButton>
+      <UI.SubMenu unmountOnHide>
+        {/* TODO: platform-aware shortcut hints */}
+        <UI.MenuItem hintSlot="⌘+Shift+V">{s('Values only')} (unimplemented)</UI.MenuItem>
+        <UI.MenuItem hintSlot="⌘+Option+V">{s('Formatting only')} (unimplemented)</UI.MenuItem>
+        <UI.MenuSeparator />
+        <UI.MenuItem>{s('Transposed')} (unimplemented)</UI.MenuItem>
+      </UI.SubMenu>
+    </Ariakit.MenuProvider>
+  )
+}
+
+function Find() {
+  return (
+    <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="magnifier" />} onClick={useUI.$.search.open}>
+      {s('Find')}
+    </UI.MenuItem>
   )
 }
 
