@@ -7,6 +7,7 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import { ApiSyncState } from '../api/api.interface';
 import BYOESyncLostModal from '../components/Modals/BYOESyncLostModal/BYOESyncLostModal';
+import useBYOEFeatureStatus from '../hooks/useBYOEFeatureStatus';
 import type { EasySwitchState } from './store';
 import { listenerMiddleware } from './store';
 import { selectSync } from './sync/sync.selectors';
@@ -16,9 +17,10 @@ const SyncLostListener = () => {
     const { APP_NAME } = useConfig();
     const isBYOESyncModalOpenRef = useRef(false);
     const [byoeSyncLostModal, handleShowBYOESyncLostModal] = useModalTwo(BYOESyncLostModal);
+    const hasAccessToBYOE = useBYOEFeatureStatus();
 
     const openSyncLostModal = (disconnectedEmails: string[]) => {
-        if (APP_NAME !== APPS.PROTONMAIL || isBYOESyncModalOpenRef.current) {
+        if (APP_NAME !== APPS.PROTONMAIL || isBYOESyncModalOpenRef.current || !hasAccessToBYOE) {
             return;
         }
         void handleShowBYOESyncLostModal({
