@@ -237,7 +237,7 @@ type LegacyUIProps = {
 
 function LegacyUI({ hidden, state, isReadonly, isRevisionMode, downloadLogs }: LegacyUIProps) {
   return (
-    <>
+    <ProtonSheetsUIStoreProvider state={state}>
       {hidden && (
         <div
           className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[#F9FBFC]"
@@ -255,6 +255,6 @@ function LegacyUI({ hidden, state, isReadonly, isRevisionMode, downloadLogs }: L
         <LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
         <LegacyDialogs state={state} />
       </div>
-    </>
+    </ProtonSheetsUIStoreProvider>
   )
 }
