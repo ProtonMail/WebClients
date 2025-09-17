@@ -1,4 +1,7 @@
 import { forwardRef, memo, useCallback, useInsertionEffect, useRef } from 'react'
+import type { WrapStrategy } from '@rowsncolumns/spreadsheet'
+import type { IconData } from './ui'
+import * as Icons from './icons'
 
 /**
  * Any function.
@@ -25,7 +28,9 @@ export function useEvent<T extends AnyFunction>(callback?: T) {
   return useCallback<AnyFunction>((...args) => ref.current?.(...args), []) as T
 }
 
-export type Component<P> = ((props: P) => React.ReactElement | null) & { displayName?: string }
+export type Component<P> = ((props: P) => React.ReactElement | null) & {
+  displayName?: string
+}
 
 /**
  * Creates components that's memoized and forwards its ref. The ref is passed as part of the props.
@@ -42,4 +47,23 @@ export function createComponent<P>(render: (props: P) => React.ReactElement | nu
   }
   // biome-ignore lint/suspicious/noExplicitAny: it's fine.
   return MemoizedComponent as any
+}
+
+export function scaleToZoom(scale: number) {
+  return scale * 100
+}
+
+export function scaleToPercentage(scale: number) {
+  return `${scaleToZoom(scale)}%`
+}
+
+export function getWrappingIcon(wrapping: WrapStrategy | undefined): IconData {
+  switch (wrapping) {
+    case 'wrap':
+      return Icons.textWrap
+    case 'clip':
+      return Icons.textClip
+    default: // including 'overflow'
+      return Icons.textOverflow
+  }
 }

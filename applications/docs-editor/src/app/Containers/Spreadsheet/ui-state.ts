@@ -1,6 +1,19 @@
-import type { CellFormat, TextFormat } from '@rowsncolumns/spreadsheet'
-import { getCurrencySymbol, useFocusSheet } from '@rowsncolumns/spreadsheet'
-import { ssfFormat } from '@rowsncolumns/utils'
+import type {
+  CellFormat,
+  DataValidationRuleRecord,
+  HorizontalAlign,
+  TextFormat,
+  VerticalAlign,
+  WrapStrategy,
+} from '@rowsncolumns/spreadsheet'
+import {
+  getCurrencySymbol,
+  getProtectedRange,
+  isProtectedRange as isProtectedRangeFn,
+  getUserSelections,
+  useFocusSheet,
+} from '@rowsncolumns/spreadsheet'
+import { number2Alpha, ssfFormat, uuid } from '@rowsncolumns/utils'
 import {
   CURRENCY,
   DATE_PATTERN_EXAMPLE_VALUE,
@@ -11,6 +24,8 @@ import {
 } from './constants'
 import type { ProtonSheetsState } from './state'
 import { useEvent } from './components/utils'
+import { useMemo, useState } from 'react'
+import { isCellWithinBounds, selectionFromActiveCell } from '@rowsncolumns/grid'
 
 type PatternSpec = {
   type: NonNullable<CellFormat['numberFormat']>['type']
@@ -38,12 +53,47 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
   // note: useFocusSheet seems to be stable, which in turn makes withFocusGrid safe to use
   // non-statefully without the need for useEvent (and, in fact, useEvent would break it as
   // this function is called during render in some places)
+  // TODO: consider making withFocusGrid a global thing for DX (no need for useUI.$. everywhere)
+  // TODO: this might actually be broken, probably need to find a better way to do this that ensures the latest focusGrid is used (or any alternative method that guarantees grid focus after the event)
   const focusGrid = useFocusSheet() ?? focusGridWarningFallback
   function withFocusGrid(fn: () => void) {
     return () => {
       fn()
       focusGrid()
     }
+  }
+
+  // info
+  const info = {
+    activeColumnIndex: state.activeCell.columnIndex,
+    activeColumnName: number2Alpha(state.activeCell.columnIndex - 1),
+    activeRowIndex: state.activeCell.rowIndex,
+  }
+
+  // operation
+  // TODO: add cut, copy and paste (including paste special) operations
+  const operation = {
+    delete: useEvent(() => state.onDelete(state.activeSheetId, state.activeCell, state.selections)),
+  }
+
+  // view
+  const [showFormulaBar, setShowFormulaBar] = useState(true)
+  const [showGridlines, setShowGridlines] = useState(true)
+  const view = {
+    formulaBar: {
+      enabled: showFormulaBar,
+      toggle: useEvent(() => setShowFormulaBar((value) => !value)),
+    },
+    gridLines: {
+      enabled: showGridlines,
+      toggle: useEvent(() => setShowGridlines((value) => !value)),
+    },
+    freezeRows: useEvent((beforeRowIndex: number) => state.onFreezeRow(state.activeSheetId, beforeRowIndex)),
+    unfreezeRows: useEvent(() => state.onFreezeRow(state.activeSheetId, 0)),
+    freezeColumns: useEvent((beforeColumnIndex: number) =>
+      state.onFreezeColumn(state.activeSheetId, beforeColumnIndex),
+    ),
+    unfreezeColumns: useEvent(() => state.onFreezeColumn(state.activeSheetId, 0)),
   }
 
   // history
@@ -100,6 +150,39 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
         set: useEvent((value: number | undefined) => formatUtils.setTextFormat('fontSize', value)),
       },
     },
+    alignment: {
+      horizontal: {
+        /**
+         * The default value is represented by `undefined`.
+         */
+        value: state.currentCellFormat?.horizontalAlignment ?? undefined,
+        /**
+         * Pass `undefined` to set the horizontal alignment to the default value.
+         */
+        set: useEvent((value: HorizontalAlign | undefined) => formatUtils.setHorizontalAlignment(value)),
+      },
+      vertical: {
+        /**
+         * The default value is represented by `undefined`.
+         */
+        value: state.currentCellFormat?.verticalAlignment ?? undefined,
+        /**
+         * Pass `undefined` to set the vertical alignment to the default value.
+         */
+        set: useEvent((value: VerticalAlign | undefined) => formatUtils.setVerticalAlignment(value)),
+      },
+    },
+    wrapping: {
+      /**
+       * The default value is represented by `undefined`.
+       */
+      value: state.currentCellFormat?.wrapStrategy ?? undefined,
+      /**
+       * Pass `undefined` to set the wrapping to the default value.
+       */
+      set: useEvent((value: WrapStrategy | undefined) => formatUtils.setWrapping(value)),
+    },
+    conditional: { open: useEvent(() => state.onRequestConditionalFormat()) },
     pattern: {
       current: formatUtils.getCurrentPattern(),
       general: formatUtils.useNumberPatternEntry(patternSpecs.GENERAL),
@@ -147,9 +230,72 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
     columnRight: useEvent(() => state.onInsertColumn(state.activeSheetId, state.activeCell.columnIndex + 1, 1)),
     sheet: useEvent(() => state.onCreateNewSheet()),
     chart: useEvent(() => state.chartsState.onCreateChart(state.activeSheetId, state.activeCell, state.selections)),
-    note: useEvent(() => state.onInsertNote?.(state.activeSheetId, state.activeCell, state.selections)),
+    link: useEvent(() => state.onRequestInsertLink(state.activeSheetId, state.activeCell, state.selections)),
+    // TODO: probably want to customize (or, at least, localize) the default options
+    dropdown: useEvent(() => {
+      const finalSelections = getUserSelections(state.activeCell, state.selections)
+      const dropdownValidationRule: DataValidationRuleRecord = {
+        id: uuid(),
+        ranges: finalSelections.map((sel) => ({ ...sel.range, sheetId: state.activeSheetId })),
+        condition: { type: 'ONE_OF_LIST', values: [{ userEnteredValue: 'Option 1, Option 2' }] },
+      }
+      state.onRequestDataValidation(state.activeSheetId, state.activeCell, state.selections, dropdownValidationRule)
+    }),
+    checkbox: useEvent(() => {
+      const finalSelections = getUserSelections(state.activeCell, state.selections)
+      const dropdownValidationRule: DataValidationRuleRecord = {
+        id: uuid(),
+        ranges: finalSelections.map((sel) => ({ ...sel.range, sheetId: state.activeSheetId })),
+        condition: { type: 'BOOLEAN' },
+      }
+      state.onRequestDataValidation(
+        state.activeSheetId,
+        state.activeCell,
+        state.selections,
+        dropdownValidationRule,
+        false,
+      )
+    }),
+    note: useEvent(() => state.onInsertNote(state.activeSheetId, state.activeCell, state.selections)),
   }
 
+  // data
+
+  const activeBasicFilter = useMemo(
+    () =>
+      state.basicFilter && isCellWithinBounds(state.activeCell, state.basicFilter.range)
+        ? state.basicFilter
+        : undefined,
+    [state.activeCell, state.basicFilter],
+  )
+  const selection = useMemo(
+    () => (state.selections.length ? state.selections[0] : selectionFromActiveCell(state.activeCell)[0]),
+    [state.activeCell, state.selections],
+  )
+  const isProtectedRange = useMemo(
+    () => isProtectedRangeFn(state.activeSheetId, selection.range, state.protectedRanges),
+    [selection.range, state.activeSheetId, state.protectedRanges],
+  )
+  const data = {
+    sortAscending: useEvent(() => state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'ASCENDING')),
+    sortDescending: useEvent(() => state.onSortColumn(state.activeSheetId, state.activeCell.columnIndex, 'DESCENDING')),
+    toggleFilter: useEvent(() => state.onCreateBasicFilter?.(state.activeSheetId, state.activeCell, state.selections)),
+    hasFilter: Boolean(activeBasicFilter),
+    toggleProtectRange: useEvent(() => {
+      const protectedRange = getProtectedRange(state.activeSheetId, selection.range, state.protectedRanges)
+      if (protectedRange?.protectedRangeId) {
+        state.onUnProtectRange?.(state.activeSheetId, protectedRange.protectedRangeId)
+      } else {
+        state.onProtectRange?.(state.activeSheetId, state.activeCell, state.selections)
+      }
+    }),
+    isProtectedRange,
+    validation: {
+      open: useEvent(() => state.onRequestDataValidation(state.activeSheetId, state.activeCell, state.selections)),
+    },
+  }
+
+  // legacy (temporary, to be removed eventually)
   const legacy = {
     activeSheetId: state.activeSheetId,
     onChangeActiveSheet: state.onChangeActiveSheet,
@@ -171,7 +317,7 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
     onSelectTable: state.onSelectTable,
   }
 
-  return { focusGrid, withFocusGrid, history, zoom, search, format, insert, legacy }
+  return { focusGrid, withFocusGrid, info, operation, view, history, zoom, search, format, insert, data, legacy }
 }
 
 export type ProtonSheetsUIState = ReturnType<typeof useProtonSheetsUIState>
@@ -196,6 +342,19 @@ function useFormatUtils(state: ProtonSheetsState, patternSpecs: Record<string, P
   }
   function useTextFormatEntry(format: BooleanTextFormatKey) {
     return { active: isTextFormat(format), toggle: useEvent(() => toggleTextFormat(format)) }
+  }
+
+  // alignment format
+  function setHorizontalAlignment(value: CellFormat['horizontalAlignment']) {
+    setFormat('horizontalAlignment', value)
+  }
+  function setVerticalAlignment(value: CellFormat['verticalAlignment']) {
+    setFormat('verticalAlignment', value)
+  }
+
+  // wrapping format
+  function setWrapping(value: CellFormat['wrapStrategy']) {
+    setFormat('wrapStrategy', value)
   }
 
   // number format
@@ -246,6 +405,9 @@ function useFormatUtils(state: ProtonSheetsState, patternSpecs: Record<string, P
 
   return {
     setTextFormat,
+    setHorizontalAlignment,
+    setVerticalAlignment,
+    setWrapping,
     useTextFormatEntry,
     useNumberPatternEntry,
     isGeneralPattern,

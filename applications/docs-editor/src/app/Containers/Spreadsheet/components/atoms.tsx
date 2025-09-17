@@ -51,6 +51,10 @@ export type DropdownItemOptions = {
    */
   leadingIndent?: boolean
   /**
+   * A slot for trailing content, such as keyboard shortcut hints. Has a default text color.
+   */
+  hintSlot?: ReactNode
+  /**
    * Expected to be 16px wide.
    */
   trailingIconSlot?: ReactNode
@@ -66,7 +70,16 @@ export type DropdownItemOptions = {
 }
 export interface DropdownItemProps extends Ariakit.RoleProps, DropdownItemOptions {}
 export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(function DropdownItem(
-  { leadingIconSlot, selectedIndicator, leadingIndent, trailingIconSlot, submenuIndicator, padding = true, ...props },
+  {
+    leadingIconSlot,
+    selectedIndicator,
+    leadingIndent,
+    hintSlot,
+    trailingIconSlot,
+    submenuIndicator,
+    padding = true,
+    ...props
+  },
   ref,
 ) {
   leadingIconSlot =
@@ -87,6 +100,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
       {...props}
       className={clsx(
         'flex h-9 select-none items-center gap-2 text-[.875rem] text-[#0C0C14]',
+        'disabled:text-[#8F8D8A] aria-disabled:text-[#8F8D8A]',
         padding && 'px-4',
         // TODO: "hocus" type tw variant
         'hover:bg-[#C2C1C0]/20 focus:outline-none focus-visible:bg-[#C2C1C0]/20 data-[active-item]:bg-[#C2C1C0]/20 data-[focus-visible]:bg-[#C2C1C0]/20',
@@ -97,7 +111,17 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
       )}
     >
       {leadingIconSlot && <span className="flex shrink-0 items-center">{leadingIconSlot}</span>}
-      <span className="grow leading-none">{props.children}</span>
+      <span className="grow leading-none">
+        {hintSlot ? (
+          <span className="flex grow justify-between gap-4">
+            <span className="grow">{props.children}</span>
+            <span className="text-[#8F8D8A]">{hintSlot}</span>
+          </span>
+        ) : (
+          props.children
+        )}
+      </span>
+
       {trailingIconSlot && <span className="flex shrink-0 items-center">{trailingIconSlot}</span>}
     </Ariakit.Role>
   )

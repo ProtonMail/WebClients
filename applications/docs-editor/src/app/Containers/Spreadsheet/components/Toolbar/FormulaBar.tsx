@@ -36,6 +36,7 @@ function RangeSelector() {
   const onChangeActiveCell = useUI.$.legacy.onChangeActiveCell
   const onChangeSelections = useUI.$.legacy.onChangeSelections
 
+  // TODO: do we need the extra deps?
   useEffect(() => {
     if (isFormulaMode) {
       return
@@ -155,6 +156,7 @@ function RangeSelectorMenuPopover() {
             <UI.MenuGroupLabel>{s('Tables')}</UI.MenuGroupLabel>
             {tables.map((table) => (
               <UI.MenuItem
+                key={table.id}
                 onClick={() => {
                   onSelectTable(table)
                 }}
@@ -222,8 +224,13 @@ function NamedRangeItem({ namedRange }: NamedRangeItemProps) {
 }
 
 export function FormulaBar() {
+  const showFormulaBar = useUI((ui) => ui.view.formulaBar.enabled)
+  return showFormulaBar ? <FormulaBarContent /> : null
+}
+
+function FormulaBarContent() {
   return (
-    <div className="border-weak flex gap-[.125rem] rounded-b-[1rem] border border-t-0 bg-[white] px-3">
+    <div className="border-weak flex gap-[.125rem] border-t px-3">
       <RangeSelector />
       <div className="border-weak flex items-center border-x px-1 text-sm font-normal italic">fx</div>
       <div className="flex max-h-8 flex-1 items-center overflow-auto py-1">

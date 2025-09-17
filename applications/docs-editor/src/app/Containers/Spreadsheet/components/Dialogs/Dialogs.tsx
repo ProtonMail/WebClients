@@ -6,6 +6,8 @@ import {
   DataValidationEditor,
   DataValidationEditorDialog,
   DeleteSheetConfirmation,
+  InsertLinkDialog,
+  InsertLinkEditor,
   NamedRangeEditor,
   TableEditor,
 } from '@rowsncolumns/spreadsheet-state'
@@ -21,7 +23,7 @@ export type DialogsProps = {
 export function Dialogs({ state }: DialogsProps) {
   return (
     <>
-      /* All dialogs below are legacy and will be incrementally replaced */
+      {/* All dialogs below are legacy and will be incrementally replaced */}
       <ChartEditorDialog>
         <ChartEditor
           sheetId={state.activeSheetId}
@@ -84,6 +86,14 @@ export function Dialogs({ state }: DialogsProps) {
           onChangeBorder={state.onChangeBorder}
         />
       </CellFormatEditorDialog>
+      <InsertLinkDialog>
+        <InsertLinkEditor
+          sheetId={state.activeSheetId}
+          activeCell={state.activeCell}
+          selections={state.selections}
+          onInsertLink={state.onInsertLink}
+        />
+      </InsertLinkDialog>
     </>
   )
 }

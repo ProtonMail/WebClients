@@ -6,6 +6,8 @@ import {
   DataValidationEditor,
   DataValidationEditorDialog,
   DeleteSheetConfirmation,
+  InsertLinkDialog,
+  InsertLinkEditor,
   NamedRangeEditor,
   TableEditor,
 } from '@rowsncolumns/spreadsheet-state'
@@ -83,6 +85,14 @@ export function LegacyDialogs({ state }: LegacyDialogsProps) {
           onChangeBorder={state.onChangeBorder}
         />
       </CellFormatEditorDialog>
+      <InsertLinkDialog>
+        <InsertLinkEditor
+          sheetId={state.activeSheetId}
+          activeCell={state.activeCell}
+          selections={state.selections}
+          onInsertLink={state.onInsertLink}
+        />
+      </InsertLinkDialog>
     </>
   )
 }
