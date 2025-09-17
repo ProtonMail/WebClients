@@ -8,6 +8,7 @@ import clsx from '@proton/utils/clsx';
 import { isAllowedAutoDeleteLabelID } from 'proton-mail/helpers/autoDelete';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { isInDeletedFolder } from '../../helpers/elements';
 import useShowUpsellBanner from '../../hooks/useShowUpsellBanner';
 import {
     AlmostAllMailBanner,
@@ -115,7 +116,7 @@ const MailboxListBanners = ({
         {
             id: 'retention-policy',
             banner: () => <RetentionPolicyBanner key="retention-policy" />,
-            condition: () => isRetentionPoliciesEnabled && labelID === MAILBOX_LABEL_IDS.SOFT_DELETED,
+            condition: () => isInDeletedFolder(isRetentionPoliciesEnabled, labelID),
         },
     ];
 

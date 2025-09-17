@@ -58,6 +58,7 @@ const ToolbarColumnWide = ({
     total,
     onCheckAll,
     addressesDropdown,
+    isInDeletedFolder,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
@@ -85,42 +86,41 @@ const ToolbarColumnWide = ({
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
                     {addressesDropdown}
 
-                    <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
-
-                    <MoveButtons
-                        labelID={labelID}
-                        isExtraTiny={localIsExtraTiny}
-                        selectedIDs={selectedIDs}
-                        onMove={onMove}
-                        onDelete={onDelete}
-                    />
-
-                    {!localIsExtraTiny ? (
-                        <LabelsAndFolders
-                            labelID={labelID}
-                            selectedIDs={selectedIDs}
-                            labelDropdownToggleRef={labelDropdownToggleRef}
-                            moveDropdownToggleRef={moveDropdownToggleRef}
-                            onCheckAll={onCheckAll}
-                        />
-                    ) : null}
-
-                    {!localIsExtraTiny ? <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} /> : null}
-
-                    <MoreDropdown
-                        labelID={labelID}
-                        elementIDs={elementIDs}
-                        selectedIDs={selectedIDs}
-                        isSearch={isSearch}
-                        isNarrow={localIsNarrow}
-                        isTiny={localIsExtraTiny}
-                        isExtraTiny={localIsExtraTiny}
-                        onMove={onMove}
-                        onDelete={onDelete}
-                        onCheckAll={onCheckAll}
-                    />
-
-                    <MoreActions selectedIDs={selectedIDs} />
+                    {!isInDeletedFolder && (
+                        <>
+                            <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
+                            <MoveButtons
+                                labelID={labelID}
+                                isExtraTiny={localIsExtraTiny}
+                                selectedIDs={selectedIDs}
+                                onMove={onMove}
+                                onDelete={onDelete}
+                            />
+                            {!localIsExtraTiny && (
+                                <LabelsAndFolders
+                                    labelID={labelID}
+                                    selectedIDs={selectedIDs}
+                                    labelDropdownToggleRef={labelDropdownToggleRef}
+                                    moveDropdownToggleRef={moveDropdownToggleRef}
+                                    onCheckAll={onCheckAll}
+                                />
+                            )}
+                            {!localIsExtraTiny && <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />}
+                            <MoreDropdown
+                                labelID={labelID}
+                                elementIDs={elementIDs}
+                                selectedIDs={selectedIDs}
+                                isSearch={isSearch}
+                                isNarrow={localIsNarrow}
+                                isTiny={localIsExtraTiny}
+                                isExtraTiny={localIsExtraTiny}
+                                onMove={onMove}
+                                onDelete={onDelete}
+                                onCheckAll={onCheckAll}
+                            />
+                            <MoreActions selectedIDs={selectedIDs} />
+                        </>
+                    )}
                 </div>
 
                 {(!localIsTiny && selectedIDs.length > 0) || selectedIDs.length === 0 ? (
