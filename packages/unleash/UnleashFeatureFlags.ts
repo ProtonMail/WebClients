@@ -221,6 +221,10 @@ enum MeetFeatureFlag {
     MeetPassphraseEnabled = 'MeetPassphraseEnabled',
 }
 
+enum LumoFeatureFlag {
+    LumoDarkMode = 'LumoDarkMode',
+}
+
 export type FeatureFlag =
     | `${CommonFeatureFlag}`
     | `${AccountFlag}`
@@ -231,4 +235,5 @@ export type FeatureFlag =
     | `${MailFeatureFlag}`
     | `${AdminFeatureFlag}`
     | `${WalletFlag}`
-    | `${MeetFeatureFlag}`;
+    | `${MeetFeatureFlag}`
+    | `${LumoFeatureFlag}`;

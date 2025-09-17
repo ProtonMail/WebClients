@@ -85,7 +85,7 @@ export const ChatHistory = ({ refInputSearch, onItemClick, searchInput = '' }: P
     }
 
     return (
-        <div className="h-full w-full flex flex-column flex-nowrap gap-2">
+        <div className="chat-history-container flex flex-column flex-nowrap gap-2">
             {/* Show Favorites section - include starred conversations in search results */}
             {favorites.length > 0 && (
                 <>
@@ -102,7 +102,7 @@ export const ChatHistory = ({ refInputSearch, onItemClick, searchInput = '' }: P
                     </div>
                 </>
             )}
-            
+
             <Scroll className="flex-1">
                 {/* History section header - hide for mobile guests to keep UI clean, but show when searching */}
                 {(searchInput || !(isSmallScreen && isGuest)) && (
@@ -114,7 +114,7 @@ export const ChatHistory = ({ refInputSearch, onItemClick, searchInput = '' }: P
 
                 {/* Enhanced sign-in section for all guest users */}
                 {isGuest && <ChatHistoryGuestUserUpsell />}
-                
+
                 {!isGuest && noConversationAtAll && (
                     <>
                         <div className="color-weak text-sm my-2 ml-3">
@@ -137,7 +137,6 @@ export const ChatHistory = ({ refInputSearch, onItemClick, searchInput = '' }: P
                             disabled={isGuest}
                             onItemClick={onItemClick}
                         />
-
                     </>
                 )}
                 {lastWeek.length > 0 && (
