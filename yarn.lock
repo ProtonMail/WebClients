@@ -8924,7 +8924,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/i18n@workspace:packages/i18n"
   dependencies:
-    chalk: "npm:^4.1.2"
     cross-env: "npm:^10.0.0"
     eslint: "npm:^9.35.0"
     execa: "npm:^5.1.1"
@@ -9123,7 +9122,6 @@ __metadata:
     autoprefixer: "npm:^10.4.21"
     babel-loader: "npm:^10.0.0"
     babel-plugin-transform-react-remove-prop-types: "npm:^0.4.24"
-    chalk: "npm:4.1.2"
     commander: "npm:^12.1.0"
     copy-webpack-plugin: "npm:^13.0.1"
     core-js: "npm:^3.45.1"
@@ -9514,7 +9512,6 @@ __metadata:
   resolution: "@proton/testpackage-gmail-token@workspace:tests/packages/gmail-token"
   dependencies:
     "@inquirer/prompts": "npm:^4.3.3"
-    chalk: "npm:^5.6.0"
     googleapis: "npm:^131.0.0"
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.9.2"
@@ -19562,16 +19559,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chalk@npm:4.1.2, chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "chalk@npm:4.1.2"
-  dependencies:
-    ansi-styles: "npm:^4.1.0"
-    supports-color: "npm:^7.1.0"
-  checksum: 10c0/4a3fef5cc34975c898ffe77141450f679721df9dde00f6c304353fa9c8b571929123b26a0e4617bde5018977eb655b31970c297b91b63ee83bb82aeb04666880
-  languageName: node
-  linkType: hard
-
 "chalk@npm:5.0.1":
   version: 5.0.1
   resolution: "chalk@npm:5.0.1"
@@ -19617,6 +19604,16 @@ __metadata:
     ansi-styles: "npm:^4.1.0"
     supports-color: "npm:^7.1.0"
   checksum: 10c0/ee650b0a065b3d7a6fda258e75d3a86fc8e4effa55871da730a9e42ccb035bf5fd203525e5a1ef45ec2582ecc4f65b47eb11357c526b84dd29a14fb162c414d2
+  languageName: node
+  linkType: hard
+
+"chalk@npm:^4.0.0, chalk@npm:^4.0.2, chalk@npm:^4.1.0, chalk@npm:^4.1.1, chalk@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "chalk@npm:4.1.2"
+  dependencies:
+    ansi-styles: "npm:^4.1.0"
+    supports-color: "npm:^7.1.0"
+  checksum: 10c0/4a3fef5cc34975c898ffe77141450f679721df9dde00f6c304353fa9c8b571929123b26a0e4617bde5018977eb655b31970c297b91b63ee83bb82aeb04666880
   languageName: node
   linkType: hard
 

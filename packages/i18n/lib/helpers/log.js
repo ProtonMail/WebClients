@@ -1,23 +1,23 @@
-const chalk = require('chalk');
+const { styleText } = require('node:util');
 
 const { IS_VERBOSE } = process.env;
 
 module.exports = (scope) => {
     const warn = (msg, addSpaces = true) => {
         addSpaces && console.log();
-        console.log(chalk.bgMagenta(chalk.white('[warning]')), msg);
+        console.log(styleText(['bgMagenta', 'white'], '[warning]'), msg);
         addSpaces && console.log();
     };
 
     const info = (msg, addSpaces = true) => {
         addSpaces && console.log();
-        console.log(chalk.bgGrey('[info]'), msg);
+        console.log(styleText('bgGrey', '[info]'), msg);
         addSpaces && console.log();
     };
 
     const success = (msg, { time, space = false } = {}) => {
-        const txt = chalk.bold(' ✔ ');
-        const message = [chalk.bgGreen(chalk.black(`[${scope}]`)), txt, msg, time && ` (${time})`]
+        const txt = styleText('bold', ' ✔ ');
+        const message = [styleText(['bgGreen', 'black'], `[${scope}]`), txt, msg, time && ` (${time})`]
             .filter(Boolean)
             .join('');
         space && console.log();
@@ -36,7 +36,7 @@ module.exports = (scope) => {
     };
 
     const error = (e) => {
-        console.log(chalk.bgRed(chalk.bold(chalk.white('[error]'))), e.message);
+        console.log(styleText(['bgRed', 'bold', 'white'], '[error]'), e.message);
 
         // Better log for CLI commands, better than a JSON version of stdX
         if (e.stdout || e.stderr) {
