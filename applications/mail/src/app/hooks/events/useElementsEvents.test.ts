@@ -10,7 +10,7 @@ import { processElementEvents } from './useElementsEvents';
 
 const mockElement = (id: string): Element => ({
     ID: id,
-    Time: Date.now(),
+    Time: new Date(2021, 10, 2).getTime(),
     Order: 1,
 });
 
