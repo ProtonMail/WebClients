@@ -8,13 +8,19 @@ import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { isElementMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
+import {
+    isElementMessage,
+    isInDeletedFolder,
+    isStarred as testIsStarred,
+    isUnread as testIsUnread,
+} from '../../helpers/elements';
 import { usePermanentDelete } from '../../hooks/actions/delete/usePermanentDelete';
 import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
@@ -55,6 +61,7 @@ const ItemHoverButtons = ({
     const [labels = []] = useLabels();
 
     const [loadingStar, withLoadingStar] = useLoading();
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     const isUnread = testIsUnread(element, labelID);
     const isStarred = testIsStarred(element || ({} as Element));
@@ -164,6 +171,10 @@ const ItemHoverButtons = ({
           : c('Alt').t`Star conversation`;
 
     const buttonTxt = isElementMessage(element) ? c('Alt').t`Star message` : c('Alt').t`Star conversation`;
+
+    if (isInDeletedFolder(isRetentionPoliciesEnabled, labelID)) {
+        return null;
+    }
 
     return (
         <>

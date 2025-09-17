@@ -3,8 +3,10 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import useFlag from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
+import { isInDeletedFolder } from '../../helpers/elements';
 import { useMailboxListContext } from './MailboxListProvider';
 import MailboxListScreenReaderHeading from './MailboxListScreenReaderHeading';
 
@@ -21,6 +23,7 @@ const MailboxListContainer = (
     ref: Ref<HTMLDivElement>
 ) => {
     const { contextMenu, blockSenderModal, mailboxListLoading, conversationMode, labelID } = useMailboxListContext();
+    const isRetentionPoliciesEnabled = useFlag('DataRetentionPolicy');
 
     return (
         <section
@@ -43,7 +46,7 @@ const MailboxListContainer = (
             >
                 {children}
             </div>
-            {contextMenu}
+            {!isInDeletedFolder(isRetentionPoliciesEnabled, labelID) && contextMenu}
             {blockSenderModal}
         </section>
     );

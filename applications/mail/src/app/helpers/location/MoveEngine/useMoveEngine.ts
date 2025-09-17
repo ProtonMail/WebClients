@@ -35,6 +35,7 @@ import {
     messageScheduleRules,
     messageSentRules,
     messageSnoozedRules,
+    messageSoftDeletedRules,
     messageSpamRules,
     messageStarredRules,
     messageTrashRules,
@@ -62,6 +63,7 @@ export const useMoveEngine = () => {
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.SCHEDULED, messageScheduleRules);
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, messageAlmostAllMailRules);
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.SNOOZED, messageSnoozedRules);
+    messageMoveEngine.addRule(MAILBOX_LABEL_IDS.SOFT_DELETED, messageSoftDeletedRules);
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, messageCategoryRules);
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, messageCategoryRules);
     messageMoveEngine.addRule(MAILBOX_LABEL_IDS.CATEGORY_UPDATES, messageCategoryRules);

@@ -7,6 +7,7 @@ import { Button, Kbd, Tooltip } from '@proton/atoms';
 import { ButtonGroup, Icon, useActiveBreakpoint, useContactModals, useToggle } from '@proton/components';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
@@ -24,6 +25,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useCategoryViewExperiment } from 'proton-mail/components/categoryView/categoryBadge/useCategoryViewExperiment';
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
+import { hasLabel } from 'proton-mail/helpers/elements';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
@@ -115,6 +117,7 @@ const HeaderExpanded = ({
     const { getRecipientsOrGroups } = useRecipientLabel();
     const recipients = getRecipients(message.data);
     const recipientsOrGroup = getRecipientsOrGroups(recipients);
+    const isInDeletedFolder = dataRetentionPolicyEnabled && hasLabel(message.data, MAILBOX_LABEL_IDS.SOFT_DELETED);
 
     // Show trackers icon when body is loaded so that we do not display it before cleaning trackers in links
     const canShowTrackersIcon = bodyLoaded;
@@ -338,69 +341,75 @@ const HeaderExpanded = ({
                 </>
             )}
 
-            <div className="pt-0 flex justify-space-between">
-                <div className="flex">
-                    <HeaderMoreDropdown
-                        labelID={labelID}
-                        message={message}
-                        messageLoaded={messageLoaded}
-                        sourceMode={sourceMode}
-                        onBack={onBack}
-                        onToggle={onToggle}
-                        onSourceMode={onSourceMode}
-                        parentMessageRef={parentMessageRef}
-                        mailSettings={mailSettings}
-                        messageViewIcons={messageViewIcons}
-                        onContactDetails={onContactDetails}
-                        onContactEdit={onContactEdit}
-                        labelDropdownToggleRef={labelDropdownToggleRef}
-                        moveDropdownToggleRef={moveDropdownToggleRef}
-                        filterDropdownToggleRef={filterDropdownToggleRef}
-                    />
+            {!isInDeletedFolder && (
+                <div className="pt-0 flex justify-space-between">
+                    <div className="flex">
+                        <HeaderMoreDropdown
+                            labelID={labelID}
+                            message={message}
+                            messageLoaded={messageLoaded}
+                            sourceMode={sourceMode}
+                            onBack={onBack}
+                            onToggle={onToggle}
+                            onSourceMode={onSourceMode}
+                            parentMessageRef={parentMessageRef}
+                            mailSettings={mailSettings}
+                            messageViewIcons={messageViewIcons}
+                            onContactDetails={onContactDetails}
+                            onContactEdit={onContactEdit}
+                            labelDropdownToggleRef={labelDropdownToggleRef}
+                            moveDropdownToggleRef={moveDropdownToggleRef}
+                            filterDropdownToggleRef={filterDropdownToggleRef}
+                        />
+                    </div>
+                    {!isScheduledMessage && (
+                        <ButtonGroup className="mb-2">
+                            <Tooltip title={titleReply}>
+                                <Button
+                                    icon
+                                    disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
+                                    onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
+                                    data-testid="message-view:reply"
+                                >
+                                    <Icon
+                                        name="arrow-up-and-left-big"
+                                        className="rtl:mirror"
+                                        alt={c('Title').t`Reply`}
+                                    />
+                                </Button>
+                            </Tooltip>
+                            <Tooltip title={titleReplyAll}>
+                                <Button
+                                    icon
+                                    disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
+                                    onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
+                                    data-testid="message-view:reply-all"
+                                >
+                                    <Icon
+                                        name="arrows-up-and-left-big"
+                                        className="rtl:mirror"
+                                        alt={c('Title').t`Reply all`}
+                                    />
+                                </Button>
+                            </Tooltip>
+                            <Tooltip title={titleForward}>
+                                <Button
+                                    icon
+                                    disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
+                                    onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
+                                    data-testid="message-view:forward"
+                                >
+                                    <Icon
+                                        name="arrow-up-and-right-big"
+                                        className="rtl:mirror"
+                                        alt={c('Title').t`Forward`}
+                                    />
+                                </Button>
+                            </Tooltip>
+                        </ButtonGroup>
+                    )}
                 </div>
-                {!isScheduledMessage && (
-                    <ButtonGroup className="mb-2">
-                        <Tooltip title={titleReply}>
-                            <Button
-                                icon
-                                disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
-                                onClick={handleCompose(MESSAGE_ACTIONS.REPLY)}
-                                data-testid="message-view:reply"
-                            >
-                                <Icon name="arrow-up-and-left-big" className="rtl:mirror" alt={c('Title').t`Reply`} />
-                            </Button>
-                        </Tooltip>
-                        <Tooltip title={titleReplyAll}>
-                            <Button
-                                icon
-                                disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
-                                onClick={handleCompose(MESSAGE_ACTIONS.REPLY_ALL)}
-                                data-testid="message-view:reply-all"
-                            >
-                                <Icon
-                                    name="arrows-up-and-left-big"
-                                    className="rtl:mirror"
-                                    alt={c('Title').t`Reply all`}
-                                />
-                            </Button>
-                        </Tooltip>
-                        <Tooltip title={titleForward}>
-                            <Button
-                                icon
-                                disabled={!messageLoaded || !bodyLoaded || isSendingMessage}
-                                onClick={handleCompose(MESSAGE_ACTIONS.FORWARD)}
-                                data-testid="message-view:forward"
-                            >
-                                <Icon
-                                    name="arrow-up-and-right-big"
-                                    className="rtl:mirror"
-                                    alt={c('Title').t`Forward`}
-                                />
-                            </Button>
-                        </Tooltip>
-                    </ButtonGroup>
-                )}
-            </div>
+            )}
             {modals}
         </div>
     );

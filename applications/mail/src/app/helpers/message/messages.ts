@@ -13,6 +13,7 @@ import { attachmentsSize, isDraft, isReceived, isSent, isSentAndReceived } from 
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import type { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
+import { hasLabel } from '../elements';
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 
@@ -70,6 +71,13 @@ export const mergeMessages = (
 
 export const getMessagesAuthorizedToMove = (messages: Message[], destinationFolderID: string) => {
     return messages.filter((message) => {
+        if (hasLabel(message, MAILBOX_LABEL_IDS.SOFT_DELETED)) {
+            return false;
+        }
+        if (destinationFolderID === MAILBOX_LABEL_IDS.SOFT_DELETED) {
+            return false;
+        }
+
         if (
             [
                 MAILBOX_LABEL_IDS.SENT,
