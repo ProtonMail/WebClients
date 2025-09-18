@@ -2056,11 +2056,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }にトライアルが終了すると、${ formattedDate }に${ renewCycle }ヶ月ごとに自動更新される有料のサブスクリプションに移行します。${ formattedDate }までにキャンセルした場合、料金は請求されません。"
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、毎月 ${ formattedDate } に自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "「試す」をクリックすると、${ termsAndConditions } に同意したものとみなされます。"
@@ -3022,7 +3022,7 @@
         "黒い青"
       ],
       "dark midnight blue": [
-        "紺色"
+        "ダークミッドナイトブルー"
       ],
       "dim gray": [
         "やや黒いグレー"
@@ -3127,7 +3127,7 @@
         "サハラ"
       ],
       "satin sheen gold": [
-        "オリーブ"
+        "サテンシーンゴールド"
       ],
       "slateblue": [
         "スレートブルー"
@@ -3226,7 +3226,7 @@
         "メールアドレス"
       ],
       "First name": [
-        "名"
+        "名前"
       ],
       "Gender": [
         "性別"
@@ -6217,8 +6217,8 @@
       "You must set a name": [
         "名前を設定してください"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "SMTP 送信トークンを生成するには、カスタム ドメイン アドレスが必要です。"
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "SMTP 送信トークンを生成するには、有効なカスタムドメインアドレスが必要です。"
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "文字数が上限に達しました。メッセージを短くしてください。"
@@ -6237,11 +6237,6 @@
       ],
       "ZIP code is required": [
         "郵便番号は必須です"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "アクティビティを表示するユーザーを選択します"
       ]
     },
     "Error importing calendar": {
@@ -7122,7 +7117,7 @@
         "すべての条件に一致"
       ],
       "One condition must be fulfilled (OR)": [
-        "いずれかの条件に一致"
+        "いずれかの条件に一致 (OR)"
       ]
     },
     "Filter modal type": {
@@ -8317,6 +8312,9 @@
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
+      "Accounts": [
+        "アカウント"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "パスワードがわからなくなっても、${ BRAND_NAME } アカウントのコンテンツにアクセスできるように、少なくとも一つのデータ回復方法を有効にしてください。"
       ],
@@ -8325,9 +8323,6 @@
       ],
       "active": [
         "アクティブ"
-      ],
-      "Activity Monitor": [
-        "アクティビティモニター"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "@pm.me メール アドレスをアカウントに追加します。 このシンプルで短いドメインは、「${ MAIL_APP_NAME } me」または「Private Message me」を表します。"
@@ -9781,6 +9776,9 @@
       "Organization monitor": [
         "組織モニター"
       ],
+      "Organization Monitor": [
+        "組織モニター"
+      ],
       "Organization size": [
         "組織の規模"
       ],
@@ -10087,6 +10085,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "${ getFormattedOrganization } から ${ BRAND_NAME } 組織に許可したいユーザー所属を選択してください："
       ],
+      "Select users to view their activity": [
+        "アクティビティを表示するユーザーを選択"
+      ],
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
       ],
@@ -10173,6 +10174,9 @@
       ],
       "Show original message": [
         "元のメッセージを表示"
+      ],
+      "Sign in only": [
+        "サインインのみ"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "${ MAIL_APP_NAME } にサインインしてアドレスを有効にしてください"
@@ -12312,6 +12316,9 @@
       "Emails (last month)": [
         "メール (過去 1 か月)"
       ],
+      "Emails categories": [
+        "メールカテゴリ"
+      ],
       "Enabled": [
         "有効"
       ],
@@ -12611,6 +12618,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "Notification email address": [
+        "通知メールアドレス"
       ],
       "Notifications": [
         "通知"
@@ -13036,6 +13046,9 @@
     "label": {
       "Device-based recovery": [
         "デバイスベースの回復"
+      ],
+      "Notification phone number": [
+        "通知電話番号"
       ],
       "Recovery phone number": [
         "回復用電話番号"
@@ -17404,9 +17417,6 @@
       "Account safety review": [
         "アカウント安全性レビュー"
       ],
-      "Add a email address": [
-        "メールアドレスを追加"
-      ],
       "Add a phone number": [
         "電話番号を追加"
       ],
@@ -17418,6 +17428,9 @@
       ],
       "Add a recovery phone number": [
         "回復用電話番号を追加"
+      ],
+      "Add an alternative email address": [
+        "別のメールアドレスを追加"
       ],
       "Add an email": [
         "新しいメールアドレスを追加"
@@ -17449,8 +17462,14 @@
       "Disable recovery by email": [
         "メールアドレスでの回復を無効にする"
       ],
+      "Disable recovery by email ": [
+        "メールアドレスでの回復を無効にする "
+      ],
       "Disable recovery by phone": [
         "電話番号での回復を無効化"
+      ],
+      "Disable recovery by phone ": [
+        "電話番号での回復を無効化 "
       ],
       "Download ${ size }": [
         "${ size } をダウンロード"
@@ -17484,6 +17503,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "ログイン情報を失い、アカウントをリセットする必要がある場合、**アカウント回復とデータ回復**の方法を確立しておくことが**非常に重要です**。そうしないと、メール、連絡先、ファイル、またはパスワードにアクセスできなくなる可能性があります。"
+      ],
+      "in case we need to contact you": [
+        "お客様にご連絡が必要な場合"
       ],
       "Invalid code": [
         "無効なコード"
@@ -17536,23 +17558,20 @@
       "to automatically recover your data when you log into a trusted device": [
         "信頼されたデバイスからログインした時に自動で回復するために"
       ],
-      "to ensure highest possible security of your account": [
-        "アカウントのセキュリティを最大限確保するために"
-      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "メールアドレスがあなたのものであることを確認するため、${ boldEmail }に送信された確認コードを入力してください。"
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "電話番号があなたのものであることを確認するため、${ boldPhoneNumber }に送信された確認コードを入力してください。"
       ],
+      "to prevent attackers from taking over your account": [
+        "攻撃者によるお客様のアカウント乗っ取りを防ぐため"
+      ],
       "to recover your account and data if you're ever locked out": [
         "締め出された場合にアカウントとデータを回復するために"
       ],
       "to recover your account if you're ever locked out": [
         "締め出された場合にアカウントを回復するために"
-      ],
-      "To stay in touch": [
-        "連絡を取り合う"
       ],
       "Update your Recovery Kit": [
         "回復キットを更新"
@@ -17622,6 +17641,12 @@
       ],
       "You have recommended actions.": [
         "推奨されるアクションがあります。"
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "お客様の回復用メールアドレスは、攻撃者によって悪用され、お客様のアカウントが乗っ取られる可能性があります。アカウントのセキュリティを強化するため、${ disableEmail }を実施してください。"
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "お客様の回復用電話番号は、攻撃者によって悪用され、お客様のアカウントが乗っ取られる可能性があります。アカウントのセキュリティを強化するため、${ disablePhone }を実施してください。"
       ],
       "You will no longer be able to use this address to reset your account.": [
         "このアドレスを使用してアカウントをリセットすることはできなくなります。"
@@ -18064,7 +18089,7 @@
         "パスワードリセットをキャンセルする"
       ],
       "Cancel request": [
-        "リクエストキャンセル"
+        "リクエストをキャンセル"
       ],
       "Got it": [
         "分かりました"
@@ -20470,6 +20495,9 @@
       "Account recovery": [
         "アカウントの回復"
       ],
+      "Account restricted": [
+        "アカウントが制限されています"
+      ],
       "Account suspended": [
         "アカウントが停止されました"
       ],
@@ -22093,6 +22121,9 @@
       "Edit label names": [
         "ラベル名を編集"
       ],
+      "Emails in your inbox are shown organized into categories": [
+        "お客様の受信トレイ内のメールは、カテゴリ別に整理されて表示されます"
+      ],
       "Enable/disable desktop and mobile notifications": [
         "デスクトップおよびモバイル端末での通知の有効/無効"
       ],
@@ -22209,6 +22240,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "これはパスワードのリセットやまだログインしていないユーザーが原因である可能性があります。"
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "このメールアドレスは、お客様の ${ BRAND_NAME } アカウントへのサインインにのみ使用できます。"
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "このメールアドレスはアカウント管理の操作を実行した際に組織メンバー全員に表示されます。"

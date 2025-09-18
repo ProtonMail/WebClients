@@ -2062,11 +2062,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Dopo la prova termina il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnoverà automaticamente ogni ${ renewCycle } mesi il ${ formattedDate }. Non ti verrà addebitato nulla se annulli prima del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Facendo clic su \"Prova\", accetti i nostri ${ termsAndConditions }."
@@ -6251,8 +6251,8 @@
       "You must set a name": [
         "È necessario impostare un nome"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Devi avere un indirizzo di dominio personalizzato per poter generare un token di inoltro SMTP."
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "Devi disporre di un dominio personalizzato attivo per poter generare un token di invio SMTP."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Hai raggiunto il numero massimo di caratteri. Riduci la lunghezza del tuo messaggio."
@@ -6271,11 +6271,6 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Seleziona gli utenti per visualizzare la loro attività"
       ]
     },
     "Error importing calendar": {
@@ -8402,6 +8397,9 @@
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
+      "Accounts": [
+        "Account"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Attiva almeno un metodo di recupero dei dati per essere sicuro di poter continuare ad accedere ai contenuti del tuo account ${ BRAND_NAME } se dovessi perdere la tua password."
       ],
@@ -8410,9 +8408,6 @@
       ],
       "active": [
         "attivo"
-      ],
-      "Activity Monitor": [
-        "Monitoraggio attività"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Aggiungi un indirizzo email @pm.me al tuo account. Questo dominio semplice e più breve significa \"${ MAIL_APP_NAME } me\" o \"Private Message me.\""
@@ -8630,6 +8625,12 @@
       ],
       "Attention required": [
         "Attenzione"
+      ],
+      "Authenticator app 2FA disabled": [
+        "App di autenticazione 2FA disabilitata"
+      ],
+      "Authenticator app 2FA enabled": [
+        "App di autenticazione 2FA abilitata"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La risposta automatica è attiva ogni mese dall'ora di inizio all'ora di fine che hai selezionato."
@@ -8925,6 +8926,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "Disabilitato il ${ boldValue }"
+      ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Disabilitare l'app di autenticazione 2FA renderà il tuo account meno sicuro. Procedi solo se assolutamente necessario."
       ],
       "Discount": [
         "Sconto"
@@ -9682,6 +9686,9 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestisci le tue preferenze di notifica email per ${ DOCS_APP_NAME }."
       ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Inserisci manualmente queste informazioni nella tua app di autenticazione per impostare il tuo account. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -9868,6 +9875,9 @@
         "I membri dell'organizzazione dovranno sbloccare ${ PASS_APP_NAME } con la loro password o PIN ecc."
       ],
       "Organization monitor": [
+        "Monitoraggio dell’organizzazione"
+      ],
+      "Organization Monitor": [
         "Monitoraggio dell’organizzazione"
       ],
       "Organization size": [
@@ -10155,6 +10165,9 @@
       "Scan QR code instead": [
         "Oppure scansiona il codice QR"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Scansiona questo codice con la tua app di autenticazione per impostare il tuo account. ${ switchButton }."
+      ],
       "SCIM integration disabled": [
         "Integrazione SCIM disabilitata"
       ],
@@ -10178,6 +10191,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Seleziona le affiliazioni utente da ${ getFormattedOrganization } che desideri consentire nella tua organizzazione ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Seleziona gli utenti per visualizzare la loro attività"
       ],
       "Select what you want to import.": [
         "Seleziona cosa vuoi importare."
@@ -10266,6 +10282,9 @@
       ],
       "Show original message": [
         "Mostra il messaggio originale"
+      ],
+      "Sign in only": [
+        "Solo accesso"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Accedi a ${ MAIL_APP_NAME } per attivare il tuo indirizzo"
@@ -11024,6 +11043,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere agli account non privati."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Senza un'app di autenticazione, non potrai accedere alle application di ${ BRAND_NAME } che non supportano ancora le chiavi di sicurezza."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -12428,6 +12450,9 @@
       "Emails (last month)": [
         "Email (ultimo mese)"
       ],
+      "Emails categories": [
+        "Categorie email"
+      ],
       "Enabled": [
         "Abilitato"
       ],
@@ -12727,6 +12752,9 @@
       ],
       "Notification": [
         "Notifica"
+      ],
+      "Notification email address": [
+        "Indirizzo e-mail per la notifica"
       ],
       "Notifications": [
         "Notifiche"
@@ -13156,6 +13184,9 @@
     "label": {
       "Device-based recovery": [
         "Ripristino basato sul dispositivo"
+      ],
+      "Notification phone number": [
+        "Numero di telefono per le notifiche"
       ],
       "Recovery phone number": [
         "Numero di telefono di recupero"
@@ -17663,8 +17694,14 @@
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **Disabilita il recupero tramite telefono** per garantire la massima sicurezza possibile del tuo account."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Abilita il recupero tramite telefono** per riottenere l'accesso al tuo account se dimentichi la password."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } userà questo indirizzo per tenerti aggiornato sulla sicurezza del tuo account."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } utilizzerà questo indirizzo per inviare un codice di reset via email quando reimposti la tua password."
@@ -17675,11 +17712,23 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } per garantire che i tuoi dati possano essere recuperati."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Disabilita il reset dell'account tramite email** per garantire la massima sicurezza possibile del tuo account."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Abilita il recupero tramite email** per riottenere l'accesso al tuo account se dimentichi la password."
       ],
+      "Account reset by email has been disabled": [
+        "Il reset dell'account tramite email è stato disabilitato"
+      ],
+      "Account reset by phone has been disabled": [
+        "Il reset dell'account via telefono è stato disabilitato"
+      ],
       "Account safety review": [
         "Revisione della sicurezza dell'account"
+      ],
+      "Add a phone number": [
+        "Aggiungi un numero di telefono"
       ],
       "Add a recovery email": [
         "Aggiungi una email per il recupero"
@@ -17689,6 +17738,12 @@
       ],
       "Add a recovery phone number": [
         "Aggiungi un numero di telefono di recupero"
+      ],
+      "Add an alternative email address": [
+        "Aggiungi un indirizzo email alternativo"
+      ],
+      "Add an email": [
+        "Aggiungi un'email"
       ],
       "Back to Safety Review": [
         "Torna alla Revisione della Sicurezza"
@@ -17711,11 +17766,29 @@
       "Device-based recovery enabled": [
         "Recupero basato sul dispositivo abilitato"
       ],
+      "Disable account reset by email": [
+        "Disabilita la reimpostazione dell'account tramite email"
+      ],
+      "Disable recovery by email": [
+        "Disabilita il recupero via email"
+      ],
+      "Disable recovery by email ": [
+        "Disabilita il recupero via email "
+      ],
+      "Disable recovery by phone": [
+        "Disabilita il recupero tramite telefono"
+      ],
+      "Disable recovery by phone ": [
+        "Disabilita il recupero tramite telefono "
+      ],
       "Download ${ size }": [
         "Scarica ${ size }"
       ],
       "Download your Recovery Kit": [
         "Scarica il tuo kit di recupero"
+      ],
+      "Email address": [
+        "Indirizzo email"
       ],
       "Enable device-based recovery": [
         "Abilita il ripristino basato sul dispositivo"
@@ -17740,6 +17813,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Se perdi i tuoi dati di accesso e devi reimpostare il tuo account, **è fondamentale** disporre sia di un **metodo di recupero dell'account che di recupero dei dati**, altrimenti potresti non essere in grado di accedere a nessuna delle tue email, contatti, file o password."
+      ],
+      "in case we need to contact you": [
+        "nel caso dovessimo contattarti"
       ],
       "Invalid code": [
         "Codice non valido"
@@ -17780,6 +17856,9 @@
       "There was an error generating your Recovery Kit": [
         "Si è verificato un errore durante la generazione del kit di recupero"
       ],
+      "There was an error verifying your email": [
+        "Si è verificato un errore durante la verifica della tua email"
+      ],
       "There was an error verifying your recovery email": [
         "Si è verificato un errore durante la verifica dell'email di recupero"
       ],
@@ -17794,6 +17873,9 @@
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Per assicurarti che il numero di telefono sia tuo, inserisci il codice di verifica inviato a ${ boldPhoneNumber }."
+      ],
+      "to prevent attackers from taking over your account": [
+        "per impedire agli aggressori di prendere il controllo del tuo account"
       ],
       "to recover your account and data if you're ever locked out": [
         "per recuperare il tuo account e i tuoi dati se rimani bloccato"
@@ -17810,6 +17892,12 @@
       "Verify": [
         "Verifica"
       ],
+      "Verify your email address": [
+        "Verifica il tuo indirizzo email"
+      ],
+      "Verify your phone number": [
+        "Verifica il tuo numero di telefono"
+      ],
       "Verify your recovery email address": [
         "Verifica il tuo indirizzo email di recupero"
       ],
@@ -17818,6 +17906,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Si è verificato un errore durante la generazione del kit di recupero. Riprova più tardi o contatta l'assistenza se il problema persiste."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "Abbiamo riscontrato un errore durante la verifica della tua email. Riprova più tardi o contatta il supporto se il problema persiste."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Abbiamo riscontrato un errore durante la verifica dell'e-mail di recupero. Riprova più tardi o contatta l'assistenza se il problema persiste."
@@ -17840,6 +17931,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Puoi utilizzare la frase di recupero contenuta in questo kit di recupero per ripristinare completamente il tuo account quando reimposti la password, quindi assicurati di conservarla in un posto sicuro."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Puoi utilizzare la tua email per riottenere l'accesso al tuo account se dimentichi la password."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Puoi utilizzare la tua email di recupero per riottenere l'accesso al tuo account se dimentichi la password."
       ],
@@ -17849,11 +17943,32 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Hai già scaricato un kit di recupero. Scaricarne uno nuovo **disattiverà quello vecchio**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "Ci sono azioni consigliate per salvaguardare ulteriormente il tuo account."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "Ci sono azioni consigliate per salvaguardare il tuo account."
+      ],
       "You have recommended actions.": [
         "Hai delle azioni consigliate."
       ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "La tua email di recupero potrebbe essere sfruttata da malintenzionati per prendere il controllo del tuo account. ${ disableEmail } per aumentare la sicurezza del tuo account."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Il tuo numero di telefono di recupero potrebbe essere sfruttato da malintenzionati per prendere il controllo del tuo account. ${ disablePhone } per aumentare la sicurezza del tuo account."
+      ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Non potrai più usare questo indirizzo per resettare il tuo account."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Non potrai più usare questo numero di telefono per resettare il tuo account."
+      ],
       "Your account and data can be recovered": [
         "Il tuo account e i tuoi dati possono essere recuperati"
+      ],
+      "Your account and data can be recovered.": [
+        "Il tuo account e i tuoi dati possono essere recuperati."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Il tuo account e i tuoi dati possono essere recuperati. Controlla se riesci ancora ad accedere ai tuoi metodi di recupero."
@@ -17869,6 +17984,12 @@
       ],
       "Your account is secure.": [
         "Il tuo account è sicuro."
+      ],
+      "Your email address is:": [
+        "La tua email è:"
+      ],
+      "Your email is set": [
+        "La tua email è impostata"
       ],
       "Your recovery email": [
         "La tua email di recupero"
@@ -20762,6 +20883,9 @@
       "Account recovery": [
         "Recupero dell'account"
       ],
+      "Account restricted": [
+        "Account limitato"
+      ],
       "Account suspended": [
         "Account sospeso"
       ],
@@ -21199,6 +21323,9 @@
       ],
       "Disable two-factor authentication": [
         "Disabilita l'autenticazione a due fattori"
+      ],
+      "Disable two-factor authentication app?": [
+        "Disabilitare l'app di autenticazione a due fattori?"
       ],
       "Disable two-factor authentication?": [
         "Disabilitare l'autenticazione a due fattori?"
@@ -21892,6 +22019,9 @@
       "Set up a recovery method": [
         "Configura un metodo di recupero"
       ],
+      "Set up authenticator app": [
+        "Configura app di autenticazione"
+      ],
       "Set up email forwarding": [
         "Configura l'inoltro delle email"
       ],
@@ -22385,6 +22515,9 @@
       "Edit label names": [
         "Modifica i nomi delle etichette"
       ],
+      "Emails in your inbox are shown organized into categories": [
+        "Le email nella tua casella di posta vengono mostrate organizzate per categorie"
+      ],
       "Enable/disable desktop and mobile notifications": [
         "Abilita/disabilita le notifiche desktop e mobili"
       ],
@@ -22501,6 +22634,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Questo potrebbe capitare a seguito del reset della password o perché l'utente non ha ancora eseguito il login."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Questo indirizzo email può essere utilizzato solo per accedere al tuo account ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Questo indirizzo email verrà mostrato a tutti i membri dell'organizzazione durante l'esecuzione delle operazioni di gestione dell'account."
@@ -22977,6 +23113,9 @@
       "Administrators can't access the data of private users": [
         "Gli amministratori non possono accedere ai dati degli utenti privati"
       ],
+      "Authenticator app": [
+        "App di autenticazione"
+      ],
       "Inactive": [
         "Inattivo"
       ],
@@ -22994,6 +23133,9 @@
       ],
       "Private": [
         "Privato"
+      ],
+      "Security key": [
+        "Chiave di sicurezza"
       ],
       "SSO": [
         "SSO"

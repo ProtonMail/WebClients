@@ -1892,6 +1892,9 @@
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
       ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "დაზოგეთ ბევრი Pass-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
+      ],
       "Save big on premium VPN features with a limited-time discount.": [
         "დაზოგეთ ბევრი VPN-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
       ],
@@ -5436,6 +5439,9 @@
       "Subscription expired": [
         "გამოწერას ვადა ამოიწურა"
       ],
+      "They may ask to access my account in case of an emergency.": [
+        "მათ შეიძლება გთხოვონ თქვენს ანგარიშთან წვდომა, თუ რამე სასწრაფო ხდება."
+      ],
       "This will take effect immediately.": [
         "ეს ძალაში დაუყოვნებლივ შევა."
       ],
@@ -5474,6 +5480,9 @@
       ],
       "You can now access and manage their account.": [
         "ახლა შეგიძლიათ, შეხვიდეთ და მართოთ მათი ანგარიშები."
+      ],
+      "You will be notified when someone requests emergency access.": [
+        "გაგაფრთხილებთ, როცა ვინმე სასწრაფო წვდომას მოითხოვს."
       ],
       "You'll receive access to their account immediately.": [
         "მათ ანგარიშებთან წვდომას დაუყოვნებლივ მიიღებთ."
@@ -6087,9 +6096,6 @@
       "You must set a name": [
         "სახელის დაყენება აუცილებელია"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "SMTP გადაცემის კოდის შესაქმნელად თქვენი დომენური მისამართის მითითითებაა საჭირო."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "მიაღწიეთ სიმბოლოების მაქსიმალურ რაოდენობას. შეამოკლეთ შეტყობინება."
       ],
@@ -6107,11 +6113,6 @@
       ],
       "ZIP code is required": [
         "საფოსტო კოდი აუცილებელია"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "აირჩიეთ მომხმარებლები მატი აქტივობების სანახავად"
       ]
     },
     "Error importing calendar": {
@@ -8208,6 +8209,9 @@
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
       ],
+      "Accounts": [
+        "ანგარიშები"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "გაააქტიურეთ ანგარიშის აღდგენის ერთი მეთოდი მაინც, რომ დარწმუნდეთ, რომ თქვენს ${ BRAND_NAME }-ის ანგარიშზე წვდომა პაროლის დაკარგვის შემთხვევაშიც კი გექნებათ."
       ],
@@ -8216,9 +8220,6 @@
       ],
       "active": [
         "აქტიური"
-      ],
-      "Activity Monitor": [
-        "აქტივობების მონიტორი"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "დაამატეთ @pm.me ელ. ფოსტის მისამართი თქვენს ანგარიშზე. ეს მარტივი, მოკლე დომენი ნიშნავს \"${ MAIL_APP_NAME } me \" ან \" პირადად მომწერე.\""
@@ -8427,6 +8428,12 @@
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
+      ],
+      "Authenticator app 2FA disabled": [
+        "ავთენტიკატორი აპით 2FA გათიშულია"
+      ],
+      "Authenticator app 2FA enabled": [
+        "ავთენტიკატორი აპით 2FA ჩართულია"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "ავტომოპასუხე აქტიურია ყოველი თვის მითითებულ დასაწყის და დასასრულ დროებზე."
@@ -8978,6 +8985,9 @@
       ],
       "Failed to fetch logs.": [
         "ჟურნალის მოთხოვნის შეცდომა."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "სწრაფი და ფოკუსის მქონე. ელფოსტა და კალენდარი პირდაპირ თქვენს სამუშაო მაგიდაზე."
       ],
       "Featured in": [
         "მოიცავს"
@@ -9637,6 +9647,9 @@
       "Organization monitor": [
         "ორგანიზაციის მონიტორინგი"
       ],
+      "Organization Monitor": [
+        "ორგანიზაციის მონიტორინგი"
+      ],
       "Organization size": [
         "ორგანიზაციის ზომა"
       ],
@@ -9943,6 +9956,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "აირჩიეთ მომხმარებლის წევრობა ${ getFormattedOrganization }-დან რომელიც გნებავთ, თქვენს ${ BRAND_NAME } ორგანიზაციაში ჩართოთ:"
       ],
+      "Select users to view their activity": [
+        "აირჩიეთ მომხმარებლები მატი აქტივობების სანახავად"
+      ],
       "Select what you want to import.": [
         "მონიშნეთ, რისი შემოტანაც გნებავთ."
       ],
@@ -10030,6 +10046,9 @@
       ],
       "Show original message": [
         "საწყისი შეტყობინების ჩვენება"
+      ],
+      "Sign in only": [
+        "მხოლოდ შესვლა"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "თქვენი მისამართის გასააქტიურებლად შედით ${ MAIL_APP_NAME }-ში"
@@ -12123,6 +12142,9 @@
       "Emails (last month)": [
         "ელფოსტა (გასული თვე)"
       ],
+      "Emails categories": [
+        "ელფოსტის კატეგორიები"
+      ],
       "Enabled": [
         "ჩართულია"
       ],
@@ -12419,6 +12441,9 @@
       ],
       "Notification": [
         "შეტყობინება"
+      ],
+      "Notification email address": [
+        "გაფრთხილების ელფოსტის მისამართი"
       ],
       "Notifications": [
         "შეტყობინებები"
@@ -12845,6 +12870,9 @@
     "label": {
       "Device-based recovery": [
         "მოწყობილობაზე დაფუძნებული აღმოჩენა"
+      ],
+      "Notification phone number": [
+        "გაფრთხილების ტელეფონის ნომერი"
       ],
       "Recovery phone number": [
         "აღდგენის ტელეფონის ნომერი"
@@ -13494,6 +13522,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "მიუერთეთ თქვენი დომენი ${ BRAND_NAME }-ს და იქონიეთ ელფოსტის თქვენი მისამართები (მაგ: you@yourcompany.com). ჩვენი დამხმარე მთელს პროცესს გაგატარებთ."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "ნახეთ ${ PASS_APP_NAME }-ის აქტივოვა თქვენს ორგანიზაციაში."
       ],
       "View user sign-in, recovery and security events.": [
         "ნახეთ მომხმარებლის შესვლები, აღდგენის და უსაფრთხოების მოვლენები."
@@ -15265,6 +15296,12 @@
       "Once your full subscription starts...": [
         "როცა თქვენი სრული გამოწერა დაიწყება..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "გაუქმება შემდეგ 30 დღეში ჯერ კიდევ შეგიძლიათ. თანხა დაგიბრუნდებათ"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "გაუქმება შემდეგ 30 დღეში ჯერ კიდევ შეგიძლიათ. თანხა დაგიბრუნდებათ"
+      ],
       "Your free trial has started": [
         "თქვენი გამოსაცდელი პერიოდი დაიწყო"
       ]
@@ -16253,6 +16290,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
       "Taxes": [
         "გადასახადები"
       ],
@@ -17139,8 +17179,17 @@
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**ჩართეთ აღდგენა ელფოსტით**, რომ აღიდგინოთ წვდომა თქვენს ანგარიშთან, თუ პაროლი დაგავიწყდათ."
       ],
+      "Account reset by email has been disabled": [
+        "ანგარიშის ჩამოყრა ელფოსტით გამორთულია"
+      ],
+      "Account reset by phone has been disabled": [
+        "ანგარიშის ჩამოყრა ტელეფონით გამორთულია"
+      ],
       "Account safety review": [
         "ანგარიშის უსაფრთხოების მიმოხილვა"
+      ],
+      "Add a phone number": [
+        "ტელეფონის ნომრის დამატება"
       ],
       "Add a recovery email": [
         "აღდგენის ელფოსტის დამატება"
@@ -17150,6 +17199,9 @@
       ],
       "Add a recovery phone number": [
         "აღდგენის ტელეფონის ნომრის დამატება"
+      ],
+      "Add an email": [
+        "ელ-ფოსტის დამატება"
       ],
       "Back to Safety Review": [
         "უსაფრთხოების მიმოხილვაზე დაბრუნება"
@@ -17172,11 +17224,29 @@
       "Device-based recovery enabled": [
         "მოწყობილობაზე დაფუძნებული აღდგენა ჩართულია"
       ],
+      "Disable account reset by email": [
+        "ანგარიშის ელფოსტით ჩამოყრის გათიშვა"
+      ],
+      "Disable recovery by email": [
+        "ელფოსტით აღდგენის გათიშვა"
+      ],
+      "Disable recovery by email ": [
+        "ელფოსტით აღდგენის გათიშვა "
+      ],
+      "Disable recovery by phone": [
+        "ტელეფონით აღდგენის გამორთვა"
+      ],
+      "Disable recovery by phone ": [
+        "ტელეფონით აღდგენის გამორთვა "
+      ],
       "Download ${ size }": [
         "${ size }-ის გადმოწერა"
       ],
       "Download your Recovery Kit": [
         "თქვენი აღდგენის ნაკრების გადმოწერა"
+      ],
+      "Email address": [
+        "ელფოსტის მისამართი"
       ],
       "Enable device-based recovery": [
         "მოწყობილობაზე დაფუძნებული აღდგენის ჩართვა"
@@ -17201,6 +17271,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "თუ თქვენი ავტორიზაციის დეტალები დაკარგეთ და გნებავთ, ჩამოყაროთ თქვენი ანგარიში, **მნიშვნელოვანია**, რომ ორივე, **ანგარიშის აღდგენის და მონაცემების აღდდგენის მეთოდი** გქონდეთ ჩართული. სხვაგვარად, შეიძლება, დაკარგოთ წვდომა თქვენს ელფოსტასთან, კონტაქტებთან, ფაილებთან და პაროლებთან."
+      ],
+      "in case we need to contact you": [
+        "იმ შემთხვევაში, თუ თქვენთან დაკავშირება დაგვჭირდება"
       ],
       "Invalid code": [
         "არასწორი კოდი"
@@ -17241,6 +17314,9 @@
       "There was an error generating your Recovery Kit": [
         "შეცდომა თქვენი აღდგენის ნაკრების გენერაციისას"
       ],
+      "There was an error verifying your email": [
+        "შეცდომა თქვენი ელფოსტის გადამოწმებისას"
+      ],
       "There was an error verifying your recovery email": [
         "შეცდომა თქვენი აღდგენის ელფოსტის გადამოწმებისას"
       ],
@@ -17270,6 +17346,12 @@
       ],
       "Verify": [
         "გადამოწმება"
+      ],
+      "Verify your email address": [
+        "გადაამოწმეთ თქვენი ელფოსტის მისამართი"
+      ],
+      "Verify your phone number": [
+        "დაადასტურეთ ტელ. ნომერი"
       ],
       "Verify your recovery email address": [
         "გადაამოწმეთ თქვენი აღდგენის ელფოსტის მისამართი"
@@ -17310,11 +17392,17 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "აღდგენის ნაკრები უკვე გადმოწერეთ. ახლის გადმოწერა **ძველს გათიშავს**."
       ],
+      "You have recommended actions to safeguard your account.": [
+        "გაქვთ რეკომენდებული ქმედებები, რიმ დაიცვათ თქვენი ანგარიში."
+      ],
       "You have recommended actions.": [
         "გაქვთ რეკომენდებული ქმედებები."
       ],
       "Your account and data can be recovered": [
         "თქვენი ანგარიშის და მონაცემების აღდგენა შესაძლებელია"
+      ],
+      "Your account and data can be recovered.": [
+        "თქვენი ანგარიშისა და მონაცემების აღდგენა შესაძლებელია."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "თქვენი ანგარიშისა და მონაცემების აღდგენა შესაძლებელია. შეამოწმეთ, გაქვთ ჯერ კიდევ წვდომა თქვენი აღდგენის მეთოდებთან, თუ აღარ."
@@ -17330,6 +17418,12 @@
       ],
       "Your account is secure.": [
         "თქვენი ანგარიში დაცულია."
+      ],
+      "Your email address is:": [
+        "თქვენი ელფოსტის მისამართია:"
+      ],
+      "Your email is set": [
+        "თქვენი ელფოსტა დაყეენბულია"
       ],
       "Your recovery email": [
         "თქვენი აღდგენის ელფოსტა"
@@ -18161,6 +18255,9 @@
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "უფასო ${ TRIAL_DURATION_DAYS } დღით"
       ],
+      "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
+        "მიიღეთ ${ referralInfo.uiData.refereeRewardAmount } კრედიტებში"
+      ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "მიიღეთ დაცული ${ MAIL_APP_NAME }-ის მისამართი, ან ${ internalButton }"
       ],
@@ -18281,6 +18378,9 @@
       ],
       "Total": [
         "ჯამი"
+      ],
+      "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
+        "სცადეთ ${ BRAND_NAME } უფასოდ ${ TRIAL_DURATION_DAYS } დღით"
       ],
       "Try ${ BRAND_NAME } for 14 days free": [
         "სცადეთ ${ BRAND_NAME } 14 დღით უფასოდ"
@@ -20185,6 +20285,9 @@
       "Account recovery": [
         "ანგარიშის აღდგენა"
       ],
+      "Account restricted": [
+        "ანგარიში შეზღუდულია"
+      ],
       "Account suspended": [
         "ანგარიში შეჩერებულია"
       ],
@@ -20622,6 +20725,9 @@
       ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
+      ],
+      "Disable two-factor authentication app?": [
+        "გამოვრთო 2FA აპი?"
       ],
       "Disable two-factor authentication?": [
         "გამოვრთო 2FA?"
@@ -21312,6 +21418,9 @@
       "Set up a recovery method": [
         "აღდგენის მეთოდის დაყენება"
       ],
+      "Set up authenticator app": [
+        "ავთენტიკატორი აპის მორგება"
+      ],
       "Set up email forwarding": [
         "ელფოსტის გადაგზავნის მორგება"
       ],
@@ -21792,6 +21901,9 @@
       ],
       "Edit label names": [
         "ჭდის სახელების ჩასწორება"
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "ელფოსტები თქვენს საფოსტო ყუთში კატეგორიებითაა დაორგანიზებული"
       ],
       "Enable/disable desktop and mobile notifications": [
         "კომპიუტერსა და მობილურზე გაფრთხილებების ჩართ/გამორთ"
@@ -22367,6 +22479,9 @@
       "Administrators can't access the data of private users": [
         "ადმინისტრატორებს კონფიდენციალური მომხმარებლების მონაცემებთან წვდომა არ აქვთ"
       ],
+      "Authenticator app": [
+        "ავთენტიკატორი აპი"
+      ],
       "Inactive": [
         "არააქტიური"
       ],
@@ -22384,6 +22499,9 @@
       ],
       "Private": [
         "პირადი"
+      ],
+      "Security key": [
+        "უსაფრთხოების გასაღები"
       ],
       "SSO": [
         "SSO"

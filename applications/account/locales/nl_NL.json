@@ -2047,12 +2047,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Door op \"Proberen\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
       ],
@@ -6169,9 +6163,6 @@
       "You must set a name": [
         "U moet een naam instellen"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "U hebt een eigen e-mailadres nodig om een SMTP-zendtoken te kunnen genereren."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "U heeft het maximaal aantal tekens bereikt. Maak uw bericht korter."
       ],
@@ -6189,11 +6180,6 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Selecteer gebruikers om hun activiteit te bekijken."
       ]
     },
     "Error importing calendar": {
@@ -8305,9 +8291,6 @@
       ],
       "active": [
         "actief"
-      ],
-      "Activity Monitor": [
-        "Activiteitenmonitor"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige, kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
@@ -20576,6 +20559,9 @@
       ],
       "Account recovery": [
         "Accountherstel"
+      ],
+      "Account restricted": [
+        "Account beperkt"
       ],
       "Account suspended": [
         "Account opgeschort"
