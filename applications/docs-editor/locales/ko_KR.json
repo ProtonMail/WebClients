@@ -4,6 +4,11 @@
     "language": "ko_KR"
   },
   "contexts": {
+    "": {
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation }님이 작성 중입니다..."
+      ]
+    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -488,9 +493,6 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } 와(과) ${ lastTyper }"
-      ],
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation }님이 작성 중입니다..."
       ],
       "Alpha only experimental feature": [
         "알파 전용 실험 기능"
