@@ -433,7 +433,7 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
                 loading={loading}
                 disabled={getIsApplyDisabled(initialState, selectedLabelIDs, checkedIDs, always, alsoArchive)}
                 onClose={() => onClose()}
-                ctaText={c('Action').t`Label`}
+                ctaText={c('Action').t`Apply`}
             />
             {moveScheduledModal}
             {moveSnoozedModal}
