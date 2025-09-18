@@ -24,6 +24,7 @@ import { type ProtonSheetsState, useLogState, useProtonSheetsState } from './sta
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import { Menubar } from './components/Menubar/Menubar'
 import { Toolbar } from './components/Toolbar/Toolbar'
+import { BottomBar } from './components/BottomBar'
 import { LegacyBottomBar } from './components/legacy/LegacyBottomBar'
 import { LegacyDialogs } from './components/legacy/LegacyDialogs'
 import { LegacyGrid } from './components/legacy/LegacyGrid'
@@ -219,8 +220,8 @@ function UI({ hidden, state, isReadonly, isRevisionMode }: UIProps) {
           users={state.yjsState.users}
           userName={state.yjsState.userName}
         />
-        {/* TODO: replace with new UI */}
-        <LegacyBottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
+
+        <BottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
         <Dialogs state={state} />
       </div>
     </ProtonSheetsUIStoreProvider>
