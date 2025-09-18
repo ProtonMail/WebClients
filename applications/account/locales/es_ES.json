@@ -2059,8 +2059,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Al hacer clic en \"Probar\", aceptas nuestros ${ termsAndConditions }."
@@ -6219,9 +6222,6 @@
       "You must set a name": [
         "Debes establecer un nombre."
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Necesitas una dirección de dominio personalizado para generar un token de envío SMTP."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Has alcanzado el número máximo de caracteres. Acorta tu mensaje."
       ],
@@ -6239,11 +6239,6 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Selecciona usuarios para ver sus actividades."
       ]
     },
     "Error importing calendar": {
@@ -8379,9 +8374,6 @@
       "active": [
         "activa"
       ],
-      "Activity Monitor": [
-        "Monitor de actividades"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Añade una dirección de correo electrónico @pm.me a tu cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME } me\" o \"Mensaje privado\"."
       ],
@@ -10246,6 +10238,9 @@
       ],
       "Show original message": [
         "Mostrar el mensaje original"
+      ],
+      "Sign in only": [
+        "Solo iniciar sesión"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicia sesión en ${ MAIL_APP_NAME } para activar tu dirección"
@@ -12410,6 +12405,9 @@
       ],
       "Emails (last month)": [
         "Correos electrónicos (último mes)"
+      ],
+      "Emails categories": [
+        "Categorías de correo electrónico"
       ],
       "Enabled": [
         "Activado"
@@ -17649,9 +17647,6 @@
       "Account safety review": [
         "Verificación de seguridad de la cuenta"
       ],
-      "Add a email address": [
-        "Añadir una dirección de correo electrónico"
-      ],
       "Add a phone number": [
         "Añade un número de teléfono"
       ],
@@ -17663,6 +17658,9 @@
       ],
       "Add a recovery phone number": [
         "Añadir un número de teléfono de recuperación"
+      ],
+      "Add an alternative email address": [
+        "Añadir una dirección de correo electrónico alternativa"
       ],
       "Add an email": [
         "Añadir un correo"
@@ -17694,8 +17692,14 @@
       "Disable recovery by email": [
         "Desactivar recuperación por correo electrónico"
       ],
+      "Disable recovery by email ": [
+        "Desactivar recuperación por correo electrónico "
+      ],
       "Disable recovery by phone": [
         "Desactivar la recuperación por teléfono"
+      ],
+      "Disable recovery by phone ": [
+        "Desactivar la recuperación por teléfono "
       ],
       "Download ${ size }": [
         "Descargar ${ size }"
@@ -17729,6 +17733,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Si pierdes tus datos de inicio de sesión y necesitas restablecer tu cuenta, **es obligatorio** que tengas configurados **un método de recuperación de la cuenta y de los datos**. De lo contrario, es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos, archivos o contraseñas."
+      ],
+      "in case we need to contact you": [
+        "en caso de que necesitemos contactarte"
       ],
       "Invalid code": [
         "El código no es válido."
@@ -17781,23 +17788,20 @@
       "to automatically recover your data when you log into a trusted device": [
         "para recuperar automáticamente tus datos cuando inicies sesión en un dispositivo de confianza"
       ],
-      "to ensure highest possible security of your account": [
-        "para garantizar la mayor seguridad de tu cuenta"
-      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Para comprobar que la dirección de correo electrónico es tuya, introduce el código de verificación enviado a ${ boldEmail }."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Para comprobar que el número de teléfono es tuyo, introduce el código de verificación enviado a ${ boldPhoneNumber }."
       ],
+      "to prevent attackers from taking over your account": [
+        "para evitar que los atacantes tomen el control de tu cuenta"
+      ],
       "to recover your account and data if you're ever locked out": [
         "para recuperar tu cuenta y tus datos si alguna vez te quedas bloqueado"
       ],
       "to recover your account if you're ever locked out": [
         "para recuperar la cuenta si alguna vez se bloqueara"
-      ],
-      "To stay in touch": [
-        "Para estar en contacto"
       ],
       "Update your Recovery Kit": [
         "¿Actualizar el kit de recuperación?"
@@ -17867,6 +17871,12 @@
       ],
       "You have recommended actions.": [
         "Tienes acciones recomendadas."
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Los atacantes podrían utilizar incorrectamente tu correo electrónico de recuperación para apoderarse de tu cuenta. ${ disableEmail } para mejorar la seguridad de tu cuenta."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Tu teléfono de recuperación podría ser utilizado por atacantes para apoderarse de tu cuenta. ${ disablePhone } para mejorar la seguridad de tu cuenta."
       ],
       "You will no longer be able to use this address to reset your account.": [
         "Ya no podrás usar esta dirección para restablecer tu cuenta."
@@ -20796,6 +20806,9 @@
       "Account recovery": [
         "Recuperación de cuenta"
       ],
+      "Account restricted": [
+        "Cuenta restringida"
+      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -22422,6 +22435,9 @@
       "Edit label names": [
         "Editar nombres de etiquetas"
       ],
+      "Emails in your inbox are shown organized into categories": [
+        "Los correos electrónicos en tu bandeja de entrada se muestran organizados por categorías"
+      ],
       "Enable/disable desktop and mobile notifications": [
         "Activar/desactivar las notificaciones de escritorio y de teléfono"
       ],
@@ -22538,6 +22554,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Esto puede deberse a un restablecimiento de contraseña o el usuario aún no ha iniciado sesión."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Esta dirección de correo electrónico solo se puede utilizar para iniciar sesión en tu cuenta de ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Esta dirección de correo se mostrará a todos los miembros de la organización cuando se ejecute operaciones de gestión de cuentas."
