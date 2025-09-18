@@ -1373,11 +1373,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců, počínaje ${ formattedDate }. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude vám nic účtováno."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na \"Vyzkoušet\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
@@ -4102,11 +4102,6 @@
         "PSČ je potřeba vyplnit"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Vyberte uživatele k zobrazení jejich aktivity"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
@@ -5742,11 +5737,11 @@
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
+      "Accounts": [
+        "Účty"
+      ],
       "active": [
         "aktivní"
-      ],
-      "Activity Monitor": [
-        "Monitor aktivity"
       ],
       "add a recovery method": [
         "přidali metodu obnovení"
@@ -6741,6 +6736,9 @@
       "Organization monitor": [
         "Monitorování organizace"
       ],
+      "Organization Monitor": [
+        "Monitorování organizace"
+      ],
       "Organization size": [
         "Velikost organizace"
       ],
@@ -6953,6 +6951,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Vyberte příslušnost uživatelů z ${ getFormattedOrganization }, kterým chcete povolit vstup do vaší organizace ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Vyberte uživatele k zobrazení jejich aktivity"
       ],
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
@@ -13947,6 +13948,9 @@
       ],
       "Account": [
         "Účet"
+      ],
+      "Account restricted": [
+        "Účet omezen"
       ],
       "Account suspended": [
         "Účet pozastaven"

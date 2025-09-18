@@ -1361,11 +1361,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Após a avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que se renova automaticamente a cada ${ renewCycle } meses em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Clicando em \"Experimentar\", você concorda com nossos ${ termsAndConditions }."
@@ -4062,11 +4062,6 @@
         "O CEP é obrigatório."
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Selecione usuários para ver a atividade deles."
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O formato do aquivo não é correto."
@@ -5604,11 +5599,11 @@
       "Account successfully updated": [
         "Conta atualizada"
       ],
+      "Accounts": [
+        "Contas"
+      ],
       "active": [
         "ativo"
-      ],
-      "Activity Monitor": [
-        "Monitor de atividades"
       ],
       "add a recovery method": [
         "adicionar um método de recuperação"
@@ -5742,6 +5737,12 @@
       ],
       "Attention required": [
         "Atenção necessária"
+      ],
+      "Authenticator app 2FA disabled": [
+        "Autenticação de dois fatores via app desativada"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Autenticação de dois fatores via app ativada"
       ],
       "Awaiting transaction": [
         "Esperando transação"
@@ -5929,6 +5930,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "Desativado em ${ boldValue }"
+      ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Desabilitar a autenticação de dois fatores tornará sua conta menos segura. Só prossiga se for absolutamente necessário."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Descubra novos recursos desbloqueados e comece a usá-los agora mesmo!"
@@ -6439,6 +6443,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gerencie quais aplicativos da ${ BRAND_NAME } os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
       ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "Logotipo do MasterCard SecureCode"
       ],
@@ -6559,6 +6566,9 @@
         "Ou selecione um servidor particular:"
       ],
       "Organization monitor": [
+        "Monitor da organização"
+      ],
+      "Organization Monitor": [
         "Monitor da organização"
       ],
       "Organization size": [
@@ -6746,6 +6756,9 @@
       "Scan QR code instead": [
         "Escaneie o código QR"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Escaneie este código com seu dispositivo de autenticação de dois fatores para configurar sua conta. ${ switchButton }."
+      ],
       "SCIM integration disabled": [
         "Integração SCIM desativada"
       ],
@@ -6766,6 +6779,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selecione as afiliações de usuário de ${ getFormattedOrganization } que você deseja permitir na sua organização ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Selecione usuários para ver a atividade deles."
       ],
       "Select what you want to import.": [
         "Selecione o que você deseja importar."
@@ -6821,6 +6837,9 @@
       ],
       "Shared vault updated": [
         "Cofre compartilhado atualizado"
+      ],
+      "Sign in only": [
+        "Somente iniciar sessão"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sessão no ${ MAIL_APP_NAME } para ativar seu endereço"
@@ -7324,6 +7343,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sem a ativação, você não poderá criar novos usuários, adicionar endereços a usuários existentes ou acessar as contas de usuário que não são privadas."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Sem um dispositivo de autenticação, você não conseguirá entrar nos apps do ${ BRAND_NAME } que ainda não oferecem suporte a chaves de segurança."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
@@ -13626,6 +13648,9 @@
       "Account": [
         "Conta"
       ],
+      "Account restricted": [
+        "Conta restrita"
+      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -14680,6 +14705,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Isso pode ser causado por uma redefinição de senha ou pelo usuário ainda não ter iniciado a sessão."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Este e-mail só pode ser usado para iniciar sessão na sua conta ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Esse endereço de e-mail será mostrado a todos os membros da organização ao realizar operações de gerenciamento de contas."

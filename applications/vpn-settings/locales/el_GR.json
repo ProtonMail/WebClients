@@ -1361,11 +1361,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες στις ${ formattedDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα στις ${ formattedDate }. Δεν θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Κάνοντας κλικ στο \"Δοκιμή\", συμφωνείτε με τους ${ termsAndConditions }."
@@ -4062,11 +4062,6 @@
         "Απαιτείται ταχυδρομικός κώδικας"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Επιλέξτε χρήστες για να δείτε τη δραστηριότητά τους"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Εσφαλμένη μορφή αρχείου."
@@ -5604,11 +5599,11 @@
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
+      "Accounts": [
+        "Λογαριασμοί"
+      ],
       "active": [
         "ενεργό"
-      ],
-      "Activity Monitor": [
-        "Παρακολούθηση Δραστηριότητας"
       ],
       "add a recovery method": [
         "προσθήκη μεθόδου ανάκτησης"
@@ -5742,6 +5737,12 @@
       ],
       "Attention required": [
         "Απαιτείται προσοχή"
+      ],
+      "Authenticator app 2FA disabled": [
+        "Η ταυτοποίηση δύο παραγόντων (2FA) της εφαρμογής επαλήθευσης είναι απενεργοποιημένη"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Η ταυτοποίηση δύο παραγόντων (2FA) της εφαρμογής επαλήθευσης είναι ενεργοποιημένη"
       ],
       "Awaiting transaction": [
         "Εν αναμονή συναλλαγής"
@@ -5929,6 +5930,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "Απενεργοποιημένη στις ${ boldValue }"
+      ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Η απενεργοποίηση της ταυτοποίηση δύο παραγόντων (2FA) της εφαρμογής επαλήθευσης θα κάνει τον λογαριασμό σας λιγότερο ασφαλή. Προχωρήστε μόνο αν είναι απολύτως απαραίτητο."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Ανακαλύψτε νέες δυνατότητες που ξεκλειδώθηκαν και αρχίστε να τις χρησιμοποιείτε αμέσως!"
@@ -6439,6 +6443,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Ελέγξτε ποιες εφαρμογές ${ BRAND_NAME } είναι προσβάσιμες από τα μέλη του οργανισμού σας. Αν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση."
       ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στην εφαρμογή ελέγχου ταυτότητας για να ρυθμίσετε τον λογαριασμό σας. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
       ],
@@ -6560,6 +6567,9 @@
       ],
       "Organization monitor": [
         "Παρακολούθηση οργανισμού"
+      ],
+      "Organization Monitor": [
+        "Παρακολούθηση Οργανισμού"
       ],
       "Organization size": [
         "Μέγεθος οργανισμού"
@@ -6743,6 +6753,9 @@
       "Scan QR code instead": [
         "Εναλλακτικά, σαρώστε τον κωδικό QR"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Σαρώστε αυτόν τον κωδικό με την εφαρμογή ελέγχου ταυτότητας για να ρυθμίσετε τον λογαριασμό σας. ${ switchButton }."
+      ],
       "SCIM integration disabled": [
         "Η ενσωμάτωση SCIM είναι απενεργοποιημένη"
       ],
@@ -6763,6 +6776,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Επιλέξτε τις συνεργασίες χρηστών από ${ getFormattedOrganization } που θέλετε να επιτρέψετε στον ${ BRAND_NAME } οργανισμό σας:"
+      ],
+      "Select users to view their activity": [
+        "Επιλέξτε χρήστες για να δείτε τη δραστηριότητά τους"
       ],
       "Select what you want to import.": [
         "Επιλέξτε τι θέλετε να εισάγετε."
@@ -6818,6 +6834,9 @@
       ],
       "Shared vault updated": [
         "Ενημερώθηκε η κοινοποιημένη κρύπτη"
+      ],
+      "Sign in only": [
+        "Σύνδεση μόνο"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Για ενεργοποίηση της διεύθυνσής σας, συνδεθείτε στο ${ MAIL_APP_NAME }"
@@ -7321,6 +7340,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Χωρίς μια εφαρμογή επαλήθευσης, δε θα μπορείτε να συνδεθείτε στις ${ BRAND_NAME } εφαρμογές που δεν υποστηρίζουν ακόμα κλειδιά ασφαλείας."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -13506,6 +13528,9 @@
       "Account": [
         "Λογαριασμός"
       ],
+      "Account restricted": [
+        "Ο λογαριασμός περιορίστηκε"
+      ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
@@ -13823,6 +13848,9 @@
       ],
       "Disable two-factor authentication": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων"
+      ],
+      "Disable two-factor authentication app?": [
+        "Απενεργοποίηση ταυτοποίησης δύο παραγόντων (2FA) στην εφαρμογή επαλήθευσης;"
       ],
       "Disable two-factor authentication?": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων;"
@@ -14188,6 +14216,9 @@
       ],
       "Set recovery methods": [
         "Ορισμός μεθόδων ανάκτησης"
+      ],
+      "Set up authenticator app": [
+        "Ρυθμίστε την εφαρμογή επαλήθευσης"
       ],
       "Set up email forwarding": [
         "Ρύθμιση προώθησης μηνυμάτων ηλεκτρονικού ταχυδρομείου"
@@ -14555,6 +14586,9 @@
       "This can be caused by a password reset or the user not logging in yet.": [
         "Αυτό μπορεί να προκληθεί από επαναφορά κωδικού πρόσβασης ή από τον χρήστη που δεν έχει συνδεθεί ακόμα."
       ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου μπορεί να χρησιμοποιηθεί μόνο για να συνδεθείτε στον λογαριασμό σας ${ BRAND_NAME }."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου θα εμφανίζεται σε όλα τα μέλη του οργανισμού κατά την εκτέλεση λειτουργιών διαχείρισης λογαριασμού."
       ],
@@ -14878,6 +14912,9 @@
       "Administrators can't access the data of private users": [
         "Οι διαχειριστές δεν έχουν πρόσβαση στα δεδομένα ιδιωτικών χρηστών"
       ],
+      "Authenticator app": [
+        "Εφαρμογή επαλήθευσης"
+      ],
       "Inactive": [
         "Ανενεργό"
       ],
@@ -14895,6 +14932,9 @@
       ],
       "Private": [
         "Ιδιωτικό"
+      ],
+      "Security key": [
+        "Κλειδί ασφαλείας"
       ],
       "SSO": [
         "SSO"

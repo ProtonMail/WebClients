@@ -1361,11 +1361,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzat el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos el ${ formattedDate }. No se us carregarà cap import si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes el ${ formattedDate }. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "En fer clic a \"Prova\", accepteu els nostres ${ termsAndConditions }."
@@ -4062,11 +4062,6 @@
         "Es requereix el codi postal."
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Seleccioneu usuaris per veure'n l'activitat"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "S'ha produït un error en llegir el fitxer ${ formattedFilename }. El format del fitxer és incorrecte."
@@ -5604,11 +5599,11 @@
       "Account successfully updated": [
         "El compte s'ha actualitzat."
       ],
+      "Accounts": [
+        "Comptes"
+      ],
       "active": [
         "activa"
-      ],
-      "Activity Monitor": [
-        "Monitor d'activitats"
       ],
       "add a recovery method": [
         "afegir un mètode de recuperació"
@@ -5744,7 +5739,7 @@
         "Es requereix la vostra atenció"
       ],
       "Authenticator app 2FA disabled": [
-        "S'ha desactivat l'aplicació d'autenticació 2FA"
+        "Aplicació d'autenticació 2FA desactivada"
       ],
       "Authenticator app 2FA enabled": [
         "S'ha habilitat l'aplicació autenticadora 2FA"
@@ -6573,6 +6568,9 @@
       "Organization monitor": [
         "Monitor d'organització"
       ],
+      "Organization Monitor": [
+        "Monitor d'organització"
+      ],
       "Organization size": [
         "Mida de l'organització"
       ],
@@ -6779,6 +6777,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Seleccioneu les afiliacions dels usuaris de ${ getFormattedOrganization } que voleu permetre a la vostra organització ${ BRAND_NAME }:"
       ],
+      "Select users to view their activity": [
+        "Seleccioneu usuaris per veure'n l'activitat"
+      ],
       "Select what you want to import.": [
         "Seleccioneu què voleu importar."
       ],
@@ -6833,6 +6834,9 @@
       ],
       "Shared vault updated": [
         "S'ha actualitzat la caixa forta compartida"
+      ],
+      "Sign in only": [
+        "Només heu d'iniciar sessió"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicieu la sessió a ${ MAIL_APP_NAME } per activar la vostra adreça"
@@ -13534,6 +13538,9 @@
       "Account": [
         "Compte"
       ],
+      "Account restricted": [
+        "Compte restringit"
+      ],
       "Account suspended": [
         "Compte suspès"
       ],
@@ -14588,6 +14595,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Això pot ser causat per un restabliment de la contrasenya o perquè l'usuari encara no ha iniciat la sessió."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Aquesta adreça de correu només es pot utilitzar per iniciar la sessió al vostre compte de ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Aquesta adreça de correu electrònic es mostrarà a tots els membres de l'organització quan realitzin operacions de gestió del compte."

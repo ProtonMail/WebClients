@@ -1373,11 +1373,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa z neho stane platené predplatné, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na „Vyskúšať“ súhlasíte s našimi ${ termsAndConditions }."
@@ -4102,11 +4102,6 @@
         "PSČ je povinné"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Vyberte používateľov na zobrazenie ich aktivity"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Vyskytla sa chyba pri čítaní vášho súboru ${ formattedFilename }. Nesprávny formát súboru."
@@ -5742,11 +5737,11 @@
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
+      "Accounts": [
+        "Účty"
+      ],
       "active": [
         "aktívne"
-      ],
-      "Activity Monitor": [
-        "Monitor aktivity"
       ],
       "add a recovery method": [
         "pridali spôsob obnovenia"
@@ -5894,6 +5889,12 @@
       ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
+      ],
+      "Authenticator app 2FA disabled": [
+        "Autentifikačná 2FA aplikácia deaktivovaná"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Autentifikačná 2FA aplikácia povolená"
       ],
       "Awaiting transaction": [
         "Čakanie na transakciu"
@@ -6089,6 +6090,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "Deaktivované ${ boldValue }"
+      ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Deaktivácia 2FA overovacej aplikácie zníži bezpečnosť vášho účtu. Pokračujte len v prípade, ak je to absolútne nevyhnutné."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Objavte nové odomknuté funkcie a začnite ich hneď používať!"
@@ -6603,6 +6607,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Spravujte, ku ktorým ${ BRAND_NAME } aplikáciám majú členovia vašej organizácie prístup. Ak je táto možnosť vypnutá, prístup budú mať len správcovia."
       ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Tieto informácie zadajte ručne do svojej overovacej aplikácie, aby ste mohli nastaviť svoj účet. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -6727,6 +6734,9 @@
         "Alebo vyberte konkrétny server:"
       ],
       "Organization monitor": [
+        "Monitorovanie organizácie"
+      ],
+      "Organization Monitor": [
         "Monitorovanie organizácie"
       ],
       "Organization size": [
@@ -6915,6 +6925,9 @@
       "Scan QR code instead": [
         "Namiesto toho naskenovať QR kód"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Naskenujte tento kód pomocou svojej overovacej aplikácie, aby ste mohli nastaviť svoj účet. ${ switchButton }."
+      ],
       "SCIM integration disabled": [
         "SCIM integrácia deaktivovaná"
       ],
@@ -6935,6 +6948,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Vyberte príslušnosť používateľov z ${ getFormattedOrganization }, ktorú chcete povoliť vo vašej organizácii ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Vyberte používateľov na zobrazenie ich aktivity"
       ],
       "Select what you want to import.": [
         "Vyberte čo chcete importovať."
@@ -6992,6 +7008,9 @@
       ],
       "Shared vault updated": [
         "Zdieľaný trezor bol aktualizovaný"
+      ],
+      "Sign in only": [
+        "Iba na prihlásenie"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Prihláste sa do ${ MAIL_APP_NAME } pre aktivovanie vašej adresy"
@@ -7505,6 +7524,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom, alebo pristupovať k verejným používateľským účtom."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Bez overovacej aplikácie sa nebudete môcť prihlásiť do aplikácií ${ BRAND_NAME }, ktoré ešte nepodporujú bezpečnostné kľúče."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -11085,6 +11107,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
+      ],
       "Taxes": [
         "Dane"
       ],
@@ -13909,6 +13934,9 @@
       "Account": [
         "Účet"
       ],
+      "Account restricted": [
+        "Obmedzený účet"
+      ],
       "Account suspended": [
         "Účet pozastavený"
       ],
@@ -14232,6 +14260,9 @@
       ],
       "Disable two-factor authentication": [
         "Vypnúť dvojstupňové overenie"
+      ],
+      "Disable two-factor authentication app?": [
+        "Deaktivovať aplikáciu dvojstupňového overovania?"
       ],
       "Disable two-factor authentication?": [
         "Deaktivovať dvojstupňové overenie?"
@@ -14602,6 +14633,9 @@
       "Set recovery methods": [
         "Nastaviť spôsoby obnovenia"
       ],
+      "Set up authenticator app": [
+        "Nastaviť overovaciu aplikáciu"
+      ],
       "Set up email forwarding": [
         "Nastaviť preposielanie emailov"
       ],
@@ -14970,6 +15004,9 @@
       "This can be caused by a password reset or the user not logging in yet.": [
         "Toto môže byť spôsobené resetovaním hesla alebo tým, že sa používateľ ešte neprihlásil."
       ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Túto emailovú adresu môžete použiť len na prihlásenie sa do vášho ${ BRAND_NAME } účtu."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Táto emailová adresa sa zobrazí všetkým členom organizácie pri vykonávaní operácií správy účtu."
       ],
@@ -15295,6 +15332,9 @@
       "Administrators can't access the data of private users": [
         "Administrátori nemajú prístup k údajom súkromných používateľov"
       ],
+      "Authenticator app": [
+        "Overovacia aplikácia"
+      ],
       "Inactive": [
         "Neaktívni"
       ],
@@ -15312,6 +15352,9 @@
       ],
       "Private": [
         "Súkromné"
+      ],
+      "Security key": [
+        "Bezpečnostný kľúč"
       ],
       "SSO": [
         "SSO"

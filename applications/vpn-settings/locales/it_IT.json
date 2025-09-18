@@ -1361,11 +1361,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Dopo la prova termina il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnoverà automaticamente ogni ${ renewCycle } mesi il ${ formattedDate }. Non ti verrà addebitato nulla se annulli prima del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Facendo clic su \"Prova\", accetti i nostri ${ termsAndConditions }."
@@ -4062,11 +4062,6 @@
         "Il codice postale è obbligatorio"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Seleziona gli utenti per visualizzare la loro attività"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
@@ -5604,11 +5599,11 @@
       "Account successfully updated": [
         "Account aggiornato con successo"
       ],
+      "Accounts": [
+        "Account"
+      ],
       "active": [
         "attivo"
-      ],
-      "Activity Monitor": [
-        "Monitoraggio attività"
       ],
       "add a recovery method": [
         "aggiungere un metodo di recupero"
@@ -5742,6 +5737,12 @@
       ],
       "Attention required": [
         "Attenzione"
+      ],
+      "Authenticator app 2FA disabled": [
+        "App di autenticazione 2FA disabilitata"
+      ],
+      "Authenticator app 2FA enabled": [
+        "App di autenticazione 2FA abilitata"
       ],
       "Awaiting transaction": [
         "In attesa della transazione"
@@ -5929,6 +5930,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "Disabilitato il ${ boldValue }"
+      ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Disabilitare l'app di autenticazione 2FA renderà il tuo account meno sicuro. Procedi solo se assolutamente necessario."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Scopri le nuove funzionalità sbloccate e inizia a usarle subito!"
@@ -6439,6 +6443,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestisci le applicazioni ${ BRAND_NAME } alle quali possono accedere i membri della tua organizzazione. Se disabilitato, solo gli amministratori avranno accesso."
       ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Inserisci manualmente queste informazioni nella tua app di autenticazione per impostare il tuo account. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -6559,6 +6566,9 @@
         "O seleziona un server specifico:"
       ],
       "Organization monitor": [
+        "Monitoraggio dell’organizzazione"
+      ],
+      "Organization Monitor": [
         "Monitoraggio dell’organizzazione"
       ],
       "Organization size": [
@@ -6746,6 +6756,9 @@
       "Scan QR code instead": [
         "Oppure scansiona il codice QR"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Scansiona questo codice con la tua app di autenticazione per impostare il tuo account. ${ switchButton }."
+      ],
       "SCIM integration disabled": [
         "Integrazione SCIM disabilitata"
       ],
@@ -6766,6 +6779,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Seleziona le affiliazioni utente da ${ getFormattedOrganization } che desideri consentire nella tua organizzazione ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Seleziona gli utenti per visualizzare la loro attività"
       ],
       "Select what you want to import.": [
         "Seleziona cosa vuoi importare."
@@ -6821,6 +6837,9 @@
       ],
       "Shared vault updated": [
         "Cassaforte condivisa aggiornata"
+      ],
+      "Sign in only": [
+        "Solo accesso"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Accedi a ${ MAIL_APP_NAME } per attivare il tuo indirizzo"
@@ -7324,6 +7343,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi per gli utenti esistenti o accedere agli account non privati."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Senza un'app di autenticazione, non potrai accedere alle application di ${ BRAND_NAME } che non supportano ancora le chiavi di sicurezza."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -13638,6 +13660,9 @@
       "Account": [
         "Account"
       ],
+      "Account restricted": [
+        "Account limitato"
+      ],
       "Account suspended": [
         "Account sospeso"
       ],
@@ -13955,6 +13980,9 @@
       ],
       "Disable two-factor authentication": [
         "Disabilita l'autenticazione a due fattori"
+      ],
+      "Disable two-factor authentication app?": [
+        "Disabilitare l'app di autenticazione a due fattori?"
       ],
       "Disable two-factor authentication?": [
         "Disabilitare l'autenticazione a due fattori?"
@@ -14320,6 +14348,9 @@
       ],
       "Set recovery methods": [
         "Imposta i metodi di ripristino"
+      ],
+      "Set up authenticator app": [
+        "Configura app di autenticazione"
       ],
       "Set up email forwarding": [
         "Configura l'inoltro delle email"
@@ -14687,6 +14718,9 @@
       "This can be caused by a password reset or the user not logging in yet.": [
         "Questo potrebbe capitare a seguito del reset della password o perché l'utente non ha ancora eseguito il login."
       ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Questo indirizzo email può essere utilizzato solo per accedere al tuo account ${ BRAND_NAME }."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Questo indirizzo email verrà mostrato a tutti i membri dell'organizzazione durante l'esecuzione delle operazioni di gestione dell'account."
       ],
@@ -15010,6 +15044,9 @@
       "Administrators can't access the data of private users": [
         "Gli amministratori non possono accedere ai dati degli utenti privati"
       ],
+      "Authenticator app": [
+        "App di autenticazione"
+      ],
       "Inactive": [
         "Inattivo"
       ],
@@ -15027,6 +15064,9 @@
       ],
       "Private": [
         "Privato"
+      ],
+      "Security key": [
+        "Chiave di sicurezza"
       ],
       "SSO": [
         "SSO"
