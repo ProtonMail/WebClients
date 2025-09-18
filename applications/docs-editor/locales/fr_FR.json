@@ -4,6 +4,12 @@
     "language": "fr_FR"
   },
   "contexts": {
+    "": {
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } est en train d'écrire...",
+        "${ usersTranslation } sont en train d'écrire..."
+      ]
+    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -489,10 +495,6 @@
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } et ${ lastTyper }"
       ],
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } est en train d'écrire...",
-        "${ usersTranslation } sont en train d'écrire..."
-      ],
       "Alpha only experimental feature": [
         "Fonctionnalité expérimentale uniquement en version alpha"
       ],
@@ -785,71 +787,6 @@
         "Insérer"
       ]
     },
-    "sheets_2025:Spreadsheet editor more formats menu": {
-      "$ US Dollar": [
-        "$ Dollar américain"
-      ],
-      "Accounting": [
-        "Comptabilité"
-      ],
-      "CN¥ Chinese Yuan": [
-        "CN¥ Yuan chinois"
-      ],
-      "Currency": [
-        "Devise"
-      ],
-      "Currency rounded": [
-        "Devise arrondie"
-      ],
-      "Date": [
-        "Date"
-      ],
-      "Date time": [
-        "Date et heure"
-      ],
-      "Duration": [
-        "Durée"
-      ],
-      "Financial": [
-        "Finances"
-      ],
-      "General": [
-        "Général"
-      ],
-      "Long date": [
-        "Format de date longue"
-      ],
-      "More currency": [
-        "Plus de devises"
-      ],
-      "Number": [
-        "Nombre"
-      ],
-      "Percent": [
-        "Pourcentage"
-      ],
-      "Plain text": [
-        "Texte brut"
-      ],
-      "Scientific": [
-        "Scientifique"
-      ],
-      "Time": [
-        "Heure"
-      ],
-      "£ Pound": [
-        "£ Livre"
-      ],
-      "¥ Yen": [
-        "¥ Yen"
-      ],
-      "€ Euro": [
-        "€ Euro"
-      ],
-      "₹ Rupee": [
-        "₹ Roupie"
-      ]
-    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Gras"
@@ -886,9 +823,6 @@
       ],
       "Redo": [
         "Rétablir"
-      ],
-      "Search": [
-        "Rechercher"
       ],
       "Strikethrough": [
         "Barré"

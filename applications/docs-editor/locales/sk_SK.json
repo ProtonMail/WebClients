@@ -4,6 +4,14 @@
     "language": "sk_SK"
   },
   "contexts": {
+    "": {
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } píše...",
+        "${ usersTranslation } píšu...",
+        "${ usersTranslation } píšu...",
+        "${ usersTranslation } píšu..."
+      ]
+    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -488,12 +496,6 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } a ${ lastTyper }"
-      ],
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } píše...",
-        "${ usersTranslation } píšu...",
-        "${ usersTranslation } píšu...",
-        "${ usersTranslation } píšu..."
       ],
       "Alpha only experimental feature": [
         "Len experimentálne funkcie Alpha"
