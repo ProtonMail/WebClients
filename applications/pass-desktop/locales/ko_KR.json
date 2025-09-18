@@ -4,6 +4,185 @@
     "language": "ko_KR"
   },
   "contexts": {
+    "": {
+      "${ aliasCount } alias": [
+        "${ aliasCount }개 별칭"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount }개 차단"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount }개 차단됨"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length }글자"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount }단어"
+      ],
+      "${ count } item": [
+        "${ count }개 항목"
+      ],
+      "${ count } time": [
+        "${ count }번"
+      ],
+      "${ count } view": [
+        "${ count }명 조회"
+      ],
+      "${ count }/${ maxReads } view": [
+        "조회수 ${ count }건/${ maxReads }건"
+      ],
+      "${ days } day": [
+        "${ days }일"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount }개 파일"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount }개 전달"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount }건 전달됨"
+      ],
+      "${ hours } hour": [
+        "${ hours }시간"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount }명 회원"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }분"
+      ],
+      "${ months } month": [
+        "${ months }개월"
+      ],
+      "${ n } item": [
+        "${ n }개 항목"
+      ],
+      "${ payload.count } invite successfully sent": [
+        "초대 ${ payload.count }개를 성공적으로 보냈습니다."
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount }개 답장"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount }개 전송됨"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount }개 침해 사례 감지됨"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } 안전한 링크"
+      ],
+      "${ total } other login uses the same password": [
+        "${ total }개의 다른 로그인이 같은 비밀번호를 사용하고 있습니다"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount }개 로그인"
+      ],
+      "${ years } year": [
+        "${ years }년"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount }개의 파일을 휴지통으로 이동시키시겠습니까?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "정말로 ${ deletedItemsCount }개의 파일을 영구적으로 삭제하시겠습니까?"
+      ],
+      "byte": [
+        "바이트"
+      ],
+      "Byte": [
+        "바이트"
+      ],
+      "Cannot send invitation at the moment": [
+        "현재 초대를 전송할 수 없습니다."
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "${ deletedItemsCount }개의 항목을 삭제 하시겠습니까?"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } 손상된 csv 행 감지됨"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "보안상의 이유로 이 공유 금고 접근을 수락해야합니다."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "생성된 비밀번호가 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주의 기간 동안 저장됩니다."
+      ],
+      "Gigabyte": [
+        "기가바이트"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "항목 공유: ${ itemAccessCount }명 사용자"
+      ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "항목에 ${ share.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
+      ],
+      "Kilobyte": [
+        "킬로바이트"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "최대 길이는 ${ maxLength }자 입니다."
+      ],
+      "Megabyte": [
+        "메가바이트"
+      ],
+      "Move ${ count } item": [
+        "항목 ${ count }개 이동"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "${ count }개의 항목을 ${ vaultName }(으)로 이동"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount }개의 항목을 휴지통으로 이동시키시겠습니까?"
+      ],
+      "Move item to": [
+        "항목을 다음으로 이동:"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주보다 오래된 비밀번호는 기록에서 자동 삭제됩니다."
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "별칭이 삭제되면 복구할 수 없습니다."
+      ],
+      "Reused ${ count } time": [
+        "재사용한 횟수 ${ count }회"
+      ],
+      "Sync alias": [
+        "별칭 동기화"
+      ],
+      "Terabyte": [
+        "테라바이트"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "다음 ${ totalIgnored }개 항목은 불러올 수 없습니다:"
+      ],
+      "Understood, I will never need it": [
+        "이해했어요, 더 이상 필요하지 않습니다."
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "금고 공유: ${ vaultMembersCount }명 구성원"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "금고에 ${ targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "SimpleLogin에 ${ aliasCount }개의 별칭이 존재하지만 ${ PASS_APP_NAME }에는 누락된 별칭이 있음이 발견되었어요. 해당 별명을 불러오시겠어요?"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "항목을 선택하고 드래그 앤 드롭하여 다른 금고로 이동시킬 수 있습니다."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "SimpleLogin에는 존재하지만 ${ PASS_APP_NAME }에는 존재하지 않는 ${ aliasCount }개의 별칭이 있습니다. 연동하시겠어요?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "이 기능과 다른 프리미엄 기능들을 체험할 시간이 ${ daysRemaining }일 남았습니다."
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name }과 ${ remainingCount }개의 잠재적인 유출이 탐지되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
@@ -613,9 +792,6 @@
       "Submitting report...": [
         "보고서 제출 중..."
       ],
-      "Sync alias": [
-        "별칭 동기화"
-      ],
       "Sync aliases": [
         "별칭 동기화"
       ],
@@ -642,9 +818,6 @@
       ],
       "Unblock contact": [
         "연락처 차단 해제"
-      ],
-      "Understood, I will never need it": [
-        "이해했어요, 더 이상 필요하지 않습니다."
       ],
       "Unlock": [
         "잠금 해제"
@@ -742,9 +915,6 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME }은 유료 요금제에서 이용할 수 있습니다. 업그레이드하는 즉시 접근할 수 있습니다."
-      ],
-      "${ total } other login uses the same password": [
-        "${ total }개의 다른 로그인이 같은 비밀번호를 사용하고 있습니다"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2단계 인증은 로그인에 또 하나의 보안 계층을 추가합니다. ${ PASS_APP_NAME }가 2단계 인증 코드를 저장하고 자동으로 자동 완성하여 더 사용하기 쉽게 만들어드립니다."
@@ -873,9 +1043,6 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "인증 실패. 이 내보내기 작업을 완료하기 위해서는 추가 비밀번호를 입력하세요."
       ],
-      "Cannot send invitation at the moment": [
-        "현재 초대를 전송할 수 없습니다."
-      ],
       "Cannot send invitations at the moment": [
         "현재 초대를 전송할 수 없습니다."
       ],
@@ -923,9 +1090,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고 삭제를 실패했습니다."
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } 손상된 csv 행 감지됨"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "도메인을 인증할 수 없습니다. 올바른 DNS 레코드를 생성했는지 확인하시기 바랍니다"
@@ -1269,9 +1433,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "바이트"
-      ],
       "GB": [
         "GB"
       ],
@@ -1283,23 +1444,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "바이트"
-      ],
-      "Gigabyte": [
-        "기가바이트"
-      ],
-      "Kilobyte": [
-        "킬로바이트"
-      ],
-      "Megabyte": [
-        "메가바이트"
-      ],
-      "Terabyte": [
-        "테라바이트"
       ]
     },
     "Font face option": {
@@ -1327,6 +1471,17 @@
         "매우 작게"
       ]
     },
+    "Header": {
+      "Domain": [
+        "도메인"
+      ],
+      "Password ends with": [
+        "비밀번호 마지막 글자"
+      ],
+      "Username": [
+        "사용자 이름"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" 항목이 무시되었습니다."
@@ -1334,29 +1489,8 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "\"${ payload.itemName }\" 업데이트가 무시되었습니다."
       ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount }개 차단됨"
-      ],
-      "${ count } time": [
-        "${ count }번"
-      ],
-      "${ count } view": [
-        "${ count }명 조회"
-      ],
-      "${ count }/${ maxReads } view": [
-        "조회수 ${ count }건/${ maxReads }건"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount }건 전달됨"
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail }님이 나와 항목을 공유하고자 합니다."
-      ],
-      "${ memberCount } member": [
-        "${ memberCount }명 회원"
-      ],
-      "${ n } item": [
-        "${ n }개 항목"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME }에 항상 접근할 수 있습니다."
@@ -1376,20 +1510,11 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME }에서 오프라인 데이터 접근을 위해 ${ BRAND_NAME } 비밀번호를 필요로 합니다."
       ],
-      "${ payload.count } invite successfully sent": [
-        "초대 ${ payload.count }개를 성공적으로 보냈습니다."
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME }이 성공적으로 비활성화되었습니다"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME }이 성공적으로 활성화되었습니다"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount }개 전송됨"
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount }개 침해 사례 감지됨"
       ],
       "(Empty)": [
         "(비어 있음)"
@@ -1682,6 +1807,9 @@
       "Extra password successfully removed": [
         "추가 비밀번호가 성공적으로 삭제되었습니다"
       ],
+      "Failed updating your vault organization": [
+        "볼트 조직 업데이트 실패"
+      ],
       "Fill in the CSV with your data": [
         "사용자의 데이터인 CSV를 채워 넣으십시오"
       ],
@@ -1694,17 +1822,11 @@
       "For security reasons, this action requires identity verification.": [
         "보안 상의 이유로, 이 작업은 신원 인증이 필요합니다."
       ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "보안상의 이유로 이 공유 금고 접근을 수락해야합니다."
-      ],
       "For security reasons, your access needs to be confirmed": [
         "보안 상의 이유로, 접근이 수락되어야 합니다."
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "포워딩 주소를 클립보드에 복사했습니다. 이 주소로 이메일을 전송하면 ${ Email } 주소가 수신받습니다."
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "생성된 비밀번호가 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주의 기간 동안 저장됩니다."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "각 팀이나 프로젝트를 위한 금고를 만들어 Pass를 최대한 활용하세요."
@@ -1787,9 +1909,6 @@
       "Item restored": [
         "항목이 복구되었습니다"
       ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "항목 공유: ${ itemAccessCount }명 사용자"
-      ],
       "Item successfully excluded from monitoring": [
         "항목이 모니터링에서 제외되었습니다"
       ],
@@ -1850,14 +1969,8 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "단순한 비밀번호 관리자가 아닌 ${ PASS_APP_NAME }는 비밀번호 뿐만 아니라 별칭으로 개인 이메일 주소도 보호합니다. ${ MAIL_APP_NAME }과 동일한 기술로 종단간 암호화하여 오직 당신만 데이터에 접근할 수 있습니다."
       ],
-      "Move ${ count } item": [
-        "항목 ${ count }개 이동"
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -1924,9 +2037,6 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "비밀번호 잠금이 성공적으로 추가되었습니다. ${ PASS_APP_NAME }를 잠금해제 할 때 사용하세요."
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }주보다 오래된 비밀번호는 기록에서 자동 삭제됩니다."
       ],
       "Paused": [
         "일시 정지됨"
@@ -2219,9 +2329,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME }를 사용할 때 추가 비밀번호가 요구됩니다. 사용자의 ${ BRAND_NAME } 비밀번호의 추가적인 비밀번호가 됩니다."
       ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "다음 ${ totalIgnored }개 항목은 불러올 수 없습니다:"
-      ],
       "The secure link has been removed": [
         "안전한 링크가 삭제되었습니다."
       ],
@@ -2342,9 +2449,6 @@
       "Vault \"${ share.content.name }\" was removed": [
         "금고 \"${ share.content.name }\" 이(가) 삭제 되었습니다."
       ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "금고 공유: ${ vaultMembersCount }명 구성원"
-      ],
       "Verification code sent.": [
         "인증 코드가 전송되었습니다."
       ],
@@ -2353,9 +2457,6 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "사용자의 로컬 스토리지로 데이터를 동기화 하는데 문제가 있습니다. ${ PASS_SHORT_APP_NAME }가 원활히 동기화할 수 있도록 저장 공간이 여유 있는지 확인하세요."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "SimpleLogin에 ${ aliasCount }개의 별칭이 존재하지만 ${ PASS_APP_NAME }에는 누락된 별칭이 있음이 발견되었어요. 해당 별명을 불러오시겠어요?"
       ],
       "Week": [
         "주"
@@ -2380,12 +2481,6 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "SimpleLogin에는 존재하지만 ${ PASS_APP_NAME }에는 존재하지 않는 ${ aliasCount }개의 별칭이 있습니다. 연동하시겠어요?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "이 기능과 다른 프리미엄 기능들을 체험할 시간이 ${ daysRemaining }일 남았습니다."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "구독에 포함된 최대 금고 수에 도달했습니다. 항목이 처음 두 금고로 이동됩니다. 모든 금고 간에 항목을 이동하려면 구독을 업그레이드하세요."
@@ -2455,56 +2550,14 @@
       ]
     },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount }개 별칭"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount }개 차단"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length }글자"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount }단어"
-      ],
-      "${ count } item": [
-        "${ count }개 항목"
-      ],
-      "${ days } day": [
-        "${ days }일"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount }개 전달"
-      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "지난 14일간 ${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }."
-      ],
-      "${ hours } hour": [
-        "${ hours }시간"
-      ],
-      "${ minutes } minute": [
-        "${ minutes }분"
-      ],
-      "${ months } month": [
-        "${ months }개월"
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME }는 어떤 브라우저나 기기에서도 당신이 이용하는 웹사이트와 앱을 인식하고 양식에 자격증명을 자동입력합니다. 더 이상 복사하고 붙여넣을 필요는 없습니다."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } 버전"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount }개 답장"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } 안전한 링크"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount }개 로그인"
-      ],
-      "${ years } year": [
-        "${ years }년"
       ],
       "1 hour": [
         "1시간"
@@ -3683,12 +3736,6 @@
       ]
     },
     "Message": {
-      "${ count } item": [
-        "${ count }개 항목"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "항목을 선택하고 드래그 앤 드롭하여 다른 금고로 이동시킬 수 있습니다."
-      ],
       "You selected ${ semiboldText } in this vault.": [
         "이 금고에서 ${ semiboldText }을 선택했습니다."
       ]
@@ -3747,9 +3794,6 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "\"${ filename }\"이(가) 업로드하기에 너무 큽니다. 최대 허용 크기는 (${ maxFileSizeInMB })입니다."
-      ],
-      "${ filesCount } file": [
-        "${ filesCount }개 파일"
       ],
       "Attachments": [
         "첨부 파일"
@@ -4078,9 +4122,6 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "도메인을 성공적으로 인증했습니다. 도메인으로 이메일 수신과 별칭 생성이 가능합니다"
       ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "항목에 ${ share.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
-      ],
       "Mailbox change successfully cancelled": [
         "메일함 변경이 성공적으로 취소되었습니다"
       ],
@@ -4098,9 +4139,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "무작위 접두사 생성이 성공적으로 활성화되었습니다"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "금고에 ${ targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "인증 이메일이 전송되었습니다. 메일함 인증을 위해 받은 편지함을 확인해 주세요."
@@ -4220,9 +4258,6 @@
       "Default Display Name": [
         "기본 표시 이름"
       ],
-      "Delete ${ deletedItemsCount } item?": [
-        "${ deletedItemsCount }개의 항목을 삭제 하시겠습니까?"
-      ],
       "Delete domain": [
         "도메인 삭제"
       ],
@@ -4285,6 +4320,9 @@
       ],
       "Grant permissions": [
         "권한 부여"
+      ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "숨겨진 금고는 검색과 자동 완성에서 표시되지 않습니다."
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
@@ -4352,12 +4390,6 @@
       "Modified": [
         "수정됨"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count }개의 항목을 ${ vaultName }(으)로 이동"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "${ trashedItemsCount }개의 항목을 휴지통으로 이동시키시겠습니까?"
-      ],
       "Move all items to \"${ vaultName }\"?": [
         "\"${ vaultName }\"(으)로 모든 항목을 이동할까요?"
       ],
@@ -4366,6 +4398,9 @@
       ],
       "MX record": [
         "MX 레코드"
+      ],
+      "Next": [
+        "다음"
       ],
       "No excluded items": [
         "제외된 항목 없음"
@@ -4387,6 +4422,12 @@
       ],
       "No shared secure links": [
         "안전한 링크로 공유된 항목이 없습니다."
+      ],
+      "Open pagination": [
+        "페이지 번호 열기"
+      ],
+      "Organize vaults": [
+        "금고 정리"
       ],
       "Our welcome gift to you": [
         "당신께 드리는 웰컴 기프트"
@@ -4415,8 +4456,8 @@
       "Pinned (${ items.length })": [
         "고정됨 (${ items.length })"
       ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "별칭이 삭제되면 복구할 수 없습니다."
+      "Previous": [
+        "이전"
       ],
       "Random Prefix Generation": [
         "무작위 접두사 생성"
@@ -4447,9 +4488,6 @@
       ],
       "Resume monitoring?": [
         "모니터링을 재개합니까?"
-      ],
-      "Reused ${ count } time": [
-        "재사용한 횟수 ${ count }회"
       ],
       "Reused passwords": [
         "재사용한 비밀번호"
@@ -4567,9 +4605,11 @@
       ],
       "Your welcome gift": [
         "무료 체험을 즐겨보세요"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "별칭 ${ aliasCount }개를 영구적으로 삭제하게 됩니다."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "복사"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4611,11 +4651,6 @@
         "URL이 올바르지 않습니다."
       ]
     },
-    "Vault Select": {
-      "Move item to": [
-        "항목을 다음으로 이동:"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } 비밀번호가 필요합니다"
@@ -4640,12 +4675,6 @@
       ],
       "An error occurred while importing your data.": [
         "데이터를 불러오는데 문제가 발생했습니다."
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "${ trashedItemsCount }개의 파일을 휴지통으로 이동시키시겠습니까?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "정말로 ${ deletedItemsCount }개의 파일을 영구적으로 삭제하시겠습니까?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "이 항목을 영구적으로 삭제하시겠습니까?"
@@ -4727,9 +4756,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "조직 외부의 이메일 주소로는 초대할 수 없습니다."
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "최대 길이는 ${ maxLength }자 입니다."
       ],
       "Missing alias prefix": [
         "별명 접두사가 빠져있습니다"
