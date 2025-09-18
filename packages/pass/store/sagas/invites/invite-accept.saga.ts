@@ -9,12 +9,17 @@ import { inviteAccept, startEventPolling, stopEventPolling } from '@proton/pass/
 import { requestProgress } from '@proton/pass/store/request/actions';
 import type { RequestProgress } from '@proton/pass/store/request/types';
 import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Invite, ItemRevision, Maybe, Share, ShareGetResponse } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 type AcceptInviteChannel = RequestProgress<ItemRevision[], null>;
 
-function* acceptInviteWorker({ payload, meta: { request } }: ReturnType<typeof inviteAccept.intent>) {
+function* acceptInviteWorker(options: RootSagaOptions, action: ReturnType<typeof inviteAccept.intent>) {
+    const {
+        payload,
+        meta: { request },
+    } = action;
     const requestId = request.id;
     const { inviteToken } = payload;
 
@@ -44,6 +49,7 @@ function* acceptInviteWorker({ payload, meta: { request } }: ReturnType<typeof i
             if (action.type === 'done') {
                 const items = action.result;
                 yield put(inviteAccept.success(requestId, { inviteToken, share, items }));
+                options.onItemsUpdated?.();
             }
         }
     } catch (err) {
@@ -53,6 +59,6 @@ function* acceptInviteWorker({ payload, meta: { request } }: ReturnType<typeof i
     }
 }
 
-export default function* watcher() {
-    yield takeEvery(inviteAccept.intent.match, acceptInviteWorker);
+export default function* watcher(options: RootSagaOptions) {
+    yield takeEvery(inviteAccept.intent.match, acceptInviteWorker, options);
 }
