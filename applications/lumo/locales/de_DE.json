@@ -387,11 +387,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem die Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate am ${ formattedDate } automatisch verlängert. Dir wird nichts berechnet, wenn du vor dem ${ formattedDate } kündigst."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
@@ -787,6 +787,9 @@
       "Continue": [
         "Fortfahren"
       ],
+      "Dark": [
+        "Dunkel"
+      ],
       "Disable ghost mode": [
         "Ghost-Modus deaktivieren"
       ],
@@ -804,6 +807,9 @@
       ],
       "I like this response": [
         "Mir gefällt diese Antwort"
+      ],
+      "Light": [
+        "Hell"
       ],
       "New chat": [
         "Neuer Chat"
@@ -950,6 +956,9 @@
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Melde dich an, um auf dein Konto zuzugreifen und weitere Funktionen freizuschalten. Hast du keins? ${ createLink }"
+      ],
+      "Switch between light and dark mode": [
+        "Wechseln Sie zwischen Hell- und Dunkelmodus"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1575,6 +1584,9 @@
       ],
       "Secure your spot": [
         "Sichere dir deinen Platz"
+      ],
+      "Theme": [
+        "Farbschema"
       ],
       "Upload files": [
         "Dateien hochladen"
@@ -5829,6 +5841,9 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } ist jetzt aktiv"
+      ],
+      "Account restricted": [
+        "Konto eingeschränkt"
       ],
       "Account temporarily locked": [
         "Konto vorübergehend gesperrt"
