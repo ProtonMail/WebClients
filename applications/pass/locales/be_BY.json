@@ -4,6 +4,368 @@
     "language": "be_BY"
   },
   "contexts": {
+    "": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } псеўданім",
+        "${ aliasCount } псеўданімы",
+        "${ aliasCount } псеўданімаў",
+        "${ aliasCount } псеўданімаў"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } блакіроўка",
+        "${ blockedCount } блакіроўкі",
+        "${ blockedCount } блакіровак",
+        "${ blockedCount } блакіровак"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } заблакіраваны",
+        "${ blockedEmailsCount } заблакіравана",
+        "${ blockedEmailsCount } заблакіравана",
+        "${ blockedEmailsCount } заблакіравана"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } сімвал",
+        "${ config.options.length } сімвалы",
+        "${ config.options.length } сімвалаў",
+        "${ config.options.length } сімвалаў"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } слова",
+        "${ config.options.wordCount } словы",
+        "${ config.options.wordCount } слоў",
+        "${ config.options.wordCount } слоў"
+      ],
+      "${ count } item": [
+        "${ count } элемент",
+        "${ count } элементы",
+        "${ count } элементаў",
+        "${ count } элементы"
+      ],
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } разы",
+        "${ count } разоў",
+        "${ count } разоў"
+      ],
+      "${ count } view": [
+        "${ count } прагляд",
+        "${ count } прагляды",
+        "${ count } праглядаў",
+        "${ count } праглядаў"
+      ],
+      "${ count }/${ maxReads } view": [
+        "Праглядаў: ${ count }/${ maxReads }",
+        "Праглядаў: ${ count }/${ maxReads }",
+        "Праглядаў: ${ count }/${ maxReads }",
+        "Праглядаў: ${ count }/${ maxReads }"
+      ],
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дзён"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } файл",
+        "${ filesCount } файлы",
+        "${ filesCount } файлаў",
+        "${ filesCount } файлаў"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } перасылка",
+        "${ forwardCount } перасылкі",
+        "${ forwardCount } перасылак",
+        "${ forwardCount } перасылак"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } перасланы",
+        "${ forwardedEmailsCount } пераслана",
+        "${ forwardedEmailsCount } пераслана",
+        "${ forwardedEmailsCount } пераслана"
+      ],
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзін"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } удзельнік",
+        "${ memberCount } удзельнікі",
+        "${ memberCount } удзельнікаў",
+        "${ memberCount } удзельнікаў"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвілін"
+      ],
+      "${ months } month": [
+        "${ months } месяц",
+        "${ months } месяцы",
+        "${ months } месяцаў",
+        "${ months } месяцаў"
+      ],
+      "${ n } item": [
+        "${ n } элемент",
+        "${ n } элементы",
+        "${ n } элементаў",
+        "${ n } элементаў"
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } запрашэнне паспяхова адпраўлена",
+        "${ payload.count } запрашэнні паспяхова адпраўлены",
+        "${ payload.count } запрашэнняў паспяхова адпраўлены",
+        "${ payload.count } запрашэнняў паспяхова адпраўлены"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } адказ",
+        "${ repliedCount } адказы",
+        "${ repliedCount } адказаў",
+        "${ repliedCount } адказаў"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } адпраўлены",
+        "${ repliedEmailsCount } адпраўлена",
+        "${ repliedEmailsCount } адпраўлена",
+        "${ repliedEmailsCount } адпраўлена"
+      ],
+      "${ row.breachCount } breach detected": [
+        "Выяўлена ${ row.breachCount } парушэнне",
+        "Выяўлена ${ row.breachCount } парушэнні",
+        "Выяўлена ${ row.breachCount } парушэнняў",
+        "Выяўлена ${ row.breachCount } парушэнняў"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } бяспечная спасылка",
+        "${ secureLinksCount } бяспечныя спасылкі",
+        "${ secureLinksCount } бяспечных спасылак",
+        "${ secureLinksCount } бяспечных спасылак"
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } запіс уваходу выкарыстоўвае такі ж самы пароль",
+        "${ total } запісы ўваходу выкарыстоўваюць такі ж самы пароль",
+        "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль",
+        "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } запіс уваходу",
+        "${ usageCount } запісы ўваходу",
+        "${ usageCount } запісаў уваходу",
+        "${ usageCount } запісаў уваходу"
+      ],
+      "${ years } year": [
+        "${ years } год",
+        "${ years } гады",
+        "${ years } гадоў",
+        "${ years } гадоў"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элемент у сметніцу?",
+        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элементы ў сметніцу?",
+        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элементаў у сметніцу?",
+        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элементаў у сметніцу?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элемент?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элементы?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элементаў?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элементаў?"
+      ],
+      "byte": [
+        "байт",
+        "байты",
+        "байтаў",
+        "байтаў"
+      ],
+      "Byte": [
+        "Байт",
+        "Байты",
+        "Байтаў",
+        "Байтаў"
+      ],
+      "Cannot send invitation at the moment": [
+        "У дадзены момант не ўдаецца адправіць запрашэнне",
+        "У дадзены момант не ўдаецца адправіць запрашэнні",
+        "У дадзены момант не ўдаецца адправіць запрашэнні",
+        "У дадзены момант не ўдаецца адправіць запрашэнні"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Выдаліць ${ deletedItemsCount } элемент?",
+        "Выдаліць ${ deletedItemsCount } элементы?",
+        "Выдаліць ${ deletedItemsCount } элементаў?",
+        "Выдаліць ${ deletedItemsCount } элементаў?"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Выяўлены ${ errors.length } пашкоджаны радок CSV",
+        "Выяўлены ${ errors.length } пашкоджаныя радкі CSV",
+        "Выяўлены ${ errors.length } пашкоджаных радкоў CSV",
+        "Выяўлены ${ errors.length } пашкоджаных радкоў CSV"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтага абагуленага сховішча",
+        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў",
+        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў",
+        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдня.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
+        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў."
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайты",
+        "Гігабайтаў",
+        "Гігабайтаў"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Абагулены элемент: ${ itemAccessCount } карыстальнік",
+        "Абагулены элемент: ${ itemAccessCount } карыстальнікі",
+        "Абагулены элемент: ${ itemAccessCount } карыстальнікаў",
+        "Абагулены элемент: ${ itemAccessCount } карыстальнікаў"
+      ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальніка.",
+        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікі.",
+        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікаў.",
+        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікаў."
+      ],
+      "Kilobyte": [
+        "Кілабайт",
+        "Кілабайты",
+        "Кілабайтаў",
+        "Кілабайтаў"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Максімальная даўжыня ${ maxLength } сімвал",
+        "Максімальная даўжыня ${ maxLength } сімвалы",
+        "Максімальная даўжыня ${ maxLength } сімвалаў",
+        "Максімальная даўжыня ${ maxLength } сімвалаў"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайты",
+        "Мегабайтаў",
+        "Мегабайтаў"
+      ],
+      "Move ${ count } item": [
+        "Перамясціць ${ count } элемент",
+        "Перамясціць ${ count } элементы",
+        "Перамясціць ${ count } элементаў",
+        "Перамясціць ${ count } элементаў"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Перамясціць ${ count } элемент у ${ vaultName }",
+        "Перамясціць ${ count } элементы ў ${ vaultName }",
+        "Перамясціць ${ count } элементаў у ${ vaultName }",
+        "Перамясціць ${ count } элементаў у ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Перамясціць ${ trashedItemsCount } элемент у сметніцу?",
+        "Перамясціць ${ trashedItemsCount } элементы ў сметніцу?",
+        "Перамясціць ${ trashedItemsCount } элементаў у сметніцу?",
+        "Перамясціць ${ trashedItemsCount } элементаў у сметніцу?"
+      ],
+      "Move item to": [
+        "Перамясціць элемент у",
+        "Перамясціць элементы ў",
+        "Перамясціць элементы ў",
+        "Перамясціць элементы ў"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдзень будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдні будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі.",
+        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі."
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Звярніце ўвагу, што псеўданім немагчыма аднавіць пасля яго выдалення.",
+        "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення.",
+        "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення.",
+        "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення."
+      ],
+      "Reused ${ count } time": [
+        "Паўторна выкарыстаны ${ count } раз",
+        "Паўторна выкарыстаны ${ count } разы",
+        "Паўторна выкарыстаны ${ count } разоў",
+        "Паўторна выкарыстаны ${ count } разоў"
+      ],
+      "Sync alias": [
+        "Сінхранізацыя псеўданіма",
+        "Сінхранізацыя псеўданімаў",
+        "Сінхранізацыя псеўданімаў",
+        "Сінхранізацыя псеўданімаў"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "Тэрабайтаў"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Не ўдалося імпартаваць наступны ${ totalIgnored } элемент:",
+        "Не ўдалося імпартаваць наступныя ${ totalIgnored } элементы:",
+        "Не ўдалося імпартаваць наступных ${ totalIgnored } элементаў:",
+        "Не ўдалося імпартаваць наступных ${ totalIgnored } элементаў:"
+      ],
+      "Understood, I will never need it": [
+        "Я ўсведамляю гэта. Ён мне больш не спатрэбіцца",
+        "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца",
+        "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца",
+        "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Абагуленае сховішча: ${ vaultMembersCount } удзельнік",
+        "Абагуленае сховішча: ${ vaultMembersCount } удзельнікі",
+        "Абагуленае сховішча: ${ vaultMembersCount } удзельнікаў",
+        "Абагуленае сховішча: ${ vaultMembersCount } удзельнікаў"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальніка.",
+        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікі.",
+        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікаў.",
+        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікаў."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданім, які прысутнічае ў SimpleLogin, але адсутнічае ў ${ PASS_APP_NAME }. Хочаце імпартаваць яго?",
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
+        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Вы можаце перацягнуць выбраны элемент у іншае сховішча",
+        "Вы можаце перацягнуць выбраныя элементы ў іншае сховішча",
+        "Вы можаце перацягнуць выбраныя элементы ў іншае сховішча",
+        "Вы можаце перацягнуць выбраныя элементы ў іншае сховішча"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "У вас ёсць ${ aliasCount } псеўданім, які прысутнічае ў SimpleLogin, але адсутнічае ў ${ PASS_APP_NAME }. Хочаце сінхранізаваць яго?",
+        "У вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?",
+        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?",
+        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "У вас застаўся ${ daysRemaining } дзень паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
+        "У вас засталося ${ daysRemaining } дні паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
+        "У вас засталося ${ daysRemaining } дзён паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
+        "У вас засталося ${ daysRemaining } дзён паспрабаваць гэтыя і іншыя прэміяльныя функцыі."
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданім.",
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
+        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Выяўлены ${ name } і ${ remainingCount } іншыя(х) патэнцыяльныя(х) ўцечкі(ак). Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
@@ -252,6 +614,12 @@
       ],
       "Dismiss": [
         "Адхіліць"
+      ],
+      "Do not show again": [
+        "Больш не паказваць"
+      ],
+      "Do not show again when I press": [
+        "Не паказваць зноў, калі я націскаю"
       ],
       "Download this CSV template": [
         "Спампаваць гэты шаблон CSV"
@@ -610,12 +978,6 @@
       "Submitting report...": [
         "Адпраўка справаздачы..."
       ],
-      "Sync alias": [
-        "Сінхранізацыя псеўданіма",
-        "Сінхранізацыя псеўданімаў",
-        "Сінхранізацыя псеўданімаў",
-        "Сінхранізацыя псеўданімаў"
-      ],
       "Sync aliases": [
         "Сінхранізаваць псеўданімы"
       ],
@@ -642,12 +1004,6 @@
       ],
       "Unblock contact": [
         "Разблакіраваць кантакт"
-      ],
-      "Understood, I will never need it": [
-        "Я ўсведамляю гэта. Ён мне больш не спатрэбіцца",
-        "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца",
-        "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца",
-        "Я ўсведамляю гэта. Яны мне больш не спатрэбяцца"
       ],
       "Unlock": [
         "Разблакіраваць"
@@ -722,12 +1078,6 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } даступны з платным тарыфным планам. Палепшыце для неадкладнага доступу."
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } запіс уваходу выкарыстоўвае такі ж самы пароль",
-        "${ total } запісы ўваходу выкарыстоўваюць такі ж самы пароль",
-        "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль",
-        "${ total } запісаў уваходу выкарыстоўваюць такі ж самы пароль"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2ФА дадае яшчэ адзін слой бяспекі вашым запісам уваходу. ${ PASS_APP_NAME } робіць 2ФА больш простым захоўваючы і аўтаматычна запаўняючы вашы коды 2ФА."
@@ -856,12 +1206,6 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш другі пароль, каб працягнуць экспартаванне"
       ],
-      "Cannot send invitation at the moment": [
-        "У дадзены момант не ўдаецца адправіць запрашэнне",
-        "У дадзены момант не ўдаецца адправіць запрашэнні",
-        "У дадзены момант не ўдаецца адправіць запрашэнні",
-        "У дадзены момант не ўдаецца адправіць запрашэнні"
-      ],
       "Cannot send invitations at the moment": [
         "У дадзены момант не ўдаецца адправіць запрашэнні"
       ],
@@ -909,12 +1253,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Збой выдалення сховішча \"${ payload.content.name }\""
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Выяўлены ${ errors.length } пашкоджаны радок CSV",
-        "Выяўлены ${ errors.length } пашкоджаныя радкі CSV",
-        "Выяўлены ${ errors.length } пашкоджаных радкоў CSV",
-        "Выяўлены ${ errors.length } пашкоджаных радкоў CSV"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Не ўдалося праверыць дамен. Пераканайцеся, што ў вас правільна дададзены запісы DNS"
@@ -1258,12 +1596,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "байт",
-        "байты",
-        "байтаў",
-        "байтаў"
-      ],
       "GB": [
         "ГБ"
       ],
@@ -1275,38 +1607,6 @@
       ],
       "TB": [
         "ТБ"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Байт",
-        "Байты",
-        "Байтаў",
-        "Байтаў"
-      ],
-      "Gigabyte": [
-        "Гігабайт",
-        "Гігабайты",
-        "Гігабайтаў",
-        "Гігабайтаў"
-      ],
-      "Kilobyte": [
-        "Кілабайт",
-        "Кілабайты",
-        "Кілабайтаў",
-        "Кілабайтаў"
-      ],
-      "Megabyte": [
-        "Мегабайт",
-        "Мегабайты",
-        "Мегабайтаў",
-        "Мегабайтаў"
-      ],
-      "Terabyte": [
-        "тэрабайт",
-        "тэрабайты",
-        "тэрабайтаў",
-        "Тэрабайтаў"
       ]
     },
     "Header": {
@@ -1327,50 +1627,8 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "Абнаўленне \"${ payload.itemName }\" было адхілена"
       ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } заблакіраваны",
-        "${ blockedEmailsCount } заблакіравана",
-        "${ blockedEmailsCount } заблакіравана",
-        "${ blockedEmailsCount } заблакіравана"
-      ],
-      "${ count } time": [
-        "${ count } раз",
-        "${ count } разы",
-        "${ count } разоў",
-        "${ count } разоў"
-      ],
-      "${ count } view": [
-        "${ count } прагляд",
-        "${ count } прагляды",
-        "${ count } праглядаў",
-        "${ count } праглядаў"
-      ],
-      "${ count }/${ maxReads } view": [
-        "Праглядаў: ${ count }/${ maxReads }",
-        "Праглядаў: ${ count }/${ maxReads }",
-        "Праглядаў: ${ count }/${ maxReads }",
-        "Праглядаў: ${ count }/${ maxReads }"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } перасланы",
-        "${ forwardedEmailsCount } пераслана",
-        "${ forwardedEmailsCount } пераслана",
-        "${ forwardedEmailsCount } пераслана"
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } хоча абагуліць элемент з вамі."
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } удзельнік",
-        "${ memberCount } удзельнікі",
-        "${ memberCount } удзельнікаў",
-        "${ memberCount } удзельнікаў"
-      ],
-      "${ n } item": [
-        "${ n } элемент",
-        "${ n } элементы",
-        "${ n } элементаў",
-        "${ n } элементаў"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } заўсёды будзе даступны"
@@ -1390,29 +1648,11 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } будзе патрабаваць ваш пароль ${ BRAND_NAME } для доступу да даных па-за сеткай."
       ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } запрашэнне паспяхова адпраўлена",
-        "${ payload.count } запрашэнні паспяхова адпраўлены",
-        "${ payload.count } запрашэнняў паспяхова адпраўлены",
-        "${ payload.count } запрашэнняў паспяхова адпраўлены"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } паспяхова адключана"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } паспяхова ўключана"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } адпраўлены",
-        "${ repliedEmailsCount } адпраўлена",
-        "${ repliedEmailsCount } адпраўлена",
-        "${ repliedEmailsCount } адпраўлена"
-      ],
-      "${ row.breachCount } breach detected": [
-        "Выяўлена ${ row.breachCount } парушэнне",
-        "Выяўлена ${ row.breachCount } парушэнні",
-        "Выяўлена ${ row.breachCount } парушэнняў",
-        "Выяўлена ${ row.breachCount } парушэнняў"
       ],
       "(Empty)": [
         "(пуста)"
@@ -1723,23 +1963,11 @@
       "For security reasons, this action requires identity verification.": [
         "Гэта дзеянне патрабуе праверкі ідэнтычнасці ў мэтах бяспекі."
       ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтага абагуленага сховішча",
-        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў",
-        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў",
-        "У мэтах бяспекі вам неабходна пацвердзіць доступ да гэтых абагуленых сховішчаў"
-      ],
       "For security reasons, your access needs to be confirmed": [
         "У мэтах бяспекі вам неабходна пацвердзіць свой доступ"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Адрас перасылкі скапіяваны ў буфер абмену. Адпраўце ліст на гэты адрас і ${ Email } атрымае яго."
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдня.",
-        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
-        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў.",
-        "Згенерыраваныя паролі будуць захоўвацца на працягу ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Атрымайце максімум пераваг ад Pass, стварыўшы сховішча для кожнай каманды або праекта."
@@ -1819,12 +2047,6 @@
       "Item restored": [
         "Элемент адноўлены"
       ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Абагулены элемент: ${ itemAccessCount } карыстальнік",
-        "Абагулены элемент: ${ itemAccessCount } карыстальнікі",
-        "Абагулены элемент: ${ itemAccessCount } карыстальнікаў",
-        "Абагулены элемент: ${ itemAccessCount } карыстальнікаў"
-      ],
       "Item successfully excluded from monitoring": [
         "Элемент паспяхова выключаны з назірання"
       ],
@@ -1884,12 +2106,6 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны на падставе тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
-      ],
-      "Move ${ count } item": [
-        "Перамясціць ${ count } элемент",
-        "Перамясціць ${ count } элементы",
-        "Перамясціць ${ count } элементаў",
-        "Перамясціць ${ count } элементаў"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
@@ -1956,12 +2172,6 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Пароль блакіроўкі паспяхова зарэгістраваны. Вы можаце выкарыстоўваць яго, каб разблакіраваць ${ PASS_APP_NAME }"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдзень будуць аўтаматычна выдаляцца з гісторыі.",
-        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдні будуць аўтаматычна выдаляцца з гісторыі.",
-        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі.",
-        "Паролі старэйшыя за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тыдняў будуць аўтаматычна выдаляцца з гісторыі."
       ],
       "Paused": [
         "Прыпынена"
@@ -2097,6 +2307,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Пакіньце гэта акно адкрытым падчас імпартавання даных. Гэты працэс можа заняць некалькі хвілін."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Калі ласка, пераканайцеся, што раней актыўнае акно з'яўляецца тым, куды вы хочаце ўвесці дадзеныя аўтаматычна, і ваш курсор быў сфакусаваны на полі ўваходу."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Звярніце ўвагу, што выдалены псеўданім нельга аднавіць. Магчыма, што вы захочаце адключыць яго замест таго, каб выдаляць незваротна?"
@@ -2251,12 +2464,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Для выкарыстання ${ PASS_APP_NAME } спатрэбіцца дадатковы пароль. Ён дзейнічае як дадатковы пароль паверх вашага пароля ${ BRAND_NAME }."
       ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Не ўдалося імпартаваць наступны ${ totalIgnored } элемент:",
-        "Не ўдалося імпартаваць наступныя ${ totalIgnored } элементы:",
-        "Не ўдалося імпартаваць наступных ${ totalIgnored } элементаў:",
-        "Не ўдалося імпартаваць наступных ${ totalIgnored } элементаў:"
-      ],
       "The secure link has been removed": [
         "Бяспечная спасылка выдалена"
       ],
@@ -2386,12 +2593,6 @@
       "Vault organization successfully updated": [
         "Арганізацыя сховішча паспяхова абноўлена"
       ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Абагуленае сховішча: ${ vaultMembersCount } удзельнік",
-        "Абагуленае сховішча: ${ vaultMembersCount } удзельнікі",
-        "Абагуленае сховішча: ${ vaultMembersCount } удзельнікаў",
-        "Абагуленае сховішча: ${ vaultMembersCount } удзельнікаў"
-      ],
       "Verification code sent.": [
         "Код спраўджання."
       ],
@@ -2400,12 +2601,6 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Узніклі праблемы сінхранізацыі даных з вашым лакальным сховішчам. Пераканайцеся, што ў вас дастаткова месца на дыску для бесперабойнай працы ${ PASS_SHORT_APP_NAME }."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданім, які прысутнічае ў SimpleLogin, але адсутнічае ў ${ PASS_APP_NAME }. Хочаце імпартаваць яго?",
-        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
-        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?",
-        "Сістэма выявіла, што ў вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце імпартаваць іх?"
       ],
       "Week": [
         "Тыдзень"
@@ -2431,18 +2626,6 @@
       "You cannot change the mailboxes for this alias.": [
         "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "У вас ёсць ${ aliasCount } псеўданім, які прысутнічае ў SimpleLogin, але адсутнічае ў ${ PASS_APP_NAME }. Хочаце сінхранізаваць яго?",
-        "У вас ёсць ${ aliasCount } псеўданімы, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?",
-        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?",
-        "У вас ёсць ${ aliasCount } псеўданімаў, якія прысутнічаюць у SimpleLogin, але адсутнічаюць у ${ PASS_APP_NAME }. Хочаце сінхранізаваць іх?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "У вас застаўся ${ daysRemaining } дзень паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
-        "У вас засталося ${ daysRemaining } дні паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
-        "У вас засталося ${ daysRemaining } дзён паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
-        "У вас засталося ${ daysRemaining } дзён паспрабаваць гэтыя і іншыя прэміяльныя функцыі."
-      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Вы перавысілі колькасць сховішчаў, якія ўключаны ў вашу падпіску. Элементы можна перамяшчаць толькі ў першыя два вашы сховішчы. Неабходна палепшыць падпіску, каб перамяшчаць элементы паміж усімі вашымі сховішчамі."
       ],
@@ -2463,6 +2646,12 @@
       ],
       "You may close this tab.": [
         "Вы можаце закрыць гэту ўкладку."
+      ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Вам можа спатрэбіцца прыняць запыт на дазвол і, магчыма, перазапусціць праграму ў залежнасці ад вашай сістэмы."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Магчыма, вам спатрэбіцца даць дазвол на даступнасць для ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Вам неабходна сховішча з правамі рэдагавання перад тым, як імпартаваць элементы."
@@ -2510,96 +2699,17 @@
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
       ]
     },
+    "Keyboard key": {
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } псеўданім",
-        "${ aliasCount } псеўданімы",
-        "${ aliasCount } псеўданімаў",
-        "${ aliasCount } псеўданімаў"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } блакіроўка",
-        "${ blockedCount } блакіроўкі",
-        "${ blockedCount } блакіровак",
-        "${ blockedCount } блакіровак"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } сімвал",
-        "${ config.options.length } сімвалы",
-        "${ config.options.length } сімвалаў",
-        "${ config.options.length } сімвалаў"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } слова",
-        "${ config.options.wordCount } словы",
-        "${ config.options.wordCount } слоў",
-        "${ config.options.wordCount } слоў"
-      ],
-      "${ count } item": [
-        "${ count } элемент",
-        "${ count } элементы",
-        "${ count } элементаў",
-        "${ count } элементы"
-      ],
-      "${ days } day": [
-        "${ days } дзень",
-        "${ days } дні",
-        "${ days } дзён",
-        "${ days } дзён"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } перасылка",
-        "${ forwardCount } перасылкі",
-        "${ forwardCount } перасылак",
-        "${ forwardCount } перасылак"
-      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } за апошнія 14 дзён."
       ],
-      "${ hours } hour": [
-        "${ hours } гадзіна",
-        "${ hours } гадзіны",
-        "${ hours } гадзін",
-        "${ hours } гадзін"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } хвіліна",
-        "${ minutes } хвіліны",
-        "${ minutes } хвілін",
-        "${ minutes } хвілін"
-      ],
-      "${ months } month": [
-        "${ months } месяц",
-        "${ months } месяцы",
-        "${ months } месяцаў",
-        "${ months } месяцаў"
-      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версія ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } адказ",
-        "${ repliedCount } адказы",
-        "${ repliedCount } адказаў",
-        "${ repliedCount } адказаў"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } бяспечная спасылка",
-        "${ secureLinksCount } бяспечныя спасылкі",
-        "${ secureLinksCount } бяспечных спасылак",
-        "${ secureLinksCount } бяспечных спасылак"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } запіс уваходу",
-        "${ usageCount } запісы ўваходу",
-        "${ usageCount } запісаў уваходу",
-        "${ usageCount } запісаў уваходу"
-      ],
-      "${ years } year": [
-        "${ years } год",
-        "${ years } гады",
-        "${ years } гадоў",
-        "${ years } гадоў"
       ],
       "1 hour": [
         "1 гадзіна"
@@ -3213,9 +3323,6 @@
       "Network": [
         "Сетка"
       ],
-      "New": [
-        "Новае"
-      ],
       "New email": [
         "Новы ліст"
       ],
@@ -3725,18 +3832,6 @@
       ]
     },
     "Message": {
-      "${ count } item": [
-        "${ count } элемент",
-        "${ count } элементы",
-        "${ count } элементаў",
-        "${ count } элементаў"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Вы можаце перацягнуць выбраны элемент у іншае сховішча",
-        "Вы можаце перацягнуць выбраныя элементы ў іншае сховішча",
-        "Вы можаце перацягнуць выбраныя элементы ў іншае сховішча",
-        "Вы можаце перацягнуць выбраныя элементы ў іншае сховішча"
-      ],
       "You selected ${ semiboldText } in this vault.": [
         "Вы выбралі ${ semiboldText } у гэтым сховішчы."
       ]
@@ -3795,12 +3890,6 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "Файл з назвай \"${ filename }\" занадта вялікі для запампоўвання. Максімальна дазволены памер (${ maxFileSizeInMB })"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } файл",
-        "${ filesCount } файлы",
-        "${ filesCount } файлаў",
-        "${ filesCount } файлаў"
       ],
       "Attachments": [
         "Далучэнні"
@@ -4129,12 +4218,6 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Дамен паспяхова правераны. Цяпер ваш дамен можа прымаць лісты і ствараць псеўданімы"
       ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальніка.",
-        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікі.",
-        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікаў.",
-        "Элементы не могуць змяшчаць больш за ${ share.targetMaxMembers } карыстальнікаў."
-      ],
       "Mailbox change successfully cancelled": [
         "Змяненні паштовай скрыні паспяхова скасаваны"
       ],
@@ -4152,12 +4235,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Адвольная генерацыя прэфіксу паспяхова ўключана"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальніка.",
-        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікі.",
-        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікаў.",
-        "Сховішчы не могуць змяшчаць больш за ${ targetMaxMembers } карыстальнікаў."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Ліст са спраўджаннем адпраўлены. Праверце папку з уваходнымі лістамі, каб спраўдзіць сваю паштовую скрыню."
@@ -4276,12 +4353,6 @@
       ],
       "Default Display Name": [
         "Прадвызначанае бачнае імя"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Выдаліць ${ deletedItemsCount } элемент?",
-        "Выдаліць ${ deletedItemsCount } элементы?",
-        "Выдаліць ${ deletedItemsCount } элементаў?",
-        "Выдаліць ${ deletedItemsCount } элементаў?"
       ],
       "Delete domain": [
         "Выдаліць дамен"
@@ -4415,18 +4486,6 @@
       "Modified": [
         "Зменена"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Перамясціць ${ count } элемент у ${ vaultName }",
-        "Перамясціць ${ count } элементы ў ${ vaultName }",
-        "Перамясціць ${ count } элементаў у ${ vaultName }",
-        "Перамясціць ${ count } элементаў у ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Перамясціць ${ trashedItemsCount } элемент у сметніцу?",
-        "Перамясціць ${ trashedItemsCount } элементы ў сметніцу?",
-        "Перамясціць ${ trashedItemsCount } элементаў у сметніцу?",
-        "Перамясціць ${ trashedItemsCount } элементаў у сметніцу?"
-      ],
       "Move all items to \"${ vaultName }\"?": [
         "Перамясціць усе элементы ў \"${ vaultName }\"?"
       ],
@@ -4487,17 +4546,14 @@
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
       ],
+      "Perform autotype?": [
+        "Выканаць аўтаўвод?"
+      ],
       "Permanently remove all items?": [
         "Незваротна выдаліць усе элементы?"
       ],
       "Pinned (${ items.length })": [
         "Замацавана (${ items.length })"
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Звярніце ўвагу, што псеўданім немагчыма аднавіць пасля яго выдалення.",
-        "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення.",
-        "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення.",
-        "Звярніце ўвагу, што псеўданімы немагчыма аднавіць пасля іх выдалення."
       ],
       "Previous": [
         "Папярэдні"
@@ -4531,12 +4587,6 @@
       ],
       "Resume monitoring?": [
         "Узнавіць назіранне?"
-      ],
-      "Reused ${ count } time": [
-        "Паўторна выкарыстаны ${ count } раз",
-        "Паўторна выкарыстаны ${ count } разы",
-        "Паўторна выкарыстаны ${ count } разоў",
-        "Паўторна выкарыстаны ${ count } разоў"
       ],
       "Reused passwords": [
         "Паўторна выкарыстаныя паролі"
@@ -4654,12 +4704,6 @@
       ],
       "Your welcome gift": [
         "Ваш прывітальны падарунак"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданім.",
-        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
-        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
-        "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
       ]
     },
     "Title_cloned_item": {
@@ -4706,14 +4750,6 @@
         "Памылковы URL-адрас."
       ]
     },
-    "Vault Select": {
-      "Move item to": [
-        "Перамясціць элемент у",
-        "Перамясціць элементы ў",
-        "Перамясціць элементы ў",
-        "Перамясціць элементы ў"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Патрабуецца ўвесці пароль ${ BRAND_NAME }"
@@ -4738,18 +4774,6 @@
       ],
       "An error occurred while importing your data.": [
         "Адбылася памылка пры імпартаванні вашых даных."
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элемент у сметніцу?",
-        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элементы ў сметніцу?",
-        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элементаў у сметніцу?",
-        "Вы сапраўды хочаце перамясціць ${ trashedItemsCount } элементаў у сметніцу?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элемент?",
-        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элементы?",
-        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элементаў?",
-        "Вы сапраўды хочаце незваротна выдаліць ${ deletedItemsCount } элементаў?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Вы сапраўды хочаце незваротна выдаліць гэты элемент?"
@@ -4811,6 +4835,9 @@
       "Extra password should have at least 8 characters": [
         "Дадатковы пароль павінен мець прынамсі 8 сімвалаў"
       ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Не ўдалося аўтаматычна ўвесці тэкст. Пераканайцеся, што ${ PASS_APP_NAME } мае неабходныя дазволы, і паспрабуйце яшчэ раз (${ error })."
+      ],
       "Failed to load breaches.": [
         "Не ўдалося загрузіць парушэнні."
       ],
@@ -4831,12 +4858,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Запрашэнне адрасоў электроннай пошты па-за межамі арганізацыі забаронена."
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Максімальная даўжыня ${ maxLength } сімвал",
-        "Максімальная даўжыня ${ maxLength } сімвалы",
-        "Максімальная даўжыня ${ maxLength } сімвалаў",
-        "Максімальная даўжыня ${ maxLength } сімвалаў"
       ],
       "Missing alias prefix": [
         "Прапушчаны прэфікс псеўданіма"

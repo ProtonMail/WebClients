@@ -4,6 +4,1274 @@
     "language": "ru_RU"
   },
   "contexts": {
+    "": {
+      "${ admins } admin": [
+        "${ admins } администратор",
+        "${ admins } администратора",
+        "${ admins } администраторов",
+        "${ admins } администраторов"
+      ],
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } пользователь в настоящее время имеет доступ к общим серверам.",
+        "${ amountUsers }/${ totalUsers } пользователя в настоящее время имеют доступ к общим серверам.",
+        "${ amountUsers }/${ totalUsers } пользователей в настоящее время имеют доступ к общим серверам.",
+        "${ amountUsers }/${ totalUsers } пользователей в настоящее время имеют доступ к общим серверам."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователя",
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей",
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей",
+        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } новый календарь",
+        "${ calendarsToBeCreatedCount } новых календаря",
+        "${ calendarsToBeCreatedCount } новых календарей",
+        "${ calendarsToBeCreatedCount } новых календарей"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } объединённый календарь",
+        "${ calendarsToBeMergedCount } объединённых календаря",
+        "${ calendarsToBeMergedCount } объединённых календарей",
+        "${ calendarsToBeMergedCount } объединённых календарей"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } день",
+        "${ ceilDays } дня",
+        "${ ceilDays } дней",
+        "${ ceilDays } дней"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } час",
+        "${ ceilHours } часа",
+        "${ ceilHours } часов",
+        "${ ceilHours } часов"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } минута",
+        "${ ceilMinutes } минуты",
+        "${ ceilMinutes } минут",
+        "${ ceilMinutes } минут"
+      ],
+      "${ countriesCount } country enabled": [
+        "Включена ${ countriesCount } страна",
+        "Включены ${ countriesCount } страны",
+        "Включены ${ countriesCount } стран",
+        "Включены ${ countriesCount } стран"
+      ],
+      "${ cycle } month": [
+        "${ cycle } месяц",
+        "${ cycle } месяца",
+        "${ cycle } месяцев",
+        "${ cycle } месяцев"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } день остался",
+        "${ dayDiff } дня осталось",
+        "${ dayDiff } дней осталось",
+        "${ dayDiff } дней осталось"
+      ],
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дней"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } дополнительный пользовательский домен",
+        "${ domains } дополнительных пользовательских домена",
+        "${ domains } дополнительных пользовательских доменов",
+        "${ domains } дополнительных пользовательских доменов"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } час",
+        "${ gracePeriodHoursRemaining } часа",
+        "${ gracePeriodHoursRemaining } часов",
+        "${ gracePeriodHoursRemaining } часов"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "ещё ${ gracePeriodHoursRemaining } час",
+        "ещё ${ gracePeriodHoursRemaining } часа",
+        "ещё ${ gracePeriodHoursRemaining } часов",
+        "ещё ${ gracePeriodHoursRemaining } часов"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } пользователь",
+        "${ group.UserCount } пользователя",
+        "${ group.UserCount } пользователей",
+        "${ group.UserCount } пользователей"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член вашей семьи используют двухфакторную аутентификацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена вашей семьи используют двухфакторную аутентификацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей семьи используют двухфакторную аутентификацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей семьи используют двухфакторную аутентификацию."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член вашей организации используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена вашей организации используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации используют двухфакторную аутентификацию для входа в вашу организацию."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию."
+      ],
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
+      ],
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } выделенный сервер",
+        "${ ipAddresses } выделенных сервера",
+        "${ ipAddresses } выделенных серверов",
+        "${ ipAddresses } выделенных серверов"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } сервера",
+        "${ ips } серверов",
+        "${ ips } серверов"
+      ],
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } подключение к VPN",
+        "${ MaxVPN } подключения к VPN",
+        "${ MaxVPN } подключений к VPN",
+        "${ MaxVPN } подключений к VPN"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } участник",
+        "${ memberCount } участника",
+        "${ memberCount } участников",
+        "${ memberCount } участников"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минут"
+      ],
+      "${ months } month plan": [
+        "Тариф на ${ months } месяц",
+        "Тариф на ${ months } месяца",
+        "Тариф на ${ months } месяцев",
+        "Тариф на ${ months } месяцев"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "адрес электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }",
+        "адреса электронной почты ${ n } ${ BRAND_NAME }"
+      ],
+      "${ n } account per wallet": [
+        "${ n } счёт на один кошелёк",
+        "${ n } счёта на один кошелёк",
+        "${ n } счетов на один кошелёк",
+        "${ n } счетов на один кошелёк"
+      ],
+      "${ n } address": [
+        "${ n } адрес",
+        "${ n } адреса",
+        "${ n } адресов",
+        "${ n } адресов"
+      ],
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } администратору в вашей организации необходим доступ к ключу организации.",
+        "${ n } администраторам в вашей организации необходим доступ к ключу организации.",
+        "${ n } администраторам в вашей организации необходим доступ к ключу организации.",
+        "${ n } администраторам в вашей организации необходим доступ к ключу организации."
+      ],
+      "${ n } calendar": [
+        "${ n } календарь",
+        "${ n } календаря",
+        "${ n } календарей",
+        "${ n } календарей"
+      ],
+      "${ n } calendar per user": [
+        "${ n } календарь на пользователя",
+        "${ n } календаря на пользователя",
+        "${ n } календаря на пользователя",
+        "${ n } календарей на пользователя"
+      ],
+      "${ n } custom email domain": [
+        "${ n } пользовательский домен электронной почты",
+        "${ n } пользовательских домена электронной почты",
+        "${ n } пользовательских доменов электронной почты",
+        "Пользовательских доменов электронной почты: ${ n }"
+      ],
+      "${ n } day": [
+        "${ n } день",
+        "${ n } дня",
+        "${ n } дней",
+        "${ n } дней"
+      ],
+      "${ n } device": [
+        "${ n } устройство",
+        "${ n } устройства",
+        "${ n } устройств",
+        "${ n } устройств"
+      ],
+      "${ n } email address": [
+        "${ n } адрес электронной почты",
+        "${ n } адреса электронной почты/псевдонима",
+        "${ n } адресов электронной почты/псевдонимов",
+        "${ n } адресов электронной почты/псевдонимов"
+      ],
+      "${ n } email address per user": [
+        "${ n } адрес электронной почты на пользователя",
+        "${ n } адреса электронной почты на пользователя",
+        "${ n } адресов электронной почты на пользователя",
+        "Адресов электронной почты на пользователя: ${ n }"
+      ],
+      "${ n } folder": [
+        "${ n } папка",
+        "${ n } папки",
+        "${ n } папок",
+        "папки: ${ n }"
+      ],
+      "${ n } folder and label": [
+        "${ n } папка и ярлык",
+        "${ n } папки и ярлыка",
+        "${ n } папок и ярлыков",
+        "Папок и ярлыков: ${ n }"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } бесплатное подключение к VPN для одного пользователя",
+        "${ n } бесплатных подключения к VPN для одного пользователя",
+        "${ n } бесплатных подключений к VPN для одного пользователя",
+        "${ n } бесплатных подключений к VPN для одного пользователя"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } псевдоним hide-my-email",
+        "${ n } псевдонима hide-my-email",
+        "${ n } псевдонимов hide-my-email",
+        "${ n } псевдонимов hide-my-email"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } высокоскоростное подключение к VPN",
+        "${ n } высокоскоростных подключения к VPN",
+        "${ n } высокоскоростных подключений к VPN",
+        "${ n } высокоскоростных подключений к VPN"
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } участник запросил вашу помощь для входа.",
+        "${ n } участника запросили вашу помощь для входа.",
+        "${ n } участников запросили вашу помощь для входа.",
+        "${ n } участников запросили вашу помощь для входа."
+      ],
+      "${ n } message per day": [
+        "${ n } сообщение в день",
+        "${ n } сообщения в день",
+        "${ n } сообщений в день",
+        "Сообщений в день: ${ n }"
+      ],
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
+      ],
+      "${ n } month FREE": [
+        "${ n } месяц БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО",
+        "${ n } БЕСПЛАТНЫХ месяца"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } общее хранилище ${ PASS_SHORT_APP_NAME } для каждого пользователя",
+        "${ n } общих хранилища ${ PASS_SHORT_APP_NAME } для каждого пользователя",
+        "${ n } общих хранилищ ${ PASS_SHORT_APP_NAME } для каждого пользователя",
+        "${ n } общих хранилищ ${ PASS_SHORT_APP_NAME } для каждого пользователя"
+      ],
+      "${ n } user account": [
+        "${ n } аккаунт пользователя",
+        "${ n } аккаунта пользователя",
+        "${ n } аккаунтов пользователя",
+        "${ n } аккаунтов пользователя"
+      ],
+      "${ n } user converted to SSO": [
+        "${ n } пользователь преобразован в SSO",
+        "${ n } пользователя преобразовано в SSO",
+        "${ n } пользователей преобразовано в SSO",
+        "${ n } пользователя преобразовано в SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } пользователь отсоединён от SSO",
+        "${ n } пользователя отсоединёно от SSO",
+        "${ n } пользователей отсоединёно от SSO",
+        "${ n } пользователя отсоединёно от SSO"
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } пользователь присоединился к вашей организации через поставщика личных данных. Проверьте этот аккаунт сейчас:",
+        "${ n } пользователя присоединились к вашей организации через поставщика личных данных. Проверьте их аккаунты сейчас:",
+        "${ n } пользователей присоединились к вашей организации через поставщика личных данных. Проверьте их аккаунты сейчас:",
+        "${ n } пользователя присоединились к вашей организации через поставщика личных данных. Проверьте их аккаунты сейчас:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } пользователь неактивен. Вы можете безопасно удалить этого пользователя из вашей организации.",
+        "${ n } пользователя неактивны. Вы можете безопасно удалить их из вашей организации.",
+        "${ n } пользователей неактивны. Вы можете безопасно удалить их из вашей организации.",
+        "${ n } пользователя неактивны. Вы можете безопасно удалить их из вашей организации."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } пользователь просит вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом.",
+        "${ n } пользователя просят вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом.",
+        "${ n } пользователей просят вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом.",
+        "${ n } пользователей просят вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом."
+      ],
+      "${ n } vault": [
+        "${ n } хранилище",
+        "${ n } хранилища",
+        "${ n } хранилища",
+        "${ n } хранилищ"
+      ],
+      "${ n } VPN connection": [
+        "${ n } подключение к VPN",
+        "${ n } подключения к VPN",
+        "${ n } подключений к VPN",
+        "${ n } подключений к VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } подключение к VPN на пользователя",
+        "${ n } подключения к VPN на пользователя",
+        "${ n } подключений к VPN на пользователя",
+        "${ n } подключений к VPN на пользователя"
+      ],
+      "${ n } wallet": [
+        "${ n } кошелёк",
+        "${ n } кошелька",
+        "${ n } кошельков",
+        "${ n } кошельков"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } года",
+        "${ n } лет",
+        "${ n } лет"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } день",
+        "${ nbDay } дня",
+        "${ nbDay } дней",
+        "${ nbDay } дней"
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов"
+      ],
+      "${ number } city": [
+        "${ number } город",
+        "${ number } города",
+        "${ number } городов",
+        "${ number } городов"
+      ],
+      "${ number } server": [
+        "${ number } сервер",
+        "${ number } сервера",
+        "${ number } серверов",
+        "${ number } серверов"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } страна",
+        "${ numberOfCountries } страны",
+        "${ numberOfCountries } стран",
+        "${ numberOfCountries } стран"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } в ${ numberOfCountries } стране",
+        "${ numberOfServers } в ${ numberOfCountries } странах",
+        "${ numberOfServers } в ${ numberOfCountries } странах",
+        "${ numberOfServers } в ${ numberOfCountries } странах"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } пользователь",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей",
+        "До ${ numberOfUsers } пользователей"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла",
+        "${ options }-дневный журнал версий файла"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } с ${ n } псевдонимом hide-my-email",
+        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email",
+        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email",
+        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Срок действия ${ planName } истекает через ${ daysLeft } день.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дня.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дней.",
+        "Срок действия ${ planName } истекает через ${ daysLeft } дней."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } календарь на пользователя",
+        "${ planNumberOfCalendars } календаря на пользователя",
+        "${ planNumberOfCalendars } календарей на пользователя",
+        "${ planNumberOfCalendars } календарей на пользователя"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } пользовательский домен электронной почты",
+        "${ planNumberOfDomains } пользовательских домена электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты",
+        "${ planNumberOfDomains } пользовательских доменов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адрес электронной почты",
+        "${ planNumberOfEmails } адреса электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты",
+        "${ planNumberOfEmails } адресов электронной почты"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } адрес электронной почты на пользователя",
+        "${ planNumberOfEmails } адреса электронной почты на пользователя",
+        "${ planNumberOfEmails } адресов электронной почты на пользователя",
+        "${ planNumberOfEmails } адресов электронной почты на пользователя"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } пользователь",
+        "${ planNumberOfUsers } пользователя",
+        "${ planNumberOfUsers } пользователей",
+        "${ planNumberOfUsers } пользователей"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "Найдена ${ providerFoldersNumLocalized } папка",
+        "Найдены ${ providerFoldersNumLocalized } папки",
+        "Найдено ${ providerFoldersNumLocalized } папок",
+        "Найдено ${ providerFoldersNumLocalized } папок"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "В Gmail найден ${ providerFoldersNumLocalized } ярлык",
+        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыка",
+        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков",
+        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } сервер всё ещё настраивается. Обычно это занимает около ${ provisioningDuration }.",
+        "${ provisioningCounter } сервера всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }.",
+        "${ provisioningCounter } серверов всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }.",
+        "${ provisioningCounter } серверов всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "Ещё ${ remainingAddresses.length }",
+        "Ещё ${ remainingAddresses.length }",
+        "Ещё ${ remainingAddresses.length }",
+        "Ещё ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } дополнительный адрес",
+        "${ remainingAddresses.length } дополнительных адреса",
+        "${ remainingAddresses.length } дополнительных адресов",
+        "${ remainingAddresses.length } дополнительных адресов"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } место помощника по написанию",
+        "${ seats } места помощника по написанию",
+        "${ seats } мест помощника по написанию",
+        "${ seats } мест помощника по написанию"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
+      ],
+      "${ selectedCitiesCount } cities selected": [
+        "Выбран ${ selectedCitiesCount } город",
+        "Выбраны ${ selectedCitiesCount } города",
+        "Выбраны ${ selectedCitiesCount } городов",
+        "Выбраны ${ selectedCitiesCount } городов"
+      ],
+      "${ selectedCountriesCount } selected": [
+        "Выбрана ${ selectedCountriesCount }",
+        "Выбраны ${ selectedCountriesCount }",
+        "Выбраны ${ selectedCountriesCount }",
+        "Выбраны ${ selectedCountriesCount }"
+      ],
+      "${ selectedEntities.length } selected": [
+        "Выбран ${ selectedEntities.length }",
+        "Выбраны ${ selectedEntities.length }",
+        "Выбраны ${ selectedEntities.length }",
+        "Выбраны ${ selectedEntities.length }"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } папка выбрана",
+        "${ selectedFoldersCount } папки выбрано",
+        "${ selectedFoldersCount } папок выбрано",
+        "${ selectedFoldersCount } папок выбрано"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } ярлык выбран",
+        "${ selectedFoldersCount } ярлыка выбрано",
+        "${ selectedFoldersCount } ярлыков выбрано",
+        "${ selectedFoldersCount } ярлыков выбрано"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Выбрана ${ selectedFoldersCountLocalized } папка",
+        "Выбрана ${ selectedFoldersCountLocalized } папки",
+        "Выбрано ${ selectedFoldersCountLocalized } папок",
+        "Выбрано ${ selectedFoldersCountLocalized } папок"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "Выбран ${ selectedFoldersCountLocalized } ярлык",
+        "Выбрано ${ selectedFoldersCountLocalized } ярлыка",
+        "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
+        "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } день",
+        "${ timeRemaining.inDays } дня",
+        "${ timeRemaining.inDays } дней",
+        "${ timeRemaining.inDays } дней"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } час",
+        "${ timeRemaining.inHours } часа",
+        "${ timeRemaining.inHours } часов",
+        "${ timeRemaining.inHours } часов"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } контакт",
+        "${ totalContacts } контакта",
+        "${ totalContacts } контактов",
+        "${ totalContacts } контакта"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } из ${ totalEvents } событие не будет импортировано. Разверните для получения подробной информации.",
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будет импортировано. Разверните для получения подробной информации.",
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будет импортировано. Разверните для получения подробной информации.",
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будет импортировано. Разверните для получения подробной информации."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } контакт зашифрован и добавлен в ваш список контактов",
+        "${ totalImported }/${ totalToImport } контакта зашифрованы и добавлены в ваш список контактов",
+        "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов",
+        "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } событие зашифровано и импортировано в ваш календарь",
+        "${ totalImported }/${ totalToImport } события зашифрованы и импортированы в ваш календарь",
+        "${ totalImported }/${ totalToImport } событий зашифровано и импортировано в ваш календарь",
+        "${ totalImported }/${ totalToImport } событий зашифрованы и импортированы в ваш календарь"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } адрес",
+        "${ UsedAddresses } адреса",
+        "${ UsedAddresses } адресов",
+        "${ UsedAddresses } адресов"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } из ${ MaxAddresses } адреса электронной почты",
+        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
+        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
+        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } календарь",
+        "${ UsedCalendars } календаря",
+        "${ UsedCalendars } календарей",
+        "${ UsedCalendars } календарей"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } из ${ MaxDomains } своего домена",
+        "${ UsedDomains } из ${ MaxDomains } своих доменов",
+        "${ UsedDomains } из ${ MaxDomains } своих доменов",
+        "${ UsedDomains } из ${ MaxDomains } своих доменов"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } из ${ MaxMembers } пользователя",
+        "${ UsedMembers } из ${ MaxMembers } пользователей",
+        "${ UsedMembers } из ${ MaxMembers } пользователей",
+        "${ UsedMembers } из ${ MaxMembers } пользователей"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } пользователь найден",
+        "${ userFound } пользователя найдено",
+        "${ userFound } пользователей найдено",
+        "${ userFound } пользователей найдено"
+      ],
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } участник)",
+        "(${ memberCount } участника)",
+        "(${ memberCount } участников)",
+        "(${ memberCount } участника)"
+      ],
+      "+ ${ invisibleCount } More": [
+        "Еще ${ invisibleCount }",
+        "Еще ${ invisibleCount }",
+        "Еще ${ invisibleCount }",
+        "Еще ${ invisibleCount }"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } подключение для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
+        "+${ organization.BonusVPN } подключения для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
+        "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
+        "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "Добавить ${ totalServerCount } сервер?",
+        "Добавить ${ totalServerCount } сервера?",
+        "Добавить ${ totalServerCount } серверов?",
+        "Добавить ${ totalServerCount } сервера?"
+      ],
+      "Add (${ totalAddedCount })": [
+        "Добавить (${ totalAddedCount })",
+        "Добавить (${ totalAddedCount })",
+        "Добавить (${ totalAddedCount })",
+        "Добавить (${ totalAddedCount })"
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Добавить сервер (доступен ${ availableAddedCount })",
+        "Добавить сервер (доступно ${ availableAddedCount })",
+        "Добавить сервер (доступно ${ availableAddedCount })",
+        "Добавить сервер (доступно ${ availableAddedCount })"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Добавление ${ addedServerCount } шлюзового сервера",
+        "Добавление ${ addedServerCount } шлюзовых серверов",
+        "Добавление ${ addedServerCount } шлюзовых серверов",
+        "Добавление ${ addedServerCount } шлюзовых серверов"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Добавление шлюзового сервера: ${ serverNumber } / ${ total }",
+        "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
+        "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
+        "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }"
+      ],
+      "Affected user is on row": [
+        "Затронутый пользователь находится на строке",
+        "Затронутые пользователи находятся на строках",
+        "Затронутые пользователи находятся на строках",
+        "Затронутые пользователи находятся на строках"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Всё (${ totalFoldersCount } папка)",
+        "Всё (${ totalFoldersCount } папки)",
+        "Всё (${ totalFoldersCount } папок)",
+        "Всё (${ totalFoldersCount } папок)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Всё (${ totalFoldersCount } ярлык)",
+        "Всё (${ totalFoldersCount } ярлыка)",
+        "Все (${ totalFoldersCount } ярлыков)",
+        "Всё (${ totalFoldersCount } ярлыков)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "При шифровании и добавлении события произошла ошибка. ${ totalImported } из ${ totalToImport } события было успешно импортировано.",
+        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
+        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
+        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы."
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Автоматически выбирается из ${ numberOfCountries } страны",
+        "Автоматически выбирается из ${ numberOfCountries } стран",
+        "Автоматически выбирается из ${ numberOfCountries } стран",
+        "Автоматически выбирается из ${ numberOfCountries } стран"
+      ],
+      "byte": [
+        "байт",
+        "байта",
+        "байтов",
+        "байтов"
+      ],
+      "Byte": [
+        "Байт",
+        "Байта",
+        "Байтов",
+        "Байтов"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Подключение до ${ plusVpnConnections } устройства",
+        "Подключение до ${ plusVpnConnections } устройств",
+        "Подключение до ${ plusVpnConnections } устройств",
+        "Подключение до ${ plusVpnConnections } устройств"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Не удалось автоматически включить доступ администратора для ${ n } пользователя, так как его ключи шифрования были обновлены в это время:",
+        "Не удалось автоматически включить доступ администратора для ${ n } пользователей, так как их ключи шифрования были обновлены в это время:",
+        "Не удалось автоматически включить доступ администратора для ${ n } пользователей, так как их ключи шифрования были обновлены в это время:",
+        "Не удалось автоматически включить доступ администратора для ${ n } пользователей, так как их ключи шифрования были обновлены в это время:"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Создать ${ calendarsToBeCreatedCount } новый календарь",
+        "Создать ${ calendarsToBeCreatedCount } новых календаря",
+        "Создать ${ calendarsToBeCreatedCount } новых календарей",
+        "Создать ${ calendarsToBeCreatedCount } новых календарей"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Создать ${ selectedUserIds.length } пользователя",
+        "Создать ${ selectedUserIds.length } пользователей",
+        "Создать ${ selectedUserIds.length } пользователей",
+        "Создать ${ selectedUserIds.length } пользователей"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участника",
+        "Создать безопасное облако для ${ value } участников",
+        "Создать безопасное облако для ${ value } участников"
+      ],
+      "Create up to ${ n } calendar": [
+        "Создайте до ${ n } календарей",
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей",
+        "Создать до ${ n } календарей"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Создайте до ${ n } календаря или добавляйте календари друзей, семьи, коллег и организаций",
+        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
+        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
+        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Создание шлюзового сервера: ${ serverNumber } / ${ total }",
+        "Создание шлюзовых серверов: ${ serverNumber } / ${ total }",
+        "Создание шлюзовых серверов: ${ serverNumber } / ${ total }",
+        "Создание шлюзовых серверов: ${ serverNumber } / ${ total }"
+      ],
+      "day": [
+        "день",
+        "дня",
+        "дней",
+        "дней"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Удалить ${ n } неактивного пользователя?",
+        "Удалить ${ n } неактивных пользователей?",
+        "Удалить ${ n } неактивных пользователей?",
+        "Удалить ${ n } неактивных пользователей?"
+      ],
+      "Delete ${ n } user": [
+        "Удалить ${ n } пользователя",
+        "Удалить ${ n } пользователей",
+        "Удалить ${ n } пользователей",
+        "Удалить ${ n } пользователя"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Удалить сервер (вы сможете восстановить его в течение ${ days } дня)",
+        "Удалить сервер (вы сможете восстановить его в течение ${ days } дней)",
+        "Удалить сервер (вы сможете восстановить его в течение ${ days } дней)",
+        "Удалить сервер (вы сможете восстановить его в течение ${ days } дней)"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Удаление ${ deletedServerCount } шлюзового сервера",
+        "Удаление ${ deletedServerCount } шлюзовых серверов",
+        "Удаление ${ deletedServerCount } шлюзовых серверов",
+        "Удаление ${ deletedServerCount } шлюзовых серверов"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календаря или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или"
+      ],
+      "domain used": [
+        "домен использован",
+        "домена использовано",
+        "доменов использовано",
+        "доменов использовано"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Не удалось создать ${ failedUsers.length } аккаунт.",
+        "Не удалось создать ${ failedUsers.length } аккаунта.",
+        "Не удалось создать ${ failedUsers.length } аккаунтов.",
+        "Не удалось создать ${ failedUsers.length } аккаунтов."
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Найдено ${ itemsCount } предложение, используйте клавиатуру для навигации.",
+        "Найдено ${ itemsCount } предложения, используйте клавиатуру для навигации.",
+        "Найдено ${ itemsCount } предложений, используйте клавиатуру для навигации.",
+        "Найдено предложений: ${ itemsCount }, используйте клавиатуру для навигации."
+      ],
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайтов"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "Высокоскоростная VPN на ${ maxVpn } устройстве",
+        "Высокоскоростная VPN на ${ maxVpn } устройствах",
+        "Высокоскоростная VPN на ${ maxVpn } устройствах",
+        "Высокоскоростная VPN на ${ maxVpn } устройствах"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "Высокоскоростной VPN на ${ n } устройстве",
+        "Высокоскоростная VPN на ${ n } устройствах",
+        "Высокоскоростная VPN на ${ n } устройствах",
+        "Высокоскоростная VPN на ${ n } устройствах"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календаря",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыка и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как"
+      ],
+      "Import as simple event?": [
+        "Импортировать как простое событие?",
+        "Импортировать как простые события?",
+        "Импортировать как простые события?",
+        "Импортировать как простые события?"
+      ],
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайта",
+        "Килобайтов",
+        "Килобайтов"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайтов",
+        "Мегабайтов",
+        "Мегабайтов"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Объедините по крайней мере ${ calendarsToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
+      ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "За полгода можно принять только ${ n } приглашение.",
+        "За полгода можно принять только ${ n } приглашения.",
+        "За полгода можно принять только ${ n } приглашений.",
+        "За полгода можно принять только ${ n } приглашений."
+      ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "или назначьте любую страну в течение ${ availableAgainAfterDays } дня",
+        "или назначьте любую страну в течение ${ availableAgainAfterDays } дней",
+        "или назначьте любую страну в течение ${ availableAgainAfterDays } дней",
+        "или назначьте любую страну в течение ${ availableAgainAfterDays } дней"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "или назначьте любую страну в течение ${ availableAgainAfterHours } часа",
+        "или назначьте любую страну в течение ${ availableAgainAfterHours } часов",
+        "или назначьте любую страну в течение ${ availableAgainAfterHours } часов",
+        "или назначьте любую страну в течение ${ availableAgainAfterHours } часов"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
+        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Запрошен сброс пароля (${ user.Email }). Вы сможете изменить свой пароль через ${ hoursRemaining } час.",
+        "Запрошен сброс пароля (${ user.Email }). Вы сможете изменить свой пароль через ${ hoursRemaining } часа.",
+        "Запрошен сброс пароля (${ user.Email }). Вы сможете изменить свой пароль через ${ hoursRemaining } часов.",
+        "Запрошен сброс пароля (${ user.Email }). Вы сможете изменить свой пароль через ${ hoursRemaining } часа."
+      ],
+      "Please add a password for the user on row": [
+        "Добавьте пароль для пользователя в строке",
+        "Добавьте пароли для пользователей в строках",
+        "Добавьте пароли для пользователей в строках",
+        "Добавьте пароли для пользователей в строках"
+      ],
+      "Please add an email address for the user on row": [
+        "Добавьте адрес электронной почты для пользователя в строке",
+        "Добавьте адреса электронной почты для пользователей в строке",
+        "Добавьте адреса электронной почты для пользователей в строке",
+        "Добавьте адреса электронной почты для пользователей в строке"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяца",
+        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев",
+        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев",
+        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адресов электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адрес электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адреса электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адресов электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
+        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адресов электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое."
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Серверы в более чем ${ numberOfCountries } стране",
+        "Серверы в более чем ${ numberOfCountries } странах",
+        "Серверы в более чем ${ numberOfCountries } странах",
+        "Серверы в более чем ${ numberOfCountries } странах"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } стране",
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Страна с общим сервером (${ countriesCount })",
+        "Страны с общими серверами (${ countriesCount })",
+        "Стран с общими серверами (${ countriesCount })",
+        "Стран с общими серверами (${ countriesCount })"
+      ],
+      "Show ${ n } administrator": [
+        "Показать ${ n } администратора",
+        "Показать ${ n } администраторов",
+        "Показать ${ n } администраторов",
+        "Показать ${ n } администратора"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяц.",
+        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца.",
+        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяцев.",
+        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца."
+      ],
+      "Step ${ step }": [
+        "Шаг ${ step }",
+        "Шага ${ step }",
+        "Шагов ${ step }",
+        "Шагов ${ step }"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Подписка обновляется каждый ${ cycle } месяц.",
+        "Подписка обновляется каждые ${ cycle } месяца.",
+        "Подписка обновляется каждые ${ cycle } месяцев.",
+        "Подписка обновляется каждые ${ cycle } месяцев."
+      ],
+      "Successfully created ${ n } user account": [
+        "Успешно создан ${ n } аккаунт пользователя",
+        "Успешно создано ${ n } аккаунта пользователя",
+        "Успешно создано ${ n } аккаунтов пользователя",
+        "Успешно создано ${ n } аккаунтов пользователя"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Поддержка ${ n } пользовательского домена электронной почты",
+        "Поддержка ${ n } пользовательских доменов электронной почты",
+        "Поддержка ${ n } пользовательских доменов электронной почты",
+        "Поддержка ${ n } пользовательских доменов электронной почты"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайта",
+        "Терабайтов",
+        "Терабайтов"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Купон действителен для ${ couponRedemptions } продления.",
+        "Купон действителен для ${ couponRedemptions } продлений.",
+        "Купон действителен для ${ couponRedemptions } продлений.",
+        "Купон действителен для ${ couponRedemptions } продлений."
+      ],
+      "The following address is invalid.": [
+        "Следующий адрес недействителен.",
+        "Следующие адреса недействительны.",
+        "Следующие адреса недействительны.",
+        "Следующие адреса недействительны."
+      ],
+      "The following address is unavailable.": [
+        "Следующий адрес недоступен.",
+        "Следующие адреса недоступны.",
+        "Следующие адреса недоступны.",
+        "Следующие адреса недоступны."
+      ],
+      "The following address was not created.": [
+        "Следующий адрес не был создан.",
+        "Следующие адреса не были созданы.",
+        "Следующие адреса не были созданы.",
+        "Следующие адреса не были созданы."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первого ${ subscriptionLength } месяца.",
+        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первых ${ subscriptionLength } месяцев.",
+        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первых ${ subscriptionLength } месяцев.",
+        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первых ${ subscriptionLength } месяцев."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продления. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время.",
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продлений. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время.",
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продлений. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время.",
+        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продлений. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяц. Вы можете отменить его в любое время.",
+        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяца. Вы можете отменить его в любое время.",
+        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяцев. Вы можете отменить его в любое время.",
+        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяцев. Вы можете отменить его в любое время."
+      ],
+      "This file contains an event invitation:": [
+        "Этот файл содержит приглашение на событие:",
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:"
+      ],
+      "This file contains an invitation response:": [
+        "Этот файл содержит ответ на приглашение:",
+        "Этот файл содержит ответы на приглашение:",
+        "Этот файл содержит ответы на приглашение:",
+        "Этот файл содержит ответы на приглашение:"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Это разрешение истекает в течение ${ timeRemaining.inDays } дня",
+        "Это разрешение истекает в течение ${ timeRemaining.inDays } дней",
+        "Это разрешение истекает в течение ${ timeRemaining.inDays } дней",
+        "Это разрешение истекает в течение ${ timeRemaining.inDays } дней"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Это разрешение истекает в течение ${ timeRemaining.inHours } часа",
+        "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
+        "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
+        "Это разрешение истекает в течение ${ timeRemaining.inHours } часов"
+      ],
+      "Total for ${ n } month": [
+        "Итого за ${ n } месяц",
+        "Итого за ${ n } месяца",
+        "Итого за ${ n } месяцев",
+        "Итого за ${ n } месяцев"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
+      ],
+      "Up to ${ n } user": [
+        "До ${ n } пользователя",
+        "До ${ n } пользователей",
+        "До ${ n } пользователей",
+        "До ${ n } пользователей"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "До ${ n } пользователя (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })",
+        "До ${ n } пользователей (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Используйте одновременно до ${ n } устройства",
+        "Используйте одновременно до ${ n } устройств",
+        "Используйте одновременно до ${ n } устройств",
+        "Используйте одновременно до ${ n } устройств"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Совместное использование хранилища (до ${ n } человека)",
+        "Совместное использование хранилища (до ${ n } человек)",
+        "Совместное использование хранилища (до ${ n } человек)",
+        "Совместное использование хранилища (до ${ n } человек)"
+      ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступного выделенного сервера.",
+        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
+        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
+        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензии помощника писателя.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензии помощника по написанию.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию.",
+        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Сейчас вы используете ${ usedMembers } из вашей ${ maxMembers } доступной пользовательской лицензии.",
+        "Сейчас вы используете ${ usedMembers } из ваших ${ maxMembers } доступных пользовательских лицензий.",
+        "Сейчас вы используете ${ usedMembers } из ваших ${ maxMembers } доступных пользовательских лицензий.",
+        "Сейчас вы используете ${ usedMembers } из ваших ${ maxMembers } доступных пользовательских лицензий."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } час",
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часа",
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часов",
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часов"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Вы можете вести до ${ MAX_CALENDARS_FREE } календаря. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
+        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
+        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
+        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Вы можете вести до ${ MAX_CALENDARS_FREE } календаря. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
+        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
+        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
+        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку."
+      ],
+      "You have ${ availableCount } new server available.": [
+        "Вам доступен ${ availableCount } выделенный сервер.",
+        "Вам доступно ${ availableCount } выделенных сервера.",
+        "Вам доступны ${ availableCount } выделенных серверов.",
+        "Вам доступно ${ availableCount } выделенных сервера."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "У вас ${ timeRemaining.inDays } день, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
+        "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "У вас ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "У вас ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Вы недавно пользовались ${ unassignedAvailableCount } сервером. Чтобы перевести эти серверы в другую страну, необходимо подождать завершения деактивации.",
+        "Вы недавно пользовались ${ unassignedAvailableCount } серверами. Чтобы перевести эти серверы в другую страну, необходимо подождать завершения деактивации.",
+        "Вы недавно пользовались ${ unassignedAvailableCount } серверами. Чтобы перевести эти серверы в другую страну, необходимо подождать завершения деактивации.",
+        "Вы недавно пользовались ${ unassignedAvailableCount } серверами. Чтобы перевести эти серверы в другую страну, необходимо подождать завершения деактивации."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Вы достигли лимита в ${ n } принятое приглашение за полгода.",
+        "Вы достигли лимита в ${ n } принятых приглашения за полгода.",
+        "Вы достигли лимита в ${ n } принятых приглашений за полгода.",
+        "Вы достигли лимита в ${ n } принятых приглашений за полгода."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Вы достигли лимита в ${ n } принятое приглашение за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной.",
+        "Вы достигли лимита в ${ n } принятых приглашения за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной.",
+        "Вы достигли лимита в ${ n } принятых приглашений за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной.",
+        "Вы достигли лимита в ${ n } принятых приглашений за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "У вас еще остался **${ daysRemaining }** день по тарифу **${ currentPlanName }**.",
+        "У вас еще остались **${ daysRemaining }** дня по тарифу **${ currentPlanName }**.",
+        "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**.",
+        "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**."
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } час",
+        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часа",
+        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часов",
+        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часов"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }.",
+        "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }.",
+        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
+        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адрес Gmail. Чтобы добавить еще один, сначала отключите один из них.",
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адреса Gmail. Чтобы добавить еще один, сначала отключите один из них.",
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адресов Gmail. Чтобы добавить еще один, сначала отключите один из них.",
+        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адресов Gmail. Чтобы добавить еще один, сначала отключите один из них."
+      ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
+        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
+        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
+        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } события.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } событий.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } событий.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } событий."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Ваш тариф включает ещё максимум ${ availableAddresses } адрес.",
+        "Ваш тариф включает ещё максимум ${ availableAddresses } адреса.",
+        "Ваш тариф включает ещё максимум ${ availableAddresses } адресов.",
+        "Ваш тариф включает ещё максимум ${ availableAddresses } адресов."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Ваш тариф включает ещё максимум ${ availableNumberOfMembers } пользователя организации.",
+        "Ваш тариф включает ещё максимум ${ availableNumberOfMembers } пользователей организации.",
+        "Ваш тариф включает ещё максимум ${ availableNumberOfMembers } пользователей организации.",
+        "Ваш тариф включает ещё максимум ${ availableNumberOfMembers } пользователей организации."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Ваш тариф включает ещё максимум ${ availableVPNAccess } аккаунт VPN.",
+        "Ваш тариф включает ещё максимум ${ availableVPNAccess } аккаунта VPN.",
+        "Ваш тариф включает ещё максимум ${ availableVPNAccess } аккаунтов VPN.",
+        "Ваш тариф включает ещё максимум ${ availableVPNAccess } аккаунтов VPN."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждый ${ cycle } месяц.",
+        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяца.",
+        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев.",
+        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяца."
+      ]
+    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Пересылка скоро начнется. Новые письма будут появляться в вашем почтовом ящике."
@@ -1005,18 +2273,6 @@
       ]
     },
     "Addon": {
-      "${ domains } additional custom domain": [
-        "${ domains } дополнительный пользовательский домен",
-        "${ domains } дополнительных пользовательских домена",
-        "${ domains } дополнительных пользовательских доменов",
-        "${ domains } дополнительных пользовательских доменов"
-      ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } сервера",
-        "${ ips } серверов",
-        "${ ips } серверов"
-      ],
       "${ price } per dedicated server": [
         "${ price } за выделенный сервер"
       ],
@@ -1028,18 +2284,6 @@
       ],
       "${ price } per user": [
         "${ price } за пользователя"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } место помощника по написанию",
-        "${ seats } места помощника по написанию",
-        "${ seats } мест помощника по написанию",
-        "${ seats } мест помощника по написанию"
-      ],
-      "${ users } user": [
-        "${ users } пользователь",
-        "${ users } пользователя",
-        "${ users } пользователя",
-        "${ users } пользователей"
       ]
     },
     "Address action": {
@@ -1188,12 +2432,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
       "/ month": [
         "/ месяц"
       ],
@@ -1239,9 +2477,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Нажимая «Попробовать», вы соглашаетесь с нашими ${ termsAndConditions }."
       ],
@@ -1343,14 +2578,6 @@
       ],
       "Select your End of Year offer": [
         "Выберите Новогоднее предложение"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяц.",
-        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца.",
-        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяцев.",
-        "Извини, это предложение недоступно с вашим текущим планом. Но вы можете получить ${ discountPercentage } на ${ plan.Title } при подписке на ${ cycle } месяца."
       ]
     },
     "bf2023: Offers": {
@@ -1469,18 +2696,6 @@
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Защитите логины на всех ваших устройствах, включая неограниченное число псевдонимов hide-my-email, совместное пользование, интегрированную двухфакторную аутентификацию, ${ DARK_WEB_MONITORING_NAME } и многое другое."
       ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адрес электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адреса электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. Вам также будут доступны такие преимущества, как собственные домены, ${ addresses } адресов электронной почты, поддержка пользовательских доменов, ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и многое другое."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адрес электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адреса электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адресов электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое.",
-        "Защитите переписку и данные в календаре сквозным шифрованием. В комплекте — ${ addresses } адресов электронной почты, подключение ваших доменов, неограниченное количество псевдонимов hide-my-email и многое другое."
-      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Защитите переписку и данные в календаре сквозным шифрованием. Вам доступны 15 адресов электронной почты, поддержка пользовательских доменов адреса электронной почты, помощник по написанию ${ BRAND_NAME } Scribe, неограниченное количество псевдонимов hide-my-email и не только."
       ],
@@ -1495,12 +2710,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяца",
-        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев",
-        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев",
-        "Пролонгируется автоматически по ${ renewPrice } в течение ${ renewLength } месяцев"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Обновляется автоматически в ${ subscriptionManagerName }"
       ]
@@ -1743,20 +2952,8 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
-        "${ users } пользователь",
-        "${ users } пользователя",
-        "${ users } пользователей",
-        "${ users } пользователей"
-      ],
       "Total": [
         "Итого"
-      ],
-      "Total for ${ n } month": [
-        "Итого за ${ n } месяц",
-        "Итого за ${ n } месяца",
-        "Итого за ${ n } месяцев",
-        "Итого за ${ n } месяцев"
       ]
     },
     "Checkout summary": {
@@ -1952,20 +3149,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "CountriesStep:Info": {
-      "${ selectedCitiesCount } cities selected": [
-        "Выбран ${ selectedCitiesCount } город",
-        "Выбраны ${ selectedCitiesCount } города",
-        "Выбраны ${ selectedCitiesCount } городов",
-        "Выбраны ${ selectedCitiesCount } городов"
-      ],
-      "${ selectedCountriesCount } selected": [
-        "Выбрана ${ selectedCountriesCount }",
-        "Выбраны ${ selectedCountriesCount }",
-        "Выбраны ${ selectedCountriesCount }",
-        "Выбраны ${ selectedCountriesCount }"
       ]
     },
     "Country name": {
@@ -3446,18 +4629,6 @@
       "Couldn't load transactions. Please try again later.": [
         "Не удалось загрузить транзакции. Пожалуйста, повторите попытку позже."
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
-        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
-        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
-        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Отмените выбор хотя бы ${ calendarsToFixCount } календаря или",
-        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
-        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
-        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или"
-      ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
       ],
@@ -3566,12 +4737,6 @@
       "Label name cannot be empty.": [
         "Имя ярлыка не может быть пустым."
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Объедините по крайней мере ${ calendarsToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarsToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
-        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
-      ],
       "Missing key packet": [
         "Отсутствует пакет ключей"
       ],
@@ -3637,12 +4802,6 @@
       ],
       "Please enter a valid Entity ID URL": [
         "Введите действительный URL идентификации субъекта"
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
-        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
-        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
-        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
       "Please generate keys before you try to change your password": [
         "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
@@ -3864,12 +5023,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } события.",
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } событий.",
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } событий.",
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } событий."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } имеет недопустимый метод и не может быть импортирован."
@@ -4167,12 +5320,6 @@
       "Manage user accounts": [
         "Управление аккаунтами пользователей"
       ],
-      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
-        "За полгода можно принять только ${ n } приглашение.",
-        "За полгода можно принять только ${ n } приглашения.",
-        "За полгода можно принять только ${ n } приглашений.",
-        "За полгода можно принять только ${ n } приглашений."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Владельцы тарифа с участниками не могут присоединиться к другому семейному тарифу."
       ],
@@ -4205,18 +5352,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Вас пригласили присоединиться к группе «${ bannerOrganization }». ${ viewInviteButton }"
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
-        "Вы достигли лимита в ${ n } принятое приглашение за полгода.",
-        "Вы достигли лимита в ${ n } принятых приглашения за полгода.",
-        "Вы достигли лимита в ${ n } принятых приглашений за полгода.",
-        "Вы достигли лимита в ${ n } принятых приглашений за полгода."
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "Вы достигли лимита в ${ n } принятое приглашение за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной.",
-        "Вы достигли лимита в ${ n } принятых приглашения за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной.",
-        "Вы достигли лимита в ${ n } принятых приглашений за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной.",
-        "Вы достигли лимита в ${ n } принятых приглашений за полгода. Когда вы сможете приглашать дополнительных пользователей, кнопка снова станет активной."
       ],
       "You have successfully joined the family group": [
         "Вы успешно присоединились к семейному плану"
@@ -4362,29 +5497,11 @@
       ]
     },
     "Feature": {
-      "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } подключение к VPN",
-        "${ MaxVPN } подключения к VPN",
-        "${ MaxVPN } подключений к VPN",
-        "${ MaxVPN } подключений к VPN"
-      ],
       "Access to all countries": [
         "Доступ ко всем странам"
       ],
       "Add": [
         "Добавить"
-      ],
-      "Add (${ totalAddedCount })": [
-        "Добавить (${ totalAddedCount })",
-        "Добавить (${ totalAddedCount })",
-        "Добавить (${ totalAddedCount })",
-        "Добавить (${ totalAddedCount })"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Подключение до ${ plusVpnConnections } устройства",
-        "Подключение до ${ plusVpnConnections } устройств",
-        "Подключение до ${ plusVpnConnections } устройств",
-        "Подключение до ${ plusVpnConnections } устройств"
       ],
       "Continue": [
         "Продолжить"
@@ -4498,12 +5615,6 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Подтвердите свою личность физическим ключом безопасности U2F или FIDO2"
       ],
-      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }.",
-        "У вас максимум ключей безопасности — ${ maxSecurityKeyLength }."
-      ],
       "Your two-factor authentication key is ready to use.": [
         "Ваш ключ двухфакторной аутентификации готов к использованию."
       ]
@@ -4537,12 +5648,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "байт",
-        "байта",
-        "байтов",
-        "байтов"
-      ],
       "GB": [
         "ГБ"
       ],
@@ -4554,38 +5659,6 @@
       ],
       "TB": [
         "ТБ"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Байт",
-        "Байта",
-        "Байтов",
-        "Байтов"
-      ],
-      "Gigabyte": [
-        "Гигабайт",
-        "Гигабайт",
-        "Гигабайт",
-        "Гигабайтов"
-      ],
-      "Kilobyte": [
-        "Килобайт",
-        "Килобайта",
-        "Килобайтов",
-        "Килобайтов"
-      ],
-      "Megabyte": [
-        "Мегабайт",
-        "Мегабайтов",
-        "Мегабайтов",
-        "Мегабайтов"
-      ],
-      "Terabyte": [
-        "Терабайт",
-        "Терабайта",
-        "Терабайтов",
-        "Терабайтов"
       ]
     },
     "Filter notification": {
@@ -4693,14 +5766,6 @@
     "Group address title": {
       "Group address": [
         "Адрес группы"
-      ]
-    },
-    "Group member count": {
-      "${ memberCount } member": [
-        "${ memberCount } участник",
-        "${ memberCount } участника",
-        "${ memberCount } участников",
-        "${ memberCount } участников"
       ]
     },
     "Header": {
@@ -4832,12 +5897,6 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Добавьте эту запись к вашему домену в панели управления регистратора доменных имен"
       ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Найдено ${ itemsCount } предложение, используйте клавиатуру для навигации.",
-        "Найдено ${ itemsCount } предложения, используйте клавиатуру для навигации.",
-        "Найдено ${ itemsCount } предложений, используйте клавиатуру для навигации.",
-        "Найдено предложений: ${ itemsCount }, используйте клавиатуру для навигации."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Используйте клавиши Вверх и Вниз, чтобы получить доступ и просмотреть предложения после ввода. Нажмите Enter для подтверждения выбора, или Escape для закрытия окна предложений."
       ]
@@ -4904,18 +5963,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } событие зашифровано и импортировано в ваш календарь",
-        "${ totalImported }/${ totalToImport } события зашифрованы и импортированы в ваш календарь",
-        "${ totalImported }/${ totalToImport } событий зашифровано и импортировано в ваш календарь",
-        "${ totalImported }/${ totalToImport } событий зашифрованы и импортированы в ваш календарь"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "При шифровании и добавлении события произошла ошибка. ${ totalImported } из ${ totalToImport } события было успешно импортировано.",
-        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
-        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
-        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Произошла ошибка при шифровании и добавлении вашего события. Событие не может быть импортировано."
       ],
@@ -4950,29 +5997,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Импортированные приглашения появляются в ${ CALENDAR_APP_NAME } как простые события без сведений об организаторах и участниках. Чтобы получать обновления событий и видеть участников, попросите организаторов пригласить вас, используя ваш адрес электронной почты ${ BRAND_NAME }."
       ],
-      "This file contains an event invitation:": [
-        "Этот файл содержит приглашение на событие:",
-        "Этот файл содержит приглашения на события:",
-        "Этот файл содержит приглашения на события:",
-        "Этот файл содержит приглашения на события:"
-      ],
-      "This file contains an invitation response:": [
-        "Этот файл содержит ответ на приглашение:",
-        "Этот файл содержит ответы на приглашение:",
-        "Этот файл содержит ответы на приглашение:",
-        "Этот файл содержит ответы на приглашение:"
-      ],
       "This file contains some data that we cannot import:": [
         "Этот файл содержит некоторые данные, которые мы не можем импортировать:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } контакт зашифрован и добавлен в ваш список контактов",
-        "${ totalImported }/${ totalToImport } контакта зашифрованы и добавлены в ваш список контактов",
-        "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов",
-        "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Произошла ошибка при шифровании и добавлении вашего контакта. Его не удалось импортировать."
       ],
@@ -4992,14 +6021,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Контакт ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } контакт",
-        "${ totalContacts } контакта",
-        "${ totalContacts } контактов",
-        "${ totalContacts } контакта"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5161,12 +6182,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } из ${ totalEvents } событие не будет импортировано. Разверните для получения подробной информации.",
-        "${ totalEventsDiscarded } из ${ totalEvents } событий не будет импортировано. Разверните для получения подробной информации.",
-        "${ totalEventsDiscarded } из ${ totalEvents } событий не будет импортировано. Разверните для получения подробной информации.",
-        "${ totalEventsDiscarded } из ${ totalEvents } событий не будет импортировано. Разверните для получения подробной информации."
-      ],
       "No contact can be imported. Click for details": [
         "Не можем импортировать контакты. Нажмите, чтобы узнать подробности."
       ],
@@ -5178,12 +6193,6 @@
       ]
     },
     "Info": {
-      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } пользователь в настоящее время имеет доступ к общим серверам.",
-        "${ amountUsers }/${ totalUsers } пользователя в настоящее время имеют доступ к общим серверам.",
-        "${ amountUsers }/${ totalUsers } пользователей в настоящее время имеют доступ к общим серверам.",
-        "${ amountUsers }/${ totalUsers } пользователей в настоящее время имеют доступ к общим серверам."
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
@@ -5196,24 +6205,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } новый календарь",
-        "${ calendarsToBeCreatedCount } новых календаря",
-        "${ calendarsToBeCreatedCount } новых календарей",
-        "${ calendarsToBeCreatedCount } новых календарей"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } объединённый календарь",
-        "${ calendarsToBeMergedCount } объединённых календаря",
-        "${ calendarsToBeMergedCount } объединённых календарей",
-        "${ calendarsToBeMergedCount } объединённых календарей"
-      ],
-      "${ countriesCount } country enabled": [
-        "Включена ${ countriesCount } страна",
-        "Включены ${ countriesCount } страны",
-        "Включены ${ countriesCount } стран",
-        "Включены ${ countriesCount } стран"
-      ],
       "${ discountPercent }% discount": [
         "Скидка ${ discountPercent }%"
       ],
@@ -5223,56 +6214,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: предпросмотр в низком разрешении"
       ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член вашей семьи используют двухфакторную аутентификацию.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена вашей семьи используют двухфакторную аутентификацию.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей семьи используют двухфакторную аутентификацию.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей семьи используют двухфакторную аутентификацию."
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член вашей организации используют двухфакторную аутентификацию для входа в вашу организацию.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена вашей организации используют двухфакторную аутентификацию для входа в вашу организацию.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации используют двухфакторную аутентификацию для входа в вашу организацию.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации используют двухфакторную аутентификацию для входа в вашу организацию."
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов вашей организации, не являющихся SSO, используют двухфакторную аутентификацию для входа в вашу организацию."
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } можно также использовать с единым паролем, который заменяет и имя пользователя, и второй пароль. Чтобы переключиться в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
       ],
-      "${ n } address": [
-        "${ n } адрес",
-        "${ n } адреса",
-        "${ n } адресов",
-        "${ n } адресов"
-      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: не помещать в карантин и не отклонять неавторизованные письма. Обычно люди используют эту политику только для устранения неполадок или тестирования."
-      ],
-      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } член",
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } члена",
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов",
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } членов"
-      ],
-      "${ number } city": [
-        "${ number } город",
-        "${ number } города",
-        "${ number } городов",
-        "${ number } городов"
-      ],
-      "${ number } server": [
-        "${ number } сервер",
-        "${ number } сервера",
-        "${ number } серверов",
-        "${ number } серверов"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "У пожизненного предложения ${ PASS_SHORT_APP_NAME } нет платы за продление, это однократная оплата за пожизненный доступ к ${ PASS_SHORT_APP_NAME }."
@@ -5283,35 +6232,11 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "Срок действия ${ planName } истекает через ${ daysLeft } день.",
-        "Срок действия ${ planName } истекает через ${ daysLeft } дня.",
-        "Срок действия ${ planName } истекает через ${ daysLeft } дней.",
-        "Срок действия ${ planName } истекает через ${ daysLeft } дней."
-      ],
       "${ planName } expires today.": [
         "Срок действия ${ planName } истекает сегодня."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } защищает вашу учётную запись посредством специального наблюдения за подозрительной активностью."
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "Найдена ${ providerFoldersNumLocalized } папка",
-        "Найдены ${ providerFoldersNumLocalized } папки",
-        "Найдено ${ providerFoldersNumLocalized } папок",
-        "Найдено ${ providerFoldersNumLocalized } папок"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "В Gmail найден ${ providerFoldersNumLocalized } ярлык",
-        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыка",
-        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков",
-        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков"
-      ],
-      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter } сервер всё ещё настраивается. Обычно это занимает около ${ provisioningDuration }.",
-        "${ provisioningCounter } сервера всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }.",
-        "${ provisioningCounter } серверов всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }.",
-        "${ provisioningCounter } серверов всё ещё настраиваются. Обычно это занимает около ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: запрос платформам-получателям пометить неавторизованные письма как спам или поместить их в карантин."
@@ -5319,50 +6244,8 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: запрос платформам-получателям отклонять неавторизованные письма."
       ],
-      "${ remainingAddresses.length } more": [
-        "Ещё ${ remainingAddresses.length }",
-        "Ещё ${ remainingAddresses.length }",
-        "Ещё ${ remainingAddresses.length }",
-        "Ещё ${ remainingAddresses.length }"
-      ],
-      "${ remainingAddresses.length } more address": [
-        "${ remainingAddresses.length } дополнительный адрес",
-        "${ remainingAddresses.length } дополнительных адреса",
-        "${ remainingAddresses.length } дополнительных адресов",
-        "${ remainingAddresses.length } дополнительных адресов"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря",
-        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
-        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
-        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
-      ],
-      "${ selectedEntities.length } selected": [
-        "Выбран ${ selectedEntities.length }",
-        "Выбраны ${ selectedEntities.length }",
-        "Выбраны ${ selectedEntities.length }",
-        "Выбраны ${ selectedEntities.length }"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "Выбрана ${ selectedFoldersCountLocalized } папка",
-        "Выбрана ${ selectedFoldersCountLocalized } папки",
-        "Выбрано ${ selectedFoldersCountLocalized } папок",
-        "Выбрано ${ selectedFoldersCountLocalized } папок"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "Выбран ${ selectedFoldersCountLocalized } ярлык",
-        "Выбрано ${ selectedFoldersCountLocalized } ярлыка",
-        "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
-        "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
-      ],
       "${ storage } storage": [
         "${ storage } хранилище"
-      ],
-      "${ userFound } user found": [
-        "${ userFound } пользователь найден",
-        "${ userFound } пользователя найдено",
-        "${ userFound } пользователей найдено",
-        "${ userFound } пользователей найдено"
       ],
       "${ vaultLink } created": [
         "Фильтр ${ vaultLink } создан"
@@ -5382,12 +6265,6 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "Для функции Secure Core требуется ${ vpnPlus }."
       ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } участник)",
-        "(${ memberCount } участника)",
-        "(${ memberCount } участников)",
-        "(${ memberCount } участника)"
-      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } в месяц)"
       ],
@@ -5397,20 +6274,8 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**Получите адрес** ${ BRAND_NAME } для использования всех служб ${ BRAND_NAME_TWO }, включая ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }."
       ],
-      "+ ${ invisibleCount } More": [
-        "Еще ${ invisibleCount }",
-        "Еще ${ invisibleCount }",
-        "Еще ${ invisibleCount }",
-        "Еще ${ invisibleCount }"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } подключение для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
-        "+${ organization.BonusVPN } подключения для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
-        "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
-        "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)"
       ],
       "2FA disabled": [
         "Двухфакторная аутентификация отключена"
@@ -5445,9 +6310,6 @@
       "active": [
         "активный"
       ],
-      "Activity Monitor": [
-        "Монитор Активности"
-      ],
       "add a recovery method": [
         "добавить способ восстановления"
       ],
@@ -5457,29 +6319,11 @@
       "Add multiple users to your organization at once.": [
         "Добавить в вашу организацию нескольких пользователей разом."
       ],
-      "Add server (${ availableAddedCount } available)": [
-        "Добавить сервер (доступен ${ availableAddedCount })",
-        "Добавить сервер (доступно ${ availableAddedCount })",
-        "Добавить сервер (доступно ${ availableAddedCount })",
-        "Добавить сервер (доступно ${ availableAddedCount })"
-      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Добавьте свое имя и логотип, чтобы создать более персонализированный интерфейс для вашей организации."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Добавление ${ addedServerCount } шлюзового сервера",
-        "Добавление ${ addedServerCount } шлюзовых серверов",
-        "Добавление ${ addedServerCount } шлюзовых серверов",
-        "Добавление ${ addedServerCount } шлюзовых серверов"
-      ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Добавление внешнего адреса электронной почты отключит сквозное шифрование для всех сообщений по электронной почте внутри этой группы. Вы хотите продолжить?"
-      ],
-      "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Добавление шлюзового сервера: ${ serverNumber } / ${ total }",
-        "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
-        "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }",
-        "Добавление шлюзовых серверов: ${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
@@ -5487,26 +6331,8 @@
       "Admin account allocation": [
         "Распределение аккаунтов администраторов"
       ],
-      "Affected user is on row": [
-        "Затронутый пользователь находится на строке",
-        "Затронутые пользователи находятся на строках",
-        "Затронутые пользователи находятся на строках",
-        "Затронутые пользователи находятся на строках"
-      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помощник с искусственным интеллектом поможет вам быстро и без усилий создавать лучшие электронные письма."
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Всё (${ totalFoldersCount } папка)",
-        "Всё (${ totalFoldersCount } папки)",
-        "Всё (${ totalFoldersCount } папок)",
-        "Всё (${ totalFoldersCount } папок)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Всё (${ totalFoldersCount } ярлык)",
-        "Всё (${ totalFoldersCount } ярлыка)",
-        "Все (${ totalFoldersCount } ярлыков)",
-        "Всё (${ totalFoldersCount } ярлыков)"
       ],
       "All inactive members deleted": [
         "Все неактивные участники удалены"
@@ -5519,12 +6345,6 @@
       ],
       "All your changes will be lost.": [
         "Все ваши изменения будут потеряны."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
-        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
-        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
-        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Выделено"
@@ -5682,23 +6502,11 @@
       "Country code": [
         "Код страны"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Создать ${ calendarsToBeCreatedCount } новый календарь",
-        "Создать ${ calendarsToBeCreatedCount } новых календаря",
-        "Создать ${ calendarsToBeCreatedCount } новых календарей",
-        "Создать ${ calendarsToBeCreatedCount } новых календарей"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и ярлыки, которые вы хотите импортировать."
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Создать безопасное облако для ${ value } участника",
-        "Создать безопасное облако для ${ value } участника",
-        "Создать безопасное облако для ${ value } участников",
-        "Создать безопасное облако для ${ value } участников"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Создавайте и управляйте дополнительными аккаунтами, назначайте им адреса электронной почты на вашем домене."
@@ -5711,12 +6519,6 @@
       ],
       "Create your first Gateway": [
         "Создайте свой первый Шлюз"
-      ],
-      "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Создание шлюзового сервера: ${ serverNumber } / ${ total }",
-        "Создание шлюзовых серверов: ${ serverNumber } / ${ total }",
-        "Создание шлюзовых серверов: ${ serverNumber } / ${ total }",
-        "Создание шлюзовых серверов: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Создание вашего аккаунта"
@@ -5763,12 +6565,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
       ],
-      "Deleting ${ deletedServerCount } gateway server": [
-        "Удаление ${ deletedServerCount } шлюзового сервера",
-        "Удаление ${ deletedServerCount } шлюзовых серверов",
-        "Удаление ${ deletedServerCount } шлюзовых серверов",
-        "Удаление ${ deletedServerCount } шлюзовых серверов"
-      ],
       "Did you know?": [
         "Вы знали?"
       ],
@@ -5804,12 +6600,6 @@
       ],
       "Domain ownership verified.": [
         "Владение доменом подтверждено."
-      ],
-      "domain used": [
-        "домен использован",
-        "домена использовано",
-        "доменов использовано",
-        "доменов использовано"
       ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
         "Не теряйте доступ к вашим платным функциям ${ appName }. Включите автообновление сегодня."
@@ -6050,12 +6840,6 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Если у вас возникли проблемы, мы готовы помочь. ${ boldPhoneCall } или ${ boldZoomMeeting } одному из наших специалистов по поддержке."
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календаря",
-        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
-        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
-        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей"
       ],
       "Import from": [
         "Импортировать из"
@@ -6348,18 +7132,6 @@
       "or ${ selectFileButton }": [
         "или ${ selectFileButton }"
       ],
-      "or assign to any country in ${ availableAgainAfterDays } day": [
-        "или назначьте любую страну в течение ${ availableAgainAfterDays } дня",
-        "или назначьте любую страну в течение ${ availableAgainAfterDays } дней",
-        "или назначьте любую страну в течение ${ availableAgainAfterDays } дней",
-        "или назначьте любую страну в течение ${ availableAgainAfterDays } дней"
-      ],
-      "or assign to any country in ${ availableAgainAfterHours } hour": [
-        "или назначьте любую страну в течение ${ availableAgainAfterHours } часа",
-        "или назначьте любую страну в течение ${ availableAgainAfterHours } часов",
-        "или назначьте любую страну в течение ${ availableAgainAfterHours } часов",
-        "или назначьте любую страну в течение ${ availableAgainAfterHours } часов"
-      ],
       "or discover other features:": [
         "или откройте для себя другие возможности:"
       ],
@@ -6413,18 +7185,6 @@
       ],
       "per month, billed at ${ price }": [
         "в месяц, оплачивается ${ price }"
-      ],
-      "Please add a password for the user on row": [
-        "Добавьте пароль для пользователя в строке",
-        "Добавьте пароли для пользователей в строках",
-        "Добавьте пароли для пользователей в строках",
-        "Добавьте пароли для пользователей в строках"
-      ],
-      "Please add an email address for the user on row": [
-        "Добавьте адрес электронной почты для пользователя в строке",
-        "Добавьте адреса электронной почты для пользователей в строке",
-        "Добавьте адреса электронной почты для пользователей в строке",
-        "Добавьте адреса электронной почты для пользователей в строке"
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Попросите владельца прямо пригласить вас в документ."
@@ -6612,12 +7372,6 @@
       "Shared ${ vaultLink } updated": [
         "Коллективная ${ vaultLink } обновлена"
       ],
-      "Shared server country (${ countriesCount })": [
-        "Страна с общим сервером (${ countriesCount })",
-        "Страны с общими серверами (${ countriesCount })",
-        "Стран с общими серверами (${ countriesCount })",
-        "Стран с общими серверами (${ countriesCount })"
-      ],
       "Shared vault deleted": [
         "Общее хранилище удалено"
       ],
@@ -6639,12 +7393,6 @@
       "Start sharing it with contacts and use it for online services.": [
         "Начните делиться им с контактами и использовать его для онлайн-сервисов."
       ],
-      "Step ${ step }": [
-        "Шаг ${ step }",
-        "Шага ${ step }",
-        "Шагов ${ step }",
-        "Шагов ${ step }"
-      ],
       "Storage": [
         "Хранилище"
       ],
@@ -6662,12 +7410,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Подписка обновляется каждый ${ cycle } месяц.",
-        "Подписка обновляется каждые ${ cycle } месяца.",
-        "Подписка обновляется каждые ${ cycle } месяцев.",
-        "Подписка обновляется каждые ${ cycle } месяцев."
       ],
       "Subscription auto-renews every month.": [
         "Подписка автоматически обновляется каждый месяц."
@@ -6707,24 +7449,6 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Размер зашифрованных данных увеличивается за счет дополнительной информации о шифровании и подписях, обеспечивающих безопасность ваших данных."
-      ],
-      "The following address is invalid.": [
-        "Следующий адрес недействителен.",
-        "Следующие адреса недействительны.",
-        "Следующие адреса недействительны.",
-        "Следующие адреса недействительны."
-      ],
-      "The following address is unavailable.": [
-        "Следующий адрес недоступен.",
-        "Следующие адреса недоступны.",
-        "Следующие адреса недоступны.",
-        "Следующие адреса недоступны."
-      ],
-      "The following address was not created.": [
-        "Следующий адрес не был создан.",
-        "Следующие адреса не были созданы.",
-        "Следующие адреса не были созданы.",
-        "Следующие адреса не были созданы."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Следующие участники получат электронное письмо с просьбой включить двухфакторную аутентификацию как можно скорее."
@@ -7125,30 +7849,6 @@
       "You already have a free account": [
         "У вас уже есть бесплатная учётная запись"
       ],
-      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступного выделенного сервера.",
-        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
-        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
-        "Сейчас вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензии помощника писателя.",
-        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя.",
-        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя.",
-        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной лицензии пользователя и ${ usedAI } из ${ maxAI } доступной лицензий помощника писателя."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензии помощника по написанию.",
-        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию.",
-        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию.",
-        "В настоящее время вы используете ${ usedMembers } из ${ maxMembers } доступной пользовательской лицензии и ни одной из ${ maxAI } доступной лицензий помощника по написанию."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "Сейчас вы используете ${ usedMembers } из вашей ${ maxMembers } доступной пользовательской лицензии.",
-        "Сейчас вы используете ${ usedMembers } из ваших ${ maxMembers } доступных пользовательских лицензий.",
-        "Сейчас вы используете ${ usedMembers } из ваших ${ maxMembers } доступных пользовательских лицензий.",
-        "Сейчас вы используете ${ usedMembers } из ваших ${ maxMembers } доступных пользовательских лицензий."
-      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы вошли в аккаунт ${ memberAddress }."
       ],
@@ -7176,18 +7876,6 @@
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календаря. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календаря. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Теперь вы можете получить доступ к аккаунту и управлять им как администратор."
       ],
@@ -7205,18 +7893,6 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Получайте уведомления об утечках ваших паролей или других данных из сторонних сервисов."
-      ],
-      "You have ${ availableCount } new server available.": [
-        "Вам доступен ${ availableCount } выделенный сервер.",
-        "Вам доступно ${ availableCount } выделенных сервера.",
-        "Вам доступны ${ availableCount } выделенных серверов.",
-        "Вам доступно ${ availableCount } выделенных сервера."
-      ],
-      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "Вы недавно пользовались ${ unassignedAvailableCount } сервером. Чтобы перевести эти серверы в другую страну, необходимо подождать завершения деактивации.",
-        "Вы недавно пользовались ${ unassignedAvailableCount } серверами. Чтобы перевести эти серверы в другую страну, необходимо подождать завершения деактивации.",
-        "Вы недавно пользовались ${ unassignedAvailableCount } серверами. Чтобы перевести эти серверы в другую страну, необходимо подождать завершения деактивации.",
-        "Вы недавно пользовались ${ unassignedAvailableCount } серверами. Чтобы перевести эти серверы в другую страну, необходимо подождать завершения деактивации."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "У вас пробная подписка на ${ planTitle }. Если вы хотите продолжить подписку после пробного периода, добавьте способ оплаты."
@@ -7268,18 +7944,6 @@
       ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Вы не сможете переназначить эти серверы в другую страну в течение 10 дней."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Затем каждый ${ renewCycle } месяц вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяца вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }.",
-        "Затем каждые ${ renewCycle } месяцев вам будет выставляться счет на ${ renewAmountStr }."
-      ],
-      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
-        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адрес Gmail. Чтобы добавить еще один, сначала отключите один из них.",
-        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адреса Gmail. Чтобы добавить еще один, сначала отключите один из них.",
-        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адресов Gmail. Чтобы добавить еще один, сначала отключите один из них.",
-        "Вы включили пересылку на ${ MAX_SYNC_PAID_USER } адресов Gmail. Чтобы добавить еще один, сначала отключите один из них."
       ],
       "Your ${ boldDiscountPercent } to ${ boldPlanTitle } has been applied": [
         "Ваша ${ boldDiscountPercent } для ${ boldPlanTitle } была использована."
@@ -7344,12 +8008,6 @@
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждый ${ cycle } месяц.",
-        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяца.",
-        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяцев.",
-        "Ваш планируемый тариф начинает действовать с ${ renewalTime } и будет автоматически обновляться каждые ${ cycle } месяца."
-      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ваш запланированный тариф начинается на ${ renewalTime } и будет автоматически обновляться каждый месяц."
       ],
@@ -7413,20 +8071,6 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Чтобы избежать перерыва в обслуживании из-за неоплаченных счетов, пожалуйста, убедитесь, что в любой момент времени у Вас сохраняется как минимум 1 работающий способ оплаты."
-      ]
-    },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } папка выбрана",
-        "${ selectedFoldersCount } папки выбрано",
-        "${ selectedFoldersCount } папок выбрано",
-        "${ selectedFoldersCount } папок выбрано"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } ярлык выбран",
-        "${ selectedFoldersCount } ярлыка выбрано",
-        "${ selectedFoldersCount } ярлыков выбрано",
-        "${ selectedFoldersCount } ярлыков выбрано"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -7515,35 +8159,11 @@
       "${ BRAND_NAME } username": [
         "имя пользователя ${ BRAND_NAME }"
       ],
-      "${ group.UserCount } user": [
-        "${ group.UserCount } пользователь",
-        "${ group.UserCount } пользователя",
-        "${ group.UserCount } пользователей",
-        "${ group.UserCount } пользователей"
-      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "Используется ${ humanUsedSpace } из ${ humanMaxSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "Адрес ${ MAIL_APP_NAME }"
-      ],
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } день",
-        "${ nbDay } дня",
-        "${ nbDay } дней",
-        "${ nbDay } дней"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } из ${ MaxAddresses } адреса электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
@@ -8106,12 +8726,6 @@
       "Sequences": [
         "Последовательности"
       ],
-      "Show ${ n } administrator": [
-        "Показать ${ n } администратора",
-        "Показать ${ n } администраторов",
-        "Показать ${ n } администраторов",
-        "Показать ${ n } администратора"
-      ],
       "Single sign-on Entity ID": [
         "Единый вход для идентификатора организации"
       ],
@@ -8500,12 +9114,6 @@
       "Almost there": [
         "Почти готово"
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
-        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
-        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
-        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Подключение к поставщику услуг электронной почты"
       ],
@@ -8610,32 +9218,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Включить ${ reason }"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком как",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как",
-        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Импортировать все сообщения из ${ itemsToImportCount } ярлыка и пометить их ярлыком как",
-        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как",
-        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как",
-        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
-        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
-        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как"
       ]
     },
     "mail_signup_2024: Info": {
@@ -8855,98 +9437,8 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } и ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar": [
-        "${ n } календарь",
-        "${ n } календаря",
-        "${ n } календарей",
-        "${ n } календарей"
-      ],
-      "${ n } calendar per user": [
-        "${ n } календарь на пользователя",
-        "${ n } календаря на пользователя",
-        "${ n } календаря на пользователя",
-        "${ n } календарей на пользователя"
-      ],
-      "${ n } custom email domain": [
-        "${ n } пользовательский домен электронной почты",
-        "${ n } пользовательских домена электронной почты",
-        "${ n } пользовательских доменов электронной почты",
-        "Пользовательских доменов электронной почты: ${ n }"
-      ],
-      "${ n } email address": [
-        "${ n } адрес электронной почты",
-        "${ n } адреса электронной почты/псевдонима",
-        "${ n } адресов электронной почты/псевдонимов",
-        "${ n } адресов электронной почты/псевдонимов"
-      ],
-      "${ n } email address per user": [
-        "${ n } адрес электронной почты на пользователя",
-        "${ n } адреса электронной почты на пользователя",
-        "${ n } адресов электронной почты на пользователя",
-        "Адресов электронной почты на пользователя: ${ n }"
-      ],
-      "${ n } folder": [
-        "${ n } папка",
-        "${ n } папки",
-        "${ n } папок",
-        "папки: ${ n }"
-      ],
-      "${ n } folder and label": [
-        "${ n } папка и ярлык",
-        "${ n } папки и ярлыка",
-        "${ n } папок и ярлыков",
-        "Папок и ярлыков: ${ n }"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } псевдоним hide-my-email",
-        "${ n } псевдонима hide-my-email",
-        "${ n } псевдонимов hide-my-email",
-        "${ n } псевдонимов hide-my-email"
-      ],
-      "${ n } message per day": [
-        "${ n } сообщение в день",
-        "${ n } сообщения в день",
-        "${ n } сообщений в день",
-        "Сообщений в день: ${ n }"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } общее хранилище ${ PASS_SHORT_APP_NAME } для каждого пользователя",
-        "${ n } общих хранилища ${ PASS_SHORT_APP_NAME } для каждого пользователя",
-        "${ n } общих хранилищ ${ PASS_SHORT_APP_NAME } для каждого пользователя",
-        "${ n } общих хранилищ ${ PASS_SHORT_APP_NAME } для каждого пользователя"
-      ],
-      "${ n } vault": [
-        "${ n } хранилище",
-        "${ n } хранилища",
-        "${ n } хранилища",
-        "${ n } хранилищ"
-      ],
-      "${ n } VPN connection": [
-        "${ n } подключение к VPN",
-        "${ n } подключения к VPN",
-        "${ n } подключений к VPN",
-        "${ n } подключений к VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } пользователь",
-        "До ${ numberOfUsers } пользователей",
-        "До ${ numberOfUsers } пользователей",
-        "До ${ numberOfUsers } пользователей"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла",
-        "${ options }-дневный журнал версий файла"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin пожизненно"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } с ${ n } псевдонимом hide-my-email",
-        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email",
-        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email",
-        "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } с неограниченным количеством псевдонимов hide-my-email"
@@ -9113,12 +9605,6 @@
       "High-speed Swiss VPN that protects your privacy": [
         "Высокоскоростная Швейцарская VPN, защищающая вашу конфиденциальность"
       ],
-      "High-speed VPN on ${ n } device": [
-        "Высокоскоростной VPN на ${ n } устройстве",
-        "Высокоскоростная VPN на ${ n } устройствах",
-        "Высокоскоростная VPN на ${ n } устройствах",
-        "Высокоскоростная VPN на ${ n } устройствах"
-      ],
       "HTML signatures": [
         "Подписи HTML"
       ],
@@ -9197,12 +9683,6 @@
       "Send & receive invitations": [
         "Отправляйте и получайте приглашения"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Серверы в более чем в ${ vpnServersCountData.paid.countries } стране",
-        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
-        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
-        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах"
-      ],
       "Share files with no size limit": [
         "Делитесь файлами без ограничений по размеру"
       ],
@@ -9278,29 +9758,11 @@
       "Unlimited volume/bandwidth": [
         "Неограниченные объем данных и пропускная способность"
       ],
-      "Up to ${ n } user": [
-        "До ${ n } пользователя",
-        "До ${ n } пользователей",
-        "До ${ n } пользователей",
-        "До ${ n } пользователей"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "До ${ n } пользователя (${ adminsText }, ${ usersText })",
-        "До ${ n } пользователей (${ adminsText }, ${ usersText })",
-        "До ${ n } пользователей (${ adminsText }, ${ usersText })",
-        "До ${ n } пользователей (${ adminsText }, ${ usersText })"
-      ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
       ],
       "Up to 10 Gbps": [
         "До 10 Гбит/с"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Используйте одновременно до ${ n } устройства",
-        "Используйте одновременно до ${ n } устройств",
-        "Используйте одновременно до ${ n } устройств",
-        "Используйте одновременно до ${ n } устройств"
       ],
       "User credential management": [
         "Управление учетными данными пользователя"
@@ -9311,28 +9773,8 @@
       "User storage management": [
         "Управление хранилищем пользователя"
       ],
-      "Vault sharing (up to ${ n } person)": [
-        "Совместное использование хранилища (до ${ n } человека)",
-        "Совместное использование хранилища (до ${ n } человек)",
-        "Совместное использование хранилища (до ${ n } человек)",
-        "Совместное использование хранилища (до ${ n } человек)"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Мы сканируем Темную паутину на предмет утечки ваших адресов или псевдонимов ${ BRAND_NAME } и немедленно оповещаем вас, если что-то находим."
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ admins } admin": [
-        "${ admins } администратор",
-        "${ admins } администратора",
-        "${ admins } администраторов",
-        "${ admins } администраторов"
-      ],
-      "${ users } user": [
-        "${ users } пользователь",
-        "${ users } пользователя",
-        "${ users } пользователей",
-        "${ users } пользователей"
       ]
     },
     "new_plans: heading": {
@@ -9533,12 +9975,6 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Создайте несколько адресов электронной почты для своих сетевых идентификаторов, например, JohnShopper@${ domain } для учетных записей покупок, JohnNews@${ domain } для подписки на новости"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Создайте до ${ n } календаря или добавляйте календари друзей, семьи, коллег и организаций",
-        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
-        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
-        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
@@ -9751,12 +10187,6 @@
       "Central control panel": [
         "Центральная панель управления"
       ],
-      "Create up to ${ n } calendar": [
-        "Создайте до ${ n } календарей",
-        "Создать до ${ n } календарей",
-        "Создать до ${ n } календарей",
-        "Создать до ${ n } календарей"
-      ],
       "Dedicated Account manager": [
         "Выделенный менеджер аккаунтов"
       ],
@@ -9774,12 +10204,6 @@
       ],
       "Require 2FA": [
         "Требуется двухфакторная аутентификация"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Поддержка ${ n } пользовательского домена электронной почты",
-        "Поддержка ${ n } пользовательских доменов электронной почты",
-        "Поддержка ${ n } пользовательских доменов электронной почты",
-        "Поддержка ${ n } пользовательских доменов электронной почты"
       ]
     },
     "news": {
@@ -10141,24 +10565,6 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink }, чтобы получить больше хранилища, или удалите часть хранилища, чтобы освободить место."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } more address.": [
-        "Ваш тариф включает ещё максимум ${ availableAddresses } адрес.",
-        "Ваш тариф включает ещё максимум ${ availableAddresses } адреса.",
-        "Ваш тариф включает ещё максимум ${ availableAddresses } адресов.",
-        "Ваш тариф включает ещё максимум ${ availableAddresses } адресов."
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
-        "Ваш тариф включает ещё максимум ${ availableNumberOfMembers } пользователя организации.",
-        "Ваш тариф включает ещё максимум ${ availableNumberOfMembers } пользователей организации.",
-        "Ваш тариф включает ещё максимум ${ availableNumberOfMembers } пользователей организации.",
-        "Ваш тариф включает ещё максимум ${ availableNumberOfMembers } пользователей организации."
-      ],
-      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
-        "Ваш тариф включает ещё максимум ${ availableVPNAccess } аккаунт VPN.",
-        "Ваш тариф включает ещё максимум ${ availableVPNAccess } аккаунта VPN.",
-        "Ваш тариф включает ещё максимум ${ availableVPNAccess } аккаунтов VPN.",
-        "Ваш тариф включает ещё максимум ${ availableVPNAccess } аккаунтов VPN."
-      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Ваш тариф включает ещё максимум ${ humanReadableAvailableSpace } хранилища."
       ]
@@ -10323,12 +10729,6 @@
       ]
     },
     "pass_signup_2024: Info": {
-      "${ n } user account": [
-        "${ n } аккаунт пользователя",
-        "${ n } аккаунта пользователя",
-        "${ n } аккаунтов пользователя",
-        "${ n } аккаунтов пользователя"
-      ],
       "Activity log": [
         "Журнал действий"
       ],
@@ -10527,35 +10927,11 @@
       "terms & conditions": [
         "правила и условия"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Купон действителен для ${ couponRedemptions } продления.",
-        "Купон действителен для ${ couponRedemptions } продлений.",
-        "Купон действителен для ${ couponRedemptions } продлений.",
-        "Купон действителен для ${ couponRedemptions } продлений."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первого ${ subscriptionLength } месяца.",
-        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первых ${ subscriptionLength } месяцев.",
-        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первых ${ subscriptionLength } месяцев.",
-        "Специально сниженная с ${ priceWithDiscount } цена действует в течение первых ${ subscriptionLength } месяцев."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продления. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время.",
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продлений. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время.",
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продлений. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время.",
-        "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Купон действителен для ${ couponRedemptions } продлений. Затем он будет автоматически продлен по цене ${ renewPriceStr } на 1 месяц. Вы можете отказаться в любое время."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Специально сниженная цена ${ priceWithDiscount } действует в течение первого месяца. Затем она будет автоматически продлеваться за ${ renewPriceStr } каждый месяц. Вы можете отказаться в любое время."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Транзакция успешно распознана. Остаток на счету будут добавлен на ваш счет как только транзакция будет полностью подтверждена."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяц. Вы можете отменить его в любое время.",
-        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяца. Вы можете отменить его в любое время.",
-        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяцев. Вы можете отменить его в любое время.",
-        "Тогда он будет автоматически продлен по цене ${ renewPriceStr } на ${ renewalLength } месяцев. Вы можете отменить его в любое время."
       ],
       "Timeout exceeded": [
         "Превышено время ожидания"
@@ -10784,18 +11160,6 @@
       ]
     },
     "Plans": {
-      "${ cycle } month": [
-        "${ cycle } месяц",
-        "${ cycle } месяца",
-        "${ cycle } месяцев",
-        "${ cycle } месяцев"
-      ],
-      "${ months } month plan": [
-        "Тариф на ${ months } месяц",
-        "Тариф на ${ months } месяца",
-        "Тариф на ${ months } месяцев",
-        "Тариф на ${ months } месяцев"
-      ],
       "Enjoying ${ planName }?": [
         "Вам нравится ${ planName }?"
       ]
@@ -11015,12 +11379,6 @@
       ]
     },
     "Restore administrator panel": {
-      "${ n } administrator in your organization need access to the organization key.": [
-        "${ n } администратору в вашей организации необходим доступ к ключу организации.",
-        "${ n } администраторам в вашей организации необходим доступ к ключу организации.",
-        "${ n } администраторам в вашей организации необходим доступ к ключу организации.",
-        "${ n } администраторам в вашей организации необходим доступ к ключу организации."
-      ],
       "Changing organization keys": [
         "Изменение ключей организации"
       ],
@@ -11055,22 +11413,8 @@
       ]
     },
     "retention_policy_2025_Info": {
-      "${ n } day": [
-        "${ n } день",
-        "${ n } дня",
-        "${ n } дней",
-        "${ n } дней"
-      ],
       "${ remainingCount } more": [
         "${ remainingCount } больше"
-      ]
-    },
-    "retention_policy_2025_Label": {
-      "day": [
-        "день",
-        "дня",
-        "дней",
-        "дней"
       ]
     },
     "retention_policy_2025_Option": {
@@ -11325,18 +11669,6 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } день",
-        "${ timeRemaining.inDays } дня",
-        "${ timeRemaining.inDays } дней",
-        "${ timeRemaining.inDays } дней"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } час",
-        "${ timeRemaining.inHours } часа",
-        "${ timeRemaining.inHours } часов",
-        "${ timeRemaining.inHours } часов"
-      ],
       "Didn’t make this request?": [
         "Вы не делали этот запрос?"
       ],
@@ -11348,18 +11680,6 @@
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Чтобы изменить пароль, зайдите на устройство, с которого осуществлялся вход (в сеансе, где был инициирован запрос)."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Это разрешение истекает в течение ${ timeRemaining.inDays } дня",
-        "Это разрешение истекает в течение ${ timeRemaining.inDays } дней",
-        "Это разрешение истекает в течение ${ timeRemaining.inDays } дней",
-        "Это разрешение истекает в течение ${ timeRemaining.inDays } дней"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Это разрешение истекает в течение ${ timeRemaining.inHours } часа",
-        "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
-        "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
-        "Это разрешение истекает в течение ${ timeRemaining.inHours } часов"
       ],
       "This permission expires soon": [
         "Это разрешение скоро истекает"
@@ -11375,30 +11695,6 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "Вы можете сбросить свой пароль до ${ boldDate }."
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "У вас ${ timeRemaining.inDays } день, чтобы сбросить свой пароль.",
-        "У вас ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
-        "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
-        "У вас ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "У вас ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "У вас ${ timeRemaining.inMinutes } минута, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минуты, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inMinutes } минут, чтобы сбросить свой пароль."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "У вас ${ timeRemaining.inSeconds } секунда, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунды, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, чтобы сбросить свой пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -11461,12 +11757,6 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hour": [
-        "ещё ${ gracePeriodHoursRemaining } час",
-        "ещё ${ gracePeriodHoursRemaining } часа",
-        "ещё ${ gracePeriodHoursRemaining } часов",
-        "ещё ${ gracePeriodHoursRemaining } часов"
-      ],
       "Didn’t make this request?": [
         "Вы не делали этот запрос?"
       ],
@@ -11479,23 +11769,11 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Сброс пароля доступен с ${ boldDate }. Это даст вам время отменить все мошеннические запросы."
       ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Запрошен сброс пароля (${ user.Email }). Вы сможете изменить свой пароль через ${ hoursRemaining } час.",
-        "Запрошен сброс пароля (${ user.Email }). Вы сможете изменить свой пароль через ${ hoursRemaining } часа.",
-        "Запрошен сброс пароля (${ user.Email }). Вы сможете изменить свой пароль через ${ hoursRemaining } часов.",
-        "Запрошен сброс пароля (${ user.Email }). Вы сможете изменить свой пароль через ${ hoursRemaining } часа."
-      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Чтобы убедиться, что это действительно вы пытаетесь сбросить пароль, мы ждем 72 часа, прежде чем одобрить запрос. Вы можете изменить свой пароль в течение ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Мы получили запрос на сброс пароля для ${ boldEmail }."
-      ],
-      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } час",
-        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часа",
-        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часов",
-        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часов"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11546,12 +11824,6 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Запросить сброс пароля?"
-      ],
-      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
-        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } час",
-        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часа",
-        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часов",
-        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часов"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11563,12 +11835,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } час",
-        "${ gracePeriodHoursRemaining } часа",
-        "${ gracePeriodHoursRemaining } часов",
-        "${ gracePeriodHoursRemaining } часов"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } теперь доступен."
       ],
@@ -11664,40 +11930,6 @@
         "Перейти на Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дней"
-      ],
-      "${ hours } hour": [
-        "${ hours } час",
-        "${ hours } часа",
-        "${ hours } часов",
-        "${ hours } часов"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минут"
-      ],
-      "${ seconds } second": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунд"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } месяц БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО",
-        "${ n } месяцев БЕСПЛАТНО",
-        "${ n } БЕСПЛАТНЫХ месяца"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 пользователь"
@@ -11762,12 +11994,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
       "/ month": [
         "/ месяц"
       ],
@@ -11872,42 +12098,6 @@
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } просит вас помочь ему войти в свой аккаунт ${ BRAND_NAME } с единым входом."
       ],
-      "${ n } member requested your help to sign in.": [
-        "${ n } участник запросил вашу помощь для входа.",
-        "${ n } участника запросили вашу помощь для входа.",
-        "${ n } участников запросили вашу помощь для входа.",
-        "${ n } участников запросили вашу помощь для входа."
-      ],
-      "${ n } user converted to SSO": [
-        "${ n } пользователь преобразован в SSO",
-        "${ n } пользователя преобразовано в SSO",
-        "${ n } пользователей преобразовано в SSO",
-        "${ n } пользователя преобразовано в SSO"
-      ],
-      "${ n } user detached from SSO": [
-        "${ n } пользователь отсоединён от SSO",
-        "${ n } пользователя отсоединёно от SSO",
-        "${ n } пользователей отсоединёно от SSO",
-        "${ n } пользователя отсоединёно от SSO"
-      ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } пользователь присоединился к вашей организации через поставщика личных данных. Проверьте этот аккаунт сейчас:",
-        "${ n } пользователя присоединились к вашей организации через поставщика личных данных. Проверьте их аккаунты сейчас:",
-        "${ n } пользователей присоединились к вашей организации через поставщика личных данных. Проверьте их аккаунты сейчас:",
-        "${ n } пользователя присоединились к вашей организации через поставщика личных данных. Проверьте их аккаунты сейчас:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } пользователь неактивен. Вы можете безопасно удалить этого пользователя из вашей организации.",
-        "${ n } пользователя неактивны. Вы можете безопасно удалить их из вашей организации.",
-        "${ n } пользователей неактивны. Вы можете безопасно удалить их из вашей организации.",
-        "${ n } пользователя неактивны. Вы можете безопасно удалить их из вашей организации."
-      ],
-      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ n } пользователь просит вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом.",
-        "${ n } пользователя просят вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом.",
-        "${ n } пользователей просят вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом.",
-        "${ n } пользователей просят вас помочь войти в их аккаунт ${ BRAND_NAME } Аккаунт с единым входом."
-      ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**пользователи SSO (предоставленные вашим провайдером личных данных) будут удалены** и вам нужно буден создать их вручную для добавления обратно в вашу организацию."
       ],
@@ -11955,18 +12145,6 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Если проблема не устраняется, обратитесь к администратору."
-      ],
-      "Delete ${ n } inactive user?": [
-        "Удалить ${ n } неактивного пользователя?",
-        "Удалить ${ n } неактивных пользователей?",
-        "Удалить ${ n } неактивных пользователей?",
-        "Удалить ${ n } неактивных пользователей?"
-      ],
-      "Delete ${ n } user": [
-        "Удалить ${ n } пользователя",
-        "Удалить ${ n } пользователей",
-        "Удалить ${ n } пользователей",
-        "Удалить ${ n } пользователя"
       ],
       "Deny": [
         "Отказать"
@@ -12175,12 +12353,6 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Мы зачислим остаток на счете за оставшееся время на ваш аккаунт ${ BRAND_NAME }"
       ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "У вас еще остался **${ daysRemaining }** день по тарифу **${ currentPlanName }**.",
-        "У вас еще остались **${ daysRemaining }** дня по тарифу **${ currentPlanName }**.",
-        "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**.",
-        "У вас еще остались **${ daysRemaining }** дней по тарифу **${ currentPlanName }**."
-      ],
       "Your ${ appStorage } is almost full": [
         "Ваше ${ appStorage } почти заполнено"
       ],
@@ -12227,78 +12399,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
-        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователя",
-        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей",
-        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей",
-        "Помощник по написанию ${ BRAND_NAME } Scribe для ${ maxAi } пользователей"
-      ],
-      "${ ipAddresses } dedicated server": [
-        "${ ipAddresses } выделенный сервер",
-        "${ ipAddresses } выделенных сервера",
-        "${ ipAddresses } выделенных серверов",
-        "${ ipAddresses } выделенных серверов"
-      ],
-      "${ n } calendar per user": [
-        "${ n } календарь на пользователя",
-        "${ n } календаря на пользователя",
-        "${ n } календарей на пользователя",
-        "${ n } календарей на пользователя"
-      ],
-      "${ n } free VPN connection per user": [
-        "${ n } бесплатное подключение к VPN для одного пользователя",
-        "${ n } бесплатных подключения к VPN для одного пользователя",
-        "${ n } бесплатных подключений к VPN для одного пользователя",
-        "${ n } бесплатных подключений к VPN для одного пользователя"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } высокоскоростное подключение к VPN",
-        "${ n } высокоскоростных подключения к VPN",
-        "${ n } высокоскоростных подключений к VPN",
-        "${ n } высокоскоростных подключений к VPN"
-      ],
-      "${ n } VPN connection": [
-        "${ n } подключение к VPN",
-        "${ n } подключения к VPN",
-        "${ n } подключений к VPN",
-        "${ n } подключений к VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } подключение к VPN на пользователя",
-        "${ n } подключения к VPN на пользователя",
-        "${ n } подключений к VPN на пользователя",
-        "${ n } подключений к VPN на пользователя"
-      ],
-      "${ UsedAddresses } address": [
-        "${ UsedAddresses } адрес",
-        "${ UsedAddresses } адреса",
-        "${ UsedAddresses } адресов",
-        "${ UsedAddresses } адресов"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } из ${ MaxAddresses } адреса электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты"
-      ],
-      "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } календарь",
-        "${ UsedCalendars } календаря",
-        "${ UsedCalendars } календарей",
-        "${ UsedCalendars } календарей"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } из ${ MaxDomains } своего домена",
-        "${ UsedDomains } из ${ MaxDomains } своих доменов",
-        "${ UsedDomains } из ${ MaxDomains } своих доменов",
-        "${ UsedDomains } из ${ MaxDomains } своих доменов"
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } из ${ MaxMembers } пользователя",
-        "${ UsedMembers } из ${ MaxMembers } пользователей",
-        "${ UsedMembers } из ${ MaxMembers } пользователей",
-        "${ UsedMembers } из ${ MaxMembers } пользователей"
-      ],
       "1 email address": [
         "1 адрес электронной почты"
       ],
@@ -12313,12 +12413,6 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Встроенный блокировщик рекламы (NetShield)"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "Высокоскоростная VPN на ${ maxVpn } устройстве",
-        "Высокоскоростная VPN на ${ maxVpn } устройствах",
-        "Высокоскоростная VPN на ${ maxVpn } устройствах",
-        "Высокоскоростная VPN на ${ maxVpn } устройствах"
       ]
     },
     "Subscription change warning": {
@@ -12363,12 +12457,6 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }${ DRIVE_SHORT_APP_NAME }${ PASS_SHORT_APP_NAME } и ${ VPN_SHORT_APP_NAME } с платными функциями"
       ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } день остался",
-        "${ dayDiff } дня осталось",
-        "${ dayDiff } дней осталось",
-        "${ dayDiff } дней осталось"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "Приложение ${ MAIL_APP_NAME } для ПК"
       ],
@@ -12410,36 +12498,6 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } предлагает ${ planMaxSpace } хранилища на одного пользователя для электронной почты, вложений, событий, файлов и паролей. Вы также имеете право на ежегодные бонусы на хранилище."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } календарь на пользователя",
-        "${ planNumberOfCalendars } календаря на пользователя",
-        "${ planNumberOfCalendars } календарей на пользователя",
-        "${ planNumberOfCalendars } календарей на пользователя"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } пользовательский домен электронной почты",
-        "${ planNumberOfDomains } пользовательских домена электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты",
-        "${ planNumberOfDomains } пользовательских доменов электронной почты"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адрес электронной почты",
-        "${ planNumberOfEmails } адреса электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты",
-        "${ planNumberOfEmails } адресов электронной почты"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } адрес электронной почты на пользователя",
-        "${ planNumberOfEmails } адреса электронной почты на пользователя",
-        "${ planNumberOfEmails } адресов электронной почты на пользователя",
-        "${ planNumberOfEmails } адресов электронной почты на пользователя"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } пользователь",
-        "${ planNumberOfUsers } пользователя",
-        "${ planNumberOfUsers } пользователей",
-        "${ planNumberOfUsers } пользователей"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "Передовая защита аккаунта ${ PROTON_SENTINEL_NAME }"
@@ -13066,32 +13124,6 @@
         "Темы"
       ]
     },
-    "Time unit": {
-      "${ ceilDays } day": [
-        "${ ceilDays } день",
-        "${ ceilDays } дня",
-        "${ ceilDays } дней",
-        "${ ceilDays } дней"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } час",
-        "${ ceilHours } часа",
-        "${ ceilHours } часов",
-        "${ ceilHours } часов"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } минута",
-        "${ ceilMinutes } минуты",
-        "${ ceilMinutes } минут",
-        "${ ceilMinutes } минут"
-      ],
-      "${ seconds } second": [
-        "${ seconds } секунда",
-        "${ seconds } секунды",
-        "${ seconds } секунд",
-        "${ seconds } секунд"
-      ]
-    },
     "Title": {
       "${ BRAND_NAME } Account password rules": [
         "Правила для пароля аккаунта ${ BRAND_NAME }"
@@ -13138,6 +13170,9 @@
       "Account": [
         "Аккаунт"
       ],
+      "Account restricted": [
+        "Аккаунт ограничен"
+      ],
       "Account suspended": [
         "Аккаунт временно заблокирован"
       ],
@@ -13155,12 +13190,6 @@
       ],
       "Activity monitor": [
         "Монитор активности"
-      ],
-      "Add ${ totalServerCount } server?": [
-        "Добавить ${ totalServerCount } сервер?",
-        "Добавить ${ totalServerCount } сервера?",
-        "Добавить ${ totalServerCount } серверов?",
-        "Добавить ${ totalServerCount } сервера?"
       ],
       "Add address": [
         "Добавить адрес"
@@ -13339,12 +13368,6 @@
       "Coupon": [
         "Купон"
       ],
-      "Create ${ selectedUserIds.length } user": [
-        "Создать ${ selectedUserIds.length } пользователя",
-        "Создать ${ selectedUserIds.length } пользователей",
-        "Создать ${ selectedUserIds.length } пользователей",
-        "Создать ${ selectedUserIds.length } пользователей"
-      ],
       "Create a new Gateway": [
         "Создать новый Шлюз"
       ],
@@ -13416,12 +13439,6 @@
       ],
       "Delete organization logo?": [
         "Удалить логотип организации?"
-      ],
-      "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "Удалить сервер (вы сможете восстановить его в течение ${ days } дня)",
-        "Удалить сервер (вы сможете восстановить его в течение ${ days } дней)",
-        "Удалить сервер (вы сможете восстановить его в течение ${ days } дней)",
-        "Удалить сервер (вы сможете восстановить его в течение ${ days } дней)"
       ],
       "Delete user?": [
         "Удалить пользователя?"
@@ -13543,12 +13560,6 @@
       "Every member of the organization can access": [
         "Каждый член организации может получить доступ"
       ],
-      "Failed to create ${ failedUsers.length } user\naccount.": [
-        "Не удалось создать ${ failedUsers.length } аккаунт.",
-        "Не удалось создать ${ failedUsers.length } аккаунта.",
-        "Не удалось создать ${ failedUsers.length } аккаунтов.",
-        "Не удалось создать ${ failedUsers.length } аккаунтов."
-      ],
       "Find email or username": [
         "Найти адрес электнонной почты или имя пользователя"
       ],
@@ -13611,12 +13622,6 @@
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
-      ],
-      "Import as simple event?": [
-        "Импортировать как простое событие?",
-        "Импортировать как простые события?",
-        "Импортировать как простые события?",
-        "Импортировать как простые события?"
       ],
       "Import contacts": [
         "Импорт контактов"
@@ -13872,12 +13877,6 @@
       ],
       "Subscription canceled": [
         "Подписка отменена"
-      ],
-      "Successfully created ${ n } user account": [
-        "Успешно создан ${ n } аккаунт пользователя",
-        "Успешно создано ${ n } аккаунта пользователя",
-        "Успешно создано ${ n } аккаунтов пользователя",
-        "Успешно создано ${ n } аккаунтов пользователя"
       ],
       "Summary": [
         "Сводка"
@@ -14298,12 +14297,6 @@
       "Confirm all": [
         "Подтвердить все"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Не удалось автоматически включить доступ администратора для ${ n } пользователя, так как его ключи шифрования были обновлены в это время:",
-        "Не удалось автоматически включить доступ администратора для ${ n } пользователей, так как их ключи шифрования были обновлены в это время:",
-        "Не удалось автоматически включить доступ администратора для ${ n } пользователей, так как их ключи шифрования были обновлены в это время:",
-        "Не удалось автоматически включить доступ администратора для ${ n } пользователей, так как их ключи шифрования были обновлены в это время:"
-      ],
       "Could not enable administrator access: ${ error }": [
         "Не удалось включить доступ администратора: ${ error }"
       ],
@@ -14492,20 +14485,6 @@
         "Помощник по написанию"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Пароль должен включать по меньшей мере ${ MIN_PASSWORD_LENGTH } символ",
-        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
-        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов",
-        "Пароль должен содержать хотя бы $${ MIN_PASSWORD_LENGTH } символов"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
-        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
-      ]
-    },
     "Video control": {
       "Click to replay the video": [
         "Нажмите, чтобы воспроизвести видео"
@@ -14553,44 +14532,6 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now и многое другое."
       ]
     },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } устройство",
-        "${ n } устройства",
-        "${ n } устройств",
-        "${ n } устройств"
-      ],
-      "${ n } VPN connection": [
-        "${ n } подключение к VPN",
-        "${ n } подключения к VPN",
-        "${ n } подключения к VPN",
-        "${ n } подключения к VPN"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } страна",
-        "${ numberOfCountries } страны",
-        "${ numberOfCountries } стран",
-        "${ numberOfCountries } стран"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } в ${ numberOfCountries } стране",
-        "${ numberOfServers } в ${ numberOfCountries } странах",
-        "${ numberOfServers } в ${ numberOfCountries } странах",
-        "${ numberOfServers } в ${ numberOfCountries } странах"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Автоматически выбирается из ${ numberOfCountries } страны",
-        "Автоматически выбирается из ${ numberOfCountries } стран",
-        "Автоматически выбирается из ${ numberOfCountries } стран",
-        "Автоматически выбирается из ${ numberOfCountries } стран"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Серверы в более чем ${ numberOfCountries } стране",
-        "Серверы в более чем ${ numberOfCountries } странах",
-        "Серверы в более чем ${ numberOfCountries } странах",
-        "Серверы в более чем ${ numberOfCountries } странах"
-      ]
-    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Ежемесячная оплата"
@@ -14634,18 +14575,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } месяц",
-        "${ n } месяца",
-        "${ n } месяцев",
-        "${ n } месяцев"
-      ],
-      "${ n } year": [
-        "${ n } год",
-        "${ n } года",
-        "${ n } лет",
-        "${ n } лет"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Включает ${ plan } (бесплатно в течение первого года!)"
       ],
@@ -14674,24 +14603,6 @@
       ]
     },
     "wallet_signup_2024: Info": {
-      "${ n } ${ BRAND_NAME } email address": [
-        "адрес электронной почты ${ n } ${ BRAND_NAME }",
-        "адреса электронной почты ${ n } ${ BRAND_NAME }",
-        "адреса электронной почты ${ n } ${ BRAND_NAME }",
-        "адреса электронной почты ${ n } ${ BRAND_NAME }"
-      ],
-      "${ n } account per wallet": [
-        "${ n } счёт на один кошелёк",
-        "${ n } счёта на один кошелёк",
-        "${ n } счетов на один кошелёк",
-        "${ n } счетов на один кошелёк"
-      ],
-      "${ n } wallet": [
-        "${ n } кошелёк",
-        "${ n } кошелька",
-        "${ n } кошельков",
-        "${ n } кошельков"
-      ],
       "Bitcoin via Email": [
         "Bitcoin по электронной почте"
       ]

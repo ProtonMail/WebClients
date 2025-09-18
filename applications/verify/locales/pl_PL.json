@@ -4,6 +4,116 @@
     "language": "pl_PL"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } niestandardowa domena",
+        "${ n } niestandardowe domeny",
+        "${ n } niestandardowych domen",
+        "${ n } niestandardowych domen"
+      ],
+      "${ n } email address": [
+        "${ n } adres e-mail",
+        "${ n } adresy e-mail / aliasy",
+        "${ n } adresów e-mail / aliasów",
+        "${ n } adresów e-mail / aliasów"
+      ],
+      "${ n } email address per user": [
+        "${ n } adres e-mail na użytkownika",
+        "${ n } adresy e-mail na użytkownika",
+        "${ n } adresów e-mail na użytkownika",
+        "${ n } adresów e-mail na użytkownika"
+      ],
+      "${ n } filter": [
+        "${ n } filtr",
+        "${ n } filtry",
+        "${ n } filtrów",
+        "${ n } filtrów"
+      ],
+      "${ n } folder": [
+        "${ n } folder",
+        "${ n } foldery",
+        "${ n } folderów",
+        "${ n } folderów"
+      ],
+      "${ n } folder and label": [
+        "${ n } folder i etykieta",
+        "${ n } foldery i etykiety",
+        "${ n } folderów i etykiet",
+        "${ n } folderów i etykiet"
+      ],
+      "${ n } label": [
+        "${ n } etykieta",
+        "${ n } etykiety",
+        "${ n } etykiet",
+        "${ n } etykiety"
+      ],
+      "${ n } message per day": [
+        "${ n } wiadomość dziennie",
+        "${ n } wiadomości dziennie",
+        "${ n } wiadomości dziennie",
+        "${ n } wiadomości dziennie"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików",
+        "${ options }-dniowa historia wersji plików"
+      ],
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
+      ],
+      "Byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
+      ],
+      "Gigabyte": [
+        "gigabajt",
+        "gigabajty",
+        "gigabajtów",
+        "gigabajtów"
+      ],
+      "Kilobyte": [
+        "kilobajt",
+        "kilobajty",
+        "kilobajtów",
+        "kilobajtów"
+      ],
+      "Megabyte": [
+        "megabajt",
+        "megabajty",
+        "megabajtów",
+        "megabajtów"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
+        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Wsparcie dla ${ n } niestandardowej domeny",
+        "Wsparcie dla ${ n } niestandardowych domen",
+        "Wsparcie dla ${ n } niestandardowych domen",
+        "Wsparcie dla ${ n } niestandardowych domen"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtów",
+        "terabajtów"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
+        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Uwierzytelnij"
@@ -943,12 +1053,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bajt",
-        "bajty",
-        "bajtów",
-        "bajtów"
-      ],
       "GB": [
         "GB"
       ],
@@ -960,38 +1064,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "bajt",
-        "bajty",
-        "bajtów",
-        "bajtów"
-      ],
-      "Gigabyte": [
-        "gigabajt",
-        "gigabajty",
-        "gigabajtów",
-        "gigabajtów"
-      ],
-      "Kilobyte": [
-        "kilobajt",
-        "kilobajty",
-        "kilobajtów",
-        "kilobajtów"
-      ],
-      "Megabyte": [
-        "megabajt",
-        "megabajty",
-        "megabajtów",
-        "megabajtów"
-      ],
-      "Terabyte": [
-        "terabajt",
-        "terabajty",
-        "terabajtów",
-        "terabajtów"
       ]
     },
     "Font face option": {
@@ -1199,60 +1271,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asystent pisania ${ BRAND_NAME } Scribe"
-      ],
-      "${ n } custom email domain": [
-        "${ n } niestandardowa domena",
-        "${ n } niestandardowe domeny",
-        "${ n } niestandardowych domen",
-        "${ n } niestandardowych domen"
-      ],
-      "${ n } email address": [
-        "${ n } adres e-mail",
-        "${ n } adresy e-mail / aliasy",
-        "${ n } adresów e-mail / aliasów",
-        "${ n } adresów e-mail / aliasów"
-      ],
-      "${ n } email address per user": [
-        "${ n } adres e-mail na użytkownika",
-        "${ n } adresy e-mail na użytkownika",
-        "${ n } adresów e-mail na użytkownika",
-        "${ n } adresów e-mail na użytkownika"
-      ],
-      "${ n } filter": [
-        "${ n } filtr",
-        "${ n } filtry",
-        "${ n } filtrów",
-        "${ n } filtrów"
-      ],
-      "${ n } folder": [
-        "${ n } folder",
-        "${ n } foldery",
-        "${ n } folderów",
-        "${ n } folderów"
-      ],
-      "${ n } folder and label": [
-        "${ n } folder i etykieta",
-        "${ n } foldery i etykiety",
-        "${ n } folderów i etykiet",
-        "${ n } folderów i etykiet"
-      ],
-      "${ n } label": [
-        "${ n } etykieta",
-        "${ n } etykiety",
-        "${ n } etykiet",
-        "${ n } etykiety"
-      ],
-      "${ n } message per day": [
-        "${ n } wiadomość dziennie",
-        "${ n } wiadomości dziennie",
-        "${ n } wiadomości dziennie",
-        "${ n } wiadomości dziennie"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików",
-        "${ options }-dniowa historia wersji plików"
       ],
       "${ size } attachment size": [
         "${ size } rozmiaru załącznika"
@@ -1520,12 +1538,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Zwiększ przestrzeń dyskową do ${ bundleStorage }"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Wsparcie dla ${ n } niestandardowej domeny",
-        "Wsparcie dla ${ n } niestandardowych domen",
-        "Wsparcie dla ${ n } niestandardowych domen",
-        "Wsparcie dla ${ n } niestandardowych domen"
       ]
     },
     "Placeholder": {
@@ -1596,20 +1608,6 @@
       ],
       "Two-factor authentication": [
         "Uwierzytelnianie dwustopniowe"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znak",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaki",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków",
-        "Hasło musi zawierać co najmniej ${ MIN_PASSWORD_LENGTH } znaków"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znak)",
-        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaki)",
-        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)",
-        "Użyj krótszej nazwy użytkownika (maksymalnie ${ n } znaków)"
       ]
     }
   }

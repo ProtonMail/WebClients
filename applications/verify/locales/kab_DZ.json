@@ -4,6 +4,56 @@
     "language": "kab_DZ"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } taɣult n yimaylen udmawanen",
+        "${ n } tiɣula n yimaylen udmawanen"
+      ],
+      "${ n } email address": [
+        "${ n } tansa n yimayl",
+        "${ n } tansiwin n yimayl"
+      ],
+      "${ n } email address per user": [
+        "${ n } tansa n yimayl i useqdac",
+        "${ n } tansiwin n yimayl i useqdac"
+      ],
+      "${ n } filter": [
+        "${ n } yimsizdeg",
+        "${ n } yimsizedgen"
+      ],
+      "${ n } folder": [
+        "${ n } n ukaram",
+        "${ n } n ikaramen"
+      ],
+      "${ n } folder and label": [
+        "${ n } ukaram d tebzimt",
+        "${ n } yikaramen d tebzimin"
+      ],
+      "${ n } label": [
+        "${ n } tebzimt",
+        "${ n } tebzimin"
+      ],
+      "${ n } message per day": [
+        "${ n } n yiznen i wass",
+        "${ n } n yiznan i ass"
+      ],
+      "byte": [
+        "ibiten",
+        "ibiten"
+      ],
+      "Byte": [
+        "Ibit",
+        "Ibiten"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Asefrek i ${ n } taɣult n yimayl udmawan",
+        "Asefrek i ${ n } tiɣula n yimayl udmawan"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Asesteb"
@@ -901,10 +951,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "ibiten",
-        "ibiten"
-      ],
       "GB": [
         "GAṬ"
       ],
@@ -916,12 +962,6 @@
       ],
       "TB": [
         "TAṬ"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Ibit",
-        "Ibiten"
       ]
     },
     "Font face option": {
@@ -1082,38 +1122,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ n } custom email domain": [
-        "${ n } taɣult n yimaylen udmawanen",
-        "${ n } tiɣula n yimaylen udmawanen"
-      ],
-      "${ n } email address": [
-        "${ n } tansa n yimayl",
-        "${ n } tansiwin n yimayl"
-      ],
-      "${ n } email address per user": [
-        "${ n } tansa n yimayl i useqdac",
-        "${ n } tansiwin n yimayl i useqdac"
-      ],
-      "${ n } filter": [
-        "${ n } yimsizdeg",
-        "${ n } yimsizedgen"
-      ],
-      "${ n } folder": [
-        "${ n } n ukaram",
-        "${ n } n ikaramen"
-      ],
-      "${ n } folder and label": [
-        "${ n } ukaram d tebzimt",
-        "${ n } yikaramen d tebzimin"
-      ],
-      "${ n } label": [
-        "${ n } tebzimt",
-        "${ n } tebzimin"
-      ],
-      "${ n } message per day": [
-        "${ n } n yiznen i wass",
-        "${ n } n yiznan i ass"
-      ],
       "${ size } attachment size": [
         "${ size } teɣzi n yimeddayen"
       ],
@@ -1189,10 +1197,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Snerni tallunt-ik n uḥraz i usemday n ${ bundleStorage }"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Asefrek i ${ n } taɣult n yimayl udmawan",
-        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "Placeholder": {
@@ -1231,12 +1235,6 @@
       ],
       "Two-factor authentication": [
         "Asesteb s snat n tarrayin"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
-        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
       ]
     }
   }

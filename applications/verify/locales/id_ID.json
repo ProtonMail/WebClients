@@ -4,6 +4,62 @@
     "language": "id_ID"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } domain email khusus"
+      ],
+      "${ n } email address": [
+        "${ n } alamat/alias email"
+      ],
+      "${ n } email address per user": [
+        "${ n } alamat email per pengguna"
+      ],
+      "${ n } filter": [
+        "${ n } filter"
+      ],
+      "${ n } folder": [
+        "${ n } folder"
+      ],
+      "${ n } folder and label": [
+        "${ n } folder dan label"
+      ],
+      "${ n } label": [
+        "${ n } label"
+      ],
+      "${ n } message per day": [
+        "${ n } pesan per hari"
+      ],
+      "${ options }-day file version history": [
+        "Riwayat versi berkas ${ options } hari"
+      ],
+      "byte": [
+        "byte"
+      ],
+      "Byte": [
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Dukungan untuk ${ n } domain email khusus"
+      ],
+      "Terabyte": [
+        "Terabyte"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Autentikasi"
@@ -943,9 +999,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte"
-      ],
       "GB": [
         "GB"
       ],
@@ -957,23 +1010,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte"
-      ],
-      "Gigabyte": [
-        "Gigabyte"
-      ],
-      "Kilobyte": [
-        "Kilobyte"
-      ],
-      "Megabyte": [
-        "Megabyte"
-      ],
-      "Terabyte": [
-        "Terabyte"
       ]
     },
     "Font face option": {
@@ -1181,33 +1217,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
-      ],
-      "${ n } custom email domain": [
-        "${ n } domain email khusus"
-      ],
-      "${ n } email address": [
-        "${ n } alamat/alias email"
-      ],
-      "${ n } email address per user": [
-        "${ n } alamat email per pengguna"
-      ],
-      "${ n } filter": [
-        "${ n } filter"
-      ],
-      "${ n } folder": [
-        "${ n } folder"
-      ],
-      "${ n } folder and label": [
-        "${ n } folder dan label"
-      ],
-      "${ n } label": [
-        "${ n } label"
-      ],
-      "${ n } message per day": [
-        "${ n } pesan per hari"
-      ],
-      "${ options }-day file version history": [
-        "Riwayat versi berkas ${ options } hari"
       ],
       "${ size } attachment size": [
         "Batas ukuran lampiran ${ size }"
@@ -1475,9 +1484,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Tingkatkan total ruang penyimpanan Anda ke ${ bundleStorage }"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Dukungan untuk ${ n } domain email khusus"
       ]
     },
     "Placeholder": {
@@ -1551,14 +1557,6 @@
       ],
       "Two-factor authentication": [
         "Autentikasi dua faktor"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Kata sandi harus mengandung setidaknya ${ MIN_PASSWORD_LENGTH } karakter"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
       ]
     }
   }

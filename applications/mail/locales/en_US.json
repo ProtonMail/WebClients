@@ -4,13 +4,31 @@
     "language": "en_US"
   },
   "contexts": {
-    "Action": {
-      "Display navigation bar": [
-        "Show navigation bar"
+    "": {
+      "file attached": [
+        "attachment",
+        "attachments"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "You can't send vCard files of more than ${ maxAttachments } contacts",
         "You can't send vCard files of more than ${ maxAttachments } contacts"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "You have ${ timeRemaining.inHours } hour to reset your password.",
+        "You have ${ timeRemaining.inHours } hours to reset your password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
+        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "You have ${ timeRemaining.inSeconds } second to reset your password.",
+        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
+      ]
+    },
+    "Action": {
+      "Display navigation bar": [
+        "Show navigation bar"
       ]
     },
     "anniversary_2025: Offer": {
@@ -37,10 +55,6 @@
       "Are you sure you want to permanently delete this message?": [
         "Are you sure you want to permanently delete this message?"
       ],
-      "file attached": [
-        "attachment",
-        "attachments"
-      ],
       "More info": [
         "Learn more"
       ],
@@ -64,20 +78,6 @@
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Route your internet traffic through the TOR network with a single click"
-      ]
-    },
-    "session_recovery:available:info": {
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "You have ${ timeRemaining.inHours } hour to reset your password.",
-        "You have ${ timeRemaining.inHours } hours to reset your password."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
-        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "You have ${ timeRemaining.inSeconds } second to reset your password.",
-        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
       ]
     },
     "Spotlight": {

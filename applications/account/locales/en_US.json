@@ -4,6 +4,28 @@
     "language": "en_US"
   },
   "contexts": {
+    "": {
+      "Invite successfully sent": [
+        "Invite sent",
+        "Invites sent"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "You have ${ timeRemaining.inHours } hour to reset your password.",
+        "You have ${ timeRemaining.inHours } hours to reset your password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
+        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "You have ${ timeRemaining.inSeconds } second to reset your password.",
+        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "You have ${ unassignedAvailableCount } recently used server available. To allocate this server to another country, you'll have to wait until deactivation is complete.",
+        "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete."
+      ]
+    },
     "anniversary_2025: Offer": {
       "Unlimited folders, labels and filters": [
         "Unlimited folders, labels, and filters"
@@ -25,16 +47,8 @@
       ]
     },
     "Info": {
-      "Invite successfully sent": [
-        "Invite sent",
-        "Invites sent"
-      ],
       "Tor": [
         "Tor"
-      ],
-      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "You have ${ unassignedAvailableCount } recently used server available. To allocate this server to another country, you'll have to wait until deactivation is complete.",
-        "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete."
       ]
     },
     "Link": {
@@ -65,26 +79,12 @@
         "OK"
       ]
     },
-    "session_recovery:available:info": {
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "You have ${ timeRemaining.inHours } hour to reset your password.",
-        "You have ${ timeRemaining.inHours } hours to reset your password."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
-        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "You have ${ timeRemaining.inSeconds } second to reset your password.",
-        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
-      ]
-    },
     "Subscription reminder": {
       "Users won’t be able to upload files on their devices": [
         "Users won’t be able to upload files from their devices"
       ]
     },
-    "Tooltip; share calendar modal ": {
+    "Tooltip; share calendar modal": {
       "Shared end-to-end encrypted": [
         "Shared with end-to-end encryption"
       ]

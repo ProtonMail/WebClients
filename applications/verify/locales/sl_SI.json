@@ -4,6 +4,116 @@
     "language": "sl_SI"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } e-poštna domena po meri",
+        "${ n } e-poštni domeni po meri",
+        "${ n } e-poštne domene po meri",
+        "${ n } e-poštnih domen po meri"
+      ],
+      "${ n } email address": [
+        "${ n } e-poštni naslov",
+        "${ n } e-poštna naslova",
+        "${ n } e-poštni naslovi",
+        "${ n } e-poštnih naslovov"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-poštni naslov na uporabnika",
+        "${ n } e-poštna naslova na uporabnika",
+        "${ n } e-poštni naslovi na uporabnika",
+        "${ n } e-poštnih naslovov na uporabnika"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filtra",
+        "${ n } filtri",
+        "${ n } filtrov"
+      ],
+      "${ n } folder": [
+        "${ n } mapa",
+        "${ n } mapi",
+        "${ n } mape",
+        "${ n } map"
+      ],
+      "${ n } folder and label": [
+        "${ n } mapa in oznaka",
+        "${ n } mapi in oznaki",
+        "${ n } mape in oznake",
+        "${ n } map in oznak"
+      ],
+      "${ n } label": [
+        "${ n } oznaka",
+        "${ n } oznaki",
+        "${ n } oznake",
+        "${ n } oznak"
+      ],
+      "${ n } message per day": [
+        "${ n } sporočilo na dan",
+        "${ n } sporočili na dan",
+        "${ n } sporočila na dan",
+        "${ n } sporočil na dan"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke",
+        "${ options }-dnevna zgodovina verzij datoteke"
+      ],
+      "byte": [
+        "bajt",
+        "bajta",
+        "bajti",
+        "bajtov"
+      ],
+      "Byte": [
+        "Bajt",
+        "Bajta",
+        "Bajti",
+        "Bajtov"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajta",
+        "Gigabajti",
+        "Gigabajtov"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajta",
+        "Kilobajti",
+        "Kilobajtov"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajta",
+        "Megabajti",
+        "Megabajtov"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znak",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
+        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Podpora za ${ n } e-poštno domeno po meri",
+        "Podpora za ${ n } e-poštnih domen po meri",
+        "Podpora za ${ n } e-poštnih domen po meri",
+        "Podpora za ${ n } e-poštnih domen po meri"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajti",
+        "Terabajtov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znak)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaka)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaki)",
+        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znakov)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Preverjanje pristnosti"
@@ -943,12 +1053,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bajt",
-        "bajta",
-        "bajti",
-        "bajtov"
-      ],
       "GB": [
         "GB"
       ],
@@ -960,38 +1064,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Bajt",
-        "Bajta",
-        "Bajti",
-        "Bajtov"
-      ],
-      "Gigabyte": [
-        "Gigabajt",
-        "Gigabajta",
-        "Gigabajti",
-        "Gigabajtov"
-      ],
-      "Kilobyte": [
-        "Kilobajt",
-        "Kilobajta",
-        "Kilobajti",
-        "Kilobajtov"
-      ],
-      "Megabyte": [
-        "Megabajt",
-        "Megabajta",
-        "Megabajti",
-        "Megabajtov"
-      ],
-      "Terabyte": [
-        "Terabajt",
-        "Terabajta",
-        "Terabajti",
-        "Terabajtov"
       ]
     },
     "Font face option": {
@@ -1193,60 +1265,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Pomočnik pri pisanju ${ BRAND_NAME } Scribe"
-      ],
-      "${ n } custom email domain": [
-        "${ n } e-poštna domena po meri",
-        "${ n } e-poštni domeni po meri",
-        "${ n } e-poštne domene po meri",
-        "${ n } e-poštnih domen po meri"
-      ],
-      "${ n } email address": [
-        "${ n } e-poštni naslov",
-        "${ n } e-poštna naslova",
-        "${ n } e-poštni naslovi",
-        "${ n } e-poštnih naslovov"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-poštni naslov na uporabnika",
-        "${ n } e-poštna naslova na uporabnika",
-        "${ n } e-poštni naslovi na uporabnika",
-        "${ n } e-poštnih naslovov na uporabnika"
-      ],
-      "${ n } filter": [
-        "${ n } filter",
-        "${ n } filtra",
-        "${ n } filtri",
-        "${ n } filtrov"
-      ],
-      "${ n } folder": [
-        "${ n } mapa",
-        "${ n } mapi",
-        "${ n } mape",
-        "${ n } map"
-      ],
-      "${ n } folder and label": [
-        "${ n } mapa in oznaka",
-        "${ n } mapi in oznaki",
-        "${ n } mape in oznake",
-        "${ n } map in oznak"
-      ],
-      "${ n } label": [
-        "${ n } oznaka",
-        "${ n } oznaki",
-        "${ n } oznake",
-        "${ n } oznak"
-      ],
-      "${ n } message per day": [
-        "${ n } sporočilo na dan",
-        "${ n } sporočili na dan",
-        "${ n } sporočila na dan",
-        "${ n } sporočil na dan"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dnevna zgodovina verzij datoteke",
-        "${ options }-dnevna zgodovina verzij datoteke",
-        "${ options }-dnevna zgodovina verzij datoteke",
-        "${ options }-dnevna zgodovina verzij datoteke"
       ],
       "${ size } attachment size": [
         "${ size } velikost priponke"
@@ -1514,12 +1532,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Povečajte svoj prostor za shranjevanje na skupno ${ bundleStorage }."
-      ],
-      "Support for ${ n } custom email domain": [
-        "Podpora za ${ n } e-poštno domeno po meri",
-        "Podpora za ${ n } e-poštnih domen po meri",
-        "Podpora za ${ n } e-poštnih domen po meri",
-        "Podpora za ${ n } e-poštnih domen po meri"
       ]
     },
     "Placeholder": {
@@ -1577,20 +1589,6 @@
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znak",
-        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
-        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov",
-        "Geslo mora vsebovati vsaj ${ MIN_PASSWORD_LENGTH } znakov"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znak)",
-        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaka)",
-        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znaki)",
-        "Poskusite s krajšim uporabniškim imenom (največ ${ n } znakov)"
       ]
     }
   }

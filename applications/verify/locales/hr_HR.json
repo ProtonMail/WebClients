@@ -4,6 +4,78 @@
     "language": "hr_HR"
   },
   "contexts": {
+    "": {
+      "${ n } email address": [
+        "${ n } adresa e-pošte",
+        "${ n } adresa e-pošte/pseudonim",
+        "${ n } adresa e-pošte/pseudonima"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-pošta po korisniku",
+        "${ n } e-pošte po korisniku",
+        "${ n } e-pošte po korisniku"
+      ],
+      "${ n } filter": [
+        "${ n } filtar",
+        "${ n } filtara",
+        "${ n } filtara"
+      ],
+      "${ n } folder": [
+        "${ n } mapa",
+        "${ n } mape",
+        "${ n } mapa"
+      ],
+      "${ n } folder and label": [
+        "${ n } mapa i oznaka",
+        "${ n } mape i oznake",
+        "${ n } mapa i oznaka"
+      ],
+      "${ n } label": [
+        "${ n } oznaka",
+        "${ n } oznake",
+        "${ n } oznaka"
+      ],
+      "${ n } message per day": [
+        "${ n } poruka po danu",
+        "${ n } poruke po danu",
+        "${ n } poruka po danu"
+      ],
+      "byte": [
+        "bajt",
+        "bajta",
+        "bajtovi"
+      ],
+      "Byte": [
+        "Bajt",
+        "Bajta",
+        "Bajtovi"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajta",
+        "Gigabajta"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajta",
+        "Kilobajta"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajta",
+        "Megabajta"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajta"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Autenticiraj"
@@ -911,11 +983,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bajt",
-        "bajta",
-        "bajtovi"
-      ],
       "GB": [
         "GB"
       ],
@@ -927,33 +994,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Bajt",
-        "Bajta",
-        "Bajtovi"
-      ],
-      "Gigabyte": [
-        "Gigabajt",
-        "Gigabajta",
-        "Gigabajta"
-      ],
-      "Kilobyte": [
-        "Kilobajt",
-        "Kilobajta",
-        "Kilobajta"
-      ],
-      "Megabyte": [
-        "Megabajt",
-        "Megabajta",
-        "Megabajta"
-      ],
-      "Terabyte": [
-        "Terabajt",
-        "Terabajta",
-        "Terabajta"
       ]
     },
     "Font face option": {
@@ -1102,41 +1142,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe pomoćnik za pisanje"
-      ],
-      "${ n } email address": [
-        "${ n } adresa e-pošte",
-        "${ n } adresa e-pošte/pseudonim",
-        "${ n } adresa e-pošte/pseudonima"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-pošta po korisniku",
-        "${ n } e-pošte po korisniku",
-        "${ n } e-pošte po korisniku"
-      ],
-      "${ n } filter": [
-        "${ n } filtar",
-        "${ n } filtara",
-        "${ n } filtara"
-      ],
-      "${ n } folder": [
-        "${ n } mapa",
-        "${ n } mape",
-        "${ n } mapa"
-      ],
-      "${ n } folder and label": [
-        "${ n } mapa i oznaka",
-        "${ n } mape i oznake",
-        "${ n } mapa i oznaka"
-      ],
-      "${ n } label": [
-        "${ n } oznaka",
-        "${ n } oznake",
-        "${ n } oznaka"
-      ],
-      "${ n } message per day": [
-        "${ n } poruka po danu",
-        "${ n } poruke po danu",
-        "${ n } poruka po danu"
       ],
       "${ size } attachment size": [
         "Veličina privitka: ${ size }"
@@ -1298,13 +1303,6 @@
       ],
       "Two-factor authentication": [
         "Dvofaktorska autentikacija"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
       ]
     }
   }

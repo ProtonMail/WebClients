@@ -4,6 +4,12 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "": {
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } yazıyor...",
+        "${ usersTranslation } yazıyor..."
+      ]
+    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -489,10 +495,6 @@
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } ve ${ lastTyper }"
       ],
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } yazıyor...",
-        "${ usersTranslation } yazıyor..."
-      ],
       "Alpha only experimental feature": [
         "Alfa aşamasında deneysel özellik"
       ],
@@ -785,71 +787,6 @@
         "Ekle"
       ]
     },
-    "sheets_2025:Spreadsheet editor more formats menu": {
-      "$ US Dollar": [
-        "$ ABD Doları"
-      ],
-      "Accounting": [
-        "Muhasebe"
-      ],
-      "CN¥ Chinese Yuan": [
-        "CN¥ Çin Yuanı"
-      ],
-      "Currency": [
-        "Para birimi"
-      ],
-      "Currency rounded": [
-        "Yuvarlanmış para birimi"
-      ],
-      "Date": [
-        "Tarih"
-      ],
-      "Date time": [
-        "Tarih ve saat"
-      ],
-      "Duration": [
-        "Süre"
-      ],
-      "Financial": [
-        "Finansal"
-      ],
-      "General": [
-        "Genel"
-      ],
-      "Long date": [
-        "Uzun tarih"
-      ],
-      "More currency": [
-        "Daha fazla para birimi"
-      ],
-      "Number": [
-        "Sayı"
-      ],
-      "Percent": [
-        "Yüzde"
-      ],
-      "Plain text": [
-        "Düz metin"
-      ],
-      "Scientific": [
-        "Bilimsel"
-      ],
-      "Time": [
-        "Saat"
-      ],
-      "£ Pound": [
-        "£ Pound"
-      ],
-      "¥ Yen": [
-        "¥ Yen"
-      ],
-      "€ Euro": [
-        "€ Euro"
-      ],
-      "₹ Rupee": [
-        "₹ Rupi"
-      ]
-    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Koyu"
@@ -886,9 +823,6 @@
       ],
       "Redo": [
         "Yinele"
-      ],
-      "Search": [
-        "Ara"
       ],
       "Strikethrough": [
         "Üstü çizili"

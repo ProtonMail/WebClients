@@ -4,6 +4,62 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } 件の独自メールドメイン"
+      ],
+      "${ n } email address": [
+        "${ n } 件のメールアドレス / エイリアス"
+      ],
+      "${ n } email address per user": [
+        "1 ユーザーあたり ${ n } 件のメールアドレス"
+      ],
+      "${ n } filter": [
+        "${ n } 件のフィルター"
+      ],
+      "${ n } folder": [
+        "${ n } 件のフォルダー"
+      ],
+      "${ n } folder and label": [
+        "${ n } 件のフォルダーおよびラベル"
+      ],
+      "${ n } label": [
+        "${ n } 件のラベル"
+      ],
+      "${ n } message per day": [
+        "1日あたり${ n } 件のメッセージ"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-日間のファイルバージョン履歴"
+      ],
+      "byte": [
+        "バイト"
+      ],
+      "Byte": [
+        "バイト"
+      ],
+      "Gigabyte": [
+        "ギガバイト"
+      ],
+      "Kilobyte": [
+        "キロバイト"
+      ],
+      "Megabyte": [
+        "メガバイト"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "パスワードは ${ MIN_PASSWORD_LENGTH } 文字以上必要です"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } 個のカスタムドメインメールアドレスのサポート"
+      ],
+      "Terabyte": [
+        "テラバイト"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "認証"
@@ -943,9 +999,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "バイト"
-      ],
       "GB": [
         "GB"
       ],
@@ -957,23 +1010,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "バイト"
-      ],
-      "Gigabyte": [
-        "ギガバイト"
-      ],
-      "Kilobyte": [
-        "キロバイト"
-      ],
-      "Megabyte": [
-        "メガバイト"
-      ],
-      "Terabyte": [
-        "テラバイト"
       ]
     },
     "Font face option": {
@@ -1181,33 +1217,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 執筆アシスタント"
-      ],
-      "${ n } custom email domain": [
-        "${ n } 件の独自メールドメイン"
-      ],
-      "${ n } email address": [
-        "${ n } 件のメールアドレス / エイリアス"
-      ],
-      "${ n } email address per user": [
-        "1 ユーザーあたり ${ n } 件のメールアドレス"
-      ],
-      "${ n } filter": [
-        "${ n } 件のフィルター"
-      ],
-      "${ n } folder": [
-        "${ n } 件のフォルダー"
-      ],
-      "${ n } folder and label": [
-        "${ n } 件のフォルダーおよびラベル"
-      ],
-      "${ n } label": [
-        "${ n } 件のラベル"
-      ],
-      "${ n } message per day": [
-        "1日あたり${ n } 件のメッセージ"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-日間のファイルバージョン履歴"
       ],
       "${ size } attachment size": [
         "${ size } の添付ファイル"
@@ -1475,9 +1484,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "ストレージ容量を合計 ${ bundleStorage } に拡張"
-      ],
-      "Support for ${ n } custom email domain": [
-        "${ n } 個のカスタムドメインメールアドレスのサポート"
       ]
     },
     "Placeholder": {
@@ -1551,14 +1557,6 @@
       ],
       "Two-factor authentication": [
         "2 要素認証"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "パスワードは ${ MIN_PASSWORD_LENGTH } 文字以上必要です"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     }
   }

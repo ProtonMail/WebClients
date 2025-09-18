@@ -4,6 +4,1328 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "": {
+      "${ admins } admin": [
+        "${ admins } správce",
+        "${ admins } správcové",
+        "${ admins } správců",
+        "${ admins } správců"
+      ],
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů mají aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
+        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatele",
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatele",
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatelů",
+        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatelů"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nový kalendář",
+        "${ calendarsToBeCreatedCount } nové kalendáře",
+        "${ calendarsToBeCreatedCount } nových kalendářů",
+        "${ calendarsToBeCreatedCount } nových kalendářů"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } sloučený kalendář",
+        "${ calendarsToBeMergedCount } sloučené kalendáře",
+        "${ calendarsToBeMergedCount } sloučených kalendářů",
+        "${ calendarsToBeMergedCount } sloučených kalendářů"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } den",
+        "${ ceilDays } dny",
+        "${ ceilDays } dnů",
+        "${ ceilDays } dnů"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hodina",
+        "${ ceilHours } hodiny",
+        "${ ceilHours } hodin",
+        "${ ceilHours } hodin"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuta",
+        "${ ceilMinutes } minuty",
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minut"
+      ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } země povolena",
+        "${ countriesCount } země povoleny",
+        "${ countriesCount } zemí povoleno",
+        "${ countriesCount } zemí povoleno"
+      ],
+      "${ cycle } month": [
+        "${ cycle } měsíc",
+        "${ cycle } měsíce",
+        "${ cycle } měsíců",
+        "${ cycle } měsíců"
+      ],
+      "${ dayDiff } day left": [
+        "Zbývá ${ dayDiff } den",
+        "Zbývají ${ dayDiff } dny",
+        "Zbývá ${ dayDiff } dnů",
+        "Zbývá ${ dayDiff } dnů"
+      ],
+      "${ days } day": [
+        "${ days } den",
+        "${ days } dny",
+        "${ days } dnů",
+        "${ days } dnů"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } další vlastní doména",
+        "${ domains } další vlastní domény",
+        "${ domains } dalších vlastních domén",
+        "${ domains } dalších vlastních domén"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hodina",
+        "${ gracePeriodHoursRemaining } hodiny",
+        "${ gracePeriodHoursRemaining } hodin",
+        "${ gracePeriodHoursRemaining } hodin"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } další hodina",
+        "${ gracePeriodHoursRemaining } další hodiny",
+        "${ gracePeriodHoursRemaining } dalších hodin",
+        "${ gracePeriodHoursRemaining } dalších hodin"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } uživatel",
+        "${ group.UserCount } uživatelé",
+        "${ group.UserCount } uživatelů",
+        "${ group.UserCount } uživatelů"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používá dvoufázové ověření.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používají dvoufázové ověření.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používá dvoufázové ověření.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používá dvoufázové ověření."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používá dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používají dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používá dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používá dvoufázové ověření pro přihlášení do vaší organizace."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používají dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace."
+      ],
+      "${ hours } hour": [
+        "${ hours } hodina",
+        "${ hours } hodiny",
+        "${ hours } hodin",
+        "${ hours } hodin"
+      ],
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } dedikovaný server",
+        "${ ipAddresses } dedikované servery",
+        "${ ipAddresses } dedikovaných serverů",
+        "${ ipAddresses } dedikovaných serverů"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverů",
+        "${ ips } serverů"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatele",
+        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatele",
+        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatelů",
+        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatelů"
+      ],
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN připojení",
+        "${ MaxVPN } VPN připojení",
+        "${ MaxVPN } VPN připojení",
+        "${ MaxVPN } VPN připojení"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } člen",
+        "${ memberCount } členové",
+        "${ memberCount } členů",
+        "${ memberCount } členů"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minut"
+      ],
+      "${ months } month plan": [
+        "${ months }měsíční tarif",
+        "${ months }měsíční tarif",
+        "${ months }měsíční tarif",
+        "${ months }měsíční tarif"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n }${ BRAND_NAME } e-mailová adresa",
+        "${ n }${ BRAND_NAME } e-mailové adresy",
+        "${ n }${ BRAND_NAME } e-mailových adres",
+        "${ n }${ BRAND_NAME } e-mailových adres"
+      ],
+      "${ n } account per wallet": [
+        "${ n } účet na peněženku",
+        "${ n } účty na peněženku",
+        "${ n } účtů na peněženku",
+        "${ n } účtů na peněženku"
+      ],
+      "${ n } address": [
+        "${ n } adresa",
+        "${ n } adresy",
+        "${ n } adres",
+        "${ n } adres"
+      ],
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } správce ve vaší organizaci potřebuje přístup ke klíči organizace.",
+        "${ n } správci ve vaší organizaci potřebují přístup ke klíči organizace.",
+        "${ n } správců ve vaší organizaci potřebuje přístup ke klíči organizace.",
+        "${ n } správců ve vaší organizaci potřebuje přístup ke klíči organizace."
+      ],
+      "${ n } calendar": [
+        "${ n } kalendář",
+        "${ n } kalendářů",
+        "${ n } kalendářů",
+        "${ n } kalendářů"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendář na uživatele",
+        "${ n } kalendáře na uživatele",
+        "${ n } kalendářů na uživatele",
+        "${ n } kalendářů na uživatele"
+      ],
+      "${ n } custom email domain": [
+        "${ n } vlastní e-mailová doména",
+        "${ n } vlastní e-mailové domény",
+        "${ n } vlastních e-mailových domén",
+        "${ n } vlastních e-mailových domén"
+      ],
+      "${ n } day": [
+        "${ n } den",
+        "${ n } dny",
+        "${ n } dnů",
+        "${ n } dnů"
+      ],
+      "${ n } device": [
+        "${ n } zařízení",
+        "${ n } zařízení",
+        "${ n } zařízení",
+        "${ n } zařízení"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailová adresa",
+        "${ n } e-mailové adresy",
+        "${ n } e-mailových adres",
+        "${ n } e-mailových adres"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mailová adresa na uživatele",
+        "${ n } e-mailové adresy na uživatele",
+        "${ n } e-mailových adres na uživatele",
+        "${ n } e-mailových adres na uživatele"
+      ],
+      "${ n } folder": [
+        "${ n } složka",
+        "${ n } složky",
+        "${ n } složek",
+        "${ n } složek"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } bezplatné připojení VPN na uživatele",
+        "${ n } bezplatné připojení VPN na uživatele",
+        "${ n } bezplatných připojení VPN na uživatele",
+        "${ n } bezplatných připojení VPN na uživatele"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } vysokorychlostní připojení VPN",
+        "${ n } vysokorychlostní připojení VPN",
+        "${ n } vysokorychlostních připojení VPN",
+        "${ n } vysokorychlostních připojení VPN"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } vysokorychlostní VPN připojení na uživatele",
+        "${ n } vysokorychlostní VPN připojení na uživatele",
+        "${ n } vysokorychlostních VPN připojení na uživatele",
+        "${ n } vysokorychlostních VPN připojení na uživatele"
+      ],
+      "${ n } label": [
+        "${ n } štítek",
+        "${ n } štítky",
+        "${ n } štítků",
+        "${ n } štítků"
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } člen vás požádal o pomoc s přihlášením.",
+        "${ n } členové vás požádali o pomoc s přihlášením.",
+        "${ n } členů vás požádalo o pomoc s přihlášením.",
+        "${ n } členů vás požádalo o pomoc s přihlášením."
+      ],
+      "${ n } message per day": [
+        "${ n } zpráva denně",
+        "${ n } zprávy denně",
+        "${ n } zpráv denně",
+        "${ n } zpráv denně"
+      ],
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "${ n } month FREE": [
+        "${ n } měsíc ZDARMA",
+        "${ n } měsíce ZDARMA",
+        "${ n } měsíců ZDARMA",
+        "${ n } měsíců ZDARMA"
+      ],
+      "${ n } server": [
+        "${ n } server",
+        "${ n }+ servery",
+        "${ n } serverů",
+        "${ n } serverů"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } sdílelý trezor ${ PASS_SHORT_APP_NAME } na uživatele",
+        "${ n } sdílelé trezory ${ PASS_SHORT_APP_NAME } na uživatele",
+        "${ n } sdílelých trezorů ${ PASS_SHORT_APP_NAME } na uživatele",
+        "${ n } sdílelých trezorů ${ PASS_SHORT_APP_NAME } na uživatele"
+      ],
+      "${ n } user account": [
+        "${ n } uživatelský účet",
+        "${ n } uživatelské účty",
+        "${ n } uživatelských účtů",
+        "${ n } uživatelských účtů"
+      ],
+      "${ n } user converted to SSO": [
+        "${ n } uživatel převeden na SSO",
+        "${ n } uživatelé převedeni na SSO",
+        "${ n } uživatelů převedeno na SSO",
+        "${ n } uživatelů převedeno na SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } uživatel odpojen od SSO",
+        "${ n } uživatelé odpojeni od SSO",
+        "${ n } uživatelů odpojeno od SSO",
+        "${ n } uživatelů odpojeno od SSO"
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } uživatel se připojil k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účet:",
+        "${ n } uživatelé se připojili k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:",
+        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:",
+        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } uživatel je neaktivní. Tohoto uživatele můžete bezpečně odebrat z organizace.",
+        "${ n } uživatelé jsou neaktivní. Tyto uživatele můžete bezpečně odebrat z organizace.",
+        "${ n } uživatelů je neaktivních. Tyto uživatele můžete bezpečně odebrat z organizace.",
+        "${ n } uživatelů je neaktivních. Tyto uživatele můžete bezpečně odebrat z organizace."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } uživatel vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
+        "${ n } uživatelé vás žádají o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
+        "${ n } uživatelů vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
+        "${ n } uživatelů vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením."
+      ],
+      "${ n } vault": [
+        "${ n } trezor",
+        "${ n } trezory",
+        "${ n } trezorů",
+        "${ n } trezorů"
+      ],
+      "${ n } VPN connection": [
+        "${ n } připojení VPN",
+        "${ n } připojení VPN",
+        "${ n } připojení VPN",
+        "${ n } připojení VPN"
+      ],
+      "${ n } wallet": [
+        "${ n } peněženka",
+        "${ n } peněženky",
+        "${ n } peněženek",
+        "${ n } peněženek"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } let",
+        "${ n } let"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } den",
+        "${ nbDay } dny",
+        "${ nbDay } dnů",
+        "${ nbDay } dnů"
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } člena",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů"
+      ],
+      "${ number } city": [
+        "${ number } město",
+        "${ number } města",
+        "${ number } měst",
+        "${ number } měst"
+      ],
+      "${ number } server": [
+        "${ number } server",
+        "${ number } servery",
+        "${ number } serverů",
+        "${ number } serverů"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } země",
+        "${ numberOfCountries } země",
+        "${ numberOfCountries } zemí",
+        "${ numberOfCountries } zemí"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } v ${ numberOfCountries } zemi",
+        "${ numberOfServers } v ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } uživatel",
+        "Až ${ numberOfUsers } uživatelé",
+        "Až ${ numberOfUsers } uživatelů",
+        "Až ${ numberOfUsers } uživatelů"
+      ],
+      "${ options }-day file version history": [
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } s ${ n } aliasem hide-my-email",
+        "${ PASS_APP_NAME } se ${ n } aliasy hide-my-email",
+        "${ PASS_APP_NAME } s ${ n } aliasy hide-my-email",
+        "${ PASS_APP_NAME } s ${ n } aliasy hide-my-email"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vyprší za ${ daysLeft } den.",
+        "${ planName } vyprší za ${ daysLeft } dny.",
+        "${ planName } vyprší za ${ daysLeft } dnů.",
+        "${ planName } vyprší za ${ daysLeft } dnů."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalendář na uživatele",
+        "${ planNumberOfCalendars } kalendáře na uživatele",
+        "${ planNumberOfCalendars } kalendářů na uživatele",
+        "${ planNumberOfCalendars } kalendářů na uživatele"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastní e-mailová doména",
+        "${ planNumberOfDomains } vlastní e-mailové domény",
+        "${ planNumberOfDomains } vlastních e-mailových domén",
+        "${ planNumberOfDomains } vlastních e-mailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailová adresa",
+        "${ planNumberOfEmails } e-mailové adresy",
+        "${ planNumberOfEmails } e-mailových adres",
+        "${ planNumberOfEmails } e-mailových adres"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mailová adresa na uživatele",
+        "${ planNumberOfEmails } e-mailové adresy na uživatele",
+        "${ planNumberOfEmails } e-mailových adres na uživatele",
+        "${ planNumberOfEmails } e-mailových adres na uživatele"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } uživatel",
+        "${ planNumberOfUsers } uživatelé",
+        "${ planNumberOfUsers } uživatelů",
+        "${ planNumberOfUsers } uživatelů"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } složka nalezena",
+        "${ providerFoldersNumLocalized } složky nalezeny",
+        "${ providerFoldersNumLocalized } složek nalezeno",
+        "${ providerFoldersNumLocalized } složek nalezeno"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } štítek nalezen v Gmailu",
+        "${ providerFoldersNumLocalized } štítky nalezeny v Gmailu",
+        "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu",
+        "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server je stále nastavován. Toto obvykle trvá přibližně ${ provisioningDuration }.",
+        "${ provisioningCounter } servery jsou stále nastavovány. Toto obvykle trvá přibližně ${ provisioningDuration }.",
+        "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }.",
+        "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } další",
+        "${ remainingAddresses.length } další",
+        "${ remainingAddresses.length } dalších",
+        "${ remainingAddresses.length } dalších"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } další adresa",
+        "${ remainingAddresses.length } další adresy",
+        "${ remainingAddresses.length } dalších adres",
+        "${ remainingAddresses.length } dalších adres"
+      ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } výsledek nalezen",
+        "${ resultsCount } výsledky nalezeny",
+        "${ resultsCount } výsledků nalezeno",
+        "${ resultsCount } výsledků nalezeno"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licence",
+        "${ seats } ${ LUMO_APP_NAME } licencí",
+        "${ seats } ${ LUMO_APP_NAME } licencí"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licence asistenta psaní",
+        "${ seats } licence asistenta psaní",
+        "${ seats } licencí asistenta psaní",
+        "${ seats } licencí asistenta psaní"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekund"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
+      ],
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } vybrané město",
+        "${ selectedCitiesCount } vybraná města",
+        "${ selectedCitiesCount } vybraných měst",
+        "${ selectedCitiesCount } vybraných měst"
+      ],
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } vybrána",
+        "${ selectedCountriesCount } vybrány",
+        "${ selectedCountriesCount } vybráno",
+        "${ selectedCountriesCount } vybráno"
+      ],
+      "${ selectedEntities.length } selected": [
+        "Vybráno: ${ selectedEntities.length }",
+        "Vybráno: ${ selectedEntities.length }",
+        "Vybráno: ${ selectedEntities.length }",
+        "Vybráno: ${ selectedEntities.length }"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } vybraná složka",
+        "${ selectedFoldersCount } vybrané složky",
+        "${ selectedFoldersCount } vybraných složek",
+        "${ selectedFoldersCount } vybraných složek"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } vybraný štítek",
+        "${ selectedFoldersCount } vybrané štítky",
+        "${ selectedFoldersCount } vybraných štítků",
+        "${ selectedFoldersCount } vybraných štítků"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } složka vybrána",
+        "${ selectedFoldersCountLocalized } vybrané složky",
+        "${ selectedFoldersCountLocalized } složek vybráno",
+        "${ selectedFoldersCountLocalized } složek vybráno"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "vybrán ${ selectedFoldersCountLocalized } štítek",
+        "vybrány ${ selectedFoldersCountLocalized } štítky",
+        "vybráno ${ selectedFoldersCountLocalized } štítků",
+        "vybráno ${ selectedFoldersCountLocalized } štítků"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } den",
+        "${ timeRemaining.inDays } dny",
+        "${ timeRemaining.inDays } dní",
+        "${ timeRemaining.inDays } dní"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hodina",
+        "${ timeRemaining.inHours } hodiny",
+        "${ timeRemaining.inHours } hodin",
+        "${ timeRemaining.inHours } hodin"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } kontakt",
+        "${ totalContacts } kontakty",
+        "${ totalContacts } kontaktů",
+        "${ totalContacts } kontaktů"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } z ${ totalEvents } události nebude importována. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } ze ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kontaktu šifrován a přidán do vašeho seznamu kontaktů",
+        "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do Vašeho listu kontaktů",
+        "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů",
+        "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } události zašifrována a přidána do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrovány a přidány do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } adresa",
+        "${ UsedAddresses } adresy",
+        "${ UsedAddresses } adres",
+        "${ UsedAddresses } adres"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailové adresy",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } kalendář",
+        "${ UsedCalendars } kalendáře",
+        "${ UsedCalendars } kalendářů",
+        "${ UsedCalendars } kalendářů"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } z ${ MaxDomains } vlastní domény",
+        "${ UsedDomains } z ${ MaxDomains } vlastních domén",
+        "${ UsedDomains } z ${ MaxDomains } vlastních domén",
+        "${ UsedDomains } z ${ MaxDomains } vlastních domén"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } z ${ MaxMembers } uživatele",
+        "${ UsedMembers } z ${ MaxMembers } uživatelů",
+        "${ UsedMembers } z ${ MaxMembers } uživatelů",
+        "${ UsedMembers } z ${ MaxMembers } uživatelů"
+      ],
+      "${ userFound } user found": [
+        "Nalezen ${ userFound } uživatel",
+        "Nalezeni ${ userFound } uživatelé",
+        "Nalezeno ${ userFound } uživatelů",
+        "Nalezeno ${ userFound } uživatelů"
+      ],
+      "${ users } user": [
+        "${ users } uživatel",
+        "${ users } uživatelé",
+        "${ users } uživatelů",
+        "${ users } uživatelů"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členové)",
+        "(${ memberCount } členů)",
+        "(${ memberCount } členů)"
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } další",
+        "+ ${ invisibleCount } další",
+        "+ ${ invisibleCount } dalších",
+        "+ ${ invisibleCount } dalších"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
+        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
+        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
+        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "Přidat ${ totalServerCount } server?",
+        "Přidat ${ totalServerCount } servery?",
+        "Přidat ${ totalServerCount } serverů?",
+        "Přidat ${ totalServerCount } serverů?"
+      ],
+      "Add (${ totalAddedCount })": [
+        "Přidat (${ totalAddedCount })",
+        "Přidat (${ totalAddedCount })",
+        "Přidat (${ totalAddedCount })",
+        "Přidat (${ totalAddedCount })"
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Přidat server (${ availableAddedCount } k dispozici)",
+        "Přidat servery (${ availableAddedCount } k dispozici)",
+        "Přidat servery (${ availableAddedCount } k dispozici)",
+        "Přidat servery (${ availableAddedCount } k dispozici)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Přidávání ${ addedServerCount } serveru brány",
+        "Přidávání ${ addedServerCount } serverů brány",
+        "Přidávání ${ addedServerCount } serverů brány",
+        "Přidávání ${ addedServerCount } serverů brány"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Přidávání serveru brány: ${ serverNumber } / ${ total }",
+        "Přidávání serverů brány: ${ serverNumber } / ${ total }",
+        "Přidávání serverů brány: ${ serverNumber } / ${ total }",
+        "Přidávání serverů brány: ${ serverNumber } / ${ total }"
+      ],
+      "Affected user is on row": [
+        "Dotčený uživatel je na řádku",
+        "Dotčení uživatelé jsou na řádcích",
+        "Dotčení uživatelé jsou na řádcích",
+        "Dotčení uživatelé jsou na řádcích"
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Po ${ lifetime } dni budou všechny zprávy smazány",
+        "Po ${ lifetime } dnech budou všechny zprávy smazány",
+        "Po ${ lifetime } dnech budou všechny zprávy smazány",
+        "Po ${ lifetime } dnech budou všechny zprávy smazány"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Všechna (${ totalFoldersCount } složka)",
+        "Všechny (${ totalFoldersCount } složky)",
+        "Všech (${ totalFoldersCount } složek)",
+        "Všech (${ totalFoldersCount } složek)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Všechen (${ totalFoldersCount } štítek)",
+        "Všechny (${ totalFoldersCount } štítky)",
+        "Všech (${ totalFoldersCount } štítků)",
+        "Všech (${ totalFoldersCount } štítků)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } události byla úspěšně importována.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } ze ${ totalToImport } událostí byly úspěšně importovány.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automaticky vybírá z ${ numberOfCountries } země",
+        "Automaticky vybírá ze ${ numberOfCountries } zemí",
+        "Automaticky vybírá z ${ numberOfCountries } zemí",
+        "Automaticky vybírá z ${ numberOfCountries } zemí"
+      ],
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtů",
+        "bajtů"
+      ],
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtů",
+        "Bajtů"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Připojení až pro ${ plusVpnConnections } zařízení",
+        "Připojení až pro ${ plusVpnConnections } zařízení",
+        "Připojení až pro ${ plusVpnConnections } zařízení",
+        "Připojení až pro ${ plusVpnConnections } zařízení"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatele, protože jeho šifrovací klíč byl mezitím aktualizován:",
+        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatele, protože jejich šifrovací klíče byly mezitím aktualizovány:",
+        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatelů, protože jejich šifrovací klíče byly mezitím aktualizovány:",
+        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatelů, protože jejich šifrovací klíče byly mezitím aktualizovány:"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Vytvořit ${ calendarsToBeCreatedCount } nový kalendář",
+        "Vytvořit ${ calendarsToBeCreatedCount } nové kalendáře",
+        "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů",
+        "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Vytvořit ${ selectedUserIds.length } uživatele",
+        "Vytvořit ${ selectedUserIds.length } uživatele",
+        "Vytvořit ${ selectedUserIds.length } uživatelů",
+        "Vytvořit ${ selectedUserIds.length } uživatelů"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Vytvořte bezpečný cloud pro ${ value } člena",
+        "Vytvořte bezpečný cloud pro ${ value } členy",
+        "Vytvořte bezpečný cloud pro ${ value } členů",
+        "Vytvořte bezpečný cloud pro ${ value } členů"
+      ],
+      "Create up to ${ n } calendar": [
+        "Vytvořte až ${ n } kalendář",
+        "Vytvořte až ${ n } kalendáře",
+        "Vytvořte až ${ n } kalendářů",
+        "Vytvořte až ${ n } kalendářů"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Vytváření serveru brány: ${ serverNumber } / ${ total }",
+        "Vytváření serverů brány: ${ serverNumber } / ${ total }",
+        "Vytváření serverů brány: ${ serverNumber } / ${ total }",
+        "Vytváření serverů brány: ${ serverNumber } / ${ total }"
+      ],
+      "day": [
+        "den",
+        "dny",
+        "dnů",
+        "dnů"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Smazat ${ n } neaktivního uživatele?",
+        "Smazat ${ n } neaktivní uživatele?",
+        "Smazat ${ n } neaktivních uživatelů?",
+        "Smazat ${ n } neaktivních uživatelů?"
+      ],
+      "Delete ${ n } user": [
+        "Smazat ${ n } uživatele",
+        "Smazat ${ n } uživatele",
+        "Smazat ${ n } uživatelů",
+        "Smazat ${ n } uživatelů"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Smazat server (budete ho moci zpět obnovit za ${ days } den)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dny)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Mazání ${ deletedServerCount } serveru brány",
+        "Mazání ${ deletedServerCount } serverů brány",
+        "Mazání ${ deletedServerCount } serverů brány",
+        "Mazání ${ deletedServerCount } serverů brány"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo"
+      ],
+      "domain used": [
+        "použitá doména",
+        "použité domény",
+        "použitých domén",
+        "použitých domén"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelský účet.",
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelské účty.",
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů.",
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů."
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Nalezen ${ itemsCount } návrh, použijte klávesnice pro navigaci.",
+        "Nalezeny ${ itemsCount } návrhy, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ itemsCount } návrhů, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ itemsCount } návrhů, použijte klávesnice pro navigaci."
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtů",
+        "Gigabajtů"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "Vysokorychlostní VPN na ${ n } zařízení",
+        "Vysokorychlostní VPN na ${ n } zařízeních",
+        "Vysokorychlostní VPN na ${ n } zařízeních",
+        "Vysokorychlostní VPN na ${ n } zařízeních"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendáře",
+        "Importovat ${ calendarCount } ze ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importovat všechny zprávy z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všechny zprávy ze ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy se štítkem ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítku celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
+      ],
+      "Import as simple event?": [
+        "Importovat jako jednoduchou událost?",
+        "Importovat jako jednoduché události?",
+        "Importovat jako jednoduché události?",
+        "Importovat jako jednoduché události?"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtů",
+        "Kilobajtů"
+      ],
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "Životnost musí být delší než ${ MIN_LIFETIME } den",
+        "Životnost musí být delší než ${ MIN_LIFETIME } dny",
+        "Životnost musí být delší než ${ MIN_LIFETIME } dnů",
+        "Životnost musí být delší než ${ MIN_LIFETIME } dnů"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtů",
+        "Megabajtů"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Sloučit alespoň ${ calendarsToFixCount } kalendář s ${ BRAND_NAME } existujícím kalendářem",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendáře se ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
+      ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánku.",
+        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánky.",
+        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánek.",
+        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánek."
+      ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } den",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } dny",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } dnů",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } dnů"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodinu",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodiny",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodin",
+        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodin"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodinu.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodiny.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodin.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodin."
+      ],
+      "Please add a password for the user on row": [
+        "Přidejte prosím heslo uživatele na řádku",
+        "Přidejte prosím hesla uživatelů na řádcích",
+        "Přidejte prosím hesla uživatelů na řádcích",
+        "Přidejte prosím hesla uživatelů na řádcích"
+      ],
+      "Please add an email address for the user on row": [
+        "Přidejte prosím e-mailovou adresu uživatele na řádku",
+        "Přidejte prosím e-mailové adresy uživatelů na řádcích",
+        "Přidejte prosím e-mailové adresy uživatelů na řádcích",
+        "Přidejte prosím e-mailové adresy uživatelů na řádcích"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty."
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíc",
+        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíce",
+        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíců",
+        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíců"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
+        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "Vyberte z ${ numberOfCountries }+ země",
+        "Vyberte z ${ numberOfCountries }+ zemí",
+        "Vyberte z ${ numberOfCountries }+ zemí",
+        "Vyberte z ${ numberOfCountries }+ zemí"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servery v ${ numberOfCountries }+ zemi",
+        "Servery ve ${ numberOfCountries }+ zemích",
+        "Servery v ${ numberOfCountries }+ zemích",
+        "Servery v ${ numberOfCountries }+ zemích"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servery v ${ vpnServersCountData.paid.countries }+ zemi",
+        "Servery ve ${ vpnServersCountData.paid.countries }+ zemích",
+        "Servery v ${ vpnServersCountData.paid.countries }+ zemích",
+        "Servery v ${ vpnServersCountData.paid.countries }+ zemích"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Země se sdíleným serverem (${ countriesCount })",
+        "Země se sdíleným serverem (${ countriesCount })",
+        "Země se sdíleným serverem (${ countriesCount })",
+        "Země se sdíleným serverem (${ countriesCount })"
+      ],
+      "Show ${ n } administrator": [
+        "Zobrazit ${ n } správce",
+        "Zobrazit ${ n } správce",
+        "Zobrazit ${ n } správců",
+        "Zobrazit ${ n } správců"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců.",
+        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců."
+      ],
+      "Step ${ step }": [
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Předplatné se automaticky obnoví každý ${ cycle } měsíc.",
+        "Předplatné se automaticky obnoví každé ${ cycle } měsíce.",
+        "Předplatné se automaticky obnoví každých ${ cycle } měsíců.",
+        "Předplatné se automaticky obnoví každých ${ cycle } měsíců."
+      ],
+      "Successfully created ${ n } user account": [
+        "Úspěšně vytvořen ${ n } uživatelský účet",
+        "Úspěšně vytvořeny ${ n } uživatelské účty",
+        "Úspěšně vytvořeno ${ n } uživatelských účtů",
+        "Úspěšně vytvořeno ${ n } uživatelských účtů"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Podpora ${ n } vlastní e-mailové domény",
+        "Podpora ${ n } vlastních e-mailových domén",
+        "Podpora ${ n } vlastních e-mailových domén",
+        "Podpora ${ n } vlastních e-mailových domén"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajty",
+        "Terabajtů",
+        "Terabajtů"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupón je platný pro ${ couponRedemptions } obnovení.",
+        "Kupón je platný pro ${ couponRedemptions } obnovení.",
+        "Kupón je platný pro ${ couponRedemptions } obnovení.",
+        "Kupón je platný pro ${ couponRedemptions } obnovení."
+      ],
+      "The following address is invalid.": [
+        "Následující adresa je neplatná.",
+        "Následující adresy jsou neplatné.",
+        "Následující adresy jsou neplatné.",
+        "Následující adresy jsou neplatné."
+      ],
+      "The following address is unavailable.": [
+        "Následující adresa je nedostupná.",
+        "Následující adresy jsou nedostupné.",
+        "Následující adresy jsou nedostupné.",
+        "Následující adresy jsou nedostupné."
+      ],
+      "The following address was not created.": [
+        "Následující adresa nebyla vytvořena.",
+        "Následující adresy nebyly vytvořeny.",
+        "Následující adresy nebyly vytvořeny.",
+        "Následující adresy nebyly vytvořeny."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
+        "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíce.",
+        "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro prvních ${ subscriptionLength } měsíců.",
+        "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro prvních ${ subscriptionLength } měsíců."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
+        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíc. Předplatné můžete kdykoli zrušit.",
+        "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíce. Předplatné můžete kdykoli zrušit.",
+        "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit.",
+        "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit."
+      ],
+      "This file contains an event invitation:": [
+        "Tento soubor obsahuje pozvánku na událost:",
+        "Tento soubor obsahuje pozvánky na události:",
+        "Tento soubor obsahuje pozvánky na události:",
+        "Tento soubor obsahuje pozvánky na události:"
+      ],
+      "This file contains an invitation response:": [
+        "Tento soubor obsahuje odpověď na pozvánku:",
+        "Tento soubor obsahuje odpovědi na pozvánky:",
+        "Tento soubor obsahuje odpovědi na pozvánky:",
+        "Tento soubor obsahuje odpovědi na pozvánky:"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } den",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dny",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dní",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dní"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodinu",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodiny",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin"
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Chcete-li přeposílat e-maily z ${ MAX_SYNC_PAID_USER } účtu, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až ze ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
+        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }."
+      ],
+      "Total for ${ n } month": [
+        "Celkem za ${ n } měsíc",
+        "Celkem za ${ n } měsíce",
+        "Celkem za ${ n } měsíců",
+        "Celkem za ${ n } měsíců"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
+      ],
+      "Up to ${ n } user": [
+        "Až ${ n } uživatel",
+        "Až ${ n } uživatelé",
+        "Až ${ n } uživatelů",
+        "Až ${ n } uživatelů"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Až ${ n } uživatel (${ adminsText }, ${ usersText })",
+        "Až ${ n } uživatelé (${ adminsText }, ${ usersText })",
+        "Až ${ n } uživatelů (${ adminsText }, ${ usersText })",
+        "Až ${ n } uživatelů (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Používejte na ${ n } zařízení",
+        "Používejte až na ${ n } zařízeních najednou",
+        "Používejte až na ${ n } zařízeních najednou",
+        "Použijte až na ${ n } zařízení najednou"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Sdílení trezoru (až ${ n } osoba)",
+        "Sdílení trezoru (až ${ n } osoby)",
+        "Sdílení trezoru (až ${ n } osob)",
+        "Sdílení trezoru (až ${ n } osob)"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN připojení pro ${ n } zařízení na uživatele",
+        "VPN připojení pro ${ n } zařízení na uživatele",
+        "VPN připojení pro ${ n } zařízení na uživatele",
+        "VPN připojení pro ${ n } zařízení na uživatele"
+      ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "V současné době využíváte ${ ipCount } z vašeho ${ ipAddresses } dostupného dedikovaného serveru.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a ${ usedAI } ze své ${ maxAI } dostupné licence asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze své ${ maxAI } dostupné licence asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní.",
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí.",
+        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodinu",
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodiny",
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodin",
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodin"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendáře. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendář. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na váš kalendář a každého ${ BRAND_NAME } uživatele, se kterým jste váš kalendář sdíleli.",
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendáře. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli.",
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendářů. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli.",
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendářů. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli."
+      ],
+      "You have ${ availableCount } new server available.": [
+        "Máte k dispozici ${ availableCount } nový server.",
+        "Máte k dispozici ${ availableCount } nové servery.",
+        "Máte k dispozici ${ availableCount } nových serverů.",
+        "Máte k dispozici ${ availableCount } nových serverů."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inDays } den.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dny.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dnů.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dnů."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodin."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minutu.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minuty.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundu.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Máte k dispozici ${ unassignedAvailableCount } nedávno použitý server. Chcete-li tento server přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena.",
+        "Máte k dispozici ${ unassignedAvailableCount } nedávno použité servery. Chcete-li tyto servery přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena.",
+        "Máte k dispozici ${ unassignedAvailableCount } nedávno použitých serverů. Chcete-li tyto servery přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena.",
+        "Máte k dispozici ${ unassignedAvailableCount } nedávno použitých serverů. Chcete-li tyto servery přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "Dosáhli jste limitu ${ n } přijaté pozvánky za 6 měsíců.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "Dosáhli jste limitu ${ n } přijaté pozvánky za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele.",
+        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** den.",
+        "V tarifu **${ currentPlanName }** vám zbývají ještě **${ daysRemaining }** dny.",
+        "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** dnů.",
+        "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** dnů."
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodinu",
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodiny",
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodin",
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodin"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
+        "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }.",
+        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externího účtu na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
+        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "Povolili jste přeposílání na ${ MAX_SYNC_PAID_USER } Gmail adresu. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adresy. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
+        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte."
+      ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostního klíče.",
+        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostních klíčů.",
+        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostních klíčů.",
+        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostních klíčů."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událost.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } události.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí."
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaný server.",
+        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikované servery.",
+        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaných serverů.",
+        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaných serverů."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } další adresu.",
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } další adresy.",
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } dalších adres.",
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } dalších adres."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalšího organizačního uživatele.",
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } další organizační uživatele.",
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalších organizačních uživatelů.",
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalších organizačních uživatelů."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } další účet VPN.",
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } další účty VPN.",
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } dalších účtů VPN.",
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } dalších účtů VPN."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se automaticky obnovovat každý ${ cycle } měsíc.",
+        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se automaticky obnovovat každé ${ cycle } měsíce.",
+        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se automaticky obnovovat každých ${ cycle } měsíců.",
+        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se automaticky obnovovat každých ${ cycle } měsíců."
+      ]
+    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Přeposílání bude brzy zahájeno. Nové e-maily se zobrazí ve vaší schránce."
@@ -1041,18 +2363,6 @@
       ]
     },
     "Addon": {
-      "${ domains } additional custom domain": [
-        "${ domains } další vlastní doména",
-        "${ domains } další vlastní domény",
-        "${ domains } dalších vlastních domén",
-        "${ domains } dalších vlastních domén"
-      ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servery",
-        "${ ips } serverů",
-        "${ ips } serverů"
-      ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
       ],
@@ -1064,24 +2374,6 @@
       ],
       "${ price } per user": [
         "${ price } za uživatele"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } licence",
-        "${ seats } ${ LUMO_APP_NAME } licence",
-        "${ seats } ${ LUMO_APP_NAME } licencí",
-        "${ seats } ${ LUMO_APP_NAME } licencí"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } licence asistenta psaní",
-        "${ seats } licence asistenta psaní",
-        "${ seats } licencí asistenta psaní",
-        "${ seats } licencí asistenta psaní"
-      ],
-      "${ users } user": [
-        "${ users } uživatel",
-        "${ users } uživatelé",
-        "${ users } uživatelů",
-        "${ users } uživatelů"
       ]
     },
     "Address action": {
@@ -1322,12 +2614,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } měsíc",
-        "${ n } měsíce",
-        "${ n } měsíců",
-        "${ n } měsíců"
-      ],
       "/ month": [
         "/ měsíc"
       ],
@@ -1373,11 +2659,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců, počínaje ${ formattedDate }. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude vám nic účtováno."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na \"Vyzkoušet\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
@@ -1499,14 +2785,6 @@
         "Vyberte si nabídku na End of Year"
       ]
     },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíc.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíce.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců.",
-        "Je nám líto, tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu ${ discountPercentage } na tarif ${ plan.Title } v případě předplacení na ${ cycle } měsíců."
-      ]
-    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30denní záruka vrácení peněz"
@@ -1626,18 +2904,6 @@
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Bezpečené přihlašování na všech zařízeních. Obsahuje neomezený počet aliasů hide-my-email, sdílení, integrované 2FA, Sledování ${ DARK_WEB_MONITORING_NAME } a další funkce."
       ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
-        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
-        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další.",
-        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailovou adresu, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
-        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailové adresy, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
-        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další.",
-        "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje ${ addresses } e-mailových adres, podporu pro vlastní e-mailové domény, neomezený počet aliasů hide-my-email a další."
-      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte své e-maily a harmonogram pomocí koncového šifrování. Obsahuje 15 e-mailových adres, podporu pro vlastní e-mailové domény, asistenta psaní ${ BRAND_NAME } Scribe, neomezený počet aliasů hide-my-email a další."
       ],
@@ -1655,12 +2921,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíc",
-        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíce",
-        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíců",
-        "Automatické obnovení za ${ renewPrice }, na ${ renewLength } měsíců"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Obnoví se automaticky v ${ subscriptionManagerName }"
       ]
@@ -1912,20 +3172,8 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
-        "${ users } uživatel",
-        "${ users } uživatelé",
-        "${ users } uživatelů",
-        "${ users } uživatelů"
-      ],
       "Total": [
         "Celkem"
-      ],
-      "Total for ${ n } month": [
-        "Celkem za ${ n } měsíc",
-        "Celkem za ${ n } měsíce",
-        "Celkem za ${ n } měsíců",
-        "Celkem za ${ n } měsíců"
       ]
     },
     "Checkout summary": {
@@ -2159,20 +3407,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "CountriesStep:Info": {
-      "${ selectedCitiesCount } cities selected": [
-        "${ selectedCitiesCount } vybrané město",
-        "${ selectedCitiesCount } vybraná města",
-        "${ selectedCitiesCount } vybraných měst",
-        "${ selectedCitiesCount } vybraných měst"
-      ],
-      "${ selectedCountriesCount } selected": [
-        "${ selectedCountriesCount } vybrána",
-        "${ selectedCountriesCount } vybrány",
-        "${ selectedCountriesCount } vybráno",
-        "${ selectedCountriesCount } vybráno"
       ]
     },
     "Country name": {
@@ -3428,20 +4662,6 @@
         "Prioritní podpora"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Chcete-li přeposílat e-maily z ${ MAX_SYNC_PAID_USER } účtu, navyšte tarif na ${ planName }.",
-        "Chcete-li přeposílat e-maily až ze ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
-        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
-        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externího účtu na ${ MAIL_APP_NAME }.",
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
@@ -3672,18 +4892,6 @@
       "Couldn't load transactions. Please try again later.": [
         "Nelze načíst transakce. Zkuste to prosím později."
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
-        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
-        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
-        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře nebo",
-        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
-        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
-        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo"
-      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
@@ -3798,12 +5006,6 @@
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Sloučit alespoň ${ calendarsToFixCount } kalendář s ${ BRAND_NAME } existujícím kalendářem",
-        "Sloučit alespoň ${ calendarsToFixCount } kalendáře se ${ BRAND_NAME } existujícími kalendáři",
-        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři",
-        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
-      ],
       "Missing key packet": [
         "Chybějící paket klíčů"
       ],
@@ -3887,12 +5089,6 @@
       ],
       "Please enter ZIP code": [
         "Zadejte prosím PSČ"
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
-        "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
-        "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
-        "Chcete-li pokračovat, opravte zvýrazněné konflikty."
       ],
       "Please generate keys before you try to change your password": [
         "Než se pokusíte změnit heslo, vytvořte si prosím klíče"
@@ -4102,11 +5298,6 @@
         "PSČ je potřeba vyplnit"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Vyberte uživatele k zobrazení jejich aktivity"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
@@ -4122,12 +5313,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo k neočekávané chybě. Import musí být restartován."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událost.",
-        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } události.",
-        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí.",
-        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Váš soubor ${ formattedFilename } má neplatnou metodu a nelze jej importovat."
@@ -4428,12 +5613,6 @@
       "Manage user accounts": [
         "Spravovat uživatelské účty"
       ],
-      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
-        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánku.",
-        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánky.",
-        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánek.",
-        "Během 6 měsíců je povoleno přijmout jen ${ n } pozvánek."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Vlastníci tarifu se členy, se nemohou připojit k jinému rodinnému tarifu."
       ],
@@ -4466,18 +5645,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "Byli jste pozváni do ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
-        "Dosáhli jste limitu ${ n } přijaté pozvánky za 6 měsíců.",
-        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců.",
-        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců.",
-        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců."
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "Dosáhli jste limitu ${ n } přijaté pozvánky za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele.",
-        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele.",
-        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele.",
-        "Dosáhli jste limitu ${ n } přijatých pozvánek za 6 měsíců. Na tlačítko bude možné kliknout, až budete moci pozvat další uživatele."
       ],
       "You have successfully joined the family group": [
         "Úspěšně jste se připojili k rodinné skupině"
@@ -4623,29 +5790,11 @@
       ]
     },
     "Feature": {
-      "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } VPN připojení",
-        "${ MaxVPN } VPN připojení",
-        "${ MaxVPN } VPN připojení",
-        "${ MaxVPN } VPN připojení"
-      ],
       "Access to all countries": [
         "Přístup ke všem zemím"
       ],
       "Add": [
         "Přidat"
-      ],
-      "Add (${ totalAddedCount })": [
-        "Přidat (${ totalAddedCount })",
-        "Přidat (${ totalAddedCount })",
-        "Přidat (${ totalAddedCount })",
-        "Přidat (${ totalAddedCount })"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Připojení až pro ${ plusVpnConnections } zařízení",
-        "Připojení až pro ${ plusVpnConnections } zařízení",
-        "Připojení až pro ${ plusVpnConnections } zařízení",
-        "Připojení až pro ${ plusVpnConnections } zařízení"
       ],
       "Continue": [
         "Pokračovat"
@@ -4771,12 +5920,6 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Ověřte svou identitu pomocí fyzického bezpečnostního klíče U2F nebo FIDO2"
       ],
-      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostního klíče.",
-        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostních klíčů.",
-        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostních klíčů.",
-        "Dosáhli jste maximálního počtu ${ maxSecurityKeyLength } bezpečnostních klíčů."
-      ],
       "Your two-factor authentication key is ready to use.": [
         "Váš dvoufázový ověřovací klíč je připraven k použití."
       ]
@@ -4810,12 +5953,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bajt",
-        "bajty",
-        "bajtů",
-        "bajtů"
-      ],
       "GB": [
         "GB"
       ],
@@ -4827,38 +5964,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Bajt",
-        "Bajty",
-        "Bajtů",
-        "Bajtů"
-      ],
-      "Gigabyte": [
-        "Gigabajt",
-        "Gigabajty",
-        "Gigabajtů",
-        "Gigabajtů"
-      ],
-      "Kilobyte": [
-        "Kilobajt",
-        "Kilobajty",
-        "Kilobajtů",
-        "Kilobajtů"
-      ],
-      "Megabyte": [
-        "Megabajt",
-        "Megabajty",
-        "Megabajtů",
-        "Megabajtů"
-      ],
-      "Terabyte": [
-        "Terabajt",
-        "Terabajty",
-        "Terabajtů",
-        "Terabajtů"
       ]
     },
     "Filter notification": {
@@ -4966,14 +6071,6 @@
     "Group address title": {
       "Group address": [
         "Skupinová adresa"
-      ]
-    },
-    "Group member count": {
-      "${ memberCount } member": [
-        "${ memberCount } člen",
-        "${ memberCount } členové",
-        "${ memberCount } členů",
-        "${ memberCount } členů"
       ]
     },
     "Header": {
@@ -5105,12 +6202,6 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Přidejte tento záznam do své domény v ovládacím panelu svého registrátora doménových jmen"
       ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Nalezen ${ itemsCount } návrh, použijte klávesnice pro navigaci.",
-        "Nalezeny ${ itemsCount } návrhy, použijte klávesnice pro navigaci.",
-        "Nalezeno ${ itemsCount } návrhů, použijte klávesnice pro navigaci.",
-        "Nalezeno ${ itemsCount } návrhů, použijte klávesnice pro navigaci."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
       ]
@@ -5177,18 +6268,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } události zašifrována a přidána do kalendáře",
-        "${ totalImported }/${ totalToImport } událostí zašifrovány a přidány do kalendáře",
-        "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře",
-        "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } události byla úspěšně importována.",
-        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } ze ${ totalToImport } událostí byly úspěšně importovány.",
-        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
-        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Nastala chyba při šifrování a přidávání vaší události. Událost nemůže být importována."
       ],
@@ -5223,29 +6302,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Importované pozvánky naleznete v ${ CALENDAR_APP_NAME } jako prosté události bez podrobností o organizátorech a účastnících. Pro aktualizace událostí a zobrazení účastníků požádejte organizátory o pozvánku pomocí své ${ BRAND_NAME } e-mailové adresy."
       ],
-      "This file contains an event invitation:": [
-        "Tento soubor obsahuje pozvánku na událost:",
-        "Tento soubor obsahuje pozvánky na události:",
-        "Tento soubor obsahuje pozvánky na události:",
-        "Tento soubor obsahuje pozvánky na události:"
-      ],
-      "This file contains an invitation response:": [
-        "Tento soubor obsahuje odpověď na pozvánku:",
-        "Tento soubor obsahuje odpovědi na pozvánky:",
-        "Tento soubor obsahuje odpovědi na pozvánky:",
-        "Tento soubor obsahuje odpovědi na pozvánky:"
-      ],
       "This file contains some data that we cannot import:": [
         "Tento soubor obsahuje některá data, která nemůžeme importovat:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } kontaktu šifrován a přidán do vašeho seznamu kontaktů",
-        "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do Vašeho listu kontaktů",
-        "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů",
-        "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Nastala chyba při šifrování a přidávání kontaktu. Kontakt nebyl importován."
       ],
@@ -5265,14 +6326,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kontakt ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } kontakt",
-        "${ totalContacts } kontakty",
-        "${ totalContacts } kontaktů",
-        "${ totalContacts } kontaktů"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5434,12 +6487,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } z ${ totalEvents } události nebude importována. Klikněte pro detaily.",
-        "${ totalEventsDiscarded } ze ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
-        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
-        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily."
-      ],
       "No contact can be imported. Click for details": [
         "Žádný kontakt nemůže být importován. Klikněte pro více informací"
       ],
@@ -5453,12 +6500,6 @@
     "Info": {
       " and other security features.": [
         " a další funkce zabezpečení."
-      ],
-      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
-        "${ amountUsers }/${ totalUsers } uživatelů mají aktuálně přístup ke sdíleným serverům.",
-        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům.",
-        "${ amountUsers }/${ totalUsers } uživatelů má aktuálně přístup ke sdíleným serverům."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -5475,24 +6516,6 @@
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
         "${ CALENDAR_APP_NAME } vyžaduje ${ BRAND_NAME } adresu pro bezpečnou synchronizaci událostí a šifrování. ${ claimAddressButton }"
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } nový kalendář",
-        "${ calendarsToBeCreatedCount } nové kalendáře",
-        "${ calendarsToBeCreatedCount } nových kalendářů",
-        "${ calendarsToBeCreatedCount } nových kalendářů"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } sloučený kalendář",
-        "${ calendarsToBeMergedCount } sloučené kalendáře",
-        "${ calendarsToBeMergedCount } sloučených kalendářů",
-        "${ calendarsToBeMergedCount } sloučených kalendářů"
-      ],
-      "${ countriesCount } country enabled": [
-        "${ countriesCount } země povolena",
-        "${ countriesCount } země povoleny",
-        "${ countriesCount } zemí povoleno",
-        "${ countriesCount } zemí povoleno"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent } % sleva"
       ],
@@ -5501,24 +6524,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhled v nízkém rozlišení"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používá dvoufázové ověření.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používají dvoufázové ověření.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používá dvoufázové ověření.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů vaší rodiny používá dvoufázové ověření."
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používá dvoufázové ověření pro přihlášení do vaší organizace.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používají dvoufázové ověření pro přihlášení do vaší organizace.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používá dvoufázové ověření pro přihlášení do vaší organizace.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů používá dvoufázové ověření pro přihlášení do vaší organizace."
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používají dvoufázové ověření pro přihlášení do vaší organizace.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } z vašich členů, kteří nemají SSO používá dvoufázové ověření pro přihlášení do vaší organizace."
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
@@ -5529,32 +6534,8 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } lze také použít s jediným heslem, které nahradí přihlašovací i druhé heslo. Chcete-li přepnout do režimu jediného hesla, zadejte jediné heslo, které chcete použít, a klikněte na tlačítko Uložit."
       ],
-      "${ n } address": [
-        "${ n } adresa",
-        "${ n } adresy",
-        "${ n } adres",
-        "${ n } adres"
-      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: neumisťovat do karantény ani neodmítat neautorizované e-maily. Obvykle tuto zásadu lidé používají pouze k diagnostice a odstraňování problémů nebo k testování."
-      ],
-      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } člena",
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů",
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů",
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } členů"
-      ],
-      "${ number } city": [
-        "${ number } město",
-        "${ number } města",
-        "${ number } měst",
-        "${ number } měst"
-      ],
-      "${ number } server": [
-        "${ number } server",
-        "${ number } servery",
-        "${ number } serverů",
-        "${ number } serverů"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
@@ -5565,35 +6546,11 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje alespoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } vyprší za ${ daysLeft } den.",
-        "${ planName } vyprší za ${ daysLeft } dny.",
-        "${ planName } vyprší za ${ daysLeft } dnů.",
-        "${ planName } vyprší za ${ daysLeft } dnů."
-      ],
       "${ planName } expires today.": [
         "${ planName } vyprší dnes."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } chrání váš účet pomocí dedikovaného sledování podezřelých aktivit."
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } složka nalezena",
-        "${ providerFoldersNumLocalized } složky nalezeny",
-        "${ providerFoldersNumLocalized } složek nalezeno",
-        "${ providerFoldersNumLocalized } složek nalezeno"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } štítek nalezen v Gmailu",
-        "${ providerFoldersNumLocalized } štítky nalezeny v Gmailu",
-        "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu",
-        "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu"
-      ],
-      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter } server je stále nastavován. Toto obvykle trvá přibližně ${ provisioningDuration }.",
-        "${ provisioningCounter } servery jsou stále nastavovány. Toto obvykle trvá přibližně ${ provisioningDuration }.",
-        "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }.",
-        "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: žádá platformy příjemců, aby neautorizované e-maily označily jako spam nebo je umístily do karantény."
@@ -5601,56 +6558,8 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: žádá platformy příjemců o odmítnutí neautorizovaných e-mailů."
       ],
-      "${ remainingAddresses.length } more": [
-        "${ remainingAddresses.length } další",
-        "${ remainingAddresses.length } další",
-        "${ remainingAddresses.length } dalších",
-        "${ remainingAddresses.length } dalších"
-      ],
-      "${ remainingAddresses.length } more address": [
-        "${ remainingAddresses.length } další adresa",
-        "${ remainingAddresses.length } další adresy",
-        "${ remainingAddresses.length } dalších adres",
-        "${ remainingAddresses.length } dalších adres"
-      ],
-      "${ resultsCount } result found": [
-        "${ resultsCount } výsledek nalezen",
-        "${ resultsCount } výsledky nalezeny",
-        "${ resultsCount } výsledků nalezeno",
-        "${ resultsCount } výsledků nalezeno"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
-        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
-        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
-        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
-      ],
-      "${ selectedEntities.length } selected": [
-        "Vybráno: ${ selectedEntities.length }",
-        "Vybráno: ${ selectedEntities.length }",
-        "Vybráno: ${ selectedEntities.length }",
-        "Vybráno: ${ selectedEntities.length }"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } složka vybrána",
-        "${ selectedFoldersCountLocalized } vybrané složky",
-        "${ selectedFoldersCountLocalized } složek vybráno",
-        "${ selectedFoldersCountLocalized } složek vybráno"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "vybrán ${ selectedFoldersCountLocalized } štítek",
-        "vybrány ${ selectedFoldersCountLocalized } štítky",
-        "vybráno ${ selectedFoldersCountLocalized } štítků",
-        "vybráno ${ selectedFoldersCountLocalized } štítků"
-      ],
       "${ storage } storage": [
         "${ storage } úložiště"
-      ],
-      "${ userFound } user found": [
-        "Nalezen ${ userFound } uživatel",
-        "Nalezeni ${ userFound } uživatelé",
-        "Nalezeno ${ userFound } uživatelů",
-        "Nalezeno ${ userFound } uživatelů"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } byl vytvořen"
@@ -5670,12 +6579,6 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "Funkce Secure Core vyžaduje ${ vpnPlus }."
       ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } člen)",
-        "(${ memberCount } členové)",
-        "(${ memberCount } členů)",
-        "(${ memberCount } členů)"
-      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/měsíc)"
       ],
@@ -5694,20 +6597,8 @@
       "**Sync codes** to all your devices": [
         "**Synchronizovat kódy** na všechny vaše zařízení"
       ],
-      "+ ${ invisibleCount } More": [
-        "+ ${ invisibleCount } další",
-        "+ ${ invisibleCount } další",
-        "+ ${ invisibleCount } dalších",
-        "+ ${ invisibleCount } dalších"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
-        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
-        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
-        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)"
       ],
       "2FA disabled": [
         "2FA vypnuto"
@@ -5742,11 +6633,11 @@
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
+      "Accounts": [
+        "Účty"
+      ],
       "active": [
         "aktivní"
-      ],
-      "Activity Monitor": [
-        "Monitor aktivity"
       ],
       "add a recovery method": [
         "přidali metodu obnovení"
@@ -5760,29 +6651,11 @@
       "Add multiple users to your organization at once.": [
         "Přidejte do organizace více uživatelů najednou."
       ],
-      "Add server (${ availableAddedCount } available)": [
-        "Přidat server (${ availableAddedCount } k dispozici)",
-        "Přidat servery (${ availableAddedCount } k dispozici)",
-        "Přidat servery (${ availableAddedCount } k dispozici)",
-        "Přidat servery (${ availableAddedCount } k dispozici)"
-      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Přidejte své jméno a logo a vytvořte pro svou organizaci personalizované prostředí."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "Přidávání ${ addedServerCount } serveru brány",
-        "Přidávání ${ addedServerCount } serverů brány",
-        "Přidávání ${ addedServerCount } serverů brány",
-        "Přidávání ${ addedServerCount } serverů brány"
-      ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Přidáním externí e-mailové adresy se deaktivuje koncové šifrování pro veškerou e-mailovou komunikaci v rámci této skupiny. Chcete pokračovat?"
-      ],
-      "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Přidávání serveru brány: ${ serverNumber } / ${ total }",
-        "Přidávání serverů brány: ${ serverNumber } / ${ total }",
-        "Přidávání serverů brány: ${ serverNumber } / ${ total }",
-        "Přidávání serverů brány: ${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "Adresa zkopírována do schránky"
@@ -5790,26 +6663,8 @@
       "Admin account allocation": [
         "Přidělení účtu správce"
       ],
-      "Affected user is on row": [
-        "Dotčený uživatel je na řádku",
-        "Dotčení uživatelé jsou na řádcích",
-        "Dotčení uživatelé jsou na řádcích",
-        "Dotčení uživatelé jsou na řádcích"
-      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent s umělou inteligencí, který vám pomůže rychle a bez námahy vytvářet lepší e-maily."
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Všechna (${ totalFoldersCount } složka)",
-        "Všechny (${ totalFoldersCount } složky)",
-        "Všech (${ totalFoldersCount } složek)",
-        "Všech (${ totalFoldersCount } složek)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Všechen (${ totalFoldersCount } štítek)",
-        "Všechny (${ totalFoldersCount } štítky)",
-        "Všech (${ totalFoldersCount } štítků)",
-        "Všech (${ totalFoldersCount } štítků)"
       ],
       "All inactive members deleted": [
         "Všichni neaktivní členové smazáni"
@@ -5822,12 +6677,6 @@
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
-        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Přiděleno"
@@ -6000,23 +6849,11 @@
       "Country code": [
         "Kód země"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Vytvořit ${ calendarsToBeCreatedCount } nový kalendář",
-        "Vytvořit ${ calendarsToBeCreatedCount } nové kalendáře",
-        "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů",
-        "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a složky, které chcete importovat."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a štítky, které chcete importovat."
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Vytvořte bezpečný cloud pro ${ value } člena",
-        "Vytvořte bezpečný cloud pro ${ value } členy",
-        "Vytvořte bezpečný cloud pro ${ value } členů",
-        "Vytvořte bezpečný cloud pro ${ value } členů"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Vytvořte a spravujte podřízené účty a přiřaďte jim e-mailové adresy na vlastní doméně."
@@ -6029,12 +6866,6 @@
       ],
       "Create your first Gateway": [
         "Vytvořte svou první bránu"
-      ],
-      "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Vytváření serveru brány: ${ serverNumber } / ${ total }",
-        "Vytváření serverů brány: ${ serverNumber } / ${ total }",
-        "Vytváření serverů brány: ${ serverNumber } / ${ total }",
-        "Vytváření serverů brány: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Vytváření vašeho účtu"
@@ -6081,12 +6912,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ${ MAIL_APP_NAME } záznam má nejnižší prioritu."
       ],
-      "Deleting ${ deletedServerCount } gateway server": [
-        "Mazání ${ deletedServerCount } serveru brány",
-        "Mazání ${ deletedServerCount } serverů brány",
-        "Mazání ${ deletedServerCount } serverů brány",
-        "Mazání ${ deletedServerCount } serverů brány"
-      ],
       "Did you know?": [
         "Věděli jste?"
       ],
@@ -6128,12 +6953,6 @@
       ],
       "Domain ownership verified.": [
         "Vlastnictví domény ověřeno."
-      ],
-      "domain used": [
-        "použitá doména",
-        "použité domény",
-        "použitých domén",
-        "použitých domén"
       ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
         "Neztraťte přístup k vašim prémiovým funkcím ${ appName }. Povolte dnes automatické obnovení."
@@ -6401,12 +7220,6 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Pokud máte potíže, rádi vám pomůžeme. ${ boldPhoneCall } nebo ${ boldZoomMeeting } s jedním z našich specialistů podpory."
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendáře",
-        "Importovat ${ calendarCount } ze ${ totalCalendarsCount } kalendářů",
-        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů",
-        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů"
       ],
       "Import from": [
         "Importovat z"
@@ -6720,18 +7533,6 @@
       "or ${ selectFileButton }": [
         "nebo ${ selectFileButton }"
       ],
-      "or assign to any country in ${ availableAgainAfterDays } day": [
-        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } den",
-        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } dny",
-        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } dnů",
-        "nebo přiřadit libovolné zemi za ${ availableAgainAfterDays } dnů"
-      ],
-      "or assign to any country in ${ availableAgainAfterHours } hour": [
-        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodinu",
-        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodiny",
-        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodin",
-        "nebo přiřadit libovolné zemi za ${ availableAgainAfterHours } hodin"
-      ],
       "or discover other features:": [
         "nebo objevte další funkce:"
       ],
@@ -6739,6 +7540,9 @@
         "Nebo vyberte konkrétní server:"
       ],
       "Organization monitor": [
+        "Monitorování organizace"
+      ],
+      "Organization Monitor": [
         "Monitorování organizace"
       ],
       "Organization size": [
@@ -6794,18 +7598,6 @@
       ],
       "per month, billed at ${ price }": [
         "měsíčně, účtováno ${ price }"
-      ],
-      "Please add a password for the user on row": [
-        "Přidejte prosím heslo uživatele na řádku",
-        "Přidejte prosím hesla uživatelů na řádcích",
-        "Přidejte prosím hesla uživatelů na řádcích",
-        "Přidejte prosím hesla uživatelů na řádcích"
-      ],
-      "Please add an email address for the user on row": [
-        "Přidejte prosím e-mailovou adresu uživatele na řádku",
-        "Přidejte prosím e-mailové adresy uživatelů na řádcích",
-        "Přidejte prosím e-mailové adresy uživatelů na řádcích",
-        "Přidejte prosím e-mailové adresy uživatelů na řádcích"
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Prosím, požádejte vlastníka, aby vás přímo pozval k dokumentu."
@@ -6954,6 +7746,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Vyberte příslušnost uživatelů z ${ getFormattedOrganization }, kterým chcete povolit vstup do vaší organizace ${ BRAND_NAME }:"
       ],
+      "Select users to view their activity": [
+        "Vyberte uživatele k zobrazení jejich aktivity"
+      ],
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
       ],
@@ -6999,12 +7794,6 @@
       "Shared ${ vaultLink } updated": [
         "Sdílený ${ vaultLink } aktualizován"
       ],
-      "Shared server country (${ countriesCount })": [
-        "Země se sdíleným serverem (${ countriesCount })",
-        "Země se sdíleným serverem (${ countriesCount })",
-        "Země se sdíleným serverem (${ countriesCount })",
-        "Země se sdíleným serverem (${ countriesCount })"
-      ],
       "Shared vault deleted": [
         "Sdílený trezor smazán"
       ],
@@ -7029,12 +7818,6 @@
       "Starts on ${ startsOnTime }": [
         "Začíná ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }",
-        "Krok ${ step }"
-      ],
       "Storage": [
         "Úložiště"
       ],
@@ -7052,12 +7835,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Zálohu odešlete na následující adresu nebo naskenujte QR kód. Po potvrzení se vklad promítne na váš účet."
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Předplatné se automaticky obnoví každý ${ cycle } měsíc.",
-        "Předplatné se automaticky obnoví každé ${ cycle } měsíce.",
-        "Předplatné se automaticky obnoví každých ${ cycle } měsíců.",
-        "Předplatné se automaticky obnoví každých ${ cycle } měsíců."
       ],
       "Subscription auto-renews every month.": [
         "Předplatné se automaticky obnovuje každý měsíc."
@@ -7103,24 +7880,6 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Šifrovaná data jsou o něco větší kvůli režii šifrování a podpisů, které zajišťují bezpečnost vašich dat."
-      ],
-      "The following address is invalid.": [
-        "Následující adresa je neplatná.",
-        "Následující adresy jsou neplatné.",
-        "Následující adresy jsou neplatné.",
-        "Následující adresy jsou neplatné."
-      ],
-      "The following address is unavailable.": [
-        "Následující adresa je nedostupná.",
-        "Následující adresy jsou nedostupné.",
-        "Následující adresy jsou nedostupné.",
-        "Následující adresy jsou nedostupné."
-      ],
-      "The following address was not created.": [
-        "Následující adresa nebyla vytvořena.",
-        "Následující adresy nebyly vytvořeny.",
-        "Následující adresy nebyly vytvořeny.",
-        "Následující adresy nebyly vytvořeny."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Následující členové obdrží e-mail s výzvou, aby si co nejdříve povolili dvoufázové ověření."
@@ -7542,30 +8301,6 @@
       "You are currently signed in as ${ username }.": [
         "Aktuálně jste přihlášeni jako ${ username }."
       ],
-      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "V současné době využíváte ${ ipCount } z vašeho ${ ipAddresses } dostupného dedikovaného serveru.",
-        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
-        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
-        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a ${ usedAI } ze své ${ maxAI } dostupné licence asistenta psaní.",
-        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní.",
-        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní.",
-        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí a ${ usedAI } ze svých ${ maxAI } dostupných licencí asistenta psaní."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze své ${ maxAI } dostupné licence asistenta psaní.",
-        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní.",
-        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní.",
-        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence a žádnou ze svých ${ maxAI } dostupných licencí asistenta psaní."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "V současné době využíváte ${ usedMembers } ze své ${ maxMembers } dostupné uživatelské licence.",
-        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí.",
-        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí.",
-        "V současné době využíváte ${ usedMembers } ze svých ${ maxMembers } dostupných uživatelských licencí."
-      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jste přihlášen/a k účtu ${ memberAddress }."
       ],
@@ -7596,18 +8331,6 @@
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendáře. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendář. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na váš kalendář a každého ${ BRAND_NAME } uživatele, se kterým jste váš kalendář sdíleli.",
-        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendáře. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli.",
-        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendářů. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli.",
-        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendářů. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Nyní můžete k účtu přistupovat a spravovat jej jako správce."
       ],
@@ -7625,18 +8348,6 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Nechte se upozornit, pokud vaše heslo nebo jiná data uniknou ze služby třetí strany."
-      ],
-      "You have ${ availableCount } new server available.": [
-        "Máte k dispozici ${ availableCount } nový server.",
-        "Máte k dispozici ${ availableCount } nové servery.",
-        "Máte k dispozici ${ availableCount } nových serverů.",
-        "Máte k dispozici ${ availableCount } nových serverů."
-      ],
-      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "Máte k dispozici ${ unassignedAvailableCount } nedávno použitý server. Chcete-li tento server přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena.",
-        "Máte k dispozici ${ unassignedAvailableCount } nedávno použité servery. Chcete-li tyto servery přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena.",
-        "Máte k dispozici ${ unassignedAvailableCount } nedávno použitých serverů. Chcete-li tyto servery přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena.",
-        "Máte k dispozici ${ unassignedAvailableCount } nedávno použitých serverů. Chcete-li tyto servery přidělit k jiné zemi, musíte počkat, dokud nebude deaktivace dokončena."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Máte zkušební verzi předplatného ${ planTitle }. Pokud chcete pokračovat s vaším předplatným po zkušební době, prosím přidejte platební metodu."
@@ -7692,18 +8403,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "Po dobu 10 dnů nebudete moci tyto servery přeřadit do jiné země."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }.",
-        "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }.",
-        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }.",
-        "Poté vám bude každých ${ renewCycle } měsíců účtováno ${ renewAmountStr }."
-      ],
-      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
-        "Povolili jste přeposílání na ${ MAX_SYNC_PAID_USER } Gmail adresu. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
-        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adresy. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
-        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte.",
-        "Povolili jste přeposílánína ${ MAX_SYNC_PAID_USER } Gmail adres. Chcete-li přidat další, nejprve jednu z nich deaktivujte."
-      ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
         "Dosáhli jste limitu počtu 50 uživatelů pro tento filtr. Odeberte jednoho a přidejte dalšího."
       ],
@@ -7746,12 +8445,6 @@
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaný server.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikované servery.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaných serverů.",
-        "Vaše bezplatná zkušební verze obsahuje ${ ownedCount } dedikovaných serverů."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
       ],
@@ -7775,12 +8468,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se automaticky obnovovat každý ${ cycle } měsíc.",
-        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se automaticky obnovovat každé ${ cycle } měsíce.",
-        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se automaticky obnovovat každých ${ cycle } měsíců.",
-        "Váš naplánovaný tarif začíná ${ renewalTime } a bude se automaticky obnovovat každých ${ cycle } měsíců."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Váš naplánovaný tarif začíná ${ renewalTime } a bude každý měsíc automaticky obnoven."
@@ -7857,20 +8544,6 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Abyste se vyvarovali přerušení služeb z důvodu neuhrazených faktur, prosím zajistěte si, že máte alespoň 1 uloženou platební metodu."
-      ]
-    },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } vybraná složka",
-        "${ selectedFoldersCount } vybrané složky",
-        "${ selectedFoldersCount } vybraných složek",
-        "${ selectedFoldersCount } vybraných složek"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } vybraný štítek",
-        "${ selectedFoldersCount } vybrané štítky",
-        "${ selectedFoldersCount } vybraných štítků",
-        "${ selectedFoldersCount } vybraných štítků"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -7962,35 +8635,11 @@
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
       ],
-      "${ group.UserCount } user": [
-        "${ group.UserCount } uživatel",
-        "${ group.UserCount } uživatelé",
-        "${ group.UserCount } uživatelů",
-        "${ group.UserCount } uživatelů"
-      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresa"
-      ],
-      "${ n } month": [
-        "${ n } měsíc",
-        "${ n } měsíce",
-        "${ n } měsíců",
-        "${ n } měsíců"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } den",
-        "${ nbDay } dny",
-        "${ nbDay } dnů",
-        "${ nbDay } dnů"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } z ${ MaxAddresses } e-mailové adresy",
-        "${ UsedAddresses } ze ${ MaxAddresses } e-mailových adres",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
@@ -8559,12 +9208,6 @@
       "Sequences": [
         "Sekvence"
       ],
-      "Show ${ n } administrator": [
-        "Zobrazit ${ n } správce",
-        "Zobrazit ${ n } správce",
-        "Zobrazit ${ n } správců",
-        "Zobrazit ${ n } správců"
-      ],
       "Single sign-on Entity ID": [
         "ID subjektu jednotného přihlášení"
       ],
@@ -8965,12 +9608,6 @@
       "Almost there": [
         "Téměř hotovo"
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
-        "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
-        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
-        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Připojování k Vašemu poskytovateli e-mailu"
       ],
@@ -9090,32 +9727,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Povolit ${ reason }"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Importovat všechny zprávy z ${ itemsToImportCount } složky a označit je štítkem",
-        "Importovat všechny zprávy ze ${ itemsToImportCount } složek a označit je štítkem",
-        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem",
-        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importovat všechny zprávy se štítkem ${ itemsToImportCount } a označit je štítkem",
-        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
-        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
-        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složky a označit je štítkem",
-        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
-        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
-        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítku celkem a označit je jako",
-        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
-        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
-        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
       ]
     },
     "mail_signup_2024: Info": {
@@ -9344,86 +9955,8 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar": [
-        "${ n } kalendář",
-        "${ n } kalendářů",
-        "${ n } kalendářů",
-        "${ n } kalendářů"
-      ],
-      "${ n } custom email domain": [
-        "${ n } vlastní e-mailová doména",
-        "${ n } vlastní e-mailové domény",
-        "${ n } vlastních e-mailových domén",
-        "${ n } vlastních e-mailových domén"
-      ],
-      "${ n } email address": [
-        "${ n } e-mailová adresa",
-        "${ n } e-mailové adresy",
-        "${ n } e-mailových adres",
-        "${ n } e-mailových adres"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-mailová adresa na uživatele",
-        "${ n } e-mailové adresy na uživatele",
-        "${ n } e-mailových adres na uživatele",
-        "${ n } e-mailových adres na uživatele"
-      ],
-      "${ n } folder": [
-        "${ n } složka",
-        "${ n } složky",
-        "${ n } složek",
-        "${ n } složek"
-      ],
-      "${ n } label": [
-        "${ n } štítek",
-        "${ n } štítky",
-        "${ n } štítků",
-        "${ n } štítků"
-      ],
-      "${ n } message per day": [
-        "${ n } zpráva denně",
-        "${ n } zprávy denně",
-        "${ n } zpráv denně",
-        "${ n } zpráv denně"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } sdílelý trezor ${ PASS_SHORT_APP_NAME } na uživatele",
-        "${ n } sdílelé trezory ${ PASS_SHORT_APP_NAME } na uživatele",
-        "${ n } sdílelých trezorů ${ PASS_SHORT_APP_NAME } na uživatele",
-        "${ n } sdílelých trezorů ${ PASS_SHORT_APP_NAME } na uživatele"
-      ],
-      "${ n } vault": [
-        "${ n } trezor",
-        "${ n } trezory",
-        "${ n } trezorů",
-        "${ n } trezorů"
-      ],
-      "${ n } VPN connection": [
-        "${ n } připojení VPN",
-        "${ n } připojení VPN",
-        "${ n } připojení VPN",
-        "${ n } připojení VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } uživatel",
-        "Až ${ numberOfUsers } uživatelé",
-        "Až ${ numberOfUsers } uživatelů",
-        "Až ${ numberOfUsers } uživatelů"
-      ],
-      "${ options }-day file version history": [
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin, doživotně"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } s ${ n } aliasem hide-my-email",
-        "${ PASS_APP_NAME } se ${ n } aliasy hide-my-email",
-        "${ PASS_APP_NAME } s ${ n } aliasy hide-my-email",
-        "${ PASS_APP_NAME } s ${ n } aliasy hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } s neomezeným počtem aliasů hide-my-email"
@@ -9590,12 +10123,6 @@
       "High-speed Swiss VPN that protects your privacy": [
         "Vysokorychlostní švýcarská VPN, která chrání vaše soukromí"
       ],
-      "High-speed VPN on ${ n } device": [
-        "Vysokorychlostní VPN na ${ n } zařízení",
-        "Vysokorychlostní VPN na ${ n } zařízeních",
-        "Vysokorychlostní VPN na ${ n } zařízeních",
-        "Vysokorychlostní VPN na ${ n } zařízeních"
-      ],
       "HTML signatures": [
         "HTML podpisy"
       ],
@@ -9674,12 +10201,6 @@
       "Send & receive invitations": [
         "Odesílání a přijímání pozvánek"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servery v ${ vpnServersCountData.paid.countries }+ zemi",
-        "Servery ve ${ vpnServersCountData.paid.countries }+ zemích",
-        "Servery v ${ vpnServersCountData.paid.countries }+ zemích",
-        "Servery v ${ vpnServersCountData.paid.countries }+ zemích"
-      ],
       "Share files with no size limit": [
         "Sdílení souborů bez omezení velikosti"
       ],
@@ -9755,29 +10276,11 @@
       "Unlimited volume/bandwidth": [
         "Neomezený objem/šířka pásma"
       ],
-      "Up to ${ n } user": [
-        "Až ${ n } uživatel",
-        "Až ${ n } uživatelé",
-        "Až ${ n } uživatelů",
-        "Až ${ n } uživatelů"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Až ${ n } uživatel (${ adminsText }, ${ usersText })",
-        "Až ${ n } uživatelé (${ adminsText }, ${ usersText })",
-        "Až ${ n } uživatelů (${ adminsText }, ${ usersText })",
-        "Až ${ n } uživatelů (${ adminsText }, ${ usersText })"
-      ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného prostoru"
       ],
       "Up to 10 Gbps": [
         "Až 10 Gb/s"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Používejte na ${ n } zařízení",
-        "Používejte až na ${ n } zařízeních najednou",
-        "Používejte až na ${ n } zařízeních najednou",
-        "Použijte až na ${ n } zařízení najednou"
       ],
       "User credential management": [
         "Správa uživatelů"
@@ -9788,28 +10291,8 @@
       "User storage management": [
         "Správa uživatelského úložiště"
       ],
-      "Vault sharing (up to ${ n } person)": [
-        "Sdílení trezoru (až ${ n } osoba)",
-        "Sdílení trezoru (až ${ n } osoby)",
-        "Sdílení trezoru (až ${ n } osob)",
-        "Sdílení trezoru (až ${ n } osob)"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ admins } admin": [
-        "${ admins } správce",
-        "${ admins } správcové",
-        "${ admins } správců",
-        "${ admins } správců"
-      ],
-      "${ users } user": [
-        "${ users } uživatel",
-        "${ users } uživatelé",
-        "${ users } uživatelů",
-        "${ users } uživatelů"
       ]
     },
     "new_plans: heading": {
@@ -10231,12 +10714,6 @@
       "Central control panel": [
         "Centrální ovládací panel"
       ],
-      "Create up to ${ n } calendar": [
-        "Vytvořte až ${ n } kalendář",
-        "Vytvořte až ${ n } kalendáře",
-        "Vytvořte až ${ n } kalendářů",
-        "Vytvořte až ${ n } kalendářů"
-      ],
       "Dedicated Account manager": [
         "Dedikovaný správce účtu"
       ],
@@ -10254,12 +10731,6 @@
       ],
       "Require 2FA": [
         "Požadování 2FA"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Podpora ${ n } vlastní e-mailové domény",
-        "Podpora ${ n } vlastních e-mailových domén",
-        "Podpora ${ n } vlastních e-mailových domén",
-        "Podpora ${ n } vlastních e-mailových domén"
       ]
     },
     "news": {
@@ -10723,24 +11194,6 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } pro větší úložný prostor a nebo uvolněte místo na úložišti."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } more address.": [
-        "Váš tarif zahrnuje maximálně ${ availableAddresses } další adresu.",
-        "Váš tarif zahrnuje maximálně ${ availableAddresses } další adresy.",
-        "Váš tarif zahrnuje maximálně ${ availableAddresses } dalších adres.",
-        "Váš tarif zahrnuje maximálně ${ availableAddresses } dalších adres."
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
-        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalšího organizačního uživatele.",
-        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } další organizační uživatele.",
-        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalších organizačních uživatelů.",
-        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalších organizačních uživatelů."
-      ],
-      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
-        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } další účet VPN.",
-        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } další účty VPN.",
-        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } dalších účtů VPN.",
-        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } dalších účtů VPN."
-      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Váš tarif zahrnuje maximálně ${ humanReadableAvailableSpace } dalšího úložného prostoru."
       ]
@@ -10905,12 +11358,6 @@
       ]
     },
     "pass_signup_2024: Info": {
-      "${ n } user account": [
-        "${ n } uživatelský účet",
-        "${ n } uživatelské účty",
-        "${ n } uživatelských účtů",
-        "${ n } uživatelských účtů"
-      ],
       "Activity log": [
         "Log aktivity"
       ],
@@ -11136,35 +11583,11 @@
       "terms & conditions": [
         "smluvních podmínek užívání"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupón je platný pro ${ couponRedemptions } obnovení.",
-        "Kupón je platný pro ${ couponRedemptions } obnovení.",
-        "Kupón je platný pro ${ couponRedemptions } obnovení.",
-        "Kupón je platný pro ${ couponRedemptions } obnovení."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíc.",
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro první ${ subscriptionLength } měsíce.",
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro prvních ${ subscriptionLength } měsíců.",
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí pro prvních ${ subscriptionLength } měsíců."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit.",
-        "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Kupón je platný pro ${ couponRedemptions } obnovení. Poté se automaticky obnoví za ${ renewPriceStr } na 1 měsíc. Předplatné můžete kdykoli zrušit."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Speciální zvýhodněná cena ${ priceWithDiscount } platí první měsíc. Poté dojde každý měsíc k automatickému obnovení za ${ renewPriceStr }. Předplatné můžete kdykoli zrušit."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "Transakce byla úspěšně rozpoznána. Kredity budou připsány na váš účet po úplném potvrzení transakce."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíc. Předplatné můžete kdykoli zrušit.",
-        "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíce. Předplatné můžete kdykoli zrušit.",
-        "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit.",
-        "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit."
       ],
       "This number will be shown on all future invoices": [
         "Toto číslo bude uvedeno na všech budoucích fakturách"
@@ -11463,18 +11886,6 @@
       ]
     },
     "Plans": {
-      "${ cycle } month": [
-        "${ cycle } měsíc",
-        "${ cycle } měsíce",
-        "${ cycle } měsíců",
-        "${ cycle } měsíců"
-      ],
-      "${ months } month plan": [
-        "${ months }měsíční tarif",
-        "${ months }měsíční tarif",
-        "${ months }měsíční tarif",
-        "${ months }měsíční tarif"
-      ],
       "Enjoying ${ planName }?": [
         "Užíváte si ${ planName }?"
       ]
@@ -11619,12 +12030,6 @@
       ]
     },
     "Restore administrator panel": {
-      "${ n } administrator in your organization need access to the organization key.": [
-        "${ n } správce ve vaší organizaci potřebuje přístup ke klíči organizace.",
-        "${ n } správci ve vaší organizaci potřebují přístup ke klíči organizace.",
-        "${ n } správců ve vaší organizaci potřebuje přístup ke klíči organizace.",
-        "${ n } správců ve vaší organizaci potřebuje přístup ke klíči organizace."
-      ],
       "Changing organization keys": [
         "Změna klíče organizace"
       ],
@@ -11679,21 +12084,9 @@
     "retention_policy_2025_Confirmation": {
       "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
         "${ strongText }, včetně těch v doručené poště, odeslané poště a konceptech. Tímto způsobem mohou být odebrány zprávy, které uživatelé chtějí uchovat. Tyto zprávy již nebude možné obnovit."
-      ],
-      "After ${ lifetime } day all messages will be deleted": [
-        "Po ${ lifetime } dni budou všechny zprávy smazány",
-        "Po ${ lifetime } dnech budou všechny zprávy smazány",
-        "Po ${ lifetime } dnech budou všechny zprávy smazány",
-        "Po ${ lifetime } dnech budou všechny zprávy smazány"
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
-        "Životnost musí být delší než ${ MIN_LIFETIME } den",
-        "Životnost musí být delší než ${ MIN_LIFETIME } dny",
-        "Životnost musí být delší než ${ MIN_LIFETIME } dnů",
-        "Životnost musí být delší než ${ MIN_LIFETIME } dnů"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "Pro akci \"Uchovat vše\" nesmí být nastavena doživotní doba platnosti"
       ],
@@ -11708,12 +12101,6 @@
       ]
     },
     "retention_policy_2025_Info": {
-      "${ n } day": [
-        "${ n } den",
-        "${ n } dny",
-        "${ n } dnů",
-        "${ n } dnů"
-      ],
       "${ remainingCount } more": [
         "${ remainingCount } další"
       ],
@@ -11745,12 +12132,6 @@
       ],
       "Applies to": [
         "Použito na"
-      ],
-      "day": [
-        "den",
-        "dny",
-        "dnů",
-        "dnů"
       ],
       "Keep items forever": [
         "Uchovávat položky navždy"
@@ -12077,18 +12458,6 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } den",
-        "${ timeRemaining.inDays } dny",
-        "${ timeRemaining.inDays } dní",
-        "${ timeRemaining.inDays } dní"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } hodina",
-        "${ timeRemaining.inHours } hodiny",
-        "${ timeRemaining.inHours } hodin",
-        "${ timeRemaining.inHours } hodin"
-      ],
       "Didn’t make this request?": [
         "Toto není vaše žádost?"
       ],
@@ -12100,18 +12469,6 @@
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Přejděte do přihlášeného zařízení (v relaci, ve které byl požadavek iniciován) a změňte heslo."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Toto oprávnění vyprší za ${ timeRemaining.inDays } den",
-        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dny",
-        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dní",
-        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dní"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodinu",
-        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodiny",
-        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin",
-        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin"
       ],
       "This permission expires soon": [
         "Toto oprávnění brzy vyprší"
@@ -12127,30 +12484,6 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "Své heslo můžete resetovat až do ${ boldDate }."
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Na resetování hesla máte ${ timeRemaining.inDays } den.",
-        "Na resetování hesla máte ${ timeRemaining.inDays } dny.",
-        "Na resetování hesla máte ${ timeRemaining.inDays } dnů.",
-        "Na resetování hesla máte ${ timeRemaining.inDays } dnů."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
-        " Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
-        " Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
-        " Na resetování hesla máte ${ timeRemaining.inHours } hodin."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Na resetování hesla máte ${ timeRemaining.inMinutes } minutu.",
-        " Na resetování hesla máte ${ timeRemaining.inMinutes } minuty.",
-        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut.",
-        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundu.",
-        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekundy.",
-        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund.",
-        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund."
       ]
     },
     "session_recovery:available:link": {
@@ -12213,12 +12546,6 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } další hodina",
-        "${ gracePeriodHoursRemaining } další hodiny",
-        "${ gracePeriodHoursRemaining } dalších hodin",
-        "${ gracePeriodHoursRemaining } dalších hodin"
-      ],
       "Didn’t make this request?": [
         "Toto není vaše žádost?"
       ],
@@ -12231,23 +12558,11 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Resetování hesla je k dispozici od ${ boldDate }. Díky tomu máte čas na zrušení případných podvodných žádostí."
       ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodinu.",
-        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodiny.",
-        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodin.",
-        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodin."
-      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Abychom měli jistotu, že se o obnovení hesla pokoušíte skutečně vy, čekáme před schválením žádosti 72 hodin. Heslo si můžete změnit v ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Obdrželi jsme žádost o resetování hesla pro ${ boldEmail }."
-      ],
-      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodinu",
-        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodiny",
-        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodin",
-        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodin"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -12298,12 +12613,6 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Požádat o resetování hesla?"
-      ],
-      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
-        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodinu",
-        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodiny",
-        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodin",
-        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodin"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12315,12 +12624,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } hodina",
-        "${ gracePeriodHoursRemaining } hodiny",
-        "${ gracePeriodHoursRemaining } hodin",
-        "${ gracePeriodHoursRemaining } hodin"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } je nyní k dispozici."
       ],
@@ -12411,40 +12714,6 @@
         "Přejít na Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } den",
-        "${ days } dny",
-        "${ days } dnů",
-        "${ days } dnů"
-      ],
-      "${ hours } hour": [
-        "${ hours } hodina",
-        "${ hours } hodiny",
-        "${ hours } hodin",
-        "${ hours } hodin"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuty",
-        "${ minutes } minut",
-        "${ minutes } minut"
-      ],
-      "${ seconds } second": [
-        "${ seconds } sekunda",
-        "${ seconds } sekundy",
-        "${ seconds } sekund",
-        "${ seconds } sekund"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } měsíc ZDARMA",
-        "${ n } měsíce ZDARMA",
-        "${ n } měsíců ZDARMA",
-        "${ n } měsíců ZDARMA"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 uživatel"
@@ -12527,12 +12796,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } měsíc",
-        "${ n } měsíce",
-        "${ n } měsíců",
-        "${ n } měsíců"
-      ],
       "/ month": [
         "/ měsíc"
       ],
@@ -12658,42 +12921,6 @@
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením."
       ],
-      "${ n } member requested your help to sign in.": [
-        "${ n } člen vás požádal o pomoc s přihlášením.",
-        "${ n } členové vás požádali o pomoc s přihlášením.",
-        "${ n } členů vás požádalo o pomoc s přihlášením.",
-        "${ n } členů vás požádalo o pomoc s přihlášením."
-      ],
-      "${ n } user converted to SSO": [
-        "${ n } uživatel převeden na SSO",
-        "${ n } uživatelé převedeni na SSO",
-        "${ n } uživatelů převedeno na SSO",
-        "${ n } uživatelů převedeno na SSO"
-      ],
-      "${ n } user detached from SSO": [
-        "${ n } uživatel odpojen od SSO",
-        "${ n } uživatelé odpojeni od SSO",
-        "${ n } uživatelů odpojeno od SSO",
-        "${ n } uživatelů odpojeno od SSO"
-      ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } uživatel se připojil k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účet:",
-        "${ n } uživatelé se připojili k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:",
-        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:",
-        "${ n } uživatelů se připojilo k vaší organizaci prostřednictvím vašeho poskytovatele identit. Zkontrolujte nyní účty:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } uživatel je neaktivní. Tohoto uživatele můžete bezpečně odebrat z organizace.",
-        "${ n } uživatelé jsou neaktivní. Tyto uživatele můžete bezpečně odebrat z organizace.",
-        "${ n } uživatelů je neaktivních. Tyto uživatele můžete bezpečně odebrat z organizace.",
-        "${ n } uživatelů je neaktivních. Tyto uživatele můžete bezpečně odebrat z organizace."
-      ],
-      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ n } uživatel vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
-        "${ n } uživatelé vás žádají o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
-        "${ n } uživatelů vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením.",
-        "${ n } uživatelů vás žádá o pomoc s přihlášením ke svému účtu ${ BRAND_NAME }. Účet s jednotným přihlášením."
-      ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO uživatelé (poskytovaní poskytovatelem identit) budou smazáni** a budete je muset vytvořit ručně, abyste je mohli přidat zpět do organizace."
       ],
@@ -12741,18 +12968,6 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Pokud problém přetrvává, kontaktujte správce."
-      ],
-      "Delete ${ n } inactive user?": [
-        "Smazat ${ n } neaktivního uživatele?",
-        "Smazat ${ n } neaktivní uživatele?",
-        "Smazat ${ n } neaktivních uživatelů?",
-        "Smazat ${ n } neaktivních uživatelů?"
-      ],
-      "Delete ${ n } user": [
-        "Smazat ${ n } uživatele",
-        "Smazat ${ n } uživatele",
-        "Smazat ${ n } uživatelů",
-        "Smazat ${ n } uživatelů"
       ],
       "Deny": [
         "Zamítnout"
@@ -12961,12 +13176,6 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Nevyužitý kredit přidáme na váš účet ${ BRAND_NAME }."
       ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** den.",
-        "V tarifu **${ currentPlanName }** vám zbývají ještě **${ daysRemaining }** dny.",
-        "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** dnů.",
-        "V tarifu **${ currentPlanName }** vám zbývá ještě **${ daysRemaining }** dnů."
-      ],
       "Your ${ appStorage } is almost full": [
         "Vaše ${ appStorage } je téměř plné"
       ],
@@ -13013,84 +13222,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
-        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatele",
-        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatele",
-        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatelů",
-        "${ BRAND_NAME } Scribe asistent psaní pro ${ maxAi } uživatelů"
-      ],
-      "${ ipAddresses } dedicated server": [
-        "${ ipAddresses } dedikovaný server",
-        "${ ipAddresses } dedikované servery",
-        "${ ipAddresses } dedikovaných serverů",
-        "${ ipAddresses } dedikovaných serverů"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatele",
-        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatele",
-        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatelů",
-        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatelů"
-      ],
-      "${ n } calendar per user": [
-        "${ n } kalendář na uživatele",
-        "${ n } kalendáře na uživatele",
-        "${ n } kalendářů na uživatele",
-        "${ n } kalendářů na uživatele"
-      ],
-      "${ n } free VPN connection per user": [
-        "${ n } bezplatné připojení VPN na uživatele",
-        "${ n } bezplatné připojení VPN na uživatele",
-        "${ n } bezplatných připojení VPN na uživatele",
-        "${ n } bezplatných připojení VPN na uživatele"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } vysokorychlostní připojení VPN",
-        "${ n } vysokorychlostní připojení VPN",
-        "${ n } vysokorychlostních připojení VPN",
-        "${ n } vysokorychlostních připojení VPN"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } vysokorychlostní VPN připojení na uživatele",
-        "${ n } vysokorychlostní VPN připojení na uživatele",
-        "${ n } vysokorychlostních VPN připojení na uživatele",
-        "${ n } vysokorychlostních VPN připojení na uživatele"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN připojení",
-        "${ n } VPN připojení",
-        "${ n } VPN připojení",
-        "${ n } VPN připojení"
-      ],
-      "${ UsedAddresses } address": [
-        "${ UsedAddresses } adresa",
-        "${ UsedAddresses } adresy",
-        "${ UsedAddresses } adres",
-        "${ UsedAddresses } adres"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } z ${ MaxAddresses } e-mailové adresy",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres"
-      ],
-      "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } kalendář",
-        "${ UsedCalendars } kalendáře",
-        "${ UsedCalendars } kalendářů",
-        "${ UsedCalendars } kalendářů"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } z ${ MaxDomains } vlastní domény",
-        "${ UsedDomains } z ${ MaxDomains } vlastních domén",
-        "${ UsedDomains } z ${ MaxDomains } vlastních domén",
-        "${ UsedDomains } z ${ MaxDomains } vlastních domén"
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } z ${ MaxMembers } uživatele",
-        "${ UsedMembers } z ${ MaxMembers } uživatelů",
-        "${ UsedMembers } z ${ MaxMembers } uživatelů",
-        "${ UsedMembers } z ${ MaxMembers } uživatelů"
-      ],
       "1 email address": [
         "1 e-mailová adresa"
       ],
@@ -13105,18 +13236,6 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Vestavěné blokování reklam (NetShield)"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
-        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
-        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
-        "Vysokorychlostní VPN na ${ maxVpn } zařízení"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "VPN připojení pro ${ n } zařízení na uživatele",
-        "VPN připojení pro ${ n } zařízení na uživatele",
-        "VPN připojení pro ${ n } zařízení na uživatele",
-        "VPN připojení pro ${ n } zařízení na uživatele"
       ]
     },
     "Subscription change warning": {
@@ -13160,12 +13279,6 @@
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
-      ],
-      "${ dayDiff } day left": [
-        "Zbývá ${ dayDiff } den",
-        "Zbývají ${ dayDiff } dny",
-        "Zbývá ${ dayDiff } dnů",
-        "Zbývá ${ dayDiff } dnů"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } desktopová aplikace"
@@ -13211,36 +13324,6 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } nabízí ${ planMaxSpace } úložného prostoru pro uživatelské e-maily, přílohy, události, soubory a hesla. Také máte nárok na roční bonusový prostor na úložišti."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } kalendář na uživatele",
-        "${ planNumberOfCalendars } kalendáře na uživatele",
-        "${ planNumberOfCalendars } kalendářů na uživatele",
-        "${ planNumberOfCalendars } kalendářů na uživatele"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastní e-mailová doména",
-        "${ planNumberOfDomains } vlastní e-mailové domény",
-        "${ planNumberOfDomains } vlastních e-mailových domén",
-        "${ planNumberOfDomains } vlastních e-mailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailová adresa",
-        "${ planNumberOfEmails } e-mailové adresy",
-        "${ planNumberOfEmails } e-mailových adres",
-        "${ planNumberOfEmails } e-mailových adres"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } e-mailová adresa na uživatele",
-        "${ planNumberOfEmails } e-mailové adresy na uživatele",
-        "${ planNumberOfEmails } e-mailových adres na uživatele",
-        "${ planNumberOfEmails } e-mailových adres na uživatele"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } uživatel",
-        "${ planNumberOfUsers } uživatelé",
-        "${ planNumberOfUsers } uživatelů",
-        "${ planNumberOfUsers } uživatelů"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "Pokročilá ochrana účtu ${ PROTON_SENTINEL_NAME }"
@@ -13876,32 +13959,6 @@
         "Motivy"
       ]
     },
-    "Time unit": {
-      "${ ceilDays } day": [
-        "${ ceilDays } den",
-        "${ ceilDays } dny",
-        "${ ceilDays } dnů",
-        "${ ceilDays } dnů"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } hodina",
-        "${ ceilHours } hodiny",
-        "${ ceilHours } hodin",
-        "${ ceilHours } hodin"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minuta",
-        "${ ceilMinutes } minuty",
-        "${ ceilMinutes } minut",
-        "${ ceilMinutes } minut"
-      ],
-      "${ seconds } second": [
-        "${ seconds } sekunda",
-        "${ seconds } sekundy",
-        "${ seconds } sekund",
-        "${ seconds } sekund"
-      ]
-    },
     "Title": {
       "${ BRAND_NAME } Account password rules": [
         "Pravidla pro heslo účtu ${ BRAND_NAME }"
@@ -13948,6 +14005,9 @@
       "Account": [
         "Účet"
       ],
+      "Account restricted": [
+        "Účet omezen"
+      ],
       "Account suspended": [
         "Účet pozastaven"
       ],
@@ -13968,12 +14028,6 @@
       ],
       "Activity monitor": [
         "Monitor aktivity"
-      ],
-      "Add ${ totalServerCount } server?": [
-        "Přidat ${ totalServerCount } server?",
-        "Přidat ${ totalServerCount } servery?",
-        "Přidat ${ totalServerCount } serverů?",
-        "Přidat ${ totalServerCount } serverů?"
       ],
       "Add address": [
         "Přidat adresu"
@@ -14158,12 +14212,6 @@
       "Coupon": [
         "Kupón"
       ],
-      "Create ${ selectedUserIds.length } user": [
-        "Vytvořit ${ selectedUserIds.length } uživatele",
-        "Vytvořit ${ selectedUserIds.length } uživatele",
-        "Vytvořit ${ selectedUserIds.length } uživatelů",
-        "Vytvořit ${ selectedUserIds.length } uživatelů"
-      ],
       "Create a new Gateway": [
         "Vytvořit novou bránu"
       ],
@@ -14238,12 +14286,6 @@
       ],
       "Delete organization logo?": [
         "Smazat logo organizace?"
-      ],
-      "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "Smazat server (budete ho moci zpět obnovit za ${ days } den)",
-        "Smazat server (budete ho moci zpět obnovit za ${ days } dny)",
-        "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)",
-        "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)"
       ],
       "Delete user?": [
         "Smazat uživatele?"
@@ -14374,12 +14416,6 @@
       "Every member of the organization can access": [
         "Každý člen organizace má přístup k"
       ],
-      "Failed to create ${ failedUsers.length } user\naccount.": [
-        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelský účet.",
-        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelské účty.",
-        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů.",
-        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů."
-      ],
       "Find email or username": [
         "Najít e-mail nebo uživatelské jméno"
       ],
@@ -14442,12 +14478,6 @@
       ],
       "Human verification": [
         "Lidské ověření"
-      ],
-      "Import as simple event?": [
-        "Importovat jako jednoduchou událost?",
-        "Importovat jako jednoduché události?",
-        "Importovat jako jednoduché události?",
-        "Importovat jako jednoduché události?"
       ],
       "Import contacts": [
         "Importovat kontakty"
@@ -14709,12 +14739,6 @@
       ],
       "Subscription canceled": [
         "Předplatné zrušeno"
-      ],
-      "Successfully created ${ n } user account": [
-        "Úspěšně vytvořen ${ n } uživatelský účet",
-        "Úspěšně vytvořeny ${ n } uživatelské účty",
-        "Úspěšně vytvořeno ${ n } uživatelských účtů",
-        "Úspěšně vytvořeno ${ n } uživatelských účtů"
       ],
       "Summary": [
         "Shrnutí"
@@ -15165,12 +15189,6 @@
       "Confirm all": [
         "Potvrdit vše"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatele, protože jeho šifrovací klíč byl mezitím aktualizován:",
-        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatele, protože jejich šifrovací klíče byly mezitím aktualizovány:",
-        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatelů, protože jejich šifrovací klíče byly mezitím aktualizovány:",
-        "Nepodařilo se automaticky povolit přístup správce pro ${ n } uživatelů, protože jejich šifrovací klíče byly mezitím aktualizovány:"
-      ],
       "Could not enable administrator access: ${ error }": [
         "Nepodařilo se povolit přístup správce: ${ error }"
       ],
@@ -15374,20 +15392,6 @@
         "Asistent psaní"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
-      ]
-    },
     "Video control": {
       "Click to replay the video": [
         "Kliknutím přehrát video"
@@ -15435,56 +15439,6 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, a další."
       ]
     },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } zařízení",
-        "${ n } zařízení",
-        "${ n } zařízení",
-        "${ n } zařízení"
-      ],
-      "${ n } server": [
-        "${ n } server",
-        "${ n }+ servery",
-        "${ n } serverů",
-        "${ n } serverů"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN připojení",
-        "${ n } VPN připojení",
-        "${ n } VPN připojení",
-        "${ n } VPN připojení"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } země",
-        "${ numberOfCountries } země",
-        "${ numberOfCountries } zemí",
-        "${ numberOfCountries } zemí"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } v ${ numberOfCountries } zemi",
-        "${ numberOfServers } v ${ numberOfCountries } zemích",
-        "${ numberOfServers } v ${ numberOfCountries } zemích",
-        "${ numberOfServers } v ${ numberOfCountries } zemích"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Automaticky vybírá z ${ numberOfCountries } země",
-        "Automaticky vybírá ze ${ numberOfCountries } zemí",
-        "Automaticky vybírá z ${ numberOfCountries } zemí",
-        "Automaticky vybírá z ${ numberOfCountries } zemí"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Vyberte z ${ numberOfCountries }+ země",
-        "Vyberte z ${ numberOfCountries }+ zemí",
-        "Vyberte z ${ numberOfCountries }+ zemí",
-        "Vyberte z ${ numberOfCountries }+ zemí"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Servery v ${ numberOfCountries }+ zemi",
-        "Servery ve ${ numberOfCountries }+ zemích",
-        "Servery v ${ numberOfCountries }+ zemích",
-        "Servery v ${ numberOfCountries }+ zemích"
-      ]
-    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Účtováno měsíčně"
@@ -15528,18 +15482,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } měsíc",
-        "${ n } měsíce",
-        "${ n } měsíců",
-        "${ n } měsíců"
-      ],
-      "${ n } year": [
-        "${ n } rok",
-        "${ n } roky",
-        "${ n } let",
-        "${ n } let"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Včetně ${ plan } (na první rok zdarma!)"
       ],
@@ -15591,24 +15533,6 @@
       ]
     },
     "wallet_signup_2024: Info": {
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n }${ BRAND_NAME } e-mailová adresa",
-        "${ n }${ BRAND_NAME } e-mailové adresy",
-        "${ n }${ BRAND_NAME } e-mailových adres",
-        "${ n }${ BRAND_NAME } e-mailových adres"
-      ],
-      "${ n } account per wallet": [
-        "${ n } účet na peněženku",
-        "${ n } účty na peněženku",
-        "${ n } účtů na peněženku",
-        "${ n } účtů na peněženku"
-      ],
-      "${ n } wallet": [
-        "${ n } peněženka",
-        "${ n } peněženky",
-        "${ n } peněženek",
-        "${ n } peněženek"
-      ],
       "Bitcoin via Email": [
         "Bitcoin přes e-mail"
       ],
