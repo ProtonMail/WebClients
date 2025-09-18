@@ -7,11 +7,11 @@ interface CustomPlusIconProps {
 }
 
 const CustomPlusIcon = ({ size = 16, className, style }: CustomPlusIconProps) => (
-    <svg 
-        width={size} 
-        height={size} 
-        viewBox="0 0 16 16" 
-        fill="none" 
+    <svg
+        width={size}
+        height={size}
+        viewBox="0 0 16 16"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className={className}
         style={style}
@@ -29,10 +29,10 @@ const CustomPlusIcon = ({ size = 16, className, style }: CustomPlusIconProps) =>
                 y2="15.8297"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop offset="0.157704" stopColor="#FFAC2E"/>
-                <stop offset="0.383967" stopColor="#DD5DCC"/>
-                <stop offset="0.759336" stopColor="#1BA3FD"/>
-                <stop offset="0.998442" stopColor="#5325A2"/>
+                <stop offset="0.157704" stopColor="#FFAC2E" />
+                <stop offset="0.383967" stopColor="#DD5DCC" />
+                <stop offset="0.759336" stopColor="#1BA3FD" />
+                <stop offset="0.998442" stopColor="var(--lumo-plus-logo-plus-sign-text)" />
             </linearGradient>
         </defs>
     </svg>

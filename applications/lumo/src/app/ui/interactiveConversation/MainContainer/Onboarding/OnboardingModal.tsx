@@ -3,11 +3,12 @@ import { c } from 'ttag';
 import type { ModalProps } from '@proton/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { BRAND_NAME, LUMO_SHORT_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import onboardingCat from '@proton/styles/assets/img/lumo/lumo-sit-behind.svg';
 import secondIcon from '@proton/styles/assets/img/lumo/screen-lock.svg';
 import thirdIcon from '@proton/styles/assets/img/lumo/screen-reload.svg';
 import fourthIcon from '@proton/styles/assets/img/lumo/swiss-lock.svg';
 import firstIcon from '@proton/styles/assets/img/lumo/web-view-noeyes.svg';
+
+import LumoOnboardingCatInline from '../../../components/LumoOnboardingCatInline';
 
 import './OnboardingModal.scss';
 
@@ -56,7 +57,7 @@ const OnboardingModal = ({ onClick, ...modalProps }: Props & ModalProps) => {
                                     .t`An AI assistant should empower you, not exploit you for your data. That’s why we built ${LUMO_SHORT_APP_NAME}: To bring you all the benefits of AI, without compromising your privacy and data security.`}</p>
                             </div>
                             <div className="shrink-0 flex">
-                                <img src={onboardingCat} alt="" className="mt-auto mx-auto"></img>
+                                <LumoOnboardingCatInline className="mt-auto mx-auto" />
                             </div>
                         </div>
                     </div>
