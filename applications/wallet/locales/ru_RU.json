@@ -505,9 +505,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Вам доступно до ${ TRIAL_MAX_DEDICATED_IPS } выделенных серверов в течение пробного периода."
       ],
@@ -5343,6 +5340,9 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } теперь активна"
+      ],
+      "Account restricted": [
+        "Аккаунт ограничен"
       ],
       "Add credit/debit card": [
         "Добавить кредитную/дебетовую карту"

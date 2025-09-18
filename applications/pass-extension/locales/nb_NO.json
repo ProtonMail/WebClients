@@ -110,6 +110,9 @@
       "Clear search": [
         "Tøm søk"
       ],
+      "Clone item": [
+        "Klon element"
+      ],
       "Close": [
         "Lukk"
       ],
@@ -241,6 +244,12 @@
       ],
       "Dismiss": [
         "Avvis"
+      ],
+      "Do not show again": [
+        "Ikke vis igjen"
+      ],
+      "Do not show again when I press": [
+        "Ikke vis igjen når jeg trykker"
       ],
       "Do not show on this website": [
         "Ikke vis på dette nettstedet"
@@ -424,6 +433,9 @@
       ],
       "Open web app": [
         "Åpne webappen"
+      ],
+      "Organize vaults": [
+        "Organiser hvelv"
       ],
       "Pass for Android": [
         "Pass for Android"
@@ -1651,6 +1663,9 @@
       "Extra password successfully removed": [
         "Ekstra passord vellykket fjernet"
       ],
+      "Failed updating your vault organization": [
+        "Oppdateringen av hvelvorganisasjonen din mislyktes"
+      ],
       "Fill in the CSV with your data": [
         "Fyll ut CSV-filen med dataene dine"
       ],
@@ -1989,6 +2004,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Hold dette vinduet åpent mens dataene dine importeres. Denne prosessen kan ta noen minutter."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Sørg for at det forrige aktive vinduet er der du vil fylle ut automatisk, og at markøren din var fokusert på innloggingsfeltet."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Kanskje du vil deaktivere aliaset i stedet?"
       ],
@@ -2257,6 +2275,9 @@
       "Update login": [
         "Oppdater pålogging"
       ],
+      "Updating vault organization...": [
+        "Oppdaterer hvelvorganisasjonen..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Oppgrader ${ PASS_APP_NAME }"
       ],
@@ -2283,6 +2304,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Hvelv \"${ share.content.name }\" ble fjernet."
+      ],
+      "Vault organization successfully updated": [
+        "Hvelvorganisasjonen ble oppdatert"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Hvelvdeling: ${ vaultMembersCount } medlem",
@@ -2354,6 +2378,12 @@
       "You may close this tab.": [
         "Du kan lukke denne fanen."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Du må kanskje godta en tillatelsesforespørsel og starte programmet på nytt, avhengig av systemet ditt."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Du må kanskje gi tilgjengelighetstillatelse til ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Du må ha et hvelv med redigeringstillatelse før du kan importere elementer."
       ],
@@ -2389,6 +2419,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3025,9 +3063,6 @@
       ],
       "Network": [
         "Nettverk"
-      ],
-      "New": [
-        "Ny"
       ],
       "New email": [
         "Ny e-post"
@@ -4065,6 +4100,9 @@
       "Grant permissions": [
         "Gi tillatelser"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Skjulte hvelv vil ikke være synlige under søk og automatisk utfylling."
+      ],
       "Hide my email": [
         "Skjul e-postadressen min"
       ],
@@ -4145,6 +4183,9 @@
       "No shared secure links": [
         "Ingen delte sikre koblinger"
       ],
+      "Organize vaults": [
+        "Organiser hvelv"
+      ],
       "Our welcome gift to you": [
         "Vår velkomstgave til deg"
       ],
@@ -4159,6 +4200,9 @@
       ],
       "Pending access to the shared data": [
         "Venter på tilgang til de delte dataene"
+      ],
+      "Perform autotype?": [
+        "Utføre automatisk utfylling?"
       ],
       "Permanently remove all items?": [
         "Fjerne alle elementer permanent?"
@@ -4296,6 +4340,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du er i ferd med å slette permanent ${ aliasCount } alias.",
         "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "kopier"
       ]
     },
     "Today icon tooltip in mini calendar": {

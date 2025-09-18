@@ -82,6 +82,9 @@
       "Authenticate": [
         "Autentica"
       ],
+      "Auto-type": [
+        "Digitazione automatica"
+      ],
       "Back": [
         "Indietro"
       ],
@@ -129,6 +132,9 @@
       ],
       "Clear search": [
         "Cancella ricerca"
+      ],
+      "Clone item": [
+        "Clona elemento"
       ],
       "Close": [
         "Chiudi"
@@ -249,6 +255,12 @@
       ],
       "Dismiss": [
         "Ignora"
+      ],
+      "Do not show again": [
+        "Non mostrare di nuovo"
+      ],
+      "Do not show again when I press": [
+        "Non mostrare più quando premo\n\n"
       ],
       "Download this CSV template": [
         "Scarica questo modello CSV"
@@ -432,6 +444,9 @@
       ],
       "Open navigation": [
         "Apri navigazione"
+      ],
+      "Organize vaults": [
+        "Gestisci le casseforti"
       ],
       "Pass for Android": [
         "Pass per Android"
@@ -1338,6 +1353,17 @@
         "Molto piccolo"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Dominio"
+      ],
+      "Password ends with": [
+        "La password termina con"
+      ],
+      "Username": [
+        "Utente"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "L'elemento «${ payload.itemName }» è stato ignorato."
@@ -1703,6 +1729,9 @@
       "Extra password successfully removed": [
         "Password aggiuntiva rimossa"
       ],
+      "Failed updating your vault organization": [
+        "Aggiornamento dell’organizzazione del vault non riuscito"
+      ],
       "Fill in the CSV with your data": [
         "Compila il file CSV con i tuoi dati"
       ],
@@ -1829,6 +1858,9 @@
       "Item successfully unpinned": [
         "Elemento non più fissato"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "La keyboard shortcut può essere usata solo mentre sei all'interno della desktop app ${ PASS_APP_NAME } e stai visualizzando un login item."
+      ],
       "Latest breach on ${ formattedDate }": [
         "Ultima violazione di dati il ${ formattedDate }"
       ],
@@ -1880,6 +1912,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
+        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -2085,6 +2121,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Tieni aperta questa finestra durante l'importazione dei dati. Questo processo potrebbe richiedere alcuni minuti."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Assicurati che la finestra precedentemente attiva sia quella in cui desideri digitare automaticamente e che il tuo cursore fosse posizionato nel campo di login."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato. Magari preferisci disabilitare l'alias?"
@@ -2339,6 +2378,9 @@
       "Unverified": [
         "Non verificato"
       ],
+      "Updating vault organization...": [
+        "Aggiornamento dell’organizzazione della cassaforte in corso..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Effettua ora l'upgrade per sbloccare le funzionalità premium"
       ],
@@ -2365,6 +2407,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "La cassaforte \"${ share.content.name }\" è stata rimossa"
+      ],
+      "Vault organization successfully updated": [
+        "Organizzazione del vault aggiornata con successo"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Condivisione casseforti: ${ vaultMembersCount } membro",
@@ -2436,6 +2481,12 @@
       "You may close this tab.": [
         "Puoi chiudere questa scheda."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Potresti dover accettare un prompt di autorizzazione e potresti dover restartare l'application a seconda del tuo sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Potresti dover concedere l'autorizzazione di accessibilità a ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Hai bisogno di una cassaforte con permessi per modificare prima che tu possa importare oggetti."
       ],
@@ -2480,6 +2531,20 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "INVIO"
+      ],
+      "SHIFT": [
+        "MAIUSC"
+      ],
+      "TAB": [
+        "TAB"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2655,6 +2720,9 @@
       ],
       "Auto-lock after": [
         "Blocca automaticamente dopo"
+      ],
+      "Auto-type in previous window": [
+        "Digitazione automatica nella finestra precedente"
       ],
       "Backup password": [
         "Password di backup"
@@ -2832,6 +2900,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "EMAIL": [
+        "EMAIL"
       ],
       "Email (alias)": [
         "Email (alias)"
@@ -3052,6 +3123,9 @@
       "Key type": [
         "Tipo di chiave"
       ],
+      "Keyboard shortcut:": [
+        "Scorciatoia da tastiera:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Scorciatoia da tastiera: ${ shortcut }"
       ],
@@ -3261,6 +3335,9 @@
       ],
       "Password": [
         "Password"
+      ],
+      "PASSWORD": [
+        "PASSWORD"
       ],
       "Password history": [
         "Cronologia della password"
@@ -3606,6 +3683,9 @@
       ],
       "Useful for permanent sharing": [
         "Utile per la condivisione permanente"
+      ],
+      "USERNAME": [
+        "NOME UTENTE"
       ],
       "Username": [
         "Nome utente"
@@ -4334,6 +4414,9 @@
       "Grant permissions": [
         "Concedi autorizzazioni"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Le casseforti nascoste non saranno visibili durante la ricerca e la compilazione automatica."
+      ],
       "Hide-my-email aliases": [
         "Alias Hide-my-email"
       ],
@@ -4417,6 +4500,9 @@
       "MX record": [
         "Record MX"
       ],
+      "Next": [
+        "Successivo"
+      ],
       "No excluded items": [
         "Nessun elemento escluso"
       ],
@@ -4437,6 +4523,12 @@
       ],
       "No shared secure links": [
         "Nessun link sicuro condiviso"
+      ],
+      "Open pagination": [
+        "Apri paginazione"
+      ],
+      "Organize vaults": [
+        "Gestisci le casseforti"
       ],
       "Our welcome gift to you": [
         "Il nostro regalo di benvenuto per te"
@@ -4459,6 +4551,9 @@
       "Pending access to the shared data": [
         "In attesa dell'accesso ai dati condivisi"
       ],
+      "Perform autotype?": [
+        "Eseguire autocompletamento?"
+      ],
       "Permanently remove all items?": [
         "Rimuovere definitivamente tutti gli elementi?"
       ],
@@ -4468,6 +4563,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato.",
         "Tieni presente che una volta eliminati, gli alias non potranno essere ripristinati."
+      ],
+      "Previous": [
+        "Precedente"
       ],
       "Random Prefix Generation": [
         "Generazione casuale del prefisso"
@@ -4625,6 +4723,11 @@
         "Stai per eliminare definitivamente ${ aliasCount } alias."
       ]
     },
+    "Title_cloned_item": {
+      "copy": [
+        "copia"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Oggi"
@@ -4762,6 +4865,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "La password aggiuntiva deve contenere almeno 8 caratteri"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Digitazione automatica fallita. Assicurati che ${ PASS_APP_NAME } abbia i permessi necessari e riprova (${ error })."
       ],
       "Failed to load breaches.": [
         "Impossibile caricare le violazioni di dati."

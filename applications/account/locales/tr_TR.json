@@ -2062,11 +2062,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ${ formattedDate } tarihinde başlayarak her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir aboneliğe dönüşecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinden başlayarak otomatik olarak her ay yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"Dene\" seçeneğine tıklayarak ${ termsAndConditions } kapsamını kabul etmiş olursunuz."
@@ -6251,8 +6251,8 @@
       "You must set a name": [
         "Bir ad belirtmelisiniz"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "SMTP gönderimi kodu oluşturmak için bir özel etki alanı adresiniz olması gerekir."
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "SMTP gönderim kodu oluşturmak için etkin bir özel etki alanı adresiniz olmalıdır."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Yazılabilecek en fazla karakter sayısına ulaştınız. Lütfen iletinizi kısaltın."
@@ -6271,11 +6271,6 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Etkinliklerini görüntülemek istediğiniz kullanıcıları seçin"
       ]
     },
     "Error importing calendar": {
@@ -8402,6 +8397,9 @@
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
+      "Accounts": [
+        "Hesaplar"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini açın."
       ],
@@ -8410,9 +8408,6 @@
       ],
       "active": [
         "etkin"
-      ],
-      "Activity Monitor": [
-        "Etkinlik izleyici"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -9882,6 +9877,9 @@
       "Organization monitor": [
         "Kuruluş izleyici"
       ],
+      "Organization Monitor": [
+        "Kuruluş izleyici"
+      ],
       "Organization size": [
         "Kuruluş boyutu"
       ],
@@ -10191,6 +10189,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "${ BRAND_NAME } kuruluşunuza izin vermek istediğiniz kullanıcı ilişkilerini ${ getFormattedOrganization } üzerinden seçin:"
       ],
+      "Select users to view their activity": [
+        "Etkinliklerini görüntülemek istediğiniz kullanıcıları seçin"
+      ],
       "Select what you want to import.": [
         "İçe aktarmak istediklerinizi seçin."
       ],
@@ -10278,6 +10279,9 @@
       ],
       "Show original message": [
         "Özgün iletiyi görüntüle"
+      ],
+      "Sign in only": [
+        "Yalnızca oturum açma"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Adresinizi kullanıma almak için ${ MAIL_APP_NAME } adresinde oturum açın"
@@ -12443,6 +12447,9 @@
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
       ],
+      "Emails categories": [
+        "E-posta kategorileri"
+      ],
       "Enabled": [
         "Kullanılıyor"
       ],
@@ -12742,6 +12749,9 @@
       ],
       "Notification": [
         "Bildirim"
+      ],
+      "Notification email address": [
+        "Bildirim e-posta adresi"
       ],
       "Notifications": [
         "Bildirimler"
@@ -13168,6 +13178,9 @@
     "label": {
       "Device-based recovery": [
         "Aygıt ile kurtarma"
+      ],
+      "Notification phone number": [
+        "Bildirim telefon numarası"
       ],
       "Recovery phone number": [
         "Kurtarma telefonu numarası"
@@ -17684,9 +17697,6 @@
       "Account safety review": [
         "Hesap güvenliği değerlendirmesi"
       ],
-      "Add a email address": [
-        "E-posta adresi ekle"
-      ],
       "Add a phone number": [
         "Telefon numarası ekle"
       ],
@@ -17698,6 +17708,9 @@
       ],
       "Add a recovery phone number": [
         "Bir kurtarma telefonu numarası ekleyin"
+      ],
+      "Add an alternative email address": [
+        "Alternatif bir e-posta adresi ekleyin"
       ],
       "Add an email": [
         "E-posta ekle"
@@ -17729,8 +17742,14 @@
       "Disable recovery by email": [
         "E-posta ile kurtarmayı kapat"
       ],
+      "Disable recovery by email ": [
+        "E-posta ile kurtarmayı kapat "
+      ],
       "Disable recovery by phone": [
         "Telefon ile hesap kurtarmayı kapatın"
+      ],
+      "Disable recovery by phone ": [
+        "Telefon ile hesap kurtarmayı kapat "
       ],
       "Download ${ size }": [
         "${ size } indir"
@@ -17764,6 +17783,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Oturum açma bilgilerinizi kaybederseniz ve hesabınızı sıfırlamanız gerekirse, hem **hesap kurtarma hem de veri kurtarma yöntemlerini** kullanıyor olmanız **zorunludur**. Yoksa e-postalarınıza, kişilerinize, dosyalarınıza veya parolalarınıza erişemeyebilirsiniz."
+      ],
+      "in case we need to contact you": [
+        "Sizinle iletişim kurmamız gerektiğinde"
       ],
       "Invalid code": [
         "Kod geçersiz"
@@ -17816,23 +17838,20 @@
       "to automatically recover your data when you log into a trusted device": [
         "güvenilen bir aygıtla oturum açtığınızda verilerinizi otomatik olarak kurtarmak için"
       ],
-      "to ensure highest possible security of your account": [
-        "hesabınızda olabilecek en yüksek güvenliği sağlamak için"
-      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "E-posta adresinin size ait olduğundan emin olmak için ${ boldEmail } adresine bir doğrulama kodu gönderdik."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Telefon numarasının size ait olduğundan emin olmak için ${ boldPhoneNumber } numaraya bir doğrulama kodu gönderdik."
       ],
+      "to prevent attackers from taking over your account": [
+        "saldırganların hesabınızı ele geçirmesini engellemek için"
+      ],
       "to recover your account and data if you're ever locked out": [
         "kilitlenirse hesabınızı ve verilerinizi kurtarmak için"
       ],
       "to recover your account if you're ever locked out": [
         "kilitlenirse hesabınızı kurtarmak için"
-      ],
-      "To stay in touch": [
-        "İletişimde kalmak için"
       ],
       "Update your Recovery Kit": [
         "Kurtarma paketinizi güncelleyin"
@@ -17902,6 +17921,12 @@
       ],
       "You have recommended actions.": [
         "Yapmanız önerilen işlemler var."
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Kurtarma e-posta adresiniz, saldırganlar tarafından hesabınızı ele geçirmek için kötüye kullanılabilir. Hesap güvenliğinizi artırmak için ${ disableEmail }."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Kurtarma telefon numaranız, saldırganlar tarafından hesabınızı ele geçirmek için kötüye kullanılabilir. Hesap güvenliğinizi artırmak için ${ disablePhone }."
       ],
       "You will no longer be able to use this address to reset your account.": [
         "Bundan sonra bu adresi hesabınızı sıfırlamak için kullanamayacaksınız."
@@ -20828,6 +20853,9 @@
       "Account recovery": [
         "Hesap kurtarma"
       ],
+      "Account restricted": [
+        "Hesap kısıtlandı"
+      ],
       "Account suspended": [
         "Hesap askıya alınmış"
       ],
@@ -22457,6 +22485,9 @@
       "Edit label names": [
         "Etiket adlarını düzenle"
       ],
+      "Emails in your inbox are shown organized into categories": [
+        "Gelen kutunuzdaki e-postalar kategorilere göre gruplanmış olarak görüntülenir"
+      ],
       "Enable/disable desktop and mobile notifications": [
         "Bilgisayar ve mobil bildirimleri aç/kapat"
       ],
@@ -22573,6 +22604,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Bu durum, şifrenin sıfırlanmış veya kullanıcının henüz oturum açmamış olmasından kaynaklanabilir."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Bu e-posta adresi, yalnızca ${ BRAND_NAME } hesabınızda oturum açmak için kullanılabilir."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Hesap yönetimi işlemleri yapılırken tüm kuruluş üyelerine bu e-posta adresi görüntülenir."

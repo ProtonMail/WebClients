@@ -82,6 +82,9 @@
       "Authenticate": [
         "Autenticar"
       ],
+      "Auto-type": [
+        "Preenchimento automático"
+      ],
       "Back": [
         "Voltar"
       ],
@@ -129,6 +132,9 @@
       ],
       "Clear search": [
         "Limpar pesquisa"
+      ],
+      "Clone item": [
+        "Clonar item"
       ],
       "Close": [
         "Fechar"
@@ -249,6 +255,12 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Do not show again": [
+        "Não mostrar novamente"
+      ],
+      "Do not show again when I press": [
+        "Não mostrar novamente quando eu pressionar"
       ],
       "Download this CSV template": [
         "Baixar esse modelo CSV"
@@ -432,6 +444,9 @@
       ],
       "Open navigation": [
         "Abrir navegação"
+      ],
+      "Organize vaults": [
+        "Organizar cofres"
       ],
       "Pass for Android": [
         "Pass para Android"
@@ -1338,6 +1353,17 @@
         "Muito pequeno"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domínio"
+      ],
+      "Password ends with": [
+        "Senha termina com"
+      ],
+      "Username": [
+        "Nome de usuário"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "O item \"${ payload.itemName }\" foi descartado"
@@ -1703,6 +1729,9 @@
       "Extra password successfully removed": [
         "A senha adicional foi removida."
       ],
+      "Failed updating your vault organization": [
+        "Falha ao atualizar o cofre da sua organização"
+      ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
       ],
@@ -1829,6 +1858,9 @@
       "Item successfully unpinned": [
         "O item foi desafixado."
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "O atalho de teclado só pode ser usado enquanto estiver dentro do aplicativo de desktop ${ PASS_APP_NAME } e visualizando um item de início de sessão."
+      ],
       "Latest breach on ${ formattedDate }": [
         "Última violação em ${ formattedDate }"
       ],
@@ -1882,7 +1914,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2088,6 +2121,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mantenha esta janela aberta enquanto seus dados estão sendo importados. Este processo pode demorar alguns minutos."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Certifique-se de que a janela ativa anterior é onde você quer usar o preenchimento automático e de que seu cursor estava focado no campo de início de sessão."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Uma vez excluído, o alias não pode ser restaurado. Talvez você queira desabilitar o alias em vez disso?"
@@ -2342,6 +2378,9 @@
       "Unverified": [
         "Não verificado"
       ],
+      "Updating vault organization...": [
+        "Atualizando o cofre da organização..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Faça upgrade agora para desbloquear recursos premium"
       ],
@@ -2368,6 +2407,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "O cofre \"${ share.content.name }\" foi removido"
+      ],
+      "Vault organization successfully updated": [
+        "Cofre da organização atualizado com sucesso"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Cofres compartilhados: ${ vaultMembersCount } membro",
@@ -2439,6 +2481,12 @@
       "You may close this tab.": [
         "Você pode fechar esta guia."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Pode ser necessário aceitar um aviso de permissão e reiniciar o aplicativo, a depender de seu sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Pode ser necessário conceder permissão de acessibilidade a ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Você precisa de um cofre com permissão de edição antes de importar itens."
       ],
@@ -2483,6 +2531,20 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TAB"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2658,6 +2720,9 @@
       ],
       "Auto-lock after": [
         "Bloqueio automático após"
+      ],
+      "Auto-type in previous window": [
+        "Preenchimento automático na janela anterior"
       ],
       "Backup password": [
         "Senha de backup"
@@ -2835,6 +2900,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "EMAIL": [
+        "E-MAIL"
       ],
       "Email (alias)": [
         "E-mail (alias)"
@@ -3055,6 +3123,9 @@
       "Key type": [
         "Tipo de chave"
       ],
+      "Keyboard shortcut:": [
+        "Atalho de teclado:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atalho de teclado: ${ shortcut }"
       ],
@@ -3264,6 +3335,9 @@
       ],
       "Password": [
         "Senha"
+      ],
+      "PASSWORD": [
+        "SENHA"
       ],
       "Password history": [
         "Histórico de senhas"
@@ -3609,6 +3683,9 @@
       ],
       "Useful for permanent sharing": [
         "Útil para compartilhar permanentemente"
+      ],
+      "USERNAME": [
+        "NOME DE USUÁRIO"
       ],
       "Username": [
         "Nome de usuário"
@@ -4337,6 +4414,9 @@
       "Grant permissions": [
         "Conceder permissões"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Cofres ocultos não serão visíveis durante a pesquisa e o preenchimento automático."
+      ],
       "Hide-my-email aliases": [
         "Aliases do hide-my-email"
       ],
@@ -4420,6 +4500,9 @@
       "MX record": [
         "Registro MX"
       ],
+      "Next": [
+        "Próximo"
+      ],
       "No excluded items": [
         "Sem itens excluídos"
       ],
@@ -4440,6 +4523,12 @@
       ],
       "No shared secure links": [
         "Nenhum link seguro compartilhado"
+      ],
+      "Open pagination": [
+        "Abrir paginação"
+      ],
+      "Organize vaults": [
+        "Organizar cofres"
       ],
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"
@@ -4462,6 +4551,9 @@
       "Pending access to the shared data": [
         "Acesso pendente para compartilhar os dados."
       ],
+      "Perform autotype?": [
+        "Executar preenchimento automático?"
+      ],
       "Permanently remove all items?": [
         "Remover permanentemente todos os itens?"
       ],
@@ -4471,6 +4563,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Uma vez excluído, o alias não pode ser restaurado.",
         "Uma vez excluídos, os aliases não podem ser restaurados."
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Random Prefix Generation": [
         "Geração de prefixos aleatórios"
@@ -4628,6 +4723,11 @@
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
       ]
     },
+    "Title_cloned_item": {
+      "copy": [
+        "copiar"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Hoje"
@@ -4765,6 +4865,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Senha adicional deve ter pelo menos 8 caracteres"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Falha ao preencher automaticamente. Certifique-se de que ${ PASS_APP_NAME } tem as permissões necessárias e tente novamente (${ error })."
       ],
       "Failed to load breaches.": [
         "Falha ao carregar violações."

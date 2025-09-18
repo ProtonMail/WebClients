@@ -141,6 +141,9 @@
       "Cancel subscription": [
         "Peru tilaus"
       ],
+      "Cancel trial and pay": [
+        "Peruuta kokeilujakso ja maksa"
+      ],
       "Cancel upload": [
         "Peru tallennus"
       ],
@@ -1093,6 +1096,9 @@
       ],
       "Upload picture": [
         "Lataa kuva"
+      ],
+      "Upload SDK file": [
+        "Lähetä SDK-tiedosto"
       ],
       "Use ${ label } theme": [
         "Käytä ${ label }-teemaa"
@@ -3077,6 +3083,9 @@
       "Amount below minimum (${ minimumAmount }).": [
         "Summa on vähimmäismäärää pienempi (${ minimumAmount })."
       ],
+      "An error occurred": [
+        "Tapahtui virhe"
+      ],
       "An error occurred while loading alias options": [
         "Virhe ladattaessa aliasvalintoja"
       ],
@@ -3180,6 +3189,9 @@
       ],
       "Failed to load the STL preview": [
         "STL-esikatselun lataus epäonnistui"
+      ],
+      "Failed to open to contact": [
+        "Yhteystiedon avaaminen epäonnistui"
       ],
       "Failed to save some photos to your Drive": [
         "Joidenkin kuvien tallentaminen Driveesi epäonnistui"
@@ -3336,6 +3348,9 @@
       ],
       "Please enter a valid ZIP code": [
         "Syötä kelvollinen postinumero"
+      ],
+      "Please enter postal code": [
+        "Syötä postinumerosi"
       ],
       "Please enter ZIP code": [
         "Syötä postinumero"
@@ -4068,6 +4083,9 @@
       ],
       "Create new shared album": [
         "Luo uusi jaettu albumi"
+      ],
+      "Domain": [
+        "Verkkotunnus"
       ],
       "Rename album": [
         "Nimeä albumi uudelleen"
@@ -4966,6 +4984,9 @@
       ],
       "Download ${ name } app": [
         "Lataa ${ name }-sovellus"
+      ],
+      "Download current logs": [
+        "Lataa nykyiset lokitiedot"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Tiedoston ${ downloadFileName } lataus perutaan"
@@ -6436,6 +6457,9 @@
       "Expired": [
         "Erääntynyt"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Vanhentunut"
       ],
@@ -7699,6 +7723,9 @@
       "${ size } storage per user": [
         "${ size } tallennustilaa/käyttäjä"
       ],
+      "1 TB secure storage": [
+        "1 Tt suojattua tallennustilaa"
+      ],
       "1 user": [
         "1 käyttäjä"
       ],
@@ -7898,6 +7925,9 @@
       "Private photo backup": [
         "Yksityinen kuvien varmuuskopiointi"
       ],
+      "Quickly craft replies": [
+        "Laadi vastauksia nopeasti"
+      ],
       "Recover previous file versions": [
         "Palauta aiempia tiedostoversioita"
       ],
@@ -7948,6 +7978,9 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
+      ],
+      "Support for up to 2 users": [
+        "Tuki jopa kahdelle käyttäjälle"
       ],
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
@@ -9027,8 +9060,14 @@
       "No parent folder": [
         "Ei yläkansiota"
       ],
+      "Only current location": [
+        "Vain nykyinen sijainti"
+      ],
       "Only current location: ${ name }": [
         "Vain nykyinen sijainti: ${ name }"
+      ],
+      "Verify content": [
+        "Vahvista sisältö"
       ],
       "Verify thumbnails": [
         "Vahvista pienoiskuvat"
@@ -9186,6 +9225,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
       ],
+      "Taxes": [
+        "Verot"
+      ],
       "terms & conditions": [
         "käyttöehdot"
       ],
@@ -9210,6 +9252,12 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
+      ],
+      "VAT": [
+        "ALV"
+      ],
+      "VAT number": [
+        "ALV-numero"
       ],
       "Your payment is still being processed": [
         "Maksuasi käsitellään vielä"
@@ -9249,8 +9297,23 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Lisää ABN"
+      ],
+      "Add EIN": [
+        "Lisää EIN"
+      ],
+      "Add VAT number": [
+        "Lisää ALV-numero"
+      ],
       "Business Number": [
         "Yritystunnus"
+      ],
+      "Edit Business Number": [
+        "Muokkaa yritystunnusta"
+      ],
+      "Edit VAT number": [
+        "Muokkaa ALV-numeroa"
       ],
       "EIN": [
         "EIN"
@@ -9382,6 +9445,9 @@
       ],
       "Select a reason": [
         "Valitse syy"
+      ],
+      "Select country": [
+        "Valitse maa"
       ],
       "Select state": [
         "Valitse osavaltio"
@@ -9876,11 +9942,17 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Selaa turvallisesti"
+      ],
       "Get unlimited aliases": [
         "Hanki aliaksia rajattomasti"
       ],
       "Go to subscription plans": [
         "Siirry tilauksiin"
+      ],
+      "Guard against threats": [
+        "Suojaudu uhilta"
       ],
       "Increase your storage": [
         "Lisää tallennustilaasi"
@@ -10876,6 +10948,9 @@
       "Account recovery": [
         "Tilin palautus"
       ],
+      "Account restricted": [
+        "Tiliä on rajoitettu"
+      ],
       "Account security": [
         "Tilin suojaus"
       ],
@@ -11383,6 +11458,9 @@
       ],
       "Notes": [
         "Muistiinpanot"
+      ],
+      "Number of downloads": [
+        "Latausten määrä"
       ],
       "Number of items": [
         "Kohdemäärä"

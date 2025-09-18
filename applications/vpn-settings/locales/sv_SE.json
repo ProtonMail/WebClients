@@ -1392,6 +1392,11 @@
         "Du kan inte lägga till anpassade domäner under provperioden."
       ]
     },
+    "b2b_trials_2025_Label": {
+      "Amount due now": [
+        "Att betala nu"
+      ]
+    },
     "b2b_trials_Action": {
       "Cancel subscription": [
         "Avsluta prenumeration"
@@ -4020,11 +4025,6 @@
         "Postnummer är obligatoriskt"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Välj användare för att visa deras aktivitet"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Ett fel uppstod vid läsning av din fil ${ formattedFilename }. Felaktigt filformat."
@@ -5556,11 +5556,11 @@
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
+      "Accounts": [
+        "Konton"
+      ],
       "active": [
         "aktiv"
-      ],
-      "Activity Monitor": [
-        "Aktivitetsövervakare"
       ],
       "add a recovery method": [
         "lägg till en återställningsmetod"
@@ -5694,6 +5694,9 @@
       ],
       "Attention required": [
         "Uppmärksamhet krävs"
+      ],
+      "Authenticator app 2FA disabled": [
+        "Autentiseringsapp 2FA inaktiverad"
       ],
       "Awaiting transaction": [
         "Väntar på transaktion"
@@ -6516,6 +6519,9 @@
       "Organization monitor": [
         "Organisationsövervakning"
       ],
+      "Organization Monitor": [
+        "Organisationsövervakning"
+      ],
       "Organization size": [
         "Organisationens storlek"
       ],
@@ -6725,6 +6731,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Välj användaraffilieringarna från ${ getFormattedOrganization } som du vill släppa in i din ${ BRAND_NAME }-organisation."
       ],
+      "Select users to view their activity": [
+        "Välj användare för att visa deras aktivitet"
+      ],
       "Select what you want to import.": [
         "Välj vad du vill importera."
       ],
@@ -6779,6 +6788,9 @@
       ],
       "Shared vault updated": [
         "Delat valv uppdaterat"
+      ],
+      "Sign in only": [
+        "Endast inloggning"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logga in på ${ MAIL_APP_NAME } för att aktivera din adress"
@@ -13384,6 +13396,9 @@
       "Account": [
         "Konto"
       ],
+      "Account restricted": [
+        "Kontot begränsat"
+      ],
       "Account suspended": [
         "Konto avstängt"
       ],
@@ -14426,6 +14441,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Detta kan orsakas av en lösenordsåterställning eller att användaren inte loggat in ännu."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Denna e-postadress kan endast användas för att logga in på ditt ${ BRAND_NAME }-konto."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Denna e-postadress kommer att visas för alla organisationsmedlemmar när de utför kontohanteringsåtgärder."
