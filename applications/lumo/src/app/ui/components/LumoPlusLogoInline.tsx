@@ -32,8 +32,8 @@ const LumoPlusLogoInline = ({ className, onClick, height }: LumoPlusLogoInlinePr
                 y2="6.69079"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stopColor="#268AEB" />
-                <stop offset="1" stopColor="#4E33AC" />
+                <stop stopColor="#1BA3FD" />
+                <stop offset="1" stopColor="var(--lumo-plus-logo-plus-sign-text)" />
             </linearGradient>
             <linearGradient
                 id="paint1_linear_lumo"
@@ -43,10 +43,11 @@ const LumoPlusLogoInline = ({ className, onClick, height }: LumoPlusLogoInlinePr
                 y2="-20.7238"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop offset="0.157704" stopColor="#FFAC2E" />
-                <stop offset="0.383967" stopColor="#DD5DCC" />
-                <stop offset="0.759336" stopColor="#1BA3FD" />
-                <stop offset="0.998442" stopColor="#5325A2" />
+                <stop offset="0.140" stopColor="#FFAC2E" />
+                <stop offset="0.44" stopColor="#DD5DCC" />
+                <stop offset="0.85" stopColor="#1BA3FD" />
+                {/* <stop offset="0.998442" stopColor="#5325A2" /> */}
+                <stop offset="1" stopColor="#1BA3FD" />
             </linearGradient>
         </defs>
         {/* Plus symbol */}

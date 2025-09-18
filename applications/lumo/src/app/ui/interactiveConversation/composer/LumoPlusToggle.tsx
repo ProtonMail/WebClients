@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
+import clsx from 'clsx';
 import { c } from 'ttag';
 
 import { Spotlight, Toggle, useModalStateObject } from '@proton/components';
@@ -8,6 +9,7 @@ import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/const
 import { LUMO_UPGRADE_TRIGGER_CLASS } from '../../../constants';
 import { useIsLumoSmallScreen } from '../../../hooks/useIsLumoSmallScreen';
 import useLumoPlusUpgradeWithTelemetry from '../../../hooks/useLumoPlusUpgradeWithTelemetry';
+import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';
 import LumoPlusLogoInline from '../../components/LumoPlusLogoInline';
 import GuestLumoPlusUpsellModal from '../../upsells/GuestLumoPlusUpsellModal';
@@ -22,6 +24,7 @@ const LumoPlusToggle = () => {
     const isGuest = useIsGuest();
     const { isSmallScreen } = useIsLumoSmallScreen();
     const guestPlusUpsellModal = useModalStateObject();
+    const { isGhostChatMode } = useGhostChat();
 
     const { upsellRef, openModal, renderModal, modalProps } = useLumoPlusUpgradeWithTelemetry({
         feature: LUMO_UPSELL_PATHS.LUMO_PLUS_UPGRADE_TOGGLE,
@@ -67,7 +70,7 @@ const LumoPlusToggle = () => {
                 originalPlacement="bottom"
                 hasClose={false}
                 borderRadius="lg"
-                className="border-none"
+                className="border-none bg-norm"
             >
                 <div
                     onMouseEnter={() => !isSmallScreen && setShowSpotlight(true)}
@@ -79,7 +82,9 @@ const LumoPlusToggle = () => {
                         id="lumo-plus-toggle"
                         checked={false}
                         onChange={handleToggle}
-                        className={`lumo-plus-toggle ${LUMO_UPGRADE_TRIGGER_CLASS}`}
+                        className={clsx('lumo-plus-toggle', LUMO_UPGRADE_TRIGGER_CLASS, {
+                            'ghost-mode': isGhostChatMode,
+                        })}
                     />
                 </div>
             </Spotlight>
