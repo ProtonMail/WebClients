@@ -441,6 +441,9 @@
       "Disable alias": [
         "Deaktivovat alias"
       ],
+      "Disable categories": [
+        "Deaktivovat kategorie"
+      ],
       "Disabling alias": [
         "Deaktivace aliasu"
       ],
@@ -773,6 +776,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Připojte se pomocí ${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "Zachovat kategorie"
       ],
       "Keep my subscription": [
         "Zachovat mé předplatné"
@@ -2008,11 +2014,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců, počínaje ${ formattedDate }. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude vám nic účtováno."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební doby."
@@ -6896,6 +6902,9 @@
       "All messages stored with this label will be permanently deleted.": [
         "Všechny zprávy s tímto štítkem budou trvale smazány."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Všechny zprávy se zobrazí v doručené poště a záložky kategorií a štítků již nebudou viditelné. "
+      ],
       "All your calendars are disabled.": [
         "Všechny vaše kalendáře jsou deaktivovány."
       ],
@@ -10052,9 +10061,6 @@
       ],
       "Writing assistant": [
         "Asistent psaní"
-      ],
-      "You cannot disable all categories": [
-        "Nelze deaktivovat všechny kategorie"
       ],
       "Your alias": [
         "Váš alias"
@@ -15153,6 +15159,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Disable categories?": [
+        "Deaktivovat kategorie?"
       ],
       "Discover your subscription benefits": [
         "Objevte výhody předplatného"

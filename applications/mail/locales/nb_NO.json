@@ -435,6 +435,9 @@
       "Disable alias": [
         "Deaktiver alias"
       ],
+      "Disable categories": [
+        "Deaktiver kategorier"
+      ],
       "Disabling alias": [
         "Deaktiverer alias"
       ],
@@ -765,6 +768,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Bli med med ${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "Behold kategorier"
       ],
       "Keep my subscription": [
         "Behold mitt abonnement"
@@ -1983,11 +1989,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
@@ -6691,6 +6697,9 @@
       "All messages stored with this label will be permanently deleted.": [
         "Alle meldinger som er lagret med denne etiketten vil bli slettet permanent."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Alle meldinger vises i innboksen, og kategorifanene og -taggene vil ikke lenger være synlige. "
+      ],
       "All your calendars are disabled.": [
         "Alle kalenderene dine er deaktivert."
       ],
@@ -9757,9 +9766,6 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
-      ],
-      "You cannot disable all categories": [
-        "Du kan ikke deaktivere alle kategorier"
       ],
       "Your alias": [
         "Aliaset ditt"
@@ -14600,6 +14606,9 @@
       ],
       "Desktop": [
         "Skrivebord"
+      ],
+      "Disable categories?": [
+        "Deaktivere kategorier?"
       ],
       "Discover your subscription benefits": [
         "Oppdag abonnementsfordelene dine"
