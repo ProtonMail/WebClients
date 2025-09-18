@@ -77,11 +77,11 @@ const downloadData = [
                         links: [
                             {
                                 title: () => c('Download').t`Windows 10/11 (x64)`,
-                                link: 'https://vpn.protondownload.com/download/ProtonVPN_v3.5.1_x64.exe',
+                                link: 'https://vpn.protondownload.com/download/ProtonVPN_v4.2.2_x64.exe',
                             },
                             {
                                 title: () => c('Download').t`Windows 10/11 (ARM64)`,
-                                link: 'https://vpn.protondownload.com/download/ProtonVPN_v3.5.1_arm64.exe',
+                                link: 'https://vpn.protondownload.com/download/ProtonVPN_v4.2.2_arm64.exe',
                             },
                             {
                                 title: () => c('Download').t`Windows 8/8.1/7 or Windows 32-bit (ARM64)`,
