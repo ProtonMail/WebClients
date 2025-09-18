@@ -3977,11 +3977,6 @@
         "Kode pos diperlukan"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Pilih pengguna yang aktivitasnya ingin ditampilkan"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Terdapat kesalahan dalam membaca berkas \"${ formattedFilename }\" milik Anda. Format berkas tidak sesuai."
@@ -5472,9 +5467,6 @@
       ],
       "active": [
         "aktif"
-      ],
-      "Activity Monitor": [
-        "Monitor Aktivitas"
       ],
       "add a recovery method": [
         "tambah metode pemulihan"
@@ -10600,6 +10592,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
       "Taxes": [
         "Pajak"
       ],
@@ -13228,6 +13223,9 @@
       ],
       "Account": [
         "Akun"
+      ],
+      "Account restricted": [
+        "Akun dibatasi"
       ],
       "Account suspended": [
         "Akun ditangguhkan"

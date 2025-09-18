@@ -1361,11 +1361,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem die Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate am ${ formattedDate } automatisch verlängert. Dir wird nichts berechnet, wenn du vor dem ${ formattedDate } kündigst."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Wenn du auf „Testen“ klickst, erklärst du dich mit unseren ${ termsAndConditions } einverstanden."
@@ -4062,11 +4062,6 @@
         "Eine Postleitzahl ist erforderlich"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Benutzer auswählen, um deren Aktivitäten anzuzeigen"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Beim Lesen der Datei ${ formattedFilename } ist ein Fehler aufgetreten. Ungültiges Dateiformat."
@@ -5604,11 +5599,11 @@
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
+      "Accounts": [
+        "Konten"
+      ],
       "active": [
         "aktiv"
-      ],
-      "Activity Monitor": [
-        "Aktivitätsüberwachung"
       ],
       "add a recovery method": [
         "eine Wiederherstellungsmethode hinzufügst"
@@ -6573,6 +6568,9 @@
       "Organization monitor": [
         "Organisationsüberwachung"
       ],
+      "Organization Monitor": [
+        "Organisationsüberwachung"
+      ],
       "Organization size": [
         "Organisationsgröße"
       ],
@@ -6779,6 +6777,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Wähle die Benutzerzugehörigkeiten aus ${ getFormattedOrganization }, die du in deiner ${ BRAND_NAME }-Organisation zulassen möchtest:"
       ],
+      "Select users to view their activity": [
+        "Benutzer auswählen, um deren Aktivitäten anzuzeigen"
+      ],
       "Select what you want to import.": [
         "Wähle aus, was du importieren möchtest."
       ],
@@ -6833,6 +6834,9 @@
       ],
       "Shared vault updated": [
         "Geteilter Tresor aktualisiert"
+      ],
+      "Sign in only": [
+        "Nur anmelden"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Melde dich bei ${ MAIL_APP_NAME } an, um deine Adresse zu aktivieren"
@@ -13607,6 +13611,9 @@
       "Account": [
         "Konto"
       ],
+      "Account restricted": [
+        "Konto eingeschränkt"
+      ],
       "Account suspended": [
         "Konto gesperrt"
       ],
@@ -14661,6 +14668,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Die Ursache dafür kann sein, dass das Passwort zurückgesetzt wurde oder der Benutzer sich noch nicht angemeldet hat."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Diese E-Mail-Adresse kann nur verwendet werden, um dich bei deinem ${ BRAND_NAME }-Konto anzumelden."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Diese E-Mail-Adresse wird allen Mitgliedern der Organisation angezeigt, wenn Vorgänge in der Kontoverwaltung durchgeführt werden."
