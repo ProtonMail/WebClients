@@ -24,6 +24,6 @@ export const subscribeToDevicesEvents = () => {
 
     return () => {
         unsubscribeFromEvents();
-        getActionEventManager().unsubscribeSdkEventsMyUpdates('devices');
+        void getActionEventManager().unsubscribeSdkEventsMyUpdates('devices');
     };
 };

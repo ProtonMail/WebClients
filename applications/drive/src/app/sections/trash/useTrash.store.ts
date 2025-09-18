@@ -88,7 +88,7 @@ export const useTrashStore = create<TrashStore>((set, get) => ({
             const { trashNodes, removeNodes, setNodes } = get();
             for (const item of event.items) {
                 try {
-                    if (!item.isTrashed && trashNodes[item.uid]) {
+                    if (item.isTrashed === false && trashNodes[item.uid]) {
                         removeNodes([item.uid]);
                     } else if (item.isTrashed) {
                         const node = await drive.getNode(item.uid);
