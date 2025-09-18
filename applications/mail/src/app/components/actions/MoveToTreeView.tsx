@@ -19,7 +19,7 @@ interface Props {
 
 export const MoveToTreeView = ({ treeView, selectedFolder, handleSelectFolder, search }: Props) => {
     return (
-        <div className="move-tree-view overflow-auto flex-auto">
+        <div className="move-tree-view overflow-auto scrollbar-always-visible flex-auto">
             {treeView.length === 0 ? (
                 <MoveToPlaceholders emptyListCopy={c('Info').t`No folder found`} search={search} />
             ) : (
