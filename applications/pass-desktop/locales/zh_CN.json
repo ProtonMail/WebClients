@@ -82,6 +82,9 @@
       "Authenticate": [
         "身份验证"
       ],
+      "Auto-type": [
+        "自动输入"
+      ],
       "Back": [
         "上一步"
       ],
@@ -1327,6 +1330,17 @@
         "极小"
       ]
     },
+    "Header": {
+      "Domain": [
+        "域名"
+      ],
+      "Password ends with": [
+        "密码结尾是"
+      ],
+      "Username": [
+        "用户名"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "“${ payload.itemName }” 项目被拒绝"
@@ -1805,6 +1819,9 @@
       "Item successfully unpinned": [
         "项目成功取消固定"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "快捷键只能在 ${ PASS_APP_NAME } 桌面应用内查看登陆项目的时候使用"
+      ],
       "Latest breach on ${ formattedDate }": [
         "最近一次泄露的时间 ${ formattedDate }"
       ],
@@ -1855,6 +1872,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2451,6 +2471,14 @@
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
       ]
     },
+    "Keyboard key": {
+      "ENTER": [
+        "输入"
+      ],
+      "TAB": [
+        "TAB"
+      ]
+    },
     "Label": {
       "${ aliasCount } alias": [
         "${ aliasCount } 个别名"
@@ -2610,6 +2638,9 @@
       ],
       "Auto-lock after": [
         "自动锁定时间"
+      ],
+      "Auto-type in previous window": [
+        "在前一个窗口内自动输入"
       ],
       "Backup password": [
         "备用密码"
@@ -2784,6 +2815,9 @@
       ],
       "Email": [
         "邮箱"
+      ],
+      "EMAIL": [
+        "电子邮件"
       ],
       "Email (alias)": [
         "电子邮件（别名）"
@@ -3004,6 +3038,9 @@
       "Key type": [
         "密钥类型"
       ],
+      "Keyboard shortcut:": [
+        "快捷键"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "快捷键：${ shortcut }"
       ],
@@ -3212,6 +3249,9 @@
         "护照号码"
       ],
       "Password": [
+        "密码"
+      ],
+      "PASSWORD": [
         "密码"
       ],
       "Password history": [
@@ -3558,6 +3598,9 @@
       ],
       "Useful for permanent sharing": [
         "有利于永久共享"
+      ],
+      "USERNAME": [
+        "用户名"
       ],
       "Username": [
         "用户名"
@@ -4361,6 +4404,9 @@
       "MX record": [
         "MX 记录"
       ],
+      "Next": [
+        "下一页"
+      ],
       "No excluded items": [
         "无除外项目"
       ],
@@ -4381,6 +4427,9 @@
       ],
       "No shared secure links": [
         "没有共享的安全链接"
+      ],
+      "Open pagination": [
+        "选择页码"
       ],
       "Our welcome gift to you": [
         "我们送给您的欢迎礼物"
@@ -4411,6 +4460,9 @@
       ],
       "Please note that once deleted, the alias can't be restored.": [
         "请注意，别名一旦删除就无法恢复。"
+      ],
+      "Previous": [
+        "上一页"
       ],
       "Random Prefix Generation": [
         "随机前缀生成"
@@ -4700,6 +4752,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "额外密码至少要有 8 个字符"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "自动填充失败。请确保 ${ PASS_APP_NAME } 拥有所需权限，并重试（${ error }）。"
       ],
       "Failed to load breaches.": [
         "加载泄露信息失败"
