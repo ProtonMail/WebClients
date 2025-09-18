@@ -4,6 +4,248 @@
     "language": "el_GR"
   },
   "contexts": {
+    "": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } ψευδώνυμο",
+        "${ aliasCount } ψευδώνυμα"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } μπλοκ",
+        "${ blockedCount } μπλοκ"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } αποκλείστηκε",
+        "${ blockedEmailsCount } αποκλείστηκαν"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } χαρακτήρας",
+        "${ config.options.length } χαρακτήρες"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } λέξη",
+        "${ config.options.wordCount } λέξεις"
+      ],
+      "${ count } item": [
+        "${ count } στοιχείο",
+        "${ count } στοιχεία"
+      ],
+      "${ count } time": [
+        "${ count } φορά",
+        "${ count } φορές"
+      ],
+      "${ count } view": [
+        "${ count } προβολή",
+        "${ count } προβολές"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } προβολή",
+        "${ count }/${ maxReads } προβολές"
+      ],
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } αρχείο",
+        "${ filesCount } αρχεία"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } προώθηση",
+        "${ forwardCount } προωθήσεις"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } προωθήθηκε",
+        "${ forwardedEmailsCount } προωθήθηκαν"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } μέλος",
+        "${ memberCount } μέλη"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
+      "${ months } month": [
+        "${ months } μήνα",
+        "${ months } μήνες"
+      ],
+      "${ n } item": [
+        "${ n } στοιχείο",
+        "${ n } στοιχεία"
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } πρόσκληση στάλθηκε με επιτυχία",
+        "${ payload.count } προσκλήσεις στάλθηκαν με επιτυχία"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } απάντηση",
+        "${ repliedCount } απαντήσεις"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } στάλθηκε",
+        "${ repliedEmailsCount } στάλθηκαν"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } παραβίαση εντοπίστηκε",
+        "${ row.breachCount } παραβιάσεις εντοπίστηκαν"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } ασφαλής σύνδεσμος",
+        "${ secureLinksCount } ασφαλής σύνδεσμοι"
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } άλλη σύνδεση χρησιμοποιεί τον ίδιο κωδικό πρόσβασης",
+        "${ total } άλλες συνδέσεις χρησιμοποιούν τον ίδιο κωδικό πρόσβασης"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } σύνδεση",
+        "${ usageCount } συνδέσεις"
+      ],
+      "${ years } year": [
+        "${ years } έτος",
+        "${ years } έτη"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχείο στον κάδο απορριμμάτων;",
+        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχεία στον κάδο απορριμμάτων;"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχείο;",
+        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχεία;"
+      ],
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Cannot send invitation at the moment": [
+        "Δεν είναι δυνατή η αποστολή πρόσκλησης αυτήν τη στιγμή",
+        "Δεν είναι δυνατή η αποστολή προσκλήσεων αυτήν τη στιγμή"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Διαγραφή ${ deletedItemsCount } στοιχείου;",
+        "Μεταγραφή ${ deletedItemsCount } στοιχείων;"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Εντοπίστηκε ${ errors.length } αλλοιωμένη γραμμή csv",
+        "Εντοπίστηκε ${ errors.length } αλλοιωμένες γραμμές csv"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Για λόγους ασφαλείας, πρέπει να επιβεβαιώσετε την πρόσβαση σε αυτήν την κοινόχρηστη κρύπτη",
+        "Για λόγους ασφαλείας, πρέπει να επιβεβαιώσετε την πρόσβαση σε αυτές τις κοινόχρηστες κρύπτες"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Οι κωδικοί πρόσβασης που δημιουργούνται αυτόματα θα αποθηκεύονται για περίοδο ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδας.",
+        "Οι κωδικοί πρόσβασης που δημιουργούνται αυτόματα θα αποθηκεύονται για περίοδο ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδων"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Κοινή χρήση στοιχείων: ${ itemAccessCount } χρήστης",
+        "Κοινή χρήση στοιχείων: ${ itemAccessCount } χρήστες"
+      ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Τα στοιχεία δεν μπορούν να περιέχουν παραπάνω από ${ share.targetMaxMembers } χρήστη.",
+        "Τα στοιχεία δεν μπορούν να περιέχουν παραπάνω από ${ share.targetMaxMembers } χρήστες."
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρας",
+        "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρες"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Move ${ count } item": [
+        "Μετακίνηση ${ count } στοιχείου",
+        "Μετακίνηση ${ count } στοιχείων"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Μετακίνηση ${ count } στοιχείου στο ${ vaultName }",
+        "Μετακίνηση ${ count } στοιχείων στο ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχείο;",
+        "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχεία;"
+      ],
+      "Move item to": [
+        "Μετακίνηση στοιχείου σε",
+        "Μετακίνηση στοιχείων σε"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
+        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδα διαγράφονται αυτόματα από το ιστορικό.",
+        "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδων διαγράφονται αυτόματα από το ιστορικό."
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδώνυμου.",
+        "Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά των ψευδωνύμων."
+      ],
+      "Reused ${ count } time": [
+        "Επαναχρησιμοποιημένη ${ count } φορά",
+        "Επαναχρησιμοποιημένες ${ count } φορές"
+      ],
+      "Sync alias": [
+        "Συγχρονισμός ψευδώνυμου",
+        "Συγχρονισμός ψευδωνύμων"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Δεν ήταν δυνατή η εισαγωγή του ${ totalIgnored } στοιχείου:",
+        "Δεν ήταν δυνατή η εισαγωγή των ${ totalIgnored } στοιχείων:"
+      ],
+      "Understood, I will never need it": [
+        "Κατανοητό, δε θα το χρειαστώ ποτέ",
+        "Κατανοητό, δεν θα τα χρειαστώ ποτέ"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Κοινή χρήση κρυπτών: ${ vaultMembersCount } μέλος",
+        "Κοινή χρήση κρυπτών: ${ vaultMembersCount } μέλη"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ targetMaxMembers } χρήστη.",
+        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ targetMaxMembers } χρήστες."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Εντοπίσαμε ότι έχετε ${ aliasCount } ψευδώνυμο που υπάρχει στο SimpleLogin αλλά λείπει στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;",
+        "Εντοπίσαμε ότι έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Μπορείτε να σύρετε και αποθέσετε το επιλεγμένο στοιχείο σε άλλη κρύπτη",
+        "Μπορείτε να σύρετε και αποθέσετε τα επιλεγμένα στοιχεία σε άλλη κρύπτη"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Έχετε ${ aliasCount } ψευδώνυμο που υπάρχει στο SimpleLogin αλλά λείπει στο ${ PASS_APP_NAME }. Θέλετε να το συγχρονίσετε;",
+        "Έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να τα συγχρονίσετε;"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Σας απομένει ${ daysRemaining } ημέρα για να δοκιμάσετε αυτές και άλλες premium δυνατότητες.",
+        "Σας απομένουν ${ daysRemaining } ημέρες για να δοκιμάσετε αυτές και άλλες premium δυνατότητες."
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
+        "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Εντοπίστηκαν ${ name } και ${ remainingCount } άλλες πιθανές διαρροές. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να προβάλετε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
@@ -82,6 +324,9 @@
       "Authenticate": [
         "Ταυτοποίηση"
       ],
+      "Auto-type": [
+        "Αυτόματη πληκτρολόγηση"
+      ],
       "Back": [
         "Πίσω"
       ],
@@ -129,6 +374,9 @@
       ],
       "Clear search": [
         "Εκκαθάριση αναζήτησης"
+      ],
+      "Clone item": [
+        "Κλώνος Αντικειμένου"
       ],
       "Close": [
         "Κλείσιμο"
@@ -249,6 +497,12 @@
       ],
       "Dismiss": [
         "Παράβλεψη"
+      ],
+      "Do not show again": [
+        "Να μην εμφανιστεί ξανά"
+      ],
+      "Do not show again when I press": [
+        "Να μην εμφανιστεί ξανά όταν πατήσω"
       ],
       "Download this CSV template": [
         "Κατεβάστε αυτό το πρότυπο CSV"
@@ -433,6 +687,9 @@
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
+      "Organize vaults": [
+        "Οργάνωση κρυπτών"
+      ],
       "Pass for Android": [
         "Έγκριση για το Android"
       ],
@@ -613,10 +870,6 @@
       "Submitting report...": [
         "Υποβολή αναφοράς..."
       ],
-      "Sync alias": [
-        "Συγχρονισμός ψευδώνυμου",
-        "Συγχρονισμός ψευδωνύμων"
-      ],
       "Sync aliases": [
         "Συγχρονισμός ψευδωνύμων"
       ],
@@ -643,10 +896,6 @@
       ],
       "Unblock contact": [
         "Άρση αποκλεισμού επαφής"
-      ],
-      "Understood, I will never need it": [
-        "Κατανοητό, δε θα το χρειαστώ ποτέ",
-        "Κατανοητό, δεν θα τα χρειαστώ ποτέ"
       ],
       "Unlock": [
         "Ξεκλείδωμα"
@@ -744,10 +993,6 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "Το ${ DARK_WEB_MONITORING_NAME } είναι διαθέσιμο με πλάνο επί πληρωμή. Αναβαθμίστε για άμεση πρόσβαση."
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } άλλη σύνδεση χρησιμοποιεί τον ίδιο κωδικό πρόσβασης",
-        "${ total } άλλες συνδέσεις χρησιμοποιούν τον ίδιο κωδικό πρόσβασης"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "Το 2FA προσθέτει ένα ακόμη επίπεδο ασφάλειας στις συνδέσεις σας. Το ${ PASS_APP_NAME } κάνει το 2FA ευκολότερο, αποθηκεύοντας και συμπληρώνοντας αυτόματα τους κωδικούς 2FA."
@@ -876,10 +1121,6 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Η ταυτοποίηση απέτυχε. Επιβεβαιώστε τον δεύτερο κωδικό πρόσβασής σας για να συνεχίσετε με την εξαγωγή"
       ],
-      "Cannot send invitation at the moment": [
-        "Δεν είναι δυνατή η αποστολή πρόσκλησης αυτήν τη στιγμή",
-        "Δεν είναι δυνατή η αποστολή προσκλήσεων αυτήν τη στιγμή"
-      ],
       "Cannot send invitations at the moment": [
         "Δεν είναι δυνατή η αποστολή προσκλήσεων αυτήν τη στιγμή"
       ],
@@ -927,10 +1168,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Η διαγραφή της κρύπτης \"${ payload.content.name }\" απέτυχε"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Εντοπίστηκε ${ errors.length } αλλοιωμένη γραμμή csv",
-        "Εντοπίστηκε ${ errors.length } αλλοιωμένες γραμμές csv"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Δεν ήταν δυνατή η επαλήθευση του τομέα. Βεβαιωθείτε ότι έχετε προσθέσει τις σωστές εγγραφές DNS"
@@ -1274,10 +1511,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -1289,28 +1522,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobyte"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Font face option": {
@@ -1338,6 +1549,17 @@
         "Πολύ μικρό"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Τομέας"
+      ],
+      "Password ends with": [
+        "Ο κωδικός πρόσβασης τελειώνει με"
+      ],
+      "Username": [
+        "Όνομα Χρήστη"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Το στοιχείο \"${ payload.itemName }\" απορρίφθηκε"
@@ -1345,36 +1567,8 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "Η ενημερωμένη έκδοση του \"${ payload.itemName }\" απορρίφθηκε"
       ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } αποκλείστηκε",
-        "${ blockedEmailsCount } αποκλείστηκαν"
-      ],
-      "${ count } time": [
-        "${ count } φορά",
-        "${ count } φορές"
-      ],
-      "${ count } view": [
-        "${ count } προβολή",
-        "${ count } προβολές"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } προβολή",
-        "${ count }/${ maxReads } προβολές"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } προωθήθηκε",
-        "${ forwardedEmailsCount } προωθήθηκαν"
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "Ο ${ inviterEmail } θέλει να μοιραστεί μαζί σας ένα αντικείμενο."
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } μέλος",
-        "${ memberCount } μέλη"
-      ],
-      "${ n } item": [
-        "${ n } στοιχείο",
-        "${ n } στοιχεία"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "Το ${ PASS_APP_NAME } θα είναι πάντα προσβάσιμο"
@@ -1394,23 +1588,11 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "Το ${ PASS_APP_NAME } θα απαιτήσει τον ${ BRAND_NAME } κωδικό πρόσβασής σας για να αποκτήσει πρόσβαση σε δεδομένα εκτός σύνδεσης."
       ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } πρόσκληση στάλθηκε με επιτυχία",
-        "${ payload.count } προσκλήσεις στάλθηκαν με επιτυχία"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "Το ${ PROTON_SENTINEL_NAME } απενεργοποιήθηκε επιτυχώς"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "Το ${ PROTON_SENTINEL_NAME } ενεργοποιήθηκε επιτυχώς"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } στάλθηκε",
-        "${ repliedEmailsCount } στάλθηκαν"
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount } παραβίαση εντοπίστηκε",
-        "${ row.breachCount } παραβιάσεις εντοπίστηκαν"
       ],
       "(Empty)": [
         "(Άδειο)"
@@ -1703,6 +1885,9 @@
       "Extra password successfully removed": [
         "Ο επιπλέον κωδικός πρόσβασης καταργήθηκε με επιτυχία"
       ],
+      "Failed updating your vault organization": [
+        "Αποτυχία ενημέρωσης της οργάνωσης της κρύπτης σας"
+      ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
       ],
@@ -1715,19 +1900,11 @@
       "For security reasons, this action requires identity verification.": [
         "Για λόγους ασφαλείας, αυτή η ενέργεια απαιτεί επαλήθευση ταυτότητας."
       ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Για λόγους ασφαλείας, πρέπει να επιβεβαιώσετε την πρόσβαση σε αυτήν την κοινόχρηστη κρύπτη",
-        "Για λόγους ασφαλείας, πρέπει να επιβεβαιώσετε την πρόσβαση σε αυτές τις κοινόχρηστες κρύπτες"
-      ],
       "For security reasons, your access needs to be confirmed": [
         "Για λόγους ασφαλείας, η πρόσβασή σας πρέπει να επιβεβαιωθεί"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Η διεύθυνση προώθησης αντιγράφηκε στο πρόχειρο. Στείλτε ένα μήνυμα σε αυτήν τη διεύθυνση και το ${ Email } θα το λάβει."
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Οι κωδικοί πρόσβασης που δημιουργούνται αυτόματα θα αποθηκεύονται για περίοδο ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδας.",
-        "Οι κωδικοί πρόσβασης που δημιουργούνται αυτόματα θα αποθηκεύονται για περίοδο ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδων"
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Αξιοποιήστε στο έπακρο το Pass δημιουργώντας μια κρύπτη για κάθε ομάδα ή έργο."
@@ -1810,10 +1987,6 @@
       "Item restored": [
         "Έγινε επαναφορά στοιχείου"
       ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Κοινή χρήση στοιχείων: ${ itemAccessCount } χρήστης",
-        "Κοινή χρήση στοιχείων: ${ itemAccessCount } χρήστες"
-      ],
       "Item successfully excluded from monitoring": [
         "Το στοιχείο εξαιρέθηκε επιτυχώς από την παρακολούθηση"
       ],
@@ -1828,6 +2001,9 @@
       ],
       "Item successfully unpinned": [
         "Το στοιχείο ξεκαρφιτσώθηκε επιτυχώς"
+      ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "Η συντόμευση πληκτρολογίου μπορεί να χρησιμοποιηθεί μόνο όταν βρίσκεστε μέσα στην εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } και προβάλλετε ένα στοιχείο σύνδεσης."
       ],
       "Latest breach on ${ formattedDate }": [
         "Τελευταία παραβίαση στις ${ formattedDate }"
@@ -1873,10 +2049,6 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Περισσότερο από έναν διαχειριστή κωδικών πρόσβασης, το ${ PASS_APP_NAME } προστατεύει τον κωδικό πρόσβασής σας και την προσωπική σας διεύθυνση email μέσω ψευδωνύμων email. Με την ίδια τεχνολογία πίσω από το ${ MAIL_APP_NAME }, τα δεδομένα σας είναι κρυπτογραφημένα από άκρο σε άκρο και είναι προσβάσιμα μόνο από εσάς."
-      ],
-      "Move ${ count } item": [
-        "Μετακίνηση ${ count } στοιχείου",
-        "Μετακίνηση ${ count } στοιχείων"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
@@ -1946,10 +2118,6 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Το κλείδωμα με κωδικό πρόσβασης καταχωρήθηκε με επιτυχία. Χρησιμοποιήστε το για να ξεκλειδώσετε το ${ PASS_APP_NAME }"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδα διαγράφονται αυτόματα από το ιστορικό.",
-        "Οι κωδικοί πρόσβασης που είναι παλαιότεροι από ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } εβδομάδων διαγράφονται αυτόματα από το ιστορικό."
       ],
       "Paused": [
         "Σε παύση"
@@ -2085,6 +2253,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Παρακαλούμε διατηρήστε αυτό το παράθυρο ανοιχτό κατά την εισαγωγή των δεδομένων σας. Αυτή η διαδικασία μπορεί να διαρκέσει μερικά λεπτά."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Βεβαιωθείτε ότι το παράθυρο που ήταν ενεργό προηγουμένως είναι αυτό στο οποίο θέλετε να εκτελέσετε την αυτόματη πληκτρολόγηση και ότι ο δρομέας σας βρίσκεται στο πεδίο σύνδεσης."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Παρακαλούμε λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδωνύμου. Ίσως θέλετε να απενεργοποιήσετε το ψευδώνυμο;"
@@ -2242,10 +2413,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Ο επιπλέον κωδικός πρόσβασης θα απαιτηθεί για τη χρήση του ${ PASS_APP_NAME }. Λειτουργεί ως πρόσθετος κωδικός πρόσβασης πάνω από τον κωδικό πρόσβασης ${ BRAND_NAME }."
       ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Δεν ήταν δυνατή η εισαγωγή του ${ totalIgnored } στοιχείου:",
-        "Δεν ήταν δυνατή η εισαγωγή των ${ totalIgnored } στοιχείων:"
-      ],
       "The secure link has been removed": [
         "Ο ασφαλής σύνδεσμος καταργήθηκε"
       ],
@@ -2339,6 +2506,9 @@
       "Unverified": [
         "Μη επαληθευμένος"
       ],
+      "Updating vault organization...": [
+        "Ενημερώνεται η οργάνωση της κρύπτης..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Αναβαθμίστε τώρα για να ξεκλειδώσετε Premium δυνατότητες"
       ],
@@ -2366,9 +2536,8 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Η κρύπτη \"${ share.content.name }\" καταργήθηκε"
       ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Κοινή χρήση κρυπτών: ${ vaultMembersCount } μέλος",
-        "Κοινή χρήση κρυπτών: ${ vaultMembersCount } μέλη"
+      "Vault organization successfully updated": [
+        "Η οργάνωση της κρύπτης ενημερώθηκε με επιτυχία"
       ],
       "Verification code sent.": [
         "Ο κωδικός επαλήθευσης στάλθηκε."
@@ -2378,10 +2547,6 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Αντιμετωπίζουμε προβλήματα συγχρονισμού δεδομένων στον τοπικό σας χώρο αποθήκευσης. Βεβαιωθείτε ότι έχετε αρκετό χώρο στο δίσκο για να λειτουργεί ομαλά το ${ PASS_SHORT_APP_NAME }."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Εντοπίσαμε ότι έχετε ${ aliasCount } ψευδώνυμο που υπάρχει στο SimpleLogin αλλά λείπει στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;",
-        "Εντοπίσαμε ότι έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να το εισαγάγετε;"
       ],
       "Week": [
         "Εβδομάδα"
@@ -2407,14 +2572,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Δεν μπορείτε να αλλάξετε τα γραμματοκιβώτια για αυτό το ψευδώνυμο."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Έχετε ${ aliasCount } ψευδώνυμο που υπάρχει στο SimpleLogin αλλά λείπει στο ${ PASS_APP_NAME }. Θέλετε να το συγχρονίσετε;",
-        "Έχετε ${ aliasCount } ψευδώνυμα που υπάρχουν στο SimpleLogin αλλά λείπουν στο ${ PASS_APP_NAME }. Θέλετε να τα συγχρονίσετε;"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Σας απομένει ${ daysRemaining } ημέρα για να δοκιμάσετε αυτές και άλλες premium δυνατότητες.",
-        "Σας απομένουν ${ daysRemaining } ημέρες για να δοκιμάσετε αυτές και άλλες premium δυνατότητες."
-      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Τα στοιχεία μπορούν να μετακινηθούν μόνο στις πρώτες δύο κρύπτες σας. Για να μετακινήσετε στοιχεία μεταξύ όλων των κρυπτών, αναβαθμίστε τη συνδρομή σας."
       ],
@@ -2435,6 +2592,12 @@
       ],
       "You may close this tab.": [
         "Μπορείτε να κλείσετε αυτήν την καρτέλα."
+      ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Ενδέχεται να χρειαστεί να αποδεχτείτε ένα μήνυμα αίτησης άδειας και να επανεκκινήσετε την εφαρμογή, ανάλογα με το σύστημά σας."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Ενδέχεται να χρειαστεί να παραχωρήσετε άδεια προσβασιμότητας στο ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Χρειάζεστε μια θυρίδα αποθήκευσης με δικαίωμα επεξεργασίας για να μπορέσετε να εισαγάγετε στοιχεία."
@@ -2482,71 +2645,23 @@
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
       ]
     },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } ψευδώνυμο",
-        "${ aliasCount } ψευδώνυμα"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } μπλοκ",
-        "${ blockedCount } μπλοκ"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } χαρακτήρας",
-        "${ config.options.length } χαρακτήρες"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } λέξη",
-        "${ config.options.wordCount } λέξεις"
-      ],
-      "${ count } item": [
-        "${ count } στοιχείο",
-        "${ count } στοιχεία"
-      ],
-      "${ days } day": [
-        "${ days } ημέρα",
-        "${ days } ημέρες"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } προώθηση",
-        "${ forwardCount } προωθήσεις"
-      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, στις τελευταίες 14 ημέρες"
-      ],
-      "${ hours } hour": [
-        "${ hours } ώρα",
-        "${ hours } ώρες"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } λεπτό",
-        "${ minutes } λεπτά"
-      ],
-      "${ months } month": [
-        "${ months } μήνα",
-        "${ months } μήνες"
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "Το ${ PASS_APP_NAME } αναγνωρίζει τους ιστότοπους και τις εφαρμογές που χρησιμοποιείτε και συμπληρώνει αυτόματα φόρμες με τα διαπιστευτήριά σας για εσάς σε οποιοδήποτε πρόγραμμα περιήγησης ή συσκευή. Δε χρειάζεται αντιγραφή και επικόλληση."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } έκδοση"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } απάντηση",
-        "${ repliedCount } απαντήσεις"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } ασφαλής σύνδεσμος",
-        "${ secureLinksCount } ασφαλής σύνδεσμοι"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } σύνδεση",
-        "${ usageCount } συνδέσεις"
-      ],
-      "${ years } year": [
-        "${ years } έτος",
-        "${ years } έτη"
       ],
       "1 hour": [
         "1 ώρα"
@@ -2655,6 +2770,9 @@
       ],
       "Auto-lock after": [
         "Αυτόματο-κλείδωμα μετά"
+      ],
+      "Auto-type in previous window": [
+        "Αυτόματη πληκτρολόγηση στο προηγούμενο παράθυρο"
       ],
       "Backup password": [
         "Εφεδρικός κωδικός πρόσβασης"
@@ -3051,6 +3169,9 @@
       ],
       "Key type": [
         "Τύπος κλειδιού"
+      ],
+      "Keyboard shortcut:": [
+        "Συντόμευση πληκτρολογίου:"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Συντόμευση πληκτρολογίου: ${ shortcut }"
@@ -3725,14 +3846,6 @@
       ]
     },
     "Message": {
-      "${ count } item": [
-        "${ count } στοιχείο",
-        "${ count } στοιχεία"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Μπορείτε να σύρετε και αποθέσετε το επιλεγμένο στοιχείο σε άλλη κρύπτη",
-        "Μπορείτε να σύρετε και αποθέσετε τα επιλεγμένα στοιχεία σε άλλη κρύπτη"
-      ],
       "You selected ${ semiboldText } in this vault.": [
         "Επιλέξατε ${ semiboldText } σε αυτή την κρύπτη."
       ]
@@ -3791,10 +3904,6 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "Το \"${ filename }\" είναι πολύ μεγάλο για μεταφόρτωση. Το μέγιστο επιτρεπόμενο μέγεθος είναι (${ maxFileSizeInMB })"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } αρχείο",
-        "${ filesCount } αρχεία"
       ],
       "Attachments": [
         "Συνημμένα"
@@ -4123,10 +4232,6 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Ο τομέας επαληθεύτηκε με επιτυχία. Ο τομέας σας μπορεί να αρχίσει να λαμβάνει μηνύματα ηλεκτρονικού ταχυδρομείου και να δημιουργεί ψευδώνυμα"
       ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Τα στοιχεία δεν μπορούν να περιέχουν παραπάνω από ${ share.targetMaxMembers } χρήστη.",
-        "Τα στοιχεία δεν μπορούν να περιέχουν παραπάνω από ${ share.targetMaxMembers } χρήστες."
-      ],
       "Mailbox change successfully cancelled": [
         "Η αλλαγή γραμματοκιβωτίου ακυρώθηκε με επιτυχία"
       ],
@@ -4144,10 +4249,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Η δημιουργία τυχαίων προθεμάτων ενεργοποιήθηκε με επιτυχία"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ targetMaxMembers } χρήστη.",
-        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ targetMaxMembers } χρήστες."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Στάλθηκε μήνυμα επαλήθευσης. Παρακαλούμε ελέγξτε τα εισερχόμενά σας για να επαληθεύσετε το γραμματοκιβώτιό σας"
@@ -4267,10 +4368,6 @@
       "Default Display Name": [
         "Προκαθορισμένο Όνομα Εμφάνισης"
       ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Διαγραφή ${ deletedItemsCount } στοιχείου;",
-        "Μεταγραφή ${ deletedItemsCount } στοιχείων;"
-      ],
       "Delete domain": [
         "Διαγραφή τομέα"
       ],
@@ -4333,6 +4430,9 @@
       ],
       "Grant permissions": [
         "Απαιτούμενα δικαιώματα"
+      ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Οι κρυφές κρύπτες δεν είναι ορατές κατά την αναζήτηση και την αυτόματη συμπλήρωση"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email ψευδώνυμα"
@@ -4400,14 +4500,6 @@
       "Modified": [
         "Τροποποιήθηκε"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Μετακίνηση ${ count } στοιχείου στο ${ vaultName }",
-        "Μετακίνηση ${ count } στοιχείων στο ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχείο;",
-        "Μετακίνηση στον κάδο απορριμμάτων ${ trashedItemsCount } στοιχεία;"
-      ],
       "Move all items to \"${ vaultName }\"?": [
         "Μετακίνηση όλων των στοιχείων σε \"${ vaultName }\";"
       ],
@@ -4416,6 +4508,9 @@
       ],
       "MX record": [
         "Εγγραφή MX"
+      ],
+      "Next": [
+        "Επόμενο"
       ],
       "No excluded items": [
         "Δεν υπάρχουν εξαιρούμενα στοιχεία"
@@ -4438,6 +4533,12 @@
       "No shared secure links": [
         "Δεν υπάρχουν κοινόχρηστοι ασφαλείς σύνδεσμοι"
       ],
+      "Open pagination": [
+        "Άνοιγμα σελιδοποίησης"
+      ],
+      "Organize vaults": [
+        "Οργάνωση κρυπτών"
+      ],
       "Our welcome gift to you": [
         "Το δώρο καλωσορίσματος σας"
       ],
@@ -4459,15 +4560,17 @@
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
       ],
+      "Perform autotype?": [
+        "Να γίνει αυτόματη πληκτρολόγηση;"
+      ],
       "Permanently remove all items?": [
         "Οριστική αφαίρεση όλων των στοιχείων;"
       ],
       "Pinned (${ items.length })": [
         "Καρφιτσώθηκαν (${ items.length })"
       ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδώνυμου.",
-        "Λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά των ψευδωνύμων."
+      "Previous": [
+        "Προηγούμενο"
       ],
       "Random Prefix Generation": [
         "Δημιουργία Τυχαίου Προθέματος"
@@ -4498,10 +4601,6 @@
       ],
       "Resume monitoring?": [
         "Συνέχιση παρακολούθησης;"
-      ],
-      "Reused ${ count } time": [
-        "Επαναχρησιμοποιημένη ${ count } φορά",
-        "Επαναχρησιμοποιημένες ${ count } φορές"
       ],
       "Reused passwords": [
         "Επαναχρησιμοποιημένοι κωδικοί πρόσβασης"
@@ -4619,10 +4718,11 @@
       ],
       "Your welcome gift": [
         "Απολαύστε τη δωρεάν δοκιμή σας"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
-        "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "αντιγραφή"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4664,12 +4764,6 @@
         "Η διεύθυνση URL δεν είναι έγκυρη"
       ]
     },
-    "Vault Select": {
-      "Move item to": [
-        "Μετακίνηση στοιχείου σε",
-        "Μετακίνηση στοιχείων σε"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } κωδικός πρόσβασης απαιτείται"
@@ -4694,14 +4788,6 @@
       ],
       "An error occurred while importing your data.": [
         "Παρουσιάστηκε σφάλμα κατά την εισαγωγή των δεδομένων σας."
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχείο στον κάδο απορριμμάτων;",
-        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε ${ trashedItemsCount } στοιχεία στον κάδο απορριμμάτων;"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχείο;",
-        "Θέλετε σίγουρα να διαγράψετε οριστικά ${ deletedItemsCount } στοιχεία;"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Θέλετε σίγουρα να διαγράψετε μόνιμα αυτό το στοιχείο;"
@@ -4763,6 +4849,9 @@
       "Extra password should have at least 8 characters": [
         "Ο επιπλέον κωδικός πρόσβασης πρέπει να έχει τουλάχιστον 8 χαρακτήρες"
       ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Αποτυχία αυτόματης πληκτρολόγησης. Παρακαλούμε βεβαιωθείτε ότι το ${ PASS_APP_NAME } διαθέτει τα απαραίτητα δικαιώματα και δοκιμάστε ξανά (${ error })."
+      ],
       "Failed to load breaches.": [
         "Αποτυχία φόρτωσης παραβιάσεων."
       ],
@@ -4783,10 +4872,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Δεν επιτρέπεται η πρόσκληση διευθύνσεων ηλεκτρονικού ταχυδρομείου εκτός οργανισμού."
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρας",
-        "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρες"
       ],
       "Missing alias prefix": [
         "Λείπει το πρόθεμα ψευδωνύμου"
