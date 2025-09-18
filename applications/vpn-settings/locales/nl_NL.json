@@ -4,6 +4,884 @@
     "language": "nl_NL"
   },
   "contexts": {
+    "": {
+      "${ admins } admin": [
+        "${ admins } beheerder",
+        "${ admins } beheerders"
+      ],
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers }/${ totalUsers } gebruiker heeft momenteel toegang tot gedeelde servers.",
+        "${ amountUsers }/${ totalUsers } gebruikers hebben momenteel toegang tot gedeelde servers."
+      ],
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Schrijfassistent voor ${ maxAi } gebruiker",
+        "${ BRAND_NAME } Schrijfassistent voor ${ maxAi } gebruikers"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nieuwe agenda",
+        "${ calendarsToBeCreatedCount } nieuwe agenda's"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } samengevoegde agenda",
+        "${ calendarsToBeMergedCount } samengevoegde agenda's"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagen"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } uur",
+        "${ ceilHours } uren"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuut",
+        "${ ceilMinutes } minuten"
+      ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } land ingeschakeld",
+        "${ countriesCount } landen ingeschakeld"
+      ],
+      "${ cycle } month": [
+        "${ cycle } maand",
+        "${ cycle } maanden"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag over",
+        "${ dayDiff } dagen over"
+      ],
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } extra aangepast domein",
+        "${ domains } extra aangepaste domeinen"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } gebruiker",
+        "${ group.UserCount } gebruikers"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw familieleden gebruiken tweestapsverificatie authenticatie",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw familieleden gebruiken tweestapsverificatie authenticatie"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw leden gebruiken tweestapsverificatie authenticatie om aan te melden bij uw organisatie",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw leden gebruiken tweestapsverificatie authenticatie om aan te melden bij uw organisatie"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie."
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } toegewijde server",
+        "${ ipAddresses } toegewijde servers"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servers"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } voor ${ maxLumo } gebruiker",
+        "${ LUMO_APP_NAME } voor ${ maxLumo } gebruikers"
+      ],
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN-verbinding",
+        "${ MaxVPN } VPN-verbindingen"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } lid",
+        "${ memberCount } leden"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ months } month plan": [
+        "${ months } maand abonnement",
+        "${ months } maanden abonnement"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadres",
+        "${ n } ${ BRAND_NAME } e-mailadressen"
+      ],
+      "${ n } account per wallet": [
+        "${ n } account per portemonnee",
+        "${ n } accounts per portemonnee"
+      ],
+      "${ n } address": [
+        "${ n } adres",
+        "${ n } adressen"
+      ],
+      "${ n } administrator in your organization need access to the organization key.": [
+        "${ n } beheerder in uw organisatie heeft toegang nodig tot de organisatiesleutel.",
+        "${ n } beheerders in uw organisatie hebben toegang nodig tot de organisatiesleutel."
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
+      ],
+      "${ n } custom email domain": [
+        "${ n } aangepast e-maildomein",
+        "${ n } aangepaste e-maildomeinen"
+      ],
+      "${ n } day": [
+        "${ n } dag",
+        "${ n } dagen"
+      ],
+      "${ n } device": [
+        "${ n } apparaat",
+        "${ n } apparaten"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadres",
+        "${ n } e-mailadressen/aliassen"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mailadres per gebruiker",
+        "${ n } e-mailadressen per gebruiker"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filters"
+      ],
+      "${ n } folder": [
+        "${ n } map",
+        "${ n } mappen"
+      ],
+      "${ n } folder and label": [
+        "${ n } map en label",
+        "${ n } mappen en labels"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-verbinding per gebruiker",
+        "${ n } gratis VPN-verbindingen per gebruiker"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } supersnelle VPN-verbinding",
+        "${ n } supersnelle VPN-verbindingen"
+      ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } lid heeft uw hulp gevraagd om in te loggen.",
+        "${ n } leden hebben uw hulp gevraagd om in te loggen."
+      ],
+      "${ n } message per day": [
+        "${ n } bericht per dag",
+        "${ n } berichten per dag"
+      ],
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ],
+      "${ n } server": [
+        "${ n } server",
+        "${ n }+ servers"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
+        "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
+      ],
+      "${ n } user account": [
+        "${ n } gebruikersaccount",
+        "${ n } gebruikersaccounts"
+      ],
+      "${ n } user converted to SSO": [
+        "${ n } gebruiker geconverteerd naar SSO",
+        "${ n } gebruikers geconverteerd naar SSO"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } gebruiker losgekoppeld van SSO",
+        "${ n } gebruikers losgekoppeld van SSO"
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } gebruiker heeft zich aangesloten bij uw organisatie via uw Identity Provider. Controleer het account nu:",
+        "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Controleer hun accounts nu:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } gebruiker is inactief. U kunt deze gebruiker veilig verwijderen uit uw organisatie.",
+        "${ n } gebruikers zijn inactief. U kunt ze veilig verwijderen uit uw organisatie."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal.",
+        "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
+      ],
+      "${ n } vault": [
+        "${ n } kluis",
+        "${ n } kluizen"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-verbinding per gebruiker",
+        "${ n } VPN-verbindingen per gebruiker"
+      ],
+      "${ n } wallet": [
+        "${ n } portemonnee",
+        "${ n } portemonnees"
+      ],
+      "${ n } year": [
+        "${ n } jaar",
+        "${ n } jaren"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dag",
+        "${ nbDay } dagen"
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } gebruiker",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } gebruikers"
+      ],
+      "${ number } city": [
+        "${ number } stad",
+        "${ number } steden"
+      ],
+      "${ number } server": [
+        "${ number } server",
+        "${ number } servers"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } landen"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries }+ landen"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries } landen"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } gebruikers",
+        "Tot ${ numberOfUsers } gebruikers"
+      ],
+      "${ options }-day file version history": [
+        "Bestandsversiegeschiedenis van ${ options } dag",
+        "Bestandsversiegeschiedenis van ${ options } dag"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vervalt binnen ${ daysLeft } dag.",
+        "${ planName } vervalt binnen ${ daysLeft } dagen."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } agenda per gebruiker",
+        "${ planNumberOfCalendars } agenda's per gebruiker"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mailadres per gebruiker",
+        "${ planNumberOfEmails } e-mailadressen per gebruiker"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } gebruiker",
+        "${ planNumberOfUsers } gebruikers"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } map gevonden",
+        "${ providerFoldersNumLocalized } mappen gevonden"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } label gevonden in Gmail",
+        "${ providerFoldersNumLocalized } labels gevonden in Gmail"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }.",
+        "${ provisioningCounter } servers wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } meer",
+        "${ remainingAddresses.length } meer"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } extra adres",
+        "${ remainingAddresses.length } extra adressen"
+      ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } resultaat gevonden",
+        "${ resultsCount } resultaten gevonden"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } zitplaats",
+        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } plaats voor schrijfassistent",
+        "${ seats } plaatsen voor schrijfassistent"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
+      ],
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } steden geselecteerd",
+        "${ selectedCitiesCount } steden geselecteerd"
+      ],
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } geselecteerd",
+        "${ selectedCountriesCount } geselecteerd"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } geselecteerd",
+        "${ selectedEntities.length } geselecteerd"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } map geselecteerd",
+        "${ selectedFoldersCount } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } label geselecteerd",
+        "${ selectedFoldersCount } labels geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } map geselecteerd",
+        "${ selectedFoldersCountLocalized } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } label geselecteerd",
+        "${ selectedFoldersCountLocalized } labels geselecteerd"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dag",
+        "${ timeRemaining.inDays } dagen"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } uur",
+        "${ timeRemaining.inHours } uren"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } contactpersoon",
+        "${ totalContacts } contactpersonen"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraak wordt niet geïmporteerd. Uitvouwen voor details.",
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraken worden niet geïmporteerd. Uitvouwen voor details."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contact versleuteld en toegevoegd aan uw contactenlijst",
+        "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/ 1 afspraak versleuteld en toegevoegd aan uw agenda",
+        "${ totalImported }/${ totalToImport } afspraken versleuteld en toegevoegd aan uw agenda"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } adres",
+        "${ UsedAddresses } adressen"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } van ${ MaxAddresses } e-mailadres",
+        "${ UsedAddresses } van ${ MaxAddresses } e-mailadressen"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } agenda",
+        "${ UsedCalendars } agenda's"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } van de ${ MaxDomains } eigen domein",
+        "${ UsedDomains } van de ${ MaxDomains } eigen domeinen"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers }/${ MaxMembers } gebruiker",
+        "${ UsedMembers }/${ MaxMembers } gebruikers"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } gebruiker gevonden",
+        "${ userFound } gebruikers gevonden"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } lid)",
+        "(${ memberCount } leden)"
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } Meer",
+        "+ ${ invisibleCount } Meer"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
+        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "${ totalServerCount } server toevoegen?",
+        "${ totalServerCount } servers toevoegen?"
+      ],
+      "Add (${ totalAddedCount })": [
+        "Toevoegen (${ totalAddedCount })",
+        "Toevoegen (${ totalAddedCount })"
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Server toevoegen (${ availableAddedCount } beschikbaar)",
+        "Server toevoegen (${ availableAddedCount } beschikbaar)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } gatewayserver wordt toegevoegd",
+        "${ addedServerCount } gatewayservers worden toegevoegd"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Gatewayserver wordt toegevoegd: ${ serverNumber } / ${ total }",
+        "Gatewayservers worden toegevoegd: ${ serverNumber } / ${ total }"
+      ],
+      "Affected user is on row": [
+        "Deze gebruiker staat op rij",
+        "Deze gebruikers staan op rijen"
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "Na ${ lifetime } dag zullen alle berichten worden verwijderd.",
+        "Na ${ lifetime } dagen zullen alle berichten worden verwijderd"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Alles (${ totalFoldersCount } map)",
+        "Alle (${ totalFoldersCount } mappen)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Alle (${ totalFoldersCount } label)",
+        "Alle (${ totalFoldersCount } labels)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Selecteert automatisch uit ${ numberOfCountries } land",
+        "Selecteert automatisch uit ${ numberOfCountries } landen"
+      ],
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Verbinding op ${ plusVpnConnections } apparaat",
+        "Verbinding op ${ plusVpnConnections } apparaten"
+      ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Kon de beheerderstoegang voor ${ n } -gebruiker niet automatisch inschakelen, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:",
+        "Kon beheerderstoegang niet automatisch inschakelen voor ${ n } gebruikers, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Maak ${ selectedUserIds.length } gebruiker aan",
+        "Maak ${ selectedUserIds.length } gebruikers aan"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Maak een beveiligde cloud voor ${ value } lid",
+        "Maak een beveiligde cloud voor ${ value } leden"
+      ],
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } agenda",
+        "Maak tot ${ n } agenda's"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
+        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Gatewayserver wordt opgezet: ${ serverNumber } / ${ total }",
+        "Gatewayservers worden opgezet: ${ serverNumber } / ${ total }"
+      ],
+      "day": [
+        "dag",
+        "dagen"
+      ],
+      "Delete ${ n } inactive user?": [
+        "Verwijder ${ n } inactieve gebruiker?",
+        "Verwijder ${ n } inactieve gebruikers?"
+      ],
+      "Delete ${ n } user": [
+        "Verwijder ${ n } gebruiker",
+        "Verwijder ${ n } gebruikers"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dag)",
+        "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dagen)"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } gatewayserver wordt verwijderd",
+        "${ deletedServerCount } gatewayservers worden verwijderd"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
+      ],
+      "domain used": [
+        "domein gebruikt",
+        "domeinen gebruikt"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } gebruikersaccount aanmaken niet gelukt.",
+        "${ failedUsers.length } gebruikersaccounts aanmaken niet gelukt."
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
+        "${ itemsCount } suggesties gevonden, gebruik het toetsenbord om te navigeren."
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "Supersnelle VPN op ${ maxVpn } apparaat",
+        "Supersnelle VPN op ${ maxVpn } apparaten"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "High-speed VPN op ${ n } apparaat",
+        "High-speed VPN op ${ n } apparaten"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
+        "Alle berichten uit ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
+        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
+      ],
+      "Import as simple event?": [
+        "Importeren als eenvoudige afspraak?",
+        "Importeren als eenvoudige afspraken?"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "Levensduur moet langer zijn dan ${ MIN_LIFETIME } dag",
+        "Levensduur moet langer zijn dan ${ MIN_LIFETIME } dagen"
+      ],
+      "Megabyte": [
+        "Megabyt",
+        "Megabytes"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
+        "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
+      ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "Slechts ${ n } geaccepteerde uitnodiging is toegestaan binnen een periode van 6 maanden.",
+        "Slechts ${ n } geaccepteerde uitnodigingen zijn toegestaan binnen een periode van 6 maanden."
+      ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "of toewijzen aan een land in ${ availableAgainAfterDays } dag",
+        "of toewijzen aan een land in ${ availableAgainAfterDays } dagen"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "of wijs toe aan elk land in ${ availableAgainAfterHours } uur",
+        "of toewijzen aan een land in ${ availableAgainAfterHours } uur"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uur.",
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uren."
+      ],
+      "Please add a password for the user on row": [
+        "Voeg een wachtwoord toe voor de gebruiker op de rij",
+        "Voeg wachtwoorden toe voor de gebruikers op rijen"
+      ],
+      "Please add an email address for the user on row": [
+        "Voeg een e-mailadres toe voor de gebruiker op de rij",
+        "Voeg e-mailadressen toe voor de gebruikers op de rijen"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Los het gemarkeerde conflict op om verder te gaan.",
+        "Los de gemarkeerde conflicten op om verder te gaan."
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewLength } maand",
+        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewLength } maanden"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "Selecteer uit ${ numberOfCountries }+ land",
+        "Selecteer uit ${ numberOfCountries }+ landen"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servers in ${ numberOfCountries }+ land",
+        "Servers in ${ numberOfCountries }+ landen"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servers in ${ vpnServersCountData.paid.countries }+ land",
+        "Servers in ${ vpnServersCountData.paid.countries }+ landen"
+      ],
+      "Shared server country (${ countriesCount })": [
+        "Land met gedeelde server (${ countriesCount })",
+        "Landen met gedeelde server (${ countriesCount })"
+      ],
+      "Show ${ n } administrator": [
+        "Toon ${ n } beheerder",
+        "Toon ${ n } beheerders"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting ${ plan.Title } krijgen wanneer u zich voor ${ cycle } maand abonneert.",
+        "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting krijgen ${ plan.Title } wanneer u zich voor ${ cycle } maanden abonneert."
+      ],
+      "Step ${ step }": [
+        "Stap ${ step }",
+        "Stap ${ step }"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonnement vernieuwt automatisch elke ${ cycle } maand.",
+        "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
+      ],
+      "Successfully created ${ n } user account": [
+        "Met succes ${ n } gebruikersaccounts aangemaakt",
+        "Met succes ${ n } gebruikersaccounts aangemaakt"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Ondersteuning voor ${ n } aangepast e-maildomein",
+        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
+        "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
+      ],
+      "The following address is invalid.": [
+        "Het volgende adres is ongeldig.",
+        "De volgende adressen zijn ongeldig."
+      ],
+      "The following address is unavailable.": [
+        "Het volgende adres is niet beschikbaar.",
+        "De volgende adressen zijn niet beschikbaar."
+      ],
+      "The following address was not created.": [
+        "Het volgende adres werd niet aangemaakt.",
+        "De volgende adressen werden niet aangemaakt."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
+        "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
+      ],
+      "This file contains an event invitation:": [
+        "Dit bestand bevat een uitnodiging voor een afspraak:",
+        "Dit bestand bevat uitnodigingen voor afspraken:"
+      ],
+      "This file contains an invitation response:": [
+        "Dit bestand bevat een antwoord op een uitnodiging:",
+        "Dit bestand bevat antwoorden op uitnodigingen:"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dag",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dagen"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } account, upgrade naar ${ planName }.",
+        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } accounts, upgrade naar ${ planName }."
+      ],
+      "Total for ${ n } month": [
+        "Totaal voor ${ n } maand",
+        "Totaal voor ${ n } maanden"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
+      ],
+      "Up to ${ n } user": [
+        "Tot ${ n } gebruiker",
+        "Tot ${ n } gebruikers"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Tot ${ n } gebruiker (${ adminsText }, ${ usersText })",
+        "Tot ${ n } gebruikers (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gebruik tot maximaal ${ n } apparaat tegelijk",
+        "Gebruik tot maximaal ${ n } apparaten tegelijk"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN verbinding voor ${ n } apparaat per gebruiker",
+        "VPN verbinding voor ${ n } apparaten per gebruiker"
+      ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde server.",
+        "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde servers."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie en ${ usedAI } van uw ${ maxAI } beschikbare schrijfassistentie licentie.",
+        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicenties en ${ usedAI } van uw ${ maxAI } beschikbare schrijfassistentie licenties."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie en geen van uw ${ maxAI } beschikbare schrijfassistentie licentie.",
+        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie en geen van uw ${ maxAI } beschikbare schrijfassistentie licenties."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie",
+        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicenties"
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uur",
+        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uren"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
+      ],
+      "You have ${ availableCount } new server available.": [
+        "U heeft ${ availableCount } nieuwe server beschikbaar.",
+        "U heeft ${ availableCount } nieuwe servers beschikbaar."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
+        "U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inHours } uren om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "U heeft ${ timeRemaining.inMinutes } minuut om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inMinutes } minuten om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "U heeft ${ timeRemaining.inSeconds } seconde om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inSeconds } seconden om uw wachtwoord te resetten."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "U heeft ${ unassignedAvailableCount } onlangs gebruikte servers beschikbaar. Om deze servers toe te wijzen aan een ander land, moet u wachten tot de deactivatie is voltooid.",
+        "U heeft ${ unassignedAvailableCount } onlangs gebruikte servers beschikbaar. Om deze servers toe te wijzen aan een ander land, moet u wachten tot de deactivatie is voltooid."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "U hebt de limiet van ${ n } geaccepteerde uitnodiging in 6 maanden bereikt.",
+        "U hebt de limiet van ${ n } geaccepteerde uitnodigingen in 6 maanden bereikt."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "U hebt de limiet van ${ n } geaccepteerde uitnodiging in 6 maanden bereikt. De knop wordt weer opnieuw actief zodra u opnieuw nieuwe gebruikers kunt uitnodigen.",
+        "U hebt de limiet van ${ n } geaccepteerde uitnodigingen in 6 maanden bereikt. De knop wordt weer opnieuw actief zodra u opnieuw nieuwe gebruikers kunt uitnodigen."
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uur",
+        "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uren"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
+        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } extern account naar ${ MAIL_APP_NAME }.",
+        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } externe accounts naar ${ MAIL_APP_NAME }."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adres. Om een ander toe te voegen, schakel eerst een van deze uit.",
+        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adressen. Schakel een van deze eerst uit om een ander adres toe te voegen."
+      ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "U heeft het maximum van ${ maxSecurityKeyLength } beveiligingssleutel bereikt.",
+        "U heeft het maximum van ${ maxSecurityKeyLength } beveiligingssleutels bereikt."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraak.",
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraken."
+      ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Uw gratis proefversie bevat ${ ownedCount } toegewijde server.",
+        "Uw gratis proefversie bevat ${ ownedCount } toegewijde servers."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Uw abonnement bevat een maximum van ${ availableAddresses } extra adres.",
+        "Uw abonnement bevat een maximum van ${ availableAddresses } extra adressen."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Uw abonnement bevat een maximum van ${ availableNumberOfMembers } extra organisatiegebruiker.",
+        "Uw abonnement bevat een maximum van ${ availableNumberOfMembers } extra organisatiegebruikers."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Uw abonnement bevat een maximum van ${ availableVPNAccess } extra VPN-account.",
+        "Uw abonnement bevat een maximum van ${ availableVPNAccess } extra VPN-accounts."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maanden automatisch vernieuwd."
+      ]
+    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Doorsturen start binnenkort. Nieuwe e-mails verschijnen in uw inbox."
@@ -1041,14 +1919,6 @@
       ]
     },
     "Addon": {
-      "${ domains } additional custom domain": [
-        "${ domains } extra aangepast domein",
-        "${ domains } extra aangepaste domeinen"
-      ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servers"
-      ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
       ],
@@ -1060,18 +1930,6 @@
       ],
       "${ price } per user": [
         "${ price } per gebruiker"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } zitplaats",
-        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } plaats voor schrijfassistent",
-        "${ seats } plaatsen voor schrijfassistent"
-      ],
-      "${ users } user": [
-        "${ users } gebruiker",
-        "${ users } gebruikers"
       ]
     },
     "Address action": {
@@ -1312,10 +2170,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
       "/ month": [
         "/ maand"
       ],
@@ -1361,12 +2215,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Door op \"Proberen\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
       ],
@@ -1479,12 +2327,6 @@
       ],
       "Select your End of Year offer": [
         "Selecteer uw eindejaarsaanbieding"
-      ]
-    },
-    "bf2023: info": {
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting ${ plan.Title } krijgen wanneer u zich voor ${ cycle } maand abonneert.",
-        "Deze aanbieding is helaas niet beschikbaar met uw huidige abonnement. Maar u kunt ${ discountPercentage } korting krijgen ${ plan.Title } wanneer u zich voor ${ cycle } maanden abonneert."
       ]
     },
     "bf2023: Offers": {
@@ -1606,14 +2448,6 @@
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
       ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
-      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
       ],
@@ -1631,10 +2465,6 @@
       ]
     },
     "Billing cycle": {
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewLength } maand",
-        "Verlengt automatisch voor ${ renewPrice }, voor ${ renewLength } maanden"
-      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "Vernieuwt automatisch op ${ subscriptionManagerName }"
       ]
@@ -1886,16 +2716,8 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
-        "${ users } gebruiker",
-        "${ users } gebruikers"
-      ],
       "Total": [
         "Totaal"
-      ],
-      "Total for ${ n } month": [
-        "Totaal voor ${ n } maand",
-        "Totaal voor ${ n } maanden"
       ]
     },
     "Checkout summary": {
@@ -2126,16 +2948,6 @@
       ],
       "Yomi": [
         "Yomi"
-      ]
-    },
-    "CountriesStep:Info": {
-      "${ selectedCitiesCount } cities selected": [
-        "${ selectedCitiesCount } steden geselecteerd",
-        "${ selectedCitiesCount } steden geselecteerd"
-      ],
-      "${ selectedCountriesCount } selected": [
-        "${ selectedCountriesCount } geselecteerd",
-        "${ selectedCountriesCount } geselecteerd"
       ]
     },
     "Country name": {
@@ -3391,16 +4203,6 @@
         "Prioriteitsondersteuning"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } account, upgrade naar ${ planName }.",
-        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } accounts, upgrade naar ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } extern account naar ${ MAIL_APP_NAME }.",
-        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } externe accounts naar ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
@@ -3631,14 +4433,6 @@
       "Couldn't load transactions. Please try again later.": [
         "Kon transacties niet laden. Probeer het later nog eens."
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Deselecteer tenminste ${ calendarsToFixCount } agenda",
-        "Deselecteer tenminste ${ calendarsToFixCount } agenda's"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
-        "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
-      ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
@@ -3753,10 +4547,6 @@
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
-        "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
-      ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
       ],
@@ -3840,10 +4630,6 @@
       ],
       "Please enter ZIP code": [
         "Voer de postcode in."
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Los het gemarkeerde conflict op om verder te gaan.",
-        "Los de gemarkeerde conflicten op om verder te gaan."
       ],
       "Please generate keys before you try to change your password": [
         "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
@@ -4053,11 +4839,6 @@
         "Postcode is vereist"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Selecteer gebruikers om hun activiteit te bekijken."
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
@@ -4073,10 +4854,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraak.",
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraken."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
@@ -4377,10 +5154,6 @@
       "Manage user accounts": [
         "Gebruikersaccounts beheren"
       ],
-      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
-        "Slechts ${ n } geaccepteerde uitnodiging is toegestaan binnen een periode van 6 maanden.",
-        "Slechts ${ n } geaccepteerde uitnodigingen zijn toegestaan binnen een periode van 6 maanden."
-      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Eigenaren van een abonnement met leden kunnen zich niet aansluiten bij een ander Family-abonnement."
       ],
@@ -4413,14 +5186,6 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "U bent uitgenodigd u aan te sluiten bij ${ bannerOrganization }. ${ viewInviteButton }"
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
-        "U hebt de limiet van ${ n } geaccepteerde uitnodiging in 6 maanden bereikt.",
-        "U hebt de limiet van ${ n } geaccepteerde uitnodigingen in 6 maanden bereikt."
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "U hebt de limiet van ${ n } geaccepteerde uitnodiging in 6 maanden bereikt. De knop wordt weer opnieuw actief zodra u opnieuw nieuwe gebruikers kunt uitnodigen.",
-        "U hebt de limiet van ${ n } geaccepteerde uitnodigingen in 6 maanden bereikt. De knop wordt weer opnieuw actief zodra u opnieuw nieuwe gebruikers kunt uitnodigen."
       ],
       "You have successfully joined the family group": [
         "U hebt zich succesvol aangesloten bij de familiegroep"
@@ -4566,23 +5331,11 @@
       ]
     },
     "Feature": {
-      "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } VPN-verbinding",
-        "${ MaxVPN } VPN-verbindingen"
-      ],
       "Access to all countries": [
         "Toegang tot alle landen"
       ],
       "Add": [
         "Toevoegen"
-      ],
-      "Add (${ totalAddedCount })": [
-        "Toevoegen (${ totalAddedCount })",
-        "Toevoegen (${ totalAddedCount })"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Verbinding op ${ plusVpnConnections } apparaat",
-        "Verbinding op ${ plusVpnConnections } apparaten"
       ],
       "Continue": [
         "Doorgaan"
@@ -4708,10 +5461,6 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Verifieer uw identiteit met een fysieke U2F of FIDO2 beveiligingssleutel"
       ],
-      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "U heeft het maximum van ${ maxSecurityKeyLength } beveiligingssleutel bereikt.",
-        "U heeft het maximum van ${ maxSecurityKeyLength } beveiligingssleutels bereikt."
-      ],
       "Your two-factor authentication key is ready to use.": [
         "Uw tweestapsverificatiesleutel is klaar voor gebruik."
       ]
@@ -4745,10 +5494,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -4760,28 +5505,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "Megabyt",
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Filter notification": {
@@ -4889,12 +5612,6 @@
     "Group address title": {
       "Group address": [
         "Groepsadres"
-      ]
-    },
-    "Group member count": {
-      "${ memberCount } member": [
-        "${ memberCount } lid",
-        "${ memberCount } leden"
       ]
     },
     "Header": {
@@ -5026,10 +5743,6 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Voeg deze record toe aan uw domein in het beheerpaneel van uw domeinnaam register"
       ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
-        "${ itemsCount } suggesties gevonden, gebruik het toetsenbord om te navigeren."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
       ]
@@ -5096,14 +5809,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/ 1 afspraak versleuteld en toegevoegd aan uw agenda",
-        "${ totalImported }/${ totalToImport } afspraken versleuteld en toegevoegd aan uw agenda"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
-        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd."
       ],
@@ -5138,23 +5843,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Geïmporteerde uitnodigingen verschijnen in ${ CALENDAR_APP_NAME } als eenvoudige afspraken zonder details over de organisator en deelnemers. Om updates van afspraken te krijgen en deelnemers te zien, vraag je organisatoren om u uit te nodigen met uw ${ BRAND_NAME }-e-mailadres."
       ],
-      "This file contains an event invitation:": [
-        "Dit bestand bevat een uitnodiging voor een afspraak:",
-        "Dit bestand bevat uitnodigingen voor afspraken:"
-      ],
-      "This file contains an invitation response:": [
-        "Dit bestand bevat een antwoord op een uitnodiging:",
-        "Dit bestand bevat antwoorden op uitnodigingen:"
-      ],
       "This file contains some data that we cannot import:": [
         "Dit bestand bevat enkele gegevens die we niet kunnen importeren:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contact versleuteld en toegevoegd aan uw contactenlijst",
-        "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contact. Er kon geen contact worden geïmporteerd."
       ],
@@ -5174,12 +5867,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contact ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } contactpersoon",
-        "${ totalContacts } contactpersonen"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5341,10 +6028,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } van de ${ totalEvents } afspraak wordt niet geïmporteerd. Uitvouwen voor details.",
-        "${ totalEventsDiscarded } van de ${ totalEvents } afspraken worden niet geïmporteerd. Uitvouwen voor details."
-      ],
       "No contact can be imported. Click for details": [
         "Er kan geen contact worden geïmporteerd. Klik voor meer informatie"
       ],
@@ -5358,10 +6041,6 @@
     "Info": {
       " and other security features.": [
         " en andere beveiligingsfuncties."
-      ],
-      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
-        "${ amountUsers }/${ totalUsers } gebruiker heeft momenteel toegang tot gedeelde servers.",
-        "${ amountUsers }/${ totalUsers } gebruikers hebben momenteel toegang tot gedeelde servers."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -5378,18 +6057,6 @@
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
         "${ CALENDAR_APP_NAME } vereist een ${ BRAND_NAME } adres voor veilige afspraak synchronisatie en versleuteling. ${ claimAddressButton }."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } nieuwe agenda",
-        "${ calendarsToBeCreatedCount } nieuwe agenda's"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } samengevoegde agenda",
-        "${ calendarsToBeMergedCount } samengevoegde agenda's"
-      ],
-      "${ countriesCount } country enabled": [
-        "${ countriesCount } land ingeschakeld",
-        "${ countriesCount } landen ingeschakeld"
-      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% korting"
       ],
@@ -5398,18 +6065,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: voorbeeld in lage resolutie"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw familieleden gebruiken tweestapsverificatie authenticatie",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw familieleden gebruiken tweestapsverificatie authenticatie"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw leden gebruiken tweestapsverificatie authenticatie om aan te melden bij uw organisatie",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw leden gebruiken tweestapsverificatie authenticatie om aan te melden bij uw organisatie"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } van uw niet-SSO leden gebruiken tweestapsverificatie om in te loggen bij uw organisatie."
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
@@ -5420,24 +6075,8 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat zowel de login als het tweede wachtwoord vervangt. Om over te schakelen naar één wachtwoord modus vult u een enkel wachtwoord naar keuze in en klikt u op Opslaan."
       ],
-      "${ n } address": [
-        "${ n } adres",
-        "${ n } adressen"
-      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: niet quarantaine of afwijzing van ongeautoriseerde e-mails. Meestal gebruiken mensen dit beleid alleen om problemen te krijgen of te testen."
-      ],
-      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } gebruiker",
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } gebruikers"
-      ],
-      "${ number } city": [
-        "${ number } stad",
-        "${ number } steden"
-      ],
-      "${ number } server": [
-        "${ number } server",
-        "${ number } servers"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
@@ -5448,27 +6087,11 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } vervalt binnen ${ daysLeft } dag.",
-        "${ planName } vervalt binnen ${ daysLeft } dagen."
-      ],
       "${ planName } expires today.": [
         "${ planName } verloopt vandaag."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met toegewijde monitoring van verdachte activiteiten."
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } map gevonden",
-        "${ providerFoldersNumLocalized } mappen gevonden"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } label gevonden in Gmail",
-        "${ providerFoldersNumLocalized } labels gevonden in Gmail"
-      ],
-      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter } server wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }.",
-        "${ provisioningCounter } servers wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: de geadresseerde platforms vragen de ongeoorloofde e-mails als spam te markeren of ze in quarantaine te plaatsen."
@@ -5476,40 +6099,8 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: de geadresseerde platformen vragen de ongeautoriseerde e-mails te verwerpen."
       ],
-      "${ remainingAddresses.length } more": [
-        "${ remainingAddresses.length } meer",
-        "${ remainingAddresses.length } meer"
-      ],
-      "${ remainingAddresses.length } more address": [
-        "${ remainingAddresses.length } extra adres",
-        "${ remainingAddresses.length } extra adressen"
-      ],
-      "${ resultsCount } result found": [
-        "${ resultsCount } resultaat gevonden",
-        "${ resultsCount } resultaten gevonden"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
-        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
-      ],
-      "${ selectedEntities.length } selected": [
-        "${ selectedEntities.length } geselecteerd",
-        "${ selectedEntities.length } geselecteerd"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } map geselecteerd",
-        "${ selectedFoldersCountLocalized } mappen geselecteerd"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } label geselecteerd",
-        "${ selectedFoldersCountLocalized } labels geselecteerd"
-      ],
       "${ storage } storage": [
         "${ storage } opslag"
-      ],
-      "${ userFound } user found": [
-        "${ userFound } gebruiker gevonden",
-        "${ userFound } gebruikers gevonden"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } aangemaakt"
@@ -5529,10 +6120,6 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } vereist voor Secure Core functies."
       ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } lid)",
-        "(${ memberCount } leden)"
-      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/maand)"
       ],
@@ -5551,16 +6138,8 @@
       "**Sync codes** to all your devices": [
         "**Synchroniseer codes** naar al uw apparaten"
       ],
-      "+ ${ invisibleCount } More": [
-        "+ ${ invisibleCount } Meer",
-        "+ ${ invisibleCount } Meer"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
-        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
       "2FA disabled": [
         "Tweestapsverificatie uitgeschakeld"
@@ -5598,9 +6177,6 @@
       "active": [
         "actief"
       ],
-      "Activity Monitor": [
-        "Activiteitenmonitor"
-      ],
       "add a recovery method": [
         "een herstelmethode toe voegt"
       ],
@@ -5613,23 +6189,11 @@
       "Add multiple users to your organization at once.": [
         "Voeg meerdere gebruikers tegelijk toe aan uw organisatie."
       ],
-      "Add server (${ availableAddedCount } available)": [
-        "Server toevoegen (${ availableAddedCount } beschikbaar)",
-        "Server toevoegen (${ availableAddedCount } beschikbaar)"
-      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Voeg uw naam en logo toe om een gepersonaliseerde ervaring voor uw organisatie te maken."
       ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount } gatewayserver wordt toegevoegd",
-        "${ addedServerCount } gatewayservers worden toegevoegd"
-      ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Het toevoegen van een extern e-mailadres zal end-to-end versleuteling voor alle e-mailcommunicatie binnen die groep uitschakelen. Wilt u doorgaan?"
-      ],
-      "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Gatewayserver wordt toegevoegd: ${ serverNumber } / ${ total }",
-        "Gatewayservers worden toegevoegd: ${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
@@ -5637,20 +6201,8 @@
       "Admin account allocation": [
         "Toewijzing beheerdersaccount"
       ],
-      "Affected user is on row": [
-        "Deze gebruiker staat op rij",
-        "Deze gebruikers staan op rijen"
-      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Alles (${ totalFoldersCount } map)",
-        "Alle (${ totalFoldersCount } mappen)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Alle (${ totalFoldersCount } label)",
-        "Alle (${ totalFoldersCount } labels)"
       ],
       "All inactive members deleted": [
         "Alle inactieve leden verwijderd"
@@ -5663,10 +6215,6 @@
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
-        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Toegewezen"
@@ -5833,19 +6381,11 @@
       "Country code": [
         "Landcode"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
-        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die u wilt importeren."
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Maak een beveiligde cloud voor ${ value } lid",
-        "Maak een beveiligde cloud voor ${ value } leden"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Creëer en beheer sub-accounts en wijs aan deze sub-accounts e-mailadressen van uw eigen domein toe."
@@ -5858,10 +6398,6 @@
       ],
       "Create your first Gateway": [
         "Uw eerste gateway instellen"
-      ],
-      "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Gatewayserver wordt opgezet: ${ serverNumber } / ${ total }",
-        "Gatewayservers worden opgezet: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Account aan het aanmaken"
@@ -5908,10 +6444,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Verwijder alle andere MX records of zorg ervoor dat ${ MAIL_APP_NAME } zijn prioriteit het laagste getal is."
       ],
-      "Deleting ${ deletedServerCount } gateway server": [
-        "${ deletedServerCount } gatewayserver wordt verwijderd",
-        "${ deletedServerCount } gatewayservers worden verwijderd"
-      ],
       "Did you know?": [
         "Wist u dat?"
       ],
@@ -5950,10 +6482,6 @@
       ],
       "Domain ownership verified.": [
         "Domein eigendom geverifieerd."
-      ],
-      "domain used": [
-        "domein gebruikt",
-        "domeinen gebruikt"
       ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
         "Raak de toegang tot uw premium ${ appName } functies niet kwijt. Schakel vandaag automatisch vernieuwen in."
@@ -6221,10 +6749,6 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "Indien u problemen heeft, zijn we hier om te helpen. ${ boldPhoneCall } of ${ boldZoomMeeting } met een van onze ondersteuningsspecialisten."
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
-        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
       ],
       "Import from": [
         "Importeren van"
@@ -6535,14 +7059,6 @@
       "or ${ selectFileButton }": [
         "of ${ selectFileButton }"
       ],
-      "or assign to any country in ${ availableAgainAfterDays } day": [
-        "of toewijzen aan een land in ${ availableAgainAfterDays } dag",
-        "of toewijzen aan een land in ${ availableAgainAfterDays } dagen"
-      ],
-      "or assign to any country in ${ availableAgainAfterHours } hour": [
-        "of wijs toe aan elk land in ${ availableAgainAfterHours } uur",
-        "of toewijzen aan een land in ${ availableAgainAfterHours } uur"
-      ],
       "or discover other features:": [
         "of andere functies ontdekken:"
       ],
@@ -6602,14 +7118,6 @@
       ],
       "per month, billed at ${ price }": [
         "per maand, voor ${ price }"
-      ],
-      "Please add a password for the user on row": [
-        "Voeg een wachtwoord toe voor de gebruiker op de rij",
-        "Voeg wachtwoorden toe voor de gebruikers op rijen"
-      ],
-      "Please add an email address for the user on row": [
-        "Voeg een e-mailadres toe voor de gebruiker op de rij",
-        "Voeg e-mailadressen toe voor de gebruikers op de rijen"
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Vraag aan de eigenaar om u rechtstreeks uit te nodigen voor het document."
@@ -6800,10 +7308,6 @@
       "Shared ${ vaultLink } updated": [
         "Gedeelde ${ vaultLink } bijgewerkt"
       ],
-      "Shared server country (${ countriesCount })": [
-        "Land met gedeelde server (${ countriesCount })",
-        "Landen met gedeelde server (${ countriesCount })"
-      ],
       "Shared vault deleted": [
         "Gedeelde kluis verwijderd"
       ],
@@ -6828,10 +7332,6 @@
       "Starts on ${ startsOnTime }": [
         "Start op ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "Stap ${ step }",
-        "Stap ${ step }"
-      ],
       "Storage": [
         "Opslag"
       ],
@@ -6849,10 +7349,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Abonnement vernieuwt automatisch elke ${ cycle } maand.",
-        "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
       ],
       "Subscription auto-renews every month.": [
         "Abonnement vernieuwt automatisch elke maand."
@@ -6898,18 +7394,6 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "De versleutelde gegevens zijn iets groter door de extra gegevens voor de versleuteling en de handtekening, die de beveiliging van uw gegevens garanderen."
-      ],
-      "The following address is invalid.": [
-        "Het volgende adres is ongeldig.",
-        "De volgende adressen zijn ongeldig."
-      ],
-      "The following address is unavailable.": [
-        "Het volgende adres is niet beschikbaar.",
-        "De volgende adressen zijn niet beschikbaar."
-      ],
-      "The following address was not created.": [
-        "Het volgende adres werd niet aangemaakt.",
-        "De volgende adressen werden niet aangemaakt."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "De volgende leden zullen een e-mail ontvangen met een uitnodiging om zo snel mogelijk tweestapsverificatie in te schakelen."
@@ -7328,22 +7812,6 @@
       "You are currently signed in as ${ username }.": [
         "U bent momenteel aangemeld als ${ username }."
       ],
-      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde server.",
-        "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde servers."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie en ${ usedAI } van uw ${ maxAI } beschikbare schrijfassistentie licentie.",
-        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicenties en ${ usedAI } van uw ${ maxAI } beschikbare schrijfassistentie licenties."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie en geen van uw ${ maxAI } beschikbare schrijfassistentie licentie.",
-        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie en geen van uw ${ maxAI } beschikbare schrijfassistentie licenties."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicentie",
-        "U gebruikt momenteel ${ usedMembers } van uw ${ maxMembers } beschikbare gebruikerslicenties"
-      ],
       "You are signed in to the account ${ memberAddress }.": [
         "U bent ingelogd op het account ${ memberAddress }."
       ],
@@ -7374,14 +7842,6 @@
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
-      ],
       "You can now access and manage the account as an administrator.": [
         "U heeft nu toegang tot het account als administrator en kan deze beheren."
       ],
@@ -7399,14 +7859,6 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "U krijgt een melding als uw wachtwoord of andere gegevens zijn gelekt door een dienst van derden."
-      ],
-      "You have ${ availableCount } new server available.": [
-        "U heeft ${ availableCount } nieuwe server beschikbaar.",
-        "U heeft ${ availableCount } nieuwe servers beschikbaar."
-      ],
-      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "U heeft ${ unassignedAvailableCount } onlangs gebruikte servers beschikbaar. Om deze servers toe te wijzen aan een ander land, moet u wachten tot de deactivatie is voltooid.",
-        "U heeft ${ unassignedAvailableCount } onlangs gebruikte servers beschikbaar. Om deze servers toe te wijzen aan een ander land, moet u wachten tot de deactivatie is voltooid."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
@@ -7462,14 +7914,6 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "U kunt deze servers niet meer toewijzen aan een ander land gedurende 10 dagen."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
-        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
-      ],
-      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
-        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adres. Om een ander toe te voegen, schakel eerst een van deze uit.",
-        "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adressen. Schakel een van deze eerst uit om een ander adres toe te voegen."
-      ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
         "U heeft de limiet van 50 gebruikers voor dit filter bereikt. Verwijder er één om een ander toe te voegen."
       ],
@@ -7512,10 +7956,6 @@
       "Your files will be encrypted and then saved": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen"
       ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Uw gratis proefversie bevat ${ ownedCount } toegewijde server.",
-        "Uw gratis proefversie bevat ${ ownedCount } toegewijde servers."
-      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
       ],
@@ -7539,10 +7979,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
-        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maanden automatisch vernieuwd."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
@@ -7619,16 +8055,6 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Om een onderbreking van uw account te voorkomen als gevolg van onbetaalde facturen, zorg ervoor dat u minstens één geldige betaalmethode toegevoegd hebt aan uw account."
-      ]
-    },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } map geselecteerd",
-        "${ selectedFoldersCount } mappen geselecteerd"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } label geselecteerd",
-        "${ selectedFoldersCount } labels geselecteerd"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -7720,27 +8146,11 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
-      "${ group.UserCount } user": [
-        "${ group.UserCount } gebruiker",
-        "${ group.UserCount } gebruikers"
-      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } van de ${ humanMaxSpace } gebruikt"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-adres"
-      ],
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } dag",
-        "${ nbDay } dagen"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen",
-        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
@@ -8309,10 +8719,6 @@
       "Sequences": [
         "Reeksen"
       ],
-      "Show ${ n } administrator": [
-        "Toon ${ n } beheerder",
-        "Toon ${ n } beheerders"
-      ],
       "Single sign-on Entity ID": [
         "Single sign-on entiteit-ID"
       ],
@@ -8707,10 +9113,6 @@
       "Almost there": [
         "Bijna daar"
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }",
-        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
       ],
@@ -8830,24 +9232,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } inschakelen"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
-        "Alle berichten uit ${ itemsToImportCount } mappen importeren en labelen als"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
-        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als",
-        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
-        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
       ]
     },
     "mail_signup_2024: Info": {
@@ -9076,58 +9460,6 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar per user": [
-        "${ n } agenda per gebruiker",
-        "${ n } agenda's per gebruiker"
-      ],
-      "${ n } custom email domain": [
-        "${ n } aangepast e-maildomein",
-        "${ n } aangepaste e-maildomeinen"
-      ],
-      "${ n } email address": [
-        "${ n } e-mailadres",
-        "${ n } e-mailadressen/aliassen"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-mailadres per gebruiker",
-        "${ n } e-mailadressen per gebruiker"
-      ],
-      "${ n } filter": [
-        "${ n } filter",
-        "${ n } filters"
-      ],
-      "${ n } folder": [
-        "${ n } map",
-        "${ n } mappen"
-      ],
-      "${ n } folder and label": [
-        "${ n } map en label",
-        "${ n } mappen en labels"
-      ],
-      "${ n } message per day": [
-        "${ n } bericht per dag",
-        "${ n } berichten per dag"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
-        "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
-      ],
-      "${ n } vault": [
-        "${ n } kluis",
-        "${ n } kluizen"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-verbinding",
-        "${ n } VPN-verbindingen"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } gebruikers",
-        "Tot ${ numberOfUsers } gebruikers"
-      ],
-      "${ options }-day file version history": [
-        "Bestandsversiegeschiedenis van ${ options } dag",
-        "Bestandsversiegeschiedenis van ${ options } dag"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + levenslang SimpleLogin"
       ],
@@ -9296,10 +9628,6 @@
       "High-speed Swiss VPN that protects your privacy": [
         "Snelle Zwitserse VPN die uw privacy beschermt"
       ],
-      "High-speed VPN on ${ n } device": [
-        "High-speed VPN op ${ n } apparaat",
-        "High-speed VPN op ${ n } apparaten"
-      ],
       "HTML signatures": [
         "HTML-handtekeningen"
       ],
@@ -9378,10 +9706,6 @@
       "Send & receive invitations": [
         "Uitnodigingen verzenden & ontvangen"
       ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Servers in ${ vpnServersCountData.paid.countries }+ land",
-        "Servers in ${ vpnServersCountData.paid.countries }+ landen"
-      ],
       "Share files with no size limit": [
         "Deel bestanden zonder maximale grootte"
       ],
@@ -9457,23 +9781,11 @@
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
       ],
-      "Up to ${ n } user": [
-        "Tot ${ n } gebruiker",
-        "Tot ${ n } gebruikers"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Tot ${ n } gebruiker (${ adminsText }, ${ usersText })",
-        "Tot ${ n } gebruikers (${ adminsText }, ${ usersText })"
-      ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
       ],
       "Up to 10 Gbps": [
         "Tot 10 Gbps"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Gebruik tot maximaal ${ n } apparaat tegelijk",
-        "Gebruik tot maximaal ${ n } apparaten tegelijk"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
@@ -9486,16 +9798,6 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ admins } admin": [
-        "${ admins } beheerder",
-        "${ admins } beheerders"
-      ],
-      "${ users } user": [
-        "${ users } gebruiker",
-        "${ users } gebruikers"
       ]
     },
     "new_plans: heading": {
@@ -9705,10 +10007,6 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
-        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
@@ -9921,10 +10219,6 @@
       "Central control panel": [
         "Centraal bedieningspaneel"
       ],
-      "Create up to ${ n } calendar": [
-        "Maak tot ${ n } agenda",
-        "Maak tot ${ n } agenda's"
-      ],
       "Dedicated Account manager": [
         "Toegewezen account manager"
       ],
@@ -9942,10 +10236,6 @@
       ],
       "Require 2FA": [
         "2FA vereist"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Ondersteuning voor ${ n } aangepast e-maildomein",
-        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
     "news": {
@@ -10382,18 +10672,6 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } om meer opslagruimte te krijgen, of verwijder wat opslagruimte om ruimte vrij te maken."
       ],
-      "Your plan includes a maximum of ${ availableAddresses } more address.": [
-        "Uw abonnement bevat een maximum van ${ availableAddresses } extra adres.",
-        "Uw abonnement bevat een maximum van ${ availableAddresses } extra adressen."
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
-        "Uw abonnement bevat een maximum van ${ availableNumberOfMembers } extra organisatiegebruiker.",
-        "Uw abonnement bevat een maximum van ${ availableNumberOfMembers } extra organisatiegebruikers."
-      ],
-      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
-        "Uw abonnement bevat een maximum van ${ availableVPNAccess } extra VPN-account.",
-        "Uw abonnement bevat een maximum van ${ availableVPNAccess } extra VPN-accounts."
-      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Uw abonnement bevat een maximum van ${ humanReadableAvailableSpace } extra opslag."
       ]
@@ -10558,10 +10836,6 @@
       ]
     },
     "pass_signup_2024: Info": {
-      "${ n } user account": [
-        "${ n } gebruikersaccount",
-        "${ n } gebruikersaccounts"
-      ],
       "Activity log": [
         "Activiteitenlog"
       ],
@@ -10781,27 +11055,11 @@
       "terms & conditions": [
         "algemene voorwaarden"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
-        "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elke moment annuleren"
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "De transactie is succesvol gedetecteerd. Het tegoed wordt aan uw account toegevoegd zodra de transactie volledig is bevestigd."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
-        "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
       ],
       "This number will be shown on all future invoices": [
         "Dit nummer zal op alle toekomstige facturen worden getoond."
@@ -11100,14 +11358,6 @@
       ]
     },
     "Plans": {
-      "${ cycle } month": [
-        "${ cycle } maand",
-        "${ cycle } maanden"
-      ],
-      "${ months } month plan": [
-        "${ months } maand abonnement",
-        "${ months } maanden abonnement"
-      ],
       "Enjoying ${ planName }?": [
         "Tevreden met ${ planName }?"
       ]
@@ -11342,10 +11592,6 @@
       ]
     },
     "Restore administrator panel": {
-      "${ n } administrator in your organization need access to the organization key.": [
-        "${ n } beheerder in uw organisatie heeft toegang nodig tot de organisatiesleutel.",
-        "${ n } beheerders in uw organisatie hebben toegang nodig tot de organisatiesleutel."
-      ],
       "Changing organization keys": [
         "Organisatiesleutels wijzigen"
       ],
@@ -11400,17 +11646,9 @@
     "retention_policy_2025_Confirmation": {
       "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
         "${ strongText }, inclusief die in inbox, Verzonden en Concepten. Dit kan berichten verwijderen die gebruikers verwachten te behouden. Het is niet mogelijk om deze berichten later te herstellen."
-      ],
-      "After ${ lifetime } day all messages will be deleted": [
-        "Na ${ lifetime } dag zullen alle berichten worden verwijderd.",
-        "Na ${ lifetime } dagen zullen alle berichten worden verwijderd"
       ]
     },
     "retention_policy_2025_Error": {
-      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
-        "Levensduur moet langer zijn dan ${ MIN_LIFETIME } dag",
-        "Levensduur moet langer zijn dan ${ MIN_LIFETIME } dagen"
-      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "De levensduur mag niet worden ingesteld voor de actie \"Alles behouden\""
       ],
@@ -11425,10 +11663,6 @@
       ]
     },
     "retention_policy_2025_Info": {
-      "${ n } day": [
-        "${ n } dag",
-        "${ n } dagen"
-      ],
       "${ remainingCount } more": [
         "${ remainingCount } meer"
       ],
@@ -11460,10 +11694,6 @@
       ],
       "Applies to": [
         "Is van toepassing op"
-      ],
-      "day": [
-        "dag",
-        "dagen"
       ],
       "Keep items forever": [
         "Items voor altijd bewaren"
@@ -11790,14 +12020,6 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } dag",
-        "${ timeRemaining.inDays } dagen"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } uur",
-        "${ timeRemaining.inHours } uren"
-      ],
       "Didn’t make this request?": [
         "Heeft u deze aanvraag niet gemaakt?"
       ],
@@ -11809,14 +12031,6 @@
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "\"Ga naar het ingelogde apparaat (in de sessie waarin de aanvraag is gestart) om uw wachtwoord te wijzigen.\""
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dag",
-        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dagen"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
-        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
       ],
       "This permission expires soon": [
         "vervalt binnenkort"
@@ -11832,22 +12046,6 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "U kan uw wachtwoord resetten tot ${ boldDate }."
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
-        "U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
-        " U heeft ${ timeRemaining.inHours } uren om uw wachtwoord te resetten."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "U heeft ${ timeRemaining.inMinutes } minuut om uw wachtwoord te resetten.",
-        " U heeft ${ timeRemaining.inMinutes } minuten om uw wachtwoord te resetten."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "U heeft ${ timeRemaining.inSeconds } seconde om uw wachtwoord te resetten.",
-        " U heeft ${ timeRemaining.inSeconds } seconden om uw wachtwoord te resetten."
       ]
     },
     "session_recovery:available:link": {
@@ -11910,10 +12108,6 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } uur",
-        "${ gracePeriodHoursRemaining } uren"
-      ],
       "Didn’t make this request?": [
         "Heeft u deze aanvraag niet gemaakt?"
       ],
@@ -11926,19 +12120,11 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Wachtwoord reset beschikbaar vanaf ${ boldDate }. Dit geeft u de tijd om frauduleuze aanvragen te annuleren."
       ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uur.",
-        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uren."
-      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Om er zeker van te zijn dat u het bent die probeert uw wachtwoord te resetten, wachten we 72 uur voordat we verzoeken goedkeuren. U kan uw wachtwoord wijzigen in ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "We ontvingen een wachtwoord reset aanvraag voor ${ boldEmail }."
-      ],
-      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uur",
-        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uren"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11989,10 +12175,6 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Nieuw wachtwoord aanvragen?"
-      ],
-      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
-        "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uur",
-        "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uren"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12004,10 +12186,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } uur",
-        "${ gracePeriodHoursRemaining } uren"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } is nu beschikbaar"
       ],
@@ -12103,30 +12281,6 @@
         "Kies Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ hours } hour": [
-        "${ hours } uur",
-        "${ hours } uren"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
-      ],
-      "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 gebruiker"
@@ -12209,10 +12363,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
       "/ month": [
         "/ maand"
       ],
@@ -12338,30 +12488,6 @@
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
       ],
-      "${ n } member requested your help to sign in.": [
-        "${ n } lid heeft uw hulp gevraagd om in te loggen.",
-        "${ n } leden hebben uw hulp gevraagd om in te loggen."
-      ],
-      "${ n } user converted to SSO": [
-        "${ n } gebruiker geconverteerd naar SSO",
-        "${ n } gebruikers geconverteerd naar SSO"
-      ],
-      "${ n } user detached from SSO": [
-        "${ n } gebruiker losgekoppeld van SSO",
-        "${ n } gebruikers losgekoppeld van SSO"
-      ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } gebruiker heeft zich aangesloten bij uw organisatie via uw Identity Provider. Controleer het account nu:",
-        "${ n } gebruikers hebben zich aangesloten bij uw organisatie via uw Identity Provider. Controleer hun accounts nu:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } gebruiker is inactief. U kunt deze gebruiker veilig verwijderen uit uw organisatie.",
-        "${ n } gebruikers zijn inactief. U kunt ze veilig verwijderen uit uw organisatie."
-      ],
-      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ n } gebruiker vraagt om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal.",
-        "${ n } gebruikers vragen om uw hulp om in te loggen op hun ${ BRAND_NAME }-account met een enkel signaal."
-      ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO-gebruikers (aangeboden door uw Identity Provider) worden verwijderd** en u moet ze handmatig aanmaken om ze weer toe te voegen aan uw organisatie."
       ],
@@ -12409,14 +12535,6 @@
       ],
       "Contact your administrator if the problem persists.": [
         "Neem contact op met de beheerder als het probleem aanhoudt."
-      ],
-      "Delete ${ n } inactive user?": [
-        "Verwijder ${ n } inactieve gebruiker?",
-        "Verwijder ${ n } inactieve gebruikers?"
-      ],
-      "Delete ${ n } user": [
-        "Verwijder ${ n } gebruiker",
-        "Verwijder ${ n } gebruikers"
       ],
       "Deny": [
         "Weigeren"
@@ -12671,54 +12789,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
-        "${ BRAND_NAME } Schrijfassistent voor ${ maxAi } gebruiker",
-        "${ BRAND_NAME } Schrijfassistent voor ${ maxAi } gebruikers"
-      ],
-      "${ ipAddresses } dedicated server": [
-        "${ ipAddresses } toegewijde server",
-        "${ ipAddresses } toegewijde servers"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } voor ${ maxLumo } gebruiker",
-        "${ LUMO_APP_NAME } voor ${ maxLumo } gebruikers"
-      ],
-      "${ n } calendar per user": [
-        "${ n } agenda per gebruiker",
-        "${ n } agenda's per gebruiker"
-      ],
-      "${ n } free VPN connection per user": [
-        "${ n } gratis VPN-verbinding per gebruiker",
-        "${ n } gratis VPN-verbindingen per gebruiker"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } supersnelle VPN-verbinding",
-        "${ n } supersnelle VPN-verbindingen"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-verbinding per gebruiker",
-        "${ n } VPN-verbindingen per gebruiker"
-      ],
-      "${ UsedAddresses } address": [
-        "${ UsedAddresses } adres",
-        "${ UsedAddresses } adressen"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } van ${ MaxAddresses } e-mailadres",
-        "${ UsedAddresses } van ${ MaxAddresses } e-mailadressen"
-      ],
-      "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } agenda",
-        "${ UsedCalendars } agenda's"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } van de ${ MaxDomains } eigen domein",
-        "${ UsedDomains } van de ${ MaxDomains } eigen domeinen"
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers }/${ MaxMembers } gebruiker",
-        "${ UsedMembers }/${ MaxMembers } gebruikers"
-      ],
       "1 email address": [
         "1 e-mailadres"
       ],
@@ -12733,14 +12803,6 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Ingebouwde adblocker (NetShield)"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "Supersnelle VPN op ${ maxVpn } apparaat",
-        "Supersnelle VPN op ${ maxVpn } apparaten"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "VPN verbinding voor ${ n } apparaat per gebruiker",
-        "VPN verbinding voor ${ n } apparaten per gebruiker"
       ]
     },
     "Subscription change warning": {
@@ -12784,10 +12846,6 @@
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
-      ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag over",
-        "${ dayDiff } dagen over"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
@@ -12833,26 +12891,6 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } biedt ${ planMaxSpace } aan opslag per gebruiker voor e-mails, bijlagen, gebeurtenissen, en wachtwoorden. U komt ook in aanmerking voor jaarlijkse opslagbonussen."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } agenda per gebruiker",
-        "${ planNumberOfCalendars } agenda's per gebruiker"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigen e-maildomein",
-        "${ planNumberOfDomains } eigen e-maildomeinen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadres",
-        "${ planNumberOfEmails } e-mailadressen"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } e-mailadres per gebruiker",
-        "${ planNumberOfEmails } e-mailadressen per gebruiker"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } gebruiker",
-        "${ planNumberOfUsers } gebruikers"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "${ PROTON_SENTINEL_NAME } geavanceerde accountbeveiliging"
@@ -13488,24 +13526,6 @@
         "Thema's"
       ]
     },
-    "Time unit": {
-      "${ ceilDays } day": [
-        "${ ceilDays } dag",
-        "${ ceilDays } dagen"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } uur",
-        "${ ceilHours } uren"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minuut",
-        "${ ceilMinutes } minuten"
-      ],
-      "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
-      ]
-    },
     "Title": {
       "${ BRAND_NAME } Account password rules": [
         "Wachtwoordregels voor ${ BRAND_NAME }-account"
@@ -13552,6 +13572,9 @@
       "Account": [
         "Account"
       ],
+      "Account restricted": [
+        "Account beperkt"
+      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -13572,10 +13595,6 @@
       ],
       "Activity monitor": [
         "Activiteitenmonitor"
-      ],
-      "Add ${ totalServerCount } server?": [
-        "${ totalServerCount } server toevoegen?",
-        "${ totalServerCount } servers toevoegen?"
       ],
       "Add address": [
         "E-mailadres toevoegen"
@@ -13760,10 +13779,6 @@
       "Coupon": [
         "Kortingscode"
       ],
-      "Create ${ selectedUserIds.length } user": [
-        "Maak ${ selectedUserIds.length } gebruiker aan",
-        "Maak ${ selectedUserIds.length } gebruikers aan"
-      ],
       "Create a new Gateway": [
         "Een nieuwe gateway aanmaken"
       ],
@@ -13838,10 +13853,6 @@
       ],
       "Delete organization logo?": [
         "Logo van organisatie verwijderen?"
-      ],
-      "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dag)",
-        "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dagen)"
       ],
       "Delete user?": [
         "Gebruiker verwijderen?"
@@ -13969,10 +13980,6 @@
       "Every member of the organization can access": [
         "Elke gebruiker binnen uw organisatie kan"
       ],
-      "Failed to create ${ failedUsers.length } user\naccount.": [
-        "${ failedUsers.length } gebruikersaccount aanmaken niet gelukt.",
-        "${ failedUsers.length } gebruikersaccounts aanmaken niet gelukt."
-      ],
       "Find email or username": [
         "Vind e-mail of gebruikersnaam"
       ],
@@ -14035,10 +14042,6 @@
       ],
       "Human verification": [
         "Persoonsverificatie"
-      ],
-      "Import as simple event?": [
-        "Importeren als eenvoudige afspraak?",
-        "Importeren als eenvoudige afspraken?"
       ],
       "Import contacts": [
         "Contactpersonen importeren"
@@ -14297,10 +14300,6 @@
       ],
       "Subscription canceled": [
         "Abonnement opgezegd"
-      ],
-      "Successfully created ${ n } user account": [
-        "Met succes ${ n } gebruikersaccounts aangemaakt",
-        "Met succes ${ n } gebruikersaccounts aangemaakt"
       ],
       "Summary": [
         "Overzicht"
@@ -14748,10 +14747,6 @@
       "Confirm all": [
         "Alles bevestigen"
       ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Kon de beheerderstoegang voor ${ n } -gebruiker niet automatisch inschakelen, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:",
-        "Kon beheerderstoegang niet automatisch inschakelen voor ${ n } gebruikers, omdat de encryptiesleutels in de tussentijd zijn bijgewerkt:"
-      ],
       "Could not enable administrator access: ${ error }": [
         "Kan beheerderstoegang niet inschakelen: ${ error }"
       ],
@@ -14949,16 +14944,6 @@
         "Schrijfassistent"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
-        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
-      ]
-    },
     "Video control": {
       "Click to replay the video": [
         "Klik om de video opnieuw af te spelen"
@@ -15006,40 +14991,6 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now en meer."
       ]
     },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } apparaat",
-        "${ n } apparaten"
-      ],
-      "${ n } server": [
-        "${ n } server",
-        "${ n }+ servers"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } land",
-        "${ numberOfCountries } landen"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } in ${ numberOfCountries } land",
-        "${ numberOfServers } in ${ numberOfCountries }+ landen"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } in ${ numberOfCountries } land",
-        "${ numberOfServers } in ${ numberOfCountries } landen"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Selecteert automatisch uit ${ numberOfCountries } land",
-        "Selecteert automatisch uit ${ numberOfCountries } landen"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "Selecteer uit ${ numberOfCountries }+ land",
-        "Selecteer uit ${ numberOfCountries }+ landen"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Servers in ${ numberOfCountries }+ land",
-        "Servers in ${ numberOfCountries }+ landen"
-      ]
-    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Maandelijks gefactureerd"
@@ -15083,14 +15034,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "${ n } year": [
-        "${ n } jaar",
-        "${ n } jaren"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Bevat ${ plan } (het eerste jaar gratis!)"
       ],
@@ -15119,18 +15062,6 @@
       ]
     },
     "wallet_signup_2024: Info": {
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } e-mailadres",
-        "${ n } ${ BRAND_NAME } e-mailadressen"
-      ],
-      "${ n } account per wallet": [
-        "${ n } account per portemonnee",
-        "${ n } accounts per portemonnee"
-      ],
-      "${ n } wallet": [
-        "${ n } portemonnee",
-        "${ n } portemonnees"
-      ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
