@@ -1,5 +1,8 @@
 import type {
+  BorderLocation,
+  BorderStyle,
   CellFormat,
+  Color,
   DataValidationRuleRecord,
   HorizontalAlign,
   TextFormat,
@@ -149,6 +152,35 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
          */
         set: useEvent((value: number | undefined) => formatUtils.setTextFormat('fontSize', value)),
       },
+      color: {
+        /**
+         * The default value is represented by `undefined`.
+         */
+        value: state.currentCellFormat?.textFormat?.color ?? undefined,
+        /**
+         * Pass `undefined` to set the text color to the default value.
+         */
+        set: useEvent((value: string | undefined) => formatUtils.setTextFormat('color', value)),
+      },
+    },
+    backgroundColor: {
+      /**
+       * The default value is represented by `undefined`.
+       */
+      value: state.currentCellFormat?.backgroundColor ?? undefined,
+      /**
+       * Pass `undefined` to set the background color to the default value.
+       */
+      set: useEvent((value: string | undefined) => formatUtils.setBackgroundColor(value)),
+    },
+    borders: {
+      /**
+       * The default value is represented by `undefined`.
+       */
+      value: state.currentCellFormat?.borders ?? undefined,
+      set: useEvent((location: BorderLocation, color: Color | undefined, style: BorderStyle | undefined) =>
+        state.onChangeBorder(state.activeSheetId, state.activeCell, state.selections, location, color, style),
+      ),
     },
     alignment: {
       horizontal: {
@@ -307,6 +339,8 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
     rowCount: state.rowCount,
     columnCount: state.columnCount,
     merges: state.merges,
+    onMergeCells: state.onMergeCells,
+    onUnMergeCells: state.onUnMergeCells,
     onRequestDefineNamedRange: state.onRequestDefineNamedRange,
     sheets: state.sheets,
     onSelectRange: state.onSelectRange,
@@ -315,6 +349,7 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
     onDeleteNamedRange: state.onDeleteNamedRange,
     tables: state.tables,
     onSelectTable: state.onSelectTable,
+    theme: state.theme,
   }
 
   return { focusGrid, withFocusGrid, info, operation, view, history, zoom, search, format, insert, data, legacy }
@@ -342,6 +377,10 @@ function useFormatUtils(state: ProtonSheetsState, patternSpecs: Record<string, P
   }
   function useTextFormatEntry(format: BooleanTextFormatKey) {
     return { active: isTextFormat(format), toggle: useEvent(() => toggleTextFormat(format)) }
+  }
+
+  function setBackgroundColor(value: string | undefined) {
+    setFormat('backgroundColor', value)
   }
 
   // alignment format
@@ -405,6 +444,7 @@ function useFormatUtils(state: ProtonSheetsState, patternSpecs: Record<string, P
 
   return {
     setTextFormat,
+    setBackgroundColor,
     setHorizontalAlignment,
     setVerticalAlignment,
     setWrapping,
