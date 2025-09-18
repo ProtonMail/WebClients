@@ -1,8 +1,6 @@
 @import '~@proton/styles/scss/lib';
 
 .lumo-settings-modal {
-	block-size: 680px;
-
 	// Mobile adjustments
 	@include media('<=small') {
 		block-size: auto;
@@ -213,12 +211,13 @@
 				white-space: nowrap !important;
 				overflow: hidden !important;
 				text-overflow: ellipsis !important;
+				color: var(--settings-modal-upsell-text) !important;
 			}
 		}
 	}
 
-	.color-norm {
-		color: #4b5563 !important;
+	p {
+		color: var(--settings-modal-upsell-text) !important;
 	}
 
 	.color-weak {

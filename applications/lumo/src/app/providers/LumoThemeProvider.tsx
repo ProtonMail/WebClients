@@ -1,6 +1,6 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useLayoutEffect, useState } from 'react';
 
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
+import { ThemeModeSetting, ThemeTypes } from '@proton/shared/lib/themes/constants';
 import useFlag from '@proton/unleash/useFlag';
 
 // @ts-ignore
@@ -10,7 +10,6 @@ import lumoLightTheme from '@proton/colors/themes/dist/lumo-light.theme.css';
 
 export const LUMO_THEME_ID = 'lumo-theme';
 
-// Use the official ThemeTypes enum
 export { ThemeTypes };
 
 type ThemeConfig = { className: string; styles: string };
@@ -32,11 +31,19 @@ export const getLumoDefaultTheme = (): ThemeTypes => {
     return matchDarkTheme().matches ? ThemeTypes.LumoDark : ThemeTypes.LumoLight;
 };
 
+const getLumoThemeFromSettings = (settings: LumoLocalSettings, systemIsDark: boolean): ThemeTypes => {
+    if (settings.mode === ThemeModeSetting.Auto) {
+        return systemIsDark ? ThemeTypes.LumoDark : ThemeTypes.LumoLight;
+    }
+    return settings.theme;
+};
+
 // Local storage helpers - similar to wallet implementation
 const LUMO_SETTINGS_KEY = 'lumo-settings';
 
 export interface LumoLocalSettings {
     theme: ThemeTypes;
+    mode: ThemeModeSetting;
 }
 
 const getLocalID = (url = window.location.href): string | null => {
@@ -65,12 +72,7 @@ export const getLumoSettings = (): LumoLocalSettings | null => {
         const storage = localStorage.getItem(getLumoSettingsKey());
         if (storage) {
             const parsed = JSON.parse(storage);
-            // Validate that theme is a valid ThemeTypes value
-            if (
-                parsed &&
-                typeof parsed.theme === 'number' &&
-                (parsed.theme === ThemeTypes.LumoLight || parsed.theme === ThemeTypes.LumoDark)
-            ) {
+            if (parsed && typeof parsed.theme === 'number' && typeof parsed.mode === 'number') {
                 return parsed;
             }
         }
@@ -105,45 +107,77 @@ export const clearLumoSettings = () => {
 export const LumoThemeContext = createContext<{
     theme: ThemeTypes;
     setTheme: (theme: ThemeTypes) => void;
+    setAutoTheme: (enabled: boolean) => void;
     isDarkLumoTheme: boolean;
+    isAutoMode: boolean;
 }>({
     theme: getLumoDefaultTheme(),
     setTheme: () => {},
+    setAutoTheme: () => {},
     isDarkLumoTheme: false,
+    isAutoMode: false,
 });
 
 export const LumoThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     const isLumoDarkModeEnabled = useFlag('LumoDarkMode');
-    const [theme, setThemeState] = useState<ThemeTypes>(() => {
-        const settings = getLumoSettings();
-        return settings?.theme ?? getLumoDefaultTheme();
-    });
-    const [config, setConfig] = useState<ThemeConfig>(getThemeConfig(theme));
 
-    const setTheme = (newTheme: ThemeTypes) => {
-        setThemeState(newTheme);
-        // Save full settings object like wallet
-        const currentSettings = getLumoSettings() || { theme: getLumoDefaultTheme() };
-        setLumoSettings({ ...currentSettings, theme: newTheme });
+    // Single source of truth for settings
+    const [settings, setSettings] = useState<LumoLocalSettings>(() => {
+        const saved = getLumoSettings();
+        return saved || { theme: getLumoDefaultTheme(), mode: ThemeModeSetting.Light };
+    });
+
+    // Track system preference
+    const [systemIsDark, setSystemIsDark] = useState(() => matchDarkTheme().matches);
+
+    const theme = getLumoThemeFromSettings(settings, systemIsDark);
+    const config = getThemeConfig(theme);
+    const isDarkLumoTheme = theme === ThemeTypes.LumoDark;
+    const isAutoMode = settings.mode === ThemeModeSetting.Auto;
+
+    const updateSettings = (newSettings: LumoLocalSettings) => {
+        setSettings(newSettings);
+        setLumoSettings(newSettings);
     };
 
-    const isDarkLumoTheme = theme === ThemeTypes.LumoDark;
+    const setTheme = (newTheme: ThemeTypes) => {
+        updateSettings({
+            theme: newTheme,
+            mode: newTheme === ThemeTypes.LumoDark ? ThemeModeSetting.Dark : ThemeModeSetting.Light,
+        });
+    };
 
-    useLayoutEffect(() => {
-        if (isLumoDarkModeEnabled) {
-            setConfig(getThemeConfig(theme));
+    const setAutoTheme = (enabled: boolean) => {
+        if (enabled) {
+            updateSettings({ ...settings, mode: ThemeModeSetting.Auto });
+        } else {
+            const currentTheme = systemIsDark ? ThemeTypes.LumoDark : ThemeTypes.LumoLight;
+            updateSettings({
+                theme: currentTheme,
+                mode: systemIsDark ? ThemeModeSetting.Dark : ThemeModeSetting.Light,
+            });
         }
-    }, [theme, isLumoDarkModeEnabled]);
+    };
 
+    // Listen for system theme changes
     useLayoutEffect(() => {
-        if (isLumoDarkModeEnabled) {
-            document.body.classList.add(config.className);
-            return () => document.body.classList.remove(config.className);
-        }
-    }, [config, isLumoDarkModeEnabled]);
+        const mediaQuery = matchDarkTheme();
+        const listener = (e: MediaQueryListEvent) => setSystemIsDark(e.matches);
+
+        mediaQuery.addEventListener?.('change', listener);
+        return () => mediaQuery.removeEventListener?.('change', listener);
+    }, []);
+
+    // Apply theme styles and classes
+    useLayoutEffect(() => {
+        if (!isLumoDarkModeEnabled) return;
+
+        document.body.classList.add(config.className);
+        return () => document.body.classList.remove(config.className);
+    }, [config.className, isLumoDarkModeEnabled]);
 
     return (
-        <LumoThemeContext.Provider value={{ theme, setTheme, isDarkLumoTheme }}>
+        <LumoThemeContext.Provider value={{ theme, setTheme, setAutoTheme, isDarkLumoTheme, isAutoMode }}>
             {isLumoDarkModeEnabled && <style id={LUMO_THEME_ID}>{config.styles}</style>}
             {children}
         </LumoThemeContext.Provider>

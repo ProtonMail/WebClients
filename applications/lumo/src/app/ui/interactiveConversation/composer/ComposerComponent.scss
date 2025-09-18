@@ -6,19 +6,6 @@
 	padding: #{rem(6)};
 	transition: all 0.3s ease-out;
 
-	&::after {
-		content: '';
-		inset: 0; // cover the whole element
-		position: absolute;
-		pointer-events: none;
-		border-radius: inherit; // let clicks pass through
-		background:
-			linear-gradient(132.7deg, rgb(109 74 255 / 0) 58%, rgb(109 74 255 / 0.2) 100.13%),
-			linear-gradient(0deg, var(--backdrop-norm), var(--backdrop-norm));
-		opacity: 0; // start hidden
-		transition: opacity 0.3s ease-out;
-	}
-
 	@include media('<=small') {
 		border-end-start-radius: 0 !important;
 		border-end-end-radius: 0 !important;
@@ -36,12 +23,6 @@
 		border-color: var(--ghost-border);
 		background-color: var(--ghost-bg-primary);
 		color: var(--ghost-text);
-		position: relative;
-
-		&::after {
-			// fade the gradient in
-			opacity: 0.8;
-		}
 
 		.color-weak {
 			color: var(--ghost-text-weak) !important;
