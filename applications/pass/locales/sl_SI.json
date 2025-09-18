@@ -4,182 +4,6 @@
     "language": "sl_SI"
   },
   "contexts": {
-    "": {
-      "${ config.options.length } character": [
-        "${ config.options.length } znak",
-        "${ config.options.length } znaka",
-        "${ config.options.length } znaki",
-        "${ config.options.length } znakov"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } beseda",
-        "${ config.options.wordCount } besedi",
-        "${ config.options.wordCount } besede",
-        "${ config.options.wordCount } besed"
-      ],
-      "${ count } item": [
-        "${ count } predmet",
-        "${ count } predmeta",
-        "${ count } predmeti",
-        "${ count } predmetov"
-      ],
-      "${ count } time": [
-        "${ count }-krat",
-        "${ count }-krat",
-        "${ count }-krat",
-        "${ count }-krat"
-      ],
-      "${ days } day": [
-        "${ days } dan",
-        "${ days } dneva",
-        "${ days } dnevi",
-        "${ days } dni"
-      ],
-      "${ filesCount } file": [
-        "Datoteka ${ filesCount }",
-        "${ filesCount } datoteki",
-        "${ filesCount } datoteke",
-        "${ filesCount } datotek"
-      ],
-      "${ hours } hour": [
-        "${ hours } ura",
-        "${ hours } uri",
-        "${ hours } ure",
-        "${ hours } ur"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } član",
-        "${ memberCount } člana",
-        "${ memberCount } člani",
-        "${ memberCount } članov"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuti",
-        "${ minutes } minute",
-        "${ minutes } minut"
-      ],
-      "${ months } month": [
-        "${ months } mesec",
-        "${ months } meseci",
-        "${ months } meseci",
-        "${ months } meseci"
-      ],
-      "${ n } item": [
-        "${ n } predmet",
-        "${ n } predmeta",
-        "${ n } predmeti",
-        "${ n } predmetov"
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount } zaznana kršitev",
-        "${ row.breachCount } zaznani kršitvi",
-        "${ row.breachCount } zaznane kršitve",
-        "${ row.breachCount } zaznanih kršitev"
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } druga prijava uporablja isto geslo",
-        "${ total } drugi prijavi uporabljata isto geslo",
-        "${ total } druge prijave uporabljajo isto geslo",
-        "${ total } drugih prijav uporablja isto geslo"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } vpis",
-        "${ usageCount } vpisa",
-        "${ usageCount } vpisi",
-        "${ usageCount } vpisov"
-      ],
-      "${ years } year": [
-        "${ years } leto",
-        "${ years } leta",
-        "${ years } let",
-        "${ years } let"
-      ],
-      "byte": [
-        "bajt",
-        "bajta",
-        "bajti",
-        "bajtov"
-      ],
-      "Byte": [
-        "Bajt",
-        "Bajta",
-        "Bajti",
-        "Bajtov"
-      ],
-      "Cannot send invitation at the moment": [
-        "Trenutno ni mogoče poslati povabila",
-        "Trenutno ni mogoče poslati povabil\n​",
-        "Trenutno ni mogoče poslati povabil",
-        "Trenutno ni mogoče poslati povabil"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Odkrita ${ errors.length } poškodovana vrstica CSV",
-        "Odkriti ${ errors.length } poškodovani vrstici CSV",
-        "Odkrite ${ errors.length } poškodovane vrstice CSV",
-        "Odkritih ${ errors.length } poškodovanih vrstic CSV"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } teden.",
-        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna.",
-        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne.",
-        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tednov."
-      ],
-      "Gigabyte": [
-        "Gigabajt",
-        "Gigabajta",
-        "Gigabajti",
-        "Gigabajtov"
-      ],
-      "Kilobyte": [
-        "Kilobajt",
-        "Kilobajta",
-        "Kilobajti",
-        "Kilobajtov"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Največ dovoljenih znakov ${ maxLength }",
-        "Največ dovoljenih znakov ${ maxLength }",
-        "Največ dovoljenih znakov ${ maxLength }",
-        "Največ dovoljenih znakov ${ maxLength }"
-      ],
-      "Megabyte": [
-        "Megabajt",
-        "Megabajta",
-        "Megabajti",
-        "Megabajtov"
-      ],
-      "Move ${ count } item": [
-        "Premakni ${ count } predmet",
-        "Premakni ${ count } predmeta",
-        "Premakni ${ count } predmete",
-        "Premakni ${ count } predmete"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna, se samodejno izbrišejo iz zgodovine.",
-        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tednov, se samodejno izbrišejo iz zgodovine.",
-        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tednov, se samodejno izbrišejo iz zgodovine.",
-        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tednov, se samodejno izbrišejo iz zgodovine."
-      ],
-      "Reused ${ count } time": [
-        "Ponovno uporabljeno ${ count }-krat",
-        "Ponovno uporabljeno ${ count }-krat",
-        "Ponovno uporabljeno ${ count }-krat",
-        "Ponovno uporabljeno ${ count }-krat"
-      ],
-      "Terabyte": [
-        "Terabajt",
-        "Terabajta",
-        "Terabajti",
-        "Terabajtov"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Imate še ${ daysRemaining } dan, da preizkusite te in druge premijske funkcije.",
-        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premijske funkcije.",
-        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premijske funkcije.",
-        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premijske funkcije."
-      ]
-    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } in ${ remainingCount } drugih možnih odtekanj podatkov. Vklopite ${ DARK_WEB_MONITORING_NAME }, da si ogledate podrobnosti in ukrepate. ${ link }"
@@ -809,6 +633,12 @@
       ]
     },
     "Description": {
+      "${ total } other login uses the same password": [
+        "${ total } druga prijava uporablja isto geslo",
+        "${ total } drugi prijavi uporabljata isto geslo",
+        "${ total } druge prijave uporabljajo isto geslo",
+        "${ total } drugih prijav uporablja isto geslo"
+      ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA doda še eno raven varnosti vašim prijavam. ${ PASS_APP_NAME } olajša 2FA s shranjevanjem in samodejnim izpolnjevanjem vaših 2FA kod."
       ],
@@ -874,6 +704,12 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Preverjanje ni uspelo. Če želite nadaljevati z izvozom, potrdite svoje geslo ${ BRAND_NAME }."
       ],
+      "Cannot send invitation at the moment": [
+        "Trenutno ni mogoče poslati povabila",
+        "Trenutno ni mogoče poslati povabil\n​",
+        "Trenutno ni mogoče poslati povabil",
+        "Trenutno ni mogoče poslati povabil"
+      ],
       "Cannot send invitations at the moment": [
         "Trenutno ni mogoče poslati povabil\n​"
       ],
@@ -912,6 +748,12 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Brisanje trezorja »${ payload.content.name }« ni uspelo"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Odkrita ${ errors.length } poškodovana vrstica CSV",
+        "Odkriti ${ errors.length } poškodovani vrstici CSV",
+        "Odkrite ${ errors.length } poškodovane vrstice CSV",
+        "Odkritih ${ errors.length } poškodovanih vrstic CSV"
       ],
       "Domain not available, try again later": [
         "Domena ni na voljo, poskusite znova pozneje"
@@ -1159,6 +1001,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajta",
+        "bajti",
+        "bajtov"
+      ],
       "GB": [
         "GB"
       ],
@@ -1172,12 +1020,62 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajta",
+        "Bajti",
+        "Bajtov"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajta",
+        "Gigabajti",
+        "Gigabajtov"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajta",
+        "Kilobajti",
+        "Kilobajtov"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajta",
+        "Megabajti",
+        "Megabajtov"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajti",
+        "Terabajtov"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Predmet »${ payload.itemName }« je bil opuščen"
       ],
       "\"${ payload.itemName }\" update was dismissed": [
         "Posodobitev »${ payload.itemName }« je bila opuščena"
+      ],
+      "${ count } time": [
+        "${ count }-krat",
+        "${ count }-krat",
+        "${ count }-krat",
+        "${ count }-krat"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } član",
+        "${ memberCount } člana",
+        "${ memberCount } člani",
+        "${ memberCount } članov"
+      ],
+      "${ n } item": [
+        "${ n } predmet",
+        "${ n } predmeta",
+        "${ n } predmeti",
+        "${ n } predmetov"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } bo prikazal ikono predmeta prek posredniškega strežnika ${ BRAND_NAME } za anonimizirane slike."
@@ -1190,6 +1088,12 @@
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } je omogočen."
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } zaznana kršitev",
+        "${ row.breachCount } zaznani kršitvi",
+        "${ row.breachCount } zaznane kršitve",
+        "${ row.breachCount } zaznanih kršitev"
       ],
       "(Empty)": [
         "(Prazno)"
@@ -1359,6 +1263,12 @@
       "For security reasons, your access needs to be confirmed": [
         "Iz varnostnih razlogov mora biti vaš dostop potrjen"
       ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } teden.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedne.",
+        "Ustvarjena gesla bodo shranjena ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tednov."
+      ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Kar najbolje izkoristite Pass tako, da ustvarite trezor za vsako ekipo ali projekt."
       ],
@@ -1479,6 +1389,12 @@
       "Monitoring settings successfully updated": [
         "Nastavitve nadzora so bile posodobljene."
       ],
+      "Move ${ count } item": [
+        "Premakni ${ count } predmet",
+        "Premakni ${ count } predmeta",
+        "Premakni ${ count } predmete",
+        "Premakni ${ count } predmete"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Premikanje vseh predmetov iz »${ payload.content.name }«"
       ],
@@ -1523,6 +1439,12 @@
       ],
       "password": [
         "geslo"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tedna, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tednov, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tednov, se samodejno izbrišejo iz zgodovine.",
+        "Gesla, starejša od ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tednov, se samodejno izbrišejo iz zgodovine."
       ],
       "Paused": [
         "Začasno zaustavljeno"
@@ -1758,6 +1680,12 @@
       "You cannot change the mailboxes for this alias.": [
         "Nabiralnikov za ta vzdevek ne morete spremeniti."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Imate še ${ daysRemaining } dan, da preizkusite te in druge premijske funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premijske funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premijske funkcije.",
+        "Imate še ${ daysRemaining } dni, da preizkusite te in druge premijske funkcije."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Presegli ste število trezorjev, vključenih v vašo naročnino. Predmete je mogoče premakniti samo v vaša prva dva trezorja. Za premikanje predmetov med vsemi trezorji nadgradite svojo naročnino."
       ],
@@ -1808,8 +1736,62 @@
       ]
     },
     "Label": {
+      "${ config.options.length } character": [
+        "${ config.options.length } znak",
+        "${ config.options.length } znaka",
+        "${ config.options.length } znaki",
+        "${ config.options.length } znakov"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } beseda",
+        "${ config.options.wordCount } besedi",
+        "${ config.options.wordCount } besede",
+        "${ config.options.wordCount } besed"
+      ],
+      "${ count } item": [
+        "${ count } predmet",
+        "${ count } predmeta",
+        "${ count } predmeti",
+        "${ count } predmetov"
+      ],
+      "${ days } day": [
+        "${ days } dan",
+        "${ days } dneva",
+        "${ days } dnevi",
+        "${ days } dni"
+      ],
+      "${ hours } hour": [
+        "${ hours } ura",
+        "${ hours } uri",
+        "${ hours } ure",
+        "${ hours } ur"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuti",
+        "${ minutes } minute",
+        "${ minutes } minut"
+      ],
+      "${ months } month": [
+        "${ months } mesec",
+        "${ months } meseci",
+        "${ months } meseci",
+        "${ months } meseci"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Različica ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } vpis",
+        "${ usageCount } vpisa",
+        "${ usageCount } vpisi",
+        "${ usageCount } vpisov"
+      ],
+      "${ years } year": [
+        "${ years } leto",
+        "${ years } leta",
+        "${ years } let",
+        "${ years } let"
       ],
       "1 hour": [
         "1 ura"
@@ -2258,6 +2240,9 @@
       "Network": [
         "Omrežje"
       ],
+      "New": [
+        "Novo"
+      ],
       "New email": [
         "Nova e-pošta"
       ],
@@ -2629,6 +2614,12 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } predmet",
+        "${ count } predmeta",
+        "${ count } predmeti",
+        "${ count } predmetov"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "V tem trezorju ste izbrali ${ semiboldText }."
       ]
@@ -2679,6 +2670,12 @@
       ]
     },
     "Pass_file_attachments": {
+      "${ filesCount } file": [
+        "Datoteka ${ filesCount }",
+        "${ filesCount } datoteki",
+        "${ filesCount } datoteke",
+        "${ filesCount } datotek"
+      ],
       "Attachments": [
         "Priponke"
       ],
@@ -3169,6 +3166,12 @@
       "Resume monitoring?": [
         "Nadaljuj spremljanje?"
       ],
+      "Reused ${ count } time": [
+        "Ponovno uporabljeno ${ count }-krat",
+        "Ponovno uporabljeno ${ count }-krat",
+        "Ponovno uporabljeno ${ count }-krat",
+        "Ponovno uporabljeno ${ count }-krat"
+      ],
       "Reused passwords": [
         "Ponovno uporabljena gesla"
       ],
@@ -3380,6 +3383,12 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Vabljenje e-poštnih naslovov izven organizacije ni dovoljeno."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }",
+        "Največ dovoljenih znakov ${ maxLength }"
       ],
       "Missing alias prefix": [
         "Manjka pripona vzdevka"

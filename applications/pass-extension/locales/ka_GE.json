@@ -4,240 +4,6 @@
     "language": "ka_GE"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } ფსევდონიმი",
-        "${ aliasCount } ფსევდონიმი"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } დაბლოკილი",
-        "${ blockedCount } დაბლოკილი"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } დაბლოკილი",
-        "${ blockedEmailsCount } დაბლოკილი"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } სიმბოლო",
-        "${ config.options.length } სიმბოლო"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } სიტყვა",
-        "${ config.options.wordCount } სიტყვა"
-      ],
-      "${ count } item": [
-        "${ count } ელემენტი",
-        "${ count } ელემენტი"
-      ],
-      "${ count } time": [
-        "${ count }-ჯერ",
-        "${ count }-ჯერ"
-      ],
-      "${ count } view": [
-        "${ count } ხედი",
-        "${ count } ხედი"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } ნახვა",
-        "${ count }/${ maxReads } ნახვა"
-      ],
-      "${ days } day": [
-        "${ days } დღე",
-        "${ days } დღე"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } ფაილი",
-        "${ filesCount } ფაილი"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } გადაგზავნა",
-        "${ forwardCount } გადაგზავნა"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } გადაგზავნილია",
-        "${ forwardedEmailsCount } გადაგზავნილია"
-      ],
-      "${ hours } hour": [
-        "${ hours } საათი",
-        "${ hours } საათი"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } წევრი",
-        "${ memberCount } წევრი"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } წუთი",
-        "${ minutes } წუთი"
-      ],
-      "${ months } month": [
-        "${ months } თვე",
-        "${ months } თვე"
-      ],
-      "${ n } item": [
-        "${ n } ელემენტი",
-        "${ n } ელემენტი"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა",
-        "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } პასუხი",
-        "${ repliedCount } პასუხი"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } გაგზავნილია",
-        "${ repliedEmailsCount } გაგზავნილია"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } დაცული ბმული",
-        "${ secureLinksCount } დაცული ბმული"
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს",
-        "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს"
-      ],
-      "${ trialDaysLeft } day left": [
-        "დარჩენილია ${ trialDaysLeft } დღე",
-        "დარჩენილია ${ trialDaysLeft } დღე"
-      ],
-      "${ years } year": [
-        "${ years } წელი",
-        "${ years } წელი"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, ${ trashedItemsCount } ელემენტი ნაგვის ყუთში გადაიტანოთ?",
-        "დარწმუნებული ბრძანდებით, რომ გნებავთ, ${ trashedItemsCount } ელემენტი ნაგვის ყუთში გადაიტანოთ?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "დარწმუნებული ბრძანდებთ, რომ სამუდამოდ გნებავთ, წაშალოთ ${ deletedItemsCount } ელემენტი?",
-        "დარწმუნებული ბრძანდებთ, რომ სამუდამოდ გნებავთ, წაშალოთ ${ deletedItemsCount } ელემენტი?"
-      ],
-      "byte": [
-        "ბაიტი",
-        "ბაიტი"
-      ],
-      "Byte": [
-        "ბაიტი",
-        "ბაიტი"
-      ],
-      "Cannot send invitation at the moment": [
-        "ამჟამად მოსაწვევს ვერ გავაგზავნი",
-        "ამჟამად მოსაწვევს ვერ გავაგზავნი"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "წავშალო ${ deletedItemsCount } ელემენტი?",
-        "წავშალო ${ deletedItemsCount } ელემენტი?"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი",
-        "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი"
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "უსაფრთხოებისთვის გჭირდებათ, რომ დაადასტუროთ წვდომა ამ გაზიარებულ საცავზე",
-        "უსაფრთხოებისთვის გჭირდებათ, რომ დაადასტუროთ წვდომა ამ გაზიარებულ საცავებზე"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული.",
-        "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული."
-      ],
-      "Gigabyte": [
-        "გიგაბაიტი",
-        "გიგაბაიტი"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "ელემენტის გაზიარება: ${ itemAccessCount } მომხმარებელი",
-        "ელემენტის გაზიარება: ${ itemAccessCount } მომხმარებელი"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "ელემენტი, არ შეიძლება, ${ share.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
-        "ელემენტი, არ შეიძლება, ${ share.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
-      ],
-      "Kilobyte": [
-        "კილობაიტი",
-        "კილობაიტი"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო",
-        "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო"
-      ],
-      "Megabyte": [
-        "მეგაბაიტი",
-        "მეგაბაიტი"
-      ],
-      "Move ${ count } item": [
-        "${ count } ელემენტის გადატანა",
-        "${ count } ელემენტის გადატანა"
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count } ელემენტის გადატანა ${ vaultName }-ში",
-        "${ count } ელემენტის გადატანა ${ vaultName }-ში"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "გადავიტანო სანაგვე ყუთში ${ trashedItemsCount } ელემენტი?",
-        "გადავიტანო სანაგვე ყუთში ${ trashedItemsCount } ელემენტი?"
-      ],
-      "Move item to": [
-        "ელემენტების გადატანა",
-        "ელემენტების გადატანა"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება",
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება"
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმს წაშლით, მას ვერ აღადგენთ.",
-        "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმებს წაშლით, მას ვერ აღადგენთ."
-      ],
-      "Sync alias": [
-        "ფსევდონიმის სინქი",
-        "ფსევდონიმების სინქი"
-      ],
-      "Terabyte": [
-        "ტერაბაიტი",
-        "ტერაბაიტი"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "${ totalIgnored } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
-        "${ totalIgnored } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:"
-      ],
-      "Understood, I will never need it": [
-        "გავიგე. არასდროს დამჭირდება",
-        "გავიგე. არასდროს დამჭირდება"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "საცავის გაზიარება: ${ vaultMembersCount } წევრი",
-        "საცავის გაზიარება: ${ vaultMembersCount } წევრი"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "საცავი, არ შეიძლება, ${ targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
-        "საცავი, არ შეიძლება, ${ targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "აღმოვაჩინეთ, რომ გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?",
-        "აღმოვაჩინეთ, რომ გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "შეგიძლიათ გადაათრიოთ და დააგდოთ მონიშნული ელემენტი სხვა საცავში",
-        "შეგიძლიათ გადაათრიოთ და დაყაროთ მონიშნული ელემენტები სხვა საცავში"
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი სინქრონიზაცია?",
-        "გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი სინქრონიზაცია?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ.",
-        "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ."
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი.",
-        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
-      ]
-    },
     "Action": {
       "Accept": [
         "დასტური"
@@ -343,9 +109,6 @@
       ],
       "Clear search": [
         "ძებნის გასუფთავება"
-      ],
-      "Clone item": [
-        "ელემენტის კლონირება"
       ],
       "Close": [
         "დახურვა"
@@ -478,12 +241,6 @@
       ],
       "Dismiss": [
         "მოცილება"
-      ],
-      "Do not show again": [
-        "აღარ მაჩვენო"
-      ],
-      "Do not show again when I press": [
-        "აღარ მაჩვენო, როცა დავაჭერ"
       ],
       "Do not show on this website": [
         "არ მაჩვენო ამ ვებგვერდზე"
@@ -668,9 +425,6 @@
       "Open web app": [
         "ვებ-აპის გახსნა"
       ],
-      "Organize vaults": [
-        "საცავების დალაგება"
-      ],
       "Pass for Android": [
         "Pass-ი Android-სთვის"
       ],
@@ -845,6 +599,10 @@
       "Submitting report...": [
         "ანგარიშის გადაგზავნა..."
       ],
+      "Sync alias": [
+        "ფსევდონიმის სინქი",
+        "ფსევდონიმების სინქი"
+      ],
       "Sync aliases": [
         "ფსევდონიმების სინქი"
       ],
@@ -868,6 +626,10 @@
       ],
       "Unblock contact": [
         "კონტაქტის განბლოკვა"
+      ],
+      "Understood, I will never need it": [
+        "გავიგე. არასდროს დამჭირდება",
+        "გავიგე. არასდროს დამჭირდება"
       ],
       "Unlock": [
         "განბლოკვა"
@@ -949,6 +711,10 @@
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } ფასიან ვერსიაშია ხელმისაწვდომი. ასწიეთ ტარიფი წვდომის დაუყოვნებლივ მისაღებად."
       ],
+      "${ total } other login uses the same password": [
+        "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს",
+        "${ total } სხვა მომხმარებელი იყენებს ამ პაროლს"
+      ],
       "A checked box means the feature is disabled.": [
         "ჩართული ნიშნავს, რომ ეს ფუნქცია გამორთულია."
       ],
@@ -1025,6 +791,10 @@
       "Cannot create alias (${ error }).": [
         "ფსევდონიმის შექმნის შეცდომა (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი",
+        "ამჟამად მოსაწვევს ვერ გავაგზავნი"
+      ],
       "Cannot send invitations at the moment": [
         "ამჟამად მოსაწვევს ვერ გავაგზავნი"
       ],
@@ -1072,6 +842,10 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "საცავის \"${ payload.content.name }\" წაშლის შეცდომა"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი",
+        "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "დომენის გადამოწმება შეუძლებელია. დარწმუნდით, რომ დაამატეთ სწორი DNS ჩანაწერები"
@@ -1419,6 +1193,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
       "GB": [
         "გბ"
       ],
@@ -1432,6 +1210,28 @@
         "ტბ"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
+      "Gigabyte": [
+        "გიგაბაიტი",
+        "გიგაბაიტი"
+      ],
+      "Kilobyte": [
+        "კილობაიტი",
+        "კილობაიტი"
+      ],
+      "Megabyte": [
+        "მეგაბაიტი",
+        "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" ელემენტი მოცილებულია"
@@ -1439,8 +1239,36 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "\"${ payload.itemName }\" განახლება მოცილებულია"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } დაბლოკილი",
+        "${ blockedEmailsCount } დაბლოკილი"
+      ],
+      "${ count } time": [
+        "${ count }-ჯერ",
+        "${ count }-ჯერ"
+      ],
+      "${ count } view": [
+        "${ count } ხედი",
+        "${ count } ხედი"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } ნახვა",
+        "${ count }/${ maxReads } ნახვა"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } გადაგზავნილია",
+        "${ forwardedEmailsCount } გადაგზავნილია"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } უნდა, ელემენტი გაგიზიაროთ."
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } წევრი",
+        "${ memberCount } წევრი"
+      ],
+      "${ n } item": [
+        "${ n } ელემენტი",
+        "${ n } ელემენტი"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } ყოველთვის ხელმისაწვდომი იქნება"
@@ -1475,11 +1303,23 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } შემოგთავაზებთ წვდომის გასაღების შენახვას."
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა",
+        "${ payload.count } მოსაწვევი წარმატებით გაიგზავნა"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } წარმატებით გაითიშა"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } წარმატებით ჩაირთო"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } გაგზავნილია",
+        "${ repliedEmailsCount } გაგზავნილია"
+      ],
+      "${ trialDaysLeft } day left": [
+        "დარჩენილია ${ trialDaysLeft } დღე",
+        "დარჩენილია ${ trialDaysLeft } დღე"
       ],
       "(Empty)": [
         "(ცარიელი)"
@@ -1790,9 +1630,6 @@
       "Extra password successfully removed": [
         "დამატებითი პაროლი წარმატებით წაიშალა"
       ],
-      "Failed updating your vault organization": [
-        "თქვენი საცავის ორგანიზაციის განახლება ჩავარდა"
-      ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
       ],
@@ -1808,11 +1645,19 @@
       "For security reasons, this action requires identity verification.": [
         "უსაფრთხოების მიზნით ამ ქმედებას იდენტიფიკატორის გადამოწმება სჭირდება."
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "უსაფრთხოებისთვის გჭირდებათ, რომ დაადასტუროთ წვდომა ამ გაზიარებულ საცავზე",
+        "უსაფრთხოებისთვის გჭირდებათ, რომ დაადასტუროთ წვდომა ამ გაზიარებულ საცავებზე"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "უსაფრთხოებისთვის თქვენს წვდომას დადასტურება სჭირდება"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "გადაგზავნის მისამართი დაკოპირდა ბუფერში. გააგზავნეთ ელფოსტა ამ მისამართზე და მას ${ Email } მიიღებს."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული.",
+        "დაგენერირებული პაროლები ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირის განმავლობაში იქნება შენახული."
       ],
       "Generating alias...": [
         "ფსევდონიმის გენერაცია..."
@@ -1877,6 +1722,10 @@
       "Item restored": [
         "ელემენტი აღდგენილია"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "ელემენტის გაზიარება: ${ itemAccessCount } მომხმარებელი",
+        "ელემენტის გაზიარება: ${ itemAccessCount } მომხმარებელი"
+      ],
       "Item successfully excluded from monitoring": [
         "ელემენტის მონიტორინგიდან ამოღება წარმატებულია"
       ],
@@ -1924,6 +1773,10 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "წარმოადგენს რა მეტს, ვიდრე პაროლების მმართველი, ${ PASS_APP_NAME } თქვენს პაროლებს და პირადი ელფოსტის მისამართებს ფსევდონიებით იცავს. დაფუძნებული იგივე ტექნოლოგიაზე, რაზეც ${ MAIL_APP_NAME }, თქვენი მონაცემები გამჭოლადაა დაშიფრული და წვდომადი, მხოლოდ, თქვენთვსაა."
+      ],
+      "Move ${ count } item": [
+        "${ count } ელემენტის გადატანა",
+        "${ count } ელემენტის გადატანა"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
@@ -1990,6 +1843,10 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "პაროლით დაბლოკვა წამარტებით დარეგისტრირდა. გამოიყენეთ ის ${ PASS_APP_NAME }-ის განბლოკვისთვის"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } კვირაზე ძველი პაროლები ისტორიიდან ავტომატურად წაიშლება"
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
@@ -2261,6 +2118,10 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "დამატებითი პაროლი აუცილებელია ${ PASS_APP_NAME }-ის გამოყენებისას. ის ${ BRAND_NAME }-ის პაროლთან ერთად დამატებით პაროლად გამოიყენება."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "${ totalIgnored } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
+        "${ totalIgnored } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:"
+      ],
       "The secure link has been removed": [
         "დაცული ბმული წაიშალა"
       ],
@@ -2363,9 +2224,6 @@
       "Update login": [
         "შესვლის დეტალების განახლება"
       ],
-      "Updating vault organization...": [
-        "საცავის ორგანიზაციის განახლება..."
-      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის ტარიფის აწევა"
       ],
@@ -2393,8 +2251,9 @@
       "Vault \"${ share.content.name }\" was removed": [
         "საცავი \"${ share.content.name }\" წაიშალა"
       ],
-      "Vault organization successfully updated": [
-        "საცავის ორგანიზაცია წარმატებით განახლდა"
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "საცავის გაზიარება: ${ vaultMembersCount } წევრი",
+        "საცავის გაზიარება: ${ vaultMembersCount } წევრი"
       ],
       "Verification code": [
         "გადამოწმების კოდი"
@@ -2404,6 +2263,10 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "თქვენს ლოკალურ საცავთან მონაცემების სინქრონიზაციის პრობლემა. დარწუნდით, რომ ${ PASS_SHORT_APP_NAME }-ის სამუშაოდ საკმარისი ადგილი გაგაჩნიათ."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "აღმოვაჩინეთ, რომ გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?",
+        "აღმოვაჩინეთ, რომ გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი შემოტანა?"
       ],
       "Week": [
         "კვირა"
@@ -2428,6 +2291,14 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი სინქრონიზაცია?",
+        "გაქვთ ${ aliasCount } ფსევდონიმი, რომელიც არსებობს SimpleLogin-ში, მაგრამ არა ${ PASS_APP_NAME }-ში. გნებავთ მათი სინქრონიზაცია?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ.",
+        "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, პირველ ორ საცავში შეგიძლიათ, გადაიტანოთ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
@@ -2487,23 +2358,67 @@
         "თქვენი ორგანიზაცია ითხოვთ, დაიცვათ თქვენი წვდომა ${ PASS_APP_NAME }-ზე"
       ]
     },
-    "Keyboard key": {
-      "SHIFT": [
-        "SHIFT"
-      ],
-      "V": [
-        "V"
-      ]
-    },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } ფსევდონიმი",
+        "${ aliasCount } ფსევდონიმი"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } დაბლოკილი",
+        "${ blockedCount } დაბლოკილი"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } სიმბოლო",
+        "${ config.options.length } სიმბოლო"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } სიტყვა",
+        "${ config.options.wordCount } სიტყვა"
+      ],
+      "${ count } item": [
+        "${ count } ელემენტი",
+        "${ count } ელემენტი"
+      ],
+      "${ days } day": [
+        "${ days } დღე",
+        "${ days } დღე"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } გადაგზავნა",
+        "${ forwardCount } გადაგზავნა"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, ბოლო 14 დღეში."
+      ],
+      "${ hours } hour": [
+        "${ hours } საათი",
+        "${ hours } საათი"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } წუთი",
+        "${ minutes } წუთი"
+      ],
+      "${ months } month": [
+        "${ months } თვე",
+        "${ months } თვე"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME }-ის მონიტორი"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-ის ვერსია"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } პასუხი",
+        "${ repliedCount } პასუხი"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } დაცული ბმული",
+        "${ secureLinksCount } დაცული ბმული"
+      ],
+      "${ years } year": [
+        "${ years } წელი",
+        "${ years } წელი"
       ],
       "1 hour": [
         "1 სთ"
@@ -3078,6 +2993,9 @@
       "Network": [
         "ქსელი"
       ],
+      "New": [
+        "ახალი"
+      ],
       "New email": [
         "ახალი ელფოსტა"
       ],
@@ -3541,6 +3459,14 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } ელემენტი",
+        "${ count } ელემენტი"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "შეგიძლიათ გადაათრიოთ და დააგდოთ მონიშნული ელემენტი სხვა საცავში",
+        "შეგიძლიათ გადაათრიოთ და დაყაროთ მონიშნული ელემენტები სხვა საცავში"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "აირჩიეთ ${ semiboldText } ამ საცავში."
       ]
@@ -3588,6 +3514,10 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "ფაილი \"${ filename }\" მეტისმეტად დიდია ასატვირთად. მაქსიმალური დაშვებული ზომაა (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } ფაილი",
+        "${ filesCount } ფაილი"
       ],
       "Attachments": [
         "მიმაგრებული ფაილები"
@@ -3900,6 +3830,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "დომენი წარმატებით გადამოწმდა. თქვენს დომენს შეუძლია დაიწყოს ელფოსტების მიღება და ფსევდონიმების შექმნა"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "ელემენტი, არ შეიძლება, ${ share.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
+        "ელემენტი, არ შეიძლება, ${ share.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
+      ],
       "Mailbox change successfully cancelled": [
         "საფოსტო ყუთის წაშლა წარმატებით გაუქმდა"
       ],
@@ -3917,6 +3851,10 @@
       ],
       "Random prefix generation successfully enabled": [
         "შემთხვევითი პრეფიქსის შექმნა წარმატებით ჩაირთო"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "საცავი, არ შეიძლება, ${ targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
+        "საცავი, არ შეიძლება, ${ targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "გადამოწმების ელფოსტა გაიგზავნა. შეამოწმეთ თქვენი საფოსტო ყუთი ელფოსტის დასადასტურებლად"
@@ -4018,6 +3956,10 @@
       "Default Display Name": [
         "ნაგულისხმევი საჩვენებელი სახელი"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "წავშალო ${ deletedItemsCount } ელემენტი?",
+        "წავშალო ${ deletedItemsCount } ელემენტი?"
+      ],
       "Delete domain": [
         "წავშალო დომენი"
       ],
@@ -4090,9 +4032,6 @@
       "Grant permissions": [
         "წვდომების მინიჭება"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "დამალული საცავები არ გამოჩნდება ძებნისას და ავტოშევსებისას."
-      ],
       "Hide my email": [
         "Hide my email"
       ],
@@ -4147,6 +4086,14 @@
       "Modified": [
         "შეცვლილია"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "${ count } ელემენტის გადატანა ${ vaultName }-ში",
+        "${ count } ელემენტის გადატანა ${ vaultName }-ში"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "გადავიტანო სანაგვე ყუთში ${ trashedItemsCount } ელემენტი?",
+        "გადავიტანო სანაგვე ყუთში ${ trashedItemsCount } ელემენტი?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "გადავიტანო ყველა ელემენტი საცავში \"${ vaultName }\"?"
       ],
@@ -4165,9 +4112,6 @@
       "No shared secure links": [
         "გაზიარებული დაცული ბმულების გარეშე"
       ],
-      "Organize vaults": [
-        "საცავების დალაგება"
-      ],
       "Our welcome gift to you": [
         "ჩვენი მისალმების საჩუქარი"
       ],
@@ -4183,9 +4127,6 @@
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
       ],
-      "Perform autotype?": [
-        "შევასრულო ავტოშეყვანა?"
-      ],
       "Permanently remove all items?": [
         "წავშალო სამუდამოდ ყველა ელემენტი?"
       ],
@@ -4194,6 +4135,10 @@
       ],
       "Pinned (${ items.length })": [
         "მიმაგრებულია (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმს წაშლით, მას ვერ აღადგენთ.",
+        "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმებს წაშლით, მას ვერ აღადგენთ."
       ],
       "Random Prefix Generation": [
         "შემთხვევითი პრეფიქსის შექმნა"
@@ -4314,11 +4259,10 @@
       ],
       "Your welcome gift": [
         "ისიამოვნეთ თქვენი უფასო სატესტო ვერსიით"
-      ]
-    },
-    "Title_cloned_item": {
-      "copy": [
-        "კოპირება"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი.",
+        "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4352,6 +4296,12 @@
         "URL არასწორია"
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "ელემენტების გადატანა",
+        "ელემენტების გადატანა"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-ის პაროლი აუცილებელია"
@@ -4379,6 +4329,14 @@
       ],
       "An error occurred while resuming your session": [
         "შეცდომა თქვენი სესიის გაგრძელებისას"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, ${ trashedItemsCount } ელემენტი ნაგვის ყუთში გადაიტანოთ?",
+        "დარწმუნებული ბრძანდებით, რომ გნებავთ, ${ trashedItemsCount } ელემენტი ნაგვის ყუთში გადაიტანოთ?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "დარწმუნებული ბრძანდებთ, რომ სამუდამოდ გნებავთ, წაშალოთ ${ deletedItemsCount } ელემენტი?",
+        "დარწმუნებული ბრძანდებთ, რომ სამუდამოდ გნებავთ, წაშალოთ ${ deletedItemsCount } ელემენტი?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "ნამდვილად გსურთ, სამუდამოდ წაიშალოს ეს ელემენტი?"
@@ -4451,6 +4409,10 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "ორგანიზაციის გარედან ელფოსტის მისამართების მოწვევა დაშვებული არაა."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო",
+        "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო"
       ],
       "Missing alias prefix": [
         "აკლია ფსევდონიმის პრეფიქსი"

@@ -4,312 +4,6 @@
     "language": "nl_NL"
   },
   "contexts": {
-    "": {
-      "${ admins } admin": [
-        "${ admins } beheerder",
-        "${ admins } beheerders"
-      ],
-      "${ domains } additional custom domain": [
-        "${ domains } extra aangepast domein",
-        "${ domains } extra aangepaste domeinen"
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } uur",
-        "${ gracePeriodHoursRemaining } uren"
-      ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servers"
-      ],
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } e-mailadres",
-        "${ n } ${ BRAND_NAME } e-mailadressen"
-      ],
-      "${ n } account per wallet": [
-        "${ n } account per portemonnee",
-        "${ n } accounts per portemonnee"
-      ],
-      "${ n } calendar": [
-        "${ n } agenda",
-        "${ n } agenda's"
-      ],
-      "${ n } calendar per user": [
-        "${ n } agenda per gebruiker",
-        "${ n } agenda's per gebruiker"
-      ],
-      "${ n } custom email domain": [
-        "${ n } aangepast e-maildomein",
-        "${ n } aangepaste e-maildomeinen"
-      ],
-      "${ n } device": [
-        "${ n } apparaat",
-        "${ n } apparaten"
-      ],
-      "${ n } email address": [
-        "${ n } e-mailadres",
-        "${ n } e-mailadressen/aliassen"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-mailadres per gebruiker",
-        "${ n } e-mailadressen per gebruiker"
-      ],
-      "${ n } filter": [
-        "${ n } filter",
-        "${ n } filters"
-      ],
-      "${ n } folder": [
-        "${ n } map",
-        "${ n } mappen"
-      ],
-      "${ n } folder and label": [
-        "${ n } map en label",
-        "${ n } mappen en labels"
-      ],
-      "${ n } free VPN connection per user": [
-        "${ n } gratis VPN-verbinding per gebruiker",
-        "${ n } gratis VPN-verbindingen per gebruiker"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email-alias",
-        "${ n } hide-my-email-aliassen"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } supersnelle VPN-verbinding",
-        "${ n } supersnelle VPN-verbindingen"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } supersnelle VPN-verbinding per gebruiker",
-        "${ n } supersnelle VPN-verbindingen per gebruiker"
-      ],
-      "${ n } label": [
-        "${ n } label",
-        "${ n } labels"
-      ],
-      "${ n } message per day": [
-        "${ n } bericht per dag",
-        "${ n } berichten per dag"
-      ],
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "${ n } month FREE": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
-      ],
-      "${ n } server": [
-        "${ n } server",
-        "${ n }+ servers"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
-        "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
-      ],
-      "${ n } user account": [
-        "${ n } gebruikersaccount",
-        "${ n } gebruikersaccounts"
-      ],
-      "${ n } vault": [
-        "${ n } kluis",
-        "${ n } kluizen"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-verbinding",
-        "${ n } VPN-verbindingen"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-verbinding per gebruiker",
-        "${ n } VPN-verbindingen per gebruiker"
-      ],
-      "${ n } wallet": [
-        "${ n } portemonnee",
-        "${ n } portemonnees"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } land",
-        "${ numberOfCountries } landen"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } in ${ numberOfCountries } land",
-        "${ numberOfServers } in ${ numberOfCountries }+ landen"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } in ${ numberOfCountries } land",
-        "${ numberOfServers } in ${ numberOfCountries } landen"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } gebruikers",
-        "Tot ${ numberOfUsers } gebruikers"
-      ],
-      "${ options }-day file version history": [
-        "Bestandsversiegeschiedenis van ${ options } dag",
-        "Bestandsversiegeschiedenis van ${ options } dag"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
-        "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigen e-maildomein",
-        "${ planNumberOfDomains } eigen e-maildomeinen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadres",
-        "${ planNumberOfEmails } e-mailadressen"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } zitplaats",
-        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } plaats voor schrijfassistent",
-        "${ seats } plaatsen voor schrijfassistent"
-      ],
-      "${ users } user": [
-        "${ users } gebruiker",
-        "${ users } gebruikers"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
-        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Selecteert automatisch uit ${ numberOfCountries } land",
-        "Selecteert automatisch uit ${ numberOfCountries } landen"
-      ],
-      "byte": [
-        "byte",
-        "bytes"
-      ],
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Maak een beveiligde cloud voor ${ value } lid",
-        "Maak een beveiligde cloud voor ${ value } leden"
-      ],
-      "Create up to ${ n } calendar": [
-        "Maak tot ${ n } agenda",
-        "Maak tot ${ n } agenda's"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
-        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "High-speed VPN op ${ n } apparaat",
-        "High-speed VPN op ${ n } apparaten"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "Megabyt",
-        "Megabytes"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Servers in ${ numberOfCountries }+ land",
-        "Servers in ${ numberOfCountries }+ landen"
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Abonnement vernieuwt automatisch elke ${ cycle } maand.",
-        "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
-      ],
-      "Support for ${ n } custom email domain": [
-        "Ondersteuning voor ${ n } aangepast e-maildomein",
-        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
-      ],
-      "Suspicious: ${ urlParts.subdomainCount } subdomain": [
-        "Verdacht: ${ urlParts.subdomainCount } subdomein",
-        "Verdacht: ${ urlParts.subdomainCount } subdomeinen"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
-        "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
-        "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
-      ],
-      "Total for ${ n } month": [
-        "Totaal voor ${ n } maand",
-        "Totaal voor ${ n } maanden"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
-        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
-      ],
-      "Up to ${ n } user": [
-        "Tot ${ n } gebruiker",
-        "Tot ${ n } gebruikers"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Tot ${ n } gebruiker (${ adminsText }, ${ usersText })",
-        "Tot ${ n } gebruikers (${ adminsText }, ${ usersText })"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Gebruik tot maximaal ${ n } apparaat tegelijk",
-        "Gebruik tot maximaal ${ n } apparaten tegelijk"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "Kluis delen (tot ${ n } persoon)",
-        "Kluis delen (tot ${ n } personen)"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "VPN verbinding voor ${ n } apparaat per gebruiker",
-        "VPN verbinding voor ${ n } apparaten per gebruiker"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
-        "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
-        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
-        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maanden automatisch vernieuwd."
-      ]
-    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } winkel"
@@ -631,6 +325,14 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } extra aangepast domein",
+        "${ domains } extra aangepaste domeinen"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servers"
+      ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
       ],
@@ -642,9 +344,25 @@
       ],
       "${ price } per user": [
         "${ price } per gebruiker"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } zitplaats",
+        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } plaats voor schrijfassistent",
+        "${ seats } plaatsen voor schrijfassistent"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "12 months": [
         "12 maanden"
       ],
@@ -669,6 +387,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
       ],
@@ -818,6 +542,14 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
@@ -1011,8 +743,16 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
+      ],
       "Total": [
         "Totaal"
+      ],
+      "Total for ${ n } month": [
+        "Totaal voor ${ n } maand",
+        "Totaal voor ${ n } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -1581,6 +1321,12 @@
       ],
       "We're gradually opening access to ${ LUMO_SHORT_APP_NAME }. Join the waitlist, and we’ll notify you when your spot becomes available.": [
         "Wij openen geleidelijk toegang tot ${ LUMO_SHORT_APP_NAME }. Meld u aan voor de wachtlijst, en wij brengen u op de hoogte wanneer uw plek beschikbaar komt."
+      ]
+    },
+    "collider_2025: Warning": {
+      "Suspicious: ${ urlParts.subdomainCount } subdomain": [
+        "Verdacht: ${ urlParts.subdomainCount } subdomein",
+        "Verdacht: ${ urlParts.subdomainCount } subdomeinen"
       ]
     },
     "collider_2025: Web Search": {
@@ -3039,6 +2785,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -3050,6 +2800,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyt",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter notification": {
@@ -3144,6 +2916,10 @@
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
       ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
+        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
+      ],
       "30-day money-back guarantee.": [
         "30-dagen geld terug garantie."
       ],
@@ -3197,6 +2973,10 @@
       ],
       "Country code": [
         "Landcode"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Maak een beveiligde cloud voor ${ value } lid",
+        "Maak een beveiligde cloud voor ${ value } leden"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
@@ -3411,6 +3191,10 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonnement vernieuwt automatisch elke ${ cycle } maand.",
+        "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
+      ],
       "Subscription auto-renews every month.": [
         "Abonnement vernieuwt automatisch elke maand."
       ],
@@ -3501,6 +3285,14 @@
       "You can change this anytime in ${ settingsLink }.": [
         "U kunt dit op elk gewenst moment in ${ settingsLink } wijzigen."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
+      ],
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
@@ -3528,6 +3320,10 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
+        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Uw ${ BRAND_NAME } account is momenteel opgeschort. Na 28 dagen zullen e-mails niet meer afgeleverd worden in uw postvak-in, de deelkoppelingen van uw Drive zullen worden geblokkeerd, en u zal geen nieuwe bestanden meer kunnen opladen. Om normale diensten te hervatten dient u alle achterstallige facturen te betalen."
       ],
@@ -3548,6 +3344,10 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maanden automatisch vernieuwd."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
@@ -3583,6 +3383,10 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
+      ],
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
       ],
       "Account holder": [
         "Rekeninghouder"
@@ -3940,8 +3744,76 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
+      ],
+      "${ n } custom email domain": [
+        "${ n } aangepast e-maildomein",
+        "${ n } aangepaste e-maildomeinen"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadres",
+        "${ n } e-mailadressen/aliassen"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mailadres per gebruiker",
+        "${ n } e-mailadressen per gebruiker"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filters"
+      ],
+      "${ n } folder": [
+        "${ n } map",
+        "${ n } mappen"
+      ],
+      "${ n } folder and label": [
+        "${ n } map en label",
+        "${ n } mappen en labels"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email-alias",
+        "${ n } hide-my-email-aliassen"
+      ],
+      "${ n } label": [
+        "${ n } label",
+        "${ n } labels"
+      ],
+      "${ n } message per day": [
+        "${ n } bericht per dag",
+        "${ n } berichten per dag"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
+        "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
+      ],
+      "${ n } vault": [
+        "${ n } kluis",
+        "${ n } kluizen"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } gebruikers",
+        "Tot ${ numberOfUsers } gebruikers"
+      ],
+      "${ options }-day file version history": [
+        "Bestandsversiegeschiedenis van ${ options } dag",
+        "Bestandsversiegeschiedenis van ${ options } dag"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + levenslang SimpleLogin"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
+        "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } met onbeperkte hide-my-email-aliassen"
@@ -4090,6 +3962,10 @@
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
+      "High-speed VPN on ${ n } device": [
+        "High-speed VPN op ${ n } apparaat",
+        "High-speed VPN op ${ n } apparaten"
+      ],
       "HTML signatures": [
         "HTML-handtekeningen"
       ],
@@ -4234,8 +4110,20 @@
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
       ],
+      "Up to ${ n } user": [
+        "Tot ${ n } gebruiker",
+        "Tot ${ n } gebruikers"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Tot ${ n } gebruiker (${ adminsText }, ${ usersText })",
+        "Tot ${ n } gebruikers (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gebruik tot maximaal ${ n } apparaat tegelijk",
+        "Gebruik tot maximaal ${ n } apparaten tegelijk"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
@@ -4246,8 +4134,22 @@
       "User storage management": [
         "Beheer gebruikersopslag"
       ],
+      "Vault sharing (up to ${ n } person)": [
+        "Kluis delen (tot ${ n } persoon)",
+        "Kluis delen (tot ${ n } personen)"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } beheerder",
+        "${ admins } beheerders"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "new_plans: heading": {
@@ -4406,6 +4308,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
+        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
@@ -4610,6 +4516,10 @@
       "Central control panel": [
         "Centraal bedieningspaneel"
       ],
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } agenda",
+        "Maak tot ${ n } agenda's"
+      ],
       "Dedicated Account manager": [
         "Toegewezen account manager"
       ],
@@ -4627,6 +4537,10 @@
       ],
       "Require 2FA": [
         "2FA vereist"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Ondersteuning voor ${ n } aangepast e-maildomein",
+        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4700,6 +4614,10 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } gebruikersaccount",
+        "${ n } gebruikersaccounts"
+      ],
       "Activity log": [
         "Activiteitenlog"
       ],
@@ -4819,8 +4737,24 @@
       "terms & conditions": [
         "algemene voorwaarden"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
+        "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elke moment annuleren"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
+        "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
       ],
       "This number will be shown on all future invoices": [
         "Dit nummer zal op alle toekomstige facturen worden getoond."
@@ -5046,6 +4980,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } is nu beschikbaar"
       ],
@@ -5072,6 +5010,12 @@
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Gedeeld door ${ ownerName }"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -5124,6 +5068,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "1 year": [
         "1 jaar"
       ],
@@ -5255,6 +5203,10 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
+        "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
+      ],
       "Your ${ appStorage } is almost full": [
         "Uw ${ appStorage } is bijna vol"
       ],
@@ -5286,6 +5238,32 @@
       ],
       "Billed yearly": [
         "Jaarlijks gefactureerd"
+      ]
+    },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-verbinding per gebruiker",
+        "${ n } gratis VPN-verbindingen per gebruiker"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } supersnelle VPN-verbinding",
+        "${ n } supersnelle VPN-verbindingen"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } supersnelle VPN-verbinding per gebruiker",
+        "${ n } supersnelle VPN-verbindingen per gebruiker"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-verbinding per gebruiker",
+        "${ n } VPN-verbindingen per gebruiker"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN verbinding voor ${ n } apparaat per gebruiker",
+        "VPN verbinding voor ${ n } apparaten per gebruiker"
       ]
     },
     "Subscription change warning": {
@@ -5332,6 +5310,14 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } geeft u alle apps, alle functies, vroegtijdige toegang tot nieuwe releases, en alles wat u nodig heeft om de controle over de veiligheid van de veiligheid te hebben."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
       ],
       "Folders, labels, and custom filters": [
         "Mappen, labels en aangepaste filters"
@@ -5450,9 +5436,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } is nu actief"
-      ],
-      "Account restricted": [
-        "Account beperkt"
       ],
       "Account temporarily locked": [
         "Account tijdelijk geblokkeerd"
@@ -5668,6 +5651,50 @@
         "Beheerders hebben geen toegang tot de gegevens van privégebruikers en kunnen hun wachtwoord niet resetten."
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } apparaat",
+        "${ n } apparaten"
+      ],
+      "${ n } server": [
+        "${ n } server",
+        "${ n }+ servers"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } landen"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries }+ landen"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries } landen"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Selecteert automatisch uit ${ numberOfCountries } land",
+        "Selecteert automatisch uit ${ numberOfCountries } landen"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servers in ${ numberOfCountries }+ land",
+        "Servers in ${ numberOfCountries }+ landen"
+      ]
+    },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
         "Geavanceerde VPN-aanpassingen"
@@ -5682,6 +5709,18 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadres",
+        "${ n } ${ BRAND_NAME } e-mailadressen"
+      ],
+      "${ n } account per wallet": [
+        "${ n } account per portemonnee",
+        "${ n } accounts per portemonnee"
+      ],
+      "${ n } wallet": [
+        "${ n } portemonnee",
+        "${ n } portemonnees"
+      ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],

@@ -4,240 +4,6 @@
     "language": "tr_TR"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } takma ad",
-        "${ aliasCount } takma ad"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } engelleme",
-        "${ blockedCount } engelleme"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } engellendi",
-        "${ blockedEmailsCount } engellendi"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } karakter",
-        "${ config.options.length } karakter"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } sözcük",
-        "${ config.options.wordCount } sözcük"
-      ],
-      "${ count } item": [
-        "${ count } öge",
-        "${ count } öge"
-      ],
-      "${ count } time": [
-        "${ count } kez",
-        "${ count } kez"
-      ],
-      "${ count } view": [
-        "${ count } görüntülenme",
-        "${ count } görüntülenme"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } görüntülenme",
-        "${ count }/${ maxReads } görüntülenme"
-      ],
-      "${ days } day": [
-        "${ days } gün",
-        "${ days } gün"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } dosya",
-        "${ filesCount } dosya"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } iletme",
-        "${ forwardCount } iletme"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } iletildi",
-        "${ forwardedEmailsCount } iletildi"
-      ],
-      "${ hours } hour": [
-        "${ hours } saat",
-        "${ hours } saat"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } üye",
-        "${ memberCount } üye"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } dakika",
-        "${ minutes } dakika"
-      ],
-      "${ months } month": [
-        "${ months } ay",
-        "${ months } ay"
-      ],
-      "${ n } item": [
-        "${ n } öge",
-        "${ n } öge"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } davet gönderildi",
-        "${ payload.count } davet gönderildi"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } yanıt",
-        "${ repliedCount } yanıt"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } gönderildi",
-        "${ repliedEmailsCount } gönderildi"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } güvenli bağlantı",
-        "${ secureLinksCount } güvenli bağlantı"
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } oturum açma kaydı aynı parolayı kullanıyor",
-        "${ total } oturum açma kaydı aynı parolayı kullanıyor"
-      ],
-      "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } gün kaldı",
-        "${ trialDaysLeft } gün kaldı"
-      ],
-      "${ years } year": [
-        "${ years } yıl",
-        "${ years } yıl"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "${ trashedItemsCount } ögeyi çöpe atmak istediğinize emin misiniz?",
-        "${ trashedItemsCount } ögeyi çöpe atmak istediğinize emin misiniz?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "${ deletedItemsCount } ögeyi kalıcı olarak silmek istediğinize emin misiniz?",
-        "${ deletedItemsCount } ögeyi kalıcı olarak silmek istediğinize emin misiniz?"
-      ],
-      "byte": [
-        "bayt",
-        "bayt"
-      ],
-      "Byte": [
-        "Bayt",
-        "Bayt"
-      ],
-      "Cannot send invitation at the moment": [
-        "Davetiye şu anda gönderilemiyor",
-        "Davetiyeler şu anda gönderilemiyor"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "${ deletedItemsCount } öge silinsin mi?",
-        "${ deletedItemsCount } öge silinsin mi?"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } bozuk CSV satırı bulundu",
-        "${ errors.length } bozuk CSV satırı bulundu"
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Güvenlik nedeniyle, bu paylaşılan kasaya erişme iznini onaylamanız gerekiyor",
-        "Güvenlik nedeniyle, bu paylaşılan kasalara erişme iznini onaylamanız gerekiyor"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanır.",
-        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanır."
-      ],
-      "Gigabyte": [
-        "Gigabayt",
-        "Gigabayt"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Öge paylaşımı: ${ itemAccessCount } kullanıcı",
-        "Öge paylaşımı: ${ itemAccessCount } kullanıcı"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Ögelerde ${ share.targetMaxMembers } taneden fazla kullanıcı bulunamaz.",
-        "Ögelerde ${ share.targetMaxMembers } taneden fazla kullanıcı bulunamaz."
-      ],
-      "Kilobyte": [
-        "Kilobayt",
-        "Kilobayt"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "En fazla uzunluk ${ maxLength } karakter",
-        "En fazla uzunluk ${ maxLength } karakter"
-      ],
-      "Megabyte": [
-        "Megabayt",
-        "Megabayt"
-      ],
-      "Move ${ count } item": [
-        "${ count } ögeyi taşı",
-        "${ count } ögeyi taşı"
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count } ögeyi ${ vaultName } kasasına taşı",
-        "${ count } ögeyi ${ vaultName } kasasına taşı"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "${ trashedItemsCount } öge çöpe atılsın mı?",
-        "${ trashedItemsCount } öge çöpe atılsın mı?"
-      ],
-      "Move item to": [
-        "Ögeyi şuraya taşı",
-        "Ögeleri şuraya taşı"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir."
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Takma adın silindikten sonra geri alınamayacağını unutmayın",
-        "Takma adın silindikten sonra geri alınamayacağını unutmayın"
-      ],
-      "Sync alias": [
-        "Takma adı eşitle",
-        "Takma adları eşitle"
-      ],
-      "Terabyte": [
-        "Terabayt",
-        "Terabayt"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Şu ${ totalIgnored } öge içe aktarılamadı:",
-        "Şu ${ totalIgnored } öge içe aktarılamadı:"
-      ],
-      "Understood, I will never need it": [
-        "Anladım. Onu asla kullanmayacağım",
-        "Anladım. Onları asla kullanmayacağım"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Kasa paylaşımı: ${ vaultMembersCount } kullanıcı",
-        "Kasa paylaşımı: ${ vaultMembersCount } kullanıcı"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz.",
-        "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz"
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunu içe aktarmak ister misiniz?",
-        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunları içe aktarmak ister misiniz?"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Seçilmiş ögeyi sürükleyip başka bir kasaya bırakabilirsiniz",
-        "Seçilmiş ögeleri sürükleyip başka bir kasaya bırakabilirsiniz"
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınız var. Bunu eşitlemek ister misiniz?",
-        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınız var. Bunları eşitlemek ister misiniz?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı.",
-        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı."
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
-        "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
-      ]
-    },
     "Action": {
       "Accept": [
         "Kabul et"
@@ -343,9 +109,6 @@
       ],
       "Clear search": [
         "Aramayı temizle"
-      ],
-      "Clone item": [
-        "Ögeyi çoğalt"
       ],
       "Close": [
         "Kapat"
@@ -662,9 +425,6 @@
       "Open web app": [
         "İnternet uygulamasını aç"
       ],
-      "Organize vaults": [
-        "Kasaları düzenle"
-      ],
       "Pass for Android": [
         "Android için Proton Pass"
       ],
@@ -839,6 +599,10 @@
       "Submitting report...": [
         "Rapor gönderiliyor..."
       ],
+      "Sync alias": [
+        "Takma adı eşitle",
+        "Takma adları eşitle"
+      ],
       "Sync aliases": [
         "Takma adları eşitle"
       ],
@@ -862,6 +626,10 @@
       ],
       "Unblock contact": [
         "Kişinin engellemesini kaldır"
+      ],
+      "Understood, I will never need it": [
+        "Anladım. Onu asla kullanmayacağım",
+        "Anladım. Onları asla kullanmayacağım"
       ],
       "Unlock": [
         "Kilidi aç"
@@ -942,6 +710,10 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } ücretli bir tarife kullanılabilir. Hemen erişmek için tarifenizi yükseltin."
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } oturum açma kaydı aynı parolayı kullanıyor",
+        "${ total } oturum açma kaydı aynı parolayı kullanıyor"
       ],
       "A checked box means the feature is disabled.": [
         "Seçeneğin işaretlenmesi özelliğin kapatılmasını sağlar."
@@ -1037,6 +809,10 @@
       "Cannot create alias (${ error }).": [
         "Takma ad oluşturulamadı (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Davetiye şu anda gönderilemiyor",
+        "Davetiyeler şu anda gönderilemiyor"
+      ],
       "Cannot send invitations at the moment": [
         "Şu anda davetiye gönderilemiyor"
       ],
@@ -1084,6 +860,10 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası silinemedi"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } bozuk CSV satırı bulundu",
+        "${ errors.length } bozuk CSV satırı bulundu"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Etki alanı doğrulanamadı. Lütfen doğru DNS kayıtlarını eklediğinizden emin olun"
@@ -1431,6 +1211,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bayt",
+        "bayt"
+      ],
       "GB": [
         "GB"
       ],
@@ -1444,6 +1228,28 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Bayt",
+        "Bayt"
+      ],
+      "Gigabyte": [
+        "Gigabayt",
+        "Gigabayt"
+      ],
+      "Kilobyte": [
+        "Kilobayt",
+        "Kilobayt"
+      ],
+      "Megabyte": [
+        "Megabayt",
+        "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" ögesi yok sayıldı"
@@ -1451,8 +1257,36 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "\"${ payload.itemName }\" güncellemesi yok sayıldı"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } engellendi",
+        "${ blockedEmailsCount } engellendi"
+      ],
+      "${ count } time": [
+        "${ count } kez",
+        "${ count } kez"
+      ],
+      "${ count } view": [
+        "${ count } görüntülenme",
+        "${ count } görüntülenme"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } görüntülenme",
+        "${ count }/${ maxReads } görüntülenme"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } iletildi",
+        "${ forwardedEmailsCount } iletildi"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } sizinle bir öge paylaşmak istiyor."
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } üye",
+        "${ memberCount } üye"
+      ],
+      "${ n } item": [
+        "${ n } öge",
+        "${ n } öge"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } her zaman erişilebilir olacak"
@@ -1487,11 +1321,23 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } geçiş anahtarlarını kaydetmeyi önerecek."
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } davet gönderildi",
+        "${ payload.count } davet gönderildi"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } kullanımdan kaldırıldı"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } kullanıma alındı"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } gönderildi",
+        "${ repliedEmailsCount } gönderildi"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } gün kaldı",
+        "${ trialDaysLeft } gün kaldı"
       ],
       "(Empty)": [
         "(Boş)"
@@ -1805,9 +1651,6 @@
       "Extra password successfully removed": [
         "Ek parola kaldırıldı"
       ],
-      "Failed updating your vault organization": [
-        "Kasa kuruluşunuz güncellenemedi."
-      ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
       ],
@@ -1823,11 +1666,19 @@
       "For security reasons, this action requires identity verification.": [
         "Güvenlik nedeniyle bu işlem için kimliğin doğrulanması gerekir."
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Güvenlik nedeniyle, bu paylaşılan kasaya erişme iznini onaylamanız gerekiyor",
+        "Güvenlik nedeniyle, bu paylaşılan kasalara erişme iznini onaylamanız gerekiyor"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Güvenlik nedeniyle erişiminizin onaylanması gerekiyor"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "İletme adresi panoya kopyalandı. Bu adrese gönderilen e-postaları ${ Email } adresi alır."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanır.",
+        "Oluşturulan parolalar ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hafta süreyle saklanır."
       ],
       "Generating alias...": [
         "Takma ad üretiliyor..."
@@ -1895,6 +1746,10 @@
       "Item restored": [
         "Öge geri yüklendi"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Öge paylaşımı: ${ itemAccessCount } kullanıcı",
+        "Öge paylaşımı: ${ itemAccessCount } kullanıcı"
+      ],
       "Item successfully excluded from monitoring": [
         "Öge izlemeye katılmayacak"
       ],
@@ -1942,6 +1797,10 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Bir parola yöneticisinden daha fazlası. ${ PASS_APP_NAME } parolalarınızı ve takma e-posta adresleri ile e-posta adresinizi korur. ${ MAIL_APP_NAME } ile aynı teknolojiyi kullandığından, verileriniz uçtan uca şifreleme ile korunur ve yalnızca sizin tarafınızdan erişilebilir."
+      ],
+      "Move ${ count } item": [
+        "${ count } ögeyi taşı",
+        "${ count } ögeyi taşı"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
@@ -2008,6 +1867,10 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Parola ile kilitleme kullanıma alındı. ${ PASS_APP_NAME } uygulamasının kilidini açmak için kullanabilirsiniz"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir.",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } haftadan eski parolalar geçmişten otomatik olarak silinir."
       ],
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
@@ -2285,6 +2148,10 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } kullanmak için ek parola gerekir. ${ BRAND_NAME } parolanıza ek bir parola olarak kullanılır."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Şu ${ totalIgnored } öge içe aktarılamadı:",
+        "Şu ${ totalIgnored } öge içe aktarılamadı:"
+      ],
       "The secure link has been removed": [
         "Güvenli bağlantı kaldırıldı"
       ],
@@ -2390,9 +2257,6 @@
       "Update login": [
         "Oturum açma kaydını güncelle"
       ],
-      "Updating vault organization...": [
-        "Kasa kuruluşu güncelleniyor..."
-      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını yükselt"
       ],
@@ -2420,8 +2284,9 @@
       "Vault \"${ share.content.name }\" was removed": [
         "\"${ share.content.name }\" kasası kaldırıldı"
       ],
-      "Vault organization successfully updated": [
-        "Kasa kuruluşu güncellendi"
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Kasa paylaşımı: ${ vaultMembersCount } kullanıcı",
+        "Kasa paylaşımı: ${ vaultMembersCount } kullanıcı"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -2431,6 +2296,10 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Verileri yerel depolamanızla eşitlerken sorun çıktı. ${ PASS_SHORT_APP_NAME } uygulamasının sorunsuz çalışması için lütfen yeterli boş disk alanınızın olduğundan emin olun."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunu içe aktarmak ister misiniz?",
+        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınızın olduğunu bulduk. Bunları içe aktarmak ister misiniz?"
       ],
       "Week": [
         "Hafta"
@@ -2455,6 +2324,14 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınız var. Bunu eşitlemek ister misiniz?",
+        "SimpleLogin üzerinde bulunan ancak ${ PASS_APP_NAME } üzerinde bulunmayan ${ aliasCount } takma adınız var. Bunları eşitlemek ister misiniz?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı.",
+        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Abonelik tarifenizin izin verdiği kasa sayısını aştınız. Yeni ögeler yalnızca ilk iki kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için abonelik tarifenizi yükseltin."
@@ -2515,14 +2392,66 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } takma ad",
+        "${ aliasCount } takma ad"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } engelleme",
+        "${ blockedCount } engelleme"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } karakter",
+        "${ config.options.length } karakter"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } sözcük",
+        "${ config.options.wordCount } sözcük"
+      ],
+      "${ count } item": [
+        "${ count } öge",
+        "${ count } öge"
+      ],
+      "${ days } day": [
+        "${ days } gün",
+        "${ days } gün"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } iletme",
+        "${ forwardCount } iletme"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "Son 14 günde ${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }."
+      ],
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
+      ],
+      "${ months } month": [
+        "${ months } ay",
+        "${ months } ay"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } izleyici"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } sürümü"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } yanıt",
+        "${ repliedCount } yanıt"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } güvenli bağlantı",
+        "${ secureLinksCount } güvenli bağlantı"
+      ],
+      "${ years } year": [
+        "${ years } yıl",
+        "${ years } yıl"
       ],
       "1 hour": [
         "1 saat"
@@ -3097,6 +3026,9 @@
       "Network": [
         "Ağ"
       ],
+      "New": [
+        "Yeni"
+      ],
       "New email": [
         "Yeni e-posta"
       ],
@@ -3560,6 +3492,14 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } öge",
+        "${ count } öge"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Seçilmiş ögeyi sürükleyip başka bir kasaya bırakabilirsiniz",
+        "Seçilmiş ögeleri sürükleyip başka bir kasaya bırakabilirsiniz"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "Bu kasada ${ semiboldText } seçtiniz."
       ]
@@ -3607,6 +3547,10 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "\"${ filename }\" yüklemek için çok büyük. İzin verilen en büyük boyut (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } dosya",
+        "${ filesCount } dosya"
       ],
       "Attachments": [
         "Ek dosyalar"
@@ -3919,6 +3863,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Etki alanı doğrulandı. Etki alanınızla e-posta almaya ve takma adlar oluşturmaya başlayabilirsiniz"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Ögelerde ${ share.targetMaxMembers } taneden fazla kullanıcı bulunamaz.",
+        "Ögelerde ${ share.targetMaxMembers } taneden fazla kullanıcı bulunamaz."
+      ],
       "Mailbox change successfully cancelled": [
         "E-posta kutusu değişikliği iptal edildi"
       ],
@@ -3936,6 +3884,10 @@
       ],
       "Random prefix generation successfully enabled": [
         "Rastgele ön ek oluşturma özelliği açıldı"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz.",
+        "Kasalarda ${ targetMaxMembers } taneden fazla kullanıcı bulunamaz"
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Doğrulama e-postası gönderildi. Lütfen e-posta kutusunu doğrulamak için gelen kutunuza bakın"
@@ -4037,6 +3989,10 @@
       "Default Display Name": [
         "Varsayılan görüntülenecek ad"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "${ deletedItemsCount } öge silinsin mi?",
+        "${ deletedItemsCount } öge silinsin mi?"
+      ],
       "Delete domain": [
         "Etki alanını sil"
       ],
@@ -4109,9 +4065,6 @@
       "Grant permissions": [
         "İzinleri ver"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Gizli kasalar arama ve otomatik doldurma sırasında görüntülenmez."
-      ],
       "Hide my email": [
         "Hide my email"
       ],
@@ -4166,6 +4119,14 @@
       "Modified": [
         "Değiştirilme"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "${ count } ögeyi ${ vaultName } kasasına taşı",
+        "${ count } ögeyi ${ vaultName } kasasına taşı"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount } öge çöpe atılsın mı?",
+        "${ trashedItemsCount } öge çöpe atılsın mı?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Tüm ögeler \"${ vaultName }\" kasasına taşınsın mı?"
       ],
@@ -4183,9 +4144,6 @@
       ],
       "No shared secure links": [
         "Paylaşılan bir güvenli bağlantı yok"
-      ],
-      "Organize vaults": [
-        "Kasaları düzenle"
       ],
       "Our welcome gift to you": [
         "Karşılama hediyemiz"
@@ -4210,6 +4168,10 @@
       ],
       "Pinned (${ items.length })": [
         "Sabitlenmiş (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Takma adın silindikten sonra geri alınamayacağını unutmayın",
+        "Takma adın silindikten sonra geri alınamayacağını unutmayın"
       ],
       "Random Prefix Generation": [
         "Rastgele ön ek oluşturma"
@@ -4330,11 +4292,10 @@
       ],
       "Your welcome gift": [
         "Karşılama hediyeniz"
-      ]
-    },
-    "Title_cloned_item": {
-      "copy": [
-        "kopyala"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
+        "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4368,6 +4329,12 @@
         "Adres geçersiz"
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "Ögeyi şuraya taşı",
+        "Ögeleri şuraya taşı"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } parolası gereklidir"
@@ -4395,6 +4362,14 @@
       ],
       "An error occurred while resuming your session": [
         "Oturumunuz sürdürülürken bir sorun çıktı"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount } ögeyi çöpe atmak istediğinize emin misiniz?",
+        "${ trashedItemsCount } ögeyi çöpe atmak istediğinize emin misiniz?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "${ deletedItemsCount } ögeyi kalıcı olarak silmek istediğinize emin misiniz?",
+        "${ deletedItemsCount } ögeyi kalıcı olarak silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Bu ögeyi kalıcı olarak silmek istediğinize emin misiniz?"
@@ -4467,6 +4442,10 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Kuruluş dışından e-posta adreslerinin davet edilmesine izin verilmiyor."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "En fazla uzunluk ${ maxLength } karakter",
+        "En fazla uzunluk ${ maxLength } karakter"
       ],
       "Missing alias prefix": [
         "Takma ad ön eki eksik"

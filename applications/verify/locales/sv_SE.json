@@ -4,80 +4,6 @@
     "language": "sv_SE"
   },
   "contexts": {
-    "": {
-      "${ n } custom email domain": [
-        "${ n } anpassad e-postdomän",
-        "${ n } anpassade e-postdomäner"
-      ],
-      "${ n } email address": [
-        "${ n } e-postadress",
-        "${ n } e-postadresser/alias"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-postadress per användare",
-        "${ n } e-postadresser per användare"
-      ],
-      "${ n } filter": [
-        "${ n } filter",
-        "${ n } filter"
-      ],
-      "${ n } folder": [
-        "${ n } mapp",
-        "${ n } mappar"
-      ],
-      "${ n } folder and label": [
-        "${ n } mapp och etikett",
-        "${ n } mappar och etiketter"
-      ],
-      "${ n } label": [
-        "${ n } etikett",
-        "${ n } etiketter"
-      ],
-      "${ n } message per day": [
-        "${ n } meddelande per dag",
-        "${ n } meddelanden per dag"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dagars filversionshistorik",
-        "${ options }-dagars filversionshistorik"
-      ],
-      "byte": [
-        "byte",
-        "byte"
-      ],
-      "Byte": [
-        "Byte",
-        "Byte"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabyte"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobyte"
-      ],
-      "Megabyte": [
-        "Kilobyte",
-        "Megabyte"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken",
-        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Stöd för ${ n } anpassad e-postdomän",
-        "Stöd för ${ n } anpassade e-postdomäner"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabyte"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
-        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
-      ]
-    },
     "Action": {
       "Authenticate": [
         "Autentisera"
@@ -1017,6 +943,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "byte"
+      ],
       "GB": [
         "GB"
       ],
@@ -1028,6 +958,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Kilobyte",
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Font face option": {
@@ -1235,6 +1187,42 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
+      ],
+      "${ n } custom email domain": [
+        "${ n } anpassad e-postdomän",
+        "${ n } anpassade e-postdomäner"
+      ],
+      "${ n } email address": [
+        "${ n } e-postadress",
+        "${ n } e-postadresser/alias"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-postadress per användare",
+        "${ n } e-postadresser per användare"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filter"
+      ],
+      "${ n } folder": [
+        "${ n } mapp",
+        "${ n } mappar"
+      ],
+      "${ n } folder and label": [
+        "${ n } mapp och etikett",
+        "${ n } mappar och etiketter"
+      ],
+      "${ n } label": [
+        "${ n } etikett",
+        "${ n } etiketter"
+      ],
+      "${ n } message per day": [
+        "${ n } meddelande per dag",
+        "${ n } meddelanden per dag"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dagars filversionshistorik",
+        "${ options }-dagars filversionshistorik"
       ],
       "${ size } attachment size": [
         "${ size } bilagestorlek"
@@ -1502,6 +1490,10 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Öka ditt lagringsutrymme till totalt ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Stöd för ${ n } anpassad e-postdomän",
+        "Stöd för ${ n } anpassade e-postdomäner"
       ]
     },
     "Placeholder": {
@@ -1575,6 +1567,16 @@
       ],
       "Two-factor authentication": [
         "Tvåfaktorsautentisering"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken",
+        "Lösenord måste innehålla minst ${ MIN_PASSWORD_LENGTH } tecken"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
       ]
     }
   }
