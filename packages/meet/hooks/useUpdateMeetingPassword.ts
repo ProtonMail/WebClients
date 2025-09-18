@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useApi } from '@proton/components';
+import type { SessionKey } from '@proton/crypto';
 import { updateMeetingPasswordCall } from '@proton/shared/lib/api/meet';
 import type { CreateMeetingResponse, CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import { srpGetVerify } from '@proton/shared/lib/srp';
@@ -25,7 +26,7 @@ export const useUpdateMeetingPassword = () => {
     }: {
         meetingId: string;
         password: string;
-        sessionKey: Uint8Array<ArrayBuffer>;
+        sessionKey: SessionKey;
         customPassword: CustomPasswordState;
         salt?: string;
     }) => {

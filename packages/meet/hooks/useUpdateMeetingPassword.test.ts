@@ -85,7 +85,7 @@ describe('useUpdateMeetingPassword', () => {
         const meeting = await result.current.updateMeetingPassword({
             meetingId,
             password,
-            sessionKey,
+            sessionKey: { data: sessionKey, algorithm: 'aes256' },
             customPassword: CustomPasswordState.NO_PASSWORD,
         });
 

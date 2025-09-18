@@ -41,9 +41,12 @@ describe('useUpdateMeetingName', () => {
 
         const { result } = renderHook(() => useUpdateMeetingName());
 
-        const meeting = await result.current.updateMeetingName(meetingId, meetingName, sessionKey);
+        const meeting = await result.current.updateMeetingName(meetingId, meetingName, {
+            data: sessionKey,
+            algorithm: 'aes256',
+        });
 
-        expect(encryptMeetingName).toHaveBeenCalledWith(meetingName, sessionKey);
+        expect(encryptMeetingName).toHaveBeenCalledWith(meetingName, { data: sessionKey, algorithm: 'aes256' });
 
         expect(mockApi).toHaveBeenCalledWith(
             expect.objectContaining({

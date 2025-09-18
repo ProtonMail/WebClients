@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useApi } from '@proton/components';
+import type { SessionKey } from '@proton/crypto';
 import { updateMeetingNameCall } from '@proton/shared/lib/api/meet';
 import type { CreateMeetingResponse } from '@proton/shared/lib/interfaces/Meet';
 
@@ -12,7 +13,7 @@ export const useUpdateMeetingName = () => {
 
     const reportMeetError = useMeetErrorReporting();
 
-    const updateMeetingName = async (meetingId: string, meetingName: string, sessionKey: Uint8Array<ArrayBuffer>) => {
+    const updateMeetingName = async (meetingId: string, meetingName: string, sessionKey: SessionKey) => {
         try {
             const encryptedMeetingName = await encryptMeetingName(meetingName, sessionKey);
 
