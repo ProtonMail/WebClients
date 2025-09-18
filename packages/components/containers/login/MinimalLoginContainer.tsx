@@ -237,7 +237,7 @@ const TwoFactorStep = ({ onSubmit, fido2, authTypes, cancelButton }: TwoFactorSt
             value={tabIndex}
             onChange={setTabIndex}
             tabs={[
-                authTypes.fido2 &&
+                authTypes.twoFactor.fido2 &&
                     fido2 && {
                         title: c('fido2: Label').t`Security key`,
                         content: (
@@ -248,7 +248,7 @@ const TwoFactorStep = ({ onSubmit, fido2, authTypes, cancelButton }: TwoFactorSt
                             />
                         ),
                     },
-                authTypes.totp && {
+                authTypes.twoFactor.totp && {
                     title: c('Label').t`Authenticator app`,
                     content: (
                         <TOTPForm
@@ -391,7 +391,6 @@ interface Props {
     hasChallenge?: boolean;
     ignoreUnlock?: boolean;
     onStartAuth: () => Promise<void>;
-    fido2Support?: boolean;
 }
 
 const MinimalLoginContainer = ({
@@ -401,7 +400,6 @@ const MinimalLoginContainer = ({
     ignoreUnlock = false,
     needHelp,
     footer,
-    fido2Support,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
@@ -488,7 +486,6 @@ const MinimalLoginContainer = ({
                                 password,
                                 api: silentApi,
                                 ignoreUnlock,
-                                fido2Support,
                                 persistent: false,
                                 setupVPN: false,
                                 ktActivation: KeyTransparencyActivation.DISABLED,
