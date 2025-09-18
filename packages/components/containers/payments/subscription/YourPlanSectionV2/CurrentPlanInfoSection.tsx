@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike, Pill } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { TrialInfoModal } from '@proton/components/containers/referral/components/TrialInfo/TrialInfo';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import {
     type Subscription,
@@ -12,10 +14,12 @@ import {
     hasCustomCycle,
     hasVPNPassBundle,
     isManagedExternally,
+    isTrial,
 } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
+import { useFlag } from '@proton/unleash';
 
 import { useSubscriptionModal } from '../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../constants';
@@ -41,6 +45,30 @@ interface CurrentPlanInfoSectionProps {
     editBillingCycle?: boolean;
 }
 
+const TrialInfoBadge = ({ subscription }: { subscription: Subscription }) => {
+    const [modalProps, setModal, renderModal] = useModalState();
+    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
+
+    if (!isReferralExpansionEnabled || !isTrial(subscription)) {
+        return null;
+    }
+
+    return (
+        <>
+            <button
+                onClick={() => setModal(true)}
+                type="button"
+                className="relative interactive-pseudo-protrude rounded"
+            >
+                <Pill className="text-semibold" backgroundColor="#C9EBFF" color="#023856" rounded="rounded-sm">{c(
+                    'Info'
+                ).t`Free trial`}</Pill>
+            </button>
+            {renderModal && <TrialInfoModal {...modalProps} />}
+        </>
+    );
+};
+
 const PlanNameSection = ({
     app,
     user,
@@ -62,7 +90,8 @@ const PlanNameSection = ({
     const topLine = (
         <>
             <span>{getPlanTitlePlusMaybeBrand(planTitle, planName)}</span>
-            <span className="text-normal">{billingCycleElement}</span>
+            <span className="text-normal mr-2">{billingCycleElement}</span>
+            <TrialInfoBadge subscription={subscription} />
         </>
     );
 
