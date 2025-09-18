@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
+import Badge from '@proton/components/components/badge/Badge';
 import Icon, { type IconName } from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Meter from '@proton/components/components/progress/Meter';
@@ -34,6 +35,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
@@ -83,6 +85,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     const isPassB2bPlan = getIsPassB2BPlan(planName);
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [learnMoreModalProps, setLearnMoreModal, renderLearnMoreModal] = useModalState();
+    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
 
     const space = getSpace(user);
 
@@ -99,8 +102,8 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         return null;
     }
 
-    // Hide this panel for trial case, but not for B2B trials
-    if (subscription && isTrial(subscription) && !isB2BTrial) {
+    // Hide this panel for legacy trial case, but not for B2B trials
+    if (subscription && isTrial(subscription) && !isB2BTrial && !isReferralExpansionEnabled) {
         return null;
     }
 
@@ -413,6 +416,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     const planTitleElement = (
         <h2 className="h3 m-0 pt-0 pb-1">
             <strong data-testid="plan-name">{planTitle}</strong>
+            {isTrial(subscription) && <Badge type="success" className="ml-1">{c('Info').t`Free trial`}</Badge>}
         </h2>
     );
 
@@ -435,6 +439,20 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         );
     })();
 
+    const trialInfo = (() => {
+        if (!isTrial(subscription)) {
+            return null;
+        }
+
+        const formattedPeriodEndDate = (
+            <Time format="PPP" key="period-end" data-testid="period-end">
+                {subscription?.PeriodEnd}
+            </Time>
+        );
+
+        return <p className="color-weak mt-1">{c('Info').jt`Ends on ${formattedPeriodEndDate}`}</p>;
+    })();
+
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     // In walletEA, we only show Visionary as the suggested plan, but if the user has that, there's no point in exploring other plans
@@ -455,6 +473,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
                 // after between the last button and the border
                 className={clsx(!showActionButtons && 'p-6 pb-1')}
             >
+                {trialInfo}
                 {b2bTrialLearnMore}
                 {(() => {
                     if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
