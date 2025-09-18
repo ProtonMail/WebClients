@@ -110,6 +110,9 @@
       "Clear search": [
         "Limpar pesquisa"
       ],
+      "Clone item": [
+        "Clonar item"
+      ],
       "Close": [
         "Fechar"
       ],
@@ -241,6 +244,12 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Do not show again": [
+        "Não mostrar novamente"
+      ],
+      "Do not show again when I press": [
+        "Não mostrar novamente quando eu pressionar"
       ],
       "Do not show on this website": [
         "Não mostrar nesse site"
@@ -424,6 +433,9 @@
       ],
       "Open web app": [
         "Abra o aplicativo web"
+      ],
+      "Organize vaults": [
+        "Organizar cofres"
       ],
       "Pass for Android": [
         "Pass para Android"
@@ -1651,6 +1663,9 @@
       "Extra password successfully removed": [
         "A senha adicional foi removida."
       ],
+      "Failed updating your vault organization": [
+        "Falha ao atualizar o cofre da sua organização"
+      ],
       "Fill in the CSV with your data": [
         "Preencha o CSV com seus dados"
       ],
@@ -1992,6 +2007,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mantenha esta janela aberta enquanto seus dados estão sendo importados. Este processo pode demorar alguns minutos."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Certifique-se de que a janela ativa anterior é onde você quer usar o preenchimento automático e de que seu cursor estava focado no campo de início de sessão."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Uma vez excluído, o alias não pode ser restaurado. Talvez você queira desabilitar o alias em vez disso?"
       ],
@@ -2260,6 +2278,9 @@
       "Update login": [
         "Atualizar início de sessão"
       ],
+      "Updating vault organization...": [
+        "Atualizando o cofre da organização..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Faça o upgrade do ${ PASS_APP_NAME }"
       ],
@@ -2286,6 +2307,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "O cofre \"${ share.content.name }\" foi removido"
+      ],
+      "Vault organization successfully updated": [
+        "Cofre da organização atualizado com sucesso"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Cofres compartilhados: ${ vaultMembersCount } membro",
@@ -2357,6 +2381,12 @@
       "You may close this tab.": [
         "Você pode fechar esta guia."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Pode ser necessário aceitar um aviso de permissão e reiniciar o aplicativo, a depender de seu sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Pode ser necessário conceder permissão de acessibilidade a ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Você precisa de um cofre com permissão de edição antes de importar itens."
       ],
@@ -2392,6 +2422,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Sua organização exige que você proteja seu acesso ao ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3028,9 +3066,6 @@
       ],
       "Network": [
         "Rede"
-      ],
-      "New": [
-        "Novo"
       ],
       "New email": [
         "Novo e-mail"
@@ -4068,6 +4103,9 @@
       "Grant permissions": [
         "Conceder permissões"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Cofres ocultos não serão visíveis durante a pesquisa e o preenchimento automático."
+      ],
       "Hide my email": [
         "Ocultar meu e-mail"
       ],
@@ -4148,6 +4186,9 @@
       "No shared secure links": [
         "Nenhum link seguro compartilhado"
       ],
+      "Organize vaults": [
+        "Organizar cofres"
+      ],
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"
       ],
@@ -4162,6 +4203,9 @@
       ],
       "Pending access to the shared data": [
         "Acesso pendente para compartilhar os dados."
+      ],
+      "Perform autotype?": [
+        "Executar preenchimento automático?"
       ],
       "Permanently remove all items?": [
         "Remover permanentemente todos os itens?"
@@ -4299,6 +4343,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Você está prestes a excluir permanentemente ${ aliasCount } alias.",
         "Você está prestes a excluir permanentemente ${ aliasCount } aliases."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copiar"
       ]
     },
     "Today icon tooltip in mini calendar": {

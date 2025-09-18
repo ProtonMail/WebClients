@@ -110,6 +110,9 @@
       "Clear search": [
         "検索をクリア"
       ],
+      "Clone item": [
+        "アイテムを複製"
+      ],
       "Close": [
         "閉じる"
       ],
@@ -241,6 +244,12 @@
       ],
       "Dismiss": [
         "却下"
+      ],
+      "Do not show again": [
+        "今後表示しない"
+      ],
+      "Do not show again when I press": [
+        "押したときに次回から表示しない"
       ],
       "Do not show on this website": [
         "このウェブサイトには表示しない"
@@ -424,6 +433,9 @@
       ],
       "Open web app": [
         "ウェブアプリを開く"
+      ],
+      "Organize vaults": [
+        "保管庫を整理"
       ],
       "Pass for Android": [
         "Android 版 Pass"
@@ -1630,6 +1642,9 @@
       "Extra password successfully removed": [
         "追加のパスワードが正常に削除されました"
       ],
+      "Failed updating your vault organization": [
+        "保管庫組織の更新に失敗しました"
+      ],
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
       ],
@@ -1963,6 +1978,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "データのインポート中は、このウィンドウを開いたままにしてください。この処理には数分かかる場合があります。"
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "以前にアクティブだったウィンドウがオートタイプを実行したい場所であり、お客様のカーソルがログインフィールドにフォーカスされていることをご確認ください。"
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "一度削除したエイリアスは復元できません。代わりにエイリアスを無効にしますか？"
       ],
@@ -2230,6 +2248,9 @@
       "Update login": [
         "ログインを更新"
       ],
+      "Updating vault organization...": [
+        "保管庫の組織を更新中…"
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } をアップグレードします"
       ],
@@ -2256,6 +2277,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "保管庫「${ share.content.name }」が削除されました"
+      ],
+      "Vault organization successfully updated": [
+        "保管庫の組織を更新しました"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "保管庫共有中： ${ vaultMembersCount } 人のメンバー"
@@ -2323,6 +2347,12 @@
       "You may close this tab.": [
         "このタブを閉じても構いません。"
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "お客様のシステムによっては、許可を求めるプロンプトを承認し、アプリを再起動していただく必要がある場合があります。"
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } にアクセシビリティ権限を付与する必要がある場合があります。"
+      ],
       "You need a vault with edit permission before you can import items.": [
         "アイテムをインポートするには、編集権限のある保管庫が必要です。"
       ],
@@ -2358,6 +2388,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2981,9 +3019,6 @@
       ],
       "Network": [
         "ネットワーク"
-      ],
-      "New": [
-        "新しい"
       ],
       "New email": [
         "新しいメール"
@@ -4015,6 +4050,9 @@
       "Grant permissions": [
         "権限を付与する"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "非表示の保管庫は、検索および自動入力中は表示されません。"
+      ],
       "Hide my email": [
         "メールを非表示にする"
       ],
@@ -4093,6 +4131,9 @@
       "No shared secure links": [
         "共有セキュアリンクはありません"
       ],
+      "Organize vaults": [
+        "保管庫を整理する"
+      ],
       "Our welcome gift to you": [
         "あなたへのウェルカムギフト"
       ],
@@ -4107,6 +4148,9 @@
       ],
       "Pending access to the shared data": [
         "共有データへのアクセスが保留中です"
+      ],
+      "Perform autotype?": [
+        "オートタイプを実行しますか？"
       ],
       "Permanently remove all items?": [
         "全てのアイテムを完全に削除しますか？"
@@ -4242,6 +4286,11 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount }個のエイリアスを完全に削除しようとしています。"
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "コピー"
       ]
     },
     "Today icon tooltip in mini calendar": {
