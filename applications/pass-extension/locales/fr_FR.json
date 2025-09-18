@@ -110,6 +110,9 @@
       "Clear search": [
         "Effacer la recherche"
       ],
+      "Clone item": [
+        "Cloner l'élément"
+      ],
       "Close": [
         "Fermer"
       ],
@@ -241,6 +244,12 @@
       ],
       "Dismiss": [
         "Annuler"
+      ],
+      "Do not show again": [
+        "Ne plus afficher ce message"
+      ],
+      "Do not show again when I press": [
+        "Ne plus afficher lorsque j'appuie"
       ],
       "Do not show on this website": [
         "Ne pas afficher sur ce site internet"
@@ -424,6 +433,9 @@
       ],
       "Open web app": [
         "Ouvrir l’application web"
+      ],
+      "Organize vaults": [
+        "Organiser les coffres-forts"
       ],
       "Pass for Android": [
         "Pass pour Android"
@@ -1651,6 +1663,9 @@
       "Extra password successfully removed": [
         "Le mot de passe supplémentaire a été retiré."
       ],
+      "Failed updating your vault organization": [
+        "La mise à jour de votre organisation de coffre-fort n'a pas abouti"
+      ],
       "Fill in the CSV with your data": [
         "Remplir le fichier CSV avec vos données"
       ],
@@ -1992,6 +2007,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Veuillez garder cette fenêtre ouverte pendant l'importation de vos données. Ce processus peut prendre quelques minutes."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Veuillez vous assurer que la fenêtre précédemment active est celle où vous souhaitez effectuer la saisie automatique et que votre curseur était positionné sur le champ identifiant."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Une fois supprimé, l'alias ne pourra pas être restauré. Voulez-vous plutôt le désactiver ?"
       ],
@@ -2260,6 +2278,9 @@
       "Update login": [
         "Mettre à jour l'identifiant"
       ],
+      "Updating vault organization...": [
+        "Mise à jour de l'organisation du coffre-fort..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Mettre à jour ${ PASS_APP_NAME }"
       ],
@@ -2286,6 +2307,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Le coffre-fort « ${ share.content.name } » a été retiré."
+      ],
+      "Vault organization successfully updated": [
+        "L'organisation du coffre-fort a été mise à jour avec succès."
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Partage de coffres-forts : ${ vaultMembersCount } utilisateur",
@@ -2357,6 +2381,9 @@
       "You may close this tab.": [
         "Vous pouvez fermer cet onglet."
       ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Vous devrez peut-être accorder l'autorisation d'accessibilité à ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Vous devez disposer d'un coffre-fort avec des droits de modification pour importer des éléments."
       ],
@@ -2392,6 +2419,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "MAJ"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3028,9 +3063,6 @@
       ],
       "Network": [
         "Réseau"
-      ],
-      "New": [
-        "Nouveau"
       ],
       "New email": [
         "Nouvelle adresse e-mail"
@@ -4068,6 +4100,9 @@
       "Grant permissions": [
         "Accordez les autorisations"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Les coffres-forts cachés ne seront pas visibles lors de la recherche et du remplissage automatique."
+      ],
       "Hide my email": [
         "Masquer mon e-mail"
       ],
@@ -4148,6 +4183,9 @@
       "No shared secure links": [
         "Aucun lien sécurisé partagé"
       ],
+      "Organize vaults": [
+        "Organiser les coffres-forts"
+      ],
       "Our welcome gift to you": [
         "Notre cadeau de bienvenue"
       ],
@@ -4162,6 +4200,9 @@
       ],
       "Pending access to the shared data": [
         "En attente d'accès aux données partagées"
+      ],
+      "Perform autotype?": [
+        "Effectuer la saisie automatique ?"
       ],
       "Permanently remove all items?": [
         "Voulez-vous retirer définitivement tous les éléments ?"
@@ -4299,6 +4340,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias.",
         "Vous êtes sur le point de supprimer définitivement ${ aliasCount } alias."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copier"
       ]
     },
     "Today icon tooltip in mini calendar": {

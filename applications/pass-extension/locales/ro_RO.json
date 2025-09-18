@@ -110,6 +110,9 @@
       "Clear search": [
         "Golire căutare"
       ],
+      "Clone item": [
+        "Clonare articol"
+      ],
       "Close": [
         "Închidere"
       ],
@@ -424,6 +427,9 @@
       ],
       "Open web app": [
         "Deschidere aplicație web"
+      ],
+      "Organize vaults": [
+        "Organizare seifuri"
       ],
       "Pass for Android": [
         "Proton Pass pentru Android"
@@ -1672,6 +1678,9 @@
       "Extra password successfully removed": [
         "Parola suplimentară s-a eliminat."
       ],
+      "Failed updating your vault organization": [
+        "Nu s-a putut actualiza organizarea seifului."
+      ],
       "Fill in the CSV with your data": [
         "Completați fișierul CSV cu datele necesare."
       ],
@@ -2284,6 +2293,9 @@
       "Update login": [
         "Actualizare autentificare"
       ],
+      "Updating vault organization...": [
+        "Se actualizează organizarea seifului..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Modificare ${ PASS_APP_NAME }"
       ],
@@ -2310,6 +2322,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Seiful „${ share.content.name }” a fost șters."
+      ],
+      "Vault organization successfully updated": [
+        "Organizarea seifului a fost actualizată cu succes."
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Partajare seif: ${ vaultMembersCount } membru",
@@ -3069,9 +3084,6 @@
       ],
       "Network": [
         "Rețea"
-      ],
-      "New": [
-        "Nou"
       ],
       "New email": [
         "E-mail nou"
@@ -4115,6 +4127,9 @@
       "Grant permissions": [
         "Acordare permisiuni"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Seifurile ascunse nu vor fi vizibile în timpul căutării și autocompletării."
+      ],
       "Hide my email": [
         "Ascundere adresă e-mail"
       ],
@@ -4196,6 +4211,9 @@
       ],
       "No shared secure links": [
         "Nu există legături web partajate"
+      ],
+      "Organize vaults": [
+        "Organizare seifuri"
       ],
       "Our welcome gift to you": [
         "Cadoul nostru de bun venit"
@@ -4350,6 +4368,11 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copiere"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -110,6 +110,9 @@
       "Clear search": [
         "Zoekveld leegmaken"
       ],
+      "Clone item": [
+        "Item klonen"
+      ],
       "Close": [
         "Sluiten"
       ],
@@ -424,6 +427,9 @@
       ],
       "Open web app": [
         "Web-app openen"
+      ],
+      "Organize vaults": [
+        "Kluizen organiseren"
       ],
       "Pass for Android": [
         "Proton Pass voor Android"
@@ -1651,6 +1657,9 @@
       "Extra password successfully removed": [
         "Extra wachtwoord succesvol verwijderd"
       ],
+      "Failed updating your vault organization": [
+        "Het updaten van uw kluisorganisatie is mislukt."
+      ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
       ],
@@ -2260,6 +2269,9 @@
       "Update login": [
         "Update login"
       ],
+      "Updating vault organization...": [
+        "Kluisorganisatie updaten..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Upgrade ${ PASS_APP_NAME }"
       ],
@@ -2286,6 +2298,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Kluis \"${ share.content.name }\" werd verwijderd"
+      ],
+      "Vault organization successfully updated": [
+        "Kluisorganisatie succesvol bijgewerkt"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Kluis delen: ${ vaultMembersCount } lid",
@@ -3028,9 +3043,6 @@
       ],
       "Network": [
         "Netwerk"
-      ],
-      "New": [
-        "Nieuw"
       ],
       "New email": [
         "Nieuwe e-mail"
@@ -4068,6 +4080,9 @@
       "Grant permissions": [
         "Toestemmingen verlenen"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Verborgen kluizen zullen niet zichtbaar zijn tijdens zoeken en automatisch aanvullen."
+      ],
       "Hide my email": [
         "Verberg mijn e-mail"
       ],
@@ -4147,6 +4162,9 @@
       ],
       "No shared secure links": [
         "Geen gedeelde beveiligde links"
+      ],
+      "Organize vaults": [
+        "Kluizen organiseren"
       ],
       "Our welcome gift to you": [
         "Ons welkomstgeschenk voor u"
@@ -4299,6 +4317,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
         "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "kopieer"
       ]
     },
     "Today icon tooltip in mini calendar": {
