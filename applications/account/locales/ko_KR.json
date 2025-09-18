@@ -2056,12 +2056,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험이 종료된 후, ${ formattedDate }에 ${ renewCycle }개월마다 자동 갱신되는 유료 구독으로 전환됩니다. ${ formattedDate } 이전에 취소시 요금이 부과되지 않습니다."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매월 ${ formattedDate }에 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
       ],
@@ -6214,9 +6208,6 @@
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "SMTP 제출 토큰을 생성하려면 사용자 지정 도메인 주소가 있어야 합니다."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "최대 메시지 글자수 도달. 메시지의 글자 수를 줄여보세요."
       ],
@@ -6234,11 +6225,6 @@
       ],
       "ZIP code is required": [
         "우편번호가 필요합니다"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "활동을 확인할 사용자를 선택하세요"
       ]
     },
     "Error importing calendar": {
@@ -8322,9 +8308,6 @@
       ],
       "active": [
         "활성화"
-      ],
-      "Activity Monitor": [
-        "활동 모니터링"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "계정에 @pm.me 이메일 주소를 추가해 보세요. 더 간단하고 짧은 이 도메인은 \"${ MAIL_APP_NAME } me\" 또는 \"Private Message me\"를 의미합니다."
@@ -17410,9 +17393,6 @@
       "Account safety review": [
         "계정 안전 검토"
       ],
-      "Add a email address": [
-        "이메일 주소 추가"
-      ],
       "Add a phone number": [
         "휴대전화 번호 추가"
       ],
@@ -20466,6 +20446,9 @@
       ],
       "Account recovery": [
         "계정 복구"
+      ],
+      "Account restricted": [
+        "계정 제한됨"
       ],
       "Account suspended": [
         "계정이 정지되었습니다."

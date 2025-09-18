@@ -2062,11 +2062,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Une fois la version d'essai terminée le ${ formattedDate }, elle deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "En cliquant sur « Essayer », vous acceptez nos ${ termsAndConditions }."
@@ -6251,8 +6251,8 @@
       "You must set a name": [
         "Vous devez définir un nom."
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Vous devez disposer d'une adresse de domaine personnalisée pour générer un jeton de soumission SMTP."
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "Vous devez disposer d'une adresse de domaine personnalisée active pour générer un jeton de soumission SMTP."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Vous avez atteint le nombre maximum de caractères. Vous devez raccourcir votre message."
@@ -6271,11 +6271,6 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Sélectionnez les utilisateurs pour afficher leurs activités."
       ]
     },
     "Error importing calendar": {
@@ -8405,6 +8400,9 @@
       "Account successfully updated": [
         "Le compte a été mis à jour."
       ],
+      "Accounts": [
+        "Comptes"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activez au moins une méthode de récupération des données pour vous assurer que vous pourrez continuer à accéder au contenu de votre compte ${ BRAND_NAME } si vous perdez votre mot de passe."
       ],
@@ -8413,9 +8411,6 @@
       ],
       "active": [
         "active"
-      ],
-      "Activity Monitor": [
-        "Surveillance des activités"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Ajoutez une adresse e-mail @pm.me à votre compte. Ce domaine simple et court signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
@@ -9885,6 +9880,9 @@
       "Organization monitor": [
         "Surveillance des organisations"
       ],
+      "Organization Monitor": [
+        "Surveillance des organisations"
+      ],
       "Organization size": [
         "Taille de l’organisation"
       ],
@@ -10194,6 +10192,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Sélectionnez les affiliations des utilisateurs de ${ getFormattedOrganization } que vous souhaitez autoriser dans votre organisation ${ BRAND_NAME } :"
       ],
+      "Select users to view their activity": [
+        "Sélectionnez les utilisateurs pour afficher leurs activités."
+      ],
       "Select what you want to import.": [
         "Sélectionnez ce que vous voulez importer."
       ],
@@ -10281,6 +10282,9 @@
       ],
       "Show original message": [
         "Afficher le message d'origine"
+      ],
+      "Sign in only": [
+        "Connexion uniquement"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Connectez-vous à ${ MAIL_APP_NAME } pour activer votre adresse."
@@ -12446,6 +12450,9 @@
       "Emails (last month)": [
         "Messages (mois dernier)"
       ],
+      "Emails categories": [
+        "Catégories d'e-mails"
+      ],
       "Enabled": [
         "Activé"
       ],
@@ -12745,6 +12752,9 @@
       ],
       "Notification": [
         "Notification"
+      ],
+      "Notification email address": [
+        "Adresse e-mail de notification"
       ],
       "Notifications": [
         "Notifications"
@@ -13171,6 +13181,9 @@
     "label": {
       "Device-based recovery": [
         "Récupération depuis l'appareil"
+      ],
+      "Notification phone number": [
+        "Numéro de téléphone de notification"
       ],
       "Recovery phone number": [
         "Numéro de téléphone de récupération"
@@ -17687,9 +17700,6 @@
       "Account safety review": [
         "Vérification de sécurité du compte"
       ],
-      "Add a email address": [
-        "Ajouter une adresse e-mail"
-      ],
       "Add a phone number": [
         "Ajouter un numéro de téléphone"
       ],
@@ -17701,6 +17711,9 @@
       ],
       "Add a recovery phone number": [
         "Ajouter un numéro de téléphone de récupération"
+      ],
+      "Add an alternative email address": [
+        "Ajouter une adresse e-mail alternative"
       ],
       "Add an email": [
         "Ajouter une adresse e-mail"
@@ -17732,8 +17745,14 @@
       "Disable recovery by email": [
         "Désactiver la récupération par e-mail"
       ],
+      "Disable recovery by email ": [
+        "Désactiver la récupération par e-mail "
+      ],
       "Disable recovery by phone": [
         "Désactiver la récupération par téléphone"
+      ],
+      "Disable recovery by phone ": [
+        "Désactiver la récupération par téléphone "
       ],
       "Download ${ size }": [
         "Télécharger ${ size }"
@@ -17767,6 +17786,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Si vous perdez vos informations de connexion et devez réinitialiser votre compte, **vous devez** avoir à la fois **une méthode de récupération de données et une méthode de récupération de compte**. Dans le cas contraire, vous pourriez ne pas pouvoir accéder à vos courriels, contacts, fichiers ou mots de passe."
+      ],
+      "in case we need to contact you": [
+        "au cas où nous aurions besoin de vous contacter"
       ],
       "Invalid code": [
         "Le code n’est pas valide."
@@ -17819,23 +17841,20 @@
       "to automatically recover your data when you log into a trusted device": [
         "pour récupérer automatiquement vos données lorsque vous vous connectez à un appareil de confiance."
       ],
-      "to ensure highest possible security of your account": [
-        "pour garantir la sécurité maximale de votre compte"
-      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Pour vérifier que l'adresse e-mail vous appartient, saisissez le code de vérification envoyé à ${ boldEmail }."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Pour vérifier que le numéro de téléphone vous appartient, saisissez le code de vérification envoyé à ${ boldPhoneNumber }."
       ],
+      "to prevent attackers from taking over your account": [
+        "pour empêcher les attaquants de prendre le contrôle de votre compte"
+      ],
       "to recover your account and data if you're ever locked out": [
         "pour récupérer votre compte et vos données si vous n'avez plus accès à votre compte."
       ],
       "to recover your account if you're ever locked out": [
         "pour récupérer votre compte si vous n'avez plus accès à ce dernier."
-      ],
-      "To stay in touch": [
-        "Pour rester en contact"
       ],
       "Update your Recovery Kit": [
         "Mettre à jour le kit de récupération"
@@ -17905,6 +17924,12 @@
       ],
       "You have recommended actions.": [
         "Vous avez des actions recommandées."
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Votre e-mail de récupération pourrait être utilisé à mauvais escient par des attaquants pour prendre le contrôle de votre compte. ${ disableEmail } pour renforcer la sécurité de votre compte."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Votre téléphone de récupération pourrait être utilisé à mauvais escient par des attaquants pour prendre le contrôle de votre compte. ${ disablePhone } pour renforcer la sécurité de votre compte."
       ],
       "You will no longer be able to use this address to reset your account.": [
         "Vous ne pourrez plus utiliser cette adresse pour réinitialiser votre compte."
@@ -20834,6 +20859,9 @@
       "Account recovery": [
         "Récupération du compte"
       ],
+      "Account restricted": [
+        "Compte restreint"
+      ],
       "Account suspended": [
         "Compte suspendu"
       ],
@@ -22463,6 +22491,9 @@
       "Edit label names": [
         "Modifiez les noms des labels."
       ],
+      "Emails in your inbox are shown organized into categories": [
+        "Les e-mails dans votre boite de réception sont affichés organisés par catégories"
+      ],
       "Enable/disable desktop and mobile notifications": [
         "Activez ou désactivez les notifications mobiles et de bureau."
       ],
@@ -22579,6 +22610,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Cela peut être dû à une réinitialisation du mot de passe ou au fait que l'utilisateur ne s'est pas encore connecté."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Cette adresse e-mail ne peut être utilisée que pour vous connecter à votre compte ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Tous les membres de l'organisation pourront voir cette adresse e-mail lors d'opérations de gestion de compte."

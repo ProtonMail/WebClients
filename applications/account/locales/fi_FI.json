@@ -214,8 +214,14 @@
       "Cancel": [
         "Peruuta"
       ],
+      "Cancel request": [
+        "Peruuta pyyntö"
+      ],
       "Cancel subscription": [
         "Peru tilaus"
+      ],
+      "Cancel trial and pay": [
+        "Peruuta kokeilujakso ja maksa"
       ],
       "Change": [
         "Muuta"
@@ -469,6 +475,9 @@
       "Delete “${ label.Name }”": [
         "Poista \"${ label.Name }\""
       ],
+      "Deleting folder": [
+        "Poistetaan kansiota"
+      ],
       "Deleting label": [
         "Tunnisteen poistaminen"
       ],
@@ -525,6 +534,12 @@
       ],
       "Download CSV sample": [
         "Lataa CSV-näyte"
+      ],
+      "Download for macOS": [
+        "Lataa macOS:lle"
+      ],
+      "Download for Windows": [
+        "Lataa Windowsille"
       ],
       "Download ICS": [
         "Lataa ICS-tiedosto"
@@ -1353,6 +1368,9 @@
       ],
       "Spam": [
         "Roskaposti"
+      ],
+      "Start free trial": [
+        "Aloita ilmainen kokeilu"
       ],
       "Start import": [
         "Aloita tuonti"
@@ -2694,8 +2712,16 @@
       "Limited daily chats": [
         "Rajoitetut päivittäiset keskustelut"
       ],
+      "Open source": [
+        "Avoin lähdekoodi"
+      ],
       "Web search access": [
         "Verkkohakuun pääsy"
+      ]
+    },
+    "collider_2025: Navigation": {
+      "Back to conversations": [
+        "Takaisin keskusteluihin"
       ]
     },
     "color": {
@@ -4431,6 +4457,14 @@
         "Windows 8/8.1/7 tai Windows 32-bit (ARM64)"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb Debianille/Ubuntulle"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm Fedoralle/Red Hatille"
+      ]
+    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Luo ilmainen ${ DRIVE_APP_NAME } -tili päästäksesi tiedostoon turvallisesti käsiksi"
@@ -5051,6 +5085,12 @@
       "Add emergency contact": [
         "Lisää hätäyhteyshenkilö"
       ],
+      "Added on ${ formattedDate }": [
+        "Lisätty ${ formattedDate }"
+      ],
+      "Change wait time": [
+        "Muuta odotusaikaa"
+      ],
       "Disabled": [
         "ei käytössä"
       ],
@@ -5072,11 +5112,17 @@
       "Less than a day": [
         "Alle päivä"
       ],
+      "Less than a minute left": [
+        "Alle minuutti jäljellä"
+      ],
       "None": [
         "Ei määritetty"
       ],
       "Only ": [
         "Vain "
+      ],
+      "People I trust": [
+        "Henkilöt, joihin luotan"
       ],
       "Refuse access": [
         "Evää käyttöoikeus"
@@ -5105,6 +5151,9 @@
       ],
       "View request": [
         "Näytä pyyntö"
+      ],
+      "Wait time": [
+        "Odotusaika"
       ],
       "You are signed in to the account ${ account }.": [
         "Olet kirjautunut tunnuksella ${ account }."
@@ -5469,6 +5518,9 @@
       "Please enter a valid ZIP code": [
         "Syötä kelvollinen postinumero"
       ],
+      "Please enter postal code": [
+        "Syötä postinumerosi"
+      ],
       "Please enter ZIP code": [
         "Syötä postinumero"
       ],
@@ -5725,9 +5777,6 @@
       ],
       "You must set a name": [
         "Nimi on asetettava"
-      ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Sinulla on oltava oma verkkotunnus, jotta voit luoda SMTP-lähetystunnisteen."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Olet saavuttanut merkkien enimmäismäärän. Lyhennä viestiäsi."
@@ -6787,6 +6836,11 @@
         "Ilmainen työpöytäsovelluksen kokeilujaksosi on päättynyt"
       ]
     },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } App Storessa"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Automaattiohjaa"
@@ -6911,6 +6965,9 @@
       ],
       "Device": [
         "Laite"
+      ],
+      "Domain": [
+        "Verkkotunnus"
       ],
       "Enter your email address": [
         "Syötä sähköpostiosoitteesi"
@@ -7567,8 +7624,14 @@
         "${ n } osoite",
         "${ n } osoitetta"
       ],
+      "${ name } for Android": [
+        "${ name } Androidille"
+      ],
       "${ name } for GNU/Linux": [
         "${ name } GNU/Linuxille"
+      ],
+      "${ name } for iOS": [
+        "${ name } iOS:lle"
       ],
       "${ name } for macOS": [
         "${ name } macOS:lle"
@@ -7674,6 +7737,12 @@
       ],
       "${ storage } storage": [
         "${ storage } tallennustilaa"
+      ],
+      "${ url } added.": [
+        "${ url } lisättiin."
+      ],
+      "${ url } deleted.": [
+        "${ url } poistettiin."
       ],
       "${ userFound } user found": [
         "Löytyi ${ userFound } käyttäjä",
@@ -8348,6 +8417,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
       ],
+      "Download current logs": [
+        "Lataa nykyiset lokitiedot"
+      ],
       "Download on the App Store": [
         "Lataa App Storesta"
       ],
@@ -8998,6 +9070,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
       ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
+      ],
       "Medium Priority": [
         "Keskitason tärkeys"
       ],
@@ -9338,6 +9413,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Hinta sisältää kaikki tilillesi tallennetut soveltuvat tilausjaksopohjaiset alennukset sekä etukoodit."
+      ],
+      "Private AI assistant": [
+        "Yksityinen tekoälyavustaja"
       ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
@@ -11322,6 +11400,9 @@
       "Backup password": [
         "Varasalasana"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing cycle": [
         "Laskutusjakso"
       ],
@@ -11501,6 +11582,9 @@
       ],
       "Days of the week": [
         "Viikonpäivät"
+      ],
+      "Default email address": [
+        "Oletussähköpostiosoite"
       ],
       "Default language": [
         "Oletuskieli"
@@ -12042,6 +12126,9 @@
       "Reveal password": [
         "Näytä salasana"
       ],
+      "Reward": [
+        "Palkkio"
+      ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
@@ -12050,6 +12137,9 @@
       ],
       "Second password": [
         "Toinen salasana"
+      ],
+      "Select Linux package format": [
+        "Valitse Linux-paketin muoto"
       ],
       "Select Linux platform": [
         "Valitse Linux-alusta"
@@ -13395,6 +13485,9 @@
       "${ size } storage per user": [
         "${ size } tallennustilaa/käyttäjä"
       ],
+      "1 TB secure storage": [
+        "1 Tt suojattua tallennustilaa"
+      ],
       "1 user": [
         "1 käyttäjä"
       ],
@@ -13618,6 +13711,9 @@
       "Private photo backup": [
         "Yksityinen kuvien varmuuskopiointi"
       ],
+      "Quickly craft replies": [
+        "Laadi vastauksia nopeasti"
+      ],
       "Recover previous file versions": [
         "Palauta aiempia tiedostoversioita"
       ],
@@ -13678,6 +13774,9 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
+      ],
+      "Support for up to 2 users": [
+        "Tuki jopa kahdelle käyttäjälle"
       ],
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
@@ -14784,11 +14883,17 @@
       "It's too expensive": [
         "Se on liian kallis"
       ],
+      "Label as...": [
+        "Merkitse tunnisteella..."
+      ],
       "Left to Right": [
         "Vasemmalta oikealle"
       ],
       "Mark as read": [
         "Merkitse luetuksi"
+      ],
+      "Move to...": [
+        "Siirrä..."
       ],
       "My reason isn't listed": [
         "Syytäni ei ole listattu"
@@ -15581,6 +15686,9 @@
       "More plans are available in other currencies": [
         "Lisää palvelupaketteja on saatavilla muissa valuutoissa"
       ],
+      "Offer unavailable": [
+        "Tarjous ei ole saatavilla"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Aktivoi tilauksesi uudelleen, ennen kuin voit vähentää lisäosien määrää."
       ],
@@ -15592,6 +15700,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
+      ],
+      "Taxes": [
+        "Verot"
       ],
       "terms & conditions": [
         "käyttöehdot"
@@ -15620,6 +15731,12 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
+      ],
+      "VAT": [
+        "ALV"
+      ],
+      "VAT number": [
+        "ALV-numero"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "${ amountToCharge } veloitetaan valitsemaltasi maksutavalta."
@@ -15662,8 +15779,23 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Lisää ABN"
+      ],
+      "Add EIN": [
+        "Lisää EIN"
+      ],
+      "Add VAT number": [
+        "Lisää ALV-numero"
+      ],
       "Business Number": [
         "Yritystunnus"
+      ],
+      "Edit Business Number": [
+        "Muokkaa yritystunnusta"
+      ],
+      "Edit VAT number": [
+        "Muokkaa ALV-numeroa"
       ],
       "EIN": [
         "EIN"
@@ -15825,6 +15957,9 @@
       ],
       "Select a reason": [
         "Valitse syy"
+      ],
+      "Select country": [
+        "Valitse maa"
       ],
       "Select state": [
         "Valitse osavaltio"
@@ -16094,6 +16229,9 @@
     "RecoveryPhrase: Title": {
       "Save your Recovery Kit": [
         "Tallenna palautuspakettisi"
+      ],
+      "Save your recovery phrase": [
+        "Tallenna palautuslauseesi"
       ]
     },
     "Remark about a key type option": {
@@ -16173,6 +16311,9 @@
       "Delete": [
         "Poista"
       ],
+      "Delete rule": [
+        "Poista sääntö"
+      ],
       "Delete this scope": [
         "Poista tämä viitealue"
       ],
@@ -16208,6 +16349,9 @@
       ],
       "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
         "Luo organisaatiosi tietojensäilytyskäytännön mukaiset säilytyssäännöt. Käynnistää myös vanhentuneen tiedon automaattisen poiston."
+      ],
+      "Forever": [
+        "Ikuisesti"
       ]
     },
     "retention_policy_2025_Label": {
@@ -16218,19 +16362,43 @@
         "päivän",
         "päivän"
       ],
+      "Keep items forever": [
+        "Säilytä kohteet ikuisesti"
+      ],
+      "Keep messages forever": [
+        "Säilytä viestit ikuisesti"
+      ],
       "Select product": [
         "Valitse tuote"
+      ],
+      "Set a duration": [
+        "Aseta kesto"
       ]
     },
     "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Organisaation kaikki jäsenet"
+      ],
       "Group": [
         "Ryhmä"
+      ],
+      "Purge deleted messages only": [
+        "Tyhjennä vain poistetut viestit"
+      ],
+      "Specific users or groups": [
+        "Tietyt käyttäjät tai ryhmät"
       ],
       "User": [
         "Käyttäjä"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "Enter duration": [
+        "Syötä kesto"
+      ],
+      "Enter value": [
+        "Syötä arvo"
+      ],
       "Search policies": [
         "Hae käytäntöjä"
       ]
@@ -16297,11 +16465,17 @@
       "Device-based recovery enabled": [
         "Laitepohjainen palautus otettiin käyttöön"
       ],
+      "Disable recovery by phone": [
+        "Poista palautus puhelimitse käytöstä"
+      ],
       "Download ${ size }": [
         "Lataa ${ size }"
       ],
       "Download your Recovery Kit": [
         "Lataa palautuspakettisi"
+      ],
+      "Email address": [
+        "Sähköpostiosoite"
       ],
       "Enable device-based recovery": [
         "Käytä laitepohjaista palautusta"
@@ -16455,6 +16629,9 @@
       ],
       "Your account is secure.": [
         "Tilisi on suojattu."
+      ],
+      "Your email is set": [
+        "Sähköpostiosoitteesi on asetettu"
       ],
       "Your recovery email": [
         "Palautusosoitteesi"
@@ -17350,6 +17527,9 @@
       "Up to 6 users": [
         "Enintään 6 käyttäjää"
       ],
+      "Upload files of any size": [
+        "Lataa minkä tahansa kokoisia tiedostoja"
+      ],
       "Use your own email domain": [
         "Käytä omaa sähköpostiverkkotunnusta"
       ],
@@ -17592,11 +17772,17 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Selaa turvallisesti"
+      ],
       "Get unlimited aliases": [
         "Hanki aliaksia rajattomasti"
       ],
       "Go to subscription plans": [
         "Siirry tilauksiin"
+      ],
+      "Guard against threats": [
+        "Suojaudu uhilta"
       ],
       "Increase your storage": [
         "Lisää tallennustilaasi"
@@ -19187,6 +19373,9 @@
       "Account recovery": [
         "Tilin palautus"
       ],
+      "Account restricted": [
+        "Tiliä on rajoitettu"
+      ],
       "Account suspended": [
         "Tili on jäädytetty"
       ],
@@ -19779,6 +19968,12 @@
       "Folders and labels": [
         "Kansiot ja tunnisteet"
       ],
+      "For Linux": [
+        "Linuxille"
+      ],
+      "For Windows": [
+        "Windowsille"
+      ],
       "Forgot password": [
         "Unohtunut salasana"
       ],
@@ -20268,6 +20463,9 @@
       ],
       "Set up a recovery method": [
         "Määritä palautustapa"
+      ],
+      "Set up authenticator app": [
+        "Määritä todennussovellus"
       ],
       "Set up email forwarding": [
         "Määritä sähköpostin ohjaus"
@@ -20779,6 +20977,9 @@
       ],
       "Not all information listed here was exposed for all users.": [
         "Kaikkia tässä lueteltuja tietoja ei paljastettu kaikille käyttäjille."
+      ],
+      "Origin IP address": [
+        "Alkuperäinen IP-osoite"
       ],
       "Remove metadata from images to protect your privacy.": [
         "Poista kuvien metatiedot suojataksesi yksityisyyttäsi."
@@ -21296,6 +21497,9 @@
     "Users table: badge": {
       "Administrators can't access the data of private users": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin"
+      ],
+      "Authenticator app": [
+        "Todennussovellus"
       ],
       "Inactive": [
         "Inaktiivinen"

@@ -4651,6 +4651,11 @@
         "Windows 8/8.1/7 atau Windows 32-bit (ARM64)"
       ]
     },
+    "Download link": {
+      ".rpm for Fedora / Red Hat": [
+        ".rpm untuk Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Buat akun ${ DRIVE_APP_NAME } gratis untuk mengakses berkas ini secara aman"
@@ -6138,9 +6143,6 @@
       "You must set a name": [
         "Anda harus mengatur nama"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Anda harus memiliki alamat domain khusus untuk dapat menghasilkan token submisi SMTP."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Anda telah mencapai batas jumlah karakter yang diperkenankan. Silakan persingkat isi pesan Anda."
       ],
@@ -6158,11 +6160,6 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Pilih pengguna yang aktivitasnya ingin ditampilkan"
       ]
     },
     "Error importing calendar": {
@@ -8230,9 +8227,6 @@
       "active": [
         "aktif"
       ],
-      "Activity Monitor": [
-        "Monitor Aktivitas"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
       ],
@@ -8997,6 +8991,9 @@
       ],
       "Failed to fetch logs.": [
         "Log gagal diperoleh."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Cepat dan terfokus. Email dan kalender, langsung di desktop Anda."
       ],
       "Featured in": [
         "Terliput di"
@@ -12911,6 +12908,9 @@
       "Device-based recovery": [
         "Pemulihan berbasis perangkat"
       ],
+      "Notification phone number": [
+        "Nomor telepon notifikasi"
+      ],
       "Recovery phone number": [
         "Nomor telepon pemulihan"
       ],
@@ -16327,6 +16327,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Diperbarui seharga ${ renewPriceStr }, batalkan kapan saja."
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Maaf, penawaran ini tidak tersedia dengan paket Anda saat ini."
+      ],
       "Taxes": [
         "Pajak"
       ],
@@ -17424,6 +17427,9 @@
       ],
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Anda sebelumnya telah mengunduh Kit Pemulihan. Mengunduh yang baru akan **menonaktifkan yang lama**."
+      ],
+      "You have recommended actions to safeguard your account further.": [
+        "Anda memiliki tindakan yang disarankan untuk melindungi akun Anda lebih jauh."
       ],
       "You have recommended actions.": [
         "Anda memiliki tindakan yang disarankan."
@@ -20262,6 +20268,9 @@
       ],
       "Account recovery": [
         "Pemulihan akun"
+      ],
+      "Account restricted": [
+        "Akun dibatasi"
       ],
       "Account suspended": [
         "Akun ditangguhkan"

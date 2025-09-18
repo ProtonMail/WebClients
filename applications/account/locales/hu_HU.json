@@ -5654,9 +5654,6 @@
       "You must set a name": [
         "Meg kell adnia egy nevet"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "SMTP küldési token létrehozásához, saját domain névvel kell rendelkeznie."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Elérte a használható karakterek korlátját. Kérjük, rövidítse le az üzenetet."
       ],
@@ -5674,11 +5671,6 @@
       ],
       "ZIP code is required": [
         "Irányítószám szükséges"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Felhasználók kiválasztása a tevékenységük megtekintéséhez"
       ]
     },
     "Error importing calendar": {
@@ -7728,9 +7720,6 @@
       ],
       "active": [
         "aktív"
-      ],
-      "Activity Monitor": [
-        "Tevékenység figyelő"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"${ MAIL_APP_NAME } nekem\", vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal"
@@ -19141,6 +19130,9 @@
       ],
       "Account recovery": [
         "Fiók helyreállítás"
+      ],
+      "Account restricted": [
+        "Fiók korlátozva"
       ],
       "Account suspended": [
         "Fiók felfüggesztve"

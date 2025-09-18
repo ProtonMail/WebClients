@@ -1915,10 +1915,10 @@
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
       "Use your own email domain": [
-        "Użyj własnej domeny e-mail"
+        "Użyj własnej domeny"
       ],
       "years": [
-        "lata"
+        "lat"
       ]
     },
     "anniversary_2025: offer": {
@@ -2038,9 +2038,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Klikając „Wypróbuj”, zgadzasz się na nasze ${ termsAndConditions }."
       ],
@@ -6105,9 +6102,6 @@
       "You must set a name": [
         "Musisz wpisać nazwę"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Aby wygenerować token SMTP, musisz posiadać adres niestandardowej domeny."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Osiągnięto maksymalną liczbę znaków. Skróć wiadomość."
       ],
@@ -6125,11 +6119,6 @@
       ],
       "ZIP code is required": [
         "Kod pocztowy jest wymagany"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Wybierz użytkowników, aby wyświetlić ich aktywność"
       ]
     },
     "Error importing calendar": {
@@ -6496,7 +6485,7 @@
         "Odrzuć zaproszenie"
       ],
       "Got it": [
-        "OK"
+        "Ok"
       ],
       "Invite a user": [
         "Zaproś użytkownika"
@@ -8316,9 +8305,6 @@
       ],
       "active": [
         "aktywna"
-      ],
-      "Activity Monitor": [
-        "Monitor aktywności"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Dodaj adres @pm.me do swojego konta. To prostsza i krótsza domena dla skrótu \"${ MAIL_APP_NAME } me\" lub \"Private Message me.\""
@@ -15485,7 +15471,7 @@
         "Płać rocznie i uzyskaj najlepszą ofertę"
       ],
       "Save": [
-        "Oszczędź"
+        "Zaoszczędź"
       ],
       "Save big when you pay annually": [
         "Zaoszczędź więcej przy płatności rocznej"
@@ -20818,6 +20804,9 @@
       ],
       "Account recovery": [
         "Odzyskiwanie konta"
+      ],
+      "Account restricted": [
+        "Konto zostało ograniczone"
       ],
       "Account suspended": [
         "Konto zostało zawieszone"
