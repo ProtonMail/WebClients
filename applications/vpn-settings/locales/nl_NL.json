@@ -1361,12 +1361,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Door op \"Proberen\" te klikken, gaat u akkoord met onze ${ termsAndConditions }."
       ],
@@ -4053,11 +4047,6 @@
         "Postcode is vereist"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Selecteer gebruikers om hun activiteit te bekijken."
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Er is een fout opgetreden tijdens het lezen van uw bestand ${ formattedFilename }. Onjuiste bestandsindeling."
@@ -5597,9 +5586,6 @@
       ],
       "active": [
         "actief"
-      ],
-      "Activity Monitor": [
-        "Activiteitenmonitor"
       ],
       "add a recovery method": [
         "een herstelmethode toe voegt"
@@ -13551,6 +13537,9 @@
       ],
       "Account": [
         "Account"
+      ],
+      "Account restricted": [
+        "Account beperkt"
       ],
       "Account suspended": [
         "Account opgeschort"
