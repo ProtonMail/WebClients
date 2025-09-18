@@ -63,7 +63,7 @@ function DetailsRow({ label, children, dataTestId }: RowProps) {
     return (
         <Row>
             <span className="label cursor-default">{label}</span>
-            <div className="pt-2" data-testid={dataTestId}>
+            <div className="pt-2 text-break" data-testid={dataTestId}>
                 <b>{children}</b>
             </div>
         </Row>
