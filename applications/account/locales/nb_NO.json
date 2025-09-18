@@ -2062,11 +2062,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Ved å klikke på \"Prøv\", sier du deg enig med våre ${ termsAndConditions }."
@@ -6251,8 +6251,8 @@
       "You must set a name": [
         "Du må angi et navn"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Du trenger å ha en egendefinert domeneadresse for å generere et SMTP-innsendingstoken."
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "Du trenger å ha en aktiv egendefinert domeneadresse for å generere et SMTP-innsendingstoken."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Du har nådd det maksimale tegntallet. Forkort meldingen."
@@ -6271,11 +6271,6 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Velg brukere for å se aktiviteten deres"
       ]
     },
     "Error importing calendar": {
@@ -8402,6 +8397,9 @@
       "Account successfully updated": [
         "Konto oppdatert"
       ],
+      "Accounts": [
+        "Kontoer"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktiver minst én datagjenopprettingsmetode for å sikre at du fortsatt har tilgang til innholdet i ${ BRAND_NAME }-kontoen hvis du mister passordet."
       ],
@@ -8410,9 +8408,6 @@
       ],
       "active": [
         "aktiv"
-      ],
-      "Activity Monitor": [
-        "Overvåking av aktivitet"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Legg til en @pm.me e-postadresse til kontoen din. Dette enkle, kortere domene står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding.\""
@@ -9882,6 +9877,9 @@
       "Organization monitor": [
         "Organisasjonsovervåking"
       ],
+      "Organization Monitor": [
+        "Organisasjonsovervåking"
+      ],
       "Organization size": [
         "Organisasjonsstørrelse"
       ],
@@ -10194,6 +10192,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Velg brukertilknytningene fra ${ getFormattedOrganization } som du vil tillate inn i ${ BRAND_NAME }-organisasjonen din:"
       ],
+      "Select users to view their activity": [
+        "Velg brukere for å se aktiviteten deres"
+      ],
       "Select what you want to import.": [
         "Velg hva du ønsker å importere."
       ],
@@ -10281,6 +10282,9 @@
       ],
       "Show original message": [
         "Vis opprinnelig melding"
+      ],
+      "Sign in only": [
+        "Kun pålogging"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logg på ${ MAIL_APP_NAME } for å aktivere din adresse"
@@ -12446,6 +12450,9 @@
       "Emails (last month)": [
         "E-poster (siste måned)"
       ],
+      "Emails categories": [
+        "E-postkategorier"
+      ],
       "Enabled": [
         "Aktivert"
       ],
@@ -12745,6 +12752,9 @@
       ],
       "Notification": [
         "Varsel"
+      ],
+      "Notification email address": [
+        "E-postadresse for varsling"
       ],
       "Notifications": [
         "Varsler"
@@ -13174,6 +13184,9 @@
     "label": {
       "Device-based recovery": [
         "Enhetsbasert gjenoppretting"
+      ],
+      "Notification phone number": [
+        "Telefonnummer for varsling"
       ],
       "Recovery phone number": [
         "Gjenopprettingstelefonnummer"
@@ -17621,9 +17634,6 @@
       "Account safety review": [
         "Gjennomgang av kontosikkerhet"
       ],
-      "Add a email address": [
-        "Legg til en e-postadresse"
-      ],
       "Add a phone number": [
         "Legg til et telefonnummer"
       ],
@@ -17635,6 +17645,9 @@
       ],
       "Add a recovery phone number": [
         "Legg til et gjenopprettingstelefonnummer"
+      ],
+      "Add an alternative email address": [
+        "Legg til en alternativ e-postadresse"
       ],
       "Add an email": [
         "Legg til en e-post"
@@ -17666,8 +17679,14 @@
       "Disable recovery by email": [
         "Deaktiver gjenoppretting via e-post"
       ],
+      "Disable recovery by email ": [
+        "Deaktiver gjenoppretting via e-post "
+      ],
       "Disable recovery by phone": [
         "Deaktiver gjenoppretting via telefon"
+      ],
+      "Disable recovery by phone ": [
+        "Deaktiver gjenoppretting via telefon "
       ],
       "Download ${ size }": [
         "Last ned ${ size }"
@@ -17701,6 +17720,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Hvis du mister påloggingsinformasjonen din og trenger å tilbakestille kontoen din, **er det viktig** at du har både en **kontogjenopprettings- og datagjenopprettingsmetode** på plass, ellers kan det hende du ikke får tilgang til noen av e-postene, kontaktene, filene eller passordene dine."
+      ],
+      "in case we need to contact you": [
+        "i tilfelle vi trenger å kontakte deg"
       ],
       "Invalid code": [
         "Ugyldig kode"
@@ -17753,23 +17775,20 @@
       "to automatically recover your data when you log into a trusted device": [
         "for å automatisk gjenopprette dataene dine når du logger på en pålitelig enhet"
       ],
-      "to ensure highest possible security of your account": [
-        "for å sikre høyest mulig sikkerhet for kontoen din"
-      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "For å være sikker på at e-postadressen er din, skriv inn verifiseringskoden som ble sendt til ${ boldEmail }."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "For å være sikker på at telefonnummeret er ditt, skriv inn verifiseringskoden som ble sendt til ${ boldPhoneNumber }."
       ],
+      "to prevent attackers from taking over your account": [
+        "for å forhindre angripere fra å ta over kontoen din"
+      ],
       "to recover your account and data if you're ever locked out": [
         "for å gjenopprette kontoen og dataene dine hvis du noen gang blir utestengt"
       ],
       "to recover your account if you're ever locked out": [
         "for å gjenopprette kontoen din hvis du noen gang blir utestengt"
-      ],
-      "To stay in touch": [
-        "For å holde kontakten"
       ],
       "Update your Recovery Kit": [
         "Oppdater gjenopprettingssettet ditt"
@@ -17839,6 +17858,12 @@
       ],
       "You have recommended actions.": [
         "Du har anbefalte handlinger."
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Gjenopprettings-e-posten din kan misbrukes av angripere for å ta over kontoen din. ${ disableEmail } for å øke sikkerheten til kontoen."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Gjenopprettingstelefonen kan misbrukes av angripere for å ta over kontoen din. ${ disablePhone } for å øke sikkerheten på kontoen."
       ],
       "You will no longer be able to use this address to reset your account.": [
         "Du vil ikke lenger kunne bruke denne adressen til å tilbakestille kontoen din."
@@ -20760,6 +20785,9 @@
       "Account recovery": [
         "Kontogjenoppretting"
       ],
+      "Account restricted": [
+        "Konto begrenset"
+      ],
       "Account suspended": [
         "Kontoen er suspendert"
       ],
@@ -22389,6 +22417,9 @@
       "Edit label names": [
         "Rediger navn på etiketter"
       ],
+      "Emails in your inbox are shown organized into categories": [
+        "E-poster i innboksen din vises organisert i kategorier"
+      ],
       "Enable/disable desktop and mobile notifications": [
         "Aktivere/deaktivere skrivebord- og mobilvarslinger"
       ],
@@ -22505,6 +22536,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Dette kan være forårsaket av tilbakestilling av passord eller at brukeren ikke logger på enda."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Denne e-postadressen kan bare brukes til å logge på ${ BRAND_NAME }-kontoen din."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Denne e-postadressen vises til alle organisasjonsmedlemmer når de utfører kontoadministrasjonsoperasjoner."

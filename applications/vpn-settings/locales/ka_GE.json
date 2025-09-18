@@ -1254,6 +1254,9 @@
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
       ],
+      "Save big on premium Pass features with a limited-time discount.": [
+        "დაზოგეთ ბევრი Pass-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
+      ],
       "Save big on premium VPN features with a limited-time discount.": [
         "დაზოგეთ ბევრი VPN-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
       ],
@@ -3976,11 +3979,6 @@
         "საფოსტო კოდი აუცილებელია"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "აირჩიეთ მომხმარებლები მატი აქტივობების სანახავად"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "თქვენი ფაილის ${ formattedFilename } წაკითხვისას მოხდა შეცდომა. არასწორი ფაილის ფორმატი."
@@ -5502,11 +5500,11 @@
       "Account successfully updated": [
         "ანგარში წარმატებით განახლდა"
       ],
+      "Accounts": [
+        "ანგარიშები"
+      ],
       "active": [
         "აქტიური"
-      ],
-      "Activity Monitor": [
-        "აქტივობების მონიტორი"
       ],
       "add a recovery method": [
         "აღდგენის მეთოდის დამატება"
@@ -5634,6 +5632,12 @@
       ],
       "Attention required": [
         "საჭიროა ყურადღება"
+      ],
+      "Authenticator app 2FA disabled": [
+        "ავთენტიკატორი აპით 2FA გათიშულია"
+      ],
+      "Authenticator app 2FA enabled": [
+        "ავთენტიკატორი აპით 2FA ჩართულია"
       ],
       "Awaiting transaction": [
         "ტრანზაქციის მოლოდინი"
@@ -6441,6 +6445,9 @@
       "Organization monitor": [
         "ორგანიზაციის მონიტორინგი"
       ],
+      "Organization Monitor": [
+        "ორგანიზაციის მონიტორინგი"
+      ],
       "Organization size": [
         "ორგანიზაციის ზომა"
       ],
@@ -6644,6 +6651,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "აირჩიეთ მომხმარებლის წევრობა ${ getFormattedOrganization }-დან რომელიც გნებავთ, თქვენს ${ BRAND_NAME } ორგანიზაციაში ჩართოთ:"
       ],
+      "Select users to view their activity": [
+        "აირჩიეთ მომხმარებლები მატი აქტივობების სანახავად"
+      ],
       "Select what you want to import.": [
         "მონიშნეთ, რისი შემოტანაც გნებავთ."
       ],
@@ -6698,6 +6708,9 @@
       ],
       "Shared vault updated": [
         "გაზიარებული საცავი განახლდა"
+      ],
+      "Sign in only": [
+        "მხოლოდ შესვლა"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "თქვენი მისამართის გასააქტიურებლად შედით ${ MAIL_APP_NAME }-ში"
@@ -8747,6 +8760,9 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "მიუერთეთ თქვენი დომენი ${ BRAND_NAME }-ს და იქონიეთ ელფოსტის თქვენი მისამართები (მაგ: you@yourcompany.com). ჩვენი დამხმარე მთელს პროცესს გაგატარებთ."
       ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "ნახეთ ${ PASS_APP_NAME }-ის აქტივოვა თქვენს ორგანიზაციაში."
+      ],
       "View user sign-in, recovery and security events.": [
         "ნახეთ მომხმარებლის შესვლები, აღდგენის და უსაფრთხოების მოვლენები."
       ],
@@ -10076,6 +10092,12 @@
       "Once your full subscription starts...": [
         "როცა თქვენი სრული გამოწერა დაიწყება..."
       ],
+      "You can still cancel within 30 days and get a pro-rata refund.": [
+        "გაუქმება შემდეგ 30 დღეში ჯერ კიდევ შეგიძლიათ. თანხა დაგიბრუნდებათ"
+      ],
+      "You can still cancel within 30 days and get a prorated refund.": [
+        "გაუქმება შემდეგ 30 დღეში ჯერ კიდევ შეგიძლიათ. თანხა დაგიბრუნდებათ"
+      ],
       "Your free trial has started": [
         "თქვენი გამოსაცდელი პერიოდი დაიწყო"
       ]
@@ -10584,6 +10606,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "განახლების დრო ${ renewPriceStr }. გააუქმეთ ნებისმიერ დროს."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
       ],
       "Taxes": [
         "გადასახადები"
@@ -13231,6 +13256,9 @@
       "Account": [
         "ანგარიში"
       ],
+      "Account restricted": [
+        "ანგარიში შეზღუდულია"
+      ],
       "Account suspended": [
         "ანგარიში შეჩერებულია"
       ],
@@ -13548,6 +13576,9 @@
       ],
       "Disable two-factor authentication": [
         "2FA-ის გამორთვა"
+      ],
+      "Disable two-factor authentication app?": [
+        "გამოვრთო 2FA აპი?"
       ],
       "Disable two-factor authentication?": [
         "გამოვრთო 2FA?"
@@ -13913,6 +13944,9 @@
       ],
       "Set recovery methods": [
         "აღდგენის მეთოდების დაყენება"
+      ],
+      "Set up authenticator app": [
+        "ავთენტიკატორი აპის მორგება"
       ],
       "Set up email forwarding": [
         "ელფოსტის გადაგზავნის მორგება"
@@ -14573,6 +14607,9 @@
       "Administrators can't access the data of private users": [
         "ადმინისტრატორებს კონფიდენციალური მომხმარებლების მონაცემებთან წვდომა არ აქვთ"
       ],
+      "Authenticator app": [
+        "ავთენტიკატორი აპი"
+      ],
       "Inactive": [
         "არააქტიური"
       ],
@@ -14590,6 +14627,9 @@
       ],
       "Private": [
         "პირადი"
+      ],
+      "Security key": [
+        "უსაფრთხოების გასაღები"
       ],
       "SSO": [
         "SSO"

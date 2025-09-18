@@ -110,6 +110,9 @@
       "Clear search": [
         "Ачысціць пошук"
       ],
+      "Clone item": [
+        "Кланіраваць элемент"
+      ],
       "Close": [
         "Закрыць"
       ],
@@ -241,6 +244,12 @@
       ],
       "Dismiss": [
         "Адхіліць"
+      ],
+      "Do not show again": [
+        "Больш не паказваць"
+      ],
+      "Do not show again when I press": [
+        "Не паказваць зноў, калі я націскаю"
       ],
       "Do not show on this website": [
         "Не паказваць на гэтым вэб-сайце"
@@ -424,6 +433,9 @@
       ],
       "Open web app": [
         "Адкрыць вэб-праграму"
+      ],
+      "Organize vaults": [
+        "Упарадкаваць сховішчы"
       ],
       "Pass for Android": [
         "Pass для Android"
@@ -1693,6 +1705,9 @@
       "Extra password successfully removed": [
         "Дадатковы пароль паспяхова выдалены"
       ],
+      "Failed updating your vault organization": [
+        "Не ўдалося абнавіць вашу арганізацыю сховішча"
+      ],
       "Fill in the CSV with your data": [
         "Запоўніце CSV сваімі данымі"
       ],
@@ -2041,6 +2056,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Пакіньце гэта акно адкрытым падчас імпартавання даных. Гэты працэс можа заняць некалькі хвілін."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Калі ласка, пераканайцеся, што раней актыўнае акно з'яўляецца тым, куды вы хочаце ўвесці дадзеныя аўтаматычна, і ваш курсор быў сфакусаваны на полі ўваходу."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Звярніце ўвагу, што выдалены псеўданім нельга аднавіць. Магчыма, што вы захочаце адключыць яго замест таго, каб выдаляць незваротна?"
       ],
@@ -2311,6 +2329,9 @@
       "Update login": [
         "Абнавіць запіс уваходу"
       ],
+      "Updating vault organization...": [
+        "Абнаўленне арганізацыі сховішча..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Палепшыць ${ PASS_APP_NAME }"
       ],
@@ -2337,6 +2358,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Сховішча \"${ share.content.name }\" было выдалена"
+      ],
+      "Vault organization successfully updated": [
+        "Арганізацыя сховішча паспяхова абноўлена"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Абагуленае сховішча: ${ vaultMembersCount } удзельнік",
@@ -2416,6 +2440,12 @@
       "You may close this tab.": [
         "Вы можаце закрыць гэту ўкладку."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Вам можа спатрэбіцца прыняць запыт на дазвол і, магчыма, перазапусціць праграму ў залежнасці ад вашай сістэмы."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Магчыма, вам спатрэбіцца даць дазвол на даступнасць для ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Вам неабходна сховішча з правамі рэдагавання перад тым, як імпартаваць элементы."
       ],
@@ -2451,6 +2481,11 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3113,9 +3148,6 @@
       ],
       "Network": [
         "Сетка"
-      ],
-      "New": [
-        "Новае"
       ],
       "New email": [
         "Новы ліст"
@@ -4165,6 +4197,9 @@
       "Grant permissions": [
         "Даць дазволы"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Схаваныя сховішчы не будуць бачны падчас пошуку і аўтазапаўненні."
+      ],
       "Hide my email": [
         "Схаваць маю электронную пошту"
       ],
@@ -4249,6 +4284,9 @@
       "No shared secure links": [
         "Няма абагуленых бяспечных спасылак"
       ],
+      "Organize vaults": [
+        "Упарадкаваць сховішчы"
+      ],
       "Our welcome gift to you": [
         "Наш прывітальны падарунак для вас"
       ],
@@ -4263,6 +4301,9 @@
       ],
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
+      ],
+      "Perform autotype?": [
+        "Выканаць аўтаўвод?"
       ],
       "Permanently remove all items?": [
         "Незваротна выдаліць усе элементы?"
@@ -4404,6 +4445,11 @@
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімы.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў.",
         "Вы збіраецеся незваротна выдаліць ${ aliasCount } псеўданімаў."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "скапіяваць"
       ]
     },
     "Today icon tooltip in mini calendar": {

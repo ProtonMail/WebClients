@@ -1355,11 +1355,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }にトライアルが終了すると、${ formattedDate }に${ renewCycle }ヶ月ごとに自動更新される有料のサブスクリプションに移行します。${ formattedDate }までにキャンセルした場合、料金は請求されません。"
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、毎月 ${ formattedDate } に自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "「試す」をクリックすると、${ termsAndConditions } に同意したものとみなされます。"
@@ -2054,7 +2054,7 @@
         "メールアドレス"
       ],
       "First name": [
-        "名"
+        "名前"
       ],
       "Gender": [
         "性別"
@@ -4042,11 +4042,6 @@
         "郵便番号は必須です"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "アクティビティを表示するユーザーを選択します"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。不正なファイル形式です。"
@@ -5535,11 +5530,11 @@
       "Account successfully updated": [
         "アカウントが正常に更新されました。"
       ],
+      "Accounts": [
+        "アカウント"
+      ],
       "active": [
         "アクティブ"
-      ],
-      "Activity Monitor": [
-        "アクティビティモニター"
       ],
       "add a recovery method": [
         "回復手段の追加"
@@ -6489,6 +6484,9 @@
       "Organization monitor": [
         "組織モニター"
       ],
+      "Organization Monitor": [
+        "組織モニター"
+      ],
       "Organization size": [
         "組織規模"
       ],
@@ -6693,6 +6691,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "${ getFormattedOrganization } から ${ BRAND_NAME } 組織に許可したいユーザー所属を選択してください："
       ],
+      "Select users to view their activity": [
+        "アクティビティを表示するユーザーを選択"
+      ],
       "Select what you want to import.": [
         "インポートしたいものを選択してください。"
       ],
@@ -6746,6 +6747,9 @@
       ],
       "Shared vault updated": [
         "共有保管庫が更新されました"
+      ],
+      "Sign in only": [
+        "サインインのみ"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "${ MAIL_APP_NAME } にサインインしてアドレスを有効にしてください"
@@ -11702,7 +11706,7 @@
         "パスワードリセットをキャンセルする"
       ],
       "Cancel request": [
-        "リクエストキャンセル"
+        "リクエストをキャンセル"
       ],
       "Got it": [
         "分かりました"
@@ -13315,6 +13319,9 @@
       "Account": [
         "アカウント"
       ],
+      "Account restricted": [
+        "アカウントが制限されています"
+      ],
       "Account suspended": [
         "アカウントが停止されました"
       ],
@@ -14363,6 +14370,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "これはパスワードのリセットやまだログインしていないユーザーが原因である可能性があります。"
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "このメールアドレスは、お客様の ${ BRAND_NAME } アカウントへのサインインにのみ使用できます。"
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "このメールアドレスはアカウント管理の操作を実行した際に組織メンバー全員に表示されます。"

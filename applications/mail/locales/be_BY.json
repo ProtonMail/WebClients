@@ -441,6 +441,9 @@
       "Disable alias": [
         "Адключыць псеўданім"
       ],
+      "Disable categories": [
+        "Адключыць катэгорыі"
+      ],
       "Disabling alias": [
         "Адключыць псеўданім"
       ],
@@ -773,6 +776,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Далучыцца пры дапамозе ${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "Захоўваць катэгорыі"
       ],
       "Keep my subscription": [
         "Пакінуць падпіску"
@@ -2008,11 +2014,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Падпіска стане платнай і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Падпіска стане платнай і будзе аўтаматычна падаўжацца штомесяц ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_DEDICATED_IPS } вылучаных сервераў на працягу пробнага перыяду."
@@ -6896,6 +6902,9 @@
       "All messages stored with this label will be permanently deleted.": [
         "Усе паведамленні, якія захоўваюцца з гэтай меткай будуць незваротна выдалены."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Усе паведамленні будуць паказвацца ў паштовай скрыні, а ўкладкі катэгорый і тэгі больш не будуць бачныя. "
+      ],
       "All your calendars are disabled.": [
         "Усе вашы календары адключаны."
       ],
@@ -10052,9 +10061,6 @@
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
-      ],
-      "You cannot disable all categories": [
-        "Вы не можаце адключыць усе катэгорыі"
       ],
       "Your alias": [
         "Ваш псеўданім"
@@ -15153,6 +15159,9 @@
       ],
       "Desktop": [
         "Для камп'ютара"
+      ],
+      "Disable categories?": [
+        "Адключыць катэгорыі?"
       ],
       "Discover your subscription benefits": [
         "Пазнаёмцеся з перавагамі вашай падпіскі"

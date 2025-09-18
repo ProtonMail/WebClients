@@ -120,6 +120,9 @@
       "Cancel subscription": [
         "Peru tilaus"
       ],
+      "Cancel trial and pay": [
+        "Peruuta kokeilujakso ja maksa"
+      ],
       "Change": [
         "Muuta"
       ],
@@ -3598,6 +3601,9 @@
       "Please enter a valid ZIP code": [
         "Syötä kelvollinen postinumero"
       ],
+      "Please enter postal code": [
+        "Syötä postinumerosi"
+      ],
       "Please enter ZIP code": [
         "Syötä postinumero"
       ],
@@ -5689,6 +5695,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
       ],
+      "Download current logs": [
+        "Lataa nykyiset lokitiedot"
+      ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
         "Lataa CSV-mallimme ja täytä käyttäjien tiedot, ja luo käyttäjille tilit käyttämällä täytettämääsi CSV-tiedostoa."
       ],
@@ -6116,6 +6125,9 @@
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode -logo"
       ],
+      "Maybe later": [
+        "Ehkä myöhemmin"
+      ],
       "Medium Priority": [
         "Keskitason tärkeys"
       ],
@@ -6347,6 +6359,9 @@
       ],
       "Price includes all applicable cycle-based discounts and non-expired coupons saved to your account.": [
         "Hinta sisältää kaikki tilillesi tallennetut soveltuvat tilausjaksopohjaiset alennukset sekä etukoodit."
+      ],
+      "Private AI assistant": [
+        "Yksityinen tekoälyavustaja"
       ],
       "Protected by Swiss privacy laws": [
         "Sveitsin tietosuojalakien suojaama"
@@ -10254,6 +10269,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
       ],
+      "Taxes": [
+        "Verot"
+      ],
       "terms & conditions": [
         "käyttöehdot"
       ],
@@ -10281,6 +10299,12 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
+      ],
+      "VAT": [
+        "ALV"
+      ],
+      "VAT number": [
+        "ALV-numero"
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "${ amountToCharge } veloitetaan valitsemaltasi maksutavalta."
@@ -10323,8 +10347,23 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Lisää ABN"
+      ],
+      "Add EIN": [
+        "Lisää EIN"
+      ],
+      "Add VAT number": [
+        "Lisää ALV-numero"
+      ],
       "Business Number": [
         "Yritystunnus"
+      ],
+      "Edit Business Number": [
+        "Muokkaa yritystunnusta"
+      ],
+      "Edit VAT number": [
+        "Muokkaa ALV-numeroa"
       ],
       "EIN": [
         "EIN"
@@ -10452,6 +10491,9 @@
       ],
       "Select a reason": [
         "Valitse syy"
+      ],
+      "Select country": [
+        "Valitse maa"
       ],
       "Select state": [
         "Valitse osavaltio"
@@ -10691,6 +10733,9 @@
       "Delete": [
         "Poista"
       ],
+      "Delete rule": [
+        "Poista sääntö"
+      ],
       "Delete this scope": [
         "Poista tämä viitealue"
       ],
@@ -10726,6 +10771,9 @@
       ],
       "Create retention rules for how long to keep data in line with your organization's data retention policy. Also enables the automatic purging of expired data.": [
         "Luo organisaatiosi tietojensäilytyskäytännön mukaiset säilytyssäännöt. Käynnistää myös vanhentuneen tiedon automaattisen poiston."
+      ],
+      "Forever": [
+        "Ikuisesti"
       ]
     },
     "retention_policy_2025_Label": {
@@ -10736,19 +10784,43 @@
         "päivän",
         "päivän"
       ],
+      "Keep items forever": [
+        "Säilytä kohteet ikuisesti"
+      ],
+      "Keep messages forever": [
+        "Säilytä viestit ikuisesti"
+      ],
       "Select product": [
         "Valitse tuote"
+      ],
+      "Set a duration": [
+        "Aseta kesto"
       ]
     },
     "retention_policy_2025_Option": {
+      "Everyone in organization": [
+        "Organisaation kaikki jäsenet"
+      ],
       "Group": [
         "Ryhmä"
+      ],
+      "Purge deleted messages only": [
+        "Tyhjennä vain poistetut viestit"
+      ],
+      "Specific users or groups": [
+        "Tietyt käyttäjät tai ryhmät"
       ],
       "User": [
         "Käyttäjä"
       ]
     },
     "retention_policy_2025_Placeholder": {
+      "Enter duration": [
+        "Syötä kesto"
+      ],
+      "Enter value": [
+        "Syötä arvo"
+      ],
       "Search policies": [
         "Hae käytäntöjä"
       ]
@@ -11379,11 +11451,17 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Selaa turvallisesti"
+      ],
       "Get unlimited aliases": [
         "Hanki aliaksia rajattomasti"
       ],
       "Go to subscription plans": [
         "Siirry tilauksiin"
+      ],
+      "Guard against threats": [
+        "Suojaudu uhilta"
       ],
       "Increase your storage": [
         "Lisää tallennustilaasi"
@@ -12717,6 +12795,9 @@
       "Account": [
         "Tili"
       ],
+      "Account restricted": [
+        "Tiliä on rajoitettu"
+      ],
       "Account suspended": [
         "Tili on jäädytetty"
       ],
@@ -13373,6 +13454,9 @@
       "Set recovery methods": [
         "Määritä palautustavat"
       ],
+      "Set up authenticator app": [
+        "Määritä todennussovellus"
+      ],
       "Set up email forwarding": [
         "Määritä sähköpostin ohjaus"
       ],
@@ -14025,6 +14109,9 @@
     "Users table: badge": {
       "Administrators can't access the data of private users": [
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin"
+      ],
+      "Authenticator app": [
+        "Todennussovellus"
       ],
       "Inactive": [
         "Inaktiivinen"

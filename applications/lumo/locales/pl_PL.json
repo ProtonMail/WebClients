@@ -399,9 +399,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po zakończeniu okresu próbnego ${ formattedDate } subskrypcja przejdzie na płatny plan i będzie automatycznie odnawiana co miesiąc w dniu ${ formattedDate }. Nie zostaniesz obciążony(-a), jeśli anulujesz subskrypcję przed ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Możesz mieć do ${ TRIAL_MAX_DEDICATED_IPS } dedykowanych serwerów w okresie próbnym."
       ],
@@ -792,6 +789,9 @@
       "Continue": [
         "Kontynuuj"
       ],
+      "Disable ghost mode": [
+        "Wyłącz tryb znikania"
+      ],
       "Dismiss": [
         "Odrzuć"
       ],
@@ -824,6 +824,9 @@
       ],
       "Submit": [
         "Prześlij"
+      ],
+      "Upload a file": [
+        "Prześlij plik"
       ]
     },
     "collider_2025: Button": {
@@ -926,6 +929,9 @@
       ]
     },
     "collider_2025: Error": {
+      "Error processing file: ${ file.name }": [
+        "Błąd podczas przetwarzania pliku: ${ file.name }"
+      ],
       "Please select a category to describe what went wrong with the generated text": [
         "Wybierz kategorię, aby opisać, co poszło nie tak z wygenerowanym tekstem"
       ],
@@ -951,6 +957,9 @@
       ],
       "Your request didn't go through or couldn't be completed. Try sending it again.": [
         "Twoja prośba nie została przetworzona lub nie mogła zostać ukończona. Spróbuj wysłać ją ponownie."
+      ],
+      "Your request was queued but the connection was interrupted. This usually happens when ${ LUMO_SHORT_APP_NAME } is experiencing high demand. Please try again.": [
+        "Twoje żądanie zostało przyjęte, ale połączenie zostało przerwane. Zazwyczaj dzieje się tak, gdy ${ LUMO_SHORT_APP_NAME } doświadcza wysokiego obciążenia. Spróbuj ponownie."
       ]
     },
     "collider_2025: Error Title": {
@@ -983,6 +992,11 @@
         "Wyszukaj w Internecie"
       ]
     },
+    "collider_2025: Guest Signin": {
+      "Save your chats": [
+        "Zapisz swoje czaty"
+      ]
+    },
     "collider_2025: Guest Upsell": {
       "Your chat history won't be saved. For extended chat history and other premium features, ": [
         "Historia Twojego czatu nie zostanie zapisana. Aby uzyskać rozszerzoną historię czatów i inne funkcje premium, "
@@ -1002,6 +1016,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Dodaj ${ LUMO_APP_NAME }"
+      ],
+      "Adding to knowledge base...": [
+        "Dodawanie do bazy wiedzy..."
       ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Zapytaj ${ LUMO_SHORT_APP_NAME } o cokolwiek"
@@ -1066,6 +1083,9 @@
       "No data rows found in this file.": [
         "Nie znaleziono wierszy danych w tym pliku."
       ],
+      "No files available": [
+        "Brak dostępnych plików"
+      ],
       "Note:": [
         "Uwaga:"
       ],
@@ -1078,8 +1098,14 @@
       "Please wait for files to finish processing": [
         "Poczekaj, aż pliki zakończą przetwarzanie."
       ],
+      "Press ${ shiftEnterBoldText } to ask": [
+        "Naciśnij ${ shiftEnterBoldText }, aby zapytać"
+      ],
       "Processed content": [
         "Przetworzona treść"
+      ],
+      "Processing ${ uploadProgress.fileName }": [
+        "Przetwarzanie ${ uploadProgress.fileName }"
       ],
       "Processing file contents...": [
         "Przetwarzanie zawartości pliku…"
@@ -1144,11 +1170,40 @@
       "Unsupported File Type": [
         "Nieobsługiwany typ pliku"
       ],
+      "Uploading ${ uploadProgress.fileName }": [
+        "Przesyłanie ${ uploadProgress.fileName }"
+      ],
       "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
         "Uważaj na błędną pisownię (np. proton.me kontra pr0t0n.me)"
       ],
       "You are about to visit an external website:": [
         "Masz zamiar odwiedzić zewnętrzną stronę internetową:"
+      ]
+    },
+    "collider_2025: Invite": {
+      "Email address is required": [
+        "Adres e-mail jest wymagany"
+      ]
+    },
+    "collider_2025: Invite Button": {
+      "Close": [
+        "Zamknij"
+      ],
+      "Invite friends": [
+        "Zaproś znajomych"
+      ],
+      "Send invitation": [
+        "Wyślij zaproszenie"
+      ]
+    },
+    "collider_2025: Invite Info": {
+      "You have ${ remainingInvitesText } invitations remaining.": [
+        "Pozostała Ci następująca liczba zaproszeń: ${ remainingInvitesText }."
+      ]
+    },
+    "collider_2025: Invite Success": {
+      "Invite sent!": [
+        "Zaproszenie wysłane!"
       ]
     },
     "collider_2025: Label": {
@@ -1163,6 +1218,14 @@
       ],
       "Unsafe or problematic": [
         "Niebezpieczne lub problematyczne"
+      ]
+    },
+    "collider_2025: Legal link": {
+      "Privacy Policy": [
+        "Polityka prywatności"
+      ],
+      "Terms": [
+        "Regulamin"
       ]
     },
     "collider_2025: Link": {
@@ -1236,6 +1299,9 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "O aplikacji ${ LUMO_SHORT_APP_NAME }"
       ],
+      "Delete all chats": [
+        "Usuń wszystkie czaty"
+      ],
       "Don't lose the thread": [
         "Nie strać wątku"
       ],
@@ -1288,6 +1354,11 @@
         "Twoja historia czatów jest ograniczona do 7 dni. Aby uzyskać rozszerzoną historię czatów i inne funkcje premium, "
       ]
     },
+    "collider_2025: Upsell Title": {
+      "Get": [
+        "Zdobądź"
+      ]
+    },
     "collider_2025: Waitlist Info": {
       "Thanks for joining the waitlist. We’ll email you when you can start chatting with ${ LUMO_SHORT_APP_NAME }.": [
         "Dziękujemy za dołączenie do listy oczekujących. Wyślemy Ci wiadomość e-mail, gdy możliwe będzie rozpoczęcie czatowania z ${ LUMO_SHORT_APP_NAME }."
@@ -1313,6 +1384,12 @@
       ]
     },
     "collider_2025:Action": {
+      "Add details": [
+        "Dodaj szczegóły"
+      ],
+      "Ask the model to be more careful and thorough": [
+        "Poproś model o większą ostrożność i dokładność"
+      ],
       "Cancel": [
         "Anuluj"
       ],
@@ -1344,6 +1421,9 @@
       ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus": [
         "Wybierz plan ${ LUMO_SHORT_APP_NAME } Plus"
+      ],
+      "Help and support": [
+        "Pomoc i obsługa klienta"
       ],
       "New chat": [
         "Nowy czat"
@@ -1397,6 +1477,12 @@
       ],
       "Processing files, please wait...": [
         "Przetwarzanie plików, czekaj…"
+      ],
+      "Search chats": [
+        "Wyszukaj czaty"
+      ],
+      "Sign in required": [
+        "Wymaga zalogowania"
       ]
     },
     "collider_2025:Title": {
@@ -5509,6 +5595,9 @@
     "Title": {
       "${ feature } is now active": [
         "Funkcja ${ feature } jest aktywna"
+      ],
+      "Account restricted": [
+        "Konto zostało ograniczone"
       ],
       "Add credit/debit card": [
         "Dodaj kartę płatniczą"

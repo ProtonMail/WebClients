@@ -5732,9 +5732,6 @@
       "You must set a name": [
         "Tem de definir um nome"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Precisa de ter um domínio personalizado para gerar um token de envio SMTP"
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Atingiu o número máximo de caracteres. Encurte a sua mensagem."
       ],
@@ -5752,11 +5749,6 @@
       ],
       "ZIP code is required": [
         "O código postal é necessário."
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Selecione os utilizadores para ver as suas atividades."
       ]
     },
     "Error importing calendar": {
@@ -7815,9 +7807,6 @@
       ],
       "active": [
         "ativa"
-      ],
-      "Activity Monitor": [
-        "Monitor de atividades"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adicione um endereço de e-mail @pm.me à sua conta. Este domínio simples e mais curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
@@ -19532,6 +19521,9 @@
       ],
       "Account recovery": [
         "Recuperação de conta"
+      ],
+      "Account restricted": [
+        "Conta restrita"
       ],
       "Account suspended": [
         "Conta suspensa"

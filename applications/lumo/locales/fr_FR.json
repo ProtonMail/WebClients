@@ -387,11 +387,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Une fois la version d'essai terminée le ${ formattedDate }, elle deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
@@ -787,6 +787,9 @@
       "Continue": [
         "Continuer"
       ],
+      "Dark": [
+        "Sombre"
+      ],
       "Disable ghost mode": [
         "Désactiver le mode fantôme"
       ],
@@ -804,6 +807,9 @@
       ],
       "I like this response": [
         "Cette réponse me convient."
+      ],
+      "Light": [
+        "Clair"
       ],
       "New chat": [
         "Nouvelle session de chat"
@@ -950,6 +956,9 @@
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Connectez-vous pour accéder à votre compte et débloquer plus de fonctionnalités. Vous n'en avez pas ? ${ createLink }"
+      ],
+      "Switch between light and dark mode": [
+        "Basculer entre le mode clair et le mode sombre"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1575,6 +1584,9 @@
       ],
       "Secure your spot": [
         "Sécurisez votre place"
+      ],
+      "Theme": [
+        "Thème"
       ],
       "Upload files": [
         "Importer des fichiers"
@@ -5829,6 +5841,9 @@
     "Title": {
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
+      ],
+      "Account restricted": [
+        "Compte restreint"
       ],
       "Account temporarily locked": [
         "Compte temporairement verrouillé"

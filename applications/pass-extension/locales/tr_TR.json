@@ -110,6 +110,9 @@
       "Clear search": [
         "Aramayı temizle"
       ],
+      "Clone item": [
+        "Ögeyi çoğalt"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -241,6 +244,12 @@
       ],
       "Dismiss": [
         "Yok say"
+      ],
+      "Do not show again": [
+        "Bir daha görüntülenmesin"
+      ],
+      "Do not show again when I press": [
+        "Bastığımda bir daha görüntülenmesin"
       ],
       "Do not show on this website": [
         "Bu sitede görüntülenmesin"
@@ -424,6 +433,9 @@
       ],
       "Open web app": [
         "İnternet uygulamasını aç"
+      ],
+      "Organize vaults": [
+        "Kasaları düzenle"
       ],
       "Pass for Android": [
         "Android için Proton Pass"
@@ -1651,6 +1663,9 @@
       "Extra password successfully removed": [
         "Ek parola kaldırıldı"
       ],
+      "Failed updating your vault organization": [
+        "Kasa kuruluşunuz güncellenemedi."
+      ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
       ],
@@ -1804,6 +1819,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -1988,6 +2006,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Verileriniz içe aktarılırken lütfen bu pencereyi açık tutun. Bu işlem birkaç dakika sürebilir."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Lütfen daha önce etkin olan pencerenin otomatik doldurmak istediğiniz yer olduğundan ve imlecin oturum açma alanında buılunduğundan emin olun."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Takma adın silindikten sonra geri alınamayacağını unutmayın. Silmek yerine takma adı kullanımdan kaldırmak ister misiniz?"
@@ -2257,6 +2278,9 @@
       "Update login": [
         "Oturum açma kaydını güncelle"
       ],
+      "Updating vault organization...": [
+        "Kasa kuruluşu güncelleniyor..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını yükselt"
       ],
@@ -2283,6 +2307,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "\"${ share.content.name }\" kasası kaldırıldı"
+      ],
+      "Vault organization successfully updated": [
+        "Kasa kuruluşu güncellendi"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Kasa paylaşımı: ${ vaultMembersCount } kullanıcı",
@@ -2354,6 +2381,12 @@
       "You may close this tab.": [
         "Bu sekmeyi kapatabilirsiniz."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Sisteminize bağlı olarak bir izin isteğini kabul etmeniz ve uygulamayı yeniden başlatmanız gerekebilir."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } için erişilebilirlik izni vermeniz gerekebilir."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Ögeleri içe aktarabilmeniz için düzenleme izniniz olan bir kasanız olmalıdır."
       ],
@@ -2389,6 +2422,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3025,9 +3066,6 @@
       ],
       "Network": [
         "Ağ"
-      ],
-      "New": [
-        "Yeni"
       ],
       "New email": [
         "Yeni e-posta"
@@ -4065,6 +4103,9 @@
       "Grant permissions": [
         "İzinleri ver"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Gizli kasalar arama ve otomatik doldurma sırasında görüntülenmez."
+      ],
       "Hide my email": [
         "Hide my email"
       ],
@@ -4145,6 +4186,9 @@
       "No shared secure links": [
         "Paylaşılan bir güvenli bağlantı yok"
       ],
+      "Organize vaults": [
+        "Kasaları düzenle"
+      ],
       "Our welcome gift to you": [
         "Karşılama hediyemiz"
       ],
@@ -4159,6 +4203,9 @@
       ],
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
+      ],
+      "Perform autotype?": [
+        "Otomatik doldurulsun mu?"
       ],
       "Permanently remove all items?": [
         "Tüm ögeler kalıcı olarak silinsin mi?"
@@ -4296,6 +4343,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz.",
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "kopyala"
       ]
     },
     "Today icon tooltip in mini calendar": {

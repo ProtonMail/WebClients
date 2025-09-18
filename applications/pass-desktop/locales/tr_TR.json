@@ -82,6 +82,9 @@
       "Authenticate": [
         "Kimliği doğrula"
       ],
+      "Auto-type": [
+        "Otomatik doldur"
+      ],
       "Back": [
         "Geri"
       ],
@@ -129,6 +132,9 @@
       ],
       "Clear search": [
         "Aramayı temizle"
+      ],
+      "Clone item": [
+        "Ögeyi çoğalt"
       ],
       "Close": [
         "Kapat"
@@ -249,6 +255,12 @@
       ],
       "Dismiss": [
         "Yok say"
+      ],
+      "Do not show again": [
+        "Bir daha görüntülenmesin"
+      ],
+      "Do not show again when I press": [
+        "Bastığımda bir daha görüntülenmesin"
       ],
       "Download this CSV template": [
         "Bu CSV kalıbını indir"
@@ -432,6 +444,9 @@
       ],
       "Open navigation": [
         "Gezinmeyi aç"
+      ],
+      "Organize vaults": [
+        "Kasaları düzenle"
       ],
       "Pass for Android": [
         "Android için Proton Pass"
@@ -1338,6 +1353,17 @@
         "Çok küçük"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Etki alanı"
+      ],
+      "Password ends with": [
+        "Parola şununla bitiyor"
+      ],
+      "Username": [
+        "Kullanıcı adı"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" ögesi yok sayıldı"
@@ -1703,6 +1729,9 @@
       "Extra password successfully removed": [
         "Ek parola kaldırıldı"
       ],
+      "Failed updating your vault organization": [
+        "Kasa kuruluşunuz güncellenemedi."
+      ],
       "Fill in the CSV with your data": [
         "CSV dosyasına verilerinizi ekleyin"
       ],
@@ -1829,6 +1858,9 @@
       "Item successfully unpinned": [
         "Ögenin sabitlemesi kaldırıldı"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "Klavye kısayolu yalnızca ${ PASS_APP_NAME } bilgisayar uygulaması içinden ve bir oturum açma ögesi görüntülenirken kullanılabilir."
+      ],
       "Latest breach on ${ formattedDate }": [
         "Son veri sızıntısı: ${ formattedDate }"
       ],
@@ -1882,7 +1914,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2088,6 +2121,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Verileriniz içe aktarılırken lütfen bu pencereyi açık tutun. Bu işlem birkaç dakika sürebilir."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Lütfen daha önce etkin olan pencerenin otomatik doldurmak istediğiniz yer olduğundan ve imlecin oturum açma alanında buılunduğundan emin olun."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Takma adın silindikten sonra geri alınamayacağını unutmayın. Silmek yerine takma adı kullanımdan kaldırmak ister misiniz?"
@@ -2342,6 +2378,9 @@
       "Unverified": [
         "Doğrulanmamış"
       ],
+      "Updating vault organization...": [
+        "Kasa kuruluşu güncelleniyor..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
       ],
@@ -2368,6 +2407,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "\"${ share.content.name }\" kasası kaldırıldı"
+      ],
+      "Vault organization successfully updated": [
+        "Kasa kuruluşu güncellendi"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Kasa paylaşımı: ${ vaultMembersCount } kullanıcı",
@@ -2439,6 +2481,12 @@
       "You may close this tab.": [
         "Bu sekmeyi kapatabilirsiniz."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Sisteminize bağlı olarak bir izin isteğini kabul etmeniz ve uygulamayı yeniden başlatmanız gerekebilir."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } için erişilebilirlik izni vermeniz gerekebilir."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Ögeleri içe aktarabilmeniz için düzenleme izniniz olan bir kasanız olmalıdır."
       ],
@@ -2483,6 +2531,20 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TAB"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2658,6 +2720,9 @@
       ],
       "Auto-lock after": [
         "Otomatik kilitleme süresi"
+      ],
+      "Auto-type in previous window": [
+        "Önceki pencereyi otomatik doldur"
       ],
       "Backup password": [
         "Yedek parola"
@@ -2835,6 +2900,9 @@
       ],
       "Email": [
         "E-posta"
+      ],
+      "EMAIL": [
+        "E-POSTA"
       ],
       "Email (alias)": [
         "E-posta (takma ad)"
@@ -3055,6 +3123,9 @@
       "Key type": [
         "Anahtar türü"
       ],
+      "Keyboard shortcut:": [
+        "Klavye kısayolu:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klavye kısayolu: ${ shortcut }"
       ],
@@ -3264,6 +3335,9 @@
       ],
       "Password": [
         "Parola"
+      ],
+      "PASSWORD": [
+        "PAROLA"
       ],
       "Password history": [
         "Parola geçmişi"
@@ -3609,6 +3683,9 @@
       ],
       "Useful for permanent sharing": [
         "Kalıcı paylaşım için uygundur"
+      ],
+      "USERNAME": [
+        "KULLANICI ADI"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -4337,6 +4414,9 @@
       "Grant permissions": [
         "İzinleri ver"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Gizli kasalar arama ve otomatik doldurma sırasında görüntülenmez."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
       ],
@@ -4420,6 +4500,9 @@
       "MX record": [
         "MX kaydı"
       ],
+      "Next": [
+        "Sonraki"
+      ],
       "No excluded items": [
         "Katılmayan bir öge yok"
       ],
@@ -4440,6 +4523,12 @@
       ],
       "No shared secure links": [
         "Paylaşılan bir güvenli bağlantı yok"
+      ],
+      "Open pagination": [
+        "Sayfalandırmayı aç"
+      ],
+      "Organize vaults": [
+        "Kasaları düzenle"
       ],
       "Our welcome gift to you": [
         "Karşılama hediyemiz"
@@ -4462,6 +4551,9 @@
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
       ],
+      "Perform autotype?": [
+        "Otomatik doldurulsun mu?"
+      ],
       "Permanently remove all items?": [
         "Tüm ögeler kalıcı olarak silinsin mi?"
       ],
@@ -4471,6 +4563,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Takma adın silindikten sonra geri alınamayacağını unutmayın",
         "Takma adın silindikten sonra geri alınamayacağını unutmayın"
+      ],
+      "Previous": [
+        "Önceki"
       ],
       "Random Prefix Generation": [
         "Rastgele ön ek oluşturma"
@@ -4628,6 +4723,11 @@
         "${ aliasCount } takma adı kalıcı olarak silmek üzeresiniz."
       ]
     },
+    "Title_cloned_item": {
+      "copy": [
+        "kopyala"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Bugün"
@@ -4765,6 +4865,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Ek parola en az 8 karakter uzunluğunda olmalıdır"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Otomatik olarak doldurulamadı. Lütfen ${ PASS_APP_NAME } uygulamasına gerekli izinlerin verildiğinden emin olun ve yeniden deneyin (${ error })."
       ],
       "Failed to load breaches.": [
         "Veri sızıntıları yüklenemedi."

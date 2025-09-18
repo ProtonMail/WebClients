@@ -2074,11 +2074,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců, počínaje ${ formattedDate }. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušebního období ${ formattedDate } se změní na placené předplatné, které se automaticky obnovuje měsíčně, počínaje ${ formattedDate }. Pokud jej zrušíte před ${ formattedDate }, nebude vám nic účtováno."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na \"Vyzkoušet\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
@@ -6319,8 +6319,8 @@
       "You must set a name": [
         "Musíte nastavit jméno"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Pro vygenerování tokenu pro SMTP odesílání je třeba mít vlastní doménovou adresu."
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "Pro vygenerování tokenu pro SMTP odesílání je třeba mít vlastní aktivní doménovou adresu."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Dosáhli jste maximálního počtu znaků. Zkraťte prosím svou zprávu."
@@ -6339,11 +6339,6 @@
       ],
       "ZIP code is required": [
         "PSČ je potřeba vyplnit"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Vyberte uživatele k zobrazení jejich aktivity"
       ]
     },
     "Error importing calendar": {
@@ -8572,6 +8567,9 @@
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
       ],
+      "Accounts": [
+        "Účty"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte alespoň jednu metodu obnovy dat, abyste měli jistotu, že v případě ztráty hesla budete mít i nadále přístup k obsahu svého účtu ${ BRAND_NAME }."
       ],
@@ -8580,9 +8578,6 @@
       ],
       "active": [
         "aktivní"
-      ],
-      "Activity Monitor": [
-        "Monitor aktivity"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me.\""
@@ -10084,6 +10079,9 @@
       "Organization monitor": [
         "Monitorování organizace"
       ],
+      "Organization Monitor": [
+        "Monitorování organizace"
+      ],
       "Organization size": [
         "Velikost organizace"
       ],
@@ -10401,6 +10399,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Vyberte příslušnost uživatelů z ${ getFormattedOrganization }, kterým chcete povolit vstup do vaší organizace ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Vyberte uživatele k zobrazení jejich aktivity"
       ],
       "Select what you want to import.": [
         "Vyberte co chcete importovat."
@@ -12708,6 +12709,9 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
+      "Emails categories": [
+        "Kategorie e-mailů"
+      ],
       "Enabled": [
         "Povoleno"
       ],
@@ -13007,6 +13011,9 @@
       ],
       "Notification": [
         "Oznámení"
+      ],
+      "Notification email address": [
+        "E-mailová adresa pro upozornění"
       ],
       "Notifications": [
         "Upozornění"
@@ -13438,6 +13445,9 @@
     "label": {
       "Device-based recovery": [
         "Obnova na základě zařízení"
+      ],
+      "Notification phone number": [
+        "Telefonní číslo pro upozornění"
       ],
       "Recovery phone number": [
         "Telefonní číslo pro obnovení"
@@ -18001,9 +18011,6 @@
       "Account safety review": [
         "Kontrola bezpečnosti účtu"
       ],
-      "Add a email address": [
-        "Přidejte e-mailovou adresu"
-      ],
       "Add a phone number": [
         "Přidat telefonní číslo"
       ],
@@ -18133,9 +18140,6 @@
       "to automatically recover your data when you log into a trusted device": [
         "pro automatické obnovení vašich dat, když se přihlásíte do důvěryhodného zařízení"
       ],
-      "to ensure highest possible security of your account": [
-        "pro zajištění maximální možné bezpečnosti vašeho účtu"
-      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Pro ověření, že jde o vaší e-mailovou adresu, prosím zadejte ověřovací kód zaslaný na adresu ${ boldEmail }."
       ],
@@ -18147,9 +18151,6 @@
       ],
       "to recover your account if you're ever locked out": [
         "pro obnovení vašeho účtu, pokud kdykoli ztratíte přístup"
-      ],
-      "To stay in touch": [
-        "Zůstat v kontaktu"
       ],
       "Update your Recovery Kit": [
         "Aktualizujte si svou sadu pro obnovení"
@@ -21286,6 +21287,9 @@
       "Account recovery": [
         "Obnovení účtu"
       ],
+      "Account restricted": [
+        "Účet omezen"
+      ],
       "Account suspended": [
         "Účet pozastaven"
       ],
@@ -22926,6 +22930,9 @@
       ],
       "Edit label names": [
         "Upravit názvy štítků"
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "E-maily ve vaší doručené poště jsou zobrazeny rozdělené do kategorií"
       ],
       "Enable/disable desktop and mobile notifications": [
         "Povolit/zakázat oznamování na ploše a mobilu"

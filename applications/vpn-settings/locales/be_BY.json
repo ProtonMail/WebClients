@@ -1373,11 +1373,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Падпіска стане платнай і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Падпіска стане платнай і будзе аўтаматычна падаўжацца штомесяц ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Націскаючы на кнопку \"Паспрабаваць\", вы згаджаецеся з нашымі ${ termsAndConditions }."
@@ -4102,11 +4102,6 @@
         "Патрабуецца ўвесці паштовы індэкс"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Выбраць карыстальнікаў, каб паглядзець іх актыўнасць"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Адбылася памылка пры чытанні вашага файла ${ formattedFilename }. Файл мае няправільны фармат."
@@ -5742,11 +5737,11 @@
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
+      "Accounts": [
+        "Уліковыя запісы"
+      ],
       "active": [
         "актыўна"
-      ],
-      "Activity Monitor": [
-        "Манітор актыўнасці"
       ],
       "add a recovery method": [
         "дададзены спосаб аднаўлення"
@@ -6741,6 +6736,9 @@
       "Organization monitor": [
         "Назіранне за арганізацыяй"
       ],
+      "Organization Monitor": [
+        "Назіранне за арганізацыяй"
+      ],
       "Organization size": [
         "Памер арганізацыі"
       ],
@@ -6950,6 +6948,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Выберыце прыналежнасці карыстальніка з ${ getFormattedOrganization }, якому вы хочаце дазволіць ўвайсці ў сваю арганізацыю ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Выбраць карыстальнікаў, каб паглядзець іх актыўнасць"
       ],
       "Select what you want to import.": [
         "Выберыце, што вы хочаце імпартаваць."
@@ -13932,6 +13933,9 @@
       ],
       "Account": [
         "Уліковы запіс"
+      ],
+      "Account restricted": [
+        "Уліковы запіс абмежаваны"
       ],
       "Account suspended": [
         "Уліковы запіс прыпынены"

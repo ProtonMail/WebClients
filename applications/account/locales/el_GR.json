@@ -2062,11 +2062,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες στις ${ formattedDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα στις ${ formattedDate }. Δεν θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Κάνοντας κλικ στο \"Δοκιμή\", συμφωνείτε με τους ${ termsAndConditions }."
@@ -6251,8 +6251,8 @@
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Πρέπει να έχετε μια προσαρμοσμένη διεύθυνση τομέα για να δημιουργήσετε ένα διακριτικό υποβολής SMTP."
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "Πρέπει να έχετε μια ενεργή προσαρμοσμένη διεύθυνση τομέα για να δημιουργήσετε ένα διακριτικό υποβολής SMTP."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Έχετε συμπληρώσει τον μέγιστο αριθμό χαρακτήρων. Παρακαλούμε συντομεύστε το μήνυμά σας."
@@ -6271,11 +6271,6 @@
       ],
       "ZIP code is required": [
         "Απαιτείται ταχυδρομικός κώδικας"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Επιλέξτε χρήστες για να δείτε τη δραστηριότητά τους"
       ]
     },
     "Error importing calendar": {
@@ -8402,6 +8397,9 @@
       "Account successfully updated": [
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
+      "Accounts": [
+        "Λογαριασμοί"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Ενεργοποιήστε τουλάχιστον μία μέθοδο ανάκτησης δεδομένων για να βεβαιωθείτε ότι μπορείτε να συνεχίσετε να έχετε πρόσβαση στα περιεχόμενα του λογαριασμού σας ${ BRAND_NAME } εάν χάσετε τον κωδικό πρόσβασής σας."
       ],
@@ -8410,9 +8408,6 @@
       ],
       "active": [
         "ενεργό"
-      ],
-      "Activity Monitor": [
-        "Παρακολούθηση Δραστηριότητας"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Προσθέστε μια @pm.me διεύθυνση ηλεκτρονικού ταχυδρομείου στον λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"${ MAIL_APP_NAME } me\" ή \"Private Message me.\" (Στείλε μου Προσωπικό Μήνυμα)"
@@ -8630,6 +8625,12 @@
       ],
       "Attention required": [
         "Απαιτείται προσοχή"
+      ],
+      "Authenticator app 2FA disabled": [
+        "Η ταυτοποίηση δύο παραγόντων (2FA) της εφαρμογής επαλήθευσης είναι απενεργοποιημένη"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Η ταυτοποίηση δύο παραγόντων (2FA) της εφαρμογής επαλήθευσης είναι ενεργοποιημένη"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Η αυτόματη απάντηση είναι ενεργή κάθε μήνα από την ώρα έναρξης έως την ώρα λήξης."
@@ -8925,6 +8926,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "Απενεργοποιημένη στις ${ boldValue }"
+      ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Η απενεργοποίηση της ταυτοποίηση δύο παραγόντων (2FA) της εφαρμογής επαλήθευσης θα κάνει τον λογαριασμό σας λιγότερο ασφαλή. Προχωρήστε μόνο αν είναι απολύτως απαραίτητο."
       ],
       "Discount": [
         "Έκπτωση"
@@ -9682,6 +9686,9 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Διαχειριστείτε τις προτιμήσεις ειδοποιήσεων ηλεκτρονικού ταχυδρομείου για ${ DOCS_APP_NAME }."
       ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στην εφαρμογή ελέγχου ταυτότητας για να ρυθμίσετε τον λογαριασμό σας. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "λογότυπο Mastercard SecureCode"
       ],
@@ -9869,6 +9876,9 @@
       ],
       "Organization monitor": [
         "Παρακολούθηση οργανισμού"
+      ],
+      "Organization Monitor": [
+        "Παρακολούθηση Οργανισμού"
       ],
       "Organization size": [
         "Μέγεθος οργανισμού"
@@ -10152,6 +10162,9 @@
       "Scan QR code instead": [
         "Εναλλακτικά, σαρώστε τον κωδικό QR"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Σαρώστε αυτόν τον κωδικό με την εφαρμογή ελέγχου ταυτότητας για να ρυθμίσετε τον λογαριασμό σας. ${ switchButton }."
+      ],
       "SCIM integration disabled": [
         "Η ενσωμάτωση SCIM είναι απενεργοποιημένη"
       ],
@@ -10175,6 +10188,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Επιλέξτε τις συνεργασίες χρηστών από ${ getFormattedOrganization } που θέλετε να επιτρέψετε στον ${ BRAND_NAME } οργανισμό σας:"
+      ],
+      "Select users to view their activity": [
+        "Επιλέξτε χρήστες για να δείτε τη δραστηριότητά τους"
       ],
       "Select what you want to import.": [
         "Επιλέξτε τι θέλετε να εισάγετε."
@@ -10263,6 +10279,9 @@
       ],
       "Show original message": [
         "Προβολή αρχικού μηνύματος"
+      ],
+      "Sign in only": [
+        "Σύνδεση μόνο"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Για ενεργοποίηση της διεύθυνσής σας, συνδεθείτε στο ${ MAIL_APP_NAME }"
@@ -11021,6 +11040,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Χωρίς μια εφαρμογή επαλήθευσης, δε θα μπορείτε να συνδεθείτε στις ${ BRAND_NAME } εφαρμογές που δεν υποστηρίζουν ακόμα κλειδιά ασφαλείας."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -12425,6 +12447,9 @@
       "Emails (last month)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
       ],
+      "Emails categories": [
+        "Κατηγορίες ηλεκτρονικών μηνυμάτων"
+      ],
       "Enabled": [
         "Ενεργοποιημένο"
       ],
@@ -12724,6 +12749,9 @@
       ],
       "Notification": [
         "Ειδοποίηση"
+      ],
+      "Notification email address": [
+        "Ηλεκτρονική διεύθυνση ειδοποίησης"
       ],
       "Notifications": [
         "Ειδοποιήσεις"
@@ -13150,6 +13178,9 @@
     "label": {
       "Device-based recovery": [
         "Ανάκτηση βάσει συσκευής"
+      ],
+      "Notification phone number": [
+        "Αριθμός τηλεφώνου ειδοποίησης"
       ],
       "Recovery phone number": [
         "Τηλεφωνικός αριθμός ανάκτησης"
@@ -17576,9 +17607,6 @@
       "Account safety review": [
         "Έλεγχος ασφάλειας λογαριασμού"
       ],
-      "Add a email address": [
-        "Προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου"
-      ],
       "Add a phone number": [
         "Προσθέστε έναν αριθμό τηλεφώνου"
       ],
@@ -17590,6 +17618,9 @@
       ],
       "Add a recovery phone number": [
         "Προσθήκη ενός τηλεφωνικού αριθμού ανάκτησης"
+      ],
+      "Add an alternative email address": [
+        "Προσθέστε μια εναλλακτική διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Add an email": [
         "Προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -17621,8 +17652,14 @@
       "Disable recovery by email": [
         "Απενεργοποίηση ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου"
       ],
+      "Disable recovery by email ": [
+        "Απενεργοποίηση ανάκτησης μέσω ηλεκτρονικού ταχυδρομείου "
+      ],
       "Disable recovery by phone": [
         "Απενεργοποίηση ανάκτησης μέσω τηλεφώνου"
+      ],
+      "Disable recovery by phone ": [
+        "Απενεργοποίηση ανάκτησης μέσω τηλεφώνου "
       ],
       "Download ${ size }": [
         "Κατεβάστε ${ size }"
@@ -17656,6 +17693,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Εάν χάσετε τα στοιχεία σύνδεσής σας και πρέπει να επαναφέρετε τον λογαριασμό σας, **είναι επιτακτική ανάγκη** να έχετε εφαρμόσει μια **μέθοδο ανάκτησης λογαριασμού και ανάκτησης δεδομένων**, διαφορετικά ενδέχεται να μην μπορείτε να αποκτήσετε πρόσβαση σε κανένα από τα μηνύματα ηλεκτρονικού ταχυδρομείου, τις επαφές, τα αρχεία ή τους κωδικούς πρόσβασής σας."
+      ],
+      "in case we need to contact you": [
+        "σε περίπτωση που χρειαστεί να επικοινωνήσουμε μαζί σας"
       ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
@@ -17708,23 +17748,20 @@
       "to automatically recover your data when you log into a trusted device": [
         "για αυτόματη ανάκτηση των δεδομένων σας όταν συνδέεστε σε μια αξιόπιστη συσκευή"
       ],
-      "to ensure highest possible security of your account": [
-        "για να διασφαλίσουμε την υψηλότερη δυνατή ασφάλεια του λογαριασμού σας"
-      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Για να βεβαιωθούμε ότι η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι δική σας, εισαγάγετε τον κωδικό επαλήθευσης που στάλθηκε στο ${ boldEmail }."
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Για να βεβαιωθούμε ότι το τηλέφωνο είναι δικό σας, εισαγάγετε τον κωδικό επαλήθευσης που στάλθηκε στο ${ boldPhoneNumber }."
       ],
+      "to prevent attackers from taking over your account": [
+        "Για να αποτρέψετε τους επιτιθέμενους από το να καταλάβουν τον λογαριασμό σας."
+      ],
       "to recover your account and data if you're ever locked out": [
         "για να ανακτήσετε τον λογαριασμό και τα δεδομένα σας σε περίπτωση που κλειδωθείτε έξω"
       ],
       "to recover your account if you're ever locked out": [
         "για να ανακτήσετε τον λογαριασμό σας σε περίπτωση που κλειδωθείτε έξω"
-      ],
-      "To stay in touch": [
-        "Για να μείνουμε σε επαφή"
       ],
       "Update your Recovery Kit": [
         "Ενημέρωση του Κιτ Αποκατάστασης"
@@ -17794,6 +17831,12 @@
       ],
       "You have recommended actions.": [
         "Έχετε προτεινόμενες ενέργειες."
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Η διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης μπορεί να χρησιμοποιηθεί από κακόβουλους χρήστες για να παραβιάσουν τον λογαριασμό σας. ${ disableEmail } για να αυξήσετε την ασφάλεια του λογαριασμού σας."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Το τηλέφωνο ανάκτησης μπορεί να χρησιμοποιηθεί από κακόβουλους χρήστες για να παραβιάσουν τον λογαριασμό σας. ${ disablePhone } για να αυξήσετε την ασφάλεια του λογαριασμού σας."
       ],
       "You will no longer be able to use this address to reset your account.": [
         "Δε θα μπορείτε πια να χρησιμοποιήσετε αυτή τη διεύθυνση για να επαναφέρετε τον λογαριασμό σας."
@@ -20715,6 +20758,9 @@
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
       ],
+      "Account restricted": [
+        "Ο λογαριασμός περιορίστηκε"
+      ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
@@ -21152,6 +21198,9 @@
       ],
       "Disable two-factor authentication": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων"
+      ],
+      "Disable two-factor authentication app?": [
+        "Απενεργοποίηση ταυτοποίησης δύο παραγόντων (2FA) στην εφαρμογή επαλήθευσης;"
       ],
       "Disable two-factor authentication?": [
         "Απενεργοποίηση ταυτοποίησης δύο παραγόντων;"
@@ -21845,6 +21894,9 @@
       "Set up a recovery method": [
         "Ορίστε μέθοδο ανάκτησης"
       ],
+      "Set up authenticator app": [
+        "Ρυθμίστε την εφαρμογή επαλήθευσης"
+      ],
       "Set up email forwarding": [
         "Ρύθμιση προώθησης μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
@@ -22338,6 +22390,9 @@
       "Edit label names": [
         "Επεξεργασία ονομάτων ετικετών"
       ],
+      "Emails in your inbox are shown organized into categories": [
+        "Τα ηλεκτρονικά μηνύματα στα εισερχόμενά σας εμφανίζονται οργανωμένα σε κατηγορίες"
+      ],
       "Enable/disable desktop and mobile notifications": [
         "Ενεργοποίηση/απενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας και κινητού"
       ],
@@ -22454,6 +22509,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Αυτό μπορεί να προκληθεί από επαναφορά κωδικού πρόσβασης ή από τον χρήστη που δεν έχει συνδεθεί ακόμα."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου μπορεί να χρησιμοποιηθεί μόνο για να συνδεθείτε στον λογαριασμό σας ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου θα εμφανίζεται σε όλα τα μέλη του οργανισμού κατά την εκτέλεση λειτουργιών διαχείρισης λογαριασμού."
@@ -22930,6 +22988,9 @@
       "Administrators can't access the data of private users": [
         "Οι διαχειριστές δεν έχουν πρόσβαση στα δεδομένα ιδιωτικών χρηστών"
       ],
+      "Authenticator app": [
+        "Εφαρμογή επαλήθευσης"
+      ],
       "Inactive": [
         "Ανενεργό"
       ],
@@ -22947,6 +23008,9 @@
       ],
       "Private": [
         "Ιδιωτικό"
+      ],
+      "Security key": [
+        "Κλειδί ασφαλείας"
       ],
       "SSO": [
         "SSO"

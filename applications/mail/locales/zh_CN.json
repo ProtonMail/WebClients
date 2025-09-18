@@ -423,6 +423,9 @@
       "Disable alias": [
         "禁用别名"
       ],
+      "Disable categories": [
+        "禁用分类"
+      ],
       "Disabling alias": [
         "禁用别名"
       ],
@@ -749,6 +752,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "加入${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "保留分类"
       ],
       "Keep my subscription": [
         "保留订阅"
@@ -1954,6 +1960,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } 试用期结束后，您的订阅将自动改成每 ${ renewCycle } 个月自动续订的付费订阅。 若在 ${ formattedDate } 之前取消，您将不用付费。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } 试用期结束后，您的订阅将自动改成按月自动续订的付费订阅。若在${ formattedDate }之前取消，您将不用付费。"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
       ],
@@ -6454,6 +6466,9 @@
       "All messages stored with this label will be permanently deleted.": [
         "带有此标签的所有邮件都将被永久删除。"
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "所有的邮件将显示在邮箱里面。类别标签与标签页将不再出现。 "
+      ],
       "All your calendars are disabled.": [
         "您的所有日历都已禁用。"
       ],
@@ -9424,9 +9439,6 @@
       ],
       "Writing assistant": [
         "写作助手"
-      ],
-      "You cannot disable all categories": [
-        "无法停用所有分类"
       ],
       "Your alias": [
         "您的别名"
@@ -14007,6 +14019,9 @@
       ],
       "Desktop": [
         "桌面版"
+      ],
+      "Disable categories?": [
+        "禁用分类？"
       ],
       "Discover your subscription benefits": [
         "了解您的订阅优惠"

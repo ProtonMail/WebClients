@@ -1975,12 +1975,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험이 종료된 후, ${ formattedDate }에 ${ renewCycle }개월마다 자동 갱신되는 유료 구독으로 전환됩니다. ${ formattedDate } 이전에 취소시 요금이 부과되지 않습니다."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매월 ${ formattedDate }에 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
       ],
@@ -6387,7 +6381,7 @@
         "읽지 않은 대화 ${ n }개"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } 링크가 정리되었습니다"
+        "${ numberOfUTMTrackers }개 링크가 제거됨"
       ],
       "${ NumMessages } message in conversation": [
         "대화 내 ${ NumMessages }개의 메시지"
@@ -7437,7 +7431,7 @@
         "선택한 라벨 없음"
       ],
       "No links cleaned": [
-        "정리된 링크가 없습니다"
+        "정리된 링크가 없음"
       ],
       "No messages to show": [
         "표시할 매시지 없음"
@@ -9611,9 +9605,6 @@
       ],
       "Writing assistant": [
         "글쓰기 도우미"
-      ],
-      "You cannot disable all categories": [
-        "전체 카테고리를 비활성화할 수 없습니다"
       ],
       "Your alias": [
         "내 별칭"

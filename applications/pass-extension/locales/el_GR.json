@@ -110,6 +110,9 @@
       "Clear search": [
         "Εκκαθάριση αναζήτησης"
       ],
+      "Clone item": [
+        "Κλώνος Αντικειμένου"
+      ],
       "Close": [
         "Κλείσιμο"
       ],
@@ -241,6 +244,12 @@
       ],
       "Dismiss": [
         "Παράβλεψη"
+      ],
+      "Do not show again": [
+        "Να μην εμφανιστεί ξανά"
+      ],
+      "Do not show again when I press": [
+        "Να μην εμφανιστεί ξανά όταν πατήσω"
       ],
       "Do not show on this website": [
         "Μην εμφανίζεστε σε αυτόν τον ιστότοπο"
@@ -424,6 +433,9 @@
       ],
       "Open web app": [
         "Ανοίξτε την εφαρμογή ιστού"
+      ],
+      "Organize vaults": [
+        "Οργάνωση κρυπτών"
       ],
       "Pass for Android": [
         "Έγκριση για το Android"
@@ -1651,6 +1663,9 @@
       "Extra password successfully removed": [
         "Ο επιπλέον κωδικός πρόσβασης καταργήθηκε με επιτυχία"
       ],
+      "Failed updating your vault organization": [
+        "Αποτυχία ενημέρωσης της οργάνωσης της κρύπτης σας"
+      ],
       "Fill in the CSV with your data": [
         "Συμπληρώστε το CSV με τα δεδομένα σας"
       ],
@@ -1989,6 +2004,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Παρακαλούμε διατηρήστε αυτό το παράθυρο ανοιχτό κατά την εισαγωγή των δεδομένων σας. Αυτή η διαδικασία μπορεί να διαρκέσει μερικά λεπτά."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Βεβαιωθείτε ότι το παράθυρο που ήταν ενεργό προηγουμένως είναι αυτό στο οποίο θέλετε να εκτελέσετε την αυτόματη πληκτρολόγηση και ότι ο δρομέας σας βρίσκεται στο πεδίο σύνδεσης."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Παρακαλούμε λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδωνύμου. Ίσως θέλετε να απενεργοποιήσετε το ψευδώνυμο;"
       ],
@@ -2257,6 +2275,9 @@
       "Update login": [
         "Ενημέρωση διαπιστευτηρίων"
       ],
+      "Updating vault organization...": [
+        "Ενημερώνεται η οργάνωση της κρύπτης..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Αναβάθμιση ${ PASS_APP_NAME }"
       ],
@@ -2283,6 +2304,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Η κρύπτη \"${ share.content.name }\" καταργήθηκε"
+      ],
+      "Vault organization successfully updated": [
+        "Η οργάνωση της κρύπτης ενημερώθηκε με επιτυχία"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Κοινή χρήση κρυπτών: ${ vaultMembersCount } μέλος",
@@ -2354,6 +2378,12 @@
       "You may close this tab.": [
         "Μπορείτε να κλείσετε αυτήν την καρτέλα."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Ενδέχεται να χρειαστεί να αποδεχτείτε ένα μήνυμα αίτησης άδειας και να επανεκκινήσετε την εφαρμογή, ανάλογα με το σύστημά σας."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Ενδέχεται να χρειαστεί να παραχωρήσετε άδεια προσβασιμότητας στο ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Χρειάζεστε μια θυρίδα αποθήκευσης με δικαίωμα επεξεργασίας για να μπορέσετε να εισαγάγετε στοιχεία."
       ],
@@ -2389,6 +2419,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3025,9 +3063,6 @@
       ],
       "Network": [
         "Δίκτυο"
-      ],
-      "New": [
-        "Νέο"
       ],
       "New email": [
         "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -4065,6 +4100,9 @@
       "Grant permissions": [
         "Απαιτούμενα δικαιώματα"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Οι κρυφές κρύπτες δεν είναι ορατές κατά την αναζήτηση και την αυτόματη συμπλήρωση"
+      ],
       "Hide my email": [
         "Απόκρυψη της διεύθυνσης ηλεκτρονικού ταχυδρομείου μου"
       ],
@@ -4145,6 +4183,9 @@
       "No shared secure links": [
         "Δεν υπάρχουν κοινόχρηστοι ασφαλείς σύνδεσμοι"
       ],
+      "Organize vaults": [
+        "Οργάνωση κρυπτών"
+      ],
       "Our welcome gift to you": [
         "Το δώρο καλωσορίσματος σας"
       ],
@@ -4159,6 +4200,9 @@
       ],
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
+      ],
+      "Perform autotype?": [
+        "Να γίνει αυτόματη πληκτρολόγηση;"
       ],
       "Permanently remove all items?": [
         "Οριστική αφαίρεση όλων των στοιχείων;"
@@ -4296,6 +4340,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμο.",
         "Πρόκειται να διαγράψετε οριστικά ${ aliasCount } ψευδώνυμα."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "αντιγραφή"
       ]
     },
     "Today icon tooltip in mini calendar": {

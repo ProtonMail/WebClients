@@ -1328,6 +1328,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } 试用期结束后，您的订阅将自动改成每 ${ renewCycle } 个月自动续订的付费订阅。 若在 ${ formattedDate } 之前取消，您将不用付费。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } 试用期结束后，您的订阅将自动改成按月自动续订的付费订阅。若在${ formattedDate }之前取消，您将不用付费。"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
       ],
@@ -3889,11 +3895,6 @@
         "必须填写邮政编码"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "选择用户以查看其活动"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "读取文件 ${ formattedFilename } 时出错。文件格式不正确。"
@@ -5352,11 +5353,11 @@
       "Account successfully updated": [
         "账户已成功更新"
       ],
+      "Accounts": [
+        "账户"
+      ],
       "active": [
         "启用"
-      ],
-      "Activity Monitor": [
-        "活动监视器"
       ],
       "add a recovery method": [
         "添加恢复方法"
@@ -6255,6 +6256,9 @@
       "Or select a particular server:": [
         "或指定服务器："
       ],
+      "Organization Monitor": [
+        "组织监控"
+      ],
       "Organization size": [
         "组织规模"
       ],
@@ -6506,6 +6510,9 @@
       ],
       "Shared vault updated": [
         "共享保险库已更新"
+      ],
+      "Sign in only": [
+        "仅登入"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登录 ${ MAIL_APP_NAME } 以激活您的地址"
@@ -10350,6 +10357,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
       ],
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
       "terms & conditions": [
         "服务条款"
       ],
@@ -12842,6 +12852,9 @@
       "Account": [
         "账户"
       ],
+      "Account restricted": [
+        "账户受限"
+      ],
       "Account suspended": [
         "账号已被停用"
       ],
@@ -13854,6 +13867,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "这可能时密码重置或用户尚未登录造成的。"
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "此电子邮件地址只能用来登入您的 ${ BRAND_NAME } 账户。"
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "执行账户管理操作时，该电子邮件地址将显示给所有组织成员。"

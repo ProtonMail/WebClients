@@ -387,11 +387,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ${ formattedDate } tarihinde başlayarak her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir aboneliğe dönüşecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinden başlayarak otomatik olarak her ay yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Deneme süresi boyunca en fazla ${ TRIAL_MAX_DEDICATED_IPS } özel sunucunuz olabilir."
@@ -787,6 +787,9 @@
       "Continue": [
         "İlerle"
       ],
+      "Dark": [
+        "Koyu"
+      ],
       "Disable ghost mode": [
         "Hayalet kipini kapat"
       ],
@@ -804,6 +807,9 @@
       ],
       "I like this response": [
         "Bu yanıtı beğendim"
+      ],
+      "Light": [
+        "Açık"
       ],
       "New chat": [
         "Yeni sohbet"
@@ -950,6 +956,9 @@
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Hesabınıza erişmek ve daha fazla özelliğe erişmek için oturum açın. Bir hesabınız yok mu? ${ createLink }"
+      ],
+      "Switch between light and dark mode": [
+        "Açık ve koyu kip arasında geçiş yap"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1575,6 +1584,9 @@
       ],
       "Secure your spot": [
         "Yerinizi alın"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Upload files": [
         "Dosya yükle"
@@ -5829,6 +5841,9 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } etkinleştirildi"
+      ],
+      "Account restricted": [
+        "Hesap kısıtlandı"
       ],
       "Account temporarily locked": [
         "Hesap geçici olarak kilitlendi"

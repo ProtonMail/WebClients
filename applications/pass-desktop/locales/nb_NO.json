@@ -82,6 +82,9 @@
       "Authenticate": [
         "Autentiser"
       ],
+      "Auto-type": [
+        "Automatisk utfylling"
+      ],
       "Back": [
         "Tilbake"
       ],
@@ -129,6 +132,9 @@
       ],
       "Clear search": [
         "Tøm søk"
+      ],
+      "Clone item": [
+        "Klon element"
       ],
       "Close": [
         "Lukk"
@@ -249,6 +255,12 @@
       ],
       "Dismiss": [
         "Avvis"
+      ],
+      "Do not show again": [
+        "Ikke vis igjen"
+      ],
+      "Do not show again when I press": [
+        "Ikke vis igjen når jeg trykker"
       ],
       "Download this CSV template": [
         "Last ned denne CSV-malen"
@@ -432,6 +444,9 @@
       ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
+      ],
+      "Organize vaults": [
+        "Organiser hvelv"
       ],
       "Pass for Android": [
         "Pass for Android"
@@ -1338,6 +1353,17 @@
         "Veldig liten"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domene"
+      ],
+      "Password ends with": [
+        "Passordet slutter med"
+      ],
+      "Username": [
+        "Brukernavn"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\"-element ble avvist"
@@ -1703,6 +1729,9 @@
       "Extra password successfully removed": [
         "Ekstra passord vellykket fjernet"
       ],
+      "Failed updating your vault organization": [
+        "Oppdateringen av hvelvorganisasjonen din mislyktes"
+      ],
       "Fill in the CSV with your data": [
         "Fyll ut CSV-filen med dataene dine"
       ],
@@ -1829,6 +1858,9 @@
       "Item successfully unpinned": [
         "Element ikke festet"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "Tastatursnarveien kan bare brukes når du er i skrivebordsprogrammet ${ PASS_APP_NAME } og ser på et påloggingselement."
+      ],
       "Latest breach on ${ formattedDate }": [
         "Siste brudd den ${ formattedDate }."
       ],
@@ -1880,6 +1912,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2085,6 +2121,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Hold dette vinduet åpent mens dataene dine importeres. Denne prosessen kan ta noen minutter."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Sørg for at det forrige aktive vinduet er der du vil fylle ut automatisk, og at markøren din var fokusert på innloggingsfeltet."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Kanskje du vil deaktivere aliaset i stedet?"
@@ -2339,6 +2378,9 @@
       "Unverified": [
         "Uverifisert"
       ],
+      "Updating vault organization...": [
+        "Oppdaterer hvelvorganisasjonen..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Oppgrader nå for å låse opp premiumfunksjoner"
       ],
@@ -2365,6 +2407,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Hvelv \"${ share.content.name }\" ble fjernet."
+      ],
+      "Vault organization successfully updated": [
+        "Hvelvorganisasjonen ble oppdatert"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Hvelvdeling: ${ vaultMembersCount } medlem",
@@ -2436,6 +2481,12 @@
       "You may close this tab.": [
         "Du kan lukke denne fanen."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Du må kanskje godta en tillatelsesforespørsel og starte programmet på nytt, avhengig av systemet ditt."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Du må kanskje gi tilgjengelighetstillatelse til ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Du må ha et hvelv med redigeringstillatelse før du kan importere elementer."
       ],
@@ -2480,6 +2531,20 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TAB"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2655,6 +2720,9 @@
       ],
       "Auto-lock after": [
         "Autolås etter"
+      ],
+      "Auto-type in previous window": [
+        "Fyll ut automatisk i forrige vindu"
       ],
       "Backup password": [
         "Reservepassord"
@@ -2832,6 +2900,9 @@
       ],
       "Email": [
         "E-post"
+      ],
+      "EMAIL": [
+        "E-POST"
       ],
       "Email (alias)": [
         "E-post (alias)"
@@ -3052,6 +3123,9 @@
       "Key type": [
         "Nøkkeltype"
       ],
+      "Keyboard shortcut:": [
+        "Tastatursnarvei:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tastatursnarvei: ${ shortcut }"
       ],
@@ -3261,6 +3335,9 @@
       ],
       "Password": [
         "Passord"
+      ],
+      "PASSWORD": [
+        "PASSORD"
       ],
       "Password history": [
         "Passordhistorikk"
@@ -3606,6 +3683,9 @@
       ],
       "Useful for permanent sharing": [
         "Nyttig for permanent deling"
+      ],
+      "USERNAME": [
+        "BRUKERNAVN"
       ],
       "Username": [
         "Brukernavn"
@@ -4334,6 +4414,9 @@
       "Grant permissions": [
         "Gi tillatelser"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Skjulte hvelv vil ikke være synlige under søk og automatisk utfylling."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliaser"
       ],
@@ -4417,6 +4500,9 @@
       "MX record": [
         "MX-post"
       ],
+      "Next": [
+        "Neste"
+      ],
       "No excluded items": [
         "Ingen ekskluderte elementer"
       ],
@@ -4437,6 +4523,12 @@
       ],
       "No shared secure links": [
         "Ingen delte sikre koblinger"
+      ],
+      "Open pagination": [
+        "Åpne sidenummerering"
+      ],
+      "Organize vaults": [
+        "Organiser hvelv"
       ],
       "Our welcome gift to you": [
         "Vår velkomstgave til deg"
@@ -4459,6 +4551,9 @@
       "Pending access to the shared data": [
         "Venter på tilgang til de delte dataene"
       ],
+      "Perform autotype?": [
+        "Utføre automatisk utfylling?"
+      ],
       "Permanently remove all items?": [
         "Fjerne alle elementer permanent?"
       ],
@@ -4468,6 +4563,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet.",
         "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet."
+      ],
+      "Previous": [
+        "Forrige"
       ],
       "Random Prefix Generation": [
         "Generering av tilfeldig prefiks"
@@ -4625,6 +4723,11 @@
         "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
       ]
     },
+    "Title_cloned_item": {
+      "copy": [
+        "kopier"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "I dag"
@@ -4762,6 +4865,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Ekstra passord bør ha minst 8 tegn"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatisk utfylling mislyktes. Sørg for at ${ PASS_APP_NAME } har de nødvendige tillatelsene, og prøv på nytt (${ error })."
       ],
       "Failed to load breaches.": [
         "Kunne ikke laste inn brudd."

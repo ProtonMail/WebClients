@@ -82,6 +82,9 @@
       "Authenticate": [
         "ავთენტიკაცია"
       ],
+      "Auto-type": [
+        "ავტოაკრეფა"
+      ],
       "Back": [
         "უკან"
       ],
@@ -129,6 +132,9 @@
       ],
       "Clear search": [
         "ძებნის გასუფთავება"
+      ],
+      "Clone item": [
+        "ელემენტის კლონირება"
       ],
       "Close": [
         "დახურვა"
@@ -249,6 +255,12 @@
       ],
       "Dismiss": [
         "მოცილება"
+      ],
+      "Do not show again": [
+        "აღარ მაჩვენო"
+      ],
+      "Do not show again when I press": [
+        "აღარ მაჩვენო, როცა დავაჭერ"
       ],
       "Download this CSV template": [
         "გადმოწერეთ ეს CSV ნიმუში"
@@ -432,6 +444,9 @@
       ],
       "Open navigation": [
         "ნავიგაციის გახსნა"
+      ],
+      "Organize vaults": [
+        "საცავების დალაგება"
       ],
       "Pass for Android": [
         "Pass-ი Android-სთვის"
@@ -1320,6 +1335,17 @@
         "ძალიან პატარა"
       ]
     },
+    "Header": {
+      "Domain": [
+        "დომენი"
+      ],
+      "Password ends with": [
+        "პაროლი მთავრდება"
+      ],
+      "Username": [
+        "მომხმარებლის სახელი"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" ელემენტი მოცილებულია"
@@ -1682,6 +1708,9 @@
       "Extra password successfully removed": [
         "დამატებითი პაროლი წარმატებით წაიშალა"
       ],
+      "Failed updating your vault organization": [
+        "თქვენი საცავის ორგანიზაციის განახლება ჩავარდა"
+      ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
       ],
@@ -1856,6 +1885,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2306,6 +2339,9 @@
       "Unverified": [
         "გადაუმოწმებელი"
       ],
+      "Updating vault organization...": [
+        "საცავის ორგანიზაციის განახლება..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა ახლავე"
       ],
@@ -2332,6 +2368,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "საცავი \"${ share.content.name }\" წაიშალა"
+      ],
+      "Vault organization successfully updated": [
+        "საცავის ორგანიზაცია წარმატებით განახლდა"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "საცავის გაზიარება: ${ vaultMembersCount } წევრი",
@@ -2447,6 +2486,20 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "თქვენი ორგანიზაცია ითხოვთ, დაიცვათ თქვენი წვდომა ${ PASS_APP_NAME }-ზე"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TAB"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2620,6 +2673,9 @@
       "Auto-lock after": [
         "ავტომატური დაბლოკვის დრო"
       ],
+      "Auto-type in previous window": [
+        "ავტოაკრეფა წინა ფანჯარაში"
+      ],
       "Backup password": [
         "მარქაფი პაროლი"
       ],
@@ -2789,6 +2845,9 @@
         "მართვის მოწმობა"
       ],
       "Email": [
+        "ელფოსტა"
+      ],
+      "EMAIL": [
         "ელფოსტა"
       ],
       "Email (alias)": [
@@ -3010,6 +3069,9 @@
       "Key type": [
         "გასაღების ტიპი"
       ],
+      "Keyboard shortcut:": [
+        "კლავიატურის მალსახმობი:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "კლავიატურის მალსახმობი: ${ shortcut }"
       ],
@@ -3215,6 +3277,9 @@
         "პასპორტის ნომერი"
       ],
       "Password": [
+        "პაროლი"
+      ],
+      "PASSWORD": [
         "პაროლი"
       ],
       "Password history": [
@@ -3555,6 +3620,9 @@
       ],
       "Useful for permanent sharing": [
         "სასარგებლოა მუდმივი გაზიარებისთვის"
+      ],
+      "USERNAME": [
+        "მომხმარებლის სახელი"
       ],
       "Username": [
         "მომხმარებლის სახელი"
@@ -4283,6 +4351,9 @@
       "Grant permissions": [
         "წვდომების მინიჭება"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "დამალული საცავები არ გამოჩნდება ძებნისას და ავტოშევსებისას."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-ის ფსევდონიმები"
       ],
@@ -4366,6 +4437,9 @@
       "MX record": [
         "MX ჩანაწერი"
       ],
+      "Next": [
+        "შემდეგი"
+      ],
       "No excluded items": [
         "ამოღებული ელემენტების გარეშე"
       ],
@@ -4386,6 +4460,12 @@
       ],
       "No shared secure links": [
         "გაზიარებული დაცული ბმულების გარეშე"
+      ],
+      "Open pagination": [
+        "გვერდების დანომრვა"
+      ],
+      "Organize vaults": [
+        "საცავების დალაგება"
       ],
       "Our welcome gift to you": [
         "ჩვენი მისალმების საჩუქარი"
@@ -4408,6 +4488,9 @@
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
       ],
+      "Perform autotype?": [
+        "შევასრულო ავტოშეყვანა?"
+      ],
       "Permanently remove all items?": [
         "წავშალო სამუდამოდ ყველა ელემენტი?"
       ],
@@ -4417,6 +4500,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმს წაშლით, მას ვერ აღადგენთ.",
         "დაიმახსოვრეთ, მას შემდეგ, რაც ფსევდონიმებს წაშლით, მას ვერ აღადგენთ."
+      ],
+      "Previous": [
+        "წინა"
       ],
       "Random Prefix Generation": [
         "შემთხვევითი პრეფიქსის შექმნა"
@@ -4572,6 +4658,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი.",
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "კოპირება"
       ]
     },
     "Today icon tooltip in mini calendar": {

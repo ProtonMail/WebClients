@@ -253,6 +253,12 @@
       "Dismiss": [
         "Παράβλεψη"
       ],
+      "Do not show again": [
+        "Να μην εμφανιστεί ξανά"
+      ],
+      "Do not show again when I press": [
+        "Να μην εμφανιστεί ξανά όταν πατήσω"
+      ],
       "Download this CSV template": [
         "Κατεβάστε αυτό το πρότυπο CSV"
       ],
@@ -2046,6 +2052,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Παρακαλούμε διατηρήστε αυτό το παράθυρο ανοιχτό κατά την εισαγωγή των δεδομένων σας. Αυτή η διαδικασία μπορεί να διαρκέσει μερικά λεπτά."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Βεβαιωθείτε ότι το παράθυρο που ήταν ενεργό προηγουμένως είναι αυτό στο οποίο θέλετε να εκτελέσετε την αυτόματη πληκτρολόγηση και ότι ο δρομέας σας βρίσκεται στο πεδίο σύνδεσης."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Παρακαλούμε λάβετε υπόψη ότι μετά τη διαγραφή, δεν είναι δυνατή η επαναφορά του ψευδωνύμου. Ίσως θέλετε να απενεργοποιήσετε το ψευδώνυμο;"
       ],
@@ -2402,6 +2411,12 @@
       "You may close this tab.": [
         "Μπορείτε να κλείσετε αυτήν την καρτέλα."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Ενδέχεται να χρειαστεί να αποδεχτείτε ένα μήνυμα αίτησης άδειας και να επανεκκινήσετε την εφαρμογή, ανάλογα με το σύστημά σας."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Ενδέχεται να χρειαστεί να παραχωρήσετε άδεια προσβασιμότητας στο ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Χρειάζεστε μια θυρίδα αποθήκευσης με δικαίωμα επεξεργασίας για να μπορέσετε να εισαγάγετε στοιχεία."
       ],
@@ -2446,6 +2461,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ο οργανισμός σας απαιτεί να εξασφαλίσετε την πρόσβασή σας στο ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3122,9 +3145,6 @@
       ],
       "Network": [
         "Δίκτυο"
-      ],
-      "New": [
-        "Νέο"
       ],
       "New email": [
         "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -4381,6 +4401,9 @@
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
       ],
+      "Perform autotype?": [
+        "Να γίνει αυτόματη πληκτρολόγηση;"
+      ],
       "Permanently remove all items?": [
         "Οριστική αφαίρεση όλων των στοιχείων;"
       ],
@@ -4692,6 +4715,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Ο επιπλέον κωδικός πρόσβασης πρέπει να έχει τουλάχιστον 8 χαρακτήρες"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Αποτυχία αυτόματης πληκτρολόγησης. Παρακαλούμε βεβαιωθείτε ότι το ${ PASS_APP_NAME } διαθέτει τα απαραίτητα δικαιώματα και δοκιμάστε ξανά (${ error })."
       ],
       "Failed to load breaches.": [
         "Αποτυχία φόρτωσης παραβιάσεων."

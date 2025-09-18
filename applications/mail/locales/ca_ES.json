@@ -435,6 +435,9 @@
       "Disable alias": [
         "Desactiva l'àlies"
       ],
+      "Disable categories": [
+        "Deshabiliteu les categories"
+      ],
       "Disabling alias": [
         "Desactivació de l'àlies"
       ],
@@ -765,6 +768,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Afegiu-vos-hi amb ${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "Conserveu les categories"
       ],
       "Keep my subscription": [
         "Mantén la subscripció"
@@ -1986,11 +1992,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzat el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos el ${ formattedDate }. No se us carregarà cap import si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes el ${ formattedDate }. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
@@ -6694,6 +6700,9 @@
       "All messages stored with this label will be permanently deleted.": [
         "Tots els missatges emmagatzemats amb aquesta etiqueta s'eliminaran permanentment."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Tots els missatges es mostraran a la safata d'entrada, les pestanyes de categoria i les etiquetes ja no seran visibles. "
+      ],
       "All your calendars are disabled.": [
         "Tots els vostres calendaris estan desactivats."
       ],
@@ -9760,9 +9769,6 @@
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
-      ],
-      "You cannot disable all categories": [
-        "No podeu desactivar totes les categories"
       ],
       "Your alias": [
         "El vostre àlies"
@@ -14603,6 +14609,9 @@
       ],
       "Desktop": [
         "Escriptori"
+      ],
+      "Disable categories?": [
+        "Voleu deshabilitar les categories?"
       ],
       "Discover your subscription benefits": [
         "Descobriu els avantatges de la vostra subscripció"

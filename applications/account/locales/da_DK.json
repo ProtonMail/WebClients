@@ -5491,9 +5491,6 @@
       "You must set a name": [
         "Du skal angive et navn"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Du skal have en brugerdomæneadresse for at kunne generere et SMTP-indsendelses-token."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Du har nået det maksimale antal tegn. Forkort din besked."
       ],
@@ -7498,9 +7495,6 @@
       ],
       "active": [
         "aktiv"
-      ],
-      "Activity Monitor": [
-        "Aktivitetsovervågning"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me e-mailadresse til din konto. Dette simple, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
@@ -18526,6 +18520,9 @@
       ],
       "Account recovery": [
         "Kontogendannelse"
+      ],
+      "Account restricted": [
+        "Konto begrænset:"
       ],
       "Account suspended": [
         "Konto suspenderet"

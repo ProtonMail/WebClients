@@ -1361,8 +1361,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Al hacer clic en \"Probar\", aceptas nuestros ${ termsAndConditions }."
@@ -4050,11 +4053,6 @@
         "Se requiere el código postal."
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Selecciona usuarios para ver sus actividades."
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Se ha producido un error al leer el archivo ${ formattedFilename }. Formato de archivo incorrecto."
@@ -5595,9 +5593,6 @@
       "active": [
         "activa"
       ],
-      "Activity Monitor": [
-        "Monitor de actividades"
-      ],
       "add a recovery method": [
         "añadir un método de recuperación"
       ],
@@ -6821,6 +6816,9 @@
       ],
       "Shared vault updated": [
         "Se ha actualizado la caja fuerte compartida."
+      ],
+      "Sign in only": [
+        "Solo iniciar sesión"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicia sesión en ${ MAIL_APP_NAME } para activar tu dirección"
@@ -13617,6 +13615,9 @@
       "Account": [
         "Cuenta"
       ],
+      "Account restricted": [
+        "Cuenta restringida"
+      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -14671,6 +14672,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Esto puede deberse a un restablecimiento de contraseña o el usuario aún no ha iniciado sesión."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Esta dirección de correo electrónico solo se puede utilizar para iniciar sesión en tu cuenta de ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Esta dirección de correo se mostrará a todos los miembros de la organización cuando se ejecute operaciones de gestión de cuentas."

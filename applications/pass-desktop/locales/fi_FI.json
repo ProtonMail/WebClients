@@ -130,6 +130,9 @@
       "Clear search": [
         "Tyhjennä haku"
       ],
+      "Clone item": [
+        "Kloonaa kohde"
+      ],
       "Close": [
         "Sulje"
       ],
@@ -1305,6 +1308,11 @@
         "Erittäin pieni"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Verkkotunnus"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Kohde \"${ payload.itemName }\" hylättiin"
@@ -1834,6 +1842,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -4293,6 +4305,9 @@
       "MX record": [
         "MX-tietue"
       ],
+      "Next": [
+        "Seuraava"
+      ],
       "No excluded items": [
         "Poissuljettuja kohteita ei ole"
       ],
@@ -4313,6 +4328,9 @@
       ],
       "No shared secure links": [
         "Jaettuja suojattuja linkkejä ei ole"
+      ],
+      "Open pagination": [
+        "Avaa sivunavigaatio"
       ],
       "Our welcome gift to you": [
         "Tervetuliaislahjamme sinulle"
@@ -4341,6 +4359,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Huomioi, että et voi palauttaa poistettua aliasta.",
         "Huomioi, että et voi palauttaa poistettuja aliaksia."
+      ],
+      "Previous": [
+        "Edellinen"
       ],
       "Random Prefix Generation": [
         "Satunnaisen etuliitteen luominen"
@@ -4496,6 +4517,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "kopioi"
       ]
     },
     "Today icon tooltip in mini calendar": {

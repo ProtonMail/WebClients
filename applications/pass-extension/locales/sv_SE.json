@@ -110,6 +110,9 @@
       "Clear search": [
         "Rensa sök"
       ],
+      "Clone item": [
+        "Klona objekt"
+      ],
       "Close": [
         "Stäng"
       ],
@@ -241,6 +244,12 @@
       ],
       "Dismiss": [
         "Avfärda"
+      ],
+      "Do not show again": [
+        "Visa inte igen"
+      ],
+      "Do not show again when I press": [
+        "Visa inte igen när jag trycker"
       ],
       "Do not show on this website": [
         "Visa inte på denna webbplats"
@@ -2388,6 +2397,14 @@
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
       ]
     },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
       "${ aliasCount } alias": [
         "${ aliasCount } alias",
@@ -3019,9 +3036,6 @@
       ],
       "Network": [
         "Nätverk"
-      ],
-      "New": [
-        "Nytt"
       ],
       "New email": [
         "Ny e-post"
@@ -4151,6 +4165,9 @@
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
       ],
+      "Perform autotype?": [
+        "Utför automatisk ifyllning?"
+      ],
       "Permanently remove all items?": [
         "Ta bort alla objekt permanent?"
       ],
@@ -4287,6 +4304,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "kopiera"
       ]
     },
     "Today icon tooltip in mini calendar": {

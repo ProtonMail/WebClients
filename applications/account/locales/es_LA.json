@@ -2062,12 +2062,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Después de que la prueba finalice el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada ${ renewCycle } meses el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada mes el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Al hacer clic en \"Probar\", acepta nuestros ${ termsAndConditions }."
       ],
@@ -6251,9 +6245,6 @@
       "You must set a name": [
         "Debe establecer un nombre"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Necesita una dirección de dominio personalizado para generar un token de envío SMTP."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Ha alcanzado el número máximo de caracteres, acorte el mensaje."
       ],
@@ -6271,11 +6262,6 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Seleccione usuarios para ver sus actividades."
       ]
     },
     "Error importing calendar": {
@@ -8413,9 +8399,6 @@
       ],
       "active": [
         "activa"
-      ],
-      "Activity Monitor": [
-        "Monitor de actividades"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Agregue una dirección de correo @pm.me a la cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME }\" o \"Mensaje privado\" en inglés."
@@ -17687,9 +17670,6 @@
       "Account safety review": [
         "Verificación de seguridad de la cuenta"
       ],
-      "Add a email address": [
-        "Añadir una dirección de correo"
-      ],
       "Add a phone number": [
         "Añadir un número de teléfono"
       ],
@@ -17819,9 +17799,6 @@
       "to automatically recover your data when you log into a trusted device": [
         "para recuperar sus datos cuando inicie sesión en un dispositivo de confianza"
       ],
-      "to ensure highest possible security of your account": [
-        "para garantizar la mayor seguridad de su cuenta"
-      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Para asegurarnos que la dirección de correo es suya, ingrese el código de verificación enviado a ${ boldEmail }."
       ],
@@ -17833,9 +17810,6 @@
       ],
       "to recover your account if you're ever locked out": [
         "para recuperar la cuenta si alguna vez se bloqueara"
-      ],
-      "To stay in touch": [
-        "Para estar en contacto"
       ],
       "Update your Recovery Kit": [
         "Actualice el kit de recuperación"
@@ -20830,6 +20804,9 @@
       ],
       "Account recovery": [
         "Recuperación de cuenta"
+      ],
+      "Account restricted": [
+        "Cuenta restringida"
       ],
       "Account suspended": [
         "Cuenta suspendida"

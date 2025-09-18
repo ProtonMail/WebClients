@@ -97,6 +97,9 @@
       "Clear search": [
         "清除搜尋"
       ],
+      "Clone item": [
+        "複製項目"
+      ],
       "Close": [
         "關閉"
       ],
@@ -204,6 +207,9 @@
       ],
       "Dismiss": [
         "忽略"
+      ],
+      "Do not show again": [
+        "不再顯示"
       ],
       "Download this CSV template": [
         "下載此CSV模板"
@@ -366,6 +372,9 @@
       ],
       "Open navigation": [
         "開啟導覽"
+      ],
+      "Organize vaults": [
+        "整理保管庫"
       ],
       "Pass for Android": [
         "Proton Pass 的 安卓版本"
@@ -1161,6 +1170,9 @@
       "Expires in ${ remainingTime }": [
         "將於${ remainingTime }過期"
       ],
+      "Failed updating your vault organization": [
+        "更新您的保管庫組織機構失敗"
+      ],
       "Fill in the CSV with your data": [
         "CSV格式的檔案"
       ],
@@ -1473,6 +1485,9 @@
       "Unverified": [
         "未驗證"
       ],
+      "Updating vault organization...": [
+        "正在更新保管庫組織機構..."
+      ],
       "Upgrade to a paid plan to create multiple vaults.": [
         "升級付費方案以創建多重保管庫。"
       ],
@@ -1493,6 +1508,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "保管庫 ${ share.content.name } 已移除"
+      ],
+      "Vault organization successfully updated": [
+        "已成功更新保管庫組織機構"
       ],
       "Verification code sent.": [
         "驗證碼寄送。"
@@ -1544,6 +1562,14 @@
       ],
       "Your information was found on ${ displayedDate }": [
         "您的資料在 ${ displayedDate } 被發現。"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT 鍵"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2988,6 +3014,9 @@
       "Grant permissions": [
         "取得權限"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "隱藏的保管庫在搜尋和自動填入時將不會顯示。"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
       ],
@@ -3048,6 +3077,9 @@
       "MX record": [
         "MX 記錄"
       ],
+      "Next": [
+        "下一頁"
+      ],
       "No excluded items": [
         "無排除的項目"
       ],
@@ -3062,6 +3094,12 @@
       ],
       "No shared items": [
         "無共享項目"
+      ],
+      "Open pagination": [
+        "開啟分頁"
+      ],
+      "Organize vaults": [
+        "整理保管庫"
       ],
       "Our welcome gift to you": [
         "我們為您準備的迎賓禮"
@@ -3083,6 +3121,9 @@
       ],
       "Please note that once deleted, the alias can't be restored.": [
         "需注意別名一旦刪除，將無法恢復"
+      ],
+      "Previous": [
+        "上一頁"
       ],
       "Recommended actions": [
         "建議行動"
@@ -3206,6 +3247,11 @@
       ],
       "Your welcome gift": [
         "您的歡迎禮物"
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "複製"
       ]
     },
     "Today icon tooltip in mini calendar": {

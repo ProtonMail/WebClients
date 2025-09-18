@@ -1361,11 +1361,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Ved å klikke på \"Prøv\", sier du deg enig med våre ${ termsAndConditions }."
@@ -4062,11 +4062,6 @@
         "Postnummer kreves"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Velg brukere for å se aktiviteten deres"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Det oppstod en feil under lesing av filen ${ formattedFilename }. Filen har ikke riktig format."
@@ -5604,11 +5599,11 @@
       "Account successfully updated": [
         "Konto oppdatert"
       ],
+      "Accounts": [
+        "Kontoer"
+      ],
       "active": [
         "aktiv"
-      ],
-      "Activity Monitor": [
-        "Overvåking av aktivitet"
       ],
       "add a recovery method": [
         "legger til en gjenoppretingsmetode"
@@ -6573,6 +6568,9 @@
       "Organization monitor": [
         "Organisasjonsovervåking"
       ],
+      "Organization Monitor": [
+        "Organisasjonsovervåking"
+      ],
       "Organization size": [
         "Organisasjonsstørrelse"
       ],
@@ -6782,6 +6780,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Velg brukertilknytningene fra ${ getFormattedOrganization } som du vil tillate inn i ${ BRAND_NAME }-organisasjonen din:"
       ],
+      "Select users to view their activity": [
+        "Velg brukere for å se aktiviteten deres"
+      ],
       "Select what you want to import.": [
         "Velg hva du ønsker å importere."
       ],
@@ -6836,6 +6837,9 @@
       ],
       "Shared vault updated": [
         "Delt hvelv oppdatert"
+      ],
+      "Sign in only": [
+        "Kun pålogging"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logg på ${ MAIL_APP_NAME } for å aktivere din adresse"
@@ -13539,6 +13543,9 @@
       "Account": [
         "Konto"
       ],
+      "Account restricted": [
+        "Konto begrenset"
+      ],
       "Account suspended": [
         "Kontoen er suspendert"
       ],
@@ -14593,6 +14600,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Dette kan være forårsaket av tilbakestilling av passord eller at brukeren ikke logger på enda."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Denne e-postadressen kan bare brukes til å logge på ${ BRAND_NAME }-kontoen din."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Denne e-postadressen vises til alle organisasjonsmedlemmer når de utfører kontoadministrasjonsoperasjoner."
