@@ -4,6 +4,240 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } àlies",
+        "${ aliasCount } àlies"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } blocat",
+        "${ blockedCount } blocats"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } bloquejat",
+        "${ blockedEmailsCount } bloquejats"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } caràcter",
+        "${ config.options.length } caràcters"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } paraula",
+        "${ config.options.wordCount } paraules"
+      ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elements"
+      ],
+      "${ count } time": [
+        "${ count } vegada",
+        "${ count } vegades"
+      ],
+      "${ count } view": [
+        "${ count } vista",
+        "${ count } vistes"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } vista",
+        "${ count }/${ maxReads } vistes"
+      ],
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fitxer",
+        "${ filesCount } fitxers"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } reenviament",
+        "${ forwardCount } reenviaments"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } reenviat",
+        "${ forwardedEmailsCount } reenviats"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membre",
+        "${ memberCount } membres"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ],
+      "${ months } month": [
+        "${ months } mes",
+        "${ months } mesos"
+      ],
+      "${ n } item": [
+        "${ n } element",
+        "${ n } elements"
+      ],
+      "${ payload.count } invite successfully sent": [
+        "S'ha enviat ${ payload.count } invitació.",
+        "S'han enviat ${ payload.count } invitacions."
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } resposta",
+        "${ repliedCount } respostes"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } enviat",
+        "${ repliedEmailsCount } enviats"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } enllaç segur",
+        "${ secureLinksCount } enllaços segurs"
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } altre inici de sessió fa servir la mateixa contrasenya.",
+        "${ total } altres inicis de sessió fan servir la mateixa contrasenya."
+      ],
+      "${ trialDaysLeft } day left": [
+        "Queda ${ trialDaysLeft } dia",
+        "Queden ${ trialDaysLeft } dies"
+      ],
+      "${ years } year": [
+        "${ years } any",
+        "${ years } anys"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Esteu segur que voleu moure ${ trashedItemsCount } element a la paperera?",
+        "Esteu segur que voleu moure ${ trashedItemsCount } elements a la paperera?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Segur que voleu eliminar ${ deletedItemsCount } element definitivament?",
+        "Segur que voleu eliminar ${ deletedItemsCount } elements definitivament?"
+      ],
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Cannot send invitation at the moment": [
+        "Ara mateix no es pot enviar la invitació",
+        "Ara mateix no es poden enviar invitacions"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Voleu eliminar ${ deletedItemsCount } element?",
+        "Voleu eliminar ${ deletedItemsCount } elements?"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "S'ha detectat ${ errors.length } fila CSV corrupta",
+        "S'han detectat ${ errors.length } files CSV corruptes"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Per motius de seguretat, heu de confirmar l'accés a aquesta caixa forta compartida",
+        "Per motius de seguretat, heu de confirmar l'accés a aquestes caixes fortes compartides."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Les contrasenyes generades s'emmagatzemaran durant un període d'${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana.",
+        "Les contrasenyes generades s'emmagatzemaran durant un període de: ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes."
+      ],
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Elements compartits: ${ itemAccessCount } usuari",
+        "Elements compartits: ${ itemAccessCount } usuaris"
+      ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Els elements no poden contenir més d'${ share.targetMaxMembers } usuari.",
+        "Els elements no poden contenir més d'${ share.targetMaxMembers } usuaris."
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "La longitud màxima és d'${ maxLength } caràcter.",
+        "La longitud màxima és de ${ maxLength } caràcters."
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ],
+      "Move ${ count } item": [
+        "Mou ${ count } element",
+        "Mou ${ count } elements"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Mou ${ count } element a ${ vaultName }",
+        "Mou ${ count } elements a ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Voleu moure ${ trashedItemsCount } element a la paperera?",
+        "Voleu moure ${ trashedItemsCount } elements a la paperera?"
+      ],
+      "Move item to": [
+        "Mou l'element a",
+        "Mou elements a"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana s'esborren automàticament de l'historial.",
+        "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes s'esborren automàticament de l'historial."
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Recordeu que un cop eliminat, l'àlies no es pot recuperar.",
+        "Recordeu que un cop eliminats, els àlies no es poden recuperar."
+      ],
+      "Sync alias": [
+        "Sincronitza l'àlies",
+        "Sincronitza els àlies"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "No s'ha pogut importar ${ totalIgnored } element:",
+        "No s'han pogut importar els ${ totalIgnored } elements següents:"
+      ],
+      "Understood, I will never need it": [
+        "Ho entenc i mai el necessitaré.",
+        "Ho entenc i mai els necessitaré."
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Caixes fortes compartides: ${ vaultMembersCount } membre",
+        "Caixes fortes compartides: ${ vaultMembersCount } membres"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Les caixes fortes no poden contenir més d'${ targetMaxMembers } usuari.",
+        "Les caixes fortes no poden contenir més de ${ targetMaxMembers } usuaris."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareix en ${ PASS_APP_NAME }. Voleu importar-lo?",
+        "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareixen en ${ PASS_APP_NAME }. Voleu importar-los?"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Podeu arrossegar i deixar anar l'element seleccionat a una altra caixa forta.",
+        "Podeu arrossegar i deixar anar els elements seleccionats a una altra caixa forta."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Teniu ${ aliasCount } àlies en SimpleLogin que no apareix en ${ PASS_APP_NAME }. Voleu sincronitzar-lo?",
+        "Teniu ${ aliasCount } àlies en SimpleLogin que no apareixen en ${ PASS_APP_NAME }. Voleu sincronitzar-los?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Us queda ${ daysRemaining } dia per provar aquestes i altres característiques prèmium.",
+        "Us queden ${ daysRemaining } dies per provar aquestes i altres característiques prèmium."
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
+        "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ]
+    },
     "Action": {
       "Accept": [
         "Accepta"
@@ -109,6 +343,9 @@
       ],
       "Clear search": [
         "Neteja la cerca"
+      ],
+      "Clone item": [
+        "Clona l'element"
       ],
       "Close": [
         "Tanca"
@@ -241,6 +478,12 @@
       ],
       "Dismiss": [
         "Descarta"
+      ],
+      "Do not show again": [
+        "No ho torneu a mostrar"
+      ],
+      "Do not show again when I press": [
+        "No m'ho tornis a mostrar quan ho premi"
       ],
       "Do not show on this website": [
         "No ho mostris en aquest lloc web"
@@ -425,6 +668,9 @@
       "Open web app": [
         "Obre l'aplicació web"
       ],
+      "Organize vaults": [
+        "Organitza les caixes fortes"
+      ],
       "Pass for Android": [
         "Pass per a Android"
       ],
@@ -599,10 +845,6 @@
       "Submitting report...": [
         "S'està enviant l'informe..."
       ],
-      "Sync alias": [
-        "Sincronitza l'àlies",
-        "Sincronitza els àlies"
-      ],
       "Sync aliases": [
         "Sincronitza els àlies"
       ],
@@ -626,10 +868,6 @@
       ],
       "Unblock contact": [
         "Desbloqueja el contacte"
-      ],
-      "Understood, I will never need it": [
-        "Ho entenc i mai el necessitaré.",
-        "Ho entenc i mai els necessitaré."
       ],
       "Unlock": [
         "Desbloquejar"
@@ -710,10 +948,6 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } està disponible amb un pla de pagament. Milloreu el pla per a accedir-hi immediatament."
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } altre inici de sessió fa servir la mateixa contrasenya.",
-        "${ total } altres inicis de sessió fan servir la mateixa contrasenya."
       ],
       "A checked box means the feature is disabled.": [
         "Una casella marcada significa que la funció està desactivada."
@@ -809,10 +1043,6 @@
       "Cannot create alias (${ error }).": [
         "No es pot crear l'àlies (${ error })."
       ],
-      "Cannot send invitation at the moment": [
-        "Ara mateix no es pot enviar la invitació",
-        "Ara mateix no es poden enviar invitacions"
-      ],
       "Cannot send invitations at the moment": [
         "De moment, no es poden enviar invitacions"
       ],
@@ -860,10 +1090,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut eliminar la caixa forta \"${ payload.content.name }\""
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "S'ha detectat ${ errors.length } fila CSV corrupta",
-        "S'han detectat ${ errors.length } files CSV corruptes"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "No s'ha pogut verificar el domini. Assegureu-vos que heu afegit els registres DNS correctes."
@@ -1211,10 +1437,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -1228,28 +1450,6 @@
         "TB"
       ]
     },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "gigabyte",
-        "gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "megabyte",
-        "megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
-      ]
-    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "S'ha descartat l'element de «${ payload.itemName }»"
@@ -1257,36 +1457,8 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "S'ha descartat l'actualització del «${ payload.itemName }»"
       ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } bloquejat",
-        "${ blockedEmailsCount } bloquejats"
-      ],
-      "${ count } time": [
-        "${ count } vegada",
-        "${ count } vegades"
-      ],
-      "${ count } view": [
-        "${ count } vista",
-        "${ count } vistes"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } vista",
-        "${ count }/${ maxReads } vistes"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } reenviat",
-        "${ forwardedEmailsCount } reenviats"
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vol compartir un element amb vosaltres."
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } membre",
-        "${ memberCount } membres"
-      ],
-      "${ n } item": [
-        "${ n } element",
-        "${ n } elements"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sempre serà accessible"
@@ -1321,23 +1493,11 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } suggerirà desar les claus d'accés."
       ],
-      "${ payload.count } invite successfully sent": [
-        "S'ha enviat ${ payload.count } invitació.",
-        "S'han enviat ${ payload.count } invitacions."
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "S'ha desactivat ${ PROTON_SENTINEL_NAME }."
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "S'ha activat ${ PROTON_SENTINEL_NAME }."
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } enviat",
-        "${ repliedEmailsCount } enviats"
-      ],
-      "${ trialDaysLeft } day left": [
-        "Queda ${ trialDaysLeft } dia",
-        "Queden ${ trialDaysLeft } dies"
       ],
       "(Empty)": [
         "(Buit)"
@@ -1651,6 +1811,9 @@
       "Extra password successfully removed": [
         "S'ha esborrat la contrasenya addicional."
       ],
+      "Failed updating your vault organization": [
+        "No s'ha pogut actualitzar l'organització de la vostra caixa forta"
+      ],
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
       ],
@@ -1666,19 +1829,11 @@
       "For security reasons, this action requires identity verification.": [
         "Per motius de seguretat, aquesta acció requereix la verificació de la vostra identitat."
       ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Per motius de seguretat, heu de confirmar l'accés a aquesta caixa forta compartida",
-        "Per motius de seguretat, heu de confirmar l'accés a aquestes caixes fortes compartides."
-      ],
       "For security reasons, your access needs to be confirmed": [
         "Per motius de seguretat, cal confirmar l'accés"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "L'adreça de reenviament s'ha copiat al porta-retalls. Envieu un correu electrònic a aquesta adreça i ${ Email } el rebrà."
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Les contrasenyes generades s'emmagatzemaran durant un període d'${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana.",
-        "Les contrasenyes generades s'emmagatzemaran durant un període de: ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes."
       ],
       "Generating alias...": [
         "S'està generant un àlies..."
@@ -1746,10 +1901,6 @@
       "Item restored": [
         "S'ha restaurat l'element"
       ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Elements compartits: ${ itemAccessCount } usuari",
-        "Elements compartits: ${ itemAccessCount } usuaris"
-      ],
       "Item successfully excluded from monitoring": [
         "S'ha exclòs l'element del monitoratge."
       ],
@@ -1798,15 +1949,8 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Més que un gestor de contrasenyes, ${ PASS_APP_NAME } protegeix la vostra contrasenya i la vostra adreça de correu electrònic personal mitjançant àlies de correu electrònic. Desenvolupat amb la mateixa tecnologia que hi ha darrere de ${ MAIL_APP_NAME }, les vostres dades estan xifrades d'extrem a extrem i només són accessibles per vós."
       ],
-      "Move ${ count } item": [
-        "Mou ${ count } element",
-        "Mou ${ count } elements"
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -1870,10 +2014,6 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "S'ha registrat el bloqueig de la contrasenya. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }."
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmana s'esborren automàticament de l'historial.",
-        "Les contrasenyes anteriors a ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } setmanes s'esborren automàticament de l'historial."
       ],
       "Pending access to the shared data": [
         "L'accés a les dades compartides està pendent"
@@ -1991,6 +2131,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Manteniu aquesta finestra oberta mentre s'importen les vostres dades. Aquest procés pot trigar uns minuts."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Assegureu-vos que la finestra prèviament activa és on voleu escriure automàticament i que el cursor estava situat al camp d'inici de sessió."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Tingueu en compte que, un cop suprimit, l'àlies no es pot restaurar. Potser voleu desactivar l'àlies?"
@@ -2151,10 +2294,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Es requerirà la contrasenya addicional per utilitzar ${ PASS_APP_NAME }. Actua com una contrasenya addicional a la contrasenya de ${ BRAND_NAME }."
       ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "No s'ha pogut importar ${ totalIgnored } element:",
-        "No s'han pogut importar els ${ totalIgnored } elements següents:"
-      ],
       "The secure link has been removed": [
         "S'ha eliminat l'enllaç segur."
       ],
@@ -2260,6 +2399,9 @@
       "Update login": [
         "Actualitza l'inici de sessió"
       ],
+      "Updating vault organization...": [
+        "S'està actualitzant l'organització de la caixa forta..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Millora ${ PASS_APP_NAME }"
       ],
@@ -2287,9 +2429,8 @@
       "Vault \"${ share.content.name }\" was removed": [
         "S'ha esborrat la caixa forta \"${ share.content.name }\"."
       ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Caixes fortes compartides: ${ vaultMembersCount } membre",
-        "Caixes fortes compartides: ${ vaultMembersCount } membres"
+      "Vault organization successfully updated": [
+        "S'ha actualitzat correctament l'organització de la caixa forta"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -2299,10 +2440,6 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Estem tenint problemes per sincronitzar les dades amb el vostre emmagatzematge local. Assegureu-vos que teniu prou espai al disc perquè ${ PASS_SHORT_APP_NAME } funcioni correctament."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareix en ${ PASS_APP_NAME }. Voleu importar-lo?",
-        "Hem detectat que teniu ${ aliasCount } àlies en SimpleLogin però no apareixen en ${ PASS_APP_NAME }. Voleu importar-los?"
       ],
       "Week": [
         "Setmana"
@@ -2328,14 +2465,6 @@
       "You cannot change the mailboxes for this alias.": [
         "No podeu canviar les bústies de correu per a aquest àlies."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Teniu ${ aliasCount } àlies en SimpleLogin que no apareix en ${ PASS_APP_NAME }. Voleu sincronitzar-lo?",
-        "Teniu ${ aliasCount } àlies en SimpleLogin que no apareixen en ${ PASS_APP_NAME }. Voleu sincronitzar-los?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Us queda ${ daysRemaining } dia per provar aquestes i altres característiques prèmium.",
-        "Us queden ${ daysRemaining } dies per provar aquestes i altres característiques prèmium."
-      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Heu excedit el nombre de caixes fortes incloses a la vostra subscripció. Els elements només es poden moure a les vostres dues primeres caixes fortes. Per moure elements entre totes les caixes fortes milloreu la vostra subscripció."
       ],
@@ -2356,6 +2485,12 @@
       ],
       "You may close this tab.": [
         "Ara podeu tancar aquesta pestanya."
+      ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Potser necessitareu acceptar una sol·licitud de permís i reiniciar l'aplicació en funció del vostre sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Potser necessitareu concedir permisos d'accessibilitat a ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Necessiteu una caixa forta amb permís d'edició abans de poder importar elements."
@@ -2394,67 +2529,23 @@
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
       ]
     },
+    "Keyboard key": {
+      "SHIFT": [
+        "Majúscules"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } àlies",
-        "${ aliasCount } àlies"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } blocat",
-        "${ blockedCount } blocats"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } caràcter",
-        "${ config.options.length } caràcters"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } paraula",
-        "${ config.options.wordCount } paraules"
-      ],
-      "${ count } item": [
-        "${ count } element",
-        "${ count } elements"
-      ],
-      "${ days } day": [
-        "${ days } dia",
-        "${ days } dies"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } reenviament",
-        "${ forwardCount } reenviaments"
-      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails },${ repliedEmails } e ${ blockedEmails } en els darrers 14 dies."
-      ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hores"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuts"
-      ],
-      "${ months } month": [
-        "${ months } mes",
-        "${ months } mesos"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versió ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } resposta",
-        "${ repliedCount } respostes"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } enllaç segur",
-        "${ secureLinksCount } enllaços segurs"
-      ],
-      "${ years } year": [
-        "${ years } any",
-        "${ years } anys"
       ],
       "1 hour": [
         "1 hora"
@@ -3029,9 +3120,6 @@
       "Network": [
         "Xarxa"
       ],
-      "New": [
-        "Nou"
-      ],
       "New email": [
         "Nou correu electrònic"
       ],
@@ -3495,14 +3583,6 @@
       ]
     },
     "Message": {
-      "${ count } item": [
-        "${ count } element",
-        "${ count } elements"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Podeu arrossegar i deixar anar l'element seleccionat a una altra caixa forta.",
-        "Podeu arrossegar i deixar anar els elements seleccionats a una altra caixa forta."
-      ],
       "You selected ${ semiboldText } in this vault.": [
         "Heu seleccionat ${ semiboldText } en aquesta caixa forta."
       ]
@@ -3550,10 +3630,6 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "«${ filename }» és massa gran per carregar-lo. La mida màxima permesa és ${ maxFileSizeInMB }."
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } fitxer",
-        "${ filesCount } fitxers"
       ],
       "Attachments": [
         "Fitxers adjunts"
@@ -3866,10 +3942,6 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "S'ha verificat el domini. El vostre domini pot començar a rebre correus electrònics i crear àlies."
       ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Els elements no poden contenir més d'${ share.targetMaxMembers } usuari.",
-        "Els elements no poden contenir més d'${ share.targetMaxMembers } usuaris."
-      ],
       "Mailbox change successfully cancelled": [
         "S'ha cancel·lat el canvi de bústia."
       ],
@@ -3887,10 +3959,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "S'ha activat la generació aleatòria de prefixos."
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Les caixes fortes no poden contenir més d'${ targetMaxMembers } usuari.",
-        "Les caixes fortes no poden contenir més de ${ targetMaxMembers } usuaris."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "S'ha enviat un correu electrònic de verificació. Comproveu la vostra safata d'entrada per verificar la vostra bústia de correu"
@@ -3992,10 +4060,6 @@
       "Default Display Name": [
         "Nom a mostrar per defecte"
       ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Voleu eliminar ${ deletedItemsCount } element?",
-        "Voleu eliminar ${ deletedItemsCount } elements?"
-      ],
       "Delete domain": [
         "Elimina el domini"
       ],
@@ -4068,6 +4132,9 @@
       "Grant permissions": [
         "Concediu permisos"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Les caixes fortes ocultes no seran visibles durant la cerca i l'emplenament automàtic."
+      ],
       "Hide my email": [
         "Amaga el correu electrònic"
       ],
@@ -4122,14 +4189,6 @@
       "Modified": [
         "Modificació"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Mou ${ count } element a ${ vaultName }",
-        "Mou ${ count } elements a ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Voleu moure ${ trashedItemsCount } element a la paperera?",
-        "Voleu moure ${ trashedItemsCount } elements a la paperera?"
-      ],
       "Move all items to \"${ vaultName }\"?": [
         "Voleu moure tots els elements a «${ vaultName }»?"
       ],
@@ -4148,6 +4207,9 @@
       "No shared secure links": [
         "Sense enllaços segurs compartits"
       ],
+      "Organize vaults": [
+        "Organitza les caixes fortes"
+      ],
       "Our welcome gift to you": [
         "El nostre regal de benvinguda per a vós"
       ],
@@ -4163,6 +4225,9 @@
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
       ],
+      "Perform autotype?": [
+        "Voleu emplenament automàtic?"
+      ],
       "Permanently remove all items?": [
         "Voleu esborrar els elements de manera permanent?"
       ],
@@ -4171,10 +4236,6 @@
       ],
       "Pinned (${ items.length })": [
         "Ancorat (${ items.length })"
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Recordeu que un cop eliminat, l'àlies no es pot recuperar.",
-        "Recordeu que un cop eliminats, els àlies no es poden recuperar."
       ],
       "Random Prefix Generation": [
         "Generació aleatòria de prefixos"
@@ -4295,10 +4356,11 @@
       ],
       "Your welcome gift": [
         "El vostre regal de benvinguda"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Esteu a punt de suprimir permanentment ${ aliasCount } àlies.",
-        "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copia"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4332,12 +4394,6 @@
         "L'URL no és vàlid."
       ]
     },
-    "Vault Select": {
-      "Move item to": [
-        "Mou l'element a",
-        "Mou elements a"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Es requereix la contrasenya de ${ BRAND_NAME }."
@@ -4365,14 +4421,6 @@
       ],
       "An error occurred while resuming your session": [
         "S'ha produït un error en reprendre la sessió."
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Esteu segur que voleu moure ${ trashedItemsCount } element a la paperera?",
-        "Esteu segur que voleu moure ${ trashedItemsCount } elements a la paperera?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Segur que voleu eliminar ${ deletedItemsCount } element definitivament?",
-        "Segur que voleu eliminar ${ deletedItemsCount } elements definitivament?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Esteu segur que voleu suprimir permanentment aquest element?"
@@ -4445,10 +4493,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "No es permet convidar adreces de correu electrònic de fora de l'organització."
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "La longitud màxima és d'${ maxLength } caràcter.",
-        "La longitud màxima és de ${ maxLength } caràcters."
       ],
       "Missing alias prefix": [
         "Falta el prefix de l'àlies"
