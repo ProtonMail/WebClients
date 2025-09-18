@@ -37,8 +37,7 @@ export const useMeetingAuthentication = () => {
                 const meetingInfo = await getMeetingInfo(token);
 
                 meetingName = await decryptMeetingName({
-                    urlPassword,
-                    customPassword,
+                    password: getCombinedPassword(urlPassword, customPassword),
                     encryptedSessionKey: meetingInfo.MeetingInfo.SessionKey,
                     encryptedMeetingName: meetingInfo.MeetingInfo.MeetingName,
                     salt: meetingInfo.MeetingInfo.Salt,

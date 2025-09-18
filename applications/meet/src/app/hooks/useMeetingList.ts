@@ -40,7 +40,7 @@ export const useMeetingList = (): [Meeting[] | null, Meeting | null] => {
                 meetingName = await decryptMeetingName({
                     encryptedMeetingName: meeting.MeetingName,
                     encryptedSessionKey: meeting.SessionKey,
-                    decryptedPassword: password,
+                    password,
                     salt: meeting.Salt,
                 });
             }
