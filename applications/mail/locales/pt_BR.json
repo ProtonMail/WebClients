@@ -435,6 +435,9 @@
       "Disable alias": [
         "Desativar alias"
       ],
+      "Disable categories": [
+        "Desativar categorias"
+      ],
       "Disabling alias": [
         "Desativar alias"
       ],
@@ -765,6 +768,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Participar com ${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "Manter categorias"
       ],
       "Keep my subscription": [
         "Manter minha assinatura"
@@ -1986,11 +1992,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Após a avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que se renova automaticamente a cada ${ renewCycle } meses em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
@@ -6694,6 +6700,9 @@
       "All messages stored with this label will be permanently deleted.": [
         "Todas as mensagens armazenadas com esta marcação serão excluídas permanentemente."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Todas as mensagens serão mostradas na Inbox, e as abas e tags de categorias não serão mais visíveis. "
+      ],
       "All your calendars are disabled.": [
         "Todos os seus calendários estão desativados."
       ],
@@ -9760,9 +9769,6 @@
       ],
       "Writing assistant": [
         "Assistente de escrita"
-      ],
-      "You cannot disable all categories": [
-        "Você não pode desativar todas as categorias"
       ],
       "Your alias": [
         "Seu alias"
@@ -14709,6 +14715,9 @@
       ],
       "Desktop": [
         "Área de trabalho"
+      ],
+      "Disable categories?": [
+        "Desativar categorias?"
       ],
       "Discover your subscription benefits": [
         "Descubra os benefícios da sua assinatura"

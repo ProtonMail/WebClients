@@ -441,6 +441,9 @@
       "Disable alias": [
         "Vypnúť alias"
       ],
+      "Disable categories": [
+        "Deaktivovať kategórie"
+      ],
       "Disabling alias": [
         "Vypínanie aliasu"
       ],
@@ -773,6 +776,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Pripojte sa k ${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "Ponechať kategórie"
       ],
       "Keep my subscription": [
         "Ponechať moje predplatné"
@@ -2008,11 +2014,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa z neho stane platené predplatné, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_DEDICATED_IPS } vyhradených serverov počas skúšobného obdobia."
@@ -6896,6 +6902,9 @@
       "All messages stored with this label will be permanently deleted.": [
         "Všetky správy uložené s týmto štítkom budú natrvalo odstránené."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Všetky správy sa zobrazia v priečinku Doručená pošta a záložky kategórií a značky už nebudú viditeľné. "
+      ],
       "All your calendars are disabled.": [
         "Všetky Vaše kalendáre sú zakázané."
       ],
@@ -9639,6 +9648,27 @@
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
+      "Go to Forums": [
+        "Prejsť na Fóra"
+      ],
+      "Go to Newsletters": [
+        "Prejsť na Newslettery"
+      ],
+      "Go to Primary": [
+        "Prejsť do zložky Hlavná"
+      ],
+      "Go to Promotions": [
+        "Prejsť na Propagačné akcie"
+      ],
+      "Go to Social": [
+        "Prejsť do zložky Sociálne"
+      ],
+      "Go to Transactions": [
+        "Prejsť na Transakcie"
+      ],
+      "Go to Updates": [
+        "Prejsť na aktualizácie"
+      ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Pomôžte nám vylepšiť kategórie výberom tej, ktorá najlepšie zodpovedá tejto emailovej správe. Ďakujeme za pomoc!"
       ],
@@ -10031,9 +10061,6 @@
       ],
       "Writing assistant": [
         "Asistent písania"
-      ],
-      "You cannot disable all categories": [
-        "Nemôžete deaktivovať všetky kategórie"
       ],
       "Your alias": [
         "Váš alias"
@@ -15132,6 +15159,9 @@
       ],
       "Desktop": [
         "Počítač"
+      ],
+      "Disable categories?": [
+        "Deaktivovať kategórie?"
       ],
       "Discover your subscription benefits": [
         "Spoznajte výhody vášho predplatného"
