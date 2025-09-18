@@ -4,185 +4,6 @@
     "language": "zh_CN"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } 个别名"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } 已屏蔽"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } 已阻止"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } 个字符"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } 个词"
-      ],
-      "${ count } item": [
-        "${ count } 项"
-      ],
-      "${ count } time": [
-        "${ count } 次"
-      ],
-      "${ count } view": [
-        "${ count } 次查看"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } 视图"
-      ],
-      "${ days } day": [
-        "${ days } 天"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } 个文件"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } 已转发"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } 已转发"
-      ],
-      "${ hours } hour": [
-        "${ hours } 小时"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } 位成员"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分钟"
-      ],
-      "${ months } month": [
-        "${ months } 个月"
-      ],
-      "${ n } item": [
-        "${ n } 项"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "成功发送 ${ payload.count } 份邀请"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } 回复"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } 已发送"
-      ],
-      "${ row.breachCount } breach detected": [
-        "检测到 ${ row.breachCount } 泄露"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount }安全链接"
-      ],
-      "${ total } other login uses the same password": [
-        "其他 ${ total } 个登录项目使用相同密码"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } 登录项目"
-      ],
-      "${ years } year": [
-        "${ years } 年"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "您确定要将 ${ trashedItemsCount } 项移至回收站吗？"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "您确定要永久删除这 ${ deletedItemsCount } 项吗？"
-      ],
-      "byte": [
-        "B"
-      ],
-      "Byte": [
-        "B"
-      ],
-      "Cannot send invitation at the moment": [
-        "目前无法发送邀请"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "删除 ${ deletedItemsCount } 项吗？"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "检测到 CSV 中有 ${ errors.length } 行数据损坏"
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "出于安全考虑，您需要确认这些共享保险库的访问权限"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "生成的密码将会保留${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }周。"
-      ],
-      "Gigabyte": [
-        "GB"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "项目共享： ${ itemAccessCount } 位用户"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "项目包含的用户数不能超过 ${ share.targetMaxMembers } 位。"
-      ],
-      "Kilobyte": [
-        "KB"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "最大长度为 ${ maxLength } 个字符"
-      ],
-      "Megabyte": [
-        "MB"
-      ],
-      "Move ${ count } item": [
-        "移动 ${ count } 项"
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "将 ${ count } 项移动到 ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "将 ${ trashedItemsCount } 项移动到回收站？"
-      ],
-      "Move item to": [
-        "将项目移至"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "超过 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 周的密码将自动从历史记录中删除。"
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "请注意，别名一旦删除就无法恢复。"
-      ],
-      "Reused ${ count } time": [
-        "重复使用 ${ count } 次"
-      ],
-      "Sync alias": [
-        "同步别名"
-      ],
-      "Terabyte": [
-        "TB"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "无法导入以下 ${ totalIgnored } 项："
-      ],
-      "Understood, I will never need it": [
-        "明白，我将永远不再需要它们"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "保险库共享： ${ vaultMembersCount } 位成员"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "保险库包含的用户数不能超过 ${ targetMaxMembers } 位。"
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "我们检测到您有 ${ aliasCount } 个别名存在于 SimpleLogin 中，但在 ${ PASS_APP_NAME } 中丢失了。您想导入它们吗？"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "您可以将所选项目拖放到另一个保险库中"
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "您有 ${ aliasCount } 个在 SimpleLogin 中存在但在 ${ PASS_APP_NAME } 中丢失的别名。您想同步吗？"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "您还剩 ${ daysRemaining } 天来尝试这些及其他高级功能。"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "您将永久删除 ${ aliasCount } 个别名。"
-      ]
-    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "检测到 ${ name } 和 ${ remainingCount } 个其他潜在泄漏。打开 ${ DARK_WEB_MONITORING_NAME } 查看详细信息并采取行动。${ link }"
@@ -783,6 +604,9 @@
       "Submitting report...": [
         "正在提交报告..."
       ],
+      "Sync alias": [
+        "同步别名"
+      ],
       "Sync aliases": [
         "同步别名"
       ],
@@ -809,6 +633,9 @@
       ],
       "Unblock contact": [
         "取消屏蔽联系人"
+      ],
+      "Understood, I will never need it": [
+        "明白，我将永远不再需要它们"
       ],
       "Unlock": [
         "解锁"
@@ -883,6 +710,9 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } 通过付费计划提供。升级后可立即访问。"
+      ],
+      "${ total } other login uses the same password": [
+        "其他 ${ total } 个登录项目使用相同密码"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA 给您的登录添加了另一层安全。${ PASS_APP_NAME } 通过储存并自动填充您的 2FA 验证码，让 2FA 变得更简单。"
@@ -1011,6 +841,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "身份验证失败。请确认您的二次密码以继续导出"
       ],
+      "Cannot send invitation at the moment": [
+        "目前无法发送邀请"
+      ],
       "Cannot send invitations at the moment": [
         "目前无法发送邀请"
       ],
@@ -1058,6 +891,9 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "删除保险库 “${ payload.content.name }” 失败"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "检测到 CSV 中有 ${ errors.length } 行数据损坏"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "无法验证域名。请确保您添加了正确的 DNS 记录"
@@ -1401,6 +1237,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "B"
+      ],
       "GB": [
         "GB"
       ],
@@ -1411,6 +1250,23 @@
         "MB"
       ],
       "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "B"
+      ],
+      "Gigabyte": [
+        "GB"
+      ],
+      "Kilobyte": [
+        "KB"
+      ],
+      "Megabyte": [
+        "MB"
+      ],
+      "Terabyte": [
         "TB"
       ]
     },
@@ -1432,8 +1288,29 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "“${ payload.itemName }” 更新被拒绝"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } 已阻止"
+      ],
+      "${ count } time": [
+        "${ count } 次"
+      ],
+      "${ count } view": [
+        "${ count } 次查看"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } 视图"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } 已转发"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } 希望与您分享一个项目。"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } 位成员"
+      ],
+      "${ n } item": [
+        "${ n } 项"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } 将始终可以访问"
@@ -1453,11 +1330,20 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } 需要您的 ${ BRAND_NAME } 密码才能离线访问数据。"
       ],
+      "${ payload.count } invite successfully sent": [
+        "成功发送 ${ payload.count } 份邀请"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } 已成功禁用"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } 已成功启用"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } 已发送"
+      ],
+      "${ row.breachCount } breach detected": [
+        "检测到 ${ row.breachCount } 泄露"
       ],
       "(Empty)": [
         "（空）"
@@ -1765,11 +1651,17 @@
       "For security reasons, this action requires identity verification.": [
         "出于安全原因，此操作需要身份验证。"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "出于安全考虑，您需要确认这些共享保险库的访问权限"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "出于安全原因，需要确认您的访问权限"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "转发地址已复制到剪贴板。向该地址发送电子邮件，${ Email } 就会收到。"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "生成的密码将会保留${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS }周。"
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "通过为每个团队或项目创建一个保险库以此充分利用 Pass。"
@@ -1849,6 +1741,9 @@
       "Item restored": [
         "个项目已恢复"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "项目共享： ${ itemAccessCount } 位用户"
+      ],
       "Item successfully excluded from monitoring": [
         "项目成功排除在监测外"
       ],
@@ -1908,6 +1803,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "不仅仅是一个密码管理器，${ PASS_APP_NAME } 通过邮箱别名保护您的密码和个人邮箱地址。它采用与 ${ MAIL_APP_NAME } 相同的技术，对您的数据进行端到端加密，只有您自己才能访问它。"
+      ],
+      "Move ${ count } item": [
+        "移动 ${ count } 项"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
@@ -1974,6 +1872,9 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "密码锁已成功注册，该密码可用于解锁 ${ PASS_APP_NAME }"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "超过 ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 周的密码将自动从历史记录中删除。"
       ],
       "Paused": [
         "已暂停"
@@ -2263,6 +2164,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "使用 ${ PASS_APP_NAME } 时需要输入额外密码。它是 ${ BRAND_NAME } 密码之外的附加密码。"
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "无法导入以下 ${ totalIgnored } 项："
+      ],
       "The secure link has been removed": [
         "安全链接已删除"
       ],
@@ -2386,6 +2290,9 @@
       "Vault \"${ share.content.name }\" was removed": [
         "保险库 “${ share.content.name }” 已删除"
       ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "保险库共享： ${ vaultMembersCount } 位成员"
+      ],
       "Verification code sent.": [
         "验证码已发送。"
       ],
@@ -2394,6 +2301,9 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "我们在将数据同步到您的本地存储空间时遇到了问题。请确保您有足够的磁盘空间让 ${ PASS_SHORT_APP_NAME } 顺利运行。"
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "我们检测到您有 ${ aliasCount } 个别名存在于 SimpleLogin 中，但在 ${ PASS_APP_NAME } 中丢失了。您想导入它们吗？"
       ],
       "Week": [
         "周"
@@ -2418,6 +2328,12 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "您不能更改此别名的邮箱。"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "您有 ${ aliasCount } 个在 SimpleLogin 中存在但在 ${ PASS_APP_NAME } 中丢失的别名。您想同步吗？"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "您还剩 ${ daysRemaining } 天来尝试这些及其他高级功能。"
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "您已超出订阅中包含的保险库数量。 项目只能移至您的前两个保险库。 要在所有保险库之间转移项目，请升级您的订阅。"
@@ -2487,11 +2403,53 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } 个别名"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } 已屏蔽"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } 个字符"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } 个词"
+      ],
+      "${ count } item": [
+        "${ count } 项"
+      ],
+      "${ days } day": [
+        "${ days } 天"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } 已转发"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails } 、${ repliedEmails } 、${ blockedEmails } 在过去 14 天内"
       ],
+      "${ hours } hour": [
+        "${ hours } 小时"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分钟"
+      ],
+      "${ months } month": [
+        "${ months } 个月"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } 版本"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } 回复"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount }安全链接"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } 登录项目"
+      ],
+      "${ years } year": [
+        "${ years } 年"
       ],
       "1 hour": [
         "1 小时"
@@ -3102,6 +3060,9 @@
       "Network": [
         "网络"
       ],
+      "New": [
+        "新"
+      ],
       "New email": [
         "新邮箱"
       ],
@@ -3611,6 +3572,12 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } 项"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "您可以将所选项目拖放到另一个保险库中"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "您在此保险库中选择了 ${ semiboldText }。"
       ]
@@ -3669,6 +3636,9 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "\"${ filename }\" 文件过大，无法上传。允许的最大文件大小为 (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } 个文件"
       ],
       "Attachments": [
         "附件"
@@ -3997,6 +3967,9 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "域名验证成功，您的域可以开始接收电子邮件并创建别名"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "项目包含的用户数不能超过 ${ share.targetMaxMembers } 位。"
+      ],
       "Mailbox change successfully cancelled": [
         "成功取消邮箱更改"
       ],
@@ -4014,6 +3987,9 @@
       ],
       "Random prefix generation successfully enabled": [
         "成功启用随机前缀生成功能"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "保险库包含的用户数不能超过 ${ targetMaxMembers } 位。"
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "已发送验证邮件，请检查您的收件箱以验证您的邮箱"
@@ -4132,6 +4108,9 @@
       ],
       "Default Display Name": [
         "默认显示名称"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "删除 ${ deletedItemsCount } 项吗？"
       ],
       "Delete domain": [
         "删除域名"
@@ -4262,6 +4241,12 @@
       "Modified": [
         "修改时间"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "将 ${ count } 项移动到 ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "将 ${ trashedItemsCount } 项移动到回收站？"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "将所有项目移动到 \"${ vaultName }\"？"
       ],
@@ -4325,6 +4310,9 @@
       "Pinned (${ items.length })": [
         "已固定 (${ items.length })"
       ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "请注意，别名一旦删除就无法恢复。"
+      ],
       "Previous": [
         "上一页"
       ],
@@ -4357,6 +4345,9 @@
       ],
       "Resume monitoring?": [
         "恢复监测?"
+      ],
+      "Reused ${ count } time": [
+        "重复使用 ${ count } 次"
       ],
       "Reused passwords": [
         "重复使用的密码"
@@ -4474,6 +4465,9 @@
       ],
       "Your welcome gift": [
         "您的新人礼包"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "您将永久删除 ${ aliasCount } 个别名。"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4515,6 +4509,11 @@
         "网址无效"
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "将项目移至"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "需要 ${ BRAND_NAME } 密码"
@@ -4539,6 +4538,12 @@
       ],
       "An error occurred while importing your data.": [
         "导入您的数据时发生了错误。"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "您确定要将 ${ trashedItemsCount } 项移至回收站吗？"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "您确定要永久删除这 ${ deletedItemsCount } 项吗？"
       ],
       "Are you sure you want to permanently delete this item?": [
         "确定要永久删除此项目吗？"
@@ -4600,9 +4605,6 @@
       "Extra password should have at least 8 characters": [
         "额外密码至少要有 8 个字符"
       ],
-      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
-        "自动填充失败。请确保 ${ PASS_APP_NAME } 拥有所需权限，并重试（${ error }）。"
-      ],
       "Failed to load breaches.": [
         "加载泄露信息失败"
       ],
@@ -4623,6 +4625,9 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "不允许邀请组织外的电子邮件地址。"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "最大长度为 ${ maxLength } 个字符"
       ],
       "Missing alias prefix": [
         "缺少别名前缀"

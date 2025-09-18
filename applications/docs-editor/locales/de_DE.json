@@ -4,12 +4,6 @@
     "language": "de_DE"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } schreibt...",
-        "${ usersTranslation } schreiben..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -495,6 +489,10 @@
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } und ${ lastTyper }"
       ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } schreibt...",
+        "${ usersTranslation } schreiben..."
+      ],
       "Alpha only experimental feature": [
         "Experimentelle Funktion in der Alpha Version"
       ],
@@ -787,6 +785,71 @@
         "Einfügen"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ US-Dollar"
+      ],
+      "Accounting": [
+        "Buchhaltung"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Chinesischer Yuan"
+      ],
+      "Currency": [
+        "Währung"
+      ],
+      "Currency rounded": [
+        "Währung gerundet"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date time": [
+        "Datum/Zeit"
+      ],
+      "Duration": [
+        "Dauer"
+      ],
+      "Financial": [
+        "Finanzen"
+      ],
+      "General": [
+        "Allgemeines"
+      ],
+      "Long date": [
+        "Datum lang"
+      ],
+      "More currency": [
+        "Weitere Währungen"
+      ],
+      "Number": [
+        "Zahl"
+      ],
+      "Percent": [
+        "Prozent"
+      ],
+      "Plain text": [
+        "Unformatierter Reintext"
+      ],
+      "Scientific": [
+        "Wissenschaft"
+      ],
+      "Time": [
+        "Zeit"
+      ],
+      "£ Pound": [
+        "£ Pfund"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupie"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Fett"
@@ -823,6 +886,9 @@
       ],
       "Redo": [
         "Wiederherstellen"
+      ],
+      "Search": [
+        "Suchen"
       ],
       "Strikethrough": [
         "Durchstreichen"

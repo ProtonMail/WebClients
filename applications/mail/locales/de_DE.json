@@ -4,1272 +4,6 @@
     "language": "de_DE"
   },
   "contexts": {
-    "": {
-      "${ addressCount } email address": [
-        "${ addressCount } E-Mail-Adresse",
-        "${ addressCount } E-Mail-Adressen"
-      ],
-      "${ admins } admin": [
-        "${ admins } Admin",
-        "${ admins } Admins"
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } neuer Kalender",
-        "${ calendarsToBeCreatedCount } neue Kalender"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } zusammengeführter Kalender",
-        "${ calendarsToBeMergedCount } zusammengeführte Kalender"
-      ],
-      "${ ceilDays } day": [
-        "${ ceilDays } Tag",
-        "${ ceilDays } Tage"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } Stunde",
-        "${ ceilHours } Stunden"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } Minute",
-        "${ ceilMinutes } Minuten"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } Kontakt enthält mehrere E-Mail-Adressen.",
-        "${ contactCount } Kontakte enthalten mehrere E-Mail-Adressen."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Mitglied",
-        "${ contactEmailsLength } Mitglieder"
-      ],
-      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } Mitglied)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } Mitglieder)"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } Kontakt gefunden",
-        "${ contactsCount } Kontakte gefunden"
-      ],
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } von ${ countContacts } Kontakt wurden erfolgreich exportiert.",
-        "${ contactsExported.length } von ${ countContacts } Kontakten wurden erfolgreich exportiert."
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } Kontakt",
-        "${ contactsLength } Kontakte"
-      ],
-      "${ count } conversation deleted": [
-        "${ count } Unterhaltung gelöscht",
-        "${ count } Unterhaltungen gelöscht"
-      ],
-      "${ count } draft deleted": [
-        "${ count } Entwurf gelöscht",
-        "${ count } Entwürfe gelöscht"
-      ],
-      "${ count } message deleted": [
-        "${ count } Nachricht gelöscht",
-        "${ count } Nachrichten gelöscht"
-      ],
-      "${ count } time": [
-        "${ count } Mal",
-        "${ count } Mal"
-      ],
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } Kontakt könnte identisch sein.",
-        "${ countMergeableContacts } Kontakte könnten identisch sein."
-      ],
-      "${ currentProgress } out of ${ totalProgress }": [
-        "${ currentProgress } von ${ totalProgress }",
-        "${ currentProgress } von ${ totalProgress }"
-      ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } verbleibender Tag",
-        "${ dayDiff } verbleibende Tage"
-      ],
-      "${ days } day": [
-        "${ days } Tag",
-        "${ days } Tage"
-      ],
-      "${ domains } additional custom domain": [
-        "${ domains } zusätzliche eigene Domain",
-        "${ domains } zusätzliche eigene Domains"
-      ],
-      "${ elementsCount } conversation added to ${ labelName }.": [
-        "${ elementsCount } Unterhaltung zu ${ labelName } hinzugefügt.",
-        "${ elementsCount } Unterhaltungen zu ${ labelName } hinzugefügt."
-      ],
-      "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } Unterhaltung als „Gelesen“ gekennzeichnet.",
-        "${ elementsCount } Unterhaltungen als „Gelesen“ gekennzeichnet."
-      ],
-      "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } Unterhaltung gekennzeichnet.",
-        "${ elementsCount } Unterhaltungen gekennzeichnet."
-      ],
-      "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } Unterhaltung als ungelesen markieren.",
-        "${ elementsCount } Unterhaltungen als ungelesen markieren."
-      ],
-      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } Unterhaltung in „${ labelName }“ verschoben und der Absender zur Liste „Kein Spam“ hinzugefügt.",
-        "${ elementsCount } Unterhaltungen in „${ labelName }“ verschoben und die Absender zur Liste „Kein Spam“ hinzugefügt."
-      ],
-      "${ elementsCount } conversation moved to ${ labelName }.": [
-        "${ elementsCount } Unterhaltung nach „${ labelName }“ verschoben.",
-        "${ elementsCount } Unterhaltungen nach „${ labelName }“ verschoben."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } Unterhaltung in Spam verschoben und Absender zur Spamliste hinzugefügt.",
-        "${ elementsCount } Unterhaltungen in Spam verschoben und Absender zur Spamliste hinzugefügt."
-      ],
-      "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } Unterhaltung aus „${ labelName }“ entfernt.",
-        "${ elementsCount } Unterhaltungen aus „${ labelName }“ entfernt."
-      ],
-      "${ elementsCount } conversation removed from Starred.": [
-        "${ elementsCount } Unterhaltung aus „Markiert“ entfernt.",
-        "${ elementsCount } Unterhaltungen aus „Markiert“ entfernt."
-      ],
-      "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } Unterhaltung zurückgestellt",
-        "${ elementsCount } Unterhaltungen zurückgestellt"
-      ],
-      "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } Unterhaltung nicht mehr zurückstellen",
-        "${ elementsCount } Unterhaltungen nicht mehr zurückstellen"
-      ],
-      "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount } Unterhaltung wird kategorisiert als:",
-        "${ elementsCount } Unterhaltungen werden kategorisiert als:"
-      ],
-      "${ elementsCount } conversation will be marked as read.": [
-        "${ elementsCount } Unterhaltung wird als „Gelesen“ gekennzeichnet.",
-        "${ elementsCount } Unterhaltungen wird als „Gelesen“ gekennzeichnet."
-      ],
-      "${ elementsCount } conversation will be marked as unread.": [
-        "${ elementsCount } Unterhaltung wird als ungelesen markiert.",
-        "${ elementsCount } Unterhaltungen werden als ungelesen markiert."
-      ],
-      "${ elementsCount } conversation will be moved": [
-        "${ elementsCount } Unterhaltung wird verschoben",
-        "${ elementsCount } Unterhaltungen werden verschoben"
-      ],
-      "${ elementsCount } conversation will be unlabelled from:": [
-        "Bei ${ elementsCount } Unterhaltung wird die Kategorie entfernt:",
-        "Bei ${ elementsCount } Unterhaltungen wird die Kategorie entfernt:"
-      ],
-      "${ elementsCount } message added to ${ labelName }.": [
-        "${ elementsCount } Nachricht zu „${ labelName }“ hinzugefügt.",
-        "${ elementsCount } Nachrichten zu „${ labelName }“ hinzugefügt."
-      ],
-      "${ elementsCount } message marked as read.": [
-        "${ elementsCount } Nachricht als gelesen markiert.",
-        "${ elementsCount } Nachrichten als gelesen markiert."
-      ],
-      "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } Nachricht gekennzeichnet.",
-        "${ elementsCount } Nachrichten gekennzeichnet."
-      ],
-      "${ elementsCount } message marked as unread.": [
-        "${ elementsCount } Nachricht als ungelesen markiert.",
-        "${ elementsCount } Nachrichten als ungelesen markiert."
-      ],
-      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } Nachricht in „${ labelName }“ verschoben und Absender zur Liste „Kein Spam“ hinzugefügt.",
-        "${ elementsCount } Nachrichten in „${ labelName }“ verschoben und Absender zur Liste „Kein Spam“ hinzugefügt."
-      ],
-      "${ elementsCount } message moved to ${ labelName }.": [
-        "${ elementsCount } Nachricht nach „${ labelName }“ verschoben.",
-        "${ elementsCount } Nachrichten nach „${ labelName }“ verschoben."
-      ],
-      "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } Nachricht in Spam verschoben und Absender zur Spamliste hinzugefügt.",
-        "${ elementsCount } Nachrichten in Spam verschoben und Absender zur Spamliste hinzugefügt."
-      ],
-      "${ elementsCount } message removed from ${ labelName }.": [
-        "${ elementsCount } Nachricht aus „${ labelName }“ entfernt.",
-        "${ elementsCount } Nachrichten aus „${ labelName }“ entfernt."
-      ],
-      "${ elementsCount } message removed from Starred.": [
-        "${ elementsCount } Nachricht aus \"Markiert\" entfernt.",
-        "${ elementsCount } Nachrichten aus „Markiert“ entfernt."
-      ],
-      "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount } Nachricht wird kategorisiert als:",
-        "${ elementsCount } Nachrichten werden kategorisiert als:"
-      ],
-      "${ elementsCount } message will be marked as read.": [
-        "${ elementsCount } Nachricht wird als gelesen markiert.",
-        "${ elementsCount } Nachrichten werden als gelesen markiert."
-      ],
-      "${ elementsCount } message will be marked as unread.": [
-        "${ elementsCount } Nachricht wird als ungelesen markiert.",
-        "${ elementsCount } Nachrichten werden als ungelesen markiert."
-      ],
-      "${ elementsCount } message will be moved": [
-        "${ elementsCount } Nachricht wird verschoben",
-        "${ elementsCount } Nachrichten werden verschoben"
-      ],
-      "${ elementsCount } message will be unlabelled from:": [
-        "Bei ${ elementsCount } Nachricht wird die Kategorie entfernt:",
-        "Bei ${ elementsCount } Nachrichten wird die Kategorie entfernt:"
-      ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } E-Mail-Adresse",
-        "${ emailsCount } E-Mail-Adressen"
-      ],
-      "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } eingebettete Grafik",
-        "${ embeddedAttachmentsCount } eingebettete Grafiken"
-      ],
-      "${ filteredList.length } command found.": [
-        "${ filteredList.length } Befehl gefunden.",
-        "${ filteredList.length } Befehle gefunden."
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } Stunde",
-        "${ gracePeriodHoursRemaining } Stunden"
-      ],
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } weitere Stunde",
-        "${ gracePeriodHoursRemaining } weitere Stunden"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } Gruppe gefunden",
-        "${ groupCounts } Gruppen gefunden"
-      ],
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hours } hour": [
-        "${ hours } Stunde",
-        "${ hours } Stunden"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 h",
-        "${ hoursInt }.5 h"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 Stunden",
-        "${ hoursInt }.5 Stunden"
-      ],
-      "${ ips } server": [
-        "${ ips } Server",
-        "${ ips } Server"
-      ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } Nachricht konnte nicht verschoben werden.",
-        "${ messagesNotAuthorizedToMove } Nachrichten konnten nicht verschoben werden."
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } Minute",
-        "${ minutes } Minuten"
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } von ${ totalBeDeleted } Kontakt erfolgreich gelöscht.",
-        "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } von ${ totalBeMerged } Kontakt erfolgreich zusammengeführt.",
-        "${ model.submitted.length } von ${ totalBeMerged } Kontakten erfolgreich zusammengeführt."
-      ],
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } E-Mail-Adresse",
-        "${ n } ${ BRAND_NAME } E-Mail-Adressen"
-      ],
-      "${ n } account per wallet": [
-        "${ n } Konto pro Wallet",
-        "${ n } Konten pro Wallet"
-      ],
-      "${ n } calendar": [
-        "${ n } Kalender",
-        "${ n } Kalender"
-      ],
-      "${ n } calendar per user": [
-        "${ n } Kalender je Benutzer",
-        "${ n } Kalender je Benutzer"
-      ],
-      "${ n } custom email domain": [
-        "${ n } eigene E-Mail-Domain",
-        "${ n } eigene E-Mail-Domains"
-      ],
-      "${ n } device": [
-        "${ n } Gerät",
-        "${ n } Geräte"
-      ],
-      "${ n } email address": [
-        "${ n } E-Mail-Adresse",
-        "${ n } E-Mail-Adressen/Aliasse"
-      ],
-      "${ n } email address per user": [
-        "${ n } E-Mail-Adresse pro Benutzer",
-        "${ n } E-Mail-Adressen pro Benutzer"
-      ],
-      "${ n } filter": [
-        "${ n } Filter",
-        "${ n } Filter"
-      ],
-      "${ n } folder": [
-        "${ n } Ordner",
-        "${ n } Ordner"
-      ],
-      "${ n } folder and label": [
-        "${ n } Ordner und Kategorie",
-        "${ n } Ordner und Kategorien"
-      ],
-      "${ n } free VPN connection per user": [
-        "${ n } kostenlose VPN‐Verbindung pro Benutzer",
-        "${ n } kostenlose VPN‐Verbindungen pro Benutzer"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email-Alias",
-        "${ n } hide-my-email-Aliasse"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } Hochgeschwindigkeits-VPN-Verbindung",
-        "${ n } Hochgeschwindigkeits-VPN-Verbindungen"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } Hochgeschwindigkeits-VPN-Verbindung pro Benutzer",
-        "${ n } Hochgeschwindigkeits-VPN-Verbindungen pro Benutzer"
-      ],
-      "${ n } label": [
-        "${ n } Kategorie",
-        "${ n } Kategorien"
-      ],
-      "${ n } message per day": [
-        "${ n } Nachricht pro Tag",
-        "${ n } Nachrichten pro Tag"
-      ],
-      "${ n } month": [
-        "${ n } Monat",
-        "${ n } Monate"
-      ],
-      "${ n } month FREE": [
-        "${ n } Monat KOSTENLOS",
-        "${ n } Monate KOSTENLOS"
-      ],
-      "${ n } server": [
-        "${ n } Server",
-        "${ n }+ Server"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } geteilter ${ PASS_SHORT_APP_NAME } Tresor pro Benutzer",
-        "${ n } geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
-      ],
-      "${ n } unread conversation": [
-        "${ n } ungelesene Unterhaltung",
-        "${ n } ungelesene Unterhaltungen"
-      ],
-      "${ n } user account": [
-        "${ n } Benutzerkonto",
-        "${ n } Benutzerkonten"
-      ],
-      "${ n } vault": [
-        "${ n } Tresor",
-        "${ n } Tresore"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-Verbindung",
-        "${ n } VPN-Verbindungen"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-Verbindung pro Benutzer",
-        "${ n } VPN-Verbindungen pro Benutzer"
-      ],
-      "${ n } wallet": [
-        "${ n } Wallet",
-        "${ n } Wallets"
-      ],
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } neue Nachricht",
-        "${ notificationsToShow.length } neue Nachrichten"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } Land",
-        "${ numberOfCountries } Länder"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } in ${ numberOfCountries } Land",
-        "${ numberOfServers } in ${ numberOfCountries } Ländern"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } in ${ numberOfCountries } Land",
-        "${ numberOfServers } in ${ numberOfCountries } Ländern"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } Benutzer",
-        "Bis zu ${ numberOfUsers } Benutzer"
-      ],
-      "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } Link bereinigt",
-        "${ numberOfUTMTrackers } Links bereinigt"
-      ],
-      "${ numMessages } message": [
-        "${ numMessages } Nachricht",
-        "${ numMessages } Nachrichten"
-      ],
-      "${ NumMessages } message in conversation": [
-        "${ NumMessages } Nachricht in der Unterhaltung",
-        "${ NumMessages } Nachrichten in der Unterhaltung"
-      ],
-      "${ numOccurrences } occurrence found": [
-        "${ numOccurrences } Ereignis gefunden",
-        "${ numOccurrences } Ereignisse gefunden"
-      ],
-      "${ numOccurrences } occurrence found in the mail content": [
-        "${ numOccurrences } Ereignis im E-Mail-Inhalt gefunden",
-        "${ numOccurrences } Ereignisse im E-Mail-Inhalt gefunden"
-      ],
-      "${ options }-day file version history": [
-        "Dateiversionsverlauf für ${ options } Tag",
-        "Dateiversionsverlauf für ${ options } Tag"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } mit ${ n } hide-my-email-Alias",
-        "${ PASS_APP_NAME } mit ${ n } hide-my-email-Aliassen"
-      ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } läuft in ${ daysLeft } Tag aus.",
-        "${ planName } läuft in ${ daysLeft } Tagen aus."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } Kalender pro Benutzer",
-        "${ planNumberOfCalendars } Kalender pro Benutzer"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigene E-Mail-Domain",
-        "${ planNumberOfDomains } eigene E-Mail-Domains"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } E-Mail-Adresse",
-        "${ planNumberOfEmails } E-Mail-Adressen"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } E-Mail-Adresse pro Benutzer",
-        "${ planNumberOfEmails } E-Mail-Adressen pro Benutzer"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } Benutzer",
-        "${ planNumberOfUsers } Benutzer"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } Ordner gefunden",
-        "${ providerFoldersNumLocalized } Ordner gefunden"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } Kategorie in Gmail gefunden",
-        "${ providerFoldersNumLocalized } Kategorien in Gmail gefunden"
-      ],
-      "${ pureAttachmentsCount } file attached": [
-        "${ pureAttachmentsCount } Datei angehängt",
-        "${ pureAttachmentsCount } Dateien angehängt"
-      ],
-      "${ receivedMessagesCount } email last month": [
-        "${ receivedMessagesCount } E-Mail im letzten Monat",
-        "${ receivedMessagesCount } E-Mails im letzten Monat"
-      ],
-      "${ remainingDays } d": [
-        "${ remainingDays } Tag",
-        "${ remainingDays } Tage"
-      ],
-      "${ remainingDaysCount } day": [
-        "${ remainingDaysCount } Tag",
-        "${ remainingDaysCount } Tage"
-      ],
-      "${ remainingDaysCount } day left": [
-        "${ remainingDaysCount } verbleibender Tag",
-        "${ remainingDaysCount } verbleibende Tage"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } Benutzerlizenz",
-        "${ seats } ${ LUMO_APP_NAME } Benutzerlizenzen"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } Lizenz für den Schreibassistenten",
-        "${ seats } Lizenzen für den Schreibassistenten"
-      ],
-      "${ seconds } second": [
-        "${ seconds } Sekunde",
-        "${ seconds } Sekunden"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalendern"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } Kontakt ausgewählt",
-        "${ selectedContactsLength }/${ contactsLength } Kontakte ausgewählt"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } Ordner ausgewählt",
-        "${ selectedFoldersCount } Ordner ausgewählt"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } Kategorie ausgewählt",
-        "${ selectedFoldersCount } Kategorien ausgewählt"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } Ordner ausgewählt",
-        "${ selectedFoldersCountLocalized } Ordner ausgewählt"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } Kategorie ausgewählt",
-        "${ selectedFoldersCountLocalized } Kategorien ausgewählt"
-      ],
-      "${ subscription.UnreadMessageCount } unread": [
-        "${ subscription.UnreadMessageCount } ungelesen",
-        "${ subscription.UnreadMessageCount } ungelesen"
-      ],
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } Tag",
-        "${ timeRemaining.inDays } Tage"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } Stunde",
-        "${ timeRemaining.inHours } Stunden"
-      ],
-      "${ total } conversation": [
-        "${ total } Unterhaltung",
-        "${ total } Unterhaltungen"
-      ],
-      "${ total } message": [
-        "${ total } Nachricht",
-        "${ total } Nachrichten"
-      ],
-      "${ totalAttendees } participant": [
-        "${ totalAttendees } Teilnehmer",
-        "${ totalAttendees } Teilnehmer"
-      ],
-      "${ totalContacts } contact": [
-        "${ totalContacts } Kontakt",
-        "${ totalContacts } Kontakte"
-      ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded }/${ totalEvents } Termin wird nicht importiert. Erweitern für Details.",
-        "${ totalEventsDiscarded }/${ totalEvents } Termine werden nicht importiert. Erweitern für Details."
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } Kontakt verschlüsselt und zu deiner Kontaktliste hinzugefügt",
-        "${ totalImported }/${ totalToImport } Kontakte verschlüsselt und zu deiner Kontaktliste hinzugefügt"
-      ],
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } Termin wurde verschlüsselt und deinem Kalender hinzugefügt",
-        "${ totalImported }/${ totalToImport } Termine wurden verschlüsselt und deinem Kalender hinzugefügt"
-      ],
-      "${ trackersCount } email tracker blocked": [
-        "${ trackersCount } E-Mail-Tracker blockiert",
-        "${ trackersCount } E-Mail-Tracker blockiert"
-      ],
-      "${ trackersCount } tracker blocked": [
-        "${ trackersCount } Tracker blockiert",
-        "${ trackersCount } Tracker blockiert"
-      ],
-      "${ unreadCount } newsletter": [
-        "${ unreadCount } Newsletter",
-        "${ unreadCount } Newsletter"
-      ],
-      "${ unreadCount } scheduled message": [
-        "${ unreadCount } geplante Nachricht",
-        "${ unreadCount } geplante Nachrichten"
-      ],
-      "${ unreads } unread message": [
-        "${ unreads } ungelesene Nachricht",
-        "${ unreads } ungelesene Nachrichten"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } Kontakt erfolgreich aktualisiert.",
-        "${ updated } Kontakte erfolgreich aktualisiert."
-      ],
-      "${ users } user": [
-        "${ users } Benutzer",
-        "${ users } Benutzer"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } Mitglied)",
-        "(${ memberCount } Mitglieder)"
-      ],
-      "**${ total }** result found in ${ labelName }": [
-        "**${ total }** Ergebnis in ${ labelName } gefunden",
-        "**${ total }** Ergebnisse in ${ labelName } gefunden"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "${ organization.BonusVPN } zusätzliche Verbindung für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
-        "${ organization.BonusVPN } zusätzliche Verbindungen für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)"
-      ],
-      "Add to ${ groupCount } group": [
-        "Zu ${ groupCount } Gruppe hinzufügen",
-        "Zu ${ groupCount } Gruppen hinzufügen"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Alle (${ totalFoldersCount } Ordner)",
-        "Alle (${ totalFoldersCount } Ordner)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Alle (${ totalFoldersCount } Kategorie)",
-        "Alle (${ totalFoldersCount } Kategorien)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
-        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }",
-        "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Termin wurde erfolgreich importiert.",
-        "Beim Verschlüsseln und Hinzufügen deiner Termine ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Terminen wurden erfolgreich importiert."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Möchtest du wirklich ${ count } Kontakt dauerhaft löschen?",
-        "Möchtest du wirklich ${ count } Kontakte dauerhaft löschen?"
-      ],
-      "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Möchtest du wirklich ${ count } Unterhaltung dauerhaft löschen?",
-        "Möchtest du wirklich ${ count } Unterhaltungen dauerhaft löschen?"
-      ],
-      "Are you sure you want to permanently delete ${ count } draft?": [
-        "Möchtest du wirklich ${ count } Entwurf dauerhaft löschen?",
-        "Möchtest du wirklich ${ count } Entwürfe dauerhaft löschen?"
-      ],
-      "Are you sure you want to permanently delete ${ count } message?": [
-        "Möchtest du wirklich ${ count } Nachricht dauerhaft löschen?",
-        "Möchtest du wirklich ${ count } Nachrichten dauerhaft löschen?"
-      ],
-      "At most ${ maxAttendees } participant is allowed per invitation": [
-        "Pro Einladung ist maximal ${ maxAttendees } Teilnehmer erlaubt.",
-        "Pro Einladung sind maximal ${ maxAttendees } Teilnehmer erlaubt."
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
-        "Pro Kontaktgruppe sind maximal ${ maxContacts } Kontakte erlaubt."
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Wählt automatisch aus ${ numberOfCountries } Land",
-        "Wählt automatisch aus ${ numberOfCountries } Ländern"
-      ],
-      "byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Choose a date within the next ${ n } day.": [
-        "Wähle ein Datum innerhalb des nächsten ${ n } Tages.",
-        "Wähle ein Datum innerhalb der nächsten ${ n } Tage."
-      ],
-      "Contact deleted": [
-        "Kontakt gelöscht",
-        "Kontakte gelöscht"
-      ],
-      "Contact group deleted": [
-        "Kontaktgruppe gelöscht",
-        "Kontaktgruppen gelöscht"
-      ],
-      "Conversation updated": [
-        "Unterhaltung aktualisiert",
-        "Unterhaltungen aktualisiert"
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } neuen Kalender erstellen",
-        "${ calendarsToBeCreatedCount } neue Kalender erstellen"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Erstelle eine sichere Cloud für ${ value } Mitglied",
-        "Erstelle eine sichere Cloud für ${ value } Mitglieder"
-      ],
-      "Create up to ${ n } calendar": [
-        "Erstelle bis zu ${ n } Kalender",
-        "Erstelle bis zu ${ n } Kalender"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu",
-        "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu"
-      ],
-      "Delete ${ count } contact": [
-        "${ count } Kontakt löschen",
-        "${ count } Kontakte löschen"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } Kontaktgruppe löschen",
-        "${ count } Kontaktgruppen löschen"
-      ],
-      "Delete ${ count } conversation": [
-        "${ count } Unterhaltung löschen",
-        "${ count } Unterhaltungen löschen"
-      ],
-      "Delete ${ count } draft": [
-        "${ count } Entwurf löschen",
-        "${ count } Entwürfe löschen"
-      ],
-      "Delete ${ count } message": [
-        "${ count } Nachricht löschen",
-        "${ count } Nachrichten löschen"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "${ selectedCount } Kontakt löschen",
-        "${ selectedCount } Kontakte löschen"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "${ selectedCount } Kontaktgruppe löschen",
-        "${ selectedCount } Kontaktgruppen löschen"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Mindestens ${ calendarsToFixCount } Kalender abwählen",
-        "Mindestens ${ calendarsToFixCount } Kalender abwählen"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Mindestens ${ calendarsToFixCount } Kalender abwählen oder",
-        "Mindestens ${ calendarsToFixCount } Kalender abwählen oder"
-      ],
-      "Do you want to download this attachment anyway?": [
-        "Möchtest du diesen Anhang trotzdem herunterladen?",
-        "Möchtest du diese Anhänge trotzdem herunterladen?"
-      ],
-      "Do you want to trust the primary public key with the following fingerprint?": [
-        "Möchtest du dem primären öffentlichen Schlüssel mit dem folgenden Fingerabdruck vertrauen?",
-        "Möchtest du den primären öffentlichen Schlüsseln mit den folgenden Fingerabdrücken vertrauen?"
-      ],
-      "embedded image": [
-        "Eingebettetes Bild",
-        "Eingebettete Bilder"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minute",
-        "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minuten"
-      ],
-      "Event starts in ${ minutesUntilEvent } minute": [
-        "Termin beginnt in ${ minutesUntilEvent } Minute",
-        "Termin beginnt in ${ minutesUntilEvent } Minuten"
-      ],
-      "Every ${ interval } day": [
-        "Alle ${ interval } Tage",
-        "Alle ${ interval } Tage"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Jeden ${ interval } Tag, ${ timesString }",
-        "Alle ${ interval } Tage, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Jeden ${ interval } Tag, ${ untilString }",
-        "Alle ${ interval } Tage, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Alle ${ interval } Monate ${ onDayString }",
-        "Alle ${ interval } Monate ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Jeden ${ interval } Monat am ${ onDayString }, ${ timesString }",
-        "Aller ${ interval } Monate am ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Jeden ${ interval } Monat ${ onDayString }, ${ untilString }",
-        "Alle ${ interval } Monate ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Alle ${ interval } Wochen am ${ multipleDaysString }",
-        "Alle ${ interval } Wochen am ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Jede ${ interval } Woche am ${ multipleDaysString }, ${ timesString }",
-        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Jede ${ interval } Woche am ${ multipleDaysString }, ${ untilString }",
-        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Alle ${ interval } Wochen an allen Tagen",
-        "Alle ${ interval } Wochen an allen Tagen"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Jede ${ interval } Woche an allen Tagen, ${ timesString }",
-        "Alle ${ interval } Wochen an allen Tagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Jede ${ interval } Woche an allen Tagen, ${ untilString }",
-        "Alle ${ interval } Wochen an allen Tagen, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Alle ${ interval } Wochen am Freitag",
-        "Alle ${ interval } Wochen am Freitag"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Jede ${ interval } Woche am Freitag, ${ timesString }",
-        "Alle ${ interval } Wochen am Freitag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Jede ${ interval } Woche am Freitag, ${ untilString }",
-        "Alle ${ interval } Wochen am Freitag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Alle ${ interval } Wochen am Montag",
-        "Alle ${ interval } Wochen am Montag"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Alle ${ interval } Wochen am Montag, ${ timesString }",
-        "Alle ${ interval } Wochen am Montag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Jede ${ interval } Woche am Montag, ${ untilString }",
-        "Alle ${ interval } Wochen am Montag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Alle ${ interval } Wochen am Samstag",
-        "Alle ${ interval } Wochen am Samstag"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Jede ${ interval } Woche am Samstag, ${ timesString }",
-        "Alle ${ interval } Wochen am Freitag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Jede ${ interval } Woche am Samstag, ${ untilString }",
-        "Alle ${ interval } Wochen am Samstag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Alle ${ interval } Wochen am Sonntag",
-        "Alle ${ interval } Wochen am Sonntag"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Alle ${ interval } Wochen am Sonntag, ${ timesString }",
-        "Alle ${ interval } Wochen am Sonntag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Jede ${ interval } Woche am Sonntag, ${ untilString }",
-        "Alle ${ interval } Wochen am Sonntag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Alle ${ interval } Wochen am Donnerstag",
-        "Alle ${ interval } Wochen am Donnerstag"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Jede ${ interval } Woche am Donnerstag, ${ timesString }",
-        "Alle ${ interval } Wochen am Donnerstag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Jede ${ interval } Woche am Donnerstag, ${ untilString }",
-        "Alle ${ interval } Wochen am Donnerstag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Alle ${ interval } Wochen am Dienstag",
-        "Alle ${ interval } Wochen am Dienstag"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Alle ${ interval } Wochen am Dienstag, ${ timesString }",
-        "Alle ${ interval } Wochen am Dienstag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Jede ${ interval } Woche am Dienstag, ${ untilString }",
-        "Alle ${ interval } Wochen am Dienstag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Alle ${ interval } Wochen am Mittwoch",
-        "Alle ${ interval } Wochen am Mittwoch"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Jede ${ interval } Woche am Mittwoch, ${ timesString }",
-        "Alle ${ interval } Wochen am Mittwoch, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Jede ${ interval } Woche am Mittwoch, ${ untilString }",
-        "Alle ${ interval } Wochen am Mittwoch, ${ untilString }"
-      ],
-      "Every ${ interval } year": [
-        "Alle ${ interval } Jahre",
-        "Alle ${ interval } Jahre"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Jedes ${ interval } Jahr, ${ timesString }",
-        "Alle ${ interval } Jahre, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Jedes ${ interval } Jahr, ${ untilString }",
-        "Alle ${ interval } Jahre, ${ untilString }"
-      ],
-      "Expires in ${ minutesDiff } minute": [
-        "Läuft in ${ minutesDiff } Minute ab",
-        "Läuft in ${ minutesDiff } Minuten ab"
-      ],
-      "Expires in less than ${ hoursDiff } hour": [
-        "Verfällt in weniger als ${ hoursDiff } Stunde",
-        "Verfällt in weniger als ${ hoursDiff } Stunden"
-      ],
-      "file attached": [
-        "Datei angehängt",
-        "Dateien angehängt"
-      ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "${ itemsCount } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
-        "${ itemsCount } Vorschläge gefunden. Verwende die Tastatur zum Navigieren."
-      ],
-      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
-        "Kostenlos für ${ ASSISTANT_TRIAL_TIME_DAYS } Tag ausprobieren",
-        "Kostenlos für ${ ASSISTANT_TRIAL_TIME_DAYS } Tage ausprobieren"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
-        "Hat ${ numAttachments } Anhang (${ numAttachmentsSize })",
-        "Hat ${ numAttachments } Anhänge (${ numAttachmentsSize })"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Hochgeschwindigkeits-VPN auf ${ n } Gerät",
-        "Hochgeschwindigkeits-VPN auf ${ n } Geräten"
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "${ calendarCount }/${ totalCalendarsCount } Kalender importieren",
-        "${ calendarCount }/${ totalCalendarsCount } Kalendern importieren"
-      ],
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Alle Nachrichten aus ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
-        "Alle Nachrichten aus ${ itemsToImportCount } Ordnern importieren und hinzufügen zur Kategorie"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importiere alle Nachrichten aus ${ itemsToImportCount } Kategorie und markiere diese als",
-        "Importiere alle Nachrichten aus ${ itemsToImportCount } Kategorien und markiere diese als"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
-        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordnern importieren und hinzufügen zur Kategorie"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorie importieren und hinzufügen zur Kategorie",
-        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und hinzufügen zur Kategorie"
-      ],
-      "Import as simple event?": [
-        "Als einzelnen Termin importieren?",
-        "Als einzelne Termine importieren?"
-      ],
-      "Insert ${ totalChecked } contact": [
-        "${ totalChecked } Kontakt einfügen",
-        "${ totalChecked } Kontakte einfügen"
-      ],
-      "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Label message as": [
-        "Nachricht kategorisieren als",
-        "Nachrichten kategorisieren als"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabytes"
-      ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Mindestens ${ calendarsToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
-        "Mindestens ${ calendarsToFixCount } Kalender mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen"
-      ],
-      "Message updated": [
-        "Nachricht aktualisiert",
-        "Nachrichten aktualisiert"
-      ],
-      "Move ${ selectionCount } conversation": [
-        "${ selectionCount } Unterhaltung verschieben",
-        "${ selectionCount } Unterhaltungen verschieben"
-      ],
-      "Move ${ selectionCount } message": [
-        "${ selectionCount } Nachricht verschieben",
-        "${ selectionCount } Nachrichten verschieben"
-      ],
-      "Move message to": [
-        "Nachricht verschieben nach",
-        "Nachrichten verschieben nach"
-      ],
-      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Neue E-Mails von „${ senderEmailAddress }“ und ${ otherSendersCount } weiterer werden nicht zugestellt und dauerhaft gelöscht.",
-        "Neue E-Mails von „${ senderEmailAddress }“ und ${ otherSendersCount } weitere werden nicht zugestellt und dauerhaft gelöscht."
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Einer der Kontakte hat keine E-Mail-Adresse: ${ noEmailsContactNamesList }",
-        "Einige Kontakte haben keine E-Mail-Adresse: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Eine der Gruppen enthält keine Kontakte: ${ noContactGroupList }",
-        "Einige Gruppen enthalten keine Kontakte: ${ noContactGroupList } "
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
-        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Passwortzurücksetzung angefordert (${ user.Email }). Du kannst dein Passwort in ${ hoursRemaining } Stunde ändern.",
-        "Passwortzurücksetzung angefordert (${ user.Email }). Du kannst dein Passwort in ${ hoursRemaining } Stunden ändern."
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
-        "Bitte behebe die hervorgehobenen Konflikte, um fortfahren zu können."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupCount } Gruppe hinzugefügt werden sollen.",
-        "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupCount } Gruppen hinzugefügt werden sollen."
-      ],
-      "Recategorized ${ elementsCount } message.": [
-        "${ elementsCount } Nachricht neu kategorisiert.",
-        "${ elementsCount } Nachrichten neu kategorisiert."
-      ],
-      "Removed duplicate recipient: ${ recipents }": [
-        "Doppelter Empfänger wurde entfernt: ${ recipents }",
-        "Doppelte Empfänger wurden entfernt: ${ recipents }"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
-        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr.",
-        "Sichere deine E-Mails und Termine mit Ende-zu-Ende-Verschlüsselung. Inklusive ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliasse und mehr."
-      ],
-      "Select all ${ elementsCount } in ${ location }": [
-        "${ elementsCount } in ${ location } auswählen",
-        "Alle ${ elementsCount } in ${ location } auswählen"
-      ],
-      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Gesendet von ${ MAIL_APP_NAME } mit Zero-Access-Verschlüsselung an verifizierten Empfänger",
-        "Gesendet von ${ MAIL_APP_NAME } mit Zero-Access-Verschlüsselung an verifizierte Empfänger"
-      ],
-      "Sent by you with end-to-end encryption to verified recipient": [
-        "Von dir mit Ende-zu-Ende-Verschlüsselung an verifizierten Empfänger gesendet",
-        "Von dir mit Ende-zu-Ende-Verschlüsselung an verifizierte Empfänger gesendet"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Server in mehr als ${ numberOfCountries } Land",
-        "Server in mehr als ${ numberOfCountries } Ländern"
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Abonnement wird automatisch nach ${ cycle } Monat verlängert.",
-        "Abonnement wird automatisch alle ${ cycle } Monate verlängert."
-      ],
-      "Support for ${ n } custom email domain": [
-        "Support für ${ n } benutzerdefinierte E-Mail-Domain",
-        "Support für ${ n } benutzerdefinierte E-Mail-Domains"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabyte"
-      ],
-      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "Der Anhang konnte nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Datei trotzdem mit einem Programm wie GnuPG entschlüsseln.",
-        "Einige der Anhänge konnten nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Dateien trotzdem mit einem Programm wie GnuPG entschlüsseln."
-      ],
-      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Die Signatur des Anhangs konnte nicht überprüft werden. Dieser Anhang kann dennoch heruntergeladen werden, könnte jedoch manipuliert worden sein.",
-        "Die Signatur einiger Anhänge konnte nicht überprüft werden. Diese Anhänge können dennoch heruntergeladen werden, könnten jedoch manipuliert worden sein."
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
-        "Der Gutschein ist für ${ couponRedemptions } Verlängerungen gültig."
-      ],
-      "The following address is not valid: ${ invalidAddresses }": [
-        "Die folgende E-Mail-Adresse ist ungültig: ${ invalidAddresses }",
-        "Die folgenden E-Mail-Adressen sind ungültig: ${ invalidAddresses }"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monat gültig.",
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monate gültig."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerung eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen.",
-        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen."
-      ],
-      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: Der Kontakt ist nicht korrekt signiert. Dies kann auf eine Passwortzurücksetzung zurückzuführen sein. Der Kontakt muss erneut signiert werden, um eine Nachricht an ${ contactAddresses } senden oder den Kontakt bearbeiten zu können.",
-        "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: Die Kontakte sind nicht korrekt signiert. Dies kann auf eine Passwortzurücksetzung zurückzuführen sein. Die Kontakte müssen erneut signiert werden, um eine Nachricht an ${ contactAddresses } senden oder die Kontakte bearbeiten zu können."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monat verlängert. Du kannst jederzeit kündigen.",
-        "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monate verlängert. Du kannst jederzeit kündigen."
-      ],
-      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Diese Unterhaltung wird als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?",
-        "Diese Unterhaltungen werden als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?"
-      ],
-      "This file contains an event invitation:": [
-        "Diese Datei enthält eine Termineinladung:",
-        "Diese Datei enthält Termineinladungen:"
-      ],
-      "This file contains an invitation response:": [
-        "Diese Datei enthält eine Antwort auf eine Einladung:",
-        "Diese Datei enthält Antworten auf eine Einladung:"
-      ],
-      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Diese Nachricht wird als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?",
-        "Diese Nachrichten werden als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?"
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Diese Berechtigung läuft in ${ timeRemaining.inDays } Tag ab.",
-        "Diese Berechtigung läuft in ${ timeRemaining.inDays } Tagen ab."
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Diese Berechtigung läuft in ${ timeRemaining.inHours } Stunde ab.",
-        "Diese Berechtigung läuft in ${ timeRemaining.inHours } Stunden ab."
-      ],
-      "Total for ${ n } month": [
-        "Gesamtbetrag für ${ n } Monat",
-        "Gesamtbetrag für ${ n } Monate"
-      ],
-      "Trust new key?": [
-        "Neuem Schlüssel vertrauen?",
-        "Neuen Schlüsseln vertrauen?"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
-        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
-      ],
-      "Up to ${ n } user": [
-        "Bis zu ${ n } Benutzer",
-        "Bis zu ${ n } Benutzer"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Bis zu ${ n } Benutzer (${ adminsText }, ${ usersText })",
-        "Bis zu ${ n } Benutzer (${ adminsText }, ${ usersText })"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Gleichzeitige Verwendung auf bis zu ${ n } Gerät",
-        "Gleichzeitige Verwendung auf bis zu ${ n } Geräten"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "Tresor teilen (bis zu ${ n } Person)",
-        "Tresor teilen (bis zu ${ n } Personen)"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "VPN-Verbindung für ${ n } Gerät pro Benutzer",
-        "VPN-Verbindung für ${ n } Geräte pro Benutzer"
-      ],
-      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Es wurden Fehler festgestellt. Deine E-Mail kann aus folgendem Grund nicht an die angegebene E-Mail-Adresse gesendet werden:",
-        "Es wurden Fehler festgestellt. Ihre E-Mail kann aus folgenden Gründen nicht an die angegebenen E-Mail-Adressen gesendet werden:"
-      ],
-      "We have detected some warnings. The following email address may not receive emails:": [
-        "Es wurden einige Warnungen festgestellt. Die folgende E-Mail-Adresse kann möglicherweise keine E-Mails empfangen:",
-        "Es wurden einige Warnungen festgestellt. Die folgende E-Mail-Adressen können möglicherweise keine E-Mails empfangen:"
-      ],
-      "We protected you from ${ trackersCount } tracker": [
-        "Wir haben dich vor ${ trackersCount } Tracker geschützt",
-        "Wir haben dich vor ${ trackersCount } Trackern geschützt"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Nutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst.",
-        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne Links geteilter Kalender und jegliche ${ BRAND_NAME }-Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein Abonnement beendest.",
-        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne Links geteilter Kalender und jegliche ${ BRAND_NAME }-Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein Abonnement beendest."
-      ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden.",
-        "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden."
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
-        "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
-      ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen.",
-        "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen."
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Du hast ${ timeRemaining.inDays } Tag um dein Passwort zurücksetzen.",
-        "Du hast ${ timeRemaining.inDays } Tage um dein Passwort zurücksetzen."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Du hast ${ timeRemaining.inHours } Stunde um dein Passwort zurücksetzen.",
-        "Du hast ${ timeRemaining.inHours } Stunden um dein Passwort zurücksetzen."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Du hast ${ timeRemaining.inMinutes } Minute um dein Passwort zurücksetzen.",
-        "Du hast ${ timeRemaining.inMinutes } Minuten um dein Passwort zurücksetzen."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Du hast ${ timeRemaining.inSeconds } Sekunde um dein Passwort zurücksetzen.",
-        "Du hast ${ timeRemaining.inSeconds } Sekunden um dein Passwort zurücksetzen."
-      ],
-      "You have **${ count } conversation** stored in this folder": [
-        "Du hast **${ count } Unterhaltung** in diesem Ordner gespeichert",
-        "Du hast **${ count } Unterhaltungen** in diesem Ordner gespeichert"
-      ],
-      "You have **${ count } conversation** tagged with this label": [
-        "Es wurde **${ count } Unterhaltung** zu dieser Kategorie hinzugefügt",
-        "Es wurde **${ count } Unterhaltungen** zu dieser Kategorie hinzugefügt"
-      ],
-      "You have **${ count } message** stored in this folder": [
-        "Du hast **${ count } Nachricht** in diesem Ordner gespeichert",
-        "Du hast **${ count } Nachrichten** in diesem Ordner gespeichert"
-      ],
-      "You have **${ count } message** tagged with this label": [
-        "Du hast **${ count } Nachricht** zu dieser Kategorie hinzugefügt",
-        "Du hast **${ count } Nachrichten** zu dieser Kategorie hinzugefügt"
-      ],
-      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Es wurde die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adresse aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft. Du musst einen für das Senden gültigen Schlüssel als vertrauenswürdig einstufen, um eine Nachricht an diese E-Mail-Adresse senden zu können.",
-        "Es wurde die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adressen aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft. Du musst einen für das Senden gültigen Schlüssel als vertrauenswürdig einstufen, um eine Nachricht an diese E-Mail-Adressen senden zu können."
-      ],
-      "You selected **${ count } conversation** from this folder": [
-        "Es wurde **${ count } Unterhaltung** in diesem Ordner ausgewählt",
-        "Es wurden **${ count } Unterhaltungen** in diesem Ordner ausgewählt"
-      ],
-      "You selected **${ count } conversation** with this label": [
-        "Du hast **${ count } Unterhaltung** mit dieser Kategorie ausgewählt",
-        "Du hast **${ count } Unterhaltungen** mit dieser Kategorie ausgewählt"
-      ],
-      "You selected **${ count } message** from this folder": [
-        "Du hast **${ count } Nachricht** in diesem Ordner ausgewählt",
-        "Du hast **${ count } Nachrichten** in diesem Ordner ausgewählt"
-      ],
-      "You selected **${ count } message** with this label": [
-        "Du hast **${ count } Nachricht** mit dieser Kategorie ausgewählt",
-        "Du hast **${ count } Nachrichten** mit dieser Kategorie ausgewählt"
-      ],
-      "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Du hast **${ elementsCount } Unterhaltung** in ${ location } ausgewählt.",
-        "Du hast **${ elementsCount } Unterhaltungen** in ${ location } ausgewählt."
-      ],
-      "You selected **${ elementsCount } conversation**.": [
-        "Du hast **${ elementsCount } Unterhaltung** ausgewählt.",
-        "Du hast **${ elementsCount } Unterhaltungen** ausgewählt."
-      ],
-      "You selected **${ elementsCount } message** in ${ location }": [
-        "Du hast **${ elementsCount } Nachricht** in ${ location } ausgewählt.",
-        "Du hast **${ elementsCount } Nachrichten** in ${ location } ausgewählt."
-      ],
-      "You selected **${ elementsCount } message**.": [
-        "Du hast **${ elementsCount } Nachricht** ausgewählt.",
-        "Du hast **${ elementsCount } Nachrichten** ausgewählt."
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "Dir verbleibt noch **${ daysRemaining }** Tag bei deinem **${ currentPlanName }**-Abonnement.",
-        "Dir verbleiben noch **${ daysRemaining }** Tage bei deinem **${ currentPlanName }**-Abonnement."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
-        "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS } Termin.",
-        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS } Termine."
-      ],
-      "Your message will expire in ${ numberOfDays } day.": [
-        "Deine Nachricht wird in ${ numberOfDays } Tag ablaufen.",
-        "Deine Nachricht wird in ${ numberOfDays } Tagen ablaufen."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird nach ${ cycle } Monat automatisch erneuert.",
-        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird alle ${ cycle } Monate automatisch erneuert."
-      ]
-    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Weiterleiten beginnt bald. Neue E-Mails werden in deinem Posteingang erscheinen."
@@ -1406,6 +140,10 @@
       ],
       "As Scheduled": [
         "Wie geplant"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
+        "Pro Kontaktgruppe sind maximal ${ maxContacts } Kontakte erlaubt."
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
@@ -1650,6 +388,14 @@
       "Delete": [
         "Löschen"
       ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } Kontakt löschen",
+        "${ selectedCount } Kontakte löschen"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } Kontaktgruppe löschen",
+        "${ selectedCount } Kontaktgruppen löschen"
+      ],
       "Delete all": [
         "Alle löschen"
       ],
@@ -1688,9 +434,6 @@
       ],
       "Disable alias": [
         "Alias deaktivieren"
-      ],
-      "Disable categories": [
-        "Kategorien deaktivieren"
       ],
       "Disabling alias": [
         "Alias wird deaktiviert"
@@ -1998,6 +741,10 @@
       "Insert": [
         "Einfügen"
       ],
+      "Insert ${ totalChecked } contact": [
+        "${ totalChecked } Kontakt einfügen",
+        "${ totalChecked } Kontakte einfügen"
+      ],
       "Insert contact": [
         "Kontakt einfügen"
       ],
@@ -2019,14 +766,8 @@
       "Join with ${ MEET_APP_NAME }": [
         "Tritt ${ MEET_APP_NAME } bei"
       ],
-      "Keep categories": [
-        "Kategorien behalten"
-      ],
       "Keep my subscription": [
         "Behalte mein Abonnement"
-      ],
-      "Label": [
-        "Label"
       ],
       "Label as": [
         "Folgender Kategorie zuordnen"
@@ -2886,6 +1627,10 @@
       "Yes, I'll attend": [
         "Ja, ich nehme teil"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten.",
+        "Du kannst nur vCard-Dateien versenden, die höchstens ${ maxAttachments } Kontakte enthalten."
+      ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet in 2 Tagen. ${ upgradeButton }"
       ],
@@ -2944,6 +1689,14 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } zusätzliche eigene Domain",
+        "${ domains } zusätzliche eigene Domains"
+      ],
+      "${ ips } server": [
+        "${ ips } Server",
+        "${ ips } Server"
+      ],
       "${ price } per dedicated server": [
         "${ price } pro dediziertem Server"
       ],
@@ -2955,6 +1708,18 @@
       ],
       "${ price } per user": [
         "${ price } pro Benutzer"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } Benutzerlizenz",
+        "${ seats } ${ LUMO_APP_NAME } Benutzerlizenzen"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } Lizenz für den Schreibassistenten",
+        "${ seats } Lizenzen für den Schreibassistenten"
+      ],
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
       ]
     },
     "Alert": {
@@ -3125,6 +1890,10 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
       "/ month": [
         "/ Monat"
       ],
@@ -3214,11 +1983,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem die Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate am ${ formattedDate } automatisch verlängert. Dir wird nichts berechnet, wenn du vor dem ${ formattedDate } kündigst."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem deine Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich am ${ formattedDate } automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
@@ -3379,6 +2148,14 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Sichere Anmeldungen auf all deinen Geräten. Inklusive unbegrenzter Hide-my-email-Aliasse, Freigabe, integrierter 2FA, ${ DARK_WEB_MONITORING_NAME } und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr.",
+        "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sichere deine E-Mails mit Ende-zu-Ende-Verschlüsselung. Beinhaltet ${ addresses } E-Mail-Adresse, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte Hide-my-email-Aliasse und mehr.",
+        "Sichere deine E-Mails und Termine mit Ende-zu-Ende-Verschlüsselung. Inklusive ${ addresses } E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, unbegrenzte hide-my-email-Aliasse und mehr."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Schütze deine E-Mails und plane den Versand mit Ende-zu-Ende-Verschlüsselung. Beinhaltet 15 E-Mail-Adressen, Unterstützung für benutzerdefinierte E-Mail-Domains, ${ BRAND_NAME } Scribe-Schreibassistenz, unbegrenzte Hide-my-email-Aliasse und mehr."
@@ -3872,8 +2649,16 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
+      ],
       "Total": [
         "Insgesamt"
+      ],
+      "Total for ${ n } month": [
+        "Gesamtbetrag für ${ n } Monat",
+        "Gesamtbetrag für ${ n } Monate"
       ]
     },
     "Collapsible tooltip": {
@@ -5165,8 +3950,16 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } Mal",
+        "${ count } Mal"
+      ],
       "Daily": [
         "Täglich"
+      ],
+      "Every ${ interval } day": [
+        "Alle ${ interval } Tage",
+        "Alle ${ interval } Tage"
       ],
       "until ${ dateString }": [
         "bis ${ dateString }"
@@ -5175,11 +3968,19 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Täglich, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Jeden ${ interval } Tag, ${ timesString }",
+        "Alle ${ interval } Tage, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Täglich, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Jeden ${ interval } Tag, ${ untilString }",
+        "Alle ${ interval } Tage, ${ untilString }"
       ]
     },
     "Date label": {
@@ -5309,6 +4110,10 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
       ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Neue E-Mails von „${ senderEmailAddress }“ und ${ otherSendersCount } weiterer werden nicht zugestellt und dauerhaft gelöscht.",
+        "Neue E-Mails von „${ senderEmailAddress }“ und ${ otherSendersCount } weitere werden nicht zugestellt und dauerhaft gelöscht."
+      ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Neue E-Mails von „${ senderEmailAddress }“ werden nicht zugestellt und dauerhaft gelöscht."
       ],
@@ -5408,6 +4213,10 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } neue Nachricht",
+        "${ notificationsToShow.length } neue Nachrichten"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Von: ${ sender } – ${ Subject }"
       ]
@@ -5576,6 +4385,10 @@
       "Event starting now": [
         "Termin beginnt jetzt"
       ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Termin beginnt in ${ minutesUntilEvent } Minute",
+        "Termin beginnt in ${ minutesUntilEvent } Minuten"
+      ],
       "Event starts tomorrow": [
         "Termin beginnt morgen"
       ]
@@ -5709,6 +4522,10 @@
       "Choose a date in the future.": [
         "Wähle ein Datum, das in der Zukunft liegt."
       ],
+      "Choose a date within the next ${ n } day.": [
+        "Wähle ein Datum innerhalb des nächsten ${ n } Tages.",
+        "Wähle ein Datum innerhalb der nächsten ${ n } Tage."
+      ],
       "Condition incomplete": [
         "Bedingung unvollständig"
       ],
@@ -5741,6 +4558,14 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Entschlüsselungsfehler: Das Entschlüsseln des verschlüsselten Inhalts dieser Nachricht ist fehlgeschlagen."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Mindestens ${ calendarsToFixCount } Kalender abwählen",
+        "Mindestens ${ calendarsToFixCount } Kalender abwählen"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Mindestens ${ calendarsToFixCount } Kalender abwählen oder",
+        "Mindestens ${ calendarsToFixCount } Kalender abwählen oder"
       ],
       "Domain not available, try again later": [
         "Domain nicht verfügbar. Bitte versuche es später noch einmal."
@@ -5871,6 +4696,10 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximale Anzahl von Anhängen (${ attachmentsCountLimit }) überschritten"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Mindestens ${ calendarsToFixCount } Kalender mit einem bestehenden ${ BRAND_NAME }-Kalender zusammenführen",
+        "Mindestens ${ calendarsToFixCount } Kalender mit bestehenden ${ BRAND_NAME }-Kalendern zusammenführen"
+      ],
       "Message needs to be sent first": [
         "Die Nachricht muss zuerst gesendet werden"
       ],
@@ -5913,6 +4742,14 @@
       "Not a valid number": [
         "Keine gültige Zahl"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Einer der Kontakte hat keine E-Mail-Adresse: ${ noEmailsContactNamesList }",
+        "Einige Kontakte haben keine E-Mail-Adresse: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Eine der Gruppen enthält keine Kontakte: ${ noContactGroupList }",
+        "Einige Gruppen enthalten keine Kontakte: ${ noContactGroupList } "
+      ],
       "Organization key is not decrypted": [
         "Organisationsschlüssel ist nicht entschlüsselt"
       ],
@@ -5954,6 +4791,10 @@
       ],
       "Please enter ZIP code": [
         "Bitte gib eine Postleitzahl an"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
+        "Bitte behebe die hervorgehobenen Konflikte, um fortfahren zu können."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Bitte gib entweder einen Vornamen, Nachnamen oder Anzeigenamen ein."
@@ -6018,6 +4859,10 @@
       "re-activate the previous key": [
         "Vorherigen Schlüssel erneut aktivieren"
       ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Doppelter Empfänger wurde entfernt: ${ recipents }",
+        "Doppelte Empfänger wurden entfernt: ${ recipents }"
+      ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
@@ -6077,6 +4922,10 @@
       ],
       "The amount due has changed. Please try again.": [
         "Der fällige Betrag hat sich geändert. Bitte versuche es erneut."
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Der Anhang konnte nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Datei trotzdem mit einem Programm wie GnuPG entschlüsseln.",
+        "Einige der Anhänge konnten nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Dateien trotzdem mit einem Programm wie GnuPG entschlüsseln."
       ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
@@ -6177,6 +5026,14 @@
       "Wrong password": [
         "Falsches Passwort"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden.",
+        "Es können keine Mails an mehr als ${ maxContacts } Empfänger gesendet werden."
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen.",
+        "Du kannst nicht mehr als ${ maxActiveComposer } Verfassen-Fenster auf einmal öffnen."
+      ],
       "You did not provide a file.": [
         "Es wurde keine Datei bereitgestellt."
       ],
@@ -6206,6 +5063,12 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Pro Einladung ist maximal ${ maxAttendees } Teilnehmer erlaubt.",
+        "Pro Einladung sind maximal ${ maxAttendees } Teilnehmer erlaubt."
       ]
     },
     "Error display when performing invalid move on message": {
@@ -6240,6 +5103,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ein unerwarteter Fehler ist aufgetreten. Der Import muss neu ausgeführt werden."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS } Termin.",
+        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS } Termine."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Deine Datei \"${ formattedFilename }\" enthält eine ungültige Methode und konnte nicht importiert werden."
@@ -6635,6 +5502,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "Byte",
+        "Bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -6646,6 +5517,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Filter": {
@@ -6857,6 +5750,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } im Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } Tag",
+        "${ remainingDaysCount } Tage"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } verbleibender Tag",
+        "${ remainingDaysCount } verbleibende Tage"
+      ],
       "account logins": [
         "Konto-Zugangsdaten"
       ],
@@ -7059,6 +5960,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
+        "${ itemsCount } Vorschläge gefunden. Verwende die Tastatur zum Navigieren."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Verwende die Pfeiltasten hoch und runter, um die Vorschläge nach der Eingabe aufzurufen und durchzusehen. Bestätige deine Auswahl mit der Eingabetaste oder drücke die Escape-Taste, um das Vorschlagsfeld zu schließen."
       ]
@@ -7125,11 +6030,23 @@
       ]
     },
     "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } Teilnehmer",
+        "${ totalAttendees } Teilnehmer"
+      ],
       "Organizer:": [
         "Organisator:"
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } Termin wurde verschlüsselt und deinem Kalender hinzugefügt",
+        "${ totalImported }/${ totalToImport } Termine wurden verschlüsselt und deinem Kalender hinzugefügt"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Termin wurde erfolgreich importiert.",
+        "Beim Verschlüsseln und Hinzufügen deiner Termine ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Terminen wurden erfolgreich importiert."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Beim Verschlüsseln und Hinzufügen deines Termins ist ein Fehler aufgetreten. Es konnte kein Termin importiert werden."
       ],
@@ -7164,11 +6081,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Importierte Einladungen werden in ${ CALENDAR_APP_NAME } als einzelne Termine ohne Organisator- und Teilnehmerdetails angezeigt. Um Aktualisierungen der Termine zu erhalten und die Teilnehmer anzuzeigen, bitte den Organisator, dich über deine ${ BRAND_NAME }-E-Mail-Adresse einzuladen."
       ],
+      "This file contains an event invitation:": [
+        "Diese Datei enthält eine Termineinladung:",
+        "Diese Datei enthält Termineinladungen:"
+      ],
+      "This file contains an invitation response:": [
+        "Diese Datei enthält eine Antwort auf eine Einladung:",
+        "Diese Datei enthält Antworten auf eine Einladung:"
+      ],
       "This file contains some data that we cannot import:": [
         "Diese Datei enthält einige Daten, die nicht importiert werden können:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } Kontakt verschlüsselt und zu deiner Kontaktliste hinzugefügt",
+        "${ totalImported }/${ totalToImport } Kontakte verschlüsselt und zu deiner Kontaktliste hinzugefügt"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Beim Verschlüsseln und Hinzufügen deines Kontakts ist ein Fehler aufgetreten. Es konnte kein Kontakt importiert werden."
       ],
@@ -7188,6 +6117,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kontakt ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } Kontakt",
+        "${ totalContacts } Kontakte"
       ]
     },
     "Import contact. Contact identifier": {
@@ -7374,6 +6309,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } von ${ totalContacts } Kontakten werden nicht importiert. Für Details klicken"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded }/${ totalEvents } Termin wird nicht importiert. Erweitern für Details.",
+        "${ totalEventsDiscarded }/${ totalEvents } Termine werden nicht importiert. Erweitern für Details."
+      ],
       "No contact can be imported. Click for details": [
         "Keine Kontakte konnten importiert werden. Für Details klicken"
       ],
@@ -7385,6 +6324,10 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } E-Mail-Adresse",
+        "${ addressCount } E-Mail-Adressen"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
@@ -7415,8 +6358,84 @@
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } benötigt eine ${ BRAND_NAME }-Adresse für die sichere Termin-Synchronisierung und Verschlüsselung. Hol dir jetzt deine kostenlose ${ MAIL_APP_NAME }-Adresse."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } neuer Kalender",
+        "${ calendarsToBeCreatedCount } neue Kalender"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } zusammengeführter Kalender",
+        "${ calendarsToBeMergedCount } zusammengeführte Kalender"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } Kontakt enthält mehrere E-Mail-Adressen.",
+        "${ contactCount } Kontakte enthalten mehrere E-Mail-Adressen."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Mitglied",
+        "${ contactEmailsLength } Mitglieder"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } Mitglied)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } Mitglieder)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } enthält mehrere E-Mail-Adressen."
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } Kontakt gefunden",
+        "${ contactsCount } Kontakte gefunden"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } Kontakt",
+        "${ contactsLength } Kontakte"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } von ${ totalProgress }",
+        "${ currentProgress } von ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } Unterhaltung wird kategorisiert als:",
+        "${ elementsCount } Unterhaltungen werden kategorisiert als:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } Unterhaltung wird als „Gelesen“ gekennzeichnet.",
+        "${ elementsCount } Unterhaltungen wird als „Gelesen“ gekennzeichnet."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } Unterhaltung wird als ungelesen markiert.",
+        "${ elementsCount } Unterhaltungen werden als ungelesen markiert."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } Unterhaltung wird verschoben",
+        "${ elementsCount } Unterhaltungen werden verschoben"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "Bei ${ elementsCount } Unterhaltung wird die Kategorie entfernt:",
+        "Bei ${ elementsCount } Unterhaltungen wird die Kategorie entfernt:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } Nachricht wird kategorisiert als:",
+        "${ elementsCount } Nachrichten werden kategorisiert als:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } Nachricht wird als gelesen markiert.",
+        "${ elementsCount } Nachrichten werden als gelesen markiert."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } Nachricht wird als ungelesen markiert.",
+        "${ elementsCount } Nachrichten werden als ungelesen markiert."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } Nachricht wird verschoben",
+        "${ elementsCount } Nachrichten werden verschoben"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "Bei ${ elementsCount } Nachricht wird die Kategorie entfernt:",
+        "Bei ${ elementsCount } Nachrichten wird die Kategorie entfernt:"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } eingebettete Grafik",
+        "${ embeddedAttachmentsCount } eingebettete Grafiken"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: Bild in voller Größe"
@@ -7424,11 +6443,39 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: Vorschau in niedriger Auflösung"
       ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } Gruppe gefunden",
+        "${ groupCounts } Gruppen gefunden"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kann auch dein Unternehmen schützen."
+      ],
+      "${ messagesNotAuthorizedToMove } message could not be moved.": [
+        "${ messagesNotAuthorizedToMove } Nachricht konnte nicht verschoben werden.",
+        "${ messagesNotAuthorizedToMove } Nachrichten konnten nicht verschoben werden."
+      ],
+      "${ n } unread conversation": [
+        "${ n } ungelesene Unterhaltung",
+        "${ n } ungelesene Unterhaltungen"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } Link bereinigt",
+        "${ numberOfUTMTrackers } Links bereinigt"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } Nachricht in der Unterhaltung",
+        "${ NumMessages } Nachrichten in der Unterhaltung"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } Ereignis gefunden",
+        "${ numOccurrences } Ereignisse gefunden"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } Ereignis im E-Mail-Inhalt gefunden",
+        "${ numOccurrences } Ereignisse im E-Mail-Inhalt gefunden"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME } erlaubt es dir, deine Passwörter, Notizen und andere sensible Informationen mit Ende-zu-Ende-Verschlüsselung zu speichern. Verfügbar auf ${ ios }, ${ android } und in deinem ${ browser }."
@@ -7445,17 +6492,89 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } läuft in ${ daysLeft } Tag aus.",
+        "${ planName } läuft in ${ daysLeft } Tagen aus."
+      ],
       "${ planName } expires today.": [
         "${ planName } läuft heute aus."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } schützt dein Konto durch gezielte Überwachung verdächtiger Aktivitäten."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } Ordner gefunden",
+        "${ providerFoldersNumLocalized } Ordner gefunden"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } Kategorie in Gmail gefunden",
+        "${ providerFoldersNumLocalized } Kategorien in Gmail gefunden"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } Datei angehängt",
+        "${ pureAttachmentsCount } Dateien angehängt"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } E-Mail im letzten Monat",
+        "${ receivedMessagesCount } E-Mails im letzten Monat"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalendern"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } Kontakt ausgewählt",
+        "${ selectedContactsLength }/${ contactsLength } Kontakte ausgewählt"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } Ordner ausgewählt",
+        "${ selectedFoldersCountLocalized } Ordner ausgewählt"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } Kategorie ausgewählt",
+        "${ selectedFoldersCountLocalized } Kategorien ausgewählt"
+      ],
       "${ storage } storage": [
         "${ storage } Speicherplatz"
       ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } ungelesen",
+        "${ subscription.UnreadMessageCount } ungelesen"
+      ],
+      "${ total } conversation": [
+        "${ total } Unterhaltung",
+        "${ total } Unterhaltungen"
+      ],
+      "${ total } message": [
+        "${ total } Nachricht",
+        "${ total } Nachrichten"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } E-Mail-Tracker blockiert",
+        "${ trackersCount } E-Mail-Tracker blockiert"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } Tracker blockiert",
+        "${ trackersCount } Tracker blockiert"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } Newsletter",
+        "${ unreadCount } Newsletter"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } geplante Nachricht",
+        "${ unreadCount } geplante Nachrichten"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } Kontakt erfolgreich aktualisiert.",
+        "${ updated } Kontakte erfolgreich aktualisiert."
+      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } verbirgt deine IP-Adresse, so dass Websites dich nicht identifizieren können."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } Mitglied)",
+        "(${ memberCount } Mitglieder)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/Monat)"
@@ -7469,6 +6588,10 @@
       "(No Recipient)": [
         "(Kein Empfänger)"
       ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** Ergebnis in ${ labelName } gefunden",
+        "**${ total }** Ergebnisse in ${ labelName } gefunden"
+      ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Automatische Verbindung**: Öffnet und verbindet sich mit dem VPN, sobald du dein Gerät einschaltest."
       ],
@@ -7477,6 +6600,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } Bonus-Speicherplatz"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "${ organization.BonusVPN } zusätzliche Verbindung für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)",
+        "${ organization.BonusVPN } zusätzliche Verbindungen für ${ VPN_APP_NAME } (ermöglicht es dir, weitere Geräte mit VPN zu verbinden)"
       ],
       "30-day money-back guarantee.": [
         "30 Tage Geld-zurück-Garantie."
@@ -7541,6 +6668,14 @@
       "Align right": [
         "Rechtsbündig"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Alle (${ totalFoldersCount } Ordner)",
+        "Alle (${ totalFoldersCount } Ordner)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Alle (${ totalFoldersCount } Kategorie)",
+        "Alle (${ totalFoldersCount } Kategorien)"
+      ],
       "All messages from this mailing list will be marked as read.": [
         "Alle Nachrichten von dieser Verteilerliste werden als gelesen markiert."
       ],
@@ -7556,14 +6691,15 @@
       "All messages stored with this label will be permanently deleted.": [
         "Alle in dieser Kategorie gespeicherten Nachrichten werden dauerhaft gelöscht."
       ],
-      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
-        "Alle Nachrichten werden im Posteingang angezeigt, und die Kategorien-Tabs und Tags werden nicht mehr sichtbar sein. "
-      ],
       "All your calendars are disabled.": [
         "Alle deine Kalender sind deaktiviert."
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }.",
+        "Alle deine Kontakte werden importiert, bis zu einer Grenze von ${ MAX_CONTACTS_PER_USER }."
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey Logo"
@@ -7627,6 +6763,18 @@
       ],
       "Are you sure you want to move all messages in this location to trash?": [
         "Möchtest du wirklich alle hier vorliegenden Nachrichten in den Papierkorb verschieben?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Möchtest du wirklich ${ count } Unterhaltung dauerhaft löschen?",
+        "Möchtest du wirklich ${ count } Unterhaltungen dauerhaft löschen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Möchtest du wirklich ${ count } Entwurf dauerhaft löschen?",
+        "Möchtest du wirklich ${ count } Entwürfe dauerhaft löschen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Möchtest du wirklich ${ count } Nachricht dauerhaft löschen?",
+        "Möchtest du wirklich ${ count } Nachrichten dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Möchtest du diese Unterhaltung wirklich dauerhaft löschen?"
@@ -7766,6 +6914,10 @@
       "Country code": [
         "Ländercode"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } neuen Kalender erstellen",
+        "${ calendarsToBeCreatedCount } neue Kalender erstellen"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Erstelle einen Ordner wie „${ suggestedFolderName }“, um alle deine Online-Quittungen an einem Ort zu speichern."
       ],
@@ -7777,6 +6929,10 @@
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Erstelle eine sichere Cloud für ${ value } Mitglied",
+        "Erstelle eine sichere Cloud für ${ value } Mitglieder"
       ],
       "Create in": [
         "Erstellen in"
@@ -7843,6 +6999,10 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy Logo"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Möchtest du diesen Anhang trotzdem herunterladen?",
+        "Möchtest du diese Anhänge trotzdem herunterladen?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "Möchtest du die Kontaktdaten erneut signieren und dabei den Schlüsseln mit den folgenden Fingerabdrücken vertrauen?"
@@ -7955,6 +7115,10 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-Mails, die mit der Kategorie ${ nameDeleted } gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
       ],
+      "embedded image": [
+        "Eingebettetes Bild",
+        "Eingebettete Bilder"
+      ],
       "Enabling auto-deletion…": [
         "Automatisches Löschen wird aktiviert…"
       ],
@@ -7985,6 +7149,10 @@
       "Enter your own password (as trusted contact).": [
         "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minute",
+        "Geschätzte verbleibende Zeit: ${ estimatedMinutes } Minuten"
+      ],
       "Estimated time remaining: Less than a minute": [
         "Geschätzte verbleibende Zeit: Weniger als eine Minute"
       ],
@@ -8008,6 +7176,18 @@
       ],
       "Expires in ${ formattedDate }": [
         "Läuft in ${ formattedDate } ab"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Läuft in ${ minutesDiff } Minute ab",
+        "Läuft in ${ minutesDiff } Minuten ab"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Verfällt in weniger als ${ hoursDiff } Stunde",
+        "Verfällt in weniger als ${ hoursDiff } Stunden"
+      ],
+      "file attached": [
+        "Datei angehängt",
+        "Dateien angehängt"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter wirken auf alle E-Mails, sowohl auf eingehende als auch auf gesendete Nachrichten. Jeder Filter muss mindestens einen Namen, eine Bedingung und eine Aktion enthalten."
@@ -8033,6 +7213,10 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Um mehr Suchergebnisse zu erhalten, suche nach diesem Schlüsselwort im Inhalt deiner E-Mails."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Kostenlos für ${ ASSISTANT_TRIAL_TIME_DAYS } Tag ausprobieren",
+        "Kostenlos für ${ ASSISTANT_TRIAL_TIME_DAYS } Tage ausprobieren"
+      ],
       "From": [
         "Von"
       ],
@@ -8053,6 +7237,10 @@
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Hat ${ numAttachments } Anhang (${ numAttachmentsSize })",
+        "Hat ${ numAttachments } Anhänge (${ numAttachmentsSize })"
       ],
       "here": [
         "hier"
@@ -8108,6 +7296,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Grafiken wurden entfernt, da diese in automatischen Antworten nicht zulässig sind"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount }/${ totalCalendarsCount } Kalender importieren",
+        "${ calendarCount }/${ totalCalendarsCount } Kalendern importieren"
+      ],
       "Import from": [
         "Importieren aus"
       ],
@@ -8143,6 +7335,10 @@
       ],
       "Initializing…": [
         "Wird initialisiert…"
+      ],
+      "Insert image": [
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -8501,6 +7697,10 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Bitte wähle die Art des einzufügenden Links aus und fülle alle Felder aus."
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupCount } Gruppe hinzugefügt werden sollen.",
+        "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupCount } Gruppen hinzugefügt werden sollen."
+      ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupName } hinzugefügt werden sollen."
       ],
@@ -8648,6 +7848,10 @@
       "Seems like you are all caught up for now": [
         "Es scheint, als wären alle Aufgaben erledigt"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "${ elementsCount } in ${ location } auswählen",
+        "Alle ${ elementsCount } in ${ location } auswählen"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn eine Nachricht an diese E-Mail-Adresse gesendet wird."
       ],
@@ -8771,6 +7975,10 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Tätige eine Einzahlung über die folgende Adresse oder scanne den QR-Code. Die Einzahlung wird nach der Bestätigung auf deinem Konto gutgeschrieben."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonnement wird automatisch nach ${ cycle } Monat verlängert.",
+        "Abonnement wird automatisch alle ${ cycle } Monate verlängert."
+      ],
       "Subscription auto-renews every month.": [
         "Abonnement wird automatisch jeden Monat verlängert."
       ],
@@ -8846,6 +8054,10 @@
       "The sender has requested a read receipt.": [
         "Der Absender hat eine Lesebestätigung angefordert."
       ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: Der Kontakt ist nicht korrekt signiert. Dies kann auf eine Passwortzurücksetzung zurückzuführen sein. Der Kontakt muss erneut signiert werden, um eine Nachricht an ${ contactAddresses } senden oder den Kontakt bearbeiten zu können.",
+        "Die Überprüfung von ${ contactNames } ist fehlgeschlagen: Die Kontakte sind nicht korrekt signiert. Dies kann auf eine Passwortzurücksetzung zurückzuführen sein. Die Kontakte müssen erneut signiert werden, um eine Nachricht an ${ contactAddresses } senden oder die Kontakte bearbeiten zu können."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Der Verifikationsvorgang wird einen neuen Browser-Tab öffnen. Bitte deaktiviere jegliche Pop-up-Blocker."
       ],
@@ -8884,6 +8096,10 @@
       ],
       "This conversation contains trashed messages.": [
         "Diese Unterhaltung enthält gelöschte Nachrichten."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Diese Unterhaltung wird als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?",
+        "Diese Unterhaltungen werden als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Diese E-Mail hat die Domain-Authentifizierungsanforderungen nicht bestanden. Sie könnte gefälscht oder unsachgemäß weitergeleitet worden sein."
@@ -8935,6 +8151,10 @@
       ],
       "This message will be automatically deleted on ${ value }": [
         "Diese Nachricht wird am ${ value } automatisch gelöscht."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Diese Nachricht wird als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?",
+        "Diese Nachrichten werden als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Diese Nachricht wird in Entwürfen gespeichert, damit diese bearbeitet werden kann. Der Zeitpunkt für das Versenden der Nachricht muss neu angeben werden."
@@ -9305,6 +8525,14 @@
       "You can import one data type at a time.": [
         "Du kannst jeweils nur einen Datentyp importieren."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Nutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst.",
+        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen und alle ${ BRAND_NAME } Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne Links geteilter Kalender und jegliche ${ BRAND_NAME }-Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein Abonnement beendest.",
+        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne Links geteilter Kalender und jegliche ${ BRAND_NAME }-Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein Abonnement beendest."
+      ],
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
       ],
@@ -9325,6 +8553,22 @@
       ],
       "You have ${ unread } in your inbox.": [
         "Du hast ${ unread } in deinem Posteingang."
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Du hast **${ count } Unterhaltung** in diesem Ordner gespeichert",
+        "Du hast **${ count } Unterhaltungen** in diesem Ordner gespeichert"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Es wurde **${ count } Unterhaltung** zu dieser Kategorie hinzugefügt",
+        "Es wurde **${ count } Unterhaltungen** zu dieser Kategorie hinzugefügt"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Du hast **${ count } Nachricht** in diesem Ordner gespeichert",
+        "Du hast **${ count } Nachrichten** in diesem Ordner gespeichert"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Du hast **${ count } Nachricht** zu dieser Kategorie hinzugefügt",
+        "Du hast **${ count } Nachrichten** zu dieser Kategorie hinzugefügt"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du hast ein ${ planTitle }-Probeabonnement. Wenn du dein Abonnement nach dem Testzeitraum fortsetzen möchtest, füge bitte eine Zahlungsmethode hinzu."
@@ -9347,6 +8591,38 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du musst alle zusätzlichen Benutzer, Adressen und benutzerdefinierten Domänen von ${ MAIL_APP_NAME } deaktivieren oder entfernen, bevor du dein Abonnement downgraden kannst."
       ],
+      "You selected **${ count } conversation** from this folder": [
+        "Es wurde **${ count } Unterhaltung** in diesem Ordner ausgewählt",
+        "Es wurden **${ count } Unterhaltungen** in diesem Ordner ausgewählt"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Du hast **${ count } Unterhaltung** mit dieser Kategorie ausgewählt",
+        "Du hast **${ count } Unterhaltungen** mit dieser Kategorie ausgewählt"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Du hast **${ count } Nachricht** in diesem Ordner ausgewählt",
+        "Du hast **${ count } Nachrichten** in diesem Ordner ausgewählt"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Du hast **${ count } Nachricht** mit dieser Kategorie ausgewählt",
+        "Du hast **${ count } Nachrichten** mit dieser Kategorie ausgewählt"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Du hast **${ elementsCount } Unterhaltung** in ${ location } ausgewählt.",
+        "Du hast **${ elementsCount } Unterhaltungen** in ${ location } ausgewählt."
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Du hast **${ elementsCount } Unterhaltung** ausgewählt.",
+        "Du hast **${ elementsCount } Unterhaltungen** ausgewählt."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Du hast **${ elementsCount } Nachricht** in ${ location } ausgewählt.",
+        "Du hast **${ elementsCount } Nachrichten** in ${ location } ausgewählt."
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Du hast **${ elementsCount } Nachricht** ausgewählt.",
+        "Du hast **${ elementsCount } Nachrichten** ausgewählt."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "An diesem Datum verlierst du den Zugang zu ${ planTitle }-Funktionen."
       ],
@@ -9358,6 +8634,10 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Deine Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }“, es wurde jedoch kein Anhang hinzugefügt. Möchtest du deine Nachricht trotzdem senden?"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Du wirst dann alle ${ renewCycle } Monate mit ${ renewAmountStr } belastet.",
+        "Dir werden dann alle ${ renewCycle } Monate ${ renewAmountStr } in Rechnung gestellt."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du hast die maximale Anzahl von Adressen in der/den Kontaktgruppe(n) erreicht:"
@@ -9425,6 +8705,10 @@
       "Your login information will not be saved after the import is completed.": [
         "Deine Anmeldeinformationen werden nach Abschluss des Importvorgangs nicht gespeichert."
       ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Deine Nachricht wird in ${ numberOfDays } Tag ablaufen.",
+        "Deine Nachricht wird in ${ numberOfDays } Tagen ablaufen."
+      ],
       "Your message will expire today.": [
         "Deine Nachricht wird heute ablaufen."
       ],
@@ -9452,6 +8736,10 @@
       "Your private writing assistant": [
         "Dein privater Schreibassistent"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird nach ${ cycle } Monat automatisch erneuert.",
+        "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird alle ${ cycle } Monate automatisch erneuert."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Dein geplantes Abonnement beginnt am ${ renewalTime } und wird jeden Monat automatisch erneuert."
       ],
@@ -9475,6 +8763,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } Befehl gefunden.",
+        "${ filteredList.length } Befehle gefunden."
+      ],
       "Optional": [
         "Optional"
       ],
@@ -9493,6 +8785,16 @@
     "Info on errors": {
       "Click for details": [
         "Für Details klicken"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } Ordner ausgewählt",
+        "${ selectedFoldersCount } Ordner ausgewählt"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } Kategorie ausgewählt",
+        "${ selectedFoldersCount } Kategorien ausgewählt"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -9532,6 +8834,14 @@
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Durch Klicken auf „Schlüssel vertrauen“ wird ein neuer Kontakt erstellt und dieser öffentliche Schlüssel diesem Absender zugeordnet. E-Mails von dieser Adresse werden automatisch kryptografisch verifiziert."
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Möchtest du dem primären öffentlichen Schlüssel mit dem folgenden Fingerabdruck vertrauen?",
+        "Möchtest du den primären öffentlichen Schlüsseln mit den folgenden Fingerabdrücken vertrauen?"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Es wurde die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adresse aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft. Du musst einen für das Senden gültigen Schlüssel als vertrauenswürdig einstufen, um eine Nachricht an diese E-Mail-Adresse senden zu können.",
+        "Es wurde die Adressüberprüfung mit vertrauenswürdigen Schlüsseln für diese E-Mail-Adressen aktiviert, aber es wurde kein aktiver Verschlüsselungsschlüssel als vertrauenswürdig eingestuft. Du musst einen für das Senden gültigen Schlüssel als vertrauenswürdig einstufen, um eine Nachricht an diese E-Mail-Adressen senden zu können."
       ]
     },
     "Key validation warning": {
@@ -9738,6 +9048,10 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
+      ],
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
@@ -10444,6 +9758,9 @@
       "Writing assistant": [
         "Schreibassistent"
       ],
+      "You cannot disable all categories": [
+        "Du kannst nicht alle Kategorien deaktivieren"
+      ],
       "Your alias": [
         "Dein Alias"
       ],
@@ -10750,7 +10067,7 @@
         "Zurückgestellt"
       ],
       "Spam": [
-        "Spam"
+        "In Spam verschieben"
       ],
       "Starred": [
         "Markiert"
@@ -10815,6 +10132,10 @@
       "Almost there": [
         "Fast geschafft"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }",
+        "Anzahl erstellte Kalender: ${ createdCalendarCount } von ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Verbindung zu deinem E-Mail-Anbieter wird aufgebaut"
       ],
@@ -10863,6 +10184,24 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } aktivieren"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle Nachrichten aus ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ itemsToImportCount } Ordnern importieren und hinzufügen zur Kategorie"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importiere alle Nachrichten aus ${ itemsToImportCount } Kategorie und markiere diese als",
+        "Importiere alle Nachrichten aus ${ itemsToImportCount } Kategorien und markiere diese als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordner importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Ordnern importieren und hinzufügen zur Kategorie"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorie importieren und hinzufügen zur Kategorie",
+        "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und hinzufügen zur Kategorie"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10963,16 +10302,28 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Alle ${ interval } Monate ${ onDayString }",
+        "Alle ${ interval } Monate ${ onDayString }"
+      ],
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Jeden ${ interval } Monat am ${ onDayString }, ${ timesString }",
+        "Aller ${ interval } Monate am ${ onDayString }, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Monatlich ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Jeden ${ interval } Monat ${ onDayString }, ${ untilString }",
+        "Alle ${ interval } Monate ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Monatlich ${ onDayString }, ${ untilString }"
       ]
@@ -11147,8 +10498,76 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } und ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } Kalender",
+        "${ n } Kalender"
+      ],
+      "${ n } calendar per user": [
+        "${ n } Kalender je Benutzer",
+        "${ n } Kalender je Benutzer"
+      ],
+      "${ n } custom email domain": [
+        "${ n } eigene E-Mail-Domain",
+        "${ n } eigene E-Mail-Domains"
+      ],
+      "${ n } email address": [
+        "${ n } E-Mail-Adresse",
+        "${ n } E-Mail-Adressen/Aliasse"
+      ],
+      "${ n } email address per user": [
+        "${ n } E-Mail-Adresse pro Benutzer",
+        "${ n } E-Mail-Adressen pro Benutzer"
+      ],
+      "${ n } filter": [
+        "${ n } Filter",
+        "${ n } Filter"
+      ],
+      "${ n } folder": [
+        "${ n } Ordner",
+        "${ n } Ordner"
+      ],
+      "${ n } folder and label": [
+        "${ n } Ordner und Kategorie",
+        "${ n } Ordner und Kategorien"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email-Alias",
+        "${ n } hide-my-email-Aliasse"
+      ],
+      "${ n } label": [
+        "${ n } Kategorie",
+        "${ n } Kategorien"
+      ],
+      "${ n } message per day": [
+        "${ n } Nachricht pro Tag",
+        "${ n } Nachrichten pro Tag"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } geteilter ${ PASS_SHORT_APP_NAME } Tresor pro Benutzer",
+        "${ n } geteilte ${ PASS_SHORT_APP_NAME } Tresore pro Benutzer"
+      ],
+      "${ n } vault": [
+        "${ n } Tresor",
+        "${ n } Tresore"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-Verbindung",
+        "${ n } VPN-Verbindungen"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } Benutzer",
+        "Bis zu ${ numberOfUsers } Benutzer"
+      ],
+      "${ options }-day file version history": [
+        "Dateiversionsverlauf für ${ options } Tag",
+        "Dateiversionsverlauf für ${ options } Tag"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Lebenslanger Zugang zu den Funktionen von ${ PASS_APP_NAME } und SimpleLogin"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } mit ${ n } hide-my-email-Alias",
+        "${ PASS_APP_NAME } mit ${ n } hide-my-email-Aliassen"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } mit unbegrenzten hide-my-email-Aliassen"
@@ -11321,6 +10740,10 @@
       "Group management (coming soon)": [
         "Gruppenverwaltung (demnächst verfügbar)"
       ],
+      "High-speed VPN on ${ n } device": [
+        "Hochgeschwindigkeits-VPN auf ${ n } Gerät",
+        "Hochgeschwindigkeits-VPN auf ${ n } Geräten"
+      ],
       "HTML signatures": [
         "HTML-Signaturen"
       ],
@@ -11483,8 +10906,20 @@
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
       ],
+      "Up to ${ n } user": [
+        "Bis zu ${ n } Benutzer",
+        "Bis zu ${ n } Benutzer"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Bis zu ${ n } Benutzer (${ adminsText }, ${ usersText })",
+        "Bis zu ${ n } Benutzer (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gleichzeitige Verwendung auf bis zu ${ n } Gerät",
+        "Gleichzeitige Verwendung auf bis zu ${ n } Geräten"
       ],
       "User credential management": [
         "Verwaltung von Benutzeranmeldedaten"
@@ -11495,8 +10930,22 @@
       "User storage management": [
         "Benutzer-Speicherverwaltung"
       ],
+      "Vault sharing (up to ${ n } person)": [
+        "Tresor teilen (bis zu ${ n } Person)",
+        "Tresor teilen (bis zu ${ n } Personen)"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } Admin",
+        "${ admins } Admins"
+      ],
+      "${ users } user": [
+        "${ users } Benutzer",
+        "${ users } Benutzer"
       ]
     },
     "new_plans: feature info": {
@@ -11677,6 +11126,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Erstelle mehrere E-Mail-Adressen für deine Online-Identitäten, z.B. MaxEinkaufen@${ domain } für Einkaufskonten oder MaxNachrichten@${ domain } für Nachrichten-Abonnements."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu",
+        "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Erstelle bis zu ${ n } E-Mail-Adressen/-Aliasse, die du Familienmitgliedern zuweisen kannst. Nutze sie für Online-Identitäten, z.B. MaxEinkauf@${ domain } für Einkaufskonten."
@@ -11881,6 +11334,10 @@
       "Central control panel": [
         "Zentrale Systemsteuerung"
       ],
+      "Create up to ${ n } calendar": [
+        "Erstelle bis zu ${ n } Kalender",
+        "Erstelle bis zu ${ n } Kalender"
+      ],
       "Dedicated Account manager": [
         "Dedizierter Kundenbetreuer"
       ],
@@ -11898,6 +11355,10 @@
       ],
       "Require 2FA": [
         "2FA erzwingen"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Support für ${ n } benutzerdefinierte E-Mail-Domain",
+        "Support für ${ n } benutzerdefinierte E-Mail-Domains"
       ]
     },
     "Notification": {
@@ -12400,6 +11861,10 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } Benutzerkonto",
+        "${ n } Benutzerkonten"
+      ],
       "Activity log": [
         "Ereignisprotokoll"
       ],
@@ -12539,8 +12004,24 @@
       "terms & conditions": [
         "Allgemeine Geschäftsbedingungen"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
+        "Der Gutschein ist für ${ couponRedemptions } Verlängerungen gültig."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monat gültig.",
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für ${ subscriptionLength } Monate gültig."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerung eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen.",
+        "Der speziell ermäßigte Preis von ${ priceWithDiscount } gilt für den ersten Monat. Der Gutschein kann für ${ couponRedemptions } Verlängerungen eingelöst werden. Danach wird das Abonnement automatisch zum Preis von ${ renewPriceStr } für 1 Monat verlängert. Du kannst jederzeit kündigen."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Der speziell ermäßigte Preis von ${ priceWithDiscount } ist für den ersten Monat gültig. Danach wird das Abonnement automatisch jeden Monat zum Preis von ${ renewPriceStr } verlängert. Du kannst jederzeit kündigen."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monat verlängert. Du kannst jederzeit kündigen.",
+        "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monate verlängert. Du kannst jederzeit kündigen."
       ],
       "This number will be shown on all future invoices": [
         "Diese Nummer wird auf allen zukünftigen Rechnungen angezeigt."
@@ -12887,6 +12368,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } von ${ countContacts } Kontakt wurden erfolgreich exportiert.",
+        "${ contactsExported.length } von ${ countContacts } Kontakten wurden erfolgreich exportiert."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } von ${ totalBeDeleted } Kontakt erfolgreich gelöscht.",
+        "${ model.deleted.length } von ${ totalBeDeleted } Kontakten erfolgreich gelöscht."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } von ${ totalBeMerged } Kontakt erfolgreich zusammengeführt.",
+        "${ model.submitted.length } von ${ totalBeMerged } Kontakten erfolgreich zusammengeführt."
+      ],
       "No contacts exported.": [
         "Keine Kontakte exportiert."
       ],
@@ -13063,6 +12556,10 @@
       ]
     },
     "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } Tag",
+        "${ remainingDays } Tage"
+      ],
       "<1 d": [
         "<1 Tag"
       ]
@@ -13214,6 +12711,10 @@
       "Do you want to send the email anyway?": [
         "Möchtest du die E-Mail trotzdem versenden?"
       ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Es wurden Fehler festgestellt. Deine E-Mail kann aus folgendem Grund nicht an die angegebene E-Mail-Adresse gesendet werden:",
+        "Es wurden Fehler festgestellt. Ihre E-Mail kann aus folgenden Gründen nicht an die angegebenen E-Mail-Adressen gesendet werden:"
+      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Es wurden einige Fehler festgestellt. Deine Nachricht kann aus den folgenden Gründen nicht an eine oder mehrere der angegebenen E-Mail-Adressen gesendet werden:"
       ]
@@ -13221,6 +12722,14 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "Möchtest du die E-Mail trotzdem versenden?"
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Die folgende E-Mail-Adresse ist ungültig: ${ invalidAddresses }",
+        "Die folgenden E-Mail-Adressen sind ungültig: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Es wurden einige Warnungen festgestellt. Die folgende E-Mail-Adresse kann möglicherweise keine E-Mails empfangen:",
+        "Es wurden einige Warnungen festgestellt. Die folgende E-Mail-Adressen können möglicherweise keine E-Mails empfangen:"
       ]
     },
     "Sender verification details": {
@@ -13259,8 +12768,16 @@
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Gesendet von ${ MAIL_APP_NAME } mit Zero-Access-Verschlüsselung"
       ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Gesendet von ${ MAIL_APP_NAME } mit Zero-Access-Verschlüsselung an verifizierten Empfänger",
+        "Gesendet von ${ MAIL_APP_NAME } mit Zero-Access-Verschlüsselung an verifizierte Empfänger"
+      ],
       "Sent by you with end-to-end encryption": [
         "Von dir mit Ende-zu-Ende-Verschlüsselung gesendet"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Von dir mit Ende-zu-Ende-Verschlüsselung an verifizierten Empfänger gesendet",
+        "Von dir mit Ende-zu-Ende-Verschlüsselung an verifizierte Empfänger gesendet"
       ],
       "Stored with zero-access encryption": [
         "Gespeichert mit Zero-Access-Verschlüsselung"
@@ -13283,11 +12800,27 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } Tag",
+        "${ timeRemaining.inDays } Tage"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } Stunde",
+        "${ timeRemaining.inHours } Stunden"
+      ],
       "Password reset request approved (${ user.Email }).": [
         "Antrag auf Passwortzurücksetzung genehmigt (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Bitte gehe, um dein Passwort zu ändern zu dem angemeldeten Gerät, von dem aus die Anfrage zur Passwortänderung gestartet wurde."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Diese Berechtigung läuft in ${ timeRemaining.inDays } Tag ab.",
+        "Diese Berechtigung läuft in ${ timeRemaining.inDays } Tagen ab."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Diese Berechtigung läuft in ${ timeRemaining.inHours } Stunde ab.",
+        "Diese Berechtigung läuft in ${ timeRemaining.inHours } Stunden ab."
       ],
       "This permission expires soon": [
         "Diese Berechtigung läuft bald aus"
@@ -13297,6 +12830,22 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Du kannst jetzt dein Passwort für das Konto ${ boldEmail } ändern."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Du hast ${ timeRemaining.inDays } Tag um dein Passwort zurücksetzen.",
+        "Du hast ${ timeRemaining.inDays } Tage um dein Passwort zurücksetzen."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du hast ${ timeRemaining.inHours } Stunde um dein Passwort zurücksetzen.",
+        "Du hast ${ timeRemaining.inHours } Stunden um dein Passwort zurücksetzen."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du hast ${ timeRemaining.inMinutes } Minute um dein Passwort zurücksetzen.",
+        "Du hast ${ timeRemaining.inMinutes } Minuten um dein Passwort zurücksetzen."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du hast ${ timeRemaining.inSeconds } Sekunde um dein Passwort zurücksetzen.",
+        "Du hast ${ timeRemaining.inSeconds } Sekunden um dein Passwort zurücksetzen."
       ]
     },
     "session_recovery:available:link": {
@@ -13356,8 +12905,16 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } weitere Stunde",
+        "${ gracePeriodHoursRemaining } weitere Stunden"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Wenn du nicht darum gebeten hast, dein Passwort zurückzusetzen, breche diese Anfrage jetzt ab."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Passwortzurücksetzung angefordert (${ user.Email }). Du kannst dein Passwort in ${ hoursRemaining } Stunde ändern.",
+        "Passwortzurücksetzung angefordert (${ user.Email }). Du kannst dein Passwort in ${ hoursRemaining } Stunden ändern."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Um sicherzugehen, dass wirklich du versucht hast dein Passwort zurückzusetzen, warten wir 72 Stunden, bevor wir Anfragen genehmigen. Du kannst dein Passwort in ${ boldTimeLeft } ändern. ${ viewRequest }"
@@ -13385,6 +12942,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } Stunde",
+        "${ gracePeriodHoursRemaining } Stunden"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } ist jetzt verfügbar."
       ],
@@ -13502,6 +13063,30 @@
         "Unlimited-Abonnement sichern"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } Tag",
+        "${ days } Tage"
+      ],
+      "${ hours } hour": [
+        "${ hours } Stunde",
+        "${ hours } Stunden"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } Monat KOSTENLOS",
+        "${ n } Monate KOSTENLOS"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 Benutzer"
@@ -13584,6 +13169,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } Monat",
+        "${ n } Monate"
+      ],
       "/ month": [
         "/ Monat"
       ],
@@ -13848,6 +13437,10 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Wir fügen das Guthaben für die verbleibende Zeit deinem ${ BRAND_NAME }-Konto hinzu."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Dir verbleibt noch **${ daysRemaining }** Tag bei deinem **${ currentPlanName }**-Abonnement.",
+        "Dir verbleiben noch **${ daysRemaining }** Tage bei deinem **${ currentPlanName }**-Abonnement."
+      ],
       "Your ${ appStorage } is almost full": [
         "Dein ${ appStorage }-Speicherplatz ist fast voll."
       ],
@@ -13893,6 +13486,32 @@
         "Wird jährlich abgerechnet"
       ]
     },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "${ n } kostenlose VPN‐Verbindung pro Benutzer",
+        "${ n } kostenlose VPN‐Verbindungen pro Benutzer"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } Hochgeschwindigkeits-VPN-Verbindung",
+        "${ n } Hochgeschwindigkeits-VPN-Verbindungen"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } Hochgeschwindigkeits-VPN-Verbindung pro Benutzer",
+        "${ n } Hochgeschwindigkeits-VPN-Verbindungen pro Benutzer"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-Verbindung",
+        "${ n } VPN-Verbindungen"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-Verbindung pro Benutzer",
+        "${ n } VPN-Verbindungen pro Benutzer"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-Verbindung für ${ n } Gerät pro Benutzer",
+        "VPN-Verbindung für ${ n } Geräte pro Benutzer"
+      ]
+    },
     "Subscription change warning": {
       "Got it": [
         "Verstanden"
@@ -13934,6 +13553,10 @@
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } verbleibender Tag",
+        "${ dayDiff } verbleibende Tage"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-Desktop App"
@@ -13979,6 +13602,26 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } bietet ${ planMaxSpace } Speicherplatz pro Benutzer für E-Mails, Anhänge, Termine, Dateien und Passwörter. Du hast außerdem Anspruch auf jährliche Speicherplatzboni."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } Kalender pro Benutzer",
+        "${ planNumberOfCalendars } Kalender pro Benutzer"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigene E-Mail-Domain",
+        "${ planNumberOfDomains } eigene E-Mail-Domains"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } E-Mail-Adresse",
+        "${ planNumberOfEmails } E-Mail-Adressen"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } E-Mail-Adresse pro Benutzer",
+        "${ planNumberOfEmails } E-Mail-Adressen pro Benutzer"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } Benutzer",
+        "${ planNumberOfUsers } Benutzer"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "Erweiterter Kontoschutz mit ${ PROTON_SENTINEL_NAME }"
@@ -14240,6 +13883,102 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "${ count } Unterhaltung gelöscht",
+        "${ count } Unterhaltungen gelöscht"
+      ],
+      "${ count } draft deleted": [
+        "${ count } Entwurf gelöscht",
+        "${ count } Entwürfe gelöscht"
+      ],
+      "${ count } message deleted": [
+        "${ count } Nachricht gelöscht",
+        "${ count } Nachrichten gelöscht"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } Kontakt könnte identisch sein.",
+        "${ countMergeableContacts } Kontakte könnten identisch sein."
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } Unterhaltung zu ${ labelName } hinzugefügt.",
+        "${ elementsCount } Unterhaltungen zu ${ labelName } hinzugefügt."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } Unterhaltung als „Gelesen“ gekennzeichnet.",
+        "${ elementsCount } Unterhaltungen als „Gelesen“ gekennzeichnet."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } Unterhaltung gekennzeichnet.",
+        "${ elementsCount } Unterhaltungen gekennzeichnet."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } Unterhaltung als ungelesen markieren.",
+        "${ elementsCount } Unterhaltungen als ungelesen markieren."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } Unterhaltung in „${ labelName }“ verschoben und der Absender zur Liste „Kein Spam“ hinzugefügt.",
+        "${ elementsCount } Unterhaltungen in „${ labelName }“ verschoben und die Absender zur Liste „Kein Spam“ hinzugefügt."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } Unterhaltung nach „${ labelName }“ verschoben.",
+        "${ elementsCount } Unterhaltungen nach „${ labelName }“ verschoben."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } Unterhaltung in Spam verschoben und Absender zur Spamliste hinzugefügt.",
+        "${ elementsCount } Unterhaltungen in Spam verschoben und Absender zur Spamliste hinzugefügt."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } Unterhaltung aus „${ labelName }“ entfernt.",
+        "${ elementsCount } Unterhaltungen aus „${ labelName }“ entfernt."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } Unterhaltung aus „Markiert“ entfernt.",
+        "${ elementsCount } Unterhaltungen aus „Markiert“ entfernt."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } Unterhaltung zurückgestellt",
+        "${ elementsCount } Unterhaltungen zurückgestellt"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } Unterhaltung nicht mehr zurückstellen",
+        "${ elementsCount } Unterhaltungen nicht mehr zurückstellen"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } Nachricht zu „${ labelName }“ hinzugefügt.",
+        "${ elementsCount } Nachrichten zu „${ labelName }“ hinzugefügt."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } Nachricht als gelesen markiert.",
+        "${ elementsCount } Nachrichten als gelesen markiert."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } Nachricht gekennzeichnet.",
+        "${ elementsCount } Nachrichten gekennzeichnet."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } Nachricht als ungelesen markiert.",
+        "${ elementsCount } Nachrichten als ungelesen markiert."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } Nachricht in „${ labelName }“ verschoben und Absender zur Liste „Kein Spam“ hinzugefügt.",
+        "${ elementsCount } Nachrichten in „${ labelName }“ verschoben und Absender zur Liste „Kein Spam“ hinzugefügt."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } Nachricht nach „${ labelName }“ verschoben.",
+        "${ elementsCount } Nachrichten nach „${ labelName }“ verschoben."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } Nachricht in Spam verschoben und Absender zur Spamliste hinzugefügt.",
+        "${ elementsCount } Nachrichten in Spam verschoben und Absender zur Spamliste hinzugefügt."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } Nachricht aus „${ labelName }“ entfernt.",
+        "${ elementsCount } Nachrichten aus „${ labelName }“ entfernt."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } Nachricht aus \"Markiert\" entfernt.",
+        "${ elementsCount } Nachrichten aus „Markiert“ entfernt."
+      ],
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
       ],
@@ -14260,6 +13999,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Kontakt gelöscht",
+        "Kontakte gelöscht"
+      ],
+      "Contact group deleted": [
+        "Kontaktgruppe gelöscht",
+        "Kontaktgruppen gelöscht"
       ],
       "Contact saved": [
         "Kontakt gespeichert"
@@ -14299,6 +14046,10 @@
       ],
       "Conversation removed from Starred.": [
         "Unterhaltung aus „Markiert“ entfernt."
+      ],
+      "Conversation updated": [
+        "Unterhaltung aktualisiert",
+        "Unterhaltungen aktualisiert"
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Unterhaltungen von ${ sendersList } werden als ${ labelsList } kategorisiert"
@@ -14375,11 +14126,23 @@
       "Message removed from Starred.": [
         "Nachricht aus \"Markiert\" entfernt."
       ],
+      "Message updated": [
+        "Nachricht aktualisiert",
+        "Nachrichten aktualisiert"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Die Nachrichten von ${ sendersList } werden als ${ labelsList } gekennzeichnet"
       ],
       "Messages from ${ sendersList } will be moved to ${ folder }": [
         "Nachrichten von ${ sendersList } werden in den Ordner ${ folder } verschoben."
+      ],
+      "Move ${ selectionCount } conversation": [
+        "${ selectionCount } Unterhaltung verschieben",
+        "${ selectionCount } Unterhaltungen verschieben"
+      ],
+      "Move ${ selectionCount } message": [
+        "${ selectionCount } Nachricht verschieben",
+        "${ selectionCount } Nachrichten verschieben"
       ],
       "Password copied to clipboard": [
         "Passwort in die Zwischenablage kopiert."
@@ -14410,6 +14173,10 @@
       ],
       "Read receipt sent": [
         "Lesebestätigung gesendet"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "${ elementsCount } Nachricht neu kategorisiert.",
+        "${ elementsCount } Nachrichten neu kategorisiert."
       ],
       "Secret passphrase updated": [
         "Geheime Passphrase aktualisiert"
@@ -14571,6 +14338,52 @@
         "Gestern"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } Tag",
+        "${ ceilDays } Tage"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } Stunde",
+        "${ ceilHours } Stunden"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } Minute",
+        "${ ceilMinutes } Minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } Sekunde",
+        "${ seconds } Sekunden"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } Stunde",
+        "${ hours } Stunden"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 Stunden",
+        "${ hoursInt }.5 Stunden"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } Minute",
+        "${ minutes } Minuten"
+      ]
+    },
     "Tip Action": {
       "Activate": [
         "Aktivieren"
@@ -14610,8 +14423,20 @@
       "${ appName } keyboard shortcuts": [
         "${ appName }-Tastaturkürzel"
       ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } E-Mail-Adresse",
+        "${ emailsCount } E-Mail-Adressen"
+      ],
       "${ feature } is now active": [
         "${ feature } ist jetzt aktiv"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } Nachricht",
+        "${ numMessages } Nachrichten"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } ungelesene Nachricht",
+        "${ unreads } ungelesene Nachrichten"
       ],
       "(active)": [
         "(aktiv)"
@@ -14651,6 +14476,10 @@
       ],
       "Add filter": [
         "Filter hinzufügen"
+      ],
+      "Add to ${ groupCount } group": [
+        "Zu ${ groupCount } Gruppe hinzufügen",
+        "Zu ${ groupCount } Gruppen hinzufügen"
       ],
       "Add to ${ groupName }": [
         "Zu „${ groupName }“ hinzufügen"
@@ -14820,6 +14649,26 @@
       "Decryption error": [
         "Entschlüsselungsfehler"
       ],
+      "Delete ${ count } contact": [
+        "${ count } Kontakt löschen",
+        "${ count } Kontakte löschen"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } Kontaktgruppe löschen",
+        "${ count } Kontaktgruppen löschen"
+      ],
+      "Delete ${ count } conversation": [
+        "${ count } Unterhaltung löschen",
+        "${ count } Unterhaltungen löschen"
+      ],
+      "Delete ${ count } draft": [
+        "${ count } Entwurf löschen",
+        "${ count } Entwürfe löschen"
+      ],
+      "Delete ${ count } message": [
+        "${ count } Nachricht löschen",
+        "${ count } Nachrichten löschen"
+      ],
       "Delete ${ value }": [
         "${ value } löschen"
       ],
@@ -14846,9 +14695,6 @@
       ],
       "Desktop": [
         "Desktop"
-      ],
-      "Disable categories?": [
-        "Kategorien deaktivieren?"
       ],
       "Discover your subscription benefits": [
         "Entdecke die Vorteile deines Abonnements"
@@ -14985,6 +14831,10 @@
       "Image": [
         "Bild"
       ],
+      "Import as simple event?": [
+        "Als einzelnen Termin importieren?",
+        "Als einzelne Termine importieren?"
+      ],
       "Import contacts": [
         "Kontakte importieren"
       ],
@@ -15017,6 +14867,10 @@
       ],
       "Label as": [
         "Folgender Kategorie zuordnen"
+      ],
+      "Label message as": [
+        "Nachricht kategorisieren als",
+        "Nachrichten kategorisieren als"
       ],
       "Label options": [
         "Kategorieoptionen"
@@ -15101,6 +14955,10 @@
       ],
       "Move all messages to trash": [
         "Alle Nachrichten in den Papierkorb verschieben"
+      ],
+      "Move message to": [
+        "Nachricht verschieben nach",
+        "Nachrichten verschieben nach"
       ],
       "Move messages to": [
         "Nachrichten verschieben nach"
@@ -15429,6 +15287,10 @@
       "Trash all messages?": [
         "Alle Nachrichten löschen?"
       ],
+      "Trust new key?": [
+        "Neuem Schlüssel vertrauen?",
+        "Neuen Schlüsseln vertrauen?"
+      ],
       "Trust pinned keys?": [
         "Beigefügten Schlüsseln vertrauen?"
       ],
@@ -15491,6 +15353,10 @@
       ],
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Wir haben dich vor ${ trackersCount } Tracker geschützt",
+        "Wir haben dich vor ${ trackersCount } Trackern geschützt"
       ],
       "Welcome": [
         "Willkommen"
@@ -15678,12 +15544,56 @@
         "Deine Standardschriftart sieht wie folgt aus:"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Das Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten.",
+        "Passwort muss mindestens ${ MIN_PASSWORD_LENGTH } Zeichen enthalten."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)",
+        "Bitte einen kürzeren Benutzernamen verwenden (max. ${ n } Zeichen)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Klicken, um das Video erneut wiederzugeben"
       ],
       "Replay video": [
         "Video erneut wiedergeben"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } Gerät",
+        "${ n } Geräte"
+      ],
+      "${ n } server": [
+        "${ n } Server",
+        "${ n }+ Server"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-Verbindung",
+        "${ n } VPN-Verbindungen"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } Land",
+        "${ numberOfCountries } Länder"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } Land",
+        "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } Land",
+        "${ numberOfServers } in ${ numberOfCountries } Ländern"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Wählt automatisch aus ${ numberOfCountries } Land",
+        "Wählt automatisch aus ${ numberOfCountries } Ländern"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Server in mehr als ${ numberOfCountries } Land",
+        "Server in mehr als ${ numberOfCountries } Ländern"
       ]
     },
     "vpn_2step: feature": {
@@ -15700,6 +15610,18 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } E-Mail-Adresse",
+        "${ n } ${ BRAND_NAME } E-Mail-Adressen"
+      ],
+      "${ n } account per wallet": [
+        "${ n } Konto pro Wallet",
+        "${ n } Konten pro Wallet"
+      ],
+      "${ n } wallet": [
+        "${ n } Wallet",
+        "${ n } Wallets"
+      ],
       "Bitcoin via Email": [
         "Bitcoin via E-Mail"
       ],
@@ -15727,6 +15649,10 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } wird so viele Daten wie möglich übertragen, beginnend mit deinen aktuellsten Nachrichten."
       ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Möchtest du wirklich ${ count } Kontakt dauerhaft löschen?",
+        "Möchtest du wirklich ${ count } Kontakte dauerhaft löschen?"
+      ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Möchtest du diese Kontaktgruppen wirklich dauerhaft löschen?"
       ],
@@ -15750,6 +15676,10 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Einige der zusammenzuführenden Kontakte enthalten Fehler. Bitte überprüfe diese einzeln."
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Die Signatur des Anhangs konnte nicht überprüft werden. Dieser Anhang kann dennoch heruntergeladen werden, könnte jedoch manipuliert worden sein.",
+        "Die Signatur einiger Anhänge konnte nicht überprüft werden. Diese Anhänge können dennoch heruntergeladen werden, könnten jedoch manipuliert worden sein."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Die Kontaktdaten sind beschädigt und können nicht angezeigt werden."
@@ -15797,6 +15727,54 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Alle ${ interval } Wochen am ${ multipleDaysString }",
+        "Alle ${ interval } Wochen am ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Alle ${ interval } Wochen an allen Tagen",
+        "Alle ${ interval } Wochen an allen Tagen"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Alle ${ interval } Wochen am Freitag",
+        "Alle ${ interval } Wochen am Freitag"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Alle ${ interval } Wochen am Montag",
+        "Alle ${ interval } Wochen am Montag"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Alle ${ interval } Wochen am Montag, ${ timesString }",
+        "Alle ${ interval } Wochen am Montag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Alle ${ interval } Wochen am Samstag",
+        "Alle ${ interval } Wochen am Samstag"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Alle ${ interval } Wochen am Sonntag",
+        "Alle ${ interval } Wochen am Sonntag"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Alle ${ interval } Wochen am Sonntag, ${ timesString }",
+        "Alle ${ interval } Wochen am Sonntag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Alle ${ interval } Wochen am Donnerstag",
+        "Alle ${ interval } Wochen am Donnerstag"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Alle ${ interval } Wochen am Dienstag",
+        "Alle ${ interval } Wochen am Dienstag"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Alle ${ interval } Wochen am Dienstag, ${ timesString }",
+        "Alle ${ interval } Wochen am Dienstag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Alle ${ interval } Wochen am Mittwoch",
+        "Alle ${ interval } Wochen am Mittwoch"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Wöchentlich am ${ multipleDaysString }"
       ],
@@ -15826,6 +15804,30 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Jede ${ interval } Woche am ${ multipleDaysString }, ${ timesString }",
+        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Jede ${ interval } Woche an allen Tagen, ${ timesString }",
+        "Alle ${ interval } Wochen an allen Tagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Jede ${ interval } Woche am Freitag, ${ timesString }",
+        "Alle ${ interval } Wochen am Freitag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Jede ${ interval } Woche am Samstag, ${ timesString }",
+        "Alle ${ interval } Wochen am Freitag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Jede ${ interval } Woche am Donnerstag, ${ timesString }",
+        "Alle ${ interval } Wochen am Donnerstag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Jede ${ interval } Woche am Mittwoch, ${ timesString }",
+        "Alle ${ interval } Wochen am Mittwoch, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Wöchentlich am ${ multipleDaysString }, ${ timesString }"
       ],
@@ -15855,6 +15857,42 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Jede ${ interval } Woche am ${ multipleDaysString }, ${ untilString }",
+        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Jede ${ interval } Woche an allen Tagen, ${ untilString }",
+        "Alle ${ interval } Wochen an allen Tagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Jede ${ interval } Woche am Freitag, ${ untilString }",
+        "Alle ${ interval } Wochen am Freitag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Jede ${ interval } Woche am Montag, ${ untilString }",
+        "Alle ${ interval } Wochen am Montag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Jede ${ interval } Woche am Samstag, ${ untilString }",
+        "Alle ${ interval } Wochen am Samstag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Jede ${ interval } Woche am Sonntag, ${ untilString }",
+        "Alle ${ interval } Wochen am Sonntag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Jede ${ interval } Woche am Donnerstag, ${ untilString }",
+        "Alle ${ interval } Wochen am Donnerstag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Jede ${ interval } Woche am Dienstag, ${ untilString }",
+        "Alle ${ interval } Wochen am Dienstag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Jede ${ interval } Woche am Mittwoch, ${ untilString }",
+        "Alle ${ interval } Wochen am Mittwoch, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Wöchentlich am ${ multipleDaysString }, ${ untilString }"
       ],
@@ -15907,16 +15945,28 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Alle ${ interval } Jahre",
+        "Alle ${ interval } Jahre"
+      ],
       "Yearly": [
         "Jährlich"
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Jedes ${ interval } Jahr, ${ timesString }",
+        "Alle ${ interval } Jahre, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Jährlich, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Jedes ${ interval } Jahr, ${ untilString }",
+        "Alle ${ interval } Jahre, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Jährlich, ${ untilString }"
       ]

@@ -4,683 +4,6 @@
     "language": "zh_CN"
   },
   "contexts": {
-    "": {
-      "${ admins } admin": [
-        "管理员 ${ admins }"
-      ],
-      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
-        "${ amountUsers } / ${ totalUsers } 的用户目前可以访问共享服务器。"
-      ],
-      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
-        "${ BRAND_NAME } 的 Scribe 写作助手，供 ${ maxAi } 位用户使用。"
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } 个新日历"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } 个合并日历"
-      ],
-      "${ ceilDays } day": [
-        "${ ceilDays } 天"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } 小时"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } 分"
-      ],
-      "${ countriesCount } country enabled": [
-        "${ countriesCount } 国家/地区已启用"
-      ],
-      "${ cycle } month": [
-        "${ cycle } 个月"
-      ],
-      "${ dayDiff } day left": [
-        "剩余 ${ dayDiff } 天"
-      ],
-      "${ days } day": [
-        "${ days } 天"
-      ],
-      "${ domains } additional custom domain": [
-        "${ domains } 个额外的自有域名"
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } 小时"
-      ],
-      "${ gracePeriodHoursRemaining } more hour": [
-        "剩余 ${ gracePeriodHoursRemaining } 小时"
-      ],
-      "${ group.UserCount } user": [
-        "${ group.UserCount } 位用户"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的家庭成员使用双因素身份验证。"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的成员使用双因素身份验证登录贵组织。"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的非 SSO 成员使用双因素身份验证登录贵组织。"
-      ],
-      "${ hours } hour": [
-        "${ hours } 小时"
-      ],
-      "${ ipAddresses } dedicated server": [
-        "${ ipAddresses } 台专用服务器"
-      ],
-      "${ ips } server": [
-        "${ ips } 台服务器"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } 适用于 ${ maxLumo } 用户"
-      ],
-      "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } 台设备可同时接入 VPN"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } 位成员"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分钟"
-      ],
-      "${ months } month plan": [
-        "${ months } 个月计划"
-      ],
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } 个 ${ BRAND_NAME } 邮箱地址"
-      ],
-      "${ n } account per wallet": [
-        "每个钱包 ${ n } 个账户"
-      ],
-      "${ n } address": [
-        "${ n } 个地址"
-      ],
-      "${ n } administrator in your organization need access to the organization key.": [
-        "您的组织中的 ${ n } 管理员需要访问组织密钥。"
-      ],
-      "${ n } calendar": [
-        "${ n } 份日历"
-      ],
-      "${ n } calendar per user": [
-        "每位用户 ${ n } 份日历"
-      ],
-      "${ n } custom email domain": [
-        "${ n } 个自有域名"
-      ],
-      "${ n } day": [
-        "${ n }天"
-      ],
-      "${ n } device": [
-        "${ n } 台设备"
-      ],
-      "${ n } email address": [
-        "${ n } 个邮箱地址"
-      ],
-      "${ n } email address per user": [
-        "每位用户 ${ n } 个邮箱地址"
-      ],
-      "${ n } filter": [
-        "${ n } 条筛选规则"
-      ],
-      "${ n } folder": [
-        "${ n } 个文件夹"
-      ],
-      "${ n } folder and label": [
-        "${ n } 个文件夹和标签"
-      ],
-      "${ n } free VPN connection per user": [
-        "每位用户可通过 ${ n } 台设备同时接入免费 VPN"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } 个 hide-my-email 别名"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } 台设备可同时接入高速 VPN"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "每位用户可通过 ${ n } 台设备同时接入高速 VPN"
-      ],
-      "${ n } label": [
-        "${ n } 个标签"
-      ],
-      "${ n } member requested your help to sign in.": [
-        "${ n } 名用户请求了您的帮助以登录账户。"
-      ],
-      "${ n } message per day": [
-        "每天可发 ${ n } 封邮件"
-      ],
-      "${ n } month": [
-        "${ n } 个月"
-      ],
-      "${ n } month FREE": [
-        "免费 ${ n } 个月"
-      ],
-      "${ n } server": [
-        "${ n } 台服务器"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "每个用户 ${ n } 个共享的 ${ PASS_SHORT_APP_NAME } 保险库"
-      ],
-      "${ n } user account": [
-        "${ n } 个用户账户"
-      ],
-      "${ n } user converted to SSO": [
-        "${ n } 名用户已切换为单点登录（SSO）。"
-      ],
-      "${ n } user detached from SSO": [
-        "${ n } 名用户已解绑单点登录（SSO）。"
-      ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "有 ${ n } 名用户通过您的身份提供商加入了您的组织。立即审核其账户："
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } 名不活跃用户。您可以将其安全移出您的组织。"
-      ],
-      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "有 ${ n } 名用户正在请求您的帮助，以使用单点登录（SSO）来登录其 ${ BRAND_NAME } 账户。"
-      ],
-      "${ n } vault": [
-        "${ n } 个保险库"
-      ],
-      "${ n } VPN connection": [
-        "${ n } 台设备可同时接入 VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "每位用户可通过 ${ n } 台设备同时接入 VPN"
-      ],
-      "${ n } wallet": [
-        "${ n } 个钱包"
-      ],
-      "${ n } year": [
-        "${ n } 年"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } 天"
-      ],
-      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的成员"
-      ],
-      "${ number } city": [
-        "${ number } 个城市"
-      ],
-      "${ number } server": [
-        "${ number } 台服务器"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } 个国家/地区"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "遍布 ${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
-      ],
-      "${ numberOfUsers } user": [
-        "最多 ${ numberOfUsers } 位用户"
-      ],
-      "${ options }-day file version history": [
-        "${ options } 天文件版本历史记录"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } 带有 ${ n } 个 hide-my-email 别名"
-      ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } 在 ${ daysLeft } 天后到期。"
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "每位用户 ${ planNumberOfCalendars } 份日历"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } 个自定义邮箱域名"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } 个邮箱地址"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "每位用户 ${ planNumberOfEmails } 个邮箱地址"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } 位用户"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "已找到 ${ providerFoldersNumLocalized } 个文件夹"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
-      ],
-      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter } 台服务器正在配置中，大致需要 ${ provisioningDuration }。"
-      ],
-      "${ remainingAddresses.length } more": [
-        "还有 ${ remainingAddresses.length } 个"
-      ],
-      "${ remainingAddresses.length } more address": [
-        "另有 ${ remainingAddresses.length } 个地址"
-      ],
-      "${ resultsCount } result found": [
-        "已找到 ${ resultsCount } 个结果"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } 席位"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } 个写作助手许可证"
-      ],
-      "${ seconds } second": [
-        "${ seconds } 秒"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
-      ],
-      "${ selectedCitiesCount } cities selected": [
-        "已选择 ${ selectedCitiesCount } 个城市"
-      ],
-      "${ selectedCountriesCount } selected": [
-        "${ selectedCountriesCount } 个城市已选择"
-      ],
-      "${ selectedEntities.length } selected": [
-        "${ selectedEntities.length } 项已选"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "已选择 ${ selectedFoldersCount } 个文件夹"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "已选择 ${ selectedFoldersCount } 个标签"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "已选择 ${ selectedFoldersCountLocalized } 个标签"
-      ],
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } 天"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } 小时"
-      ],
-      "${ totalContacts } contact": [
-        "${ totalContacts } 名联系人"
-      ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents } 个日程有 ${ totalEventsDiscarded } 个将不会被导入，展开查看详情。"
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
-      ],
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
-      ],
-      "${ UsedAddresses } address": [
-        "${ UsedAddresses } 个地址"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "邮箱地址数量：${ UsedAddresses } / ${ MaxAddresses }"
-      ],
-      "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } 份日历"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "自有域名数量：${ UsedDomains } / ${ MaxDomains }"
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "用户数量：${ UsedMembers } / ${ MaxMembers }"
-      ],
-      "${ userFound } user found": [
-        "已找到 ${ userFound } 位用户"
-      ],
-      "${ users } user": [
-        "用户 ${ users }"
-      ],
-      "(${ memberCount } member)": [
-        "（${ memberCount } 位成员）"
-      ],
-      "+ ${ invisibleCount } More": [
-        "+ ${ invisibleCount } 更多"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } 连接数（允许您将更多设备连接至VPN）"
-      ],
-      "Add ${ totalServerCount } server?": [
-        "添加 ${ totalServerCount } 台服务器？"
-      ],
-      "Add (${ totalAddedCount })": [
-        "添加 (${ totalAddedCount } 台)"
-      ],
-      "Add server (${ availableAddedCount } available)": [
-        "添加服务器（有 ${ availableAddedCount } 台可用）"
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "正在添加 ${ addedServerCount } 台网关服务器"
-      ],
-      "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "正在添加网关服务器：${ serverNumber } / ${ total }"
-      ],
-      "Affected user is on row": [
-        "存在问题的行序号为"
-      ],
-      "After ${ lifetime } day all messages will be deleted": [
-        "在 ${ lifetime } 天后，所有消息将被删除"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "全部（${ totalFoldersCount } 个文件夹）"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "全部（${ totalFoldersCount } 个标签）"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "您的所有联系人都将被导入，直至达到 ${ MAX_CONTACTS_PER_USER } 人的上限"
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "已创建的日历数量: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "从 ${ numberOfCountries } 个地域中自动选择"
-      ],
-      "byte": [
-        "B"
-      ],
-      "Byte": [
-        "B"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "最多可连接 ${ plusVpnConnections } 台设备"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "无法自动为 ${ n } 位用户启用管理员访问权限，因为他们的加密密钥在此期间已被更新："
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "创建 ${ calendarsToBeCreatedCount } 份新日历"
-      ],
-      "Create ${ selectedUserIds.length } user": [
-        "创建 ${ selectedUserIds.length } 位用户"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "为 ${ value } 成员创建一个安全云端"
-      ],
-      "Create up to ${ n } calendar": [
-        "最多可创建 ${ n } 份日历"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
-      ],
-      "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "创建网关服务器：${ serverNumber } / ${ total }"
-      ],
-      "day": [
-        "天"
-      ],
-      "Delete ${ n } inactive user?": [
-        "删除 ${ n } 名不活跃用户？"
-      ],
-      "Delete ${ n } user": [
-        "删除 ${ n } 名用户"
-      ],
-      "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "删除服务器（${ days } 天内仍可恢复）"
-      ],
-      "Deleting ${ deletedServerCount } gateway server": [
-        "正在删除 ${ deletedServerCount } 台网关服务器"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "至少取消选择 ${ calendarsToFixCount } 份日历"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "至少取消选择 ${ calendarsToFixCount } 份日历或"
-      ],
-      "domain used": [
-        "域名用量"
-      ],
-      "Failed to create ${ failedUsers.length } user\naccount.": [
-        "创建 ${ failedUsers.length } 位用户失败。"
-      ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "已找到 ${ itemsCount } 个建议，您可使用键盘进行导航浏览。"
-      ],
-      "Gigabyte": [
-        "GB"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "${ maxVpn } 台设备可同时接入高速 VPN"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "${ n } 台设备可同时接入高速 VPN"
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
-      ],
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "导入 ${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "导入带有 ${ itemsToImportCount } 类标签的邮件并加标签"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "导入 ${ selectedItemsToImportCount }/${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
-      ],
-      "Import as simple event?": [
-        "导入为简单活动？"
-      ],
-      "Kilobyte": [
-        "KB"
-      ],
-      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
-        "有效期必须大于 ${ MIN_LIFETIME } 天"
-      ],
-      "Megabyte": [
-        "MB"
-      ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
-      ],
-      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
-        "在 6 个月内仅允许接受 ${ n } 次邀请。"
-      ],
-      "or assign to any country in ${ availableAgainAfterDays } day": [
-        "或在 ${ availableAgainAfterDays } 天后分配到任何国家/地区。"
-      ],
-      "or assign to any country in ${ availableAgainAfterHours } hour": [
-        "或在 ${ availableAgainAfterHours } 小时后分配到任何国家/地区。"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "重置密码的请求已收到 (${ user.Email })。 您可以在 ${ hoursRemaining } 小时内更改密码。"
-      ],
-      "Please add a password for the user on row": [
-        "请为这几行对应的用户添加密码："
-      ],
-      "Please add an email address for the user on row": [
-        "请为这几行对应的用户添加邮箱地址："
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "请修复高亮的冲突以继续。"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "将以 ${ renewPrice } 的价格自动续订，续订时长为 ${ renewLength } 个月。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 hide-my-email邮箱别名等高级功能。"
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "从 ${ numberOfCountries }+ 个国家中选择"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "${ numberOfCountries } 个国家/地区的服务器"
-      ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries } 个国家/地区的服务器"
-      ],
-      "Shared server country (${ countriesCount })": [
-        "共享服务器所在的国家/地区（${ countriesCount }）"
-      ],
-      "Show ${ n } administrator": [
-        "显示 ${ n } 位管理员"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "抱歉，此优惠不适用于您当前的套餐。但当您订阅 ${ cycle } 个月的 ${ plan.Title } 时可享受 ${ discountPercentage } 的折扣。"
-      ],
-      "Step ${ step }": [
-        "步骤 ${ step }"
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "订阅服务每 ${ cycle } 个月自动续费。"
-      ],
-      "Successfully created ${ n } user account": [
-        "已成功创建 ${ n } 个用户账户"
-      ],
-      "Support for ${ n } custom email domain": [
-        "支持 ${ n } 个自定义域"
-      ],
-      "Terabyte": [
-        "TB"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "该优惠券适用于${ couponRedemptions }次续费升级。"
-      ],
-      "The following address is invalid.": [
-        "下列地址无效。"
-      ],
-      "The following address is unavailable.": [
-        "下列地址无效。"
-      ],
-      "The following address was not created.": [
-        "以下地址未被创建。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "专享折扣价${ priceWithDiscount }仅限首月有效。本优惠券适用于${ couponRedemptions }次续费周期。之后将自动以1个月${ renewPriceStr }的价格续费，您可随时取消。"
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
-      ],
-      "This file contains an event invitation:": [
-        "此文件包含活动邀请："
-      ],
-      "This file contains an invitation response:": [
-        "此文件包含邀请回复："
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "此权限将在 ${ timeRemaining.inDays } 天后过期"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "此权限将在 ${ timeRemaining.inHours } 小时后过期"
-      ],
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "要转发来自最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件，请升级至 ${ planName } 计划。"
-      ],
-      "Total for ${ n } month": [
-        "每${ n }月支付"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "请缩短用户名（最长 ${ n } 个字符）"
-      ],
-      "Up to ${ n } user": [
-        "最多 ${ n } 位用户"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "最多 ${ n } 位用户（${ adminsText }，${ usersText }）"
-      ],
-      "Use on up to ${ n } device at once": [
-        "最多可同时在 ${ n } 台设备上使用"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "密码分享（最多 ${ n } 个人）"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "每位用户 ${ n } 个设备的 VPN 连接"
-      ],
-      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "有 ${ ipAddresses } 台专用服务器可以使用，其中有 ${ ipCount } 台正在使用。"
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "您当前正在使用 ${ maxMembers } 个可用用户许可中的 ${ usedMembers } 个，以及 \n${ maxAI } 个可用写作助手许可中的 ${ usedAI } 个。"
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "您当前使用了 ${ usedMembers } 个用户许可，共 ${ maxMembers } 个，并且未使用 ${ maxAI } 个可用写作助手许可证。"
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "您当前正在使用 ${ usedMembers } / ${ maxMembers } 个可用用户许可证"
-      ],
-      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "您可以在 ${ gracePeriodHoursRemaining } 小时内更改密码"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。退订 ${ MAIL_SHORT_APP_NAME } 前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。降级前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
-      ],
-      "You have ${ availableCount } new server available.": [
-        "您有 ${ availableCount } 个可用的新服务器。"
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "您有 ${ timeRemaining.inDays } 天重置您的密码。"
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        " 您有 ${ timeRemaining.inHours } 小时重置您的密码。"
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        " 您有 ${ timeRemaining.inMinutes } 分钟重置您的密码。"
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        " 您有 ${ timeRemaining.inSeconds } 秒重置您的密码。"
-      ],
-      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "您有 ${ unassignedAvailableCount } 台最近使用的服务器可用。要将这些服务器分配到其他国家/地区，需等待停用过程完成。"
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
-        "您在过去的 6 个月内已达到接受邀请 ${ n } 次的上限。"
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "您在过去的 6 个月内已达到接受邀请 ${ n } 次的上限。该按钮将在您可以邀请更多用户时可用。"
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "您的 **${ currentPlanName }** 账户等级还有 **${ daysRemaining }** 天的有效期。"
-      ],
-      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
-        "您可以在 ${ gracePeriodHoursRemaining } 小时内重置密码"
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "您正在将来自${ MAX_SYNC_FREE_USER }个外部账户的电子邮件转发至${ MAIL_APP_NAME }。"
-      ],
-      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
-        "您已经在 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址上启用了转发功能。若要添加另一个，请先禁用其中一个。"
-      ],
-      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "您已达到最多 ${ maxSecurityKeyLength } 个安全密钥的上限。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS }。"
-      ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "免费试用版包含 ${ ownedCount } 个专用服务器。"
-      ],
-      "Your plan includes a maximum of ${ availableAddresses } more address.": [
-        "当前等级最多还能添加 ${ availableAddresses } 个邮箱地址。"
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
-        "当前等级最多还能包含 ${ availableNumberOfMembers } 个机构用户。"
-      ],
-      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
-        "当前等级最多还能添加 ${ availableVPNAccess } 个 VPN 账户。"
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "您订阅的套餐将于 ${ renewalTime } 开始生效，并且每隔 ${ cycle } 个月自动续订。"
-      ]
-    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "转发将很快开始。 新邮件将出现在您的收件箱中。"
@@ -1700,6 +1023,12 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } 个额外的自有域名"
+      ],
+      "${ ips } server": [
+        "${ ips } 台服务器"
+      ],
       "${ price } per dedicated server": [
         "${ price } 每个专用服务器"
       ],
@@ -1711,6 +1040,15 @@
       ],
       "${ price } per user": [
         "${ price } 每位用户"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } 席位"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } 个写作助手许可证"
+      ],
+      "${ users } user": [
+        "${ users } 位用户"
       ]
     },
     "Address action": {
@@ -1942,6 +1280,9 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } 个月"
+      ],
       "/ month": [
         "/月"
       ],
@@ -1987,12 +1328,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } 试用期结束后，您的订阅将自动改成每 ${ renewCycle } 个月自动续订的付费订阅。 若在 ${ formattedDate } 之前取消，您将不用付费。"
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } 试用期结束后，您的订阅将自动改成按月自动续订的付费订阅。若在${ formattedDate }之前取消，您将不用付费。"
-      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
       ],
@@ -2070,6 +1405,11 @@
       ],
       "Select your End of Year offer": [
         "选择您的年终优惠"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "抱歉，此优惠不适用于您当前的套餐。但当您订阅 ${ cycle } 个月的 ${ plan.Title } 时可享受 ${ discountPercentage } 的折扣。"
       ]
     },
     "bf2023: Offers": {
@@ -2176,6 +1516,9 @@
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "在所有设备上安全登录。包括无限制 hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 hide-my-email邮箱别名等高级功能。"
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
       ],
@@ -2184,6 +1527,9 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "将以 ${ renewPrice } 的价格自动续订，续订时长为 ${ renewLength } 个月。"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "将以 ${ subscriptionManagerName } 的价格自动续期"
       ]
@@ -2432,8 +1778,14 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "用户 ${ users }"
+      ],
       "Total": [
         "总计"
+      ],
+      "Total for ${ n } month": [
+        "每${ n }月支付"
       ]
     },
     "Checkout summary": {
@@ -2626,6 +1978,14 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "已选择 ${ selectedCitiesCount } 个城市"
+      ],
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } 个城市已选择"
       ]
     },
     "Country name": {
@@ -3881,6 +3241,14 @@
         "优先支持"
       ]
     },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "要转发来自最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件，请升级至 ${ planName } 计划。"
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "您正在将来自${ MAX_SYNC_FREE_USER }个外部账户的电子邮件转发至${ MAIL_APP_NAME }。"
+      ]
+    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "文本字段可选。您在本表中提供的信息只会出现在今后开具的发票上，不会影响现有发票。"
@@ -4106,6 +3474,12 @@
       "Couldn't load transactions. Please try again later.": [
         "交易加载失败，请稍后再试。"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "至少取消选择 ${ calendarsToFixCount } 份日历"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "至少取消选择 ${ calendarsToFixCount } 份日历或"
+      ],
       "Domain not available, try again later": [
         "域名不可用，请稍后再试"
       ],
@@ -4220,6 +3594,9 @@
       "Label name cannot be empty.": [
         "标签名称不能为空。"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "至少将 ${ calendarsToFixCount } 份日历与现有的 ${ BRAND_NAME } 日历合并"
+      ],
       "Missing key packet": [
         "缺少密钥数据包"
       ],
@@ -4300,6 +3677,9 @@
       ],
       "Please enter ZIP code": [
         "请输入邮政编码"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "请修复高亮的冲突以继续。"
       ],
       "Please generate keys before you try to change your password": [
         "更改密码前请先生成密钥"
@@ -4509,6 +3889,11 @@
         "必须填写邮政编码"
       ]
     },
+    "error": {
+      "Select users to view their activity": [
+        "选择用户以查看其活动"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "读取文件 ${ formattedFilename } 时出错。文件格式不正确。"
@@ -4524,6 +3909,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "出现意外错误，需重新开始导入。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS }。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
@@ -4821,6 +4209,9 @@
       "Manage user accounts": [
         "管理用户账户"
       ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "在 6 个月内仅允许接受 ${ n } 次邀请。"
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "有成员的套餐所有者无法加入另一个家庭套餐。"
       ],
@@ -4853,6 +4244,12 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "有人邀请您加入 ${ bannerOrganization }。${ viewInviteButton }"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "您在过去的 6 个月内已达到接受邀请 ${ n } 次的上限。"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "您在过去的 6 个月内已达到接受邀请 ${ n } 次的上限。该按钮将在您可以邀请更多用户时可用。"
       ],
       "You have successfully joined the family group": [
         "您已成功加入家庭组"
@@ -4995,11 +4392,20 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } 台设备可同时接入 VPN"
+      ],
       "Access to all countries": [
         "解锁全部线路"
       ],
       "Add": [
         "添加"
+      ],
+      "Add (${ totalAddedCount })": [
+        "添加 (${ totalAddedCount } 台)"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "最多可连接 ${ plusVpnConnections } 台设备"
       ],
       "Continue": [
         "继续"
@@ -5116,6 +4522,9 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "使用 U2F 或 FIDO2 物理安全密钥验证身份"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "您已达到最多 ${ maxSecurityKeyLength } 个安全密钥的上限。"
+      ],
       "Your two-factor authentication key is ready to use.": [
         "您的双因素身份验证密钥已就绪，可以使用了。"
       ]
@@ -5149,6 +4558,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "B"
+      ],
       "GB": [
         "GB"
       ],
@@ -5159,6 +4571,23 @@
         "MB"
       ],
       "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "B"
+      ],
+      "Gigabyte": [
+        "GB"
+      ],
+      "Kilobyte": [
+        "KB"
+      ],
+      "Megabyte": [
+        "MB"
+      ],
+      "Terabyte": [
         "TB"
       ]
     },
@@ -5267,6 +4696,11 @@
     "Group address title": {
       "Group address": [
         "群组地址"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } 位成员"
       ]
     },
     "Header": {
@@ -5398,6 +4832,9 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "在域名注册商的控制面板中为您的域名添加此记录"
       ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "已找到 ${ itemsCount } 个建议，您可使用键盘进行导航浏览。"
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上和向下键进入并浏览输入后的建议。按 Enter 键确认您的选择，或按 Escape 键关闭建议框。"
       ]
@@ -5464,6 +4901,12 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "加密并添加日程时出错。未能导入任何日程。"
       ],
@@ -5498,11 +4941,20 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "导入的邀请在 ${ CALENDAR_APP_NAME } 中显示为没有组织者和参与者详细信息的简单活动。要获取活动更新或者查看参与人员，请让组织者用您的 ${ BRAND_NAME } 邮箱地址邀请您。"
       ],
+      "This file contains an event invitation:": [
+        "此文件包含活动邀请："
+      ],
+      "This file contains an invitation response:": [
+        "此文件包含邀请回复："
+      ],
       "This file contains some data that we cannot import:": [
         "此文件包含一些无法导入的数据："
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } 联系人已加密并添加到您的联系人列表"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "加密并添加联系人时出错。未能导入任何联系人。"
       ],
@@ -5522,6 +4974,11 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "联系人 ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } 名联系人"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5683,6 +5140,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } 个日程有 ${ totalEventsDiscarded } 个将不会被导入，展开查看详情。"
+      ],
       "No contact can be imported. Click for details": [
         "没有联系人可以导入。点击查看详情"
       ],
@@ -5697,6 +5157,9 @@
       " and other security features.": [
         " 以及其他安全功能。"
       ],
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "${ amountUsers } / ${ totalUsers } 的用户目前可以访问共享服务器。"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权方可${ enableDesktopNotifications }。"
       ],
@@ -5709,6 +5172,15 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } 个新日历"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } 个合并日历"
+      ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } 国家/地区已启用"
+      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% 折扣"
       ],
@@ -5717,6 +5189,15 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }：小图预览"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的家庭成员使用双因素身份验证。"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的成员使用双因素身份验证登录贵组织。"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的非 SSO 成员使用双因素身份验证登录贵组织。"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 内置 ${ BRAND_NAME } Scribe 写作助手"
@@ -5727,8 +5208,20 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可与单密码一起使用，后者可取代登录密码和第二密码。要切换到单密码模式，请输入要使用的单密码，然后单击保存。"
       ],
+      "${ n } address": [
+        "${ n } 个地址"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }：不隔离也不拒收未经授权的电子邮件，通常只用于调试。"
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } 的成员"
+      ],
+      "${ number } city": [
+        "${ number } 个城市"
+      ],
+      "${ number } server": [
+        "${ number } 台服务器"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } 终身优惠没有续订价格，只需一次性付款即可终身访问 ${ PASS_SHORT_APP_NAME }。"
@@ -5739,11 +5232,23 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } 至少需要1台专用服务器 ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } 在 ${ daysLeft } 天后到期。"
+      ],
       "${ planName } expires today.": [
         "${ planName } 今天到期。"
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } 通过对可疑活动进行专门监测来保护您的账户。"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "已找到 ${ providerFoldersNumLocalized } 个文件夹"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } 台服务器正在配置中，大致需要 ${ provisioningDuration }。"
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }：请求收件人将未经授权的电子邮件标记为垃圾邮件或将其隔离。"
@@ -5751,8 +5256,32 @@
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }：请求收件人拒绝未经授权的电子邮件。"
       ],
+      "${ remainingAddresses.length } more": [
+        "还有 ${ remainingAddresses.length } 个"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "另有 ${ remainingAddresses.length } 个地址"
+      ],
+      "${ resultsCount } result found": [
+        "已找到 ${ resultsCount } 个结果"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "已选择 ${ selectedCalendarsTotal }/${ providerCalendars.length } 份日历"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } 项已选"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "已选择 ${ selectedFoldersCountLocalized } 个标签"
+      ],
       "${ storage } storage": [
         "${ storage } 存储空间"
+      ],
+      "${ userFound } user found": [
+        "已找到 ${ userFound } 位用户"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } 已创建"
@@ -5772,6 +5301,9 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "使用 Secure Core 功能需要 ${ vpnPlus }。"
       ],
+      "(${ memberCount } member)": [
+        "（${ memberCount } 位成员）"
+      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/月)"
       ],
@@ -5781,8 +5313,14 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "**获取 ${ BRAND_NAME } 地址**以使用所有 ${ BRAND_NAME_TWO } 服务，包括 ${ MAIL_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }。"
       ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } 更多"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } 连接数（允许您将更多设备连接至VPN）"
       ],
       "2FA disabled": [
         "2FA 已禁用"
@@ -5814,11 +5352,11 @@
       "Account successfully updated": [
         "账户已成功更新"
       ],
-      "Accounts": [
-        "账户"
-      ],
       "active": [
         "启用"
+      ],
+      "Activity Monitor": [
+        "活动监视器"
       ],
       "add a recovery method": [
         "添加恢复方法"
@@ -5829,11 +5367,20 @@
       "Add multiple users to your organization at once.": [
         "一次性为您的组添加多个用户。"
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "添加服务器（有 ${ availableAddedCount } 台可用）"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "添加您的名称和徽标来为您的组织创建更多个性化的体验。"
       ],
+      "Adding ${ addedServerCount } gateway server": [
+        "正在添加 ${ addedServerCount } 台网关服务器"
+      ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "添加外部电子邮件地址将禁用该组内所有电子邮件通信的端到端加密。要继续吗？"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "正在添加网关服务器：${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "地址已复制到剪贴板"
@@ -5841,8 +5388,17 @@
       "Admin account allocation": [
         "分配管理员账户"
       ],
+      "Affected user is on row": [
+        "存在问题的行序号为"
+      ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "由 AI 驱动的助手，帮助您快速、轻松地制作出更好的电子邮件。"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "全部（${ totalFoldersCount } 个文件夹）"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "全部（${ totalFoldersCount } 个标签）"
       ],
       "All inactive members deleted": [
         "已删除所有非活跃成员"
@@ -5855,6 +5411,9 @@
       ],
       "All your changes will be lost.": [
         "您的所有改动都将丢失。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "您的所有联系人都将被导入，直至达到 ${ MAX_CONTACTS_PER_USER } 人的上限"
       ],
       "Allocated": [
         "分配量"
@@ -6018,11 +5577,17 @@
       "Country code": [
         "国家/地区代码"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "创建 ${ calendarsToBeCreatedCount } 份新日历"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的文件夹。"
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "为 ${ value } 成员创建一个安全云端"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "使用您自己的域名创建并管理电子邮箱子账户。"
@@ -6035,6 +5600,9 @@
       ],
       "Create your first Gateway": [
         "创建您的第一个网关"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "创建网关服务器：${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "创建账户"
@@ -6081,6 +5649,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "删除其他 MX 记录，或者确保 ${ MAIL_APP_NAME } 的优先级数字最小。"
       ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "正在删除 ${ deletedServerCount } 台网关服务器"
+      ],
       "Did you know?": [
         "您知道吗？"
       ],
@@ -6116,6 +5687,9 @@
       ],
       "Domain ownership verified.": [
         "域名的归属得到了认证。"
+      ],
+      "domain used": [
+        "域名用量"
       ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
         "不要失去使用高级 ${ appName } 功能的机会。立即启用自动续订功能。"
@@ -6365,6 +5939,9 @@
       ],
       "If you’re having trouble, we’re here to help. ${ boldPhoneCall } or ${ boldZoomMeeting } with one of our support specialists.": [
         "如果您遇到困难，我们将竭诚为您服务。${ boldPhoneCall } 或 ${ boldZoomMeeting } 与我们的支持专家联系。"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
       ],
       "Import from": [
         "导入自"
@@ -6666,14 +6243,17 @@
       "or ${ selectFileButton }": [
         "或 ${ selectFileButton }"
       ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "或在 ${ availableAgainAfterDays } 天后分配到任何国家/地区。"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "或在 ${ availableAgainAfterHours } 小时后分配到任何国家/地区。"
+      ],
       "or discover other features:": [
         "或发现其他功能："
       ],
       "Or select a particular server:": [
         "或指定服务器："
-      ],
-      "Organization Monitor": [
-        "组织监控"
       ],
       "Organization size": [
         "组织规模"
@@ -6722,6 +6302,12 @@
       ],
       "per month, billed at ${ price }": [
         "每月支付为 ${ price }"
+      ],
+      "Please add a password for the user on row": [
+        "请为这几行对应的用户添加密码："
+      ],
+      "Please add an email address for the user on row": [
+        "请为这几行对应的用户添加邮箱地址："
       ],
       "Please ask the owner to directly invite you to the document.": [
         "请让所有者直接邀请您加入文档。"
@@ -6912,6 +6498,9 @@
       "Shared ${ vaultLink } updated": [
         "共享的 ${ vaultLink } 已更新"
       ],
+      "Shared server country (${ countriesCount })": [
+        "共享服务器所在的国家/地区（${ countriesCount }）"
+      ],
       "Shared vault deleted": [
         "共享密码库已删除"
       ],
@@ -6936,6 +6525,9 @@
       "Starts on ${ startsOnTime }": [
         "将在 ${ startsOnTime } 开始"
       ],
+      "Step ${ step }": [
+        "步骤 ${ step }"
+      ],
       "Storage": [
         "存储"
       ],
@@ -6953,6 +6545,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "使用以下地址提交存款或扫描二维码。您的存款将在确认后反映在您的账户中。"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "订阅服务每 ${ cycle } 个月自动续费。"
       ],
       "Subscription auto-renews every month.": [
         "订阅将每月自动续期。"
@@ -6992,6 +6587,15 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "由于加密和签名的开销，加密后的数据会稍大一些，但这能确保数据的安全。"
+      ],
+      "The following address is invalid.": [
+        "下列地址无效。"
+      ],
+      "The following address is unavailable.": [
+        "下列地址无效。"
+      ],
+      "The following address was not created.": [
+        "以下地址未被创建。"
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "以下成员将收到一封电子邮件，提示他们尽快启用双因素身份验证。"
@@ -7401,6 +7005,18 @@
       "You are currently signed in as ${ username }.": [
         "您当前登入的用户为 ${ username }。"
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "有 ${ ipAddresses } 台专用服务器可以使用，其中有 ${ ipCount } 台正在使用。"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "您当前正在使用 ${ maxMembers } 个可用用户许可中的 ${ usedMembers } 个，以及 \n${ maxAI } 个可用写作助手许可中的 ${ usedAI } 个。"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "您当前使用了 ${ usedMembers } 个用户许可，共 ${ maxMembers } 个，并且未使用 ${ maxAI } 个可用写作助手许可证。"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "您当前正在使用 ${ usedMembers } / ${ maxMembers } 个可用用户许可证"
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "您已登录账户 ${ memberAddress }。"
       ],
@@ -7428,6 +7044,12 @@
       "You can import one data type at a time.": [
         "您一次可以导入一种数据类型。"
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。退订 ${ MAIL_SHORT_APP_NAME } 前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "您最多可保留 ${ MAX_CALENDARS_FREE } 份日历。降级前请删除所有共享日历链接，并移除所有使用您共享的日历的 ${ BRAND_NAME } 用户。"
+      ],
       "You can now access and manage the account as an administrator.": [
         "作为机构管理员，您可以对账户执行管理操作。"
       ],
@@ -7445,6 +7067,12 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "如果你的密码或其他数据从第三方服务泄露，你会收到通知。"
+      ],
+      "You have ${ availableCount } new server available.": [
+        "您有 ${ availableCount } 个可用的新服务器。"
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "您有 ${ unassignedAvailableCount } 台最近使用的服务器可用。要将这些服务器分配到其他国家/地区，需等待停用过程完成。"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "您有一个试用版 ${ planTitle } 订阅。如果您想在试用期结束后继续订阅，请添加付款方式。"
@@ -7500,6 +7128,12 @@
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "10 天内您将无法将这些服务器重新分配到其他国家/地区。"
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "之后我们将每隔 ${ renewCycle }个月向您收取${ renewAmountStr }的订阅费用。"
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "您已经在 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址上启用了转发功能。若要添加另一个，请先禁用其中一个。"
+      ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
         "您已达到该过滤器 50 个用户的上限。删除一个即可添加另一个。"
       ],
@@ -7542,6 +7176,9 @@
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
       ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "免费试用版包含 ${ ownedCount } 个专用服务器。"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您的个人信息交由我们处理是安全的，我们只会在提供服务所必需的情况下联系您。"
       ],
@@ -7565,6 +7202,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "您订阅的套餐将于 ${ renewalTime } 开始生效，并且每隔 ${ cycle } 个月自动续订。"
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "您的预定套餐从 ${ renewalTime } 开始，每月自动续订。"
@@ -7641,6 +7281,14 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "为避免欠费导致服务中断，请确保账户中随时都有一种有效的支付方式。"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "已选择 ${ selectedFoldersCount } 个文件夹"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "已选择 ${ selectedFoldersCount } 个标签"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -7729,11 +7377,23 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 用户名"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } 位用户"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "共 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } 地址"
+      ],
+      "${ n } month": [
+        "${ n } 个月"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } 天"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "邮箱地址数量：${ UsedAddresses } / ${ MaxAddresses }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
@@ -8302,6 +7962,9 @@
       "Sequences": [
         "序列"
       ],
+      "Show ${ n } administrator": [
+        "显示 ${ n } 位管理员"
+      ],
       "Single sign-on Entity ID": [
         "单点登录实体 ID"
       ],
@@ -8690,6 +8353,9 @@
       "Almost there": [
         "即将准备就绪"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "已创建的日历数量: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "正在连接到您的邮件提供商"
       ],
@@ -8806,6 +8472,20 @@
     "Log preference": {
       "Enable ${ reason }": [
         "启用 ${ reason }"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "导入 ${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "导入带有 ${ itemsToImportCount } 类标签的邮件并加标签"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "导入 ${ selectedItemsToImportCount }/${ itemsToImportCount } 个文件夹中的所有邮件并加标签"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
       ]
     },
     "mail_signup_2024: Info": {
@@ -9025,8 +8705,59 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 和 ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } 份日历"
+      ],
+      "${ n } calendar per user": [
+        "每位用户 ${ n } 份日历"
+      ],
+      "${ n } custom email domain": [
+        "${ n } 个自有域名"
+      ],
+      "${ n } email address": [
+        "${ n } 个邮箱地址"
+      ],
+      "${ n } email address per user": [
+        "每位用户 ${ n } 个邮箱地址"
+      ],
+      "${ n } filter": [
+        "${ n } 条筛选规则"
+      ],
+      "${ n } folder": [
+        "${ n } 个文件夹"
+      ],
+      "${ n } folder and label": [
+        "${ n } 个文件夹和标签"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } 个 hide-my-email 别名"
+      ],
+      "${ n } label": [
+        "${ n } 个标签"
+      ],
+      "${ n } message per day": [
+        "每天可发 ${ n } 封邮件"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "每个用户 ${ n } 个共享的 ${ PASS_SHORT_APP_NAME } 保险库"
+      ],
+      "${ n } vault": [
+        "${ n } 个保险库"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 台设备可同时接入 VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "最多 ${ numberOfUsers } 位用户"
+      ],
+      "${ options }-day file version history": [
+        "${ options } 天文件版本历史记录"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin 终身"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } 带有 ${ n } 个 hide-my-email 别名"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } 以及无限量的 hide-my-email 邮箱别名"
@@ -9193,6 +8924,9 @@
       "High-speed Swiss VPN that protects your privacy": [
         "使用瑞士的高速 VPN 捍卫您的隐私"
       ],
+      "High-speed VPN on ${ n } device": [
+        "${ n } 台设备可同时接入高速 VPN"
+      ],
       "HTML signatures": [
         "HTML 落款"
       ],
@@ -9271,6 +9005,9 @@
       "Send & receive invitations": [
         "发送和接收邀请"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries } 个国家/地区的服务器"
+      ],
       "Share files with no size limit": [
         "共享文件无大小限制"
       ],
@@ -9346,11 +9083,20 @@
       "Unlimited volume/bandwidth": [
         "流量与带宽不限"
       ],
+      "Up to ${ n } user": [
+        "最多 ${ n } 位用户"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "最多 ${ n } 位用户（${ adminsText }，${ usersText }）"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "最大容量达到${ totalStorageSize }"
       ],
       "Up to 10 Gbps": [
         "高达 10 Gbps"
+      ],
+      "Use on up to ${ n } device at once": [
+        "最多可同时在 ${ n } 台设备上使用"
       ],
       "User credential management": [
         "用户身份验证管理"
@@ -9361,8 +9107,19 @@
       "User storage management": [
         "用户储存管理"
       ],
+      "Vault sharing (up to ${ n } person)": [
+        "密码分享（最多 ${ n } 个人）"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "管理员 ${ admins }"
+      ],
+      "${ users } user": [
+        "用户 ${ users }"
       ]
     },
     "new_plans: heading": {
@@ -9572,6 +9329,9 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "为您的各类网络需求创建不同的邮箱地址；例如 ChenGouwu@${ domain } 用于注册购物网站，ChenXinwen@${ domain } 用于收取时事新闻"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "为全家人创建多达 ${ n } 个邮箱地址/别名，用于不同的网络服务。例如 ChenGouwu@${ domain } 用于网购商品。"
@@ -9784,6 +9544,9 @@
       "Central control panel": [
         "中央控制面板"
       ],
+      "Create up to ${ n } calendar": [
+        "最多可创建 ${ n } 份日历"
+      ],
       "Dedicated Account manager": [
         "专职客户经理"
       ],
@@ -9801,6 +9564,9 @@
       ],
       "Require 2FA": [
         "要求启用 2FA"
+      ],
+      "Support for ${ n } custom email domain": [
+        "支持 ${ n } 个自定义域"
       ]
     },
     "news": {
@@ -10210,6 +9976,15 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "点击 ${ upgradeLink } 升级添加更多储存空间，或删除一些内容。"
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "当前等级最多还能添加 ${ availableAddresses } 个邮箱地址。"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "当前等级最多还能包含 ${ availableNumberOfMembers } 个机构用户。"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "当前等级最多还能添加 ${ availableVPNAccess } 个 VPN 账户。"
+      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "您的账户等级最多还能再添加 ${ humanReadableAvailableSpace } 存储空间"
       ]
@@ -10374,6 +10149,9 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } 个用户账户"
+      ],
       "Activity log": [
         "活动日志"
       ],
@@ -10572,17 +10350,26 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
       ],
-      "Sorry, this offer is not available with your current plan.": [
-        "抱歉，此优惠不适用于您当前的套餐。"
-      ],
       "terms & conditions": [
         "服务条款"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "该优惠券适用于${ couponRedemptions }次续费升级。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Proton 用户的专属优惠：${ priceWithDiscount }特惠价格仅限订阅前${ subscriptionLength }个月有效。"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "专享折扣价${ priceWithDiscount }仅限首月有效。本优惠券适用于${ couponRedemptions }次续费周期。之后将自动以1个月${ renewPriceStr }的价格续费，您可随时取消。"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "首月特别优惠价为${ priceWithDiscount }，之后将自动按每月${ renewPriceStr }续订。您可以随时取消。"
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "交易检测成功。交易完全确认后，信用就会加入您的账户。"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "您的订阅将在到期后自动以${ renewPriceStr }的价格续订\n${ renewalLength }个月。您可随时取消订阅。"
       ],
       "This number will be shown on all future invoices": [
         "此编号将显示在所有未来的发票上。"
@@ -10837,6 +10624,12 @@
       ]
     },
     "Plans": {
+      "${ cycle } month": [
+        "${ cycle } 个月"
+      ],
+      "${ months } month plan": [
+        "${ months } 个月计划"
+      ],
       "Enjoying ${ planName }?": [
         "喜欢 ${ planName } 吗？"
       ]
@@ -10975,6 +10768,9 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "您的组织中的 ${ n } 管理员需要访问组织密钥。"
+      ],
       "Changing organization keys": [
         "更改机构密钥"
       ],
@@ -11017,7 +10813,20 @@
         "保存更改"
       ]
     },
+    "retention_policy_2025_Confirmation": {
+      "After ${ lifetime } day all messages will be deleted": [
+        "在 ${ lifetime } 天后，所有消息将被删除"
+      ]
+    },
+    "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "有效期必须大于 ${ MIN_LIFETIME } 天"
+      ]
+    },
     "retention_policy_2025_Info": {
+      "${ n } day": [
+        "${ n }天"
+      ],
       "${ remainingCount } more": [
         "剩余 ${ remainingCount }"
       ],
@@ -11040,6 +10849,9 @@
     "retention_policy_2025_Label": {
       "Applies to": [
         "适用于"
+      ],
+      "day": [
+        "天"
       ],
       "Retention period": [
         "保存期限"
@@ -11324,6 +11136,12 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } 天"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } 小时"
+      ],
       "Didn’t make this request?": [
         "没有提出这个申请？"
       ],
@@ -11335,6 +11153,12 @@
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "请转到已登录的设备（在发起请求的会话中）更改您的密码。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "此权限将在 ${ timeRemaining.inDays } 天后过期"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "此权限将在 ${ timeRemaining.inHours } 小时后过期"
       ],
       "This permission expires soon": [
         "此权限即将到期"
@@ -11350,6 +11174,18 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "您可以重置密码，直至 ${ boldDate }。"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "您有 ${ timeRemaining.inDays } 天重置您的密码。"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        " 您有 ${ timeRemaining.inHours } 小时重置您的密码。"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        " 您有 ${ timeRemaining.inMinutes } 分钟重置您的密码。"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        " 您有 ${ timeRemaining.inSeconds } 秒重置您的密码。"
       ]
     },
     "session_recovery:available:link": {
@@ -11412,6 +11248,9 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "剩余 ${ gracePeriodHoursRemaining } 小时"
+      ],
       "Didn’t make this request?": [
         "没有提出这个申请？"
       ],
@@ -11424,11 +11263,17 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "密码重置可从 ${ boldDate } 开始。这样您就有时间取消任何欺诈性请求。"
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "重置密码的请求已收到 (${ user.Email })。 您可以在 ${ hoursRemaining } 小时内更改密码。"
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "为了确保是您本人重置密码，申请提交 72 小时后才能通过。${ boldTimeLeft }后您就可以更改密码了。${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "我们收到了${ boldEmail }的密码重置请求。"
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "您可以在 ${ gracePeriodHoursRemaining } 小时内更改密码"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11479,6 +11324,9 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "请求重置密码？"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "您可以在 ${ gracePeriodHoursRemaining } 小时内重置密码"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11490,6 +11338,9 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } 小时"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset }现已可用。"
       ],
@@ -11580,6 +11431,25 @@
         "开通 Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } 天"
+      ],
+      "${ hours } hour": [
+        "${ hours } 小时"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分钟"
+      ],
+      "${ seconds } second": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "免费 ${ n } 个月"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 位用户"
@@ -11662,6 +11532,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } 月"
+      ],
       "/ month": [
         "/月"
       ],
@@ -11781,6 +11654,24 @@
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } 请求您帮助以单点登录方式登录他们的 ${ BRAND_NAME } 账户。"
       ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } 名用户请求了您的帮助以登录账户。"
+      ],
+      "${ n } user converted to SSO": [
+        "${ n } 名用户已切换为单点登录（SSO）。"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } 名用户已解绑单点登录（SSO）。"
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "有 ${ n } 名用户通过您的身份提供商加入了您的组织。立即审核其账户："
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } 名不活跃用户。您可以将其安全移出您的组织。"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "有 ${ n } 名用户正在请求您的帮助，以使用单点登录（SSO）来登录其 ${ BRAND_NAME } 账户。"
+      ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO 用户（由身份供应商提供）将被删除**，您必须手动创建这些用户才能将其添加回您的组织。"
       ],
@@ -11828,6 +11719,12 @@
       ],
       "Contact your administrator if the problem persists.": [
         "如果问题仍然存在，请联系您的管理员。"
+      ],
+      "Delete ${ n } inactive user?": [
+        "删除 ${ n } 名不活跃用户？"
+      ],
+      "Delete ${ n } user": [
+        "删除 ${ n } 名用户"
       ],
       "Deny": [
         "拒绝"
@@ -12036,6 +11933,9 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "我们会将剩余时间的点数计入您的 ${ BRAND_NAME } 账户。"
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "您的 **${ currentPlanName }** 账户等级还有 **${ daysRemaining }** 天的有效期。"
+      ],
       "Your ${ appStorage } is almost full": [
         "您的 ${ appStorage } 几乎已满了"
       ],
@@ -12082,6 +11982,48 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } 的 Scribe 写作助手，供 ${ maxAi } 位用户使用。"
+      ],
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } 台专用服务器"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "${ LUMO_APP_NAME } 适用于 ${ maxLumo } 用户"
+      ],
+      "${ n } calendar per user": [
+        "每位用户 ${ n } 份日历"
+      ],
+      "${ n } free VPN connection per user": [
+        "每位用户可通过 ${ n } 台设备同时接入免费 VPN"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } 台设备可同时接入高速 VPN"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "每位用户可通过 ${ n } 台设备同时接入高速 VPN"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 台设备可同时接入 VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "每位用户可通过 ${ n } 台设备同时接入 VPN"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } 个地址"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "邮箱地址数量：${ UsedAddresses } / ${ MaxAddresses }"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } 份日历"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "自有域名数量：${ UsedDomains } / ${ MaxDomains }"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "用户数量：${ UsedMembers } / ${ MaxMembers }"
+      ],
       "1 email address": [
         "1 个邮箱地址"
       ],
@@ -12096,6 +12038,12 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "内置广告过滤器（NetShield）"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "${ maxVpn } 台设备可同时接入高速 VPN"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "每位用户 ${ n } 个设备的 VPN 连接"
       ]
     },
     "Subscription change warning": {
@@ -12140,6 +12088,9 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "具有高级功能的 ${ CALENDAR_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 以及 ${ VPN_SHORT_APP_NAME }"
       ],
+      "${ dayDiff } day left": [
+        "剩余 ${ dayDiff } 天"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
@@ -12181,6 +12132,21 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } 为每位用户提供 ${ planMaxSpace } 存储空间，可储存电子邮件、附件、事件、文件和密码。您还有资格获得年度存储奖励。"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "每位用户 ${ planNumberOfCalendars } 份日历"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } 个自定义邮箱域名"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } 个邮箱地址"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "每位用户 ${ planNumberOfEmails } 个邮箱地址"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } 位用户"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "${ PROTON_SENTINEL_NAME } 高级账户保护"
@@ -12816,6 +12782,20 @@
         "主题"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } 天"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } 小时"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } 分"
+      ],
+      "${ seconds } second": [
+        "${ seconds } 秒"
+      ]
+    },
     "Title": {
       "${ BRAND_NAME } Account password rules": [
         "${ BRAND_NAME } 帐户密码规则"
@@ -12862,9 +12842,6 @@
       "Account": [
         "账户"
       ],
-      "Account restricted": [
-        "账户受限"
-      ],
       "Account suspended": [
         "账号已被停用"
       ],
@@ -12882,6 +12859,9 @@
       ],
       "Activity monitor": [
         "活动监视器"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "添加 ${ totalServerCount } 台服务器？"
       ],
       "Add address": [
         "添加地址"
@@ -13060,6 +13040,9 @@
       "Coupon": [
         "优惠券"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "创建 ${ selectedUserIds.length } 位用户"
+      ],
       "Create a new Gateway": [
         "新建网关"
       ],
@@ -13134,6 +13117,9 @@
       ],
       "Delete organization logo?": [
         "是否删除组织徽标？"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "删除服务器（${ days } 天内仍可恢复）"
       ],
       "Delete user?": [
         "删除用户?"
@@ -13258,6 +13244,9 @@
       "Every member of the organization can access": [
         "组织的每个成员都可以访问"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "创建 ${ failedUsers.length } 位用户失败。"
+      ],
       "Find email or username": [
         "查找邮箱或用户名"
       ],
@@ -13320,6 +13309,9 @@
       ],
       "Human verification": [
         "身份验证"
+      ],
+      "Import as simple event?": [
+        "导入为简单活动？"
       ],
       "Import contacts": [
         "导入联系人"
@@ -13578,6 +13570,9 @@
       ],
       "Subscription canceled": [
         "订阅已取消"
+      ],
+      "Successfully created ${ n } user account": [
+        "已成功创建 ${ n } 个用户账户"
       ],
       "Summary": [
         "概览"
@@ -14010,6 +14005,9 @@
       "Confirm all": [
         "确认所有"
       ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "无法自动为 ${ n } 位用户启用管理员访问权限，因为他们的加密密钥在此期间已被更新："
+      ],
       "Could not enable administrator access: ${ error }": [
         "无法启用管理员访问权限：${ error }"
       ],
@@ -14198,6 +14196,14 @@
         "写作助手"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "点击回放视频"
@@ -14245,6 +14251,35 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, 应有尽有。"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } 台设备"
+      ],
+      "${ n } server": [
+        "${ n } 台服务器"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 台设备可同时接入 VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } 个国家/地区"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "遍布 ${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfCountries } 个国家/地区的 ${ numberOfServers }"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "从 ${ numberOfCountries } 个地域中自动选择"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "从 ${ numberOfCountries }+ 个国家中选择"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } 个国家/地区的服务器"
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "每月付费"
@@ -14288,6 +14323,12 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } 月"
+      ],
+      "${ n } year": [
+        "${ n } 年"
+      ],
       "Includes ${ plan } (free for the first year!)": [
         "包含 ${ plan }（第一年免费！）"
       ],
@@ -14316,6 +14357,15 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } 个 ${ BRAND_NAME } 邮箱地址"
+      ],
+      "${ n } account per wallet": [
+        "每个钱包 ${ n } 个账户"
+      ],
+      "${ n } wallet": [
+        "${ n } 个钱包"
+      ],
       "Bitcoin via Email": [
         "通过电子邮件获取比特币"
       ]

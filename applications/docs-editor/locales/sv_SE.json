@@ -4,12 +4,6 @@
     "language": "sv_SE"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } skriver …",
-        "${ usersTranslation } skriver …"
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -491,6 +485,10 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } och ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } skriver …",
+        "${ usersTranslation } skriver …"
       ],
       "Alpha only experimental feature": [
         "Experimentell funktion endast för alfaversion"

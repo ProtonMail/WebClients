@@ -4,13 +4,6 @@
     "language": "ro_RO"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } scrie...",
-        "${ usersTranslation } scriu...",
-        "${ usersTranslation } scriu..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -495,6 +488,11 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } și ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } scrie...",
+        "${ usersTranslation } scriu...",
+        "${ usersTranslation } scriu..."
       ],
       "Alpha only experimental feature": [
         "Funcție experimentală în stadiul alfa"

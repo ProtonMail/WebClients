@@ -4,62 +4,6 @@
     "language": "ko_KR"
   },
   "contexts": {
-    "": {
-      "${ n } custom email domain": [
-        "사용자 지정 이메일 도메인 ${ n }개"
-      ],
-      "${ n } email address": [
-        "이메일 주소 ${ n }개"
-      ],
-      "${ n } email address per user": [
-        "사용자 당 ${ n }개 이메일 주소"
-      ],
-      "${ n } filter": [
-        "${ n } 필터"
-      ],
-      "${ n } folder": [
-        "${ n } 폴더"
-      ],
-      "${ n } folder and label": [
-        "${ n }개 폴더와 라벨"
-      ],
-      "${ n } label": [
-        "${ n } 라벨"
-      ],
-      "${ n } message per day": [
-        "하루 당 ${ n } 메시지"
-      ],
-      "${ options }-day file version history": [
-        "${ options }일 파일 버전 기록"
-      ],
-      "byte": [
-        "바이트"
-      ],
-      "Byte": [
-        "바이트"
-      ],
-      "Gigabyte": [
-        "기가바이트"
-      ],
-      "Kilobyte": [
-        "킬로바이트"
-      ],
-      "Megabyte": [
-        "메가바이트"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
-      ],
-      "Support for ${ n } custom email domain": [
-        "${ n }개 커스텀 이메일 도메인 지원"
-      ],
-      "Terabyte": [
-        "테라바이트"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
-      ]
-    },
     "Action": {
       "Authenticate": [
         "인증"
@@ -999,6 +943,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "바이트"
+      ],
       "GB": [
         "GB"
       ],
@@ -1010,6 +957,23 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "바이트"
+      ],
+      "Gigabyte": [
+        "기가바이트"
+      ],
+      "Kilobyte": [
+        "킬로바이트"
+      ],
+      "Megabyte": [
+        "메가바이트"
+      ],
+      "Terabyte": [
+        "테라바이트"
       ]
     },
     "Font face option": {
@@ -1217,6 +1181,33 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
+      ],
+      "${ n } custom email domain": [
+        "사용자 지정 이메일 도메인 ${ n }개"
+      ],
+      "${ n } email address": [
+        "이메일 주소 ${ n }개"
+      ],
+      "${ n } email address per user": [
+        "사용자 당 ${ n }개 이메일 주소"
+      ],
+      "${ n } filter": [
+        "${ n } 필터"
+      ],
+      "${ n } folder": [
+        "${ n } 폴더"
+      ],
+      "${ n } folder and label": [
+        "${ n }개 폴더와 라벨"
+      ],
+      "${ n } label": [
+        "${ n } 라벨"
+      ],
+      "${ n } message per day": [
+        "하루 당 ${ n } 메시지"
+      ],
+      "${ options }-day file version history": [
+        "${ options }일 파일 버전 기록"
       ],
       "${ size } attachment size": [
         "첨부 파일 크기: ${ size }"
@@ -1484,6 +1475,9 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "최종 ${ bundleStorage }으로 저장 공간을 부스트 하세요"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n }개 커스텀 이메일 도메인 지원"
       ]
     },
     "Placeholder": {
@@ -1557,6 +1551,14 @@
       ],
       "Two-factor authentication": [
         "2단계 인증"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "비밀번호는 최소 ${ MIN_PASSWORD_LENGTH }자 이상이어야 합니다"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
       ]
     }
   }

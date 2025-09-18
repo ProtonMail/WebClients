@@ -4,80 +4,6 @@
     "language": "el_GR"
   },
   "contexts": {
-    "": {
-      "${ n } custom email domain": [
-        "${ n } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
-        "${ n } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
-      ],
-      "${ n } email address": [
-        "${ n } διεύθυνση email",
-        "${ n } διεύθυνσεις email/ψευδώνυμα"
-      ],
-      "${ n } email address per user": [
-        "${ n } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
-        "${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
-      ],
-      "${ n } filter": [
-        "${ n } φίλτρο",
-        "${ n } φίλτρα"
-      ],
-      "${ n } folder": [
-        "${ n } φάκελος",
-        "${ n } φάκελοι"
-      ],
-      "${ n } folder and label": [
-        "${ n } φάκελος και ετικέτα",
-        "${ n } φάκελοι και ετικέτες"
-      ],
-      "${ n } label": [
-        "${ n } ετικέτα",
-        "${ n } ετικέτες"
-      ],
-      "${ n } message per day": [
-        "${ n } μήνυμα ανά ημέρα",
-        "${ n } μηνύματα ανά ημέρα"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
-        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
-      ],
-      "byte": [
-        "byte",
-        "bytes"
-      ],
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobyte"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabytes"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
-        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
-        "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
-        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
-      ]
-    },
     "Action": {
       "Authenticate": [
         "Ταυτοποίηση"
@@ -1017,6 +943,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -1028,6 +958,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
@@ -1235,6 +1187,42 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
+      "${ n } custom email domain": [
+        "${ n } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ n } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ n } email address": [
+        "${ n } διεύθυνση email",
+        "${ n } διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "${ n } email address per user": [
+        "${ n } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
+        "${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
+      "${ n } filter": [
+        "${ n } φίλτρο",
+        "${ n } φίλτρα"
+      ],
+      "${ n } folder": [
+        "${ n } φάκελος",
+        "${ n } φάκελοι"
+      ],
+      "${ n } folder and label": [
+        "${ n } φάκελος και ετικέτα",
+        "${ n } φάκελοι και ετικέτες"
+      ],
+      "${ n } label": [
+        "${ n } ετικέτα",
+        "${ n } ετικέτες"
+      ],
+      "${ n } message per day": [
+        "${ n } μήνυμα ανά ημέρα",
+        "${ n } μηνύματα ανά ημέρα"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου",
+        "${ options }-ήμερο ιστορικό εκδόσεων αρχείου"
       ],
       "${ size } attachment size": [
         "${ size } μέγεθος συνημμένων"
@@ -1502,6 +1490,10 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Μεγαλώστε τον αποθηκευτικό σας χώρο σε συνολικά ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Υποστήριξη για ${ n } παραμετροποιημένο τομέα ηλεκτρονικού ταχυδρομείου",
+        "Υποστήριξη για ${ n } παραμετροποιημένους τομείς ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "Placeholder": {
@@ -1575,6 +1567,16 @@
       ],
       "Two-factor authentication": [
         "Έλεγχος ταυτότητας δύο παραγόντων"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ MIN_PASSWORD_LENGTH } χαρακτήρες"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
       ]
     }
   }

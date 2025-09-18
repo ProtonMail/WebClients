@@ -4,62 +4,6 @@
     "language": "zh_CN"
   },
   "contexts": {
-    "": {
-      "${ n } custom email domain": [
-        "${ n } 个自有域名"
-      ],
-      "${ n } email address": [
-        "${ n } 个邮箱地址"
-      ],
-      "${ n } email address per user": [
-        "每位用户 ${ n } 个邮箱地址"
-      ],
-      "${ n } filter": [
-        "${ n } 条筛选规则"
-      ],
-      "${ n } folder": [
-        "${ n } 个文件夹"
-      ],
-      "${ n } folder and label": [
-        "${ n } 个文件夹和标签"
-      ],
-      "${ n } label": [
-        "${ n } 个标签"
-      ],
-      "${ n } message per day": [
-        "每天可发 ${ n } 封邮件"
-      ],
-      "${ options }-day file version history": [
-        "${ options } 天文件版本历史记录"
-      ],
-      "byte": [
-        "B"
-      ],
-      "Byte": [
-        "B"
-      ],
-      "Gigabyte": [
-        "GB"
-      ],
-      "Kilobyte": [
-        "KB"
-      ],
-      "Megabyte": [
-        "MB"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
-      ],
-      "Support for ${ n } custom email domain": [
-        "支持 ${ n } 个自定义域"
-      ],
-      "Terabyte": [
-        "TB"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "请缩短用户名（最长 ${ n } 个字符）"
-      ]
-    },
     "Action": {
       "Authenticate": [
         "身份验证"
@@ -999,6 +943,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "B"
+      ],
       "GB": [
         "GB"
       ],
@@ -1009,6 +956,23 @@
         "MB"
       ],
       "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "B"
+      ],
+      "Gigabyte": [
+        "GB"
+      ],
+      "Kilobyte": [
+        "KB"
+      ],
+      "Megabyte": [
+        "MB"
+      ],
+      "Terabyte": [
         "TB"
       ]
     },
@@ -1211,6 +1175,33 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 写作助手"
+      ],
+      "${ n } custom email domain": [
+        "${ n } 个自有域名"
+      ],
+      "${ n } email address": [
+        "${ n } 个邮箱地址"
+      ],
+      "${ n } email address per user": [
+        "每位用户 ${ n } 个邮箱地址"
+      ],
+      "${ n } filter": [
+        "${ n } 条筛选规则"
+      ],
+      "${ n } folder": [
+        "${ n } 个文件夹"
+      ],
+      "${ n } folder and label": [
+        "${ n } 个文件夹和标签"
+      ],
+      "${ n } label": [
+        "${ n } 个标签"
+      ],
+      "${ n } message per day": [
+        "每天可发 ${ n } 封邮件"
+      ],
+      "${ options }-day file version history": [
+        "${ options } 天文件版本历史记录"
       ],
       "${ size } attachment size": [
         "附件可达 ${ size }"
@@ -1478,6 +1469,9 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "总存储空间升至 ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "支持 ${ n } 个自定义域"
       ]
     },
     "Placeholder": {
@@ -1543,6 +1537,14 @@
       ],
       "Two-factor authentication": [
         "双因素身份验证"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "密码必须至少包含 ${ MIN_PASSWORD_LENGTH } 个字符"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
       ]
     }
   }

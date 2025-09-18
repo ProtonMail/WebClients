@@ -4,80 +4,6 @@
     "language": "pt_BR"
   },
   "contexts": {
-    "": {
-      "${ n } custom email domain": [
-        "${ n } domínio de e-mail personalizado",
-        "${ n } domínios de e-mail personalizados"
-      ],
-      "${ n } email address": [
-        "${ n } endereço de e-mail",
-        "${ n } endereços de e-mail/aliases"
-      ],
-      "${ n } email address per user": [
-        "${ n } endereço de e-mail por usuário",
-        "${ n } endereços de e-mail por usuário"
-      ],
-      "${ n } filter": [
-        "${ n } filtro",
-        "${ n } filtros"
-      ],
-      "${ n } folder": [
-        "${ n } pasta",
-        "${ n } pastas"
-      ],
-      "${ n } folder and label": [
-        "${ n } pasta e marcador",
-        "${ n } pastas e marcadores"
-      ],
-      "${ n } label": [
-        "${ n } marcador",
-        "${ n } marcadores"
-      ],
-      "${ n } message per day": [
-        "${ n } mensagem por dia",
-        "${ n } mensagens por dia"
-      ],
-      "${ options }-day file version history": [
-        "Histórico de versões de arquivo de ${ options } dias",
-        "Histórico de versões de arquivo de ${ options } dias"
-      ],
-      "byte": [
-        "byte",
-        "bytes"
-      ],
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabytes"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
-        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Suporte para ${ n } domínio de e-mail personalizado",
-        "Suporte para ${ n } domínios de e-mail personalizados"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
-        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
-      ]
-    },
     "Action": {
       "Authenticate": [
         "Autenticar"
@@ -1017,6 +943,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -1028,6 +958,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
@@ -1235,6 +1187,42 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
+      "${ n } custom email domain": [
+        "${ n } domínio de e-mail personalizado",
+        "${ n } domínios de e-mail personalizados"
+      ],
+      "${ n } email address": [
+        "${ n } endereço de e-mail",
+        "${ n } endereços de e-mail/aliases"
+      ],
+      "${ n } email address per user": [
+        "${ n } endereço de e-mail por usuário",
+        "${ n } endereços de e-mail por usuário"
+      ],
+      "${ n } filter": [
+        "${ n } filtro",
+        "${ n } filtros"
+      ],
+      "${ n } folder": [
+        "${ n } pasta",
+        "${ n } pastas"
+      ],
+      "${ n } folder and label": [
+        "${ n } pasta e marcador",
+        "${ n } pastas e marcadores"
+      ],
+      "${ n } label": [
+        "${ n } marcador",
+        "${ n } marcadores"
+      ],
+      "${ n } message per day": [
+        "${ n } mensagem por dia",
+        "${ n } mensagens por dia"
+      ],
+      "${ options }-day file version history": [
+        "Histórico de versões de arquivo de ${ options } dias",
+        "Histórico de versões de arquivo de ${ options } dias"
       ],
       "${ size } attachment size": [
         "Anexos de ${ size }"
@@ -1502,6 +1490,10 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Aumente seu espaço de armazenamento para um total de ${ bundleStorage }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Suporte para ${ n } domínio de e-mail personalizado",
+        "Suporte para ${ n } domínios de e-mail personalizados"
       ]
     },
     "Placeholder": {
@@ -1575,6 +1567,16 @@
       ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caractere",
+        "A senha deve conter ao menos ${ MIN_PASSWORD_LENGTH } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
+        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
       ]
     }
   }

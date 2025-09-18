@@ -4,708 +4,6 @@
     "language": "kab_DZ"
   },
   "contexts": {
-    "": {
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } n uwitay amaynut",
-        "${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
-        "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
-      ],
-      "${ ceilDays } day": [
-        "${ ceilDays } n wass",
-        "${ ceilDays } n wussan"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } n usrag",
-        "${ ceilHours } n yisragen"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } n tesdat",
-        "${ ceilMinutes } n tesdatin"
-      ],
-      "${ count } time": [
-        "${ count } n tikkelt",
-        "${ count } n tikkal"
-      ],
-      "${ cycle } month": [
-        "${ cycle } wayyur",
-        "${ cycle } wayyuren"
-      ],
-      "${ dayDiff } day left": [
-        "Mazal ${ dayDiff } wass",
-        "Mazal ${ dayDiff } wussan"
-      ],
-      "${ days } day": [
-        "${ days } n wass",
-        "${ days } n wussan"
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } n usrag",
-        "${ gracePeriodHoursRemaining } n yisragen"
-      ],
-      "${ group.UserCount } user": [
-        "${ group.UserCount } n useqdac",
-        "${ group.UserCount } yiseqdacen"
-      ],
-      "${ hours } h": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
-      "${ hours } hour": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 srg",
-        "${ hoursInt }.5 srg"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 usrag",
-        "${ hoursInt }.5 yisragen"
-      ],
-      "${ ipAddresses } dedicated server": [
-        "${ ipAddresses } uqeddac yettwamudden",
-        "${ ipAddresses } yiqeddacen yettwamudden"
-      ],
-      "${ ips } server": [
-        "Aqeddac ${ ips }",
-        "${ ips } yiqeddacen"
-      ],
-      "${ maxAddresses } address": [
-        "${ maxAddresses } tansa",
-        "${ maxAddresses } tansiwin"
-      ],
-      "${ maxAddresses } email address": [
-        "${ maxAddresses } tansa n yimayl",
-        "${ maxAddresses } n tansiwin imayl"
-      ],
-      "${ maxCalendars } calendar": [
-        "${ maxCalendars } uwitay",
-        "${ maxCalendars } yiwitayen"
-      ],
-      "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } tuqqna VPN",
-        "${ MaxVPN } n tuqqniwin VPN"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } n uεeggal",
-        "${ memberCount } n yiεeggalen"
-      ],
-      "${ minutes } min": [
-        "${ minutes } tsd",
-        "${ minutes } tsdn"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } n tesdat",
-        "${ minutes } n tesdatin"
-      ],
-      "${ n } address": [
-        "${ n } tansa",
-        "${ n } tansiwin"
-      ],
-      "${ n } calendar": [
-        "${ n } uwitay",
-        "${ n } yiwitayen"
-      ],
-      "${ n } calendar per user": [
-        "${ n } uwitay i yal aseqdac",
-        "${ n } yiwitayen i yal aseqdac"
-      ],
-      "${ n } custom email domain": [
-        "${ n } taɣult n yimaylen udmawanen",
-        "${ n } tiɣula n yimaylen udmawanen"
-      ],
-      "${ n } day": [
-        "${ n } n wass",
-        "${ n } n wussan"
-      ],
-      "${ n } device": [
-        "${ n } yibenk",
-        "${ n } yibenkan"
-      ],
-      "${ n } email address": [
-        "${ n } tansa n yimayl",
-        "${ n } tansiwin n yimayl"
-      ],
-      "${ n } email address per user": [
-        "${ n } tansa n yimayl i useqdac",
-        "${ n } tansiwin n yimayl i useqdac"
-      ],
-      "${ n } filter": [
-        "${ n } yimsizdeg",
-        "${ n } yimsizedgen"
-      ],
-      "${ n } folder": [
-        "${ n } n ukaram",
-        "${ n } n ikaramen"
-      ],
-      "${ n } folder and label": [
-        "${ n } ukaram d tebzimt",
-        "${ n } yikaramen d tebzimin"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } alias hide-my-email",
-        "${ n } hide-my-email aliases"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } n tuqqna VPN s urured ɛlayen",
-        "${ n } n tuqqna VPN s urured ɛlayen"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } n tuqqna VPN s urured ɛlayen i useqdac",
-        "${ n } n tuqqniwin VPN s urured ɛlayen i useqdac"
-      ],
-      "${ n } label": [
-        "${ n } tebzimt",
-        "${ n } tebzimin"
-      ],
-      "${ n } message per day": [
-        "${ n } n yiznen i wass",
-        "${ n } n yiznan i ass"
-      ],
-      "${ n } month": [
-        "${ n } wayyur",
-        "${ n } wayyuren"
-      ],
-      "${ n } month FREE": [
-        "${ n } wayyur BAṬEL",
-        "${ n } wayyuren BAṬEL"
-      ],
-      "${ n } server": [
-        "Aqeddac ${ n }",
-        "Ugar n ${ n } yiqeddacen"
-      ],
-      "${ n } vault": [
-        "${ n } usenduq",
-        "${ n } yisendyaq"
-      ],
-      "${ n } VPN connection": [
-        "${ n } tuqqna VPN",
-        "${ n } n tuqqniwin VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } n tuqqna VPN i useqdac",
-        "${ n } n tuqqniwin VPN i useqdac"
-      ],
-      "${ n } year": [
-        "${ n } useggas",
-        "${ n } yiseggasen"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } n wass",
-        "${ nbDay } n wussan"
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } n useggas",
-        "${ nbYear } yiseggasen"
-      ],
-      "${ number } city": [
-        "${ number } n temdint",
-        "${ number } n temdinin"
-      ],
-      "${ number } server": [
-        "Aqeddac ${ number }",
-        "Iqeddacen ${ number }"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } n tmurt",
-        "${ numberOfCountries } tmura"
-      ],
-      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } ufaylu i d-yulin mačči d tasarut tusligt taɣellsant. Ttxil-k·m selken syen ɛreḍ tikkelt niḍen.",
-        "${ numberOfNonPrivateKeys } yifuyla i d-yulin mačči d tisura tusligin tiɣellsanin. Ttxil-k·m selken syen ɛreḍ tikkelt niḍen."
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
-        "${ numberOfServers } deg ${ numberOfCountries } n tmura"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
-        "${ numberOfServers } deg ${ numberOfCountries } n tmura"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } n useqdac",
-        "Alamma d ${ numberOfUsers } yiseqdacen"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } s ${ n } hide-my-email alias",
-        "${ PASS_APP_NAME } s ${ n } hide-my-email aliases"
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } uwitay i yal aseqdac",
-        "${ planNumberOfCalendars } yiwitayen i yal aseqdac"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } taɣult n yimaylen udmawanen",
-        "${ planNumberOfDomains } tiɣula n yimaylen udmawanen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } tansa n yimayl",
-        "${ planNumberOfEmails } n tansiwin imayl"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } tansa n yimayl i useqdac",
-        "${ planNumberOfEmails } tansiwin n yimayl i useqdac"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } n useqdac",
-        "${ planNumberOfUsers } yiseqdacen"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } d ukaram yettwafen",
-        "${ providerFoldersNumLocalized } d ikaramen yettwafen"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } d tebzimt yettwafen deg Gmail",
-        "${ providerFoldersNumLocalized } n tebzimin i yettwafen deg Gmail"
-      ],
-      "${ remainingAddresses.length } more": [
-        "${ remainingAddresses.length } d wugar",
-        "${ remainingAddresses.length } d wugar"
-      ],
-      "${ seconds } second": [
-        "${ seconds } n tasint",
-        "${ seconds } n tsinin"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n uwitay",
-        "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n yiwitayen"
-      ],
-      "${ selectedCountriesCount } selected": [
-        "${ selectedCountriesCount } yettwafernen",
-        "${ selectedCountriesCount } yettwafernen"
-      ],
-      "${ selectedEntities.length } selected": [
-        "${ selectedEntities.length } yettwafernen",
-        "${ selectedEntities.length } yettwafernen"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } d akaram yettwafernen",
-        "${ selectedFoldersCount } d ikaramen yettwafernen"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } n tebzimt yettwafernen",
-        "${ selectedFoldersCount } n tebzimin yettwafernen"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } d ukaram yettwefrenn",
-        "${ selectedFoldersCountLocalized } d ikaramen yettwefrenn"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
-        "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
-      ],
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } n wass",
-        "${ timeRemaining.inDays } n wussan"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } n usrag",
-        "${ timeRemaining.inHours } n yisragen"
-      ],
-      "${ totalContacts } contact": [
-        "${ totalContacts } n unermis",
-        "${ totalContacts } inermisen"
-      ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "Tadyant ${ totalEventsDiscarded } ɣef ${ totalEvents } ur d-tettwaktar ara. Sit ad teẓreḍ telqayt.",
-        "Tidyanin ${ totalEventsDiscarded } ɣef ${ totalEvents } ur d-ttwaktarent ara. Sit ad teẓreḍ telqayt."
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "Anermis ${ totalImported }/${ totalToImport } yettwawgelhen syenyettwarna ɣer tebdart-inek·inem n yinermisen",
-        "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
-      ],
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "Tadyant ${ totalImported }/${ totalToImport } tettwawgelhen syen tettwarna ɣer uwitay-inek·inem",
-        "Tidyanin ${ totalImported }/${ totalToImport } ttwawgelhnent syen ttwarnant ɣer uwitay-inek·inem"
-      ],
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } n tedyant yettwasifḍen",
-        "${ totalProcessed }/${ totalToProcess } n tedyanin yettwasifḍen"
-      ],
-      "${ UsedAddresses } address": [
-        "${ UsedAddresses } tansa",
-        "${ UsedAddresses } tansiwin"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } n tensa n yimayl ${ MaxAddresses }",
-        "${ UsedAddresses } n tansiwin n yimayl ${ MaxAddresses }"
-      ],
-      "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } uwitay",
-        "${ UsedCalendars } yiwitayen"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } n taɣult tudmawant ${ MaxDomains }",
-        "${ UsedDomains } n tiɣula tudmawanin ${ MaxDomains }"
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } n useqdac ${ MaxMembers }",
-        "${ UsedMembers } n yiseqdacen ${ MaxMembers }"
-      ],
-      "${ userFound } user found": [
-        "${ userFound } useqdac yettwafen",
-        "${ userFound } yiseqdacen yettwafen"
-      ],
-      "${ users } user": [
-        "${ users } n useqdac",
-        "${ users } n yiseqdacen"
-      ],
-      "${ VPN_CONNECTIONS } high-speed VPN connection": [
-        "${ VPN_CONNECTIONS } n tuqqna VPN s urured ɛlayen",
-        "${ VPN_CONNECTIONS } n tuqqna VPN s urured ɛlayen"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } n uɛeggal)",
-        "(${ memberCount } n yiɛeggalen)"
-      ],
-      "+ ${ invisibleCount } More": [
-        "+ ${ invisibleCount } D wugar",
-        "+ ${ invisibleCount } D wugar"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } tuqqna i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
-        "+${ organization.BonusVPN } tuqqniwin i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Akk (akaram ${ totalFoldersCount })",
-        "Akk (${ totalFoldersCount } n yikaramen)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Akk (tabzimt ${ totalFoldersCount })",
-        "Akk (tibzimin ${ totalFoldersCount })"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }",
-        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyant. ${ totalImported } ɣef ${ totalToImport } n tedyant i yettwaketren akken iwata.",
-        "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyanin. ${ totalImported } ɣef ${ totalToImport } n tedyanin i yettwaketren akken iwata."
-      ],
-      "byte": [
-        "ibiten",
-        "ibiten"
-      ],
-      "Byte": [
-        "Ibit",
-        "Ibiten"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Tuqqna alamma d ${ plusVpnConnections } n yibenk",
-        "Tuqqna alamma d ${ plusVpnConnections } n yibenkan"
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Rnu ${ calendarsToBeCreatedCount } n uwitay amaynut",
-        "Rnu ${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
-      ],
-      "Create ${ selectedUserIds.length } user": [
-        "Rnu ${ selectedUserIds.length } useqdac",
-        "Rnu ${ selectedUserIds.length } yiseqdacen"
-      ],
-      "Create up to ${ n } calendar": [
-        "Rnu alamma d ${ n } n uwitay",
-        "Rnu alamma d ${ n } n yiwitayen"
-      ],
-      "day": [
-        "n wass",
-        "ussan"
-      ],
-      "day before": [
-        "ass send",
-        "ussan send"
-      ],
-      "domain used": [
-        "taɣult tettwaseqdec",
-        "tiɣula ttwasqedcent"
-      ],
-      "Every ${ interval } day": [
-        "Yal ${ interval } ass",
-        "Yal ${ interval } n wussan"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Yal ${ interval } ass, ${ timesString }",
-        "Yal ${ interval } n wussan, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Yal ${ interval } ass, ${ untilString }",
-        "Yal ${ interval } n wussan, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Yal ${ interval } n wayyur ${ onDayString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Yal ${ interval } n wayyur ${ onDayString }, ${ timesString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Yal ${ interval } n wayyur ${ onDayString }, ${ untilString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Yal ${ interval } n dduṛt deg ${ multipleDaysString }",
-        "Yal ${ interval } n ledwaṛ deg ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ timesString }",
-        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Yal ${ interval } n umalas deg meṛṛa ussan",
-        "Yal ${ interval } ledwaṛ deg meṛṛa ussan"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wussan akk, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wussan akk, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wussan akk, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wussan akk, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Yal ${ interval } n dduṛt deg wass n sem",
-        "Yal ${ interval } n ledwaṛ deg wass n sem"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n sem, ${ timesString }",
-        "Yal ${ interval } n ledwar deg wass n sem, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass sem, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass sem, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Yal ${ interval } n dduṛt deg wass n warim",
-        "Yal ${ interval } n ledwaṛ deg wass n warim"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n warim, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n warim, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n warim, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n warim, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Yal ${ interval } n dduṛt deg wass n sed",
-        "Yal ${ interval } n ledwaṛ deg wass n sed"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n sed, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n sed, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n sed, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n sed, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Yal ${ interval } n dduṛt deg wass n wacer",
-        "Yal ${ interval } n ledwaṛ deg wussan n acer"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n wacer, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n wacer, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n wacer, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n wacer, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Yal ${ interval } n dduṛt deg wass n wamhad",
-        "Yal ${ interval } n ledwaṛ deg wass n wamhad"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n umhad, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n umhad, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n umhad, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n umhad, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Yal ${ interval } n dduṛt deg wass n waram",
-        "Yal ${ interval } n ledwaṛ deg wass n warim"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n waram, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n waram, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n waram, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n waram, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Yal ${ interval } n dduṛt deg wass n wahad",
-        "Yal ${ interval } n ledwaṛ deg wass n wahad"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n wahad, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n wahad, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n wahad, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n wahad, ${ untilString }"
-      ],
-      "Every ${ interval } year": [
-        "Yal ${ interval } n useggas",
-        "Yal ${ interval } n yiseggasen"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Yal ${ interval } n useggas, ${ timesString }",
-        "Yal ${ interval } n yiseggasen, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Yal ${ interval } n useggas, ${ untilString }",
-        "Yal ${ interval } n yiseggasen, ${ untilString }"
-      ],
-      "Failed to create ${ failedUsers.length } user\naccount.": [
-        "Tecceḍ tmerna ${ failedUsers.length } n umiḍan n useqdac.",
-        "Tecceḍ tmerna ${ failedUsers.length } n umiḍan n useqdac."
-      ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Af asumer n ${ itemsCount }, seqdec anasiw i tunigin.",
-        "Af isumar ${ itemsCount }, seqdec anasiw i tunigin."
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "VPN arurad agafay ɣef ${ maxVpn } yibenk",
-        "VPN arurad agafay ɣef ${ maxVpn } yibenkan"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN arurad agafay ɣef ${ n } yibenk",
-        "VPN arurad agafay ɣef ${ n } yibenkan"
-      ],
-      "hour before": [
-        "asrag send",
-        "isragen send"
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Kter ${ calendarCount } n uwitay ${ totalCalendarsCount }",
-        "Kter ${ calendarCount } n yiwitayen ${ totalCalendarsCount }"
-      ],
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Kter meṛṛa iznan seg ${ itemsToImportCount } ukaram, syen snes tabzimt",
-        "Kter meṛṛa iznan seg ${ itemsToImportCount } yikaramen, syen snes tabzimt"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Kter meṛṛa iznan seg ${ itemsToImportCount } tebzimt, syen snes tabzimt",
-        "Kter meṛṛa iznan seg ${ itemsToImportCount } tebzimin, syen snes tabzimt"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } ukaram ɣef ${ itemsToImportCount }, syen snes tabzimt",
-        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } yikaramen ɣef ${ itemsToImportCount }, syen snes tabzimt"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimt ɣef ${ itemsToImportCount }, syen snes tabzimt",
-        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimin ɣef ${ itemsToImportCount }, syen snes tabzimt"
-      ],
-      "Import as simple event?": [
-        "Kter tedyant war talqayt?",
-        "Kter tidyanin war talqayt?"
-      ],
-      "Invite successfully sent": [
-        "Tinubga tettwazen akken iwata",
-        "Tinubgiwin ttwaznent akken iwata"
-      ],
-      "Member added": [
-        "Aɛeggal yettwarna",
-        "Iɛeggalen ttwarnan"
-      ],
-      "minute before": [
-        "tasdat send",
-        "tisdatin send"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Yettwaxelleṣ i uɣawas n ${ rewardMonths } n wayyur",
-        "Yettwaxelleṣ i uɣawas n ${ rewardMonths } n wayyuren"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
-        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
-      ],
-      "Please add a password for the user on row": [
-        "Ttxil-k rnu awal uffir i useqdac ɣef yizirig",
-        "Ttxil-k rnu wawalen uffiren i yiseqdacen ɣef yizirigen"
-      ],
-      "Please add an email address for the user on row": [
-        "Ttxil-k rnu tansa n yimayl i useqdac ɣef yizirig",
-        "Ttxil-k rnu tansiwin n yimayl i yiseqdacen ɣef yizirigen"
-      ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Anermas uslig yettwakkes: ${ joinedRecipients }",
-        "Inermasen usligen ttwakksen: ${ joinedRecipients }"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Iqeddacen deg wugar ${ numberOfCountries } tmurt",
-        "Iqeddacen deg wugar n ${ numberOfCountries } tmura"
-      ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Iqeddacen deg wugar ${ vpnServersCountData.paid.countries } tmurt",
-        "Iqeddacen deg wugar n ${ vpnServersCountData.paid.countries } tmura"
-      ],
-      "Step ${ step }": [
-        "Takkayt ${ step }",
-        "Takkayin ${ step }"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Asefrek i ${ n } taɣult n yimayl udmawan",
-        "Asefrek i ${ n } tiɣula n yimayl udmawan"
-      ],
-      "The following address is invalid.": [
-        "Tansa-a mačči d tarameɣtut.",
-        "Tansiwin-a mačči d tirimeɣta."
-      ],
-      "The following address is unavailable.": [
-        "Tansa-a ulac-itt.",
-        "Tansiwin-a ulac-iten."
-      ],
-      "The following address was not created.": [
-        "Tansa-a tettwarna.",
-        "Tansiwin-a ttwarnant."
-      ],
-      "Total for ${ n } month": [
-        "Asemday i ${ n } wayyur",
-        "Asemday i ${ n } wayyuren"
-      ],
-      "Up to ${ n } user": [
-        "Alamma d ${ n } yiseqdac",
-        "Alamma d ${ n } yiseqdacen"
-      ],
-      "week before": [
-        "dduṛt send",
-        "dduṛtat send"
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Tzemreḍ ad ternuḍ arma d ${ MAX_LINKS_PER_CALENDAR } n useɣwen i yiwen n uwitay. Akken ad ternuḍ aseɣwen amaynut i uwitay-a, kkes yiwen seg tebdert ddaw-a.",
-        "Tzemreḍ ad ternuḍ arma d ${ MAX_LINKS_PER_CALENDAR } n yiseɣwan i yiwen n uwitay. Akken ad ternuḍ aseɣwen amaynut i uwitay-a, kkes yiwen seg tebdert ddaw-a."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
-        "Ur tezmireḍ ara ad tazneḍ ugar ${ emailSendLimitNumber } n tinubga s yimayl ɣef teɣzi n 24 yisragen i d-iteddun.",
-        "Ur tezmireḍ ara ad tazneḍ ugar ${ emailSendLimitNumber } n tinubgiwin s yimayl ɣef teɣzi n 24 yisragen i d-iteddun."
-      ],
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
-        "Tɛeddaḍ talast n ${ MAX_CALENDAR_MEMBERS } uɛeggal i uwitay",
-        "Tɛeddaḍ talast n ${ MAX_CALENDAR_MEMBERS } yiɛeggalen i uwitay"
-      ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Tessawḍeḍ talasat n ${ MAX_CALENDAR_MEMBERS } uɛeggal.",
-        "Tessawḍeḍ talast n ${ MAX_CALENDAR_MEMBERS } yiɛeggalen."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS } n tedyant.",
-        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS } n tedyanin."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Akatar-ik seg ${ accounts } iɛeṭṭel i kra n wakud.",
-        "Ikataren-ik seg ${ accounts } ɛeṭṭlen i kra n wakud."
-      ]
-    },
     "A label for unlabeled shared calendar links": {
       "Unlabeled": [
         "War tabzimt"
@@ -1865,6 +1163,10 @@
       ]
     },
     "Addon": {
+      "${ ips } server": [
+        "Aqeddac ${ ips }",
+        "${ ips } yiqeddacen"
+      ],
       "${ price } per dedicated server": [
         "${ price } i uqeddac yettwamudden"
       ],
@@ -1873,6 +1175,10 @@
       ],
       "${ price } per user": [
         "${ price } I useqdac"
+      ],
+      "${ users } user": [
+        "${ users } n useqdac",
+        "${ users } yiseqdacen"
       ]
     },
     "Address action": {
@@ -1997,6 +1303,10 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
       "/ month": [
         "/ n wayyur"
       ],
@@ -2419,8 +1729,16 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "${ users } n useqdac",
+        "${ users } n yiseqdacen"
+      ],
       "Total": [
         "Asemday"
+      ],
+      "Total for ${ n } month": [
+        "Asemday i ${ n } wayyur",
+        "Asemday i ${ n } wayyuren"
       ]
     },
     "Checkout summary": {
@@ -2690,6 +2008,12 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } yettwafernen",
+        "${ selectedCountriesCount } yettwafernen"
       ]
     },
     "Country name": {
@@ -3498,8 +2822,16 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } n tikkelt",
+        "${ count } n tikkal"
+      ],
       "Daily": [
         "Yal ass"
+      ],
+      "Every ${ interval } day": [
+        "Yal ${ interval } ass",
+        "Yal ${ interval } n wussan"
       ],
       "until ${ dateString }": [
         "alamma d ${ dateString }"
@@ -3508,11 +2840,19 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Yal ass, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Yal ${ interval } ass, ${ timesString }",
+        "Yal ${ interval } n wussan, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Yal ass, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Yal ${ interval } ass, ${ untilString }",
+        "Yal ${ interval } n wussan, ${ untilString }"
       ]
     },
     "Day": {
@@ -3941,6 +3281,10 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } n wass",
+        "${ n } n wussan"
+      ],
       "Add": [
         "Rnu"
       ],
@@ -4207,6 +3551,10 @@
       "Process aborted": [
         "Yettwanef ukala"
       ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Anermas uslig yettwakkes: ${ joinedRecipients }",
+        "Inermasen usligen ttwakksen: ${ joinedRecipients }"
+      ],
       "Request timed out": [
         "Akud n usuter yemmut"
       ],
@@ -4367,6 +3715,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Tella-d tuccḍa ur nettwarǧa ara. Aktar ilaq ad yales asenker."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS } n tedyant.",
+        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS } n tedyanin."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Afaylu-inek/m ${ formattedFilename } ur yesɛi ara tidyanin ara nsifeḍ."
@@ -4596,6 +3948,10 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } n tedyant yettwasifḍen",
+        "${ totalProcessed }/${ totalToProcess } n tedyanin yettwasifḍen"
+      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Awitay yettusifeḍ akken iwata. Tzemreḍ tura ad teskelseḍ afaylu ICS."
       ],
@@ -4774,11 +4130,19 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } tuqqna VPN",
+        "${ MaxVPN } n tuqqniwin VPN"
+      ],
       "Access to all countries": [
         "Kcem ɣer tmura meṛṛa"
       ],
       "Add": [
         "Rnu"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Tuqqna alamma d ${ plusVpnConnections } n yibenk",
+        "Tuqqna alamma d ${ plusVpnConnections } n yibenkan"
       ],
       "Continue": [
         "Kemmel"
@@ -4843,6 +4207,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "ibiten",
+        "ibiten"
+      ],
       "GB": [
         "GAṬ"
       ],
@@ -4854,6 +4222,12 @@
       ],
       "TB": [
         "TAṬ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Ibit",
+        "Ibiten"
       ]
     },
     "Filter Actions": {
@@ -5023,6 +4397,12 @@
         "Imeẓluyen"
       ]
     },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } n uεeggal",
+        "${ memberCount } n yiεeggalen"
+      ]
+    },
     "Group state": {
       "Active": [
         "Urmid"
@@ -5190,6 +4570,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Af asumer n ${ itemsCount }, seqdec anasiw i tunigin.",
+        "Af isumar ${ itemsCount }, seqdec anasiw i tunigin."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Seqdec tiqeffalin Asawen d Akessar i wakken ad tkecmeḍ ɣer yisumar syen asenqed-nsen seld anekcum. Sit ɣef Enter i wakken ad tesnetmeḍ afran-inek·inem, neɣ Escape i wakken ad tmedleḍ tabewwaḍt n yisumar."
       ]
@@ -5250,6 +4634,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "Tadyant ${ totalImported }/${ totalToImport } tettwawgelhen syen tettwarna ɣer uwitay-inek·inem",
+        "Tidyanin ${ totalImported }/${ totalToImport } ttwawgelhnent syen ttwarnant ɣer uwitay-inek·inem"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyant. ${ totalImported } ɣef ${ totalToImport } n tedyant i yettwaketren akken iwata.",
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyanin. ${ totalImported } ɣef ${ totalToImport } n tedyanin i yettwaketren akken iwata."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyant-ik·im. Ulac tadyant ara d-yettwaktaren."
       ],
@@ -5283,6 +4675,10 @@
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "Anermis ${ totalImported }/${ totalToImport } yettwawgelhen syenyettwarna ɣer tebdart-inek·inem n yinermisen",
+        "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Tella-d tuccḍa lawan n uwgelhen d tmerna n urmis-inek·inem. Ulac anermis ara d-yettwaktaren."
       ],
@@ -5302,6 +4698,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Anermis ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } n unermis",
+        "${ totalContacts } inermisen"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5485,6 +4887,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Inermisen ${ totalContactsDiscarded } ɣef ${ totalContacts } ur d-ttwaktaren ara. Sit ad teẓreḍ telqayt"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "Tadyant ${ totalEventsDiscarded } ɣef ${ totalEvents } ur d-tettwaktar ara. Sit ad teẓreḍ telqayt.",
+        "Tidyanin ${ totalEventsDiscarded } ɣef ${ totalEvents } ur d-ttwaktarent ara. Sit ad teẓreḍ telqayt."
+      ],
       "No contact can be imported. Click for details": [
         "Ulac anermis i tzemreḍ ad d-tketreḍ. Sit ad teẓreḍ telqayt"
       ],
@@ -5511,6 +4917,14 @@
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } ad yeεreḍ ad ikemmel aktar akken kan ara iwennez usaǧǧaw n yimayl-ik·im ${ bandwidthLimitLink } amiḍan-ik·im. Ur teḥwaǧeḍ ad tgeḍ kra. Ma yella tesfesxeḍ aktar-inek·inem, ur tezmireḍ ara ad t-tkemmleḍ, ilaq ad as-d-tεawdeḍ seg tazwara."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } n uwitay amaynut",
+        "${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
+        "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
+      ],
       "${ current } of ${ total }": [
         "${ current } n ${ total }"
       ],
@@ -5523,8 +4937,56 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: taskant s ucegger adday"
       ],
+      "${ n } address": [
+        "${ n } tansa",
+        "${ n } tansiwin"
+      ],
+      "${ number } city": [
+        "${ number } n temdint",
+        "${ number } n temdinin"
+      ],
+      "${ number } server": [
+        "Aqeddac ${ number }",
+        "Iqeddacen ${ number }"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } ufaylu i d-yulin mačči d tasarut tusligt taɣellsant. Ttxil-k·m selken syen ɛreḍ tikkelt niḍen.",
+        "${ numberOfNonPrivateKeys } yifuyla i d-yulin mačči d tisura tusligin tiɣellsanin. Ttxil-k·m selken syen ɛreḍ tikkelt niḍen."
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } d ukaram yettwafen",
+        "${ providerFoldersNumLocalized } d ikaramen yettwafen"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } d tebzimt yettwafen deg Gmail",
+        "${ providerFoldersNumLocalized } n tebzimin i yettwafen deg Gmail"
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } d wugar",
+        "${ remainingAddresses.length } d wugar"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n uwitay",
+        "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n yiwitayen"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } yettwafernen",
+        "${ selectedEntities.length } yettwafernen"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } d ukaram yettwefrenn",
+        "${ selectedFoldersCountLocalized } d ikaramen yettwefrenn"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
+        "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
+      ],
       "${ storage } storage": [
         "${ storage } n uḥraz"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } useqdac yettwafen",
+        "${ userFound } yiseqdacen yettwafen"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } yettusnulfa-d"
@@ -5534,6 +4996,10 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } yesra tamahilt Secure Core."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } n uɛeggal)",
+        "(${ memberCount } n yiɛeggalen)"
       ],
       "(default)": [
         "(amezwer)"
@@ -5547,8 +5013,16 @@
       "* No credit card required.": [
         "* Ulac takarḍa n usmad yettwasran."
       ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } D wugar",
+        "+ ${ invisibleCount } D wugar"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } n usekles n ubunus"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } tuqqna i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
+        "+${ organization.BonusVPN } tuqqniwin i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
       ],
       "2. They try ${ planName }": [
         "2. Ttaɛraḍen ${ planName }"
@@ -5613,11 +5087,23 @@
       "Align right": [
         "Reyyec s ayeffus"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Akk (akaram ${ totalFoldersCount })",
+        "Akk (${ totalFoldersCount } n yikaramen)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Akk (tabzimt ${ totalFoldersCount })",
+        "Akk (tibzimin ${ totalFoldersCount })"
+      ],
       "All keys successfully reactivated": [
         "Akk tisura ulsent asermed akken iwata"
       ],
       "All your changes will be lost.": [
         "Ad ruḥen akk ibeddilen-inek/m."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }",
+        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Ittuheṛṛ"
@@ -5754,6 +5240,10 @@
       "Country code": [
         "Tangalt n tmurt"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Rnu ${ calendarsToBeCreatedCount } n uwitay amaynut",
+        "Rnu ${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked yikaramen i tebɣiḍ ad tketreḍ."
       ],
@@ -5831,6 +5321,10 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Tebɣiḍ ad tekkseḍ akk tiɣimiyin yezrin tagi?"
+      ],
+      "domain used": [
+        "taɣult tettwaseqdec",
+        "tiɣula ttwasqedcent"
       ],
       "Done! We sent a code to ${ destination }.": [
         "Ifukk! Nuzen tangalt ɣer ${ destination }."
@@ -6006,6 +5500,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Tugniwin ttwakksent acku ur ttusirgent ara deg tririt tawurmant"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Kter ${ calendarCount } n uwitay ${ totalCalendarsCount }",
+        "Kter ${ calendarCount } n yiwitayen ${ totalCalendarsCount }"
+      ],
       "Import from": [
         "Kter si"
       ],
@@ -6056,6 +5554,10 @@
       ],
       "Invite rejected": [
         "Ancad yettwagi"
+      ],
+      "Invite successfully sent": [
+        "Tinubga tettwazen akken iwata",
+        "Tinubgiwin ttwaznent akken iwata"
       ],
       "it’s imperative": [
         "d ayen ilaqen"
@@ -6213,6 +5715,10 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Inedbalen-nniḍen llan di tuddsa-k. D kečč ara sen-yefken awal uffir amaynut."
       ],
+      "Paid for a ${ rewardMonths } month plan": [
+        "Yettwaxelleṣ i uɣawas n ${ rewardMonths } n wayyur",
+        "Yettwaxelleṣ i uɣawas n ${ rewardMonths } n wayyuren"
+      ],
       "Paid for a monthly plan": [
         "Yettwaxelleṣ i uɣawas n wayyur"
       ],
@@ -6233,6 +5739,14 @@
       ],
       "Phone number": [
         "Uṭṭun n teleɣṛi"
+      ],
+      "Please add a password for the user on row": [
+        "Ttxil-k rnu awal uffir i useqdac ɣef yizirig",
+        "Ttxil-k rnu wawalen uffiren i yiseqdacen ɣef yizirigen"
+      ],
+      "Please add an email address for the user on row": [
+        "Ttxil-k rnu tansa n yimayl i useqdac ɣef yizirig",
+        "Ttxil-k rnu tansiwin n yimayl i yiseqdacen ɣef yizirigen"
       ],
       "Please check your file, or try using our ${ csvTemplateButton }.": [
         "Ttxil-k senqed afaylu-k, neɣ ɛreḍ aseqdec ${ csvTemplateButton } nneɣ."
@@ -6369,6 +5883,10 @@
       "Some keys successfully reactivated": [
         "Kra n tsura ulsent asermed akken iwata"
       ],
+      "Step ${ step }": [
+        "Takkayt ${ step }",
+        "Takkayin ${ step }"
+      ],
       "Storage": [
         "Asekles"
       ],
@@ -6407,6 +5925,18 @@
       ],
       "The following address is available:": [
         "Tansa-a tella:"
+      ],
+      "The following address is invalid.": [
+        "Tansa-a mačči d tarameɣtut.",
+        "Tansiwin-a mačči d tirimeɣta."
+      ],
+      "The following address is unavailable.": [
+        "Tansa-a ulac-itt.",
+        "Tansiwin-a ulac-iten."
+      ],
+      "The following address was not created.": [
+        "Tansa-a tettwarna.",
+        "Tansiwin-a ttwarnant."
       ],
       "The name will be visible to your users while they are signed in.": [
         "Isem ad d-yettban i yiseqdacen-ik•im mi ara qqnen."
@@ -6645,6 +6175,10 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Tzemreḍ ad tesqedceḍ inekcam-a akken ad teqqneḍ ɣer uqeddac ${ VPN_APP_NAME }, s useqdec n usnas VPN n wis kraḍ, n uɣbalu yeldin, akka am Tunnelblick i macOS neɣ OpenVPN i GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Ur tezmireḍ ara ad tazneḍ ugar ${ emailSendLimitNumber } n tinubga s yimayl ɣef teɣzi n 24 yisragen i d-iteddun.",
+        "Ur tezmireḍ ara ad tazneḍ ugar ${ emailSendLimitNumber } n tinubgiwin s yimayl ɣef teɣzi n 24 yisragen i d-iteddun."
+      ],
       "You cannot undo this action.": [
         "Ur tezmireḍ ara ad tesfesxeḍ tigawt-a."
       ],
@@ -6699,6 +6233,10 @@
       "Your files will be encrypted and then saved": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen"
       ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Akatar-ik seg ${ accounts } iɛeṭṭel i kra n wakud.",
+        "Ikataren-ik seg ${ accounts } ɛeṭṭlen i kra n wakud."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Talɣut-ik·im n unekcum ur tettwaseklas ara alamma yemmed uktar."
       ],
@@ -6749,6 +6287,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "I wakken urd-yettili ara uḥbas n umeẓlu ssebba n tfakturin ur nettuxelleṣ ara, muqel ttxil-k·m amek ad tḍemneḍ xerṣum yiwet n tarrayt n uxelleṣ tameɣtut yettuskelsen deg yal tallit."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } d akaram yettwafernen",
+        "${ selectedFoldersCount } d ikaramen yettwafernen"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } n tebzimt yettwafernen",
+        "${ selectedFoldersCount } n tebzimin yettwafernen"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -7086,6 +6634,10 @@
       "${ BRAND_NAME } username": [
         "Isem n useqdac ${ BRAND_NAME }"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } n useqdac",
+        "${ group.UserCount } yiseqdacen"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } n ${ humanMaxSpace }"
       ],
@@ -7094,6 +6646,22 @@
       ],
       "${ MAIL_APP_NAME } footer": [
         "Aḍar n usebter ${ MAIL_APP_NAME }"
+      ],
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } n wass",
+        "${ nbDay } n wussan"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } n useggas",
+        "${ nbYear } yiseggasen"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } n tensa n yimayl ${ MaxAddresses }",
+        "${ UsedAddresses } n tansiwin n yimayl ${ MaxAddresses }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Ulac-it akka tura. Ma ulac aɣilif, senqed ticki.)"
@@ -8316,6 +7884,24 @@
         "Rmed ${ reason }"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Kter meṛṛa iznan seg ${ itemsToImportCount } ukaram, syen snes tabzimt",
+        "Kter meṛṛa iznan seg ${ itemsToImportCount } yikaramen, syen snes tabzimt"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Kter meṛṛa iznan seg ${ itemsToImportCount } tebzimt, syen snes tabzimt",
+        "Kter meṛṛa iznan seg ${ itemsToImportCount } tebzimin, syen snes tabzimt"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } ukaram ɣef ${ itemsToImportCount }, syen snes tabzimt",
+        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } yikaramen ɣef ${ itemsToImportCount }, syen snes tabzimt"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimt ɣef ${ itemsToImportCount }, syen snes tabzimt",
+        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimin ɣef ${ itemsToImportCount }, syen snes tabzimt"
+      ]
+    },
     "mail_signup_2024: Info": {
       "for ${ price }": [
         "i ${ price }"
@@ -8332,6 +7918,18 @@
     "mailtrial2024: Info": {
       "Get ${ planTitle } for ${ discountedPriceElement }": [
         "Awi ${ planTitle } i ${ discountedPriceElement }"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Tzemreḍ ad ternuḍ arma d ${ MAX_LINKS_PER_CALENDAR } n useɣwen i yiwen n uwitay. Akken ad ternuḍ aseɣwen amaynut i uwitay-a, kkes yiwen seg tebdert ddaw-a.",
+        "Tzemreḍ ad ternuḍ arma d ${ MAX_LINKS_PER_CALENDAR } n yiseɣwan i yiwen n uwitay. Akken ad ternuḍ aseɣwen amaynut i uwitay-a, kkes yiwen seg tebdert ddaw-a."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Tessawḍeḍ talasat n ${ MAX_CALENDAR_MEMBERS } uɛeggal.",
+        "Tessawḍeḍ talast n ${ MAX_CALENDAR_MEMBERS } yiɛeggalen."
       ]
     },
     "Member action": {
@@ -8425,16 +8023,28 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Yal ${ interval } n wayyur ${ onDayString }",
+        "Yal ${ interval } n wayyuren ${ onDayString }"
+      ],
       "Monthly ${ onDayString }": [
         "Yal ayyur ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Yal ${ interval } n wayyur ${ onDayString }, ${ timesString }",
+        "Yal ${ interval } n wayyuren ${ onDayString }, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Yal ayyur ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Yal ${ interval } n wayyur ${ onDayString }, ${ untilString }",
+        "Yal ${ interval } n wayyuren ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Yal ayyur ${ onDayString }, ${ untilString }"
       ]
@@ -8647,6 +8257,66 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } d ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } uwitay",
+        "${ n } yiwitayen"
+      ],
+      "${ n } calendar per user": [
+        "${ n } uwitay i yal aseqdac",
+        "${ n } yiwitayen i yal aseqdac"
+      ],
+      "${ n } custom email domain": [
+        "${ n } taɣult n yimaylen udmawanen",
+        "${ n } tiɣula n yimaylen udmawanen"
+      ],
+      "${ n } email address": [
+        "${ n } tansa n yimayl",
+        "${ n } tansiwin n yimayl"
+      ],
+      "${ n } email address per user": [
+        "${ n } tansa n yimayl i useqdac",
+        "${ n } tansiwin n yimayl i useqdac"
+      ],
+      "${ n } filter": [
+        "${ n } yimsizdeg",
+        "${ n } yimsizedgen"
+      ],
+      "${ n } folder": [
+        "${ n } n ukaram",
+        "${ n } n ikaramen"
+      ],
+      "${ n } folder and label": [
+        "${ n } ukaram d tebzimt",
+        "${ n } yikaramen d tebzimin"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias hide-my-email",
+        "${ n } hide-my-email aliases"
+      ],
+      "${ n } label": [
+        "${ n } tebzimt",
+        "${ n } tebzimin"
+      ],
+      "${ n } message per day": [
+        "${ n } n yiznen i wass",
+        "${ n } n yiznan i ass"
+      ],
+      "${ n } vault": [
+        "${ n } usenduq",
+        "${ n } yisendyaq"
+      ],
+      "${ n } VPN connection": [
+        "${ n } tuqqna VPN",
+        "${ n } n tuqqniwin VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } n useqdac",
+        "Alamma d ${ numberOfUsers } yiseqdacen"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } s ${ n } hide-my-email alias",
+        "${ PASS_APP_NAME } s ${ n } hide-my-email aliases"
+      ],
       "${ size } attachment size": [
         "${ size } teɣzi n yimeddayen"
       ],
@@ -8719,6 +8389,10 @@
       "GDPR data processing agreement": [
         "Awati n usesfer n yisefka GDPR"
       ],
+      "High-speed VPN on ${ n } device": [
+        "VPN arurad agafay ɣef ${ n } yibenk",
+        "VPN arurad agafay ɣef ${ n } yibenkan"
+      ],
       "HTML signatures": [
         "Izmulen n HTML"
       ],
@@ -8754,6 +8428,10 @@
       ],
       "Send & receive invitations": [
         "Azen & nermes-d tinubgiwin"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Iqeddacen deg wugar ${ vpnServersCountData.paid.countries } tmurt",
+        "Iqeddacen deg wugar n ${ vpnServersCountData.paid.countries } tmura"
       ],
       "Sign in as user": [
         "Qqen d aseqdac"
@@ -8794,11 +8472,21 @@
       "Unlimited volume/bandwidth": [
         "Ableɣ/Tehri n tesfift war talast"
       ],
+      "Up to ${ n } user": [
+        "Alamma d ${ n } yiseqdac",
+        "Alamma d ${ n } yiseqdacen"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Alamma d ${ totalStorageSize } n uḥraz"
       ],
       "User session management": [
         "Asefrek n tiɣimiyin n useqdac"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ users } user": [
+        "${ users } useqdac",
+        "${ users } yiseqdacen"
       ]
     },
     "new_plans: feature info": {
@@ -8915,6 +8603,10 @@
       "Central control panel": [
         "Afeggag n usenqed alemmas"
       ],
+      "Create up to ${ n } calendar": [
+        "Rnu alamma d ${ n } n uwitay",
+        "Rnu alamma d ${ n } n yiwitayen"
+      ],
       "Dedicated Account manager": [
         "Amsefrak n umiḍan yettwagen"
       ],
@@ -8926,6 +8618,10 @@
       ],
       "Require 2FA": [
         "Yesra 2FA"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Asefrek i ${ n } taɣult n yimayl udmawan",
+        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "news": {
@@ -9022,6 +8718,10 @@
       "Invitation revoked": [
         "Tinubga yettwaḥwi"
       ],
+      "Member added": [
+        "Aɛeggal yettwarna",
+        "Iɛeggalen ttwarnan"
+      ],
       "Member deleted": [
         "Aɛeggal yettwakkes"
       ]
@@ -9048,8 +8748,24 @@
       "at time of event": [
         "lawan-nni n tedyant"
       ],
+      "day before": [
+        "ass send",
+        "ussan send"
+      ],
+      "hour before": [
+        "asrag send",
+        "isragen send"
+      ],
+      "minute before": [
+        "tasdat send",
+        "tisdatin send"
+      ],
       "on the same day": [
         "deg yiwen n wass"
+      ],
+      "week before": [
+        "dduṛt send",
+        "dduṛtat send"
       ]
     },
     "Offer": {
@@ -9716,6 +9432,10 @@
       ]
     },
     "Plans": {
+      "${ cycle } month": [
+        "${ cycle } wayyur",
+        "${ cycle } wayyuren"
+      ],
       "Enjoying ${ planName }?": [
         "Afaṛes n ${ planName }?"
       ]
@@ -9902,8 +9622,18 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ n } day": [
+        "${ n } n wass",
+        "${ n } n wussan"
+      ],
       "${ remainingCount } more": [
         "${ remainingCount } d wugar"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "day": [
+        "n wass",
+        "ussan"
       ]
     },
     "retention_policy_2025_Option": {
@@ -10032,6 +9762,16 @@
         "Ttxil sirew-d tisura send ad tɛerḍeḍ ad tbeddeleḍ awal-inek n uɛeddi"
       ]
     },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } n wass",
+        "${ timeRemaining.inDays } n wussan"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } n usrag",
+        "${ timeRemaining.inHours } n yisragen"
+      ]
+    },
     "session_recovery:cancellation:action": {
       "Cancel password reset": [
         "Sefsex awennez n wawal uffir"
@@ -10069,6 +9809,12 @@
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Asenser"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } n usrag",
+        "${ gracePeriodHoursRemaining } n yisragen"
       ]
     },
     "session_recovery:sign_out:link": {
@@ -10123,6 +9869,12 @@
         "Tibzimin"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Tɛeddaḍ talast n ${ MAX_CALENDAR_MEMBERS } uɛeggal i uwitay",
+        "Tɛeddaḍ talast n ${ MAX_CALENDAR_MEMBERS } yiɛeggalen i uwitay"
+      ]
+    },
     "Share calendar modal input placeholder": {
       "Enter an email address or group name": [
         "Sekcem tansa n yimayl neɣ isem n ugraw"
@@ -10149,8 +9901,24 @@
       ]
     },
     "Signup": {
+      "${ maxAddresses } address": [
+        "${ maxAddresses } tansa",
+        "${ maxAddresses } tansiwin"
+      ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } tansa n yimayl",
+        "${ maxAddresses } n tansiwin imayl"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } uwitay",
+        "${ maxCalendars } yiwitayen"
+      ],
       "${ value } total storage": [
         "${ value } n uḥraz asemday"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } n tuqqna VPN s urured ɛlayen",
+        "${ VPN_CONNECTIONS } n tuqqna VPN s urured ɛlayen"
       ],
       "/user": [
         "/useqdac"
@@ -10337,6 +10105,30 @@
         "Ad ɛeddiɣ ɣer war tilas"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } n wass",
+        "${ days } n wussan"
+      ],
+      "${ hours } hour": [
+        "${ hours } n usrag",
+        "${ hours } n yisragen"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } n tesdat",
+        "${ minutes } n tesdatin"
+      ],
+      "${ seconds } second": [
+        "${ seconds } n tasint",
+        "${ seconds } n tsinin"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } wayyur BAṬEL",
+        "${ n } wayyuren BAṬEL"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 useqdac"
@@ -10381,6 +10173,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
       "/ month": [
         "/ n wayyur"
       ],
@@ -10506,6 +10302,50 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } uqeddac yettwamudden",
+        "${ ipAddresses } yiqeddacen yettwamudden"
+      ],
+      "${ n } calendar per user": [
+        "${ n } uwitay i yal aseqdac",
+        "${ n } yiwitayen i yal aseq"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } n tuqqna VPN s urured ɛlayen",
+        "${ n } n tuqqna VPN s urured ɛlayen"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } n tuqqna VPN s urured ɛlayen i useqdac",
+        "${ n } n tuqqniwin VPN s urured ɛlayen i useqdac"
+      ],
+      "${ n } VPN connection": [
+        "${ n } tuqqna VPN",
+        "${ n } n tuqqniwin VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } n tuqqna VPN i useqdac",
+        "${ n } n tuqqniwin VPN i useqdac"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } tansa",
+        "${ UsedAddresses } tansiwin"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } n tensa n yimayl ${ MaxAddresses }",
+        "${ UsedAddresses } n tansiwin n yimayl ${ MaxAddresses }"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } uwitay",
+        "${ UsedCalendars } yiwitayen"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } n taɣult tudmawant ${ MaxDomains }",
+        "${ UsedDomains } n tiɣula tudmawanin ${ MaxDomains }"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } n useqdac ${ MaxMembers }",
+        "${ UsedMembers } n yiseqdacen ${ MaxMembers }"
+      ],
       "1 email address": [
         "1 n tansa n yimayl"
       ],
@@ -10514,6 +10354,10 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Amsewḥel n udellel usliɣ (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "VPN arurad agafay ɣef ${ maxVpn } yibenk",
+        "VPN arurad agafay ɣef ${ maxVpn } yibenkan"
       ]
     },
     "Subscription change warning": {
@@ -10533,11 +10377,35 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "Mazal ${ dayDiff } wass",
+        "Mazal ${ dayDiff } wussan"
+      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } uḥraz i aseqdac"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } n uḥraz asemday"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } uwitay i yal aseqdac",
+        "${ planNumberOfCalendars } yiwitayen i yal aseqdac"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } taɣult n yimaylen udmawanen",
+        "${ planNumberOfDomains } tiɣula n yimaylen udmawanen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } tansa n yimayl",
+        "${ planNumberOfEmails } n tansiwin imayl"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } tansa n yimayl i useqdac",
+        "${ planNumberOfEmails } tansiwin n yimayl i useqdac"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } n useqdac",
+        "${ planNumberOfUsers } yiseqdacen"
       ],
       "2 users": [
         "2 yiseqdacen"
@@ -10903,6 +10771,52 @@
         "urti vCard"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } n wass",
+        "${ ceilDays } n wussan"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } n usrag",
+        "${ ceilHours } n yisragen"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } n tesdat",
+        "${ ceilMinutes } n tesdatin"
+      ],
+      "${ seconds } second": [
+        "${ seconds } n tasint",
+        "${ seconds } n tsinin"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } n usrag",
+        "${ hours } n yisragen"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 srg",
+        "${ hoursInt }.5 srg"
+      ],
+      "${ minutes } min": [
+        "${ minutes } tsd",
+        "${ minutes } tsdn"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } n usrag",
+        "${ hours } n yisragen"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 usrag",
+        "${ hoursInt }.5 yisragen"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } n tesdat",
+        "${ minutes } n tesdatin"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Nadi timnaḍin tisraganin"
@@ -11118,6 +11032,10 @@
       ],
       "Continue with partial import?": [
         "Kemmel d uktar abruyan?"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Rnu ${ selectedUserIds.length } useqdac",
+        "Rnu ${ selectedUserIds.length } yiseqdacen"
       ],
       "Create a new Gateway": [
         "Rnu tanezgert tamaynut"
@@ -11347,6 +11265,10 @@
       "External PGP settings": [
         "Iɣewwaren PGP izɣarayen"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Tecceḍ tmerna ${ failedUsers.length } n umiḍan n useqdac.",
+        "Tecceḍ tmerna ${ failedUsers.length } n umiḍan n useqdac."
+      ],
       "Filters": [
         "Imsizedgen"
       ],
@@ -11418,6 +11340,10 @@
       ],
       "Import and export": [
         "Kter & sifeḍ"
+      ],
+      "Import as simple event?": [
+        "Kter tedyant war talqayt?",
+        "Kter tidyanin war talqayt?"
       ],
       "Import contacts": [
         "Kter inermisen"
@@ -12050,7 +11976,7 @@
         "Zmel s wudem awurman akk iznan-inek·inem itteffɣen i wakken iseqdacen-inek·inem ad izmiren ad selknen asesteb n yiznan-inek·inem. Ayagi yettili-d s usdukkel n yiɣewwaren PGP imezwer ara izemren ad ttusewlen ukessar-a."
       ]
     },
-    "Tooltip; share calendar modal": {
+    "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "Beṭṭu iwgelhen si ṭṭerf ɣer ṭṭerf"
       ]
@@ -12196,6 +12122,12 @@
         "SSO"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Ssit akken ad turareḍ tikkelt-nniḍen tabidyut"
@@ -12218,6 +12150,36 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, d waṭas-nniḍen."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } yibenk",
+        "${ n } yibenkan"
+      ],
+      "${ n } server": [
+        "Aqeddac ${ n }",
+        "Ugar n ${ n } yiqeddacen"
+      ],
+      "${ n } VPN connection": [
+        "${ n } tuqqna VPN",
+        "${ n } n tuqqniwin VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } n tmurt",
+        "${ numberOfCountries } tmura"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
+        "${ numberOfServers } deg ${ numberOfCountries } n tmura"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
+        "${ numberOfServers } deg ${ numberOfCountries } n tmura"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Iqeddacen deg wugar ${ numberOfCountries } tmurt",
+        "Iqeddacen deg wugar n ${ numberOfCountries } tmura"
       ]
     },
     "vpn_2step: billing": {
@@ -12245,6 +12207,14 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
+      "${ n } year": [
+        "${ n } useggas",
+        "${ n } yiseggasen"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Ɛreḍ ${ upsellPlanName }, tqeɛdeḍ neɣ ad terreḍ idrimen-ik"
       ],
@@ -12362,6 +12332,54 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Yal ${ interval } n dduṛt deg ${ multipleDaysString }",
+        "Yal ${ interval } n ledwaṛ deg ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Yal ${ interval } n umalas deg meṛṛa ussan",
+        "Yal ${ interval } ledwaṛ deg meṛṛa ussan"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Yal ${ interval } n dduṛt deg wass n sem",
+        "Yal ${ interval } n ledwaṛ deg wass n sem"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Yal ${ interval } n dduṛt deg wass n warim",
+        "Yal ${ interval } n ledwaṛ deg wass n warim"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n warim, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n warim, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Yal ${ interval } n dduṛt deg wass n sed",
+        "Yal ${ interval } n ledwaṛ deg wass n sed"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Yal ${ interval } n dduṛt deg wass n wacer",
+        "Yal ${ interval } n ledwaṛ deg wussan n acer"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n wacer, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n wacer, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Yal ${ interval } n dduṛt deg wass n wamhad",
+        "Yal ${ interval } n ledwaṛ deg wass n wamhad"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Yal ${ interval } n dduṛt deg wass n waram",
+        "Yal ${ interval } n ledwaṛ deg wass n warim"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n waram, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n waram, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Yal ${ interval } n dduṛt deg wass n wahad",
+        "Yal ${ interval } n ledwaṛ deg wass n wahad"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Yal imalas deg ${ multipleDaysString }"
       ],
@@ -12391,6 +12409,30 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ timesString }",
+        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wussan akk, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wussan akk, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n sem, ${ timesString }",
+        "Yal ${ interval } n ledwar deg wass n sem, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n sed, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n sed, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n umhad, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n umhad, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n wahad, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n wahad, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Yal imalas deg ${ multipleDaysString }, ${ timesString }"
       ],
@@ -12420,6 +12462,42 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wussan akk, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wussan akk, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass sem, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass sem, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n warim, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n warim, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n sed, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n sed, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n wacer, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n wacer, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n umhad, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n umhad, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n waram, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n waram, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n wahad, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n wahad, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Yal imalas deg ${ multipleDaysString }, ${ untilString }"
       ],
@@ -12472,16 +12550,28 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Yal ${ interval } n useggas",
+        "Yal ${ interval } n yiseggasen"
+      ],
       "Yearly": [
         "S useggas"
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Yal ${ interval } n useggas, ${ timesString }",
+        "Yal ${ interval } n yiseggasen, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "S useggas, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Yal ${ interval } n useggas, ${ untilString }",
+        "Yal ${ interval } n yiseggasen, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
       ]

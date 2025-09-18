@@ -4,14 +4,6 @@
     "language": "sl_SI"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } tipka ...",
-        "${ usersTranslation } tipkata ...",
-        "${ usersTranslation } tipkajo ...",
-        "${ usersTranslation } tipka ..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c)"
@@ -496,6 +488,12 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } in ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } tipka ...",
+        "${ usersTranslation } tipkata ...",
+        "${ usersTranslation } tipkajo ...",
+        "${ usersTranslation } tipka ..."
       ],
       "Alpha only experimental feature": [
         "Eksperimentalna funkcija samo za Alfa"
