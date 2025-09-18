@@ -4,1256 +4,6 @@
     "language": "nl_NL"
   },
   "contexts": {
-    "": {
-      "${ addressCount } email address": [
-        "${ addressCount } e-mailadres",
-        "${ addressCount } e-mailadressen"
-      ],
-      "${ admins } admin": [
-        "${ admins } beheerder",
-        "${ admins } beheerders"
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } nieuwe agenda",
-        "${ calendarsToBeCreatedCount } nieuwe agenda's"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } samengevoegde agenda",
-        "${ calendarsToBeMergedCount } samengevoegde agenda's"
-      ],
-      "${ ceilDays } day": [
-        "${ ceilDays } dag",
-        "${ ceilDays } dagen"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } uur",
-        "${ ceilHours } uren"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minuut",
-        "${ ceilMinutes } minuten"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } contact bevat meerdere e-mailadressen.",
-        "${ contactCount } contacten bevatten meerdere e-mailadressen."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Lid",
-        "${ contactEmailsLength } Leden"
-      ],
-      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } gebruiker)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } gebruikers)"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } contactpersoon gevonden",
-        "${ contactsCount } contactpersonen gevonden"
-      ],
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } van de ${ countContacts } contactpersonen geëxporteerd.",
-        "${ contactsExported.length } van de ${ countContacts } contactpersonen geëxporteerd."
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } contact",
-        "${ contactsLength } contacten"
-      ],
-      "${ count } conversation deleted": [
-        "${ count } gesprek verwijderd",
-        "${ count } gesprekken verwijderd"
-      ],
-      "${ count } draft deleted": [
-        "${ count } concept verwijderd",
-        "${ count } concepten verwijderd"
-      ],
-      "${ count } message deleted": [
-        "${ count } bericht verwijderd",
-        "${ count } berichten verwijderd"
-      ],
-      "${ count } time": [
-        "${ count } keer",
-        "${ count } keren"
-      ],
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } contact ziet er identiek uit.",
-        "${ countMergeableContacts } contacten zien er identiek uit."
-      ],
-      "${ currentProgress } out of ${ totalProgress }": [
-        "${ currentProgress } van ${ totalProgress }",
-        "${ currentProgress } van ${ totalProgress }"
-      ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag over",
-        "${ dayDiff } dagen over"
-      ],
-      "${ days } day": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ domains } additional custom domain": [
-        "${ domains } extra aangepast domein",
-        "${ domains } extra aangepaste domeinen"
-      ],
-      "${ elementsCount } conversation added to ${ labelName }.": [
-        "${ elementsCount } conversatie toegevoegd aan ${ labelName }.",
-        "${ elementsCount } conversaties toegevoegd aan ${ labelName }."
-      ],
-      "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } gesprek gemarkeerd als gelezen.",
-        "${ elementsCount } gesprekken gemarkeerd als gelezen."
-      ],
-      "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } gesprek gemarkeerd met ster.",
-        "${ elementsCount } gesprekken gemarkeerd met ster."
-      ],
-      "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } gesprek gemarkeerd als ongelezen.",
-        "${ elementsCount } gesprekken gemarkeerd als ongelezen."
-      ],
-      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } conversatie verplaatst naar ${ labelName } en afzender toegevoegd aan uw niet-Spamlijst.",
-        "${ elementsCount } conversaties verplaatst naar ${ labelName } en afzenders toegevoegd aan uw niet-Spamlijst."
-      ],
-      "${ elementsCount } conversation moved to ${ labelName }.": [
-        "${ elementsCount } gesprek verplaatst naar ${ labelName }.",
-        "${ elementsCount } gesprekken verplaatst naar ${ labelName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } gesprek is verplaatst naar spam en afzender toegevoegd aan de spamlijst.",
-        "${ elementsCount } gesprekken zijn verplaatst naar spam en afzenders toegevoegd aan uw spamlijst."
-      ],
-      "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } gesprek verwijderd van ${ labelName }.",
-        "${ elementsCount } gesprekken verwijderd van ${ labelName }."
-      ],
-      "${ elementsCount } conversation removed from Starred.": [
-        "${ elementsCount } gesprek verwijderd van de met ster gemarkeerd.",
-        "${ elementsCount } gesprekken verwijderd van de met ster gemarkeerd."
-      ],
-      "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } gesprek gesnoozed",
-        "${ elementsCount } gesprekken gesnoozed"
-      ],
-      "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } gesprek ontsnoozed",
-        "${ elementsCount } gesprekken ontsnoozed"
-      ],
-      "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount } gesprek wordt gelabeld als:",
-        "${ elementsCount } gesprekken wordt gelabeld als:"
-      ],
-      "${ elementsCount } conversation will be marked as read.": [
-        "${ elementsCount } gesprek wordt gemarkeerd als gelezen.",
-        "${ elementsCount } gesprekken worden als gelezen gemarkeerd."
-      ],
-      "${ elementsCount } conversation will be marked as unread.": [
-        "${ elementsCount } gesprek wordt gemarkeerd als ongelezen.",
-        "${ elementsCount } gesprekken worden als ongelezen gemarkeerd."
-      ],
-      "${ elementsCount } conversation will be moved": [
-        "${ elementsCount }gesprek wordt verplaatst",
-        "${ elementsCount }gesprekken worden verplaatst"
-      ],
-      "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount }gesprek zal niet gelabeld zijn van:",
-        "${ elementsCount }gesprekken zal niet gelabeld zijn van:"
-      ],
-      "${ elementsCount } message added to ${ labelName }.": [
-        "${ elementsCount } bericht toegevoegd aan ${ labelName }.",
-        "${ elementsCount } berichten toegevoegd aan ${ labelName }."
-      ],
-      "${ elementsCount } message marked as read.": [
-        "${ elementsCount } bericht als gelezen gemarkeerd.",
-        "${ elementsCount } berichten gemarkeerd als gelezen."
-      ],
-      "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } bericht gemarkeerd met ster.",
-        "${ elementsCount } berichten gemarkeerd met ster."
-      ],
-      "${ elementsCount } message marked as unread.": [
-        "${ elementsCount } bericht gemarkeerd als ongelezen.",
-        "${ elementsCount } berichten gemarkeerd als ongelezen."
-      ],
-      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } bericht verplaatst naar ${ labelName } en afzender toegevoegd aan uw niet-Spamlijst.",
-        "${ elementsCount } berichten verplaatst naar ${ labelName } en afzenders toegevoegd aan uw niet-Spamlijst."
-      ],
-      "${ elementsCount } message moved to ${ labelName }.": [
-        "${ elementsCount } bericht is verplaatst naar ${ labelName }.",
-        "${ elementsCount } berichten zijn verplaatst naar ${ labelName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } bericht is verplaatst naar spam en afzender werd toegevoegd aan de spamlijst.",
-        "${ elementsCount } berichten zijn verplaatst naar spam en afzenders zijn toegevoegd aan uw spamlijst."
-      ],
-      "${ elementsCount } message removed from ${ labelName }.": [
-        "${ elementsCount } bericht verwijderd van ${ labelName }.",
-        "${ elementsCount } berichten verwijderd van ${ labelName }."
-      ],
-      "${ elementsCount } message removed from Starred.": [
-        "${ elementsCount } bericht verwijderd van de met ster gemarkeerd.",
-        "${ elementsCount } berichten verwijderd van de met ster gemarkeerd."
-      ],
-      "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount } berichten worden gelabeld als:",
-        "${ elementsCount } berichten worden gelabeld als:"
-      ],
-      "${ elementsCount } message will be marked as read.": [
-        "${ elementsCount } bericht wordt gemarkeerd als gelezen.",
-        "${ elementsCount } berichten worden als gelezen gemarkeerd"
-      ],
-      "${ elementsCount } message will be marked as unread.": [
-        "${ elementsCount } bericht wordt als gelezen gemarkeerd.",
-        "${ elementsCount } berichten worden gemarkeerd als gelezen."
-      ],
-      "${ elementsCount } message will be moved": [
-        "${ elementsCount } bericht wordt verplaatst",
-        "${ elementsCount }berichten worden verplaatst"
-      ],
-      "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount } bericht wordt ongelabeld van:",
-        "${ elementsCount } berichten wordt ongelabeld van:"
-      ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } e-mailadres",
-        "${ emailsCount } e-mailadressen"
-      ],
-      "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } ingesloten afbeelding",
-        "${ embeddedAttachmentsCount } ingesloten afbeeldingen"
-      ],
-      "${ filteredList.length } command found.": [
-        "${ filteredList.length } opdracht gevonden.",
-        "${ filteredList.length } opdrachten gevonden."
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } uur",
-        "${ gracePeriodHoursRemaining } uren"
-      ],
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } uur",
-        "${ gracePeriodHoursRemaining } uren"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } groep gevonden",
-        "${ groupCounts } groepen gevonden"
-      ],
-      "${ hours } h": [
-        "${ hours } u",
-        "${ hours } u"
-      ],
-      "${ hours } hour": [
-        "${ hours } uur",
-        "${ hours } uren"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 u",
-        "${ hoursInt },5 u"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 uur",
-        "${ hoursInt },5 uren"
-      ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servers"
-      ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
-        "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } van de ${ totalBeDeleted } contact succesvol verwijderd.",
-        "${ model.deleted.length } van de ${ totalBeDeleted } contactpersonen zijn succesvol verwijderd."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } van de ${ totalBeMerged } contact succesvol samengevoegd.",
-        "${ model.submitted.length } van de ${ totalBeMerged } contacten zijn succesvol samengevoegd."
-      ],
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } e-mailadres",
-        "${ n } ${ BRAND_NAME } e-mailadressen"
-      ],
-      "${ n } account per wallet": [
-        "${ n } account per portemonnee",
-        "${ n } accounts per portemonnee"
-      ],
-      "${ n } calendar": [
-        "${ n } agenda",
-        "${ n } agenda's"
-      ],
-      "${ n } calendar per user": [
-        "${ n } agenda per gebruiker",
-        "${ n } agenda's per gebruiker"
-      ],
-      "${ n } custom email domain": [
-        "${ n } aangepast e-maildomein",
-        "${ n } aangepaste e-maildomeinen"
-      ],
-      "${ n } device": [
-        "${ n } apparaat",
-        "${ n } apparaten"
-      ],
-      "${ n } email address": [
-        "${ n } e-mailadres",
-        "${ n } e-mailadressen/aliassen"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-mailadres per gebruiker",
-        "${ n } e-mailadressen per gebruiker"
-      ],
-      "${ n } filter": [
-        "${ n } filter",
-        "${ n } filters"
-      ],
-      "${ n } folder": [
-        "${ n } map",
-        "${ n } mappen"
-      ],
-      "${ n } folder and label": [
-        "${ n } map en label",
-        "${ n } mappen en labels"
-      ],
-      "${ n } free VPN connection per user": [
-        "${ n } gratis VPN-verbinding per gebruiker",
-        "${ n } gratis VPN-verbindingen per gebruiker"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email-alias",
-        "${ n } hide-my-email-aliassen"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } supersnelle VPN-verbinding",
-        "${ n } supersnelle VPN-verbindingen"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } supersnelle VPN-verbinding per gebruiker",
-        "${ n } supersnelle VPN-verbindingen per gebruiker"
-      ],
-      "${ n } label": [
-        "${ n } label",
-        "${ n } labels"
-      ],
-      "${ n } message per day": [
-        "${ n } bericht per dag",
-        "${ n } berichten per dag"
-      ],
-      "${ n } month": [
-        "${ n } maand",
-        "${ n } maanden"
-      ],
-      "${ n } month FREE": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
-      ],
-      "${ n } server": [
-        "${ n } server",
-        "${ n }+ servers"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
-        "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
-      ],
-      "${ n } unread conversation": [
-        "${ n } ongelezen gesprek",
-        "${ n } ongelezen gesprekken"
-      ],
-      "${ n } user account": [
-        "${ n } gebruikersaccount",
-        "${ n } gebruikersaccounts"
-      ],
-      "${ n } vault": [
-        "${ n } kluis",
-        "${ n } kluizen"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-verbinding",
-        "${ n } VPN-verbindingen"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-verbinding per gebruiker",
-        "${ n } VPN-verbindingen per gebruiker"
-      ],
-      "${ n } wallet": [
-        "${ n } portemonnee",
-        "${ n } portemonnees"
-      ],
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } nieuw bericht",
-        "${ notificationsToShow.length } nieuwe berichten"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } land",
-        "${ numberOfCountries } landen"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } in ${ numberOfCountries } land",
-        "${ numberOfServers } in ${ numberOfCountries }+ landen"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } in ${ numberOfCountries } land",
-        "${ numberOfServers } in ${ numberOfCountries } landen"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } gebruikers",
-        "Tot ${ numberOfUsers } gebruikers"
-      ],
-      "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } link opgeruimd",
-        "${ numberOfUTMTrackers } links opgeruimd"
-      ],
-      "${ numMessages } message": [
-        "${ numMessages } bericht",
-        "${ numMessages } berichten"
-      ],
-      "${ NumMessages } message in conversation": [
-        "${ NumMessages } bericht in het gesprek",
-        "${ NumMessages } berichten in het gesprek"
-      ],
-      "${ numOccurrences } occurrence found": [
-        "${ numOccurrences } voorval gevonden",
-        "${ numOccurrences } voorvallen gevonden"
-      ],
-      "${ numOccurrences } occurrence found in the mail content": [
-        "${ numOccurrences } voorval gevonden in de inhoud van de mail",
-        "${ numOccurrences } voorvallen gevonden in de inhoud van de mail"
-      ],
-      "${ options }-day file version history": [
-        "Bestandsversiegeschiedenis van ${ options } dag",
-        "Bestandsversiegeschiedenis van ${ options } dag"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
-        "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
-      ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } vervalt binnen ${ daysLeft } dag.",
-        "${ planName } vervalt binnen ${ daysLeft } dagen."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } agenda per gebruiker",
-        "${ planNumberOfCalendars } agenda's per gebruiker"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } eigen e-maildomein",
-        "${ planNumberOfDomains } eigen e-maildomeinen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-mailadres",
-        "${ planNumberOfEmails } e-mailadressen"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } e-mailadres per gebruiker",
-        "${ planNumberOfEmails } e-mailadressen per gebruiker"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } gebruiker",
-        "${ planNumberOfUsers } gebruikers"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } map gevonden",
-        "${ providerFoldersNumLocalized } mappen gevonden"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } label gevonden in Gmail",
-        "${ providerFoldersNumLocalized } labels gevonden in Gmail"
-      ],
-      "${ pureAttachmentsCount } file attached": [
-        "${ pureAttachmentsCount } bestand bijgevoegd",
-        "${ pureAttachmentsCount } bestanden bijgevoegd"
-      ],
-      "${ receivedMessagesCount } email last month": [
-        "${ receivedMessagesCount } e-mail afgelopen maand",
-        "${ receivedMessagesCount } e-mails afgelopen maand"
-      ],
-      "${ remainingDays } d": [
-        "${ remainingDays } d",
-        "${ remainingDays } d"
-      ],
-      "${ remainingDaysCount } day": [
-        "${ remainingDaysCount } dag",
-        "${ remainingDaysCount } dagen"
-      ],
-      "${ remainingDaysCount } day left": [
-        "${ remainingDaysCount } dag over",
-        "${ remainingDaysCount } dagen over"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } zitplaats",
-        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } plaats voor schrijfassistent",
-        "${ seats } plaatsen voor schrijfassistent"
-      ],
-      "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } seconden"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
-        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } contact geselecteerd",
-        "${ selectedContactsLength }/${ contactsLength } contacten geselecteerd"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } map geselecteerd",
-        "${ selectedFoldersCount } mappen geselecteerd"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } label geselecteerd",
-        "${ selectedFoldersCount } labels geselecteerd"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } map geselecteerd",
-        "${ selectedFoldersCountLocalized } mappen geselecteerd"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } label geselecteerd",
-        "${ selectedFoldersCountLocalized } labels geselecteerd"
-      ],
-      "${ subscription.UnreadMessageCount } unread": [
-        "${ subscription.UnreadMessageCount } ongelezen",
-        "${ subscription.UnreadMessageCount } ongelezen"
-      ],
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } dag",
-        "${ timeRemaining.inDays } dagen"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } uur",
-        "${ timeRemaining.inHours } uren"
-      ],
-      "${ total } conversation": [
-        "${ total } gesprek",
-        "${ total } gesprekken"
-      ],
-      "${ total } message": [
-        "${ total } bericht",
-        "${ total } berichten"
-      ],
-      "${ totalAttendees } participant": [
-        "${ totalAttendees } deelnemer",
-        "${ totalAttendees } deelnemers"
-      ],
-      "${ totalContacts } contact": [
-        "${ totalContacts } contactpersoon",
-        "${ totalContacts } contactpersonen"
-      ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } van de ${ totalEvents } afspraak wordt niet geïmporteerd. Uitvouwen voor details.",
-        "${ totalEventsDiscarded } van de ${ totalEvents } afspraken worden niet geïmporteerd. Uitvouwen voor details."
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contact versleuteld en toegevoegd aan uw contactenlijst",
-        "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
-      ],
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/ 1 afspraak versleuteld en toegevoegd aan uw agenda",
-        "${ totalImported }/${ totalToImport } afspraken versleuteld en toegevoegd aan uw agenda"
-      ],
-      "${ trackersCount } email tracker blocked": [
-        "${ trackersCount } e-mail tracker geblokkeerd",
-        "${ trackersCount } e-mail trackers geblokkeerd"
-      ],
-      "${ trackersCount } tracker blocked": [
-        "${ trackersCount } trackers geblokkeerd",
-        "${ trackersCount } trackers geblokkeerd"
-      ],
-      "${ unreadCount } newsletter": [
-        "${ unreadCount } nieuwsbrief",
-        "${ unreadCount } nieuwsbrieven"
-      ],
-      "${ unreadCount } scheduled message": [
-        "${ unreadCount } ingepland bericht",
-        "${ unreadCount } ingeplande berichten"
-      ],
-      "${ unreads } unread message": [
-        "${ unreads } ongelezen bericht",
-        "${ unreads } ongelezen berichten"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } contact bijgewerkt.",
-        "${ updated } contacten bijgewerkt."
-      ],
-      "${ users } user": [
-        "${ users } gebruiker",
-        "${ users } gebruikers"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } lid)",
-        "(${ memberCount } leden)"
-      ],
-      "**${ total }** result found in ${ labelName }": [
-        "**${ total }** resultaat gevonden in ${ labelName }",
-        "**${ total }** resultaten gevonden in ${ labelName }"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
-        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
-      ],
-      "Add to ${ groupCount } group": [
-        "Toevoegen aan ${ groupCount } groep",
-        "Toevoegen aan ${ groupCount } groepen"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Alles (${ totalFoldersCount } map)",
-        "Alle (${ totalFoldersCount } mappen)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Alle (${ totalFoldersCount } label)",
-        "Alle (${ totalFoldersCount } labels)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
-        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }",
-        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
-        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
-        "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
-      ],
-      "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Weet u zeker dat u ${ count } gesprek permanent wilt verwijderen?",
-        "Weet u zeker dat u ${ count } gesprekken permanent wilt verwijderen?"
-      ],
-      "Are you sure you want to permanently delete ${ count } draft?": [
-        "Weet u zeker dat u ${ count } concept definitief wilt verwijderen?",
-        "Weet u zeker dat u ${ count } concepten permanent wilt verwijderen?"
-      ],
-      "Are you sure you want to permanently delete ${ count } message?": [
-        "Weet u zeker dat u ${ count } bericht definitief wilt verwijderen?",
-        "Weet u zeker dat u ${ count } berichten definitief wilt verwijderen?"
-      ],
-      "At most ${ maxAttendees } participant is allowed per invitation": [
-        "Maximaal ${ maxAttendees } deelnemer toegelaten per uitnodiging",
-        "Maximaal ${ maxAttendees } deelnemers toegelaten per uitnodiging"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
-        "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Selecteert automatisch uit ${ numberOfCountries } land",
-        "Selecteert automatisch uit ${ numberOfCountries } landen"
-      ],
-      "byte": [
-        "byte",
-        "bytes"
-      ],
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Choose a date within the next ${ n } day.": [
-        "Kies een datum binnen de volgende ${ n } dag.",
-        "Kies een datum binnen de volgende ${ n } dagen."
-      ],
-      "Contact deleted": [
-        "Contactpersoon verwijderd",
-        "Contactpersonen verwijderd"
-      ],
-      "Contact group deleted": [
-        "Contactgroep verwijderd",
-        "Contactgroepen verwijderd"
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
-        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Maak een beveiligde cloud voor ${ value } lid",
-        "Maak een beveiligde cloud voor ${ value } leden"
-      ],
-      "Create up to ${ n } calendar": [
-        "Maak tot ${ n } agenda",
-        "Maak tot ${ n } agenda's"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
-        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
-      ],
-      "Delete ${ count } contact": [
-        "Verwijder ${ count } contact",
-        "${ count } contacten verwijderen"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } contactgroep verwijderen",
-        "${ count } contactgroepen verwijderen"
-      ],
-      "Delete ${ count } conversation": [
-        "${ count } conversatie verwijderen",
-        "${ count } conversaties verwijderen"
-      ],
-      "Delete ${ count } draft": [
-        "Verwijder ${ count } concept",
-        "${ count } concepten verwijderen"
-      ],
-      "Delete ${ count } message": [
-        "${ count } bericht verwijderen",
-        "Verwijder ${ count } berichten"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Verwijder ${ selectedCount } contact",
-        "Verwijder ${ selectedCount } contacten"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "${ selectedCount } contactgroep verwijderen",
-        "${ selectedCount } contactgroepen verwijderen"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Deselecteer tenminste ${ calendarsToFixCount } agenda",
-        "Deselecteer tenminste ${ calendarsToFixCount } agenda's"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
-        "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
-      ],
-      "Do you want to download this attachment anyway?": [
-        "Wilt u deze bijlage toch downloaden?",
-        "Wilt u deze bijlagen toch downloaden?"
-      ],
-      "Do you want to trust the primary public key with the following fingerprint?": [
-        "Wilt u de openbare sleutel met de volgende vingerafdruk vertrouwen?",
-        "Wilt u de openbare sleutels met de volgende vingerafdrukken vertrouwen?"
-      ],
-      "embedded image": [
-        "ingesloten afbeelding",
-        "ingesloten afbeeldingen"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
-        "Geschatte resterende tijd: ${ estimatedMinutes } minuten"
-      ],
-      "Event starts in ${ minutesUntilEvent } minute": [
-        "Afspraak begint over ${ minutesUntilEvent } minuut",
-        "Afspraak begint over ${ minutesUntilEvent } minuten"
-      ],
-      "Every ${ interval } day": [
-        "Elke ${ interval } dag",
-        "Elke ${ interval } dagen"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Elke ${ interval } dag, ${ timesString }",
-        "Elke ${ interval } dagen, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Elke ${ interval } dag, ${ untilString }",
-        "Elke ${ interval } dagen, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Elke ${ interval } maand ${ onDayString }",
-        "Elke ${ interval } maanden ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Elke ${ interval } maand ${ onDayString }, ${ timesString }",
-        "Elke ${ interval } maanden ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Elke ${ interval } maand ${ onDayString }, ${ untilString }",
-        "Elke ${ interval } maanden ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Elke week op ${ multipleDaysString }",
-        "Elke ${ interval } weken op ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Elke ${ interval } week op ${ multipleDaysString }, ${ timesString }",
-        "Elke ${ interval } weken op ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Elke ${ interval } week op ${ multipleDaysString }, ${ untilString }",
-        "Elke ${ interval } weken op ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Elke ${ interval } op alle dagen",
-        "Elke ${ interval } weken op alle dagen"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Elk ${ interval } week op alle dagen, ${ timesString }",
-        "Elke ${ interval } weken op alle dagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Elke ${ interval } week op alle dagen, ${ untilString }",
-        "Elke ${ interval } weken op alle dagen, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Elke week op vrijdag",
-        "Elke ${ interval } weken op vrijdag"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Elke ${ interval } week op vrijdag, ${ timesString }",
-        "Elke ${ interval } weken op vrijdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Elke ${ interval } week op vrijdag, ${ untilString }",
-        "Elke ${ interval } week op vrijdag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Elke ${ interval } op maandag",
-        "Elke ${ interval } weken op maandag"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Elke ${ interval } week op maandag, ${ timesString }",
-        "Elke ${ interval } weken op maandag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Elke ${ interval } week op maandag, ${ untilString }",
-        "Elke ${ interval } weken op maandag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Elke week op zaterdag",
-        "Elke ${ interval } weken op zaterdag"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Elke ${ interval } week op zaterdag, ${ timesString }",
-        "Elke ${ interval } weken op zaterdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Elke ${ interval } week op zaterdag, ${ untilString }",
-        "Elke ${ interval } weken op zaterdag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Elke ${ interval } op zondag",
-        "Elke ${ interval } weken op zondag"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Elke week op zondag, ${ timesString }",
-        "Elke ${ interval } weken op zondag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Elke ${ interval } week op zondag, ${ untilString }",
-        "Elke ${ interval } weken op zondag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Elke ${ interval } op donderdag",
-        "Elke ${ interval } weken op donderdag"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Elke ${ interval } week op donderdag, ${ timesString }",
-        "Elke ${ interval } weken op donderdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Elke ${ interval } week op donderdag, ${ untilString }",
-        "Elke ${ interval } weken op donderdag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Elke ${ interval } op dinsdag",
-        "Elke ${ interval } weken op dinsdag"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Elke ${ interval } week op dinsdag, ${ timesString }",
-        "Elke ${ interval } weken op dinsdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Elke ${ interval } week op dinsdag, ${ untilString }",
-        "Elke ${ interval } weken op dinsdag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Elke ${ interval } op woensdag",
-        "Elke ${ interval } weken op woensdag"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Elke ${ interval } week op woensdag, ${ timesString }",
-        "Elke ${ interval } weken op woensdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Elke ${ interval } week op woensdag, ${ untilString }",
-        "Elke ${ interval } week op woensdag, ${ untilString }"
-      ],
-      "Every ${ interval } year": [
-        "Elk jaar",
-        "Elke ${ interval } jaar"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Elk ${ interval } jaar, ${ timesString }",
-        "Elke ${ interval } jaar, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Elk ${ interval } jaar, ${ untilString }",
-        "Elke ${ interval } jaar, ${ untilString }"
-      ],
-      "Expires in ${ minutesDiff } minute": [
-        "Verloopt over ${ minutesDiff } minuut",
-        "Verloopt over ${ minutesDiff } minuten"
-      ],
-      "Expires in less than ${ hoursDiff } hour": [
-        "Verloopt over minder dan ${ hoursDiff } uur",
-        "Verloopt over minder dan ${ hoursDiff } uur"
-      ],
-      "file attached": [
-        "bestandsbijlage",
-        "bestandsbijlagen"
-      ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
-        "${ itemsCount } suggesties gevonden, gebruik het toetsenbord om te navigeren."
-      ],
-      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
-        "Gratis te proberen voor ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
-        "Gratis te proberen voor ${ ASSISTANT_TRIAL_TIME_DAYS } dagen"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
-        "Heeft ${ numAttachments } bijlage (${ numAttachmentsSize })",
-        "Heeft ${ numAttachments } bijlagen (${ numAttachmentsSize })"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "High-speed VPN op ${ n } apparaat",
-        "High-speed VPN op ${ n } apparaten"
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
-        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
-      ],
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
-        "Alle berichten uit ${ itemsToImportCount } mappen importeren en labelen als"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
-        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als",
-        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
-        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
-      ],
-      "Import as simple event?": [
-        "Importeren als eenvoudige afspraak?",
-        "Importeren als eenvoudige afspraken?"
-      ],
-      "Insert ${ totalChecked } contact": [
-        "${ totalChecked } contact invoegen",
-        "${ totalChecked } contacten invoegen"
-      ],
-      "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "Megabyt",
-        "Megabytes"
-      ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
-        "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
-      ],
-      "Move ${ selectionCount } conversation": [
-        "Verplaats ${ selectionCount } gesprek",
-        "Verplaats ${ selectionCount } gesprekken"
-      ],
-      "Move ${ selectionCount } message": [
-        "Verplaats ${ selectionCount } bericht",
-        "Verplaats ${ selectionCount } berichten"
-      ],
-      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Nieuwe e-mails van ${ senderEmailAddress } en ${ otherSendersCount } andere worden niet meer afgeleverd en zullen permanent verwijderd worden.",
-        "Nieuwe e-mails van ${ senderEmailAddress } en ${ otherSendersCount } andere worden niet meer afgeleverd en zullen permanent verwijderd worden."
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Een van de contacten heeft geen e-mailadres: ${ noEmailsContactNamesList }",
-        "Sommige contactpersonen hebben geen e-mailadres: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
-        "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
-        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uur.",
-        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uren."
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Los het gemarkeerde conflict op om verder te gaan.",
-        "Los de gemarkeerde conflicten op om verder te gaan."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Selecteer welk e-mailadres u wilt toevoegen aan ${ groupCount } groep.",
-        "Selecteer welke e-mailadressen u wilt toevoegen aan ${ groupCount } groepen."
-      ],
-      "Recategorized ${ elementsCount } message.": [
-        "Gecategoriseerd ${ elementsCount } bericht.",
-        "Opnieuw Gecategoriseerde ${ elementsCount } berichten."
-      ],
-      "Removed duplicate recipient: ${ recipents }": [
-        "Dubbele ontvanger verwijderd: ${ recipents }",
-        "Dubbele ontvangers verwijderd: ${ recipents }"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
-        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
-      ],
-      "Select all ${ elementsCount } in ${ location }": [
-        "Selecteer alle ${ elementsCount } in ${ location }",
-        "Selecteer alle ${ elementsCount } in ${ location }"
-      ],
-      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Verzonden door ${ MAIL_APP_NAME } met zero-access-versleuteling aan gecontroleerde ontvanger",
-        "Verzonden door ${ MAIL_APP_NAME } met zero-access-versleuteling aan gecontroleerde ontvangers"
-      ],
-      "Sent by you with end-to-end encryption to verified recipient": [
-        "Door u verzonden met zero-access-versleuteling aan gecontroleerde ontvanger",
-        "Door u verzonden met zero-access-versleuteling aan gecontroleerde ontvangers"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Servers in ${ numberOfCountries }+ land",
-        "Servers in ${ numberOfCountries }+ landen"
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Abonnement vernieuwt automatisch elke ${ cycle } maand.",
-        "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
-      ],
-      "Support for ${ n } custom email domain": [
-        "Ondersteuning voor ${ n } aangepast e-maildomein",
-        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
-      ],
-      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "De bijlage kon niet worden ontsleuteld.\nAls u de bijbehorende private sleutel heeft, kunt u nog steeds\nhet bestand decoderen met een programma zoals GnuPG.",
-        "Sommige bijlagen konden niet worden gedecodeerd.\nAls u de bijbehorende privé sleutel heeft, kunt u nog steeds\nde bestanden decoderen met een programma zoals GnuPG."
-      ],
-      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Verificatie van de bijlage is mislukt.\nU kunt deze bijlage nog steeds downloaden, maar het kan zijn veranderd.",
-        "Sommige handtekeningen van de bijlagen zijn niet geverifieerd.\nU kunt deze bijlagen nog steeds downloaden, maar ze kunnen eventueel zijn gewijzigd."
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
-        "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
-      ],
-      "The following address is not valid: ${ invalidAddresses }": [
-        "Het volgende adres is niet geldig: ${ invalidAddresses }",
-        "De volgende adressen zijn ongeldig: ${ invalidAddresses }"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
-        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
-      ],
-      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Het controleren van ${ contactNames } is mislukt: de gegevens van deze contactpersoon zijn niet juist ondertekend.\nDit kan het gevolg zijn van het resetten van uw wachtwoord.\nU moet deze contactpersoon opnieuw ondertekenen of bewerken om berichten te versturen aan ${ contactAddresses }.",
-        "Het controleren van ${ contactNames } is mislukt: de gegevens van deze contactpersonen zijn niet juist ondertekend.\nDit kan het gevolg zijn van het resetten van uw wachtwoord.\nU moet deze contactpersonen opnieuw ondertekenen of bewerken om berichten te versturen aan ${ contactAddresses }."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
-        "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
-      ],
-      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Dit gesprek wordt gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?",
-        "Deze gesprekken worden gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?"
-      ],
-      "This file contains an event invitation:": [
-        "Dit bestand bevat een uitnodiging voor een afspraak:",
-        "Dit bestand bevat uitnodigingen voor afspraken:"
-      ],
-      "This file contains an invitation response:": [
-        "Dit bestand bevat een antwoord op een uitnodiging:",
-        "Dit bestand bevat antwoorden op uitnodigingen:"
-      ],
-      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Dit bericht wordt gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?",
-        "Deze berichten worden gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?"
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dag",
-        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dagen"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
-        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
-      ],
-      "Total for ${ n } month": [
-        "Totaal voor ${ n } maand",
-        "Totaal voor ${ n } maanden"
-      ],
-      "Trust new key?": [
-        "Nieuwe sleutel vertrouwen?",
-        "Nieuwe sleutels vertrouwen?"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
-        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
-      ],
-      "Up to ${ n } user": [
-        "Tot ${ n } gebruiker",
-        "Tot ${ n } gebruikers"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Tot ${ n } gebruiker (${ adminsText }, ${ usersText })",
-        "Tot ${ n } gebruikers (${ adminsText }, ${ usersText })"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Gebruik tot maximaal ${ n } apparaat tegelijk",
-        "Gebruik tot maximaal ${ n } apparaten tegelijk"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "Kluis delen (tot ${ n } persoon)",
-        "Kluis delen (tot ${ n } personen)"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "VPN verbinding voor ${ n } apparaat per gebruiker",
-        "VPN verbinding voor ${ n } apparaten per gebruiker"
-      ],
-      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar het e-mailadres dat is ingevoerd vanwege de volgende redenen:",
-        "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar de e-mailadressen die zijn ingevoerd vanwege de volgende redenen:"
-      ],
-      "We have detected some warnings. The following email address may not receive emails:": [
-        "We hebben enkele waarschuwingen gedetecteerd. Het volgende e-mailadres ontvangt mogelijk geen e-mails:",
-        "We hebben enkele waarschuwingen gedetecteerd. De volgende e-mailadressen ontvangen mogelijk geen e-mails:"
-      ],
-      "We protected you from ${ trackersCount } tracker": [
-        "We beschermden u van ${ trackersCount } tracker",
-        "We beschermden u van ${ trackersCount } trackers"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
-      ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
-        "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden",
-        "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
-      ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "U kunt niet meer dan ${ maxActiveComposer } opstelvenster tegelijk openen",
-        "U kunt niet meer dan ${ maxActiveComposer } opstelvensters tegelijk openen"
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
-        "U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
-        " U heeft ${ timeRemaining.inHours } uren om uw wachtwoord te resetten."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "U heeft ${ timeRemaining.inMinutes } minuut om uw wachtwoord te resetten.",
-        " U heeft ${ timeRemaining.inMinutes } minuten om uw wachtwoord te resetten."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "U heeft ${ timeRemaining.inSeconds } seconde om uw wachtwoord te resetten.",
-        " U heeft ${ timeRemaining.inSeconds } seconden om uw wachtwoord te resetten."
-      ],
-      "You have **${ count } conversation** stored in this folder": [
-        "U heeft **${ count } gesprek** uit deze map opgeslagen",
-        "U heeft **${ count } gesprekken** uit deze map opgeslagen"
-      ],
-      "You have **${ count } conversation** tagged with this label": [
-        "U heeft **${ count } gesprek** gemarkeerd met dit label",
-        "U heeft **${ count } gesprekken** gemarkeerd met dit label"
-      ],
-      "You have **${ count } message** stored in this folder": [
-        "U heeft **${ count } bericht** uit deze map opgeslagen",
-        "U heeft **${ count } berichten** uit deze map opgeslagen"
-      ],
-      "You have **${ count } message** tagged with this label": [
-        "U heeft **${ count } bericht** gemarkeerd met dit label",
-        "U heeft **${ count } berichten** gemarkeerd met dit label"
-      ],
-      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "U hebt adresverificatie met geverifieerde sleutels ingeschakeld voor dit e-mailadres,\nmaar geen enkele sleutel is gemarkeerd als vertrouwd.\nU moet een sleutel vertrouwen om berichten naar dit e-mailadres te kunnen sturen.",
-        "U hebt adresverificatie met geverifieerde sleutels ingeschakeld voor deze e-mailadressen,\nmaar geen enkele sleutel is gemarkeerd als vertrouwd.\nU moet een sleutel vertrouwen om berichten naar deze e-mailadressen te kunnen sturen."
-      ],
-      "You selected **${ count } conversation** from this folder": [
-        "U heeft **${ count } gesprek** uit deze map geselecteerd",
-        "U heeft **${ count } gesprekken** uit deze map geselecteerd"
-      ],
-      "You selected **${ count } conversation** with this label": [
-        "U heeft **${ count } gesprek** geselecteerd met dit label",
-        "U heeft **${ count } gesprekken** geselecteerd met dit label"
-      ],
-      "You selected **${ count } message** from this folder": [
-        "U heeft **${ count } bericht** uit deze map geselecteerd",
-        "U heeft **${ count } berichten** uit deze map geselecteerd"
-      ],
-      "You selected **${ count } message** with this label": [
-        "U heeft **${ count } bericht** geselecteerd met dit label",
-        "U heeft **${ count } berichten** geselecteerd met dit label"
-      ],
-      "You selected **${ elementsCount } conversation** in ${ location }": [
-        "U selecteerde **${ elementsCount } gesprek **in ${ location }",
-        "U selecteerde **${ elementsCount } gesprekken **in ${ location }"
-      ],
-      "You selected **${ elementsCount } conversation**.": [
-        "U selecteerde **${ elementsCount } gesprek**.",
-        "U selecteerde **${ elementsCount } gesprekken**."
-      ],
-      "You selected **${ elementsCount } message** in ${ location }": [
-        "U selecteerde ** ${ elementsCount }bericht**in${ location }",
-        "U selecteerde **${ elementsCount }berichten**in${ location }"
-      ],
-      "You selected **${ elementsCount } message**.": [
-        "U selecteerde **${ elementsCount } gesprek**.",
-        "U selecteerde **${ elementsCount } gesprekken**."
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
-        "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
-        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraak.",
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraken."
-      ],
-      "Your message will expire in ${ numberOfDays } day.": [
-        "Uw bericht zal verlopen binnen ${ numberOfDays } dag.",
-        "Uw bericht zal verlopen binnen ${ numberOfDays } dagen."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
-        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maanden automatisch vernieuwd."
-      ]
-    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Doorsturen start binnenkort. Nieuwe e-mails verschijnen in uw inbox."
@@ -1390,6 +140,10 @@
       ],
       "As Scheduled": [
         "Zoals gepland"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
+        "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
       ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
@@ -1633,6 +387,14 @@
       ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Verwijder ${ selectedCount } contact",
+        "Verwijder ${ selectedCount } contacten"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } contactgroep verwijderen",
+        "${ selectedCount } contactgroepen verwijderen"
       ],
       "Delete all": [
         "Alles verwijderen"
@@ -1978,6 +740,10 @@
       ],
       "Insert": [
         "Invoegen"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "${ totalChecked } contact invoegen",
+        "${ totalChecked } contacten invoegen"
       ],
       "Insert contact": [
         "Contact invoegen"
@@ -2864,6 +1630,10 @@
       "Yes, I'll attend": [
         "Ja, ik zal deelnemen"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden",
+        "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
+      ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
         "De gratis proefperiode van uw desktop programma loopt over 2 dagen af. ${ upgradeButton }"
       ],
@@ -2922,6 +1692,14 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } extra aangepast domein",
+        "${ domains } extra aangepaste domeinen"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servers"
+      ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
       ],
@@ -2933,6 +1711,18 @@
       ],
       "${ price } per user": [
         "${ price } per gebruiker"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } zitplaats",
+        "${ seats } ${ LUMO_APP_NAME } zitplaatsen"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } plaats voor schrijfassistent",
+        "${ seats } plaatsen voor schrijfassistent"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "Alert": {
@@ -3103,6 +1893,10 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "/ month": [
         "/ maand"
       ],
@@ -3192,6 +1986,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat elke ${ renewCycle } maanden automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nadat de proefperiode eindigt op ${ formattedDate }, wordt het een betaald abonnement dat maandelijks automatisch wordt verlengd op ${ formattedDate }. Er worden geen kosten in rekening gebracht als u vóór ${ formattedDate } opzegt."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_DEDICATED_IPS } dedicated server hebben tijdens de proefperiode."
       ],
@@ -3351,6 +2151,14 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde hide-my-email aliassen, delen, geïntegreerde 2FA, ${ DARK_WEB_MONITORING_NAME } en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer.",
+        "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief ${ addresses } e-mailadres, ondersteuning voor aangepaste e-maildomeinen, onbeperkte hide-my-email aliassen en meer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Beveilig uw e-mails en agenda met end-to-end versleuteling. Inclusief 15 e-mailadressen, ondersteuning voor aangepaste e-maildomeinen, ${ BRAND_NAME } Scribe schrijfassistent, ongelimiteerde hide-my-email aliassen en meer."
@@ -3844,8 +2652,16 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
+      ],
       "Total": [
         "Totaal"
+      ],
+      "Total for ${ n } month": [
+        "Totaal voor ${ n } maand",
+        "Totaal voor ${ n } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -5134,8 +3950,16 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } keer",
+        "${ count } keren"
+      ],
       "Daily": [
         "Dagelijks"
+      ],
+      "Every ${ interval } day": [
+        "Elke ${ interval } dag",
+        "Elke ${ interval } dagen"
       ],
       "until ${ dateString }": [
         "tot ${ dateString }"
@@ -5144,11 +3968,19 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Dagelijks, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Elke ${ interval } dag, ${ timesString }",
+        "Elke ${ interval } dagen, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Dagelijks, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Elke ${ interval } dag, ${ untilString }",
+        "Elke ${ interval } dagen, ${ untilString }"
       ]
     },
     "Date label": {
@@ -5278,6 +4110,10 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen samenvoegen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Nieuwe e-mails van ${ senderEmailAddress } en ${ otherSendersCount } andere worden niet meer afgeleverd en zullen permanent verwijderd worden.",
+        "Nieuwe e-mails van ${ senderEmailAddress } en ${ otherSendersCount } andere worden niet meer afgeleverd en zullen permanent verwijderd worden."
+      ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nieuwe e-mails van ${ senderEmailAddress } worden niet meer afgeleverd en zullen permanent verwijderd worden."
       ],
@@ -5377,6 +4213,10 @@
       ]
     },
     "Desktop notification body": {
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } nieuw bericht",
+        "${ notificationsToShow.length } nieuwe berichten"
+      ],
       "From: ${ sender } - ${ Subject }": [
         "Van: ${ sender } - ${ Subject }"
       ]
@@ -5545,6 +4385,10 @@
       "Event starting now": [
         "De afspraak begint nu"
       ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Afspraak begint over ${ minutesUntilEvent } minuut",
+        "Afspraak begint over ${ minutesUntilEvent } minuten"
+      ],
       "Event starts tomorrow": [
         "De afspraak begint morgen"
       ]
@@ -5678,6 +4522,10 @@
       "Choose a date in the future.": [
         "Kies een datum in de toekomst."
       ],
+      "Choose a date within the next ${ n } day.": [
+        "Kies een datum binnen de volgende ${ n } dag.",
+        "Kies een datum binnen de volgende ${ n } dagen."
+      ],
       "Condition incomplete": [
         "Onvolledig ingevulde voorwaarde"
       ],
@@ -5710,6 +4558,14 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ontsleutelingsfout: decodering van de gecodeerde inhoud van dit bericht is mislukt."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
       ],
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
@@ -5840,6 +4696,10 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maximum aantal bijlagen (${ attachmentsCountLimit }) overschreden"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
+        "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
+      ],
       "Message needs to be sent first": [
         "Bericht moet eerst verzonden worden"
       ],
@@ -5882,6 +4742,14 @@
       "Not a valid number": [
         "Geen geldig getal"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Een van de contacten heeft geen e-mailadres: ${ noEmailsContactNamesList }",
+        "Sommige contactpersonen hebben geen e-mailadres: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
+        "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
+      ],
       "Organization key is not decrypted": [
         "Organisatiesleutel is niet ontsleuteld"
       ],
@@ -5923,6 +4791,10 @@
       ],
       "Please enter ZIP code": [
         "Voer de postcode in."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Los het gemarkeerde conflict op om verder te gaan.",
+        "Los de gemarkeerde conflicten op om verder te gaan."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Bied ofwel een voornaam, een achternaam of een weergavenaam aan"
@@ -5987,6 +4859,10 @@
       "re-activate the previous key": [
         "de vorige sleutel opnieuw activeren"
       ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Dubbele ontvanger verwijderd: ${ recipents }",
+        "Dubbele ontvangers verwijderd: ${ recipents }"
+      ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
@@ -6046,6 +4922,10 @@
       ],
       "The amount due has changed. Please try again.": [
         "Het verschuldigde bedrag is gewijzigd. Probeer het opnieuw."
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "De bijlage kon niet worden ontsleuteld.\nAls u de bijbehorende private sleutel heeft, kunt u nog steeds\nhet bestand decoderen met een programma zoals GnuPG.",
+        "Sommige bijlagen konden niet worden gedecodeerd.\nAls u de bijbehorende privé sleutel heeft, kunt u nog steeds\nde bestanden decoderen met een programma zoals GnuPG."
       ],
       "The email addresses do not match": [
         "De e-mailadressen komen niet overeen"
@@ -6146,6 +5026,14 @@
       "Wrong password": [
         "Fout wachtwoord"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
+        "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "U kunt niet meer dan ${ maxActiveComposer } opstelvenster tegelijk openen",
+        "U kunt niet meer dan ${ maxActiveComposer } opstelvensters tegelijk openen"
+      ],
       "You did not provide a file.": [
         "U heeft geen bestand geselecteerd."
       ],
@@ -6175,6 +5063,12 @@
       ],
       "ZIP code is required": [
         "Postcode is vereist"
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Maximaal ${ maxAttendees } deelnemer toegelaten per uitnodiging",
+        "Maximaal ${ maxAttendees } deelnemers toegelaten per uitnodiging"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -6209,6 +5103,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraak.",
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraken."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
@@ -6604,6 +5502,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -6615,6 +5517,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyt",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter": {
@@ -6826,6 +5750,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } in de Play Store"
       ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dag",
+        "${ remainingDaysCount } dagen"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } dag over",
+        "${ remainingDaysCount } dagen over"
+      ],
       "account logins": [
         "account logins"
       ],
@@ -7028,6 +5960,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
+        "${ itemsCount } suggesties gevonden, gebruik het toetsenbord om te navigeren."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
       ]
@@ -7094,11 +6030,23 @@
       ]
     },
     "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } deelnemer",
+        "${ totalAttendees } deelnemers"
+      ],
       "Organizer:": [
         "Organisator:"
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/ 1 afspraak versleuteld en toegevoegd aan uw agenda",
+        "${ totalImported }/${ totalToImport } afspraken versleuteld en toegevoegd aan uw agenda"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd."
       ],
@@ -7133,11 +6081,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Geïmporteerde uitnodigingen verschijnen in ${ CALENDAR_APP_NAME } als eenvoudige afspraken zonder details over de organisator en deelnemers. Om updates van afspraken te krijgen en deelnemers te zien, vraag je organisatoren om u uit te nodigen met uw ${ BRAND_NAME }-e-mailadres."
       ],
+      "This file contains an event invitation:": [
+        "Dit bestand bevat een uitnodiging voor een afspraak:",
+        "Dit bestand bevat uitnodigingen voor afspraken:"
+      ],
+      "This file contains an invitation response:": [
+        "Dit bestand bevat een antwoord op een uitnodiging:",
+        "Dit bestand bevat antwoorden op uitnodigingen:"
+      ],
       "This file contains some data that we cannot import:": [
         "Dit bestand bevat enkele gegevens die we niet kunnen importeren:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contact versleuteld en toegevoegd aan uw contactenlijst",
+        "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contact. Er kon geen contact worden geïmporteerd."
       ],
@@ -7157,6 +6117,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contact ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } contactpersoon",
+        "${ totalContacts } contactpersonen"
       ]
     },
     "Import contact. Contact identifier": {
@@ -7343,6 +6309,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraak wordt niet geïmporteerd. Uitvouwen voor details.",
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraken worden niet geïmporteerd. Uitvouwen voor details."
+      ],
       "No contact can be imported. Click for details": [
         "Er kan geen contact worden geïmporteerd. Klik voor meer informatie"
       ],
@@ -7354,6 +6324,10 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } e-mailadres",
+        "${ addressCount } e-mailadressen"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
@@ -7384,8 +6358,84 @@
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } vereist een ${ BRAND_NAME } adres voor veilige afspraak synchronisatie en versleuteling. Vraag nu uw gratis ${ MAIL_APP_NAME } adres aan."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nieuwe agenda",
+        "${ calendarsToBeCreatedCount } nieuwe agenda's"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } samengevoegde agenda",
+        "${ calendarsToBeMergedCount } samengevoegde agenda's"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contact bevat meerdere e-mailadressen.",
+        "${ contactCount } contacten bevatten meerdere e-mailadressen."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Lid",
+        "${ contactEmailsLength } Leden"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } gebruiker)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } gebruikers)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } bevat meerdere e-mailadressen."
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } contactpersoon gevonden",
+        "${ contactsCount } contactpersonen gevonden"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contact",
+        "${ contactsLength } contacten"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } van ${ totalProgress }",
+        "${ currentProgress } van ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } gesprek wordt gelabeld als:",
+        "${ elementsCount } gesprekken wordt gelabeld als:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } gesprek wordt gemarkeerd als gelezen.",
+        "${ elementsCount } gesprekken worden als gelezen gemarkeerd."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } gesprek wordt gemarkeerd als ongelezen.",
+        "${ elementsCount } gesprekken worden als ongelezen gemarkeerd."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount }gesprek wordt verplaatst",
+        "${ elementsCount }gesprekken worden verplaatst"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount }gesprek zal niet gelabeld zijn van:",
+        "${ elementsCount }gesprekken zal niet gelabeld zijn van:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } berichten worden gelabeld als:",
+        "${ elementsCount } berichten worden gelabeld als:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } bericht wordt gemarkeerd als gelezen.",
+        "${ elementsCount } berichten worden als gelezen gemarkeerd"
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } bericht wordt als gelezen gemarkeerd.",
+        "${ elementsCount } berichten worden gemarkeerd als gelezen."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } bericht wordt verplaatst",
+        "${ elementsCount }berichten worden verplaatst"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } bericht wordt ongelabeld van:",
+        "${ elementsCount } berichten wordt ongelabeld van:"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } ingesloten afbeelding",
+        "${ embeddedAttachmentsCount } ingesloten afbeeldingen"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: afbeelding op volledige grootte"
@@ -7393,11 +6443,39 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: voorbeeld in lage resolutie"
       ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } groep gevonden",
+        "${ groupCounts } groepen gevonden"
+      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan uw bedrijf ook beschermen."
+      ],
+      "${ messagesNotAuthorizedToMove } message could not be moved.": [
+        "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
+        "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
+      ],
+      "${ n } unread conversation": [
+        "${ n } ongelezen gesprek",
+        "${ n } ongelezen gesprekken"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } link opgeruimd",
+        "${ numberOfUTMTrackers } links opgeruimd"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } bericht in het gesprek",
+        "${ NumMessages } berichten in het gesprek"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } voorval gevonden",
+        "${ numOccurrences } voorvallen gevonden"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } voorval gevonden in de inhoud van de mail",
+        "${ numOccurrences } voorvallen gevonden in de inhoud van de mail"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "Met ${ PASS_APP_NAME } kunt u wachtwoorden en notities en andere gevoelige informatie met end-to-end versleuteling opslaan. Beschikbaar op ${ ios }en ${ android } en in uw ${ browser }."
@@ -7414,17 +6492,89 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } vervalt binnen ${ daysLeft } dag.",
+        "${ planName } vervalt binnen ${ daysLeft } dagen."
+      ],
       "${ planName } expires today.": [
         "${ planName } verloopt vandaag."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beschermt uw account met toegewijde monitoring van verdachte activiteiten."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } map gevonden",
+        "${ providerFoldersNumLocalized } mappen gevonden"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } label gevonden in Gmail",
+        "${ providerFoldersNumLocalized } labels gevonden in Gmail"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } bestand bijgevoegd",
+        "${ pureAttachmentsCount } bestanden bijgevoegd"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } e-mail afgelopen maand",
+        "${ receivedMessagesCount } e-mails afgelopen maand"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contact geselecteerd",
+        "${ selectedContactsLength }/${ contactsLength } contacten geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } map geselecteerd",
+        "${ selectedFoldersCountLocalized } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } label geselecteerd",
+        "${ selectedFoldersCountLocalized } labels geselecteerd"
+      ],
       "${ storage } storage": [
         "${ storage } opslag"
       ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } ongelezen",
+        "${ subscription.UnreadMessageCount } ongelezen"
+      ],
+      "${ total } conversation": [
+        "${ total } gesprek",
+        "${ total } gesprekken"
+      ],
+      "${ total } message": [
+        "${ total } bericht",
+        "${ total } berichten"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-mail tracker geblokkeerd",
+        "${ trackersCount } e-mail trackers geblokkeerd"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } trackers geblokkeerd",
+        "${ trackersCount } trackers geblokkeerd"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } nieuwsbrief",
+        "${ unreadCount } nieuwsbrieven"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } ingepland bericht",
+        "${ unreadCount } ingeplande berichten"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } contact bijgewerkt.",
+        "${ updated } contacten bijgewerkt."
+      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskeert uw IP-adres, zodat websites u niet kunnen identificeren."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } lid)",
+        "(${ memberCount } leden)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/maand)"
@@ -7438,6 +6588,10 @@
       "(No Recipient)": [
         "(Geen Ontvanger)"
       ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** resultaat gevonden in ${ labelName }",
+        "**${ total }** resultaten gevonden in ${ labelName }"
+      ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Automatisch Verbinden**: Opent en verbindt met VPN zodra u uw apparaat aan zet."
       ],
@@ -7446,6 +6600,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
+        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
       "30-day money-back guarantee.": [
         "30-dagen geld terug garantie."
@@ -7510,6 +6668,14 @@
       "Align right": [
         "Rechts uitlijnen"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Alles (${ totalFoldersCount } map)",
+        "Alle (${ totalFoldersCount } mappen)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Alle (${ totalFoldersCount } label)",
+        "Alle (${ totalFoldersCount } labels)"
+      ],
       "All messages from this mailing list will be marked as read.": [
         "Alle berichten van deze mailinglijst worden gemarkeerd als gelezen."
       ],
@@ -7530,6 +6696,10 @@
       ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -7593,6 +6763,18 @@
       ],
       "Are you sure you want to move all messages in this location to trash?": [
         "Weet u zeker dat u alle berichten in deze locatie naar de prullenbak wilt verplaatsen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Weet u zeker dat u ${ count } gesprek permanent wilt verwijderen?",
+        "Weet u zeker dat u ${ count } gesprekken permanent wilt verwijderen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Weet u zeker dat u ${ count } concept definitief wilt verwijderen?",
+        "Weet u zeker dat u ${ count } concepten permanent wilt verwijderen?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Weet u zeker dat u ${ count } bericht definitief wilt verwijderen?",
+        "Weet u zeker dat u ${ count } berichten definitief wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Weet u zeker dat u dit gesprek permanent wilt verwijderen?"
@@ -7732,6 +6914,10 @@
       "Country code": [
         "Landcode"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
+      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Maak een map aan zoals \"${ suggestedFolderName }\" om al uw online ontvangstbevestigingen op één plaats te houden."
       ],
@@ -7743,6 +6929,10 @@
       ],
       "Create a new contact group": [
         "Maak een nieuwe contactengroep"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Maak een beveiligde cloud voor ${ value } lid",
+        "Maak een beveiligde cloud voor ${ value } leden"
       ],
       "Create in": [
         "Maak in"
@@ -7809,6 +6999,10 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Wilt u deze bijlage toch downloaden?",
+        "Wilt u deze bijlagen toch downloaden?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "Wilt u de gegevens van deze contactpersoon opnieuw ondertekenen en tevens de sleutels met onderstaande vingerafdrukken vertrouwen?"
@@ -7921,6 +7115,10 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "Mails getagd met het label ${ nameDeleted } zullen niet verwijderd worden en zijn terug te vinden in hun respectievelijke map."
       ],
+      "embedded image": [
+        "ingesloten afbeelding",
+        "ingesloten afbeeldingen"
+      ],
       "Enabling auto-deletion…": [
         "Activatie automatisch verwijderen"
       ],
@@ -7951,6 +7149,10 @@
       "Enter your own password (as trusted contact).": [
         "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
+        "Geschatte resterende tijd: ${ estimatedMinutes } minuten"
+      ],
       "Estimated time remaining: Less than a minute": [
         "Geschatte resterende tijd: minder dan een minuut"
       ],
@@ -7974,6 +7176,18 @@
       ],
       "Expires in ${ formattedDate }": [
         "Verloopt over ${ formattedDate }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Verloopt over ${ minutesDiff } minuut",
+        "Verloopt over ${ minutesDiff } minuten"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Verloopt over minder dan ${ hoursDiff } uur",
+        "Verloopt over minder dan ${ hoursDiff } uur"
+      ],
+      "file attached": [
+        "bestandsbijlage",
+        "bestandsbijlagen"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
@@ -7999,6 +7213,10 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Probeer voor meer zoekresultaten op dit trefwoord te zoeken in de inhoud van uw e-mailberichten."
       ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Gratis te proberen voor ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
+        "Gratis te proberen voor ${ ASSISTANT_TRIAL_TIME_DAYS } dagen"
+      ],
       "From": [
         "Afzender"
       ],
@@ -8019,6 +7237,10 @@
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regeringen en ISP's kunnen uw online activiteiten controleren. Door uw echte IP te verbergen en uw activiteit te versleutelen, wordt uw internetgedrag privé."
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Heeft ${ numAttachments } bijlage (${ numAttachmentsSize })",
+        "Heeft ${ numAttachments } bijlagen (${ numAttachmentsSize })"
       ],
       "here": [
         "hier"
@@ -8074,6 +7296,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Afbeeldingen werden verwijderd omdat ze niet toegelaten zijn in automatisch antwoord"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
+      ],
       "Import from": [
         "Importeren van"
       ],
@@ -8109,6 +7335,10 @@
       ],
       "Initializing…": [
         "Initialiseren..."
+      ],
+      "Insert image": [
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8467,6 +7697,10 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecteer het soort link dat u wil invoeren en vul alle velden in."
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Selecteer welk e-mailadres u wilt toevoegen aan ${ groupCount } groep.",
+        "Selecteer welke e-mailadressen u wilt toevoegen aan ${ groupCount } groepen."
+      ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
       ],
@@ -8614,6 +7848,10 @@
       "Seems like you are all caught up for now": [
         "Het lijkt erop dat u helemaal bij bent voor nu"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Selecteer alle ${ elementsCount } in ${ location }",
+        "Selecteer alle ${ elementsCount } in ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
       ],
@@ -8737,6 +7975,10 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Dien een storting in via het volgende adres of scan de QR-code. Uw aanbetaling wordt na bevestiging weerspiegeld in uw account."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonnement vernieuwt automatisch elke ${ cycle } maand.",
+        "Abonnement vernieuwt automatisch elke ${ cycle } maanden."
+      ],
       "Subscription auto-renews every month.": [
         "Abonnement vernieuwt automatisch elke maand."
       ],
@@ -8812,6 +8054,10 @@
       "The sender has requested a read receipt.": [
         "De zender heeft om een leesbevestiging gevraagd."
       ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Het controleren van ${ contactNames } is mislukt: de gegevens van deze contactpersoon zijn niet juist ondertekend.\nDit kan het gevolg zijn van het resetten van uw wachtwoord.\nU moet deze contactpersoon opnieuw ondertekenen of bewerken om berichten te versturen aan ${ contactAddresses }.",
+        "Het controleren van ${ contactNames } is mislukt: de gegevens van deze contactpersonen zijn niet juist ondertekend.\nDit kan het gevolg zijn van het resetten van uw wachtwoord.\nU moet deze contactpersonen opnieuw ondertekenen of bewerken om berichten te versturen aan ${ contactAddresses }."
+      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Het verificatieproces zal een nieuw browsertabblad openen. Schakel het blokkeren van alle pop-ups uit."
       ],
@@ -8850,6 +8096,10 @@
       ],
       "This conversation contains trashed messages.": [
         "Dit gesprek bevat berichten die zich in de prullenbak bevinden."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Dit gesprek wordt gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?",
+        "Deze gesprekken worden gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Dit e-mailadres gebruikt foutieve domeininstellingen. Het kan een nepbericht zijn, of het is op de verkeerde manier doorgestuurd."
@@ -8901,6 +8151,10 @@
       ],
       "This message will be automatically deleted on ${ value }": [
         "Dit bericht wordt automatisch verwijderd op ${ value }"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Dit bericht wordt gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?",
+        "Deze berichten worden gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Dit bericht zal worden verplaatst naar Concepten, zodat u het kunt bewerken. U zult opnieuw moeten plannen wanneer het verzonden wordt."
@@ -9271,6 +8525,14 @@
       "You can import one data type at a time.": [
         "U kunt maar één type gegevens tegelijk importeren."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
+      ],
       "You can now return to the application to continue": [
         "U kunt nu teruggaan naar het programma om door te gaan"
       ],
@@ -9291,6 +8553,22 @@
       ],
       "You have ${ unread } in your inbox.": [
         "U heeft ${ unread } in uw inbox."
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "U heeft **${ count } gesprek** uit deze map opgeslagen",
+        "U heeft **${ count } gesprekken** uit deze map opgeslagen"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "U heeft **${ count } gesprek** gemarkeerd met dit label",
+        "U heeft **${ count } gesprekken** gemarkeerd met dit label"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "U heeft **${ count } bericht** uit deze map opgeslagen",
+        "U heeft **${ count } berichten** uit deze map opgeslagen"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "U heeft **${ count } bericht** gemarkeerd met dit label",
+        "U heeft **${ count } berichten** gemarkeerd met dit label"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Je hebt een trial ${ planTitle } abonnement. Als je na de proefperiode door wilt gaan met je abonnement, voeg een betaalmethode toe."
@@ -9313,6 +8591,38 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "U moet alle extra ${ MAIL_APP_NAME }-gebruikers, adressen en aangepaste domeinen uitschakelen of verwijderen voordat u kunt downgraden."
       ],
+      "You selected **${ count } conversation** from this folder": [
+        "U heeft **${ count } gesprek** uit deze map geselecteerd",
+        "U heeft **${ count } gesprekken** uit deze map geselecteerd"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "U heeft **${ count } gesprek** geselecteerd met dit label",
+        "U heeft **${ count } gesprekken** geselecteerd met dit label"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "U heeft **${ count } bericht** uit deze map geselecteerd",
+        "U heeft **${ count } berichten** uit deze map geselecteerd"
+      ],
+      "You selected **${ count } message** with this label": [
+        "U heeft **${ count } bericht** geselecteerd met dit label",
+        "U heeft **${ count } berichten** geselecteerd met dit label"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "U selecteerde **${ elementsCount } gesprek **in ${ location }",
+        "U selecteerde **${ elementsCount } gesprekken **in ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "U selecteerde **${ elementsCount } gesprek**.",
+        "U selecteerde **${ elementsCount } gesprekken**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "U selecteerde ** ${ elementsCount }bericht**in${ location }",
+        "U selecteerde **${ elementsCount }berichten**in${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "U selecteerde **${ elementsCount } gesprek**.",
+        "U selecteerde **${ elementsCount } gesprekken**."
+      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "U verliest toegang tot ${ planTitle } functies op deze datum."
       ],
@@ -9324,6 +8634,10 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "U schreef \"${ attachmentsFoundKeyword }\", maar er is geen bijlage toegevoegd. Wilt u uw bericht toch verzenden?"
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd.",
+        "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "U heeft het maximaal aantal adressen bereikt in de contactgroep(en):"
@@ -9391,6 +8705,10 @@
       "Your login information will not be saved after the import is completed.": [
         "Uw inloginformatie zal niet worden opgeslagen nadat de import is voltooid."
       ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Uw bericht zal verlopen binnen ${ numberOfDays } dag.",
+        "Uw bericht zal verlopen binnen ${ numberOfDays } dagen."
+      ],
       "Your message will expire today.": [
         "Uw bericht zal vandaag verlopen."
       ],
@@ -9418,6 +8736,10 @@
       "Your private writing assistant": [
         "Uw privé schrijfhulp"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maand automatisch vernieuwd.",
+        "Uw gepland abonnement begint op ${ renewalTime } en wordt elke ${ cycle } maanden automatisch vernieuwd."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Uw geplande abonnement begint op ${ renewalTime } en wordt elke maand automatisch vernieuwd."
       ],
@@ -9441,6 +8763,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } opdracht gevonden.",
+        "${ filteredList.length } opdrachten gevonden."
+      ],
       "Optional": [
         "Optioneel"
       ],
@@ -9459,6 +8785,16 @@
     "Info on errors": {
       "Click for details": [
         "Klik voor details"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } map geselecteerd",
+        "${ selectedFoldersCount } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } label geselecteerd",
+        "${ selectedFoldersCount } labels geselecteerd"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -9498,6 +8834,14 @@
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Door op \"Vertrouw sleutel\" te klikken zal er een nieuwe contactpersoon aangemaakt worden en wordt deze openbare sleutel gekoppeld worden. E-mails van dit adres zullen automatisch worden geverifieerd."
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Wilt u de openbare sleutel met de volgende vingerafdruk vertrouwen?",
+        "Wilt u de openbare sleutels met de volgende vingerafdrukken vertrouwen?"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "U hebt adresverificatie met geverifieerde sleutels ingeschakeld voor dit e-mailadres,\nmaar geen enkele sleutel is gemarkeerd als vertrouwd.\nU moet een sleutel vertrouwen om berichten naar dit e-mailadres te kunnen sturen.",
+        "U hebt adresverificatie met geverifieerde sleutels ingeschakeld voor deze e-mailadressen,\nmaar geen enkele sleutel is gemarkeerd als vertrouwd.\nU moet een sleutel vertrouwen om berichten naar deze e-mailadressen te kunnen sturen."
       ]
     },
     "Key validation warning": {
@@ -9704,6 +9048,10 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
+      ],
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
@@ -10410,6 +9758,9 @@
       "Writing assistant": [
         "Schrijfassistent"
       ],
+      "You cannot disable all categories": [
+        "U kunt niet alle categorieën uitschakelen."
+      ],
       "Your alias": [
         "Uw alias"
       ],
@@ -10781,6 +10132,10 @@
       "Almost there": [
         "Bijna daar"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
       ],
@@ -10829,6 +10184,24 @@
     "Log preference": {
       "Enable ${ reason }": [
         "${ reason } inschakelen"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
+        "Alle berichten uit ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
+        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
       ]
     },
     "mail_signup_2024: Info": {
@@ -10929,16 +10302,28 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Elke ${ interval } maand ${ onDayString }",
+        "Elke ${ interval } maanden ${ onDayString }"
+      ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Elke ${ interval } maand ${ onDayString }, ${ timesString }",
+        "Elke ${ interval } maanden ${ onDayString }, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Maandelijks ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Elke ${ interval } maand ${ onDayString }, ${ untilString }",
+        "Elke ${ interval } maanden ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Maandelijks ${ onDayString }, ${ untilString }"
       ]
@@ -11113,8 +10498,76 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } en ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
+      ],
+      "${ n } custom email domain": [
+        "${ n } aangepast e-maildomein",
+        "${ n } aangepaste e-maildomeinen"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadres",
+        "${ n } e-mailadressen/aliassen"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mailadres per gebruiker",
+        "${ n } e-mailadressen per gebruiker"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filters"
+      ],
+      "${ n } folder": [
+        "${ n } map",
+        "${ n } mappen"
+      ],
+      "${ n } folder and label": [
+        "${ n } map en label",
+        "${ n } mappen en labels"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email-alias",
+        "${ n } hide-my-email-aliassen"
+      ],
+      "${ n } label": [
+        "${ n } label",
+        "${ n } labels"
+      ],
+      "${ n } message per day": [
+        "${ n } bericht per dag",
+        "${ n } berichten per dag"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } heeft een ${ PASS_SHORT_APP_NAME } kluis gedeeld per gebruiker",
+        "${ n } heeft ${ PASS_SHORT_APP_NAME } kluizen gedeeld per gebruiker"
+      ],
+      "${ n } vault": [
+        "${ n } kluis",
+        "${ n } kluizen"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } gebruikers",
+        "Tot ${ numberOfUsers } gebruikers"
+      ],
+      "${ options }-day file version history": [
+        "Bestandsversiegeschiedenis van ${ options } dag",
+        "Bestandsversiegeschiedenis van ${ options } dag"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + levenslang SimpleLogin"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
+        "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } met onbeperkte hide-my-email-aliassen"
@@ -11287,6 +10740,10 @@
       "Group management (coming soon)": [
         "Groepenbeheer (binnenkort)"
       ],
+      "High-speed VPN on ${ n } device": [
+        "High-speed VPN op ${ n } apparaat",
+        "High-speed VPN op ${ n } apparaten"
+      ],
       "HTML signatures": [
         "HTML-handtekeningen"
       ],
@@ -11449,8 +10906,20 @@
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
       ],
+      "Up to ${ n } user": [
+        "Tot ${ n } gebruiker",
+        "Tot ${ n } gebruikers"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Tot ${ n } gebruiker (${ adminsText }, ${ usersText })",
+        "Tot ${ n } gebruikers (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Gebruik tot maximaal ${ n } apparaat tegelijk",
+        "Gebruik tot maximaal ${ n } apparaten tegelijk"
       ],
       "User credential management": [
         "Beheer van inloggegevens van gebruikers"
@@ -11461,8 +10930,22 @@
       "User storage management": [
         "Beheer gebruikersopslag"
       ],
+      "Vault sharing (up to ${ n } person)": [
+        "Kluis delen (tot ${ n } persoon)",
+        "Kluis delen (tot ${ n } personen)"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } beheerder",
+        "${ admins } beheerders"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "new_plans: feature info": {
@@ -11643,6 +11126,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
+        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
@@ -11847,6 +11334,10 @@
       "Central control panel": [
         "Centraal bedieningspaneel"
       ],
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } agenda",
+        "Maak tot ${ n } agenda's"
+      ],
       "Dedicated Account manager": [
         "Toegewezen account manager"
       ],
@@ -11864,6 +11355,10 @@
       ],
       "Require 2FA": [
         "2FA vereist"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Ondersteuning voor ${ n } aangepast e-maildomein",
+        "Ondersteuning voor ${ n } aangepaste e-maildomeinen"
       ]
     },
     "Notification": {
@@ -12366,6 +11861,10 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } gebruikersaccount",
+        "${ n } gebruikersaccounts"
+      ],
       "Activity log": [
         "Activiteitenlog"
       ],
@@ -12505,8 +12004,24 @@
       "terms & conditions": [
         "algemene voorwaarden"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
+        "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maand.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste ${ subscriptionLength } maanden."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwing. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren.",
+        "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. De kortingscode is geldig voor ${ couponRedemptions } vernieuwingen. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } voor 1 maand. U kunt op elk moment annuleren."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "De speciale kortingsprijs van ${ priceWithDiscount } is geldig voor de eerste maand. Daarna wordt uw abonnement automatisch vernieuwd voor ${ renewPriceStr } per maand. U kunt op elke moment annuleren"
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Dan wordt het automatisch verlengd op ${ renewPriceStr } voor ${ renewalLength } maand. U kunt op elk moment annuleren.",
+        "Dan wordt het automatisch vernieuwd op ${ renewPriceStr } voor ${ renewalLength } maanden. U kunt op elk moment annuleren."
       ],
       "This number will be shown on all future invoices": [
         "Dit nummer zal op alle toekomstige facturen worden getoond."
@@ -12853,6 +12368,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } van de ${ countContacts } contactpersonen geëxporteerd.",
+        "${ contactsExported.length } van de ${ countContacts } contactpersonen geëxporteerd."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } van de ${ totalBeDeleted } contact succesvol verwijderd.",
+        "${ model.deleted.length } van de ${ totalBeDeleted } contactpersonen zijn succesvol verwijderd."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } van de ${ totalBeMerged } contact succesvol samengevoegd.",
+        "${ model.submitted.length } van de ${ totalBeMerged } contacten zijn succesvol samengevoegd."
+      ],
       "No contacts exported.": [
         "Geen contactpersonen geëxporteerd."
       ],
@@ -13029,6 +12556,10 @@
       ]
     },
     "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } d",
+        "${ remainingDays } d"
+      ],
       "<1 d": [
         "<1 d"
       ]
@@ -13180,6 +12711,10 @@
       "Do you want to send the email anyway?": [
         "Wilt u de e-mail toch versturen?"
       ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar het e-mailadres dat is ingevoerd vanwege de volgende redenen:",
+        "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar de e-mailadressen die zijn ingevoerd vanwege de volgende redenen:"
+      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "We hebben enkele fouten geconstateerd. Uw e-mail kan niet worden verzonden naar één of meerdere e-mailadressen die zijn ingevoerd vanwege de volgende redenen:"
       ]
@@ -13187,6 +12722,14 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "Wilt u de e-mail toch versturen?"
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Het volgende adres is niet geldig: ${ invalidAddresses }",
+        "De volgende adressen zijn ongeldig: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "We hebben enkele waarschuwingen gedetecteerd. Het volgende e-mailadres ontvangt mogelijk geen e-mails:",
+        "We hebben enkele waarschuwingen gedetecteerd. De volgende e-mailadressen ontvangen mogelijk geen e-mails:"
       ]
     },
     "Sender verification details": {
@@ -13225,8 +12768,16 @@
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Verzonden door ${ MAIL_APP_NAME } met zero-access-versleuteling"
       ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Verzonden door ${ MAIL_APP_NAME } met zero-access-versleuteling aan gecontroleerde ontvanger",
+        "Verzonden door ${ MAIL_APP_NAME } met zero-access-versleuteling aan gecontroleerde ontvangers"
+      ],
       "Sent by you with end-to-end encryption": [
         "Door u verzonden met zero-access-versleuteling"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Door u verzonden met zero-access-versleuteling aan gecontroleerde ontvanger",
+        "Door u verzonden met zero-access-versleuteling aan gecontroleerde ontvangers"
       ],
       "Stored with zero-access encryption": [
         "Opgeslagen met zero-access-versleuteling"
@@ -13249,11 +12800,27 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dag",
+        "${ timeRemaining.inDays } dagen"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } uur",
+        "${ timeRemaining.inHours } uren"
+      ],
       "Password reset request approved (${ user.Email }).": [
         "Wachtwoord reset aanvraag goedgekeurd (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "\"Ga naar het ingelogde apparaat (in de sessie waarin de aanvraag is gestart) om uw wachtwoord te wijzigen.\""
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dag",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dagen"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
       ],
       "This permission expires soon": [
         "vervalt binnenkort"
@@ -13263,6 +12830,22 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "U kunt nu uw wachtwoord voor het account ${ boldEmail } wijzigen."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
+        "U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inHours } uren om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "U heeft ${ timeRemaining.inMinutes } minuut om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inMinutes } minuten om uw wachtwoord te resetten."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "U heeft ${ timeRemaining.inSeconds } seconde om uw wachtwoord te resetten.",
+        " U heeft ${ timeRemaining.inSeconds } seconden om uw wachtwoord te resetten."
       ]
     },
     "session_recovery:available:link": {
@@ -13322,8 +12905,16 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Indien u geen wachtwoord reset hebt aangevraagd, annuleer deze aanvraag dan nu."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uur.",
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uren."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Om er zeker van te zijn dat u het bent die probeert uw wachtwoord te resetten, wachten we 72 uur voordat we verzoeken goedkeuren. U kan uw wachtwoord wijzigen in ${ boldTimeLeft }. ${ viewRequest }"
@@ -13351,6 +12942,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } is nu beschikbaar"
       ],
@@ -13468,6 +13063,30 @@
         "Kies Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 gebruiker"
@@ -13550,6 +13169,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "/ month": [
         "/ maand"
       ],
@@ -13814,6 +13437,10 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "We zullen de credits voor de resterende tijd toevoegen aan uw ${ BRAND_NAME }-account."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "U heeft nog **${ daysRemaining }** dag over van uw **${ currentPlanName }** abonnement.",
+        "U heeft nog **${ daysRemaining }** dagen over van uw **${ currentPlanName }** abonnement."
+      ],
       "Your ${ appStorage } is almost full": [
         "Uw ${ appStorage } is bijna vol"
       ],
@@ -13859,6 +13486,32 @@
         "Jaarlijks gefactureerd"
       ]
     },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-verbinding per gebruiker",
+        "${ n } gratis VPN-verbindingen per gebruiker"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } supersnelle VPN-verbinding",
+        "${ n } supersnelle VPN-verbindingen"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } supersnelle VPN-verbinding per gebruiker",
+        "${ n } supersnelle VPN-verbindingen per gebruiker"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-verbinding per gebruiker",
+        "${ n } VPN-verbindingen per gebruiker"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN verbinding voor ${ n } apparaat per gebruiker",
+        "VPN verbinding voor ${ n } apparaten per gebruiker"
+      ]
+    },
     "Subscription change warning": {
       "Got it": [
         "Begrepen"
@@ -13900,6 +13553,10 @@
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }en ${ VPN_SHORT_APP_NAME } met premium functies"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag over",
+        "${ dayDiff } dagen over"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-desktopapp"
@@ -13945,6 +13602,26 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } biedt ${ planMaxSpace } aan opslag per gebruiker voor e-mails, bijlagen, gebeurtenissen, en wachtwoorden. U komt ook in aanmerking voor jaarlijkse opslagbonussen."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } agenda per gebruiker",
+        "${ planNumberOfCalendars } agenda's per gebruiker"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } eigen e-maildomein",
+        "${ planNumberOfDomains } eigen e-maildomeinen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-mailadres",
+        "${ planNumberOfEmails } e-mailadressen"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mailadres per gebruiker",
+        "${ planNumberOfEmails } e-mailadressen per gebruiker"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } gebruiker",
+        "${ planNumberOfUsers } gebruikers"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "${ PROTON_SENTINEL_NAME } geavanceerde accountbeveiliging"
@@ -14206,6 +13883,102 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "${ count } gesprek verwijderd",
+        "${ count } gesprekken verwijderd"
+      ],
+      "${ count } draft deleted": [
+        "${ count } concept verwijderd",
+        "${ count } concepten verwijderd"
+      ],
+      "${ count } message deleted": [
+        "${ count } bericht verwijderd",
+        "${ count } berichten verwijderd"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contact ziet er identiek uit.",
+        "${ countMergeableContacts } contacten zien er identiek uit."
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } conversatie toegevoegd aan ${ labelName }.",
+        "${ elementsCount } conversaties toegevoegd aan ${ labelName }."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } gesprek gemarkeerd als gelezen.",
+        "${ elementsCount } gesprekken gemarkeerd als gelezen."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } gesprek gemarkeerd met ster.",
+        "${ elementsCount } gesprekken gemarkeerd met ster."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } gesprek gemarkeerd als ongelezen.",
+        "${ elementsCount } gesprekken gemarkeerd als ongelezen."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } conversatie verplaatst naar ${ labelName } en afzender toegevoegd aan uw niet-Spamlijst.",
+        "${ elementsCount } conversaties verplaatst naar ${ labelName } en afzenders toegevoegd aan uw niet-Spamlijst."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } gesprek verplaatst naar ${ labelName }.",
+        "${ elementsCount } gesprekken verplaatst naar ${ labelName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } gesprek is verplaatst naar spam en afzender toegevoegd aan de spamlijst.",
+        "${ elementsCount } gesprekken zijn verplaatst naar spam en afzenders toegevoegd aan uw spamlijst."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } gesprek verwijderd van ${ labelName }.",
+        "${ elementsCount } gesprekken verwijderd van ${ labelName }."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } gesprek verwijderd van de met ster gemarkeerd.",
+        "${ elementsCount } gesprekken verwijderd van de met ster gemarkeerd."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } gesprek gesnoozed",
+        "${ elementsCount } gesprekken gesnoozed"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } gesprek ontsnoozed",
+        "${ elementsCount } gesprekken ontsnoozed"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } bericht toegevoegd aan ${ labelName }.",
+        "${ elementsCount } berichten toegevoegd aan ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } bericht als gelezen gemarkeerd.",
+        "${ elementsCount } berichten gemarkeerd als gelezen."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } bericht gemarkeerd met ster.",
+        "${ elementsCount } berichten gemarkeerd met ster."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } bericht gemarkeerd als ongelezen.",
+        "${ elementsCount } berichten gemarkeerd als ongelezen."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } bericht verplaatst naar ${ labelName } en afzender toegevoegd aan uw niet-Spamlijst.",
+        "${ elementsCount } berichten verplaatst naar ${ labelName } en afzenders toegevoegd aan uw niet-Spamlijst."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } bericht is verplaatst naar ${ labelName }.",
+        "${ elementsCount } berichten zijn verplaatst naar ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } bericht is verplaatst naar spam en afzender werd toegevoegd aan de spamlijst.",
+        "${ elementsCount } berichten zijn verplaatst naar spam en afzenders zijn toegevoegd aan uw spamlijst."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } bericht verwijderd van ${ labelName }.",
+        "${ elementsCount } berichten verwijderd van ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } bericht verwijderd van de met ster gemarkeerd.",
+        "${ elementsCount } berichten verwijderd van de met ster gemarkeerd."
+      ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
       ],
@@ -14226,6 +13999,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Contactpersoon verwijderd",
+        "Contactpersonen verwijderd"
+      ],
+      "Contact group deleted": [
+        "Contactgroep verwijderd",
+        "Contactgroepen verwijderd"
       ],
       "Contact saved": [
         "Contactpersoon opgeslagen"
@@ -14347,6 +14128,14 @@
       "Messages from ${ sendersList } will be moved to ${ folder }": [
         "Berichten van ${ sendersList } zullen verplaatst worden naar ${ folder }"
       ],
+      "Move ${ selectionCount } conversation": [
+        "Verplaats ${ selectionCount } gesprek",
+        "Verplaats ${ selectionCount } gesprekken"
+      ],
+      "Move ${ selectionCount } message": [
+        "Verplaats ${ selectionCount } bericht",
+        "Verplaats ${ selectionCount } berichten"
+      ],
       "Password copied to clipboard": [
         "Wachtwoord gekopieerd naar klembord"
       ],
@@ -14376,6 +14165,10 @@
       ],
       "Read receipt sent": [
         "Ontvangstbewijs verzonden"
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Gecategoriseerd ${ elementsCount } bericht.",
+        "Opnieuw Gecategoriseerde ${ elementsCount } berichten."
       ],
       "Secret passphrase updated": [
         "Geheime wachtwoordzin bijgewerkt"
@@ -14537,6 +14330,52 @@
         "Gisteren"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dagen"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } uur",
+        "${ ceilHours } uren"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuut",
+        "${ ceilMinutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } u",
+        "${ hours } u"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 u",
+        "${ hoursInt },5 u"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 uur",
+        "${ hoursInt },5 uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ]
+    },
     "Tip Action": {
       "Activate": [
         "Activeren"
@@ -14576,8 +14415,20 @@
       "${ appName } keyboard shortcuts": [
         "${ appName } sneltoetsen"
       ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mailadres",
+        "${ emailsCount } e-mailadressen"
+      ],
       "${ feature } is now active": [
         "${ feature } is nu actief"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } bericht",
+        "${ numMessages } berichten"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } ongelezen bericht",
+        "${ unreads } ongelezen berichten"
       ],
       "(active)": [
         "(actief)"
@@ -14617,6 +14468,10 @@
       ],
       "Add filter": [
         "Filter toevoegen"
+      ],
+      "Add to ${ groupCount } group": [
+        "Toevoegen aan ${ groupCount } groep",
+        "Toevoegen aan ${ groupCount } groepen"
       ],
       "Add to ${ groupName }": [
         "Toevoegen aan ${ groupName }"
@@ -14786,6 +14641,26 @@
       "Decryption error": [
         "Ontsleutelingsfout"
       ],
+      "Delete ${ count } contact": [
+        "Verwijder ${ count } contact",
+        "${ count } contacten verwijderen"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } contactgroep verwijderen",
+        "${ count } contactgroepen verwijderen"
+      ],
+      "Delete ${ count } conversation": [
+        "${ count } conversatie verwijderen",
+        "${ count } conversaties verwijderen"
+      ],
+      "Delete ${ count } draft": [
+        "Verwijder ${ count } concept",
+        "${ count } concepten verwijderen"
+      ],
+      "Delete ${ count } message": [
+        "${ count } bericht verwijderen",
+        "Verwijder ${ count } berichten"
+      ],
       "Delete ${ value }": [
         "Verwijder ${ value }"
       ],
@@ -14947,6 +14822,10 @@
       ],
       "Image": [
         "Afbeelding"
+      ],
+      "Import as simple event?": [
+        "Importeren als eenvoudige afspraak?",
+        "Importeren als eenvoudige afspraken?"
       ],
       "Import contacts": [
         "Contactpersonen importeren"
@@ -15392,6 +15271,10 @@
       "Trash all messages?": [
         "Verwijder alle berichten?"
       ],
+      "Trust new key?": [
+        "Nieuwe sleutel vertrouwen?",
+        "Nieuwe sleutels vertrouwen?"
+      ],
       "Trust pinned keys?": [
         "Vastgezette sleutels vertrouwen?"
       ],
@@ -15454,6 +15337,10 @@
       ],
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "We beschermden u van ${ trackersCount } tracker",
+        "We beschermden u van ${ trackersCount } trackers"
       ],
       "Welcome": [
         "Welkom"
@@ -15641,12 +15528,56 @@
         "Uw standaardlettertype zal er als volgt uitzien:"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } teken bevatten",
+        "Wachtwoord moet ten minste ${ MIN_PASSWORD_LENGTH } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Klik om de video opnieuw af te spelen"
       ],
       "Replay video": [
         "Video opnieuw afspelen"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } apparaat",
+        "${ n } apparaten"
+      ],
+      "${ n } server": [
+        "${ n } server",
+        "${ n }+ servers"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } landen"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries }+ landen"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries } landen"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Selecteert automatisch uit ${ numberOfCountries } land",
+        "Selecteert automatisch uit ${ numberOfCountries } landen"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servers in ${ numberOfCountries }+ land",
+        "Servers in ${ numberOfCountries }+ landen"
       ]
     },
     "vpn_2step: feature": {
@@ -15663,6 +15594,18 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mailadres",
+        "${ n } ${ BRAND_NAME } e-mailadressen"
+      ],
+      "${ n } account per wallet": [
+        "${ n } account per portemonnee",
+        "${ n } accounts per portemonnee"
+      ],
+      "${ n } wallet": [
+        "${ n } portemonnee",
+        "${ n } portemonnees"
+      ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
@@ -15690,6 +15633,10 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
       ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
+        "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
+      ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Weet u zeker dat u deze contactgroepen permanent wilt verwijderen?"
       ],
@@ -15713,6 +15660,10 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Enkele contactpersonen die moeten worden samengevoegd bevatten fouten. Controleer ze individueel"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Verificatie van de bijlage is mislukt.\nU kunt deze bijlage nog steeds downloaden, maar het kan zijn veranderd.",
+        "Sommige handtekeningen van de bijlagen zijn niet geverifieerd.\nU kunt deze bijlagen nog steeds downloaden, maar ze kunnen eventueel zijn gewijzigd."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "De gegevens van de contactpersoon zijn beschadigd en kunnen niet worden weergegeven."
@@ -15760,6 +15711,54 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Elke week op ${ multipleDaysString }",
+        "Elke ${ interval } weken op ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Elke ${ interval } op alle dagen",
+        "Elke ${ interval } weken op alle dagen"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Elke week op vrijdag",
+        "Elke ${ interval } weken op vrijdag"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Elke ${ interval } op maandag",
+        "Elke ${ interval } weken op maandag"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Elke ${ interval } week op maandag, ${ timesString }",
+        "Elke ${ interval } weken op maandag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Elke week op zaterdag",
+        "Elke ${ interval } weken op zaterdag"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Elke ${ interval } op zondag",
+        "Elke ${ interval } weken op zondag"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Elke week op zondag, ${ timesString }",
+        "Elke ${ interval } weken op zondag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Elke ${ interval } op donderdag",
+        "Elke ${ interval } weken op donderdag"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Elke ${ interval } op dinsdag",
+        "Elke ${ interval } weken op dinsdag"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Elke ${ interval } week op dinsdag, ${ timesString }",
+        "Elke ${ interval } weken op dinsdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Elke ${ interval } op woensdag",
+        "Elke ${ interval } weken op woensdag"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Wekelijks op ${ multipleDaysString }"
       ],
@@ -15789,6 +15788,30 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Elke ${ interval } week op ${ multipleDaysString }, ${ timesString }",
+        "Elke ${ interval } weken op ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Elk ${ interval } week op alle dagen, ${ timesString }",
+        "Elke ${ interval } weken op alle dagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Elke ${ interval } week op vrijdag, ${ timesString }",
+        "Elke ${ interval } weken op vrijdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Elke ${ interval } week op zaterdag, ${ timesString }",
+        "Elke ${ interval } weken op zaterdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Elke ${ interval } week op donderdag, ${ timesString }",
+        "Elke ${ interval } weken op donderdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Elke ${ interval } week op woensdag, ${ timesString }",
+        "Elke ${ interval } weken op woensdag, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Wekelijks op ${ multipleDaysString }, ${ timesString }"
       ],
@@ -15818,6 +15841,42 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Elke ${ interval } week op ${ multipleDaysString }, ${ untilString }",
+        "Elke ${ interval } weken op ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Elke ${ interval } week op alle dagen, ${ untilString }",
+        "Elke ${ interval } weken op alle dagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Elke ${ interval } week op vrijdag, ${ untilString }",
+        "Elke ${ interval } week op vrijdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Elke ${ interval } week op maandag, ${ untilString }",
+        "Elke ${ interval } weken op maandag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Elke ${ interval } week op zaterdag, ${ untilString }",
+        "Elke ${ interval } weken op zaterdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Elke ${ interval } week op zondag, ${ untilString }",
+        "Elke ${ interval } weken op zondag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Elke ${ interval } week op donderdag, ${ untilString }",
+        "Elke ${ interval } weken op donderdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Elke ${ interval } week op dinsdag, ${ untilString }",
+        "Elke ${ interval } weken op dinsdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Elke ${ interval } week op woensdag, ${ untilString }",
+        "Elke ${ interval } week op woensdag, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Wekelijks op ${ multipleDaysString }, ${ untilString }"
       ],
@@ -15870,16 +15929,28 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Elk jaar",
+        "Elke ${ interval } jaar"
+      ],
       "Yearly": [
         "Jaarlijks"
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Elk ${ interval } jaar, ${ timesString }",
+        "Elke ${ interval } jaar, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Jaarlijks ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Elk ${ interval } jaar, ${ untilString }",
+        "Elke ${ interval } jaar, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Jaarlijks ${ untilString }"
       ]

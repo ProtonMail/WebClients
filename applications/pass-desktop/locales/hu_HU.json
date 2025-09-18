@@ -4,248 +4,6 @@
     "language": "hu_HU"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } e-mail álnév",
-        "${ aliasCount } e-mail álnév"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } tiltás",
-        "${ blockedCount } tiltás"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } blokkolva",
-        "${ blockedEmailsCount } blokkolva"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } karakter",
-        "${ config.options.length } karakter"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } szó",
-        "${ config.options.wordCount } szó"
-      ],
-      "${ count } item": [
-        "${ count } elem",
-        "${ count } elem"
-      ],
-      "${ count } time": [
-        "${ count } alkalommal",
-        "${ count } alkalommal"
-      ],
-      "${ count } view": [
-        "${ count } megtekintés",
-        "${ count } megtekintés"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } megtekintés",
-        "${ count }/${ maxReads } megtekintés"
-      ],
-      "${ days } day": [
-        "${ days } nap",
-        "${ days } nap"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } fájl",
-        "${ filesCount } fájl"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } továbbítás",
-        "${ forwardCount } továbbítás"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } továbbítva",
-        "${ forwardedEmailsCount } továbbítva"
-      ],
-      "${ hours } hour": [
-        "${ hours } óra",
-        "${ hours } óra"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } tag",
-        "${ memberCount } tag"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } perc",
-        "${ minutes } perc"
-      ],
-      "${ months } month": [
-        "${ months } hónap",
-        "${ months } hónap"
-      ],
-      "${ n } item": [
-        "${ n } elem",
-        "${ n } elemek"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } meghívó sikeresen elküldve",
-        "${ payload.count } meghívó sikeresen elküldve"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } válasz",
-        "${ repliedCount } válasz"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } küldés",
-        "${ repliedEmailsCount } küldés"
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount } adatszivárgás észlelve",
-        "${ row.breachCount } adatszivárgások észlelve"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } biztonságos hivatkozás",
-        "${ secureLinksCount } biztonságos hivatkozás"
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } másik bejelentkezés ugyanazt a jelszót használja",
-        "${ total } másik bejelentkezés ugyanazt a jelszót használja"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } belépés",
-        "${ usageCount } belépés"
-      ],
-      "${ years } year": [
-        "${ years } év",
-        "${ years } év"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Biztos, hogy ${ trashedItemsCount } elemet a lomtárba akar helyezni?",
-        "Biztos, hogy ${ trashedItemsCount } elemet a lomtárba akar helyezni?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Biztos, hogy véglegesen töröl ${ deletedItemsCount } elemet?",
-        "Biztos, hogy véglegesen töröl ${ deletedItemsCount } elemet?"
-      ],
-      "byte": [
-        "bájt",
-        "bájt"
-      ],
-      "Byte": [
-        "Bájt",
-        "Bájt"
-      ],
-      "Cannot send invitation at the moment": [
-        "Jelenleg nem küldhető meghívó",
-        "Jelenleg nem küldhetők meghívók"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "${ deletedItemsCount } elem törlése?",
-        "${ deletedItemsCount } elem törlése?"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } hibás sor van a CSV-ben",
-        "${ errors.length } hibás sor van a CSV-ben"
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Biztonsági okokból meg kell erősítenie a hozzáférést ehhez a megosztott tárolóhoz.",
-        "Biztonsági okokból meg kell erősítenie a hozzáférést ehhez a megosztott tárolóhoz."
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "A generált jelszavakat ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétig tároljuk.",
-        "A generált jelszavakat ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétig tároljuk."
-      ],
-      "Gigabyte": [
-        "Gigabájt",
-        "Gigabájt"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Elemmegosztás: ${ itemAccessCount } felhasználó",
-        "Elemmegosztás: ${ itemAccessCount } felhasználó"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Az elemek nem tartalmazhatnak többet, mint ${ share.targetMaxMembers } felhasználó.",
-        "Az elemek nem tartalmazhatnak többet, mint ${ share.targetMaxMembers } felhasználó."
-      ],
-      "Kilobyte": [
-        "Kilobájt",
-        "Kilobájt"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Maximálisan ${ maxLength } karakter lehetséges",
-        "Maximálisan ${ maxLength } karakter lehetséges"
-      ],
-      "Megabyte": [
-        "Megabájt",
-        "Megabájt"
-      ],
-      "Move ${ count } item": [
-        "${ count } elem áthelyezése",
-        "${ count } elem áthelyezése"
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count } elem mozgatása ${ vaultName } tárolóba",
-        "${ count } elem mozgatása ${ vaultName } tárolóba"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "${ trashedItemsCount } elem áthelyezése a Lomtárba?",
-        "${ trashedItemsCount } elem áthelyezése a Lomtárba?"
-      ],
-      "Move item to": [
-        "Elem áthelyezése",
-        "Elemek áthelyezése ide"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
-        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétnél régebbi jelszavak automatikusan törlődnek az előzményekből.",
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétnél régebbi jelszavak automatikusan törlődnek az előzményekből."
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Vegye figyelembe, hogy törlés után az e-mail álnév nem állítható vissza.",
-        "Vegye figyelembe, hogy törlés után az e-mail álnevek nem állíthatók vissza."
-      ],
-      "Reused ${ count } time": [
-        "Újrafelhasználva ${ count } alkalommal",
-        "Újrafelhasználva ${ count } alkalommal"
-      ],
-      "Sync alias": [
-        "E-mail álnév szinkronizálása",
-        "E-mail álnevek szinkronizálása"
-      ],
-      "Terabyte": [
-        "Terabájt",
-        "Terabájt"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "A következő ${ totalIgnored } elem importálása nem sikerült:",
-        "A következő ${ totalIgnored } elem importálása nem sikerült:"
-      ],
-      "Understood, I will never need it": [
-        "Értettem, soha nem lesz rá szükségem",
-        "Értettem, soha nem lesz rájuk szükségem"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Tároló megosztás: ${ vaultMembersCount } tag",
-        "Tároló megosztás: ${ vaultMembersCount } tag"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "A tárolóban nem lehet több mint ${ targetMaxMembers } felhasználó.",
-        "A tárolóban nem lehet több mint ${ targetMaxMembers } felhasználó."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Azt észleltük, hogy van olyan ${ aliasCount } e-mail álneve, amely jelen van a SimpleLoginban, de hiányzik a ${ PASS_APP_NAME } fájlból. Szeretné importálni?",
-        "Azt észleltük, hogy van olyan ${ aliasCount } e-mail álneve, amely jelen van a SimpleLoginban, de hiányzik a ${ PASS_APP_NAME } fájlból. Szeretné importálni?"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "A kiválasztott elemet áthúzhatja egy másik tárolóba.",
-        "A kiválasztott elemet áthúzhatja egy másik tárolóba."
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Van ${ aliasCount } olyan e-mail álneve a SimpleLoginban, amely hiányzik a ${ PASS_APP_NAME }-ból. Szeretné szinkronizálni?",
-        "Van ${ aliasCount } olyan e-mail álneve a SimpleLoginban, amely hiányzik a ${ PASS_APP_NAME }-ból. Szeretné szinkronizálni?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "${ daysRemaining } nap maradt az ilyen és további prémium funkciók kipróbálásából.",
-        "${ daysRemaining } nap maradt az ilyen és további prémium funkciók kipróbálásából."
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "${ aliasCount } e-mail álnév végleges törlésére készül.",
-        "${ aliasCount } e-mail álnév végleges törlésére készül."
-      ]
-    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } és ${ remainingCount } más lehetséges adatszivárgást észleltünk. Kapcsolja be a ${ DARK_WEB_MONITORING_NAME } a részletek megtekintéséhez és intézkedjen. ${ link }"
@@ -855,6 +613,10 @@
       "Submitting report...": [
         "Bejelentés elküldése..."
       ],
+      "Sync alias": [
+        "E-mail álnév szinkronizálása",
+        "E-mail álnevek szinkronizálása"
+      ],
       "Sync aliases": [
         "E-mail álnevek szinkronizálása"
       ],
@@ -881,6 +643,10 @@
       ],
       "Unblock contact": [
         "Névjegy feloldása"
+      ],
+      "Understood, I will never need it": [
+        "Értettem, soha nem lesz rá szükségem",
+        "Értettem, soha nem lesz rájuk szükségem"
       ],
       "Unlock": [
         "Feloldás"
@@ -978,6 +744,10 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } fizetős csomaggal érhető el. Az azonnali hozzáféréshez frissítsen."
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } másik bejelentkezés ugyanazt a jelszót használja",
+        "${ total } másik bejelentkezés ugyanazt a jelszót használja"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "A kétlépcsős hitelesítés (2FA) egy újabb biztonsági réteget ad a bejelentkezéshez. A ${ PASS_APP_NAME } megkönnyíti a kétlépcsős hitelesítést azáltal, hogy tárolja és automatikusan kitölti a kétlépcsős hitelesítés kódjait."
@@ -1106,6 +876,10 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "A hitelesítés sikertelen. Az exportálás folytatásához erősítse meg a második jelszavát"
       ],
+      "Cannot send invitation at the moment": [
+        "Jelenleg nem küldhető meghívó",
+        "Jelenleg nem küldhetők meghívók"
+      ],
       "Cannot send invitations at the moment": [
         "Jelenleg nem küldhetők meghívók"
       ],
@@ -1153,6 +927,10 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "A(z) \"${ payload.content.name }\" tároló törlése nem sikerült"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } hibás sor van a CSV-ben",
+        "${ errors.length } hibás sor van a CSV-ben"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "A domain név nem ellenőrizhető. Nézze meg, helyesen adta-e meg a DNS rekordokat"
@@ -1496,6 +1274,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bájt",
+        "bájt"
+      ],
       "GB": [
         "GB"
       ],
@@ -1507,6 +1289,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bájt",
+        "Bájt"
+      ],
+      "Gigabyte": [
+        "Gigabájt",
+        "Gigabájt"
+      ],
+      "Kilobyte": [
+        "Kilobájt",
+        "Kilobájt"
+      ],
+      "Megabyte": [
+        "Megabájt",
+        "Megabájt"
+      ],
+      "Terabyte": [
+        "Terabájt",
+        "Terabájt"
       ]
     },
     "Font face option": {
@@ -1541,8 +1345,36 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "\"${ payload.itemName }\" frissítése elvetve"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } blokkolva",
+        "${ blockedEmailsCount } blokkolva"
+      ],
+      "${ count } time": [
+        "${ count } alkalommal",
+        "${ count } alkalommal"
+      ],
+      "${ count } view": [
+        "${ count } megtekintés",
+        "${ count } megtekintés"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } megtekintés",
+        "${ count }/${ maxReads } megtekintés"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } továbbítva",
+        "${ forwardedEmailsCount } továbbítva"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } szeretne megosztani önnel egy elemet."
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } tag",
+        "${ memberCount } tag"
+      ],
+      "${ n } item": [
+        "${ n } elem",
+        "${ n } elemek"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "A ${ PASS_APP_NAME } mindig elérhető lesz"
@@ -1562,11 +1394,23 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "A ${ PASS_APP_NAME } a ${ BRAND_NAME } jelszavát fogja kérni az adatok offline eléréséhez."
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } meghívó sikeresen elküldve",
+        "${ payload.count } meghívó sikeresen elküldve"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } letiltva"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } engedélyezve"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } küldés",
+        "${ repliedEmailsCount } küldés"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } adatszivárgás észlelve",
+        "${ row.breachCount } adatszivárgások észlelve"
       ],
       "(Empty)": [
         "(Üres)"
@@ -1871,11 +1715,19 @@
       "For security reasons, this action requires identity verification.": [
         "Biztonsági okokból ez a művelet személyazonossági ellenőrzést igényel."
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Biztonsági okokból meg kell erősítenie a hozzáférést ehhez a megosztott tárolóhoz.",
+        "Biztonsági okokból meg kell erősítenie a hozzáférést ehhez a megosztott tárolóhoz."
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Biztonsági okokból a jogosultságát ellenőrizni szükséges"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "A továbbító cím a vágólapra lett másolva. Küldjön e-mailt erre a címre, és ${ Email } fogja megkapni."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "A generált jelszavakat ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétig tároljuk.",
+        "A generált jelszavakat ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétig tároljuk."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Hozza ki a legtöbbet a Pass használatából, minden csapat vagy projekt számára létrehozva egy-egy tárolót."
@@ -1958,6 +1810,10 @@
       "Item restored": [
         "Elem helyreállítva"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Elemmegosztás: ${ itemAccessCount } felhasználó",
+        "Elemmegosztás: ${ itemAccessCount } felhasználó"
+      ],
       "Item successfully excluded from monitoring": [
         "Az elem sikeresen kikerült a figyelésből"
       ],
@@ -2017,6 +1873,10 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Több mint egy jelszókezelő, a ${ PASS_APP_NAME } védi a jelszavát és a személyes e-mail címét az e-mail álnevekkel. A ${ MAIL_APP_NAME } mögött álló technológiával az adatai végpontok közt titkosítottak, és csak Ön férhet hozzájuk."
+      ],
+      "Move ${ count } item": [
+        "${ count } elem áthelyezése",
+        "${ count } elem áthelyezése"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Az összes elem áthelyezése innen: \"${ payload.content.name }\""
@@ -2086,6 +1946,10 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Jelszózár sikeresen regisztrálva. Használja a ${ PASS_APP_NAME } feloldásához"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétnél régebbi jelszavak automatikusan törlődnek az előzményekből.",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } hétnél régebbi jelszavak automatikusan törlődnek az előzményekből."
       ],
       "Paused": [
         "Felfüggesztve"
@@ -2378,6 +2242,10 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "A ${ PASS_APP_NAME } használatához szüksége lesz az extra jelszóra. Ez kiegészítő jelszóként működik a ${ BRAND_NAME } jelszava mellett."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "A következő ${ totalIgnored } elem importálása nem sikerült:",
+        "A következő ${ totalIgnored } elem importálása nem sikerült:"
+      ],
       "The secure link has been removed": [
         "A biztonságos hivatkozás el lett távolítva"
       ],
@@ -2498,6 +2366,10 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Tároló eltávolítva: \"${ share.content.name }\""
       ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Tároló megosztás: ${ vaultMembersCount } tag",
+        "Tároló megosztás: ${ vaultMembersCount } tag"
+      ],
       "Verification code sent.": [
         "Ellenőrző kód kiküldve"
       ],
@@ -2506,6 +2378,10 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Problémák merültek fel a helyi tárolóba való szinkronizáláskor. Ellenőrizze, hogy van-e elegendő üres hely a ${ PASS_SHORT_APP_NAME } zökkenőmentes működéséhez."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Azt észleltük, hogy van olyan ${ aliasCount } e-mail álneve, amely jelen van a SimpleLoginban, de hiányzik a ${ PASS_APP_NAME } fájlból. Szeretné importálni?",
+        "Azt észleltük, hogy van olyan ${ aliasCount } e-mail álneve, amely jelen van a SimpleLoginban, de hiányzik a ${ PASS_APP_NAME } fájlból. Szeretné importálni?"
       ],
       "Week": [
         "Hét"
@@ -2530,6 +2406,14 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Ehhez az e-mail álnévhez nem változtathat az e-mail fiókon."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Van ${ aliasCount } olyan e-mail álneve a SimpleLoginban, amely hiányzik a ${ PASS_APP_NAME }-ból. Szeretné szinkronizálni?",
+        "Van ${ aliasCount } olyan e-mail álneve a SimpleLoginban, amely hiányzik a ${ PASS_APP_NAME }-ból. Szeretné szinkronizálni?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "${ daysRemaining } nap maradt az ilyen és további prémium funkciók kipróbálásából.",
+        "${ daysRemaining } nap maradt az ilyen és további prémium funkciók kipróbálásából."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Túllépte a csomagjában rendelkezésre álló tárolók számát. Az elemek csak az első két tárolójába helyezhetők. Váltson nagyobb csomagra, hogy minden tárolója között helyezhessen át elemeket."
@@ -2599,14 +2483,70 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } e-mail álnév",
+        "${ aliasCount } e-mail álnév"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } tiltás",
+        "${ blockedCount } tiltás"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } karakter",
+        "${ config.options.length } karakter"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } szó",
+        "${ config.options.wordCount } szó"
+      ],
+      "${ count } item": [
+        "${ count } elem",
+        "${ count } elem"
+      ],
+      "${ days } day": [
+        "${ days } nap",
+        "${ days } nap"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } továbbítás",
+        "${ forwardCount } továbbítás"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, az elmúlt 14 napban."
+      ],
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ],
+      "${ months } month": [
+        "${ months } hónap",
+        "${ months } hónap"
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } felismeri az Ön által használt webhelyeket és alkalmazásokat, és automatikusan kitölti az űrlapokat a hitelesítő adatokkal, bármilyen böngészőben vagy eszközön. Nincs szükség másolásra és beillesztésre."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } verzió"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } válasz",
+        "${ repliedCount } válasz"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } biztonságos hivatkozás",
+        "${ secureLinksCount } biztonságos hivatkozás"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } belépés",
+        "${ usageCount } belépés"
+      ],
+      "${ years } year": [
+        "${ years } év",
+        "${ years } év"
       ],
       "1 hour": [
         "1 óra"
@@ -3785,6 +3725,14 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } elemet",
+        "${ count } elemet"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "A kiválasztott elemet áthúzhatja egy másik tárolóba.",
+        "A kiválasztott elemet áthúzhatja egy másik tárolóba."
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "${ semiboldText } jelölt ki ebben a tárolóban."
       ]
@@ -3843,6 +3791,10 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "„${ filename }” túl nagy a feltöltéshez. A maximálisan megengedett méret (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fájl",
+        "${ filesCount } fájl"
       ],
       "Attachments": [
         "Mellékletek"
@@ -4168,6 +4120,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "A domain sikeresen ellenőrizve. A domain e-maileket fogadhat és e-mail álneveket hozhat létre"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Az elemek nem tartalmazhatnak többet, mint ${ share.targetMaxMembers } felhasználó.",
+        "Az elemek nem tartalmazhatnak többet, mint ${ share.targetMaxMembers } felhasználó."
+      ],
       "Mailbox change successfully cancelled": [
         "A postafiók változtatásának visszavonása megtörtént"
       ],
@@ -4185,6 +4141,10 @@
       ],
       "Random prefix generation successfully enabled": [
         "A véletlenszerű előtag generálása engedélyezve"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "A tárolóban nem lehet több mint ${ targetMaxMembers } felhasználó.",
+        "A tárolóban nem lehet több mint ${ targetMaxMembers } felhasználó."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Ellenőrző e-mailt küldtünk. Kérjük, ellenőrizze a beérkezett üzenetek mappáját a postafiókja megerősítéséhez."
@@ -4303,6 +4263,10 @@
       ],
       "Default Display Name": [
         "Alapértelmezett megjelenített név"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "${ deletedItemsCount } elem törlése?",
+        "${ deletedItemsCount } elem törlése?"
       ],
       "Delete domain": [
         "Domain név törlése"
@@ -4433,6 +4397,14 @@
       "Modified": [
         "Módosítva"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "${ count } elem mozgatása ${ vaultName } tárolóba",
+        "${ count } elem mozgatása ${ vaultName } tárolóba"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount } elem áthelyezése a Lomtárba?",
+        "${ trashedItemsCount } elem áthelyezése a Lomtárba?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Az összes elem áthelyezése ide: „${ vaultName }”?"
       ],
@@ -4441,9 +4413,6 @@
       ],
       "MX record": [
         "MX rekord"
-      ],
-      "Next": [
-        "Következő"
       ],
       "No excluded items": [
         "Nincsenek kizárt elemek"
@@ -4465,9 +4434,6 @@
       ],
       "No shared secure links": [
         "Nincsenek megosztott biztonságos hivatkozások"
-      ],
-      "Open pagination": [
-        "Lapozó megnyitása"
       ],
       "Our welcome gift to you": [
         "Üdvözlő ajándékunk önnek"
@@ -4496,8 +4462,9 @@
       "Pinned (${ items.length })": [
         "Kitűzve (${ items.length })"
       ],
-      "Previous": [
-        "Előző"
+      "Please note that once deleted, the alias can't be restored.": [
+        "Vegye figyelembe, hogy törlés után az e-mail álnév nem állítható vissza.",
+        "Vegye figyelembe, hogy törlés után az e-mail álnevek nem állíthatók vissza."
       ],
       "Random Prefix Generation": [
         "Véletlenszerű előtag létrehozása"
@@ -4528,6 +4495,10 @@
       ],
       "Resume monitoring?": [
         "Figyelés folytatása?"
+      ],
+      "Reused ${ count } time": [
+        "Újrafelhasználva ${ count } alkalommal",
+        "Újrafelhasználva ${ count } alkalommal"
       ],
       "Reused passwords": [
         "Újrahasznált jelszavak"
@@ -4645,6 +4616,10 @@
       ],
       "Your welcome gift": [
         "Üdvözlő ajándék"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "${ aliasCount } e-mail álnév végleges törlésére készül.",
+        "${ aliasCount } e-mail álnév végleges törlésére készül."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4686,6 +4661,12 @@
         "Az URL érvénytelen"
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "Elem áthelyezése",
+        "Elemek áthelyezése ide"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } jelszóra van szükség"
@@ -4710,6 +4691,14 @@
       ],
       "An error occurred while importing your data.": [
         "Hiba történt az adatok importálása közben."
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Biztos, hogy ${ trashedItemsCount } elemet a lomtárba akar helyezni?",
+        "Biztos, hogy ${ trashedItemsCount } elemet a lomtárba akar helyezni?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Biztos, hogy véglegesen töröl ${ deletedItemsCount } elemet?",
+        "Biztos, hogy véglegesen töröl ${ deletedItemsCount } elemet?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Biztosan véglegesen törli ezt az elemet?"
@@ -4791,6 +4780,10 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Külső szervezetből származó e-mail címek meghívása nem engedélyezett."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maximálisan ${ maxLength } karakter lehetséges",
+        "Maximálisan ${ maxLength } karakter lehetséges"
       ],
       "Missing alias prefix": [
         "Hiányzó e-mail álnév előtag"
