@@ -1413,11 +1413,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzat el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos el ${ formattedDate }. No se us carregarà cap import si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes el ${ formattedDate }. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
@@ -11512,6 +11512,9 @@
       ],
       "Account recovery": [
         "Recuperació de compte"
+      ],
+      "Account restricted": [
+        "Compte restringit"
       ],
       "Account security": [
         "Seguretat del compte"
