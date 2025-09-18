@@ -110,6 +110,9 @@
       "Clear search": [
         "ძებნის გასუფთავება"
       ],
+      "Clone item": [
+        "ელემენტის კლონირება"
+      ],
       "Close": [
         "დახურვა"
       ],
@@ -241,6 +244,12 @@
       ],
       "Dismiss": [
         "მოცილება"
+      ],
+      "Do not show again": [
+        "აღარ მაჩვენო"
+      ],
+      "Do not show again when I press": [
+        "აღარ მაჩვენო, როცა დავაჭერ"
       ],
       "Do not show on this website": [
         "არ მაჩვენო ამ ვებგვერდზე"
@@ -424,6 +433,9 @@
       ],
       "Open web app": [
         "ვებ-აპის გახსნა"
+      ],
+      "Organize vaults": [
+        "საცავების დალაგება"
       ],
       "Pass for Android": [
         "Pass-ი Android-სთვის"
@@ -1630,6 +1642,9 @@
       "Extra password successfully removed": [
         "დამატებითი პაროლი წარმატებით წაიშალა"
       ],
+      "Failed updating your vault organization": [
+        "თქვენი საცავის ორგანიზაციის განახლება ჩავარდა"
+      ],
       "Fill in the CSV with your data": [
         "შეავსეთ CSV თქვენი მონაცემებით"
       ],
@@ -2224,6 +2239,9 @@
       "Update login": [
         "შესვლის დეტალების განახლება"
       ],
+      "Updating vault organization...": [
+        "საცავის ორგანიზაციის განახლება..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის ტარიფის აწევა"
       ],
@@ -2250,6 +2268,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "საცავი \"${ share.content.name }\" წაიშალა"
+      ],
+      "Vault organization successfully updated": [
+        "საცავის ორგანიზაცია წარმატებით განახლდა"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "საცავის გაზიარება: ${ vaultMembersCount } წევრი",
@@ -2356,6 +2377,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "თქვენი ორგანიზაცია ითხოვთ, დაიცვათ თქვენი წვდომა ${ PASS_APP_NAME }-ზე"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2992,9 +3021,6 @@
       ],
       "Network": [
         "ქსელი"
-      ],
-      "New": [
-        "ახალი"
       ],
       "New email": [
         "ახალი ელფოსტა"
@@ -4032,6 +4058,9 @@
       "Grant permissions": [
         "წვდომების მინიჭება"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "დამალული საცავები არ გამოჩნდება ძებნისას და ავტოშევსებისას."
+      ],
       "Hide my email": [
         "Hide my email"
       ],
@@ -4112,6 +4141,9 @@
       "No shared secure links": [
         "გაზიარებული დაცული ბმულების გარეშე"
       ],
+      "Organize vaults": [
+        "საცავების დალაგება"
+      ],
       "Our welcome gift to you": [
         "ჩვენი მისალმების საჩუქარი"
       ],
@@ -4126,6 +4158,9 @@
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
+      ],
+      "Perform autotype?": [
+        "შევასრულო ავტოშეყვანა?"
       ],
       "Permanently remove all items?": [
         "წავშალო სამუდამოდ ყველა ელემენტი?"
@@ -4263,6 +4298,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი.",
         "აპირებთ, სამუდამოდ წაშალოთ ${ aliasCount } ფსევდონიმი."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "კოპირება"
       ]
     },
     "Today icon tooltip in mini calendar": {
