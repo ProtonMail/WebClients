@@ -253,6 +253,12 @@
       "Dismiss": [
         "მოცილება"
       ],
+      "Do not show again": [
+        "აღარ მაჩვენო"
+      ],
+      "Do not show again when I press": [
+        "აღარ მაჩვენო, როცა დავაჭერ"
+      ],
       "Download this CSV template": [
         "გადმოწერეთ ეს CSV ნიმუში"
       ],
@@ -2415,6 +2421,14 @@
         "თქვენი ორგანიზაცია ითხოვთ, დაიცვათ თქვენი წვდომა ${ PASS_APP_NAME }-ზე"
       ]
     },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
       "${ aliasCount } alias": [
         "${ aliasCount } ფსევდონიმი",
@@ -3089,9 +3103,6 @@
       ],
       "Network": [
         "ქსელი"
-      ],
-      "New": [
-        "ახალი"
       ],
       "New email": [
         "ახალი ელფოსტა"
@@ -4211,6 +4222,9 @@
       "Grant permissions": [
         "წვდომების მინიჭება"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "დამალული საცავები არ გამოჩნდება ძებნისას და ავტოშევსებისას."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-ის ფსევდონიმები"
       ],
@@ -4344,6 +4358,9 @@
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
+      ],
+      "Perform autotype?": [
+        "შევასრულო ავტოშეყვანა?"
       ],
       "Permanently remove all items?": [
         "წავშალო სამუდამოდ ყველა ელემენტი?"
