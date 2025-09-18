@@ -79,6 +79,8 @@
   --background-upsell-button: white;
   --background-upsell-toggle: #e5e1f5;
   --background-upsell-toggle-button: white;
+  --background-upsell-toggle-ghost-mode: rgba(91, 87, 107, 0.6);
+  --background-upsell-toggle-ghost-mode-button: #292733;
   --interaction-default: transparent;
   --interaction-default-hover: rgb(186 190 199 / 0.2);
   --interaction-default-active: rgb(186 190 199 / 0.3);
@@ -106,4 +108,6 @@
   --markdown-pre-background: #f8f9fa;
   --markdown-pre-border: #e1e4e8;
   --settings-modal-upsell-background: #f9fafb;
+  --settings-modal-upsell-text: var(--text-weak);
+  --lumo-plus-logo-plus-sign-text: #5325a2;
 }
