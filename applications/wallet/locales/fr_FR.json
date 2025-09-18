@@ -4,6 +4,316 @@
     "language": "fr_FR"
   },
   "contexts": {
+    "": {
+      "${ admins } admin": [
+        "${ admins } administrateur",
+        "${ admins } administrateurs"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } domaine personnalisé supplémentaire",
+        "${ domains } domaines personnalisés supplémentaires"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } heure",
+        "${ gracePeriodHoursRemaining } heures"
+      ],
+      "${ ips } server": [
+        "${ ips } serveur",
+        "${ ips } serveurs"
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adresse e-mail ${ BRAND_NAME }",
+        "${ n } adresses e-mail ${ BRAND_NAME }"
+      ],
+      "${ n } account per wallet": [
+        "${ n } compte par portefeuille",
+        "${ n } comptes par portefeuille"
+      ],
+      "${ n } calendar": [
+        "${ n } calendrier",
+        "${ n } calendriers"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendrier par utilisateur",
+        "${ n } calendriers par utilisateur"
+      ],
+      "${ n } custom email domain": [
+        "${ n } domaine de messagerie personnalisé",
+        "${ n } domaines de messagerie personnalisés"
+      ],
+      "${ n } device": [
+        "${ n } appareil",
+        "${ n } appareils"
+      ],
+      "${ n } email address": [
+        "${ n } adresse e-mail",
+        "${ n } adresses e-mail/alias"
+      ],
+      "${ n } email address per user": [
+        "${ n } adresse e-mail par utilisateur",
+        "${ n } adresses e-mail par utilisateur"
+      ],
+      "${ n } filter": [
+        "${ n } filtre",
+        "${ n } filtres"
+      ],
+      "${ n } folder": [
+        "${ n } dossier",
+        "${ n } dossiers"
+      ],
+      "${ n } folder and label": [
+        "${ n } dossier et label",
+        "${ n } dossiers et labels"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } connexion VPN gratuite par utilisateur",
+        "${ n } connexions VPN gratuites par utilisateur"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias « hide-my-email »",
+        "${ n } alias « hide-my-email »"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } connexion VPN haut débit",
+        "${ n } connexions VPN haut débit"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } connexion VPN haut débit par utilisateur",
+        "${ n } connexions VPN haut débit par utilisateur"
+      ],
+      "${ n } label": [
+        "${ n } label",
+        "${ n } labels"
+      ],
+      "${ n } message per day": [
+        "${ n } message par jour",
+        "${ n } messages par jour"
+      ],
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
+      ],
+      "${ n } month FREE": [
+        "${ n } mois GRATUIT",
+        "${ n } mois GRATUITS"
+      ],
+      "${ n } server": [
+        "${ n } serveur",
+        "Plus de ${ n } serveurs"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } coffre-fort ${ PASS_SHORT_APP_NAME } partagé par utilisateur",
+        "${ n } coffres-forts ${ PASS_SHORT_APP_NAME } partagés par utilisateur"
+      ],
+      "${ n } user account": [
+        "${ n } compte utilisateur",
+        "${ n } comptes utilisateur"
+      ],
+      "${ n } vault": [
+        "${ n } coffre-fort",
+        "${ n } coffres-forts"
+      ],
+      "${ n } VPN connection": [
+        "${ n } connexion VPN",
+        "${ n } connexions VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } connexion VPN par utilisateur",
+        "${ n } connexions VPN par utilisateur"
+      ],
+      "${ n } wallet": [
+        "${ n } portefeuille",
+        "${ n } portefeuilles"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } pays",
+        "${ numberOfCountries } pays"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } dans ${ numberOfCountries } pays",
+        "${ numberOfServers } répartis dans plus de ${ numberOfCountries } pays"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } dans ${ numberOfCountries } pays",
+        "${ numberOfServers } dans ${ numberOfCountries } pays"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } utilisateur",
+        "Jusqu'à ${ numberOfUsers } utilisateurs"
+      ],
+      "${ options }-day file version history": [
+        "Historique des versions de fichiers datant de ${ options } jours",
+        "Historique des versions de fichiers datant de ${ options } jours"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
+        "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domaine de messagerie personnalisé",
+        "${ planNumberOfDomains } domaines de messagerie personnalisés"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresse e-mail",
+        "${ planNumberOfEmails } adresses e-mail"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } accès ${ LUMO_APP_NAME }",
+        "${ seats } accès à ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } accès à l'assistant d'écriture",
+        "${ seats } accès à l'assistant d'écriture"
+      ],
+      "${ users } user": [
+        "${ users } utilisateur",
+        "${ users } utilisateurs"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } connexion pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)",
+        "+${ organization.BonusVPN } connexions pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Sélection automatique depuis ${ numberOfCountries } pays",
+        "Sélection automatique depuis ${ numberOfCountries } pays"
+      ],
+      "byte": [
+        "octet",
+        "octets"
+      ],
+      "Byte": [
+        "Octet",
+        "Octets"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Créer un cloud sécurisé pour ${ value } membre",
+        "Créer un cloud sécurisé pour ${ value } membres"
+      ],
+      "Create up to ${ n } calendar": [
+        "Créez jusqu'à ${ n } calendrier",
+        "Créez jusqu'à ${ n } calendriers"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Créez jusqu'à ${ n } calendrier ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations.",
+        "Créez jusqu'à ${ n } calendriers ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations."
+      ],
+      "Gigabyte": [
+        "Gigaoctet",
+        "Gigaoctets"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "VPN haut débit sur ${ n } appareil",
+        "VPN haut débit sur ${ n } appareils"
+      ],
+      "Kilobyte": [
+        "Kilooctet",
+        "Kilooctets"
+      ],
+      "Megabyte": [
+        "Megaoctet",
+        "Megaoctets"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractère.",
+        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
+        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore.",
+        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore."
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Serveurs dans plus de ${ numberOfCountries } pays",
+        "Serveurs dans plus de ${ numberOfCountries } pays"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "L'abonnement est renouvelé automatiquement tous les ${ cycle } mois.",
+        "L'abonnement est renouvelé automatiquement tous les ${ cycle } mois."
+      ],
+      "Support for ${ n } custom email domain": [
+        "Prise en charge pour ${ n } domaine de messagerie personnalisé",
+        "Prise en charge pour ${ n } domaines de messagerie personnalisés"
+      ],
+      "Terabyte": [
+        "Téraoctet",
+        "Téraoctets"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",
+        "Le code cadeau est valide pour ${ couponRedemptions } renouvellements."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Le tarif réduit spécial de ${ priceWithDiscount } est valable pendant le premier ${ subscriptionLength } mois.",
+        "Le tarif réduit spécial de ${ priceWithDiscount } est valable pendant les premiers ${ subscriptionLength } mois."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellement. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment.",
+        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment.",
+        "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
+      ],
+      "Total for ${ n } month": [
+        "Total pour ${ n } mois",
+        "Total pour ${ n } mois"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
+        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
+      ],
+      "Up to ${ n } user": [
+        "Jusqu'à ${ n } utilisateur",
+        "Jusqu'à ${ n } utilisateurs"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Jusqu'à ${ n } utilisateur (${ adminsText }), ${ usersText }",
+        "Jusqu'à ${ n } utilisateurs (${ adminsText }), ${ usersText }"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Utiliser sur jusqu'à ${ n } appareil à la fois",
+        "Utiliser sur jusqu'à ${ n } appareils à la fois"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Partage du coffre-fort (${ n } personne)",
+        "Partage du coffre-fort (jusqu'à ${ n } personnes)"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Connexion VPN pour ${ n } appareil par utilisateur",
+        "Connexion VPN pour ${ n } appareils par utilisateur"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Il vous reste encore **${ daysRemaining }** jour sur votre compte **${ currentPlanName }**.",
+        "Il vous reste encore **${ daysRemaining }** jours sur votre compte **${ currentPlanName }**."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
+        "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois.",
+        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois."
+      ],
+      "~${ minutes } minute": [
+        "~${ minutes } minute",
+        "~${ minutes } minutes"
+      ]
+    },
     "Account statement": {
       "Account statement successfully generated": [
         "Le relevé de compte a été généré."
@@ -420,14 +730,6 @@
       ]
     },
     "Addon": {
-      "${ domains } additional custom domain": [
-        "${ domains } domaine personnalisé supplémentaire",
-        "${ domains } domaines personnalisés supplémentaires"
-      ],
-      "${ ips } server": [
-        "${ ips } serveur",
-        "${ ips } serveurs"
-      ],
       "${ price } per dedicated server": [
         "${ price } par serveur dédié"
       ],
@@ -439,18 +741,6 @@
       ],
       "${ price } per user": [
         "${ price } par utilisateur"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } accès ${ LUMO_APP_NAME }",
-        "${ seats } accès à ${ LUMO_APP_NAME }"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } accès à l'assistant d'écriture",
-        "${ seats } accès à l'assistant d'écriture"
-      ],
-      "${ users } user": [
-        "${ users } utilisateur",
-        "${ users } utilisateurs"
       ]
     },
     "Address list": {
@@ -492,10 +782,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
       "12 months": [
         "12 mois"
       ],
@@ -520,11 +806,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Une fois la version d'essai terminée le ${ formattedDate }, elle deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois le ${ formattedDate }. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Vous pouvez bénéficier de ${ TRIAL_MAX_DEDICATED_IPS } serveur dédié maximum pendant la version d'essai."
@@ -680,14 +966,6 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Connexions sécurisées sur tous vos appareils. Comprend un nombre d'alias « hide-my-email » illimité, la fonction de partage, l’intégration de l'authentification A2F, ${ DARK_WEB_MONITORING_NAME } et plus encore."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore.",
-        "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresse e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore.",
-        "Protégez vos e-mails et votre calendrier grâce au chiffrement de bout en bout. Comprend ${ addresses } adresses e-mail, la prise en charge de domaines e-mail personnalisés, des alias « hide-my-email » illimités et bien plus encore."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protégez vos messages et votre calendrier grâce au chiffrement de bout en bout. Comprend 15 adresses e-mail, la prise en charge de domaines de messagerie personnalisés, l’assistant d’écriture ${ BRAND_NAME } Scribe, des alias « hide-my-email » illimités et bien plus encore."
@@ -1152,16 +1430,8 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
-        "${ users } utilisateur",
-        "${ users } utilisateurs"
-      ],
       "Total": [
         "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total pour ${ n } mois",
-        "Total pour ${ n } mois"
       ]
     },
     "Collapsible tooltip": {
@@ -2613,10 +2883,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "octet",
-        "octets"
-      ],
       "GB": [
         "Go"
       ],
@@ -2628,28 +2894,6 @@
       ],
       "TB": [
         "To"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Octet",
-        "Octets"
-      ],
-      "Gigabyte": [
-        "Gigaoctet",
-        "Gigaoctets"
-      ],
-      "Kilobyte": [
-        "Kilooctet",
-        "Kilooctets"
-      ],
-      "Megabyte": [
-        "Megaoctet",
-        "Megaoctets"
-      ],
-      "Terabyte": [
-        "Téraoctet",
-        "Téraoctets"
       ]
     },
     "Filter notification": {
@@ -2767,19 +3011,11 @@
       "${ storage } storage": [
         "${ storage } d'espace de stockage"
       ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } membre)",
-        "(${ memberCount } membres)"
-      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mois)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } connexion pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)",
-        "+${ organization.BonusVPN } connexions pour ${ VPN_APP_NAME } (vous pouvez connecter plus d'appareils au VPN)"
       ],
       "30-day money-back guarantee.": [
         "Garantie satisfait ou remboursé pendant 30 jours"
@@ -2837,10 +3073,6 @@
       ],
       "Country code": [
         "Indicatif du pays"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Créer un cloud sécurisé pour ${ value } membre",
-        "Créer un cloud sécurisé pour ${ value } membres"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédit pour la période non utilisée de votre abonnement précédent"
@@ -3055,10 +3287,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faites un versement en utilisant l'adresse suivante ou scannez le code QR. Votre versement sera affiché sur votre compte après confirmation."
       ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "L'abonnement est renouvelé automatiquement tous les ${ cycle } mois.",
-        "L'abonnement est renouvelé automatiquement tous les ${ cycle } mois."
-      ],
       "Subscription auto-renews every month.": [
         "L'abonnement est renouvelé automatiquement tous les mois."
       ],
@@ -3158,14 +3386,6 @@
       "You can change this anytime in ${ settingsLink }.": [
         "Vous pouvez modifier cela à tout moment dans ${ settingsLink }."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement."
-      ],
       "You can now return to the application to continue": [
         "Vous pouvez maintenant revenir à l'application pour continuer."
       ],
@@ -3193,10 +3413,6 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
       ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois.",
-        "Vous recevrez une facture de ${ renewAmountStr } tous les ${ renewCycle } mois."
-      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Votre compte ${ BRAND_NAME } est suspendu. Au bout de 28 jours, les messages ne seront plus envoyés dans votre boite de réception, vos liens de partage Drive seront bloqués et vous ne pourrez plus télécharger de nouveaux fichiers. Pour retrouver un service normal, nous vous invitons à régler toutes les factures en retard."
       ],
@@ -3217,10 +3433,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois.",
-        "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement tous les ${ cycle } mois."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Votre abonnement programmé commence le ${ renewalTime } et se renouvellera automatiquement chaque mois."
@@ -3256,10 +3468,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
-      ],
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
       ],
       "Account holder": [
         "Titulaire du compte"
@@ -3657,76 +3865,8 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } et ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar": [
-        "${ n } calendrier",
-        "${ n } calendriers"
-      ],
-      "${ n } calendar per user": [
-        "${ n } calendrier par utilisateur",
-        "${ n } calendriers par utilisateur"
-      ],
-      "${ n } custom email domain": [
-        "${ n } domaine de messagerie personnalisé",
-        "${ n } domaines de messagerie personnalisés"
-      ],
-      "${ n } email address": [
-        "${ n } adresse e-mail",
-        "${ n } adresses e-mail/alias"
-      ],
-      "${ n } email address per user": [
-        "${ n } adresse e-mail par utilisateur",
-        "${ n } adresses e-mail par utilisateur"
-      ],
-      "${ n } filter": [
-        "${ n } filtre",
-        "${ n } filtres"
-      ],
-      "${ n } folder": [
-        "${ n } dossier",
-        "${ n } dossiers"
-      ],
-      "${ n } folder and label": [
-        "${ n } dossier et label",
-        "${ n } dossiers et labels"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } alias « hide-my-email »",
-        "${ n } alias « hide-my-email »"
-      ],
-      "${ n } label": [
-        "${ n } label",
-        "${ n } labels"
-      ],
-      "${ n } message per day": [
-        "${ n } message par jour",
-        "${ n } messages par jour"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } coffre-fort ${ PASS_SHORT_APP_NAME } partagé par utilisateur",
-        "${ n } coffres-forts ${ PASS_SHORT_APP_NAME } partagés par utilisateur"
-      ],
-      "${ n } vault": [
-        "${ n } coffre-fort",
-        "${ n } coffres-forts"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexion VPN",
-        "${ n } connexions VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } utilisateur",
-        "Jusqu'à ${ numberOfUsers } utilisateurs"
-      ],
-      "${ options }-day file version history": [
-        "Historique des versions de fichiers datant de ${ options } jours",
-        "Historique des versions de fichiers datant de ${ options } jours"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accès à vie aux fonctions ${ PASS_APP_NAME } et SimpleLogin"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
-        "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } avec des alias « hide-my-email » illimités"
@@ -3875,10 +4015,6 @@
       "Group management (coming soon)": [
         "Gestion de groupes (prochainement)"
       ],
-      "High-speed VPN on ${ n } device": [
-        "VPN haut débit sur ${ n } appareil",
-        "VPN haut débit sur ${ n } appareils"
-      ],
       "HTML signatures": [
         "Signatures HTML"
       ],
@@ -4023,20 +4159,8 @@
       "Unlimited volume/bandwidth": [
         "Volume et bande passante illimités"
       ],
-      "Up to ${ n } user": [
-        "Jusqu'à ${ n } utilisateur",
-        "Jusqu'à ${ n } utilisateurs"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Jusqu'à ${ n } utilisateur (${ adminsText }), ${ usersText }",
-        "Jusqu'à ${ n } utilisateurs (${ adminsText }), ${ usersText }"
-      ],
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Utiliser sur jusqu'à ${ n } appareil à la fois",
-        "Utiliser sur jusqu'à ${ n } appareils à la fois"
       ],
       "User credential management": [
         "Gestion des identifiants des utilisateurs"
@@ -4047,22 +4171,8 @@
       "User storage management": [
         "Gestion de l'espace de stockage des utilisateurs"
       ],
-      "Vault sharing (up to ${ n } person)": [
-        "Partage du coffre-fort (${ n } personne)",
-        "Partage du coffre-fort (jusqu'à ${ n } personnes)"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ admins } admin": [
-        "${ admins } administrateur",
-        "${ admins } administrateurs"
-      ],
-      "${ users } user": [
-        "${ users } utilisateur",
-        "${ users } utilisateurs"
       ]
     },
     "new_plans: heading": {
@@ -4221,10 +4331,6 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Créez différentes adresses selon vos activités, comme « SebShopping@${ domain } » pour les achats et « SebNews@${ domain } » pour les abonnements à des sites d'informations par exemple."
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Créez jusqu'à ${ n } calendrier ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations.",
-        "Créez jusqu'à ${ n } calendriers ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Créez jusqu'à ${ n } adresses e-mail/alias et attribuez-les aux membres de votre famille. Utilisez-les pour vos identités en ligne, comme « SebShopping@${ domain } » pour tous vos achats en ligne."
@@ -4429,10 +4535,6 @@
       "Central control panel": [
         "Panneau de contrôle central"
       ],
-      "Create up to ${ n } calendar": [
-        "Créez jusqu'à ${ n } calendrier",
-        "Créez jusqu'à ${ n } calendriers"
-      ],
       "Dedicated Account manager": [
         "Responsable de compte dédié"
       ],
@@ -4450,10 +4552,6 @@
       ],
       "Require 2FA": [
         "Demande d'authentification A2F"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Prise en charge pour ${ n } domaine de messagerie personnalisé",
-        "Prise en charge pour ${ n } domaines de messagerie personnalisés"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4518,10 +4616,6 @@
       ]
     },
     "pass_signup_2024: Info": {
-      "${ n } user account": [
-        "${ n } compte utilisateur",
-        "${ n } comptes utilisateur"
-      ],
       "Activity log": [
         "Journal d'activités"
       ],
@@ -4641,24 +4735,8 @@
       "terms & conditions": [
         "les conditions générales d’utilisation"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",
-        "Le code cadeau est valide pour ${ couponRedemptions } renouvellements."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Le tarif réduit spécial de ${ priceWithDiscount } est valable pendant le premier ${ subscriptionLength } mois.",
-        "Le tarif réduit spécial de ${ priceWithDiscount } est valable pendant les premiers ${ subscriptionLength } mois."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellement. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment.",
-        "Le tarif exceptionnellement réduit de ${ priceWithDiscount } est valable le premier mois. Le coupon est valide pour ${ couponRedemptions } renouvellements. Il sera ensuite automatiquement renouvelé à ${ renewPriceStr } pendant 1 mois. Vous pouvez annuler à tout moment."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Le tarif exceptionnel de ${ priceWithDiscount } s'applique le premier mois. Ensuite, l'abonnement sera automatiquement renouvelé au prix de ${ renewPriceStr } par mois. Vous pouvez résilier l'abonnement à tout moment."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment.",
-        "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
       ],
       "This number will be shown on all future invoices": [
         "Ce numéro sera indiqué sur toutes les prochaines factures."
@@ -4940,10 +5018,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } heure",
-        "${ gracePeriodHoursRemaining } heures"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } est maintenant disponible."
       ],
@@ -5007,12 +5081,6 @@
         "Nous utilisons par défaut la méthode de signature Electrum, car c'est la plus simple et la plus couramment demandée par les banques. La méthode BIP 137, plus avancée, est utilisée pour la signature des transactions hors ligne."
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mois GRATUIT",
-        "${ n } mois GRATUITS"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 utilisateur"
@@ -5063,10 +5131,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
       "1 year": [
         "1 an"
       ],
@@ -5206,10 +5270,6 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Nous ajouterons les crédits restants à votre compte ${ BRAND_NAME }."
       ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "Il vous reste encore **${ daysRemaining }** jour sur votre compte **${ currentPlanName }**.",
-        "Il vous reste encore **${ daysRemaining }** jours sur votre compte **${ currentPlanName }**."
-      ],
       "Your ${ appStorage } is almost full": [
         "Votre ${ appStorage } est presque plein."
       ],
@@ -5241,32 +5301,6 @@
       ],
       "Billed yearly": [
         "Facturé annuellement"
-      ]
-    },
-    "Subscription attribute": {
-      "${ n } free VPN connection per user": [
-        "${ n } connexion VPN gratuite par utilisateur",
-        "${ n } connexions VPN gratuites par utilisateur"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } connexion VPN haut débit",
-        "${ n } connexions VPN haut débit"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } connexion VPN haut débit par utilisateur",
-        "${ n } connexions VPN haut débit par utilisateur"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexion VPN",
-        "${ n } connexions VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } connexion VPN par utilisateur",
-        "${ n } connexions VPN par utilisateur"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "Connexion VPN pour ${ n } appareil par utilisateur",
-        "Connexion VPN pour ${ n } appareils par utilisateur"
       ]
     },
     "Subscription change warning": {
@@ -5313,14 +5347,6 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vous donne accès à toutes les applications, toutes les fonctionnalités, un accès en avant-première aux nouvelles versions et tout ce dont vous besoin pour contrôler vos données et leur sécurité."
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domaine de messagerie personnalisé",
-        "${ planNumberOfDomains } domaines de messagerie personnalisés"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adresse e-mail",
-        "${ planNumberOfEmails } adresses e-mail"
       ],
       "Folders, labels, and custom filters": [
         "Dossiers, labels et filtres personnalisés"
@@ -5477,6 +5503,9 @@
     "Title": {
       "${ feature } is now active": [
         "La fonction ${ feature } est maintenant active."
+      ],
+      "Account restricted": [
+        "Compte restreint"
       ],
       "Account temporarily locked": [
         "Compte temporairement verrouillé"
@@ -5745,50 +5774,6 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Les administrateurs ne peuvent pas accéder aux données des utilisateurs privés et ne peuvent pas réinitialiser leur mot de passe."
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractère.",
-        "Le mot de passe doit comporter au moins ${ MIN_PASSWORD_LENGTH } caractères."
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
-        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } appareil",
-        "${ n } appareils"
-      ],
-      "${ n } server": [
-        "${ n } serveur",
-        "Plus de ${ n } serveurs"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexion VPN",
-        "${ n } connexions VPN"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } pays",
-        "${ numberOfCountries } pays"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } dans ${ numberOfCountries } pays",
-        "${ numberOfServers } répartis dans plus de ${ numberOfCountries } pays"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } dans ${ numberOfCountries } pays",
-        "${ numberOfServers } dans ${ numberOfCountries } pays"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Sélection automatique depuis ${ numberOfCountries } pays",
-        "Sélection automatique depuis ${ numberOfCountries } pays"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Serveurs dans plus de ${ numberOfCountries } pays",
-        "Serveurs dans plus de ${ numberOfCountries } pays"
       ]
     },
     "vpn_2step: feature": {
@@ -6361,10 +6346,6 @@
       ],
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
         "Votre transaction a été diffusée sur le réseau Bitcoin. Le réseau peut prendre environ une heure pour confirmer la transaction."
-      ],
-      "~${ minutes } minute": [
-        "~${ minutes } minute",
-        "~${ minutes } minutes"
       ]
     },
     "Wallet Send": {
@@ -6856,18 +6837,6 @@
       ]
     },
     "wallet_signup_2024: Info": {
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } adresse e-mail ${ BRAND_NAME }",
-        "${ n } adresses e-mail ${ BRAND_NAME }"
-      ],
-      "${ n } account per wallet": [
-        "${ n } compte par portefeuille",
-        "${ n } comptes par portefeuille"
-      ],
-      "${ n } wallet": [
-        "${ n } portefeuille",
-        "${ n } portefeuilles"
-      ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
