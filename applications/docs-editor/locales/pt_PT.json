@@ -4,12 +4,6 @@
     "language": "pt_PT"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } está a escrever...",
-        "${ usersTranslation } estão a escrever..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -494,6 +488,10 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } e ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } está a escrever...",
+        "${ usersTranslation } estão a escrever..."
       ],
       "Alpha only experimental feature": [
         "Funcionalidade experimental apenas alfa"

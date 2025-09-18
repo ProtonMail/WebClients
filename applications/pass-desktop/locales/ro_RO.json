@@ -4,308 +4,6 @@
     "language": "ro_RO"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } alias",
-        "${ aliasCount } aliasuri",
-        "${ aliasCount } de aliasuri"
-      ],
-      "${ blockedCount } block": [
-        "Blocate: ${ blockedCount }",
-        "Blocate: ${ blockedCount }",
-        "Blocate: ${ blockedCount }"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "Blocate: ${ blockedEmailsCount }",
-        "Blocate: ${ blockedEmailsCount }",
-        "Blocate: ${ blockedEmailsCount }"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } caracter",
-        "${ config.options.length } caractere",
-        "${ config.options.length } de caractere"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } cuvânt",
-        "${ config.options.wordCount } cuvinte",
-        "${ config.options.wordCount } de cuvinte"
-      ],
-      "${ count } item": [
-        "${ count } articol",
-        "${ count } articole",
-        "${ count } de articole"
-      ],
-      "${ count } time": [
-        "${ count } dată",
-        "de ${ count } ori",
-        "de ${ count } de ori"
-      ],
-      "${ count } view": [
-        "${ count } vizualizare",
-        "${ count } vizualizări",
-        "${ count } de vizualizări"
-      ],
-      "${ count }/${ maxReads } view": [
-        "Vizualizări: ${ count }/${ maxReads }",
-        "Vizualizări: ${ count }/${ maxReads }",
-        "Vizualizări: ${ count }/${ maxReads }"
-      ],
-      "${ days } day": [
-        "${ days } zi",
-        "${ days } zile",
-        "${ days } de zile"
-      ],
-      "${ filesCount } file": [
-        "Fișiere: ${ filesCount }",
-        "Fișiere: ${ filesCount }",
-        "Fișiere: ${ filesCount }"
-      ],
-      "${ forwardCount } forward": [
-        "Redirecționate: ${ forwardCount }",
-        "Redirecționate: ${ forwardCount }",
-        "Redirecționate: ${ forwardCount }"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "Redirecționate: ${ forwardedEmailsCount }",
-        "Redirecționate: ${ forwardedEmailsCount }",
-        "Redirecționate: ${ forwardedEmailsCount }"
-      ],
-      "${ hours } hour": [
-        "${ hours } oră",
-        "${ hours } ore",
-        "${ hours } de ore"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } membru",
-        "${ memberCount } membri",
-        "${ memberCount } de membri"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minute",
-        "${ minutes } de minute"
-      ],
-      "${ months } month": [
-        "${ months } lună",
-        "${ months } luni",
-        "${ months } de luni"
-      ],
-      "${ n } item": [
-        "${ n } articol",
-        "${ n } articole",
-        "${ n } de articole"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "Invitații trimise: ${ payload.count }",
-        "Invitații trimise: ${ payload.count }",
-        "Invitații trimise: ${ payload.count }"
-      ],
-      "${ repliedCount } reply": [
-        "Răspunsuri: ${ repliedCount }",
-        "Răspunsuri: ${ repliedCount }",
-        "Răspunsuri: ${ repliedCount }"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "Trimise: ${ repliedEmailsCount }",
-        "Trimise: ${ repliedEmailsCount }",
-        "Trimise: ${ repliedEmailsCount }"
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount } divulgare detectată",
-        "${ row.breachCount } divulgări detectate",
-        "${ row.breachCount } de divulgări detectate"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } legătură securizată",
-        "${ secureLinksCount } legături securizate",
-        "${ secureLinksCount } de legături securizate"
-      ],
-      "${ total } other login uses the same password": [
-        "Alte autentificări care folosesc aceeași parolă: ${ total }",
-        "Alte autentificări care folosesc aceeași parolă: ${ total }",
-        "Alte autentificări care folosesc aceeași parolă: ${ total }"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } autentificare",
-        "${ usageCount } autentificări",
-        "${ usageCount } de autentificări"
-      ],
-      "${ years } year": [
-        "${ years } an",
-        "${ years } ani",
-        "${ years } de ani"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Articole care vor fi mutate în gunoi: ${ trashedItemsCount }. Continuați?",
-        "Articole care vor fi mutate în gunoi: ${ trashedItemsCount }. Continuați?",
-        "Articole care vor fi mutate în gunoi: ${ trashedItemsCount }. Continuați?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Articole care vor fi șterse definitiv: ${ deletedItemsCount }. Continuați?",
-        "Articole care vor fi șterse definitiv: ${ deletedItemsCount }. Continuați?",
-        "Articole care vor fi șterse definitiv: ${ deletedItemsCount }. Continuați?"
-      ],
-      "byte": [
-        "bait",
-        "baiți",
-        "de baiți"
-      ],
-      "Byte": [
-        "Bait",
-        "Baiți",
-        "Baiți"
-      ],
-      "Cannot send invitation at the moment": [
-        "Invitația nu poate fi trimisă momentan.",
-        "Invitațiile nu se pot trimite momentan.",
-        "Invitațiile nu se pot trimite momentan."
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Ștergeți ${ deletedItemsCount } articol?",
-        "Ștergeți ${ deletedItemsCount } articole?",
-        "Ștergeți ${ deletedItemsCount } de articole?"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "S-a detectat ${ errors.length } rând cu erori în csv.",
-        "S-au detectat ${ errors.length } rânduri cu erori în csv.",
-        "S-au detectat ${ errors.length } de rânduri cu erori în csv."
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Din motive de securitate, trebuie să confirmați accesul la acest seif partajat.",
-        "Din motive de securitate, trebuie să confirmați accesul la aceste seifuri partajate.",
-        "Din motive de securitate, trebuie să confirmați accesul la aceste seifuri partajate."
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână.",
-        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni.",
-        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni."
-      ],
-      "Gigabyte": [
-        "Gigabait",
-        "Gigabaiți",
-        "Gigabaiți"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Partajare articol: ${ itemAccessCount } utilizator",
-        "Partajare articol: ${ itemAccessCount } utilizatori",
-        "Partajare articol: ${ itemAccessCount } de utilizatori"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } utilizator.",
-        "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } utilizatori.",
-        "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } de utilizatori."
-      ],
-      "Kilobyte": [
-        "Kilobait",
-        "Kilobaiți",
-        "Kilobaiți"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Lungimea maximă este de ${ maxLength } caracter.",
-        "Lungimea maximă este de ${ maxLength } caractere.",
-        "Lungimea maximă este de ${ maxLength } de caractere."
-      ],
-      "Megabyte": [
-        "Megabait",
-        "Megabaiți",
-        "Megabaiți"
-      ],
-      "Move ${ count } item": [
-        "Mutare ${ count } articol.",
-        "Mutare ${ count } articole.",
-        "Mutare ${ count } de articole."
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Mutare ${ count } articol în ${ vaultName }",
-        "Mutare ${ count } articole în ${ vaultName }",
-        "Mutare ${ count } de articole în ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Mutați ${ trashedItemsCount } articol în gunoi?",
-        "Mutați ${ trashedItemsCount } articole în gunoi?",
-        "Mutați ${ trashedItemsCount } de articole în gunoi?"
-      ],
-      "Move item to": [
-        "Mutare articol în",
-        "Mutare articole în",
-        "Mutare articole în"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână sunt șterse automat din istoric.",
-        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni sunt șterse automat din istoric.",
-        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni sunt șterse automat din istoric."
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "După ștergere, aliasul nu mai poate fi restaurat.",
-        "După ștergere, aliasurile nu mai pot fi restaurate.",
-        "După ștergere, aliasurile nu mai pot fi restaurate."
-      ],
-      "Reused ${ count } time": [
-        "Refolosită ${ count } dată",
-        "Refolosită de ${ count } ori",
-        "Refolosită de ${ count } de ori"
-      ],
-      "Sync alias": [
-        "Sincronizare alias",
-        "Sincronizare aliasuri",
-        "Sincronizare aliasuri"
-      ],
-      "Terabyte": [
-        "Tibibait",
-        "Tibibaiți",
-        "Tibibaiți"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Nu s-a putut importa ${ totalIgnored } articol:",
-        "Nu s-au putut importa ${ totalIgnored } articole:",
-        "Nu s-au putut importa ${ totalIgnored } de articole:"
-      ],
-      "Understood, I will never need it": [
-        "Am înțeles, nu mai nevoie de el",
-        "Am înțeles, nu mai nevoie de ele",
-        "Am înțeles, nu mai nevoie de ele"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Partajare seif: ${ vaultMembersCount } membru",
-        "Partajare seif: ${ vaultMembersCount } membri",
-        "Partajare seif: ${ vaultMembersCount } de membri"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Seifurile nu pot conține mai mult de ${ targetMaxMembers } utilizator.",
-        "Seifurile nu pot conține mai mult de ${ targetMaxMembers } utilizatori.",
-        "Seifurile nu pot conține mai mult de ${ targetMaxMembers } de utilizatori."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Am detectat că aveți ${ aliasCount } alias care există în SimpleLogin, dar lipsește în ${ PASS_APP_NAME }. Doriți să-l importați?",
-        "Am detectat că aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?",
-        "Am detectat că aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Puteți trage și plasa articolul selectat în alt seif.",
-        "Puteți trage și plasa articolele selectate în alt seif.",
-        "Puteți trage și plasa articolele selectate în alt seif."
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Aveți ${ aliasCount } alias care există în SimpleLogin, dar lipsește în ${ PASS_APP_NAME }. Doriți să-l sincronizați?",
-        "Aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le sincronizați?",
-        "Aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le sincronizați?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Mai aveți ${ daysRemaining } zi rămasă pentru a încerca aceste funcții premium.",
-        "Mai aveți ${ daysRemaining } zile rămase pentru a încerca aceste funcții premium.",
-        "Mai aveți ${ daysRemaining } de zile rămase pentru a încerca aceste funcții premium."
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Urmează să ștergeți definitiv ${ aliasCount } alias.",
-        "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
-        "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
-      ]
-    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } şi încă ${ remainingCount } potențiale divulgări au fost detectate. Activați ${ DARK_WEB_MONITORING_NAME } pentru a vedea detaliile și a lua măsuri. ${ link }"
@@ -431,9 +129,6 @@
       ],
       "Clear search": [
         "Golire căutare"
-      ],
-      "Clone item": [
-        "Clonare articol"
       ],
       "Close": [
         "Închidere"
@@ -738,9 +433,6 @@
       "Open navigation": [
         "Deschidere navigare"
       ],
-      "Organize vaults": [
-        "Organizare seifuri"
-      ],
       "Pass for Android": [
         "Proton Pass pentru Android"
       ],
@@ -921,6 +613,11 @@
       "Submitting report...": [
         "Se trimite raportul…"
       ],
+      "Sync alias": [
+        "Sincronizare alias",
+        "Sincronizare aliasuri",
+        "Sincronizare aliasuri"
+      ],
       "Sync aliases": [
         "Sincronizare aliasuri"
       ],
@@ -947,6 +644,11 @@
       ],
       "Unblock contact": [
         "Deblocare contact"
+      ],
+      "Understood, I will never need it": [
+        "Am înțeles, nu mai nevoie de el",
+        "Am înțeles, nu mai nevoie de ele",
+        "Am înțeles, nu mai nevoie de ele"
       ],
       "Unlock": [
         "Deblocare"
@@ -1044,6 +746,11 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } este disponibilă cu un plan plătit. Îmbunătățiți-vă planul pentru a avea acces imediat."
+      ],
+      "${ total } other login uses the same password": [
+        "Alte autentificări care folosesc aceeași parolă: ${ total }",
+        "Alte autentificări care folosesc aceeași parolă: ${ total }",
+        "Alte autentificări care folosesc aceeași parolă: ${ total }"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "A2F adaugă un alt nivel de securitate autentificărilor proprii. ${ PASS_APP_NAME } facilitează accesul cu A2F prin stocarea și completarea automată a codurilor de A2F."
@@ -1172,6 +879,11 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentificare eșuată. Confirmați parola secundară pentru continuare exportare."
       ],
+      "Cannot send invitation at the moment": [
+        "Invitația nu poate fi trimisă momentan.",
+        "Invitațiile nu se pot trimite momentan.",
+        "Invitațiile nu se pot trimite momentan."
+      ],
       "Cannot send invitations at the moment": [
         "Momentan nu se pot trimite invitații."
       ],
@@ -1219,6 +931,11 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Ștergerea seifului „${ payload.content.name }” a eșuat."
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "S-a detectat ${ errors.length } rând cu erori în csv.",
+        "S-au detectat ${ errors.length } rânduri cu erori în csv.",
+        "S-au detectat ${ errors.length } de rânduri cu erori în csv."
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Domeniul nu a putut fi verificat. Asigurați-vă că ați adăugat înregistrările DNS corecte."
@@ -1562,6 +1279,11 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bait",
+        "baiți",
+        "de baiți"
+      ],
       "GB": [
         "GiB"
       ],
@@ -1573,6 +1295,33 @@
       ],
       "TB": [
         "TiB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bait",
+        "Baiți",
+        "Baiți"
+      ],
+      "Gigabyte": [
+        "Gigabait",
+        "Gigabaiți",
+        "Gigabaiți"
+      ],
+      "Kilobyte": [
+        "Kilobait",
+        "Kilobaiți",
+        "Kilobaiți"
+      ],
+      "Megabyte": [
+        "Megabait",
+        "Megabaiți",
+        "Megabaiți"
+      ],
+      "Terabyte": [
+        "Tibibait",
+        "Tibibaiți",
+        "Tibibaiți"
       ]
     },
     "Font face option": {
@@ -1600,17 +1349,6 @@
         "Foarte mic"
       ]
     },
-    "Header": {
-      "Domain": [
-        "Domeniu"
-      ],
-      "Password ends with": [
-        "Parola se termină cu"
-      ],
-      "Username": [
-        "Nume de utilizator"
-      ]
-    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Articolul „${ payload.itemName }” a fost respins."
@@ -1618,8 +1356,43 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "Actualizarea pentru „${ payload.itemName }” a fost respinsă."
       ],
+      "${ blockedEmailsCount } blocked": [
+        "Blocate: ${ blockedEmailsCount }",
+        "Blocate: ${ blockedEmailsCount }",
+        "Blocate: ${ blockedEmailsCount }"
+      ],
+      "${ count } time": [
+        "${ count } dată",
+        "de ${ count } ori",
+        "de ${ count } de ori"
+      ],
+      "${ count } view": [
+        "${ count } vizualizare",
+        "${ count } vizualizări",
+        "${ count } de vizualizări"
+      ],
+      "${ count }/${ maxReads } view": [
+        "Vizualizări: ${ count }/${ maxReads }",
+        "Vizualizări: ${ count }/${ maxReads }",
+        "Vizualizări: ${ count }/${ maxReads }"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "Redirecționate: ${ forwardedEmailsCount }",
+        "Redirecționate: ${ forwardedEmailsCount }",
+        "Redirecționate: ${ forwardedEmailsCount }"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } dorește să vă partajeze un articol."
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membru",
+        "${ memberCount } membri",
+        "${ memberCount } de membri"
+      ],
+      "${ n } item": [
+        "${ n } articol",
+        "${ n } articole",
+        "${ n } de articole"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } va fi disponibil oricând"
@@ -1639,11 +1412,26 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } vă va solicita parola ${ BRAND_NAME } pentru a accesa datele deconectat."
       ],
+      "${ payload.count } invite successfully sent": [
+        "Invitații trimise: ${ payload.count }",
+        "Invitații trimise: ${ payload.count }",
+        "Invitații trimise: ${ payload.count }"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } s-a dezactivat."
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } s-a activat."
+      ],
+      "${ repliedEmailsCount } sent": [
+        "Trimise: ${ repliedEmailsCount }",
+        "Trimise: ${ repliedEmailsCount }",
+        "Trimise: ${ repliedEmailsCount }"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } divulgare detectată",
+        "${ row.breachCount } divulgări detectate",
+        "${ row.breachCount } de divulgări detectate"
       ],
       "(Empty)": [
         "(Gol)"
@@ -1936,9 +1724,6 @@
       "Extra password successfully removed": [
         "Parola suplimentară s-a eliminat."
       ],
-      "Failed updating your vault organization": [
-        "Nu s-a putut actualiza organizarea seifului."
-      ],
       "Fill in the CSV with your data": [
         "Completați fișierul CSV cu datele necesare."
       ],
@@ -1951,11 +1736,21 @@
       "For security reasons, this action requires identity verification.": [
         "Din motive de securitate, această acțiune necesită verificarea identității."
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Din motive de securitate, trebuie să confirmați accesul la acest seif partajat.",
+        "Din motive de securitate, trebuie să confirmați accesul la aceste seifuri partajate.",
+        "Din motive de securitate, trebuie să confirmați accesul la aceste seifuri partajate."
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Din motive de securitate, accesul trebuie să vă fie confirmat."
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Adresa de redirecționare a fost copiată în memorie. Trimite un mesaj la această adresă și ${ Email } îl va primi."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână.",
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni.",
+        "Parolele generate vor fi stocate pentru o perioadă de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Obțineți maximum din Proton Pass creând un seif pentru fiecare echipă sau proiect."
@@ -2038,6 +1833,11 @@
       "Item restored": [
         "Articolul s-a restaurat."
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Partajare articol: ${ itemAccessCount } utilizator",
+        "Partajare articol: ${ itemAccessCount } utilizatori",
+        "Partajare articol: ${ itemAccessCount } de utilizatori"
+      ],
       "Item successfully excluded from monitoring": [
         "Articol a fost exclus de la monitorizare."
       ],
@@ -2097,6 +1897,11 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Mai mult decât un manager de parole, ${ PASS_APP_NAME } vă protejează parolele și adresele de e-mail personale prin aliasuri de e-mail. Creat cu aceeași tehnologie folosită la ${ MAIL_APP_NAME }, datele vă sunt criptate bilateral și doar dvs. le puteți accesa."
+      ],
+      "Move ${ count } item": [
+        "Mutare ${ count } articol.",
+        "Mutare ${ count } articole.",
+        "Mutare ${ count } de articole."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
@@ -2166,6 +1971,11 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blocarea cu parolă s-a înregistrat. Folosiți-o pentru a debloca ${ PASS_APP_NAME }."
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămână sunt șterse automat din istoric.",
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } săptămâni sunt șterse automat din istoric.",
+        "Parolele mai vechi de ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } de săptămâni sunt șterse automat din istoric."
       ],
       "Paused": [
         "Suspendat"
@@ -2458,6 +2268,11 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Va fi necesară o parolă suplimentară pentru a utiliza ${ PASS_APP_NAME }. Acționează ca o parolă adițională pe lângă parola ${ BRAND_NAME } principală."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Nu s-a putut importa ${ totalIgnored } articol:",
+        "Nu s-au putut importa ${ totalIgnored } articole:",
+        "Nu s-au putut importa ${ totalIgnored } de articole:"
+      ],
       "The secure link has been removed": [
         "Legătura web securizată a fost eliminată."
       ],
@@ -2551,9 +2366,6 @@
       "Unverified": [
         "Neverificat"
       ],
-      "Updating vault organization...": [
-        "Se actualizează organizarea seifului..."
-      ],
       "Upgrade Now to Unlock Premium Features": [
         "Modificați-vă acum contul pentru a debloca funcțiile premium"
       ],
@@ -2581,8 +2393,10 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Seiful „${ share.content.name }” a fost șters."
       ],
-      "Vault organization successfully updated": [
-        "Organizarea seifului a fost actualizată cu succes."
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Partajare seif: ${ vaultMembersCount } membru",
+        "Partajare seif: ${ vaultMembersCount } membri",
+        "Partajare seif: ${ vaultMembersCount } de membri"
       ],
       "Verification code sent.": [
         "Codul de verificare a fost trimis."
@@ -2592,6 +2406,11 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Există probleme la sincronizarea datelor cu stocarea locală. Asigurați-vă că aveți suficient spațiu pe disc pentru ca ${ PASS_SHORT_APP_NAME } să funcționeze fără probleme."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Am detectat că aveți ${ aliasCount } alias care există în SimpleLogin, dar lipsește în ${ PASS_APP_NAME }. Doriți să-l importați?",
+        "Am detectat că aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?",
+        "Am detectat că aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le importați?"
       ],
       "Week": [
         "Săptămâna"
@@ -2616,6 +2435,16 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nu se poate modifica adresa reală pentru acest alias."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Aveți ${ aliasCount } alias care există în SimpleLogin, dar lipsește în ${ PASS_APP_NAME }. Doriți să-l sincronizați?",
+        "Aveți ${ aliasCount } aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le sincronizați?",
+        "Aveți ${ aliasCount } de aliasuri care există în SimpleLogin, dar lipsesc în ${ PASS_APP_NAME }. Doriți să le sincronizați?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Mai aveți ${ daysRemaining } zi rămasă pentru a încerca aceste funcții premium.",
+        "Mai aveți ${ daysRemaining } zile rămase pentru a încerca aceste funcții premium.",
+        "Mai aveți ${ daysRemaining } de zile rămase pentru a încerca aceste funcții premium."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Ați depășit numărul de seifuri incluse în abonament. Articolele pot fi mutate doar în primele două seifuri. Pentru a muta articolele între toate seifurile, modificați-vă abonamentul."
@@ -2685,14 +2514,84 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliasuri",
+        "${ aliasCount } de aliasuri"
+      ],
+      "${ blockedCount } block": [
+        "Blocate: ${ blockedCount }",
+        "Blocate: ${ blockedCount }",
+        "Blocate: ${ blockedCount }"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } caracter",
+        "${ config.options.length } caractere",
+        "${ config.options.length } de caractere"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } cuvânt",
+        "${ config.options.wordCount } cuvinte",
+        "${ config.options.wordCount } de cuvinte"
+      ],
+      "${ count } item": [
+        "${ count } articol",
+        "${ count } articole",
+        "${ count } de articole"
+      ],
+      "${ days } day": [
+        "${ days } zi",
+        "${ days } zile",
+        "${ days } de zile"
+      ],
+      "${ forwardCount } forward": [
+        "Redirecționate: ${ forwardCount }",
+        "Redirecționate: ${ forwardCount }",
+        "Redirecționate: ${ forwardCount }"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails } și ${ blockedEmails } în ultimele 14 zile."
+      ],
+      "${ hours } hour": [
+        "${ hours } oră",
+        "${ hours } ore",
+        "${ hours } de ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minute",
+        "${ minutes } de minute"
+      ],
+      "${ months } month": [
+        "${ months } lună",
+        "${ months } luni",
+        "${ months } de luni"
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME } recunoaște site-urile web și aplicațiile pe care le utilizați și completează automat formularele din orice navigator web sau dispozitiv cu acreditările salvate. Nu este nevoie să copiați și să lipiți datele."
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versiune ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ repliedCount } reply": [
+        "Răspunsuri: ${ repliedCount }",
+        "Răspunsuri: ${ repliedCount }",
+        "Răspunsuri: ${ repliedCount }"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } legătură securizată",
+        "${ secureLinksCount } legături securizate",
+        "${ secureLinksCount } de legături securizate"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } autentificare",
+        "${ usageCount } autentificări",
+        "${ usageCount } de autentificări"
+      ],
+      "${ years } year": [
+        "${ years } an",
+        "${ years } ani",
+        "${ years } de ani"
       ],
       "1 hour": [
         "o oră"
@@ -3871,6 +3770,16 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } element",
+        "${ count } articole",
+        "${ count } de articole"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Puteți trage și plasa articolul selectat în alt seif.",
+        "Puteți trage și plasa articolele selectate în alt seif.",
+        "Puteți trage și plasa articolele selectate în alt seif."
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "Articole selectate în acest seif: ${ semiboldText }."
       ]
@@ -3929,6 +3838,11 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "„${ filename }” este prea mare pentru a fi încărcat. Mărimea maximă e de ${ maxFileSizeInMB }."
+      ],
+      "${ filesCount } file": [
+        "Fișiere: ${ filesCount }",
+        "Fișiere: ${ filesCount }",
+        "Fișiere: ${ filesCount }"
       ],
       "Attachments": [
         "Fișiere atașate"
@@ -4257,6 +4171,11 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domeniul a fost verificat. Domeniul poate începe să primească mesaje și să creeze aliasuri."
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } utilizator.",
+        "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } utilizatori.",
+        "Articolele nu pot conține mai mult de ${ share.targetMaxMembers } de utilizatori."
+      ],
       "Mailbox change successfully cancelled": [
         "Modificarea adresei de e-mail s-a anulat."
       ],
@@ -4274,6 +4193,11 @@
       ],
       "Random prefix generation successfully enabled": [
         "Generarea aleatorie a prefixelor a fost activată."
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Seifurile nu pot conține mai mult de ${ targetMaxMembers } utilizator.",
+        "Seifurile nu pot conține mai mult de ${ targetMaxMembers } utilizatori.",
+        "Seifurile nu pot conține mai mult de ${ targetMaxMembers } de utilizatori."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Mesajul de verificare a fost trimis. Accesați-vă contul de e-mail pentru a citi mesajul primit și confirma verificarea."
@@ -4393,6 +4317,11 @@
       "Default Display Name": [
         "Nume afișat implicit"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Ștergeți ${ deletedItemsCount } articol?",
+        "Ștergeți ${ deletedItemsCount } articole?",
+        "Ștergeți ${ deletedItemsCount } de articole?"
+      ],
       "Delete domain": [
         "Ștergere domeniu"
       ],
@@ -4455,9 +4384,6 @@
       ],
       "Grant permissions": [
         "Acordare permisiuni"
-      ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Seifurile ascunse nu vor fi vizibile în timpul căutării și autocompletării."
       ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
@@ -4525,6 +4451,16 @@
       "Modified": [
         "Modificat"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Mutare ${ count } articol în ${ vaultName }",
+        "Mutare ${ count } articole în ${ vaultName }",
+        "Mutare ${ count } de articole în ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Mutați ${ trashedItemsCount } articol în gunoi?",
+        "Mutați ${ trashedItemsCount } articole în gunoi?",
+        "Mutați ${ trashedItemsCount } de articole în gunoi?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Mutați toate articolele în „${ vaultName }”?"
       ],
@@ -4533,9 +4469,6 @@
       ],
       "MX record": [
         "Înregistrare MX"
-      ],
-      "Next": [
-        "Următoare"
       ],
       "No excluded items": [
         "Nu sunt articole excluse"
@@ -4557,12 +4490,6 @@
       ],
       "No shared secure links": [
         "Nu există legături web partajate"
-      ],
-      "Open pagination": [
-        "Deschidere paginare"
-      ],
-      "Organize vaults": [
-        "Organizare seifuri"
       ],
       "Our welcome gift to you": [
         "Cadoul nostru de bun venit"
@@ -4591,8 +4518,10 @@
       "Pinned (${ items.length })": [
         "Fixate (${ items.length })"
       ],
-      "Previous": [
-        "Anterior"
+      "Please note that once deleted, the alias can't be restored.": [
+        "După ștergere, aliasul nu mai poate fi restaurat.",
+        "După ștergere, aliasurile nu mai pot fi restaurate.",
+        "După ștergere, aliasurile nu mai pot fi restaurate."
       ],
       "Random Prefix Generation": [
         "Generare aleatorie prefix"
@@ -4623,6 +4552,11 @@
       ],
       "Resume monitoring?": [
         "Reluați monitorizarea?"
+      ],
+      "Reused ${ count } time": [
+        "Refolosită ${ count } dată",
+        "Refolosită de ${ count } ori",
+        "Refolosită de ${ count } de ori"
       ],
       "Reused passwords": [
         "Parole refolosite"
@@ -4740,11 +4674,11 @@
       ],
       "Your welcome gift": [
         "Bucurați-vă de versiunea de încercare"
-      ]
-    },
-    "Title_cloned_item": {
-      "copy": [
-        "copiere"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Urmează să ștergeți definitiv ${ aliasCount } alias.",
+        "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
+        "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4786,6 +4720,13 @@
         "Adresa URL nu este validă."
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "Mutare articol în",
+        "Mutare articole în",
+        "Mutare articole în"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Este necesară parola ${ BRAND_NAME }"
@@ -4810,6 +4751,16 @@
       ],
       "An error occurred while importing your data.": [
         "A apărut o eroare în timpul importării datelor."
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Articole care vor fi mutate în gunoi: ${ trashedItemsCount }. Continuați?",
+        "Articole care vor fi mutate în gunoi: ${ trashedItemsCount }. Continuați?",
+        "Articole care vor fi mutate în gunoi: ${ trashedItemsCount }. Continuați?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Articole care vor fi șterse definitiv: ${ deletedItemsCount }. Continuați?",
+        "Articole care vor fi șterse definitiv: ${ deletedItemsCount }. Continuați?",
+        "Articole care vor fi șterse definitiv: ${ deletedItemsCount }. Continuați?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Ștergeți permanent acest articol?"
@@ -4891,6 +4842,11 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Invitarea adreselor de e-mail din afara organizației nu este permisă."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Lungimea maximă este de ${ maxLength } caracter.",
+        "Lungimea maximă este de ${ maxLength } caractere.",
+        "Lungimea maximă este de ${ maxLength } de caractere."
       ],
       "Missing alias prefix": [
         "Lipsește prefixul aliasului."

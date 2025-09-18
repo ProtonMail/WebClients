@@ -4,976 +4,6 @@
     "language": "hi_IN"
   },
   "contexts": {
-    "": {
-      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
-        "${ BRAND_NAME } Scribe लेखन सहायक ${ maxAi } उपयोगकर्ता के लिए",
-        "${ BRAND_NAME } Scribe लेखन सहायक ${ maxAi } उपयोगकर्ताओं के लिए"
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } नया कैलेंडर",
-        "${ calendarsToBeCreatedCount } नए कैलेंडर"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } मर्ज किया गया कैलेंडर",
-        "${ calendarsToBeMergedCount } मर्ज किए गए कैलेंडर"
-      ],
-      "${ ceilDays } day": [
-        "${ ceilDays } दिन",
-        "${ ceilDays } दिन"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } घंटा",
-        "${ ceilHours } घंटे"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } मिनट",
-        "${ ceilMinutes } मिनट"
-      ],
-      "${ count } time": [
-        "${ count } समय",
-        "${ count } बार"
-      ],
-      "${ cycle } month": [
-        "${ cycle } महीना",
-        "${ cycle } महीने"
-      ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } दिन बाकी",
-        "${ dayDiff } दिन बाकी"
-      ],
-      "${ days } day": [
-        "${ days } दिन",
-        "${ days } दिन"
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } घंटा",
-        "${ gracePeriodHoursRemaining } घंटे"
-      ],
-      "${ group.UserCount } user": [
-        "${ group.UserCount } यूज़र",
-        "${ group.UserCount } यूज़र"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके परिवार के सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करते हैं।",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके परिवार के सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करते हैं।"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके गैर-सिंगल साइन-ऑन सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके गैर-सिंगल साइन-ऑन सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।"
-      ],
-      "${ hours } h": [
-        "${ hours } घंटा",
-        "${ hours } घंटे"
-      ],
-      "${ hours } hour": [
-        "${ hours } घंटा",
-        "${ hours } घंटे"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 घंटा",
-        "${ hoursInt }.5 घंटे"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 घंटा",
-        "${ hoursInt }.5 घंटे"
-      ],
-      "${ ipAddresses } dedicated server": [
-        "${ ipAddresses } विशेष सर्वर",
-        "${ ipAddresses } विशेष सर्वर"
-      ],
-      "${ ips } server": [
-        "${ ips } सर्वर",
-        "${ ips } सर्वर"
-      ],
-      "${ maxAddresses } address": [
-        "${ maxAddresses } पता",
-        "${ maxAddresses } पते"
-      ],
-      "${ maxAddresses } email address": [
-        "${ maxAddresses } ईमेल पता",
-        "${ maxAddresses } ईमेल पते"
-      ],
-      "${ maxCalendars } calendar": [
-        "${ maxCalendars } कैलेंडर",
-        "${ maxCalendars } कैलेंडर"
-      ],
-      "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } VPN कनेक्शन",
-        "${ MaxVPN } VPN कनेक्शन"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } मेंबर",
-        "${ memberCount } मेंबर"
-      ],
-      "${ minutes } min": [
-        "${ minutes } मिनट",
-        "${ minutes } मिनट"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } मिनट",
-        "${ minutes } मिनट"
-      ],
-      "${ months } month plan": [
-        "${ months } महीना प्लान",
-        "${ months } महीने के प्लान"
-      ],
-      "${ n } address": [
-        "${ n } पता",
-        "${ n } पते"
-      ],
-      "${ n } administrator in your organization need access to the organization key.": [
-        "आपके संगठन में ${ n } प्रशासक को संगठन कुंजी की पहुंच चाहिए।",
-        "आपके संगठन में ${ n } प्रशासकों को संगठन कुंजी की पहुंच चाहिए।"
-      ],
-      "${ n } calendar": [
-        "${ n } कैलेंडर",
-        "${ n } कैलेंडर"
-      ],
-      "${ n } calendar per user": [
-        "${ n } कैलेंडर हर यूज़र पे",
-        "${ n } कैलेंडर हर यूज़र पे"
-      ],
-      "${ n } custom email domain": [
-        "${ n } कस्टम ईमेल डोमेन",
-        "${ n } कस्टम ईमेल डोमेन"
-      ],
-      "${ n } day": [
-        "${ n } दिन",
-        "${ n } दिन"
-      ],
-      "${ n } device": [
-        "${ n } डिवाइस",
-        "${ n } डिवाइस"
-      ],
-      "${ n } email address": [
-        "${ n } ईमेल पता",
-        "${ n } ईमेल पता/उपनाम"
-      ],
-      "${ n } email address per user": [
-        "प्रति उपयोगकर्ता ${ n } ईमेल पता",
-        "प्रति उपयोगकर्ता ${ n } ईमेल पते"
-      ],
-      "${ n } filter": [
-        "${ n } फिल्टर",
-        "${ n } फिल्टर"
-      ],
-      "${ n } folder": [
-        "${ n } फोल्डर",
-        "${ n } फोल्डर"
-      ],
-      "${ n } folder and label": [
-        "${ n } फोल्डर और लेबल",
-        "${ n } फोल्डर और लेबल"
-      ],
-      "${ n } free VPN connection per user": [
-        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन",
-        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email नकली-नाम",
-        "${ n } hide-my-email नकली-नाम"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } तेज़ वीपीएन कनेक्शन",
-        "${ n } तेज़ वीपीएन कनेक्शन"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "प्रति उपयोगकर्ता ${ n } उच्च गति वाला VPN कनेक्शन",
-        "प्रति उपयोगकर्ता ${ n } उच्च गति वाले VPN कनेक्शन"
-      ],
-      "${ n } label": [
-        "${ n } लेबल",
-        "${ n } लेबल"
-      ],
-      "${ n } member requested your help to sign in.": [
-        "${ n } सदस्य ने साइनइन करने के लिए आपकी सहायता का अनुरोध किया है।",
-        "${ n } सदस्य साइनइन करने के लिए आपकी सहायता का अनुरोध कर रहे हैं।"
-      ],
-      "${ n } message per day": [
-        "प्रतिदिन ${ n } संदेश",
-        "प्रतिदिन ${ n } संदेश"
-      ],
-      "${ n } month": [
-        "${ n } महीना",
-        "${ n } महीने"
-      ],
-      "${ n } month FREE": [
-        "${ n } महीना मुफ्त",
-        "${ n } महीने मुफ्त"
-      ],
-      "${ n } server": [
-        "${ n } सर्वर",
-        "${ n }+ सर्वर"
-      ],
-      "${ n } user converted to SSO": [
-        "${ n } उपयोगकर्ता को SSO में परिवर्तित किया गया",
-        "${ n } उपयोगकर्ताओं को SSO में परिवर्तित किया गया"
-      ],
-      "${ n } user detached from SSO": [
-        "${ n } उपयोगकर्ता को SSO से अलग किया गया",
-        "${ n } उपयोगकर्ताओं को SSO से अलग किया गया"
-      ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "${ n } उपयोगकर्ता आपके पहचान प्रदाता के माध्यम से आपके संगठन में शामिल हुआ है। अब खाता की समीक्षा करें:",
-        "${ n } उपयोगकर्ता आपके पहचान प्रदाता के माध्यम से आपके संगठन में शामिल हुए हैं। अब उनके खातों की समीक्षा करें:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } उपयोगकर्ता निष्क्रिय है। आप इस उपयोगकर्ता को सुरक्षित रूप से अपने संगठन से हटा सकते हैं।",
-        "${ n } उपयोगकर्ता निष्क्रिय हैं। आप उन्हें सुरक्षित रूप से अपने संगठन से हटा सकते हैं।"
-      ],
-      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ n } उपयोगकर्ता आपके सहायता का अनुरोध कर रहा है ताकि वह अपने ${ BRAND_NAME } खाते में सिंगल साइन-ऑन के साथ साइन इन कर सके।",
-        "${ n } उपयोगकर्ता अपने ${ BRAND_NAME } खाता में एकल साइन-ऑन के साथ साइनइन करने के लिए आपकी सहायता का अनुरोध कर रहे हैं।"
-      ],
-      "${ n } vault": [
-        "${ n } तिजोरी",
-        "${ n } तिजोरी"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN कनेक्शन",
-        "${ n } VPN कनेक्शन"
-      ],
-      "${ n } VPN connection per user": [
-        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन",
-        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन"
-      ],
-      "${ n } year": [
-        "${ n } साल",
-        "${ n } साल"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } दिन",
-        "${ nbDay } दिन"
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } साल",
-        "${ nbYear } साल"
-      ],
-      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } सदस्य",
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } सदस्य"
-      ],
-      "${ number } city": [
-        "${ number } शहर",
-        "${ number } शहर"
-      ],
-      "${ number } server": [
-        "${ number } सर्वर",
-        "${ number } सर्वर"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } देश",
-        "${ numberOfCountries } देश"
-      ],
-      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } अपलोड की गई फ़ाइल मान्य निजी कुंजी नहीं है। कृपया सत्यापन करें और पुनःप्रयास करें।",
-        "${ numberOfNonPrivateKeys } अपलोड की गई फ़ाइलें मान्य निजी कुंजी नहीं हैं। कृपया सत्यापन करें और पुनःप्रयास करें।"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfCountries } देशों में ${ numberOfServers }",
-        "${ numberOfCountries }+ देशों में ${ numberOfServers }"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfCountries } देश में ${ numberOfServers }",
-        "${ numberOfCountries } देशों में ${ numberOfServers }"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } यूज़र",
-        "${ numberOfUsers } उपयोगकर्ता तक"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } with ${ n } hide-my-email नकली-नाम",
-        "${ PASS_APP_NAME } with ${ n } hide-my-email नकली-नाम"
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "प्रति उपयोगकर्ता ${ planNumberOfCalendars } कैलेंडर",
-        "प्रति उपयोगकर्ता ${ planNumberOfCalendars } कैलेंडर"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } कस्टम ईमेल डोमेन",
-        "${ planNumberOfDomains } कस्टम ईमेल डोमेन"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } ईमेल पता",
-        "${ planNumberOfEmails } ईमेल पते"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "प्रति उपयोगकर्ता ${ planNumberOfEmails } ईमेल पता",
-        "प्रति उपयोगकर्ता ${ planNumberOfEmails } ईमेल पते"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } यूज़र",
-        "${ planNumberOfUsers } यूज़र"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } फोल्डर मिला",
-        "${ providerFoldersNumLocalized } फोल्डर मिले"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } लेबल Gmail में मिला",
-        "${ providerFoldersNumLocalized } लेबल Gmail में मिले"
-      ],
-      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter } सर्वर अभी भी सेटअप किया जा रहा है। इसमें आमतौर पर लगभग ${ provisioningDuration } का समय लगता है।",
-        "${ provisioningCounter } सर्वर अभी भी सेटअप किए जा रहा है। इसमें आमतौर पर लगभग ${ provisioningDuration } का समय लगता है।"
-      ],
-      "${ remainingAddresses.length } more": [
-        "${ remainingAddresses.length } और",
-        "${ remainingAddresses.length } और"
-      ],
-      "${ remainingAddresses.length } more address": [
-        "${ remainingAddresses.length } और ईमेल पता",
-        "${ remainingAddresses.length } और ईमेल पता"
-      ],
-      "${ seconds } second": [
-        "${ seconds } सेकंड",
-        "${ seconds } सेकंड"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर",
-        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
-      ],
-      "${ selectedCountriesCount } selected": [
-        "${ selectedCountriesCount } चयनित",
-        "${ selectedCountriesCount } चयनित"
-      ],
-      "${ selectedEntities.length } selected": [
-        "${ selectedEntities.length } चयनित",
-        "${ selectedEntities.length } चयनित"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } फ़ोल्डर चयनित",
-        "${ selectedFoldersCount } फ़ोल्डर्स का चयन किया"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } लेबल चयनित",
-        "${ selectedFoldersCount } लेबल चयनित"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } फ़ोल्डर का चयन किया",
-        "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } लेबल चयनित",
-        "${ selectedFoldersCountLocalized } लेबल चयनित"
-      ],
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } दिन",
-        "${ timeRemaining.inDays } दिन"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } घंटा",
-        "${ timeRemaining.inHours } घंटे"
-      ],
-      "${ totalContacts } contact": [
-        "${ totalContacts } संपर्क",
-        "${ totalContacts } संपर्क"
-      ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किया जाएगा। जानकारी के लिए फैलाए।",
-        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किए जाएगे। जानकारी के लिए फैलाए।"
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } संपर्क एन्क्रिप्ट किया गया और आपकी संपर्क सूची में जोड़ा गया",
-        "${ totalImported }/${ totalToImport } ईवेंट एन्क्रिप्ट किया गया और आपके कैलेंडर में जोड़ा गया"
-      ],
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए",
-        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए"
-      ],
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } इवेंट निर्यात हुए",
-        "${ totalProcessed }/${ totalToProcess } इवेंट निर्यात हुए"
-      ],
-      "${ UsedAddresses } address": [
-        "${ UsedAddresses } पता",
-        "${ UsedAddresses } पते"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता",
-        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता"
-      ],
-      "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } कैलेंडर",
-        "${ UsedCalendars } कैलेंडर"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ MaxDomains } का ${ UsedDomains } कस्टम डोमेन",
-        "${ MaxDomains } का ${ UsedDomains } कस्टम डोमेन"
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ MaxMembers } में से ${ UsedMembers } यूज़र",
-        "${ MaxMembers } में से ${ UsedMembers } यूज़र"
-      ],
-      "${ userFound } user found": [
-        "${ userFound } यूज़र मिले",
-        "${ userFound } यूज़र मिले"
-      ],
-      "${ users } user": [
-        "${ users } यूज़र",
-        "${ users } यूज़र"
-      ],
-      "${ VPN_CONNECTIONS } high-speed VPN connection": [
-        "${ VPN_CONNECTIONS } तेज़ वीपीएन कनेक्शन",
-        "${ VPN_CONNECTIONS } तेज़ वीपीएन कनेक्शन"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } सदस्य)",
-        "(${ memberCount } सदस्य)"
-      ],
-      "+ ${ invisibleCount } More": [
-        "+ ${ invisibleCount } और",
-        "+ ${ invisibleCount } और"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)",
-        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)"
-      ],
-      "Add ${ totalServerCount } server?": [
-        "क्या ${ totalServerCount } सर्वर जोड़ें?",
-        "क्या ${ totalServerCount } सर्वर जोड़ें?"
-      ],
-      "Add (${ totalAddedCount })": [
-        "(${ totalAddedCount }) जोड़ें",
-        "(${ totalAddedCount }) जोड़ें"
-      ],
-      "Add server (${ availableAddedCount } available)": [
-        "सर्वर जोड़ें (${ availableAddedCount } उपलब्ध)",
-        "सर्वर जोड़ें (${ availableAddedCount } उपलब्ध)"
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount } गेटवे सर्वर जोड़ा जा रहा है",
-        "${ addedServerCount } गेटवे सर्वर जोड़ें जा रहें हैं"
-      ],
-      "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "गेटवे सर्वर जोड़ा जा रहा है: ${ serverNumber } / ${ total }",
-        "गेटवे सर्वर जोड़ें जा रहें हैं: ${ serverNumber } / ${ total }"
-      ],
-      "Affected user is on row": [
-        "प्रभावित उपयोगकर्ता पंक्ति पर है",
-        "प्रभावित उपयोगकर्ता पंक्तियों पर हैं"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "सभी (${ totalFoldersCount } फोल्डर)",
-        "सभी (${ totalFoldersCount } फोल्डर)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "सभी (${ totalFoldersCount } लेबल)",
-        "सभी (${ totalFoldersCount } लेबल)"
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }",
-        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किया गया।",
-        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किए गए।"
-      ],
-      "byte": [
-        "बाइट",
-        "बाइट"
-      ],
-      "Byte": [
-        "बाइट",
-        "बाइट"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "${ plusVpnConnections } डिवाइस तक के लिए कनेक्शन",
-        "अधिकतम ${ plusVpnConnections } उपकरणों के लिए कनेक्शन"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "इस बीच उनकी एन्क्रिप्शन चाबियाँ अपडेट हुई होने के कारण, ${ n } उपयोगकर्ता के लिए स्वचालित रूप से प्रशासक पहुंच सक्षम नहीं की जा सकी:",
-        "${ n } उपयोगकर्ताओं के लिए स्वचालित रूप से एडमिन एक्सेस सक्षम नहीं किया जा सका, क्योंकि उनकी एन्क्रिप्शन चाबियाँ इस बीच अपडेट हो गई हैं:"
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
-        "${ calendarsToBeCreatedCount } नए कैलेंडर बनाएं"
-      ],
-      "Create ${ selectedUserIds.length } user": [
-        "${ selectedUserIds.length } यूज़र खाता बनाए",
-        "${ selectedUserIds.length } यूज़र खाते बनाए"
-      ],
-      "Create up to ${ n } calendar": [
-        "${ n } कैलेंडर तक बनाएं",
-        "${ n } कैलेंडर तक बनाएं"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।",
-        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।"
-      ],
-      "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "गेटवे सर्वर बनाया जा रहा है: ${ serverNumber } / ${ total }",
-        "गेटवे सर्वर बनाएं जा रहें हैं: ${ serverNumber } / ${ total }"
-      ],
-      "day": [
-        "दिन",
-        "दिन"
-      ],
-      "day before": [
-        "एक दिन पहले",
-        "एक दिन पहले"
-      ],
-      "Delete ${ n } inactive user?": [
-        "क्या ${ n } निष्क्रिय उपयोगकर्ता को हटाएं?",
-        "क्या ${ n } निष्क्रिय उपयोगकर्ताओं को हटाएं?"
-      ],
-      "Delete ${ n } user": [
-        "${ n } उपयोगकर्ता को हटाएं",
-        "${ n } उपयोगकर्ताओं को हटाएं"
-      ],
-      "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "सर्वर को मिटा दें (आप इसे ${ days } दिन तक फिर से प्राप्त कर सकेंगे)",
-        "सर्वर को मिटा दें (आप इसे ${ days } दिनों तक फिर से प्राप्त कर सकेंगे)"
-      ],
-      "Deleting ${ deletedServerCount } gateway server": [
-        "${ deletedServerCount } गेटवे सर्वर को मिटाया जा रहा है",
-        "${ deletedServerCount } गेटवे सर्वर को मिटाये जा रहे हैं"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले",
-        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या",
-        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या"
-      ],
-      "domain used": [
-        "डोमेन का उपयोग किया",
-        "डोमेन का उपयोग किया"
-      ],
-      "Every ${ interval } day": [
-        "हर ${ interval } दिन",
-        "हर ${ interval } दिन"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "हर ${ interval } दिन, ${ timesString }",
-        "हर ${ interval } दिन, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "हर ${ interval } दिन, ${ untilString }",
-        "हर ${ interval } दिन, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "प्रत्येक ${ interval } माह ${ onDayString }",
-        "प्रत्येक ${ interval } महीने ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ timesString } पर",
-        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ timesString } पर"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ untilString } पर",
-        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ untilString } पर"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "${ multipleDaysString } पर हर ${ interval } सप्ताह",
-        "${ multipleDaysString } पर हर ${ interval } सप्ताह"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर",
-        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर",
-        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर"
-      ],
-      "Every ${ interval } week on all days": [
-        "सभी दिनों पर हर ${ interval } सप्ताह",
-        "सभी दिनों पर हर ${ interval } सप्ताह"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }",
-        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "प्रत्येक ${ interval } सप्ताह शुक्रवार को",
-        "प्रत्येक ${ interval } सप्ताह शुक्रवार को"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }",
-        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }",
-        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "सोमवार को प्रत्येक ${ interval } सप्ताह",
-        "सोमवार को हर ${ interval } सप्ताह"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }",
-        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }",
-        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "शनिवार को प्रत्येक ${ interval } सप्ताह",
-        "प्रति ${ interval } शनिवार को"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह शनिवार को, ${ timesString }",
-        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "हर ${ interval } हफ्ते शनिवार को, ${ untilString }",
-        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "प्रत्येक ${ interval } सप्ताह रविवार को",
-        "रविवार को हर ${ interval } सप्ताह"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }",
-        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }",
-        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "प्रत्येक ${ interval } सप्ताह गुरुवार को",
-        "प्रत्येक ${ interval } सप्ताह गुरुवार को"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }",
-        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }",
-        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को",
-        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }",
-        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }",
-        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "बुधवार को हर ${ interval } सप्ताह",
-        "प्रति ${ interval } बुधवार को"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }",
-        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }",
-        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }"
-      ],
-      "Every ${ interval } year": [
-        "हर ${ interval } साल",
-        "हर ${ interval } साल"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "हर ${ interval } साल, ${ timesString }",
-        "हर ${ interval } वर्षों, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "हर ${ interval } साल, ${ untilString }",
-        "हर ${ interval } वर्षों, ${ untilString }"
-      ],
-      "Failed to create ${ failedUsers.length } user\naccount.": [
-        "${ failedUsers.length } यूज़र खाता बनाने में असफल",
-        "${ failedUsers.length } यूज़र खाते बनाने में असफल"
-      ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "${ itemsCount } सुझाव मिला, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।",
-        "${ itemsCount } सुझाव मिले, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।"
-      ],
-      "Gigabyte": [
-        "महार्बुदाष्टक",
-        "महार्बुदाष्टकों"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "${ maxVpn } उपकरण पर उच्च गति वाला VPN",
-        "${ maxVpn } उपकरणों पर उच्च गति वाला VPN"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "तेज़ वीपीएन ${ n } डिवाइस पे",
-        "तेज़ वीपीएन ${ n } डिवाइस पे"
-      ],
-      "hour before": [
-        "घंटा पहले",
-        "घंटे पहले"
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
-        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
-      ],
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
-        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
-        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
-        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
-        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
-      ],
-      "Import as simple event?": [
-        "साधारण ईवेंट के रूप में आयात करें?",
-        "साधारण ईवेंट के रूप में आयात करें?"
-      ],
-      "Invite successfully sent": [
-        "न्योता सफलतापूर्वक भेजा गया",
-        "न्योते सफलतापूर्वक भेजे गए"
-      ],
-      "Kilobyte": [
-        "सहस्राष्टकों",
-        "सहस्राष्टकों"
-      ],
-      "Megabyte": [
-        "प्रयुताष्टक",
-        "प्रयुताष्टक"
-      ],
-      "Member added": [
-        "मेंबर जोड़ा गया",
-        "मेंबर जोड़े गए"
-      ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें",
-        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें"
-      ],
-      "minute before": [
-        "मिनट पहले",
-        "मिनट पहले"
-      ],
-      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
-        "6 महीने की अवधि में केवल ${ n } स्वीकृत निमंत्रण की अनुमति है।",
-        "6 महीने की अवधि में केवल ${ n } स्वीकृत निमंत्रणों की अनुमति है।"
-      ],
-      "or assign to any country in ${ availableAgainAfterDays } day": [
-        "या ${ availableAgainAfterDays } दिन में किसी भी देश को असाइन करें।",
-        "या ${ availableAgainAfterDays } दिनों में किसी भी देश को असाइन करें।"
-      ],
-      "or assign to any country in ${ availableAgainAfterHours } hour": [
-        "या ${ availableAgainAfterHours } घंटा में किसी भी देश को असाइन करें",
-        "या ${ availableAgainAfterHours } घंटों में किसी भी देश को असाइन करें"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "${ rewardMonths } महीने की योजना के लिए भुगतान किया गया",
-        "${ rewardMonths } महीने की योजना के लिए भुगतान किया गया"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
-        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होने चाहिए"
-      ],
-      "Please add a password for the user on row": [
-        "कृपया पंक्ति पर उपयोगकर्ता के लिए पासवर्ड जोड़ें",
-        "कृपया पंक्तियों पर उपयोगकर्ताओं के लिए पासवर्ड जोड़ें"
-      ],
-      "Please add an email address for the user on row": [
-        "कृपया पंक्ति पर उपयोगकर्ता के लिए ईमेल पता जोड़ें",
-        "कृपया पंक्तियों पर उपयोगकर्ताओं के लिए ईमेल पते जोड़ें"
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
-        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
-      ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
-        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedRecipients }",
-        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedRecipients }"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "${ renewLength } महीने के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकरण होगा।",
-        "${ renewLength } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकरण होगा।"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "${ numberOfCountries }+ देश में सर्वर",
-        "${ numberOfCountries }+ देशों में सर्वर"
-      ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ देश में सर्वर",
-        "${ vpnServersCountData.paid.countries }+ देशों में सर्वर"
-      ],
-      "Shared server country (${ countriesCount })": [
-        "साझा सर्वर वाला देश (${ countriesCount })",
-        "साझा सर्वर वाले देश (${ countriesCount })"
-      ],
-      "Show ${ n } administrator": [
-        "${ n } एडमिनिस्ट्रेटर दिखाएं",
-        "${ n } एडमिनिस्ट्रेटरों को दिखाएं"
-      ],
-      "Show ${ remainingItems } more": [
-        "${ remainingItems } और दिखाएँ",
-        "${ remainingItems } और दिखाएँ"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीने के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।",
-        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीनों के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।"
-      ],
-      "Step ${ step }": [
-        "कदम ${ step }",
-        "कदम ${ step }"
-      ],
-      "Successfully created ${ n } user account": [
-        "${ n } उपयोगकर्ता खाता सफलतापूर्वक बनाया गया",
-        "${ n } उपयोगकर्ता खाते सफलतापूर्वक बनाए गए"
-      ],
-      "Support for ${ n } custom email domain": [
-        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट",
-        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट"
-      ],
-      "Terabyte": [
-        "टेराबाइट",
-        "टेराबाइट"
-      ],
-      "The following address is invalid.": [
-        "ये पता अमान्य है।",
-        "निम्नलिखित पते अमान्य हैं।"
-      ],
-      "The following address is unavailable.": [
-        "निम्नलिखित पता अनुपलब्ध है।",
-        "निम्नलिखित पते अनुपलब्ध है।"
-      ],
-      "The following address was not created.": [
-        "निम्नलिखित पता नहीं बनाया गया था।",
-        "निम्नलिखित पते नहीं बनाए गए थे।"
-      ],
-      "This file contains an event invitation:": [
-        "इस फाइल में इवेंट का एक न्योता है:",
-        "इस फाइल में इवेंट के न्योते है:"
-      ],
-      "This file contains an invitation response:": [
-        "इस फाइल में न्योते के जवाब है:",
-        "इस फाइल में न्योते के जवाब है:"
-      ],
-      "Total for ${ n } month": [
-        "${ n } महीने के लिए कुल",
-        "${ n } महीनों के लिए कुल"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
-        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
-      ],
-      "Up to ${ n } user": [
-        "${ n } उपयोगकर्ता तक",
-        "${ n } उपयोगकर्ता तक"
-      ],
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "${ n } डिवाइस तक को एक समय में वीपीएन से कनेक्ट करने के लिए ${ planName } पे अपग्रेड करे।",
-        "${ n } डिवाइस तक को एक समय में वीपीएन से कनेक्ट करने के लिए ${ planName } पे अपग्रेड करे।"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "तिजोरी शेयर करें (अधिकतम ${ n } व्यक्ति को)",
-        "तिजोरी शेयर करें (अधिकतम ${ n } लोगों को)"
-      ],
-      "week before": [
-        "सप्ताह पहले",
-        "सप्ताह पहले"
-      ],
-      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "वर्तमान में ${ ipAddresses } उपलब्ध समर्पित सर्वर में से ${ ipCount } का उपयोग कर रहे हैं।",
-        "वर्तमान में ${ ipAddresses } उपलब्ध समर्पित सर्वरों में से ${ ipCount } का उपयोग कर रहे हैं।"
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "आप वर्तमान में ${ usedMembers } का उपयोग कर रहे हैं आपके ${ maxMembers } में से उपलब्ध उपयोगकर्ता लाइसेंस और ${ usedAI } का उपयोग कर रहे हैं आपके ${ maxAI } में से उपलब्ध लेखन सहायक लाइसेंस का।",
-        "आप वर्तमान में ${ usedMembers } का उपयोग कर रहे हैं आपके ${ maxMembers } में से उपलब्ध उपयोगकर्ता लाइसेंसों और ${ usedAI } का उपयोग कर रहे हैं आपके ${ maxAI } में से उपलब्ध लेखन सहायक लाइसेंसों का।"
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "आप वर्तमान में ${ usedMembers } का उपयोग कर रहे हैं आपके ${ maxMembers } उपलब्ध उपयोगकर्ता लाइसेंस में से और आपके ${ maxAI } उपलब्ध लेखन सहायक लाइसेंस में से कोई भी नहीं।",
-        "आप वर्तमान में ${ usedMembers } का उपयोग कर रहे हैं आपके ${ maxMembers } उपलब्ध उपयोगकर्ता लाइसेंसों में से और आपके ${ maxAI } उपलब्ध लेखन सहायक लाइसेंसों में से कोई भी नहीं।"
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "आप वर्तमान में अपने ${ maxMembers } उपलब्ध उपयोगकर्ता लाइसेंस में से ${ usedMembers } का उपयोग कर रहे हैं।",
-        "आप वर्तमान में अपने ${ maxMembers } उपलब्ध उपयोगकर्ता लाइसेंस में से ${ usedMembers } का उपयोग कर रहे हैं।"
-      ],
-      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "आप अपना पासवर्ड ${ gracePeriodHoursRemaining } घंटा में बदल सकते हैं",
-        "आप अपना पासवर्ड ${ gracePeriodHoursRemaining } घंटे में बदल सकते हैं"
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "आप हर कैलेंडर पे ज़्यादा से ज़्यादा ${ MAX_LINKS_PER_CALENDAR } लिंक बना सकते है। इस कैलेंडर के लिए नया लिंक बनाने के लिए, एक लिंक मिटाए नीचे दिए गए सूची से।",
-        "आप हर कैलेंडर पे ज़्यादा से ज़्यादा ${ MAX_LINKS_PER_CALENDAR } लिंक बना सकते है। इस कैलेंडर के लिए नया लिंक बनाने के लिए, एक लिंक मिटाए नीचे दिए गए सूची से।"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
-        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
-        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
-        "अगले 24 घंटे में ${ emailSendLimitNumber } से ज़्यादा न्योता नहीं भेजा जा सकता",
-        "अगले 24 घंटे में ${ emailSendLimitNumber } से ज़्यादा न्योते नहीं भेजे जा सकते"
-      ],
-      "You have ${ availableCount } new server available.": [
-        "आपके पास ${ availableCount } नया सर्वर उपलब्ध है।",
-        "आपके पास ${ availableCount } नए सर्वर उपलब्ध हैं।"
-      ],
-      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "आपके पास ${ unassignedAvailableCount } हाल ही में उपयोग किया गया सर्वर उपलब्ध है। इन सर्वरों को किसी अन्य देश में असाइन करने के लिए, आपको निष्क्रियकरण पूरा होने तक प्रतीक्षा करनी होगी।",
-        "आपके पास ${ unassignedAvailableCount } हाल ही में उपयोग किए गए सर्वर उपलब्ध हैं। इन सर्वरों को किसी अन्य देश में असाइन करने के लिए, आपको निष्क्रियकरण पूरा होने तक प्रतीक्षा करनी होगी।"
-      ],
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
-        "आपने हर कैलेंडर पे ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पार कर ली हैं",
-        "आपने हर कैलेंडर पे ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पार कर ली हैं"
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
-        "आप 6 महीने में ${ n } स्वीकृत निमंत्रण की सीमा तक पहुँच गए हैं।",
-        "आप 6 महीने में ${ n } स्वीकृत निमंत्रणों की सीमा तक पहुँच गए हैं।"
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "आप 6 महीने में ${ n } स्वीकृत निमंत्रण की सीमा तक पहुँच गए हैं। जब आप अतिरिक्त यूज़र को आमंत्रित कर सकेंगे, तब बटन क्लिक करने योग्य हो जाएगा।",
-        "आप 6 महीने में ${ n } स्वीकृत निमंत्रणों की सीमा तक पहुँच गए हैं। जब आप अतिरिक्त यूज़र को आमंत्रित कर सकेंगे, तब बटन क्लिक करने योग्य हो जाएगा।"
-      ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "आप ${ MAX_CALENDAR_MEMBERS } सदस्य के सीमा पे पहुंच चुके हैं।",
-        "आप ${ MAX_CALENDAR_MEMBERS } सदस्य के सीमा पे पहुंच चुके हैं।"
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।",
-        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।"
-      ],
-      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
-        "आप अपना पासवर्ड ${ gracePeriodHoursRemaining } घंटे में रीसेट कर सकेंगे",
-        "आप अपना पासवर्ड ${ gracePeriodHoursRemaining } घंटे में रीसेट कर सकेंगे"
-      ],
-      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "आप ${ maxSecurityKeyLength } सुरक्षा कुंजी की सीमा पर पहुँच चुके हैं।",
-        "आप ${ maxSecurityKeyLength } सुरक्षा कुंजियां की सीमा पर पहुँच चुके हैं।"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।",
-        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।"
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "आपका ${ accounts } से आयात अस्थायी रूप से विलम्बित है।",
-        "आपके ${ accounts } से आयात अस्थायी रूप से विलम्बित हैं।"
-      ],
-      "Your plan includes a maximum of ${ availableAddresses } more address.": [
-        "आपके प्लान में ${ availableAddresses } और पता है।",
-        "आपके प्लान में ${ availableAddresses } और पते है।"
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
-        "आपके प्लान में ${ availableNumberOfMembers } और संगठन यूज़र मौजूद है।",
-        "आपके प्लान में ${ availableNumberOfMembers } और संगठन यूज़र मौजूद है।"
-      ],
-      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
-        "आपके प्लान में ${ availableVPNAccess } और वीपीएन खाता है।",
-        "आपके प्लान में ${ availableVPNAccess } और वीपीएन खाते है।"
-      ]
-    },
     "A label for unlabeled shared calendar links": {
       "Unlabeled": [
         "लेबल नहीं"
@@ -2383,6 +1413,10 @@
       ]
     },
     "Addon": {
+      "${ ips } server": [
+        "${ ips } सर्वर",
+        "${ ips } सर्वर"
+      ],
       "${ price } per dedicated server": [
         "${ price } प्रति समर्पित सर्वर"
       ],
@@ -2391,6 +1425,10 @@
       ],
       "${ price } per user": [
         "${ price } प्रति यूजर"
+      ],
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
       ]
     },
     "Address action": {
@@ -2529,6 +1567,10 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
+      ],
       "/ month": [
         "/ महीने"
       ],
@@ -2717,6 +1759,12 @@
         "केवल सीमित समय के लिए ${ plan } योजना वापस आ गई है"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीने के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।",
+        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लैन के साथ उपलब्ध नहीं है। लेकिन जब आप ${ cycle } महीनों के लिए सब्सक्राइब करते हैं तो आप ${ plan.Title } पर ${ discountPercentage } की छूट प्राप्त कर सकते हैं।"
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 दिन की पैसे-वापस गारंटी"
@@ -2763,6 +1811,10 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "${ renewLength } महीने के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकरण होगा।",
+        "${ renewLength } महीनों के लिए ${ renewPrice } पर स्वचालित रूप से नवीनीकरण होगा।"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName } को अपनेआप रिन्यू होगा"
       ]
@@ -3054,6 +2106,12 @@
         "किसी से भी शेयर करें"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "${ remainingItems } और दिखाएँ",
+        "${ remainingItems } और दिखाएँ"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "इवेंट जानकारी बदले"
@@ -3173,6 +2231,16 @@
       ],
       "Try ${ planName }": [
         "${ planName } आज़माएँ"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
+      ],
+      "Total for ${ n } month": [
+        "${ n } महीने के लिए कुल",
+        "${ n } महीनों के लिए कुल"
       ]
     },
     "Checkout summary": {
@@ -3511,6 +2579,12 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } चयनित",
+        "${ selectedCountriesCount } चयनित"
       ]
     },
     "Country name": {
@@ -4344,8 +3418,16 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } समय",
+        "${ count } बार"
+      ],
       "Daily": [
         "रोज़"
+      ],
+      "Every ${ interval } day": [
+        "हर ${ interval } दिन",
+        "हर ${ interval } दिन"
       ],
       "until ${ dateString }": [
         "${ dateString } तक"
@@ -4354,11 +3436,19 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "दैनिक, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "हर ${ interval } दिन, ${ timesString }",
+        "हर ${ interval } दिन, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "दैनिक, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "हर ${ interval } दिन, ${ untilString }",
+        "हर ${ interval } दिन, ${ untilString }"
       ]
     },
     "Day": {
@@ -5197,6 +4287,10 @@
       ]
     },
     "emergency_access": {
+      "${ n } day": [
+        "${ n } दिन",
+        "${ n } दिन"
+      ],
       "Add": [
         "जोड़ें"
       ],
@@ -5290,6 +4384,14 @@
       ],
       "Couldn't load transactions. Please try again later.": [
         "लेन-देन लोड नहीं हो सके। कृपया बाद में पुन: प्रयास करें।"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले",
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या",
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या"
       ],
       "Domain not available, try again later": [
         "डोमेन मौजूद नहीं, बाद में वापिस कोशिश करें"
@@ -5426,6 +4528,10 @@
       "Label name cannot be empty.": [
         "लेबल का नाम खाली नहीं हो सकता |"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें",
+        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें"
+      ],
       "Missing key packet": [
         "लुप्त कुञ्जी खण्ड"
       ],
@@ -5504,6 +4610,10 @@
       "Please enter a valid Entity ID URL": [
         "कृपया एक वैध Entity ID यूआरएल दर्ज करें"
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
+      ],
       "Please generate keys before you try to change your password": [
         "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
       ],
@@ -5560,6 +4670,10 @@
       ],
       "Process aborted": [
         "प्रक्रिया निरस्त की गई"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedRecipients }",
+        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "अनुरोध का समय समाप्त हुआ"
@@ -5723,6 +4837,9 @@
       "You must set a name": [
         "आपको एक नाम सेट करना होगा"
       ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "एक एसएमटीपी सब्मिशन टोकन बनाने के लिए आपके पास एक कस्टम डोमेन पता होना चाहिए।"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "आपके खाते या संगठन की रसीद लंबित है। कृपया सभी बकाया रसीदों का भुगतान करें।"
       ],
@@ -5754,6 +4871,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "एक अप्रत्याशित त्रुटि हुई। आयात फिर से शुरू होना चाहिए।"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।",
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "आपके फाइल ${ formattedFilename } में एक अमान्य तरीका है और आयात नहीं जा सकता"
@@ -6007,6 +5128,10 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } इवेंट निर्यात हुए",
+        "${ totalProcessed }/${ totalToProcess } इवेंट निर्यात हुए"
+      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "कैलेंडर सफलतापूर्वक निर्यात किया गया। आप अब ICS फाइल सेव कर सकते हैं।"
       ],
@@ -6139,6 +5264,10 @@
       "Manage user accounts": [
         "यूज़र खाते संभालें"
       ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "6 महीने की अवधि में केवल ${ n } स्वीकृत निमंत्रण की अनुमति है।",
+        "6 महीने की अवधि में केवल ${ n } स्वीकृत निमंत्रणों की अनुमति है।"
+      ],
       "Pending": [
         "लंबित"
       ],
@@ -6159,6 +5288,14 @@
       ],
       "You are part of ${ organization.Name }.": [
         "आप ${ organization.Name } के सदस्य है।"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "आप 6 महीने में ${ n } स्वीकृत निमंत्रण की सीमा तक पहुँच गए हैं।",
+        "आप 6 महीने में ${ n } स्वीकृत निमंत्रणों की सीमा तक पहुँच गए हैं।"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "आप 6 महीने में ${ n } स्वीकृत निमंत्रण की सीमा तक पहुँच गए हैं। जब आप अतिरिक्त यूज़र को आमंत्रित कर सकेंगे, तब बटन क्लिक करने योग्य हो जाएगा।",
+        "आप 6 महीने में ${ n } स्वीकृत निमंत्रणों की सीमा तक पहुँच गए हैं। जब आप अतिरिक्त यूज़र को आमंत्रित कर सकेंगे, तब बटन क्लिक करने योग्य हो जाएगा।"
       ],
       "You need to configure a custom domain before adding multiple users.": [
         "आपको एकाधिक उपयोगकर्ताओं को जोड़ने से पहले एक कस्टम डोमेन कॉन्फ़िगर करना होगा।"
@@ -6292,11 +5429,23 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN कनेक्शन",
+        "${ MaxVPN } VPN कनेक्शन"
+      ],
       "Access to all countries": [
         "सभी देशों तक पहुंच"
       ],
       "Add": [
         "जोड़ें"
+      ],
+      "Add (${ totalAddedCount })": [
+        "(${ totalAddedCount }) जोड़ें",
+        "(${ totalAddedCount }) जोड़ें"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "${ plusVpnConnections } डिवाइस तक के लिए कनेक्शन",
+        "अधिकतम ${ plusVpnConnections } उपकरणों के लिए कनेक्शन"
       ],
       "Continue": [
         "जारी रखें"
@@ -6399,6 +5548,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "एक शारिरिक U2F या FIDO2 सुरक्षा चाबी से अपनी पहचान सत्यापित करें"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "आप ${ maxSecurityKeyLength } सुरक्षा कुंजी की सीमा पर पहुँच चुके हैं।",
+        "आप ${ maxSecurityKeyLength } सुरक्षा कुंजियां की सीमा पर पहुँच चुके हैं।"
+      ],
       "Your two-factor authentication key is ready to use.": [
         "आपका दो-फैक्टर सत्यापन चाबी इस्तेमाल के लिए तैयार है।"
       ]
@@ -6432,6 +5585,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "बाइट",
+        "बाइट"
+      ],
       "GB": [
         "जीबी"
       ],
@@ -6443,6 +5600,28 @@
       ],
       "TB": [
         "टीबी"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "बाइट",
+        "बाइट"
+      ],
+      "Gigabyte": [
+        "महार्बुदाष्टक",
+        "महार्बुदाष्टकों"
+      ],
+      "Kilobyte": [
+        "सहस्राष्टकों",
+        "सहस्राष्टकों"
+      ],
+      "Megabyte": [
+        "प्रयुताष्टक",
+        "प्रयुताष्टक"
+      ],
+      "Terabyte": [
+        "टेराबाइट",
+        "टेराबाइट"
       ]
     },
     "Filter Actions": {
@@ -6669,6 +5848,12 @@
     "Group address title": {
       "Group address": [
         "ग्रुप पता"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } मेंबर",
+        "${ memberCount } मेंबर"
       ]
     },
     "Group state": {
@@ -6900,6 +6085,10 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "डोमेन नाम रजिस्ट्रार के नियंत्रण पैनल में इस रिकॉर्ड को डोमेन में जोड़ें"
       ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } सुझाव मिला, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।",
+        "${ itemsCount } सुझाव मिले, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।"
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "इनपुट के बाद सुझावों को एक्सेस और ब्राउज़ करने के लिए ऊपर और नीचे कुंजी का उपयोग करें। अपनी पसंद की पुष्टि करने के लिए Enter दबाएं, या सुझाव बॉक्स को बंद करने के लिए Escape दबाएं।"
       ]
@@ -6963,6 +6152,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए",
+        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किया गया।",
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किए गए।"
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। कोई इवेंट आयात नहीं किया जा सका।"
       ],
@@ -6997,11 +6194,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "आयात किए गए न्योते ${ CALENDAR_APP_NAME } में आयोजक और प्रतिभागी जानकारी के बिना सादे इवेंट के रूप में दिखाए जाते है। इवेंट अपडेट लेने और प्रतिभागी देखने के लिए, आयोजक को आपके ${ BRAND_NAME } ईमेल पते पे न्योता भेजने को बोले।"
       ],
+      "This file contains an event invitation:": [
+        "इस फाइल में इवेंट का एक न्योता है:",
+        "इस फाइल में इवेंट के न्योते है:"
+      ],
+      "This file contains an invitation response:": [
+        "इस फाइल में न्योते के जवाब है:",
+        "इस फाइल में न्योते के जवाब है:"
+      ],
       "This file contains some data that we cannot import:": [
         "इस फाइल में कुछ ऐसा डाटा है जिसे हम आयात नहीं कर सकते:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } संपर्क एन्क्रिप्ट किया गया और आपकी संपर्क सूची में जोड़ा गया",
+        "${ totalImported }/${ totalToImport } ईवेंट एन्क्रिप्ट किया गया और आपके कैलेंडर में जोड़ा गया"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "आपके संपर्क को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। कोई संपर्क आयात नहीं किया जा सका।"
       ],
@@ -7021,6 +6230,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "संपर्क ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } संपर्क",
+        "${ totalContacts } संपर्क"
       ]
     },
     "Import contact. Contact identifier": {
@@ -7245,6 +6460,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } में से ${ totalContacts } संपर्क आयात नहीं किए जाएंगे। विवरण के लिए क्लिक करें"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किया जाएगा। जानकारी के लिए फैलाए।",
+        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किए जाएगे। जानकारी के लिए फैलाए।"
+      ],
       "No contact can be imported. Click for details": [
         "कोई संपर्क आयात नहीं किया जा सकता है। विवरण के लिए क्लिक करें"
       ],
@@ -7286,6 +6505,14 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } की एन्क्रिप्शन टेकनोलॉजी का मतलब है की कोई भी आपका पासवर्ड एक्सेस नहीं कर सकता - यहां तक की हम भी नहीं।"
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } नया कैलेंडर",
+        "${ calendarsToBeCreatedCount } नए कैलेंडर"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } मर्ज किया गया कैलेंडर",
+        "${ calendarsToBeMergedCount } मर्ज किए गए कैलेंडर"
+      ],
       "${ current } of ${ total }": [
         "${ total } में से ${ current }"
       ],
@@ -7304,14 +6531,46 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: कम-क्वालिटी का प्रिव्यू"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके परिवार के सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करते हैं।",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके परिवार के सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करते हैं।"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।"
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके गैर-सिंगल साइन-ऑन सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } आपके गैर-सिंगल साइन-ऑन सदस्यों में से दो-फैक्टर सत्यापन का उपयोग करके अपने संगठन में साइनइन करते हैं।"
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } आपके साथ ${ PASS_APP_NAME } में डेटा साझा करना चाहता है"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } को एक पासवर्ड के साथ भी इस्तेमाल किया जा सकता है जो लॉगइन और दूसरे पासवर्ड दोनों की जगह लेता है। एक-पासवर्ड मोड पर स्विच करने के लिए, वह एकल पासवर्ड दर्ज करें जो आप उपयोग करना चाहते हैं और 'सहेजें' पर क्लिक करें।"
       ],
+      "${ n } address": [
+        "${ n } पता",
+        "${ n } पते"
+      ],
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none } अनधिकृत ईमेल को क्वारंटीन या अस्वीकार न करें। आमतौर पर, लोग केवल समस्या निवारण या परीक्षण के लिए इस नीति का उपयोग करते हैं।"
+      ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } सदस्य",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } सदस्य"
+      ],
+      "${ number } city": [
+        "${ number } शहर",
+        "${ number } शहर"
+      ],
+      "${ number } server": [
+        "${ number } सर्वर",
+        "${ number } सर्वर"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } अपलोड की गई फ़ाइल मान्य निजी कुंजी नहीं है। कृपया सत्यापन करें और पुनःप्रयास करें।",
+        "${ numberOfNonPrivateKeys } अपलोड की गई फ़ाइलें मान्य निजी कुंजी नहीं हैं। कृपया सत्यापन करें और पुनःप्रयास करें।"
       ],
       "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
         "${ PASS_APP_NAME } उपयोग में आसानी और उत्पादकता के लिए डिज़ाइन किया गया अगली पीढ़ी का पासवर्ड मैनेजर है। ओपन सोर्स, SimpleLogin और ${ BRAND_NAME } द्वारा सह-विकसित।"
@@ -7328,14 +6587,54 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } संदिग्ध गतिविधि की समर्पित निगरानी के साथ आपके खाते की रक्षा करता है।"
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } फोल्डर मिला",
+        "${ providerFoldersNumLocalized } फोल्डर मिले"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } लेबल Gmail में मिला",
+        "${ providerFoldersNumLocalized } लेबल Gmail में मिले"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } सर्वर अभी भी सेटअप किया जा रहा है। इसमें आमतौर पर लगभग ${ provisioningDuration } का समय लगता है।",
+        "${ provisioningCounter } सर्वर अभी भी सेटअप किए जा रहा है। इसमें आमतौर पर लगभग ${ provisioningDuration } का समय लगता है।"
+      ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: प्राप्तकर्ता प्लेटफ़ॉर्मों से अनधिकृत ईमेल को स्पैम के रूप में चिह्नित करने या उन्हें क्वारंटीन करने के लिए कहा जा रहा है।"
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: प्राप्तकर्ता प्लेटफ़ॉर्म से अनधिकृत ईमेल को अस्वीकार करने के लिए कहा जा रहा है।"
       ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } और",
+        "${ remainingAddresses.length } और"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } और ईमेल पता",
+        "${ remainingAddresses.length } और ईमेल पता"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर",
+        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } चयनित",
+        "${ selectedEntities.length } चयनित"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } फ़ोल्डर का चयन किया",
+        "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } लेबल चयनित",
+        "${ selectedFoldersCountLocalized } लेबल चयनित"
+      ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } यूज़र मिले",
+        "${ userFound } यूज़र मिले"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } बनाया गया"
@@ -7355,6 +6654,10 @@
       "${ vpnPlus } required for Secure Core feature.": [
         "Secure Core सुविधा के लिए ${ vpnPlus } चाहिए।"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } सदस्य)",
+        "(${ memberCount } सदस्य)"
+      ],
       "(default)": [
         "(डिफ़ॉल्ट)"
       ],
@@ -7370,8 +6673,16 @@
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } सहित सभी ${ BRAND_NAME_TWO } सेवाओं का उपयोग करने के लिए **${ BRAND_NAME } पता प्राप्त करें**।"
       ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } और",
+        "+ ${ invisibleCount } और"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } बोनस भंडारण"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)",
+        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. दोस्तों को ${ BRAND_NAME } पे आने का न्योता दे"
@@ -7460,11 +6771,23 @@
       "Add multiple users to your organization at once.": [
         "एक समय में अपने संगठन में कई यूज़र एक साथ जोड़े"
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "सर्वर जोड़ें (${ availableAddedCount } उपलब्ध)",
+        "सर्वर जोड़ें (${ availableAddedCount } उपलब्ध)"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "अपने संगठन के लिए व्यक्तिगत अनुभव बनाने के लिए अपना नाम और चिन्ह जोड़ें।"
       ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } गेटवे सर्वर जोड़ा जा रहा है",
+        "${ addedServerCount } गेटवे सर्वर जोड़ें जा रहें हैं"
+      ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "किसी बाहरी ईमेल पते को जोड़ने से उस समूह के भीतर सभी ईमेल संचार के लिए शुरू-से-अंत तक एन्क्रिप्शन अक्षम हो जाएगा। क्या आप आगे बढ़ना चाहते हैं?"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "गेटवे सर्वर जोड़ा जा रहा है: ${ serverNumber } / ${ total }",
+        "गेटवे सर्वर जोड़ें जा रहें हैं: ${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "पता क्लिपबोर्ड पर कॉपी किया गया"
@@ -7472,11 +6795,23 @@
       "Admin account allocation": [
         "एडमिन खाता बंटवारा"
       ],
+      "Affected user is on row": [
+        "प्रभावित उपयोगकर्ता पंक्ति पर है",
+        "प्रभावित उपयोगकर्ता पंक्तियों पर हैं"
+      ],
       "Align left": [
         "सब बाएं तरफ"
       ],
       "Align right": [
         "सब दाएं तरफ"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "सभी (${ totalFoldersCount } फोल्डर)",
+        "सभी (${ totalFoldersCount } फोल्डर)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "सभी (${ totalFoldersCount } लेबल)",
+        "सभी (${ totalFoldersCount } लेबल)"
       ],
       "All inactive members deleted": [
         "सभी निष्क्रिय सदस्य मिटा दिए गए"
@@ -7742,6 +7077,10 @@
       "Country code": [
         "देश का कोड"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
+        "${ calendarsToBeCreatedCount } नए कैलेंडर बनाएं"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "आयातित संदेशों के लिए एक लेबल बनाएं, इस आयात के लिए एक समय सीमा और आपके द्वारा आयात किए जाने वाले फ़ोल्डर।"
       ],
@@ -7759,6 +7098,10 @@
       ],
       "Create your first Gateway": [
         "पहला गेटवे बनाएं"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "गेटवे सर्वर बनाया जा रहा है: ${ serverNumber } / ${ total }",
+        "गेटवे सर्वर बनाएं जा रहें हैं: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "आपका खाता बन रहा है"
@@ -7829,6 +7172,10 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "कचरे और स्पैम संदेश को 30 दिन बाद मिटाएं। अपनेआप-मिटाएं चालू करने से कचरे और स्पैम संदेश को उनके उस फोल्डर में आने के तारीख के हिसाब से मिटने का तारीख मिलता है।"
       ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } गेटवे सर्वर को मिटाया जा रहा है",
+        "${ deletedServerCount } गेटवे सर्वर को मिटाये जा रहे हैं"
+      ],
       "Did you know?": [
         "क्या आप जानते हैं?"
       ],
@@ -7873,6 +7220,10 @@
       ],
       "Domain ownership verified.": [
         "डोमेन स्वामित्व सत्यापित।"
+      ],
+      "domain used": [
+        "डोमेन का उपयोग किया",
+        "डोमेन का उपयोग किया"
       ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
         "प्रीमियम ${ appName } की खासियत तक एक्सेस न खोएं। आज ही ऑटो-रिन्यू सक्षम करें।"
@@ -8219,6 +7570,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "छवियों को हटा दिया गया है क्योंकि उन्हें ऑटो-रिप्लाई में अनुमति नहीं है।"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
+        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
+      ],
       "Import from": [
         "यहां से आयात करें"
       ],
@@ -8299,6 +7654,10 @@
       ],
       "Invite rejected": [
         "न्योता ठुकराया गया"
+      ],
+      "Invite successfully sent": [
+        "न्योता सफलतापूर्वक भेजा गया",
+        "न्योते सफलतापूर्वक भेजे गए"
       ],
       "Invited": [
         "आमंत्रित"
@@ -8612,6 +7971,14 @@
       "or ${ selectFileButton }": [
         "या ${ selectFileButton }"
       ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "या ${ availableAgainAfterDays } दिन में किसी भी देश को असाइन करें।",
+        "या ${ availableAgainAfterDays } दिनों में किसी भी देश को असाइन करें।"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "या ${ availableAgainAfterHours } घंटा में किसी भी देश को असाइन करें",
+        "या ${ availableAgainAfterHours } घंटों में किसी भी देश को असाइन करें"
+      ],
       "or discover other features:": [
         "या अन्य सुविधाओं का पता लगाएँ:"
       ],
@@ -8644,6 +8011,10 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "10 करोड़ से अधिक लोगों और व्यवसायों ने ${ BRAND_NAME } के लिए साइन अप किया है।"
+      ],
+      "Paid for a ${ rewardMonths } month plan": [
+        "${ rewardMonths } महीने की योजना के लिए भुगतान किया गया",
+        "${ rewardMonths } महीने की योजना के लिए भुगतान किया गया"
       ],
       "Paid for a monthly plan": [
         "मासिक योजना के लिए भुगतान किया"
@@ -8686,6 +8057,14 @@
       ],
       "Phone number": [
         "फोन नंबर"
+      ],
+      "Please add a password for the user on row": [
+        "कृपया पंक्ति पर उपयोगकर्ता के लिए पासवर्ड जोड़ें",
+        "कृपया पंक्तियों पर उपयोगकर्ताओं के लिए पासवर्ड जोड़ें"
+      ],
+      "Please add an email address for the user on row": [
+        "कृपया पंक्ति पर उपयोगकर्ता के लिए ईमेल पता जोड़ें",
+        "कृपया पंक्तियों पर उपयोगकर्ताओं के लिए ईमेल पते जोड़ें"
       ],
       "Please authenticate your card in the verification tab.": [
         "सत्यापन टैब में कृपया अपना कार्ड सत्यापित करें।"
@@ -8927,6 +8306,10 @@
       "Shared ${ vaultLink } updated": [
         "साझा ${ vaultLink } अपडेट हुआ"
       ],
+      "Shared server country (${ countriesCount })": [
+        "साझा सर्वर वाला देश (${ countriesCount })",
+        "साझा सर्वर वाले देश (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "साझा तिजोरी मिटा दी गई"
       ],
@@ -8965,6 +8348,10 @@
       ],
       "Start sharing it with contacts and use it for online services.": [
         "इसे संपर्कों के साथ साझा करना शुरू करें और इसे ऑनलाइन सेवाओं के लिए उपयोग करें।"
+      ],
+      "Step ${ step }": [
+        "कदम ${ step }",
+        "कदम ${ step }"
       ],
       "Storage": [
         "स्टोरेज"
@@ -9052,6 +8439,18 @@
       ],
       "The following address is available:": [
         "ये पता मौजूद है:"
+      ],
+      "The following address is invalid.": [
+        "ये पता अमान्य है।",
+        "निम्नलिखित पते अमान्य हैं।"
+      ],
+      "The following address is unavailable.": [
+        "निम्नलिखित पता अनुपलब्ध है।",
+        "निम्नलिखित पते अनुपलब्ध है।"
+      ],
+      "The following address was not created.": [
+        "निम्नलिखित पता नहीं बनाया गया था।",
+        "निम्नलिखित पते नहीं बनाए गए थे।"
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "निम्नलिखित सदस्यों को एक ईमेल प्राप्त होगा जल्द से जल्द टू फैक्टर ऑथेंटिकेशन सक्षम करने के लिए।"
@@ -9602,6 +9001,22 @@
       "You are about to open another browser tab and visit:": [
         "आप एक और ब्राउज़र टैब खोलने वाले हैं और जाएँ:"
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "वर्तमान में ${ ipAddresses } उपलब्ध समर्पित सर्वर में से ${ ipCount } का उपयोग कर रहे हैं।",
+        "वर्तमान में ${ ipAddresses } उपलब्ध समर्पित सर्वरों में से ${ ipCount } का उपयोग कर रहे हैं।"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "आप वर्तमान में ${ usedMembers } का उपयोग कर रहे हैं आपके ${ maxMembers } में से उपलब्ध उपयोगकर्ता लाइसेंस और ${ usedAI } का उपयोग कर रहे हैं आपके ${ maxAI } में से उपलब्ध लेखन सहायक लाइसेंस का।",
+        "आप वर्तमान में ${ usedMembers } का उपयोग कर रहे हैं आपके ${ maxMembers } में से उपलब्ध उपयोगकर्ता लाइसेंसों और ${ usedAI } का उपयोग कर रहे हैं आपके ${ maxAI } में से उपलब्ध लेखन सहायक लाइसेंसों का।"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "आप वर्तमान में ${ usedMembers } का उपयोग कर रहे हैं आपके ${ maxMembers } उपलब्ध उपयोगकर्ता लाइसेंस में से और आपके ${ maxAI } उपलब्ध लेखन सहायक लाइसेंस में से कोई भी नहीं।",
+        "आप वर्तमान में ${ usedMembers } का उपयोग कर रहे हैं आपके ${ maxMembers } उपलब्ध उपयोगकर्ता लाइसेंसों में से और आपके ${ maxAI } उपलब्ध लेखन सहायक लाइसेंसों में से कोई भी नहीं।"
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "आप वर्तमान में अपने ${ maxMembers } उपलब्ध उपयोगकर्ता लाइसेंस में से ${ usedMembers } का उपयोग कर रहे हैं।",
+        "आप वर्तमान में अपने ${ maxMembers } उपलब्ध उपयोगकर्ता लाइसेंस में से ${ usedMembers } का उपयोग कर रहे हैं।"
+      ],
       "You are not currently in any groups and there are no pending invitations": [
         "आप वर्तमान में किसी भी ग्रुप में नहीं हैं और कोई लंबित न्योते भी नहीं हैं"
       ],
@@ -9632,6 +9047,14 @@
       "You can import one data type at a time.": [
         "आप एक बार में एक डेटा प्रकार आयात कर सकते हैं।"
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
+      ],
       "You can now access and manage the account as an administrator.": [
         "आप अब खाते को एक एडमिन की तरह एक्सेस कर और संभाल सकते है।"
       ],
@@ -9653,6 +9076,10 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "आप ${ VPN_APP_NAME } सर्वर से किसी तृतीय-पक्ष, ओपन सोर्स VPN ऐप का उपयोग करके कनेक्ट करने के लिए निम्न क्रेडेंशियल का उपयोग कर सकते हैं, जैसे macOS के लिए Tunnelblick या GNU/Linux के लिए OpenVPN।"
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "अगले 24 घंटे में ${ emailSendLimitNumber } से ज़्यादा न्योता नहीं भेजा जा सकता",
+        "अगले 24 घंटे में ${ emailSendLimitNumber } से ज़्यादा न्योते नहीं भेजे जा सकते"
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "आप ${ MAIL_APP_NAME } यूज़र को रेफर नहीं कर सकते"
       ],
@@ -9667,6 +9094,14 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "यदि आपका पासवर्ड या अन्य डाटा किसी तीसरें-पार्टी से लीक हुआ है, तो आपको सूचित किया जाएगा।"
+      ],
+      "You have ${ availableCount } new server available.": [
+        "आपके पास ${ availableCount } नया सर्वर उपलब्ध है।",
+        "आपके पास ${ availableCount } नए सर्वर उपलब्ध हैं।"
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "आपके पास ${ unassignedAvailableCount } हाल ही में उपयोग किया गया सर्वर उपलब्ध है। इन सर्वरों को किसी अन्य देश में असाइन करने के लिए, आपको निष्क्रियकरण पूरा होने तक प्रतीक्षा करनी होगी।",
+        "आपके पास ${ unassignedAvailableCount } हाल ही में उपयोग किए गए सर्वर उपलब्ध हैं। इन सर्वरों को किसी अन्य देश में असाइन करने के लिए, आपको निष्क्रियकरण पूरा होने तक प्रतीक्षा करनी होगी।"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "आपके पास परीक्षण ${ planTitle } सदस्यता है। यदि आप परीक्षण अवधि के बाद अपनी सदस्यता जारी रखना चाहते हैं, तो कृपया भुगतान विधि जोड़ें।"
@@ -9782,6 +9217,10 @@
       "Your email will only be used for this one-time verification.": [
         "आपके ईमेल का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
       ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "आपका ${ accounts } से आयात अस्थायी रूप से विलम्बित है।",
+        "आपके ${ accounts } से आयात अस्थायी रूप से विलम्बित हैं।"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "आपकी जानकारी हमारे साथ सुरक्षित है। हम आपसे केवल तब संपर्क करेंगे जब हमारी सेवाएं प्रदान करने के लिए आवश्यक हो।"
       ],
@@ -9878,6 +9317,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "अवैतनिक चालान के कारण किसी भी सेवा रुकावट से बचने के लिए, कृपया सुनिश्चित करें कि आपके पास कम से कम 1 वैध भुगतान विधि है जो किसी भी समय किसी भी बिंदु पर सहेजी गई है।"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } फ़ोल्डर चयनित",
+        "${ selectedFoldersCount } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } लेबल चयनित",
+        "${ selectedFoldersCount } लेबल चयनित"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -10264,6 +9713,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } यूज़रनाम"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } यूज़र",
+        "${ group.UserCount } यूज़र"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanMaxSpace } में से ${ humanUsedSpace }"
       ],
@@ -10272,6 +9725,22 @@
       ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } फुटर"
+      ],
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } दिन",
+        "${ nbDay } दिन"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } साल",
+        "${ nbYear } साल"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता",
+        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(अस्थाई रूप से अनुपलब्ध। कृपया फिर से बाद में जाँच करें।)"
@@ -11170,6 +10639,10 @@
       "Send in": [
         "इसमें भेजे"
       ],
+      "Show ${ n } administrator": [
+        "${ n } एडमिनिस्ट्रेटर दिखाएं",
+        "${ n } एडमिनिस्ट्रेटरों को दिखाएं"
+      ],
       "Show others when I'm busy": [
         "मैं कब व्यस्त हूँ ये दुसरो को दिखाएँ"
       ],
@@ -11699,6 +11172,10 @@
       "Almost there": [
         "लगभग हो गया"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }",
+        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }"
+      ],
       "Connecting to your email provider": [
         "अपने ईमेल प्रदाता से जुड़ना"
       ],
@@ -11784,6 +11261,24 @@
         "विस्तृत घटनाएँ सक्षम करें"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ]
+    },
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**${ plan } प्राप्त करें** सीमित समय के लिए!"
@@ -11851,6 +11346,18 @@
       ],
       "This feature is temporarily unavailable": [
         "यह सुविधा अस्थायी रूप से अनुपलब्ध है"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "आप हर कैलेंडर पे ज़्यादा से ज़्यादा ${ MAX_LINKS_PER_CALENDAR } लिंक बना सकते है। इस कैलेंडर के लिए नया लिंक बनाने के लिए, एक लिंक मिटाए नीचे दिए गए सूची से।",
+        "आप हर कैलेंडर पे ज़्यादा से ज़्यादा ${ MAX_LINKS_PER_CALENDAR } लिंक बना सकते है। इस कैलेंडर के लिए नया लिंक बनाने के लिए, एक लिंक मिटाए नीचे दिए गए सूची से।"
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "आप ${ MAX_CALENDAR_MEMBERS } सदस्य के सीमा पे पहुंच चुके हैं।",
+        "आप ${ MAX_CALENDAR_MEMBERS } सदस्य के सीमा पे पहुंच चुके हैं।"
       ]
     },
     "Member action": {
@@ -12003,16 +11510,28 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "प्रत्येक ${ interval } माह ${ onDayString }",
+        "प्रत्येक ${ interval } महीने ${ onDayString }"
+      ],
       "Monthly ${ onDayString }": [
         "मासिक ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ timesString } पर",
+        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ timesString } पर"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "मासिक ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ untilString } पर",
+        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ untilString } पर"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "मासिक ${ onDayString }, ${ untilString }"
       ]
@@ -12240,6 +11759,66 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } और ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } कैलेंडर",
+        "${ n } कैलेंडर"
+      ],
+      "${ n } calendar per user": [
+        "${ n } कैलेंडर हर यूज़र पे",
+        "${ n } कैलेंडर हर यूज़र पे"
+      ],
+      "${ n } custom email domain": [
+        "${ n } कस्टम ईमेल डोमेन",
+        "${ n } कस्टम ईमेल डोमेन"
+      ],
+      "${ n } email address": [
+        "${ n } ईमेल पता",
+        "${ n } ईमेल पता/उपनाम"
+      ],
+      "${ n } email address per user": [
+        "प्रति उपयोगकर्ता ${ n } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ n } ईमेल पते"
+      ],
+      "${ n } filter": [
+        "${ n } फिल्टर",
+        "${ n } फिल्टर"
+      ],
+      "${ n } folder": [
+        "${ n } फोल्डर",
+        "${ n } फोल्डर"
+      ],
+      "${ n } folder and label": [
+        "${ n } फोल्डर और लेबल",
+        "${ n } फोल्डर और लेबल"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email नकली-नाम",
+        "${ n } hide-my-email नकली-नाम"
+      ],
+      "${ n } label": [
+        "${ n } लेबल",
+        "${ n } लेबल"
+      ],
+      "${ n } message per day": [
+        "प्रतिदिन ${ n } संदेश",
+        "प्रतिदिन ${ n } संदेश"
+      ],
+      "${ n } vault": [
+        "${ n } तिजोरी",
+        "${ n } तिजोरी"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN कनेक्शन",
+        "${ n } VPN कनेक्शन"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } यूज़र",
+        "${ numberOfUsers } उपयोगकर्ता तक"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } with ${ n } hide-my-email नकली-नाम",
+        "${ PASS_APP_NAME } with ${ n } hide-my-email नकली-नाम"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } असीमित hide-my-email उपनामों के साथ"
       ],
@@ -12390,6 +11969,10 @@
       "High-speed Swiss VPN that protects your privacy": [
         "उच्च गति स्विस VPN जो आपकी निजता की रक्षा करता है"
       ],
+      "High-speed VPN on ${ n } device": [
+        "तेज़ वीपीएन ${ n } डिवाइस पे",
+        "तेज़ वीपीएन ${ n } डिवाइस पे"
+      ],
       "HTML signatures": [
         "HTML हस्ताक्षर"
       ],
@@ -12440,6 +12023,10 @@
       ],
       "Send & receive invitations": [
         "न्योते भेजें और लें"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries }+ देश में सर्वर",
+        "${ vpnServersCountData.paid.countries }+ देशों में सर्वर"
       ],
       "Sign in as user": [
         "यूज़र के रूप में साइनइन"
@@ -12504,6 +12091,10 @@
       "Unlimited volume/bandwidth": [
         "असीमित वॉल्युम/बैंडविड्थ"
       ],
+      "Up to ${ n } user": [
+        "${ n } उपयोगकर्ता तक",
+        "${ n } उपयोगकर्ता तक"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } स्टोरेज तक"
       ],
@@ -12515,6 +12106,16 @@
       ],
       "User session management": [
         "यूज़र सत्र मैनेजमेंट"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "तिजोरी शेयर करें (अधिकतम ${ n } व्यक्ति को)",
+        "तिजोरी शेयर करें (अधिकतम ${ n } लोगों को)"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
       ]
     },
     "new_plans: feature info": {
@@ -12740,6 +12341,10 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "अपने ऑनलाइन पहचानो के लिए कई ईमेल पते बनाए, उदाहरण, MahfuzKhariddari@${ domain } शॉपिंग खातों के लिए, MahfuzKhabar@${ domain } समाचार सदस्यता के लिए"
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।",
+        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।"
+      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "${ n } तक ईमेल पते/उपनाम बनाएं जिन्हें आप परिवार के सदस्यों को निर्दिष्ट कर सकें। ऑनलाइन पहचान के लिए उनका उपयोग करें, उदाहरण के लिए, शॉपिंग खातों के लिए जॉनशॉपर@${ domain }।"
       ],
@@ -12918,6 +12523,10 @@
       "Central control panel": [
         "केंद्रीय नियंत्रण कक्ष"
       ],
+      "Create up to ${ n } calendar": [
+        "${ n } कैलेंडर तक बनाएं",
+        "${ n } कैलेंडर तक बनाएं"
+      ],
       "Dedicated Account manager": [
         "समर्पित खाता प्रबंधक"
       ],
@@ -12935,6 +12544,10 @@
       ],
       "Require 2FA": [
         "2-एफए आवश्यक करें"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट",
+        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट"
       ]
     },
     "news": {
@@ -13094,6 +12707,10 @@
       "Invitation revoked": [
         "न्योता वापस लिया गया"
       ],
+      "Member added": [
+        "मेंबर जोड़ा गया",
+        "मेंबर जोड़े गए"
+      ],
       "Member deleted": [
         "मेंबर हटाया"
       ]
@@ -13128,8 +12745,24 @@
       "at time of event": [
         "कार्यक्रम शुरू होने पर"
       ],
+      "day before": [
+        "एक दिन पहले",
+        "एक दिन पहले"
+      ],
+      "hour before": [
+        "घंटा पहले",
+        "घंटे पहले"
+      ],
+      "minute before": [
+        "मिनट पहले",
+        "मिनट पहले"
+      ],
       "on the same day": [
         "उसी दिन"
+      ],
+      "week before": [
+        "सप्ताह पहले",
+        "सप्ताह पहले"
       ]
     },
     "Oauth instructions": {
@@ -13482,6 +13115,18 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } करें और स्टोरेज लेने के लिए, या जगह खाली करने के लिए कुछ स्टोरेज हटाएं।"
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "आपके प्लान में ${ availableAddresses } और पता है।",
+        "आपके प्लान में ${ availableAddresses } और पते है।"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "आपके प्लान में ${ availableNumberOfMembers } और संगठन यूज़र मौजूद है।",
+        "आपके प्लान में ${ availableNumberOfMembers } और संगठन यूज़र मौजूद है।"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "आपके प्लान में ${ availableVPNAccess } और वीपीएन खाता है।",
+        "आपके प्लान में ${ availableVPNAccess } और वीपीएन खाते है।"
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "आपके प्लान में ${ humanReadableAvailableSpace } और स्टोरेज जगह है।"
@@ -14288,6 +13933,14 @@
       ]
     },
     "Plans": {
+      "${ cycle } month": [
+        "${ cycle } महीना",
+        "${ cycle } महीने"
+      ],
+      "${ months } month plan": [
+        "${ months } महीना प्लान",
+        "${ months } महीने के प्लान"
+      ],
       "Enjoying ${ planName }?": [
         "क्या आपको ${ planName } पसंद आ रहा है?"
       ]
@@ -14488,6 +14141,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "आपके संगठन में ${ n } प्रशासक को संगठन कुंजी की पहुंच चाहिए।",
+        "आपके संगठन में ${ n } प्रशासकों को संगठन कुंजी की पहुंच चाहिए।"
+      ],
       "Changing organization keys": [
         "संगठन की चाबियाँ बदलना"
       ],
@@ -14519,8 +14176,18 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ n } day": [
+        "${ n } दिन",
+        "${ n } दिन"
+      ],
       "${ remainingCount } more": [
         "${ remainingCount } और"
+      ]
+    },
+    "retention_policy_2025_Label": {
+      "day": [
+        "दिन",
+        "दिन"
       ]
     },
     "retention_policy_2025_Option": {
@@ -15012,6 +14679,14 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } दिन",
+        "${ timeRemaining.inDays } दिन"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } घंटा",
+        "${ timeRemaining.inHours } घंटे"
+      ],
       "Didn’t make this request?": [
         "क्या आपने यह अनुरोध नहीं किया?"
       ],
@@ -15114,6 +14789,10 @@
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "यह सुनिश्चित करने के लिए कि वास्तव में आप ही अपना पासवर्ड रीसेट करने का प्रयास कर रहे हैं, हम अनुरोधों को स्वीकृत करने से पहले 72 घंटे तक प्रतीक्षा करते हैं। आप अपना पासवर्ड ${ boldTimeLeft } में बदल सकते हैं। ${ viewRequest }"
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "आप अपना पासवर्ड ${ gracePeriodHoursRemaining } घंटा में बदल सकते हैं",
+        "आप अपना पासवर्ड ${ gracePeriodHoursRemaining } घंटे में बदल सकते हैं"
       ]
     },
     "session_recovery:in_progress:title": {
@@ -15159,6 +14838,10 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "पासवर्ड रीसेट का अनुरोध करें?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "आप अपना पासवर्ड ${ gracePeriodHoursRemaining } घंटे में रीसेट कर सकेंगे",
+        "आप अपना पासवर्ड ${ gracePeriodHoursRemaining } घंटे में रीसेट कर सकेंगे"
       ]
     },
     "session_recovery:settings:action": {
@@ -15186,6 +14869,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } घंटा",
+        "${ gracePeriodHoursRemaining } घंटे"
+      ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "आप अपना पासवर्ड ${ boldTimeLeft } में रीसेट कर पाएंगे।"
       ]
@@ -15274,6 +14961,12 @@
         "गैर-${ BRAND_NAME } यूज़रों को न्योता देने को अपना कैलेंडर एक लिंक से शेयर करें।"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "आपने हर कैलेंडर पे ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पार कर ली हैं",
+        "आपने हर कैलेंडर पे ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पार कर ली हैं"
+      ]
+    },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "आप जिनके साथ ${ calendarName } शेयर करना चाहते हैं उनका ${ BRAND_NAME } खाता जोड़े। हम उनको एक न्योता भेजेंगे।"
@@ -15308,8 +15001,24 @@
       ]
     },
     "Signup": {
+      "${ maxAddresses } address": [
+        "${ maxAddresses } पता",
+        "${ maxAddresses } पते"
+      ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } ईमेल पता",
+        "${ maxAddresses } ईमेल पते"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } कैलेंडर",
+        "${ maxCalendars } कैलेंडर"
+      ],
       "${ value } total storage": [
         "कुल स्टोरेज ${ value }"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } तेज़ वीपीएन कनेक्शन",
+        "${ VPN_CONNECTIONS } तेज़ वीपीएन कनेक्शन"
       ],
       "/user": [
         "/यूज़र"
@@ -15535,6 +15244,30 @@
         "असीम पे जाएं"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } दिन",
+        "${ days } दिन"
+      ],
+      "${ hours } hour": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ],
+      "${ seconds } second": [
+        "${ seconds } सेकंड",
+        "${ seconds } सेकंड"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } महीना मुफ्त",
+        "${ n } महीने मुफ्त"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 यूज़र"
@@ -15582,6 +15315,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
+      ],
       "/ month": [
         "/ महीने"
       ],
@@ -15663,6 +15400,30 @@
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress } आपके सहायता का अनुरोध कर रहे हैं ताकि वे अपने ${ BRAND_NAME } खाता में एकल साइन-ऑन के साथ साइनइन कर सकें।"
       ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } सदस्य ने साइनइन करने के लिए आपकी सहायता का अनुरोध किया है।",
+        "${ n } सदस्य साइनइन करने के लिए आपकी सहायता का अनुरोध कर रहे हैं।"
+      ],
+      "${ n } user converted to SSO": [
+        "${ n } उपयोगकर्ता को SSO में परिवर्तित किया गया",
+        "${ n } उपयोगकर्ताओं को SSO में परिवर्तित किया गया"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } उपयोगकर्ता को SSO से अलग किया गया",
+        "${ n } उपयोगकर्ताओं को SSO से अलग किया गया"
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "${ n } उपयोगकर्ता आपके पहचान प्रदाता के माध्यम से आपके संगठन में शामिल हुआ है। अब खाता की समीक्षा करें:",
+        "${ n } उपयोगकर्ता आपके पहचान प्रदाता के माध्यम से आपके संगठन में शामिल हुए हैं। अब उनके खातों की समीक्षा करें:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } उपयोगकर्ता निष्क्रिय है। आप इस उपयोगकर्ता को सुरक्षित रूप से अपने संगठन से हटा सकते हैं।",
+        "${ n } उपयोगकर्ता निष्क्रिय हैं। आप उन्हें सुरक्षित रूप से अपने संगठन से हटा सकते हैं।"
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } उपयोगकर्ता आपके सहायता का अनुरोध कर रहा है ताकि वह अपने ${ BRAND_NAME } खाते में सिंगल साइन-ऑन के साथ साइन इन कर सके।",
+        "${ n } उपयोगकर्ता अपने ${ BRAND_NAME } खाता में एकल साइन-ऑन के साथ साइनइन करने के लिए आपकी सहायता का अनुरोध कर रहे हैं।"
+      ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**SSO उपयोगकर्ताओं (जो आपके Identity Provider द्वारा प्रदान किए गए हैं) को हटा दिया जाएगा** और आपको उन्हें अपने संगठन में वापस जोड़ने के लिए मैन्युअली बनाना होगा।"
       ],
@@ -15716,6 +15477,14 @@
       ],
       "Current device": [
         "वर्तमान डिवाइस"
+      ],
+      "Delete ${ n } inactive user?": [
+        "क्या ${ n } निष्क्रिय उपयोगकर्ता को हटाएं?",
+        "क्या ${ n } निष्क्रिय उपयोगकर्ताओं को हटाएं?"
+      ],
+      "Delete ${ n } user": [
+        "${ n } उपयोगकर्ता को हटाएं",
+        "${ n } उपयोगकर्ताओं को हटाएं"
       ],
       "Deny": [
         "नकारें"
@@ -15969,6 +15738,10 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "हम शेष समय के लिए क्रेडिट आपके ${ BRAND_NAME } खाते में जोड़ देंगे।"
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।",
+        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।"
+      ],
       "Your storage is full": [
         "आपका स्टोरेज भरा है"
       ],
@@ -16015,6 +15788,58 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ BRAND_NAME } Scribe लेखन सहायक ${ maxAi } उपयोगकर्ता के लिए",
+        "${ BRAND_NAME } Scribe लेखन सहायक ${ maxAi } उपयोगकर्ताओं के लिए"
+      ],
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } विशेष सर्वर",
+        "${ ipAddresses } विशेष सर्वर"
+      ],
+      "${ n } calendar per user": [
+        "प्रति उपयोगकर्ता ${ n } कैलेंडर",
+        "प्रति उपयोगकर्ता ${ n } कैलेंडर"
+      ],
+      "${ n } free VPN connection per user": [
+        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } तेज़ वीपीएन कनेक्शन",
+        "${ n } तेज़ वीपीएन कनेक्शन"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "प्रति उपयोगकर्ता ${ n } उच्च गति वाला VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } उच्च गति वाले VPN कनेक्शन"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN कनेक्शन",
+        "${ n } VPN कनेक्शन"
+      ],
+      "${ n } VPN connection per user": [
+        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } पता",
+        "${ UsedAddresses } पते"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता",
+        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } कैलेंडर",
+        "${ UsedCalendars } कैलेंडर"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ MaxDomains } का ${ UsedDomains } कस्टम डोमेन",
+        "${ MaxDomains } का ${ UsedDomains } कस्टम डोमेन"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ MaxMembers } में से ${ UsedMembers } यूज़र",
+        "${ MaxMembers } में से ${ UsedMembers } यूज़र"
+      ],
       "1 email address": [
         "1 ईमेल पता"
       ],
@@ -16029,6 +15854,10 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "पहले से डाला एड-ब्लॉकर (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "${ maxVpn } उपकरण पर उच्च गति वाला VPN",
+        "${ maxVpn } उपकरणों पर उच्च गति वाला VPN"
       ]
     },
     "Subscription change warning": {
@@ -16052,6 +15881,10 @@
       ]
     },
     "Subscription reminder": {
+      "${ dayDiff } day left": [
+        "${ dayDiff } दिन बाकी",
+        "${ dayDiff } दिन बाकी"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } डेस्कटॉप ऐप"
       ],
@@ -16072,6 +15905,26 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } आपके फाइलों और फोटो के लिए ${ planMaxSpace } स्टोरेज प्रदान करता है। आप वार्षिक स्टोरेज बोनस के लिए भी पात्र हैं।"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "प्रति उपयोगकर्ता ${ planNumberOfCalendars } कैलेंडर",
+        "प्रति उपयोगकर्ता ${ planNumberOfCalendars } कैलेंडर"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } कस्टम ईमेल डोमेन",
+        "${ planNumberOfDomains } कस्टम ईमेल डोमेन"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ईमेल पता",
+        "${ planNumberOfEmails } ईमेल पते"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "प्रति उपयोगकर्ता ${ planNumberOfEmails } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ planNumberOfEmails } ईमेल पते"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } यूज़र",
+        "${ planNumberOfUsers } यूज़र"
       ],
       "2 users": [
         "2 यूज़र"
@@ -16643,6 +16496,52 @@
         "कोई एसएमटीपी टोकन नहीं मिला"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } दिन",
+        "${ ceilDays } दिन"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } घंटा",
+        "${ ceilHours } घंटे"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } मिनट",
+        "${ ceilMinutes } मिनट"
+      ],
+      "${ seconds } second": [
+        "${ seconds } सेकंड",
+        "${ seconds } सेकंड"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 घंटा",
+        "${ hoursInt }.5 घंटे"
+      ],
+      "${ minutes } min": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 घंटा",
+        "${ hoursInt }.5 घंटे"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "समय क्षेत्र खोजें"
@@ -16720,6 +16619,10 @@
       ],
       "Activate user": [
         "उपयोगकर्ता को सक्रिय करें"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "क्या ${ totalServerCount } सर्वर जोड़ें?",
+        "क्या ${ totalServerCount } सर्वर जोड़ें?"
       ],
       "Add address": [
         "पता जोड़े"
@@ -16934,6 +16837,10 @@
       "Couldn’t create accounts": [
         "खाते नहीं बना सके"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } यूज़र खाता बनाए",
+        "${ selectedUserIds.length } यूज़र खाते बनाए"
+      ],
       "Create a new Gateway": [
         "नया गेटवे बनाएं"
       ],
@@ -17053,6 +16960,10 @@
       ],
       "Delete organization logo?": [
         "संगठन-चिन्ह हटाएं?"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "सर्वर को मिटा दें (आप इसे ${ days } दिन तक फिर से प्राप्त कर सकेंगे)",
+        "सर्वर को मिटा दें (आप इसे ${ days } दिनों तक फिर से प्राप्त कर सकेंगे)"
       ],
       "Delete user?": [
         "उपयोगकर्ता मिटाएं?"
@@ -17222,6 +17133,10 @@
       "External PGP settings": [
         "बाहरी PGP सेटिंग्स"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } यूज़र खाता बनाने में असफल",
+        "${ failedUsers.length } यूज़र खाते बनाने में असफल"
+      ],
       "Filters": [
         "फ़िल्टर"
       ],
@@ -17329,6 +17244,10 @@
       ],
       "Import and export": [
         "आयात और निर्यात"
+      ],
+      "Import as simple event?": [
+        "साधारण ईवेंट के रूप में आयात करें?",
+        "साधारण ईवेंट के रूप में आयात करें?"
       ],
       "Import contacts": [
         "संपर्क आयात करें"
@@ -17752,6 +17671,10 @@
       ],
       "Success": [
         "सफल"
+      ],
+      "Successfully created ${ n } user account": [
+        "${ n } उपयोगकर्ता खाता सफलतापूर्वक बनाया गया",
+        "${ n } उपयोगकर्ता खाते सफलतापूर्वक बनाए गए"
       ],
       "Summary": [
         "सार"
@@ -18283,7 +18206,7 @@
         "अपने सभी आउटगोइंग संदेशों पर स्वचालित रूप से हस्ताक्षर करें ताकि उपयोगकर्ता आपके संदेशों की प्रामाणिकता को सत्यापित कर सकें। यह डिफ़ॉल्ट PGP सेटिंग्स के संयोजन में किया जाता है जिसे नीचे कॉन्फ़िगर किया जा सकता है।"
       ]
     },
-    "Tooltip; share calendar modal": {
+    "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "एंड-टू-एंड एन्क्रिप्टेड साझा किया गया"
       ],
@@ -18405,6 +18328,10 @@
       "Confirm all": [
         "सभी की पुष्टि करें"
       ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "इस बीच उनकी एन्क्रिप्शन चाबियाँ अपडेट हुई होने के कारण, ${ n } उपयोगकर्ता के लिए स्वचालित रूप से प्रशासक पहुंच सक्षम नहीं की जा सकी:",
+        "${ n } उपयोगकर्ताओं के लिए स्वचालित रूप से एडमिन एक्सेस सक्षम नहीं किया जा सका, क्योंकि उनकी एन्क्रिप्शन चाबियाँ इस बीच अपडेट हो गई हैं:"
+      ],
       "Could not enable administrator access: ${ error }": [
         "एडमिन एक्सेस सक्षम नहीं किया जा सका: ${ error }"
       ],
@@ -18489,6 +18416,10 @@
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
         "असीमित hide-my-email नकली-नाम पाने के लिए ${ passPlusPlanName } में अपग्रेड करें"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+        "${ n } डिवाइस तक को एक समय में वीपीएन से कनेक्ट करने के लिए ${ planName } पे अपग्रेड करे।",
+        "${ n } डिवाइस तक को एक समय में वीपीएन से कनेक्ट करने के लिए ${ planName } पे अपग्रेड करे।"
       ]
     },
     "Upgrade notice": {
@@ -18642,6 +18573,16 @@
         "लेखन सहायक"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होने चाहिए"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "वीडियो फिर से चलाने के लिए क्लिक करें"
@@ -18689,6 +18630,36 @@
         "नेटफ्लिक्स, अमेज़ॅन प्राइम वीडियो, बीबीसी आईप्लेयर, ईएसपीएन +, डिज़नी +, एचबीओ नाउ, और बहुत कुछ।"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } डिवाइस",
+        "${ n } डिवाइस"
+      ],
+      "${ n } server": [
+        "${ n } सर्वर",
+        "${ n }+ सर्वर"
+      ],
+      "${ n } VPN connection": [
+        "${ n } वीपीएन कनेक्शन",
+        "${ n } वीपीएन कनेक्शन"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } देश",
+        "${ numberOfCountries } देश"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfCountries } देशों में ${ numberOfServers }",
+        "${ numberOfCountries }+ देशों में ${ numberOfServers }"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfCountries } देश में ${ numberOfServers }",
+        "${ numberOfCountries } देशों में ${ numberOfServers }"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }+ देश में सर्वर",
+        "${ numberOfCountries }+ देशों में सर्वर"
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "मासिक बिल"
@@ -18732,6 +18703,14 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
+      ],
+      "${ n } year": [
+        "${ n } साल",
+        "${ n } साल"
+      ],
       "Includes ${ plan } (free for the first year!)": [
         "इसमें ${ plan } शामिल है (पहले वर्ष के लिए Free!)"
       ],
@@ -18911,6 +18890,54 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "${ multipleDaysString } पर हर ${ interval } सप्ताह",
+        "${ multipleDaysString } पर हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on all days": [
+        "सभी दिनों पर हर ${ interval } सप्ताह",
+        "सभी दिनों पर हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on Friday": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को"
+      ],
+      "Every ${ interval } week on Monday": [
+        "सोमवार को प्रत्येक ${ interval } सप्ताह",
+        "सोमवार को हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "शनिवार को प्रत्येक ${ interval } सप्ताह",
+        "प्रति ${ interval } शनिवार को"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "प्रत्येक ${ interval } सप्ताह रविवार को",
+        "रविवार को हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को",
+        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "बुधवार को हर ${ interval } सप्ताह",
+        "प्रति ${ interval } बुधवार को"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "प्रतिसप्ताह ${ multipleDaysString } को"
       ],
@@ -18940,6 +18967,26 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर",
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह शनिवार को, ${ timesString }",
+        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "${ multipleDaysString }, ${ timesString } पर साप्ताहिक"
       ],
@@ -18969,6 +19016,42 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर",
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }",
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "हर ${ interval } हफ्ते शनिवार को, ${ untilString }",
+        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "${ multipleDaysString }, ${ untilString } पर साप्ताहिक"
       ],
@@ -19021,16 +19104,28 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "हर ${ interval } साल",
+        "हर ${ interval } साल"
+      ],
       "Yearly": [
         "सालाना"
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "हर ${ interval } साल, ${ timesString }",
+        "हर ${ interval } वर्षों, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "वार्षिक, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "हर ${ interval } साल, ${ untilString }",
+        "हर ${ interval } वर्षों, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "वार्षिक, ${ untilString }"
       ]

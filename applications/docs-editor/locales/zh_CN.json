@@ -4,11 +4,6 @@
     "language": "zh_CN"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } 正在输入..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -493,6 +488,9 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } 和 ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } 正在输入..."
       ],
       "Alpha only experimental feature": [
         "仅限 Alpha 实验功能"
