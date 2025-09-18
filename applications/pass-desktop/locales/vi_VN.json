@@ -4,6 +4,140 @@
     "language": "vi_VN"
   },
   "contexts": {
+    "": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } bí danh"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } khối"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } đã chặn"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } ký tự"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } từ"
+      ],
+      "${ count } item": [
+        "${ count } nội dung"
+      ],
+      "${ count } time": [
+        "${ count } lần"
+      ],
+      "${ count } view": [
+        "${ count } lượt xem"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } lượt xem"
+      ],
+      "${ days } day": [
+        "${ days } ngày"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } tệp"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } chuyển tiếp"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } đã chuyển tiếp"
+      ],
+      "${ hours } hour": [
+        "${ hours } tiếng"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } thành viên"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } phút"
+      ],
+      "${ months } month": [
+        "${ months } tháng"
+      ],
+      "${ n } item": [
+        "${ n } nội dung"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } phản hồi"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } rò rỉ đã dược phát hiện"
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } lần đăng nhập khác sử dụng cùng mật khẩu"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } đăng nhập"
+      ],
+      "${ years } year": [
+        "${ years } năm"
+      ],
+      "byte": [
+        "byte\nbytes"
+      ],
+      "Byte": [
+        "Byte\nBytes"
+      ],
+      "Cannot send invitation at the moment": [
+        "Hiện tại không thể gửi lời mời"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Phát hiện ${ errors.length } hàng CSV bị lỗi"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Các mật khẩu sẽ được lưu trữ trong ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần."
+      ],
+      "Gigabyte": [
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilôbytes"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Độ dài tối đa là ${ maxLength } ký tự"
+      ],
+      "Megabyte": [
+        "Megabytes"
+      ],
+      "Move item to": [
+        "Di chuyển nội dung tới"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Mật khẩu cũ hơn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần sẽ bị tự động xóa trong lịch sử."
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Xin lưu ý rằng một khi đã xóa, bí danh sẽ không thể khôi phục lại được."
+      ],
+      "Reused ${ count } time": [
+        "Tái sử dụng ${ count } lần"
+      ],
+      "Sync alias": [
+        "Đồng bộ bí danh"
+      ],
+      "Terabyte": [
+        "Terabytes"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "${ totalIgnored } nội dung không thể nhập vào:"
+      ],
+      "Understood, I will never need it": [
+        "Đã hiểu, tôi không bao giờ cần nó"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Kho lưu trữ không thể có hơn ${ targetMaxMembers } thành viên."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Chúng tôi nhận thấy bạn có ${ aliasCount } bí danh trong SimpleLogin nhưng chưa có trong ${ PASS_APP_NAME }. Bạn muốn nhập không?"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Bạn có ${ aliasCount } alias có trong SimpleLogin nhưng lại thiếu trong ${ PASS_APP_NAME }. Bạn có muốn đồng bộ hóa nó không?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Bạn còn ${ daysRemaining } ngày để thử nó và những tính năng cao cấp khác."
+      ]
+    },
     "Action": {
       "Accept and view the item": [
         "Chấp nhận và xem mục"
@@ -482,9 +616,6 @@
       "Submitting report...": [
         "Đang nộp báo cáo..."
       ],
-      "Sync alias": [
-        "Đồng bộ bí danh"
-      ],
       "Sync aliases": [
         "Đồng bộ bí danh"
       ],
@@ -508,9 +639,6 @@
       ],
       "Unblock contact": [
         "Bỏ chặn liên hệ"
-      ],
-      "Understood, I will never need it": [
-        "Đã hiểu, tôi không bao giờ cần nó"
       ],
       "Unlock": [
         "Mở khóa"
@@ -595,9 +723,6 @@
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } có sẵn với gói trả phí. Nâng cấp để truy cập ngay lập tức."
       ],
-      "${ total } other login uses the same password": [
-        "${ total } lần đăng nhập khác sử dụng cùng mật khẩu"
-      ],
       "Change your passwords": [
         "Thay đổi các mật khẩu của bạn"
       ],
@@ -636,9 +761,6 @@
       "Authentication error": [
         "Lỗi xác thực"
       ],
-      "Cannot send invitation at the moment": [
-        "Hiện tại không thể gửi lời mời"
-      ],
       "Cannot send invitations at the moment": [
         "Hiện tại không thể gửi lời mời"
       ],
@@ -674,9 +796,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Xóa kho lưu trữ ${ payload.content.name } thất bại"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Phát hiện ${ errors.length } hàng CSV bị lỗi"
       ],
       "Domain not available, try again later": [
         "Tên miền không khả dụng, vui lòng thử lại sau"
@@ -888,9 +1007,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte\nbytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -902,23 +1018,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte\nBytes"
-      ],
-      "Gigabyte": [
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilôbytes"
-      ],
-      "Megabyte": [
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabytes"
       ]
     },
     "Font face option": {
@@ -941,29 +1040,8 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "Cập nhật nội dung \"${ payload.itemName }\" đã bỏ qua"
       ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } đã chặn"
-      ],
-      "${ count } time": [
-        "${ count } lần"
-      ],
-      "${ count } view": [
-        "${ count } lượt xem"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } lượt xem"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } đã chuyển tiếp"
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } muốn chia sẻ một mục với bạn."
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } thành viên"
-      ],
-      "${ n } item": [
-        "${ n } nội dung"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sẽ luôn truy câp được"
@@ -973,9 +1051,6 @@
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } sẽ hỏi mật khẩu ${ BRAND_NAME } để có thể truy cập dữ liệu ngoại tuyến."
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount } rò rỉ đã dược phát hiện"
       ],
       "(Empty)": [
         "(Trống)"
@@ -1160,9 +1235,6 @@
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Đã sao chép địa chỉ chuyển tiếp vào bảng tạm. Gửi email đến địa chỉ này và ${ Email } sẽ nhận được."
       ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Các mật khẩu sẽ được lưu trữ trong ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Nhận không giới hạn bí danh, tận hưởng các tính năng độc quyền, vầ hỗ trợ chúng tôi bằng việc đăng ký gói Pass Plus."
       ],
@@ -1309,9 +1381,6 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Đã đăng ký thành công khóa bằng mật khẩu. Sử dụng nó để mở khóa ${ PASS_APP_NAME }"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Mật khẩu cũ hơn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } tuần sẽ bị tự động xóa trong lịch sử."
       ],
       "Paused": [
         "Đã ngừng"
@@ -1463,9 +1532,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Mật khẩu cấp hai sẽ được yêu cầu để sử dụng ${ PASS_APP_NAME }. Nó hoạt động như là một mật khẩu khác ngoài mật khẩu ${ BRAND_NAME }của bạn."
       ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "${ totalIgnored } nội dung không thể nhập vào:"
-      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Đoạn văn bản mà bạn cố gắng dán vào dài hơn mức tối đa là ${ maxLength } ký tự."
       ],
@@ -1544,9 +1610,6 @@
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Chúng tôi gặp sự cố khi đồng bộ dữ liệu vào bộ nhớ của bạn. Vui lòng đảm bảo bạn có đủ bộ nhớ trống để ${ PASS_SHORT_APP_NAME } hoạt động mượt mà."
       ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Chúng tôi nhận thấy bạn có ${ aliasCount } bí danh trong SimpleLogin nhưng chưa có trong ${ PASS_APP_NAME }. Bạn muốn nhập không?"
-      ],
       "Week": [
         "Tuần"
       ],
@@ -1561,12 +1624,6 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Bạn không thể đổi địa chỉ email nhận cho bí danh này."
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Bạn có ${ aliasCount } alias có trong SimpleLogin nhưng lại thiếu trong ${ PASS_APP_NAME }. Bạn có muốn đồng bộ hóa nó không?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Bạn còn ${ daysRemaining } ngày để thử nó và những tính năng cao cấp khác."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Bạn đã vượt quá số lượng kho lưu trữ trong gói của bạn. Các nội dung chỉ có thể được chuyển đến hai kho lưu trữ đầu tiên của bạn. Để chuyển nội dung giữa tất cả các kho lưu trữ, vui lòng nâng cấp gói đăng ký của bạn."
@@ -1615,47 +1672,8 @@
       ]
     },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } bí danh"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } khối"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } ký tự"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } từ"
-      ],
-      "${ count } item": [
-        "${ count } nội dung"
-      ],
-      "${ days } day": [
-        "${ days } ngày"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } chuyển tiếp"
-      ],
-      "${ hours } hour": [
-        "${ hours } tiếng"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } phút"
-      ],
-      "${ months } month": [
-        "${ months } tháng"
-      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "phiên bản ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } phản hồi"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } đăng nhập"
-      ],
-      "${ years } year": [
-        "${ years } năm"
       ],
       "1 hour": [
         "1 giờ"
@@ -2416,9 +2434,6 @@
       ]
     },
     "Message": {
-      "${ count } item": [
-        "${ count } nội dung"
-      ],
       "You selected ${ semiboldText } in this vault.": [
         "Bạn đã chọn ${ semiboldText } trong kho lưu trữ này."
       ]
@@ -2458,9 +2473,6 @@
       ]
     },
     "Pass_file_attachments": {
-      "${ filesCount } file": [
-        "${ filesCount } tệp"
-      ],
       "Attachments": [
         "Tệp đính kèm"
       ],
@@ -2614,9 +2626,6 @@
       ],
       "Mailbox successfully verified": [
         "Hộp thư đã được xác minh thành công"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Kho lưu trữ không thể có hơn ${ targetMaxMembers } thành viên."
       ]
     },
     "Theme": {
@@ -2775,6 +2784,9 @@
       "Modified": [
         "Đã chỉnh sửa"
       ],
+      "Next": [
+        "Tiếp theo"
+      ],
       "No items selected": [
         "Không có nội dung nào được chọn"
       ],
@@ -2793,8 +2805,8 @@
       "Pending access to the shared data": [
         "Đang chờ truy cập vào dữ liệu được chia sẻ"
       ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Xin lưu ý rằng một khi đã xóa, bí danh sẽ không thể khôi phục lại được."
+      "Previous": [
+        "Trước"
       ],
       "Recommended actions": [
         "Hành động được đề xuất"
@@ -2813,9 +2825,6 @@
       ],
       "Resume monitoring?": [
         "Theo dõi trở lại?"
-      ],
-      "Reused ${ count } time": [
-        "Tái sử dụng ${ count } lần"
       ],
       "Reused passwords": [
         "Các mật khẩu tái sử dụng"
@@ -2927,11 +2936,6 @@
         "URL không hợp lệ"
       ]
     },
-    "Vault Select": {
-      "Move item to": [
-        "Di chuyển nội dung tới"
-      ]
-    },
     "Warning": {
       "A description of the problem is required": [
         "Yêu cầu mô tả về vấn đề"
@@ -2968,9 +2972,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Không được mời các địa chỉ bên ngoài tổ chức."
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Độ dài tối đa là ${ maxLength } ký tự"
       ],
       "Missing alias prefix": [
         "Thiếu tiền tố bí danh"

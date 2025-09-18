@@ -4,10 +4,22 @@
     "language": "en_US"
   },
   "contexts": {
-    "Action": {
+    "": {
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "You can't send vCard files of more than ${ maxAttachments } contacts",
         "You can't send vCard files of more than ${ maxAttachments } contacts"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "You have ${ timeRemaining.inHours } hour to reset your password.",
+        "You have ${ timeRemaining.inHours } hours to reset your password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
+        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "You have ${ timeRemaining.inSeconds } second to reset your password.",
+        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
       ]
     },
     "anniversary_2025: Offer": {
@@ -59,20 +71,6 @@
     "Notification": {
       "Public link update access failed ": [
         "Public link update access failed"
-      ]
-    },
-    "session_recovery:available:info": {
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "You have ${ timeRemaining.inHours } hour to reset your password.",
-        "You have ${ timeRemaining.inHours } hours to reset your password."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
-        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "You have ${ timeRemaining.inSeconds } second to reset your password.",
-        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
       ]
     }
   }

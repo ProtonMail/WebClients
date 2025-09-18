@@ -4,6 +4,904 @@
     "language": "kab_DZ"
   },
   "contexts": {
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } n tansa n yimayl",
+        "${ addressCount } n tansiwin n yimayl"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } n uwitay amaynut",
+        "${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
+        "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } n wass",
+        "${ ceilDays } n wussan"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } n usrag",
+        "${ ceilHours } n yisragen"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } n tesdat",
+        "${ ceilMinutes } n tesdatin"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } unermis yegber aṭas n tansiwin yimayl.",
+        "${ contactCount } yinermisen gebren aṭas n tansiwin yimayl."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } n uɛeggal",
+        "${ contactEmailsLength } n yiɛeggalen"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } uɛeggal)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } yiɛeggalen)"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } n unermis yettwafen",
+        "${ contactsCount } n yinermisen yettwafen"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } anermis ɣef ${ countContacts } ttusfḍen-d akken iwata.",
+        "${ contactsExported.length } inermisen ɣef ${ countContacts } ttusfḍen-d akken iwata."
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } n unermis",
+        "${ contactsLength } inermisen"
+      ],
+      "${ count } conversation deleted": [
+        "${ count } n udiwenni ittwakkes",
+        "Idiwenniyen ${ count } ttwaksen"
+      ],
+      "${ count } draft deleted": [
+        "${ count } n urewway ittwakkes",
+        "${ count } n yirewwayen ttwakksen"
+      ],
+      "${ count } message deleted": [
+        "${ count } n udiwenni ittwakkes",
+        "${ count } n yiznan ttwakksen"
+      ],
+      "${ count } time": [
+        "${ count } n tikkelt",
+        "${ count } n tikkal"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } unermis yettban kifkif.",
+        "${ countMergeableContacts } yinermisen ttbanen kifkif."
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } ɣef ${ totalProgress }",
+        "${ currentProgress } ɣef ${ totalProgress }"
+      ],
+      "${ dayDiff } day left": [
+        "Mazal ${ dayDiff } wass",
+        "Mazal ${ dayDiff } wussan"
+      ],
+      "${ days } day": [
+        "${ days } n wass",
+        "${ days } n wussan"
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } n udiwenni yettwarna ɣer ${ labelName }.",
+        "${ elementsCount } n yidiwenniyen ttwarnan ɣer ${ labelName }."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } n udiwenni yettwacerḍen yettwaɣra.",
+        "${ elementsCount } n yidiwenniyen yettwacerḍen ttwaɣran."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } n udiwenni yettwacerḍen s yitran.",
+        "${ elementsCount } n yidiwenniyen yettwacerḍen s yitran."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } n udiwenni yettwacerḍen ur yettwaɣra ara.",
+        "${ elementsCount } n yidiwenniyen yettwacerḍen ur ttwaɣran ara."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } udiwenni yemutti ɣer ${ labelName }, ma d amazan yettwarna ɣer tebdart ur nelli n yispamen.",
+        "${ elementsCount } n yidiwenniyen muttin ɣer ${ labelName }, ma d imazanen ttwarnan ɣer tebdart ur nelli n yispamen."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } n udiwenni ittwasenkez ɣer ${ labelName }.",
+        "${ elementsCount } n yidiwenniyen ttwasnekzen ɣer ${ labelName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } usqerdec yemutti ɣer uspam, ma d amazan yettwarna ɣer tebdart yispamen.",
+        "${ elementsCount } n yidiwenniyen muttin ɣer yispamen i yernan yimazanen yettwarnan ɣer tebdart yispamen."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } n udiwenni ittwakkes seg ${ labelName }.",
+        "${ elementsCount } n yidiwenniyen ttwakksen seg ${ labelName }."
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } n yizen yettwarna ɣer ${ labelName }.",
+        "${ elementsCount } n yiznan ttwarnan ɣer ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } n yizen yettwacerḍen yettwaɣera.",
+        "${ elementsCount } n yiznan yettwacerḍen ttwaɣeran."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } n yizen yettwacerḍen s yitran.",
+        "${ elementsCount } n yiznan yettwacerḍen s yitran."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } n yizen yettwacreḍ en ur yettwaɣran ara.",
+        "${ elementsCount } n yiznan yettwacerḍen ur ttwaɣran ara."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } yizen yemutti ɣer ${ labelName }, ma d amazan yettwarna ɣer tebdart ur nelli n yispamen.",
+        "${ elementsCount } n yiznan muttin ɣer ${ labelName }, ma d imazanen ttwarnan ɣer tebdart ur nelli n yispamen."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } n yizen ittwasenkez ɣer ${ labelName }.",
+        "${ elementsCount } n yiznan ttwasnekzen ɣer ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } yizen yemutti ɣer uspam, ma d amazan yettwarna ɣer tebdart yispamen.",
+        "${ elementsCount } n yiznan muttin ɣer yispamen, ma d imazanen ttwarnan ɣer tebdart yispamen."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } n yizen i yettwakksen seg ${ labelName }.",
+        "${ elementsCount } n yiznan i yettwakksen seg ${ labelName }."
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } tansa n yimayl",
+        "${ emailsCount } n tansiwin imayl"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "Tugna ${ embeddedAttachmentsCount } yettuselɣen",
+        "Tugniwin ${ embeddedAttachmentsCount } yettuselɣen"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } n usrag",
+        "${ gracePeriodHoursRemaining } n yisragen"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } n ugraw yettwafen",
+        "${ groupCounts } n yigrawen yettwafen"
+      ],
+      "${ hours } h": [
+        "${ hours } n usrag",
+        "${ hours } n yisragen"
+      ],
+      "${ hours } hour": [
+        "${ hours } n usrag",
+        "${ hours } n yisragen"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 srg",
+        "${ hoursInt }.5 srg"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 usrag",
+        "${ hoursInt }.5 yisragen"
+      ],
+      "${ ips } server": [
+        "Aqeddac ${ ips }",
+        "${ ips } yiqeddacen"
+      ],
+      "${ messagesNotAuthorizedToMove } message could not be moved.": [
+        "${ messagesNotAuthorizedToMove } izen ulamek ad yettusenkez.",
+        "${ messagesNotAuthorizedToMove } iznan ulamek ad ttwasnekzen."
+      ],
+      "${ minutes } min": [
+        "${ minutes } tsd",
+        "${ minutes } tsdn"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } n tesdat",
+        "${ minutes } n tesdatin"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } n unermis ɣef ${ totalBeDeleted } yettwakkes akken iwata.",
+        "${ model.deleted.length } inermisen ɣef ${ totalBeDeleted } ttwakksen akken iwata."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } n unermis ɣef ${ totalBeMerged } ttummmezdin akken iwata.",
+        "${ model.submitted.length } n yinermisen ɣef ${ totalBeMerged } ttummmezdin akken iwata."
+      ],
+      "${ n } calendar": [
+        "${ n } uwitay",
+        "${ n } yiwitayen"
+      ],
+      "${ n } calendar per user": [
+        "${ n } uwitay i yal aseqdac",
+        "${ n } yiwitayen i yal aseqdac"
+      ],
+      "${ n } custom email domain": [
+        "${ n } taɣult n yimaylen udmawanen",
+        "${ n } tiɣula n yimaylen udmawanen"
+      ],
+      "${ n } device": [
+        "${ n } yibenk",
+        "${ n } yibenkan"
+      ],
+      "${ n } email address": [
+        "${ n } tansa n yimayl",
+        "${ n } tansiwin n yimayl"
+      ],
+      "${ n } email address per user": [
+        "${ n } tansa n yimayl i useqdac",
+        "${ n } tansiwin n yimayl i useqdac"
+      ],
+      "${ n } filter": [
+        "${ n } yimsizdeg",
+        "${ n } yimsizedgen"
+      ],
+      "${ n } folder": [
+        "${ n } n ukaram",
+        "${ n } n ikaramen"
+      ],
+      "${ n } folder and label": [
+        "${ n } ukaram d tebzimt",
+        "${ n } yikaramen d tebzimin"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias hide-my-email",
+        "${ n } hide-my-email aliases"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } n tuqqna VPN s urured ɛlayen",
+        "${ n } n tuqqna VPN s urured ɛlayen"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } n tuqqna VPN s urured ɛlayen i useqdac",
+        "${ n } n tuqqniwin VPN s urured ɛlayen i useqdac"
+      ],
+      "${ n } label": [
+        "${ n } tebzimt",
+        "${ n } tebzimin"
+      ],
+      "${ n } message per day": [
+        "${ n } n yiznen i wass",
+        "${ n } n yiznan i ass"
+      ],
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
+      "${ n } month FREE": [
+        "${ n } wayyur BAṬEL",
+        "${ n } wayyuren BAṬEL"
+      ],
+      "${ n } server": [
+        "Aqeddac ${ n }",
+        "Ugar n ${ n } yiqeddacen"
+      ],
+      "${ n } unread conversation": [
+        "${ n } n udiwenni ur yettwaɣran ara",
+        "${ n } n yidiwenniyen ur yettwaɣran ara"
+      ],
+      "${ n } vault": [
+        "${ n } usenduq",
+        "${ n } yisendyaq"
+      ],
+      "${ n } VPN connection": [
+        "${ n } tuqqna VPN",
+        "${ n } n tuqqniwin VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } n tuqqna VPN i useqdac",
+        "${ n } n tuqqniwin VPN i useqdac"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } n tmurt",
+        "${ numberOfCountries } tmura"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
+        "${ numberOfServers } deg ${ numberOfCountries } n tmura"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
+        "${ numberOfServers } deg ${ numberOfCountries } n tmura"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } n useqdac",
+        "Alamma d ${ numberOfUsers } yiseqdacen"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } useɣwen yettwasfeḍ",
+        "${ numberOfUTMTrackers } iseɣwan ttwasefḍen"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } n yizen",
+        "${ numMessages } n yiznan"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } yizen deg udiwenni",
+        "${ NumMessages } yiznan deg udiwenni"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } n temseḍriwt i yettwafen",
+        "${ numOccurrences } n temseḍriwin i yettwafen"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } tmeḍriwt i yettwafen deg ugbur n yimayl",
+        "${ numOccurrences } tmeḍriwin i yettwafen deg ugbur n yimayl"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } s ${ n } hide-my-email alias",
+        "${ PASS_APP_NAME } s ${ n } hide-my-email aliases"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } uwitay i yal aseqdac",
+        "${ planNumberOfCalendars } yiwitayen i yal aseqdac"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } taɣult n yimaylen udmawanen",
+        "${ planNumberOfDomains } tiɣula n yimaylen udmawanen"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } tansa n yimayl",
+        "${ planNumberOfEmails } n tansiwin imayl"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } tansa n yimayl i useqdac",
+        "${ planNumberOfEmails } tansiwin n yimayl i useqdac"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } n useqdac",
+        "${ planNumberOfUsers } yiseqdacen"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } d ukaram yettwafen",
+        "${ providerFoldersNumLocalized } d ikaramen yettwafen"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } d tebzimt yettwafen deg Gmail",
+        "${ providerFoldersNumLocalized } n tebzimin i yettwafen deg Gmail"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "Afaylu ${ pureAttachmentsCount } yeddan",
+        "Ifuyla ${ pureAttachmentsCount } yeddan"
+      ],
+      "${ remainingDays } d": [
+        "${ remainingDays } wussan",
+        "${ remainingDays } wussan"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } n wass",
+        "${ remainingDaysCount } n wussan"
+      ],
+      "${ remainingDaysCount } day left": [
+        "Mazal ${ remainingDaysCount } wass",
+        "Mazal ${ remainingDaysCount } wussan"
+      ],
+      "${ seconds } second": [
+        "${ seconds } n tasint",
+        "${ seconds } n tsinin"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n uwitay",
+        "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n yiwitayen"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } d akaram yettwafernen",
+        "${ selectedFoldersCount } d ikaramen yettwafernen"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } n tebzimt yettwafernen",
+        "${ selectedFoldersCount } n tebzimin yettwafernen"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } d ukaram yettwefrenn",
+        "${ selectedFoldersCountLocalized } d ikaramen yettwefrenn"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
+        "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } n wass",
+        "${ timeRemaining.inDays } n wussan"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } n usrag",
+        "${ timeRemaining.inHours } n yisragen"
+      ],
+      "${ total } conversation": [
+        "${ total } udiwenni",
+        "${ total } n yidienniyen"
+      ],
+      "${ total } message": [
+        "${ total } n yizen",
+        "${ total } n yiznan"
+      ],
+      "${ totalAttendees } participant": [
+        "Imttekki ${ totalAttendees }",
+        "Imttekkiyen ${ totalAttendees }"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } n unermis",
+        "${ totalContacts } inermisen"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "Tadyant ${ totalEventsDiscarded } ɣef ${ totalEvents } ur d-tettwaktar ara. Sit ad teẓreḍ telqayt.",
+        "Tidyanin ${ totalEventsDiscarded } ɣef ${ totalEvents } ur d-ttwaktarent ara. Sit ad teẓreḍ telqayt."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "Anermis ${ totalImported }/${ totalToImport } yettwawgelhen syenyettwarna ɣer tebdart-inek·inem n yinermisen",
+        "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "Tadyant ${ totalImported }/${ totalToImport } tettwawgelhen syen tettwarna ɣer uwitay-inek·inem",
+        "Tidyanin ${ totalImported }/${ totalToImport } ttwawgelhnent syen ttwarnant ɣer uwitay-inek·inem"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } n umeḍfar n yimayl iweḥlen",
+        "${ trackersCount } n yimeḍfaren n yimayl iweḥlen"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } n uneḍfar iweḥlen",
+        "${ trackersCount } n yimeḍfaren iweḥlen"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } n yizen i yettusɣawsen",
+        "${ unreadCount } n yizenan i yettusɣawsen"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } n yizen ur yettwaɣran ara",
+        "${ unreads } n yiznan ur yettwaɣran ara"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } n unermis yettwaleqqem akken iwata.",
+        "${ updated } n yinermisen ttwaleqqemen akken iwata."
+      ],
+      "${ users } user": [
+        "${ users } n useqdac",
+        "${ users } n yiseqdacen"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } n uɛeggal)",
+        "(${ memberCount } n yiɛeggalen)"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } tuqqna i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
+        "+${ organization.BonusVPN } tuqqniwin i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
+      ],
+      "Add to ${ groupCount } group": [
+        "Rnu ɣer ${ groupCount } n ugraw",
+        "Rnu ɣer ${ groupCount } n yigrawen"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Akk (akaram ${ totalFoldersCount })",
+        "Akk (${ totalFoldersCount } n yikaramen)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Akk (tabzimt ${ totalFoldersCount })",
+        "Akk (tibzimin ${ totalFoldersCount })"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }",
+        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyant. ${ totalImported } ɣef ${ totalToImport } n tedyant i yettwaketren akken iwata.",
+        "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyanin. ${ totalImported } ɣef ${ totalToImport } n tedyanin i yettwaketren akken iwata."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Tebɣiḍ s tidet ad tekkseḍ ${ count } n unermis s wudem imezgi?",
+        "D tidet tebɣiḍ ad tekkseḍ ${ count } n yinermisen s wudem imezgi?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Tebɣiḍ s tidet ad tekkseḍ i lebda ${ count } n udiwenni?",
+        "Tebɣiḍ s tidet ad tekkseḍ ${ count } n yidiwenniyen i lebda?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Tebɣiḍ s tidet ad tekkseḍ ${ count } n urewway i lebda?",
+        "Tebɣiḍ s tidet ad tekkseḍ ${ count } n yirewwayen i lebda?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Tebɣiḍ s tidet ad tekkseḍ ${ count } n yizen s wudem imezgi?",
+        "D tidet tebɣiḍ ad tekkseḍ ${ count } n yiznan s wudem imezgi?"
+      ],
+      "byte": [
+        "ibiten",
+        "ibiten"
+      ],
+      "Byte": [
+        "Ibit",
+        "Ibiten"
+      ],
+      "Contact deleted": [
+        "Anermis ittwakkes",
+        "Inermisen ttwakksen"
+      ],
+      "Contact group deleted": [
+        "Agraw n urmas yettwakkes",
+        "Igrawen n urmas yettwakkes"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Rnu ${ calendarsToBeCreatedCount } n uwitay amaynut",
+        "Rnu ${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
+      ],
+      "Create up to ${ n } calendar": [
+        "Rnu alamma d ${ n } n uwitay",
+        "Rnu alamma d ${ n } n yiwitayen"
+      ],
+      "Delete ${ count } contact": [
+        "Kkes ${ count } n unermis",
+        "Kkes ${ count } n inermisen"
+      ],
+      "Delete ${ count } contact group": [
+        "Kkes ${ count } n ugraw n yinermisen",
+        "Kkes ${ count } n yigrawen n yinermisen"
+      ],
+      "Delete ${ count } conversation": [
+        "Kkes ${ count } n udiwenni",
+        "Kkes ${ count } n yidiwenniyen"
+      ],
+      "Delete ${ count } draft": [
+        "Kkes ${ count } n urewway",
+        "Kkes ${ count } n yirewwayenKkes"
+      ],
+      "Delete ${ count } message": [
+        "Kkes ${ count } n yizen",
+        "Kkes ${ count } n yiznan"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Kkes ${ selectedCount } n unermis",
+        "Kkes ${ selectedCount } n yinermisen"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Kkes ${ selectedCount } n ugraw n yinermisen",
+        "Kkes ${ selectedCount } n yigrawen n yinermisen"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Tebɣiḍ ad d-tsadreḍ taceqquft-a yeddan akken yebɣu yili?",
+        "Tebɣiḍ ad d-tsadreḍ ticeqqufin-a yeddan akken yebɣu yili?"
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Tebɣiḍ ad tḍemneḍ tasarut-a tazayazt tagejdant akked wudsil-a umḍin?",
+        "Tebɣiḍ ad tḍemneḍ tisura-a tazayazt tagejdant akked wudsilen-a umḍin?"
+      ],
+      "embedded image": [
+        "tugna tusliɣt",
+        "tugniwin tusliɣin"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Akud i d-yeggran: ${ estimatedMinutes } n tesdat",
+        "Akud i d-yeggran: ${ estimatedMinutes } n tesdatin"
+      ],
+      "Every ${ interval } day": [
+        "Yal ${ interval } ass",
+        "Yal ${ interval } n wussan"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Yal ${ interval } ass, ${ timesString }",
+        "Yal ${ interval } n wussan, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Yal ${ interval } ass, ${ untilString }",
+        "Yal ${ interval } n wussan, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Yal ${ interval } n wayyur ${ onDayString }",
+        "Yal ${ interval } n wayyuren ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Yal ${ interval } n wayyur ${ onDayString }, ${ timesString }",
+        "Yal ${ interval } n wayyuren ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Yal ${ interval } n wayyur ${ onDayString }, ${ untilString }",
+        "Yal ${ interval } n wayyuren ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Yal ${ interval } n dduṛt deg ${ multipleDaysString }",
+        "Yal ${ interval } n ledwaṛ deg ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ timesString }",
+        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Yal ${ interval } n umalas deg meṛṛa ussan",
+        "Yal ${ interval } ledwaṛ deg meṛṛa ussan"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wussan akk, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wussan akk, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wussan akk, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wussan akk, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Yal ${ interval } n dduṛt deg wass n sem",
+        "Yal ${ interval } n ledwaṛ deg wass n sem"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n sem, ${ timesString }",
+        "Yal ${ interval } n ledwar deg wass n sem, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass sem, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass sem, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Yal ${ interval } n dduṛt deg wass n warim",
+        "Yal ${ interval } n ledwaṛ deg wass n warim"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n warim, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n warim, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n warim, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n warim, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Yal ${ interval } n dduṛt deg wass n sed",
+        "Yal ${ interval } n ledwaṛ deg wass n sed"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n sed, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n sed, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n sed, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n sed, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Yal ${ interval } n dduṛt deg wass n wacer",
+        "Yal ${ interval } n ledwaṛ deg wussan n acer"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n wacer, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n wacer, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n wacer, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n wacer, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Yal ${ interval } n dduṛt deg wass n wamhad",
+        "Yal ${ interval } n ledwaṛ deg wass n wamhad"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n umhad, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n umhad, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n umhad, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n umhad, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Yal ${ interval } n dduṛt deg wass n waram",
+        "Yal ${ interval } n ledwaṛ deg wass n warim"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n waram, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n waram, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n waram, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n waram, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Yal ${ interval } n dduṛt deg wass n wahad",
+        "Yal ${ interval } n ledwaṛ deg wass n wahad"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n wahad, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n wahad, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n wahad, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n wahad, ${ untilString }"
+      ],
+      "Every ${ interval } year": [
+        "Yal ${ interval } n useggas",
+        "Yal ${ interval } n yiseggasen"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Yal ${ interval } n useggas, ${ timesString }",
+        "Yal ${ interval } n yiseggasen, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Yal ${ interval } n useggas, ${ untilString }",
+        "Yal ${ interval } n yiseggasen, ${ untilString }"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Ad yemmet ma drus deg ${ hoursDiff } usrag",
+        "Ad yemmet ma drus deg ${ hoursDiff } yiseggasen"
+      ],
+      "file attached": [
+        "afaylu yeddan",
+        "afaylu yeddan"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Af asumer n ${ itemsCount }, seqdec anasiw i tunigin.",
+        "Af isumar ${ itemsCount }, seqdec anasiw i tunigin."
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Yegber ${ numAttachments } umedday (${ numAttachmentsSize })",
+        "Yegber ${ numAttachments } yimeddayen (${ numAttachmentsSize })"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "VPN arurad agafay ɣef ${ n } yibenk",
+        "VPN arurad agafay ɣef ${ n } yibenkan"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Kter ${ calendarCount } n uwitay ${ totalCalendarsCount }",
+        "Kter ${ calendarCount } n yiwitayen ${ totalCalendarsCount }"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Kter meṛṛa iznan seg ${ itemsToImportCount } ukaram, syen snes tabzimt",
+        "Kter meṛṛa iznan seg ${ itemsToImportCount } yikaramen, syen snes tabzimt"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Kter meṛṛa iznan seg ${ itemsToImportCount } tebzimt, syen snes tabzimt",
+        "Kter meṛṛa iznan seg ${ itemsToImportCount } tebzimin, syen snes tabzimt"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } ukaram ɣef ${ itemsToImportCount }, syen snes tabzimt",
+        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } yikaramen ɣef ${ itemsToImportCount }, syen snes tabzimt"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimt ɣef ${ itemsToImportCount }, syen snes tabzimt",
+        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimin ɣef ${ itemsToImportCount }, syen snes tabzimt"
+      ],
+      "Import as simple event?": [
+        "Kter tedyant war talqayt?",
+        "Kter tidyanin war talqayt?"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Sekcem ${ totalChecked } n unermis",
+        "Sekcem ${ totalChecked } n yinermisen"
+      ],
+      "Insert image": [
+        "Ger tugna",
+        "Ger tugniwn"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "Senkez adiwenni n ${ selectionCount }",
+        "Senkez idiwenniyen n ${ selectionCount }"
+      ],
+      "Move ${ selectionCount } message": [
+        "Senkez izen n ${ selectionCount }",
+        "Senkez iznan n ${ selectionCount }"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Yiwen/yiwet gar yinermisen ur t·yesɛi ara tansa imayl: ${ noEmailsContactNamesList }",
+        "Kra gar yinermisen ur sɛin·t ara tansa imayl: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Yiwen seg yigrawen ulac ɣur-s inermisen: ${ noContactGroupList }",
+        "Kra n yigrawen ulac ɣur-s inermisen: ${ noContactGroupList } "
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
+        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Ma ulac aɣilif fren tansiwin n yimayl ara ternuḍ ɣer ${ groupCount } ugraw.",
+        "Ma ulac aɣilif fren tansiwin n yimayl ara ternuḍ ɣer ${ groupCount } yigrawen."
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Anermas uslig yettwakkes: ${ recipents }",
+        "Inermasen usligen ttwakksen: ${ recipents }"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Yettwazen s ${ MAIL_APP_NAME } s uwgelhen ilem n u nekcum i usenqed n uɣerwaḍ",
+        "Yettwazen s ${ MAIL_APP_NAME } s uwgelhen ilem n unekcum i usenqed n yiɣerwaḍen"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Tuzneḍ-t s uwgelhen seg yixef ɣzer yixef i usenqed n uɣerwaḍ",
+        "Tuzneḍ-t s uwgelhen seg yixef ɣzer yixef i usenqed n yiɣerwaḍen"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Iqeddacen deg wugar ${ numberOfCountries } tmurt",
+        "Iqeddacen deg wugar n ${ numberOfCountries } tmura"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Asefrek i ${ n } taɣult n yimayl udmawan",
+        "Asefrek i ${ n } tiɣula n yimayl udmawan"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Taceqquft yeddan yugi ad as-yekkes uwgelhen.\nMa yella tesɛiḍ tasarut tusligt yemṣadan, mazal tzemreḍ ad tekkseḍ awgelhen\nafaylu s wahil am GnuPG.",
+        "Ticeqqufin yeddan yugi ad asent-yekkes uwgelhen.\nMa yella tesɛiḍ tasarut tusligt yemṣadan, mazal tzemreḍ ad tekkseḍ awgelhen\nifuyla s wahil am GnuPG."
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Asenqed n uzmul n tceqquft yeddan.\nMazal tzemreḍ ad d-tsadreḍ taceqquft-a yeddan maca yezmer tettubeddel.",
+        "Asenqed n yizmulen n tceqqufin yeddan.\nMazal tzemreḍ ad d-tsadreḍ ticeqqufin-a yeddan maca yezmer ttubeddelent."
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Tansa-a mačči d tameɣtut: ${ invalidAddresses }",
+        "Tansiwin-a mačči d timeɣta: ${ invalidAddresses }"
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Asenqed n ${ contactNames } yecceḍ: anermis ur yettuzmel ara akken iwata. \nAyagi yezmer d agmuḍ n wawal uffir yettuwennzen. \nIlaq-ak·am ad talseḍ asezmel n unermis i wakken ad tazneḍ izen ɣer ${ contactAddresses } neɣ ẓreg anermis.",
+        "Asenqed n ${ contactNames } yecceḍ: inermisen ur ttuzemlen ara akken iwata. \nAyagi yezmer d agmuḍ n wawal uffir yettuwennzen. \nIlaq-ak·am ad talseḍ asezmel n yinermisen i wakken ad tazneḍ izen ɣer ${ contactAddresses } neɣ ẓreg inermisen."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Adiwenni-a ad yettwacreḍ d aspam. Tebɣiḍ ad tesfesxeḍ amultaɣ seg yimaylen i d-iteddun?",
+        "Idiwenniyen-a ad ttwacerḍen d ispamen. Tebɣiḍ ad tesfesxeḍ amultaɣ seg yimaylen i d-iteddun?"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Izen-a ad yettwacreḍ d aspam. Tebɣiḍ ad tesfesxeḍ amultaɣ seg yimaylen i d-iteddun?",
+        "Iznan-a ad ttwacerḍen d ispamen. Tebɣiḍ ad tesfesxeḍ amultaɣ seg yimaylen i d-iteddun?"
+      ],
+      "Total for ${ n } month": [
+        "Asemday i ${ n } wayyur",
+        "Asemday i ${ n } wayyuren"
+      ],
+      "Trust new key?": [
+        "Tesεiḍ taflest deg tsarut tamaynut?",
+        "Tesεiḍ taflest deg tsura timaynutin?"
+      ],
+      "Up to ${ n } user": [
+        "Alamma d ${ n } yiseqdac",
+        "Alamma d ${ n } yiseqdacen"
+      ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Nufa-d tuccḍiwin. Imayl-ik·im ulamek yettwazen ɣer tansa n yimayl i d-yettunefken ssebba n wayen akka i d-iteddun:",
+        "Nufa-d tuccḍiwin. Imayl-ik·im ulamek yettwazen ɣer tansiwin n yimayl i d-yettunefken ssebba n wayen akka i d-iteddun:"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Nufa-d kra n kra n yismiglen. Tansa-a n yimayl yezmer ur d-trems ara imaylen:",
+        "Nufa-d kra n kra n yismiglen. Tansiwin-a n yimayl yezmer ur d-remsent ara imaylen:"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Ur tezmireḍ ara ad teldiḍ ugar n ${ maxActiveComposer } n usfaylu n umsuddes ɣef tikkelt",
+        "Ur tezmireḍ ara ad teldiḍ ugar n ${ maxActiveComposer } n yifuyla n umsuddes ɣef tikkelt"
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Ɣur-k **${ count } usqerdec** i yettaskelsen deg ukaram-a",
+        "Ɣur-k **${ count } yisqerdcen** i yettaskelsen deg ukaram-a"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Ɣur-k **${ count } usqerdec** i d-yettwabedren s tebzimt-a",
+        "Ɣur-k **${ count } yisqerdcen** i d-yettwabedren s tebzimt-a"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Ɣur-k **${ count } yizen** i yettaskelsen deg ukaram-a",
+        "Ɣur-k **${ count } yiznan** i yettaskelsen deg ukaram-a"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Ɣur-k **${ count } yizen** i d-yettwabedren s tebzimt-a",
+        "Ɣur-k **${ count } yiznan** i d-yettwabedren s tebzimt-a"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Nermed asenqed n tansa akked tsura yettwaḍmanen i tansa-a n yimayl, \nmaca ulac tasarut n uwgelhen yettwamanen.\nIlaq ad tettekled ɣef tsarut tameɣtut i tuzna i wakken ad tazneḍ izen i tansiwin-a n yimayl.",
+        "Nermed asenqed n tansa akked tsura yettwaḍmanen i tansiwin-a n yimayl, \nmaca ulac tisura n uwgelhen yettwamanen.\nIlaq ad tettekled ɣef tsura tameɣtut i tuzna i wakken ad tazneḍ izen i tansiwin-a n yimayl."
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Tferneḍ **${ count } udiwenni** seg ukaram-a",
+        "Tferneḍ **${ count } yidiwenniyen** seg ukaram-a"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Tferneḍ **${ count } udiwenni** s tebzimt-a",
+        "Tferneḍ **${ count } yidiwenniyen** s tebzimt-a"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Tferneḍ **${ count } yizen** seg ukaram-a",
+        "Tferneḍ **${ count } yiznan** seg ukaram-a"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Tferneḍ **${ count } yizen** s tebzimt-a",
+        "Tferneḍ **${ count } yiznan** s tebzimt-a"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS } n tedyant.",
+        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS } n tedyanin."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Izen-ik ad yemmet deg ${ numberOfDays } wass.",
+        "Izen-ik ad immet deg ${ numberOfDays } wussan."
+      ]
+    },
     "account": {
       "Mail forward stopped": [
         "Awelleh n yimayl yeḥbes"
@@ -298,14 +1196,6 @@
       "Delete": [
         "Kkes"
       ],
-      "Delete ${ selectedCount } contact": [
-        "Kkes ${ selectedCount } n unermis",
-        "Kkes ${ selectedCount } n yinermisen"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Kkes ${ selectedCount } n ugraw n yinermisen",
-        "Kkes ${ selectedCount } n yigrawen n yinermisen"
-      ],
       "Delete all": [
         "Kkes akk"
       ],
@@ -554,10 +1444,6 @@
       ],
       "Insert": [
         "Ger"
-      ],
-      "Insert ${ totalChecked } contact": [
-        "Sekcem ${ totalChecked } n unermis",
-        "Sekcem ${ totalChecked } n yinermisen"
       ],
       "Insert contact": [
         "Sekcem anermis"
@@ -1274,10 +2160,6 @@
       ]
     },
     "Addon": {
-      "${ ips } server": [
-        "Aqeddac ${ ips }",
-        "${ ips } yiqeddacen"
-      ],
       "${ price } per dedicated server": [
         "${ price } i uqeddac yettwamudden"
       ],
@@ -1286,10 +2168,6 @@
       ],
       "${ price } per user": [
         "${ price } I useqdac"
-      ],
-      "${ users } user": [
-        "${ users } n useqdac",
-        "${ users } yiseqdacen"
       ]
     },
     "Alert": {
@@ -1371,10 +2249,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } wayyur",
-        "${ n } wayyuren"
-      ],
       "/ month": [
         "/ n wayyur"
       ],
@@ -1859,16 +2733,8 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
-        "${ users } n useqdac",
-        "${ users } n yiseqdacen"
-      ],
       "Total": [
         "Asemday"
-      ],
-      "Total for ${ n } month": [
-        "Asemday i ${ n } wayyur",
-        "Asemday i ${ n } wayyuren"
       ]
     },
     "Collapsible tooltip": {
@@ -2976,16 +3842,8 @@
       ]
     },
     "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } n tikkelt",
-        "${ count } n tikkal"
-      ],
       "Daily": [
         "Yal ass"
-      ],
-      "Every ${ interval } day": [
-        "Yal ${ interval } ass",
-        "Yal ${ interval } n wussan"
       ],
       "until ${ dateString }": [
         "alamma d ${ dateString }"
@@ -2994,19 +3852,11 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Yal ass, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Yal ${ interval } ass, ${ timesString }",
-        "Yal ${ interval } n wussan, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Yal ass, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Yal ${ interval } ass, ${ untilString }",
-        "Yal ${ interval } n wussan, ${ untilString }"
       ]
     },
     "Date label": {
@@ -3354,14 +4204,6 @@
       "Not a valid number": [
         "Mačči d uṭṭun ameɣtu"
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Yiwen/yiwet gar yinermisen ur t·yesɛi ara tansa imayl: ${ noEmailsContactNamesList }",
-        "Kra gar yinermisen ur sɛin·t ara tansa imayl: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Yiwen seg yigrawen ulac ɣur-s inermisen: ${ noContactGroupList }",
-        "Kra n yigrawen ulac ɣur-s inermisen: ${ noContactGroupList } "
-      ],
       "Organization key is not decrypted": [
         "Tasarut n tuddsa ur s-yekkis ara uwgelhen"
       ],
@@ -3403,10 +4245,6 @@
       ],
       "Public key could not be trusted": [
         "Tasarut tazayezt izmer ur tettwaman ara"
-      ],
-      "Removed duplicate recipient: ${ recipents }": [
-        "Anermas uslig yettwakkes: ${ recipents }",
-        "Inermasen usligen ttwakksen: ${ recipents }"
       ],
       "Request timed out": [
         "Akud n usuter yemmut"
@@ -3452,10 +4290,6 @@
       ],
       "Tab closed": [
         "Iccer yettwamdel"
-      ],
-      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "Taceqquft yeddan yugi ad as-yekkes uwgelhen.\nMa yella tesɛiḍ tasarut tusligt yemṣadan, mazal tzemreḍ ad tekkseḍ awgelhen\nafaylu s wahil am GnuPG.",
-        "Ticeqqufin yeddan yugi ad asent-yekkes uwgelhen.\nMa yella tesɛiḍ tasarut tusligt yemṣadan, mazal tzemreḍ ad tekkseḍ awgelhen\nifuyla s wahil am GnuPG."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Isem n ukaram d arameɣtu. Ttxil-k·m fren isem-nniḍen."
@@ -3532,10 +4366,6 @@
       "Username must end with a letter or digit": [
         "Isem n useqdac ilaq ad yekfu s usekkil neɣ s umḍan"
       ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "Ur tezmireḍ ara ad teldiḍ ugar n ${ maxActiveComposer } n usfaylu n umsuddes ɣef tikkelt",
-        "Ur tezmireḍ ara ad teldiḍ ugar n ${ maxActiveComposer } n yifuyla n umsuddes ɣef tikkelt"
-      ],
       "You did not provide a file.": [
         "Ur d-tefkiḍ ara afaylu."
       ],
@@ -3578,10 +4408,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Tella-d tuccḍa ur nettwarǧa ara. Aktar ilaq ad yales asenker."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS } n tedyant.",
-        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS } n tedyanin."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Afaylu-inek/m ${ formattedFilename } ur yesɛi ara tidyanin ara nsifeḍ."
@@ -3843,10 +4669,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "ibiten",
-        "ibiten"
-      ],
       "GB": [
         "GAṬ"
       ],
@@ -3858,12 +4680,6 @@
       ],
       "TB": [
         "TAṬ"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Ibit",
-        "Ibiten"
       ]
     },
     "Filter": {
@@ -4044,14 +4860,6 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } ɣef Play Store"
       ],
-      "${ remainingDaysCount } day": [
-        "${ remainingDaysCount } n wass",
-        "${ remainingDaysCount } n wussan"
-      ],
-      "${ remainingDaysCount } day left": [
-        "Mazal ${ remainingDaysCount } wass",
-        "Mazal ${ remainingDaysCount } wussan"
-      ],
       "account logins": [
         "inekcam n umiḍan"
       ],
@@ -4183,10 +4991,6 @@
       ]
     },
     "Hint": {
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Af asumer n ${ itemsCount }, seqdec anasiw i tunigin.",
-        "Af isumar ${ itemsCount }, seqdec anasiw i tunigin."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Seqdec tiqeffalin Asawen d Akessar i wakken ad tkecmeḍ ɣer yisumar syen asenqed-nsen seld anekcum. Sit ɣef Enter i wakken ad tesnetmeḍ afran-inek·inem, neɣ Escape i wakken ad tmedleḍ tabewwaḍt n yisumar."
       ]
@@ -4247,23 +5051,11 @@
       ]
     },
     "ICS widget label for event details": {
-      "${ totalAttendees } participant": [
-        "Imttekki ${ totalAttendees }",
-        "Imttekkiyen ${ totalAttendees }"
-      ],
       "Organizer:": [
         "Imsuddes:"
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "Tadyant ${ totalImported }/${ totalToImport } tettwawgelhen syen tettwarna ɣer uwitay-inek·inem",
-        "Tidyanin ${ totalImported }/${ totalToImport } ttwawgelhnent syen ttwarnant ɣer uwitay-inek·inem"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyant. ${ totalImported } ɣef ${ totalToImport } n tedyant i yettwaketren akken iwata.",
-        "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyanin. ${ totalImported } ɣef ${ totalToImport } n tedyanin i yettwaketren akken iwata."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Tella-d tuccḍa lawan n uwgelhen d tmerna n tedyant-ik·im. Ulac tadyant ara d-yettwaktaren."
       ],
@@ -4297,10 +5089,6 @@
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "Anermis ${ totalImported }/${ totalToImport } yettwawgelhen syenyettwarna ɣer tebdart-inek·inem n yinermisen",
-        "Inermisen ${ totalImported }/${ totalToImport } ttwawgelhnen syen ttwarnan ɣer tebdart-inek·inem n yinermisen"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Tella-d tuccḍa lawan n uwgelhen d tmerna n urmis-inek·inem. Ulac anermis ara d-yettwaktaren."
       ],
@@ -4320,12 +5108,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Anermis ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } n unermis",
-        "${ totalContacts } inermisen"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4464,10 +5246,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "Inermisen ${ totalContactsDiscarded } ɣef ${ totalContacts } ur d-ttwaktaren ara. Sit ad teẓreḍ telqayt"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "Tadyant ${ totalEventsDiscarded } ɣef ${ totalEvents } ur d-tettwaktar ara. Sit ad teẓreḍ telqayt.",
-        "Tidyanin ${ totalEventsDiscarded } ɣef ${ totalEvents } ur d-ttwaktarent ara. Sit ad teẓreḍ telqayt."
-      ],
       "No contact can be imported. Click for details": [
         "Ulac anermis i tzemreḍ ad d-tketreḍ. Sit ad teẓreḍ telqayt"
       ],
@@ -4479,51 +5257,11 @@
       ]
     },
     "Info": {
-      "${ addressCount } email address": [
-        "${ addressCount } n tansa n yimayl",
-        "${ addressCount } n tansiwin n yimayl"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } n uwitay amaynut",
-        "${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
-        "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } unermis yegber aṭas n tansiwin yimayl.",
-        "${ contactCount } yinermisen gebren aṭas n tansiwin yimayl."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } n uɛeggal",
-        "${ contactEmailsLength } n yiɛeggalen"
-      ],
-      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } uɛeggal)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } yiɛeggalen)"
-      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } yegber aṭas n tansiwin yimayl."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } n unermis yettwafen",
-        "${ contactsCount } n yinermisen yettwafen"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } n unermis",
-        "${ contactsLength } inermisen"
-      ],
-      "${ currentProgress } out of ${ totalProgress }": [
-        "${ currentProgress } ɣef ${ totalProgress }",
-        "${ currentProgress } ɣef ${ totalProgress }"
-      ],
-      "${ embeddedAttachmentsCount } embedded image": [
-        "Tugna ${ embeddedAttachmentsCount } yettuselɣen",
-        "Tugniwin ${ embeddedAttachmentsCount } yettuselɣen"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: tugna s teɣzi taččurant"
@@ -4531,91 +5269,11 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: taskant s ucegger adday"
       ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } n ugraw yettwafen",
-        "${ groupCounts } n yigrawen yettwafen"
-      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } yezmer ad immesten amahil-ik akken igerrez."
       ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } izen ulamek ad yettusenkez.",
-        "${ messagesNotAuthorizedToMove } iznan ulamek ad ttwasnekzen."
-      ],
-      "${ n } unread conversation": [
-        "${ n } n udiwenni ur yettwaɣran ara",
-        "${ n } n yidiwenniyen ur yettwaɣran ara"
-      ],
-      "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } useɣwen yettwasfeḍ",
-        "${ numberOfUTMTrackers } iseɣwan ttwasefḍen"
-      ],
-      "${ NumMessages } message in conversation": [
-        "${ NumMessages } yizen deg udiwenni",
-        "${ NumMessages } yiznan deg udiwenni"
-      ],
-      "${ numOccurrences } occurrence found": [
-        "${ numOccurrences } n temseḍriwt i yettwafen",
-        "${ numOccurrences } n temseḍriwin i yettwafen"
-      ],
-      "${ numOccurrences } occurrence found in the mail content": [
-        "${ numOccurrences } tmeḍriwt i yettwafen deg ugbur n yimayl",
-        "${ numOccurrences } tmeḍriwin i yettwafen deg ugbur n yimayl"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } d ukaram yettwafen",
-        "${ providerFoldersNumLocalized } d ikaramen yettwafen"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } d tebzimt yettwafen deg Gmail",
-        "${ providerFoldersNumLocalized } n tebzimin i yettwafen deg Gmail"
-      ],
-      "${ pureAttachmentsCount } file attached": [
-        "Afaylu ${ pureAttachmentsCount } yeddan",
-        "Ifuyla ${ pureAttachmentsCount } yeddan"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n uwitay",
-        "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n yiwitayen"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } d ukaram yettwefrenn",
-        "${ selectedFoldersCountLocalized } d ikaramen yettwefrenn"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
-        "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
-      ],
       "${ storage } storage": [
         "${ storage } n uḥraz"
-      ],
-      "${ total } conversation": [
-        "${ total } udiwenni",
-        "${ total } n yidienniyen"
-      ],
-      "${ total } message": [
-        "${ total } n yizen",
-        "${ total } n yiznan"
-      ],
-      "${ trackersCount } email tracker blocked": [
-        "${ trackersCount } n umeḍfar n yimayl iweḥlen",
-        "${ trackersCount } n yimeḍfaren n yimayl iweḥlen"
-      ],
-      "${ trackersCount } tracker blocked": [
-        "${ trackersCount } n uneḍfar iweḥlen",
-        "${ trackersCount } n yimeḍfaren iweḥlen"
-      ],
-      "${ unreadCount } scheduled message": [
-        "${ unreadCount } n yizen i yettusɣawsen",
-        "${ unreadCount } n yizenan i yettusɣawsen"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } n unermis yettwaleqqem akken iwata.",
-        "${ updated } n yinermisen ttwaleqqemen akken iwata."
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } n uɛeggal)",
-        "(${ memberCount } n yiɛeggalen)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Sizdeg ma AKK tiwtilin-agi llant)"
@@ -4628,10 +5286,6 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } n usekles n ubunus"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } tuqqna i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)",
-        "+${ organization.BonusVPN } tuqqniwin i ${ VPN_APP_NAME } (aya ad ak.akem-yeǧǧ ad teqqneḍ ugar n yibenkan ɣer VPN)"
       ],
       "30-day money-back guarantee.": [
         "Aɣram ɣef 30 n wussan yettwaḍmen."
@@ -4669,14 +5323,6 @@
       "Align right": [
         "Reyyec s ayeffus"
       ],
-      "All (${ totalFoldersCount } folder)": [
-        "Akk (akaram ${ totalFoldersCount })",
-        "Akk (${ totalFoldersCount } n yikaramen)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Akk (tabzimt ${ totalFoldersCount })",
-        "Akk (tibzimin ${ totalFoldersCount })"
-      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Akk iznan i yettwaskelsen deg ukaram-a ad ttwakksen s wudem imezgi."
       ],
@@ -4688,10 +5334,6 @@
       ],
       "All your changes will be lost.": [
         "Ad ruḥen akk ibeddilen-inek/m."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }",
-        "Meṛṛa inermisen-ik ad ttwaktaren, s talast n ${ MAX_CONTACTS_PER_USER }"
       ],
       "American Express SafeKey logo": [
         "Alugu n American Express SafeKey"
@@ -4722,18 +5364,6 @@
       ],
       "Are you sure you want to discard your import?": [
         "D tidet tebɣiḍ ad tesfesxeḍ taktert-ik m?"
-      ],
-      "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Tebɣiḍ s tidet ad tekkseḍ i lebda ${ count } n udiwenni?",
-        "Tebɣiḍ s tidet ad tekkseḍ ${ count } n yidiwenniyen i lebda?"
-      ],
-      "Are you sure you want to permanently delete ${ count } draft?": [
-        "Tebɣiḍ s tidet ad tekkseḍ ${ count } n urewway i lebda?",
-        "Tebɣiḍ s tidet ad tekkseḍ ${ count } n yirewwayen i lebda?"
-      ],
-      "Are you sure you want to permanently delete ${ count } message?": [
-        "Tebɣiḍ s tidet ad tekkseḍ ${ count } n yizen s wudem imezgi?",
-        "D tidet tebɣiḍ ad tekkseḍ ${ count } n yiznan s wudem imezgi?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "D tidet tebɣiḍ ad tekkseḍ i lebda adiwenni-a?"
@@ -4816,10 +5446,6 @@
       "Country code": [
         "Tangalt n tmurt"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Rnu ${ calendarsToBeCreatedCount } n uwitay amaynut",
-        "Rnu ${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked yikaramen i tebɣiḍ ad tketreḍ."
       ],
@@ -4867,10 +5493,6 @@
       ],
       "Discover ProtectBuy logo": [
         "Alugu n Discover ProtectBuy"
-      ],
-      "Do you want to download this attachment anyway?": [
-        "Tebɣiḍ ad d-tsadreḍ taceqquft-a yeddan akken yebɣu yili?",
-        "Tebɣiḍ ad d-tsadreḍ ticeqqufin-a yeddan akken yebɣu yili?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "Tebɣiḍ ad tzemleḍ tikkelt-nniḍen ifatusen n unermis ihi ad tgeḍ taflest deg tsura s yidsilen-a umḍinen?"
@@ -4929,10 +5551,6 @@
       "Emails are automatically signed": [
         "Imaylen ttwazemlen s wudem awurman"
       ],
-      "embedded image": [
-        "tugna tusliɣt",
-        "tugniwin tusliɣin"
-      ],
       "Encrypt message": [
         "Wgelhen izen"
       ],
@@ -4947,10 +5565,6 @@
       ],
       "Enter your own password (as organization admin).": [
         "Sekcem awal-ik uffir (am unedbal n tkebbanit)"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Akud i d-yeggran: ${ estimatedMinutes } n tesdat",
-        "Akud i d-yeggran: ${ estimatedMinutes } n tesdatin"
       ],
       "Estimated time remaining: Less than a minute": [
         "Akud i d-yeggran: ddaw n tesdat"
@@ -4967,14 +5581,6 @@
       "Expires in ${ formattedDate }": [
         "Ad yemmet deg ${ formattedDate }"
       ],
-      "Expires in less than ${ hoursDiff } hour": [
-        "Ad yemmet ma drus deg ${ hoursDiff } usrag",
-        "Ad yemmet ma drus deg ${ hoursDiff } yiseggasen"
-      ],
-      "file attached": [
-        "afaylu yeddan",
-        "afaylu yeddan"
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Imsizedgen teddun ɣef meṛṛa imaylen, ula ɣef yimaylen yettwaremsen d wid yettwaznen. Yal amsizdeg ilaq ad yesɛu xerṣum isem, tawtilt d tigawt."
       ],
@@ -4986,10 +5592,6 @@
       ],
       "From": [
         "Seg"
-      ],
-      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
-        "Yegber ${ numAttachments } umedday (${ numAttachmentsSize })",
-        "Yegber ${ numAttachments } yimeddayen (${ numAttachmentsSize })"
       ],
       "here": [
         "da"
@@ -5027,10 +5629,6 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Tugniwin ttwakksent acku ur ttusirgent ara deg tririt tawurmant"
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Kter ${ calendarCount } n uwitay ${ totalCalendarsCount }",
-        "Kter ${ calendarCount } n yiwitayen ${ totalCalendarsCount }"
-      ],
       "Import from": [
         "Kter si"
       ],
@@ -5045,10 +5643,6 @@
       ],
       "Inherited from parent folder": [
         "Yettwaɣellet seg ukaram agejdan"
-      ],
-      "Insert image": [
-        "Ger tugna",
-        "Ger tugniwn"
       ],
       "Insert link": [
         "Ger aseɣwen"
@@ -5263,10 +5857,6 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Ttxil fren anaw n useɣwen i tebɣiḍ ad teskecmeḍ teččareḍ akk urtan."
       ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Ma ulac aɣilif fren tansiwin n yimayl ara ternuḍ ɣer ${ groupCount } ugraw.",
-        "Ma ulac aɣilif fren tansiwin n yimayl ara ternuḍ ɣer ${ groupCount } yigrawen."
-      ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Ma ulac aɣilif fren tansiwin n yimayl ara ternuḍ ɣer ${ groupName }."
       ],
@@ -5405,10 +5995,6 @@
       "The sender has requested a read receipt.": [
         "Amazan yetter-d talɣut ɣef tɣuri n yizen."
       ],
-      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Asenqed n ${ contactNames } yecceḍ: anermis ur yettuzmel ara akken iwata. \nAyagi yezmer d agmuḍ n wawal uffir yettuwennzen. \nIlaq-ak·am ad talseḍ asezmel n unermis i wakken ad tazneḍ izen ɣer ${ contactAddresses } neɣ ẓreg anermis.",
-        "Asenqed n ${ contactNames } yecceḍ: inermisen ur ttuzemlen ara akken iwata. \nAyagi yezmer d agmuḍ n wawal uffir yettuwennzen. \nIlaq-ak·am ad talseḍ asezmel n yinermisen i wakken ad tazneḍ izen ɣer ${ contactAddresses } neɣ ẓreg inermisen."
-      ],
       "Themes can give your inbox a new look.": [
         "Isental zemren ad d-fken i tebwaḍt-ik·im udem amaynut."
       ],
@@ -5426,10 +6012,6 @@
       ],
       "This conversation contains trashed messages.": [
         "Adiwenni-a yegber iznan yellan deg iḍumman."
-      ],
-      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Adiwenni-a ad yettwacreḍ d aspam. Tebɣiḍ ad tesfesxeḍ amultaɣ seg yimaylen i d-iteddun?",
-        "Idiwenniyen-a ad ttwacerḍen d ispamen. Tebɣiḍ ad tesfesxeḍ amultaɣ seg yimaylen i d-iteddun?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Imayl-agi yecceḍ deg usekyed n usesteb n taɣult-is. Ahat beddlen-t neɣ wwin-t s tuccḍa aniɣer nniḍen."
@@ -5457,10 +6039,6 @@
       ],
       "This message will be automatically deleted on ${ value }": [
         "Izen-a ad yettwakkes s wudem awurman deg ${ value }"
-      ],
-      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Izen-a ad yettwacreḍ d aspam. Tebɣiḍ ad tesfesxeḍ amultaɣ seg yimaylen i d-iteddun?",
-        "Iznan-a ad ttwacerḍen d ispamen. Tebɣiḍ ad tesfesxeḍ amultaɣ seg yimaylen i d-iteddun?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Izen-a ad yettwasenkez ɣer yirewwayen iwakken ad tzemreḍ ad t-tẓergeḍ. Ad tuḥwaǧeḍ ad talseḍ asɣiwes mi ara yettwazen."
@@ -5684,22 +6262,6 @@
       "You have ${ unread } in your inbox.": [
         "Tesɛiḍ ${ unread } deg tebwaṭ-ik·im n yiznan."
       ],
-      "You have **${ count } conversation** stored in this folder": [
-        "Ɣur-k **${ count } usqerdec** i yettaskelsen deg ukaram-a",
-        "Ɣur-k **${ count } yisqerdcen** i yettaskelsen deg ukaram-a"
-      ],
-      "You have **${ count } conversation** tagged with this label": [
-        "Ɣur-k **${ count } usqerdec** i d-yettwabedren s tebzimt-a",
-        "Ɣur-k **${ count } yisqerdcen** i d-yettwabedren s tebzimt-a"
-      ],
-      "You have **${ count } message** stored in this folder": [
-        "Ɣur-k **${ count } yizen** i yettaskelsen deg ukaram-a",
-        "Ɣur-k **${ count } yiznan** i yettaskelsen deg ukaram-a"
-      ],
-      "You have **${ count } message** tagged with this label": [
-        "Ɣur-k **${ count } yizen** i d-yettwabedren s tebzimt-a",
-        "Ɣur-k **${ count } yiznan** i d-yettwabedren s tebzimt-a"
-      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Ur as-tmuddeḍ ara akk i yimayl-inek asentel. Tebɣiḍ ad tazneḍ izen ɣas akken?"
       ],
@@ -5711,22 +6273,6 @@
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Yessefk ad tessenseḍ neɣ ad tekkseḍ akk iseqdacen imernan n ${ MAIL_APP_NAME }, tansiwin, d taɣulin tudmawanin send ad tessadreḍ deg lqem."
-      ],
-      "You selected **${ count } conversation** from this folder": [
-        "Tferneḍ **${ count } udiwenni** seg ukaram-a",
-        "Tferneḍ **${ count } yidiwenniyen** seg ukaram-a"
-      ],
-      "You selected **${ count } conversation** with this label": [
-        "Tferneḍ **${ count } udiwenni** s tebzimt-a",
-        "Tferneḍ **${ count } yidiwenniyen** s tebzimt-a"
-      ],
-      "You selected **${ count } message** from this folder": [
-        "Tferneḍ **${ count } yizen** seg ukaram-a",
-        "Tferneḍ **${ count } yiznan** seg ukaram-a"
-      ],
-      "You selected **${ count } message** with this label": [
-        "Tferneḍ **${ count } yizen** s tebzimt-a",
-        "Tferneḍ **${ count } yiznan** s tebzimt-a"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ad tettuwellheḍ ɣer PyPal i usenqed n uxelleṣ-ik•im."
@@ -5752,10 +6298,6 @@
       "Your login information will not be saved after the import is completed.": [
         "Talɣut-ik·im n unekcum ur tettwaseklas ara alamma yemmed uktar."
       ],
-      "Your message will expire in ${ numberOfDays } day.": [
-        "Izen-ik ad yemmet deg ${ numberOfDays } wass.",
-        "Izen-ik ad immet deg ${ numberOfDays } wussan."
-      ],
       "Your message will expire today.": [
         "Izen-ik·im ad immet ass-a."
       ],
@@ -5774,16 +6316,6 @@
     "Info on errors": {
       "Click for details": [
         "Tekki i telqayt"
-      ]
-    },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } d akaram yettwafernen",
-        "${ selectedFoldersCount } d ikaramen yettwafernen"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } n tebzimt yettwafernen",
-        "${ selectedFoldersCount } n tebzimin yettwafernen"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -5820,14 +6352,6 @@
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "S utekki ɣef \"Tasarut yettwamanen\" tasarut tazayezt at teddukel ɣer\n umazan-agi. Imaylen i d-ittekken si tansa-agi ad ttuselken s wudem awurman."
-      ],
-      "Do you want to trust the primary public key with the following fingerprint?": [
-        "Tebɣiḍ ad tḍemneḍ tasarut-a tazayazt tagejdant akked wudsil-a umḍin?",
-        "Tebɣiḍ ad tḍemneḍ tisura-a tazayazt tagejdant akked wudsilen-a umḍin?"
-      ],
-      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Nermed asenqed n tansa akked tsura yettwaḍmanen i tansa-a n yimayl, \nmaca ulac tasarut n uwgelhen yettwamanen.\nIlaq ad tettekled ɣef tsarut tameɣtut i tuzna i wakken ad tazneḍ izen i tansiwin-a n yimayl.",
-        "Nermed asenqed n tansa akked tsura yettwaḍmanen i tansiwin-a n yimayl, \nmaca ulac tisura n uwgelhen yettwamanen.\nIlaq ad tettekled ɣef tsura tameɣtut i tuzna i wakken ad tazneḍ izen i tansiwin-a n yimayl."
       ]
     },
     "Key validation warning": {
@@ -6025,10 +6549,6 @@
       ],
       "${ BRAND_NAME } username": [
         "Isem n useqdac ${ BRAND_NAME }"
-      ],
-      "${ n } month": [
-        "${ n } wayyur",
-        "${ n } wayyuren"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Ulac-it akka tura. Ma ulac aɣilif, senqed ticki.)"
@@ -6849,24 +7369,6 @@
         "Rmed ${ reason }"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Kter meṛṛa iznan seg ${ itemsToImportCount } ukaram, syen snes tabzimt",
-        "Kter meṛṛa iznan seg ${ itemsToImportCount } yikaramen, syen snes tabzimt"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Kter meṛṛa iznan seg ${ itemsToImportCount } tebzimt, syen snes tabzimt",
-        "Kter meṛṛa iznan seg ${ itemsToImportCount } tebzimin, syen snes tabzimt"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } ukaram ɣef ${ itemsToImportCount }, syen snes tabzimt",
-        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } yikaramen ɣef ${ itemsToImportCount }, syen snes tabzimt"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimt ɣef ${ itemsToImportCount }, syen snes tabzimt",
-        "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimin ɣef ${ itemsToImportCount }, syen snes tabzimt"
-      ]
-    },
     "mail_signup_2024: Info": {
       "for ${ price }": [
         "i ${ price }"
@@ -6950,28 +7452,16 @@
       ]
     },
     "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
-        "Yal ${ interval } n wayyur ${ onDayString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }"
-      ],
       "Monthly ${ onDayString }": [
         "Yal ayyur ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Yal ${ interval } n wayyur ${ onDayString }, ${ timesString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }, ${ timesString }"
-      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Yal ayyur ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Yal ${ interval } n wayyur ${ onDayString }, ${ untilString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Yal ayyur ${ onDayString }, ${ untilString }"
       ]
@@ -7140,66 +7630,6 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } d ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar": [
-        "${ n } uwitay",
-        "${ n } yiwitayen"
-      ],
-      "${ n } calendar per user": [
-        "${ n } uwitay i yal aseqdac",
-        "${ n } yiwitayen i yal aseqdac"
-      ],
-      "${ n } custom email domain": [
-        "${ n } taɣult n yimaylen udmawanen",
-        "${ n } tiɣula n yimaylen udmawanen"
-      ],
-      "${ n } email address": [
-        "${ n } tansa n yimayl",
-        "${ n } tansiwin n yimayl"
-      ],
-      "${ n } email address per user": [
-        "${ n } tansa n yimayl i useqdac",
-        "${ n } tansiwin n yimayl i useqdac"
-      ],
-      "${ n } filter": [
-        "${ n } yimsizdeg",
-        "${ n } yimsizedgen"
-      ],
-      "${ n } folder": [
-        "${ n } n ukaram",
-        "${ n } n ikaramen"
-      ],
-      "${ n } folder and label": [
-        "${ n } ukaram d tebzimt",
-        "${ n } yikaramen d tebzimin"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } alias hide-my-email",
-        "${ n } hide-my-email aliases"
-      ],
-      "${ n } label": [
-        "${ n } tebzimt",
-        "${ n } tebzimin"
-      ],
-      "${ n } message per day": [
-        "${ n } n yiznen i wass",
-        "${ n } n yiznan i ass"
-      ],
-      "${ n } vault": [
-        "${ n } usenduq",
-        "${ n } yisendyaq"
-      ],
-      "${ n } VPN connection": [
-        "${ n } tuqqna VPN",
-        "${ n } n tuqqniwin VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } n useqdac",
-        "Alamma d ${ numberOfUsers } yiseqdacen"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } s ${ n } hide-my-email alias",
-        "${ PASS_APP_NAME } s ${ n } hide-my-email aliases"
-      ],
       "${ size } attachment size": [
         "${ size } teɣzi n yimeddayen"
       ],
@@ -7265,10 +7695,6 @@
       ],
       "GDPR data processing agreement": [
         "Awati n usesfer n yisefka GDPR"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN arurad agafay ɣef ${ n } yibenk",
-        "VPN arurad agafay ɣef ${ n } yibenkan"
       ],
       "HTML signatures": [
         "Izmulen n HTML"
@@ -7342,21 +7768,11 @@
       "Unlimited volume/bandwidth": [
         "Ableɣ/Tehri n tesfift war talast"
       ],
-      "Up to ${ n } user": [
-        "Alamma d ${ n } yiseqdac",
-        "Alamma d ${ n } yiseqdacen"
-      ],
       "Up to ${ totalStorageSize } storage": [
         "Alamma d ${ totalStorageSize } n uḥraz"
       ],
       "User session management": [
         "Asefrek n tiɣimiyin n useqdac"
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ users } user": [
-        "${ users } useqdac",
-        "${ users } yiseqdacen"
       ]
     },
     "new_plans: feature info": {
@@ -7430,10 +7846,6 @@
       "Central control panel": [
         "Afeggag n usenqed alemmas"
       ],
-      "Create up to ${ n } calendar": [
-        "Rnu alamma d ${ n } n uwitay",
-        "Rnu alamma d ${ n } n yiwitayen"
-      ],
       "Dedicated Account manager": [
         "Amsefrak n umiḍan yettwagen"
       ],
@@ -7445,10 +7857,6 @@
       ],
       "Require 2FA": [
         "Yesra 2FA"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Asefrek i ${ n } taɣult n yimayl udmawan",
-        "Asefrek i ${ n } tiɣula n yimayl udmawan"
       ]
     },
     "Notification": {
@@ -7838,18 +8246,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } anermis ɣef ${ countContacts } ttusfḍen-d akken iwata.",
-        "${ contactsExported.length } inermisen ɣef ${ countContacts } ttusfḍen-d akken iwata."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } n unermis ɣef ${ totalBeDeleted } yettwakkes akken iwata.",
-        "${ model.deleted.length } inermisen ɣef ${ totalBeDeleted } ttwakksen akken iwata."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } n unermis ɣef ${ totalBeMerged } ttummmezdin akken iwata.",
-        "${ model.submitted.length } n yinermisen ɣef ${ totalBeMerged } ttummmezdin akken iwata."
-      ],
       "No contacts exported.": [
         "Ulac inermisen i yettusifḍen."
       ],
@@ -7936,10 +8332,6 @@
       ]
     },
     "Remaining days before the message expire": {
-      "${ remainingDays } d": [
-        "${ remainingDays } wussan",
-        "${ remainingDays } wussan"
-      ],
       "<1 d": [
         "<1 d"
       ]
@@ -8008,10 +8400,6 @@
       "Do you want to send the email anyway?": [
         "Tebɣḍ ad tazneḍ imayl ɣas akken?"
       ],
-      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Nufa-d tuccḍiwin. Imayl-ik·im ulamek yettwazen ɣer tansa n yimayl i d-yettunefken ssebba n wayen akka i d-iteddun:",
-        "Nufa-d tuccḍiwin. Imayl-ik·im ulamek yettwazen ɣer tansiwin n yimayl i d-yettunefken ssebba n wayen akka i d-iteddun:"
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Nufa-d kra n tucḍiwin. Imayl-ik·im ulamek yettwazen ɣer yiwet neɣ ɣer wugar n tansiwin n yimayl i d-yettwamudden ssebba n wayen akka i d-iteddun:"
       ]
@@ -8019,14 +8407,6 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "Tebɣḍ ad tazneḍ imayl ɣas akken?"
-      ],
-      "The following address is not valid: ${ invalidAddresses }": [
-        "Tansa-a mačči d tameɣtut: ${ invalidAddresses }",
-        "Tansiwin-a mačči d timeɣta: ${ invalidAddresses }"
-      ],
-      "We have detected some warnings. The following email address may not receive emails:": [
-        "Nufa-d kra n kra n yismiglen. Tansa-a n yimayl yezmer ur d-trems ara imaylen:",
-        "Nufa-d kra n kra n yismiglen. Tansiwin-a n yimayl yezmer ur d-remsent ara imaylen:"
       ]
     },
     "Sender verification details": {
@@ -8065,16 +8445,8 @@
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Yettwazen s ${ MAIL_APP_NAME } s uwgelhen ilem n unekcum"
       ],
-      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Yettwazen s ${ MAIL_APP_NAME } s uwgelhen ilem n u nekcum i usenqed n uɣerwaḍ",
-        "Yettwazen s ${ MAIL_APP_NAME } s uwgelhen ilem n unekcum i usenqed n yiɣerwaḍen"
-      ],
       "Sent by you with end-to-end encryption": [
         "Tuzneḍ-t s yiman-ik s uwgelhen seg yixef ɣer yixef"
-      ],
-      "Sent by you with end-to-end encryption to verified recipient": [
-        "Tuzneḍ-t s uwgelhen seg yixef ɣzer yixef i usenqed n uɣerwaḍ",
-        "Tuzneḍ-t s uwgelhen seg yixef ɣzer yixef i usenqed n yiɣerwaḍen"
       ],
       "Stored with zero-access encryption": [
         "Yettwaḥrez s uwgelhen ilem n unekcum"
@@ -8088,16 +8460,6 @@
     "session_recovery:available:error": {
       "Please generate keys before you try to change your password": [
         "Ttxil sirew-d tisura send ad tɛerḍeḍ ad tbeddeleḍ awal-inek n uɛeddi"
-      ]
-    },
-    "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } n wass",
-        "${ timeRemaining.inDays } n wussan"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } n usrag",
-        "${ timeRemaining.inHours } n yisragen"
       ]
     },
     "session_recovery:cancellation:action": {
@@ -8129,12 +8491,6 @@
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Asenser"
-      ]
-    },
-    "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } n usrag",
-        "${ gracePeriodHoursRemaining } n yisragen"
       ]
     },
     "session_recovery:sign_out:link": {
@@ -8210,30 +8566,6 @@
         "Ad ɛeddiɣ ɣer war tilas"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } n wass",
-        "${ days } n wussan"
-      ],
-      "${ hours } hour": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } n tesdat",
-        "${ minutes } n tesdatin"
-      ],
-      "${ seconds } second": [
-        "${ seconds } n tasint",
-        "${ seconds } n tsinin"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } wayyur BAṬEL",
-        "${ n } wayyuren BAṬEL"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 useqdac"
@@ -8278,10 +8610,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } wayyur",
-        "${ n } wayyuren"
-      ],
       "/ month": [
         "/ n wayyur"
       ],
@@ -8383,24 +8711,6 @@
         "Tifaṭurin n wayyuren"
       ]
     },
-    "Subscription attribute": {
-      "${ n } high-speed VPN connection": [
-        "${ n } n tuqqna VPN s urured ɛlayen",
-        "${ n } n tuqqna VPN s urured ɛlayen"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } n tuqqna VPN s urured ɛlayen i useqdac",
-        "${ n } n tuqqniwin VPN s urured ɛlayen i useqdac"
-      ],
-      "${ n } VPN connection": [
-        "${ n } tuqqna VPN",
-        "${ n } n tuqqniwin VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } n tuqqna VPN i useqdac",
-        "${ n } n tuqqniwin VPN i useqdac"
-      ]
-    },
     "Subscription change warning": {
       "Got it": [
         "Gziɣ-t"
@@ -8418,35 +8728,11 @@
       ]
     },
     "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "Mazal ${ dayDiff } wass",
-        "Mazal ${ dayDiff } wussan"
-      ],
       "${ planMaxSpace } storage per user": [
         "${ planMaxSpace } uḥraz i aseqdac"
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } n uḥraz asemday"
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } uwitay i yal aseqdac",
-        "${ planNumberOfCalendars } yiwitayen i yal aseqdac"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } taɣult n yimaylen udmawanen",
-        "${ planNumberOfDomains } tiɣula n yimaylen udmawanen"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } tansa n yimayl",
-        "${ planNumberOfEmails } n tansiwin imayl"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } tansa n yimayl i useqdac",
-        "${ planNumberOfEmails } tansiwin n yimayl i useqdac"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } n useqdac",
-        "${ planNumberOfUsers } yiseqdacen"
       ],
       "2 users": [
         "2 yiseqdacen"
@@ -8487,86 +8773,6 @@
       ]
     },
     "Success": {
-      "${ count } conversation deleted": [
-        "${ count } n udiwenni ittwakkes",
-        "Idiwenniyen ${ count } ttwaksen"
-      ],
-      "${ count } draft deleted": [
-        "${ count } n urewway ittwakkes",
-        "${ count } n yirewwayen ttwakksen"
-      ],
-      "${ count } message deleted": [
-        "${ count } n udiwenni ittwakkes",
-        "${ count } n yiznan ttwakksen"
-      ],
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } unermis yettban kifkif.",
-        "${ countMergeableContacts } yinermisen ttbanen kifkif."
-      ],
-      "${ elementsCount } conversation added to ${ labelName }.": [
-        "${ elementsCount } n udiwenni yettwarna ɣer ${ labelName }.",
-        "${ elementsCount } n yidiwenniyen ttwarnan ɣer ${ labelName }."
-      ],
-      "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } n udiwenni yettwacerḍen yettwaɣra.",
-        "${ elementsCount } n yidiwenniyen yettwacerḍen ttwaɣran."
-      ],
-      "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } n udiwenni yettwacerḍen s yitran.",
-        "${ elementsCount } n yidiwenniyen yettwacerḍen s yitran."
-      ],
-      "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } n udiwenni yettwacerḍen ur yettwaɣra ara.",
-        "${ elementsCount } n yidiwenniyen yettwacerḍen ur ttwaɣran ara."
-      ],
-      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } udiwenni yemutti ɣer ${ labelName }, ma d amazan yettwarna ɣer tebdart ur nelli n yispamen.",
-        "${ elementsCount } n yidiwenniyen muttin ɣer ${ labelName }, ma d imazanen ttwarnan ɣer tebdart ur nelli n yispamen."
-      ],
-      "${ elementsCount } conversation moved to ${ labelName }.": [
-        "${ elementsCount } n udiwenni ittwasenkez ɣer ${ labelName }.",
-        "${ elementsCount } n yidiwenniyen ttwasnekzen ɣer ${ labelName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } usqerdec yemutti ɣer uspam, ma d amazan yettwarna ɣer tebdart yispamen.",
-        "${ elementsCount } n yidiwenniyen muttin ɣer yispamen i yernan yimazanen yettwarnan ɣer tebdart yispamen."
-      ],
-      "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } n udiwenni ittwakkes seg ${ labelName }.",
-        "${ elementsCount } n yidiwenniyen ttwakksen seg ${ labelName }."
-      ],
-      "${ elementsCount } message added to ${ labelName }.": [
-        "${ elementsCount } n yizen yettwarna ɣer ${ labelName }.",
-        "${ elementsCount } n yiznan ttwarnan ɣer ${ labelName }."
-      ],
-      "${ elementsCount } message marked as read.": [
-        "${ elementsCount } n yizen yettwacerḍen yettwaɣera.",
-        "${ elementsCount } n yiznan yettwacerḍen ttwaɣeran."
-      ],
-      "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } n yizen yettwacerḍen s yitran.",
-        "${ elementsCount } n yiznan yettwacerḍen s yitran."
-      ],
-      "${ elementsCount } message marked as unread.": [
-        "${ elementsCount } n yizen yettwacreḍ en ur yettwaɣran ara.",
-        "${ elementsCount } n yiznan yettwacerḍen ur ttwaɣran ara."
-      ],
-      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } yizen yemutti ɣer ${ labelName }, ma d amazan yettwarna ɣer tebdart ur nelli n yispamen.",
-        "${ elementsCount } n yiznan muttin ɣer ${ labelName }, ma d imazanen ttwarnan ɣer tebdart ur nelli n yispamen."
-      ],
-      "${ elementsCount } message moved to ${ labelName }.": [
-        "${ elementsCount } n yizen ittwasenkez ɣer ${ labelName }.",
-        "${ elementsCount } n yiznan ttwasnekzen ɣer ${ labelName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } yizen yemutti ɣer uspam, ma d amazan yettwarna ɣer tebdart yispamen.",
-        "${ elementsCount } n yiznan muttin ɣer yispamen, ma d imazanen ttwarnan ɣer tebdart yispamen."
-      ],
-      "${ elementsCount } message removed from ${ labelName }.": [
-        "${ elementsCount } n yizen i yettwakksen seg ${ labelName }.",
-        "${ elementsCount } n yiznan i yettwakksen seg ${ labelName }."
-      ],
       "Address copied to clipboard": [
         "Tansa tettwanɣel ɣef afus"
       ],
@@ -8578,14 +8784,6 @@
       ],
       "Code sent to ${ methodTo }": [
         "Tangalt tettwazen ɣer ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Anermis ittwakkes",
-        "Inermisen ttwakksen"
-      ],
-      "Contact group deleted": [
-        "Agraw n urmas yettwakkes",
-        "Igrawen n urmas yettwakkes"
       ],
       "Contact saved": [
         "Anermis yettwasekles"
@@ -8688,14 +8886,6 @@
       ],
       "Messages from ${ sendersList } will be moved to ${ folder }": [
         "Iznan seg ${ sendersList } ad muttin ɣer ${ folder }"
-      ],
-      "Move ${ selectionCount } conversation": [
-        "Senkez adiwenni n ${ selectionCount }",
-        "Senkez idiwenniyen n ${ selectionCount }"
-      ],
-      "Move ${ selectionCount } message": [
-        "Senkez izen n ${ selectionCount }",
-        "Senkez iznan n ${ selectionCount }"
       ],
       "Password copied to clipboard": [
         "Awal uffir yettwanɣel ɣer tecfawt"
@@ -8826,52 +9016,6 @@
         "Iḍelli"
       ]
     },
-    "Time unit": {
-      "${ ceilDays } day": [
-        "${ ceilDays } n wass",
-        "${ ceilDays } n wussan"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } n usrag",
-        "${ ceilHours } n yisragen"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } n tesdat",
-        "${ ceilMinutes } n tesdatin"
-      ],
-      "${ seconds } second": [
-        "${ seconds } n tasint",
-        "${ seconds } n tsinin"
-      ]
-    },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 srg",
-        "${ hoursInt }.5 srg"
-      ],
-      "${ minutes } min": [
-        "${ minutes } tsd",
-        "${ minutes } tsdn"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } n usrag",
-        "${ hours } n yisragen"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 usrag",
-        "${ hoursInt }.5 yisragen"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } n tesdat",
-        "${ minutes } n tesdatin"
-      ]
-    },
     "Tip Action": {
       "Activate": [
         "Rmed"
@@ -8890,18 +9034,6 @@
       ]
     },
     "Title": {
-      "${ emailsCount } email address": [
-        "${ emailsCount } tansa n yimayl",
-        "${ emailsCount } n tansiwin imayl"
-      ],
-      "${ numMessages } message": [
-        "${ numMessages } n yizen",
-        "${ numMessages } n yiznan"
-      ],
-      "${ unreads } unread message": [
-        "${ unreads } n yizen ur yettwaɣran ara",
-        "${ unreads } n yiznan ur yettwaɣran ara"
-      ],
       "(active)": [
         "(urmid)"
       ],
@@ -8919,10 +9051,6 @@
       ],
       "Add filter": [
         "Rnu imsizdeg"
-      ],
-      "Add to ${ groupCount } group": [
-        "Rnu ɣer ${ groupCount } n ugraw",
-        "Rnu ɣer ${ groupCount } n yigrawen"
       ],
       "Add to ${ groupName }": [
         "Rnu ɣer ${ groupName }"
@@ -9056,26 +9184,6 @@
       "Decryption error": [
         "Tuccḍa n uzmak"
       ],
-      "Delete ${ count } contact": [
-        "Kkes ${ count } n unermis",
-        "Kkes ${ count } n inermisen"
-      ],
-      "Delete ${ count } contact group": [
-        "Kkes ${ count } n ugraw n yinermisen",
-        "Kkes ${ count } n yigrawen n yinermisen"
-      ],
-      "Delete ${ count } conversation": [
-        "Kkes ${ count } n udiwenni",
-        "Kkes ${ count } n yidiwenniyen"
-      ],
-      "Delete ${ count } draft": [
-        "Kkes ${ count } n urewway",
-        "Kkes ${ count } n yirewwayenKkes"
-      ],
-      "Delete ${ count } message": [
-        "Kkes ${ count } n yizen",
-        "Kkes ${ count } n yiznan"
-      ],
       "Delete ${ value }": [
         "Kkes ${ value }"
       ],
@@ -9180,10 +9288,6 @@
       ],
       "Image": [
         "Tugna"
-      ],
-      "Import as simple event?": [
-        "Kter tedyant war talqayt?",
-        "Kter tidyanin war talqayt?"
       ],
       "Import contacts": [
         "Kter inermisen"
@@ -9482,10 +9586,6 @@
       "Trash": [
         "Taqecwalt"
       ],
-      "Trust new key?": [
-        "Tesεiḍ taflest deg tsarut tamaynut?",
-        "Tesεiḍ taflest deg tsura timaynutin?"
-      ],
       "Trust pinned keys?": [
         "Ttkel ɣef tsura yettureṣṣan?"
       ],
@@ -9635,48 +9735,12 @@
         "Tasefsit-ik tamezwert ad d-tban akka:"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n usekkil",
-        "Awal uffir ilaq ad isɛu ma drus ${ MIN_PASSWORD_LENGTH } n yisekkilen"
-      ]
-    },
     "Video control": {
       "Click to replay the video": [
         "Ssit akken ad turareḍ tikkelt-nniḍen tabidyut"
       ],
       "Replay video": [
         "Urar tikkelt-nniḍen tavidyut"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } yibenk",
-        "${ n } yibenkan"
-      ],
-      "${ n } server": [
-        "Aqeddac ${ n }",
-        "Ugar n ${ n } yiqeddacen"
-      ],
-      "${ n } VPN connection": [
-        "${ n } tuqqna VPN",
-        "${ n } n tuqqniwin VPN"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } n tmurt",
-        "${ numberOfCountries } tmura"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
-        "${ numberOfServers } deg ${ numberOfCountries } n tmura"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } deg ${ numberOfCountries } n tmurt",
-        "${ numberOfServers } deg ${ numberOfCountries } n tmura"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Iqeddacen deg wugar ${ numberOfCountries } tmurt",
-        "Iqeddacen deg wugar n ${ numberOfCountries } tmura"
       ]
     },
     "vpn_2step: feature": {
@@ -9693,10 +9757,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } ad siweḍ aqettun n yisefka iwum yezmer, ad yebdu s yiznan-inek·inem n melmi kan."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Tebɣiḍ s tidet ad tekkseḍ ${ count } n unermis s wudem imezgi?",
-        "D tidet tebɣiḍ ad tekkseḍ ${ count } n yinermisen s wudem imezgi?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "D tidet tebɣiḍ ad tekkseḍ i lebda agraw-agi n unermes?"
@@ -9718,10 +9778,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Kra n yinermisen ara yettumezdin skanen-d tuccḍiwin. Ttxil-k·m senqed yal yiwen weḥd-s"
-      ],
-      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Asenqed n uzmul n tceqquft yeddan.\nMazal tzemreḍ ad d-tsadreḍ taceqquft-a yeddan maca yezmer tettubeddel.",
-        "Asenqed n yizmulen n tceqqufin yeddan.\nMazal tzemreḍ ad d-tsadreḍ ticeqqufin-a yeddan maca yezmer ttubeddelent."
       ],
       "The contact failed to load.": [
         "Asali n unermis ur yeddi ara."
@@ -9752,54 +9808,6 @@
       ]
     },
     "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Yal ${ interval } n dduṛt deg ${ multipleDaysString }",
-        "Yal ${ interval } n ledwaṛ deg ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Yal ${ interval } n umalas deg meṛṛa ussan",
-        "Yal ${ interval } ledwaṛ deg meṛṛa ussan"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Yal ${ interval } n dduṛt deg wass n sem",
-        "Yal ${ interval } n ledwaṛ deg wass n sem"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Yal ${ interval } n dduṛt deg wass n warim",
-        "Yal ${ interval } n ledwaṛ deg wass n warim"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n warim, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n warim, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Yal ${ interval } n dduṛt deg wass n sed",
-        "Yal ${ interval } n ledwaṛ deg wass n sed"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Yal ${ interval } n dduṛt deg wass n wacer",
-        "Yal ${ interval } n ledwaṛ deg wussan n acer"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n wacer, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n wacer, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Yal ${ interval } n dduṛt deg wass n wamhad",
-        "Yal ${ interval } n ledwaṛ deg wass n wamhad"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Yal ${ interval } n dduṛt deg wass n waram",
-        "Yal ${ interval } n ledwaṛ deg wass n warim"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n waram, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n waram, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Yal ${ interval } n dduṛt deg wass n wahad",
-        "Yal ${ interval } n ledwaṛ deg wass n wahad"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Yal imalas deg ${ multipleDaysString }"
       ],
@@ -9829,30 +9837,6 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ timesString }",
-        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wussan akk, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wussan akk, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n sem, ${ timesString }",
-        "Yal ${ interval } n ledwar deg wass n sem, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n sed, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n sed, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n umhad, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n umhad, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n wahad, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n wahad, ${ timesString }"
-      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Yal imalas deg ${ multipleDaysString }, ${ timesString }"
       ],
@@ -9882,42 +9866,6 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wussan akk, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wussan akk, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass sem, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass sem, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n warim, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n warim, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n sed, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n sed, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n wacer, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n wacer, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n umhad, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n umhad, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n waram, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n waram, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n wahad, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n wahad, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Yal imalas deg ${ multipleDaysString }, ${ untilString }"
       ],
@@ -9970,28 +9918,16 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "Yal ${ interval } n useggas",
-        "Yal ${ interval } n yiseggasen"
-      ],
       "Yearly": [
         "S useggas"
       ]
     },
     "Yearly recurring event, frequency (times)": {
-      "Every ${ interval } year, ${ timesString }": [
-        "Yal ${ interval } n useggas, ${ timesString }",
-        "Yal ${ interval } n yiseggasen, ${ timesString }"
-      ],
       "Yearly, ${ timesString }": [
         "S useggas, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
-      "Every ${ interval } year, ${ untilString }": [
-        "Yal ${ interval } n useggas, ${ untilString }",
-        "Yal ${ interval } n yiseggasen, ${ untilString }"
-      ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
       ]

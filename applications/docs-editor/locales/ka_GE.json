@@ -4,6 +4,12 @@
     "language": "ka_GE"
   },
   "contexts": {
+    "": {
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } კრეფს...",
+        "${ usersTranslation } კრეფენ..."
+      ]
+    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -485,10 +491,6 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } და ${ lastTyper }"
-      ],
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } კრეფს...",
-        "${ usersTranslation } კრეფენ..."
       ],
       "Alpha only experimental feature": [
         "ალფა ვერსია. ექსპერიმენტული ფუნქცია"
