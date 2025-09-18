@@ -4,6 +4,76 @@
     "language": "fa_IR"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } دامنه ایمیل سفارشی",
+        "${ n } دامنه ایمیل سفارشی"
+      ],
+      "${ n } email address": [
+        "${ n } آدرس ایمیل",
+        "${ n } آدرس ایمیل/نام مستعار"
+      ],
+      "${ n } email address per user": [
+        "${ n } آدرس ایمیل برای هر کاربر",
+        "${ n } آدرس ایمیل برای هر کاربر"
+      ],
+      "${ n } filter": [
+        "${ n } فیلتر",
+        "${ n } فیلتر"
+      ],
+      "${ n } folder": [
+        "${ n } پوشه",
+        "${ n } پوشه"
+      ],
+      "${ n } folder and label": [
+        "${ n } پوشه و برچسب",
+        "${ n } پوشه و برچسب"
+      ],
+      "${ n } label": [
+        "${ n } برچسب",
+        "${ n } برچسب"
+      ],
+      "${ n } message per day": [
+        "${ n } پیام در روز",
+        "${ n } پیام در روز"
+      ],
+      "byte": [
+        "بایت",
+        "بایت"
+      ],
+      "Byte": [
+        "بایت",
+        "بایت"
+      ],
+      "Gigabyte": [
+        "گیگابایت",
+        "گیگابایت"
+      ],
+      "Kilobyte": [
+        "کیلوبایت",
+        "کیلوبایت"
+      ],
+      "Megabyte": [
+        "مگابایت",
+        "مگابایت"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "گذرواژه باید حداقل ${ MIN_PASSWORD_LENGTH } نویسه داشته باشد",
+        "گذرواژه باید حداقل ${ MIN_PASSWORD_LENGTH } نویسه داشته باشد"
+      ],
+      "Support for ${ n } custom email domain": [
+        "پشتیبانی از ${ n } دامنه ایمیل سفارشی",
+        "پشتیبانی از ${ n } دامنه ایمیل سفارشی"
+      ],
+      "Terabyte": [
+        "ترابایت",
+        "ترابایت"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)",
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "احراز هویت"
@@ -915,10 +985,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "بایت",
-        "بایت"
-      ],
       "GB": [
         "گیگابایت"
       ],
@@ -927,28 +993,6 @@
       ],
       "MB": [
         "مگابایت"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "بایت",
-        "بایت"
-      ],
-      "Gigabyte": [
-        "گیگابایت",
-        "گیگابایت"
-      ],
-      "Kilobyte": [
-        "کیلوبایت",
-        "کیلوبایت"
-      ],
-      "Megabyte": [
-        "مگابایت",
-        "مگابایت"
-      ],
-      "Terabyte": [
-        "ترابایت",
-        "ترابایت"
       ]
     },
     "Font face option": {
@@ -1095,38 +1139,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ n } custom email domain": [
-        "${ n } دامنه ایمیل سفارشی",
-        "${ n } دامنه ایمیل سفارشی"
-      ],
-      "${ n } email address": [
-        "${ n } آدرس ایمیل",
-        "${ n } آدرس ایمیل/نام مستعار"
-      ],
-      "${ n } email address per user": [
-        "${ n } آدرس ایمیل برای هر کاربر",
-        "${ n } آدرس ایمیل برای هر کاربر"
-      ],
-      "${ n } filter": [
-        "${ n } فیلتر",
-        "${ n } فیلتر"
-      ],
-      "${ n } folder": [
-        "${ n } پوشه",
-        "${ n } پوشه"
-      ],
-      "${ n } folder and label": [
-        "${ n } پوشه و برچسب",
-        "${ n } پوشه و برچسب"
-      ],
-      "${ n } label": [
-        "${ n } برچسب",
-        "${ n } برچسب"
-      ],
-      "${ n } message per day": [
-        "${ n } پیام در روز",
-        "${ n } پیام در روز"
-      ],
       "${ size } attachment size": [
         "${ size } سایز پیوست"
       ],
@@ -1262,10 +1274,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "فضای ذخیره‌سازی خود را به ${ bundleStorage } افزایش دهید"
-      ],
-      "Support for ${ n } custom email domain": [
-        "پشتیبانی از ${ n } دامنه ایمیل سفارشی",
-        "پشتیبانی از ${ n } دامنه ایمیل سفارشی"
       ]
     },
     "Placeholder": {
@@ -1304,16 +1312,6 @@
       ],
       "Two-factor authentication": [
         "احراز هویت دو مرحله‌ای"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "گذرواژه باید حداقل ${ MIN_PASSWORD_LENGTH } نویسه داشته باشد",
-        "گذرواژه باید حداقل ${ MIN_PASSWORD_LENGTH } نویسه داشته باشد"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)",
-        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)"
       ]
     }
   }

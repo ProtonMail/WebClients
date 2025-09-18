@@ -4,6 +4,98 @@
     "language": "ro_RO"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "Un domeniu personal de e-mail",
+        "${ n } domenii personale de e-mail",
+        "${ n } de domenii personale de e-mail"
+      ],
+      "${ n } email address": [
+        "O adresă de e-mail",
+        "${ n } adrese de e-mail/aliasuri",
+        "${ n } de adrese de e-mail/aliasuri"
+      ],
+      "${ n } email address per user": [
+        "O adresă per utilizator",
+        "${ n } adrese de e-mail per utilizator",
+        "${ n } de adrese de e-mail per utilizator"
+      ],
+      "${ n } filter": [
+        "Un filtru",
+        "${ n } filtre",
+        "${ n } de filtre"
+      ],
+      "${ n } folder": [
+        "Un folder",
+        "${ n } foldere",
+        "${ n } de foldere"
+      ],
+      "${ n } folder and label": [
+        "Un folder și o etichetă",
+        "${ n } foldere și etichete",
+        "${ n } de foldere și etichete"
+      ],
+      "${ n } label": [
+        "O etichetă",
+        "${ n } etichete",
+        "${ n } de etichete"
+      ],
+      "${ n } message per day": [
+        "Un mesaj pe zi",
+        "${ n } mesaje pe zi",
+        "${ n } de mesaje pe zi"
+      ],
+      "${ options }-day file version history": [
+        "Istoric versiuni fișiere: ${ options } zi",
+        "Istoric versiuni fișiere: ${ options } zile",
+        "Istoric versiuni fișiere: ${ options } de zile"
+      ],
+      "byte": [
+        "bait",
+        "baiți",
+        "de baiți"
+      ],
+      "Byte": [
+        "Bait",
+        "Baiți",
+        "Baiți"
+      ],
+      "Gigabyte": [
+        "Gigabait",
+        "Gigabaiți",
+        "Gigabaiți"
+      ],
+      "Kilobyte": [
+        "Kilobait",
+        "Kilobaiți",
+        "Kilobaiți"
+      ],
+      "Megabyte": [
+        "Megabait",
+        "Megabaiți",
+        "Megabaiți"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Domenii de e-mail personal acceptate: ${ n }",
+        "Domenii de e-mail personal acceptate: ${ n }",
+        "Domenii de e-mail personal acceptate: ${ n }"
+      ],
+      "Terabyte": [
+        "Tibibait",
+        "Tibibaiți",
+        "Tibibaiți"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Autentificare"
@@ -943,11 +1035,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bait",
-        "baiți",
-        "de baiți"
-      ],
       "GB": [
         "GiB"
       ],
@@ -959,33 +1046,6 @@
       ],
       "TB": [
         "TiB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Bait",
-        "Baiți",
-        "Baiți"
-      ],
-      "Gigabyte": [
-        "Gigabait",
-        "Gigabaiți",
-        "Gigabaiți"
-      ],
-      "Kilobyte": [
-        "Kilobait",
-        "Kilobaiți",
-        "Kilobaiți"
-      ],
-      "Megabyte": [
-        "Megabait",
-        "Megabaiți",
-        "Megabaiți"
-      ],
-      "Terabyte": [
-        "Tibibait",
-        "Tibibaiți",
-        "Tibibaiți"
       ]
     },
     "Font face option": {
@@ -1193,51 +1253,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
-      ],
-      "${ n } custom email domain": [
-        "Un domeniu personal de e-mail",
-        "${ n } domenii personale de e-mail",
-        "${ n } de domenii personale de e-mail"
-      ],
-      "${ n } email address": [
-        "O adresă de e-mail",
-        "${ n } adrese de e-mail/aliasuri",
-        "${ n } de adrese de e-mail/aliasuri"
-      ],
-      "${ n } email address per user": [
-        "O adresă per utilizator",
-        "${ n } adrese de e-mail per utilizator",
-        "${ n } de adrese de e-mail per utilizator"
-      ],
-      "${ n } filter": [
-        "Un filtru",
-        "${ n } filtre",
-        "${ n } de filtre"
-      ],
-      "${ n } folder": [
-        "Un folder",
-        "${ n } foldere",
-        "${ n } de foldere"
-      ],
-      "${ n } folder and label": [
-        "Un folder și o etichetă",
-        "${ n } foldere și etichete",
-        "${ n } de foldere și etichete"
-      ],
-      "${ n } label": [
-        "O etichetă",
-        "${ n } etichete",
-        "${ n } de etichete"
-      ],
-      "${ n } message per day": [
-        "Un mesaj pe zi",
-        "${ n } mesaje pe zi",
-        "${ n } de mesaje pe zi"
-      ],
-      "${ options }-day file version history": [
-        "Istoric versiuni fișiere: ${ options } zi",
-        "Istoric versiuni fișiere: ${ options } zile",
-        "Istoric versiuni fișiere: ${ options } de zile"
       ],
       "${ size } attachment size": [
         "${ size } mărime atașament"
@@ -1505,11 +1520,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Măriți spațiul de stocare la ${ bundleStorage } în total"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Domenii de e-mail personal acceptate: ${ n }",
-        "Domenii de e-mail personal acceptate: ${ n }",
-        "Domenii de e-mail personal acceptate: ${ n }"
       ]
     },
     "Placeholder": {
@@ -1583,18 +1593,6 @@
       ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
       ]
     }
   }

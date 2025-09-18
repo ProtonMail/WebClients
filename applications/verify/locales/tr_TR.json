@@ -4,6 +4,80 @@
     "language": "tr_TR"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı",
+        "${ n } özel e-posta etki alanı"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi"
+      ],
+      "${ n } email address per user": [
+        "Her kullanıcı için ${ n } e-posta adresi",
+        "Her kullanıcı için ${ n } e-posta adresi"
+      ],
+      "${ n } filter": [
+        "${ n } süzgeç",
+        "${ n } süzgeç"
+      ],
+      "${ n } folder": [
+        "${ n } klasör",
+        "${ n } klasör"
+      ],
+      "${ n } folder and label": [
+        "${ n } klasör ve etiket",
+        "${ n } klasör ve etiket"
+      ],
+      "${ n } label": [
+        "${ n } etiket",
+        "${ n } etiket"
+      ],
+      "${ n } message per day": [
+        "Her gün ${ n } ileti",
+        "Her gün ${ n } ileti"
+      ],
+      "${ options }-day file version history": [
+        "${ options } günlük dosya sürümü geçmişi",
+        "${ options } günlük dosya sürümü geçmişi"
+      ],
+      "byte": [
+        "bayt",
+        "bayt"
+      ],
+      "Byte": [
+        "Bayt",
+        "Bayt"
+      ],
+      "Gigabyte": [
+        "Gigabayt",
+        "Gigabayt"
+      ],
+      "Kilobyte": [
+        "Kilobayt",
+        "Kilobayt"
+      ],
+      "Megabyte": [
+        "Megabayt",
+        "Megabayt"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı desteği",
+        "${ n } özel e-posta etki alanı desteği"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Kimliği doğrula"
@@ -943,10 +1017,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bayt",
-        "bayt"
-      ],
       "GB": [
         "GB"
       ],
@@ -958,28 +1028,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Bayt",
-        "Bayt"
-      ],
-      "Gigabyte": [
-        "Gigabayt",
-        "Gigabayt"
-      ],
-      "Kilobyte": [
-        "Kilobayt",
-        "Kilobayt"
-      ],
-      "Megabyte": [
-        "Megabayt",
-        "Megabayt"
-      ],
-      "Terabyte": [
-        "Terabayt",
-        "Terabayt"
       ]
     },
     "Font face option": {
@@ -1187,42 +1235,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe yazma yardımcısı"
-      ],
-      "${ n } custom email domain": [
-        "${ n } özel e-posta etki alanı",
-        "${ n } özel e-posta etki alanı"
-      ],
-      "${ n } email address": [
-        "${ n } e-posta adresi",
-        "${ n } e-posta adresi"
-      ],
-      "${ n } email address per user": [
-        "Her kullanıcı için ${ n } e-posta adresi",
-        "Her kullanıcı için ${ n } e-posta adresi"
-      ],
-      "${ n } filter": [
-        "${ n } süzgeç",
-        "${ n } süzgeç"
-      ],
-      "${ n } folder": [
-        "${ n } klasör",
-        "${ n } klasör"
-      ],
-      "${ n } folder and label": [
-        "${ n } klasör ve etiket",
-        "${ n } klasör ve etiket"
-      ],
-      "${ n } label": [
-        "${ n } etiket",
-        "${ n } etiket"
-      ],
-      "${ n } message per day": [
-        "Her gün ${ n } ileti",
-        "Her gün ${ n } ileti"
-      ],
-      "${ options }-day file version history": [
-        "${ options } günlük dosya sürümü geçmişi",
-        "${ options } günlük dosya sürümü geçmişi"
       ],
       "${ size } attachment size": [
         "${ size } ek dosya boyutu"
@@ -1490,10 +1502,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Toplam depolama alanınızı ${ bundleStorage } boyutuna artırın"
-      ],
-      "Support for ${ n } custom email domain": [
-        "${ n } özel e-posta etki alanı desteği",
-        "${ n } özel e-posta etki alanı desteği"
       ]
     },
     "Placeholder": {
@@ -1567,16 +1575,6 @@
       ],
       "Two-factor authentication": [
         "İki adımlı doğrulama"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
-        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
-        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
       ]
     }
   }
