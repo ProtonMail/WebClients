@@ -4,6 +4,116 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } vlastní e-mailová doména",
+        "${ n } vlastní e-mailové domény",
+        "${ n } vlastních e-mailových domén",
+        "${ n } vlastních e-mailových domén"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailová adresa",
+        "${ n } e-mailové adresy",
+        "${ n } e-mailových adres",
+        "${ n } e-mailových adres"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mailová adresa na uživatele",
+        "${ n } e-mailové adresy na uživatele",
+        "${ n } e-mailových adres na uživatele",
+        "${ n } e-mailových adres na uživatele"
+      ],
+      "${ n } filter": [
+        "${ n } filtr",
+        "${ n } filtry",
+        "${ n } filtrů",
+        "${ n } filtrů"
+      ],
+      "${ n } folder": [
+        "${ n } složka",
+        "${ n } složky",
+        "${ n } složek",
+        "${ n } složek"
+      ],
+      "${ n } folder and label": [
+        "${ n } složka a štítek",
+        "${ n } složky a štítky",
+        "${ n } složek a štítků",
+        "${ n } složek a štítků"
+      ],
+      "${ n } label": [
+        "${ n } štítek",
+        "${ n } štítky",
+        "${ n } štítků",
+        "${ n } štítků"
+      ],
+      "${ n } message per day": [
+        "${ n } zpráva denně",
+        "${ n } zprávy denně",
+        "${ n } zpráv denně",
+        "${ n } zpráv denně"
+      ],
+      "${ options }-day file version history": [
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů",
+        "${ options }denní historie verzí souborů"
+      ],
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtů",
+        "bajtů"
+      ],
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtů",
+        "Bajtů"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtů",
+        "Gigabajtů"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtů",
+        "Kilobajtů"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtů",
+        "Megabajtů"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
+        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Podpora ${ n } vlastní e-mailové domény",
+        "Podpora ${ n } vlastních e-mailových domén",
+        "Podpora ${ n } vlastních e-mailových domén",
+        "Podpora ${ n } vlastních e-mailových domén"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajty",
+        "Terabajtů",
+        "Terabajtů"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Ověřit"
@@ -943,12 +1053,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bajt",
-        "bajty",
-        "bajtů",
-        "bajtů"
-      ],
       "GB": [
         "GB"
       ],
@@ -960,38 +1064,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Bajt",
-        "Bajty",
-        "Bajtů",
-        "Bajtů"
-      ],
-      "Gigabyte": [
-        "Gigabajt",
-        "Gigabajty",
-        "Gigabajtů",
-        "Gigabajtů"
-      ],
-      "Kilobyte": [
-        "Kilobajt",
-        "Kilobajty",
-        "Kilobajtů",
-        "Kilobajtů"
-      ],
-      "Megabyte": [
-        "Megabajt",
-        "Megabajty",
-        "Megabajtů",
-        "Megabajtů"
-      ],
-      "Terabyte": [
-        "Terabajt",
-        "Terabajty",
-        "Terabajtů",
-        "Terabajtů"
       ]
     },
     "Font face option": {
@@ -1199,60 +1271,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent psaní ${ BRAND_NAME } Scribe"
-      ],
-      "${ n } custom email domain": [
-        "${ n } vlastní e-mailová doména",
-        "${ n } vlastní e-mailové domény",
-        "${ n } vlastních e-mailových domén",
-        "${ n } vlastních e-mailových domén"
-      ],
-      "${ n } email address": [
-        "${ n } e-mailová adresa",
-        "${ n } e-mailové adresy",
-        "${ n } e-mailových adres",
-        "${ n } e-mailových adres"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-mailová adresa na uživatele",
-        "${ n } e-mailové adresy na uživatele",
-        "${ n } e-mailových adres na uživatele",
-        "${ n } e-mailových adres na uživatele"
-      ],
-      "${ n } filter": [
-        "${ n } filtr",
-        "${ n } filtry",
-        "${ n } filtrů",
-        "${ n } filtrů"
-      ],
-      "${ n } folder": [
-        "${ n } složka",
-        "${ n } složky",
-        "${ n } složek",
-        "${ n } složek"
-      ],
-      "${ n } folder and label": [
-        "${ n } složka a štítek",
-        "${ n } složky a štítky",
-        "${ n } složek a štítků",
-        "${ n } složek a štítků"
-      ],
-      "${ n } label": [
-        "${ n } štítek",
-        "${ n } štítky",
-        "${ n } štítků",
-        "${ n } štítků"
-      ],
-      "${ n } message per day": [
-        "${ n } zpráva denně",
-        "${ n } zprávy denně",
-        "${ n } zpráv denně",
-        "${ n } zpráv denně"
-      ],
-      "${ options }-day file version history": [
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů",
-        "${ options }denní historie verzí souborů"
       ],
       "${ size } attachment size": [
         "${ size } velikost přílohy"
@@ -1520,12 +1538,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Zvyšte úložný prostor na ${ bundleStorage } celkem"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Podpora ${ n } vlastní e-mailové domény",
-        "Podpora ${ n } vlastních e-mailových domén",
-        "Podpora ${ n } vlastních e-mailových domén",
-        "Podpora ${ n } vlastních e-mailových domén"
       ]
     },
     "Placeholder": {
@@ -1599,20 +1611,6 @@
       ],
       "Two-factor authentication": [
         "Dvoufázové ověření"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znak",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaky",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků",
-        "Heslo musí obsahovat alespoň ${ MIN_PASSWORD_LENGTH } znaků"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
-        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
       ]
     }
   }
