@@ -4,6 +4,362 @@
     "language": "ru_RU"
   },
   "contexts": {
+    "": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } псевдоним",
+        "${ aliasCount } псевдонима",
+        "${ aliasCount } псевдонимов",
+        "${ aliasCount } псевдонимов"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } блокировка",
+        "${ blockedCount } блокировки",
+        "${ blockedCount } блокировок",
+        "${ blockedCount } блокировок"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } заблокировано",
+        "${ blockedEmailsCount } заблокированы",
+        "${ blockedEmailsCount } заблокированы",
+        "${ blockedEmailsCount } заблокированы"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } символ",
+        "${ config.options.length } символа",
+        "${ config.options.length } символов",
+        "${ config.options.length } символов"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } слово",
+        "${ config.options.wordCount } слова",
+        "${ config.options.wordCount } слов",
+        "${ config.options.wordCount } слов"
+      ],
+      "${ count } item": [
+        "${ count } элемент",
+        "${ count } элемента",
+        "${ count } элементов",
+        "${ count } элементов"
+      ],
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } раза",
+        "${ count } раз",
+        "${ count } раз"
+      ],
+      "${ count } view": [
+        "${ count } просмотр",
+        "${ count } просмотра",
+        "${ count } просмотров",
+        "${ count } просмотров"
+      ],
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дней"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } файл",
+        "${ filesCount } файла",
+        "${ filesCount } файлов",
+        "${ filesCount } файлов"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } пересылка",
+        "${ forwardCount } пересылки",
+        "${ forwardCount } пересылок",
+        "${ forwardCount } пересылок"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } переслано",
+        "${ forwardedEmailsCount } пересланы",
+        "${ forwardedEmailsCount } пересланы",
+        "${ forwardedEmailsCount } пересланы"
+      ],
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } участник",
+        "${ memberCount } участника",
+        "${ memberCount } участников",
+        "${ memberCount } участников"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минут"
+      ],
+      "${ months } month": [
+        "${ months } месяц",
+        "${ months } месяца",
+        "${ months } месяцев",
+        "${ months } месяцев"
+      ],
+      "${ n } item": [
+        "${ n } элемент",
+        "${ n } элемента",
+        "${ n } элементов",
+        "${ n } элементов"
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } приглашение успешно отправлено",
+        "${ payload.count } приглашения успешно отправлены",
+        "${ payload.count } приглашения успешно отправлены",
+        "${ payload.count } приглашения успешно отправлены"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } ответ",
+        "${ repliedCount } ответа",
+        "${ repliedCount } ответов",
+        "${ repliedCount } ответов"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } отправлено",
+        "${ repliedEmailsCount } отправлены",
+        "${ repliedEmailsCount } отправлены",
+        "${ repliedEmailsCount } отправлены"
+      ],
+      "${ row.breachCount } breach detected": [
+        "Обнаружена ${ row.breachCount } утечка",
+        "Обнаружены ${ row.breachCount } утечки",
+        "Обнаружены ${ row.breachCount } утечек",
+        "Обнаружены ${ row.breachCount } утечек"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } защищенная ссылка",
+        "${ secureLinksCount } защищенные ссылки",
+        "${ secureLinksCount } защищенных ссылок",
+        "${ secureLinksCount } защищенных ссылок"
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } другое имя пользователя использует тот же пароль",
+        "${ total } других имен пользователей используют тот же пароль",
+        "${ total } других имен пользователей используют тот же пароль",
+        "${ total } других имен пользователей используют тот же пароль"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } имя пользователя",
+        "${ usageCount } имени пользователей",
+        "${ usageCount } имен пользователей",
+        "${ usageCount } имен пользователей"
+      ],
+      "${ years } year": [
+        "${ years } год",
+        "${ years } года",
+        "${ years } лет",
+        "${ years } лет"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Вы уверены, что хотите переместить ${ trashedItemsCount } элемент в корзину?",
+        "Вы уверены, что хотите переместить ${ trashedItemsCount } элемента в корзину?",
+        "Вы уверены, что хотите переместить ${ trashedItemsCount } элементов в корзину?",
+        "Вы уверены, что хотите переместить ${ trashedItemsCount } элементов в корзину?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элемент?",
+        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элемента?",
+        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элементов?",
+        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элементов?"
+      ],
+      "byte": [
+        "байт",
+        "байта",
+        "байтов",
+        "байтов"
+      ],
+      "Byte": [
+        "Байт",
+        "Байта",
+        "Байтов",
+        "Байтов"
+      ],
+      "Cannot send invitation at the moment": [
+        "Невозможно отправить приглашение в данный момент",
+        "Невозможно отправить приглашения в данный момент",
+        "Невозможно отправить приглашения в данный момент",
+        "Невозможно отправить приглашения в данный момент"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Удалить ${ deletedItemsCount } элемент?",
+        "Удалить ${ deletedItemsCount } элемента?",
+        "Удалить ${ deletedItemsCount } элементов?",
+        "Удалить ${ deletedItemsCount } элементов?"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Обнаружена ${ errors.length } повреждённая строка в csv",
+        "Обнаружены ${ errors.length } повреждённые строки в csv",
+        "Обнаружено ${ errors.length } повреждённых строк в csv",
+        "Обнаружено ${ errors.length } повреждённых строк в csv"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "В целях безопасности вам необходимо подтвердить доступ к этому общему хранилищу",
+        "В целях безопасности вам необходимо подтвердить доступ к этим общим хранилищам",
+        "В целях безопасности вам необходимо подтвердить доступ к этим общим хранилищам",
+        "В целях безопасности вам необходимо подтвердить доступ к этим общим хранилищам"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недели.",
+        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель.",
+        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель.",
+        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель."
+      ],
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайтов"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Совместное использование элемента ${ itemAccessCount } пользователем",
+        "Совместное использование элемента ${ itemAccessCount } пользователями",
+        "Совместное использование элемента ${ itemAccessCount } пользователями",
+        "Совместное использование элемента ${ itemAccessCount } пользователями"
+      ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователя.",
+        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователей",
+        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователей",
+        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователей"
+      ],
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайта",
+        "Килобайтов",
+        "Килобайтов"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Максимальная длина ${ maxLength } символ",
+        "Максимальная длина ${ maxLength } символа",
+        "Максимальная длина ${ maxLength } символов",
+        "Максимальная длина ${ maxLength } символов"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайтов",
+        "Мегабайтов",
+        "Мегабайтов"
+      ],
+      "Move ${ count } item": [
+        "Переместить ${ count } элемент",
+        "Переместить ${ count } элемента",
+        "Переместить ${ count } элементов",
+        "Переместить ${ count } элементов"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Переместить ${ count } элемент в ${ vaultName }",
+        "Переместить ${ count } элемента в ${ vaultName }",
+        "Переместить ${ count } элементов в ${ vaultName }",
+        "Переместить ${ count } элементов в ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Переместить ${ trashedItemsCount } элемент в Корзину?",
+        "Переместить ${ trashedItemsCount } элемента в Корзину?",
+        "Переместить ${ trashedItemsCount } элементов в Корзину?",
+        "Переместить ${ trashedItemsCount } элементов в Корзину?"
+      ],
+      "Move item to": [
+        "Переместить элемент в",
+        "Переместить элементы в",
+        "Переместить элементы в",
+        "Переместить элементы в"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недели, автоматически удаляются из истории.",
+        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории.",
+        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории.",
+        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории."
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Обратите внимание, что после удаления псевдоним не может быть восстановлен.",
+        "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены.",
+        "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены.",
+        "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены."
+      ],
+      "Reused ${ count } time": [
+        "Повторно использовано ${ count } раз",
+        "Повторно использовано ${ count } раза",
+        "Повторно использовано ${ count } раз",
+        "Повторно использовано ${ count } раз"
+      ],
+      "Sync alias": [
+        "Синхронизировать псевдонимы",
+        "Синхронизировать псевдонимы",
+        "Синхронизировать псевдонимы",
+        "Синхронизировать псевдонимы"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайта",
+        "Терабайтов",
+        "Терабайтов"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Следующий ${ totalIgnored } элемент не может быть импортирован:",
+        "Следующие ${ totalIgnored } элемента не могут быть импортированы:",
+        "Следующие ${ totalIgnored } элементов не могут быть импортированы:",
+        "Следующие ${ totalIgnored } элементов не могут быть импортированы:"
+      ],
+      "Understood, I will never need it": [
+        "Понятно, мне это никогда не понадобится",
+        "Понятно, мне это никогда не понадобится",
+        "Понятно, мне это никогда не понадобится",
+        "Понятно, мне это никогда не понадобится"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Совместное использование хранилища ${ vaultMembersCount } пользователем",
+        "Совместное использование хранилища ${ vaultMembersCount } пользователями",
+        "Совместное использование хранилища ${ vaultMembersCount } пользователями",
+        "Совместное использование хранилища ${ vaultMembersCount } пользователями"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "У хранилищ не может быть больше ${ targetMaxMembers } пользователя",
+        "У хранилищ не может быть больше ${ targetMaxMembers } пользователей",
+        "У хранилищ не может быть больше ${ targetMaxMembers } пользователей",
+        "У хранилищ не может быть больше ${ targetMaxMembers } пользователей"
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Мы обнаружили, что у вас есть псевдоним ${ aliasCount }, который присутствует в SimpleLogin, но отсутствует в ${ PASS_APP_NAME }. Не хотите ли вы его импортировать?",
+        "Мы обнаружили, что у вас есть ${ aliasCount } псевдонима, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
+        "Мы обнаружили, что у вас есть ${ aliasCount } псевдонимов, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
+        "Мы обнаружили, что у вас есть ${ aliasCount } псевдонимов, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Вы можете перетащить выбранный элемент в другое хранилище",
+        "Вы можете перетащить выбранные элементы в другое хранилище",
+        "Вы можете перетащить выбранные элементы в другое хранилище",
+        "Вы можете перетащить выбранные элементы в другое хранилище"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "У вас есть ${ aliasCount } псевдоним, который присутствует в SimpleLogin, но отсутствует в ${ PASS_APP_NAME }. Не хотите ли вы синхронизировать его?",
+        "У вас есть ${ aliasCount } псевдонима, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Хотите ли вы синхронизировать их?",
+        "У вас есть ${ aliasCount } псевдонимов, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Хотите ли вы синхронизировать их?",
+        "У вас есть ${ aliasCount } псевдонимов, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Хотите ли вы синхронизировать их?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "У вас остался ${ daysRemaining } день, чтобы опробовать эти и другие платные функции.",
+        "У вас осталось ${ daysRemaining } дня, чтобы опробовать эти и другие платные функции.",
+        "У вас осталось ${ daysRemaining } дней, чтобы опробовать эти и другие платные функции.",
+        "У вас осталось ${ daysRemaining } дней, чтобы опробовать эти и другие платные функции."
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Вы собираетесь навсегда удалить ${ aliasCount } псевдоним.",
+        "Вы собираетесь навсегда удалить ${ aliasCount } псевдонима.",
+        "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов.",
+        "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов."
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Обнаружены ${ name } и ${ remainingCount } других потенциальных утечек. Включите ${ DARK_WEB_MONITORING_NAME }, чтобы просмотреть информацию и принять меры. ${ link }"
@@ -598,12 +954,6 @@
       "Submitting report...": [
         "Отправка отчёта..."
       ],
-      "Sync alias": [
-        "Синхронизировать псевдонимы",
-        "Синхронизировать псевдонимы",
-        "Синхронизировать псевдонимы",
-        "Синхронизировать псевдонимы"
-      ],
       "Sync aliases": [
         "Синхронизировать псевдонимы"
       ],
@@ -630,12 +980,6 @@
       ],
       "Unblock contact": [
         "Разблокировать контакт"
-      ],
-      "Understood, I will never need it": [
-        "Понятно, мне это никогда не понадобится",
-        "Понятно, мне это никогда не понадобится",
-        "Понятно, мне это никогда не понадобится",
-        "Понятно, мне это никогда не понадобится"
       ],
       "Unlock": [
         "Разблокировать"
@@ -710,12 +1054,6 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } доступен в платном тарифе. Улучшите тариф, чтобы получить немедленный доступ."
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } другое имя пользователя использует тот же пароль",
-        "${ total } других имен пользователей используют тот же пароль",
-        "${ total } других имен пользователей используют тот же пароль",
-        "${ total } других имен пользователей используют тот же пароль"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "Двухфакторная идентификация добавляет еще один уровень безопасности к вашим именам пользователей. ${ PASS_APP_NAME } делает двухфакторную идентификацию проще, сохраняя и автоматически заполняя ваши коды двухфакторной идентификации."
@@ -844,12 +1182,6 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Аутентификация не удалась. Подтвердите ваш второй пароль для продолжения экспорта"
       ],
-      "Cannot send invitation at the moment": [
-        "Невозможно отправить приглашение в данный момент",
-        "Невозможно отправить приглашения в данный момент",
-        "Невозможно отправить приглашения в данный момент",
-        "Невозможно отправить приглашения в данный момент"
-      ],
       "Cannot send invitations at the moment": [
         "Не могу отправлять приглашения в данный момент"
       ],
@@ -897,12 +1229,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Сбой при удалении хранилища \"${ payload.content.name }\""
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Обнаружена ${ errors.length } повреждённая строка в csv",
-        "Обнаружены ${ errors.length } повреждённые строки в csv",
-        "Обнаружено ${ errors.length } повреждённых строк в csv",
-        "Обнаружено ${ errors.length } повреждённых строк в csv"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Домен не может быть проверен. Пожалуйста, убедитесь, что вы добавили правильные записи DNS"
@@ -1240,12 +1566,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "байт",
-        "байта",
-        "байтов",
-        "байтов"
-      ],
       "GB": [
         "ГБ"
       ],
@@ -1259,38 +1579,6 @@
         "ТБ"
       ]
     },
-    "file size format, long": {
-      "Byte": [
-        "Байт",
-        "Байта",
-        "Байтов",
-        "Байтов"
-      ],
-      "Gigabyte": [
-        "Гигабайт",
-        "Гигабайт",
-        "Гигабайт",
-        "Гигабайтов"
-      ],
-      "Kilobyte": [
-        "Килобайт",
-        "Килобайта",
-        "Килобайтов",
-        "Килобайтов"
-      ],
-      "Megabyte": [
-        "Мегабайт",
-        "Мегабайтов",
-        "Мегабайтов",
-        "Мегабайтов"
-      ],
-      "Terabyte": [
-        "Терабайт",
-        "Терабайта",
-        "Терабайтов",
-        "Терабайтов"
-      ]
-    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Элемент \"${ payload.itemName }\" был отклонен"
@@ -1298,44 +1586,8 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "Обновление \"${ payload.itemName }\" было отклонено"
       ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } заблокировано",
-        "${ blockedEmailsCount } заблокированы",
-        "${ blockedEmailsCount } заблокированы",
-        "${ blockedEmailsCount } заблокированы"
-      ],
-      "${ count } time": [
-        "${ count } раз",
-        "${ count } раза",
-        "${ count } раз",
-        "${ count } раз"
-      ],
-      "${ count } view": [
-        "${ count } просмотр",
-        "${ count } просмотра",
-        "${ count } просмотров",
-        "${ count } просмотров"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } переслано",
-        "${ forwardedEmailsCount } пересланы",
-        "${ forwardedEmailsCount } пересланы",
-        "${ forwardedEmailsCount } пересланы"
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } хочет поделиться с вами элементом."
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } участник",
-        "${ memberCount } участника",
-        "${ memberCount } участников",
-        "${ memberCount } участников"
-      ],
-      "${ n } item": [
-        "${ n } элемент",
-        "${ n } элемента",
-        "${ n } элементов",
-        "${ n } элементов"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } всегда будет доступно"
@@ -1355,29 +1607,11 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } потребует ваш пароль ${ BRAND_NAME } чтобы получить доступ к офлайновым данным"
       ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } приглашение успешно отправлено",
-        "${ payload.count } приглашения успешно отправлены",
-        "${ payload.count } приглашения успешно отправлены",
-        "${ payload.count } приглашения успешно отправлены"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } успешно отключен"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } успешно включен"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } отправлено",
-        "${ repliedEmailsCount } отправлены",
-        "${ repliedEmailsCount } отправлены",
-        "${ repliedEmailsCount } отправлены"
-      ],
-      "${ row.breachCount } breach detected": [
-        "Обнаружена ${ row.breachCount } утечка",
-        "Обнаружены ${ row.breachCount } утечки",
-        "Обнаружены ${ row.breachCount } утечек",
-        "Обнаружены ${ row.breachCount } утечек"
       ],
       "(Empty)": [
         "(Пусто)"
@@ -1685,23 +1919,11 @@
       "For security reasons, this action requires identity verification.": [
         "По соображениям безопасности это действие требует проверки личных данных"
       ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "В целях безопасности вам необходимо подтвердить доступ к этому общему хранилищу",
-        "В целях безопасности вам необходимо подтвердить доступ к этим общим хранилищам",
-        "В целях безопасности вам необходимо подтвердить доступ к этим общим хранилищам",
-        "В целях безопасности вам необходимо подтвердить доступ к этим общим хранилищам"
-      ],
       "For security reasons, your access needs to be confirmed": [
         "По причинам безопасности, ваш доступ должен быть подтверждён"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Адрес пересылки скопирован в буфер обмена. Отправьте письмо на этот адрес, и ${ Email } получит его."
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недели.",
-        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель.",
-        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель.",
-        "Сгенерированные пароли будут храниться в течение ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Получите максимальную отдачу от Pass, создав хранилище для каждой команды или проекта."
@@ -1781,12 +2003,6 @@
       "Item restored": [
         "Элемент восстановлен"
       ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Совместное использование элемента ${ itemAccessCount } пользователем",
-        "Совместное использование элемента ${ itemAccessCount } пользователями",
-        "Совместное использование элемента ${ itemAccessCount } пользователями",
-        "Совместное использование элемента ${ itemAccessCount } пользователями"
-      ],
       "Item successfully excluded from monitoring": [
         "Элемент успешно удален из мониторинга"
       ],
@@ -1846,12 +2062,6 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Более чем просто менеджер паролей, ${ PASS_APP_NAME } защищает ваш пароль и ваш личный адрес электронной почты с помощью псевдонимов электронной почты. Работая на технологии, лежащей в основе ${ MAIL_APP_NAME }, ваши данные защищены конечным шифрованием и доступны только вам."
-      ],
-      "Move ${ count } item": [
-        "Переместить ${ count } элемент",
-        "Переместить ${ count } элемента",
-        "Переместить ${ count } элементов",
-        "Переместить ${ count } элементов"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
@@ -1918,12 +2128,6 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Блокировка паролем успешно выполнена. Используйте его для разблокировки ${ PASS_APP_NAME }"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недели, автоматически удаляются из истории.",
-        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории.",
-        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории.",
-        "Пароли, старше ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } недель, автоматически удаляются из истории."
       ],
       "Paused": [
         "Приостановлено"
@@ -2213,12 +2417,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Дополнительный пароль потребуется для использования ${ PASS_APP_NAME }. Он действует как дополнительный пароль поверх вашего пароля ${ BRAND_NAME }."
       ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Следующий ${ totalIgnored } элемент не может быть импортирован:",
-        "Следующие ${ totalIgnored } элемента не могут быть импортированы:",
-        "Следующие ${ totalIgnored } элементов не могут быть импортированы:",
-        "Следующие ${ totalIgnored } элементов не могут быть импортированы:"
-      ],
       "The secure link has been removed": [
         "Защищенная ссылка удалена"
       ],
@@ -2342,12 +2540,6 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Хранилище \"${ share.content.name }\" было удалено"
       ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Совместное использование хранилища ${ vaultMembersCount } пользователем",
-        "Совместное использование хранилища ${ vaultMembersCount } пользователями",
-        "Совместное использование хранилища ${ vaultMembersCount } пользователями",
-        "Совместное использование хранилища ${ vaultMembersCount } пользователями"
-      ],
       "Verification code sent.": [
         "Код подтверждения отправлен"
       ],
@@ -2356,12 +2548,6 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "У нас возникли проблемы при синхронизации данных со средствами локального хранения. Пожалуйста, убедитесь, что у вас достаточно места на диске, чтобы ${ PASS_SHORT_APP_NAME } работал без сбоев."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Мы обнаружили, что у вас есть псевдоним ${ aliasCount }, который присутствует в SimpleLogin, но отсутствует в ${ PASS_APP_NAME }. Не хотите ли вы его импортировать?",
-        "Мы обнаружили, что у вас есть ${ aliasCount } псевдонима, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
-        "Мы обнаружили, что у вас есть ${ aliasCount } псевдонимов, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?",
-        "Мы обнаружили, что у вас есть ${ aliasCount } псевдонимов, которые присутствует в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Не хотите ли вы их импортировать?"
       ],
       "Week": [
         "Неделя"
@@ -2386,18 +2572,6 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Вы не можете изменить почтовые ящики для этого псевдонима."
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "У вас есть ${ aliasCount } псевдоним, который присутствует в SimpleLogin, но отсутствует в ${ PASS_APP_NAME }. Не хотите ли вы синхронизировать его?",
-        "У вас есть ${ aliasCount } псевдонима, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Хотите ли вы синхронизировать их?",
-        "У вас есть ${ aliasCount } псевдонимов, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Хотите ли вы синхронизировать их?",
-        "У вас есть ${ aliasCount } псевдонимов, которые присутствуют в SimpleLogin, но отсутствуют в ${ PASS_APP_NAME }. Хотите ли вы синхронизировать их?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "У вас остался ${ daysRemaining } день, чтобы опробовать эти и другие платные функции.",
-        "У вас осталось ${ daysRemaining } дня, чтобы опробовать эти и другие платные функции.",
-        "У вас осталось ${ daysRemaining } дней, чтобы опробовать эти и другие платные функции.",
-        "У вас осталось ${ daysRemaining } дней, чтобы опробовать эти и другие платные функции."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Вы превысили количество хранилищ, включенных в вашу подписку. Элементы можно перемещать только в первые два хранилища. Чтобы переместить экспонаты между всеми хранилищами, обновите подписку."
@@ -2467,95 +2641,11 @@
       ]
     },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } псевдоним",
-        "${ aliasCount } псевдонима",
-        "${ aliasCount } псевдонимов",
-        "${ aliasCount } псевдонимов"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } блокировка",
-        "${ blockedCount } блокировки",
-        "${ blockedCount } блокировок",
-        "${ blockedCount } блокировок"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } символ",
-        "${ config.options.length } символа",
-        "${ config.options.length } символов",
-        "${ config.options.length } символов"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } слово",
-        "${ config.options.wordCount } слова",
-        "${ config.options.wordCount } слов",
-        "${ config.options.wordCount } слов"
-      ],
-      "${ count } item": [
-        "${ count } элемент",
-        "${ count } элемента",
-        "${ count } элементов",
-        "${ count } элементов"
-      ],
-      "${ days } day": [
-        "${ days } день",
-        "${ days } дня",
-        "${ days } дней",
-        "${ days } дней"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } пересылка",
-        "${ forwardCount } пересылки",
-        "${ forwardCount } пересылок",
-        "${ forwardCount } пересылок"
-      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, за последние 14 дней."
       ],
-      "${ hours } hour": [
-        "${ hours } час",
-        "${ hours } часа",
-        "${ hours } часов",
-        "${ hours } часов"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } минута",
-        "${ minutes } минуты",
-        "${ minutes } минут",
-        "${ minutes } минут"
-      ],
-      "${ months } month": [
-        "${ months } месяц",
-        "${ months } месяца",
-        "${ months } месяцев",
-        "${ months } месяцев"
-      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версия ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } ответ",
-        "${ repliedCount } ответа",
-        "${ repliedCount } ответов",
-        "${ repliedCount } ответов"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } защищенная ссылка",
-        "${ secureLinksCount } защищенные ссылки",
-        "${ secureLinksCount } защищенных ссылок",
-        "${ secureLinksCount } защищенных ссылок"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } имя пользователя",
-        "${ usageCount } имени пользователей",
-        "${ usageCount } имен пользователей",
-        "${ usageCount } имен пользователей"
-      ],
-      "${ years } year": [
-        "${ years } год",
-        "${ years } года",
-        "${ years } лет",
-        "${ years } лет"
       ],
       "1 hour": [
         "1 час"
@@ -3130,9 +3220,6 @@
       "Network": [
         "Сеть"
       ],
-      "New": [
-        "Новое"
-      ],
       "New email": [
         "Новое письмо"
       ],
@@ -3606,18 +3693,6 @@
       ]
     },
     "Message": {
-      "${ count } item": [
-        "${ count } элемент",
-        "${ count } элемента",
-        "${ count } элементов",
-        "${ count } элементов"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Вы можете перетащить выбранный элемент в другое хранилище",
-        "Вы можете перетащить выбранные элементы в другое хранилище",
-        "Вы можете перетащить выбранные элементы в другое хранилище",
-        "Вы можете перетащить выбранные элементы в другое хранилище"
-      ],
       "You selected ${ semiboldText } in this vault.": [
         "Вы выбрали ${ semiboldText } в этом хранилище."
       ]
@@ -3676,12 +3751,6 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "\"${ filename }\" слишком велик для загрузки. Максимально допустимый размер составляет (${ maxFileSizeInMB })"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } файл",
-        "${ filesCount } файла",
-        "${ filesCount } файлов",
-        "${ filesCount } файлов"
       ],
       "Attachments": [
         "Вложения"
@@ -4001,12 +4070,6 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Домен успешно проверен. Ваш домен может начать получать электронные письма и создавать псевдонимы"
       ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователя.",
-        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователей",
-        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователей",
-        "Элементы не могут содержать больше, чем ${ share.targetMaxMembers } пользователей"
-      ],
       "Mailbox change successfully cancelled": [
         "Изменение почтового ящика успешно отменено"
       ],
@@ -4024,12 +4087,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Генерация случайных префиксов успешно включена"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "У хранилищ не может быть больше ${ targetMaxMembers } пользователя",
-        "У хранилищ не может быть больше ${ targetMaxMembers } пользователей",
-        "У хранилищ не может быть больше ${ targetMaxMembers } пользователей",
-        "У хранилищ не может быть больше ${ targetMaxMembers } пользователей"
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Письмо с подтверждением отправлено. Проверьте свой почтовый ящик, чтобы подтвердить его подлинность."
@@ -4148,12 +4205,6 @@
       ],
       "Default Display Name": [
         "Отображаемое имя по умолчанию"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Удалить ${ deletedItemsCount } элемент?",
-        "Удалить ${ deletedItemsCount } элемента?",
-        "Удалить ${ deletedItemsCount } элементов?",
-        "Удалить ${ deletedItemsCount } элементов?"
       ],
       "Delete domain": [
         "Удалить домен"
@@ -4284,18 +4335,6 @@
       "Modified": [
         "Изменено"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Переместить ${ count } элемент в ${ vaultName }",
-        "Переместить ${ count } элемента в ${ vaultName }",
-        "Переместить ${ count } элементов в ${ vaultName }",
-        "Переместить ${ count } элементов в ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Переместить ${ trashedItemsCount } элемент в Корзину?",
-        "Переместить ${ trashedItemsCount } элемента в Корзину?",
-        "Переместить ${ trashedItemsCount } элементов в Корзину?",
-        "Переместить ${ trashedItemsCount } элементов в Корзину?"
-      ],
       "Move all items to \"${ vaultName }\"?": [
         "Переместить все элементы в \"${ vaultName }\"?"
       ],
@@ -4359,12 +4398,6 @@
       "Pinned (${ items.length })": [
         "Закреплено (${ items.length })"
       ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Обратите внимание, что после удаления псевдоним не может быть восстановлен.",
-        "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены.",
-        "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены.",
-        "Обратите внимание, что после удаления псевдонимы не могут быть восстановлены."
-      ],
       "Previous": [
         "Назад"
       ],
@@ -4397,12 +4430,6 @@
       ],
       "Resume monitoring?": [
         "Возобновить мониторинг?"
-      ],
-      "Reused ${ count } time": [
-        "Повторно использовано ${ count } раз",
-        "Повторно использовано ${ count } раза",
-        "Повторно использовано ${ count } раз",
-        "Повторно использовано ${ count } раз"
       ],
       "Reused passwords": [
         "Повторно используемые пароли"
@@ -4520,12 +4547,6 @@
       ],
       "Your welcome gift": [
         "Ваш приветственный подарок"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Вы собираетесь навсегда удалить ${ aliasCount } псевдоним.",
-        "Вы собираетесь навсегда удалить ${ aliasCount } псевдонима.",
-        "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов.",
-        "Вы собираетесь навсегда удалить ${ aliasCount } псевдонимов."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4567,14 +4588,6 @@
         "URL недействителен"
       ]
     },
-    "Vault Select": {
-      "Move item to": [
-        "Переместить элемент в",
-        "Переместить элементы в",
-        "Переместить элементы в",
-        "Переместить элементы в"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Необходим пароль ${ BRAND_NAME }"
@@ -4599,18 +4612,6 @@
       ],
       "An error occurred while importing your data.": [
         "При импорте данных произошла ошибка."
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Вы уверены, что хотите переместить ${ trashedItemsCount } элемент в корзину?",
-        "Вы уверены, что хотите переместить ${ trashedItemsCount } элемента в корзину?",
-        "Вы уверены, что хотите переместить ${ trashedItemsCount } элементов в корзину?",
-        "Вы уверены, что хотите переместить ${ trashedItemsCount } элементов в корзину?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элемент?",
-        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элемента?",
-        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элементов?",
-        "Вы уверены, что хотите навсегда удалить ${ deletedItemsCount } элементов?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Вы уверены, что хотите безвозвратно удалить этот элемент?"
@@ -4692,12 +4693,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Приглашение адресов электронной почты из вне организации запрещено."
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Максимальная длина ${ maxLength } символ",
-        "Максимальная длина ${ maxLength } символа",
-        "Максимальная длина ${ maxLength } символов",
-        "Максимальная длина ${ maxLength } символов"
       ],
       "Missing alias prefix": [
         "Отсутствует префикс псевдонима"

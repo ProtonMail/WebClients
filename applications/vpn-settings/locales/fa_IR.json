@@ -4,6 +4,376 @@
     "language": "fa_IR"
   },
   "contexts": {
+    "": {
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } تقویم جدید",
+        "${ calendarsToBeCreatedCount } تقویم جدید"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } تقویم ادغام شده",
+        "${ calendarsToBeMergedCount } تقویم ادغام شده"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } روز",
+        "${ ceilDays } روز"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } ساعت",
+        "${ ceilHours } ساعت"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } دقیقه",
+        "${ ceilMinutes } دقیقه"
+      ],
+      "${ cycle } month": [
+        "${ cycle } ماه",
+        "${ cycle } ماه"
+      ],
+      "${ days } day": [
+        "${ days } روز",
+        "${ days } روز"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ساعت",
+        "${ gracePeriodHoursRemaining } ساعت"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } کاربر",
+        "${ group.UserCount } کاربر"
+      ],
+      "${ hours } hour": [
+        "${ hours } ساعت",
+        "${ hours } ساعت"
+      ],
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } اتصال VPN",
+        "${ MaxVPN } اتصال VPN"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } عضو",
+        "${ memberCount } عضو"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } دقیقه",
+        "${ minutes } دقیقه"
+      ],
+      "${ n } address": [
+        "${ n } نشانی",
+        "${ n } نشانی"
+      ],
+      "${ n } calendar": [
+        "${ n } تقویم",
+        "${ n } تقویم"
+      ],
+      "${ n } custom email domain": [
+        "${ n } دامنه ایمیل سفارشی",
+        "${ n } دامنه ایمیل سفارشی"
+      ],
+      "${ n } day": [
+        "${ n } روز",
+        "${ n } روز"
+      ],
+      "${ n } device": [
+        "${ n } دستگاه",
+        "${ n } دستگاه"
+      ],
+      "${ n } email address": [
+        "${ n } آدرس ایمیل",
+        "${ n } آدرس ایمیل/نام مستعار"
+      ],
+      "${ n } email address per user": [
+        "${ n } آدرس ایمیل برای هر کاربر",
+        "${ n } آدرس ایمیل برای هر کاربر"
+      ],
+      "${ n } filter": [
+        "${ n } فیلتر",
+        "${ n } فیلتر"
+      ],
+      "${ n } folder": [
+        "${ n } پوشه",
+        "${ n } پوشه"
+      ],
+      "${ n } folder and label": [
+        "${ n } پوشه و برچسب",
+        "${ n } پوشه و برچسب"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } اتصال VPN رایگان برای هر کاربر",
+        "${ n } اتصال VPN رایگان برای هر کاربر"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } اتصال VPN پرسرعت",
+        "${ n } اتصال VPN پرسرعت"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } اتصال VPN پرسرعت برای هر کاربر",
+        "${ n } اتصال VPN پرسرعت برای هر کاربر"
+      ],
+      "${ n } message per day": [
+        "${ n } پیام در روز",
+        "${ n } پیام در روز"
+      ],
+      "${ n } month": [
+        "${ n } ماه",
+        "${ n } ماه"
+      ],
+      "${ n } server": [
+        "${ n } سرور",
+        "${ n }+ سرور"
+      ],
+      "${ n } VPN connection": [
+        "${ n } اتصال VPN",
+        "${ n } اتصال VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } اتصال VPN برای هر کاربر",
+        "${ n } اتصال VPN برای هر کاربر"
+      ],
+      "${ n } year": [
+        "${ n } سال",
+        "${ n } سال"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } روز",
+        "${ nbDay } روز"
+      ],
+      "${ number } city": [
+        "${ number } شهر",
+        "${ number } شهر"
+      ],
+      "${ number } server": [
+        "${ number } سرور",
+        "${ number } سرور"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } کشور",
+        "${ numberOfCountries } کشور"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } در ${ numberOfCountries } کشور",
+        "${ numberOfServers } در ${ numberOfCountries } کشور"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } دامنه ایمیل سفارشی",
+        "${ planNumberOfDomains } دامنه ایمیل سفارشی"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } آدرس ایمیل",
+        "${ planNumberOfEmails } آدرس ایمیل"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } آدرس ایمیل برای هر کاربر",
+        "${ planNumberOfEmails } آدرس ایمیل برای هر کاربر"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } کاربر",
+        "${ planNumberOfUsers } کاربر"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } پوشه یافت شد",
+        "${ providerFoldersNumLocalized } پوشه یافت شد"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "برچسب ${ providerFoldersNumLocalized } در جیمیل یافت شد",
+        "برچسب ${ providerFoldersNumLocalized } در جیمیل یافت شد"
+      ],
+      "${ seconds } second": [
+        "${ seconds } ثانیه",
+        "${ seconds } ثانیه"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } از ${ providerCalendars.length } تقویم",
+        "${ selectedCalendarsTotal } از ${ providerCalendars.length } تقویم"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } پوشه انتخاب شد",
+        "${ selectedFoldersCount } پوشه انتخاب شد"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } برچسب انتخاب شد",
+        "${ selectedFoldersCount } برچسب انتخاب شد"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } پوشه انتخاب شد",
+        "${ selectedFoldersCountLocalized } پوشه انتخاب شد"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } برچسب انتخاب شد",
+        "${ selectedFoldersCountLocalized } برچسب انتخاب شد"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } روز",
+        "${ timeRemaining.inDays } روز"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } ساعت",
+        "${ timeRemaining.inHours } ساعت"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } مخاطب",
+        "${ totalContacts } مخاطب"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } از ${ totalEvents } رویداد واردسازی نخواهد شد. برای جزئیات بیشتر باز کنید.",
+        "${ totalEventsDiscarded } از ${ totalEvents } رویداد واردسازی نخواهد شد. برای جزئیات بیشتر باز کنید."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } مخاطب رمزگذاری و به فهرست مخاطبین شما افزوده شد",
+        "${ totalImported }/${ totalToImport } مخاطب رمزگذاری و به فهرست مخاطبین شما افزوده شد"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } رویداد رمزگذاری و به تقویم شما افزوده شد",
+        "${ totalImported }/${ totalToImport } رویداد رمزگذاری و به تقویم شما افزوده شد"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } آدرس",
+        "${ UsedAddresses } آدرس"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل",
+        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } تقویم",
+        "${ UsedCalendars } تقویم"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } از ${ MaxDomains } دامنه سفارشی",
+        "${ UsedDomains } از ${ MaxDomains } دامنه سفارشی"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } از ${ MaxMembers } کاربر",
+        "${ UsedMembers } از ${ MaxMembers } کاربر"
+      ],
+      "${ users } user": [
+        "${ users } کاربر",
+        "${ users } کاربر"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } عضو)",
+        "(${ memberCount } عضو)"
+      ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } دیگر",
+        "+ ${ invisibleCount } دیگر"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد تا دستگاه‌های بیشتری را به VPN متصل کنید)",
+        "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد دستگاه‌های بیشتری را به VPN متصل کنید)"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "همه (${ totalFoldersCount } پوشه)",
+        "همه (${ totalFoldersCount } پوشه)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "همه (${ totalFoldersCount } برچسب)",
+        "همه (${ totalFoldersCount } برچسب)"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "هنگام رمزگذاری و افزودن رویداد شما خطایی رخ داد. ${ totalImported } از ${ totalToImport } رویداد با موفقیت واردسازی شد.",
+        "هنگام رمزگذاری و افزودن رویدادهای شما خطایی رخ داد. ${ totalImported } از ${ totalToImport } رویدادها با موفقیت واردسازی شدند."
+      ],
+      "byte": [
+        "بایت",
+        "بایت"
+      ],
+      "Byte": [
+        "بایت",
+        "بایت"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "اتصال حداکثر تا ${ plusVpnConnections } دستگاه",
+        "اتصال حداکثر تا ${ plusVpnConnections } دستگاه"
+      ],
+      "day": [
+        "روز",
+        "روز"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "حداقل ${ calendarsToFixCount } تقویم را انتخاب نکنید",
+        "حداقل ${ calendarsToFixCount } تقویم را انتخاب نکنید"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "انتخاب نکنید حداقل ${ calendarsToFixCount } تقویم را یا",
+        "انتخاب نکنید حداقل ${ calendarsToFixCount } تقویم ها را و یا"
+      ],
+      "domain used": [
+        "دامنه استفاده شد",
+        "دامنه استفاده شد"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } پیشنهاد یافت شد، از صفحه کلید برای پیمایش استفاده کنید.",
+        "${ itemsCount } پیشنهاد یافت شد، از صفحه کلید برای پیمایش استفاده کنید."
+      ],
+      "Gigabyte": [
+        "گیگابایت",
+        "گیگابایت"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "VPN پرسرعت بر روی ${ maxVpn } دستگاه",
+        "VPN پرسرعت بر روی ${ maxVpn } دستگاه"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "VPN پرسرعت بر روی ${ n } دستگاه",
+        "VPN پرسرعت بر روی ${ n } دستگاه"
+      ],
+      "Import as simple event?": [
+        "واردسازی به عنوان رویداد ساده؟",
+        "واردسازی به عنوان رویدادهای ساده؟"
+      ],
+      "Kilobyte": [
+        "کیلوبایت",
+        "کیلوبایت"
+      ],
+      "Megabyte": [
+        "مگابایت",
+        "مگابایت"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "گذرواژه باید حداقل ${ MIN_PASSWORD_LENGTH } نویسه داشته باشد",
+        "گذرواژه باید حداقل ${ MIN_PASSWORD_LENGTH } نویسه داشته باشد"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "لطفا تداخل مشخص شده را برطرف کنید تا ادامه دهید.",
+        "لطفا تداخلات مشخص شده را برطرف کنید تا ادامه دهید."
+      ],
+      "Step ${ step }": [
+        "قدم ${ step }",
+        "مرحله ${ step }"
+      ],
+      "Support for ${ n } custom email domain": [
+        "پشتیبانی از ${ n } دامنه ایمیل سفارشی",
+        "پشتیبانی از ${ n } دامنه ایمیل سفارشی"
+      ],
+      "Terabyte": [
+        "ترابایت",
+        "ترابایت"
+      ],
+      "The following address is invalid.": [
+        "نشانی زیر نامعتبر است.",
+        "نشانی‌های زیر نامعتبر هستند."
+      ],
+      "The following address is unavailable.": [
+        "نشانی زیر در دسترس نیست.",
+        "نشانی‌های زیر در دسترس نیستند."
+      ],
+      "This file contains an event invitation:": [
+        "این فایل حاوی یک دعوتنامه به رویداد است:",
+        "این فایل حاوی دعوتنامه هایی به رویداد است:"
+      ],
+      "This file contains an invitation response:": [
+        "این فایل حاوی یک پاسخ به دعوتنامه است:",
+        "این فایل حاوی پاسخ هایی به دعوتنامه است:"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)",
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "فایل ${ formattedFilename } شما شامل بیش از ${ MAX_IMPORT_EVENTS } رویداد می‌باشد.",
+        "فایل ${ formattedFilename } شما شامل بیش از ${ MAX_IMPORT_EVENTS } رویداد می‌باشد."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "فروشگاه ${ BRAND_NAME }"
@@ -597,12 +967,6 @@
         "کوچک‌نمایی"
       ]
     },
-    "Addon": {
-      "${ users } user": [
-        "${ users } کاربر",
-        "${ users } کاربران"
-      ]
-    },
     "Address action": {
       "Disable": [
         "غیرفعال"
@@ -684,10 +1048,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } ماه",
-        "${ n } ماه"
-      ],
       "/ month": [
         "/ ماه"
       ],
@@ -906,12 +1266,6 @@
       ],
       "Save ${ upsellSavings }": [
         "${ upsellSavings } پس‌انداز کنید"
-      ]
-    },
-    "Checkout row": {
-      "${ users } user": [
-        "${ users } کاربر",
-        "${ users } کاربر"
       ]
     },
     "Checkout summary": {
@@ -2101,14 +2455,6 @@
       "Code wrong or not valid anymore": [
         "کد غلط یا دیگر غیر معتبر است"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "حداقل ${ calendarsToFixCount } تقویم را انتخاب نکنید",
-        "حداقل ${ calendarsToFixCount } تقویم را انتخاب نکنید"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "انتخاب نکنید حداقل ${ calendarsToFixCount } تقویم را یا",
-        "انتخاب نکنید حداقل ${ calendarsToFixCount } تقویم ها را و یا"
-      ],
       "Domain not available, try again later": [
         "دامنه در دسترس نیست، بعداً دوباره امتحان کنید"
       ],
@@ -2216,10 +2562,6 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "لطفا قبل از اضافه کردن کاربران به سازمان خود، پشتیبانی چند کاربره را فعال کنید."
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "لطفا تداخل مشخص شده را برطرف کنید تا ادامه دهید.",
-        "لطفا تداخلات مشخص شده را برطرف کنید تا ادامه دهید."
       ],
       "Please generate keys before you try to change your password": [
         "لطفا قبل از تلاش برای تغییر رمز خود کلیدها را ایجاد کنید"
@@ -2366,10 +2708,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "یک خطای غیر منتظره رخ داد. درون‌برد میبایست از نو راه‌اندازی شود."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "فایل ${ formattedFilename } شما شامل بیش از ${ MAX_IMPORT_EVENTS } رویداد می‌باشد.",
-        "فایل ${ formattedFilename } شما شامل بیش از ${ MAX_IMPORT_EVENTS } رویداد می‌باشد."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "فایل ${ formattedFilename } شما یک روش نامعتبر دارد و نمی‌تواند درون‌برد شود."
@@ -2579,19 +2917,11 @@
       ]
     },
     "Feature": {
-      "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } اتصال VPN",
-        "${ MaxVPN } اتصال VPN"
-      ],
       "Access to all countries": [
         "دسترسی به همه کشورها"
       ],
       "Add": [
         "افزودن"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "اتصال حداکثر تا ${ plusVpnConnections } دستگاه",
-        "اتصال حداکثر تا ${ plusVpnConnections } دستگاه"
       ],
       "Continue": [
         "ادامه"
@@ -2646,10 +2976,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "بایت",
-        "بایت"
-      ],
       "GB": [
         "گیگابایت"
       ],
@@ -2658,28 +2984,6 @@
       ],
       "MB": [
         "مگابایت"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "بایت",
-        "بایت"
-      ],
-      "Gigabyte": [
-        "گیگابایت",
-        "گیگابایت"
-      ],
-      "Kilobyte": [
-        "کیلوبایت",
-        "کیلوبایت"
-      ],
-      "Megabyte": [
-        "مگابایت",
-        "مگابایت"
-      ],
-      "Terabyte": [
-        "ترابایت",
-        "ترابایت"
       ]
     },
     "Filter notification": {
@@ -2728,12 +3032,6 @@
       ],
       "Services": [
         "خدمات"
-      ]
-    },
-    "Group member count": {
-      "${ memberCount } member": [
-        "${ memberCount } عضو",
-        "${ memberCount } عضو"
       ]
     },
     "Header": {
@@ -2835,10 +3133,6 @@
       ]
     },
     "Hint": {
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "${ itemsCount } پیشنهاد یافت شد، از صفحه کلید برای پیمایش استفاده کنید.",
-        "${ itemsCount } پیشنهاد یافت شد، از صفحه کلید برای پیمایش استفاده کنید."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "پس از درج، از کلیدهای بالا و پایین برای دسترسی و مرور پیشنهادها استفاده کنید. برای تایید انتخاب خود Enter را فشار داده یا برای بستن جعبه پیشنهادات Escape را فشار دهید."
       ]
@@ -2902,14 +3196,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } رویداد رمزگذاری و به تقویم شما افزوده شد",
-        "${ totalImported }/${ totalToImport } رویداد رمزگذاری و به تقویم شما افزوده شد"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "هنگام رمزگذاری و افزودن رویداد شما خطایی رخ داد. ${ totalImported } از ${ totalToImport } رویداد با موفقیت واردسازی شد.",
-        "هنگام رمزگذاری و افزودن رویدادهای شما خطایی رخ داد. ${ totalImported } از ${ totalToImport } رویدادها با موفقیت واردسازی شدند."
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "در حال رمزگذاری و افزودن مخاطبین: ${ totalImported }/${ totalToImport }"
       ],
@@ -2929,33 +3215,13 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "دعوتنامه های واردسازی شده ${ CALENDAR_APP_NAME } بعنوان رویدادهای ساده بدون جزئیات سازمان‌دهنده و شرکت‌کننده نمایش داده خواهند شد. برای دریافت بروزرسانی رویداد و دیدن شرکت کنندگان، از سازمان‌دهنده بخواهید تا از طریق آدرس ایمیل ${ BRAND_NAME } شما، شما را دعوت کند."
       ],
-      "This file contains an event invitation:": [
-        "این فایل حاوی یک دعوتنامه به رویداد است:",
-        "این فایل حاوی دعوتنامه هایی به رویداد است:"
-      ],
-      "This file contains an invitation response:": [
-        "این فایل حاوی یک پاسخ به دعوتنامه است:",
-        "این فایل حاوی پاسخ هایی به دعوتنامه است:"
-      ],
       "This file contains some data that we cannot import:": [
         "این فایل حاوی داده هایی است که نمی توانیم واردسازی کنیم:"
-      ]
-    },
-    "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } مخاطب رمزگذاری و به فهرست مخاطبین شما افزوده شد",
-        "${ totalImported }/${ totalToImport } مخاطب رمزگذاری و به فهرست مخاطبین شما افزوده شد"
       ]
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "مخاطب ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } مخاطب",
-        "${ totalContacts } مخاطب"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3066,10 +3332,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } از ${ totalContacts } مخاطب درون‌برد نشد. برای جزئیات کلیک کنید"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } از ${ totalEvents } رویداد واردسازی نخواهد شد. برای جزئیات بیشتر باز کنید.",
-        "${ totalEventsDiscarded } از ${ totalEvents } رویداد واردسازی نخواهد شد. برای جزئیات بیشتر باز کنید."
-      ],
       "No contact can be imported. Click for details": [
         "هیچ مخاطبی نمی‌تواند درون‌برد شود. برای جزئیات بیشتر کلیک کنید"
       ],
@@ -3087,48 +3349,8 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } اگر ادامه دهید تمام داده های رمزگذاری شده موجود در حساب خود را از دست میدهید."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } تقویم جدید",
-        "${ calendarsToBeCreatedCount } تقویم جدید"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } تقویم ادغام شده",
-        "${ calendarsToBeMergedCount } تقویم ادغام شده"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } و ${ CALENDAR_APP_NAME }"
-      ],
-      "${ n } address": [
-        "${ n } نشانی",
-        "${ n } نشانی"
-      ],
-      "${ number } city": [
-        "${ number } شهر",
-        "${ number } شهر"
-      ],
-      "${ number } server": [
-        "${ number } سرور",
-        "${ number } سرور"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } پوشه یافت شد",
-        "${ providerFoldersNumLocalized } پوشه یافت شد"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "برچسب ${ providerFoldersNumLocalized } در جیمیل یافت شد",
-        "برچسب ${ providerFoldersNumLocalized } در جیمیل یافت شد"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } از ${ providerCalendars.length } تقویم",
-        "${ selectedCalendarsTotal } از ${ providerCalendars.length } تقویم"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } پوشه انتخاب شد",
-        "${ selectedFoldersCountLocalized } پوشه انتخاب شد"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } برچسب انتخاب شد",
-        "${ selectedFoldersCountLocalized } برچسب انتخاب شد"
       ],
       "${ storage } storage": [
         "${ storage } فضای ذخیره سازی"
@@ -3139,23 +3361,11 @@
       "${ vaultLink } updated": [
         "${ vaultLink } بروز شد"
       ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } عضو)",
-        "(${ memberCount } عضو)"
-      ],
       "(default)": [
         "(پیش‌فرض)"
       ],
-      "+ ${ invisibleCount } More": [
-        "+ ${ invisibleCount } دیگر",
-        "+ ${ invisibleCount } دیگر"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } فضای ذخیره‌سازی هدیه"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد تا دستگاه‌های بیشتری را به VPN متصل کنید)",
-        "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد دستگاه‌های بیشتری را به VPN متصل کنید)"
       ],
       "30-day money-back guarantee": [
         "ضمانت ۳۰ روزهٔ بازگشت پول"
@@ -3189,14 +3399,6 @@
       ],
       "Admin account allocation": [
         "تخصیص حساب مدیر"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "همه (${ totalFoldersCount } پوشه)",
-        "همه (${ totalFoldersCount } پوشه)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "همه (${ totalFoldersCount } برچسب)",
-        "همه (${ totalFoldersCount } برچسب)"
       ],
       "All your changes will be lost.": [
         "تمام تغییرات شما از دست خواهد رفت."
@@ -3305,10 +3507,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "این گذرواژه را فراموش نکنید اگر آن را فراموش کنید، نمی‌توانید سازمان خود را مدیریت کنید."
-      ],
-      "domain used": [
-        "دامنه استفاده شد",
-        "دامنه استفاده شد"
       ],
       "Done! We sent a code to ${ destination }.": [
         "انجام شد! ما یک کد به ${ destination } ارسال کردیم."
@@ -3634,10 +3832,6 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "از آنجا که شما یک کاربر وفادار هستید، حساب شما امکانات اضافی فعال شده‌ای دارد."
       ],
-      "Step ${ step }": [
-        "قدم ${ step }",
-        "مرحله ${ step }"
-      ],
       "Storage": [
         "حافظه"
       ],
@@ -3664,14 +3858,6 @@
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "فایل های رمزگذاری شده بخاطر رمزنگاری و امضا ها مقداری حجیم تر هستند، تا امنیت داده های شما تضمین شود."
-      ],
-      "The following address is invalid.": [
-        "نشانی زیر نامعتبر است.",
-        "نشانی‌های زیر نامعتبر هستند."
-      ],
-      "The following address is unavailable.": [
-        "نشانی زیر در دسترس نیست.",
-        "نشانی‌های زیر در دسترس نیستند."
       ],
       "The securest way to browse, stream, and be online.": [
         "امن ترین راه برای وبگردی، استریم و آنلاین بودن."
@@ -3912,16 +4098,6 @@
         "به منظور جلوگیری از هر گونه وقفه در خدمات به دلیل صورت‌حساب‌های پرداخت‌ نشده، لطفا مطمئن شوید که حداقل ۱ شیوه پرداخت معتبر در هر مقطع از زمان ذخیره دارید."
       ]
     },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } پوشه انتخاب شد",
-        "${ selectedFoldersCount } پوشه انتخاب شد"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } برچسب انتخاب شد",
-        "${ selectedFoldersCount } برچسب انتخاب شد"
-      ]
-    },
     "invitation status": {
       "Paused": [
         "متوقف شد"
@@ -3980,27 +4156,11 @@
       ]
     },
     "Label": {
-      "${ group.UserCount } user": [
-        "${ group.UserCount } کاربر",
-        "${ group.UserCount } کاربر"
-      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } از ${ humanMaxSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } آدرس"
-      ],
-      "${ n } month": [
-        "${ n } ماه",
-        "${ n } ماه"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } روز",
-        "${ nbDay } روز"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل",
-        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(به‌طور موقت از دسترس خارج است. لطفاً بعداً دوباره امتحان کنید.)"
@@ -4850,42 +5010,6 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } و ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar": [
-        "${ n } تقویم",
-        "${ n } تقویم"
-      ],
-      "${ n } custom email domain": [
-        "${ n } دامنه ایمیل سفارشی",
-        "${ n } دامنه ایمیل سفارشی"
-      ],
-      "${ n } email address": [
-        "${ n } آدرس ایمیل",
-        "${ n } آدرس ایمیل/نام مستعار"
-      ],
-      "${ n } email address per user": [
-        "${ n } آدرس ایمیل برای هر کاربر",
-        "${ n } آدرس ایمیل برای هر کاربر"
-      ],
-      "${ n } filter": [
-        "${ n } فیلتر",
-        "${ n } فیلتر"
-      ],
-      "${ n } folder": [
-        "${ n } پوشه",
-        "${ n } پوشه"
-      ],
-      "${ n } folder and label": [
-        "${ n } پوشه و برچسب",
-        "${ n } پوشه و برچسب"
-      ],
-      "${ n } message per day": [
-        "${ n } پیام در روز",
-        "${ n } پیام در روز"
-      ],
-      "${ n } VPN connection": [
-        "${ n } اتصال VPN",
-        "${ n } اتصال VPN"
-      ],
       "${ size } attachment size": [
         "${ size } سایز پیوست"
       ],
@@ -4963,10 +5087,6 @@
       ],
       "GDPR data processing agreement": [
         "توافقنامه پردازش داده های GDPR"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN پرسرعت بر روی ${ n } دستگاه",
-        "VPN پرسرعت بر روی ${ n } دستگاه"
       ],
       "HTML signatures": [
         "امضاهای HTML"
@@ -5051,12 +5171,6 @@
       ],
       "User session management": [
         "مدیریت نشست کاربر"
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ users } user": [
-        "${ users } کاربر",
-        "${ users } کاربران"
       ]
     },
     "new_plans: heading": {
@@ -5295,10 +5409,6 @@
       ],
       "Browser extension": [
         "افزونه مرورگر"
-      ],
-      "Support for ${ n } custom email domain": [
-        "پشتیبانی از ${ n } دامنه ایمیل سفارشی",
-        "پشتیبانی از ${ n } دامنه ایمیل سفارشی"
       ]
     },
     "news": {
@@ -5576,12 +5686,6 @@
         "ﺗﻤﺎﺱ"
       ]
     },
-    "Plans": {
-      "${ cycle } month": [
-        "${ cycle } ماه",
-        "${ cycle } ماه"
-      ]
-    },
     "plus_block": {
       "Upgrade to ${ upsellPlanTitle }": [
         "ارتقا به ${ upsellPlanTitle }"
@@ -5724,18 +5828,8 @@
       ]
     },
     "retention_policy_2025_Info": {
-      "${ n } day": [
-        "${ n } روز",
-        "${ n } روز"
-      ],
       "${ remainingCount } more": [
         "${ remainingCount } دیگر"
-      ]
-    },
-    "retention_policy_2025_Label": {
-      "day": [
-        "روز",
-        "روز"
       ]
     },
     "retention_policy_2025_Option": {
@@ -5808,16 +5902,6 @@
         "لطفا قبل از تلاش برای تغییر رمز خود کلیدها را ایجاد کنید"
       ]
     },
-    "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } روز",
-        "${ timeRemaining.inDays } روز"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } ساعت",
-        "${ timeRemaining.inHours } ساعت"
-      ]
-    },
     "session_recovery:cancellation:action": {
       "Cancel password reset": [
         "لغو بازنشانی گذرواژه"
@@ -5868,12 +5952,6 @@
         "خروج از حساب"
       ]
     },
-    "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } ساعت",
-        "${ gracePeriodHoursRemaining } ساعت"
-      ]
-    },
     "session_recovery:sign_out:link": {
       "Password reset": [
         "بازنشانی گذرواژه"
@@ -5922,24 +6000,6 @@
         "بستن"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } روز",
-        "${ days } روز"
-      ],
-      "${ hours } hour": [
-        "${ hours } ساعت",
-        "${ hours } ساعت"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } دقیقه",
-        "${ minutes } دقیقه"
-      ],
-      "${ seconds } second": [
-        "${ seconds } ثانیه",
-        "${ seconds } ثانیه"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "۱ کاربر"
@@ -5957,10 +6017,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } ماه",
-        "${ n } ماه"
-      ],
       "/ month": [
         "/ ماه"
       ],
@@ -6059,46 +6115,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ n } free VPN connection per user": [
-        "${ n } اتصال VPN رایگان برای هر کاربر",
-        "${ n } اتصال VPN رایگان برای هر کاربر"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } اتصال VPN پرسرعت",
-        "${ n } اتصال VPN پرسرعت"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } اتصال VPN پرسرعت برای هر کاربر",
-        "${ n } اتصال VPN پرسرعت برای هر کاربر"
-      ],
-      "${ n } VPN connection": [
-        "${ n } اتصال VPN",
-        "${ n } اتصال VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } اتصال VPN برای هر کاربر",
-        "${ n } اتصال VPN برای هر کاربر"
-      ],
-      "${ UsedAddresses } address": [
-        "${ UsedAddresses } آدرس",
-        "${ UsedAddresses } آدرس"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل",
-        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل"
-      ],
-      "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } تقویم",
-        "${ UsedCalendars } تقویم"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } از ${ MaxDomains } دامنه سفارشی",
-        "${ UsedDomains } از ${ MaxDomains } دامنه سفارشی"
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } از ${ MaxMembers } کاربر",
-        "${ UsedMembers } از ${ MaxMembers } کاربر"
-      ],
       "1 email address": [
         "۱ آدرس ایمیل"
       ],
@@ -6110,10 +6126,6 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "مسدودکنندهٔ آگهی تعبیه شده (NetShield)"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "VPN پرسرعت بر روی ${ maxVpn } دستگاه",
-        "VPN پرسرعت بر روی ${ maxVpn } دستگاه"
       ]
     },
     "Subscription change warning": {
@@ -6135,22 +6147,6 @@
       ],
       "${ planMaxSpace } total storage": [
         "${ planMaxSpace } فضای ذخیره‌سازی کلی"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } دامنه ایمیل سفارشی",
-        "${ planNumberOfDomains } دامنه ایمیل سفارشی"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } آدرس ایمیل",
-        "${ planNumberOfEmails } آدرس ایمیل"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } آدرس ایمیل برای هر کاربر",
-        "${ planNumberOfEmails } آدرس ایمیل برای هر کاربر"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } کاربر",
-        "${ planNumberOfUsers } کاربر"
       ],
       "2 users": [
         "2 کاربر"
@@ -6403,24 +6399,6 @@
     "Themes": {
       "Themes": [
         "پوسته‌ها"
-      ]
-    },
-    "Time unit": {
-      "${ ceilDays } day": [
-        "${ ceilDays } روز",
-        "${ ceilDays } روز"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } ساعت",
-        "${ ceilHours } ساعت"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } دقیقه",
-        "${ ceilMinutes } دقیقه"
-      ],
-      "${ seconds } second": [
-        "${ seconds } ثانیه",
-        "${ seconds } ثانیه"
       ]
     },
     "Title": {
@@ -6690,10 +6668,6 @@
       ],
       "Human verification": [
         "تشخیص انسان"
-      ],
-      "Import as simple event?": [
-        "واردسازی به عنوان رویداد ساده؟",
-        "واردسازی به عنوان رویدادهای ساده؟"
       ],
       "Import contacts": [
         "درون‌برد مخاطبین"
@@ -7106,16 +7080,6 @@
         "خصوصی"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "گذرواژه باید حداقل ${ MIN_PASSWORD_LENGTH } نویسه داشته باشد",
-        "گذرواژه باید حداقل ${ MIN_PASSWORD_LENGTH } نویسه داشته باشد"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)",
-        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)"
-      ]
-    },
     "Video control": {
       "Click to replay the video": [
         "برای پخش ویدیو کلیک کنید"
@@ -7137,28 +7101,6 @@
         "نت فلیکس، آمازون پرایم ویدئو، BBC iPlayer, ESPN+، Disney+، HBO Now و بیشتر."
       ]
     },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } دستگاه",
-        "${ n } دستگاه"
-      ],
-      "${ n } server": [
-        "${ n } سرور",
-        "${ n }+ سرور"
-      ],
-      "${ n } VPN connection": [
-        "${ n } اتصال VPN",
-        "${ n } اتصال VPN"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } کشور",
-        "${ numberOfCountries } کشور"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } در ${ numberOfCountries } کشور",
-        "${ numberOfServers } در ${ numberOfCountries } کشور"
-      ]
-    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "صورتحساب ماهانه"
@@ -7172,16 +7114,6 @@
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
         "سفارشی‌سازی پیشرفته VPN"
-      ]
-    },
-    "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } ماه",
-        "${ n } ماه"
-      ],
-      "${ n } year": [
-        "${ n } سال",
-        "${ n } سال"
       ]
     },
     "Warning": {

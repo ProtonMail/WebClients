@@ -4,6 +4,80 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } domini de correu electrònic personalitzat",
+        "${ n } dominis de correu electrònic personalitzats"
+      ],
+      "${ n } email address": [
+        "${ n } adreça de correu electrònic",
+        "${ n } adreces de correu electrònic / àlies"
+      ],
+      "${ n } email address per user": [
+        "${ n } adreça de correu electrònic per usuari",
+        "${ n } adreces de correu electrònic per usuari"
+      ],
+      "${ n } filter": [
+        "${ n } filtre",
+        "${ n } filtres"
+      ],
+      "${ n } folder": [
+        "${ n } carpeta",
+        "${ n } carpetes"
+      ],
+      "${ n } folder and label": [
+        "${ n } carpeta i etiqueta",
+        "${ n } carpetes i etiquetes"
+      ],
+      "${ n } label": [
+        "${ n } etiqueta",
+        "${ n } etiquetes"
+      ],
+      "${ n } message per day": [
+        "${ n } missatge per dia",
+        "${ n } missatges per dia"
+      ],
+      "${ options }-day file version history": [
+        "Historial de versions de fitxers de ${ options } dies",
+        "Historial de versions de fitxers de ${ options } dies"
+      ],
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Suport per a ${ n } domini de correu electrònic personalitzat",
+        "Suport per a ${ n } dominis de correu electrònic personalitzats"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Autentica"
@@ -943,10 +1017,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -958,28 +1028,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "gigabyte",
-        "gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "megabyte",
-        "megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Font face option": {
@@ -1187,42 +1235,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
-      ],
-      "${ n } custom email domain": [
-        "${ n } domini de correu electrònic personalitzat",
-        "${ n } dominis de correu electrònic personalitzats"
-      ],
-      "${ n } email address": [
-        "${ n } adreça de correu electrònic",
-        "${ n } adreces de correu electrònic / àlies"
-      ],
-      "${ n } email address per user": [
-        "${ n } adreça de correu electrònic per usuari",
-        "${ n } adreces de correu electrònic per usuari"
-      ],
-      "${ n } filter": [
-        "${ n } filtre",
-        "${ n } filtres"
-      ],
-      "${ n } folder": [
-        "${ n } carpeta",
-        "${ n } carpetes"
-      ],
-      "${ n } folder and label": [
-        "${ n } carpeta i etiqueta",
-        "${ n } carpetes i etiquetes"
-      ],
-      "${ n } label": [
-        "${ n } etiqueta",
-        "${ n } etiquetes"
-      ],
-      "${ n } message per day": [
-        "${ n } missatge per dia",
-        "${ n } missatges per dia"
-      ],
-      "${ options }-day file version history": [
-        "Historial de versions de fitxers de ${ options } dies",
-        "Historial de versions de fitxers de ${ options } dies"
       ],
       "${ size } attachment size": [
         "${ size } en fitxers adjunts"
@@ -1490,10 +1502,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Augmenteu l'espai d'emmagatzematge a ${ bundleStorage } en total"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Suport per a ${ n } domini de correu electrònic personalitzat",
-        "Suport per a ${ n } dominis de correu electrònic personalitzats"
       ]
     },
     "Placeholder": {
@@ -1567,16 +1575,6 @@
       ],
       "Two-factor authentication": [
         "Autenticació de doble factor"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
-        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
       ]
     }
   }

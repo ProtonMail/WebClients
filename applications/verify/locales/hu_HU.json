@@ -4,6 +4,80 @@
     "language": "hu_HU"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } saját e-mail domain név",
+        "${ n } saját e-mail domain név"
+      ],
+      "${ n } email address": [
+        "${ n } e-mail cím",
+        "${ n } e-mail cím / alias"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mail cím felhasználónként",
+        "${ n } e-mail cím felhasználónként"
+      ],
+      "${ n } filter": [
+        "${ n } szűrő",
+        "${ n } szűrő"
+      ],
+      "${ n } folder": [
+        "${ n } mappa",
+        "${ n } mappa"
+      ],
+      "${ n } folder and label": [
+        "${ n } mappa és címke",
+        "${ n } mappa és címke"
+      ],
+      "${ n } label": [
+        "${ n } címke",
+        "${ n } címke"
+      ],
+      "${ n } message per day": [
+        "${ n } üzenet naponta",
+        "${ n } üzenet naponta"
+      ],
+      "${ options }-day file version history": [
+        "Fájlok változtatási előzményeinek megtartása ${ options } napig",
+        "Fájlok változtatási előzményeinek megtartása ${ options } napig"
+      ],
+      "byte": [
+        "bájt",
+        "bájt"
+      ],
+      "Byte": [
+        "Bájt",
+        "Bájt"
+      ],
+      "Gigabyte": [
+        "Gigabájt",
+        "Gigabájt"
+      ],
+      "Kilobyte": [
+        "Kilobájt",
+        "Kilobájt"
+      ],
+      "Megabyte": [
+        "Megabájt",
+        "Megabájt"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } saját e-mail domain név használata",
+        "${ n } saját e-mail domain név használata"
+      ],
+      "Terabyte": [
+        "Terabájt",
+        "Terabájt"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Hitelesítés"
@@ -943,10 +1017,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bájt",
-        "bájt"
-      ],
       "GB": [
         "GB"
       ],
@@ -958,28 +1028,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Bájt",
-        "Bájt"
-      ],
-      "Gigabyte": [
-        "Gigabájt",
-        "Gigabájt"
-      ],
-      "Kilobyte": [
-        "Kilobájt",
-        "Kilobájt"
-      ],
-      "Megabyte": [
-        "Megabájt",
-        "Megabájt"
-      ],
-      "Terabyte": [
-        "Terabájt",
-        "Terabájt"
       ]
     },
     "Font face option": {
@@ -1181,42 +1229,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe írási segéd"
-      ],
-      "${ n } custom email domain": [
-        "${ n } saját e-mail domain név",
-        "${ n } saját e-mail domain név"
-      ],
-      "${ n } email address": [
-        "${ n } e-mail cím",
-        "${ n } e-mail cím / alias"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-mail cím felhasználónként",
-        "${ n } e-mail cím felhasználónként"
-      ],
-      "${ n } filter": [
-        "${ n } szűrő",
-        "${ n } szűrő"
-      ],
-      "${ n } folder": [
-        "${ n } mappa",
-        "${ n } mappa"
-      ],
-      "${ n } folder and label": [
-        "${ n } mappa és címke",
-        "${ n } mappa és címke"
-      ],
-      "${ n } label": [
-        "${ n } címke",
-        "${ n } címke"
-      ],
-      "${ n } message per day": [
-        "${ n } üzenet naponta",
-        "${ n } üzenet naponta"
-      ],
-      "${ options }-day file version history": [
-        "Fájlok változtatási előzményeinek megtartása ${ options } napig",
-        "Fájlok változtatási előzményeinek megtartása ${ options } napig"
       ],
       "${ size } attachment size": [
         "${ size } melléklet méret"
@@ -1484,10 +1496,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Emelje meg tárhelyét ${ bundleStorage } méretűre"
-      ],
-      "Support for ${ n } custom email domain": [
-        "${ n } saját e-mail domain név használata",
-        "${ n } saját e-mail domain név használata"
       ]
     },
     "Placeholder": {
@@ -1553,16 +1561,6 @@
       ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
-        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
-        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
       ]
     }
   }
