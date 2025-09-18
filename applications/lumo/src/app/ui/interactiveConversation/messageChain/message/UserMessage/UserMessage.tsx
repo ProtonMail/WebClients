@@ -8,6 +8,7 @@ import { Button, Tooltip } from '@proton/atoms';
 import { Icon } from '@proton/components';
 
 import type { HandleEditMessage } from '../../../../../hooks/useLumoActions';
+import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../../../redux/hooks';
 import { selectAttachments } from '../../../../../redux/selectors';
 import type { Attachment } from '../../../../../types';
@@ -67,6 +68,7 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
     const hasAttachments = (message.attachments ?? []).length > 0;
     const [isEditing, setIsEditing] = useState(false);
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
+    const { isWebSearchButtonToggled } = useWebSearch();
 
     // Get full attachment data from Redux (shallow attachments in message only contain ID and basic metadata)
     const allAttachments = useLumoSelector(selectAttachments);
@@ -94,7 +96,7 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
     return (
         <div
             className={clsx(
-                'user-msg-container markdown-rendering flex *:min-size-auto flex-column gap-2 rounded-xl bg-strong p-4 min-h-custom relative group-hover-opacity-container',
+                'user-msg-container markdown-rendering *:min-size-auto gap-2 rounded-xl bg-strong p-4 min-h-custom relative group-hover-opacity-container',
                 isEditing && 'w-full'
             )}
             style={{ '--min-h-custom': '3.25rem' /*52px*/ }} //to prevent the size change when buttons are shown on hover
@@ -104,13 +106,13 @@ const UserMessage = ({ message, messageContent, siblingInfo, handleEditMessage, 
                 <MessageEditor
                     messageContent={messageContent || ''}
                     handleEditMessage={(newContent) => {
-                        handleEditMessage(message, newContent, false);
+                        handleEditMessage(message, newContent, isWebSearchButtonToggled);
                         setIsEditing(false);
                     }}
                     handleCancel={() => setIsEditing(false)}
                 />
             ) : (
-                <div className="flex *:min-size-auto flex-1 flex-row flex-nowrap gap-2 justify-space-between items-center">
+                <div className="test-container flex *:min-size-auto flex-1 flex-row flex-nowrap gap-2 justify-space-between items-center">
                     <div
                         className={clsx(
                             'lumo-markdown w-full max-w-full flex-1 text-pre-line',

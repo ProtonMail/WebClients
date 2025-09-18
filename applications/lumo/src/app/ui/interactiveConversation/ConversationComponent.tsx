@@ -7,6 +7,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { HandleEditMessage, HandleRegenerateMessage, HandleSendMessage } from '../../hooks/useLumoActions';
 import { tryParseToolCall } from '../../lib/toolCall/types';
+import { useWebSearch } from '../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../redux/hooks';
 import type { ConversationError } from '../../redux/slices/meta/errors';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
@@ -122,8 +123,6 @@ interface ConversationComponentProps {
     conversation?: Conversation;
     getSiblingInfo: (message: Message) => SiblingInfo;
     handleRetryGeneration: (error: ConversationError) => void;
-    isWebSearchButtonToggled: boolean;
-    onToggleWebSearch: () => void;
 }
 
 const ConversationComponent = ({
@@ -138,12 +137,11 @@ const ConversationComponent = ({
     isGenerating,
     isProcessingAttachment,
     handleRetryGeneration,
-    isWebSearchButtonToggled,
-    onToggleWebSearch,
 }: ConversationComponentProps) => {
     const sourcesContainerRef = useRef<HTMLDivElement>(null);
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const inputContainerRef = useRef<HTMLDivElement>(null);
+    const { isWebSearchButtonToggled } = useWebSearch();
     const [openPanel, setOpenPanel] = useState<{
         type: 'sources' | 'files' | null;
         message?: Message;
@@ -261,7 +259,6 @@ const ConversationComponent = ({
                         sourcesContainerRef={sourcesContainerRef}
                         handleOpenSources={handleOpenSources}
                         handleOpenFiles={handleOpenFiles}
-                        isWebSearchButtonToggled={isWebSearchButtonToggled}
                         onRetryPanelToggle={handleRetryPanelToggle}
                     />
                     {/* TODO: update to show all conversations errors at some point */}
@@ -281,8 +278,6 @@ const ConversationComponent = ({
                             isGenerating={isGenerating}
                             isProcessingAttachment={isProcessingAttachment}
                             inputContainerRef={inputContainerRef}
-                            isWebSearchButtonToggled={isWebSearchButtonToggled}
-                            onToggleWebSearch={onToggleWebSearch}
                             messageChain={messageChain}
                             handleOpenFiles={handleOpenFiles}
                             onShowDriveBrowser={handleShowDriveBrowser}

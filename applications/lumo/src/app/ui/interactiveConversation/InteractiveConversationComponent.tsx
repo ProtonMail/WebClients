@@ -1,11 +1,10 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
 import type { User } from '@proton/shared/lib/interfaces';
 
 import { LUMO_FULL_APP_TITLE } from '../../constants';
-
 import type { RouteParams } from '../../entrypoint/auth/RouterContainer';
 import { useLumoActions } from '../../hooks/useLumoActions';
 import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
@@ -13,6 +12,7 @@ import { useConversation } from '../../providers/ConversationProvider';
 import { DragAreaProvider, useDragArea } from '../../providers/DragAreaProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { PandocProvider } from '../../providers/PandocProvider';
+import { WebSearchProvider } from '../../providers/WebSearchProvider';
 import { useLumoDispatch, useLumoMemoSelector, useLumoSelector } from '../../redux/hooks';
 import {
     selectConversationById,
@@ -42,9 +42,6 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     const isGuest = useIsGuest();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { onDragOver, onDragEnter, onDragLeave, onDrop } = useDragArea();
-
-    // ** State & refs **
-    const [isWebSearchButtonToggled, setIsWebSearchButtonToggled] = useState<boolean>(false);
 
     // ** Selectors **
     const messageMap = useLumoMemoSelector(selectMessagesByConversationId, [curConversationId]);
@@ -89,9 +86,7 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
     });
 
     // ** Callbacks **
-    const toggleWebSearch = useCallback(() => {
-        setIsWebSearchButtonToggled((prev) => !prev);
-    }, []);
+    // toggleWebSearch is now provided by useWebSearch hook
 
     // ** Effects & related **
 
@@ -155,8 +150,6 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
                     `new conversation effect: calling getConversationRequest(curConversationId=${curConversationId})`
                 );
                 void dispatch(pullConversationRequest({ id: curConversationId }));
-
-                
             }
         },
         // This effect is meant to run when we browse to a different /c/:conversation_id.
@@ -177,12 +170,7 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
             onDragOver={onDragOver}
         >
             {!curConversationId && (
-                <MainContainer
-                    isProcessingAttachment={isProcessingAttachment}
-                    handleSendMessage={handleSendMessage}
-                    isWebSearchButtonToggled={isWebSearchButtonToggled}
-                    onToggleWebSearch={toggleWebSearch}
-                />
+                <MainContainer isProcessingAttachment={isProcessingAttachment} handleSendMessage={handleSendMessage} />
             )}
             {curConversationId && isLoading && <ConversationSkeleton />}
             {curConversationId && !isLoading && (
@@ -199,8 +187,6 @@ const InteractiveConversationComponentInner = ({ user }: InteractiveConversation
                     handleEditMessage={handleEditMessage}
                     getSiblingInfo={getSiblingInfo}
                     handleRetryGeneration={handleRetryGeneration}
-                    isWebSearchButtonToggled={isWebSearchButtonToggled}
-                    onToggleWebSearch={toggleWebSearch}
                 />
             )}
         </div>
@@ -211,7 +197,9 @@ export const InteractiveConversationComponent = (props: InteractiveConversationC
     return (
         <DragAreaProvider>
             <PandocProvider>
-                <InteractiveConversationComponentInner {...props} />
+                <WebSearchProvider>
+                    <InteractiveConversationComponentInner {...props} />
+                </WebSearchProvider>
             </PandocProvider>
         </DragAreaProvider>
     );
