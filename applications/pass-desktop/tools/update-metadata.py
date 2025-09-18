@@ -78,7 +78,7 @@ def main():
         "CategoryName": channel,
         "Version": version,
         "ReleaseDate": now,
-        "RolloutPercentage": 0.2,
+        "RolloutPercentage": 0.05,
         "File": list(map(to_release_file, files))
     }
 
