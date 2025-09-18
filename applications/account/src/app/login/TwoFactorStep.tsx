@@ -24,14 +24,14 @@ const TwoFactorStep = ({ onSubmit, fido2, authTypes }: Props) => {
             value={tabIndex}
             onChange={setTabIndex}
             tabs={[
-                authTypes.fido2 &&
+                authTypes.twoFactor.fido2 &&
                     fido2 && {
                         title: c('fido2: Label').t`Security key`,
                         content: (
                             <Fido2Form onSubmit={(payload) => onSubmit({ type: 'fido2', payload })} fido2={fido2} />
                         ),
                     },
-                authTypes.totp && {
+                authTypes.twoFactor.totp && {
                     title: c('Label').t`Authenticator app`,
                     content: <LoginTOTPForm onSubmit={(payload) => onSubmit({ type: 'code', payload })} />,
                 },
