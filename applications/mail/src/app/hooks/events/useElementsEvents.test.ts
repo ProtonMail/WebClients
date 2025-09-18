@@ -121,6 +121,38 @@ describe('processElementEvents', () => {
             expect(result.toUpdate).toEqual([]);
         });
 
+        it('should handle UPDATE_FLAGS action for existing conversations', () => {
+            const conversation = mockElement('conv-1');
+            const conversationEvents = [mockConversationEvent('conv-1', EVENT_ACTIONS.UPDATE_FLAGS, conversation)];
+            const elementsState = mockElementsState(['conv-1']);
+
+            const result = processElementEvents({
+                conversationEvents,
+                messageEvents: [],
+                elementsState,
+                isTaskRunning: false,
+            });
+
+            expect(result.toUpdate).toEqual([conversation]);
+            expect(result.toCreate).toEqual([]);
+        });
+
+        it('should handle UPDATE_FLAGS action for non-existing conversations by creating them', () => {
+            const conversation = mockElement('conv-1');
+            const conversationEvents = [mockConversationEvent('conv-1', EVENT_ACTIONS.UPDATE_FLAGS, conversation)];
+            const elementsState = mockElementsState();
+
+            const result = processElementEvents({
+                conversationEvents,
+                messageEvents: [],
+                elementsState,
+                isTaskRunning: false,
+            });
+
+            expect(result.toCreate).toEqual([conversation]);
+            expect(result.toUpdate).toEqual([]);
+        });
+
         it('should handle DELETE action for conversations', () => {
             const conversationEvents = [mockConversationEvent('conv-1', EVENT_ACTIONS.DELETE)];
             const elementsState = mockElementsState();
