@@ -361,7 +361,6 @@
 		inset-inline-start: 0;
 		inline-size: 100vw;
 		block-size: 100vh;
-		background-color: rgb(255 255 255 / 0.8) !important; // Very subtle white overlay
 		opacity: 1 !important;
 		pointer-events: auto !important;
 		z-index: 90 !important; // Behind sidebar (which is z-index: 100) but above content
