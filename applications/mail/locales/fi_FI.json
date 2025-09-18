@@ -187,6 +187,9 @@
       "Cancel subscription": [
         "Peru tilaus"
       ],
+      "Cancel trial and pay": [
+        "Peruuta kokeilujakso ja maksa"
+      ],
       "Carbon Copy": [
         "Kopio"
       ],
@@ -402,6 +405,9 @@
       "Delete permanently": [
         "Poista pysyvästi"
       ],
+      "Deleting folder": [
+        "Poistetaan kansiota"
+      ],
       "Deleting label": [
         "Tunnisteen poistaminen"
       ],
@@ -467,6 +473,9 @@
       ],
       "Edit address": [
         "Muokkaa osoitetta"
+      ],
+      "Edit categories": [
+        "Muokkaa kategorioita"
       ],
       "Edit draft": [
         "Muokkaa luonnosta"
@@ -987,6 +996,9 @@
       ],
       "Page ${ pageNumber }": [
         "Sivu ${ pageNumber }"
+      ],
+      "Passphrase": [
+        "Salalause"
       ],
       "Pause": [
         "Pysäytä"
@@ -4414,6 +4426,9 @@
       "Failed to load the STL preview": [
         "STL-esikatselun lataus epäonnistui"
       ],
+      "Failed to open to contact": [
+        "Yhteystiedon avaaminen epäonnistui"
+      ],
       "Filter with this name already exists": [
         "Tämän niminen suodatin on jo olemassa"
       ],
@@ -4566,6 +4581,9 @@
       ],
       "Please enter a valid ZIP code": [
         "Syötä kelvollinen postinumero"
+      ],
+      "Please enter postal code": [
+        "Syötä postinumerosi"
       ],
       "Please enter ZIP code": [
         "Syötä postinumero"
@@ -5694,6 +5712,9 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Domain": [
+        "Verkkotunnus"
+      ],
       "Hardware not compatible": [
         "Laitteisto ei ole yhteensopiva"
       ],
@@ -6772,6 +6793,9 @@
       ],
       "Download application logs for troubleshooting": [
         "Lataa sovelluslokit vianetsintään"
+      ],
+      "Download current logs": [
+        "Lataa nykyiset lokitiedot"
       ],
       "Download on the App Store": [
         "Lataa App Storesta"
@@ -8503,6 +8527,9 @@
       "Expired": [
         "Erääntynyt"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Vanhentunut"
       ],
@@ -9020,6 +9047,9 @@
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
       ],
+      "Go to Newsletters": [
+        "Siirry uutiskirjeisiin"
+      ],
       "Hide password": [
         "Piilota salasana"
       ],
@@ -9184,6 +9214,9 @@
       ],
       "Participants": [
         "Osallistujat"
+      ],
+      "Passphrase:": [
+        "Salalause:"
       ],
       "Password": [
         "Salasana"
@@ -9367,6 +9400,9 @@
       ],
       "What is your main reason for canceling or downgrading?": [
         "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
+      ],
+      "Why am I seeing this?": [
+        "Miksi näen tämän?"
       ],
       "With attachment": [
         "Sisällytä liitteet"
@@ -10194,6 +10230,9 @@
       "${ size } storage per user": [
         "${ size } tallennustilaa/käyttäjä"
       ],
+      "1 TB secure storage": [
+        "1 Tt suojattua tallennustilaa"
+      ],
       "1 user": [
         "1 käyttäjä"
       ],
@@ -10393,6 +10432,9 @@
       "Private photo backup": [
         "Yksityinen kuvien varmuuskopiointi"
       ],
+      "Quickly craft replies": [
+        "Laadi vastauksia nopeasti"
+      ],
       "Recover previous file versions": [
         "Palauta aiempia tiedostoversioita"
       ],
@@ -10443,6 +10485,9 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
+      ],
+      "Support for up to 2 users": [
+        "Tuki jopa kahdelle käyttäjälle"
       ],
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
@@ -11491,6 +11536,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
       ],
+      "Taxes": [
+        "Verot"
+      ],
       "terms & conditions": [
         "käyttöehdot"
       ],
@@ -11515,6 +11563,12 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
+      ],
+      "VAT": [
+        "ALV"
+      ],
+      "VAT number": [
+        "ALV-numero"
       ],
       "Your payment is still being processed": [
         "Maksuasi käsitellään vielä"
@@ -11554,8 +11608,23 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Lisää ABN"
+      ],
+      "Add EIN": [
+        "Lisää EIN"
+      ],
+      "Add VAT number": [
+        "Lisää ALV-numero"
+      ],
       "Business Number": [
         "Yritystunnus"
+      ],
+      "Edit Business Number": [
+        "Muokkaa yritystunnusta"
+      ],
+      "Edit VAT number": [
+        "Muokkaa ALV-numeroa"
       ],
       "EIN": [
         "EIN"
@@ -11708,6 +11777,9 @@
       ],
       "Select a reason": [
         "Valitse syy"
+      ],
+      "Select country": [
+        "Valitse maa"
       ],
       "Select state": [
         "Valitse osavaltio"
@@ -12459,11 +12531,17 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Selaa turvallisesti"
+      ],
       "Get unlimited aliases": [
         "Hanki aliaksia rajattomasti"
       ],
       "Go to subscription plans": [
         "Siirry tilauksiin"
+      ],
+      "Guard against threats": [
+        "Suojaudu uhilta"
       ],
       "Increase your storage": [
         "Lisää tallennustilaasi"
@@ -13400,6 +13478,10 @@
       "Message removed from Starred.": [
         "Viesti poistettiin tähdellisistä."
       ],
+      "Message updated": [
+        "Viesti päivitetty",
+        "Viestit päivitetty"
+      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Viestit lähettäjiltä ${ sendersList } merkitään tunnisteilla ${ labelsList }"
       ],
@@ -13891,6 +13973,9 @@
       "Customize calendar import": [
         "Mukauta kalenterin tuontia"
       ],
+      "Customize categories": [
+        "Mukauta kategorioita"
+      ],
       "Customize your mail import": [
         "Mukauta viestien tuontia"
       ],
@@ -14202,6 +14287,10 @@
       ],
       "Move all messages to trash": [
         "Siirrä kaikki viestit roskakoriin"
+      ],
+      "Move message to": [
+        "Siirrä viesti kansioon",
+        "Siirrä viestit kansioon"
       ],
       "Move to": [
         "Siirrä kohteeseen"
@@ -14639,6 +14728,9 @@
       ],
       "Your subscriptions in one place": [
         "Tilauksesi yhdessä paikassa"
+      ],
+      "✨ Categories are coming!": [
+        "✨ Kategoriat ovat tulossa!"
       ]
     },
     "Today icon tooltip in mini calendar": {

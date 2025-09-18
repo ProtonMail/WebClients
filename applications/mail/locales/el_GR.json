@@ -435,6 +435,9 @@
       "Disable alias": [
         "Απενεργοποίηση ψευδωνύμου"
       ],
+      "Disable categories": [
+        "Απενεργοποίηση κατηγοριών"
+      ],
       "Disabling alias": [
         "Γίνεται απενεργοποίηση ψευδωνύμου"
       ],
@@ -765,6 +768,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Συμμετάσχετε με ${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "Διατήρηση κατηγοριών"
       ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
@@ -1986,11 +1992,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες στις ${ formattedDate }. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα στις ${ formattedDate }. Δεν θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Μπορείτε να έχετε έως ${ TRIAL_MAX_DEDICATED_IPS } αφιερωμένο διακομιστή κατά τη διάρκεια της δοκιμαστικής περιόδου."
@@ -6694,6 +6700,9 @@
       "All messages stored with this label will be permanently deleted.": [
         "Όλα τα μηνύματα που είναι αποθηκευμένα με αυτήν την ετικέτα θα διαγραφούν οριστικά."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Όλα τα μηνύματα θα εμφανίζονται στα Εισερχόμενα, και οι καρτέλες κατηγοριών και οι ετικέτες δε θα είναι πλέον ορατές. "
+      ],
       "All your calendars are disabled.": [
         "Όλα τα ημερολόγιά σας είναι απενεργοποιημένα."
       ],
@@ -9760,9 +9769,6 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
-      ],
-      "You cannot disable all categories": [
-        "Δεν μπορείτε να απενεργοποιήσετε όλες τις κατηγορίες"
       ],
       "Your alias": [
         "Το ψευδώνυμο σας"
@@ -14603,6 +14609,9 @@
       ],
       "Desktop": [
         "Υπολογιστής"
+      ],
+      "Disable categories?": [
+        "Απενεργοποίηση κατηγοριών;"
       ],
       "Discover your subscription benefits": [
         "Ανακαλύψτε τα πλεονεκτήματα της συνδρομής σας"

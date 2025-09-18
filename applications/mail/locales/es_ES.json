@@ -435,6 +435,9 @@
       "Disable alias": [
         "Desactivar el alias"
       ],
+      "Disable categories": [
+        "Desactivar las categorías"
+      ],
       "Disabling alias": [
         "Desactivación del alias"
       ],
@@ -765,6 +768,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Únete con ${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "Mantener las categorías"
       ],
       "Keep my subscription": [
         "Mantener mi suscripción"
@@ -1983,8 +1989,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes el ${ formattedDate }. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se te cobrará nada si cancelas antes del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puedes tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores exclusivos durante el periodo de prueba."
@@ -6685,6 +6694,9 @@
       "All messages stored with this label will be permanently deleted.": [
         "Todos los mensajes guardados con esta etiqueta se eliminarán permanentemente."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Todos los mensajes se mostrarán en la Bandeja de entrada y las pestañas de categorías y etiquetas dejarán de estar visibles. "
+      ],
       "All your calendars are disabled.": [
         "Todos tus calendarios están desactivados."
       ],
@@ -9751,9 +9763,6 @@
       ],
       "Writing assistant": [
         "Asistente de escritura"
-      ],
-      "You cannot disable all categories": [
-        "No puedes desactivar todas las categorías"
       ],
       "Your alias": [
         "Tu alias"
@@ -14689,6 +14698,9 @@
       ],
       "Desktop": [
         "Escritorio"
+      ],
+      "Disable categories?": [
+        "¿Desactivar las categorías?"
       ],
       "Discover your subscription benefits": [
         "Descubre los beneficios de tu suscripción"
