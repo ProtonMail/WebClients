@@ -41,13 +41,14 @@ export function FontSelect({ renderSelect, ...props }: FontSelectProps) {
   const mounted = Ariakit.useStoreState(select, 'mounted')
   return (
     <Ariakit.SelectProvider store={select} {...props}>
-      <InnerSelect render={renderSelect} />
+      <InnerSelect render={renderSelect} disabled={useUI((ui) => ui.info.isReadonly)} />
       {mounted && <SelectPopover />}
     </Ariakit.SelectProvider>
   )
 }
 
 function SelectPopover() {
+  const disabled = useUI((ui) => ui.info.isReadonly)
   return (
     <UI.SelectPopover>
       <UI.SelectGroup bottomSeparator>
@@ -55,7 +56,7 @@ function SelectPopover() {
       </UI.SelectGroup>
       <UI.SelectGroup>
         {FONTS.map(({ value, label }) => (
-          <UI.SelectItem key={value} value={value}>
+          <UI.SelectItem key={value} value={value} disabled={disabled}>
             {label}
           </UI.SelectItem>
         ))}
