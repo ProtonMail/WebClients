@@ -4,6 +4,368 @@
     "language": "sk_SK"
   },
   "contexts": {
+    "": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliasy",
+        "${ aliasCount } aliasov",
+        "${ aliasCount } aliasov"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } blokovanie",
+        "${ blockedCount } blokovania",
+        "${ blockedCount } blokovaní",
+        "${ blockedCount } blokovaní"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } zablokovaný",
+        "${ blockedEmailsCount } zablokované",
+        "${ blockedEmailsCount } zablokovaných",
+        "${ blockedEmailsCount } zablokovaných"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } znak",
+        "${ config.options.length } znakov",
+        "${ config.options.length } znaky",
+        "${ config.options.length } znakov"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } slovo",
+        "${ config.options.wordCount } slová",
+        "${ config.options.wordCount } slov",
+        "${ config.options.wordCount } slov"
+      ],
+      "${ count } item": [
+        "${ count } položka",
+        "${ count } položky",
+        "${ count } položiek",
+        "${ count } položiek"
+      ],
+      "${ count } time": [
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát"
+      ],
+      "${ count } view": [
+        "${ count } zobrazenie",
+        "${ count } zobrazení",
+        "${ count } zobrazenia",
+        "${ count }/ zobrazení"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } zobrazenie",
+        "${ count }/${ maxReads } zobrazenia",
+        "${ count }/${ maxReads } zobrazení",
+        "${ count }/${ maxReads } zobrazení"
+      ],
+      "${ days } day": [
+        "${ days } deň",
+        "${ days } dni",
+        "${ days } dní",
+        "${ days } dní"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } súbor",
+        "${ filesCount } súbory",
+        "${ filesCount } súborov",
+        "${ filesCount } súborov"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } preposlanie",
+        "${ forwardCount } preposlania",
+        "${ forwardCount } preposlaní",
+        "${ forwardCount } preposlaní"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } preposlaný",
+        "${ forwardedEmailsCount } preposlané",
+        "${ forwardedEmailsCount } preposlaných",
+        "${ forwardedEmailsCount } preposlaných"
+      ],
+      "${ hours } hour": [
+        "${ hours } hodiny",
+        "${ hours } hodiny",
+        "${ hours } hodín",
+        "${ hours } hodín"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } člen",
+        "${ memberCount } členovia",
+        "${ memberCount } členov",
+        "${ memberCount } členov"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minúta",
+        "${ minutes } minúty",
+        "${ minutes } minút",
+        "${ minutes } minút"
+      ],
+      "${ months } month": [
+        "${ months } mesiac",
+        "${ months } mesiace",
+        "${ months } mesiacov",
+        "${ months } mesiacov"
+      ],
+      "${ n } item": [
+        "${ n } položka",
+        "${ n } položky",
+        "${ n } položiek ",
+        "${ n } položiek "
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } pozvánka úspešne odoslaná",
+        "${ payload.count } pozvánky úspešne odoslané",
+        "${ payload.count } pozvánok úspešne odoslaných",
+        "${ payload.count } pozvánok úspešne odoslaných"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } odpoveď",
+        "${ repliedCount } odpovede",
+        "${ repliedCount } odpovedí",
+        "${ repliedCount } odpovedí"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } odoslaný",
+        "${ repliedEmailsCount } odoslané",
+        "${ repliedEmailsCount } odoslaných",
+        "${ repliedEmailsCount } odoslaných"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } zistený únik",
+        "${ row.breachCount } zistených únikov",
+        "${ row.breachCount } zistené úniky",
+        "${ row.breachCount } zistených únikov"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } bezpečný odkaz",
+        "${ secureLinksCount } bezpečné odkazy",
+        "${ secureLinksCount } bezpečných odkazov",
+        "${ secureLinksCount } bezpečných odkazov"
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } iné prihlásenie používa rovnaké heslo",
+        "${ total } iné prihlasovania už používajú rovnaké heslo",
+        "${ total } iných prihlasovaní už používa rovnaké heslo",
+        "${ total } iných prihlasovaní už používa rovnaké heslo"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } prihlásenie",
+        "${ usageCount } prihlásenia",
+        "${ usageCount } prihlásení",
+        "${ usageCount } prihlásení"
+      ],
+      "${ years } year": [
+        "${ years } rok",
+        "${ years } roky",
+        "${ years } rokov",
+        "${ years } rokov"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Skutočne chcete presunúť ${ trashedItemsCount } položku do koša?",
+        "Skutočne chcete presunúť ${ trashedItemsCount } položky do koša?",
+        "Skutočne chcete presunúť ${ trashedItemsCount } položiek do koša?",
+        "Skutočne chcete presunúť ${ trashedItemsCount } položiek do koša?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položku?",
+        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položky?",
+        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položiek?",
+        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položiek?"
+      ],
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtov",
+        "bajtov"
+      ],
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtov",
+        "Bajtov"
+      ],
+      "Cannot send invitation at the moment": [
+        "Momentálne nie je možné odoslať pozvánku",
+        "Momentálne nie je možné odoslať pozvánky",
+        "Momentálne nie je možné odoslať pozvánky",
+        "Momentálne nie je možné odoslať pozvánky"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Vymazať ${ deletedItemsCount } položku?",
+        "Vymazať ${ deletedItemsCount } položky?",
+        "Vymazať ${ deletedItemsCount } položiek?",
+        "Vymazať ${ deletedItemsCount } položiek?"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Zistený ${ errors.length } poškodený riadok csv",
+        "Zistené ${ errors.length } poškodené riadky csv",
+        "Zistených ${ errors.length } poškodených riadkov csv",
+        "Zistených ${ errors.length } poškodených riadkov csv"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k tomuto zdieľanému trezoru",
+        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k týmto zdieľaným trezorom",
+        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k týmto zdieľaným trezorom",
+        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k týmto zdieľaným trezorom"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňa.",
+        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov.",
+        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov.",
+        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov."
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtov",
+        "Gigabajtov"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Zdieľanie položky: ${ itemAccessCount } používateľ",
+        "Zdieľanie položky: ${ itemAccessCount } používatelia",
+        "Zdieľanie položky: ${ itemAccessCount } používateľov",
+        "Zdieľanie položky: ${ itemAccessCount } používateľov"
+      ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľa.",
+        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov.",
+        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov.",
+        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov."
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtov",
+        "Kilobajtov"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maximálna dĺžka je ${ maxLength } znak",
+        "Maximálna dĺžka sú ${ maxLength } znaky",
+        "Maximálna dĺžka je ${ maxLength } znakov",
+        "Maximálna dĺžka je ${ maxLength } znakov"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtov",
+        "Megabajtov"
+      ],
+      "Move ${ count } item": [
+        "Presunúť ${ count } položku",
+        "Presunúť ${ count } položky",
+        "Presunúť ${ count } položiek",
+        "Presunúť ${ count } položiek"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Presunúť ${ count } položku do ${ vaultName }",
+        "Presunúť ${ count } položky do ${ vaultName }",
+        "Presunúť ${ count } položiek do ${ vaultName }",
+        "Presunúť ${ count } položiek do ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Presunúť ${ trashedItemsCount } položku do koša?",
+        "Presunúť ${ trashedItemsCount } položky do koša?",
+        "Presunúť ${ trashedItemsCount } položiek do koša?",
+        "Presunúť ${ trashedItemsCount } položiek do koša?"
+      ],
+      "Move item to": [
+        "Presunúť položku do",
+        "Presunúť položky do",
+        "Presunúť položky do",
+        "Presunúť položky do"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždeň sa automaticky odstránia z histórie.",
+        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždne sa automaticky odstránia z histórie.",
+        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie.",
+        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie."
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Upozorňujeme, že vymazaný alias nie je možné obnoviť.",
+        "Upozorňujeme, že vymazané aliasy nie je možné obnoviť.",
+        "Upozorňujeme, že vymazané aliasy nie je možné obnoviť.",
+        "Upozorňujeme, že vymazané aliasy nie je možné obnoviť."
+      ],
+      "Reused ${ count } time": [
+        "Použité ${ count }-krát",
+        "Použité ${ count }-krát",
+        "Použité ${ count }-krát",
+        "Použité ${ count }-krát"
+      ],
+      "Sync alias": [
+        "Synchronizovať alias",
+        "Synchronizovať aliasy",
+        "Synchronizovať aliasy",
+        "Synchronizovať aliasy"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtov",
+        "terabajtov"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Nasledujúcu ${ totalIgnored } položku nebolo možné importovať:",
+        "Nasledujúce ${ totalIgnored } položky nebolo možné importovať:",
+        "Nasledujúcich ${ totalIgnored } položiek nebolo možné importovať:",
+        "Nasledujúcich ${ totalIgnored } položiek nebolo možné importovať:"
+      ],
+      "Understood, I will never need it": [
+        "Rozumiem, nikdy ho nebudem potrebovať",
+        "Rozumiem, nikdy ich nebudem potrebovať",
+        "Rozumiem, nikdy ich nebudem potrebovať",
+        "Rozumiem, nikdy ich nebudem potrebovať"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Zdieľanie trezora: ${ vaultMembersCount } člen",
+        "Zdieľanie trezora: ${ vaultMembersCount } členovia",
+        "Zdieľanie trezora: ${ vaultMembersCount } členov",
+        "Zdieľanie trezora: ${ vaultMembersCount } členov"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľa.",
+        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov.",
+        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov.",
+        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Zaznamenali sme, že máte ${ aliasCount } alias, ktorý je prítomný v SimpleLogin, ale chýba v ${ PASS_APP_NAME }. Chcete ho importovať?",
+        "Zaznamenali sme, že máte ${ aliasCount } aliasy, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?",
+        "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?",
+        "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Vybratú položku môžete pretiahnuť do iného trezoru",
+        "Vybraté položky môžete pretiahnuť do iného trezoru",
+        "Vybraté položky môžete pretiahnuť do iného trezoru",
+        "Vybraté položky môžete pretiahnuť do iného trezoru"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Máte ${ aliasCount } alias, ktorý sa nachádza v SimpleLogin, ale chýba v ${ PASS_APP_NAME }. Chcete ho synchronizovať?",
+        "Máte ${ aliasCount } aliasy, ktoré sa nachádzajú v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich synchronizovať?",
+        "Máte ${ aliasCount } aliasov, ktoré sa nachádzajú v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich synchronizovať?",
+        "Máte ${ aliasCount } aliasov, ktoré sa nachádzajú v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich synchronizovať?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Na vyskúšanie týchto a mnohých ďalších prémiových funkcií vám zostáva ${ daysRemaining } deň.",
+        "Na vyskúšanie týchto a mnohých ďalších prémiových funkcií vám zostávajú ${ daysRemaining } dni",
+        "Na vyskúšanie týchto a mnohých ďalších prémiových funkcií vám zostáva ${ daysRemaining } dní",
+        "Na vyskúšanie týchto a mnohých ďalších prémiových funkcií vám zostáva ${ daysRemaining } dní"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Chystáte sa natrvalo vymazať ${ aliasCount } alias.",
+        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
+        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
+        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } a ${ remainingCount } ďalšie zistené potenciálne úniky. Ak chcete zobraziť podrobnosti a prijať opatrenia zapnite ${ DARK_WEB_MONITORING_NAME }. ${ link }"
@@ -252,6 +614,12 @@
       ],
       "Dismiss": [
         "Odmietnuť"
+      ],
+      "Do not show again": [
+        "Už nezobrazovať"
+      ],
+      "Do not show again when I press": [
+        "Nezobrazovať znova po stlačení"
       ],
       "Download this CSV template": [
         "Stiahnuť si túto CSV šablónu"
@@ -610,12 +978,6 @@
       "Submitting report...": [
         "Odosielanie hlásenia..."
       ],
-      "Sync alias": [
-        "Synchronizovať alias",
-        "Synchronizovať aliasy",
-        "Synchronizovať aliasy",
-        "Synchronizovať aliasy"
-      ],
       "Sync aliases": [
         "Synchronizovať aliasy"
       ],
@@ -642,12 +1004,6 @@
       ],
       "Unblock contact": [
         "Odblokovať kontakt"
-      ],
-      "Understood, I will never need it": [
-        "Rozumiem, nikdy ho nebudem potrebovať",
-        "Rozumiem, nikdy ich nebudem potrebovať",
-        "Rozumiem, nikdy ich nebudem potrebovať",
-        "Rozumiem, nikdy ich nebudem potrebovať"
       ],
       "Unlock": [
         "Odomknúť"
@@ -722,12 +1078,6 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } je k dispozícii s plateným plánom. Pre okamžitý prístup upgradujte."
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } iné prihlásenie používa rovnaké heslo",
-        "${ total } iné prihlasovania už používajú rovnaké heslo",
-        "${ total } iných prihlasovaní už používa rovnaké heslo",
-        "${ total } iných prihlasovaní už používa rovnaké heslo"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "Funkcia 2FA pridáva ďalšiu úroveň zabezpečenia prihlásenia. ${ PASS_APP_NAME } uľahčuje 2FA ukladaním a automatickým vypĺňaním kódov 2FA."
@@ -856,12 +1206,6 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Overenie zlyhalo. Potvrďte svoje druhé heslo, ak chcete pokračovať v exporte"
       ],
-      "Cannot send invitation at the moment": [
-        "Momentálne nie je možné odoslať pozvánku",
-        "Momentálne nie je možné odoslať pozvánky",
-        "Momentálne nie je možné odoslať pozvánky",
-        "Momentálne nie je možné odoslať pozvánky"
-      ],
       "Cannot send invitations at the moment": [
         "Momentálne nie je možné odoslať pozvánky"
       ],
@@ -909,12 +1253,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Odstránenie trezoru \"${ payload.content.name }\" zlyhalo"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Zistený ${ errors.length } poškodený riadok csv",
-        "Zistené ${ errors.length } poškodené riadky csv",
-        "Zistených ${ errors.length } poškodených riadkov csv",
-        "Zistených ${ errors.length } poškodených riadkov csv"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Doménu nebolo možné overiť. Skontrolujte, či ste pridali správne DNS záznamy"
@@ -1258,12 +1596,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bajt",
-        "bajty",
-        "bajtov",
-        "bajtov"
-      ],
       "GB": [
         "GB"
       ],
@@ -1275,38 +1607,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Bajt",
-        "Bajty",
-        "Bajtov",
-        "Bajtov"
-      ],
-      "Gigabyte": [
-        "Gigabajt",
-        "Gigabajty",
-        "Gigabajtov",
-        "Gigabajtov"
-      ],
-      "Kilobyte": [
-        "Kilobajt",
-        "Kilobajty",
-        "Kilobajtov",
-        "Kilobajtov"
-      ],
-      "Megabyte": [
-        "Megabajt",
-        "Megabajty",
-        "Megabajtov",
-        "Megabajtov"
-      ],
-      "Terabyte": [
-        "terabajt",
-        "terabajty",
-        "terabajtov",
-        "terabajtov"
       ]
     },
     "Header": {
@@ -1327,50 +1627,8 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "Aktualizácia \"${ payload.itemName }\" bola zamietnutá"
       ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } zablokovaný",
-        "${ blockedEmailsCount } zablokované",
-        "${ blockedEmailsCount } zablokovaných",
-        "${ blockedEmailsCount } zablokovaných"
-      ],
-      "${ count } time": [
-        "${ count } krát",
-        "${ count } krát",
-        "${ count } krát",
-        "${ count } krát"
-      ],
-      "${ count } view": [
-        "${ count } zobrazenie",
-        "${ count } zobrazení",
-        "${ count } zobrazenia",
-        "${ count }/ zobrazení"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } zobrazenie",
-        "${ count }/${ maxReads } zobrazenia",
-        "${ count }/${ maxReads } zobrazení",
-        "${ count }/${ maxReads } zobrazení"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } preposlaný",
-        "${ forwardedEmailsCount } preposlané",
-        "${ forwardedEmailsCount } preposlaných",
-        "${ forwardedEmailsCount } preposlaných"
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vami zdieľať položku."
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } člen",
-        "${ memberCount } členovia",
-        "${ memberCount } členov",
-        "${ memberCount } členov"
-      ],
-      "${ n } item": [
-        "${ n } položka",
-        "${ n } položky",
-        "${ n } položiek ",
-        "${ n } položiek "
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } bude vždy dostupný"
@@ -1390,29 +1648,11 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } bude vyžadovať vaše ${ BRAND_NAME } heslo na prístup k údajom offline."
       ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } pozvánka úspešne odoslaná",
-        "${ payload.count } pozvánky úspešne odoslané",
-        "${ payload.count } pozvánok úspešne odoslaných",
-        "${ payload.count } pozvánok úspešne odoslaných"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } úspešne vypnutý"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } úspešne zapnutý"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } odoslaný",
-        "${ repliedEmailsCount } odoslané",
-        "${ repliedEmailsCount } odoslaných",
-        "${ repliedEmailsCount } odoslaných"
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount } zistený únik",
-        "${ row.breachCount } zistených únikov",
-        "${ row.breachCount } zistené úniky",
-        "${ row.breachCount } zistených únikov"
       ],
       "(Empty)": [
         "(Prázdne)"
@@ -1723,23 +1963,11 @@
       "For security reasons, this action requires identity verification.": [
         "Z bezpečnostných dôvodov si táto akcia vyžaduje overenie totožnosti."
       ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k tomuto zdieľanému trezoru",
-        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k týmto zdieľaným trezorom",
-        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k týmto zdieľaným trezorom",
-        "Z bezpečnostných dôvodov je potrebné potvrdiť prístup k týmto zdieľaným trezorom"
-      ],
       "For security reasons, your access needs to be confirmed": [
         "Z bezpečnostných dôvodov musí byť váš prístup potvrdený"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Adresa preposlania skopírovaná do schránky. Odošlite email na túto adresu a ${ Email } ho prijme."
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňa.",
-        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov.",
-        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov.",
-        "Vygenerované heslá budú uložené po dobu ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Využite Proton Pass naplno vytvorením trezora pre každý tím alebo projekt."
@@ -1819,12 +2047,6 @@
       "Item restored": [
         "Položka bola obnovená"
       ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Zdieľanie položky: ${ itemAccessCount } používateľ",
-        "Zdieľanie položky: ${ itemAccessCount } používatelia",
-        "Zdieľanie položky: ${ itemAccessCount } používateľov",
-        "Zdieľanie položky: ${ itemAccessCount } používateľov"
-      ],
       "Item successfully excluded from monitoring": [
         "Položka bola úspešne vylúčená z monitorovania"
       ],
@@ -1884,12 +2106,6 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Viac ako správca hesiel, ${ PASS_APP_NAME } chráni vaše heslo a vašu osobnú emailovú adresu prostredníctvom emailových aliasov. Vďaka rovnakej technológii ako ${ MAIL_APP_NAME }, sú vaše údaje end-to-end šifrované a prístup k nim máte len vy."
-      ],
-      "Move ${ count } item": [
-        "Presunúť ${ count } položku",
-        "Presunúť ${ count } položky",
-        "Presunúť ${ count } položiek",
-        "Presunúť ${ count } položiek"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
@@ -1956,12 +2172,6 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Heslo na uzamknutie bolo úspešne zaregistrované. Použite ho na odomknutie ${ PASS_APP_NAME }"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždeň sa automaticky odstránia z histórie.",
-        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždne sa automaticky odstránia z histórie.",
-        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie.",
-        "Heslá staršie ako ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } týždňov sa automaticky odstránia z histórie."
       ],
       "Paused": [
         "Pozastavené"
@@ -2097,6 +2307,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Počas importu údajov nechajte toto okno otvorené. Tento proces môže trvať niekoľko minút."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Uistite sa, prosím, že predtým aktívne okno je tam, kde chcete automaticky vyplniť údaje, a že kurzor je umiestnený v prihlasovacom poli."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Upozorňujeme, že po vymazaní sa alias nedá obnoviť. Nechcete alias radšej deaktivovať?"
@@ -2251,12 +2464,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Na použitie ${ PASS_APP_NAME } bude vyžadované dodatočné heslo. Funguje ako dodatočné heslo k vášmu heslu pre ${ BRAND_NAME }."
       ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Nasledujúcu ${ totalIgnored } položku nebolo možné importovať:",
-        "Nasledujúce ${ totalIgnored } položky nebolo možné importovať:",
-        "Nasledujúcich ${ totalIgnored } položiek nebolo možné importovať:",
-        "Nasledujúcich ${ totalIgnored } položiek nebolo možné importovať:"
-      ],
       "The secure link has been removed": [
         "Bezpečný odkaz bol odstránený"
       ],
@@ -2386,12 +2593,6 @@
       "Vault organization successfully updated": [
         "Organizácia trezoru bola úspešne aktualizovaná"
       ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Zdieľanie trezora: ${ vaultMembersCount } člen",
-        "Zdieľanie trezora: ${ vaultMembersCount } členovia",
-        "Zdieľanie trezora: ${ vaultMembersCount } členov",
-        "Zdieľanie trezora: ${ vaultMembersCount } členov"
-      ],
       "Verification code sent.": [
         "Overovací kód bol odoslaný."
       ],
@@ -2400,12 +2601,6 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Máme problém so synchronizáciou údajov do vášho lokálneho úložiska. Uistite sa, prosím, že máte dostatok miesta na disku pre správne fungovanie ${ PASS_SHORT_APP_NAME }."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Zaznamenali sme, že máte ${ aliasCount } alias, ktorý je prítomný v SimpleLogin, ale chýba v ${ PASS_APP_NAME }. Chcete ho importovať?",
-        "Zaznamenali sme, že máte ${ aliasCount } aliasy, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?",
-        "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?",
-        "Zaznamenali sme, že máte ${ aliasCount } aliasov, ktoré sú prítomné v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich importovať?"
       ],
       "Week": [
         "Týždeň"
@@ -2431,18 +2626,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Nemôžete zmeniť schránku pre tento alias."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Máte ${ aliasCount } alias, ktorý sa nachádza v SimpleLogin, ale chýba v ${ PASS_APP_NAME }. Chcete ho synchronizovať?",
-        "Máte ${ aliasCount } aliasy, ktoré sa nachádzajú v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich synchronizovať?",
-        "Máte ${ aliasCount } aliasov, ktoré sa nachádzajú v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich synchronizovať?",
-        "Máte ${ aliasCount } aliasov, ktoré sa nachádzajú v SimpleLogin, ale chýbajú v ${ PASS_APP_NAME }. Chcete ich synchronizovať?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Na vyskúšanie týchto a mnohých ďalších prémiových funkcií vám zostáva ${ daysRemaining } deň.",
-        "Na vyskúšanie týchto a mnohých ďalších prémiových funkcií vám zostávajú ${ daysRemaining } dni",
-        "Na vyskúšanie týchto a mnohých ďalších prémiových funkcií vám zostáva ${ daysRemaining } dní",
-        "Na vyskúšanie týchto a mnohých ďalších prémiových funkcií vám zostáva ${ daysRemaining } dní"
-      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Prekročili ste počet trezorov zahrnutých vo vašom predplatnom. Položky je možné presunúť iba do vašich prvých dvoch trezorov. Pre presúvanie položiek medzi všetkými trezormi navýšte svoje predplatné."
       ],
@@ -2463,6 +2646,12 @@
       ],
       "You may close this tab.": [
         "Túto kartu môžete zatvoriť."
+      ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "V závislosti od vášho systému môže byť potrebné prijať výzvu na povolenie a možno budete musieť aplikáciu reštartovať."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Možno budete musieť udeliť povolenie na prístup aplikácii ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Pred importom položiek potrebujete trezor s oprávnením k úpravám."
@@ -2510,96 +2699,20 @@
         "Vaša organizácia vyžaduje, aby ste zabezpečili svoj prístup k ${ PASS_APP_NAME }"
       ]
     },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } alias",
-        "${ aliasCount } aliasy",
-        "${ aliasCount } aliasov",
-        "${ aliasCount } aliasov"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } blokovanie",
-        "${ blockedCount } blokovania",
-        "${ blockedCount } blokovaní",
-        "${ blockedCount } blokovaní"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } znak",
-        "${ config.options.length } znakov",
-        "${ config.options.length } znaky",
-        "${ config.options.length } znakov"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } slovo",
-        "${ config.options.wordCount } slová",
-        "${ config.options.wordCount } slov",
-        "${ config.options.wordCount } slov"
-      ],
-      "${ count } item": [
-        "${ count } položka",
-        "${ count } položky",
-        "${ count } položiek",
-        "${ count } položiek"
-      ],
-      "${ days } day": [
-        "${ days } deň",
-        "${ days } dni",
-        "${ days } dní",
-        "${ days } dní"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } preposlanie",
-        "${ forwardCount } preposlania",
-        "${ forwardCount } preposlaní",
-        "${ forwardCount } preposlaní"
-      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } za posledných 14 dní."
       ],
-      "${ hours } hour": [
-        "${ hours } hodiny",
-        "${ hours } hodiny",
-        "${ hours } hodín",
-        "${ hours } hodín"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minúta",
-        "${ minutes } minúty",
-        "${ minutes } minút",
-        "${ minutes } minút"
-      ],
-      "${ months } month": [
-        "${ months } mesiac",
-        "${ months } mesiace",
-        "${ months } mesiacov",
-        "${ months } mesiacov"
-      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Verzia ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } odpoveď",
-        "${ repliedCount } odpovede",
-        "${ repliedCount } odpovedí",
-        "${ repliedCount } odpovedí"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } bezpečný odkaz",
-        "${ secureLinksCount } bezpečné odkazy",
-        "${ secureLinksCount } bezpečných odkazov",
-        "${ secureLinksCount } bezpečných odkazov"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } prihlásenie",
-        "${ usageCount } prihlásenia",
-        "${ usageCount } prihlásení",
-        "${ usageCount } prihlásení"
-      ],
-      "${ years } year": [
-        "${ years } rok",
-        "${ years } roky",
-        "${ years } rokov",
-        "${ years } rokov"
       ],
       "1 hour": [
         "1 hodine"
@@ -3213,9 +3326,6 @@
       "Network": [
         "Sieť"
       ],
-      "New": [
-        "Nová"
-      ],
       "New email": [
         "Nový email"
       ],
@@ -3725,18 +3835,6 @@
       ]
     },
     "Message": {
-      "${ count } item": [
-        "${ count } položka",
-        "${ count } položky",
-        "${ count } položiek",
-        "${ count } položiek"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Vybratú položku môžete pretiahnuť do iného trezoru",
-        "Vybraté položky môžete pretiahnuť do iného trezoru",
-        "Vybraté položky môžete pretiahnuť do iného trezoru",
-        "Vybraté položky môžete pretiahnuť do iného trezoru"
-      ],
       "You selected ${ semiboldText } in this vault.": [
         "Vybrali ste ${ semiboldText } v tomto trezore."
       ]
@@ -3795,12 +3893,6 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "Súbor „${ filename }“ je príliš veľký na nahratie. Maximálna povolená veľkosť je (${ maxFileSizeInMB })"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } súbor",
-        "${ filesCount } súbory",
-        "${ filesCount } súborov",
-        "${ filesCount } súborov"
       ],
       "Attachments": [
         "Prílohy"
@@ -4129,12 +4221,6 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Doména bola úspešne overená. Vaša doména môže začať prijímať emaily a vytvárať aliasy"
       ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľa.",
-        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov.",
-        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov.",
-        "Položky nemôžu obsahovať viac než ${ share.targetMaxMembers } používateľov."
-      ],
       "Mailbox change successfully cancelled": [
         "Zmena poštovej schránky úspešne zrušená"
       ],
@@ -4152,12 +4238,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Generovanie náhodnej predpony bolo úspešne povolené"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľa.",
-        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov.",
-        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov.",
-        "Trezory nemôžu obsahovať viac než ${ targetMaxMembers } používateľov."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Overovací email bol odoslaný. Skontrolujte si, prosím, doručenú poštu a overte svoju poštovú schránku"
@@ -4276,12 +4356,6 @@
       ],
       "Default Display Name": [
         "Predvolené zobrazované meno"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Vymazať ${ deletedItemsCount } položku?",
-        "Vymazať ${ deletedItemsCount } položky?",
-        "Vymazať ${ deletedItemsCount } položiek?",
-        "Vymazať ${ deletedItemsCount } položiek?"
       ],
       "Delete domain": [
         "Vymazať doménu"
@@ -4415,18 +4489,6 @@
       "Modified": [
         "Upravené"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Presunúť ${ count } položku do ${ vaultName }",
-        "Presunúť ${ count } položky do ${ vaultName }",
-        "Presunúť ${ count } položiek do ${ vaultName }",
-        "Presunúť ${ count } položiek do ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Presunúť ${ trashedItemsCount } položku do koša?",
-        "Presunúť ${ trashedItemsCount } položky do koša?",
-        "Presunúť ${ trashedItemsCount } položiek do koša?",
-        "Presunúť ${ trashedItemsCount } položiek do koša?"
-      ],
       "Move all items to \"${ vaultName }\"?": [
         "Presunúť všetky položky do trezora \"${ vaultName }\"?"
       ],
@@ -4487,17 +4549,14 @@
       "Pending access to the shared data": [
         "Čaká sa na prístup k zdieľaným údajom"
       ],
+      "Perform autotype?": [
+        "Vykonávať automatické zadávanie?"
+      ],
       "Permanently remove all items?": [
         "Natrvalo odstrániť všetky položky?"
       ],
       "Pinned (${ items.length })": [
         "Pripnuté (${ items.length })"
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Upozorňujeme, že vymazaný alias nie je možné obnoviť.",
-        "Upozorňujeme, že vymazané aliasy nie je možné obnoviť.",
-        "Upozorňujeme, že vymazané aliasy nie je možné obnoviť.",
-        "Upozorňujeme, že vymazané aliasy nie je možné obnoviť."
       ],
       "Previous": [
         "Predchádzajúci"
@@ -4531,12 +4590,6 @@
       ],
       "Resume monitoring?": [
         "Pokračovať v monitorovaní?"
-      ],
-      "Reused ${ count } time": [
-        "Použité ${ count }-krát",
-        "Použité ${ count }-krát",
-        "Použité ${ count }-krát",
-        "Použité ${ count }-krát"
       ],
       "Reused passwords": [
         "Opakovane použité heslá"
@@ -4654,12 +4707,6 @@
       ],
       "Your welcome gift": [
         "Váš darček na privítanie"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Chystáte sa natrvalo vymazať ${ aliasCount } alias.",
-        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasy.",
-        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov.",
-        "Chystáte sa natrvalo vymazať ${ aliasCount } aliasov."
       ]
     },
     "Title_cloned_item": {
@@ -4706,14 +4753,6 @@
         "URL je neplatná"
       ]
     },
-    "Vault Select": {
-      "Move item to": [
-        "Presunúť položku do",
-        "Presunúť položky do",
-        "Presunúť položky do",
-        "Presunúť položky do"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } heslo je povinné"
@@ -4738,18 +4777,6 @@
       ],
       "An error occurred while importing your data.": [
         "Počas importu vašich dát sa vyskytla chyba"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Skutočne chcete presunúť ${ trashedItemsCount } položku do koša?",
-        "Skutočne chcete presunúť ${ trashedItemsCount } položky do koša?",
-        "Skutočne chcete presunúť ${ trashedItemsCount } položiek do koša?",
-        "Skutočne chcete presunúť ${ trashedItemsCount } položiek do koša?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položku?",
-        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položky?",
-        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položiek?",
-        "Skutočne chcete natrvalo vymazať ${ deletedItemsCount } položiek?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Naozaj chcete narvalo odstrániť túto položku?"
@@ -4811,6 +4838,9 @@
       "Extra password should have at least 8 characters": [
         "Dodatočné heslo by malo mať aspoň 8 znakov"
       ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatické zadávanie zlyhalo. Uistite sa, že aplikácia ${ PASS_APP_NAME } má potrebné povolenia a skúste to znova (${ error })."
+      ],
       "Failed to load breaches.": [
         "Načítanie únikov zlyhalo."
       ],
@@ -4831,12 +4861,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Pozývanie emailových adries nepatriacich do organizácie nie je povolené."
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Maximálna dĺžka je ${ maxLength } znak",
-        "Maximálna dĺžka sú ${ maxLength } znaky",
-        "Maximálna dĺžka je ${ maxLength } znakov",
-        "Maximálna dĺžka je ${ maxLength } znakov"
       ],
       "Missing alias prefix": [
         "Chýbajúca predpona aliasu"

@@ -4,6 +4,338 @@
     "language": "uk_UA"
   },
   "contexts": {
+    "": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } псевдонім",
+        "${ aliasCount } псевдоніми",
+        "${ aliasCount } псевдонімів",
+        "${ aliasCount } псевдонімів"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } блок",
+        "${ blockedCount } блоки",
+        "${ blockedCount } блоків",
+        "${ blockedCount } блоки"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } заблоковано",
+        "${ blockedEmailsCount } заблоковано",
+        "${ blockedEmailsCount } заблоковано",
+        "${ blockedEmailsCount } заблоковано"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } символ",
+        "${ config.options.length } символів",
+        "${ config.options.length } символи",
+        "${ config.options.length } символи"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } слово",
+        "${ config.options.wordCount } слова",
+        "${ config.options.wordCount } слів",
+        "${ config.options.wordCount } слів"
+      ],
+      "${ count } item": [
+        "${ count } елемент",
+        "${ count } елементи",
+        "${ count } елементи",
+        "${ count } елементів"
+      ],
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } разів",
+        "${ count } рази",
+        "${ count } рази"
+      ],
+      "${ count } view": [
+        "${ count } перегляд",
+        "${ count } перегляди",
+        "${ count } переглядів",
+        "${ count } переглядів"
+      ],
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дні",
+        "${ days } днів",
+        "${ days } днів"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } файл",
+        "${ filesCount } файли",
+        "${ filesCount } файлів",
+        "${ filesCount } файлів"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } пересилання",
+        "${ forwardCount } пересилання",
+        "${ forwardCount } пересилань",
+        "${ forwardCount } пересилання"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } переслано",
+        "${ forwardedEmailsCount } переслано",
+        "${ forwardedEmailsCount } переслано",
+        "${ forwardedEmailsCount } переслано"
+      ],
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } годин"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } учасник",
+        "${ memberCount } учасники",
+        "${ memberCount } учасників",
+        "${ memberCount } учасників"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
+      ],
+      "${ months } month": [
+        "${ months } місяць",
+        "${ months } місяців",
+        "${ months } місяці",
+        "${ months } місяці"
+      ],
+      "${ n } item": [
+        "${ n } елемент",
+        "Елементів: ${ n }",
+        "Елементів: ${ n }",
+        "Елементів: ${ n }"
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } запрошення успішно відправлено",
+        "${ payload.count } запрошень успішно відправлено",
+        "${ payload.count } запрошень успішно відправлено",
+        "${ payload.count } запрошень успішно відправлено"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } відповідь",
+        "${ repliedCount } відповіді",
+        "${ repliedCount } відповідей",
+        "${ repliedCount } відповіді"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } надіслано",
+        "${ repliedEmailsCount } надіслано",
+        "${ repliedEmailsCount } надіслано",
+        "${ repliedEmailsCount } надіслано"
+      ],
+      "${ row.breachCount } breach detected": [
+        "Виявлено ${ row.breachCount } витік",
+        "Виявлено ${ row.breachCount } витоки",
+        "Виявлено ${ row.breachCount } витоків",
+        "Виявлено ${ row.breachCount } витоків"
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } запис входу використовує той самий пароль",
+        "${ total } записи входу використовують той самий пароль",
+        "${ total } записів входу використовують той самий пароль",
+        "${ total } записів входу використовують той самий пароль"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } запис входу",
+        "${ usageCount } записи входу",
+        "${ usageCount } записів входу",
+        "${ usageCount } записів входу"
+      ],
+      "${ years } year": [
+        "${ years } рік",
+        "${ years } роки",
+        "${ years } років",
+        "${ years } роки"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Ви впевнені, що хочете перемістити елемент ${ trashedItemsCount } до смітника?",
+        "Ви впевнені, що хочете перемістити елементи ${ trashedItemsCount } до смітника?",
+        "Ви впевнені, що хочете перемістити елементів ${ trashedItemsCount } до смітника?",
+        "Ви впевнені, що хочете перемістити елементи ${ trashedItemsCount } до смітника?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Ви впевнені, що хочете назавжди видалити елемент ${ deletedItemsCount }?",
+        "Ви впевнені, що хочете назавжди видалити елементи ${ deletedItemsCount }?",
+        "Ви впевнені, що хочете назавжди видалити елементів ${ deletedItemsCount }?",
+        "Ви впевнені, що хочете назавжди видалити елементи ${ deletedItemsCount }?"
+      ],
+      "byte": [
+        "байт",
+        "байти",
+        "байтів",
+        "байтів"
+      ],
+      "Byte": [
+        "Байт",
+        "Байти",
+        "Байтів",
+        "Байтів"
+      ],
+      "Cannot send invitation at the moment": [
+        "Неможливо відправити запрошення на цей момент",
+        "Неможливо відправити запрошення на цей момент",
+        "Неможливо відправити запрошення на цей момент",
+        "Неможливо відправити запрошення на цей момент"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Видалити ${ deletedItemsCount } елемент?",
+        "Видалити ${ deletedItemsCount } елементи?",
+        "Видалити ${ deletedItemsCount } елементів?",
+        "Видалити ${ deletedItemsCount } елементи?"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Виявлено ${ errors.length } пошкоджений csv рядок",
+        "Виявлено ${ errors.length } пошкоджених csv рядки",
+        "Виявлено ${ errors.length } пошкоджених csv рядків",
+        "Виявлено ${ errors.length } пошкоджених csv рядків"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "З міркувань безпеки вам необхідно підтвердити доступ до цього спільного сховища",
+        "З міркувань безпеки вам необхідно підтвердити доступ до цих спільних сховищ",
+        "З міркувань безпеки вам необхідно підтвердити доступ до цих спільних сховищ",
+        "З міркувань безпеки вам необхідно підтвердити доступ до цих спільних сховищ"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Згенеровані паролі зберігатимуться протягом ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижня.",
+        "Згенеровані паролі зберігатимуться протягом ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижнів.",
+        "Згенеровані паролі зберігатимуться протягом ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижнів.",
+        "Згенеровані паролі зберігатимуться протягом ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижнів."
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайти",
+        "Гігабайтів",
+        "Гігабайтів"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Спільний доступ до елемента: ${ itemAccessCount } користувач",
+        "Спільний доступ до елемента: ${ itemAccessCount } користувачі",
+        "Спільний доступ до елемента: ${ itemAccessCount } користувачів",
+        "Спільний доступ до елемента: ${ itemAccessCount } користувачів"
+      ],
+      "Kilobyte": [
+        "Кілобайт",
+        "Кілобайти",
+        "Кілобайтів",
+        "Кілобайтів"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Максимальна довжина - ${ maxLength } символ",
+        "Максимальна довжина - ${ maxLength } символів",
+        "Максимальна довжина - ${ maxLength } символів",
+        "Максимальна довжина - ${ maxLength } символів"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайти",
+        "Мегабайтів",
+        "Мегабайтів"
+      ],
+      "Move ${ count } item": [
+        "Перемістити ${ count } елемент",
+        "Перемістити ${ count } елементи",
+        "Перемістити ${ count } елементів",
+        "Перемістити ${ count } елементів"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Перемістити ${ count } елемент до ${ vaultName }",
+        "Перемістити ${ count } елементи до ${ vaultName }",
+        "Перемістити ${ count } елементів до ${ vaultName }",
+        "Перемістити ${ count } елементи до ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Перемістити елемент ${ trashedItemsCount } до смітника?",
+        "Перемістити елементи ${ trashedItemsCount } до смітника?",
+        "Перемістити елементів ${ trashedItemsCount } до смітника?",
+        "Перемістити елементи ${ trashedItemsCount } до смітника?"
+      ],
+      "Move item to": [
+        "Перемістити елемент до",
+        "Перемістити елементи до",
+        "Перемістити елементи до",
+        "Перемістити елементи до"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тиждень автоматично видаляються з історії.",
+        "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижні автоматично видаляються з історії.",
+        "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижні автоматично видаляються з історії.",
+        "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижні автоматично видаляються з історії."
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Зверніть увагу, що після видалення псевдонім не можна відновити.",
+        "Зверніть увагу, що після видалення псевдоніми не можна відновити.",
+        "Зверніть увагу, що після видалення псевдоніми не можна відновити.",
+        "Зверніть увагу, що після видалення псевдоніми не можна відновити."
+      ],
+      "Reused ${ count } time": [
+        "Повторювався ${ count } раз",
+        "Повторювався ${ count } рази",
+        "Повторювався ${ count } разів",
+        "Повторювався ${ count } разів"
+      ],
+      "Sync alias": [
+        "Синхронізувати псевдонім",
+        "Синхронізувати псевдоніми",
+        "Синхронізувати псевдонімів",
+        "Синхронізувати псевдоніми"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
+      ],
+      "Understood, I will never need it": [
+        "Зрозуміло, я ніколи не потребуватиму цього",
+        "Зрозуміло, я ніколи не потребуватиму цих",
+        "Зрозуміло, я ніколи не потребуватиму цих",
+        "Зрозуміло, я ніколи не потребуватиму цих"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Спільний доступ до сховища: ${ vaultMembersCount } учасник",
+        "Спільний доступ до сховища: ${ vaultMembersCount } учасники",
+        "Спільний доступ до сховища: ${ vaultMembersCount } учасників",
+        "Спільний доступ до сховища: ${ vaultMembersCount } учасників"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувача.",
+        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувачів.",
+        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувачів.",
+        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувачів."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Ми виявили, що у вас є псевдонім ${ aliasCount }, який присутній у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?",
+        "Ми виявили, що у вас є псевдоніми ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?",
+        "Ми виявили, що у вас є псевдонімів ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?",
+        "Ми виявили, що у вас є псевдоніми ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Ви можете перетягнути вибраний елемент до іншого сховища",
+        "Ви можете перетягнути вибрані елементи до іншого сховища",
+        "Ви можете перетягнути вибраних елементів до іншого сховища",
+        "Ви можете перетягнути вибрані елементи до іншого сховища"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "У вас є псевдонім ${ aliasCount }, який присутній у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Ви хочете синхронізувати його?",
+        "У вас є псевдоніми ${ aliasCount }, які присутні в SimpleLogin, але відсутні в ${ PASS_APP_NAME }. Бажаєте їх синхронізувати?",
+        "У вас є псевдонімів ${ aliasCount }, які присутні в SimpleLogin, але відсутні в ${ PASS_APP_NAME }. Бажаєте їх синхронізувати?",
+        "У вас є псевдоніми ${ aliasCount }, які присутні в SimpleLogin, але відсутні в ${ PASS_APP_NAME }. Бажаєте їх синхронізувати?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "У вас залишився ${ daysRemaining } день, щоб спробувати ці та інші преміум функції.",
+        "У вас залишився ${ daysRemaining } днів, щоб спробувати ці та інші преміум функції.",
+        "У вас залишився ${ daysRemaining } днів, щоб спробувати ці та інші преміум функції.",
+        "У вас залишився ${ daysRemaining } днів, щоб спробувати ці та інші преміум функції."
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Ви збираєтеся назавжди видалити псевдонім ${ aliasCount }.",
+        "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }.",
+        "Ви збираєтеся назавжди видалити псевдонімів ${ aliasCount }.",
+        "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }."
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Виявлено ${ name } та ${ remainingCount } інші потенційні витоки даних. Увімкніть ${ DARK_WEB_MONITORING_NAME }, щоб переглянути подробиці та вжити заходів. ${ link }"
@@ -568,12 +900,6 @@
       "Submitting report...": [
         "Надсилання звіту..."
       ],
-      "Sync alias": [
-        "Синхронізувати псевдонім",
-        "Синхронізувати псевдоніми",
-        "Синхронізувати псевдонімів",
-        "Синхронізувати псевдоніми"
-      ],
       "Sync aliases": [
         "Синхронізувати псевдоніми"
       ],
@@ -600,12 +926,6 @@
       ],
       "Unblock contact": [
         "Розблокувати контакт"
-      ],
-      "Understood, I will never need it": [
-        "Зрозуміло, я ніколи не потребуватиму цього",
-        "Зрозуміло, я ніколи не потребуватиму цих",
-        "Зрозуміло, я ніколи не потребуватиму цих",
-        "Зрозуміло, я ніколи не потребуватиму цих"
       ],
       "Unlock": [
         "Розблокувати"
@@ -675,12 +995,6 @@
       ]
     },
     "Description": {
-      "${ total } other login uses the same password": [
-        "${ total } запис входу використовує той самий пароль",
-        "${ total } записи входу використовують той самий пароль",
-        "${ total } записів входу використовують той самий пароль",
-        "${ total } записів входу використовують той самий пароль"
-      ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2ЕП додає ще один рівень безпеки до ваших входів. ${ PASS_APP_NAME } спрощує 2ЕП, зберігаючи та автоматично заповнюючи ваші 2ЕП-коди."
       ],
@@ -796,12 +1110,6 @@
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
         "Помилка автентифікації. Підтвердьте ваш пароль ${ BRAND_NAME } для того, щоб продовжити експорт"
       ],
-      "Cannot send invitation at the moment": [
-        "Неможливо відправити запрошення на цей момент",
-        "Неможливо відправити запрошення на цей момент",
-        "Неможливо відправити запрошення на цей момент",
-        "Неможливо відправити запрошення на цей момент"
-      ],
       "Cannot send invitations at the moment": [
         "Неможливо відправити запрошення на цей момент"
       ],
@@ -843,12 +1151,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Не вдалося видалити сховище \"${ payload.content.name }\""
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Виявлено ${ errors.length } пошкоджений csv рядок",
-        "Виявлено ${ errors.length } пошкоджених csv рядки",
-        "Виявлено ${ errors.length } пошкоджених csv рядків",
-        "Виявлено ${ errors.length } пошкоджених csv рядків"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Домен не вдалося перевірити. Будь ласка, переконайтеся, що ви додали правильні DNS-записи"
@@ -1177,12 +1479,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "байт",
-        "байти",
-        "байтів",
-        "байтів"
-      ],
       "GB": [
         "ГБ"
       ],
@@ -1196,38 +1492,6 @@
         "ТБ"
       ]
     },
-    "file size format, long": {
-      "Byte": [
-        "Байт",
-        "Байти",
-        "Байтів",
-        "Байтів"
-      ],
-      "Gigabyte": [
-        "Гігабайт",
-        "Гігабайти",
-        "Гігабайтів",
-        "Гігабайтів"
-      ],
-      "Kilobyte": [
-        "Кілобайт",
-        "Кілобайти",
-        "Кілобайтів",
-        "Кілобайтів"
-      ],
-      "Megabyte": [
-        "Мегабайт",
-        "Мегабайти",
-        "Мегабайтів",
-        "Мегабайтів"
-      ],
-      "Terabyte": [
-        "Терабайт",
-        "Терабайти",
-        "Терабайтів",
-        "Терабайтів"
-      ]
-    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" елемент було відхилено"
@@ -1235,44 +1499,8 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "Оновлення \"${ payload.itemName }\" було відхилено"
       ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } заблоковано",
-        "${ blockedEmailsCount } заблоковано",
-        "${ blockedEmailsCount } заблоковано",
-        "${ blockedEmailsCount } заблоковано"
-      ],
-      "${ count } time": [
-        "${ count } раз",
-        "${ count } разів",
-        "${ count } рази",
-        "${ count } рази"
-      ],
-      "${ count } view": [
-        "${ count } перегляд",
-        "${ count } перегляди",
-        "${ count } переглядів",
-        "${ count } переглядів"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } переслано",
-        "${ forwardedEmailsCount } переслано",
-        "${ forwardedEmailsCount } переслано",
-        "${ forwardedEmailsCount } переслано"
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } хоче поділитися з вами елементом."
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } учасник",
-        "${ memberCount } учасники",
-        "${ memberCount } учасників",
-        "${ memberCount } учасників"
-      ],
-      "${ n } item": [
-        "${ n } елемент",
-        "Елементів: ${ n }",
-        "Елементів: ${ n }",
-        "Елементів: ${ n }"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } буде завжди доступним"
@@ -1292,29 +1520,11 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } вимагатиме вашого паролю ${ BRAND_NAME } для доступу до даних в автономному режимі."
       ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } запрошення успішно відправлено",
-        "${ payload.count } запрошень успішно відправлено",
-        "${ payload.count } запрошень успішно відправлено",
-        "${ payload.count } запрошень успішно відправлено"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } успішно вимкнено"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } успішно ввімкнено"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } надіслано",
-        "${ repliedEmailsCount } надіслано",
-        "${ repliedEmailsCount } надіслано",
-        "${ repliedEmailsCount } надіслано"
-      ],
-      "${ row.breachCount } breach detected": [
-        "Виявлено ${ row.breachCount } витік",
-        "Виявлено ${ row.breachCount } витоки",
-        "Виявлено ${ row.breachCount } витоків",
-        "Виявлено ${ row.breachCount } витоків"
       ],
       "(Empty)": [
         "(Порожньо)"
@@ -1580,20 +1790,8 @@
       "finance": [
         "фінанси"
       ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "З міркувань безпеки вам необхідно підтвердити доступ до цього спільного сховища",
-        "З міркувань безпеки вам необхідно підтвердити доступ до цих спільних сховищ",
-        "З міркувань безпеки вам необхідно підтвердити доступ до цих спільних сховищ",
-        "З міркувань безпеки вам необхідно підтвердити доступ до цих спільних сховищ"
-      ],
       "For security reasons, your access needs to be confirmed": [
         "З міркувань безпеки ваш доступ потребує підтвердження."
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Згенеровані паролі зберігатимуться протягом ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижня.",
-        "Згенеровані паролі зберігатимуться протягом ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижнів.",
-        "Згенеровані паролі зберігатимуться протягом ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижнів.",
-        "Згенеровані паролі зберігатимуться протягом ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижнів."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Отримайте максимум від Pass, створивши сховище для кожної команди або проєкту."
@@ -1667,12 +1865,6 @@
       "Item restored": [
         "Елемент відновлено"
       ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Спільний доступ до елемента: ${ itemAccessCount } користувач",
-        "Спільний доступ до елемента: ${ itemAccessCount } користувачі",
-        "Спільний доступ до елемента: ${ itemAccessCount } користувачів",
-        "Спільний доступ до елемента: ${ itemAccessCount } користувачів"
-      ],
       "Item successfully excluded from monitoring": [
         "Елемент успішно виключено з моніторингу"
       ],
@@ -1723,12 +1915,6 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Більше ніж менеджер паролів, ${ PASS_APP_NAME } захищає ваш пароль й вашу особисту адресу електронної пошти за допомогою псевдонімів. Завдяки тій самій технології, що й ${ MAIL_APP_NAME }, ваші дані наскрізь зашифровані та доступні лише вам."
-      ],
-      "Move ${ count } item": [
-        "Перемістити ${ count } елемент",
-        "Перемістити ${ count } елементи",
-        "Перемістити ${ count } елементів",
-        "Перемістити ${ count } елементів"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Переміщення всіх елементів із ${ payload.content.name }"
@@ -1795,12 +1981,6 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Блокування паролем успішно зареєстровано. Використовуйте його, щоб розблокувати ${ PASS_APP_NAME }"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тиждень автоматично видаляються з історії.",
-        "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижні автоматично видаляються з історії.",
-        "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижні автоматично видаляються з історії.",
-        "Паролі старші за ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } тижні автоматично видаляються з історії."
       ],
       "Paused": [
         "Зупинено"
@@ -2123,12 +2303,6 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Сховище \"${ share.content.name }\" видалено"
       ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Спільний доступ до сховища: ${ vaultMembersCount } учасник",
-        "Спільний доступ до сховища: ${ vaultMembersCount } учасники",
-        "Спільний доступ до сховища: ${ vaultMembersCount } учасників",
-        "Спільний доступ до сховища: ${ vaultMembersCount } учасників"
-      ],
       "Verification code sent.": [
         "Код підтвердження відправлено."
       ],
@@ -2137,12 +2311,6 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Виникли труднощі під час синхронізації даних з вашим локальним сховищем. Упевніться, що ви маєте достатньо дискового простору для безперебійної роботи ${ PASS_SHORT_APP_NAME }."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Ми виявили, що у вас є псевдонім ${ aliasCount }, який присутній у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?",
-        "Ми виявили, що у вас є псевдоніми ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?",
-        "Ми виявили, що у вас є псевдонімів ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?",
-        "Ми виявили, що у вас є псевдоніми ${ aliasCount }, які присутні у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Бажаєте імпортувати його?"
       ],
       "Week": [
         "Тиждень"
@@ -2167,18 +2335,6 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Ви не можете змінити поштові скриньки для цих псевдонімів"
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "У вас є псевдонім ${ aliasCount }, який присутній у SimpleLogin, але відсутній у ${ PASS_APP_NAME }. Ви хочете синхронізувати його?",
-        "У вас є псевдоніми ${ aliasCount }, які присутні в SimpleLogin, але відсутні в ${ PASS_APP_NAME }. Бажаєте їх синхронізувати?",
-        "У вас є псевдонімів ${ aliasCount }, які присутні в SimpleLogin, але відсутні в ${ PASS_APP_NAME }. Бажаєте їх синхронізувати?",
-        "У вас є псевдоніми ${ aliasCount }, які присутні в SimpleLogin, але відсутні в ${ PASS_APP_NAME }. Бажаєте їх синхронізувати?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "У вас залишився ${ daysRemaining } день, щоб спробувати ці та інші преміум функції.",
-        "У вас залишився ${ daysRemaining } днів, щоб спробувати ці та інші преміум функції.",
-        "У вас залишився ${ daysRemaining } днів, щоб спробувати ці та інші преміум функції.",
-        "У вас залишився ${ daysRemaining } днів, щоб спробувати ці та інші преміум функції."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Ви перевищили кількість сховищ, включених у вашу підписку. Предмети можна переміщати лише до перших двох сховищ. Щоб переміщати об'єкти між усіма сховищами, поновіть підписку."
@@ -2242,89 +2398,11 @@
       ]
     },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } псевдонім",
-        "${ aliasCount } псевдоніми",
-        "${ aliasCount } псевдонімів",
-        "${ aliasCount } псевдонімів"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } блок",
-        "${ blockedCount } блоки",
-        "${ blockedCount } блоків",
-        "${ blockedCount } блоки"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } символ",
-        "${ config.options.length } символів",
-        "${ config.options.length } символи",
-        "${ config.options.length } символи"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } слово",
-        "${ config.options.wordCount } слова",
-        "${ config.options.wordCount } слів",
-        "${ config.options.wordCount } слів"
-      ],
-      "${ count } item": [
-        "${ count } елемент",
-        "${ count } елементи",
-        "${ count } елементи",
-        "${ count } елементів"
-      ],
-      "${ days } day": [
-        "${ days } день",
-        "${ days } дні",
-        "${ days } днів",
-        "${ days } днів"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } пересилання",
-        "${ forwardCount } пересилання",
-        "${ forwardCount } пересилань",
-        "${ forwardCount } пересилання"
-      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, за останні 14 днів."
       ],
-      "${ hours } hour": [
-        "${ hours } година",
-        "${ hours } години",
-        "${ hours } годин",
-        "${ hours } годин"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } хвилина",
-        "${ minutes } хвилини",
-        "${ minutes } хвилин",
-        "${ minutes } хвилин"
-      ],
-      "${ months } month": [
-        "${ months } місяць",
-        "${ months } місяців",
-        "${ months } місяці",
-        "${ months } місяці"
-      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Версія ${ PASS_SHORT_APP_NAME }"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } відповідь",
-        "${ repliedCount } відповіді",
-        "${ repliedCount } відповідей",
-        "${ repliedCount } відповіді"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } запис входу",
-        "${ usageCount } записи входу",
-        "${ usageCount } записів входу",
-        "${ usageCount } записів входу"
-      ],
-      "${ years } year": [
-        "${ years } рік",
-        "${ years } роки",
-        "${ years } років",
-        "${ years } роки"
       ],
       "1 hour": [
         "1 година"
@@ -2851,9 +2929,6 @@
       "Network": [
         "Мережа"
       ],
-      "New": [
-        "Нове"
-      ],
       "New email": [
         "Нова адреса електронної пошти"
       ],
@@ -3262,18 +3337,6 @@
       ]
     },
     "Message": {
-      "${ count } item": [
-        "${ count } елемент",
-        "${ count } елементи",
-        "${ count } елементи",
-        "${ count } елементів"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Ви можете перетягнути вибраний елемент до іншого сховища",
-        "Ви можете перетягнути вибрані елементи до іншого сховища",
-        "Ви можете перетягнути вибраних елементів до іншого сховища",
-        "Ви можете перетягнути вибрані елементи до іншого сховища"
-      ],
       "You selected ${ semiboldText } in this vault.": [
         "Ви вибрали ${ semiboldText } у цьому сховищі."
       ]
@@ -3321,12 +3384,6 @@
       ]
     },
     "Pass_file_attachments": {
-      "${ filesCount } file": [
-        "${ filesCount } файл",
-        "${ filesCount } файли",
-        "${ filesCount } файлів",
-        "${ filesCount } файлів"
-      ],
       "Attachments": [
         "Вкладення"
       ],
@@ -3600,12 +3657,6 @@
       "Random prefix generation successfully enabled": [
         "Генерацію випадкових префіксів успішно увімкнено"
       ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувача.",
-        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувачів.",
-        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувачів.",
-        "Сховища не можуть містити більше ніж ${ targetMaxMembers } користувачів."
-      ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Підтверджувальний лист надіслано. Будь ласка, перевірте свою поштову скриньку, щоб підтвердити свою поштову скриньку"
       ]
@@ -3715,12 +3766,6 @@
       "Default Display Name": [
         "Типове ім'я для показу"
       ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Видалити ${ deletedItemsCount } елемент?",
-        "Видалити ${ deletedItemsCount } елементи?",
-        "Видалити ${ deletedItemsCount } елементів?",
-        "Видалити ${ deletedItemsCount } елементи?"
-      ],
       "Delete domain": [
         "Видалити домен"
       ],
@@ -3829,18 +3874,6 @@
       "Modified": [
         "Змінено"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Перемістити ${ count } елемент до ${ vaultName }",
-        "Перемістити ${ count } елементи до ${ vaultName }",
-        "Перемістити ${ count } елементів до ${ vaultName }",
-        "Перемістити ${ count } елементи до ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Перемістити елемент ${ trashedItemsCount } до смітника?",
-        "Перемістити елементи ${ trashedItemsCount } до смітника?",
-        "Перемістити елементів ${ trashedItemsCount } до смітника?",
-        "Перемістити елементи ${ trashedItemsCount } до смітника?"
-      ],
       "Move all items to \"${ vaultName }\"?": [
         "Перемістити всі елементи до «${ vaultName }»?"
       ],
@@ -3898,12 +3931,6 @@
       "Pinned (${ items.length })": [
         "Закріплено (${ items.length })"
       ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Зверніть увагу, що після видалення псевдонім не можна відновити.",
-        "Зверніть увагу, що після видалення псевдоніми не можна відновити.",
-        "Зверніть увагу, що після видалення псевдоніми не можна відновити.",
-        "Зверніть увагу, що після видалення псевдоніми не можна відновити."
-      ],
       "Previous": [
         "Назад"
       ],
@@ -3933,12 +3960,6 @@
       ],
       "Resume monitoring?": [
         "Відновити моніторинг?"
-      ],
-      "Reused ${ count } time": [
-        "Повторювався ${ count } раз",
-        "Повторювався ${ count } рази",
-        "Повторювався ${ count } разів",
-        "Повторювався ${ count } разів"
       ],
       "Reused passwords": [
         "Повторювальні паролі"
@@ -4053,12 +4074,6 @@
       ],
       "Your welcome gift": [
         "Ваш вітальний подарунок"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Ви збираєтеся назавжди видалити псевдонім ${ aliasCount }.",
-        "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }.",
-        "Ви збираєтеся назавжди видалити псевдонімів ${ aliasCount }.",
-        "Ви збираєтеся назавжди видалити псевдоніми ${ aliasCount }."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4092,14 +4107,6 @@
         "Невірне посилання"
       ]
     },
-    "Vault Select": {
-      "Move item to": [
-        "Перемістити елемент до",
-        "Перемістити елементи до",
-        "Перемістити елементи до",
-        "Перемістити елементи до"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME } пароль є обов'язковим"
@@ -4115,18 +4122,6 @@
       ],
       "An error occurred while exporting your data": [
         "Під час експортування даних сталася помилка"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Ви впевнені, що хочете перемістити елемент ${ trashedItemsCount } до смітника?",
-        "Ви впевнені, що хочете перемістити елементи ${ trashedItemsCount } до смітника?",
-        "Ви впевнені, що хочете перемістити елементів ${ trashedItemsCount } до смітника?",
-        "Ви впевнені, що хочете перемістити елементи ${ trashedItemsCount } до смітника?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Ви впевнені, що хочете назавжди видалити елемент ${ deletedItemsCount }?",
-        "Ви впевнені, що хочете назавжди видалити елементи ${ deletedItemsCount }?",
-        "Ви впевнені, що хочете назавжди видалити елементів ${ deletedItemsCount }?",
-        "Ви впевнені, що хочете назавжди видалити елементи ${ deletedItemsCount }?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Ви впевнені, що хочете назавжди видалити цей елемент?"
@@ -4193,12 +4188,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Запрошення адрес електронної пошти поза організацією не допускається."
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Максимальна довжина - ${ maxLength } символ",
-        "Максимальна довжина - ${ maxLength } символів",
-        "Максимальна довжина - ${ maxLength } символів",
-        "Максимальна довжина - ${ maxLength } символів"
       ],
       "Missing alias prefix": [
         "Відсутній префікс псевдоніма"

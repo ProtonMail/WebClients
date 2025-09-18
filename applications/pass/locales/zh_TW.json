@@ -4,6 +4,110 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "": {
+      "${ config.options.length } character": [
+        "${ config.options.length }個字元"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount }個字"
+      ],
+      "${ count } item": [
+        "${ count }項目"
+      ],
+      "${ count } time": [
+        "${ count }次數"
+      ],
+      "${ days } day": [
+        "${ days }天"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } 檔案"
+      ],
+      "${ hours } hour": [
+        "${ hours }小時"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } 位成員"
+      ],
+      "${ minutes } minute": [
+        "${ minutes }分鐘"
+      ],
+      "${ months } month": [
+        "${ months }個月"
+      ],
+      "${ n } item": [
+        "${ n } 項目"
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count }邀請成功寄出"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount }登入"
+      ],
+      "${ years } year": [
+        "${ years } 年"
+      ],
+      "byte": [
+        "位元組"
+      ],
+      "Byte": [
+        "位元組"
+      ],
+      "Cannot send invitation at the moment": [
+        "目前無法發送邀請"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "刪除${ deletedItemsCount }項目?"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "刪除${ errors.length }錯誤的CSV項目"
+      ],
+      "Gigabyte": [
+        "Gigabytes"
+      ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "項目不能包含超過 ${ share.targetMaxMembers } 位使用者。"
+      ],
+      "Kilobyte": [
+        "千位元組"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "最長上限為${ maxLength }字元"
+      ],
+      "Megabyte": [
+        "Megabytes"
+      ],
+      "Move ${ count } item": [
+        "移動 ${ count } 個項目"
+      ],
+      "Move item to": [
+        "將項目移至"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "需注意別名一旦刪除，將無法恢復"
+      ],
+      "Reused ${ count } time": [
+        "接續${ count }時間"
+      ],
+      "Sync alias": [
+        "同步別名"
+      ],
+      "Terabyte": [
+        "Terabytes"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "以下 ${ totalIgnored } 個項目無法匯入:"
+      ],
+      "Understood, I will never need it": [
+        "了解，我將不再需要這些項目"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "保管庫不能包含超過 ${ targetMaxMembers } 位使用者。"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "你有 ${ aliasCount } 個別名存在於 SimpleLogin ，但未同步到 ${ PASS_APP_NAME } 。是否需要進行同步？"
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "偵測到 ${ name } 及 ${ remainingCount } 個其他潛在資料外洩。請開啟 ${ DARK_WEB_MONITORING_NAME } 檢視詳情並採取行動。${ link }"
@@ -207,6 +311,9 @@
       ],
       "Dismiss": [
         "忽略"
+      ],
+      "Do not show again": [
+        "不再顯示"
       ],
       "Download this CSV template": [
         "下載此CSV模板"
@@ -529,9 +636,6 @@
       "Submitting report...": [
         "正在送出報告..."
       ],
-      "Sync alias": [
-        "同步別名"
-      ],
       "Sync aliases": [
         "同步別名"
       ],
@@ -552,9 +656,6 @@
       ],
       "Unblock contact": [
         "解除封鎖聯絡人"
-      ],
-      "Understood, I will never need it": [
-        "了解，我將不再需要這些項目"
       ],
       "Unlock": [
         "解鎖"
@@ -662,9 +763,6 @@
       "Authentication error": [
         "認證錯誤"
       ],
-      "Cannot send invitation at the moment": [
-        "目前無法發送邀請"
-      ],
       "Cannot send invitations at the moment": [
         "目前無法發送邀請"
       ],
@@ -700,9 +798,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "刪除保管庫${ payload.content.name }失敗"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "刪除${ errors.length }錯誤的CSV項目"
       ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
@@ -920,9 +1015,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "位元組"
-      ],
       "GB": [
         "GB"
       ],
@@ -936,23 +1028,6 @@
         "TB"
       ]
     },
-    "file size format, long": {
-      "Byte": [
-        "位元組"
-      ],
-      "Gigabyte": [
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "千位元組"
-      ],
-      "Megabyte": [
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabytes"
-      ]
-    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "忽略${ payload.itemName }項目"
@@ -960,23 +1035,11 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "${ payload.itemName }已忽略更新"
       ],
-      "${ count } time": [
-        "${ count }次數"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } 位成員"
-      ],
-      "${ n } item": [
-        "${ n } 項目"
-      ],
       "${ PASS_APP_NAME } will follow your system theme.": [
         "${ PASS_APP_NAME } 將會遵循您的系統布景主題。"
       ],
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } 將需要您的 ${ BRAND_NAME } 密碼，以便離線存取資料。"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count }邀請成功寄出"
       ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } 成功停用"
@@ -1227,9 +1290,6 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "超越密碼管理器，${ PASS_APP_NAME }保護密碼及私人的電子郵件位址及電子郵件別名。使用與${ MAIL_APP_NAME }相同技術，您的資料使用點到點加密，只有您能存取。"
       ],
-      "Move ${ count } item": [
-        "移動 ${ count } 個項目"
-      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "移動全部於\"${ payload.content.name }\"的項目"
       ],
@@ -1392,9 +1452,6 @@
       "The exposed information was leaked from a third-party service. Your ${ BRAND_NAME } Account information remains secure and encrypted. ${ learnMoreLink }": [
         "您被曝露的資料來自第三方服務。您 ${ BRAND_NAME } 帳號資料保持安全及加密。 ${ learnMoreLink }"
       ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "以下 ${ totalIgnored } 個項目無法匯入:"
-      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "您貼上的字已達${ maxLength }字元上限"
       ],
@@ -1473,9 +1530,6 @@
       "You can also define a PIN code to unlock ${ PASS_APP_NAME }": [
         "您也可以設定PIN碼以解鎖 ${ PASS_APP_NAME }"
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "你有 ${ aliasCount } 個別名存在於 SimpleLogin ，但未同步到 ${ PASS_APP_NAME } 。是否需要進行同步？"
-      ],
       "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
         "您已超出訂購授權中所包含的保管庫數量上限。新的項目只能在您的前兩個保管庫中建立。若要在所有保管庫中建立新的項目，請升級您的訂購授權。"
       ],
@@ -1507,36 +1561,17 @@
         "您的資料在 ${ displayedDate } 被發現。"
       ]
     },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT 鍵"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
-      "${ config.options.length } character": [
-        "${ config.options.length }個字元"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount }個字"
-      ],
-      "${ count } item": [
-        "${ count }項目"
-      ],
-      "${ days } day": [
-        "${ days }天"
-      ],
-      "${ hours } hour": [
-        "${ hours }小時"
-      ],
-      "${ minutes } minute": [
-        "${ minutes }分鐘"
-      ],
-      "${ months } month": [
-        "${ months }個月"
-      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }版本"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount }登入"
-      ],
-      "${ years } year": [
-        "${ years } 年"
       ],
       "1 hour": [
         "1 小時"
@@ -2072,9 +2107,6 @@
       "Network": [
         "網路"
       ],
-      "New": [
-        "新功能"
-      ],
       "New email": [
         "新電子郵件"
       ],
@@ -2500,9 +2532,6 @@
       ]
     },
     "Message": {
-      "${ count } item": [
-        "${ count } 個項目"
-      ],
       "You selected ${ semiboldText } in this vault.": [
         "您選取於保管庫的${ semiboldText }."
       ]
@@ -2553,9 +2582,6 @@
       ]
     },
     "Pass_file_attachments": {
-      "${ filesCount } file": [
-        "${ filesCount } 檔案"
-      ],
       "Attachments": [
         "附件"
       ],
@@ -2756,12 +2782,6 @@
     "Success": {
       "Contact successfully unblocked": [
         "已解除封鎖聯絡人"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "項目不能包含超過 ${ share.targetMaxMembers } 位使用者。"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "保管庫不能包含超過 ${ targetMaxMembers } 位使用者。"
       ]
     },
     "Theme": {
@@ -2859,9 +2879,6 @@
       ],
       "Default": [
         "預設"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "刪除${ deletedItemsCount }項目?"
       ],
       "Delete domain": [
         "刪除網域"
@@ -3010,9 +3027,6 @@
       "Pinned (${ items.length })": [
         "地址 (${ items.length })"
       ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "需注意別名一旦刪除，將無法恢復"
-      ],
       "Previous": [
         "上一頁"
       ],
@@ -3036,9 +3050,6 @@
       ],
       "Resume monitoring?": [
         "繼續監控?"
-      ],
-      "Reused ${ count } time": [
-        "接續${ count }時間"
       ],
       "Reused passwords": [
         "重複使用的密碼"
@@ -3170,11 +3181,6 @@
         "URL無效"
       ]
     },
-    "Vault Select": {
-      "Move item to": [
-        "將項目移至"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "需要 ${ BRAND_NAME } 密碼"
@@ -3235,9 +3241,6 @@
       ],
       "Invalid email addresses.": [
         "無效的電子郵件位址"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "最長上限為${ maxLength }字元"
       ],
       "Missing alias prefix": [
         "缺少別名前綴"
