@@ -45,7 +45,7 @@ function focusGridWarningFallback() {
  *
  * Setters must be stable (e.g. created via `useEvent`).
  */
-export function useProtonSheetsUIState(state: ProtonSheetsState) {
+export function useProtonSheetsUIState(state: ProtonSheetsState, isReadonly: boolean) {
   const currencySymbol = getCurrencySymbol(LOCALE, CURRENCY)
   if (!currencySymbol) {
     // TODO: handle this more gracefully, default to "$"?
@@ -71,6 +71,7 @@ export function useProtonSheetsUIState(state: ProtonSheetsState) {
     activeColumnIndex: state.activeCell.columnIndex,
     activeColumnName: number2Alpha(state.activeCell.columnIndex - 1),
     activeRowIndex: state.activeCell.rowIndex,
+    isReadonly,
   }
 
   // operation
