@@ -4,13 +4,35 @@
     "language": "en_US"
   },
   "contexts": {
-    "Action": {
-      "Display navigation bar": [
-        "Show navigation bar"
+    "": {
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } scan failed",
+        "${ scanErrorCount } scans failed"
       ],
       "You can't send vCard files of more than ${ maxAttachments } contacts": [
         "You can't send vCard files of more than ${ maxAttachments } contacts",
         "You can't send vCard files of more than ${ maxAttachments } contacts"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "You have ${ timeRemaining.inHours } hour to reset your password.",
+        "You have ${ timeRemaining.inHours } hours to reset your password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
+        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "You have ${ timeRemaining.inSeconds } second to reset your password.",
+        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
+      ],
+      "You will need to save it again from the public link page.": [
+        "You will need to save it again from the public link page.",
+        "You will need to save them again from the public link page."
+      ]
+    },
+    "Action": {
+      "Display navigation bar": [
+        "Show navigation bar"
       ]
     },
     "anniversary_2025: Offer": {
@@ -29,16 +51,8 @@
       ]
     },
     "Info": {
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } scan failed",
-        "${ scanErrorCount } scans failed"
-      ],
       "Free 5GB encrypted storage to get started": [
         "Free 5 GB encrypted storage to get started"
-      ],
-      "You will need to save it again from the public link page.": [
-        "You will need to save it again from the public link page.",
-        "You will need to save them again from the public link page."
       ]
     },
     "Label": {
@@ -67,20 +81,6 @@
     "Notification": {
       "Public link update access failed ": [
         "Public link update access failed"
-      ]
-    },
-    "session_recovery:available:info": {
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "You have ${ timeRemaining.inHours } hour to reset your password.",
-        "You have ${ timeRemaining.inHours } hours to reset your password."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
-        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "You have ${ timeRemaining.inSeconds } second to reset your password.",
-        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
       ]
     },
     "Subscription reminder": {

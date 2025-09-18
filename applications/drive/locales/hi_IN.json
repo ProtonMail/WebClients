@@ -4,6 +4,704 @@
     "language": "hi_IN"
   },
   "contexts": {
+    "": {
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } डाउनलोड कर रहे हैं",
+        "${ activeDownloadsCount } डाउनलोड कर रहे हैं"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } डाउनलोड कर रहे है (${ downloadProgress }%)",
+        "${ activeDownloadsCount } डाउनलोड कर रहे है (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } अपलोड कर रहे है (${ uploadProgress }%)",
+        "${ activeUploadsCount } अपलोड कर रहे है (${ uploadProgress }%)"
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } ईमेल पता",
+        "${ addressCount } ईमेल पते"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } नया कैलेंडर",
+        "${ calendarsToBeCreatedCount } नए कैलेंडर"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } मर्ज किया गया कैलेंडर",
+        "${ calendarsToBeMergedCount } मर्ज किए गए कैलेंडर"
+      ],
+      "${ canceledCount } canceled": [
+        "${ canceledCount } रद्द करा गया",
+        "${ canceledCount } रद्द करे गए"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } दिन",
+        "${ ceilDays } दिन"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } घंटा",
+        "${ ceilHours } घंटे"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } मिनट",
+        "${ ceilMinutes } मिनट"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } संपर्क के एक से अधिक ईपत्र पते हैं।",
+        "${ contactCount } संपर्क के एक से अधिक ईपत्र पते हैं।"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } सदस्य",
+        "${ contactEmailsLength } सदस्य"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } संपर्क मिला",
+        "${ contactsCount } संपर्क मिले"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ countContacts } में से ${ contactsExported.length } संपर्क सफलतापूर्वक निर्यात किया",
+        "${ countContacts } में से ${ contactsExported.length } संपर्क सफलतापूर्वक निर्यात किए"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } संपर्क",
+        "${ contactsLength } संपर्क"
+      ],
+      "${ count } item failed to be decrypted": [
+        "${ count } चीज़ डीक्रिप्ट करने में असफल",
+        "${ count } चीज़ डीक्रिप्ट करने में असफल"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } संपर्क एक जैसा है।",
+        "${ countMergeableContacts } संपर्क एक जैसे है।"
+      ],
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } असफल",
+        "${ countOfFailedLinks } असफल"
+      ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } बचे हैं",
+        "${ countOfUnrecoveredLinksLeft } बचे हैं"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } दिन बाकी",
+        "${ dayDiff } दिन बाकी"
+      ],
+      "${ days } day": [
+        "${ days } दिन",
+        "${ days } दिन"
+      ],
+      "${ doneCount } finished": [
+        "${ doneCount } खत्म",
+        "${ doneCount } खत्म"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } डाउनलोड किया गया",
+        "${ doneDownloadsCount } डाउनलोड किए गए"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } अपलोड किया गया",
+        "${ doneUploadsCount } अपलोड किये गए"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } ईमेल पता",
+        "${ emailsCount } ईमेल पते"
+      ],
+      "${ errorCount } failed": [
+        "${ errorCount } असफल",
+        "${ errorCount } असफल"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } घंटा",
+        "${ gracePeriodHoursRemaining } घंटे"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } समूह मिला",
+        "${ groupCounts } समूह मिले"
+      ],
+      "${ hours } h": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ hours } hour": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 घंटा",
+        "${ hoursInt }.5 घंटे"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 घंटा",
+        "${ hoursInt }.5 घंटे"
+      ],
+      "${ ips } server": [
+        "${ ips } सर्वर",
+        "${ ips } सर्वर"
+      ],
+      "${ minutes } min": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } में से ${ totalBeDeleted } संपर्क सफलतापूर्वक हटा दिया गया।",
+        "${ model.deleted.length } में से ${ totalBeDeleted } संपर्कों सफलतापूर्वक हटा दिया गया।"
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } में से ${ totalBeMerged } संपर्क सफलतापूर्वक मर्ज हो गया।",
+        "${ model.submitted.length } में से ${ totalBeMerged } संपर्कों सफलतापूर्वक मर्ज हो गए।"
+      ],
+      "${ n } calendar": [
+        "${ n } कैलेंडर",
+        "${ n } कैलेंडर"
+      ],
+      "${ n } calendar per user": [
+        "${ n } कैलेंडर हर यूज़र पे",
+        "${ n } कैलेंडर हर यूज़र पे"
+      ],
+      "${ n } custom email domain": [
+        "${ n } कस्टम ईमेल डोमेन",
+        "${ n } कस्टम ईमेल डोमेन"
+      ],
+      "${ n } device": [
+        "${ n } डिवाइस",
+        "${ n } डिवाइस"
+      ],
+      "${ n } email address": [
+        "${ n } ईमेल पता",
+        "${ n } ईमेल पता/उपनाम"
+      ],
+      "${ n } email address per user": [
+        "प्रति उपयोगकर्ता ${ n } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ n } ईमेल पते"
+      ],
+      "${ n } filter": [
+        "${ n } फिल्टर",
+        "${ n } फिल्टर"
+      ],
+      "${ n } folder": [
+        "${ n } फोल्डर",
+        "${ n } फोल्डर"
+      ],
+      "${ n } folder and label": [
+        "${ n } फोल्डर और लेबल",
+        "${ n } फोल्डर और लेबल"
+      ],
+      "${ n } free VPN connection per user": [
+        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email नकली-नाम",
+        "${ n } hide-my-email नकली-नाम"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } तेज़ वीपीएन कनेक्शन",
+        "${ n } तेज़ वीपीएन कनेक्शन"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "प्रति उपयोगकर्ता ${ n } उच्च गति वाला VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } उच्च गति वाले VPN कनेक्शन"
+      ],
+      "${ n } label": [
+        "${ n } लेबल",
+        "${ n } लेबल"
+      ],
+      "${ n } message per day": [
+        "प्रतिदिन ${ n } संदेश",
+        "प्रतिदिन ${ n } संदेश"
+      ],
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
+      ],
+      "${ n } month FREE": [
+        "${ n } महीना मुफ्त",
+        "${ n } महीने मुफ्त"
+      ],
+      "${ n } server": [
+        "${ n } सर्वर",
+        "${ n }+ सर्वर"
+      ],
+      "${ n } vault": [
+        "${ n } तिजोरी",
+        "${ n } तिजोरी"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN कनेक्शन",
+        "${ n } VPN कनेक्शन"
+      ],
+      "${ n } VPN connection per user": [
+        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन",
+        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } दिन",
+        "${ nbDay } दिन"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } साल",
+        "${ nbYear } साल"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } देश",
+        "${ numberOfCountries } देश"
+      ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } असफल डाउनलोड",
+        "${ numberOfFailedTransfer.total } असफल डाउनलोड"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } असफल भुगतान",
+        "${ numberOfFailedTransfer.total } असफल भुगतान"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } असफल अपलोड",
+        "${ numberOfFailedTransfer.total } असफल अपलोड"
+      ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } आइटम मिटाया गया",
+        "${ numberOfItems } आइटम मिटाए गए"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } चीज़ कचरे से हमेशा के लिए मिटाया गया",
+        "${ numberOfItems } चीज़े कचरे से हमेशा के लिए मिटाए गए"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } आइटम मिटाने में असफल",
+        "${ numberOfItems } आइटम मिटाने में असफल"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "${ numberOfItems } चीज़ कचरे से हमेशा के लिए मिटाने में असफल",
+        "${ numberOfItems } चीज़े कचरे से हमेशा के लिए मिटाने में असफल"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "${ numberOfItems } चीज़ ले जाने में असफल",
+        "${ numberOfItems } चीज़े ले जाने में असफल"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "${ numberOfItems } चीज़ कचरे में ले जाने में असफल",
+        "${ numberOfItems } चीज़े कचरे में ले जाने में असफल"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "${ numberOfItems } चीज़ कचरे से लाने में असफल",
+        "${ numberOfItems } चीज़े कचरे से लाने में असफल"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } चीज़ कचरे में ले गए",
+        "${ numberOfItems } चीज़े कचरे में ले गए"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } चीज़ कचरे से लाया गया",
+        "${ numberOfItems } चीज़े कचरे से लाए गए"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } चीज़ सफलतापूर्वक ले गए",
+        "${ numberOfItems } चीज़े सफलतापूर्वक ले गए"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfCountries } देशों में ${ numberOfServers }",
+        "${ numberOfCountries }+ देशों में ${ numberOfServers }"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfCountries } देश में ${ numberOfServers }",
+        "${ numberOfCountries } देशों में ${ numberOfServers }"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } यूज़र",
+        "${ numberOfUsers } उपयोगकर्ता तक"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } with ${ n } hide-my-email नकली-नाम",
+        "${ PASS_APP_NAME } with ${ n } hide-my-email नकली-नाम"
+      ],
+      "${ pausedCount } paused": [
+        "${ pausedCount } रोका गया",
+        "${ pausedCount } रोके गए"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } आइटम",
+        "${ photoCount } आइटम"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "प्रति उपयोगकर्ता ${ planNumberOfCalendars } कैलेंडर",
+        "प्रति उपयोगकर्ता ${ planNumberOfCalendars } कैलेंडर"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } कस्टम ईमेल डोमेन",
+        "${ planNumberOfDomains } कस्टम ईमेल डोमेन"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } ईमेल पता",
+        "${ planNumberOfEmails } ईमेल पते"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "प्रति उपयोगकर्ता ${ planNumberOfEmails } ईमेल पता",
+        "प्रति उपयोगकर्ता ${ planNumberOfEmails } ईमेल पते"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } यूज़र",
+        "${ planNumberOfUsers } यूज़र"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } फोल्डर मिला",
+        "${ providerFoldersNumLocalized } फोल्डर मिले"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } लेबल Gmail में मिला",
+        "${ providerFoldersNumLocalized } लेबल Gmail में मिले"
+      ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } स्कैन असफल",
+        "${ scanErrorCount } स्कैन असफल"
+      ],
+      "${ seconds } second": [
+        "${ seconds } सेकंड",
+        "${ seconds } सेकंड"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर",
+        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } चयनित",
+        "${ selectedCount } चयनित"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } फ़ोल्डर चयनित",
+        "${ selectedFoldersCount } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } लेबल चयनित",
+        "${ selectedFoldersCount } लेबल चयनित"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } फ़ोल्डर का चयन किया",
+        "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } लेबल चयनित",
+        "${ selectedFoldersCountLocalized } लेबल चयनित"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } छोड़ा गए",
+        "${ skippedCount } छोड़े गए"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } दिन",
+        "${ timeRemaining.inDays } दिन"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } घंटा",
+        "${ timeRemaining.inHours } घंटे"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } संपर्क",
+        "${ totalContacts } संपर्क"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किया जाएगा। जानकारी के लिए फैलाए।",
+        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किए जाएगे। जानकारी के लिए फैलाए।"
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } संपर्क एन्क्रिप्ट किया गया और आपकी संपर्क सूची में जोड़ा गया",
+        "${ totalImported }/${ totalToImport } ईवेंट एन्क्रिप्ट किया गया और आपके कैलेंडर में जोड़ा गया"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए",
+        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } संपर्क सफलतापूर्वक अपडेट किया गया।",
+        "${ updated } संपर्क सफलतापूर्वक अपडेट किए गए।"
+      ],
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } सदस्य)",
+        "(${ memberCount } सदस्य)"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)",
+        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)"
+      ],
+      "Add to ${ groupCount } group": [
+        "${ groupCount } समूह में जोड़ें",
+        "${ groupCount } समूह में जोड़ें"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "सभी (${ totalFoldersCount } फोल्डर)",
+        "सभी (${ totalFoldersCount } फोल्डर)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "सभी (${ totalFoldersCount } लेबल)",
+        "सभी (${ totalFoldersCount } लेबल)"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }",
+        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किया गया।",
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किए गए।"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "क्या आप वाकई ${ count } संपर्क को स्थायी रूप से हटाना चाहते हैं?",
+        "क्या आप वाकई ${ count } संपर्कों को स्थायी रूप से हटाना चाहते हैं?"
+      ],
+      "Are you sure you want to remove this item from your list?": [
+        "क्या आप वाकई इस सूची से यह आइटम हटाना चाहते हैं?",
+        "क्या आप वाकई इस सूची से इन आइटमों को हटाना चाहते हैं?"
+      ],
+      "byte": [
+        "बाइट",
+        "बाइट"
+      ],
+      "Byte": [
+        "बाइट",
+        "बाइट"
+      ],
+      "Contact deleted": [
+        "संपर्क हटाया गया",
+        "संपर्क हटा दिए गए"
+      ],
+      "Contact group deleted": [
+        "संपर्क समूह हटाया गया",
+        "संपर्क समूह हटा दिए गए"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
+        "${ calendarsToBeCreatedCount } नए कैलेंडर बनाएं"
+      ],
+      "Create up to ${ n } calendar": [
+        "${ n } कैलेंडर तक बनाएं",
+        "${ n } कैलेंडर तक बनाएं"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।",
+        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।"
+      ],
+      "Delete ${ count } contact": [
+        "${ count } संपर्क हटाएं",
+        "${ count } संपर्क हटाएं"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } संपर्क समूह हटाएं",
+        "${ count } संपर्क समूह हटाएं"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } संपर्क हटाएं",
+        "${ selectedCount } संपर्क हटाएं"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } संपर्क समूह हटाएं",
+        "${ selectedCount } संपर्क समूह हटाएं"
+      ],
+      "Delete drive?": [
+        "ड्राइव मिटाएं?",
+        "ड्राइव मिटाएं?"
+      ],
+      "Delete locked drive": [
+        "लॉक किया ड्राइव मिटाएं",
+        "लॉक किए ड्राइव मिटाएं"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले",
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या",
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "अनुमानित समय शेष: ${ estimatedMinutes } मिनट",
+        "अनुमानित समय शेष: ${ estimatedMinutes } मिनट"
+      ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "फाइल या फोल्डर \"${ filename }\" और ${ count } अन्य पहले से ही अपलोड हो रहे हैं",
+        "फाइल या फोल्डर \"${ filename }\" और ${ count } अन्य पहले से ही अपलोड हो रहे हैं"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } सुझाव मिला, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।",
+        "${ itemsCount } सुझाव मिले, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "${ searchView.numberOfResults } परिणाम मिला",
+        "${ searchView.numberOfResults } परिणाम मिले"
+      ],
+      "Gigabyte": [
+        "महार्बुदाष्टक",
+        "महार्बुदाष्टकों"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "तेज़ वीपीएन ${ n } डिवाइस पे",
+        "तेज़ वीपीएन ${ n } डिवाइस पे"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
+        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import as simple event?": [
+        "साधारण ईवेंट के रूप में आयात करें?",
+        "साधारण ईवेंट के रूप में आयात करें?"
+      ],
+      "Kilobyte": [
+        "सहस्राष्टकों",
+        "सहस्राष्टकों"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "अधिकतम ${ MAX_SHARED_URL_PASSWORD_LENGTH } अक्षर",
+        "अधिकतम ${ MAX_SHARED_URL_PASSWORD_LENGTH } अक्षर"
+      ],
+      "Megabyte": [
+        "प्रयुताष्टक",
+        "प्रयुताष्टक"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें",
+        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें"
+      ],
+      "Move ${ n } file": [
+        "${ n } फाइल ले जाए",
+        "${ n } फाइलें ले जाए"
+      ],
+      "Move ${ n } folder": [
+        "${ n } फोल्डर को ले जाएँ",
+        "${ n } फोल्डर को ले जाएँ"
+      ],
+      "Move ${ n } item": [
+        "${ n } चीज़ ले जाए",
+        "${ n } चीज़े ले जाए"
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "नाम ज़्यादा-से-ज़्यादा ${ MAX_NAME_LENGTH } वर्ण लंबा हो सकता है",
+        "नाम ज़्यादा-से-ज़्यादा ${ MAX_NAME_LENGTH } वर्ण लंबा हो सकता है"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "किसी एक संपर्क का कोई ईमेल पता नहीं है: ${ noEmailsContactNamesList }",
+        "कुछ संपर्कों का कोई ईमेल पता नहीं है: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "समूह में से एक का कोई संपर्क नहीं है: ${ noContactGroupList }",
+        "किसी एक समूह का कोई संपर्क नहीं है: ${ noContactGroupList } "
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
+        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होने चाहिए"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "कृपया ${ groupCount } समूह में जोड़ने के लिए ईमेल पता या पते चुनें।",
+        "कृपया ${ groupCount } समूहों में जोड़ने के लिए ईमेल पता या पते चुनें।"
+      ],
+      "Remove item?": [
+        "आइटम हटाएं?",
+        "आइटम हटाएं?"
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "डुप्लिकेट प्राप्तकर्ता को निकाला गया: ${ joinedInvitee }",
+        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedInvitee }"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries }+ देश में सर्वर",
+        "${ numberOfCountries }+ देशों में सर्वर"
+      ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "क्षमा करें, हम फ़ोल्डर को नहीं मिटा सके क्योंकि यह खाली नहीं है।",
+        "क्षमा करें, हम फ़ोल्डरों को नहीं मिटा सके क्योंकि वे खाली नहीं हैं।"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट",
+        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट"
+      ],
+      "Terabyte": [
+        "टेराबाइट",
+        "टेराबाइट"
+      ],
+      "This file contains an event invitation:": [
+        "इस फाइल में इवेंट का एक न्योता है:",
+        "इस फाइल में इवेंट के न्योते है:"
+      ],
+      "This file contains an invitation response:": [
+        "इस फाइल में न्योते के जवाब है:",
+        "इस फाइल में न्योते के जवाब है:"
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "यह आइटम आपकी Photos लाइब्रेरी में सहेजा नहीं गया है। अगर आप इसे इस एल्बम से हटाते हैं, तो आपको इसकी पहुँच हमेशा के लिए खो जाएगी।",
+        "इस एल्बम में चयनित कुछ आइटम आपकी Photos लाइब्रेरी में सहेजे नहीं गए हैं। अगर आप इन्हें इस एल्बम से हटाते हैं, तो आपको इनकी पहुँच हमेशा के लिए खो जाएगी।"
+      ],
+      "Total for ${ n } month": [
+        "${ n } महीने के लिए कुल",
+        "${ n } महीनों के लिए कुल"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
+      ],
+      "Up to ${ n } user": [
+        "${ n } उपयोगकर्ता तक",
+        "${ n } उपयोगकर्ता तक"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "तिजोरी शेयर करें (अधिकतम ${ n } व्यक्ति को)",
+        "तिजोरी शेयर करें (अधिकतम ${ n } लोगों को)"
+      ],
+      "Would you like to save it before removing?": [
+        "क्या आप इसे हटाने से पहले सहेजना चाहेंगे?",
+        "क्या आप उन्हें हटाने से पहले सहेजना चाहेंगे?"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
+        "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते"
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "अपना 3 GB स्वागत बोनस पाने के लिए आपके पास ${ expiresInDays } दिन बाकी हैं और ",
+        "अपना 3 GB स्वागत बोनस पाने के लिए आपके पास ${ expiresInDays } दिन बाकी हैं और "
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।",
+        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।"
+      ],
+      "You will need to save it again from the public link page.": [
+        "आपको सार्वजनिक लिंक पृष्ठ से इसे फिर से सहेजना होगा।",
+        "आपको सार्वजनिक लिंक पृष्ठ से उन्हें फिर से सहेजना होगा।"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।",
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।"
+      ]
+    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "फॉरवर्ड करना जल्द शुरू होगा। नए ईमेल आपके इनबॉक्स में आएंगे।"
@@ -269,14 +967,6 @@
       ],
       "Delete": [
         "मिटाएं"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "${ selectedCount } संपर्क हटाएं",
-        "${ selectedCount } संपर्क हटाएं"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "${ selectedCount } संपर्क समूह हटाएं",
-        "${ selectedCount } संपर्क समूह हटाएं"
       ],
       "Delete album": [
         "एल्बम मिटा दें"
@@ -1001,10 +1691,6 @@
       ]
     },
     "Addon": {
-      "${ ips } server": [
-        "${ ips } सर्वर",
-        "${ ips } सर्वर"
-      ],
       "${ price } per dedicated server": [
         "${ price } प्रति समर्पित सर्वर"
       ],
@@ -1013,10 +1699,6 @@
       ],
       "${ price } per user": [
         "${ price } प्रति यूजर"
-      ],
-      "${ users } user": [
-        "${ users } यूज़र",
-        "${ users } यूज़र"
       ]
     },
     "Alert": {
@@ -1047,10 +1729,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } महीना",
-        "${ n } महीने"
-      ],
       "/ month": [
         "/ महीने"
       ],
@@ -1288,16 +1966,6 @@
       ],
       "Try ${ planName }": [
         "${ planName } आज़माएँ"
-      ]
-    },
-    "Checkout row": {
-      "${ users } user": [
-        "${ users } यूज़र",
-        "${ users } यूज़र"
-      ],
-      "Total for ${ n } month": [
-        "${ n } महीने के लिए कुल",
-        "${ n } महीनों के लिए कुल"
       ]
     },
     "Collapsible tooltip": {
@@ -2502,14 +3170,6 @@
       "Could not open updated vault": [
         "अपडेट किए गए तिजोरी को खोल नहीं पा रहे"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले",
-        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या",
-        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या"
-      ],
       "Device name does not match": [
         "डिवाइस नाम मेल नहीं खाया"
       ],
@@ -2612,10 +3272,6 @@
       "Label name cannot be empty.": [
         "लेबल का नाम खाली नहीं हो सकता |"
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें",
-        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें"
-      ],
       "Missing key packet": [
         "लुप्त कुञ्जी खण्ड"
       ],
@@ -2636,14 +3292,6 @@
       ],
       "Not a valid number": [
         "मान्य संख्या नहीं है"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "किसी एक संपर्क का कोई ईमेल पता नहीं है: ${ noEmailsContactNamesList }",
-        "कुछ संपर्कों का कोई ईमेल पता नहीं है: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "समूह में से एक का कोई संपर्क नहीं है: ${ noContactGroupList }",
-        "किसी एक समूह का कोई संपर्क नहीं है: ${ noContactGroupList } "
       ],
       "Organization key is not decrypted": [
         "संगठन कुंजी को डिक्रिप्ट नहीं किया गया है"
@@ -2672,10 +3320,6 @@
       "Please activate your search again": [
         "कृपया अपना खोज वापिस सक्षम करें"
       ],
-      "Please fix the highlighted conflict to proceed.": [
-        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें।",
-        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
-      ],
       "Please select a country": [
         "एक देश चुनें"
       ],
@@ -2690,10 +3334,6 @@
       ],
       "Process aborted": [
         "प्रक्रिया निरस्त की गई"
-      ],
-      "Removed duplicate invitee: ${ joinedInvitee }": [
-        "डुप्लिकेट प्राप्तकर्ता को निकाला गया: ${ joinedInvitee }",
-        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "रिपोर्ट भेजने में असफल"
@@ -2836,10 +3476,6 @@
       "Validation error": [
         "मान्यता त्रुटि"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
-        "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते"
-      ],
       "You have reached the maximum number of calendars.": [
         "आप कैलेंडर के नंबर के लिमिट पे पहुंच चुके है।"
       ],
@@ -2871,10 +3507,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "एक अप्रत्याशित त्रुटि हुई। आयात फिर से शुरू होना चाहिए।"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।",
-        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "आपके फाइल ${ formattedFilename } में एक अमान्य तरीका है और आयात नहीं जा सकता"
@@ -3070,12 +3702,6 @@
         "(कोई शीर्षक नहीं)"
       ]
     },
-    "Failed": {
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } असफल",
-        "${ countOfFailedLinks } असफल"
-      ]
-    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 टीबी स्टोरेज"
@@ -3184,10 +3810,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "बाइट",
-        "बाइट"
-      ],
       "GB": [
         "जीबी"
       ],
@@ -3199,28 +3821,6 @@
       ],
       "TB": [
         "टीबी"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "बाइट",
-        "बाइट"
-      ],
-      "Gigabyte": [
-        "महार्बुदाष्टक",
-        "महार्बुदाष्टकों"
-      ],
-      "Kilobyte": [
-        "सहस्राष्टकों",
-        "सहस्राष्टकों"
-      ],
-      "Megabyte": [
-        "प्रयुताष्टक",
-        "प्रयुताष्टक"
-      ],
-      "Terabyte": [
-        "टेराबाइट",
-        "टेराबाइट"
       ]
     },
     "Filter notification": {
@@ -3290,10 +3890,6 @@
       ]
     },
     "Hint": {
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "${ itemsCount } सुझाव मिला, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।",
-        "${ itemsCount } सुझाव मिले, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।"
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "इनपुट के बाद सुझावों को एक्सेस और ब्राउज़ करने के लिए ऊपर और नीचे कुंजी का उपयोग करें। अपनी पसंद की पुष्टि करने के लिए Enter दबाएं, या सुझाव बॉक्स को बंद करने के लिए Escape दबाएं।"
       ]
@@ -3357,14 +3953,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए",
-        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किया गया।",
-        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किए गए।"
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। कोई इवेंट आयात नहीं किया जा सका।"
       ],
@@ -3399,23 +3987,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "आयात किए गए न्योते ${ CALENDAR_APP_NAME } में आयोजक और प्रतिभागी जानकारी के बिना सादे इवेंट के रूप में दिखाए जाते है। इवेंट अपडेट लेने और प्रतिभागी देखने के लिए, आयोजक को आपके ${ BRAND_NAME } ईमेल पते पे न्योता भेजने को बोले।"
       ],
-      "This file contains an event invitation:": [
-        "इस फाइल में इवेंट का एक न्योता है:",
-        "इस फाइल में इवेंट के न्योते है:"
-      ],
-      "This file contains an invitation response:": [
-        "इस फाइल में न्योते के जवाब है:",
-        "इस फाइल में न्योते के जवाब है:"
-      ],
       "This file contains some data that we cannot import:": [
         "इस फाइल में कुछ ऐसा डाटा है जिसे हम आयात नहीं कर सकते:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } संपर्क एन्क्रिप्ट किया गया और आपकी संपर्क सूची में जोड़ा गया",
-        "${ totalImported }/${ totalToImport } ईवेंट एन्क्रिप्ट किया गया और आपके कैलेंडर में जोड़ा गया"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "आपके संपर्क को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। कोई संपर्क आयात नहीं किया जा सका।"
       ],
@@ -3435,12 +4011,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "संपर्क ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } संपर्क",
-        "${ totalContacts } संपर्क"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3607,10 +4177,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } में से ${ totalContacts } संपर्क आयात नहीं किए जाएंगे। विवरण के लिए क्लिक करें"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किया जाएगा। जानकारी के लिए फैलाए।",
-        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किए जाएगे। जानकारी के लिए फैलाए।"
-      ],
       "No contact can be imported. Click for details": [
         "कोई संपर्क आयात नहीं किया जा सकता है। विवरण के लिए क्लिक करें"
       ],
@@ -3622,22 +4188,6 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } डाउनलोड कर रहे हैं",
-        "${ activeDownloadsCount } डाउनलोड कर रहे हैं"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } डाउनलोड कर रहे है (${ downloadProgress }%)",
-        "${ activeDownloadsCount } डाउनलोड कर रहे है (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } अपलोड कर रहे है (${ uploadProgress }%)",
-        "${ activeUploadsCount } अपलोड कर रहे है (${ uploadProgress }%)"
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } ईमेल पता",
-        "${ addressCount } ईमेल पते"
-      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } सफलतापूर्वक मिटाया गया"
       ],
@@ -3650,51 +4200,11 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } की एन्क्रिप्शन टेकनोलॉजी का मतलब है की कोई भी आपका पासवर्ड एक्सेस नहीं कर सकता - यहां तक की हम भी नहीं।"
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } नया कैलेंडर",
-        "${ calendarsToBeCreatedCount } नए कैलेंडर"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } मर्ज किया गया कैलेंडर",
-        "${ calendarsToBeMergedCount } मर्ज किए गए कैलेंडर"
-      ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } रद्द करा गया",
-        "${ canceledCount } रद्द करे गए"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } संपर्क के एक से अधिक ईपत्र पते हैं।",
-        "${ contactCount } संपर्क के एक से अधिक ईपत्र पते हैं।"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } सदस्य",
-        "${ contactEmailsLength } सदस्य"
-      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } के एक से अधिक ईपत्र पते हैं।"
       ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } संपर्क मिला",
-        "${ contactsCount } संपर्क मिले"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } संपर्क",
-        "${ contactsLength } संपर्क"
-      ],
       "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "${ DOCS_APP_NAME } फाइलें सीधे डाउनलोड नहीं की जा सकतीं और इस डाउनलोड में शामिल नहीं होंगी। शेष फाइलें डाउनलोड करने के लिए 'Continue downloading' पर क्लिक करें।"
-      ],
-      "${ doneCount } finished": [
-        "${ doneCount } खत्म",
-        "${ doneCount } खत्म"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } डाउनलोड किया गया",
-        "${ doneDownloadsCount } डाउनलोड किए गए"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } अपलोड किया गया",
-        "${ doneUploadsCount } अपलोड किये गए"
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "App Store पर ${ DRIVE_APP_NAME }"
@@ -3702,27 +4212,11 @@
       "${ DRIVE_APP_NAME } on Play Store": [
         "Play Store पर ${ DRIVE_APP_NAME }"
       ],
-      "${ errorCount } failed": [
-        "${ errorCount } असफल",
-        "${ errorCount } असफल"
-      ],
       "${ fileName }: full-size image": [
         "${ fileName }: पूरे साइज़ का तस्वीर"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: कम-क्वालिटी का प्रिव्यू"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } समूह मिला",
-        "${ groupCounts } समूह मिले"
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } रोका गया",
-        "${ pausedCount } रोके गए"
-      ],
-      "${ photoCount } item": [
-        "${ photoCount } आइटम",
-        "${ photoCount } आइटम"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } को कम से कम 1 विशेष सर्वर ${ serverPricePerMonth } की आवश्यकता है"
@@ -3733,61 +4227,17 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } संदिग्ध गतिविधि की समर्पित निगरानी के साथ आपके खाते की रक्षा करता है।"
       ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } फोल्डर मिला",
-        "${ providerFoldersNumLocalized } फोल्डर मिले"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } लेबल Gmail में मिला",
-        "${ providerFoldersNumLocalized } लेबल Gmail में मिले"
-      ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } स्कैन असफल",
-        "${ scanErrorCount } स्कैन असफल"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर",
-        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
-      ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } चयनित",
-        "${ selectedCount } चयनित"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } फ़ोल्डर का चयन किया",
-        "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } लेबल चयनित",
-        "${ selectedFoldersCountLocalized } लेबल चयनित"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } छोड़ा गए",
-        "${ skippedCount } छोड़े गए"
-      ],
       "${ speed }/s": [
         "${ speed }/सेकेंड"
       ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
       ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } संपर्क सफलतापूर्वक अपडेट किया गया।",
-        "${ updated } संपर्क सफलतापूर्वक अपडेट किए गए।"
-      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } इस स्थान में पहले से मौजूद है।"
       ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } सदस्य)",
-        "(${ memberCount } सदस्य)"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } बोनस भंडारण"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)",
-        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)"
       ],
       "30-day money-back guarantee.": [
         "30-दिन की मनी-बैक गारंटी।"
@@ -3815,14 +4265,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "इस पते के लिए विश्वसनीय कुंजी के साथ पता सत्यापन सक्षम है। इस पते पर भेजने में सक्षम होने के लिए, पहले सार्वजनिक कुंजियों पर भरोसा करें जिनका उपयोग भेजने के लिए किया जा सकता है।"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "सभी (${ totalFoldersCount } फोल्डर)",
-        "सभी (${ totalFoldersCount } फोल्डर)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "सभी (${ totalFoldersCount } लेबल)",
-        "सभी (${ totalFoldersCount } लेबल)"
       ],
       "All your changes will be lost.": [
         "आपके सभी परिवर्तन खो जाएंगे।"
@@ -3965,10 +4407,6 @@
       "Country code": [
         "देश का कोड"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
-        "${ calendarsToBeCreatedCount } नए कैलेंडर बनाएं"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "आयातित संदेशों के लिए एक लेबल बनाएं, इस आयात के लिए एक समय सीमा और आपके द्वारा आयात किए जाने वाले फ़ोल्डर।"
       ],
@@ -4019,10 +4457,6 @@
       ],
       "default email address": [
         "डिफॉल्ट ईमेल पता"
-      ],
-      "Delete locked drive": [
-        "लॉक किया ड्राइव मिटाएं",
-        "लॉक किए ड्राइव मिटाएं"
       ],
       "Details": [
         "जानकारी"
@@ -4135,10 +4569,6 @@
       "Enter your own password (as organization admin).": [
         "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
       ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "अनुमानित समय शेष: ${ estimatedMinutes } मिनट",
-        "अनुमानित समय शेष: ${ estimatedMinutes } मिनट"
-      ],
       "Estimated time remaining: Less than a minute": [
         "अनुमानित समय शेष: एक मिनट से भी कम"
       ],
@@ -4249,10 +4679,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "यदि आप डाउनग्रेड के साथ आगे बढ़ते हैं, तो आप ${ VPN_APP_NAME } सशुल्क सुविधाओं तक पहुंच खो देंगे।"
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
-        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
       ],
       "Import from": [
         "यहां से आयात करें"
@@ -4370,10 +4796,6 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode लोगो"
-      ],
-      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
-        "अधिकतम ${ MAX_SHARED_URL_PASSWORD_LENGTH } अक्षर",
-        "अधिकतम ${ MAX_SHARED_URL_PASSWORD_LENGTH } अक्षर"
       ],
       "Medium Priority": [
         "मध्यम प्राथमिकता"
@@ -4533,10 +4955,6 @@
       ],
       "Please select the folders you would like to import:": [
         "कृपया उन फ़ोल्डरों का चयन करें जिन्हें आप आयात करना चाहते हैं:"
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "कृपया ${ groupCount } समूह में जोड़ने के लिए ईमेल पता या पते चुनें।",
-        "कृपया ${ groupCount } समूहों में जोड़ने के लिए ईमेल पता या पते चुनें।"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "कृपया चुनें कि ${ groupName } में कौनसे ईपत्र पते डालने हैं।"
@@ -4793,10 +5211,6 @@
       "This item already exists in your library": [
         "यह मद पहले से ही आपकी संग्रहण में मौजूद है"
       ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "यह आइटम आपकी Photos लाइब्रेरी में सहेजा नहीं गया है। अगर आप इसे इस एल्बम से हटाते हैं, तो आपको इसकी पहुँच हमेशा के लिए खो जाएगी।",
-        "इस एल्बम में चयनित कुछ आइटम आपकी Photos लाइब्रेरी में सहेजे नहीं गए हैं। अगर आप इन्हें इस एल्बम से हटाते हैं, तो आपको इनकी पहुँच हमेशा के लिए खो जाएगी।"
-      ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "यह लिंक एक ऐसी वेबसाइट की ओर ले जाता है जो पासवर्ड और क्रेडिट कार्ड विवरण जैसी आपकी जानकारी चुराने का प्रयास कर सकती है।"
       ],
@@ -5046,10 +5460,6 @@
       "Would you like to restore your files?": [
         "क्या आप अपनी फ़ाइलें पुनर्स्थापित करना चाहते हैं?"
       ],
-      "Would you like to save it before removing?": [
-        "क्या आप इसे हटाने से पहले सहेजना चाहेंगे?",
-        "क्या आप उन्हें हटाने से पहले सहेजना चाहेंगे?"
-      ],
       "Would you like to save them before removing?": [
         "क्या आप उन्हें हटाने से पहले सहेजना चाहेंगे?"
       ],
@@ -5089,14 +5499,6 @@
       "You can import one data type at a time.": [
         "आप एक बार में एक डेटा प्रकार आयात कर सकते हैं।"
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
-        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
-        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
-      ],
       "You can now return to the application to continue": [
         "जारी रखने के लिए एप्लीकेशन पे लौटे"
       ],
@@ -5108,10 +5510,6 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "यदि आपका पासवर्ड या अन्य डाटा किसी तीसरें-पार्टी से लीक हुआ है, तो आपको सूचित किया जाएगा।"
-      ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "अपना 3 GB स्वागत बोनस पाने के लिए आपके पास ${ expiresInDays } दिन बाकी हैं और ",
-        "अपना 3 GB स्वागत बोनस पाने के लिए आपके पास ${ expiresInDays } दिन बाकी हैं और "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "आपके पास परीक्षण ${ planTitle } सदस्यता है। यदि आप परीक्षण अवधि के बाद अपनी सदस्यता जारी रखना चाहते हैं, तो कृपया भुगतान विधि जोड़ें।"
@@ -5130,10 +5528,6 @@
       ],
       "You will lose all unsaved changes.": [
         "आप सभी असहेजित परिवर्तनों को खो देंगे।"
-      ],
-      "You will need to save it again from the public link page.": [
-        "आपको सार्वजनिक लिंक पृष्ठ से इसे फिर से सहेजना होगा।",
-        "आपको सार्वजनिक लिंक पृष्ठ से उन्हें फिर से सहेजना होगा।"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "आपको अपने भुगतान को सत्यापित करने के लिए जल्द ही PayPal पर पुनर्निर्देशित किया जाएगा।"
@@ -5218,16 +5612,6 @@
         "विवरण देखने के लिए क्लिक करें"
       ]
     },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } फ़ोल्डर चयनित",
-        "${ selectedFoldersCount } फ़ोल्डर्स का चयन किया"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } लेबल चयनित",
-        "${ selectedFoldersCount } लेबल चयनित"
-      ]
-    },
     "Info; access rights for shared calendar": {
       "View only": [
         "सिर्फ देखे"
@@ -5291,18 +5675,6 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } यूज़रनाम"
-      ],
-      "${ n } month": [
-        "${ n } महीना",
-        "${ n } महीने"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } दिन",
-        "${ nbDay } दिन"
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } साल",
-        "${ nbYear } साल"
       ],
       "(Expired)": [
         "(समय खत्म)"
@@ -5444,10 +5816,6 @@
       ],
       "Delete": [
         "मिटाएं"
-      ],
-      "Delete drive?": [
-        "ड्राइव मिटाएं?",
-        "ड्राइव मिटाएं?"
       ],
       "Delete recovery-related information.": [
         "रिक्वरी से जुड़ी जानकारी मिटाएं।"
@@ -5969,10 +6337,6 @@
       "Almost there": [
         "लगभग हो गया"
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }",
-        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }"
-      ],
       "Connecting to your email provider": [
         "अपने ईमेल प्रदाता से जुड़ना"
       ],
@@ -5992,24 +6356,6 @@
     "locked_state_storage_banner: info": {
       "Learn more": [
         "ज़्यादा जानें"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
-        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
-        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
-        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
-        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6306,66 +6652,6 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } और ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar": [
-        "${ n } कैलेंडर",
-        "${ n } कैलेंडर"
-      ],
-      "${ n } calendar per user": [
-        "${ n } कैलेंडर हर यूज़र पे",
-        "${ n } कैलेंडर हर यूज़र पे"
-      ],
-      "${ n } custom email domain": [
-        "${ n } कस्टम ईमेल डोमेन",
-        "${ n } कस्टम ईमेल डोमेन"
-      ],
-      "${ n } email address": [
-        "${ n } ईमेल पता",
-        "${ n } ईमेल पता/उपनाम"
-      ],
-      "${ n } email address per user": [
-        "प्रति उपयोगकर्ता ${ n } ईमेल पता",
-        "प्रति उपयोगकर्ता ${ n } ईमेल पते"
-      ],
-      "${ n } filter": [
-        "${ n } फिल्टर",
-        "${ n } फिल्टर"
-      ],
-      "${ n } folder": [
-        "${ n } फोल्डर",
-        "${ n } फोल्डर"
-      ],
-      "${ n } folder and label": [
-        "${ n } फोल्डर और लेबल",
-        "${ n } फोल्डर और लेबल"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email नकली-नाम",
-        "${ n } hide-my-email नकली-नाम"
-      ],
-      "${ n } label": [
-        "${ n } लेबल",
-        "${ n } लेबल"
-      ],
-      "${ n } message per day": [
-        "प्रतिदिन ${ n } संदेश",
-        "प्रतिदिन ${ n } संदेश"
-      ],
-      "${ n } vault": [
-        "${ n } तिजोरी",
-        "${ n } तिजोरी"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN कनेक्शन",
-        "${ n } VPN कनेक्शन"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } यूज़र",
-        "${ numberOfUsers } उपयोगकर्ता तक"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } with ${ n } hide-my-email नकली-नाम",
-        "${ PASS_APP_NAME } with ${ n } hide-my-email नकली-नाम"
-      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } असीमित hide-my-email उपनामों के साथ"
       ],
@@ -6492,10 +6778,6 @@
       "Group management (coming soon)": [
         "समूह प्रबंधन (शीघ्र ही आ रहा है)"
       ],
-      "High-speed VPN on ${ n } device": [
-        "तेज़ वीपीएन ${ n } डिवाइस पे",
-        "तेज़ वीपीएन ${ n } डिवाइस पे"
-      ],
       "HTML signatures": [
         "HTML हस्ताक्षर"
       ],
@@ -6598,10 +6880,6 @@
       "Unlimited volume/bandwidth": [
         "असीमित वॉल्युम/बैंडविड्थ"
       ],
-      "Up to ${ n } user": [
-        "${ n } उपयोगकर्ता तक",
-        "${ n } उपयोगकर्ता तक"
-      ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } स्टोरेज तक"
       ],
@@ -6610,16 +6888,6 @@
       ],
       "User session management": [
         "यूज़र सत्र मैनेजमेंट"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "तिजोरी शेयर करें (अधिकतम ${ n } व्यक्ति को)",
-        "तिजोरी शेयर करें (अधिकतम ${ n } लोगों को)"
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ users } user": [
-        "${ users } यूज़र",
-        "${ users } यूज़र"
       ]
     },
     "new_plans: feature info": {
@@ -6753,10 +7021,6 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "अपने ऑनलाइन पहचानो के लिए कई ईमेल पते बनाए, उदाहरण, MahfuzKhariddari@${ domain } शॉपिंग खातों के लिए, MahfuzKhabar@${ domain } समाचार सदस्यता के लिए"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।",
-        "${ n } कैलेंडर तक बनाएं या दोस्तों, परिवार, सहकर्मी, और संगठनों से कैलेंडर जोड़ें।"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "${ n } तक ईमेल पते/उपनाम बनाएं जिन्हें आप परिवार के सदस्यों को निर्दिष्ट कर सकें। ऑनलाइन पहचान के लिए उनका उपयोग करें, उदाहरण के लिए, शॉपिंग खातों के लिए जॉनशॉपर@${ domain }।"
@@ -6928,10 +7192,6 @@
       "Central control panel": [
         "केंद्रीय नियंत्रण कक्ष"
       ],
-      "Create up to ${ n } calendar": [
-        "${ n } कैलेंडर तक बनाएं",
-        "${ n } कैलेंडर तक बनाएं"
-      ],
       "Dedicated Account manager": [
         "समर्पित खाता प्रबंधक"
       ],
@@ -6949,10 +7209,6 @@
       ],
       "Require 2FA": [
         "2-एफए आवश्यक करें"
-      ],
-      "Support for ${ n } custom email domain": [
-        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट",
-        "${ n } कस्टम ईमेल डोमेन के लिए सपोर्ट"
       ]
     },
     "Notification": {
@@ -7003,50 +7259,6 @@
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" का नाम बदला गया"
-      ],
-      "${ count } item failed to be decrypted": [
-        "${ count } चीज़ डीक्रिप्ट करने में असफल",
-        "${ count } चीज़ डीक्रिप्ट करने में असफल"
-      ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } आइटम मिटाया गया",
-        "${ numberOfItems } आइटम मिटाए गए"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } चीज़ कचरे से हमेशा के लिए मिटाया गया",
-        "${ numberOfItems } चीज़े कचरे से हमेशा के लिए मिटाए गए"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } आइटम मिटाने में असफल",
-        "${ numberOfItems } आइटम मिटाने में असफल"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } चीज़ कचरे से हमेशा के लिए मिटाने में असफल",
-        "${ numberOfItems } चीज़े कचरे से हमेशा के लिए मिटाने में असफल"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } चीज़ ले जाने में असफल",
-        "${ numberOfItems } चीज़े ले जाने में असफल"
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems } चीज़ कचरे में ले जाने में असफल",
-        "${ numberOfItems } चीज़े कचरे में ले जाने में असफल"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } चीज़ कचरे से लाने में असफल",
-        "${ numberOfItems } चीज़े कचरे से लाने में असफल"
-      ],
-      "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } चीज़ कचरे में ले गए",
-        "${ numberOfItems } चीज़े कचरे में ले गए"
-      ],
-      "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } चीज़ कचरे से लाया गया",
-        "${ numberOfItems } चीज़े कचरे से लाए गए"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } चीज़ सफलतापूर्वक ले गए",
-        "${ numberOfItems } चीज़े सफलतापूर्वक ले गए"
       ],
       "${ reason } has been disabled": [
         "${ reason } को अक्षम कर दिया गया है"
@@ -7129,10 +7341,6 @@
       "Failed to upload files: ${ err }": [
         "फाइलें अपलोड करने में असफल: ${ err }"
       ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "फाइल या फोल्डर \"${ filename }\" और ${ count } अन्य पहले से ही अपलोड हो रहे हैं",
-        "फाइल या फोल्डर \"${ filename }\" और ${ count } अन्य पहले से ही अपलोड हो रहे हैं"
-      ],
       "File or folder \"${ filename }\" is already uploading": [
         "फाइल या फोल्डर \"${ filename }\" पहले से ही अपलोड हो रहा है"
       ],
@@ -7147,18 +7355,6 @@
       ],
       "Link copied to clipboard": [
         "लिंक क्लिपबोर्ड पर कॉपी किया गया"
-      ],
-      "Move ${ n } file": [
-        "${ n } फाइल ले जाए",
-        "${ n } फाइलें ले जाए"
-      ],
-      "Move ${ n } folder": [
-        "${ n } फोल्डर को ले जाएँ",
-        "${ n } फोल्डर को ले जाएँ"
-      ],
-      "Move ${ n } item": [
-        "${ n } चीज़ ले जाए",
-        "${ n } चीज़े ले जाए"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal } अपलोड करने के लिए जगह काफी नहीं"
@@ -7177,10 +7373,6 @@
       ],
       "Share invitation declined": [
         "शेयर न्योता नकारा गया"
-      ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "क्षमा करें, हम फ़ोल्डर को नहीं मिटा सके क्योंकि यह खाली नहीं है।",
-        "क्षमा करें, हम फ़ोल्डरों को नहीं मिटा सके क्योंकि वे खाली नहीं हैं।"
       ],
       "Stopping the sharing of this item has failed": [
         "इस आइटम का साझाकरण बंद करने में असफल रहा"
@@ -7699,18 +7891,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ countContacts } में से ${ contactsExported.length } संपर्क सफलतापूर्वक निर्यात किया",
-        "${ countContacts } में से ${ contactsExported.length } संपर्क सफलतापूर्वक निर्यात किए"
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } में से ${ totalBeDeleted } संपर्क सफलतापूर्वक हटा दिया गया।",
-        "${ model.deleted.length } में से ${ totalBeDeleted } संपर्कों सफलतापूर्वक हटा दिया गया।"
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } में से ${ totalBeMerged } संपर्क सफलतापूर्वक मर्ज हो गया।",
-        "${ model.submitted.length } में से ${ totalBeMerged } संपर्कों सफलतापूर्वक मर्ज हो गए।"
-      ],
       "No contacts exported.": [
         "कोई संपर्क निर्यात नहीं किया गया।"
       ],
@@ -7842,16 +8022,6 @@
         "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
       ]
     },
-    "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } दिन",
-        "${ timeRemaining.inDays } दिन"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } घंटा",
-        "${ timeRemaining.inHours } घंटे"
-      ]
-    },
     "session_recovery:available:link": {
       "See how": [
         "देखें कैसे"
@@ -7927,10 +8097,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } घंटा",
-        "${ gracePeriodHoursRemaining } घंटे"
-      ],
       "You will be able to reset your password in ${ boldTimeLeft }.": [
         "आप अपना पासवर्ड ${ boldTimeLeft } में रीसेट कर पाएंगे।"
       ]
@@ -7967,30 +8133,6 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "असीम पे जाएं"
-      ]
-    },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } दिन",
-        "${ days } दिन"
-      ],
-      "${ hours } hour": [
-        "${ hours } घंटा",
-        "${ hours } घंटे"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } मिनट",
-        "${ minutes } मिनट"
-      ],
-      "${ seconds } second": [
-        "${ seconds } सेकंड",
-        "${ seconds } सेकंड"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } महीना मुफ्त",
-        "${ n } महीने मुफ्त"
       ]
     },
     "specialoffer: Deal details": {
@@ -8040,10 +8182,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } महीना",
-        "${ n } महीने"
-      ],
       "/ month": [
         "/ महीने"
       ],
@@ -8189,10 +8327,6 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "हम शेष समय के लिए क्रेडिट आपके ${ BRAND_NAME } खाते में जोड़ देंगे।"
       ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।",
-        "आपके **${ currentPlanName }** योजना में अब भी **${ daysRemaining }** दिन शेष हैं।"
-      ],
       "Your storage is full": [
         "आपका स्टोरेज भरा है"
       ],
@@ -8220,28 +8354,6 @@
         "वार्षिक बिल"
       ]
     },
-    "Subscription attribute": {
-      "${ n } free VPN connection per user": [
-        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन",
-        "प्रति उपयोगकर्ता ${ n } मुफ्त VPN कनेक्शन"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } तेज़ वीपीएन कनेक्शन",
-        "${ n } तेज़ वीपीएन कनेक्शन"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "प्रति उपयोगकर्ता ${ n } उच्च गति वाला VPN कनेक्शन",
-        "प्रति उपयोगकर्ता ${ n } उच्च गति वाले VPN कनेक्शन"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN कनेक्शन",
-        "${ n } VPN कनेक्शन"
-      ],
-      "${ n } VPN connection per user": [
-        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन",
-        "प्रति उपयोगकर्ता ${ n } VPN कनेक्शन"
-      ]
-    },
     "Subscription change warning": {
       "Got it": [
         "समझ गए"
@@ -8263,10 +8375,6 @@
       ]
     },
     "Subscription reminder": {
-      "${ dayDiff } day left": [
-        "${ dayDiff } दिन बाकी",
-        "${ dayDiff } दिन बाकी"
-      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } डेस्कटॉप ऐप"
       ],
@@ -8287,26 +8395,6 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage for your files and photos. You are also eligible for yearly storage bonuses.": [
         "${ planName } आपके फाइलों और फोटो के लिए ${ planMaxSpace } स्टोरेज प्रदान करता है। आप वार्षिक स्टोरेज बोनस के लिए भी पात्र हैं।"
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "प्रति उपयोगकर्ता ${ planNumberOfCalendars } कैलेंडर",
-        "प्रति उपयोगकर्ता ${ planNumberOfCalendars } कैलेंडर"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } कस्टम ईमेल डोमेन",
-        "${ planNumberOfDomains } कस्टम ईमेल डोमेन"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } ईमेल पता",
-        "${ planNumberOfEmails } ईमेल पते"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "प्रति उपयोगकर्ता ${ planNumberOfEmails } ईमेल पता",
-        "प्रति उपयोगकर्ता ${ planNumberOfEmails } ईमेल पते"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } यूज़र",
-        "${ planNumberOfUsers } यूज़र"
       ],
       "2 users": [
         "2 यूज़र"
@@ -8433,14 +8521,6 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } संपर्क एक जैसा है।",
-        "${ countMergeableContacts } संपर्क एक जैसे है।"
-      ],
-      "${ countOfUnrecoveredLinksLeft } left": [
-        "${ countOfUnrecoveredLinksLeft } बचे हैं",
-        "${ countOfUnrecoveredLinksLeft } बचे हैं"
-      ],
       "Address copied to clipboard": [
         "पता क्लिपबोर्ड पर कॉपी किया गया"
       ],
@@ -8455,14 +8535,6 @@
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } को कोड भेजा गया"
-      ],
-      "Contact deleted": [
-        "संपर्क हटाया गया",
-        "संपर्क हटा दिए गए"
-      ],
-      "Contact group deleted": [
-        "संपर्क समूह हटाया गया",
-        "संपर्क समूह हटा दिए गए"
       ],
       "Contact saved": [
         "संपर्क सहेजा गया"
@@ -8638,74 +8710,12 @@
         "वीडियो"
       ]
     },
-    "Time unit": {
-      "${ ceilDays } day": [
-        "${ ceilDays } दिन",
-        "${ ceilDays } दिन"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } घंटा",
-        "${ ceilHours } घंटे"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } मिनट",
-        "${ ceilMinutes } मिनट"
-      ],
-      "${ seconds } second": [
-        "${ seconds } सेकंड",
-        "${ seconds } सेकंड"
-      ]
-    },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } घंटा",
-        "${ hours } घंटे"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 घंटा",
-        "${ hoursInt }.5 घंटे"
-      ],
-      "${ minutes } min": [
-        "${ minutes } मिनट",
-        "${ minutes } मिनट"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } घंटा",
-        "${ hours } घंटे"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 घंटा",
-        "${ hoursInt }.5 घंटे"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } मिनट",
-        "${ minutes } मिनट"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "# डाउनलोड के"
       ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } ईमेल पता",
-        "${ emailsCount } ईमेल पते"
-      ],
       "${ feature } is now active": [
         "${ feature } अब सक्रिय है"
-      ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } असफल डाउनलोड",
-        "${ numberOfFailedTransfer.total } असफल डाउनलोड"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } असफल भुगतान",
-        "${ numberOfFailedTransfer.total } असफल भुगतान"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } असफल अपलोड",
-        "${ numberOfFailedTransfer.total } असफल अपलोड"
       ],
       "Account recovery": [
         "खाता पुनर्प्राप्ति"
@@ -8724,10 +8734,6 @@
       ],
       "Add credit/debit card": [
         "क्रेडिट / डेबिट कार्ड जोड़ें"
-      ],
-      "Add to ${ groupCount } group": [
-        "${ groupCount } समूह में जोड़ें",
-        "${ groupCount } समूह में जोड़ें"
       ],
       "Add to ${ groupName }": [
         "${ groupName } में जोड़ें"
@@ -8761,10 +8767,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "आप पक्का इस प्रीव्यू को बंद करना चाहते हैं?"
-      ],
-      "Are you sure you want to remove this item from your list?": [
-        "क्या आप वाकई इस सूची से यह आइटम हटाना चाहते हैं?",
-        "क्या आप वाकई इस सूची से इन आइटमों को हटाना चाहते हैं?"
       ],
       "Are you sure?": [
         "क्या आप पक्का हैं?"
@@ -8867,14 +8869,6 @@
       ],
       "Delete": [
         "मिटाएं"
-      ],
-      "Delete ${ count } contact": [
-        "${ count } संपर्क हटाएं",
-        "${ count } संपर्क हटाएं"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } संपर्क समूह हटाएं",
-        "${ count } संपर्क समूह हटाएं"
       ],
       "Delete ${ name }?": [
         "${ name } मिटाएं?"
@@ -8981,10 +8975,6 @@
       "Folder details": [
         "फोल्डर की जानकारी"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "${ searchView.numberOfResults } परिणाम मिला",
-        "${ searchView.numberOfResults } परिणाम मिले"
-      ],
       "Get more from your VPN": [
         "अपने VPN से और पाएं"
       ],
@@ -9002,10 +8992,6 @@
       ],
       "Human verification": [
         "मानव सत्यापन"
-      ],
-      "Import as simple event?": [
-        "साधारण ईवेंट के रूप में आयात करें?",
-        "साधारण ईवेंट के रूप में आयात करें?"
       ],
       "Import contacts": [
         "संपर्क आयात करें"
@@ -9159,10 +9145,6 @@
       ],
       "Remove device?": [
         "डिवाइस हटाएं?"
-      ],
-      "Remove item?": [
-        "आइटम हटाएं?",
-        "आइटम हटाएं?"
       ],
       "Rename a file": [
         "फाइल का नाम बदलें"
@@ -9478,21 +9460,7 @@
         "एडमिन निजी उपयोगकर्ताओं के डाटा तक पहुंच नहीं सकते और उनके पासवर्ड रीसेट नहीं कर सकते।"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होना चाहिए",
-        "पासवर्ड में कम से कम ${ MIN_PASSWORD_LENGTH } वर्ण होने चाहिए"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
-        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
-      ]
-    },
     "Validation Error": {
-      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "नाम ज़्यादा-से-ज़्यादा ${ MAX_NAME_LENGTH } वर्ण लंबा हो सकता है",
-        "नाम ज़्यादा-से-ज़्यादा ${ MAX_NAME_LENGTH } वर्ण लंबा हो सकता है"
-      ],
       "Name must not be empty": [
         "नाम खाली नहीं होना चाहिए"
       ]
@@ -9503,36 +9471,6 @@
       ],
       "Replay video": [
         "वीडियो फिर से चलाएं"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } डिवाइस",
-        "${ n } डिवाइस"
-      ],
-      "${ n } server": [
-        "${ n } सर्वर",
-        "${ n }+ सर्वर"
-      ],
-      "${ n } VPN connection": [
-        "${ n } वीपीएन कनेक्शन",
-        "${ n } वीपीएन कनेक्शन"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } देश",
-        "${ numberOfCountries } देश"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfCountries } देशों में ${ numberOfServers }",
-        "${ numberOfCountries }+ देशों में ${ numberOfServers }"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfCountries } देश में ${ numberOfServers }",
-        "${ numberOfCountries } देशों में ${ numberOfServers }"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "${ numberOfCountries }+ देश में सर्वर",
-        "${ numberOfCountries }+ देशों में सर्वर"
       ]
     },
     "vpn_2step: feature": {
@@ -9549,10 +9487,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, आपके सबसे हाल के संदेशों से शुरू करते हुए, जितना हो सके उतना डाटा ट्रांसफर करेगा।"
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "क्या आप वाकई ${ count } संपर्क को स्थायी रूप से हटाना चाहते हैं?",
-        "क्या आप वाकई ${ count } संपर्कों को स्थायी रूप से हटाना चाहते हैं?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "क्या आप वाकई इस संपर्क समूह को स्थायी रूप से हटाना चाहते हैं?"
