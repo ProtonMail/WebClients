@@ -208,6 +208,9 @@
       "Dismiss": [
         "忽略"
       ],
+      "Do not show again": [
+        "不再顯示"
+      ],
       "Download this CSV template": [
         "下載此CSV模板"
       ],
@@ -1507,6 +1510,14 @@
         "您的資料在 ${ displayedDate } 被發現。"
       ]
     },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT 鍵"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
       "${ config.options.length } character": [
         "${ config.options.length }個字元"
@@ -2071,9 +2082,6 @@
       ],
       "Network": [
         "網路"
-      ],
-      "New": [
-        "新功能"
       ],
       "New email": [
         "新電子郵件"

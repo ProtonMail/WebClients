@@ -253,6 +253,12 @@
       "Dismiss": [
         "却下"
       ],
+      "Do not show again": [
+        "今後表示しない"
+      ],
+      "Do not show again when I press": [
+        "押したときに次回から表示しない"
+      ],
       "Download this CSV template": [
         "この CSV テンプレートをダウンロード"
       ],
@@ -2020,6 +2026,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "データのインポート中は、このウィンドウを開いたままにしてください。この処理には数分かかる場合があります。"
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "以前にアクティブだったウィンドウがオートタイプを実行したい場所であり、お客様のカーソルがログインフィールドにフォーカスされていることをご確認ください。"
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "一度削除したエイリアスは復元できません。代わりにエイリアスを無効にしますか？"
       ],
@@ -2371,6 +2380,12 @@
       "You may close this tab.": [
         "このタブを閉じても構いません。"
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "お客様のシステムによっては、許可を求めるプロンプトを承認し、アプリを再起動していただく必要がある場合があります。"
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } にアクセシビリティ権限を付与する必要がある場合があります。"
+      ],
       "You need a vault with edit permission before you can import items.": [
         "アイテムをインポートするには、編集権限のある保管庫が必要です。"
       ],
@@ -2415,6 +2430,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3077,9 +3100,6 @@
       ],
       "Network": [
         "ネットワーク"
-      ],
-      "New": [
-        "新しい"
       ],
       "New email": [
         "新しいメール"
@@ -4328,6 +4348,9 @@
       "Pending access to the shared data": [
         "共有データへのアクセスが保留中です"
       ],
+      "Perform autotype?": [
+        "オートタイプを実行しますか？"
+      ],
       "Permanently remove all items?": [
         "全てのアイテムを完全に削除しますか？"
       ],
@@ -4633,6 +4656,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "追加パスワードは8文字以上必要です"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "オートタイプに失敗しました。${ PASS_APP_NAME } に必要な権限が付与されていることをご確認の上、もう一度お試しください (${ error })。"
       ],
       "Failed to load breaches.": [
         "侵害を読み込めませんでした。"

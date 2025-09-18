@@ -130,6 +130,9 @@
       "Clear search": [
         "Tyhjennä haku"
       ],
+      "Clone item": [
+        "Kloonaa kohde"
+      ],
       "Close": [
         "Sulje"
       ],
@@ -1246,6 +1249,11 @@
       "Terabyte": [
         "Teratavu",
         "Teratavua"
+      ]
+    },
+    "Header": {
+      "Domain": [
+        "Verkkotunnus"
       ]
     },
     "Info": {
@@ -3000,9 +3008,6 @@
       "Network": [
         "Verkko"
       ],
-      "New": [
-        "Uusi"
-      ],
       "New email": [
         "Uusi sähköpostiosoite"
       ],
@@ -4389,6 +4394,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
         "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "kopioi"
       ]
     },
     "Today icon tooltip in mini calendar": {
