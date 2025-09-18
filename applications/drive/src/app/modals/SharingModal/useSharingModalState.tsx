@@ -45,6 +45,15 @@ const defaultSharingInfo = {
     members: [],
 };
 
+const getIsShared = (shareResult: ShareResult) => {
+    const isDirectShared =
+        shareResult.protonInvitations.length > 0 ||
+        shareResult.nonProtonInvitations.length > 0 ||
+        shareResult.members.length > 0;
+    const isPublicShared = !!shareResult.publicLink;
+    return isDirectShared || isPublicShared;
+};
+
 export const useSharingModalState = ({
     volumeId,
     linkId,
@@ -80,20 +89,20 @@ export const useSharingModalState = ({
 
     const [isPublicLinkEnabled, setIsPublicLinkEnabled] = useState(!isAlbum);
 
-    const isDirectShared =
-        sharingInfo.protonInvitations.length > 0 ||
-        sharingInfo.nonProtonInvitations.length > 0 ||
-        sharingInfo.members.length > 0;
-    const isPublicShared = !!sharingInfo.publicLink;
-    const isShared = isDirectShared || isPublicShared;
-
     //TODO: We need to move that somewhere else to be able to reuse the modal with event system
     const updateSharingState = async (updatedShareResult: ShareResult | undefined) => {
+        const shareResult = updatedShareResult || defaultSharingInfo;
         await getActionEventManager().emit({
             type: ActionEventName.UPDATED_NODES,
-            items: [{ uid: nodeUid, parentUid }],
+            items: [
+                {
+                    uid: nodeUid,
+                    parentUid,
+                    isShared: getIsShared(shareResult),
+                },
+            ],
         });
-        setSharingInfo(updatedShareResult || defaultSharingInfo);
+        setSharingInfo(shareResult);
         //TODO: Remove when we will get rid of legacy
         void events.pollEvents.volumes(volumeId);
     };
@@ -293,7 +302,7 @@ export const useSharingModalState = ({
         ownerDisplayName,
         ownerEmail,
         isLoading,
-        isShared,
+        isShared: getIsShared(sharingInfo),
         isPublicLinkEnabled,
         publicLink: sharingInfo.publicLink
             ? {

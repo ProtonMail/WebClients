@@ -81,7 +81,7 @@ export const subscribeToSharedByMeEvents = () => {
         const store = useSharedByMeStore.getState();
 
         for (const item of event.items) {
-            if (!item.isShared && store.getSharedByMeItem(item.uid)) {
+            if (item.isShared === false && store.getSharedByMeItem(item.uid)) {
                 store.removeSharedByMeItem(item.uid);
             } else if (item.isShared) {
                 const sharedByMeItem = await createSharedByMeItemFromNode(item.uid);
