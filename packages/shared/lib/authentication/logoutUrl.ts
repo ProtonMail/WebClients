@@ -7,6 +7,7 @@ import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/enc
 import isEnumValue from '@proton/utils/isEnumValue';
 
 import { ForkSearchParameters } from './fork';
+import type { ExtraSessionForkData } from './interface';
 import type {
     LegacySerializedSignoutUserData,
     SerializedSignoutUserData,
@@ -109,11 +110,21 @@ const getProduct = (appName: APP_NAMES, pathname: string) => {
     return getSlugFromApp(appName);
 };
 
-export const getLocalAccountLogoutUrl = ({ localID }: { appName: APP_NAMES; localID: number }) => {
+export const getLocalAccountLogoutUrl = ({
+    localID,
+    extra,
+}: {
+    appName: APP_NAMES;
+    localID: number;
+    extra?: ExtraSessionForkData;
+}) => {
     const url = new URL(window.location.href);
     url.pathname = stripLocalBasenameFromPathname(url.pathname);
     if (localID !== undefined) {
         url.searchParams.set(ForkSearchParameters.LocalID, `${localID}`);
+    }
+    if (extra?.email) {
+        url.searchParams.set('email', extra.email);
     }
     return url.toString();
 };
