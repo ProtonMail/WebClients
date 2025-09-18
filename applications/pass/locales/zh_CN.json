@@ -3060,9 +3060,6 @@
       "Network": [
         "网络"
       ],
-      "New": [
-        "新"
-      ],
       "New email": [
         "新邮箱"
       ],
@@ -4604,6 +4601,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "额外密码至少要有 8 个字符"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "自动填充失败。请确保 ${ PASS_APP_NAME } 拥有所需权限，并重试（${ error }）。"
       ],
       "Failed to load breaches.": [
         "加载泄露信息失败"

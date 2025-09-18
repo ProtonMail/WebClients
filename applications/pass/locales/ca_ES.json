@@ -253,6 +253,12 @@
       "Dismiss": [
         "Descarta"
       ],
+      "Do not show again": [
+        "No ho torneu a mostrar"
+      ],
+      "Do not show again when I press": [
+        "No m'ho tornis a mostrar quan ho premi"
+      ],
       "Download this CSV template": [
         "Descarrega aquesta plantilla CSV"
       ],
@@ -2046,6 +2052,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Manteniu aquesta finestra oberta mentre s'importen les vostres dades. Aquest procés pot trigar uns minuts."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Assegureu-vos que la finestra prèviament activa és on voleu escriure automàticament i que el cursor estava situat al camp d'inici de sessió."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Tingueu en compte que, un cop suprimit, l'àlies no es pot restaurar. Potser voleu desactivar l'àlies?"
       ],
@@ -2402,6 +2411,12 @@
       "You may close this tab.": [
         "Ara podeu tancar aquesta pestanya."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Potser necessitareu acceptar una sol·licitud de permís i reiniciar l'aplicació en funció del vostre sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Potser necessitareu concedir permisos d'accessibilitat a ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Necessiteu una caixa forta amb permís d'edició abans de poder importar elements."
       ],
@@ -2446,6 +2461,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "Majúscules"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3122,9 +3145,6 @@
       ],
       "Network": [
         "Xarxa"
-      ],
-      "New": [
-        "Nou"
       ],
       "New email": [
         "Nou correu electrònic"
@@ -4381,6 +4401,9 @@
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
       ],
+      "Perform autotype?": [
+        "Voleu emplenament automàtic?"
+      ],
       "Permanently remove all items?": [
         "Voleu esborrar els elements de manera permanent?"
       ],
@@ -4692,6 +4715,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "La contrasenya addicional ha de tenir com a mínim 8 caràcters."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "No s'ha pogut autocompletar. Assegureu-vos que ${ PASS_APP_NAME } tingui els permisos necessaris i torneu-ho a provar (${ error })."
       ],
       "Failed to load breaches.": [
         "No s'han pogut carregar les infraccions."
