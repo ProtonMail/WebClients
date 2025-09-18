@@ -80,7 +80,7 @@ function Undo() {
     <T.Item
       legacyIconName="arrow-up-and-left"
       onClick={useUI.$.history.undo}
-      disabled={useUI((ui) => ui.history.undoDisabled)}
+      disabled={useUI((ui) => ui.history.undoDisabled || ui.info.isReadonly)}
       shortcut={
         <Atoms.KbdShortcut>
           <Atoms.Kbd>⌘</Atoms.Kbd>
@@ -100,7 +100,7 @@ function Redo() {
       // Hack to flip the icon horizontally.
       className="[&_svg]:-scale-x-100"
       onClick={useUI.$.history.redo}
-      disabled={useUI((ui) => ui.history.redoDisabled)}
+      disabled={useUI((ui) => ui.history.redoDisabled || ui.info.isReadonly)}
       shortcut={
         <Atoms.KbdShortcut>
           <Atoms.Kbd>⌘</Atoms.Kbd>
@@ -124,7 +124,7 @@ function Find() {
 // TODO: broken
 function ClearFormatting() {
   return (
-    <T.Item legacyIconName="eraser" onClick={useUI.$.format.clear}>
+    <T.Item legacyIconName="eraser" onClick={useUI.$.format.clear} disabled={useUI((ui) => ui.info.isReadonly)}>
       {s('Clear formatting')}
     </T.Item>
   )
@@ -132,7 +132,11 @@ function ClearFormatting() {
 
 function FormatAsCurrency() {
   return (
-    <T.Item icon={Icons.currencyDollar} onClick={useUI.$.format.pattern.currency.default.set}>
+    <T.Item
+      icon={Icons.currencyDollar}
+      onClick={useUI.$.format.pattern.currency.default.set}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Format as currency')}
     </T.Item>
   )
@@ -140,7 +144,11 @@ function FormatAsCurrency() {
 
 function FormatAsPercent() {
   return (
-    <T.Item legacyIconName="percent" onClick={useUI.$.format.pattern.percent.set}>
+    <T.Item
+      legacyIconName="percent"
+      onClick={useUI.$.format.pattern.percent.set}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Format as percent')}
     </T.Item>
   )
@@ -148,7 +156,11 @@ function FormatAsPercent() {
 
 function DecreaseDecimalPlaces() {
   return (
-    <T.Item icon={Icons.decreaseDecimalPlaces} onClick={useUI.$.format.decreaseDecimalPlaces}>
+    <T.Item
+      icon={Icons.decreaseDecimalPlaces}
+      onClick={useUI.$.format.decreaseDecimalPlaces}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Decrease decimal places')}
     </T.Item>
   )
@@ -156,7 +168,11 @@ function DecreaseDecimalPlaces() {
 
 function IncreaseDecimalPlaces() {
   return (
-    <T.Item icon={Icons.increaseDecimalPlaces} onClick={useUI.$.format.increaseDecimalPlaces}>
+    <T.Item
+      icon={Icons.increaseDecimalPlaces}
+      onClick={useUI.$.format.increaseDecimalPlaces}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Increase decimal places')}
     </T.Item>
   )
@@ -168,6 +184,7 @@ function Bold() {
       legacyIconName="text-bold"
       pressed={useUI((ui) => ui.format.text.bold.active)}
       onClick={useUI.$.format.text.bold.toggle}
+      disabled={useUI((ui) => ui.info.isReadonly)}
     >
       {s('Bold')}
     </T.Item>
@@ -180,6 +197,7 @@ function Italic() {
       legacyIconName="text-italic"
       pressed={useUI((ui) => ui.format.text.italic.active)}
       onClick={useUI.$.format.text.italic.toggle}
+      disabled={useUI((ui) => ui.info.isReadonly)}
     >
       {s('Italic')}
     </T.Item>
@@ -192,6 +210,7 @@ function Underline() {
       legacyIconName="text-underline"
       pressed={useUI((ui) => ui.format.text.underline.active)}
       onClick={useUI.$.format.text.underline.toggle}
+      disabled={useUI((ui) => ui.info.isReadonly)}
     >
       {s('Underline')}
     </T.Item>
@@ -204,6 +223,7 @@ function Strikethrough() {
       legacyIconName="text-strikethrough"
       pressed={useUI((ui) => ui.format.text.strikethrough.active)}
       onClick={useUI.$.format.text.strikethrough.toggle}
+      disabled={useUI((ui) => ui.info.isReadonly)}
     >
       {s('Strikethrough')}
     </T.Item>
@@ -226,6 +246,7 @@ function TextColor() {
             style={{
               color: colorString,
             }}
+            disabled={useUI((ui) => ui.info.isReadonly)}
           >
             {s('Text color')}
           </T.Item>
@@ -251,7 +272,7 @@ function FillColor() {
     <Ariakit.PopoverProvider store={popover}>
       <Ariakit.PopoverDisclosure
         render={
-          <T.Item icon={Icons.bucket_color} dropdownIndicator>
+          <T.Item icon={Icons.bucket_color} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
             {s('Fill color')}
           </T.Item>
         }
@@ -275,7 +296,7 @@ function BorderSelector() {
     <Ariakit.PopoverProvider store={popover}>
       <Ariakit.PopoverDisclosure
         render={
-          <T.Item icon={Icons.layoutGrid} dropdownIndicator>
+          <T.Item icon={Icons.layoutGrid} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
             {s('Border')}
           </T.Item>
         }
@@ -327,7 +348,7 @@ function TextHorizontalAlign() {
     <Ariakit.PopoverProvider store={popover}>
       <Ariakit.PopoverDisclosure
         render={
-          <T.Item legacyIconName={icon} dropdownIndicator>
+          <T.Item legacyIconName={icon} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
             {s('Horizontal align')}
           </T.Item>
         }
@@ -366,7 +387,7 @@ function TextVerticalAlign() {
     <Ariakit.PopoverProvider store={popover}>
       <Ariakit.PopoverDisclosure
         render={
-          <T.Item icon={icon} dropdownIndicator>
+          <T.Item icon={icon} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
             {s('Vertical align')}
           </T.Item>
         }
@@ -405,7 +426,7 @@ function TextWrap() {
     <Ariakit.PopoverProvider store={popover}>
       <Ariakit.PopoverDisclosure
         render={
-          <T.Item icon={icon} dropdownIndicator>
+          <T.Item icon={icon} dropdownIndicator disabled={useUI((ui) => ui.info.isReadonly)}>
             {s('Text wrapping')}
           </T.Item>
         }
@@ -421,7 +442,7 @@ function TextWrap() {
 
 function Link() {
   return (
-    <T.Item legacyIconName="link" onClick={useUI.$.insert.link}>
+    <T.Item legacyIconName="link" onClick={useUI.$.insert.link} disabled={useUI((ui) => ui.info.isReadonly)}>
       {s('Link')}
     </T.Item>
   )
@@ -430,7 +451,7 @@ function Link() {
 function Note() {
   return (
     // TODO: icon needs to be note-with-text but we don't have it yet
-    <T.Item legacyIconName="note" onClick={useUI.$.insert.note}>
+    <T.Item legacyIconName="note" onClick={useUI.$.insert.note} disabled={useUI((ui) => ui.info.isReadonly)}>
       {s('Note')}
     </T.Item>
   )
