@@ -1,3 +1,13 @@
+### Version 1.32.7
+
+- [Gradual rollout] Support hiding/showing vaults
+- [Gradual rollout] Support cloning items
+- [Gradual rollout] Support remote private domains list to avoid suggesting other logins from subdomains
+- Fix private key field in SSH key item to allow multiple lines
+- Support passkeys in Safari extension
+- Fix web components dialog API conflicts
+- Fix autofilling edge-cases
+
 ### Version 1.32.5
 
 - Patch WebKit Linux native X25519 crypto bug
