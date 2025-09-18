@@ -20,23 +20,6 @@
 			block-size: calc(#{em(24)} - 6px); // Reduce size to account for margin
 		}
 
-		// // Checked state (right side)
-		// &.toggle-container--checked {
-		// 	background-color: #e5e1f5 !important; // Keep same purple background
-
-		// 	&::before {
-		// 		background-color: white; // Keep white button
-		// 		// Transform accounts for the margin offset
-		// 		transform: translateX(calc(#{em(40)} - #{em(24)} - 4px));
-
-		// 		@at-root {
-		// 			[dir='rtl'] & {
-		// 				transform: translateX(calc(-#{em(40)} + #{em(24)} + 4px));
-		// 			}
-		// 		}
-		// 	}
-		// }
-
 		// Hide default icons
 		.toggle-container-text .toggle-container-img {
 			opacity: 0;
@@ -47,6 +30,14 @@
 			&::before {
 				background-color: var(--background-weak);
 			}
+		}
+	}
+
+	&.ghost-mode .toggle-container {
+		background-color: var(--background-upsell-toggle-ghost-mode) !important;
+
+		&::before {
+			background-color: var(--background-upsell-toggle-ghost-mode-button) !important;
 		}
 	}
 }
