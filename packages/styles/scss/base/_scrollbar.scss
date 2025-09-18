@@ -34,7 +34,7 @@
 		}
 
 		@include media('mouse') {
-			body *:not(:hover, :focus, :focus-within) {
+			body *:not(:hover, :focus, :focus-within, .scrollbar-always-visible) {
 				@supports (scrollbar-width: auto) {
 					scrollbar-color: transparent transparent;
 				}

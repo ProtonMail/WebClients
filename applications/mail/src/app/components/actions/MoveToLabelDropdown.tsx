@@ -348,7 +348,10 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
                 />
             </div>
 
-            <div className="label-dropdown-list overflow-auto flex-auto" data-testid="label-dropdown-list">
+            <div
+                className="label-dropdown-list overflow-auto scrollbar-always-visible flex-auto"
+                data-testid="label-dropdown-list"
+            >
                 {list.length === 0 ? (
                     <MoveToPlaceholders emptyListCopy={c('Info').t`No label found`} search={search} />
                 ) : (
