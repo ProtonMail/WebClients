@@ -387,11 +387,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Após a avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que se renova automaticamente a cada ${ renewCycle } meses em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente a cada ${ renewCycle } mês. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente em ${ formattedDate }. Você não será cobrado se cancelar antes de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Quando o período de avaliação terminar em ${ formattedDate }, ela se tornará uma assinatura paga que é renovada automaticamente mensalmente. Você não será cobrado se cancelar antes de ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_DEDICATED_IPS } servidor dedicado durante o período de avaliação."
@@ -787,6 +787,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Dark": [
+        "Escuro"
+      ],
       "Disable ghost mode": [
         "Desativar modo fantasma"
       ],
@@ -804,6 +807,9 @@
       ],
       "I like this response": [
         "Gostei da resposta"
+      ],
+      "Light": [
+        "Claro"
       ],
       "New chat": [
         "Novo bate-papo"
@@ -950,6 +956,9 @@
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicie uma sessão para acessar sua conta e desbloquear mais recursos. Ainda não tem uma conta? ${ createLink }"
+      ],
+      "Switch between light and dark mode": [
+        "Alternar entre os modos claro e escuro"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1575,6 +1584,9 @@
       ],
       "Secure your spot": [
         "Garanta sua vaga"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Upload files": [
         "Carregar arquivos"
@@ -5840,6 +5852,9 @@
     "Title": {
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
+      ],
+      "Account restricted": [
+        "Conta restrita"
       ],
       "Account temporarily locked": [
         "Conta temporariamente bloqueada"
