@@ -92,19 +92,49 @@ function FreezeSubmenu() {
   const activeColumnName = useUI((ui) => ui.info.activeColumnName)
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.freezeTable} />}>{s('Freeze')}</UI.SubMenuButton>
+      <UI.SubMenuButton
+        leadingIconSlot={<UI.Icon data={Icons.freezeTable} />}
+        disabled={useUI((ui) => ui.info.isReadonly)}
+      >
+        {s('Freeze')}
+      </UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(useUI.$.view.unfreezeRows)}>No rows</UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeRows(1))}>1 row</UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeRows(2))}>2 rows</UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeRows(activeRowIndex))}>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(useUI.$.view.unfreezeRows)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          No rows
+        </UI.MenuItem>
+        <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeRows(1))} disabled={useUI((ui) => ui.info.isReadonly)}>
+          1 row
+        </UI.MenuItem>
+        <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeRows(2))} disabled={useUI((ui) => ui.info.isReadonly)}>
+          2 rows
+        </UI.MenuItem>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(() => freezeRows(activeRowIndex))}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
           {s('Up to')} <b>{rowString(activeRowIndex)}</b>
         </UI.MenuItem>
         <UI.MenuSeparator />
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(useUI.$.view.unfreezeColumns)}>No columns</UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeColumns(1))}>1 column</UI.MenuItem>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(useUI.$.view.unfreezeColumns)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          No columns
+        </UI.MenuItem>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(() => freezeColumns(1))}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          1 column
+        </UI.MenuItem>
         <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeColumns(2))}>2 columns</UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(() => freezeColumns(activeColumnIndex))}>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(() => freezeColumns(activeColumnIndex))}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
           {s('Up to')} <b>{columnString(activeColumnName)}</b>
         </UI.MenuItem>
       </UI.SubMenu>

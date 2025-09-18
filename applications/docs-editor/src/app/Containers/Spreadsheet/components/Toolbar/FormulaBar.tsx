@@ -145,7 +145,11 @@ function RangeSelectorMenuPopover() {
         {namedRanges.map((namedRange) => (
           <NamedRangeItem key={namedRange.namedRangeId} namedRange={namedRange} />
         ))}
-        <UI.MenuItem onClick={defineNamedRange} leadingIconSlot={<UI.Icon legacyName="plus" />}>
+        <UI.MenuItem
+          onClick={defineNamedRange}
+          leadingIconSlot={<UI.Icon legacyName="plus" />}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
           {s('Add new')}
         </UI.MenuItem>
       </UI.MenuGroup>
@@ -239,6 +243,7 @@ function FormulaBarContent() {
           sheetId={useUI((ui) => ui.legacy.activeSheetId)}
           activeCell={useUI((ui) => ui.legacy.activeCell)}
           functionDescriptions={functionDescriptions}
+          disabled={useUI((ui) => ui.info.isReadonly)}
         />
       </div>
     </div>
