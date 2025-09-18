@@ -31,12 +31,23 @@ function SortSubmenu() {
   return (
     <Ariakit.MenuProvider>
       {/* TODO: icon needs to be list-alphabetically-arrow-down but it's not yet in the icon set */}
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="list-arrow-down" />}>{s('Sort sheet')}</UI.SubMenuButton>
+      <UI.SubMenuButton
+        leadingIconSlot={<UI.Icon legacyName="list-arrow-down" />}
+        disabled={useUI((ui) => ui.info.isReadonly)}
+      >
+        {s('Sort sheet')}
+      </UI.SubMenuButton>
       <UI.SubMenu>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(useUI.$.data.sortAscending)}>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(useUI.$.data.sortAscending)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
           {s('Sort sheet by')} <b>{columnString(useUI((ui) => ui.info.activeColumnName))}</b> {s('(A to Z)')}
         </UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(useUI.$.data.sortDescending)}>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(useUI.$.data.sortDescending)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
           {s('Sort sheet by')} <b>{columnString(useUI((ui) => ui.info.activeColumnName))}</b> {s('(Z to A)')}
         </UI.MenuItem>
       </UI.SubMenu>
@@ -52,6 +63,7 @@ function CreateFilter() {
         useUI((ui) => ui.data.hasFilter) ? <UI.Icon legacyName="broom" /> : <UI.Icon legacyName="broom" />
       }
       onClick={useUI.$.withFocusGrid(useUI.$.data.toggleFilter)}
+      disabled={useUI((ui) => ui.info.isReadonly)}
     >
       {useUI((ui) => ui.data.hasFilter) ? s('Remove filter') : s('Create a filter')}
     </UI.MenuItem>
@@ -64,6 +76,7 @@ function ProtectRange() {
       // TODO: need a different icon for "unlock range"
       leadingIconSlot={<UI.Icon legacyName={useUI((ui) => ui.data.isProtectedRange) ? 'lock' : 'lock'} />}
       onClick={useUI.$.withFocusGrid(useUI.$.data.toggleProtectRange)}
+      disabled={useUI((ui) => ui.info.isReadonly)}
     >
       {useUI((ui) => ui.data.isProtectedRange) ? s('Unlock range') : s('Protect range')}
     </UI.MenuItem>
@@ -72,7 +85,11 @@ function ProtectRange() {
 
 function DataValidation() {
   return (
-    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.tableCheck} />} onClick={useUI.$.data.validation.open}>
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon data={Icons.tableCheck} />}
+      onClick={useUI.$.data.validation.open}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Data validation')}
     </UI.MenuItem>
   )

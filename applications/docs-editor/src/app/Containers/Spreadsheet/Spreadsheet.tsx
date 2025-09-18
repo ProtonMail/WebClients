@@ -198,7 +198,7 @@ type UIProps = {
 
 function UI({ hidden, state, isReadonly, isRevisionMode }: UIProps) {
   return (
-    <ProtonSheetsUIStoreProvider state={state}>
+    <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly}>
       {hidden && (
         <div
           className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[#F9FBFC]"
@@ -238,7 +238,7 @@ type LegacyUIProps = {
 
 function LegacyUI({ hidden, state, isReadonly, isRevisionMode, downloadLogs }: LegacyUIProps) {
   return (
-    <ProtonSheetsUIStoreProvider state={state}>
+    <ProtonSheetsUIStoreProvider state={state} isReadonly={isReadonly}>
       {hidden && (
         <div
           className="absolute z-[100] flex h-full w-full flex-col items-center justify-center gap-4 bg-[#F9FBFC]"

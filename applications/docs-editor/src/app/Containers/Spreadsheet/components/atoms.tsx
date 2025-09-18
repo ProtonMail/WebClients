@@ -91,7 +91,7 @@ export const DropdownItem = forwardRef<HTMLDivElement, DropdownItemProps>(functi
 
   if (submenuIndicator) {
     trailingIconSlot = trailingIconSlot ?? (
-      <Icon legacyName={DROPDOWN_ITEM_SUBMENU_INDICATOR_ICON} className="text-[#0C0C14]" />
+      <Icon legacyName={DROPDOWN_ITEM_SUBMENU_INDICATOR_ICON} className="text-current" />
     )
   }
   return (

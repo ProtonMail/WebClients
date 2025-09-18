@@ -40,12 +40,20 @@ export function InsertMenu({ renderMenuButton, ...props }: InsertMenuProps) {
 function CellsSubmenu() {
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.cell} />}>{s('Cells')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.cell} />} disabled={useUI((ui) => ui.info.isReadonly)}>
+        {s('Cells')}
+      </UI.SubMenuButton>
       <UI.SubMenu>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(useUI.$.insert.cellsShiftRight)}>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(useUI.$.insert.cellsShiftRight)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
           {s('Insert cells and shift right')}
         </UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(useUI.$.insert.cellsShiftDown)}>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(useUI.$.insert.cellsShiftDown)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
           {s('Insert cells and shift down')}
         </UI.MenuItem>
       </UI.SubMenu>
@@ -56,10 +64,22 @@ function CellsSubmenu() {
 function RowsSubmenu() {
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.rows} />}>{s('Rows')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.rows} />} disabled={useUI((ui) => ui.info.isReadonly)}>
+        {s('Rows')}
+      </UI.SubMenuButton>
       <UI.SubMenu>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(useUI.$.insert.rowAbove)}>{s('Insert 1 row above')}</UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(useUI.$.insert.rowBelow)}>{s('Insert 1 row below')}</UI.MenuItem>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(useUI.$.insert.rowAbove)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          {s('Insert 1 row above')}
+        </UI.MenuItem>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(useUI.$.insert.rowBelow)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
+          {s('Insert 1 row below')}
+        </UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )
@@ -68,12 +88,20 @@ function RowsSubmenu() {
 function ColumnsSubmenu() {
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.columns} />}>{s('Columns')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.columns} />} disabled={useUI((ui) => ui.info.isReadonly)}>
+        {s('Columns')}
+      </UI.SubMenuButton>
       <UI.SubMenu>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(useUI.$.insert.columnLeft)}>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(useUI.$.insert.columnLeft)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
           {s('Insert 1 column left')}
         </UI.MenuItem>
-        <UI.MenuItem onClick={useUI.$.withFocusGrid(useUI.$.insert.columnRight)}>
+        <UI.MenuItem
+          onClick={useUI.$.withFocusGrid(useUI.$.insert.columnRight)}
+          disabled={useUI((ui) => ui.info.isReadonly)}
+        >
           {s('Insert 1 column right')}
         </UI.MenuItem>
       </UI.SubMenu>
@@ -83,7 +111,11 @@ function ColumnsSubmenu() {
 
 function Sheet() {
   return (
-    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.table} />} onClick={useUI.$.withFocusGrid(useUI.$.insert.sheet)}>
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon data={Icons.table} />}
+      onClick={useUI.$.withFocusGrid(useUI.$.insert.sheet)}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Sheet')}
     </UI.MenuItem>
   )
@@ -91,7 +123,11 @@ function Sheet() {
 
 function Chart() {
   return (
-    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.barChart} />} onClick={useUI.$.insert.chart}>
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon data={Icons.barChart} />}
+      onClick={useUI.$.insert.chart}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Chart')}
     </UI.MenuItem>
   )
@@ -100,7 +136,9 @@ function Chart() {
 function ImageSubmenu() {
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="image" />}>{s('Image')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon legacyName="image" />} disabled={useUI((ui) => ui.info.isReadonly)}>
+        {s('Image')}
+      </UI.SubMenuButton>
       <UI.SubMenu>
         {/* TODO: waiting for design */}
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="clock" />}>Coming soon...</UI.MenuItem>
@@ -112,7 +150,9 @@ function ImageSubmenu() {
 function FunctionSubmenu() {
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.sigma} />}>{s('Function')}</UI.SubMenuButton>
+      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.sigma} />} disabled={useUI((ui) => ui.info.isReadonly)}>
+        {s('Function')}
+      </UI.SubMenuButton>
       <UI.SubMenu>
         {/* TODO: implement */}
         <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="clock" />}>Coming soon...</UI.MenuItem>
@@ -123,7 +163,11 @@ function FunctionSubmenu() {
 
 function Link() {
   return (
-    <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="link" />} onClick={useUI.$.insert.link}>
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon legacyName="link" />}
+      onClick={useUI.$.insert.link}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Link')}
     </UI.MenuItem>
   )
@@ -131,7 +175,11 @@ function Link() {
 
 function Dropdown() {
   return (
-    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.dropdown} />} onClick={useUI.$.insert.dropdown}>
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon data={Icons.dropdown} />}
+      onClick={useUI.$.insert.dropdown}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Dropdown')}
     </UI.MenuItem>
   )
@@ -142,6 +190,7 @@ function Checkbox() {
     <UI.MenuItem
       leadingIconSlot={<UI.Icon legacyName="checkmark-circle" />}
       onClick={useUI.$.withFocusGrid(useUI.$.insert.checkbox)}
+      disabled={useUI((ui) => ui.info.isReadonly)}
     >
       {s('Checkbox')}
     </UI.MenuItem>
@@ -151,7 +200,11 @@ function Checkbox() {
 function Note() {
   return (
     // TODO: icon needs to be note-with-text but we don't have it yet
-    <UI.MenuItem leadingIconSlot={<UI.Icon legacyName="note" />} onClick={useUI.$.insert.note}>
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon legacyName="note" />}
+      onClick={useUI.$.insert.note}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
       {s('Note')}
     </UI.MenuItem>
   )

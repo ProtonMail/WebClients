@@ -36,7 +36,7 @@ function Undo() {
     <UI.MenuItem
       leadingIconSlot={<UI.Icon legacyName="arrow-up-and-left" />}
       onClick={useUI.$.withFocusGrid(useUI.$.history.undo)}
-      disabled={useUI((ui) => ui.history.undoDisabled)}
+      disabled={useUI((ui) => ui.history.undoDisabled || ui.info.isReadonly)}
     >
       {s('Undo')}
     </UI.MenuItem>
@@ -48,7 +48,7 @@ function Redo() {
     <UI.MenuItem
       leadingIconSlot={<UI.Icon legacyName="arrow-up-and-left" className="scale-x-[-1]" />}
       onClick={useUI.$.withFocusGrid(useUI.$.history.redo)}
-      disabled={useUI((ui) => ui.history.redoDisabled)}
+      disabled={useUI((ui) => ui.history.redoDisabled || ui.info.isReadonly)}
     >
       {s('Redo')}
     </UI.MenuItem>
@@ -57,7 +57,11 @@ function Redo() {
 
 function Cut() {
   // TODO: need RnC to provide useCopyPasteCut
-  return <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.scissors} />}>{s('Cut')} (unimplemented)</UI.MenuItem>
+  return (
+    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.scissors} />} disabled={useUI((ui) => ui.info.isReadonly)}>
+      {s('Cut')} (unimplemented)
+    </UI.MenuItem>
+  )
 }
 
 function Copy() {
@@ -68,7 +72,12 @@ function Copy() {
 function Paste() {
   // TODO: need RnC to provide useCopyPasteCut
   return (
-    <UI.MenuItem leadingIconSlot={<UI.Icon data={Icons.notepadChecklist} />}>{s('Paste')} (unimplemented)</UI.MenuItem>
+    <UI.MenuItem
+      leadingIconSlot={<UI.Icon data={Icons.notepadChecklist} />}
+      disabled={useUI((ui) => ui.info.isReadonly)}
+    >
+      {s('Paste')} (unimplemented)
+    </UI.MenuItem>
   )
 }
 
@@ -76,15 +85,22 @@ function PasteSpecialSubmenu() {
   // TODO: need RnC to provide useCopyPasteCut
   return (
     <Ariakit.MenuProvider>
-      <UI.SubMenuButton leadingIconSlot={<UI.Icon data={Icons.notepadChecklist} />}>
+      <UI.SubMenuButton
+        leadingIconSlot={<UI.Icon data={Icons.notepadChecklist} />}
+        disabled={useUI((ui) => ui.info.isReadonly)}
+      >
         {s('Paste special')}
       </UI.SubMenuButton>
       <UI.SubMenu unmountOnHide>
         {/* TODO: platform-aware shortcut hints */}
-        <UI.MenuItem hintSlot="⌘+Shift+V">{s('Values only')} (unimplemented)</UI.MenuItem>
-        <UI.MenuItem hintSlot="⌘+Option+V">{s('Formatting only')} (unimplemented)</UI.MenuItem>
+        <UI.MenuItem hintSlot="⌘+Shift+V" disabled={useUI((ui) => ui.info.isReadonly)}>
+          {s('Values only')} (unimplemented)
+        </UI.MenuItem>
+        <UI.MenuItem hintSlot="⌘+Option+V" disabled={useUI((ui) => ui.info.isReadonly)}>
+          {s('Formatting only')} (unimplemented)
+        </UI.MenuItem>
         <UI.MenuSeparator />
-        <UI.MenuItem>{s('Transposed')} (unimplemented)</UI.MenuItem>
+        <UI.MenuItem disabled={useUI((ui) => ui.info.isReadonly)}>{s('Transposed')} (unimplemented)</UI.MenuItem>
       </UI.SubMenu>
     </Ariakit.MenuProvider>
   )

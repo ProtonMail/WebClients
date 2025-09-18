@@ -24,6 +24,7 @@ export const FontSizeControls = forwardRef<HTMLDivElement, FontSizeControlsProps
           variant="icon-small"
           legacyIconName="minus"
           onClick={$.withFocusGrid(() => $.format.text.fontSize.set(realValue - 1))}
+          disabled={useUI((ui) => ui.info.isReadonly)}
           shortcut={
             <Atoms.KbdShortcut>
               <Atoms.Kbd>⌘</Atoms.Kbd>
@@ -39,6 +40,7 @@ export const FontSizeControls = forwardRef<HTMLDivElement, FontSizeControlsProps
           variant="icon-small"
           legacyIconName="plus"
           onClick={$.withFocusGrid(() => $.format.text.fontSize.set(realValue + 1))}
+          disabled={useUI((ui) => ui.info.isReadonly)}
           shortcut={
             <Atoms.KbdShortcut>
               <Atoms.Kbd>⌘</Atoms.Kbd>
@@ -134,6 +136,7 @@ function FontSizeCombobox({ realValue }: FontSizeComboboxProps) {
           render={
             <Ariakit.ToolbarItem
               aria-label={s('Font size')}
+              disabled={useUI((ui) => ui.info.isReadonly)}
               render={
                 <Ariakit.Combobox
                   ref={comboboxRef}
@@ -192,10 +195,11 @@ function FontSizeCombobox({ realValue }: FontSizeComboboxProps) {
 }
 
 function FontSizeComboboxPopover() {
+  const disabled = useUI((ui) => ui.info.isReadonly)
   return (
     <UI.ComboboxPopover sameWidth className="w-[--popover-anchor-width]">
       {FONT_SIZE_SUGGESTIONS.map((size) => (
-        <UI.ComboboxItem padding={false} className="text-center" key={size} value={String(size)}>
+        <UI.ComboboxItem padding={false} className="text-center" key={size} value={String(size)} disabled={disabled}>
           {size}
         </UI.ComboboxItem>
       ))}
