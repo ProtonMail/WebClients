@@ -1413,11 +1413,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Dopo la prova termina il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnoverà automaticamente ogni ${ renewCycle } mesi il ${ formattedDate }. Non ti verrà addebitato nulla se annulli prima del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese il ${ formattedDate }. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puoi avere fino a ${ TRIAL_MAX_DEDICATED_IPS } server dedicati durante il periodo di prova."
@@ -11603,6 +11603,9 @@
       ],
       "Account recovery": [
         "Recupero dell'account"
+      ],
+      "Account restricted": [
+        "Account limitato"
       ],
       "Account security": [
         "Sicurezza dell'account"

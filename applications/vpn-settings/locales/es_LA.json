@@ -1361,12 +1361,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Después de que la prueba finalice el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada ${ renewCycle } meses el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Una vez que finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renovará automáticamente cada mes el ${ formattedDate }. No se le cobrará si cancela antes del ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Al hacer clic en \"Probar\", acepta nuestros ${ termsAndConditions }."
       ],
@@ -4062,11 +4056,6 @@
         "Se requiere el código postal."
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Seleccione usuarios para ver sus actividades."
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Ocurrió un error al leer el archivo ${ formattedFilename }. Formato de archivo incorrecto."
@@ -5606,9 +5595,6 @@
       ],
       "active": [
         "activa"
-      ],
-      "Activity Monitor": [
-        "Monitor de actividades"
       ],
       "add a recovery method": [
         "agregar un método de recuperación"
@@ -13628,6 +13614,9 @@
       ],
       "Account": [
         "Cuenta"
+      ],
+      "Account restricted": [
+        "Cuenta restringida"
       ],
       "Account suspended": [
         "Cuenta suspendida"

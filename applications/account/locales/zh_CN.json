@@ -1994,6 +1994,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } 试用期结束后，您的订阅将自动改成每 ${ renewCycle } 个月自动续订的付费订阅。 若在 ${ formattedDate } 之前取消，您将不用付费。"
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } 试用期结束后，您的订阅将自动改成按月自动续订的付费订阅。若在${ formattedDate }之前取消，您将不用付费。"
+      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
       ],
@@ -5761,9 +5767,6 @@
       "You must set a name": [
         "请输入名称（必填）"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "您需要设置自有域名地址才能生成 SMTP 投递专用密码。"
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "字数超过限制，请缩短信息内容。"
       ],
@@ -5781,11 +5784,6 @@
       ],
       "ZIP code is required": [
         "必须填写邮政编码"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "选择用户以查看其活动"
       ]
     },
     "Error importing calendar": {
@@ -7814,6 +7812,9 @@
       "Account successfully updated": [
         "账户已成功更新"
       ],
+      "Accounts": [
+        "账户"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
@@ -7822,9 +7823,6 @@
       ],
       "active": [
         "启用"
-      ],
-      "Activity Monitor": [
-        "活动监视器"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -9209,6 +9207,9 @@
       "Organization members will need to unlock ${ PASS_APP_NAME } with their password or PIN etc.": [
         "组织成员需要用密码或 PIN 码等解锁 ${ PASS_APP_NAME }。"
       ],
+      "Organization Monitor": [
+        "组织监控"
+      ],
       "Organization size": [
         "组织的规模"
       ],
@@ -9595,6 +9596,9 @@
       ],
       "Show original message": [
         "显示原始邮件"
+      ],
+      "Sign in only": [
+        "仅登入"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登录 ${ MAIL_APP_NAME } 以激活您的地址"
@@ -11644,6 +11648,9 @@
       "Emails (last month)": [
         "邮件（上个月）"
       ],
+      "Emails categories": [
+        "邮件分类"
+      ],
       "Enabled": [
         "已启用"
       ],
@@ -11943,6 +11950,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "Notification email address": [
+        "通知电子邮箱地址"
       ],
       "Notifications": [
         "通知"
@@ -12362,6 +12372,9 @@
     "label": {
       "Device-based recovery": [
         "通过设备恢复"
+      ],
+      "Notification phone number": [
+        "通知手机号码"
       ],
       "Recovery phone number": [
         "密保手机"
@@ -15199,6 +15212,11 @@
         "升级账户"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "前往 ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "端到端加密"
@@ -15678,6 +15696,9 @@
       "More plans are available in other currencies": [
         "更多计划以及其他货币提供"
       ],
+      "Offer unavailable": [
+        "优惠不可用"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "请先重新激活您的订阅以减少附加功能。"
       ],
@@ -15689,6 +15710,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
       ],
       "terms & conditions": [
         "服务条款"
@@ -16389,8 +16413,14 @@
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **禁用电话恢复**，以确保您的账户拥有最高的安全。"
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " 如果忘记密码，可通过**密保手机**恢复密码，并重新访问您的账户。"
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "关于账户安全的问题，${ BRAND_NAME } 将使用此邮箱地址与您保持联络。"
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "重置密码时，${ BRAND_NAME } 将使用此地址通过电子邮件发送重置密码。"
@@ -16401,11 +16431,23 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } 以确保您的数据可以恢复。"
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**禁用通过电子邮件重置账户**，以确保您的帐户拥有最高的安全。"
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "如果忘记密码，可通过**密保邮箱**恢复密码，并重新访问您的账户。"
       ],
+      "Account reset by email has been disabled": [
+        "通过电子邮件重置帐户已禁用"
+      ],
+      "Account reset by phone has been disabled": [
+        "通过手机重置帐户已禁用"
+      ],
       "Account safety review": [
         "账户安全审查"
+      ],
+      "Add a phone number": [
+        "添加电话号码"
       ],
       "Add a recovery email": [
         "添加密保邮箱"
@@ -16415,6 +16457,9 @@
       ],
       "Add a recovery phone number": [
         "添加密保手机"
+      ],
+      "Add an email": [
+        "添加电子邮箱"
       ],
       "Back to Safety Review": [
         "返回安全审查"
@@ -16437,11 +16482,29 @@
       "Device-based recovery enabled": [
         "已启用基于设备的恢复功能"
       ],
+      "Disable account reset by email": [
+        "禁用通过电子邮件重置账户"
+      ],
+      "Disable recovery by email": [
+        "禁用密保邮箱恢复"
+      ],
+      "Disable recovery by email ": [
+        "禁用密保邮箱恢复 "
+      ],
+      "Disable recovery by phone": [
+        "禁用密保手机恢复"
+      ],
+      "Disable recovery by phone ": [
+        "禁用密保手机恢复 "
+      ],
       "Download ${ size }": [
         "下载 ${ size }"
       ],
       "Download your Recovery Kit": [
         "下载您的恢复密钥"
+      ],
+      "Email address": [
+        "邮箱地址"
       ],
       "Enable device-based recovery": [
         "启用基于设备的恢复"
@@ -16466,6 +16529,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "如果您丢失了登录信息并需要重置账户，**重要的是**您必须同时使用**账户恢复和数据恢复方法**，否则您可能无法访问任何电子邮件、联系人、文件或密码。"
+      ],
+      "in case we need to contact you": [
+        "以使我们能够联系到你"
       ],
       "Invalid code": [
         "无效的验证码"
@@ -16506,6 +16572,9 @@
       "There was an error generating your Recovery Kit": [
         "生成恢复套件时出错"
       ],
+      "There was an error verifying your email": [
+        "验证邮箱出错"
+      ],
       "There was an error verifying your recovery email": [
         "验证您的密保邮箱时出错"
       ],
@@ -16520,6 +16589,9 @@
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "为确保电话号码是您的，请输入发送至 ${ boldPhoneNumber } 的验证码。"
+      ],
+      "to prevent attackers from taking over your account": [
+        "以防止攻击者接管您的账户"
       ],
       "to recover your account and data if you're ever locked out": [
         "如果您被锁定，可以恢复您的账户和数据"
@@ -16536,6 +16608,12 @@
       "Verify": [
         "验证"
       ],
+      "Verify your email address": [
+        "验证邮箱地址"
+      ],
+      "Verify your phone number": [
+        "验证您的电话号码"
+      ],
       "Verify your recovery email address": [
         "验证您的密保邮箱地址"
       ],
@@ -16544,6 +16622,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "我们在生成您的恢复套件时遇到了错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "验证邮箱出现错误，请稍后重试。若无效，请联系技术支援。"
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "我们在验证您的密保邮箱时遇到错误。请稍后再试，如果问题仍然存在，请联系技术支持。"
@@ -16566,6 +16647,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "重置密码时，您可以使用本恢复套件中的恢复短语来完全恢复您的账户，因此请确保将其妥善保存。"
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "若忘记密码，您将可以通过密保邮箱重新访问您的账户。"
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "如果忘记密码，您可以使用密保邮箱重新访问您的账户。"
       ],
@@ -16575,11 +16659,32 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "您以前下载过恢复套件，下载新的恢复套件将**停用旧的恢复套件**。"
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "建议您采取进一步保护账户的措施。"
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "您有保护账户安全的建议。"
+      ],
       "You have recommended actions.": [
         "建议您采取的行动。"
       ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "您的密保邮箱有可能被攻击者滥用。${ disableEmail } 以提高您的账户安全。"
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "您的密保手机有可能被攻击者滥用。${ disablePhone } 以提高您的账户安全。"
+      ],
+      "You will no longer be able to use this address to reset your account.": [
+        "您将无法继续使用此邮箱地址重置您的账户。"
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "您将无法继续使用此电话号码重置您的账户。"
+      ],
       "Your account and data can be recovered": [
         "您的账户和数据可以恢复"
+      ],
+      "Your account and data can be recovered.": [
+        "您的账户和数据可以恢复。"
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "您的账户和数据可以恢复。检查是否仍可访问恢复方法。"
@@ -16595,6 +16700,12 @@
       ],
       "Your account is secure.": [
         "您的账户很安全。"
+      ],
+      "Your email address is:": [
+        "您的邮箱地址是:"
+      ],
+      "Your email is set": [
+        "您的密保邮箱已设定"
       ],
       "Your recovery email": [
         "您的密保邮箱"
@@ -19389,6 +19500,9 @@
       "Account recovery": [
         "账户恢复"
       ],
+      "Account restricted": [
+        "账户受限"
+      ],
       "Account suspended": [
         "账号已被停用"
       ],
@@ -20967,6 +21081,9 @@
       "Edit label names": [
         "编辑标签名称"
       ],
+      "Emails in your inbox are shown organized into categories": [
+        "收件箱里的邮件将会按类别整理"
+      ],
       "Enable/disable desktop and mobile notifications": [
         "开启或关闭推送通知"
       ],
@@ -21080,6 +21197,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "这可能时密码重置或用户尚未登录造成的。"
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "此电子邮件地址只能用来登入您的 ${ BRAND_NAME } 账户。"
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "执行账户管理操作时，该电子邮件地址将显示给所有组织成员。"

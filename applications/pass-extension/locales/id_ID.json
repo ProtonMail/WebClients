@@ -110,6 +110,9 @@
       "Clear search": [
         "Hapus pencarian"
       ],
+      "Clone item": [
+        "Gandakan item"
+      ],
       "Close": [
         "Tutup"
       ],
@@ -424,6 +427,9 @@
       ],
       "Open web app": [
         "Buka aplikasi web"
+      ],
+      "Organize vaults": [
+        "Organisir brankas"
       ],
       "Pass for Android": [
         "Pass untuk Android"
@@ -1630,6 +1636,9 @@
       "Extra password successfully removed": [
         "Kata sandi tambahan berhasil dihapus"
       ],
+      "Failed updating your vault organization": [
+        "Brankas organisasi Anda gagal diperbarui"
+      ],
       "Fill in the CSV with your data": [
         "Isi CSV dengan data Anda"
       ],
@@ -2230,6 +2239,9 @@
       "Update login": [
         "Perbarui entri masuk"
       ],
+      "Updating vault organization...": [
+        "Memperbarui organisasi brankas..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Tingkatkan ke ${ PASS_APP_NAME }"
       ],
@@ -2256,6 +2268,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Brankas \"${ share.content.name }\" telah dihapus"
+      ],
+      "Vault organization successfully updated": [
+        "Organisasi brankas berhasil diperbarui"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Pembagian brankas: ${ vaultMembersCount } anggota"
@@ -2981,9 +2996,6 @@
       ],
       "Network": [
         "Jaringan"
-      ],
-      "New": [
-        "Baru"
       ],
       "New email": [
         "Email baru"
@@ -4015,6 +4027,9 @@
       "Grant permissions": [
         "Berikan izin"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Brankas tersembunyi tidak akan terlihat dalam pencarian dan pengisian otomatis."
+      ],
       "Hide my email": [
         "Sembunyikan email saya"
       ],
@@ -4092,6 +4107,9 @@
       ],
       "No shared secure links": [
         "Tidak ada tautan aman terbagi"
+      ],
+      "Organize vaults": [
+        "Organisir brankas"
       ],
       "Our welcome gift to you": [
         "Hadiah selamat datang kami kepada Anda"
@@ -4242,6 +4260,11 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Anda akan menghapus ${ aliasCount } alias secara permanen."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "salin"
       ]
     },
     "Today icon tooltip in mini calendar": {

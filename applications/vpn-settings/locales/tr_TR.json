@@ -1361,11 +1361,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ${ formattedDate } tarihinde başlayarak her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir aboneliğe dönüşecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinden başlayarak otomatik olarak her ay yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"Dene\" seçeneğine tıklayarak ${ termsAndConditions } kapsamını kabul etmiş olursunuz."
@@ -4062,11 +4062,6 @@
         "Posta kodunun yazılması zorunludur"
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Etkinliklerini görüntülemek istediğiniz kullanıcıları seçin"
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
@@ -5604,11 +5599,11 @@
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
+      "Accounts": [
+        "Hesaplar"
+      ],
       "active": [
         "etkin"
-      ],
-      "Activity Monitor": [
-        "Etkinlik izleyici"
       ],
       "add a recovery method": [
         "bir kurtarma yöntemi ekleyin"
@@ -6573,6 +6568,9 @@
       "Organization monitor": [
         "Kuruluş izleyici"
       ],
+      "Organization Monitor": [
+        "Kuruluş izleyici"
+      ],
       "Organization size": [
         "Kuruluş boyutu"
       ],
@@ -6779,6 +6777,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "${ BRAND_NAME } kuruluşunuza izin vermek istediğiniz kullanıcı ilişkilerini ${ getFormattedOrganization } üzerinden seçin:"
       ],
+      "Select users to view their activity": [
+        "Etkinliklerini görüntülemek istediğiniz kullanıcıları seçin"
+      ],
       "Select what you want to import.": [
         "İçe aktarmak istediklerinizi seçin."
       ],
@@ -6833,6 +6834,9 @@
       ],
       "Shared vault updated": [
         "Paylaşılmış kasa güncellendi"
+      ],
+      "Sign in only": [
+        "Yalnızca oturum açma"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Adresinizi kullanıma almak için ${ MAIL_APP_NAME } adresinde oturum açın"
@@ -13591,6 +13595,9 @@
       "Account": [
         "Hesap"
       ],
+      "Account restricted": [
+        "Hesap kısıtlandı"
+      ],
       "Account suspended": [
         "Hesap askıya alınmış"
       ],
@@ -14645,6 +14652,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Bu durum, şifrenin sıfırlanmış veya kullanıcının henüz oturum açmamış olmasından kaynaklanabilir."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Bu e-posta adresi, yalnızca ${ BRAND_NAME } hesabınızda oturum açmak için kullanılabilir."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Hesap yönetimi işlemleri yapılırken tüm kuruluş üyelerine bu e-posta adresi görüntülenir."

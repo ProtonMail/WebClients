@@ -1367,11 +1367,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Făcând clic pe «Încercare», sunteți de acord cu ${ termsAndConditions }."
@@ -4082,11 +4082,6 @@
         "Codul poștal este obligatoriu."
       ]
     },
-    "error": {
-      "Select users to view their activity": [
-        "Selectare utilizatori pentru a le vedea activitatea."
-      ]
-    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
@@ -5675,9 +5670,6 @@
       ],
       "active": [
         "activă"
-      ],
-      "Activity Monitor": [
-        "Monitorizare activitate"
       ],
       "add a recovery method": [
         "adăugat o metodă de recuperare"
@@ -13732,6 +13724,9 @@
       ],
       "Account": [
         "Cont"
+      ],
+      "Account restricted": [
+        "Cont restricționat"
       ],
       "Account suspended": [
         "Cont suspendat"

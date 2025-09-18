@@ -130,6 +130,9 @@
       "Clear search": [
         "Limpiar búsqueda"
       ],
+      "Clone item": [
+        "Clonar elemento"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -432,6 +435,9 @@
       ],
       "Open navigation": [
         "Abrir navegación"
+      ],
+      "Organize vaults": [
+        "Organizar bóvedas"
       ],
       "Pass for Android": [
         "Pass para Android"
@@ -1338,6 +1344,17 @@
         "Muy pequeña"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Dominio"
+      ],
+      "Password ends with": [
+        "La contraseña termina con"
+      ],
+      "Username": [
+        "Nombre de usuario"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "El elemento \"${ payload.itemName }\" fue descartado"
@@ -1703,6 +1720,9 @@
       "Extra password successfully removed": [
         "Se eliminó la contraseña adicional."
       ],
+      "Failed updating your vault organization": [
+        "Error al actualizar la bóveda de su organización"
+      ],
       "Fill in the CSV with your data": [
         "Complete el CSV con los datos"
       ],
@@ -1880,6 +1900,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2339,6 +2363,9 @@
       "Unverified": [
         "No verificado"
       ],
+      "Updating vault organization...": [
+        "Actualizando la bóveda de la organización"
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Mejore el plan ahora para desbloquear funciones premium"
       ],
@@ -2365,6 +2392,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Se eliminó la bóveda «${ share.content.name }»."
+      ],
+      "Vault organization successfully updated": [
+        "Bóveda de la organización actualizada con éxito"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Bóveda compartida: ${ vaultMembersCount } miembro",
@@ -4334,6 +4364,9 @@
       "Grant permissions": [
         "Conceder permisos"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Las bóvedas ocultas no serán visibles durante la búsqueda y el completado automático."
+      ],
       "Hide-my-email aliases": [
         "Alias de hide-my-email"
       ],
@@ -4417,6 +4450,9 @@
       "MX record": [
         "Registro MX"
       ],
+      "Next": [
+        "Siguiente"
+      ],
       "No excluded items": [
         "No hay elementos excluidos"
       ],
@@ -4437,6 +4473,12 @@
       ],
       "No shared secure links": [
         "No hay enlaces seguros compartidos"
+      ],
+      "Open pagination": [
+        "Abrir paginación"
+      ],
+      "Organize vaults": [
+        "Organizar bóvedas"
       ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para usted"
@@ -4468,6 +4510,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Una vez eliminado, el alias no se puede recuperar.",
         "Una vez eliminados, los alias no se pueden recuperar."
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Random Prefix Generation": [
         "Generación aleatoria de prefijos"
@@ -4623,6 +4668,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copiar"
       ]
     },
     "Today icon tooltip in mini calendar": {

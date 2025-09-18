@@ -253,6 +253,12 @@
       "Dismiss": [
         "Avfärda"
       ],
+      "Do not show again": [
+        "Visa inte igen"
+      ],
+      "Do not show again when I press": [
+        "Visa inte igen när jag trycker"
+      ],
       "Download this CSV template": [
         "Ladda ner denna CSV-mall"
       ],
@@ -2436,6 +2442,14 @@
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
       ]
     },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
       "${ aliasCount } alias": [
         "${ aliasCount } alias",
@@ -3110,9 +3124,6 @@
       ],
       "Network": [
         "Nätverk"
-      ],
-      "New": [
-        "Nytt"
       ],
       "New email": [
         "Ny e-post"
@@ -4359,6 +4370,9 @@
       ],
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
+      ],
+      "Perform autotype?": [
+        "Utför automatisk ifyllning?"
       ],
       "Permanently remove all items?": [
         "Ta bort alla objekt permanent?"
