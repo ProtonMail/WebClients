@@ -429,6 +429,7 @@ export {
     isSubcriptionCheckForbidden,
     isTaxInclusive,
     isTrial,
+    isAutoRenewTrial,
     isTrialExpired,
     PASS_LAUNCH_OFFER,
     PLANS_WITH_AI_INCLUDED,

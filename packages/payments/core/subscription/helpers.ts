@@ -415,6 +415,16 @@ export const isTrial = (subscription: Subscription | FreeSubscription | undefine
     return trial && getPlanName(subscription) === plan;
 };
 
+const autoRenewTrialPlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.VPN2024, PLANS.BUNDLE]);
+
+// Remove the plan check once subscription.Renew is correctly set
+export const isAutoRenewTrial = (subscription: Subscription | undefined) => {
+    return (
+        // (isTrial(subscription) && subscription?.Renew) ||
+        isTrial(subscription) && subscription?.Plans?.some((plan) => autoRenewTrialPlans.has(plan.Name))
+    );
+};
+
 export const isTrialExpired = (subscription: Subscription | undefined) => {
     const now = new Date();
     return now > fromUnixTime(subscription?.PeriodEnd || 0);
