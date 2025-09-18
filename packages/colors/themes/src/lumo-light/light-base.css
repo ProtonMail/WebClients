@@ -45,6 +45,9 @@
     --background-upsell-toggle: #e5e1f5;
      /* lumo plus toggle button background */
     --background-upsell-toggle-button: white;    
+    /* lumo plus toggle container ghost mode */
+     --background-upsell-toggle-ghost-mode: rgba(91, 87, 107, 0.6);
+     --background-upsell-toggle-ghost-mode-button: #292733;
 
 
     --interaction-default: transparent;
@@ -86,6 +89,10 @@
 
     /* lumo settings modal */
     --settings-modal-upsell-background: #f9fafb;
+    --settings-modal-upsell-text: var(--text-weak);
+
+    /* lumo logo */
+    --lumo-plus-logo-plus-sign-text:#5325A2;
 
 
 }
