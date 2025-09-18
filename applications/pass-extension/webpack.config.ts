@@ -229,14 +229,6 @@ const config: Configuration = {
                 : {}),
         },
     },
-    cache: {
-        type: 'filesystem',
-        cacheDirectory: path.resolve('./node_modules/.cache/webpack'),
-        buildDependencies: {
-            defaultWebpack: ['webpack/lib/'],
-            config: [__filename],
-        },
-    },
     output: {
         filename: '[name].js',
         webassemblyModuleFilename: 'assets/wasm/[hash].wasm',

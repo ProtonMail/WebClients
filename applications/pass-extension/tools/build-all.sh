@@ -14,6 +14,7 @@ export NODE_NO_WARNINGS=1
 function on_enter {
     echo -e "\nBuilding $1..."
     cd "$PASSDIR" && rm -rf dist
+    rm -rf node_modules/.cache || true
 }
 
 function on_leave {
@@ -60,11 +61,8 @@ function bundle_extension {
 
     on_enter "$display"
 
-    for var in "${env_vars[@]}"; do
-        printf "\t%s\n" "$var"
-    done
 
-    eval "${env_vars[*]} yarn run $cmd >/dev/null"
+    eval "${env_vars[*]} yarn run $cmd"
     cd dist
 
     local suffix=""
