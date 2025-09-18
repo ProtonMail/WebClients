@@ -54,6 +54,9 @@ export const processElementEvents = ({
             handleCreate(Conversation as Element);
         } else if (Action === EVENT_ACTIONS.UPDATE) {
             handleUpdateMetadata(Conversation as Element);
+        } else if (Action === EVENT_ACTIONS.UPDATE_FLAGS) {
+            // This can happen when a conversation is moved to trash or marked as read/unread
+            handleUpdateMetadata(Conversation as Element);
         } else if (Action === EVENT_ACTIONS.DELETE) {
             toDelete.push(ID);
         }
