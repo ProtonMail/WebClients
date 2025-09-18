@@ -4,12 +4,6 @@
     "language": "nl_NL"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } is aan het typen...",
-        "${ usersTranslation } zijn aan het typen..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -495,6 +489,10 @@
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } en ${ lastTyper }"
       ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } is aan het typen...",
+        "${ usersTranslation } zijn aan het typen..."
+      ],
       "Alpha only experimental feature": [
         "Experimentele functie alleen voor Alpha"
       ],
@@ -787,6 +785,71 @@
         "Invoegen"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ Amerikaanse dollar"
+      ],
+      "Accounting": [
+        "Boekhouding"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Chinese Yuan"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Currency rounded": [
+        "Afgeronde valuta"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date time": [
+        "Datum en tijd"
+      ],
+      "Duration": [
+        "Duur"
+      ],
+      "Financial": [
+        "Financieel"
+      ],
+      "General": [
+        "Algemeen"
+      ],
+      "Long date": [
+        "Lange datum"
+      ],
+      "More currency": [
+        "Meer valuta"
+      ],
+      "Number": [
+        "Getal"
+      ],
+      "Percent": [
+        "Procent"
+      ],
+      "Plain text": [
+        "Platte tekst"
+      ],
+      "Scientific": [
+        "Wetenschappelijk"
+      ],
+      "Time": [
+        "Tijd"
+      ],
+      "£ Pound": [
+        "£ Pond"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Roepie"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Vet"
@@ -823,6 +886,9 @@
       ],
       "Redo": [
         "Opnieuw uitvoeren"
+      ],
+      "Search": [
+        "Zoeken"
       ],
       "Strikethrough": [
         "Doorstrepen"

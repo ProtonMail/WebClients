@@ -4,236 +4,6 @@
     "language": "fi_FI"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } alias",
-        "${ aliasCount } aliasta"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } esto",
-        "${ blockedCount } estoa"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } estetty",
-        "${ blockedEmailsCount } estetty"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } merkki",
-        "${ config.options.length } merkkiä"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } sana",
-        "${ config.options.wordCount } sanaa"
-      ],
-      "${ count } item": [
-        "${ count } kohde",
-        "${ count } kohdetta"
-      ],
-      "${ count } time": [
-        "${ count } kerran",
-        "${ count } kertaa"
-      ],
-      "${ count } view": [
-        "${ count } avaus",
-        "${ count } avausta"
-      ],
-      "${ days } day": [
-        "${ days } vuorokausi",
-        "${ days } päivää"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } tiedosto",
-        "${ filesCount } tiedostoa"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } välitys",
-        "${ forwardCount } välitystä"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } välitetty",
-        "${ forwardedEmailsCount } välitetty"
-      ],
-      "${ hours } hour": [
-        "${ hours } tunti",
-        "${ hours } tuntia"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } jäsen",
-        "${ memberCount } jäsentä"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuutti",
-        "${ minutes } minuuttia"
-      ],
-      "${ months } month": [
-        "${ months } kuukausi",
-        "${ months } kuukautta"
-      ],
-      "${ n } item": [
-        "${ n } kohde",
-        "${ n } kohdetta"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } kutsu lähetettiin",
-        "${ payload.count } kutsua lähetettiin"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } vastaus",
-        "${ repliedCount } vastausta"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } lähetetty",
-        "${ repliedEmailsCount } lähetetty"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } suojattu linkki",
-        "${ secureLinksCount } suojattua linkkiä"
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } muu kirjautumistieto käyttää samaa salasanaa",
-        "${ total } muuta kirjautumistietoa käyttää samaa salasanaa"
-      ],
-      "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } päivä jäljellä",
-        "${ trialDaysLeft } päivää jäljellä"
-      ],
-      "${ years } year": [
-        "${ years } vuosi",
-        "${ years } vuotta"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Haluatko varmasti siirtää ${ trashedItemsCount } kohteen roskakoriin?",
-        "Haluatko varmasti siirtää ${ trashedItemsCount } kohdetta roskakoriin?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Haluatko varmasti poistaa ${ deletedItemsCount } kohteen pysyvästi?",
-        "Haluatko varmasti poistaa ${ deletedItemsCount } kohdetta pysyvästi?"
-      ],
-      "byte": [
-        "tavu",
-        "tavua"
-      ],
-      "Byte": [
-        "Tavu",
-        "Tavua"
-      ],
-      "Cannot send invitation at the moment": [
-        "Kutsua ei voida lähettää juuri nyt",
-        "Kutsuja ei voida lähettää juuri nyt"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Poistetaanko ${ deletedItemsCount } kohde?",
-        "Poistetaanko ${ deletedItemsCount } kohdetta?"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Havaittiin ${ errors.length } virheellinen CSV-rivi",
-        "Havaittiin ${ errors.length } virheellinen CSV-rivi"
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Turvallisuussyistä sinun on vahvistettava pääsy tähän jaettuun holviin",
-        "Turvallisuussyistä sinun on vahvistettava pääsy näihin jaettuihin holveihin"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan.",
-        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa."
-      ],
-      "Gigabyte": [
-        "Gigatavu",
-        "Gigatavua"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Kohteen jakaminen: ${ itemAccessCount } käyttäjä",
-        "Kohteen jakaminen: ${ itemAccessCount } käyttäjää"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Kohteet voivat sisältää enintään ${ share.targetMaxMembers } jäsenen.",
-        "Kohteet voivat sisältää enintään ${ share.targetMaxMembers } jäsentä."
-      ],
-      "Kilobyte": [
-        "Kilotavu",
-        "Kilotavua"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Enimmäispituus on ${ maxLength } merkki",
-        "Enimmäispituus on ${ maxLength } merkkiä"
-      ],
-      "Megabyte": [
-        "Megatavu",
-        "Megatavua"
-      ],
-      "Move ${ count } item": [
-        "Siirrä ${ count } kohde",
-        "Siirrä ${ count } kohdetta"
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Siirrä ${ count } kohde holviin ${ vaultName }",
-        "Siirrä ${ count } kohdetta holviin ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Siirretäänkö ${ trashedItemsCount } kohde roskakoriin?",
-        "Siirretäänkö ${ trashedItemsCount } kohdetta roskakoriin?"
-      ],
-      "Move item to": [
-        "Siirrä kohde holviin",
-        "Siirrä kohteet holviin"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa vanhemmat salasanat poistetaan historiasta automaattisesti.",
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa vanhemmat salasanat poistetaan historiasta automaattisesti."
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Huomioi, että et voi palauttaa poistettua aliasta.",
-        "Huomioi, että et voi palauttaa poistettuja aliaksia."
-      ],
-      "Sync alias": [
-        "Synkronoi alias",
-        "Synkronoi aliakset"
-      ],
-      "Terabyte": [
-        "Teratavu",
-        "Teratavua"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Seuraavaa ${ totalIgnored } kohdetta ei voitu tuoda:",
-        "Seuraavia ${ totalIgnored } kohdetta ei voitu tuoda:"
-      ],
-      "Understood, I will never need it": [
-        "Ymmärrän, en koskaan tarvitse sitä",
-        "Ymmärrän, en koskaan tarvitse niitä"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Holvin jakaminen: ${ vaultMembersCount } jäsen",
-        "Holvin jakaminen: ${ vaultMembersCount } jäsentä"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Holvit voivat sisältää enintään ${ targetMaxMembers } jäsenen.",
-        "Holvit voivat sisältää enintään ${ targetMaxMembers } jäsentä."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } alias, joka puuttuu ${ PASS_APP_NAME }ista. Haluaisitko tuoda sen?",
-        "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } aliasta, jotka puuttuvat ${ PASS_APP_NAME }ista. Haluaisitko tuoda ne?"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Voit vetää ja pudottaa valitun kohteen toiseen holviin",
-        "Voit vetää ja pudottaa valitut kohteet toiseen holviin"
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuva alias. Haluatko tuoda sen?",
-        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuvaa aliasta. Haluatko tuoda ne?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Sinulla on ${ daysRemaining } päivä jäljellä kokeilla näitä ja muita premium-ominaisuuksia.",
-        "Sinulla on ${ daysRemaining } päivää jäljellä kokeilla näitä ja muita premium-ominaisuuksia."
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
-        "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
-      ]
-    },
     "Action": {
       "Accept": [
         "Hyväksy"
@@ -339,9 +109,6 @@
       ],
       "Clear search": [
         "Tyhjennä haku"
-      ],
-      "Clone item": [
-        "Kloonaa kohde"
       ],
       "Close": [
         "Sulje"
@@ -829,6 +596,10 @@
       "Submitting report...": [
         "Lähetetään raporttia..."
       ],
+      "Sync alias": [
+        "Synkronoi alias",
+        "Synkronoi aliakset"
+      ],
       "Sync aliases": [
         "Synkronoi aliakset"
       ],
@@ -852,6 +623,10 @@
       ],
       "Unblock contact": [
         "Salli yhteystieto"
+      ],
+      "Understood, I will never need it": [
+        "Ymmärrän, en koskaan tarvitse sitä",
+        "Ymmärrän, en koskaan tarvitse niitä"
       ],
       "Unlock": [
         "Avaa"
@@ -933,6 +708,10 @@
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } sisältyy maksullisiin tilauksiin. Ota se heti käyttöön päivittämällä tilauksesi."
       ],
+      "${ total } other login uses the same password": [
+        "${ total } muu kirjautumistieto käyttää samaa salasanaa",
+        "${ total } muuta kirjautumistietoa käyttää samaa salasanaa"
+      ],
       "A checked box means the feature is disabled.": [
         "Rasti ruudussa tarkoittaa, että toiminto ei ole käytössä."
       ],
@@ -1003,6 +782,10 @@
       "Cannot create alias (${ error }).": [
         "Aliasta ei voida luoda (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Kutsua ei voida lähettää juuri nyt",
+        "Kutsuja ei voida lähettää juuri nyt"
+      ],
       "Cannot send invitations at the moment": [
         "Kutsuja ei voida tällä hetkellä lähettää"
       ],
@@ -1050,6 +833,10 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Holvin \"${ payload.content.name }\" poisto epäonnistui"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Havaittiin ${ errors.length } virheellinen CSV-rivi",
+        "Havaittiin ${ errors.length } virheellinen CSV-rivi"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Verkkotunnusta ei voitu vahvistaa. Varmista, että olet lisännyt oikeat DNS-tietueet"
@@ -1391,6 +1178,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "tavu",
+        "tavua"
+      ],
       "GB": [
         "Gt"
       ],
@@ -1404,6 +1195,28 @@
         "Tt"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Tavu",
+        "Tavua"
+      ],
+      "Gigabyte": [
+        "Gigatavu",
+        "Gigatavua"
+      ],
+      "Kilobyte": [
+        "Kilotavu",
+        "Kilotavua"
+      ],
+      "Megabyte": [
+        "Megatavu",
+        "Megatavua"
+      ],
+      "Terabyte": [
+        "Teratavu",
+        "Teratavua"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Kohde \"${ payload.itemName }\" hylättiin"
@@ -1411,8 +1224,32 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "Kohteen \"${ payload.itemName }\" päivitys hylättiin"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } estetty",
+        "${ blockedEmailsCount } estetty"
+      ],
+      "${ count } time": [
+        "${ count } kerran",
+        "${ count } kertaa"
+      ],
+      "${ count } view": [
+        "${ count } avaus",
+        "${ count } avausta"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } välitetty",
+        "${ forwardedEmailsCount } välitetty"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } haluaa jakaa kohteen kanssasi."
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } jäsen",
+        "${ memberCount } jäsentä"
+      ],
+      "${ n } item": [
+        "${ n } kohde",
+        "${ n } kohdetta"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } on aina käytettävissä."
@@ -1447,11 +1284,23 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } tarjoaa pääsyavaimen tallennusta."
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } kutsu lähetettiin",
+        "${ payload.count } kutsua lähetettiin"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } poistettiin käytöstä"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } otettiin käyttöön"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } lähetetty",
+        "${ repliedEmailsCount } lähetetty"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } päivä jäljellä",
+        "${ trialDaysLeft } päivää jäljellä"
       ],
       "(Empty)": [
         "(Tyhjä)"
@@ -1768,11 +1617,19 @@
       "For security reasons, this action requires identity verification.": [
         "Tämä toiminto vaatii turvallisuussyistä identiteetin vahvistamista."
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Turvallisuussyistä sinun on vahvistettava pääsy tähän jaettuun holviin",
+        "Turvallisuussyistä sinun on vahvistettava pääsy näihin jaettuihin holveihin"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Käyttöoikeutesi on tietoturvasyistä vahvistettava"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Välitysosoite kopioitiin leikepöydälle. Lähetä viesti tähän osoitteeseen, niin ${ Email } vastaanottaa sen."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikon ajan.",
+        "Luodut salasanat säilytetään ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa."
       ],
       "Generating alias...": [
         "Luodaan aliasta..."
@@ -1840,6 +1697,10 @@
       "Item restored": [
         "Kohde palautettiin"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Kohteen jakaminen: ${ itemAccessCount } käyttäjä",
+        "Kohteen jakaminen: ${ itemAccessCount } käyttäjää"
+      ],
       "Item successfully excluded from monitoring": [
         "Kohde poissuljettiin valvonnasta"
       ],
@@ -1887,6 +1748,10 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, se voi salasanojesi lisäksi suojata sähköpostiosoitteesi sähköpostialiaksilla. Tietosi ovat päästä päähän -salattuja ${ MAIL_APP_NAME }in käyttämällä tekniikalla, ja vain sinä pääset niihin käsiksi."
+      ],
+      "Move ${ count } item": [
+        "Siirrä ${ count } kohde",
+        "Siirrä ${ count } kohdetta"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
@@ -1953,6 +1818,10 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Salasanalukitus on aktivoitu ja voit nyt avata ${ PASS_APP_NAME }in salasanallasi."
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa vanhemmat salasanat poistetaan historiasta automaattisesti.",
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } viikkoa vanhemmat salasanat poistetaan historiasta automaattisesti."
       ],
       "Pending access to the shared data": [
         "Odotetaan jaettujen tietojen käyttöoikeutta"
@@ -2215,6 +2084,10 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Lisäsalasana tarvitaan ${ PASS_APP_NAME }in käyttöön ja se vaaditaan ${ BRAND_NAME }-tilisi salasanan lisäksi."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Seuraavaa ${ totalIgnored } kohdetta ei voitu tuoda:",
+        "Seuraavia ${ totalIgnored } kohdetta ei voitu tuoda:"
+      ],
       "The secure link has been removed": [
         "Suojattu linkki poistettiin"
       ],
@@ -2344,6 +2217,10 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Holvi \"${ share.content.name }\" poistettiin"
       ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Holvin jakaminen: ${ vaultMembersCount } jäsen",
+        "Holvin jakaminen: ${ vaultMembersCount } jäsentä"
+      ],
       "Verification code": [
         "Vahvistuskoodi"
       ],
@@ -2352,6 +2229,10 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Tietojen synkronoinnissa laitteelle on ongelmia. Varmista, että vapaata tilaa on riittävästi, jotta ${ PASS_SHORT_APP_NAME } toimii sujuvasti."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } alias, joka puuttuu ${ PASS_APP_NAME }ista. Haluaisitko tuoda sen?",
+        "Havaitsimme, että sinulla on SimpleLoginissa ${ aliasCount } aliasta, jotka puuttuvat ${ PASS_APP_NAME }ista. Haluaisitko tuoda ne?"
       ],
       "Week": [
         "Viikko"
@@ -2376,6 +2257,14 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Et voi muuttaa aliakseen liitettyjä postilaatikoita."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuva alias. Haluatko tuoda sen?",
+        "Sinulla on SimpleLoginissa ${ aliasCount } ${ PASS_APP_NAME }ista puuttuvaa aliasta. Haluatko tuoda ne?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Sinulla on ${ daysRemaining } päivä jäljellä kokeilla näitä ja muita premium-ominaisuuksia.",
+        "Sinulla on ${ daysRemaining } päivää jäljellä kokeilla näitä ja muita premium-ominaisuuksia."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Voit siirtää kohteita vain kahteen ensimmäiseen holviisi. Siirrä kaikkiin holveihin päivittämällä tilauksesi."
@@ -2433,14 +2322,66 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliasta"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } esto",
+        "${ blockedCount } estoa"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } merkki",
+        "${ config.options.length } merkkiä"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } sana",
+        "${ config.options.wordCount } sanaa"
+      ],
+      "${ count } item": [
+        "${ count } kohde",
+        "${ count } kohdetta"
+      ],
+      "${ days } day": [
+        "${ days } vuorokausi",
+        "${ days } päivää"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } välitys",
+        "${ forwardCount } välitystä"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails },${ repliedEmails },${ blockedEmails }, viimeisten 14 päivän aikana."
+      ],
+      "${ hours } hour": [
+        "${ hours } tunti",
+        "${ hours } tuntia"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuutti",
+        "${ minutes } minuuttia"
+      ],
+      "${ months } month": [
+        "${ months } kuukausi",
+        "${ months } kuukautta"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versio"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } vastaus",
+        "${ repliedCount } vastausta"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } suojattu linkki",
+        "${ secureLinksCount } suojattua linkkiä"
+      ],
+      "${ years } year": [
+        "${ years } vuosi",
+        "${ years } vuotta"
       ],
       "1 hour": [
         "Tunnin kuluttua"
@@ -2997,6 +2938,9 @@
       "Network": [
         "Verkko"
       ],
+      "New": [
+        "Uusi"
+      ],
       "New email": [
         "Uusi sähköpostiosoite"
       ],
@@ -3454,6 +3398,14 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } kohde",
+        "${ count } kohdetta"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Voit vetää ja pudottaa valitun kohteen toiseen holviin",
+        "Voit vetää ja pudottaa valitut kohteet toiseen holviin"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "Olet valinnut holvista ${ semiboldText }."
       ]
@@ -3501,6 +3453,10 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "\"${ filename }\" on liian suuri lähetettäväksi. Suurin sallittu koko on (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } tiedosto",
+        "${ filesCount } tiedostoa"
       ],
       "Attachments": [
         "Liitteet"
@@ -3804,6 +3760,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Verkkotunnus on vahvistettu. Verkkotunnuksesi voi aloittaa sähköpostien vastaanottamisen ja aliasten luomisen"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Kohteet voivat sisältää enintään ${ share.targetMaxMembers } jäsenen.",
+        "Kohteet voivat sisältää enintään ${ share.targetMaxMembers } jäsentä."
+      ],
       "Mailbox change successfully cancelled": [
         "Postilaatikon muutos peruttiin"
       ],
@@ -3821,6 +3781,10 @@
       ],
       "Random prefix generation successfully enabled": [
         "Satunnaisen etuliitteen luominen on otettu käyttöön"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Holvit voivat sisältää enintään ${ targetMaxMembers } jäsenen.",
+        "Holvit voivat sisältää enintään ${ targetMaxMembers } jäsentä."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Vahvistussähköposti lähetettiin. Tarkista saapuneet vahvistaaksesi postilaatikkosi"
@@ -3921,6 +3885,10 @@
       ],
       "Default Display Name": [
         "Oletusarvoinen näyttönimi"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Poistetaanko ${ deletedItemsCount } kohde?",
+        "Poistetaanko ${ deletedItemsCount } kohdetta?"
       ],
       "Delete domain": [
         "Poista verkkotunnus"
@@ -4048,6 +4016,14 @@
       "Modified": [
         "Muokattu"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Siirrä ${ count } kohde holviin ${ vaultName }",
+        "Siirrä ${ count } kohdetta holviin ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Siirretäänkö ${ trashedItemsCount } kohde roskakoriin?",
+        "Siirretäänkö ${ trashedItemsCount } kohdetta roskakoriin?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Siirrä kaikki kohteet holviin \"${ vaultName }\"?"
       ],
@@ -4089,6 +4065,10 @@
       ],
       "Pinned (${ items.length })": [
         "Kiinnitykset (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Huomioi, että et voi palauttaa poistettua aliasta.",
+        "Huomioi, että et voi palauttaa poistettuja aliaksia."
       ],
       "Random Prefix Generation": [
         "Satunnaisen etuliitteen luominen"
@@ -4209,11 +4189,10 @@
       ],
       "Your welcome gift": [
         "Tervetuliaislahjasi"
-      ]
-    },
-    "Title_cloned_item": {
-      "copy": [
-        "kopioi"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Olet poistamassa ${ aliasCount } aliaksen pysyvästi.",
+        "Olet poistamassa ${ aliasCount } aliasta pysyvästi."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4247,6 +4226,12 @@
         "URL on virheellinen."
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "Siirrä kohde holviin",
+        "Siirrä kohteet holviin"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-salasana vaaditaan"
@@ -4274,6 +4259,14 @@
       ],
       "An error occurred while resuming your session": [
         "Virhe palautettaessa istuntoasi"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Haluatko varmasti siirtää ${ trashedItemsCount } kohteen roskakoriin?",
+        "Haluatko varmasti siirtää ${ trashedItemsCount } kohdetta roskakoriin?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Haluatko varmasti poistaa ${ deletedItemsCount } kohteen pysyvästi?",
+        "Haluatko varmasti poistaa ${ deletedItemsCount } kohdetta pysyvästi?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Haluatko varmasti poistaa tämän kohteen pysyvästi?"
@@ -4346,6 +4339,10 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Organisaation ulkopuolisten sähköpostiosoitteiden kutsumista ei ole sallittu."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Enimmäispituus on ${ maxLength } merkki",
+        "Enimmäispituus on ${ maxLength } merkkiä"
       ],
       "Missing alias prefix": [
         "Aliaksen etuliite puuttuu"

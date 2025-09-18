@@ -4,12 +4,6 @@
     "language": "da_DK"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } skriver...",
-        "${ usersTranslation } skriver..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -494,6 +488,10 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } og ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } skriver...",
+        "${ usersTranslation } skriver..."
       ],
       "Alpha only experimental feature": [
         "Eksperimentel funktion forbeholdt Alfa"

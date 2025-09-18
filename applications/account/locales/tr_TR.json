@@ -4,1224 +4,6 @@
     "language": "tr_TR"
   },
   "contexts": {
-    "": {
-      "${ admins } admin": [
-        "${ admins } yönetici",
-        "${ admins } yönetici"
-      ],
-      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
-        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor.",
-        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor."
-      ],
-      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
-        "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı",
-        "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı"
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } yeni takvim",
-        "${ calendarsToBeCreatedCount } yeni takvim"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } birleştirilmiş takvim",
-        "${ calendarsToBeMergedCount } birleştirilmiş takvim"
-      ],
-      "${ ceilDays } day": [
-        "${ ceilDays } gün",
-        "${ ceilDays } gün"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } saat",
-        "${ ceilHours } saat"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } dakika",
-        "${ ceilMinutes } dakika"
-      ],
-      "${ count } time": [
-        "${ count } kez",
-        "${ count } kez"
-      ],
-      "${ countriesCount } country enabled": [
-        "${ countriesCount } ülke için kullanıma açıldı",
-        "${ countriesCount } ülke için kullanıma açıldı"
-      ],
-      "${ cycle } month": [
-        "${ cycle } ay",
-        "${ cycle } ay"
-      ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } gün kaldı",
-        "${ dayDiff } gün kaldı"
-      ],
-      "${ days } day": [
-        "${ days } gün",
-        "${ days } gün"
-      ],
-      "${ days } day left": [
-        "${ days } gün kaldı",
-        "${ days } gün kaldı"
-      ],
-      "${ domains } additional custom domain": [
-        "${ domains } ek özel etki alanı",
-        "${ domains } ek özel etki alanı"
-      ],
-      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
-        "İstenmeyen e-postalardan korunmak için ${ FREE_PASS_ALIASES } hide-my-email takma adı",
-        "İstenmeyen e-postalardan korunmak için ${ FREE_PASS_ALIASES } hide-my-email takma adı"
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } saat",
-        "${ gracePeriodHoursRemaining } saat"
-      ],
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } saat kaldı",
-        "${ gracePeriodHoursRemaining } saat kaldı"
-      ],
-      "${ group.UserCount } user": [
-        "${ group.UserCount } kullanıcı",
-        "${ group.UserCount } kullanıcı"
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } aile üyeniz iki adımlı doğrulama kullanıyor.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } aile üyeniz iki adımlı doğrulama kullanıyor."
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
-        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
-      ],
-      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
-        "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
-        "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
-      ],
-      "${ hours } h": [
-        "${ hours } s",
-        "${ hours } s"
-      ],
-      "${ hours } hour": [
-        "${ hours } saat",
-        "${ hours } saat"
-      ],
-      "${ hours } hour left": [
-        "${ hours } saat kaldı",
-        "${ hours } saat kaldı"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 s",
-        "${ hoursInt }.5 s"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 saat",
-        "${ hoursInt }.5 saat"
-      ],
-      "${ ipAddresses } dedicated server": [
-        "${ ipAddresses } size ayrılmış sunucu",
-        "${ ipAddresses } size ayrılmış sunucu"
-      ],
-      "${ ips } server": [
-        "${ ips } sunucu",
-        "${ ips } sunucu"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "En fazla ${ maxLumo } kullanıcı için ${ LUMO_APP_NAME }",
-        "En fazla ${ maxLumo } kullanıcı için ${ LUMO_APP_NAME }"
-      ],
-      "${ maxAddresses } address": [
-        "${ maxAddresses } adres",
-        "${ maxAddresses } adres"
-      ],
-      "${ maxAddresses } email address": [
-        "${ maxAddresses } e-posta adresi",
-        "${ maxAddresses } e-posta adresi"
-      ],
-      "${ maxAddresses } extra email address": [
-        "${ maxAddresses } ek e-posta adresi",
-        "${ maxAddresses } ek e-posta adresi"
-      ],
-      "${ maxCalendars } calendar": [
-        "${ maxCalendars } takvim",
-        "${ maxCalendars } takvim"
-      ],
-      "${ maxDomains } email domain": [
-        "${ maxDomains } e-posta etki alanı",
-        "${ maxDomains } e-posta etki alanı"
-      ],
-      "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } VPN bağlantısı",
-        "${ MaxVPN } VPN bağlantısı"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } üye",
-        "${ memberCount } üye"
-      ],
-      "${ minutes } min": [
-        "${ minutes } dk",
-        "${ minutes } dk"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } dakika",
-        "${ minutes } dakika"
-      ],
-      "${ minutes } minute left": [
-        "${ minutes } dakika kaldı",
-        "${ minutes } dakika kaldı"
-      ],
-      "${ months } month plan": [
-        "${ months } aylık tarife",
-        "${ months } aylık tarife"
-      ],
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } e-posta adresi",
-        "${ n } ${ BRAND_NAME } e-posta adresi"
-      ],
-      "${ n } account per wallet": [
-        "Cüzdan başına ${ n } hesap",
-        "Cüzdan başına ${ n } hesap"
-      ],
-      "${ n } address": [
-        "${ n } adres",
-        "${ n } adres"
-      ],
-      "${ n } administrator in your organization need access to the organization key.": [
-        "Kuruluşunuzdaki ${ n } yöneticinin kuruluş anahtarına erişmesi gerekiyor.",
-        "Kuruluşunuzdaki ${ n } yöneticinin kuruluş anahtarına erişmesi gerekiyor."
-      ],
-      "${ n } calendar": [
-        "${ n } takvim",
-        "${ n } takvim"
-      ],
-      "${ n } calendar per user": [
-        "Her kullanıcı için ${ n } takvim",
-        "Her kullanıcı için ${ n } takvim"
-      ],
-      "${ n } custom email domain": [
-        "${ n } özel e-posta etki alanı",
-        "${ n } özel e-posta etki alanı"
-      ],
-      "${ n } day": [
-        "${ n } gün",
-        "${ n } gün"
-      ],
-      "${ n } device": [
-        "${ n } aygıt",
-        "${ n } aygıt"
-      ],
-      "${ n } email address": [
-        "${ n } e-posta adresi",
-        "${ n } e-posta adresi"
-      ],
-      "${ n } email address per user": [
-        "Her kullanıcı için ${ n } e-posta adresi",
-        "Her kullanıcı için ${ n } e-posta adresi"
-      ],
-      "${ n } filter": [
-        "${ n } süzgeç",
-        "${ n } süzgeç"
-      ],
-      "${ n } folder": [
-        "${ n } klasör",
-        "${ n } klasör"
-      ],
-      "${ n } folder and label": [
-        "${ n } klasör ve etiket",
-        "${ n } klasör ve etiket"
-      ],
-      "${ n } free VPN connection per user": [
-        "Her kullanıcı için ${ n } ücretsiz VPN bağlantısı",
-        "Her kullanıcı için ${ n } ücretsiz VPN bağlantısı"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email takma adı",
-        "${ n } hide-my-email takma adı"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } yüksek hızlı VPN bağlantısı",
-        "${ n } yüksek hızlı VPN bağlantısı"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } yüksek hızlı VPN bağlantısı / kullanıcı",
-        "${ n } yüksek hızlı VPN bağlantısı / kullanıcı"
-      ],
-      "${ n } label": [
-        "${ n } etiket",
-        "${ n } etiket"
-      ],
-      "${ n } member requested your help to sign in.": [
-        "${ n } üye oturum açmak için yardımınızı istedi.",
-        "${ n } üye oturum açmak için yardımınızı istedi."
-      ],
-      "${ n } message per day": [
-        "Her gün ${ n } ileti",
-        "Her gün ${ n } ileti"
-      ],
-      "${ n } month": [
-        "${ n } ay",
-        "${ n } ay"
-      ],
-      "${ n } month FREE": [
-        "${ n } ay ÜCRETSİZ",
-        "${ n } ay ÜCRETSİZ"
-      ],
-      "${ n } server": [
-        "${ n } sunucu",
-        "${ n } sunucu"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "Her kullanıcı için paylaşılan ${ n } ${ PASS_SHORT_APP_NAME } kasası",
-        "Her kullanıcı için paylaşılan ${ n } ${ PASS_SHORT_APP_NAME } kasası"
-      ],
-      "${ n } user account": [
-        "${ n } kullanıcı hesabı",
-        "${ n } kullanıcı hesabı"
-      ],
-      "${ n } user converted to SSO": [
-        "${ n } kullanıcıya tek oturum açma eklendi",
-        "${ n } kullanıcıya tek oturum açma eklendi"
-      ],
-      "${ n } user detached from SSO": [
-        "${ n } kullanıcı tek oturum açmadan çıkarıldı",
-        "${ n } kullanıcı tek oturum açmadan çıkarıldı"
-      ],
-      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
-        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesabı gözden geçirin:",
-        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları gözden geçirin:"
-      ],
-      "${ n } user is inactive. You can safely remove this user from your organization.": [
-        "${ n } etkin olmayan kullanıcı var. Bu kullanıcıyı kuruluşunuzdan kaldırabilirsiniz.",
-        "${ n } etkin olmayan kullanıcı var. Bu kullanıcıları kuruluşunuzdan kaldırabilirsiniz."
-      ],
-      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
-        "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor.",
-        "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor."
-      ],
-      "${ n } vault": [
-        "${ n } kasa",
-        "${ n } kasa"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN bağlantısı",
-        "${ n } VPN bağlantısı"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN bağlantısı / kullanıcı",
-        "${ n } VPN bağlantısı / kullanıcı"
-      ],
-      "${ n } wallet": [
-        "${ n } cüzdan",
-        "${ n } cüzdan"
-      ],
-      "${ n } year": [
-        "${ n } yıl",
-        "${ n } yıl"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } gün",
-        "${ nbDay } gün"
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } yıl",
-        "${ nbYear } yıl"
-      ],
-      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üye",
-        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üye"
-      ],
-      "${ number } city": [
-        "${ number } il",
-        "${ number } il"
-      ],
-      "${ number } server": [
-        "${ number } sunucu",
-        "${ number } sunucu"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } ülke",
-        "${ numberOfCountries } ülke"
-      ],
-      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "Yüklenen ${ numberOfNonPrivateKeys } dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin.",
-        "Yüklenen ${ numberOfNonPrivateKeys } dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin."
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfCountries } ülkede ${ numberOfServers }",
-        "${ numberOfCountries } ülkede ${ numberOfServers }"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfCountries } ülkede ${ numberOfServers }",
-        "${ numberOfCountries } ülkede ${ numberOfServers }"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } kullanıcı",
-        "${ numberOfUsers } kullanıcıya kadar"
-      ],
-      "${ options }-day file version history": [
-        "${ options } günlük dosya sürümü geçmişi",
-        "${ options } günlük dosya sürümü geçmişi"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
-        "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı"
-      ],
-      "${ PASS_PLUS_VAULTS } vault for your passwords": [
-        "Parolalarınız için ${ PASS_PLUS_VAULTS } kasa",
-        "Parolalarınız için ${ PASS_PLUS_VAULTS } kasa"
-      ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor.",
-        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "Her kullanıcı için ${ planNumberOfCalendars } takvim",
-        "Her kullanıcı için ${ planNumberOfCalendars } takvim"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } özel e-posta etki alanı",
-        "${ planNumberOfDomains } özel e-posta etki alanı"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-posta adresi",
-        "${ planNumberOfEmails } e-posta adresi"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "Her kullanıcı için ${ planNumberOfEmails } e-posta adresi",
-        "Her kullanıcı için ${ planNumberOfEmails } e-posta adresi"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } kullanıcı",
-        "${ planNumberOfUsers } kullanıcı"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } klasör bulundu",
-        "${ providerFoldersNumLocalized } klasör bulundu"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu",
-        "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu"
-      ],
-      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır.",
-        "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır."
-      ],
-      "${ remainingAddresses.length } more": [
-        "${ remainingAddresses.length } diğer",
-        "${ remainingAddresses.length } diğer"
-      ],
-      "${ remainingAddresses.length } more address": [
-        "${ remainingAddresses.length } diğer adres",
-        "${ remainingAddresses.length } diğer adres"
-      ],
-      "${ resultsCount } result found": [
-        "${ resultsCount } sonuç bulundu",
-        "${ resultsCount } sonuç bulundu"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } koltuk",
-        "${ seats } ${ LUMO_APP_NAME } koltuk"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } yazma yardımcısı koltuğu",
-        "${ seats } yazma yardımcısı koltuğu"
-      ],
-      "${ seconds } second": [
-        "${ seconds } saniye",
-        "${ seconds } saniye"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
-        "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
-      ],
-      "${ selectedCitiesCount } cities selected": [
-        "${ selectedCitiesCount } il seçildi",
-        "${ selectedCitiesCount } il seçildi"
-      ],
-      "${ selectedCountriesCount } selected": [
-        "${ selectedCountriesCount } seçilmiş",
-        "${ selectedCountriesCount } seçilmiş"
-      ],
-      "${ selectedEntities.length } selected": [
-        "${ selectedEntities.length } seçildi",
-        "${ selectedEntities.length } seçildi"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } klasör seçildi",
-        "${ selectedFoldersCount } klasör seçildi"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiket seçildi",
-        "${ selectedFoldersCount } etiket seçildi"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } klasör seçildi",
-        "${ selectedFoldersCountLocalized } klasör seçildi"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } etiket seçildi",
-        "${ selectedFoldersCountLocalized } etiket seçildi"
-      ],
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } gün",
-        "${ timeRemaining.inDays } gün"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } saat",
-        "${ timeRemaining.inHours } saat"
-      ],
-      "${ totalContacts } contact": [
-        "${ totalContacts } kişi",
-        "${ totalContacts } kişi"
-      ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin.",
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin."
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi",
-        "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
-      ],
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
-        "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi"
-      ],
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } etkinlik dışa aktarıldı",
-        "${ totalProcessed }/${ totalToProcess } etkinlik dışa aktarıldı"
-      ],
-      "${ UsedAddresses } address": [
-        "${ UsedAddresses } adres",
-        "${ UsedAddresses } adres"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi",
-        "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi"
-      ],
-      "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } takvim",
-        "${ UsedCalendars } takvim"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ MaxDomains } / ${ UsedDomains } özel etki alanı",
-        "${ MaxDomains } / ${ UsedDomains } özel etki alanı"
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ MaxMembers } / ${ UsedMembers } kullanıcı",
-        "${ MaxMembers } / ${ UsedMembers } kullanıcı"
-      ],
-      "${ userFound } user found": [
-        "${ userFound } kullanıcı bulundu",
-        "${ userFound } kullanıcı bulundu"
-      ],
-      "${ users } user": [
-        "${ users } kullanıcı",
-        "${ users } kullanıcı"
-      ],
-      "${ VPN_CONNECTIONS } high-speed VPN connection": [
-        "${ VPN_CONNECTIONS } yüksek hızlı VPN bağlantısı",
-        "${ VPN_CONNECTIONS } yüksek hızlı VPN bağlantısı"
-      ],
-      "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries } üzerinde ülkede",
-        "${ vpnServersCountData.paid.countries } üzerinde ülkede"
-      ],
-      "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers } üzerinde sunucu",
-        "${ vpnServersCountData.paid.servers } üzerinde sunucu"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } üye)",
-        "(${ memberCount } üye)"
-      ],
-      "+ ${ invisibleCount } More": [
-        "+ ${ invisibleCount } diğer",
-        "+ ${ invisibleCount } diğer"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
-      ],
-      "Add ${ totalServerCount } server?": [
-        "${ totalServerCount } sunucu eklensin mi?",
-        "${ totalServerCount } sunucu eklensin mi?"
-      ],
-      "Add (${ totalAddedCount })": [
-        "Ekle (${ totalAddedCount })",
-        "Ekle (${ totalAddedCount })"
-      ],
-      "Add server (${ availableAddedCount } available)": [
-        "Sunucu ekle (${ availableAddedCount } kullanılabilir)",
-        "Sunucu ekle (${ availableAddedCount } kullanılabilir)"
-      ],
-      "Adding ${ addedServerCount } gateway server": [
-        "${ addedServerCount } ağ geçidi sunucusu ekleniyor",
-        "${ addedServerCount } ağ geçidi sunucusu ekleniyor"
-      ],
-      "Adding gateway server: ${ serverNumber } / ${ total }": [
-        "Ağ geçidi sunucusu ekleniyor: ${ serverNumber } / ${ total }",
-        "Ağ geçidi sunucusu ekleniyor: ${ serverNumber } / ${ total }"
-      ],
-      "Affected user is on row": [
-        "Etkilenen kullanıcı şu satırda",
-        "Etkilenen kullanıcılar şu satırlarda"
-      ],
-      "After ${ lifetime } day all messages will be deleted": [
-        "${ lifetime } gün sonra tüm iletiler silinecek",
-        "${ lifetime } gün sonra tüm iletiler silinecek"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Tümü (${ totalFoldersCount } klasör)",
-        "Tümü (${ totalFoldersCount } klasör)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Tümü (${ totalFoldersCount } etiket)",
-        "Tümü (${ totalFoldersCount } etiket)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak",
-        "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak"
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
-        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
-        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "${ numberOfCountries } ülke arasından otomatik seçilir",
-        "${ numberOfCountries } ülke arasından otomatik seçilir"
-      ],
-      "byte": [
-        "bayt",
-        "bayt"
-      ],
-      "Byte": [
-        "Bayt",
-        "Bayt"
-      ],
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
-        "Tebrikler! En yüksek ödül sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız.",
-        "Tebrikler! En yüksek ödül sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "${ plusVpnConnections } aygıta kadar bağlantı",
-        "${ plusVpnConnections } aygıta kadar bağlantı"
-      ],
-      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
-        "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:",
-        "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:"
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } yeni takvim ekle",
-        "${ calendarsToBeCreatedCount } yeni takvim ekle"
-      ],
-      "Create ${ selectedUserIds.length } user": [
-        "${ selectedUserIds.length } kullanıcıyı ekle",
-        "${ selectedUserIds.length } kullanıcıyı ekle"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "${ value } üye için güvenli bir bulut oluşturun",
-        "${ value } üye için güvenli bir bulut oluşturun"
-      ],
-      "Create up to ${ n } calendar": [
-        "${ n } taneye kadar takvim oluşturun",
-        "${ n } taneye kadar takvim oluşturun"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin",
-        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin"
-      ],
-      "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }",
-        "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }"
-      ],
-      "day": [
-        "gün",
-        "gün"
-      ],
-      "day before": [
-        "gün önce",
-        "gün önce"
-      ],
-      "Delete ${ n } inactive user?": [
-        "${ n } etkin olmayan kullanıcı silinsin mi?",
-        "${ n } etkin olmayan kullanıcı silinsin mi?"
-      ],
-      "Delete ${ n } user": [
-        "${ n } kullanıcıyı sil",
-        "${ n } kullanıcıyı sil"
-      ],
-      "Delete the server (you will still be able to recover it for ${ days } day)": [
-        "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)",
-        "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)"
-      ],
-      "Deleting ${ deletedServerCount } gateway server": [
-        "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
-        "${ deletedServerCount } ağ geçidi sunucusu siliniyor"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "En az ${ calendarsToFixCount } takvimi kaldırın",
-        "En az ${ calendarsToFixCount } takvimi kaldırın"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "En az ${ calendarsToFixCount } takvimi kaldırın ya da",
-        "En az ${ calendarsToFixCount } takvimi kaldırın ya da"
-      ],
-      "domain used": [
-        "etki alanı kullanıldı",
-        "etki alanı kullanıldı"
-      ],
-      "Every ${ interval } day": [
-        "${ interval } günde bir",
-        "${ interval } günde bir"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Her ${ interval } günde bir, ${ timesString }",
-        "Her ${ interval } günde bir, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Her ${ interval } günde bir, ${ untilString }",
-        "Her ${ interval } günde bir, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "${ interval } ayda bir ${ onDayString }",
-        "${ interval } ayda bir ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "${ interval } ayda bir ${ onDayString }, ${ timesString }",
-        "${ interval } ayda bir ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "${ interval } ayda bir ${ onDayString }, ${ untilString }",
-        "${ interval } ayda bir ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "${ interval } haftada bir ${ multipleDaysString }",
-        "${ interval } haftada bir ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "${ interval } haftada bir ${ multipleDaysString }, ${ timesString }",
-        "${ interval } haftada bir ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "${ interval } haftada bir ${ multipleDaysString }, ${ untilString }",
-        "${ interval } haftada bir ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "${ interval } haftada bir her gün",
-        "${ interval } haftada bir her gün"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "${ interval } haftada bir her gün, ${ timesString }",
-        "${ interval } haftada bir her gün, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "${ interval } haftada bir her gün, ${ untilString }",
-        "${ interval } haftada bir her gün, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "${ interval } haftada bir Cuma günü",
-        "${ interval } haftada bir Cuma günü"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "${ interval } haftada bir Cuma günü, ${ timesString }",
-        "${ interval } haftada bir Cuma günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "${ interval } haftada bir Cuma günü, ${ untilString }",
-        "${ interval } haftada bir Cuma günü, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "${ interval } haftada bir Pazartesi günü",
-        "${ interval } haftada bir Pazartesi günü"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "${ interval } haftada bir Pazartesi günü, ${ timesString }",
-        "${ interval } haftada bir Pazartesi günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "${ interval } haftada bir Pazartesi günü, ${ untilString }",
-        "${ interval } haftada bir Pazartesi günü, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "${ interval } haftada bir Cumartesi günü",
-        "${ interval } haftada bir Cumartesi günü"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "${ interval } haftada bir Cumartesi günü, ${ timesString }",
-        "${ interval } haftada bir Cumartesi günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "${ interval } haftada bir Cumartesi günü, ${ untilString }",
-        "${ interval } haftada bir Cumartesi günü, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "${ interval } haftada bir Pazar günü",
-        "${ interval } haftada bir Pazar günü"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "${ interval } haftada bir Pazar günü, ${ timesString }",
-        "${ interval } haftada bir Pazar günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "${ interval } haftada bir Pazar günü, ${ untilString }",
-        "${ interval } haftada bir Pazar günü, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "${ interval } haftada bir Perşembe günü",
-        "${ interval } haftada bir Perşembe günü"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "${ interval } haftada bir Perşembe günü, ${ timesString }",
-        "${ interval } haftada bir Perşembe günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "${ interval } haftada bir Perşembe günü, ${ untilString }",
-        "${ interval } haftada bir Perşembe günü, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "${ interval } haftada bir Salı günü",
-        "${ interval } haftada bir Salı günü"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "${ interval } haftada bir Salı günü, ${ timesString }",
-        "${ interval } haftada bir Salı günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "${ interval } haftada bir Salı günü, ${ untilString }",
-        "${ interval } haftada bir Salı günü, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "${ interval } haftada bir Çarşamba günü",
-        "${ interval } haftada bir Çarşamba günü"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "${ interval } haftada bir Çarşamba günü, ${ timesString }",
-        "${ interval } haftada bir Çarşamba günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "${ interval } haftada bir Çarşamba günü, ${ untilString }",
-        "${ interval } haftada bir Çarşamba günü, ${ untilString }"
-      ],
-      "Every ${ interval } year": [
-        "${ interval } yılda bir",
-        "${ interval } yılda bir"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "${ interval } yılda bir, ${ timesString }",
-        "${ interval } yılda bir, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "${ interval } yılda bir, ${ untilString }",
-        "${ interval } yılda bir, ${ untilString }"
-      ],
-      "Failed to create ${ failedUsers.length } user\naccount.": [
-        "${ failedUsers.length } kullanıcı hesabı eklenemedi",
-        "${ failedUsers.length } kullanıcı hesabı eklenemedi"
-      ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "${ itemsCount } öneri bulundu, gezinmek için klavyeyi kullanın.",
-        "${ itemsCount } öneri bulundu, gezinmek için klavyeyi kullanın."
-      ],
-      "Gigabyte": [
-        "Gigabayt",
-        "Gigabayt"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "${ maxVpn } aygıt için yüksek hızlı VPN",
-        "${ maxVpn } aygıt için yüksek hızlı VPN"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "${ n } aygıt için yüksek hızlı VPN",
-        "${ n } aygıt için yüksek hızlı VPN"
-      ],
-      "hour before": [
-        "saat önce",
-        "saat önce"
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
-        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar"
-      ],
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
-        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
-        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
-        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
-      ],
-      "Import as simple event?": [
-        "İçe basit etkinlik olarak aktarılsın mı?",
-        "İçe basit etkinlik olarak aktarılsın mı?"
-      ],
-      "Invite successfully sent": [
-        "Davet gönderildi",
-        "Davetler gönderildi"
-      ],
-      "Kilobyte": [
-        "Kilobayt",
-        "Kilobayt"
-      ],
-      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
-        "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır",
-        "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır"
-      ],
-      "Megabyte": [
-        "Megabayt",
-        "Megabayt"
-      ],
-      "Member added": [
-        "Üye eklendi",
-        "Üyeler eklendi"
-      ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
-        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin"
-      ],
-      "minute before": [
-        "dakika önce",
-        "dakika önce"
-      ],
-      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
-        "6 ay içinde yalnızca ${ n } davetin kabul edilmesine izin verilir.",
-        "6 ay içinde yalnızca ${ n } davetin kabul edilmesine izin verilir."
-      ],
-      "or assign to any country in ${ availableAgainAfterDays } day": [
-        "ya da ${ availableAgainAfterDays } gün içinde başka bir ülkeye atayın",
-        "ya da ${ availableAgainAfterDays } gün içinde başka bir ülkeye atayın"
-      ],
-      "or assign to any country in ${ availableAgainAfterHours } hour": [
-        "ya da ${ availableAgainAfterHours } saat içinde başka bir ülkeye atayın",
-        "ya da ${ availableAgainAfterHours } saat içinde başka bir ülkeye atayın"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "${ rewardMonths } aylık tarife için ödeme yapıldı",
-        "${ rewardMonths } aylık tarife için ödeme yapıldı"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
-        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Parola sıfırlama isteğinde bulunuldu (${ user.Email }). Parolanızı ${ hoursRemaining } saat içinde değiştirebilirsiniz.",
-        "Parola sıfırlama isteğinde bulunuldu (${ user.Email }). Parolanızı ${ hoursRemaining } saat içinde değiştirebilirsiniz."
-      ],
-      "Please add a password for the user on row": [
-        "Lütfen satırdaki kullanıcının parolasını yazın",
-        "Lütfen satırlardaki kullanıcıların parolalarını yazın"
-      ],
-      "Please add an email address for the user on row": [
-        "Lütfen satırdaki kullanıcının e-posta adresini yazın",
-        "Lütfen satırlardaki kullanıcıların e-posta adreslerini yazın"
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
-        "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
-      ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Yinelenen alıcı kaldırıldı: ${ joinedRecipients }",
-        "Yinelenen alıcılar kaldırıldı: ${ joinedRecipients }"
-      ],
-      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
-        "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir",
-        "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir"
-      ],
-      "Secure ${ VPN_CONNECTIONS } device at a time": [
-        "Aynı anda ${ VPN_CONNECTIONS } aygıt için koruma",
-        "Aynı anda ${ VPN_CONNECTIONS } aygıt için koruma"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
-        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
-        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
-      ],
-      "Select from ${ numberOfCountries }+ country": [
-        "${ numberOfCountries } üzerinde ülkeden birini seçin",
-        "${ numberOfCountries } üzerinde ülkeden birini seçin"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "${ numberOfCountries } üzerinde ülkede sunucular",
-        "${ numberOfCountries } üzerinde ülkede sunucular"
-      ],
-      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries } üzerinde ülkede sunucular",
-        "${ vpnServersCountData.paid.countries } üzerinde ülkede sunucular"
-      ],
-      "Shared server country (${ countriesCount })": [
-        "Paylaşılan sunucu ülkesi (${ countriesCount })",
-        "Paylaşılan sunucu ülkeleri (${ countriesCount })"
-      ],
-      "Show ${ n } administrator": [
-        "${ n } yöneticiyi görüntüle",
-        "${ n } yöneticiyi görüntüle"
-      ],
-      "Show ${ remainingItems } more": [
-        "${ remainingItems } öge daha görüntüle",
-        "${ remainingItems } öge daha görüntüle"
-      ],
-      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz.",
-        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz."
-      ],
-      "Step ${ step }": [
-        "${ step }. adım",
-        "${ step }. adım"
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Abonelik her ${ cycle } ayda bir otomatik olarak yenilenir.",
-        "Abonelik her ${ cycle } ayda bir otomatik olarak yenilenir."
-      ],
-      "Successfully created ${ n } user account": [
-        "${ n } kullanıcı hesabı eklendi",
-        "${ n } kullanıcı hesabı eklendi"
-      ],
-      "Support for ${ n } custom email domain": [
-        "${ n } özel e-posta etki alanı desteği",
-        "${ n } özel e-posta etki alanı desteği"
-      ],
-      "Terabyte": [
-        "Terabayt",
-        "Terabayt"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupon ${ couponRedemptions } yenileme için geçerlidir.",
-        "Kupon ${ couponRedemptions } yenileme için geçerlidir."
-      ],
-      "The following address is invalid.": [
-        "Şu adres geçersiz.",
-        "Şu adresler geçersiz."
-      ],
-      "The following address is unavailable.": [
-        "Şu adres kullanılamıyor.",
-        "Şu adresler kullanılamıyor."
-      ],
-      "The following address was not created.": [
-        "Şu adres eklenemedi.",
-        "Şu adresler eklenemedi."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
-        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
-        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
-        "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
-      ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "**${ days } gün** sonra **${ formattedAccessibleAt }** tarihinde otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz.",
-        "**${ days } gün** sonra **${ formattedAccessibleAt }** tarihinde otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz."
-      ],
-      "This file contains an event invitation:": [
-        "Bu dosyada bir etkinlik daveti bulunuyor:",
-        "Bu dosyada etkinlik davetleri bulunuyor:"
-      ],
-      "This file contains an invitation response:": [
-        "Bu dosyada bir davet yanıtı bulunuyor:",
-        "Bu dosyada davet yanıtları bulunuyor:"
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Bu iznin süresi ${ timeRemaining.inDays } gün sonra dolacak",
-        "Bu iznin süresi ${ timeRemaining.inDays } gün sonra dolacak"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Bu iznin süresi ${ timeRemaining.inHours } saat sonra dolacak",
-        "Bu iznin süresi ${ timeRemaining.inHours } saat sonra dolacak"
-      ],
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin.",
-        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin."
-      ],
-      "Total for ${ n } month": [
-        "${ n } aylık toplam",
-        "${ n } aylık toplam"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
-        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
-      ],
-      "Up to ${ n } user": [
-        "${ n } kullanıcıya kadar",
-        "${ n } kullanıcıya kadar"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "${ n } kullanıcıya kadar (${ adminsText }, ${ usersText })",
-        "${ n } kullanıcıya kadar (${ adminsText }, ${ usersText })"
-      ],
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin",
-        "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Aynı anda ${ n } aygıta kadar kullanın",
-        "Aynı anda ${ n } aygıta kadar kullanın"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "Kasa paylaşma (${ n } kişiye kadar)",
-        "Kasa paylaşma (${ n } kişiye kadar)"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı.",
-        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı."
-      ],
-      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
-        "${ vpnServersCountData.free.countries } ülkede sunucular",
-        "${ vpnServersCountData.free.countries } ülkede sunucular"
-      ],
-      "week before": [
-        "hafta önce",
-        "hafta önce"
-      ],
-      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz.",
-        "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
-        "Şu anda kullanılabilecek ${ maxMembers } kullanıcı lisansınızdan ${ usedMembers } tanesini kullanıyorsunuz ve kullanılabilecek ${ maxAI } yazma yardımcısı lisansınızdan ${ usedAI } tanesini kullanıyorsunuz.",
-        "Şu anda kullanılabilecek ${ maxMembers } kullanıcı lisansınızdan ${ usedMembers } tanesini kullanıyorsunuz ve kullanılabilecek ${ maxAI } yazma yardımcısı lisansınızdan ${ usedAI } tanesini kullanıyorsunuz."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
-        "Şu anda kullanılabilecek ${ maxMembers } kullanıcı lisansınızdan ${ usedMembers } tanesini kullanıyorsunuz ve kullanılabilecek ${ maxAI } yazma yardımcısı lisansınızdan hiçbirini kullanmıyorsunuz.",
-        "Şu anda kullanılabilecek ${ maxMembers } kullanıcı lisansınızdan ${ usedMembers } tanesini kullanıyorsunuz ve kullanılabilecek ${ maxAI } yazma yardımcısı lisansınızdan hiçbirini kullanmıyorsunuz."
-      ],
-      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
-        "Şu anda size ayrılmış ${ maxMembers } kullanıcı lisansının ${ usedMembers } tanesini kullanıyorsunuz.",
-        "Şu anda size ayrılmış ${ maxMembers } kullanıcı lisansının ${ usedMembers } tanesini kullanıyorsunuz."
-      ],
-      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "Parolanizi ${ gracePeriodHoursRemaining } saat içinde değiştirebilirsiniz",
-        "Parolanizi ${ gracePeriodHoursRemaining } saat içinde değiştirebilirsiniz"
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Her takvim için en fazla ${ MAX_LINKS_PER_CALENDAR } bağlantı oluşturabilirsiniz. Bu takvime yeni bir bağlantı oluşturmak için aşağıdaki listeden birini silin.",
-        "Her takvim için en fazla ${ MAX_LINKS_PER_CALENDAR } bağlantı oluşturabilirsiniz. Bu takvime yeni bir bağlantı oluşturmak için aşağıdaki listeden birini silin."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
-        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
-        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
-      ],
-      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
-        "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz",
-        "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz"
-      ],
-      "You have ${ availableCount } new server available.": [
-        "Kullanabileceğiniz ${ availableCount } yeni sunucu var.",
-        "Kullanabileceğiniz ${ availableCount } yeni sunucu var."
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz.",
-        "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz.",
-        " Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz."
-      ],
-      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
-        "Son zamanlarda kullandığınız ${ unassignedAvailableCount } sunucunuz var. Bu sunucuları başka bir ülkeye yerleştirmek için, kullanımdan kaldırma işlemi tamamlanana kadar beklemeniz gerekecek.",
-        "Son zamanlarda kullandığınız ${ unassignedAvailableCount } sunucunuz var. Bu sunucuları başka bir ülkeye yerleştirmek için, kullanımdan kaldırma işlemi tamamlanana kadar beklemeniz gerekecek."
-      ],
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
-        "Bir takvimde bulunabilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız",
-        "Bir takvimde bulunabilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız"
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
-        "6 ayda ${ n } kabul edilmiş davet sınırına ulaştınız.",
-        "6 ayda ${ n } kabul edilmiş davet sınırına ulaştınız."
-      ],
-      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
-        "6 ayda kabul edilebilecek ${ n } davet sınırına ulaştınız. Ek kullanıcılar davet edebileceğiniz zaman düğme tıklanabilir olacak.",
-        "6 ayda kabul edilebilecek ${ n } davet sınırına ulaştınız. Ek kullanıcılar davet edebileceğiniz zaman düğme tıklanabilir olacak."
-      ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız.",
-        "Eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız."
-      ],
-      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
-        "Olabilecek en fazla ${ controller.meta.count } güvenilir kişi sayısına ulaştınız.",
-        "Olabilecek en fazla ${ controller.meta.count } güvenilir kişi sayısına ulaştınız."
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var.",
-        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var."
-      ],
-      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
-        "Parolanızı ${ gracePeriodHoursRemaining } saat içinde sıfırlayabilirsiniz.",
-        "Parolanızı ${ gracePeriodHoursRemaining } saat içinde sıfırlayabilirsiniz."
-      ],
-      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
-        "Hesabına **${ days } gün** içinde ya da isteğinizi onayladığında erişiminiz olacak.",
-        "Hesabına **${ days } gün** içinde ya da isteğinizi onayladığında erişiminiz olacak."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz.",
-        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
-        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
-      ],
-      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
-        "${ MAX_SYNC_PAID_USER } Gmail adresi için iletmeyi kullanıyorsunuz. Başka bir adres eklemek için önce bunlardan birini kullanımdan kaldırın.",
-        "${ MAX_SYNC_PAID_USER } Gmail adresi için iletmeyi kullanıyorsunuz. Başka bir adres eklemek için önce bunlardan birini kullanımdan kaldırın."
-      ],
-      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
-        "Güvenlik anahtarının olabileceği en uzun ${ maxSecurityKeyLength } değerine ulaştınız.",
-        "Güvenlik anahtarının olabileceği en uzun ${ maxSecurityKeyLength } değerine ulaştınız."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var.",
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var."
-      ],
-      "Your free trial includes ${ ownedCount } dedicated server.": [
-        "Ücretsiz denemenizde size ayrılmış ${ ownedCount } sunucu var.",
-        "Ücretsiz denemenizde size ayrılmış ${ ownedCount } sunucu var."
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "${ accounts } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı.",
-        "${ accounts } hizmetinden içe aktarma işlemleriniz geçici olarak duraklatıldı."
-      ],
-      "Your plan includes a maximum of ${ availableAddresses } more address.": [
-        "Tarifenizle en fazla ${ availableAddresses } adres daha ekleyebilirsiniz.",
-        "Tarifenizle en fazla ${ availableAddresses } adres daha ekleyebilirsiniz."
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
-        "Tarifenizle en fazla ${ availableNumberOfMembers } kuruluş kullanıcısı daha ekleyebilirsiniz.",
-        "Tarifenizle en fazla ${ availableNumberOfMembers } kuruluş kullanıcısı daha ekleyebilirsiniz."
-      ],
-      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
-        "Tarifenizle en fazla ${ availableVPNAccess } VPN hesabı daha ekleyebilirsiniz.",
-        "Tarifenizle en fazla ${ availableVPNAccess } VPN hesabı daha ekleyebilirsiniz."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek.",
-        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek."
-      ]
-    },
     "A label for unlabeled shared calendar links": {
       "Unlabeled": [
         "Etiketsiz"
@@ -2883,6 +1665,14 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } ek özel etki alanı",
+        "${ domains } ek özel etki alanı"
+      ],
+      "${ ips } server": [
+        "${ ips } sunucu",
+        "${ ips } sunucu"
+      ],
       "${ price } per dedicated server": [
         "${ price } size ayrılmış her sunucu için"
       ],
@@ -2894,6 +1684,18 @@
       ],
       "${ price } per user": [
         "her kullanıcı için ${ price }"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } koltuk",
+        "${ seats } ${ LUMO_APP_NAME } koltuk"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } yazma yardımcısı koltuğu",
+        "${ seats } yazma yardımcısı koltuğu"
+      ],
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
       ]
     },
     "Address action": {
@@ -3148,6 +1950,10 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
       "/ month": [
         "/ ay"
       ],
@@ -3256,11 +2062,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ${ formattedDate } tarihinde başlayarak her ${ renewCycle } ayda bir otomatik olarak yenilenen ücretli bir aboneliğe dönüşecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, ücretli bir aboneliğe dönüşecek ve ${ formattedDate } tarihinden başlayarak otomatik olarak her ay yenilenecektir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"Dene\" seçeneğine tıklayarak ${ termsAndConditions } kapsamını kabul etmiş olursunuz."
@@ -3413,6 +2219,12 @@
         "${ plan } tarifesi kısa bir süre için geri döndü"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan. But you can get ${ discountPercentage } off ${ plan.Title } when you subscribe for ${ cycle } month.": [
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz.",
+        "Ne yazık ki, bu teklif geçerli tarifeniz ile kullanılamıyor. Fakat ${ cycle } ay için ${ plan.Title } tarifesine abone olduğunuzda ${ discountPercentage } indirimden yararlanabilirsiniz."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 gün içinde ücreti geri ödeme garantisi"
@@ -3532,6 +2344,14 @@
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Tüm aygıtlarınızda güvenli oturum açma. Sınırsız sayıda hide-my-email takma adı, paylaşım, bütünleşik iki adımlı doğrulama, ${ DARK_WEB_MONITORING_NAME } ve diğer şeyler."
       ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler.",
+        "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. ${ addresses } e-posta adresi, özel e-posta etki alanları desteği, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
+      ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Uçtan uca şifrelemeyle e-postalarınızı ve zaman planınızı koruyun. 15 e-posta adresi, özel e-posta etki alanları desteği, ${ BRAND_NAME } Scribe yazma asistanı, sınırsız sayıda hide-my-email takma adı ve diğer şeyler."
       ],
@@ -3549,6 +2369,10 @@
       ]
     },
     "Billing cycle": {
+      "Renews automatically at ${ renewPrice }, for ${ renewLength } month": [
+        "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir",
+        "${ renewPrice } tutar ile ${ renewLength } ay için yenilenir"
+      ],
       "Renews automatically on ${ subscriptionManagerName }": [
         "${ subscriptionManagerName } tarihinde otomatik olarak yenilenir"
       ]
@@ -3866,6 +2690,12 @@
         "Herkes ile paylaş"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "${ remainingItems } öge daha görüntüle",
+        "${ remainingItems } öge daha görüntüle"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "Etkinlik bilgilerini düzenle"
@@ -4024,8 +2854,16 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
+      ],
       "Total": [
         "Toplam"
+      ],
+      "Total for ${ n } month": [
+        "${ n } aylık toplam",
+        "${ n } aylık toplam"
       ]
     },
     "Checkout summary": {
@@ -4470,6 +3308,16 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "CountriesStep:Info": {
+      "${ selectedCitiesCount } cities selected": [
+        "${ selectedCitiesCount } il seçildi",
+        "${ selectedCitiesCount } il seçildi"
+      ],
+      "${ selectedCountriesCount } selected": [
+        "${ selectedCountriesCount } seçilmiş",
+        "${ selectedCountriesCount } seçilmiş"
       ]
     },
     "Country name": {
@@ -5350,8 +4198,16 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } kez",
+        "${ count } kez"
+      ],
       "Daily": [
         "Günlük"
+      ],
+      "Every ${ interval } day": [
+        "${ interval } günde bir",
+        "${ interval } günde bir"
       ],
       "until ${ dateString }": [
         "${ dateString } tarihine kadar"
@@ -5360,11 +4216,19 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Günde bir, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Her ${ interval } günde bir, ${ timesString }",
+        "Her ${ interval } günde bir, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Günde bir, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Her ${ interval } günde bir, ${ untilString }",
+        "Her ${ interval } günde bir, ${ untilString }"
       ]
     },
     "Day": {
@@ -5499,6 +4363,10 @@
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Kuruluşunuzu açmak ve e-posta adresinizi özelleştirmek için önce bunu yapılandırın."
+      ],
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free month of ${ plusPlanName }.": [
+        "Tebrikler! En yüksek ödül sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız.",
+        "Tebrikler! En yüksek ödül sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
       ],
       "Connect your CRM, website, printers, and more.": [
         "CRM uygulamanızı, sitenizi, yazıcılarınızı ve diğer şeyleri bağlayın."
@@ -5945,6 +4813,16 @@
       ],
       "90 minutes": [
         "90 dakika"
+      ]
+    },
+    "Easy switch": {
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin.",
+        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin."
+      ],
+      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
+        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
+        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
       ]
     },
     "Edit billing address form note": {
@@ -6508,6 +5386,22 @@
       "${ BRAND_NAME } Account email": [
         "${ BRAND_NAME } hesabı e-posta adresi"
       ],
+      "${ days } day left": [
+        "${ days } gün kaldı",
+        "${ days } gün kaldı"
+      ],
+      "${ hours } hour left": [
+        "${ hours } saat kaldı",
+        "${ hours } saat kaldı"
+      ],
+      "${ minutes } minute left": [
+        "${ minutes } dakika kaldı",
+        "${ minutes } dakika kaldı"
+      ],
+      "${ n } day": [
+        "${ n } gün",
+        "${ n } gün"
+      ],
       "${ user } is requesting emergency access to your account": [
         "${ user } hesabınızda acil durum erişme iznini kullanmak istiyor"
       ],
@@ -6670,6 +5564,10 @@
       "They may ask to access my account in case of an emergency.": [
         "Acil bir durumda hesabıma erişme izni isteyebilir."
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "**${ days } gün** sonra **${ formattedAccessibleAt }** tarihinde otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz.",
+        "**${ days } gün** sonra **${ formattedAccessibleAt }** tarihinde otomatik olarak erişme izni verilecek. İsteği reddedebilir ya da hemen erişme izni verebilirsiniz."
+      ],
       "This will take effect immediately.": [
         "Bu izin hemen etkin olacak."
       ],
@@ -6718,6 +5616,10 @@
       "You have not been designated as an emergency contact for anyone yet.": [
         "Henüz kimse sizi acil durum kişisi olarak atamamış."
       ],
+      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
+        "Olabilecek en fazla ${ controller.meta.count } güvenilir kişi sayısına ulaştınız.",
+        "Olabilecek en fazla ${ controller.meta.count } güvenilir kişi sayısına ulaştınız."
+      ],
       "You will be notified when someone requests emergency access.": [
         "Birisi acil durumda erişme izni isteğinde bulunduğunda bilgilendirileceksiniz."
       ],
@@ -6729,6 +5631,10 @@
       ],
       "You'll receive access to their account immediately.": [
         "Kullanıcının hesabına hemen erişebileceksiniz."
+      ],
+      "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
+        "Hesabına **${ days } gün** içinde ya da isteğinizi onayladığında erişiminiz olacak.",
+        "Hesabına **${ days } gün** içinde ya da isteğinizi onayladığında erişiminiz olacak."
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Acil durum kişiniz ${ name } hesabınıza erişim izni isteğinde bulundu."
@@ -6829,6 +5735,14 @@
       ],
       "Couldn't load transactions. Please try again later.": [
         "Hesap işlemleri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın",
+        "En az ${ calendarsToFixCount } takvimi kaldırın"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da",
+        "En az ${ calendarsToFixCount } takvimi kaldırın ya da"
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
@@ -6980,6 +5894,10 @@
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin",
+        "En az ${ calendarsToFixCount } takvimi var olan bir ${ BRAND_NAME } takvimi ile birleştirin"
+      ],
       "Missing key packet": [
         "Anahtar paketi eksik"
       ],
@@ -7079,6 +5997,10 @@
       "Please enter ZIP code": [
         "Lütfen posta kodunu yazın"
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
+        "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
+      ],
       "Please generate keys before you try to change your password": [
         "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
@@ -7147,6 +6069,10 @@
       ],
       "Process aborted": [
         "İşlem iptal edildi"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Yinelenen alıcı kaldırıldı: ${ joinedRecipients }",
+        "Yinelenen alıcılar kaldırıldı: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
@@ -7325,6 +6251,9 @@
       "You must set a name": [
         "Bir ad belirtmelisiniz"
       ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "SMTP gönderimi kodu oluşturmak için bir özel etki alanı adresiniz olması gerekir."
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Yazılabilecek en fazla karakter sayısına ulaştınız. Lütfen iletinizi kısaltın."
       ],
@@ -7344,6 +6273,11 @@
         "Posta kodunun yazılması zorunludur"
       ]
     },
+    "error": {
+      "Select users to view their activity": [
+        "Etkinliklerini görüntülemek istediğiniz kullanıcıları seçin"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
@@ -7359,6 +6293,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Beklenmedik bir sorun çıktı. İçe aktarma işlemi yeniden başlatılmalı."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var.",
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "${ formattedFilename } dosyanız geçersiz bir yöntem içerdiğinden içe aktarılamıyor."
@@ -7630,6 +6568,10 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } etkinlik dışa aktarıldı",
+        "${ totalProcessed }/${ totalToProcess } etkinlik dışa aktarıldı"
+      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Takvim dışa aktarıldı. Artık ICS dosyasını kaydedebilirsiniz."
       ],
@@ -7782,6 +6724,10 @@
       "Manage user accounts": [
         "Kullanıcı hesaplarını yönet"
       ],
+      "Only ${ n } accepted invitation are allowed in a 6-month period.": [
+        "6 ay içinde yalnızca ${ n } davetin kabul edilmesine izin verilir.",
+        "6 ay içinde yalnızca ${ n } davetin kabul edilmesine izin verilir."
+      ],
       "Owners of a plan with members cannot join another family plan.": [
         "Üyeleri olan bir tarifenin sahipleri başka bir aile tarifesine katılamaz."
       ],
@@ -7820,6 +6766,14 @@
       ],
       "You have been invited to join ${ bannerOrganization }. ${ viewInviteButton }": [
         "${ bannerOrganization } ailesine davet edildiniz. ${ viewInviteButton }"
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months.": [
+        "6 ayda ${ n } kabul edilmiş davet sınırına ulaştınız.",
+        "6 ayda ${ n } kabul edilmiş davet sınırına ulaştınız."
+      ],
+      "You have reached the limit of ${ n } accepted invitation in 6 months. The button will become clickable when you can invite additional users.": [
+        "6 ayda kabul edilebilecek ${ n } davet sınırına ulaştınız. Ek kullanıcılar davet edebileceğiniz zaman düğme tıklanabilir olacak.",
+        "6 ayda kabul edilebilecek ${ n } davet sınırına ulaştınız. Ek kullanıcılar davet edebileceğiniz zaman düğme tıklanabilir olacak."
       ],
       "You have successfully joined the family group": [
         "Aile grubuna katıldınız"
@@ -7971,11 +6925,23 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN bağlantısı",
+        "${ MaxVPN } VPN bağlantısı"
+      ],
       "Access to all countries": [
         "Tüm ülkelere erişim"
       ],
       "Add": [
         "Ekle"
+      ],
+      "Add (${ totalAddedCount })": [
+        "Ekle (${ totalAddedCount })",
+        "Ekle (${ totalAddedCount })"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "${ plusVpnConnections } aygıta kadar bağlantı",
+        "${ plusVpnConnections } aygıta kadar bağlantı"
       ],
       "Continue": [
         "İlerle"
@@ -8101,6 +7067,10 @@
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Kimliğinizi fiziksel bir U2F ya da FIDO2 güvenlik anahtarıyla doğrulayın"
       ],
+      "You've reached the maximum of ${ maxSecurityKeyLength } security key.": [
+        "Güvenlik anahtarının olabileceği en uzun ${ maxSecurityKeyLength } değerine ulaştınız.",
+        "Güvenlik anahtarının olabileceği en uzun ${ maxSecurityKeyLength } değerine ulaştınız."
+      ],
       "Your two-factor authentication key is ready to use.": [
         "İki adımlı doğrulama anahtarınız kullanılmaya hazır."
       ]
@@ -8134,6 +7104,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bayt",
+        "bayt"
+      ],
       "GB": [
         "GB"
       ],
@@ -8145,6 +7119,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bayt",
+        "Bayt"
+      ],
+      "Gigabyte": [
+        "Gigabayt",
+        "Gigabayt"
+      ],
+      "Kilobyte": [
+        "Kilobayt",
+        "Kilobayt"
+      ],
+      "Megabyte": [
+        "Megabayt",
+        "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
       ]
     },
     "Filter Actions": {
@@ -8387,6 +7383,12 @@
     "Group address title": {
       "Group address": [
         "Grup adresi"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } üye",
+        "${ memberCount } üye"
       ]
     },
     "Group state": {
@@ -8636,6 +7638,10 @@
       "Add this record to your domain in the control panel of your domain name registrar": [
         "Etki alanı kayıt kuruluşunuzun panosundan etki alanınıza bu kaydı ekleyin"
       ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "${ itemsCount } öneri bulundu, gezinmek için klavyeyi kullanın.",
+        "${ itemsCount } öneri bulundu, gezinmek için klavyeyi kullanın."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Girişten sonra önerilere erişmek ve göz atmak için Yukarı ve Aşağı ok tuşlarını kullanın. Seçiminizi onaylamak için Enter tuşuna, öneriler kutusunu kapatmak için Esc tuşuna basın."
       ]
@@ -8702,6 +7708,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi",
+        "${ totalImported }/${ totalToImport } etkinlik şifrelenip takviminize eklendi"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı.",
+        "Etkinlikleriniz şifrelenip eklenirken bir sorun çıktı. ${ totalImported }/${ totalToImport } etkinlik içe aktarıldı."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Etkinliğiniz şifrelenip eklenirken bir sorun çıktı. Herhangi bir etkinlik içe aktarılamadı."
       ],
@@ -8736,11 +7750,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı bilgileri olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
       ],
+      "This file contains an event invitation:": [
+        "Bu dosyada bir etkinlik daveti bulunuyor:",
+        "Bu dosyada etkinlik davetleri bulunuyor:"
+      ],
+      "This file contains an invitation response:": [
+        "Bu dosyada bir davet yanıtı bulunuyor:",
+        "Bu dosyada davet yanıtları bulunuyor:"
+      ],
       "This file contains some data that we cannot import:": [
         "Bu dosyada içe aktaramayacağımız bazı veriler var:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi",
+        "${ totalImported }/${ totalToImport } kişi şifrelendi ve kişi listenize eklendi"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Kişi şifrelenirken ve eklenirken bir sorun çıktı. Herhangi bir kişi içe aktarılamadı."
       ],
@@ -8760,6 +7786,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kişi ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } kişi",
+        "${ totalContacts } kişi"
       ]
     },
     "Import contact. Contact identifier": {
@@ -8996,6 +8028,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin.",
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin."
+      ],
       "No contact can be imported. Click for details": [
         "Herhangi bir kişi içe aktarılamadı. Ayrıntılı bilgi almak için tıklayın"
       ],
@@ -9017,6 +8053,10 @@
     "Info": {
       " and other security features.": [
         " ve diğer güvenlik özellikleri."
+      ],
+      "${ amountUsers }/${ totalUsers } users currently has access to shared servers.": [
+        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor.",
+        "Şu anda ${ totalUsers } kullanıcının ${ amountUsers } tanesi paylaşılan sunuculara erişebiliyor."
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
@@ -9051,6 +8091,18 @@
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
         "${ CALENDAR_APP_NAME } etkinlikleri güvenli olarak eşitlemek ve şifrelemek için bir ${ BRAND_NAME } adresine gerek duyar. ${ claimAddressButton }."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } yeni takvim",
+        "${ calendarsToBeCreatedCount } yeni takvim"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } birleştirilmiş takvim",
+        "${ calendarsToBeMergedCount } birleştirilmiş takvim"
+      ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } ülke için kullanıma açıldı",
+        "${ countriesCount } ülke için kullanıma açıldı"
+      ],
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
       ],
@@ -9069,6 +8121,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: düşük çözünürlüklü ön izleme"
       ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your family members use two-factor authentication.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } aile üyeniz iki adımlı doğrulama kullanıyor.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } aile üyeniz iki adımlı doğrulama kullanıyor."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your members use two-factor authentication to sign in to your organization.": [
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
+        "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
+      ],
+      "${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } of your non-SSO members use two-factor authentication to sign in to your organization.": [
+        "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor.",
+        "Tek oturum açma kullanmayan ${ hasTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üyeniz kuruluşunuzda oturum açmak için iki adımlı doğrulama kullanıyor."
+      ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } sizinle ${ PASS_APP_NAME } verilerini paylaşmak istiyor"
       ],
@@ -9080,6 +8144,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, kullanıcı adı ve ikinci parola yerine tek bir parola ile de kullanılabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
+      ],
+      "${ n } address": [
+        "${ n } adres",
+        "${ n } adres"
       ],
       "${ name } for Android": [
         "Android için ${ name }"
@@ -9102,6 +8170,22 @@
       "${ none }: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.": [
         "${ none }: Yetkisiz e-postaları karantinaya almaz veya reddetmez. Genellikle insanlar bu ilkeyi yalnızca sorun gidermek veya denemeler yapmak için kullanır."
       ],
+      "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } member": [
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üye",
+        "${ noTwoFAMembersLength }/${ canHaveTwoFAMembersLength } üye"
+      ],
+      "${ number } city": [
+        "${ number } il",
+        "${ number } il"
+      ],
+      "${ number } server": [
+        "${ number } sunucu",
+        "${ number } sunucu"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "Yüklenen ${ numberOfNonPrivateKeys } dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin.",
+        "Yüklenen ${ numberOfNonPrivateKeys } dosya geçerli bir kişisel anahtar değil. Lütfen doğrulayıp yeniden deneyin."
+      ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME }, parolalarınızı, notlarınızı ve diğer önemli bilgilerinizi uçtan uca şifreleme ile kaydetmenizi sağlar. ${ ios }, ${ android } ve ${ browser } üzerinde kullanılabilir."
       ],
@@ -9117,6 +8201,10 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor.",
+        "${ planName } tarifesi ${ daysLeft } gün içinde sona eriyor."
+      ],
       "${ planName } expires today.": [
         "${ planName } bugün sona eriyor."
       ],
@@ -9126,11 +8214,51 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } şüpheli etkinlikleri özel olarak izleyerek hesabınızı korur."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } klasör bulundu",
+        "${ providerFoldersNumLocalized } klasör bulundu"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu",
+        "Gmail üzerinde ${ providerFoldersNumLocalized } etiket bulundu"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır.",
+        "${ provisioningCounter } sunucu henüz kuruluyor. Bu işlem genellikle ${ provisioningDuration } içinde tamamlanır."
+      ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: Alıcı platformlardan, yetkisiz e-postaları istenmeyen olarak işaretlemelerini veya karantinaya almalarını ister."
       ],
       "${ reject }: asking the recipient platforms to reject the unauthorized emails.": [
         "${ reject }: Alıcı platformlardan yetkisiz e-postaları reddetmelerini ister."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } diğer",
+        "${ remainingAddresses.length } diğer"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } diğer adres",
+        "${ remainingAddresses.length } diğer adres"
+      ],
+      "${ resultsCount } result found": [
+        "${ resultsCount } sonuç bulundu",
+        "${ resultsCount } sonuç bulundu"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
+        "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
+      ],
+      "${ selectedEntities.length } selected": [
+        "${ selectedEntities.length } seçildi",
+        "${ selectedEntities.length } seçildi"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } klasör seçildi",
+        "${ selectedFoldersCountLocalized } klasör seçildi"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiket seçildi",
+        "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
@@ -9140,6 +8268,10 @@
       ],
       "${ url } deleted.": [
         "${ url } silindi."
+      ],
+      "${ userFound } user found": [
+        "${ userFound } kullanıcı bulundu",
+        "${ userFound } kullanıcı bulundu"
       ],
       "${ vaultLink } created": [
         "${ vaultLink } eklendi"
@@ -9158,6 +8290,10 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Secure Core özelliği için ${ vpnPlus } tarifesi gereklidir."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } üye)",
+        "(${ memberCount } üye)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/ay)"
@@ -9195,8 +8331,16 @@
       "**Sync codes** to all your devices": [
         "Tüm aygıtlarınızda **kodları eşitleyin**"
       ],
+      "+ ${ invisibleCount } More": [
+        "+ ${ invisibleCount } diğer",
+        "+ ${ invisibleCount } diğer"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Arkadaşlarınızı ${ BRAND_NAME } kullanmaya davet edin"
@@ -9267,6 +8411,9 @@
       "active": [
         "etkin"
       ],
+      "Activity Monitor": [
+        "Etkinlik izleyici"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
       ],
@@ -9294,17 +8441,33 @@
       "Add multiple users to your organization at once.": [
         "Kuruluşunuza bir kerede birkaç kullanıcı ekleyin."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Sunucu ekle (${ availableAddedCount } kullanılabilir)",
+        "Sunucu ekle (${ availableAddedCount } kullanılabilir)"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Kuruluşunuz için daha kişiselleştirilmiş bir deneyim oluşturmak için adınızı ve logonuzu ekleyin."
       ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } ağ geçidi sunucusu ekleniyor",
+        "${ addedServerCount } ağ geçidi sunucusu ekleniyor"
+      ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Bir dış e-posta adresi eklendiğinde, o grup içindeki tüm e-posta yazışmaları için uçtan uca şifreleme kapatılır. İlerlemek istiyor musunuz?"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Ağ geçidi sunucusu ekleniyor: ${ serverNumber } / ${ total }",
+        "Ağ geçidi sunucusu ekleniyor: ${ serverNumber } / ${ total }"
       ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
       ],
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
+      ],
+      "Affected user is on row": [
+        "Etkilenen kullanıcı şu satırda",
+        "Etkilenen kullanıcılar şu satırlarda"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Daha iyi e-postaları hızlı ve kolayca oluşturmanızı sağlayacak yapay zeka destekli yardımcı."
@@ -9314,6 +8477,14 @@
       ],
       "Align right": [
         "Sağa hizala"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Tümü (${ totalFoldersCount } klasör)",
+        "Tümü (${ totalFoldersCount } klasör)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Tümü (${ totalFoldersCount } etiket)",
+        "Tümü (${ totalFoldersCount } etiket)"
       ],
       "All inactive members deleted": [
         "Etkin olmayan tüm üyeler silindi"
@@ -9329,6 +8500,10 @@
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak",
+        "${ MAX_CONTACTS_PER_USER } kişiye kadar tüm kişileriniz içe aktarılacak"
       ],
       "Allocated": [
         "Ayrılmış"
@@ -9633,11 +8808,19 @@
       "Country code": [
         "Ülke kodu"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } yeni takvim ekle",
+        "${ calendarsToBeCreatedCount } yeni takvim ekle"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz klasörler oluşturun."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz etiketler oluşturun."
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "${ value } üye için güvenli bir bulut oluşturun",
+        "${ value } üye için güvenli bir bulut oluşturun"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Alt hesaplar ekleyin ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
@@ -9650,6 +8833,10 @@
       ],
       "Create your first Gateway": [
         "İlk ağ geçidinizi oluşturun"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }",
+        "Ağ geçidi sunucusu oluşturuluyor: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
@@ -9726,6 +8913,10 @@
       "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
         "Çöp ve istenmeyen kutularındaki 30 günden eski iletileri silebilirsiniz. Otomatik silme özelliğini açtığınızda, çöp ya da istenmeyen klasörlerindeki iletilere, o kutuya kondukları tarihe göre bir silinme tarihi belirlenir."
       ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } ağ geçidi sunucusu siliniyor",
+        "${ deletedServerCount } ağ geçidi sunucusu siliniyor"
+      ],
       "Did you know?": [
         "Biliyor muydunuz?"
       ],
@@ -9779,6 +8970,10 @@
       ],
       "Domain ownership verified.": [
         "Etki alanının sahipliği doğrulanmış."
+      ],
+      "domain used": [
+        "etki alanı kullanıldı",
+        "etki alanı kullanıldı"
       ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
         "Ücretli ${ appName } özelliklerinize erişiminizi kaybetmeyin. Otomatik yenilemeyi açın."
@@ -10212,6 +9407,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Görseller, otomatik yanıt içinde kullanılmasına izin verilmediğinden kaldırıldı"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar",
+        "${ calendarCount } / ${ totalCalendarsCount } takvimi içe aktar"
+      ],
       "Import from": [
         "Şuradan içe aktar"
       ],
@@ -10298,6 +9497,10 @@
       ],
       "Invite rejected": [
         "Davet reddedildi"
+      ],
+      "Invite successfully sent": [
+        "Davet gönderildi",
+        "Davetler gönderildi"
       ],
       "Invite your partner, a friend, or whoever you're sharing your ${ protonDuoPlanName } plan with.": [
         "${ protonDuoPlanName } tarifenizi paylaşmak istediğiniz eşinizi, arkadaşınızı veya istediğiniz herhangi birini davet edin."
@@ -10659,6 +9862,14 @@
       "or ${ selectFileButton }": [
         "ya da ${ selectFileButton }un"
       ],
+      "or assign to any country in ${ availableAgainAfterDays } day": [
+        "ya da ${ availableAgainAfterDays } gün içinde başka bir ülkeye atayın",
+        "ya da ${ availableAgainAfterDays } gün içinde başka bir ülkeye atayın"
+      ],
+      "or assign to any country in ${ availableAgainAfterHours } hour": [
+        "ya da ${ availableAgainAfterHours } saat içinde başka bir ülkeye atayın",
+        "ya da ${ availableAgainAfterHours } saat içinde başka bir ülkeye atayın"
+      ],
       "or discover other features:": [
         "veya diğer özellikleri keşfedin:"
       ],
@@ -10700,6 +9911,10 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "100 milyon üzerinde kişi ve kuruluş ${ BRAND_NAME } hesabı açtı."
+      ],
+      "Paid for a ${ rewardMonths } month plan": [
+        "${ rewardMonths } aylık tarife için ödeme yapıldı",
+        "${ rewardMonths } aylık tarife için ödeme yapıldı"
       ],
       "Paid for a monthly plan": [
         "Bir aylık tarife ödemesi yaptı"
@@ -10754,6 +9969,14 @@
       ],
       "Phone number": [
         "Telefon numarası"
+      ],
+      "Please add a password for the user on row": [
+        "Lütfen satırdaki kullanıcının parolasını yazın",
+        "Lütfen satırlardaki kullanıcıların parolalarını yazın"
+      ],
+      "Please add an email address for the user on row": [
+        "Lütfen satırdaki kullanıcının e-posta adresini yazın",
+        "Lütfen satırlardaki kullanıcıların e-posta adreslerini yazın"
       ],
       "Please ask the owner to directly invite you to the document.": [
         "Belge sahibinden size davet göndermesini isteyin."
@@ -11040,6 +10263,10 @@
       "Shared ${ vaultLink } updated": [
         "Paylaşılan ${ vaultLink } güncellendi"
       ],
+      "Shared server country (${ countriesCount })": [
+        "Paylaşılan sunucu ülkesi (${ countriesCount })",
+        "Paylaşılan sunucu ülkeleri (${ countriesCount })"
+      ],
       "Shared vault deleted": [
         "Paylaşılmış kasa silindi"
       ],
@@ -11091,6 +10318,10 @@
       "Starts on ${ startsOnTime }": [
         "Başlangıç tarihi: ${ startsOnTime }"
       ],
+      "Step ${ step }": [
+        "${ step }. adım",
+        "${ step }. adım"
+      ],
       "Storage": [
         "Depolama alanı"
       ],
@@ -11111,6 +10342,10 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Ödemeyi aşağıdaki adrese yapın ya da QR kodunu tarayın. Ön ödemeniz onaylandıktan sonra hesabınıza yansıtılacak."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonelik her ${ cycle } ayda bir otomatik olarak yenilenir.",
+        "Abonelik her ${ cycle } ayda bir otomatik olarak yenilenir."
       ],
       "Subscription auto-renews every month.": [
         "Abonelik her ay otomatik olarak yenilenir."
@@ -11201,6 +10436,18 @@
       ],
       "The following address is available:": [
         "Şu adres kullanılabilir:"
+      ],
+      "The following address is invalid.": [
+        "Şu adres geçersiz.",
+        "Şu adresler geçersiz."
+      ],
+      "The following address is unavailable.": [
+        "Şu adres kullanılamıyor.",
+        "Şu adresler kullanılamıyor."
+      ],
+      "The following address was not created.": [
+        "Şu adres eklenemedi.",
+        "Şu adresler eklenemedi."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Şu üyelere, en kısa sürede iki adımlı doğrulama özelliğini açmalarını bildiren bir e-posta gönderilecek."
@@ -11817,6 +11064,22 @@
       "You are currently signed in as ${ username }.": [
         "Şu anda ${ username } olarak oturum açmışsınız."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz.",
+        "Şu anda size ayrılmış ${ ipAddresses } sunucudan ${ ipCount } sunucuyu kullanıyorsunuz."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and ${ usedAI } of your ${ maxAI } available writing assistant license.": [
+        "Şu anda kullanılabilecek ${ maxMembers } kullanıcı lisansınızdan ${ usedMembers } tanesini kullanıyorsunuz ve kullanılabilecek ${ maxAI } yazma yardımcısı lisansınızdan ${ usedAI } tanesini kullanıyorsunuz.",
+        "Şu anda kullanılabilecek ${ maxMembers } kullanıcı lisansınızdan ${ usedMembers } tanesini kullanıyorsunuz ve kullanılabilecek ${ maxAI } yazma yardımcısı lisansınızdan ${ usedAI } tanesini kullanıyorsunuz."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license and none of your ${ maxAI } available writing assistant license.": [
+        "Şu anda kullanılabilecek ${ maxMembers } kullanıcı lisansınızdan ${ usedMembers } tanesini kullanıyorsunuz ve kullanılabilecek ${ maxAI } yazma yardımcısı lisansınızdan hiçbirini kullanmıyorsunuz.",
+        "Şu anda kullanılabilecek ${ maxMembers } kullanıcı lisansınızdan ${ usedMembers } tanesini kullanıyorsunuz ve kullanılabilecek ${ maxAI } yazma yardımcısı lisansınızdan hiçbirini kullanmıyorsunuz."
+      ],
+      "You are currently using ${ usedMembers } of your ${ maxMembers } available user license.": [
+        "Şu anda size ayrılmış ${ maxMembers } kullanıcı lisansının ${ usedMembers } tanesini kullanıyorsunuz.",
+        "Şu anda size ayrılmış ${ maxMembers } kullanıcı lisansının ${ usedMembers } tanesini kullanıyorsunuz."
+      ],
       "You are not currently in any groups and there are no pending invitations": [
         "Şu anda herhangi bir grupta değilsiniz ve bekleyen bir davetiniz de yok"
       ],
@@ -11859,6 +11122,14 @@
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
+        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. ${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın.",
+        "${ MAX_CALENDARS_FREE } tane takvim tutabilirsiniz. Aboneliğinizi iptal etmeden önce lütfen paylaşılan takvim bağlantılarını ve takvimlerinizi paylaştığınız tüm ${ BRAND_NAME } kullanıcılarını kaldırın."
+      ],
       "You can now access and manage the account as an administrator.": [
         "Şimdi hesaba bir yönetici olarak erişebilir ve yönetebilirsiniz."
       ],
@@ -11880,6 +11151,10 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Bir ${ VPN_APP_NAME } sunucusuna macOS için Tunnelblick veya GNU/Linux için OpenVPN gibi üçüncü taraf, açık kaynaklı bir VPN uygulaması kullanarak bağlanmak için şu kimlik doğrulama bilgilerini kullanabilirsiniz."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz",
+        "Önümüzdeki 24 saat boyunca ${ emailSendLimitNumber } taneden daha fazla davet e-postası gönderemezsiniz"
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } kullanıcılarını kaynak gösteremezsiniz"
       ],
@@ -11897,6 +11172,14 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Parolanız veya diğer verileriniz üçüncü taraf bir hizmet tarafından açığa çıkarsa bildirim alırsınız."
+      ],
+      "You have ${ availableCount } new server available.": [
+        "Kullanabileceğiniz ${ availableCount } yeni sunucu var.",
+        "Kullanabileceğiniz ${ availableCount } yeni sunucu var."
+      ],
+      "You have ${ unassignedAvailableCount } recently used servers available. To allocate these servers to another country, you'll have to wait until deactivation is complete.": [
+        "Son zamanlarda kullandığınız ${ unassignedAvailableCount } sunucunuz var. Bu sunucuları başka bir ülkeye yerleştirmek için, kullanımdan kaldırma işlemi tamamlanana kadar beklemeniz gerekecek.",
+        "Son zamanlarda kullandığınız ${ unassignedAvailableCount } sunucunuz var. Bu sunucuları başka bir ülkeye yerleştirmek için, kullanımdan kaldırma işlemi tamamlanana kadar beklemeniz gerekecek."
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "${ planTitle } deneme aboneliğiniz var. Deneme süresinden sonra aboneliğinizi sürdürmek istiyorsanız lütfen bir ödeme yöntemi ekleyin."
@@ -11979,6 +11262,14 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "İndirdiğiniz kurtarma dosyalarını kullanarak kilitlenmiş verileri kurtaramazsınız. Ayrıca bu işlem aygıt ile kurtarmayı da kullanımdan kaldırır."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz.",
+        "Ardından her ${ renewCycle } ayda bir ${ renewAmountStr } ödeyeceksiniz."
+      ],
+      "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
+        "${ MAX_SYNC_PAID_USER } Gmail adresi için iletmeyi kullanıyorsunuz. Başka bir adres eklemek için önce bunlardan birini kullanımdan kaldırın.",
+        "${ MAX_SYNC_PAID_USER } Gmail adresi için iletmeyi kullanıyorsunuz. Başka bir adres eklemek için önce bunlardan birini kullanımdan kaldırın."
+      ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
         "Bu süzgeç için 50 kullanıcı sayısı sınırına ulaştınız. Başka bir kullanıcı eklemek için birini kaldırın."
       ],
@@ -12033,6 +11324,10 @@
       "Your files will be encrypted and then saved": [
         "Dosyalarınız şifrelendikten sonra kaydedilir"
       ],
+      "Your free trial includes ${ ownedCount } dedicated server.": [
+        "Ücretsiz denemenizde size ayrılmış ${ ownedCount } sunucu var.",
+        "Ücretsiz denemenizde size ayrılmış ${ ownedCount } sunucu var."
+      ],
       "Your free trial was successfully converted to a ${ cycle }-month subscription. Your renewal date is ${ nextBillingDate }.": [
         "Ücretsiz deneme süreniz ${ cycle } aylık aboneliğe dönüştürüldü. Yenilenme tarihi ${ nextBillingDate }."
       ],
@@ -12041,6 +11336,10 @@
       ],
       "Your friends get **2 weeks for free** on their chosen plan.": [
         "Arkadaşlarınız, seçtikleri tarifeyi **2 hafta ücretsiz** kullanabilir."
+      ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "${ accounts } hizmetinden içe aktarma işleminiz geçici olarak duraklatıldı.",
+        "${ accounts } hizmetinden içe aktarma işlemleriniz geçici olarak duraklatıldı."
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
@@ -12077,6 +11376,10 @@
       ],
       "Your recovery phrase is a series of 12 randomly generated words in a specific order.": [
         "Kurtarma ifadeniz, belirli bir sırada rastgele oluşturulmuş 12 sözcükten oluşan bir dizidir."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek.",
+        "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ${ cycle } ayda bir otomatik olarak yenilenecek."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Zamanlanmış tarifeniz ${ renewalTime } tarihinde başlayacak ve her ay otomatik olarak yenilenecek."
@@ -12173,6 +11476,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Ödenmeyen faturalar nedeniyle herhangi bir hizmet kesintisi yaşamamak için, her zaman en az 1 geçerli ödeme yönteminiz bulunduğundan emin olun."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } klasör seçildi",
+        "${ selectedFoldersCount } klasör seçildi"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiket seçildi",
+        "${ selectedFoldersCount } etiket seçildi"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -12627,6 +11940,10 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } kullanıcı",
+        "${ group.UserCount } kullanıcı"
+      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
       ],
@@ -12635,6 +11952,22 @@
       ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } alt bilgisi"
+      ],
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } gün",
+        "${ nbDay } gün"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } yıl",
+        "${ nbYear } yıl"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi",
+        "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
@@ -13109,9 +12442,6 @@
       ],
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
-      ],
-      "Emails categories": [
-        "E-posta kategorileri"
       ],
       "Enabled": [
         "Kullanılıyor"
@@ -13601,6 +12931,10 @@
       ],
       "Share your referral link": [
         "Öneri bağlantınızı paylaşın"
+      ],
+      "Show ${ n } administrator": [
+        "${ n } yöneticiyi görüntüle",
+        "${ n } yöneticiyi görüntüle"
       ],
       "Show others when I'm busy": [
         "Meşgul olduğum zamanlar başkalarına görüntülensin"
@@ -14209,6 +13543,10 @@
       "Almost there": [
         "Neredeyse tamam"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
+        "Eklenen takvim sayısı: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "E-posta hizmeti sağlayıcınızla bağlantı kuruluyor"
       ],
@@ -14336,6 +13674,24 @@
         "Ayrıntılı etkinlikler özelliğini aç"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } klasördeki tüm iletileri içe aktar ve şöyle etiketle"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle",
+        "${ selectedItemsToImportCount } / ${ itemsToImportCount } etiketteki tüm iletileri içe aktar ve şöyle etiketle"
+      ]
+    },
     "mail_signup_2023: Info": {
       "**Get ${ plan }** for a limited time!": [
         "**Sınırlı süreyle ${ plan }** alın!"
@@ -14409,6 +13765,18 @@
       ],
       "This feature is temporarily unavailable": [
         "Bu özellik geçici olarak kullanılamıyor"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Her takvim için en fazla ${ MAX_LINKS_PER_CALENDAR } bağlantı oluşturabilirsiniz. Bu takvime yeni bir bağlantı oluşturmak için aşağıdaki listeden birini silin.",
+        "Her takvim için en fazla ${ MAX_LINKS_PER_CALENDAR } bağlantı oluşturabilirsiniz. Bu takvime yeni bir bağlantı oluşturmak için aşağıdaki listeden birini silin."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız.",
+        "Eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız."
       ]
     },
     "Member action": {
@@ -14576,16 +13944,28 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "${ interval } ayda bir ${ onDayString }",
+        "${ interval } ayda bir ${ onDayString }"
+      ],
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "${ interval } ayda bir ${ onDayString }, ${ timesString }",
+        "${ interval } ayda bir ${ onDayString }, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Ayda bir ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "${ interval } ayda bir ${ onDayString }, ${ untilString }",
+        "${ interval } ayda bir ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Ayda bir ${ onDayString }, ${ untilString }"
       ]
@@ -14819,8 +14199,76 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ve ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } takvim",
+        "${ n } takvim"
+      ],
+      "${ n } calendar per user": [
+        "Her kullanıcı için ${ n } takvim",
+        "Her kullanıcı için ${ n } takvim"
+      ],
+      "${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı",
+        "${ n } özel e-posta etki alanı"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi"
+      ],
+      "${ n } email address per user": [
+        "Her kullanıcı için ${ n } e-posta adresi",
+        "Her kullanıcı için ${ n } e-posta adresi"
+      ],
+      "${ n } filter": [
+        "${ n } süzgeç",
+        "${ n } süzgeç"
+      ],
+      "${ n } folder": [
+        "${ n } klasör",
+        "${ n } klasör"
+      ],
+      "${ n } folder and label": [
+        "${ n } klasör ve etiket",
+        "${ n } klasör ve etiket"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email takma adı",
+        "${ n } hide-my-email takma adı"
+      ],
+      "${ n } label": [
+        "${ n } etiket",
+        "${ n } etiket"
+      ],
+      "${ n } message per day": [
+        "Her gün ${ n } ileti",
+        "Her gün ${ n } ileti"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "Her kullanıcı için paylaşılan ${ n } ${ PASS_SHORT_APP_NAME } kasası",
+        "Her kullanıcı için paylaşılan ${ n } ${ PASS_SHORT_APP_NAME } kasası"
+      ],
+      "${ n } vault": [
+        "${ n } kasa",
+        "${ n } kasa"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN bağlantısı",
+        "${ n } VPN bağlantısı"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } kullanıcı",
+        "${ numberOfUsers } kullanıcıya kadar"
+      ],
+      "${ options }-day file version history": [
+        "${ options } günlük dosya sürümü geçmişi",
+        "${ options } günlük dosya sürümü geçmişi"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin Lifetime"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
+        "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ve sınırsız sayıda hide-my-email takma adı"
@@ -15017,6 +14465,10 @@
       "High-speed Swiss VPN that protects your privacy": [
         "Gizliliğinizi koruyan yüksek hızlı İsviçre VPN hizmeti"
       ],
+      "High-speed VPN on ${ n } device": [
+        "${ n } aygıt için yüksek hızlı VPN",
+        "${ n } aygıt için yüksek hızlı VPN"
+      ],
       "HTML signatures": [
         "HTML imzalar"
       ],
@@ -15110,6 +14562,10 @@
       "Send & receive invitations": [
         "Davetleri alma ve gönderme"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries } üzerinde ülkede sunucular",
+        "${ vpnServersCountData.paid.countries } üzerinde ülkede sunucular"
+      ],
       "Share files with no size limit": [
         "Dosyaları boyut sınırı olmadan paylaşın"
       ],
@@ -15191,11 +14647,23 @@
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
       ],
+      "Up to ${ n } user": [
+        "${ n } kullanıcıya kadar",
+        "${ n } kullanıcıya kadar"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "${ n } kullanıcıya kadar (${ adminsText }, ${ usersText })",
+        "${ n } kullanıcıya kadar (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
       ],
       "Up to 10 Gbps": [
         "10 Gb/sn hıza kadar"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Aynı anda ${ n } aygıta kadar kullanın",
+        "Aynı anda ${ n } aygıta kadar kullanın"
       ],
       "User credential management": [
         "Kullanıcı kimlik doğrulama bilgileri yönetimi"
@@ -15206,8 +14674,22 @@
       "User storage management": [
         "Kullanıcı depolama alanı yönetimi"
       ],
+      "Vault sharing (up to ${ n } person)": [
+        "Kasa paylaşma (${ n } kişiye kadar)",
+        "Kasa paylaşma (${ n } kişiye kadar)"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } yönetici",
+        "${ admins } yönetici"
+      ],
+      "${ users } user": [
+        "${ users } kullanıcı",
+        "${ users } kullanıcı"
       ]
     },
     "new_plans: feature info": {
@@ -15480,6 +14962,10 @@
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Çevrim içi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@${ domain }, haber aboneliği için AliHaber@${ domain } gibi takma adlar oluşturabilirsiniz"
       ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin",
+        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin"
+      ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Aile üyelerine atayabileceğiniz en fazla ${ n } e-posta adresi/takma ad oluşturabilirsiniz. Bunları çevrim içi kimlikler için kullanabilirsiniz. Örneğin alışveriş hesapları için AliSiparis@${ domain }."
       ],
@@ -15691,6 +15177,10 @@
       "Central control panel": [
         "Merkez yönetim panosu"
       ],
+      "Create up to ${ n } calendar": [
+        "${ n } taneye kadar takvim oluşturun",
+        "${ n } taneye kadar takvim oluşturun"
+      ],
       "Dedicated Account manager": [
         "Size ayrılmış hesap yöneticisi"
       ],
@@ -15708,6 +15198,10 @@
       ],
       "Require 2FA": [
         "İki adımlı doğrulama gereksin"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı desteği",
+        "${ n } özel e-posta etki alanı desteği"
       ]
     },
     "news": {
@@ -15896,6 +15390,10 @@
       "Invitation revoked": [
         "Davet geri çekildi"
       ],
+      "Member added": [
+        "Üye eklendi",
+        "Üyeler eklendi"
+      ],
       "Member deleted": [
         "Üye silindi"
       ]
@@ -15930,8 +15428,24 @@
       "at time of event": [
         "etkinlik saatinde"
       ],
+      "day before": [
+        "gün önce",
+        "gün önce"
+      ],
+      "hour before": [
+        "saat önce",
+        "saat önce"
+      ],
+      "minute before": [
+        "dakika önce",
+        "dakika önce"
+      ],
       "on the same day": [
         "aynı gün"
+      ],
+      "week before": [
+        "hafta önce",
+        "hafta önce"
       ]
     },
     "Oauth instructions": {
@@ -16436,6 +15950,18 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "Daha fazla depolama alanı almak için ${ upgradeLink } ya da yer açmak için bazı depolama alanlarını silin."
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Tarifenizle en fazla ${ availableAddresses } adres daha ekleyebilirsiniz.",
+        "Tarifenizle en fazla ${ availableAddresses } adres daha ekleyebilirsiniz."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Tarifenizle en fazla ${ availableNumberOfMembers } kuruluş kullanıcısı daha ekleyebilirsiniz.",
+        "Tarifenizle en fazla ${ availableNumberOfMembers } kuruluş kullanıcısı daha ekleyebilirsiniz."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Tarifenizle en fazla ${ availableVPNAccess } VPN hesabı daha ekleyebilirsiniz.",
+        "Tarifenizle en fazla ${ availableVPNAccess } VPN hesabı daha ekleyebilirsiniz."
+      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Tarifenizle en fazla ${ humanReadableAvailableSpace } depolama alanı daha kullanabilirsiniz."
       ]
@@ -16877,6 +16403,10 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } kullanıcı hesabı",
+        "${ n } kullanıcı hesabı"
+      ],
       "Activity log": [
         "Etkinlik günlüğü"
       ],
@@ -17114,11 +16644,27 @@
       "terms & conditions": [
         "hükümler ve koşullar"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupon ${ couponRedemptions } yenileme için geçerlidir.",
+        "Kupon ${ couponRedemptions } yenileme için geçerlidir."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir.",
+        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ${ subscriptionLength } ay için geçerlidir."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Kupon, ${ couponRedemptions } yenileme için geçerlidir. Ardından, her ay ${ renewPriceStr } ile otomatik olarak yenilenir. İstediğiniz zaman iptal edebilirsiniz."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Özel indirimli ${ priceWithDiscount } fiyatı ilk ay için geçerlidir. Daha sonra her ay otomatik olarak ${ renewPriceStr } ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "The transaction is successfully detected. The credits will be added to your account once the transaction is fully confirmed.": [
         "İşlem bulundu. İşlem tam olarak onaylandığında krediler hesabınıza eklenecek."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
+        "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "This number will be shown on all future invoices": [
         "Bu numara, sonraki tüm faturalarda görüntülenecek"
@@ -17487,6 +17033,14 @@
       ]
     },
     "Plans": {
+      "${ cycle } month": [
+        "${ cycle } ay",
+        "${ cycle } ay"
+      ],
+      "${ months } month plan": [
+        "${ months } aylık tarife",
+        "${ months } aylık tarife"
+      ],
       "Enjoying ${ planName }?": [
         "${ planName } hoşunuza gitti mi?"
       ]
@@ -17879,6 +17433,10 @@
       ]
     },
     "Restore administrator panel": {
+      "${ n } administrator in your organization need access to the organization key.": [
+        "Kuruluşunuzdaki ${ n } yöneticinin kuruluş anahtarına erişmesi gerekiyor.",
+        "Kuruluşunuzdaki ${ n } yöneticinin kuruluş anahtarına erişmesi gerekiyor."
+      ],
       "Changing organization keys": [
         "Kuruluş anahtarlarını değiştirme"
       ],
@@ -17933,9 +17491,17 @@
     "retention_policy_2025_Confirmation": {
       "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
         "${ strongText }, Gelen, Gönderilmiş ve Taslaklar kutularındaki iletileri kapsar. Bu uygulama, kullanıcıların tutulacağını düşündüğü iletileri temizleyebilir. Bu iletiler daha sonra kurtarılamaz."
+      ],
+      "After ${ lifetime } day all messages will be deleted": [
+        "${ lifetime } gün sonra tüm iletiler silinecek",
+        "${ lifetime } gün sonra tüm iletiler silinecek"
       ]
     },
     "retention_policy_2025_Error": {
+      "Lifetime must be greater than ${ MIN_LIFETIME } day": [
+        "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır",
+        "Tutma süresi ${ MIN_LIFETIME } günden fazla olmalıdır"
+      ],
       "Lifetime must not be set for \"Retain All\" action": [
         "\"Tümü tutulsun\" işlemi için tutma süresi ayarlanmamalıdır"
       ],
@@ -17950,6 +17516,10 @@
       ]
     },
     "retention_policy_2025_Info": {
+      "${ n } day": [
+        "${ n } gün",
+        "${ n } gün"
+      ],
       "${ remainingCount } more": [
         "${ remainingCount } diğer"
       ],
@@ -17981,6 +17551,10 @@
       ],
       "Applies to": [
         "Şunlar için geçerlidir"
+      ],
+      "day": [
+        "gün",
+        "gün"
       ],
       "Keep items forever": [
         "Ögeler sonsuza dek tutulsun"
@@ -18109,6 +17683,9 @@
       ],
       "Account safety review": [
         "Hesap güvenliği değerlendirmesi"
+      ],
+      "Add a email address": [
+        "E-posta adresi ekle"
       ],
       "Add a phone number": [
         "Telefon numarası ekle"
@@ -18239,6 +17816,9 @@
       "to automatically recover your data when you log into a trusted device": [
         "güvenilen bir aygıtla oturum açtığınızda verilerinizi otomatik olarak kurtarmak için"
       ],
+      "to ensure highest possible security of your account": [
+        "hesabınızda olabilecek en yüksek güvenliği sağlamak için"
+      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "E-posta adresinin size ait olduğundan emin olmak için ${ boldEmail } adresine bir doğrulama kodu gönderdik."
       ],
@@ -18250,6 +17830,9 @@
       ],
       "to recover your account if you're ever locked out": [
         "kilitlenirse hesabınızı kurtarmak için"
+      ],
+      "To stay in touch": [
+        "İletişimde kalmak için"
       ],
       "Update your Recovery Kit": [
         "Kurtarma paketinizi güncelleyin"
@@ -18641,6 +18224,14 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } gün",
+        "${ timeRemaining.inDays } gün"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } saat",
+        "${ timeRemaining.inHours } saat"
+      ],
       "Didn’t make this request?": [
         "Bu isteği siz yapmadınız mı?"
       ],
@@ -18652,6 +18243,14 @@
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Parolanızı değiştirmek için oturumunuzun açık olduğu (isteğin yapıldığı oturum) aygıta geçin."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Bu iznin süresi ${ timeRemaining.inDays } gün sonra dolacak",
+        "Bu iznin süresi ${ timeRemaining.inDays } gün sonra dolacak"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Bu iznin süresi ${ timeRemaining.inHours } saat sonra dolacak",
+        "Bu iznin süresi ${ timeRemaining.inHours } saat sonra dolacak"
       ],
       "This permission expires soon": [
         "Bu izin yakında kaldırılacak"
@@ -18667,6 +18266,22 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "Parolanızı ${ boldDate } tarihinden başlayarak sıfırlayabilirsiniz."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz.",
+        "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz.",
+        " Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz.",
+        " Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz.",
+        " Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz."
       ]
     },
     "session_recovery:available:link": {
@@ -18747,6 +18362,10 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } saat kaldı",
+        "${ gracePeriodHoursRemaining } saat kaldı"
+      ],
       "Didn’t make this request?": [
         "Bu isteği siz yapmadınız mı?"
       ],
@@ -18759,11 +18378,19 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Parola ${ boldDate } tarihinden başlayarak sıfırlanabilir. Bu özellik sahte istekleri iptal etmeniz için zaman tanır."
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Parola sıfırlama isteğinde bulunuldu (${ user.Email }). Parolanızı ${ hoursRemaining } saat içinde değiştirebilirsiniz.",
+        "Parola sıfırlama isteğinde bulunuldu (${ user.Email }). Parolanızı ${ hoursRemaining } saat içinde değiştirebilirsiniz."
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Parolanızı sıfırlamaya çalışan kişinin gerçekten siz olduğunuzu doğrulamak için istekleri onaylamadan önce 72 saat bekleriz. Parolanızı ${ boldTimeLeft } içinde değiştirebilirsiniz. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "${ boldEmail } için parola sıfırlama isteğinde bulunuldu."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Parolanizi ${ gracePeriodHoursRemaining } saat içinde değiştirebilirsiniz",
+        "Parolanizi ${ gracePeriodHoursRemaining } saat içinde değiştirebilirsiniz"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -18814,6 +18441,10 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Parola sıfırlama isteğinde bulunulsun mu?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Parolanızı ${ gracePeriodHoursRemaining } saat içinde sıfırlayabilirsiniz.",
+        "Parolanızı ${ gracePeriodHoursRemaining } saat içinde sıfırlayabilirsiniz."
       ]
     },
     "session_recovery:settings:action": {
@@ -18841,6 +18472,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } saat",
+        "${ gracePeriodHoursRemaining } saat"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } işlemi yapılabilir."
       ],
@@ -18943,6 +18578,12 @@
         "${ BRAND_NAME } kullanmayan kişileri davet etmek için takviminizi bir bağlantı ile paylaşın."
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Bir takvimde bulunabilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız",
+        "Bir takvimde bulunabilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız"
+      ]
+    },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "${ calendarName } takvimini paylaşmak istediğiniz ${ BRAND_NAME } hesaplarını ekleyin. Kendilerine bir davet gönderilecek."
@@ -18985,8 +18626,36 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
+        "İstenmeyen e-postalardan korunmak için ${ FREE_PASS_ALIASES } hide-my-email takma adı",
+        "İstenmeyen e-postalardan korunmak için ${ FREE_PASS_ALIASES } hide-my-email takma adı"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
+      ],
+      "${ maxAddresses } address": [
+        "${ maxAddresses } adres",
+        "${ maxAddresses } adres"
+      ],
+      "${ maxAddresses } email address": [
+        "${ maxAddresses } e-posta adresi",
+        "${ maxAddresses } e-posta adresi"
+      ],
+      "${ maxAddresses } extra email address": [
+        "${ maxAddresses } ek e-posta adresi",
+        "${ maxAddresses } ek e-posta adresi"
+      ],
+      "${ maxCalendars } calendar": [
+        "${ maxCalendars } takvim",
+        "${ maxCalendars } takvim"
+      ],
+      "${ maxDomains } email domain": [
+        "${ maxDomains } e-posta etki alanı",
+        "${ maxDomains } e-posta etki alanı"
+      ],
+      "${ PASS_PLUS_VAULTS } vault for your passwords": [
+        "Parolalarınız için ${ PASS_PLUS_VAULTS } kasa",
+        "Parolalarınız için ${ PASS_PLUS_VAULTS } kasa"
       ],
       "${ referrerName } is inviting you to try ${ BRAND_NAME }.": [
         "${ referrerName } sizi ${ BRAND_NAME } hizmetini denemeye davet ediyor."
@@ -19002,6 +18671,18 @@
       ],
       "${ value } total storage": [
         "${ value } toplam depolama alanı"
+      ],
+      "${ VPN_CONNECTIONS } high-speed VPN connection": [
+        "${ VPN_CONNECTIONS } yüksek hızlı VPN bağlantısı",
+        "${ VPN_CONNECTIONS } yüksek hızlı VPN bağlantısı"
+      ],
+      "${ vpnServersCountData.paid.countries }+ country": [
+        "${ vpnServersCountData.paid.countries } üzerinde ülkede",
+        "${ vpnServersCountData.paid.countries } üzerinde ülkede"
+      ],
+      "${ vpnServersCountData.paid.servers }+ server across": [
+        "${ vpnServersCountData.paid.servers } üzerinde sunucu",
+        "${ vpnServersCountData.paid.servers } üzerinde sunucu"
       ],
       "/user": [
         "/kullanıcı"
@@ -19159,6 +18840,10 @@
       "Save ${ priceDifferenceString }": [
         "${ priceDifferenceString } indirim alın"
       ],
+      "Secure ${ VPN_CONNECTIONS } device at a time": [
+        "Aynı anda ${ VPN_CONNECTIONS } aygıt için koruma",
+        "Aynı anda ${ VPN_CONNECTIONS } aygıt için koruma"
+      ],
       "Secure file sharing": [
         "Güvenli dosya paylaşımı"
       ],
@@ -19260,6 +18945,10 @@
       ],
       "use your own email.": [
         "kendi e-posta adresinizi kullanın."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.countries } ülkede sunucular",
+        "${ vpnServersCountData.free.countries } ülkede sunucular"
       ],
       "We’ll email you before your trial ends.": [
         "Deneme süreniz bitmeden önce size bir e-posta göndereceğiz."
@@ -19422,6 +19111,30 @@
         "Sınırları kaldırın"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } gün",
+        "${ days } gün"
+      ],
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
+      ],
+      "${ seconds } second": [
+        "${ seconds } saniye",
+        "${ seconds } saniye"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } ay ÜCRETSİZ",
+        "${ n } ay ÜCRETSİZ"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 kullanıcı"
@@ -19504,6 +19217,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
       "/ month": [
         "/ ay"
       ],
@@ -19629,6 +19346,30 @@
       "${ boldedMemberAddress } is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
         "${ boldedMemberAddress }, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor."
       ],
+      "${ n } member requested your help to sign in.": [
+        "${ n } üye oturum açmak için yardımınızı istedi.",
+        "${ n } üye oturum açmak için yardımınızı istedi."
+      ],
+      "${ n } user converted to SSO": [
+        "${ n } kullanıcıya tek oturum açma eklendi",
+        "${ n } kullanıcıya tek oturum açma eklendi"
+      ],
+      "${ n } user detached from SSO": [
+        "${ n } kullanıcı tek oturum açmadan çıkarıldı",
+        "${ n } kullanıcı tek oturum açmadan çıkarıldı"
+      ],
+      "${ n } user has joined your organization through your Identity Provider. Review the account now:": [
+        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesabı gözden geçirin:",
+        "Kuruluşunuza kimlik hizmeti sağlayıcınız üzerinden ${ n } kullanıcı katıldı. Bu hesapları gözden geçirin:"
+      ],
+      "${ n } user is inactive. You can safely remove this user from your organization.": [
+        "${ n } etkin olmayan kullanıcı var. Bu kullanıcıyı kuruluşunuzdan kaldırabilirsiniz.",
+        "${ n } etkin olmayan kullanıcı var. Bu kullanıcıları kuruluşunuzdan kaldırabilirsiniz."
+      ],
+      "${ n } user is requesting your help to sign in to their ${ BRAND_NAME } Account with single sign-on.": [
+        "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor.",
+        "${ n } kullanıcı, ${ BRAND_NAME } hesabında tek oturum açma kullanmak için yardımınızı istiyor."
+      ],
       "**SSO users (provided by your Identity Provider) will be deleted** and you will have to create them manually to add them back to your organization.": [
         "**Tek oturum açma kullanıcıları (kimlik hizmeti sağlayıcınızdan gelen) silinecek** ve bunları kuruluşunuza yeniden eklemek için el ile oluşturmanız gerekecek."
       ],
@@ -19682,6 +19423,14 @@
       ],
       "Current device": [
         "Bu aygıt"
+      ],
+      "Delete ${ n } inactive user?": [
+        "${ n } etkin olmayan kullanıcı silinsin mi?",
+        "${ n } etkin olmayan kullanıcı silinsin mi?"
+      ],
+      "Delete ${ n } user": [
+        "${ n } kullanıcıyı sil",
+        "${ n } kullanıcıyı sil"
       ],
       "Deny": [
         "İzin verme"
@@ -19961,6 +19710,10 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Kalan sürenize karşı gelen krediyi ${ BRAND_NAME } hesabınıza ekleyeceğiz."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var.",
+        "**${ currentPlanName }** tarifenizde hâlâ **${ daysRemaining }** günlük kullanım hakkınız var."
+      ],
       "Your ${ appStorage } is almost full": [
         "Kullandığınız ${ appStorage } dolmak üzere"
       ],
@@ -20025,6 +19778,62 @@
       ]
     },
     "Subscription attribute": {
+      "${ BRAND_NAME } Scribe writing assistant for ${ maxAi } user": [
+        "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı",
+        "${ maxAi } kullanıcı için ${ BRAND_NAME } Scribe yazma yardımcısı"
+      ],
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } size ayrılmış sunucu",
+        "${ ipAddresses } size ayrılmış sunucu"
+      ],
+      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
+        "En fazla ${ maxLumo } kullanıcı için ${ LUMO_APP_NAME }",
+        "En fazla ${ maxLumo } kullanıcı için ${ LUMO_APP_NAME }"
+      ],
+      "${ n } calendar per user": [
+        "Her kullanıcı için ${ n } takvim",
+        "Her kullanıcı için ${ n } takvim"
+      ],
+      "${ n } free VPN connection per user": [
+        "Her kullanıcı için ${ n } ücretsiz VPN bağlantısı",
+        "Her kullanıcı için ${ n } ücretsiz VPN bağlantısı"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } yüksek hızlı VPN bağlantısı",
+        "${ n } yüksek hızlı VPN bağlantısı"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } yüksek hızlı VPN bağlantısı / kullanıcı",
+        "${ n } yüksek hızlı VPN bağlantısı / kullanıcı"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN bağlantısı",
+        "${ n } VPN bağlantısı"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN bağlantısı / kullanıcı",
+        "${ n } VPN bağlantısı / kullanıcı"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } adres",
+        "${ UsedAddresses } adres"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi",
+        "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } takvim",
+        "${ UsedCalendars } takvim"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ MaxDomains } / ${ UsedDomains } özel etki alanı",
+        "${ MaxDomains } / ${ UsedDomains } özel etki alanı"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ MaxMembers } / ${ UsedMembers } kullanıcı",
+        "${ MaxMembers } / ${ UsedMembers } kullanıcı"
+      ],
       "1 email address": [
         "1 e-posta adresi"
       ],
@@ -20039,6 +19848,14 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Yerleşik reklam engelleyici (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "${ maxVpn } aygıt için yüksek hızlı VPN",
+        "${ maxVpn } aygıt için yüksek hızlı VPN"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı.",
+        "Kullanıcı başına ${ n } aygıt ile VPN bağlantısı."
       ]
     },
     "Subscription change warning": {
@@ -20082,6 +19899,10 @@
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } gün kaldı",
+        "${ dayDiff } gün kaldı"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } bilgisayar uygulaması"
@@ -20127,6 +19948,26 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } e-postalar, ek dosyalar, etkinlikler, dosyalar ve parolalar için kullanıcı başına ${ planMaxSpace } depolama alanı sunar. Ayrıca yıllık depolama alanı hediyeleri almaya da hak kazanırsınız."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "Her kullanıcı için ${ planNumberOfCalendars } takvim",
+        "Her kullanıcı için ${ planNumberOfCalendars } takvim"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } özel e-posta etki alanı",
+        "${ planNumberOfDomains } özel e-posta etki alanı"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-posta adresi",
+        "${ planNumberOfEmails } e-posta adresi"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "Her kullanıcı için ${ planNumberOfEmails } e-posta adresi",
+        "Her kullanıcı için ${ planNumberOfEmails } e-posta adresi"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } kullanıcı",
+        "${ planNumberOfUsers } kullanıcı"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "${ PROTON_SENTINEL_NAME } gelişmiş hesap koruması"
@@ -20863,6 +20704,52 @@
         "Herhangi bir SMTP kodu bulunamadı"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } gün",
+        "${ ceilDays } gün"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } saat",
+        "${ ceilHours } saat"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } dakika",
+        "${ ceilMinutes } dakika"
+      ],
+      "${ seconds } second": [
+        "${ seconds } saniye",
+        "${ seconds } saniye"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } s",
+        "${ hours } s"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 s",
+        "${ hoursInt }.5 s"
+      ],
+      "${ minutes } min": [
+        "${ minutes } dk",
+        "${ minutes } dk"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } saat",
+        "${ hours } saat"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 saat",
+        "${ hoursInt }.5 saat"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } dakika",
+        "${ minutes } dakika"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Saat dilimleri ara"
@@ -20941,9 +20828,6 @@
       "Account recovery": [
         "Hesap kurtarma"
       ],
-      "Account restricted": [
-        "Hesap kısıtlandı"
-      ],
       "Account suspended": [
         "Hesap askıya alınmış"
       ],
@@ -20964,6 +20848,10 @@
       ],
       "Activity monitor": [
         "Etkinlik izleyici"
+      ],
+      "Add ${ totalServerCount } server?": [
+        "${ totalServerCount } sunucu eklensin mi?",
+        "${ totalServerCount } sunucu eklensin mi?"
       ],
       "Add a custom logo": [
         "Özel logo ekle"
@@ -21214,6 +21102,10 @@
       "Coupon": [
         "Kupon"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } kullanıcıyı ekle",
+        "${ selectedUserIds.length } kullanıcıyı ekle"
+      ],
       "Create a new Gateway": [
         "Yeni ağ geçidi ekle"
       ],
@@ -21336,6 +21228,10 @@
       ],
       "Delete organization logo?": [
         "Kuruluş logosu silinsin mi?"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)",
+        "Sunucuyu sil (${ days } gün içinde geri alabilirsiniz)"
       ],
       "Delete user?": [
         "Kullanıcı silinsin mi?"
@@ -21532,6 +21428,10 @@
       "External PGP settings": [
         "Dış PGP ayarları"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } kullanıcı hesabı eklenemedi",
+        "${ failedUsers.length } kullanıcı hesabı eklenemedi"
+      ],
       "Filter for more focus": [
         "Daha iyi odaklanmak için süzün"
       ],
@@ -21663,6 +21563,10 @@
       ],
       "Import and export": [
         "İçe ve dışa aktarma"
+      ],
+      "Import as simple event?": [
+        "İçe basit etkinlik olarak aktarılsın mı?",
+        "İçe basit etkinlik olarak aktarılsın mı?"
       ],
       "Import contacts": [
         "Kişileri içe aktar"
@@ -22156,6 +22060,10 @@
       "Success": [
         "Başarılı"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n } kullanıcı hesabı eklendi",
+        "${ n } kullanıcı hesabı eklendi"
+      ],
       "Summary": [
         "Özet"
       ],
@@ -22549,9 +22457,6 @@
       "Edit label names": [
         "Etiket adlarını düzenle"
       ],
-      "Emails in your inbox are shown organized into categories": [
-        "Gelen kutunuzdaki e-postalar kategorilere göre gruplanmış olarak görüntülenir"
-      ],
       "Enable/disable desktop and mobile notifications": [
         "Bilgisayar ve mobil bildirimleri aç/kapat"
       ],
@@ -22793,7 +22698,7 @@
         "Bu imza değiştirilemez"
       ]
     },
-    "Tooltip; share calendar modal": {
+    "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "Uçtan uca şifrelenmiş olarak paylaşıldı"
       ],
@@ -22918,6 +22823,10 @@
       "Confirm all": [
         "Tümünü onayla"
       ],
+      "Could not automatically enable administrator access for ${ n } user, because their encryption keys have been updated in the meanwhile:": [
+        "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:",
+        "Aradan geçen zamanda şifreleme anahtarları güncellenmiş olduğundan ${ n } kullanıcıya otomatik olarak yönetici yetkisi verilemedi:"
+      ],
       "Could not enable administrator access: ${ error }": [
         "Yönetici yetkisi verilemedi: ${ error }"
       ],
@@ -23002,6 +22911,10 @@
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
         "Sınırsız sayıda hide-my-email takma adı edinmek için ${ passPlusPlanName } tarifesine yükseltin"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+        "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin",
+        "Aynı anda ${ n } aygıt ile VPN bağlantısı kurmak için ${ planName }ne yükseltin"
       ]
     },
     "Upgrade notice": {
@@ -23170,6 +23083,16 @@
         "Yazma yardımcısı"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır",
+        "Parola en az ${ MIN_PASSWORD_LENGTH } karakter uzunluğunda olmalıdır"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)",
+        "Daha kısa bir kullanıcı adı deneyin (en fazla ${ n } karakter)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Görüntüyü yeniden oynatmak için tıklayın"
@@ -23217,6 +23140,44 @@
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now ve diğerleri."
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } aygıt",
+        "${ n } aygıt"
+      ],
+      "${ n } server": [
+        "${ n } sunucu",
+        "${ n } sunucu"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN bağlantısı",
+        "${ n } VPN bağlantısı"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } ülke",
+        "${ numberOfCountries } ülke"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfCountries } ülkede ${ numberOfServers }",
+        "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfCountries } ülkede ${ numberOfServers }",
+        "${ numberOfCountries } ülkede ${ numberOfServers }"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "${ numberOfCountries } ülke arasından otomatik seçilir",
+        "${ numberOfCountries } ülke arasından otomatik seçilir"
+      ],
+      "Select from ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } üzerinde ülkeden birini seçin",
+        "${ numberOfCountries } üzerinde ülkeden birini seçin"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "${ numberOfCountries } üzerinde ülkede sunucular",
+        "${ numberOfCountries } üzerinde ülkede sunucular"
+      ]
+    },
     "vpn_2step: billing": {
       "Billed monthly": [
         "Ayda bir faturalanır"
@@ -23260,6 +23221,14 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ],
+      "${ n } year": [
+        "${ n } yıl",
+        "${ n } yıl"
+      ],
       "Includes ${ plan } (free for the first year!)": [
         "${ plan } tarifesini içerir (ilk yıl ücretsiz!)"
       ],
@@ -23288,6 +23257,18 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-posta adresi",
+        "${ n } ${ BRAND_NAME } e-posta adresi"
+      ],
+      "${ n } account per wallet": [
+        "Cüzdan başına ${ n } hesap",
+        "Cüzdan başına ${ n } hesap"
+      ],
+      "${ n } wallet": [
+        "${ n } cüzdan",
+        "${ n } cüzdan"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } programı"
       ],
@@ -23469,6 +23450,54 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "${ interval } haftada bir ${ multipleDaysString }",
+        "${ interval } haftada bir ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "${ interval } haftada bir her gün",
+        "${ interval } haftada bir her gün"
+      ],
+      "Every ${ interval } week on Friday": [
+        "${ interval } haftada bir Cuma günü",
+        "${ interval } haftada bir Cuma günü"
+      ],
+      "Every ${ interval } week on Monday": [
+        "${ interval } haftada bir Pazartesi günü",
+        "${ interval } haftada bir Pazartesi günü"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "${ interval } haftada bir Pazartesi günü, ${ timesString }",
+        "${ interval } haftada bir Pazartesi günü, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "${ interval } haftada bir Cumartesi günü",
+        "${ interval } haftada bir Cumartesi günü"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "${ interval } haftada bir Pazar günü",
+        "${ interval } haftada bir Pazar günü"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "${ interval } haftada bir Pazar günü, ${ timesString }",
+        "${ interval } haftada bir Pazar günü, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "${ interval } haftada bir Perşembe günü",
+        "${ interval } haftada bir Perşembe günü"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "${ interval } haftada bir Salı günü",
+        "${ interval } haftada bir Salı günü"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "${ interval } haftada bir Salı günü, ${ timesString }",
+        "${ interval } haftada bir Salı günü, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "${ interval } haftada bir Çarşamba günü",
+        "${ interval } haftada bir Çarşamba günü"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Haftada bir ${ multipleDaysString }"
       ],
@@ -23498,6 +23527,30 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "${ interval } haftada bir ${ multipleDaysString }, ${ timesString }",
+        "${ interval } haftada bir ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "${ interval } haftada bir her gün, ${ timesString }",
+        "${ interval } haftada bir her gün, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "${ interval } haftada bir Cuma günü, ${ timesString }",
+        "${ interval } haftada bir Cuma günü, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "${ interval } haftada bir Cumartesi günü, ${ timesString }",
+        "${ interval } haftada bir Cumartesi günü, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "${ interval } haftada bir Perşembe günü, ${ timesString }",
+        "${ interval } haftada bir Perşembe günü, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "${ interval } haftada bir Çarşamba günü, ${ timesString }",
+        "${ interval } haftada bir Çarşamba günü, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Haftada bir ${ multipleDaysString }, ${ timesString }"
       ],
@@ -23527,6 +23580,42 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "${ interval } haftada bir ${ multipleDaysString }, ${ untilString }",
+        "${ interval } haftada bir ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "${ interval } haftada bir her gün, ${ untilString }",
+        "${ interval } haftada bir her gün, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "${ interval } haftada bir Cuma günü, ${ untilString }",
+        "${ interval } haftada bir Cuma günü, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "${ interval } haftada bir Pazartesi günü, ${ untilString }",
+        "${ interval } haftada bir Pazartesi günü, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "${ interval } haftada bir Cumartesi günü, ${ untilString }",
+        "${ interval } haftada bir Cumartesi günü, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "${ interval } haftada bir Pazar günü, ${ untilString }",
+        "${ interval } haftada bir Pazar günü, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "${ interval } haftada bir Perşembe günü, ${ untilString }",
+        "${ interval } haftada bir Perşembe günü, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "${ interval } haftada bir Salı günü, ${ untilString }",
+        "${ interval } haftada bir Salı günü, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "${ interval } haftada bir Çarşamba günü, ${ untilString }",
+        "${ interval } haftada bir Çarşamba günü, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Haftada bir ${ multipleDaysString }, ${ untilString }"
       ],
@@ -23579,16 +23668,28 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "${ interval } yılda bir",
+        "${ interval } yılda bir"
+      ],
       "Yearly": [
         "Yıllık"
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "${ interval } yılda bir, ${ timesString }",
+        "${ interval } yılda bir, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Yılda bir, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "${ interval } yılda bir, ${ untilString }",
+        "${ interval } yılda bir, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
       ]

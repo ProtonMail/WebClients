@@ -4,12 +4,6 @@
     "language": "hu_HU"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } épp ír",
-        "${ usersTranslation } épp ír"
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -494,6 +488,10 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } és ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } épp ír",
+        "${ usersTranslation } épp ír"
       ],
       "Alpha only experimental feature": [
         "Alfa, kísérleti funkció"
