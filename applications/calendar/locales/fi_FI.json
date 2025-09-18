@@ -123,6 +123,9 @@
       "Cancel subscription": [
         "Peru tilaus"
       ],
+      "Cancel trial and pay": [
+        "Peruuta kokeilujakso ja maksa"
+      ],
       "Change password": [
         "Vaihda salasana"
       ],
@@ -583,6 +586,9 @@
       ],
       "Open settings": [
         "Avaa asetukset"
+      ],
+      "Passphrase": [
+        "Salalause"
       ],
       "Pause indexing": [
         "Keskeytä indeksointi"
@@ -3361,6 +3367,9 @@
       "Failed to load OAuth modal.": [
         "OAuth-modaalin lataaminen epäonnistui"
       ],
+      "Failed to open to contact": [
+        "Yhteystiedon avaaminen epäonnistui"
+      ],
       "First name is too long": [
         "Etunimi on liian pitkä"
       ],
@@ -3516,6 +3525,9 @@
       ],
       "Please enter a valid ZIP code": [
         "Syötä kelvollinen postinumero"
+      ],
+      "Please enter postal code": [
+        "Syötä postinumerosi"
       ],
       "Please enter ZIP code": [
         "Syötä postinumero"
@@ -4276,6 +4288,9 @@
       "Contacts": [
         "Yhteystiedot"
       ],
+      "Domain": [
+        "Verkkotunnus"
+      ],
       "Name": [
         "Nimi"
       ],
@@ -5026,6 +5041,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
+      ],
+      "Download current logs": [
+        "Lataa nykyiset lokitiedot"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lataa suosikkisovelluksesi tänään ja suojaa yksityisyytesi minne ikinä menetkin."
@@ -6038,6 +6056,9 @@
       "Expired": [
         "Erääntynyt"
       ],
+      "KOO": [
+        "KOO"
+      ],
       "Obsolete": [
         "Vanhentunut"
       ],
@@ -6422,6 +6443,9 @@
       ],
       "Participants": [
         "Osallistujat"
+      ],
+      "Passphrase:": [
+        "Salalause:"
       ],
       "Password": [
         "Salasana"
@@ -7209,6 +7233,9 @@
       "${ size } storage per user": [
         "${ size } tallennustilaa/käyttäjä"
       ],
+      "1 TB secure storage": [
+        "1 Tt suojattua tallennustilaa"
+      ],
       "1 user": [
         "1 käyttäjä"
       ],
@@ -7408,6 +7435,9 @@
       "Private photo backup": [
         "Yksityinen kuvien varmuuskopiointi"
       ],
+      "Quickly craft replies": [
+        "Laadi vastauksia nopeasti"
+      ],
       "Recover previous file versions": [
         "Palauta aiempia tiedostoversioita"
       ],
@@ -7458,6 +7488,9 @@
       ],
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
+      ],
+      "Support for up to 2 users": [
+        "Tuki jopa kahdelle käyttäjälle"
       ],
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
@@ -8511,6 +8544,9 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
       ],
+      "Taxes": [
+        "Verot"
+      ],
       "terms & conditions": [
         "käyttöehdot"
       ],
@@ -8535,6 +8571,12 @@
       ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
+      ],
+      "VAT": [
+        "ALV"
+      ],
+      "VAT number": [
+        "ALV-numero"
       ],
       "Your payment is still being processed": [
         "Maksuasi käsitellään vielä"
@@ -8574,8 +8616,23 @@
       "ABN": [
         "ABN"
       ],
+      "Add ABN": [
+        "Lisää ABN"
+      ],
+      "Add EIN": [
+        "Lisää EIN"
+      ],
+      "Add VAT number": [
+        "Lisää ALV-numero"
+      ],
       "Business Number": [
         "Yritystunnus"
+      ],
+      "Edit Business Number": [
+        "Muokkaa yritystunnusta"
+      ],
+      "Edit VAT number": [
+        "Muokkaa ALV-numeroa"
       ],
       "EIN": [
         "EIN"
@@ -8716,6 +8773,9 @@
       ],
       "Select a reason": [
         "Valitse syy"
+      ],
+      "Select country": [
+        "Valitse maa"
       ],
       "Select state": [
         "Valitse osavaltio"
@@ -9285,11 +9345,17 @@
       ]
     },
     "specialoffer: Link": {
+      "Browse securely": [
+        "Selaa turvallisesti"
+      ],
       "Get unlimited aliases": [
         "Hanki aliaksia rajattomasti"
       ],
       "Go to subscription plans": [
         "Siirry tilauksiin"
+      ],
+      "Guard against threats": [
+        "Suojaudu uhilta"
       ],
       "Increase your storage": [
         "Lisää tallennustilaasi"
@@ -10300,6 +10366,9 @@
       ],
       "Account recovery": [
         "Tilin palautus"
+      ],
+      "Account restricted": [
+        "Tiliä on rajoitettu"
       ],
       "Account security": [
         "Tilin suojaus"
