@@ -4,6 +4,1272 @@
     "language": "nb_NO"
   },
   "contexts": {
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } e-postadresse",
+        "${ addressCount } e-postadresser"
+      ],
+      "${ admins } admin": [
+        "${ admins } administrator",
+        "${ admins } administratorer"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } ny kalender",
+        "${ calendarsToBeCreatedCount } nye kalendere"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } sammenslått kalender",
+        "${ calendarsToBeMergedCount } sammenslåtte kalendere"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } dag",
+        "${ ceilDays } dager"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } time",
+        "${ ceilHours } timer"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minutt",
+        "${ ceilMinutes } minutter"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } kontakt har flere e-postadresser.",
+        "${ contactCount } kontakter har flere e-postadresser."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } medlem",
+        "${ contactEmailsLength } medlemmer"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlem)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlemmer)"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } kontakt funnet",
+        "${ contactsCount } kontakter funnet"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } ut av ${ countContacts } kontakt ble eksportert.",
+        "${ contactsExported.length } ut av ${ countContacts } kontakter ble eksportert."
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kontakt",
+        "${ contactsLength } kontakter"
+      ],
+      "${ count } conversation deleted": [
+        "${ count } samtale slettet",
+        "${ count } samtaler slettet"
+      ],
+      "${ count } draft deleted": [
+        "${ count } utkast slettet",
+        "${ count } utkast slettet"
+      ],
+      "${ count } message deleted": [
+        "${ count } melding slettet",
+        "${ count } meldinger slettet"
+      ],
+      "${ count } time": [
+        "${ count } gang",
+        "${ count } ganger"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kontakt ser identisk ut.",
+        "${ countMergeableContacts } kontakter ser identiske ut."
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } ut av ${ totalProgress }",
+        "${ currentProgress } ut av ${ totalProgress }"
+      ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } dag igjen",
+        "${ dayDiff } dager igjen"
+      ],
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dager"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } ekstra egendefinert domene",
+        "${ domains } ekstra egendefinerte domener"
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } samtale lagt til ${ labelName }.",
+        "${ elementsCount } samtaler lagt til ${ labelName }."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } samtale merket som lest.",
+        "${ elementsCount } samtaler merket som lest."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } samtale stjernemerket",
+        "${ elementsCount } samtaler stjernemerket"
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } samtale merket som ulest.",
+        "${ elementsCount } samtaler merket som ulest."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } samtale flyttet til ${ labelName } og avsender lagt til din ikke-søppelpostliste.",
+        "${ elementsCount } samtaler flyttet til ${ labelName } og avsenderene lagt til din ikke-søppelpostliste."
+      ],
+      "${ elementsCount } conversation moved to ${ labelName }.": [
+        "${ elementsCount } samtale flyttet til ${ labelName }.",
+        "${ elementsCount } samtaler flyttet til ${ labelName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } samtale flyttet til søppelpost og avsender lagt til søppelpostlisten din.",
+        "${ elementsCount } samtaler flyttet til søppelpost og avsenderene lagt til søppelpostlisten din."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } samtale fjernet fra ${ labelName }.",
+        "${ elementsCount } samtaler fjernet fra ${ labelName }."
+      ],
+      "${ elementsCount } conversation removed from Starred.": [
+        "${ elementsCount } samtale fjernet fra stjernemerket.",
+        "${ elementsCount } samtaler fjernet fra stjernemerket."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } samtale slumret",
+        "${ elementsCount } samtaler slumret"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } samtale slumring av",
+        "${ elementsCount } samtaler slumring av"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } samtale merkes som:",
+        "${ elementsCount } samtaler merkes som:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } samtale merkes som lest.",
+        "${ elementsCount } samtaler merkes som lest."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } samtale merkes som ulest.",
+        "${ elementsCount } samtaler merkes som ulest."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } samtale flyttes",
+        "${ elementsCount } samtaler flyttes"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } samtale vil bli avmerket fra:",
+        "${ elementsCount } samtaler vil bli avmerket fra:"
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } melding lagt til ${ labelName }.",
+        "${ elementsCount } meldinger lagt til ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } melding merket som lest.",
+        "${ elementsCount } meldinger merket som lest."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } melding stjernemerket",
+        "${ elementsCount } meldinger stjernemerket"
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } melding merket som ulest.",
+        "${ elementsCount } meldinger merket som ulest."
+      ],
+      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
+        "${ elementsCount } melding flyttet til ${ labelName } og avsender lagt til ikke-søppelpostlisten din.",
+        "${ elementsCount } meldinger flyttet til ${ labelName } og avsenderene lagt til ikke-søppelpostlisten din."
+      ],
+      "${ elementsCount } message moved to ${ labelName }.": [
+        "${ elementsCount } melding flyttet til ${ labelName }.",
+        "${ elementsCount } meldinger flyttet til ${ labelName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } melding flyttet til søppelpost og avsender lagt til søppelpostlisten.",
+        "${ elementsCount } meldinger flyttet til søppelpost og avsenderene lagt til søppelpostlisten."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } melding fjernet fra ${ labelName }.",
+        "${ elementsCount } meldinger fjernet fra ${ labelName }."
+      ],
+      "${ elementsCount } message removed from Starred.": [
+        "${ elementsCount } melding fjernet fra stjernemerket.",
+        "${ elementsCount } meldinger fjernet fra stjernemerket."
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } melding merkes som:",
+        "${ elementsCount } meldinger merkes som:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } melding merkes som lest.",
+        "${ elementsCount } meldinger merkes som lest."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } melding merkes som ulest.",
+        "${ elementsCount } meldinger merkes som ulest."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } melding flyttes",
+        "${ elementsCount } meldinger flyttes"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } melding vil bli avmerket fra:",
+        "${ elementsCount } meldinger vil bli avmerket fra:"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-postadresse",
+        "${ emailsCount } e-postadresser"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } innebygd bilde",
+        "${ embeddedAttachmentsCount } innebygde bilder"
+      ],
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } kommando funnet.",
+        "${ filteredList.length } kommandoer funnet."
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } time",
+        "${ gracePeriodHoursRemaining } timer"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } time til",
+        "${ gracePeriodHoursRemaining } timer til"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } gruppe funnet",
+        "${ groupCounts } grupper funnet"
+      ],
+      "${ hours } h": [
+        "${ hours } t",
+        "${ hours } t"
+      ],
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 t",
+        "${ hoursInt },5 t"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 time",
+        "${ hoursInt },5 timer"
+      ],
+      "${ ips } server": [
+        "${ ips } tjener",
+        "${ ips } tjenere"
+      ],
+      "${ messagesNotAuthorizedToMove } message could not be moved.": [
+        "${ messagesNotAuthorizedToMove } melding kunne ikke flyttes.",
+        "${ messagesNotAuthorizedToMove } meldinger kunne ikke flyttes."
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minutt",
+        "${ minutes } minutter"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } ut av ${ totalBeDeleted } kontakt ble slettet.",
+        "${ model.deleted.length } ut av ${ totalBeDeleted } kontakter ble slettet."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } ut av ${ totalBeMerged } kontakt ble slått sammen.",
+        "${ model.submitted.length } ut av ${ totalBeMerged } kontakter ble slått sammen."
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME }-epostadresse",
+        "${ n } ${ BRAND_NAME }-epostadresser"
+      ],
+      "${ n } account per wallet": [
+        "${ n } konto per lommebok",
+        "${ n } kontoer per lommebok"
+      ],
+      "${ n } calendar": [
+        "${ n } kalender",
+        "${ n } kalendere"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalender per bruker",
+        "${ n } kalendere per bruker"
+      ],
+      "${ n } custom email domain": [
+        "${ n } egendefinert e-postdomene",
+        "${ n } egendefinerte e-postdomener"
+      ],
+      "${ n } device": [
+        "${ n } enhet",
+        "${ n } enheter"
+      ],
+      "${ n } email address": [
+        "${ n } e-postadresse",
+        "${ n } e-postadresser/aliaser"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-postadresse per bruker",
+        "${ n } e-postadresser per bruker"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filtre"
+      ],
+      "${ n } folder": [
+        "${ n } mappe",
+        "${ n } mapper"
+      ],
+      "${ n } folder and label": [
+        "${ n } mappe og etikett",
+        "${ n } mapper og etiketter"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-forbindelse per bruker",
+        "${ n } gratis VPN-forbindelser per bruker"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email-alias",
+        "${ n } hide-my-email-aliaser"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } høyhastighets VPN-tilkobling",
+        "${ n } høyhastighets VPN-tilkoblinger"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } høyhastighets VPN-tilkobling per bruker",
+        "${ n } høyhastighets VPN-tilkoblinger per bruker"
+      ],
+      "${ n } label": [
+        "${ n } etikett",
+        "${ n } etiketter"
+      ],
+      "${ n } message per day": [
+        "${ n } melding per dag",
+        "${ n } meldinger per dag"
+      ],
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
+      ],
+      "${ n } month FREE": [
+        "${ n } måned GRATIS",
+        "${ n } måneder GRATIS"
+      ],
+      "${ n } server": [
+        "${ n } tjener",
+        "${ n }+ tjenere"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } delt ${ PASS_SHORT_APP_NAME }-hvelv per bruker",
+        "${ n } delte ${ PASS_SHORT_APP_NAME }-hvelv per bruker"
+      ],
+      "${ n } unread conversation": [
+        "${ n } ulest samtale",
+        "${ n } uleste samtaler"
+      ],
+      "${ n } user account": [
+        "${ n } brukerkonto",
+        "${ n } brukerkontoer"
+      ],
+      "${ n } vault": [
+        "${ n } hvelv",
+        "${ n } hvelv"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-tilkobling",
+        "${ n } VPN-tilkoblinger"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-tilkobling per bruker",
+        "${ n } VPN-tilkoblinger per bruker"
+      ],
+      "${ n } wallet": [
+        "${ n } lommebok",
+        "${ n } lommebøker"
+      ],
+      "${ notificationsToShow.length } new message": [
+        "${ notificationsToShow.length } ny melding",
+        "${ notificationsToShow.length } nye meldinger"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } land",
+        "${ numberOfCountries } land"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } over ${ numberOfCountries } land",
+        "${ numberOfServers } over ${ numberOfCountries }+ land"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } i ${ numberOfCountries } land",
+        "${ numberOfServers } i ${ numberOfCountries } land"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } bruker",
+        "Opptil ${ numberOfUsers } brukere"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } kobling renset",
+        "${ numberOfUTMTrackers } koblinger renset"
+      ],
+      "${ numMessages } message": [
+        "${ numMessages } melding",
+        "${ numMessages } meldinger"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } melding i samtalen",
+        "${ NumMessages } meldinger i samtalen"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } forekomst funnet",
+        "${ numOccurrences } forekomster funnet"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } forekomst funnet i e-postinnholdet",
+        "${ numOccurrences } forekomster funnet i e-postinnholdet"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dag filversjonshistorikk",
+        "${ options }-dagers filversjonshistorikk"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
+        "${ PASS_APP_NAME } med ${ n } hide-my-email-aliaser"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } utløper om ${ daysLeft } dag.",
+        "${ planName } utløper om ${ daysLeft } dager."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalender per bruker",
+        "${ planNumberOfCalendars } kalendere per bruker"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } egendefinert e-postdomene",
+        "${ planNumberOfDomains } egendefinerte e-postdomener"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } e-postadresse",
+        "${ planNumberOfEmails } e-postadresser"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-postadresse per bruker",
+        "${ planNumberOfEmails } e-postadresser per bruker"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } bruker",
+        "${ planNumberOfUsers } brukere"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mappe funnet",
+        "${ providerFoldersNumLocalized } mapper funnet"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etikett funnet i Gmail",
+        "${ providerFoldersNumLocalized } etiketter funnet i Gmail"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } fil vedlagt",
+        "${ pureAttachmentsCount } filer vedlagt"
+      ],
+      "${ receivedMessagesCount } email last month": [
+        "${ receivedMessagesCount } e-post forrige måned",
+        "${ receivedMessagesCount } e-poster forrige måned"
+      ],
+      "${ remainingDays } d": [
+        "${ remainingDays } d",
+        "${ remainingDays } d"
+      ],
+      "${ remainingDaysCount } day": [
+        "${ remainingDaysCount } dag",
+        "${ remainingDaysCount } dager"
+      ],
+      "${ remainingDaysCount } day left": [
+        "${ remainingDaysCount } dag igjen",
+        "${ remainingDaysCount } dager igjen"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } lisens",
+        "${ seats } ${ LUMO_APP_NAME } lisenser"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } skriveassistentlisens",
+        "${ seats } skriveassistentlisenser"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekund",
+        "${ seconds } sekunder"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
+        "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendere"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } kontakt valgt",
+        "${ selectedContactsLength }/${ contactsLength } kontakter valgt"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mappe valgt",
+        "${ selectedFoldersCount } mapper valgt"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etikett valgt",
+        "${ selectedFoldersCount } etiketter valgt"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mappe valgt",
+        "${ selectedFoldersCountLocalized } mapper valgt"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etikett valgt",
+        "${ selectedFoldersCountLocalized } etiketter valgt"
+      ],
+      "${ subscription.UnreadMessageCount } unread": [
+        "${ subscription.UnreadMessageCount } ulest",
+        "${ subscription.UnreadMessageCount } uleste"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dag",
+        "${ timeRemaining.inDays } dager"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } time",
+        "${ timeRemaining.inHours } timer"
+      ],
+      "${ total } conversation": [
+        "${ total } samtale",
+        "${ total } samtaler"
+      ],
+      "${ total } message": [
+        "${ total } melding",
+        "${ total } meldinger"
+      ],
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } deltaker",
+        "${ totalAttendees } deltakere"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } kontakt",
+        "${ totalContacts } kontakter"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } av ${ totalEvents } hendelse vil ikke bli importert. Utvid for detaljer.",
+        "${ totalEventsDiscarded } av ${ totalEvents } hendelser vil ikke bli importert. Utvid for detaljer."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kontakt kryptert og lagt til i kontaktlisten.",
+        "${ totalImported }/${ totalToImport } kontakter kryptert og lagt til i kontaktlisten."
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } hendelse kryptert og lagt til i kalenderen",
+        "${ totalImported }/${ totalToImport } hendelser kryptert og lagt til i kalenderen"
+      ],
+      "${ trackersCount } email tracker blocked": [
+        "${ trackersCount } e-postsporer blokkert",
+        "${ trackersCount } e-postsporere blokkert"
+      ],
+      "${ trackersCount } tracker blocked": [
+        "${ trackersCount } sporer blokkert",
+        "${ trackersCount } sporere blokkert"
+      ],
+      "${ unreadCount } newsletter": [
+        "${ unreadCount } nyhetsbrev",
+        "${ unreadCount } nyhetsbrev"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } planlagt melding",
+        "${ unreadCount } planlagte meldinger"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } ulest melding",
+        "${ unreads } uleste meldinger"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } kontakt oppdatert",
+        "${ updated } kontakter oppdatert"
+      ],
+      "${ users } user": [
+        "${ users } bruker",
+        "${ users } brukere"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } medlem)",
+        "(${ memberCount } medlemmer)"
+      ],
+      "**${ total }** result found in ${ labelName }": [
+        "**${ total }** resultat funnet i ${ labelName }",
+        "**${ total }** resultater funnet i ${ labelName }"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } tilkobling for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)",
+        "+${ organization.BonusVPN } tilkoblinger for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)"
+      ],
+      "Add to ${ groupCount } group": [
+        "Legg til ${ groupCount } gruppe",
+        "Legg til ${ groupCount } grupper"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "(${ totalFoldersCount } mappe)",
+        "Alle (${ totalFoldersCount } mapper)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "(${ totalFoldersCount } etikett)",
+        "Alle (${ totalFoldersCount } etiketter)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }.",
+        "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Mengde kalender opprettet: ${ createdCalendarCount } av ${ calendarsToBeCreated }.",
+        "Mengde kalendere opprettet: ${ createdCalendarCount } ut av ${ calendarsToBeCreated }."
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Det oppstod en feil under kryptering og tillegging av hendelsen din. ${ totalImported } av ${ totalToImport } hendelse importert.",
+        "Det oppstod en feil under kryptering og tillegging av hendelsene dine. ${ totalImported } av ${ totalToImport } hendelser importert."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",
+        "Er du sikker på at du ønsker å slette ${ count } kontakter permanent?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Er du sikker på at du vil slette ${ count } samtale permanent?",
+        "Er du sikker på at du vil slette ${ count } samtaler permanent?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Er du sikker på at du vil slette ${ count } utkast permanent?",
+        "Er du sikker på at du vil slette ${ count } utkast permanent?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Er du sikker på at du vil slette ${ count } melding permanent?",
+        "Er du sikker på at du vil slette ${ count } meldinger permanent?"
+      ],
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "På det meste er ${ maxAttendees } deltaker tillatt per invitasjon.",
+        "På det meste er ${ maxAttendees } deltakere tillatt per invitasjon"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "På det meste ${ maxContacts } kontakt er tillatt per kontaktgruppe.",
+        "På det meste ${ maxContacts } kontakter er tillatt per kontaktgruppe."
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Velger automatisk fra ${ numberOfCountries } land",
+        "Velger automatisk fra ${ numberOfCountries } land"
+      ],
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Velg en dato i løpet av ${ n } dag.",
+        "Velg en dato i løpet av de neste ${ n } dagene."
+      ],
+      "Contact deleted": [
+        "Kontakt slettet",
+        "Kontakter slettet"
+      ],
+      "Contact group deleted": [
+        "Kontaktgruppe slettet",
+        "Kontaktgrupper slettet"
+      ],
+      "Conversation updated": [
+        "Samtalen oppdatert",
+        "Samtaler oppdatert"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Opprett ${ calendarsToBeCreatedCount } ny kalender",
+        "Opprett ${ calendarsToBeCreatedCount } nye kalendere"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Opprett en sikker sky for ${ value } medlem",
+        "Opprett en sikker sky for ${ value } medlemmer"
+      ],
+      "Create up to ${ n } calendar": [
+        "Opprett opptil ${ n } kalender",
+        "Opprett opptil ${ n } kalendere"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Opprett opptil ${ n } kalender eller legg til kalendere fra venner, familie, kollegaer og organisasjoner.",
+        "Opprett opptil ${ n } kalendere eller legg til kalendere fra venner, familie, kollegaer og organisasjoner."
+      ],
+      "Delete ${ count } contact": [
+        "Slett ${ count } kontakt",
+        "Slett ${ count } kontakter"
+      ],
+      "Delete ${ count } contact group": [
+        "Slett ${ count } kontaktgruppe",
+        "Slett ${ count } kontaktgrupper"
+      ],
+      "Delete ${ count } conversation": [
+        "Slett ${ count } samtale",
+        "Slett ${ count } samtaler"
+      ],
+      "Delete ${ count } draft": [
+        "Slett ${ count } utkast",
+        "Slett ${ count } utkast"
+      ],
+      "Delete ${ count } message": [
+        "Slett ${ count } melding",
+        "Slett ${ count } meldinger"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Slett ${ selectedCount } kontakt",
+        "Slett ${ selectedCount } kontakter"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Slett ${ selectedCount } kontaktgruppe",
+        "Slett ${ selectedCount } kontaktgrupper"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Fjern valget fra minst ${ calendarsToFixCount } kalender",
+        "Fjern valgene fra minst ${ calendarsToFixCount } kalendere"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Fjern valget fra minst ${ calendarsToFixCount } kalender eller",
+        "Fjern valgene fra minst ${ calendarsToFixCount } kalendere eller"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Vil du laste ned dette vedlegget allikevel?",
+        "Vil du laste ned disse vedleggene allikevel?"
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Vil du klarére den primære offentlige nøkkelen med følgende fingeravtrykk?",
+        "Vil du klarére de primære offentlige nøklene med følgende fingeravtrykk?"
+      ],
+      "embedded image": [
+        "innebygd bilde",
+        "innebygde bilder"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Beregnet tid som gjenstår: ${ estimatedMinutes } minutt",
+        "Beregnet tid som gjenstår: ${ estimatedMinutes } minutter"
+      ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Hendelsen starter om ${ minutesUntilEvent } minutt",
+        "Hendelsen starter om ${ minutesUntilEvent } minutter"
+      ],
+      "Every ${ interval } day": [
+        "Hver ${ interval } dag",
+        "Hver ${ interval } dag"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Hver ${ interval } dag, ${ timesString }",
+        "Hver ${ interval } dag, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Hver ${ interval } dag, ${ untilString }",
+        "Hver ${ interval } dag, ${ untilString }"
+      ],
+      "Every ${ interval } month ${ onDayString }": [
+        "Hver ${ interval } måned ${ onDayString }",
+        "Hver ${ interval } måned ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
+        "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
+        "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Hver ${ interval } uke på ${ multipleDaysString }",
+        "Hver ${ interval } uke på ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }",
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }",
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Hver ${ interval } uke på alle dager",
+        "Hver ${ interval } uke på alle dager"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Hver ${ interval } uke på alle dager, ${ timesString }",
+        "Hver ${ interval } uke på alle dager, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Hver ${ interval } uke på alle dager, ${ untilString }",
+        "Hver ${ interval } uke på alle dager, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Hver ${ interval } uke på fredag",
+        "Hver ${ interval } uke på fredag"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Hver ${ interval } uke på fredag, ${ timesString }",
+        "Hver ${ interval } uke på fredag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Hver ${ interval } uke på fredag, ${ untilString }",
+        "Hver ${ interval } uke på fredag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Hver ${ interval } uke på mandag",
+        "Hver ${ interval } uke på mandag"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Hver ${ interval } uke på mandag, ${ timesString }",
+        "Hver ${ interval } uke på mandag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Hver ${ interval } uke på mandag, ${ untilString }",
+        "Hver ${ interval } uke på mandag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Hver ${ interval } uke på lørdag",
+        "Hver ${ interval } uke på lørdag"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Hver ${ interval } uke på lørdag, ${ timesString }",
+        "Hver ${ interval } uke på lørdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Hver ${ interval } uke på lørdag, ${ untilString }",
+        "Hver ${ interval } uke på lørdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Hver ${ interval } uke på søndag",
+        "Hver ${ interval } uke på søndag"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Hver ${ interval } uke på søndag, ${ timesString }",
+        "Hver ${ interval } uke på søndag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Hver ${ interval } uke på søndag, ${ untilString }",
+        "Hver ${ interval } uke på søndag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Hver ${ interval } uke på torsdag",
+        "Hver ${ interval } uke på torsdag"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Hver ${ interval } uke på torsdag, ${ timesString }",
+        "Hver ${ interval } uke på torsdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Hver ${ interval } uke på torsdag, ${ untilString }",
+        "Hver ${ interval } uke på torsdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Hver ${ interval } uke på tirsdag",
+        "Hver ${ interval } uke på tirsdag"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Hver ${ interval } uke på tirsdag, ${ timesString }",
+        "Hver ${ interval } uke på tirsdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Hver ${ interval } uke på tirsdag, ${ untilString }",
+        "Hver ${ interval } uke på tirsdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Hver ${ interval } uke på onsdag",
+        "Hver ${ interval } uke på onsdag"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Hver ${ interval } uke på onsdag, ${ timesString }",
+        "Hver ${ interval } uke på onsdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Hver ${ interval } uke på onsdag, ${ untilString }",
+        "Hver ${ interval } uke på onsdag, ${ untilString }"
+      ],
+      "Every ${ interval } year": [
+        "Hvert ${ interval } år",
+        "Hvert ${ interval } år"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Hvert ${ interval } år, ${ timesString }",
+        "Hvert ${ interval } år, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Hvert ${ interval } år, ${ untilString }",
+        "Hvert ${ interval } år, ${ untilString }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Utløper om ${ minutesDiff } minutt",
+        "Utløper om ${ minutesDiff } minutter"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Utløper om mindre enn ${ hoursDiff } time",
+        "Utløper om mindre enn ${ hoursDiff } timer"
+      ],
+      "file attached": [
+        "fil vedlagt",
+        "filer vedlagt"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Fant ${ itemsCount } forslag, bruk tastaturet til å navigere.",
+        "Fant ${ itemsCount } forslag, bruk tastaturet til å navigere."
+      ],
+      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
+        "Gratis å prøve i ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
+        "Gratis å prøve i ${ ASSISTANT_TRIAL_TIME_DAYS } dager"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Har ${ numAttachments } vedlegg (${ numAttachmentsSize })",
+        "Har ${ numAttachments } vedlegg (${ numAttachmentsSize })"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "Høyhastighets VPN på ${ n } enhet",
+        "Høyhastighets VPN på ${ n } enheter"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importer ${ calendarCount } av ${ totalCalendarsCount } kalender",
+        "Importer ${ calendarCount } av ${ totalCalendarsCount } kalendere"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importer alle meldinger fra ${ itemsToImportCount } mappe og merk dem som.",
+        "Importer alle meldinger fra ${ itemsToImportCount } mapper og merk dem som."
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importer alle meldinger fra ${ itemsToImportCount } etikett og merk dem som.",
+        "Importer alle meldinger fra ${ itemsToImportCount } etiketter og merk dem som."
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } mappe og merk dem som.",
+        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } mapper og merk dem som."
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } etikett og merk dem som.",
+        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } etiketter og merk dem som."
+      ],
+      "Import as simple event?": [
+        "Importer som enkel hendelse?",
+        "Importer som enkle hendelser?"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Sett inn ${ totalChecked } kontakt",
+        "Sett inn ${ totalChecked } kontakter"
+      ],
+      "Insert image": [
+        "Sett inn bilde",
+        "Sett inn bilder"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Label message as": [
+        "Merk melding som",
+        "Merk meldinger som"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
+        "Slå sammen minst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere."
+      ],
+      "Message updated": [
+        "Meldingen oppdatert",
+        "Meldinger oppdatert"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "Flytt ${ selectionCount } samtale",
+        "Flytt ${ selectionCount } samtaler"
+      ],
+      "Move ${ selectionCount } message": [
+        "Flytt ${ selectionCount } melding",
+        "Flytt ${ selectionCount } meldinger"
+      ],
+      "Move message to": [
+        "Flytt melding til",
+        "Flytt meldinger til"
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Nye e-poster fra ${ senderEmailAddress } og ${ otherSendersCount } annen vil ikke leveres og slettes permanent.",
+        "Nye e-poster fra ${ senderEmailAddress } og ${ otherSendersCount } andre vil ikke leveres og slettes permanent."
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "En av kontaktene har ingen e-postadresse: ${ noEmailsContactNamesList }.",
+        "Noen av kontaktene har ingen e-postadresser: ${ noEmailsContactNamesList }. "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "En av gruppene har ingen kontakter: ${ noContactGroupList }",
+        "Noen av gruppene har ingen kontakter: ${ noContactGroupList } "
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Tilbakestilling av passord forespurt (${ user.Email }). Du kan endre passordet ditt om ${ hoursRemaining } time.",
+        "Tilbakestilling av passord forespurt (${ user.Email }). Du kan endre passordet ditt om ${ hoursRemaining } timer."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Løs den uthevede konflikten for å fortsette.",
+        "Løs de uthevede konfliktene for å fortsette."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Velg hvilke e-postadresser som skal legges til i ${ groupCount } gruppe.",
+        "Velg hvilke e-postadresser som skal legges til i ${ groupCount } grupper."
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Omkategorisert ${ elementsCount } melding.",
+        "Omkategorisert ${ elementsCount } meldinger."
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Fjernet duplisert mottaker: ${ recipents }",
+        "Fjernet dupliserte mottakere: ${ recipents }"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer.",
+        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Velg alle ${ elementsCount } i ${ location }",
+        "Velg alle ${ elementsCount } i ${ location }"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Sendt av ${ MAIL_APP_NAME } med nulltilgangskryptering til bekreftet mottaker.",
+        "Sendt av ${ MAIL_APP_NAME } med nulltilgangskryptering til bekreftede mottakere."
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Sendt av deg med ende-til-ende-kryptering til bekreftet mottaker.",
+        "Sendt av deg med ende-til-ende-kryptering til bekreftede mottakere."
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Tjenere i ${ numberOfCountries }+ land",
+        "Tjenere i ${ numberOfCountries }+ land"
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Abonnementet fornyes automatisk hver ${ cycle } måned.",
+        "Abonnementet fornyes automatisk hver ${ cycle } måned."
+      ],
+      "Support for ${ n } custom email domain": [
+        "Støtte for ${ n } egendefinert e-postdomene",
+        "Støtte for ${ n } egendefinerte e-postdomener"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Vedlegget kan ikke dekrypteres.\\nHvis du har den tilsvarende private nøkkelen, vil du fortsatt kunne dekryptere\\nfilen med et program som GnuPG.",
+        "Noen av vedleggene kan ikke dekrypteres.Hvis du har den tilsvarende private nøkkelen, vil du fortsatt kunne dekryptere filene med et program som GnuPG."
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Bekreftelsen av vedleggets signatur mislyktes.\\nDu kan fortsatt laste ned dette vedlegget, men det kan ha blitt tuklet med.",
+        "Noen av vedleggenes signaturer ble ikke bekreftet. Du kan fortsatt laste ned disse vedleggene, men de kan ha blitt tuklet med."
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupongen er gyldig for ${ couponRedemptions } fornyelse.",
+        "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Følgende adresse er ikke gyldig: ${ invalidAddresses }",
+        "Følgende adresser er ikke gyldige: ${ invalidAddresses }"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for den første ${ subscriptionLength } måneden.",
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
+        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
+      ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Verifiseringen av ${ contactNames } mislyktes: kontakten er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontakten på nytt for å sende en melding til ${ contactAddresses } eller redigere kontakten.",
+        "Verifiseringen av ${ contactNames } mislyktes: kontaktene er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontaktene på nytt for å sende en melding til ${ contactAddresses } eller redigere kontaktene."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
+        "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Denne samtalen vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
+        "Disse samtalene vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
+      ],
+      "This file contains an event invitation:": [
+        "Denne filen inneholder en hendelsesinvitasjon:",
+        "Denne filen inneholder hendelsesinvitasjoner:"
+      ],
+      "This file contains an invitation response:": [
+        "Denne filen inneholder et svar på en invitasjon:",
+        "Denne filen inneholder svar på invitasjoner:"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Denne meldingen vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
+        "Disse meldingene vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Denne tillatelsen utløper om ${ timeRemaining.inDays } dag",
+        "Denne tillatelsen utløper om ${ timeRemaining.inDays } dager"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Denne tillatelsen utløper om ${ timeRemaining.inHours } time",
+        "Denne tillatelsen utløper om ${ timeRemaining.inHours } timer"
+      ],
+      "Total for ${ n } month": [
+        "Totalt for ${ n } måned",
+        "Totalt for ${ n } måneder"
+      ],
+      "Trust new key?": [
+        "Klarére ny nøkkel?",
+        "Klarére nye nøkler?"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brukernavn (maks ${ n } tegn)",
+        "Prøv et kortere brukernavn (maks ${ n } tegn)"
+      ],
+      "Up to ${ n } user": [
+        "Opptil ${ n } bruker",
+        "Opptil ${ n } brukere"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Opptil ${ n } bruker (${ adminsText }, ${ usersText })",
+        "Opptil ${ n } brukere (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Bruk på opptil ${ n } enhet samtidig",
+        "Bruk på opptil ${ n } enheter samtidig"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Deling av hvelv (opptil ${ n } person)",
+        "Deling av hvelv (opptil ${ n } personer)"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-tilkobling for ${ n } enhet per bruker",
+        "VPN-tilkobling for ${ n } enheter per bruker"
+      ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Vi har oppdaget feil. E-posten din kan ikke sendes til den oppgitte e-postadressen av følgende årsak:",
+        "Vi har oppdaget feil. E-posten din kan ikke sendes til noen av e-postadressene som er oppgitt av følgende årsaker:"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Vi har oppdaget noen advarsler. Følgende e-postadresse mottar kanskje ikke e-post:",
+        "Vi har oppdaget noen advarsler. Følgende e-postadresser mottar kanskje ikke e-post:"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Vi beskyttet deg mot ${ trackersCount } sporer",
+        "Vi beskyttet deg mot ${ trackersCount } sporere"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt.",
+        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
+        "Du kan ikke sende e-post til flere enn ${ maxContacts } mottakere."
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
+        "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Du kan ikke åpne mer enn ${ maxActiveComposer } skrivevindu samtidig",
+        "Du kan ikke åpne mer enn ${ maxActiveComposer } skrivevinduer samtidig"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Du har ${ timeRemaining.inDays } dag på deg til å tilbakestille passordet ditt.",
+        "Du har ${ timeRemaining.inDays } dager på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du har ${ timeRemaining.inHours } time på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inHours } timer på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du har ${ timeRemaining.inMinutes } minutt på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inMinutes } minutter på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du har ${ timeRemaining.inSeconds } sekund på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inSeconds } sekunder på deg til å tilbakestille passordet ditt."
+      ],
+      "You have **${ count } conversation** stored in this folder": [
+        "Du har **${ count } samtale** lagret i denne mappen",
+        "Du har **${ count } samtaler** lagret i denne mappen"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Du har **${ count } samtale** merket med denne etiketten",
+        "Du har **${ count } samtaler** merket med denne etiketten"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "Du har **${ count } melding** lagret i denne mappen",
+        "Du har **${ count } meldinger** lagret i denne mappen"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Du har **${ count } melding** merket med denne etiketten",
+        "Du har **${ count } meldinger** merket med denne etiketten"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Du har aktivert adressebekreftelse med klarerte nøkler for denne e-postadressen,\nmen ingen aktiv krypteringsnøkkel er klarert.\nDu må klarére en nøkkel som er gyldig for sending for å sende en melding til denne e-postadressen.",
+        "Du har aktivert adressebekreftelse med klarerte nøkler for disse e-postadressene,\nmen ingen aktive krypteringsnøkler er klarert.\nDu må klarére nøkler som er gyldig for sending for å sende en melding til disse e-postadressene."
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Du valgte **${ count } samtale** fra denne mappen",
+        "Du valgte **${ count } samtaler** fra denne mappen"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Du har valgt **${ count } samtale** med denne etiketten",
+        "Du har valgt **${ count } samtaler** med denne etiketten"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Du har valgt **${ count } melding** fra denne mappen",
+        "Du har valgt **${ count } meldinger** fra denne mappen"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Du valgte **${ count } melding** med denne etiketten",
+        "Du valgte **${ count } meldinger** med denne etiketten"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Du valgte **${ elementsCount } samtale** i ${ location }.",
+        "Du valgte **${ elementsCount } samtaler** i ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Du valgte **${ elementsCount } samtale**.",
+        "Du valgte **${ elementsCount } samtaler**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Du valgte **${ elementsCount } melding** i ${ location }.",
+        "Du valgte **${ elementsCount } meldinger** i ${ location }."
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Du valgte **${ elementsCount } melding**.",
+        "Du valgte **${ elementsCount } meldinger**."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Du har fortsatt **${ daysRemaining }** dag igjen på din **${ currentPlanName }**-plan.",
+        "Du har fortsatt **${ daysRemaining }** dager igjen på din **${ currentPlanName }**-plan."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
+        "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelse.",
+        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelser."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Meldingen din utløper om ${ numberOfDays } dag.",
+        "Meldingen din utløper om ${ numberOfDays } dager."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
+        "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
+      ]
+    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Videresending starter snart. Nye e-poster vil vises i innboksen din."
@@ -140,10 +1406,6 @@
       ],
       "As Scheduled": [
         "Som planlagt"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "På det meste ${ maxContacts } kontakt er tillatt per kontaktgruppe.",
-        "På det meste ${ maxContacts } kontakter er tillatt per kontaktgruppe."
       ],
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
@@ -388,14 +1650,6 @@
       "Delete": [
         "Slett"
       ],
-      "Delete ${ selectedCount } contact": [
-        "Slett ${ selectedCount } kontakt",
-        "Slett ${ selectedCount } kontakter"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Slett ${ selectedCount } kontaktgruppe",
-        "Slett ${ selectedCount } kontaktgrupper"
-      ],
       "Delete all": [
         "Slett alle"
       ],
@@ -434,6 +1688,9 @@
       ],
       "Disable alias": [
         "Deaktiver alias"
+      ],
+      "Disable categories": [
+        "Deaktiver kategorier"
       ],
       "Disabling alias": [
         "Deaktiverer alias"
@@ -741,10 +1998,6 @@
       "Insert": [
         "Sett inn"
       ],
-      "Insert ${ totalChecked } contact": [
-        "Sett inn ${ totalChecked } kontakt",
-        "Sett inn ${ totalChecked } kontakter"
-      ],
       "Insert contact": [
         "Sett inn kontakt"
       ],
@@ -766,8 +2019,14 @@
       "Join with ${ MEET_APP_NAME }": [
         "Bli med med ${ MEET_APP_NAME }"
       ],
+      "Keep categories": [
+        "Behold kategorier"
+      ],
       "Keep my subscription": [
         "Behold mitt abonnement"
+      ],
+      "Label": [
+        "Etikett"
       ],
       "Label as": [
         "Merk som"
@@ -1627,10 +2886,6 @@
       "Yes, I'll attend": [
         "Ja, jeg vil delta"
       ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakt.",
-        "Du kan ikke sende vCard-filer med mer enn ${ maxAttachments } kontakter."
-      ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes om 2 dager ${ upgradeButton }."
       ],
@@ -1689,14 +2944,6 @@
       ]
     },
     "Addon": {
-      "${ domains } additional custom domain": [
-        "${ domains } ekstra egendefinert domene",
-        "${ domains } ekstra egendefinerte domener"
-      ],
-      "${ ips } server": [
-        "${ ips } tjener",
-        "${ ips } tjenere"
-      ],
       "${ price } per dedicated server": [
         "${ price } per dedikerte tjener"
       ],
@@ -1708,18 +2955,6 @@
       ],
       "${ price } per user": [
         "${ price } per bruker"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } lisens",
-        "${ seats } ${ LUMO_APP_NAME } lisenser"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } skriveassistentlisens",
-        "${ seats } skriveassistentlisenser"
-      ],
-      "${ users } user": [
-        "${ users } bruker",
-        "${ users } brukere"
       ]
     },
     "Alert": {
@@ -1890,10 +3125,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
       "/ month": [
         "/måned"
       ],
@@ -1983,11 +3214,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig på ${ formattedDate }. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
@@ -2148,14 +3379,6 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall hide-my-email-aliaser, deling, integrert 2FA, ${ DARK_WEB_MONITORING_NAME } og mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer.",
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresse, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer.",
-        "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer ${ addresses } e-postadresser, støtte for tilpassede e-postdomener, ubegrensede hide-my-email-aliaser og mer."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Sikre e-postene dine og planlegg med ende-til-ende-kryptering. Inkluderer 15 e-postadresser, støtte for tilpassede e-postdomener, ${ BRAND_NAME } Scribe-skriveassistent, ubegrensede hide-my-email-aliaser og mer."
@@ -2649,16 +3872,8 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
-        "${ users } bruker",
-        "${ users } brukere"
-      ],
       "Total": [
         "Totalt"
-      ],
-      "Total for ${ n } month": [
-        "Totalt for ${ n } måned",
-        "Totalt for ${ n } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -3950,16 +5165,8 @@
       ]
     },
     "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } gang",
-        "${ count } ganger"
-      ],
       "Daily": [
         "Daglig"
-      ],
-      "Every ${ interval } day": [
-        "Hver ${ interval } dag",
-        "Hver ${ interval } dag"
       ],
       "until ${ dateString }": [
         "til ${ dateString }"
@@ -3968,19 +5175,11 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Daglig, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Hver ${ interval } dag, ${ timesString }",
-        "Hver ${ interval } dag, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Daglig, ${ untilString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Hver ${ interval } dag, ${ untilString }",
-        "Hver ${ interval } dag, ${ untilString }"
       ]
     },
     "Date label": {
@@ -4110,10 +5309,6 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slår sammen kontakter... Dette kan ta noen få minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
-      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
-        "Nye e-poster fra ${ senderEmailAddress } og ${ otherSendersCount } annen vil ikke leveres og slettes permanent.",
-        "Nye e-poster fra ${ senderEmailAddress } og ${ otherSendersCount } andre vil ikke leveres og slettes permanent."
-      ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nye e-postmeldinger fra ${ senderEmailAddress } vil ikke leveres og slettes permanent."
       ],
@@ -4213,10 +5408,6 @@
       ]
     },
     "Desktop notification body": {
-      "${ notificationsToShow.length } new message": [
-        "${ notificationsToShow.length } ny melding",
-        "${ notificationsToShow.length } nye meldinger"
-      ],
       "From: ${ sender } - ${ Subject }": [
         "Fra: ${ sender } - ${ Subject }"
       ]
@@ -4385,10 +5576,6 @@
       "Event starting now": [
         "Hendelse starter nå"
       ],
-      "Event starts in ${ minutesUntilEvent } minute": [
-        "Hendelsen starter om ${ minutesUntilEvent } minutt",
-        "Hendelsen starter om ${ minutesUntilEvent } minutter"
-      ],
       "Event starts tomorrow": [
         "Hendelse starter i morgen"
       ]
@@ -4522,10 +5709,6 @@
       "Choose a date in the future.": [
         "Velg en dato i fremtiden."
       ],
-      "Choose a date within the next ${ n } day.": [
-        "Velg en dato i løpet av ${ n } dag.",
-        "Velg en dato i løpet av de neste ${ n } dagene."
-      ],
       "Condition incomplete": [
         "Betingelse ufullstendig"
       ],
@@ -4558,14 +5741,6 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfeil: kunne ikke dekryptere innholdet i denne meldingen."
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Fjern valget fra minst ${ calendarsToFixCount } kalender",
-        "Fjern valgene fra minst ${ calendarsToFixCount } kalendere"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Fjern valget fra minst ${ calendarsToFixCount } kalender eller",
-        "Fjern valgene fra minst ${ calendarsToFixCount } kalendere eller"
       ],
       "Domain not available, try again later": [
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
@@ -4696,10 +5871,6 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Maksimalt antall vedlegg (${ attachmentsCountLimit }) overskredet"
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Slå sammen minst ${ calendarsToFixCount } kalender med en eksisterende ${ BRAND_NAME }-kalender.",
-        "Slå sammen minst ${ calendarsToFixCount } kalendere med eksisterende ${ BRAND_NAME }-kalendere."
-      ],
       "Message needs to be sent first": [
         "Meldingen må sendes først"
       ],
@@ -4742,14 +5913,6 @@
       "Not a valid number": [
         "Ikke et gyldig tall"
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "En av kontaktene har ingen e-postadresse: ${ noEmailsContactNamesList }.",
-        "Noen av kontaktene har ingen e-postadresser: ${ noEmailsContactNamesList }. "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "En av gruppene har ingen kontakter: ${ noContactGroupList }",
-        "Noen av gruppene har ingen kontakter: ${ noContactGroupList } "
-      ],
       "Organization key is not decrypted": [
         "Organisasjonsnøkkel er ikke dekryptert"
       ],
@@ -4791,10 +5954,6 @@
       ],
       "Please enter ZIP code": [
         "Skriv inn postnummer"
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Løs den uthevede konflikten for å fortsette.",
-        "Løs de uthevede konfliktene for å fortsette."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Angi enten et fornavn, et etternavn eller et visningsnavn."
@@ -4859,10 +6018,6 @@
       "re-activate the previous key": [
         "aktiver forrige nøkkel på nytt"
       ],
-      "Removed duplicate recipient: ${ recipents }": [
-        "Fjernet duplisert mottaker: ${ recipents }",
-        "Fjernet dupliserte mottakere: ${ recipents }"
-      ],
       "Request timed out": [
         "Forespørselen ble tidsavbrutt"
       ],
@@ -4922,10 +6077,6 @@
       ],
       "The amount due has changed. Please try again.": [
         "Det forfalte beløpet er endret. Prøv igjen."
-      ],
-      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "Vedlegget kan ikke dekrypteres.\\nHvis du har den tilsvarende private nøkkelen, vil du fortsatt kunne dekryptere\\nfilen med et program som GnuPG.",
-        "Noen av vedleggene kan ikke dekrypteres.Hvis du har den tilsvarende private nøkkelen, vil du fortsatt kunne dekryptere filene med et program som GnuPG."
       ],
       "The email addresses do not match": [
         "E-postadressene samsvarer ikke"
@@ -5026,14 +6177,6 @@
       "Wrong password": [
         "Feil passord"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Du kan ikke sende e-post til flere enn ${ maxContacts } mottaker.",
-        "Du kan ikke sende e-post til flere enn ${ maxContacts } mottakere."
-      ],
-      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "Du kan ikke åpne mer enn ${ maxActiveComposer } skrivevindu samtidig",
-        "Du kan ikke åpne mer enn ${ maxActiveComposer } skrivevinduer samtidig"
-      ],
       "You did not provide a file.": [
         "Du har ikke oppgitt en fil."
       ],
@@ -5063,12 +6206,6 @@
       ],
       "ZIP code is required": [
         "Postnummer kreves"
-      ]
-    },
-    "Error adding participants to a calendar event": {
-      "At most ${ maxAttendees } participant is allowed per invitation": [
-        "På det meste er ${ maxAttendees } deltaker tillatt per invitasjon.",
-        "På det meste er ${ maxAttendees } deltakere tillatt per invitasjon"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -5103,10 +6240,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Det oppstod en uventet feil. Importen må startes på nytt."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelse.",
-        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelser."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Filen ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
@@ -5502,10 +6635,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -5517,28 +6646,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Filter": {
@@ -5750,14 +6857,6 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } på Play Store"
       ],
-      "${ remainingDaysCount } day": [
-        "${ remainingDaysCount } dag",
-        "${ remainingDaysCount } dager"
-      ],
-      "${ remainingDaysCount } day left": [
-        "${ remainingDaysCount } dag igjen",
-        "${ remainingDaysCount } dager igjen"
-      ],
       "account logins": [
         "kontopålogginger"
       ],
@@ -5960,10 +7059,6 @@
       ]
     },
     "Hint": {
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Fant ${ itemsCount } forslag, bruk tastaturet til å navigere.",
-        "Fant ${ itemsCount } forslag, bruk tastaturet til å navigere."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Bruk opp- og ned-tastene for å få tilgang til og bla gjennom forslag etter inndata. Trykk Enter for å bekrefte valget, eller Esc for å lukke forslagsboksen."
       ]
@@ -6030,23 +7125,11 @@
       ]
     },
     "ICS widget label for event details": {
-      "${ totalAttendees } participant": [
-        "${ totalAttendees } deltaker",
-        "${ totalAttendees } deltakere"
-      ],
       "Organizer:": [
         "Arrangør:"
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } hendelse kryptert og lagt til i kalenderen",
-        "${ totalImported }/${ totalToImport } hendelser kryptert og lagt til i kalenderen"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Det oppstod en feil under kryptering og tillegging av hendelsen din. ${ totalImported } av ${ totalToImport } hendelse importert.",
-        "Det oppstod en feil under kryptering og tillegging av hendelsene dine. ${ totalImported } av ${ totalToImport } hendelser importert."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "En feil oppstod mens hendelsen din ble kryptert og lagt til. Ingen hendelse kunne importeres."
       ],
@@ -6081,23 +7164,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Importerte invitasjoner vises i ${ CALENDAR_APP_NAME } som enkle hendelser uten arrangør- og deltakerdetaljer. For å få hendelsesoppdateringer og se deltakere, be arrangørene om å invitere deg ved å bruke ${ BRAND_NAME }-e-postadressen."
       ],
-      "This file contains an event invitation:": [
-        "Denne filen inneholder en hendelsesinvitasjon:",
-        "Denne filen inneholder hendelsesinvitasjoner:"
-      ],
-      "This file contains an invitation response:": [
-        "Denne filen inneholder et svar på en invitasjon:",
-        "Denne filen inneholder svar på invitasjoner:"
-      ],
       "This file contains some data that we cannot import:": [
         "Denne filen inneholder data som ikke kan importeres:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } kontakt kryptert og lagt til i kontaktlisten.",
-        "${ totalImported }/${ totalToImport } kontakter kryptert og lagt til i kontaktlisten."
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "En feil oppstod mens kontakten din ble kryptert og lagt til. Ingen kontakt kunne importeres."
       ],
@@ -6117,12 +7188,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kontakt ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } kontakt",
-        "${ totalContacts } kontakter"
       ]
     },
     "Import contact. Contact identifier": {
@@ -6309,10 +7374,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ut av ${ totalContacts } blir ikke importert. Klikk for detaljer."
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } av ${ totalEvents } hendelse vil ikke bli importert. Utvid for detaljer.",
-        "${ totalEventsDiscarded } av ${ totalEvents } hendelser vil ikke bli importert. Utvid for detaljer."
-      ],
       "No contact can be imported. Click for details": [
         "Ingen kontakt kunne importeres. Klikk for detaljer."
       ],
@@ -6324,10 +7385,6 @@
       ]
     },
     "Info": {
-      "${ addressCount } email address": [
-        "${ addressCount } e-postadresse",
-        "${ addressCount } e-postadresser"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
@@ -6358,84 +7415,8 @@
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } krever en ${ BRAND_NAME }-adresse for sikker hendelsesynkronisering og kryptering. Gjør krav på din gratis ${ MAIL_APP_NAME }-adresse nå."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } ny kalender",
-        "${ calendarsToBeCreatedCount } nye kalendere"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } sammenslått kalender",
-        "${ calendarsToBeMergedCount } sammenslåtte kalendere"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } kontakt har flere e-postadresser.",
-        "${ contactCount } kontakter har flere e-postadresser."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } medlem",
-        "${ contactEmailsLength } medlemmer"
-      ],
-      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlem)",
-        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } medlemmer)"
-      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } inneholder flere e-postadresser."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kontakt funnet",
-        "${ contactsCount } kontakter funnet"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } kontakt",
-        "${ contactsLength } kontakter"
-      ],
-      "${ currentProgress } out of ${ totalProgress }": [
-        "${ currentProgress } ut av ${ totalProgress }",
-        "${ currentProgress } ut av ${ totalProgress }"
-      ],
-      "${ elementsCount } conversation will be labelled as:": [
-        "${ elementsCount } samtale merkes som:",
-        "${ elementsCount } samtaler merkes som:"
-      ],
-      "${ elementsCount } conversation will be marked as read.": [
-        "${ elementsCount } samtale merkes som lest.",
-        "${ elementsCount } samtaler merkes som lest."
-      ],
-      "${ elementsCount } conversation will be marked as unread.": [
-        "${ elementsCount } samtale merkes som ulest.",
-        "${ elementsCount } samtaler merkes som ulest."
-      ],
-      "${ elementsCount } conversation will be moved": [
-        "${ elementsCount } samtale flyttes",
-        "${ elementsCount } samtaler flyttes"
-      ],
-      "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount } samtale vil bli avmerket fra:",
-        "${ elementsCount } samtaler vil bli avmerket fra:"
-      ],
-      "${ elementsCount } message will be labelled as:": [
-        "${ elementsCount } melding merkes som:",
-        "${ elementsCount } meldinger merkes som:"
-      ],
-      "${ elementsCount } message will be marked as read.": [
-        "${ elementsCount } melding merkes som lest.",
-        "${ elementsCount } meldinger merkes som lest."
-      ],
-      "${ elementsCount } message will be marked as unread.": [
-        "${ elementsCount } melding merkes som ulest.",
-        "${ elementsCount } meldinger merkes som ulest."
-      ],
-      "${ elementsCount } message will be moved": [
-        "${ elementsCount } melding flyttes",
-        "${ elementsCount } meldinger flyttes"
-      ],
-      "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount } melding vil bli avmerket fra:",
-        "${ elementsCount } meldinger vil bli avmerket fra:"
-      ],
-      "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } innebygd bilde",
-        "${ embeddedAttachmentsCount } innebygde bilder"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: bilde i full størrelse"
@@ -6443,39 +7424,11 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: forhåndsvisning i lav oppløsning"
       ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } gruppe funnet",
-        "${ groupCounts } grupper funnet"
-      ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan også beskytte virksomheten din."
-      ],
-      "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "${ messagesNotAuthorizedToMove } melding kunne ikke flyttes.",
-        "${ messagesNotAuthorizedToMove } meldinger kunne ikke flyttes."
-      ],
-      "${ n } unread conversation": [
-        "${ n } ulest samtale",
-        "${ n } uleste samtaler"
-      ],
-      "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } kobling renset",
-        "${ numberOfUTMTrackers } koblinger renset"
-      ],
-      "${ NumMessages } message in conversation": [
-        "${ NumMessages } melding i samtalen",
-        "${ NumMessages } meldinger i samtalen"
-      ],
-      "${ numOccurrences } occurrence found": [
-        "${ numOccurrences } forekomst funnet",
-        "${ numOccurrences } forekomster funnet"
-      ],
-      "${ numOccurrences } occurrence found in the mail content": [
-        "${ numOccurrences } forekomst funnet i e-postinnholdet",
-        "${ numOccurrences } forekomster funnet i e-postinnholdet"
       ],
       "${ PASS_APP_NAME } allows you to store passwords, notes, and other sensitive information with end-to-end encryption. Available on ${ ios }, ${ android } and in your ${ browser }.": [
         "${ PASS_APP_NAME } lar deg lagre passord, notater og annen sensitiv informasjon med ende-til-ende-kryptering. Tilgjengelig på ${ ios }, ${ android } og i din ${ browser }."
@@ -6492,89 +7445,17 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } krever minst 1 dedikert tjener ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } utløper om ${ daysLeft } dag.",
-        "${ planName } utløper om ${ daysLeft } dager."
-      ],
       "${ planName } expires today.": [
         "${ planName } utløper i dag."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } beskytter kontoen din med dedikert overvåking av mistenkelig aktivitet."
       ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } mappe funnet",
-        "${ providerFoldersNumLocalized } mapper funnet"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } etikett funnet i Gmail",
-        "${ providerFoldersNumLocalized } etiketter funnet i Gmail"
-      ],
-      "${ pureAttachmentsCount } file attached": [
-        "${ pureAttachmentsCount } fil vedlagt",
-        "${ pureAttachmentsCount } filer vedlagt"
-      ],
-      "${ receivedMessagesCount } email last month": [
-        "${ receivedMessagesCount } e-post forrige måned",
-        "${ receivedMessagesCount } e-poster forrige måned"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
-        "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendere"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } kontakt valgt",
-        "${ selectedContactsLength }/${ contactsLength } kontakter valgt"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } mappe valgt",
-        "${ selectedFoldersCountLocalized } mapper valgt"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } etikett valgt",
-        "${ selectedFoldersCountLocalized } etiketter valgt"
-      ],
       "${ storage } storage": [
         "${ storage } lagringsplass"
       ],
-      "${ subscription.UnreadMessageCount } unread": [
-        "${ subscription.UnreadMessageCount } ulest",
-        "${ subscription.UnreadMessageCount } uleste"
-      ],
-      "${ total } conversation": [
-        "${ total } samtale",
-        "${ total } samtaler"
-      ],
-      "${ total } message": [
-        "${ total } melding",
-        "${ total } meldinger"
-      ],
-      "${ trackersCount } email tracker blocked": [
-        "${ trackersCount } e-postsporer blokkert",
-        "${ trackersCount } e-postsporere blokkert"
-      ],
-      "${ trackersCount } tracker blocked": [
-        "${ trackersCount } sporer blokkert",
-        "${ trackersCount } sporere blokkert"
-      ],
-      "${ unreadCount } newsletter": [
-        "${ unreadCount } nyhetsbrev",
-        "${ unreadCount } nyhetsbrev"
-      ],
-      "${ unreadCount } scheduled message": [
-        "${ unreadCount } planlagt melding",
-        "${ unreadCount } planlagte meldinger"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } kontakt oppdatert",
-        "${ updated } kontakter oppdatert"
-      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } maskerer IP-adressen din, slik at nettsteder ikke kan identifisere deg."
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } medlem)",
-        "(${ memberCount } medlemmer)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/måned)"
@@ -6588,10 +7469,6 @@
       "(No Recipient)": [
         "(Ingen mottaker)"
       ],
-      "**${ total }** result found in ${ labelName }": [
-        "**${ total }** resultat funnet i ${ labelName }",
-        "**${ total }** resultater funnet i ${ labelName }"
-      ],
       "**Auto-connect**: Opens and connects to VPN as soon as you turn on your device.": [
         "**Automatisk tilkobling**: åpnes og kobles til VPN så snart du slår på enheten."
       ],
@@ -6600,10 +7477,6 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } tilkobling for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)",
-        "+${ organization.BonusVPN } tilkoblinger for ${ VPN_APP_NAME } (tillater deg å tilkoble flere enheter til VPN)"
       ],
       "30-day money-back guarantee.": [
         "30 dagers tilbakebetalingsgaranti."
@@ -6668,14 +7541,6 @@
       "Align right": [
         "Juster til høyre"
       ],
-      "All (${ totalFoldersCount } folder)": [
-        "(${ totalFoldersCount } mappe)",
-        "Alle (${ totalFoldersCount } mapper)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "(${ totalFoldersCount } etikett)",
-        "Alle (${ totalFoldersCount } etiketter)"
-      ],
       "All messages from this mailing list will be marked as read.": [
         "Alle meldinger fra denne e-postlisten vil bli merket som lest."
       ],
@@ -6691,15 +7556,14 @@
       "All messages stored with this label will be permanently deleted.": [
         "Alle meldinger som er lagret med denne etiketten vil bli slettet permanent."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Alle meldinger vises i innboksen, og kategorifanene og -taggene vil ikke lenger være synlige. "
+      ],
       "All your calendars are disabled.": [
         "Alle kalenderene dine er deaktivert."
       ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }.",
-        "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }."
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey logo"
@@ -6763,18 +7627,6 @@
       ],
       "Are you sure you want to move all messages in this location to trash?": [
         "Er du sikker på at du ønsker å flytte alle meldingene på denne plasseringen til papirkurven?"
-      ],
-      "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Er du sikker på at du vil slette ${ count } samtale permanent?",
-        "Er du sikker på at du vil slette ${ count } samtaler permanent?"
-      ],
-      "Are you sure you want to permanently delete ${ count } draft?": [
-        "Er du sikker på at du vil slette ${ count } utkast permanent?",
-        "Er du sikker på at du vil slette ${ count } utkast permanent?"
-      ],
-      "Are you sure you want to permanently delete ${ count } message?": [
-        "Er du sikker på at du vil slette ${ count } melding permanent?",
-        "Er du sikker på at du vil slette ${ count } meldinger permanent?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Er du sikker på at du vil slette denne samtalen permanent?"
@@ -6914,10 +7766,6 @@
       "Country code": [
         "Landskode"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Opprett ${ calendarsToBeCreatedCount } ny kalender",
-        "Opprett ${ calendarsToBeCreatedCount } nye kalendere"
-      ],
       "Create a folder such as “${ suggestedFolderName }“ to keep all your online receipts in one place.": [
         "Opprett en mappe som \"${ suggestedFolderName }\" for å holde alle dine nettkvitteringer på ett sted."
       ],
@@ -6929,10 +7777,6 @@
       ],
       "Create a new contact group": [
         "Opprett en ny kontaktgruppe"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Opprett en sikker sky for ${ value } medlem",
-        "Opprett en sikker sky for ${ value } medlemmer"
       ],
       "Create in": [
         "Opprett i"
@@ -6999,10 +7843,6 @@
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
-      ],
-      "Do you want to download this attachment anyway?": [
-        "Vil du laste ned dette vedlegget allikevel?",
-        "Vil du laste ned disse vedleggene allikevel?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "Vil du signere kontaktdetaljene på nytt og i prosessen klarere nøklene med følgende fingeravtrykk?"
@@ -7115,10 +7955,6 @@
       "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
         "E-postmeldinger merket med etiketten, ${ nameDeleted }, vil ikke bli slettet og kan fortsatt bli funnet i den respektive mappen."
       ],
-      "embedded image": [
-        "innebygd bilde",
-        "innebygde bilder"
-      ],
       "Enabling auto-deletion…": [
         "Aktiverer automatisk sletting…"
       ],
@@ -7149,10 +7985,6 @@
       "Enter your own password (as trusted contact).": [
         "Skriv inn ditt eget passord (som betrodd kontakt)."
       ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Beregnet tid som gjenstår: ${ estimatedMinutes } minutt",
-        "Beregnet tid som gjenstår: ${ estimatedMinutes } minutter"
-      ],
       "Estimated time remaining: Less than a minute": [
         "Estimert gjenværende tid: mindre enn ett minutt"
       ],
@@ -7176,18 +8008,6 @@
       ],
       "Expires in ${ formattedDate }": [
         "Utløper om ${ formattedDate }"
-      ],
-      "Expires in ${ minutesDiff } minute": [
-        "Utløper om ${ minutesDiff } minutt",
-        "Utløper om ${ minutesDiff } minutter"
-      ],
-      "Expires in less than ${ hoursDiff } hour": [
-        "Utløper om mindre enn ${ hoursDiff } time",
-        "Utløper om mindre enn ${ hoursDiff } timer"
-      ],
-      "file attached": [
-        "fil vedlagt",
-        "filer vedlagt"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre fungerer på alle e-poster, inkludert innkommende så vel som sendte e-poster. Hvert filter må inneholde minst et navn, et vilkår og en handling."
@@ -7213,10 +8033,6 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "For flere søkeresultater, prøv å søke etter dette nøkkelordet i innholdet til dine e-postmeldinger."
       ],
-      "Free to try for ${ ASSISTANT_TRIAL_TIME_DAYS } day": [
-        "Gratis å prøve i ${ ASSISTANT_TRIAL_TIME_DAYS } dag",
-        "Gratis å prøve i ${ ASSISTANT_TRIAL_TIME_DAYS } dager"
-      ],
       "From": [
         "Fra"
       ],
@@ -7237,10 +8053,6 @@
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Myndigheter og Internett-leverandører kan overvåke nettaktiviteten din. Ved å skjule din virkelige IP og kryptere aktiviteten din blir surfingen privat."
-      ],
-      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
-        "Har ${ numAttachments } vedlegg (${ numAttachmentsSize })",
-        "Har ${ numAttachments } vedlegg (${ numAttachmentsSize })"
       ],
       "here": [
         "her"
@@ -7296,10 +8108,6 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Bilder er fjernet fordi de ikke er tillatt i autosvar"
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Importer ${ calendarCount } av ${ totalCalendarsCount } kalender",
-        "Importer ${ calendarCount } av ${ totalCalendarsCount } kalendere"
-      ],
       "Import from": [
         "Importer fra"
       ],
@@ -7335,10 +8143,6 @@
       ],
       "Initializing…": [
         "Initialiserer…"
-      ],
-      "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7697,10 +8501,6 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Velg hvilken type kobling du vil sette inn og fyll ut alle felt."
       ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Velg hvilke e-postadresser som skal legges til i ${ groupCount } gruppe.",
-        "Velg hvilke e-postadresser som skal legges til i ${ groupCount } grupper."
-      ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Velg hvilken eller hvilke e-postadresser du vil legge til i ${ groupName }."
       ],
@@ -7848,10 +8648,6 @@
       "Seems like you are all caught up for now": [
         "Det virker som du er à jour nå"
       ],
-      "Select all ${ elementsCount } in ${ location }": [
-        "Velg alle ${ elementsCount } i ${ location }",
-        "Velg alle ${ elementsCount } i ${ location }"
-      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
       ],
@@ -7975,10 +8771,6 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Send inn et innskudd ved å bruke følgende adresse eller skann QR-koden. Innskuddet ditt vil gjenspeiles i kontoen din etter bekreftelse."
       ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Abonnementet fornyes automatisk hver ${ cycle } måned.",
-        "Abonnementet fornyes automatisk hver ${ cycle } måned."
-      ],
       "Subscription auto-renews every month.": [
         "Abonnementet fornyes automatisk hver måned."
       ],
@@ -8054,10 +8846,6 @@
       "The sender has requested a read receipt.": [
         "Avsenderen har bedt om lesebekreftelse."
       ],
-      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "Verifiseringen av ${ contactNames } mislyktes: kontakten er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontakten på nytt for å sende en melding til ${ contactAddresses } eller redigere kontakten.",
-        "Verifiseringen av ${ contactNames } mislyktes: kontaktene er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontaktene på nytt for å sende en melding til ${ contactAddresses } eller redigere kontaktene."
-      ],
       "The verification process will open a new browser tab. Please disable any active pop-up blockers.": [
         "Verifiseringsprosessen vil åpne en ny nettleserfane. Deaktiver alle aktive blokkeringer av sprettoppvinduer."
       ],
@@ -8096,10 +8884,6 @@
       ],
       "This conversation contains trashed messages.": [
         "Denne samtalen inneholder meldinger i papirkurven."
-      ],
-      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Denne samtalen vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
-        "Disse samtalene vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Denne e-posten har ikke oppfylt domenets autentiseringskrav. Den kan være forfalsket eller feilaktig videresendt."
@@ -8151,10 +8935,6 @@
       ],
       "This message will be automatically deleted on ${ value }": [
         "Denne meldingen slettes automatisk på ${ value }"
-      ],
-      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Denne meldingen vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
-        "Disse meldingene vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Denne meldingen flyttes til utkast, slik at du kan redigere den. Du må planlegge på nytt når den skal sendes."
@@ -8525,14 +9305,6 @@
       "You can import one data type at a time.": [
         "Du kan importere én datatype om gangen."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet.",
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter ditt ${ MAIL_SHORT_APP_NAME }-abonnementet."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalender. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt.",
-        "Du kan beholde opptil ${ MAX_CALENDARS_FREE } kalendere. Fjern delte kalenderkoblinger og enhver ${ BRAND_NAME }-bruker som du delte dine kalendere med før du avslutter abonnementet ditt."
-      ],
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
       ],
@@ -8553,22 +9325,6 @@
       ],
       "You have ${ unread } in your inbox.": [
         "Du har ${ unread } i innboksen din."
-      ],
-      "You have **${ count } conversation** stored in this folder": [
-        "Du har **${ count } samtale** lagret i denne mappen",
-        "Du har **${ count } samtaler** lagret i denne mappen"
-      ],
-      "You have **${ count } conversation** tagged with this label": [
-        "Du har **${ count } samtale** merket med denne etiketten",
-        "Du har **${ count } samtaler** merket med denne etiketten"
-      ],
-      "You have **${ count } message** stored in this folder": [
-        "Du har **${ count } melding** lagret i denne mappen",
-        "Du har **${ count } meldinger** lagret i denne mappen"
-      ],
-      "You have **${ count } message** tagged with this label": [
-        "Du har **${ count } melding** merket med denne etiketten",
-        "Du har **${ count } meldinger** merket med denne etiketten"
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Du har et prøveabonnement på ${ planTitle }. Hvis du vil fortsette abonnementet etter prøveperioden, må du legge til en betalingsmåte."
@@ -8591,38 +9347,6 @@
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
         "Du må deaktivere og fjerne alle eventuelle ${ MAIL_APP_NAME }-brukere, adresser og egendefinerte domener før du kan nedgradere."
       ],
-      "You selected **${ count } conversation** from this folder": [
-        "Du valgte **${ count } samtale** fra denne mappen",
-        "Du valgte **${ count } samtaler** fra denne mappen"
-      ],
-      "You selected **${ count } conversation** with this label": [
-        "Du har valgt **${ count } samtale** med denne etiketten",
-        "Du har valgt **${ count } samtaler** med denne etiketten"
-      ],
-      "You selected **${ count } message** from this folder": [
-        "Du har valgt **${ count } melding** fra denne mappen",
-        "Du har valgt **${ count } meldinger** fra denne mappen"
-      ],
-      "You selected **${ count } message** with this label": [
-        "Du valgte **${ count } melding** med denne etiketten",
-        "Du valgte **${ count } meldinger** med denne etiketten"
-      ],
-      "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Du valgte **${ elementsCount } samtale** i ${ location }.",
-        "Du valgte **${ elementsCount } samtaler** i ${ location }"
-      ],
-      "You selected **${ elementsCount } conversation**.": [
-        "Du valgte **${ elementsCount } samtale**.",
-        "Du valgte **${ elementsCount } samtaler**."
-      ],
-      "You selected **${ elementsCount } message** in ${ location }": [
-        "Du valgte **${ elementsCount } melding** i ${ location }.",
-        "Du valgte **${ elementsCount } meldinger** i ${ location }."
-      ],
-      "You selected **${ elementsCount } message**.": [
-        "Du valgte **${ elementsCount } melding**.",
-        "Du valgte **${ elementsCount } meldinger**."
-      ],
       "You will lose access to ${ planTitle } features on this date.": [
         "Du vil miste tilgang til ${ planTitle }-funksjoner på denne datoen."
       ],
@@ -8634,10 +9358,6 @@
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men ingen vedlegg er lagt til. Ønsker du uansett å sende meldingen?"
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }",
-        "Du vil da bli fakturert hver ${ renewCycle } måned med ${ renewAmountStr }."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Du har nådd maksimalt antall adresser i kontaktgruppen(e):"
@@ -8705,10 +9425,6 @@
       "Your login information will not be saved after the import is completed.": [
         "Påloggingsinformasjonen lagres ikke etter at importen er fullført."
       ],
-      "Your message will expire in ${ numberOfDays } day.": [
-        "Meldingen din utløper om ${ numberOfDays } dag.",
-        "Meldingen din utløper om ${ numberOfDays } dager."
-      ],
       "Your message will expire today.": [
         "Meldingen din utløper i dag."
       ],
@@ -8736,10 +9452,6 @@
       "Your private writing assistant": [
         "Din private skriveassistent"
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned.",
-        "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver ${ cycle } måned."
-      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Den planlagte planen starter på ${ renewalTime } og fornyes automatisk hver måned."
       ],
@@ -8763,10 +9475,6 @@
       ]
     },
     "info": {
-      "${ filteredList.length } command found.": [
-        "${ filteredList.length } kommando funnet.",
-        "${ filteredList.length } kommandoer funnet."
-      ],
       "Optional": [
         "Valgfritt"
       ],
@@ -8785,16 +9493,6 @@
     "Info on errors": {
       "Click for details": [
         "Klikk for detaljer"
-      ]
-    },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mappe valgt",
-        "${ selectedFoldersCount } mapper valgt"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etikett valgt",
-        "${ selectedFoldersCount } etiketter valgt"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -8834,14 +9532,6 @@
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Ved å klikke \"klarér nøkkel\" opprettes en ny kontakt og knytter denne offentlige nøkkelen til denne avsenderen. E-poster fra denne adressen blir automatisk kryptografisk verifisert."
-      ],
-      "Do you want to trust the primary public key with the following fingerprint?": [
-        "Vil du klarére den primære offentlige nøkkelen med følgende fingeravtrykk?",
-        "Vil du klarére de primære offentlige nøklene med følgende fingeravtrykk?"
-      ],
-      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "Du har aktivert adressebekreftelse med klarerte nøkler for denne e-postadressen,\nmen ingen aktiv krypteringsnøkkel er klarert.\nDu må klarére en nøkkel som er gyldig for sending for å sende en melding til denne e-postadressen.",
-        "Du har aktivert adressebekreftelse med klarerte nøkler for disse e-postadressene,\nmen ingen aktive krypteringsnøkler er klarert.\nDu må klarére nøkler som er gyldig for sending for å sende en melding til disse e-postadressene."
       ]
     },
     "Key validation warning": {
@@ -9048,10 +9738,6 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
-      ],
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
@@ -9758,9 +10444,6 @@
       "Writing assistant": [
         "Skriveassistent"
       ],
-      "You cannot disable all categories": [
-        "Du kan ikke deaktivere alle kategorier"
-      ],
       "Your alias": [
         "Aliaset ditt"
       ],
@@ -10132,10 +10815,6 @@
       "Almost there": [
         "Nesten der"
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Mengde kalender opprettet: ${ createdCalendarCount } av ${ calendarsToBeCreated }.",
-        "Mengde kalendere opprettet: ${ createdCalendarCount } ut av ${ calendarsToBeCreated }."
-      ],
       "Connecting to your email provider": [
         "Kobler til e-postleverandøren din"
       ],
@@ -10184,24 +10863,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Aktiver ${ reason }"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Importer alle meldinger fra ${ itemsToImportCount } mappe og merk dem som.",
-        "Importer alle meldinger fra ${ itemsToImportCount } mapper og merk dem som."
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importer alle meldinger fra ${ itemsToImportCount } etikett og merk dem som.",
-        "Importer alle meldinger fra ${ itemsToImportCount } etiketter og merk dem som."
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } mappe og merk dem som.",
-        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } mapper og merk dem som."
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } etikett og merk dem som.",
-        "Importer alle meldinger fra ${ selectedItemsToImportCount } ut av ${ itemsToImportCount } etiketter og merk dem som."
       ]
     },
     "mail_signup_2024: Info": {
@@ -10302,28 +10963,16 @@
       ]
     },
     "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
-        "Hver ${ interval } måned ${ onDayString }",
-        "Hver ${ interval } måned ${ onDayString }"
-      ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
-        "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
-      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Månedlig ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
-        "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Månedlig ${ onDayString }, ${ untilString }"
       ]
@@ -10498,76 +11147,8 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } og ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar": [
-        "${ n } kalender",
-        "${ n } kalendere"
-      ],
-      "${ n } calendar per user": [
-        "${ n } kalender per bruker",
-        "${ n } kalendere per bruker"
-      ],
-      "${ n } custom email domain": [
-        "${ n } egendefinert e-postdomene",
-        "${ n } egendefinerte e-postdomener"
-      ],
-      "${ n } email address": [
-        "${ n } e-postadresse",
-        "${ n } e-postadresser/aliaser"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-postadresse per bruker",
-        "${ n } e-postadresser per bruker"
-      ],
-      "${ n } filter": [
-        "${ n } filter",
-        "${ n } filtre"
-      ],
-      "${ n } folder": [
-        "${ n } mappe",
-        "${ n } mapper"
-      ],
-      "${ n } folder and label": [
-        "${ n } mappe og etikett",
-        "${ n } mapper og etiketter"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email-alias",
-        "${ n } hide-my-email-aliaser"
-      ],
-      "${ n } label": [
-        "${ n } etikett",
-        "${ n } etiketter"
-      ],
-      "${ n } message per day": [
-        "${ n } melding per dag",
-        "${ n } meldinger per dag"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } delt ${ PASS_SHORT_APP_NAME }-hvelv per bruker",
-        "${ n } delte ${ PASS_SHORT_APP_NAME }-hvelv per bruker"
-      ],
-      "${ n } vault": [
-        "${ n } hvelv",
-        "${ n } hvelv"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-tilkobling",
-        "${ n } VPN-tilkoblinger"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } bruker",
-        "Opptil ${ numberOfUsers } brukere"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dag filversjonshistorikk",
-        "${ options }-dagers filversjonshistorikk"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin livstid"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
-        "${ PASS_APP_NAME } med ${ n } hide-my-email-aliaser"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } med ubegrensede hide-my-email-aliaser"
@@ -10740,10 +11321,6 @@
       "Group management (coming soon)": [
         "Gruppeadministrasjon (kommer snart)"
       ],
-      "High-speed VPN on ${ n } device": [
-        "Høyhastighets VPN på ${ n } enhet",
-        "Høyhastighets VPN på ${ n } enheter"
-      ],
       "HTML signatures": [
         "HTML-signaturer"
       ],
@@ -10906,20 +11483,8 @@
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
       ],
-      "Up to ${ n } user": [
-        "Opptil ${ n } bruker",
-        "Opptil ${ n } brukere"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Opptil ${ n } bruker (${ adminsText }, ${ usersText })",
-        "Opptil ${ n } brukere (${ adminsText }, ${ usersText })"
-      ],
       "Up to ${ totalStorageSize } storage": [
         "Opptil ${ totalStorageSize } lagringsplass"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Bruk på opptil ${ n } enhet samtidig",
-        "Bruk på opptil ${ n } enheter samtidig"
       ],
       "User credential management": [
         "Administrasjon av brukerpåloggingsinformasjon"
@@ -10930,22 +11495,8 @@
       "User storage management": [
         "Administrasjon av brukerlagring"
       ],
-      "Vault sharing (up to ${ n } person)": [
-        "Deling av hvelv (opptil ${ n } person)",
-        "Deling av hvelv (opptil ${ n } personer)"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ admins } admin": [
-        "${ admins } administrator",
-        "${ admins } administratorer"
-      ],
-      "${ users } user": [
-        "${ users } bruker",
-        "${ users } brukere"
       ]
     },
     "new_plans: feature info": {
@@ -11126,10 +11677,6 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Opprett flere e-postadresser for dine nettbaserte identiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer, JohnNews@${ domain } for nyhetsabonnement"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Opprett opptil ${ n } kalender eller legg til kalendere fra venner, familie, kollegaer og organisasjoner.",
-        "Opprett opptil ${ n } kalendere eller legg til kalendere fra venner, familie, kollegaer og organisasjoner."
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Opprett opp til ${ n } e-postadresser/aliaser som du kan tilordne til familemedlemmer. Bruk dem til nettidentiteter, f.eks. JohnShopper@${ domain } for shoppingkontoer."
@@ -11334,10 +11881,6 @@
       "Central control panel": [
         "Sentralt kontrollpanel"
       ],
-      "Create up to ${ n } calendar": [
-        "Opprett opptil ${ n } kalender",
-        "Opprett opptil ${ n } kalendere"
-      ],
       "Dedicated Account manager": [
         "Dedikert kontobehandler"
       ],
@@ -11355,10 +11898,6 @@
       ],
       "Require 2FA": [
         "Krever 2FA"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Støtte for ${ n } egendefinert e-postdomene",
-        "Støtte for ${ n } egendefinerte e-postdomener"
       ]
     },
     "Notification": {
@@ -11861,10 +12400,6 @@
       ]
     },
     "pass_signup_2024: Info": {
-      "${ n } user account": [
-        "${ n } brukerkonto",
-        "${ n } brukerkontoer"
-      ],
       "Activity log": [
         "Aktivitetslogg"
       ],
@@ -12004,24 +12539,8 @@
       "terms & conditions": [
         "vilkår og betingelser"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupongen er gyldig for ${ couponRedemptions } fornyelse.",
-        "Kupongen er gyldig for ${ couponRedemptions } fornyelser."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig for den første ${ subscriptionLength } måneden.",
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig de første ${ subscriptionLength } månedene."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelse. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst.",
-        "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Kupongen er gyldig for ${ couponRedemptions } fornyelser. Deretter vil den automatisk bli fornyet til ${ renewPriceStr } for 1 måned. Du kan avbryte når som helst."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Den spesielt rabatterte prisen på ${ priceWithDiscount } er gyldig den første måneden. Da blir den automatisk fornyet til ${ renewPriceStr } hver måned. Du kan avbryte når som helst."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
-        "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
       ],
       "This number will be shown on all future invoices": [
         "Dette nummeret vil bli vist på alle fremtidige fakturaer"
@@ -12368,18 +12887,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } ut av ${ countContacts } kontakt ble eksportert.",
-        "${ contactsExported.length } ut av ${ countContacts } kontakter ble eksportert."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } ut av ${ totalBeDeleted } kontakt ble slettet.",
-        "${ model.deleted.length } ut av ${ totalBeDeleted } kontakter ble slettet."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } ut av ${ totalBeMerged } kontakt ble slått sammen.",
-        "${ model.submitted.length } ut av ${ totalBeMerged } kontakter ble slått sammen."
-      ],
       "No contacts exported.": [
         "Ingen kontakter ble eksportert."
       ],
@@ -12466,10 +12973,6 @@
       ]
     },
     "Remaining days before the message expire": {
-      "${ remainingDays } d": [
-        "${ remainingDays } d",
-        "${ remainingDays } d"
-      ],
       "<1 d": [
         "<1 d"
       ]
@@ -12621,10 +13124,6 @@
       "Do you want to send the email anyway?": [
         "Ønsker du uansett å sende e-posten?"
       ],
-      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Vi har oppdaget feil. E-posten din kan ikke sendes til den oppgitte e-postadressen av følgende årsak:",
-        "Vi har oppdaget feil. E-posten din kan ikke sendes til noen av e-postadressene som er oppgitt av følgende årsaker:"
-      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Vi har oppdaget noen feil. E-posten din kan ikke sendes til en eller flere av de oppgitte e-postadressene av følgende årsaker:"
       ]
@@ -12632,14 +13131,6 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "Ønsker du uansett å sende e-posten?"
-      ],
-      "The following address is not valid: ${ invalidAddresses }": [
-        "Følgende adresse er ikke gyldig: ${ invalidAddresses }",
-        "Følgende adresser er ikke gyldige: ${ invalidAddresses }"
-      ],
-      "We have detected some warnings. The following email address may not receive emails:": [
-        "Vi har oppdaget noen advarsler. Følgende e-postadresse mottar kanskje ikke e-post:",
-        "Vi har oppdaget noen advarsler. Følgende e-postadresser mottar kanskje ikke e-post:"
       ]
     },
     "Sender verification details": {
@@ -12678,16 +13169,8 @@
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Sendt av ${ MAIL_APP_NAME } med nulltilgangskryptering"
       ],
-      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "Sendt av ${ MAIL_APP_NAME } med nulltilgangskryptering til bekreftet mottaker.",
-        "Sendt av ${ MAIL_APP_NAME } med nulltilgangskryptering til bekreftede mottakere."
-      ],
       "Sent by you with end-to-end encryption": [
         "Sendt av deg med ende-til-ende-kryptering"
-      ],
-      "Sent by you with end-to-end encryption to verified recipient": [
-        "Sendt av deg med ende-til-ende-kryptering til bekreftet mottaker.",
-        "Sendt av deg med ende-til-ende-kryptering til bekreftede mottakere."
       ],
       "Stored with zero-access encryption": [
         "Lagret med nulltilgangskryptering"
@@ -12710,27 +13193,11 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } dag",
-        "${ timeRemaining.inDays } dager"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } time",
-        "${ timeRemaining.inHours } timer"
-      ],
       "Password reset request approved (${ user.Email }).": [
         "Forespørsel om tilbakestilling av passord godkjent (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Denne tillatelsen utløper om ${ timeRemaining.inDays } dag",
-        "Denne tillatelsen utløper om ${ timeRemaining.inDays } dager"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Denne tillatelsen utløper om ${ timeRemaining.inHours } time",
-        "Denne tillatelsen utløper om ${ timeRemaining.inHours } timer"
       ],
       "This permission expires soon": [
         "Denne tillatelsen utløper snart"
@@ -12740,22 +13207,6 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Du kan nå endre passordet ditt for kontoen ${ boldEmail }."
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Du har ${ timeRemaining.inDays } dag på deg til å tilbakestille passordet ditt.",
-        "Du har ${ timeRemaining.inDays } dager på deg til å tilbakestille passordet ditt."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Du har ${ timeRemaining.inHours } time på deg til å tilbakestille passordet ditt.",
-        " Du har ${ timeRemaining.inHours } timer på deg til å tilbakestille passordet ditt."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Du har ${ timeRemaining.inMinutes } minutt på deg til å tilbakestille passordet ditt.",
-        " Du har ${ timeRemaining.inMinutes } minutter på deg til å tilbakestille passordet ditt."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Du har ${ timeRemaining.inSeconds } sekund på deg til å tilbakestille passordet ditt.",
-        " Du har ${ timeRemaining.inSeconds } sekunder på deg til å tilbakestille passordet ditt."
       ]
     },
     "session_recovery:available:link": {
@@ -12815,16 +13266,8 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } time til",
-        "${ gracePeriodHoursRemaining } timer til"
-      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Hvis du ikke har bedt om å tilbakestille passordet ditt, avbryt denne forespørselen nå."
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Tilbakestilling av passord forespurt (${ user.Email }). Du kan endre passordet ditt om ${ hoursRemaining } time.",
-        "Tilbakestilling av passord forespurt (${ user.Email }). Du kan endre passordet ditt om ${ hoursRemaining } timer."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "For å forsikre oss at det virkelig er deg som prøver å tilbakestille passordet, venter vi 72 timer før godkjenning av forespørsler. Du kan endre passordet ditt om ${ boldTimeLeft }. ${ viewRequest }"
@@ -12852,10 +13295,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } time",
-        "${ gracePeriodHoursRemaining } timer"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } er nå tilgjengelig."
       ],
@@ -12968,30 +13407,6 @@
         "Skaff deg Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } dag",
-        "${ days } dager"
-      ],
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minutt",
-        "${ minutes } minutter"
-      ],
-      "${ seconds } second": [
-        "${ seconds } sekund",
-        "${ seconds } sekunder"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } måned GRATIS",
-        "${ n } måneder GRATIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 bruker"
@@ -13074,10 +13489,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } måned",
-        "${ n } måneder"
-      ],
       "/ month": [
         "/måned"
       ],
@@ -13342,10 +13753,6 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Vi legger til kredittene for den gjenværende tiden til ${ BRAND_NAME }-kontoen din."
       ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "Du har fortsatt **${ daysRemaining }** dag igjen på din **${ currentPlanName }**-plan.",
-        "Du har fortsatt **${ daysRemaining }** dager igjen på din **${ currentPlanName }**-plan."
-      ],
       "Your ${ appStorage } is almost full": [
         "Din ${ appStorage } er nesten full"
       ],
@@ -13391,32 +13798,6 @@
         "Faktureres årlig"
       ]
     },
-    "Subscription attribute": {
-      "${ n } free VPN connection per user": [
-        "${ n } gratis VPN-forbindelse per bruker",
-        "${ n } gratis VPN-forbindelser per bruker"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } høyhastighets VPN-tilkobling",
-        "${ n } høyhastighets VPN-tilkoblinger"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } høyhastighets VPN-tilkobling per bruker",
-        "${ n } høyhastighets VPN-tilkoblinger per bruker"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-tilkobling",
-        "${ n } VPN-tilkoblinger"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-tilkobling per bruker",
-        "${ n } VPN-tilkoblinger per bruker"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "VPN-tilkobling for ${ n } enhet per bruker",
-        "VPN-tilkobling for ${ n } enheter per bruker"
-      ]
-    },
     "Subscription change warning": {
       "Got it": [
         "Skjønner"
@@ -13458,10 +13839,6 @@
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ VPN_SHORT_APP_NAME } med premiumfunksjoner"
-      ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } dag igjen",
-        "${ dayDiff } dager igjen"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }-skrivebordsapp"
@@ -13507,26 +13884,6 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } tilbyr ${ planMaxSpace } lagring per bruker for e-post, vedlegg, hendelser, filer og passord. Du er også kvalifisert for årlige lagringsbonuser."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } kalender per bruker",
-        "${ planNumberOfCalendars } kalendere per bruker"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } egendefinert e-postdomene",
-        "${ planNumberOfDomains } egendefinerte e-postdomener"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } e-postadresse",
-        "${ planNumberOfEmails } e-postadresser"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } e-postadresse per bruker",
-        "${ planNumberOfEmails } e-postadresser per bruker"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } bruker",
-        "${ planNumberOfUsers } brukere"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "${ PROTON_SENTINEL_NAME } avansert kontobeskyttelse"
@@ -13788,102 +14145,6 @@
       ]
     },
     "Success": {
-      "${ count } conversation deleted": [
-        "${ count } samtale slettet",
-        "${ count } samtaler slettet"
-      ],
-      "${ count } draft deleted": [
-        "${ count } utkast slettet",
-        "${ count } utkast slettet"
-      ],
-      "${ count } message deleted": [
-        "${ count } melding slettet",
-        "${ count } meldinger slettet"
-      ],
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } kontakt ser identisk ut.",
-        "${ countMergeableContacts } kontakter ser identiske ut."
-      ],
-      "${ elementsCount } conversation added to ${ labelName }.": [
-        "${ elementsCount } samtale lagt til ${ labelName }.",
-        "${ elementsCount } samtaler lagt til ${ labelName }."
-      ],
-      "${ elementsCount } conversation marked as read.": [
-        "${ elementsCount } samtale merket som lest.",
-        "${ elementsCount } samtaler merket som lest."
-      ],
-      "${ elementsCount } conversation marked as Starred.": [
-        "${ elementsCount } samtale stjernemerket",
-        "${ elementsCount } samtaler stjernemerket"
-      ],
-      "${ elementsCount } conversation marked as unread.": [
-        "${ elementsCount } samtale merket som ulest.",
-        "${ elementsCount } samtaler merket som ulest."
-      ],
-      "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } samtale flyttet til ${ labelName } og avsender lagt til din ikke-søppelpostliste.",
-        "${ elementsCount } samtaler flyttet til ${ labelName } og avsenderene lagt til din ikke-søppelpostliste."
-      ],
-      "${ elementsCount } conversation moved to ${ labelName }.": [
-        "${ elementsCount } samtale flyttet til ${ labelName }.",
-        "${ elementsCount } samtaler flyttet til ${ labelName }."
-      ],
-      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
-        "${ elementsCount } samtale flyttet til søppelpost og avsender lagt til søppelpostlisten din.",
-        "${ elementsCount } samtaler flyttet til søppelpost og avsenderene lagt til søppelpostlisten din."
-      ],
-      "${ elementsCount } conversation removed from ${ labelName }.": [
-        "${ elementsCount } samtale fjernet fra ${ labelName }.",
-        "${ elementsCount } samtaler fjernet fra ${ labelName }."
-      ],
-      "${ elementsCount } conversation removed from Starred.": [
-        "${ elementsCount } samtale fjernet fra stjernemerket.",
-        "${ elementsCount } samtaler fjernet fra stjernemerket."
-      ],
-      "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } samtale slumret",
-        "${ elementsCount } samtaler slumret"
-      ],
-      "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } samtale slumring av",
-        "${ elementsCount } samtaler slumring av"
-      ],
-      "${ elementsCount } message added to ${ labelName }.": [
-        "${ elementsCount } melding lagt til ${ labelName }.",
-        "${ elementsCount } meldinger lagt til ${ labelName }."
-      ],
-      "${ elementsCount } message marked as read.": [
-        "${ elementsCount } melding merket som lest.",
-        "${ elementsCount } meldinger merket som lest."
-      ],
-      "${ elementsCount } message marked as Starred.": [
-        "${ elementsCount } melding stjernemerket",
-        "${ elementsCount } meldinger stjernemerket"
-      ],
-      "${ elementsCount } message marked as unread.": [
-        "${ elementsCount } melding merket som ulest.",
-        "${ elementsCount } meldinger merket som ulest."
-      ],
-      "${ elementsCount } message moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } melding flyttet til ${ labelName } og avsender lagt til ikke-søppelpostlisten din.",
-        "${ elementsCount } meldinger flyttet til ${ labelName } og avsenderene lagt til ikke-søppelpostlisten din."
-      ],
-      "${ elementsCount } message moved to ${ labelName }.": [
-        "${ elementsCount } melding flyttet til ${ labelName }.",
-        "${ elementsCount } meldinger flyttet til ${ labelName }."
-      ],
-      "${ elementsCount } message moved to spam and sender added to your spam list.": [
-        "${ elementsCount } melding flyttet til søppelpost og avsender lagt til søppelpostlisten.",
-        "${ elementsCount } meldinger flyttet til søppelpost og avsenderene lagt til søppelpostlisten."
-      ],
-      "${ elementsCount } message removed from ${ labelName }.": [
-        "${ elementsCount } melding fjernet fra ${ labelName }.",
-        "${ elementsCount } meldinger fjernet fra ${ labelName }."
-      ],
-      "${ elementsCount } message removed from Starred.": [
-        "${ elementsCount } melding fjernet fra stjernemerket.",
-        "${ elementsCount } meldinger fjernet fra stjernemerket."
-      ],
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
       ],
@@ -13904,14 +14165,6 @@
       ],
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Kontakt slettet",
-        "Kontakter slettet"
-      ],
-      "Contact group deleted": [
-        "Kontaktgruppe slettet",
-        "Kontaktgrupper slettet"
       ],
       "Contact saved": [
         "Kontakt lagret"
@@ -13951,10 +14204,6 @@
       ],
       "Conversation removed from Starred.": [
         "Samtale fjernet fra stjernemerket."
-      ],
-      "Conversation updated": [
-        "Samtalen oppdatert",
-        "Samtaler oppdatert"
       ],
       "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
         "Samtaler fra ${ sendersList } merkes som ${ labelsList }"
@@ -14031,23 +14280,11 @@
       "Message removed from Starred.": [
         "Melding fjernet fra stjernemerket."
       ],
-      "Message updated": [
-        "Meldingen oppdatert",
-        "Meldinger oppdatert"
-      ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "Meldinger fra ${ sendersList } merkes som ${ labelsList }"
       ],
       "Messages from ${ sendersList } will be moved to ${ folder }": [
         "Meldinger fra ${ sendersList } flyttes til ${ folder }"
-      ],
-      "Move ${ selectionCount } conversation": [
-        "Flytt ${ selectionCount } samtale",
-        "Flytt ${ selectionCount } samtaler"
-      ],
-      "Move ${ selectionCount } message": [
-        "Flytt ${ selectionCount } melding",
-        "Flytt ${ selectionCount } meldinger"
       ],
       "Password copied to clipboard": [
         "Passord kopiert til utklippstavlen"
@@ -14078,10 +14315,6 @@
       ],
       "Read receipt sent": [
         "Lesebekreftelse sendt"
-      ],
-      "Recategorized ${ elementsCount } message.": [
-        "Omkategorisert ${ elementsCount } melding.",
-        "Omkategorisert ${ elementsCount } meldinger."
       ],
       "Secret passphrase updated": [
         "Hemmelig passfrase oppdatert"
@@ -14243,52 +14476,6 @@
         "I går"
       ]
     },
-    "Time unit": {
-      "${ ceilDays } day": [
-        "${ ceilDays } dag",
-        "${ ceilDays } dager"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } time",
-        "${ ceilHours } timer"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minutt",
-        "${ ceilMinutes } minutter"
-      ],
-      "${ seconds } second": [
-        "${ seconds } sekund",
-        "${ seconds } sekunder"
-      ]
-    },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } t",
-        "${ hours } t"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 t",
-        "${ hoursInt },5 t"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 time",
-        "${ hoursInt },5 timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minutt",
-        "${ minutes } minutter"
-      ]
-    },
     "Tip Action": {
       "Activate": [
         "Aktiver"
@@ -14328,20 +14515,8 @@
       "${ appName } keyboard shortcuts": [
         "${ appName }-tastatursnarveier"
       ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } e-postadresse",
-        "${ emailsCount } e-postadresser"
-      ],
       "${ feature } is now active": [
         "${ feature } er nå aktiv"
-      ],
-      "${ numMessages } message": [
-        "${ numMessages } melding",
-        "${ numMessages } meldinger"
-      ],
-      "${ unreads } unread message": [
-        "${ unreads } ulest melding",
-        "${ unreads } uleste meldinger"
       ],
       "(active)": [
         "(aktiv)"
@@ -14381,10 +14556,6 @@
       ],
       "Add filter": [
         "Legg til filter"
-      ],
-      "Add to ${ groupCount } group": [
-        "Legg til ${ groupCount } gruppe",
-        "Legg til ${ groupCount } grupper"
       ],
       "Add to ${ groupName }": [
         "Legg til i ${ groupName }"
@@ -14554,26 +14725,6 @@
       "Decryption error": [
         "Dekrypteringsfeil"
       ],
-      "Delete ${ count } contact": [
-        "Slett ${ count } kontakt",
-        "Slett ${ count } kontakter"
-      ],
-      "Delete ${ count } contact group": [
-        "Slett ${ count } kontaktgruppe",
-        "Slett ${ count } kontaktgrupper"
-      ],
-      "Delete ${ count } conversation": [
-        "Slett ${ count } samtale",
-        "Slett ${ count } samtaler"
-      ],
-      "Delete ${ count } draft": [
-        "Slett ${ count } utkast",
-        "Slett ${ count } utkast"
-      ],
-      "Delete ${ count } message": [
-        "Slett ${ count } melding",
-        "Slett ${ count } meldinger"
-      ],
       "Delete ${ value }": [
         "Slett ${ value }"
       ],
@@ -14600,6 +14751,9 @@
       ],
       "Desktop": [
         "Skrivebord"
+      ],
+      "Disable categories?": [
+        "Deaktivere kategorier?"
       ],
       "Discover your subscription benefits": [
         "Oppdag abonnementsfordelene dine"
@@ -14736,10 +14890,6 @@
       "Image": [
         "Bilde"
       ],
-      "Import as simple event?": [
-        "Importer som enkel hendelse?",
-        "Importer som enkle hendelser?"
-      ],
       "Import contacts": [
         "Importer kontakter"
       ],
@@ -14772,10 +14922,6 @@
       ],
       "Label as": [
         "Merk som"
-      ],
-      "Label message as": [
-        "Merk melding som",
-        "Merk meldinger som"
       ],
       "Label options": [
         "Alternativer for etikett"
@@ -14860,10 +15006,6 @@
       ],
       "Move all messages to trash": [
         "Flytt alle meldingene til papirkurven"
-      ],
-      "Move message to": [
-        "Flytt melding til",
-        "Flytt meldinger til"
       ],
       "Move messages to": [
         "Flytt meldinger til"
@@ -15192,10 +15334,6 @@
       "Trash all messages?": [
         "Slette alle meldinger?"
       ],
-      "Trust new key?": [
-        "Klarére ny nøkkel?",
-        "Klarére nye nøkler?"
-      ],
       "Trust pinned keys?": [
         "Klarére festede nøkler?"
       ],
@@ -15258,10 +15396,6 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistenkt falskt nettsted"
-      ],
-      "We protected you from ${ trackersCount } tracker": [
-        "Vi beskyttet deg mot ${ trackersCount } sporer",
-        "Vi beskyttet deg mot ${ trackersCount } sporere"
       ],
       "Welcome": [
         "Velkommen"
@@ -15449,56 +15583,12 @@
         "Din standard skrifttype vil se ut som følgende:"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
-        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prøv et kortere brukernavn (maks ${ n } tegn)",
-        "Prøv et kortere brukernavn (maks ${ n } tegn)"
-      ]
-    },
     "Video control": {
       "Click to replay the video": [
         "Klikk for å spille av videoen på nytt"
       ],
       "Replay video": [
         "Spill av video på nytt"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } enhet",
-        "${ n } enheter"
-      ],
-      "${ n } server": [
-        "${ n } tjener",
-        "${ n }+ tjenere"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-tilkobling",
-        "${ n } VPN-tilkoblinger"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } land",
-        "${ numberOfCountries } land"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } over ${ numberOfCountries } land",
-        "${ numberOfServers } over ${ numberOfCountries }+ land"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } i ${ numberOfCountries } land",
-        "${ numberOfServers } i ${ numberOfCountries } land"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Velger automatisk fra ${ numberOfCountries } land",
-        "Velger automatisk fra ${ numberOfCountries } land"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Tjenere i ${ numberOfCountries }+ land",
-        "Tjenere i ${ numberOfCountries }+ land"
       ]
     },
     "vpn_2step: feature": {
@@ -15515,18 +15605,6 @@
       ]
     },
     "wallet_signup_2024: Info": {
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME }-epostadresse",
-        "${ n } ${ BRAND_NAME }-epostadresser"
-      ],
-      "${ n } account per wallet": [
-        "${ n } konto per lommebok",
-        "${ n } kontoer per lommebok"
-      ],
-      "${ n } wallet": [
-        "${ n } lommebok",
-        "${ n } lommebøker"
-      ],
       "Bitcoin via Email": [
         "Bitcoin via e-post"
       ],
@@ -15554,10 +15632,6 @@
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } vil overføre så mye data som mulig, og starter med de nyeste meldingene dine."
       ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Er du sikker på at du ønsker å slette ${ count } kontakt permanent?",
-        "Er du sikker på at du ønsker å slette ${ count } kontakter permanent?"
-      ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Er du sikker på at du vil slette disse kontaktgruppene permanent?"
       ],
@@ -15581,10 +15655,6 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Noen av kontaktene som skal slås sammen, viser feil. Gjennomgå dem individuelt."
-      ],
-      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
-        "Bekreftelsen av vedleggets signatur mislyktes.\\nDu kan fortsatt laste ned dette vedlegget, men det kan ha blitt tuklet med.",
-        "Noen av vedleggenes signaturer ble ikke bekreftet. Du kan fortsatt laste ned disse vedleggene, men de kan ha blitt tuklet med."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktdataene er skadet og kan ikke vises."
@@ -15632,54 +15702,6 @@
       ]
     },
     "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Hver ${ interval } uke på ${ multipleDaysString }",
-        "Hver ${ interval } uke på ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Hver ${ interval } uke på alle dager",
-        "Hver ${ interval } uke på alle dager"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Hver ${ interval } uke på fredag",
-        "Hver ${ interval } uke på fredag"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Hver ${ interval } uke på mandag",
-        "Hver ${ interval } uke på mandag"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Hver ${ interval } uke på mandag, ${ timesString }",
-        "Hver ${ interval } uke på mandag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Hver ${ interval } uke på lørdag",
-        "Hver ${ interval } uke på lørdag"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Hver ${ interval } uke på søndag",
-        "Hver ${ interval } uke på søndag"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Hver ${ interval } uke på søndag, ${ timesString }",
-        "Hver ${ interval } uke på søndag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Hver ${ interval } uke på torsdag",
-        "Hver ${ interval } uke på torsdag"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Hver ${ interval } uke på tirsdag",
-        "Hver ${ interval } uke på tirsdag"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Hver ${ interval } uke på tirsdag, ${ timesString }",
-        "Hver ${ interval } uke på tirsdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Hver ${ interval } uke på onsdag",
-        "Hver ${ interval } uke på onsdag"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Ukentlig på ${ multipleDaysString }"
       ],
@@ -15709,30 +15731,6 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }",
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Hver ${ interval } uke på alle dager, ${ timesString }",
-        "Hver ${ interval } uke på alle dager, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Hver ${ interval } uke på fredag, ${ timesString }",
-        "Hver ${ interval } uke på fredag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Hver ${ interval } uke på lørdag, ${ timesString }",
-        "Hver ${ interval } uke på lørdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Hver ${ interval } uke på torsdag, ${ timesString }",
-        "Hver ${ interval } uke på torsdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Hver ${ interval } uke på onsdag, ${ timesString }",
-        "Hver ${ interval } uke på onsdag, ${ timesString }"
-      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Ukentlig på ${ multipleDaysString }, ${ timesString }"
       ],
@@ -15762,42 +15760,6 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }",
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Hver ${ interval } uke på alle dager, ${ untilString }",
-        "Hver ${ interval } uke på alle dager, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Hver ${ interval } uke på fredag, ${ untilString }",
-        "Hver ${ interval } uke på fredag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Hver ${ interval } uke på mandag, ${ untilString }",
-        "Hver ${ interval } uke på mandag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Hver ${ interval } uke på lørdag, ${ untilString }",
-        "Hver ${ interval } uke på lørdag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Hver ${ interval } uke på søndag, ${ untilString }",
-        "Hver ${ interval } uke på søndag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Hver ${ interval } uke på torsdag, ${ untilString }",
-        "Hver ${ interval } uke på torsdag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Hver ${ interval } uke på tirsdag, ${ untilString }",
-        "Hver ${ interval } uke på tirsdag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Hver ${ interval } uke på onsdag, ${ untilString }",
-        "Hver ${ interval } uke på onsdag, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Ukentlig på ${ multipleDaysString }, ${ untilString }"
       ],
@@ -15850,28 +15812,16 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "Hvert ${ interval } år",
-        "Hvert ${ interval } år"
-      ],
       "Yearly": [
         "Årlig"
       ]
     },
     "Yearly recurring event, frequency (times)": {
-      "Every ${ interval } year, ${ timesString }": [
-        "Hvert ${ interval } år, ${ timesString }",
-        "Hvert ${ interval } år, ${ timesString }"
-      ],
       "Yearly, ${ timesString }": [
         "Årlig, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
-      "Every ${ interval } year, ${ untilString }": [
-        "Hvert ${ interval } år, ${ untilString }",
-        "Hvert ${ interval } år, ${ untilString }"
-      ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
       ]
