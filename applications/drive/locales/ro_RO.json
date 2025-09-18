@@ -4,1123 +4,6 @@
     "language": "ro_RO"
   },
   "contexts": {
-    "": {
-      "${ activeDownloadsCount } downloading": [
-        "Se descarcă ${ activeDownloadsCount }",
-        "Se descarcă ${ activeDownloadsCount }",
-        "Se descarcă ${ activeDownloadsCount }"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
-        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)"
-      ],
-      "${ addressCount } email address": [
-        "Adrese de e-mail: ${ addressCount }",
-        "Adrese de e-mail: ${ addressCount }",
-        "Adrese de e-mail: ${ addressCount }"
-      ],
-      "${ admins } admin": [
-        "Administratori: ${ admins }",
-        "Administratori: ${ admins }",
-        "Administratori: ${ admins }"
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "Calendare noi: ${ calendarsToBeCreatedCount }",
-        "Calendare noi: ${ calendarsToBeCreatedCount }",
-        "Calendare noi: ${ calendarsToBeCreatedCount }"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
-        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
-        "Calendare îmbinate: ${ calendarsToBeMergedCount }"
-      ],
-      "${ canceledCount } canceled": [
-        "Unul anulat",
-        "${ canceledCount } anulate",
-        "${ canceledCount } anulate"
-      ],
-      "${ ceilDays } day": [
-        "${ ceilDays } zi",
-        "${ ceilDays } zile",
-        "${ ceilDays } de zile"
-      ],
-      "${ ceilHours } hour": [
-        "Ore: ${ ceilHours }",
-        "${ ceilHours } ore",
-        "${ ceilHours } de ore"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minut",
-        "${ ceilMinutes } minute",
-        "${ ceilMinutes } de minute"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }",
-        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }",
-        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }"
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } membru",
-        "${ contactEmailsLength } membri",
-        "${ contactEmailsLength } de membri"
-      ],
-      "${ contactsCount } contact found": [
-        "Contacte găsite: ${ contactsCount }",
-        "Contacte găsite: ${ contactsCount }",
-        "Contacte găsite: ${ contactsCount }"
-      ],
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "S-a exportat ${ contactsExported.length } din ${ countContacts } contact cu succes.",
-        "S-au exportat ${ contactsExported.length } din ${ countContacts } de contacte cu succes.",
-        "S-au exportat ${ contactsExported.length } din ${ countContacts } de contacte cu succes."
-      ],
-      "${ contactsLength } contact": [
-        "Contacte: ${ contactsLength }",
-        "Contacte: ${ contactsLength }",
-        "Contacte: ${ contactsLength }"
-      ],
-      "${ count } item failed to be decrypted": [
-        "Nu s-a putut decripta un articol.",
-        "Nu s-au putut decripta ${ count } articole.",
-        "Nu s-au putut decripta ${ count } de articole."
-      ],
-      "${ countMergeableContacts } contact look identical.": [
-        "Un contact arată identic.",
-        "${ countMergeableContacts } contacte arată identic.",
-        "${ countMergeableContacts } de contacte arată identic."
-      ],
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } a eșuat",
-        "${ countOfFailedLinks } au eșuat",
-        "${ countOfFailedLinks } au eșuat"
-      ],
-      "${ countOfUnrecoveredLinksLeft } left": [
-        "${ countOfUnrecoveredLinksLeft } rămas",
-        "${ countOfUnrecoveredLinksLeft } rămase",
-        "${ countOfUnrecoveredLinksLeft } rămase"
-      ],
-      "${ dayDiff } day left": [
-        "Zile rămase: ${ dayDiff }",
-        "Zile rămase: ${ dayDiff }",
-        "Zile rămase: ${ dayDiff }"
-      ],
-      "${ days } day": [
-        "Zile: ${ days }",
-        "Zile: ${ days }",
-        "Zile: ${ days }"
-      ],
-      "${ domains } additional custom domain": [
-        "Domenii personale adiționale: ${ domains }",
-        "Domenii personale adiționale: ${ domains }",
-        "Domenii personale adiționale: ${ domains }"
-      ],
-      "${ doneCount } finished": [
-        "S-a transferat unul",
-        "S-au transferat ${ doneCount }",
-        "S-au transferat ${ doneCount }"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "S-a descărcat unul",
-        "S-au descărcat ${ doneDownloadsCount }",
-        "S-au descărcat ${ doneDownloadsCount }"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "S-a încărcat unul",
-        "S-au încărcat ${ doneUploadsCount }",
-        "S-au încărcat ${ doneUploadsCount }"
-      ],
-      "${ emailsCount } email address": [
-        "Adrese de e-mail: ${ emailsCount }",
-        "Adrese de e-mail: ${ emailsCount }",
-        "Adrese de e-mail: ${ emailsCount }"
-      ],
-      "${ errorCount } failed": [
-        "Unul a eșuat",
-        "${ errorCount } au eșuat",
-        "${ errorCount } au eșuat"
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } oră",
-        "${ gracePeriodHoursRemaining } ore",
-        "${ gracePeriodHoursRemaining } de ore"
-      ],
-      "${ gracePeriodHoursRemaining } more hour": [
-        "Ore rămase: ${ gracePeriodHoursRemaining }",
-        "Ore rămase: ${ gracePeriodHoursRemaining }",
-        "Ore rămase: ${ gracePeriodHoursRemaining }"
-      ],
-      "${ groupCounts } group found": [
-        "Grupuri găsite: ${ groupCounts }",
-        "Grupuri găsite: ${ groupCounts }",
-        "Grupuri găsite: ${ groupCounts }"
-      ],
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hours } hour": [
-        "${ hours } oră",
-        "${ hours } ore",
-        "${ hours } de ore"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 h",
-        "${ hoursInt },5 h",
-        "${ hoursInt },5 h"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 ore",
-        "${ hoursInt },5 ore",
-        "${ hoursInt },5 de ore"
-      ],
-      "${ invitationsCount } pending invitation": [
-        "Invitații în așteptare: ${ invitationsCount }",
-        "Invitații în așteptare: ${ invitationsCount }",
-        "Invitații în așteptare: ${ invitationsCount }"
-      ],
-      "${ ips } server": [
-        "Servere: ${ ips }",
-        "Servere: ${ ips }",
-        "Servere: ${ ips }"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min",
-        "${ minutes } min"
-      ],
-      "${ minutes } minute": [
-        "Minute: ${ minutes }",
-        "Minute: ${ minutes }",
-        "Minute: ${ minutes }"
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "S-a șters un contact.",
-        "S-au șters ${ model.deleted.length } din ${ totalBeDeleted } contacte.",
-        "S-au șters ${ model.deleted.length } din ${ totalBeDeleted } de contacte."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "S-a îmbinat un contact.",
-        "S-au îmbinat ${ model.submitted.length } din ${ totalBeMerged } contacte.",
-        "S-au îmbinat ${ model.submitted.length } din ${ totalBeMerged } de contacte."
-      ],
-      "${ n } ${ BRAND_NAME } email address": [
-        "Adrese de e-mail ${ BRAND_NAME }: ${ n }",
-        "Adrese de e-mail ${ BRAND_NAME }: ${ n }",
-        "Adrese de e-mail ${ BRAND_NAME }: ${ n }"
-      ],
-      "${ n } account per wallet": [
-        "Conturi per portofel: ${ n }",
-        "Conturi per portofel: ${ n }",
-        "Conturi per portofel: ${ n }"
-      ],
-      "${ n } calendar": [
-        "${ n } calendar",
-        "${ n } calendare",
-        "${ n } de calendare"
-      ],
-      "${ n } calendar per user": [
-        "${ n } calendar per utilizator",
-        "${ n } calendare per utilizator",
-        "${ n } de calendare per utilizator"
-      ],
-      "${ n } custom email domain": [
-        "Un domeniu personal de e-mail",
-        "${ n } domenii personale de e-mail",
-        "${ n } de domenii personale de e-mail"
-      ],
-      "${ n } device": [
-        "Dispozitive: ${ n }",
-        "Dispozitive: ${ n }",
-        "Dispozitive: ${ n }"
-      ],
-      "${ n } email address": [
-        "O adresă de e-mail",
-        "${ n } adrese de e-mail/aliasuri",
-        "${ n } de adrese de e-mail/aliasuri"
-      ],
-      "${ n } email address per user": [
-        "O adresă per utilizator",
-        "${ n } adrese de e-mail per utilizator",
-        "${ n } de adrese de e-mail per utilizator"
-      ],
-      "${ n } filter": [
-        "Un filtru",
-        "${ n } filtre",
-        "${ n } de filtre"
-      ],
-      "${ n } folder": [
-        "Un folder",
-        "${ n } foldere",
-        "${ n } de foldere"
-      ],
-      "${ n } folder and label": [
-        "Un folder și o etichetă",
-        "${ n } foldere și etichete",
-        "${ n } de foldere și etichete"
-      ],
-      "${ n } free VPN connection per user": [
-        "Conexiuni VPN gratuite per utilizator: ${ n }",
-        "Conexiuni VPN gratuite per utilizator: ${ n }",
-        "Conexiuni VPN gratuite per utilizator: ${ n }"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } alias „hide-my-email”",
-        "${ n } aliasuri „hide-my-email”",
-        "${ n } de aliasuri „hide-my-email”"
-      ],
-      "${ n } high-speed VPN connection": [
-        "O conexiune VPN de mare viteză",
-        "${ n } conexiuni VPN de mare viteză",
-        "${ n } de conexiuni VPN de mare viteză"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "O conexiune VPN de mare viteză per utilizator",
-        "${ n } conexiuni VPN de mare viteză per utilizator",
-        "${ n } de onexiuni VPN de mare viteză per utilizator"
-      ],
-      "${ n } label": [
-        "O etichetă",
-        "${ n } etichete",
-        "${ n } de etichete"
-      ],
-      "${ n } message per day": [
-        "Un mesaj pe zi",
-        "${ n } mesaje pe zi",
-        "${ n } de mesaje pe zi"
-      ],
-      "${ n } month": [
-        "${ n } lună",
-        "${ n } luni",
-        "${ n } de luni"
-      ],
-      "${ n } month FREE": [
-        "Luni GRATUITE: ${ n }",
-        "Luni GRATUITE: ${ n }",
-        "Luni GRATUITE: ${ n }"
-      ],
-      "${ n } server": [
-        "Servere: ${ n }",
-        "Servere: ${ n }+",
-        "Servere: ${ n }+"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }",
-        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }",
-        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }"
-      ],
-      "${ n } user account": [
-        "Conturi de utilizatori: ${ n }",
-        "Conturi de utilizatori: ${ n }",
-        "Conturi de utilizatori: ${ n }"
-      ],
-      "${ n } vault": [
-        "${ n } seif",
-        "${ n } seifuri",
-        "${ n } de seifuri"
-      ],
-      "${ n } VPN connection": [
-        "O conexiune VPN",
-        "${ n } conexiuni VPN",
-        "${ n } de conexiuni VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "O conexiune VPN per utilizator",
-        "${ n } conexiuni VPN per utilizator",
-        "${ n } de conexiuni VPN per utilizator"
-      ],
-      "${ n } wallet": [
-        "Portofele: ${ n }",
-        "Portofele: ${ n }",
-        "Portofele: ${ n }"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } zi",
-        "${ nbDay } zile",
-        "${ nbDay } de zile"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }",
-        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }",
-        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }"
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }",
-        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }",
-        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }"
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }",
-        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }",
-        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }"
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }",
-        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }",
-        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }"
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } an",
-        "${ nbYear } ani",
-        "${ nbYear } de ani"
-      ],
-      "${ numberOfCountries } country": [
-        "Țări: ${ numberOfCountries }",
-        "Țări: ${ numberOfCountries }",
-        "Țări: ${ numberOfCountries }"
-      ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "O descărcare a eșuat",
-        "Au eșuat ${ numberOfFailedTransfer.total } descărcări.",
-        "Au eșuat ${ numberOfFailedTransfer.total } de descărcări."
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "A eșuat ${ numberOfFailedTransfer.total } transfer.",
-        "Au eșuat ${ numberOfFailedTransfer.total } transferuri.",
-        "Au eșuat ${ numberOfFailedTransfer.total } de transferuri."
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "O încărcare a eșuat",
-        "Au eșuat ${ numberOfFailedTransfer.total } încărcări.",
-        "Au eșuat ${ numberOfFailedTransfer.total } de încărcări."
-      ],
-      "${ numberOfItems } item deleted": [
-        "Articole șterse: ${ numberOfItems }",
-        "Articole șterse: ${ numberOfItems }",
-        "Articole șterse: ${ numberOfItems }"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "S-a eliminat permanent un element din «Gunoi».",
-        "S-au eliminat definitiv ${ numberOfItems } articole din «Gunoi».",
-        "S-au eliminat definitiv ${ numberOfItems } de articole din «Gunoi»."
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Eșuare ștergere articole: ${ numberOfItems }",
-        "Eșuare ștergere articole: ${ numberOfItems }",
-        "Eșuare ștergere articole: ${ numberOfItems }"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "Un element nu a putut fi eliminat definitiv din «Gunoi».",
-        "${ numberOfItems } articole nu au putut fi eliminate definitiv din «Gunoi».",
-        "${ numberOfItems } de articole nu au putut fi eliminate definitiv din «Gunoi»."
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "Un element nu a putut fi mutat.",
-        "${ numberOfItems } articole nu au putut fi mutate.",
-        "${ numberOfItems } de articole nu au putut fi mutate."
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "Un element nu a putut fi mutat în «Gunoi».",
-        "${ numberOfItems } articole nu s-au putut muta în «Gunoi».",
-        "${ numberOfItems } de articole nu s-au putut muta în «Gunoi»."
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "Un element nu a putut fi restaurat din «Gunoi».",
-        "${ numberOfItems } articole nu au putut fi restaurate din «Gunoi».",
-        "${ numberOfItems } de articole nu au putut fi restaurate din «Gunoi»."
-      ],
-      "${ numberOfItems } item moved to trash": [
-        "S-a mutat un element în «Gunoi».",
-        "S-au mutat ${ numberOfItems } articole în «Gunoi».",
-        "S-au mutat ${ numberOfItems } de articole în «Gunoi»."
-      ],
-      "${ numberOfItems } item restored from trash": [
-        "Un element a fost restaurat din «Gunoi».",
-        "${ numberOfItems } articole au fost restaurate din «Gunoi».",
-        "${ numberOfItems } de articole au fost restaurate din «Gunoi»."
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "Un element a fost mutat cu succes.",
-        "${ numberOfItems } articole au fost mutate cu succes.",
-        "${ numberOfItems } de articole au fost mutate cu succes."
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } în ${ numberOfCountries } țară",
-        "${ numberOfServers } în ${ numberOfCountries } țări",
-        "${ numberOfServers } în ${ numberOfCountries } de țări"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } într-o țară",
-        "${ numberOfServers } în ${ numberOfCountries } țări",
-        "${ numberOfServers } în ${ numberOfCountries } de țări"
-      ],
-      "${ numberOfUsers } user": [
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }",
-        "Nr. maxim de utilizatori: ${ numberOfUsers }"
-      ],
-      "${ options }-day file version history": [
-        "Istoric versiuni fișiere: ${ options } zi",
-        "Istoric versiuni fișiere: ${ options } zile",
-        "Istoric versiuni fișiere: ${ options } de zile"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
-        "${ PASS_APP_NAME } cu ${ n } aliasuri hide-my-email",
-        "${ PASS_APP_NAME } cu ${ n } de aliasuri hide-my-email"
-      ],
-      "${ pausedCount } paused": [
-        "Unul suspendat",
-        "${ pausedCount } suspendate",
-        "${ pausedCount } suspendate"
-      ],
-      "${ photoCount } item": [
-        "Articole: ${ photoCount }",
-        "Articole: ${ photoCount }",
-        "Articole: ${ photoCount }"
-      ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
-        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
-        "Zile până la expirarea planului ${ planName }: ${ daysLeft }."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "Calendare per utilizator: ${ planNumberOfCalendars }",
-        "Calendare per utilizator: ${ planNumberOfCalendars }",
-        "Calendare per utilizator: ${ planNumberOfCalendars }"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "Domenii personale de e-mail: ${ planNumberOfDomains }",
-        "Domenii personale de e-mail: ${ planNumberOfDomains }",
-        "Domenii personale de e-mail: ${ planNumberOfDomains }"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "Adrese de e-mail: ${ planNumberOfEmails }",
-        "Adrese de e-mail: ${ planNumberOfEmails }",
-        "Adrese de e-mail: ${ planNumberOfEmails }"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "Adrese de e-mail per utilizator: ${ planNumberOfEmails }",
-        "Adrese de e-mail per utilizator: ${ planNumberOfEmails }",
-        "Adrese de e-mail per utilizator: ${ planNumberOfEmails }"
-      ],
-      "${ planNumberOfUsers } user": [
-        "Utilizatori: ${ planNumberOfUsers }",
-        "Utilizatori: ${ planNumberOfUsers }",
-        "Utilizatori: ${ planNumberOfUsers }"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "Foldere găsite: ${ providerFoldersNumLocalized }",
-        "Foldere găsite: ${ providerFoldersNumLocalized }",
-        "Foldere găsite: ${ providerFoldersNumLocalized }"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
-        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
-        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }"
-      ],
-      "${ scanErrorCount } scan failed": [
-        "Scanări eșuate: ${ scanErrorCount }",
-        "Scanări eșuate: ${ scanErrorCount }",
-        "Scanări eșuate: ${ scanErrorCount }"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "Licențe ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe ${ LUMO_APP_NAME }: ${ seats }",
-        "Licențe ${ LUMO_APP_NAME }: ${ seats }"
-      ],
-      "${ seats } writing assistant seat": [
-        "Licențe asistent de scriere: ${ seats }",
-        "Licențe asistent de scriere: ${ seats }",
-        "Licențe asistent de scriere: ${ seats }"
-      ],
-      "${ seconds } second": [
-        "Secunde: ${ seconds }",
-        "Secunde: ${ seconds }",
-        "Secunde: ${ seconds }"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
-        "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
-        "${ selectedCalendarsTotal } din ${ providerCalendars.length } de calendare"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "Contacte selectate: ${ selectedContactsLength }/${ contactsLength }",
-        "Contacte selectate: ${ selectedContactsLength }/${ contactsLength }",
-        "Contacte selectate: ${ selectedContactsLength }/${ contactsLength }"
-      ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } selectat",
-        "${ selectedCount } selectate",
-        "${ selectedCount } selectate"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "Foldere selectate: ${ selectedFoldersCount }",
-        "Foldere selectate: ${ selectedFoldersCount }",
-        "Foldere selectate: ${ selectedFoldersCount }"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "Etichete selectate: ${ selectedFoldersCount }",
-        "Etichete selectate: ${ selectedFoldersCount }",
-        "Etichete selectate: ${ selectedFoldersCount }"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "Foldere selectate: ${ selectedFoldersCountLocalized }",
-        "Foldere selectate: ${ selectedFoldersCountLocalized }",
-        "Foldere selectate: ${ selectedFoldersCountLocalized }"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "Etichete selectate: ${ selectedFoldersCountLocalized }",
-        "Etichete selectate: ${ selectedFoldersCountLocalized }",
-        "Etichete selectate: ${ selectedFoldersCountLocalized }"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } ignorat",
-        "${ skippedCount } ignorate",
-        "${ skippedCount } ignorate"
-      ],
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } zi",
-        "${ timeRemaining.inDays } zile",
-        "${ timeRemaining.inDays } de zile"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } oră",
-        "${ timeRemaining.inHours } ore",
-        "${ timeRemaining.inHours } de ore"
-      ],
-      "${ totalContacts } contact": [
-        "Un contact",
-        "${ totalContacts } contacte",
-        "${ totalContacts } de contacte"
-      ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } eveniment din ${ totalEvents } nu va fi importat. Extindeți pentru detalii.",
-        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii.",
-        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii."
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "S-a criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } contact.",
-        "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } contacte.",
-        "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
-      ],
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "Un eveniment din ${ totalToImport } a fost criptat și adăugat în calendar.",
-        "${ totalImported } evenimente din ${ totalToImport } au fost criptate și adăugate în calendar.",
-        "${ totalImported } de evenimente din ${ totalToImport } au fost criptate și adăugate în calendar."
-      ],
-      "${ updated } contact updated successfully.": [
-        "Contacte actualizate: ${ updated }",
-        "Contacte actualizate: ${ updated }",
-        "Contacte actualizate: ${ updated }"
-      ],
-      "${ users } user": [
-        "un utilizator",
-        "${ users } utilizatori",
-        "${ users } de utilizatori"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } membru)",
-        "(${ memberCount } membri)",
-        "(${ memberCount } de membri)"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+o conexiune pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
-        "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
-        "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
-      ],
-      "Add ${ photoCount } photo to": [
-        "Adăugare ${ photoCount } fotografie în",
-        "Adăugare ${ photoCount } fotografii în",
-        "Adăugare ${ photoCount } de fotografii în"
-      ],
-      "Add ${ photoCount } photo to a new album": [
-        "Adăugare fotografii în album nou: ${ photoCount }",
-        "Adăugare fotografii în album nou: ${ photoCount }",
-        "Adăugare fotografii în album nou: ${ photoCount }"
-      ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Adăugare în „${ album.name }” (${ album.photoCount } fotografie)",
-        "Adăugare în „${ album.name }” (${ album.photoCount } fotografii)",
-        "Adăugare în „${ album.name }” (${ album.photoCount } de fotografii)"
-      ],
-      "Add to ${ groupCount } group": [
-        "Adăugare la un grup",
-        "Adăugare la ${ groupCount } grupuri",
-        "Adăugare la ${ groupCount } de grupuri"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Toate (${ totalFoldersCount } folder)",
-        "Toate (${ totalFoldersCount } foldere)",
-        "Toate (${ totalFoldersCount } de foldere)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Toate (${ totalFoldersCount } etichetă)",
-        "Toate (${ totalFoldersCount } etichete)",
-        "Toate (${ totalFoldersCount } de etichete)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
-        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
-        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }."
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
-        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
-        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
-        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
-        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
-        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
-        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?"
-      ],
-      "Are you sure you want to remove this item from your list?": [
-        "Eliminați acest articol din listă?",
-        "Eliminați aceste articole din listă?",
-        "Eliminați aceste articole din listă?"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Contacte permise per grup de contacte: ${ maxContacts }",
-        "Contacte permise per grup de contacte: ${ maxContacts }",
-        "Contacte permise per grup de contacte: ${ maxContacts }"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Țări disponibile selectare automată: ${ numberOfCountries }",
-        "Țări disponibile selectare automată: ${ numberOfCountries }",
-        "Țări disponibile selectare automată: ${ numberOfCountries }"
-      ],
-      "byte": [
-        "bait",
-        "baiți",
-        "de baiți"
-      ],
-      "Byte": [
-        "Bait",
-        "Baiți",
-        "Baiți"
-      ],
-      "Contact deleted": [
-        "Contact șters",
-        "Contacte șterse",
-        "Contacte șterse"
-      ],
-      "Contact group deleted": [
-        "Grupul de contacte a fost șters",
-        "Grupurile de contacte au fost șterse",
-        "Grupurile de contacte au fost șterse"
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Creare ${ calendarsToBeCreatedCount } calendar",
-        "Creare ${ calendarsToBeCreatedCount } calendare",
-        "Creare ${ calendarsToBeCreatedCount } de calendare"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Creați un cont în cloud securizat pentru ${ value } membru",
-        "Creați un cont cloud securizat pentru ${ value } membri",
-        "Creați un cont cloud securizat pentru ${ value } de membri"
-      ],
-      "Create up to ${ n } calendar": [
-        "Creați maxim ${ n } calendar",
-        "Creați până la ${ n } calendare",
-        "Creați până la ${ n } de calendare"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Creați până la ${ n } calendar sau adăugați calendare de la prieteni, familie, colegi și organizații",
-        "Creați până la ${ n } calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
-        "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
-      ],
-      "Delete ${ count } contact": [
-        "Ștergere un contact",
-        "Ștergere ${ count } contacte",
-        "Ștergere ${ count } de contacte"
-      ],
-      "Delete ${ count } contact group": [
-        "Ștergere grup de contacte",
-        "Ștergere ${ count } grupuri de contacte",
-        "Ștergere ${ count } de grupuri de contacte"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Ștergere contacte: ${ selectedCount }",
-        "Ștergere contacte: ${ selectedCount }",
-        "Ștergere contacte: ${ selectedCount }"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Ștergere grup de contacte: ${ selectedCount }",
-        "Ștergere grup de contacte: ${ selectedCount }",
-        "Ștergere grup de contacte: ${ selectedCount }"
-      ],
-      "Delete ${ total } item?": [
-        "Ștergeți ${ total } articol?",
-        "Ștergeți ${ total } articole?",
-        "Ștergeți ${ total } de articole?"
-      ],
-      "Delete drive?": [
-        "Ștergeți unitatea?",
-        "Ștergeți unitățile?",
-        "Ștergeți unitățile?"
-      ],
-      "Delete locked drive": [
-        "Ștergere unitate blocată",
-        "Ștergere unități blocate",
-        "Ștergere unități blocate"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Deselectați cel puțin ${ calendarsToFixCount } calendar.",
-        "Deselectați cel puțin ${ calendarsToFixCount } calendare.",
-        "Deselectați cel puțin ${ calendarsToFixCount } de calendare."
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Deselectați cel puțin ${ calendarsToFixCount } calendar sau",
-        "Deselectați cel puțin ${ calendarsToFixCount } calendare sau",
-        "Deselectați cel puțin ${ calendarsToFixCount } de calendare sau"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Timp estimat rămas: ${ estimatedMinutes } minut",
-        "Timp estimat rămas: ${ estimatedMinutes } minute",
-        "Timp estimat rămas: ${ estimatedMinutes } de minute"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Fișierul sau folderul „${ filename }” și încă unul se încarcă deja.",
-        "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja.",
-        "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja."
-      ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Sugestii găsite: ${ itemsCount }. Folosiți tastatura pentru a naviga.",
-        "Sugestii găsite: ${ itemsCount }. Folosiți tastatura pentru a naviga.",
-        "Sugestii găsite: ${ itemsCount }. Folosiți tastatura pentru a naviga."
-      ],
-      "Found ${ searchView.numberOfResults } result": [
-        "S-a găsit un rezultat",
-        "S-au găsit ${ searchView.numberOfResults } rezultate",
-        "S-au găsit ${ searchView.numberOfResults } de rezultate"
-      ],
-      "Gigabyte": [
-        "Gigabait",
-        "Gigabaiți",
-        "Gigabaiți"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "VPN de mare viteză pe un dispozitiv",
-        "VPN de mare viteză pe ${ n } dispozitive",
-        "VPN de mare viteză pe ${ n } de dispozitive"
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
-        "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
-        "Importare ${ calendarCount } din ${ totalCalendarsCount } de calendare"
-      ],
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Importare toate mesajele dintr-un folder și etichetare cu",
-        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu",
-        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importare toate mesajele dintr-o etichetă și etichetare cu",
-        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare cu",
-        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare cu"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Importare toate mesajele dintr-un folder și etichetare cu",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Importare toate mesajele dintr-o etichetă și etichetare cu",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu",
-        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
-      ],
-      "Import as simple event?": [
-        "Importați ca eveniment simplu?",
-        "Importați ca evenimente simple?",
-        "Importați ca evenimente simple?"
-      ],
-      "Kilobyte": [
-        "Kilobait",
-        "Kilobaiți",
-        "Kilobaiți"
-      ],
-      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
-        "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
-        "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caractere",
-        "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } de caractere"
-      ],
-      "Megabyte": [
-        "Megabait",
-        "Megabaiți",
-        "Megabaiți"
-      ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Îmbinați cel puțin ${ calendarsToFixCount } calendar cu un calendar ${ BRAND_NAME } existent.",
-        "Îmbinați cel puțin ${ calendarsToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
-        "Îmbinați cel puțin ${ calendarsToFixCount } de calendare cu calendarele ${ BRAND_NAME } existente."
-      ],
-      "Move ${ n } file": [
-        "Mutare ${ n } fișier.",
-        "Mutare ${ n } fișiere.",
-        "Mutare ${ n } de fișiere."
-      ],
-      "Move ${ n } folder": [
-        "Mutare ${ n } folder",
-        "Mutare ${ n } foldere",
-        "Mutare ${ n } de foldere"
-      ],
-      "Move ${ n } item": [
-        "Mutare ${ n } element.",
-        "Mutare ${ n } articole.",
-        "Mutare ${ n } de articole."
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "Numele trebuie să aibă cel mult un caracter.",
-        "Numele trebuie să aibă cel mult ${ MAX_NAME_LENGTH } caractere.",
-        "Numele trebuie să aibă cel mult ${ MAX_NAME_LENGTH } de caractere."
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Unul dintre contacte nu are adresă de e-mail: ${ noEmailsContactNamesList }",
-        "Câteva contacte nu au adresă de e-mail: ${ noEmailsContactNamesList }",
-        "Câteva contacte nu au adresă de e-mail: ${ noEmailsContactNamesList }"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Unul dintre grupuri nu are contacte: ${ noContactGroupList }",
-        "Câteva grupuri nu au contacte: ${ noContactGroupList }",
-        "Câteva grupuri nu au contacte: ${ noContactGroupList }"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
-        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Solicitare de resetare parolă (${ user.Email }). Ore rămase în care vă puteți schimba parola: ${ hoursRemaining }.",
-        "Solicitare de resetare parolă (${ user.Email }). Ore rămase în care vă puteți schimba parola: ${ hoursRemaining }.",
-        "Solicitare de resetare parolă (${ user.Email }). Ore rămase în care vă puteți schimba parola: ${ hoursRemaining }."
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Remediați conflictul evidențiat pentru a continua.",
-        "Remediați conflictele evidențiate pentru a continua.",
-        "Remediați conflictele evidențiate pentru a continua."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Selectați adresa sau adresele de e-mail de adăugat la un grup.",
-        "Selectați adresa sau adresele de e-mail de adăugat la ${ groupCount } grupuri.",
-        "Selectați adresa sau adresele de e-mail de adăugat la ${ groupCount } de grupuri."
-      ],
-      "Remove item?": [
-        "Eliminați articolul?",
-        "Eliminați articolele?",
-        "Eliminați articolele?"
-      ],
-      "Removed duplicate invitee: ${ joinedInvitee }": [
-        "Invitat duplicat eliminat: ${ joinedInvitee }",
-        "Invitați duplicați eliminați: ${ joinedInvitee }",
-        "Invitați duplicați eliminați: ${ joinedInvitee }"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Selected item was not removed from your list": [
-        "Articolul selectat nu a fost eliminat din listă.",
-        "Articolele selectate nu au fost eliminate din listă.",
-        "Articolele selectate nu au fost eliminate din listă."
-      ],
-      "Selected items were successfully removed from your list": [
-        "Articolul selectat a fost eliminat din listă.",
-        "Articolele selectate au fost eliminate din listă.",
-        "Articolele selectate au fost eliminate din listă."
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Nr. minim de țări cu servere: ${ numberOfCountries }",
-        "Nr. minim de țări cu servere: ${ numberOfCountries }",
-        "Nr. minim de țări cu servere: ${ numberOfCountries }"
-      ],
-      "Share ${ photoCount } photo via": [
-        "Partajare ${ photoCount } fotografie via",
-        "Partajare ${ photoCount } fotografii via",
-        "Partajare ${ photoCount } de fotografii via"
-      ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "Folderul nu s-a putut șterge deoarece nu este gol.",
-        "Folderele nu s-au putut șterge deoarece nu sunt goale.",
-        "Folderele nu s-au putut șterge deoarece nu sunt goale."
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Interval luni reînnoire automată abonament: ${ cycle }.",
-        "Interval luni reînnoire automată abonament: ${ cycle }.",
-        "Interval luni reînnoire automată abonament: ${ cycle }."
-      ],
-      "Support for ${ n } custom email domain": [
-        "Domenii de e-mail personal acceptate: ${ n }",
-        "Domenii de e-mail personal acceptate: ${ n }",
-        "Domenii de e-mail personal acceptate: ${ n }"
-      ],
-      "Terabyte": [
-        "Tibibait",
-        "Tibibaiți",
-        "Tibibaiți"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
-        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }"
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Prețul redus special de ${ priceWithDiscount } este valid pentru ${ subscriptionLength } lună.",
-        "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } luni.",
-        "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } de luni."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
-        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } lună. Puteți anula oricând.",
-        "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
-        "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
-      ],
-      "This file contains an event invitation:": [
-        "Acest fișier conține o invitație la un eveniment:",
-        "Acest fișier conține invitații la evenimente:",
-        "Acest fișier conține invitații la evenimente:"
-      ],
-      "This file contains an invitation response:": [
-        "Acest fișier conține un răspuns la invitație:",
-        "Acest fișier conține răspunsurile la invitații:",
-        "Acest fișier conține răspunsurile la invitații:"
-      ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Acest articol nu este salvat în librăria de fotografii. Dacă îl eliminați din acest album, veți pierde definitiv accesul la el.",
-        "Unele din articolele selectate nu sunt salvate în librăria de fotografii. Dacă le eliminați din acest album, veți pierde definitiv accesul la ele.",
-        "Unele din articolele selectate nu sunt salvate în librăria de fotografii. Dacă le eliminați din acest album, veți pierde definitiv accesul la ele."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Zile rămase până la expirarea acestei permisiuni: ${ timeRemaining.inDays }",
-        "Zile rămase până la expirarea acestei permisiuni: ${ timeRemaining.inDays }",
-        "Zile rămase până la expirarea acestei permisiuni: ${ timeRemaining.inDays }"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Ore rămase până la expirarea acestei permisiuni: ${ timeRemaining.inHours }",
-        "Ore rămase până la expirarea acestei permisiuni: ${ timeRemaining.inHours }",
-        "Ore rămase până la expirarea acestei permisiuni: ${ timeRemaining.inHours }"
-      ],
-      "Total for ${ n } month": [
-        "Total pentru o lună",
-        "Total pentru ${ n } luni",
-        "Total pentru ${ n } de luni"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
-        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
-      ],
-      "Up to ${ n } user": [
-        "Până la ${ n } utilizator",
-        "Până la ${ n } utilizatori",
-        "Până la ${ n } utilizatori"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Nr. maxim de utilizatori: ${ n } (${ adminsText }, ${ usersText })",
-        "Nr. maxim de utilizatori: ${ n } (${ adminsText }, ${ usersText })",
-        "Nr. maxim de utilizatori: ${ n } (${ adminsText }, ${ usersText })"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Nr. maxim de dispozitive simultane: ${ n }",
-        "Nr. maxim de dispozitive simultane: ${ n }",
-        "Nr. maxim de dispozitive simultane: ${ n }"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "Partajare seif (maxim ${ n } persoană)",
-        "Partajare seif (maxim ${ n } persoane)",
-        "Partajare seif (maxim ${ n } de persoane)"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "Conexiune VPN pentru ${ n } dispozitiv per utilizator",
-        "Conexiuni VPN pentru ${ n } dispozitive per utilizator",
-        "Conexiuni VPN pentru ${ n } de dispozitive per utilizator"
-      ],
-      "Would you like to save it before removing?": [
-        "Doriți să-l salvați înainte de a-l elimina?",
-        "Doriți să le salvați înainte de a le elimina?",
-        "Doriți să le salvați înainte de a le elimina?"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
-        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
-      ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
-        "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
-        "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
-        "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
-        "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
-      ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "Mai aveți ${ expiresInDays } zi rămasă pentru a vă revendica bonusul de 3 GiB de bun venit și să vă ",
-        "Mai aveți ${ expiresInDays } zile rămase pentru a vă revendica bonusul de 3 GiB de bun venit și să vă ",
-        "Mai aveți ${ expiresInDays } de zile rămase pentru a vă revendica bonusul de bun venit de 3 GiB și să vă "
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Zile rămase pentru a vă reseta parola: ${ timeRemaining.inDays }",
-        "Zile rămase pentru a vă reseta parola: ${ timeRemaining.inDays }",
-        "Zile rămase pentru a vă reseta parola: ${ timeRemaining.inDays }"
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Ore rămase pentru a vă reseta parola: ${ timeRemaining.inHours }",
-        "Ore rămase pentru a vă reseta parola: ${ timeRemaining.inHours }",
-        "Ore rămase pentru a vă reseta parola: ${ timeRemaining.inHours }"
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Minute rămase pentru a vă reseta parola: ${ timeRemaining.inMinutes }",
-        "Minute rămase pentru a vă reseta parola: ${ timeRemaining.inMinutes }",
-        "Minute rămase pentru a vă reseta parola: ${ timeRemaining.inMinutes }"
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Secunde rămase pentru a vă reseta parola: ${ timeRemaining.inSeconds }",
-        "Secunde rămase pentru a vă reseta parola: ${ timeRemaining.inSeconds }",
-        "Secunde rămase pentru a vă reseta parola: ${ timeRemaining.inSeconds }"
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
-        "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
-        "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**"
-      ],
-      "You will need to save it again from the public link page.": [
-        "Va trebui să-l salvați din nou de pe pagina cu legături web publice.",
-        "Va trebui să le salvați din nou de pe pagina cu legături web publice.",
-        "Va trebui să le salvați din nou de pe pagina cu legături web publice."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
-        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } eveniment.",
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } evenimente.",
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } de evenimente."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
-        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
-        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }."
-      ]
-    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Redirecționarea va începe curând. Noile mesaje vor apărea în folderul «Primite»."
@@ -1162,6 +45,11 @@
       "Add": [
         "Adăugare"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "Adăugare fotografii în album nou: ${ photoCount }",
+        "Adăugare fotografii în album nou: ${ photoCount }",
+        "Adăugare fotografii în album nou: ${ photoCount }"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -1201,6 +89,11 @@
       "Add photos": [
         "Adaugă fotografii"
       ],
+      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
+        "Adăugare în „${ album.name }” (${ album.photoCount } fotografie)",
+        "Adăugare în „${ album.name }” (${ album.photoCount } fotografii)",
+        "Adăugare în „${ album.name }” (${ album.photoCount } de fotografii)"
+      ],
       "Add to album": [
         "Adăugare în album"
       ],
@@ -1212,6 +105,11 @@
       ],
       "Apply": [
         "Aplicare"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Contacte permise per grup de contacte: ${ maxContacts }",
+        "Contacte permise per grup de contacte: ${ maxContacts }",
+        "Contacte permise per grup de contacte: ${ maxContacts }"
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -1422,6 +320,16 @@
       ],
       "Delete": [
         "Ștergere"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Ștergere contacte: ${ selectedCount }",
+        "Ștergere contacte: ${ selectedCount }",
+        "Ștergere contacte: ${ selectedCount }"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Ștergere grup de contacte: ${ selectedCount }",
+        "Ștergere grup de contacte: ${ selectedCount }",
+        "Ștergere grup de contacte: ${ selectedCount }"
       ],
       "Delete album": [
         "Ștergere album"
@@ -2269,6 +1177,11 @@
       "What do I get?": [
         "Ce primesc?"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
+        "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }",
+        "Număr maxim de contacte la care puteți trimite fișiere vCard: ${ maxAttachments }"
+      ],
       "Your 3 GB bonus": [
         "Bonusul de 3 GiB"
       ],
@@ -2302,6 +1215,16 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "Domenii personale adiționale: ${ domains }",
+        "Domenii personale adiționale: ${ domains }",
+        "Domenii personale adiționale: ${ domains }"
+      ],
+      "${ ips } server": [
+        "Servere: ${ ips }",
+        "Servere: ${ ips }",
+        "Servere: ${ ips }"
+      ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
       ],
@@ -2313,6 +1236,21 @@
       ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "Licențe ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME }: ${ seats }",
+        "Licențe ${ LUMO_APP_NAME }: ${ seats }"
+      ],
+      "${ seats } writing assistant seat": [
+        "Licențe asistent de scriere: ${ seats }",
+        "Licențe asistent de scriere: ${ seats }",
+        "Licențe asistent de scriere: ${ seats }"
+      ],
+      "${ users } user": [
+        "${ users } utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
       ]
     },
     "Alert": {
@@ -2432,6 +1370,11 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
       "/ month": [
         "/lună"
       ],
@@ -2482,11 +1425,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puteți avea până la ${ TRIAL_MAX_DEDICATED_IPS } servere dedicate în perioada de probare."
@@ -2652,6 +1595,16 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, ${ DARK_WEB_MONITORING_NAME } și altele."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
+        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
@@ -2868,8 +1821,18 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "un utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
+      ],
       "Total": [
         "Total"
+      ],
+      "Total for ${ n } month": [
+        "Total pentru o lună",
+        "Total pentru ${ n } luni",
+        "Total pentru ${ n } de luni"
       ]
     },
     "Collapsible tooltip": {
@@ -4379,6 +3342,16 @@
       "Could not remove from favorites": [
         "Nu s-a putut elimina din favorite."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deselectați cel puțin ${ calendarsToFixCount } calendar.",
+        "Deselectați cel puțin ${ calendarsToFixCount } calendare.",
+        "Deselectați cel puțin ${ calendarsToFixCount } de calendare."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deselectați cel puțin ${ calendarsToFixCount } calendar sau",
+        "Deselectați cel puțin ${ calendarsToFixCount } calendare sau",
+        "Deselectați cel puțin ${ calendarsToFixCount } de calendare sau"
+      ],
       "Device name does not match": [
         "Numele dispozitivului nu se potrivește"
       ],
@@ -4535,6 +3508,11 @@
       "Last name is too long": [
         "Numele este prea lung."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Îmbinați cel puțin ${ calendarsToFixCount } calendar cu un calendar ${ BRAND_NAME } existent.",
+        "Îmbinați cel puțin ${ calendarsToFixCount } calendare cu calendarele ${ BRAND_NAME } existente.",
+        "Îmbinați cel puțin ${ calendarsToFixCount } de calendare cu calendarele ${ BRAND_NAME } existente."
+      ],
       "Missing key packet": [
         "Lipsește pachetul de chei."
       ],
@@ -4558,6 +3536,16 @@
       ],
       "Not a valid number": [
         "Nu este un număr valid"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Unul dintre contacte nu are adresă de e-mail: ${ noEmailsContactNamesList }",
+        "Câteva contacte nu au adresă de e-mail: ${ noEmailsContactNamesList }",
+        "Câteva contacte nu au adresă de e-mail: ${ noEmailsContactNamesList }"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Unul dintre grupuri nu are contacte: ${ noContactGroupList }",
+        "Câteva grupuri nu au contacte: ${ noContactGroupList }",
+        "Câteva grupuri nu au contacte: ${ noContactGroupList }"
       ],
       "Organization key is not decrypted": [
         "Cheia organizației nu este decriptată."
@@ -4598,6 +3586,11 @@
       "Please enter ZIP code": [
         "Introduceți codul poștal."
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Remediați conflictul evidențiat pentru a continua.",
+        "Remediați conflictele evidențiate pentru a continua.",
+        "Remediați conflictele evidențiate pentru a continua."
+      ],
       "Please provide either a first name, a last name or a display name": [
         "Furnizați fie prenumele, numele sau numele afișat."
       ],
@@ -4627,6 +3620,11 @@
       ],
       "Process aborted": [
         "Proces abandonat"
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Invitat duplicat eliminat: ${ joinedInvitee }",
+        "Invitați duplicați eliminați: ${ joinedInvitee }",
+        "Invitați duplicați eliminați: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "Raportul nu a putut fi trimis."
@@ -4814,6 +3812,11 @@
       "We were not able to load some of your shared items info": [
         "Unele articolele partajate nu s-au putut încărca."
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
+        "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }",
+        "Număr maxim de destinatari la care puteți trimite mesaje: ${ maxContacts }"
+      ],
       "You have reached the maximum number of calendars.": [
         "Ați atins numărul maxim de calendare."
       ],
@@ -4851,6 +3854,11 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "A apărut o eroare neașteptată. Importarea trebuie repornită."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } eveniment.",
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } evenimente.",
+        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS } de evenimente."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Fișierul ${ formattedFilename } are o metodă nevalidă și nu poat fi importat."
@@ -5063,6 +4071,13 @@
         "(fără titlu)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } a eșuat",
+        "${ countOfFailedLinks } au eșuat",
+        "${ countOfFailedLinks } au eșuat"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TiB spațiu total"
@@ -5227,6 +4242,11 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bait",
+        "baiți",
+        "de baiți"
+      ],
       "GB": [
         "GiB"
       ],
@@ -5238,6 +4258,33 @@
       ],
       "TB": [
         "TiB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bait",
+        "Baiți",
+        "Baiți"
+      ],
+      "Gigabyte": [
+        "Gigabait",
+        "Gigabaiți",
+        "Gigabaiți"
+      ],
+      "Kilobyte": [
+        "Kilobait",
+        "Kilobaiți",
+        "Kilobaiți"
+      ],
+      "Megabyte": [
+        "Megabait",
+        "Megabaiți",
+        "Megabaiți"
+      ],
+      "Terabyte": [
+        "Tibibait",
+        "Tibibaiți",
+        "Tibibaiți"
       ]
     },
     "Filter notification": {
@@ -5317,6 +4364,11 @@
       ]
     },
     "Heading": {
+      "Add ${ photoCount } photo to": [
+        "Adăugare ${ photoCount } fotografie în",
+        "Adăugare ${ photoCount } fotografii în",
+        "Adăugare ${ photoCount } de fotografii în"
+      ],
       "Add to shared album": [
         "Adăugare la album partajat"
       ],
@@ -5325,9 +4377,19 @@
       ],
       "Recent": [
         "Recente"
+      ],
+      "Share ${ photoCount } photo via": [
+        "Partajare ${ photoCount } fotografie via",
+        "Partajare ${ photoCount } fotografii via",
+        "Partajare ${ photoCount } de fotografii via"
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Sugestii găsite: ${ itemsCount }. Folosiți tastatura pentru a naviga.",
+        "Sugestii găsite: ${ itemsCount }. Folosiți tastatura pentru a naviga.",
+        "Sugestii găsite: ${ itemsCount }. Folosiți tastatura pentru a naviga."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilizați tastele sus și jos pentru a accesa și răsfoi sugestiile după introducere. Apăsați «Enter» pentru a confirma alegerea sau «Escape» pentru a închide caseta cu sugestii."
       ]
@@ -5394,6 +4456,16 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "Un eveniment din ${ totalToImport } a fost criptat și adăugat în calendar.",
+        "${ totalImported } evenimente din ${ totalToImport } au fost criptate și adăugate în calendar.",
+        "${ totalImported } de evenimente din ${ totalToImport } au fost criptate și adăugate în calendar."
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "A apărut o eroare la criptarea și adăugarea evenimentului. ${ totalImported } din ${ totalToImport } evenimente s-au importat cu succes.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes.",
+        "A apărut o eroare la criptarea și adăugarea evenimentelor. ${ totalImported } din ${ totalToImport } evenimente importate cu succes."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "A apărut o eroare la criptarea și adăugarea evenimentului. Niciun eveniment nu a putut fi importat."
       ],
@@ -5428,11 +4500,26 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Invitațiile importate apar în ${ CALENDAR_APP_NAME } ca evenimente simple, fără detalii despre organizator și participant. Pentru a primi actualizări ale evenimentelor și a vedea participanții, solicitați organizatorilor să vă invite folosindu-vă adresa de e-mail din ${ BRAND_NAME }."
       ],
+      "This file contains an event invitation:": [
+        "Acest fișier conține o invitație la un eveniment:",
+        "Acest fișier conține invitații la evenimente:",
+        "Acest fișier conține invitații la evenimente:"
+      ],
+      "This file contains an invitation response:": [
+        "Acest fișier conține un răspuns la invitație:",
+        "Acest fișier conține răspunsurile la invitații:",
+        "Acest fișier conține răspunsurile la invitații:"
+      ],
       "This file contains some data that we cannot import:": [
         "Acest fișier conține unele date care nu se pot importa:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "S-a criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } contact.",
+        "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } contacte.",
+        "S-au criptat și adăugat în lista de contacte ${ totalImported }/${ totalToImport } de contacte."
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "A apărut o eroare la criptarea și adăugarea contactului. Nu s-a importat niciun contact."
       ],
@@ -5452,6 +4539,13 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contact ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "Un contact",
+        "${ totalContacts } contacte",
+        "${ totalContacts } de contacte"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5630,6 +4724,11 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } eveniment din ${ totalEvents } nu va fi importat. Extindeți pentru detalii.",
+        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii.",
+        "${ totalEventsDiscarded } din ${ totalEvents } evenimente nu vor fi importate. Extindeți pentru detalii."
+      ],
       "No contact can be imported. Click for details": [
         "Nu se pot importa contacte. Faceți clic pentru detalii."
       ],
@@ -5641,6 +4740,26 @@
       ]
     },
     "Info": {
+      "${ activeDownloadsCount } downloading": [
+        "Se descarcă ${ activeDownloadsCount }",
+        "Se descarcă ${ activeDownloadsCount }",
+        "Se descarcă ${ activeDownloadsCount }"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
+        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)",
+        "Se descarcă ${ activeDownloadsCount } (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
+        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)",
+        "Se încarcă ${ activeUploadsCount } (${ uploadProgress }%)"
+      ],
+      "${ addressCount } email address": [
+        "Adrese de e-mail: ${ addressCount }",
+        "Adrese de e-mail: ${ addressCount }",
+        "Adrese de e-mail: ${ addressCount }"
+      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } a fost șters."
       ],
@@ -5659,11 +4778,61 @@
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. Claim your free ${ MAIL_APP_NAME } address now.": [
         "${ CALENDAR_APP_NAME } necesită o adresă ${ BRAND_NAME } pentru sincronizarea și criptarea securizată a evenimentelor. Revendicați-vă acum adresa gratuită ${ MAIL_APP_NAME }."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "Calendare noi: ${ calendarsToBeCreatedCount }",
+        "Calendare noi: ${ calendarsToBeCreatedCount }",
+        "Calendare noi: ${ calendarsToBeCreatedCount }"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }",
+        "Calendare îmbinate: ${ calendarsToBeMergedCount }"
+      ],
+      "${ canceledCount } canceled": [
+        "Unul anulat",
+        "${ canceledCount } anulate",
+        "${ canceledCount } anulate"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }",
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }",
+        "Contacte care conțin adrese multiple de e-mail: ${ contactCount }"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } membru",
+        "${ contactEmailsLength } membri",
+        "${ contactEmailsLength } de membri"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } conține adrese multiple de e-mail."
       ],
+      "${ contactsCount } contact found": [
+        "Contacte găsite: ${ contactsCount }",
+        "Contacte găsite: ${ contactsCount }",
+        "Contacte găsite: ${ contactsCount }"
+      ],
+      "${ contactsLength } contact": [
+        "Contacte: ${ contactsLength }",
+        "Contacte: ${ contactsLength }",
+        "Contacte: ${ contactsLength }"
+      ],
       "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Fișierele ${ DOCS_APP_NAME } nu pot fi descărcate direct și nu vor fi incluse în această descărcare. Puteți descărca celelalte fișiere făcând clic pe „Continuare descărcare”."
+      ],
+      "${ doneCount } finished": [
+        "S-a transferat unul",
+        "S-au transferat ${ doneCount }",
+        "S-au transferat ${ doneCount }"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "S-a descărcat unul",
+        "S-au descărcat ${ doneDownloadsCount }",
+        "S-au descărcat ${ doneDownloadsCount }"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "S-a încărcat unul",
+        "S-au încărcat ${ doneUploadsCount }",
+        "S-au încărcat ${ doneUploadsCount }"
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } din App Store"
@@ -5674,11 +4843,26 @@
       "${ email } invited you to join ${ albumName }": [
         "${ email } v-a invitat să vă alăturați la ${ albumName }"
       ],
+      "${ errorCount } failed": [
+        "Unul a eșuat",
+        "${ errorCount } au eșuat",
+        "${ errorCount } au eșuat"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: imagine completă"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pictogramă cu rezoluție mică"
+      ],
+      "${ groupCounts } group found": [
+        "Grupuri găsite: ${ groupCounts }",
+        "Grupuri găsite: ${ groupCounts }",
+        "Grupuri găsite: ${ groupCounts }"
+      ],
+      "${ invitationsCount } pending invitation": [
+        "Invitații în așteptare: ${ invitationsCount }",
+        "Invitații în așteptare: ${ invitationsCount }",
+        "Invitații în așteptare: ${ invitationsCount }"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
@@ -5689,8 +4873,23 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "Oferta pe viață a ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }. Prețul și data de reînnoire a abonamentului ${ planTitle } rămân neschimbate."
       ],
+      "${ pausedCount } paused": [
+        "Unul suspendat",
+        "${ pausedCount } suspendate",
+        "${ pausedCount } suspendate"
+      ],
+      "${ photoCount } item": [
+        "Articole: ${ photoCount }",
+        "Articole: ${ photoCount }",
+        "Articole: ${ photoCount }"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }.",
+        "Zile până la expirarea planului ${ planName }: ${ daysLeft }."
       ],
       "${ planName } expires today.": [
         "${ planName } expiră astăzi."
@@ -5698,17 +4897,72 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } vă protejează contul prin monitorizarea activității suspicioase."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "Foldere găsite: ${ providerFoldersNumLocalized }",
+        "Foldere găsite: ${ providerFoldersNumLocalized }",
+        "Foldere găsite: ${ providerFoldersNumLocalized }"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }",
+        "Etichete găsite în Gmail: ${ providerFoldersNumLocalized }"
+      ],
+      "${ scanErrorCount } scan failed": [
+        "Scanări eșuate: ${ scanErrorCount }",
+        "Scanări eșuate: ${ scanErrorCount }",
+        "Scanări eșuate: ${ scanErrorCount }"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendar",
+        "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
+        "${ selectedCalendarsTotal } din ${ providerCalendars.length } de calendare"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Contacte selectate: ${ selectedContactsLength }/${ contactsLength }",
+        "Contacte selectate: ${ selectedContactsLength }/${ contactsLength }",
+        "Contacte selectate: ${ selectedContactsLength }/${ contactsLength }"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } selectat",
+        "${ selectedCount } selectate",
+        "${ selectedCount } selectate"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Foldere selectate: ${ selectedFoldersCountLocalized }",
+        "Foldere selectate: ${ selectedFoldersCountLocalized }",
+        "Foldere selectate: ${ selectedFoldersCountLocalized }"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "Etichete selectate: ${ selectedFoldersCountLocalized }",
+        "Etichete selectate: ${ selectedFoldersCountLocalized }",
+        "Etichete selectate: ${ selectedFoldersCountLocalized }"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } ignorat",
+        "${ skippedCount } ignorate",
+        "${ skippedCount } ignorate"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
       "${ storage } storage": [
         "Stocare ${ storage }"
       ],
+      "${ updated } contact updated successfully.": [
+        "Contacte actualizate: ${ updated }",
+        "Contacte actualizate: ${ updated }",
+        "Contacte actualizate: ${ updated }"
+      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } există deja în acest loc."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } vă maschează adresa IP, așa că site-urile web nu vă pot identifica."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membru)",
+        "(${ memberCount } membri)",
+        "(${ memberCount } de membri)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/lună)"
@@ -5721,6 +4975,11 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+o conexiune pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
+        "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
+        "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
       ],
       "30-day money-back guarantee.": [
         "Garanția returnării banilor în 30 de zile."
@@ -5770,8 +5029,23 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Asistent pe bază de IA pentru a vă ajuta să scrieți mesaje mai bune, mai repede și fără efort."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Toate (${ totalFoldersCount } folder)",
+        "Toate (${ totalFoldersCount } foldere)",
+        "Toate (${ totalFoldersCount } de foldere)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Toate (${ totalFoldersCount } etichetă)",
+        "Toate (${ totalFoldersCount } etichete)",
+        "Toate (${ totalFoldersCount } de etichete)"
+      ],
       "All your changes will be lost.": [
         "Toate modificările vor fi pierdute."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
+        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }.",
+        "Vor fi importate toate contactele, până la limita de ${ MAX_CONTACTS_PER_USER }."
       ],
       "Also try looking in Trash.": [
         "Puteți căuta și în «Gunoi»."
@@ -5938,6 +5212,11 @@
       "Country code": [
         "Cod țară"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Creare ${ calendarsToBeCreatedCount } calendar",
+        "Creare ${ calendarsToBeCreatedCount } calendare",
+        "Creare ${ calendarsToBeCreatedCount } de calendare"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și folderele care trebuie importate."
       ],
@@ -5946,6 +5225,11 @@
       ],
       "Create a new contact group": [
         "Creare grup de contacte"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Creați un cont în cloud securizat pentru ${ value } membru",
+        "Creați un cont cloud securizat pentru ${ value } membri",
+        "Creați un cont cloud securizat pentru ${ value } de membri"
       ],
       "Create in": [
         "Creare în"
@@ -5994,6 +5278,11 @@
       ],
       "default email address": [
         "adresa de e-mail implicită"
+      ],
+      "Delete locked drive": [
+        "Ștergere unitate blocată",
+        "Ștergere unități blocate",
+        "Ștergere unități blocate"
       ],
       "Details": [
         "Detalii"
@@ -6117,6 +5406,11 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Introduceți parola (ca și contact aprobat)."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Timp estimat rămas: ${ estimatedMinutes } minut",
+        "Timp estimat rămas: ${ estimatedMinutes } minute",
+        "Timp estimat rămas: ${ estimatedMinutes } de minute"
       ],
       "Estimated time remaining: Less than a minute": [
         "Timp estimat rămas: mai puțin de un minut"
@@ -6249,6 +5543,11 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ VPN_APP_NAME }."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } calendar",
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } calendare",
+        "Importare ${ calendarCount } din ${ totalCalendarsCount } de calendare"
       ],
       "Import from": [
         "Importare din"
@@ -6399,6 +5698,11 @@
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracter",
+        "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caractere",
+        "Maxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } de caractere"
       ],
       "May": [
         "Mai"
@@ -6615,6 +5919,11 @@
       ],
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Selectați adresa sau adresele de e-mail de adăugat la un grup.",
+        "Selectați adresa sau adresele de e-mail de adăugat la ${ groupCount } grupuri.",
+        "Selectați adresa sau adresele de e-mail de adăugat la ${ groupCount } de grupuri."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selectați adresa sau adresele de e-mail de adăugat la ${ groupName }."
@@ -6853,6 +6162,11 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Faceți o depunere folosind adresa următoare sau scanați codul QR. Depunerea va apărea în cont după confirmare."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Interval luni reînnoire automată abonament: ${ cycle }.",
+        "Interval luni reînnoire automată abonament: ${ cycle }.",
+        "Interval luni reînnoire automată abonament: ${ cycle }."
+      ],
       "Subscription auto-renews every month.": [
         "Abonamentul se reînnoiește automat în fiecare lună."
       ],
@@ -6945,6 +6259,11 @@
       ],
       "This item already exists in your library": [
         "Articolul există deja în librăria proprie."
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Acest articol nu este salvat în librăria de fotografii. Dacă îl eliminați din acest album, veți pierde definitiv accesul la el.",
+        "Unele din articolele selectate nu sunt salvate în librăria de fotografii. Dacă le eliminați din acest album, veți pierde definitiv accesul la ele.",
+        "Unele din articolele selectate nu sunt salvate în librăria de fotografii. Dacă le eliminați din acest album, veți pierde definitiv accesul la ele."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură web duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
@@ -7222,6 +6541,11 @@
       "Would you like to restore your files?": [
         "Doriţi să restauraţi fişierele?"
       ],
+      "Would you like to save it before removing?": [
+        "Doriți să-l salvați înainte de a-l elimina?",
+        "Doriți să le salvați înainte de a le elimina?",
+        "Doriți să le salvați înainte de a le elimina?"
+      ],
       "Would you like to save them before removing?": [
         "Doriți să le salvați înainte de a le elimina?"
       ],
@@ -7270,6 +6594,16 @@
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile web a calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
+      ],
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
       ],
@@ -7281,6 +6615,11 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Mai aveți ${ expiresInDays } zi rămasă pentru a vă revendica bonusul de 3 GiB de bun venit și să vă ",
+        "Mai aveți ${ expiresInDays } zile rămase pentru a vă revendica bonusul de 3 GiB de bun venit și să vă ",
+        "Mai aveți ${ expiresInDays } de zile rămase pentru a vă revendica bonusul de bun venit de 3 GiB și să vă "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Aveți un abonament ${ planTitle } de probare. Dacă doriți să vă continuați abonamentul după perioada de probare, adăugați o metodă de plată."
@@ -7303,11 +6642,21 @@
       "You will lose all unsaved changes.": [
         "Veți pierde toate modificările nesalvate."
       ],
+      "You will need to save it again from the public link page.": [
+        "Va trebui să-l salvați din nou de pe pagina cu legături web publice.",
+        "Va trebui să le salvați din nou de pe pagina cu legături web publice.",
+        "Va trebui să le salvați din nou de pe pagina cu legături web publice."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nu se va aplica taxa dacă anulați înainte de ${ trialEndsOnFormatted }."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
+        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }.",
+        "Luni interval de plată: ${ renewCycle }. Suma: ${ renewAmountStr }."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Urmează să refuzați invitația de a vă alătura albumului ${ invitationName }. Dacă veți continua, nu îl veți putea accesa decât dacă proprietarul vă invită din nou. Continuați?"
@@ -7417,6 +6766,11 @@
       "Your previous recovery phrase": [
         "Fraza anterioară de recuperare"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
+        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }.",
+        "Început plan programat: ${ renewalTime }. Interval luni reînnoire automată: ${ cycle }."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Planul programat începe ${ renewalTime } și se va reînnoi automat lunar."
       ],
@@ -7455,6 +6809,18 @@
     "Info on errors": {
       "Click for details": [
         "Apăsați pentru detalii"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "Foldere selectate: ${ selectedFoldersCount }",
+        "Foldere selectate: ${ selectedFoldersCount }",
+        "Foldere selectate: ${ selectedFoldersCount }"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "Etichete selectate: ${ selectedFoldersCount }",
+        "Etichete selectate: ${ selectedFoldersCount }",
+        "Etichete selectate: ${ selectedFoldersCount }"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -7523,6 +6889,21 @@
       ],
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
+      ],
+      "${ n } month": [
+        "O lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } zi",
+        "${ nbDay } zile",
+        "${ nbDay } de zile"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } an",
+        "${ nbYear } ani",
+        "${ nbYear } de ani"
       ],
       "(Expired)": [
         "(Expirat)"
@@ -7676,6 +7057,11 @@
       ],
       "Delete": [
         "Ștergere"
+      ],
+      "Delete drive?": [
+        "Ștergeți unitatea?",
+        "Ștergeți unitățile?",
+        "Ștergeți unitățile?"
       ],
       "Delete recovery-related information.": [
         "Ștergere informații privind recuperarea."
@@ -8290,6 +7676,11 @@
       "Almost there": [
         "Aproape terminat"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }",
+        "Număr de calendare create: ${ createdCalendarCount } din ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Se conectează la furnizorul de e-mail"
       ],
@@ -8338,6 +7729,28 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activare ${ reason }"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importare toate mesajele dintr-un folder și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } foldere și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } de foldere și etichetare cu"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importare toate mesajele dintr-o etichetă și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } etichete și etichetare cu",
+        "Importare toate mesajele din ${ itemsToImportCount } de etichete și etichetare cu"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importare toate mesajele dintr-un folder și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } foldere și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de foldere și etichetare cu"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importare toate mesajele dintr-o etichetă și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu",
+        "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
       ]
     },
     "mail_signup_2024: Info": {
@@ -8643,8 +8056,93 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } și ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } calendar",
+        "${ n } calendare",
+        "${ n } de calendare"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendar per utilizator",
+        "${ n } calendare per utilizator",
+        "${ n } de calendare per utilizator"
+      ],
+      "${ n } custom email domain": [
+        "Un domeniu personal de e-mail",
+        "${ n } domenii personale de e-mail",
+        "${ n } de domenii personale de e-mail"
+      ],
+      "${ n } email address": [
+        "O adresă de e-mail",
+        "${ n } adrese de e-mail/aliasuri",
+        "${ n } de adrese de e-mail/aliasuri"
+      ],
+      "${ n } email address per user": [
+        "O adresă per utilizator",
+        "${ n } adrese de e-mail per utilizator",
+        "${ n } de adrese de e-mail per utilizator"
+      ],
+      "${ n } filter": [
+        "Un filtru",
+        "${ n } filtre",
+        "${ n } de filtre"
+      ],
+      "${ n } folder": [
+        "Un folder",
+        "${ n } foldere",
+        "${ n } de foldere"
+      ],
+      "${ n } folder and label": [
+        "Un folder și o etichetă",
+        "${ n } foldere și etichete",
+        "${ n } de foldere și etichete"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias „hide-my-email”",
+        "${ n } aliasuri „hide-my-email”",
+        "${ n } de aliasuri „hide-my-email”"
+      ],
+      "${ n } label": [
+        "O etichetă",
+        "${ n } etichete",
+        "${ n } de etichete"
+      ],
+      "${ n } message per day": [
+        "Un mesaj pe zi",
+        "${ n } mesaje pe zi",
+        "${ n } de mesaje pe zi"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }",
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }",
+        "Seifuri ${ PASS_SHORT_APP_NAME } partajate per utilizator: ${ n }"
+      ],
+      "${ n } vault": [
+        "${ n } seif",
+        "${ n } seifuri",
+        "${ n } de seifuri"
+      ],
+      "${ n } VPN connection": [
+        "O conexiune VPN",
+        "${ n } conexiuni VPN",
+        "${ n } de conexiuni VPN"
+      ],
+      "${ numberOfUsers } user": [
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }",
+        "Nr. maxim de utilizatori: ${ numberOfUsers }"
+      ],
+      "${ options }-day file version history": [
+        "Istoric versiuni fișiere: ${ options } zi",
+        "Istoric versiuni fișiere: ${ options } zile",
+        "Istoric versiuni fișiere: ${ options } de zile"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin pe viață"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
+        "${ PASS_APP_NAME } cu ${ n } aliasuri hide-my-email",
+        "${ PASS_APP_NAME } cu ${ n } de aliasuri hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } cu aliasuri hide-my-email nelimitate"
@@ -8817,6 +8315,11 @@
       "Group management (coming soon)": [
         "Gestionare grup (în curând)"
       ],
+      "High-speed VPN on ${ n } device": [
+        "VPN de mare viteză pe un dispozitiv",
+        "VPN de mare viteză pe ${ n } dispozitive",
+        "VPN de mare viteză pe ${ n } de dispozitive"
+      ],
       "HTML signatures": [
         "Semnături HTML"
       ],
@@ -8979,8 +8482,23 @@
       "Unlimited volume/bandwidth": [
         "Lățime de bandă și volum nelimitate"
       ],
+      "Up to ${ n } user": [
+        "Până la ${ n } utilizator",
+        "Până la ${ n } utilizatori",
+        "Până la ${ n } utilizatori"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Nr. maxim de utilizatori: ${ n } (${ adminsText }, ${ usersText })",
+        "Nr. maxim de utilizatori: ${ n } (${ adminsText }, ${ usersText })",
+        "Nr. maxim de utilizatori: ${ n } (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Nr. maxim de dispozitive simultane: ${ n }",
+        "Nr. maxim de dispozitive simultane: ${ n }",
+        "Nr. maxim de dispozitive simultane: ${ n }"
       ],
       "User credential management": [
         "Gestionare acreditări utilizatori"
@@ -8991,8 +8509,25 @@
       "User storage management": [
         "Gestionare spațiu de stocare utilizatori"
       ],
+      "Vault sharing (up to ${ n } person)": [
+        "Partajare seif (maxim ${ n } persoană)",
+        "Partajare seif (maxim ${ n } persoane)",
+        "Partajare seif (maxim ${ n } de persoane)"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "Administratori: ${ admins }",
+        "Administratori: ${ admins }",
+        "Administratori: ${ admins }"
+      ],
+      "${ users } user": [
+        "Utilizatori: ${ users }",
+        "Utilizatori: ${ users }",
+        "Utilizatori: ${ users }"
       ]
     },
     "new_plans: feature info": {
@@ -9173,6 +8708,11 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de exemplu, ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain } pentru abonamentul la știri."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Creați până la ${ n } calendar sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
@@ -9377,6 +8917,11 @@
       "Central control panel": [
         "Panou de control central"
       ],
+      "Create up to ${ n } calendar": [
+        "Creați maxim ${ n } calendar",
+        "Creați până la ${ n } calendare",
+        "Creați până la ${ n } de calendare"
+      ],
       "Dedicated Account manager": [
         "Manager dedicat al contului"
       ],
@@ -9394,6 +8939,11 @@
       ],
       "Require 2FA": [
         "Necesită A2F"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Domenii de e-mail personal acceptate: ${ n }",
+        "Domenii de e-mail personal acceptate: ${ n }",
+        "Domenii de e-mail personal acceptate: ${ n }"
       ]
     },
     "Notification": {
@@ -9444,6 +8994,81 @@
       ],
       "\"${ newName }\" renamed successfully": [
         "„${ newName }” a fost redenumit cu succes."
+      ],
+      "${ count } item failed to be decrypted": [
+        "Nu s-a putut decripta un articol.",
+        "Nu s-au putut decripta ${ count } articole.",
+        "Nu s-au putut decripta ${ count } de articole."
+      ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }",
+        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }",
+        "Fotografii care nu s-au putut elimina din albumul „${ albumLink.name }”: ${ nbFailures }"
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }",
+        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }",
+        "Fotografii care nu s-au putut adăuga în albumul „${ albumName }”: ${ nbMainPhotosError }"
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }",
+        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }",
+        "Fotografii adăugate în albumul „${ albumName }”: ${ nbMainPhotosSuccess }"
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }",
+        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }",
+        "Fotografii eliminate din albumul „${ albumLink.name }”: ${ nbSuccesses }"
+      ],
+      "${ numberOfItems } item deleted": [
+        "Articole șterse: ${ numberOfItems }",
+        "Articole șterse: ${ numberOfItems }",
+        "Articole șterse: ${ numberOfItems }"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "S-a eliminat permanent un element din «Gunoi».",
+        "S-au eliminat definitiv ${ numberOfItems } articole din «Gunoi».",
+        "S-au eliminat definitiv ${ numberOfItems } de articole din «Gunoi»."
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "Eșuare ștergere articole: ${ numberOfItems }",
+        "Eșuare ștergere articole: ${ numberOfItems }",
+        "Eșuare ștergere articole: ${ numberOfItems }"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "Un element nu a putut fi eliminat definitiv din «Gunoi».",
+        "${ numberOfItems } articole nu au putut fi eliminate definitiv din «Gunoi».",
+        "${ numberOfItems } de articole nu au putut fi eliminate definitiv din «Gunoi»."
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "Un element nu a putut fi mutat.",
+        "${ numberOfItems } articole nu au putut fi mutate.",
+        "${ numberOfItems } de articole nu au putut fi mutate."
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "Un element nu a putut fi mutat în «Gunoi».",
+        "${ numberOfItems } articole nu s-au putut muta în «Gunoi».",
+        "${ numberOfItems } de articole nu s-au putut muta în «Gunoi»."
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "Un element nu a putut fi restaurat din «Gunoi».",
+        "${ numberOfItems } articole nu au putut fi restaurate din «Gunoi».",
+        "${ numberOfItems } de articole nu au putut fi restaurate din «Gunoi»."
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "S-a mutat un element în «Gunoi».",
+        "S-au mutat ${ numberOfItems } articole în «Gunoi».",
+        "S-au mutat ${ numberOfItems } de articole în «Gunoi»."
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "Un element a fost restaurat din «Gunoi».",
+        "${ numberOfItems } articole au fost restaurate din «Gunoi».",
+        "${ numberOfItems } de articole au fost restaurate din «Gunoi»."
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "Un element a fost mutat cu succes.",
+        "${ numberOfItems } articole au fost mutate cu succes.",
+        "${ numberOfItems } de articole au fost mutate cu succes."
       ],
       "${ reason } has been disabled": [
         "${ reason } a fost dezactivat"
@@ -9541,6 +9166,11 @@
       "Failed to upload files: ${ err }": [
         "Nu s-a reușit încărcarea fișierelor: ${ err }"
       ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "Fișierul sau folderul „${ filename }” și încă unul se încarcă deja.",
+        "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja.",
+        "Fișierul sau folderul „${ filename }” și încă alte ${ count } se încarcă deja."
+      ],
       "File or folder \"${ filename }\" is already uploading": [
         "Fișierul sau folderul „${ filename }” se încarcă deja."
       ],
@@ -9556,6 +9186,21 @@
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
       ],
+      "Move ${ n } file": [
+        "Mutare ${ n } fișier.",
+        "Mutare ${ n } fișiere.",
+        "Mutare ${ n } de fișiere."
+      ],
+      "Move ${ n } folder": [
+        "Mutare ${ n } folder",
+        "Mutare ${ n } foldere",
+        "Mutare ${ n } de foldere"
+      ],
+      "Move ${ n } item": [
+        "Mutare ${ n } element.",
+        "Mutare ${ n } articole.",
+        "Mutare ${ n } de articole."
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nu este suficient spațiu pentru a încărca ${ formattedTotal }."
       ],
@@ -9568,6 +9213,16 @@
       "Root folder failed to be loaded": [
         "Folderul rădăcină nu s-a putut încărca."
       ],
+      "Selected item was not removed from your list": [
+        "Articolul selectat nu a fost eliminat din listă.",
+        "Articolele selectate nu au fost eliminate din listă.",
+        "Articolele selectate nu au fost eliminate din listă."
+      ],
+      "Selected items were successfully removed from your list": [
+        "Articolul selectat a fost eliminat din listă.",
+        "Articolele selectate au fost eliminate din listă.",
+        "Articolele selectate au fost eliminate din listă."
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "Pozele selectate sunt deja salvate în „${ albumName }”."
       ],
@@ -9576,6 +9231,11 @@
       ],
       "Share invitation declined": [
         "Invitația la partajare a fost refuzată."
+      ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "Folderul nu s-a putut șterge deoarece nu este gol.",
+        "Folderele nu s-au putut șterge deoarece nu sunt goale.",
+        "Folderele nu s-au putut șterge deoarece nu sunt goale."
       ],
       "Stopping the sharing of this item has failed": [
         "Oprirea partajării acestui articol a eșuat."
@@ -10010,6 +9670,11 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "Conturi de utilizatori: ${ n }",
+        "Conturi de utilizatori: ${ n }",
+        "Conturi de utilizatori: ${ n }"
+      ],
       "Activity log": [
         "Jurnal activitate"
       ],
@@ -10149,8 +9814,28 @@
       "terms & conditions": [
         "termeni și condiții"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
+        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",
+        "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }"
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Prețul redus special de ${ priceWithDiscount } este valid pentru ${ subscriptionLength } lună.",
+        "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } luni.",
+        "Prețul redus special de ${ priceWithDiscount } este valid pentru primele ${ subscriptionLength } de luni."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoire. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând.",
+        "Prețul de ${ priceWithDiscount } cu reducerea specială este valabil pentru prima lună. Cuponul este valid pentru ${ couponRedemptions } de reînnoiri. Apoi se va reînnoi automat cu prețul de ${ renewPriceStr } pentru o lună. Puteți anula oricând."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Prețul cu reducerea specială de ${ priceWithDiscount } este valabil pentru prima lună. Apoi va fi reînnoit automat cu ${ renewPriceStr } lunar. Puteți anula oricând."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } lună. Puteți anula oricând.",
+        "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
+        "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
       ],
       "This number will be shown on all future invoices": [
         "Acest număr va fi afișat pe toate facturile viitoare."
@@ -10443,6 +10128,21 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "S-a exportat ${ contactsExported.length } din ${ countContacts } contact cu succes.",
+        "S-au exportat ${ contactsExported.length } din ${ countContacts } de contacte cu succes.",
+        "S-au exportat ${ contactsExported.length } din ${ countContacts } de contacte cu succes."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "S-a șters un contact.",
+        "S-au șters ${ model.deleted.length } din ${ totalBeDeleted } contacte.",
+        "S-au șters ${ model.deleted.length } din ${ totalBeDeleted } de contacte."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "S-a îmbinat un contact.",
+        "S-au îmbinat ${ model.submitted.length } din ${ totalBeMerged } contacte.",
+        "S-au îmbinat ${ model.submitted.length } din ${ totalBeMerged } de contacte."
+      ],
       "No contacts exported.": [
         "Nu s-au exportat contacte."
       ],
@@ -10606,11 +10306,31 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } zi",
+        "${ timeRemaining.inDays } zile",
+        "${ timeRemaining.inDays } de zile"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } oră",
+        "${ timeRemaining.inHours } ore",
+        "${ timeRemaining.inHours } de ore"
+      ],
       "Password reset request approved (${ user.Email }).": [
         "Resetarea parolei contului a fost aprobată (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Accesați dispozitivul conectat (în sesiunea de unde a fost inițiată solicitarea) pentru a vă schimba parola."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Zile rămase până la expirarea acestei permisiuni: ${ timeRemaining.inDays }",
+        "Zile rămase până la expirarea acestei permisiuni: ${ timeRemaining.inDays }",
+        "Zile rămase până la expirarea acestei permisiuni: ${ timeRemaining.inDays }"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Ore rămase până la expirarea acestei permisiuni: ${ timeRemaining.inHours }",
+        "Ore rămase până la expirarea acestei permisiuni: ${ timeRemaining.inHours }",
+        "Ore rămase până la expirarea acestei permisiuni: ${ timeRemaining.inHours }"
       ],
       "This permission expires soon": [
         "Această permisiune expiră în curând."
@@ -10620,6 +10340,26 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Acum vă puteți schimba parola pentru contul ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Zile rămase pentru a vă reseta parola: ${ timeRemaining.inDays }",
+        "Zile rămase pentru a vă reseta parola: ${ timeRemaining.inDays }",
+        "Zile rămase pentru a vă reseta parola: ${ timeRemaining.inDays }"
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Ore rămase pentru a vă reseta parola: ${ timeRemaining.inHours }",
+        "Ore rămase pentru a vă reseta parola: ${ timeRemaining.inHours }",
+        "Ore rămase pentru a vă reseta parola: ${ timeRemaining.inHours }"
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Minute rămase pentru a vă reseta parola: ${ timeRemaining.inMinutes }",
+        "Minute rămase pentru a vă reseta parola: ${ timeRemaining.inMinutes }",
+        "Minute rămase pentru a vă reseta parola: ${ timeRemaining.inMinutes }"
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Secunde rămase pentru a vă reseta parola: ${ timeRemaining.inSeconds }",
+        "Secunde rămase pentru a vă reseta parola: ${ timeRemaining.inSeconds }",
+        "Secunde rămase pentru a vă reseta parola: ${ timeRemaining.inSeconds }"
       ]
     },
     "session_recovery:available:link": {
@@ -10679,8 +10419,18 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "Ore rămase: ${ gracePeriodHoursRemaining }",
+        "Ore rămase: ${ gracePeriodHoursRemaining }",
+        "Ore rămase: ${ gracePeriodHoursRemaining }"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Dacă nu ați solicitat resetarea parolei, anulați această solicitare acum."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Solicitare de resetare parolă (${ user.Email }). Ore rămase în care vă puteți schimba parola: ${ hoursRemaining }.",
+        "Solicitare de resetare parolă (${ user.Email }). Ore rămase în care vă puteți schimba parola: ${ hoursRemaining }.",
+        "Solicitare de resetare parolă (${ user.Email }). Ore rămase în care vă puteți schimba parola: ${ hoursRemaining }."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Pentru a ne asigura că însuși deținătorul contului încearcă să reseteze parola, așteptăm 72 de ore înainte de a aproba astfel de solicitări. Vă puteți schimba parola peste ${ boldTimeLeft }. ${ viewRequest }"
@@ -10708,6 +10458,11 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } oră",
+        "${ gracePeriodHoursRemaining } ore",
+        "${ gracePeriodHoursRemaining } de ore"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } este acum posibilă."
       ],
@@ -10758,6 +10513,35 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Alegeți nelimitat"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "Zile: ${ days }",
+        "Zile: ${ days }",
+        "Zile: ${ days }"
+      ],
+      "${ hours } hour": [
+        "Ore: ${ hours }",
+        "Ore: ${ hours }",
+        "Ore: ${ hours }"
+      ],
+      "${ minutes } minute": [
+        "Minute: ${ minutes }",
+        "Minute: ${ minutes }",
+        "Minute: ${ minutes }"
+      ],
+      "${ seconds } second": [
+        "Secunde: ${ seconds }",
+        "Secunde: ${ seconds }",
+        "Secunde: ${ seconds }"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "Luni GRATUITE: ${ n }",
+        "Luni GRATUITE: ${ n }",
+        "Luni GRATUITE: ${ n }"
       ]
     },
     "specialoffer: Deal details": {
@@ -10842,6 +10626,11 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
       "/ month": [
         "/lună"
       ],
@@ -11060,6 +10849,11 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Vom adăuga creditele pentru timpul rămas în contul ${ BRAND_NAME }."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
+        "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**",
+        "Zile rămase pentru planul **${ currentPlanName }**: **${ daysRemaining }**"
+      ],
       "Your ${ appStorage } is almost full": [
         "${ appStorage } este aproape plin."
       ],
@@ -11105,6 +10899,38 @@
         "Facturat anual"
       ]
     },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }",
+        "Conexiuni VPN gratuite per utilizator: ${ n }"
+      ],
+      "${ n } high-speed VPN connection": [
+        "O conexiune VPN de mare viteză",
+        "${ n } conexiuni VPN de mare viteză",
+        "${ n } de conexiuni VPN de mare viteză"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "O conexiune VPN de mare viteză per utilizator",
+        "${ n } conexiuni VPN de mare viteză per utilizator",
+        "${ n } de onexiuni VPN de mare viteză per utilizator"
+      ],
+      "${ n } VPN connection": [
+        "O conexiune VPN",
+        "${ n } conexiuni VPN",
+        "${ n } de conexiuni VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "O conexiune VPN per utilizator",
+        "${ n } conexiuni VPN per utilizator",
+        "${ n } de conexiuni VPN per utilizator"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Conexiune VPN pentru ${ n } dispozitiv per utilizator",
+        "Conexiuni VPN pentru ${ n } dispozitive per utilizator",
+        "Conexiuni VPN pentru ${ n } de dispozitive per utilizator"
+      ]
+    },
     "Subscription change warning": {
       "Got it": [
         "Am înțeles"
@@ -11146,6 +10972,11 @@
     "Subscription reminder": {
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
+      ],
+      "${ dayDiff } day left": [
+        "Zile rămase: ${ dayDiff }",
+        "Zile rămase: ${ dayDiff }",
+        "Zile rămase: ${ dayDiff }"
       ],
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
@@ -11191,6 +11022,31 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } oferă ${ planMaxSpace } de stocare per utilizator pentru e-mailuri, atașamente, evenimente, fișiere și parole. De asemenea, puteți primi bonusuri anuale de spațiu de stocare."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "Calendare per utilizator: ${ planNumberOfCalendars }",
+        "Calendare per utilizator: ${ planNumberOfCalendars }",
+        "Calendare per utilizator: ${ planNumberOfCalendars }"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "Domenii personale de e-mail: ${ planNumberOfDomains }",
+        "Domenii personale de e-mail: ${ planNumberOfDomains }",
+        "Domenii personale de e-mail: ${ planNumberOfDomains }"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "Adrese de e-mail: ${ planNumberOfEmails }",
+        "Adrese de e-mail: ${ planNumberOfEmails }",
+        "Adrese de e-mail: ${ planNumberOfEmails }"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "Adrese de e-mail per utilizator: ${ planNumberOfEmails }",
+        "Adrese de e-mail per utilizator: ${ planNumberOfEmails }",
+        "Adrese de e-mail per utilizator: ${ planNumberOfEmails }"
+      ],
+      "${ planNumberOfUsers } user": [
+        "Utilizatori: ${ planNumberOfUsers }",
+        "Utilizatori: ${ planNumberOfUsers }",
+        "Utilizatori: ${ planNumberOfUsers }"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "Protecție avansată cont cu ${ PROTON_SENTINEL_NAME }"
@@ -11493,6 +11349,16 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "Un contact arată identic.",
+        "${ countMergeableContacts } contacte arată identic.",
+        "${ countMergeableContacts } de contacte arată identic."
+      ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } rămas",
+        "${ countOfUnrecoveredLinksLeft } rămase",
+        "${ countOfUnrecoveredLinksLeft } rămase"
+      ],
       "Address copied to clipboard": [
         "Adresa a fost copiată în memorie"
       ],
@@ -11510,6 +11376,16 @@
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Contact șters",
+        "Contacte șterse",
+        "Contacte șterse"
+      ],
+      "Contact group deleted": [
+        "Grupul de contacte a fost șters",
+        "Grupurile de contacte au fost șterse",
+        "Grupurile de contacte au fost șterse"
       ],
       "Contact saved": [
         "Contact salvat"
@@ -11700,18 +11576,91 @@
         "Videoclipuri"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } zi",
+        "${ ceilDays } zile",
+        "${ ceilDays } de zile"
+      ],
+      "${ ceilHours } hour": [
+        "Ore: ${ ceilHours }",
+        "${ ceilHours } ore",
+        "${ ceilHours } de ore"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minute",
+        "${ ceilMinutes } de minute"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secundă",
+        "${ seconds } secunde",
+        "${ seconds } de secunde"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } oră",
+        "${ hours } ore",
+        "${ hours } de ore"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 ore",
+        "${ hoursInt },5 de ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minute",
+        "${ minutes } de minute"
+      ]
+    },
     "Title": {
       "# of downloads": [
         "Descărcări"
       ],
+      "${ emailsCount } email address": [
+        "Adrese de e-mail: ${ emailsCount }",
+        "Adrese de e-mail: ${ emailsCount }",
+        "Adrese de e-mail: ${ emailsCount }"
+      ],
       "${ feature } is now active": [
         "${ feature } este acum activă"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "O descărcare a eșuat",
+        "Au eșuat ${ numberOfFailedTransfer.total } descărcări.",
+        "Au eșuat ${ numberOfFailedTransfer.total } de descărcări."
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "A eșuat ${ numberOfFailedTransfer.total } transfer.",
+        "Au eșuat ${ numberOfFailedTransfer.total } transferuri.",
+        "Au eșuat ${ numberOfFailedTransfer.total } de transferuri."
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "O încărcare a eșuat",
+        "Au eșuat ${ numberOfFailedTransfer.total } încărcări.",
+        "Au eșuat ${ numberOfFailedTransfer.total } de încărcări."
+      ],
       "Account recovery": [
         "Recuperare cont"
-      ],
-      "Account restricted": [
-        "Cont restricționat"
       ],
       "Account security": [
         "Securitate cont"
@@ -11730,6 +11679,11 @@
       ],
       "Add credit/debit card": [
         "Adăugare card de credit/debit"
+      ],
+      "Add to ${ groupCount } group": [
+        "Adăugare la un grup",
+        "Adăugare la ${ groupCount } grupuri",
+        "Adăugare la ${ groupCount } de grupuri"
       ],
       "Add to ${ groupName }": [
         "Adăugare în ${ groupName }"
@@ -11772,6 +11726,11 @@
       ],
       "Are you sure you want to close the preview?": [
         "Închideți examinarea?"
+      ],
+      "Are you sure you want to remove this item from your list?": [
+        "Eliminați acest articol din listă?",
+        "Eliminați aceste articole din listă?",
+        "Eliminați aceste articole din listă?"
       ],
       "Are you sure?": [
         "Confirmați?"
@@ -11905,8 +11864,23 @@
       "Delete": [
         "Ștergere"
       ],
+      "Delete ${ count } contact": [
+        "Ștergere un contact",
+        "Ștergere ${ count } contacte",
+        "Ștergere ${ count } de contacte"
+      ],
+      "Delete ${ count } contact group": [
+        "Ștergere grup de contacte",
+        "Ștergere ${ count } grupuri de contacte",
+        "Ștergere ${ count } de grupuri de contacte"
+      ],
       "Delete ${ name }?": [
         "Ștergeți ${ name }?"
+      ],
+      "Delete ${ total } item?": [
+        "Ștergeți ${ total } articol?",
+        "Ștergeți ${ total } articole?",
+        "Ștergeți ${ total } de articole?"
       ],
       "Delete ${ value }": [
         "Ștergere ${ value }"
@@ -12058,6 +12032,11 @@
       "Folder details": [
         "Detalii folder"
       ],
+      "Found ${ searchView.numberOfResults } result": [
+        "S-a găsit un rezultat",
+        "S-au găsit ${ searchView.numberOfResults } rezultate",
+        "S-au găsit ${ searchView.numberOfResults } de rezultate"
+      ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
         "Obțineți acces complet la ${ CALENDAR_APP_NAME }"
       ],
@@ -12090,6 +12069,11 @@
       ],
       "Human verification": [
         "Verificare persoană"
+      ],
+      "Import as simple event?": [
+        "Importați ca eveniment simplu?",
+        "Importați ca evenimente simple?",
+        "Importați ca evenimente simple?"
       ],
       "Import contacts": [
         "Importare contacte"
@@ -12321,6 +12305,11 @@
       ],
       "Remove device?": [
         "Eliminați dispozitivul?"
+      ],
+      "Remove item?": [
+        "Eliminați articolul?",
+        "Eliminați articolele?",
+        "Eliminați articolele?"
       ],
       "Rename a file": [
         "Redenumire fișier"
@@ -12744,7 +12733,24 @@
         "Administratorii nu pot accesa datele utilizatorilor privați și nu le pot reseta parola."
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caracter",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } caractere",
+        "Parola trebuie să conțină cel puțin ${ MIN_PASSWORD_LENGTH } de caractere"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
+      ]
+    },
     "Validation Error": {
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Numele trebuie să aibă cel mult un caracter.",
+        "Numele trebuie să aibă cel mult ${ MAX_NAME_LENGTH } caractere.",
+        "Numele trebuie să aibă cel mult ${ MAX_NAME_LENGTH } de caractere."
+      ],
       "Name must not be empty": [
         "Numele nu poate fi gol."
       ],
@@ -12758,6 +12764,48 @@
       ],
       "Replay video": [
         "Redare video"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "Dispozitive: ${ n }",
+        "Dispozitive: ${ n }",
+        "Dispozitive: ${ n }"
+      ],
+      "${ n } server": [
+        "Servere: ${ n }",
+        "Servere: ${ n }+",
+        "Servere: ${ n }+"
+      ],
+      "${ n } VPN connection": [
+        "O conexiune VPN",
+        "${ n } conexiuni VPN",
+        "${ n } de conexiuni VPN"
+      ],
+      "${ numberOfCountries } country": [
+        "Țări: ${ numberOfCountries }",
+        "Țări: ${ numberOfCountries }",
+        "Țări: ${ numberOfCountries }"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } în ${ numberOfCountries } țară",
+        "${ numberOfServers } în ${ numberOfCountries } țări",
+        "${ numberOfServers } în ${ numberOfCountries } de țări"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } într-o țară",
+        "${ numberOfServers } în ${ numberOfCountries } țări",
+        "${ numberOfServers } în ${ numberOfCountries } de țări"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Țări disponibile selectare automată: ${ numberOfCountries }",
+        "Țări disponibile selectare automată: ${ numberOfCountries }",
+        "Țări disponibile selectare automată: ${ numberOfCountries }"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Nr. minim de țări cu servere: ${ numberOfCountries }",
+        "Nr. minim de țări cu servere: ${ numberOfCountries }",
+        "Nr. minim de țări cu servere: ${ numberOfCountries }"
       ]
     },
     "vpn_2step: feature": {
@@ -12774,6 +12822,21 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "Adrese de e-mail ${ BRAND_NAME }: ${ n }",
+        "Adrese de e-mail ${ BRAND_NAME }: ${ n }",
+        "Adrese de e-mail ${ BRAND_NAME }: ${ n }"
+      ],
+      "${ n } account per wallet": [
+        "Conturi per portofel: ${ n }",
+        "Conturi per portofel: ${ n }",
+        "Conturi per portofel: ${ n }"
+      ],
+      "${ n } wallet": [
+        "Portofele: ${ n }",
+        "Portofele: ${ n }",
+        "Portofele: ${ n }"
+      ],
       "Bitcoin via Email": [
         "Bitcoin via e-mail"
       ],
@@ -12800,6 +12863,11 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } va transfera cât mai multe date posibil, începând cu cele mai recente mesaje."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?",
+        "Contacte care vor fi șterse definitiv: ${ count }. Confirmați ștergerea?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Ștergeți definitiv aceste grupuri de contacte?"

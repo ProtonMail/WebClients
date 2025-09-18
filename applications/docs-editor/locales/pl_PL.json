@@ -4,14 +4,6 @@
     "language": "pl_PL"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } pisze...",
-        "${ usersTranslation } piszą...",
-        "${ usersTranslation } piszą...",
-        "${ usersTranslation } piszą..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -497,6 +489,12 @@
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } i ${ lastTyper }"
       ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } pisze...",
+        "${ usersTranslation } piszą...",
+        "${ usersTranslation } piszą...",
+        "${ usersTranslation } piszą..."
+      ],
       "Alpha only experimental feature": [
         "Tylko eksperymentalna funkcja Alpha"
       ],
@@ -789,6 +787,71 @@
         "Wstaw"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ Dolar amerykański"
+      ],
+      "Accounting": [
+        "Księgowość"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Juan chiński"
+      ],
+      "Currency": [
+        "Waluta"
+      ],
+      "Currency rounded": [
+        "Waluta zaokrąglona"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Date time": [
+        "Data i czas"
+      ],
+      "Duration": [
+        "Czas trwania"
+      ],
+      "Financial": [
+        "Finansowy"
+      ],
+      "General": [
+        "Ogólne"
+      ],
+      "Long date": [
+        "Długa data"
+      ],
+      "More currency": [
+        "Więcej walut"
+      ],
+      "Number": [
+        "Liczba"
+      ],
+      "Percent": [
+        "Procent"
+      ],
+      "Plain text": [
+        "Zwykły tekst"
+      ],
+      "Scientific": [
+        "Naukowy"
+      ],
+      "Time": [
+        "Czas"
+      ],
+      "£ Pound": [
+        "£ Funt"
+      ],
+      "¥ Yen": [
+        "¥ Jen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupia"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Pogrubienie"
@@ -825,6 +888,9 @@
       ],
       "Redo": [
         "Ponów"
+      ],
+      "Search": [
+        "Szukaj"
       ],
       "Strikethrough": [
         "Przekreślenie"

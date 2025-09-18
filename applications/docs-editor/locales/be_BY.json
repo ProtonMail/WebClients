@@ -4,14 +4,6 @@
     "language": "be_BY"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } піша...",
-        "${ usersTranslation } пішуць...",
-        "${ usersTranslation } пішуць...",
-        "${ usersTranslation } пішуць..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -496,6 +488,12 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } і ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } піша...",
+        "${ usersTranslation } пішуць...",
+        "${ usersTranslation } пішуць...",
+        "${ usersTranslation } пішуць..."
       ],
       "Alpha only experimental feature": [
         "Альфа-версія. Толькі эксперыментальныя функцыі"

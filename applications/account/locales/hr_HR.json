@@ -4,638 +4,6 @@
     "language": "hr_HR"
   },
   "contexts": {
-    "": {
-      "${ ceilDays } day": [
-        "${ ceilDays } dan",
-        "${ ceilDays } dana",
-        "${ ceilDays } dana"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } sat",
-        "${ ceilHours } sata",
-        "${ ceilHours } sati"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minuta",
-        "${ ceilMinutes } minuta",
-        "${ ceilMinutes } minute"
-      ],
-      "${ count } time": [
-        "${ count } put",
-        "${ count } puta",
-        "${ count } puta"
-      ],
-      "${ days } day": [
-        "${ days } dan",
-        "${ days } dana",
-        "${ days } dana"
-      ],
-      "${ days } day left": [
-        "Još ${ days } dan",
-        "Još ${ days } dana",
-        "Još ${ days } dana"
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } sat",
-        "${ gracePeriodHoursRemaining } sata",
-        "${ gracePeriodHoursRemaining } sati"
-      ],
-      "${ hours } hour": [
-        "${ hours } sat",
-        "${ hours } sata",
-        "${ hours } sati"
-      ],
-      "${ hours } hour left": [
-        "Još ${ hours } sat",
-        "Još ${ hours } sata",
-        "Još ${ hours } sati"
-      ],
-      "${ ips } server": [
-        "${ ips } poslužitelj",
-        "${ ips } poslužitelja",
-        "${ ips } poslužitelja"
-      ],
-      "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } VPN veza",
-        "${ MaxVPN } VPN veze",
-        "${ MaxVPN } VPN veza"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } član",
-        "${ memberCount } članova",
-        "${ memberCount } člana"
-      ],
-      "${ minutes } min": [
-        "${ minutes } minuta",
-        "${ minutes } minute",
-        "${ minutes } minuta"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuta",
-        "${ minutes } minute"
-      ],
-      "${ n } address": [
-        "${ n } adresa",
-        "${ n } adrese",
-        "${ n } adresa"
-      ],
-      "${ n } calendar": [
-        "${ n } kalendar",
-        "${ n } kalendara",
-        "${ n } kalendara"
-      ],
-      "${ n } calendar per user": [
-        "${ n } kalendar po korisniku",
-        "${ n } kalendara po korisniku",
-        "${ n } kalendara po korisniku"
-      ],
-      "${ n } day": [
-        "${ n } dan",
-        "${ n } dana",
-        "${ n } dana"
-      ],
-      "${ n } device": [
-        "${ n } uređaj",
-        "${ n } uređaja",
-        "${ n } uređaja"
-      ],
-      "${ n } email address": [
-        "${ n } adresa e-pošte",
-        "${ n } adresa e-pošte/pseudonim",
-        "${ n } adresa e-pošte/pseudonima"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-pošta po korisniku",
-        "${ n } e-pošte po korisniku",
-        "${ n } e-pošte po korisniku"
-      ],
-      "${ n } filter": [
-        "${ n } filtar",
-        "${ n } filtara",
-        "${ n } filtara"
-      ],
-      "${ n } folder": [
-        "${ n } mapa",
-        "${ n } mape",
-        "${ n } mapa"
-      ],
-      "${ n } folder and label": [
-        "${ n } mapa i oznaka",
-        "${ n } mape i oznake",
-        "${ n } mapa i oznaka"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } VPN veza visoke brzine",
-        "${ n } VPN veze visoke brzine",
-        "${ n } VPN veza visoke brzine"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } VPN veza visoke brzine po korisniku",
-        "${ n } VPN veze visoke brzine po korisniku",
-        "${ n } VPN veza visoke brzine po korisniku"
-      ],
-      "${ n } label": [
-        "${ n } oznaka",
-        "${ n } oznake",
-        "${ n } oznaka"
-      ],
-      "${ n } message per day": [
-        "${ n } poruka po danu",
-        "${ n } poruke po danu",
-        "${ n } poruka po danu"
-      ],
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
-      "${ n } server": [
-        "${ n } poslužitelj",
-        "${ n }+ poslužitelja",
-        "${ n }+ poslužitelja"
-      ],
-      "${ n } vault": [
-        "${ n } trezor",
-        "${ n } trezora",
-        "${ n } trezora"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN veza",
-        "${ n } VPN veze",
-        "${ n } VPN veza"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN veza po korisniku",
-        "${ n } VPN veze po korisniku",
-        "${ n } VPN veza po korisniku"
-      ],
-      "${ n } year": [
-        "${ n } godina",
-        "${ n } godine",
-        "${ n } godina"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } dan",
-        "${ nbDay } dana",
-        "${ nbDay } dana"
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } godina",
-        "${ nbYear } godine",
-        "${ nbYear } godina"
-      ],
-      "${ number } city": [
-        "${ number } grad",
-        "${ number } grada",
-        "${ number } gradova"
-      ],
-      "${ number } server": [
-        "${ number } poslužitelj",
-        "${ number } poslužitelja",
-        "${ number } poslužitelja"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } korisnik",
-        "Do ${ numberOfUsers } korisnika",
-        "Do ${ numberOfUsers } korisnika"
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } kalendar po korisniku",
-        "${ planNumberOfCalendars } kalendara po korisniku",
-        "${ planNumberOfCalendars } kalendara po korisniku"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } prilagođena domena e-pošte",
-        "${ planNumberOfDomains } prilagođenih domena e-pošte",
-        "${ planNumberOfDomains } prilagođenih domena e-pošte"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adresa e-pošte",
-        "${ planNumberOfEmails } adrese e-pošte",
-        "${ planNumberOfEmails } adrese e-pošte"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } e-pošta po korisniku",
-        "${ planNumberOfEmails } e-pošte po korisniku",
-        "${ planNumberOfEmails } e-pošte po korisniku"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } korisnik",
-        "${ planNumberOfUsers } korisnika",
-        "${ planNumberOfUsers } korisnika"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } mapa pronađena",
-        "${ providerFoldersNumLocalized } mape pronađene",
-        "${ providerFoldersNumLocalized } mapa pronađeno"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } oznaka pronađena u Gmailu",
-        "${ providerFoldersNumLocalized } oznake pronađene u Gmailu",
-        "${ providerFoldersNumLocalized } oznaka pronađeno u Gmailu"
-      ],
-      "${ seconds } second": [
-        "${ seconds } sekunda",
-        "${ seconds } sekundi",
-        "${ seconds } sekunde"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mapa odabrana",
-        "${ selectedFoldersCount } mape odabrane",
-        "${ selectedFoldersCount } mapa odabrano"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } oznaka odabrana",
-        "${ selectedFoldersCount } oznake odabrane",
-        "${ selectedFoldersCount } oznaka odabrano"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } mapa odabrana",
-        "${ selectedFoldersCountLocalized } mape odabrane",
-        "${ selectedFoldersCountLocalized } mapa odabrano"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } oznaka odabrana",
-        "${ selectedFoldersCountLocalized } oznake odabrane",
-        "${ selectedFoldersCountLocalized } oznaka odabrano"
-      ],
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } dan",
-        "${ timeRemaining.inDays } dana",
-        "${ timeRemaining.inDays } dana"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } sat",
-        "${ timeRemaining.inHours } sata",
-        "${ timeRemaining.inHours } sati"
-      ],
-      "${ totalContacts } contact": [
-        "${ totalContacts } kontakt",
-        "${ totalContacts } kontakta",
-        "${ totalContacts } kontakata"
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
-        "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
-        "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
-      ],
-      "${ UsedAddresses } address": [
-        "${ UsedAddresses } adresa",
-        "${ UsedAddresses } adrese",
-        "${ UsedAddresses } adresa"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošta",
-        "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
-        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
-      ],
-      "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } kalendar",
-        "${ UsedCalendars } kalendara",
-        "${ UsedCalendars } kalendara"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena",
-        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena",
-        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena"
-      ],
-      "${ users } user": [
-        "${ users } korisnik",
-        "${ users } korisnika",
-        "${ users } korisnika"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } član)",
-        "(${ memberCount } člana)",
-        "(${ memberCount } članova)"
-      ],
-      "byte": [
-        "bajt",
-        "bajta",
-        "bajtovi"
-      ],
-      "Byte": [
-        "Bajt",
-        "Bajta",
-        "Bajtovi"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Veza za ${ plusVpnConnections } uređaj",
-        "Veza za do ${ plusVpnConnections } uređaja",
-        "Veza za do ${ plusVpnConnections } uređaja"
-      ],
-      "day": [
-        "dan",
-        "dana",
-        "dana"
-      ],
-      "day before": [
-        "dan prije",
-        "dana prije",
-        "dana prije"
-      ],
-      "domain used": [
-        "iskorištena domena",
-        "iskorištene domene",
-        "iskorištenih domena"
-      ],
-      "Every ${ interval } day": [
-        "Svaki ${ interval } dan",
-        "Svaka ${ interval } dana",
-        "Svakih ${ interval } dana"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Svaki ${ interval } dan, ${ timesString }",
-        "Svaka ${ interval } dana, ${ timesString }",
-        "Svakih ${ interval } dana, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Svaki ${ interval } dan, ${ untilString }",
-        "Svaka ${ interval } dana, ${ untilString }",
-        "Svakih ${ interval } dana, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "Svaki ${ interval } mjesec ${ onDayString }",
-        "Svaka ${ interval } mjeseca ${ onDayString }",
-        "Svakih ${ interval } mjeseci ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Svaki ${ interval } mjesec ${ onDayString }, ${ timesString }",
-        "Svaka ${ interval } mjeseca ${ onDayString }, ${ timesString }",
-        "Svakih ${ interval } mjeseci ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Svaki ${ interval } mjesec ${ onDayString }, ${ untilString }",
-        "Svaka ${ interval } mjeseca ${ onDayString }, ${ untilString }",
-        "Svakih ${ interval } mjeseci ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Svaki ${ interval } tjedan na ${ multipleDaysString }",
-        "Svaka ${ interval } tjedna na ${ multipleDaysString }",
-        "Svakih ${ interval } tjedana na ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ timesString }",
-        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ timesString }",
-        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ untilString }",
-        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ untilString }",
-        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Svaki ${ interval } tjedan, svim danima",
-        "Svaka ${ interval } tjedna, svim danima",
-        "Svakih ${ interval } tjedana, svim danima"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Svaki ${ interval } tjedan svakim danom, ${ timesString }",
-        "Svaka ${ interval } tjedna svakim danom, ${ timesString }",
-        "Svakih ${ interval } tjedana svakim danom, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Svaki ${ interval } tjedan svakim danom, ${ untilString }",
-        "Svaka ${ interval } tjedna svakim danom, ${ untilString }",
-        "Svakih ${ interval } tjedana svakim danom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Svaki ${ interval } tjedan petkom",
-        "Svaka ${ interval } tjedna petkom",
-        "Svakih ${ interval } tjedana petkom"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Svaki ${ interval } tjedan petkom, ${ timesString }",
-        "Svaka ${ interval } tjedna petkom, ${ timesString }",
-        "Svakih ${ interval } tjedana petkom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Svaki ${ interval } tjedan petkom, ${ untilString }",
-        "Svaka ${ interval } tjedna petkom, ${ untilString }",
-        "Svakih ${ interval } tjedana petkom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Svaki ${ interval } tjedan ponedjeljkom",
-        "Svaka ${ interval } tjedna ponedjeljkom",
-        "Svakih ${ interval } tjedana ponedjeljkom"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Svaki ${ interval } tjedan ponedjeljkom, ${ timesString }",
-        "Svaka ${ interval } tjedna ponedjeljkom, ${ timesString }",
-        "Svakih ${ interval } tjedana ponedjeljkom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Svaki ${ interval } tjedan ponedjeljkom, ${ untilString }",
-        "Svaka ${ interval } tjedna ponedjeljkom, ${ untilString }",
-        "Svakih ${ interval } tjedana ponedjeljkom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Svaki ${ interval } tjedan subotom",
-        "Svaka ${ interval } tjedna subotom",
-        "Svakih ${ interval } tjedana subotom"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Svaki ${ interval } tjedan subotom, ${ timesString }",
-        "Svaka ${ interval } tjedna subotom, ${ timesString }",
-        "Svakih ${ interval } tjedana subotom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Svaki ${ interval } tjedan subotom, ${ untilString }",
-        "Svaka ${ interval } tjedna subotom, ${ untilString }",
-        "Svakih ${ interval } tjedana subotom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Svaki ${ interval } tjedan nedjeljom",
-        "Svaka ${ interval } tjedna nedjeljom",
-        "Svakih ${ interval } tjedana nedjeljom"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Svaki ${ interval } tjedan nedjeljom, ${ timesString }",
-        "Svaka ${ interval } tjedna nedjeljom, ${ timesString }",
-        "Svakih ${ interval } tjedana nedjeljom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Svaki ${ interval } tjedan nedjeljom, ${ untilString }",
-        "Svaka ${ interval } tjedna nedjeljom, ${ untilString }",
-        "Svakih ${ interval } tjedana nedjeljom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Svaki ${ interval } tjedan četvrtkom",
-        "Svaka ${ interval } tjedna četvrtkom",
-        "Svakih ${ interval } tjedana četvrtkom"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Svaki ${ interval } tjedan četvrtkom, ${ timesString }",
-        "Svaka ${ interval } tjedna četvrtkom, ${ timesString }",
-        "Svakih ${ interval } tjedana četvrtkom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Svaki ${ interval } tjedan četvrtkom, ${ untilString }",
-        "Svaka ${ interval } tjedna četvrtkom, ${ untilString }",
-        "Svakih ${ interval } tjedana četvrtkom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Svaki ${ interval } tjedan utorkom",
-        "Svaka ${ interval } tjedna utorkom",
-        "Svakih ${ interval } tjedana utorkom"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Svaki ${ interval } tjedan utorkom, ${ timesString }",
-        "Svaka ${ interval } tjedna utorkom, ${ timesString }",
-        "Svakih ${ interval } tjedana utorkom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Svaki ${ interval } tjedan utorkom, ${ untilString }",
-        "Svaka ${ interval } tjedna utorkom, ${ untilString }",
-        "Svakih ${ interval } tjedana utorkom, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Svaki ${ interval } tjedan srijedom",
-        "Svaka ${ interval } tjedna srijedom",
-        "Svakih ${ interval } tjedana srijedom"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Svaki ${ interval } tjedan srijedom, ${ timesString }",
-        "Svaka ${ interval } tjedna srijedom, ${ timesString }",
-        "Svakih ${ interval } tjedana srijedom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Svaki ${ interval } tjedan srijedom, ${ untilString }",
-        "Svaka ${ interval } tjedna srijedom, ${ untilString }",
-        "Svakih ${ interval } tjedana srijedom, ${ untilString }"
-      ],
-      "Every ${ interval } year": [
-        "Svaku ${ interval } godinu",
-        "Svake ${ interval } godine",
-        "Svakih ${ interval } godina"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Svaku ${ interval } godinu, ${ timesString }",
-        "Svake ${ interval } godine, ${ timesString }",
-        "Svakih ${ interval } godina, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Svaku ${ interval } godinu, ${ untilString }",
-        "Svake ${ interval } godine, ${ untilString }",
-        "Svakih ${ interval } godina, ${ untilString }"
-      ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Pronađen je ${ itemsCount } prijedlog. Za navigaciju koristite tipkovnicu.",
-        "Pronađena su ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu.",
-        "Pronađeno je ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu."
-      ],
-      "Gigabyte": [
-        "Gigabajt",
-        "Gigabajta",
-        "Gigabajta"
-      ],
-      "hour before": [
-        "sat prije",
-        "sata prije",
-        "sati prije"
-      ],
-      "Invite successfully sent": [
-        "Pozivnica je uspješno poslana",
-        "Pozivnice su uspješno poslane",
-        "Pozivnice su uspješno poslane"
-      ],
-      "Kilobyte": [
-        "Kilobajt",
-        "Kilobajta",
-        "Kilobajta"
-      ],
-      "Megabyte": [
-        "Megabajt",
-        "Megabajta",
-        "Megabajta"
-      ],
-      "Member added": [
-        "Član dodan",
-        "Članovi dodani",
-        "Članovi dodani"
-      ],
-      "minute before": [
-        "minuta prije",
-        "minute prije",
-        "minuta prije"
-      ],
-      "Paid for a ${ rewardMonths } month plan": [
-        "Plaćeno za ${ rewardMonths } mjesec plana",
-        "Plaćeno za ${ rewardMonths } mjeseca plana",
-        "Plaćeno za ${ rewardMonths } mjeseci plana"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
-      ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Uklonjen duplicirani primatelj: ${ joinedRecipients }",
-        "Uklonjeni duplicirani primatelji: ${ joinedRecipients }",
-        "Uklonjeni duplicirani primatelji: ${ joinedRecipients }"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Poslužitelji u ${ numberOfCountries }+ državi",
-        "Poslužitelji u ${ numberOfCountries }+ država",
-        "Poslužitelji u ${ numberOfCountries }+ država"
-      ],
-      "Show ${ remainingItems } more": [
-        "Pokaži još ${ remainingItems }",
-        "Pokaži još ${ remainingItems }",
-        "Pokaži još ${ remainingItems }"
-      ],
-      "Step ${ step }": [
-        "Korak ${ step }",
-        "Korak ${ step }",
-        "Korak ${ step }"
-      ],
-      "Successfully created ${ n } user account": [
-        "Uspješno stvoren ${ n } korisnički račun",
-        "Uspješno stvorena ${ n } korisnička računa",
-        "Uspješno stvoreno ${ n } korisničkih računa"
-      ],
-      "Terabyte": [
-        "Terabajt",
-        "Terabajta",
-        "Terabajta"
-      ],
-      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Oni će automatski dobiti pristup za **${ days } dan**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
-        "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
-        "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku."
-      ],
-      "Total for ${ n } month": [
-        "Ukupno za ${ n } mjesec",
-        "Ukupno za ${ n } mjeseci",
-        "Ukupno za ${ n } mjeseca"
-      ],
-      "week before": [
-        "tjedan prije",
-        "tjedna prije",
-        "tjedana prije"
-      ],
-      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sat",
-        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sata",
-        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sati"
-      ],
-      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
-        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sat",
-        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sata",
-        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sati"
-      ],
-      "Your import from ${ accounts } is temporarily delayed.": [
-        "Vaš uvoz s ${ accounts } privremeno kasni.",
-        "Vaši uvozi s ${ accounts } privremeno kasne.",
-        "Vaši uvozi s ${ accounts } privremeno kasne."
-      ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
-        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji.",
-        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji.",
-        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji."
-      ]
-    },
     "A label for unlabeled shared calendar links": {
       "Unlabeled": [
         "Bez oznake"
@@ -1850,8 +1218,18 @@
       ]
     },
     "Addon": {
+      "${ ips } server": [
+        "${ ips } poslužitelj",
+        "${ ips } poslužitelja",
+        "${ ips } poslužitelja"
+      ],
       "${ price } per user": [
         "${ price } po korisniku"
+      ],
+      "${ users } user": [
+        "${ users } korisnik",
+        "${ users } korisnika",
+        "${ users } korisnika"
       ]
     },
     "Address action": {
@@ -1985,6 +1363,11 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mjesec",
+        "${ n } mjeseca",
+        "${ n } mjeseci"
+      ],
       "/ month": [
         "/ mjesec"
       ],
@@ -2388,6 +1771,13 @@
         "Dijeljeno s bilo kime"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Pokaži još ${ remainingItems }",
+        "Pokaži još ${ remainingItems }",
+        "Pokaži još ${ remainingItems }"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "Uredi detalje događaja"
@@ -2466,8 +1856,18 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "${ users } korisnik",
+        "${ users } korisnika",
+        "${ users } korisnika"
+      ],
       "Total": [
         "Ukupno"
+      ],
+      "Total for ${ n } month": [
+        "Ukupno za ${ n } mjesec",
+        "Ukupno za ${ n } mjeseci",
+        "Ukupno za ${ n } mjeseca"
       ]
     },
     "Checkout summary": {
@@ -3595,8 +2995,18 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } put",
+        "${ count } puta",
+        "${ count } puta"
+      ],
       "Daily": [
         "Dnevno"
+      ],
+      "Every ${ interval } day": [
+        "Svaki ${ interval } dan",
+        "Svaka ${ interval } dana",
+        "Svakih ${ interval } dana"
       ],
       "until ${ dateString }": [
         "do ${ dateString }"
@@ -3605,11 +3015,21 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Dnevno, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Svaki ${ interval } dan, ${ timesString }",
+        "Svaka ${ interval } dana, ${ timesString }",
+        "Svakih ${ interval } dana, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Dnevno, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Svaki ${ interval } dan, ${ untilString }",
+        "Svaka ${ interval } dana, ${ untilString }",
+        "Svakih ${ interval } dana, ${ untilString }"
       ]
     },
     "Day": {
@@ -4264,6 +3684,21 @@
       ]
     },
     "emergency_access": {
+      "${ days } day left": [
+        "Još ${ days } dan",
+        "Još ${ days } dana",
+        "Još ${ days } dana"
+      ],
+      "${ hours } hour left": [
+        "Još ${ hours } sat",
+        "Još ${ hours } sata",
+        "Još ${ hours } sati"
+      ],
+      "${ n } day": [
+        "${ n } dan",
+        "${ n } dana",
+        "${ n } dana"
+      ],
       "${ user } is requesting emergency access to your account": [
         "${ user } zahtijeva hitni pristup vašem korisničkom računu"
       ],
@@ -4329,6 +3764,11 @@
       ],
       "Subscription expired": [
         "Pretplata istekla"
+      ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "Oni će automatski dobiti pristup za **${ days } dan**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
+        "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku.",
+        "Oni će automatski dobiti pristup za **${ days } dana**, u **${ formattedAccessibleAt }**, možete odbiti njihov zahtjev ili im dodijeliti pristup u bilo kojem trenutku."
       ],
       "Time required before automatically giving you access": [
         "Vrijeme potrebno prije nego što vam se automatski omogući pristup"
@@ -4572,6 +4012,11 @@
       "Process aborted": [
         "Proces je prekinut"
       ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Uklonjen duplicirani primatelj: ${ joinedRecipients }",
+        "Uklonjeni duplicirani primatelji: ${ joinedRecipients }",
+        "Uklonjeni duplicirani primatelji: ${ joinedRecipients }"
+      ],
       "Signature not verified": [
         "Potpis nije ovjeren"
       ],
@@ -4685,6 +4130,9 @@
       ],
       "You must set a name": [
         "Morate postaviti naziv"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "Morate imati prilagođenu adresu domene kako biste generirali SMTP token za slanje."
       ],
       "Your forward will not be processed.": [
         "Vaše prosljeđivanje neće biti obrađeno."
@@ -5068,11 +4516,21 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN veza",
+        "${ MaxVPN } VPN veze",
+        "${ MaxVPN } VPN veza"
+      ],
       "Access to all countries": [
         "Pristup svim državama"
       ],
       "Add": [
         "Dodaj"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Veza za ${ plusVpnConnections } uređaj",
+        "Veza za do ${ plusVpnConnections } uređaja",
+        "Veza za do ${ plusVpnConnections } uređaja"
       ],
       "Continue": [
         "Nastavite"
@@ -5174,6 +4632,11 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajta",
+        "bajtovi"
+      ],
       "GB": [
         "GB"
       ],
@@ -5185,6 +4648,33 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajta",
+        "Bajtovi"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajta",
+        "Gigabajta"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajta",
+        "Kilobajta"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajta",
+        "Megabajta"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajta"
       ]
     },
     "Filter Actions": {
@@ -5380,6 +4870,13 @@
     "Group address title": {
       "Group address": [
         "Adresa grupe"
+      ]
+    },
+    "Group member count": {
+      "${ memberCount } member": [
+        "${ memberCount } član",
+        "${ memberCount } članova",
+        "${ memberCount } člana"
       ]
     },
     "Group state": {
@@ -5580,6 +5077,11 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Pronađen je ${ itemsCount } prijedlog. Za navigaciju koristite tipkovnicu.",
+        "Pronađena su ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu.",
+        "Pronađeno je ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Upotrijebite tipke gore i dolje za pristup i pregledavanje prijedloga nakon unosa. Pritisnite Enter da biste potvrdili svoj izbor ili Escape da biste zatvorili okvir za prijedloge."
       ]
@@ -5648,6 +5150,11 @@
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
+        "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
+        "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Došlo je do pogreške prilikom šifriranja i dodavanja vašeg kontakta. Nije moguće uvesti nijedan kontakt."
       ],
@@ -5667,6 +5174,13 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kontakt ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } kontakt",
+        "${ totalContacts } kontakta",
+        "${ totalContacts } kontakata"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5857,11 +5371,46 @@
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
+      "${ n } address": [
+        "${ n } adresa",
+        "${ n } adrese",
+        "${ n } adresa"
+      ],
+      "${ number } city": [
+        "${ number } grad",
+        "${ number } grada",
+        "${ number } gradova"
+      ],
+      "${ number } server": [
+        "${ number } poslužitelj",
+        "${ number } poslužitelja",
+        "${ number } poslužitelja"
+      ],
       "${ PASS_APP_NAME } is the next generation password manager designed for ease of use and productivity. Open source, co-developed by SimpleLogin and ${ BRAND_NAME }.": [
         "${ PASS_APP_NAME } je sljedeća generacija upravitelja lozinki dizajniran za jednostavnost korištenja i produktivnost. Otvorenog kôda, surazvijen od strane SimpleLogina i ${ BRAND_NAME }a."
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je napredni program za zaštitu korisničkih računa pokretan sofisticiranim AI sustavima i stručnjacima koji rade danonoćno kako bi Vas zaštitili od zlonamjernih aktera i sigurnosnih prijetnji."
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mapa pronađena",
+        "${ providerFoldersNumLocalized } mape pronađene",
+        "${ providerFoldersNumLocalized } mapa pronađeno"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } oznaka pronađena u Gmailu",
+        "${ providerFoldersNumLocalized } oznake pronađene u Gmailu",
+        "${ providerFoldersNumLocalized } oznaka pronađeno u Gmailu"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mapa odabrana",
+        "${ selectedFoldersCountLocalized } mape odabrane",
+        "${ selectedFoldersCountLocalized } mapa odabrano"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } oznaka odabrana",
+        "${ selectedFoldersCountLocalized } oznake odabrane",
+        "${ selectedFoldersCountLocalized } oznaka odabrano"
       ],
       "${ url } added.": [
         "${ url } dodan/a."
@@ -5877,6 +5426,11 @@
       ],
       "${ vaultLink } updated": [
         "${ vaultLink } ažurirano"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } članova)"
       ],
       "(default)": [
         "(zadano)"
@@ -6229,6 +5783,11 @@
       "Do you want to revoke all other sessions than the current one?": [
         "Želite li opozvati sve ostale sesije osim trenutne?"
       ],
+      "domain used": [
+        "iskorištena domena",
+        "iskorištene domene",
+        "iskorištenih domena"
+      ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
         "Nemojte izgubiti pristup svojim premium ${ appName } značajkama. Omogućite automatsku obnovu danas."
       ],
@@ -6514,6 +6073,11 @@
       "Invite for organization created": [
         "Pozivnica za organizaciju stvorena"
       ],
+      "Invite successfully sent": [
+        "Pozivnica je uspješno poslana",
+        "Pozivnice su uspješno poslane",
+        "Pozivnice su uspješno poslane"
+      ],
       "Invited": [
         "Pozvani"
       ],
@@ -6721,6 +6285,11 @@
       "Outdated recovery phrase; update to ensure access to your data": [
         "Zastarjela fraza za oporavak; ažurirajte kako biste osigurali pristup svojim podacima"
       ],
+      "Paid for a ${ rewardMonths } month plan": [
+        "Plaćeno za ${ rewardMonths } mjesec plana",
+        "Plaćeno za ${ rewardMonths } mjeseca plana",
+        "Plaćeno za ${ rewardMonths } mjeseci plana"
+      ],
       "Paid for a plan": [
         "Plaćeno za plan"
       ],
@@ -6903,6 +6472,11 @@
       ],
       "Starts on ${ startsOnTime }": [
         "Počinje u ${ startsOnTime }"
+      ],
+      "Step ${ step }": [
+        "Korak ${ step }",
+        "Korak ${ step }",
+        "Korak ${ step }"
       ],
       "Storage": [
         "Prostor za pohranu"
@@ -7375,6 +6949,11 @@
       "Your friends get **2 weeks for free** on their chosen plan.": [
         "Vaši prijatelji dobivaju **2 tjedna besplatno** na svom odabranom planu."
       ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Vaš uvoz s ${ accounts } privremeno kasni.",
+        "Vaši uvozi s ${ accounts } privremeno kasne.",
+        "Vaši uvozi s ${ accounts } privremeno kasne."
+      ],
       "Your login information will not be saved after the import is completed.": [
         "Vaši podaci za prijavi neće biti spremljeni nakon što se uvoz završi."
       ],
@@ -7445,6 +7024,18 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Da biste izbjegli bilo kakve prekide u usluzi zbog neplaćenih faktura, molimo vas da u bilo kojem trenutku imate barem 1 valjani način plaćanja."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mapa odabrana",
+        "${ selectedFoldersCount } mape odabrane",
+        "${ selectedFoldersCount } mapa odabrano"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } oznaka odabrana",
+        "${ selectedFoldersCount } oznake odabrane",
+        "${ selectedFoldersCount } oznaka odabrano"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -7844,6 +7435,26 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresa"
+      ],
+      "${ n } month": [
+        "${ n } mjesec",
+        "${ n } mjeseca",
+        "${ n } mjeseci"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dan",
+        "${ nbDay } dana",
+        "${ nbDay } dana"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } godina",
+        "${ nbYear } godine",
+        "${ nbYear } godina"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošta",
+        "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
+        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
       ],
       "1 hour": [
         "1 sat"
@@ -9271,16 +8882,31 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }"
+      ],
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }, ${ timesString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }, ${ timesString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Mjesečno ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }, ${ untilString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }, ${ untilString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Mjesečno ${ onDayString }, ${ untilString }"
       ]
@@ -9490,6 +9116,66 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } kalendar",
+        "${ n } kalendara",
+        "${ n } kalendara"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendar po korisniku",
+        "${ n } kalendara po korisniku",
+        "${ n } kalendara po korisniku"
+      ],
+      "${ n } email address": [
+        "${ n } adresa e-pošte",
+        "${ n } adresa e-pošte/pseudonim",
+        "${ n } adresa e-pošte/pseudonima"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-pošta po korisniku",
+        "${ n } e-pošte po korisniku",
+        "${ n } e-pošte po korisniku"
+      ],
+      "${ n } filter": [
+        "${ n } filtar",
+        "${ n } filtara",
+        "${ n } filtara"
+      ],
+      "${ n } folder": [
+        "${ n } mapa",
+        "${ n } mape",
+        "${ n } mapa"
+      ],
+      "${ n } folder and label": [
+        "${ n } mapa i oznaka",
+        "${ n } mape i oznake",
+        "${ n } mapa i oznaka"
+      ],
+      "${ n } label": [
+        "${ n } oznaka",
+        "${ n } oznake",
+        "${ n } oznaka"
+      ],
+      "${ n } message per day": [
+        "${ n } poruka po danu",
+        "${ n } poruke po danu",
+        "${ n } poruka po danu"
+      ],
+      "${ n } vault": [
+        "${ n } trezor",
+        "${ n } trezora",
+        "${ n } trezora"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN veza",
+        "${ n } VPN veze",
+        "${ n } VPN veza"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } korisnik",
+        "Do ${ numberOfUsers } korisnika",
+        "Do ${ numberOfUsers } korisnika"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
@@ -9660,6 +9346,13 @@
       ],
       "Up to 10 Gbps": [
         "Do 10 Gbps"
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ users } user": [
+        "${ users } korisnik",
+        "${ users } korisnika",
+        "${ users } korisnika"
       ]
     },
     "new_plans: heading": {
@@ -10036,6 +9729,11 @@
       "Invitation revoked": [
         "Pozivnica opozvana"
       ],
+      "Member added": [
+        "Član dodan",
+        "Članovi dodani",
+        "Članovi dodani"
+      ],
       "Member deleted": [
         "Član izbrisan"
       ]
@@ -10057,8 +9755,28 @@
       "at time of event": [
         "u vrijeme događaja"
       ],
+      "day before": [
+        "dan prije",
+        "dana prije",
+        "dana prije"
+      ],
+      "hour before": [
+        "sat prije",
+        "sata prije",
+        "sati prije"
+      ],
+      "minute before": [
+        "minuta prije",
+        "minute prije",
+        "minuta prije"
+      ],
       "on the same day": [
         "isti dan"
+      ],
+      "week before": [
+        "tjedan prije",
+        "tjedna prije",
+        "tjedana prije"
       ]
     },
     "Offer": {
@@ -10375,6 +10093,11 @@
     "Organization capacity error": {
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
         "${ upgradeLink } kako biste dobili više korisničkih računa, ili uklonili VPN pristup nekim korisnicima."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji.",
+        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji.",
+        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Vaš plan uključuje navjiše još ${ humanReadableAvailableSpace } pohrane."
@@ -11255,6 +10978,11 @@
       "Applies to": [
         "Primjenjuje se na"
       ],
+      "day": [
+        "dan",
+        "dana",
+        "dana"
+      ],
       "Keep items forever": [
         "Zadrži stavke zauvijek"
       ],
@@ -11586,6 +11314,16 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dan",
+        "${ timeRemaining.inDays } dana",
+        "${ timeRemaining.inDays } dana"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } sat",
+        "${ timeRemaining.inHours } sata",
+        "${ timeRemaining.inHours } sati"
+      ],
       "Didn’t make this request?": [
         "Niste napravili ovaj zahtjev?"
       ],
@@ -11651,6 +11389,11 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Ako niste zatražili resetiranje svoje lozinke, poništite zahtjev odmah."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sat",
+        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sata",
+        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sati"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11695,6 +11438,11 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Zahtjev za ponovno postavljanje lozinke?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sat",
+        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sata",
+        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sati"
       ]
     },
     "session_recovery:settings:action": {
@@ -11708,6 +11456,13 @@
       ],
       "Stay signed in": [
         "Ostanite prijavljeni"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } sat",
+        "${ gracePeriodHoursRemaining } sata",
+        "${ gracePeriodHoursRemaining } sati"
       ]
     },
     "session_recovery:sign_out:link": {
@@ -12050,6 +11805,28 @@
         "Posebna ponuda"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dan",
+        "${ days } dana",
+        "${ days } dana"
+      ],
+      "${ hours } hour": [
+        "${ hours } sat",
+        "${ hours } sata",
+        "${ hours } sati"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuta",
+        "${ minutes } minute"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundi",
+        "${ seconds } sekunde"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 korisnik"
@@ -12082,6 +11859,11 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mjesec",
+        "${ n } mjeseca",
+        "${ n } mjeseci"
+      ],
       "/ month": [
         "/ mjesec"
       ],
@@ -12392,6 +12174,51 @@
       ]
     },
     "Subscription attribute": {
+      "${ n } calendar per user": [
+        "${ n } kalendar po korisniku",
+        "${ n } kalendara po korisniku",
+        "${ n } kalendara po korisniku"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } VPN veza visoke brzine",
+        "${ n } VPN veze visoke brzine",
+        "${ n } VPN veza visoke brzine"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } VPN veza visoke brzine po korisniku",
+        "${ n } VPN veze visoke brzine po korisniku",
+        "${ n } VPN veza visoke brzine po korisniku"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN veza",
+        "${ n } VPN veze",
+        "${ n } VPN veza"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN veza po korisniku",
+        "${ n } VPN veze po korisniku",
+        "${ n } VPN veza po korisniku"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } adresa",
+        "${ UsedAddresses } adrese",
+        "${ UsedAddresses } adresa"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošta",
+        "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
+        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } kalendar",
+        "${ UsedCalendars } kalendara",
+        "${ UsedCalendars } kalendara"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena",
+        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena",
+        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena"
+      ],
       "1 email address": [
         "1 adresa e-pošte"
       ],
@@ -12436,6 +12263,31 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } nudi ${ planMaxSpace } prostora pohrane za Vaše e-pošte, privitke, događaje, lozinke i datoteke. Također imate pravo na godišnje bonuse za pohranu."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalendar po korisniku",
+        "${ planNumberOfCalendars } kalendara po korisniku",
+        "${ planNumberOfCalendars } kalendara po korisniku"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } prilagođena domena e-pošte",
+        "${ planNumberOfDomains } prilagođenih domena e-pošte",
+        "${ planNumberOfDomains } prilagođenih domena e-pošte"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresa e-pošte",
+        "${ planNumberOfEmails } adrese e-pošte",
+        "${ planNumberOfEmails } adrese e-pošte"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-pošta po korisniku",
+        "${ planNumberOfEmails } e-pošte po korisniku",
+        "${ planNumberOfEmails } e-pošte po korisniku"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } korisnik",
+        "${ planNumberOfUsers } korisnika",
+        "${ planNumberOfUsers } korisnika"
       ],
       "2 users": [
         "2 korisnika"
@@ -12863,6 +12715,47 @@
     "TableRow": {
       "No SMTP tokens found": [
         "Nisu pronađeni SMTP tokeni"
+      ]
+    },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dan",
+        "${ ceilDays } dana",
+        "${ ceilDays } dana"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } sat",
+        "${ ceilHours } sata",
+        "${ ceilHours } sati"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuta",
+        "${ ceilMinutes } minuta",
+        "${ ceilMinutes } minute"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundi",
+        "${ seconds } sekunde"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ minutes } min": [
+        "${ minutes } minuta",
+        "${ minutes } minute",
+        "${ minutes } minuta"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } sat",
+        "${ hours } sata",
+        "${ hours } sati"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minute",
+        "${ minutes } minuta"
       ]
     },
     "Timezone search placeholder": {
@@ -13777,6 +13670,11 @@
       "Success": [
         "Uspješno"
       ],
+      "Successfully created ${ n } user account": [
+        "Uspješno stvoren ${ n } korisnički račun",
+        "Uspješno stvorena ${ n } korisnička računa",
+        "Uspješno stvoreno ${ n } korisničkih računa"
+      ],
       "Summary": [
         "Sažetak"
       ],
@@ -14160,7 +14058,7 @@
         "Automatski potpišite sve svoje odlazne poruke kako bi korisnici mogli provjeriti autentičnost vaših poruka. To se radi u kombinaciji sa zadanim PGP postavkama koje su postavljene ispod."
       ]
     },
-    "Tooltip; share calendar modal": {
+    "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "Dijeljeno u end-to-end šifriranom obliku"
       ],
@@ -14408,6 +14306,13 @@
         "Pomoćnik za pisanje"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
+      ]
+    },
     "Video control": {
       "Replay video": [
         "Ponovi videozapis"
@@ -14435,6 +14340,28 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i drugi."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } uređaj",
+        "${ n } uređaja",
+        "${ n } uređaja"
+      ],
+      "${ n } server": [
+        "${ n } poslužitelj",
+        "${ n }+ poslužitelja",
+        "${ n }+ poslužitelja"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN veza",
+        "${ n } VPN veze",
+        "${ n } VPN veza"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Poslužitelji u ${ numberOfCountries }+ državi",
+        "Poslužitelji u ${ numberOfCountries }+ država",
+        "Poslužitelji u ${ numberOfCountries }+ država"
       ]
     },
     "vpn_2step: billing": {
@@ -14471,6 +14398,16 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } mjesec",
+        "${ n } mjeseca",
+        "${ n } mjeseci"
+      ],
+      "${ n } year": [
+        "${ n } godina",
+        "${ n } godine",
+        "${ n } godina"
+      ],
       "Includes ${ plan } (free for the first year!)": [
         "Uključuje ${ plan } (besplatno prvu godinu!)"
       ],
@@ -14593,6 +14530,66 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Svaki ${ interval } tjedan, svim danima",
+        "Svaka ${ interval } tjedna, svim danima",
+        "Svakih ${ interval } tjedana, svim danima"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Svaki ${ interval } tjedan petkom",
+        "Svaka ${ interval } tjedna petkom",
+        "Svakih ${ interval } tjedana petkom"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Svaki ${ interval } tjedan ponedjeljkom",
+        "Svaka ${ interval } tjedna ponedjeljkom",
+        "Svakih ${ interval } tjedana ponedjeljkom"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Svaki ${ interval } tjedan ponedjeljkom, ${ timesString }",
+        "Svaka ${ interval } tjedna ponedjeljkom, ${ timesString }",
+        "Svakih ${ interval } tjedana ponedjeljkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Svaki ${ interval } tjedan subotom",
+        "Svaka ${ interval } tjedna subotom",
+        "Svakih ${ interval } tjedana subotom"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Svaki ${ interval } tjedan nedjeljom",
+        "Svaka ${ interval } tjedna nedjeljom",
+        "Svakih ${ interval } tjedana nedjeljom"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Svaki ${ interval } tjedan nedjeljom, ${ timesString }",
+        "Svaka ${ interval } tjedna nedjeljom, ${ timesString }",
+        "Svakih ${ interval } tjedana nedjeljom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Svaki ${ interval } tjedan četvrtkom",
+        "Svaka ${ interval } tjedna četvrtkom",
+        "Svakih ${ interval } tjedana četvrtkom"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Svaki ${ interval } tjedan utorkom",
+        "Svaka ${ interval } tjedna utorkom",
+        "Svakih ${ interval } tjedana utorkom"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Svaki ${ interval } tjedan utorkom, ${ timesString }",
+        "Svaka ${ interval } tjedna utorkom, ${ timesString }",
+        "Svakih ${ interval } tjedana utorkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Svaki ${ interval } tjedan srijedom",
+        "Svaka ${ interval } tjedna srijedom",
+        "Svakih ${ interval } tjedana srijedom"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Tjedno na ${ multipleDaysString }"
       ],
@@ -14622,6 +14619,36 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ timesString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ timesString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Svaki ${ interval } tjedan svakim danom, ${ timesString }",
+        "Svaka ${ interval } tjedna svakim danom, ${ timesString }",
+        "Svakih ${ interval } tjedana svakim danom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Svaki ${ interval } tjedan petkom, ${ timesString }",
+        "Svaka ${ interval } tjedna petkom, ${ timesString }",
+        "Svakih ${ interval } tjedana petkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Svaki ${ interval } tjedan subotom, ${ timesString }",
+        "Svaka ${ interval } tjedna subotom, ${ timesString }",
+        "Svakih ${ interval } tjedana subotom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Svaki ${ interval } tjedan četvrtkom, ${ timesString }",
+        "Svaka ${ interval } tjedna četvrtkom, ${ timesString }",
+        "Svakih ${ interval } tjedana četvrtkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Svaki ${ interval } tjedan srijedom, ${ timesString }",
+        "Svaka ${ interval } tjedna srijedom, ${ timesString }",
+        "Svakih ${ interval } tjedana srijedom, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Tjedno na ${ multipleDaysString }, ${ timesString }"
       ],
@@ -14651,6 +14678,51 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ untilString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ untilString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Svaki ${ interval } tjedan svakim danom, ${ untilString }",
+        "Svaka ${ interval } tjedna svakim danom, ${ untilString }",
+        "Svakih ${ interval } tjedana svakim danom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Svaki ${ interval } tjedan petkom, ${ untilString }",
+        "Svaka ${ interval } tjedna petkom, ${ untilString }",
+        "Svakih ${ interval } tjedana petkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Svaki ${ interval } tjedan ponedjeljkom, ${ untilString }",
+        "Svaka ${ interval } tjedna ponedjeljkom, ${ untilString }",
+        "Svakih ${ interval } tjedana ponedjeljkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Svaki ${ interval } tjedan subotom, ${ untilString }",
+        "Svaka ${ interval } tjedna subotom, ${ untilString }",
+        "Svakih ${ interval } tjedana subotom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Svaki ${ interval } tjedan nedjeljom, ${ untilString }",
+        "Svaka ${ interval } tjedna nedjeljom, ${ untilString }",
+        "Svakih ${ interval } tjedana nedjeljom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Svaki ${ interval } tjedan četvrtkom, ${ untilString }",
+        "Svaka ${ interval } tjedna četvrtkom, ${ untilString }",
+        "Svakih ${ interval } tjedana četvrtkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Svaki ${ interval } tjedan utorkom, ${ untilString }",
+        "Svaka ${ interval } tjedna utorkom, ${ untilString }",
+        "Svakih ${ interval } tjedana utorkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Svaki ${ interval } tjedan srijedom, ${ untilString }",
+        "Svaka ${ interval } tjedna srijedom, ${ untilString }",
+        "Svakih ${ interval } tjedana srijedom, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Tjedno na ${ multipleDaysString }, ${ untilString }"
       ],
@@ -14703,16 +14775,31 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Svaku ${ interval } godinu",
+        "Svake ${ interval } godine",
+        "Svakih ${ interval } godina"
+      ],
       "Yearly": [
         "Godišnje"
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Svaku ${ interval } godinu, ${ timesString }",
+        "Svake ${ interval } godine, ${ timesString }",
+        "Svakih ${ interval } godina, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Godišnje, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Svaku ${ interval } godinu, ${ untilString }",
+        "Svake ${ interval } godine, ${ untilString }",
+        "Svakih ${ interval } godina, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Godišnje, ${ untilString }"
       ]

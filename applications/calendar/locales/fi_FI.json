@@ -4,976 +4,6 @@
     "language": "fi_FI"
   },
   "contexts": {
-    "": {
-      "${ addressCount } email address": [
-        "${ addressCount } sähköpostiosoite",
-        "${ addressCount } sähköpostiosoitetta"
-      ],
-      "${ admins } admin": [
-        "${ admins } ylläpitäjä",
-        "${ admins } ylläpitäjää"
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } uusi kalenteri",
-        "${ calendarsToBeCreatedCount } uutta kalenteria"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } yhdistetty kalenteri",
-        "${ calendarsToBeMergedCount } yhdistettyä kalenteria"
-      ],
-      "${ ceilDays } day": [
-        "${ ceilDays } vuorokausi",
-        "${ ceilDays } vuorokautta"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } tunti",
-        "${ ceilHours }. tuntia"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minuutti",
-        "${ ceilMinutes } minuuttia"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } yhteystieto sisältää useita sähköpostiosoitteita.",
-        "${ contactCount } yhteystietoa sisältää useita sähköpostiosoitteita."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } jäsen",
-        "${ contactEmailsLength } jäsentä"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } yhteystieto löytyi",
-        "${ contactsCount } yhteystietoa löytyi"
-      ],
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length }/${ countContacts } yhteystieto vietiin.",
-        "${ contactsExported.length }/${ countContacts } yhteystietoa vietiin."
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } yhteystieto",
-        "${ contactsLength } yhteystietoa"
-      ],
-      "${ count } time": [
-        "${ count } kerran",
-        "${ count } kertaa"
-      ],
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } yhteystieto näyttää identtiseltä.",
-        "${ countMergeableContacts } yhteystietoa näyttää identtiseltä."
-      ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } päivä jäljellä",
-        "${ dayDiff } päivää jäljellä"
-      ],
-      "${ days } day": [
-        "${ days } päivä",
-        "${ days } päivää"
-      ],
-      "${ domains } additional custom domain": [
-        "${ domains } oma lisäverkkotunnus",
-        "${ domains } omaa lisäverkkotunnusta"
-      ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } sähköpostiosoite",
-        "${ emailsCount } sähköpostiosoitetta"
-      ],
-      "${ filteredList.length } command found.": [
-        "${ filteredList.length } komento löytyi.",
-        "${ filteredList.length } komentoa löytyi."
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } tunti",
-        "${ gracePeriodHoursRemaining } tuntia"
-      ],
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } tunti lisää",
-        "${ gracePeriodHoursRemaining } tuntia lisää"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } ryhmä löytyi",
-        "${ groupCounts } ryhmää löytyi"
-      ],
-      "${ hours } h": [
-        "${ hours } t",
-        "${ hours } t"
-      ],
-      "${ hours } hour": [
-        "${ hours } tunti",
-        "${ hours } tuntia"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 t",
-        "${ hoursInt }.5 t"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 tuntia",
-        "${ hoursInt }.5 tuntia"
-      ],
-      "${ ips } server": [
-        "${ ips } palvelin",
-        "${ ips } palvelinta"
-      ],
-      "${ list } doesn't have a valid email address": [
-        "${ list } ei sisällä kelvollista sähköpostiosoitetta",
-        "Joidenkin yhteystietojen sähköpostiosoitteet eivät kelpaa: ${ list }"
-      ],
-      "${ list } doesn't have an email address": [
-        "${ list } ei sisällä sähköpostiosoitetta",
-        "Joillakin yhteystiedoilla ei ole sähköpostiosoitteita: ${ list }"
-      ],
-      "${ list } has invalid emails": [
-        "${ list } sisältää virheellisiä sähköpostiosoitteita",
-        "Joissakin ryhmissä on virheellisiä sähköpostiosoitteita: ${ list }"
-      ],
-      "${ list } has no contacts": [
-        "${ list } ei sisällä yhteystietoja",
-        "Joissakin ryhmissä ei ole yhteystietoja: ${ list }"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuutti",
-        "${ minutes } minuuttia"
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length }/${ totalBeDeleted } yhteystieto poistettiin.",
-        "${ model.deleted.length }/${ totalBeDeleted } yhteystietoa poistettiin."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length }/${ totalBeMerged } yhteystieto yhdistettiin.",
-        "${ model.submitted.length }/${ totalBeMerged } yhteystietoa yhdistettiin."
-      ],
-      "${ more } more": [
-        "${ more } lisää",
-        "${ more } lisää"
-      ],
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME }-sähköpostiosoite",
-        "${ n } ${ BRAND_NAME }-sähköpostiosoitetta"
-      ],
-      "${ n } account per wallet": [
-        "${ n } tili/lompakko",
-        "${ n } tiliä/lompakko"
-      ],
-      "${ n } calendar": [
-        "${ n } kalenteri",
-        "${ n } kalenteria"
-      ],
-      "${ n } calendar per user": [
-        "${ n } kalenteri/käyttäjä",
-        "${ n } kalenteria/käyttäjä"
-      ],
-      "${ n } custom email domain": [
-        "${ n } oma verkkotunnus",
-        "${ n } omaa verkkotunnusta"
-      ],
-      "${ n } device": [
-        "${ n } laite",
-        "${ n } laitetta"
-      ],
-      "${ n } email address": [
-        "${ n } sähköpostiosoite",
-        "${ n } sähköpostiosoitetta/aliasta"
-      ],
-      "${ n } email address per user": [
-        "${ n } sähköpostiosoite/käyttäjä",
-        "${ n } sähköpostiosoitetta/käyttäjä"
-      ],
-      "${ n } filter": [
-        "${ n } suodatin",
-        "${ n } suodatinta"
-      ],
-      "${ n } folder": [
-        "${ n } kansio",
-        "${ n } kansiota"
-      ],
-      "${ n } folder and label": [
-        "${ n } kansio ja tunniste",
-        "${ n } kansiota ja tunnistetta"
-      ],
-      "${ n } free VPN connection per user": [
-        "${ n } ilmainen VPN-yhteys/käyttäjä",
-        "${ n } ilmaista VPN-yhteyttä/käyttäjä"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } Hide-my-email-alias",
-        "${ n } Hide-my-email-aliasta"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } nopea VPN-yhteys",
-        "${ n } nopeaa VPN-yhteyttä"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } nopea VPN-yhteys/käyttäjä",
-        "${ n } nopeaa VPN-yhteyttä/käyttäjä"
-      ],
-      "${ n } label": [
-        "${ n } tunniste",
-        "${ n } tunnistetta"
-      ],
-      "${ n } message per day": [
-        "${ n } viesti päivässä",
-        "${ n } viestiä päivässä"
-      ],
-      "${ n } month": [
-        "${ n } kuukausi",
-        "${ n } kuukautta"
-      ],
-      "${ n } month FREE": [
-        "${ n } kuukausi ILMAISEKSI",
-        "${ n } kuukautta ILMAISEKSI"
-      ],
-      "${ n } server": [
-        "${ n } palvelin",
-        "${ n }+ palvelinta"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } jaettu ${ PASS_SHORT_APP_NAME }-holvi/käyttäjä",
-        "${ n } jaettua ${ PASS_SHORT_APP_NAME }-holvia/käyttäjä"
-      ],
-      "${ n } user account": [
-        "${ n } käyttäjätili",
-        "${ n } käyttäjätiliä"
-      ],
-      "${ n } vault": [
-        "${ n } holvi",
-        "${ n } holvia"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-yhteys",
-        "${ n } VPN-yhteyttä"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-yhteys/käyttäjä",
-        "${ n } VPN-yhteyttä/käyttäjä"
-      ],
-      "${ n } wallet": [
-        "${ n } lompakko",
-        "${ n } lompakkoa"
-      ],
-      "${ numberOfAttendees } participant": [
-        "${ numberOfAttendees } osallistuja",
-        "${ numberOfAttendees } osallistujaa"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } maa",
-        "${ numberOfCountries } maata"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } ${ numberOfCountries } maassa",
-        "${ numberOfServers } ${ numberOfCountries }+ maassa"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } ${ numberOfCountries } maassa",
-        "${ numberOfServers } ${ numberOfCountries } maassa"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } käyttäjä",
-        "Enintään ${ numberOfUsers } käyttäjää"
-      ],
-      "${ options }-day file version history": [
-        "${ options } päivän tiedostojen versiohistoria",
-        "${ options } päivän tiedostojen versiohistoria"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-alias",
-        "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-aliasta"
-      ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } erääntyy ${ daysLeft } päivän kuluttua.",
-        "${ planName } erääntyy ${ daysLeft } päivän kuluttua."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } kalenteri/käyttäjä",
-        "${ planNumberOfCalendars } kalenteria/käyttäjä"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } oma verkkotunnus",
-        "${ planNumberOfDomains } omaa verkkotunnusta"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } sähköpostiosoite",
-        "${ planNumberOfEmails } sähköpostiosoitetta"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } sähköpostiosoite/käyttäjä",
-        "${ planNumberOfEmails } sähköpostiosoitetta/käyttäjä"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } käyttäjä",
-        "${ planNumberOfUsers } käyttäjää"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } kansio löytyi",
-        "${ providerFoldersNumLocalized } kansiota löytyi"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "Gmailista löytyi ${ providerFoldersNumLocalized } tunniste",
-        "Gmailista löytyi ${ providerFoldersNumLocalized } tunnistetta"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME }-lisenssi",
-        "${ seats } ${ LUMO_APP_NAME }-lisenssiä"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } kirjoitusavustajalisenssi",
-        "${ seats } kirjoitusavustajalisenssiä"
-      ],
-      "${ seconds } second": [
-        "${ seconds } sekunti",
-        "${ seconds } sekuntia"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteria"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
-        "${ selectedContactsLength }/${ contactsLength } yhteystietoa valittu"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } kansio valittu",
-        "${ selectedFoldersCount } kansiota valittu"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } tunniste valittu",
-        "${ selectedFoldersCount } tunnistetta valittu"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } kansio valittu",
-        "${ selectedFoldersCountLocalized } kansiota valittu"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } tunniste valittu",
-        "${ selectedFoldersCountLocalized } tunnistetta valittu"
-      ],
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } päivä",
-        "${ timeRemaining.inDays } päivää"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } tunti",
-        "${ timeRemaining.inHours } tuntia"
-      ],
-      "${ totalContacts } contact": [
-        "${ totalContacts } yhteystieto",
-        "${ totalContacts } yhteystietoa"
-      ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded }/${ totalEvents } tapahtumaa ei tuoda. Näytä tiedot laajentamalla.",
-        "${ totalEventsDiscarded }/${ totalEvents } tapahtumaa ei tuoda. Näytä tiedot laajentamalla."
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } yhteystieto salattiin ja lisättiin yhteystietoihisi",
-        "${ totalImported }/${ totalToImport } yhteystietoa salattiin ja lisättiin yhteystietoihisi"
-      ],
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } tapahtuma salattiin ja lisättiin kalenteriisi",
-        "${ totalImported }/${ totalToImport } tapahtumaa salattiin ja lisättiin kalenteriisi"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } yhteystieto päivitettiin.",
-        "${ updated } yhteystietoa päivitettiin."
-      ],
-      "${ users } user": [
-        "${ users } käyttäjä",
-        "${ users } käyttäjää"
-      ],
-      "${ value } day after": [
-        "${ value } päivää myöhemmin",
-        "${ value } päivää myöhemmin"
-      ],
-      "${ value } day after at ${ time }": [
-        "${ value } päivää myöhemmin klo ${ time }",
-        "${ value } päivää myöhemmin klo ${ time }"
-      ],
-      "${ value } day before": [
-        "${ value } päivää aiemmin",
-        "${ value } päivää aiemmin"
-      ],
-      "${ value } day before at ${ time }": [
-        "${ value } päivää aiemmin klo ${ time }",
-        "${ value } päivää aiemmin klo ${ time }"
-      ],
-      "${ value } hour after": [
-        "${ value } tuntia myöhemmin",
-        "${ value } tuntia myöhemmin"
-      ],
-      "${ value } hour after at ${ time }": [
-        "${ value } tuntia myöhemmin klo ${ time }",
-        "${ value } tuntia myöhemmin klo ${ time }"
-      ],
-      "${ value } hour before": [
-        "${ value } tuntia aiemmin",
-        "${ value } tuntia aiemmin"
-      ],
-      "${ value } hour before at ${ time }": [
-        "${ value } tuntia aiemmin klo ${ time }",
-        "${ value } tuntia aiemmin klo ${ time }"
-      ],
-      "${ value } minute after": [
-        "${ value } minuuttia myöhemmin",
-        "${ value } minuuttia myöhemmin"
-      ],
-      "${ value } minute after at ${ time }": [
-        "${ value } minuuttia myöhemmin klo ${ time }",
-        "${ value } minuuttia myöhemmin klo ${ time }"
-      ],
-      "${ value } minute before": [
-        "${ value } minuuttia aiemmin",
-        "${ value } minuuttia aiemmin"
-      ],
-      "${ value } minute before at ${ time }": [
-        "${ value } minuuttia aiemmin klo ${ time }",
-        "${ value } minuuttia aiemmin klo ${ time }"
-      ],
-      "${ value } week after": [
-        "${ value } viikko myöhemmin",
-        "${ value } viikkoa myöhemmin"
-      ],
-      "${ value } week after at ${ time }": [
-        "${ value } viikko myöhemmin klo ${ time }",
-        "${ value } viikkoa myöhemmin klo ${ time }"
-      ],
-      "${ value } week before": [
-        "${ value } viikkoa aiemmin",
-        "${ value } viikkoa aiemmin"
-      ],
-      "${ value } week before at ${ time }": [
-        "${ value } viikkoa aiemmin klo ${ time }",
-        "${ value } viikkoa aiemmin klo ${ time }"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } jäsen)",
-        "(${ memberCount } jäsentä)"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteyttä (mahdollistaa VPN-yhteyden useammalla laitteella)"
-      ],
-      "Add to ${ groupCount } group": [
-        "Lisää ${ groupCount } ryhmään",
-        "Lisää ${ groupCount } ryhmään"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Kaikki (${ totalFoldersCount } kansio)",
-        "Kaikki (${ totalFoldersCount } kansiota)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Kaikki (${ totalFoldersCount } tunniste)",
-        "Kaikki (${ totalFoldersCount } tunnistetta)"
-      ],
-      "All day, lasts ${ plusDaysToEnd } day": [
-        "Koko päivä, kestää ${ plusDaysToEnd } päivän",
-        "Koko päivä, kestää ${ plusDaysToEnd } päivää"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
-        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Kelentereita luotu: ${ createdCalendarCount }/${ calendarsToBeCreated }",
-        "Kelentereita luotu: ${ createdCalendarCount }/${ calendarsToBeCreated }"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Virhe salattaessa ja lisättäessä tapahtumaa. ${ totalImported }/${ totalToImport } tapahtuma tuotiin.",
-        "Virhe salattaessa ja lisättäessä tapahtumia. ${ totalImported }/${ totalToImport } tapahtumaa tuotiin."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Haluatko varmasti poistaa ${ count } yhteystiedon pysyvästi?",
-        "Haluatko varmasti poistaa ${ count } yhteystietoa pysyvästi?"
-      ],
-      "At most ${ maxAttendees } participant is allowed per invitation": [
-        "Kutsua kohden sallitaan enintään ${ maxAttendees } osallistuja",
-        "Kutsua kohden sallitaan enintään ${ maxAttendees } osallistujaa"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
-        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Valitsee automaattisesti ${ numberOfCountries } maasta",
-        "Valitsee automaattisesti ${ numberOfCountries } maasta"
-      ],
-      "byte": [
-        "tavu",
-        "tavua"
-      ],
-      "Byte": [
-        "Tavu",
-        "Tavua"
-      ],
-      "Contact deleted": [
-        "Yhteystieto poistettiin",
-        "Yhteystiedot poistettiin"
-      ],
-      "Contact group deleted": [
-        "Yhteystietoryhmä poistettiin",
-        "Yhteystietoryhmät poistettiin"
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Luo ${ calendarsToBeCreatedCount } uusi kalenteri",
-        "Luo ${ calendarsToBeCreatedCount } uutta kalenteria"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Luo suojattu pilvi ${ value } jäsenelle",
-        "Luo suojattu pilvi ${ value } jäsenelle"
-      ],
-      "Create up to ${ n } calendar": [
-        "Luo enintään ${ n } kalenteri",
-        "Luo enintään ${ n } kalenteria"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Luo enintään ${ n } kalenteri tai lisää kavereiden, perheen, kollegoiden tai organisaatioiden kalentereita",
-        "Luo enintään ${ n } kalenteria tai lisää kavereiden, perheen, kollegoiden tai organisaatioiden kalentereita"
-      ],
-      "Day": [
-        "päivä",
-        "päivä"
-      ],
-      "day before": [
-        "päivää aiemmin",
-        "päivää aiemmin"
-      ],
-      "Delete ${ count } contact": [
-        "Poista ${ count } yhteystieto",
-        "Poista ${ count } yhteystietoa"
-      ],
-      "Delete ${ count } contact group": [
-        "Poista ${ count } yhteystietoryhmä",
-        "Poista ${ count } yhteystietoryhmää"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Poista ${ selectedCount } yhteystieto",
-        "Poista ${ selectedCount } yhteystietoa"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Poista ${ selectedCount } yhteystietoryhmä",
-        "Poista ${ selectedCount } yhteystietoryhmää"
-      ],
-      "Deleting event...": [
-        "Poistetaan tapahtumaa...",
-        "Poistetaan tapahtumia..."
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Poista ainakin ${ calendarsToFixCount } kalenterivalinta",
-        "Poista ainakin ${ calendarsToFixCount } kalenterivalintaa"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Poista ainakin ${ calendarsToFixCount } kalenterivalinta tai",
-        "Poista ainakin ${ calendarsToFixCount } kalenterivalintaa tai"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Arviolta ${ estimatedMinutes } minuutti jäljellä",
-        "Arviolta ${ estimatedMinutes } minuuttia jäljellä"
-      ],
-      "event": [
-        "tapahtuma",
-        "tapahtumaa"
-      ],
-      "Every ${ interval } day": [
-        "${ interval } päivän välein",
-        "${ interval } päivän välein"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "${ interval } päivän välein, ${ timesString }",
-        "${ interval } päivän välein, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "${ interval } päivän välein, ${ untilString }",
-        "${ interval } päivän välein, ${ untilString }"
-      ],
-      "Every ${ interval } month ${ onDayString }": [
-        "${ interval } kuukauden välein, kuun ${ onDayString }",
-        "${ interval } kuukauden välein, kuun ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ timesString }",
-        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ untilString }",
-        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "${ interval } viikon välein ${ multipleDaysString }",
-        "${ interval } viikon välein ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "${ interval } viikon välein ${ multipleDaysString }, ${ timesString }",
-        "${ interval } viikon välein ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "${ interval } viikon välein ${ multipleDaysString }, ${ untilString }",
-        "${ interval } viikon välein ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "${ interval } viikon välein joka päivä",
-        "${ interval } viikon välein joka päivä"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "${ interval } viikon välein joka päivä, ${ timesString }",
-        "${ interval } viikon välein joka päivä, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "${ interval } viikon välein joka päivä, ${ untilString }",
-        "${ interval } viikon välein joka päivä, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "${ interval } viikon välein perjantaisin",
-        "${ interval } viikon välein perjantaisin"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "${ interval } viikon välein perjantaisin, ${ timesString }",
-        "${ interval } viikon välein perjantaisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "${ interval } viikon välein perjantaisin, ${ untilString }",
-        "${ interval } viikon välein perjantaisin, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "${ interval } viikon välein maanantaisin",
-        "${ interval } viikon välein maanantaisin"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "${ interval } viikon välein maanantaisin, ${ timesString }",
-        "${ interval } viikon välein maanantaisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "${ interval } viikon välein maanantaisin, ${ untilString }",
-        "${ interval } viikon välein maanantaisin, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "${ interval } viikon välein lauantaisin",
-        "${ interval } viikon välein lauantaisin"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "${ interval } viikon välein lauantaisin, ${ timesString }",
-        "${ interval } viikon välein lauantaisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "${ interval } viikon välein lauantaisin, ${ untilString }",
-        "${ interval } viikon välein lauantaisin, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "${ interval } viikon välein sunnuntaisin",
-        "${ interval } viikon välein sunnuntaisin"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "${ interval } viikon välein sunnuntaisin, ${ timesString }",
-        "${ interval } viikon välein sunnuntaisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "${ interval } viikon välein sunnuntaisin, ${ untilString }",
-        "${ interval } viikon välein sunnuntaisin, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "${ interval } viikon välein torstaisin",
-        "${ interval } viikon välein torstaisin"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "${ interval } viikon välein torstaisin, ${ timesString }",
-        "${ interval } viikon välein torstaisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "${ interval } viikon välein torstaisin, ${ untilString }",
-        "${ interval } viikon välein torstaisin, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "${ interval } viikon välein tiistaisin",
-        "${ interval } viikon välein tiistaisin"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "${ interval } viikon välein tiistaisin, ${ timesString }",
-        "${ interval } viikon välein tiistaisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "${ interval } viikon välein tiistaisin, ${ untilString }",
-        "${ interval } viikon välein tiistaisin, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "${ interval } viikon välein keskiviikkoisin",
-        "${ interval } viikon välein keskiviikkoisin"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "${ interval } viikon välein keskiviikkoisin, ${ timesString }",
-        "${ interval } viikon välein keskiviikkoisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "${ interval } viikon välein keskiviikkoisin, ${ untilString }",
-        "${ interval } viikon välein keskiviikkoisin, ${ untilString }"
-      ],
-      "Every ${ interval } year": [
-        "${ interval } vuoden välein",
-        "${ interval } vuoden välein"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "${ interval } vuoden välein, ${ timesString }",
-        "${ interval } vuoden välein, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "${ interval } vuoden välein, ${ untilString }",
-        "${ interval } vuoden välein, ${ untilString }"
-      ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Löydettiin ${ itemsCount } ehdotus, käytä siirtymiseen näppäimistöä.",
-        "Löydettiin ${ itemsCount } ehdotusta, käytä siirtymiseen näppäimistöä."
-      ],
-      "Gigabyte": [
-        "Gigatavu",
-        "Gigatavua"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Nopea VPN ${ n } laitteelle",
-        "Nopea VPN ${ n } laitteelle"
-      ],
-      "hour before": [
-        "tuntia aiemmin",
-        "tuntia aiemmin"
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteri",
-        "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteria"
-      ],
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Tuo kaikki ${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella",
-        "Tuo kaikki ${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Tuo kaikki ${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella",
-        "Tuo kaikki ${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella",
-        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella",
-        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
-      ],
-      "Import as simple event?": [
-        "Tuodaanko yksinkertaisena tapahtumana?",
-        "Tuodaanko yksinkertaisina tapahtumina?"
-      ],
-      "Kilobyte": [
-        "Kilotavu",
-        "Kilotavua"
-      ],
-      "Megabyte": [
-        "Megatavu",
-        "Megatavua"
-      ],
-      "Member added": [
-        "Jäsen lisättiin",
-        "Jäseniä lisättiin"
-      ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Yhdistä ainakin ${ calendarsToFixCount } kalenteri olemassa olevaan ${ BRAND_NAME }-kalenteriin",
-        "Yhdistä ainakin ${ calendarsToFixCount } kalenteria olemassa oleviin ${ BRAND_NAME }-kalentereihin"
-      ],
-      "minute before": [
-        "minuutin aiemmin",
-        "minuuttia aiemmin"
-      ],
-      "Month": [
-        "kuukausi",
-        "kuukausi"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Yhdellä yhteystiedolla ei ole sähköpostiosoitetta: ${ noEmailsContactNamesList }",
-        "Joillakin yhteystiedoilla ei ole sähköpostiosoitteita: ${ noEmailsContactNamesList }"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Yksi ryhmistä ei sisällä yhteystietoja: ${ noContactGroupList }",
-        "Osa ryhmistä ei sisällä yhteystietoja: ${ noContactGroupList }"
-      ],
-      "participant": [
-        "osallistuja",
-        "osallistujaa"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
-        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
-        "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Jatka korjaamalla korostettu ristiriita.",
-        "Jatka korjaamalla korostetut ristiriidat."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet.",
-        "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet."
-      ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Vastaanottajan kaksoiskappale poistettiin: ${ joinedRecipients }",
-        "Vastaanottajien kaksoiskappaleet poistettiin: ${ joinedRecipients }"
-      ],
-      "Saving event...": [
-        "Tallennetaan tapahtumaa...",
-        "Tallennetaan tapahtumia..."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, rajattomasti Hide-my-email-aliaksia ja paljon muuta.",
-        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Palvelimet ${ numberOfCountries }+ maassa",
-        "Palvelimet ${ numberOfCountries }+ maassa"
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein.",
-        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
-      ],
-      "Support for ${ n } custom email domain": [
-        "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
-        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
-      ],
-      "Terabyte": [
-        "Teratavu",
-        "Teratavua"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
-        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",
-        "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakerran.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain.",
-        "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakertaa.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain.",
-        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain."
-      ],
-      "This file contains an event invitation:": [
-        "Tiedosto sisältää tapahtumakutsun:",
-        "Tiedosto sisältää tapahtumakutsuja:"
-      ],
-      "This file contains an invitation response:": [
-        "Tiedosto sisältää vastauksen kutsuun:",
-        "Tiedosto sisältää vastauksia kutsuihin:"
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua.",
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua."
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua.",
-        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua."
-      ],
-      "Total for ${ n } month": [
-        "Summa ${ n } kuukaudelle",
-        "Summa ${ n } kuukaudelle"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
-        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
-      ],
-      "Up to ${ n } user": [
-        "Enintään ${ n } käyttäjää",
-        "Enintään ${ n } käyttäjää"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Enintään ${ n } käyttäjä (${ adminsText }, ${ usersText })",
-        "Enintään ${ n } käyttäjää (${ adminsText }, ${ usersText })"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Käytä jopa ${ n } laitteella samanaikaisesti",
-        "Käytä jopa ${ n } laitteella samanaikaisesti"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "Holvin jakaminen (enintään ${ n } henkilö)",
-        "Holvin jakaminen (enintään ${ n } henkilöä)"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "VPN-yhteys ${ n } laitteelle samanaikaisesti",
-        "VPN-yhteys ${ n } laitteelle samanaikaisesti"
-      ],
-      "Week": [
-        "viikko",
-        "viikko"
-      ],
-      "week before": [
-        "viikkoa aiemmin",
-        "viikkoa aiemmin"
-      ],
-      "Year": [
-        "vuosi",
-        "vuosi"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, jolle olet jakanut kalentereitasi.",
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi.",
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
-      ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
-        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
-        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston"
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
-        "Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
-        " Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Sinulla on ${ timeRemaining.inMinutes } minuutti aikaa nollata salasanasi.",
-        " Sinulla on ${ timeRemaining.inMinutes } minuuttia aikaa nollata salasanasi."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Sinulla on ${ timeRemaining.inSeconds } sekunti aikaa nollata salasanasi.",
-        " Sinulla on ${ timeRemaining.inSeconds } sekuntia aikaa nollata salasanasi."
-      ],
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
-        "Olet ylittänyt kalenterikohtaisen ${ MAX_CALENDAR_MEMBERS } jäsenen enimmäismäärän",
-        "Olet ylittänyt kalenterikohtaisen ${ MAX_CALENDAR_MEMBERS } jäsenen enimmäismäärän"
-      ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
-        "Olet saavuttanut tämän kalenterin ${ MAX_CALENDAR_MEMBERS } jäsenen enimmäismäärän.\nJakaaksesi kalenterin muille ${ BRAND_NAME }-tileille, poista nykyisiä jäseniä.",
-        "Olet saavuttanut tämän kalenterin ${ MAX_CALENDAR_MEMBERS } jäsenen enimmäismäärän.\nJakaaksesi kalenterin muille ${ BRAND_NAME }-tileille, poista nykyisiä jäseniä."
-      ],
-      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
-        "Voit luoda enintään ${ MAX_LINKS_PER_CALENDAR } linkin kalenteria kohden.\nLuodaksesi uuden linkin tähän kalenteriin, poista nykyisiä linkkejä.",
-        "Voit luoda enintään ${ MAX_LINKS_PER_CALENDAR } linkkiä kalenteria kohden.\nLuodaksesi uuden linkin tähän kalenteriin, poista nykyisiä linkkejä."
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivän.",
-        "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivää."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
-        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Tiedosto ${ formattedFilename } sisältää enemmän kuin ${ MAX_IMPORT_EVENTS } tapahtuman.",
-        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_EVENTS } tapahtumaa."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein.",
-        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
-      ]
-    },
     "Access level": {
       "Full view (see all event details)": [
         "Täysi tarkastelu (näytä kaikki tapahtumatiedot)"
@@ -1071,6 +101,10 @@
       "Apply": [
         "Toteuta"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
+        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
+      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -1088,9 +122,6 @@
       ],
       "Cancel subscription": [
         "Peru tilaus"
-      ],
-      "Cancel trial and pay": [
-        "Peruuta kokeilujakso ja maksa"
       ],
       "Change password": [
         "Vaihda salasana"
@@ -1235,6 +266,14 @@
       ],
       "Delete": [
         "Poista"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Poista ${ selectedCount } yhteystieto",
+        "Poista ${ selectedCount } yhteystietoa"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Poista ${ selectedCount } yhteystietoryhmä",
+        "Poista ${ selectedCount } yhteystietoryhmää"
       ],
       "Delete contact": [
         "Poista yhteystieto"
@@ -1544,9 +583,6 @@
       ],
       "Open settings": [
         "Avaa asetukset"
-      ],
-      "Passphrase": [
-        "Salalause"
       ],
       "Pause indexing": [
         "Keskeytä indeksointi"
@@ -1863,6 +899,10 @@
       "Yes, I'll attend": [
         "Kyllä, osallistun"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston",
+        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedoston"
+      ],
       "Your desktop app free trial ends in 2 days. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy 2 päivän kuluttua. ${ upgradeButton }"
       ],
@@ -1912,6 +952,14 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } oma lisäverkkotunnus",
+        "${ domains } omaa lisäverkkotunnusta"
+      ],
+      "${ ips } server": [
+        "${ ips } palvelin",
+        "${ ips } palvelinta"
+      ],
       "${ price } per dedicated server": [
         "${ price }/oma palvelin"
       ],
@@ -1923,6 +971,18 @@
       ],
       "${ price } per user": [
         "${ price }/käyttäjä"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME }-lisenssi",
+        "${ seats } ${ LUMO_APP_NAME }-lisenssiä"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } kirjoitusavustajalisenssi",
+        "${ seats } kirjoitusavustajalisenssiä"
+      ],
+      "${ users } user": [
+        "${ users } käyttäjä",
+        "${ users } käyttäjää"
       ]
     },
     "Alarm notification": {
@@ -2036,6 +1096,10 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
       "/ month": [
         "kuukaudessa"
       ],
@@ -2227,6 +1291,14 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Suojaa kirjautumisesi kaikilla laitteillasi. Sisältää rajattomasti Hide-my-email-aliaksia, jakamisen, sisäänrakennetun 2FA:n, ${ DARK_WEB_MONITORING_NAME } ja muuta."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta.",
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitteen, tuen omille sähköpostiverkkotunnuksille, rajattomasti Hide-my-email-aliaksia ja paljon muuta.",
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää ${ addresses } sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää 15 sähköpostiosoitetta, tuen omille sähköpostiverkkotunnuksille, ${ BRAND_NAME } Scribe -kirjoitusavustajan, rajattoman määrän Hide-my-email-aliaksia ja paljon muuta."
@@ -2449,6 +1521,14 @@
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "Kalenteria ei voida jakaa nykyistä useammalle ${ BRAND_NAME }-käyttäjälle"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Olet saavuttanut tämän kalenterin ${ MAX_CALENDAR_MEMBERS } jäsenen enimmäismäärän.\nJakaaksesi kalenterin muille ${ BRAND_NAME }-tileille, poista nykyisiä jäseniä.",
+        "Olet saavuttanut tämän kalenterin ${ MAX_CALENDAR_MEMBERS } jäsenen enimmäismäärän.\nJakaaksesi kalenterin muille ${ BRAND_NAME }-tileille, poista nykyisiä jäseniä."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Voit luoda enintään ${ MAX_LINKS_PER_CALENDAR } linkin kalenteria kohden.\nLuodaksesi uuden linkin tähän kalenteriin, poista nykyisiä linkkejä.",
+        "Voit luoda enintään ${ MAX_LINKS_PER_CALENDAR } linkkiä kalenteria kohden.\nLuodaksesi uuden linkin tähän kalenteriin, poista nykyisiä linkkejä."
       ]
     },
     "Calendar sharing access option label": {
@@ -2542,6 +1622,12 @@
         "Vaihda ajanjaksoksi"
       ]
     },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } lisää",
+        "${ more } lisää"
+      ]
+    },
     "Cancellation reminder": {
       "Reactivate by ${ formattedEndDate } to keep these features:": [
         "Säilytä seuraavat aktivoimalla uudelleen ${ formattedEndDate } mennessä:"
@@ -2598,8 +1684,16 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "${ users } käyttäjä",
+        "${ users } käyttäjää"
+      ],
       "Total": [
         "Summa"
+      ],
+      "Total for ${ n } month": [
+        "Summa ${ n } kuukaudelle",
+        "Summa ${ n } kuukaudelle"
       ]
     },
     "Collapsible tooltip": {
@@ -3621,6 +2715,10 @@
       ],
       "End on": [
         "Päättyy"
+      ],
+      "event": [
+        "tapahtuma",
+        "tapahtumaa"
       ]
     },
     "customer_support.feature.all": {
@@ -3657,8 +2755,16 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } kerran",
+        "${ count } kertaa"
+      ],
       "Daily": [
         "Päivittäin"
+      ],
+      "Every ${ interval } day": [
+        "${ interval } päivän välein",
+        "${ interval } päivän välein"
       ],
       "until ${ dateString }": [
         "päättyen ${ dateString }"
@@ -3667,11 +2773,19 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Päivittäin, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "${ interval } päivän välein, ${ timesString }",
+        "${ interval } päivän välein, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
         "Päivittäin, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "${ interval } päivän välein, ${ untilString }",
+        "${ interval } päivän välein, ${ untilString }"
       ]
     },
     "Day": {
@@ -4085,6 +3199,22 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Lisäksi voit tarkastaa ${ statusPageLink }."
       ],
+      "${ list } doesn't have a valid email address": [
+        "${ list } ei sisällä kelvollista sähköpostiosoitetta",
+        "Joidenkin yhteystietojen sähköpostiosoitteet eivät kelpaa: ${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } ei sisällä sähköpostiosoitetta",
+        "Joillakin yhteystiedoilla ei ole sähköpostiosoitteita: ${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "${ list } sisältää virheellisiä sähköpostiosoitteita",
+        "Joissakin ryhmissä on virheellisiä sähköpostiosoitteita: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } ei sisällä yhteystietoja",
+        "Joissakin ryhmissä ei ole yhteystietoja: ${ list }"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } on käyttäjätunnuksesi. Luodaksesi osoitteen ${ emailAddress }, avaa Asetukset > Identiteetti ja osoitteet > Lyhytosoite (pm.me)"
       ],
@@ -4175,6 +3305,14 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Salauksen purun virhe: tapahtuman salatun sisällön purku epäonnistui."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalinta",
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalintaa"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalinta tai",
+        "Poista ainakin ${ calendarsToFixCount } kalenterivalintaa tai"
+      ],
       "Domain not available, try again later": [
         "Verkkotunnusta ei tavoiteta. Yritä myöhemmin uudelleen"
       ],
@@ -4222,9 +3360,6 @@
       ],
       "Failed to load OAuth modal.": [
         "OAuth-modaalin lataaminen epäonnistui"
-      ],
-      "Failed to open to contact": [
-        "Yhteystiedon avaaminen epäonnistui"
       ],
       "First name is too long": [
         "Etunimi on liian pitkä"
@@ -4304,6 +3439,10 @@
       "Last name is too long": [
         "Sukunimi on liian pitkä"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Yhdistä ainakin ${ calendarsToFixCount } kalenteri olemassa olevaan ${ BRAND_NAME }-kalenteriin",
+        "Yhdistä ainakin ${ calendarsToFixCount } kalenteria olemassa oleviin ${ BRAND_NAME }-kalentereihin"
+      ],
       "Missing key packet": [
         "Avainpaketti puuttuu"
       ],
@@ -4340,6 +3479,14 @@
       "Number of occurrences cannot be empty": [
         "Toistomäärä ei voi olla tyhjä"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Yhdellä yhteystiedolla ei ole sähköpostiosoitetta: ${ noEmailsContactNamesList }",
+        "Joillakin yhteystiedoilla ei ole sähköpostiosoitteita: ${ noEmailsContactNamesList }"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Yksi ryhmistä ei sisällä yhteystietoja: ${ noContactGroupList }",
+        "Osa ryhmistä ei sisällä yhteystietoja: ${ noContactGroupList }"
+      ],
       "Organization key is not decrypted": [
         "Organisaatioavaimen salausta ei ole purettu"
       ],
@@ -4370,11 +3517,12 @@
       "Please enter a valid ZIP code": [
         "Syötä kelvollinen postinumero"
       ],
-      "Please enter postal code": [
-        "Syötä postinumerosi"
-      ],
       "Please enter ZIP code": [
         "Syötä postinumero"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Jatka korjaamalla korostettu ristiriita.",
+        "Jatka korjaamalla korostetut ristiriidat."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Syötä joko etu-, suku- tai näyttönimi"
@@ -4411,6 +3559,10 @@
       ],
       "Process aborted": [
         "Tapahtuma keskeytettiin"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Vastaanottajan kaksoiskappale poistettiin: ${ joinedRecipients }",
+        "Vastaanottajien kaksoiskappaleet poistettiin: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
@@ -4538,6 +3690,10 @@
       "You already added this holidays calendar": [
         "Olet jo lisännyt nämä yleiset vapaapäivät"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
+        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle"
+      ],
       "You have reached the maximum number of calendars.": [
         "Olet saavuttanut kalenterien enimmäismäärän."
       ],
@@ -4579,6 +3735,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Odottamaton virhe. Tuonti on aloitettava uudelleen."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Tiedosto ${ formattedFilename } sisältää enemmän kuin ${ MAX_IMPORT_EVENTS } tapahtuman.",
+        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_EVENTS } tapahtumaa."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Tiedostossa ${ formattedFilename } on virheellinen method-tietue, eikä sitä voida tuoda."
@@ -4744,9 +3904,19 @@
         "peruttu"
       ]
     },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } osallistuja",
+        "${ numberOfAttendees } osallistujaa"
+      ]
+    },
     "Event info in search view; event duration": {
       "All day": [
         "Koko päivä"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Koko päivä, kestää ${ plusDaysToEnd } päivän",
+        "Koko päivä, kestää ${ plusDaysToEnd } päivää"
       ]
     },
     "Event info. Organizer name": {
@@ -4996,6 +4166,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "tavu",
+        "tavua"
+      ],
       "GB": [
         "Gt"
       ],
@@ -5007,6 +4181,28 @@
       ],
       "TB": [
         "Tt"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Tavu",
+        "Tavua"
+      ],
+      "Gigabyte": [
+        "Gigatavu",
+        "Gigatavua"
+      ],
+      "Kilobyte": [
+        "Kilotavu",
+        "Kilotavua"
+      ],
+      "Megabyte": [
+        "Megatavu",
+        "Megatavua"
+      ],
+      "Terabyte": [
+        "Teratavu",
+        "Teratavua"
       ]
     },
     "Filter notification": {
@@ -5080,9 +4276,6 @@
       "Contacts": [
         "Yhteystiedot"
       ],
-      "Domain": [
-        "Verkkotunnus"
-      ],
       "Name": [
         "Nimi"
       ],
@@ -5097,6 +4290,10 @@
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Löydettiin ${ itemsCount } ehdotus, käytä siirtymiseen näppäimistöä.",
+        "Löydettiin ${ itemsCount } ehdotusta, käytä siirtymiseen näppäimistöä."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Selaa kirjoituksen jälkeen näytettäviä ehdotuksia Ylös- ja Alas-näppäimillä, ja vahvista valinta Enter-näppäimellä tai sulje ehdotukset Esc-näppäimellä."
       ]
@@ -5163,6 +4360,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } tapahtuma salattiin ja lisättiin kalenteriisi",
+        "${ totalImported }/${ totalToImport } tapahtumaa salattiin ja lisättiin kalenteriisi"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Virhe salattaessa ja lisättäessä tapahtumaa. ${ totalImported }/${ totalToImport } tapahtuma tuotiin.",
+        "Virhe salattaessa ja lisättäessä tapahtumia. ${ totalImported }/${ totalToImport } tapahtumaa tuotiin."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Virhe salattaessa ja lisättäessä yhteystietoja, jonka vuoksi tapahtumia ei tuotu."
       ],
@@ -5197,11 +4402,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Tuodut kutsut näkyvät ${ CALENDAR_APP_NAME }issa yksinkertaisina tapahtumina, ilman järjestäjä- ja osallistujatietoja. Vastaanottaaksesi tapahtumapäivityksiä ja nähdäksesi osallistujat, pyydä järjestäjiä kutsumaan sinut ${ BRAND_NAME }-sähköpostiosoitteellasi."
       ],
+      "This file contains an event invitation:": [
+        "Tiedosto sisältää tapahtumakutsun:",
+        "Tiedosto sisältää tapahtumakutsuja:"
+      ],
+      "This file contains an invitation response:": [
+        "Tiedosto sisältää vastauksen kutsuun:",
+        "Tiedosto sisältää vastauksia kutsuihin:"
+      ],
       "This file contains some data that we cannot import:": [
         "Tiedosto sisältää joitakin tietoja, joita ei voida tuoda:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } yhteystieto salattiin ja lisättiin yhteystietoihisi",
+        "${ totalImported }/${ totalToImport } yhteystietoa salattiin ja lisättiin yhteystietoihisi"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Virhe salattaessa ja lisättäessä yhteystietoa, jonka vuoksi yhteystietoa ei tuotu."
       ],
@@ -5221,6 +4438,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Ota yhteyttä ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } yhteystieto",
+        "${ totalContacts } yhteystietoa"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5399,6 +4622,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded }/${ totalEvents } tapahtumaa ei tuoda. Näytä tiedot laajentamalla.",
+        "${ totalEventsDiscarded }/${ totalEvents } tapahtumaa ei tuoda. Näytä tiedot laajentamalla."
+      ],
       "No contact can be imported. Click for details": [
         "Yhteystietoja ei voida tuoda. Painamalla tästä saat lisätietoja"
       ],
@@ -5410,6 +4637,10 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } sähköpostiosoite",
+        "${ addressCount } sähköpostiosoitetta"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
@@ -5419,11 +4650,39 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } uusi kalenteri",
+        "${ calendarsToBeCreatedCount } uutta kalenteria"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } yhdistetty kalenteri",
+        "${ calendarsToBeMergedCount } yhdistettyä kalenteria"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } yhteystieto sisältää useita sähköpostiosoitteita.",
+        "${ contactCount } yhteystietoa sisältää useita sähköpostiosoitteita."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } jäsen",
+        "${ contactEmailsLength } jäsentä"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } sisältää useita sähköpostiosoitteita."
       ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } yhteystieto löytyi",
+        "${ contactsCount } yhteystietoa löytyi"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } yhteystieto",
+        "${ contactsLength } yhteystietoa"
+      ],
       "${ firstItems } and ${ lastItem }": [
         "${ firstItems } ja ${ lastItem }"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } ryhmä löytyi",
+        "${ groupCounts } ryhmää löytyi"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe-kirjoitusavustajan"
@@ -5437,17 +4696,53 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vaatii ainakin yhden oman palvelimen ${ serverPricePerMonth }"
       ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } erääntyy ${ daysLeft } päivän kuluttua.",
+        "${ planName } erääntyy ${ daysLeft } päivän kuluttua."
+      ],
       "${ planName } expires today.": [
         "${ planName } erääntyy tänään."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } suojelee tiliäsi valvomalla epäilyttävää toimintaa."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } kansio löytyi",
+        "${ providerFoldersNumLocalized } kansiota löytyi"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "Gmailista löytyi ${ providerFoldersNumLocalized } tunniste",
+        "Gmailista löytyi ${ providerFoldersNumLocalized } tunnistetta"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
+        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteria"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
+        "${ selectedContactsLength }/${ contactsLength } yhteystietoa valittu"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } kansio valittu",
+        "${ selectedFoldersCountLocalized } kansiota valittu"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } tunniste valittu",
+        "${ selectedFoldersCountLocalized } tunnistetta valittu"
+      ],
       "${ storage } storage": [
         "${ storage } tallennustilaa"
       ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } yhteystieto päivitettiin.",
+        "${ updated } yhteystietoa päivitettiin."
+      ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } naamioi IP-osoitteesi, jotta verkkosivustot eivät voi tunnistaa sinua."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } jäsen)",
+        "(${ memberCount } jäsentä)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/kuukausi)"
@@ -5460,6 +4755,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } lisätallennustilaa"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteys (mahdollistaa VPN-yhteyden useammalla laitteella)",
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } -yhteyttä (mahdollistaa VPN-yhteyden useammalla laitteella)"
       ],
       "30-day money-back guarantee.": [
         "30 päivän rahat takaisin -takuu."
@@ -5518,8 +4817,20 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Tekoälyä käyttävä avustaja, joka auttaa sinua laatimaan parempia viestejä nopeasti ja vaivattomasti."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Kaikki (${ totalFoldersCount } kansio)",
+        "Kaikki (${ totalFoldersCount } kansiota)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Kaikki (${ totalFoldersCount } tunniste)",
+        "Kaikki (${ totalFoldersCount } tunnistetta)"
+      ],
       "All participants will get a cancellation email. Which event would you like to delete?": [
         "Kaikki osallistujat saavat peruutussähköpostin. Minkä tapahtuman haluat poistaa?"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
+        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
       ],
       "American Express SafeKey logo": [
         "American Express SafeKey -logo"
@@ -5635,6 +4946,10 @@
       "Country code": [
         "Maakoodi"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Luo ${ calendarsToBeCreatedCount } uusi kalenteri",
+        "Luo ${ calendarsToBeCreatedCount } uutta kalenteria"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja kansiot, jotka haluat tuoda."
       ],
@@ -5643,6 +4958,10 @@
       ],
       "Create a new contact group": [
         "Luo uusi yhteystietoryhmä"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Luo suojattu pilvi ${ value } jäsenelle",
+        "Luo suojattu pilvi ${ value } jäsenelle"
       ],
       "Create in": [
         "Luo kalenteriin"
@@ -5680,6 +4999,10 @@
       "default email address": [
         "oletussähköpostiosoite"
       ],
+      "Deleting event...": [
+        "Poistetaan tapahtumaa...",
+        "Poistetaan tapahtumia..."
+      ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
@@ -5703,9 +5026,6 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Tilin alennus katkaisee kaikki yhteydet maksullisiin ${ VPN_APP_NAME } -palvelimiin."
-      ],
-      "Download current logs": [
-        "Lataa nykyiset lokitiedot"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lataa suosikkisovelluksesi tänään ja suojaa yksityisyytesi minne ikinä menetkin."
@@ -5754,6 +5074,10 @@
       ],
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Arviolta ${ estimatedMinutes } minuutti jäljellä",
+        "Arviolta ${ estimatedMinutes } minuuttia jäljellä"
       ],
       "Estimated time remaining: Less than a minute": [
         "Arviolta vajaa minuutti jäljellä"
@@ -5814,6 +5138,10 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Jos jatkat alennusta, menetät maksullisten ${ VPN_APP_NAME } -ominaisuuksien käyttöoikeuden."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteri",
+        "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteria"
       ],
       "Import from": [
         "Tuo lähteestä"
@@ -6058,6 +5386,10 @@
       "Please select the folders you would like to import:": [
         "Valitse tuotavat kansiot:"
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet.",
+        "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet."
+      ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Valitse ryhmään ${ groupName } lisättävä(t) sähköpostiosoite tai -osoitteet."
       ],
@@ -6099,6 +5431,10 @@
       ],
       "Removed participants will be notified.": [
         "Poistetuille osallistujille ilmoitetaan."
+      ],
+      "Saving event...": [
+        "Tallennetaan tapahtumaa...",
+        "Tallennetaan tapahtumia..."
       ],
       "Scan the QR code with your mobile device": [
         "Skannaa QR-koodi mobiililaitteellasi"
@@ -6153,6 +5489,10 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Suorota talletus seuraavalla osoitteella tai lukemalla QR-koodi. Talletuksesi huomioidaan tililläsi vahvistuksen jälkeen."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein.",
+        "Tilaus uusitaan automaattisesti ${ cycle } kuukauden välein."
       ],
       "Subscription auto-renews every month.": [
         "Tilaus uudistuu automaattisesti joka kuukausi."
@@ -6427,6 +5767,14 @@
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, jolle olet jakanut kalentereitasi.",
+        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi.",
+        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
+      ],
       "You can now return to the application to continue": [
         "Voit jatkaa palaamalla sovellukseen"
       ],
@@ -6483,6 +5831,10 @@
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "Päivität ketjun kaikki tapahtumat. Poistetuille osallistujille ilmoitetaan."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }.",
+        "Silloin sinua laskutetaan joka ${ renewCycle } kuukausi ${ renewAmountStr }."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Olet saavuttanut yhteystietoryhmien osoitteiden enimmäismäärän:"
@@ -6565,6 +5917,10 @@
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "Fyysinen sijaintisi on nähtävissä, ja sitä voidaan käyttää Internet-käyttösi rajoittamiseen."
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein.",
+        "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti ${ cycle } kuukauden välein."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Ajoitettu tilauksesi alkaa ${ renewalTime } ja uudistetaan automaattisesti kuukausittain."
       ],
@@ -6579,6 +5935,10 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "${ filteredList.length } komento löytyi.",
+        "${ filteredList.length } komentoa löytyi."
+      ],
       "Optional": [
         "Valinnainen"
       ],
@@ -6607,6 +5967,16 @@
     "Info on errors": {
       "Click for details": [
         "Painamalla lisätietoja"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } kansio valittu",
+        "${ selectedFoldersCount } kansiota valittu"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } tunniste valittu",
+        "${ selectedFoldersCount } tunnistetta valittu"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -6643,6 +6013,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Kutsua kohden sallitaan enintään ${ maxAttendees } osallistuja",
+        "Kutsua kohden sallitaan enintään ${ maxAttendees } osallistujaa"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "Kutsujen luontia ei sallita jaetussa kalenterissa"
       ]
@@ -6663,9 +6037,6 @@
       ],
       "Expired": [
         "Erääntynyt"
-      ],
-      "KOO": [
-        "KOO"
       ],
       "Obsolete": [
         "Vanhentunut"
@@ -6731,6 +6102,10 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
+      ],
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
@@ -7041,11 +6416,12 @@
       "Organizer": [
         "Järjestäjä"
       ],
+      "participant": [
+        "osallistuja",
+        "osallistujaa"
+      ],
       "Participants": [
         "Osallistujat"
-      ],
-      "Passphrase:": [
-        "Salalause:"
       ],
       "Password": [
         "Salasana"
@@ -7376,6 +6752,10 @@
       "Almost there": [
         "Melkein valmis"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Kelentereita luotu: ${ createdCalendarCount }/${ calendarsToBeCreated }",
+        "Kelentereita luotu: ${ createdCalendarCount }/${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Yhdistetään sähköpostipalveluntarjoajaasi"
       ],
@@ -7421,6 +6801,24 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Ota ${ reason } käyttöön"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Tuo kaikki ${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella",
+        "Tuo kaikki ${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Tuo kaikki ${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella",
+        "Tuo kaikki ${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella",
+        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella",
+        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
       ]
     },
     "mail_signup_2024: Info": {
@@ -7529,16 +6927,28 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "${ interval } kuukauden välein, kuun ${ onDayString }",
+        "${ interval } kuukauden välein, kuun ${ onDayString }"
+      ],
       "Monthly ${ onDayString }": [
         "Joka kuukauden ${ onDayString }"
       ]
     },
     "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ timesString }",
+        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ timesString }"
+      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Joka kuukauden ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ untilString }",
+        "${ interval } kuukauden välein, kuun ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Joka kuukauden ${ onDayString }, ${ untilString }"
       ]
@@ -7710,8 +7120,76 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } ja ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } kalenteri",
+        "${ n } kalenteria"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalenteri/käyttäjä",
+        "${ n } kalenteria/käyttäjä"
+      ],
+      "${ n } custom email domain": [
+        "${ n } oma verkkotunnus",
+        "${ n } omaa verkkotunnusta"
+      ],
+      "${ n } email address": [
+        "${ n } sähköpostiosoite",
+        "${ n } sähköpostiosoitetta/aliasta"
+      ],
+      "${ n } email address per user": [
+        "${ n } sähköpostiosoite/käyttäjä",
+        "${ n } sähköpostiosoitetta/käyttäjä"
+      ],
+      "${ n } filter": [
+        "${ n } suodatin",
+        "${ n } suodatinta"
+      ],
+      "${ n } folder": [
+        "${ n } kansio",
+        "${ n } kansiota"
+      ],
+      "${ n } folder and label": [
+        "${ n } kansio ja tunniste",
+        "${ n } kansiota ja tunnistetta"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } Hide-my-email-alias",
+        "${ n } Hide-my-email-aliasta"
+      ],
+      "${ n } label": [
+        "${ n } tunniste",
+        "${ n } tunnistetta"
+      ],
+      "${ n } message per day": [
+        "${ n } viesti päivässä",
+        "${ n } viestiä päivässä"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } jaettu ${ PASS_SHORT_APP_NAME }-holvi/käyttäjä",
+        "${ n } jaettua ${ PASS_SHORT_APP_NAME }-holvia/käyttäjä"
+      ],
+      "${ n } vault": [
+        "${ n } holvi",
+        "${ n } holvia"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-yhteys",
+        "${ n } VPN-yhteyttä"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } käyttäjä",
+        "Enintään ${ numberOfUsers } käyttäjää"
+      ],
+      "${ options }-day file version history": [
+        "${ options } päivän tiedostojen versiohistoria",
+        "${ options } päivän tiedostojen versiohistoria"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin elinikäisesti"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-alias",
+        "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-aliasta"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ilman Hide-my-email-aliasrajoitusta"
@@ -7730,9 +7208,6 @@
       ],
       "${ size } storage per user": [
         "${ size } tallennustilaa/käyttäjä"
-      ],
-      "1 TB secure storage": [
-        "1 Tt suojattua tallennustilaa"
       ],
       "1 user": [
         "1 käyttäjä"
@@ -7878,6 +7353,10 @@
       "Group management (coming soon)": [
         "Ryhmien hallinta (tulossa pian)"
       ],
+      "High-speed VPN on ${ n } device": [
+        "Nopea VPN ${ n } laitteelle",
+        "Nopea VPN ${ n } laitteelle"
+      ],
       "HTML signatures": [
         "HTML-allekirjoitukset"
       ],
@@ -7928,9 +7407,6 @@
       ],
       "Private photo backup": [
         "Yksityinen kuvien varmuuskopiointi"
-      ],
-      "Quickly craft replies": [
-        "Laadi vastauksia nopeasti"
       ],
       "Recover previous file versions": [
         "Palauta aiempia tiedostoversioita"
@@ -7983,9 +7459,6 @@
       "Strict no-logs policy": [
         "Tiukka lokivapaa käytäntö"
       ],
-      "Support for up to 2 users": [
-        "Tuki jopa kahdelle käyttäjälle"
-      ],
       "Sync and backup all your files across devices": [
         "Synkronoi ja varmuuskopioi kaikki tiedostosi kaikilla laitteillasi"
       ],
@@ -8037,8 +7510,20 @@
       "Unlimited volume/bandwidth": [
         "Rajaton tiedonsiirto/kaistanleveys"
       ],
+      "Up to ${ n } user": [
+        "Enintään ${ n } käyttäjää",
+        "Enintään ${ n } käyttäjää"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Enintään ${ n } käyttäjä (${ adminsText }, ${ usersText })",
+        "Enintään ${ n } käyttäjää (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Jopa ${ totalStorageSize } tallennustilaa"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Käytä jopa ${ n } laitteella samanaikaisesti",
+        "Käytä jopa ${ n } laitteella samanaikaisesti"
       ],
       "User credential management": [
         "Käyttäjätietojen hallinta"
@@ -8049,8 +7534,22 @@
       "User storage management": [
         "Käyttäjien tallennustilojen hallinta"
       ],
+      "Vault sharing (up to ${ n } person)": [
+        "Holvin jakaminen (enintään ${ n } henkilö)",
+        "Holvin jakaminen (enintään ${ n } henkilöä)"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } ylläpitäjä",
+        "${ admins } ylläpitäjää"
+      ],
+      "${ users } user": [
+        "${ users } käyttäjä",
+        "${ users } käyttäjää"
       ]
     },
     "new_plans: feature info": {
@@ -8219,6 +7718,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Luo verkkoidentiteeteillesi useita sähköpostiosoitteita, kuten MikkoOstokset@${ domain } ostoksille ja MikkoUutiset@${ domain } uutiskirjeille."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Luo enintään ${ n } kalenteri tai lisää kavereiden, perheen, kollegoiden tai organisaatioiden kalentereita",
+        "Luo enintään ${ n } kalenteria tai lisää kavereiden, perheen, kollegoiden tai organisaatioiden kalentereita"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Luo jopa ${ n } sähköpostiosoitetta/aliasta, jotka voit määrittää perheenjäsenille ja käytä niitä verkkoidentiteeteillesi, kuten esim. MikkoOstaja@${ domain } ostostileille."
@@ -8423,6 +7926,10 @@
       "Central control panel": [
         "Keskitetty hallintapaneeli"
       ],
+      "Create up to ${ n } calendar": [
+        "Luo enintään ${ n } kalenteri",
+        "Luo enintään ${ n } kalenteria"
+      ],
       "Dedicated Account manager": [
         "Oma tilinhoitaja"
       ],
@@ -8440,6 +7947,10 @@
       ],
       "Require 2FA": [
         "2FA-pakotus"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle",
+        "Tuki ${ n } omalle sähköpostiverkkotunnukselle"
       ]
     },
     "Note": {
@@ -8489,6 +8000,12 @@
         "Kalenteri päivitettiin"
       ]
     },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Jäsen lisättiin",
+        "Jäseniä lisättiin"
+      ]
+    },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
         "Kieltäydyit kalenterikutsusta"
@@ -8519,11 +8036,91 @@
       "at time of event": [
         "tapahtuman alkaessa"
       ],
+      "day before": [
+        "päivää aiemmin",
+        "päivää aiemmin"
+      ],
+      "hour before": [
+        "tuntia aiemmin",
+        "tuntia aiemmin"
+      ],
+      "minute before": [
+        "minuutin aiemmin",
+        "minuuttia aiemmin"
+      ],
       "on the same day": [
         "samana päivänä"
+      ],
+      "week before": [
+        "viikkoa aiemmin",
+        "viikkoa aiemmin"
       ]
     },
     "Notifications": {
+      "${ value } day after": [
+        "${ value } päivää myöhemmin",
+        "${ value } päivää myöhemmin"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } päivää myöhemmin klo ${ time }",
+        "${ value } päivää myöhemmin klo ${ time }"
+      ],
+      "${ value } day before": [
+        "${ value } päivää aiemmin",
+        "${ value } päivää aiemmin"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ value } päivää aiemmin klo ${ time }",
+        "${ value } päivää aiemmin klo ${ time }"
+      ],
+      "${ value } hour after": [
+        "${ value } tuntia myöhemmin",
+        "${ value } tuntia myöhemmin"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ value } tuntia myöhemmin klo ${ time }",
+        "${ value } tuntia myöhemmin klo ${ time }"
+      ],
+      "${ value } hour before": [
+        "${ value } tuntia aiemmin",
+        "${ value } tuntia aiemmin"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ value } tuntia aiemmin klo ${ time }",
+        "${ value } tuntia aiemmin klo ${ time }"
+      ],
+      "${ value } minute after": [
+        "${ value } minuuttia myöhemmin",
+        "${ value } minuuttia myöhemmin"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ value } minuuttia myöhemmin klo ${ time }",
+        "${ value } minuuttia myöhemmin klo ${ time }"
+      ],
+      "${ value } minute before": [
+        "${ value } minuuttia aiemmin",
+        "${ value } minuuttia aiemmin"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ value } minuuttia aiemmin klo ${ time }",
+        "${ value } minuuttia aiemmin klo ${ time }"
+      ],
+      "${ value } week after": [
+        "${ value } viikko myöhemmin",
+        "${ value } viikkoa myöhemmin"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ value } viikko myöhemmin klo ${ time }",
+        "${ value } viikkoa myöhemmin klo ${ time }"
+      ],
+      "${ value } week before": [
+        "${ value } viikkoa aiemmin",
+        "${ value } viikkoa aiemmin"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ value } viikkoa aiemmin klo ${ time }",
+        "${ value } viikkoa aiemmin klo ${ time }"
+      ],
       "At time of event": [
         "Tapahtuman alkaessa"
       ],
@@ -8705,6 +8302,10 @@
       "Custom...": [
         "Mukautettu..."
       ],
+      "Day": [
+        "päivä",
+        "päivä"
+      ],
       "Does not repeat": [
         "Ei toistu"
       ],
@@ -8726,6 +8327,10 @@
       "Ignore group": [
         "Ohita ryhmä"
       ],
+      "Month": [
+        "kuukausi",
+        "kuukausi"
+      ],
       "No parent folder": [
         "Ei yläkansiota"
       ],
@@ -8734,6 +8339,14 @@
       ],
       "This event": [
         "Vain tämän tapahtumakerran"
+      ],
+      "Week": [
+        "viikko",
+        "viikko"
+      ],
+      "Year": [
+        "vuosi",
+        "vuosi"
       ]
     },
     "Option group label": {
@@ -8776,6 +8389,10 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } käyttäjätili",
+        "${ n } käyttäjätiliä"
+      ],
       "Activity log": [
         "Tapahtumaloki"
       ],
@@ -8894,23 +8511,30 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Uusitaan hintaan ${ renewPriceStr }, peru milloin tahansa."
       ],
-      "Taxes": [
-        "Verot"
-      ],
       "terms & conditions": [
         "käyttöehdot"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
+        "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäisen ${ subscriptionLength } kuukauden.",
+        "Erikoisalennettu hinta, ${ priceWithDiscount } , on voimassa ensimmäiset ${ subscriptionLength } kuukautta."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakerran.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain.",
+        "Erikoisalennettu ${ priceWithDiscount } hinta on voimassa ensimmäisen kuukauden. Etukoodi kelpaa ${ couponRedemptions } uusintakertaa.Tämän jälkeen uusinta tapahtuu automaattisesti hintaan ${ renewPriceStr } per kuukausi. Voit peruuttaa tilauksen milloin vain."
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Erityishinta ${ priceWithDiscount } on voimassa vain ensimmäisen kuukauden ajan, jonka jälkeen tilaus jatkuu automaattisesti ${ renewPriceStr } kuukausihintaan. Voit perua milloin tahansa."
       ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain.",
+        "Tämän jälkeen tilaus uusitaan automaattisesti hintaan ${ renewPriceStr } ${ renewalLength } kuukaudeksi. Voit peruuttaa tilauksen milloin vain."
+      ],
       "Timeout exceeded": [
         "Aikakatkaisu ylitettiin"
-      ],
-      "VAT": [
-        "ALV"
-      ],
-      "VAT number": [
-        "ALV-numero"
       ],
       "Your payment is still being processed": [
         "Maksuasi käsitellään vielä"
@@ -8950,23 +8574,8 @@
       "ABN": [
         "ABN"
       ],
-      "Add ABN": [
-        "Lisää ABN"
-      ],
-      "Add EIN": [
-        "Lisää EIN"
-      ],
-      "Add VAT number": [
-        "Lisää ALV-numero"
-      ],
       "Business Number": [
         "Yritystunnus"
-      ],
-      "Edit Business Number": [
-        "Muokkaa yritystunnusta"
-      ],
-      "Edit VAT number": [
-        "Muokkaa ALV-numeroa"
       ],
       "EIN": [
         "EIN"
@@ -9108,9 +8717,6 @@
       "Select a reason": [
         "Valitse syy"
       ],
-      "Select country": [
-        "Valitse maa"
-      ],
       "Select state": [
         "Valitse osavaltio"
       ],
@@ -9159,6 +8765,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length }/${ countContacts } yhteystieto vietiin.",
+        "${ contactsExported.length }/${ countContacts } yhteystietoa vietiin."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length }/${ totalBeDeleted } yhteystieto poistettiin.",
+        "${ model.deleted.length }/${ totalBeDeleted } yhteystietoa poistettiin."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length }/${ totalBeMerged } yhteystieto yhdistettiin.",
+        "${ model.submitted.length }/${ totalBeMerged } yhteystietoa yhdistettiin."
+      ],
       "No contacts exported.": [
         "Yhteystietoja ei viety."
       ],
@@ -9338,11 +8956,27 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } päivä",
+        "${ timeRemaining.inDays } päivää"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } tunti",
+        "${ timeRemaining.inHours } tuntia"
+      ],
       "Password reset request approved (${ user.Email }).": [
         "Salasanan nollauspyyntö hyväksyttiin (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Käytä kirjautunutta laitetta (siinä istunnossa, jossa pyyntö käynnistettiin) salasanan vaihtamiseksi."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua.",
+        "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua.",
+        "Käyttöoikeus erääntyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
       "This permission expires soon": [
         "Tämä käyttöoikeus vanhenee erääntyy pian."
@@ -9352,6 +8986,22 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Voit nyt vaihtaa salasanasi tilille ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
+        " Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Sinulla on ${ timeRemaining.inMinutes } minuutti aikaa nollata salasanasi.",
+        " Sinulla on ${ timeRemaining.inMinutes } minuuttia aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Sinulla on ${ timeRemaining.inSeconds } sekunti aikaa nollata salasanasi.",
+        " Sinulla on ${ timeRemaining.inSeconds } sekuntia aikaa nollata salasanasi."
       ]
     },
     "session_recovery:available:link": {
@@ -9411,8 +9061,16 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } tunti lisää",
+        "${ gracePeriodHoursRemaining } tuntia lisää"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Jos et pyytänyt salasanasi nollausta, peru tämä pyyntö nyt."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
+        "Salasanan uudelleenasetusta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä varmistaaksemme juuri sinun pyytäneen nollausta. Voit vaihtaa salasanasi kun on kulunut ${ boldTimeLeft }. ${ viewRequest }"
@@ -9440,6 +9098,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } tunti",
+        "${ gracePeriodHoursRemaining } tuntia"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } on nyt käytössä."
       ],
@@ -9471,6 +9133,12 @@
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Kutsuaksesi muita kuin ${ BRAND_NAME }-käyttäjiä, jaa kalenteriisi linkki."
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Olet ylittänyt kalenterikohtaisen ${ MAX_CALENDAR_MEMBERS } jäsenen enimmäismäärän",
+        "Olet ylittänyt kalenterikohtaisen ${ MAX_CALENDAR_MEMBERS } jäsenen enimmäismäärän"
       ]
     },
     "Share calendar modal description": {
@@ -9543,6 +9211,30 @@
         "Hanki Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } päivä",
+        "${ days } päivää"
+      ],
+      "${ hours } hour": [
+        "${ hours } tunti",
+        "${ hours } tuntia"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuutti",
+        "${ minutes } minuuttia"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunti",
+        "${ seconds } sekuntia"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } kuukausi ILMAISEKSI",
+        "${ n } kuukautta ILMAISEKSI"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 käyttäjä"
@@ -9593,17 +9285,11 @@
       ]
     },
     "specialoffer: Link": {
-      "Browse securely": [
-        "Selaa turvallisesti"
-      ],
       "Get unlimited aliases": [
         "Hanki aliaksia rajattomasti"
       ],
       "Go to subscription plans": [
         "Siirry tilauksiin"
-      ],
-      "Guard against threats": [
-        "Suojaudu uhilta"
       ],
       "Increase your storage": [
         "Lisää tallennustilaasi"
@@ -9616,6 +9302,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } kuukausi",
+        "${ n } kuukautta"
+      ],
       "/ month": [
         "kuukaudessa"
       ],
@@ -9802,6 +9492,10 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Hyvitämme jäljellä olevan ajan krediitteinä ${ BRAND_NAME }-tilillesi."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivän.",
+        "**${ currentPlanName }**-tilisi on voimassa vielä **${ daysRemaining }** päivää."
+      ],
       "Your ${ appStorage } is almost full": [
         "${ appStorage }si on lähes täynnä"
       ],
@@ -9860,6 +9554,32 @@
         "Laskutetaan vuosittain"
       ]
     },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "${ n } ilmainen VPN-yhteys/käyttäjä",
+        "${ n } ilmaista VPN-yhteyttä/käyttäjä"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } nopea VPN-yhteys",
+        "${ n } nopeaa VPN-yhteyttä"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } nopea VPN-yhteys/käyttäjä",
+        "${ n } nopeaa VPN-yhteyttä/käyttäjä"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-yhteys",
+        "${ n } VPN-yhteyttä"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-yhteys/käyttäjä",
+        "${ n } VPN-yhteyttä/käyttäjä"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti",
+        "VPN-yhteys ${ n } laitteelle samanaikaisesti"
+      ]
+    },
     "Subscription change warning": {
       "Got it": [
         "Selvä"
@@ -9902,6 +9622,10 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } päivä jäljellä",
+        "${ dayDiff } päivää jäljellä"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME }in työpöytäsovellus"
       ],
@@ -9943,6 +9667,26 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "${ planName } tarjoaa ${ planMaxSpace } tallennustilaa sähköposteille, liitetiedostoille, tapahtumille, tiedostoille ja salasanoille, käyttäjäkohtaisesti. Olet myös oikeutettu vuosittaisiin tallennustilabonuksiin."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalenteri/käyttäjä",
+        "${ planNumberOfCalendars } kalenteria/käyttäjä"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } oma verkkotunnus",
+        "${ planNumberOfDomains } omaa verkkotunnusta"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } sähköpostiosoite",
+        "${ planNumberOfEmails } sähköpostiosoitetta"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } sähköpostiosoite/käyttäjä",
+        "${ planNumberOfEmails } sähköpostiosoitetta/käyttäjä"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } käyttäjä",
+        "${ planNumberOfUsers } käyttäjää"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "${ PROTON_SENTINEL_NAME } edistynt tilisuojaus"
@@ -10204,6 +9948,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } yhteystieto näyttää identtiseltä.",
+        "${ countMergeableContacts } yhteystietoa näyttää identtiseltä."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Poistetuille osallistujille lähetetään sähköpostitse perumisilmoitus ketjun kaikkiin tapahtumiin."
       ],
@@ -10263,6 +10011,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "Koodi lähetettiin kohteeseen ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Yhteystieto poistettiin",
+        "Yhteystiedot poistettiin"
+      ],
+      "Contact group deleted": [
+        "Yhteystietoryhmä poistettiin",
+        "Yhteystietoryhmät poistettiin"
       ],
       "Contact saved": [
         "Yhteystieto tallennettiin"
@@ -10480,6 +10236,52 @@
         "Liity Teams-kokoukseen"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } vuorokausi",
+        "${ ceilDays } vuorokautta"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } tunti",
+        "${ ceilHours }. tuntia"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuutti",
+        "${ ceilMinutes } minuuttia"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunti",
+        "${ seconds } sekuntia"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } t",
+        "${ hours } t"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 t",
+        "${ hoursInt }.5 t"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } tunti",
+        "${ hours } tuntia"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 tuntia",
+        "${ hoursInt }.5 tuntia"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuutti",
+        "${ minutes } minuuttia"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Etsi aikavyöhykkeistä"
@@ -10489,14 +10291,15 @@
       "${ appName } keyboard shortcuts": [
         "${ appName }-pikanäppäimet"
       ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } sähköpostiosoite",
+        "${ emailsCount } sähköpostiosoitetta"
+      ],
       "${ feature } is now active": [
         "${ feature } on nyt käytössä"
       ],
       "Account recovery": [
         "Tilin palautus"
-      ],
-      "Account restricted": [
-        "Tiliä on rajoitettu"
       ],
       "Account security": [
         "Tilin suojaus"
@@ -10527,6 +10330,10 @@
       ],
       "Add some color to your day": [
         "Lisää väriä päivääsi"
+      ],
+      "Add to ${ groupCount } group": [
+        "Lisää ${ groupCount } ryhmään",
+        "Lisää ${ groupCount } ryhmään"
       ],
       "Add to ${ groupName }": [
         "Lisää ryhmään ${ groupName }"
@@ -10653,6 +10460,14 @@
       ],
       "Day theme": [
         "Päiväteema"
+      ],
+      "Delete ${ count } contact": [
+        "Poista ${ count } yhteystieto",
+        "Poista ${ count } yhteystietoa"
+      ],
+      "Delete ${ count } contact group": [
+        "Poista ${ count } yhteystietoryhmä",
+        "Poista ${ count } yhteystietoryhmää"
       ],
       "Delete ${ value }": [
         "Poista ${ value }"
@@ -10785,6 +10600,10 @@
       ],
       "Human verification": [
         "Ihmisvahvistus"
+      ],
+      "Import as simple event?": [
+        "Tuodaanko yksinkertaisena tapahtumana?",
+        "Tuodaanko yksinkertaisina tapahtumina?"
       ],
       "Import contacts": [
         "Tuo yhteystietoja"
@@ -11228,7 +11047,7 @@
         "${ PASS_APP_NAME }: Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajattomasti aliaksia, jakamisen, sisäänrakennetun 2FA:n ja muuta."
       ]
     },
-    "Tooltip; share calendar modal": {
+    "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
         "Jaettu päästä päähän -salattuna"
       ],
@@ -11249,6 +11068,16 @@
         "Ylläpitäjillä ei ole pääsyä yksityisten käyttäjien tietoihin, eivätkä he voi nollata heidän salasanojaan."
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Salasanan täytyy sisältää ainakin ${ MIN_PASSWORD_LENGTH } merkki",
+        "Salasanan täytyy sisältää vähintään ${ MIN_PASSWORD_LENGTH }-merkkiä"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
+        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Toista video uudelleen painamalla tästä"
@@ -11265,6 +11094,40 @@
         "Avaa uudessa välilehdessä"
       ]
     },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } laite",
+        "${ n } laitetta"
+      ],
+      "${ n } server": [
+        "${ n } palvelin",
+        "${ n }+ palvelinta"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-yhteys",
+        "${ n } VPN-yhteyttä"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } maa",
+        "${ numberOfCountries } maata"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } ${ numberOfCountries } maassa",
+        "${ numberOfServers } ${ numberOfCountries }+ maassa"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } ${ numberOfCountries } maassa",
+        "${ numberOfServers } ${ numberOfCountries } maassa"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Valitsee automaattisesti ${ numberOfCountries } maasta",
+        "Valitsee automaattisesti ${ numberOfCountries } maasta"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Palvelimet ${ numberOfCountries }+ maassa",
+        "Palvelimet ${ numberOfCountries }+ maassa"
+      ]
+    },
     "vpn_2step: feature": {
       "Advanced VPN customizations": [
         "Edistyneet VPN-mukautukset"
@@ -11279,6 +11142,18 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME }-sähköpostiosoite",
+        "${ n } ${ BRAND_NAME }-sähköpostiosoitetta"
+      ],
+      "${ n } account per wallet": [
+        "${ n } tili/lompakko",
+        "${ n } tiliä/lompakko"
+      ],
+      "${ n } wallet": [
+        "${ n } lompakko",
+        "${ n } lompakkoa"
+      ],
       "Bitcoin via Email": [
         "Bitcoin sähköpostitse"
       ]
@@ -11299,6 +11174,10 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Haluatko varmasti poistaa ${ count } yhteystiedon pysyvästi?",
+        "Haluatko varmasti poistaa ${ count } yhteystietoa pysyvästi?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Haluatko varmasti poistaa nämä yhteystietoryhmät pysyvästi?"
@@ -11367,6 +11246,54 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "${ interval } viikon välein ${ multipleDaysString }",
+        "${ interval } viikon välein ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "${ interval } viikon välein joka päivä",
+        "${ interval } viikon välein joka päivä"
+      ],
+      "Every ${ interval } week on Friday": [
+        "${ interval } viikon välein perjantaisin",
+        "${ interval } viikon välein perjantaisin"
+      ],
+      "Every ${ interval } week on Monday": [
+        "${ interval } viikon välein maanantaisin",
+        "${ interval } viikon välein maanantaisin"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "${ interval } viikon välein maanantaisin, ${ timesString }",
+        "${ interval } viikon välein maanantaisin, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "${ interval } viikon välein lauantaisin",
+        "${ interval } viikon välein lauantaisin"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "${ interval } viikon välein sunnuntaisin",
+        "${ interval } viikon välein sunnuntaisin"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "${ interval } viikon välein sunnuntaisin, ${ timesString }",
+        "${ interval } viikon välein sunnuntaisin, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "${ interval } viikon välein torstaisin",
+        "${ interval } viikon välein torstaisin"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "${ interval } viikon välein tiistaisin",
+        "${ interval } viikon välein tiistaisin"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "${ interval } viikon välein tiistaisin, ${ timesString }",
+        "${ interval } viikon välein tiistaisin, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "${ interval } viikon välein keskiviikkoisin",
+        "${ interval } viikon välein keskiviikkoisin"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Viikoittain ${ multipleDaysString }"
       ],
@@ -11396,6 +11323,30 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "${ interval } viikon välein ${ multipleDaysString }, ${ timesString }",
+        "${ interval } viikon välein ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "${ interval } viikon välein joka päivä, ${ timesString }",
+        "${ interval } viikon välein joka päivä, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "${ interval } viikon välein perjantaisin, ${ timesString }",
+        "${ interval } viikon välein perjantaisin, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "${ interval } viikon välein lauantaisin, ${ timesString }",
+        "${ interval } viikon välein lauantaisin, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "${ interval } viikon välein torstaisin, ${ timesString }",
+        "${ interval } viikon välein torstaisin, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "${ interval } viikon välein keskiviikkoisin, ${ timesString }",
+        "${ interval } viikon välein keskiviikkoisin, ${ timesString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Viikoittain ${ multipleDaysString }, ${ timesString }"
       ],
@@ -11425,6 +11376,42 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "${ interval } viikon välein ${ multipleDaysString }, ${ untilString }",
+        "${ interval } viikon välein ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "${ interval } viikon välein joka päivä, ${ untilString }",
+        "${ interval } viikon välein joka päivä, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "${ interval } viikon välein perjantaisin, ${ untilString }",
+        "${ interval } viikon välein perjantaisin, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "${ interval } viikon välein maanantaisin, ${ untilString }",
+        "${ interval } viikon välein maanantaisin, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "${ interval } viikon välein lauantaisin, ${ untilString }",
+        "${ interval } viikon välein lauantaisin, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "${ interval } viikon välein sunnuntaisin, ${ untilString }",
+        "${ interval } viikon välein sunnuntaisin, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "${ interval } viikon välein torstaisin, ${ untilString }",
+        "${ interval } viikon välein torstaisin, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "${ interval } viikon välein tiistaisin, ${ untilString }",
+        "${ interval } viikon välein tiistaisin, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "${ interval } viikon välein keskiviikkoisin, ${ untilString }",
+        "${ interval } viikon välein keskiviikkoisin, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Viikoittain ${ multipleDaysString }, ${ untilString }"
       ],
@@ -11477,16 +11464,28 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "${ interval } vuoden välein",
+        "${ interval } vuoden välein"
+      ],
       "Yearly": [
         "Vuosittain"
       ]
     },
     "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "${ interval } vuoden välein, ${ timesString }",
+        "${ interval } vuoden välein, ${ timesString }"
+      ],
       "Yearly, ${ timesString }": [
         "Vuosittain, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "${ interval } vuoden välein, ${ untilString }",
+        "${ interval } vuoden välein, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Vuosittain, ${ untilString }"
       ]

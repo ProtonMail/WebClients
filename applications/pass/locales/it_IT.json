@@ -4,248 +4,6 @@
     "language": "it_IT"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } alias",
-        "${ aliasCount } alias"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } blocco",
-        "${ blockedCount } blocchi"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } bloccata",
-        "${ blockedEmailsCount } bloccate"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } carattere",
-        "${ config.options.length } caratteri"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } parola",
-        "${ config.options.wordCount } parole"
-      ],
-      "${ count } item": [
-        "${ count } elemento",
-        "${ count } elementi"
-      ],
-      "${ count } time": [
-        "${ count } volta",
-        "${ count } volte"
-      ],
-      "${ count } view": [
-        "${ count } visualizzazione",
-        "${ count } visualizzazioni"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } visualizzazione",
-        "${ count }/${ maxReads } visualizzazioni"
-      ],
-      "${ days } day": [
-        "${ days } giorno",
-        "${ days } giorni"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } file",
-        "${ filesCount } file"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } inoltro",
-        "${ forwardCount } inoltri"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } inoltrata",
-        "${ forwardedEmailsCount } inoltrate"
-      ],
-      "${ hours } hour": [
-        "${ hours } ora",
-        "${ hours } ore"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } membro",
-        "${ memberCount } membri"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuto",
-        "${ minutes } minuti"
-      ],
-      "${ months } month": [
-        "${ months } mese",
-        "${ months } mesi"
-      ],
-      "${ n } item": [
-        "${ n } elemento",
-        "${ n } elementi"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } invito spedito",
-        "${ payload.count } inviti spediti"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } risposta",
-        "${ repliedCount } risposte"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } inviata",
-        "${ repliedEmailsCount } inviate"
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount } violazione di dati rilevata",
-        "${ row.breachCount } violazioni di dati rilevate"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } collegamento sicuro",
-        "${ secureLinksCount } collegamenti sicuri"
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } altro login utilizza la stessa password",
-        "${ total } altri login utilizzano la stessa password"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } login",
-        "${ usageCount } login"
-      ],
-      "${ years } year": [
-        "${ years } anno",
-        "${ years } anni"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Sei sicuro di voler spostare ${ trashedItemsCount } elemento nel cestino?",
-        "Sei sicuro di voler spostare ${ trashedItemsCount } elementi nel cestino?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Sei sicuro di voler eliminare definitivamente ${ deletedItemsCount } elemento?",
-        "Sei sicuro di voler eliminare definitivamente ${ deletedItemsCount } elementi?"
-      ],
-      "byte": [
-        "byte",
-        "byte"
-      ],
-      "Byte": [
-        "Byte",
-        "Byte"
-      ],
-      "Cannot send invitation at the moment": [
-        "Impossibile spedire l'invito al momento",
-        "Impossibile spedire gli inviti al momento"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Eliminare ${ deletedItemsCount } elemento?",
-        "Eliminare ${ deletedItemsCount } elementi?"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } riga csv corrotta trovata",
-        "${ errors.length } righe csv corrotte trovate"
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Per motivi di sicurezza, è necessario confermare l'accesso a questa cassaforte condivisa",
-        "Per motivi di sicurezza, è necessario confermare l'accesso a queste casseforti condivise"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana.",
-        "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimane."
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabyte"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Condivisione elementi: ${ itemAccessCount } utente",
-        "Condivisione elementi: ${ itemAccessCount } utenti"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Gli elementi non possono contenere più di ${ share.targetMaxMembers } utente.",
-        "Gli elementi non possono contenere più di ${ share.targetMaxMembers } utenti."
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobyte"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "La lunghezza massima è ${ maxLength } carattere",
-        "La lunghezza massima è ${ maxLength } caratteri"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabyte"
-      ],
-      "Move ${ count } item": [
-        "Sposta ${ count } elemento",
-        "Sposta ${ count } elementi"
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Spostare ${ count } elemento in ${ vaultName }",
-        "Spostare ${ count } elementi in ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Spostare ${ trashedItemsCount } elemento nel cestino?",
-        "Spostare ${ trashedItemsCount } elementi nel cestino?"
-      ],
-      "Move item to": [
-        "Sposta elemento in",
-        "Sposta elementi in"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana vengono eliminate automaticamente dalla cronologia.",
-        "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimane vengono eliminate automaticamente dalla cronologia."
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato.",
-        "Tieni presente che una volta eliminati, gli alias non potranno essere ripristinati."
-      ],
-      "Reused ${ count } time": [
-        "Riutilizzata ${ count } volta",
-        "Riutilizzata ${ count } volte"
-      ],
-      "Sync alias": [
-        "Sincronizza l'alias",
-        "Sincronizza gli alias"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabyte"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Impossibile importare il seguente ${ totalIgnored } elemento:",
-        "Impossibile importare i seguenti ${ totalIgnored } elementi:"
-      ],
-      "Understood, I will never need it": [
-        "Capito, non ne avrò mai bisogno",
-        "Capito, non ne avrò mai bisogno"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Condivisione casseforti: ${ vaultMembersCount } membro",
-        "Condivisione casseforti: ${ vaultMembersCount } membri"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Le casseforti non possono contenere più di ${ targetMaxMembers } utente.",
-        "Le casseforti non possono contenere più di ${ targetMaxMembers } utenti."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Abbiamo rilevato che hai ${ aliasCount } alias presente in SimpleLogin ma mancante in ${ PASS_APP_NAME }. Desideri importarlo?",
-        "Abbiamo rilevato che hai ${ aliasCount } alias presenti in SimpleLogin ma mancanti in ${ PASS_APP_NAME }. Desideri importarli?"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Puoi trascinare e rilasciare l'elemento selezionato in un altra cassaforte",
-        "Puoi trascinare e rilasciare gli elementi selezionati in un altra cassaforte"
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Hai ${ aliasCount } alias presente in SimpleLogin ma mancante in ${ PASS_APP_NAME }. Desideri sincronizzarlo?",
-        "Hai ${ aliasCount } alias presenti in SimpleLogin ma mancanti in ${ PASS_APP_NAME }. Desideri sincronizzarli?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Hai ancora ${ daysRemaining } giorno per provare queste e le altre funzionalità premium.",
-        "Hai ancora ${ daysRemaining } giorni per provare queste e le altre funzionalità premium."
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Stai per eliminare definitivamente ${ aliasCount } alias.",
-        "Stai per eliminare definitivamente ${ aliasCount } alias."
-      ]
-    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "Sono state rilevate potenziali fughe di dati di ${ name } e altre ${ remainingCount }. Attiva ${ DARK_WEB_MONITORING_NAME } per visualizzare i dettagli e le azioni da seguire. ${ link }"
@@ -494,12 +252,6 @@
       ],
       "Dismiss": [
         "Ignora"
-      ],
-      "Do not show again": [
-        "Non mostrare di nuovo"
-      ],
-      "Do not show again when I press": [
-        "Non mostrare più quando premo\n\n"
       ],
       "Download this CSV template": [
         "Scarica questo modello CSV"
@@ -858,6 +610,10 @@
       "Submitting report...": [
         "Invio della segnalazione..."
       ],
+      "Sync alias": [
+        "Sincronizza l'alias",
+        "Sincronizza gli alias"
+      ],
       "Sync aliases": [
         "Sincronizza gli alias"
       ],
@@ -884,6 +640,10 @@
       ],
       "Unblock contact": [
         "Sblocca contatto"
+      ],
+      "Understood, I will never need it": [
+        "Capito, non ne avrò mai bisogno",
+        "Capito, non ne avrò mai bisogno"
       ],
       "Unlock": [
         "Sblocca"
@@ -958,6 +718,10 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } è disponibile con un piano a pagamento. Aggiorna per l'accesso immediato."
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } altro login utilizza la stessa password",
+        "${ total } altri login utilizzano la stessa password"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA aggiunge un ulteriore livello di sicurezza ai tuoi accessi. ${ PASS_APP_NAME } semplifica la 2FA memorizzando e compilando automaticamente i tuoi codici 2FA."
@@ -1086,6 +850,10 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autenticazione non riuscita. Conferma la tua password secondaria per procedere con l'esportazione"
       ],
+      "Cannot send invitation at the moment": [
+        "Impossibile spedire l'invito al momento",
+        "Impossibile spedire gli inviti al momento"
+      ],
       "Cannot send invitations at the moment": [
         "Impossibile spedire gli inviti al momento"
       ],
@@ -1133,6 +901,10 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Eliminazione della cassaforte \"${ payload.content.name }\" non riuscita"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } riga csv corrotta trovata",
+        "${ errors.length } righe csv corrotte trovate"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Impossibile verificare il dominio. Assicurati di aver aggiunto i record DNS corretti"
@@ -1476,6 +1248,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "byte"
+      ],
       "GB": [
         "GB"
       ],
@@ -1487,6 +1263,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
       ]
     },
     "Header": {
@@ -1507,8 +1305,36 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "L'aggiornamento «${ payload.itemName }» è stato ignorato."
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } bloccata",
+        "${ blockedEmailsCount } bloccate"
+      ],
+      "${ count } time": [
+        "${ count } volta",
+        "${ count } volte"
+      ],
+      "${ count } view": [
+        "${ count } visualizzazione",
+        "${ count } visualizzazioni"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visualizzazione",
+        "${ count }/${ maxReads } visualizzazioni"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } inoltrata",
+        "${ forwardedEmailsCount } inoltrate"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vuole condividere un elemento con te."
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membro",
+        "${ memberCount } membri"
+      ],
+      "${ n } item": [
+        "${ n } elemento",
+        "${ n } elementi"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } sarà sempre accessibile"
@@ -1528,11 +1354,23 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } richiederà la password dell'account ${ BRAND_NAME } per accedere ai dati offline."
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } invito spedito",
+        "${ payload.count } inviti spediti"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } disabilitato"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } abilitato"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } inviata",
+        "${ repliedEmailsCount } inviate"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } violazione di dati rilevata",
+        "${ row.breachCount } violazioni di dati rilevate"
       ],
       "(Empty)": [
         "(Vuoto)"
@@ -1843,11 +1681,19 @@
       "For security reasons, this action requires identity verification.": [
         "Per motivi di sicurezza, questa azione richiede la verifica dell'identità."
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Per motivi di sicurezza, è necessario confermare l'accesso a questa cassaforte condivisa",
+        "Per motivi di sicurezza, è necessario confermare l'accesso a queste casseforti condivise"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Per motivi di sicurezza, il tuo accesso deve essere confermato"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "L'indirizzo d'inoltro è stato copiato negli appunti. Invia un'e-mail a questo indirizzo e ${ Email } la riceverà."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana.",
+        "Le password generate verranno memorizzate per ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimane."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Ottieni il massimo da Pass creando una cassaforte per ogni team o progetto."
@@ -1927,6 +1773,10 @@
       "Item restored": [
         "Elemento ripristinato"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Condivisione elementi: ${ itemAccessCount } utente",
+        "Condivisione elementi: ${ itemAccessCount } utenti"
+      ],
       "Item successfully excluded from monitoring": [
         "Elemento escluso dal monitoraggio"
       ],
@@ -1986,6 +1836,10 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Molto più che un gestore di password, ${ PASS_APP_NAME } protegge le tue password e i tuoi indirizzi email tramite gli alias. Grazie alla tecnologia che sta alla base di ${ MAIL_APP_NAME }, i tuoi dati sono crittografati end-to-end e rimangono accessibili solo a te."
+      ],
+      "Move ${ count } item": [
+        "Sposta ${ count } elemento",
+        "Sposta ${ count } elementi"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
@@ -2052,6 +1906,10 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Blocco con password impostato correttamente. Utilizzalo per sbloccare ${ PASS_APP_NAME }"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimana vengono eliminate automaticamente dalla cronologia.",
+        "Le password più vecchie di ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } settimane vengono eliminate automaticamente dalla cronologia."
       ],
       "Paused": [
         "In pausa"
@@ -2187,9 +2045,6 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Tieni aperta questa finestra durante l'importazione dei dati. Questo processo potrebbe richiedere alcuni minuti."
-      ],
-      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
-        "Assicurati che la finestra precedentemente attiva sia quella in cui desideri digitare automaticamente e che il tuo cursore fosse posizionato nel campo di login."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato. Magari preferisci disabilitare l'alias?"
@@ -2344,6 +2199,10 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Imposta una password aggiuntiva necessaria per accedere a ${ PASS_APP_NAME }. Verrà aggiunta una password oltre a quella dell'account ${ BRAND_NAME }."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Impossibile importare il seguente ${ totalIgnored } elemento:",
+        "Impossibile importare i seguenti ${ totalIgnored } elementi:"
+      ],
       "The secure link has been removed": [
         "Il link sicuro è stato rimosso"
       ],
@@ -2473,6 +2332,10 @@
       "Vault organization successfully updated": [
         "Organizzazione del vault aggiornata con successo"
       ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Condivisione casseforti: ${ vaultMembersCount } membro",
+        "Condivisione casseforti: ${ vaultMembersCount } membri"
+      ],
       "Verification code sent.": [
         "Codice di verifica inviato."
       ],
@@ -2481,6 +2344,10 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Stiamo avendo problemi nel sincronizzare i dati con la tua archiviazione locale. Assicurati di avere abbastanza spazio sul disco per eseguire ${ PASS_SHORT_APP_NAME } correttamente."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Abbiamo rilevato che hai ${ aliasCount } alias presente in SimpleLogin ma mancante in ${ PASS_APP_NAME }. Desideri importarlo?",
+        "Abbiamo rilevato che hai ${ aliasCount } alias presenti in SimpleLogin ma mancanti in ${ PASS_APP_NAME }. Desideri importarli?"
       ],
       "Week": [
         "Settimana"
@@ -2506,6 +2373,14 @@
       "You cannot change the mailboxes for this alias.": [
         "Non puoi cambiare le caselle di posta associate a questo alias."
       ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Hai ${ aliasCount } alias presente in SimpleLogin ma mancante in ${ PASS_APP_NAME }. Desideri sincronizzarlo?",
+        "Hai ${ aliasCount } alias presenti in SimpleLogin ma mancanti in ${ PASS_APP_NAME }. Desideri sincronizzarli?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Hai ancora ${ daysRemaining } giorno per provare queste e le altre funzionalità premium.",
+        "Hai ancora ${ daysRemaining } giorni per provare queste e le altre funzionalità premium."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Hai superato il numero di casseforti incluse nel tuo abbonamento. Gli elementi possono essere spostati solamente nelle prime due casseforti. Per spostare elementi tra tutte le casseforti, effettua l'upgrade del tuo abbonamento."
       ],
@@ -2526,12 +2401,6 @@
       ],
       "You may close this tab.": [
         "Puoi chiudere questa scheda."
-      ],
-      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Potresti dover accettare un prompt di autorizzazione e potresti dover restartare l'application a seconda del tuo sistema."
-      ],
-      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
-        "Potresti dover concedere l'autorizzazione di accessibilità a ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Hai bisogno di una cassaforte con permessi per modificare prima che tu possa importare oggetti."
@@ -2579,20 +2448,68 @@
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
       ]
     },
-    "Keyboard key": {
-      "SHIFT": [
-        "MAIUSC"
-      ],
-      "V": [
-        "V"
-      ]
-    },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } alias"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } blocco",
+        "${ blockedCount } blocchi"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } carattere",
+        "${ config.options.length } caratteri"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } parola",
+        "${ config.options.wordCount } parole"
+      ],
+      "${ count } item": [
+        "${ count } elemento",
+        "${ count } elementi"
+      ],
+      "${ days } day": [
+        "${ days } giorno",
+        "${ days } giorni"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } inoltro",
+        "${ forwardCount } inoltri"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, negli ultimi 14 giorni."
       ],
+      "${ hours } hour": [
+        "${ hours } ora",
+        "${ hours } ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minuti"
+      ],
+      "${ months } month": [
+        "${ months } mese",
+        "${ months } mesi"
+      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versione di ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } risposta",
+        "${ repliedCount } risposte"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } collegamento sicuro",
+        "${ secureLinksCount } collegamenti sicuri"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } login",
+        "${ usageCount } login"
+      ],
+      "${ years } year": [
+        "${ years } anno",
+        "${ years } anni"
       ],
       "1 hour": [
         "1 ora"
@@ -3206,6 +3123,9 @@
       "Network": [
         "Rete"
       ],
+      "New": [
+        "Nuovo"
+      ],
       "New email": [
         "Nuova email"
       ],
@@ -3715,6 +3635,14 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } elemento",
+        "${ count } elementi"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Puoi trascinare e rilasciare l'elemento selezionato in un altra cassaforte",
+        "Puoi trascinare e rilasciare gli elementi selezionati in un altra cassaforte"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "Hai selezionato ${ semiboldText } in questa cassaforte."
       ]
@@ -3773,6 +3701,10 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "\"${ filename }\" è troppo grande per essere caricato. La dimensione massima consentita è (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } file",
+        "${ filesCount } file"
       ],
       "Attachments": [
         "Allegati"
@@ -4101,6 +4033,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Dominio verificato con successo. Il tuo dominio può iniziare a ricevere email e a creare alias"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Gli elementi non possono contenere più di ${ share.targetMaxMembers } utente.",
+        "Gli elementi non possono contenere più di ${ share.targetMaxMembers } utenti."
+      ],
       "Mailbox change successfully cancelled": [
         "Modifica della casella di posta annullata"
       ],
@@ -4118,6 +4054,10 @@
       ],
       "Random prefix generation successfully enabled": [
         "Generazione casuale del prefisso abilitata con successo"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Le casseforti non possono contenere più di ${ targetMaxMembers } utente.",
+        "Le casseforti non possono contenere più di ${ targetMaxMembers } utenti."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Email di verifica inviata. Controlla la tua casella di posta per verificare la tua casella di posta"
@@ -4236,6 +4176,10 @@
       ],
       "Default Display Name": [
         "Nome visualizzato predefinito"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Eliminare ${ deletedItemsCount } elemento?",
+        "Eliminare ${ deletedItemsCount } elementi?"
       ],
       "Delete domain": [
         "Elimina il dominio"
@@ -4369,6 +4313,14 @@
       "Modified": [
         "Modificato"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Spostare ${ count } elemento in ${ vaultName }",
+        "Spostare ${ count } elementi in ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Spostare ${ trashedItemsCount } elemento nel cestino?",
+        "Spostare ${ trashedItemsCount } elementi nel cestino?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Vuoi spostare tutti gli elementi in \"${ vaultName }\"?"
       ],
@@ -4429,14 +4381,15 @@
       "Pending access to the shared data": [
         "In attesa dell'accesso ai dati condivisi"
       ],
-      "Perform autotype?": [
-        "Eseguire autocompletamento?"
-      ],
       "Permanently remove all items?": [
         "Rimuovere definitivamente tutti gli elementi?"
       ],
       "Pinned (${ items.length })": [
         "Fissati (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato.",
+        "Tieni presente che una volta eliminati, gli alias non potranno essere ripristinati."
       ],
       "Previous": [
         "Precedente"
@@ -4470,6 +4423,10 @@
       ],
       "Resume monitoring?": [
         "Vuoi riprendere il monitoraggio?"
+      ],
+      "Reused ${ count } time": [
+        "Riutilizzata ${ count } volta",
+        "Riutilizzata ${ count } volte"
       ],
       "Reused passwords": [
         "Password riutilizzate"
@@ -4587,6 +4544,10 @@
       ],
       "Your welcome gift": [
         "Il tuo regalo di benvenuto"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Stai per eliminare definitivamente ${ aliasCount } alias.",
+        "Stai per eliminare definitivamente ${ aliasCount } alias."
       ]
     },
     "Title_cloned_item": {
@@ -4633,6 +4594,12 @@
         "L'URL non è valido"
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "Sposta elemento in",
+        "Sposta elementi in"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "È richiesta la password di ${ BRAND_NAME }"
@@ -4657,6 +4624,14 @@
       ],
       "An error occurred while importing your data.": [
         "Si è verificato un errore durante l'importazione dei dati."
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Sei sicuro di voler spostare ${ trashedItemsCount } elemento nel cestino?",
+        "Sei sicuro di voler spostare ${ trashedItemsCount } elementi nel cestino?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Sei sicuro di voler eliminare definitivamente ${ deletedItemsCount } elemento?",
+        "Sei sicuro di voler eliminare definitivamente ${ deletedItemsCount } elementi?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Sei sicuro di voler eliminare definitivamente questo elemento?"
@@ -4718,9 +4693,6 @@
       "Extra password should have at least 8 characters": [
         "La password aggiuntiva deve contenere almeno 8 caratteri"
       ],
-      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
-        "Digitazione automatica fallita. Assicurati che ${ PASS_APP_NAME } abbia i permessi necessari e riprova (${ error })."
-      ],
       "Failed to load breaches.": [
         "Impossibile caricare le violazioni di dati."
       ],
@@ -4741,6 +4713,10 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Non è consentito invitare indirizzi email esterni all'organizzazione."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "La lunghezza massima è ${ maxLength } carattere",
+        "La lunghezza massima è ${ maxLength } caratteri"
       ],
       "Missing alias prefix": [
         "Prefisso alias mancante"

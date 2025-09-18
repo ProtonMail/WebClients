@@ -4,179 +4,6 @@
     "language": "id_ID"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } alias"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } pemblokiran"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } diblokir"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } karakter"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } kata"
-      ],
-      "${ count } item": [
-        "${ count } item"
-      ],
-      "${ count } time": [
-        "${ count } kali"
-      ],
-      "${ count } view": [
-        "${ count } kali dilihat"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } tampilan"
-      ],
-      "${ days } day": [
-        "${ days } hari"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } berkas"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } penerusan"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } diteruskan"
-      ],
-      "${ hours } hour": [
-        "${ hours } jam"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } anggota"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } menit"
-      ],
-      "${ months } month": [
-        "${ months } bulan"
-      ],
-      "${ n } item": [
-        "${ n } item"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } undangan berhasil dikirim"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } balasan"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } dikirim"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } tautan aman"
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } entri masuk lainnya menggunakan kata sandi yang sama"
-      ],
-      "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } hari tersisa"
-      ],
-      "${ years } year": [
-        "${ years } tahun"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Apakah Anda yakin ingin memindahkan ${ trashedItemsCount } item ke sampah?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Apakah Anda yakin ingin menghapus ${ deletedItemsCount } item secara permanen?"
-      ],
-      "byte": [
-        "byte"
-      ],
-      "Byte": [
-        "Byte"
-      ],
-      "Cannot send invitation at the moment": [
-        "Undangan tidak dapat dikirim untuk saat ini"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Hapus ${ deletedItemsCount } item?"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } baris CSV yang rusak terdeteksi"
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Demi alasan keamanan, Anda perlu untuk mengonfirmasi akses ke brankas terbagi ini"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Kata sandi yang dihasilkan akan disimpan selama ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu."
-      ],
-      "Gigabyte": [
-        "Gigabyte"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Pembagian item: ${ itemAccessCount } pengguna"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Item tidak dapat mengandung lebih dari ${ share.targetMaxMembers } pengguna."
-      ],
-      "Kilobyte": [
-        "Kilobyte"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Panjang maksimum adalah ${ maxLength } karakter"
-      ],
-      "Megabyte": [
-        "Megabyte"
-      ],
-      "Move ${ count } item": [
-        "Pindahkan ${ count } item"
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Pindahkan ${ count } item ke ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Pindahkan ${ trashedItemsCount } item ke sampah?"
-      ],
-      "Move item to": [
-        "Pindahkan item ke"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Kata sandi yang berusia lebih dari ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu akan dihapus dari daftar riwayat secara otomatis."
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan."
-      ],
-      "Sync alias": [
-        "Sinkronkan alias"
-      ],
-      "Terabyte": [
-        "Terabyte"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "${ totalIgnored } item berikut tidak dapat diimpor."
-      ],
-      "Understood, I will never need it": [
-        "Saya mengerti, saya tidak akan butuh alias ini lagi"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Pembagian brankas: ${ vaultMembersCount } anggota"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Brankas tidak dapat mengandung lebih dari ${ targetMaxMembers } pengguna."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Kami mendeteksi bahwa Anda memiliki ${ aliasCount } alias yang terdapat pada SimpleLogin namun tidak ada pada ${ PASS_APP_NAME }. Apakah Anda ingin mengimpor alias ini?"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Anda dapat menyeret dan melepaskan item yang dipilih ke brankas lain"
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Anda memiliki ${ aliasCount } alias yang terdapat pada SimpleLogin namun tidak ada pada ${ PASS_APP_NAME }. Apakah Anda ingin menyinkronkan alias ini?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Anda akan menghapus ${ aliasCount } alias secara permanen."
-      ]
-    },
     "Action": {
       "Accept": [
         "Terima"
@@ -282,9 +109,6 @@
       ],
       "Clear search": [
         "Hapus pencarian"
-      ],
-      "Clone item": [
-        "Gandakan item"
       ],
       "Close": [
         "Tutup"
@@ -601,9 +425,6 @@
       "Open web app": [
         "Buka aplikasi web"
       ],
-      "Organize vaults": [
-        "Organisir brankas"
-      ],
       "Pass for Android": [
         "Pass untuk Android"
       ],
@@ -778,6 +599,9 @@
       "Submitting report...": [
         "Mengirim laporan..."
       ],
+      "Sync alias": [
+        "Sinkronkan alias"
+      ],
       "Sync aliases": [
         "Sinkronkan alias"
       ],
@@ -801,6 +625,9 @@
       ],
       "Unblock contact": [
         "Buka blokir kontak"
+      ],
+      "Understood, I will never need it": [
+        "Saya mengerti, saya tidak akan butuh alias ini lagi"
       ],
       "Unlock": [
         "Membuka"
@@ -881,6 +708,9 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } tersedia dengan paket berbayar. Tingkatkan akun Anda untuk memperoleh akses ke fitur ini dengan segera."
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } entri masuk lainnya menggunakan kata sandi yang sama"
       ],
       "A checked box means the feature is disabled.": [
         "Boks yang tercentang merupakan tanda bahwa fitur tersebut sedang dinonaktifkan."
@@ -976,6 +806,9 @@
       "Cannot create alias (${ error }).": [
         "Alias tidak dapat dihasilkan (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Undangan tidak dapat dikirim untuk saat ini"
+      ],
       "Cannot send invitations at the moment": [
         "Undangan tidak dapat dikirim untuk saat ini"
       ],
@@ -1023,6 +856,9 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Brankas \"${ payload.content.name }\" gagal dihapus"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } baris CSV yang rusak terdeteksi"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Domain tidak dapat diverifikasi. Silakan pastikan Anda telah menambahkan rekaman DNS yang benar"
@@ -1370,6 +1206,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte"
+      ],
       "GB": [
         "GB"
       ],
@@ -1383,6 +1222,23 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Item \"${ payload.itemName }\" telah diabaikan"
@@ -1390,8 +1246,29 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "Pembaruan \"${ payload.itemName }\" telah diabaikan"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } diblokir"
+      ],
+      "${ count } time": [
+        "${ count } kali"
+      ],
+      "${ count } view": [
+        "${ count } kali dilihat"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } tampilan"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } diteruskan"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } ingin membagikan suatu item dengan Anda."
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } anggota"
+      ],
+      "${ n } item": [
+        "${ n } item"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } akan selalu dapat diakses"
@@ -1426,11 +1303,20 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } akan menyarankan untuk menyimpan passkey."
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } undangan berhasil dikirim"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } berhasil dinonaktifkan"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } berhasil diaktifkan"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } dikirim"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } hari tersisa"
       ],
       "(Empty)": [
         "(Kosong)"
@@ -1744,9 +1630,6 @@
       "Extra password successfully removed": [
         "Kata sandi tambahan berhasil dihapus"
       ],
-      "Failed updating your vault organization": [
-        "Brankas organisasi Anda gagal diperbarui"
-      ],
       "Fill in the CSV with your data": [
         "Isi CSV dengan data Anda"
       ],
@@ -1762,11 +1645,17 @@
       "For security reasons, this action requires identity verification.": [
         "Demi alasan keamanan, tindakan ini memerlukan verifikasi identitas."
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Demi alasan keamanan, Anda perlu untuk mengonfirmasi akses ke brankas terbagi ini"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Alamat penerusan disalin ke papan klip. Kirimlah email ke alamat ini, dan ${ Email } akan menerima email ini."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Kata sandi yang dihasilkan akan disimpan selama ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu."
       ],
       "Generating alias...": [
         "Menghasilkan alias..."
@@ -1834,6 +1723,9 @@
       "Item restored": [
         "Item dipulihkan"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Pembagian item: ${ itemAccessCount } pengguna"
+      ],
       "Item successfully excluded from monitoring": [
         "Item berhasil dikecualikan dari pemantauan"
       ],
@@ -1881,6 +1773,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat email pribadi Anda melalui alias email. Didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
+      ],
+      "Move ${ count } item": [
+        "Pindahkan ${ count } item"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
@@ -1947,6 +1842,9 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kunci kata sandi berhasil didaftarkan. Gunakan kunci ini untuk membuka ${ PASS_APP_NAME }"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Kata sandi yang berusia lebih dari ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } minggu akan dihapus dari daftar riwayat secara otomatis."
       ],
       "Pending access to the shared data": [
         "Menunggu akses ke data yang dibagikan"
@@ -2224,6 +2122,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Kata sandi tambahan ini akan dibutuhkan untuk dapat menggunakan ${ PASS_APP_NAME }. Kata sandi ini berfungsi sebagai kata sandi kedua yang merangkapi kata sandi ${ BRAND_NAME } Anda."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "${ totalIgnored } item berikut tidak dapat diimpor."
+      ],
       "The secure link has been removed": [
         "Tautan aman telah dihapus"
       ],
@@ -2329,9 +2230,6 @@
       "Update login": [
         "Perbarui entri masuk"
       ],
-      "Updating vault organization...": [
-        "Memperbarui organisasi brankas..."
-      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Tingkatkan ke ${ PASS_APP_NAME }"
       ],
@@ -2359,8 +2257,8 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Brankas \"${ share.content.name }\" telah dihapus"
       ],
-      "Vault organization successfully updated": [
-        "Organisasi brankas berhasil diperbarui"
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Pembagian brankas: ${ vaultMembersCount } anggota"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -2370,6 +2268,9 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Kami mengalami masalah dalam menyinkronkan data ke ruang penyimpanan lokal Anda. Pastikan Anda memiliki ruang penyimpanan yang cukup bagi ${ PASS_SHORT_APP_NAME } untuk berfungsi tanpa hambatan."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Kami mendeteksi bahwa Anda memiliki ${ aliasCount } alias yang terdapat pada SimpleLogin namun tidak ada pada ${ PASS_APP_NAME }. Apakah Anda ingin mengimpor alias ini?"
       ],
       "Week": [
         "Pekan"
@@ -2394,6 +2295,12 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Anda memiliki ${ aliasCount } alias yang terdapat pada SimpleLogin namun tidak ada pada ${ PASS_APP_NAME }. Apakah Anda ingin menyinkronkan alias ini?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Anda telah melebihi jumlah brankas yang tercakup dalam paket langganan Anda. Item yang Anda miliki hanya akan dapat dipindahkan ke dalam dua brankas pertama Anda. Untuk memindahkan item antar seluruh brankas, tingkatkan paket langganan Anda."
@@ -2454,14 +2361,53 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } pemblokiran"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } karakter"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } kata"
+      ],
+      "${ count } item": [
+        "${ count } item"
+      ],
+      "${ days } day": [
+        "${ days } hari"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } penerusan"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, dan ${ blockedEmails } dalam 14 hari terakhir."
+      ],
+      "${ hours } hour": [
+        "${ hours } jam"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } menit"
+      ],
+      "${ months } month": [
+        "${ months } bulan"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "Versi ${ PASS_SHORT_APP_NAME }"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } balasan"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } tautan aman"
+      ],
+      "${ years } year": [
+        "${ years } tahun"
       ],
       "1 hour": [
         "1 jam"
@@ -3036,6 +2982,9 @@
       "Network": [
         "Jaringan"
       ],
+      "New": [
+        "Baru"
+      ],
       "New email": [
         "Email baru"
       ],
@@ -3499,6 +3448,12 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } item"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Anda dapat menyeret dan melepaskan item yang dipilih ke brankas lain"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "Anda memilih ${ semiboldText } dalam brankas ini."
       ]
@@ -3546,6 +3501,9 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "\"${ filename }\" terlalu besar untuk diunggah. Ukuran maksimum yang diperkenankan adalah (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } berkas"
       ],
       "Attachments": [
         "Lampiran"
@@ -3858,6 +3816,9 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domain berhasil diverifikasi. Domain Anda kini dapat mulai menerima email dan membuat alias"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Item tidak dapat mengandung lebih dari ${ share.targetMaxMembers } pengguna."
+      ],
       "Mailbox change successfully cancelled": [
         "Perubahan kotak surat berhasil dibatalkan"
       ],
@@ -3875,6 +3836,9 @@
       ],
       "Random prefix generation successfully enabled": [
         "Pembuatan awalan acak berhasil diaktifkan"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Brankas tidak dapat mengandung lebih dari ${ targetMaxMembers } pengguna."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Email verifikasi dikirim. Silakan periksa kotak masuk Anda untuk memverifikasi kotak surat Anda"
@@ -3976,6 +3940,9 @@
       "Default Display Name": [
         "Nama Tampilan Bawaan"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Hapus ${ deletedItemsCount } item?"
+      ],
       "Delete domain": [
         "Hapus domain"
       ],
@@ -4048,9 +4015,6 @@
       "Grant permissions": [
         "Berikan izin"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Brankas tersembunyi tidak akan terlihat dalam pencarian dan pengisian otomatis."
-      ],
       "Hide my email": [
         "Sembunyikan email saya"
       ],
@@ -4105,6 +4069,12 @@
       "Modified": [
         "Diubah"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Pindahkan ${ count } item ke ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Pindahkan ${ trashedItemsCount } item ke sampah?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Pindahkan semua item ke \"${ vaultName }\"?"
       ],
@@ -4122,9 +4092,6 @@
       ],
       "No shared secure links": [
         "Tidak ada tautan aman terbagi"
-      ],
-      "Organize vaults": [
-        "Organisir brankas"
       ],
       "Our welcome gift to you": [
         "Hadiah selamat datang kami kepada Anda"
@@ -4149,6 +4116,9 @@
       ],
       "Pinned (${ items.length })": [
         "Disematkan (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan."
       ],
       "Random Prefix Generation": [
         "Pembuatan Awalan Acak"
@@ -4269,11 +4239,9 @@
       ],
       "Your welcome gift": [
         "Hadiah selamat datang Anda"
-      ]
-    },
-    "Title_cloned_item": {
-      "copy": [
-        "salin"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Anda akan menghapus ${ aliasCount } alias secara permanen."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4307,6 +4275,11 @@
         "URL tidak valid"
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "Pindahkan item ke"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "Kata sandi ${ BRAND_NAME } diperlukan"
@@ -4334,6 +4307,12 @@
       ],
       "An error occurred while resuming your session": [
         "Terdapat kesalahan pada saat melanjutkan sesi Anda"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Apakah Anda yakin ingin memindahkan ${ trashedItemsCount } item ke sampah?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Apakah Anda yakin ingin menghapus ${ deletedItemsCount } item secara permanen?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Apakah Anda yakin ingin menghapus item ini secara permanen?"
@@ -4406,6 +4385,9 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Mengundang alamat email di luar organisasi tidak diperkenankan"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Panjang maksimum adalah ${ maxLength } karakter"
       ],
       "Missing alias prefix": [
         "Awalan alias hilang"

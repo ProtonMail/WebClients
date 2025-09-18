@@ -4,11 +4,6 @@
     "language": "id_ID"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } sedang menulis..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -493,6 +488,9 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } dan ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } sedang menulis..."
       ],
       "Alpha only experimental feature": [
         "Fitur eksperimental hanya alfa"
