@@ -1871,9 +1871,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "После окончания пробного периода ${ formattedDate }, он станет платной подпиской, которая автоматически продлевается ежемесячно ${ formattedDate }. Плата не будет взиматься, если вы отмените подписку до ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Нажимая «Попробовать», вы соглашаетесь с нашими ${ termsAndConditions }."
       ],
@@ -2431,7 +2428,7 @@
         "Ярлык удален"
       ],
       "Label edited": [
-        "Ярлык изменен"
+        "Ярлык изменён"
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -5676,9 +5673,6 @@
       "You must set a name": [
         "Вы должны задать имя"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "У вас должен быть пользовательский адрес домена, чтобы создать токен SMTP."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Вы набрали максимальное количество символов. Пожалуйста, сократите ваше сообщение."
       ],
@@ -7833,9 +7827,6 @@
       "active": [
         "активный"
       ],
-      "Activity Monitor": [
-        "Монитор Активности"
-      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
       ],
@@ -8449,7 +8440,7 @@
         "электронная почта"
       ],
       "Email address": [
-        "Адрес эл. почты"
+        "Адрес электронной почты"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Электронная почта и календарь, интегрированные с ${ CONTACTS_APP_NAME }"
@@ -12063,7 +12054,7 @@
         "Добавьте следующую запись TXT. Примечание: обновление записей DNS может занять несколько часов."
       ],
       "Please select files to upload": [
-        "Пожалуйста, выберите файлы для загрузки"
+        "Выберите файлы для загрузки"
       ],
       "Please share any feedback to help us improve.": [
         "Оставляйте любые отзывы, чтобы помочь нам совершенствоваться."
@@ -14620,7 +14611,7 @@
         "Участники добавлены"
       ],
       "Member deleted": [
-        "Пользователь удален"
+        "Участник удалён"
       ]
     },
     "Notification in shared calendar modal": {
@@ -14827,7 +14818,7 @@
         "14-ое число месяца"
       ],
       "15th of the month": [
-        "15-ое число месяца"
+        "15-е число месяца"
       ],
       "16th of the month": [
         "16-ое число месяца"
@@ -14863,7 +14854,7 @@
         "25-ое число месяца"
       ],
       "26th of the month": [
-        "26-ое число месяца"
+        "26-е число месяца"
       ],
       "27th of the month": [
         "27-ое число месяца"
@@ -17434,9 +17425,9 @@
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } высокоскоростное подключение к VPN",
-        "${ VPN_CONNECTIONS } высокоскоростных поключений к VPN",
-        "${ VPN_CONNECTIONS } высокоскоростных поключений к VPN",
-        "${ VPN_CONNECTIONS } высокоскоростных поключений к VPN"
+        "${ VPN_CONNECTIONS } высокоскоростных подключения к VPN",
+        "${ VPN_CONNECTIONS } высокоскоростных подключений к VPN",
+        "${ VPN_CONNECTIONS } высокоскоростных подключений к VPN"
       ],
       "/user": [
         "/пользователь"
@@ -19511,6 +19502,9 @@
       ],
       "Account recovery": [
         "Восстановление аккаунта"
+      ],
+      "Account restricted": [
+        "Аккаунт ограничен"
       ],
       "Account suspended": [
         "Аккаунт временно заблокирован"

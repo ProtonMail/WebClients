@@ -2074,11 +2074,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Падпіска стане платнай і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Падпіска стане платнай і будзе аўтаматычна падаўжацца штомесяц ${ formattedDate }, пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Націскаючы на кнопку \"Паспрабаваць\", вы згаджаецеся з нашымі ${ termsAndConditions }."
@@ -6319,8 +6319,8 @@
       "You must set a name": [
         "Вы павінны задаць назву"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Вам неабходна мець карыстальніцкі адрас дамена, каб згенераваць адпраўку токена SMTP."
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "Вам неабходна мець актыўны карыстальніцкі адрас дамена, каб згенераваць адпраўку токена SMTP."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Вы дасягнулі максімальнай колькасці сімвалаў. Скараціце сваё паведамленне."
@@ -6339,11 +6339,6 @@
       ],
       "ZIP code is required": [
         "Патрабуецца ўвесці паштовы індэкс"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Выбраць карыстальнікаў, каб паглядзець іх актыўнасць"
       ]
     },
     "Error importing calendar": {
@@ -8572,6 +8567,9 @@
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
       ],
+      "Accounts": [
+        "Уліковыя запісы"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Актывуйце прынамсі адзін спосаб аднаўлення даных, каб вы і далей былі перакананы, што маеце доступ да змесціва свайго ўліковага запісу ${ BRAND_NAME } у выпадку страты пароля."
       ],
@@ -8580,9 +8578,6 @@
       ],
       "active": [
         "актыўна"
-      ],
-      "Activity Monitor": [
-        "Манітор актыўнасці"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Дадайце да вашага ўліковага запісу адрас электроннай пошты @pm.me. Гэта просты і кароткі дамен, які азначае \"${ MAIL_APP_NAME } me\" або \"Private Message me.\""
@@ -10084,6 +10079,9 @@
       "Organization monitor": [
         "Назіранне за арганізацыяй"
       ],
+      "Organization Monitor": [
+        "Назіранне за арганізацыяй"
+      ],
       "Organization size": [
         "Памер арганізацыі"
       ],
@@ -10398,6 +10396,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Выберыце прыналежнасці карыстальніка з ${ getFormattedOrganization }, якому вы хочаце дазволіць ўвайсці ў сваю арганізацыю ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Выбраць карыстальнікаў, каб паглядзець іх актыўнасць"
       ],
       "Select what you want to import.": [
         "Выберыце, што вы хочаце імпартаваць."
@@ -12705,6 +12706,9 @@
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
       ],
+      "Emails categories": [
+        "Катэгорыі электроннай пошты"
+      ],
       "Enabled": [
         "Уключана"
       ],
@@ -13004,6 +13008,9 @@
       ],
       "Notification": [
         "Апавяшчэнне"
+      ],
+      "Notification email address": [
+        "Адрас электроннай пошты для апавяшчэнняў"
       ],
       "Notifications": [
         "Апавяшчэнні"
@@ -13432,6 +13439,9 @@
     "label": {
       "Device-based recovery": [
         "Аднаўленне на падставе прылады"
+      ],
+      "Notification phone number": [
+        "Нумар тэлефона для апавяшчэнняў"
       ],
       "Recovery phone number": [
         "Нумар тэлефона для аднаўлення"
@@ -17974,9 +17984,6 @@
       "Account safety review": [
         "Агляд бяспекі ўліковага запісу"
       ],
-      "Add a email address": [
-        "Дадаць адрас электроннай пошты"
-      ],
       "Add a phone number": [
         "Дадаць нумар тэлефона"
       ],
@@ -18106,9 +18113,6 @@
       "to automatically recover your data when you log into a trusted device": [
         "для аўтаматычнага аднаўлення вашых даных пры ўваходзе ў давераную прыладу"
       ],
-      "to ensure highest possible security of your account": [
-        ", каб забеспечыць вашаму ўліковаму запісу максімальны ўзровень бяспекі"
-      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Увядзіце код спраўджання адпраўлены на электронную пошту ${ boldEmail } спраўдзіць, што яна належыць менавіта вам."
       ],
@@ -18120,9 +18124,6 @@
       ],
       "to recover your account if you're ever locked out": [
         "для аднаўлення вашага ўліковага запісу пры магчымай блакіроўцы"
-      ],
-      "To stay in touch": [
-        "Каб заставацца на сувязі"
       ],
       "Update your Recovery Kit": [
         "Абнавіць камплект аднаўлення"
@@ -21259,6 +21260,9 @@
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
       ],
+      "Account restricted": [
+        "Уліковы запіс абмежаваны"
+      ],
       "Account suspended": [
         "Уліковы запіс прыпынены"
       ],
@@ -22899,6 +22903,9 @@
       ],
       "Edit label names": [
         "Рэдагаваць назвы метак"
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "Лісты ў вашай паштовай скрыні паказваюцца арганізаванымі па катэгорыях"
       ],
       "Enable/disable desktop and mobile notifications": [
         "Уключыць/адключыць апавяшчэнні на камп'ютары і мабільнай прыладзе"
