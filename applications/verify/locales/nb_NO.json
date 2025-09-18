@@ -4,6 +4,80 @@
     "language": "nb_NO"
   },
   "contexts": {
+    "": {
+      "${ n } custom email domain": [
+        "${ n } egendefinert e-postdomene",
+        "${ n } egendefinerte e-postdomener"
+      ],
+      "${ n } email address": [
+        "${ n } e-postadresse",
+        "${ n } e-postadresser/aliaser"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-postadresse per bruker",
+        "${ n } e-postadresser per bruker"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filtre"
+      ],
+      "${ n } folder": [
+        "${ n } mappe",
+        "${ n } mapper"
+      ],
+      "${ n } folder and label": [
+        "${ n } mappe og etikett",
+        "${ n } mapper og etiketter"
+      ],
+      "${ n } label": [
+        "${ n } etikett",
+        "${ n } etiketter"
+      ],
+      "${ n } message per day": [
+        "${ n } melding per dag",
+        "${ n } meldinger per dag"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dag filversjonshistorikk",
+        "${ options }-dagers filversjonshistorikk"
+      ],
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
+        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Støtte for ${ n } egendefinert e-postdomene",
+        "Støtte for ${ n } egendefinerte e-postdomener"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brukernavn (maks ${ n } tegn)",
+        "Prøv et kortere brukernavn (maks ${ n } tegn)"
+      ]
+    },
     "Action": {
       "Authenticate": [
         "Autentiser"
@@ -943,10 +1017,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -958,28 +1028,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Font face option": {
@@ -1187,42 +1235,6 @@
     "new_plans: feature": {
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
-      ],
-      "${ n } custom email domain": [
-        "${ n } egendefinert e-postdomene",
-        "${ n } egendefinerte e-postdomener"
-      ],
-      "${ n } email address": [
-        "${ n } e-postadresse",
-        "${ n } e-postadresser/aliaser"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-postadresse per bruker",
-        "${ n } e-postadresser per bruker"
-      ],
-      "${ n } filter": [
-        "${ n } filter",
-        "${ n } filtre"
-      ],
-      "${ n } folder": [
-        "${ n } mappe",
-        "${ n } mapper"
-      ],
-      "${ n } folder and label": [
-        "${ n } mappe og etikett",
-        "${ n } mapper og etiketter"
-      ],
-      "${ n } label": [
-        "${ n } etikett",
-        "${ n } etiketter"
-      ],
-      "${ n } message per day": [
-        "${ n } melding per dag",
-        "${ n } meldinger per dag"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dag filversjonshistorikk",
-        "${ options }-dagers filversjonshistorikk"
       ],
       "${ size } attachment size": [
         "${ size } vedleggsstørrelse"
@@ -1490,10 +1502,6 @@
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Øk lagringsplassen din til totalt ${ bundleStorage }"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Støtte for ${ n } egendefinert e-postdomene",
-        "Støtte for ${ n } egendefinerte e-postdomener"
       ]
     },
     "Placeholder": {
@@ -1567,16 +1575,6 @@
       ],
       "Two-factor authentication": [
         "Tofaktorautentisering"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn",
-        "Passord må inneholde minst ${ MIN_PASSWORD_LENGTH } tegn"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prøv et kortere brukernavn (maks ${ n } tegn)",
-        "Prøv et kortere brukernavn (maks ${ n } tegn)"
       ]
     }
   }
