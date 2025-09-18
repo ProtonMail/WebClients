@@ -244,7 +244,82 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
     onSelectRange({ ...range, sheetId })
   })
 
-  return { ...baseState, chartsState, searchState, yjsState, onSelectRange, onSelectNamedRange, onSelectTable }
+  // Add onMoveSheet function
+  const onMoveSheet = useCallback(
+    (sheetId: number, currentPosition: number, newPosition: number) => {
+      // Validate input parameters
+      if (newPosition < 0 || newPosition >= localState.sheets.length) {
+        console.error('Invalid new position:', newPosition)
+        return
+      }
+
+      // Get the current sheets array from localState
+      const sheets = [...localState.sheets]
+
+      // Validate that the current position matches the actual sheet position
+      if (currentPosition < 0 || currentPosition >= sheets.length || sheets[currentPosition].sheetId !== sheetId) {
+        console.error('Position mismatch for sheet:', sheetId, 'expected position:', currentPosition)
+        return
+      }
+
+      // Remove the sheet from its current position
+      const [sheetToMove] = sheets.splice(currentPosition, 1)
+
+      // Insert the sheet at the new position
+      // No need to adjust target index since we're working with absolute positions
+      sheets.splice(newPosition, 0, sheetToMove)
+
+      // Update the sheets using localState's onChangeSheets
+      localState.onChangeSheets(sheets)
+    },
+    [localState],
+  )
+
+  // Wrap onCreateNewSheet to ensure proper naming with space and length limit
+  const onCreateNewSheet = useEvent((sheetSpec?: any) => {
+    const newSheet = baseState.onCreateNewSheet(sheetSpec)
+
+    if (newSheet) {
+      let updatedTitle = newSheet.title
+
+      // Fix the naming to include space if it's the default naming pattern
+      if (updatedTitle.match(/^Sheet\d+$/)) {
+        const sheetNumber = updatedTitle.replace('Sheet', '')
+        updatedTitle = `Sheet ${sheetNumber}`
+      }
+
+      // Ensure title doesn't exceed 50 characters
+      if (updatedTitle.length > 50) {
+        updatedTitle = updatedTitle.substring(0, 50)
+      }
+
+      // Only update if the title changed
+      if (updatedTitle !== newSheet.title) {
+        const updatedSheet = { ...newSheet, title: updatedTitle }
+
+        // Update the sheet in the sheets array
+        localState.onChangeSheets((sheets) =>
+          sheets.map((sheet) => (sheet.sheetId === newSheet.sheetId ? updatedSheet : sheet)),
+        )
+
+        return updatedSheet
+      }
+    }
+
+    return newSheet
+  })
+
+  return {
+    ...baseState,
+    chartsState,
+    searchState,
+    yjsState,
+    onSelectRange,
+    onSelectNamedRange,
+    onSelectTable,
+    onMoveSheet,
+    onCreateNewSheet,
+  }
 }
 export type ProtonSheetsState = ReturnType<typeof useProtonSheetsState>
 
