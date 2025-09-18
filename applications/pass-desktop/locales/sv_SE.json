@@ -130,6 +130,9 @@
       "Clear search": [
         "Rensa sök"
       ],
+      "Clone item": [
+        "Klona objekt"
+      ],
       "Close": [
         "Stäng"
       ],
@@ -249,6 +252,12 @@
       ],
       "Dismiss": [
         "Avfärda"
+      ],
+      "Do not show again": [
+        "Visa inte igen"
+      ],
+      "Do not show again when I press": [
+        "Visa inte igen när jag trycker"
       ],
       "Download this CSV template": [
         "Ladda ner denna CSV-mall"
@@ -1338,6 +1347,17 @@
         "Väldigt liten"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domän"
+      ],
+      "Password ends with": [
+        "Lösenord slutar med"
+      ],
+      "Username": [
+        "Användarnamn"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Objekt ”${ payload.itemName }” avfärdades"
@@ -1829,6 +1849,9 @@
       "Item successfully unpinned": [
         "Objekt lossat"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "Tangentbordsgenväg kan endast när man är i ${ PASS_APP_NAME }-appen för stationär dator och visar ett inloggningsobjekt"
+      ],
       "Latest breach on ${ formattedDate }": [
         "Senaste intrång den ${ formattedDate }"
       ],
@@ -1880,6 +1903,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2482,6 +2509,20 @@
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
       ]
     },
+    "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TAB"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
       "${ aliasCount } alias": [
         "${ aliasCount } alias",
@@ -2833,6 +2874,9 @@
       "Email": [
         "E-post"
       ],
+      "EMAIL": [
+        "E-POST"
+      ],
       "Email (alias)": [
         "E-post (alias)"
       ],
@@ -3052,6 +3096,9 @@
       "Key type": [
         "Nyckeltyp"
       ],
+      "Keyboard shortcut:": [
+        "Tangentbordsgenväg:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Tangentbordsgenväg: ${ shortcut }"
       ],
@@ -3261,6 +3308,9 @@
       ],
       "Password": [
         "Lösenord"
+      ],
+      "PASSWORD": [
+        "LÖSENORD"
       ],
       "Password history": [
         "Lösenordshistorik"
@@ -3603,6 +3653,9 @@
       ],
       "Useful for permanent sharing": [
         "Användbart för permanent delning"
+      ],
+      "USERNAME": [
+        "ANVÄNDARNAMN"
       ],
       "Username": [
         "Användarnamn"
@@ -4414,6 +4467,9 @@
       "MX record": [
         "MX-post"
       ],
+      "Next": [
+        "Nästa"
+      ],
       "No excluded items": [
         "Inga exkluderade objekt"
       ],
@@ -4434,6 +4490,9 @@
       ],
       "No shared secure links": [
         "Inga delade säkra länkar"
+      ],
+      "Open pagination": [
+        "Öppna sidnumrering"
       ],
       "Our welcome gift to you": [
         "Vår välkomstgåva till dig"
@@ -4456,6 +4515,9 @@
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
       ],
+      "Perform autotype?": [
+        "Utför automatisk ifyllning?"
+      ],
       "Permanently remove all items?": [
         "Ta bort alla objekt permanent?"
       ],
@@ -4465,6 +4527,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Observera att när aliaset väl har tagits bort kan det inte återställas.",
         "Observera att när alias väl har tagits bort kan de inte återställas."
+      ],
+      "Previous": [
+        "Föregående"
       ],
       "Random Prefix Generation": [
         "Slumpmässig prefixgenerering"
@@ -4620,6 +4685,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Du håller på att ta bort ${ aliasCount } alias permanent.",
         "Du håller på att ta bort ${ aliasCount } alias permanent."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "kopiera"
       ]
     },
     "Today icon tooltip in mini calendar": {

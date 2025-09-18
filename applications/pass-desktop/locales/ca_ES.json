@@ -82,6 +82,9 @@
       "Authenticate": [
         "Autentica"
       ],
+      "Auto-type": [
+        "Emplenament automàtic"
+      ],
       "Back": [
         "Torna"
       ],
@@ -129,6 +132,9 @@
       ],
       "Clear search": [
         "Neteja la cerca"
+      ],
+      "Clone item": [
+        "Clona l'element"
       ],
       "Close": [
         "Tanca"
@@ -249,6 +255,12 @@
       ],
       "Dismiss": [
         "Descarta"
+      ],
+      "Do not show again": [
+        "No ho torneu a mostrar"
+      ],
+      "Do not show again when I press": [
+        "No m'ho tornis a mostrar quan ho premi"
       ],
       "Download this CSV template": [
         "Descarrega aquesta plantilla CSV"
@@ -432,6 +444,9 @@
       ],
       "Open navigation": [
         "Obre la navegació"
+      ],
+      "Organize vaults": [
+        "Organitza les caixes fortes"
       ],
       "Pass for Android": [
         "Pass per a Android"
@@ -1338,6 +1353,17 @@
         "Molt petit"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domini"
+      ],
+      "Password ends with": [
+        "La contrasenya acaba amb"
+      ],
+      "Username": [
+        "Nom d'usuari"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "S'ha descartat l'element de «${ payload.itemName }»"
@@ -1703,6 +1729,9 @@
       "Extra password successfully removed": [
         "S'ha esborrat la contrasenya addicional."
       ],
+      "Failed updating your vault organization": [
+        "No s'ha pogut actualitzar l'organització de la vostra caixa forta"
+      ],
       "Fill in the CSV with your data": [
         "Empleneu el CSV amb les vostres dades"
       ],
@@ -1829,6 +1858,9 @@
       "Item successfully unpinned": [
         "S'ha desancorat l'element."
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "La drecera de teclat només es pot fer servir des de l'aplicació d'escriptori de ${ PASS_APP_NAME } i en visualitzar un element d'inici de sessió"
+      ],
       "Latest breach on ${ formattedDate }": [
         "Última infracció el ${ formattedDate }"
       ],
@@ -1880,6 +1912,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2085,6 +2121,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Manteniu aquesta finestra oberta mentre s'importen les vostres dades. Aquest procés pot trigar uns minuts."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Assegureu-vos que la finestra prèviament activa és on voleu escriure automàticament i que el cursor estava situat al camp d'inici de sessió."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Tingueu en compte que, un cop suprimit, l'àlies no es pot restaurar. Potser voleu desactivar l'àlies?"
@@ -2339,6 +2378,9 @@
       "Unverified": [
         "Sense verificar"
       ],
+      "Updating vault organization...": [
+        "S'està actualitzant l'organització de la caixa forta..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Milloreu el vostre pla ara per a desbloquejar característiques prèmium"
       ],
@@ -2365,6 +2407,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "S'ha esborrat la caixa forta \"${ share.content.name }\"."
+      ],
+      "Vault organization successfully updated": [
+        "S'ha actualitzat correctament l'organització de la caixa forta"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Caixes fortes compartides: ${ vaultMembersCount } membre",
@@ -2436,6 +2481,12 @@
       "You may close this tab.": [
         "Ara podeu tancar aquesta pestanya."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Potser necessitareu acceptar una sol·licitud de permís i reiniciar l'aplicació en funció del vostre sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Potser necessitareu concedir permisos d'accessibilitat a ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Necessiteu una caixa forta amb permís d'edició abans de poder importar elements."
       ],
@@ -2480,6 +2531,20 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La vostra organització us demana que assegureu el vostre accés a ${ PASS_APP_NAME }."
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "INTRO"
+      ],
+      "SHIFT": [
+        "Majúscules"
+      ],
+      "TAB": [
+        "TABULADOR"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2656,6 +2721,9 @@
       "Auto-lock after": [
         "Bloqueig automàtic després de"
       ],
+      "Auto-type in previous window": [
+        "Emplenament automàtic a la finestra anterior"
+      ],
       "Backup password": [
         "Contrasenya de recuperació"
       ],
@@ -2831,6 +2899,9 @@
         "Compartiu fàcilment informació sensible amb qualsevol persona, encara que no faci servir ${ PASS_APP_NAME }. Podeu compartir una sola contrasenya, nota o targeta de crèdit, o diversos elements a la mateixa carpeta."
       ],
       "Email": [
+        "Correu electrònic"
+      ],
+      "EMAIL": [
         "Correu electrònic"
       ],
       "Email (alias)": [
@@ -3052,6 +3123,9 @@
       "Key type": [
         "Tipus de clau"
       ],
+      "Keyboard shortcut:": [
+        "Drecera de teclat:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Drecera de teclat: ${ shortcut }"
       ],
@@ -3260,6 +3334,9 @@
         "Número de passaport"
       ],
       "Password": [
+        "Contrasenya"
+      ],
+      "PASSWORD": [
         "Contrasenya"
       ],
       "Password history": [
@@ -3606,6 +3683,9 @@
       ],
       "Useful for permanent sharing": [
         "Útil per compartir permanentment"
+      ],
+      "USERNAME": [
+        "Nom d'usuari"
       ],
       "Username": [
         "Nom d'usuari"
@@ -4334,6 +4414,9 @@
       "Grant permissions": [
         "Concediu permisos"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Les caixes fortes ocultes no seran visibles durant la cerca i l'emplenament automàtic."
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
       ],
@@ -4417,6 +4500,9 @@
       "MX record": [
         "Registre MX"
       ],
+      "Next": [
+        "Següent"
+      ],
       "No excluded items": [
         "No hi ha elements exclosos"
       ],
@@ -4437,6 +4523,12 @@
       ],
       "No shared secure links": [
         "Sense enllaços segurs compartits"
+      ],
+      "Open pagination": [
+        "Obrir paginació"
+      ],
+      "Organize vaults": [
+        "Organitza les caixes fortes"
       ],
       "Our welcome gift to you": [
         "El nostre regal de benvinguda per a vós"
@@ -4459,6 +4551,9 @@
       "Pending access to the shared data": [
         "Accés a les dades compartides pendent"
       ],
+      "Perform autotype?": [
+        "Voleu emplenament automàtic?"
+      ],
       "Permanently remove all items?": [
         "Voleu esborrar els elements de manera permanent?"
       ],
@@ -4468,6 +4563,9 @@
       "Please note that once deleted, the alias can't be restored.": [
         "Recordeu que un cop eliminat, l'àlies no es pot recuperar.",
         "Recordeu que un cop eliminats, els àlies no es poden recuperar."
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Random Prefix Generation": [
         "Generació aleatòria de prefixos"
@@ -4625,6 +4723,11 @@
         "Esteu a punt de suprimir permanentment ${ aliasCount } àlies."
       ]
     },
+    "Title_cloned_item": {
+      "copy": [
+        "copia"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Avui"
@@ -4762,6 +4865,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "La contrasenya addicional ha de tenir com a mínim 8 caràcters."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "No s'ha pogut autocompletar. Assegureu-vos que ${ PASS_APP_NAME } tingui els permisos necessaris i torneu-ho a provar (${ error })."
       ],
       "Failed to load breaches.": [
         "No s'han pogut carregar les infraccions."

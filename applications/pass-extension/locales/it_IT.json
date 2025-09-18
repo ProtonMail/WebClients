@@ -110,6 +110,9 @@
       "Clear search": [
         "Cancella ricerca"
       ],
+      "Clone item": [
+        "Clona elemento"
+      ],
       "Close": [
         "Chiudi"
       ],
@@ -241,6 +244,12 @@
       ],
       "Dismiss": [
         "Ignora"
+      ],
+      "Do not show again": [
+        "Non mostrare di nuovo"
+      ],
+      "Do not show again when I press": [
+        "Non mostrare più quando premo\n\n"
       ],
       "Do not show on this website": [
         "Non mostrare su questo sito"
@@ -424,6 +433,9 @@
       ],
       "Open web app": [
         "Apri l'app web"
+      ],
+      "Organize vaults": [
+        "Gestisci le casseforti"
       ],
       "Pass for Android": [
         "Pass per Android"
@@ -1651,6 +1663,9 @@
       "Extra password successfully removed": [
         "Password aggiuntiva rimossa"
       ],
+      "Failed updating your vault organization": [
+        "Aggiornamento dell’organizzazione del vault non riuscito"
+      ],
       "Fill in the CSV with your data": [
         "Compila il file CSV con i tuoi dati"
       ],
@@ -1992,6 +2007,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Tieni aperta questa finestra durante l'importazione dei dati. Questo processo potrebbe richiedere alcuni minuti."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Assicurati che la finestra precedentemente attiva sia quella in cui desideri digitare automaticamente e che il tuo cursore fosse posizionato nel campo di login."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato. Magari preferisci disabilitare l'alias?"
       ],
@@ -2260,6 +2278,9 @@
       "Update login": [
         "Aggiorna il login"
       ],
+      "Updating vault organization...": [
+        "Aggiornamento dell’organizzazione della cassaforte in corso..."
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Effettua l'upgrade di ${ PASS_APP_NAME }"
       ],
@@ -2286,6 +2307,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "La cassaforte \"${ share.content.name }\" è stata rimossa"
+      ],
+      "Vault organization successfully updated": [
+        "Organizzazione del vault aggiornata con successo"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Condivisione casseforti: ${ vaultMembersCount } membro",
@@ -2357,6 +2381,12 @@
       "You may close this tab.": [
         "Puoi chiudere questa scheda."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Potresti dover accettare un prompt di autorizzazione e potresti dover restartare l'application a seconda del tuo sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Potresti dover concedere l'autorizzazione di accessibilità a ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Hai bisogno di una cassaforte con permessi per modificare prima che tu possa importare oggetti."
       ],
@@ -2392,6 +2422,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "MAIUSC"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3028,9 +3066,6 @@
       ],
       "Network": [
         "Rete"
-      ],
-      "New": [
-        "Nuovo"
       ],
       "New email": [
         "Nuova email"
@@ -4068,6 +4103,9 @@
       "Grant permissions": [
         "Concedi autorizzazioni"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Le casseforti nascoste non saranno visibili durante la ricerca e la compilazione automatica."
+      ],
       "Hide my email": [
         "Nascondi la mia email"
       ],
@@ -4148,6 +4186,9 @@
       "No shared secure links": [
         "Nessun link sicuro condiviso"
       ],
+      "Organize vaults": [
+        "Gestisci le casseforti"
+      ],
       "Our welcome gift to you": [
         "Il nostro regalo di benvenuto per te"
       ],
@@ -4162,6 +4203,9 @@
       ],
       "Pending access to the shared data": [
         "In attesa dell'accesso ai dati condivisi"
+      ],
+      "Perform autotype?": [
+        "Eseguire autocompletamento?"
       ],
       "Permanently remove all items?": [
         "Rimuovere definitivamente tutti gli elementi?"
@@ -4299,6 +4343,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Stai per eliminare definitivamente ${ aliasCount } alias.",
         "Stai per eliminare definitivamente ${ aliasCount } alias."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copia"
       ]
     },
     "Today icon tooltip in mini calendar": {

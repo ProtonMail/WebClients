@@ -2068,11 +2068,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce se încheie perioada de probare la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni, la ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "După ce probarea se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar la data de ${ formattedDate }. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Făcând clic pe «Încercare», sunteți de acord cu ${ termsAndConditions }."
@@ -6285,9 +6285,6 @@
       "You must set a name": [
         "Trebuie specificat un nume"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Trebuie să aveți o adresă personală de domeniu pentru a genera un cod de acces pentru comunicațiile prin SMTP."
-      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "S-a atins numărul maxim de caractere. Scurtați mesajul."
       ],
@@ -6305,11 +6302,6 @@
       ],
       "ZIP code is required": [
         "Codul poștal este obligatoriu."
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Selectare utilizatori pentru a le vedea activitatea."
       ]
     },
     "Error importing calendar": {
@@ -8495,9 +8487,6 @@
       ],
       "active": [
         "activă"
-      ],
-      "Activity Monitor": [
-        "Monitorizare activitate"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
@@ -12576,6 +12565,9 @@
       ],
       "Emails (last month)": [
         "Mesaje (ultima lună)"
+      ],
+      "Emails categories": [
+        "Categorii de e-mail"
       ],
       "Enabled": [
         "Activă"
@@ -17811,9 +17803,6 @@
       "Account safety review": [
         "Revizuire securitate cont"
       ],
-      "Add a email address": [
-        "Adăugați o adresă de e-mail"
-      ],
       "Add a phone number": [
         "Adăugare număr de telefon"
       ],
@@ -17943,9 +17932,6 @@
       "to automatically recover your data when you log into a trusted device": [
         "pentru a vă recupera automat datele când vă conectați de pe un dispozitiv de încredere"
       ],
-      "to ensure highest possible security of your account": [
-        "pentru a asigura cea mai mare securitate posibilă a contului."
-      ],
       "To make sure the email address is yours, enter the verification code sent to ${ boldEmail }.": [
         "Pentru a ne asigura că adresa de e-mail vă aparține, introduceți codul de verificare trimis la ${ boldEmail }."
       ],
@@ -17957,9 +17943,6 @@
       ],
       "to recover your account if you're ever locked out": [
         "pentru a vă recupera contul dacă nu îl mai puteți accesa"
-      ],
-      "To stay in touch": [
-        "Pentru a păstra legătura"
       ],
       "Update your Recovery Kit": [
         "Actualizați pachetul de recuperare"
@@ -21023,6 +21006,9 @@
       "Account recovery": [
         "Recuperare cont"
       ],
+      "Account restricted": [
+        "Cont restricționat"
+      ],
       "Account suspended": [
         "Cont suspendat"
       ],
@@ -22657,6 +22643,9 @@
       ],
       "Edit label names": [
         "Editare nume etichete"
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "Mesajele primite sunt afișate organizate pe categorii."
       ],
       "Enable/disable desktop and mobile notifications": [
         "Activare/Dezactivare notificări desktop și pe mobil."

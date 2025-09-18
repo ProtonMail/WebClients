@@ -110,6 +110,9 @@
       "Clear search": [
         "Limpiar búsqueda"
       ],
+      "Clone item": [
+        "Clonar elemento"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -424,6 +427,9 @@
       ],
       "Open web app": [
         "Abrir aplicación web"
+      ],
+      "Organize vaults": [
+        "Organizar bóvedas"
       ],
       "Pass for Android": [
         "Pass para Android"
@@ -1651,6 +1657,9 @@
       "Extra password successfully removed": [
         "Se eliminó la contraseña adicional."
       ],
+      "Failed updating your vault organization": [
+        "Error al actualizar la bóveda de su organización"
+      ],
       "Fill in the CSV with your data": [
         "Complete el CSV con los datos"
       ],
@@ -2260,6 +2269,9 @@
       "Update login": [
         "Actualizar el inicio de sesión"
       ],
+      "Updating vault organization...": [
+        "Actualizando la bóveda de la organización"
+      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Actualizar ${ PASS_APP_NAME }"
       ],
@@ -2286,6 +2298,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Se eliminó la bóveda «${ share.content.name }»."
+      ],
+      "Vault organization successfully updated": [
+        "Bóveda de la organización actualizada con éxito"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Bóveda compartida: ${ vaultMembersCount } miembro",
@@ -3028,9 +3043,6 @@
       ],
       "Network": [
         "Red"
-      ],
-      "New": [
-        "Nuevo"
       ],
       "New email": [
         "Correo nuevo"
@@ -4068,6 +4080,9 @@
       "Grant permissions": [
         "Conceder permisos"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Las bóvedas ocultas no serán visibles durante la búsqueda y el completado automático."
+      ],
       "Hide my email": [
         "Ocultar mi correo electrónico"
       ],
@@ -4147,6 +4162,9 @@
       ],
       "No shared secure links": [
         "No hay enlaces seguros compartidos"
+      ],
+      "Organize vaults": [
+        "Organizar bóvedas"
       ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para usted"
@@ -4299,6 +4317,11 @@
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Está a punto de eliminar definitivamente ${ aliasCount } alias.",
         "Está a punto de eliminar definitivamente ${ aliasCount } alias."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copiar"
       ]
     },
     "Today icon tooltip in mini calendar": {

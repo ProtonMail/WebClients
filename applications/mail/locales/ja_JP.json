@@ -432,6 +432,9 @@
       "Disable alias": [
         "エイリアスを無効化"
       ],
+      "Disable categories": [
+        "カテゴリーを無効化"
+      ],
       "Disabling alias": [
         "エイリアスを無効化"
       ],
@@ -761,6 +764,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME }で参加"
+      ],
+      "Keep categories": [
+        "カテゴリーを保持"
       ],
       "Keep my subscription": [
         "サブスクリプションを継続する"
@@ -1972,11 +1978,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }にトライアルが終了すると、${ formattedDate }に${ renewCycle }ヶ月ごとに自動更新される有料のサブスクリプションに移行します。${ formattedDate }までにキャンセルした場合、料金は請求されません。"
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、毎月 ${ formattedDate } に自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
@@ -2744,7 +2750,7 @@
         "黒い青"
       ],
       "dark midnight blue": [
-        "紺色"
+        "ダークミッドナイトブルー"
       ],
       "dim gray": [
         "やや黒いグレー"
@@ -2849,7 +2855,7 @@
         "サハラ"
       ],
       "satin sheen gold": [
-        "オリーブ"
+        "サテンシーンゴールド"
       ],
       "slateblue": [
         "スレートブルー"
@@ -3002,7 +3008,7 @@
         "表示名またはニックネームを入力してください。"
       ],
       "First name": [
-        "名"
+        "名前"
       ],
       "Gender": [
         "性別"
@@ -5533,7 +5539,7 @@
         "すべての条件に一致"
       ],
       "One condition must be fulfilled (OR)": [
-        "いずれかの条件に一致"
+        "いずれかの条件に一致 (OR)"
       ]
     },
     "Filter modal type": {
@@ -6589,6 +6595,9 @@
       ],
       "All messages stored with this label will be permanently deleted.": [
         "このラベルがついたすべてのメッセージは完全に削除されます。"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "すべてのメッセージは受信トレイに表示され、カテゴリタブとタグは表示されなくなります。 "
       ],
       "All your calendars are disabled.": [
         "すべてのカレンダーが無効です。"
@@ -9612,9 +9621,6 @@
       "Writing assistant": [
         "執筆アシスタント"
       ],
-      "You cannot disable all categories": [
-        "すべてのカテゴリを無効化することはできません"
-      ],
       "Your alias": [
         "あなたのエイリアス"
       ],
@@ -12602,7 +12608,7 @@
     },
     "session_recovery:in_progress:action": {
       "Cancel request": [
-        "リクエストキャンセル"
+        "リクエストをキャンセル"
       ],
       "Got it": [
         "分かりました"
@@ -14325,6 +14331,9 @@
       ],
       "Desktop": [
         "デスクトップ"
+      ],
+      "Disable categories?": [
+        "カテゴリーを無効化しますか？"
       ],
       "Discover your subscription benefits": [
         "サブスクリプションの特典をご覧ください"

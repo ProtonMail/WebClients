@@ -556,6 +556,12 @@
       "Download CSV sample": [
         "Stiahnuť ukážku CSV"
       ],
+      "Download for macOS": [
+        "Stiahnuť pre macOS"
+      ],
+      "Download for Windows": [
+        "Stiahnuť pre Windows"
+      ],
       "Download ICS": [
         "Stiahnuť ICS"
       ],
@@ -2068,11 +2074,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa z neho stane platené predplatné, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na „Vyskúšať“ súhlasíte s našimi ${ termsAndConditions }."
@@ -4776,6 +4782,14 @@
         "Windows 8/8.1/7 alebo Windows 32-bit (ARM64)"
       ]
     },
+    "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".deb pre Debian / Ubuntu"
+      ],
+      ".rpm for Fedora / Red Hat": [
+        ".rpm pre Fedora / Red Hat"
+      ]
+    },
     "drive_signup_2023: Title": {
       "Create a free ${ DRIVE_APP_NAME } account to securely access the file": [
         "Vytvorte si bezplatné konto ${ DRIVE_APP_NAME } pre bezpečný prístup k súboru"
@@ -6305,8 +6319,8 @@
       "You must set a name": [
         "Musíte nastaviť meno"
       ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Ak chcete vygenerovať token na odoslanie SMTP, musíte mať vlastnú adresu domény."
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "Na vytvorenie SMTP tokenu na odosielanie správ musíte mať aktívnu adresu vlastnej domény."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Dosiahli ste maximálny počet znakov. Skráťte svoju správu."
@@ -6325,11 +6339,6 @@
       ],
       "ZIP code is required": [
         "PSČ je povinné"
-      ]
-    },
-    "error": {
-      "Select users to view their activity": [
-        "Vyberte používateľov na zobrazenie ich aktivity"
       ]
     },
     "Error importing calendar": {
@@ -7413,6 +7422,14 @@
       ],
       "Your desktop app free trial has ended": [
         "Bezplatná skúšobná verzia aplikácie pre počítače sa skončila"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } v App Store"
+      ],
+      "${ appName } on Play Store": [
+        "${ appName } v Play Store"
       ]
     },
     "Gmail forwarding": {
@@ -8550,6 +8567,9 @@
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
       ],
+      "Accounts": [
+        "Účty"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktivujte aspoň jeden spôsob obnovy údajov, aby ste mali istotu, že v prípade straty hesla budete mať naďalej prístup k obsahu svojho ${ BRAND_NAME } účtu."
       ],
@@ -8558,9 +8578,6 @@
       ],
       "active": [
         "aktívne"
-      ],
-      "Activity Monitor": [
-        "Monitor aktivity"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Pridajte do svojho konta emailovú adresu @pm.me. Táto jednoduchá, kratšia doména znamená \"${ MAIL_APP_NAME } me\" alebo \"Private Message me.\""
@@ -8792,6 +8809,12 @@
       ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
+      ],
+      "Authenticator app 2FA disabled": [
+        "Autentifikačná 2FA aplikácia deaktivovaná"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Autentifikačná 2FA aplikácia povolená"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatická odpoveď je aktívna každý mesiac medzi zvoleným časom začiatku a konca."
@@ -9096,6 +9119,9 @@
       "Disabled on ${ boldValue }": [
         "Deaktivované ${ boldValue }"
       ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Deaktivácia 2FA overovacej aplikácie zníži bezpečnosť vášho účtu. Pokračujte len v prípade, ak je to absolútne nevyhnutné."
+      ],
       "Discount": [
         "Zľava"
       ],
@@ -9362,6 +9388,9 @@
       ],
       "Failed to fetch logs.": [
         "Načítanie záznamov zlyhalo."
+      ],
+      "Fast and focused. Email and calendar, right on your desktop.": [
+        "Rýchle a cielené. Email a kalendár, priamo na vašej pracovnej ploche."
       ],
       "Featured in": [
         "Odporúčané v"
@@ -9855,6 +9884,9 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Spravujte svoje preferencie emailových notifikácií pre ${ DOCS_APP_NAME }."
       ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Tieto informácie zadajte ručne do svojej overovacej aplikácie, aby ste mohli nastaviť svoj účet. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode logo"
       ],
@@ -10045,6 +10077,9 @@
         "Členovia organizácie budú musieť odomknúť ${ PASS_APP_NAME } pomocou svojho hesla alebo PIN kódu atď."
       ],
       "Organization monitor": [
+        "Monitorovanie organizácie"
+      ],
+      "Organization Monitor": [
         "Monitorovanie organizácie"
       ],
       "Organization size": [
@@ -10335,6 +10370,9 @@
       "Scan QR code instead": [
         "Namiesto toho naskenovať QR kód"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Naskenujte tento kód pomocou svojej overovacej aplikácie, aby ste mohli nastaviť svoj účet. ${ switchButton }."
+      ],
       "SCIM integration disabled": [
         "SCIM integrácia deaktivovaná"
       ],
@@ -10358,6 +10396,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Vyberte príslušnosť používateľov z ${ getFormattedOrganization }, ktorú chcete povoliť vo vašej organizácii ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Vyberte používateľov na zobrazenie ich aktivity"
       ],
       "Select what you want to import.": [
         "Vyberte čo chcete importovať."
@@ -10448,6 +10489,9 @@
       ],
       "Show original message": [
         "Zobraziť pôvodnú správu"
+      ],
+      "Sign in only": [
+        "Iba na prihlásenie"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Prihláste sa do ${ MAIL_APP_NAME } pre aktivovanie vašej adresy"
@@ -11216,6 +11260,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom, alebo pristupovať k verejným používateľským účtom."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Bez overovacej aplikácie sa nebudete môcť prihlásiť do aplikácií ${ BRAND_NAME }, ktoré ešte nepodporujú bezpečnostné kľúče."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -12386,6 +12433,9 @@
       "Backup password": [
         "Záložné heslo"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing cycle": [
         "Fakturačné obdobie"
       ],
@@ -12658,6 +12708,9 @@
       ],
       "Emails (last month)": [
         "Emaily (posledný mesiac)"
+      ],
+      "Emails categories": [
+        "Kategórie emailov"
       ],
       "Enabled": [
         "Povolené"
@@ -12959,6 +13012,9 @@
       "Notification": [
         "Notifikácia"
       ],
+      "Notification email address": [
+        "Notifikačná emailová adresa"
+      ],
       "Notifications": [
         "Notifikácie"
       ],
@@ -13126,6 +13182,9 @@
       ],
       "Second password": [
         "Druhé heslo"
+      ],
+      "Select Linux package format": [
+        "Vyberte formát balíka Linux"
       ],
       "Select Linux platform": [
         "Vyberte platformu Linux"
@@ -13383,6 +13442,9 @@
     "label": {
       "Device-based recovery": [
         "Obnova na základe zariadenia"
+      ],
+      "Notification phone number": [
+        "Telefónne číslo pre notifikácie"
       ],
       "Recovery phone number": [
         "Telefónne číslo pre obnovenie"
@@ -16418,6 +16480,11 @@
         "Upgradovať môj plán"
       ]
     },
+    "pass_signup_2023: Action - open web app": {
+      "Continue to ${ appName }": [
+        "Pokračovať s ${ appName }"
+      ]
+    },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
         "Šifrované End-to-end"
@@ -16924,6 +16991,9 @@
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
       ],
+      "Offer unavailable": [
+        "Ponuka je nedostupná"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
@@ -16935,6 +17005,9 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovuje sa za ${ renewPriceStr }, zrušiť môžete kedykoľvek."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
       ],
       "Taxes": [
         "Dane"
@@ -17881,8 +17954,14 @@
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **Deaktivujte obnovenie pomocou telefónu**, aby ste zaistili čo najvyššiu bezpečnosť svojho účtu."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Povolením obnovy telefónom** získate späť prístup k svojmu kontu, ak zabudnete heslo."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } bude túto adresu používať na zasielanie informácií o bezpečnosti vášho účtu."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } použije túto adresu na odoslanie kódu na obnovenie hesla prostredníctvom emailu pri obnovení hesla."
@@ -17893,11 +17972,23 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } pre zaistenie možnosti obnovy vašich dát."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Deaktivujte obnovenie účtu prostredníctvom emailu**, aby ste zaistili čo najvyššiu bezpečnosť svojho účtu."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Povolením obnovy emailom** získate späť prístup k svojmu kontu, ak zabudnete heslo."
       ],
+      "Account reset by email has been disabled": [
+        "Obnovenie účtu prostredníctvom emailu bolo deaktivované"
+      ],
+      "Account reset by phone has been disabled": [
+        "Obnovenie účtu prostredníctvom telefónu bolo deaktivované"
+      ],
       "Account safety review": [
         "Kontrola bezpečnosti účtu"
+      ],
+      "Add a phone number": [
+        "Pridať telefónne číslo"
       ],
       "Add a recovery email": [
         "Pridať email pre obnovenie"
@@ -17907,6 +17998,12 @@
       ],
       "Add a recovery phone number": [
         "Pridajte telefónne číslo určené na obnovenie"
+      ],
+      "Add an alternative email address": [
+        "Pridajte alternatívnu emailovú adresu"
+      ],
+      "Add an email": [
+        "Pridať email"
       ],
       "Back to Safety Review": [
         "Späť ku kontrole bezpečnosti"
@@ -17929,11 +18026,29 @@
       "Device-based recovery enabled": [
         "Obnovenie založené na zariadení je povolené"
       ],
+      "Disable account reset by email": [
+        "Zakázať obnovenie účtu prostredníctvom emailu"
+      ],
+      "Disable recovery by email": [
+        "Vypnúť obnovenie emailom"
+      ],
+      "Disable recovery by email ": [
+        "Deaktivujte obnovenie emailom "
+      ],
+      "Disable recovery by phone": [
+        "Zakázať obnovenie telefónom"
+      ],
+      "Disable recovery by phone ": [
+        "Deaktivujte obnovenie telefónom "
+      ],
       "Download ${ size }": [
         "Stiahnuť ${ size }"
       ],
       "Download your Recovery Kit": [
         "Stiahnite si svoju sadu pre obnovenie"
+      ],
+      "Email address": [
+        "Emailová adresa"
       ],
       "Enable device-based recovery": [
         "Povoľte obnovenie založené na zariadení"
@@ -17958,6 +18073,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Ak stratíte prihlasovacie údaje a potrebujete obnoviť svoj účet, **je nevyhnutné**, aby ste mali k dispozícii metódu **obnovenia účtu aj obnovenia údajov**, inak sa môže stať, že nebudete mať prístup k žiadnym svojim emailom, kontaktom, súborom alebo heslám."
+      ],
+      "in case we need to contact you": [
+        "v prípade, že vás budeme potrebovať kontaktovať"
       ],
       "Invalid code": [
         "Neplatný kód"
@@ -17998,6 +18116,9 @@
       "There was an error generating your Recovery Kit": [
         "Pri generovaní sady na obnovu došlo k chybe"
       ],
+      "There was an error verifying your email": [
+        "Pri overovaní vášho emailu došlo k chybe"
+      ],
       "There was an error verifying your recovery email": [
         "Pri overovaní vášho emailu na obnovenie došlo k chybe"
       ],
@@ -18012,6 +18133,9 @@
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Ak chcete mať istotu, že telefónne číslo je vaše, zadajte overovací kód zaslaný na ${ boldPhoneNumber }."
+      ],
+      "to prevent attackers from taking over your account": [
+        "aby ste zabránili útočníkom prevziať kontrolu nad vaším účtom"
       ],
       "to recover your account and data if you're ever locked out": [
         "pre obnovenie vášho účtu a dát, ak kedykoľvek stratíte prístup"
@@ -18028,6 +18152,12 @@
       "Verify": [
         "Overiť"
       ],
+      "Verify your email address": [
+        "Overte vašu emailovú adresu"
+      ],
+      "Verify your phone number": [
+        "Overte svoje telefónne číslo"
+      ],
       "Verify your recovery email address": [
         "Overte svoju emailovú adresu určenú na obnovenie"
       ],
@@ -18036,6 +18166,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Pri generovaní vašej sady na obnovu sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "Pri overovaní vášho emailu sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu, prosím.."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Pri overovaní vášho emailu na obnovenie sme narazili na chybu. Skúste to neskôr alebo ak problém pretrváva, kontaktujte podporu."
@@ -18058,6 +18191,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Frázu na obnovenie v tejto obnovovacej sade môžete použiť na úplné obnovenie svojho konta po obnovení hesla, preto si ju nezabudnite uschovať na bezpečnom mieste."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Ak zabudnete heslo, môžete použiť svoj email na obnovenie prístupu k účtu."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Ak zabudnete heslo, môžete na obnovenie prístupu k svojmu kontu použiť svoj obnovovací email."
       ],
@@ -18067,11 +18203,32 @@
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "Predtým ste si stiahli sadu na obnovu. Stiahnutím novej sady sa **stará deaktivuje**."
       ],
+      "You have recommended actions to safeguard your account further.": [
+        "Na zabezpečenie vášho účtu vám odporúčame ďalšie kroky."
+      ],
+      "You have recommended actions to safeguard your account.": [
+        "Na ochranu vášho účtu sú odporúčané určité kroky."
+      ],
       "You have recommended actions.": [
         "Máte odporúčané opatrenia."
       ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Vaša emailová adresa na obnovenie môže byť zneužitá útočníkmi na prevzatie kontroly nad vaším účtom. ${ disableEmail } na zvýšenie bezpečnosti vášho účtu."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Váš telefón na obnovenie by útočníci mohli zneužiť na prevzatie vášho účtu. ${ disablePhone } na zvýšenie bezpečnosti vášho účtu."
+      ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Túto adresu už nebudete môcť použiť na obnovenie svojho účtu."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Toto telefónne číslo už nebudete môcť použiť na obnovenie svojho účtu."
+      ],
       "Your account and data can be recovered": [
         "Váš účet a dáta je možné obnoviť"
+      ],
+      "Your account and data can be recovered.": [
+        "Váš účet a dáta je možné obnoviť."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Váš účet a dáta je možné obnoviť. Skontrolujte, či stále máte prístup k metódam obnovenia."
@@ -18087,6 +18244,12 @@
       ],
       "Your account is secure.": [
         "Váš účet je zabezpečený."
+      ],
+      "Your email address is:": [
+        "Vaša emailová adresa je:"
+      ],
+      "Your email is set": [
+        "Váš email je nastavený"
       ],
       "Your recovery email": [
         "Váš email pre obnovenie"
@@ -21121,6 +21284,9 @@
       "Account recovery": [
         "Obnovenie účtu"
       ],
+      "Account restricted": [
+        "Obmedzený účet"
+      ],
       "Account suspended": [
         "Účet pozastavený"
       ],
@@ -21565,6 +21731,9 @@
       "Disable two-factor authentication": [
         "Vypnúť dvojstupňové overenie"
       ],
+      "Disable two-factor authentication app?": [
+        "Deaktivovať aplikáciu dvojstupňového overovania?"
+      ],
       "Disable two-factor authentication?": [
         "Deaktivovať dvojstupňové overenie?"
       ],
@@ -21747,6 +21916,15 @@
       ],
       "Folders and labels": [
         "Priečinky a štítky"
+      ],
+      "For Linux": [
+        "Pre Linux"
+      ],
+      "For macOS": [
+        "Pre macOS"
+      ],
+      "For Windows": [
+        "Pre Windows"
       ],
       "Forgot password": [
         "Zabudol/la som heslo"
@@ -22252,6 +22430,9 @@
       "Set up a recovery method": [
         "Nastavte metódu obnovenia"
       ],
+      "Set up authenticator app": [
+        "Nastaviť overovaciu aplikáciu"
+      ],
       "Set up email forwarding": [
         "Nastaviť preposielanie emailov"
       ],
@@ -22747,6 +22928,9 @@
       "Edit label names": [
         "Upraviť názvy štítkov"
       ],
+      "Emails in your inbox are shown organized into categories": [
+        "Emaily vo vašej doručenej pošte sú rozdelené do kategórií."
+      ],
       "Enable/disable desktop and mobile notifications": [
         "Povoliť/zakázať hlásenia pre počítače a mobilné zariadenia"
       ],
@@ -22863,6 +23047,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Toto môže byť spôsobené resetovaním hesla alebo tým, že sa používateľ ešte neprihlásil."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Túto emailovú adresu môžete použiť len na prihlásenie sa do vášho ${ BRAND_NAME } účtu."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Táto emailová adresa sa zobrazí všetkým členom organizácie pri vykonávaní operácií správy účtu."
@@ -23343,6 +23530,9 @@
       "Administrators can't access the data of private users": [
         "Administrátori nemajú prístup k údajom súkromných používateľov"
       ],
+      "Authenticator app": [
+        "Overovacia aplikácia"
+      ],
       "Inactive": [
         "Neaktívni"
       ],
@@ -23360,6 +23550,9 @@
       ],
       "Private": [
         "Súkromné"
+      ],
+      "Security key": [
+        "Bezpečnostný kľúč"
       ],
       "SSO": [
         "SSO"

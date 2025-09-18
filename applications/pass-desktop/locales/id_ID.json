@@ -130,6 +130,9 @@
       "Clear search": [
         "Hapus pencarian"
       ],
+      "Clone item": [
+        "Gandakan item"
+      ],
       "Close": [
         "Tutup"
       ],
@@ -432,6 +435,9 @@
       ],
       "Open navigation": [
         "Buka navigasi"
+      ],
+      "Organize vaults": [
+        "Organisir brankas"
       ],
       "Pass for Android": [
         "Pass untuk Android"
@@ -1682,6 +1688,9 @@
       "Extra password successfully removed": [
         "Kata sandi tambahan berhasil dihapus"
       ],
+      "Failed updating your vault organization": [
+        "Brankas organisasi Anda gagal diperbarui"
+      ],
       "Fill in the CSV with your data": [
         "Isi CSV dengan data Anda"
       ],
@@ -1855,6 +1864,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"
@@ -2312,6 +2324,9 @@
       "Unverified": [
         "Tidak terverifikasi"
       ],
+      "Updating vault organization...": [
+        "Memperbarui organisasi brankas..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Tingkatkan Sekarang untuk Memperoleh Fitur Premium"
       ],
@@ -2338,6 +2353,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Brankas \"${ share.content.name }\" telah dihapus"
+      ],
+      "Vault organization successfully updated": [
+        "Organisasi brankas berhasil diperbarui"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Pembagian brankas: ${ vaultMembersCount } anggota"
@@ -4283,6 +4301,9 @@
       "Grant permissions": [
         "Berikan izin"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Brankas tersembunyi tidak akan terlihat dalam pencarian dan pengisian otomatis."
+      ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
       ],
@@ -4364,6 +4385,9 @@
       "MX record": [
         "Rekaman MX"
       ],
+      "Next": [
+        "Selanjutnya"
+      ],
       "No excluded items": [
         "Tidak ada item yang dikecualikan"
       ],
@@ -4384,6 +4408,12 @@
       ],
       "No shared secure links": [
         "Tidak ada tautan aman terbagi"
+      ],
+      "Open pagination": [
+        "Buka paginasi"
+      ],
+      "Organize vaults": [
+        "Organisir brankas"
       ],
       "Our welcome gift to you": [
         "Hadiah selamat datang kami kepada Anda"
@@ -4414,6 +4444,9 @@
       ],
       "Please note that once deleted, the alias can't be restored.": [
         "Mohon diperhatikan bahwa setelah dihapus, alias ini tidak akan lagi dapat dipulihkan."
+      ],
+      "Previous": [
+        "Sebelumnya"
       ],
       "Random Prefix Generation": [
         "Pembuatan Awalan Acak"
@@ -4567,6 +4600,11 @@
       ],
       "You’re about to permanently delete ${ aliasCount } alias.": [
         "Anda akan menghapus ${ aliasCount } alias secara permanen."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "salin"
       ]
     },
     "Today icon tooltip in mini calendar": {
