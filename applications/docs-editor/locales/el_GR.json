@@ -4,6 +4,12 @@
     "language": "el_GR"
   },
   "contexts": {
+    "": {
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } πληκτρολογεί...",
+        "${ usersTranslation } πληκτρολογούν..."
+      ]
+    },
     "Action": {
       "a) b) c) d)": [
         "α) β) γ) δ)"
@@ -488,10 +494,6 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } και ${ lastTyper }"
-      ],
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } πληκτρολογεί...",
-        "${ usersTranslation } πληκτρολογούν..."
       ],
       "Alpha only experimental feature": [
         "Μόνο άλφα πειραματική δυνατότητα"
