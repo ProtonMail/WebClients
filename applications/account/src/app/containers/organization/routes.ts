@@ -123,7 +123,6 @@ export const getOrganizationAppRoutes = ({
             isScribeSupported(organization, user) &&
             // The user must have a plan that supports multi-user
             hasMemberCapablePlan &&
-            hasSubUsers &&
             scribeValidApplications.has(app)
     );
 
@@ -356,6 +355,12 @@ export const getOrganizationAppRoutes = ({
                 subsections: [
                     {
                         id: 'application-access',
+                        text: c('Title').t`Application access`,
+                    },
+                    {
+                        id: 'feature-access',
+                        text: c('Title').t`Feature access`,
+                        available: canShowVideoConferenceSection || canShowScribeSection,
                     },
                 ],
             },
@@ -367,18 +372,6 @@ export const getOrganizationAppRoutes = ({
                 subsections: [
                     {
                         id: 'enable-zoom',
-                    },
-                ],
-            },
-            scribe: <SectionConfig>{
-                text: c('Title').t`${BRAND_NAME} Scribe`,
-                title: c('Title').t`${BRAND_NAME} Scribe writing assistant`,
-                to: '/organization-scribe',
-                icon: 'pen-sparks',
-                available: canShowScribeSection,
-                subsections: [
-                    {
-                        id: 'scribe-management',
                     },
                 ],
             },

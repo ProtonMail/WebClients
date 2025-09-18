@@ -32,3 +32,4 @@ export { calendarUrlQueryParams, calendarUrlQueryParamsActions } from './constan
 export { getQueryParamsStatus } from './utils';
 export { useZoomIntegration } from './components/zoomIntegration/useZoomIntegration';
 export { useProtonMeetIntegration } from './components/protonMeetIntegration/useProtonMeetIntegration';
+export { useVideoConfTelemetry } from './components/videoConferencing/useVideoConfTelemetry';

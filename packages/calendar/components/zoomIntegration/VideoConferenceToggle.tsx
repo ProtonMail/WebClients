@@ -14,10 +14,11 @@ import clsx from '@proton/utils/clsx';
 import { useVideoConfTelemetry } from '../videoConferencing/useVideoConfTelemetry';
 
 interface Props {
+    showProtonMeet?: boolean;
     withInfo?: boolean;
 }
 
-export const VideoConferenceToggle = ({ withInfo }: Props) => {
+export const VideoConferenceToggle = ({ withInfo, showProtonMeet = false }: Props) => {
     const { createNotification } = useNotifications();
     const [zoomLoading, withZoomLoading] = useLoading();
     const [protonMeetLoading, withProtonMeetLoading] = useLoading();
@@ -31,31 +32,17 @@ export const VideoConferenceToggle = ({ withInfo }: Props) => {
     const isZoomEnabled = useFlag('ZoomIntegration');
 
     const handleZoomToggle = async (checked: boolean) => {
-        try {
-            await dispatch(toggleOrganizationSetting({ settingName: 'VideoConferencingEnabled', checked }));
-            sendEventVideoConferenceSettingsToggle(checked);
-            createNotification({ text: c('Notification').t`Zoom video conferencing settings have been updated` });
-        } catch (e) {
-            createNotification({
-                text: c('Notification').t`Failed to update Zoom video conferencing settings`,
-                type: 'error',
-            });
-        }
+        await dispatch(toggleOrganizationSetting({ settingName: 'VideoConferencingEnabled', checked }));
+        sendEventVideoConferenceSettingsToggle(checked);
+        createNotification({ text: c('Notification').t`Zoom video conferencing settings have been updated` });
     };
 
     const handleProtonMeetToggle = async (checked: boolean) => {
-        try {
-            await dispatch(toggleOrganizationSetting({ settingName: 'MeetVideoConferencingEnabled', checked }));
-            sentEventProtonMeetSettingsToggle(checked);
-            createNotification({
-                text: c('Notification').t`${MEET_APP_NAME} video conferencing settings have been updated`,
-            });
-        } catch (e) {
-            createNotification({
-                text: c('Notification').t`Failed to update ${MEET_APP_NAME} video conferencing settings`,
-                type: 'error',
-            });
-        }
+        await dispatch(toggleOrganizationSetting({ settingName: 'MeetVideoConferencingEnabled', checked }));
+        sentEventProtonMeetSettingsToggle(checked);
+        createNotification({
+            text: c('Notification').t`${MEET_APP_NAME} video conferencing settings have been updated`,
+        });
     };
 
     const settingsLayoutRightClass = withInfo ? undefined : 'flex justify-end';
@@ -87,7 +74,7 @@ export const VideoConferenceToggle = ({ withInfo }: Props) => {
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
-            {isMeetVideoConferenceEnabled && (
+            {showProtonMeet && isMeetVideoConferenceEnabled && (
                 <SettingsLayout className="gap-4">
                     <SettingsLayoutLeft>
                         <label htmlFor="protonMeetToggle" className="text-semibold">

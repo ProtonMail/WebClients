@@ -27,11 +27,11 @@ import {
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import AccessControlSettingsSection from '@proton/components/containers/organization/accessControl/AccessControlSettingsSection';
-import OrganizationScribeSection from '@proton/components/containers/organization/scribe/OrganizationScribeSection';
 import type { Subscription } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
+import { FeatureAccessSection } from './components/FeatureAccessSection';
 import type { getOrganizationAppRoutes } from './routes';
 
 const OrganizationSettingsRouter = ({
@@ -69,7 +69,6 @@ const OrganizationSettingsRouter = ({
             connectionEvents,
             activityMonitor,
             groups,
-            scribe,
             accessControl,
             videoConf,
             sharedServers,
@@ -196,6 +195,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, accessControl)}>
                     <PrivateMainSettingsArea config={accessControl}>
                         <AccessControlSettingsSection />
+                        <FeatureAccessSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
@@ -203,13 +203,6 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, groups)}>
                     <PrivateMainSettingsArea config={groups}>
                         <OrganizationGroupsManagementSection organization={organization} />
-                    </PrivateMainSettingsArea>
-                </Route>
-            )}
-            {getIsSectionAvailable(scribe) && (
-                <Route path={getSectionPath(path, scribe)}>
-                    <PrivateMainSettingsArea config={scribe}>
-                        <OrganizationScribeSection organization={organization} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}
