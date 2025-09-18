@@ -32,11 +32,15 @@ export const useMeetingUpdates = () => {
 
         const previousPassword = await decryptMeetingPassword(meetingObject?.Password as string, userKeys);
 
-        const sessionKey = (await decryptSessionKey({
+        const sessionKey = await decryptSessionKey({
             encryptedSessionKey: meetingObject?.SessionKey as string,
             password: previousPassword,
             salt: meetingObject?.Salt as string,
-        })) as Uint8Array<ArrayBuffer>;
+        });
+
+        if (!sessionKey) {
+            throw new Error('Missing session key');
+        }
 
         const updatedMeeting = await updateMeetingPassword({
             meetingId: id,
@@ -58,15 +62,23 @@ export const useMeetingUpdates = () => {
         id: string;
         meetingObject: Meeting;
     }) => {
+        if (!meetingObject.Password) {
+            throw new Error('Missing meeting password');
+        }
+
         const { userKeys } = await getMeetingDependencies();
 
-        const decryptedPassword = await decryptMeetingPassword(meetingObject?.Password as string, userKeys);
+        const decryptedPassword = await decryptMeetingPassword(meetingObject.Password, userKeys);
 
-        const sessionKey = (await decryptSessionKey({
-            encryptedSessionKey: meetingObject?.SessionKey as string,
+        const sessionKey = await decryptSessionKey({
+            encryptedSessionKey: meetingObject.SessionKey,
             password: decryptedPassword,
-            salt: meetingObject?.Salt as string,
-        })) as Uint8Array<ArrayBuffer>;
+            salt: meetingObject.Salt,
+        });
+
+        if (!sessionKey) {
+            throw new Error('Missing session key');
+        }
 
         const encryptedConferenceName = await encryptMeetingName(newTitle, sessionKey);
 

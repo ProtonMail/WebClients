@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
+import type { SessionKey } from '@proton/crypto';
 import { useGetMeetingDependencies, useProtonMeet } from '@proton/meet';
 import {
     decryptSessionKey,
@@ -73,7 +74,7 @@ export const useProtonMeetIntegration = ({
 
     modelRef.current = model;
 
-    const [sessionKey, setSessionKey] = useState<Uint8Array<ArrayBuffer> | null>(null);
+    const [sessionKey, setSessionKey] = useState<SessionKey | null>(null);
 
     const { createProtonMeet, getProtonMeetByLinkName, saveProtonMeetPassword } = useProtonMeet();
 
@@ -130,7 +131,11 @@ export const useProtonMeetIntegration = ({
                 salt: meeting?.Salt as string,
             });
 
-            setSessionKey(decryptedSessionKey as Uint8Array<ArrayBuffer>);
+            if (!decryptedSessionKey) {
+                throw new Error('Missing session key');
+            }
+
+            setSessionKey(decryptedSessionKey);
 
             setMeetingDetails((prev) => ({
                 ...prev,
@@ -271,7 +276,11 @@ export const useProtonMeetIntegration = ({
             salt: meeting?.Salt as string,
         });
 
-        setSessionKey(decryptedSessionKey as Uint8Array<ArrayBuffer>);
+        if (!decryptedSessionKey) {
+            throw new Error('Missing session key');
+        }
+
+        setSessionKey(decryptedSessionKey);
 
         setMeetingDetails((prev) => ({
             ...prev,
