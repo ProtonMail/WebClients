@@ -4,6 +4,248 @@
     "language": "nb_NO"
   },
   "contexts": {
+    "": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliaser"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } blokkering",
+        "${ blockedCount } blokkeringer"
+      ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } blokkert",
+        "${ blockedEmailsCount } blokkerte"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } tegn",
+        "${ config.options.length } tegn"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } ord",
+        "${ config.options.wordCount } ord"
+      ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementer"
+      ],
+      "${ count } time": [
+        "${ count } gang",
+        "${ count } ganger"
+      ],
+      "${ count } view": [
+        "${ count } visning",
+        "${ count } visninger"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visning",
+        "${ count }/${ maxReads } visninger"
+      ],
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dager"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fil",
+        "${ filesCount } filer"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } videresending",
+        "${ forwardCount } videresendinger"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } videresendt",
+        "${ forwardedEmailsCount } videresendte"
+      ],
+      "${ hours } hour": [
+        "${ hours } time",
+        "${ hours } timer"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmer"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minutt",
+        "${ minutes } minutter"
+      ],
+      "${ months } month": [
+        "${ months } måned",
+        "${ months } måneder"
+      ],
+      "${ n } item": [
+        "${ n } element",
+        "${ n } elementer"
+      ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } invitasjon sendt",
+        "${ payload.count } invitasjoner sendt"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } svar",
+        "${ repliedCount } svar"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } sendt",
+        "${ repliedEmailsCount } sendte"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } brudd oppdaget",
+        "${ row.breachCount } brudd oppdaget"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } sikker kobling",
+        "${ secureLinksCount } sikre koblinger"
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } annen pålogging bruker det samme passordet",
+        "${ total } andre pålogginger bruker det samme passordet"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } pålogging",
+        "${ usageCount } pålogginger"
+      ],
+      "${ years } year": [
+        "${ years } år",
+        "${ years } år"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Er du sikker på at du ønsker å flytte ${ trashedItemsCount } element til papirkurven?",
+        "Er du sikker på at du ønsker å flytte ${ trashedItemsCount } elementer til papirkurven?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Er du sikker på at du vil slette ${ deletedItemsCount } element permanent?",
+        "Er du sikker på at du vil slette ${ deletedItemsCount } elementer permanent?"
+      ],
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Cannot send invitation at the moment": [
+        "Kan ikke sende invitasjon for øyeblikket",
+        "Kan ikke sende invitasjoner for øyeblikket"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Slette ${ deletedItemsCount } element?",
+        "Slette ${ deletedItemsCount } elementer?"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Oppdaget ${ errors.length } korrupt csv-rad",
+        "Oppdaget ${ errors.length } korrupte csv-rader"
+      ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Av sikkerhetsgrunner må du bekrefte tilgangen til dette delte hvelvet",
+        "Av sikkerhetsgrunner må du bekrefte tilgang til disse delte hvelvene"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke.",
+        "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker."
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Elementdeling: ${ itemAccessCount } bruker",
+        "Elementdeling: ${ itemAccessCount } brukere"
+      ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Elementer kan ikke inneholde mer enn ${ share.targetMaxMembers } bruker.",
+        "Elementer kan ikke inneholde mer enn ${ share.targetMaxMembers } brukere."
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maksimal lengde er ${ maxLength } tegn",
+        "Maksimal lengde er ${ maxLength } tegn"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Move ${ count } item": [
+        "Flytt ${ count } element",
+        "Flytt ${ count } elementer"
+      ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Flytt ${ count } element til ${ vaultName }",
+        "Flytt ${ count } elementer til ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Flytte ${ trashedItemsCount } element til papirkurven?",
+        "Flytte ${ trashedItemsCount } elementer til papirkurven?"
+      ],
+      "Move item to": [
+        "Flytt element til",
+        "Flytt elementer til"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke slettes automatisk fra historikken.",
+        "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker slettes automatisk fra historikken."
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet.",
+        "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet."
+      ],
+      "Reused ${ count } time": [
+        "Gjenbrukt ${ count } gang",
+        "Gjenbrukt ${ count } ganger"
+      ],
+      "Sync alias": [
+        "Synkroniser alias",
+        "Synkroniser aliaser"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Følgende ${ totalIgnored } element kunne ikke importeres:",
+        "Følgende ${ totalIgnored } elementer kunne ikke importeres:"
+      ],
+      "Understood, I will never need it": [
+        "Forstått, jeg kommer aldri til å trenge det",
+        "Forstått, jeg kommer aldri til å trenge dem"
+      ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Hvelvdeling: ${ vaultMembersCount } medlem",
+        "Hvelvdeling: ${ vaultMembersCount } medlemmer"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Hvelv kan ikke inneholde mer enn ${ targetMaxMembers } bruker.",
+        "Hvelv kan ikke inneholde mer enn ${ targetMaxMembers } brukere."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Vi oppdaget at du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere det?",
+        "Vi oppdaget at du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere dem?"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Du kan dra og slippe det valgte elementet til et annet hvelv",
+        "Du kan dra og slippe de valgte elementene til et annet hvelv"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du synkronisere det?",
+        "Du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du synkronisere dem?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Du har ${ daysRemaining } dag igjen til å prøve disse og andre premiumfunksjoner.",
+        "Du har ${ daysRemaining } dager igjen til å prøve disse og andre premiumfunksjoner."
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Du er i ferd med å slette permanent ${ aliasCount } alias.",
+        "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
+      ]
+    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } og ${ remainingCount } andre potensielle lekkasjer oppdaget. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
@@ -252,6 +494,12 @@
       ],
       "Dismiss": [
         "Avvis"
+      ],
+      "Do not show again": [
+        "Ikke vis igjen"
+      ],
+      "Do not show again when I press": [
+        "Ikke vis igjen når jeg trykker"
       ],
       "Download this CSV template": [
         "Last ned denne CSV-malen"
@@ -610,10 +858,6 @@
       "Submitting report...": [
         "Sender inn rapport..."
       ],
-      "Sync alias": [
-        "Synkroniser alias",
-        "Synkroniser aliaser"
-      ],
       "Sync aliases": [
         "Synkroniser aliaser"
       ],
@@ -640,10 +884,6 @@
       ],
       "Unblock contact": [
         "Fjern blokkering av kontakt"
-      ],
-      "Understood, I will never need it": [
-        "Forstått, jeg kommer aldri til å trenge det",
-        "Forstått, jeg kommer aldri til å trenge dem"
       ],
       "Unlock": [
         "Lås opp"
@@ -718,10 +958,6 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } er tilgjengelige med en betalt plan. Oppgrader for umiddelbar tilgang."
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } annen pålogging bruker det samme passordet",
-        "${ total } andre pålogginger bruker det samme passordet"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA legger til et nytt lag med sikkerhet til påloggingene dine. ${ PASS_APP_NAME } gjør 2FA enklere ved å lagre og automatisk fylle ut 2FA-kodene dine."
@@ -850,10 +1086,6 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentisering mislyktes. Bekreft ditt andre passord for å fortsette med eksporteringen"
       ],
-      "Cannot send invitation at the moment": [
-        "Kan ikke sende invitasjon for øyeblikket",
-        "Kan ikke sende invitasjoner for øyeblikket"
-      ],
       "Cannot send invitations at the moment": [
         "Kan ikke sende invitasjoner for øyeblikket"
       ],
@@ -901,10 +1133,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Sletting av hvelv \"${ payload.content.name }\" mislyktes."
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Oppdaget ${ errors.length } korrupt csv-rad",
-        "Oppdaget ${ errors.length } korrupte csv-rader"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Domenet kunne ikke bekreftes. Sørg for at du har lagt til de riktige DNS-postene"
@@ -1248,10 +1476,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -1263,28 +1487,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Header": {
@@ -1305,36 +1507,8 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "\"${ payload.itemName }\"-oppdatering ble avvist"
       ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } blokkert",
-        "${ blockedEmailsCount } blokkerte"
-      ],
-      "${ count } time": [
-        "${ count } gang",
-        "${ count } ganger"
-      ],
-      "${ count } view": [
-        "${ count } visning",
-        "${ count } visninger"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } visning",
-        "${ count }/${ maxReads } visninger"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } videresendt",
-        "${ forwardedEmailsCount } videresendte"
-      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } ønsker å dele et element med deg."
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } medlem",
-        "${ memberCount } medlemmer"
-      ],
-      "${ n } item": [
-        "${ n } element",
-        "${ n } elementer"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } vil alltid være tilgjengelig"
@@ -1354,23 +1528,11 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } krever passordet ditt for ${ BRAND_NAME } for å få frakoblet tilgang til data."
       ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } invitasjon sendt",
-        "${ payload.count } invitasjoner sendt"
-      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } deaktivert"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } aktivert"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } sendt",
-        "${ repliedEmailsCount } sendte"
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount } brudd oppdaget",
-        "${ row.breachCount } brudd oppdaget"
       ],
       "(Empty)": [
         "(Tom)"
@@ -1681,19 +1843,11 @@
       "For security reasons, this action requires identity verification.": [
         "Av sikkerhetsgrunner krever denne handlingen identitetsbekreftelse."
       ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Av sikkerhetsgrunner må du bekrefte tilgangen til dette delte hvelvet",
-        "Av sikkerhetsgrunner må du bekrefte tilgang til disse delte hvelvene"
-      ],
       "For security reasons, your access needs to be confirmed": [
         "Av sikkerhetsgrunner må tilgangen din bekreftes"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Adressen for videresending kopiert til utklippstavlen. Send en e-post til denne adressen, og ${ Email } vil motta den."
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke.",
-        "Genererte passord vil bli lagret i en periode på ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker."
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "Få mest mulig ut av Pass ved å opprette et hvelv for hvert team eller prosjekt."
@@ -1773,10 +1927,6 @@
       "Item restored": [
         "Element gjenopprettet"
       ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Elementdeling: ${ itemAccessCount } bruker",
-        "Elementdeling: ${ itemAccessCount } brukere"
-      ],
       "Item successfully excluded from monitoring": [
         "Element ekskludert fra overvåking"
       ],
@@ -1836,10 +1986,6 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Mer enn en passordbehandler, ${ PASS_APP_NAME } beskytter passordet ditt og din personlige e-postadresse via e-postaliaser. Drevet av den samme teknologien bak ${ MAIL_APP_NAME }, er dataene dine kryptert fra ende til ende og er bare tilgjengelige for deg."
-      ],
-      "Move ${ count } item": [
-        "Flytt ${ count } element",
-        "Flytt ${ count } elementer"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
@@ -1906,10 +2052,6 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Passordlås er registrert. Bruk den til å låse opp ${ PASS_APP_NAME }"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uke slettes automatisk fra historikken.",
-        "Passord eldre enn ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } uker slettes automatisk fra historikken."
       ],
       "Paused": [
         "Satt på pause"
@@ -2045,6 +2187,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Hold dette vinduet åpent mens dataene dine importeres. Denne prosessen kan ta noen minutter."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Sørg for at det forrige aktive vinduet er der du vil skrive automatisk, og at markøren din var fokusert på innloggingsfeltet."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet. Kanskje du vil deaktivere aliaset i stedet?"
@@ -2199,10 +2344,6 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Det ekstra passordet kreves for å bruke ${ PASS_APP_NAME }. Det fungerer som et ekstra passord på toppen av ${ BRAND_NAME }-passordet ditt."
       ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Følgende ${ totalIgnored } element kunne ikke importeres:",
-        "Følgende ${ totalIgnored } elementer kunne ikke importeres:"
-      ],
       "The secure link has been removed": [
         "Den sikre koblingen er fjernet"
       ],
@@ -2332,10 +2473,6 @@
       "Vault organization successfully updated": [
         "Hvelvorganisasjonen ble oppdatert"
       ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Hvelvdeling: ${ vaultMembersCount } medlem",
-        "Hvelvdeling: ${ vaultMembersCount } medlemmer"
-      ],
       "Verification code sent.": [
         "Verifiseringskode sendt."
       ],
@@ -2344,10 +2481,6 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problemer med å synkronisere data til din lokale lagring. Forsikre deg om at du har nok diskplass til at ${ PASS_SHORT_APP_NAME } kan fungere problemfritt."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Vi oppdaget at du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere det?",
-        "Vi oppdaget at du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du importere dem?"
       ],
       "Week": [
         "Uke"
@@ -2373,14 +2506,6 @@
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke endre postboksene for dette aliaset."
       ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Du har ${ aliasCount } alias som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du synkronisere det?",
-        "Du har ${ aliasCount } aliaser som er til stede i SimpleLogin, men mangler i ${ PASS_APP_NAME }. Vil du synkronisere dem?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Du har ${ daysRemaining } dag igjen til å prøve disse og andre premiumfunksjoner.",
-        "Du har ${ daysRemaining } dager igjen til å prøve disse og andre premiumfunksjoner."
-      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Du har overskredet antall hvelv som er inkludert i abonnementet ditt. Elementer kan bare opprettes i de to første hvelvene. For å flytte elementer mellom alle hvelv, oppgraderer du abonnementet."
       ],
@@ -2401,6 +2526,12 @@
       ],
       "You may close this tab.": [
         "Du kan lukke denne fanen."
+      ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Du må kanskje godta en tillatelsesforespørsel og starte programmet på nytt, avhengig av systemet ditt."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Du må kanskje gi tilgjengelighetstillatelse til ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Du må ha et hvelv med redigeringstillatelse før du kan importere elementer."
@@ -2448,68 +2579,20 @@
         "Organisasjonen krever at du sikrer tilgangen til ${ PASS_APP_NAME }"
       ]
     },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
+      ]
+    },
     "Label": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } alias",
-        "${ aliasCount } aliaser"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } blokkering",
-        "${ blockedCount } blokkeringer"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } tegn",
-        "${ config.options.length } tegn"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } ord",
-        "${ config.options.wordCount } ord"
-      ],
-      "${ count } item": [
-        "${ count } element",
-        "${ count } elementer"
-      ],
-      "${ days } day": [
-        "${ days } dag",
-        "${ days } dager"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } videresending",
-        "${ forwardCount } videresendinger"
-      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } i løpet av de siste 14 dagene."
       ],
-      "${ hours } hour": [
-        "${ hours } time",
-        "${ hours } timer"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minutt",
-        "${ minutes } minutter"
-      ],
-      "${ months } month": [
-        "${ months } måned",
-        "${ months } måneder"
-      ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-versjon"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } svar",
-        "${ repliedCount } svar"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } sikker kobling",
-        "${ secureLinksCount } sikre koblinger"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } pålogging",
-        "${ usageCount } pålogginger"
-      ],
-      "${ years } year": [
-        "${ years } år",
-        "${ years } år"
       ],
       "1 hour": [
         "1 time"
@@ -3123,9 +3206,6 @@
       "Network": [
         "Nettverk"
       ],
-      "New": [
-        "Ny"
-      ],
       "New email": [
         "Ny e-post"
       ],
@@ -3635,14 +3715,6 @@
       ]
     },
     "Message": {
-      "${ count } item": [
-        "${ count } element",
-        "${ count } elementer"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Du kan dra og slippe det valgte elementet til et annet hvelv",
-        "Du kan dra og slippe de valgte elementene til et annet hvelv"
-      ],
       "You selected ${ semiboldText } in this vault.": [
         "Du valgte ${ semiboldText } i dette hvelvet."
       ]
@@ -3701,10 +3773,6 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "\"${ filename }\" er for stor til å lastes opp. Maksimal tillatt størrelse er (${ maxFileSizeInMB })"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } fil",
-        "${ filesCount } filer"
       ],
       "Attachments": [
         "Vedlegg"
@@ -4033,10 +4101,6 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domenet er bekreftet. Domenet ditt kan begynne å motta e-poster og opprette aliaser"
       ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Elementer kan ikke inneholde mer enn ${ share.targetMaxMembers } bruker.",
-        "Elementer kan ikke inneholde mer enn ${ share.targetMaxMembers } brukere."
-      ],
       "Mailbox change successfully cancelled": [
         "Postboksendringen ble avbrutt"
       ],
@@ -4054,10 +4118,6 @@
       ],
       "Random prefix generation successfully enabled": [
         "Generering av tilfeldige prefikser er aktivert"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Hvelv kan ikke inneholde mer enn ${ targetMaxMembers } bruker.",
-        "Hvelv kan ikke inneholde mer enn ${ targetMaxMembers } brukere."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "Bekreftelses-e-post sendt. Sjekk innboksen din for å bekrefte postkassen din"
@@ -4176,10 +4236,6 @@
       ],
       "Default Display Name": [
         "Standard visningsnavn"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Slette ${ deletedItemsCount } element?",
-        "Slette ${ deletedItemsCount } elementer?"
       ],
       "Delete domain": [
         "Slett domene"
@@ -4313,14 +4369,6 @@
       "Modified": [
         "Endret"
       ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Flytt ${ count } element til ${ vaultName }",
-        "Flytt ${ count } elementer til ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Flytte ${ trashedItemsCount } element til papirkurven?",
-        "Flytte ${ trashedItemsCount } elementer til papirkurven?"
-      ],
       "Move all items to \"${ vaultName }\"?": [
         "Flytte alle elementer til \"${ vaultName }\"?"
       ],
@@ -4381,15 +4429,14 @@
       "Pending access to the shared data": [
         "Venter på tilgang til de delte dataene"
       ],
+      "Perform autotype?": [
+        "Utføre automatisk skriving?"
+      ],
       "Permanently remove all items?": [
         "Fjerne alle elementer permanent?"
       ],
       "Pinned (${ items.length })": [
         "Festet (${ items.length })"
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Vær oppmerksom på at aliaset ikke kan gjenopprettes når det er slettet.",
-        "Vær oppmerksom på at aliasene ikke kan gjenopprettes når de er slettet."
       ],
       "Previous": [
         "Forrige"
@@ -4423,10 +4470,6 @@
       ],
       "Resume monitoring?": [
         "Gjenoppta overvåking?"
-      ],
-      "Reused ${ count } time": [
-        "Gjenbrukt ${ count } gang",
-        "Gjenbrukt ${ count } ganger"
       ],
       "Reused passwords": [
         "Gjenbrukte passord"
@@ -4544,10 +4587,6 @@
       ],
       "Your welcome gift": [
         "Din velkomstgave"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Du er i ferd med å slette permanent ${ aliasCount } alias.",
-        "Du er i ferd med å slette permanent ${ aliasCount } aliaser."
       ]
     },
     "Title_cloned_item": {
@@ -4594,12 +4633,6 @@
         "Nettadressen er ugyldig"
       ]
     },
-    "Vault Select": {
-      "Move item to": [
-        "Flytt element til",
-        "Flytt elementer til"
-      ]
-    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-passord kreves"
@@ -4624,14 +4657,6 @@
       ],
       "An error occurred while importing your data.": [
         "Det oppstod en feil under import av dataene dine."
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Er du sikker på at du ønsker å flytte ${ trashedItemsCount } element til papirkurven?",
-        "Er du sikker på at du ønsker å flytte ${ trashedItemsCount } elementer til papirkurven?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Er du sikker på at du vil slette ${ deletedItemsCount } element permanent?",
-        "Er du sikker på at du vil slette ${ deletedItemsCount } elementer permanent?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Er du sikker på at du vil slette dette elementet permanent?"
@@ -4693,6 +4718,9 @@
       "Extra password should have at least 8 characters": [
         "Ekstra passord bør ha minst 8 tegn"
       ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatisk skriving mislyktes. Sørg for at ${ PASS_APP_NAME } har de nødvendige tillatelsene, og prøv på nytt (${ error })."
+      ],
       "Failed to load breaches.": [
         "Kunne ikke laste inn brudd."
       ],
@@ -4713,10 +4741,6 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Det er ikke tillatt å invitere e-postadresser utenfor organisasjonen."
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Maksimal lengde er ${ maxLength } tegn",
-        "Maksimal lengde er ${ maxLength } tegn"
       ],
       "Missing alias prefix": [
         "Mangler aliasprefiks"
