@@ -8,6 +8,7 @@ import { Icon } from '@proton/components';
 import { IcGlobe, IcMicrophone, IcPaperClip } from '@proton/icons';
 import useFlag from '@proton/unleash/useFlag';
 
+import { useWebSearch } from '../../../providers/WebSearchProvider';
 import { getAcceptAttributeString } from '../../../util/filetypes';
 import LumoPlusToggle from './LumoPlusToggle';
 import { UploadMenu } from './UploadMenu';
@@ -24,9 +25,6 @@ export interface ComposerToolbarProps {
     setShowUploadMenu: (show: boolean) => void;
     handleUploadButtonClick: () => void;
 
-    // Web search props
-    isWebSearchButtonToggled: boolean;
-    handleWebSearchButtonClick: () => void;
     hasAttachments: boolean;
 
     // UI state props
@@ -41,11 +39,10 @@ export const ComposerToolbar = ({
     showUploadMenu,
     setShowUploadMenu,
     handleUploadButtonClick,
-    isWebSearchButtonToggled,
-    handleWebSearchButtonClick,
     hasAttachments,
     canShowLumoUpsellToggle,
 }: ComposerToolbarProps) => {
+    const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
     const uploadButtonRef = useRef<HTMLButtonElement>(null);
     const isLumoToolingEnabled = useFlag('LumoTooling');
 

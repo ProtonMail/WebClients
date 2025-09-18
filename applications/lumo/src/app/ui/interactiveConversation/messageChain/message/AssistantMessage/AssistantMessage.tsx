@@ -12,6 +12,7 @@ import { Icon, useModalStateObject } from '@proton/components';
 import { useTierErrors } from '../../../../../hooks/useTierErrors';
 import type { SearchItem } from '../../../../../lib/toolCall/types';
 import { useIsGuest } from '../../../../../providers/IsGuestProvider';
+import { useWebSearch } from '../../../../../providers/WebSearchProvider';
 import { sendMessageCopyEvent } from '../../../../../util/telemetry';
 import { ReferenceFilesButton } from '../../../../components/Files';
 import LumoButton from '../../../../components/LumoButton';
@@ -44,7 +45,6 @@ interface AssistantActionToolbarProps {
     messageChain: Message[];
     onToggleFilesManagement: (message?: Message) => void;
     markdownContainerRef: React.MutableRefObject<HTMLDivElement | null>;
-    isWebSearchButtonToggled: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
     retryButtonRef: React.RefObject<HTMLButtonElement>;
 }
@@ -60,7 +60,6 @@ const AssistantActionToolbar = ({
     messageChain,
     onToggleFilesManagement,
     markdownContainerRef,
-    isWebSearchButtonToggled,
     onRetryPanelToggle,
     retryButtonRef,
 }: AssistantActionToolbarProps) => {
@@ -145,7 +144,6 @@ interface AssistantMessageProps {
     isGeneratingWithToolCall: boolean;
     onToggleMessageSource: (message: Message) => void;
     onToggleFilesManagement: (message?: Message) => void;
-    isWebSearchButtonToggled: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
 }
 
@@ -172,9 +170,9 @@ const AssistantMessage = ({
     messageChain,
     isGenerating,
     isGeneratingWithToolCall,
-    isWebSearchButtonToggled,
     onRetryPanelToggle,
 }: AssistantMessageProps) => {
+    const { isWebSearchButtonToggled } = useWebSearch();
     const isFinishedGenerating = message?.status !== undefined;
     const generationFailed = message.status === 'failed';
     const doNotShowEmptyMessage = isGenerating;
@@ -262,7 +260,6 @@ const AssistantMessage = ({
                                         messageChain={messageChain}
                                         onToggleFilesManagement={(filterMessage) => handleOpenFiles(filterMessage)}
                                         markdownContainerRef={markdownContainerRef}
-                                        isWebSearchButtonToggled={isWebSearchButtonToggled}
                                         onRetryPanelToggle={onRetryPanelToggle}
                                         retryButtonRef={retryButtonRef}
                                     />

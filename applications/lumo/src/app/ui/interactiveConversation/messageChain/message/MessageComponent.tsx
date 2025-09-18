@@ -26,7 +26,6 @@ export type MessageComponentProps = {
     isLastMessage: boolean;
     isGenerating: boolean;
     isGeneratingWithToolCall: boolean;
-    isWebSearchButtonToggled: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
 };
 
@@ -80,7 +79,6 @@ const MessageComponentPure = ({
     isLastMessage,
     isGenerating,
     isGeneratingWithToolCall,
-    isWebSearchButtonToggled,
     onRetryPanelToggle,
 }: MessageComponentProps) => {
     const messageContent = message?.content;
@@ -130,7 +128,6 @@ const MessageComponentPure = ({
                     isGeneratingWithToolCall={isGeneratingWithToolCall}
                     onToggleMessageSource={handleOpenSources}
                     onToggleFilesManagement={handleOpenFiles}
-                    isWebSearchButtonToggled={isWebSearchButtonToggled}
                     onRetryPanelToggle={onRetryPanelToggle}
                 />
             )}
