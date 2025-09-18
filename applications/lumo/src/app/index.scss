@@ -269,6 +269,10 @@ body {
 	will-change: contents;
 	contain: layout;
 	backface-visibility: hidden;
+
+	@include media('<=small') {
+		font-size: 16px;
+	}
 }
 
 .ProseMirror:focus {

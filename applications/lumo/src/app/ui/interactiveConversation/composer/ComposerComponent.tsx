@@ -11,10 +11,11 @@ import useTipTapEditor from '../../../hooks/useTipTapEditor';
 import { useDragArea } from '../../../providers/DragAreaProvider';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useLumoPlan } from '../../../providers/LumoPlanProvider';
+import { useWebSearch } from '../../../providers/WebSearchProvider';
 import { useLumoSelector } from '../../../redux/hooks';
 import { selectProvisionalAttachments } from '../../../redux/selectors';
 import type { Attachment, Message } from '../../../types';
-import { sendVoiceEntryClickEvent, sendWebSearchButtonToggledEvent } from '../../../util/telemetry';
+import { sendVoiceEntryClickEvent } from '../../../util/telemetry';
 import { AttachmentArea, FileContentModal } from '../../components/Files';
 import GuestDisclaimer from '../../components/GuestDisclaimer';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
@@ -32,8 +33,6 @@ export type ComposerComponentProps = {
     isProcessingAttachment: boolean;
     className?: string;
     inputContainerRef?: React.RefObject<HTMLDivElement>;
-    isWebSearchButtonToggled: boolean;
-    onToggleWebSearch: () => void;
     setIsEditorFocused?: (isEditorFocused: boolean) => void;
     isEditorFocused?: boolean;
     setIsEditorEmpty?: (isEditorEmpty: boolean) => void;
@@ -51,8 +50,6 @@ export const ComposerComponent = ({
     isProcessingAttachment,
     className,
     inputContainerRef,
-    isWebSearchButtonToggled,
-    onToggleWebSearch,
     setIsEditorFocused,
     isEditorFocused,
     setIsEditorEmpty,
@@ -65,6 +62,7 @@ export const ComposerComponent = ({
     const { isDragging: isDraggingOverScreen } = useDragArea();
     const provisionalAttachments = useLumoSelector(selectProvisionalAttachments);
     const { hasTierErrors } = useTierErrors();
+    const { isWebSearchButtonToggled } = useWebSearch();
     const hasAttachments = provisionalAttachments.length > 0;
     const composerContainerRef = useRef<HTMLElement | null>(null);
     const [fileToView, setFileToView] = useState<Attachment | null>(null);
@@ -84,11 +82,6 @@ export const ComposerComponent = ({
         handleBrowseDrive,
         handleDeleteAttachment,
     } = useFileHandling({ messageChain, onShowDriveBrowser });
-
-    const handleWebSearchButtonClick = useCallback(() => {
-        sendWebSearchButtonToggledEvent(isWebSearchButtonToggled);
-        onToggleWebSearch();
-    }, [onToggleWebSearch, isWebSearchButtonToggled]);
 
     const sendGenerateMessage = useCallback(
         async (editor: any) => {
@@ -205,8 +198,6 @@ export const ComposerComponent = ({
                             showUploadMenu={showUploadMenu}
                             setShowUploadMenu={setShowUploadMenu}
                             handleUploadButtonClick={handleUploadButtonClick}
-                            isWebSearchButtonToggled={isWebSearchButtonToggled}
-                            handleWebSearchButtonClick={handleWebSearchButtonClick}
                             hasAttachments={hasAttachments}
                             canShowLumoUpsellToggle={canShowLumoUpsellToggle}
                         />
