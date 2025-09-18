@@ -4,185 +4,6 @@
     "language": "ja_JP"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } 個のエイリアス"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount }件のブロック"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount }件のブロック済み"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } 文字"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } 単語"
-      ],
-      "${ count } item": [
-        "${ count } 個のアイテム"
-      ],
-      "${ count } time": [
-        "${ count } 回"
-      ],
-      "${ count } view": [
-        "${ count } 回表示"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } 表示"
-      ],
-      "${ days } day": [
-        "${ days } 日"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } 個のファイル"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount }件の転送"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount }件の転送済み"
-      ],
-      "${ hours } hour": [
-        "${ hours } 時間"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount }人のメンバー"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } 分"
-      ],
-      "${ months } month": [
-        "${ months }ヶ月"
-      ],
-      "${ n } item": [
-        "${ n } 個のアイテム"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count }通の招待の送信に成功しました"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount }件の返信"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount }件の送信済み"
-      ],
-      "${ row.breachCount } breach detected": [
-        "${ row.breachCount } 件の違反が検出されました"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } 個のセキュアリンク"
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } 個の他のログインは同じパスワードを使用しています"
-      ],
-      "${ usageCount } login": [
-        "${ usageCount } 件のログイン"
-      ],
-      "${ years } year": [
-        "${ years }年"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "本当に${ trashedItemsCount }個のアイテムをゴミ箱に移動しますか？"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "本当に${ deletedItemsCount }個のアイテムを完全に削除しますか？"
-      ],
-      "byte": [
-        "バイト"
-      ],
-      "Byte": [
-        "バイト"
-      ],
-      "Cannot send invitation at the moment": [
-        "現在招待を送ることができません"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "${ deletedItemsCount }個のアイテムを削除しますか？"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "このCSVは${ errors.length } 行の破損を検知しました"
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "セキュリティ上の理由により、共有された保管庫へのアクセスには確認が必要です"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "生成されたパスワードは ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週間保存されます。"
-      ],
-      "Gigabyte": [
-        "ギガバイト"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "アイテム共有中: ${ itemAccessCount }人のユーザー"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "アイテムには ${ share.targetMaxMembers } 人以上のユーザーを含めることはできません。"
-      ],
-      "Kilobyte": [
-        "キロバイト"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "最大長は ${ maxLength } 文字です"
-      ],
-      "Megabyte": [
-        "メガバイト"
-      ],
-      "Move ${ count } item": [
-        "${ count }個のアイテムを移動"
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "${ count }個のアイテムを${ vaultName }に移動"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "${ trashedItemsCount }個のアイテムをゴミ箱に移動しますか？"
-      ],
-      "Move item to": [
-        "アイテムを移動する"
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週間より古いパスワードは履歴から自動的に削除されます。"
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "削除したエイリアスは復元できませんので、ご注意ください。"
-      ],
-      "Reused ${ count } time": [
-        "${ count } 回再利用しました"
-      ],
-      "Sync alias": [
-        "エイリアスを同期"
-      ],
-      "Terabyte": [
-        "テラバイト"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "次の${ totalIgnored }個のアイテムをインポートできませんでした:"
-      ],
-      "Understood, I will never need it": [
-        "はい、もう要りません"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "保管庫共有中： ${ vaultMembersCount } 人のメンバー"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "保管庫には ${ targetMaxMembers } 人以上のユーザーを含めることはできません。"
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "SimpleLogin に ${ aliasCount } 個のエイリアスが存在しますが、 ${ PASS_APP_NAME }に見つかりませんでした。インポートしますか？"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "選択したアイテムを別の保管庫にドラッグアンドドロップできます"
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "SimpleLogin に存在し${ PASS_APP_NAME }に存在しないエイリアスが、${ aliasCount } 件あります。同期しますか？"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "これらおよびその他のプレミアム機能をお試しいただける期間は、残り ${ daysRemaining } 日間です。"
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "${ aliasCount }個のエイリアスを完全に削除しようとしています。"
-      ]
-    },
     "Account Settings - Info": {
       "${ name } and ${ remainingCount } other potential leaks detected. Turn on ${ DARK_WEB_MONITORING_NAME } to view details and take action. ${ link }": [
         "${ name } および他 ${ remainingCount } 件の漏洩の可能性が検出されました。${ DARK_WEB_MONITORING_NAME } を有効にして詳細を表示し、アクションを実行してください。${ link }"
@@ -308,9 +129,6 @@
       ],
       "Clear search": [
         "検索をクリア"
-      ],
-      "Clone item": [
-        "アイテムを複製"
       ],
       "Close": [
         "閉じる"
@@ -615,9 +433,6 @@
       "Open navigation": [
         "ナビゲーションを開く"
       ],
-      "Organize vaults": [
-        "保管庫を整理"
-      ],
       "Pass for Android": [
         "Android 版 Pass"
       ],
@@ -798,6 +613,9 @@
       "Submitting report...": [
         "レポートを送信中..."
       ],
+      "Sync alias": [
+        "エイリアスを同期"
+      ],
       "Sync aliases": [
         "エイリアスを同期する"
       ],
@@ -824,6 +642,9 @@
       ],
       "Unblock contact": [
         "ブロックされていない連絡先"
+      ],
+      "Understood, I will never need it": [
+        "はい、もう要りません"
       ],
       "Unlock": [
         "アンロック"
@@ -921,6 +742,9 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME }は有料プランで利用できます。アップグレードしてすぐにアクセスできます。"
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } 個の他のログインは同じパスワードを使用しています"
       ],
       "2FA adds another layer of security to your logins. ${ PASS_APP_NAME } makes 2FA easier by storing and automatically autofilling your 2FA codes.": [
         "2FA はログインに別のセキュリティ層を追加します。 ${ PASS_APP_NAME } は、2FA コードを保存して自動的に自動入力することで、2FA を簡単にします。"
@@ -1049,6 +873,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "認証に失敗しました。エクスポートを続行するには、2つ目のパスワードを確認してください"
       ],
+      "Cannot send invitation at the moment": [
+        "現在招待を送ることができません"
+      ],
       "Cannot send invitations at the moment": [
         "現在招待を送ることができません"
       ],
@@ -1096,6 +923,9 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "保管庫 “${ payload.content.name }” の削除に失敗しました"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "このCSVは${ errors.length } 行の破損を検知しました"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "ドメインが認証できませんでした。正しいDSNレコードが追加されていることを確認してください。"
@@ -1439,6 +1269,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "バイト"
+      ],
       "GB": [
         "GB"
       ],
@@ -1450,6 +1283,23 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "バイト"
+      ],
+      "Gigabyte": [
+        "ギガバイト"
+      ],
+      "Kilobyte": [
+        "キロバイト"
+      ],
+      "Megabyte": [
+        "メガバイト"
+      ],
+      "Terabyte": [
+        "テラバイト"
       ]
     },
     "Font face option": {
@@ -1477,17 +1327,6 @@
         "極小"
       ]
     },
-    "Header": {
-      "Domain": [
-        "ドメイン"
-      ],
-      "Password ends with": [
-        "パスワードの末尾"
-      ],
-      "Username": [
-        "ユーザー名"
-      ]
-    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "「${ payload.itemName }」アイテムは無視されました"
@@ -1495,8 +1334,29 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "「${ payload.itemName }」更新が却下されました"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount }件のブロック済み"
+      ],
+      "${ count } time": [
+        "${ count } 回"
+      ],
+      "${ count } view": [
+        "${ count } 回表示"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } 表示"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount }件の転送済み"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail }があなたとアイテムを共有したいようです。"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount }人のメンバー"
+      ],
+      "${ n } item": [
+        "${ n } 個のアイテム"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } は常にアクセス可能です"
@@ -1516,11 +1376,20 @@
       "${ PASS_APP_NAME } will require your ${ BRAND_NAME } password in order to access data offline.": [
         "${ PASS_APP_NAME } でデータにオフラインでアクセスするには、${ BRAND_NAME } のパスワードが必要です。"
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count }通の招待の送信に成功しました"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } は正常に無効になりました"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } が正常に有効になりました"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount }件の送信済み"
+      ],
+      "${ row.breachCount } breach detected": [
+        "${ row.breachCount } 件の違反が検出されました"
       ],
       "(Empty)": [
         "(空)"
@@ -1813,9 +1682,6 @@
       "Extra password successfully removed": [
         "追加のパスワードが正常に削除されました"
       ],
-      "Failed updating your vault organization": [
-        "保管庫組織の更新に失敗しました"
-      ],
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
       ],
@@ -1828,11 +1694,17 @@
       "For security reasons, this action requires identity verification.": [
         "セキュリティ上の理由から、このアクションには本人確認が必要です。"
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "セキュリティ上の理由により、共有された保管庫へのアクセスには確認が必要です"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "セキュリティ上の理由から、アクセスを確認する必要があります"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "転送アドレスがクリップボードにコピーされました。このアドレスにメールを送信すると、 ${ Email } が受信します。"
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "生成されたパスワードは ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週間保存されます。"
       ],
       "Get the most out of Pass by creating a vault for each team or project.": [
         "チームやプロジェクトごとに保管庫を作成し、Passを最大限に活用しましょう。"
@@ -1915,6 +1787,9 @@
       "Item restored": [
         "アイテムが復元されました"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "アイテム共有中: ${ itemAccessCount }人のユーザー"
+      ],
       "Item successfully excluded from monitoring": [
         "アイテムがモニタリングから正常に除外されました"
       ],
@@ -1974,6 +1849,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME }は単なるパスワードマネージャーではなく、メールエイリアスを通じてあなたのパスワードと個人のメールアドレスを保護します。${ MAIL_APP_NAME }の背後にあるのと同じ技術によって支えられており、あなたのデータはエンドツーエンドで暗号化され、あなたにしかアクセスできません。"
+      ],
+      "Move ${ count } item": [
+        "${ count }個のアイテムを移動"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
@@ -2043,6 +1921,9 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "パスワードロックが正常に登録されました。 ${ PASS_APP_NAME }のロック解除に使用してください"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } 週間より古いパスワードは履歴から自動的に削除されます。"
       ],
       "Paused": [
         "一時停止"
@@ -2335,6 +2216,9 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } を使用するには追加パスワードが必要になります。追加パスワードは ${ BRAND_NAME } のパスワードに加えて、さらに追加して必要になるパスワードとして機能します。"
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "次の${ totalIgnored }個のアイテムをインポートできませんでした:"
+      ],
       "The secure link has been removed": [
         "セキュアリンクは削除されました"
       ],
@@ -2428,9 +2312,6 @@
       "Unverified": [
         "未検証"
       ],
-      "Updating vault organization...": [
-        "保管庫の組織を更新中…"
-      ],
       "Upgrade Now to Unlock Premium Features": [
         "今すぐアップグレードしてプレミアム機能をアンロックしましょう"
       ],
@@ -2458,8 +2339,8 @@
       "Vault \"${ share.content.name }\" was removed": [
         "保管庫「${ share.content.name }」が削除されました"
       ],
-      "Vault organization successfully updated": [
-        "保管庫の組織を更新しました"
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "保管庫共有中： ${ vaultMembersCount } 人のメンバー"
       ],
       "Verification code sent.": [
         "確認コードが送信されました。"
@@ -2469,6 +2350,9 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "ローカルストレージとのデータ同期で問題が生じています。${ PASS_SHORT_APP_NAME } の動作に必要なディスクの空き容量があることを確認してください。"
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "SimpleLogin に ${ aliasCount } 個のエイリアスが存在しますが、 ${ PASS_APP_NAME }に見つかりませんでした。インポートしますか？"
       ],
       "Week": [
         "週"
@@ -2493,6 +2377,12 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "SimpleLogin に存在し${ PASS_APP_NAME }に存在しないエイリアスが、${ aliasCount } 件あります。同期しますか？"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "これらおよびその他のプレミアム機能をお試しいただける期間は、残り ${ daysRemaining } 日間です。"
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。アイテムは最初の2つのフォルダーにのみ移動できます。すべてのフォルダー間でアイテムを移動するには、サブスクリプションをアップグレードしてください。"
@@ -2562,14 +2452,56 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } 個のエイリアス"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount }件のブロック"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } 文字"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } 単語"
+      ],
+      "${ count } item": [
+        "${ count } 個のアイテム"
+      ],
+      "${ days } day": [
+        "${ days } 日"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount }件の転送"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "過去 14 日間で、${ forwardedEmails }、${ repliedEmails }、${ blockedEmails }。"
+      ],
+      "${ hours } hour": [
+        "${ hours } 時間"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } 分"
+      ],
+      "${ months } month": [
+        "${ months }ヶ月"
       ],
       "${ PASS_APP_NAME } recognizes the websites and apps you use and autofills forms with your credentials for you on any browser or device. No need to copy and paste.": [
         "${ PASS_APP_NAME }は、あなたが使用するウェブサイトやアプリを認識し、どのブラウザやデバイスでもフォームに自動的にあなたの資格情報を入力します。コピー＆ペーストの必要はありません。"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } バージョン"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount }件の返信"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } 個のセキュアリンク"
+      ],
+      "${ usageCount } login": [
+        "${ usageCount } 件のログイン"
+      ],
+      "${ years } year": [
+        "${ years }年"
       ],
       "1 hour": [
         "1 時間"
@@ -3748,6 +3680,12 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } 個のアイテム"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "選択したアイテムを別の保管庫にドラッグアンドドロップできます"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "この保管庫で${ semiboldText }を選択しました。"
       ]
@@ -3806,6 +3744,9 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "「${ filename }」はアップロードするにはサイズが大きすぎます。許可される最大サイズは (${ maxFileSizeInMB })です。"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } 個のファイル"
       ],
       "Attachments": [
         "添付ファイル"
@@ -4134,6 +4075,9 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "ドメインは正常に認証されました。あなたのドメインはメールの受信が開始され、エイリアスが作成されます"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "アイテムには ${ share.targetMaxMembers } 人以上のユーザーを含めることはできません。"
+      ],
       "Mailbox change successfully cancelled": [
         "メールボックスの変更をキャンセルしました"
       ],
@@ -4151,6 +4095,9 @@
       ],
       "Random prefix generation successfully enabled": [
         "ランダムプレフィックス生成が有効になりました"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "保管庫には ${ targetMaxMembers } 人以上のユーザーを含めることはできません。"
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "認証メールが送信されました。メールボックスを認証するには受信トレイを確認してください"
@@ -4270,6 +4217,9 @@
       "Default Display Name": [
         "既定の表示名"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "${ deletedItemsCount }個のアイテムを削除しますか？"
+      ],
       "Delete domain": [
         "ドメインを削除"
       ],
@@ -4332,9 +4282,6 @@
       ],
       "Grant permissions": [
         "権限を付与する"
-      ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "非表示の保管庫は、検索および自動入力中は表示されません。"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
@@ -4402,6 +4349,12 @@
       "Modified": [
         "更新日時"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "${ count }個のアイテムを${ vaultName }に移動"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount }個のアイテムをゴミ箱に移動しますか？"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "すべてのアイテムを \"${ vaultName }\" に移動しますか？"
       ],
@@ -4410,9 +4363,6 @@
       ],
       "MX record": [
         "MX レコード"
-      ],
-      "Next": [
-        "次へ"
       ],
       "No excluded items": [
         "除外項目なし"
@@ -4434,12 +4384,6 @@
       ],
       "No shared secure links": [
         "共有セキュアリンクはありません"
-      ],
-      "Open pagination": [
-        "ページネーションを開く"
-      ],
-      "Organize vaults": [
-        "保管庫を整理する"
       ],
       "Our welcome gift to you": [
         "あなたへのウェルカムギフト"
@@ -4468,8 +4412,8 @@
       "Pinned (${ items.length })": [
         "ピン留め (${ items.length })"
       ],
-      "Previous": [
-        "前へ"
+      "Please note that once deleted, the alias can't be restored.": [
+        "削除したエイリアスは復元できませんので、ご注意ください。"
       ],
       "Random Prefix Generation": [
         "ランダムプレフィックス生成"
@@ -4500,6 +4444,9 @@
       ],
       "Resume monitoring?": [
         "監視を再開しますか?"
+      ],
+      "Reused ${ count } time": [
+        "${ count } 回再利用しました"
       ],
       "Reused passwords": [
         "再利用パスワード"
@@ -4617,11 +4564,9 @@
       ],
       "Your welcome gift": [
         "無料トライアルをお楽しみください"
-      ]
-    },
-    "Title_cloned_item": {
-      "copy": [
-        "コピー"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "${ aliasCount }個のエイリアスを完全に削除しようとしています。"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4663,6 +4608,11 @@
         "URL が無効です"
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "アイテムを移動する"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }のパスワードが必要です"
@@ -4687,6 +4637,12 @@
       ],
       "An error occurred while importing your data.": [
         "データのインポート中にエラーが発生しました。"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "本当に${ trashedItemsCount }個のアイテムをゴミ箱に移動しますか？"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "本当に${ deletedItemsCount }個のアイテムを完全に削除しますか？"
       ],
       "Are you sure you want to permanently delete this item?": [
         "本当にこのアイテムを完全に削除しますか？"
@@ -4768,6 +4724,9 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "組織外のメール アドレスを招待することはできません。"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "最大長は ${ maxLength } 文字です"
       ],
       "Missing alias prefix": [
         "エイリアスのプレフィックスがありません"

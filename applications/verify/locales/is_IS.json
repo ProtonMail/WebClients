@@ -4,68 +4,6 @@
     "language": "is_IS"
   },
   "contexts": {
-    "": {
-      "${ n } custom email domain": [
-        "${ n } sérsniðið tölvupóstlén",
-        "${ n } sérsniðin tölvupóstlén"
-      ],
-      "${ n } email address": [
-        "${ n } netfang",
-        "${ n } netföng/dulnefni"
-      ],
-      "${ n } email address per user": [
-        "${ n } netfang á hvern notanda",
-        "${ n } netföng á hvern notanda"
-      ],
-      "${ n } filter": [
-        "${ n } sía",
-        "${ n } síur"
-      ],
-      "${ n } folder": [
-        "${ n } mappa",
-        "${ n } möppur"
-      ],
-      "${ n } folder and label": [
-        "${ n } mappa og merki",
-        "${ n } möppur og merki"
-      ],
-      "${ n } label": [
-        "${ n } merki",
-        "${ n } merki"
-      ],
-      "${ n } message per day": [
-        "${ n } skilaboð á dag",
-        "${ n } skilaboð á dag"
-      ],
-      "byte": [
-        "bæti",
-        "bæti"
-      ],
-      "Byte": [
-        "Bæti",
-        "Bæti"
-      ],
-      "Gigabyte": [
-        "Gígabæt",
-        "Gígabæt"
-      ],
-      "Kilobyte": [
-        "Kílóbæt",
-        "Kílóbæt"
-      ],
-      "Megabyte": [
-        "Megabæt",
-        "Megabæt"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Lykilorð verður að innihalda að lágmarki ${ MIN_PASSWORD_LENGTH } stafi",
-        "Lykilorð verður að innihalda að lágmarki ${ MIN_PASSWORD_LENGTH } stafi"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Reyndu styttra notendanafn (${ n } stafur að hámarki)",
-        "Reyndu styttra notendanafn (${ n } stafir að hámarki)"
-      ]
-    },
     "Action": {
       "Authenticate": [
         "Auðkenna"
@@ -977,6 +915,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bæti",
+        "bæti"
+      ],
       "GB": [
         "GB"
       ],
@@ -988,6 +930,24 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bæti",
+        "Bæti"
+      ],
+      "Gigabyte": [
+        "Gígabæt",
+        "Gígabæt"
+      ],
+      "Kilobyte": [
+        "Kílóbæt",
+        "Kílóbæt"
+      ],
+      "Megabyte": [
+        "Megabæt",
+        "Megabæt"
       ]
     },
     "Font face option": {
@@ -1143,6 +1103,38 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } custom email domain": [
+        "${ n } sérsniðið tölvupóstlén",
+        "${ n } sérsniðin tölvupóstlén"
+      ],
+      "${ n } email address": [
+        "${ n } netfang",
+        "${ n } netföng/dulnefni"
+      ],
+      "${ n } email address per user": [
+        "${ n } netfang á hvern notanda",
+        "${ n } netföng á hvern notanda"
+      ],
+      "${ n } filter": [
+        "${ n } sía",
+        "${ n } síur"
+      ],
+      "${ n } folder": [
+        "${ n } mappa",
+        "${ n } möppur"
+      ],
+      "${ n } folder and label": [
+        "${ n } mappa og merki",
+        "${ n } möppur og merki"
+      ],
+      "${ n } label": [
+        "${ n } merki",
+        "${ n } merki"
+      ],
+      "${ n } message per day": [
+        "${ n } skilaboð á dag",
+        "${ n } skilaboð á dag"
+      ],
       "${ size } attachment size": [
         "${ size } viðhengjastærð"
       ],
@@ -1312,6 +1304,16 @@
       ],
       "Two-factor authentication": [
         "Tveggja-þrepa auðkenning"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lykilorð verður að innihalda að lágmarki ${ MIN_PASSWORD_LENGTH } stafi",
+        "Lykilorð verður að innihalda að lágmarki ${ MIN_PASSWORD_LENGTH } stafi"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Reyndu styttra notendanafn (${ n } stafur að hámarki)",
+        "Reyndu styttra notendanafn (${ n } stafir að hámarki)"
       ]
     }
   }

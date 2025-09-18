@@ -4,240 +4,6 @@
     "language": "sv_SE"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } alias",
-        "${ aliasCount } alias"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } blockerad",
-        "${ blockedCount } blockerade"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } blockerat",
-        "${ blockedEmailsCount } blockerade"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } tecken",
-        "${ config.options.length } tecken"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } ord",
-        "${ config.options.wordCount } ord"
-      ],
-      "${ count } item": [
-        "${ count } objekt",
-        "${ count } objekt"
-      ],
-      "${ count } time": [
-        "${ count } gång",
-        "${ count } gånger"
-      ],
-      "${ count } view": [
-        "${ count } visning",
-        "${ count } visningar"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } visning",
-        "${ count }/${ maxReads } visningar"
-      ],
-      "${ days } day": [
-        "${ days } dag",
-        "${ days } dagar"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } fil",
-        "${ filesCount } filer"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } vidarebefordrad",
-        "${ forwardCount } vidarebefordrade"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } vidarebefordrat",
-        "${ forwardedEmailsCount } vidarebefordrade"
-      ],
-      "${ hours } hour": [
-        "${ hours } timme",
-        "${ hours } timmar"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } medlem",
-        "${ memberCount } medlemmar"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuter"
-      ],
-      "${ months } month": [
-        "${ months } månad",
-        "${ months } månader"
-      ],
-      "${ n } item": [
-        "${ n } objekt",
-        "${ n } objekt"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } inbjudan skickad",
-        "${ payload.count } inbjudningar skickat"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } svar",
-        "${ repliedCount } svar"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } skickat",
-        "${ repliedEmailsCount } skickade"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } säker länk",
-        "${ secureLinksCount } säkra länkar"
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } annan inloggning använder samma lösenord",
-        "${ total } andra inloggningar använder samma lösenord"
-      ],
-      "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } dag kvar",
-        "${ trialDaysLeft } dagar kvar"
-      ],
-      "${ years } year": [
-        "${ years } år",
-        "${ years } år"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Är du säker på att du vill flytta ${ trashedItemsCount } objekt till papperskorg?",
-        "Är du säker på att du vill flytta ${ trashedItemsCount } objekt till papperskorg?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Är du säker på att du vill ta bort ${ deletedItemsCount } objekt permanent?",
-        "Är du säker på att du vill ta bort ${ deletedItemsCount } objekt permanent?"
-      ],
-      "byte": [
-        "byte",
-        "byte"
-      ],
-      "Byte": [
-        "Byte",
-        "Byte"
-      ],
-      "Cannot send invitation at the moment": [
-        "Kan inte skicka inbjudan just nu",
-        "Kan inte skicka inbjudningar just nu"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "Ta bort ${ deletedItemsCount } objekt?",
-        "Ta bort ${ deletedItemsCount } objekt?"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Upptäckte ${ errors.length } skadad CSV-rad",
-        "Upptäckte ${ errors.length } skadade CSV-rader"
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Av säkerhetsskäl måste du bekräfta åtkomst till detta delade valv",
-        "Av säkerhetsskäl måste du bekräfta åtkomst till dessa delade valv"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka.",
-        "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor."
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabyte"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Objektdelning: ${ itemAccessCount } användare",
-        "Objektdelning: ${ itemAccessCount } användare"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Objekt kan inte innehålla fler än ${ share.targetMaxMembers } användare.",
-        "Objekten kan inte innehålla fler än ${ share.targetMaxMembers } användare."
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobyte"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Maximal längd är ${ maxLength } tecken",
-        "Maximal längd är ${ maxLength } tecken"
-      ],
-      "Megabyte": [
-        "Kilobyte",
-        "Megabyte"
-      ],
-      "Move ${ count } item": [
-        "Flytta ${ count } objekt",
-        "Flytta ${ count } objekt"
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Flytta ${ count } objekt till ${ vaultName }",
-        "Flytta ${ count } objekt till ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "Flytta ${ trashedItemsCount } objekt till papperskorg?",
-        "Flytta ${ trashedItemsCount } objekt till papperskorg?"
-      ],
-      "Move item to": [
-        "Flytta objekt till",
-        "Flytta objekten till"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka tas bort automatiskt från historiken.",
-        "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor tas bort automatiskt från historiken."
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Observera att när aliaset väl har tagits bort kan det inte återställas.",
-        "Observera att när alias väl har tagits bort kan de inte återställas."
-      ],
-      "Sync alias": [
-        "Synkronisera alias",
-        "Synkronisera alias"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabyte"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Följande ${ totalIgnored } objekt kunde inte importeras:",
-        "Följande ${ totalIgnored } objekten kunde inte importeras:"
-      ],
-      "Understood, I will never need it": [
-        "Förstått, jag kommer aldrig att behöva det",
-        "Förstått, jag kommer aldrig att behöva dem"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Valvdelning: ${ vaultMembersCount } medlem",
-        "Valvdelning: ${ vaultMembersCount } medlemmar"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Valv kan inte innehålla fler än ${ targetMaxMembers } användare.",
-        "Valv kan inte innehålla fler än ${ targetMaxMembers } användare."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "Vi upptäckte att du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera det?",
-        "Vi upptäckte att du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera dem?"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "Du kan dra och släppa det valda objektet till ett annat valv",
-        "Du kan dra och släppa de markerade objekten till ett annat valv"
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "Du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du synkronisera det?",
-        "Du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du synkronisera dem?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Du har ${ daysRemaining } dag kvar att prova dessa och andra premiumfunktioner.",
-        "Du har ${ daysRemaining } dagar kvar att prova dessa och andra premiumfunktioner."
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "Du håller på att ta bort ${ aliasCount } alias permanent.",
-        "Du håller på att ta bort ${ aliasCount } alias permanent."
-      ]
-    },
     "Action": {
       "Accept": [
         "Acceptera"
@@ -343,9 +109,6 @@
       ],
       "Clear search": [
         "Rensa sök"
-      ],
-      "Clone item": [
-        "Klona objekt"
       ],
       "Close": [
         "Stäng"
@@ -478,12 +241,6 @@
       ],
       "Dismiss": [
         "Avfärda"
-      ],
-      "Do not show again": [
-        "Visa inte igen"
-      ],
-      "Do not show again when I press": [
-        "Visa inte igen när jag trycker"
       ],
       "Do not show on this website": [
         "Visa inte på denna webbplats"
@@ -842,6 +599,10 @@
       "Submitting report...": [
         "Skickar rapport …"
       ],
+      "Sync alias": [
+        "Synkronisera alias",
+        "Synkronisera alias"
+      ],
       "Sync aliases": [
         "Synkronisera alias"
       ],
@@ -865,6 +626,10 @@
       ],
       "Unblock contact": [
         "Avblockera kontakt"
+      ],
+      "Understood, I will never need it": [
+        "Förstått, jag kommer aldrig att behöva det",
+        "Förstått, jag kommer aldrig att behöva dem"
       ],
       "Unlock": [
         "Lås upp"
@@ -945,6 +710,10 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } är tillgängligt med ett betalt paket. Uppgradera för omedelbar åtkomst."
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } annan inloggning använder samma lösenord",
+        "${ total } andra inloggningar använder samma lösenord"
       ],
       "A checked box means the feature is disabled.": [
         "En ikryssad ruta betyder att funktionen är inaktiverad."
@@ -1040,6 +809,10 @@
       "Cannot create alias (${ error }).": [
         "Kan inte skapa alias (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Kan inte skicka inbjudan just nu",
+        "Kan inte skicka inbjudningar just nu"
+      ],
       "Cannot send invitations at the moment": [
         "Kan inte skicka inbjudan just nu"
       ],
@@ -1087,6 +860,10 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Misslyckades att ta bort valv ”${ payload.content.name }”"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Upptäckte ${ errors.length } skadad CSV-rad",
+        "Upptäckte ${ errors.length } skadade CSV-rader"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Domän kunde inte verifieras. Se till att du har lagt till rätt DNS-poster"
@@ -1434,6 +1211,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "byte"
+      ],
       "GB": [
         "GB"
       ],
@@ -1447,6 +1228,28 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Kilobyte",
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Objekt ”${ payload.itemName }” avfärdades"
@@ -1454,8 +1257,36 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "Uppdatering ”${ payload.itemName }” avfärdades"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } blockerat",
+        "${ blockedEmailsCount } blockerade"
+      ],
+      "${ count } time": [
+        "${ count } gång",
+        "${ count } gånger"
+      ],
+      "${ count } view": [
+        "${ count } visning",
+        "${ count } visningar"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } visning",
+        "${ count }/${ maxReads } visningar"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } vidarebefordrat",
+        "${ forwardedEmailsCount } vidarebefordrade"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } vill dela ett objekt med dig."
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmar"
+      ],
+      "${ n } item": [
+        "${ n } objekt",
+        "${ n } objekt"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } kommer alltid vara åtkomlig"
@@ -1490,11 +1321,23 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } kommer föreslå sparade passkeys."
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } inbjudan skickad",
+        "${ payload.count } inbjudningar skickat"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } inaktiverades"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } aktiverades"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } skickat",
+        "${ repliedEmailsCount } skickade"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } dag kvar",
+        "${ trialDaysLeft } dagar kvar"
       ],
       "(Empty)": [
         "(Tom)"
@@ -1820,11 +1663,19 @@
       "For security reasons, this action requires identity verification.": [
         "Av säkerhetsskäl kräver denna åtgärd identitetsverifiering."
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Av säkerhetsskäl måste du bekräfta åtkomst till detta delade valv",
+        "Av säkerhetsskäl måste du bekräfta åtkomst till dessa delade valv"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Av säkerhetsskäl måste din åtkomst bekräftas"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Vidarebefordringsadress kopierat till urklipp. Skicka ett e-postmeddelande till denna adress så kommer ${ Email } ta emot den."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka.",
+        "Genererade lösenord kommer att lagras under en period av ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor."
       ],
       "Generating alias...": [
         "Genererar alias …"
@@ -1892,6 +1743,10 @@
       "Item restored": [
         "Objekt återställt"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Objektdelning: ${ itemAccessCount } användare",
+        "Objektdelning: ${ itemAccessCount } användare"
+      ],
       "Item successfully excluded from monitoring": [
         "Objekt exkluderat från övervakning"
       ],
@@ -1939,6 +1794,10 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "Mer än en lösenordshanterare. ${ PASS_APP_NAME } skyddar ditt lösenord och din personliga e-postadress via e-postalias. Drivs av samma teknologi bakom ${ MAIL_APP_NAME }, din data är end-to-end-krypterad och är endast åtkomlig för dig."
+      ],
+      "Move ${ count } item": [
+        "Flytta ${ count } objekt",
+        "Flytta ${ count } objekt"
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
@@ -2005,6 +1864,10 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Lösenordslås har registrerats. Använd den för att låsa upp ${ PASS_APP_NAME }"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } vecka tas bort automatiskt från historiken.",
+        "Lösenord som är äldre än ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } veckor tas bort automatiskt från historiken."
       ],
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
@@ -2282,6 +2145,10 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Extralösenordet kommer att krävas för att använda ${ PASS_APP_NAME }. Det fungerar som ett extra lösenord utöver ditt ${ BRAND_NAME }-lösenord."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Följande ${ totalIgnored } objekt kunde inte importeras:",
+        "Följande ${ totalIgnored } objekten kunde inte importeras:"
+      ],
       "The secure link has been removed": [
         "Den säkra länken har tagits bort"
       ],
@@ -2414,6 +2281,10 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Valv “${ share.content.name }“ togs bort"
       ],
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Valvdelning: ${ vaultMembersCount } medlem",
+        "Valvdelning: ${ vaultMembersCount } medlemmar"
+      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -2422,6 +2293,10 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "Vi har problem att synkronisera data till ditt lokala lagringsutrymme. Se till att du har tillräckligt med diskutrymme för att ${ PASS_SHORT_APP_NAME } ska fungera smidigt."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "Vi upptäckte att du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera det?",
+        "Vi upptäckte att du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du importera dem?"
       ],
       "Week": [
         "Vecka"
@@ -2446,6 +2321,14 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan inte ändra brevlådorna för detta alias."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "Du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du synkronisera det?",
+        "Du har ${ aliasCount } alias som finns i SimpleLogin men saknas i ${ PASS_APP_NAME }. Vill du synkronisera dem?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Du har ${ daysRemaining } dag kvar att prova dessa och andra premiumfunktioner.",
+        "Du har ${ daysRemaining } dagar kvar att prova dessa och andra premiumfunktioner."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Du har överskridit antalet valv inkluderat i din prenumeration. Objekt kan endast flyttas till dina två första valv. För att flytta objekt mellan alla valv, uppgradera din prenumeration."
@@ -2505,20 +2388,67 @@
         "Din organisation kräver att du säkrar din åtkomst till ${ PASS_APP_NAME }"
       ]
     },
-    "Keyboard key": {
-      "V": [
-        "V"
-      ]
-    },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } alias"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } blockerad",
+        "${ blockedCount } blockerade"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } tecken",
+        "${ config.options.length } tecken"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } ord",
+        "${ config.options.wordCount } ord"
+      ],
+      "${ count } item": [
+        "${ count } objekt",
+        "${ count } objekt"
+      ],
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagar"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } vidarebefordrad",
+        "${ forwardCount } vidarebefordrade"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails } de senaste 14 dagarna."
+      ],
+      "${ hours } hour": [
+        "${ hours } timme",
+        "${ hours } timmar"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuter"
+      ],
+      "${ months } month": [
+        "${ months } månad",
+        "${ months } månader"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME }-Övervakning"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME }-version"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } svar",
+        "${ repliedCount } svar"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } säker länk",
+        "${ secureLinksCount } säkra länkar"
+      ],
+      "${ years } year": [
+        "${ years } år",
+        "${ years } år"
       ],
       "1 hour": [
         "1 timme"
@@ -3090,6 +3020,9 @@
       "Network": [
         "Nätverk"
       ],
+      "New": [
+        "Nytt"
+      ],
       "New email": [
         "Ny e-post"
       ],
@@ -3550,6 +3483,14 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } objekt",
+        "${ count } objekt"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "Du kan dra och släppa det valda objektet till ett annat valv",
+        "Du kan dra och släppa de markerade objekten till ett annat valv"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "Du valde ${ semiboldText } i detta valv."
       ]
@@ -3597,6 +3538,10 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "“${ filename }“ är för stora för att laddas upp. Den maximalt tillåtna storleken är (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } fil",
+        "${ filesCount } filer"
       ],
       "Attachments": [
         "Bilagor"
@@ -3909,6 +3854,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domän verifierad. Din domän kan börja ta emot e-post och skapa alias"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Objekt kan inte innehålla fler än ${ share.targetMaxMembers } användare.",
+        "Objekten kan inte innehålla fler än ${ share.targetMaxMembers } användare."
+      ],
       "Mailbox change successfully cancelled": [
         "Ändring av brevlåda avbröts"
       ],
@@ -3926,6 +3875,10 @@
       ],
       "Random prefix generation successfully enabled": [
         "Slumpmässig prefixgenerering aktiverad"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Valv kan inte innehålla fler än ${ targetMaxMembers } användare.",
+        "Valv kan inte innehålla fler än ${ targetMaxMembers } användare."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "E-postverifiering skickat. Kontrollera din inkorg för att verifiera din brevlåda"
@@ -4026,6 +3979,10 @@
       ],
       "Default Display Name": [
         "Standardvisningsnamn"
+      ],
+      "Delete ${ deletedItemsCount } item?": [
+        "Ta bort ${ deletedItemsCount } objekt?",
+        "Ta bort ${ deletedItemsCount } objekt?"
       ],
       "Delete domain": [
         "Ta bort domän"
@@ -4153,6 +4110,14 @@
       "Modified": [
         "Ändrad"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Flytta ${ count } objekt till ${ vaultName }",
+        "Flytta ${ count } objekt till ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "Flytta ${ trashedItemsCount } objekt till papperskorg?",
+        "Flytta ${ trashedItemsCount } objekt till papperskorg?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Flytta alla objekt till ”${ vaultName }”?"
       ],
@@ -4186,9 +4151,6 @@
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
       ],
-      "Perform autotype?": [
-        "Utför automatisk ifyllning?"
-      ],
       "Permanently remove all items?": [
         "Ta bort alla objekt permanent?"
       ],
@@ -4197,6 +4159,10 @@
       ],
       "Pinned (${ items.length })": [
         "Fäst (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Observera att när aliaset väl har tagits bort kan det inte återställas.",
+        "Observera att när alias väl har tagits bort kan de inte återställas."
       ],
       "Random Prefix Generation": [
         "Slumpmässig prefixgenerering"
@@ -4317,11 +4283,10 @@
       ],
       "Your welcome gift": [
         "Din välkomstgåva"
-      ]
-    },
-    "Title_cloned_item": {
-      "copy": [
-        "kopiera"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "Du håller på att ta bort ${ aliasCount } alias permanent.",
+        "Du håller på att ta bort ${ aliasCount } alias permanent."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4355,6 +4320,12 @@
         "URL är ogiltig"
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "Flytta objekt till",
+        "Flytta objekten till"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-lösenord är obligatoriskt"
@@ -4382,6 +4353,14 @@
       ],
       "An error occurred while resuming your session": [
         "Ett fel uppstod vid återupptagning av din session"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Är du säker på att du vill flytta ${ trashedItemsCount } objekt till papperskorg?",
+        "Är du säker på att du vill flytta ${ trashedItemsCount } objekt till papperskorg?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Är du säker på att du vill ta bort ${ deletedItemsCount } objekt permanent?",
+        "Är du säker på att du vill ta bort ${ deletedItemsCount } objekt permanent?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Är du säker på att du vill ta bort detta objekt permanent?"
@@ -4454,6 +4433,10 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Det är inte tillåtet att bjuda in e-postadresser utanför organisation."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maximal längd är ${ maxLength } tecken",
+        "Maximal längd är ${ maxLength } tecken"
       ],
       "Missing alias prefix": [
         "Alias-prefix saknas"
