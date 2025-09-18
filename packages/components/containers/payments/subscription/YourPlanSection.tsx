@@ -12,14 +12,15 @@ import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymen
 import useLoad from '@proton/components/hooks/useLoad';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
-import { FREE_PLAN } from '@proton/payments';
-import { getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, hasLumoPlan, isTrial } from '@proton/payments';
+import { FREE_PLAN, getCanSubscriptionAccessDuoPlan, getHasVpnB2BPlan, hasLumoPlan, isTrial } from '@proton/payments';
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { useFlag } from '@proton/unleash';
 import clsx from '@proton/utils/clsx';
 
+import TrialInfo from '../../referral/components/TrialInfo/TrialInfo';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import { useUpsellsToDisplay } from './helpers';
 import { SubscriptionPanel, UpsellPanels, UsagePanel } from './panels';
@@ -46,6 +47,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const telemetryFlow = useDashboardPaymentFlow(app);
+    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
     useLoad();
 
     const { upsells, loading: upsellsLoading } = useUpsellsToDisplay({
@@ -76,13 +78,20 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const isVpnB2b = getHasVpnB2BPlan(subscription);
     const isWalletEA = app === APPS.PROTONWALLET;
     // Subscription panel is displayed for user with a free or paid plan and not in a trial
-    const shouldRenderSubscription = user.canPay || (subscription && !isTrial(subscription));
+    const shouldRenderSubscription =
+        user.canPay || (subscription && !isTrial(subscription) && !isReferralExpansionEnabled);
     const shouldRenderPendingInvitation = !!invites.length;
     // Upsell panel if the user has a subscription and is not vpn or wallet
-    const shouldRenderUpsells = !isVpnB2b && !isWalletEA && shouldRenderSubscription && !hasLumoPlan(subscription);
+    const shouldRenderUpsells =
+        !isVpnB2b &&
+        !isWalletEA &&
+        shouldRenderSubscription &&
+        !hasLumoPlan(subscription) &&
+        !(isTrial(subscription) && isReferralExpansionEnabled);
     // Usage panel is displayed for members of B2B plans except VPN B2B
     const shouldRenderUsagePanel =
         (organization?.UsedMembers || 0) > 1 && !isVpnB2b && organization?.State === ORGANIZATION_STATE.ACTIVE;
+    const shouldRenderTrialInfo = isTrial(subscription) && isReferralExpansionEnabled;
 
     // By default, for style consistency, we display every setting in `SettingsSectionWide`
     // But since 3 panels don't fit in this section (or are too tightly packed),
@@ -90,7 +99,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const panelCount = [shouldRenderSubscription, shouldRenderPendingInvitation, shouldRenderUsagePanel].filter(
         Boolean
     ).length;
-    const shouldRenderInLargeSection = panelCount + upsells.length > 2;
+    const shouldRenderInLargeSection = panelCount + (shouldRenderUpsells ? upsells.length : 0) > 2;
     const SettingsSection = shouldRenderInLargeSection ? SettingsSectionExtraWide : SettingsSectionWide;
 
     return (
@@ -119,6 +128,11 @@ const YourPlanSectionInner = ({ app }: Props) => {
                     <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
                 )}
                 {shouldRenderUpsells && <UpsellPanels upsells={upsells} subscription={subscription} />}
+                {shouldRenderTrialInfo && (
+                    <div className="relative border rounded px-6 py-5 self-start panel">
+                        <TrialInfo />
+                    </div>
+                )}
                 {shouldRenderPendingInvitation && <PendingInvitationsPanel invites={invites} />}
             </div>
         </SettingsSection>
