@@ -474,12 +474,24 @@ export const FORBIDDEN_LABEL_NAMES = ['inbox', 'drafts', 'sent', 'starred', 'arc
 export const INTERVAL_EVENT_TIMER = 30 * 1000;
 export const MAX_SIZE_SCREENSHOT = 500 * 1000;
 
+/**
+ * Event returned by the event loop that tells what needs to be done.
+ *
+ * Simple events that can happen:
+ * - DELETE: indicates that a data was deleted and can be deleted from the local cache.
+ * - CREATE: indicate that a new data was created and needs to be (optionally) fetched and stored in the local cache.
+ * - UPDATE: indicates that an existing data was updated and can be updated in the local cache.
+ *
+ * Mail app exclusive events:
+ * - UPDATE_DRAFT: Mail app exclusive, indicates that a draft had an update and needs to be updated in the local cache, this only happens for messages in the message slice.
+ * - UPDATE_FLAGS: Mail app exclusive, indicates that a flag (labelID, context count,...) was updated in an existing message or conversation and needs to be updated in the local cache.
+ */
 export enum EVENT_ACTIONS {
     DELETE = 0,
     CREATE = 1,
     UPDATE = 2,
-    UPDATE_DRAFT = 2, // Only concern message draft
-    UPDATE_FLAGS = 3, // Only concern message metadata
+    UPDATE_DRAFT = 2,
+    UPDATE_FLAGS = 3,
 }
 
 export enum USER_ROLES {
