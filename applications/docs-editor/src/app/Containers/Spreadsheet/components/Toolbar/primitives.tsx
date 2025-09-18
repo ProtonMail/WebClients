@@ -17,7 +17,7 @@ export const Container = forwardRef<HTMLDivElement, ContainerProps>(function Con
   return (
     <div ref={ref} {...props} className={clsx('px-4 pb-3', props.className)}>
       <div className="border-weak rounded-[1rem] border bg-[white] shadow-[0_4px_10px_0_rgba(0,0,0,0.06)]">
-        <Ariakit.Toolbar className="flex items-center gap-[.125rem] px-3 py-[.375rem]">
+        <Ariakit.Toolbar className="flex !flex-wrap items-center gap-[.125rem] px-3 py-[.375rem]">
           {props.children}
         </Ariakit.Toolbar>
         {formulaBarSlot}
@@ -110,7 +110,7 @@ export const Separator = forwardRef<HTMLHRElement, SeparatorProps>(function Sepa
     <Ariakit.ToolbarSeparator
       ref={ref}
       {...props}
-      className={clsx('mx-2 h-[1.25rem] w-[1px] border-l border-[#D1CFCD]', props.className)}
+      className={clsx('mx-2 h-[1.25rem] w-[1px] flex-shrink-0 border-l border-[#D1CFCD]', props.className)}
     />
   )
 })
