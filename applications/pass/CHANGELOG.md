@@ -1,3 +1,9 @@
+### Version 1.32.7
+
+- [Gradual rollout] Support hiding/showing vaults
+- [Gradual rollout] Support cloning items
+- Fix private key field in SSH key item to allow multiple lines
+
 ### Version 1.32.5
 
 - Patch WebKit Linux native X25519 crypto bug
