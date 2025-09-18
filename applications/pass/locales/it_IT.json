@@ -253,6 +253,12 @@
       "Dismiss": [
         "Ignora"
       ],
+      "Do not show again": [
+        "Non mostrare di nuovo"
+      ],
+      "Do not show again when I press": [
+        "Non mostrare più quando premo\n\n"
+      ],
       "Download this CSV template": [
         "Scarica questo modello CSV"
       ],
@@ -2046,6 +2052,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Tieni aperta questa finestra durante l'importazione dei dati. Questo processo potrebbe richiedere alcuni minuti."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Assicurati che la finestra precedentemente attiva sia quella in cui desideri digitare automaticamente e che il tuo cursore fosse posizionato nel campo di login."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Tieni presente che una volta eliminato, l'alias non potrà essere ripristinato. Magari preferisci disabilitare l'alias?"
       ],
@@ -2402,6 +2411,12 @@
       "You may close this tab.": [
         "Puoi chiudere questa scheda."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Potresti dover accettare un prompt di autorizzazione e potresti dover restartare l'application a seconda del tuo sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Potresti dover concedere l'autorizzazione di accessibilità a ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Hai bisogno di una cassaforte con permessi per modificare prima che tu possa importare oggetti."
       ],
@@ -2446,6 +2461,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "La tua organizzazione richiede che tu protegga l'accesso a ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "MAIUSC"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -3122,9 +3145,6 @@
       ],
       "Network": [
         "Rete"
-      ],
-      "New": [
-        "Nuovo"
       ],
       "New email": [
         "Nuova email"
@@ -4381,6 +4401,9 @@
       "Pending access to the shared data": [
         "In attesa dell'accesso ai dati condivisi"
       ],
+      "Perform autotype?": [
+        "Eseguire autocompletamento?"
+      ],
       "Permanently remove all items?": [
         "Rimuovere definitivamente tutti gli elementi?"
       ],
@@ -4692,6 +4715,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "La password aggiuntiva deve contenere almeno 8 caratteri"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Digitazione automatica fallita. Assicurati che ${ PASS_APP_NAME } abbia i permessi necessari e riprova (${ error })."
       ],
       "Failed to load breaches.": [
         "Impossibile caricare le violazioni di dati."
