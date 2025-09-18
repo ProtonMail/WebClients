@@ -23,9 +23,10 @@ export function NumberFormatsMenu({ asSubmenu = false, renderMenuButton, childre
   const values = { pattern: currentPattern ? [currentPattern] : [] }
   const menu = Ariakit.useMenuStore({ values, focusLoop: true })
   const mounted = Ariakit.useStoreState(menu, 'mounted')
+  const disabled = useUI((ui) => ui.info.isReadonly)
   return (
     <Ariakit.MenuProvider store={menu} {...props}>
-      {asSubmenu ? children : <Ariakit.MenuButton render={renderMenuButton} />}
+      {asSubmenu ? children : <Ariakit.MenuButton render={renderMenuButton} disabled={disabled} />}
       {mounted && <NumberFormatsMenuPopover asSubmenu={asSubmenu} />}
     </Ariakit.MenuProvider>
   )
