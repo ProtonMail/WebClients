@@ -31,6 +31,7 @@ import {
 import type { OrganizationSettingsAllowedProduct } from '@proton/shared/lib/interfaces';
 import { serializeAllowedProducts } from '@proton/shared/lib/organization/accessControl/serialization';
 
+import SettingsSection from '../../account/SettingsSection';
 import MailCalendarIcon from './MailCalendarIcon';
 import useAllowedProducts from './useAllowedProducts';
 
@@ -110,8 +111,9 @@ const AccessControlItem = ({
         );
     };
 
+    const id = targetProducts.join(':');
     return (
-        <div className="flex flex-nowrap pb-2 gap-2 border-bottom border-weak">
+        <label htmlFor={id} className="flex flex-nowrap pb-2 gap-2 border-bottom border-weak">
             <div className="shrink-0">{logo}</div>
             <div className="flex-1 flex flex-column">
                 <div className="flex flex-nowrap items-start gap-1 w-full">
@@ -122,7 +124,7 @@ const AccessControlItem = ({
                     {atLeastOneApplicationLimit && isChecked ? (
                         <Tooltip title={c('Info').t`At least one application must be active`} openDelay={0}>
                             <span className="inline-flex">
-                                <Toggle id={targetProducts.join(':')} disabled={true} checked={true} />
+                                <Toggle id={id} disabled={true} checked={true} />
                             </span>
                         </Tooltip>
                     ) : (
@@ -140,7 +142,7 @@ const AccessControlItem = ({
                 </div>
                 <div className="color-weak">{description}</div>
             </div>
-        </div>
+        </label>
     );
 };
 
@@ -154,7 +156,7 @@ const AccessControlSettingsSection = () => {
                 {c('Info')
                     .t`Manage which ${BRAND_NAME} applications the members of your organization can access. If disabled, only administrators will have access.`}
             </SettingsParagraph>
-            <div className="flex flex-column gap-2 max-w-custom" style={{ '--max-w-custom': '640px' }}>
+            <SettingsSection className="flex flex-column gap-2">
                 <AccessControlItem
                     title={
                         // translator: Proton Mail and Proton Calendar
@@ -205,7 +207,7 @@ const AccessControlSettingsSection = () => {
                     targetProducts={[Product.Lumo]}
                     showSSOBadge={!appSupportsSSO(APPS.PROTONLUMO) && hasSsoConfig}
                 />
-            </div>
+            </SettingsSection>
         </SettingsSectionWide>
     );
 };
