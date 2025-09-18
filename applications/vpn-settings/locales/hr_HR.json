@@ -4,6 +4,373 @@
     "language": "hr_HR"
   },
   "contexts": {
+    "": {
+      "${ ceilDays } day": [
+        "${ ceilDays } dan",
+        "${ ceilDays } dana",
+        "${ ceilDays } dana"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } sat",
+        "${ ceilHours } sata",
+        "${ ceilHours } sati"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minuta",
+        "${ ceilMinutes } minuta",
+        "${ ceilMinutes } minute"
+      ],
+      "${ cycle } month": [
+        "${ cycle } mjesec",
+        "${ cycle } mjeseca",
+        "${ cycle } mjeseci"
+      ],
+      "${ days } day": [
+        "${ days } dan",
+        "${ days } dana",
+        "${ days } dana"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } sat",
+        "${ gracePeriodHoursRemaining } sata",
+        "${ gracePeriodHoursRemaining } sati"
+      ],
+      "${ group.UserCount } user": [
+        "${ group.UserCount } korisnik",
+        "${ group.UserCount } korisnika",
+        "${ group.UserCount } korisnika"
+      ],
+      "${ hours } hour": [
+        "${ hours } sat",
+        "${ hours } sata",
+        "${ hours } sati"
+      ],
+      "${ ips } server": [
+        "${ ips } poslužitelj",
+        "${ ips } poslužitelj",
+        "${ ips } poslužitelj"
+      ],
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN veza",
+        "${ MaxVPN } VPN veze",
+        "${ MaxVPN } VPN veza"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } član",
+        "${ memberCount } članova",
+        "${ memberCount } člana"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuta",
+        "${ minutes } minute"
+      ],
+      "${ n } address": [
+        "${ n } adresa",
+        "${ n } adrese",
+        "${ n } adresa"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendar po korisniku",
+        "${ n } kalendara po korisniku",
+        "${ n } kalendara po korisniku"
+      ],
+      "${ n } device": [
+        "${ n } uređaj",
+        "${ n } uređaja",
+        "${ n } uređaja"
+      ],
+      "${ n } email address": [
+        "${ n } adresa e-pošte",
+        "${ n } adresa e-pošte/pseudonim",
+        "${ n } adresa e-pošte/pseudonima"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-pošta po korisniku",
+        "${ n } e-pošte po korisniku",
+        "${ n } e-pošte po korisniku"
+      ],
+      "${ n } filter": [
+        "${ n } filtar",
+        "${ n } filtara",
+        "${ n } filtara"
+      ],
+      "${ n } folder": [
+        "${ n } mapa",
+        "${ n } mape",
+        "${ n } mapa"
+      ],
+      "${ n } folder and label": [
+        "${ n } mapa i oznaka",
+        "${ n } mape i oznake",
+        "${ n } mapa i oznaka"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } VPN veza visoke brzine",
+        "${ n } VPN veze visoke brzine",
+        "${ n } VPN veza visoke brzine"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } VPN veza visoke brzine po korisniku",
+        "${ n } VPN veze visoke brzine po korisniku",
+        "${ n } VPN veza visoke brzine po korisniku"
+      ],
+      "${ n } label": [
+        "${ n } oznaka",
+        "${ n } oznake",
+        "${ n } oznaka"
+      ],
+      "${ n } message per day": [
+        "${ n } poruka po danu",
+        "${ n } poruke po danu",
+        "${ n } poruka po danu"
+      ],
+      "${ n } month": [
+        "${ n } mjesec",
+        "${ n } mjeseca",
+        "${ n } mjeseci"
+      ],
+      "${ n } vault": [
+        "${ n } trezor",
+        "${ n } trezora",
+        "${ n } trezora"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN veza",
+        "${ n } VPN veze",
+        "${ n } VPN veza"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN veza po korisniku",
+        "${ n } VPN veze po korisniku",
+        "${ n } VPN veza po korisniku"
+      ],
+      "${ n } year": [
+        "${ n } godina",
+        "${ n } godine",
+        "${ n } godina"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dan",
+        "${ nbDay } dana",
+        "${ nbDay } dana"
+      ],
+      "${ number } city": [
+        "${ number } grad",
+        "${ number } grada",
+        "${ number } gradova"
+      ],
+      "${ number } server": [
+        "${ number } poslužitelj",
+        "${ number } poslužitelja",
+        "${ number } poslužitelja"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } korisnik",
+        "Do ${ numberOfUsers } korisnika",
+        "Do ${ numberOfUsers } korisnika"
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } kalendar po korisniku",
+        "${ planNumberOfCalendars } kalendara po korisniku",
+        "${ planNumberOfCalendars } kalendara po korisniku"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } prilagođena domena e-pošte",
+        "${ planNumberOfDomains } prilagođenih domena e-pošte",
+        "${ planNumberOfDomains } prilagođenih domena e-pošte"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adresa e-pošte",
+        "${ planNumberOfEmails } adrese e-pošte",
+        "${ planNumberOfEmails } adrese e-pošte"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-pošta po korisniku",
+        "${ planNumberOfEmails } e-pošte po korisniku",
+        "${ planNumberOfEmails } e-pošte po korisniku"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } korisnik",
+        "${ planNumberOfUsers } korisnika",
+        "${ planNumberOfUsers } korisnika"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mapa pronađena",
+        "${ providerFoldersNumLocalized } mape pronađene",
+        "${ providerFoldersNumLocalized } mapa pronađeno"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } oznaka pronađena u Gmailu",
+        "${ providerFoldersNumLocalized } oznake pronađene u Gmailu",
+        "${ providerFoldersNumLocalized } oznaka pronađeno u Gmailu"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundi",
+        "${ seconds } sekunde"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mapa odabrana",
+        "${ selectedFoldersCount } mape odabrane",
+        "${ selectedFoldersCount } mapa odabrano"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } oznaka odabrana",
+        "${ selectedFoldersCount } oznake odabrane",
+        "${ selectedFoldersCount } oznaka odabrano"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mapa odabrana",
+        "${ selectedFoldersCountLocalized } mape odabrane",
+        "${ selectedFoldersCountLocalized } mapa odabrano"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } oznaka odabrana",
+        "${ selectedFoldersCountLocalized } oznake odabrane",
+        "${ selectedFoldersCountLocalized } oznaka odabrano"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dan",
+        "${ timeRemaining.inDays } dana",
+        "${ timeRemaining.inDays } dana"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } sat",
+        "${ timeRemaining.inHours } sata",
+        "${ timeRemaining.inHours } sati"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } kontakt",
+        "${ totalContacts } kontakta",
+        "${ totalContacts } kontakata"
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
+        "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
+        "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } adresa",
+        "${ UsedAddresses } adrese",
+        "${ UsedAddresses } adresa"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošta",
+        "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
+        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } kalendar",
+        "${ UsedCalendars } kalendara",
+        "${ UsedCalendars } kalendara"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena",
+        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena",
+        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena"
+      ],
+      "${ users } user": [
+        "${ users } korisnik",
+        "${ users } korisnika",
+        "${ users } korisnika"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } članova)"
+      ],
+      "byte": [
+        "bajt",
+        "bajta",
+        "bajtovi"
+      ],
+      "Byte": [
+        "Bajt",
+        "Bajta",
+        "Bajtovi"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Veza za ${ plusVpnConnections } uređaj",
+        "Veza za do ${ plusVpnConnections } uređaja",
+        "Veza za do ${ plusVpnConnections } uređaja"
+      ],
+      "day": [
+        "dan",
+        "dana",
+        "dana"
+      ],
+      "domain used": [
+        "iskorištena domena",
+        "iskorištene domene",
+        "iskorištenih domena"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Pronađen je ${ itemsCount } prijedlog. Za navigaciju koristite tipkovnicu.",
+        "Pronađena su ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu.",
+        "Pronađeno je ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu."
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajta",
+        "Gigabajta"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajta",
+        "Kilobajta"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajta",
+        "Megabajta"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
+        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Poslužitelji u ${ numberOfCountries }+ državi",
+        "Poslužitelji u ${ numberOfCountries }+ država",
+        "Poslužitelji u ${ numberOfCountries }+ država"
+      ],
+      "Step ${ step }": [
+        "Korak ${ step }",
+        "Korak ${ step }",
+        "Korak ${ step }"
+      ],
+      "Successfully created ${ n } user account": [
+        "Uspješno stvoren ${ n } korisnički račun",
+        "Uspješno stvorena ${ n } korisnička računa",
+        "Uspješno stvoreno ${ n } korisničkih računa"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajta",
+        "Terabajta"
+      ],
+      "Total for ${ n } month": [
+        "Ukupno za ${ n } mjesec",
+        "Ukupno za ${ n } mjeseci",
+        "Ukupno za ${ n } mjeseca"
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sat",
+        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sata",
+        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sati"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sat",
+        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sata",
+        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sati"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji.",
+        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji.",
+        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji."
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
@@ -750,18 +1117,8 @@
       ]
     },
     "Addon": {
-      "${ ips } server": [
-        "${ ips } poslužitelj",
-        "${ ips } poslužitelj",
-        "${ ips } poslužitelj"
-      ],
       "${ price } per user": [
         "${ price } po korisniku"
-      ],
-      "${ users } user": [
-        "${ users } korisnik",
-        "${ users } korisnika",
-        "${ users } korisnika"
       ]
     },
     "Address action": {
@@ -887,11 +1244,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
       "/ month": [
         "/ mjesec"
       ],
@@ -1176,18 +1528,8 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
-        "${ users } korisnik",
-        "${ users } korisnika",
-        "${ users } korisnika"
-      ],
       "Total": [
         "Ukupno"
-      ],
-      "Total for ${ n } month": [
-        "Ukupno za ${ n } mjesec",
-        "Ukupno za ${ n } mjeseci",
-        "Ukupno za ${ n } mjeseca"
       ]
     },
     "Checkout summary": {
@@ -3061,21 +3403,11 @@
       ]
     },
     "Feature": {
-      "${ MaxVPN } VPN connection": [
-        "${ MaxVPN } VPN veza",
-        "${ MaxVPN } VPN veze",
-        "${ MaxVPN } VPN veza"
-      ],
       "Access to all countries": [
         "Pristup svim državama"
       ],
       "Add": [
         "Dodaj"
-      ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Veza za ${ plusVpnConnections } uređaj",
-        "Veza za do ${ plusVpnConnections } uređaja",
-        "Veza za do ${ plusVpnConnections } uređaja"
       ],
       "Continue": [
         "Nastavite"
@@ -3177,11 +3509,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bajt",
-        "bajta",
-        "bajtovi"
-      ],
       "GB": [
         "GB"
       ],
@@ -3193,33 +3520,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Bajt",
-        "Bajta",
-        "Bajtovi"
-      ],
-      "Gigabyte": [
-        "Gigabajt",
-        "Gigabajta",
-        "Gigabajta"
-      ],
-      "Kilobyte": [
-        "Kilobajt",
-        "Kilobajta",
-        "Kilobajta"
-      ],
-      "Megabyte": [
-        "Megabajt",
-        "Megabajta",
-        "Megabajta"
-      ],
-      "Terabyte": [
-        "Terabajt",
-        "Terabajta",
-        "Terabajta"
       ]
     },
     "Filter notification": {
@@ -3308,13 +3608,6 @@
     "Group address title": {
       "Group address": [
         "Adresa grupe"
-      ]
-    },
-    "Group member count": {
-      "${ memberCount } member": [
-        "${ memberCount } član",
-        "${ memberCount } članova",
-        "${ memberCount } člana"
       ]
     },
     "Header": {
@@ -3425,11 +3718,6 @@
       ]
     },
     "Hint": {
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Pronađen je ${ itemsCount } prijedlog. Za navigaciju koristite tipkovnicu.",
-        "Pronađena su ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu.",
-        "Pronađeno je ${ itemsCount } prijedloga. Za navigaciju koristite tipkovnicu."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Upotrijebite tipke gore i dolje za pristup i pregledavanje prijedloga nakon unosa. Pritisnite Enter da biste potvrdili svoj izbor ili Escape da biste zatvorili okvir za prijedloge."
       ]
@@ -3498,11 +3786,6 @@
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
-        "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
-        "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Došlo je do pogreške prilikom šifriranja i dodavanja vašeg kontakta. Nije moguće uvesti nijedan kontakt."
       ],
@@ -3522,13 +3805,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kontakt ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } kontakt",
-        "${ totalContacts } kontakta",
-        "${ totalContacts } kontakata"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3654,41 +3930,6 @@
       "${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
-      "${ n } address": [
-        "${ n } adresa",
-        "${ n } adrese",
-        "${ n } adresa"
-      ],
-      "${ number } city": [
-        "${ number } grad",
-        "${ number } grada",
-        "${ number } gradova"
-      ],
-      "${ number } server": [
-        "${ number } poslužitelj",
-        "${ number } poslužitelja",
-        "${ number } poslužitelja"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } mapa pronađena",
-        "${ providerFoldersNumLocalized } mape pronađene",
-        "${ providerFoldersNumLocalized } mapa pronađeno"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } oznaka pronađena u Gmailu",
-        "${ providerFoldersNumLocalized } oznake pronađene u Gmailu",
-        "${ providerFoldersNumLocalized } oznaka pronađeno u Gmailu"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } mapa odabrana",
-        "${ selectedFoldersCountLocalized } mape odabrane",
-        "${ selectedFoldersCountLocalized } mapa odabrano"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } oznaka odabrana",
-        "${ selectedFoldersCountLocalized } oznake odabrane",
-        "${ selectedFoldersCountLocalized } oznaka odabrano"
-      ],
       "${ vaultLink } created": [
         "${ vaultLink } stvoreno"
       ],
@@ -3697,11 +3938,6 @@
       ],
       "${ vaultLink } updated": [
         "${ vaultLink } ažurirano"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } član)",
-        "(${ memberCount } člana)",
-        "(${ memberCount } članova)"
       ],
       "(default)": [
         "(zadano)"
@@ -3891,11 +4127,6 @@
       ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NEMOJTE zaboraviti ovu lozinku. Ako je zaboravite, nećete se moći upravljati vašom organizacijom."
-      ],
-      "domain used": [
-        "iskorištena domena",
-        "iskorištene domene",
-        "iskorištenih domena"
       ],
       "Don't lose access to your premium ${ appName } features. Enable auto-renew today.": [
         "Nemojte izgubiti pristup svojim premium ${ appName } značajkama. Omogućite automatsku obnovu danas."
@@ -4323,11 +4554,6 @@
       "Starts on ${ startsOnTime }": [
         "Počinje u ${ startsOnTime }"
       ],
-      "Step ${ step }": [
-        "Korak ${ step }",
-        "Korak ${ step }",
-        "Korak ${ step }"
-      ],
       "Storage": [
         "Prostor za pohranu"
       ],
@@ -4677,18 +4903,6 @@
         "Da biste izbjegli bilo kakve prekide u usluzi zbog neplaćenih faktura, molimo vas da u bilo kojem trenutku imate barem 1 valjani način plaćanja."
       ]
     },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mapa odabrana",
-        "${ selectedFoldersCount } mape odabrane",
-        "${ selectedFoldersCount } mapa odabrano"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } oznaka odabrana",
-        "${ selectedFoldersCount } oznake odabrane",
-        "${ selectedFoldersCount } oznaka odabrano"
-      ]
-    },
     "Info; access rights for shared calendar": {
       "View only": [
         "Samo za prikaz"
@@ -4770,31 +4984,11 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } korisničko ime"
       ],
-      "${ group.UserCount } user": [
-        "${ group.UserCount } korisnik",
-        "${ group.UserCount } korisnika",
-        "${ group.UserCount } korisnika"
-      ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } od ${ humanMaxSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresa"
-      ],
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } dan",
-        "${ nbDay } dana",
-        "${ nbDay } dana"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošta",
-        "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
-        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
       ],
       "Account holder": [
         "Vlasnik računa"
@@ -5723,61 +5917,6 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar per user": [
-        "${ n } kalendar po korisniku",
-        "${ n } kalendara po korisniku",
-        "${ n } kalendara po korisniku"
-      ],
-      "${ n } email address": [
-        "${ n } adresa e-pošte",
-        "${ n } adresa e-pošte/pseudonim",
-        "${ n } adresa e-pošte/pseudonima"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-pošta po korisniku",
-        "${ n } e-pošte po korisniku",
-        "${ n } e-pošte po korisniku"
-      ],
-      "${ n } filter": [
-        "${ n } filtar",
-        "${ n } filtara",
-        "${ n } filtara"
-      ],
-      "${ n } folder": [
-        "${ n } mapa",
-        "${ n } mape",
-        "${ n } mapa"
-      ],
-      "${ n } folder and label": [
-        "${ n } mapa i oznaka",
-        "${ n } mape i oznake",
-        "${ n } mapa i oznaka"
-      ],
-      "${ n } label": [
-        "${ n } oznaka",
-        "${ n } oznake",
-        "${ n } oznaka"
-      ],
-      "${ n } message per day": [
-        "${ n } poruka po danu",
-        "${ n } poruke po danu",
-        "${ n } poruka po danu"
-      ],
-      "${ n } vault": [
-        "${ n } trezor",
-        "${ n } trezora",
-        "${ n } trezora"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN veza",
-        "${ n } VPN veze",
-        "${ n } VPN veza"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } korisnik",
-        "Do ${ numberOfUsers } korisnika",
-        "Do ${ numberOfUsers } korisnika"
-      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
@@ -5945,13 +6084,6 @@
       ],
       "Up to 10 Gbps": [
         "Do 10 Gbps"
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ users } user": [
-        "${ users } korisnik",
-        "${ users } korisnika",
-        "${ users } korisnika"
       ]
     },
     "new_plans: heading": {
@@ -6370,11 +6502,6 @@
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
         "${ upgradeLink } kako biste dobili više korisničkih računa, ili uklonili VPN pristup nekim korisnicima."
       ],
-      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
-        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji.",
-        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji.",
-        "Vaš plan uključuje najviše još ${ availableNumberOfMembers } korisnika u organizaciji."
-      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Vaš plan uključuje navjiše još ${ humanReadableAvailableSpace } pohrane."
       ]
@@ -6765,13 +6892,6 @@
         "kontaktirajte"
       ]
     },
-    "Plans": {
-      "${ cycle } month": [
-        "${ cycle } mjesec",
-        "${ cycle } mjeseca",
-        "${ cycle } mjeseci"
-      ]
-    },
     "plus_block": {
       "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
         "Više ${ BRAND_NAME } usluga.${ br }Jedna jednostavna pretplata."
@@ -6953,11 +7073,6 @@
       "Applies to": [
         "Primjenjuje se na"
       ],
-      "day": [
-        "dan",
-        "dana",
-        "dana"
-      ],
       "Keep items forever": [
         "Zadrži stavke zauvijek"
       ],
@@ -7136,16 +7251,6 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } dan",
-        "${ timeRemaining.inDays } dana",
-        "${ timeRemaining.inDays } dana"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } sat",
-        "${ timeRemaining.inHours } sata",
-        "${ timeRemaining.inHours } sati"
-      ],
       "Didn’t make this request?": [
         "Niste napravili ovaj zahtjev?"
       ],
@@ -7206,11 +7311,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Ako niste zatražili resetiranje svoje lozinke, poništite zahtjev odmah."
-      ],
-      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
-        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sat",
-        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sata",
-        "Možete promijeniti lozinku za ${ gracePeriodHoursRemaining } sati"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -7255,11 +7355,6 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Zahtjev za ponovno postavljanje lozinke?"
-      ],
-      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
-        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sat",
-        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sata",
-        "Moći ćete resetirati svoju lozinku za ${ gracePeriodHoursRemaining } sati"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -7268,13 +7363,6 @@
       ],
       "Stay signed in": [
         "Ostanite prijavljeni"
-      ]
-    },
-    "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } sat",
-        "${ gracePeriodHoursRemaining } sata",
-        "${ gracePeriodHoursRemaining } sati"
       ]
     },
     "session_recovery:sign_out:link": {
@@ -7333,28 +7421,6 @@
         "Posebna ponuda"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } dan",
-        "${ days } dana",
-        "${ days } dana"
-      ],
-      "${ hours } hour": [
-        "${ hours } sat",
-        "${ hours } sata",
-        "${ hours } sati"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuta",
-        "${ minutes } minuta",
-        "${ minutes } minute"
-      ],
-      "${ seconds } second": [
-        "${ seconds } sekunda",
-        "${ seconds } sekundi",
-        "${ seconds } sekunde"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 korisnik"
@@ -7387,11 +7453,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
       "/ month": [
         "/ mjesec"
       ],
@@ -7622,51 +7683,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ n } calendar per user": [
-        "${ n } kalendar po korisniku",
-        "${ n } kalendara po korisniku",
-        "${ n } kalendara po korisniku"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } VPN veza visoke brzine",
-        "${ n } VPN veze visoke brzine",
-        "${ n } VPN veza visoke brzine"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } VPN veza visoke brzine po korisniku",
-        "${ n } VPN veze visoke brzine po korisniku",
-        "${ n } VPN veza visoke brzine po korisniku"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN veza",
-        "${ n } VPN veze",
-        "${ n } VPN veza"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN veza po korisniku",
-        "${ n } VPN veze po korisniku",
-        "${ n } VPN veza po korisniku"
-      ],
-      "${ UsedAddresses } address": [
-        "${ UsedAddresses } adresa",
-        "${ UsedAddresses } adrese",
-        "${ UsedAddresses } adresa"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošta",
-        "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
-        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
-      ],
-      "${ UsedCalendars } calendar": [
-        "${ UsedCalendars } kalendar",
-        "${ UsedCalendars } kalendara",
-        "${ UsedCalendars } kalendara"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena",
-        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena",
-        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena"
-      ],
       "1 email address": [
         "1 adresa e-pošte"
       ],
@@ -7711,31 +7727,6 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage for your emails, attachments, events, passwords, and files. You are also eligible for yearly storage bonuses.": [
         "${ planName } nudi ${ planMaxSpace } prostora pohrane za Vaše e-pošte, privitke, događaje, lozinke i datoteke. Također imate pravo na godišnje bonuse za pohranu."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } kalendar po korisniku",
-        "${ planNumberOfCalendars } kalendara po korisniku",
-        "${ planNumberOfCalendars } kalendara po korisniku"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } prilagođena domena e-pošte",
-        "${ planNumberOfDomains } prilagođenih domena e-pošte",
-        "${ planNumberOfDomains } prilagođenih domena e-pošte"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adresa e-pošte",
-        "${ planNumberOfEmails } adrese e-pošte",
-        "${ planNumberOfEmails } adrese e-pošte"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } e-pošta po korisniku",
-        "${ planNumberOfEmails } e-pošte po korisniku",
-        "${ planNumberOfEmails } e-pošte po korisniku"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } korisnik",
-        "${ planNumberOfUsers } korisnika",
-        "${ planNumberOfUsers } korisnika"
       ],
       "2 users": [
         "2 korisnika"
@@ -8092,28 +8083,6 @@
     "Themes": {
       "Themes": [
         "Teme"
-      ]
-    },
-    "Time unit": {
-      "${ ceilDays } day": [
-        "${ ceilDays } dan",
-        "${ ceilDays } dana",
-        "${ ceilDays } dana"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } sat",
-        "${ ceilHours } sata",
-        "${ ceilHours } sati"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minuta",
-        "${ ceilMinutes } minuta",
-        "${ ceilMinutes } minute"
-      ],
-      "${ seconds } second": [
-        "${ seconds } sekunda",
-        "${ seconds } sekundi",
-        "${ seconds } sekunde"
       ]
     },
     "Title": {
@@ -8654,11 +8623,6 @@
       "Subscription": [
         "Pretplata"
       ],
-      "Successfully created ${ n } user account": [
-        "Uspješno stvoren ${ n } korisnički račun",
-        "Uspješno stvorena ${ n } korisnička računa",
-        "Uspješno stvoreno ${ n } korisničkih računa"
-      ],
       "Summary": [
         "Sažetak"
       ],
@@ -9063,13 +9027,6 @@
         "Pomoćnik za pisanje"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znak",
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova",
-        "Lozinka mora sadržavati najmanje ${ MIN_PASSWORD_LENGTH } znakova"
-      ]
-    },
     "Video control": {
       "Replay video": [
         "Ponovi videozapis"
@@ -9097,23 +9054,6 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i drugi."
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } uređaj",
-        "${ n } uređaja",
-        "${ n } uređaja"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN veza",
-        "${ n } VPN veze",
-        "${ n } VPN veza"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Poslužitelji u ${ numberOfCountries }+ državi",
-        "Poslužitelji u ${ numberOfCountries }+ država",
-        "Poslužitelji u ${ numberOfCountries }+ država"
       ]
     },
     "vpn_2step: billing": {
@@ -9150,16 +9090,6 @@
       ]
     },
     "vpn_2step: info": {
-      "${ n } month": [
-        "${ n } mjesec",
-        "${ n } mjeseca",
-        "${ n } mjeseci"
-      ],
-      "${ n } year": [
-        "${ n } godina",
-        "${ n } godine",
-        "${ n } godina"
-      ],
       "Includes ${ plan } (free for the first year!)": [
         "Uključuje ${ plan } (besplatno prvu godinu!)"
       ],
