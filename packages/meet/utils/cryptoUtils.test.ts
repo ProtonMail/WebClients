@@ -1,3 +1,4 @@
+import type { SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 
@@ -6,6 +7,7 @@ import {
     decryptMetadataWithKey,
     deriveEncryptionKeyFromSessionKey,
     encryptMetadataWithKey,
+    getCombinedPassword,
     prepareMeetingCryptoData,
 } from './cryptoUtils';
 
@@ -46,7 +48,10 @@ describe('utils', () => {
     it('should encrypt and decrypt data', async () => {
         const mockData = 'this is mock data';
 
-        const sessionKey = crypto.getRandomValues(new Uint8Array(32));
+        const sessionKey: SessionKey = {
+            data: crypto.getRandomValues(new Uint8Array(32)),
+            algorithm: 'aes256',
+        };
 
         const derivedKey = await deriveEncryptionKeyFromSessionKey(sessionKey);
 
@@ -69,8 +74,7 @@ describe('utils', () => {
         });
 
         const decryptedMeetingName = await decryptMeetingName({
-            urlPassword: passwordBase,
-            customPassword: '',
+            password: getCombinedPassword(passwordBase, ''),
             encryptedMeetingName,
             encryptedSessionKey,
             salt,
@@ -93,8 +97,7 @@ describe('utils', () => {
         });
 
         const decryptedMeetingName = await decryptMeetingName({
-            urlPassword: passwordBase,
-            customPassword: mockPassword,
+            password: getCombinedPassword(passwordBase, mockPassword),
             encryptedMeetingName,
             encryptedSessionKey,
             salt,

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { decryptData, deriveKey, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
 import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
@@ -14,6 +14,8 @@ import { BASE_PASSWORD_LENGTH } from '../constants';
 
 export const PASSWORD_SEPARATOR = '_';
 
+const MEET_SESSION_KEY_ALGORITHM = 'aes256';
+
 export const getCombinedPassword = (urlPassword: string, customPassword: string) => {
     if (!customPassword) {
         return urlPassword;
@@ -22,9 +24,13 @@ export const getCombinedPassword = (urlPassword: string, customPassword: string)
     return `${urlPassword}${PASSWORD_SEPARATOR}${customPassword}`;
 };
 
-export const deriveEncryptionKeyFromSessionKey = async (sessionKey: Uint8Array<ArrayBuffer>) => {
+export const deriveEncryptionKeyFromSessionKey = async (sessionKey: SessionKey) => {
+    if (sessionKey.algorithm !== MEET_SESSION_KEY_ALGORITHM) {
+        throw new Error('Unexpected session key algorithm');
+    }
+
     const encryptionKey = await deriveKey(
-        sessionKey,
+        sessionKey.data,
         new Uint8Array(32),
         stringToUtf8Array('aeskey.link.meet.proton'),
         { keyUsage: ['decrypt', 'encrypt'] }
@@ -63,31 +69,25 @@ export const decryptSessionKey = async ({ encryptedSessionKey, password, salt }:
         passwords: [sessionKeyPassphrase],
     });
 
-    const sessionKey = result?.data;
-
-    return sessionKey;
+    return result;
 };
 
 interface DecryptMeetingNameParams {
-    urlPassword?: string;
-    customPassword?: string;
     encryptedSessionKey: string;
     encryptedMeetingName: string;
     salt: string;
-    decryptedPassword?: string;
+    password: string;
 }
 
 export const decryptMeetingName = async ({
-    urlPassword,
-    customPassword,
     encryptedSessionKey,
     encryptedMeetingName,
     salt,
-    decryptedPassword,
+    password,
 }: DecryptMeetingNameParams) => {
     const sessionKey = await decryptSessionKey({
         encryptedSessionKey,
-        password: decryptedPassword ?? getCombinedPassword(urlPassword as string, customPassword as string),
+        password,
         salt,
     });
 
@@ -102,7 +102,7 @@ export const decryptMeetingName = async ({
     return decryptedMeetingName;
 };
 
-export const encryptMeetingName = async (meetingName: string, sessionKey: Uint8Array<ArrayBuffer>) => {
+export const encryptMeetingName = async (meetingName: string, sessionKey: SessionKey) => {
     const meetingNameEncryptionKey = await deriveEncryptionKeyFromSessionKey(sessionKey);
 
     const encryptedMeetingName = await encryptMetadataWithKey(meetingNameEncryptionKey, meetingName);
@@ -113,9 +113,9 @@ export const encryptMeetingName = async (meetingName: string, sessionKey: Uint8A
 export const encryptMeetingPassword = async (password: string, primaryUserKey: PrivateKeyReference) => {
     const result = await CryptoProxy.encryptMessage({
         textData: password,
-        encryptionKeys: [primaryUserKey as PrivateKeyReference],
+        encryptionKeys: [primaryUserKey],
         format: 'armored',
-        signingKeys: [primaryUserKey as PrivateKeyReference],
+        signingKeys: [primaryUserKey],
         signatureContext: {
             value: 'pw.link.meet.proton',
             critical: true,
@@ -137,17 +137,17 @@ export const decryptMeetingPassword = async (
         verificationKeys: keys,
         signatureContext: {
             value: 'pw.link.meet.proton',
-            requiredAfter: new Date(0),
+            required: true,
         },
+        expectSigned: true,
     });
 
     return result.data;
 };
 
-export const encryptSessionKey = async (sessionKey: Uint8Array<ArrayBuffer>, passwordHash: string) => {
+export const encryptSessionKey = async (sessionKey: SessionKey, passwordHash: string) => {
     const result = await CryptoProxy.encryptSessionKey({
-        data: sessionKey,
-        algorithm: 'aes256',
+        ...sessionKey,
         passwords: [passwordHash],
         format: 'binary',
     });
@@ -206,13 +206,18 @@ export const prepareMeetingCryptoData = async ({
 
     const { passwordHash, salt } = await hashPasswordWithSalt(password);
 
-    const sessionKey = await CryptoProxy.generateSessionKeyForAlgorithm('aes256');
+    const sessionKey: SessionKey = {
+        data: await CryptoProxy.generateSessionKeyForAlgorithm(MEET_SESSION_KEY_ALGORITHM),
+        algorithm: MEET_SESSION_KEY_ALGORITHM,
+    };
 
     const encryptedSessionKey = await encryptSessionKey(sessionKey, passwordHash);
 
-    const encryptedPassword = noEncryptedPasswordReturn
-        ? null
-        : await encryptMeetingPassword(password, primaryUserKey as PrivateKeyReference);
+    let encryptedPassword = null;
+
+    if (primaryUserKey && !noEncryptedPasswordReturn) {
+        encryptedPassword = await encryptMeetingPassword(password, primaryUserKey);
+    }
 
     const {
         Auth: { Salt: urlPasswordSalt, Verifier: srpVerifier, ModulusID: srpModulusID },
