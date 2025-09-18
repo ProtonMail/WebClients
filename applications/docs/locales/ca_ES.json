@@ -4,6 +4,724 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } adreça de correu electrònic",
+        "${ addressCount } adreces de correu electrònic"
+      ],
+      "${ admins } admin": [
+        "${ admins } administrador",
+        "${ admins } administradors"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nou calendari",
+        "${ calendarsToBeCreatedCount } nous calendaris"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } calendari combinat",
+        "${ calendarsToBeMergedCount } calendaris combinats"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } dia",
+        "${ ceilDays } dies"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } hora",
+        "${ ceilHours } hores"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } minut",
+        "${ ceilMinutes } minuts"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contacte té múltiples adreces de correu.",
+        "${ contactCount } contactes tenen múltiples adreces de correu."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Membre",
+        "${ contactEmailsLength } Membres"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } contacte trobat",
+        "${ contactsCount } contactes trobats"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "S'ha exportat ${ contactsExported.length } contacte de ${ countContacts }.",
+        "S'han exportat ${ contactsExported.length } contactes de ${ countContacts }."
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacte",
+        "${ contactsLength } contactes"
+      ],
+      "${ count } item failed to be decrypted": [
+        "No s'ha pogut desxifrar ${ count } element.",
+        "No s'han pogut desxifrar ${ count } elements."
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacte sembla idèntic.",
+        "${ countMergeableContacts } contactes semblen idèntics."
+      ],
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } domini personalitzat addicional",
+        "${ domains } dominis personalitzats addicionals"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } adreça de correu electrònic",
+        "${ emailsCount } adreces de correu electrònic"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } hores"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora més",
+        "${ gracePeriodHoursRemaining } hores més"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grup trobat",
+        "${ groupCounts } grups trobats"
+      ],
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 hores",
+        "${ hoursInt },5 hores"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidors"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactes eliminats satisfactòriament."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } de ${ totalBeMerged } contacte combinat satisfactòriament.",
+        "${ model.submitted.length } de ${ totalBeMerged } contactes combinats satisfactòriament."
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } adreça de correu electrònic de ${ BRAND_NAME }",
+        "${ n } adreces de correu electrònic de ${ BRAND_NAME }"
+      ],
+      "${ n } account per wallet": [
+        "${ n } compte per cartera",
+        "${ n } comptes per cartera"
+      ],
+      "${ n } calendar": [
+        "${ n } calendari",
+        "${ n } calendaris"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendari per usuari",
+        "${ n } calendaris per usuari"
+      ],
+      "${ n } custom email domain": [
+        "${ n } domini de correu electrònic personalitzat",
+        "${ n } dominis de correu electrònic personalitzats"
+      ],
+      "${ n } device": [
+        "${ n } dispositiu",
+        "${ n } dispositius"
+      ],
+      "${ n } email address": [
+        "${ n } adreça de correu electrònic",
+        "${ n } adreces de correu electrònic / àlies"
+      ],
+      "${ n } email address per user": [
+        "${ n } adreça de correu electrònic per usuari",
+        "${ n } adreces de correu electrònic per usuari"
+      ],
+      "${ n } filter": [
+        "${ n } filtre",
+        "${ n } filtres"
+      ],
+      "${ n } folder": [
+        "${ n } carpeta",
+        "${ n } carpetes"
+      ],
+      "${ n } folder and label": [
+        "${ n } carpeta i etiqueta",
+        "${ n } carpetes i etiquetes"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } connexió VPN gratuïta per usuari",
+        "${ n } connexions VPN gratuïtes per usuari"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } àlies hide-my-email",
+        "${ n } àlies hide-my-email"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } connexió VPN d'alta velocitat",
+        "${ n } connexions VPN d'alta velocitat"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } connexió VPN d'alta velocitat per usuari",
+        "${ n } connexions VPN d'alta velocitat per usuari"
+      ],
+      "${ n } label": [
+        "${ n } etiqueta",
+        "${ n } etiquetes"
+      ],
+      "${ n } message per day": [
+        "${ n } missatge per dia",
+        "${ n } missatges per dia"
+      ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
+      "${ n } month FREE": [
+        "${ n } mes GRATIS",
+        "${ n } mesos GRATIS"
+      ],
+      "${ n } server": [
+        "${ n } servidor",
+        "${ n }+ servidors"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } caixa forta de ${ PASS_SHORT_APP_NAME } compartida per usuari",
+        "${ n } caixes fortes de ${ PASS_SHORT_APP_NAME } compartides per usuari"
+      ],
+      "${ n } user account": [
+        "${ n } compte d'usuari",
+        "${ n } comptes d'usuari"
+      ],
+      "${ n } vault": [
+        "${ n } caixa forta",
+        "${ n } caixes fortes"
+      ],
+      "${ n } VPN connection": [
+        "${ n } connexió VPN",
+        "${ n } connexions VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } connexió VPN per usuari",
+        "${ n } connexions VPN per usuari"
+      ],
+      "${ n } wallet": [
+        "${ n } cartera",
+        "${ n } carteres"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } país",
+        "${ numberOfCountries } països"
+      ],
+      "${ numberOfItems } item deleted": [
+        "S'ha eliminat ${ numberOfItems } element",
+        "S'han eliminat ${ numberOfItems } elements"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "S'ha eliminat ${ numberOfItems } element permanentment de la paperera",
+        "S'han eliminat ${ numberOfItems } elements permanentment de la paperera"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "No s'ha pogut eliminar ${ numberOfItems } element.",
+        "No s'han pogut eliminar ${ numberOfItems } elements."
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "No s'ha pogut eliminar ${ numberOfItems } element permanentment de la paperera",
+        "No s'han pogut eliminar ${ numberOfItems } elements permanentment de la paperera"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "No s'ha pogut moure ${ numberOfItems } element.",
+        "No s'han pogut moure ${ numberOfItems } elements."
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "No s'ha pogut moure ${ numberOfItems } element a la paperera.",
+        "No s'han pogut moure ${ numberOfItems } elements a la paperera."
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "No s'ha pogut restaurar ${ numberOfItems } element de la paperera",
+        "No s'han pogut restaurar ${ numberOfItems } elements de la paperera"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "S'ha mogut ${ numberOfItems } element a la paperera",
+        "S'han mogut ${ numberOfItems } elements a la paperera"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "S'ha restaurat ${ numberOfItems } element de la paperera",
+        "S'han restaurat ${ numberOfItems } elements de la paperera"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "S'ha mogut ${ numberOfItems } element",
+        "S'han mogut ${ numberOfItems } elements"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } en ${ numberOfCountries } país",
+        "${ numberOfServers } en més de ${ numberOfCountries } països"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } a ${ numberOfCountries } país",
+        "${ numberOfServers } a ${ numberOfCountries } països"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } usuari",
+        "Fins a ${ numberOfUsers } usuaris"
+      ],
+      "${ options }-day file version history": [
+        "Historial de versions de fitxers de ${ options } dies",
+        "Historial de versions de fitxers de ${ options } dies"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
+        "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } caduca en ${ daysLeft } dia.",
+        "${ planName } caduca en ${ daysLeft } dies."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
+        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } adreça de correu electrònic",
+        "${ planNumberOfEmails } adreces de correu electrònic"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } carpeta trobada",
+        "${ providerFoldersNumLocalized } carpetes trobades"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
+        "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } llicència ${ LUMO_APP_NAME }",
+        "${ seats } llicències ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } llicència de l'assistent d'escriptura",
+        "${ seats } llicències de l'assistent d'escriptura"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segon",
+        "${ seconds } segons"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength } contacte seleccionat de ${ contactsLength }",
+        "${ selectedContactsLength } contactes seleccionats de ${ contactsLength }"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } seleccionat",
+        "${ selectedCount } seleccionats"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } carpeta seleccionada",
+        "${ selectedFoldersCount } carpetes seleccionades"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetes seleccionades"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } carpeta seleccionada",
+        "${ selectedFoldersCountLocalized } carpetes seleccionades"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
+        "${ selectedFoldersCountLocalized } etiquetes seleccionades"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dies"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } hores"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } contacte",
+        "${ totalContacts } contactes"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniment no es pot importar. Cliqueu per obtenir més informació.",
+        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniments no es poden importar. Cliqueu per obtenir més informació."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contacte xifrat i afegit a la vostra llista de contactes",
+        "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } esdeveniment xifrat i afegit al teu calendari",
+        "${ totalImported }/${ totalToImport } esdeveniments xifrats i afegits al teu calendari"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } contacte actualitzat amb èxit.",
+        "${ updated } contactes actualitzats amb èxit."
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } connexió per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)",
+        "+${ organization.BonusVPN } connexions per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)"
+      ],
+      "Add to ${ groupCount } group": [
+        "Afegir a ${ groupCount } grup",
+        "Afegir a ${ groupCount } grups"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Tot (${ totalFoldersCount } carpeta)",
+        "Tot (${ totalFoldersCount } carpetes)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Tot (${ totalFoldersCount } etiqueta)",
+        "Tot (${ totalFoldersCount } etiquetes)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }",
+        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }",
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
+        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
+        "Estàs segur de que vols eliminar ${ count } contactes definitivament?"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
+        "Es permet un màxim de ${ maxContacts } contactes per grup de contactes."
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Selecció automàtica d'entre ${ numberOfCountries } país",
+        "Selecció automàtica d'entre ${ numberOfCountries } països"
+      ],
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Contact deleted": [
+        "Contacte esborrat",
+        "Contactes esborrats"
+      ],
+      "Contact group deleted": [
+        "S'ha eliminat el grup",
+        "S'han eliminat els grups"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Crea ${ calendarsToBeCreatedCount } calendari",
+        "Crea ${ calendarsToBeCreatedCount } calendaris"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Crea un núvol segur per a ${ value } membre",
+        "Crea un núvol segur per a ${ value } membres"
+      ],
+      "Create up to ${ n } calendar": [
+        "Crea fins a ${ n } calendari",
+        "Crea fins a ${ n } calendaris"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Creeu fins a ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
+        "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
+      ],
+      "Delete ${ count } contact": [
+        "Suprimeix ${ count } contacte",
+        "Suprimeix ${ count } contactes"
+      ],
+      "Delete ${ count } contact group": [
+        "Eliminar ${ count } grup de contactes",
+        "Eliminar ${ count } grups de contactes"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Eliminar ${ selectedCount } contacte",
+        "Eliminar ${ selectedCount } contactes"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Eliminar ${ selectedCount } grup de contactes",
+        "Eliminar ${ selectedCount } grups de contactes"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
+      ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "El fitxer o carpeta \"${ filename }\" i ${ count } altre ja s'estan carregant",
+        "El fitxer o carpeta \"${ filename }\" i ${ count } altres ja s'estan carregant"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "S'ha trobat ${ itemsCount } suggeriment. Utilitzeu el teclat per navegar.",
+        "S'han trobat ${ itemsCount } suggeriments. Utilitzeu el teclat per navegar."
+      ],
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "VPN d'alta velocitat en ${ n } dispositiu",
+        "VPN d'alta velocitat en ${ n } dispositius"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
+        "Importa ${ calendarCount } calendaris de ${ totalCalendarsCount }"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importa tots els missatges d'${ itemsToImportCount } carpeta i etiqueta'ls com a",
+        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importa tots els missatges d'${ itemsToImportCount } etiqueta i etiqueta'ls com a",
+        "Importa tots els missatges de ${ itemsToImportCount } etiquetes i etiqueta'ls com a"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } carpeta de ${ itemsToImportCount } i etiqueta'ls com a",
+        "Importa tots els missatges de ${ selectedItemsToImportCount } carpetes de ${ itemsToImportCount } i etiqueta'ls com a"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } etiqueta de ${ itemsToImportCount } i etiqueta'ls com a",
+        "Importa tots els missatges de ${ selectedItemsToImportCount } etiquetes de ${ itemsToImportCount } i etiqueta'ls com a"
+      ],
+      "Import as simple event?": [
+        "Voleu importar com a esdeveniment sense detalls?",
+        "Voleu importar com a esdeveniments sense detalls?"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcter",
+        "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcters"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
+        "Combineu almenys ${ calendarsToFixCount } calendaris amb calendaris de ${ BRAND_NAME } existents"
+      ],
+      "Move ${ n } file": [
+        "Mou ${ n } fitxer",
+        "Mou ${ n } fitxers"
+      ],
+      "Move ${ n } folder": [
+        "Mou ${ n } carpeta",
+        "Mou ${ n } carpetes"
+      ],
+      "Move ${ n } item": [
+        "Mou ${ n } element",
+        "Mou ${ n } elements"
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcter",
+        "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcters"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
+        "Alguns contactes no tenen adreça de correu electrònic: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Un dels grups no té contactes: ${ noContactGroupList }",
+        "Alguns grups no tenen contactes: ${ noContactGroupList } "
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hora.",
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Arregleu el conflicte ressaltat per continuar.",
+        "Arregleu els conflictes ressaltats per continuar."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grup.",
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grups."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "S'ha esborrat el convidat duplicat: ${ joinedInvitee }",
+        "S'han esborrat els convidats duplicats: ${ joinedInvitee }"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Protegiu els correus electrònics i l'agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més.",
+        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més.",
+        "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més."
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servidors en més d'${ numberOfCountries } país",
+        "Servidors en més de ${ numberOfCountries } països"
+      ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "No hem pogut eliminar la carpeta perquè no està buida.",
+        "No hem pogut eliminar les carpetes perquè no estan buides."
+      ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "La subscripció es renova automàticament cada ${ cycle } mes.",
+        "La subscripció es renova automàticament cada ${ cycle } mesos."
+      ],
+      "Support for ${ n } custom email domain": [
+        "Suport per a ${ n } domini de correu electrònic personalitzat",
+        "Suport per a ${ n } dominis de correu electrònic personalitzats"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "El cupó és vàlid per a ${ couponRedemptions } renovació.",
+        "El cupó és vàlid per a ${ couponRedemptions } renovacions."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer ${ subscriptionLength } mes.",
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment.",
+        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mes. Podeu cancel·lar-ho en qualsevol moment.",
+        "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "This file contains an event invitation:": [
+        "Aquest fitxer conté una invitació a un esdeveniment:",
+        "Aquest fitxer conté invitacions a un esdeveniment:"
+      ],
+      "This file contains an invitation response:": [
+        "Aquest fitxer conté una resposta a la invitació:",
+        "Aquest fitxer conté respostes a la invitació:"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Aquest permís caduca en ${ timeRemaining.inDays } dia.",
+        "Aquest permís caduca en ${ timeRemaining.inDays } dies."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Aquest permís caduca en ${ timeRemaining.inHours } hora.",
+        "Aquest permís caduca en ${ timeRemaining.inHours } hores."
+      ],
+      "Total for ${ n } month": [
+        "Total per ${ n } mes",
+        "Total per ${ n } mesos"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
+      ],
+      "Up to ${ n } user": [
+        "Fins a ${ n } usuari",
+        "Fins a ${ n } usuaris"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Fins a ${ n } usuari (${ adminsText }, ${ usersText })",
+        "Fins a ${ n } usuaris (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Ús en fins a ${ n } dispositiu al mateix temps",
+        "Ús en fins a ${ n } dispositius al mateix temps"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Compartició de la caixa forta (fins a ${ n } persona)",
+        "Compartició de la caixa forta (fins a ${ n } persones)"
+      ],
+      "View ${ pendingCount } invitation": [
+        "Visualitza ${ pendingCount } invitació",
+        "Visualitza totes ${ pendingCount } invitacions"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "Connexió VPN per a ${ n } dispositiu per usuari",
+        "Connexió VPN per a ${ n } dispositius per usuari"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
+        "No podeu enviar un correu a més de ${ maxContacts } destinataris."
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
+        "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Teniu ${ timeRemaining.inDays } dia per a restablir la contrasenya.",
+        "Teniu ${ timeRemaining.inDays } dies per a restablir la contrasenya."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Teniu ${ timeRemaining.inHours } hora per a restablir la contrasenya.",
+        " Teniu ${ timeRemaining.inHours } hores per a restablir la contrasenya."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Teniu ${ timeRemaining.inMinutes } minut per a restablir la contrasenya.",
+        " Teniu ${ timeRemaining.inMinutes } minuts per a restablir la contrasenya."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Teniu ${ timeRemaining.inSeconds } segon per a restablir la contrasenya.",
+        "Teniu ${ timeRemaining.inSeconds } segons per a restablir la contrasenya."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Encara disposeu d'**${ daysRemaining }** dia al vostre pla **${ currentPlanName }**.",
+        "Encara disposeu de **${ daysRemaining }** dies al vostre pla **${ currentPlanName }**."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
+        "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "El vostre fitxer ${ formattedFilename } conté més d'${ MAX_IMPORT_EVENTS } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniments."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mes.",
+        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mesos."
+      ]
+    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "El reenviament començarà aviat. Els correus electrònics nous apareixeran a la vostra safata d'entrada."
@@ -95,10 +813,6 @@
       ],
       "Ask me next time": [
         "Pregunteu-m'ho la propera vegada"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
-        "Es permet un màxim de ${ maxContacts } contactes per grup de contactes."
       ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
@@ -285,14 +999,6 @@
       ],
       "Delete": [
         "Elimina"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Eliminar ${ selectedCount } contacte",
-        "Eliminar ${ selectedCount } contactes"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Eliminar ${ selectedCount } grup de contactes",
-        "Eliminar ${ selectedCount } grups de contactes"
       ],
       "Delete contact": [
         "Elimina el contacte"
@@ -885,10 +1591,6 @@
       "View": [
         "Mostra"
       ],
-      "View ${ pendingCount } invitation": [
-        "Visualitza ${ pendingCount } invitació",
-        "Visualitza totes ${ pendingCount } invitacions"
-      ],
       "View all reports": [
         "Mostra tots els informes"
       ],
@@ -909,10 +1611,6 @@
       ],
       "words out of": [
         "paraules sobre"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
-        "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte."
       ]
     },
     "Actions message": {
@@ -933,14 +1631,6 @@
       ]
     },
     "Addon": {
-      "${ domains } additional custom domain": [
-        "${ domains } domini personalitzat addicional",
-        "${ domains } dominis personalitzats addicionals"
-      ],
-      "${ ips } server": [
-        "${ ips } servidor",
-        "${ ips } servidors"
-      ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
       ],
@@ -952,18 +1642,6 @@
       ],
       "${ price } per user": [
         "${ price } per usuari"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } llicència ${ LUMO_APP_NAME }",
-        "${ seats } llicències ${ LUMO_APP_NAME }"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } llicència de l'assistent d'escriptura",
-        "${ seats } llicències de l'assistent d'escriptura"
-      ],
-      "${ users } user": [
-        "${ users } usuari",
-        "${ users } usuaris"
       ]
     },
     "Alert": {
@@ -1083,10 +1761,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } mesos"
-      ],
       "/ month": [
         "/ mes"
       ],
@@ -1137,11 +1811,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzat el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos el ${ formattedDate }. No se us carregarà cap import si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes el ${ formattedDate }. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
@@ -1302,14 +1976,6 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Inicis de sessió segurs en tots els vostres dispositius. Inclou àlies il·limitats de hide-my-email, compartició, 2FA integrada, ${ DARK_WEB_MONITORING_NAME } i més."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Protegiu els correus electrònics i l'agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més.",
-        "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreça de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més.",
-        "Protegiu els vostres correus electrònics i programeu-los amb un xifratge d'extrem a extrem. Inclou ${ addresses } adreces de correu electrònic, suport per a dominis de correu electrònic personalitzats, àlies hide-my-email il·limitats i molt més."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Protegiu els vostres correus electrònics i la vostra agenda amb xifratge d’extrem a extrem. Inclou 15 adreces de correu electrònic, compatibilitat amb dominis de correu electrònic personalitzats, l'assistent d'escriptura ${ BRAND_NAME } Scribe, àlies il·limitats de hide-my-email i molt més."
@@ -1515,16 +2181,8 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
-        "${ users } usuari",
-        "${ users } usuaris"
-      ],
       "Total": [
         "Total"
-      ],
-      "Total for ${ n } month": [
-        "Total per ${ n } mes",
-        "Total per ${ n } mesos"
       ]
     },
     "Collapsible tooltip": {
@@ -3023,14 +3681,6 @@
       "Could not open updated vault": [
         "No s'ha pogut obrir la caixa forta actualitzada"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
-        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
-        "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
-      ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
       ],
@@ -3148,10 +3798,6 @@
       "Last name is too long": [
         "El cognom és massa llarg."
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
-        "Combineu almenys ${ calendarsToFixCount } calendaris amb calendaris de ${ BRAND_NAME } existents"
-      ],
       "Missing key packet": [
         "Falta el paquet de claus"
       ],
@@ -3175,14 +3821,6 @@
       ],
       "Not a valid number": [
         "Número no vàlid"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
-        "Alguns contactes no tenen adreça de correu electrònic: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Un dels grups no té contactes: ${ noContactGroupList }",
-        "Alguns grups no tenen contactes: ${ noContactGroupList } "
       ],
       "Organization key is not decrypted": [
         "La clau de l'organització no està desxifrada"
@@ -3220,10 +3858,6 @@
       "Please enter ZIP code": [
         "Introduïu el codi postal"
       ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Arregleu el conflicte ressaltat per continuar.",
-        "Arregleu els conflictes ressaltats per continuar."
-      ],
       "Please provide either a first name, a last name or a display name": [
         "Proporcioneu un nom, un cognom o un nom per a mostrar."
       ],
@@ -3253,10 +3887,6 @@
       ],
       "Process aborted": [
         "Procés anul·lat"
-      ],
-      "Removed duplicate invitee: ${ joinedInvitee }": [
-        "S'ha esborrat el convidat duplicat: ${ joinedInvitee }",
-        "S'han esborrat els convidats duplicats: ${ joinedInvitee }"
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -3414,10 +4044,6 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "Estem tenint problemes per desar les edicions recents. Actualitzeu la pàgina."
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
-        "No podeu enviar un correu a més de ${ maxContacts } destinataris."
-      ],
       "You have reached the maximum number of calendars.": [
         "Heu arribat al nombre màxim de calendaris."
       ],
@@ -3449,10 +4075,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "El vostre fitxer ${ formattedFilename } conté més d'${ MAX_IMPORT_EVENTS } esdeveniment.",
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniments."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "El fitxer ${ formattedFilename } conté un mètode invàlid i no es pot importar."
@@ -3814,10 +4436,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -3829,28 +4447,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "gigabyte",
-        "gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "megabyte",
-        "megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
       ]
     },
     "Filter notification": {
@@ -3915,10 +4511,6 @@
       ]
     },
     "Hint": {
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "S'ha trobat ${ itemsCount } suggeriment. Utilitzeu el teclat per navegar.",
-        "S'han trobat ${ itemsCount } suggeriments. Utilitzeu el teclat per navegar."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
       ]
@@ -3985,14 +4577,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } esdeveniment xifrat i afegit al teu calendari",
-        "${ totalImported }/${ totalToImport } esdeveniments xifrats i afegits al teu calendari"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
-        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "S'ha produït un error en xifrar i afegir el vostre esdeveniment. No s'ha pogut importar cap esdeveniment."
       ],
@@ -4027,23 +4611,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Les invitacions importades apareixen en ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador ni dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de ${ BRAND_NAME }."
       ],
-      "This file contains an event invitation:": [
-        "Aquest fitxer conté una invitació a un esdeveniment:",
-        "Aquest fitxer conté invitacions a un esdeveniment:"
-      ],
-      "This file contains an invitation response:": [
-        "Aquest fitxer conté una resposta a la invitació:",
-        "Aquest fitxer conté respostes a la invitació:"
-      ],
       "This file contains some data that we cannot import:": [
         "Aquest fitxer conté algunes dades que no podem importar:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contacte xifrat i afegit a la vostra llista de contactes",
-        "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "S'ha produït un error en xifrar i afegir el vostre contacte. No s'ha pogut importar cap contacte."
       ],
@@ -4063,12 +4635,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contacte ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } contacte",
-        "${ totalContacts } contactes"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4247,10 +4813,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniment no es pot importar. Cliqueu per obtenir més informació.",
-        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniments no es poden importar. Cliqueu per obtenir més informació."
-      ],
       "No contact can be imported. Click for details": [
         "No s'ha pogut importar cap contacte. Cliqueu per obtenir més informació"
       ],
@@ -4268,10 +4830,6 @@
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
         "«${ documentTitle }» és a la paperera i hi romandrà fins que el suprimiu permanentment."
       ],
-      "${ addressCount } email address": [
-        "${ addressCount } adreça de correu electrònic",
-        "${ addressCount } adreces de correu electrònic"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -4284,32 +4842,8 @@
       "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
         "${ CALENDAR_APP_NAME } requereix una adreça de ${ BRAND_NAME } per la sincronització segura d'esdeveniments i el xifratge. ${ claimAddressButton }."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } nou calendari",
-        "${ calendarsToBeCreatedCount } nous calendaris"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } calendari combinat",
-        "${ calendarsToBeMergedCount } calendaris combinats"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } contacte té múltiples adreces de correu.",
-        "${ contactCount } contactes tenen múltiples adreces de correu."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } Membre",
-        "${ contactEmailsLength } Membres"
-      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } té múltiples adreces de correu."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } contacte trobat",
-        "${ contactsCount } contactes trobats"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } contacte",
-        "${ contactsLength } contactes"
       ],
       "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "Els fitxers ${ DOCS_APP_NAME } no es poden descarregar directament i no s'inclouran en aquesta descàrrega. Podeu descarregar els altres fitxers fent clic a Continua la descàrrega."
@@ -4319,10 +4853,6 @@
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } a"
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grup trobat",
-        "${ groupCounts } grups trobats"
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
@@ -4336,60 +4866,20 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } caduca en ${ daysLeft } dia.",
-        "${ planName } caduca en ${ daysLeft } dies."
-      ],
       "${ planName } expires today.": [
         "${ planName } caduca avui."
       ],
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "${ PROTON_SENTINEL_NAME } protegeix el vostre compte amb un seguiment dedicat de l'activitat sospitosa."
       ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } carpeta trobada",
-        "${ providerFoldersNumLocalized } carpetes trobades"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
-        "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
-        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength } contacte seleccionat de ${ contactsLength }",
-        "${ selectedContactsLength } contactes seleccionats de ${ contactsLength }"
-      ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } seleccionat",
-        "${ selectedCount } seleccionats"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } carpeta seleccionada",
-        "${ selectedFoldersCountLocalized } carpetes seleccionades"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
-        "${ selectedFoldersCountLocalized } etiquetes seleccionades"
-      ],
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } contacte actualitzat amb èxit.",
-        "${ updated } contactes actualitzats amb èxit."
       ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } ja existeix en aquesta ubicació."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "${ VPN_APP_NAME } està emmascarant la vostra adreça IP, de manera que els llocs web no us poden identificar."
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } membre)",
-        "(${ memberCount } membres)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mes)"
@@ -4402,10 +4892,6 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } connexió per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)",
-        "+${ organization.BonusVPN } connexions per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)"
       ],
       "30-day money-back guarantee.": [
         "30 dies de garantia de reemborsament."
@@ -4457,18 +4943,6 @@
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Assistent amb intel·ligència artificial per ajudar-vos a crear millors correus electrònics, de manera ràpida i sense esforç."
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Tot (${ totalFoldersCount } carpeta)",
-        "Tot (${ totalFoldersCount } carpetes)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Tot (${ totalFoldersCount } etiqueta)",
-        "Tot (${ totalFoldersCount } etiquetes)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }",
-        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
       ],
       "American Express SafeKey logo": [
         "Logo d'American Express SafeKey"
@@ -4575,10 +5049,6 @@
       "Country code": [
         "Codi de país"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Crea ${ calendarsToBeCreatedCount } calendari",
-        "Crea ${ calendarsToBeCreatedCount } calendaris"
-      ],
       "Create a copy to edit": [
         "Crea una còpia per a editar"
       ],
@@ -4590,10 +5060,6 @@
       ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Crea un núvol segur per a ${ value } membre",
-        "Crea un núvol segur per a ${ value } membres"
       ],
       "Create an end-to-end encrypted document.": [
         "Creeu un document xifrat d'extrem a extrem."
@@ -4850,10 +5316,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Si baixeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ VPN_APP_NAME }."
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
-        "Importa ${ calendarCount } calendaris de ${ totalCalendarsCount }"
-      ],
       "Import from": [
         "Importar des de"
       ],
@@ -4967,10 +5429,6 @@
       ],
       "Mastercard SecureCode logo": [
         "Logo de Mastercard SecureCode"
-      ],
-      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
-        "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcter",
-        "Màxim ${ MAX_SHARED_URL_PASSWORD_LENGTH } caràcters"
       ],
       "Me": [
         "Jo"
@@ -5134,10 +5592,6 @@
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
       ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grup.",
-        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grups."
-      ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
       ],
@@ -5281,10 +5735,6 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "La subscripció es renova automàticament cada ${ cycle } mes.",
-        "La subscripció es renova automàticament cada ${ cycle } mesos."
       ],
       "Subscription auto-renews every month.": [
         "La subscripció es renova automàticament cada mes."
@@ -5613,14 +6063,6 @@
       "You can import one data type at a time.": [
         "Podeu importar un tipus de dades alhora."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció."
-      ],
       "You can now return to the application to continue": [
         "Ara podeu tornar a l'aplicació per continuar."
       ],
@@ -5662,10 +6104,6 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "No se us cobrarà res si cancel·leu abans del ${ trialEndsOnFormatted }."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Després, se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }.",
-        "Després, se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Esteu a punt de rebutjar la invitació per unir-vos a l'àlbum ${ invitationName }. Si ho feu, no hi podreu accedir tret que el propietari us torni a convidar. Segur que voleu continuar?"
@@ -5766,10 +6204,6 @@
       "Your physical location is visible and can be used to restrict your access to the internet.": [
         "La vostra ubicació física és visible i es pot utilitzar per restringir l'accés a internet."
       ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mes.",
-        "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada ${ cycle } mesos."
-      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "El vostre pla programat comença el ${ renewalTime } i es renovarà automàticament cada mes."
       ],
@@ -5808,16 +6242,6 @@
     "Info on errors": {
       "Click for details": [
         "Cliqueu per veure'n detalls"
-      ]
-    },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } carpeta seleccionada",
-        "${ selectedFoldersCount } carpetes seleccionades"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiqueta seleccionada",
-        "${ selectedFoldersCount } etiquetes seleccionades"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -5880,10 +6304,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
-      ],
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } mesos"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
@@ -6523,10 +6943,6 @@
       "Almost there": [
         "Ja gairebé està"
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }",
-        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Connectant al vostre prveïdor de correu electrònic"
       ],
@@ -6575,24 +6991,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Activa ${ reason }"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Importa tots els missatges d'${ itemsToImportCount } carpeta i etiqueta'ls com a",
-        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importa tots els missatges d'${ itemsToImportCount } etiqueta i etiqueta'ls com a",
-        "Importa tots els missatges de ${ itemsToImportCount } etiquetes i etiqueta'ls com a"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Importa tots els missatges d'${ selectedItemsToImportCount } carpeta de ${ itemsToImportCount } i etiqueta'ls com a",
-        "Importa tots els missatges de ${ selectedItemsToImportCount } carpetes de ${ itemsToImportCount } i etiqueta'ls com a"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Importa tots els missatges d'${ selectedItemsToImportCount } etiqueta de ${ itemsToImportCount } i etiqueta'ls com a",
-        "Importa tots els missatges de ${ selectedItemsToImportCount } etiquetes de ${ itemsToImportCount } i etiqueta'ls com a"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6955,76 +7353,8 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } i ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar": [
-        "${ n } calendari",
-        "${ n } calendaris"
-      ],
-      "${ n } calendar per user": [
-        "${ n } calendari per usuari",
-        "${ n } calendaris per usuari"
-      ],
-      "${ n } custom email domain": [
-        "${ n } domini de correu electrònic personalitzat",
-        "${ n } dominis de correu electrònic personalitzats"
-      ],
-      "${ n } email address": [
-        "${ n } adreça de correu electrònic",
-        "${ n } adreces de correu electrònic / àlies"
-      ],
-      "${ n } email address per user": [
-        "${ n } adreça de correu electrònic per usuari",
-        "${ n } adreces de correu electrònic per usuari"
-      ],
-      "${ n } filter": [
-        "${ n } filtre",
-        "${ n } filtres"
-      ],
-      "${ n } folder": [
-        "${ n } carpeta",
-        "${ n } carpetes"
-      ],
-      "${ n } folder and label": [
-        "${ n } carpeta i etiqueta",
-        "${ n } carpetes i etiquetes"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } àlies hide-my-email",
-        "${ n } àlies hide-my-email"
-      ],
-      "${ n } label": [
-        "${ n } etiqueta",
-        "${ n } etiquetes"
-      ],
-      "${ n } message per day": [
-        "${ n } missatge per dia",
-        "${ n } missatges per dia"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } caixa forta de ${ PASS_SHORT_APP_NAME } compartida per usuari",
-        "${ n } caixes fortes de ${ PASS_SHORT_APP_NAME } compartides per usuari"
-      ],
-      "${ n } vault": [
-        "${ n } caixa forta",
-        "${ n } caixes fortes"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexió VPN",
-        "${ n } connexions VPN"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } usuari",
-        "Fins a ${ numberOfUsers } usuaris"
-      ],
-      "${ options }-day file version history": [
-        "Historial de versions de fitxers de ${ options } dies",
-        "Historial de versions de fitxers de ${ options } dies"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accés de per vida a ${ PASS_APP_NAME } i SimpleLogin"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
-        "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } amb àlies hide-my-email il·limitats"
@@ -7197,10 +7527,6 @@
       "Group management (coming soon)": [
         "Gestió de grups (aviat)"
       ],
-      "High-speed VPN on ${ n } device": [
-        "VPN d'alta velocitat en ${ n } dispositiu",
-        "VPN d'alta velocitat en ${ n } dispositius"
-      ],
       "HTML signatures": [
         "Signatures HTML"
       ],
@@ -7363,20 +7689,8 @@
       "Unlimited volume/bandwidth": [
         "Sense límit de volum / amplada de banda"
       ],
-      "Up to ${ n } user": [
-        "Fins a ${ n } usuari",
-        "Fins a ${ n } usuaris"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Fins a ${ n } usuari (${ adminsText }, ${ usersText })",
-        "Fins a ${ n } usuaris (${ adminsText }, ${ usersText })"
-      ],
       "Up to ${ totalStorageSize } storage": [
         "Fins a ${ totalStorageSize } d'emmagatzematge"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Ús en fins a ${ n } dispositiu al mateix temps",
-        "Ús en fins a ${ n } dispositius al mateix temps"
       ],
       "User credential management": [
         "Gestió de credencials d'usuari"
@@ -7387,22 +7701,8 @@
       "User storage management": [
         "Gestió de l'emmagatzematge de l'usuari"
       ],
-      "Vault sharing (up to ${ n } person)": [
-        "Compartició de la caixa forta (fins a ${ n } persona)",
-        "Compartició de la caixa forta (fins a ${ n } persones)"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ admins } admin": [
-        "${ admins } administrador",
-        "${ admins } administradors"
-      ],
-      "${ users } user": [
-        "${ users } usuari",
-        "${ users } usuaris"
       ]
     },
     "new_plans: feature info": {
@@ -7583,10 +7883,6 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia; p. ex., JoanCompres@${ domain } per a comptes de compres, JoanNoticies@${ domain } per a la subscripció a notícies."
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Creeu fins a ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
-        "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
@@ -7791,10 +8087,6 @@
       "Central control panel": [
         "Panell de control central"
       ],
-      "Create up to ${ n } calendar": [
-        "Crea fins a ${ n } calendari",
-        "Crea fins a ${ n } calendaris"
-      ],
       "Dedicated Account manager": [
         "Gestor de comptes dedicat"
       ],
@@ -7812,10 +8104,6 @@
       ],
       "Require 2FA": [
         "Requereix 2FA"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Suport per a ${ n } domini de correu electrònic personalitzat",
-        "Suport per a ${ n } dominis de correu electrònic personalitzats"
       ]
     },
     "Notification": {
@@ -7866,50 +8154,6 @@
       ],
       "\"${ newName }\" renamed successfully": [
         "S'ha canviat el nom de \"${ newName }\""
-      ],
-      "${ count } item failed to be decrypted": [
-        "No s'ha pogut desxifrar ${ count } element.",
-        "No s'han pogut desxifrar ${ count } elements."
-      ],
-      "${ numberOfItems } item deleted": [
-        "S'ha eliminat ${ numberOfItems } element",
-        "S'han eliminat ${ numberOfItems } elements"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "S'ha eliminat ${ numberOfItems } element permanentment de la paperera",
-        "S'han eliminat ${ numberOfItems } elements permanentment de la paperera"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "No s'ha pogut eliminar ${ numberOfItems } element.",
-        "No s'han pogut eliminar ${ numberOfItems } elements."
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "No s'ha pogut eliminar ${ numberOfItems } element permanentment de la paperera",
-        "No s'han pogut eliminar ${ numberOfItems } elements permanentment de la paperera"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "No s'ha pogut moure ${ numberOfItems } element.",
-        "No s'han pogut moure ${ numberOfItems } elements."
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "No s'ha pogut moure ${ numberOfItems } element a la paperera.",
-        "No s'han pogut moure ${ numberOfItems } elements a la paperera."
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "No s'ha pogut restaurar ${ numberOfItems } element de la paperera",
-        "No s'han pogut restaurar ${ numberOfItems } elements de la paperera"
-      ],
-      "${ numberOfItems } item moved to trash": [
-        "S'ha mogut ${ numberOfItems } element a la paperera",
-        "S'han mogut ${ numberOfItems } elements a la paperera"
-      ],
-      "${ numberOfItems } item restored from trash": [
-        "S'ha restaurat ${ numberOfItems } element de la paperera",
-        "S'han restaurat ${ numberOfItems } elements de la paperera"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "S'ha mogut ${ numberOfItems } element",
-        "S'han mogut ${ numberOfItems } elements"
       ],
       "${ reason } has been disabled": [
         "${ reason } s'ha desactivat"
@@ -7974,10 +8218,6 @@
       "Failed to upload files: ${ err }": [
         "Error carregant fitxers: ${ err }"
       ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "El fitxer o carpeta \"${ filename }\" i ${ count } altre ja s'estan carregant",
-        "El fitxer o carpeta \"${ filename }\" i ${ count } altres ja s'estan carregant"
-      ],
       "File or folder \"${ filename }\" is already uploading": [
         "El fitxer o carpeta \"${ filename }\" ja s'està carregant"
       ],
@@ -7989,18 +8229,6 @@
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
-      ],
-      "Move ${ n } file": [
-        "Mou ${ n } fitxer",
-        "Mou ${ n } fitxers"
-      ],
-      "Move ${ n } folder": [
-        "Mou ${ n } carpeta",
-        "Mou ${ n } carpetes"
-      ],
-      "Move ${ n } item": [
-        "Mou ${ n } element",
-        "Mou ${ n } elements"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
@@ -8022,10 +8250,6 @@
       ],
       "Share invitation declined": [
         "S'ha rebutjat la invitació per a compartir."
-      ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "No hem pogut eliminar la carpeta perquè no està buida.",
-        "No hem pogut eliminar les carpetes perquè no estan buides."
       ],
       "Stopping the sharing of this item has failed": [
         "Error en deixar de compartir aquest element"
@@ -8303,10 +8527,6 @@
       ]
     },
     "pass_signup_2024: Info": {
-      "${ n } user account": [
-        "${ n } compte d'usuari",
-        "${ n } comptes d'usuari"
-      ],
       "Activity log": [
         "Registre d'activitats"
       ],
@@ -8446,24 +8666,8 @@
       "terms & conditions": [
         "els termes i condicions"
       ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "El cupó és vàlid per a ${ couponRedemptions } renovació.",
-        "El cupó és vàlid per a ${ couponRedemptions } renovacions."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer ${ subscriptionLength } mes.",
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant els primers ${ subscriptionLength } mesos."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovació. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment.",
-        "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. El cupó és vàlid per a ${ couponRedemptions } renovacions. Aleshores, es renovarà automàticament a ${ renewPriceStr } durant 1 mes. Podeu cancel·lar-ho en qualsevol moment."
-      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "El preu amb descompte especial de ${ priceWithDiscount } és vàlid durant el primer mes. Aleshores, es renovarà automàticament a ${ renewPriceStr } cada mes. Podeu cancel·lar-ho en qualsevol moment."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mes. Podeu cancel·lar-ho en qualsevol moment.",
-        "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
       "This number will be shown on all future invoices": [
         "Aquest número es mostrarà a totes les factures futures"
@@ -8744,18 +8948,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "S'ha exportat ${ contactsExported.length } contacte de ${ countContacts }.",
-        "S'han exportat ${ contactsExported.length } contactes de ${ countContacts }."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
-        "${ model.deleted.length } de ${ totalBeDeleted } contactes eliminats satisfactòriament."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } de ${ totalBeMerged } contacte combinat satisfactòriament.",
-        "${ model.submitted.length } de ${ totalBeMerged } contactes combinats satisfactòriament."
-      ],
       "No contacts exported.": [
         "No s'han exportat contactes."
       ],
@@ -8957,27 +9149,11 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } dia",
-        "${ timeRemaining.inDays } dies"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } hora",
-        "${ timeRemaining.inHours } hores"
-      ],
       "Password reset request approved (${ user.Email }).": [
         "S'ha aprovat la sol·licitud de restabliment de contrasenya (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Aneu al dispositiu en què heu iniciat la sessió (en el qual es va iniciar la sol·licitud) per canviar la contrasenya."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Aquest permís caduca en ${ timeRemaining.inDays } dia.",
-        "Aquest permís caduca en ${ timeRemaining.inDays } dies."
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Aquest permís caduca en ${ timeRemaining.inHours } hora.",
-        "Aquest permís caduca en ${ timeRemaining.inHours } hores."
       ],
       "This permission expires soon": [
         "Aquest permís caduca aviat"
@@ -8987,22 +9163,6 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Ara podeu canviar la contrasenya del compte ${ boldEmail }."
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Teniu ${ timeRemaining.inDays } dia per a restablir la contrasenya.",
-        "Teniu ${ timeRemaining.inDays } dies per a restablir la contrasenya."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Teniu ${ timeRemaining.inHours } hora per a restablir la contrasenya.",
-        " Teniu ${ timeRemaining.inHours } hores per a restablir la contrasenya."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Teniu ${ timeRemaining.inMinutes } minut per a restablir la contrasenya.",
-        " Teniu ${ timeRemaining.inMinutes } minuts per a restablir la contrasenya."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Teniu ${ timeRemaining.inSeconds } segon per a restablir la contrasenya.",
-        "Teniu ${ timeRemaining.inSeconds } segons per a restablir la contrasenya."
       ]
     },
     "session_recovery:available:link": {
@@ -9062,16 +9222,8 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } hora més",
-        "${ gracePeriodHoursRemaining } hores més"
-      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Si no heu demanat restablir la contrasenya, cancel·leu aquesta sol·licitud."
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hora.",
-        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Per a assegurar-nos que sou vós qui intenteu restablir la contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
@@ -9099,10 +9251,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } hora",
-        "${ gracePeriodHoursRemaining } hores"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } està disponible."
       ],
@@ -9167,30 +9315,6 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Passeu-vos a Unlimited"
-      ]
-    },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } dia",
-        "${ days } dies"
-      ],
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hores"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuts"
-      ],
-      "${ seconds } second": [
-        "${ seconds } segon",
-        "${ seconds } segons"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } mesos GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -9275,10 +9399,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } mes",
-        "${ n } mesos"
-      ],
       "/ month": [
         "/ mes"
       ],
@@ -9485,10 +9605,6 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Afegirem els crèdits del temps restant al vostre compte de ${ BRAND_NAME }."
       ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "Encara disposeu d'**${ daysRemaining }** dia al vostre pla **${ currentPlanName }**.",
-        "Encara disposeu de **${ daysRemaining }** dies al vostre pla **${ currentPlanName }**."
-      ],
       "Your ${ appStorage } is almost full": [
         "El vostre emmagatzematge de ${ appStorage } està gairebé ple."
       ],
@@ -9532,32 +9648,6 @@
       ],
       "Billed yearly": [
         "Facturació anual"
-      ]
-    },
-    "Subscription attribute": {
-      "${ n } free VPN connection per user": [
-        "${ n } connexió VPN gratuïta per usuari",
-        "${ n } connexions VPN gratuïtes per usuari"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } connexió VPN d'alta velocitat",
-        "${ n } connexions VPN d'alta velocitat"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } connexió VPN d'alta velocitat per usuari",
-        "${ n } connexions VPN d'alta velocitat per usuari"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexió VPN",
-        "${ n } connexions VPN"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } connexió VPN per usuari",
-        "${ n } connexions VPN per usuari"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "Connexió VPN per a ${ n } dispositiu per usuari",
-        "Connexió VPN per a ${ n } dispositius per usuari"
       ]
     },
     "Subscription change warning": {
@@ -9646,14 +9736,6 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } us ofereix totes les aplicacions, totes les característiques, accés anticipat a les versions noves i tot el que necessiteu per a tenir el control de les vostres dades i la vostra seguretat."
       ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } domini de correu electrònic personalitzat",
-        "${ planNumberOfDomains } dominis de correu electrònic personalitzats"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } adreça de correu electrònic",
-        "${ planNumberOfEmails } adreces de correu electrònic"
-      ],
       "Folders, labels, and custom filters": [
         "Carpetes, etiquetes i filtres personalitzats"
       ],
@@ -9693,10 +9775,6 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } contacte sembla idèntic.",
-        "${ countMergeableContacts } contactes semblen idèntics."
-      ],
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
       ],
@@ -9714,14 +9792,6 @@
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Contacte esborrat",
-        "Contactes esborrats"
-      ],
-      "Contact group deleted": [
-        "S'ha eliminat el grup",
-        "S'han eliminat els grups"
       ],
       "Contact saved": [
         "Contacte desat"
@@ -9880,62 +9950,15 @@
         "Camp vCard"
       ]
     },
-    "Time unit": {
-      "${ ceilDays } day": [
-        "${ ceilDays } dia",
-        "${ ceilDays } dies"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } hora",
-        "${ ceilHours } hores"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } minut",
-        "${ ceilMinutes } minuts"
-      ],
-      "${ seconds } second": [
-        "${ seconds } segon",
-        "${ seconds } segons"
-      ]
-    },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 h",
-        "${ hoursInt },5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } hora",
-        "${ hours } hores"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 hores",
-        "${ hoursInt },5 hores"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuts"
-      ]
-    },
     "Title": {
-      "${ emailsCount } email address": [
-        "${ emailsCount } adreça de correu electrònic",
-        "${ emailsCount } adreces de correu electrònic"
-      ],
       "${ feature } is now active": [
         "La característica ${ feature } està ara activa."
       ],
       "Account recovery": [
         "Recuperació de compte"
+      ],
+      "Account restricted": [
+        "Compte restringit"
       ],
       "Account security": [
         "Seguretat del compte"
@@ -9948,10 +9971,6 @@
       ],
       "Add credit/debit card": [
         "Afegir targeta de crèdit/dèbit"
-      ],
-      "Add to ${ groupCount } group": [
-        "Afegir a ${ groupCount } grup",
-        "Afegir a ${ groupCount } grups"
       ],
       "Add to ${ groupName }": [
         "Afegeix a ${ groupName }"
@@ -10081,14 +10100,6 @@
       ],
       "Delete": [
         "Elimina"
-      ],
-      "Delete ${ count } contact": [
-        "Suprimeix ${ count } contacte",
-        "Suprimeix ${ count } contactes"
-      ],
-      "Delete ${ count } contact group": [
-        "Eliminar ${ count } grup de contactes",
-        "Eliminar ${ count } grups de contactes"
       ],
       "Delete ${ links.length } items?": [
         "Voleu eliminar ${ links.length } elements?"
@@ -10224,10 +10235,6 @@
       ],
       "Human verification": [
         "Verificació humana"
-      ],
-      "Import as simple event?": [
-        "Voleu importar com a esdeveniment sense detalls?",
-        "Voleu importar com a esdeveniments sense detalls?"
       ],
       "Import contacts": [
         "Importar contactes"
@@ -10660,21 +10667,7 @@
         "Els administradors no poden accedir a les dades dels usuaris privats i no poden restablir la seva contrasenya."
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcter",
-        "La contrasenya ha de tenir com a mínim ${ MIN_PASSWORD_LENGTH } caràcters"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
-        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
-      ]
-    },
     "Validation Error": {
-      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcter",
-        "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcters"
-      ],
       "Name must not be empty": [
         "El nom no pot estar buit"
       ]
@@ -10685,40 +10678,6 @@
       ],
       "Replay video": [
         "Reproduir el vídeo"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } dispositiu",
-        "${ n } dispositius"
-      ],
-      "${ n } server": [
-        "${ n } servidor",
-        "${ n }+ servidors"
-      ],
-      "${ n } VPN connection": [
-        "${ n } connexió VPN",
-        "${ n } connexions VPN"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } país",
-        "${ numberOfCountries } països"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } en ${ numberOfCountries } país",
-        "${ numberOfServers } en més de ${ numberOfCountries } països"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } a ${ numberOfCountries } país",
-        "${ numberOfServers } a ${ numberOfCountries } països"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Selecció automàtica d'entre ${ numberOfCountries } país",
-        "Selecció automàtica d'entre ${ numberOfCountries } països"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Servidors en més d'${ numberOfCountries } país",
-        "Servidors en més de ${ numberOfCountries } països"
       ]
     },
     "vpn_2step: feature": {
@@ -10735,18 +10694,6 @@
       ]
     },
     "wallet_signup_2024: Info": {
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } adreça de correu electrònic de ${ BRAND_NAME }",
-        "${ n } adreces de correu electrònic de ${ BRAND_NAME }"
-      ],
-      "${ n } account per wallet": [
-        "${ n } compte per cartera",
-        "${ n } comptes per cartera"
-      ],
-      "${ n } wallet": [
-        "${ n } cartera",
-        "${ n } carteres"
-      ],
       "Bitcoin via Email": [
         "Bitcoin via correu electrònic"
       ],
@@ -10773,10 +10720,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
-        "Estàs segur de que vols eliminar ${ count } contactes definitivament?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Segur que voleu eliminar aquests grups de contacte de manera permanent?"

@@ -4,6 +4,1022 @@
     "language": "uk_UA"
   },
   "contexts": {
+    "": {
+      "${ addressCount } email address": [
+        "${ addressCount } адреса е-пошти",
+        "${ addressCount } адреси е-пошти",
+        "${ addressCount } адрес е-пошти",
+        "${ addressCount } адрес е-пошти"
+      ],
+      "${ admins } admin": [
+        "${ admins } адміністратор",
+        "${ admins } адміністратори",
+        "${ admins } адміністраторів",
+        "${ admins } адміністраторів"
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } новий календар",
+        "${ calendarsToBeCreatedCount } нові календарі",
+        "${ calendarsToBeCreatedCount } нових календарів",
+        "${ calendarsToBeCreatedCount } нових календарів"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } об'єднаний календар",
+        "${ calendarsToBeMergedCount } об'єднані календарі",
+        "${ calendarsToBeMergedCount } об'єднаних календарів",
+        "${ calendarsToBeMergedCount } об'єднаних календарів"
+      ],
+      "${ ceilDays } day": [
+        "${ ceilDays } день",
+        "${ ceilDays } дні",
+        "${ ceilDays } днів",
+        "${ ceilDays } днів"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } година",
+        "${ ceilHours } години",
+        "${ ceilHours } годин",
+        "${ ceilHours } годин"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } хвилина",
+        "${ ceilMinutes } хвилини",
+        "${ ceilMinutes } хвилин",
+        "${ ceilMinutes } хвилин"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } контакт містить кілька адрес е-пошти.",
+        "${ contactCount } контакти містять кілька адрес е-пошти.",
+        "${ contactCount } контактів містять кілька адрес е-пошти.",
+        "${ contactCount } контактів містять кілька адрес е-пошти."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } учасник",
+        "${ contactEmailsLength } учасники",
+        "${ contactEmailsLength } учасників",
+        "${ contactEmailsLength } учасників"
+      ],
+      "${ contactsCount } contact found": [
+        "Знайдено ${ contactsCount } контакт",
+        "Знайдено ${ contactsCount } контакти",
+        "Знайдено ${ contactsCount } контактів",
+        "Знайдено ${ contactsCount } контактів"
+      ],
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } з ${ countContacts } контакт успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано."
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } контакт",
+        "${ contactsLength } контакти",
+        "${ contactsLength } контактів",
+        "${ contactsLength } контактів"
+      ],
+      "${ count } item failed to be decrypted": [
+        "Не вдалося розшифрувати ${ count } елемент",
+        "Не вдалося розшифрувати ${ count } елементи",
+        "Не вдалося розшифрувати ${ count } елементів",
+        "Не вдалося розшифрувати ${ count } елемента"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } контакти має ідентичний вигляд.",
+        "${ countMergeableContacts } контакти мають ідентичний вигляд.",
+        "${ countMergeableContacts } контактів мають ідентичний вигляд.",
+        "${ countMergeableContacts } контакти мають ідентичний вигляд."
+      ],
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дні",
+        "${ days } днів",
+        "${ days } днів"
+      ],
+      "${ domains } additional custom domain": [
+        "${ domains } додатковий власний домен",
+        "${ domains } додаткові власні домени",
+        "${ domains } додаткових власних доменів",
+        "${ domains } додаткових власних доменів"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } адреса е-пошти",
+        "${ emailsCount } адреси е-пошти",
+        "${ emailsCount } адрес е-пошти",
+        "${ emailsCount } адреси е-пошти"
+      ],
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } година",
+        "${ gracePeriodHoursRemaining } години",
+        "${ gracePeriodHoursRemaining } годин",
+        "${ gracePeriodHoursRemaining } годин"
+      ],
+      "${ gracePeriodHoursRemaining } more hour": [
+        "Ще ${ gracePeriodHoursRemaining } година",
+        "Ще ${ gracePeriodHoursRemaining } години",
+        "Ще ${ gracePeriodHoursRemaining } годин",
+        "Ще ${ gracePeriodHoursRemaining } годин"
+      ],
+      "${ groupCounts } group found": [
+        "Знайдено ${ groupCounts } групу",
+        "Знайдено ${ groupCounts } групи",
+        "Знайдено ${ groupCounts } груп",
+        "Знайдено ${ groupCounts } груп"
+      ],
+      "${ hours } h": [
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год"
+      ],
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } години"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 годин",
+        "${ hoursInt }.5 години"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } сервери",
+        "${ ips } серверів",
+        "${ ips } серверів"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } контакт з ${ totalBeDeleted } успішно видалено.",
+        "${ model.deleted.length } контакти з ${ totalBeDeleted } успішно видалено.",
+        "${ model.deleted.length } контактів з ${ totalBeDeleted } успішно видалено.",
+        "${ model.deleted.length } контактів з ${ totalBeDeleted } успішно видалено."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } контакт з ${ totalBeMerged } успішно об'єднано.",
+        "${ model.submitted.length } контакти з ${ totalBeMerged } успішно об'єднано.",
+        "${ model.submitted.length } контактів з ${ totalBeMerged } успішно об'єднано.",
+        "${ model.submitted.length } контактів з ${ totalBeMerged } успішно об'єднано."
+      ],
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } адреса електронної пошти ${ BRAND_NAME }",
+        "${ n } адреси електронної пошти ${ BRAND_NAME }",
+        "${ n } адрес електронної пошти ${ BRAND_NAME }",
+        "${ n } адрес електронної пошти ${ BRAND_NAME }"
+      ],
+      "${ n } account per wallet": [
+        "${ n } обліковий запис на гаманець",
+        "${ n } облікові записи на гаманець",
+        "${ n } облікових записів на гаманець",
+        "${ n } облікових записів на гаманець"
+      ],
+      "${ n } calendar": [
+        "${ n } календар",
+        "${ n } календарі",
+        "${ n } календарів",
+        "${ n } календарів"
+      ],
+      "${ n } calendar per user": [
+        "${ n } календар на користувача",
+        "${ n } календарі на користувача",
+        "${ n } календарів на користувача",
+        "${ n } календарів на користувача"
+      ],
+      "${ n } custom email domain": [
+        "${ n } власний домен",
+        "${ n } власні домени",
+        "${ n } власних доменів",
+        "${ n } власних доменів"
+      ],
+      "${ n } device": [
+        "${ n } пристрій",
+        "${ n } пристрої",
+        "${ n } пристроїв",
+        "${ n } пристроїв"
+      ],
+      "${ n } email address": [
+        "${ n } адреса електронної пошти",
+        "${ n } адреси/псевдонімів е-пошти",
+        "${ n } адрес/псевдонімів е-пошти",
+        "${ n } адреси/псевдонімів е-пошти"
+      ],
+      "${ n } email address per user": [
+        "${ n } адреса е-пошти на користувача",
+        "${ n } адреси е-пошти на користувача",
+        "${ n } адрес е-пошти на користувача",
+        "${ n } адрес е-пошти на користувача"
+      ],
+      "${ n } filter": [
+        "${ n } фільтр",
+        "${ n } фільтри",
+        "${ n } фільтрів",
+        "${ n } фільтри"
+      ],
+      "${ n } folder": [
+        "${ n } тека",
+        "${ n } теки",
+        "${ n } тек",
+        "${ n } тек"
+      ],
+      "${ n } folder and label": [
+        "${ n } тека й мітка",
+        "${ n } теки й мітки",
+        "${ n } тек і міток",
+        "${ n } тек і міток"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } безплатне VPN-з'єднання на користувача",
+        "${ n } безплатні VPN-з'єднання на користувача",
+        "${ n } безплатних VPN-з'єднань на користувача",
+        "${ n } безплатних VPN-з'єднань на користувача"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email псевдонім",
+        "${ n } hide-my-email псевдоніми",
+        "${ n } hide-my-email псевдонімів",
+        "${ n } hide-my-email псевдонімів"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } високошвидкісне VPN-з'єднання",
+        "${ n } високошвидкісні VPN-з'єднання",
+        "${ n } високошвидкісних VPN-з'єднань",
+        "${ n } високошвидкісних VPN-з'єднань"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } високошвидкісне VPN-з'єднання на користувача",
+        "${ n } високошвидкісні VPN-з'єднання на користувача",
+        "${ n } високошвидкісних VPN-з'єднань на користувача",
+        "${ n } високошвидкісних VPN-з'єднань на користувача"
+      ],
+      "${ n } label": [
+        "${ n } мітка",
+        "${ n } мітки",
+        "${ n } міток",
+        "${ n } міток"
+      ],
+      "${ n } message per day": [
+        "${ n } повідомлення на добу",
+        "${ n } повідомлення на добу",
+        "${ n } повідомлень на добу",
+        "${ n } повідомлення на добу"
+      ],
+      "${ n } month": [
+        "${ n } місяць",
+        "${ n } місяців",
+        "${ n } місяці",
+        "${ n } місяці"
+      ],
+      "${ n } month FREE": [
+        "${ n } місяць БЕЗПЛАТНО",
+        "${ n } місяці БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО"
+      ],
+      "${ n } server": [
+        "${ n } сервер",
+        "${ n } сервери",
+        "${ n } серверів",
+        "${ n } серверів"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } спільне сховище ${ PASS_SHORT_APP_NAME } на користувача",
+        "${ n } спільні сховища ${ PASS_SHORT_APP_NAME } на користувача",
+        "${ n } спільних сховищ ${ PASS_SHORT_APP_NAME } на користувача",
+        "${ n } спільних сховищ ${ PASS_SHORT_APP_NAME } на користувача"
+      ],
+      "${ n } user account": [
+        "${ n } обліковий запис користувача",
+        "${ n } облікові записи користувачів",
+        "${ n } облікових записів користувачів",
+        "${ n } облікових записів користувачів"
+      ],
+      "${ n } vault": [
+        "${ n } сховище",
+        "${ n } сховища",
+        "${ n } сховищ",
+        "${ n } сховищ"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-з'єднання",
+        "${ n } VPN-з'єднання",
+        "${ n } VPN-з'єднань",
+        "${ n } VPN-з'єднань"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-з'єднання на користувача",
+        "${ n } VPN-з'єднання на користувача",
+        "${ n } VPN-з'єднань на користувача",
+        "${ n } VPN-з'єднання на користувача"
+      ],
+      "${ n } wallet": [
+        "${ n } гаманець",
+        "${ n } гаманці",
+        "${ n } гаманців",
+        "${ n } гаманців"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } країна",
+        "${ numberOfCountries } країни",
+        "${ numberOfCountries } країн",
+        "${ numberOfCountries } країн"
+      ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } елемент видалено",
+        "${ numberOfItems } елементів видалено",
+        "${ numberOfItems } елементів видалено",
+        "${ numberOfItems } елементів видалено"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } елемент видалено зі смітника остаточно",
+        "${ numberOfItems } елементи видалено зі смітника остаточно",
+        "${ numberOfItems } елементів видалено зі смітника остаточно",
+        "${ numberOfItems } елементів видалено зі смітника остаточно"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } елемент не вдалося видалити",
+        "${ numberOfItems } елементів не вдалося видалити",
+        "${ numberOfItems } елементів не вдалося видалити",
+        "${ numberOfItems } елементів не вдалося видалити"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "${ numberOfItems } елемент не вдалося остаточно видалити зі смітника",
+        "${ numberOfItems } елементи не вдалося остаточно видалити зі смітника",
+        "${ numberOfItems } елементів не вдалося остаточно видалити зі смітника",
+        "${ numberOfItems } елемента не вдалося остаточно видалити зі смітника"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "${ numberOfItems } елемент не вдалося перемістити",
+        "${ numberOfItems } елементи не вдалося перемістити",
+        "${ numberOfItems } елементів не вдалося перемістити",
+        "${ numberOfItems } елементів не вдалося перемістити"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "Не вдалося перемістити до смітника ${ numberOfItems } елемент",
+        "Не вдалося перемістити до смітника ${ numberOfItems } елементи",
+        "Не вдалося перемістити до смітника ${ numberOfItems } елементів",
+        "Не вдалося перемістити до смітника ${ numberOfItems } елемента"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "Не вдалося відновити зі смітника ${ numberOfItems } елемент",
+        "Не вдалося відновити зі смітника ${ numberOfItems } елементи",
+        "Не вдалося відновити зі смітника ${ numberOfItems } елементів",
+        "Не вдалося відновити зі смітника ${ numberOfItems } елемента"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } елемент переміщено до смітника",
+        "${ numberOfItems } елементи переміщено до смітника",
+        "${ numberOfItems } елементів переміщено до смітника",
+        "${ numberOfItems } елементів переміщено до смітника"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } елемент відновлено зі смітника",
+        "${ numberOfItems } елементи відновлено зі смітника",
+        "${ numberOfItems } елементів відновлено зі смітника",
+        "${ numberOfItems } елементів відновлено зі смітника"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } елемент успішно переміщено",
+        "${ numberOfItems } елементи успішно переміщено",
+        "${ numberOfItems } елементів успішно переміщено",
+        "${ numberOfItems } елементів успішно переміщено"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } в ${ numberOfCountries } країні",
+        "${ numberOfServers } у більш ніж ${ numberOfCountries } країнах",
+        "${ numberOfServers } у більш ніж ${ numberOfCountries } країнах",
+        "${ numberOfServers } у більш ніж ${ numberOfCountries } країнах"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } в ${ numberOfCountries } країні",
+        "${ numberOfServers } в ${ numberOfCountries } країнах",
+        "${ numberOfServers } в ${ numberOfCountries } країнах",
+        "${ numberOfServers } в ${ numberOfCountries } країнах"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } користувач",
+        "До ${ numberOfUsers } користувачів",
+        "До ${ numberOfUsers } користувачів",
+        "До ${ numberOfUsers } користувачів"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-денна історія версій файлів",
+        "${ options }-денна історія версій файлів",
+        "${ options }-денна історія версій файлів",
+        "${ options }-денна історія версій файлів"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } з ${ n } псевдонімом hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email",
+        "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email"
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } завершиться за ${ daysLeft } день.",
+        "${ planName } завершиться за ${ daysLeft } дні.",
+        "${ planName } завершиться за ${ daysLeft } днів.",
+        "${ planName } завершиться за ${ daysLeft } дня(ів)."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } власний домен електронної пошти",
+        "${ planNumberOfDomains } власні домени електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти",
+        "${ planNumberOfDomains } власних доменів електронної пошти"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } адреса електронної пошти",
+        "${ planNumberOfEmails } адреси електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти",
+        "${ planNumberOfEmails } адрес електронної пошти"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "Знайдено ${ providerFoldersNumLocalized } теку",
+        "Знайдено ${ providerFoldersNumLocalized } теки",
+        "Знайдено ${ providerFoldersNumLocalized } тек",
+        "Знайдено ${ providerFoldersNumLocalized } тек"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } мітка знайдена в Gmail",
+        "${ providerFoldersNumLocalized } мітки знайдені в Gmail",
+        "${ providerFoldersNumLocalized } міток знайдено в Gmail",
+        "${ providerFoldersNumLocalized } міток знайдено в Gmail"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats } ${ LUMO_APP_NAME } ліцензія",
+        "${ seats } ${ LUMO_APP_NAME } ліцензії",
+        "${ seats } ${ LUMO_APP_NAME } ліцензій",
+        "${ seats } ${ LUMO_APP_NAME } ліцензій"
+      ],
+      "${ seats } writing assistant seat": [
+        "Помічник з написання для ${ seats } користувача",
+        "Помічник з написання для ${ seats } користувачів",
+        "Помічник з написання для ${ seats } користувачів",
+        "Помічник з написання для ${ seats } користувачів"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунди",
+        "${ seconds } секунд",
+        "${ seconds } секунди"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календар",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Вибрано ${ selectedContactsLength } контакт із ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контакти з ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }"
+      ],
+      "${ selectedCount } selected": [
+        "вибрано ${ selectedCount }",
+        "вибрано ${ selectedCount }",
+        "вибрано ${ selectedCount }",
+        "вибрано ${ selectedCount }"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "Вибрано ${ selectedFoldersCount } теку",
+        "Вибрано ${ selectedFoldersCount } теки",
+        "Вибрано ${ selectedFoldersCount } тек",
+        "Вибрано ${ selectedFoldersCount } тек"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "Вибрано ${ selectedFoldersCount } мітку",
+        "Вибрано ${ selectedFoldersCount } мітки",
+        "Вибрано ${ selectedFoldersCount } міток",
+        "Вибрано ${ selectedFoldersCount } міток"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Вибрано ${ selectedFoldersCountLocalized } теку",
+        "Вибрано ${ selectedFoldersCountLocalized } теки",
+        "Вибрано ${ selectedFoldersCountLocalized } тек",
+        "Вибрано ${ selectedFoldersCountLocalized } тек"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } вибрана мітка",
+        "${ selectedFoldersCountLocalized } вибрані мітки",
+        "${ selectedFoldersCountLocalized } вибраних міток",
+        "${ selectedFoldersCountLocalized } вибраних міток"
+      ],
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } день",
+        "${ timeRemaining.inDays } дні",
+        "${ timeRemaining.inDays } днів",
+        "${ timeRemaining.inDays } днів"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } година",
+        "${ timeRemaining.inHours } години",
+        "${ timeRemaining.inHours } годин",
+        "${ timeRemaining.inHours } годин"
+      ],
+      "${ totalContacts } contact": [
+        "${ totalContacts } контакт",
+        "${ totalContacts } контакти",
+        "${ totalContacts } контактів",
+        "${ totalContacts } контактів"
+      ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } із ${ totalEvents } події не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць."
+      ],
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } контакт зашифровано та додано до вашого списку контактів",
+        "${ totalImported }/${ totalToImport } контакти зашифровано та додано до вашого списку контактів",
+        "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів",
+        "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
+      ],
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } подію зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } подій зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } контакт успішно оновлений.",
+        "${ updated } контакти успішно оновлені.",
+        "${ updated } контактів успішно оновлено.",
+        "${ updated } контактів успішно оновлено."
+      ],
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувача"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } учасник)",
+        "(${ memberCount } учасники)",
+        "(${ memberCount } учасників)",
+        "(${ memberCount } учасників)"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
+        "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
+        "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
+        "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)"
+      ],
+      "Add to ${ groupCount } group": [
+        "Додати до ${ groupCount } групи",
+        "Додати до ${ groupCount } груп",
+        "Додати до ${ groupCount } груп",
+        "Додати до ${ groupCount } груп"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Усі (${ totalFoldersCount } тека)",
+        "Усі (${ totalFoldersCount } теки)",
+        "Усі (${ totalFoldersCount } тек)",
+        "Усі (${ totalFoldersCount } теки)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Усі (${ totalFoldersCount } мітка)",
+        "Усі (${ totalFoldersCount } мітки)",
+        "Усі (${ totalFoldersCount } міток)",
+        "Усі (${ totalFoldersCount } мітки)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }."
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "При шифруванні та додаванні вашої події сталася помилка. ${ totalImported } із ${ totalToImport } події успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Ви дійсно хочете остаточно видалити ${ count } контакт?",
+        "Ви дійсно хочете остаточно видалити ${ count } контакти?",
+        "Ви дійсно хочете остаточно видалити ${ count } контактів?",
+        "Ви дійсно хочете остаточно видалити ${ count } контактів?"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "До групи можна додати не більше ${ maxContacts } контакту",
+        "До групи можна додати не більше ${ maxContacts } контактів",
+        "До групи можна додати не більше ${ maxContacts } контактів",
+        "До групи можна додати не більше ${ maxContacts } контактів"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Автовибір з ${ numberOfCountries } країни",
+        "Автовибір з ${ numberOfCountries } країн",
+        "Автовибір з ${ numberOfCountries } країн",
+        "Автовибір з ${ numberOfCountries } країн"
+      ],
+      "byte": [
+        "байт",
+        "байти",
+        "байтів",
+        "байтів"
+      ],
+      "Byte": [
+        "Байт",
+        "Байти",
+        "Байтів",
+        "Байтів"
+      ],
+      "Contact deleted": [
+        "Контакт видалено",
+        "Контакти видалено",
+        "Контакти видалено",
+        "Контакти видалено"
+      ],
+      "Contact group deleted": [
+        "Групу контактів видалено",
+        "Групи контактів видалено",
+        "Групи контактів видалено",
+        "Групи контактів видалено"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Створити ${ calendarsToBeCreatedCount } новий календар",
+        "Створити ${ calendarsToBeCreatedCount } нові календарі",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Створення захищеної хмари для ${ value } учасника",
+        "Створення захищеної хмари для ${ value } учасників",
+        "Створення захищеної хмари для ${ value } учасників",
+        "Створення захищеної хмари для ${ value } учасників"
+      ],
+      "Create up to ${ n } calendar": [
+        "Створіть до ${ n } календаря",
+        "Створіть до ${ n } календарів",
+        "Створіть до ${ n } календарів",
+        "Створіть до ${ n } календарів"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Створіть максимум ${ n } календар або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарі або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
+      ],
+      "Delete ${ count } contact": [
+        "Видалити ${ count } контакт",
+        "Видалити ${ count } контакти",
+        "Видалити ${ count } контактів",
+        "Видалити ${ count } контактів"
+      ],
+      "Delete ${ count } contact group": [
+        "Видалити ${ count } групу контактів",
+        "Видалити ${ count } групи контактів",
+        "Видалити ${ count } груп контактів",
+        "Видалити ${ count } груп контактів"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Видалити ${ selectedCount } контакт",
+        "Видалити ${ selectedCount } контакти",
+        "Видалити ${ selectedCount } контактів",
+        "Видалити ${ selectedCount } контактів"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Видалити ${ selectedCount } групу контактів",
+        "Видалити ${ selectedCount } групи контактів",
+        "Видалити ${ selectedCount } груп контактів",
+        "Видалити ${ selectedCount } груп контактів"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або"
+      ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
+        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
+        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
+        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються"
+      ],
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Знайдено ${ itemsCount } пропозицію. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозиції. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозицій. Використовуйте клавіатуру для навігації.",
+        "Знайдено ${ itemsCount } пропозицій. Використовуйте клавіатуру для навігації."
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайти",
+        "Гігабайтів",
+        "Гігабайтів"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "Високошвидкісна VPN на ${ n } пристрої",
+        "Високошвидкісна VPN на ${ n } пристроях",
+        "Високошвидкісна VPN на ${ n } пристроях",
+        "Високошвидкісна VPN на ${ n } пристроях"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
+      ],
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
+      ],
+      "Import as simple event?": [
+        "Імпортувати як просту подію?",
+        "Імпортувати як прості події?",
+        "Імпортувати як прості події?",
+        "Імпортувати як прості події?"
+      ],
+      "Kilobyte": [
+        "Кілобайт",
+        "Кілобайти",
+        "Кілобайтів",
+        "Кілобайтів"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символ",
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символи",
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символів",
+        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символів"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайти",
+        "Мегабайтів",
+        "Мегабайтів"
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Об'єднайте принаймні ${ calendarsToFixCount } календар з наявним календарем ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }"
+      ],
+      "Move ${ n } file": [
+        "Перемістити ${ n } файл",
+        "Перемістити ${ n } файли",
+        "Перемістити ${ n } файлів",
+        "Перемістити ${ n } файлів"
+      ],
+      "Move ${ n } folder": [
+        "Перемістити ${ n } теку",
+        "Перемістити ${ n } теки",
+        "Перемістити ${ n } тек",
+        "Перемістити ${ n } тек"
+      ],
+      "Move ${ n } item": [
+        "Перемістити ${ n } елемент",
+        "Перемістити ${ n } елементи",
+        "Перемістити ${ n } елементів",
+        "Перемістити ${ n } елементів"
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Назва повинна бути до ${ MAX_NAME_LENGTH } символу",
+        "Назва повинна бути до ${ MAX_NAME_LENGTH } символів",
+        "Назва повинна бути до ${ MAX_NAME_LENGTH } символів",
+        "Назва повинна бути до ${ MAX_NAME_LENGTH } символів"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Один контакт не має адреси е-пошти: ${ noEmailsContactNamesList }",
+        "Деякі контакти не мають адреси е-пошти: ${ noEmailsContactNamesList }",
+        "Деякі контакти не мають адреси е-пошти: ${ noEmailsContactNamesList }",
+        "Деякі контакти не мають адреси е-пошти: ${ noEmailsContactNamesList }"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "В одній з груп немає контактів: ${ noContactGroupList }",
+        "В деяких групах немає контактів: ${ noContactGroupList }",
+        "В деяких групах немає контактів: ${ noContactGroupList }",
+        "В деяких групах немає контактів: ${ noContactGroupList }"
+      ],
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символи",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
+        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годину.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } години.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годин.",
+        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годин."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Виправте вказану проблему, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } групи.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп."
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Видалено дублікат запрошення: ${ joinedInvitee }",
+        "Видалено дублікати запрошень: ${ joinedInvitee }",
+        "Видалено дублікати запрошень: ${ joinedInvitee }",
+        "Видалено дублікати запрошень: ${ joinedInvitee }"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адресу електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адресу електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
+        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості."
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Сервери в ${ numberOfCountries }+ країні",
+        "Сервери в ${ numberOfCountries }+ країнах",
+        "Сервери в ${ numberOfCountries }+ країнах",
+        "Сервери в ${ numberOfCountries }+ країнах"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Підтримка ${ n } власного домену електронної пошти",
+        "Підтримка ${ n } власних доменів електронної пошти",
+        "Підтримка ${ n } власних доменів електронної пошти",
+        "Підтримка ${ n } власних доменів електронної пошти"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайти",
+        "Терабайтів",
+        "Терабайтів"
+      ],
+      "This file contains an event invitation:": [
+        "Цей файл містить запрошення на подію:",
+        "Цей файл містить запрошення на події:",
+        "Цей файл містить запрошення на події:",
+        "Цей файл містить запрошення на події:"
+      ],
+      "This file contains an invitation response:": [
+        "Цей файл містить відповідь на запрошення:",
+        "Цей файл містить відповіді на запрошення:",
+        "Цей файл містить відповіді на запрошення:",
+        "Цей файл містить відповіді на запрошення:"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } день",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } дні",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } днів",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } днів"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годину",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } години",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годин",
+        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годин"
+      ],
+      "Total for ${ n } month": [
+        "Всього за ${ n } місяць",
+        "Всього за ${ n } місяці",
+        "Всього за ${ n } місяців",
+        "Всього за ${ n } місяці"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Спробуйте коротше ім'я користувача (до ${ n } символу)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)"
+      ],
+      "Up to ${ n } user": [
+        "До ${ n } користувача",
+        "До ${ n } користувачів",
+        "До ${ n } користувачів",
+        "До ${ n } користувачів"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "До ${ n } користувача (${ adminsText }, ${ usersText })",
+        "До ${ n } користувачів (${ adminsText }, ${ usersText })",
+        "До ${ n } користувачів (${ adminsText }, ${ usersText })",
+        "До ${ n } користувачів (${ adminsText }, ${ usersText })"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Використання на ${ n } пристрої",
+        "Використання одночасно на ${ n } пристроях",
+        "Використання одночасно на ${ n } пристроях",
+        "Використання одночасно на ${ n } пристроях"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Спільне використання сховища (до ${ n } особи)",
+        "Спільне використання сховища (до ${ n } осіб)",
+        "Спільне використання сховища (до ${ n } осіб)",
+        "Спільне використання сховища (до ${ n } осіб)"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
+        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями."
+      ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачу",
+        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам",
+        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам",
+        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
+        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакти",
+        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
+        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } дня.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
+        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "У вас ${ timeRemaining.inHours } година, щоб скинути пароль.",
+        " У вас ${ timeRemaining.inHours } години, щоб скинути пароль.",
+        " У вас ${ timeRemaining.inHours } годин, щоб скинути пароль.",
+        " У вас ${ timeRemaining.inHours } годин, щоб скинути пароль."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "У вас ${ timeRemaining.inMinutes } хвилина, щоб скинути пароль.",
+        " У вас ${ timeRemaining.inMinutes } хвилини, щоб скинути пароль.",
+        " У вас ${ timeRemaining.inMinutes } хвилин, щоб скинути пароль.",
+        " У вас ${ timeRemaining.inMinutes } хвилин, щоб скинути пароль."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "У вас ${ timeRemaining.inSeconds } секунда, щоб скинути пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунди, щоб скинути пароль",
+        " У вас ${ timeRemaining.inSeconds } секунд, щоб скинути пароль.",
+        " У вас ${ timeRemaining.inSeconds } секунд, щоб скинути пароль."
+      ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Залишився **${ daysRemaining }** день до завершення дії вашого тарифного плану **${ currentPlanName }**.",
+        "Залишилося **${ daysRemaining }** дні до завершення дії вашого тарифного плану **${ currentPlanName }**.",
+        "Залишилося **${ daysRemaining }** днів до завершення дії вашого тарифного плану **${ currentPlanName }**.",
+        "Залишилося **${ daysRemaining }** днів до завершення дії вашого тарифного плану **${ currentPlanName }**."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подію.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } події.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій."
+      ]
+    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Незабаром розпочнеться пересилання. Нові листи з'являться у вашій поштовій скриньці."
@@ -86,12 +1102,6 @@
       ],
       "Ask me next time": [
         "Запитати наступного разу"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "До групи можна додати не більше ${ maxContacts } контакту",
-        "До групи можна додати не більше ${ maxContacts } контактів",
-        "До групи можна додати не більше ${ maxContacts } контактів",
-        "До групи можна додати не більше ${ maxContacts } контактів"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
@@ -239,18 +1249,6 @@
       ],
       "Delete": [
         "Видалити"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Видалити ${ selectedCount } контакт",
-        "Видалити ${ selectedCount } контакти",
-        "Видалити ${ selectedCount } контактів",
-        "Видалити ${ selectedCount } контактів"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Видалити ${ selectedCount } групу контактів",
-        "Видалити ${ selectedCount } групи контактів",
-        "Видалити ${ selectedCount } груп контактів",
-        "Видалити ${ selectedCount } груп контактів"
       ],
       "Delete contact": [
         "Видалити контакт"
@@ -788,12 +1786,6 @@
       ],
       "words out of": [
         "слів з"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
-        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакти",
-        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
-        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
       ]
     },
     "Actions message": {
@@ -814,18 +1806,6 @@
       ]
     },
     "Addon": {
-      "${ domains } additional custom domain": [
-        "${ domains } додатковий власний домен",
-        "${ domains } додаткові власні домени",
-        "${ domains } додаткових власних доменів",
-        "${ domains } додаткових власних доменів"
-      ],
-      "${ ips } server": [
-        "${ ips } сервер",
-        "${ ips } сервери",
-        "${ ips } серверів",
-        "${ ips } серверів"
-      ],
       "${ price } per dedicated server": [
         "${ price } за виділений сервер"
       ],
@@ -837,24 +1817,6 @@
       ],
       "${ price } per user": [
         "${ price } за користувача"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats } ${ LUMO_APP_NAME } ліцензія",
-        "${ seats } ${ LUMO_APP_NAME } ліцензії",
-        "${ seats } ${ LUMO_APP_NAME } ліцензій",
-        "${ seats } ${ LUMO_APP_NAME } ліцензій"
-      ],
-      "${ seats } writing assistant seat": [
-        "Помічник з написання для ${ seats } користувача",
-        "Помічник з написання для ${ seats } користувачів",
-        "Помічник з написання для ${ seats } користувачів",
-        "Помічник з написання для ${ seats } користувачів"
-      ],
-      "${ users } user": [
-        "${ users } користувач",
-        "${ users } користувачі",
-        "${ users } користувачів",
-        "${ users } користувачів"
       ]
     },
     "Alert": {
@@ -903,12 +1865,6 @@
       ]
     },
     "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } місяць",
-        "${ n } місяців",
-        "${ n } місяці",
-        "${ n } місяці"
-      ],
       "/ month": [
         "/ місяць"
       ],
@@ -1048,18 +2004,6 @@
     "BF2024: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Отримуйте доступ до сервісів потокової трансляції, зокрема Netflix, Disney+, Prime Video тощо, з будь-якої точки світу."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адресу електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
-        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
-        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
-        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, помічника з написання ${ BRAND_NAME } Scribe, необмежену кількість псевдонімів Hide-my-email та інші можливості."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адресу електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
-        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адреси електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
-        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості.",
-        "Захистіть свої листи та розклад наскрізним шифруванням. Передбачає ${ addresses } адрес електронної пошти, підтримку власних доменів електронної пошти, необмежену кількість псевдонімів Hide-my-email та інші можливості."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "Функцію NetShield, яка блокує рекламу, стеження і зловмисні програми, розроблено спеціально для захисту ваших пристроїв та прискорення роботи в Інтернеті."
@@ -1235,20 +2179,8 @@
       ]
     },
     "Checkout row": {
-      "${ users } user": [
-        "${ users } користувач",
-        "${ users } користувачі",
-        "${ users } користувачів",
-        "${ users } користувача"
-      ],
       "Total": [
         "Усього"
-      ],
-      "Total for ${ n } month": [
-        "Всього за ${ n } місяць",
-        "Всього за ${ n } місяці",
-        "Всього за ${ n } місяців",
-        "Всього за ${ n } місяці"
       ]
     },
     "Collapsible tooltip": {
@@ -2623,18 +3555,6 @@
       "Could not open updated vault": [
         "Не вдалося відкрити оновлене сховище"
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря або",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
-        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або"
-      ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
       ],
@@ -2743,12 +3663,6 @@
       "Last name is too long": [
         "Прізвище занадто довге"
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Об'єднайте принаймні ${ calendarsToFixCount } календар з наявним календарем ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarsToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
-        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }"
-      ],
       "Missing key packet": [
         "Відсутній пакунок ключів"
       ],
@@ -2772,18 +3686,6 @@
       ],
       "Not a valid number": [
         "Номер недійсний"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Один контакт не має адреси е-пошти: ${ noEmailsContactNamesList }",
-        "Деякі контакти не мають адреси е-пошти: ${ noEmailsContactNamesList }",
-        "Деякі контакти не мають адреси е-пошти: ${ noEmailsContactNamesList }",
-        "Деякі контакти не мають адреси е-пошти: ${ noEmailsContactNamesList }"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "В одній з груп немає контактів: ${ noContactGroupList }",
-        "В деяких групах немає контактів: ${ noContactGroupList }",
-        "В деяких групах немає контактів: ${ noContactGroupList }",
-        "В деяких групах немає контактів: ${ noContactGroupList }"
       ],
       "Organization key is not decrypted": [
         "Ключ організації не розшифровано"
@@ -2821,12 +3723,6 @@
       "Please enter ZIP code": [
         "Введіть дійсний поштовий індекс"
       ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Виправте вказану проблему, щоб продовжити.",
-        "Виправте вказані проблеми, щоб продовжити.",
-        "Виправте вказані проблеми, щоб продовжити.",
-        "Виправте вказані проблеми, щоб продовжити."
-      ],
       "Please provide either a first name, a last name or a display name": [
         "Введіть ім'я, прізвище або псевдонім"
       ],
@@ -2856,12 +3752,6 @@
       ],
       "Process aborted": [
         "Процес перервано"
-      ],
-      "Removed duplicate invitee: ${ joinedInvitee }": [
-        "Видалено дублікат запрошення: ${ joinedInvitee }",
-        "Видалено дублікати запрошень: ${ joinedInvitee }",
-        "Видалено дублікати запрошень: ${ joinedInvitee }",
-        "Видалено дублікати запрошень: ${ joinedInvitee }"
       ],
       "Request timed out": [
         "Час очікування запиту завершився"
@@ -3013,12 +3903,6 @@
       "We are having trouble saving recent edits. Please refresh the page.": [
         "У нас виникли проблеми зі збереженням останніх редагувань. Оновіть сторінку."
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачу",
-        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам",
-        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам",
-        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам"
-      ],
       "You have reached the maximum number of calendars.": [
         "Ви досягли максимальної кількості календарів."
       ],
@@ -3047,12 +3931,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Потрібно перезапустити імпорт."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подію.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } події.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
@@ -3411,12 +4289,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "байт",
-        "байти",
-        "байтів",
-        "байтів"
-      ],
       "GB": [
         "ГБ"
       ],
@@ -3428,38 +4300,6 @@
       ],
       "TB": [
         "ТБ"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Байт",
-        "Байти",
-        "Байтів",
-        "Байтів"
-      ],
-      "Gigabyte": [
-        "Гігабайт",
-        "Гігабайти",
-        "Гігабайтів",
-        "Гігабайтів"
-      ],
-      "Kilobyte": [
-        "Кілобайт",
-        "Кілобайти",
-        "Кілобайтів",
-        "Кілобайтів"
-      ],
-      "Megabyte": [
-        "Мегабайт",
-        "Мегабайти",
-        "Мегабайтів",
-        "Мегабайтів"
-      ],
-      "Terabyte": [
-        "Терабайт",
-        "Терабайти",
-        "Терабайтів",
-        "Терабайтів"
       ]
     },
     "Filter notification": {
@@ -3510,12 +4350,6 @@
       ]
     },
     "Hint": {
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Знайдено ${ itemsCount } пропозицію. Використовуйте клавіатуру для навігації.",
-        "Знайдено ${ itemsCount } пропозиції. Використовуйте клавіатуру для навігації.",
-        "Знайдено ${ itemsCount } пропозицій. Використовуйте клавіатуру для навігації.",
-        "Знайдено ${ itemsCount } пропозицій. Використовуйте клавіатуру для навігації."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
       ]
@@ -3582,18 +4416,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } подію зашифровано та додано до вашого календаря",
-        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря",
-        "${ totalImported }/${ totalToImport } подій зашифровано та додано до вашого календаря",
-        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "При шифруванні та додаванні вашої події сталася помилка. ${ totalImported } із ${ totalToImport } події успішно імпортовано.",
-        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
-        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
-        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Під час шифрування та додавання події сталася помилка. Неможливо імпортувати подію."
       ],
@@ -3628,29 +4450,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Імпортовані запрошення з'являються в ${ CALENDAR_APP_NAME } як прості події без подробиць про організаторів та учасників. Для отримання оновлень подій та перегляду учасників попросіть організаторів запросити вас за допомогою вашої адреси електронної пошти ${ BRAND_NAME }."
       ],
-      "This file contains an event invitation:": [
-        "Цей файл містить запрошення на подію:",
-        "Цей файл містить запрошення на події:",
-        "Цей файл містить запрошення на події:",
-        "Цей файл містить запрошення на події:"
-      ],
-      "This file contains an invitation response:": [
-        "Цей файл містить відповідь на запрошення:",
-        "Цей файл містить відповіді на запрошення:",
-        "Цей файл містить відповіді на запрошення:",
-        "Цей файл містить відповіді на запрошення:"
-      ],
       "This file contains some data that we cannot import:": [
         "Цей файл містить деякі дані, які ми не можемо імпортувати:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } контакт зашифровано та додано до вашого списку контактів",
-        "${ totalImported }/${ totalToImport } контакти зашифровано та додано до вашого списку контактів",
-        "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів",
-        "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Сталася помилка під час шифрування й додавання контакту. Жоден контакт не може бути імпортовано."
       ],
@@ -3670,14 +4474,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Контакт ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } контакт",
-        "${ totalContacts } контакти",
-        "${ totalContacts } контактів",
-        "${ totalContacts } контактів"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3847,12 +4643,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } із ${ totalEvents } події не буде імпортовано. Розгорніть для подробиць.",
-        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
-        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
-        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць."
-      ],
       "No contact can be imported. Click for details": [
         "Неможливо імпортувати контакти. Натисніть для подробиць"
       ],
@@ -3870,12 +4660,6 @@
       "\"${ documentTitle }\" is in trash and will stay there until you delete it permanently.": [
         "\"${ documentTitle }\" знаходиться у смітнику і залишиться там, доки ви остаточно його не видалите."
       ],
-      "${ addressCount } email address": [
-        "${ addressCount } адреса е-пошти",
-        "${ addressCount } адреси е-пошти",
-        "${ addressCount } адрес е-пошти",
-        "${ addressCount } адрес е-пошти"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
@@ -3885,56 +4669,14 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } новий календар",
-        "${ calendarsToBeCreatedCount } нові календарі",
-        "${ calendarsToBeCreatedCount } нових календарів",
-        "${ calendarsToBeCreatedCount } нових календарів"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } об'єднаний календар",
-        "${ calendarsToBeMergedCount } об'єднані календарі",
-        "${ calendarsToBeMergedCount } об'єднаних календарів",
-        "${ calendarsToBeMergedCount } об'єднаних календарів"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } контакт містить кілька адрес е-пошти.",
-        "${ contactCount } контакти містять кілька адрес е-пошти.",
-        "${ contactCount } контактів містять кілька адрес е-пошти.",
-        "${ contactCount } контактів містять кілька адрес е-пошти."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } учасник",
-        "${ contactEmailsLength } учасники",
-        "${ contactEmailsLength } учасників",
-        "${ contactEmailsLength } учасників"
-      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } містить кілька адрес е-пошти."
-      ],
-      "${ contactsCount } contact found": [
-        "Знайдено ${ contactsCount } контакт",
-        "Знайдено ${ contactsCount } контакти",
-        "Знайдено ${ contactsCount } контактів",
-        "Знайдено ${ contactsCount } контактів"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } контакт",
-        "${ contactsLength } контакти",
-        "${ contactsLength } контактів",
-        "${ contactsLength } контактів"
       ],
       "${ DOCS_APP_NAME } lets you collaborate in real-time with end-to-end encryption for complete privacy. Create a copy to start editing, or ask the owner for edit access.": [
         "${ DOCS_APP_NAME } дозволяє співпрацювати в режимі реального часу з використанням наскрізного шифрування для повної приватності. Щоб розпочати редагування, створіть копію, або запросіть доступ у власника."
       ],
       "${ DOCS_SHORT_APP_NAME } in": [
         "${ DOCS_SHORT_APP_NAME } у"
-      ],
-      "${ groupCounts } group found": [
-        "Знайдено ${ groupCounts } групу",
-        "Знайдено ${ groupCounts } групи",
-        "Знайдено ${ groupCounts } груп",
-        "Знайдено ${ groupCounts } груп"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Довічна угода ${ PASS_SHORT_APP_NAME } не має ціни поновлення, це одноразовий платіж за довічний доступ до ${ PASS_SHORT_APP_NAME }."
@@ -3945,83 +4687,17 @@
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
       ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } завершиться за ${ daysLeft } день.",
-        "${ planName } завершиться за ${ daysLeft } дні.",
-        "${ planName } завершиться за ${ daysLeft } днів.",
-        "${ planName } завершиться за ${ daysLeft } дня(ів)."
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "Знайдено ${ providerFoldersNumLocalized } теку",
-        "Знайдено ${ providerFoldersNumLocalized } теки",
-        "Знайдено ${ providerFoldersNumLocalized } тек",
-        "Знайдено ${ providerFoldersNumLocalized } тек"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } мітка знайдена в Gmail",
-        "${ providerFoldersNumLocalized } мітки знайдені в Gmail",
-        "${ providerFoldersNumLocalized } міток знайдено в Gmail",
-        "${ providerFoldersNumLocalized } міток знайдено в Gmail"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календар",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
-        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "Вибрано ${ selectedContactsLength } контакт із ${ contactsLength }",
-        "Вибрано ${ selectedContactsLength } контакти з ${ contactsLength }",
-        "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }",
-        "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }"
-      ],
-      "${ selectedCount } selected": [
-        "вибрано ${ selectedCount }",
-        "вибрано ${ selectedCount }",
-        "вибрано ${ selectedCount }",
-        "вибрано ${ selectedCount }"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "Вибрано ${ selectedFoldersCountLocalized } теку",
-        "Вибрано ${ selectedFoldersCountLocalized } теки",
-        "Вибрано ${ selectedFoldersCountLocalized } тек",
-        "Вибрано ${ selectedFoldersCountLocalized } тек"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } вибрана мітка",
-        "${ selectedFoldersCountLocalized } вибрані мітки",
-        "${ selectedFoldersCountLocalized } вибраних міток",
-        "${ selectedFoldersCountLocalized } вибраних міток"
-      ],
       "${ storage } storage": [
         "${ storage } сховища"
       ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } контакт успішно оновлений.",
-        "${ updated } контакти успішно оновлені.",
-        "${ updated } контактів успішно оновлено.",
-        "${ updated } контактів успішно оновлено."
-      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } вже існує в цьому розташуванні."
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } учасник)",
-        "(${ memberCount } учасники)",
-        "(${ memberCount } учасників)",
-        "(${ memberCount } учасників)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } / місяць)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } додаткового сховища"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднання для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)",
-        "+${ organization.BonusVPN } з'єднань для ${ VPN_APP_NAME } (дозволяє приєднати більше пристроїв до VPN)"
       ],
       "30-day money-back guarantee.": [
         "Гарантія повернення грошей протягом 30 днів."
@@ -4058,24 +4734,6 @@
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "Помічник на основі ШІ допоможе вам швидко та без зайвих зусиль створювати кращі листи."
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Усі (${ totalFoldersCount } тека)",
-        "Усі (${ totalFoldersCount } теки)",
-        "Усі (${ totalFoldersCount } тек)",
-        "Усі (${ totalFoldersCount } теки)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Усі (${ totalFoldersCount } мітка)",
-        "Усі (${ totalFoldersCount } мітки)",
-        "Усі (${ totalFoldersCount } міток)",
-        "Усі (${ totalFoldersCount } мітки)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
-        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
-        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
-        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }."
       ],
       "American Express SafeKey logo": [
         "Логотип American Express SafeKey"
@@ -4170,12 +4828,6 @@
       "Country code": [
         "Код країни"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Створити ${ calendarsToBeCreatedCount } новий календар",
-        "Створити ${ calendarsToBeCreatedCount } нові календарі",
-        "Створити ${ calendarsToBeCreatedCount } нових календарів",
-        "Створити ${ calendarsToBeCreatedCount } нових календарів"
-      ],
       "Create a copy to edit": [
         "Створіть копію для редагування"
       ],
@@ -4187,12 +4839,6 @@
       ],
       "Create a new contact group": [
         "Створити нову групу контактів"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Створення захищеної хмари для ${ value } учасника",
-        "Створення захищеної хмари для ${ value } учасників",
-        "Створення захищеної хмари для ${ value } учасників",
-        "Створення захищеної хмари для ${ value } учасників"
       ],
       "Create in": [
         "Створити у"
@@ -4410,12 +5056,6 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Якщо ви продовжите перехід на нижчий тарифний план, ви втратите доступ до платних функцій ${ VPN_APP_NAME }."
       ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
-        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
-        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
-      ],
       "Import from": [
         "Імпортувати з"
       ],
@@ -4520,12 +5160,6 @@
       ],
       "Mastercard SecureCode logo": [
         "Логотип Mastercard SecureCode"
-      ],
-      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
-        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символ",
-        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символи",
-        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символів",
-        "Максимум ${ MAX_SHARED_URL_PASSWORD_LENGTH } символів"
       ],
       "Me": [
         "Я"
@@ -4658,12 +5292,6 @@
       ],
       "Please select the folders you would like to import:": [
         "Оберіть теки, які ви бажаєте імпортувати:"
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } групи.",
-        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
-        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
-        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Виберіть яку електронну адресу або адреси додати до ${ groupName }."
@@ -5046,18 +5674,6 @@
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями."
-      ],
       "You can now return to the application to continue": [
         "Тепер ви можете повернутися до програми для продовження роботи"
       ],
@@ -5183,20 +5799,6 @@
         "Натисніть для подробиць"
       ]
     },
-    "Info: partial": {
-      "${ selectedFoldersCount } folder selected": [
-        "Вибрано ${ selectedFoldersCount } теку",
-        "Вибрано ${ selectedFoldersCount } теки",
-        "Вибрано ${ selectedFoldersCount } тек",
-        "Вибрано ${ selectedFoldersCount } тек"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "Вибрано ${ selectedFoldersCount } мітку",
-        "Вибрано ${ selectedFoldersCount } мітки",
-        "Вибрано ${ selectedFoldersCount } міток",
-        "Вибрано ${ selectedFoldersCount } міток"
-      ]
-    },
     "Info; access rights for shared calendar": {
       "View only": [
         "Тільки перегляд"
@@ -5251,12 +5853,6 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Ім'я користувача ${ BRAND_NAME }"
-      ],
-      "${ n } month": [
-        "${ n } місяць",
-        "${ n } місяці",
-        "${ n } місяців",
-        "${ n } місяця"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
@@ -5824,12 +6420,6 @@
       "Almost there": [
         "Майже готово"
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
-        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
-        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
-        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "З'єднання з вашим провайдером електронної пошти"
       ],
@@ -5872,32 +6462,6 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Увімкнути ${ reason }"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
-        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
-        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
       ]
     },
     "mail_signup_2024: Info": {
@@ -6197,110 +6761,8 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } та ${ PROTON_SENTINEL_NAME }"
       ],
-      "${ n } calendar": [
-        "${ n } календар",
-        "${ n } календарі",
-        "${ n } календарів",
-        "${ n } календарів"
-      ],
-      "${ n } calendar per user": [
-        "${ n } календар на користувача",
-        "${ n } календарі на користувача",
-        "${ n } календарів на користувача",
-        "${ n } календарів на користувача"
-      ],
-      "${ n } custom email domain": [
-        "${ n } власний домен",
-        "${ n } власні домени",
-        "${ n } власних доменів",
-        "${ n } власних доменів"
-      ],
-      "${ n } email address": [
-        "${ n } адреса електронної пошти",
-        "${ n } адреси/псевдонімів е-пошти",
-        "${ n } адрес/псевдонімів е-пошти",
-        "${ n } адреси/псевдонімів е-пошти"
-      ],
-      "${ n } email address per user": [
-        "${ n } адреса е-пошти на користувача",
-        "${ n } адреси е-пошти на користувача",
-        "${ n } адрес е-пошти на користувача",
-        "${ n } адрес е-пошти на користувача"
-      ],
-      "${ n } filter": [
-        "${ n } фільтр",
-        "${ n } фільтри",
-        "${ n } фільтрів",
-        "${ n } фільтри"
-      ],
-      "${ n } folder": [
-        "${ n } тека",
-        "${ n } теки",
-        "${ n } тек",
-        "${ n } тек"
-      ],
-      "${ n } folder and label": [
-        "${ n } тека й мітка",
-        "${ n } теки й мітки",
-        "${ n } тек і міток",
-        "${ n } тек і міток"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email псевдонім",
-        "${ n } hide-my-email псевдоніми",
-        "${ n } hide-my-email псевдонімів",
-        "${ n } hide-my-email псевдонімів"
-      ],
-      "${ n } label": [
-        "${ n } мітка",
-        "${ n } мітки",
-        "${ n } міток",
-        "${ n } міток"
-      ],
-      "${ n } message per day": [
-        "${ n } повідомлення на добу",
-        "${ n } повідомлення на добу",
-        "${ n } повідомлень на добу",
-        "${ n } повідомлення на добу"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } спільне сховище ${ PASS_SHORT_APP_NAME } на користувача",
-        "${ n } спільні сховища ${ PASS_SHORT_APP_NAME } на користувача",
-        "${ n } спільних сховищ ${ PASS_SHORT_APP_NAME } на користувача",
-        "${ n } спільних сховищ ${ PASS_SHORT_APP_NAME } на користувача"
-      ],
-      "${ n } vault": [
-        "${ n } сховище",
-        "${ n } сховища",
-        "${ n } сховищ",
-        "${ n } сховищ"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднань",
-        "${ n } VPN-з'єднань"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } користувач",
-        "До ${ numberOfUsers } користувачів",
-        "До ${ numberOfUsers } користувачів",
-        "До ${ numberOfUsers } користувачів"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-денна історія версій файлів",
-        "${ options }-денна історія версій файлів",
-        "${ options }-денна історія версій файлів",
-        "${ options }-денна історія версій файлів"
-      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin lifetime"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } з ${ n } псевдонімом hide-my-email",
-        "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email",
-        "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email",
-        "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з необмеженою кількістю псевдонімів hide-my-email"
@@ -6467,12 +6929,6 @@
       "Group management (coming soon)": [
         "Керування групами (незабаром)"
       ],
-      "High-speed VPN on ${ n } device": [
-        "Високошвидкісна VPN на ${ n } пристрої",
-        "Високошвидкісна VPN на ${ n } пристроях",
-        "Високошвидкісна VPN на ${ n } пристроях",
-        "Високошвидкісна VPN на ${ n } пристроях"
-      ],
       "HTML signatures": [
         "HTML-підписи"
       ],
@@ -6623,26 +7079,8 @@
       "Unlimited volume/bandwidth": [
         "Необмежена пропускна здатність"
       ],
-      "Up to ${ n } user": [
-        "До ${ n } користувача",
-        "До ${ n } користувачів",
-        "До ${ n } користувачів",
-        "До ${ n } користувачів"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "До ${ n } користувача (${ adminsText }, ${ usersText })",
-        "До ${ n } користувачів (${ adminsText }, ${ usersText })",
-        "До ${ n } користувачів (${ adminsText }, ${ usersText })",
-        "До ${ n } користувачів (${ adminsText }, ${ usersText })"
-      ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Використання на ${ n } пристрої",
-        "Використання одночасно на ${ n } пристроях",
-        "Використання одночасно на ${ n } пристроях",
-        "Використання одночасно на ${ n } пристроях"
       ],
       "User credential management": [
         "Керування обліковими даними користувача"
@@ -6653,28 +7091,8 @@
       "User storage management": [
         "Керування сховищем користувача"
       ],
-      "Vault sharing (up to ${ n } person)": [
-        "Спільне використання сховища (до ${ n } особи)",
-        "Спільне використання сховища (до ${ n } осіб)",
-        "Спільне використання сховища (до ${ n } осіб)",
-        "Спільне використання сховища (до ${ n } осіб)"
-      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Ми скануємо \"Темну мережу\", щоб перевірити, чи не було витоку ваших адрес або псевдонімів ${ BRAND_NAME }, і негайно сповіщаємо вас, якщо щось знайдемо."
-      ]
-    },
-    "new_plans: feature highlight": {
-      "${ admins } admin": [
-        "${ admins } адміністратор",
-        "${ admins } адміністратори",
-        "${ admins } адміністраторів",
-        "${ admins } адміністраторів"
-      ],
-      "${ users } user": [
-        "${ users } користувач",
-        "${ users } користувачі",
-        "${ users } користувачів",
-        "${ users } користувачів"
       ]
     },
     "new_plans: feature info": {
@@ -6837,12 +7255,6 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Створіть кілька адрес електронної пошти для свого онлайн-життя, наприклад, JohnShopper@${ domain } для облікових записів для покупок, JohnNews@${ domain } для підписок на новини"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Створіть максимум ${ n } календар або додайте календарі друзів, рідних, колег та організацій",
-        "Створіть максимум ${ n } календарі або додайте календарі друзів, рідних, колег та організацій",
-        "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій",
-        "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Створіть до ${ n } адрес електронної пошти/псевдонімів, які можна призначити членам сім'ї. Використовуйте їх для ідентифікації в інтернеті, наприклад, JohnShopper@${ domain } для облікових записів покупок."
@@ -7047,12 +7459,6 @@
       "Central control panel": [
         "Центральна панель керування"
       ],
-      "Create up to ${ n } calendar": [
-        "Створіть до ${ n } календаря",
-        "Створіть до ${ n } календарів",
-        "Створіть до ${ n } календарів",
-        "Створіть до ${ n } календарів"
-      ],
       "Dedicated Account manager": [
         "Призначений менеджер облікового запису"
       ],
@@ -7070,12 +7476,6 @@
       ],
       "Require 2FA": [
         "Потрібна 2FA"
-      ],
-      "Support for ${ n } custom email domain": [
-        "Підтримка ${ n } власного домену електронної пошти",
-        "Підтримка ${ n } власних доменів електронної пошти",
-        "Підтримка ${ n } власних доменів електронної пошти",
-        "Підтримка ${ n } власних доменів електронної пошти"
       ]
     },
     "Notification": {
@@ -7126,72 +7526,6 @@
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" успішно перейменовано"
-      ],
-      "${ count } item failed to be decrypted": [
-        "Не вдалося розшифрувати ${ count } елемент",
-        "Не вдалося розшифрувати ${ count } елементи",
-        "Не вдалося розшифрувати ${ count } елементів",
-        "Не вдалося розшифрувати ${ count } елемента"
-      ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } елемент видалено",
-        "${ numberOfItems } елементів видалено",
-        "${ numberOfItems } елементів видалено",
-        "${ numberOfItems } елементів видалено"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } елемент видалено зі смітника остаточно",
-        "${ numberOfItems } елементи видалено зі смітника остаточно",
-        "${ numberOfItems } елементів видалено зі смітника остаточно",
-        "${ numberOfItems } елементів видалено зі смітника остаточно"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } елемент не вдалося видалити",
-        "${ numberOfItems } елементів не вдалося видалити",
-        "${ numberOfItems } елементів не вдалося видалити",
-        "${ numberOfItems } елементів не вдалося видалити"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } елемент не вдалося остаточно видалити зі смітника",
-        "${ numberOfItems } елементи не вдалося остаточно видалити зі смітника",
-        "${ numberOfItems } елементів не вдалося остаточно видалити зі смітника",
-        "${ numberOfItems } елемента не вдалося остаточно видалити зі смітника"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } елемент не вдалося перемістити",
-        "${ numberOfItems } елементи не вдалося перемістити",
-        "${ numberOfItems } елементів не вдалося перемістити",
-        "${ numberOfItems } елементів не вдалося перемістити"
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "Не вдалося перемістити до смітника ${ numberOfItems } елемент",
-        "Не вдалося перемістити до смітника ${ numberOfItems } елементи",
-        "Не вдалося перемістити до смітника ${ numberOfItems } елементів",
-        "Не вдалося перемістити до смітника ${ numberOfItems } елемента"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "Не вдалося відновити зі смітника ${ numberOfItems } елемент",
-        "Не вдалося відновити зі смітника ${ numberOfItems } елементи",
-        "Не вдалося відновити зі смітника ${ numberOfItems } елементів",
-        "Не вдалося відновити зі смітника ${ numberOfItems } елемента"
-      ],
-      "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } елемент переміщено до смітника",
-        "${ numberOfItems } елементи переміщено до смітника",
-        "${ numberOfItems } елементів переміщено до смітника",
-        "${ numberOfItems } елементів переміщено до смітника"
-      ],
-      "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } елемент відновлено зі смітника",
-        "${ numberOfItems } елементи відновлено зі смітника",
-        "${ numberOfItems } елементів відновлено зі смітника",
-        "${ numberOfItems } елементів відновлено зі смітника"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } елемент успішно переміщено",
-        "${ numberOfItems } елементи успішно переміщено",
-        "${ numberOfItems } елементів успішно переміщено",
-        "${ numberOfItems } елементів успішно переміщено"
       ],
       "${ reason } has been disabled": [
         "${ reason } вимкнено"
@@ -7256,12 +7590,6 @@
       "Failed to upload files: ${ err }": [
         "Не вдалося вивантажити файли: ${ err }"
       ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються",
-        "Файл чи тека \"${ filename }\" та ще ${ count } вже вивантажуються"
-      ],
       "File or folder \"${ filename }\" is already uploading": [
         "Файл чи тека \"${ filename }\" вже вивантажується"
       ],
@@ -7273,24 +7601,6 @@
       ],
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
-      ],
-      "Move ${ n } file": [
-        "Перемістити ${ n } файл",
-        "Перемістити ${ n } файли",
-        "Перемістити ${ n } файлів",
-        "Перемістити ${ n } файлів"
-      ],
-      "Move ${ n } folder": [
-        "Перемістити ${ n } теку",
-        "Перемістити ${ n } теки",
-        "Перемістити ${ n } тек",
-        "Перемістити ${ n } тек"
-      ],
-      "Move ${ n } item": [
-        "Перемістити ${ n } елемент",
-        "Перемістити ${ n } елементи",
-        "Перемістити ${ n } елементів",
-        "Перемістити ${ n } елементів"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостатньо місця для вивантаження ${ formattedTotal }"
@@ -7454,12 +7764,6 @@
       ]
     },
     "pass_signup_2024: Info": {
-      "${ n } user account": [
-        "${ n } обліковий запис користувача",
-        "${ n } облікові записи користувачів",
-        "${ n } облікових записів користувачів",
-        "${ n } облікових записів користувачів"
-      ],
       "Activity log": [
         "Журнал активності"
       ],
@@ -7775,24 +8079,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } з ${ countContacts } контакт успішно експортовано.",
-        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
-        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
-        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } контакт з ${ totalBeDeleted } успішно видалено.",
-        "${ model.deleted.length } контакти з ${ totalBeDeleted } успішно видалено.",
-        "${ model.deleted.length } контактів з ${ totalBeDeleted } успішно видалено.",
-        "${ model.deleted.length } контактів з ${ totalBeDeleted } успішно видалено."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } контакт з ${ totalBeMerged } успішно об'єднано.",
-        "${ model.submitted.length } контакти з ${ totalBeMerged } успішно об'єднано.",
-        "${ model.submitted.length } контактів з ${ totalBeMerged } успішно об'єднано.",
-        "${ model.submitted.length } контактів з ${ totalBeMerged } успішно об'єднано."
-      ],
       "No contacts exported.": [
         "Контакти не експортовано."
       ],
@@ -7969,35 +8255,11 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } день",
-        "${ timeRemaining.inDays } дні",
-        "${ timeRemaining.inDays } днів",
-        "${ timeRemaining.inDays } днів"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } година",
-        "${ timeRemaining.inHours } години",
-        "${ timeRemaining.inHours } годин",
-        "${ timeRemaining.inHours } годин"
-      ],
       "Password reset request approved (${ user.Email }).": [
         "Запит на скидання пароля схвалено (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Щоб змінити пароль, перейдіть на авторизований пристрій, з якого було ініційовано запит."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } день",
-        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } дні",
-        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } днів",
-        "Термін дії цього дозволу завершується через ${ timeRemaining.inDays } днів"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годину",
-        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } години",
-        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годин",
-        "Термін дії цього дозволу завершується через ${ timeRemaining.inHours } годин"
       ],
       "This permission expires soon": [
         "Термін дії цього дозволу скоро закінчиться"
@@ -8007,30 +8269,6 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Тепер ви можете змінити пароль для облікового запису ${ boldEmail }."
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } дня.",
-        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
-        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів.",
-        "Ви можете скинути пароль упродовж ${ timeRemaining.inDays } днів."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "У вас ${ timeRemaining.inHours } година, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inHours } години, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inHours } годин, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inHours } годин, щоб скинути пароль."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "У вас ${ timeRemaining.inMinutes } хвилина, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвилини, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвилин, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inMinutes } хвилин, щоб скинути пароль."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "У вас ${ timeRemaining.inSeconds } секунда, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунди, щоб скинути пароль",
-        " У вас ${ timeRemaining.inSeconds } секунд, щоб скинути пароль.",
-        " У вас ${ timeRemaining.inSeconds } секунд, щоб скинути пароль."
       ]
     },
     "session_recovery:available:link": {
@@ -8090,20 +8328,8 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hour": [
-        "Ще ${ gracePeriodHoursRemaining } година",
-        "Ще ${ gracePeriodHoursRemaining } години",
-        "Ще ${ gracePeriodHoursRemaining } годин",
-        "Ще ${ gracePeriodHoursRemaining } годин"
-      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Скасуйте запит, якщо ви не просили скинути пароль."
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годину.",
-        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } години.",
-        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годин.",
-        "Надіслано запит на скидання пароля (${ user.Email }). Пароль можна змінити через ${ hoursRemaining } годин."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Щоб переконатися, що ви справді намагаєтеся скинути пароль, ми чекаємо 72 години, перш ніж схвалювати запити. Ви можете змінити пароль через ${ boldTimeLeft }. ${ viewRequest }"
@@ -8131,12 +8357,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } година",
-        "${ gracePeriodHoursRemaining } години",
-        "${ gracePeriodHoursRemaining } годин",
-        "${ gracePeriodHoursRemaining } годин"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } тепер доступно."
       ],
@@ -8197,40 +8417,6 @@
         "Перейти на Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } день",
-        "${ days } дні",
-        "${ days } днів",
-        "${ days } днів"
-      ],
-      "${ hours } hour": [
-        "${ hours } година",
-        "${ hours } години",
-        "${ hours } годин",
-        "${ hours } годин"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } хвилина",
-        "${ minutes } хвилини",
-        "${ minutes } хвилин",
-        "${ minutes } хвилин"
-      ],
-      "${ seconds } second": [
-        "${ seconds } секунда",
-        "${ seconds } секунди",
-        "${ seconds } секунд",
-        "${ seconds } секунди"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } місяць БЕЗПЛАТНО",
-        "${ n } місяці БЕЗПЛАТНО",
-        "${ n } місяців БЕЗПЛАТНО",
-        "${ n } місяців БЕЗПЛАТНО"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 користувач"
@@ -8284,12 +8470,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } місяць",
-        "${ n } місяці",
-        "${ n } місяців",
-        "${ n } місяців"
-      ],
       "/ month": [
         "/ місяць"
       ],
@@ -8469,12 +8649,6 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Ми додамо невитрачений залишок коштів як кредити до вашого облікового запису ${ BRAND_NAME }."
       ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "Залишився **${ daysRemaining }** день до завершення дії вашого тарифного плану **${ currentPlanName }**.",
-        "Залишилося **${ daysRemaining }** дні до завершення дії вашого тарифного плану **${ currentPlanName }**.",
-        "Залишилося **${ daysRemaining }** днів до завершення дії вашого тарифного плану **${ currentPlanName }**.",
-        "Залишилося **${ daysRemaining }** днів до завершення дії вашого тарифного плану **${ currentPlanName }**."
-      ],
       "Your ${ appStorage } is almost full": [
         "Ваше ${ appStorage } майже заповнене"
       ],
@@ -8518,38 +8692,6 @@
       ],
       "Billed yearly": [
         "Сплачується щороку"
-      ]
-    },
-    "Subscription attribute": {
-      "${ n } free VPN connection per user": [
-        "${ n } безплатне VPN-з'єднання на користувача",
-        "${ n } безплатні VPN-з'єднання на користувача",
-        "${ n } безплатних VPN-з'єднань на користувача",
-        "${ n } безплатних VPN-з'єднань на користувача"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } високошвидкісне VPN-з'єднання",
-        "${ n } високошвидкісні VPN-з'єднання",
-        "${ n } високошвидкісних VPN-з'єднань",
-        "${ n } високошвидкісних VPN-з'єднань"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } високошвидкісне VPN-з'єднання на користувача",
-        "${ n } високошвидкісні VPN-з'єднання на користувача",
-        "${ n } високошвидкісних VPN-з'єднань на користувача",
-        "${ n } високошвидкісних VPN-з'єднань на користувача"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднань",
-        "${ n } VPN-з'єднання"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-з'єднання на користувача",
-        "${ n } VPN-з'єднання на користувача",
-        "${ n } VPN-з'єднань на користувача",
-        "${ n } VPN-з'єднання на користувача"
       ]
     },
     "Subscription change warning": {
@@ -8638,18 +8780,6 @@
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } надає вам усі застосунки, усі функції, ранній доступ до нових релізів і все необхідне, щоби контролювати свої дані та їхню безпеку."
       ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } власний домен електронної пошти",
-        "${ planNumberOfDomains } власні домени електронної пошти",
-        "${ planNumberOfDomains } власних доменів електронної пошти",
-        "${ planNumberOfDomains } власних доменів електронної пошти"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } адреса електронної пошти",
-        "${ planNumberOfEmails } адреси електронної пошти",
-        "${ planNumberOfEmails } адрес електронної пошти",
-        "${ planNumberOfEmails } адрес електронної пошти"
-      ],
       "Folders, labels, and custom filters": [
         "Теки, мітки та користувацькі фільтри"
       ],
@@ -8689,12 +8819,6 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } контакти має ідентичний вигляд.",
-        "${ countMergeableContacts } контакти мають ідентичний вигляд.",
-        "${ countMergeableContacts } контактів мають ідентичний вигляд.",
-        "${ countMergeableContacts } контакти мають ідентичний вигляд."
-      ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
       ],
@@ -8709,18 +8833,6 @@
       ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Контакт видалено",
-        "Контакти видалено",
-        "Контакти видалено",
-        "Контакти видалено"
-      ],
-      "Contact group deleted": [
-        "Групу контактів видалено",
-        "Групи контактів видалено",
-        "Групи контактів видалено",
-        "Групи контактів видалено"
       ],
       "Contact saved": [
         "Контакт збережено"
@@ -8879,79 +8991,7 @@
         "Поле vCard"
       ]
     },
-    "Time unit": {
-      "${ ceilDays } day": [
-        "${ ceilDays } день",
-        "${ ceilDays } дні",
-        "${ ceilDays } днів",
-        "${ ceilDays } днів"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } година",
-        "${ ceilHours } години",
-        "${ ceilHours } годин",
-        "${ ceilHours } годин"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } хвилина",
-        "${ ceilMinutes } хвилини",
-        "${ ceilMinutes } хвилин",
-        "${ ceilMinutes } хвилин"
-      ],
-      "${ seconds } second": [
-        "${ seconds } секунда",
-        "${ seconds } секунди",
-        "${ seconds } секунд",
-        "${ seconds } секунди"
-      ]
-    },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } год",
-        "${ hours } год",
-        "${ hours } год",
-        "${ hours } год"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 год",
-        "${ hoursInt }.5 год",
-        "${ hoursInt }.5 год",
-        "${ hoursInt }.5 год"
-      ],
-      "${ minutes } min": [
-        "${ minutes } хв",
-        "${ minutes } хв",
-        "${ minutes } хв",
-        "${ minutes } хв"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } година",
-        "${ hours } години",
-        "${ hours } годин",
-        "${ hours } години"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 години",
-        "${ hoursInt }.5 години",
-        "${ hoursInt }.5 годин",
-        "${ hoursInt }.5 години"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } хвилина",
-        "${ minutes } хвилини",
-        "${ minutes } хвилин",
-        "${ minutes } хвилин"
-      ]
-    },
     "Title": {
-      "${ emailsCount } email address": [
-        "${ emailsCount } адреса е-пошти",
-        "${ emailsCount } адреси е-пошти",
-        "${ emailsCount } адрес е-пошти",
-        "${ emailsCount } адреси е-пошти"
-      ],
       "Account recovery": [
         "Відновлення облікового запису"
       ],
@@ -8963,12 +9003,6 @@
       ],
       "Add credit/debit card": [
         "Додати кредитну/платіжну картку"
-      ],
-      "Add to ${ groupCount } group": [
-        "Додати до ${ groupCount } групи",
-        "Додати до ${ groupCount } груп",
-        "Додати до ${ groupCount } груп",
-        "Додати до ${ groupCount } груп"
       ],
       "Add to ${ groupName }": [
         "Додати до ${ groupName }"
@@ -9083,18 +9117,6 @@
       ],
       "Delete": [
         "Видалити"
-      ],
-      "Delete ${ count } contact": [
-        "Видалити ${ count } контакт",
-        "Видалити ${ count } контакти",
-        "Видалити ${ count } контактів",
-        "Видалити ${ count } контактів"
-      ],
-      "Delete ${ count } contact group": [
-        "Видалити ${ count } групу контактів",
-        "Видалити ${ count } групи контактів",
-        "Видалити ${ count } груп контактів",
-        "Видалити ${ count } груп контактів"
       ],
       "Delete ${ links.length } items?": [
         "Видалити ${ links.length } елементи?"
@@ -9212,12 +9234,6 @@
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
-      ],
-      "Import as simple event?": [
-        "Імпортувати як просту подію?",
-        "Імпортувати як прості події?",
-        "Імпортувати як прості події?",
-        "Імпортувати як прості події?"
       ],
       "Import contacts": [
         "Імпорт контактів"
@@ -9575,27 +9591,7 @@
         "Адміністратори не мають доступу до даних приватних користувачів і не можуть скинути їхній пароль."
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символ",
-        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символи",
-        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів",
-        "Пароль повинен містити принаймні ${ MIN_PASSWORD_LENGTH } символів"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Спробуйте коротше ім'я користувача (до ${ n } символу)",
-        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
-        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
-        "Спробуйте коротше ім'я користувача (до ${ n } символів)"
-      ]
-    },
     "Validation Error": {
-      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "Назва повинна бути до ${ MAX_NAME_LENGTH } символу",
-        "Назва повинна бути до ${ MAX_NAME_LENGTH } символів",
-        "Назва повинна бути до ${ MAX_NAME_LENGTH } символів",
-        "Назва повинна бути до ${ MAX_NAME_LENGTH } символів"
-      ],
       "Name must not be empty": [
         "Назва не може бути порожня"
       ]
@@ -9606,56 +9602,6 @@
       ],
       "Replay video": [
         "Повторно відтворити відео"
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } device": [
-        "${ n } пристрій",
-        "${ n } пристрої",
-        "${ n } пристроїв",
-        "${ n } пристроїв"
-      ],
-      "${ n } server": [
-        "${ n } сервер",
-        "${ n } сервери",
-        "${ n } серверів",
-        "${ n } серверів"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднання",
-        "${ n } VPN-з'єднань",
-        "${ n } VPN-з'єднань"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } країна",
-        "${ numberOfCountries } країни",
-        "${ numberOfCountries } країн",
-        "${ numberOfCountries } країн"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } в ${ numberOfCountries } країні",
-        "${ numberOfServers } у більш ніж ${ numberOfCountries } країнах",
-        "${ numberOfServers } у більш ніж ${ numberOfCountries } країнах",
-        "${ numberOfServers } у більш ніж ${ numberOfCountries } країнах"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } в ${ numberOfCountries } країні",
-        "${ numberOfServers } в ${ numberOfCountries } країнах",
-        "${ numberOfServers } в ${ numberOfCountries } країнах",
-        "${ numberOfServers } в ${ numberOfCountries } країнах"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Автовибір з ${ numberOfCountries } країни",
-        "Автовибір з ${ numberOfCountries } країн",
-        "Автовибір з ${ numberOfCountries } країн",
-        "Автовибір з ${ numberOfCountries } країн"
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Сервери в ${ numberOfCountries }+ країні",
-        "Сервери в ${ numberOfCountries }+ країнах",
-        "Сервери в ${ numberOfCountries }+ країнах",
-        "Сервери в ${ numberOfCountries }+ країнах"
       ]
     },
     "vpn_2step: feature": {
@@ -9672,24 +9618,6 @@
       ]
     },
     "wallet_signup_2024: Info": {
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } адреса електронної пошти ${ BRAND_NAME }",
-        "${ n } адреси електронної пошти ${ BRAND_NAME }",
-        "${ n } адрес електронної пошти ${ BRAND_NAME }",
-        "${ n } адрес електронної пошти ${ BRAND_NAME }"
-      ],
-      "${ n } account per wallet": [
-        "${ n } обліковий запис на гаманець",
-        "${ n } облікові записи на гаманець",
-        "${ n } облікових записів на гаманець",
-        "${ n } облікових записів на гаманець"
-      ],
-      "${ n } wallet": [
-        "${ n } гаманець",
-        "${ n } гаманці",
-        "${ n } гаманців",
-        "${ n } гаманців"
-      ],
       "Bitcoin via Email": [
         "Bitcoin через пошту"
       ]
@@ -9705,12 +9633,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Ви дійсно хочете остаточно видалити ${ count } контакт?",
-        "Ви дійсно хочете остаточно видалити ${ count } контакти?",
-        "Ви дійсно хочете остаточно видалити ${ count } контактів?",
-        "Ви дійсно хочете остаточно видалити ${ count } контактів?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Ви дійсно бажаєте остаточно видалити ці групи контактів?"
