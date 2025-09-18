@@ -13,7 +13,9 @@ export function whichAppsUserBought(subscription?: Subscription) {
     const hasPass =
         subscription?.Plans?.some((plan) => plan.Name === PLANS.PASS && plan.Cycle === CYCLE.YEARLY) ?? false;
     const hasVPN =
-        subscription?.Plans?.some((plan) => plan.Name === PLANS.VPN2024 && plan.Cycle === CYCLE.YEARLY) ?? false;
+        subscription?.Plans?.some(
+            (plan) => plan.Name === PLANS.VPN2024 && (plan.Cycle === CYCLE.YEARLY || plan.Cycle === CYCLE.TWO_YEARS)
+        ) ?? false;
 
     return { hasMail, hasDrive, hasPass, hasVPN };
 }
