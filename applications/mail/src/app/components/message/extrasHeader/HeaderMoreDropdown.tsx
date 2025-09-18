@@ -32,6 +32,8 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+import { isExpiringByRetentionRule } from '@proton/shared/lib/mail/messages';
+import useFlag from '@proton/unleash/useFlag';
 
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
@@ -121,6 +123,7 @@ const HeaderMoreDropdown = ({
     const getMessageKeys = useGetMessageKeys();
     const { Shortcuts } = useMailModel('MailSettings');
     const [CustomExpirationModalProps, openCustomExpirationModal, renderCustomExpirationModal] = useModalState();
+    const dataRetentionPolicyEnabled = useFlag('DataRetentionPolicy');
 
     const [messageDetailsModalProps, setMessageDetailsModalOpen, renderMessageDetailsModal] = useModalState();
     const [messageHeaderModalProps, setMessageHeaderModalOpen, renderMessageHeaderModal] = useModalState();
@@ -133,6 +136,7 @@ const HeaderMoreDropdown = ({
     const messageID = message.data?.ID || '';
     const staringText = isStarred ? c('Action').t`Unstar` : c('Action').t`Star`;
     const willExpire = !!message.data?.ExpirationTime;
+    const willExpireByRetentionRule = dataRetentionPolicyEnabled && isExpiringByRetentionRule(message.data);
 
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
@@ -569,7 +573,7 @@ const HeaderMoreDropdown = ({
                                     {canExpire ? (
                                         <>
                                             <hr className="my-2" />
-                                            {willExpire ? (
+                                            {willExpire && !willExpireByRetentionRule ? (
                                                 <DropdownMenuButton
                                                     className="text-left flex flex-nowrap items-center"
                                                     onClick={() => handleExpire(0)}
