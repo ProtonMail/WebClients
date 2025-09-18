@@ -130,6 +130,9 @@
       "Clear search": [
         "Wyczyść wyszukiwanie"
       ],
+      "Clone item": [
+        "Zduplikuj przedmiot"
+      ],
       "Close": [
         "Zamknij"
       ],
@@ -1932,7 +1935,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
@@ -4439,6 +4445,9 @@
       "Grant permissions": [
         "Przyznaj uprawnienia"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Ukryte sejfy nie będą widoczne podczas wyszukiwania i autouzupełniania."
+      ],
       "Hide-my-email aliases": [
         "Aliasy hide-my-email"
       ],
@@ -4526,6 +4535,9 @@
       "MX record": [
         "Rekord MX"
       ],
+      "Next": [
+        "Dalej"
+      ],
       "No excluded items": [
         "Brak wykluczonych elementów"
       ],
@@ -4546,6 +4558,9 @@
       ],
       "No shared secure links": [
         "Brak udostępnionych linków"
+      ],
+      "Open pagination": [
+        "Otwórz stronicowanie"
       ],
       "Our welcome gift to you": [
         "Nasz prezent powitalny"
@@ -4579,6 +4594,9 @@
         "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone.",
         "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone.",
         "Pamiętaj, że raz usunięte aliasy nie mogą zostać przywrócone."
+      ],
+      "Previous": [
+        "Wstecz"
       ],
       "Random Prefix Generation": [
         "Generowanie losowego przedrostka"

@@ -82,6 +82,9 @@
       "Authenticate": [
         "認証"
       ],
+      "Auto-type": [
+        "自動入力"
+      ],
       "Back": [
         "戻る"
       ],
@@ -129,6 +132,9 @@
       ],
       "Clear search": [
         "検索をクリア"
+      ],
+      "Clone item": [
+        "アイテムを複製"
       ],
       "Close": [
         "閉じる"
@@ -249,6 +255,12 @@
       ],
       "Dismiss": [
         "却下"
+      ],
+      "Do not show again": [
+        "今後表示しない"
+      ],
+      "Do not show again when I press": [
+        "押したときに次回から表示しない"
       ],
       "Download this CSV template": [
         "この CSV テンプレートをダウンロード"
@@ -432,6 +444,9 @@
       ],
       "Open navigation": [
         "ナビゲーションを開く"
+      ],
+      "Organize vaults": [
+        "保管庫を整理"
       ],
       "Pass for Android": [
         "Android 版 Pass"
@@ -1327,6 +1342,17 @@
         "極小"
       ]
     },
+    "Header": {
+      "Domain": [
+        "ドメイン"
+      ],
+      "Password ends with": [
+        "パスワードの末尾"
+      ],
+      "Username": [
+        "ユーザー名"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "「${ payload.itemName }」アイテムは無視されました"
@@ -1682,6 +1708,9 @@
       "Extra password successfully removed": [
         "追加のパスワードが正常に削除されました"
       ],
+      "Failed updating your vault organization": [
+        "保管庫組織の更新に失敗しました"
+      ],
       "Fill in the CSV with your data": [
         "CSV にデータを入力します"
       ],
@@ -1805,6 +1834,9 @@
       "Item successfully unpinned": [
         "アイテムのピン留めが解除されました"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "キーボードショートカットは、${ PASS_APP_NAME } デスクトップアプリ内からログインアイテムを表示している間のみ使用できます。"
+      ],
       "Latest breach on ${ formattedDate }": [
         "${ formattedDate } の最新の侵害"
       ],
@@ -1855,6 +1887,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2059,6 +2094,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "データのインポート中は、このウィンドウを開いたままにしてください。この処理には数分かかる場合があります。"
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "以前にアクティブだったウィンドウがオートタイプを実行したい場所であり、お客様のカーソルがログインフィールドにフォーカスされていることをご確認ください。"
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "一度削除したエイリアスは復元できません。代わりにエイリアスを無効にしますか？"
@@ -2312,6 +2350,9 @@
       "Unverified": [
         "未検証"
       ],
+      "Updating vault organization...": [
+        "保管庫の組織を更新中…"
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "今すぐアップグレードしてプレミアム機能をアンロックしましょう"
       ],
@@ -2338,6 +2379,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "保管庫「${ share.content.name }」が削除されました"
+      ],
+      "Vault organization successfully updated": [
+        "保管庫の組織を更新しました"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "保管庫共有中： ${ vaultMembersCount } 人のメンバー"
@@ -2405,6 +2449,12 @@
       "You may close this tab.": [
         "このタブを閉じても構いません。"
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "お客様のシステムによっては、許可を求めるプロンプトを承認し、アプリを再起動していただく必要がある場合があります。"
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME } にアクセシビリティ権限を付与する必要がある場合があります。"
+      ],
       "You need a vault with edit permission before you can import items.": [
         "アイテムをインポートするには、編集権限のある保管庫が必要です。"
       ],
@@ -2449,6 +2499,20 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TAB"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2610,6 +2674,9 @@
       ],
       "Auto-lock after": [
         "自動ロックまで"
+      ],
+      "Auto-type in previous window": [
+        "前のウィンドウで自動入力"
       ],
       "Backup password": [
         "バックアップパスワード"
@@ -2787,6 +2854,9 @@
       ],
       "Email": [
         "メールアドレス"
+      ],
+      "EMAIL": [
+        "メール"
       ],
       "Email (alias)": [
         "メール (エイリアス)"
@@ -3007,6 +3077,9 @@
       "Key type": [
         "キー種類"
       ],
+      "Keyboard shortcut:": [
+        "キーボードショートカット:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "キーボードショートカット: ${ shortcut }"
       ],
@@ -3215,6 +3288,9 @@
         "パスポート番号"
       ],
       "Password": [
+        "パスワード"
+      ],
+      "PASSWORD": [
         "パスワード"
       ],
       "Password history": [
@@ -3561,6 +3637,9 @@
       ],
       "Useful for permanent sharing": [
         "永続的な共有に役立ちます"
+      ],
+      "USERNAME": [
+        "ユーザー名"
       ],
       "Username": [
         "ユーザー名"
@@ -4283,6 +4362,9 @@
       "Grant permissions": [
         "権限を付与する"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "非表示の保管庫は、検索および自動入力中は表示されません。"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
@@ -4364,6 +4446,9 @@
       "MX record": [
         "MX レコード"
       ],
+      "Next": [
+        "次へ"
+      ],
       "No excluded items": [
         "除外項目なし"
       ],
@@ -4384,6 +4469,12 @@
       ],
       "No shared secure links": [
         "共有セキュアリンクはありません"
+      ],
+      "Open pagination": [
+        "ページネーションを開く"
+      ],
+      "Organize vaults": [
+        "保管庫を整理する"
       ],
       "Our welcome gift to you": [
         "あなたへのウェルカムギフト"
@@ -4406,6 +4497,9 @@
       "Pending access to the shared data": [
         "共有データへのアクセスが保留中です"
       ],
+      "Perform autotype?": [
+        "オートタイプを実行しますか？"
+      ],
       "Permanently remove all items?": [
         "全てのアイテムを完全に削除しますか？"
       ],
@@ -4414,6 +4508,9 @@
       ],
       "Please note that once deleted, the alias can't be restored.": [
         "削除したエイリアスは復元できませんので、ご注意ください。"
+      ],
+      "Previous": [
+        "前へ"
       ],
       "Random Prefix Generation": [
         "ランダムプレフィックス生成"
@@ -4569,6 +4666,11 @@
         "${ aliasCount }個のエイリアスを完全に削除しようとしています。"
       ]
     },
+    "Title_cloned_item": {
+      "copy": [
+        "コピー"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "今日"
@@ -4703,6 +4805,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "追加パスワードは8文字以上必要です"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "オートタイプに失敗しました。${ PASS_APP_NAME } に必要な権限が付与されていることをご確認の上、もう一度お試しください (${ error })。"
       ],
       "Failed to load breaches.": [
         "侵害を読み込めませんでした。"

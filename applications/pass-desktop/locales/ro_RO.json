@@ -130,6 +130,9 @@
       "Clear search": [
         "Golire căutare"
       ],
+      "Clone item": [
+        "Clonare articol"
+      ],
       "Close": [
         "Închidere"
       ],
@@ -432,6 +435,9 @@
       ],
       "Open navigation": [
         "Deschidere navigare"
+      ],
+      "Organize vaults": [
+        "Organizare seifuri"
       ],
       "Pass for Android": [
         "Proton Pass pentru Android"
@@ -1349,6 +1355,17 @@
         "Foarte mic"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Domeniu"
+      ],
+      "Password ends with": [
+        "Parola se termină cu"
+      ],
+      "Username": [
+        "Nume de utilizator"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Articolul „${ payload.itemName }” a fost respins."
@@ -1724,6 +1741,9 @@
       "Extra password successfully removed": [
         "Parola suplimentară s-a eliminat."
       ],
+      "Failed updating your vault organization": [
+        "Nu s-a putut actualiza organizarea seifului."
+      ],
       "Fill in the CSV with your data": [
         "Completați fișierul CSV cu datele necesare."
       ],
@@ -1905,6 +1925,11 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2366,6 +2391,9 @@
       "Unverified": [
         "Neverificat"
       ],
+      "Updating vault organization...": [
+        "Se actualizează organizarea seifului..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Modificați-vă acum contul pentru a debloca funcțiile premium"
       ],
@@ -2392,6 +2420,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Seiful „${ share.content.name }” a fost șters."
+      ],
+      "Vault organization successfully updated": [
+        "Organizarea seifului a fost actualizată cu succes."
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Partajare seif: ${ vaultMembersCount } membru",
@@ -4385,6 +4416,9 @@
       "Grant permissions": [
         "Acordare permisiuni"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Seifurile ascunse nu vor fi vizibile în timpul căutării și autocompletării."
+      ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
       ],
@@ -4470,6 +4504,9 @@
       "MX record": [
         "Înregistrare MX"
       ],
+      "Next": [
+        "Următoare"
+      ],
       "No excluded items": [
         "Nu sunt articole excluse"
       ],
@@ -4490,6 +4527,12 @@
       ],
       "No shared secure links": [
         "Nu există legături web partajate"
+      ],
+      "Open pagination": [
+        "Deschidere paginare"
+      ],
+      "Organize vaults": [
+        "Organizare seifuri"
       ],
       "Our welcome gift to you": [
         "Cadoul nostru de bun venit"
@@ -4522,6 +4565,9 @@
         "După ștergere, aliasul nu mai poate fi restaurat.",
         "După ștergere, aliasurile nu mai pot fi restaurate.",
         "După ștergere, aliasurile nu mai pot fi restaurate."
+      ],
+      "Previous": [
+        "Anterior"
       ],
       "Random Prefix Generation": [
         "Generare aleatorie prefix"
@@ -4679,6 +4725,11 @@
         "Urmează să ștergeți definitiv ${ aliasCount } alias.",
         "Urmează să ștergeți definitiv ${ aliasCount } aliasuri.",
         "Urmează să ștergeți definitiv ${ aliasCount } de aliasuri."
+      ]
+    },
+    "Title_cloned_item": {
+      "copy": [
+        "copiere"
       ]
     },
     "Today icon tooltip in mini calendar": {

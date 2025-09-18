@@ -82,6 +82,9 @@
       "Authenticate": [
         "Ověřit"
       ],
+      "Auto-type": [
+        "Automatické vyplňování"
+      ],
       "Back": [
         "Zpět"
       ],
@@ -129,6 +132,9 @@
       ],
       "Clear search": [
         "Vyčistit vyhledávání"
+      ],
+      "Clone item": [
+        "Klonovat položku"
       ],
       "Close": [
         "Zavřít"
@@ -249,6 +255,12 @@
       ],
       "Dismiss": [
         "Skrýt"
+      ],
+      "Do not show again": [
+        "Znovu nezobrazovat"
+      ],
+      "Do not show again when I press": [
+        "Nezobrazovat znovu při stisknutí"
       ],
       "Download this CSV template": [
         "Stáhnout tuto CSV šablonu"
@@ -432,6 +444,9 @@
       ],
       "Open navigation": [
         "Otevřít menu"
+      ],
+      "Organize vaults": [
+        "Organizovat trezory"
       ],
       "Pass for Android": [
         "Proton Pass pro Android"
@@ -1360,6 +1375,17 @@
         "Velmi malé"
       ]
     },
+    "Header": {
+      "Domain": [
+        "Doména"
+      ],
+      "Password ends with": [
+        "Heslo končí na"
+      ],
+      "Username": [
+        "Uživatelské jméno"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "Položka \"${ payload.itemName }\" byla odmítnuta"
@@ -1745,6 +1771,9 @@
       "Extra password successfully removed": [
         "Dodatečné heslo úspěšně odebráno"
       ],
+      "Failed updating your vault organization": [
+        "Selhala aktualizace organizace vašich trezorů."
+      ],
       "Fill in the CSV with your data": [
         "Vyplňte CSV vašimi daty"
       ],
@@ -1877,6 +1906,9 @@
       "Item successfully unpinned": [
         "Položka úspěšně odepnuta"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "Klávesová zkratka může být použita pouze v rámci desktopové aplikace ${ PASS_APP_NAME } a při prohlížení položky přihlášení."
+      ],
       "Latest breach on ${ formattedDate }": [
         "Poslední únik informací v(e) ${ formattedDate }"
       ],
@@ -1932,7 +1964,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2140,6 +2175,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Během importu dat ponechte toto okno otevřené. Tento proces může trvat několik minut."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Ujistěte se, že předchozí aktivní okno je tam, kde chcete provést automatické vyplnění, a že kurzor je umístěn v poli pro přihlášení."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Upozorňujeme, že jednou smazaný alias nelze obnovit. Nechcete alias raději deaktivovat?"
@@ -2396,6 +2434,9 @@
       "Unverified": [
         "Neověřený"
       ],
+      "Updating vault organization...": [
+        "Aktualizace organizace trezorů..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "Přejděte nyní na vyšší tarif pro odemčení prémiových funkcí"
       ],
@@ -2422,6 +2463,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Trezor \"${ share.content.name }\" byl odebrán"
+      ],
+      "Vault organization successfully updated": [
+        "Organizace trezoru úspěšně aktualizována"
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "Sdílení trezoru: ${ vaultMembersCount } člen",
@@ -2501,6 +2545,12 @@
       "You may close this tab.": [
         "Tuto kartu můžete zavřít."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "V závislosti na vašem systému může být nutné přijmout výzvu k udělení oprávnění a restartovat aplikaci."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Možná bude nutné udělit oprávnění přístupu pro ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Před importem položek potřebujete trezor s oprávněním k úpravám."
       ],
@@ -2545,6 +2595,20 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaše organizace vyžaduje, abyste zabezpečili svůj přístup k ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TAB"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2749,6 +2813,9 @@
       "Auto-lock after": [
         "Automaticky zamknout po"
       ],
+      "Auto-type in previous window": [
+        "Automatické vyplňování v předchozím okně"
+      ],
       "Backup password": [
         "Záložní heslo"
       ],
@@ -2925,6 +2992,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "EMAIL": [
+        "EMAIL"
       ],
       "Email (alias)": [
         "E-mail (alias)"
@@ -3145,6 +3215,9 @@
       "Key type": [
         "Typ klíče"
       ],
+      "Keyboard shortcut:": [
+        "Klávesová zkratka:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Klávesová zkratka: ${ shortcut }"
       ],
@@ -3354,6 +3427,9 @@
       ],
       "Password": [
         "Heslo"
+      ],
+      "PASSWORD": [
+        "HESLO"
       ],
       "Password history": [
         "Historie hesel"
@@ -3699,6 +3775,9 @@
       ],
       "Useful for permanent sharing": [
         "Užitečné pro trvalé sdílení"
+      ],
+      "USERNAME": [
+        "UŽIVATELSKÉ JMÉNO"
       ],
       "Username": [
         "Uživatelské jméno"
@@ -4439,6 +4518,9 @@
       "Grant permissions": [
         "Udělit oprávnění"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Skryté trezory nebudou viditelné během vyhledávání a automatického vyplňování."
+      ],
       "Hide-my-email aliases": [
         "Aliasy Hide-my-email"
       ],
@@ -4526,6 +4608,9 @@
       "MX record": [
         "MX záznam"
       ],
+      "Next": [
+        "Další"
+      ],
       "No excluded items": [
         "Žádné vyloučené položky"
       ],
@@ -4546,6 +4631,12 @@
       ],
       "No shared secure links": [
         "Žádné sdílené bezpečné odkazy"
+      ],
+      "Open pagination": [
+        "Otevřít stránkování"
+      ],
+      "Organize vaults": [
+        "Organizovat trezory"
       ],
       "Our welcome gift to you": [
         "Náš dárek na přivítanou pro vás"
@@ -4568,6 +4659,9 @@
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"
       ],
+      "Perform autotype?": [
+        "Provést automatické vyplnění?"
+      ],
       "Permanently remove all items?": [
         "Trvale smazat všechny položky?"
       ],
@@ -4579,6 +4673,9 @@
         "Upozorňujeme, že jednou smazané aliasy nelze obnovit.",
         "Upozorňujeme, že jednou smazané aliasy nelze obnovit.",
         "Upozorňujeme, že jednou smazané aliasy nelze obnovit."
+      ],
+      "Previous": [
+        "Předchozí"
       ],
       "Random Prefix Generation": [
         "Generování náhodné předpony"
@@ -4740,6 +4837,11 @@
         "Chystáte se trvale smazat ${ aliasCount } aliasů."
       ]
     },
+    "Title_cloned_item": {
+      "copy": [
+        "kopie"
+      ]
+    },
     "Today icon tooltip in mini calendar": {
       "Today": [
         "Dnes"
@@ -4883,6 +4985,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Dodatečné heslo by mělo mít alespoň 8 znaků"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Automatické vyplnění selhalo. Ujistěte se, prosím, že ${ PASS_APP_NAME } má potřebná oprávnění a zkuste to znovu (${ error })."
       ],
       "Failed to load breaches.": [
         "Nelze načíst úniky informací."
