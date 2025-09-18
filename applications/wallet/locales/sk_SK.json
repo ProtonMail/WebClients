@@ -4,470 +4,6 @@
     "language": "sk_SK"
   },
   "contexts": {
-    "": {
-      "${ admins } admin": [
-        "${ admins } správca",
-        "${ admins } správcovia",
-        "${ admins } správcov",
-        "${ admins } správcov"
-      ],
-      "${ domains } additional custom domain": [
-        "${ domains } dodatočná vlastná doména",
-        "${ domains } dodatočné vlastné domény",
-        "${ domains } dodatočných vlastných domén",
-        "${ domains } dodatočných vlastných domén"
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } hodina",
-        "${ gracePeriodHoursRemaining } hodiny",
-        "${ gracePeriodHoursRemaining } hodín",
-        "${ gracePeriodHoursRemaining } hodín"
-      ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servery",
-        "${ ips } serverov",
-        "${ ips } serverov"
-      ],
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } emailová adresa",
-        "${ n } ${ BRAND_NAME } emailové adresy",
-        "${ n } ${ BRAND_NAME } emailových adries",
-        "${ n } ${ BRAND_NAME } emailových adries"
-      ],
-      "${ n } account per wallet": [
-        "${ n } účet na peňaženku",
-        "${ n } účty na peňaženku",
-        "${ n } účtov na peňaženku",
-        "${ n } účtov na peňaženku"
-      ],
-      "${ n } calendar": [
-        "${ n } kalendár",
-        "${ n } kalendáre",
-        "${ n } kalendárov",
-        "${ n } kalendárov"
-      ],
-      "${ n } calendar per user": [
-        "${ n } kalendár na používateľa",
-        "${ n } kalendáre na používateľa",
-        "${ n } kalendárov na používateľa",
-        "${ n } kalendárov na používateľa"
-      ],
-      "${ n } custom email domain": [
-        "${ n } vlastná emailová doména",
-        "${ n } vlastné emailové domény",
-        "${ n } vlastných emailových domén",
-        "${ n } vlastných emailových domén"
-      ],
-      "${ n } device": [
-        "${ n } zariadenie",
-        "${ n } zariadenia",
-        "${ n } zariadení",
-        "${ n } zariadení"
-      ],
-      "${ n } email address": [
-        "${ n } emailová adresa",
-        "${ n } emailové adresy/aliasy",
-        "${ n } emailových adries/aliasov",
-        "${ n } emailových adries/aliasov"
-      ],
-      "${ n } email address per user": [
-        "${ n } emailová adresa na používateľa",
-        "${ n } emailové adresy na používateľa",
-        "${ n } emailových adries na používateľa",
-        "${ n } emailových adries na používateľa"
-      ],
-      "${ n } filter": [
-        "${ n } filter",
-        "${ n } filtre",
-        "${ n } filtrov",
-        "${ n } filtrov"
-      ],
-      "${ n } folder": [
-        "${ n } priečinok",
-        "${ n } priečinky",
-        "${ n } priečinkov",
-        "${ n } priečinkov"
-      ],
-      "${ n } folder and label": [
-        "${ n } priečinok a štítok",
-        "${ n } priečinky a štítky",
-        "${ n } priečinkov a štítkov",
-        "${ n } priečinkov a štítkov"
-      ],
-      "${ n } free VPN connection per user": [
-        "${ n } VPN pripojenie zdarma na používateľa",
-        "${ n } VPN pripojenia zdarma na používateľa",
-        "${ n } VPN pripojení zdarma na používateľa",
-        "${ n } VPN pripojení zdarma na používateľa"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email alias",
-        "${ n } hide-my-email aliasy",
-        "${ n } hide-my-email aliasov",
-        "${ n } hide-my-email aliasov"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } vysokorýchlostné VPN pripojenie",
-        "${ n } vysokorýchlostné VPN pripojenia",
-        "${ n } vysokorýchlostných VPN pripojení",
-        "${ n } vysokorýchlostných VPN pripojení"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } vysokorýchlostné VPN pripojenie na používateľa",
-        "${ n } vysokorýchlostné VPN pripojenia na používateľa",
-        "${ n } vysokorýchlostných VPN pripojení na používateľa",
-        "${ n } vysokorýchlostných VPN pripojení na používateľa"
-      ],
-      "${ n } label": [
-        "${ n } štítok",
-        "${ n } štítky",
-        "${ n } štítkov",
-        "${ n } štítkov"
-      ],
-      "${ n } message per day": [
-        "${ n } správa za deň",
-        "${ n } správy za deň",
-        "${ n } správ za deň",
-        "${ n } správ za deň"
-      ],
-      "${ n } month": [
-        "${ n } mesiac",
-        "${ n } mesiace",
-        "${ n } mesiacov",
-        "${ n } mesiacov"
-      ],
-      "${ n } month FREE": [
-        "${ n } mesiacov ZDARMA",
-        "${ n } mesiac ZDARMA",
-        "${ n } mesiacov ZDARMA",
-        "${ n } mesiac ZDARMA"
-      ],
-      "${ n } server": [
-        "${ n } server",
-        "${ n } servery",
-        "${ n } serverov",
-        "${ n } serverov"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } zdieľaný trezor ${ PASS_SHORT_APP_NAME } na používateľa",
-        "${ n } zdieľané trezory ${ PASS_SHORT_APP_NAME } na používateľa",
-        "${ n } zdieľaných trezorov ${ PASS_SHORT_APP_NAME } na používateľa",
-        "${ n } zdieľaných trezorov ${ PASS_SHORT_APP_NAME } na používateľa"
-      ],
-      "${ n } user account": [
-        "${ n } používateľský účet",
-        "${ n } používateľské účty",
-        "${ n } používateľských účtov",
-        "${ n } používateľských účtov"
-      ],
-      "${ n } vault": [
-        "${ n } trezor",
-        "${ n } trezory",
-        "${ n } trezorov",
-        "${ n } trezorov"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN pripojenie",
-        "${ n } VPN pripojenia",
-        "${ n } VPN pripojení",
-        "${ n } VPN pripojení"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN pripojenie na používateľa",
-        "${ n } VPN pripojenia na používateľa",
-        "${ n } VPN pripojení na používateľa",
-        "${ n } VPN pripojení na používateľa"
-      ],
-      "${ n } wallet": [
-        "${ n } peňaženka",
-        "${ n } peňaženky",
-        "${ n } peňaženiek",
-        "${ n } peňaženiek"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } krajina",
-        "${ numberOfCountries } krajiny",
-        "${ numberOfCountries } krajín",
-        "${ numberOfCountries } krajín"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers } v ${ numberOfCountries } krajine",
-        "${ numberOfServers } v ${ numberOfCountries } krajinách",
-        "${ numberOfServers } v ${ numberOfCountries } krajinách",
-        "${ numberOfServers } v ${ numberOfCountries } krajinách"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } v ${ numberOfCountries } krajine",
-        "${ numberOfServers } v ${ numberOfCountries } krajinách",
-        "${ numberOfServers } v ${ numberOfCountries } krajinách",
-        "${ numberOfServers } v ${ numberOfCountries } krajinách"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } používateľ",
-        "Až ${ numberOfUsers } používatelia",
-        "Až ${ numberOfUsers } používateľov",
-        "Až ${ numberOfUsers } používateľov"
-      ],
-      "${ options }-day file version history": [
-        "${ options }-dňová história verzií súborov",
-        "${ options }-dňová história verzií súborov",
-        "${ options }-dňová história verzií súborov",
-        "${ options }-dňová história verzií súborov"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasom",
-        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
-        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
-        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } vlastná emailová doména",
-        "${ planNumberOfDomains } vlastné emailové domény",
-        "${ planNumberOfDomains } vlastných emailových domén",
-        "${ planNumberOfDomains } vlastných emailových domén"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } emailová adresa",
-        "${ planNumberOfEmails } emailové adresy",
-        "${ planNumberOfEmails } emailových adries",
-        "${ planNumberOfEmails } emailových adries"
-      ],
-      "${ seats } ${ LUMO_APP_NAME } seat": [
-        "${ seats }${ LUMO_APP_NAME } licencia",
-        "${ seats }${ LUMO_APP_NAME } licencie",
-        "${ seats }${ LUMO_APP_NAME } licencií",
-        "${ seats }${ LUMO_APP_NAME } licencií"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } licencia asistenta písania",
-        "${ seats } licencie asistentov písania",
-        "${ seats } licencií asistentov písania",
-        "${ seats } licencií asistentov písania"
-      ],
-      "${ users } user": [
-        "${ users } používateľ",
-        "${ users } používatelia",
-        "${ users } používateľov",
-        "${ users } používateľov"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } člen)",
-        "(${ memberCount } členovia)",
-        "(${ memberCount } členov)",
-        "(${ memberCount } členov)"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } pripojenie pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
-        "+${ organization.BonusVPN } pripojenia pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
-        "+${ organization.BonusVPN } pripojení pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
-        "+${ organization.BonusVPN } pripojení pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Automatický výber z ${ numberOfCountries } krajiny",
-        "Automatický výber z ${ numberOfCountries } krajín",
-        "Automatický výber z ${ numberOfCountries } krajín",
-        "Automatický výber z ${ numberOfCountries } krajín"
-      ],
-      "byte": [
-        "bajt",
-        "bajty",
-        "bajtov",
-        "bajtov"
-      ],
-      "Byte": [
-        "Bajt",
-        "Bajty",
-        "Bajtov",
-        "Bajtov"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Vytvoriť bezpečný cloud pre ${ value } člena",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov",
-        "Vytvoriť bezpečný cloud pre ${ value } členov"
-      ],
-      "Create up to ${ n } calendar": [
-        "Vytvorte až ${ n } kalendár",
-        "Vytvorte až ${ n } kalendáre",
-        "Vytvorte až ${ n } kalendárov",
-        "Vytvorte až ${ n } kalendárov"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Vytvorte si ${ n } kalendár alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
-        "Vytvorte si až ${ n } kalendáre alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
-        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
-        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií"
-      ],
-      "Gigabyte": [
-        "Gigabajt",
-        "Gigabajty",
-        "Gigabajtov",
-        "Gigabajtov"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Vysoko rýchlostná sieť VPN na ${ n } zariadení",
-        "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach",
-        "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach",
-        "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach"
-      ],
-      "Kilobyte": [
-        "Kilobajt",
-        "Kilobajty",
-        "Kilobajtov",
-        "Kilobajtov"
-      ],
-      "Megabyte": [
-        "Megabajt",
-        "Megabajty",
-        "Megabajtov",
-        "Megabajtov"
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
-        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znaky",
-        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
-        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
-        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Servery v ${ numberOfCountries }+ krajine",
-        "Servery v ${ numberOfCountries }+ krajinách",
-        "Servery v ${ numberOfCountries }+ krajinách",
-        "Servery v ${ numberOfCountries }+ krajinách"
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Predplatné sa obnovuje automaticky každý ${ cycle } mesiac.",
-        "Predplatné sa obnovuje automaticky každé ${ cycle } mesiace.",
-        "Predplatné sa obnovuje automaticky každých ${ cycle } mesiacov.",
-        "Predplatné sa obnovuje automaticky každých ${ cycle } mesiacov."
-      ],
-      "Support for ${ n } custom email domain": [
-        "Podpora pre ${ n } vlastnú emailovú doménu",
-        "Podpora pre ${ n } vlastné emailové domény",
-        "Podpora pre ${ n } vlastných emailových domén",
-        "Podpora pre ${ n } vlastných emailových domén"
-      ],
-      "Terabyte": [
-        "terabajt",
-        "terabajty",
-        "terabajtov",
-        "terabajtov"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "Kupón je možné použiť na ${ couponRedemptions } obnovenie.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovenia.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovení.",
-        "Kupón je možné použiť na ${ couponRedemptions } obnovení."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvý ${ subscriptionLength } mesiac.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvé ${ subscriptionLength } mesiace.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
-        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiac. Obnovenie môžete kedykoľvek zrušiť.",
-        "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiace. Obnovenie môžete kedykoľvek zrušiť.",
-        "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť.",
-        "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť."
-      ],
-      "Total for ${ n } month": [
-        "Celkom za ${ n } mesiac",
-        "Celkom za ${ n } mesiace",
-        "Celkom za ${ n } mesiacov",
-        "Celkom za ${ n } mesiacov"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Skúste kratšie používateľské meno (max. ${ n } znak)",
-        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
-        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
-        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
-      ],
-      "Up to ${ n } user": [
-        "Až ${ n } užívateľ",
-        "Až ${ n } používatelia",
-        "Až ${ n } používateľov",
-        "Až ${ n } používateľov"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Až ${ n } používateľ (${ adminsText }, ${ usersText })",
-        "Až ${ n } používatelia (${ adminsText }, ${ usersText })",
-        "Až ${ n } používateľov (${ adminsText }, ${ usersText })",
-        "Až ${ n } používateľov (${ adminsText }, ${ usersText })"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Používajte na ${ n } zariadení",
-        "Používajte až na ${ n } zariadeniach súčasne",
-        "Používajte súčasne až na ${ n } zariadeniach",
-        "Používajte súčasne až na ${ n } zariadeniach"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "Zdieľanie trezora (s ${ n } osobou)",
-        "Zdieľanie trezora (s ${ n } osobami)",
-        "Zdieľanie trezora (až s ${ n } osobami)",
-        "Zdieľanie trezora (až s ${ n } osobami)"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "VPN pripojenie pre ${ n } zariadenie na používateľa",
-        "VPN pripojenie pre ${ n } zariadenia na používateľa",
-        "VPN pripojenie pre ${ n } zariadení na používateľa",
-        "VPN pripojenie pre ${ n } zariadení na používateľa"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre."
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "Stále vám zostáva **${ daysRemaining }** deň vo vašom pláne **${ currentPlanName }**.",
-        "Stále vám zostávajú **${ daysRemaining }** dni vo vašom pláne **${ currentPlanName }**.",
-        "Stále vám zostáva **${ daysRemaining }** dní vo vašom pláne **${ currentPlanName }**.",
-        "Stále vám zostáva **${ daysRemaining }** dní vo vašom pláne **${ currentPlanName }**."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }.",
-        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý ${ cycle } mesiac.",
-        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každé ${ cycle } mesiace.",
-        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každých ${ cycle } mesiacov.",
-        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každých ${ cycle } mesiacov."
-      ],
-      "~${ minutes } minute": [
-        "~${ minutes } minúta",
-        "~${ minutes } minúty",
-        "~${ minutes } minút",
-        "~${ minutes } minút"
-      ]
-    },
     "Account statement": {
       "Account statement successfully generated": [
         "Výpis z účtu bol úspešne vygenerovaný"
@@ -884,6 +420,18 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } dodatočná vlastná doména",
+        "${ domains } dodatočné vlastné domény",
+        "${ domains } dodatočných vlastných domén",
+        "${ domains } dodatočných vlastných domén"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverov",
+        "${ ips } serverov"
+      ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
       ],
@@ -895,6 +443,24 @@
       ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ seats } ${ LUMO_APP_NAME } seat": [
+        "${ seats }${ LUMO_APP_NAME } licencia",
+        "${ seats }${ LUMO_APP_NAME } licencie",
+        "${ seats }${ LUMO_APP_NAME } licencií",
+        "${ seats }${ LUMO_APP_NAME } licencií"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } licencia asistenta písania",
+        "${ seats } licencie asistentov písania",
+        "${ seats } licencií asistentov písania",
+        "${ seats } licencií asistentov písania"
+      ],
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
       ]
     },
     "Address list": {
@@ -936,6 +502,12 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
       "12 months": [
         "12 mesiacov"
       ],
@@ -960,11 +532,11 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa z neho stane platené predplatné, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
       ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly on ${ formattedDate }. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne dňa ${ formattedDate }. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_DEDICATED_IPS } vyhradených serverov počas skúšobného obdobia."
@@ -1120,6 +692,18 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Zabezpečené prihlasovanie na všetkých zariadeniach. Zahŕňa neobmedzený počet hide-my-email aliasov, zdieľanie, integrované 2FA, ${ DARK_WEB_MONITORING_NAME } a ďalšie funkcie."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailová adresa, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou sú ${ addresses } emailové adresy, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie.",
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je ${ addresses } emailových adries, podpora vlastných emailových domén, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je 15 emailových adries, podpora vlastných emailových domén, asistent písania ${ BRAND_NAME } Scribe, neobmedzený počet hide-my-email aliasov a ďalšie."
@@ -1584,8 +1168,20 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
+      ],
       "Total": [
         "Celkom"
+      ],
+      "Total for ${ n } month": [
+        "Celkom za ${ n } mesiac",
+        "Celkom za ${ n } mesiace",
+        "Celkom za ${ n } mesiacov",
+        "Celkom za ${ n } mesiacov"
       ]
     },
     "Collapsible tooltip": {
@@ -3037,6 +2633,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtov",
+        "bajtov"
+      ],
       "GB": [
         "GB"
       ],
@@ -3048,6 +2650,38 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtov",
+        "Bajtov"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtov",
+        "Gigabajtov"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtov",
+        "Kilobajtov"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtov",
+        "Megabajtov"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtov",
+        "terabajtov"
       ]
     },
     "Filter notification": {
@@ -3165,11 +2799,23 @@
       "${ storage } storage": [
         "${ storage } úložisko"
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členovia)",
+        "(${ memberCount } členov)",
+        "(${ memberCount } členov)"
+      ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice }/mesiac)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového miesta na disku"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } pripojenie pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
+        "+${ organization.BonusVPN } pripojenia pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
+        "+${ organization.BonusVPN } pripojení pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
+        "+${ organization.BonusVPN } pripojení pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)"
       ],
       "30-day money-back guarantee.": [
         "30-dňová záruka vrátenia peňazí."
@@ -3227,6 +2873,12 @@
       ],
       "Country code": [
         "Kód krajiny"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Vytvoriť bezpečný cloud pre ${ value } člena",
+        "Vytvoriť bezpečný cloud pre ${ value } členov",
+        "Vytvoriť bezpečný cloud pre ${ value } členov",
+        "Vytvoriť bezpečný cloud pre ${ value } členov"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
@@ -3441,6 +3093,12 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Odošlite zálohu pomocou nasledujúcej adresy, alebo naskenujte QR kód. Váš vklad sa po potvrdení prejaví na vašom účte."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Predplatné sa obnovuje automaticky každý ${ cycle } mesiac.",
+        "Predplatné sa obnovuje automaticky každé ${ cycle } mesiace.",
+        "Predplatné sa obnovuje automaticky každých ${ cycle } mesiacov.",
+        "Predplatné sa obnovuje automaticky každých ${ cycle } mesiacov."
+      ],
       "Subscription auto-renews every month.": [
         "Predplatné sa obnovuje automaticky každý mesiac."
       ],
@@ -3540,6 +3198,18 @@
       "You can change this anytime in ${ settingsLink }.": [
         "Toto môžete neskôr zmeniť v ${ settingsLink }."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre."
+      ],
       "You can now return to the application to continue": [
         "Teraz sa môžete vrátiť do aplikácie a pokračovať"
       ],
@@ -3567,6 +3237,12 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelom overenia platby budete presmerovaný na PayPal."
       ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Potom vám bude každý ${ renewCycle } mesiac fakturovaná suma ${ renewAmountStr }.",
+        "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }.",
+        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }.",
+        "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }."
+      ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "Váš účet ${ BRAND_NAME } je momentálne pozastavený. Po 28 dňoch vám už nebudú do schránky doručované emaily, odkazy na zdieľanie na Disku budú zablokované a nebudete môcť nahrávať nové súbory. Ak chcete obnoviť normálnu prevádzku, uhraďte všetky faktúry po splatnosti."
       ],
@@ -3587,6 +3263,12 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
+      ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý ${ cycle } mesiac.",
+        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každé ${ cycle } mesiace.",
+        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každých ${ cycle } mesiacov.",
+        "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každých ${ cycle } mesiacov."
       ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Vaše naplánované predplatné sa začína ${ renewalTime } a bude automaticky obnovené každý mesiac."
@@ -3622,6 +3304,12 @@
     "Label": {
       "${ BRAND_NAME } username": [
         "Používateľské meno ${ BRAND_NAME }"
+      ],
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
       ],
       "Account holder": [
         "Vlastník účtu"
@@ -4019,8 +3707,110 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } a ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } kalendár",
+        "${ n } kalendáre",
+        "${ n } kalendárov",
+        "${ n } kalendárov"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendár na používateľa",
+        "${ n } kalendáre na používateľa",
+        "${ n } kalendárov na používateľa",
+        "${ n } kalendárov na používateľa"
+      ],
+      "${ n } custom email domain": [
+        "${ n } vlastná emailová doména",
+        "${ n } vlastné emailové domény",
+        "${ n } vlastných emailových domén",
+        "${ n } vlastných emailových domén"
+      ],
+      "${ n } email address": [
+        "${ n } emailová adresa",
+        "${ n } emailové adresy/aliasy",
+        "${ n } emailových adries/aliasov",
+        "${ n } emailových adries/aliasov"
+      ],
+      "${ n } email address per user": [
+        "${ n } emailová adresa na používateľa",
+        "${ n } emailové adresy na používateľa",
+        "${ n } emailových adries na používateľa",
+        "${ n } emailových adries na používateľa"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filtre",
+        "${ n } filtrov",
+        "${ n } filtrov"
+      ],
+      "${ n } folder": [
+        "${ n } priečinok",
+        "${ n } priečinky",
+        "${ n } priečinkov",
+        "${ n } priečinkov"
+      ],
+      "${ n } folder and label": [
+        "${ n } priečinok a štítok",
+        "${ n } priečinky a štítky",
+        "${ n } priečinkov a štítkov",
+        "${ n } priečinkov a štítkov"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email alias",
+        "${ n } hide-my-email aliasy",
+        "${ n } hide-my-email aliasov",
+        "${ n } hide-my-email aliasov"
+      ],
+      "${ n } label": [
+        "${ n } štítok",
+        "${ n } štítky",
+        "${ n } štítkov",
+        "${ n } štítkov"
+      ],
+      "${ n } message per day": [
+        "${ n } správa za deň",
+        "${ n } správy za deň",
+        "${ n } správ za deň",
+        "${ n } správ za deň"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } zdieľaný trezor ${ PASS_SHORT_APP_NAME } na používateľa",
+        "${ n } zdieľané trezory ${ PASS_SHORT_APP_NAME } na používateľa",
+        "${ n } zdieľaných trezorov ${ PASS_SHORT_APP_NAME } na používateľa",
+        "${ n } zdieľaných trezorov ${ PASS_SHORT_APP_NAME } na používateľa"
+      ],
+      "${ n } vault": [
+        "${ n } trezor",
+        "${ n } trezory",
+        "${ n } trezorov",
+        "${ n } trezorov"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN pripojenie",
+        "${ n } VPN pripojenia",
+        "${ n } VPN pripojení",
+        "${ n } VPN pripojení"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } používateľ",
+        "Až ${ numberOfUsers } používatelia",
+        "Až ${ numberOfUsers } používateľov",
+        "Až ${ numberOfUsers } používateľov"
+      ],
+      "${ options }-day file version history": [
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov",
+        "${ options }-dňová história verzií súborov"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin navždy"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasom",
+        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
+        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
+        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } s neobmedzeným počtom hide-my-email aliasov"
@@ -4169,6 +3959,12 @@
       "Group management (coming soon)": [
         "Správa skupiny (už čoskoro)"
       ],
+      "High-speed VPN on ${ n } device": [
+        "Vysoko rýchlostná sieť VPN na ${ n } zariadení",
+        "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach",
+        "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach",
+        "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach"
+      ],
       "HTML signatures": [
         "HTML podpisy"
       ],
@@ -4313,8 +4109,26 @@
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
       ],
+      "Up to ${ n } user": [
+        "Až ${ n } užívateľ",
+        "Až ${ n } používatelia",
+        "Až ${ n } používateľov",
+        "Až ${ n } používateľov"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Až ${ n } používateľ (${ adminsText }, ${ usersText })",
+        "Až ${ n } používatelia (${ adminsText }, ${ usersText })",
+        "Až ${ n } používateľov (${ adminsText }, ${ usersText })",
+        "Až ${ n } používateľov (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného priestoru"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Používajte na ${ n } zariadení",
+        "Používajte až na ${ n } zariadeniach súčasne",
+        "Používajte súčasne až na ${ n } zariadeniach",
+        "Používajte súčasne až na ${ n } zariadeniach"
       ],
       "User credential management": [
         "Správa používateľských údajov"
@@ -4325,8 +4139,28 @@
       "User storage management": [
         "Správa používateľského úložiska"
       ],
+      "Vault sharing (up to ${ n } person)": [
+        "Zdieľanie trezora (s ${ n } osobou)",
+        "Zdieľanie trezora (s ${ n } osobami)",
+        "Zdieľanie trezora (až s ${ n } osobami)",
+        "Zdieľanie trezora (až s ${ n } osobami)"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme temný web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } správca",
+        "${ admins } správcovia",
+        "${ admins } správcov",
+        "${ admins } správcov"
+      ],
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
       ]
     },
     "new_plans: heading": {
@@ -4485,6 +4319,12 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JanNakupy@${ domain } pre nákupné účty, JanSpravy@${ domain } pre odber noviniek"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Vytvorte si ${ n } kalendár alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendáre alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
@@ -4689,6 +4529,12 @@
       "Central control panel": [
         "Centrálny ovládací panel"
       ],
+      "Create up to ${ n } calendar": [
+        "Vytvorte až ${ n } kalendár",
+        "Vytvorte až ${ n } kalendáre",
+        "Vytvorte až ${ n } kalendárov",
+        "Vytvorte až ${ n } kalendárov"
+      ],
       "Dedicated Account manager": [
         "Špecializovaný správca účtov"
       ],
@@ -4706,6 +4552,12 @@
       ],
       "Require 2FA": [
         "Vyžadovať 2FA"
+      ],
+      "Support for ${ n } custom email domain": [
+        "Podpora pre ${ n } vlastnú emailovú doménu",
+        "Podpora pre ${ n } vlastné emailové domény",
+        "Podpora pre ${ n } vlastných emailových domén",
+        "Podpora pre ${ n } vlastných emailových domén"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -4770,6 +4622,12 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } používateľský účet",
+        "${ n } používateľské účty",
+        "${ n } používateľských účtov",
+        "${ n } používateľských účtov"
+      ],
       "Activity log": [
         "Záznam aktivity"
       ],
@@ -4889,8 +4747,32 @@
       "terms & conditions": [
         "podmienky používania"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "Kupón je možné použiť na ${ couponRedemptions } obnovenie.",
+        "Kupón je možné použiť na ${ couponRedemptions } obnovenia.",
+        "Kupón je možné použiť na ${ couponRedemptions } obnovení.",
+        "Kupón je možné použiť na ${ couponRedemptions } obnovení."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvý ${ subscriptionLength } mesiac.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvé ${ subscriptionLength } mesiace.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí pre prvých ${ subscriptionLength } mesiacov."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenie. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovenia. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť.",
+        "Špeciálna zľavnená cena ${ priceWithDiscount } platí počas prvého mesiaca. Kupón je platný pre ${ couponRedemptions } obnovení. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr } na 1 mesiac. Službu môžete kedykoľvek zrušiť."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ priceWithDiscount } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ renewPriceStr }. Službu môžete kedykoľvek zrušiť."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiac. Obnovenie môžete kedykoľvek zrušiť.",
+        "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiace. Obnovenie môžete kedykoľvek zrušiť.",
+        "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť.",
+        "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť."
       ],
       "This number will be shown on all future invoices": [
         "Toto číslo bude uvedené na všetkých budúcich faktúrach."
@@ -5172,6 +5054,12 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hodina",
+        "${ gracePeriodHoursRemaining } hodiny",
+        "${ gracePeriodHoursRemaining } hodín",
+        "${ gracePeriodHoursRemaining } hodín"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } je teraz k dispozícii."
       ],
@@ -5235,6 +5123,14 @@
         "Štandardne používame metódu podpisu Electrum, pretože je to najjednoduchšia a najčastejšia metóda, ktorú banky požadujú. BIP 137 sa používa na podpisovanie transakcií offline a je pokročilejšia."
       ]
     },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mesiacov ZDARMA",
+        "${ n } mesiac ZDARMA",
+        "${ n } mesiacov ZDARMA",
+        "${ n } mesiac ZDARMA"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 používateľ"
@@ -5285,6 +5181,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
       "1 year": [
         "1 rok"
       ],
@@ -5424,6 +5326,12 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "Kredity za zostávajúci čas pridáme do vášho ${ BRAND_NAME } účtu."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Stále vám zostáva **${ daysRemaining }** deň vo vašom pláne **${ currentPlanName }**.",
+        "Stále vám zostávajú **${ daysRemaining }** dni vo vašom pláne **${ currentPlanName }**.",
+        "Stále vám zostáva **${ daysRemaining }** dní vo vašom pláne **${ currentPlanName }**.",
+        "Stále vám zostáva **${ daysRemaining }** dní vo vašom pláne **${ currentPlanName }**."
+      ],
       "Your ${ appStorage } is almost full": [
         "Vaše úložisko ${ appStorage } je takmer plné"
       ],
@@ -5455,6 +5363,44 @@
       ],
       "Billed yearly": [
         "Účtované ročne"
+      ]
+    },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "${ n } VPN pripojenie zdarma na používateľa",
+        "${ n } VPN pripojenia zdarma na používateľa",
+        "${ n } VPN pripojení zdarma na používateľa",
+        "${ n } VPN pripojení zdarma na používateľa"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } vysokorýchlostné VPN pripojenie",
+        "${ n } vysokorýchlostné VPN pripojenia",
+        "${ n } vysokorýchlostných VPN pripojení",
+        "${ n } vysokorýchlostných VPN pripojení"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } vysokorýchlostné VPN pripojenie na používateľa",
+        "${ n } vysokorýchlostné VPN pripojenia na používateľa",
+        "${ n } vysokorýchlostných VPN pripojení na používateľa",
+        "${ n } vysokorýchlostných VPN pripojení na používateľa"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN pripojenie",
+        "${ n } VPN pripojenia",
+        "${ n } VPN pripojení",
+        "${ n } VPN pripojení"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN pripojenie na používateľa",
+        "${ n } VPN pripojenia na používateľa",
+        "${ n } VPN pripojení na používateľa",
+        "${ n } VPN pripojení na používateľa"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN pripojenie pre ${ n } zariadenie na používateľa",
+        "VPN pripojenie pre ${ n } zariadenia na používateľa",
+        "VPN pripojenie pre ${ n } zariadení na používateľa",
+        "VPN pripojenie pre ${ n } zariadení na používateľa"
       ]
     },
     "Subscription change warning": {
@@ -5501,6 +5447,18 @@
       ],
       "${ planName } gives you all apps, all features, early access to new releases, and everything you need to be in control of your data and its security.": [
         "${ planName } vám poskytne všetky aplikácie, všetky funkcie, predbežný prístup k novým verziám a všetko, čo potrebujete, aby ste mali svoje dáta a ich zabezpečenie pod kontrolou."
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } vlastná emailová doména",
+        "${ planNumberOfDomains } vlastné emailové domény",
+        "${ planNumberOfDomains } vlastných emailových domén",
+        "${ planNumberOfDomains } vlastných emailových domén"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } emailová adresa",
+        "${ planNumberOfEmails } emailové adresy",
+        "${ planNumberOfEmails } emailových adries",
+        "${ planNumberOfEmails } emailových adries"
       ],
       "Folders, labels, and custom filters": [
         "Priečinky, štítky a vlastné filtre"
@@ -5657,9 +5615,6 @@
     "Title": {
       "${ feature } is now active": [
         "${ feature } je teraz aktívna"
-      ],
-      "Account restricted": [
-        "Obmedzený účet"
       ],
       "Account temporarily locked": [
         "Účet dočasne zablokovaný"
@@ -5928,6 +5883,70 @@
     "unprivatization": {
       "Admins can't access the data of private users and can't reset their password.": [
         "Správcovia nemajú prístup k dátam súkromných používateľov a nemôžu resetovať ich heslo."
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znak",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znaky",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov",
+        "Heslo musí obsahovať aspoň ${ MIN_PASSWORD_LENGTH } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Skúste kratšie používateľské meno (max. ${ n } znak)",
+        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } zariadenie",
+        "${ n } zariadenia",
+        "${ n } zariadení",
+        "${ n } zariadení"
+      ],
+      "${ n } server": [
+        "${ n } server",
+        "${ n } servery",
+        "${ n } serverov",
+        "${ n } serverov"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN pripojenie",
+        "${ n } VPN pripojenia",
+        "${ n } VPN pripojení",
+        "${ n } VPN pripojení"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } krajina",
+        "${ numberOfCountries } krajiny",
+        "${ numberOfCountries } krajín",
+        "${ numberOfCountries } krajín"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } v ${ numberOfCountries } krajine",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } v ${ numberOfCountries } krajine",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatický výber z ${ numberOfCountries } krajiny",
+        "Automatický výber z ${ numberOfCountries } krajín",
+        "Automatický výber z ${ numberOfCountries } krajín",
+        "Automatický výber z ${ numberOfCountries } krajín"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Servery v ${ numberOfCountries }+ krajine",
+        "Servery v ${ numberOfCountries }+ krajinách",
+        "Servery v ${ numberOfCountries }+ krajinách",
+        "Servery v ${ numberOfCountries }+ krajinách"
       ]
     },
     "vpn_2step: feature": {
@@ -6500,6 +6519,12 @@
       ],
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
         "Vaša transakcia bola zverejnená na sieti Bitcoin. Potvrdenie transakcie sietí môže trvať približne jednu hodinu."
+      ],
+      "~${ minutes } minute": [
+        "~${ minutes } minúta",
+        "~${ minutes } minúty",
+        "~${ minutes } minút",
+        "~${ minutes } minút"
       ]
     },
     "Wallet Send": {
@@ -6991,6 +7016,24 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } emailová adresa",
+        "${ n } ${ BRAND_NAME } emailové adresy",
+        "${ n } ${ BRAND_NAME } emailových adries",
+        "${ n } ${ BRAND_NAME } emailových adries"
+      ],
+      "${ n } account per wallet": [
+        "${ n } účet na peňaženku",
+        "${ n } účty na peňaženku",
+        "${ n } účtov na peňaženku",
+        "${ n } účtov na peňaženku"
+      ],
+      "${ n } wallet": [
+        "${ n } peňaženka",
+        "${ n } peňaženky",
+        "${ n } peňaženiek",
+        "${ n } peňaženiek"
+      ],
       "Bitcoin via Email": [
         "Bitcoin cez email"
       ],

@@ -4,14 +4,6 @@
     "language": "ru_RU"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } печатает...",
-        "${ usersTranslation } печатают...",
-        "${ usersTranslation } печатают...",
-        "${ usersTranslation } печатают..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -494,6 +486,12 @@
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } и ${ lastTyper }"
       ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } печатает...",
+        "${ usersTranslation } печатают...",
+        "${ usersTranslation } печатают...",
+        "${ usersTranslation } печатают..."
+      ],
       "Alpha only experimental feature": [
         "Экспериментальная функция только для альфа-версии"
       ],
@@ -786,6 +784,71 @@
         "Вставить"
       ]
     },
+    "sheets_2025:Spreadsheet editor more formats menu": {
+      "$ US Dollar": [
+        "$ Доллар США"
+      ],
+      "Accounting": [
+        "Бухгалтерия"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Китайский юань"
+      ],
+      "Currency": [
+        "Валюта"
+      ],
+      "Currency rounded": [
+        "Округленная валюта"
+      ],
+      "Date": [
+        "Дата"
+      ],
+      "Date time": [
+        "Дата и время"
+      ],
+      "Duration": [
+        "Продолжительность"
+      ],
+      "Financial": [
+        "Финансовый"
+      ],
+      "General": [
+        "Общие вопросы"
+      ],
+      "Long date": [
+        "Полная дата"
+      ],
+      "More currency": [
+        "Другие валюты"
+      ],
+      "Number": [
+        "Числовой"
+      ],
+      "Percent": [
+        "Процентный"
+      ],
+      "Plain text": [
+        "Простой текст"
+      ],
+      "Scientific": [
+        "Научный"
+      ],
+      "Time": [
+        "Время"
+      ],
+      "£ Pound": [
+        "£ Фунт"
+      ],
+      "¥ Yen": [
+        "¥ Иена"
+      ],
+      "€ Euro": [
+        "€ Евро"
+      ],
+      "₹ Rupee": [
+        "₹ Рупия"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Bold": [
         "Полужирный"
@@ -822,6 +885,9 @@
       ],
       "Redo": [
         "Повторить"
+      ],
+      "Search": [
+        "Поиск"
       ],
       "Strikethrough": [
         "Зачеркивание"

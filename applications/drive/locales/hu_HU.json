@@ -4,892 +4,6 @@
     "language": "hu_HU"
   },
   "contexts": {
-    "": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } letöltés",
-        "${ activeDownloadsCount } letöltés"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } letöltés (${ downloadProgress }%)",
-        "${ activeDownloadsCount } letöltés (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } feltöltés (${ uploadProgress }%)",
-        "${ activeUploadsCount } feltöltés (${ uploadProgress }%)"
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } e-mail cím",
-        "${ addressCount } e-mail cím"
-      ],
-      "${ admins } admin": [
-        "${ admins } adminisztrátor",
-        "${ admins } adminisztrátorok"
-      ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } új naptár",
-        "${ calendarsToBeCreatedCount } új naptár"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } egyesített naptár",
-        "${ calendarsToBeMergedCount } egyesített naptár"
-      ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } megszakítva",
-        "${ canceledCount } megszakítva"
-      ],
-      "${ ceilDays } day": [
-        "${ ceilDays } nap",
-        "${ ceilDays } nap"
-      ],
-      "${ ceilHours } hour": [
-        "${ ceilHours } óra",
-        "${ ceilHours } óra"
-      ],
-      "${ ceilMinutes } minute": [
-        "${ ceilMinutes } perc",
-        "${ ceilMinutes } perc"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } névjegy több e-mail címet tartalmaz.",
-        "${ contactCount } névjegy több e-mail címet tartalmaz."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } tag",
-        "${ contactEmailsLength } tag"
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } névjegy található",
-        "${ contactsCount } névjegy található"
-      ],
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts }).",
-        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts })."
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } névjegy",
-        "${ contactsLength } névjegy"
-      ],
-      "${ count } item failed to be decrypted": [
-        "${ count } elem visszafejtése nem sikerült",
-        "${ count } elem visszafejtése nem sikerült"
-      ],
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } névjegy azonosnak tűnik.",
-        "${ countMergeableContacts } névjegy azonosnak tűnik."
-      ],
-      "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } sikertelen",
-        "${ countOfFailedLinks } sikertelen"
-      ],
-      "${ countOfUnrecoveredLinksLeft } left": [
-        "${ countOfUnrecoveredLinksLeft } maradt",
-        "${ countOfUnrecoveredLinksLeft } maradt"
-      ],
-      "${ dayDiff } day left": [
-        "${ dayDiff } nap van hátra",
-        "${ dayDiff } nap van hátra"
-      ],
-      "${ days } day": [
-        "${ days } nap",
-        "${ days } nap"
-      ],
-      "${ domains } additional custom domain": [
-        "${ domains } további saját domain név",
-        "${ domains } további saját domain név"
-      ],
-      "${ doneCount } finished": [
-        "${ doneCount } kész",
-        "${ doneCount } kész"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } letöltve",
-        "${ doneDownloadsCount } letöltve"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } feltöltve",
-        "${ doneUploadsCount } feltöltve"
-      ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } e-mail cím",
-        "${ emailsCount } e-mail cím"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } sikertelen",
-        "${ errorCount } sikertelen"
-      ],
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } óra",
-        "${ gracePeriodHoursRemaining } óra"
-      ],
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } óra maradt.",
-        "${ gracePeriodHoursRemaining } óra maradt."
-      ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } csoport található",
-        "${ groupCounts } csoport található"
-      ],
-      "${ hours } h": [
-        "${ hours } ó",
-        "${ hours } ó"
-      ],
-      "${ hours } hour": [
-        "${ hours } óra",
-        "${ hours } óra"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 ó",
-        "${ hoursInt }.5 ó"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 óra",
-        "${ hoursInt }.5 óra"
-      ],
-      "${ invitationsCount } pending invitation": [
-        "${ invitationsCount } függőben lévő meghívás",
-        "${ invitationsCount } függő meghívás"
-      ],
-      "${ ips } server": [
-        "${ ips } szerver",
-        "${ ips } szerver"
-      ],
-      "${ minutes } min": [
-        "${ minutes } perc",
-        "${ minutes } perc"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } perc",
-        "${ minutes } perc"
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }.",
-        "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } névjegy sikeresen egyesítve (összesen: ${ totalBeMerged }).",
-        "${ model.submitted.length } névjegy sikeresen egyesítve (összesen: ${ totalBeMerged })."
-      ],
-      "${ n } ${ BRAND_NAME } email address": [
-        "${ n } ${ BRAND_NAME } e-mail cím",
-        "${ n } ${ BRAND_NAME } e-mail cím"
-      ],
-      "${ n } account per wallet": [
-        "Tárolónként ${ n } fiók",
-        "Tárolónként ${ n } fiók"
-      ],
-      "${ n } calendar": [
-        "${ n } naptár",
-        "${ n } naptár"
-      ],
-      "${ n } calendar per user": [
-        "${ n } naptár felhasználónként",
-        "${ n } naptár felhasználónként"
-      ],
-      "${ n } custom email domain": [
-        "${ n } saját e-mail domain név",
-        "${ n } saját e-mail domain név"
-      ],
-      "${ n } device": [
-        "${ n } eszköz",
-        "${ n } eszköz"
-      ],
-      "${ n } email address": [
-        "${ n } e-mail cím",
-        "${ n } e-mail cím / alias"
-      ],
-      "${ n } email address per user": [
-        "${ n } e-mail cím felhasználónként",
-        "${ n } e-mail cím felhasználónként"
-      ],
-      "${ n } filter": [
-        "${ n } szűrő",
-        "${ n } szűrő"
-      ],
-      "${ n } folder": [
-        "${ n } mappa",
-        "${ n } mappa"
-      ],
-      "${ n } folder and label": [
-        "${ n } mappa és címke",
-        "${ n } mappa és címke"
-      ],
-      "${ n } free VPN connection per user": [
-        "${ n } ingyenes VPN kapcsolat felhasználónként",
-        "${ n } ingyenes VPN kapcsolat felhasználónként"
-      ],
-      "${ n } hide-my-email alias": [
-        "${ n } hide-my-email e-mail álnév",
-        "${ n } hide-my-email e-mail álnév"
-      ],
-      "${ n } high-speed VPN connection": [
-        "${ n } nagysebességű VPN kapcsolat",
-        "${ n } nagysebességű VPN kapcsolat"
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "${ n } nagysebességű VPN kapcsolat felhasználónként",
-        "${ n } nagysebességű VPN kapcsolat felhasználónként"
-      ],
-      "${ n } label": [
-        "${ n } címke",
-        "${ n } címke"
-      ],
-      "${ n } message per day": [
-        "${ n } üzenet naponta",
-        "${ n } üzenet naponta"
-      ],
-      "${ n } month": [
-        "${ n } hónap",
-        "${ n } hónap"
-      ],
-      "${ n } month FREE": [
-        "${ n } hónap INGYEN",
-        "${ n } hónap INGYEN"
-      ],
-      "${ n } server": [
-        "${ n } kiszolgáló",
-        "${ n }+ kiszolgáló"
-      ],
-      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
-        "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként",
-        "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként"
-      ],
-      "${ n } user account": [
-        "${ n } felhasználói fiók",
-        "${ n } felhasználói fiókok"
-      ],
-      "${ n } vault": [
-        "${ n } tároló",
-        "${ n } tároló"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN kapcsolat",
-        "${ n } VPN kapcsolat"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN kapcsolat felhasználónként",
-        "${ n } VPN kapcsolat felhasználónként"
-      ],
-      "${ n } wallet": [
-        "${ n } tároló",
-        "${ n } tároló"
-      ],
-      "${ nbDay } day": [
-        "${ nbDay } nap",
-        "${ nbDay } nap"
-      ],
-      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
-        "${ nbFailures } fényképet nem lehet eltávolítani innen: \"${ albumLink.name }\"",
-        "${ nbFailures } fényképet nem lehet eltávolítani innen: \"${ albumLink.name }\""
-      ],
-      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
-        "${ nbMainPhotosError } fényképet nem lehet hozzáadni ehhez: \"${ albumName }\"",
-        "${ nbMainPhotosError } fényképet nem lehet hozzáadni ehhez: \"${ albumName }\""
-      ],
-      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
-        "${ nbMainPhotosSuccess } fénykép hozzá lett adva ide: \"${ albumName }\"",
-        "${ nbMainPhotosSuccess } fénykép hozzá lett adva ide: \"${ albumName }\""
-      ],
-      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
-        "${ nbSuccesses } fénykép el lett távolítva innen: \"${ albumLink.name }\"",
-        "${ nbSuccesses } fénykép el lett távolítva innen: \"${ albumLink.name }\""
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } év",
-        "${ nbYear } év"
-      ],
-      "${ numberOfCountries } country": [
-        "${ numberOfCountries } ország",
-        "${ numberOfCountries } ország"
-      ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } meghiúsult letöltés",
-        "${ numberOfFailedTransfer.total } meghiúsult letöltés"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } meghiúsult átvitel",
-        "${ numberOfFailedTransfer.total } meghiúsult átvitel"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } meghiúsult feltöltés",
-        "${ numberOfFailedTransfer.total } meghiúsult feltöltés"
-      ],
-      "${ numberOfItems } item deleted": [
-        "${ numberOfItems } elem törölve",
-        "${ numberOfItems } elem törölve"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } elem véglegesen törölve a lomtárból",
-        "${ numberOfItems } elem véglegesen törölve a lomtárból"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } elemet nem sikerült eltávolítani",
-        "${ numberOfItems } elemet nem sikerült eltávolítani"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } fájl végleges törlése a lomtárból nem sikerült",
-        "${ numberOfItems } fájl végleges törlése a lomtárból nem sikerült"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } elem áthelyezése nem sikerült",
-        "${ numberOfItems } elem áthelyezése nem sikerült"
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems } elem áthelyezése a lomtárba nem sikerült",
-        "${ numberOfItems } elem áthelyezése a lomtárba nem sikerült"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } fájl visszaállítása a lomtárból nem sikerült",
-        "${ numberOfItems } fájl visszaállítása a lomtárból nem sikerült"
-      ],
-      "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } elem áthelyezve a lomtárba",
-        "${ numberOfItems } elem áthelyezve a lomtárba"
-      ],
-      "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } elem visszaállítva a lomtárból",
-        "${ numberOfItems } elem visszaállítva a lomtárból"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } elem sikeresen áthelyezve",
-        "${ numberOfItems } elem sikeresen áthelyezve"
-      ],
-      "${ numberOfServers } across ${ numberOfCountries } country": [
-        "${ numberOfServers }, ${ numberOfCountries } országban",
-        "${ numberOfServers }, ${ numberOfCountries }+ országban"
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } ${ numberOfCountries } országban",
-        "${ numberOfServers } ${ numberOfCountries } országban"
-      ],
-      "${ numberOfUsers } user": [
-        "${ numberOfUsers } felhasználó",
-        "Akár ${ numberOfUsers } felhasználó"
-      ],
-      "${ options }-day file version history": [
-        "Fájlok változtatási előzményeinek megtartása ${ options } napig",
-        "Fájlok változtatási előzményeinek megtartása ${ options } napig"
-      ],
-      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
-        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel"
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } felfüggesztve",
-        "${ pausedCount } felfüggesztve"
-      ],
-      "${ photoCount } item": [
-        "${ photoCount } elem",
-        "${ photoCount } elem"
-      ],
-      "${ planName } expires in ${ daysLeft } day.": [
-        "${ planName } lejár ${ daysLeft } nap múlva.",
-        "${ planName } lejár ${ daysLeft } nap múlva."
-      ],
-      "${ planNumberOfCalendars } calendar per user": [
-        "${ planNumberOfCalendars } naptár felhasználónként",
-        "${ planNumberOfCalendars } naptár felhasználónként"
-      ],
-      "${ planNumberOfDomains } custom email domain": [
-        "${ planNumberOfDomains } saját e-mail domain név",
-        "${ planNumberOfDomains } saját e-mail domain név"
-      ],
-      "${ planNumberOfEmails } email address": [
-        "${ planNumberOfEmails } email cím",
-        "${ planNumberOfEmails } e-mail cím"
-      ],
-      "${ planNumberOfEmails } email address per user": [
-        "${ planNumberOfEmails } e-mail cím felhasználónként",
-        "${ planNumberOfEmails } e-mail cím felhasználónként"
-      ],
-      "${ planNumberOfUsers } user": [
-        "${ planNumberOfUsers } felhasználó",
-        "${ planNumberOfUsers } felhasználó"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } mappa található",
-        "${ providerFoldersNumLocalized } mappa található"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } címke található a Gmailben",
-        "${ providerFoldersNumLocalized } címke található a Gmailben"
-      ],
-      "${ scanErrorCount } scan failed": [
-        "${ scanErrorCount } szkennelés sikertelen",
-        "${ scanErrorCount } szkennelés sikertelen"
-      ],
-      "${ seats } writing assistant seat": [
-        "${ seats } írási segéd licenc",
-        "${ seats } írási segéd licenc"
-      ],
-      "${ seconds } second": [
-        "${ seconds } másodperc",
-        "${ seconds } másodperc"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
-        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva",
-        "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva"
-      ],
-      "${ selectedCount } selected": [
-        "${ selectedCount } kijelölve",
-        "${ selectedCount } kijelölve"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mappa kiválasztva",
-        "${ selectedFoldersCount } mappa kiválasztva"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } címke kiválasztva",
-        "${ selectedFoldersCount } címke kiválasztva"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } mappa kiválasztva",
-        "${ selectedFoldersCountLocalized } mappa kiválasztva"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } címke kiválasztva",
-        "${ selectedFoldersCountLocalized } címke kiválasztva"
-      ],
-      "${ skippedCount } skipped": [
-        "${ skippedCount } kihagyva",
-        "${ skippedCount } kihagyva"
-      ],
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } nap",
-        "${ timeRemaining.inDays } nap"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } óra",
-        "${ timeRemaining.inHours } óra"
-      ],
-      "${ totalContacts } contact": [
-        "${ totalContacts } névjegy",
-        "${ totalContacts } névjegy"
-      ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért.",
-        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért."
-      ],
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez",
-        "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
-      ],
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a naptárba",
-        "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a naptárba"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } névjegy sikeresen frissítve.",
-        "${ updated } névjegy sikeresen frissítve."
-      ],
-      "${ users } user": [
-        "${ users } felhasználó",
-        "${ users } felhasználó"
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } tag)",
-        "(${ memberCount } tag)"
-      ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
-        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolatok (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
-      ],
-      "Add ${ photoCount } photo to": [
-        "${ photoCount } fénykép hozzáadása ehhez",
-        "${ photoCount } fénykép hozzáadása ehhez"
-      ],
-      "Add ${ photoCount } photo to a new album": [
-        "${ photoCount } fénykép hozzáadása egy új albumhoz",
-        "${ photoCount } fénykép hozzáadása egy új albumhoz"
-      ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Hozzáadás a(z) „${ album.name }” mappához (${ album.photoCount } fénykép)",
-        "Hozzáadás a(z) „${ album.name }” mappához (${ album.photoCount } fénykép)"
-      ],
-      "Add to ${ groupCount } group": [
-        "Hozzáadás ${ groupCount } csoporthoz",
-        "Hozzáadás ${ groupCount } csoporthoz"
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Mind (${ totalFoldersCount } mappa)",
-        "Mind (${ totalFoldersCount } mappa)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Mind (${ totalFoldersCount } címke)",
-        "Mind (${ totalFoldersCount } címke)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig",
-        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig"
-      ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Létrehozott naptárak száma: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
-        "Létrehozott naptárak száma: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
-        "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Biztos, hogy véglegesen töröl ${ count } névjegyet?",
-        "Biztos, hogy véglegesen töröl ${ count } névjegyet?"
-      ],
-      "Are you sure you want to remove this item from your list?": [
-        "Biztos, hogy el akarja távolítani ezt az elemet a listáról?",
-        "Biztos, hogy el akarja távolítani ezeket az elemet a listáról?"
-      ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban",
-        "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban"
-      ],
-      "Auto-selects from ${ numberOfCountries } country": [
-        "Automatikus kiválasztás ${ numberOfCountries } országból",
-        "Automatikus kiválasztás ${ numberOfCountries } országból"
-      ],
-      "byte": [
-        "bájt",
-        "bájt"
-      ],
-      "Byte": [
-        "Bájt",
-        "Bájt"
-      ],
-      "Contact deleted": [
-        "Névjegy törölve",
-        "Névjegyek törölve"
-      ],
-      "Contact group deleted": [
-        "Névjegy csoport törölve",
-        "Névjegy csoport törölve"
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } új naptár létrehozása",
-        "${ calendarsToBeCreatedCount } új naptár létrehozása"
-      ],
-      "Create a secure cloud for ${ value } member": [
-        "Hozzon létre biztonságos felhőárhelyet ${ value } tagnak",
-        "Hozzon létre biztonságos felhőárhelyet ${ value } tagnak"
-      ],
-      "Create up to ${ n } calendar": [
-        "Akár ${ n } naptár létrehozása",
-        "Akár ${ n } naptár létrehozása"
-      ],
-      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
-        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
-        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
-      ],
-      "Delete ${ count } contact": [
-        "${ count } névjegy törlése",
-        "${ count } névjegy törlése"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } névjegy csoport törlése",
-        "${ count } névjegy csoport törlése"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "${ selectedCount } névjegy törlése",
-        "${ selectedCount } névjegy törlése"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "${ selectedCount } névjegy csoport törlése",
-        "${ selectedCount } névjegy csoport törlése"
-      ],
-      "Delete ${ total } item?": [
-        "${ total } elem törlése?",
-        "${ total } elem törlése?"
-      ],
-      "Delete drive?": [
-        "A tárhely törlése?",
-        "A tárhelyek törlése?"
-      ],
-      "Delete locked drive": [
-        "Zárolt tárhely törlése",
-        "Zárolt tárhelyek törlése"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál",
-        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál vagy",
-        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál vagy"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Becsült hátralévő idő: ${ estimatedMinutes } perc",
-        "Becsült hátralévő idő: ${ estimatedMinutes } perc"
-      ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "A fájl vagy mappa \"${ filename }\" és ${ count } másik már feltöltés alatt van",
-        "A fájl vagy mappa \"${ filename }\" és ${ count } másik már feltöltés alatt van"
-      ],
-      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
-        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz",
-        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz"
-      ],
-      "Found ${ searchView.numberOfResults } result": [
-        "${ searchView.numberOfResults } találat",
-        "${ searchView.numberOfResults } találat"
-      ],
-      "Gigabyte": [
-        "Gigabájt",
-        "Gigabájt"
-      ],
-      "High-speed VPN on ${ n } device": [
-        "Nagysebességű VPN ${ n } eszközön",
-        "Nagysebességű VPN ${ n } eszközön"
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "${ calendarCount } naptár importálása a(z) ${ totalCalendarsCount } naptárból",
-        "${ calendarCount } naptár importálása a(z) ${ totalCalendarsCount } naptárból"
-      ],
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint",
-        "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Minden üzenet importálása ${ itemsToImportCount } címkéből és megjelölés mint",
-        "Minden üzenet importálása ${ itemsToImportCount } címkéből és megjelölés mint"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összes: ${ itemsToImportCount }) és megjelölés mint",
-        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összes: ${ itemsToImportCount }) és megjelölés mint"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint",
-        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint"
-      ],
-      "Import as simple event?": [
-        "Importálás egyszerű eseményként?",
-        "Importálás egyszerű eseményekként?"
-      ],
-      "Kilobyte": [
-        "Kilobájt",
-        "Kilobájt"
-      ],
-      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
-        "Legalább ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
-        "Legalább ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
-      ],
-      "Megabyte": [
-        "Megabájt",
-        "Megabájt"
-      ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral",
-        "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral"
-      ],
-      "Move ${ n } file": [
-        "${ n } fájl áthelyezése",
-        "${ n } fájl áthelyezése"
-      ],
-      "Move ${ n } folder": [
-        "${ n } mappa áthelyezése",
-        "${ n } mappa áthelyezése"
-      ],
-      "Move ${ n } item": [
-        "${ n } elem áthelyezése",
-        "${ n } elem áthelyezése"
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "A név maximum ${ MAX_NAME_LENGTH } karakter hosszú lehet",
-        "A név maximum ${ MAX_NAME_LENGTH } karakter hosszú lehet"
-      ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Az egyik névjegyhez nincs e-mail cím: ${ noEmailsContactNamesList }",
-        "Néhány névjegyhez nincs e-mail cím: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Az egyik csoportban nincsenek névjegyek: ${ noContactGroupList }",
-        "Néhány csoportban nincsenek névjegyek: ${ noContactGroupList } "
-      ],
-      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
-        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
-        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Jelszó visszaállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg.",
-        "Jelszó visszaállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg."
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Javítsa ki a megjelölt hibát a folytatáshoz.",
-        "Javítsa ki a megjelölt hibákat a folytatáshoz."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Válasszon ki e-mail címet vagy címeket ${ groupCount } csoporthoz adáshoz.",
-        "Válasszon ki e-mail címet vagy címeket ${ groupCount } csoporthoz adáshoz."
-      ],
-      "Remove item?": [
-        "Elem eltávolítása?",
-        "Elemek eltávolítása?"
-      ],
-      "Removed duplicate invitee: ${ joinedInvitee }": [
-        "Kettőzött meghívás eltávolítva: ${ joinedInvitee }",
-        "Kettőzött meghívás eltávolítva: ${ joinedInvitee }"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Védje e-mailjeit és ütemezze végponttól-végpontig tartó titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail tartományok támogatását, korlátlan számú hide-my-email e-mail álnevet és még sok mást.",
-        "Védje e-mailjeit és ütemezze végponttól-végpontig tartó titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail tartományok támogatását, korlátlan számú hide-my-email e-mail álnevet és még sok mást."
-      ],
-      "Selected item was not removed from your list": [
-        "A kiválasztott elem nem lett eltávolítva a listáról.",
-        "A kiválasztott elemeket nem sikerült eltávolítani a listáról."
-      ],
-      "Selected items were successfully removed from your list": [
-        "A kiválasztott elemek sikeresen el lettek távolítva a listából.",
-        "A kiválasztott elemek sikeresen el lettek távolítva a listából."
-      ],
-      "Servers in ${ numberOfCountries }+ country": [
-        "Szerverek ${ numberOfCountries }+ országban",
-        "Szerverek ${ numberOfCountries }+ országban"
-      ],
-      "Share ${ photoCount } photo via": [
-        "${ photoCount } fénykép megosztása a következővel",
-        "${ photoCount } fénykép megosztása a következővel"
-      ],
-      "Sorry, we couldn't delete the folder because it is not empty.": [
-        "A mappát nem lehet törölni, mert nem üres",
-        "A mappát nem lehet törölni, mert nem üres"
-      ],
-      "Subscription auto-renews every ${ cycle } month.": [
-        "Az előfizetés automatikusan megújul minden ${ cycle } hónapban.",
-        "Az előfizetés automatikusan megújul minden ${ cycle } hónapban."
-      ],
-      "Support for ${ n } custom email domain": [
-        "${ n } saját e-mail domain név használata",
-        "${ n } saját e-mail domain név használata"
-      ],
-      "Terabyte": [
-        "Terabájt",
-        "Terabájt"
-      ],
-      "The coupon is valid for ${ couponRedemptions } renewal.": [
-        "A kupon ${ couponRedemptions } megújításra érvényes.",
-        "A kupon ${ couponRedemptions } megújításra érvényes."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
-        "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes.",
-        "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes."
-      ],
-      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
-        "A kedvezményes ár ${ priceWithDiscount } az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron 1 hónapra. Bármikor lemondhatja.",
-        "A kedvezményes ár ${ priceWithDiscount } az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron 1 hónapra. Bármikor lemondhatja."
-      ],
-      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
-        "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja.",
-        "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja."
-      ],
-      "This file contains an event invitation:": [
-        "Ez a fájl egy esemény meghívót tartalmaz:",
-        "Ez a fájl esemény meghívókat tartalmaz:"
-      ],
-      "This file contains an invitation response:": [
-        "Ez a fájl egy meghívó választ tartalmaz:",
-        "Ez a fájl meghívó válaszokat tartalmaz:"
-      ],
-      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
-        "Ez az elem nincs mentve a Fotók könyvtárában. Ha eltávolítja ebből az albumból, véglegesen elveszíti a hozzáférést.",
-        "A kiválasztott elemek egy része nincs elmentve a Fotók könyvtárában. Ha eltávolítja őket ebből az albumból, véglegesen elveszíti a hozzáférést."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Ez az engedély${ timeRemaining.inDays } nap múlva lejár",
-        "Ez az engedély ${ timeRemaining.inDays } nap múlva lejár"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Ez az engedély ${ timeRemaining.inHours } óra múlva lejár",
-        "Ez az engedély${ timeRemaining.inHours } óra múlva lejár"
-      ],
-      "Total for ${ n } month": [
-        "Összesen ${ n } hónapra",
-        "Összesen ${ n } hónapra"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
-        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
-      ],
-      "Up to ${ n } user": [
-        "Akár ${ n } felhasználó",
-        "Akár ${ n } felhasználó"
-      ],
-      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
-        "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })",
-        "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })"
-      ],
-      "Use on up to ${ n } device at once": [
-        "Használja egyszerre legfeljebb ${ n } eszközön",
-        "Használja egyszerre legfeljebb ${ n } eszközön"
-      ],
-      "Vault sharing (up to ${ n } person)": [
-        "Tároló megosztás (${ n } személyig)",
-        "Tároló megosztás (${ n } személyig)"
-      ],
-      "VPN connection for ${ n } device per user": [
-        "VPN kapcsolat felhasználónként ${ n } eszközre",
-        "VPN kapcsolat felhasználónként ${ n } eszközre"
-      ],
-      "Would you like to save it before removing?": [
-        "Szeretné elmenteni, mielőtt eltávolítja?",
-        "Szeretné elmenteni, mielőtt eltávolítja?"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
-        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
-        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
-      ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Nem küldhet emailt több, mint ${ maxContacts } címzettnek",
-        "Nem küldhet emailt több, mint ${ maxContacts } címzettnek"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
-        "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
-      ],
-      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
-        "Már csak ${ expiresInDays } napja maradt, hogy igénybe vegye az 3 GB-os üdvözlése bónuszát és ",
-        "Már csak ${ expiresInDays } napja maradt, hogy igénybe vegye az 3 GB-os üdvözlése bónuszát és "
-      ],
-      "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "${ timeRemaining.inDays } nap áll rendelkezésére, hogy visszaállítsa jelszavát.",
-        "${ timeRemaining.inDays } nap áll rendelkezésére, hogy visszaállítsa jelszavát."
-      ],
-      "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "${ timeRemaining.inHours } óra áll rendelkezésére, hogy visszaállítsa jelszavát.",
-        " ${ timeRemaining.inHours } óra áll rendelkezésére, hogy visszaállítsa jelszavát."
-      ],
-      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "${ timeRemaining.inMinutes } perc áll rendelkezésére, hogy visszaállítsa jelszavát.",
-        " ${ timeRemaining.inMinutes } perc áll rendelkezésére, hogy visszaállítsa jelszavát."
-      ],
-      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "${ timeRemaining.inSeconds } másodperc áll rendelkezésére, hogy visszaállítsa jelszavát.",
-        " ${ timeRemaining.inSeconds } másodperc áll rendelkezésére, hogy visszaállítsa jelszavát."
-      ],
-      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
-        "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből.",
-        "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből."
-      ],
-      "You will need to save it again from the public link page.": [
-        "A nyilvános hivatkozásról oldalról újra el kell mentenie.",
-        "A nyilvános hivatkozásról oldalról újra el kell mentenie."
-      ],
-      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
-        "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
-        "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "A fájl több mint ${ MAX_IMPORT_EVENTS } eseményt tartalmaz: ${ formattedFilename }.",
-        "A fájl több mint ${ MAX_IMPORT_EVENTS } eseményt tartalmaz: ${ formattedFilename }."
-      ],
-      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
-        "Az ütemezett csomagja ${ renewalTime } időpontban indul, és ${ cycle } havonta automatikusan megújul.",
-        "Az ütemezett csomagja ${ renewalTime } időpontban indul, és ${ cycle } havonta automatikusan megújul."
-      ]
-    },
     "account": {
       "Forwarding will start soon. New emails will appear in your inbox.": [
         "Az átirányítás hamarosan indul. Az új levelek a bejövő üzeneteinél fognak megjelenni."
@@ -931,6 +45,10 @@
       "Add": [
         "Hozzáadás"
       ],
+      "Add ${ photoCount } photo to a new album": [
+        "${ photoCount } fénykép hozzáadása egy új albumhoz",
+        "${ photoCount } fénykép hozzáadása egy új albumhoz"
+      ],
       "Add account": [
         "Fiók hozzáadása"
       ],
@@ -970,6 +88,10 @@
       "Add photos": [
         "Fényképek hozzáadása"
       ],
+      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
+        "Hozzáadás a(z) „${ album.name }” mappához (${ album.photoCount } fénykép)",
+        "Hozzáadás a(z) „${ album.name }” mappához (${ album.photoCount } fénykép)"
+      ],
       "Add to album": [
         "Hozzáadás albumhoz"
       ],
@@ -981,6 +103,10 @@
       ],
       "Apply": [
         "Alkalmazás"
+      ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban",
+        "Legfeljebb ${ maxContacts } névjegy lehet egy névjegy csoportban"
       ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
@@ -1182,6 +308,14 @@
       ],
       "Delete": [
         "Törlés"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } névjegy törlése",
+        "${ selectedCount } névjegy törlése"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } névjegy csoport törlése",
+        "${ selectedCount } névjegy csoport törlése"
       ],
       "Delete album": [
         "Album törlése"
@@ -2017,6 +1151,10 @@
       "What do I get?": [
         "Mit tartalmaz?"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt",
+        "Egyszerre nem küldhet el több mint ${ maxAttachments } vCard névjegyfájlt"
+      ],
       "Your 3 GB bonus": [
         "A 3 GB bónusza"
       ],
@@ -2050,6 +1188,14 @@
       ]
     },
     "Addon": {
+      "${ domains } additional custom domain": [
+        "${ domains } további saját domain név",
+        "${ domains } további saját domain név"
+      ],
+      "${ ips } server": [
+        "${ ips } szerver",
+        "${ ips } szerver"
+      ],
       "${ price } per dedicated server": [
         "${ price } / dedikált szerver"
       ],
@@ -2061,6 +1207,14 @@
       ],
       "${ price } per user": [
         "${ price } felhasználónként"
+      ],
+      "${ seats } writing assistant seat": [
+        "${ seats } írási segéd licenc",
+        "${ seats } írási segéd licenc"
+      ],
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
       ]
     },
     "Alert": {
@@ -2180,6 +1334,10 @@
       ]
     },
     "anniversary_2025: Offers": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
       "/ month": [
         "/ hó"
       ],
@@ -2339,6 +1497,10 @@
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Biztonságos bejelentkezés minden eszközén. Korlátlan hide-my-email álnévvel, megosztással, integrált kétlépcsős hitelesítéssel, ${ DARK_WEB_MONITORING_NAME } szolgáltatással és sok mással."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
+        "Védje e-mailjeit és ütemezze végponttól-végpontig tartó titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail tartományok támogatását, korlátlan számú hide-my-email e-mail álnevet és még sok mást.",
+        "Védje e-mailjeit és ütemezze végponttól-végpontig tartó titkosítással. Tartalmaz ${ addresses } e-mail címet, egyéni e-mail tartományok támogatását, korlátlan számú hide-my-email e-mail álnevet és még sok mást."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
         "Tartsa biztonságban e-mailjeit és időbeosztását végpontok közti titkosítással. Tartalmaz 15 e-mail címet, egyéni e-mail domain név támogatását, ${ BRAND_NAME } Scribe íróasszisztenst, korlátlan számú hide-my-email álnevet és további lehetőségeket."
@@ -2537,8 +1699,16 @@
       ]
     },
     "Checkout row": {
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
+      ],
       "Total": [
         "Összesen"
+      ],
+      "Total for ${ n } month": [
+        "Összesen ${ n } hónapra",
+        "Összesen ${ n } hónapra"
       ]
     },
     "Collapsible tooltip": {
@@ -3994,6 +3164,14 @@
       "Could not remove from favorites": [
         "Nem sikerült eltávolítani a kedvencekből"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál",
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál vagy",
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál vagy"
+      ],
       "Device name does not match": [
         "Az eszköznév nem egyezik"
       ],
@@ -4144,6 +3322,10 @@
       "Last name is too long": [
         "A vezetéknév túl hosszú"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral",
+        "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral"
+      ],
       "Missing key packet": [
         "Hiányzó kulcs csomag"
       ],
@@ -4167,6 +3349,14 @@
       ],
       "Not a valid number": [
         "Érvénytelen szám"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Az egyik névjegyhez nincs e-mail cím: ${ noEmailsContactNamesList }",
+        "Néhány névjegyhez nincs e-mail cím: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Az egyik csoportban nincsenek névjegyek: ${ noContactGroupList }",
+        "Néhány csoportban nincsenek névjegyek: ${ noContactGroupList } "
       ],
       "Organization key is not decrypted": [
         "A szervezeti kulcs nincs visszafejtve"
@@ -4195,6 +3385,10 @@
       "Please activate your search again": [
         "Aktiválja újra a keresést"
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Javítsa ki a megjelölt hibát a folytatáshoz.",
+        "Javítsa ki a megjelölt hibákat a folytatáshoz."
+      ],
       "Please provide either a first name, a last name or a display name": [
         "Adjon meg egy keresztnevet, vezetéknevet vagy megjelenített nevet"
       ],
@@ -4221,6 +3415,10 @@
       ],
       "Process aborted": [
         "Folyamat megszakítva"
+      ],
+      "Removed duplicate invitee: ${ joinedInvitee }": [
+        "Kettőzött meghívás eltávolítva: ${ joinedInvitee }",
+        "Kettőzött meghívás eltávolítva: ${ joinedInvitee }"
       ],
       "Report failed to be sent": [
         "A bejelentés elküldése nem sikerült"
@@ -4402,6 +3600,10 @@
       "We were not able to load some of your shared items info": [
         "Nem sikerült betölteni néhány megosztott elemének információját"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Nem küldhet emailt több, mint ${ maxContacts } címzettnek",
+        "Nem küldhet emailt több, mint ${ maxContacts } címzettnek"
+      ],
       "You have reached the maximum number of calendars.": [
         "Elérte a naptárak maximális számát."
       ],
@@ -4439,6 +3641,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Váratlan hiba történt. Az importálást újra kell kezdeni."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "A fájl több mint ${ MAX_IMPORT_EVENTS } eseményt tartalmaz: ${ formattedFilename }.",
+        "A fájl több mint ${ MAX_IMPORT_EVENTS } eseményt tartalmaz: ${ formattedFilename }."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "A(z) ${ formattedFilename } fájl érvénytelen metódust tartalmaz és nem importálható."
@@ -4651,6 +3857,12 @@
         "(névtelen)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } sikertelen",
+        "${ countOfFailedLinks } sikertelen"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB teljes tárhely"
@@ -4812,6 +4024,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bájt",
+        "bájt"
+      ],
       "GB": [
         "GB"
       ],
@@ -4823,6 +4039,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bájt",
+        "Bájt"
+      ],
+      "Gigabyte": [
+        "Gigabájt",
+        "Gigabájt"
+      ],
+      "Kilobyte": [
+        "Kilobájt",
+        "Kilobájt"
+      ],
+      "Megabyte": [
+        "Megabájt",
+        "Megabájt"
+      ],
+      "Terabyte": [
+        "Terabájt",
+        "Terabájt"
       ]
     },
     "Filter notification": {
@@ -4893,6 +4131,10 @@
       ]
     },
     "Heading": {
+      "Add ${ photoCount } photo to": [
+        "${ photoCount } fénykép hozzáadása ehhez",
+        "${ photoCount } fénykép hozzáadása ehhez"
+      ],
       "Add to shared album": [
         "Hozzáadás a megosztott albumhoz"
       ],
@@ -4901,9 +4143,17 @@
       ],
       "Recent": [
         "Friss"
+      ],
+      "Share ${ photoCount } photo via": [
+        "${ photoCount } fénykép megosztása a következővel",
+        "${ photoCount } fénykép megosztása a következővel"
       ]
     },
     "Hint": {
+      "Found ${ itemsCount } suggestion, use keyboard to navigate.": [
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz",
+        "Találtunk ${ itemsCount } javaslatot, használd a billentyűzetet a navigáláshoz"
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Használja a Fel és Le billentyűket a javaslatok eléréséhez és böngészéséhez. Nyomja meg az Enter billentyűt a választásának megerősítéséhez, vagy az Escape billentyűt a javaslatok doboz bezárásához."
       ]
@@ -4970,6 +4220,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a naptárba",
+        "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a naptárba"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
+        "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Hiba történt az esemény titkosításakor és tárolásakor. Nem került importálásra esemény."
       ],
@@ -5004,11 +4262,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Az importált meghívók egyszerű eseményként jelennek meg a ${ CALENDAR_APP_NAME } eseményei közt, szervező és résztvevők nélkül. Hogy értesüljön az esemény változásairól és lássa a résztvevőket, kérje meg a szervezőket, hogy a ${ BRAND_NAME } e-mail címével hívják meg."
       ],
+      "This file contains an event invitation:": [
+        "Ez a fájl egy esemény meghívót tartalmaz:",
+        "Ez a fájl esemény meghívókat tartalmaz:"
+      ],
+      "This file contains an invitation response:": [
+        "Ez a fájl egy meghívó választ tartalmaz:",
+        "Ez a fájl meghívó válaszokat tartalmaz:"
+      ],
       "This file contains some data that we cannot import:": [
         "Ez a fájl olyan adatokat is tartalmaz, amit nem lehet importálni:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez",
+        "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Hiba történt a névjegy titkosításakor és tárolásakor. A névjegy nem került importálásra."
       ],
@@ -5028,6 +4298,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Névjegy ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } névjegy",
+        "${ totalContacts } névjegy"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5206,6 +4482,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } a ${ totalContacts } névjegyből nem kerül importálásra. Kattintson a részletekért"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért.",
+        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért."
+      ],
       "No contact can be imported. Click for details": [
         "Nem került importálásra névjegy. Kattintson a részletekért"
       ],
@@ -5217,6 +4497,22 @@
       ]
     },
     "Info": {
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } letöltés",
+        "${ activeDownloadsCount } letöltés"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } letöltés (${ downloadProgress }%)",
+        "${ activeDownloadsCount } letöltés (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } feltöltés (${ uploadProgress }%)",
+        "${ activeUploadsCount } feltöltés (${ uploadProgress }%)"
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } e-mail cím",
+        "${ addressCount } e-mail cím"
+      ],
       "${ albumName } has been successfully deleted": [
         "${ albumName } sikeresen törölve lett"
       ],
@@ -5229,11 +4525,51 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } titkosítási technológiájának köszönhetően senki sem fér hozzá a jelszavához - még mi sem."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } új naptár",
+        "${ calendarsToBeCreatedCount } új naptár"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } egyesített naptár",
+        "${ calendarsToBeMergedCount } egyesített naptár"
+      ],
+      "${ canceledCount } canceled": [
+        "${ canceledCount } megszakítva",
+        "${ canceledCount } megszakítva"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } névjegy több e-mail címet tartalmaz.",
+        "${ contactCount } névjegy több e-mail címet tartalmaz."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } tag",
+        "${ contactEmailsLength } tag"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } több e-mail címet tartalmaz."
       ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } névjegy található",
+        "${ contactsCount } névjegy található"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } névjegy",
+        "${ contactsLength } névjegy"
+      ],
       "${ DOCS_APP_NAME } files cannot be downloaded directly and will not be included in this download. You can download the other files by clicking 'Continue downloading'.": [
         "A ${ DOCS_APP_NAME } fájlok közvetlenül nem tölthetők le, és nem lesznek belefoglalva ebbe a letöltésbe. A többi fájlt a „Folytatás a letöltéssel” gombra kattintva töltheti le."
+      ],
+      "${ doneCount } finished": [
+        "${ doneCount } kész",
+        "${ doneCount } kész"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } letöltve",
+        "${ doneDownloadsCount } letöltve"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } feltöltve",
+        "${ doneUploadsCount } feltöltve"
       ],
       "${ DRIVE_APP_NAME } on App Store": [
         "${ DRIVE_APP_NAME } az App Store-ban"
@@ -5244,11 +4580,23 @@
       "${ email } invited you to join ${ albumName }": [
         "${ email } meghívta Önt, hogy csatlakozzon ide: ${ albumName }"
       ],
+      "${ errorCount } failed": [
+        "${ errorCount } sikertelen",
+        "${ errorCount } sikertelen"
+      ],
       "${ fileName }: full-size image": [
         "${ fileName }: teljes méretű kép"
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: alacsony felbontású előnézet"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } csoport található",
+        "${ groupCounts } csoport található"
+      ],
+      "${ invitationsCount } pending invitation": [
+        "${ invitationsCount } függőben lévő meghívás",
+        "${ invitationsCount } függő meghívás"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A ${ PASS_SHORT_APP_NAME } élethosszig tartó szerződésnek nincs megújítási ára, ez egy egyszeri fizetés a ${ PASS_SHORT_APP_NAME } élethosszig tartó hozzáférésért."
@@ -5256,8 +4604,20 @@
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }. Your ${ planTitle } subscription renewal price and date remain unchanged.": [
         "A ${ PASS_SHORT_APP_NAME } élethosszig tartó ajánlatnak nincs megújítási ára, ez egy egyszeri fizetés az ${ PASS_SHORT_APP_NAME } élethosszig tartó hozzáférésért. A ${ planTitle } előfizetése megújítási ára és dátuma változatlan marad."
       ],
+      "${ pausedCount } paused": [
+        "${ pausedCount } felfüggesztve",
+        "${ pausedCount } felfüggesztve"
+      ],
+      "${ photoCount } item": [
+        "${ photoCount } elem",
+        "${ photoCount } elem"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } legalább 1 dedikált szervert igényel ${ serverPricePerMonth } havonta."
+      ],
+      "${ planName } expires in ${ daysLeft } day.": [
+        "${ planName } lejár ${ daysLeft } nap múlva.",
+        "${ planName } lejár ${ daysLeft } nap múlva."
       ],
       "${ planName } expires today.": [
         "${ planName } ma lejár."
@@ -5265,17 +4625,61 @@
       "${ PROTON_SENTINEL_NAME } protects your account with dedicated monitoring of suspicious activity.": [
         "A ${ PROTON_SENTINEL_NAME } megvédi a felhasználói fiókját a gyanús tevékenységek figyelésével."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mappa található",
+        "${ providerFoldersNumLocalized } mappa található"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } címke található a Gmailben",
+        "${ providerFoldersNumLocalized } címke található a Gmailben"
+      ],
+      "${ scanErrorCount } scan failed": [
+        "${ scanErrorCount } szkennelés sikertelen",
+        "${ scanErrorCount } szkennelés sikertelen"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
+        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva",
+        "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } kijelölve",
+        "${ selectedCount } kijelölve"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mappa kiválasztva",
+        "${ selectedFoldersCountLocalized } mappa kiválasztva"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } címke kiválasztva",
+        "${ selectedFoldersCountLocalized } címke kiválasztva"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } kihagyva",
+        "${ skippedCount } kihagyva"
+      ],
       "${ speed }/s": [
         "${ speed }/mp"
       ],
       "${ storage } storage": [
         "${ storage } tárhely"
       ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } névjegy sikeresen frissítve.",
+        "${ updated } névjegy sikeresen frissítve."
+      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } már létezik ezen a helyen."
       ],
       "${ VPN_APP_NAME } is masking your IP address, so websites can’t identify you.": [
         "A ${ VPN_APP_NAME } maszkolja az IP-címet, így a weboldalak nem tudják azonosítani."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } tag)",
+        "(${ memberCount } tag)"
       ],
       "(${ serverPrice }/month)": [
         "(${ serverPrice } /hónap)"
@@ -5288,6 +4692,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bónusz tárterület"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolatok (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
       ],
       "30-day money-back guarantee.": [
         "30 napos pénz-visszafizetési garancia."
@@ -5337,8 +4745,20 @@
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "A mesterséges intelligenciával működő asszisztens segít jobb e-maileket készíteni, gyorsan és könnyedén."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Mind (${ totalFoldersCount } mappa)",
+        "Mind (${ totalFoldersCount } mappa)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Mind (${ totalFoldersCount } címke)",
+        "Mind (${ totalFoldersCount } címke)"
+      ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig",
+        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig"
       ],
       "Also try looking in Trash.": [
         "Próbálja megnézni a lomtárban."
@@ -5505,6 +4925,10 @@
       "Country code": [
         "Országkód"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } új naptár létrehozása",
+        "${ calendarsToBeCreatedCount } új naptár létrehozása"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó mappákat."
       ],
@@ -5513,6 +4937,10 @@
       ],
       "Create a new contact group": [
         "Új névjegy csoport"
+      ],
+      "Create a secure cloud for ${ value } member": [
+        "Hozzon létre biztonságos felhőárhelyet ${ value } tagnak",
+        "Hozzon létre biztonságos felhőárhelyet ${ value } tagnak"
       ],
       "Create in": [
         "Létrehozás itt"
@@ -5558,6 +4986,10 @@
       ],
       "default email address": [
         "alapértelmezett e-mail cím"
+      ],
+      "Delete locked drive": [
+        "Zárolt tárhely törlése",
+        "Zárolt tárhelyek törlése"
       ],
       "Details": [
         "Részletek"
@@ -5672,6 +5104,10 @@
       ],
       "Enter your own password (as organization admin).": [
         "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Becsült hátralévő idő: ${ estimatedMinutes } perc",
+        "Becsült hátralévő idő: ${ estimatedMinutes } perc"
       ],
       "Estimated time remaining: Less than a minute": [
         "Becsült hátralévő idő: kevesebb mint 1 perc"
@@ -5804,6 +5240,10 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ha folytatja a lemondást, elveszíti a hozzáférést a ${ VPN_APP_NAME } fizetett szolgáltatásaihoz."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount } naptár importálása a(z) ${ totalCalendarsCount } naptárból",
+        "${ calendarCount } naptár importálása a(z) ${ totalCalendarsCount } naptárból"
       ],
       "Import from": [
         "Importálás innen"
@@ -5954,6 +5394,10 @@
       ],
       "Mastercard SecureCode logo": [
         "Mastercard Biztonsági Kód logó"
+      ],
+      "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
+        "Legalább ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter",
+        "Legalább ${ MAX_SHARED_URL_PASSWORD_LENGTH } karakter"
       ],
       "May": [
         "Máj"
@@ -6167,6 +5611,10 @@
       ],
       "Please select the folders you would like to import:": [
         "Válassza ki az importálásra kerülő mappákat:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Válasszon ki e-mail címet vagy címeket ${ groupCount } csoporthoz adáshoz.",
+        "Válasszon ki e-mail címet vagy címeket ${ groupCount } csoporthoz adáshoz."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Válasszon ki e-mail címet vagy címeket a ${ groupName } csoporthoz adáshoz."
@@ -6405,6 +5853,10 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Küldje el a befizetést az alábbi címre, vagy olvassa be a QR-kódot. A befizetés a megerősítést követően megjelenik a számláján."
       ],
+      "Subscription auto-renews every ${ cycle } month.": [
+        "Az előfizetés automatikusan megújul minden ${ cycle } hónapban.",
+        "Az előfizetés automatikusan megújul minden ${ cycle } hónapban."
+      ],
       "Subscription auto-renews every month.": [
         "Az előfizetés minden hónapban automatikusan megújul."
       ],
@@ -6491,6 +5943,10 @@
       ],
       "This item already exists in your library": [
         "Ez az elem már létezik a könyvtárban"
+      ],
+      "This item isn't saved in your Photos library. If you remove it from this album, you’ll lose access to it permanently.": [
+        "Ez az elem nincs mentve a Fotók könyvtárában. Ha eltávolítja ebből az albumból, véglegesen elveszíti a hozzáférést.",
+        "A kiválasztott elemek egy része nincs elmentve a Fotók könyvtárában. Ha eltávolítja őket ebből az albumból, véglegesen elveszíti a hozzáférést."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
@@ -6768,6 +6224,10 @@
       "Would you like to restore your files?": [
         "Szeretné helyreállítani a fájljait?"
       ],
+      "Would you like to save it before removing?": [
+        "Szeretné elmenteni, mielőtt eltávolítja?",
+        "Szeretné elmenteni, mielőtt eltávolítja?"
+      ],
       "Would you like to save them before removing?": [
         "Szeretné elmenteni őket eltávolítás előtt?"
       ],
@@ -6813,6 +6273,14 @@
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
       ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
+      ],
       "You can now return to the application to continue": [
         "Most már visszatérhet az applikációba és fojtathatja"
       ],
@@ -6824,6 +6292,10 @@
       ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Értesítést fog kapni, ha jelszava vagy más adata kiszivárgott harmadik fél szolgáltatása miatt."
+      ],
+      "You have ${ expiresInDays } day left to claim your 3 GB welcome bonus and ": [
+        "Már csak ${ expiresInDays } napja maradt, hogy igénybe vegye az 3 GB-os üdvözlése bónuszát és ",
+        "Már csak ${ expiresInDays } napja maradt, hogy igénybe vegye az 3 GB-os üdvözlése bónuszát és "
       ],
       "You have a trial ${ planTitle } subscription. If you would like to continue your subscription after the trial period, please add a payment method.": [
         "Önnek próbaverziós ${ planTitle } előfizetése van. Ha szeretné megtartani az előfizetését a próbaidő után is, akkor kérjük adjon hozzá egy fizetési módot."
@@ -6846,11 +6318,19 @@
       "You will lose all unsaved changes.": [
         "A nem mentett módosítások el fognak veszni."
       ],
+      "You will need to save it again from the public link page.": [
+        "A nyilvános hivatkozásról oldalról újra el kell mentenie.",
+        "A nyilvános hivatkozásról oldalról újra el kell mentenie."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Nem kerül felszámításra, ha ${ trialEndsOnFormatted } előtt lemondja."
+      ],
+      "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
+        "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel.",
+        "Ekkor a számlázás ${ renewCycle } havonta történik ${ renewAmountStr } összeggel."
       ],
       "You're about to decline the invitation to join the ${ invitationName } album. If you proceed, you won't be able to access it unless the owner invites you again. Are you sure you want to continue?": [
         "Ön készül visszautasítani a ${ invitationName } albumhoz való csatlakozásra szóló meghívást. Ha folytatja, nem fog tudni hozzáférni, hacsak a tulajdonos nem hívja meg újra. Biztos, hogy folytatni szeretné?"
@@ -6957,6 +6437,10 @@
       "Your previous recovery phrase": [
         "A korábbi helyreállító jelmondata"
       ],
+      "Your scheduled plan starts on ${ renewalTime } and will auto-renew every ${ cycle } month.": [
+        "Az ütemezett csomagja ${ renewalTime } időpontban indul, és ${ cycle } havonta automatikusan megújul.",
+        "Az ütemezett csomagja ${ renewalTime } időpontban indul, és ${ cycle } havonta automatikusan megújul."
+      ],
       "Your scheduled plan starts on ${ renewalTime } and will auto-renew every month.": [
         "Az ütemezett csomagja ${ renewalTime } időpontban indul, és havonta automatikusan megújul."
       ],
@@ -6992,6 +6476,16 @@
     "Info on errors": {
       "Click for details": [
         "Kattintson a részletekért"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mappa kiválasztva",
+        "${ selectedFoldersCount } mappa kiválasztva"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } címke kiválasztva",
+        "${ selectedFoldersCount } címke kiválasztva"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -7057,6 +6551,18 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } felhasználónév"
+      ],
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } nap",
+        "${ nbDay } nap"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } év",
+        "${ nbYear } év"
       ],
       "(Expired)": [
         "(Lejárt)"
@@ -7210,6 +6716,10 @@
       ],
       "Delete": [
         "Törlés"
+      ],
+      "Delete drive?": [
+        "A tárhely törlése?",
+        "A tárhelyek törlése?"
       ],
       "Delete recovery-related information.": [
         "Helyreállítási információk törlése."
@@ -7815,6 +7325,10 @@
       "Almost there": [
         "Majdnem kész"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Létrehozott naptárak száma: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
+        "Létrehozott naptárak száma: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Csatlakozás az e-mailszolgáltatójához"
       ],
@@ -7860,6 +7374,24 @@
     "Log preference": {
       "Enable ${ reason }": [
         "Engedélyezi: ${ reason }"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint",
+        "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Minden üzenet importálása ${ itemsToImportCount } címkéből és megjelölés mint",
+        "Minden üzenet importálása ${ itemsToImportCount } címkéből és megjelölés mint"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összes: ${ itemsToImportCount }) és megjelölés mint",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összes: ${ itemsToImportCount }) és megjelölés mint"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint"
       ]
     },
     "mail_signup_2024: Info": {
@@ -8165,8 +7697,76 @@
       "${ DARK_WEB_MONITORING_NAME } and ${ PROTON_SENTINEL_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } és ${ PROTON_SENTINEL_NAME }"
       ],
+      "${ n } calendar": [
+        "${ n } naptár",
+        "${ n } naptár"
+      ],
+      "${ n } calendar per user": [
+        "${ n } naptár felhasználónként",
+        "${ n } naptár felhasználónként"
+      ],
+      "${ n } custom email domain": [
+        "${ n } saját e-mail domain név",
+        "${ n } saját e-mail domain név"
+      ],
+      "${ n } email address": [
+        "${ n } e-mail cím",
+        "${ n } e-mail cím / alias"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mail cím felhasználónként",
+        "${ n } e-mail cím felhasználónként"
+      ],
+      "${ n } filter": [
+        "${ n } szűrő",
+        "${ n } szűrő"
+      ],
+      "${ n } folder": [
+        "${ n } mappa",
+        "${ n } mappa"
+      ],
+      "${ n } folder and label": [
+        "${ n } mappa és címke",
+        "${ n } mappa és címke"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email e-mail álnév",
+        "${ n } hide-my-email e-mail álnév"
+      ],
+      "${ n } label": [
+        "${ n } címke",
+        "${ n } címke"
+      ],
+      "${ n } message per day": [
+        "${ n } üzenet naponta",
+        "${ n } üzenet naponta"
+      ],
+      "${ n } shared ${ PASS_SHORT_APP_NAME } vault per user": [
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként",
+        "${ n } megosztott ${ PASS_SHORT_APP_NAME } tároló felhasználónként"
+      ],
+      "${ n } vault": [
+        "${ n } tároló",
+        "${ n } tároló"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN kapcsolat",
+        "${ n } VPN kapcsolat"
+      ],
+      "${ numberOfUsers } user": [
+        "${ numberOfUsers } felhasználó",
+        "Akár ${ numberOfUsers } felhasználó"
+      ],
+      "${ options }-day file version history": [
+        "Fájlok változtatási előzményeinek megtartása ${ options } napig",
+        "Fájlok változtatási előzményeinek megtartása ${ options } napig"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin élettartam"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
+        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } korlátlan ide-my-email e-mail álnévvel"
@@ -8339,6 +7939,10 @@
       "Group management (coming soon)": [
         "Csoportkezelés (hamarosan elérhető)"
       ],
+      "High-speed VPN on ${ n } device": [
+        "Nagysebességű VPN ${ n } eszközön",
+        "Nagysebességű VPN ${ n } eszközön"
+      ],
       "HTML signatures": [
         "HTML aláírás"
       ],
@@ -8501,8 +8105,20 @@
       "Unlimited volume/bandwidth": [
         "Korlátlan adatmennyiség és forgalom"
       ],
+      "Up to ${ n } user": [
+        "Akár ${ n } felhasználó",
+        "Akár ${ n } felhasználó"
+      ],
+      "Up to ${ n } user (${ adminsText }, ${ usersText })": [
+        "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })",
+        "Akár ${ n } felhasználó (${ adminsText }, ${ usersText })"
+      ],
       "Up to ${ totalStorageSize } storage": [
         "Akár ${ totalStorageSize } tárhely"
+      ],
+      "Use on up to ${ n } device at once": [
+        "Használja egyszerre legfeljebb ${ n } eszközön",
+        "Használja egyszerre legfeljebb ${ n } eszközön"
       ],
       "User credential management": [
         "Felhasználói adatok kezelése"
@@ -8513,8 +8129,22 @@
       "User storage management": [
         "Felhasználói tárhely kezelése"
       ],
+      "Vault sharing (up to ${ n } person)": [
+        "Tároló megosztás (${ n } személyig)",
+        "Tároló megosztás (${ n } személyig)"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Átvizsgáljuk a sötét webet, hogy ellenőrizzük, kiszivárogtak-e a ${ BRAND_NAME } címei vagy e-mail álnevei, és azonnal értesítjük, ha bármit találunk."
+      ]
+    },
+    "new_plans: feature highlight": {
+      "${ admins } admin": [
+        "${ admins } adminisztrátor",
+        "${ admins } adminisztrátorok"
+      ],
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználók"
       ]
     },
     "new_plans: feature info": {
@@ -8689,6 +8319,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain } a hírleveleinek"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Hozzon létre legfeljebb ${ n } e-mail címet/álnevet, amelyet hozzárendelhet családtagokhoz. Használja őket online személyazonosságokhoz, pl. VasarloSanyi@${ domain } a vásárlási fiókokhoz."
@@ -8893,6 +8527,10 @@
       "Central control panel": [
         "Központi vezérlőpult"
       ],
+      "Create up to ${ n } calendar": [
+        "Akár ${ n } naptár létrehozása",
+        "Akár ${ n } naptár létrehozása"
+      ],
       "Dedicated Account manager": [
         "Kijelölt fiókmenedzser"
       ],
@@ -8910,6 +8548,10 @@
       ],
       "Require 2FA": [
         "Kétlépcsős hitelesítés megkövetelése"
+      ],
+      "Support for ${ n } custom email domain": [
+        "${ n } saját e-mail domain név használata",
+        "${ n } saját e-mail domain név használata"
       ]
     },
     "Notification": {
@@ -8960,6 +8602,66 @@
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName } sikeresen átnevezve"
+      ],
+      "${ count } item failed to be decrypted": [
+        "${ count } elem visszafejtése nem sikerült",
+        "${ count } elem visszafejtése nem sikerült"
+      ],
+      "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
+        "${ nbFailures } fényképet nem lehet eltávolítani innen: \"${ albumLink.name }\"",
+        "${ nbFailures } fényképet nem lehet eltávolítani innen: \"${ albumLink.name }\""
+      ],
+      "${ nbMainPhotosError } photo could not be added to \"${ albumName }\"": [
+        "${ nbMainPhotosError } fényképet nem lehet hozzáadni ehhez: \"${ albumName }\"",
+        "${ nbMainPhotosError } fényképet nem lehet hozzáadni ehhez: \"${ albumName }\""
+      ],
+      "${ nbMainPhotosSuccess } photo have been added to \"${ albumName }\"": [
+        "${ nbMainPhotosSuccess } fénykép hozzá lett adva ide: \"${ albumName }\"",
+        "${ nbMainPhotosSuccess } fénykép hozzá lett adva ide: \"${ albumName }\""
+      ],
+      "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
+        "${ nbSuccesses } fénykép el lett távolítva innen: \"${ albumLink.name }\"",
+        "${ nbSuccesses } fénykép el lett távolítva innen: \"${ albumLink.name }\""
+      ],
+      "${ numberOfItems } item deleted": [
+        "${ numberOfItems } elem törölve",
+        "${ numberOfItems } elem törölve"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } elem véglegesen törölve a lomtárból",
+        "${ numberOfItems } elem véglegesen törölve a lomtárból"
+      ],
+      "${ numberOfItems } item failed to be deleted": [
+        "${ numberOfItems } elemet nem sikerült eltávolítani",
+        "${ numberOfItems } elemet nem sikerült eltávolítani"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "${ numberOfItems } fájl végleges törlése a lomtárból nem sikerült",
+        "${ numberOfItems } fájl végleges törlése a lomtárból nem sikerült"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "${ numberOfItems } elem áthelyezése nem sikerült",
+        "${ numberOfItems } elem áthelyezése nem sikerült"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "${ numberOfItems } elem áthelyezése a lomtárba nem sikerült",
+        "${ numberOfItems } elem áthelyezése a lomtárba nem sikerült"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "${ numberOfItems } fájl visszaállítása a lomtárból nem sikerült",
+        "${ numberOfItems } fájl visszaállítása a lomtárból nem sikerült"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } elem áthelyezve a lomtárba",
+        "${ numberOfItems } elem áthelyezve a lomtárba"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } elem visszaállítva a lomtárból",
+        "${ numberOfItems } elem visszaállítva a lomtárból"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } elem sikeresen áthelyezve",
+        "${ numberOfItems } elem sikeresen áthelyezve"
       ],
       "${ reason } has been disabled": [
         "${ reason } letiltva"
@@ -9057,6 +8759,10 @@
       "Failed to upload files: ${ err }": [
         "Fájlok feltöltése nem sikerült: ${ err }"
       ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "A fájl vagy mappa \"${ filename }\" és ${ count } másik már feltöltés alatt van",
+        "A fájl vagy mappa \"${ filename }\" és ${ count } másik már feltöltés alatt van"
+      ],
       "File or folder \"${ filename }\" is already uploading": [
         "A fájl vagy mappa \"${ filename }\" már feltöltés alatt van"
       ],
@@ -9072,6 +8778,18 @@
       "Link copied to clipboard": [
         "Hivatkozás a vágólapra másolva"
       ],
+      "Move ${ n } file": [
+        "${ n } fájl áthelyezése",
+        "${ n } fájl áthelyezése"
+      ],
+      "Move ${ n } folder": [
+        "${ n } mappa áthelyezése",
+        "${ n } mappa áthelyezése"
+      ],
+      "Move ${ n } item": [
+        "${ n } elem áthelyezése",
+        "${ n } elem áthelyezése"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nincs elég hely a feltöltéshez: ${ formattedTotal }"
       ],
@@ -9084,6 +8802,14 @@
       "Root folder failed to be loaded": [
         "A gyökérmappa betöltése nem sikerült"
       ],
+      "Selected item was not removed from your list": [
+        "A kiválasztott elem nem lett eltávolítva a listáról.",
+        "A kiválasztott elemeket nem sikerült eltávolítani a listáról."
+      ],
+      "Selected items were successfully removed from your list": [
+        "A kiválasztott elemek sikeresen el lettek távolítva a listából.",
+        "A kiválasztott elemek sikeresen el lettek távolítva a listából."
+      ],
       "Selected photo(s) already in \"${ albumName }\"": [
         "A kiválasztott fénykép(ek) már a(z) „${ albumName }” albumban vannak"
       ],
@@ -9092,6 +8818,10 @@
       ],
       "Share invitation declined": [
         "Megosztási meghívás elutasítva"
+      ],
+      "Sorry, we couldn't delete the folder because it is not empty.": [
+        "A mappát nem lehet törölni, mert nem üres",
+        "A mappát nem lehet törölni, mert nem üres"
       ],
       "Stopping the sharing of this item has failed": [
         "Az elem megosztásának leállítása nem sikerült"
@@ -9505,6 +9235,10 @@
       ]
     },
     "pass_signup_2024: Info": {
+      "${ n } user account": [
+        "${ n } felhasználói fiók",
+        "${ n } felhasználói fiókok"
+      ],
       "Activity log": [
         "Tevékenységnapló"
       ],
@@ -9623,8 +9357,24 @@
       "terms & conditions": [
         "szerződési feltételek"
       ],
+      "The coupon is valid for ${ couponRedemptions } renewal.": [
+        "A kupon ${ couponRedemptions } megújításra érvényes.",
+        "A kupon ${ couponRedemptions } megújításra érvényes."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first ${ subscriptionLength } month.": [
+        "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes.",
+        "A kedvezményes ${ priceWithDiscount } ár az első ${ subscriptionLength } hónapra érvényes."
+      ],
+      "The specially discounted price of ${ priceWithDiscount } is valid for the first month. The coupon is valid for ${ couponRedemptions } renewal. Then it will automatically be renewed at ${ renewPriceStr } for 1 month. You can cancel at any time.": [
+        "A kedvezményes ár ${ priceWithDiscount } az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron 1 hónapra. Bármikor lemondhatja.",
+        "A kedvezményes ár ${ priceWithDiscount } az első hónapra érvényes. A kupon a ${ couponRedemptions } megújításáig érvényes. Ezután automatikusan megújul ${ renewPriceStr } áron 1 hónapra. Bármikor lemondhatja."
+      ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "A kedvezményes ár ${ priceWithDiscount } az első hónapra érvényes. Ezt követően automatikusan megújul ${ renewPriceStr } áron havonta. Bármikor lemondhatja."
+      ],
+      "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
+        "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja.",
+        "Ezután automatikusan megújul ${ renewPriceStr } áron ${ renewalLength } hónapra. Bármikor lemondhatja."
       ],
       "This payment method will become your new default for all future renewals.": [
         "Ez a fizetési mód lesz az új alapértelmezett minden jövőbeli megújításhoz."
@@ -9844,6 +9594,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts }).",
+        "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts })."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }.",
+        "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } névjegy sikeresen egyesítve (összesen: ${ totalBeMerged }).",
+        "${ model.submitted.length } névjegy sikeresen egyesítve (összesen: ${ totalBeMerged })."
+      ],
       "No contacts exported.": [
         "Egyetlen névjegy sem került exportálásra."
       ],
@@ -10007,11 +9769,27 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } nap",
+        "${ timeRemaining.inDays } nap"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } óra",
+        "${ timeRemaining.inHours } óra"
+      ],
       "Password reset request approved (${ user.Email }).": [
         "Jelszó visszaállítási kérelem elfogadva (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "A jelszó megváltoztatásához használja a bejelentkezett eszközt (abban a munkamenetben, ahol a kérés indult)."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Ez az engedély${ timeRemaining.inDays } nap múlva lejár",
+        "Ez az engedély ${ timeRemaining.inDays } nap múlva lejár"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Ez az engedély ${ timeRemaining.inHours } óra múlva lejár",
+        "Ez az engedély${ timeRemaining.inHours } óra múlva lejár"
       ],
       "This permission expires soon": [
         "Az engedély hamarosan lejár"
@@ -10021,6 +9799,22 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Mostantól megváltoztathatja a jelszavát a(z) ${ boldEmail } fiókhoz."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "${ timeRemaining.inDays } nap áll rendelkezésére, hogy visszaállítsa jelszavát.",
+        "${ timeRemaining.inDays } nap áll rendelkezésére, hogy visszaállítsa jelszavát."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "${ timeRemaining.inHours } óra áll rendelkezésére, hogy visszaállítsa jelszavát.",
+        " ${ timeRemaining.inHours } óra áll rendelkezésére, hogy visszaállítsa jelszavát."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "${ timeRemaining.inMinutes } perc áll rendelkezésére, hogy visszaállítsa jelszavát.",
+        " ${ timeRemaining.inMinutes } perc áll rendelkezésére, hogy visszaállítsa jelszavát."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "${ timeRemaining.inSeconds } másodperc áll rendelkezésére, hogy visszaállítsa jelszavát.",
+        " ${ timeRemaining.inSeconds } másodperc áll rendelkezésére, hogy visszaállítsa jelszavát."
       ]
     },
     "session_recovery:available:link": {
@@ -10080,8 +9874,16 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } óra maradt.",
+        "${ gracePeriodHoursRemaining } óra maradt."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Ha nem ön kérte a jelszó visszaállítását, szakítsa meg a kérelmet most."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Jelszó visszaállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg.",
+        "Jelszó visszaállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Annak ellenőrzésére, hogy valóban ön próbálja visszaállítani a jelszavát, 72 órát várni kell a kérések jóváhagyásáig. A jelszó ${ boldTimeLeft } múlva megváltoztatható. ${ viewRequest }"
@@ -10109,6 +9911,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } óra",
+        "${ gracePeriodHoursRemaining } óra"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } már elérhető."
       ],
@@ -10159,6 +9965,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Unlimited beszerzése"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } nap",
+        "${ days } nap"
+      ],
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ],
+      "${ seconds } second": [
+        "${ seconds } másodperc",
+        "${ seconds } másodperc"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } hónap INGYEN",
+        "${ n } hónap INGYEN"
       ]
     },
     "specialoffer: Deal details": {
@@ -10243,6 +10073,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
       "/ month": [
         "/ hó"
       ],
@@ -10461,6 +10295,10 @@
       "We’ll add the credits for the remaining time to your ${ BRAND_NAME } Account.": [
         "A fennmaradó időre járó krediteket hozzáadjuk a ${ BRAND_NAME } fiókjához."
       ],
+      "You still have **${ daysRemaining }** day left on your **${ currentPlanName }** plan.": [
+        "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből.",
+        "Még maradt **${ daysRemaining }** nap a **${ currentPlanName }** előfizetéséből."
+      ],
       "Your ${ appStorage } is almost full": [
         "Az ön ${ appStorage } majdnem tele van."
       ],
@@ -10498,6 +10336,32 @@
       ],
       "Billed yearly": [
         "Éves számlázás"
+      ]
+    },
+    "Subscription attribute": {
+      "${ n } free VPN connection per user": [
+        "${ n } ingyenes VPN kapcsolat felhasználónként",
+        "${ n } ingyenes VPN kapcsolat felhasználónként"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } nagysebességű VPN kapcsolat",
+        "${ n } nagysebességű VPN kapcsolat"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } nagysebességű VPN kapcsolat felhasználónként",
+        "${ n } nagysebességű VPN kapcsolat felhasználónként"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN kapcsolat",
+        "${ n } VPN kapcsolat"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN kapcsolat felhasználónként",
+        "${ n } VPN kapcsolat felhasználónként"
+      ],
+      "VPN connection for ${ n } device per user": [
+        "VPN kapcsolat felhasználónként ${ n } eszközre",
+        "VPN kapcsolat felhasználónként ${ n } eszközre"
       ]
     },
     "Subscription change warning": {
@@ -10542,6 +10406,10 @@
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ VPN_SHORT_APP_NAME } prémium funkciókkal"
       ],
+      "${ dayDiff } day left": [
+        "${ dayDiff } nap van hátra",
+        "${ dayDiff } nap van hátra"
+      ],
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } asztali alkalmazás"
       ],
@@ -10583,6 +10451,26 @@
       ],
       "${ planName } offers ${ planMaxSpace } storage per user for emails, attachments, events, files, and passwords. You are also eligible for yearly storage bonuses.": [
         "A ${ planName } ${ planMaxSpace } tárhelyet kínál felhasználónként e-mailek, mellékletek, események, fájlok és jelszavak számára. Ezenkívül jogosult éves tárolási bónuszokra."
+      ],
+      "${ planNumberOfCalendars } calendar per user": [
+        "${ planNumberOfCalendars } naptár felhasználónként",
+        "${ planNumberOfCalendars } naptár felhasználónként"
+      ],
+      "${ planNumberOfDomains } custom email domain": [
+        "${ planNumberOfDomains } saját e-mail domain név",
+        "${ planNumberOfDomains } saját e-mail domain név"
+      ],
+      "${ planNumberOfEmails } email address": [
+        "${ planNumberOfEmails } email cím",
+        "${ planNumberOfEmails } e-mail cím"
+      ],
+      "${ planNumberOfEmails } email address per user": [
+        "${ planNumberOfEmails } e-mail cím felhasználónként",
+        "${ planNumberOfEmails } e-mail cím felhasználónként"
+      ],
+      "${ planNumberOfUsers } user": [
+        "${ planNumberOfUsers } felhasználó",
+        "${ planNumberOfUsers } felhasználó"
       ],
       "${ PROTON_SENTINEL_NAME } advanced account protection": [
         "A ${ PROTON_SENTINEL_NAME } által nyújtott fokozott fiókvédelem"
@@ -10885,6 +10773,14 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } névjegy azonosnak tűnik.",
+        "${ countMergeableContacts } névjegy azonosnak tűnik."
+      ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } maradt",
+        "${ countOfUnrecoveredLinksLeft } maradt"
+      ],
       "Address copied to clipboard": [
         "Cím a vágólapra másolva"
       ],
@@ -10902,6 +10798,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Névjegy törölve",
+        "Névjegyek törölve"
+      ],
+      "Contact group deleted": [
+        "Névjegy csoport törölve",
+        "Névjegy csoport törölve"
       ],
       "Contact saved": [
         "Névjegy mentve"
@@ -11092,18 +10996,77 @@
         "Videók"
       ]
     },
+    "Time unit": {
+      "${ ceilDays } day": [
+        "${ ceilDays } nap",
+        "${ ceilDays } nap"
+      ],
+      "${ ceilHours } hour": [
+        "${ ceilHours } óra",
+        "${ ceilHours } óra"
+      ],
+      "${ ceilMinutes } minute": [
+        "${ ceilMinutes } perc",
+        "${ ceilMinutes } perc"
+      ],
+      "${ seconds } second": [
+        "${ seconds } másodperc",
+        "${ seconds } másodperc"
+      ]
+    },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ó",
+        "${ hours } ó"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ó",
+        "${ hoursInt }.5 ó"
+      ],
+      "${ minutes } min": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 óra",
+        "${ hoursInt }.5 óra"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ]
+    },
     "Title": {
       "# of downloads": [
         "Letöltések száma"
       ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mail cím",
+        "${ emailsCount } e-mail cím"
+      ],
       "${ feature } is now active": [
         "A(z) ${ feature } mostantól aktív"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } meghiúsult letöltés",
+        "${ numberOfFailedTransfer.total } meghiúsult letöltés"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } meghiúsult átvitel",
+        "${ numberOfFailedTransfer.total } meghiúsult átvitel"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } meghiúsult feltöltés",
+        "${ numberOfFailedTransfer.total } meghiúsult feltöltés"
+      ],
       "Account recovery": [
         "Fiók helyreállítás"
-      ],
-      "Account restricted": [
-        "Fiók korlátozva"
       ],
       "Account security": [
         "Fiókbiztonság"
@@ -11119,6 +11082,10 @@
       ],
       "Add credit/debit card": [
         "Bankkártya hozzáadása"
+      ],
+      "Add to ${ groupCount } group": [
+        "Hozzáadás ${ groupCount } csoporthoz",
+        "Hozzáadás ${ groupCount } csoporthoz"
       ],
       "Add to ${ groupName }": [
         "Hozzáadás a csoporthoz: ${ groupName }"
@@ -11161,6 +11128,10 @@
       ],
       "Are you sure you want to close the preview?": [
         "Biztos, hogy be szeretné zárni az előnézetet?"
+      ],
+      "Are you sure you want to remove this item from your list?": [
+        "Biztos, hogy el akarja távolítani ezt az elemet a listáról?",
+        "Biztos, hogy el akarja távolítani ezeket az elemet a listáról?"
       ],
       "Are you sure?": [
         "Biztos benne?"
@@ -11291,8 +11262,20 @@
       "Delete": [
         "Törlés"
       ],
+      "Delete ${ count } contact": [
+        "${ count } névjegy törlése",
+        "${ count } névjegy törlése"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } névjegy csoport törlése",
+        "${ count } névjegy csoport törlése"
+      ],
       "Delete ${ name }?": [
         "${ name } törlése?"
+      ],
+      "Delete ${ total } item?": [
+        "${ total } elem törlése?",
+        "${ total } elem törlése?"
       ],
       "Delete ${ value }": [
         "${ value } törlése"
@@ -11444,6 +11427,10 @@
       "Folder details": [
         "Mappa adatai"
       ],
+      "Found ${ searchView.numberOfResults } result": [
+        "${ searchView.numberOfResults } találat",
+        "${ searchView.numberOfResults } találat"
+      ],
       "Get more from your VPN": [
         "Hozzon ki többet a VPN-ből"
       ],
@@ -11473,6 +11460,10 @@
       ],
       "Human verification": [
         "Robot ellenőrzés"
+      ],
+      "Import as simple event?": [
+        "Importálás egyszerű eseményként?",
+        "Importálás egyszerű eseményekként?"
       ],
       "Import contacts": [
         "Névjegyek importálása"
@@ -11701,6 +11692,10 @@
       ],
       "Remove device?": [
         "Eszköz eltávolítása?"
+      ],
+      "Remove item?": [
+        "Elem eltávolítása?",
+        "Elemek eltávolítása?"
       ],
       "Rename a file": [
         "Fájl átnevezése"
@@ -12118,7 +12113,21 @@
         "A rendszergazdák nem férhetnek hozzá a privát felhasználók adataihoz, és nem állíthatják vissza jelszavukat."
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ MIN_PASSWORD_LENGTH } character": [
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia",
+        "A jelszónak legalább ${ MIN_PASSWORD_LENGTH } karakterből kell állnia"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
+      ]
+    },
     "Validation Error": {
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "A név maximum ${ MAX_NAME_LENGTH } karakter hosszú lehet",
+        "A név maximum ${ MAX_NAME_LENGTH } karakter hosszú lehet"
+      ],
       "Name must not be empty": [
         "A név nem lehet üres"
       ],
@@ -12132,6 +12141,40 @@
       ],
       "Replay video": [
         "Videó újrajátszása"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } device": [
+        "${ n } eszköz",
+        "${ n } eszköz"
+      ],
+      "${ n } server": [
+        "${ n } kiszolgáló",
+        "${ n }+ kiszolgáló"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN kapcsolódás",
+        "${ n } VPN kapcsolódás"
+      ],
+      "${ numberOfCountries } country": [
+        "${ numberOfCountries } ország",
+        "${ numberOfCountries } ország"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers }, ${ numberOfCountries } országban",
+        "${ numberOfServers }, ${ numberOfCountries }+ országban"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } ${ numberOfCountries } országban",
+        "${ numberOfServers } ${ numberOfCountries } országban"
+      ],
+      "Auto-selects from ${ numberOfCountries } country": [
+        "Automatikus kiválasztás ${ numberOfCountries } országból",
+        "Automatikus kiválasztás ${ numberOfCountries } országból"
+      ],
+      "Servers in ${ numberOfCountries }+ country": [
+        "Szerverek ${ numberOfCountries }+ országban",
+        "Szerverek ${ numberOfCountries }+ országban"
       ]
     },
     "vpn_2step: feature": {
@@ -12148,6 +12191,18 @@
       ]
     },
     "wallet_signup_2024: Info": {
+      "${ n } ${ BRAND_NAME } email address": [
+        "${ n } ${ BRAND_NAME } e-mail cím",
+        "${ n } ${ BRAND_NAME } e-mail cím"
+      ],
+      "${ n } account per wallet": [
+        "Tárolónként ${ n } fiók",
+        "Tárolónként ${ n } fiók"
+      ],
+      "${ n } wallet": [
+        "${ n } tároló",
+        "${ n } tároló"
+      ],
       "Bitcoin via Email": [
         "Bitcoin küldés e-mailben"
       ],
@@ -12169,6 +12224,10 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } annyi adatot áttölt, amennyi lehetséges, a legfrissebb üzenetekkel kezdve."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Biztos, hogy véglegesen töröl ${ count } névjegyet?",
+        "Biztos, hogy véglegesen töröl ${ count } névjegyet?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Biztos, hogy véglegesen törli ezeket a névjegy csoportokat?"

@@ -4,12 +4,6 @@
     "language": "fi_FI"
   },
   "contexts": {
-    "": {
-      "${ usersTranslation } is typing...": [
-        "${ usersTranslation } kirjoittaa...",
-        "${ usersTranslation } kirjoittavat..."
-      ]
-    },
     "Action": {
       "a) b) c) d)": [
         "a) b) c) d)"
@@ -494,6 +488,10 @@
     "Info": {
       "${ allTypersExceptLast } and ${ lastTyper }": [
         "${ allTypersExceptLast } ja ${ lastTyper }"
+      ],
+      "${ usersTranslation } is typing...": [
+        "${ usersTranslation } kirjoittaa...",
+        "${ usersTranslation } kirjoittavat..."
       ],
       "Alpha only experimental feature": [
         "Vain alfavaiheen kokeellinen ominaisuus"

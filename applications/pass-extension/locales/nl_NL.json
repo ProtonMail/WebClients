@@ -4,240 +4,6 @@
     "language": "nl_NL"
   },
   "contexts": {
-    "": {
-      "${ aliasCount } alias": [
-        "${ aliasCount } alias",
-        "${ aliasCount } aliassen"
-      ],
-      "${ blockedCount } block": [
-        "${ blockedCount } geblokkeerd",
-        "${ blockedCount } geblokkeerd"
-      ],
-      "${ blockedEmailsCount } blocked": [
-        "${ blockedEmailsCount } geblokkeerd",
-        "${ blockedEmailsCount } geblokkeerd"
-      ],
-      "${ config.options.length } character": [
-        "${ config.options.length } teken",
-        "${ config.options.length } tekens"
-      ],
-      "${ config.options.wordCount } word": [
-        "${ config.options.wordCount } woord",
-        "${ config.options.wordCount } woorden"
-      ],
-      "${ count } item": [
-        "${ count } item",
-        "${ count } items"
-      ],
-      "${ count } time": [
-        "${ count } keer",
-        "${ count } keren"
-      ],
-      "${ count } view": [
-        "${ count } weergave",
-        "${ count } weergaven"
-      ],
-      "${ count }/${ maxReads } view": [
-        "${ count }/${ maxReads } keer bekeken",
-        "${ count }/${ maxReads } keer bekeken"
-      ],
-      "${ days } day": [
-        "${ days } dag",
-        "${ days } dagen"
-      ],
-      "${ filesCount } file": [
-        "${ filesCount } bestand",
-        "${ filesCount } bestanden"
-      ],
-      "${ forwardCount } forward": [
-        "${ forwardCount } doorgestuurd",
-        "${ forwardCount } doorgestuurd"
-      ],
-      "${ forwardedEmailsCount } forwarded": [
-        "${ forwardedEmailsCount } doorgestuurd",
-        "${ forwardedEmailsCount } doorgestuurd"
-      ],
-      "${ hours } hour": [
-        "${ hours } uur",
-        "${ hours } uren"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } lid",
-        "${ memberCount } leden"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuut",
-        "${ minutes } minuten"
-      ],
-      "${ months } month": [
-        "${ months } maand",
-        "${ months } maanden"
-      ],
-      "${ n } item": [
-        "${ n } item",
-        "${ n } items"
-      ],
-      "${ payload.count } invite successfully sent": [
-        "${ payload.count } uitnodiging succesvol verzonden",
-        "${ payload.count } uitnodigingen succesvol verzonden"
-      ],
-      "${ repliedCount } reply": [
-        "${ repliedCount } antwoord",
-        "${ repliedCount } antwoorden"
-      ],
-      "${ repliedEmailsCount } sent": [
-        "${ repliedEmailsCount } verzonden",
-        "${ repliedEmailsCount } verzonden"
-      ],
-      "${ secureLinksCount } secure link": [
-        "${ secureLinksCount } beveiligde link",
-        "${ secureLinksCount } beveiligde links"
-      ],
-      "${ total } other login uses the same password": [
-        "${ total } andere login gebruikt hetzelfde wachtwoord",
-        "${ total } andere logins gebruiken hetzelfde wachtwoord"
-      ],
-      "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } dag over",
-        "${ trialDaysLeft } dagen over"
-      ],
-      "${ years } year": [
-        "${ years } jaar",
-        "${ years } jaren"
-      ],
-      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
-        "Weet u zeker dat u ${ trashedItemsCount } item naar de prullenbak wilt verplaatsen?",
-        "Weet u zeker dat u ${ trashedItemsCount } items naar de prullenbak wilt verplaatsen?"
-      ],
-      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
-        "Weet u zeker dat u ${ deletedItemsCount } item permanent wilt verwijderen?",
-        "Weet u zeker dat u ${ deletedItemsCount } items permanent wilt verwijderen?"
-      ],
-      "byte": [
-        "byte",
-        "bytes"
-      ],
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Cannot send invitation at the moment": [
-        "Kan op dit moment geen uitnodiging verzenden",
-        "Kan op dit moment geen uitnodigingen verzenden"
-      ],
-      "Delete ${ deletedItemsCount } item?": [
-        "${ deletedItemsCount } item verwijderen?",
-        "${ deletedItemsCount } items verwijderen?"
-      ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } corrupte csv-rij gedetecteerd",
-        "${ errors.length } corrupte csv-rijen gedetecteerd"
-      ],
-      "For security reasons, you need to confirm access to this shared vault": [
-        "Om veiligheidsredenen moet u de toegang tot deze gedeelde kluis bevestigen",
-        "Om veiligheidsredenen moet u de toegang tot deze gedeelde kluizen bevestigen"
-      ],
-      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
-        "Gegenereerde wachtwoorden worden opgeslagen voor een periode van ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.",
-        "Gegenereerde wachtwoorden worden opgeslagen voor een periode van ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } weken."
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Item sharing: ${ itemAccessCount } user": [
-        "Item delen: ${ itemAccessCount } gebruiker",
-        "Item delen: ${ itemAccessCount } gebruikers"
-      ],
-      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
-        "Kluizen kunnen niet meer dan ${ share.targetMaxMembers } gebruiker bevatten.",
-        "Kluizen kunnen niet meer dan ${ share.targetMaxMembers } gebruikers bevatten."
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "Maximale lengte is ${ maxLength } teken",
-        "Maximale lengte is ${ maxLength } tekens"
-      ],
-      "Megabyte": [
-        "Megabyt",
-        "Megabytes"
-      ],
-      "Move ${ count } item": [
-        "Verplaats ${ count } item",
-        "Verplaats ${ count } items"
-      ],
-      "Move ${ count } item to ${ vaultName }": [
-        "Verplaats ${ count } item naar ${ vaultName }",
-        "Verplaats ${ count } items naar ${ vaultName }"
-      ],
-      "Move ${ trashedItemsCount } item to trash?": [
-        "${ trashedItemsCount } item naar prullenbak verplaatsen?",
-        "${ trashedItemsCount } items naar prullenbak verplaatsen?"
-      ],
-      "Move item to": [
-        "Item verplaatsen naar",
-        "Items verplaatsen naar"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
-      ],
-      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
-        "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week worden automatisch uit de geschiedenis verwijderd.",
-        "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } weken worden automatisch uit de geschiedenis verwijderd."
-      ],
-      "Please note that once deleted, the alias can't be restored.": [
-        "Houd er rekening mee dat de alias eenmaal verwijderd, niet kan worden hersteld.",
-        "Houd er rekening mee dat aliassen eenmaal verwijderd, niet kunnen worden hersteld."
-      ],
-      "Sync alias": [
-        "Synchroniseer alias",
-        "Synchroniseer aliassen"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
-      ],
-      "The following ${ totalIgnored } item could not be imported:": [
-        "Het volgende ${ totalIgnored } item kon niet geïmporteerd worden:",
-        "De volgende ${ totalIgnored } items konden niet geïmporteerd worden:"
-      ],
-      "Understood, I will never need it": [
-        "Begrepen, ik zal het nooit nodig hebben",
-        "Begrepen, ik zal ze nooit nodig hebben"
-      ],
-      "Vault sharing: ${ vaultMembersCount } member": [
-        "Kluis delen: ${ vaultMembersCount } lid",
-        "Kluis delen: ${ vaultMembersCount } leden"
-      ],
-      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
-        "Kluizen kunnen niet meer dan ${ targetMaxMembers } gebruiker bevatten.",
-        "Kluizen kunnen niet meer dan ${ targetMaxMembers } gebruikers bevatten."
-      ],
-      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
-        "We hebben gedetecteerd dat u ${ aliasCount } alias hebt die aanwezig is in SimpleLogin, maar ontbreekt in ${ PASS_APP_NAME }. Wilt u deze importeren?",
-        "We hebben gedetecteerd dat u ${ aliasCount } aliassen hebt die aanwezig zijn in SimpleLogin, maar ontbreken in ${ PASS_APP_NAME }. Wilt u deze importeren?"
-      ],
-      "You can drag and drop the selected item to another vault": [
-        "U kunt het geselecteerde item slepen en neerzetten naar een andere kluis",
-        "U kunt de geselecteerde items naar een andere kluis slepen en neerzetten"
-      ],
-      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
-        "U heeft ${ aliasCount } alias die aanwezig is in SimpleLogin, maar ontbreekt in ${ PASS_APP_NAME }. Wilt u deze synchroniseren?",
-        "U heeft ${ aliasCount } aliassen die aanwezig zijn in SimpleLogin, maar ontbreken in ${ PASS_APP_NAME }. Wilt u ze synchroniseren?"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "U hebt nog ${ daysRemaining } dag over om deze en andere premium kenmerken te proberen.",
-        "U hebt nog ${ daysRemaining } dagen over om deze en andere premium kenmerken te proberen."
-      ],
-      "You’re about to permanently delete ${ aliasCount } alias.": [
-        "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
-        "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
-      ]
-    },
     "Action": {
       "Accept": [
         "Accepteren"
@@ -343,9 +109,6 @@
       ],
       "Clear search": [
         "Zoekveld leegmaken"
-      ],
-      "Clone item": [
-        "Item klonen"
       ],
       "Close": [
         "Sluiten"
@@ -662,9 +425,6 @@
       "Open web app": [
         "Web-app openen"
       ],
-      "Organize vaults": [
-        "Kluizen organiseren"
-      ],
       "Pass for Android": [
         "Proton Pass voor Android"
       ],
@@ -839,6 +599,10 @@
       "Submitting report...": [
         "Rapport verzenden..."
       ],
+      "Sync alias": [
+        "Synchroniseer alias",
+        "Synchroniseer aliassen"
+      ],
       "Sync aliases": [
         "Synchroniseer aliassen"
       ],
@@ -862,6 +626,10 @@
       ],
       "Unblock contact": [
         "Contact deblokkeren"
+      ],
+      "Understood, I will never need it": [
+        "Begrepen, ik zal het nooit nodig hebben",
+        "Begrepen, ik zal ze nooit nodig hebben"
       ],
       "Unlock": [
         "Ontgrendel"
@@ -942,6 +710,10 @@
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } is beschikbaar met een betaald abonnement. Upgrade om direct toegang te krijgen."
+      ],
+      "${ total } other login uses the same password": [
+        "${ total } andere login gebruikt hetzelfde wachtwoord",
+        "${ total } andere logins gebruiken hetzelfde wachtwoord"
       ],
       "A checked box means the feature is disabled.": [
         "Een selectievakje betekent dat de functie is uitgeschakeld."
@@ -1037,6 +809,10 @@
       "Cannot create alias (${ error }).": [
         "Kan alias niet aanmaken (${ error })."
       ],
+      "Cannot send invitation at the moment": [
+        "Kan op dit moment geen uitnodiging verzenden",
+        "Kan op dit moment geen uitnodigingen verzenden"
+      ],
       "Cannot send invitations at the moment": [
         "Kan op dit moment geen uitnodigingen verzenden"
       ],
@@ -1084,6 +860,10 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Verwijderen kluis \"${ payload.content.name }\" mislukt"
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } corrupte csv-rij gedetecteerd",
+        "${ errors.length } corrupte csv-rijen gedetecteerd"
       ],
       "Domain could not be verified. Please make sure you added the correct DNS records": [
         "Domein kon niet worden geverifieerd. Controleer of u de juiste DNS-records hebt toegevoegd"
@@ -1431,6 +1211,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -1444,6 +1228,28 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyt",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Info": {
       "\"${ payload.itemName }\" item was dismissed": [
         "\"${ payload.itemName }\" item werd afgewezen"
@@ -1451,8 +1257,36 @@
       "\"${ payload.itemName }\" update was dismissed": [
         "\"${ payload.itemName }\" update werd afgewezen"
       ],
+      "${ blockedEmailsCount } blocked": [
+        "${ blockedEmailsCount } geblokkeerd",
+        "${ blockedEmailsCount } geblokkeerd"
+      ],
+      "${ count } time": [
+        "${ count } keer",
+        "${ count } keren"
+      ],
+      "${ count } view": [
+        "${ count } weergave",
+        "${ count } weergaven"
+      ],
+      "${ count }/${ maxReads } view": [
+        "${ count }/${ maxReads } keer bekeken",
+        "${ count }/${ maxReads } keer bekeken"
+      ],
+      "${ forwardedEmailsCount } forwarded": [
+        "${ forwardedEmailsCount } doorgestuurd",
+        "${ forwardedEmailsCount } doorgestuurd"
+      ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } wil een kluis delen met u."
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } lid",
+        "${ memberCount } leden"
+      ],
+      "${ n } item": [
+        "${ n } item",
+        "${ n } items"
       ],
       "${ PASS_APP_NAME } will always be accessible": [
         "${ PASS_APP_NAME } zal altijd toegankelijk zijn"
@@ -1487,11 +1321,23 @@
       "${ PASS_APP_NAME } will suggest saving passkeys.": [
         "${ PASS_APP_NAME } zal voorstellen om wachtwoorden te bewaren."
       ],
+      "${ payload.count } invite successfully sent": [
+        "${ payload.count } uitnodiging succesvol verzonden",
+        "${ payload.count } uitnodigingen succesvol verzonden"
+      ],
       "${ PROTON_SENTINEL_NAME } successfully disabled": [
         "${ PROTON_SENTINEL_NAME } succesvol uitgeschakeld"
       ],
       "${ PROTON_SENTINEL_NAME } successfully enabled": [
         "${ PROTON_SENTINEL_NAME } succesvol ingeschakeld"
+      ],
+      "${ repliedEmailsCount } sent": [
+        "${ repliedEmailsCount } verzonden",
+        "${ repliedEmailsCount } verzonden"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } dag over",
+        "${ trialDaysLeft } dagen over"
       ],
       "(Empty)": [
         "(Leeg)"
@@ -1805,9 +1651,6 @@
       "Extra password successfully removed": [
         "Extra wachtwoord succesvol verwijderd"
       ],
-      "Failed updating your vault organization": [
-        "Het updaten van uw kluisorganisatie is mislukt."
-      ],
       "Fill in the CSV with your data": [
         "Vul de CSV in met uw gegevens"
       ],
@@ -1823,11 +1666,19 @@
       "For security reasons, this action requires identity verification.": [
         "Om veiligheidsredenen vereist deze handeling identiteitsverificatie."
       ],
+      "For security reasons, you need to confirm access to this shared vault": [
+        "Om veiligheidsredenen moet u de toegang tot deze gedeelde kluis bevestigen",
+        "Om veiligheidsredenen moet u de toegang tot deze gedeelde kluizen bevestigen"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Voor veiligheidsredenen dient uw toegang bevestigd te worden"
       ],
       "Forwarding address copied to clipboard. Send an email to this address and ${ Email } will receive it.": [
         "Doorstuuradres naar klembord gekopieerd. Verstuur een e-mail naar dit adres en ${ Email } zal het ontvangen."
+      ],
+      "Generated passwords will be stored for a period of ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.": [
+        "Gegenereerde wachtwoorden worden opgeslagen voor een periode van ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week.",
+        "Gegenereerde wachtwoorden worden opgeslagen voor een periode van ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } weken."
       ],
       "Generating alias...": [
         "Alias genereren..."
@@ -1895,6 +1746,10 @@
       "Item restored": [
         "Item hersteld"
       ],
+      "Item sharing: ${ itemAccessCount } user": [
+        "Item delen: ${ itemAccessCount } gebruiker",
+        "Item delen: ${ itemAccessCount } gebruikers"
+      ],
       "Item successfully excluded from monitoring": [
         "Item succesvol uitgesloten van monitoring"
       ],
@@ -1943,8 +1798,15 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } is meer dan een wachtwoordbeheerder en beschermt uw wachtwoord en uw persoonlijke e-mailadres via e-mailaliassen. Aangedreven door dezelfde technologie achter ${ MAIL_APP_NAME }, zijn je gegevens end-to-end versleuteld en alleen toegankelijk voor jou."
       ],
+      "Move ${ count } item": [
+        "Verplaats ${ count } item",
+        "Verplaats ${ count } items"
+      ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2008,6 +1870,10 @@
       ],
       "Password lock successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Wachtwoordvergrendeling succesvol geregistreerd. Gebruik het om ${ PASS_APP_NAME } te ontgrendelen"
+      ],
+      "Passwords older than ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week are automatically deleted from history.": [
+        "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } week worden automatisch uit de geschiedenis verwijderd.",
+        "Wachtwoorden ouder dan ${ MAX_PASSWORD_HISTORY_RETENTION_WEEKS } weken worden automatisch uit de geschiedenis verwijderd."
       ],
       "Pending access to the shared data": [
         "Toegang tot gedeelde data in afwachting"
@@ -2285,6 +2151,10 @@
       "The extra password will be required to use ${ PASS_APP_NAME }. It acts as an additional password on top of your ${ BRAND_NAME } password.": [
         "Het extra wachtwoord is nodig om ${ PASS_APP_NAME }te gebruiken. Het werkt als een extra wachtwoord bovenop uw ${ BRAND_NAME } wachtwoord."
       ],
+      "The following ${ totalIgnored } item could not be imported:": [
+        "Het volgende ${ totalIgnored } item kon niet geïmporteerd worden:",
+        "De volgende ${ totalIgnored } items konden niet geïmporteerd worden:"
+      ],
       "The secure link has been removed": [
         "De beveiligde link is verwijderd"
       ],
@@ -2390,9 +2260,6 @@
       "Update login": [
         "Update login"
       ],
-      "Updating vault organization...": [
-        "Kluisorganisatie updaten..."
-      ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Upgrade ${ PASS_APP_NAME }"
       ],
@@ -2420,8 +2287,9 @@
       "Vault \"${ share.content.name }\" was removed": [
         "Kluis \"${ share.content.name }\" werd verwijderd"
       ],
-      "Vault organization successfully updated": [
-        "Kluisorganisatie succesvol bijgewerkt"
+      "Vault sharing: ${ vaultMembersCount } member": [
+        "Kluis delen: ${ vaultMembersCount } lid",
+        "Kluis delen: ${ vaultMembersCount } leden"
       ],
       "Verification code": [
         "Verificatiecode"
@@ -2431,6 +2299,10 @@
       ],
       "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
         "We hebben moeite met het synchroniseren van gegevens naar uw lokale opslag. Zorg ervoor dat u voldoende schijfruimte heeft voor ${ PASS_SHORT_APP_NAME } om soepel te werken."
+      ],
+      "We detected that you have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to import it?": [
+        "We hebben gedetecteerd dat u ${ aliasCount } alias hebt die aanwezig is in SimpleLogin, maar ontbreekt in ${ PASS_APP_NAME }. Wilt u deze importeren?",
+        "We hebben gedetecteerd dat u ${ aliasCount } aliassen hebt die aanwezig zijn in SimpleLogin, maar ontbreken in ${ PASS_APP_NAME }. Wilt u deze importeren?"
       ],
       "Week": [
         "Week"
@@ -2455,6 +2327,14 @@
       ],
       "You cannot change the mailboxes for this alias.": [
         "U kan het postvak IN voor deze alias niet veranderen."
+      ],
+      "You have ${ aliasCount } alias that is present in SimpleLogin but missing in ${ PASS_APP_NAME }. Would you like to sync it?": [
+        "U heeft ${ aliasCount } alias die aanwezig is in SimpleLogin, maar ontbreekt in ${ PASS_APP_NAME }. Wilt u deze synchroniseren?",
+        "U heeft ${ aliasCount } aliassen die aanwezig zijn in SimpleLogin, maar ontbreken in ${ PASS_APP_NAME }. Wilt u ze synchroniseren?"
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "U hebt nog ${ daysRemaining } dag over om deze en andere premium kenmerken te proberen.",
+        "U hebt nog ${ daysRemaining } dagen over om deze en andere premium kenmerken te proberen."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "U heeft het aantal kluizen in uw abonnement overschreden. Items kunnen alleen naar uw twee eerste kluis worden verplaatst. Upgrade uw abonnement om items tussen alle kluizen te verplaatsen."
@@ -2515,14 +2395,66 @@
       ]
     },
     "Label": {
+      "${ aliasCount } alias": [
+        "${ aliasCount } alias",
+        "${ aliasCount } aliassen"
+      ],
+      "${ blockedCount } block": [
+        "${ blockedCount } geblokkeerd",
+        "${ blockedCount } geblokkeerd"
+      ],
+      "${ config.options.length } character": [
+        "${ config.options.length } teken",
+        "${ config.options.length } tekens"
+      ],
+      "${ config.options.wordCount } word": [
+        "${ config.options.wordCount } woord",
+        "${ config.options.wordCount } woorden"
+      ],
+      "${ count } item": [
+        "${ count } item",
+        "${ count } items"
+      ],
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ forwardCount } forward": [
+        "${ forwardCount } doorgestuurd",
+        "${ forwardCount } doorgestuurd"
+      ],
       "${ forwardedEmails }, ${ repliedEmails }, ${ blockedEmails }, in the last 14 days.": [
         "${ forwardedEmails }, ${ repliedEmails } en ${ blockedEmails } in de laatste 14 dagen."
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ months } month": [
+        "${ months } maand",
+        "${ months } maanden"
       ],
       "${ PASS_SHORT_APP_NAME } Monitor": [
         "${ PASS_SHORT_APP_NAME } Monitor"
       ],
       "${ PASS_SHORT_APP_NAME } version": [
         "${ PASS_SHORT_APP_NAME } versie"
+      ],
+      "${ repliedCount } reply": [
+        "${ repliedCount } antwoord",
+        "${ repliedCount } antwoorden"
+      ],
+      "${ secureLinksCount } secure link": [
+        "${ secureLinksCount } beveiligde link",
+        "${ secureLinksCount } beveiligde links"
+      ],
+      "${ years } year": [
+        "${ years } jaar",
+        "${ years } jaren"
       ],
       "1 hour": [
         "1 uur"
@@ -3097,6 +3029,9 @@
       "Network": [
         "Netwerk"
       ],
+      "New": [
+        "Nieuw"
+      ],
       "New email": [
         "Nieuwe e-mail"
       ],
@@ -3560,6 +3495,14 @@
       ]
     },
     "Message": {
+      "${ count } item": [
+        "${ count } item",
+        "${ count } items"
+      ],
+      "You can drag and drop the selected item to another vault": [
+        "U kunt het geselecteerde item slepen en neerzetten naar een andere kluis",
+        "U kunt de geselecteerde items naar een andere kluis slepen en neerzetten"
+      ],
       "You selected ${ semiboldText } in this vault.": [
         "U heeft ${ semiboldText } geselecteerd in deze kluis."
       ]
@@ -3607,6 +3550,10 @@
       ],
       "\"${ filename }\" is too large to upload. The maximum allowed size is (${ maxFileSizeInMB })": [
         "\"${ filename }\" is te groot om te uploaden. De maximaal toegestane grootte is (${ maxFileSizeInMB })"
+      ],
+      "${ filesCount } file": [
+        "${ filesCount } bestand",
+        "${ filesCount } bestanden"
       ],
       "Attachments": [
         "Bijlagen"
@@ -3919,6 +3866,10 @@
       "Domain successfully verified. Your domain can start receiving emails and creating aliases": [
         "Domein met succes geverifieerd. Uw domein kan e-mails ontvangen en aliassen aanmaken"
       ],
+      "Items can’t contain more than ${ share.targetMaxMembers } user.": [
+        "Kluizen kunnen niet meer dan ${ share.targetMaxMembers } gebruiker bevatten.",
+        "Kluizen kunnen niet meer dan ${ share.targetMaxMembers } gebruikers bevatten."
+      ],
       "Mailbox change successfully cancelled": [
         "Mailbox wijziging succesvol geannuleerd"
       ],
@@ -3936,6 +3887,10 @@
       ],
       "Random prefix generation successfully enabled": [
         "Willekeurige prefix genereren succesvol ingeschakeld"
+      ],
+      "Vaults can’t contain more than ${ targetMaxMembers } user.": [
+        "Kluizen kunnen niet meer dan ${ targetMaxMembers } gebruiker bevatten.",
+        "Kluizen kunnen niet meer dan ${ targetMaxMembers } gebruikers bevatten."
       ],
       "Verification email sent. Please check your inbox to verify your mailbox": [
         "E-mail met verificatie is verzonden. Controleer uw inbox om uw mailbox te verifiëren"
@@ -4037,6 +3992,10 @@
       "Default Display Name": [
         "Standaard weergavenaam"
       ],
+      "Delete ${ deletedItemsCount } item?": [
+        "${ deletedItemsCount } item verwijderen?",
+        "${ deletedItemsCount } items verwijderen?"
+      ],
       "Delete domain": [
         "Domein verwijderen"
       ],
@@ -4109,9 +4068,6 @@
       "Grant permissions": [
         "Toestemmingen verlenen"
       ],
-      "Hidden vaults won’t be visible during search and autofill.": [
-        "Verborgen kluizen zullen niet zichtbaar zijn tijdens zoeken en automatisch aanvullen."
-      ],
       "Hide my email": [
         "Verberg mijn e-mail"
       ],
@@ -4166,6 +4122,14 @@
       "Modified": [
         "Gewijzigd"
       ],
+      "Move ${ count } item to ${ vaultName }": [
+        "Verplaats ${ count } item naar ${ vaultName }",
+        "Verplaats ${ count } items naar ${ vaultName }"
+      ],
+      "Move ${ trashedItemsCount } item to trash?": [
+        "${ trashedItemsCount } item naar prullenbak verplaatsen?",
+        "${ trashedItemsCount } items naar prullenbak verplaatsen?"
+      ],
       "Move all items to \"${ vaultName }\"?": [
         "Alle items verplaatsen naar \"${ vaultName }\"?"
       ],
@@ -4183,9 +4147,6 @@
       ],
       "No shared secure links": [
         "Geen gedeelde beveiligde links"
-      ],
-      "Organize vaults": [
-        "Kluizen organiseren"
       ],
       "Our welcome gift to you": [
         "Ons welkomstgeschenk voor u"
@@ -4210,6 +4171,10 @@
       ],
       "Pinned (${ items.length })": [
         "Vastgemaakt (${ items.length })"
+      ],
+      "Please note that once deleted, the alias can't be restored.": [
+        "Houd er rekening mee dat de alias eenmaal verwijderd, niet kan worden hersteld.",
+        "Houd er rekening mee dat aliassen eenmaal verwijderd, niet kunnen worden hersteld."
       ],
       "Random Prefix Generation": [
         "Willekeurige Voorvoegsel Generatie"
@@ -4330,11 +4295,10 @@
       ],
       "Your welcome gift": [
         "Uw welkomstgeschenk"
-      ]
-    },
-    "Title_cloned_item": {
-      "copy": [
-        "kopieer"
+      ],
+      "You’re about to permanently delete ${ aliasCount } alias.": [
+        "U staat op het punt ${ aliasCount } alias permanent te verwijderen.",
+        "U staat op het punt ${ aliasCount } aliassen permanent te verwijderen."
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4368,6 +4332,12 @@
         "URL is ongeldig"
       ]
     },
+    "Vault Select": {
+      "Move item to": [
+        "Item verplaatsen naar",
+        "Items verplaatsen naar"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } password is required": [
         "${ BRAND_NAME }-wachtwoord is vereist"
@@ -4395,6 +4365,14 @@
       ],
       "An error occurred while resuming your session": [
         "Er is een fout opgetreden tijdens het hervatten van uw sessie"
+      ],
+      "Are you sure you want to move ${ trashedItemsCount } item to trash?": [
+        "Weet u zeker dat u ${ trashedItemsCount } item naar de prullenbak wilt verplaatsen?",
+        "Weet u zeker dat u ${ trashedItemsCount } items naar de prullenbak wilt verplaatsen?"
+      ],
+      "Are you sure you want to permanently delete ${ deletedItemsCount } item?": [
+        "Weet u zeker dat u ${ deletedItemsCount } item permanent wilt verwijderen?",
+        "Weet u zeker dat u ${ deletedItemsCount } items permanent wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete this item?": [
         "Weet u zeker dat u dit item definitief wilt verwijderen?"
@@ -4467,6 +4445,10 @@
       ],
       "Inviting email addresses outside organization is not allowed.": [
         "Het uitnodigen van e-mailadressen buiten de organisatie is niet toegestaan."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maximale lengte is ${ maxLength } teken",
+        "Maximale lengte is ${ maxLength } tekens"
       ],
       "Missing alias prefix": [
         "Ontbrekend aliasvoorvoegsel"
