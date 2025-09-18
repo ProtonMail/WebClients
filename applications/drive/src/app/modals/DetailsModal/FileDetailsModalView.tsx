@@ -95,7 +95,7 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                     {details.file.mediaType && (
                         <TextRow label={c('Title').t`Media type`} text={details.file.mediaType} />
                     )}
-                    {details.file.storageSize && (
+                    {details.file.storageSize !== undefined && (
                         <SizeRow
                             label={
                                 <>
@@ -109,7 +109,7 @@ function FileDetailsComponent({ details }: { details: FileDetails }) {
                             dataTestId="file-size"
                         />
                     )}
-                    {details.file.claimedSize && (
+                    {details.file.claimedSize !== undefined && (
                         <SizeRow label={c('Title').t`Original size`} size={details.file.claimedSize} />
                     )}
                 </>
