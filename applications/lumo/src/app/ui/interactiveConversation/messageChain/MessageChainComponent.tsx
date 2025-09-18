@@ -1,9 +1,11 @@
-import React, {useCallback, useEffect, useReducer, useRef, useState} from 'react';
+import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react';
+
+import { IcChevronDown } from '@proton/icons';
+
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../hooks/useLumoActions';
 import type { SiblingInfo } from '../../../hooks/usePreferredSiblings';
 import { type Message, Role } from '../../../types';
 import { MessageComponent } from './message/MessageComponent';
-import { IcChevronDown } from '@proton/icons';
 
 export type MessageChainComponentProps = {
     messageChainRef: React.MutableRefObject<HTMLDivElement | null>;
@@ -16,7 +18,6 @@ export type MessageChainComponentProps = {
     handleOpenFiles: (message?: Message) => void;
     isGenerating?: boolean;
     isGeneratingWithToolCall?: boolean;
-    isWebSearchButtonToggled: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
 };
 
@@ -24,9 +25,7 @@ interface ScrollState {
     userHasScrolledUp: boolean;
 }
 
-type ScrollAction =
-    | { type: 'USER_SCROLLED_UP' }
-    | { type: 'REACHED_BOTTOM' };
+type ScrollAction = { type: 'USER_SCROLLED_UP' } | { type: 'REACHED_BOTTOM' };
 
 const scrollReducer = (state: ScrollState, action: ScrollAction): ScrollState => {
     switch (action.type) {
@@ -67,8 +66,6 @@ const useAutoScroll = (
         });
     }, [messageChainRef]);
 
-
-
     // Handle scroll - track position for floating scroll indicator (immediate response)
     const handleScroll = useCallback(() => {
         if (!messageChainRef.current) return;
@@ -105,7 +102,7 @@ const useAutoScroll = (
         if (questionElement) {
             container.scrollTo({
                 top: questionElement.offsetTop,
-                behavior: 'smooth'
+                behavior: 'smooth',
             });
         }
     }, [messageChainRef, messageChain]);
@@ -155,9 +152,10 @@ const ScrollToBottomButton = ({ onClick, show }: { onClick: () => void; show: bo
                 return;
             }
 
-            const sidebar = document.querySelector('[data-testid="sidebar"]') ||
-                           document.querySelector('.sidebar') ||
-                           document.querySelector('aside');
+            const sidebar =
+                document.querySelector('[data-testid="sidebar"]') ||
+                document.querySelector('.sidebar') ||
+                document.querySelector('aside');
 
             if (sidebar) {
                 const sidebarElement = sidebar as HTMLElement;
@@ -176,7 +174,7 @@ const ScrollToBottomButton = ({ onClick, show }: { onClick: () => void; show: bo
             childList: true,
             subtree: true,
             attributes: true,
-            attributeFilter: ['class', 'style']
+            attributeFilter: ['class', 'style'],
         });
 
         return () => {
@@ -191,12 +189,10 @@ const ScrollToBottomButton = ({ onClick, show }: { onClick: () => void; show: bo
             style={{
                 left: `calc(50% + ${sidebarWidth / 2}px)`,
                 bottom: '140px',
-                transform: show
-                    ? 'translateX(-50%) translateY(0)'
-                    : 'translateX(-50%) translateY(8px)',
+                transform: show ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(8px)',
                 transition: 'all 200ms ease-in-out',
                 opacity: show ? 1 : 0,
-                pointerEvents: show ? 'auto' : 'none'
+                pointerEvents: show ? 'auto' : 'none',
             }}
         >
             <button
@@ -210,7 +206,7 @@ const ScrollToBottomButton = ({ onClick, show }: { onClick: () => void; show: bo
                     border: '1px solid var(--border-weak)',
                     color: 'var(--text-norm)',
                     cursor: 'pointer',
-                    transition: 'all 200ms ease-in-out'
+                    transition: 'all 200ms ease-in-out',
                 }}
                 onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'scale(1.05)';
@@ -220,7 +216,7 @@ const ScrollToBottomButton = ({ onClick, show }: { onClick: () => void; show: bo
                 }}
                 aria-label="Scroll to bottom"
             >
-                <IcChevronDown/>
+                <IcChevronDown />
             </button>
         </div>
     );
@@ -237,7 +233,6 @@ export const MessageChainComponent = ({
     sourcesContainerRef,
     handleOpenSources,
     handleOpenFiles,
-    isWebSearchButtonToggled,
     onRetryPanelToggle,
 }: MessageChainComponentProps) => {
     const newMessageRef = useRef<HTMLDivElement | null>(null);
@@ -272,7 +267,7 @@ export const MessageChainComponent = ({
             observer.observe(container, {
                 childList: true,
                 subtree: true,
-                characterData: true
+                characterData: true,
             });
 
             return () => observer.disconnect();
@@ -310,21 +305,14 @@ export const MessageChainComponent = ({
                                 isLastMessage={isLastMessage}
                                 isGenerating={isGenerating || false}
                                 isGeneratingWithToolCall={isGeneratingWithToolCall || false}
-                                isWebSearchButtonToggled={isWebSearchButtonToggled}
                                 onRetryPanelToggle={onRetryPanelToggle}
                             />
                         </div>
                     );
                 })}
-
-
             </div>
 
-            <ScrollToBottomButton
-                onClick={scrollToBottom}
-                show={showScrollIndicator}
-            />
+            <ScrollToBottomButton onClick={scrollToBottom} show={showScrollIndicator} />
         </>
     );
 };
-

@@ -21,13 +21,9 @@ import { ComposerComponent } from './composer/ComposerComponent';
 const MainContainer = ({
     handleSendMessage,
     isProcessingAttachment,
-    isWebSearchButtonToggled,
-    onToggleWebSearch,
 }: {
     handleSendMessage: HandleSendMessage;
     isProcessingAttachment: boolean;
-    isWebSearchButtonToggled: boolean;
-    onToggleWebSearch: () => void;
 }) => {
     const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
@@ -112,8 +108,6 @@ const MainContainer = ({
                         handleSendMessage={handleSendMessage}
                         isProcessingAttachment={isProcessingAttachment}
                         className="fixed bottom-0 md:static w-full z-20"
-                        isWebSearchButtonToggled={isWebSearchButtonToggled}
-                        onToggleWebSearch={onToggleWebSearch}
                         setIsEditorFocused={setIsEditorFocused}
                         isEditorFocused={isEditorFocused}
                         setIsEditorEmpty={setIsEditorEmpty}
