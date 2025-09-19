@@ -61,7 +61,8 @@
             "proton-mail/*": ["./applications/mail/src/app/*"],
             "proton-pass-extension/*": ["./applications/pass-extension/src/*"],
             "proton-pass-web/*": ["./applications/pass/src/*"],
-            "proton-pass-desktop/*": ["./applications/pass-desktop/src/*"]
+            "proton-pass-desktop/*": ["./applications/pass-desktop/src/*"],
+            "proton-authenticator/*": ["./applications/authenticator/src/*"]
         }
     },
     "include": ["${configDir}/"],

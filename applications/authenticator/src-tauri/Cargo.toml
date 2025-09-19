@@ -1,0 +1,64 @@
+[package]
+name = "proton-authenticator"
+version = "1.1.4"
+description = "Proton Authenticator"
+authors = ["Proton AG"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+# The `_lib` suffix may seem redundant but it is necessary
+# to make the lib name unique and wouldn't conflict with the bin name.
+# This seems to be only an issue on Windows, see https://github.com/rust-lang/cargo/issues/8519
+name = "proton_authenticator_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-store = "2"
+keyring = { version = "3.6.3", features = ["apple-native", "windows-native", "sync-secret-service"] }
+tauri-plugin-process = "2"
+tauri-plugin-log = "2"
+log = "0.4.27"
+tauri-plugin-http = { version = "2", features = ["unsafe-headers", "dangerous-settings"] }
+rand = { version = "0.9.2" }
+base64 = { version = "0.22.1" }
+specta = { version = "2.0.0-rc.21" }
+specta-typescript = "0.0.9"
+tauri-specta = { version = "2.0.0-rc.21", features = ["derive", "typescript"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2-local-authentication = "0.3.1"
+objc2-foundation = "0.3.1"
+block2 = "0.6.1"
+objc2 = "0.6.1"
+
+[target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
+tauri-plugin-single-instance = "2"
+tauri-plugin-updater = "2"
+tauri-plugin-window-state = "2"
+
+[target.'cfg(windows)'.dependencies]
+widestring = "1.2.0"
+windows-future = "0.2.1"
+windows = { version = "0.61.3", features = [
+  "Foundation",
+  "Security_Credentials_UI",
+  "Security_Cryptography",
+  "Storage_Streams",
+  "Win32_Foundation",
+  "Win32_Security_Credentials",
+  "Win32_System_WinRT",
+] }
+
+[features]
+devtools = ["tauri/devtools"]
