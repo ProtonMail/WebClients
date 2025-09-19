@@ -30,7 +30,7 @@ export interface ContentScriptContext {
     scriptId: string;
     /** Custom elements configuration */
     elements: PassElementsConfig;
-    transport: FrameMessageBroker;
+    channel: FrameMessageBroker;
 
     service: {
         autofill: AutofillService;

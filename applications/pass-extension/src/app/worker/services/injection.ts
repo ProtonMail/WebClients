@@ -26,7 +26,7 @@ const withTabEffect =
         }
     };
 
-export const createInjectionService = () => {
+export const createContentScriptService = () => {
     const inject = async (options: {
         tabId: TabId;
         allFrames?: boolean;
@@ -53,7 +53,7 @@ export const createInjectionService = () => {
         ]).catch((e) => logger.info(`[InjectionService::inject] Injection error on tab ${tabId}`, e));
     };
 
-    const updateInjections = async () => {
+    const updateScripts = async () => {
         if (BUILD_TARGET === 'chrome') {
             const tabs = await browser.tabs.query({ url: ['https://*/*', 'http://*/*'] }).catch(() => []);
 
@@ -132,7 +132,7 @@ export const createInjectionService = () => {
         return true;
     });
 
-    return { updateInjections };
+    return { updateScripts };
 };
 
-export type InjectionService = ReturnType<typeof createInjectionService>;
+export type ContentScriptService = ReturnType<typeof createContentScriptService>;

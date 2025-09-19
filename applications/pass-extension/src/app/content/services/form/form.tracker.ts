@@ -245,7 +245,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         listeners.addListener(window, 'beforeunload', () => form.busy && onFormSubmit());
         listeners.addListener(form.element, 'submit', onFormSubmit);
 
-        ctx?.transport.register(WorkerMessageType.FORM_STATUS, onFormStatusChange);
+        ctx?.channel.register(WorkerMessageType.FORM_STATUS, onFormStatusChange);
 
         Array.from(form.element.querySelectorAll<HTMLButtonElement>(kButtonSubmitSelector))
             .filter(isBtnCandidate)
@@ -270,7 +270,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         clearIdleTimer();
         clearSubmitTimer();
 
-        ctx?.transport.unregister(WorkerMessageType.FORM_STATUS, onFormStatusChange);
+        ctx?.channel.unregister(WorkerMessageType.FORM_STATUS, onFormStatusChange);
 
         requestAnimationFrame(() => {
             /** If the form was not interacted with, then detaching the tracker

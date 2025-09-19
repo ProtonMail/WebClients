@@ -22,7 +22,7 @@ const withSender =
         return fn(message, sender.tab.id, sender.frameId);
     };
 
-export const createFrameService = () => {
+export const createInlineService = () => {
     /** Frame hierarchy tracker: Creates parent-child relationship map for all frames in a tab */
     const getTabFrames = async (tabId: TabId): Promise<Frames> =>
         browser.webNavigation.getAllFrames({ tabId }).then((frames) => {
@@ -188,4 +188,4 @@ export const createFrameService = () => {
     return {};
 };
 
-export type FrameService = ReturnType<typeof createFrameService>;
+export type InlineService = ReturnType<typeof createInlineService>;

@@ -72,12 +72,12 @@ describe('Client controller', () => {
 
         test('should register `FRAME_QUERY` handler', async () => {
             ctrl = createMockClientController(true);
-            const registerSpy = jest.spyOn(ctrl.transport, 'register');
+            const channelRegister = jest.spyOn(ctrl.channel, 'register');
 
             setDocumentVisibility('visible');
             await ctrl.init();
 
-            expect(registerSpy).toHaveBeenCalledWith(WorkerMessageType.FRAME_QUERY, expect.any(Function));
+            expect(channelRegister).toHaveBeenCalledWith(WorkerMessageType.FRAME_QUERY, expect.any(Function));
             ctrl.destroy();
         });
     });
@@ -249,7 +249,7 @@ describe('Client controller', () => {
     describe('cleanup', () => {
         test('should clean up all resources on destroy', async () => {
             ctrl = createMockClientController(true);
-            const transportDestroySpy = jest.spyOn(ctrl.transport, 'destroy');
+            const channelDestroy = jest.spyOn(ctrl.channel, 'destroy');
 
             setDocumentVisibility('visible');
             await ctrl.init();
@@ -257,7 +257,7 @@ describe('Client controller', () => {
 
             expect(mockClient.destroy).toHaveBeenCalledWith({ reason: 'test-reason' });
             expect(mockObserver.destroy).toHaveBeenCalled();
-            expect(transportDestroySpy).toHaveBeenCalled();
+            expect(channelDestroy).toHaveBeenCalled();
             expect(ctrl.instance).toBeNull();
         });
     });

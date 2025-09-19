@@ -214,10 +214,10 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
     );
 
     const destroy = () => {
-        controller.transport.unregister(WorkerMessageType.AUTOFILL_REQUEST, onAutofillRequest);
+        controller.channel.unregister(WorkerMessageType.AUTOFILL_REQUEST, onAutofillRequest);
     };
 
-    controller.transport.register(WorkerMessageType.AUTOFILL_REQUEST, onAutofillRequest);
+    controller.channel.register(WorkerMessageType.AUTOFILL_REQUEST, onAutofillRequest);
 
     return {
         autofillIdentity,
