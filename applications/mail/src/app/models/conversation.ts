@@ -24,6 +24,7 @@ export interface Conversation {
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
     AttachmentsMetadata?: AttachmentsMetadata[];
     DisplaySnoozedReminder?: boolean;
+    ExpiringByRetention?: boolean;
 }
 
 export interface ConversationLabel {
