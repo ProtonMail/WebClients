@@ -182,12 +182,7 @@ const OrganizationSettingsRouter = ({
             {getIsSectionAvailable(activityMonitor) && (
                 <Route path={getSectionPath(path, activityMonitor)}>
                     <PrivateMainSettingsArea config={activityMonitor}>
-                        <ActivityMonitorDashboard
-                            user={user}
-                            organization={organization}
-                            app={app}
-                            subscription={subscription}
-                        />
+                        <ActivityMonitorDashboard user={user} organization={organization} subscription={subscription} />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

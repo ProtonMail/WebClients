@@ -16,6 +16,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
 
 import { getFlagSvg } from '../../vpn/flag';
+import { NoEventsInfo } from '../NoEventsInfo';
 import { getVPNEventColor, getVPNEventIcon } from './helpers';
 import type { VPNEvent } from './interface';
 
@@ -59,6 +60,10 @@ const VPNEventsTable = ({
             return { ...prevSortConfig, direction: newDirection };
         });
     };
+
+    if (events.length === 0) {
+        return <NoEventsInfo />;
+    }
 
     return (
         <Table responsive="cards">
