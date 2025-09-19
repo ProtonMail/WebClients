@@ -72,8 +72,8 @@
       "Add external address": [
         "Lägg till extern adress"
       ],
-      "Add more ${ BRAND_NAME } Scribe seats": [
-        "Lägg till fler ${ BRAND_NAME } Scribe-säten"
+      "Add more seats": [
+        "Lägg till fler licenser"
       ],
       "Add PayPal": [
         "Lägg till PayPal"
@@ -885,6 +885,9 @@
       "Start live chat": [
         "Starta livechatt"
       ],
+      "Start subscription": [
+        "Starta prenumeration"
+      ],
       "Stay": [
         "Stanna"
       ],
@@ -893,6 +896,9 @@
       ],
       "Submit": [
         "Skicka"
+      ],
+      "Subscribe now": [
+        "Prenumerera nu"
       ],
       "Support": [
         "Support"
@@ -989,6 +995,9 @@
       ],
       "User": [
         "Användare"
+      ],
+      "users and addresses": [
+        "användare och adresser"
       ],
       "Verify": [
         "Verifiera"
@@ -3099,9 +3108,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
-      ],
-      "If disabled, only admins will have access.": [
-        "Om det är inaktiverat har endast administratörer åtkomst."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
@@ -6021,6 +6027,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Ändpunkts-URL mottagen från din identitetsleverantör (t.ex. https://idp.exempel.se/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Slutar den ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Förbättra din nätverkssäkerhet"
       ],
@@ -6105,6 +6114,9 @@
       "Free forever": [
         "Gratis för alltid"
       ],
+      "Free trial": [
+        "Gratis provperiod"
+      ],
       "Gateway monitor": [
         "Övervakning av gateway"
       ],
@@ -6128,6 +6140,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Hjälper till att skriva, svara på och korrekturläsa e-post. Hantera för enskilda användare i ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "här"
@@ -10020,9 +10035,6 @@
       "Downloaded 2FA recovery codes": [
         "Laddade ner 2FA-återställningskoder"
       ],
-      "Failed to update Zoom video conferencing settings": [
-        "Misslyckades att uppdatera Zoom-videokonferensinställningar"
-      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -11220,6 +11232,20 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verifiering av ditt telefonnummer ökar säkerheten för ditt konto och tillåter ytterligare alternativ för återställning."
+      ]
+    },
+    "Referral": {
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Om du inte prenumererar** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Om du prenumererar före detta datum** får du **${ referrerRewardAmount }** i krediter."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
+      ],
+      "your subscription": [
+        "din prenumeration"
       ]
     },
     "Remove organization logo": {
@@ -13354,9 +13380,6 @@
       "${ BRAND_NAME } Account password rules": [
         "Lösenordsregler för ${ BRAND_NAME }-konto"
       ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
@@ -13492,6 +13515,9 @@
       ],
       "Appearance": [
         "Utseende"
+      ],
+      "Application access": [
+        "Applikationsåtkomst"
       ],
       "Apply gift code": [
         "Tillämpa presentkod"
@@ -13789,9 +13815,6 @@
       "Enable advanced account protection": [
         "Aktivera avancerat kontoskydd"
       ],
-      "Enable for all users": [
-        "Aktivera för alla användare"
-      ],
       "Enhance security with 2FA": [
         "Förbättra säkerhet med 2FA"
       ],
@@ -13876,6 +13899,9 @@
       ],
       "How to choose a good logo": [
         "Hur man väljer en bra logga"
+      ],
+      "How your free trial works": [
+        "Hur din gratis provperiod fungerar"
       ],
       "Human verification": [
         "Mänsklig verifiering"

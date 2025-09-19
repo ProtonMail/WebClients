@@ -136,8 +136,8 @@
       "Add label": [
         "Tambah label"
       ],
-      "Add more ${ BRAND_NAME } Scribe seats": [
-        "Tambah lebih banyak kuota ${ BRAND_NAME } Scribe"
+      "Add more seats": [
+        "Tambah lebih banyak kuota"
       ],
       "Add notification": [
         "Tambah notifikasi"
@@ -1560,6 +1560,9 @@
       ],
       "User": [
         "Pengguna"
+      ],
+      "users and addresses": [
+        "pengguna dan alamat"
       ],
       "Verify": [
         "Verifikasi"
@@ -4336,9 +4339,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Bantu tim Anda menyimpan kata sandi bisnis dan informasi klien yang sensitif secara aman."
-      ],
-      "If disabled, only admins will have access.": [
-        "Apabila dinonaktifkan, hanya admin yang akan memiliki akses."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sepertinya daftar kontak yang Anda impor mengandung beberapa grup. Mohon periksa bagaimana grup ini diimpor."
@@ -8326,6 +8326,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Memungkinkan pengguna untuk terhubung ke server terbagi yang aman dari kolom **Negara** di aplikasi ${ VPN_APP_NAME }."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Memungkinkan tautan konferensi video ${ MEET_APP_NAME } untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."
+      ],
       "Already allocated": [
         "Telah dialokasikan"
       ],
@@ -9100,6 +9103,9 @@
       "Groups": [
         "Grup"
       ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Membantu menulis, membalas, dan mengoreksi email. Kelola fitur ini untuk pengguna individu di ${ userAndAddress }. ${ addMoreSeats }"
+      ],
       "here": [
         "di sini"
       ],
@@ -9477,6 +9483,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kelola aplikasi ${ BRAND_NAME } mana saja yang dapat diakses oleh anggota organisasi Anda. Apabila dinonaktifkan, aplikasi hanya akan dapat diakses oleh administrator."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Kelola fitur mana saja yang dapat diakses oleh anggota organisasi Anda. Apabila dinonaktifkan, fitur hanya akan dapat diakses oleh administrator."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Kelola preferensi notifikasi email Anda untuk ${ DOCS_APP_NAME }."
@@ -15013,12 +15022,6 @@
       "Email notifications have been enabled": [
         "Notifikasi email telah diaktifkan"
       ],
-      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
-        "Pengaturan konferensi video ${ MEET_APP_NAME } gagal diperbarui"
-      ],
-      "Failed to update Zoom video conferencing settings": [
-        "Pengaturan konferensi video Zoom gagal diperbarui"
-      ],
       "Invalid code": [
         "Kode tidak valid"
       ],
@@ -20203,9 +20206,6 @@
       "${ BRAND_NAME } Account password rules": [
         "Aturan kata sandi Akun ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asisten penulisan ${ BRAND_NAME } Scribe"
       ],
@@ -20388,6 +20388,9 @@
       ],
       "Appearance": [
         "Tampilan"
+      ],
+      "Application access": [
+        "Akses aplikasi"
       ],
       "Apply filter to existing messages": [
         "Terapkan filter untuk pesan yang telah ada"
@@ -20821,9 +20824,6 @@
       "Enable advanced account protection": [
         "Aktifkan perlindungan akun lanjutan"
       ],
-      "Enable for all users": [
-        "Aktifkan untuk seluruh pengguna"
-      ],
       "Encryption and keys": [
         "Enkripsi dan kunci"
       ],
@@ -20868,6 +20868,9 @@
       ],
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } akun pengguna gagal dibuat."
+      ],
+      "Feature access": [
+        "Akses fitur"
       ],
       "Filter for more focus": [
         "Filter untuk fokus yang lebih"
@@ -21624,6 +21627,9 @@
       ],
       "Video conferencing": [
         "Konferensi video"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Konferensi video dengan ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Tinjau rekaman peristiwa organisasi dengan meningkatkan ke Professional"

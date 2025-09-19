@@ -242,6 +242,12 @@
       "Dismiss": [
         "무시"
       ],
+      "Do not show again": [
+        "다시 표시하지 않기"
+      ],
+      "Do not show again when I press": [
+        "눌렀을 때 다시 보이지 않기"
+      ],
       "Do not show on this website": [
         "이 웹사이트에서 보이지 않기"
       ],
@@ -1784,7 +1790,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -1968,6 +1974,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "데이터를 불러오는 동안 이 창을 계속 유지하세요. 이 작업은 몇 분 정도 소요됩니다."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "이전에 활성화된 창이 자동 입력할 위치이며 커서가 로그인 필드에 집중되어 있는지 확인하십시오."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "별칭이 한 번 삭제되면 복구할 수 없습니다. 혹시 비활성화를 원하시나요?"
@@ -2329,6 +2338,12 @@
       "You may close this tab.": [
         "이 탭을 닫아도 됩니다."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "사용자의 시스템에 따라 권한 프롬프트를 수락해야 할 수 있으며, 어플리케이션을 재시작해야 할 수도 있습니다."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "${ PASS_APP_NAME }에 접근성 권한을 부여해야 할 수 있습니다."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "항목을 불러오기 전에 금고에 대한 편집 권한이 필요합니다."
       ],
@@ -2364,6 +2379,11 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "조직에서 ${ PASS_APP_NAME }에 대한 액세스 권한을 보호해야 합니다"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "쉬프트"
       ]
     },
     "Label": {

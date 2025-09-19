@@ -82,6 +82,9 @@
       "Authenticate": [
         "Аўтэнтыфікацыя"
       ],
+      "Auto-type": [
+        "Аўтаматычны ўвод"
+      ],
       "Back": [
         "Назад"
       ],
@@ -257,7 +260,7 @@
         "Больш не паказваць"
       ],
       "Do not show again when I press": [
-        "Не паказваць зноў, калі я націскаю"
+        "Пасля націску больш не паказваць"
       ],
       "Download this CSV template": [
         "Спампаваць гэты шаблон CSV"
@@ -1903,6 +1906,9 @@
       "Item successfully unpinned": [
         "Элемент паспяхова адмацаваны"
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "Спалучэнні клавіш могуць выкарыстоўвацца толькі ў самой праграме ${ PASS_APP_NAME }, якая прызначана для камп'ютараў і пры праглядзе запісу ўваходу"
+      ],
       "Latest breach on ${ formattedDate }": [
         "Апошняе парушэнне ў ${ formattedDate }"
       ],
@@ -2171,7 +2177,7 @@
         "Пакіньце гэта акно адкрытым падчас імпартавання даных. Гэты працэс можа заняць некалькі хвілін."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
-        "Калі ласка, пераканайцеся, што раней актыўнае акно з'яўляецца тым, куды вы хочаце ўвесці дадзеныя аўтаматычна, і ваш курсор быў сфакусаваны на полі ўваходу."
+        "Пераканайцеся, што гэта менавіта тое раней актыўнае акно ў якое вы хочаце аўтаматычна ўвесці даныя, а ваш курсор сфакусіраваны на полі запісу ўваходу."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Звярніце ўвагу, што выдалены псеўданім нельга аднавіць. Магчыма, што вы захочаце адключыць яго замест таго, каб выдаляць незваротна?"
@@ -2540,10 +2546,10 @@
         "Вы можаце закрыць гэту ўкладку."
       ],
       "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
-        "Вам можа спатрэбіцца прыняць запыт на дазвол і, магчыма, перазапусціць праграму ў залежнасці ад вашай сістэмы."
+        "Магчыма, што спатрэбіцца прыняць запыт на дазвол і перазапусціць праграму ў залежнасці ад вашай сістэмы."
       ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
-        "Магчыма, вам спатрэбіцца даць дазвол на даступнасць для ${ PASS_APP_NAME }."
+        "Магчыма, што спатрэбіцца даць дазвол на доступ для ${ PASS_APP_NAME }."
       ],
       "You need a vault with edit permission before you can import items.": [
         "Вам неабходна сховішча з правамі рэдагавання перад тым, як імпартаваць элементы."
@@ -2592,6 +2598,15 @@
       ]
     },
     "Keyboard key": {
+      "ENTER": [
+        "ENTER"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TAB"
+      ],
       "V": [
         "V"
       ]
@@ -2798,6 +2813,9 @@
       "Auto-lock after": [
         "Аўтаблакіроўка пасля"
       ],
+      "Auto-type in previous window": [
+        "Аўтаматычны ўвод у папярэдняе акно"
+      ],
       "Backup password": [
         "Рэзервовы пароль"
       ],
@@ -2974,6 +2992,9 @@
       ],
       "Email": [
         "Электронная пошта"
+      ],
+      "EMAIL": [
+        "EMAIL"
       ],
       "Email (alias)": [
         "Электроннай пошта (псеўданім)"
@@ -3194,6 +3215,9 @@
       "Key type": [
         "Тып ключа"
       ],
+      "Keyboard shortcut:": [
+        "Спалучэнні клавіш:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Спалучэнні клавіш: ${ shortcut }"
       ],
@@ -3403,6 +3427,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "PASSWORD": [
+        "PASSWORD"
       ],
       "Password history": [
         "Гісторыя пароляў"
@@ -3748,6 +3775,9 @@
       ],
       "Useful for permanent sharing": [
         "Карысна для пастаяннага абагульвання"
+      ],
+      "USERNAME": [
+        "USERNAME"
       ],
       "Username": [
         "Імя карыстальніка"
@@ -4630,7 +4660,7 @@
         "Чаканне доступу да абагуленых даных"
       ],
       "Perform autotype?": [
-        "Выканаць аўтаўвод?"
+        "Выканаць аўтаматычны ўвод даных?"
       ],
       "Permanently remove all items?": [
         "Незваротна выдаліць усе элементы?"
@@ -4957,7 +4987,7 @@
         "Дадатковы пароль павінен мець прынамсі 8 сімвалаў"
       ],
       "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
-        "Не ўдалося аўтаматычна ўвесці тэкст. Пераканайцеся, што ${ PASS_APP_NAME } мае неабходныя дазволы, і паспрабуйце яшчэ раз (${ error })."
+        "Збой аўтаматычнага ўводу даных. Пераканайцеся, што ў ${ PASS_APP_NAME } ёсць неабходныя дазволы і паспрабуйце яшчэ раз (${ error })."
       ],
       "Failed to load breaches.": [
         "Не ўдалося загрузіць парушэнні."
