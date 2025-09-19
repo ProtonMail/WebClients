@@ -67,3 +67,5 @@ export const WEB_REQUEST_PERMISSIONS = ((): Permission[] => {
             return [];
     }
 })();
+
+export const CLIPBOARD_PERMISSIONS: Permission[] = ['clipboardRead', 'clipboardWrite'];
