@@ -29,7 +29,10 @@ const ItemExpiration = ({ className, expirationTime, element, labelID }: Props) 
     if (!expirationTime) {
         return null;
     }
-    if (dataRetentionPolicyEnabled && isExpiringByRetentionRule(element)) {
+    if (dataRetentionPolicyEnabled && isElementMessage(element) && isExpiringByRetentionRule(element)) {
+        return null;
+    }
+    if (dataRetentionPolicyEnabled && isElementConversation(element) && (element.ExpiringByRetention ?? false)) {
         return null;
     }
 
