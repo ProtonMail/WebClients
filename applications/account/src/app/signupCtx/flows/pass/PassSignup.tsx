@@ -39,7 +39,7 @@ const PassSignup = () => {
     }, []);
 
     return (
-        <main className="pass-signup flex min-h-full">
+        <main className="pass-signup flex h-full overflow-auto">
             {step === Step.Signup && (
                 <AccountDetailsStep
                     onContinue={async () => {
