@@ -13,7 +13,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
-import type { OTPRendererHandles } from '@proton/pass/components/Otp/types';
+import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
 import { useOTPCode } from '@proton/pass/hooks/useOTPCode';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { getItemKey } from '@proton/pass/lib/items/item.utils';
@@ -29,7 +29,7 @@ export const AutofillOTP: FC<Props> = ({ item }) => {
     const controller = useIFrameAppController();
 
     const payload = useMemo((): OtpRequest => ({ type: 'item', item }), [item]);
-    const otpRenderer = useRef<MaybeNull<OTPRendererHandles>>(null);
+    const otpRenderer = useRef<MaybeNull<IOtpRenderer>>(null);
     const otpToken = useOTPCode(payload, otpRenderer);
 
     useTelemetryEvent(TelemetryEventName.TwoFADisplay, {}, {})([visible]);
