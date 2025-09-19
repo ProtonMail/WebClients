@@ -20,8 +20,8 @@ import AuthenticatedBugModal from '@proton/components/containers/support/Authent
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
-import { getSubscriptionPlanTitles } from '@proton/payments';
-import { isTrial } from '@proton/payments';
+import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
+import { getSubscriptionPlanTitles, isTrial } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { ForkType } from '@proton/shared/lib/authentication/fork';
 import { APPS, type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -139,9 +139,12 @@ const UserDropdown = ({ dropdownIcon, app, onOpenChat, sessionOptions, hasAppLin
         component: UPSELL_COMPONENT.BUTTON,
         fromApp: app,
     });
+
+    const hasTrialPaymentMethods = useTrialOnlyPaymentMethods();
+
     const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
     const displayUpgradeButton =
-        (user.isFree || isTrial(subscription)) &&
+        (user.isFree || (isTrial(subscription) && !hasTrialPaymentMethods)) &&
         !isB2BTrial &&
         !location.pathname.endsWith(upgradePathname) &&
         !user.hasPassLifetime;
