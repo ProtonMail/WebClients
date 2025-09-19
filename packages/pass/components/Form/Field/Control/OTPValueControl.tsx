@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { IconName } from '@proton/components';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
-import type { OTPRendererHandles } from '@proton/pass/components/Otp/types';
+import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
 import { useOTPCode } from '@proton/pass/hooks/useOTPCode';
 import type { MaybeNull, OtpRequest } from '@proton/pass/types';
 
@@ -14,7 +14,7 @@ import { ValueControl } from './ValueControl';
 type Props = { label?: string; payload: OtpRequest; onCopy?: () => void; icon?: IconName };
 
 export const OTPValueControl: FC<Props> = ({ label, icon, payload, onCopy }) => {
-    const otpRenderer = useRef<MaybeNull<OTPRendererHandles>>(null);
+    const otpRenderer = useRef<MaybeNull<IOtpRenderer>>(null);
     const otpToken = useOTPCode(payload, otpRenderer);
 
     return (

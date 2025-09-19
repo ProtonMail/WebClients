@@ -1,0 +1,52 @@
+:root,
+.ui-standard {
+    --primary: #8a6eff;
+
+    --signal-danger: #cc2d4f;
+    --signal-warning: #e65200;
+    --signal-success: #007b58;
+    --signal-info: #00afe6;
+
+    --text-norm: #2b2442;
+    --text-weak: #52527a;
+    --text-hint: #999999;
+    --text-disabled: #adadad;
+    --text-invert: #ffffff;
+
+    --field-background-color: #e4e4e4;
+    --field-hover-background-color: #e4e4e4;
+    --field-norm: #ffffff;
+    --field-disabled: #d0d3da;
+
+    --border-norm: #9994d1;
+    --border-weak: #e3dffa;
+
+    --background-norm: #fbf9fe;
+    --background-weak: #ffffff;
+    --background-strong: #f4f0fe;
+    --background-invert: black;
+
+    --interaction-norm: #5817d1;
+    --interaction-weak: #ece5ff;
+
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(194 194 194 / 0.2);
+    --interaction-default-active: rgb(194 194 194 / 0.4);
+
+    --shadow-norm-opacity: 0.16;
+    --shadow-raised-opacity: 0.18;
+    --shadow-lifted-opacity: 0.2;
+
+    --backdrop-norm: rgb(0 0 0 / 0.15);
+
+    --optional-field-placeholder-color: var(--text-weak);
+    --optional-field-background-color: #ffffff;
+    --optional-navigation-current-item-background-color: #ffffff;
+
+    --focus-outline: var(--interaction-norm-major-2);
+    --focus-ring: var(--interaction-norm-minor-1);
+
+    --item-background: rgb(255 255 255 / 0.66);
+
+    --field-hover: #a4a9b5;
+}

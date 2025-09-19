@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { OTPRendererHandles } from '@proton/pass/components/Otp/types';
+import type { IOtpRenderer } from '@proton/pass/components/Otp/types';
 import type { Maybe, MaybeNull, MaybePromise, OtpCode, OtpRequest } from '@proton/pass/types';
 
 import { useEnsureMounted } from './useEnsureMounted';
@@ -22,10 +22,7 @@ export type UsePeriodOtpCodeOptions = {
  * 24fps for performance reasons. */
 const REFRESH_RATE = 1000 / 24;
 
-export const useOTPCode = (
-    payload: OtpRequest,
-    ref: MutableRefObject<MaybeNull<OTPRendererHandles>>
-): Maybe<string> => {
+export const useOTPCode = (payload: OtpRequest, ref: MutableRefObject<MaybeNull<IOtpRenderer>>): Maybe<string> => {
     const core = usePassCore();
     const otpKey = payload.type === 'item' ? `${payload.item.shareId}-${payload.item.itemId}` : payload.totpUri;
 

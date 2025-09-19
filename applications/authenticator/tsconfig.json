@@ -1,0 +1,14 @@
+{
+    "extends": "../../tsconfig.base.json",
+    "ts-node": {
+        "compilerOptions": {
+            "allowJs": true,
+            "esModuleInterop": true,
+            "module": "commonjs",
+            "moduleResolution": "node",
+            "resolveJsonModule": true,
+            "skipLibCheck": true,
+            "target": "ES6"
+        }
+    }
+}

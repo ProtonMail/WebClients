@@ -1,0 +1,254 @@
+@import '~@proton/styles/scss/proton-pass';
+@import '~@proton/styles/scss/lib';
+
+html,
+body {
+	overscroll-behavior: none;
+}
+
+:root {
+	--font-weight-semibold: 500;
+
+	user-select: none;
+	cursor: default;
+}
+
+body::before {
+	content: ' ';
+	display: block;
+	inline-size: 100%;
+	block-size: 100%;
+	position: fixed;
+	background-image: url(../assets/bg.png);
+	background-size: 200px;
+	opacity: 0.15;
+	z-index: -1;
+}
+
+body.dark {
+	background: linear-gradient(180deg, #3a3836 0%, var(--background-norm) 100%);
+}
+
+body.light::before,
+body.light .light-invert {
+	filter: invert(100%);
+}
+
+#root,
+main {
+	block-size: 100%;
+	max-block-size: 100vh;
+}
+
+.navbar {
+	position: sticky;
+	inset-block-start: 0;
+	padding-block: 16px;
+	padding-inline: 24px;
+	gap: 10px;
+}
+
+.divider {
+	border: 0.5px solid var(--divider-highlight, rgb(120 120 120 / 0.1));
+	margin-block: 10px;
+	margin-inline: -16px;
+}
+
+// When dragging, a new floating item is created outside .item-grid
+.item {
+	background: var(--item-background);
+	background-image: linear-gradient(180deg, rgb(255 255 255 / 0.08) 0%, rgb(255 255 255 / 0.04) 15.89%);
+	border: 0.5px solid rgb(255 255 255 / 0.15);
+	box-shadow: 0 2px 8px 0 rgb(0 0 0 / 0.16);
+	border-radius: 18px;
+	gap: 24px;
+	border-width: 0.5px;
+	padding: 16px;
+	cursor: pointer;
+	transition: filter 0.2s ease;
+	text-align: start;
+	font-size: inherit;
+	inline-size: 100%;
+
+	&:active {
+		transform: scale(0.99);
+	}
+
+	&:active,
+	&:hover {
+		filter: brightness(1.05);
+	}
+
+	.item-image {
+		flex-shrink: 0;
+		overflow: hidden;
+		inline-size: 36px;
+		block-size: 36px;
+		border-radius: 8px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #24212b;
+
+		@at-root .light & {
+			background-color: #efefef;
+		}
+
+		img {
+			object-fit: cover;
+			inline-size: 100%;
+			block-size: 100%;
+		}
+	}
+
+	.item-icon {
+		background: linear-gradient(214.94deg, #6d4aff 31.41%, #b578d9 49.07%, #f9af94 66.47%, #ffd580 79.68%);
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		font-size: 24px;
+		text-align: center;
+	}
+}
+
+.cta-button {
+	border: 0.5px solid rgb(255 255 255 / 0.12);
+	box-shadow:
+		0 1px 24px rgb(153 94 255 / 0.25),
+		inset 0 1px 4px rgb(255 255 255 / 0.25);
+	border-radius: 9999px;
+	font-weight: 600;
+	letter-spacing: -0.15px;
+	text-align: center;
+
+	&:not(.button-solid-danger, :hover, :focus, :active) {
+		background-image: linear-gradient(180deg, #7350ff 0%, #453099 100%);
+	}
+
+	&[disabled] {
+		--text-weak: var(--button-default-text-color);
+	}
+}
+
+.search {
+	padding-block: 8px;
+	padding-inline: 32px 8px;
+	background: rgb(0 0 0 / 0.33);
+	border: 0;
+	border-radius: 9999px;
+	outline: none;
+}
+
+.spacer {
+	flex-grow: 1;
+}
+
+.add-item-dialog {
+	position: fixed;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	background: rgb(0 0 0 / 0.66);
+}
+
+.add-item-dialog form {
+	background-color: rgb(50 50 50);
+	border: 0.5px solid rgb(255 255 255 / 0.12);
+	border-radius: 15px;
+	margin-block: 0;
+	margin-inline: auto;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.add-item-dialog .form-control {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	border: 1px solid white;
+}
+
+.field {
+	border-color: var(--border-weak);
+}
+
+// Override Toggle component
+.toggle-label {
+	.toggle-container {
+		transition: background-color 0.2s;
+
+		&::after {
+			border: 1px solid var(--border-norm);
+		}
+
+		&::before {
+			background-color: var(--interaction-weak-major-3);
+		}
+
+		&:hover::before {
+			background-color: var(--interaction-norm);
+		}
+
+		&.toggle-container--checked {
+			background-color: var(--interaction-weak);
+
+			&::before {
+				background-color: var(--interaction-norm);
+			}
+
+			&:hover {
+				&::before {
+					background-color: var(--interaction-norm-major-1);
+				}
+			}
+
+			&.toggle-container--loading {
+				background-color: var(--interaction-weak-major-1);
+
+				&::before {
+					background-color: var(--interaction-weak-major-3);
+				}
+			}
+		}
+	}
+}
+
+.bg-gray {
+	--background-norm: var(--field-background-color);
+	--button-hover-background-color: var(--field-background-color);
+	--button-default-background-color: var(--field-background-color);
+	--button-active-background-color: var(--field-background-color);
+	--button-default-border-color: var(--interaction-default-active);
+	--button-hover-border-color: var(--interaction-default-hover);
+	--field-focus-background-color: var(--field-background-color);
+	--focus-ring: transparent;
+}
+
+/*
+ * Quick fix to match UI with designs by overriding Button background
+ * TODO: Find a better workaround
+*/
+.button-group,
+.dropdown-content,
+.button-outline-weak,
+.button-outline-norm,
+.select {
+	@extend .bg-gray;
+
+	& > .button-group-item {
+		@extend .bg-gray;
+	}
+}
+
+.dropdown-content {
+	&::before,
+	&::after {
+		@extend .bg-gray;
+	}
+}
