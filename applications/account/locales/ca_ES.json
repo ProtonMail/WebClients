@@ -136,8 +136,8 @@
       "Add label": [
         "Afegeix una etiqueta"
       ],
-      "Add more ${ BRAND_NAME } Scribe seats": [
-        "Afegeix més llicències de ${ BRAND_NAME } Scribe"
+      "Add more seats": [
+        "Afegeix més llicències"
       ],
       "Add notification": [
         "Afegeix una notificació"
@@ -1420,6 +1420,9 @@
       "Start live chat": [
         "Inicia el xat en directe"
       ],
+      "Start subscription": [
+        "Iniciar la subscripció"
+      ],
       "Stay": [
         "Mantenir"
       ],
@@ -1434,6 +1437,9 @@
       ],
       "Submit": [
         "Envia"
+      ],
+      "Subscribe now": [
+        "Subscriviu-vos ara"
       ],
       "Support": [
         "Assistència"
@@ -1566,6 +1572,9 @@
       ],
       "User": [
         "Usuari"
+      ],
+      "users and addresses": [
+        "usuaris i adreces"
       ],
       "Verify": [
         "Verifica"
@@ -4427,9 +4436,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajudeu el vostre equip a emmagatzemar de manera segura les contrasenyes d'informació confidencial de l'empresa i dels clients."
-      ],
-      "If disabled, only admins will have access.": [
-        "Si està desactivat, només els administradors hi tenen accés."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Sembla que la llista de contactes que esteu important conté alguns grups. Reviseu com s'han d'importar aquests grups."
@@ -8515,6 +8521,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permeteu als usuaris connectar-se a servidors compartits segurs des de la secció **Països** de l'aplicació ${ VPN_APP_NAME }."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permet afegir fàcilment enllaços de videoconferència del ${ MEET_APP_NAME } a les invitacions del calendari."
+      ],
       "Already allocated": [
         "Ja assignat"
       ],
@@ -9111,6 +9120,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "S'ha rebut l'URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "S'acaba el ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Milloreu la seguretat de la vostra xarxa"
       ],
@@ -9243,6 +9255,9 @@
       "Free forever": [
         "Gratuït per sempre"
       ],
+      "Free trial": [
+        "Prova gratuïta"
+      ],
       "free up space by deleting older messages or other data": [
         "allibereu espai suprimint missatges antics o altres dades"
       ],
@@ -9302,6 +9317,9 @@
       ],
       "Groups": [
         "Grups"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Ajuda a escriure, respondre i revisar correus. Gestioneu-ho per a usuaris individuals a ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "aquí"
@@ -9682,6 +9700,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestioneu a quines aplicacions ${ BRAND_NAME } poden accedir els membres de la teva organització. Si està desactivat, només els administradors tindran accés."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Gestioneu a quines funcions podran accedir els membres de la vostra organització. Si ho desactiveu, només els administradors hi tindran accés."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestioneu les vostres preferències de notificació per correu electrònic per a ${ DOCS_APP_NAME }."
@@ -15322,12 +15343,6 @@
       "Email notifications have been enabled": [
         "S'han activat les notificacions per correu electrònic."
       ],
-      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
-        "No s'ha pogut actualitzar les preferències de videoconferència de ${ MEET_APP_NAME }"
-      ],
-      "Failed to update Zoom video conferencing settings": [
-        "No s'han pogut actualitzar les preferències de videoconferència de Zoom"
-      ],
       "Invalid code": [
         "El codi no és vàlid."
       ],
@@ -17310,6 +17325,30 @@
       ],
       "Save your recovery phrase": [
         "Deseu la vostra frase de recuperació"
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Si cancel·leu abans d'aquesta data,** se us **baixarà de categoria** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan la prova finalitzi."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Si no us subscriviu,** se us **baixarà de categoria** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Si no cancel·leu,** el vostre pla complet començarà i rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Si us subscriviu abans d'aquesta data,** rebreu **${ referrerRewardAmount }** en crèdits."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Gaudiu de **${ planTitle }** de franc fins al **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
+        "Us queden **${ daysRemaining } dies** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**."
+      ],
+      "your subscription": [
+        "la vostra subscripció"
       ]
     },
     "Remark about a key type option": {
@@ -20695,9 +20734,6 @@
       "${ BRAND_NAME } Account password rules": [
         "Regles de contrasenya del compte de ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
@@ -20881,6 +20917,9 @@
       ],
       "Appearance": [
         "Aparença"
+      ],
+      "Application access": [
+        "Accés a l'aplicació"
       ],
       "Apply filter to existing messages": [
         "Aplica el filtre als missatges existents"
@@ -21319,9 +21358,6 @@
       "Enable advanced account protection": [
         "Activació de la protecció avançada del compte"
       ],
-      "Enable for all users": [
-        "Activa per a tots els usuaris"
-      ],
       "Encryption and keys": [
         "Xifratge i claus"
       ],
@@ -21367,6 +21403,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "No s'ha pogut crear ${ failedUsers.length } compte d'usuari.",
         "No s'han pogut crear ${ failedUsers.length } comptes d'usuari."
+      ],
+      "Feature access": [
+        "Accés a característiques"
       ],
       "Filter for more focus": [
         "Filtreu els vostres missatges per a una millor concentració"
@@ -21487,6 +21526,9 @@
       ],
       "How to refer a friend and get credits": [
         "Com recomanar un amic i obtenir crèdits"
+      ],
+      "How your free trial works": [
+        "Com funciona la vostra prova gratuïta"
       ],
       "Human verification": [
         "Verificació humana"
@@ -22137,6 +22179,9 @@
       ],
       "Video conferencing": [
         "Videoconferència"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferència amb ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Podreu veure els esdeveniments de l'organització si milloreu al pla Professional"

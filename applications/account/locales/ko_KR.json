@@ -136,9 +136,6 @@
       "Add label": [
         "라벨 추가"
       ],
-      "Add more ${ BRAND_NAME } Scribe seats": [
-        "더 많은 ${ BRAND_NAME } Scribe 사용 권한 추가"
-      ],
       "Add notification": [
         "알림 추가"
       ],
@@ -1420,6 +1417,9 @@
       "Start live chat": [
         "라이브 채팅 시작하기"
       ],
+      "Start subscription": [
+        "구독 시작"
+      ],
       "Stay": [
         "기다리기"
       ],
@@ -1434,6 +1434,9 @@
       ],
       "Submit": [
         "제출"
+      ],
+      "Subscribe now": [
+        "지금 구독하기"
       ],
       "Support": [
         "지원"
@@ -2056,6 +2059,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험판이 종료된 후, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
       ],
@@ -2500,6 +2509,9 @@
       ],
       "Manual setup problem": [
         "수동 설정 문제"
+      ],
+      "Meet problem": [
+        "문제 발생"
       ],
       "Other": [
         "기타"
@@ -4399,9 +4411,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "팀이 민감한 비즈니스 및 고객 정보에 대한 암호를 안전하게 저장할 수 있도록 지원하세요"
       ],
-      "If disabled, only admins will have access.": [
-        "비활성화시 관리자만 접근 가능합니다."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
       ],
@@ -6207,6 +6216,9 @@
       ],
       "You must set a name": [
         "이름을 반드시 설정해야 합니다"
+      ],
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "SMTP 제출 토큰을 생성하려면 활성 사용자 지정 도메인 주소가 있어야 합니다."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "최대 메시지 글자수 도달. 메시지의 글자 수를 줄여보세요."
@@ -8300,6 +8312,9 @@
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
       ],
+      "Accounts": [
+        "계정"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "비밀번호를 분실한 경우 ${ BRAND_NAME } 계정의 콘텐츠에 계속 액세스할 수 있도록 적어도 하나의 데이터 복구 방법을 활성화하세요."
       ],
@@ -8518,6 +8533,12 @@
       ],
       "Attention required": [
         "주의 필요"
+      ],
+      "Authenticator app 2FA disabled": [
+        "2단계 인증 앱이 비활성화되었습니다."
+      ],
+      "Authenticator app 2FA enabled": [
+        "인증 앱 2단계 인증이 활성화되었습니다."
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "자동 회신은 선택한 시작 시간과 종료 시간 사이에 매월 활성화됩니다."
@@ -8810,6 +8831,9 @@
       "Disabled on ${ boldValue }": [
         "${ boldValue }에 비활성화됨"
       ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "인증 앱 2단계 인증 비활성화시 계정의 보안이 취약해집니다. 꼭 필요한 경우에만 진행하세요."
+      ],
       "Discount": [
         "할인"
       ],
@@ -8990,6 +9014,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate }에 종료됨"
+      ],
       "Enhance your network security": [
         "네트워크 보안을 향상시키기"
       ],
@@ -9121,6 +9148,9 @@
       ],
       "Free forever": [
         "영구적으로 무료"
+      ],
+      "Free trial": [
+        "무료 체험"
       ],
       "free up space by deleting older messages or other data": [
         "오래된 메시지 및 타 데이터를 삭제하여 공간을 비우세요"
@@ -9563,6 +9593,9 @@
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "${ DOCS_APP_NAME }의 이메일 알림 설정을 관리하세요."
       ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "인증 앱에 이 정보를 직접 입력하여 계정을 설정하세요. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
       ],
@@ -9747,6 +9780,9 @@
         "조직 구성원이 비밀번호나 PIN 비밀번호 등으로 ${ PASS_APP_NAME } 잠금을 해제해야 합니다."
       ],
       "Organization monitor": [
+        "조직 모니터링"
+      ],
+      "Organization Monitor": [
         "조직 모니터링"
       ],
       "Organization size": [
@@ -10031,6 +10067,9 @@
       "Scan QR code instead": [
         "QR 코드 스캔하기"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "계정을 설정하려면 인증 앱으로 이 코드를 스캔하세요. ${ switchButton }"
+      ],
       "SCIM integration disabled": [
         "SCIM 통합 비활성화"
       ],
@@ -10054,6 +10093,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "${ getFormattedOrganization }에서 ${ BRAND_NAME } 조직에 허용하려는 사용자 제휴를 선택하세요."
+      ],
+      "Select users to view their activity": [
+        "활동을 확인할 사용자를 선택하세요"
       ],
       "Select what you want to import.": [
         "처리할 파일을 선택하세요."
@@ -10141,6 +10183,9 @@
       ],
       "Show original message": [
         "처음 메시지 보기"
+      ],
+      "Sign in only": [
+        "로그인 전용"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인하십시오"
@@ -10894,6 +10939,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "활성화하지 않으면 새 사용자를 만들거나 기존 사용자에게 주소를 추가하거나 개인이 아닌 사용자 계정에 액세스할 수 없습니다."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "인증 앱 설정이 없다면, 보안 키를 아직 지원하지 않는 ${ BRAND_NAME } 애플리케이션에 로그인할 수 없습니다."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
@@ -12277,6 +12325,9 @@
       "Emails (last month)": [
         "이마일 (지난 달)"
       ],
+      "Emails categories": [
+        "이메일 카테고리"
+      ],
       "Enabled": [
         "활성화됨"
       ],
@@ -12576,6 +12627,9 @@
       ],
       "Notification": [
         "알림"
+      ],
+      "Notification email address": [
+        "이메일 주소 알림"
       ],
       "Notifications": [
         "알림"
@@ -13004,6 +13058,9 @@
     "label": {
       "Device-based recovery": [
         "기기 기반 복구"
+      ],
+      "Notification phone number": [
+        "휴대전화 번호 알림"
       ],
       "Recovery phone number": [
         "복구 전화번호"
@@ -15107,12 +15164,6 @@
       "Email notifications have been enabled": [
         "이메일 알림이 활성화되었습니다."
       ],
-      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
-        "${ MEET_APP_NAME } 화상 회의 설정 업데이트 실패"
-      ],
-      "Failed to update Zoom video conferencing settings": [
-        "줌 화상 회의 설정 업데이트 실패"
-      ],
       "Invalid code": [
         "잘못된 코드입니다."
       ],
@@ -17103,6 +17154,26 @@
         "복구 구문 저장"
       ]
     },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**해당 날짜 전에 취소시,** 체험판이 종료될 때 회원님의 계정이 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 플랜으로 **다운그레이드됩니다.**"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**구독하지 않을 시,** 회원님의 계정이 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 플랜으로 **다운그레이드됩니다.**"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**취소하지 않을 시,** 정규 플랜으로 시작되며 **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**해당 날짜 이전에 구독시,** **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ textDate }**까지 **${ planTitle }**을(를) 무료로 즐겨보세요."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**가 제공하는 강력한 기능들을 탐색할 수 있는 시간이 **${ daysRemaining }일** 남았습니다."
+      ]
+    },
     "Remark about a key type option": {
       "Classic": [
         "클래식"
@@ -17405,6 +17476,9 @@
       "Add a recovery phone number": [
         "복구 전화번호 추가"
       ],
+      "Add an alternative email address": [
+        "대체 이메일 주소 추가"
+      ],
       "Add an email": [
         "이메일 추가"
       ],
@@ -17435,8 +17509,14 @@
       "Disable recovery by email": [
         "이메일을 통한 복구 비활성화"
       ],
+      "Disable recovery by email ": [
+        "이메일을 통한 복구를 비활성화 "
+      ],
       "Disable recovery by phone": [
         "휴대전화를 통한 복구 비활성화"
+      ],
+      "Disable recovery by phone ": [
+        "휴대전화를 통한 복구를 비활성화 "
       ],
       "Download ${ size }": [
         "${ size } 다운로드"
@@ -17470,6 +17550,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "로그인 정보를 분실하여 계정을 초기화해야 하는 경우, 이메일, 연락처, 파일 또는 비밀번호에 액세스하지 못할 수 있으므로 **계정 복구 및 데이터 복구 방법**을 모두 마련하는 것이 **필수**입니다."
+      ],
+      "in case we need to contact you": [
+        "당사에서 회원님께 연락이 필요한 경우"
       ],
       "Invalid code": [
         "잘못된 코드입니다"
@@ -17602,6 +17685,12 @@
       ],
       "You have recommended actions.": [
         "권장 조치가 있습니다."
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "복구 이메일은 공격자에게 악용되어 사용자의 계정을 탈취하는데 사용할 수 있습니다. ${ disableEmail }하여 회원님의 계정 보안을 강화하세요."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "복구 전화번호는 공격자에게 악용되어 계정을 탈취하는 데 사용될 수 있습니다. ${ disablePhone }하여 회원님의 계정 보안을 강화하세요."
       ],
       "You will no longer be able to use this address to reset your account.": [
         "더 이상 이 주소를 사용하여 계정을 재설정할 수 없습니다."
@@ -20381,9 +20470,6 @@
       "${ BRAND_NAME } Account password rules": [
         "${ BRAND_NAME } 계정 비밀번호 규칙"
       ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
@@ -20885,6 +20971,9 @@
       "Disable two-factor authentication": [
         "2단계 인증 비활성화"
       ],
+      "Disable two-factor authentication app?": [
+        "2단계 인증 앱을 비활성화하시겠어요?"
+      ],
       "Disable two-factor authentication?": [
         "2단계 인증을 비활성화하시겠습니까?"
       ],
@@ -20998,9 +21087,6 @@
       ],
       "Enable advanced account protection": [
         "향상된 계정 보호 활성화하기"
-      ],
-      "Enable for all users": [
-        "모든 사용자에게 활성화"
       ],
       "Encryption and keys": [
         "암호화 및 키"
@@ -21166,6 +21252,9 @@
       ],
       "How to refer a friend and get credits": [
         "친구를 추천하고 크레딧을 받는 방법"
+      ],
+      "How your free trial works": [
+        "무료 체험 작동 원리"
       ],
       "Human verification": [
         "사람임을 인증"
@@ -21574,6 +21663,9 @@
       ],
       "Set up a recovery method": [
         "복구 방법을 설정하세요"
+      ],
+      "Set up authenticator app": [
+        "인증 앱을 설정하세요"
       ],
       "Set up email forwarding": [
         "이메일 가져오기 설정"
@@ -22067,6 +22159,9 @@
       "Edit label names": [
         "라벨 이름 편집"
       ],
+      "Emails in your inbox are shown organized into categories": [
+        "받은 편지함 내의 이메일이 카테고리별로 정리되어 표시됩니다."
+      ],
       "Enable/disable desktop and mobile notifications": [
         "데스크탑과 모바일 알림 활성화/비활성화"
       ],
@@ -22183,6 +22278,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "이는 비밀번호 재설정 또는 사용자가 아직 로그인하지 않은 경우에 발생할 수 있습니다."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "이 이메일 주소는 사용자의 ${ BRAND_NAME } 계정에 로그인하는 데에만 사용할 수 있습니다."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "이 이메일 주소는 계정 관리 작업을 진행할 때 모든 조직 구성원에게 보여질 것입니다."
@@ -22657,6 +22755,9 @@
       "Administrators can't access the data of private users": [
         "관리자가 개인 사용자의 데이터에 접근할 수 없습니다."
       ],
+      "Authenticator app": [
+        "인증 앱"
+      ],
       "Inactive": [
         "비활성"
       ],
@@ -22674,6 +22775,9 @@
       ],
       "Private": [
         "개인"
+      ],
+      "Security key": [
+        "보안 키"
       ],
       "SSO": [
         "SSO"
