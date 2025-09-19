@@ -1,5 +1,6 @@
 @use 'sass:math';
 @import '~@proton/styles/scss/lib';
+@import '~@proton/styles/scss/meet/meet-breakpoints';
 
 .circle-button {
 	inline-size: rem(56);
