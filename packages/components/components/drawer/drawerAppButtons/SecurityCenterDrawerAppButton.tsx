@@ -33,16 +33,15 @@ const SecurityCenterDrawerAppButton = ({
     const canDisplayAccountSecurity = baseUseSelector(selectCanDisplayAccountSecuritySection);
 
     const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
-    const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
 
     const getNotificationCount = () => {
-        if (canDisplayNewSentinelSettings && hasSentinelEnabled) {
+        if (hasSentinelEnabled) {
             return canDisplayAccountSecurity && !recoveryPhraseSet ? unreadBreachesCount + 1 : unreadBreachesCount;
         }
         return accountSecurityCardsCount + unreadBreachesCount;
     };
     const getNotificationDotColor = () => {
-        if (hasSentinelEnabled && canDisplayAccountSecurity && !recoveryPhraseSet && canDisplayNewSentinelSettings) {
+        if (hasSentinelEnabled && canDisplayAccountSecurity && !recoveryPhraseSet) {
             return ThemeColor.Danger;
         }
         if (hasAccountSecurityWarning || !!unreadBreachesCount) {
