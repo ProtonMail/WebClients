@@ -1,0 +1,15 @@
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[target.aarch64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]
+
+# Windows cross-compilation from macOS
+# 1. Install mingw-w64: `brew install mingw-w64`
+# 2. Uncomment to run cargo check/clippy against Windows target
+# [build]
+# target = "x86_64-pc-windows-gnu"
+
+# Linux ARM64 cross-compilation from macOS
+# 1. docker build --platform linux/arm64 -f linuxarm64.dockerfile -t tauri-arm64-builder .
+# 3. docker run --rm -v $(realpath ../../):/app tauri-arm64-builder
