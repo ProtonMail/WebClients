@@ -16,7 +16,6 @@ import EmptyDevices from '../../../components/sections/Devices/EmptyDevices';
 import { getDevicesSectionName } from '../../../components/sections/Devices/constants';
 import { GridViewItemDevice } from '../../../components/sections/FileBrowser/GridViewItemDevice';
 import { DeviceNameCell } from '../../../components/sections/FileBrowser/contentCells';
-import headerCellsCommon from '../../../components/sections/FileBrowser/headerCells';
 import headerCells from '../../../components/sections/FileBrowser/headerCells';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../../hooks/drive/useOnItemRenderedMetrics';
@@ -35,15 +34,16 @@ const { ContextMenuCell } = Cells;
 const largeScreenCells: React.FC<{ item: DeviceItem }>[] = [DeviceNameCell, ContextMenuCell];
 const smallScreenCells = [DeviceNameCell, ContextMenuCell];
 
-const headerItemsLargeScreen: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
+const headerItemsLargeScreen: ListViewHeaderItem[] = [headerCells.name, headerCells.placeholder];
 
-const headerItemsSmallScreen: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
+const headerItemsSmallScreen: ListViewHeaderItem[] = [headerCells.name, headerCells.placeholder];
 
 export function DevicesBrowser() {
-    const { deviceList, isLoading } = useDeviceStore(
+    const { deviceList, isLoading, hasEverLoaded } = useDeviceStore(
         useShallow((state) => ({
             deviceList: state.deviceList,
             isLoading: state.isLoading,
+            hasEverLoaded: state.hasEverLoaded,
         }))
     );
     const { layout } = useUserSettings();
@@ -52,7 +52,7 @@ export function DevicesBrowser() {
     const browserItemContextMenu = useItemContextMenu();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
     const sectionTitle = getDevicesSectionName();
 
     // TODO: remove once FileBrowser is converted
@@ -71,8 +71,8 @@ export function DevicesBrowser() {
     );
 
     const selectedItemsUid = useMemo(
-        () => getSelectedDevice(browserItems, selectionControls!.selectedItemIds).map((dev) => dev.uid),
-        [browserItems, selectionControls!.selectedItemIds]
+        () => getSelectedDevice(browserItems, selectionControls?.selectedItemIds || []).map((dev) => dev.uid),
+        [browserItems, selectionControls?.selectedItemIds]
     );
 
     const handleItemRender = useCallback(() => {
@@ -92,14 +92,11 @@ export function DevicesBrowser() {
         [navigateToLink, browserItems]
     );
 
-    const GridHeaderComponent = useMemo(
-        () => () => {
-            return null;
-        },
-        [isLoading]
-    );
+    const GridHeaderComponent = () => null;
 
-    if (!browserItems.length && !isLoading) {
+    const isEmpty = hasEverLoaded && !isLoading && !browserItems.length;
+
+    if (isEmpty) {
         return <EmptyDevices />;
     }
 

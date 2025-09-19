@@ -33,12 +33,12 @@ export const useSharedByMeItemsWithSelection = () => {
     const { navigateToAlbum, navigateToLink } = useDriveNavigation();
     const { loadThumbnail } = useBatchThumbnailLoader();
     const selectionControls = useSelection();
-
-    const { sharedByMeItems, isLoading, getSharedByMeItem } = useSharedByMeStore(
+    const { sharedByMeItems, isLoading, getSharedByMeItem, hasEverLoaded } = useSharedByMeStore(
         useShallow((state) => ({
             getSharedByMeItem: state.getSharedByMeItem,
             sharedByMeItems: state.getAllSharedByMeItems(),
             isLoading: state.isLoading(),
+            hasEverLoaded: state.hasEverLoaded,
         }))
     );
 
@@ -85,9 +85,9 @@ export const useSharedByMeItemsWithSelection = () => {
     }, [sharedByMeItems]);
 
     const { sortedList, sortParams, setSorting } = useSortingWithDefault(mappedItems, DEFAULT_SORT);
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
 
-    const isEmpty = !isLoading && mappedItems.length === 0;
+    const isEmpty = hasEverLoaded && !isLoading && mappedItems.length === 0;
 
     const handleOpenItem = useCallback(
         (uid: BrowserItemId) => {

@@ -67,6 +67,7 @@ type SharedWithMeListingStore = {
     sharedWithMeItems: Map<string, SharedWithMeListingItemUI>;
     itemUids: Set<string>;
     itemsWithInvitationPosition: Set<string>;
+    hasEverLoaded: boolean;
 
     isLoadingNodes: boolean;
     isLoadingInvitations: boolean;
@@ -106,6 +107,8 @@ type SharedWithMeListingStore = {
     setPopulatingLegacyInvitations: (loading: boolean) => void;
 
     isLoading: () => boolean;
+    setHasEverLoaded: () => void;
+    checkAndSetHasEverLoaded: () => void;
 
     subscribeToEvents: (context: string, options?: { onRefreshSharedWithMe?: () => Promise<void> }) => Promise<void>;
     unsubscribeToEvents: (context: string) => Promise<void>;
@@ -120,6 +123,7 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
             sharedWithMeItems: new Map(),
             itemUids: new Set(),
             itemsWithInvitationPosition: new Set(),
+            hasEverLoaded: false,
 
             isLoadingNodes: false,
             isLoadingInvitations: false,
@@ -273,13 +277,43 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                 return items.filter((item) => item.itemType === ItemType.INVITATION).length;
             },
 
-            setLoadingNodes: (loading: boolean) => set({ isLoadingNodes: loading }),
-            setLoadingInvitations: (loading: boolean) => set({ isLoadingInvitations: loading }),
-            setLoadingBookmarks: (loading: boolean) => set({ isLoadingBookmarks: loading }),
-            setLoadingLegacyNodes: (loading: boolean) => set({ isLoadingLegacyNodes: loading }),
-            setLoadingLegacyInvitations: (loading: boolean) => set({ isLoadingLegacyInvitations: loading }),
-            setPopulatingLegacyNodes: (loading: boolean) => set({ isPopulatingLegacyNodes: loading }),
-            setPopulatingLegacyInvitations: (loading: boolean) => set({ isPopulatingLegacyInvitations: loading }),
+            setLoadingNodes: (loading: boolean) => {
+                set({ isLoadingNodes: loading });
+                get().checkAndSetHasEverLoaded();
+            },
+            setLoadingInvitations: (loading: boolean) => {
+                set({ isLoadingInvitations: loading });
+                get().checkAndSetHasEverLoaded();
+            },
+            setLoadingBookmarks: (loading: boolean) => {
+                set({ isLoadingBookmarks: loading });
+                get().checkAndSetHasEverLoaded();
+            },
+            setLoadingLegacyNodes: (loading: boolean) => {
+                set({ isLoadingLegacyNodes: loading });
+                get().checkAndSetHasEverLoaded();
+            },
+            setLoadingLegacyInvitations: (loading: boolean) => {
+                set({ isLoadingLegacyInvitations: loading });
+                get().checkAndSetHasEverLoaded();
+            },
+            setPopulatingLegacyNodes: (loading: boolean) => {
+                set({ isPopulatingLegacyNodes: loading });
+                get().checkAndSetHasEverLoaded();
+            },
+            setPopulatingLegacyInvitations: (loading: boolean) => {
+                set({ isPopulatingLegacyInvitations: loading });
+                get().checkAndSetHasEverLoaded();
+            },
+
+            setHasEverLoaded: () => set({ hasEverLoaded: true }),
+
+            checkAndSetHasEverLoaded: () => {
+                const state = get();
+                if (!state.isLoading() && !state.hasEverLoaded) {
+                    state.setHasEverLoaded();
+                }
+            },
 
             isLoading: () => {
                 const state = get();
