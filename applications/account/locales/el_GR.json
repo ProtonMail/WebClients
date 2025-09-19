@@ -136,8 +136,8 @@
       "Add label": [
         "Προσθήκη ετικέτας"
       ],
-      "Add more ${ BRAND_NAME } Scribe seats": [
-        "Προσθέστε περισσότερες θέσεις ${ BRAND_NAME } Scribe"
+      "Add more seats": [
+        "Προσθήκη περισσότερων θέσεων"
       ],
       "Add notification": [
         "Προσθήκη ειδοποίησης"
@@ -1420,6 +1420,9 @@
       "Start live chat": [
         "Ξεκινήστε ζωντανή συνομιλία"
       ],
+      "Start subscription": [
+        "Έναρξη συνδρομής"
+      ],
       "Stay": [
         "Παραμονή"
       ],
@@ -1434,6 +1437,9 @@
       ],
       "Submit": [
         "Υποβολή"
+      ],
+      "Subscribe now": [
+        "Εγγραφείτε τώρα"
       ],
       "Support": [
         "Υποστήριξη"
@@ -1566,6 +1572,9 @@
       ],
       "User": [
         "Χρήστης"
+      ],
+      "users and addresses": [
+        "χρήστες και διευθύνσεις"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -4427,9 +4436,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Βοηθήστε την ομάδα σας να αποθηκεύει με ασφάλεια κωδικούς πρόσβασης σε ευαίσθητες επιχειρηματικές και πελατειακές πληροφορίες."
-      ],
-      "If disabled, only admins will have access.": [
-        "Εάν είναι απενεργοποιημένο, μόνο οι διαχειριστές θα έχουν πρόσβαση."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
@@ -8515,6 +8521,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Επιτρέψτε στους χρήστες να συνδέονται σε διασφαλισμένους κοινόχρηστους διακομιστές από την ενότητα **Χώρες** της εφαρμογής ${ VPN_APP_NAME }."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης ${ MEET_APP_NAME } στις προσκλήσεις ημερολογίου σας."
+      ],
       "Already allocated": [
         "Ήδη κατανεμημένος"
       ],
@@ -9111,6 +9120,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Διεύθυνση URL τελικού σημείου που λάβατε από τον πάροχο ταυτότητάς σας (π.χ. https://idp.example.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Λήγει στις ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Βελτιώστε την ασφάλεια του δικτύου σας"
       ],
@@ -9243,6 +9255,9 @@
       "Free forever": [
         "Δωρεάν για πάντα"
       ],
+      "Free trial": [
+        "Δωρεάν δοκιμή"
+      ],
       "free up space by deleting older messages or other data": [
         "ελευθερώστε χώρο διαγράφοντας παλαιότερα μηνύματα ή άλλα δεδομένα"
       ],
@@ -9302,6 +9317,9 @@
       ],
       "Groups": [
         "Ομάδες"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Βοηθά στη σύνταξη, την απάντηση και τη διόρθωση email. Διαχείριση για μεμονωμένους χρήστες στο ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "εδώ"
@@ -9682,6 +9700,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Ελέγξτε ποιες εφαρμογές ${ BRAND_NAME } είναι προσβάσιμες από τα μέλη του οργανισμού σας. Αν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Ελέγξτε ποιες δυνατότητες είναι προσβάσιμες από τα μέλη του οργανισμού σας. Αν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Διαχειριστείτε τις προτιμήσεις ειδοποιήσεων ηλεκτρονικού ταχυδρομείου για ${ DOCS_APP_NAME }."
@@ -15322,12 +15343,6 @@
       "Email notifications have been enabled": [
         "Οι ειδοποιήσεις μέσω ηλεκτρονικού ταχυδρομείου έχουν ενεργοποιηθεί"
       ],
-      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
-        "Αποτυχία ενημέρωσης των ρυθμίσεων τηλεδιάσκεψης του ${ MEET_APP_NAME }"
-      ],
-      "Failed to update Zoom video conferencing settings": [
-        "Αποτυχία ενημέρωσης των ρυθμίσεων τηλεδιάσκεψης Zoom"
-      ],
       "Invalid code": [
         "Μη έγκυρος κωδικός"
       ],
@@ -17310,6 +17325,30 @@
       ],
       "Save your recovery phrase": [
         "Αποθηκεύστε τη φράση ανάκτησής σας"
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Εάν ακυρώσετε πριν από αυτή την ημερομηνία,** θα **υποβαθμιστείτε** σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } όταν λήξει η δοκιμαστική περίοδος."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Εάν δεν εγγραφείτε,** θα **υποβαθμιστείτε** στο ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Εάν δεν ακυρώσετε,** το πλήρες πλάνο σας θα ξεκινήσει και θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Εάν εγγραφείτε πριν από αυτή την ημερομηνία,** θα λάβετε **${ referrerRewardAmount }** σε πιστώσεις."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Απολαύστε το **${ planTitle }** δωρεάν μέχρι τις **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Έχετε **${ daysRemaining } ημέρα** για να εξερευνήσετε όλες τις ισχυρές λειτουργίες που προσφέρει το **${ planTitle }**.",
+        "Έχετε **${ daysRemaining } ημέρες** για να εξερευνήσετε όλες τις ισχυρές λειτουργίες που προσφέρει το **${ planTitle }**."
+      ],
+      "your subscription": [
+        "η συνδρομή σας"
       ]
     },
     "Remark about a key type option": {
@@ -20692,9 +20731,6 @@
       "${ BRAND_NAME } Account password rules": [
         "Κανόνες κωδικού ${ BRAND_NAME } Λογαριασμού"
       ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
@@ -20878,6 +20914,9 @@
       ],
       "Appearance": [
         "Εμφάνιση"
+      ],
+      "Application access": [
+        "Πρόσβαση στην εφαρμογή"
       ],
       "Apply filter to existing messages": [
         "Εφαρμογή φίλτρου στα υπάρχοντα μηνύματα"
@@ -21316,9 +21355,6 @@
       "Enable advanced account protection": [
         "Ενεργοποίηση προηγμένης προστασίας λογαριασμού"
       ],
-      "Enable for all users": [
-        "Ενεργοποίηση για όλους τους χρήστες"
-      ],
       "Encryption and keys": [
         "Κρυπτογράφηση και κλειδιά"
       ],
@@ -21364,6 +21400,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Αποτυχία δημιουργίας ${ failedUsers.length }\nλογαριασμού χρήστη.",
         "Αποτυχία δημιουργίας ${ failedUsers.length } λογαριασμών χρηστών."
+      ],
+      "Feature access": [
+        "Πρόσβαση σε λειτουργίες"
       ],
       "Filter for more focus": [
         "Φιλτράρισμα για περισσότερη εστίαση"
@@ -21484,6 +21523,9 @@
       ],
       "How to refer a friend and get credits": [
         "Πώς να συστήσετε έναν φίλο για να λάβετε πόντους"
+      ],
+      "How your free trial works": [
+        "Πως λειτουργεί η δοκιμαστική περίοδος σας"
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
@@ -22134,6 +22176,9 @@
       ],
       "Video conferencing": [
         "Τηλεδιάσκεψη"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Τηλεδιάσκεψη με ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Προβολή εκδηλώσεων οργανισμού με αναβάθμιση σε Professional"

@@ -136,8 +136,8 @@
       "Add label": [
         "Lägg till etikett"
       ],
-      "Add more ${ BRAND_NAME } Scribe seats": [
-        "Lägg till fler ${ BRAND_NAME } Scribe-säten"
+      "Add more seats": [
+        "Lägg till fler licenser"
       ],
       "Add notification": [
         "Lägg till avisering"
@@ -1417,6 +1417,9 @@
       "Start live chat": [
         "Starta livechatt"
       ],
+      "Start subscription": [
+        "Starta prenumeration"
+      ],
       "Stay": [
         "Stanna"
       ],
@@ -1431,6 +1434,9 @@
       ],
       "Submit": [
         "Skicka"
+      ],
+      "Subscribe now": [
+        "Prenumerera nu"
       ],
       "Support": [
         "Support"
@@ -1563,6 +1569,9 @@
       ],
       "User": [
         "Användare"
+      ],
+      "users and addresses": [
+        "användare och adresser"
       ],
       "Verify": [
         "Verifiera"
@@ -4378,9 +4387,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Hjälp ditt team att säkert lagra lösenord till känslig företags- och klientinformation."
-      ],
-      "If disabled, only admins will have access.": [
-        "Om det är inaktiverat har endast administratörer åtkomst."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det verkar som kontaktlistan du importerar innehåller några grupper. Granska hur dessa grupper ska importeras."
@@ -9028,6 +9034,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Ändpunkts-URL mottagen från din identitetsleverantör (t.ex. https://idp.exempel.se/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Slutar den ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Förbättra din nätverkssäkerhet"
       ],
@@ -9160,6 +9169,9 @@
       "Free forever": [
         "Gratis för alltid"
       ],
+      "Free trial": [
+        "Gratis provperiod"
+      ],
       "free up space by deleting older messages or other data": [
         "frigör utrymme genom att radera äldre meddelanden eller annan data"
       ],
@@ -9216,6 +9228,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Hjälper till att skriva, svara på och korrekturläsa e-post. Hantera för enskilda användare i ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "här"
@@ -15196,9 +15211,6 @@
       "Email notifications have been enabled": [
         "E-postaviseringar har aktiverats"
       ],
-      "Failed to update Zoom video conferencing settings": [
-        "Misslyckades att uppdatera Zoom-videokonferensinställningar"
-      ],
       "Invalid code": [
         "Ogiltig kod"
       ],
@@ -17132,6 +17144,20 @@
         "Spara din återställningsfras"
       ]
     },
+    "Referral": {
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Om du inte prenumererar** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Om du prenumererar före detta datum** får du **${ referrerRewardAmount }** i krediter."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
+      ],
+      "your subscription": [
+        "din prenumeration"
+      ]
+    },
     "Remark about a key type option": {
       "Classic": [
         "Klassisk"
@@ -17522,6 +17548,9 @@
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "För att vara säker på att telefonnumret är ditt, ange verifieringskoden som skickats till ${ boldPhoneNumber }."
       ],
+      "to prevent attackers from taking over your account": [
+        "för att förhindra angripare från att ta över ditt konto"
+      ],
       "to recover your account and data if you're ever locked out": [
         "för att återställa ditt konto och data om du någon gång blir utelåst"
       ],
@@ -17596,6 +17625,9 @@
       ],
       "You have recommended actions.": [
         "Du har rekommenderade åtgärder."
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Din e-post för återställning kan missbrukas av angripare för att ta över ditt konto. ${ disableEmail } för att öka din kontosäkerhet."
       ],
       "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
         "Din telefon för återställning kan missbrukas av angripare för att ta över ditt konto. ${ disablePhone } för att öka din kontosäkerhet."
@@ -20454,9 +20486,6 @@
       "${ BRAND_NAME } Account password rules": [
         "Lösenordsregler för ${ BRAND_NAME }-konto"
       ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skrivassistent"
       ],
@@ -20643,6 +20672,9 @@
       ],
       "Appearance": [
         "Utseende"
+      ],
+      "Application access": [
+        "Applikationsåtkomst"
       ],
       "Apply filter to existing messages": [
         "Tillämpa filter till befintliga meddelanden"
@@ -21075,9 +21107,6 @@
       "Enable advanced account protection": [
         "Aktivera avancerat kontoskydd"
       ],
-      "Enable for all users": [
-        "Aktivera för alla användare"
-      ],
       "Encryption and keys": [
         "Kryptering och nycklar"
       ],
@@ -21243,6 +21272,9 @@
       ],
       "How to refer a friend and get credits": [
         "Hur man hänvisar en vän och får krediter"
+      ],
+      "How your free trial works": [
+        "Hur din gratis provperiod fungerar"
       ],
       "Human verification": [
         "Mänsklig verifiering"
