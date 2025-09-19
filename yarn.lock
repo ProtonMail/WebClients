@@ -5450,12 +5450,12 @@ __metadata:
   linkType: hard
 
 "@jridgewell/trace-mapping@npm:^0.3.12, @jridgewell/trace-mapping@npm:^0.3.23, @jridgewell/trace-mapping@npm:^0.3.24, @jridgewell/trace-mapping@npm:^0.3.25, @jridgewell/trace-mapping@npm:^0.3.28":
-  version: 0.3.29
-  resolution: "@jridgewell/trace-mapping@npm:0.3.29"
+  version: 0.3.30
+  resolution: "@jridgewell/trace-mapping@npm:0.3.30"
   dependencies:
     "@jridgewell/resolve-uri": "npm:^3.1.0"
     "@jridgewell/sourcemap-codec": "npm:^1.4.14"
-  checksum: 10c0/fb547ba31658c4d74eb17e7389f4908bf7c44cef47acb4c5baa57289daf68e6fe53c639f41f751b3923aca67010501264f70e7b49978ad1f040294b22c37b333
+  checksum: 10c0/3a1516c10f44613b9ba27c37a02ff8f410893776b2b3dad20a391b51b884dd60f97bbb56936d65d2ff8fe978510a0000266654ab8426bdb9ceb5fb4585b19e23
   languageName: node
   linkType: hard
 
@@ -9580,6 +9580,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@protontech/authenticator-rust-core@npm:^0.25.11":
+  version: 0.25.11
+  resolution: "@protontech/authenticator-rust-core@npm:0.25.11"
+  checksum: 10c0/f78d170d1cf761a135b97e395ea5bc8b5fd7f1186c5178f6121053d8c71495fff39a9974afecc029ba675df17a0fbb23dbdd588f780c005b9b28acb4d262fcf8
+  languageName: node
+  linkType: hard
+
 "@protontech/bip39@npm:^1.1.0":
   version: 1.1.0
   resolution: "@protontech/bip39@npm:1.1.0"
@@ -13092,10 +13099,238 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/react-virtual@npm:^3.13.12":
+  version: 3.13.12
+  resolution: "@tanstack/react-virtual@npm:3.13.12"
+  dependencies:
+    "@tanstack/virtual-core": "npm:3.13.12"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10c0/0eda3d5691ec3bf93a1cdaa955f4972c7aa9a5026179622824bb52ff8c47e59ee4634208e52d77f43ffb3ce435ee39a0899d6a81f6316918ce89d68122490371
+  languageName: node
+  linkType: hard
+
+"@tanstack/virtual-core@npm:3.13.12":
+  version: 3.13.12
+  resolution: "@tanstack/virtual-core@npm:3.13.12"
+  checksum: 10c0/483f38761b73db05c181c10181f0781c1051be3350ae5c378e65057e5f1fdd6606e06e17dbaad8a5e36c04b208ea1a1344cacd4eca0dcde60f335cf398e4d698
+  languageName: node
+  linkType: hard
+
 "@tanstack/virtual-core@npm:3.13.9":
   version: 3.13.9
   resolution: "@tanstack/virtual-core@npm:3.13.9"
   checksum: 10c0/6e9526a9d52f8ddc54af8a1dc7380814b10ab38d8a4265e362a5b69c3132097ace51496d4206fe8aa90e33129aaf1a177c93d7ed018b5564b78e057fc9cdb48d
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/api@npm:^2, @tauri-apps/api@npm:^2.6.0, @tauri-apps/api@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "@tauri-apps/api@npm:2.8.0"
+  checksum: 10c0/fb111e4d7572372997b440ebe6879543fa8c4765151878e3fddfbfe809b18da29eed142ce83061d14a9ca6d896b3266dc8a4927c642d71cdc0b4277dc7e3aabf
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-darwin-arm64@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-darwin-arm64@npm:2.8.4"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-darwin-x64@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-darwin-x64@npm:2.8.4"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-linux-arm-gnueabihf@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-linux-arm-gnueabihf@npm:2.8.4"
+  conditions: os=linux & cpu=arm
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-linux-arm64-gnu@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-linux-arm64-gnu@npm:2.8.4"
+  conditions: os=linux & cpu=arm64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-linux-arm64-musl@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-linux-arm64-musl@npm:2.8.4"
+  conditions: os=linux & cpu=arm64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-linux-riscv64-gnu@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-linux-riscv64-gnu@npm:2.8.4"
+  conditions: os=linux & cpu=riscv64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-linux-x64-gnu@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-linux-x64-gnu@npm:2.8.4"
+  conditions: os=linux & cpu=x64 & libc=glibc
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-linux-x64-musl@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-linux-x64-musl@npm:2.8.4"
+  conditions: os=linux & cpu=x64 & libc=musl
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-win32-arm64-msvc@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-win32-arm64-msvc@npm:2.8.4"
+  conditions: os=win32 & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-win32-ia32-msvc@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-win32-ia32-msvc@npm:2.8.4"
+  conditions: os=win32 & cpu=ia32
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli-win32-x64-msvc@npm:2.8.4":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli-win32-x64-msvc@npm:2.8.4"
+  conditions: os=win32 & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/cli@npm:^2":
+  version: 2.8.4
+  resolution: "@tauri-apps/cli@npm:2.8.4"
+  dependencies:
+    "@tauri-apps/cli-darwin-arm64": "npm:2.8.4"
+    "@tauri-apps/cli-darwin-x64": "npm:2.8.4"
+    "@tauri-apps/cli-linux-arm-gnueabihf": "npm:2.8.4"
+    "@tauri-apps/cli-linux-arm64-gnu": "npm:2.8.4"
+    "@tauri-apps/cli-linux-arm64-musl": "npm:2.8.4"
+    "@tauri-apps/cli-linux-riscv64-gnu": "npm:2.8.4"
+    "@tauri-apps/cli-linux-x64-gnu": "npm:2.8.4"
+    "@tauri-apps/cli-linux-x64-musl": "npm:2.8.4"
+    "@tauri-apps/cli-win32-arm64-msvc": "npm:2.8.4"
+    "@tauri-apps/cli-win32-ia32-msvc": "npm:2.8.4"
+    "@tauri-apps/cli-win32-x64-msvc": "npm:2.8.4"
+  dependenciesMeta:
+    "@tauri-apps/cli-darwin-arm64":
+      optional: true
+    "@tauri-apps/cli-darwin-x64":
+      optional: true
+    "@tauri-apps/cli-linux-arm-gnueabihf":
+      optional: true
+    "@tauri-apps/cli-linux-arm64-gnu":
+      optional: true
+    "@tauri-apps/cli-linux-arm64-musl":
+      optional: true
+    "@tauri-apps/cli-linux-riscv64-gnu":
+      optional: true
+    "@tauri-apps/cli-linux-x64-gnu":
+      optional: true
+    "@tauri-apps/cli-linux-x64-musl":
+      optional: true
+    "@tauri-apps/cli-win32-arm64-msvc":
+      optional: true
+    "@tauri-apps/cli-win32-ia32-msvc":
+      optional: true
+    "@tauri-apps/cli-win32-x64-msvc":
+      optional: true
+  bin:
+    tauri: tauri.js
+  checksum: 10c0/cba247813599180ddf7346870bf5f1d8cee11dc0136a84afe689347b0a81547c261a8957ae86eb6af1c4908f3575e8fe6f022c824dad818171e53af4053fabf4
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-dialog@npm:~2":
+  version: 2.4.0
+  resolution: "@tauri-apps/plugin-dialog@npm:2.4.0"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.8.0"
+  checksum: 10c0/6c75bc0cfc3a2c0bc1298ff9ef19c5afe9273b1f24c224110ae9b37384e4d9efe8645fefeb4031cbbbba0dab1a0b0f301ac4f773349de2fd8a22bcd228b297c5
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-fs@npm:~2":
+  version: 2.4.2
+  resolution: "@tauri-apps/plugin-fs@npm:2.4.2"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.8.0"
+  checksum: 10c0/ae640f23cfd089552e0958245a10c701baf57581e898628f1cb8bf961e7f26365190d5fb0cee021d3604596d3b6a7dfd934ccdc46d3d699f9c0e9ec49a3bacd8
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-http@npm:~2":
+  version: 2.5.0
+  resolution: "@tauri-apps/plugin-http@npm:2.5.0"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.6.0"
+  checksum: 10c0/eed47bb2adf012cde4409c4decae30e6b759f5828cb959cf43fc34c5fdfe68e6670f14f1134c8c4c941bc3fdb00e312772ebd72ec94e15c56ed1b7fbd47dd91c
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-log@npm:~2":
+  version: 2.7.0
+  resolution: "@tauri-apps/plugin-log@npm:2.7.0"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.8.0"
+  checksum: 10c0/c699710898a666ebc888ec8b2a3f36d5887e5cc06f8c69e9b404438407f6a0df19840e00732a3651aa83ba5f056cba403a5a14c556d3097368e143bfe995b1a8
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-opener@npm:^2":
+  version: 2.5.0
+  resolution: "@tauri-apps/plugin-opener@npm:2.5.0"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.8.0"
+  checksum: 10c0/31503644c64678e5f5d1d995c0db145a3dabeb1bef1b9f7cfef84a83e4188c169f630207705fc6484f9e1934be6bd59de50676e4b9f1e2f628d1b54e38f00dbd
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-process@npm:~2":
+  version: 2.3.0
+  resolution: "@tauri-apps/plugin-process@npm:2.3.0"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.6.0"
+  checksum: 10c0/ef50344a7436d92278c2ef4526f72daaf3171c4d65743bbc1f7a00fa581644a8583bb8680f637a34af5c7e6a0e8722c22189290e903584fef70ed83b64b6e9c0
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-store@npm:~2":
+  version: 2.4.0
+  resolution: "@tauri-apps/plugin-store@npm:2.4.0"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.8.0"
+  checksum: 10c0/2896fe1e8d9f23015f4a586efd3dd100e8dc96a9d353dd396d7b274ec3fba45bcb4ba7f63915379c18a5a1e109301dbeb3950eee97bb542677f407c6e5229212
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-updater@npm:~2":
+  version: 2.9.0
+  resolution: "@tauri-apps/plugin-updater@npm:2.9.0"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.6.0"
+  checksum: 10c0/72ce83d1c241308a13b9929f0900e4d33453875877009166e3998e3e75a1003ac48c3641086b4d3230f0f18c64f475ad6c3556d1603fc641ca50dc9c18d61866
+  languageName: node
+  linkType: hard
+
+"@tauri-apps/plugin-window-state@npm:~2":
+  version: 2.4.0
+  resolution: "@tauri-apps/plugin-window-state@npm:2.4.0"
+  dependencies:
+    "@tauri-apps/api": "npm:^2.6.0"
+  checksum: 10c0/3db2341b224495a574b6cb1c3ac452d9c462aa1a6bbc04e72e6fcb154d6050a88376e5d6c28a0a49e8d675fe1a12c667ba1bb0f199cfd7a2262db9e450233f8d
   languageName: node
   linkType: hard
 
@@ -13799,11 +14034,11 @@ __metadata:
   linkType: hard
 
 "@types/babel__traverse@npm:*, @types/babel__traverse@npm:^7.18.0":
-  version: 7.20.7
-  resolution: "@types/babel__traverse@npm:7.20.7"
+  version: 7.28.0
+  resolution: "@types/babel__traverse@npm:7.28.0"
   dependencies:
-    "@babel/types": "npm:^7.20.7"
-  checksum: 10c0/5386f0af44f8746b063b87418f06129a814e16bb2686965a575e9d7376b360b088b89177778d8c426012abc43dd1a2d8ec3218bfc382280c898682746ce2ffbd
+    "@babel/types": "npm:^7.28.2"
+  checksum: 10c0/b52d7d4e8fc6a9018fe7361c4062c1c190f5778cf2466817cb9ed19d69fbbb54f9a85ffedeb748ed8062d2cf7d4cc088ee739848f47c57740de1c48cbf0d0994
   languageName: node
   linkType: hard
 
@@ -16112,6 +16347,40 @@ __metadata:
   version: 2.8.2
   resolution: "@zip.js/zip.js@npm:2.8.2"
   checksum: 10c0/3197bbe7b74f16e82e1386cbf5dbd25dab0f6923ddcd12e6c3bcbcf3149901e7b30ef561c6d2d1bdf6912b0b383ecfa9a3dbd21695b41876fec805a522c39150
+  languageName: node
+  linkType: hard
+
+"@zxing/browser@npm:0.1.5":
+  version: 0.1.5
+  resolution: "@zxing/browser@npm:0.1.5"
+  dependencies:
+    "@zxing/text-encoding": "npm:^0.9.0"
+  peerDependencies:
+    "@zxing/library": ^0.21.0
+  dependenciesMeta:
+    "@zxing/text-encoding":
+      optional: true
+  checksum: 10c0/458042ed56402d20a673b7f58cdd346cf15b0b2b84860c2529f7b86e774bd74a02b007bd2e6e5b6231b624a3f28d8e296ce943f7c6c78999d19300cae87d35e3
+  languageName: node
+  linkType: hard
+
+"@zxing/library@npm:0.21.3":
+  version: 0.21.3
+  resolution: "@zxing/library@npm:0.21.3"
+  dependencies:
+    "@zxing/text-encoding": "npm:~0.9.0"
+    ts-custom-error: "npm:^3.2.1"
+  dependenciesMeta:
+    "@zxing/text-encoding":
+      optional: true
+  checksum: 10c0/c6b33998847ad2fda0bce2f07f5b625e33e9dd98f84818ceb976b1193936b69b38ac3120418cca24b38441c711cfd21208b50851967bf8f301567e7f70197268
+  languageName: node
+  linkType: hard
+
+"@zxing/text-encoding@npm:^0.9.0, @zxing/text-encoding@npm:~0.9.0":
+  version: 0.9.0
+  resolution: "@zxing/text-encoding@npm:0.9.0"
+  checksum: 10c0/d15bff181d46c2ab709e7242801a8d40408aa8c19b44462e5f60e766bf59105b44957914ab6baab60d10d466a5e965f21fe890c67dfdb7d5c7f940df457b4d0d
   languageName: node
   linkType: hard
 
@@ -22271,6 +22540,24 @@ __metadata:
   dependencies:
     dequal: "npm:^2.0.0"
   checksum: 10c0/e0928ab8f94c59417a2b8389c45c55ce0a02d9ac7fd74ef62d01ba48060129e1d594501b77de01f3eeafc7cb00773819b0df74d96251cf20b31c5b3071f45c0e
+  languageName: node
+  linkType: hard
+
+"dexie-react-hooks@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "dexie-react-hooks@npm:1.1.7"
+  peerDependencies:
+    "@types/react": ">=16"
+    dexie: ^3.2 || ^4.0.1-alpha
+    react: ">=16"
+  checksum: 10c0/3ff38e715a52bff9132b483963246ea5372a282d9257c8c2bf8891c522fa0d761d1e362bb352eb63386f49ea9a55c52e1bcc5cce2019deb1eceba40d8a88631d
+  languageName: node
+  linkType: hard
+
+"dexie@npm:^4.0.11":
+  version: 4.2.0
+  resolution: "dexie@npm:4.2.0"
+  checksum: 10c0/ba3f84a769ee34910263bce0957736968ba05162eebf47d5dab3dbb599890b122ac0d4a64ceb02428e5ec6a39f66923d8531e120c6341709fce1afbc698ea37c
   languageName: node
   linkType: hard
 
@@ -36900,6 +37187,61 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"proton-authenticator@workspace:applications/authenticator":
+  version: 0.0.0-use.local
+  resolution: "proton-authenticator@workspace:applications/authenticator"
+  dependencies:
+    "@dnd-kit/core": "npm:^6.3.1"
+    "@iarna/toml": "npm:^2.2.5"
+    "@pmmmwh/react-refresh-webpack-plugin": "npm:^0.6.1"
+    "@proton/atoms": "workspace:^"
+    "@proton/colors": "workspace:^"
+    "@proton/components": "workspace:^"
+    "@proton/crypto": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/i18n": "workspace:^"
+    "@proton/icons": "workspace:^"
+    "@proton/pack": "workspace:^"
+    "@proton/pass": "workspace:^"
+    "@proton/styles": "workspace:^"
+    "@protontech/authenticator-rust-core": "npm:^0.25.11"
+    "@reduxjs/toolkit": "npm:^2.8.2"
+    "@tanstack/react-virtual": "npm:^3.13.12"
+    "@tauri-apps/api": "npm:^2"
+    "@tauri-apps/cli": "npm:^2"
+    "@tauri-apps/plugin-dialog": "npm:~2"
+    "@tauri-apps/plugin-fs": "npm:~2"
+    "@tauri-apps/plugin-http": "npm:~2"
+    "@tauri-apps/plugin-log": "npm:~2"
+    "@tauri-apps/plugin-opener": "npm:^2"
+    "@tauri-apps/plugin-process": "npm:~2"
+    "@tauri-apps/plugin-store": "npm:~2"
+    "@tauri-apps/plugin-updater": "npm:~2"
+    "@tauri-apps/plugin-window-state": "npm:~2"
+    "@types/react": "npm:^18.3.24"
+    "@types/react-dom": "npm:^18.3.7"
+    "@zxing/browser": "npm:0.1.5"
+    "@zxing/library": "npm:0.21.3"
+    cross-env: "npm:^10.0.0"
+    dexie: "npm:^4.0.11"
+    dexie-react-hooks: "npm:^1.1.7"
+    eslint: "npm:^9.35.0"
+    formik: "npm:^2.4.6"
+    html-webpack-plugin: "npm:^5.6.4"
+    jest: "npm:^30.1.3"
+    jsqr: "npm:^1.4.0"
+    mini-css-extract-plugin: "npm:^2.9.4"
+    react: "npm:^18.3.1"
+    react-dom: "npm:^18.3.1"
+    react-redux: "npm:^9.2.0"
+    tsx: "npm:^4.20.5"
+    ttag: "npm:^1.8.12"
+    typescript: "npm:^5.9.2"
+    webpack: "npm:^5.101.3"
+    webpack-dev-server: "npm:^5.2.2"
+  languageName: unknown
+  linkType: soft
+
 "proton-calendar@workspace:applications/calendar":
   version: 0.0.0-use.local
   resolution: "proton-calendar@workspace:applications/calendar"
@@ -43736,6 +44078,13 @@ __metadata:
   peerDependencies:
     typescript: ">=4.8.4"
   checksum: 10c0/9806a38adea2db0f6aa217ccc6bc9c391ddba338a9fe3080676d0d50ed806d305bb90e8cef0276e793d28c8a929f400abb184ddd7ff83a416959c0f4d2ce754f
+  languageName: node
+  linkType: hard
+
+"ts-custom-error@npm:^3.2.1":
+  version: 3.3.1
+  resolution: "ts-custom-error@npm:3.3.1"
+  checksum: 10c0/67cc807d03406d7eeb2b908408d455d253cc43b480d669e2e3ea028b9aaa2c78ad1b392425b86368bbbc3c43a15e4abe304312d87ed845091646ec1937bab982
   languageName: node
   linkType: hard
 
