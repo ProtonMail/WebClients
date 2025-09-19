@@ -1,6 +1,7 @@
 import { useCallback, useEffect } from 'react';
 
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { generateNodeUid, useDrive } from '@proton/drive/index';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -32,14 +33,16 @@ export const useTrashNodes = () => {
     const { createTrashRestoreNotification, createTrashDeleteNotification, createEmptyTrashNotificationSuccess } =
         useTrashNotifications();
     const { items: legacyNodes, isLoading: isLegacyLoading } = useLegacyTrashNodes();
-    const { trashNodes, isLoading, setLoading, setNodes, removeNodes, clearAllNodes } = useTrashStore((state) => ({
-        setLoading: state.setLoading,
-        setNodes: state.setNodes,
-        trashNodes: state.trashNodes,
-        removeNodes: state.removeNodes,
-        clearAllNodes: state.clearAllNodes,
-        isLoading: state.isLoading,
-    }));
+    const { trashNodes, isLoading, setLoading, setNodes, removeNodes, clearAllNodes } = useTrashStore(
+        useShallow((state) => ({
+            setLoading: state.setLoading,
+            setNodes: state.setNodes,
+            trashNodes: state.trashNodes,
+            removeNodes: state.removeNodes,
+            clearAllNodes: state.clearAllNodes,
+            isLoading: state.isLoading,
+        }))
+    );
     const { sortedList, sortParams, setSorting } = useSortingWithDefault(Object.values(trashNodes), DEFAULT_SORT);
 
     const populateNodesFromSDK = useCallback(
@@ -61,7 +64,7 @@ export const useTrashNodes = () => {
             setLoading(false);
         },
         // getDefaultShare will cause infinite rerenders
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
         [drive, handleError, setLoading, setNodes]
     );
 

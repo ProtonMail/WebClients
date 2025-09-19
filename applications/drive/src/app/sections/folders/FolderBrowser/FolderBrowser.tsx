@@ -134,16 +134,17 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
     const { loadThumbnail } = useBatchThumbnailLoader();
 
     const openPreview = useOpenPreview();
-    const { permissions, isLoading, role, folder } = useFolderStore(
+    const { permissions, isLoading, role, folder, hasEverLoaded } = useFolderStore(
         useShallow((state) => ({
             isLoading: state.isLoading,
             role: state.role,
             permissions: state.permissions,
             folder: state.folder,
+            hasEverLoaded: state.hasEverLoaded,
         }))
     );
 
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
     const isAdmin = role === MemberRole.Admin;
 
     const browserItems = sortedList.map((node) => ({
@@ -247,7 +248,9 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
         browserItemContextMenu.close();
     }, [shareId, linkId]);
 
-    if (!browserItems.length && !isLoading) {
+    const isEmpty = hasEverLoaded && !isLoading && !browserItems.length;
+
+    if (isEmpty) {
         if (!permissions.canEdit) {
             return <EmptyDeviceRoot />;
         }

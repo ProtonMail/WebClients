@@ -22,6 +22,7 @@ import { SortField } from '../../../store/_views/utils/useSorting';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 import { useThumbnailStore } from '../../../zustand/thumbnails/thumbnails.store';
 import { TrashItemContextMenu } from '../menus/TrashItemContextMenu';
+import { useTrashStore } from '../useTrash.store';
 import type { useTrashNodes } from '../useTrashNodes';
 import { EmptyTrash } from './EmptyTrash';
 
@@ -81,15 +82,22 @@ export function Trash({ shareId, trashView }: Props) {
     const { navigateToLink } = useDriveNavigation();
     const selectionControls = useSelection();
     const { trashNodes, isLoading, sortParams, setSorting } = trashView;
+
     const { getThumbnail } = useThumbnailStore(
         useShallow((state) => ({
             getThumbnail: state.getThumbnail,
         }))
     );
+
+    const { hasEverLoaded } = useTrashStore(
+        useShallow((state) => ({
+            hasEverLoaded: state.hasEverLoaded,
+        }))
+    );
     const { loadThumbnail } = useBatchThumbnailLoader();
     const { layout } = useUserSettings();
-    const selectedItems = getSelectedItemsId(trashNodes, selectionControls!.selectedItemIds);
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
+    const selectedItems = getSelectedItemsId(trashNodes, selectionControls?.selectedItemIds || []);
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
 
     const handleItemRender = async (item: LegacyItem) => {
         incrementItemRenderedCounter();
@@ -183,7 +191,9 @@ export function Trash({ shareId, trashView }: Props) {
         [sortParams.sortField, sortParams.sortOrder, isLoading]
     );
 
-    if (!trashNodes.length && !isLoading) {
+    const isEmpty = hasEverLoaded && !isLoading && !trashNodes.length;
+
+    if (isEmpty) {
         return <EmptyTrash />;
     }
 

@@ -14,7 +14,10 @@ interface TrashStore {
     setNodes: (trashNodes: Record<string, LegacyItem>) => void;
     removeNodes: (nodeIds: string[]) => void;
     isLoading: boolean;
-    setLoading: (value: boolean) => void;
+    hasEverLoaded: boolean;
+    setLoading: (loading: boolean) => void;
+    setHasEverLoaded: () => void;
+    checkAndSetHasEverLoaded: () => void;
     eventSubscriptions: (() => void)[] | null;
     activeContexts: Set<string>;
     subscribeToEvents: (context: string) => Promise<void>;
@@ -24,6 +27,7 @@ interface TrashStore {
 export const useTrashStore = create<TrashStore>((set, get) => ({
     trashNodes: {},
     isLoading: false,
+    hasEverLoaded: false,
     eventSubscriptions: null,
     activeContexts: new Set<string>(),
     setNodes: (trashNodes: Record<string, LegacyItem>) =>
@@ -36,10 +40,18 @@ export const useTrashStore = create<TrashStore>((set, get) => ({
             nodeIds.forEach((nodeId) => delete remainingNodes[nodeId]);
             return { trashNodes: remainingNodes };
         }),
-    setLoading: (value: boolean) =>
-        set(() => {
-            return { isLoading: value };
-        }),
+    setLoading: (isLoading: boolean) => {
+        set({ isLoading });
+        get().checkAndSetHasEverLoaded();
+    },
+    setHasEverLoaded: () => set({ hasEverLoaded: true }),
+    checkAndSetHasEverLoaded: () => {
+        const state = get();
+        if (!state.isLoading && !state.hasEverLoaded) {
+            state.setHasEverLoaded();
+        }
+    },
+
     clearAllNodes: () => set({ trashNodes: {} }),
     subscribeToEvents: async (context: string) => {
         const eventManager = getActionEventManager();

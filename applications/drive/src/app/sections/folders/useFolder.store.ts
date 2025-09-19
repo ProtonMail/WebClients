@@ -51,6 +51,7 @@ type FolderPermissions = {
 
 type FolderState = {
     isLoading: boolean;
+    hasEverLoaded: boolean;
     items: Map<string, FolderViewItem>;
     itemUids: Set<string>;
     folder?: FolderViewData;
@@ -71,12 +72,15 @@ type FolderActions = {
     reset: () => void;
     getFolderItems: () => FolderViewItem[];
     getItemUids: () => string[];
+    setHasEverLoaded: () => void;
+    checkAndSetHasEverLoaded: () => void;
 };
 
 type FolderStore = FolderState & FolderActions;
 
 const initialState: FolderState = {
     isLoading: false,
+    hasEverLoaded: false,
     items: new Map(),
     itemUids: new Set(),
     folder: undefined,
@@ -98,7 +102,10 @@ const initialState: FolderState = {
 export const useFolderStore = create<FolderStore>()(
     devtools((set, get) => ({
         ...initialState,
-        setIsLoading: (isLoading) => set({ isLoading }),
+        setIsLoading: (isLoading) => {
+            set({ isLoading });
+            get().checkAndSetHasEverLoaded();
+        },
         setItem: (item: FolderViewItem) =>
             set((state) => {
                 const updatedItems = new Map(state.items);
@@ -156,5 +163,12 @@ export const useFolderStore = create<FolderStore>()(
         setError: (error) => set({ error }),
         setRole: (role) => set({ role }),
         reset: () => set(initialState),
+        setHasEverLoaded: () => set({ hasEverLoaded: true }),
+        checkAndSetHasEverLoaded: () => {
+            const state = get();
+            if (!state.isLoading && !state.hasEverLoaded) {
+                state.setHasEverLoaded();
+            }
+        },
     }))
 );
