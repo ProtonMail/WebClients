@@ -56,20 +56,6 @@ body {
 		}
 	}
 
-	.pass-plan-card-grid {
-		display: grid;
-		grid-template-columns: repeat(1, 1fr);
-		grid-gap: 2rem 0;
-
-		@include media('>small') {
-			grid-template-columns: repeat(2, 1fr);
-		}
-
-		@include media('>large') {
-			grid-template-columns: repeat(4, 1fr);
-		}
-	}
-
 	&-button-border {
 		border: 2px solid var(--text-norm);
 		transition: all 0.2s linear;
