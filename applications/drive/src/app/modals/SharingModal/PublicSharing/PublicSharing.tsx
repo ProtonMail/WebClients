@@ -14,7 +14,6 @@ import {
     useUpsellConfig,
 } from '@proton/components';
 import { MemberRole } from '@proton/drive/index';
-import useLoading from '@proton/hooks/useLoading';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -49,7 +48,6 @@ export const PublicSharing = ({
     disabledToggle,
 }: Props) => {
     const contentRef = useRef<HTMLDivElement>(null);
-    const [isPermissionsLoading, withPermissionsLoading] = useLoading(false);
     const { createNotification } = useNotifications();
     const [driveUpsellModal, showDriveUpsellModal] = useDriveUpsellModal();
     const [user] = useUser();
@@ -73,30 +71,28 @@ export const PublicSharing = ({
     };
 
     const handleChangeRole = (role: MemberRole) => {
-        void withPermissionsLoading(() =>
-            onChangeRole({ role }).catch((error) => {
-                if (error.data.Code === API_CUSTOM_ERROR_CODES.MAX_PUBLIC_EDIT_MODE_FOR_FREE_USER) {
-                    const planName = PLAN_NAMES[user.isFree ? PLANS.DRIVE : PLANS.BUNDLE];
-                    return showDriveUpsellModal({
-                        size: 'large',
-                        'data-testid': 'public-sharing',
-                        titleModal: c('Title').t`Need to share more files with edit access?`,
-                        // translator: We can have two different plan upgrade: "Upgrade to Proton Drive Plus" or "Upgrade to Proton Drive Unlimited"
-                        description: c('Description').t`Upgrade to ${planName} to keep sharing files with edit access`,
-                        illustration: drivePlusUpgrade,
-                        closeButtonColor: 'white',
-                        onUpgrade: () => {
-                            if (upsellConfig.onUpgrade) {
-                                upsellConfig.onUpgrade();
-                            } else {
-                                goToSettings(upsellConfig.upgradePath);
-                            }
-                        },
-                    });
-                }
-                throw error;
-            })
-        );
+        return onChangeRole({ role }).catch((error) => {
+            if (error.data.Code === API_CUSTOM_ERROR_CODES.MAX_PUBLIC_EDIT_MODE_FOR_FREE_USER) {
+                const planName = PLAN_NAMES[user.isFree ? PLANS.DRIVE : PLANS.BUNDLE];
+                return showDriveUpsellModal({
+                    size: 'large',
+                    'data-testid': 'public-sharing',
+                    titleModal: c('Title').t`Need to share more files with edit access?`,
+                    // translator: We can have two different plan upgrade: "Upgrade to Proton Drive Plus" or "Upgrade to Proton Drive Unlimited"
+                    description: c('Description').t`Upgrade to ${planName} to keep sharing files with edit access`,
+                    illustration: drivePlusUpgrade,
+                    closeButtonColor: 'white',
+                    onUpgrade: () => {
+                        if (upsellConfig.onUpgrade) {
+                            upsellConfig.onUpgrade();
+                        } else {
+                            goToSettings(upsellConfig.upgradePath);
+                        }
+                    },
+                });
+            }
+            throw error;
+        });
     };
 
     const handleToggle = () => {
@@ -141,7 +137,6 @@ export const PublicSharing = ({
                         ) : (
                             <RoleDropdownMenu
                                 disabled={!url || isLoading}
-                                isLoading={isPermissionsLoading}
                                 selectedRole={role}
                                 onChangeRole={handleChangeRole}
                                 publicLinkOptions
