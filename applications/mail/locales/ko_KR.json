@@ -201,9 +201,6 @@
       "Change page": [
         "페이지 변경"
       ],
-      "Change password": [
-        "비밀번호 변경"
-      ],
       "Change sorting": [
         "정렬 변경"
       ],
@@ -431,6 +428,9 @@
       ],
       "Disable alias": [
         "별칭 비활성화"
+      ],
+      "Disable categories": [
+        "카테고리 비활성화"
       ],
       "Disabling alias": [
         "별칭 비활성화하기"
@@ -761,6 +761,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME }로 참여하기"
+      ],
+      "Keep categories": [
+        "카테고리 유지"
       ],
       "Keep my subscription": [
         "내 구독 유지하기"
@@ -1975,6 +1978,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험판이 종료된 후, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "체험 기간 동안 최대 ${ TRIAL_MAX_DEDICATED_IPS }개의 전용 서버를 사용할 수 있습니다."
       ],
@@ -2224,6 +2233,9 @@
       ],
       "Manual setup problem": [
         "수동 설정 문제"
+      ],
+      "Meet problem": [
+        "문제 발생"
       ],
       "Other": [
         "기타"
@@ -6583,6 +6595,9 @@
       ],
       "All messages stored with this label will be permanently deleted.": [
         "라벨이 저장된 모든 메시지들이 완전히 삭제되었습니다."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "모든 메시지가 받은 편지함에 표시되며, 카테고리 탭과 태그는 더 이상 표시되지 않습니다. "
       ],
       "All your calendars are disabled.": [
         "사용자의 모든 캘린더가 비활성화 되었습니다."
@@ -14083,9 +14098,6 @@
       "Account security": [
         "계정 보안"
       ],
-      "Account temporarily locked": [
-        "계정 일시 잠김"
-      ],
       "Action all conversations": [
         "전체 대화 조치"
       ],
@@ -14316,6 +14328,9 @@
       ],
       "Desktop": [
         "데스크톱"
+      ],
+      "Disable categories?": [
+        "카테고리를 비활성화하시겠어요?"
       ],
       "Discover your subscription benefits": [
         "구독 혜택을 알아보세요"
