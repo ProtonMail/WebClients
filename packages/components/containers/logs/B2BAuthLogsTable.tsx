@@ -12,6 +12,7 @@ import Time from '@proton/components/components/time/Time';
 import type { B2BAuthLog } from '@proton/shared/lib/authlog';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
+import { NoEventsInfo } from '../b2bDashboard/NoEventsInfo';
 import EventCell from './EventCell';
 
 interface Props {
@@ -37,6 +38,10 @@ const B2BAuthLogsTable = ({ logs, loading, error, userSection = false, onEmailOr
                 {error}
             </Alert>
         );
+    }
+
+    if (logs.length === 0) {
+        return <NoEventsInfo />;
     }
 
     const headerCells: HeaderCell[] = [
