@@ -130,7 +130,7 @@ export const UpgradePlanStep: FC<Props> = ({ onContinue }) => {
     return (
         <Layout>
             <div className="flex flex-column items-center w-full">
-                <div className="pass-plan-card-grid">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-8">
                     {plans.map((plan) => (
                         <PlanCard key={String(plan.title)} {...plan} />
                     ))}
