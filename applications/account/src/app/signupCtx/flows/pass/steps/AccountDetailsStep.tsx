@@ -108,7 +108,7 @@ export const AccountDetailsStep: FC<Props> = ({ onContinue }) => {
 
                 <SwitchSignupType />
 
-                <div className="fade-in-up">{passwordInputs}</div>
+                {passwordInputs}
 
                 <Button
                     loading={loading}
