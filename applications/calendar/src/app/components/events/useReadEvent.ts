@@ -176,8 +176,6 @@ const useReadEvent = (
                             )
                         );
                     } else {
-                        // This is normal during initial loading, so log as warning instead of error
-                        console.warn('[useReadEvent] No attendees to process');
                         return; // No attendees to process
                     }
 
@@ -187,7 +185,6 @@ const useReadEvent = (
                             const email = attendee.value.replace('mailto:', '');
                             // Validate email isn't empty or invalid
                             if (!email || email === 'undefined' || email.trim() === '') {
-                                console.warn('[useReadEvent] Skipping attendee with invalid email');
                                 return null;
                             }
                             return {
