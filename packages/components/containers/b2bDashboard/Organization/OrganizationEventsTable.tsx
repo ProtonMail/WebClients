@@ -12,6 +12,7 @@ import TimeComponent from '@proton/components/components/time/Time';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
+import { NoEventsInfo } from '../NoEventsInfo';
 import type { OrganizationEvent } from './interface';
 
 interface Props {
@@ -40,6 +41,10 @@ const OrganizationEventsTable = ({
         key: 'time',
         direction: SORT_DIRECTION.DESC,
     });
+
+    if (events.length === 0) {
+        return <NoEventsInfo />;
+    }
 
     const toggleSort = () => {
         setSortConfig((prevSortConfig) => {
