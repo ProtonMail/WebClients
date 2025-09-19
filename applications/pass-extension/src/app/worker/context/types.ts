@@ -5,9 +5,9 @@ import type { AutoFillService } from 'proton-pass-extension/app/worker/services/
 import type { AutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
 import type { B2BEventsService } from 'proton-pass-extension/app/worker/services/b2b';
 import type { FormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
-import type { FrameService } from 'proton-pass-extension/app/worker/services/frames';
 import type { I18NService } from 'proton-pass-extension/app/worker/services/i18n';
-import type { InjectionService } from 'proton-pass-extension/app/worker/services/injection';
+import type { ContentScriptService } from 'proton-pass-extension/app/worker/services/injection';
+import type { InlineService } from 'proton-pass-extension/app/worker/services/inline';
 import type { LoggerService } from 'proton-pass-extension/app/worker/services/logger';
 import type { OTPService } from 'proton-pass-extension/app/worker/services/otp';
 import type { Passkeyservice } from 'proton-pass-extension/app/worker/services/passkey';
@@ -45,9 +45,9 @@ export interface WorkerContextInterface {
         clipboard: ClipboardService;
         core: PassCoreProxy;
         formTracker: FormTrackerService;
-        frame: FrameService;
         i18n: I18NService;
-        injection: InjectionService;
+        injection: ContentScriptService;
+        inline: InlineService;
         logger: LoggerService;
         monitor: MonitorService;
         otp: OTPService;

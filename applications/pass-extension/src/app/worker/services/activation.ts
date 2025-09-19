@@ -128,7 +128,7 @@ export const createActivationService = () => {
                 await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
             }
 
-            void ctx.service.injection.updateInjections();
+            void ctx.service.injection.updateScripts();
             ctx.service.spotlight.onUpdate();
 
             return ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: true });
@@ -146,7 +146,7 @@ export const createActivationService = () => {
                 void ctx.service.spotlight.onInstall();
             }
 
-            void ctx.service.injection.updateInjections();
+            void ctx.service.injection.updateScripts();
         }
     });
 

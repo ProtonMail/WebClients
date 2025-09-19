@@ -20,7 +20,7 @@ export const createInlineService = ({
     /** NOTE: This should only be spawned in the top-frame */
     if (!isMainFrame()) throw new Error('InlineService should only be created in top-frame');
 
-    const { transport } = controller;
+    const { channel } = controller;
     const iframes = createIFrameService(elements);
     const activeListeners = createListenerStore();
 
@@ -199,20 +199,20 @@ export const createInlineService = ({
     return {
         init: () => {
             iframes.init();
-            transport.register(WorkerMessageType.INLINE_DROPDOWN_OPEN, onInlineDropdownOpen);
-            transport.register(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onInlineDropdownClose);
-            transport.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onInlineDropdownState);
-            transport.register(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onInlineDropdownAttach);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_OPEN, onInlineDropdownOpen);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onInlineDropdownClose);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onInlineDropdownState);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onInlineDropdownAttach);
         },
 
         setTheme: iframes.setTheme,
 
         destroy: () => {
             iframes.destroy();
-            transport.unregister(WorkerMessageType.INLINE_DROPDOWN_OPEN, onInlineDropdownOpen);
-            transport.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onInlineDropdownClose);
-            transport.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onInlineDropdownState);
-            transport.unregister(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onInlineDropdownAttach);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_OPEN, onInlineDropdownOpen);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onInlineDropdownClose);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onInlineDropdownState);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onInlineDropdownAttach);
         },
 
         sync,

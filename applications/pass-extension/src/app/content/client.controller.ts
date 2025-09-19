@@ -46,7 +46,7 @@ export interface ClientController {
     deferred: boolean;
     instance: MaybeNull<ContentScriptClient>;
     observer: PageObserver;
-    transport: FrameMessageBroker;
+    channel: FrameMessageBroker;
 }
 
 type ClientControllerOptions = Omit<ContentScriptClientFactoryOptions, 'controller'> & {
@@ -102,13 +102,13 @@ export const createClientController = ({
 
     const controller: ClientController = {
         instance: null as MaybeNull<ContentScriptClient>,
-        transport,
+        channel: transport,
         observer,
         deferred: false,
 
         init: async () => {
-            controller.transport.register(WorkerMessageType.UNLOAD_CONTENT_SCRIPT, () => controller.destroy('unload'));
-            controller.transport.register(WorkerMessageType.FRAME_QUERY, onFrameQuery);
+            controller.channel.register(WorkerMessageType.UNLOAD_CONTENT_SCRIPT, () => controller.destroy('unload'));
+            controller.channel.register(WorkerMessageType.FRAME_QUERY, onFrameQuery);
 
             registerLoggerEffect((...logs) =>
                 sendMessage(
@@ -194,7 +194,7 @@ export const createClientController = ({
 
             listeners.removeAll();
             controller.stop(String(reason ?? 'destroyed'));
-            controller.transport.destroy();
+            controller.channel.destroy();
             controller.observer.destroy();
         },
     };

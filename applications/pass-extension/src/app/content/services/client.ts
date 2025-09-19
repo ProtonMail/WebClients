@@ -197,7 +197,7 @@ export const createContentScriptClient = ({
         return true;
     };
 
-    controller.transport.register(WorkerMessageType.AUTOFILL_CHECK_FORM, onCheckForm);
+    controller.channel.register(WorkerMessageType.AUTOFILL_CHECK_FORM, onCheckForm);
 
     return client;
 };

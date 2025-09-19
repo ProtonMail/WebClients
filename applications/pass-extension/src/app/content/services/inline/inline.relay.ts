@@ -24,7 +24,7 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
      * ensures the the top and sub-frame states remain in sync */
     const queue = createAsyncQueue();
     const activeListeners = createListenerStore();
-    const { transport } = controller;
+    const { channel } = controller;
 
     const dropdown: AbstractInlineService['dropdown'] = {
         attach: () => {
@@ -144,10 +144,10 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
 
     return {
         init: () => {
-            transport.register(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onInlineDropdownClosed);
+            channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onInlineDropdownClosed);
         },
         destroy: () => {
-            transport.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onInlineDropdownClosed);
+            channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onInlineDropdownClosed);
         },
 
         setTheme: noop,
