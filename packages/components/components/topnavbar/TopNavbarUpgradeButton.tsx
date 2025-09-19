@@ -14,6 +14,7 @@ import { useRedirectToAccountApp } from '@proton/components/containers/desktop/u
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
+import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import { isTrial } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -37,6 +38,8 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     const { APP_NAME } = useConfig();
     const goToSettings = useSettingsLink();
 
+    const hasTrialPaymentMethods = useTrialOnlyPaymentMethods();
+
     const upgradePathname = getUpgradePath({ user, subscription, app: APP_NAME });
 
     const { viewportWidth } = useActiveBreakpoint();
@@ -50,7 +53,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
 
     // We want to have metrics from where the user has clicked on the upgrade button
     const displayUpgradeButton =
-        ((user.isFree && !user.hasPassLifetime) || isTrial(subscription)) &&
+        ((user.isFree && !user.hasPassLifetime) || (isTrial(subscription) && !hasTrialPaymentMethods)) &&
         !isB2BTrial &&
         !location.pathname.endsWith(upgradePathname);
     const upgradeText = c('specialoffer: Link').t`Upgrade`;
