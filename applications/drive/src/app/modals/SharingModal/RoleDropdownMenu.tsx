@@ -6,6 +6,7 @@ import { Tooltip } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } from '@proton/components';
 import { MemberRole, NonProtonInvitationState } from '@proton/drive';
+import useLoading from '@proton/hooks/useLoading';
 
 export const MenuItem = ({
     iconName,
@@ -31,12 +32,11 @@ export const roleOptions = [MemberRole.Viewer, MemberRole.Editor];
 
 interface Props {
     selectedRole: MemberRole;
-    onChangeRole: (role: MemberRole) => void;
-    onRemoveAccess?: () => void;
+    onChangeRole: (role: MemberRole) => Promise<void> | void;
+    onRemoveAccess?: () => Promise<void>;
     onCopyInvitationLink?: () => void;
-    onResendInvitationEmail?: () => void;
+    onResendInvitationEmail?: () => Promise<void>;
     externalInvitationState?: NonProtonInvitationState;
-    isLoading?: boolean;
     disabled?: boolean;
     autocompleteOptions?: boolean;
     publicLinkOptions?: boolean;
@@ -50,10 +50,10 @@ export const RoleDropdownMenu = ({
     onCopyInvitationLink,
     onResendInvitationEmail,
     externalInvitationState,
-    isLoading = false,
     autocompleteOptions = false,
     publicLinkOptions = false,
 }: Props) => {
+    const [isLoading, withLoading] = useLoading(false);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const externalInvitationStateLabels: { [key in NonProtonInvitationState]: string } = {
@@ -135,7 +135,15 @@ export const RoleDropdownMenu = ({
                                 isSelected={role === selectedRole}
                                 iconName={memberRoleIcons[role]}
                                 label={label}
-                                onClick={() => onChangeRole(role)}
+                                onClick={() => {
+                                    // Autocomplete dropdown for exemple is not an async request so we don't need withLoading
+                                    const result = onChangeRole(role);
+                                    const isPromise = (value: void | Promise<void>): value is Promise<void> =>
+                                        value instanceof Promise;
+                                    if (isPromise(result)) {
+                                        void withLoading(result);
+                                    }
+                                }}
                             />
                         );
                     })}
@@ -144,7 +152,7 @@ export const RoleDropdownMenu = ({
                             <MenuItem
                                 iconName="paper-plane-horizontal"
                                 label={c('Action').t`Resend invite`}
-                                onClick={onResendInvitationEmail}
+                                onClick={() => withLoading(onResendInvitationEmail)}
                             />
                         )}
                     {onCopyInvitationLink && (
@@ -155,7 +163,11 @@ export const RoleDropdownMenu = ({
                         />
                     )}
                     {onRemoveAccess && (
-                        <MenuItem iconName="cross-big" label={c('Action').t`Remove access`} onClick={onRemoveAccess} />
+                        <MenuItem
+                            iconName="cross-big"
+                            label={c('Action').t`Remove access`}
+                            onClick={() => withLoading(onRemoveAccess)}
+                        />
                     )}
                 </DropdownMenu>
             </Dropdown>
