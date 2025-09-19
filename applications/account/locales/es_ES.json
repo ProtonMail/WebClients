@@ -136,8 +136,8 @@
       "Add label": [
         "Añadir una etiqueta"
       ],
-      "Add more ${ BRAND_NAME } Scribe seats": [
-        "Añadir más asientos para ${ BRAND_NAME } Scribe"
+      "Add more seats": [
+        "Añadir más licencias"
       ],
       "Add notification": [
         "Añadir notificación"
@@ -1417,6 +1417,9 @@
       "Start live chat": [
         "Iniciar un chat en directo"
       ],
+      "Start subscription": [
+        "Iniciar suscripción"
+      ],
       "Stay": [
         "Permanecer"
       ],
@@ -1431,6 +1434,9 @@
       ],
       "Submit": [
         "Enviar"
+      ],
+      "Subscribe now": [
+        "Suscríbete ahora"
       ],
       "Support": [
         "Soporte"
@@ -1563,6 +1569,9 @@
       ],
       "User": [
         "Usuario"
+      ],
+      "users and addresses": [
+        "usuarios y direcciones"
       ],
       "Verify": [
         "Verificar"
@@ -4401,9 +4410,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ayuda a tu equipo a almacenar de forma segura las contraseñas de información confidencial de la empresa y de los clientes."
-      ],
-      "If disabled, only admins will have access.": [
-        "En caso de desactivación, solo los administradores tendrán acceso."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que la lista de contactos que estás importando contiene algunos grupos. Verifica cómo deben importarse estos grupos."
@@ -8480,6 +8486,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permite que los usuarios se conecten a servidores compartidos seguros desde la sección **Países** de la aplicación ${ VPN_APP_NAME }."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permite añadir fácilmente enlaces a videoconferencias de ${ MEET_APP_NAME } en tus invitaciones de calendario."
+      ],
       "Already allocated": [
         "Ya asignado"
       ],
@@ -9076,6 +9085,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL del punto final recibida de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Acaba el ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Aumenta la seguridad de tu red"
       ],
@@ -9208,6 +9220,9 @@
       "Free forever": [
         "Gratis para siempre"
       ],
+      "Free trial": [
+        "Prueba gratuita"
+      ],
       "free up space by deleting older messages or other data": [
         "liberar espacio eliminando mensajes antiguos u otros datos"
       ],
@@ -9267,6 +9282,9 @@
       ],
       "Groups": [
         "Grupos"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Ayuda para escribir, responder y corregir correos electrónicos. Administrar para usuarios individuales en ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "aquí"
@@ -9647,6 +9665,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administra las aplicaciones ${ BRAND_NAME } a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Administra las funciones a las que los miembros de tu organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestiona tus preferencias de notificaciones por correo electrónico para ${ DOCS_APP_NAME }."
@@ -15275,12 +15296,6 @@
       "Email notifications have been enabled": [
         "Se han activado las notificaciones de correo electrónico."
       ],
-      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
-        "Error al actualizar los ajustes de la videoconferencia de ${ MEET_APP_NAME }"
-      ],
-      "Failed to update Zoom video conferencing settings": [
-        "Error al actualizar los ajustes de la videoconferencia de Zoom"
-      ],
       "Invalid code": [
         "Código no válido"
       ],
@@ -17350,6 +17365,30 @@
       ],
       "Save your recovery phrase": [
         "Guardar tu frase de recuperación"
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Si cancelas antes de esta fecha,** pasarás a un **plan inferior** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } cuando finalice la prueba."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Si no te suscribes,** pasarás a un **plan inferior** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Si no cancelas,** comenzará tu plan completo y recibirás **${ referrerRewardAmount }** en créditos."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Si te suscribes antes de esta fecha,** recibirás **${ referrerRewardAmount }** en créditos."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Disfruta de **${ planTitle }** gratis hasta el **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Te queda **${ daysRemaining } día** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte.",
+        "Te quedan **${ daysRemaining } días** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte."
+      ],
+      "your subscription": [
+        "tu suscripción"
       ]
     },
     "Remark about a key type option": {
@@ -20740,9 +20779,6 @@
       "${ BRAND_NAME } Account password rules": [
         "Reglas de contraseña de la cuenta de ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistente de escritura ${ BRAND_NAME } Scribe"
       ],
@@ -20926,6 +20962,9 @@
       ],
       "Appearance": [
         "Apariencia"
+      ],
+      "Application access": [
+        "Acceso a la aplicación"
       ],
       "Apply filter to existing messages": [
         "Aplicar el filtro a los mensajes existentes"
@@ -21364,9 +21403,6 @@
       "Enable advanced account protection": [
         "Activar la protección avanzada de la cuenta"
       ],
-      "Enable for all users": [
-        "Activar para todos los usuarios"
-      ],
       "Encryption and keys": [
         "Cifrado y claves"
       ],
@@ -21412,6 +21448,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Error al crear ${ failedUsers.length } cuenta de usuario.",
         "Error al crear ${ failedUsers.length } cuentas de usuario."
+      ],
+      "Feature access": [
+        "Acceso a funciones"
       ],
       "Filter for more focus": [
         "Filtra tus mensajes para una mejor concentración"
@@ -21532,6 +21571,9 @@
       ],
       "How to refer a friend and get credits": [
         "Cómo referir a un amigo y obtener créditos"
+      ],
+      "How your free trial works": [
+        "Cómo funciona tu prueba gratuita"
       ],
       "Human verification": [
         "Verificación humana"
@@ -22182,6 +22224,9 @@
       ],
       "Video conferencing": [
         "Videoconferencia"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferencias con ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Consulta los eventos de la organización al mejorar a Professional"
