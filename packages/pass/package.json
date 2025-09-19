@@ -8,6 +8,7 @@
         "generate:api-types": "API=${API:-proton.black} ./utils/openapi/index.ts \"https://${API}/api/internal/doc?page=pass\" > ./types/api/pass.ts",
         "generate:proto": "scripts/generate-protos.sh",
         "generate:rule-types": "./lib/extension/rules/generate.sh",
+        "generator:openapi": "./utils/openapi/index.ts",
         "i18n:validate": "proton-i18n validate lint-functions",
         "install:additional-tools": "npm i @redux-devtools/cli@latest -g",
         "lint": "eslint --quiet",
