@@ -15,7 +15,11 @@ export const getClipboardTTLOptions = (): [ttl: number, label: string][] => [
     [120_000, c('Label').t`2 minutes`],
 ];
 
-export const ClipboardSettings: FC = () => {
+export const getDefaultClipboardTTLOption = () => getClipboardTTLOptions()?.[3];
+
+type Props = { disabled?: boolean };
+
+export const ClipboardSettings: FC<Props> = ({ disabled = false }) => {
     const storedValue = useSelector(selectClipboardTTL);
     const setClipboardTTL = useSetClipboardTTL();
 
@@ -24,7 +28,7 @@ export const ClipboardSettings: FC = () => {
 
     return (
         <>
-            <SelectTwo onValue={setClipboardTTL} value={value}>
+            <SelectTwo onValue={setClipboardTTL} value={value} disabled={disabled}>
                 {options.map(([ttl, label]) => (
                     <Option key={ttl} value={ttl} title={label} />
                 ))}
