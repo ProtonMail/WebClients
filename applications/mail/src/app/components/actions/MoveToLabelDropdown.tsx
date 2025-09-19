@@ -26,6 +26,7 @@ import { getStandardFolders } from '../../helpers/labels';
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { useScrollToItem } from '../../hooks/useScrollToItem';
 import type { Element } from '../../models/element';
 import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
@@ -147,6 +148,8 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
 
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
+
+    const { scrollToItem, addRef } = useScrollToItem();
 
     const initialState = useMemo(
         () => getInitialState(labels, getElementsFromIDs(selectedIDs), labelID, selectAll),
@@ -314,6 +317,7 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
 
     const handleAddNewLabel = (label?: Partial<Label>) => {
         applyCheck([label?.ID || ''], true);
+        scrollToItem(label?.ID);
     };
 
     const handleCreate = () => {
@@ -359,6 +363,7 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
                         {list.map((label, index) => (
                             <li
                                 key={label.ID}
+                                ref={(el) => addRef(label.ID, el)}
                                 className={clsx(
                                     'dropdown-item dropdown-item-button cursor-pointer w-full flex flex-nowrap items-center py-2 px-6',
                                     index === 0 && 'mt-3'
