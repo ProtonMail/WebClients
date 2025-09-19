@@ -73,6 +73,7 @@ export function LegacyGrid({ state, isReadonly, users, userName }: LegacyGridPro
         canvasGridRef.current = instance
         exposeCanvasGrid(instance, state)
       }}
+      autoFocus={true}
       showGridLines={useUI((ui) => ui.view.gridLines.enabled)}
       borderStyles={state.searchState.borderStyles}
       scale={state.scale}
