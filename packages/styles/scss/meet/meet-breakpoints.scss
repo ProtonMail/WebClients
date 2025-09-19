@@ -1,0 +1,12 @@
+@use '../lib/im-to-em' as *;
+
+// Meet breakpoints
+$breakpoints: im-to-em(
+	(
+		'xlarge': 1500px,
+		'large': 1150px,
+		'medium': 1050px,
+		'small': 680px,
+		'xsmall': 450px,
+	)
+);
