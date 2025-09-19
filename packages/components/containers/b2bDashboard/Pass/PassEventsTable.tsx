@@ -16,6 +16,7 @@ import { APPS, SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { NoEventsInfo } from '../NoEventsInfo';
 import { getDesciptionText, getDescriptionTextWithLink } from './helpers';
 import type { PassEvent } from './interface';
 
@@ -122,6 +123,10 @@ const PassEventsTable = ({ events, loading, onEventClick, onTimeClick, onEmailOr
         });
         onToggleSort(sortConfig.direction);
     };
+
+    if (events.length === 0) {
+        return <NoEventsInfo />;
+    }
 
     return (
         <Table responsive="cards">
