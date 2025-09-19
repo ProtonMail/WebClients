@@ -72,9 +72,6 @@
       "Add external address": [
         "Adicionar endereço externo"
       ],
-      "Add more ${ BRAND_NAME } Scribe seats": [
-        "Adicionar mais assentos do ${ BRAND_NAME } Scribe"
-      ],
       "Add PayPal": [
         "Adicionar PayPal"
       ],
@@ -885,6 +882,9 @@
       "Start live chat": [
         "Iniciar chat ao vivo"
       ],
+      "Start subscription": [
+        "Iniciar assinatura"
+      ],
       "Stay": [
         "Permanecer"
       ],
@@ -893,6 +893,9 @@
       ],
       "Submit": [
         "Enviar"
+      ],
+      "Subscribe now": [
+        "Assine agora"
       ],
       "Support": [
         "Suporte"
@@ -989,6 +992,9 @@
       ],
       "User": [
         "Usuário"
+      ],
+      "users and addresses": [
+        "usuários e endereços"
       ],
       "Verify": [
         "Verificar"
@@ -3136,9 +3142,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Auxilie sua equipe a armazenar de forma segura as senhas relacionadas a informações sensíveis da empresa e dos clientes."
-      ],
-      "If disabled, only admins will have access.": [
-        "Se desabilitado, somente administradores terão acesso."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
@@ -5681,6 +5684,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permitir que os usuários se conectem a servidores compartilhados seguros na seção **Países** do aplicativo ${ VPN_APP_NAME }."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permite facilmente adicionar links de videoconferência do ${ MEET_APP_NAME } aos seus convites de calendário."
+      ],
       "Already allocated": [
         "Já alocado"
       ],
@@ -6067,6 +6073,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL do endpoint recebido do seu provedor de identidade (por exemplo, https://idp.example.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Termina em ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Melhore sua segurança de rede"
       ],
@@ -6150,6 +6159,9 @@
       ],
       "Free forever": [
         "Grátis para sempre"
+      ],
+      "Free trial": [
+        "Avaliação gratuita"
       ],
       "Gain visibility across your organization": [
         "Obtenha visibilidade em toda a sua organização"
@@ -6442,6 +6454,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gerencie quais aplicativos da ${ BRAND_NAME } os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Gerencie quais recursos os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
@@ -10104,12 +10119,6 @@
       "Downloaded 2FA recovery codes": [
         "Baixar código de recuperação de A2F"
       ],
-      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
-        "Falha ao atualizar as configurações de videoconferência de ${ MEET_APP_NAME }"
-      ],
-      "Failed to update Zoom video conferencing settings": [
-        "Falha ao atualizar as configurações de videoconferência do Zoom"
-      ],
       "Invalid code": [
         "Código inválido"
       ],
@@ -11418,6 +11427,21 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar o seu número de telefone aumenta a segurança de sua conta e permite opções adicionais de recuperação."
+      ]
+    },
+    "Referral": {
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Se você não cancelar, ** seu plano completo começará e você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Se você se inscrever antes desta data, ** você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Você tem **${ daysRemaining } dia restante** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer.",
+        "Você tem **${ daysRemaining } dias restantes** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer."
+      ],
+      "your subscription": [
+        "sua assinatura"
       ]
     },
     "Remove organization logo": {
@@ -13606,9 +13630,6 @@
       "${ BRAND_NAME } Account password rules": [
         "Regras de senha da conta da ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistente de escrita ${ BRAND_NAME } Scribe"
       ],
@@ -13744,6 +13765,9 @@
       ],
       "Appearance": [
         "Aparência"
+      ],
+      "Application access": [
+        "Acesso ao aplicativo"
       ],
       "Apply gift code": [
         "Adicionar código de vale-presente"
@@ -14047,9 +14071,6 @@
       "Enable advanced account protection": [
         "Ativar proteção avançada de conta com"
       ],
-      "Enable for all users": [
-        "Ativar para todos os usuários"
-      ],
       "Enhance security with 2FA": [
         "Aumente a segurança com 2FA"
       ],
@@ -14074,6 +14095,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Erro ao criar ${ failedUsers.length } conta\nde usuário.",
         "Erro ao criar ${ failedUsers.length } contas de usuário."
+      ],
+      "Feature access": [
+        "Acesso a recursos"
       ],
       "Find email or username": [
         "Encontrar e-mail ou nome de usuário"
@@ -14134,6 +14158,9 @@
       ],
       "How to choose a good logo": [
         "Como escolher um bom logotipo"
+      ],
+      "How your free trial works": [
+        "Como funciona seu teste gratuito"
       ],
       "Human verification": [
         "Verificação humana"
@@ -14499,6 +14526,9 @@
       ],
       "Video conferencing": [
         "Videoconferência"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferência com ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Consulta os eventos da organização ao fazer upgrade para Professional."
