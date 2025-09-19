@@ -3,11 +3,15 @@ import userEvent from '@testing-library/user-event';
 
 import { usePopperAnchor } from '@proton/components';
 import { MemberRole, NonProtonInvitationState } from '@proton/drive';
+import useLoading from '@proton/hooks/useLoading';
 
 import { RoleDropdownMenu } from './RoleDropdownMenu';
 
 jest.mock('@proton/components/components/popper/usePopperAnchor');
+jest.mock('@proton/hooks/useLoading');
+
 const mockedUsePopperAnchor = jest.mocked(usePopperAnchor);
+const mockedUseLoading = jest.mocked(useLoading);
 
 const defaultUsePopperAnchorProps = {
     anchorRef: { current: null },
@@ -16,7 +20,11 @@ const defaultUsePopperAnchorProps = {
     toggle: jest.fn(),
     close: jest.fn(),
 };
+
+const defaultUseLoadingProps = [false, jest.fn(), jest.fn()] as const;
+
 mockedUsePopperAnchor.mockReturnValue(defaultUsePopperAnchorProps);
+mockedUseLoading.mockReturnValue(defaultUseLoadingProps as any);
 
 describe('RoleDropdownMenu', () => {
     const defaultProps = {
@@ -27,6 +35,8 @@ describe('RoleDropdownMenu', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
+        mockedUsePopperAnchor.mockReturnValue(defaultUsePopperAnchorProps);
+        mockedUseLoading.mockReturnValue(defaultUseLoadingProps as any);
     });
 
     it('renders with default viewer role', () => {
@@ -87,8 +97,9 @@ describe('RoleDropdownMenu', () => {
         expect(screen.getByText('Viewer')).toBeDisabled();
     });
 
-    it('shows loading state when isLoading is true', () => {
-        render(<RoleDropdownMenu {...defaultProps} isLoading={true} />);
+    it('shows loading state when internal loading is true', () => {
+        mockedUseLoading.mockReturnValueOnce([true, jest.fn(), jest.fn()] as any);
+        render(<RoleDropdownMenu {...defaultProps} />);
         expect(screen.getByText('Viewer')).toBeDisabled();
         expect(screen.getByTestId('circle-loader')).toBeInTheDocument();
     });
@@ -102,5 +113,32 @@ describe('RoleDropdownMenu', () => {
         await user.click(editorOption);
 
         expect(onChangeRole).toHaveBeenCalledWith(MemberRole.Editor);
+    });
+
+    it('does not show loading state with sync onChangeRole', async () => {
+        mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
+        const onChangeRole = jest.fn();
+        render(<RoleDropdownMenu {...defaultProps} onChangeRole={onChangeRole} />);
+
+        const editorOption = screen.getByText('Make editor');
+        await user.click(editorOption);
+
+        expect(onChangeRole).toHaveBeenCalledWith(MemberRole.Editor);
+        expect(screen.queryByTestId('circle-loader')).not.toBeInTheDocument();
+    });
+
+    it('shows loading state with async onChangeRole', async () => {
+        mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
+        const withLoading = jest.fn((promise) => promise);
+        mockedUseLoading.mockReturnValueOnce([false, withLoading, jest.fn()] as any);
+
+        const onChangeRole = jest.fn().mockResolvedValue(undefined);
+        render(<RoleDropdownMenu {...defaultProps} onChangeRole={onChangeRole} />);
+
+        const editorOption = screen.getByText('Make editor');
+        await user.click(editorOption);
+
+        expect(onChangeRole).toHaveBeenCalledWith(MemberRole.Editor);
+        expect(withLoading).toHaveBeenCalled();
     });
 });

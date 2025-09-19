@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { CircleLoader, UserAvatar } from '@proton/atoms';
 import { useSortedList } from '@proton/components';
 import type { MemberRole } from '@proton/drive/index';
-import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
@@ -36,7 +35,6 @@ export const DirectSharingListing = ({
     viewOnly,
 }: Props) => {
     const [contactEmails] = useContactEmails();
-    const [isActionLoading, withActionLoading] = useLoading(false);
 
     const membersWithName = members.map((member) => {
         const { contactName, contactEmail } = getContactNameAndEmail(member.inviteeEmail, contactEmails);
@@ -92,21 +90,18 @@ export const DirectSharingListing = ({
                         </div>
                         <RoleDropdownMenu
                             disabled={viewOnly}
-                            isLoading={isActionLoading}
                             externalInvitationState={member.state}
-                            onChangeRole={(newRole: MemberRole) =>
-                                withActionLoading(onChangeRole(member.inviteeEmail, newRole))
-                            }
+                            onChangeRole={(newRole: MemberRole) => onChangeRole(member.inviteeEmail, newRole)}
                             selectedRole={member.role}
                             onCopyInvitationLink={
                                 member.type === MemberType.ProtonInvitation
                                     ? () => onCopyInvitationLink(member.uid, member.inviteeEmail)
                                     : undefined
                             }
-                            onRemoveAccess={() => withActionLoading(onRemove(member.inviteeEmail))}
+                            onRemoveAccess={() => onRemove(member.inviteeEmail)}
                             onResendInvitationEmail={
                                 member.type === MemberType.ProtonInvitation
-                                    ? () => withActionLoading(onResendInvitation(member.uid))
+                                    ? () => onResendInvitation(member.uid)
                                     : undefined
                             }
                         />
