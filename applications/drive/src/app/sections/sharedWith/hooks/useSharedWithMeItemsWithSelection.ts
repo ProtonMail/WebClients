@@ -48,6 +48,8 @@ export const useSharedWithMeItemsWithSelection = () => {
         regularItems,
         clearItemsWithInvitationPosition,
         isLoading,
+        hasEverLoaded,
+        itemUidsSize,
     } = useSharedWithMeListingStore(
         useShallow((state) => ({
             getSharedWithMeStoreItem: state.getSharedWithMeItem,
@@ -55,6 +57,8 @@ export const useSharedWithMeItemsWithSelection = () => {
             regularItems: state.getRegularItems(),
             clearItemsWithInvitationPosition: state.clearItemsWithInvitationPosition,
             isLoading: state.isLoading(),
+            hasEverLoaded: state.hasEverLoaded,
+            itemUidsSize: state.itemUids.size,
         }))
     );
 
@@ -63,7 +67,7 @@ export const useSharedWithMeItemsWithSelection = () => {
         clearItemsWithInvitationPosition();
     }, [clearItemsWithInvitationPosition]);
 
-    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, isLoading);
+    const { incrementItemRenderedCounter } = useOnItemRenderedMetrics(layout, !hasEverLoaded);
 
     // Do not add logic here, it will be removed later
     const handleRenderItem = useCallback(
@@ -222,6 +226,6 @@ export const useSharedWithMeItemsWithSelection = () => {
         handleRenderItem,
         handleSorting,
         selectionControls,
-        isEmpty: !regularItems.length && !invitationPositionedItems.length && !isLoading,
+        isEmpty: hasEverLoaded && !isLoading && itemUidsSize === 0,
     };
 };
