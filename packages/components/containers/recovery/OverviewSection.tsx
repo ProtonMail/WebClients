@@ -5,7 +5,6 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { FeatureCode, useFeature } from '@proton/features';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { useFlag } from '@proton/unleash';
 
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
@@ -31,7 +30,6 @@ export const OverviewSection = ({ ids }: Props) => {
     const [confirmProps, setDismissConfirmModalOpen, renderConfirm] = useModalState();
 
     const { feature: hasDismissedRecoverDataCard } = useFeature(FeatureCode.DismissedRecoverDataCard);
-    const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
 
     useSearchParamsEffect(
         (params) => {
@@ -69,7 +67,7 @@ export const OverviewSection = ({ ids }: Props) => {
                     onDismiss={() => setDismissConfirmModalOpen(true)}
                 />
             )}
-            <RecoveryCard ids={ids} canDisplayNewSentinelSettings={canDisplayNewSentinelSettings} />
+            <RecoveryCard ids={ids} />
         </>
     );
 };

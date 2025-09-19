@@ -18,8 +18,7 @@ import useRecoveryStatus from './useRecoveryStatus';
 
 const useRecoveryNotification = (
     isLessInvasive: boolean,
-    isQuickSettings?: boolean,
-    canDisplayNewSentinelSettings?: boolean
+    isQuickSettings?: boolean
 ): { path: string; text: string; color: ThemeColor } | undefined => {
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
@@ -83,7 +82,7 @@ const useRecoveryNotification = (
         };
     }
     // keeps account recovery notification dot consistent with mail security center for new recovery settings for sentinel users
-    if (isSentinelUser && canDisplayNewSentinelSettings && !alreadyDisplayedInSecurityCenter) {
+    if (isSentinelUser && !alreadyDisplayedInSecurityCenter) {
         if (!hasMnemonic) {
             return {
                 path: '/recovery#data',
