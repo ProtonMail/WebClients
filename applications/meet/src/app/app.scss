@@ -127,3 +127,15 @@ $profile-colors:
 .modal-two-dialog {
 	box-shadow: none !important;
 }
+
+.unsupported-browser-container {
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
