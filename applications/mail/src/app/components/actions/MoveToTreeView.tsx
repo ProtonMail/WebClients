@@ -15,9 +15,10 @@ interface Props {
     treeView: FolderItem[];
     selectedFolder: FolderItem | null;
     handleSelectFolder: (folder: FolderItem) => void;
+    addRef?: (itemId: string, element: HTMLLIElement | null) => void;
 }
 
-export const MoveToTreeView = ({ treeView, selectedFolder, handleSelectFolder, search }: Props) => {
+export const MoveToTreeView = ({ treeView, selectedFolder, handleSelectFolder, search, addRef }: Props) => {
     return (
         <div className="move-tree-view overflow-auto scrollbar-always-visible flex-auto">
             {treeView.length === 0 ? (
@@ -25,7 +26,11 @@ export const MoveToTreeView = ({ treeView, selectedFolder, handleSelectFolder, s
             ) : (
                 <ul className="unstyled my-0 mb-4">
                     {treeView.map((folder, index) => (
-                        <li key={folder.ID} className={clsx(index === 0 && 'mt-3')}>
+                        <li
+                            key={folder.ID}
+                            className={clsx(index === 0 && 'mt-3')}
+                            ref={(element) => addRef?.(folder.ID, element)}
+                        >
                             <Button
                                 fullWidth
                                 shape={selectedFolder?.ID === folder.ID ? 'solid' : 'ghost'}

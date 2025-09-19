@@ -26,13 +26,14 @@ import { isElementMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useGetElementsFromIDs, useGetMessagesOrElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { useScrollToItem } from '../../hooks/useScrollToItem';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
 import { MoveToDivider, MoveToDropdownButtons } from './MoveToComponents';
 import { MoveToSearchInput } from './MoveToSearchInput';
 import { MoveToTreeView } from './MoveToTreeView';
-import { getInboxCategoriesItems } from './moveToFolderDropdown.helper';
+import { getInboxCategoriesItems, toFolderItem } from './moveToFolderDropdown.helper';
 
 export const moveDropdownContentProps = { className: 'flex flex-column flex-nowrap items-stretch' };
 
@@ -73,6 +74,8 @@ export const MoveToFolderDropdown = ({
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
     const displayedFolder = folderLocation(labelID, labels, folders);
+
+    const { scrollToItem, addRef } = useScrollToItem();
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -169,11 +172,9 @@ export const MoveToFolderDropdown = ({
         setSearch(changeEvent.target.value);
     };
 
-    const newFolder: LabelModel = {
-        Name: search,
-        Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
-        Type: LABEL_TYPE.MESSAGE_FOLDER,
-        Notify: 1,
+    const handleAddFolder = (label: LabelModel) => {
+        setSelectedFolder(toFolderItem(label));
+        scrollToItem(label.ID);
     };
 
     return (
@@ -188,6 +189,7 @@ export const MoveToFolderDropdown = ({
             </div>
 
             <MoveToTreeView
+                addRef={addRef}
                 treeView={list}
                 search={search}
                 handleSelectFolder={setSelectedFolder}
@@ -233,8 +235,14 @@ export const MoveToFolderDropdown = ({
             {selectAllMoveModal}
             {renderLabelModal && (
                 <EditLabelModal
-                    label={newFolder}
+                    label={{
+                        Name: search,
+                        Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
+                        Type: LABEL_TYPE.MESSAGE_FOLDER,
+                        Notify: 1,
+                    }}
                     type="folder"
+                    onAdd={handleAddFolder}
                     onCloseCustomAction={() => setContainFocus(true)}
                     {...editLabelProps}
                 />
