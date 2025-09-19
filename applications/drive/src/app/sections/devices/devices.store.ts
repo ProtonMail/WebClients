@@ -14,6 +14,7 @@ interface DeviceStore {
     devices: Map<string, StoreDevice>;
     deviceList: StoreDevice[];
     isLoading: boolean;
+    hasEverLoaded: boolean;
     updateDevice: (deviceUid: string, device: Partial<StoreDevice>) => void;
     setLoading: (isLoading: boolean) => void;
     setDevice: (device: Device) => void;
@@ -21,6 +22,8 @@ interface DeviceStore {
     renameDevice: (id: string, name: string) => void;
     reset: () => void;
     getByRootFolderUid: (rootFolderUid: string) => StoreDevice | undefined;
+    setHasEverLoaded: () => void;
+    checkAndSetHasEverLoaded: () => void;
 }
 
 export const useDeviceStore = create<DeviceStore>()(
@@ -28,6 +31,7 @@ export const useDeviceStore = create<DeviceStore>()(
         devices: new Map(),
         deviceList: [],
         isLoading: true,
+        hasEverLoaded: false,
         updateDevice: (deviceUid: string, item: Partial<StoreDevice>) =>
             set((state) => {
                 const updatedDevices = new Map(state.devices);
@@ -44,10 +48,10 @@ export const useDeviceStore = create<DeviceStore>()(
                 }
                 return {};
             }),
-        setLoading: (isLoading: boolean) =>
-            set(() => {
-                return { isLoading };
-            }),
+        setLoading: (isLoading: boolean) => {
+            set({ isLoading });
+            get().checkAndSetHasEverLoaded();
+        },
         setDevice: (device: Device) =>
             set((state) => {
                 const newDevices = new Map(state.devices);
@@ -91,8 +95,15 @@ export const useDeviceStore = create<DeviceStore>()(
                 };
             }),
 
-        reset: () => set({ devices: new Map(), deviceList: [] }),
+        reset: () => set({ devices: new Map(), deviceList: [], hasEverLoaded: false }),
         getByRootFolderUid: (rootFolderUid: string) =>
             Array.from(get().deviceList).find((device) => device.rootFolderUid === rootFolderUid),
+        setHasEverLoaded: () => set({ hasEverLoaded: true }),
+        checkAndSetHasEverLoaded: () => {
+            const state = get();
+            if (!state.isLoading && !state.hasEverLoaded) {
+                state.setHasEverLoaded();
+            }
+        },
     }))
 );
