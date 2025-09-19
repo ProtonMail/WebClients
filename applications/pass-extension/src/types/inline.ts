@@ -5,14 +5,21 @@ import type { Coords } from '@proton/pass/types';
 
 export type DropdownOpenDTO = FrameRelay<
     {
+        /** Type of autofill action (login, identity, credit card, etc.) */
         action: DropdownAction;
-        /** coordinates of the field relative to the top-frame */
+        /** Field coordinates relative to containing frame. Used with `frameAttributes`
+         * during frame traversal to calculate absolute viewport positioning. */
         coords: Coords;
+        /** Frame attributes for position identification during coordinate calculation */
         frameAttributes: FrameAttributes;
+        /** Whether field was auto-focused vs user-initiated */
         autofocused: boolean;
+        /** Target input field identification data */
         field: FrameField;
+        /** Origin URL of requesting frame */
         origin: string;
     },
+    /** Result payload: calculated absolute positioning data */
     { fieldFrameId: number; frameId: number }
 >;
 

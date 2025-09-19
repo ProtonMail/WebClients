@@ -22,8 +22,21 @@ const withSender =
         return fn(message, sender.tab.id, sender.frameId);
     };
 
+/**
+ * Cross-frame autofill positioning service for nested iframe scenarios.
+ *
+ * Challenge: Field in Frame3→Frame2→Frame1→Frame0 needs dropdown positioned
+ * relative to top-level viewport, requiring coordinate transformation through
+ * the frame hierarchy.
+ *
+ * Flow: Field focus → INLINE_DROPDOWN_OPEN → getFrameCoords walks frame tree
+ * accumulating offsets → stops at main frame parent → dropdown renders at
+ * calculated absolute position in top-level document.
+ */
 export const createInlineService = () => {
-    /** Frame hierarchy tracker: Creates parent-child relationship map for all frames in a tab */
+    /** Frame hierarchy tracker: Creates parent-child relationship map
+     * for all frames in a tab. Used by `getFrameCoords` to walk up the
+     * frame tree. Excludes orphaned frames (missing parents). */
     const getTabFrames = async (tabId: TabId): Promise<Frames> =>
         browser.webNavigation.getAllFrames({ tabId }).then((frames) => {
             return (frames ?? []).reduce<Frames>((res, frame) => {
@@ -46,11 +59,12 @@ export const createInlineService = () => {
 
     /** Frame position query: Gets coordinates of target frame relative to its parent.
      * Sends `FRAME_QUERY` message to parent frame to determine child iframe position.
-     * Part of the coordinate calculation chain for absolute positioning. */
+     * Part of the coordinate calculation chain for absolute positioning. Frame query
+     * will only resolve for an actual visible frame allowing early returns. */
     const queryFrame = async (
         tabId: TabId,
         data: FrameData,
-        attributes: FrameAttributes
+        frameAttributes: FrameAttributes
     ): Promise<FrameQueryResult> => {
         const { frameId, parent: parentFrameId } = data;
 
@@ -58,16 +72,20 @@ export const createInlineService = () => {
             tabId,
             backgroundMessage({
                 type: WorkerMessageType.FRAME_QUERY,
-                payload: { frameId, parentFrameId, attributes },
+                payload: { frameId, parentFrameId, frameAttributes },
             }),
             { frameId: parentFrameId ?? 0 }
         );
     };
 
-    /** Absolute coordinate calculation: Traverses frame hierarchy to get top-level
-     * position. Walks up the frame tree accumulating coordinate offsets at each level.
-     * Essential for positioning UI overlays that need absolute positioning relative to
-     * the main document viewport. Returns null if any frame in the hierarchy is hidden */
+    /** Coordinate accumulator: walks up frame hierarchy calculating position relative
+     * to top-level document. IMPORTANT: Stops when reaching a frame whose parent is main
+     * frame (frameId 0), does NOT process main frame itself. This provides coordinates suitable
+     * for positioning dropdowns in the top-level document viewport.
+     *
+     * Algorithm: Start with target frame → query parent for relative position → accumulate offsets →
+     * move to parent → repeat until parent is main frame → return accumulated coordinates.
+     * Returns `null` if any frame in the hierarchy is hidden, missing, or query fails. */
     const getFrameCoords = async (
         tabId: TabId,
         frameId: FrameID,
@@ -80,20 +98,23 @@ export const createInlineService = () => {
             const current: CurrentFrame = { frame: frames[frameId]!, frameAttributes, coords };
 
             while (true) {
-                const frameId = current.frame.parent ?? 0;
+                const parentFrameId = current.frame.parent ?? 0;
                 const result = await queryFrame(tabId, current.frame, current.frameAttributes);
 
                 /** Hidden/missing frame detected */
                 if (!result.ok) return null;
 
+                /** Accumulate coordinate offsets from parent frame */
                 current.coords.top += result.coords.top;
                 current.coords.left += result.coords.left;
 
-                if (frameId === 0) break;
+                /** Stop when parent is main frame - don't process main frame itself */
+                if (parentFrameId === 0) break;
 
-                const next = frames[frameId];
-                if (!next) return null;
+                const next = frames[parentFrameId];
+                if (!next) return null; /** Parent frame missing from hierarchy */
 
+                /** Move up to parent frame and continue */
                 current.frame = next;
                 current.frameAttributes = result.frameAttributes;
             }
@@ -106,7 +127,7 @@ export const createInlineService = () => {
 
     /** Validates frame hierarchy visibility for autofill */
     WorkerMessageBroker.registerMessage(
-        WorkerMessageType.FRAME_CHECK,
+        WorkerMessageType.FRAME_VISIBILITY,
         withSender(async ({ payload: frameAttributes }, tabId, frameId) => {
             const result = await getFrameCoords(tabId, frameId, { coords: { top: 0, left: 0 }, frameAttributes });
             return { visible: result !== null };
@@ -156,7 +177,9 @@ export const createInlineService = () => {
     /** Dropdown positioning: Calculate absolute coordinates and open dropdown
      * 1. Calculate target field's absolute position in viewport
      * 2. Send positioning data to top-level frame
-     * 3. Top-level frame renders dropdown at computed coordinates */
+     * 3. Top-level frame renders dropdown at computed coordinates
+     * - Frame sending this message must send out the current's frame
+     * attributes to start the sequence. */
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.INLINE_DROPDOWN_OPEN,
         withSender(async ({ payload }, tabId, frameId) => {
@@ -185,7 +208,7 @@ export const createInlineService = () => {
         })
     );
 
-    return {};
+    return { getTabFrames, queryFrame, getFrameCoords };
 };
 
 export type InlineService = ReturnType<typeof createInlineService>;

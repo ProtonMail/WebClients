@@ -76,7 +76,7 @@ export const getFrameParentVisibility = maxAgeMemoize(
     asyncLock(
         (): Promise<boolean> =>
             sendMessage.on(
-                contentScriptMessage({ type: WorkerMessageType.FRAME_CHECK, payload: getFrameAttributes() }),
+                contentScriptMessage({ type: WorkerMessageType.FRAME_VISIBILITY, payload: getFrameAttributes() }),
                 (res) => res.type === 'success' && res.visible
             )
     ),
