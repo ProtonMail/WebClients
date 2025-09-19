@@ -1,0 +1,38 @@
+{
+    "$schema": "https://schema.tauri.app/config/2",
+    "productName": "Proton Authenticator",
+    "identifier": "me.proton.authenticator",
+    "build": {
+        "beforeDevCommand": "yarn start:web --port=50001",
+        "devUrl": "http://localhost:50001",
+        "beforeBuildCommand": "yarn build:web",
+        "frontendDist": "../dist"
+    },
+    "app": {
+        "security": {
+            "csp": null
+        }
+    },
+    "bundle": {
+        "active": true,
+        "category": "Utility",
+        "createUpdaterArtifacts": true,
+        "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],
+        "targets": ["msi", "deb", "rpm", "appimage", "dmg", "app"],
+        "windows": {
+            "certificateThumbprint": "265819A6B3F3E77398794A5B70765CED2B7B66BB",
+            "digestAlgorithm": "sha256",
+            "timestampUrl": "http://timestamp.comodoca.com",
+            "wix": {
+                "template": "msi-template.wxs",
+                "upgradeCode": "bd9f3a14-1005-52a5-aad8-364fb590262f"
+            }
+        }
+    },
+    "plugins": {
+        "updater": {
+            "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDM1OUMwMzM0NUM0NTQ1ODcKUldTSFJVVmNOQU9jTlRrSStrZmlHV2FwTGdvTUFkWU1WVCtSbU4yRFE0WW9ENGU4bkZPd1loY0EK",
+            "endpoints": ["https://proton.me/download/authenticator/{{target}}/latest.json"]
+        }
+    }
+}

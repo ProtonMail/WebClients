@@ -1,0 +1,39 @@
+{
+    "$schema": "../gen/schemas/desktop-schema.json",
+    "identifier": "default",
+    "description": "Capability for the main window",
+    "windows": ["main"],
+    "permissions": [
+        "core:default",
+        "core:webview:allow-clear-all-browsing-data",
+        "opener:default",
+        "dialog:default",
+        "fs:default",
+        "fs:allow-create",
+        "fs:write-all",
+        "fs:allow-home-write-recursive",
+        "core:app:allow-set-app-theme",
+        "store:default",
+        "log:default",
+        {
+            "identifier": "http:default",
+            "allow": [
+                {
+                    "url": "https://**"
+                }
+            ],
+            "deny": []
+        },
+        {
+            "identifier": "opener:allow-open-path",
+            "allow": [
+                {
+                    "path": "**/*"
+                },
+                {
+                    "path": "$APPLOG"
+                }
+            ]
+        }
+    ]
+}

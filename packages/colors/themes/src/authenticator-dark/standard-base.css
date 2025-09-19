@@ -1,0 +1,63 @@
+:root,
+.ui-standard {
+    --primary: rgba(167, 121, 255, 1);
+
+    --signal-danger: #f08fa4;
+    --signal-warning: #ffb84d;
+    --signal-success: #4ab89a;
+    --signal-info: #4ac0ff;
+
+    --text-norm: #ffffff;
+    --text-weak: #DFDFDF;
+    --text-hint: #50505b;
+    --text-disabled: #50505b;
+    --text-invert: #191927;
+
+    --field-background-color: #3e3c3a;
+    --field-hover-background-color: #3e3c3a;
+    --field-norm: rgba(0, 0, 0, 0.5);
+    --field-disabled: #4c4c65;
+
+    --optional-field-placeholder-color: var(--text-weak);
+    --optional-field-background-color: rgba(0, 0, 0, 0.5);
+
+    --border-norm: #7a7aad;
+    --border-weak: #38384c;
+
+    --background-norm: #161514;
+    --background-weak: #161514;
+    --background-strong: #161514;
+    --background-invert: white;
+
+    --interaction-norm: #7350FF;
+    --interaction-weak: #302d45;
+
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(255 255 255 / 0.04);
+    --interaction-default-active: rgb(255 255 255 / 0.08);
+
+    --shadow-norm-opacity: 0.32;
+    --shadow-raised-opacity: 0.35;
+    --shadow-lifted-opacity: 0.4;
+
+    --backdrop-norm: rgb(0 0 0 / 0.5);
+
+    --optional-field-placeholder-color: var(--text-weak);
+    --optional-navigation-current-item-background-color: var(--interaction-weak);
+
+    --focus-outline: var(--interaction-norm-major-2);
+    --focus-ring: var(--interaction-norm-minor-1);
+
+    --modal-background-color: #2D2B29;
+    --item-background: rgb(255 255 255 / 0.04);
+
+    --field-hover: #6d697d;
+}
+
+/* Safari tints */
+@supports (-webkit-hyphens: none) {
+    :root,
+    .ui-standard {
+        --optional-selection-background-color: rgba(119, 119, 248, 0.99);
+    }
+}
