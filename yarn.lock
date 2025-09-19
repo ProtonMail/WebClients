@@ -9158,7 +9158,7 @@ __metadata:
     "@vitest/ui": "npm:3.2.4"
     cross-env: "npm:^10.0.0"
     eslint: "npm:^9.35.0"
-    happy-dom: "npm:^17.6.3"
+    happy-dom: "npm:^18.0.1"
     prettier: "npm:^3.6.2"
     react: "npm:^18.3.1"
     ttag: "npm:^1.8.12"
@@ -27368,16 +27368,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"happy-dom@npm:^17.6.3":
-  version: 17.6.3
-  resolution: "happy-dom@npm:17.6.3"
-  dependencies:
-    webidl-conversions: "npm:^7.0.0"
-    whatwg-mimetype: "npm:^3.0.0"
-  checksum: 10c0/bf29e0cd4c39412476ac3e44b86f2f97345241237e902ca822021e030ad475dd5517a0eabffdc4ecbfa3d4becbdd60bcbe9279dab625712930b0c612593335f5
-  languageName: node
-  linkType: hard
-
 "happy-dom@npm:^18.0.1":
   version: 18.0.1
   resolution: "happy-dom@npm:18.0.1"
@@ -37989,7 +37979,7 @@ __metadata:
     "@vitest/ui": "npm:3.2.4"
     cross-env: "npm:^10.0.0"
     eslint: "npm:^9.35.0"
-    happy-dom: "npm:^17.6.3"
+    happy-dom: "npm:^18.0.1"
     livekit-client: "npm:@proton-meet/livekit-client@2.15.9"
     prettier: "npm:^3.6.2"
     react: "npm:^18.3.1"
