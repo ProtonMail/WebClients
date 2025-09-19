@@ -37,31 +37,34 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     const [cachedCopy, setCachedCopy] = useState<MaybeNull<string>>(null);
     const [modal, setModal] = useState<MaybeNull<ClipboardAction>>(null);
 
-    const onCopyToClipboard = useCallback(async (value: string, clipboardTTL?: number) => {
-        try {
-            const timeoutDurationHumanReadable = getClipboardTTLOptions().find(([ttl]) => ttl === clipboardTTL)?.[1];
-            await writeToClipboard(value, clipboardTTL);
+    const onCopyToClipboard = useCallback(
+        async (value: string, clipboardTTL?: number, promptForPermissions?: boolean) => {
+            try {
+                const options = getClipboardTTLOptions();
+                const timeoutDurationHumanReadable = options.find(([ttl]) => ttl === clipboardTTL)?.[1];
+                await writeToClipboard(value, clipboardTTL, promptForPermissions);
 
-            createNotification({
-                showCloseButton: false,
-                type: 'success',
-                text:
-                    !clipboardTTL || clipboardTTL === -1
-                        ? c('Info').t`Copied to clipboard`
-                        : // translator: `timeoutDurationHumanReadable` may be 15 seconds, 1 minute or 2 minutes
-                          c('Info').t`Copied to clipboard (expires in ${timeoutDurationHumanReadable})`,
-            });
-        } catch (err) {
-            createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
-            logger.error(`[ClipboardProvider] unable to copy to clipboard`);
-        }
-    }, []);
+                createNotification({
+                    showCloseButton: false,
+                    type: 'success',
+                    text:
+                        !clipboardTTL || clipboardTTL === -1
+                            ? c('Info').t`Copied to clipboard`
+                            : // translator: `timeoutDurationHumanReadable` may be 15 seconds, 1 minute or 2 minutes
+                              c('Info').t`Copied to clipboard (expires in ${timeoutDurationHumanReadable})`,
+                });
+            } catch (err) {
+                createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
+                logger.error(`[ClipboardProvider] unable to copy to clipboard`);
+            }
+        },
+        []
+    );
 
     const ctx = useMemo<ClipboardContextValue>(
         () => ({
             copyToClipboard: async (value) => {
                 const ttl = selectClipboardTTL(store.getState());
-
                 if (BUILD_TARGET !== 'web' && ttl === undefined) {
                     setCachedCopy(value);
                     setModal('settings');
@@ -79,12 +82,12 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
             {children}
             {modal === 'settings' && (
                 <ClipboardSettingsModal
-                    onClose={async (overrideClipboardTTL: number) => {
+                    onClose={async (overrideClipboardTTL) => {
                         setModal(null);
 
                         if (cachedCopy !== null) {
                             setCachedCopy(null);
-                            await onCopyToClipboard(cachedCopy, overrideClipboardTTL);
+                            await onCopyToClipboard(cachedCopy, overrideClipboardTTL, true);
                         }
                     }}
                 />
