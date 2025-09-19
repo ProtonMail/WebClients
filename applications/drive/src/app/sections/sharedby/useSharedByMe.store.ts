@@ -39,12 +39,15 @@ interface SharedByMeStore {
 
     isLoadingNodes: boolean;
     isLoadingLegacyNodes: boolean;
+    hasEverLoaded: boolean;
 
     eventSubscription: (() => void) | null;
     activeContexts: Set<string>;
 
     setLoadingNodes: (loading: boolean) => void;
     setLoadingLegacyNodes: (loading: boolean) => void;
+    setHasEverLoaded: () => void;
+    checkAndSetHasEverLoaded: () => void;
 
     setSharedByMeItem: (item: SharedByMeItem) => void;
     updateSharedByMeItem: (uid: string, updates: Partial<SharedByMeItem>) => void;
@@ -70,6 +73,7 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
 
             isLoadingNodes: false,
             isLoadingLegacyNodes: false,
+            hasEverLoaded: false,
 
             eventSubscription: null,
             activeContexts: new Set<string>(),
@@ -155,8 +159,22 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
             getSharedByMeItem: (uid: string) => get().sharedByMeItems.get(uid),
             getAllSharedByMeItems: () => Array.from(get().sharedByMeItems.values()),
 
-            setLoadingNodes: (loading: boolean) => set({ isLoadingNodes: loading }),
-            setLoadingLegacyNodes: (loading: boolean) => set({ isLoadingLegacyNodes: loading }),
+            setLoadingNodes: (loading: boolean) => {
+                set({ isLoadingNodes: loading });
+                get().checkAndSetHasEverLoaded();
+            },
+            setLoadingLegacyNodes: (loading: boolean) => {
+                set({ isLoadingLegacyNodes: loading });
+                get().checkAndSetHasEverLoaded();
+            },
+
+            setHasEverLoaded: () => set({ hasEverLoaded: true }),
+            checkAndSetHasEverLoaded: () => {
+                const state = get();
+                if (!state.isLoading() && !state.hasEverLoaded) {
+                    state.setHasEverLoaded();
+                }
+            },
 
             isLoading: () => {
                 const state = get();

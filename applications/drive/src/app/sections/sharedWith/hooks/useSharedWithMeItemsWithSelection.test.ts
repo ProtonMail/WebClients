@@ -84,6 +84,8 @@ const mockSharedWithMeStore = {
     getRegularItems: jest.fn(() => []),
     clearItemsWithInvitationPosition: jest.fn(),
     isLoading: jest.fn(() => false),
+    hasEverLoaded: false,
+    itemUids: new Set(),
 };
 
 jest.mock('../../../zustand/sections/sharedWithMeListing.store', () => ({
@@ -91,28 +93,28 @@ jest.mock('../../../zustand/sections/sharedWithMeListing.store', () => ({
     ItemType: {
         BOOKMARK: 'bookmark',
         DIRECT_SHARE: 'directShare',
+        INVITATION: 'invitation',
     },
     getKeyUid: (item: any) => item.nodeUid || item.bookmark?.uid || 'volume-123~node-456',
 }));
 
 describe('useSharedWithMeItemsWithSelection', () => {
-    let hook: {
-        current: ReturnType<typeof useSharedWithMeItemsWithSelection>;
-    };
-
     beforeEach(() => {
         jest.clearAllMocks();
         // Reset the store mocks
         mockSharedWithMeStore.getSharedWithMeItem.mockReturnValue(null);
         mockSharedWithMeStore.getInvitationPositionedItems.mockReturnValue([]);
         mockSharedWithMeStore.getRegularItems.mockReturnValue([]);
-
-        const { result } = renderHook(() => useSharedWithMeItemsWithSelection());
-        hook = result;
+        mockSharedWithMeStore.hasEverLoaded = false;
+        mockSharedWithMeStore.itemUids = new Set();
     });
 
     it('should return initial state correctly', () => {
-        expect(hook.current).toEqual(
+        mockSharedWithMeStore.hasEverLoaded = true;
+
+        const { result } = renderHook(() => useSharedWithMeItemsWithSelection());
+
+        expect(result.current).toEqual(
             expect.objectContaining({
                 items: [],
                 selectedItems: [],
@@ -123,8 +125,10 @@ describe('useSharedWithMeItemsWithSelection', () => {
     });
 
     it('should handle sorting correctly', () => {
+        const { result } = renderHook(() => useSharedWithMeItemsWithSelection());
+
         act(() => {
-            hook.current.handleSorting({
+            result.current.handleSorting({
                 sortField: 'name' as any,
                 sortOrder: SORT_DIRECTION.ASC,
             });
@@ -208,5 +212,34 @@ describe('useSharedWithMeItemsWithSelection', () => {
                 mimeType: 'text/plain',
             })
         );
+    });
+    it('should verify isEmpty logic edge cases', () => {
+        mockSharedWithMeStore.hasEverLoaded = false;
+        mockSharedWithMeStore.isLoading.mockReturnValue(false);
+        mockSharedWithMeStore.itemUids = new Set();
+
+        const { result: result1 } = renderHook(() => useSharedWithMeItemsWithSelection());
+        expect(result1.current.isEmpty).toBe(false);
+
+        mockSharedWithMeStore.hasEverLoaded = true;
+        mockSharedWithMeStore.isLoading.mockReturnValue(true);
+        mockSharedWithMeStore.itemUids = new Set();
+
+        const { result: result2 } = renderHook(() => useSharedWithMeItemsWithSelection());
+        expect(result2.current.isEmpty).toBe(false);
+
+        mockSharedWithMeStore.hasEverLoaded = true;
+        mockSharedWithMeStore.isLoading.mockReturnValue(false);
+        mockSharedWithMeStore.itemUids = new Set(['item1']);
+
+        const { result: result3 } = renderHook(() => useSharedWithMeItemsWithSelection());
+        expect(result3.current.isEmpty).toBe(false);
+
+        mockSharedWithMeStore.hasEverLoaded = true;
+        mockSharedWithMeStore.isLoading.mockReturnValue(false);
+        mockSharedWithMeStore.itemUids = new Set();
+
+        const { result: result4 } = renderHook(() => useSharedWithMeItemsWithSelection());
+        expect(result4.current.isEmpty).toBe(true);
     });
 });
