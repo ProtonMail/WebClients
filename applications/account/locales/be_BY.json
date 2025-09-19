@@ -136,8 +136,8 @@
       "Add label": [
         "Дадаць метку"
       ],
-      "Add more ${ BRAND_NAME } Scribe seats": [
-        "Дадаць больш ліцэнзій ${ BRAND_NAME } Scribe"
+      "Add more seats": [
+        "Дадаць больш ліцэнзій"
       ],
       "Add notification": [
         "Дадаць апавяшчэнне"
@@ -1420,6 +1420,9 @@
       "Start live chat": [
         "Пачаць інтэрактыўны чат"
       ],
+      "Start subscription": [
+        "Пачаць падпіску"
+      ],
       "Stay": [
         "Застацца"
       ],
@@ -1434,6 +1437,9 @@
       ],
       "Submit": [
         "Адправіць"
+      ],
+      "Subscribe now": [
+        "Падпісацца"
       ],
       "Support": [
         "Падтрымка"
@@ -1566,6 +1572,9 @@
       ],
       "User": [
         "Карыстальнік"
+      ],
+      "users and addresses": [
+        "карыстальнікі і адрасы"
       ],
       "Verify": [
         "Спраўдзіць"
@@ -4468,9 +4477,6 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Дапамажыце сваёй камандзе бяспечна захоўваць паролі да важных дзелавых і кліенцкіх звестак."
       ],
-      "If disabled, only admins will have access.": [
-        "Толькі адміністратары будуць мець доступ, калі гэты параметр адключаны."
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Здаецца, што спіс кантактаў, які вы імпартуеце, змяшчае групы. Паглядзіце, як неабходна імпартаваць такія групы."
       ],
@@ -5686,7 +5692,7 @@
         "Вы ўсё яшчэ можаце запытаць доступ да ўліковага запісу ${ user } праз некаторы час."
       ],
       "You'll receive access to their account immediately.": [
-        "Vous recevrez un accès à leur compte immédiatement."
+        "Вы атрымаеце доступ да іх уліковага запісу неадкладна."
       ],
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "Вы атрымаеце доступ да іх уліковага запісу праз **${ days } дзень**, або калі яны ўхваляць ваш запыт.",
@@ -8699,6 +8705,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцыі ${ MEET_APP_NAME } у запрашэнні вашага календара."
+      ],
       "Already allocated": [
         "Ужо вылучана"
       ],
@@ -9305,6 +9314,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL-адрас канцавога пункта атрыманы ад вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Завяршаецца ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Паляпшэнне бяспекі вашай сеткі"
       ],
@@ -9437,6 +9449,9 @@
       "Free forever": [
         "Бясплатна назаўсёды"
       ],
+      "Free trial": [
+        "Бясплатны пробны перыяд"
+      ],
       "free up space by deleting older messages or other data": [
         "вызваліць месца шляхам выдалення старых паведамленняў або іншых даных"
       ],
@@ -9496,6 +9511,9 @@
       ],
       "Groups": [
         "Групы"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Дазваляе пісаць, адказваць і вычытваць лісты. Кіраванне для асобных карыстальнікаў ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "тут"
@@ -9880,6 +9898,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Кіруйце, да якіх праграм ${ BRAND_NAME } могуць атрымліваць доступ удзельнікі вашай арганізацыі. Калі выключана, то толькі адміністратары будуць мець доступ да іх."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Кіруйце, да якіх функцый могуць атрымліваць доступ удзельнікі вашай арганізацыі. Калі выключана, то толькі адміністратары будуць мець доступ да іх."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Кіраванне вашымі параметрамі апавяшчэнняў па электроннай пошце для ${ DOCS_APP_NAME }"
@@ -10489,6 +10510,9 @@
       ],
       "Show original message": [
         "Паказаць арыгінальнае паведамленне"
+      ],
+      "Sign in only": [
+        "Толькі ўваход"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Увайдзіце ў ${ MAIL_APP_NAME }, каб актываваць свой адрас"
@@ -15659,12 +15683,6 @@
       "Email notifications have been enabled": [
         "Апавяшчэнні па электроннай пошце ўключаны"
       ],
-      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
-        "Не ўдалося абнавіць ${ MEET_APP_NAME } налады відэаканферэнцыі"
-      ],
-      "Failed to update Zoom video conferencing settings": [
-        "Не ўдалося абнавіць налады відэаканферэнцыі Zoom"
-      ],
       "Invalid code": [
         "Памылковы код"
       ],
@@ -17679,6 +17697,32 @@
         "Захавайце сваю фразу аднаўлення"
       ]
     },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Калі вы скасуеце падпіску да гэтай даты,** то будзеце **паніжаны** да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } пасля завяршэння пробнага перыяду."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Калі вы не падпішацеся,** то вы будзеце **паніжаны** да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Калі вы не скасуеце, то ** ваш поўны тарыфны план пачне дзейнічаць, і вы атрымаеце **${ referrerRewardAmount }** у крэдытах."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "Вы атрымаеце **${ referrerRewardAmount }** у крэдытах **пры падпісцы да гэтай даты**."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Атрымлівайце асалоду ад **${ planTitle }** бясплатна да **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "У вас застаўся **${ daysRemaining } дзень**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**.",
+        "У вас засталося **${ daysRemaining } дні**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**.",
+        "У вас засталося **${ daysRemaining } дзён**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**.",
+        "У вас засталося **${ daysRemaining } дзён**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**."
+      ],
+      "your subscription": [
+        "ваша падпіска"
+      ]
+    },
     "Remark about a key type option": {
       "Classic": [
         "Класічная"
@@ -17996,6 +18040,9 @@
       "Add a recovery phone number": [
         "Дадаць нумар тэлефона для аднаўлення"
       ],
+      "Add an alternative email address": [
+        "Дадаць альтэрнатыўны адрас электроннай пошты"
+      ],
       "Add an email": [
         "Дадаць электронную пошту"
       ],
@@ -18026,8 +18073,14 @@
       "Disable recovery by email": [
         "Адключыць аднаўленне па электроннай пошце"
       ],
+      "Disable recovery by email ": [
+        "Адключыць аднаўленне па электроннай пошце "
+      ],
       "Disable recovery by phone": [
         "Адключыць аднаўленне па нумары тэлефона"
+      ],
+      "Disable recovery by phone ": [
+        "Адключыць аднаўленне па нумары тэлефона "
       ],
       "Download ${ size }": [
         "Спампаваць ${ size }"
@@ -18061,6 +18114,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Калі вы страціце свае ўліковыя даныя для ўваходу і вам неабходна будзе скінуць уліковы запіс, то ў вас **абавязкова** павінен быць як **метад аднаўлення даных, так і метад аднаўлення ўліковага запісу**. У адваротным выпадку без іх вы не зможаце атрымаць доступ да сваіх паведамленняў, файлаў кантактаў або пароляў."
+      ],
+      "in case we need to contact you": [
+        "у выпадку, калі нам спатрэбіцца звязацца з вамі"
       ],
       "Invalid code": [
         "Памылковы код"
@@ -18118,6 +18174,9 @@
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Увядзіце код спраўджання адпраўлены на ваш нумар тэлефона ${ boldPhoneNumber } для пацвярджэння таго, што ён належыць менавіта вам."
+      ],
+      "to prevent attackers from taking over your account": [
+        "для прадухілення захопу зламыснікамі вашага ўліковага запісу"
       ],
       "to recover your account and data if you're ever locked out": [
         "для аднаўлення вашага ўліковага запісу і даных пры магчымай блакіроўцы"
@@ -18193,6 +18252,12 @@
       ],
       "You have recommended actions.": [
         "У вас ёсць рэкамендаваныя дзеянні."
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Ваша электронная пошта для аднаўлення доступу можа быць выкарыстана зламыснікамі для захопу вашага ўліковага запісу. ${ disableEmail } для павышэння бяспекі вашага ўліковага запісу."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Ваш нумар тэлефона для аднаўлення доступу можа быць выкарыстаны зламыснікамі для захопу вашага ўліковага запісу. ${ disablePhone } для павышэння бяспекі вашага ўліковага запісу."
       ],
       "You will no longer be able to use this address to reset your account.": [
         "Вы больш не зможаце выкарыстоўваць гэты адрас, каб скінуць свой уліковы запіс."
@@ -21194,9 +21259,6 @@
       "${ BRAND_NAME } Account password rules": [
         "Правілы для пароля ўліковага запісу ${ BRAND_NAME }"
       ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "Памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
@@ -21382,6 +21444,9 @@
       ],
       "Appearance": [
         "Вонкавы выгляд"
+      ],
+      "Application access": [
+        "Доступ да праграмы"
       ],
       "Apply filter to existing messages": [
         "Ужыць фільтр да існуючых паведамленняў"
@@ -21824,9 +21889,6 @@
       "Enable advanced account protection": [
         "Уключэнне пашыранай абароны ўліковага запісу"
       ],
-      "Enable for all users": [
-        "Уключыць для ўсіх карыстальнікаў"
-      ],
       "Encryption and keys": [
         "Шыфраванне і ключы"
       ],
@@ -21874,6 +21936,9 @@
         "Не ўдалося стварыць ${ failedUsers.length } карыстальнікі.",
         "Не ўдалося стварыць ${ failedUsers.length } карыстальнікаў.",
         "Не ўдалося стварыць ${ failedUsers.length } карыстальнікі."
+      ],
+      "Feature access": [
+        "Доступ да функцый"
       ],
       "Filter for more focus": [
         "Фільтр для большай канцэнтрацыі"
@@ -21994,6 +22059,9 @@
       ],
       "How to refer a friend and get credits": [
         "Як запрасіць сяброў і атрымаць за гэта крэдыты"
+      ],
+      "How your free trial works": [
+        "Як працуе бясплатны пробны перыяд"
       ],
       "Human verification": [
         "Антыспамавая праверка"
@@ -22649,6 +22717,9 @@
       "Video conferencing": [
         "Відэаканферэнцыя"
       ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Відэаканферэнцыя з ${ MEET_APP_NAME }"
+      ],
       "View organization events by upgrading to Professional": [
         "Палепшыце да тарыфнага плана Professional, каб паглядзець падзеі арганізацыі"
       ],
@@ -23023,6 +23094,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Прычынай можа быць скіданне пароля або тое, што карыстальнік пакуль не ўвайшоў у сістэму."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Гэты адрас электроннай пошты можа быць выкарыстаны толькі для ўваходу ў ваш уліковы запіс ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Гэты адрас электроннай пошты будзе паказаны ўсім удзельнікам арганізацыі пры выкананні аперацый па кіраванні ўліковым запісам."
