@@ -151,6 +151,7 @@ export const createInlineService = ({
         const { autofocused, coords, frameId, action, frameAttributes, fieldFrameId, field, origin } = payload;
         const root = iframes.root;
         const rootRect = root.customElement.getBoundingClientRect();
+
         const top = rootRect.top + coords.top;
         const left = rootRect.left + coords.left;
 

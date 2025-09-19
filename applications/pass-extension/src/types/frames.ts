@@ -9,16 +9,21 @@ export type FrameAttributes = {
     height?: number;
 };
 
+/** Query payload sent to parent frame to get child iframe position */
 export type FrameQueryDTO = {
+    /** ID of child frame whose position is being queried */
     frameId: number;
-    attributes: FrameAttributes;
+    /** Child frame attributes for identification in parent DOM */
+    frameAttributes: FrameAttributes;
+    /** Parent frame ID (null for main frame) */
     parentFrameId: MaybeNull<number>;
 };
 
+/** Response from parent frame containing child iframe positioning data */
 export type FrameQueryResponse = {
-    /** coordinates of the child frame relative to its parent frame */
+    /** Child iframe coordinates relative to parent frame viewport */
     coords: Coords;
-    /** computed attributes of the parent frame */
+    /** Parent frame attributes for next iteration in coordinate chain */
     frameAttributes: FrameAttributes;
 };
 

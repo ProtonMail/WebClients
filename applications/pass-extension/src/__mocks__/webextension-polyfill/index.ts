@@ -31,10 +31,10 @@ const browser = {
         create: jest.fn(),
         clear: jest.fn().mockResolvedValue(undefined),
         get: jest.fn(),
-        onAlarm: {
-            addListener: jest.fn(),
-        },
+        onAlarm: { addListener: jest.fn() },
     },
+    webNavigation: { getAllFrames: jest.fn(async () => []) },
+    tabs: { sendMessage: jest.fn(async () => ({})) },
 };
 
 export const clearBrowserMocks = () => {
@@ -52,6 +52,8 @@ export const clearBrowserMocks = () => {
     browser.alarms.clear.mockClear();
     browser.alarms.get.mockClear();
     browser.alarms.onAlarm.addListener.mockClear();
+    browser.webNavigation.getAllFrames.mockClear();
+    browser.tabs.sendMessage.mockClear();
 };
 
 export default browser;

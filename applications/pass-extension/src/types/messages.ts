@@ -133,7 +133,7 @@ export enum WorkerMessageType {
     INLINE_DROPDOWN_ATTACH = 'INLINE_DROPDOWN_ATTACH',
 
     FRAME_QUERY = 'FRAME_QUERY',
-    FRAME_CHECK = 'FRAME_CHECK',
+    FRAME_VISIBILITY = 'FRAME_VISIBILITY',
 
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_UPDATED = 'LOCALE_UPDATED',
@@ -216,7 +216,7 @@ export type FileTransferWriteMessage = WithPayload<WorkerMessageType.FS_WRITE, F
 export type FileTransferErrorMessage = WithPayload<WorkerMessageType.FS_ERROR, FileTransferErrorDTO>;
 
 export type FrameQueryMessage = WithPayload<WorkerMessageType.FRAME_QUERY, FrameQueryDTO>;
-export type FrameCheckMessage = WithPayload<WorkerMessageType.FRAME_CHECK, FrameAttributes>;
+export type FrameVisibilityMessage = WithPayload<WorkerMessageType.FRAME_VISIBILITY, FrameAttributes>;
 
 export type InlineDropdownOpenMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPEN, DropdownOpenDTO>;
 export type InlineDropdownCloseMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSE, DropdownCloseDTO>;
@@ -306,7 +306,7 @@ export type WorkerMessage =
     | InlineDropdownStateMessage
     | InlineDropdownAttachMessage
     | FrameQueryMessage
-    | FrameCheckMessage
+    | FrameVisibilityMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
     | LogEventMessage
@@ -369,7 +369,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
     [WorkerMessageType.FRAME_QUERY]: FrameQueryResult;
-    [WorkerMessageType.FRAME_CHECK]: FrameCheckResult;
+    [WorkerMessageType.FRAME_VISIBILITY]: FrameCheckResult;
     [WorkerMessageType.INLINE_DROPDOWN_STATE]: DropdownStateDTO;
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
