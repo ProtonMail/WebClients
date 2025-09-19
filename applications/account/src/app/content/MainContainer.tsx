@@ -157,7 +157,6 @@ const MainContainer = () => {
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const isUserGroupsNoCustomDomainEnabled = useFlag('UserGroupsNoCustomDomain');
-    const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
     const isUserGroupsMembershipFeatureEnabled = useFlag('UserGroupsMembersPermissionCheck');
     const isPasswordPolicyEnabled = useFlag('PasswordPolicy');
     const isB2BAuthLogsEnabled = useFlag('B2BAuthenticationLogs');
@@ -181,7 +180,7 @@ const MainContainer = () => {
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
-    const recoveryNotification = useRecoveryNotification(false, false, canDisplayNewSentinelSettings);
+    const recoveryNotification = useRecoveryNotification(false, false);
 
     const appFromPathname = getAppFromPathnameSafe(location.pathname);
     const app = appFromPathname || getToApp(undefined, user);
