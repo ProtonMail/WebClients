@@ -72,9 +72,6 @@
       "Add external address": [
         "외부 주소 추가"
       ],
-      "Add more ${ BRAND_NAME } Scribe seats": [
-        "더 많은 ${ BRAND_NAME } Scribe 사용 권한 추가"
-      ],
       "Add PayPal": [
         "PayPal 추가"
       ],
@@ -885,6 +882,9 @@
       "Start live chat": [
         "라이브 채팅 시작하기"
       ],
+      "Start subscription": [
+        "구독 시작"
+      ],
       "Stay": [
         "기다리기"
       ],
@@ -893,6 +893,9 @@
       ],
       "Submit": [
         "제출"
+      ],
+      "Subscribe now": [
+        "지금 구독하기"
       ],
       "Support": [
         "지원"
@@ -1355,6 +1358,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험판이 종료된 후, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
       ],
@@ -1755,6 +1764,9 @@
       ],
       "Manual setup problem": [
         "수동 설정 문제"
+      ],
+      "Meet problem": [
+        "문제 발생"
       ],
       "Other": [
         "기타"
@@ -3113,9 +3125,6 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "팀이 민감한 비즈니스 및 고객 정보에 대한 암호를 안전하게 저장할 수 있도록 지원하세요"
-      ],
-      "If disabled, only admins will have access.": [
-        "비활성화시 관리자만 접근 가능합니다."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "불러올 연락처가 그룹을 포함하는 것 같습니다. 이 그룹들을 어떻게 불러올지 확인해 주세요."
@@ -5521,6 +5530,9 @@
       "Account successfully updated": [
         "계정을 성공적으로 업그레이드 했습니다."
       ],
+      "Accounts": [
+        "계정"
+      ],
       "active": [
         "활성화"
       ],
@@ -5649,6 +5661,12 @@
       ],
       "Attention required": [
         "주의 필요"
+      ],
+      "Authenticator app 2FA disabled": [
+        "2단계 인증 앱이 비활성화되었습니다."
+      ],
+      "Authenticator app 2FA enabled": [
+        "인증 앱 2단계 인증이 활성화되었습니다."
       ],
       "Awaiting transaction": [
         "거래 대기 중"
@@ -5833,6 +5851,9 @@
       "Disabled on ${ boldValue }": [
         "${ boldValue }에 비활성화됨"
       ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "인증 앱 2단계 인증 비활성화시 계정의 보안이 취약해집니다. 꼭 필요한 경우에만 진행하세요."
+      ],
       "Discover new features unlocked and start using them right away!": [
         "잠금해제된 새 기능들을 둘러보고 바로 사용해보세요!"
       ],
@@ -5965,6 +5986,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate }에 종료됨"
+      ],
       "Enhance your network security": [
         "네트워크 보안을 향상시키기"
       ],
@@ -6048,6 +6072,9 @@
       ],
       "Free forever": [
         "영구적으로 무료"
+      ],
+      "Free trial": [
+        "무료 체험"
       ],
       "Gain visibility across your organization": [
         "회원님의 조직 전체에 걸쳐 가시성을 확보하세요"
@@ -6340,6 +6367,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "조직 구성원이 접근할 수 있는 ${ BRAND_NAME } 응용 프로그램을 관리합니다. 비활성화된 경우 관리자만 접근할 수 있습니다."
       ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "인증 앱에 이 정보를 직접 입력하여 계정을 설정하세요. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "Mastercard SecureCode 로고"
       ],
@@ -6458,6 +6488,9 @@
         "또는 특정 서버 선택:"
       ],
       "Organization monitor": [
+        "조직 모니터링"
+      ],
+      "Organization Monitor": [
         "조직 모니터링"
       ],
       "Organization size": [
@@ -6643,6 +6676,9 @@
       "Scan QR code instead": [
         "QR 코드 스캔하기"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "계정을 설정하려면 인증 앱으로 이 코드를 스캔하세요. ${ switchButton }"
+      ],
       "SCIM integration disabled": [
         "SCIM 통합 비활성화"
       ],
@@ -6663,6 +6699,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "${ getFormattedOrganization }에서 ${ BRAND_NAME } 조직에 허용하려는 사용자 제휴를 선택하세요."
+      ],
+      "Select users to view their activity": [
+        "활동을 확인할 사용자를 선택하세요"
       ],
       "Select what you want to import.": [
         "처리할 파일을 선택하세요."
@@ -6717,6 +6756,9 @@
       ],
       "Shared vault updated": [
         "공유 금고를 업데이트했습니다"
+      ],
+      "Sign in only": [
+        "로그인 전용"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인하십시오"
@@ -7215,6 +7257,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "활성화하지 않으면 새 사용자를 만들거나 기존 사용자에게 주소를 추가하거나 개인이 아닌 사용자 계정에 액세스할 수 없습니다."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "인증 앱 설정이 없다면, 보안 키를 아직 지원하지 않는 ${ BRAND_NAME } 애플리케이션에 로그인할 수 없습니다."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "새 인증 코드를 받거나 다른 인증 방법을 사용하시겠습니까?"
@@ -9918,12 +9963,6 @@
       "Downloaded 2FA recovery codes": [
         "다운로드한 2FA 복구 코드"
       ],
-      "Failed to update ${ MEET_APP_NAME } video conferencing settings": [
-        "${ MEET_APP_NAME } 화상 회의 설정 업데이트 실패"
-      ],
-      "Failed to update Zoom video conferencing settings": [
-        "줌 화상 회의 설정 업데이트 실패"
-      ],
       "Invalid code": [
         "잘못된 코드입니다."
       ],
@@ -11141,6 +11180,26 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**해당 날짜 전에 취소시,** 체험판이 종료될 때 회원님의 계정이 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 플랜으로 **다운그레이드됩니다.**"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**구독하지 않을 시,** 회원님의 계정이 ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } 플랜으로 **다운그레이드됩니다.**"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**취소하지 않을 시,** 정규 플랜으로 시작되며 **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**해당 날짜 이전에 구독시,** **${ referrerRewardAmount }** 크레딧을 받게 됩니다."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ textDate }**까지 **${ planTitle }**을(를) 무료로 즐겨보세요."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**가 제공하는 강력한 기능들을 탐색할 수 있는 시간이 **${ daysRemaining }일** 남았습니다."
       ]
     },
     "Remove organization logo": {
@@ -13265,9 +13324,6 @@
       "${ BRAND_NAME } Account password rules": [
         "${ BRAND_NAME } 계정 비밀번호 규칙"
       ],
-      "${ BRAND_NAME } Scribe": [
-        "${ BRAND_NAME } Scribe"
-      ],
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe 글쓰기 도우미"
       ],
@@ -13625,6 +13681,9 @@
       "Disable two-factor authentication": [
         "이중 인증 비활성화"
       ],
+      "Disable two-factor authentication app?": [
+        "2단계 인증 앱을 비활성화하시겠어요?"
+      ],
       "Disable two-factor authentication?": [
         "이중 인증을 비활성화하시겠습니까?"
       ],
@@ -13699,9 +13758,6 @@
       ],
       "Enable advanced account protection": [
         "향상된 계정 보호 활성화하기"
-      ],
-      "Enable for all users": [
-        "모든 사용자에게 활성화"
       ],
       "Enhance security with 2FA": [
         "2단계 인증으로 보안 강화시키기"
@@ -13786,6 +13842,9 @@
       ],
       "How to choose a good logo": [
         "최고의 로고를 선택하는 방법"
+      ],
+      "How your free trial works": [
+        "무료 체험 작동 원리"
       ],
       "Human verification": [
         "사람임을 인증"
@@ -13987,6 +14046,9 @@
       ],
       "Set recovery methods": [
         "복구 방법 마련하기"
+      ],
+      "Set up authenticator app": [
+        "인증 앱을 설정하세요"
       ],
       "Set up email forwarding": [
         "이메일 가져오기 설정"
@@ -14353,6 +14415,9 @@
       "This can be caused by a password reset or the user not logging in yet.": [
         "이는 비밀번호 재설정 또는 사용자가 아직 로그인하지 않은 경우에 발생할 수 있습니다."
       ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "이 이메일 주소는 사용자의 ${ BRAND_NAME } 계정에 로그인하는 데에만 사용할 수 있습니다."
+      ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "이 이메일 주소는 계정 관리 작업을 진행할 때 모든 조직 구성원에게 보여질 것입니다."
       ],
@@ -14675,6 +14740,9 @@
       "Administrators can't access the data of private users": [
         "관리자가 개인 사용자의 데이터에 접근할 수 없습니다."
       ],
+      "Authenticator app": [
+        "인증 앱"
+      ],
       "Inactive": [
         "비활성"
       ],
@@ -14692,6 +14760,9 @@
       ],
       "Private": [
         "개인"
+      ],
+      "Security key": [
+        "보안 키"
       ],
       "SSO": [
         "SSO"
