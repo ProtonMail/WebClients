@@ -30,11 +30,10 @@ const AccountSecurity = () => {
     const hasSentinelOrTFACardToDisplay = baseUseSelector(selectHasSentinelOrTFACardToDisplay);
     const dismissed2FACardFeature = useFeature(FeatureCode.AccountSecurityDismissed2FACard);
     const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
-    const canDisplayNewSentinelSettings = useFlag('SentinelRecoverySettings');
     const accountIssuesCountNonDissmissable = baseUseSelector(selectAccountSecurityIssuesCount);
 
     const getCount = () => {
-        if (canDisplayNewSentinelSettings && hasSentinelEnabled && !recoveryPhraseSet) {
+        if (hasSentinelEnabled && !recoveryPhraseSet) {
             return ' (1)';
         }
         return accountIssuesCountNonDissmissable ? ` (${accountIssuesCountNonDissmissable})` : '';
@@ -48,7 +47,7 @@ const AccountSecurity = () => {
             </h3>
 
             {(() => {
-                if (canDisplayNewSentinelSettings && hasSentinelEnabled) {
+                if (hasSentinelEnabled) {
                     if (hasSentinelOrTFACardToDisplay) {
                         return (
                             <div className="flex flex-column flex-nowrap gap-2 w-full">
