@@ -8661,6 +8661,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/danger@workspace:utilities/danger":
+  version: 0.0.0-use.local
+  resolution: "@proton/danger@workspace:utilities/danger"
+  dependencies:
+    "@proton/eslint-config-proton": "workspace:^"
+    danger: "npm:^13.0.4"
+  languageName: unknown
+  linkType: soft
+
 "@proton/docs-core@workspace:^, @proton/docs-core@workspace:packages/docs-core":
   version: 0.0.0-use.local
   resolution: "@proton/docs-core@workspace:packages/docs-core"
@@ -40873,7 +40882,6 @@ __metadata:
     "@proton/stylelint-config-proton": "workspace:^"
     "@trivago/prettier-plugin-sort-imports": "npm:^5.2.2"
     "@types/jest-when": "npm:^3.5.5"
-    danger: "npm:^13.0.4"
     husky: "npm:^9.1.7"
     is-ci: "npm:^4.1.0"
     lint-staged: "npm:^16.1.6"

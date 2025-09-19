@@ -66,5 +66,5 @@
         }
     },
     "include": ["${configDir}/"],
-    "exclude": ["**/node_modules/*", "**/dist/*", "**/.*/", "dangerfile.ts"]
+    "exclude": ["**/node_modules/*", "**/dist/*", "**/.*/"]
 }
