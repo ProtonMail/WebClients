@@ -57,14 +57,13 @@ export const useOnItemRenderedMetrics = (layout: LayoutSetting, isLoading: boole
                 });
             }
         }
-
         // This prevents Events data after page is loaded to be counted like it was part of the navigation
         if (isLoading === false) {
             setFirstItemIsSet(true);
             setFirstPageIsSet(true);
             setLastPageIsSet(true);
         }
-    }, [count, isLoading]);
+    }, [count, firstItemIsSet, firstPageIsSet, isLoading, lastPageIsSet, view]);
 
     useEffect(() => {
         const prevLocation = prevLocationRef.current;
