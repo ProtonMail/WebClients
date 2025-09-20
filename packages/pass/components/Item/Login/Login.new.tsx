@@ -27,6 +27,7 @@ import { usePortal } from '@proton/pass/hooks/usePortal';
 import { filesFormInitializer } from '@proton/pass/lib/file-attachments/helpers';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { bindOTPSanitizer, getSanitizedUserIdentifiers, sanitizeExtraField } from '@proton/pass/lib/items/item.utils';
+import { getSecretOrUri } from '@proton/pass/lib/otp/otp';
 import { sanitizeLoginAliasHydration, sanitizeLoginAliasSave } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { selectShowUsernameField, selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
@@ -69,7 +70,7 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
             passkeys: [],
             password: clone?.content.password ?? '',
             shareId: options?.shareId ?? shareId,
-            totpUri: clone?.content.totpUri ?? '',
+            totpUri: clone?.content.totpUri ? getSecretOrUri(clone.content.totpUri) : '',
             url: !clone && valid ? createNewUrl(url).url : '',
             urls: clone?.content.urls.map(createNewUrl) ?? [],
             withAlias: false,
