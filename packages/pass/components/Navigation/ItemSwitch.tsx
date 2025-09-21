@@ -12,7 +12,7 @@ import { useFiles } from '@proton/pass/hooks/files/useFileResolver';
 import type { SelectedItem } from '@proton/pass/types';
 
 type Props = RouteChildrenProps & {
-    fallback: RouteProps['component'];
+    fallback?: RouteProps['component'];
     prefix?: string;
 };
 
