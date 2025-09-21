@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect, useRef } from 'react';
+import { type FC, useCallback, useRef } from 'react';
 import type { List } from 'react-virtualized';
 
 import { c } from 'ttag';
@@ -9,6 +9,7 @@ import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { useMonitor } from '@proton/pass/components/Monitor/MonitorContext';
 import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationItem';
+import { useAutoSelect } from '@proton/pass/hooks/items/useAutoSelect';
 import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
@@ -27,13 +28,7 @@ export const WeakPasswords: FC = () => {
     const items = useMemoSelector(selectSelectedItems, [insecure.data]);
     const selectedItem = useSelectedItem();
 
-    useEffect(() => {
-        if (items.length > 0 && !selectedItem) {
-            const item = items[0];
-            selectItem(item, { scope: 'monitor/weak', mode: 'replace' });
-        }
-    }, [selectedItem, items]);
-
+    useAutoSelect(items);
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayWeakPasswords, {}, {})([]);
 
     const onSelect = useCallback((item: ItemRevision) => {
