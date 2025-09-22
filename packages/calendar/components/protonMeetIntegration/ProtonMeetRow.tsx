@@ -63,7 +63,7 @@ export const ProtonMeetRow = ({
     }
 
     return (
-        <IconRow icon={getIcon(processState)} labelClassName={'my-auto p-0'}>
+        <IconRow icon={getIcon(processState)} labelClassName={'my-auto p-0'} title={c('Label').t`Video conference`}>
             {processState === 'loading' ? (
                 <Button disabled shape="ghost" className="p-0" color="norm" size="small">
                     {c('Action').t`Adding conferencing details`}
