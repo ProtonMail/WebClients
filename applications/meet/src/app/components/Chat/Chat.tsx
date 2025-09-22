@@ -141,7 +141,7 @@ export const Chat = () => {
         >
             <div
                 ref={scrollRef}
-                className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 message-list"
+                className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 pb-4 message-list"
                 onScroll={handleScroll}
             >
                 {!isSearchOn && hasNoMessages && (
