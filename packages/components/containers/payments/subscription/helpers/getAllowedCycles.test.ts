@@ -853,7 +853,6 @@ describe('getAllowedCycles', () => {
         }
     );
 
-    // when user tries to switch between non-VPN plans and they have 1m or 12m cycle then they should see 1m, 12m
     const nonVpnPlusPlans = [PLANS.DRIVE, PLANS.PASS];
     it.each(
         nonVpnPlusPlans
@@ -868,7 +867,7 @@ describe('getAllowedCycles', () => {
             )
             .filter(({ sourcePlan, targetPlan }) => sourcePlan !== targetPlan)
     )(
-        'should show 1m, 12m cycles when user is on $sourcePlan with $cycle cycle and selects $targetPlan',
+        'should show 1m, 12m, 24m cycles when user is on $sourcePlan with $cycle cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan, cycle }) => {
             const subscription = buildSubscription();
             subscription.Cycle = cycle;
@@ -885,7 +884,7 @@ describe('getAllowedCycles', () => {
                 currency: DEFAULT_CURRENCY,
             });
 
-            expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+            expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
         }
     );
 
@@ -987,7 +986,7 @@ describe('getAllowedCycles', () => {
             .filter(({ targetPlan }) => targetPlan !== PLANS.VPN2024 && targetPlan !== PLANS.MAIL)
             .filter(({ sourcePlan, targetPlan }) => sourcePlan !== targetPlan)
     )(
-        'should show 1m, 12m cycles when user is on $sourcePlan with 24m cycle and selects $targetPlan',
+        'should show 1m, 12m, 24m cycles when user is on $sourcePlan with 24m cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan }) => {
             const subscription = buildSubscription();
             subscription.Cycle = CYCLE.TWO_YEARS;
@@ -1004,7 +1003,7 @@ describe('getAllowedCycles', () => {
                 currency: DEFAULT_CURRENCY,
             });
 
-            expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+            expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
         }
     );
 
@@ -1086,7 +1085,7 @@ describe('getAllowedCycles', () => {
                 .filter(({ sourcePlan, targetPlan }) => sourcePlan !== targetPlan)
         )
     )(
-        'should show 1m, 12m cycles when user is on $sourcePlan with 24m cycle and selects $targetPlan',
+        'should show 1m, 12m, 24m cycles when user is on $sourcePlan with 24m cycle and selects $targetPlan',
         ({ sourcePlan, targetPlan }) => {
             const subscription = buildSubscription();
             subscription.Cycle = CYCLE.YEARLY;
@@ -1109,7 +1108,7 @@ describe('getAllowedCycles', () => {
                 currency: DEFAULT_CURRENCY,
             });
 
-            expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+            expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
         }
     );
 
@@ -1175,28 +1174,9 @@ describe('getAllowedCycles', () => {
     );
 
     // when free user opens any (non-VPN) app then they should see 1m, 12m, 24m for bundle b2c plans
-    it.each([...b2cBundlePlans])('should show correct cycles for free users: user selects %s', (plan) => {
-        const planIDs: PlanIDs = {
-            [plan]: 1,
-        };
-
-        expect(
-            getAllowedCycles({
-                subscription: undefined,
-                planIDs,
-                plansMap: PLANS_MAP,
-                currency: DEFAULT_CURRENCY,
-                app: undefined,
-            })
-        ).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
-    });
-
-    // They should see 1m and 12m for other B2C plus plans
-    it.each([...b2cPlusPlans.filter((plan) => plan !== PLANS.VPN2024 && plan !== PLANS.MAIL)])(
+    it.each([...b2cBundlePlans, ...b2cPlusPlans])(
         'should show correct cycles for free users: user selects %s',
         (plan) => {
-            const vpnApp = APPS.PROTONVPN_SETTINGS;
-
             const planIDs: PlanIDs = {
                 [plan]: 1,
             };
@@ -1207,19 +1187,9 @@ describe('getAllowedCycles', () => {
                     planIDs,
                     plansMap: PLANS_MAP,
                     currency: DEFAULT_CURRENCY,
-                    app: vpnApp,
-                })
-            ).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
-
-            expect(
-                getAllowedCycles({
-                    subscription: undefined,
-                    planIDs,
-                    plansMap: PLANS_MAP,
-                    currency: DEFAULT_CURRENCY,
                     app: undefined,
                 })
-            ).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+            ).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
         }
     );
 
@@ -1476,7 +1446,7 @@ describe('downcycling', () => {
             currency: DEFAULT_CURRENCY,
         });
 
-        expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+        expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
 
     it('should return 1, 12, 24 cycles if user has 24 cycle subscription and downcyling is allowed', () => {
@@ -1550,7 +1520,7 @@ describe('downcycling', () => {
             currency: DEFAULT_CURRENCY,
         });
 
-        expect(result).toEqual([CYCLE.YEARLY, CYCLE.MONTHLY]);
+        expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY]);
     });
 
     it('should return 12, 24 cycles if minimumCycle is 12 and downcyling is allowed: with 24m rules', () => {
@@ -1600,7 +1570,7 @@ describe('downcycling', () => {
         expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
 
-    it('should return 12 cycle if minimumCycle is 12 and downcyling is allowed: with default rules', () => {
+    it('should return 12, 24 cycles if minimumCycle is 12 and downcyling is allowed: with default rules', () => {
         const subscription = buildSubscription();
         subscription.Cycle = CYCLE.MONTHLY;
         const planIDs: PlanIDs = {
@@ -1620,7 +1590,7 @@ describe('downcycling', () => {
             currency: DEFAULT_CURRENCY,
         });
 
-        expect(result).toEqual([CYCLE.YEARLY]);
+        expect(result).toEqual([CYCLE.TWO_YEARS, CYCLE.YEARLY]);
     });
 
     const dimensions = {
@@ -1656,8 +1626,7 @@ describe('downcycling', () => {
                 currency,
             });
 
-            const cycles =
-                plan === PLANS.DRIVE ? [CYCLE.YEARLY, CYCLE.MONTHLY] : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
+            const cycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
 
             expect(result).toEqual(cycles);
         }
