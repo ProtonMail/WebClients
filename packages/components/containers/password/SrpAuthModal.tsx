@@ -241,10 +241,18 @@ const SrpAuthModal = ({
             app: APP_NAME,
         })
     );
+    const abortControllerRef = useRef<AbortController | null>(null);
 
     const [password, setPassword] = useState('');
     const [rerender, setRerender] = useState(0);
     const [tabIndex, setTabIndex] = useState(0);
+
+    useEffect(() => {
+        return () => {
+            abortControllerRef.current?.abort();
+            abortControllerRef.current = null;
+        };
+    }, []);
 
     const cancelClose = () => {
         onCancel?.();
@@ -395,13 +403,20 @@ const SrpAuthModal = ({
                                 <Form
                                     id={FORM_ID}
                                     onSubmit={() => {
+                                        abortControllerRef.current?.abort();
+                                        const abortController = new AbortController();
+                                        abortControllerRef.current = abortController;
+
                                         withSubmitting(
                                             handleSubmit({
                                                 step,
                                                 password,
                                                 twoFa: {
                                                     type: 'fido2',
-                                                    payload: getAuthentication(fido2.AuthenticationOptions),
+                                                    payload: getAuthentication(
+                                                        fido2.AuthenticationOptions,
+                                                        abortController.signal
+                                                    ),
                                                 },
                                             })
                                         ).catch(noop);

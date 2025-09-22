@@ -30,12 +30,13 @@ const convertCreationToExpectedFormat = (
 };
 
 export const getCreatePayload = async (
-    registerCredentials: RegisterCredentials
+    registerCredentials: RegisterCredentials,
+    signal: AbortSignal
 ): Promise<RegisterCredentialsPayload> => {
     const credentialCreationOptions = convertCreationToExpectedFormat(
         registerCredentials.RegistrationOptions.publicKey
     );
-    const credentials = await navigator.credentials.create(credentialCreationOptions);
+    const credentials = await navigator.credentials.create({ ...credentialCreationOptions, signal });
     const publicKeyCredentials = credentials as PublicKeyCredential;
     if (!credentials || !('rawId' in credentials) || !('attestationObject' in publicKeyCredentials.response)) {
         throw new Error('No credentials received');
