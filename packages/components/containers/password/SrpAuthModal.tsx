@@ -1,5 +1,5 @@
 import type { MutableRefObject } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
@@ -241,17 +241,19 @@ const SrpAuthModal = ({
             app: APP_NAME,
         })
     );
-    const abortControllerRef = useRef<AbortController | null>(null);
 
     const [password, setPassword] = useState('');
     const [rerender, setRerender] = useState(0);
     const [tabIndex, setTabIndex] = useState(0);
 
+    const abortControllerRef = useRef<AbortController | null>(null);
+    const handleAbort = useCallback(() => {
+        abortControllerRef.current?.abort();
+        abortControllerRef.current = null;
+    }, []);
+
     useEffect(() => {
-        return () => {
-            abortControllerRef.current?.abort();
-            abortControllerRef.current = null;
-        };
+        return handleAbort;
     }, []);
 
     const cancelClose = () => {
@@ -354,7 +356,18 @@ const SrpAuthModal = ({
     const loading = submitting;
 
     // Don't allow to close this modal if it's loading as it could leave other consumers in an undefined state
-    const handleClose = loading ? noop : cancelClose;
+    const handleClose = () => {
+        // First abort any ongoing requests. This allows a user to cancel a webauthn request that may have gotten overridden by an extension.
+        // The intention is to just "cancel" the webauthn request and not close the modal.
+        if (abortControllerRef.current) {
+            handleAbort();
+            return;
+        }
+        if (loading) {
+            return;
+        }
+        return cancelClose();
+    };
 
     const infoResult = infoResultRef.current.data?.infoResult;
     const twoFactor = infoResultRef.current.data?.twoFactor;
@@ -403,23 +416,29 @@ const SrpAuthModal = ({
                                 <Form
                                     id={FORM_ID}
                                     onSubmit={() => {
-                                        abortControllerRef.current?.abort();
-                                        const abortController = new AbortController();
-                                        abortControllerRef.current = abortController;
+                                        const run = async () => {
+                                            try {
+                                                abortControllerRef.current?.abort();
+                                                const abortController = new AbortController();
+                                                abortControllerRef.current = abortController;
 
-                                        withSubmitting(
-                                            handleSubmit({
-                                                step,
-                                                password,
-                                                twoFa: {
-                                                    type: 'fido2',
-                                                    payload: getAuthentication(
-                                                        fido2.AuthenticationOptions,
-                                                        abortController.signal
-                                                    ),
-                                                },
-                                            })
-                                        ).catch(noop);
+                                                await handleSubmit({
+                                                    step,
+                                                    password,
+                                                    twoFa: {
+                                                        type: 'fido2',
+                                                        payload: getAuthentication(
+                                                            fido2.AuthenticationOptions,
+                                                            abortController.signal
+                                                        ),
+                                                    },
+                                                });
+                                            } finally {
+                                                abortControllerRef.current = null;
+                                            }
+                                        };
+
+                                        withSubmitting(run()).catch(noop);
                                     }}
                                 >
                                     <AuthSecurityKeyContent error={fidoError} />
@@ -434,15 +453,17 @@ const SrpAuthModal = ({
                                 defaultType="totp"
                                 hasBeenAutoSubmitted={hasBeenAutoSubmitted}
                                 loading={submitting}
-                                onSubmit={(payload) =>
-                                    withSubmitting(
-                                        handleSubmit({
+                                onSubmit={(payload) => {
+                                    const run = async () => {
+                                        await handleSubmit({
                                             step,
                                             password,
                                             twoFa: { type: 'code', payload },
-                                        }).catch(noop)
-                                    )
-                                }
+                                        });
+                                    };
+
+                                    withSubmitting(run()).catch(noop);
+                                }}
                             />
                         ),
                     };
@@ -460,6 +481,8 @@ const SrpAuthModal = ({
                             fullWidth
                             value={tabIndex}
                             onChange={(index) => {
+                                // Abort any ongoing (webauthn) requests when changing the tab.
+                                handleAbort();
                                 setTabIndex(index);
                                 setFidoError(false);
                             }}
