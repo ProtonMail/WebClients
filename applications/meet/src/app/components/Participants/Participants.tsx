@@ -25,6 +25,8 @@ export const Participants = () => {
     const [isSearchOn, setIsSearchOn] = useState(false);
     const [searchExpression, setSearchExpression] = useState('');
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
     const participants = useParticipants();
 
     const activeSpeakers = useDebouncedActiveSpeakers();
@@ -50,6 +52,7 @@ export const Participants = () => {
         <SideBar
             onClose={() => toggleSideBarState(MeetingSideBars.Participants)}
             absoluteHeader={true}
+            isScrolled={isScrolled}
             header={
                 <div className="flex items-center">
                     {isSearchOn ? (
@@ -77,7 +80,12 @@ export const Participants = () => {
                 </div>
             }
         >
-            <div className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 h-full participants-list">
+            <div
+                className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 h-full participants-list"
+                onScroll={(event) => {
+                    setIsScrolled(event.currentTarget.scrollTop > 0);
+                }}
+            >
                 {filteredParticipants.map((participant: Participant, index) => {
                     const videoPub = Array.from(participant.trackPublications.values()).find(
                         (pub) => pub.kind === Track.Kind.Video && pub.source === Track.Source.Camera && pub.track
