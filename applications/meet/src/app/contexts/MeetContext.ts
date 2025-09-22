@@ -14,9 +14,9 @@ export interface MeetContextValues {
     audioDeviceId: string | null;
     audioOutputDeviceId: string | null;
     videoDeviceId: string | null;
-    setAudioDeviceId: (deviceId: string | null) => void;
-    setAudioOutputDeviceId: (deviceId: string | null) => void;
-    setVideoDeviceId: (deviceId: string | null) => void;
+    setAudioDeviceId: (deviceId: string | null, save?: boolean) => void;
+    setAudioOutputDeviceId: (deviceId: string | null, save?: boolean) => void;
+    setVideoDeviceId: (deviceId: string | null, save?: boolean) => void;
     roomName: string;
     resolution: string | null;
     setResolution: (resolution: string | null) => void;
