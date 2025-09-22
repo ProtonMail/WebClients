@@ -1,12 +1,16 @@
 import { hasPauseCriteria } from 'proton-pass-extension/app/content/context/utils';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import { createExtensionAlarm } from 'proton-pass-extension/lib/utils/alarm';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { MODEL_VERSION } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
-import { createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
+import {
+    type TelemetryService as CoreTelemetryService,
+    createCoreTelemetryService,
+} from '@proton/pass/lib/telemetry/service';
 import { AUTOFILL_TELEMETRY_EVENTS, telemetryBool } from '@proton/pass/lib/telemetry/utils';
 import {
     selectAutofillSettings,
@@ -18,24 +22,23 @@ import {
 import type { ExtensionStorage } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { first } from '@proton/pass/utils/array/first';
-import type { EventDispatcherAlarm } from '@proton/pass/utils/event/dispatcher';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { isSupportedSenderUrl } from '@proton/pass/utils/url/utils';
-import noop from '@proton/utils/noop';
 
 export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
 
-export const createAlarmHandles = (alarmName: string): EventDispatcherAlarm => {
-    return {
-        reset: () => browser.alarms.clear(alarmName).catch(noop),
-        when: async () => (await browser.alarms.get(alarmName).catch(noop))?.scheduledTime,
-        set: (when) => browser.alarms.create(alarmName, { when }),
-    };
-};
-
 export const createTelemetryService = (storage: ExtensionStorage<Record<'telemetry', string>>) => {
-    const { push, send, start, stop } = createCoreTelemetryService({
-        alarm: createAlarmHandles(TELEMETRY_ALARM_NAME),
+    const service: CoreTelemetryService = createCoreTelemetryService({
+        alarm: createExtensionAlarm(
+            TELEMETRY_ALARM_NAME,
+            withContext((ctx) => {
+                /** Ensure the worker is ready before attempting to send events,
+                 * as this will be an authenticated call. If the alarm goes off and
+                 * the worker has not booted, the bundle will be sent on the next boot. */
+                const ready = clientReady(ctx.getState().status);
+                if (ready) return service.send();
+            })
+        ),
         storage,
         getEnabled: withContext((ctx) => selectTelemetryEnabled(ctx.service.store.getState())),
         getStorageKey: () => 'telemetry',
@@ -83,22 +86,16 @@ export const createTelemetryService = (storage: ExtensionStorage<Record<'telemet
                 }
             }
 
-            void push(event);
+            void service.push(event);
             return true;
         })
     );
 
-    browser.alarms.onAlarm.addListener(
-        withContext((ctx, { name }) => {
-            /** Ensure the worker is ready before attempting to send events,
-             * as this will be an authenticated call. If the alarm goes off and
-             * the worker has not booted, the bundle will be sent on the next boot. */
-            const ready = clientReady(ctx.getState().status);
-            if (ready && name === TELEMETRY_ALARM_NAME) return send();
-        })
-    );
-
-    return { start, stop, push };
+    return {
+        push: service.push,
+        start: service.start,
+        stop: service.stop,
+    };
 };
 
 export type TelemetryService = ReturnType<typeof createTelemetryService>;

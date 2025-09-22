@@ -8,7 +8,12 @@ import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtim
 import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
-import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
+import {
+    CLIPBOARD_PERMISSIONS,
+    hasPermissions,
+    promptForPermissions,
+    requestPermissions,
+} from 'proton-pass-extension/lib/utils/permissions';
 import { createPopupController } from 'proton-pass-extension/lib/utils/popup';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -175,7 +180,30 @@ const getPassCoreProviderProps = (
                 .then((res) => res.type === 'success')
                 .catch(() => false),
 
-        writeToClipboard: (value) => navigator.clipboard.writeText(value),
+        writeToClipboard: async (content, clipboardTTL, promptForPermissions) => {
+            /** Clipboard write can be done directly in the view */
+            await navigator.clipboard.writeText(content);
+
+            /** Handle clipboard auto-clear if TTL is specified. Auto-clear must be delegated
+             * to the background worker since the view may be closed before the timeout expires.
+             * This requires clipboard permissions to be granted. */
+            if (clipboardTTL && clipboardTTL > 0) {
+                const granted = await (async (): Promise<boolean> => {
+                    if (await hasPermissions(CLIPBOARD_PERMISSIONS)) return true;
+                    if (!promptForPermissions) return false;
+                    return requestPermissions(CLIPBOARD_PERMISSIONS);
+                })();
+
+                if (granted) {
+                    await sendMessage(
+                        messageFactory({
+                            type: WorkerMessageType.CLIPBOARD_AUTOCLEAR,
+                            payload: { timeoutMs: clipboardTTL, content },
+                        })
+                    );
+                }
+            }
+        },
 
         popup: endpoint === 'popup' ? createPopupController() : undefined,
     };

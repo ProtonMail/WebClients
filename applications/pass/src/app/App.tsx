@@ -2,6 +2,7 @@ import { Router, matchPath } from 'react-router-dom';
 
 import config from 'proton-pass-web/app/config';
 import { B2BEvents } from 'proton-pass-web/lib/b2b';
+import { clipboard } from 'proton-pass-web/lib/clipboard';
 import { PASS_WEB_COMPAT } from 'proton-pass-web/lib/compatibility';
 import { core } from 'proton-pass-web/lib/core';
 import { PASS_CONFIG } from 'proton-pass-web/lib/env';
@@ -36,6 +37,7 @@ import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/The
 import { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { PublicRoutes, getLocalPath, history } from '@proton/pass/components/Navigation/routing';
+import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
@@ -133,7 +135,10 @@ export const getPassCoreProps = (sw: Maybe<ServiceWorkerClient>): PassCoreProvid
                 hash: page,
             }),
 
-        writeToClipboard: (value) => navigator.clipboard.writeText(value),
+        writeToClipboard: async (content, clipboardTTL) => {
+            await clipboard.write(content);
+            if (clipboardTTL && clipboardTTL > 0) clipboard.autoClear(clipboardTTL, content);
+        },
 
         supportsBiometrics: isPRFSupported,
 
@@ -185,7 +190,9 @@ export const App = () => (
                                                                 <StoreProvider>
                                                                     <ThemeConnect />
                                                                     <Localized>
-                                                                        <AppGuard />
+                                                                        <ClipboardProvider>
+                                                                            <AppGuard />
+                                                                        </ClipboardProvider>
                                                                     </Localized>
                                                                     <Portal>
                                                                         <ModalsChildren />

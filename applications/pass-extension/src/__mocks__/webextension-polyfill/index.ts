@@ -26,6 +26,14 @@ const browser = {
             passwordSavingEnabled: { get: jest.fn(), set: jest.fn() },
         },
     },
+    alarms: {
+        create: jest.fn(),
+        clear: jest.fn().mockResolvedValue(undefined),
+        get: jest.fn(),
+        onAlarm: {
+            addListener: jest.fn(),
+        },
+    },
 };
 
 export const clearBrowserMocks = () => {
@@ -39,6 +47,10 @@ export const clearBrowserMocks = () => {
     browser.privacy.services.autofillAddressEnabled.set.mockClear();
     browser.privacy.services.passwordSavingEnabled.get.mockClear();
     browser.privacy.services.passwordSavingEnabled.set.mockClear();
+    browser.alarms.create.mockClear();
+    browser.alarms.clear.mockClear();
+    browser.alarms.get.mockClear();
+    browser.alarms.onAlarm.addListener.mockClear();
 };
 
 export default browser;

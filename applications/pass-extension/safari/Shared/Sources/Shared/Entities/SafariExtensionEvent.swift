@@ -25,5 +25,7 @@ public enum SafariExtensionEvent: Sendable, Equatable {
     case newCredentials(Credentials?)
     case updateCredentials(RefreshedTokens)
     case environment(PassEnvironment)
+    case readFromClipboard
+    case writeToClipboard(content: String)
     case unknown
 }

@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 
-import { ClipboardSettings } from '@proton/pass/components/Settings/ClipboardSettings';
+import { Clipboard } from '@proton/pass/components/Settings/Clipboard';
 import { ExtraPassword } from '@proton/pass/components/Settings/ExtraPassword';
 import { LockSettings } from '@proton/pass/components/Settings/LockSettings';
 
 export const Security: FC = () => [
     <LockSettings key="lock" />,
     <ExtraPassword key="extra-pwd" />,
-    ...(DESKTOP_BUILD ? [<ClipboardSettings key="clipboard" />] : []),
+    ...(DESKTOP_BUILD ? [<Clipboard key="clipboard" />] : []),
 ];

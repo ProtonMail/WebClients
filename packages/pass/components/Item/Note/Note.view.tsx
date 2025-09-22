@@ -9,15 +9,15 @@ import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHisto
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import { SecureLinkCardList } from '@proton/pass/components/SecureLink/SecureLinkCardList';
+import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 
 export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
     const { revision, handleHistoryClick } = itemViewProps;
     const { shareId, itemId, modifyTime, createTime } = revision;
-
     const note = useDeobfuscatedValue(revision.data.metadata.note);
+
     const copyToClipboard = useCopyToClipboard();
 
     return (

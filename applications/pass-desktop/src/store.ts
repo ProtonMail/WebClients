@@ -1,6 +1,6 @@
 import Store from 'electron-store';
 
-import type { ClipboardStoreProperties, DesktopTheme } from '@proton/pass/types';
+import type { DesktopTheme } from '@proton/pass/types';
 
 import type { StoreInstallProperties } from './lib/install-info';
 import type { WindowConfigStoreProperties } from './lib/window-management';
@@ -9,7 +9,6 @@ import type { StoreUpdateProperties } from './update';
 type RootStore = {
     installInfo?: StoreInstallProperties;
     update?: StoreUpdateProperties;
-    clipboard?: ClipboardStoreProperties;
     theme?: DesktopTheme;
     windowConfig?: WindowConfigStoreProperties;
 };

@@ -9,7 +9,8 @@ export type ClientEndpoint =
     | 'notification'
     | 'dropdown'
     | 'web'
-    | 'desktop';
+    | 'desktop'
+    | 'offscreen';
 
 export type TabId = number;
 export type TabInfo = { url: ParsedUrl; tabId: TabId; senderTabId?: TabId };
