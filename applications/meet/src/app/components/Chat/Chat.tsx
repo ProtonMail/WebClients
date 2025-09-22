@@ -27,6 +27,8 @@ export const Chat = () => {
     const [isSearchOn, setIsSearchOn] = useState(false);
     const [searchExpression, setSearchExpression] = useState('');
 
+    const [isScrolled, setIsScrolled] = useState(false);
+
     const { roomName, setChatMessages } = useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
@@ -41,7 +43,9 @@ export const Chat = () => {
     const wasAtBottomRef = useRef(true);
     const prevMessageCountRef = useRef(0);
 
-    const handleScroll = () => {
+    const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
+        setIsScrolled(event.currentTarget.scrollTop > 0);
+
         const el = scrollRef.current;
         if (!el) {
             return;
@@ -105,6 +109,7 @@ export const Chat = () => {
         <SideBar
             onClose={() => toggleSideBarState(MeetingSideBars.Chat)}
             absoluteHeader={true}
+            isScrolled={isScrolled}
             header={
                 <div className="flex items-center">
                     {!isSearchOn && (
@@ -136,7 +141,7 @@ export const Chat = () => {
         >
             <div
                 ref={scrollRef}
-                className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 h-full message-list"
+                className="flex-1 overflow-y-auto w-full flex flex-column flex-nowrap gap-4 message-list"
                 onScroll={handleScroll}
             >
                 {!isSearchOn && hasNoMessages && (
