@@ -3,10 +3,12 @@ import { Route, useHistory, useLocation } from 'react-router-dom';
 
 import ProtonApp from '@proton/components/containers/app/ProtonApp';
 import { isWasmSupported } from '@proton/shared/lib/helpers/isWasmSupported';
+import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported';
 import useFlag from '@proton/unleash/useFlag';
 
 import { ComingSoon } from './components/ComingSoon/ComingSoon';
 import { WasmUnsupportedError } from './components/WasmUnsupportedError';
+import { WebRtcUnsupportedError } from './components/WebRtcUnsupportedError';
 import config from './config';
 import { AdminContainer } from './containers/AdminContainer';
 import { DashboardContainer } from './containers/DashboardContainer';
@@ -73,6 +75,10 @@ export const App = () => {
 
     if (!isWasmSupported()) {
         return <WasmUnsupportedError />;
+    }
+
+    if (!isWebRtcSupported()) {
+        return <WebRtcUnsupportedError />;
     }
 
     return (
