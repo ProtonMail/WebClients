@@ -45,6 +45,7 @@ if (!['chrome', 'firefox', 'safari'].includes(BUILD_TARGET)) {
 const MANIFEST_KEYS = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'manifest-keys.json'), 'utf8'));
 const PUBLIC_KEY = BUILD_TARGET === 'chrome' ? MANIFEST_KEYS?.[MANIFEST_KEY] : null;
 const ARGON2_CHUNK_NAMES = ['node_modules_openpgp_dist_lightweight_argon2id_min_mjs', 'vendor_argon2id_loader_ts'];
+const NACL_CHUNK_NAME = 'node_modules_openpgp_dist_lightweight_nacl-fast_min_mjs';
 
 const section = (title: string, content: () => void) => {
     const width = process.stdout.columns || 80;
@@ -239,6 +240,7 @@ const config: Configuration = {
         chunkFilename: ({ chunk }) => {
             if (!chunk?.name) {
                 if (chunk?.id && ARGON2_CHUNK_NAMES.includes(chunk.id.toString())) return 'chunk.crypto-argon2.js';
+                if (chunk?.id && NACL_CHUNK_NAME === chunk.id.toString()) return 'chunk.crypto-nacl.js';
                 return 'chunk.[contenthash:8].js';
             }
 
