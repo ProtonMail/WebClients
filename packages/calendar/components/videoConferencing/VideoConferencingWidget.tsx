@@ -2,11 +2,12 @@ import React, { type ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike, Href } from '@proton/atoms';
+import { Button, ButtonLike, Href, Tooltip } from '@proton/atoms';
 import { Collapsible, CollapsibleContent, CollapsibleHeader, Copy, Icon, IconRow } from '@proton/components';
 import useDrawer from '@proton/components/hooks/drawer/useDrawer';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcVideoCamera } from '@proton/icons';
+import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import clsx from '@proton/utils/clsx';
 
@@ -80,9 +81,17 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
                             onCopy={handleOnCopy}
                         />
                         {location === 'event-form' && (
-                            <Button icon shape="ghost" size="small" onClick={handleDelete}>
-                                <Icon name="cross-big" alt={c('Action').t`Remove Zoom meeting`} />
-                            </Button>
+                            <Tooltip
+                                title={
+                                    data.service === VIDEO_CONF_SERVICES.ZOOM
+                                        ? c('Label').t`Remove Zoom video conference`
+                                        : c('Label').t`Remove ${MEET_APP_NAME} video conference`
+                                }
+                            >
+                                <Button icon shape="ghost" size="small" onClick={handleDelete}>
+                                    <Icon name="cross-big" alt={c('Action').t`Remove video conference`} />
+                                </Button>
+                            </Tooltip>
                         )}
                     </div>
                 </div>
