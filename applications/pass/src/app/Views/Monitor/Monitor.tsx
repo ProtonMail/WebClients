@@ -33,7 +33,7 @@ export const Monitor: FC<RouteChildrenProps> = ({ match }) => (
 
                     return (
                         <Content>
-                            <ItemSwitch prefix={removeLocalPath(match.url)} fallback={() => <div />} {...subRoute} />
+                            <ItemSwitch prefix={removeLocalPath(match.url)} {...subRoute} />
                         </Content>
                     );
                 }}
