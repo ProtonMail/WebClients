@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,6 +18,14 @@ interface Props {
 const Fido2Form = ({ onSubmit, fido2 }: Props) => {
     const [loading, withLoading] = useLoading(false);
     const [fidoError, setFidoError] = useState(false);
+    const abortControllerRef = useRef<AbortController | null>(null);
+
+    useEffect(() => {
+        return () => {
+            abortControllerRef.current?.abort();
+            abortControllerRef.current = null;
+        };
+    }, []);
 
     return (
         <>
@@ -38,7 +46,13 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
                         let authenticationCredentialsPayload: Fido2Data;
                         try {
                             setFidoError(false);
-                            authenticationCredentialsPayload = await getAuthentication(fido2.AuthenticationOptions);
+                            abortControllerRef.current?.abort();
+                            const abortController = new AbortController();
+                            abortControllerRef.current = abortController;
+                            authenticationCredentialsPayload = await getAuthentication(
+                                fido2.AuthenticationOptions,
+                                abortController.signal
+                            );
                         } catch (error) {
                             setFidoError(true);
                             // Purposefully logging the error for somewhat easier debugging
