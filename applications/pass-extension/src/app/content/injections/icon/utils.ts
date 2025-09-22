@@ -134,8 +134,10 @@ const computeIconInjectionStyles = (
     repaint(input, control);
 
     const { right: inputRight, top: inputTop, height: inputHeight } = input.getBoundingClientRect();
-    const { top: boxTop, height: boxMaxHeight } = anchor.getBoundingClientRect();
+    const { right: anchorRight, top: boxTop, height: boxMaxHeight } = anchor.getBoundingClientRect();
     const { top: controlTop, right: controlRight } = control.getBoundingClientRect();
+
+    const maxRight = inputRight > anchorRight ? anchorRight : inputRight;
 
     /* If inputBox is not the input element in the case we
      * resolved a bounding element : compute inner height
@@ -155,7 +157,7 @@ const computeIconInjectionStyles = (
      * the icon on the right hand-side of the input element
      * accounting for icon size and padding  */
     let overlayDx = getOverlayShift({
-        x: inputRight - (iconPaddingRight + size / 2),
+        x: maxRight - (iconPaddingRight + size / 2),
         y: inputTop + inputHeight / 2,
         anchor,
         input,
@@ -178,7 +180,7 @@ const computeIconInjectionStyles = (
      * top = mt + boxHeight / 2 */
 
     const top = boxTop - controlTop + boxOffset.top + (boxHeight - size) / 2;
-    const right = controlRight - inputRight + iconPaddingRight + overlayDx;
+    const right = controlRight - maxRight + iconPaddingRight + overlayDx;
 
     return {
         input: {
