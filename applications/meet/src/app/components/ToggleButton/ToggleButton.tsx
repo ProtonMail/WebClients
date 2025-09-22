@@ -4,11 +4,9 @@ import { useRef } from 'react';
 import { Button, Tooltip } from '@proton/atoms';
 import type { IconProps } from '@proton/components/components/icon/Icon';
 import { IcChevronDown, IcChevronUp } from '@proton/icons';
-import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 
 import type { PopUpControls } from '../../types';
-import { checkForInsideClick } from '../../utils/checkForInsideClick';
 
 import './ToggleButton.scss';
 
@@ -109,33 +107,7 @@ export const ToggleButton = ({
                 </div>
             )}
             <div className="relative flex flex-nowrap items-center flex-column">
-                {isOpen && Content && (
-                    <button
-                        className="toggle-button-hover-content rounded-full p-2 z-up absolute left-custom bottom-custom mb-2 cursor-default"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            e.preventDefault();
-                        }}
-                        style={{
-                            '--left-custom': '-1rem',
-                            '--bottom-custom': '4rem',
-                        }}
-                        aria-expanded={isOpen}
-                        onBlur={(e) => {
-                            e.stopPropagation();
-                            e.preventDefault();
-
-                            const isInsideDropdown = checkForInsideClick(e, dropdownRootClassName);
-                            const isToggleButtonCircle = checkForInsideClick(e, 'toggle-button-circle');
-
-                            if (isOpen && !isInsideDropdown && !isToggleButtonCircle) {
-                                onPopupButtonClick();
-                            }
-                        }}
-                    >
-                        <Content anchorRef={buttonRef} />
-                    </button>
-                )}
+                {isOpen && Content && <Content anchorRef={buttonRef} />}
             </div>
         </div>
     );
