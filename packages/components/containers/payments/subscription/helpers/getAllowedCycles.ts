@@ -31,27 +31,11 @@ export type PlanCapRule = {
 };
 
 const defaultRules: PlanCapRule[] = [
-    { plan: PLANS.MAIL, cycle: CYCLE.TWO_YEARS },
-    { plan: PLANS.VPN2024, cycle: CYCLE.TWO_YEARS },
-    { plan: PLANS.DRIVE, cycle: CYCLE.YEARLY },
     { plan: PLANS.LUMO, cycle: CYCLE.YEARLY },
-    { plan: PLANS.PASS, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_FAMILY, cycle: CYCLE.YEARLY },
-
-    // for B2C bundle plans we want to show 2-year plans when possible.
-    // BUNDLE has full support of 2-year plans, including regional currencies.
-    // The only exception is BRL which technically supports 2-year bundle2022 but has a placeholder
-    // price: 2 * 12m price.
-    { plan: PLANS.BUNDLE, cycle: CYCLE.TWO_YEARS },
-    { plan: PLANS.DUO, cycle: CYCLE.TWO_YEARS },
-    { plan: PLANS.FAMILY, cycle: CYCLE.TWO_YEARS },
-    // And Visionary doesn't have regional currencies at all, for none of the cycles, so we don't need any additional
-    // predicates here. It will filtered out by different components.
-    { plan: PLANS.VISIONARY, cycle: CYCLE.TWO_YEARS },
 
     { plan: PLANS.PASS_PRO, cycle: CYCLE.YEARLY },
     { plan: PLANS.PASS_BUSINESS, cycle: CYCLE.YEARLY },
-    // { plan: PLANS.MAIL_PRO, cycle: CYCLE.YEARLY }, // for now we want 2-year cap for Mail Essentials (mailpro2022)
     { plan: PLANS.MAIL_BUSINESS, cycle: CYCLE.YEARLY },
     { plan: PLANS.BUNDLE_PRO, cycle: CYCLE.YEARLY },
     { plan: PLANS.BUNDLE_PRO_2024, cycle: CYCLE.YEARLY },
