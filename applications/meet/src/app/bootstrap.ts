@@ -15,7 +15,10 @@ import type { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import createApi from '@proton/shared/lib/api/createApi';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { handleLogoutFromURL } from '@proton/shared/lib/authentication/handleLogoutFromURL';
-import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import {
+    getPersistedSession,
+    registerSessionRemovalListener,
+} from '@proton/shared/lib/authentication/persistedSessionStorage';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -26,6 +29,7 @@ import noop from '@proton/utils/noop';
 import locales from './locales';
 import type { MeetDispatch, MeetStore } from './store';
 import { setupStore } from './store';
+import { clearStoredDevices } from './utils/deviceStorage';
 
 const initializeWasmApp = async (authentication: ProtonThunkArguments['authentication']): Promise<App> => {
     await init();
@@ -163,6 +167,11 @@ const completeAppBootstrap = async ({
     eventManagerSetup({ store, signal, eventManager, unleashClient });
 
     dispatch(bootstrapEvent({ type: 'complete' }));
+
+    // Register callback to clear settings entries on logout
+    registerSessionRemovalListener(async () => {
+        clearStoredDevices();
+    });
 
     return { userData, wasmApp };
 };

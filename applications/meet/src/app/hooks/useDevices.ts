@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useDevicePermissionsContext } from '../contexts/DevicePermissionsContext';
+import { getStoredDevices } from '../utils/deviceStorage';
 
 const getDevices = async (kind: MediaDeviceKind) => {
     try {
@@ -45,9 +46,20 @@ export const useDevices = () => {
         };
     }, []);
 
-    const defaultMicrophone = microphones.find((m) => m.deviceId === 'default') ?? microphones[0];
-    const defaultCamera = cameras.find((c) => c.deviceId === 'default') ?? cameras[0];
-    const defaultSpeaker = speakers.find((s) => s.deviceId === 'default') ?? speakers[0];
+    const storedDevices = getStoredDevices();
+
+    const defaultMicrophone =
+        microphones.find((m) => m.deviceId === storedDevices.audioDeviceId) ??
+        microphones.find((m) => m.deviceId === 'default') ??
+        microphones[0];
+    const defaultCamera =
+        cameras.find((c) => c.deviceId === storedDevices.videoDeviceId) ??
+        cameras.find((c) => c.deviceId === 'default') ??
+        cameras[0];
+    const defaultSpeaker =
+        speakers.find((s) => s.deviceId === storedDevices.audioOutputDeviceId) ??
+        speakers.find((s) => s.deviceId === 'default') ??
+        speakers[0];
 
     return {
         cameras,
