@@ -27,8 +27,13 @@ if (typeof browser !== 'undefined') {
         const globalScope = self as any as ServiceWorkerGlobalScope;
 
         const localeChunks = Object.keys(config.LOCALES).map((locale: string) => `chunk.locales/${locale}-json.js`);
-        const cryptoChunks = ['chunk.crypto-worker-api.js', 'chunk.crypto-argon2.js', 'chunk.pass-core.main.js'];
         const extraChunks = ['chunk.zip.js', 'chunk.csv.reader.js'];
+        const cryptoChunks = [
+            'chunk.crypto-worker-api.js',
+            'chunk.crypto-argon2.js',
+            'chunk.crypto-nacl.js',
+            'chunk.pass-core.main.js',
+        ];
 
         const chunks = localeChunks.concat(cryptoChunks).concat(extraChunks);
 
