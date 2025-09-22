@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -64,6 +64,15 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     const registrationPayloadRef = useRef<RegisterCredentialsPayload>();
     const [allowPlatformKeys, setAllowPlatformKeys] = useState(false);
 
+    const abortControllerRef = useRef<AbortController | null>(null);
+
+    useEffect(() => {
+        return () => {
+            abortControllerRef.current?.abort();
+            abortControllerRef.current = null;
+        };
+    }, []);
+
     const getRegistrationPayload = () => {
         const run = async () => {
             let response: RegisterCredentials;
@@ -76,7 +85,12 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             try {
                 setFidoError(false);
                 setBehind(true);
-                registrationPayloadRef.current = await getCreatePayload(response);
+
+                abortControllerRef.current?.abort();
+                const abortController = new AbortController();
+                abortControllerRef.current = abortController;
+
+                registrationPayloadRef.current = await getCreatePayload(response, abortController.signal);
                 setBehind(false);
             } catch (error) {
                 setFidoError(true);
