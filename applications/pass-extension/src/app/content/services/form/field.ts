@@ -15,7 +15,7 @@ import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import { type FieldType, type FormType, type IdentityFieldType, isVisible } from '@proton/pass/fathom';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { findBoundingInputElement } from '@proton/pass/utils/dom/input';
+import { findInputBoundingElement } from '@proton/pass/utils/dom/input';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
@@ -102,7 +102,7 @@ export const createFieldHandles = ({
         fieldId: uniqueId(8),
         fieldType,
         element,
-        boxElement: findBoundingInputElement(element),
+        boxElement: findInputBoundingElement(element),
         icon: null,
         action: null,
         value: element.value,
@@ -112,7 +112,7 @@ export const createFieldHandles = ({
         zIndex,
         getFormHandle,
         getBoxElement: (options) => {
-            if (options?.reflow) field.boxElement = findBoundingInputElement(element);
+            if (options?.reflow) field.boxElement = findInputBoundingElement(element);
             return field.boxElement;
         },
         setValue: (value) => {
