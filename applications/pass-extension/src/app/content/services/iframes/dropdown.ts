@@ -121,7 +121,7 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
             const { left: boxLeft, top, width } = boxElement.getBoundingClientRect();
 
             return {
-                top: top - bodyTop + offsetBox.top + height,
+                top: top - bodyTop + offsetBox.bottom + offsetBox.top + height,
                 left: boxLeft + width - DROPDOWN_WIDTH,
             };
         },
