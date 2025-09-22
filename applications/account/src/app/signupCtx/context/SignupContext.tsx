@@ -20,7 +20,10 @@ import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import {
+    type ResumedSessionResult,
+    extendPersistedSessionOfflineBypass,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import type { Optional, ReferralData } from '@proton/shared/lib/interfaces';
@@ -44,7 +47,7 @@ import { InvalidReferrerError, useReferralData } from './accountData/useReferral
 import { useSignupDomains } from './accountData/useSignupDomains';
 import { getClientType } from './helpers/getClientType';
 import { handleCreateUser } from './helpers/handleCreateUser';
-import { type SignupContextSubscriptionData, handleSetupUser } from './helpers/handleSetupUser';
+import { type SignupContextSubscriptionData, handleSetupUser, handleSubscribeUser } from './helpers/handleSetupUser';
 
 interface AccountFormDataConfig {
     /**
@@ -95,6 +98,11 @@ interface SignupContextType {
      * Sets up the newly created user account
      */
     setupUser: () => Promise<void>;
+    /**
+     * Setup the subsciption when it has been made after `setupUser`
+     * If subscription is done before `setupUser`, it will be done automatically
+     */
+    setupSubscription: () => Promise<void>;
     setOrgName: (orgName: string) => Promise<void>;
     setDisplayName: (displayName: string) => Promise<void>;
     login: () => Promise<void>;
@@ -132,7 +140,7 @@ interface SignupContextProviderProps extends Omit<BaseSignupContextProps, 'onLog
     app: APP_NAMES | 'generic';
 
     /**
-     * Unique id for each flow.
+     * Unique id for each defined flow.
      * Can be used to run different variants of a signup.
      * Used for telemetry and to debug issues when things go wrong
      */
@@ -540,6 +548,18 @@ export const InnerSignupContextProvider = ({
         }
     };
 
+    const setupSubscription = async () => {
+        const subscriptionData = signupDataRef.current?.paymentData?.subscriptionData;
+
+        if (subscriptionData) {
+            await handleSubscribeUser(api, subscriptionData, app, hasZipCodeValidation);
+        }
+
+        if (setupUserResponseRef.current) {
+            await extendPersistedSessionOfflineBypass(setupUserResponseRef.current.session.localID);
+        }
+    };
+
     const setOrgName = async (orgName: string) => {
         if (stageRef.current !== 'userSetup') {
             captureSentryMessage(
@@ -761,6 +781,7 @@ export const InnerSignupContextProvider = ({
         },
         createUser,
         setupUser,
+        setupSubscription,
         setOrgName,
         setDisplayName,
         flowId,

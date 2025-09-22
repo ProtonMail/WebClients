@@ -1,0 +1,21 @@
+.pass-plan-card {
+	border: 1px solid var(--border-norm);
+
+	&:nth-child(1) {
+		border-radius: 12px 0 0 12px;
+	}
+
+	&:last-child {
+		border-radius: 0 12px 12px 0;
+	}
+
+	&-recommended {
+		border-radius: 0 0 12px 12px!important;
+
+		&-banner {
+			// border: 3px * 2 = 6px + 1 adjustment px = 7px
+			width: calc(100% + 7px);
+			border-radius: 12px 12px 0 0;
+		}
+	}
+}
