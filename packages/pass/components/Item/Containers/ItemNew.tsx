@@ -54,7 +54,7 @@ export const ItemNew: FC = () => {
     const selectedVault = useMemoSelector(selectShare, [selectedShareId]);
 
     const shareId = (() => {
-        /**  if user downgraded : always auto-select the default vault id */
+        /** If user downgraded : always auto-select the default vault id */
         if (didDowngrade) return defaultVault?.shareId;
         /** If we have a selected share : ensure it is writable */
         if (selectedShareId && selectedVault && isWritableVault(selectedVault)) return selectedShareId;
