@@ -43,11 +43,12 @@ export const ParticipantHostControls = ({
                 onClick={toggle}
                 hasCaret={false}
                 shape="ghost"
-                className="rounded-full p-2 w-custom h-custom flex items-center justify-center"
+                className="participant-host-controls-dropdown-button rounded-full w-custom h-custom flex items-center justify-center"
                 size="small"
                 style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
+                icon
             >
-                <IcThreeDotsVertical alt={c('Alt').t`Participant host control options`} />
+                <IcThreeDotsVertical className="shrink-0" alt={c('Alt').t`Participant host control options`} size={5} />
             </DropdownButton>
             <Dropdown
                 isOpen={isOpen}
