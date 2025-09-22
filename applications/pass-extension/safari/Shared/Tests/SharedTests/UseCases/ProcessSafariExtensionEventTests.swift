@@ -68,8 +68,6 @@ extension ProcessSafariExtensionEventTests {
         let credentials = Credentials(sessionID: "test_sessionid",
                                       accessToken: "test_access_token",
                                       refreshToken: "test_refresh_token",
-                                      displayName: "test_display_name",
-                                      email: "test_email",
                                       userID: "test_userid")
         XCTAssertEqual(result2, .newCredentials(credentials))
     }
@@ -87,6 +85,28 @@ extension ProcessSafariExtensionEventTests {
         let tokens = RefreshedTokens(accessToken: "test_access_token",
                                      refreshToken: "test_refresh_token")
         XCTAssertEqual(result, .updateCredentials(tokens))
+    }
+
+    func testParseReadFromClipboardEvent() throws {
+        let json = """
+        {
+            "readFromClipboard": {}
+        }
+        """
+        let result = try sut.execute(json)
+        XCTAssertEqual(result, .readFromClipboard)
+    }
+
+    func testParseWriteToClipboardEvent() throws {
+        let json = """
+        {
+            "writeToClipboard": {
+                "Content": "test_content"
+            }
+        }
+        """
+        let result = try sut.execute(json)
+        XCTAssertEqual(result, .writeToClipboard(content: "test_content"))
     }
 
     func testThrowErrorsWhenInvalidJson() {

@@ -15,7 +15,7 @@
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "proton-pack dev-server --appMode=standalone",
         "sync:fathom": "scripts/sync-fathom.sh",
-        "test": "NODE_NO_WARNINGS=1 jest --verbose",
+        "test": "NODE_NO_WARNINGS=1 jest --verbose --coverage",
         "test:ci": "yarn test:tz && jest --coverage --runInBand --ci",
         "test:tz": "bash -c 'for tz in UTC America/New_York Europe/Paris Asia/Tokyo; do TZ=$tz yarn test time/format.spec.ts || exit 1; done'",
         "test:watch": "jest --watch",

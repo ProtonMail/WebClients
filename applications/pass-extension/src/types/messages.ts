@@ -2,6 +2,7 @@ import type { Action } from 'redux';
 
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import type { AuthOptions } from '@proton/pass/lib/auth/service';
+import type { ClipboardAutoClearDTO, ClipboardWriteDTO } from '@proton/pass/lib/clipboard/types';
 import type { PassCoreMethod, PassCoreRPC, PassCoreResult } from '@proton/pass/lib/core/core.types';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
 import type {
@@ -88,6 +89,9 @@ export enum WorkerMessageType {
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
     B2B_EVENT = 'B2B_EVENT',
     CLIENT_INIT = 'CLIENT_INIT',
+    CLIPBOARD_OFFSCREEN_READ = 'CLIPBOARD_OFFSCREEN_READ',
+    CLIPBOARD_OFFSCREEN_WRITE = 'CLIPBOARD_OFFSCREEN_WRITE',
+    CLIPBOARD_AUTOCLEAR = 'CLIPBOARD_AUTOCLEAR',
     DEBUG = 'DEBUG',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
     FETCH_ABORT = 'FETCH_ABORT',
@@ -160,6 +164,9 @@ export type AutofillSyncMessage = { type: WorkerMessageType.AUTOFILL_SYNC };
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosaveRequest>;
 export type B2BEventMessage = WithPayload<WorkerMessageType.B2B_EVENT, { event: B2BEvent }>;
 export type ClientInitMessage = WithPayload<WorkerMessageType.CLIENT_INIT, { tabId: TabId }>;
+export type ClipboardReadMessage = { type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ };
+export type ClipboardWriteMessage = WithPayload<WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, ClipboardWriteDTO>;
+export type ClipboardAutoClearMessage = WithPayload<WorkerMessageType.CLIPBOARD_AUTOCLEAR, ClipboardAutoClearDTO>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestId: string }>;
@@ -230,6 +237,9 @@ export type WorkerMessage =
     | AutoSaveRequestMessage
     | B2BEventMessage
     | ClientInitMessage
+    | ClipboardReadMessage
+    | ClipboardWriteMessage
+    | ClipboardAutoClearMessage
     | DebugMessage
     | FeatureFlagsUpdateMessage
     | FetchAbortMessage
@@ -299,6 +309,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;
     [WorkerMessageType.CLIENT_INIT]: { state: AppState; settings: ProxiedSettings; features: FeatureFlagState };
+    [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ]: { content: string };
     [WorkerMessageType.FETCH_DOMAINIMAGE]: { result: Maybe<string> };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { submission: MaybeNull<AutosaveFormEntry> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: MaybeNull<AutosaveFormEntry> };
