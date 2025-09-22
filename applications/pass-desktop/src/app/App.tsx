@@ -34,6 +34,7 @@ import { PassExtensionLink } from '@proton/pass/components/Core/PassExtensionLin
 import { createPassThemeManager } from '@proton/pass/components/Layout/Theme/ThemeService';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { api, exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
 import { createImageProxyHandler, imageResponsetoDataURL } from '@proton/pass/lib/api/images';
@@ -49,6 +50,7 @@ import { ping } from '@proton/shared/lib/api/tests';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
+import { clipboard } from '../lib/clipboard';
 import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
 import { isFirstLaunch } from './firstLaunch';
@@ -115,7 +117,10 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
             hash: page,
         }),
 
-    writeToClipboard: async (str) => window.ctxBridge?.writeToClipboard(str),
+    writeToClipboard: async (content, clipboardTTL) => {
+        await clipboard.write(content);
+        if (clipboardTTL && clipboardTTL > 0) clipboard.autoClear(clipboardTTL, content);
+    },
 
     isFirstLaunch,
 });
@@ -139,7 +144,9 @@ export const App = () => {
                                                 <AuthServiceProvider>
                                                     <StoreProvider>
                                                         <Localized>
-                                                            {showWelcome ? <WelcomeScreen /> : <AppGuard />}
+                                                            <ClipboardProvider>
+                                                                {showWelcome ? <WelcomeScreen /> : <AppGuard />}
+                                                            </ClipboardProvider>
                                                         </Localized>
                                                         <Portal>
                                                             <ModalsChildren />

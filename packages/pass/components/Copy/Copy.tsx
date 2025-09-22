@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button, type ButtonLikeShape, type ButtonProps, Tooltip } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 
 type Props = ButtonProps & {
     value: string;
@@ -15,11 +15,11 @@ type Props = ButtonProps & {
 };
 
 export const Copy: FC<Props> = ({ children, value, onCopy, tooltipText, shape = 'outline', ...rest }) => {
-    const { writeToClipboard } = usePassCore();
+    const copyToClipboard = useCopyToClipboard();
 
     const handleClick = async (e: MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
-        await writeToClipboard(value);
+        await copyToClipboard(value);
         onCopy?.();
     };
 
