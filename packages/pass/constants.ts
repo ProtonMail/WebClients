@@ -153,6 +153,7 @@ export const PASS_PROTON_ANNIVERSARY_END_DATE = new Date('2025-05-28T12:00:00+01
 
 export const PASS_PLUS_LIFETIME_PRICE = 19900; // €199
 export const PASS_PLUS_PRICE = 299; // €2.99
+export const PASS_FAMILY_PRICE = 499; // €4.99
 export const PROTON_UNLIMITED_PRICE = 999; // €9.99
 
 /** Autofill model version. May be dynamically set in the future */
