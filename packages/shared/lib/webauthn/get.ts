@@ -26,10 +26,11 @@ const convertRequestToExpectedFormat = (
 };
 
 export const getAuthentication = async (
-    authenticationOptions: AuthenticationOptions
+    authenticationOptions: AuthenticationOptions,
+    signal: AbortSignal
 ): Promise<AuthenticationCredentialsPayload> => {
     const credentialRequestOptions = convertRequestToExpectedFormat(authenticationOptions.publicKey);
-    const credentials = await navigator.credentials.get(credentialRequestOptions);
+    const credentials = await navigator.credentials.get({ ...credentialRequestOptions, signal });
     const publicKeyCredentials = credentials as PublicKeyCredential;
     if (!credentials || !('rawId' in credentials)) {
         throw new Error('No credentials received, unsupported browser');
