@@ -616,14 +616,17 @@ const plans: Plan[] = deepFreeze([
         Pricing: {
             '1': 499,
             '12': 4788,
+            '24': 8376,
         },
         DefaultPricing: {
             '1': 499,
             '12': 4788,
+            '24': 8376,
         },
         PeriodEnd: {
             '1': 1757334604,
             '12': 1786192204,
+            '24': 1817728204,
         },
         Currency: 'CHF',
         Quantity: 1,
