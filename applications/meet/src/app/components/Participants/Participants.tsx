@@ -5,8 +5,8 @@ import type { Participant } from '@proton-meet/livekit-client';
 import { Track } from '@proton-meet/livekit-client';
 import { c } from 'ttag';
 
-import { Button, CircleLoader } from '@proton/atoms';
-import { IcMagnifier, IcMeetCamera, IcMeetCameraOff, IcMeetMicrophone, IcMeetMicrophoneOff } from '@proton/icons';
+import { Button, CircleLoader, Tooltip } from '@proton/atoms';
+import { IcMagnifier, IcMeetCamera, IcMeetCameraOff, IcMeetEyeClosed, IcMeetMicrophoneOff } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
@@ -98,6 +98,10 @@ export const Participants = () => {
 
                     const name = participantNameMap[participant.identity] ?? c('Info').t`Loading...`;
 
+                    const isParticipantVideoDisabled = participantsWithDisabledVideos.includes(participant.identity);
+
+                    const isSpeaking = activeSpeakers.find((p) => p.identity === participant.identity);
+
                     return (
                         <div
                             key={participant.identity}
@@ -126,48 +130,64 @@ export const Participants = () => {
                             <div className="text-ellipsis my-auto flex-1" title={name}>
                                 {name}
                             </div>
-                            <div className="flex flex-nowrap items-center ml-auto gap-2 shrink-0">
-                                {!!activeSpeakers.find((p) => p.identity === participant.identity) ? (
-                                    <SpeakingIndicator participant={participant} size={32} />
+                            <div className="flex flex-nowrap items-center ml-auto gap-1 shrink-0">
+                                <div
+                                    className="flex items-center justify-center w-custom h-custom"
+                                    style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
+                                >
+                                    {isMuted ? (
+                                        <IcMeetMicrophoneOff className="muted-media-stream" />
+                                    ) : (
+                                        <SpeakingIndicator participant={participant} size={32} stopped={!isSpeaking} />
+                                    )}
+                                </div>
+
+                                {!!videoPub && !videoPub.isMuted ? (
+                                    <Tooltip
+                                        title={
+                                            isParticipantVideoDisabled
+                                                ? c('Action').t`Receive video`
+                                                : c('Action').t`Stop receiving video`
+                                        }
+                                        tooltipClassName="participants-button-tooltip color-norm"
+                                        originalPlacement="top-end"
+                                    >
+                                        <Button
+                                            className="participant-list-button-base participant-list-button-background p-2 flex items-center justify-center rounded-full w-custom h-custom border-none"
+                                            onClick={() => {
+                                                if (participant.isLocal) {
+                                                    return;
+                                                }
+
+                                                if (isParticipantVideoDisabled) {
+                                                    setParticipantsWithDisabledVideos(
+                                                        participantsWithDisabledVideos.filter(
+                                                            (id) => id !== participant.identity
+                                                        )
+                                                    );
+                                                } else {
+                                                    setParticipantsWithDisabledVideos([
+                                                        ...participantsWithDisabledVideos,
+                                                        participant.identity,
+                                                    ]);
+                                                }
+                                            }}
+                                            aria-label={c('Action').t`Enable video`}
+                                            aria-pressed={videoPub?.isEnabled}
+                                            style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
+                                        >
+                                            {isParticipantVideoDisabled ? <IcMeetEyeClosed /> : <IcMeetCamera />}
+                                        </Button>
+                                    </Tooltip>
                                 ) : (
-                                    <div className="p-2 flex items-center justify-center">
-                                        {isMuted ? <IcMeetMicrophoneOff /> : <IcMeetMicrophone />}
+                                    <div
+                                        className="flex items-center justify-center w-custom h-custom"
+                                        style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
+                                    >
+                                        <IcMeetCameraOff className="muted-media-stream" />
                                     </div>
                                 )}
 
-                                <Button
-                                    className="p-2 flex items-center justify-center rounded-full"
-                                    shape="ghost"
-                                    size="small"
-                                    onClick={() => {
-                                        if (participant.isLocal) {
-                                            return;
-                                        }
-
-                                        if (participantsWithDisabledVideos.includes(participant.identity)) {
-                                            setParticipantsWithDisabledVideos(
-                                                participantsWithDisabledVideos.filter(
-                                                    (id) => id !== participant.identity
-                                                )
-                                            );
-                                        } else {
-                                            setParticipantsWithDisabledVideos([
-                                                ...participantsWithDisabledVideos,
-                                                participant.identity,
-                                            ]);
-                                        }
-                                    }}
-                                    aria-label={c('Action').t`Enable video`}
-                                    aria-pressed={videoPub?.isEnabled}
-                                >
-                                    {!!videoPub &&
-                                    !videoPub.isMuted &&
-                                    !participantsWithDisabledVideos.includes(participant.identity) ? (
-                                        <IcMeetCamera />
-                                    ) : (
-                                        <IcMeetCameraOff />
-                                    )}
-                                </Button>
                                 <ParticipantHostControls
                                     participant={participant}
                                     isVideoEnabled={!!videoPub}
