@@ -58,6 +58,7 @@
         ]
     },
     "permissions": ["activeTab", "alarms", "nativeMessaging", "scripting", "storage", "unlimitedStorage"],
+    "optional_permissions": ["clipboardRead", "clipboardWrite"],
     "host_permissions": ["*://*/*"],
     "options_ui": {
         "page": "settings.html"

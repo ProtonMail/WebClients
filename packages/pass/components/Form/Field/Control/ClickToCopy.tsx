@@ -3,7 +3,7 @@ import { type FC, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
+import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { SelectionManager } from '@proton/pass/utils/dom/selection';
 import clsx from '@proton/utils/clsx';
 
@@ -27,9 +27,8 @@ export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = ({ className
     };
 
     return (
-        /* disabling `prefer-tag-over-role` as we cannot use a
-         * `button` element here - children may include buttons and
-         * this would lead to invalid DOM structure */
+        /* disabling `prefer-tag-over-role` as we cannot use a * `button` element here - children may include
+            buttons and * this would lead to invalid DOM structure */
         /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
         <div
             ref={ref}

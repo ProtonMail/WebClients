@@ -8,6 +8,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
+import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 
 import { SettingsRouter } from './SettingsRouter';
@@ -33,7 +34,9 @@ export const Settings: FC = () => {
                 <ExtensionClient onWorkerMessage={handleWorkerMessage}>
                     {(ready) => (
                         <Localized>
-                            <SettingsRouter ready={ready} />
+                            <ClipboardProvider>
+                                <SettingsRouter ready={ready} />
+                            </ClipboardProvider>
                         </Localized>
                     )}
                 </ExtensionClient>

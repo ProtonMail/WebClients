@@ -15,10 +15,12 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 type NativeSafariMessage =
     | { credentials: MaybeNull<AuthSession> }
     | { refreshCredentials: Pick<RefreshSessionData, 'AccessToken' | 'RefreshTime' | 'RefreshToken'> }
+    | { readFromClipboard: {} }
+    | { writeToClipboard: { Content: string } }
     | { environment: string };
 
-export const sendSafariMessage = (message: NativeSafariMessage) =>
-    browser.runtime.sendNativeMessage(SAFARI_MESSAGE_KEY, JSON.stringify(message));
+export const sendSafariMessage = <T = unknown>(message: NativeSafariMessage) =>
+    browser.runtime.sendNativeMessage<string, T>(SAFARI_MESSAGE_KEY, JSON.stringify(message));
 
 /** Safari does not correctly attach cookies service-worker side
  * when pulling the fork during authentication. As such, we must
