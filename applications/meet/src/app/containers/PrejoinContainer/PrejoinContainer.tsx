@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import useFlag from '@proton/unleash/useFlag';
 
@@ -9,6 +9,7 @@ import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDevices } from '../../hooks/useDevices';
 import { LoadingState, type ParticipantSettings } from '../../types';
+import { saveAudioDevice, saveAudioOutputDevice, saveVideoDevice } from '../../utils/deviceStorage';
 
 import './PrejoinContainer.scss';
 
@@ -39,11 +40,53 @@ export const PrejoinContainer = ({
 }: PrejoinContainerProps) => {
     const isScheduleInAdvanceEnabled = useFlag('ScheduleInAdvance');
 
-    const [selectedCamera, setSelectedCamera] = useState<MediaDeviceInfo | null>(null);
-    const [selectedMicrophone, setSelectedMicrophone] = useState<MediaDeviceInfo | null>(null);
-    const [selectedAudioOutputDevice, setSelectedAudioOutputDevice] = useState<MediaDeviceInfo | null>(null);
-
     const { cameras, microphones, speakers, defaultCamera, defaultMicrophone, defaultSpeaker } = useDevices();
+
+    const [selectedCamera, setSelectedCamera] = useState<MediaDeviceInfo | null>(defaultCamera);
+    const [selectedMicrophone, setSelectedMicrophone] = useState<MediaDeviceInfo | null>(defaultMicrophone);
+    const [selectedAudioOutputDevice, setSelectedAudioOutputDevice] = useState<MediaDeviceInfo | null>(defaultSpeaker);
+
+    useEffect(() => {
+        if (cameras.length > 0) {
+            const isDeviceAvailable = selectedCamera
+                ? cameras.find((c) => c.deviceId === selectedCamera.deviceId)
+                : null;
+            if (!selectedCamera || !isDeviceAvailable) {
+                const deviceToSelect = defaultCamera || cameras[0];
+                if (deviceToSelect) {
+                    setSelectedCamera(deviceToSelect);
+                }
+            }
+        }
+    }, [defaultCamera, selectedCamera, cameras]);
+
+    useEffect(() => {
+        if (microphones.length > 0) {
+            const isDeviceAvailable = selectedMicrophone
+                ? microphones.find((m) => m.deviceId === selectedMicrophone.deviceId)
+                : null;
+            if (!selectedMicrophone || !isDeviceAvailable) {
+                const deviceToSelect = defaultMicrophone || microphones[0];
+                if (deviceToSelect) {
+                    setSelectedMicrophone(deviceToSelect);
+                }
+            }
+        }
+    }, [defaultMicrophone, selectedMicrophone, microphones]);
+
+    useEffect(() => {
+        if (speakers.length > 0) {
+            const isDeviceAvailable = selectedAudioOutputDevice
+                ? speakers.find((s) => s.deviceId === selectedAudioOutputDevice.deviceId)
+                : null;
+            if (!selectedAudioOutputDevice || !isDeviceAvailable) {
+                const deviceToSelect = defaultSpeaker || speakers[0];
+                if (deviceToSelect) {
+                    setSelectedAudioOutputDevice(deviceToSelect);
+                }
+            }
+        }
+    }, [defaultSpeaker, selectedAudioOutputDevice, speakers]);
 
     const [isCameraEnabled, setIsCameraEnabled] = useState(false);
     const [isMicrophoneEnabled, setIsMicrophoneEnabled] = useState(false);
@@ -73,6 +116,21 @@ export const PrejoinContainer = ({
         });
     };
 
+    const handleCameraChange = (camera: MediaDeviceInfo) => {
+        setSelectedCamera(camera);
+        saveVideoDevice(camera.deviceId);
+    };
+
+    const handleMicrophoneChange = (microphone: MediaDeviceInfo) => {
+        setSelectedMicrophone(microphone);
+        saveAudioDevice(microphone.deviceId);
+    };
+
+    const handleAudioOutputDeviceChange = (speaker: MediaDeviceInfo) => {
+        setSelectedAudioOutputDevice(speaker);
+        saveAudioOutputDevice(speaker.deviceId);
+    };
+
     return (
         <>
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
@@ -94,10 +152,10 @@ export const PrejoinContainer = ({
                         speakers={speakers}
                         selectedCameraId={currentSelectedCamera?.deviceId as string}
                         selectedMicrophoneId={currentSelectedMicrophone?.deviceId as string}
-                        selectedAudioOutputDeviceId={selectedAudioOutputDevice?.deviceId as string}
-                        onCameraChange={setSelectedCamera}
-                        onMicrophoneChange={setSelectedMicrophone}
-                        onAudioOutputDeviceChange={setSelectedAudioOutputDevice}
+                        selectedAudioOutputDeviceId={currentSelectedAudioOutputDevice?.deviceId as string}
+                        onCameraChange={handleCameraChange}
+                        onMicrophoneChange={handleMicrophoneChange}
+                        onAudioOutputDeviceChange={handleAudioOutputDeviceChange}
                         displayName={displayName}
                         colorIndex={participantColorIndex.current}
                         isLoading={isLoading}

@@ -19,9 +19,9 @@ import type { MeetChatMessage, ParticipantEntity, ParticipantSettings } from '..
 interface MeetContainerProps {
     setParticipantSettings: React.Dispatch<React.SetStateAction<ParticipantSettings | null>>;
     participantSettings: ParticipantSettings;
-    setAudioDeviceId: (deviceId: string | null) => void;
-    setAudioOutputDeviceId: (deviceId: string | null) => void;
-    setVideoDeviceId: (deviceId: string | null) => void;
+    setAudioDeviceId: (deviceId: string | null, save?: boolean) => void;
+    setAudioOutputDeviceId: (deviceId: string | null, save?: boolean) => void;
+    setVideoDeviceId: (deviceId: string | null, save?: boolean) => void;
     handleLeave: () => void;
     handleEndMeeting: () => Promise<void>;
     shareLink: string;

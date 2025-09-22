@@ -26,6 +26,7 @@ import { useMeetingJoin } from '../hooks/useMeetingJoin';
 import { useParticipantNameMap } from '../hooks/useParticipantNameMap';
 import { useWakeLock } from '../hooks/useWakeLock';
 import { LoadingState, type ParticipantSettings } from '../types';
+import { saveAudioDevice, saveAudioOutputDevice, saveVideoDevice } from '../utils/deviceStorage';
 import { setupWasmDependencies } from '../utils/wasmUtils';
 import { MeetContainer } from './MeetContainer';
 import { PrejoinContainer } from './PrejoinContainer/PrejoinContainer';
@@ -526,18 +527,27 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                         <RoomContext.Provider value={roomRef.current}>
                             <MeetContainer
                                 participantSettings={participantSettings}
-                                setAudioDeviceId={(deviceId) =>
-                                    setParticipantSettings({ ...participantSettings, audioDeviceId: deviceId })
-                                }
-                                setVideoDeviceId={(deviceId) =>
-                                    setParticipantSettings({ ...participantSettings, videoDeviceId: deviceId })
-                                }
-                                setAudioOutputDeviceId={(deviceId) =>
+                                setAudioDeviceId={(deviceId, save) => {
+                                    if (deviceId !== null && !!save) {
+                                        saveAudioDevice(deviceId);
+                                    }
+                                    setParticipantSettings({ ...participantSettings, audioDeviceId: deviceId });
+                                }}
+                                setVideoDeviceId={(deviceId, save) => {
+                                    if (deviceId !== null && !!save) {
+                                        saveVideoDevice(deviceId);
+                                    }
+                                    setParticipantSettings({ ...participantSettings, videoDeviceId: deviceId });
+                                }}
+                                setAudioOutputDeviceId={(deviceId, save) => {
+                                    if (deviceId !== null && !!save) {
+                                        saveAudioOutputDevice(deviceId);
+                                    }
                                     setParticipantSettings({
                                         ...participantSettings,
                                         audioOutputDeviceId: deviceId,
-                                    })
-                                }
+                                    });
+                                }}
                                 handleLeave={handleLeave}
                                 handleEndMeeting={handleEndMeeting}
                                 setParticipantSettings={setParticipantSettings}
