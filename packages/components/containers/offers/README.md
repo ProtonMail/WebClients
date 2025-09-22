@@ -32,6 +32,8 @@ The layout of all the offers can be shared and put in the `components` folders f
 
 ### Required feature flags
 
+Naming of feature flags and offer IDs is up to the developer, try to be consistent with the coupon codes (enum `COUPON CODES` in `packages/payments/core/constants.ts`) and `ref` ID (part of `Deal` interface, related to tracking URLs) provided by the team.
+
 #### Offer-specific flags
 
 Since we have three operations, we need to create three feature flags on the Admin Panel, one for each operation. Those feature flags need to follow some naming conventions:
@@ -41,7 +43,7 @@ Since we have three operations, we need to create three feature flags on the Adm
 - Suffixed by year and plan
 - Ex: `OfferSpringCleaning2026MailPlus`, `OfferSpringCleaning2026DrivePlus`, `OfferSpringCleaning2026Bundle`
 
-Those flags will save the state of the offer for each user.
+Those flags will save the state of the offer for each user. These flags are of integer type, with 0 as the default value and are user-writable (NOT global).
 
 #### Global flag
 
@@ -115,6 +117,11 @@ The process is as follows:
 - Wait for the code to be deployed everywhere (1 month to be super safe)
 - Delete the offers-related flags and remove the IDs from the `Offers` flag
 
+## Styling the modal
+
+Some styles related to e.g. the size of the modal are configured outside the `layout` component in `packages/components/containers/offers/Offer.scss`. Your particular modal can be selected by the offer ID e.g. `[class*='offer-back-to-school-'] { ... }`.
+
 ## Implementation examples
 
-The following merge request contains most of the implementation of the Valentine's day offer: 15339
+- https://gitlab.protontech.ch/web/clients/-/merge_requests/16789/diffs
+- https://gitlab.protontech.ch/web/clients/-/merge_requests/15339/diffs
