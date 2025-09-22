@@ -4,7 +4,7 @@ import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
-const NEW_BADGE_APPS: APP_NAMES[] = [APPS.PROTONLUMO];
+const NEW_BADGE_APPS: APP_NAMES[] = [APPS.PROTONLUMO, APPS.PROTONMEET];
 
 interface ProductIconProps {
     appToLinkTo: APP_NAMES;
