@@ -64,6 +64,14 @@ extension SharedUseCaseContainer {
                                  setCredentials: self.setCredentials()) }
     }
 
+    var readFromClipboard: Factory<any ReadFromClipboardUseCase> {
+        self { ReadFromClipboard() }
+    }
+
+    var writeToClipboard: Factory<any WriteToClipboardUseCase> {
+        self { WriteToClipboard() }
+    }
+
     var resetDataIfFirstRun: Factory<any ResetDataIfFirstRunUseCase> {
         self { ResetDataIfFirstRun(setEnvironment: self.setEnvironment(),
                                    setCredentials: self.setCredentials()) }
