@@ -89,7 +89,7 @@ describe('ProtonMeetMeetingDetails', () => {
 
         const user = userEvent.setup();
 
-        const deleteButton = screen.getByRole('button', { name: 'Remove Zoom meeting' });
+        const deleteButton = screen.getByRole('button', { name: 'Remove video conference' });
         await user.click(deleteButton);
 
         expect(deleteMeeting).toHaveBeenCalled();
