@@ -71,8 +71,8 @@ export const getItemHistoryRoute = (shareId: string, itemId: string, options?: I
     `${getItemRoute(shareId, itemId, options)}/history`;
 
 /** Resolves the new item route given an item type. */
-export const getNewItemRoute = (type: ItemType, scope: ItemScope = 'share'): string => {
-    const basePath = `item/new/${type}`;
+export const getNewItemRoute = (type?: ItemType, scope: ItemScope = 'share'): string => {
+    const basePath = `item/new/${type ?? ':type'}`;
     const prefixed = subPath(scope, basePath);
     return getLocalPath(prefixed);
 };

@@ -38,6 +38,7 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { formatExpirationDateMMYY } from '@proton/pass/utils/time/expiration-date';
 
 const FORM_ID = 'new-creditCard';
 
@@ -50,7 +51,7 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
 
         return {
             cardholderName: clone?.content.cardholderName ?? '',
-            expirationDate: clone?.content.expirationDate ?? '',
+            expirationDate: clone?.content.expirationDate ? formatExpirationDateMMYY(clone.content.expirationDate) : '',
             extraFields: options?.clone.extraFields ?? [],
             files: filesFormInitializer(),
             name: clone?.metadata.name ?? '',
