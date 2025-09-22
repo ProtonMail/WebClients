@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 
 import { useLocalParticipant } from '@livekit/components-react';
+import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
 import { KrispNoiseFilter } from '@livekit/krisp-noise-filter';
 import type { LocalAudioTrack } from '@proton-meet/livekit-client';
 import { Track } from '@proton-meet/livekit-client';
@@ -10,6 +11,10 @@ import { audioQuality } from '../qualityConstants';
 export const useAudioToggle = () => {
     const [noiseFilter, setNoiseFilter] = useState(true);
     const { localParticipant } = useLocalParticipant();
+
+    const noiseFilterProcessor = useRef<KrispNoiseFilterProcessor | null>(null);
+    const audioContext = useRef<AudioContext | null>(null);
+    const trackId = useRef<string | null>(null);
 
     const toggleInProgress = useRef(false);
 
@@ -32,6 +37,7 @@ export const useAudioToggle = () => {
             deviceId: { exact: audioDeviceId as string },
             autoGainControl: true,
             echoCancellation: true,
+            noiseSuppression: false,
         };
 
         await localParticipant.setMicrophoneEnabled(
@@ -51,13 +57,20 @@ export const useAudioToggle = () => {
         )?.track as LocalAudioTrack;
 
         if (enableNoiseFilter && isEnabled && audioDeviceId) {
-            // Set audio context before applying processor
-            // @ts-ignore - webkitAudioContext is not available in all browsers
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            await audioTrack?.setAudioContext(audioContext);
-            await audioTrack?.setProcessor(KrispNoiseFilter());
+            if (trackId.current === audioTrack.id) {
+                await noiseFilterProcessor.current?.setEnabled(true);
+            } else {
+                trackId.current = audioTrack.id;
+
+                noiseFilterProcessor.current = KrispNoiseFilter();
+                // @ts-ignore - webkitAudioContext is not available in all browsers
+                audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
+
+                await audioTrack?.setAudioContext(audioContext.current);
+                await audioTrack?.setProcessor(noiseFilterProcessor.current);
+            }
         } else {
-            await audioTrack?.stopProcessor();
+            await noiseFilterProcessor.current?.setEnabled(false);
         }
 
         setNoiseFilter(enableNoiseFilter);
