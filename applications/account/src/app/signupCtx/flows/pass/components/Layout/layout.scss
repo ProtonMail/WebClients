@@ -1,0 +1,125 @@
+@import '~@proton/styles/scss/lib';
+
+body {
+	overflow-y: auto;
+}
+
+.proton-hidden {
+	display: none;
+}
+
+.pass-signup {
+	--pass-signup-bg: #1d1738;
+
+	scroll-behavior: smooth;
+
+	.signup-bg-gradient {
+		background: var(--pass-signup-bg);
+	}
+
+	.signup-layout-gap {
+		gap: var(--space-4);
+
+		@include media('>medium') {
+			gap: 6rem;
+		}
+
+		@include media('>large') {
+			gap: 10rem;
+		}
+	}
+
+	&-promotion-bg {
+		background:
+			linear-gradient(
+				78deg,
+				var(--promotion-background-start, rgb(109 74 255 / 0.15)) 0%,
+				var(--promotion-background-end, rgb(70 26 255 / 0.04)) 100%
+			),
+			var(--promotion-background-end);
+	}
+
+	&-card-glass {
+		background: rgb(248 250 252 / 0.1);
+		box-shadow:
+			0 -133px 37px 0 rgb(55 37 128 / 0),
+			0 -85px 34px 0 rgb(55 37 128 / 0.01),
+			0 -48px 29px 0 rgb(55 37 128 / 0.05),
+			0 -21px 21px 0 rgb(55 37 128 / 0.09),
+			0 -5px 12px 0 rgb(55 37 128 / 0.1);
+		backdrop-filter: blur(8px);
+
+		/* Provided svg has whitespaces that can't be cropped because of the shadow effect.
+		 * This css, applies a negative margin to each star sibling, so it match the design. */
+		.star + .star {
+			margin-inline-start: -2rem;
+		}
+	}
+
+	&-button-border {
+		border: 2px solid var(--text-norm);
+		transition: all 0.2s linear;
+
+		&:hover {
+			border: 2px solid var(--text-norm);
+			box-shadow: 0 0 8px 0 var(--text-norm);
+		}
+	}
+
+	.bg-invert {
+		background-color: var(--background-invert);
+	}
+
+	.border-gradient {
+		border: 3px solid #8a6eff;
+
+		@supports (background: conic-gradient(white, black)) {
+			border: 3px solid transparent;
+			background:
+				linear-gradient(var(--pass-signup-bg), var(--pass-signup-bg)) padding-box,
+				conic-gradient(
+						from 0deg at 50% 50%,
+						#8a6eff 0deg,
+						#8a6eff 45deg,
+						#c486cb 90deg,
+						#c486cb 135deg,
+						#ffc977 180deg,
+						#ffc977 225deg,
+						#f6c592 270deg,
+						#8a6eff 315deg,
+						#8a6eff 360deg
+					)
+					border-box;
+		}
+	}
+
+	.divider-gradient {
+		opacity: 0.2;
+		background: linear-gradient(90deg, rgb(255 255 255 / 0) 24.06%, #fff 50.09%, rgb(255 255 255 / 0) 75.94%);
+	}
+
+	.banner-gradient-bg {
+		max-inline-size: 80%;
+		background: linear-gradient(30deg, #f6c592 50%, #d397be 90%), #191927;
+	}
+
+	.text-40 {
+		font-size: 40px;
+	}
+
+	.text-md {
+		font-size: 14px;
+	}
+}
+
+/* Overrides */
+.input,
+.input:hover {
+	--field-background-color: transparent !important;
+	--field-focus-background-color: transparent !important;
+	--field-hover-background-color: transparent !important;
+}
+
+.button-outline-norm {
+	background-color: transparent;
+}
