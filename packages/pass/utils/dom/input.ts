@@ -9,7 +9,7 @@ const containsTextNode = (el: HTMLElement) =>
 /* Constants for fine-tuning the bounding element selection algorithm */
 
 const BOUNDING_ELEMENT_OFFSET: RectOffset = { x: 10, y: 0 };
-const BOUNDING_ELEMENT_MAX_RATIO = 1.2;
+const BOUNDING_ELEMENT_MAX_RATIO = 1.25;
 const INVALID_BOUNDING_TAGS = ['TD', 'TR', 'FORM'];
 
 /** Retrieves the child elements of a given element, excluding any injected
@@ -51,7 +51,7 @@ const isBorderedElement = (el: HTMLElement): boolean => {
  * 2. Not introduce positioning offsets that could affect UI element placement
  * 3. Be large enough to contain the input but not excessively larger
  * 4. Not be a table-related element (TD, TR) or a form element */
-export const findBoundingInputElement = (
+export const findInputBoundingElement = (
     curr: HTMLElement,
     constraints?: {
         input: HTMLInputElement;
@@ -72,7 +72,7 @@ export const findBoundingInputElement = (
             };
         })();
 
-    const { input, minHeight, maxWidth } = constraints;
+    const { input } = constraints;
     const isInput = curr === input;
 
     if (isInput) {
@@ -86,7 +86,7 @@ export const findBoundingInputElement = (
         const label = input.closest('label');
 
         if (label && label.querySelectorAll('input:not([type="hidden"])').length === 1) {
-            const labelHeightCheck = label.getBoundingClientRect().height >= minHeight;
+            const labelHeightCheck = label.getBoundingClientRect().height >= constraints.minHeight;
             const labelChildrenOverlap = allChildrenOverlap(getChildren(label), BOUNDING_ELEMENT_OFFSET);
             if (labelHeightCheck && labelChildrenOverlap) return label;
         }
@@ -102,11 +102,10 @@ export const findBoundingInputElement = (
      * any padding could lead to misalignment of injected elements.. */
     const currStyles = getComputedStyle(curr);
 
-    if (!isInput) {
-        const pb = pixelParser(currStyles.paddingBottom);
-        const pt = pixelParser(currStyles.paddingTop);
-        if (pb > 1 || pt > 1) return curr;
-    }
+    const pb = pixelParser(currStyles.paddingBottom);
+    const pt = pixelParser(currStyles.paddingTop);
+    if (!isInput && (pb > 1 || pt > 1)) return curr;
+    if (isInput) constraints.minHeight -= pb + pt;
 
     const mb = pixelParser(currStyles.marginBottom);
     const mt = pixelParser(currStyles.marginTop);
@@ -120,6 +119,8 @@ export const findBoundingInputElement = (
 
     /* Ensure parent dimensions meet criteria */
     const { height: parentHeight, width: parentWidth } = parent.getBoundingClientRect();
+    const { minHeight, maxWidth } = constraints;
+
     if (!parentHeight || parentHeight < minHeight || parentWidth > maxWidth) return curr;
 
     /* Avoid parents with non-empty text nodes (may affect layout) */
@@ -136,11 +137,11 @@ export const findBoundingInputElement = (
 
     /* Check for single child, excluding injected elements */
     const children = getChildren(parent);
-    if (children.length === 1) return findBoundingInputElement(parent, constraints);
+    if (children.length === 1) return findInputBoundingElement(parent, constraints);
 
     /* If all children overlap, parent might be suitable  */
     const childrenOverlap = allChildrenOverlap(children, BOUNDING_ELEMENT_OFFSET);
-    if (childrenOverlap) return findBoundingInputElement(parent, constraints);
+    if (childrenOverlap) return findInputBoundingElement(parent, constraints);
 
     return curr;
 };
