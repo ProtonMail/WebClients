@@ -127,6 +127,7 @@ export const ZoomRow = ({
             <IconRow
                 icon={getIcon(processState)}
                 labelClassName={clsx(shouldSeeLoadingButton(processState) && 'my-auto p-0')}
+                title={c('Label').t`Video conference`}
             >
                 {shouldSeeLoginButton(processState) && (
                     <div className="flex items-center gap-1">
