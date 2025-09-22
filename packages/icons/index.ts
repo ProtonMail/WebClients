@@ -265,6 +265,7 @@ export type IconName =
     | 'meet-chat'
     | 'meet-connection-indicator'
     | 'meet-copy'
+    | 'meet-eye-closed'
     | 'meet-microphone'
     | 'meet-phone'
     | 'meet-microphone-off'
@@ -702,6 +703,7 @@ export { IcMeetCameraFilledOff } from './icons/IcMeetCameraFilledOff';
 export { IcMeetChat } from './icons/IcMeetChat';
 export { IcMeetConnectionIndicator } from './icons/IcMeetConnectionIndicator';
 export { IcMeetCopy } from './icons/IcMeetCopy';
+export { IcMeetEyeClosed } from './icons/IcMeetEyeClosed';
 export { IcMeetMicrophone } from './icons/IcMeetMicrophone';
 export { IcMeetPhone } from './icons/IcMeetPhone';
 export { IcMeetMicrophoneOff } from './icons/IcMeetMicrophoneOff';

@@ -6,3 +6,33 @@
 		background: var(--interaction-weak) !important;
 	}
 }
+
+.participant-list-button-base {
+	color: var(--interaction-norm) !important;
+}
+
+.participant-list-button-background,
+.speaking-indicator-body {
+	background-color: var(--interaction-norm-minor-3) !important;
+}
+
+.participant-list-button-background:hover {
+	background-color: var(--interaction-norm-minor-2) !important;
+}
+
+.participants-button-tooltip {
+	background-color: var(--interaction-weak-minor-3) !important;
+	border-radius: 0.75rem !important;
+	transform: translateX(1rem);
+	padding-block: 0.5rem;
+	padding-inline: 1rem;
+
+	&::before {
+		border-block-start-color: var(--interaction-weak-minor-3) !important;
+		transform: translateX(-1.5rem);
+	}
+}
+
+.muted-media-stream {
+	color: var(--signal-danger) !important;
+}
