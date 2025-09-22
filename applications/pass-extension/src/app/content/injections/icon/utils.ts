@@ -291,15 +291,15 @@ export const createIcon = ({ anchor, tag, zIndex }: CreateIconConfig): IconEleme
     icon.style.zIndex = zIndex.toString();
     icon.setAttribute('type', 'button');
 
-    if (isInputElement(anchor)) {
-        const parent = anchor.parentElement!;
-        /** Avoid inserting the control custom element directly into a parent
-         * which has a `grid` display - this can cause jittery overlays */
-        if (getComputedStyle(parent).display === 'grid') parent.parentElement?.appendChild(control.customElement);
-        else parent.insertBefore(control.customElement, anchor);
-    } else anchor.insertBefore(control.customElement, anchor.firstElementChild);
-
+    /** TBD: instead of injecting the icon next to the anchor (either the input element
+     * or the resolved bounding element), prefer injecting in nearest detected form.
+     * Fallsback to document.body as a precaution. This should preserve z-index layering
+     * while avoiding interferences in websites sensitive to the DOM structure of their
+     * input fields (eg: some websites expect their input elements to always be the first
+     * child of a wrapper component - interfering with this could cause unintented crashes) */
+    const parent = anchor.closest('form, [data-protonpass-form]') ?? document.body;
     control.shadowRoot.appendChild(icon);
+    parent.appendChild(control.customElement);
 
     return { icon, control: control.customElement };
 };
