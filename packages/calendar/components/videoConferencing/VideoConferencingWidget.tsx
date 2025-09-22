@@ -55,6 +55,7 @@ export const VideoConferencingWidget = ({ data, location, handleDelete, override
             icon={<IcVideoCamera />}
             containerClassName="grow"
             className="items-center w-full video-conferencing-widget cursor-pointer"
+            title={c('Label').t`Video conference`}
         >
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
             <div
