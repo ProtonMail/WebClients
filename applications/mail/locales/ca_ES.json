@@ -202,6 +202,9 @@
       "Change page": [
         "Canvia la pàgina"
       ],
+      "Change password": [
+        "Canvia la contrasenya"
+      ],
       "Change sorting": [
         "Canvieu l'ordenació"
       ],
@@ -1135,8 +1138,8 @@
       "Remove this label": [
         "Esborra aquesta etiqueta"
       ],
-      "Remove Zoom meeting": [
-        "Elimina la reunió de Zoom"
+      "Remove video conference": [
+        "Elimina la videoconferència"
       ],
       "Replace": [
         "Reemplaça"
@@ -1466,8 +1469,7 @@
         "De confiança"
       ],
       "Trust key": [
-        "Clau de confiança",
-        "Claus de confiança"
+        "Clau de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -7347,7 +7349,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -9614,8 +9617,14 @@
       "Remember my choice": [
         "Recordar la meva selecció"
       ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Elimina la videoconferència de ${ MEET_APP_NAME }"
+      ],
       "Remove metadata": [
         "Esborra les metadades"
+      ],
+      "Remove Zoom video conference": [
+        "Elimina la videoconferència de Zoom"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -9730,6 +9739,9 @@
       ],
       "Verification code": [
         "Codi de verificació"
+      ],
+      "Video conference": [
+        "Videoconferència"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -14366,6 +14378,9 @@
       ],
       "Account security": [
         "Seguretat del compte"
+      ],
+      "Account temporarily locked": [
+        "El compte s'ha bloquejat temporalment"
       ],
       "Action all conversations": [
         "S'aplicarà a totes les converses"

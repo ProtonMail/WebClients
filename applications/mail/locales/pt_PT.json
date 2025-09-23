@@ -199,6 +199,9 @@
       "Change page": [
         "Alterar página"
       ],
+      "Change password": [
+        "Alterar a palavra-passe"
+      ],
       "Change sorting": [
         "Alterar a ordenação"
       ],
@@ -1099,9 +1102,6 @@
       "Remove this label": [
         "Remover esta etiqueta"
       ],
-      "Remove Zoom meeting": [
-        "Remover a reunião Zoom"
-      ],
       "Replace": [
         "Substituir"
       ],
@@ -1428,6 +1428,9 @@
       ],
       "Trust": [
         "Confiar"
+      ],
+      "Trust key": [
+        "Confiar na chave"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -7131,7 +7134,8 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir uma imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir uma ligação"
@@ -12242,7 +12246,7 @@
         "Deseja enviar o e-mail mesmo assim?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Detetámos erros. O seu e-mail não pode ser enviado para o endereço indicado devido aos seguintes motivos:",
+        "Detetámos erros. O seu e-mail não pode ser enviado para o endereço indicado devido ao seguinte motivo:",
         "Detetámos erros. O seu e-mail não pode ser enviado para nenhum dos endereços indicados devido aos seguintes motivos:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
@@ -14758,8 +14762,8 @@
         "Mover todas as mensagens para o lixo?"
       ],
       "Trust new key?": [
-        "Confiar em nova chave?",
-        "Confiar em novas chaves?"
+        "Confia na nova chave?",
+        "Confia nas novas chaves?"
       ],
       "Trust pinned keys?": [
         "Confiar em chaves fixadas?"

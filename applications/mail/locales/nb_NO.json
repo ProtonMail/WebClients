@@ -202,6 +202,9 @@
       "Change page": [
         "Endre side"
       ],
+      "Change password": [
+        "Endre passord"
+      ],
       "Change sorting": [
         "Endre sortering"
       ],
@@ -1135,8 +1138,8 @@
       "Remove this label": [
         "Fjern denne etiketten"
       ],
-      "Remove Zoom meeting": [
-        "Fjern Zoom-møte"
+      "Remove video conference": [
+        "Fjern videokonferanse"
       ],
       "Replace": [
         "Erstatt"
@@ -1464,10 +1467,6 @@
       ],
       "Trust": [
         "Klarér"
-      ],
-      "Trust key": [
-        "Klarér nøkkel",
-        "Klarér nøkler"
       ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
@@ -7347,7 +7346,8 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde"
+        "Sett inn bilde",
+        "Sett inn bilder"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -9614,8 +9614,14 @@
       "Remember my choice": [
         "Husk valget mitt"
       ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Fjern ${ MEET_APP_NAME }-videokonferanse"
+      ],
       "Remove metadata": [
         "Fjern metadata"
+      ],
+      "Remove Zoom video conference": [
+        "Fjern Zoom-videokonferanse"
       ],
       "Reveal password": [
         "Avslør passord"
@@ -9730,6 +9736,9 @@
       ],
       "Verification code": [
         "Verifiseringskode"
+      ],
+      "Video conference": [
+        "Videokonferanse"
       ],
       "Vulnerable": [
         "Sårbar"
@@ -14366,6 +14375,9 @@
       ],
       "Account security": [
         "Kontosikkerhet"
+      ],
+      "Account temporarily locked": [
+        "Konto midlertidig låst"
       ],
       "Action all conversations": [
         "Handling på alle samtaler"
