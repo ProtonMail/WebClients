@@ -32,6 +32,11 @@
         "あなたの情報が少なくとも1件のデータ漏洩で見つかりました。詳細を確認し、対策を講じるために${ DARK_WEB_MONITORING_NAME }をオンにしてください。${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "アカウント"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
@@ -71,6 +76,9 @@
       ],
       "Add external address": [
         "他のアドレスを追加"
+      ],
+      "Add more seats": [
+        "シートを増やす"
       ],
       "Add PayPal": [
         "PayPal を追加"
@@ -882,6 +890,9 @@
       "Start live chat": [
         "ライブチャットを開始する"
       ],
+      "Start subscription": [
+        "サブスクリプションを始める"
+      ],
       "Stay": [
         "終了しない"
       ],
@@ -890,6 +901,9 @@
       ],
       "Submit": [
         "送信"
+      ],
+      "Subscribe now": [
+        "今すぐ登録"
       ],
       "Support": [
         "サポート"
@@ -986,6 +1000,9 @@
       ],
       "User": [
         "ユーザー"
+      ],
+      "users and addresses": [
+        "ユーザーとアドレス"
       ],
       "Verify": [
         "検証"
@@ -5599,6 +5616,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "ユーザーが${ VPN_APP_NAME }アプリの**国**セクションから安全な共有サーバーに接続することを許可します。"
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "カレンダーの招待状にシームレスに${ MEET_APP_NAME }ビデオ会議のリンクを追加できるようにします。"
+      ],
       "Already allocated": [
         "割り当て済み"
       ],
@@ -5980,6 +6000,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "ID プロバイダーから受け取ったエンドポイント URL (例: https://idp.example.com/sso/saml)。"
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate } に終了します"
+      ],
       "Enhance your network security": [
         "ネットワークセキュリティの強化"
       ],
@@ -6064,6 +6087,9 @@
       "Free forever": [
         "永久に無料"
       ],
+      "Free trial": [
+        "無料トライアル"
+      ],
       "Gain visibility across your organization": [
         "組織全体での可視性を確保する"
       ],
@@ -6090,6 +6116,9 @@
       ],
       "Groups": [
         "グループ"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "メールの作成、返信、校正をサポートします。${ userAndAddress }内の個別ユーザーを管理します。${ addMoreSeats }"
       ],
       "here": [
         "こちら"
@@ -6354,6 +6383,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "組織のメンバーがアクセスできる ${ BRAND_NAME } アプリケーションを管理します。無効にすると、管理者のみがアクセスできます。"
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "組織のメンバーがアクセスできる機能を管理します。無効にすると、管理者のみがアクセスできます。"
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "アカウント設定のために、お客様の認証アプリにこの情報を手動で入力してください。${ switchButton }。"
@@ -10273,6 +10305,11 @@
         "カレンダーと統合"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "組織"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } を使用してユーザーを追加するか、一部のユーザー アカウントを削除してスペースを解放します。"
@@ -11141,6 +11178,29 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "電話番号を確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**この日付より前にキャンセルされた場合**、トライアル終了時にお客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**ご登録がない場合**、お客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**キャンセルしない場合**、お客様のフルプランが開始され、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**この日までに登録**すると、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ textDate }** まで、**${ planTitle }** を無料でお楽しみいただけます。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**が提供するすべての強力な機能をお試しいただける期間は、残り**${ daysRemaining }日**です。"
+      ],
+      "your subscription": [
+        "あなたのサブスクリプション"
       ]
     },
     "Remove organization logo": {
@@ -13400,6 +13460,9 @@
       "Appearance": [
         "外観"
       ],
+      "Application access": [
+        "アプリケーションアクセス"
+      ],
       "Apply gift code": [
         "ギフトコードを使用"
       ],
@@ -13724,6 +13787,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } ユーザー アカウントの作成に失敗しました。"
       ],
+      "Feature access": [
+        "機能アクセス"
+      ],
       "Find email or username": [
         "メールアドレスまたはユーザー名を探す"
       ],
@@ -13784,6 +13850,9 @@
       "How to choose a good logo": [
         "良いロゴの選び方"
       ],
+      "How your free trial works": [
+        "無料トライアルについて"
+      ],
       "Human verification": [
         "人間であることの検証"
       ],
@@ -13837,6 +13906,9 @@
       ],
       "Night theme": [
         "夜間のテーマ"
+      ],
+      "No events": [
+        "予定がありません"
       ],
       "No recovery method": [
         "回復手段がありません"
@@ -14066,6 +14138,9 @@
       "Text": [
         "テキスト"
       ],
+      "There are no events yet for your organization.": [
+        "お客様の組織にはまだ予定がありません。"
+      ],
       "There are no groups": [
         "グループがありません"
       ],
@@ -14146,6 +14221,9 @@
       ],
       "Video conferencing": [
         "ビデオ会議"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } を利用したビデオ会議"
       ],
       "View organization events by upgrading to Professional": [
         "Professionalにアップグレードして組織の予定を表示"
@@ -14760,6 +14838,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "${ planTitlePlusMaybeBrand }では、 ${ BRAND_NAME } の全てのプライバシーサービスに無料でアクセスできます。"
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN ゲートウェイ"
       ]
     },
     "VPN info": {

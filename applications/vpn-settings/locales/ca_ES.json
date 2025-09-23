@@ -32,6 +32,11 @@
         "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Comptes"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
@@ -10447,6 +10452,11 @@
         "Combinar amb el calendari"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organització"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } el vostre pla per afegir més usuaris o esborreu alguns comptes d'usuari per alliberar espai."
@@ -14122,6 +14132,9 @@
       "Night theme": [
         "Tema de nit"
       ],
+      "No events": [
+        "No hi ha cap esdeveniment"
+      ],
       "No recovery method": [
         "No hi ha mètode de recuperació"
       ],
@@ -14350,6 +14363,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "There are no events yet for your organization.": [
+        "Encara no hi ha esdeveniments per la vostra organització."
       ],
       "There are no groups": [
         "No hi ha grups."
@@ -15051,6 +15067,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Amb ${ planTitlePlusMaybeBrand }, obteniu accés gratuït a tots els serveis de privadesa de ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Passarel·les VPN"
       ]
     },
     "VPN info": {

@@ -56,6 +56,9 @@
       "Advanced options": [
         "詳細設定"
       ],
+      "Allow access": [
+        "アクセスを許可"
+      ],
       "Apply lifetime coupon code": [
         "生涯クーポンコードを適用"
       ],
@@ -416,6 +419,9 @@
       "Next month": [
         "翌月"
       ],
+      "No": [
+        "いいえ"
+      ],
       "No expired links": [
         "期限切れのリンクはありません"
       ],
@@ -695,6 +701,9 @@
       "Write us on X/Twitter": [
         "X/Twitter でご連絡ください"
       ],
+      "Yes": [
+        "はい"
+      ],
       "Your password manager is not here? Request it.": [
         "あなたのパスワードマネージャーがここにはありませんか？リクエストしてください。"
       ]
@@ -715,6 +724,14 @@
       ],
       "Expand": [
         "開く"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "今後表示しない"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "お客様のクリップボードを、${ timeoutDurationHumanReadable } 後に自動的にクリアしますか？"
       ]
     },
     "Description": {
@@ -1504,6 +1521,9 @@
       "Copied to clipboard": [
         "クリップボードにコピーされました"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "クリップボードにコピーしました（${ timeoutDurationHumanReadable }で有効期限切れ）"
+      ],
       "Coupon successfully applied!": [
         "クーポンを適用しました！"
       ],
@@ -1978,8 +1998,14 @@
       "Please follow the steps below to set up your domain.": [
         "以下の手順に従って、ドメインを設定してください。"
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "クリップボードが自動的にクリアされるよう、${ PASS_APP_NAME }を開いたままにしてください。"
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "データのインポート中は、このウィンドウを開いたままにしてください。この処理には数分かかる場合があります。"
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "クリップボードが自動的にクリアされるよう、ブラウザを開いたままにしてください。"
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "以前にアクティブだったウィンドウがオートタイプを実行したい場所であり、お客様のカーソルがログインフィールドにフォーカスされていることをご確認ください。"
@@ -2465,6 +2491,9 @@
       "15 minutes": [
         "15 分"
       ],
+      "15 seconds": [
+        "15 秒"
+      ],
       "2 minutes": [
         "2 分"
       ],
@@ -2620,6 +2649,9 @@
       ],
       "Class": [
         "クラス"
+      ],
+      "Clear clipboard after": [
+        "した後にクリップボードをクリア"
       ],
       "Code": [
         "コード"
@@ -3022,6 +3054,9 @@
       ],
       "Network": [
         "ネットワーク"
+      ],
+      "Never": [
+        "なし"
       ],
       "New email": [
         "新しいメール"
@@ -3640,6 +3675,11 @@
         "ファイルを保存した後、このウィンドウを閉じることができます。"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "お客様のブラウザからの許可が必要になります。"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "2FA 秘密キーを追加する"
@@ -3938,6 +3978,9 @@
       ],
       "Change your lock method": [
         "ロック方法を変更"
+      ],
+      "Clear clipboard": [
+        "クリップボードをクリア"
       ],
       "Confirm extra password": [
         "追加パスワードの確認"
@@ -4422,6 +4465,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "追加パスワードは8文字以上必要です"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "コピーされたパスワードとデータの自動消去を有効にするために、クリップボードへのアクセスを許可してください。"
       ],
       "Invalid alias prefix": [
         "無効なエイリアスプレフィックスです"

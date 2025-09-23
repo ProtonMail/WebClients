@@ -201,6 +201,9 @@
       "Change page": [
         "Zmień stronę"
       ],
+      "Change password": [
+        "Zmień hasło"
+      ],
       "Change sorting": [
         "Zmień kolejność sortowania"
       ],
@@ -1119,9 +1122,6 @@
       "Remove this label": [
         "Usuń etykietę"
       ],
-      "Remove Zoom meeting": [
-        "Usuń spotkanie Zoom"
-      ],
       "Replace": [
         "Zastąp"
       ],
@@ -1448,6 +1448,9 @@
       ],
       "Trust": [
         "Zaufaj"
+      ],
+      "Trust key": [
+        "Zaufaj kluczowi"
       ],
       "Trust public key": [
         "Zaufaj kluczowi publicznemu"
@@ -7459,7 +7462,10 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz"
+        "Wstaw obraz",
+        "Wstaw obrazy",
+        "Wstaw obrazy",
+        "Wstaw obrazy"
       ],
       "Insert link": [
         "Wstaw link"
@@ -13024,7 +13030,7 @@
         "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła."
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła."
       ]
     },
     "session_recovery:available:link": {

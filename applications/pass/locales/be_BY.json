@@ -424,6 +424,9 @@
       "Next month": [
         "Наступны месяц"
       ],
+      "No": [
+        "Не"
+      ],
       "No expired links": [
         "Пратэрмінаваныя спасылкі адсутнічаюць"
       ],
@@ -703,6 +706,9 @@
       "Write us on X/Twitter": [
         "Напісаць нам у X/Twitter"
       ],
+      "Yes": [
+        "Так"
+      ],
       "Your password manager is not here? Request it.": [
         "Адсутнічае ваш менеджар пароляў? Запытайце яго."
       ]
@@ -723,6 +729,14 @@
       ],
       "Expand": [
         "Разгарнуць"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Не пытацца наступны раз"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Аўтаматычна ачышчаць буфер абмену пасля ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1582,6 +1596,9 @@
       "Copied to clipboard": [
         "Скапіявана ў буфер абмену"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Скапіявана ў буфер абмену (міне праз ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Купон паспяхова ўжыты!"
       ],
@@ -2101,8 +2118,14 @@
       "Please follow the steps below to set up your domain.": [
         "Прытрымлівайцеся крокаў ніжэй, каб наладзіць свой дамен."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Пакіньце ${ PASS_APP_NAME } адкрытым, каб буфер абмену мог быць аўтаматычна ачышчаны."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Пакіньце гэта акно адкрытым падчас імпартавання даных. Гэты працэс можа заняць некалькі хвілін."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Пакіньце браўзер адкрытым, каб буфер абмену мог быць аўтаматычна ачышчаны."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Пераканайцеся, што гэта менавіта тое раней актыўнае акно ў якое вы хочаце аўтаматычна ўвесці даныя, а ваш курсор сфакусіраваны на полі запісу ўваходу."
@@ -2638,6 +2661,9 @@
       ],
       "15 minutes": [
         "15 хвілін"
+      ],
+      "15 seconds": [
+        "15 секунд"
       ],
       "2 minutes": [
         "2 хвіліны"
@@ -3235,6 +3261,9 @@
       ],
       "Network": [
         "Сетка"
+      ],
+      "Never": [
+        "Ніколі"
       ],
       "New email": [
         "Новы ліст"
@@ -3921,6 +3950,11 @@
         "${ price } у месяц"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Спатрэбіцца дазвол ад вашага браўзера"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Дадайце сакрэтны ключ 2ФА"
@@ -4248,6 +4282,9 @@
       ],
       "Change your lock method": [
         "Змяніць спосаб блакіроўкі"
+      ],
+      "Clear clipboard": [
+        "Ачысціць буфер абмену"
       ],
       "Confirm extra password": [
         "Пацвярджэнне дадатковага пароля"

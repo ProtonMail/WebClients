@@ -763,6 +763,9 @@
       "Get more servers": [
         "Dapatkan lebih banyak server"
       ],
+      "Get Pass Plus": [
+        "Dapatkan Pass Plus"
+      ],
       "Get started": [
         "Mulai"
       ],
@@ -1035,6 +1038,9 @@
       ],
       "Pay ${ price } now": [
         "Bayar ${ price } sekarang"
+      ],
+      "Pay once": [
+        "Bayar sekali"
       ],
       "Preview": [
         "Pratinjau"
@@ -1414,6 +1420,9 @@
       "Start live chat": [
         "Mulai sesi live chat"
       ],
+      "Start subscription": [
+        "Mulai langganan"
+      ],
       "Stay": [
         "Tinggal"
       ],
@@ -1428,6 +1437,9 @@
       ],
       "Submit": [
         "Kirim"
+      ],
+      "Subscribe now": [
+        "Langgan sekarang"
       ],
       "Support": [
         "Dukung"
@@ -2073,6 +2085,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Pada saat Anda membatalkan, uji coba gratis Anda tidak akan dialihkan menjadi langganan berbayar, namun Anda masih akan tetap dapat menikmati berbagai keutamaan paket berbayar hingga akhir masa uji coba Anda. Setelahnya, Anda akan diturunkan ke paket ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -7200,6 +7215,11 @@
         "Masa uji coba aplikasi desktop Anda telah berakhir"
       ]
     },
+    "Get started checklist instructions": {
+      "${ appName } on Play Store": [
+        "${ appName } di Play Store"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Teruskan"
@@ -8218,6 +8238,9 @@
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
+      "Accounts": [
+        "Akun"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Aktifkan setidaknya satu metode pemulihan agar Anda dapat tetap mengakses isi akun ${ BRAND_NAME } Anda apabila kata sandi Anda hilang."
       ],
@@ -8911,6 +8934,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL endpoint yang diperoleh dari penyedia identitas Anda (mis. https://idp.contoh.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Berakhir pada ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Tingkatkan keamanan jaringan Anda"
       ],
@@ -9042,6 +9068,9 @@
       ],
       "Free forever": [
         "Gratis untuk selamanya"
+      ],
+      "Free trial": [
+        "Uji coba gratis"
       ],
       "free up space by deleting older messages or other data": [
         "menghapus pesan lama atau data lainnya yang sudah tidak diperlukan"
@@ -9955,6 +9984,9 @@
       "Scan QR code instead": [
         "Pindai kode QR"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Pindai kode ini dengan aplikasi autentikator Anda untuk mengatur akun Anda. ${ switchButton }"
+      ],
       "SCIM integration disabled": [
         "Integrasi SCIM dinonaktifkan"
       ],
@@ -10065,6 +10097,9 @@
       ],
       "Show original message": [
         "Tampilkan pesan asli"
+      ],
+      "Sign in only": [
+        "Hanya masuk"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Masuk ke ${ MAIL_APP_NAME } untuk mengaktifkan alamat Anda"
@@ -12078,6 +12113,9 @@
       "Create password": [
         "Buat kata sandi"
       ],
+      "Credit cards": [
+        "Kartu kredit"
+      ],
       "Credits": [
         "Saldo"
       ],
@@ -12378,6 +12416,9 @@
       "Level for NetShield blocker filtering": [
         "Level pemfilteran pemblokir NetShield"
       ],
+      "Limited time": [
+        "Waktu terbatas"
+      ],
       "Link label (optional)": [
         "Label tautan (opsional)"
       ],
@@ -12663,6 +12704,9 @@
       "Second password": [
         "Kata sandi kedua"
       ],
+      "Select Linux package format": [
+        "Pilih format paket Linux"
+      ],
       "Select Linux platform": [
         "Pilih platform Linux"
       ],
@@ -12776,6 +12820,9 @@
       ],
       "System information": [
         "Informasi sistem"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Yang terbaik dari ${ BRAND_NAME } dengan satu langganan"
       ],
       "Then": [
         "Maka"
@@ -16988,6 +17035,29 @@
         "Simpan frase pemulihan Anda"
       ]
     },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Apabila Anda membatalkan sebelum tanggal ini,** paket Anda akan **diturunkan** ke ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } pada saat masa uji coba berakhir."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Apabila Anda tidak berlangganan,** paket Anda akan **diturunkan** ke ${ BRAND_NAME }${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Apabila Anda tidak membatalkan langganan,** paket penuh Anda akan dimulai dan Anda akan memeroleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Apabila Anda berlangganan sebelum tanggal ini,** Anda akan memperoleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Nikmati **${ planTitle }** secara cuma-cuma hingga **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Anda memiliki **${ daysRemaining } hari tersisa** untuk menjelajahi seluruh fitur canggih yang dimiliki oleh **${ planTitle }**."
+      ],
+      "your subscription": [
+        "langganan Anda"
+      ]
+    },
     "Remark about a key type option": {
       "Classic": [
         "Klasik"
@@ -17068,7 +17138,7 @@
         "Hapus"
       ],
       "Delete rule": [
-        "Hapus aturan"
+        "Hapus peraturan"
       ],
       "Delete this scope": [
         "Hapus cakupan ini"
@@ -17217,7 +17287,7 @@
         "Masa penyimpanan"
       ],
       "Retention Rule": [
-        "Pengaturan Penyimpanan Data"
+        "Peraturan Penyimpanan Data"
       ]
     },
     "retention_policy_2025_TableRow": {
@@ -17245,8 +17315,14 @@
       ]
     },
     "Safety review": {
+      " **Disable recovery by phone** to ensure highest possible security of your account.": [
+        " **Nonaktifkan pemulihan melalui telepon** untuk memastikan keamanan yang setinggi mungkin pada akun Anda."
+      ],
       " **Enable recovery by phone** to regain access to your account if you forget your password.": [
         " **Aktifkan pemulihan melalui nomor telepon** untuk memperoleh kembali akses ke akun Anda apabila Anda lupa kata sandi Anda."
+      ],
+      "${ BRAND_NAME } will use this address to keep you updated on your account security..": [
+        "${ BRAND_NAME } akan menggunakan alamat ini untuk memberikan Anda kabar terkini seputar keamanan akun Anda."
       ],
       "${ BRAND_NAME } will use this address to send a reset code by email when you reset your password.": [
         "${ BRAND_NAME } akan menggunakan alamat ini untuk mengirimkan kode pengaturan ulang melalui email ketika Anda mengatur ulang kata sandi Anda."
@@ -17272,6 +17348,9 @@
       "Add a recovery phone number": [
         "Tambah nomor telepon pemulihan"
       ],
+      "Add an alternative email address": [
+        "Tambah alamat email alternatif"
+      ],
       "Back to Safety Review": [
         "Kembali ke Peninjauan Keamanan"
       ],
@@ -17292,6 +17371,9 @@
       ],
       "Device-based recovery enabled": [
         "Pemulihan berbasis perangkat diaktifkan"
+      ],
+      "Disable recovery by phone ": [
+        "Nonaktifkan pemulihan melalui nomor telepon "
       ],
       "Download ${ size }": [
         "Unduh ${ size }"
@@ -17322,6 +17404,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Apabila Anda kehilangan rincian entri masuk Anda dan perlu untuk mengatur ulang akun, **sangat penting** bagi Anda untuk memiliki **metode pemulhan akun dan data** yang aktif. Apabila tidak, Anda berisiko untuk tidak lagi dapat mengakses email, kontak, berkas, atau kata sandi yang Anda miliki."
+      ],
+      "in case we need to contact you": [
+        "Apabila kami butuh untuk menghubungi Anda"
       ],
       "Invalid code": [
         "Kode tidak valid"
@@ -17391,6 +17476,9 @@
       ],
       "Verify": [
         "Verifikasi"
+      ],
+      "Verify your phone number": [
+        "Verifikasi nomor telepon Anda"
       ],
       "Verify your recovery email address": [
         "Verifikasi alamat email pemulihan Anda"
@@ -20983,6 +21071,9 @@
       "How to refer a friend and get credits": [
         "Cara untuk merujuk teman dan memperoleh saldo tambahan"
       ],
+      "How your free trial works": [
+        "Bagaimana masa uji coba gratis Anda bekerja"
+      ],
       "Human verification": [
         "Verifikasi manusia"
       ],
@@ -22002,6 +22093,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Hal ini dapat disebabkan oleh pengaturan ulang kata sandi atau pengguna yang belum masuk."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Alamat email ini hanya dapat digunakan untuk masuk ke akun ${ BRAND_NAME } Anda."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Alamat email ini akan ditampilkan kepada seluruh anggota organisasi pada saat melangsungkan tindakan manajemen akun."

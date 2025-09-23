@@ -56,6 +56,9 @@
       "Advanced options": [
         "Προηγμένες επιλογές"
       ],
+      "Allow access": [
+        "Να επιτρέπεται η πρόσβαση"
+      ],
       "Apply lifetime coupon code": [
         "Εφαρμόστε τον κωδικό κουπονιού διάρκειας ζωής"
       ],
@@ -416,6 +419,9 @@
       "Next month": [
         "Επόμενος μήνας"
       ],
+      "No": [
+        "Όχι"
+      ],
       "No expired links": [
         "Δεν υπάρχουν σύνδεσμοι που έχουν λήξει"
       ],
@@ -697,6 +703,9 @@
       "Write us on X/Twitter": [
         "Γράψτε μας στο X/Twitter"
       ],
+      "Yes": [
+        "Ναι"
+      ],
       "Your password manager is not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε τον."
       ]
@@ -717,6 +726,14 @@
       ],
       "Expand": [
         "Ανάπτυξη"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Να μην ξαναγίνει αυτή η ερώτηση"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Θέλετε το πρόχειρο σας να διαγράφεται αυτόματα μετά από ${ timeoutDurationHumanReadable };"
       ]
     },
     "Description": {
@@ -1525,6 +1542,9 @@
       "Copied to clipboard": [
         "Αντιγράφηκε στο πρόχειρο"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Αντιγράφηκε στο πρόχειρο (λήγει σε ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Το κουπόνι εφαρμόστηκε με επιτυχία!"
       ],
@@ -2005,8 +2025,14 @@
       "Please follow the steps below to set up your domain.": [
         "Ακολουθήστε τα παρακάτω βήματα για να ρυθμίσετε τον τομέα σας."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Παρακαλούμε κρατήστε το ${ PASS_APP_NAME } ανοιχτό, ώστε το πρόχειρο να μπορεί να καθαριστεί αυτόματα."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Παρακαλούμε διατηρήστε αυτό το παράθυρο ανοιχτό κατά την εισαγωγή των δεδομένων σας. Αυτή η διαδικασία μπορεί να διαρκέσει μερικά λεπτά."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Παρακαλούμε κρατήστε το πρόγραμμα περιήγησής σας ανοιχτό, ώστε το πρόχειρο να μπορεί να καθαριστεί αυτόματα."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Βεβαιωθείτε ότι το παράθυρο που ήταν ενεργό προηγουμένως είναι αυτό στο οποίο θέλετε να εκτελέσετε την αυτόματη πληκτρολόγηση και ότι ο δρομέας σας βρίσκεται στο πεδίο σύνδεσης."
@@ -2510,6 +2536,9 @@
       "15 minutes": [
         "15 λεπτά"
       ],
+      "15 seconds": [
+        "15 δευτερόλεπτα"
+      ],
       "2 minutes": [
         "2 λεπτά"
       ],
@@ -2665,6 +2694,9 @@
       ],
       "Class": [
         "Κατηγορία"
+      ],
+      "Clear clipboard after": [
+        "Εκκαθάριση προχείρου μετά από"
       ],
       "Code": [
         "Κωδικός"
@@ -3067,6 +3099,9 @@
       ],
       "Network": [
         "Δίκτυο"
+      ],
+      "Never": [
+        "Ποτέ"
       ],
       "New email": [
         "Νέα διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -3688,6 +3723,11 @@
         "Μπορείτε να κλείσετε αυτό το παράθυρο μετά την αποθήκευση του αρχείου."
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Θα χρειαστεί άδεια από το πρόγραμμα περιήγησής σας"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Προσθέστε μυστικό κλειδί 2FA"
@@ -3988,6 +4028,9 @@
       ],
       "Change your lock method": [
         "Αλλάξτε τον τρόπο κλειδώματος"
+      ],
+      "Clear clipboard": [
+        "Εκκαθάριση πρόχειρου"
       ],
       "Confirm extra password": [
         "Επιβεβαίωση επιπλέον κωδικού πρόσβασης"
@@ -4480,6 +4523,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Ο επιπλέον κωδικός πρόσβασης πρέπει να έχει τουλάχιστον 8 χαρακτήρες"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Παραχωρήστε πρόσβαση στο πρόχειρο για την αυτόματη διαγραφή αντιγραμμένων κωδικών πρόσβασης και δεδομένων."
       ],
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"

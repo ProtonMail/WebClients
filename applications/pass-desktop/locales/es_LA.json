@@ -82,6 +82,9 @@
       "Authenticate": [
         "Autenticar"
       ],
+      "Auto-type": [
+        "Escritura automática"
+      ],
       "Back": [
         "Atrás"
       ],
@@ -253,6 +256,12 @@
       "Dismiss": [
         "Descartar"
       ],
+      "Do not show again": [
+        "No volver a mostrar"
+      ],
+      "Do not show again when I press": [
+        "No volver a mostrar al presionar"
+      ],
       "Download this CSV template": [
         "Descargar esta plantilla CSV"
       ],
@@ -423,6 +432,9 @@
       ],
       "Next month": [
         "Mes siguiente"
+      ],
+      "No": [
+        "No"
       ],
       "No expired links": [
         "No hay enlaces expirados"
@@ -701,6 +713,9 @@
       ],
       "Write us on X/Twitter": [
         "Escríbanos en X/Twitter"
+      ],
+      "Yes": [
+        "Sí"
       ],
       "Your password manager is not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
@@ -1849,6 +1864,9 @@
       "Item successfully unpinned": [
         "Se desancló el elemento."
       ],
+      "Keyboard shortcut can only be used while inside ${ PASS_APP_NAME } desktop app and viewing a login item": [
+        "El atajo de teclado solo puede usarse estando dentro de la aplicación de escritorio de ${ PASS_APP_NAME } y viendo un elemento de inicio de sesión"
+      ],
       "Latest breach on ${ formattedDate }": [
         "Última vulneración en ${ formattedDate }"
       ],
@@ -1900,10 +1918,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2109,6 +2123,9 @@
       ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mantenga esta ventana abierta mientras sus datos son importados. Este proceso puede tomar unos minutos."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Asegúrese de que la ventana activa anterior sea donde desea escribir automáticamente y que el cursor esté enfocado en el campo de inicio de sesión."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Una vez eliminado, el alias no puede ser restaurado. ¿Quizás desea desactivarlo en su lugar?"
@@ -2466,6 +2483,12 @@
       "You may close this tab.": [
         "Puede cerrar esta pestaña."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Puede que tenga que aceptar una solicitud de permiso y que tenga que reiniciar la aplicación dependiendo de su sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Puede que necesite otorgar permiso de accesibilidad a ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Necesita una bóveda con permisos de edición para que pueda importar elementos."
       ],
@@ -2510,6 +2533,20 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Su organización requiere que asegure su acceso a ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "ENTER": [
+        "INGRESAR"
+      ],
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "TAB": [
+        "TABULACIÓN"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2685,6 +2722,9 @@
       ],
       "Auto-lock after": [
         "Bloqueo automático después de"
+      ],
+      "Auto-type in previous window": [
+        "Escritura automática en ventana anterior"
       ],
       "Backup password": [
         "Contraseña de respaldo"
@@ -2862,6 +2902,9 @@
       ],
       "Email": [
         "Correo"
+      ],
+      "EMAIL": [
+        "CORREO ELECTRÓNICO"
       ],
       "Email (alias)": [
         "Correo electrónico (alias)"
@@ -3082,6 +3125,9 @@
       "Key type": [
         "Tipo de clave"
       ],
+      "Keyboard shortcut:": [
+        "Atajo de teclado:"
+      ],
       "Keyboard shortcut: ${ shortcut }": [
         "Atajo de teclado: ${ shortcut }"
       ],
@@ -3291,6 +3337,9 @@
       ],
       "Password": [
         "Contraseña"
+      ],
+      "PASSWORD": [
+        "CONTRASEÑA"
       ],
       "Password history": [
         "Historial de contraseña"
@@ -3636,6 +3685,9 @@
       ],
       "Useful for permanent sharing": [
         "Útil para compartir permanentemente"
+      ],
+      "USERNAME": [
+        "NOMBRE DE USUARIO"
       ],
       "Username": [
         "Nombre de usuario"
@@ -4501,6 +4553,9 @@
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
       ],
+      "Perform autotype?": [
+        "Realizar escritura automática"
+      ],
       "Permanently remove all items?": [
         "¿Eliminar todos los elementos permanentemente?"
       ],
@@ -4812,6 +4867,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "La contraseña adicional debe tener al menos 8 caracteres"
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Error de escritura automática. Asegúrese de que ${ PASS_APP_NAME } tiene los permisos necesarios e intente de nuevo (${ error })."
       ],
       "Failed to load breaches.": [
         "Error al cargar vulneraciones."

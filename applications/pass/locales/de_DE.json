@@ -424,6 +424,9 @@
       "Next month": [
         "Nächster Monat"
       ],
+      "No": [
+        "Nein"
+      ],
       "No expired links": [
         "Keine abgelaufenen Links"
       ],
@@ -699,6 +702,9 @@
       "Write us on X/Twitter": [
         "Schreibe uns auf X/Twitter"
       ],
+      "Yes": [
+        "Ja"
+      ],
       "Your password manager is not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
       ]
@@ -719,6 +725,14 @@
       ],
       "Expand": [
         "Erweitern"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Nicht erneut fragen"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Möchtest du, dass deine Zwischenablage nach ${ timeoutDurationHumanReadable } automatisch geleert wird?"
       ]
     },
     "Description": {
@@ -1540,6 +1554,9 @@
       "Copied to clipboard": [
         "In die Zwischenablage kopiert"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "In die Zwischenablage kopiert (läuft ab in ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Gutschein erfolgreich angewendet"
       ],
@@ -2049,8 +2066,14 @@
       "Please follow the steps below to set up your domain.": [
         "Bitte befolge die Schritte unten, um deine Domain einzurichten."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Bitte lass ${ PASS_APP_NAME } geöffnet, damit die Zwischenablage automatisch gelöscht werden kann."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Bitte lass dieses Fenster geöffnet, solange deine Daten importiert werden. Dieser Vorgang dauert einige Minuten."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Bitte lass deinen Browser geöffnet, damit die Zwischenablage automatisch gelöscht werden kann."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Stelle bitte sicher, dass das zuvor aktive Fenster der Ort ist, an dem du automatisch eingeben möchtest, und dein Cursor auf dem Login-Feld fokussiert war."
@@ -2548,6 +2571,9 @@
       ],
       "15 minutes": [
         "15 Minuten"
+      ],
+      "15 seconds": [
+        "15 Sekunden"
       ],
       "2 minutes": [
         "2 Minuten"
@@ -3145,6 +3171,9 @@
       ],
       "Network": [
         "Netzwerk"
+      ],
+      "Never": [
+        "Niemals"
       ],
       "New email": [
         "Neue E-Mail-Adresse"
@@ -3825,6 +3854,11 @@
         "${ price }/Monat"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Benötigt eine Berechtigung von deinem Browser."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Geheimen 2FA-Schlüssel hinzufügen"
@@ -4148,6 +4182,9 @@
       ],
       "Change your lock method": [
         "Ändere deine Sperrmethode"
+      ],
+      "Clear clipboard": [
+        "Zwischenablage leeren"
       ],
       "Confirm extra password": [
         "Zusätzliches Passwort bestätigen"
