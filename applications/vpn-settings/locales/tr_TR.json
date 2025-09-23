@@ -32,6 +32,11 @@
         "Bilgileriniz en az bir veri sızıntısında bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Hesaplar"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
@@ -71,6 +76,9 @@
       ],
       "Add external address": [
         "Dış e-posta adresi ekle"
+      ],
+      "Add more seats": [
+        "Daha fazla koltuk ekle"
       ],
       "Add PayPal": [
         "PayPal ekle"
@@ -882,6 +890,9 @@
       "Start live chat": [
         "Canlı sohbet başlat"
       ],
+      "Start subscription": [
+        "Aboneliği başlat"
+      ],
       "Stay": [
         "Kal"
       ],
@@ -890,6 +901,9 @@
       ],
       "Submit": [
         "Gönder"
+      ],
+      "Subscribe now": [
+        "Şimdi abone olun"
       ],
       "Support": [
         "Destek"
@@ -986,6 +1000,9 @@
       ],
       "User": [
         "Kullanıcı"
+      ],
+      "users and addresses": [
+        "kullanıcılar ve adresler"
       ],
       "Verify": [
         "Doğrula"
@@ -5675,6 +5692,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Kullanıcıların güvenli paylaşılan sunuculara bağlanabilmesi için ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden izin verin."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Takvim davetlerinize kolayca görüntülü ${ MEET_APP_NAME } görüşmesi bağlantıları eklemenizi sağlar."
+      ],
       "Already allocated": [
         "Zaten ayrılmış"
       ],
@@ -6061,6 +6081,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate } tarihinde sona eriyor"
+      ],
       "Enhance your network security": [
         "Ağ güvenliğinizi artırın"
       ],
@@ -6145,6 +6168,9 @@
       "Free forever": [
         "Sonsuza kadar ücretsiz"
       ],
+      "Free trial": [
+        "Ücretsiz deneme"
+      ],
       "Gain visibility across your organization": [
         "Kuruluşunuzun genel görünümüne ulaşın"
       ],
@@ -6171,6 +6197,9 @@
       ],
       "Groups": [
         "Gruplar"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "E-posta yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Bireysel kullanıcıları ${ userAndAddress } bölümünden yönetebilirsiniz. ${ addMoreSeats }"
       ],
       "here": [
         "buraya"
@@ -6436,6 +6465,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Kuruluşunuzun üyelerinin hangi özelliklere erişebileceğini ayarlayın. Kapatılırsa, yalnızca yöneticiler erişebilir."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Hesabınızı ayarlamak için bu bilgileri kimlik doğrulama uygulamanıza el ile yazın. ${ switchButton }."
@@ -10397,6 +10429,11 @@
         "Takvim ile birleştir"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Kuruluş"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "Daha fazla kullanıcı eklemek için ${ upgradeLink } ya da yer açmak için bazı kullanıcı hesaplarını silin."
@@ -11365,6 +11402,30 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Telefon numaranızı doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "Bu tarihten önce **iptal ederseniz**, deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine **düşürüleceksiniz**."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Abone olmazsanız**, ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine **düşürüleceksiniz**."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**İptal etmezseniz,** tam tarifeniz başlar ve **${ referrerRewardAmount }** kredi kazanırsınız."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ planTitle }** tarifesini **${ textDate }** tarihine kadar ücretsiz kullanın."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }** tarifesinin sunduğu tüm güçlü özellikleri keşfetmek için **${ daysRemaining } gününüz kaldı**.",
+        "**${ planTitle }** tarifesinin sunduğu tüm güçlü özellikleri keşfetmek için **${ daysRemaining } gününüz kaldı**."
+      ],
+      "your subscription": [
+        "aboneliğiniz"
       ]
     },
     "Remove organization logo": {
@@ -13677,6 +13738,9 @@
       "Appearance": [
         "Görünüm"
       ],
+      "Application access": [
+        "Uygulama erişimi"
+      ],
       "Apply gift code": [
         "Hediye kodunu uygula"
       ],
@@ -14004,6 +14068,9 @@
         "${ failedUsers.length } kullanıcı hesabı eklenemedi.",
         "${ failedUsers.length } kullanıcı hesabı eklenemedi."
       ],
+      "Feature access": [
+        "Özellik erişimi"
+      ],
       "Find email or username": [
         "E-posta adresi veya kullanıcı adı bulun"
       ],
@@ -14064,6 +14131,9 @@
       "How to choose a good logo": [
         "İyi bir logo nasıl seçilir"
       ],
+      "How your free trial works": [
+        "Ücretsiz denemeniz nasıl işler"
+      ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
@@ -14118,6 +14188,9 @@
       ],
       "Night theme": [
         "Gece teması"
+      ],
+      "No events": [
+        "Herhangi bir etkinlik yok"
       ],
       "No recovery method": [
         "Herhangi bir kurtarma yöntemi yok"
@@ -14348,6 +14421,9 @@
       "Text": [
         "Metin"
       ],
+      "There are no events yet for your organization.": [
+        "Kuruluşunuzda henüz bir etkinlik bulunmuyor."
+      ],
       "There are no groups": [
         "Herhangi bir grup yok"
       ],
@@ -14428,6 +14504,9 @@
       ],
       "Video conferencing": [
         "Görüntülü görüşme"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } ile görüntülü görüşme"
       ],
       "View organization events by upgrading to Professional": [
         "Professional tarifesine yükselterek kuruluş etkinliklerini görüntüleyin"
@@ -15045,6 +15124,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "${ planTitlePlusMaybeBrand } tarifesi ile tüm ${ BRAND_NAME } gizlilik hizmetlerine ücretsiz erişim elde edersiniz."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN ağ geçitleri"
       ]
     },
     "VPN info": {

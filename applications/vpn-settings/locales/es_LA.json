@@ -32,6 +32,11 @@
         "Su información fue encontrada en al menos una filtración de datos. Active ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Cuentas"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
@@ -71,6 +76,9 @@
       ],
       "Add external address": [
         "Agregar una dirección externa"
+      ],
+      "Add more seats": [
+        "Añadir más licencias"
       ],
       "Add PayPal": [
         "Agregar PayPal"
@@ -882,6 +890,9 @@
       "Start live chat": [
         "Iniciar chat en directo"
       ],
+      "Start subscription": [
+        "Iniciar suscripción"
+      ],
       "Stay": [
         "Permanecer"
       ],
@@ -890,6 +901,9 @@
       ],
       "Submit": [
         "Enviar"
+      ],
+      "Subscribe now": [
+        "Suscríbase ahora"
       ],
       "Support": [
         "Soporte"
@@ -986,6 +1000,9 @@
       ],
       "User": [
         "Usuario"
+      ],
+      "users and addresses": [
+        "usuarios y direcciones"
       ],
       "Verify": [
         "Verificar"
@@ -1358,6 +1375,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Al hacer clic en \"Probar\", acepta nuestros ${ termsAndConditions }."
       ],
@@ -5587,6 +5610,9 @@
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
+      "Accounts": [
+        "Cuentas"
+      ],
       "active": [
         "activa"
       ],
@@ -5665,6 +5691,9 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permita que los usuarios se conecten a servidores compartidos seguros desde la sección **Países** de la aplicación ${ VPN_APP_NAME }."
+      ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permite añadir fácilmente enlaces a videoconferencias de ${ MEET_APP_NAME } en sus invitaciones de calendario."
       ],
       "Already allocated": [
         "Ya asignado"
@@ -6052,6 +6081,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL del punto final recibida del proveedor de identidad (por ejemplo, https://idp.ejemplo.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Termina el ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Aumente la seguridad de la red"
       ],
@@ -6136,6 +6168,9 @@
       "Free forever": [
         "Gratis para siempre"
       ],
+      "Free trial": [
+        "Prueba gratuita"
+      ],
       "Gain visibility across your organization": [
         "Obtenga visibilidad en toda su organización"
       ],
@@ -6162,6 +6197,9 @@
       ],
       "Groups": [
         "Grupos"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Ayuda a redactar, responder y corregir correos electrónicos. Gestionar para usuarios individuales en ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "aquí"
@@ -6428,6 +6466,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administre las aplicaciones de ${ BRAND_NAME } a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
       ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Administre las aplicaciones a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
+      ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Ingrese manualmente esta información en su aplicación de autenticación para configurar la cuenta. ${ switchButton }."
       ],
@@ -6551,6 +6592,9 @@
         "O seleccione un servidor en particular:"
       ],
       "Organization monitor": [
+        "Monitoreo de la organización"
+      ],
+      "Organization Monitor": [
         "Monitoreo de la organización"
       ],
       "Organization size": [
@@ -6759,6 +6803,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Seleccione las afiliaciones de los usuarios de ${ getFormattedOrganization } que desea permitir en su organización ${ BRAND_NAME }:"
       ],
+      "Select users to view their activity": [
+        "Seleccione usuarios para ver sus actividades"
+      ],
       "Select what you want to import.": [
         "Seleccione lo que quiere importar."
       ],
@@ -6813,6 +6860,9 @@
       ],
       "Shared vault updated": [
         "Bóveda compartida actualizada"
+      ],
+      "Sign in only": [
+        "Solo iniciar sesión"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sesión en ${ MAIL_APP_NAME } para activar la dirección"
@@ -10402,6 +10452,11 @@
         "Fusionar con el calendario"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organización"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } para agregar más usuarios o eliminar algunas cuentas de usuario para liberar espacio."
@@ -11373,6 +11428,30 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar el número de teléfono aumenta la seguridad de la cuenta y permite opciones de recuperación adicionales."
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Si cancela antes de esta fecha,** pasará al **plan inferior** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } cuando finalice la prueba."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Si no se suscribe,** pasará al **plan inferior** ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Si no cancela,** comenzará su plan completo y recibirá **${ referrerRewardAmount }** en créditos."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Si se suscribe antes de esta fecha,** recibirá **${ referrerRewardAmount }** en créditos."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Disfrute de **${ planTitle }** gratis hasta el **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Le queda **${ daysRemaining } día** para explorar todas las funciones increíbles que **${ planTitle }** tiene para ofrecerle.",
+        "Le quedan **${ daysRemaining } días** para explorar todas las funciones increíbles que **${ planTitle }** tiene para ofrecerle."
+      ],
+      "your subscription": [
+        "su suscripción"
       ]
     },
     "Remove organization logo": {
@@ -13697,6 +13776,9 @@
       "Appearance": [
         "Apariencia"
       ],
+      "Application access": [
+        "Acceso a la aplicación"
+      ],
       "Apply gift code": [
         "Aplicar código de regalo"
       ],
@@ -14024,6 +14106,9 @@
         "Error al crear ${ failedUsers.length } cuenta de usuario.",
         "Error al crear ${ failedUsers.length } cuentas de usuario"
       ],
+      "Feature access": [
+        "Acceso a funciones"
+      ],
       "Find email or username": [
         "Buscar correo o nombre de usuario"
       ],
@@ -14084,6 +14169,9 @@
       "How to choose a good logo": [
         "Cómo elegir un buen logo"
       ],
+      "How your free trial works": [
+        "Cómo funciona su prueba gratuita"
+      ],
       "Human verification": [
         "Verificación humana"
       ],
@@ -14138,6 +14226,9 @@
       ],
       "Night theme": [
         "Tema de noche"
+      ],
+      "No events": [
+        "No hay eventos"
       ],
       "No recovery method": [
         "Ningún método de recuperación"
@@ -14368,6 +14459,9 @@
       "Text": [
         "Texto"
       ],
+      "There are no events yet for your organization.": [
+        "Aún no hay eventos para su organización."
+      ],
       "There are no groups": [
         "No hay grupos"
       ],
@@ -14448,6 +14542,9 @@
       ],
       "Video conferencing": [
         "Videoconferencia"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferencias con ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Consulte los eventos de la organización al mejorar a Professional"
@@ -14654,6 +14751,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Esto puede deberse a un restablecimiento de contraseña o el usuario aún no ha iniciado sesión."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Esta dirección solo puede usarse para iniciar sesión en su cuenta de ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Esta dirección de correo se mostrará a todos los miembros de la organización cuando se ejecute operaciones de gestión de cuentas."
@@ -15062,6 +15162,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Con ${ planTitlePlusMaybeBrand } obtiene acceso gratuito a todos los servicios de privacidad de ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Puertas de enlace VPN"
       ]
     },
     "VPN info": {

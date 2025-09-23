@@ -32,6 +32,11 @@
         "Vaše informácie sa našli v najmenej jednom úniku údajov. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Účty"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
@@ -71,6 +76,9 @@
       ],
       "Add external address": [
         "Pridať externú adresu"
+      ],
+      "Add more seats": [
+        "Pridať viac miest"
       ],
       "Add PayPal": [
         "Pridať PayPal"
@@ -882,6 +890,9 @@
       "Start live chat": [
         "Spustiť živý chat"
       ],
+      "Start subscription": [
+        "Začať predplatné"
+      ],
       "Stay": [
         "Zostať"
       ],
@@ -890,6 +901,9 @@
       ],
       "Submit": [
         "Potvrdiť"
+      ],
+      "Subscribe now": [
+        "Predplaťte si teraz"
       ],
       "Support": [
         "Podpora"
@@ -986,6 +1000,9 @@
       ],
       "User": [
         "Používateľ"
+      ],
+      "users and addresses": [
+        "používatelia a adresy"
       ],
       "Verify": [
         "Overiť"
@@ -5827,6 +5844,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožniť používateľom pripojiť sa k zabezpečeným zdieľaným serverom v položke **Krajiny** v aplikácii ${ VPN_APP_NAME }."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie ${ MEET_APP_NAME } do pozvánok v kalendári."
+      ],
       "Already allocated": [
         "Už pridelené"
       ],
@@ -6223,6 +6243,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Končí dňa ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Zlepšite bezpečnosť vašej siete"
       ],
@@ -6307,6 +6330,9 @@
       "Free forever": [
         "Navždy zadarmo"
       ],
+      "Free trial": [
+        "Bezplatné skúšobné obdobie"
+      ],
       "Gain visibility across your organization": [
         "Získajte prehľad o celej vašej organizácii"
       ],
@@ -6333,6 +6359,9 @@
       ],
       "Groups": [
         "Skupiny"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Pomáha písať, odpovedať na emaily a opravovať ich. Spravujte jednotlivých používateľov v ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "tu"
@@ -6600,6 +6629,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Spravujte, ku ktorým ${ BRAND_NAME } aplikáciám majú členovia vašej organizácie prístup. Ak je táto možnosť vypnutá, prístup budú mať len správcovia."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Spravujte, ku ktorým funkciám majú členovia vašej organizácie prístup. Ak je táto funkcia vypnutá, prístup budú mať len správcovia."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Tieto informácie zadajte ručne do svojej overovacej aplikácie, aby ste mohli nastaviť svoj účet. ${ switchButton }."
@@ -10681,6 +10713,11 @@
         "Zlúčiť s kalendárom"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organizácia"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } na pridanie ďalších používateľov alebo odstráňte niektorých používateľských účtov, aby ste uvoľnili miesto."
@@ -11579,6 +11616,32 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Overenie vášho telefónneho čísla zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Ak zrušíte pred týmto dátumom**, po skončení skúšobnej doby dôjde k **zníženíu** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Ak si nepredplatíte,** dôjde k **zníženiu** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Ak nezrušíte,** začne platiť celý váš plán a získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Ak si predplatíte pred týmto dátumom,** získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Užite si **${ planTitle }** zadarmo až do **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Zostáva vám **${ daysRemaining } deň** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
+        "Zostávajú vám **${ daysRemaining } dni** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
+        "Zostáva vám **${ daysRemaining } dní** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
+        "Zostáva vám **${ daysRemaining } dní** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**."
+      ],
+      "your subscription": [
+        "vaše predplatné"
       ]
     },
     "Remove organization logo": {
@@ -14018,6 +14081,9 @@
       "Appearance": [
         "Vzhľad"
       ],
+      "Application access": [
+        "Prístup k aplikácii"
+      ],
       "Apply gift code": [
         "Použiť darčekový kód"
       ],
@@ -14351,6 +14417,9 @@
         "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľských účtov.",
         "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľských účtov."
       ],
+      "Feature access": [
+        "Prístup k funkciám"
+      ],
       "Find email or username": [
         "Nájsť email alebo používateľské meno"
       ],
@@ -14411,6 +14480,9 @@
       "How to choose a good logo": [
         "Ako vybrať dobré logo"
       ],
+      "How your free trial works": [
+        "Ako funguje vaša bezplatná skúšobná verzia"
+      ],
       "Human verification": [
         "Overenie, že nie ste robot"
       ],
@@ -14467,6 +14539,9 @@
       ],
       "Night theme": [
         "Nočný motív"
+      ],
+      "No events": [
+        "Žiadne udalosti"
       ],
       "No recovery method": [
         "Žiadna metóda pre obnovenie"
@@ -14699,6 +14774,9 @@
       "Text": [
         "Text"
       ],
+      "There are no events yet for your organization.": [
+        "Pre vašu organizáciu zatiaľ nie sú žiadne udalosti."
+      ],
       "There are no groups": [
         "Nie sú tu žiadne skupiny"
       ],
@@ -14779,6 +14857,9 @@
       ],
       "Video conferencing": [
         "Videokonferencie"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferencie s ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Zobraziť udalosti organizácie prechodom na profesionálny plán"
@@ -15402,6 +15483,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "S plánom ${ planTitlePlusMaybeBrand } získate bezplatný prístup k všetkým službám ochrany súkromia ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN Brány"
       ]
     },
     "VPN info": {
