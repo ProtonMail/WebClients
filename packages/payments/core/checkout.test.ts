@@ -1,9 +1,11 @@
+import { addMonths } from '@proton/shared/lib/date-fns-utc';
 import { PLANS_MAP } from '@proton/testing/data';
 
 import { getCheckout, getUsersAndAddons } from './checkout';
 import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from './constants';
 import type { Plan } from './plan/interface';
 import { SubscriptionMode } from './subscription/constants';
+import type { SubscriptionCheckResponse } from './subscription/interface';
 
 const getPlan = (data: Partial<Plan>) => {
     return { ...data, Type: PLAN_TYPES.PLAN } as Plan;
@@ -103,28 +105,32 @@ const vpnBusinessPlan = PLANS_MAP[PLANS.VPN_BUSINESS] as Plan;
 const vpnBusinessMember = PLANS_MAP[ADDON_NAMES.MEMBER_VPN_BUSINESS] as Plan;
 
 describe('should get checkout result', () => {
-    it('should calculate vpn plus', () => {
+    it('should calculate vpn2024', () => {
+        const checkResult: SubscriptionCheckResponse = {
+            Amount: 999,
+            AmountDue: 999,
+            Cycle: CYCLE.MONTHLY,
+            Coupon: null,
+            Currency: 'USD',
+            SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
+            PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+        };
+
         expect(
             getCheckout({
                 planIDs: {
                     [PLANS.VPN2024]: 1,
                 },
-                checkResult: {
-                    Amount: 999,
-                    AmountDue: 999,
-                    Cycle: CYCLE.MONTHLY,
-                    Coupon: null,
-                    Currency: 'USD',
-                    SubscriptionMode: SubscriptionMode.Regular,
-                    BaseRenewAmount: null,
-                    RenewCycle: null,
-                },
+                checkResult,
                 plansMap: {
                     [PLANS.VPN2024]: getPlan(vpnPlan),
                 },
             })
         ).toEqual({
             regularAmountPerCycle: 999,
+            regularAmountPerCycleOptimistic: 999,
             couponDiscount: undefined,
             planTitle: 'VPN',
             planIDs: { [PLANS.VPN2024]: 1 },
@@ -147,25 +153,31 @@ describe('should get checkout result', () => {
             renewCycleOverriden: false,
             renewPriceOverriden: false,
             amountDue: 999,
+            viewPricePerMonth: 999,
+            monthlySuffix: '/month',
+            checkResult,
         });
     });
 
     it('should correctly handle the price increases', () => {
+        const checkResult: SubscriptionCheckResponse = {
+            Amount: 1199,
+            AmountDue: 1199,
+            Cycle: CYCLE.MONTHLY,
+            Coupon: null,
+            Currency: 'USD',
+            SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
+            PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
+        };
+
         expect(
             getCheckout({
                 planIDs: {
                     [PLANS.VPN2024]: 1,
                 },
-                checkResult: {
-                    Amount: 1199,
-                    AmountDue: 1199,
-                    Cycle: CYCLE.MONTHLY,
-                    Coupon: null,
-                    Currency: 'USD',
-                    SubscriptionMode: SubscriptionMode.Regular,
-                    BaseRenewAmount: null,
-                    RenewCycle: null,
-                },
+                checkResult,
                 plansMap: {
                     [PLANS.VPN2024]: {
                         ...getPlan(vpnPlan),
@@ -190,6 +202,7 @@ describe('should get checkout result', () => {
             })
         ).toEqual({
             regularAmountPerCycle: 1199,
+            regularAmountPerCycleOptimistic: 1199,
             couponDiscount: undefined,
             planTitle: 'VPN',
             planName: PLANS.VPN2024,
@@ -214,36 +227,43 @@ describe('should get checkout result', () => {
             renewCycleOverriden: false,
             renewPriceOverriden: false,
             amountDue: 1199,
+            viewPricePerMonth: 1199,
+            monthlySuffix: '/month',
+            checkResult,
         });
     });
 
-    it('should calculate bf 24 month visionary', () => {
+    it('should calculate BF 24 month visionary', () => {
+        const checkResult: SubscriptionCheckResponse = {
+            Amount: 47976,
+            AmountDue: 47976,
+            CouponDiscount: -4776,
+            Cycle: CYCLE.TWO_YEARS,
+            Coupon: {
+                Code: 'TEST',
+                Description: '',
+                MaximumRedemptionsPerUser: null,
+            },
+            Currency: 'USD',
+            SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
+            PeriodEnd: +addMonths(new Date(), CYCLE.TWO_YEARS) / 1000,
+        };
+
         expect(
             getCheckout({
                 planIDs: {
                     [PLANS.VISIONARY]: 1,
                 },
-                checkResult: {
-                    Amount: 47976,
-                    AmountDue: 47976,
-                    CouponDiscount: -4776,
-                    Cycle: CYCLE.TWO_YEARS,
-                    Coupon: {
-                        Code: 'TEST',
-                        Description: '',
-                        MaximumRedemptionsPerUser: null,
-                    },
-                    Currency: 'USD',
-                    SubscriptionMode: SubscriptionMode.Regular,
-                    BaseRenewAmount: null,
-                    RenewCycle: null,
-                },
+                checkResult,
                 plansMap: {
                     [PLANS.VISIONARY]: getPlan(visionaryPlan),
                 },
             })
         ).toEqual({
             regularAmountPerCycle: 47976,
+            regularAmountPerCycleOptimistic: 47976,
             couponDiscount: -4776,
             planIDs: { [PLANS.VISIONARY]: 1 },
             planTitle: 'VIS',
@@ -252,6 +272,7 @@ describe('should get checkout result', () => {
             addons: [],
             withDiscountPerCycle: 43200,
             withDiscountPerMonth: 1800,
+            viewPricePerMonth: 1800,
             withoutDiscountPerCycle: 71976,
             withoutDiscountPerMonth: 2999,
             discountPerCycle: 28776,
@@ -266,29 +287,34 @@ describe('should get checkout result', () => {
             renewCycleOverriden: false,
             renewPriceOverriden: false,
             amountDue: 47976,
+            monthlySuffix: '/month',
+            checkResult,
         });
     });
 
-    it('should calculate bf 30 month vpn plus', () => {
+    it('should calculate BF 30 month vpn2024', () => {
+        const checkResult: SubscriptionCheckResponse = {
+            Amount: 29970,
+            AmountDue: 29970,
+            CouponDiscount: -17994,
+            Cycle: CYCLE.THIRTY,
+            Coupon: {
+                Code: 'TEST',
+                Description: '',
+                MaximumRedemptionsPerUser: null,
+            },
+            Currency: 'USD',
+            SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
+            PeriodEnd: +addMonths(new Date(), CYCLE.THIRTY) / 1000,
+        };
+
         const result = getCheckout({
             planIDs: {
                 [PLANS.VPN2024]: 1,
             },
-            checkResult: {
-                Amount: 29970,
-                AmountDue: 29970,
-                CouponDiscount: -17994,
-                Cycle: CYCLE.THIRTY,
-                Coupon: {
-                    Code: 'TEST',
-                    Description: '',
-                    MaximumRedemptionsPerUser: null,
-                },
-                Currency: 'USD',
-                SubscriptionMode: SubscriptionMode.Regular,
-                BaseRenewAmount: null,
-                RenewCycle: null,
-            },
+            checkResult,
             plansMap: {
                 [PLANS.VPN2024]: getPlan(vpnPlan),
             },
@@ -297,6 +323,7 @@ describe('should get checkout result', () => {
         // Create a copy of the expected result with the approximate value
         const expected = {
             regularAmountPerCycle: 29970,
+            regularAmountPerCycleOptimistic: 29970,
             couponDiscount: -17994,
             planTitle: 'VPN',
             planName: PLANS.VPN2024,
@@ -305,6 +332,7 @@ describe('should get checkout result', () => {
             addons: [],
             withDiscountPerCycle: 11976,
             withDiscountPerMonth: 399.2,
+            viewPricePerMonth: 399.2,
             withoutDiscountPerCycle: 29970,
             withoutDiscountPerMonth: 999,
             discountPerCycle: 17994,
@@ -319,6 +347,8 @@ describe('should get checkout result', () => {
             renewCycleOverriden: false,
             renewPriceOverriden: false,
             amountDue: 29970,
+            monthlySuffix: '/month',
+            checkResult,
         };
 
         // Use toBeCloseTo for the floating point value
@@ -338,6 +368,19 @@ describe('should get checkout result', () => {
     });
 
     it('should calculate business with addons', () => {
+        const checkResult: SubscriptionCheckResponse = {
+            Amount: 81288,
+            AmountDue: 81288,
+            CouponDiscount: 0,
+            Cycle: CYCLE.TWO_YEARS,
+            Coupon: null,
+            Currency: 'USD',
+            SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
+            PeriodEnd: +addMonths(new Date(), CYCLE.TWO_YEARS) / 1000,
+        };
+
         expect(
             getCheckout({
                 planIDs: {
@@ -345,17 +388,7 @@ describe('should get checkout result', () => {
                     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 2,
                     [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 3,
                 },
-                checkResult: {
-                    Amount: 81288,
-                    AmountDue: 81288,
-                    CouponDiscount: 0,
-                    Cycle: CYCLE.TWO_YEARS,
-                    Coupon: null,
-                    Currency: 'USD',
-                    SubscriptionMode: SubscriptionMode.Regular,
-                    BaseRenewAmount: null,
-                    RenewCycle: null,
-                },
+                checkResult,
                 plansMap: {
                     [PLANS.BUNDLE_PRO]: getPlan(bundleProPlan),
                     [ADDON_NAMES.MEMBER_BUNDLE_PRO]: getAddon(bundleProMember),
@@ -364,6 +397,7 @@ describe('should get checkout result', () => {
             })
         ).toEqual({
             regularAmountPerCycle: 81288,
+            regularAmountPerCycleOptimistic: 81288,
             couponDiscount: 0,
             planTitle: 'BUS',
             planName: PLANS.BUNDLE_PRO,
@@ -395,12 +429,15 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: 2997,
             withDiscountOneMemberPerMonth: 999,
+            viewPricePerMonth: 999,
             cycle: CYCLE.TWO_YEARS,
             renewCycle: CYCLE.TWO_YEARS,
             renewPrice: 81288,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
             amountDue: 81288,
+            monthlySuffix: '/user per month',
+            checkResult,
         });
     });
 
@@ -411,23 +448,26 @@ describe('should get checkout result', () => {
         const cost24MonthlyCycles3Members =
             (vpnProPlan.Pricing?.[CYCLE.MONTHLY] || 0) * 24 + (vpnProMember.Pricing?.[CYCLE.MONTHLY] || 0) * 24 * 2;
 
+        const checkResult: SubscriptionCheckResponse = {
+            Amount: twoYearPrice3Members,
+            AmountDue: twoYearPrice3Members,
+            CouponDiscount: 0,
+            Cycle: CYCLE.TWO_YEARS,
+            Coupon: null,
+            Currency: 'USD',
+            SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
+            PeriodEnd: +addMonths(new Date(), CYCLE.TWO_YEARS) / 1000,
+        };
+
         expect(
             getCheckout({
                 planIDs: {
                     [PLANS.VPN_PRO]: 1,
                     [ADDON_NAMES.MEMBER_VPN_PRO]: 2,
                 },
-                checkResult: {
-                    Amount: twoYearPrice3Members,
-                    AmountDue: twoYearPrice3Members,
-                    CouponDiscount: 0,
-                    Cycle: CYCLE.TWO_YEARS,
-                    Coupon: null,
-                    Currency: 'USD',
-                    SubscriptionMode: SubscriptionMode.Regular,
-                    BaseRenewAmount: null,
-                    RenewCycle: null,
-                },
+                checkResult,
                 plansMap: {
                     [PLANS.VPN_PRO]: getPlan(vpnProPlan),
                     [ADDON_NAMES.MEMBER_VPN_PRO]: getAddon(vpnProMember),
@@ -435,6 +475,7 @@ describe('should get checkout result', () => {
             })
         ).toEqual({
             regularAmountPerCycle: twoYearPrice3Members,
+            regularAmountPerCycleOptimistic: twoYearPrice3Members,
             couponDiscount: 0,
             planTitle: 'VPN Essentials',
             planName: PLANS.VPN_PRO,
@@ -454,12 +495,15 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: twoYearPrice3Members / 24,
             withDiscountOneMemberPerMonth: 599,
+            viewPricePerMonth: 599,
             cycle: CYCLE.TWO_YEARS,
             renewCycle: CYCLE.TWO_YEARS,
             renewPrice: twoYearPrice3Members,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
             amountDue: twoYearPrice3Members,
+            monthlySuffix: '/user per month',
+            checkResult,
         });
     });
 
@@ -471,23 +515,27 @@ describe('should get checkout result', () => {
             (vpnBusinessPlan.Pricing?.[CYCLE.MONTHLY] || 0) * 24 +
             (vpnBusinessMember.Pricing?.[CYCLE.MONTHLY] || 0) * 24 * 2;
 
+        const checkResult: SubscriptionCheckResponse = {
+            Amount: twoYearPrice3Members,
+            AmountDue: twoYearPrice3Members,
+            CouponDiscount: 0,
+            Cycle: CYCLE.TWO_YEARS,
+            Coupon: null,
+            Currency: 'USD',
+            SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
+            PeriodEnd: +addMonths(new Date(), CYCLE.TWO_YEARS) / 1000,
+        };
+
         expect(
             getCheckout({
                 planIDs: {
                     [PLANS.VPN_BUSINESS]: 1,
                     [ADDON_NAMES.MEMBER_VPN_BUSINESS]: 2,
                 },
-                checkResult: {
-                    Amount: twoYearPrice3Members,
-                    AmountDue: twoYearPrice3Members,
-                    CouponDiscount: 0,
-                    Cycle: CYCLE.TWO_YEARS,
-                    Coupon: null,
-                    Currency: 'USD',
-                    SubscriptionMode: SubscriptionMode.Regular,
-                    BaseRenewAmount: null,
-                    RenewCycle: null,
-                },
+                checkResult,
+
                 plansMap: {
                     [PLANS.VPN_BUSINESS]: getPlan(vpnBusinessPlan),
                     [ADDON_NAMES.MEMBER_VPN_BUSINESS]: getAddon(vpnBusinessMember),
@@ -495,6 +543,7 @@ describe('should get checkout result', () => {
             })
         ).toEqual({
             regularAmountPerCycle: twoYearPrice3Members,
+            regularAmountPerCycleOptimistic: twoYearPrice3Members,
             couponDiscount: 0,
             planIDs: {
                 [PLANS.VPN_BUSINESS]: 1,
@@ -521,42 +570,49 @@ describe('should get checkout result', () => {
             currency: 'USD',
             withDiscountMembersPerMonth: 3596,
             withDiscountOneMemberPerMonth: 899,
+            viewPricePerMonth: 899,
             cycle: CYCLE.TWO_YEARS,
             renewCycle: CYCLE.TWO_YEARS,
             renewPrice: twoYearPrice3Members,
             renewCycleOverriden: false,
             renewPriceOverriden: false,
             amountDue: twoYearPrice3Members,
+            monthlySuffix: '/user per month',
+            checkResult,
         });
     });
 
     it('should calculate 100% discount', () => {
+        const checkResult: SubscriptionCheckResponse = {
+            Amount: 47976,
+            AmountDue: 0,
+            CouponDiscount: -47976,
+            Cycle: CYCLE.TWO_YEARS,
+            Coupon: {
+                Code: 'TEST',
+                Description: '',
+                MaximumRedemptionsPerUser: null,
+            },
+            Currency: 'USD',
+            SubscriptionMode: SubscriptionMode.Regular,
+            BaseRenewAmount: null,
+            RenewCycle: null,
+            PeriodEnd: +addMonths(new Date(), CYCLE.TWO_YEARS) / 1000,
+        };
+
         expect(
             getCheckout({
                 planIDs: {
                     [PLANS.VISIONARY]: 1,
                 },
-                checkResult: {
-                    Amount: 47976,
-                    AmountDue: 0,
-                    CouponDiscount: -47976,
-                    Cycle: CYCLE.TWO_YEARS,
-                    Coupon: {
-                        Code: 'TEST',
-                        Description: '',
-                        MaximumRedemptionsPerUser: null,
-                    },
-                    Currency: 'USD',
-                    SubscriptionMode: SubscriptionMode.Regular,
-                    BaseRenewAmount: null,
-                    RenewCycle: null,
-                },
+                checkResult,
                 plansMap: {
                     [PLANS.VISIONARY]: getPlan(visionaryPlan),
                 },
             })
         ).toEqual({
             regularAmountPerCycle: 47976,
+            regularAmountPerCycleOptimistic: 47976,
             couponDiscount: -47976,
             planTitle: 'VIS',
             planIDs: {
@@ -581,6 +637,9 @@ describe('should get checkout result', () => {
             renewCycleOverriden: false,
             renewPriceOverriden: false,
             amountDue: 0,
+            viewPricePerMonth: 0,
+            monthlySuffix: '/month',
+            checkResult,
         });
     });
 
@@ -599,6 +658,7 @@ describe('should get checkout result', () => {
                 SubscriptionMode: SubscriptionMode.CustomBillings,
                 BaseRenewAmount: null,
                 RenewCycle: null,
+                PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
             },
             plansMap: {
                 [PLANS.PASS]: PLANS_MAP[PLANS.PASS],
@@ -607,6 +667,89 @@ describe('should get checkout result', () => {
         });
 
         expect(result.discountPercent).toBe(28);
+    });
+
+    describe('viewPricePerMonth', () => {
+        it('should show price per member without discounts: plan with member addons', () => {
+            const checkResult: SubscriptionCheckResponse = {
+                Amount: 129528,
+                Currency: 'EUR',
+                AmountDue: 97146,
+                Proration: 0,
+                CouponDiscount: -32382,
+                Gift: 0,
+                Credit: 0,
+                UnusedCredit: 0,
+                Coupon: {
+                    Code: 'TEST25',
+                    Description: '25% discount',
+                    MaximumRedemptionsPerUser: null,
+                },
+                Cycle: 24,
+                SubscriptionMode: 0,
+                TaxInclusive: 1,
+                Taxes: [
+                    {
+                        Name: 'VAT - Export from Switzerland',
+                        Rate: 0,
+                        Amount: 0,
+                    },
+                ],
+                BaseRenewAmount: null,
+                RenewCycle: null,
+                PeriodEnd: +addMonths(new Date(), 24) / 1000,
+            };
+
+            expect(
+                getCheckout({
+                    planIDs: {
+                        [PLANS.VPN_BUSINESS]: 1,
+                    },
+                    checkResult,
+                    plansMap: PLANS_MAP,
+                })
+            ).toEqual({
+                regularAmountPerCycle: 129528,
+                regularAmountPerCycleOptimistic: 129528,
+                viewPricePerMonth: 899,
+                amountDue: 97146,
+                couponDiscount: -32382,
+                cycle: 24,
+                currency: 'EUR',
+                discountPercent: 45,
+                discountPerCycle: 80382,
+                membersPerMonth: 1798,
+                planIDs: {
+                    [PLANS.VPN_BUSINESS]: 1,
+                },
+                planName: PLANS.VPN_BUSINESS,
+                planTitle: 'VPN Professional',
+                usersTitle: '2 users',
+                renewCycle: 24,
+                renewPrice: 129528,
+                renewCycleOverriden: false,
+                renewPriceOverriden: false,
+                withDiscountPerCycle: 97146,
+
+                withDiscountMembersPerMonth: 448.75,
+                withDiscountOneMemberPerMonth: 224.375,
+                withDiscountPerMonth: 4047.75,
+                withoutDiscountPerCycle: 177528,
+                withoutDiscountPerMonth: 7397,
+                addons: [
+                    {
+                        name: ADDON_NAMES.IP_VPN_BUSINESS,
+                        pricing: { 1: 4999, 12: 47988, 24: 86376 },
+                        quantity: 1,
+                        title: '1 server',
+                    },
+                ],
+                monthlySuffix: '/user per month',
+                checkResult,
+            });
+        });
+
+        // it('should show price per member with discounts: plan without member addons');
     });
 });
 

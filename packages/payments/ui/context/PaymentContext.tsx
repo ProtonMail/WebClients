@@ -127,7 +127,7 @@ export const computeOptimisticSubscriptionMode = (
         isTrial,
     }: {
         isTrial?: boolean;
-    }
+    } = {}
 ): SubscriptionMode => {
     if (isFreeSubscription(subscription)) {
         return isTrial ? SubscriptionMode.Trial : SubscriptionMode.Regular;

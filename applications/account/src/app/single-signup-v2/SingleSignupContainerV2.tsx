@@ -1325,7 +1325,6 @@ const SingleSignupContainerV2 = ({
                         signupConfiguration={signupConfiguration}
                         activeSessions={activeSessions}
                         signupParameters={signupParameters}
-                        relativePrice={relativePrice}
                         step1Ref={step1Ref}
                         isLargeViewport={viewportWidth['>=large']}
                         api={normalApi}
