@@ -51,6 +51,7 @@ export enum TelemetryMeasurementGroups {
     clientInstalls = 'common.any.client_installs',
     clientSearch = 'any.web.client_search',
     b2bOnboarding = 'any.web.b2b_onboarding',
+    bringYourOwnEmail = 'any.web.bring_your_own_email',
     /** Docs */
     docsSuggestions = 'common.web.suggestions',
     docsHomepage = 'drive.docs.homepage',
@@ -331,6 +332,10 @@ export enum TelemetryB2BOnboardingEvents {
     hide_navbar_button = 'hide_navbar_button',
 }
 
+export enum TelemetryBringYourOwnEmailEvents {
+    claim_proton_address = 'claim_proton_address',
+}
+
 // Offers telemetry events
 export enum TelemetryMailDrivePostSignupOneDollarEvents {
     automaticModalOpen = 'automatic_modal_open',
@@ -403,6 +408,7 @@ export type TelemetryEvents =
     | TelemetryCalendarVideoConferencing
     | TelemetryEncryptedSearchEvents
     | TelemetryB2BOnboardingEvents
+    | TelemetryBringYourOwnEmailEvents
     | TelemetryPostSubscriptionTourEvents
     | TelemetryMailDrivePostSignupOneDollarEvents
     | TelemetryPaidUsersNudge
