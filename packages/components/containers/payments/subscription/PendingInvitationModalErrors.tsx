@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -85,7 +86,11 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
         <>
             {render && <BugModal email={user.Email} username={user.Name} {...bugReportModal} />}
             {renderClaimProtonAddressModal && (
-                <BYOEClaimProtonAddressModal toApp={APPS.PROTONMAIL} {...claimProtonAddressModalProps} />
+                <BYOEClaimProtonAddressModal
+                    toApp={APPS.PROTONMAIL}
+                    source={BYOE_CLAIM_PROTON_ADDRESS_SOURCE.SHARED_PLAN_PENDING_INVITATION}
+                    {...claimProtonAddressModalProps}
+                />
             )}
             <div>
                 <p className="color-danger text-bold m-0">{c('familyOffer_2023:Family plan')

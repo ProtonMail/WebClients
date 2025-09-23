@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
-import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, useModalState } from '@proton/components';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../../constants';
+import BYOEClaimProtonAddressModal from '../../BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import StepProductsHeader from './StepProductsHeader';
 import StepProductsRowItem from './StepProductsRowItem';
 import useStepProducts from './useStepProducts';
@@ -96,6 +97,7 @@ const StepProducts = ({ triggerOAuth }: Props) => {
                 <BYOEClaimProtonAddressModal
                     toApp={APPS.PROTONMAIL}
                     onCreateCalendar={getOrCreateCalendarAndSettings}
+                    source={BYOE_CLAIM_PROTON_ADDRESS_SOURCE.IMPORT}
                     {...claimProtonAddressModalProps}
                 />
             )}
