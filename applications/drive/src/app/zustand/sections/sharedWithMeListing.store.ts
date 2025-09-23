@@ -355,9 +355,9 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                     ActionEventName.DELETE_BOOKMARKS,
                     async (event) => {
                         const store = get();
-                        event.uids.forEach((uid) => {
+                        for (const uid of event.uids) {
                             store.removeSharedWithMeItem(uid);
-                        });
+                        }
                     }
                 );
 
@@ -365,17 +365,17 @@ export const useSharedWithMeListingStore = create<SharedWithMeListingStore>()(
                     ActionEventName.REJECT_INVITATIONS,
                     async (event) => {
                         const store = get();
-                        event.uids.forEach((uid) => {
+                        for (const uid of event.uids) {
                             store.removeSharedWithMeItem(uid);
-                        });
+                        }
                     }
                 );
 
                 const removeMeSubscription = eventManager.subscribe(ActionEventName.REMOVE_ME, async (event) => {
                     const store = get();
-                    event.uids.forEach((uid) => {
+                    for (const uid of event.uids) {
                         store.removeSharedWithMeItem(uid);
-                    });
+                    }
                 });
 
                 const acceptInvitationsSubscription = eventManager.subscribe(

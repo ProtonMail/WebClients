@@ -10,14 +10,14 @@ export const subscribeToDevicesEvents = () => {
 
         switch (event.type) {
             case ActionEventName.RENAMED_DEVICES:
-                event.items.forEach((item) => {
+                for (const item of event.items) {
                     store.updateDevice(item.deviceUid, { name: item.newName });
-                });
+                }
                 break;
             case ActionEventName.REMOVED_DEVICES:
-                event.deviceUids.forEach((uid) => {
+                for (const uid of event.deviceUids) {
                     store.removeDevice(uid);
-                });
+                }
                 break;
         }
     });

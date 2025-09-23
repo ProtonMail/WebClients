@@ -323,9 +323,6 @@ function useBaseUpload(
                     },
                 })
                 .then(async (file) => {
-                    queue.updateState(nextFileUpload.id, TransferState.Done);
-                    metrics.uploadSucceeded(nextFileUpload.shareId, nextFileUpload.numberOfErrors);
-                    nextFileUpload.callbacks.onFileUpload?.(file);
                     if (shouldUseSdk && file) {
                         try {
                             const uid = await drive.getNodeUid(nextFileUpload.shareId, file.fileId);
@@ -343,6 +340,9 @@ function useBaseUpload(
                             handleError(e);
                         }
                     }
+                    queue.updateState(nextFileUpload.id, TransferState.Done);
+                    metrics.uploadSucceeded(nextFileUpload.shareId, nextFileUpload.numberOfErrors);
+                    nextFileUpload.callbacks.onFileUpload?.(file);
                 })
                 .catch((error) => {
                     if (isPhotosDisabledUploadError(error)) {

@@ -118,8 +118,8 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
     const { shareId, linkId, volumeId } = activeFolder;
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
-    const browserContextMenu = useContextMenuControls();
-    const browserItemContextMenu = useItemContextMenu();
+    const { close: closeBrowserContextMenu, ...browserContextMenu } = useContextMenuControls();
+    const { close: closeBrowserItemContextMenu, ...browserItemContextMenu } = useItemContextMenu();
     const { navigateToLink } = useDriveNavigation();
     const selectionControls = useSelection();
     const { viewportWidth } = useActiveBreakpoint();
@@ -157,8 +157,12 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
             : undefined,
     }));
 
-    const selectedItems = getSelectedItems(browserItems, selectionControls!.selectedItemIds);
-    const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);
+    const selectedItems = getSelectedItems(browserItems, selectionControls?.selectedItemIds || []);
+    const { getDragMoveControls } = useDriveDragMove(
+        shareId,
+        browserItems,
+        selectionControls ? selectionControls.clearSelections : () => {}
+    );
 
     /* eslint-disable react/display-name */
     const GridHeaderComponent = useMemo(
@@ -178,7 +182,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
                     />
                 );
             },
-        [sortParams.sortField, sortParams.sortOrder, isLoading]
+        [/* unstable deps: setSorting */ sortParams.sortField, sortParams.sortOrder, isLoading, browserItems.length]
     );
 
     const handleItemRender = useCallback(
@@ -235,18 +239,18 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
             }
             navigateToLink(shareId, nodeId, item.isFile);
         },
-        [navigateToLink, shareId, browserItems, isDocsEnabled, openDocument]
+        [browserItems, navigateToLink, shareId, isDocsEnabled, openDocument, openPreview]
     );
 
     const handleScroll = () => {
-        browserContextMenu.close();
-        browserItemContextMenu.close();
+        closeBrowserContextMenu();
+        closeBrowserItemContextMenu();
     };
 
     useEffect(() => {
-        browserContextMenu.close();
-        browserItemContextMenu.close();
-    }, [shareId, linkId]);
+        closeBrowserContextMenu();
+        closeBrowserItemContextMenu();
+    }, [shareId, linkId, closeBrowserContextMenu, closeBrowserItemContextMenu]);
 
     const isEmpty = hasEverLoaded && !isLoading && !browserItems.length;
 
@@ -268,7 +272,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
                 shareId={shareId}
                 linkId={linkId}
                 anchorRef={contextMenuAnchorRef}
-                close={browserContextMenu.close}
+                close={closeBrowserContextMenu}
                 isOpen={browserContextMenu.isOpen}
                 open={browserContextMenu.open}
                 position={browserContextMenu.position}
@@ -279,7 +283,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
                 linkId={linkId}
                 selectedItems={selectedItems}
                 anchorRef={contextMenuAnchorRef}
-                close={browserItemContextMenu.close}
+                close={closeBrowserItemContextMenu}
                 isOpen={browserItemContextMenu.isOpen}
                 open={browserItemContextMenu.open}
                 position={browserItemContextMenu.position}

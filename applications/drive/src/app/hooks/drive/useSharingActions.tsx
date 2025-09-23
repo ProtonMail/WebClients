@@ -12,7 +12,7 @@ export const useSharingActions = () => {
     const { createNotification } = useNotifications();
     const { handleError } = useSdkErrorHandler();
 
-    const stopSharing = async (
+    const stopSharing = (
         showConfirmModal: ReturnType<typeof useConfirmActionModal>[1],
         uid: string,
         parentUid: string | undefined

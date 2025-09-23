@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom-v5-compat';
 
 import { useShallow } from 'zustand/react/shallow';
@@ -45,22 +45,20 @@ export function FolderView() {
     const { sortedList, sortParams, setSorting } = useControlledSorting(folderItems, sort, changeSort);
     const sortedUids = sortedList.map((item) => item.uid);
     const browserViewProps = { layout, sortParams, setSorting, sortedList };
-    const activeFolderShareId = activeFolder.shareId;
-    const params = useParams();
-
-    const paramsHash = useMemo(() => `${params.shareId}-${params.linkId}`, [params]);
+    const { shareId: activeFolderShareId, linkId: activeFolderLinkId } = activeFolder;
+    const { linkId, shareId } = useParams();
 
     useEffect(() => {
         const ac = new AbortController();
 
         // Temporary fix while we have to use activeFolder instead of relying on params as the only source of truth
-        if (params.shareId === activeFolder.shareId && params.linkId === activeFolder.linkId && !isLoadingDevices) {
+        if (shareId === activeFolderShareId && linkId === activeFolderLinkId && !isLoadingDevices) {
             void load(parentUid, activeFolderShareId, ac);
         }
         return () => {
             ac.abort();
         };
-    }, [parentUid, activeFolder, load, paramsHash, isLoadingDevices]);
+    }, [parentUid, activeFolderLinkId, load, isLoadingDevices, activeFolderShareId, shareId, linkId]);
 
     const breadcrumbs = activeFolder && <DriveBreadcrumbs activeFolder={activeFolder} />;
 

@@ -88,12 +88,12 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
     const logo = <SidebarLogo collapsed={collapsed} to="/drive" app={APPS.PROTONDRIVE} />;
 
     useEffect(() => {
-        loadFoldersRoot();
+        void loadFoldersRoot();
         const unsubscribe = subscribeToSidebarEvents();
         return () => {
             unsubscribe();
         };
-    }, [loadFoldersRoot, subscribeToSidebarEvents]);
+    }, [loadFoldersRoot]);
 
     useEffectOnce(() => {
         logPerformanceMarker('drive_performance_clicktonavrendered_histogram');
