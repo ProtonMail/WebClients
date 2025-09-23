@@ -1,6 +1,9 @@
 import { useCallback } from 'react';
 
-import { MemberRole, splitPublicLinkUid, useDrive } from '@proton/drive/index';
+import { c } from 'ttag';
+
+import { useNotifications } from '@proton/components';
+import { MemberRole, splitPublicLinkUid, useDrive } from '@proton/drive';
 
 import useDriveNavigation from '../../hooks/drive/useNavigate';
 import type { LinkShareUrl } from '../../store';
@@ -20,6 +23,7 @@ export function useFolder() {
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
     const { navigateToRoot } = useDriveNavigation();
+    const { createNotification } = useNotifications();
 
     const handleFolderError = useCallback((error?: Error) => {
         if (!error) {
@@ -78,40 +82,53 @@ export function useFolder() {
                     canRename: canEdit,
                     canTrash,
                 });
-
+                let showErrorNotification = false;
                 for await (const maybeNode of drive.iterateFolderChildren(folderNodeUid, ac.signal)) {
                     const { node } = getNodeEntity(maybeNode);
-                    if (node) {
-                        const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive);
-                        let shareUrl: LinkShareUrl | undefined;
-                        if (node.isShared && isAdmin) {
-                            const shareResult = await drive.getSharingInfo(node.uid);
-                            if (shareResult && shareResult.publicLink) {
-                                const { shareId, publicLinkId } = splitPublicLinkUid(shareResult.publicLink.uid);
-                                shareUrl = {
-                                    id: shareId,
-                                    token: publicLinkId,
-                                    isExpired: Boolean(
-                                        shareResult.publicLink?.expirationTime &&
-                                            new Date(shareResult.publicLink.expirationTime) < new Date()
-                                    ),
-                                    url: shareResult.publicLink.url,
-                                    createTime: dateToLegacyTimestamp(shareResult.publicLink.creationTime),
-                                    expireTime: shareResult.publicLink.expirationTime
-                                        ? dateToLegacyTimestamp(shareResult.publicLink.expirationTime)
-                                        : null,
-                                };
+                    try {
+                        if (node) {
+                            const legacyItem = await mapNodeToLegacyItem(maybeNode, folderShareId, drive);
+                            let shareUrl: LinkShareUrl | undefined;
+                            if (node.isShared && isAdmin) {
+                                const shareResult = await drive.getSharingInfo(node.uid);
+                                if (shareResult && shareResult.publicLink) {
+                                    const { shareId, publicLinkId } = splitPublicLinkUid(shareResult.publicLink.uid);
+                                    shareUrl = {
+                                        id: shareId,
+                                        token: publicLinkId,
+                                        isExpired: Boolean(
+                                            shareResult.publicLink?.expirationTime &&
+                                                new Date(shareResult.publicLink.expirationTime) < new Date()
+                                        ),
+                                        url: shareResult.publicLink.url,
+                                        createTime: dateToLegacyTimestamp(shareResult.publicLink.creationTime),
+                                        expireTime: shareResult.publicLink.expirationTime
+                                            ? dateToLegacyTimestamp(shareResult.publicLink.expirationTime)
+                                            : null,
+                                    };
+                                }
                             }
+                            setItem({
+                                ...legacyItem,
+                                shareUrl,
+                            });
                         }
-                        setItem({
-                            ...legacyItem,
-                            shareUrl,
+                        if (!maybeNode.ok) {
+                            // error on loading a single node inside the folder should not show notification
+                            handleError(maybeNode.error, { showNotification: false });
+                        }
+                    } catch (e) {
+                        handleError(e, {
+                            showNotification: false,
                         });
+                        showErrorNotification = true;
                     }
-                    if (!maybeNode.ok) {
-                        // error on loading a single node inside the folder should not show notification
-                        handleError(maybeNode.error, { showNotification: false });
-                    }
+                }
+                if (showErrorNotification) {
+                    createNotification({
+                        type: 'error',
+                        text: c('Error').t`We were not able to load some items`,
+                    });
                 }
             } catch (e) {
                 handleFolderError(e as Error);
@@ -119,7 +136,7 @@ export function useFolder() {
                 setIsLoading(false);
             }
         },
-        [drive, handleError, handleFolderError, isDocsEnabled, isSheetsEnabled]
+        [createNotification, drive, handleError, handleFolderError, isDocsEnabled, isSheetsEnabled]
     );
 
     return {
