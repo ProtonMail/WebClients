@@ -39,27 +39,27 @@ export const subscribeToSidebarEvents = () => {
 
         switch (event.type) {
             case ActionEventName.RENAMED_NODES:
-                event.items.forEach((item) => {
+                for (const item of event.items) {
                     store.updateItem(item.uid, { name: item.newName });
-                });
+                }
                 break;
             case ActionEventName.TRASHED_NODES:
-                event.uids.forEach((uid) => {
+                for (const uid of event.uids) {
                     store.removeItem(uid);
-                });
+                }
                 break;
             case ActionEventName.RESTORED_NODES:
-                event.items.forEach(async (item) => {
+                for (const item of event.items) {
                     const sidebarItem = await getSidebarItemFromUid(item.uid);
                     if (item.parentUid && store.getItem(item.parentUid)?.isExpanded) {
                         if (sidebarItem) {
                             store.setItem(sidebarItem);
                         }
                     }
-                });
+                }
                 break;
             case ActionEventName.MOVED_NODES:
-                event.items.forEach(async (item) => {
+                for (const item of event.items) {
                     const itemExists = !!store.getItem(item.uid);
                     if (itemExists) {
                         store.updateItem(item.uid, { parentUid: item.parentUid });
@@ -69,30 +69,30 @@ export const subscribeToSidebarEvents = () => {
                             store.setItem(sidebarItem);
                         }
                     }
-                });
+                }
                 break;
 
             case ActionEventName.UPDATED_NODES:
             case ActionEventName.CREATED_NODES:
-                event.items.forEach(async (item) => {
+                for (const item of event.items) {
                     if (item.parentUid && store.getItem(item.parentUid)?.isExpanded) {
                         const sidebarItem = await getSidebarItemFromUid(item.uid);
                         if (sidebarItem) {
                             store.setItem(sidebarItem);
                         }
                     }
-                });
+                }
                 break;
             case ActionEventName.DELETED_NODES:
-                event.uids.forEach((uid) => {
+                for (const uid of event.uids) {
                     store.removeItem(uid);
-                });
+                }
                 break;
         }
     });
 
     return () => {
         unsubscribeFromEvents();
-        getActionEventManager().unsubscribeSdkEventsMyUpdates('sidebar');
+        void getActionEventManager().unsubscribeSdkEventsMyUpdates('sidebar');
     };
 };
