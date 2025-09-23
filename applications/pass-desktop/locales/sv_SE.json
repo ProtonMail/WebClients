@@ -76,6 +76,9 @@
       "Advanced options": [
         "Avancerade alternativ"
       ],
+      "Allow access": [
+        "Tillåt åtkomst"
+      ],
       "Apply lifetime coupon code": [
         "Tillämpa livstids kupongkod"
       ],
@@ -433,6 +436,9 @@
       "Next month": [
         "Nästa månad"
       ],
+      "No": [
+        "Nej"
+      ],
       "No expired links": [
         "Inga utlöpta länkar"
       ],
@@ -444,6 +450,9 @@
       ],
       "Open navigation": [
         "Öppna navigering"
+      ],
+      "Organize vaults": [
+        "Organisera valv"
       ],
       "Pass for Android": [
         "Pass för Android"
@@ -708,6 +717,9 @@
       "Write us on X/Twitter": [
         "Skriv till oss på X/Twitter"
       ],
+      "Yes": [
+        "Ja"
+      ],
       "Your password manager is not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär den."
       ]
@@ -751,6 +763,14 @@
       ],
       "Expand": [
         "Expandera"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Fråga mig inte igen"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Vill du att ditt urklipp rensas automatiskt efter ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1597,6 +1617,9 @@
       "Copied to clipboard": [
         "Kopierat till urklipp"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Kopierat till urklipp (löper ut om ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Kupong tillämpad!"
       ],
@@ -1907,10 +1930,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
-      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2113,8 +2132,14 @@
       "Please follow the steps below to set up your domain.": [
         "Följ stegen nedan för att ställa in din domän."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Håll ${ PASS_APP_NAME } öppen så urklippet kan rensas automatiskt."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Håll det här fönstret öppet medan dina data importeras. Denna process kan ta några minuter."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Håll din webbläsare öppen så urklippet kan rensas automatiskt."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Observera att när aliaset väl har tagits bort kan det inte återställas. Kanske vill du inaktivera aliaset istället?"
@@ -3951,6 +3976,11 @@
         "${ price }/månad"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Kommer kräva en behörighet från din webbläsare"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Lägg till hemlig nyckel för 2FA"
@@ -4275,6 +4305,9 @@
       "Change your lock method": [
         "Byt din låsmetod"
       ],
+      "Clear clipboard": [
+        "Rensa urklipp"
+      ],
       "Confirm extra password": [
         "Bekräfta extralösenord"
       ],
@@ -4390,6 +4423,9 @@
       "Grant permissions": [
         "Bevilja behörigheter"
       ],
+      "Hidden vaults won’t be visible during search and autofill.": [
+        "Dolda valv kommer inte vara synliga under sökning och automatisk ifyllning."
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
       ],
@@ -4499,6 +4535,9 @@
       ],
       "Open pagination": [
         "Öppna sidnumrering"
+      ],
+      "Organize vaults": [
+        "Organisera valv"
       ],
       "Our welcome gift to you": [
         "Vår välkomstgåva till dig"
@@ -4836,8 +4875,14 @@
       "Extra password should have at least 8 characters": [
         "Extralösenord bör ha minst 8 tecken"
       ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Misslyckades att skriva automatiskt. Se till att ${ PASS_APP_NAME } har nödvändiga behörigheter och försök igen (${ error })."
+      ],
       "Failed to load breaches.": [
         "Misslyckades att ladda intrång."
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Bevilja åtkomst till urklipp för att aktivera automatisk rensning av kopierade lösenord och data."
       ],
       "Identity could not be confirmed": [
         "Identitet kunde inte bekräftas"

@@ -433,6 +433,9 @@
       "Next month": [
         "Sonraki ay"
       ],
+      "No": [
+        "Hayır"
+      ],
       "No expired links": [
         "Geçerlilik süresi geçmiş bir bağlantı yok"
       ],
@@ -710,6 +713,9 @@
       ],
       "Write us on X/Twitter": [
         "Bize X/Twitter üzerinden yazın"
+      ],
+      "Yes": [
+        "Evet"
       ],
       "Your password manager is not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
@@ -1914,8 +1920,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"

@@ -133,6 +133,9 @@
       "Clear search": [
         "검색 지우기"
       ],
+      "Clone item": [
+        "항목 복제"
+      ],
       "Close": [
         "닫기"
       ],
@@ -430,6 +433,9 @@
       "Next month": [
         "다음 달"
       ],
+      "No": [
+        "아니오"
+      ],
       "No expired links": [
         "만료된 링크 없음"
       ],
@@ -441,6 +447,9 @@
       ],
       "Open navigation": [
         "탐색 열기"
+      ],
+      "Organize vaults": [
+        "조직 보관함"
       ],
       "Pass for Android": [
         "Android용 Pass"
@@ -702,6 +711,9 @@
       ],
       "Write us on X/Twitter": [
         "X/트위터에 방문하기"
+      ],
+      "Yes": [
+        "예"
       ],
       "Your password manager is not here? Request it.": [
         "사용중이신 비밀번호 관리자가 여기 없나요? 추가하도록 요청하세요."
@@ -1882,6 +1894,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+      ],
       "Moving items": [
         "항목 이동 중"
       ],
@@ -2341,6 +2356,9 @@
       "Unverified": [
         "확인되지 않음"
       ],
+      "Updating vault organization...": [
+        "보관함 조직 업데이트 중..."
+      ],
       "Upgrade Now to Unlock Premium Features": [
         "프리미엄 기능 잠금해제 하려면 업그레이드"
       ],
@@ -2367,6 +2385,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "금고 \"${ share.content.name }\" 이(가) 삭제 되었습니다."
+      ],
+      "Vault organization successfully updated": [
+        "보관함 조직이 성공적으로 업데이트되었습니다."
       ],
       "Vault sharing: ${ vaultMembersCount } member": [
         "금고 공유: ${ vaultMembersCount }명 구성원"
@@ -2495,6 +2516,9 @@
       ],
       "TAB": [
         "탭"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -4479,6 +4503,9 @@
       "Pending access to the shared data": [
         "공유 데이터에 대한 접근 대기 중"
       ],
+      "Perform autotype?": [
+        "자동 입력을 사용하시겠습니까?"
+      ],
       "Permanently remove all items?": [
         "영구적으로 모든 항목들을 삭제할까요?"
       ],
@@ -4784,6 +4811,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "추가 비밀번호는 최소 8글자여야합니다."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "자동 입력에 실패했습니다. ${ PASS_APP_NAME }가 필요한 권한을 가지고 있는지 확인 후 다시 시도해주세요. (${ error })"
       ],
       "Failed to load breaches.": [
         "침해를 불러오지 못했습니다."
