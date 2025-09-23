@@ -166,9 +166,9 @@ const getVpnAutoCoupon = ({ coupon, planIDs, cycle, currency }: Parameters<typeo
     const now = new Date();
 
     // if you're reading this code after the hardcoded dates, feel free to remove the code that's not relevant in your
-    // light cone anymore. After 2025-09-25, we don't need VPN_INTRO_2025_UK and VPN_INTRO_2024 coupons. Only
+    // light cone anymore. After the date below, we don't need VPN_INTRO_2025_UK and VPN_INTRO_2024 coupons. Only
     // VPN_INTRO_2025 should remain.
-    const isAfterVpn2025CouponStartDate = isAfter(now, new Date('2025-09-25T10:00:00.000Z'));
+    const isAfterVpn2025CouponStartDate = isAfter(now, new Date('2025-10-23T10:00:00.000Z'));
 
     if (isAfterVpn2025CouponStartDate) {
         return COUPON_CODES.VPN_INTRO_2025;
