@@ -62,17 +62,17 @@ export const subscribeToFolderEvents = () => {
         }
         switch (event.type) {
             case ActionEventName.RENAMED_NODES:
-                event.items.forEach((item) => {
+                for (const item of event.items) {
                     store.updateItem(item.uid, { name: item.newName });
-                });
+                }
                 break;
             case ActionEventName.TRASHED_NODES:
-                event.uids.forEach((uid) => {
+                for (const uid of event.uids) {
                     store.removeItem(uid);
-                });
+                }
                 break;
             case ActionEventName.RESTORED_NODES:
-                event.items.forEach(async (item) => {
+                for (const item of event.items) {
                     if (item.parentUid === folder.uid) {
                         const legacyItem = await getLegacyItemFromUid(item.uid, folder);
                         if (legacyItem) {
@@ -81,18 +81,18 @@ export const subscribeToFolderEvents = () => {
                     } else {
                         store.removeItem(item.uid);
                     }
-                });
+                }
                 break;
             case ActionEventName.MOVED_NODES:
-                event.items.forEach((item) => {
+                for (const item of event.items) {
                     if (item.parentUid !== folder.uid) {
                         store.removeItem(item.uid);
                     }
-                });
+                }
                 break;
 
             case ActionEventName.UPDATED_NODES:
-                event.items.forEach(async (item) => {
+                for (const item of event.items) {
                     if (item.parentUid === folder.uid && !item.isTrashed) {
                         const legacyItem = await getLegacyItemFromUid(item.uid, folder);
                         if (legacyItem) {
@@ -101,10 +101,10 @@ export const subscribeToFolderEvents = () => {
                     } else {
                         store.removeItem(item.uid);
                     }
-                });
+                }
                 break;
             case ActionEventName.CREATED_NODES:
-                event.items.forEach(async (item) => {
+                for (const item of event.items) {
                     if (item.parentUid === folder.uid && !item.isTrashed) {
                         const legacyItem = await getLegacyItemFromUid(item.uid, folder);
                         if (legacyItem) {
@@ -113,12 +113,12 @@ export const subscribeToFolderEvents = () => {
                     } else {
                         store.removeItem(item.uid);
                     }
-                });
+                }
                 break;
             case ActionEventName.DELETED_NODES:
-                event.uids.forEach((uid) => {
+                for (const uid of event.uids) {
                     store.removeItem(uid);
-                });
+                }
                 break;
         }
     });
