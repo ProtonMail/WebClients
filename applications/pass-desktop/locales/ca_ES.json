@@ -76,6 +76,9 @@
       "Advanced options": [
         "Opcions avançades"
       ],
+      "Allow access": [
+        "Permeteu l'accés"
+      ],
       "Apply lifetime coupon code": [
         "Aplica un cupó de codi vitalici"
       ],
@@ -433,6 +436,9 @@
       "Next month": [
         "Mes següent"
       ],
+      "No": [
+        "No"
+      ],
       "No expired links": [
         "Sense enllaços caducats"
       ],
@@ -711,6 +717,9 @@
       "Write us on X/Twitter": [
         "Escriviu-nos a X/Twitter"
       ],
+      "Yes": [
+        "Sí"
+      ],
       "Your password manager is not here? Request it.": [
         "No hi apareix el vostre gestor de contrasenyes? Demaneu-lo."
       ]
@@ -754,6 +763,14 @@
       ],
       "Expand": [
         "Amplia"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "No m'ho torneu a preguntar"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Voleu que el vostre porta-retalls es netegi automàticament després de ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1600,6 +1617,9 @@
       "Copied to clipboard": [
         "S'ha copiat al porta-retalls."
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "S'ha copiat al porta-retalls (caduca en ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "S'ha aplicat el cupó."
       ],
@@ -1913,10 +1933,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
-      ],
       "Moving items": [
         "S'estan movent elements"
       ],
@@ -1930,7 +1946,7 @@
         "S'estan desplaçant els elements a la paperera…"
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
-        "Necessiteu enviar un correu electrònic a algú però no voleu que vegi la teva adreça de correu electrònic? Configureu un àlies de contacte."
+        "Necessiteu enviar un correu electrònic a algú, però no voleu que vegi la vostra adreça? Configureu un àlies de contacte."
       ],
       "Never": [
         "Mai"
@@ -2119,8 +2135,14 @@
       "Please follow the steps below to set up your domain.": [
         "Seguiu els passos següents per configurar el vostre domini."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Mantingueu ${ PASS_APP_NAME } obert perquè el porta-retalls es pugui netejar automàticament."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Manteniu aquesta finestra oberta mentre s'importen les vostres dades. Aquest procés pot trigar uns minuts."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Mantingueu el vostre navegador obert perquè el porta-retalls es pugui netejar automàticament."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Assegureu-vos que la finestra prèviament activa és on voleu escriure automàticament i que el cursor estava situat al camp d'inici de sessió."
@@ -3975,6 +3997,11 @@
         "${ price }/mes"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Requerirà un permís del vostre navegador"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Afegeix una clau secreta d'A2F"
@@ -4298,6 +4325,9 @@
       ],
       "Change your lock method": [
         "Canvia el mètode de bloqueig"
+      ],
+      "Clear clipboard": [
+        "Netegeu el porta-retalls"
       ],
       "Confirm extra password": [
         "Confirmeu la contrasenya addicional"
@@ -4871,6 +4901,9 @@
       ],
       "Failed to load breaches.": [
         "No s'han pogut carregar les infraccions."
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Concediu accés al porta-retalls per habilitar la neteja automàtica de les contrasenyes i dades copiades."
       ],
       "Identity could not be confirmed": [
         "No s'ha pogut confirmar la identitat."
