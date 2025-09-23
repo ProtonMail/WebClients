@@ -38,6 +38,14 @@ export const AutoCloseMeetingModal = ({ onLeave }: AutoCloseMeetingModalProps) =
         }
     }, [participants.length]);
 
+    function formatCountDown(seconds: number): string {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+
+        const secsStr = secs.toString().padStart(2, '0');
+        return `${mins}:${secsStr}`;
+    }
+
     return (
         <>
             {timeAlone >= showAutoCloseAfterSeconds && (
@@ -46,7 +54,7 @@ export const AutoCloseMeetingModal = ({ onLeave }: AutoCloseMeetingModalProps) =
                         className="flex flex-column justify-space-between p-4 mx-4 pb-0 gap-4 text-center bg-norm pt-custom"
                         style={{ '--pt-custom': '3rem' }}
                     >
-                        <div className="text-3xl text-semibold">{`Meeting will end in ${autoCloseTimeInSeconds - timeAlone} seconds`}</div>
+                        <div className="text-3xl text-semibold">{`Meeting will end in ${formatCountDown(autoCloseTimeInSeconds - timeAlone)}`}</div>
                         <div className="color-weak">{c('meet_2025')
                             .t`Since you are the only participant in this meeting, the meeting will automatically close. Do you want to stay in this meeting?`}</div>
 
