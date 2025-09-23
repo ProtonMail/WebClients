@@ -245,8 +245,8 @@ describe('getAutoCoupon', () => {
                 expect(result).toBe(COUPON_CODES.VPN_INTRO_2024);
             });
 
-            it('should return VPN_INTRO_2025 after 2025-09-25', () => {
-                jest.setSystemTime(new Date('2025-09-26T10:00:00.000Z'));
+            it('should return VPN_INTRO_2025 after 2025-10-23', () => {
+                jest.setSystemTime(new Date('2025-10-24T10:00:00.000Z'));
 
                 const result = getAutoCoupon({
                     planIDs: { [PLANS.VPN2024]: 1 },
@@ -256,8 +256,8 @@ describe('getAutoCoupon', () => {
                 expect(result).toBe(COUPON_CODES.VPN_INTRO_2025);
             });
 
-            it('should return VPN_INTRO_2025 after 2025-09-25 even for GBP currency', () => {
-                jest.setSystemTime(new Date('2025-09-26T10:00:00.000Z'));
+            it('should return VPN_INTRO_2025 after 2025-10-23 even for GBP currency', () => {
+                jest.setSystemTime(new Date('2025-10-24T10:00:00.000Z'));
 
                 const result = getAutoCoupon({
                     planIDs: { [PLANS.VPN2024]: 1 },
