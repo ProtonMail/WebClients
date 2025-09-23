@@ -13,7 +13,7 @@ export const useTrashActions = () => {
     const { createTrashedItemsNotifications } = useListNotifications();
     const restoreItems = async (items: Item[]) => {
         const restored = [];
-        getActionEventManager().emit({ type: ActionEventName.RESTORED_NODES, items });
+        await getActionEventManager().emit({ type: ActionEventName.RESTORED_NODES, items });
 
         try {
             const uids = items.map((t) => t.uid);
@@ -32,7 +32,7 @@ export const useTrashActions = () => {
         const uids = items.map((d) => d.uid);
         const success = [];
         const failure = [];
-        getActionEventManager().emit({ type: ActionEventName.TRASHED_NODES, uids });
+        await getActionEventManager().emit({ type: ActionEventName.TRASHED_NODES, uids });
 
         try {
             for await (const result of drive.trashNodes(uids)) {
