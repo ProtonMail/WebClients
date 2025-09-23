@@ -1,7 +1,13 @@
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { resolveIdentitySections } from 'proton-pass-extension/app/content/services/form/autofill.identity.sections';
 import { createFormTracker } from 'proton-pass-extension/app/content/services/form/tracker';
-import type { DetectedField, DetectedForm, FieldHandle, FormHandle } from 'proton-pass-extension/app/content/types';
+import {
+    type DetectedField,
+    type DetectedForm,
+    type FieldHandle,
+    type FormHandle,
+    NotificationAction,
+} from 'proton-pass-extension/app/content/types';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 import { canAutosave } from 'proton-pass-extension/app/content/utils/autosave';
 import { hasProcessableFields } from 'proton-pass-extension/app/content/utils/nodes';
@@ -158,12 +164,19 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         detach: withContext((ctx) => {
             logger.debug(`[FormHandles]: Detaching tracker for form [${formType}:${formHandle.id}]`);
             const dropdown = ctx?.service.iframe.dropdown;
-            const dropdownField = dropdown?.getCurrentField() ?? null;
+            const notification = ctx?.service.iframe.notification;
+            const dField = dropdown?.getCurrentField() ?? null;
+            const nAction = notification?.getState().action;
 
             listeners.removeAll();
             formHandle.tracker?.detach();
+
             formHandle.getFields().forEach((field) => {
-                if (field === dropdownField) dropdown?.close();
+                /** Auto-close dropdown if it was attached to a detaching form */
+                if (field === dField) dropdown?.close();
+                /** Auto-close OTP autofill notification if attached from detaching form */
+                if (field.fieldType === FieldType.OTP && nAction === NotificationAction.OTP) notification?.close();
+
                 field.detach();
             });
 
