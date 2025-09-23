@@ -74,7 +74,10 @@ export const DeviceSelect = <T extends object>({
                 className="device-select rounded-full py-10 border-norm bg-weak w-full"
             >
                 <div className="flex flex-nowrap items-center">
-                    <div className="flex items-center h-full mr-4 w-custom" style={{ '--w-custom': '1.75rem' }}>
+                    <div
+                        className="flex items-center h-full mr-4 w-custom shrink-0"
+                        style={{ '--w-custom': '1.75rem' }}
+                    >
                         <Icon name={icon} size={6} className="color-weak" />
                     </div>
                     <div className="flex flex-nowrap flex-column">
