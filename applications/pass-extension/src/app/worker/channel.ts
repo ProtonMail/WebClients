@@ -7,6 +7,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { clientReady } from '@proton/pass/lib/client';
 import { fileStorage } from '@proton/pass/lib/file-storage/fs';
+import browser from '@proton/pass/lib/globals/browser';
 import { cacheRequest } from '@proton/pass/store/actions';
 import { requestCancel } from '@proton/pass/store/request/actions';
 import { selectPendingPopupRequests, selectPendingSettingsRequests } from '@proton/pass/store/selectors/extension';
@@ -42,9 +43,18 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.PASSKEY_GET,
         WorkerMessageType.POPUP_INIT,
     ],
-    onError: withContext((ctx, err) => {
-        if (err instanceof MessageVersionMismatchError) void ctx.service.activation.reload();
-    }),
+    onAccept: (message) => {
+        if (message.sender === 'background') {
+            /** During development, while using the webpack dev-server
+             * with hot module replacement - we sometimes end up in a
+             * "corrupted" state where the service-worker is sending out
+             * messages to itself while it is updating or going stale. */
+            if (process.env.NODE_ENV === 'development') browser.runtime.reload();
+            return false;
+        }
+
+        return true;
+    },
     onDisconnect: withContext((ctx, portName) => {
         const isPopup = isPopupPort(portName);
         const isPage = isPagePort(portName);
@@ -76,6 +86,10 @@ const WorkerMessageBroker = createMessageBroker({
                 });
             }
         }
+    }),
+
+    onError: withContext((ctx, err) => {
+        if (err instanceof MessageVersionMismatchError) void ctx.service.activation.reload();
     }),
 });
 
