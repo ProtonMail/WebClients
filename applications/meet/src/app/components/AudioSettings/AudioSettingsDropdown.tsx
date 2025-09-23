@@ -35,7 +35,7 @@ const AudioSettingsDropdownComponent = ({
 
     return (
         <Dropdown
-            className="device-selector-dropdown border border-norm rounded-xl shadow-none meet-radius meet-scrollbar p-2 overflow-x-hidden overflow-y-auto"
+            className="device-selector-dropdown border border-norm rounded-xl shadow-none meet-radius meet-scrollbar pl-2 pr-0 py-4 overflow-x-hidden overflow-y-auto"
             isOpen={true}
             anchorRef={anchorRef as RefObject<HTMLElement>}
             onClose={noop}
@@ -45,7 +45,7 @@ const AudioSettingsDropdownComponent = ({
             disableDefaultArrowNavigation
             size={{ width: DropdownSizeUnit.Dynamic, maxWidth: undefined }}
         >
-            <div className="flex flex-column gap-2 p-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
+            <div className="flex flex-column gap-2 px-2 py-0 meet-scrollbar overflow-x-hidden overflow-y-auto">
                 <div className="flex flex-column gap-2">
                     <div className="color-weak meet-font-weight">
                         {!noMicrophoneDetected ? c('Info').t`Select a microphone` : c('Info').t`No microphone detected`}
