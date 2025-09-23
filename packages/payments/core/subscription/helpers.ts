@@ -515,42 +515,6 @@ export function getLongerCycle(cycle: CYCLE | undefined): CYCLE | undefined {
     return cycle;
 }
 
-export interface PricingForCycles {
-    [CYCLE.MONTHLY]: number;
-    [CYCLE.THREE]: number;
-    [CYCLE.SIX]: number;
-    [CYCLE.YEARLY]: number;
-    [CYCLE.EIGHTEEN]: number;
-    [CYCLE.TWO_YEARS]: number;
-    [CYCLE.FIFTEEN]: number;
-    [CYCLE.THIRTY]: number;
-}
-
-export interface AggregatedPricing {
-    all: PricingForCycles;
-    defaultMonthlyPrice: number;
-    defaultMonthlyPriceWithoutAddons: number;
-    /**
-     * That's pricing that counts only aggregate of cost for members. That's useful for rendering of
-     * "per user per month" pricing.
-     * Examples:
-     * - If you have a B2C plan with 1 user, then this price will be the same as `all`.
-     * - If you have Mail Plus plan with several users, then this price will be the same as `all`, because each
-     *     additional member counts to the price of members.
-     * - If you have Bundle Pro with several users and with the default (minimum) number of custom domains, then
-     *     this price will be the same as `all`.
-     *
-     * Here things become different:
-     * - If you have Bundle Pro with several users and with more than the default (minimum) number of custom domains,
-     *     then this price will be `all - extra custom domains price`.
-     * - For VPN Business the behavior is more complex. It also has two addons: member and IPs/servers. By default it
-     *     has 2 members and 1 IP. The price for members should exclude price for the 1 default IP.
-     */
-    members: PricingForCycles;
-    membersNumber: number;
-    plans: PricingForCycles;
-}
-
 export const getHasCoupon = (subscription: Subscription | undefined, coupon: string) => {
     return [subscription?.CouponCode, subscription?.UpcomingSubscription?.CouponCode].includes(coupon);
 };

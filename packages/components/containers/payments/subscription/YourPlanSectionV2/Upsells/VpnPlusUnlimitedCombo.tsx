@@ -28,11 +28,10 @@ import {
     PLANS,
     PLAN_NAMES,
     type PlansMap,
+    getOptimisticCheckout,
     getPlanByName,
     getPricePerCycle,
-    getPricingFromPlanIDs,
     getSubscriptionPlanTitle,
-    getTotalFromPricing,
 } from '@proton/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -241,14 +240,13 @@ const CustomSaveLabel = ({ children }: { children: ReactNode }) => {
     );
 };
 
-const getSaveLabel = (plan: PLANS | undefined, cycle: CYCLE | undefined, plansMap: FullPlansMap) => {
-    if (!plan || !cycle) {
-        return;
-    }
-
-    const pricing = getPricingFromPlanIDs({ [plan]: 1 }, plansMap);
-    const totals = getTotalFromPricing(pricing, cycle);
-    const discountPercent = totals.discountPercentage;
+const getSaveLabel = (plan: PLANS, cycle: CYCLE, currency: Currency, plansMap: FullPlansMap) => {
+    const { discountPercent } = getOptimisticCheckout({
+        planIDs: { [plan]: 1 },
+        plansMap,
+        cycle,
+        currency,
+    });
 
     if (!discountPercent) {
         return;
@@ -315,7 +313,7 @@ const VPNPlus = ({ plansMap, serversCount, cycle, currency, handlePlanSelection 
                                 logo={<PlanIcon planName={plan} />}
                                 topLine={PLAN_NAMES[plan]}
                             />
-                            {getSaveLabel(plan, cycle, plansMap)}
+                            {getSaveLabel(plan, cycle, currency, plansMap)}
                         </div>
                         <Price
                             key="plan-price"
@@ -370,7 +368,7 @@ const Unlimited = ({ plansMap, cycle, currency, freePlan, handlePlanSelection }:
                                 logo={<PlanIcon planName={plan} />}
                                 topLine={PLAN_NAMES[plan]}
                             />
-                            {getSaveLabel(plan, cycle, plansMap)}
+                            {getSaveLabel(plan, cycle, currency, plansMap)}
                         </div>
                         <Price
                             key="plan-price"
