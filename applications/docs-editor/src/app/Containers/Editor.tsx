@@ -55,6 +55,7 @@ import { useSyncedState } from '../Hooks/useSyncedState'
 import { FixBrokenListItemPlugin } from '../Plugins/FixBrokenListItemPlugin'
 import { getAccentColorForUsername } from '@proton/atoms'
 import { CustomCollaborationContextProvider } from '../Plugins/Collaboration/CustomCollaborationContext'
+import { FixBrokenTabNode } from '../Plugins/FixBrokenTabNode'
 
 const TypingBotEnabled = false
 
@@ -185,6 +186,7 @@ export function Editor({
         ></div>
       )}
       <SafeLexicalComposer initialConfig={BuildInitialEditorConfig({ onError: onEditorError })}>
+        <FixBrokenTabNode />
         <KeyboardShortcutsPlugin />
         {(systemMode === EditorSystemMode.Edit || systemMode === EditorSystemMode.PublicView) && (
           <Toolbar
