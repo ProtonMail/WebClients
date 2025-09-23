@@ -90,6 +90,8 @@ describe('FixBrokenListItemPlugin', () => {
         paragraph.append(text1, tab1, tab2, text2)
         $getRoot().append(paragraph)
       })
+      await Promise.resolve().then()
+      await new Promise((r) => setTimeout(r, 20)) // Wait for the plugin to fix the tab nodes
     })
 
     test('should fix tab nodes', () => {
