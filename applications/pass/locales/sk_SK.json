@@ -424,6 +424,9 @@
       "Next month": [
         "Budúci mesiac"
       ],
+      "No": [
+        "Nie"
+      ],
       "No expired links": [
         "Žiadne exspirované odkazy"
       ],
@@ -703,6 +706,9 @@
       "Write us on X/Twitter": [
         "Napíšte nám na X/Twitter"
       ],
+      "Yes": [
+        "Áno"
+      ],
       "Your password manager is not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
       ]
@@ -723,6 +729,14 @@
       ],
       "Expand": [
         "Rozbaliť"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Už sa nepýtať"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Chcete, aby sa vaša schránka automaticky vymazala po ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1582,6 +1596,9 @@
       "Copied to clipboard": [
         "Skopírované do schránky"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Skopírované do schránky (vyprší o ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Kupón bol úspešne použitý!"
       ],
@@ -2101,8 +2118,14 @@
       "Please follow the steps below to set up your domain.": [
         "Pre nastavenie domény postupujte podľa nižšie uvedených krokov."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Ponechajte aplikáciu ${ PASS_APP_NAME } otvorenú, aby sa schránka mohla automaticky vymazať."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Počas importu údajov nechajte toto okno otvorené. Tento proces môže trvať niekoľko minút."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Nechajte prehliadač otvorený, aby sa schránka mohla automaticky vymazať."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Uistite sa, prosím, že predtým aktívne okno je tam, kde chcete automaticky vyplniť údaje, a že kurzor je umiestnený v prihlasovacom poli."
@@ -2638,6 +2661,9 @@
       ],
       "15 minutes": [
         "15 minútach"
+      ],
+      "15 seconds": [
+        "15 sekundách"
       ],
       "2 minutes": [
         "2 minúty"
@@ -3235,6 +3261,9 @@
       ],
       "Network": [
         "Sieť"
+      ],
+      "Never": [
+        "Nikdy"
       ],
       "New email": [
         "Nový email"
@@ -3921,6 +3950,11 @@
         "${ price }/mesiac"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Bude vyžadovať povolenie od vášho prehliadača"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Pridať 2FA tajný kľúč"
@@ -4248,6 +4282,9 @@
       ],
       "Change your lock method": [
         "Zmeňte spôsob uzamykania"
+      ],
+      "Clear clipboard": [
+        "Vymazať schránku"
       ],
       "Confirm extra password": [
         "Potvrďte dodatočné heslo"

@@ -201,6 +201,9 @@
       "Change page": [
         "ページの変更"
       ],
+      "Change password": [
+        "パスワードを変更"
+      ],
       "Change sorting": [
         "並べ替えの変更"
       ],
@@ -1131,8 +1134,8 @@
       "Remove this label": [
         "このラベルを削除"
       ],
-      "Remove Zoom meeting": [
-        "Zoomミーティングを削除"
+      "Remove video conference": [
+        "ビデオ会議を削除"
       ],
       "Replace": [
         "置き換える"
@@ -1460,9 +1463,6 @@
       ],
       "Trust": [
         "信頼する"
-      ],
-      "Trust key": [
-        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -7230,7 +7230,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -9468,8 +9468,14 @@
       "Remember my choice": [
         "選択を記憶する"
       ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME } ビデオ会議を削除"
+      ],
       "Remove metadata": [
         "メタデータを削除"
+      ],
+      "Remove Zoom video conference": [
+        "Zoomビデオ会議を削除"
       ],
       "Reveal password": [
         "パスワードを表示する"
@@ -9584,6 +9590,9 @@
       ],
       "Verification code": [
         "認証コード"
+      ],
+      "Video conference": [
+        "ビデオ会議"
       ],
       "Vulnerable": [
         "脆弱"
@@ -14097,6 +14106,9 @@
       ],
       "Account security": [
         "アカウントのセキュリティ"
+      ],
+      "Account temporarily locked": [
+        "アカウントが一時的にロックされています"
       ],
       "Action all conversations": [
         "すべての会話を操作"

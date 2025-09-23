@@ -63,6 +63,11 @@
         "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Comptes"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
@@ -769,6 +774,12 @@
       "Get more servers": [
         "Bénéficiez de plus de serveurs"
       ],
+      "Get Pass Family": [
+        "Obtenir Pass Family"
+      ],
+      "Get Pass Plus": [
+        "Je choisis Pass Plus"
+      ],
       "Get started": [
         "Commencer"
       ],
@@ -783,6 +794,12 @@
       ],
       "Get the deal": [
         "J'en profite"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "Obtenez l'extension pour ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Obtenir la suite complète"
       ],
       "Get the writing assistant": [
         "Obtenir l'assistant d'écriture"
@@ -1003,6 +1020,9 @@
       "No": [
         "Non"
       ],
+      "No thanks": [
+        "Non merci"
+      ],
       "No, thanks": [
         "Non merci"
       ],
@@ -1017,6 +1037,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ouvrir les paramètres de ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Ouvrez ${ PASS_APP_NAME } dans votre navigateur"
       ],
       "Open navigation": [
         "Ouvrir la navigation"
@@ -1041,6 +1064,9 @@
       ],
       "Pay ${ price } now": [
         "Payer ${ price } maintenant"
+      ],
+      "Pay once": [
+        "Paiement unique"
       ],
       "Preview": [
         "Aperçu"
@@ -1422,6 +1448,9 @@
       ],
       "Start subscription": [
         "Commencer l'abonnement"
+      ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Commencer à utiliser ${ PASS_APP_NAME }"
       ],
       "Stay": [
         "Rester"
@@ -12000,14 +12029,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
       ],
+      "/month x ${ months }": [
+        "/mois x ${ months }"
+      ],
       "1 hour": [
         "1 heure"
       ],
       "1 minute": [
         "1 minute"
       ],
+      "10 hide-my-email aliases": [
+        "10 alias hide-my-email"
+      ],
       "10 minutes": [
         "10 minutes"
+      ],
+      "10 VPN devices": [
+        "10 appareils VPN"
+      ],
+      "15 extra email addresses": [
+        "15 adresses e-mail supplémentaires"
       ],
       "15 minutes": [
         "15 minutes"
@@ -12023,6 +12064,12 @@
       ],
       "5 minutes": [
         "5 minutes"
+      ],
+      "500 GB Storage": [
+        "500 Go d'espace de stockage"
+      ],
+      "6 Pass Plus accounts": [
+        "6 comptes Pass Plus"
       ],
       "Account holder": [
         "Titulaire du compte"
@@ -12053,6 +12100,9 @@
       ],
       "Addresses": [
         "Adresses"
+      ],
+      "Admin panel for your family": [
+        "Panneau d'administration pour votre famille"
       ],
       "Advanced": [
         "Paramètres avancés"
@@ -12225,6 +12275,9 @@
       "BTC amount": [
         "Montant BTC"
       ],
+      "Built-in 2FA authenticator": [
+        "Authentificateur A2F intégré"
+      ],
       "Calendar": [
         "Calendrier"
       ],
@@ -12353,6 +12406,9 @@
       ],
       "Create password": [
         "Créer un mot de passe"
+      ],
+      "Credit cards": [
+        "Cartes de paiement"
       ],
       "Credits": [
         "Crédits"
@@ -12525,6 +12581,9 @@
       "File": [
         "Fichier"
       ],
+      "File attachments (up to 10GB)": [
+        "Fichiers joints (jusqu'à 10 Go)"
+      ],
       "Filter Name": [
         "Nom du filtre"
       ],
@@ -12540,11 +12599,17 @@
       "Font size": [
         "Taille de police"
       ],
+      "for your first month": [
+        "pour le premier mois"
+      ],
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
       ],
       "Gateway name": [
         "Nom de la passerelle"
+      ],
+      "Get everything in Free, plus:": [
+        "Obtenez toutes les fonctionnalités de la version Gratuite, plus :"
       ],
       "Gift code": [
         "Code-cadeau"
@@ -12563,6 +12628,9 @@
       ],
       "Hide password": [
         "Masquer le mot de passe"
+      ],
+      "Highest VPN speed": [
+        "Vitesse VPN maximale"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Je comprends que je devrai ajouter cette adresse e-mail à l'autre compte immédiatement pour éviter de perdre cette adresse définitivement."
@@ -12656,6 +12724,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Niveau pour le blocage par filtrage NetShield"
+      ],
+      "Limited time": [
+        "Offre à durée limitée"
       ],
       "Link label (optional)": [
         "Label du lien (facultatif)"
@@ -12783,6 +12854,9 @@
       "Numbers": [
         "Chiffres"
       ],
+      "Online privacy for your whole family": [
+        "Respect de la vie privée en ligne pour toute votre famille"
+      ],
       "OpenVPN / IKEv2 password": [
         "Mot de passe OpenVPN/IKEv2"
       ],
@@ -12894,6 +12968,9 @@
       "Read": [
         "Lus"
       ],
+      "Recommended": [
+        "Recommandé"
+      ],
       "Recovery email address": [
         "Adresse e-mail de récupération"
       ],
@@ -12911,6 +12988,9 @@
       ],
       "Remove image metadata": [
         "Retirer les métadonnées de l'image"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Renouvellement au prix de ${ renewalPrice } avec possibilité de résiliation à tout moment."
       ],
       "Repeat backup password": [
         "Confirmer le mot de passe de secours"
@@ -12944,6 +13024,9 @@
       ],
       "Second password": [
         "Second mot de passe"
+      ],
+      "Secure password generator": [
+        "Générateur de mots de passe sécurisé"
       ],
       "Select Linux package format": [
         "Sélectionnez le format du paquet Linux"
@@ -13015,6 +13098,9 @@
       "Special characters": [
         "Avec des caractères spéciaux"
       ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Offre spéciale : Profitez de ${ PASS_SHORT_APP_NAME } Plus pour ${ offerPrice }"
+      ],
       "Starred": [
         "Favoris"
       ],
@@ -13063,6 +13149,9 @@
       "System information": [
         "Informations système"
       ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Le meilleur de ${ BRAND_NAME }, un seul abonnement"
+      ],
       "Then": [
         "Alors"
       ],
@@ -13095,6 +13184,12 @@
       ],
       "Undo send": [
         "Annulation de l'envoi"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias hide-my-email"
+      ],
+      "Unlimited logins and devices": [
+        "Nombre illimité d'identifiants et d'appareils"
       ],
       "Upload 1 or more encryption keys": [
         "Chargez une ou plusieurs clés de chiffrement."
@@ -13131,6 +13226,9 @@
       ],
       "Value": [
         "Valeur"
+      ],
+      "Vault, item & secure link sharing": [
+        "Partage de coffre-forts, d'éléments et de liens sécurisés"
       ],
       "Verification code": [
         "Code de vérification"
@@ -15968,6 +16066,11 @@
         "Charger le contenu en utilisant un proxy et conserver sous forme de pièces jointes"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organisation"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } pour ajouter d'autres utilisateurs ou retirer certains comptes utilisateurs afin de libérer de l'espace."
@@ -16088,6 +16191,12 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Commencer à utiliser ${ PASS_APP_NAME }"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } mois",
+        "${ n } mois"
       ]
     },
     "pass_lifetime_signup: Info": {
@@ -18769,6 +18878,9 @@
       "30 custom email addresses": [
         "30 adresses e-mail personnalisées"
       ],
+      "4.8+ rating": [
+        "Évaluation de 4,8+"
+      ],
       "Advanced account protection": [
         "Protection avancée des comptes"
       ],
@@ -18846,6 +18958,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Obtenez ${ referralInfo.uiData.refereeRewardAmount } en crédits"
+      ],
+      "Get a new encrypted email for free": [
+        "Obtenir une nouvelle adresse e-mail chiffrée gratuitement"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obtenez une adresse sécurisée ${ MAIL_APP_NAME } ou ${ internalButton }"
@@ -18953,11 +19068,17 @@
       "Start free trial": [
         "Commencer votre essai gratuit"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Commencer à utiliser ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Espace de stockage"
       ],
       "Stream your favorite TV shows and movies": [
         "Streamez vos émissions de télé et films préférés"
+      ],
+      "Swiss-based": [
+        "Basé en Suisse"
       ],
       "Sync files across devices and users": [
         "Synchronisation des fichiers entre appareils et utilisateurs"
@@ -18973,6 +19094,9 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "Approuvé par plus de 100 millions de personnes et d'entreprises"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Essayez ${ BRAND_NAME } pendant ${ TRIAL_DURATION_DAYS } jours gratuits"
@@ -19003,6 +19127,9 @@
       ],
       "Upload files of any size": [
         "Importez des fichiers de toute taille"
+      ],
+      "Use your current email": [
+        "Utilisez votre adresse e-mail actuelle"
       ],
       "use your current email.": [
         "utilisez votre adresse e-mail actuelle."
@@ -20340,6 +20467,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Gratuit pour toujours"
+      ],
+      "Pay once, access forever.": [
+        "Un seul paiement, un accès à vie"
+      ],
+      "per month, billed annually": [
+        "par mois (facturation annuelle)"
+      ],
       "View VPN session details for your organization.": [
         "Affichez les informations de la session VPN pour votre organisation."
       ]
@@ -21369,6 +21505,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Télécharger les applications ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Télécharger ${ PASS_APP_NAME } pour vos appareils"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Télécharger ${ VPN_APP_NAME }"
       ],
@@ -21543,6 +21682,9 @@
       ],
       "Forward emails": [
         "Transfert automatique des messages"
+      ],
+      "Free": [
+        "Gratuit"
       ],
       "Gateway": [
         "Passerelle "
@@ -21767,6 +21909,9 @@
       "No account information was found in any data breaches": [
         "Vos informations n'ont été exposées dans aucune fuite de données."
       ],
+      "No events": [
+        "Aucun événement"
+      ],
       "No need to empty the trash": [
         "Pas besoin de vider la corbeille"
       ],
@@ -21817,6 +21962,9 @@
       ],
       "Other sign-in issues": [
         "Autres problèmes de connexion"
+      ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus Lifetime pour ${ plusLifetimePrice }"
       ],
       "Password": [
         "Mot de passe"
@@ -21979,6 +22127,9 @@
       ],
       "Secure email based in Switzerland": [
         "Messagerie sécurisée basée en Suisse"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "Sécurisez vos mots de passe. Où que vous soyez."
       ],
       "Security and privacy": [
         "Sécurité et vie privée"
@@ -22166,6 +22317,9 @@
       ],
       "There are no events for your account": [
         "Il n'y a pas d'événements pour votre compte."
+      ],
+      "There are no events yet for your organization.": [
+        "Il n'y a pas encore d'événements pour votre organisation."
       ],
       "There are no groups": [
         "Il n'y a pas de groupe."
@@ -23218,6 +23372,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Avec ${ planTitlePlusMaybeBrand }, vous obtenez un accès gratuit à tous les services de confidentialité de ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Passerelle VPN"
       ]
     },
     "VPN info": {

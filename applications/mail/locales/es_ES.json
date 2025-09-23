@@ -202,6 +202,9 @@
       "Change page": [
         "Cambiar página"
       ],
+      "Change password": [
+        "Cambiar contraseña"
+      ],
       "Change sorting": [
         "Cambiar el orden"
       ],
@@ -1135,8 +1138,8 @@
       "Remove this label": [
         "Borrar esta etiqueta"
       ],
-      "Remove Zoom meeting": [
-        "Eliminar la reunión de Zoom"
+      "Remove video conference": [
+        "Eliminar la videoconferencia"
       ],
       "Replace": [
         "Reemplazar"
@@ -1464,10 +1467,6 @@
       ],
       "Trust": [
         "Confiar"
-      ],
-      "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
       ],
       "Trust public key": [
         "Confiar en la clave pública"
@@ -7344,7 +7343,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar una imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9611,8 +9611,14 @@
       "Remember my choice": [
         "Recordar mi elección"
       ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Eliminar videoconferencia de ${ MEET_APP_NAME }"
+      ],
       "Remove metadata": [
         "Eliminar los metadatos"
+      ],
+      "Remove Zoom video conference": [
+        "Eliminar videoconferencia de Zoom"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -9727,6 +9733,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Video conference": [
+        "Videoconferencia"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -14458,6 +14467,9 @@
       ],
       "Account security": [
         "Seguridad de la cuenta"
+      ],
+      "Account temporarily locked": [
+        "Cuenta temporalmente bloqueada"
       ],
       "Action all conversations": [
         "Acción en todas las conversaciones"

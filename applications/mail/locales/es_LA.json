@@ -202,6 +202,9 @@
       "Change page": [
         "Cambiar página"
       ],
+      "Change password": [
+        "Cambiar contraseña"
+      ],
       "Change sorting": [
         "Cambiar orden"
       ],
@@ -431,6 +434,9 @@
       ],
       "Disable alias": [
         "Desactivar el alias"
+      ],
+      "Disable categories": [
+        "Desactivar las categorías"
       ],
       "Disabling alias": [
         "Desactivación del alias"
@@ -762,6 +768,9 @@
       ],
       "Join with ${ MEET_APP_NAME }": [
         "Unirse con ${ MEET_APP_NAME }"
+      ],
+      "Keep categories": [
+        "Mantener las categorías"
       ],
       "Keep my subscription": [
         "Mantener mi suscripción"
@@ -1129,9 +1138,6 @@
       "Remove this label": [
         "Borrar esta etiqueta"
       ],
-      "Remove Zoom meeting": [
-        "Eliminar la reunión de Zoom"
-      ],
       "Replace": [
         "Reemplazar"
       ],
@@ -1460,8 +1466,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Clave de confianza",
-        "Claves de confianza"
+        "Confiar clave"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -1984,6 +1989,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
       ],
@@ -6686,6 +6697,9 @@
       "All messages stored with this label will be permanently deleted.": [
         "Todos los mensajes guardados con esta etiqueta se eliminarán permanentemente."
       ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Todos los mensajes se mostrarán en la bandeja de entrada y las pestañas de categorías y etiquetas dejarán de estar visibles. "
+      ],
       "All your calendars are disabled.": [
         "Todos los calendarios están desactivados."
       ],
@@ -7332,7 +7346,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen"
+        "Insertar imagen",
+        "Insertar imágenes"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -9715,6 +9730,9 @@
       ],
       "Verification code": [
         "Código de verificación"
+      ],
+      "Video conference": [
+        "Videoconferencia"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -14447,6 +14465,9 @@
       "Account security": [
         "Seguridad de la cuenta"
       ],
+      "Account temporarily locked": [
+        "Cuenta temporalmente bloqueada"
+      ],
       "Action all conversations": [
         "Acción en todas las conversaciones"
       ],
@@ -14683,6 +14704,9 @@
       ],
       "Desktop": [
         "Escritorio"
+      ],
+      "Disable categories?": [
+        "¿Desactivar las categorías?"
       ],
       "Discover your subscription benefits": [
         "Descubra los beneficios de su suscripción"

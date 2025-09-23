@@ -253,6 +253,12 @@
       "Dismiss": [
         "Renunțare"
       ],
+      "Do not show again": [
+        "Nu mai afișa asta"
+      ],
+      "Do not show again when I press": [
+        "Nu mai afișa când apăs"
+      ],
       "Download this CSV template": [
         "Descărcați acest șablon de fișier CSV"
       ],
@@ -417,6 +423,9 @@
       ],
       "Next month": [
         "Luna viitoare"
+      ],
+      "No": [
+        "Nu"
       ],
       "No expired links": [
         "Nu există legături web expirate"
@@ -694,6 +703,9 @@
       ],
       "Write us on X/Twitter": [
         "Scrieți-ne pe X (Twitter)"
+      ],
+      "Yes": [
+        "Da"
       ],
       "Your password manager is not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
@@ -2072,6 +2084,9 @@
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Păstrați această fereastră deschisă cât timp datele se importă. Acest proces poate dura câteva minute."
       ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Asigurați-vă că fereastra activă anterioară este cea în care doriți să efectuați tastarea automată și cursorul se află în câmpul de conectare."
+      ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "După ștergere, aliasul nu mai poate fi restaurat. Doriți să-l dezactivați în schimb?"
       ],
@@ -2433,6 +2448,12 @@
       "You may close this tab.": [
         "Puteți închide această filă."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Trebuie să acceptați o solicitare de permisiune și s-ar putea să fie necesar să reporniți aplicația în funcție de sistem."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Trebuie să acordați aplicației ${ PASS_APP_NAME } permisiunea pentru accesibilitate."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Aveți nevoie de un seif cu permisiune de editare înainte de a putea importa articole."
       ],
@@ -2477,6 +2498,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Organizația vă solicită să vă securizați accesul la ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2570,6 +2599,9 @@
       ],
       "15 minutes": [
         "15 minute"
+      ],
+      "15 seconds": [
+        "15 secunde"
       ],
       "2 minutes": [
         "Două minute"
@@ -3167,6 +3199,9 @@
       ],
       "Network": [
         "Rețea"
+      ],
+      "Never": [
+        "Niciodată"
       ],
       "New email": [
         "E-mail nou"
@@ -4431,6 +4466,9 @@
       "Pending access to the shared data": [
         "În așteptarea accesului la datele partajate"
       ],
+      "Perform autotype?": [
+        "Executați completarea automată?"
+      ],
       "Permanently remove all items?": [
         "Ștergeți definitiv toate articolele?"
       ],
@@ -4748,6 +4786,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Parola suplimentară trebuie să aibă cel puțin 8 caractere."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Autocompletarea a eșuat. Asigurați-vă că ${ PASS_APP_NAME } are permisiunile necesare și apoi reîncercați (${ error })."
       ],
       "Failed to load breaches.": [
         "Încărcarea divulgărilor a eșuat."

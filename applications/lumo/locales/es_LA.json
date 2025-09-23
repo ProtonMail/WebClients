@@ -387,6 +387,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Puede tener hasta ${ TRIAL_MAX_DEDICATED_IPS } servidores dedicados durante el período de prueba."
       ],
@@ -781,6 +787,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Dark": [
+        "Oscuro"
+      ],
       "Disable ghost mode": [
         "Desactivar el modo fantasma"
       ],
@@ -798,6 +807,9 @@
       ],
       "I like this response": [
         "Me gusta esta respuesta."
+      ],
+      "Light": [
+        "Claro"
       ],
       "New chat": [
         "Nuevo chat"
@@ -825,6 +837,9 @@
       ],
       "Submit": [
         "Enviar"
+      ],
+      "System": [
+        "Sistema"
       ],
       "Try again": [
         "Reintentar"
@@ -944,6 +959,9 @@
       ],
       "Sign in to access your account and unlock more features. Don't have one? ${ createLink }": [
         "Inicie sesión para acceder a su cuenta y desbloquear más funciones. ¿No tiene una? ${ createLink }"
+      ],
+      "Switch between light and dark mode": [
+        "Cambiar entre modo claro y oscuro"
       ]
     },
     "collider_2025: Disclaimer": {
@@ -1569,6 +1587,9 @@
       ],
       "Secure your spot": [
         "Asegure su lugar"
+      ],
+      "Theme": [
+        "Tema"
       ],
       "Upload files": [
         "Cargar archivos"

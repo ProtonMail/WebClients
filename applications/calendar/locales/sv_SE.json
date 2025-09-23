@@ -674,9 +674,6 @@
       "Remove this participant": [
         "Ta bort denna deltagare"
       ],
-      "Remove Zoom meeting": [
-        "Ta bort Zoom-möte"
-      ],
       "Reply with a note": [
         "Svara med en anteckning"
       ],
@@ -1235,6 +1232,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -3513,6 +3513,9 @@
       "Event not found": [
         "Händelse hittades inte"
       ],
+      "Failed to create ${ MEET_APP_NAME } video conference": [
+        "Misslyckades att skapa ${ MEET_APP_NAME }-videokonferens"
+      ],
       "Failed to create meeting": [
         "Misslyckades att skapa möte"
       ],
@@ -4852,6 +4855,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kräver en ${ BRAND_NAME }-adress för säker synkronisering och kryptering av händelse. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -8542,6 +8548,9 @@
       "Advanced threat protection": [
         "Avancerat hotskydd"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samarbeta med icke ${ BRAND_NAME }-användare"
+      ],
       "Custom email domain": [
         "Anpassad e-postdomän"
       ],
@@ -9892,6 +9901,9 @@
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Bjud in vänner till ${ BRAND_NAME }"
+      ],
+      "Schedule and join ${ MEET_APP_NAME } calls right from your calendar.": [
+        "Schemalägg och anslut till ${ MEET_APP_NAME }-samtal direkt från din kalender."
       ],
       "Seamlessly create and add video meeting links to your events.": [
         "Skapa och lägg sömlöst till videomöteslänkar till dina händelser."

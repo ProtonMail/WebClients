@@ -757,6 +757,9 @@
       "Get more servers": [
         "Uzyskaj więcej serwerów"
       ],
+      "Get Pass Plus": [
+        "Wybierz plan Pass Plus"
+      ],
       "Get started": [
         "Rozpocznij"
       ],
@@ -1026,6 +1029,9 @@
       ],
       "Pay ${ price } now": [
         "Zapłać ${ price }"
+      ],
+      "Pay once": [
+        "Zapłać raz"
       ],
       "Preview": [
         "Podgląd"
@@ -8205,7 +8211,7 @@
         "Aplikacja **${ appName }** nie jest obsługiwana."
       ],
       "**Enable automatic backups** for peace of mind": [
-        "**Włącz automatyczne kopie zapasowe**, aby zapewnić sobie spokój ducha"
+        "**Włącz automatyczne tworzenie kopii zapasowych**, aby zapewnić sobie spokój ducha"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "** Uzyskaj adres ${ BRAND_NAME } **, aby używać usług ${ BRAND_NAME_TWO }, tym ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }."
@@ -12235,6 +12241,9 @@
       "Create password": [
         "Utwórz hasło"
       ],
+      "Credit cards": [
+        "Karty płatnicze"
+      ],
       "Credits": [
         "Środki"
       ],
@@ -12534,6 +12543,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Poziom filtrów NetShield"
+      ],
+      "Limited time": [
+        "Oferta ograniczona czasowo"
       ],
       "Link label (optional)": [
         "Etykieta linku (opcjonalnie)"
@@ -12936,6 +12948,9 @@
       ],
       "System information": [
         "Informacje o systemie"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "To, co najlepsze w ${ BRAND_NAME } w jednej subskrypcji"
       ],
       "Then": [
         "Następnie"
@@ -18163,7 +18178,7 @@
         "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
         "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
-        "Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła."
+        "Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła."
       ]
     },
     "session_recovery:available:link": {

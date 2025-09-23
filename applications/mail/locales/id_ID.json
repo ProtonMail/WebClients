@@ -201,6 +201,9 @@
       "Change page": [
         "Ubah halaman"
       ],
+      "Change password": [
+        "Ubah kata sandi"
+      ],
       "Change sorting": [
         "Ubah pengurutan"
       ],
@@ -1119,9 +1122,6 @@
       "Remove this label": [
         "Hapus label ini"
       ],
-      "Remove Zoom meeting": [
-        "Hapus pertemuan Zoom"
-      ],
       "Replace": [
         "Ubah"
       ],
@@ -1448,9 +1448,6 @@
       ],
       "Trust": [
         "Percayai"
-      ],
-      "Trust key": [
-        "Percayai kunci"
       ],
       "Trust public key": [
         "Percayai kunci publik"
@@ -1963,6 +1960,11 @@
       ],
       "Sender verification passed": [
         "Verifikasi pengirim berhasil"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
       ]
     },
     "b2b_trials_Action": {
@@ -7870,6 +7872,9 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Terjadi kesalahan dengan tanda tangan yang digunakan untuk memverifikasi rincian kontak, yang kemungkinan disebabkan oleh pengaturan ulang kata sandi."
       ],
+      "These conversations are kept here based on your organization's data retention policy.": [
+        "Percakapan berikut ini akan disimpan pada halaman ini berdasarkan kebijakan penyimpanan data yang ditetapkan oleh organisasi Anda."
+      ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "Mereka tidak akan dapat menyerang Anda dengan spam apabila mereka tidak tahu alamat email Anda. Lindungi kotak masuk Anda dengan alias hide-my-email."
       ],
@@ -9110,6 +9115,9 @@
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
       ],
+      "Go to Promotions": [
+        "Ke Penawaran"
+      ],
       "Go to Transactions": [
         "Ke Transaksi"
       ],
@@ -9463,6 +9471,9 @@
       ],
       "Verification code": [
         "Kode verifikasi"
+      ],
+      "Video conference": [
+        "Konferensi video"
       ],
       "Vulnerable": [
         "Rentan"
@@ -13973,6 +13984,9 @@
       ],
       "Account security": [
         "Keamanan akun"
+      ],
+      "Account temporarily locked": [
+        "Akun sementara terkunci"
       ],
       "Action all conversations": [
         "Terapkan pada seluruh percakapan"

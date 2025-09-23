@@ -32,6 +32,11 @@
         "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Λογαριασμοί"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
@@ -10440,6 +10445,11 @@
         "Συγχώνευση με ημερολόγιο"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Οργανισμός"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } για να προσθέσετε περισσότερους χρήστες ή να καταργήσετε ορισμένους λογαριασμούς χρηστών για να ελευθερώσετε χώρο."
@@ -14112,6 +14122,9 @@
       "Night theme": [
         "Σκούρο θέμα"
       ],
+      "No events": [
+        "Δεν υπάρχουν εκδηλώσεις"
+      ],
       "No recovery method": [
         "Χωρίς μέθοδο ανάκτησης"
       ],
@@ -14340,6 +14353,9 @@
       ],
       "Text": [
         "Κείμενο"
+      ],
+      "There are no events yet for your organization.": [
+        "Δεν υπάρχουν ακόμα εκδηλώσεις για τον οργανισμό σας."
       ],
       "There are no groups": [
         "Δεν υπάρχουν ομάδες"
@@ -15041,6 +15057,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Με το ${ planTitlePlusMaybeBrand }, λαμβάνετε ελεύθερη πρόσβαση σε όλες τις υπηρεσίες απορρήτου του ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Πύλες VPN"
       ]
     },
     "VPN info": {

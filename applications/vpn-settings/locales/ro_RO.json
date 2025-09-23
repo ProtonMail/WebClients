@@ -32,6 +32,11 @@
         "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a lua măsuri. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Conturi"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
@@ -71,6 +76,9 @@
       ],
       "Add external address": [
         "Adăugare adresă externă"
+      ],
+      "Add more seats": [
+        "Adăugare mai multe licențe"
       ],
       "Add PayPal": [
         "Adăugare PayPal"
@@ -882,6 +890,9 @@
       "Start live chat": [
         "Începere discuție live"
       ],
+      "Start subscription": [
+        "Start abonament"
+      ],
       "Stay": [
         "Nu închide"
       ],
@@ -890,6 +901,9 @@
       ],
       "Submit": [
         "Trimitere"
+      ],
+      "Subscribe now": [
+        "Abonați-vă acum"
       ],
       "Support": [
         "Asistenţă"
@@ -986,6 +1000,9 @@
       ],
       "User": [
         "Utilizator"
+      ],
+      "users and addresses": [
+        "utilizatori și adrese"
       ],
       "Verify": [
         "Verifică"
@@ -5662,6 +5679,9 @@
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
+      "Accounts": [
+        "Conturi"
+      ],
       "active": [
         "activă"
       ],
@@ -5747,6 +5767,9 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permite utilizatorilor să se conecteze la serverele securizate partajate din secțiunea **Țări** a aplicației ${ VPN_APP_NAME }."
+      ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permite adăugarea fără probleme a legăturilor web de conferințe video ${ MEET_APP_NAME } la invitațiile personale din calendar."
       ],
       "Already allocated": [
         "Deja alocat"
@@ -6139,6 +6162,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Se încheie la ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Îmbunătățiți-vă securitatea rețelei"
       ],
@@ -6223,6 +6249,9 @@
       "Free forever": [
         "Gratuit pentru totdeauna"
       ],
+      "Free trial": [
+        "Probare gratuită"
+      ],
       "Gain visibility across your organization": [
         "Câștigați vizibilitate în întreaga organizație"
       ],
@@ -6249,6 +6278,9 @@
       ],
       "Groups": [
         "Grupuri"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Ajută la scrierea, răspunsul și corectarea mesajelor. Gestionare pentru utilizatori individuali în ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "aici"
@@ -6516,6 +6548,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestionați aplicațiile ${ BRAND_NAME } pe care membrii organizației proprii le pot accesa. Dacă este dezactivat, numai administratorii vor avea acces."
       ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Gestionați ce funcții pot accesa membrii organizației. Dacă este dezactivat, numai administratorii vor avea acces."
+      ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Introduceți manual această informație în aplicația de autentificare pentru a vă configura contul. ${ switchButton }."
       ],
@@ -6641,6 +6676,9 @@
         "Sau selectați un server anume:"
       ],
       "Organization monitor": [
+        "Monitorizare organizație"
+      ],
+      "Organization Monitor": [
         "Monitorizare organizație"
       ],
       "Organization size": [
@@ -6854,6 +6892,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selectați afilierile utilizatorilor din ${ getFormattedOrganization } pe care doriți să le permiteți în organizația din ${ BRAND_NAME }:"
       ],
+      "Select users to view their activity": [
+        "Selectare utilizatori pentru a le vedea activitatea."
+      ],
       "Select what you want to import.": [
         "Selectați ce doriți să importați."
       ],
@@ -6909,6 +6950,9 @@
       ],
       "Shared vault updated": [
         "Seif partajat actualizat."
+      ],
+      "Sign in only": [
+        "Doar conectare"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
@@ -10551,6 +10595,11 @@
         "Îmbinare cu calendarul"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organizația"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } pentru a adăuga mai mulți utilizatori sau eliminați câteva conturi de utilizator pentru a elibera spațiul."
@@ -11439,6 +11488,31 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de probare."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Dacă nu vă abonați**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Dacă nu anulați,** planul complet va începe și veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Dacă vă abonați înainte de această dată**, veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Mai aveți **${ daysRemaining } zi** pentru a explora toate funcțiile puternice pe care le oferă **${ planTitle }**.",
+        "Mai aveți **${ daysRemaining } zile** pentru a explora toate funcțiile puternice pe care vi le oferă **${ planTitle }**.",
+        "Mai aveți **${ daysRemaining } de zile** pentru a explora toate funcțiile puternice pe care **${ planTitle }** le are de oferit."
+      ],
+      "your subscription": [
+        "abonament personal"
       ]
     },
     "Remove organization logo": {
@@ -13808,6 +13882,9 @@
       "Appearance": [
         "Aspect"
       ],
+      "Application access": [
+        "Acces aplicație"
+      ],
       "Apply gift code": [
         "Aplicare cod cadou"
       ],
@@ -14138,6 +14215,9 @@
         "Nu s-au putut crea ${ failedUsers.length } conturi de utilizator.",
         "Nu s-au putut crea ${ failedUsers.length } de conturi de utilizator."
       ],
+      "Feature access": [
+        "Accesare funcție"
+      ],
       "Find email or username": [
         "Căutare e-mail sau utilizator"
       ],
@@ -14198,6 +14278,9 @@
       "How to choose a good logo": [
         "Cum să alegeți un logo bun"
       ],
+      "How your free trial works": [
+        "Cum funcționează probarea gratuită"
+      ],
       "Human verification": [
         "Verificare persoană"
       ],
@@ -14253,6 +14336,9 @@
       ],
       "Night theme": [
         "Temă neagră"
+      ],
+      "No events": [
+        "Nu există evenimente"
       ],
       "No recovery method": [
         "Nu există metodă de recuperare"
@@ -14484,6 +14570,9 @@
       "Text": [
         "Text"
       ],
+      "There are no events yet for your organization.": [
+        "Încă nu există evenimente pentru organizație"
+      ],
       "There are no groups": [
         "Nu există grupuri"
       ],
@@ -14564,6 +14653,9 @@
       ],
       "Video conferencing": [
         "Conferință video"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferință cu ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Vedeți evenimentele organizației trecând la planul Professional"
@@ -14770,6 +14862,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Acest lucru poate fi cauzat de o resetare a parolei sau de faptul că utilizatorul nu s-a conectat încă."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Această adresă de e-mail poate fi folosită doar pentru conectarea la contul ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Această adresă de e-mail va fi afișată tuturor membrilor organizației atunci când efectuează operațiuni de gestionare a contului."
@@ -15181,6 +15276,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Cu ${ planTitlePlusMaybeBrand }, obțineți acces gratuit la toate serviciile de confidențialitate ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Porți de acces VPN"
       ]
     },
     "VPN info": {

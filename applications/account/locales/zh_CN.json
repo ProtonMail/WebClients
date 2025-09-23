@@ -745,6 +745,9 @@
       "Get more servers": [
         "获取更多服务器"
       ],
+      "Get Pass Plus": [
+        "获取 Pass Plus"
+      ],
       "Get started": [
         "入门"
       ],
@@ -1014,6 +1017,9 @@
       ],
       "Pay ${ price } now": [
         "立即支付 ${ price }"
+      ],
+      "Pay once": [
+        "一次性支付"
       ],
       "Preview": [
         "预览"
@@ -5148,6 +5154,9 @@
       "Only ": [
         "仅 "
       ],
+      "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
+        "他们将在**${ days }天后**自动获得访问权限，具体日期为**${ formattedAccessibleAt }**。在此之前，您可随时拒绝其请求或立即授予访问权限。"
+      ],
       "Upgrade to ${ planName }": [
         "升级至 ${ planName }"
       ],
@@ -5156,6 +5165,9 @@
       ],
       "You are signed in to the account ${ account }.": [
         "您已登录账户 ${ account }。"
+      ],
+      "You reached the maximum of ${ controller.meta.count } trusted contact.": [
+        "您已达到 ${ controller.meta.count } 个信任联系人的上限。"
       ],
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
         "您将在**${ days } 天**内获得其账户访问权限，或在他们批准您的请求时。"
@@ -11528,6 +11540,9 @@
       "Create password": [
         "创建密码"
       ],
+      "Credit cards": [
+        "信用卡"
+      ],
       "Credits": [
         "余额"
       ],
@@ -11827,6 +11842,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield 过滤级别"
+      ],
+      "Limited time": [
+        "限时"
       ],
       "Link label (optional)": [
         "链接标签（可选）"
@@ -12232,6 +12250,9 @@
       ],
       "System information": [
         "系统信息"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "仅需一次订阅即可享受最棒的 ${ BRAND_NAME } 体验"
       ],
       "Then": [
         "则"
@@ -16226,6 +16247,11 @@
       ],
       "Show": [
         "显示"
+      ]
+    },
+    "Referral": {
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "您还有**${ daysRemaining }天**的时间，可以尽情探索**${ planTitle }**提供的所有强大功能。"
       ]
     },
     "Remark about a key type option": {
