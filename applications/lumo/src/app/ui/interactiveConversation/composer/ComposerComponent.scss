@@ -1,48 +1,61 @@
 @import '~@proton/styles/scss/lib';
 
 .lumo-input-container {
+	// Base styles
 	border-color: var(--primary-contrast);
 	border-radius: #{rem(22)};
 	padding: #{rem(6)};
 	transition: all 0.3s ease-out;
 
+	// Mobile styles
 	@include media('<=small') {
+		// Remove bottom border radius and border
 		border-end-start-radius: 0 !important;
 		border-end-end-radius: 0 !important;
 		border-block-end: none !important;
+
+		// Mobile background override
+		background-color: var(--background-composer-mobile) !important;
+
+		.lumo-input {
+			border: none !important;
+			background-color: var(--background-composer-mobile) !important;
+		}
 	}
 
+	// Ghost Mode Theme
 	&.ghost-mode {
-		// Ghost mode color palette
+		// Define ghost mode color palette
 		--ghost-bg-primary: #16141c;
 		--ghost-bg-secondary: #292733;
 		--ghost-border: #343140;
 		--ghost-text: white;
 		--ghost-text-weak: #8a8896;
 
+		// Container styles
 		border-color: var(--ghost-border);
 		background-color: var(--ghost-bg-primary);
 		color: var(--ghost-text);
 
+		// Text content styling
 		.color-weak {
 			color: var(--ghost-text-weak) !important;
 		}
 
 		span,
-		.text-sm {
-			color: var(--ghost-text);
-		}
-
+		.text-sm,
 		.markdown-rendering {
 			color: var(--ghost-text);
 		}
 
+		// Input field styling
 		.lumo-input {
 			background-color: var(--ghost-bg-secondary);
 			border-color: var(--ghost-border);
 			color: var(--ghost-text);
 		}
 
+		// Component styling
 		.file-card {
 			background-color: var(--ghost-bg-secondary);
 			border-color: var(--ghost-border);
@@ -53,12 +66,25 @@
 			color: var(--ghost-text);
 		}
 
+		// Ghost mode mobile overrides
 		@include media('<=small') {
-			border-end-start-radius: var(--border-radius-xl) !important;
-			border-end-end-radius: var(--border-radius-xl) !important;
+			// Layout adjustments
 			inline-size: 98% !important;
 			margin-inline-start: 1% !important;
 			margin-block-end: 5px;
+
+			// Restore rounded corners for ghost mode
+			border-end-start-radius: var(--border-radius-xl) !important;
+			border-end-end-radius: var(--border-radius-xl) !important;
+
+			// Theme overrides
+			background-color: var(--ghost-bg-primary) !important;
+
+			.lumo-input {
+				background-color: var(--ghost-bg-secondary) !important;
+				border-color: var(--ghost-border) !important;
+				color: var(--ghost-text) !important;
+			}
 		}
 	}
 }
@@ -72,17 +98,4 @@
 .web-search-button.is-active {
 	background-color: rgb(186 186 247 / 0.3) !important;
 	color: var(--text-strong) !important;
-}
-
-$mobile-breakpoint-width: 680px;
-
-@media screen and (max-width: #{$mobile-breakpoint-width}) {
-	.lumo-input-container {
-		background-color: var(--background-composer-mobile) !important;
-	}
-
-	.lumo-input {
-		border: none !important;
-		background-color: var(--background-composer-mobile) !important;
-	}
 }
