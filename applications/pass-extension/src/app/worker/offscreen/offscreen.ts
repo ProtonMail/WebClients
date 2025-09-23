@@ -27,7 +27,7 @@ const legacyClipboardWrite = (content: string) => {
 };
 
 const MessageBroker = createMessageBroker({
-    allowExternal: [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ, WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE],
+    allowExternal: [],
     strictOriginCheck: [WorkerMessageType.CLIPBOARD_OFFSCREEN_READ, WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE],
     onError: () => logger.error('Offscreen broker error'),
     onDisconnect: () => logger.debug('Offscreen broker disconnect'),
