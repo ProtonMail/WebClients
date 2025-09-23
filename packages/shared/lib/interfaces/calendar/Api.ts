@@ -139,6 +139,9 @@ interface CalendarCreateOrUpdateEventMetaData {
         Email: string;
         AddressKeyPacket: string;
     }[];
+    VideoConferencingData?: {
+        MeetEncryptedTitle?: string;
+    } | null;
 }
 
 export interface CreateOrUpdateCalendarEventData

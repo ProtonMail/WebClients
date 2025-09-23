@@ -2,6 +2,7 @@ import type {
     AttendeeComment,
     CalendarNotificationSettings,
     CreateOrUpdateCalendarEventData,
+    VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -31,6 +32,7 @@ interface FormatDataArguments {
     notificationsPart?: CalendarNotificationSettings[];
     colorPart?: string;
     eventCommentsMap?: { [token: string]: AttendeeComment };
+    videoConferencingDataPart?: { encryptedTitle: VcalVeventComponent['encryptedTitle'] };
 }
 export const formatData = ({
     sharedSignedPart,
@@ -42,15 +44,20 @@ export const formatData = ({
     calendarSessionKey,
     notificationsPart,
     colorPart,
+    videoConferencingDataPart,
     attendeesEncryptedPart,
     attendeesClearPart,
     removedAttendeesEmails,
     attendeesEncryptedSessionKeysMap,
     eventCommentsMap,
 }: FormatDataArguments) => {
+    const VideoConferencingData = videoConferencingDataPart?.encryptedTitle?.value
+        ? { MeetEncryptedTitle: videoConferencingDataPart?.encryptedTitle?.value }
+        : null;
     const result: Omit<CreateOrUpdateCalendarEventData, 'Permissions'> = {
         Notifications: notificationsPart || null,
         Color: colorPart || null,
+        VideoConferencingData,
     };
 
     if (sharedSessionKey) {

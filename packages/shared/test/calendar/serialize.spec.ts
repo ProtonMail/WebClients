@@ -245,6 +245,7 @@ describe('calendar encryption', () => {
                 { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED, Comment: null },
             ],
             Color: ACCENT_COLORS_MAP.enzian.color,
+            VideoConferencingData: null,
         });
 
         checkEncryptionKeyIDs(eventWithoutDefaultNotifications.SharedKeyPacket!, [calendarKey]);
@@ -303,6 +304,7 @@ describe('calendar encryption', () => {
                 { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED, Comment: null },
             ],
             Color: null,
+            VideoConferencingData: null,
         });
 
         checkEncryptionKeyIDs(eventWithDefaultNotifications.SharedKeyPacket!, [calendarKey]);

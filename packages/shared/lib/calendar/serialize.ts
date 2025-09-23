@@ -122,5 +122,8 @@ export const createCalendarEvent = async ({
         removedAttendeesEmails,
         attendeesEncryptedSessionKeysMap,
         eventCommentsMap,
+        videoConferencingDataPart: eventComponent.encryptedTitle
+            ? { encryptedTitle: eventComponent.encryptedTitle }
+            : undefined,
     });
 };

@@ -295,6 +295,7 @@ export interface VcalVeventComponent {
     'x-pm-conference-id'?: VcalStringProperyWithParams;
     'x-pm-conference-url'?: VcalStringProperyWithParams;
     color?: VcalStringProperty;
+    encryptedTitle?: VcalStringProperty;
 }
 
 export type VcalComponentKeys = keyof VcalVeventComponent;
