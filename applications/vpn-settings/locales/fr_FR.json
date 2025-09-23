@@ -32,6 +32,11 @@
         "Vos informations ont été retrouvées dans au moins une fuite de données. Activez l'option ${ DARK_WEB_MONITORING_NAME } pour consulter ces informations et prendre les mesures nécessaires. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Comptes"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Boutique ${ BRAND_NAME }"
@@ -10447,6 +10452,11 @@
         "Fusionner avec le calendrier"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organisation"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } pour ajouter d'autres utilisateurs ou retirer certains comptes utilisateurs afin de libérer de l'espace."
@@ -14217,6 +14227,9 @@
       "Night theme": [
         "Thème nuit"
       ],
+      "No events": [
+        "Aucun événement"
+      ],
       "No recovery method": [
         "Aucune méthode de récupération"
       ],
@@ -14445,6 +14458,9 @@
       ],
       "Text": [
         "Texte"
+      ],
+      "There are no events yet for your organization.": [
+        "Il n'y a pas encore d'événements pour votre organisation."
       ],
       "There are no groups": [
         "Il n'y a pas de groupe."
@@ -15146,6 +15162,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Avec ${ planTitlePlusMaybeBrand }, vous obtenez un accès gratuit à tous les services de confidentialité de ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Passerelle VPN"
       ]
     },
     "VPN info": {

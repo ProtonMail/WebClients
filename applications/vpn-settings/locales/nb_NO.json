@@ -32,6 +32,11 @@
         "Informasjonen din ble funnet i minst én datalekkasje. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Kontoer"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
@@ -71,6 +76,9 @@
       ],
       "Add external address": [
         "Legg til ekstern adresse"
+      ],
+      "Add more seats": [
+        "Legg til flere lisenser"
       ],
       "Add PayPal": [
         "Legg til PayPal"
@@ -882,6 +890,9 @@
       "Start live chat": [
         "Start direkte chat"
       ],
+      "Start subscription": [
+        "Start abonnement"
+      ],
       "Stay": [
         "Bli"
       ],
@@ -890,6 +901,9 @@
       ],
       "Submit": [
         "Send inn"
+      ],
+      "Subscribe now": [
+        "Abonner nå"
       ],
       "Support": [
         "Brukerstøtte"
@@ -986,6 +1000,9 @@
       ],
       "User": [
         "Bruker"
+      ],
+      "users and addresses": [
+        "brukere og adresser"
       ],
       "Verify": [
         "Verifiser"
@@ -5675,6 +5692,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Gjør det mulig å sømløst legge til ${ MEET_APP_NAME }-videokonferansekoblinger i kalenderinvitasjonene dine."
+      ],
       "Already allocated": [
         "Allerede allokert"
       ],
@@ -6061,6 +6081,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Nettadresse for endepunkt mottatt fra identitetsleverandøren din (f.eks. https://idp.example.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Utløper på ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Forsterk nettverkssikkerheten sin"
       ],
@@ -6145,6 +6168,9 @@
       "Free forever": [
         "Gratis for alltid"
       ],
+      "Free trial": [
+        "Gratis prøveperiode"
+      ],
       "Gain visibility across your organization": [
         "Få synlighet på tvers av organisasjonen"
       ],
@@ -6171,6 +6197,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Hjelper med å skrive, svare på og korrekturlese e-poster. Administrer for individuelle brukere i ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "her"
@@ -6436,6 +6465,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrer hvilke ${ BRAND_NAME }-applikasjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Administrer hvilke funksjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Angi denne informasjonen manuelt i autentiseringsappen for å konfigurere kontoen din. ${ switchButton }."
@@ -10432,6 +10464,11 @@
         "Slå sammen med kalender"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organisasjon"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } for å legge til flere brukere, eller fjern noen brukerkontoer for å frigjøre plass."
@@ -11310,6 +11347,30 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Bekreftelse av telefonnummeret ditt øker kontosikkerheten og gir flere alternativer for gjenoppretting."
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Hvis du avbryter før denne datoen,** vil du bli **nedgradert** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveperioden avsluttes."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Hvis du ikke abonnerer,** blir du **nedgradert** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du ikke avbryter,** starter hele planen din, og du får **${ referrerRewardAmount }** i kreditter."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du abonnerer før denne datoen,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Kos deg gratis med **${ planTitle }** frem til **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Du har **${ daysRemaining } dag igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby.",
+        "Du har **${ daysRemaining } dager igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby."
+      ],
+      "your subscription": [
+        "abonnementet ditt"
       ]
     },
     "Remove organization logo": {
@@ -13625,6 +13686,9 @@
       "Appearance": [
         "Utseende"
       ],
+      "Application access": [
+        "Applikasjonstilgang"
+      ],
       "Apply gift code": [
         "Legg til gavekode"
       ],
@@ -13952,6 +14016,9 @@
         "Kunne ikke opprette ${ failedUsers.length } brukerkonto",
         "Kunne ikke opprette ${ failedUsers.length } brukerkontoer."
       ],
+      "Feature access": [
+        "Funksjonstilgang"
+      ],
       "Find email or username": [
         "Finn e-post eller brukernavn"
       ],
@@ -14012,6 +14079,9 @@
       "How to choose a good logo": [
         "Hvordan velge en god logo"
       ],
+      "How your free trial works": [
+        "Hvordan din gratis prøveperiode fungerer"
+      ],
       "Human verification": [
         "Menneskelig verifisering"
       ],
@@ -14066,6 +14136,9 @@
       ],
       "Night theme": [
         "Natt-tema"
+      ],
+      "No events": [
+        "Ingen hendelser"
       ],
       "No recovery method": [
         "Ingen gjenopprettingsmetode"
@@ -14296,6 +14369,9 @@
       "Text": [
         "Tekst"
       ],
+      "There are no events yet for your organization.": [
+        "Det er ingen hendelser ennå for organisasjonen din."
+      ],
       "There are no groups": [
         "Det er ingen grupper"
       ],
@@ -14376,6 +14452,9 @@
       ],
       "Video conferencing": [
         "Videokonferanse"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferanser med ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Se organisasjonsarrangementer ved å oppgradere til Professional"
@@ -14993,6 +15072,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Med ${ planTitlePlusMaybeBrand } får du gratis tilgang til alle ${ BRAND_NAME }-personverntjenester."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN-porttjenere"
       ]
     },
     "VPN info": {
