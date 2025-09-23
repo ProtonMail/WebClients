@@ -63,6 +63,11 @@
         "Informasjonen din ble funnet i minst én datalekkasje. Slå på ${ DARK_WEB_MONITORING_NAME } for å vise detaljer og iverksette tiltak. ${ link }."
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Kontoer"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butikk"
@@ -135,6 +140,9 @@
       ],
       "Add label": [
         "Legg til etikett"
+      ],
+      "Add more seats": [
+        "Legg til flere lisenser"
       ],
       "Add notification": [
         "Legg til varsel"
@@ -766,6 +774,12 @@
       "Get more servers": [
         "Få flere tjenere"
       ],
+      "Get Pass Family": [
+        "Skaff deg Pass Family"
+      ],
+      "Get Pass Plus": [
+        "Skaff deg Pass Plus"
+      ],
       "Get started": [
         "Kom i gang"
       ],
@@ -780,6 +794,12 @@
       ],
       "Get the deal": [
         "Skaff deg tilbudet"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "Skaff utvidelsen for ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Skaff deg hele pakken"
       ],
       "Get the writing assistant": [
         "Skaff deg skriveassistenten"
@@ -1000,6 +1020,9 @@
       "No": [
         "Nei"
       ],
+      "No thanks": [
+        "Nei takk"
+      ],
       "No, thanks": [
         "Nei, takk"
       ],
@@ -1014,6 +1037,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Åpne innstillingene for ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Åpne ${ PASS_APP_NAME } i nettleseren din"
       ],
       "Open navigation": [
         "Åpne navigasjonsmeny"
@@ -1038,6 +1064,9 @@
       ],
       "Pay ${ price } now": [
         "Betal ${ price } nå"
+      ],
+      "Pay once": [
+        "Betal én gang"
       ],
       "Preview": [
         "Forhåndsvis"
@@ -1417,6 +1446,12 @@
       "Start live chat": [
         "Start direkte chat"
       ],
+      "Start subscription": [
+        "Start abonnement"
+      ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Begynn å bruke ${ PASS_APP_NAME } nå"
+      ],
       "Stay": [
         "Bli"
       ],
@@ -1431,6 +1466,9 @@
       ],
       "Submit": [
         "Send inn"
+      ],
+      "Subscribe now": [
+        "Abonner nå"
       ],
       "Support": [
         "Brukerstøtte"
@@ -1563,6 +1601,9 @@
       ],
       "User": [
         "Bruker"
+      ],
+      "users and addresses": [
+        "brukere og adresser"
       ],
       "Verify": [
         "Verifiser"
@@ -8509,6 +8550,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Gjør det mulig å sømløst legge til ${ MEET_APP_NAME }-videokonferansekoblinger i kalenderinvitasjonene dine."
+      ],
       "Already allocated": [
         "Allerede allokert"
       ],
@@ -9105,6 +9149,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Nettadresse for endepunkt mottatt fra identitetsleverandøren din (f.eks. https://idp.example.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Utløper på ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Forsterk nettverkssikkerheten sin"
       ],
@@ -9237,6 +9284,9 @@
       "Free forever": [
         "Gratis for alltid"
       ],
+      "Free trial": [
+        "Gratis prøveperiode"
+      ],
       "free up space by deleting older messages or other data": [
         "frigjøre plass ved å slette eldre meldinger eller annen data"
       ],
@@ -9296,6 +9346,9 @@
       ],
       "Groups": [
         "Grupper"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Hjelper med å skrive, svare på og korrekturlese e-poster. Administrer for individuelle brukere i ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "her"
@@ -9676,6 +9729,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrer hvilke ${ BRAND_NAME }-applikasjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Administrer hvilke funksjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Administrer innstillingene for e-postvarsler for ${ DOCS_APP_NAME }."
@@ -11973,14 +12029,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
+      "/month x ${ months }": [
+        "/måned x ${ months }"
+      ],
       "1 hour": [
         "1 time"
       ],
       "1 minute": [
         "1 minutt"
       ],
+      "10 hide-my-email aliases": [
+        "10 hide-my-email-aliaser"
+      ],
       "10 minutes": [
         "10 minutter"
+      ],
+      "10 VPN devices": [
+        "10 VPN-enheter"
+      ],
+      "15 extra email addresses": [
+        "15 ekstra e-postadresser"
       ],
       "15 minutes": [
         "15 minutter"
@@ -11996,6 +12064,12 @@
       ],
       "5 minutes": [
         "5 minutter"
+      ],
+      "500 GB Storage": [
+        "500 GB lagringsplass"
+      ],
+      "6 Pass Plus accounts": [
+        "6 Pass Plus-kontoer"
       ],
       "Account holder": [
         "Kontoinnehaver"
@@ -12026,6 +12100,9 @@
       ],
       "Addresses": [
         "Adresser"
+      ],
+      "Admin panel for your family": [
+        "Administrasjonspanel for familien din"
       ],
       "Advanced": [
         "Avansert"
@@ -12198,6 +12275,9 @@
       "BTC amount": [
         "BTC-beløp"
       ],
+      "Built-in 2FA authenticator": [
+        "Innebygget 2FA-autentisering"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -12326,6 +12406,9 @@
       ],
       "Create password": [
         "Opprett passord"
+      ],
+      "Credit cards": [
+        "Kredittkort"
       ],
       "Credits": [
         "Kreditter"
@@ -12498,6 +12581,9 @@
       "File": [
         "Fil"
       ],
+      "File attachments (up to 10GB)": [
+        "Filvedlegg (opptil 10 GB)"
+      ],
       "Filter Name": [
         "Filternavn"
       ],
@@ -12513,11 +12599,17 @@
       "Font size": [
         "Skriftstørrelse"
       ],
+      "for your first month": [
+        "for første måneden din"
+      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
       "Gateway name": [
         "Navn på porttjener"
+      ],
+      "Get everything in Free, plus:": [
+        "Få alt i Free, pluss:"
       ],
       "Gift code": [
         "Gavekode"
@@ -12536,6 +12628,9 @@
       ],
       "Hide password": [
         "Skjul passord"
+      ],
+      "Highest VPN speed": [
+        "Høyeste VPN-hastighet"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Jeg forstår at jeg må legge til denne e-postadressen i den andre kontoen umiddelbart, for å unngå å miste denne adressen permanent."
@@ -12629,6 +12724,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivå på blokkeringsfiltrering for NetShield"
+      ],
+      "Limited time": [
+        "Kun i en begrenset periode"
       ],
       "Link label (optional)": [
         "Etikett for kobling (valgfritt)"
@@ -12756,6 +12854,9 @@
       "Numbers": [
         "Tall"
       ],
+      "Online privacy for your whole family": [
+        "Personvern på nettet for hele familien din"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2-passord"
       ],
@@ -12867,6 +12968,9 @@
       "Read": [
         "Lest"
       ],
+      "Recommended": [
+        "Anbefalt"
+      ],
       "Recovery email address": [
         "Gjenopprettings-e-postadresse"
       ],
@@ -12884,6 +12988,9 @@
       ],
       "Remove image metadata": [
         "Fjern bildemetadata"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Fornyes til ${ renewalPrice }, avbryt når som helst."
       ],
       "Repeat backup password": [
         "Gjenta reservepassord"
@@ -12917,6 +13024,9 @@
       ],
       "Second password": [
         "Andre passord"
+      ],
+      "Secure password generator": [
+        "Sikker passordgenerator"
       ],
       "Select Linux package format": [
         "Velg Linux-pakkeformat"
@@ -12988,6 +13098,9 @@
       "Special characters": [
         "Spesialtegn"
       ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Spesialtilbud: få ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }"
+      ],
       "Starred": [
         "Stjernemerket"
       ],
@@ -13036,6 +13149,9 @@
       "System information": [
         "Systeminformasjon"
       ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Det beste av ${ BRAND_NAME } med ett abonnement"
+      ],
       "Then": [
         "Deretter"
       ],
@@ -13068,6 +13184,12 @@
       ],
       "Undo send": [
         "Angre sending"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Ubegrenset antall hide-my-email-aliaser"
+      ],
+      "Unlimited logins and devices": [
+        "Ubegrenset antall pålogginger og enheter"
       ],
       "Upload 1 or more encryption keys": [
         "Last opp 1 eller flere krypteringsnøkler"
@@ -13104,6 +13226,9 @@
       ],
       "Value": [
         "Verdi"
+      ],
+      "Vault, item & secure link sharing": [
+        "Deling av hvelv, elementer og sikre koblinger"
       ],
       "Verification code": [
         "Verifiseringskode"
@@ -15965,6 +16090,11 @@
         "Last inn innhold via proxy og lagre som vedlegg"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organisasjon"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } for å legge til flere brukere, eller fjern noen brukerkontoer for å frigjøre plass."
@@ -16085,6 +16215,12 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Begynn å bruke ${ PASS_APP_NAME }"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } måned",
+        "${ n } måneder"
       ]
     },
     "pass_lifetime_signup: Info": {
@@ -17325,6 +17461,30 @@
       ],
       "Save your recovery phrase": [
         "Lagre gjenopprettingsfrasen din"
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Hvis du avbryter før denne datoen,** vil du bli **nedgradert** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveperioden avsluttes."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Hvis du ikke abonnerer,** blir du **nedgradert** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du ikke avbryter,** starter hele planen din, og du får **${ referrerRewardAmount }** i kreditter."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Hvis du abonnerer før denne datoen,** får du **${ referrerRewardAmount }** i kreditter."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Kos deg gratis med **${ planTitle }** frem til **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Du har **${ daysRemaining } dag igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby.",
+        "Du har **${ daysRemaining } dager igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby."
+      ],
+      "your subscription": [
+        "abonnementet ditt"
       ]
     },
     "Remark about a key type option": {
@@ -18644,6 +18804,9 @@
       "30 custom email addresses": [
         "30 tilpassede e-postadresser"
       ],
+      "4.8+ rating": [
+        "4,8+ vurdering"
+      ],
       "Advanced account protection": [
         "Avansert kontobeskyttelse"
       ],
@@ -18721,6 +18884,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Få ${ referralInfo.uiData.refereeRewardAmount } i kreditter"
+      ],
+      "Get a new encrypted email for free": [
+        "Få en ny kryptert e-post gratis"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Skaff deg en sikker ${ MAIL_APP_NAME }-adresse, eller ${ internalButton }"
@@ -18828,11 +18994,17 @@
       "Start free trial": [
         "Start gratis prøveperiode"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Begynn å bruke ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Lagringsplass"
       ],
       "Stream your favorite TV shows and movies": [
         "Strøm dine favoritt TV-serier og filmer"
+      ],
+      "Swiss-based": [
+        "Sveitsisk basert"
       ],
       "Sync files across devices and users": [
         "Synkroniser filer på tvers av enheter og brukere"
@@ -18848,6 +19020,9 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "Betrodd av over 100 millioner mennesker og bedrifter"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Prøv ${ BRAND_NAME } gratis i ${ TRIAL_DURATION_DAYS } dager"
@@ -18878,6 +19053,9 @@
       ],
       "Upload files of any size": [
         "Last opp filer uansett størrelse"
+      ],
+      "Use your current email": [
+        "Bruk din nåværende e-post"
       ],
       "use your current email.": [
         "bruk din nåværende e-post."
@@ -20215,6 +20393,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Gratis for alltid"
+      ],
+      "Pay once, access forever.": [
+        "Betal én gang, få tilgang for alltid."
+      ],
+      "per month, billed annually": [
+        "per måned, faktureres årlig"
+      ],
       "View VPN session details for your organization.": [
         "Vis VPN-øktdetaljer for organisasjonen din."
       ]
@@ -20891,6 +21078,9 @@
       "Appearance": [
         "Utseende"
       ],
+      "Application access": [
+        "Applikasjonstilgang"
+      ],
       "Apply filter to existing messages": [
         "Anvend filter på eksisterende meldinger"
       ],
@@ -21241,6 +21431,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Last ned ${ DRIVE_APP_NAME }-appen"
       ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Last ned ${ PASS_APP_NAME } for enhetene dine"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Last ned ${ VPN_APP_NAME }"
       ],
@@ -21374,6 +21567,9 @@
         "Kunne ikke opprette ${ failedUsers.length } brukerkonto",
         "Kunne ikke opprette ${ failedUsers.length } brukerkontoer."
       ],
+      "Feature access": [
+        "Funksjonstilgang"
+      ],
       "Filter for more focus": [
         "Filtrer for mer fokus"
       ],
@@ -21412,6 +21608,9 @@
       ],
       "Forward emails": [
         "Videresend e-poster"
+      ],
+      "Free": [
+        "Free"
       ],
       "Gateway": [
         "Porttjener"
@@ -21493,6 +21692,9 @@
       ],
       "How to refer a friend and get credits": [
         "Hvordan verve en venn og få kreditter"
+      ],
+      "How your free trial works": [
+        "Hvordan din gratis prøveperiode fungerer"
       ],
       "Human verification": [
         "Menneskelig verifisering"
@@ -21633,6 +21835,9 @@
       "No account information was found in any data breaches": [
         "Ingen kontoinformasjon ble funnet i noen datainnbrudd"
       ],
+      "No events": [
+        "Ingen hendelser"
+      ],
       "No need to empty the trash": [
         "Du trenger ikke å tømme papirkurven"
       ],
@@ -21683,6 +21888,9 @@
       ],
       "Other sign-in issues": [
         "Andre påloggingsproblemer"
+      ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus Lifetime for ${ plusLifetimePrice }"
       ],
       "Password": [
         "Passord"
@@ -21845,6 +22053,9 @@
       ],
       "Secure email based in Switzerland": [
         "Sikker e-post basert i Sveits"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "Sikre passordene dine. Overalt."
       ],
       "Security and privacy": [
         "Sikkerhet og personvern"
@@ -22033,6 +22244,9 @@
       "There are no events for your account": [
         "Det er ingen hendelser for kontoen din"
       ],
+      "There are no events yet for your organization.": [
+        "Det er ingen hendelser ennå for organisasjonen din."
+      ],
       "There are no groups": [
         "Det er ingen grupper"
       ],
@@ -22143,6 +22357,9 @@
       ],
       "Video conferencing": [
         "Videokonferanse"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferanser med ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Se organisasjonsarrangementer ved å oppgradere til Professional"
@@ -23081,6 +23298,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Med ${ planTitlePlusMaybeBrand } får du gratis tilgang til alle ${ BRAND_NAME }-personverntjenester."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN-porttjenere"
       ]
     },
     "VPN info": {
