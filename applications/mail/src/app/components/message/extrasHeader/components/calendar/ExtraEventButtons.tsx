@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { InlineLinkButton } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
@@ -64,6 +65,7 @@ const ExtraEventButtons = ({ model, setModel, message, reloadWidget }: Props) =>
                     title={c('Title').t`Get full access to ${CALENDAR_APP_NAME}`}
                     description={c('Info')
                         .t`${CALENDAR_APP_NAME} requires a ${BRAND_NAME} address for secure event sync and encryption. Claim your free ${MAIL_APP_NAME} address now.`}
+                    source={BYOE_CLAIM_PROTON_ADDRESS_SOURCE.CALENDAR_WIDGET}
                     {...claimProtonAddressModalProps}
                 />
             )}

@@ -3,9 +3,6 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
-import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
-import type { EasySwitchFeatureFlag } from '@proton/activation/src/interface';
-import { ImportType } from '@proton/activation/src/interface';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useModalState } from '@proton/components';
@@ -19,6 +16,10 @@ import {
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../../constants';
+import type { EasySwitchFeatureFlag } from '../../../../interface';
+import { ImportType } from '../../../../interface';
+import BYOEClaimProtonAddressModal from '../../BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import ImportTypeButton from './ImapProductsModalButtons';
 
 interface Props {
@@ -112,6 +113,7 @@ const ImapProductsModal = ({ onClick, onClose }: Props) => {
                 <BYOEClaimProtonAddressModal
                     toApp={APPS.PROTONMAIL}
                     onCreateCalendar={getOrCreateCalendarAndSettings}
+                    source={BYOE_CLAIM_PROTON_ADDRESS_SOURCE.EASY_SWITCH}
                     {...claimProtonAddressModalProps}
                 />
             )}

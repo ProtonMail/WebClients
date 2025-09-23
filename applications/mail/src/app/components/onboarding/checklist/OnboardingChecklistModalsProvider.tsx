@@ -3,6 +3,7 @@ import { type ReactNode, createContext, useContext } from 'react';
 import { useUser } from '@proton/account/user/hooks';
 import { GmailSyncModal } from '@proton/activation';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { useModalState } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
@@ -104,7 +105,11 @@ const OnboardingChecklistModalsProvider = ({ children }: { children: ReactNode }
                 />
             )}
             {renderClaimProtonAddressModal && (
-                <BYOEClaimProtonAddressModal toApp={APPS.PROTONMAIL} {...claimProtonAddressModalProps} />
+                <BYOEClaimProtonAddressModal
+                    toApp={APPS.PROTONMAIL}
+                    source={BYOE_CLAIM_PROTON_ADDRESS_SOURCE.MAIL_ONBOARDING}
+                    {...claimProtonAddressModalProps}
+                />
             )}
         </ModalContext.Provider>
     );
