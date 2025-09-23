@@ -3,14 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    Icon,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    useModalStateObject,
-} from '@proton/components';
+import { Icon, ModalTwo, ModalTwoContent, ModalTwoFooter, useModalStateObject } from '@proton/components';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -51,40 +44,39 @@ const WhatsNew = () => {
 
     if (isSmallScreen) {
         return (
-            <ModalTwo className="whats-new-modal" fullscreenOnMobile {...whatsNewModalProps.modalProps}>
-                <ModalTwoHeader title={c('collider_2025:Title').t`What's new`} />
+            <ModalTwo className="whats-new-modal" enableCloseWhenClickOutside {...whatsNewModalProps.modalProps}>
                 <ModalTwoContent>
                     <div className="flex flex-column flex-nowrap gap-4">
                         <img src={lumoWhatsNewMobile} alt="" className="shrink-0" />
                         <div className="flex flex-column flex-nowrap gap-2 items-center mt-4">
                             <h2 className="text-semibold color-primary">{c('collider_2025:Title')
-                                .t`Introducing ${LUMO_SHORT_APP_NAME} 1.1`}</h2>
+                                .t`What's new in ${LUMO_SHORT_APP_NAME} 1.1`}</h2>
                             <p className="m-0 color-weak text-lg text-center px-4">{c('collider_2025:Title')
                                 .t`${LUMO_SHORT_APP_NAME} 1.1 is much smarter, more capable, with improved awareness of recent events, ready to give you more thorough and useful answers.`}</p>
                         </div>
                     </div>
                 </ModalTwoContent>
                 <ModalTwoFooter>
-                    <Button size="large" color="norm" onClick={onClickModal}>{c('collider_2025: Button')
-                        .t`Try it now`}</Button>
+                    <Button size="large" color="norm" className="w-full" onClick={onClickModal}>{c(
+                        'collider_2025: Button'
+                    ).t`Try it now`}</Button>
                 </ModalTwoFooter>
             </ModalTwo>
         );
     }
 
     return (
-        <div className="whats-new-section hidden md:flex flex-column flex-nowrap gap-2 mt-6 bg-norm p-4 pt-4 mx-8">
-            <div className="flex flex-row flex-nowrap justify-space-between items-center">
-                <h2 className="text-rg text-semibold">{c('collider_2025:Title').t`What's new`}</h2>
-                <Button size="small" icon shape="ghost" onClick={onSpotlightClose}>
+        <div className="whats-new-section hidden md:flex flex-column flex-nowrap mt-6 bg-norm p-4 pb-6 mx-8">
+            <div className="w-full flex">
+                <Button size="small" icon shape="ghost" onClick={onSpotlightClose} className="ml-auto">
                     <Icon name="cross" size={5} alt={c('collider_2025: Action').t`Dismiss`} />
                 </Button>
             </div>
-            <div className="flex flex-row flex-nowrap gap-6 mx-4 p-2">
+            <div className="flex flex-row flex-nowrap gap-6 mx-4 p-2 pt-0">
                 <img src={lumoWhatsNew} alt="" className="shrink-0" />
                 <div className="flex flex-column flex-nowrap gap-2">
                     <h2 className="text-rg text-semibold">{c('collider_2025:Title')
-                        .t`Introducing ${LUMO_SHORT_APP_NAME} 1.1`}</h2>
+                        .t`What's new in ${LUMO_SHORT_APP_NAME} 1.1`}</h2>
                     <p className="m-0 color-weak">{c('collider_2025:Title')
                         .t`${LUMO_SHORT_APP_NAME} 1.1 is much smarter, more capable, with improved awareness of recent events, ready to give you more thorough and useful answers.`}</p>
                 </div>
