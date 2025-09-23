@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { Icon, useModalState } from '@proton/components';
 import PromotionButtonLight from '@proton/components/components/button/PromotionButton/PromotionButtonLight';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
@@ -35,7 +36,11 @@ const ComposerBYOEClaimAddressButton = () => {
             </PromotionButtonLight>
 
             {renderClaimProtonAddressModal && (
-                <BYOEClaimProtonAddressModal toApp={APPS.PROTONMAIL} {...claimProtonAddressModalProps} />
+                <BYOEClaimProtonAddressModal
+                    toApp={APPS.PROTONMAIL}
+                    source={BYOE_CLAIM_PROTON_ADDRESS_SOURCE.MAIL_COMPOSER}
+                    {...claimProtonAddressModalProps}
+                />
             )}
         </>
     );

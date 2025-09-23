@@ -24,6 +24,7 @@ import {
 import { useLoading } from '@proton/hooks/index';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { type APP_NAMES, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
@@ -33,8 +34,11 @@ import {
     usernameLengthValidator,
     usernameStartCharacterValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import claimProtonAddressImg from '@proton/styles/assets/img/illustrations/claim-proton-address.svg';
+
+import type { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '../../../constants';
 
 interface Props extends ModalProps {
     toApp: APP_NAMES;
@@ -44,6 +48,7 @@ interface Props extends ModalProps {
         calendars: VisualCalendar[];
         calendarUserSettings: CalendarUserSettings;
     }>;
+    source: BYOE_CLAIM_PROTON_ADDRESS_SOURCE;
 }
 
 const BYOEClaimProtonAddressModal = ({
@@ -53,6 +58,7 @@ const BYOEClaimProtonAddressModal = ({
         .t`Ensure fully private and encrypted communication. Claim your free ${BRAND_NAME} email address now.`,
     onClose,
     onCreateCalendar,
+    source,
     ...rest
 }: Props) => {
     const api = useApi();
@@ -113,6 +119,16 @@ const BYOEClaimProtonAddressModal = ({
                 text: c('loc_nightly: BYOE').t`Your ${BRAND_NAME} address is ready to use`,
             });
             onCreateCallback?.();
+
+            void sendTelemetryReport({
+                api,
+                measurementGroup: TelemetryMeasurementGroups.bringYourOwnEmail,
+                event: TelemetryBringYourOwnEmailEvents.claim_proton_address,
+                dimensions: {
+                    source,
+                },
+                delay: false,
+            });
 
             // Call the event manager so that we update the get-started checklist items
             void call();
