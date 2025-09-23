@@ -69,10 +69,12 @@ export const createNotification = ({ popover, onDestroy }: NotificationOptions):
             iframe
                 .ensureReady()
                 .then(() => {
-                    /** if OTP autofill notification is opened - do not process
-                     * any other actions : it should take precedence */
+                    /** Prevent autosave notifications from interrupting visible OTP notifications.
+                     * This ensures OTP entry takes precedence in multi-step forms where
+                     * successful login might trigger autosave prompts. */
+                    const autosave = payload.action === NotificationAction.AUTOSAVE;
                     const state = ctx?.service.iframe.notification?.getState();
-                    if (state?.action === NotificationAction.OTP && state.visible) return;
+                    if (autosave && state?.visible && state?.action === NotificationAction.OTP) return;
 
                     iframe.sendPortMessage({ type: IFramePortMessageType.NOTIFICATION_ACTION, payload });
                     iframe.open(payload.action);
