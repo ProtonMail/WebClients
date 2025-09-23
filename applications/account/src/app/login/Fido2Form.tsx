@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,11 +20,13 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
     const [fidoError, setFidoError] = useState(false);
     const abortControllerRef = useRef<AbortController | null>(null);
 
+    const handleAbort = useCallback(() => {
+        abortControllerRef.current?.abort();
+        abortControllerRef.current = null;
+    }, []);
+
     useEffect(() => {
-        return () => {
-            abortControllerRef.current?.abort();
-            abortControllerRef.current = null;
-        };
+        return handleAbort;
     }, []);
 
     return (
@@ -46,7 +48,7 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
                         let authenticationCredentialsPayload: Fido2Data;
                         try {
                             setFidoError(false);
-                            abortControllerRef.current?.abort();
+                            handleAbort();
                             const abortController = new AbortController();
                             abortControllerRef.current = abortController;
                             authenticationCredentialsPayload = await getAuthentication(
@@ -59,6 +61,8 @@ const Fido2Form = ({ onSubmit, fido2 }: Props) => {
                             captureMessage('Security key auth', { level: 'error', extra: { error } });
                             console.error(error);
                             return;
+                        } finally {
+                            handleAbort();
                         }
                         await onSubmit(authenticationCredentialsPayload);
                     };

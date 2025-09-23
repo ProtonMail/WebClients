@@ -1,5 +1,5 @@
 import type { FormEvent } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -52,7 +52,6 @@ const RegisteredContent = () => {
 
 const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     const [step, setStep] = useState(Steps.Tutorial);
-    const [behind, setBehind] = useState(false);
     const [loading, withLoading] = useLoading();
     const normalApi = useApi();
     const errorHandler = useErrorHandler();
@@ -65,12 +64,13 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     const [allowPlatformKeys, setAllowPlatformKeys] = useState(false);
 
     const abortControllerRef = useRef<AbortController | null>(null);
+    const handleAbort = useCallback(() => {
+        abortControllerRef.current?.abort();
+        abortControllerRef.current = null;
+    }, []);
 
     useEffect(() => {
-        return () => {
-            abortControllerRef.current?.abort();
-            abortControllerRef.current = null;
-        };
+        return handleAbort;
     }, []);
 
     const getRegistrationPayload = () => {
@@ -84,17 +84,14 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             }
             try {
                 setFidoError(false);
-                setBehind(true);
 
-                abortControllerRef.current?.abort();
+                handleAbort();
                 const abortController = new AbortController();
                 abortControllerRef.current = abortController;
 
                 registrationPayloadRef.current = await getCreatePayload(response, abortController.signal);
-                setBehind(false);
             } catch (error) {
                 setFidoError(true);
-                setBehind(false);
                 captureMessage('Security key registration', {
                     level: 'error',
                     extra: { error },
@@ -102,6 +99,10 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
                 // Purposefully logging the error for somewhat easier debugging
                 console.error(error);
                 return;
+            } finally {
+                // It's important that it's aborted after failure/success so that extensions (LastPass) function correctly
+                // without a `OperationError: A request is already pending.`.
+                handleAbort();
             }
             reset();
             setStep(Steps.Name);
@@ -148,6 +149,10 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
     }
 
     const handleClose = () => {
+        if (abortControllerRef.current) {
+            handleAbort();
+            return;
+        }
         void silentApi(lockSensitiveSettings());
         onClose?.();
     };
@@ -169,7 +174,6 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             }}
             onClose={handleClose}
             size="small"
-            behind={behind}
             {...rest}
         >
             <ModalHeader
@@ -229,9 +233,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
                 </ModalFooter>
             ) : (
                 <ModalFooter>
-                    <Button onClick={handleClose} disabled={loading}>
-                        {c('Action').t`Cancel`}
-                    </Button>
+                    <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
                     <Button loading={loading} type="submit" color="norm">
                         {c('Action').t`Continue`}
                     </Button>
