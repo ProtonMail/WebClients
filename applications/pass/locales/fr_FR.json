@@ -424,6 +424,9 @@
       "Next month": [
         "Mois suivant"
       ],
+      "No": [
+        "Non"
+      ],
       "No expired links": [
         "Aucun lien expiré"
       ],
@@ -699,6 +702,9 @@
       "Write us on X/Twitter": [
         "Écrivez-nous sur X/Twitter"
       ],
+      "Yes": [
+        "Oui"
+      ],
       "Your password manager is not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
       ]
@@ -719,6 +725,14 @@
       ],
       "Expand": [
         "Développer"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Ne plus me demander"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Voulez-vous que votre presse-papiers soit automatiquement effacé après ${ timeoutDurationHumanReadable } ?"
       ]
     },
     "Description": {
@@ -1540,6 +1554,9 @@
       "Copied to clipboard": [
         "Copié dans le presse-papiers"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Copié dans le presse-papiers (expire dans ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Le code promo a été appliqué."
       ],
@@ -2049,8 +2066,14 @@
       "Please follow the steps below to set up your domain.": [
         "Veuillez suivre les étapes ci-dessous pour configurer votre domaine."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Veuillez garder ${ PASS_APP_NAME } ouvert afin que le presse-papiers puisse être effacé automatiquement."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Veuillez garder cette fenêtre ouverte pendant l'importation de vos données. Ce processus peut prendre quelques minutes."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Veuillez garder votre navigateur ouvert afin que le presse-papiers puisse être effacé automatiquement."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Veuillez vous assurer que la fenêtre précédemment active est celle où vous souhaitez effectuer la saisie automatique et que votre curseur était positionné sur le champ identifiant."
@@ -2545,6 +2568,9 @@
       ],
       "15 minutes": [
         "15 minutes"
+      ],
+      "15 seconds": [
+        "15 secondes"
       ],
       "2 minutes": [
         "2 minutes"
@@ -3142,6 +3168,9 @@
       ],
       "Network": [
         "Réseau"
+      ],
+      "Never": [
+        "Jamais"
       ],
       "New email": [
         "Nouvelle adresse e-mail"
@@ -3822,6 +3851,11 @@
         "${ price }/mois"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Cela nécessitera une autorisation de votre navigateur."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Ajoutez la clé secrète d'authentification à deux facteurs (A2F)."
@@ -4145,6 +4179,9 @@
       ],
       "Change your lock method": [
         "Modifier votre méthode de verrouillage"
+      ],
+      "Clear clipboard": [
+        "Effacer le presse-papiers"
       ],
       "Confirm extra password": [
         "Confirmer le mot de passe supplémentaire"
