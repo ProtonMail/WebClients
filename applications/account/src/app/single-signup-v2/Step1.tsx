@@ -43,11 +43,9 @@ import {
     getFallbackCurrency,
     getHas2024OfferCoupon,
     getOptimisticCheckResult,
+    getOptimisticCheckout,
     getPlanFromPlanIDs,
-    getPlanOffer,
     getPlansMap,
-    getPricingFromPlanIDs,
-    getTotalFromPricing,
     isRegionalCurrency,
     isSubcriptionCheckForbidden,
     switchPlan,
@@ -150,7 +148,6 @@ const Step1 = ({
     initialSessionsLength: boolean;
     signupConfiguration: SignupConfiguration;
     signupParameters: SignupParameters2;
-    relativePrice: string | undefined;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
     measure: Measure;
@@ -713,9 +710,13 @@ const Step1 = ({
 
         const isFreePlan = selectedPlan.Name === PLANS.FREE;
         const planIDs = isFreePlan ? {} : { [selectedPlan.Name]: 1 };
-        const pricing = getPricingFromPlanIDs(planIDs, model.plansMap);
-        const totals = getTotalFromPricing(pricing, options.cycle);
-        let discountPercent = totals.discountPercentage;
+
+        let discountPercent = getOptimisticCheckout({
+            planIDs,
+            plansMap: model.plansMap,
+            cycle: options.cycle,
+            currency: options.currency,
+        }).discountPercent;
 
         const cycleMapping = getSubscriptionMapping({
             subscriptionDataCycleMapping: model.subscriptionDataCycleMapping,
@@ -866,32 +867,7 @@ const Step1 = ({
             return wrap('hourglass', textLaunchOffer);
         }
 
-        const bestPlanCard = planCards[audience].find((planCard) => planCard.type === 'best');
-        const bestPlan = bestPlanCard?.plan && model.plansMap[bestPlanCard.plan];
-        if (!bestPlanCard || !bestPlan) {
-            return null;
-        }
-
-        const planOffer = getPlanOffer(bestPlan);
-        if (!planOffer.valid) {
-            return null;
-        }
-
-        const cycle = planOffer.cycles[0];
-
-        const pricing = getPricingFromPlanIDs({ [bestPlan.Name]: 1 }, model.plansMap);
-        const totals = getTotalFromPricing(pricing, cycle);
-        const title = bestPlan.Title;
-
-        const price = (
-            <strong key="price">
-                {getSimplePriceString(options.currency, totals.totalPerMonth, ` ${c('Suffix').t`/month`}`)}
-            </strong>
-        );
-        // translator: full sentence is: Special launch offer: Get Pass Plus for ${options.currency} 1 /month forever!
-        const textLaunchOffer = c('pass_signup_2023: Info')
-            .jt`Special launch offer: Get ${title} for ${price} forever!`;
-        return wrap('hourglass', textLaunchOffer);
+        return null;
     })();
 
     return (

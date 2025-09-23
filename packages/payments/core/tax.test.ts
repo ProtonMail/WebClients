@@ -1,3 +1,5 @@
+import { addMonths } from '@proton/shared/lib/date-fns-utc';
+
 import type { RequiredCheckResponse } from './checkout';
 import { CYCLE } from './constants';
 import { SubscriptionMode, TaxInclusive } from './subscription/constants';
@@ -14,6 +16,7 @@ describe('formatTax', () => {
         SubscriptionMode: SubscriptionMode.Regular,
         BaseRenewAmount: null,
         RenewCycle: null,
+        PeriodEnd: +addMonths(new Date(), (overrides as any).Cycle ?? CYCLE.YEARLY) / 1000,
         Taxes: [
             {
                 Name: 'VAT',

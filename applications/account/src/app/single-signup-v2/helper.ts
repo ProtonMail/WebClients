@@ -32,7 +32,7 @@ import {
     getPaymentMethods,
     getPlan,
     getPlanFromPlanIDs,
-    getPricingFromPlanIDs,
+    getPrice,
     getSubscription,
     hasPlanIDs,
     isForbiddenLumoPlus,
@@ -427,10 +427,10 @@ export const getRelativeUpsellPrice = (
         );
     }
 
-    const pricingCurrentPlan = getPricingFromPlanIDs({ [upsell.currentPlan.Name]: 1 }, plansMap);
-    const pricingUpsell = getPricingFromPlanIDs({ [upsell.plan.Name]: 1 }, plansMap);
+    const priceCurrentPlan = getPrice({ [upsell.currentPlan.Name]: 1 }, cycle, plansMap);
+    const priceUpsell = getPrice({ [upsell.plan.Name]: 1 }, cycle, plansMap);
 
-    return pricingUpsell.plans[cycle] / cycle - pricingCurrentPlan.plans[cycle] / cycle;
+    return priceUpsell / cycle - priceCurrentPlan / cycle;
 };
 
 const hasAccess = ({

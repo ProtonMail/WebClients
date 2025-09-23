@@ -17,8 +17,7 @@ import {
     getCheckout,
     getHas2024OfferCoupon,
     getIsB2BAudienceFromPlan,
-    getPricingFromPlanIDs,
-    getTotalFromPricing,
+    getOptimisticCheckout,
 } from '@proton/payments';
 import { InclusiveVatText } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -106,7 +105,7 @@ const AccountStepPaymentSummary = ({
 
     const hasCouponCode = !!model.subscriptionData?.checkResult.Coupon?.Code;
     const currentCheckout = getCheckout({
-        // If there is a coupon code, ignore the optimistc results from options since they don't contain the correct discount.
+        // If there is a coupon code, ignore the optimistic results from options since they don't contain the correct discount.
         planIDs: hasCouponCode ? model.subscriptionData.planIDs : options.planIDs,
         plansMap: model.plansMap,
         checkResult: hasCouponCode ? model.subscriptionData.checkResult : options.checkResult,
@@ -176,7 +175,13 @@ const AccountStepPaymentSummary = ({
                             </>
                         ) : (
                             <>
-                                {getPrice(currentCheckout.regularAmountPerCycle)}
+                                {/* Even though this section isn't called "Amount Due", we still must show amountDue 
+                                here. This is because if we don't show the dedicated "Amount Due" line then 
+                                this is the final amount that user will see before paying. 
+                                It is **critical** to show the amountDue to the user. */}
+                                {showAmountDue
+                                    ? getPrice(currentCheckout.regularAmountPerCycle)
+                                    : getPrice(currentCheckout.amountDue)}
                                 {!showAmountDue && showRenewalNotice && '*'}
                             </>
                         ),
@@ -293,16 +298,20 @@ const AccountStepPaymentSummary = ({
                         displayMembersWithDiscount={hideDiscount}
                     />
                 }
-                discount={(() => {
+                discount={((): number => {
                     if (initialLoading) {
                         return 0;
                     }
                     if (isTrial) {
                         // For trials, show the original plan discount instead of the 100% trial discount
-                        const pricing = getPricingFromPlanIDs(options.planIDs, model.plansMap);
-                        const totals = getTotalFromPricing(pricing, options.cycle);
-                        return totals.discountPercentage;
+                        return getOptimisticCheckout({
+                            planIDs: options.planIDs,
+                            plansMap: model.plansMap,
+                            currency: options.currency,
+                            cycle: options.cycle,
+                        }).discountPercent;
                     }
+
                     return currentCheckout.discountPercent;
                 })()}
                 checkout={currentCheckout}

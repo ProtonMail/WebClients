@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { addMonths } from 'date-fns';
 
 import type { RequiredCheckResponse } from '@proton/payments';
 import { CYCLE, SubscriptionMode, TaxInclusive } from '@proton/payments';
@@ -23,6 +24,7 @@ describe('TaxRow', () => {
                 Amount: 200,
             },
         ],
+        PeriodEnd: +addMonths(new Date(), (overrides as any).Cycle ?? CYCLE.YEARLY) / 1000,
         ...overrides,
     });
 

@@ -201,3 +201,7 @@ export const getSupportedAddons = (planIDs: PlanIDs): SupportedAddons => {
 export const getPlansWithAddons = (): PLANS[] => {
     return Object.values(PLANS).filter((plan) => Object.keys(getSupportedAddons({ [plan]: 1 })).length > 0);
 };
+
+export const supportsMemberAddon = (planIDs: PlanIDs): boolean => {
+    return (Object.keys(getSupportedAddons(planIDs)) as ADDON_NAMES[]).some(isMemberAddon);
+};

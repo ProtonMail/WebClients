@@ -13,14 +13,15 @@ export {
 } from './components/ChargebeeWrapper';
 export { CountriesDropdown } from './components/CountriesDropdown';
 export { CountryStateSelector } from './components/CountryStateSelector';
-export { InclusiveVatText, ExclusiveVatText } from './components/VatText';
 export { InputWithSelectorPrefix, type InputWithSelectorPrefixProps } from './components/InputWithSelectorPrefix';
 export { OfferPrice, type Props as OfferPriceProps } from './components/OfferPrice';
 export { PayButton } from './components/PayButton';
 export { TaxCountrySelector } from './components/TaxCountrySelector';
 export { getEditVatNumberText, getVatNumberName, VatNumberInput } from './components/VatNumberInput';
+export { ExclusiveVatText, InclusiveVatText } from './components/VatText';
 export { default as EditCardModal } from './containers/EditCardModal';
 export {
+    computeOptimisticSubscriptionMode,
     getPlanToCheck,
     PaymentsContextProvider,
     usePayments,

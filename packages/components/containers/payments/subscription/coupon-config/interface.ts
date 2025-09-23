@@ -52,11 +52,8 @@ export type CouponConfig = {
     availableCycles?: CYCLE[];
 };
 
-type FirstParam<T> = T extends (first: infer P, ...args: any[]) => any ? P : never;
-type ReturnType<T> = T extends (...args: any[]) => infer R ? R : never;
-
-export type CyclePriceCompareFirstParam = FirstParam<NonNullable<CouponConfig['cyclePriceCompare']>>;
+export type CyclePriceCompareFirstParam = Parameters<NonNullable<CouponConfig['cyclePriceCompare']>>[0];
 export type CyclePriceCompareReturnType = ReturnType<NonNullable<CouponConfig['cyclePriceCompare']>>;
 
-export type CycleTitleFirstParam = FirstParam<NonNullable<CouponConfig['cycleTitle']>>;
+export type CycleTitleFirstParam = Parameters<NonNullable<CouponConfig['cycleTitle']>>[0];
 export type CycleTitleReturnType = ReturnType<NonNullable<CouponConfig['cycleTitle']>>;

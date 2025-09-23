@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
+import { addMonths } from '@proton/shared/lib/date-fns-utc';
+
 import type { RequiredCheckResponse } from '../../core/checkout';
 import { CYCLE } from '../../core/constants';
 import { SubscriptionMode, TaxInclusive } from '../../core/subscription/constants';
@@ -16,6 +18,7 @@ describe('InclusiveVatText', () => {
         SubscriptionMode: SubscriptionMode.Regular,
         BaseRenewAmount: null,
         RenewCycle: null,
+        PeriodEnd: +addMonths(new Date(), (overrides as any).Cycle ?? CYCLE.YEARLY) / 1000,
         Taxes: [
             {
                 Name: 'VAT',
