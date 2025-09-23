@@ -8,6 +8,7 @@ import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Runtime } from 'webextension-polyfill';
 
 import browser from '@proton/pass/lib/globals/browser';
+import type { Maybe } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { notIn } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
@@ -23,12 +24,22 @@ export type MessageHandlerCallback<
 
 export type ExtensionMessageBroker = ReturnType<typeof createMessageBroker>;
 
-export const createMessageBroker = (options: {
+type MessageBrokerOptions = {
+    /** Allowed messages for externally connectable websites. */
     allowExternal: WorkerMessageType[];
     strictOriginCheck: WorkerMessageType[];
-    onError: (error: any) => void;
+    /** Filter function to determine if a message should be processed by this broker.
+     * Returns true to accept and process the message, false to reject it.
+     * This is essential for preventing multiple extension contexts (service worker,
+     * offscreen document, popup, etc.) from handling the same message and causing
+     * conflicts or duplicate responses. Each context should implement appropriate
+     * sender-based filtering to ensure only the intended recipient processes messages. */
+    onAccept: (message: WorkerMessageWithSender) => boolean;
     onDisconnect: (portName: string) => void;
-}) => {
+    onError: (error: any) => void;
+};
+
+export const createMessageBroker = (options: MessageBrokerOptions) => {
     const handlers: Map<WorkerMessageType, MessageHandlerCallback> = new Map();
     const ports: Map<string, Runtime.Port> = new Map();
     const buffer: Set<WorkerMessageWithSender> = new Set();
@@ -57,60 +68,59 @@ export const createMessageBroker = (options: {
         handlers.set(message, handler as MessageHandlerCallback<any>);
     };
 
-    const onMessage = async (
+    const onExtensionMessage = async (
+        message: WorkerMessageWithSender,
+        sender: Runtime.MessageSender,
+        handler: MessageHandlerCallback
+    ): Promise<WorkerResponse<WorkerMessageWithSender>> => {
+        try {
+            const isExternal = sender.id !== browser.runtime.id;
+            const isInternal = !isExternal;
+
+            if (isExternal && notIn(options.allowExternal)(message.type)) {
+                logger.warn('[MessageBroker::Message] unauthorized external message');
+                return errorMessage('unauthorized');
+            }
+
+            if (isInternal) assertMessageVersion(message);
+
+            if (BUILD_TARGET !== 'safari' && isInternal && options.strictOriginCheck.includes(message.type)) {
+                const origin = new URL((sender as any).origin ?? sender.url).origin;
+                if (origin !== extensionOrigin) {
+                    logger.warn('[MessageBroker::Message] unauthorized message origin');
+                    return errorMessage('unauthorized');
+                }
+            }
+
+            const res = await handler(message, sender);
+
+            if (typeof res === 'boolean' || res === undefined) {
+                if (res === false) throw new Error(`Error when processing "${message.type}"`);
+                return successMessage({});
+            }
+
+            return successMessage(res);
+        } catch (error: any) {
+            logger.debug(`[MessageBroker::Message] Error "${message.type}"`, error);
+            options.onError(error);
+            return error instanceof Error ? errorMessage(error?.message) : { ...error, type: 'error' };
+        }
+    };
+
+    const onMessage = (
         message: unknown,
         sender: Runtime.MessageSender
-    ): Promise<WorkerResponse<WorkerMessageWithSender> | void> => {
+    ): Maybe<Promise<WorkerResponse<WorkerMessageWithSender>>> => {
         if (isExtensionMessage(message)) {
-            /**
-             * During development, while using the webpack dev-server
-             * with hot module replacement - we sometimes end up in a
-             * "corrupted" state where the service-worker is sending out
-             * messages to itself while it is updating or going stale.
-             */
-            if (process.env.NODE_ENV === 'development') {
-                if (message.sender === 'background') {
-                    browser.runtime.reload();
-                    return errorMessage();
-                }
+            /** Check if this message broker should accept and process the message.
+             * This prevents multiple extension contexts from handling the same message. */
+            if (!options.onAccept(message)) {
+                logger.warn(`[MessageBroker] Message "${message.type}" rejected from sender: ${message.sender}`);
+                return;
             }
 
             const handler = message.type !== undefined ? handlers.get(message.type) : undefined;
-
-            if (handler) {
-                try {
-                    const isExternal = sender.id !== browser.runtime.id;
-                    const isInternal = !isExternal;
-
-                    if (isExternal && notIn(options.allowExternal)(message.type)) {
-                        logger.warn('[MessageBroker::Message] unauthorized external message');
-                        return errorMessage('unauthorized');
-                    }
-
-                    if (isInternal) assertMessageVersion(message);
-
-                    if (BUILD_TARGET !== 'safari' && isInternal && options.strictOriginCheck.includes(message.type)) {
-                        const origin = new URL((sender as any).origin ?? sender.url).origin;
-                        if (origin !== extensionOrigin) {
-                            logger.warn('[MessageBroker::Message] unauthorized message origin');
-                            return errorMessage('unauthorized');
-                        }
-                    }
-
-                    const res = await handler(message, sender);
-
-                    if (typeof res === 'boolean' || res === undefined) {
-                        if (res === false) throw new Error(`Error when processing "${message.type}"`);
-                        return successMessage({});
-                    }
-
-                    return successMessage(res);
-                } catch (error: any) {
-                    logger.debug(`[MessageBroker::Message] Error "${message.type}"`, error);
-                    options.onError(error);
-                    return error instanceof Error ? errorMessage(error?.message) : { ...error, type: 'error' };
-                }
-            }
+            if (handler) return onExtensionMessage(message, sender, handler);
         }
     };
 
