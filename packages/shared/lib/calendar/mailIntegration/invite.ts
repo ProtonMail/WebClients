@@ -291,7 +291,12 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
 
     if (method === ICAL_METHOD.REQUEST) {
         // strip alarms
-        const propertiesToOmit: (keyof VcalVeventComponent)[] = ['components', 'x-pm-proton-reply', 'color'];
+        const propertiesToOmit: (keyof VcalVeventComponent)[] = [
+            'components',
+            'x-pm-proton-reply',
+            'color',
+            'encryptedTitle',
+        ];
         // use current time as dtstamp unless indicated otherwise
         if (!keepDtstamp) {
             propertiesToOmit.push('dtstamp');
