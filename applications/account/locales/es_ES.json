@@ -63,6 +63,11 @@
         "Tu información fue encontrada en al menos una filtración de datos. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Cuentas"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
@@ -769,6 +774,9 @@
       "Get more servers": [
         "Obtener más servidores"
       ],
+      "Get Pass Plus": [
+        "Consigue Pass Plus"
+      ],
       "Get started": [
         "Comenzar"
       ],
@@ -1038,6 +1046,9 @@
       ],
       "Pay ${ price } now": [
         "Pagar ${ price } ahora"
+      ],
+      "Pay once": [
+        "Pago único"
       ],
       "Preview": [
         "Vista previa"
@@ -12310,6 +12321,9 @@
       "Create password": [
         "Crear contraseña"
       ],
+      "Credit cards": [
+        "Tarjetas de crédito"
+      ],
       "Credits": [
         "Créditos"
       ],
@@ -12612,6 +12626,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivel de filtrado del bloqueador NetShield"
+      ],
+      "Limited time": [
+        "Por tiempo limitado"
       ],
       "Link label (optional)": [
         "Etiqueta del enlace (opcional)"
@@ -13015,6 +13032,9 @@
       ],
       "System information": [
         "Información del sistema"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Lo mejor de ${ BRAND_NAME } con una suscripción"
       ],
       "Then": [
         "Entonces"
@@ -15916,6 +15936,11 @@
       ],
       "Load content via proxy and store as attachments": [
         "Cargar el contenido a través de un proxy y guardarlo como archivos adjuntos"
+      ]
+    },
+    "Organization": {
+      "Organization": [
+        "Organización"
       ]
     },
     "Organization capacity error": {
@@ -21714,6 +21739,9 @@
       "No account information was found in any data breaches": [
         "No se ha encontrado información para la cuenta en ninguna vulneración de datos."
       ],
+      "No events": [
+        "No hay eventos"
+      ],
       "No need to empty the trash": [
         "No es necesario vaciar la papelera"
       ],
@@ -22113,6 +22141,9 @@
       ],
       "There are no events for your account": [
         "No hay eventos para tu cuenta"
+      ],
+      "There are no events yet for your organization.": [
+        "Aún no hay eventos para tu organización."
       ],
       "There are no groups": [
         "No hay grupos."
@@ -23162,6 +23193,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Con ${ planTitlePlusMaybeBrand } obtienes acceso gratuito a todos los servicios de privacidad de ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Puertas de enlace VPN"
       ]
     },
     "VPN info": {

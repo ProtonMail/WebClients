@@ -63,6 +63,11 @@
         "Bilgileriniz en az bir veri sızıntısında bulundu. Ayrıntıları görmek ve önlem almak için ${ DARK_WEB_MONITORING_NAME } seçeneğini açın. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Hesaplar"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } mağazası"
@@ -135,6 +140,9 @@
       ],
       "Add label": [
         "Etiket ekle"
+      ],
+      "Add more seats": [
+        "Daha fazla koltuk ekle"
       ],
       "Add notification": [
         "Bildirim ekle"
@@ -766,6 +774,9 @@
       "Get more servers": [
         "Daha fazla sunucu edinin"
       ],
+      "Get Pass Plus": [
+        "Pass Plus edinin"
+      ],
       "Get started": [
         "Başlayalım"
       ],
@@ -1038,6 +1049,9 @@
       ],
       "Pay ${ price } now": [
         "Şimdi ${ price } öde"
+      ],
+      "Pay once": [
+        "Bir kez ödeyin"
       ],
       "Preview": [
         "Ön izle"
@@ -1417,6 +1431,9 @@
       "Start live chat": [
         "Canlı sohbet başlat"
       ],
+      "Start subscription": [
+        "Aboneliği başlat"
+      ],
       "Stay": [
         "Kal"
       ],
@@ -1431,6 +1448,9 @@
       ],
       "Submit": [
         "Gönder"
+      ],
+      "Subscribe now": [
+        "Şimdi abone olun"
       ],
       "Support": [
         "Destek"
@@ -1563,6 +1583,9 @@
       ],
       "User": [
         "Kullanıcı"
+      ],
+      "users and addresses": [
+        "kullanıcılar ve adresler"
       ],
       "Verify": [
         "Doğrula"
@@ -8509,6 +8532,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Kullanıcıların güvenli paylaşılan sunuculara bağlanabilmesi için ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden izin verin."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Takvim davetlerinize kolayca görüntülü ${ MEET_APP_NAME } görüşmesi bağlantıları eklemenizi sağlar."
+      ],
       "Already allocated": [
         "Zaten ayrılmış"
       ],
@@ -9105,6 +9131,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate } tarihinde sona eriyor"
+      ],
       "Enhance your network security": [
         "Ağ güvenliğinizi artırın"
       ],
@@ -9237,6 +9266,9 @@
       "Free forever": [
         "Sonsuza kadar ücretsiz"
       ],
+      "Free trial": [
+        "Ücretsiz deneme"
+      ],
       "free up space by deleting older messages or other data": [
         "eski iletileri veya diğer verileri silerek boş yer açın"
       ],
@@ -9296,6 +9328,9 @@
       ],
       "Groups": [
         "Gruplar"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "E-posta yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Bireysel kullanıcıları ${ userAndAddress } bölümünden yönetebilirsiniz. ${ addMoreSeats }"
       ],
       "here": [
         "buraya"
@@ -9676,6 +9711,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Kuruluşunuzun üyelerinin hangi özelliklere erişebileceğini ayarlayın. Kapatılırsa, yalnızca yöneticiler erişebilir."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "${ DOCS_APP_NAME } için e-posta bildirimi tercihlerinizi ayarlayın."
@@ -12324,6 +12362,9 @@
       "Create password": [
         "Parola oluştur"
       ],
+      "Credit cards": [
+        "Kredi kartları"
+      ],
       "Credits": [
         "Kredi"
       ],
@@ -12626,6 +12667,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield engelleme süzgeci düzeyi"
+      ],
+      "Limited time": [
+        "Sınırlı süreli"
       ],
       "Link label (optional)": [
         "Bağlantı etiketi (isteğe bağlı)"
@@ -13032,6 +13076,9 @@
       ],
       "System information": [
         "Sistem bilgileri"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Tek bir abonelikle en iyi ${ BRAND_NAME } hizmetleri"
       ],
       "Then": [
         "Ardından"
@@ -15938,6 +15985,11 @@
         "İçerik vekil sunucu üzerinden yüklensin ve ek dosyalar olarak kaydedilsin"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Kuruluş"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "Daha fazla kullanıcı eklemek için ${ upgradeLink } ya da yer açmak için bazı kullanıcı hesaplarını silin."
@@ -17388,6 +17440,30 @@
       ],
       "Save your recovery phrase": [
         "Kurtarma ifadenizi kaydedin"
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "Bu tarihten önce **iptal ederseniz**, deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine **düşürüleceksiniz**."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Abone olmazsanız**, ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine **düşürüleceksiniz**."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**İptal etmezseniz,** tam tarifeniz başlar ve **${ referrerRewardAmount }** kredi kazanırsınız."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Bu tarihten önce abone olursanız,** **${ referrerRewardAmount }** kredi kazanırsınız."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ planTitle }** tarifesini **${ textDate }** tarihine kadar ücretsiz kullanın."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }** tarifesinin sunduğu tüm güçlü özellikleri keşfetmek için **${ daysRemaining } gününüz kaldı**.",
+        "**${ planTitle }** tarifesinin sunduğu tüm güçlü özellikleri keşfetmek için **${ daysRemaining } gününüz kaldı**."
+      ],
+      "your subscription": [
+        "aboneliğiniz"
       ]
     },
     "Remark about a key type option": {
@@ -20959,6 +21035,9 @@
       "Appearance": [
         "Görünüm"
       ],
+      "Application access": [
+        "Uygulama erişimi"
+      ],
       "Apply filter to existing messages": [
         "Süzgeci var olan iletilere uygula"
       ],
@@ -21442,6 +21521,9 @@
         "${ failedUsers.length } kullanıcı hesabı eklenemedi",
         "${ failedUsers.length } kullanıcı hesabı eklenemedi"
       ],
+      "Feature access": [
+        "Özellik erişimi"
+      ],
       "Filter for more focus": [
         "Daha iyi odaklanmak için süzün"
       ],
@@ -21561,6 +21643,9 @@
       ],
       "How to refer a friend and get credits": [
         "Kredi kazanmak için bir arkadaşınıza nasıl önerebilirsiniz"
+      ],
+      "How your free trial works": [
+        "Ücretsiz denemeniz nasıl işler"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
@@ -21700,6 +21785,9 @@
       ],
       "No account information was found in any data breaches": [
         "Veri sızıntılarında herhangi bir hesap bilgisi bulunamadı"
+      ],
+      "No events": [
+        "Herhangi bir etkinlik yok"
       ],
       "No need to empty the trash": [
         "Çöp kutusunu boşaltmanıza gerek yok"
@@ -22101,6 +22189,9 @@
       "There are no events for your account": [
         "Hesabınızda herhangi bir etkinlik bulunmuyor"
       ],
+      "There are no events yet for your organization.": [
+        "Kuruluşunuzda henüz bir etkinlik bulunmuyor."
+      ],
       "There are no groups": [
         "Herhangi bir grup yok"
       ],
@@ -22211,6 +22302,9 @@
       ],
       "Video conferencing": [
         "Görüntülü görüşme"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } ile görüntülü görüşme"
       ],
       "View organization events by upgrading to Professional": [
         "Professional tarifesine yükselterek kuruluş etkinliklerini görüntüleyin"
@@ -23149,6 +23243,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "${ planTitlePlusMaybeBrand } tarifesi ile tüm ${ BRAND_NAME } gizlilik hizmetlerine ücretsiz erişim elde edersiniz."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN ağ geçitleri"
       ]
     },
     "VPN info": {

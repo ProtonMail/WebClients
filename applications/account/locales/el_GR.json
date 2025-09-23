@@ -63,6 +63,11 @@
         "Οι πληροφορίες σας εντοπίστηκαν σε τουλάχιστον μία διαρροή δεδομένων. Ενεργοποιήστε το ${ DARK_WEB_MONITORING_NAME } για να δείτε λεπτομέρειες και να προβείτε σε κάποια ενέργεια. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Λογαριασμοί"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } κατάστημα"
@@ -769,6 +774,12 @@
       "Get more servers": [
         "Αποκτήστε περισσότερους διακομιστές"
       ],
+      "Get Pass Family": [
+        "Αποκτήστε το Pass Family"
+      ],
+      "Get Pass Plus": [
+        "Αποκτήστε το Pass Plus"
+      ],
       "Get started": [
         "Ας ξεκινήσουμε"
       ],
@@ -783,6 +794,12 @@
       ],
       "Get the deal": [
         "Αποκτήστε την προσφορά"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "Αποκτήστε την προέκταση για ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Αποκτήστε την πλήρη σουίτα"
       ],
       "Get the writing assistant": [
         "Λάβετε τον βοηθό γραφής"
@@ -1003,6 +1020,9 @@
       "No": [
         "Όχι"
       ],
+      "No thanks": [
+        "Όχι ευχαριστώ"
+      ],
       "No, thanks": [
         "Όχι, ευχαριστώ"
       ],
@@ -1017,6 +1037,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Ανοίξτε τις ρυθμίσεις του ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Ανοίξτε το ${ PASS_APP_NAME } στο πρόγραμμα περιήγησής σας"
       ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
@@ -1041,6 +1064,9 @@
       ],
       "Pay ${ price } now": [
         "Πληρωμή ${ price } τώρα"
+      ],
+      "Pay once": [
+        "Πληρώστε μία φορά"
       ],
       "Preview": [
         "Προεπισκόπηση"
@@ -1422,6 +1448,9 @@
       ],
       "Start subscription": [
         "Έναρξη συνδρομής"
+      ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Ξεκινήστε να χρησιμοποιείτε το ${ PASS_APP_NAME } τώρα"
       ],
       "Stay": [
         "Παραμονή"
@@ -11997,14 +12026,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
+      "/month x ${ months }": [
+        "/μηνα x ${ months }"
+      ],
       "1 hour": [
         "1 ώρα"
       ],
       "1 minute": [
         "1 λεπτό"
       ],
+      "10 hide-my-email aliases": [
+        "10 hide-my-email ψευδώνυμα"
+      ],
       "10 minutes": [
         "10 λεπτά"
+      ],
+      "10 VPN devices": [
+        "10 συσκευές VPN"
+      ],
+      "15 extra email addresses": [
+        "15 επιπλέον ηλεκτρονικές διευθύνσεις"
       ],
       "15 minutes": [
         "15 λεπτά"
@@ -12020,6 +12061,12 @@
       ],
       "5 minutes": [
         "5 λεπτά"
+      ],
+      "500 GB Storage": [
+        "500 GB Αποθηκευτικού Χώρου"
+      ],
+      "6 Pass Plus accounts": [
+        "6 Pass Plus λογαριασμοί"
       ],
       "Account holder": [
         "Δικαιούχος λογαριασμού"
@@ -12050,6 +12097,9 @@
       ],
       "Addresses": [
         "Διευθύνσεις"
+      ],
+      "Admin panel for your family": [
+        "Πίνακας διαχειριστή για την οικογένειάς σας"
       ],
       "Advanced": [
         "Για προχωρημένους"
@@ -12222,6 +12272,9 @@
       "BTC amount": [
         "Ποσό BTC"
       ],
+      "Built-in 2FA authenticator": [
+        "Ενσωματωμένη εφαρμογή ταυτοποίησης 2FA"
+      ],
       "Calendar": [
         "Ημερολόγιο"
       ],
@@ -12350,6 +12403,9 @@
       ],
       "Create password": [
         "Δημιουργία κωδικού πρόσβασης"
+      ],
+      "Credit cards": [
+        "Πιστωτικές κάρτες"
       ],
       "Credits": [
         "Πιστώσεις"
@@ -12522,6 +12578,9 @@
       "File": [
         "Αρχείο"
       ],
+      "File attachments (up to 10GB)": [
+        "Συνημμένα αρχεία (έως 10 GB)"
+      ],
       "Filter Name": [
         "Όνομα φίλτρου"
       ],
@@ -12537,11 +12596,17 @@
       "Font size": [
         "Μέγεθος γραμματοσειράς"
       ],
+      "for your first month": [
+        "για τον πρώτο μήνα σας"
+      ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
       ],
       "Gateway name": [
         "Όνομα πύλης"
+      ],
+      "Get everything in Free, plus:": [
+        "Αποκτήστε όλα του Free, συν:"
       ],
       "Gift code": [
         "Κωδικός δώρου"
@@ -12560,6 +12625,9 @@
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
+      ],
+      "Highest VPN speed": [
+        "Ύψιστη ταχύτητα VPN"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Καταλαβαίνω ότι θα πρέπει να προσθέσω αυτήν τη διεύθυνση ηλεκτρονικού ταχυδρομείου στον άλλο λογαριασμό αμέσως, για να μη χάσω μόνιμα αυτήν τη διεύθυνση."
@@ -12653,6 +12721,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Επίπεδο φίλτρου φραγής NetShield"
+      ],
+      "Limited time": [
+        "Περιορισμένος χρόνος"
       ],
       "Link label (optional)": [
         "Ετικέτα συνδέσμου (προαιρετικό)"
@@ -12780,6 +12851,9 @@
       "Numbers": [
         "Αριθμοί"
       ],
+      "Online privacy for your whole family": [
+        "Online ιδιωτικότητα για όλη την οικογένειά σας"
+      ],
       "OpenVPN / IKEv2 password": [
         "Κωδικός πρόσβασης OpenVPN / IKEv2"
       ],
@@ -12891,6 +12965,9 @@
       "Read": [
         "Διαβασμένο"
       ],
+      "Recommended": [
+        "Προτεινόμενο"
+      ],
       "Recovery email address": [
         "Email Ανάκτησης"
       ],
@@ -12908,6 +12985,9 @@
       ],
       "Remove image metadata": [
         "Αφαίρεση μετα-δεδομένων εικόνας"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Ανανεώνει σε ${ renewalPrice }, ακυρώστε ανά πάσα στιγμή."
       ],
       "Repeat backup password": [
         "Επανάληψη εφεδρικού κωδικού πρόσβασης"
@@ -12941,6 +13021,9 @@
       ],
       "Second password": [
         "Δεύτερος κωδικός πρόσβασης"
+      ],
+      "Secure password generator": [
+        "Ασφαλής γεννήτρια κωδικών"
       ],
       "Select Linux package format": [
         "Επιλέξτε μορφή πακέτου Linux"
@@ -13012,6 +13095,9 @@
       "Special characters": [
         "Ειδικοί χαρακτήρες"
       ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Ειδική προσφορά: Αποκτήστε το ${ PASS_SHORT_APP_NAME } Plus για ${ offerPrice }"
+      ],
       "Starred": [
         "Με αστέρι"
       ],
@@ -13060,6 +13146,9 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Το καλύτερο της ${ BRAND_NAME } με μία συνδρομή"
+      ],
       "Then": [
         "Τότε"
       ],
@@ -13092,6 +13181,12 @@
       ],
       "Undo send": [
         "Αναίρεση αποστολής"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Απεριόριστα hide-my-email ψευδώνυμα"
+      ],
+      "Unlimited logins and devices": [
+        "Απεριόριστες συνδέσεις και συσκευές"
       ],
       "Upload 1 or more encryption keys": [
         "Ανεβάστε 1 ή περισσότερα κλειδιά κρυπτογράφησης"
@@ -13128,6 +13223,9 @@
       ],
       "Value": [
         "Τιμή"
+      ],
+      "Vault, item & secure link sharing": [
+        "Κρύπτη, στοιχεία και ασφαλή κοινοποίηση συνδέσμων"
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
@@ -15965,6 +16063,11 @@
         "Φόρτωση περιεχομένου μέσω διαμεσολαβητή και αποθήκευση ως συνημμένου"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Οργανισμός"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } για να προσθέσετε περισσότερους χρήστες ή να καταργήσετε ορισμένους λογαριασμούς χρηστών για να ελευθερώσετε χώρο."
@@ -16085,6 +16188,12 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Έναρξη χρήσης του ${ PASS_APP_NAME }"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
       ]
     },
     "pass_lifetime_signup: Info": {
@@ -18668,6 +18777,9 @@
       "30 custom email addresses": [
         "30 προσαρμοσμένες ηλεκτρονικές διευθύνσεις"
       ],
+      "4.8+ rating": [
+        "Βαθμολογία 4,8+"
+      ],
       "Advanced account protection": [
         "Προηγμένη προστασία λογαριασμού"
       ],
@@ -18745,6 +18857,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Λάβετε ${ referralInfo.uiData.refereeRewardAmount } σε πιστώσεις"
+      ],
+      "Get a new encrypted email for free": [
+        "Αποκτήστε δωρεάν μια νέα κρυπτογραφημένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Αποκτήστε μια ασφαλή διεύθυνση ${ MAIL_APP_NAME }, ή ${ internalButton }"
@@ -18852,11 +18967,17 @@
       "Start free trial": [
         "Εκκίνηση δωρεάν δοκιμής"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Αρχίστε να χρησιμοποιείτε το ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Αποθηκευτικός χώρος"
       ],
       "Stream your favorite TV shows and movies": [
         "Μεταδώστε τις αγαπημένες σας τηλεοπτικές σειρές και ταινίες"
+      ],
+      "Swiss-based": [
+        "Με έδρα στην Ελβετία"
       ],
       "Sync files across devices and users": [
         "Συγχρονισμός αρχείων σε όλες τις συσκευές και τους χρήστες"
@@ -18872,6 +18993,9 @@
       ],
       "Total": [
         "Σύνολο"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "Αξιόπιστο από πάνω από 100 εκατομμύρια άτομα και επιχειρήσεις"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Δοκιμάστε ${ BRAND_NAME } για ${ TRIAL_DURATION_DAYS } ημέρες δωρεάν"
@@ -18902,6 +19026,9 @@
       ],
       "Upload files of any size": [
         "Ανεβάστε αρχεία οποιουδήποτε μεγέθους"
+      ],
+      "Use your current email": [
+        "Χρησιμοποιήστε την τρέχουσα ηλεκτρονική σας διεύθυνση"
       ],
       "use your current email.": [
         "χρησιμοποιήστε την τρέχουσα ηλεκτρονική σας διεύθυνση."
@@ -20239,6 +20366,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Δωρεάν για πάντα"
+      ],
+      "Pay once, access forever.": [
+        "Πληρώστε μία φορά, αποκτήστε πρόσβαση για πάντα."
+      ],
+      "per month, billed annually": [
+        "ανά μήνα, χρεώνεται ετησίως"
+      ],
       "View VPN session details for your organization.": [
         "Δείτε τις λεπτομέρειες της περιόδου λειτουργίας VPN για τον οργανισμό σας."
       ]
@@ -21268,6 +21404,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Λήψη εφαρμογών ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Κατεβάστε το ${ PASS_APP_NAME } για τις συσκευές σας"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Λήψη ${ VPN_APP_NAME }"
       ],
@@ -21442,6 +21581,9 @@
       ],
       "Forward emails": [
         "Προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
+      ],
+      "Free": [
+        "Δωρεάν"
       ],
       "Gateway": [
         "Πύλη"
@@ -21666,6 +21808,9 @@
       "No account information was found in any data breaches": [
         "Δεν βρέθηκαν πληροφορίες λογαριασμού σε παραβιάσεις δεδομένων"
       ],
+      "No events": [
+        "Δεν υπάρχουν εκδηλώσεις"
+      ],
       "No need to empty the trash": [
         "Δε χρειάζεται να αδειάσετε τα διαγραμμένα"
       ],
@@ -21716,6 +21861,9 @@
       ],
       "Other sign-in issues": [
         "Άλλα προβλήματα εισόδου"
+      ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus Lifetime για ${ plusLifetimePrice }"
       ],
       "Password": [
         "Κωδικός"
@@ -21878,6 +22026,9 @@
       ],
       "Secure email based in Switzerland": [
         "Ασφαλές email με έδρα την Ελεβετία"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "Προστατέψτε τους κωδικούς πρόσβασής σας. Παντού."
       ],
       "Security and privacy": [
         "Ασφάλεια και απόρρητο"
@@ -22065,6 +22216,9 @@
       ],
       "There are no events for your account": [
         "Δεν υπάρχουν γεγονότα για τον λογαριασμό σας"
+      ],
+      "There are no events yet for your organization.": [
+        "Δεν υπάρχουν ακόμα εκδηλώσεις για τον οργανισμό σας."
       ],
       "There are no groups": [
         "Δεν υπάρχουν ομάδες"
@@ -23117,6 +23271,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Με το ${ planTitlePlusMaybeBrand }, λαμβάνετε ελεύθερη πρόσβαση σε όλες τις υπηρεσίες απορρήτου του ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Πύλες VPN"
       ]
     },
     "VPN info": {

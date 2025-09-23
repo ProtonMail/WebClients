@@ -63,6 +63,11 @@
         "Vaše informácie sa našli v najmenej jednom úniku údajov. Zapnite ${ DARK_WEB_MONITORING_NAME } pre zobrazenie podrobností a prijatie opatrení. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Účty"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
@@ -135,6 +140,9 @@
       ],
       "Add label": [
         "Pridať štítok"
+      ],
+      "Add more seats": [
+        "Pridať viac miest"
       ],
       "Add notification": [
         "Pridať notifikáciu"
@@ -766,6 +774,12 @@
       "Get more servers": [
         "Získať viac serverov"
       ],
+      "Get Pass Family": [
+        "Získajte Pass Family"
+      ],
+      "Get Pass Plus": [
+        "Získajte Pass Plus"
+      ],
       "Get started": [
         "Začíname"
       ],
@@ -780,6 +794,12 @@
       ],
       "Get the deal": [
         "Využiť ponuku"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "Získajte rozšírenie pre ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Získajte kompletný balík"
       ],
       "Get the writing assistant": [
         "Získajte asistenta písania"
@@ -1000,6 +1020,9 @@
       "No": [
         "Nie"
       ],
+      "No thanks": [
+        "Nie, ďakujem."
+      ],
       "No, thanks": [
         "Nie, ďakujem"
       ],
@@ -1014,6 +1037,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Otvoriť nastavenia ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Otvorte ${ PASS_APP_NAME } vo svojom prehliadači"
       ],
       "Open navigation": [
         "Otvoriť menu"
@@ -1038,6 +1064,9 @@
       ],
       "Pay ${ price } now": [
         "Zaplatiť teraz ${ price }"
+      ],
+      "Pay once": [
+        "Zaplaťte raz"
       ],
       "Preview": [
         "Náhľad"
@@ -1417,6 +1446,12 @@
       "Start live chat": [
         "Spustiť živý chat"
       ],
+      "Start subscription": [
+        "Začať predplatné"
+      ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Začnite používať ${ PASS_APP_NAME } teraz"
+      ],
       "Stay": [
         "Zostať"
       ],
@@ -1431,6 +1466,9 @@
       ],
       "Submit": [
         "Potvrdiť"
+      ],
+      "Subscribe now": [
+        "Predplaťte si teraz"
       ],
       "Support": [
         "Podpora"
@@ -1563,6 +1601,9 @@
       ],
       "User": [
         "Používateľ"
+      ],
+      "users and addresses": [
+        "používatelia a adresy"
       ],
       "Verify": [
         "Overiť"
@@ -8693,6 +8734,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožniť používateľom pripojiť sa k zabezpečeným zdieľaným serverom v položke **Krajiny** v aplikácii ${ VPN_APP_NAME }."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie ${ MEET_APP_NAME } do pozvánok v kalendári."
+      ],
       "Already allocated": [
         "Už pridelené"
       ],
@@ -9299,6 +9343,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa koncového bodu získaná od poskytovateľa identity (napr. https://idp.example.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Končí dňa ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Zlepšite bezpečnosť vašej siete"
       ],
@@ -9431,6 +9478,9 @@
       "Free forever": [
         "Navždy zadarmo"
       ],
+      "Free trial": [
+        "Bezplatné skúšobné obdobie"
+      ],
       "free up space by deleting older messages or other data": [
         "uvolniť miesto zmazaním starších správ alebo iných dát"
       ],
@@ -9490,6 +9540,9 @@
       ],
       "Groups": [
         "Skupiny"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Pomáha písať, odpovedať na emaily a opravovať ich. Spravujte jednotlivých používateľov v ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "tu"
@@ -9874,6 +9927,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Spravujte, ku ktorým ${ BRAND_NAME } aplikáciám majú členovia vašej organizácie prístup. Ak je táto možnosť vypnutá, prístup budú mať len správcovia."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Spravujte, ku ktorým funkciám majú členovia vašej organizácie prístup. Ak je táto funkcia vypnutá, prístup budú mať len správcovia."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Spravujte svoje preferencie emailových notifikácií pre ${ DOCS_APP_NAME }."
@@ -12232,14 +12288,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
       ],
+      "/month x ${ months }": [
+        "/mesiac x ${ months }"
+      ],
       "1 hour": [
         "1 hodine"
       ],
       "1 minute": [
         "1 minúte"
       ],
+      "10 hide-my-email aliases": [
+        "10 hide-my-email aliasov"
+      ],
       "10 minutes": [
         "10 minútach"
+      ],
+      "10 VPN devices": [
+        "10 VPN zariadení"
+      ],
+      "15 extra email addresses": [
+        "15 ďalších emailových adries"
       ],
       "15 minutes": [
         "15 minútach"
@@ -12255,6 +12323,12 @@
       ],
       "5 minutes": [
         "5 minútach"
+      ],
+      "500 GB Storage": [
+        "500 GB úložisko"
+      ],
+      "6 Pass Plus accounts": [
+        "6 účtov Pass Plus"
       ],
       "Account holder": [
         "Vlastník účtu"
@@ -12285,6 +12359,9 @@
       ],
       "Addresses": [
         "Adresy"
+      ],
+      "Admin panel for your family": [
+        "Panel správcu pre vašu rodinu"
       ],
       "Advanced": [
         "Pokročilé"
@@ -12457,6 +12534,9 @@
       "BTC amount": [
         "Suma BTC"
       ],
+      "Built-in 2FA authenticator": [
+        "Zabudovaný 2FA autentifikátor"
+      ],
       "Calendar": [
         "Kalendár"
       ],
@@ -12585,6 +12665,9 @@
       ],
       "Create password": [
         "Vytvoriť heslo"
+      ],
+      "Credit cards": [
+        "Platobné karty"
       ],
       "Credits": [
         "Kredity"
@@ -12757,6 +12840,9 @@
       "File": [
         "Súbor"
       ],
+      "File attachments (up to 10GB)": [
+        "Súborové prílohy (až do 10 GB)"
+      ],
       "Filter Name": [
         "Názov filtru"
       ],
@@ -12772,11 +12858,17 @@
       "Font size": [
         "Veľkosť písma"
       ],
+      "for your first month": [
+        "za váš prvý mesiac"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
       "Gateway name": [
         "Názov brány"
+      ],
+      "Get everything in Free, plus:": [
+        "Získajte všetko, čo je vo verzii Free plus:"
       ],
       "Gift code": [
         "Darčekový kód"
@@ -12795,6 +12887,9 @@
       ],
       "Hide password": [
         "Skryť heslo"
+      ],
+      "Highest VPN speed": [
+        "Najvyššia rýchlosť VPN"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Chápem, že túto emailovú adresu budem musieť okamžite pridať do druhého konta, aby nedošlo k trvalej strate tejto adresy."
@@ -12888,6 +12983,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Úroveň pre filtrovanie blokovania NetShield"
+      ],
+      "Limited time": [
+        "Časovo obmedzené"
       ],
       "Link label (optional)": [
         "Štítok odkazu (voliteľné)"
@@ -13015,6 +13113,9 @@
       "Numbers": [
         "Čísla"
       ],
+      "Online privacy for your whole family": [
+        "Online súkromie pre celú vašu rodinu"
+      ],
       "OpenVPN / IKEv2 password": [
         "Heslo OpenVPN / IKEv2"
       ],
@@ -13126,6 +13227,9 @@
       "Read": [
         "Prečítané"
       ],
+      "Recommended": [
+        "Odporúčané"
+      ],
       "Recovery email address": [
         "Emailová adresa pre obnovenie"
       ],
@@ -13143,6 +13247,9 @@
       ],
       "Remove image metadata": [
         "Odstrániť metadáta obrázku"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Obnovuje sa za ${ renewalPrice }, zrušiť môžete kedykoľvek."
       ],
       "Repeat backup password": [
         "Zopakujte záložné heslo"
@@ -13176,6 +13283,9 @@
       ],
       "Second password": [
         "Druhé heslo"
+      ],
+      "Secure password generator": [
+        "Bezpečný generátor hesiel"
       ],
       "Select Linux package format": [
         "Vyberte formát balíka Linux"
@@ -13249,6 +13359,9 @@
       "Special characters": [
         "Špeciálne znaky"
       ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Špeciálna ponuka: Získajte ${ PASS_SHORT_APP_NAME } Plus za ${ offerPrice }"
+      ],
       "Starred": [
         "S hviezdičkou"
       ],
@@ -13297,6 +13410,9 @@
       "System information": [
         "Systémové informácie"
       ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "To najlepšie od ${ BRAND_NAME } s jedným predplatným"
+      ],
       "Then": [
         "Potom"
       ],
@@ -13329,6 +13445,12 @@
       ],
       "Undo send": [
         "Zrušiť odoslanie"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Neobmedzený počet hide-my-email aliasov"
+      ],
+      "Unlimited logins and devices": [
+        "Neobmedzený počet prihlásení a zariadení"
       ],
       "Upload 1 or more encryption keys": [
         "Nahrať 1 alebo viac šifrovacích kľúčov"
@@ -13365,6 +13487,9 @@
       ],
       "Value": [
         "Hodnota"
+      ],
+      "Vault, item & secure link sharing": [
+        "Zdieľanie trezoru, položiek a bezpečného odkazu"
       ],
       "Verification code": [
         "Overovací kód"
@@ -16288,6 +16413,11 @@
         "Načítať obsah cez proxy a uložiť ako prílohy"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organizácia"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } na pridanie ďalších používateľov alebo odstráňte niektorých používateľských účtov, aby ste uvoľnili miesto."
@@ -16414,6 +16544,14 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Začnite používať ${ PASS_APP_NAME }"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
       ]
     },
     "pass_lifetime_signup: Info": {
@@ -17668,6 +17806,32 @@
       ],
       "Save your recovery phrase": [
         "Uložiť vašu obnovovaciu frázu"
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Ak zrušíte pred týmto dátumom**, po skončení skúšobnej doby dôjde k **zníženíu** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Ak si nepredplatíte,** dôjde k **zníženiu** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Ak nezrušíte,** začne platiť celý váš plán a získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Ak si predplatíte pred týmto dátumom,** získate kredit v hodnote **${ referrerRewardAmount }**."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Užite si **${ planTitle }** zadarmo až do **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Zostáva vám **${ daysRemaining } deň** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
+        "Zostávajú vám **${ daysRemaining } dni** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
+        "Zostáva vám **${ daysRemaining } dní** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
+        "Zostáva vám **${ daysRemaining } dní** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**."
+      ],
+      "your subscription": [
+        "vaše predplatné"
       ]
     },
     "Remark about a key type option": {
@@ -19045,6 +19209,9 @@
       "30 custom email addresses": [
         "30 vlastných emailových adries"
       ],
+      "4.8+ rating": [
+        "Hodnotenie 4.8+"
+      ],
       "Advanced account protection": [
         "Pokročilá ochrana účtu"
       ],
@@ -19122,6 +19289,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Získajte ${ referralInfo.uiData.refereeRewardAmount } v kreditoch"
+      ],
+      "Get a new encrypted email for free": [
+        "Získajte nový šifrovaný email zadarmo"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Získajte bezpečnú ${ MAIL_APP_NAME } adresu, alebo ${ internalButton }"
@@ -19231,11 +19401,17 @@
       "Start free trial": [
         "Začať bezplatnú skúšobnú verziu"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Začnite používať ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Úložisko"
       ],
       "Stream your favorite TV shows and movies": [
         "Streamujte svoje obľúbené seriály a filmy"
+      ],
+      "Swiss-based": [
+        "So sídlom vo Švajčiarsku"
       ],
       "Sync files across devices and users": [
         "Synchronizácia súborov medzi zariadeniami a používateľmi"
@@ -19251,6 +19427,9 @@
       ],
       "Total": [
         "Celkom"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "Dôveruje mu vyše 100 miliónov ľudí a firiem."
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Vyskúšajte ${ BRAND_NAME } na ${ TRIAL_DURATION_DAYS } dní zadarmo"
@@ -19281,6 +19460,9 @@
       ],
       "Upload files of any size": [
         "Nahrajte súbory ľubovoľnej veľkosti"
+      ],
+      "Use your current email": [
+        "Používajte svoj aktuálny email"
       ],
       "use your current email.": [
         "používajte svoj aktuálny email."
@@ -20694,6 +20876,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Navždy zadarmo"
+      ],
+      "Pay once, access forever.": [
+        "Zaplaťte raz, prístup navždy."
+      ],
+      "per month, billed annually": [
+        "mesačne, účtované každý rok"
+      ],
       "View VPN session details for your organization.": [
         "Zobraziť podrobnosti o VPN relácii pre vašu organizáciu."
       ]
@@ -21392,6 +21583,9 @@
       "Appearance": [
         "Vzhľad"
       ],
+      "Application access": [
+        "Prístup k aplikácii"
+      ],
       "Apply filter to existing messages": [
         "Použiť filter na existujúce správy"
       ],
@@ -21746,6 +21940,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Stiahnuť aplikácie ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Stiahnuť ${ PASS_APP_NAME } pre vaše zariadenia"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Stiahnuť ${ VPN_APP_NAME }"
       ],
@@ -21881,6 +22078,9 @@
         "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľských účtov.",
         "Nepodarilo sa vytvoriť ${ failedUsers.length } používateľských účtov."
       ],
+      "Feature access": [
+        "Prístup k funkciám"
+      ],
       "Filter for more focus": [
         "Filtre pre lepšie sústredenie"
       ],
@@ -21919,6 +22119,9 @@
       ],
       "Forward emails": [
         "Preposielať emaily"
+      ],
+      "Free": [
+        "Free"
       ],
       "Gateway": [
         "Brána"
@@ -22000,6 +22203,9 @@
       ],
       "How to refer a friend and get credits": [
         "Ako odporučiť priateľom a získať kredity"
+      ],
+      "How your free trial works": [
+        "Ako funguje vaša bezplatná skúšobná verzia"
       ],
       "Human verification": [
         "Overenie, že nie ste robot"
@@ -22142,6 +22348,9 @@
       "No account information was found in any data breaches": [
         "V žiadnom prípade narušenia ochrany údajov sa nenašli žiadne informácie o účte"
       ],
+      "No events": [
+        "Žiadne udalosti"
+      ],
       "No need to empty the trash": [
         "Kôš nie je potrebné vyprázdniť"
       ],
@@ -22192,6 +22401,9 @@
       ],
       "Other sign-in issues": [
         "Iné problémy s prihlásením"
+      ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus Lifetime za ${ plusLifetimePrice }"
       ],
       "Password": [
         "Heslo"
@@ -22354,6 +22566,9 @@
       ],
       "Secure email based in Switzerland": [
         "Bezpečný email so sídlom vo Švajčiarsku"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "Zabezpečte svoje heslá. Všade."
       ],
       "Security and privacy": [
         "Bezpečnosť a súkromie"
@@ -22544,6 +22759,9 @@
       "There are no events for your account": [
         "Na vašom účte nie sú žiadne udalosti"
       ],
+      "There are no events yet for your organization.": [
+        "Pre vašu organizáciu zatiaľ nie sú žiadne udalosti."
+      ],
       "There are no groups": [
         "Nie sú tu žiadne skupiny"
       ],
@@ -22654,6 +22872,9 @@
       ],
       "Video conferencing": [
         "Videokonferencie"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferencie s ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Zobraziť udalosti organizácie prechodom na profesionálny plán"
@@ -23600,6 +23821,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "S plánom ${ planTitlePlusMaybeBrand } získate bezplatný prístup k všetkým službám ochrany súkromia ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN Brány"
       ]
     },
     "VPN info": {

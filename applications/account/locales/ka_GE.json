@@ -63,6 +63,11 @@
         "თქვენი ინფორმაცია, სულ ცოტა, ერთ მონაცემების გაჟონვაშია აღმოჩენილი. ჩართეთ ${ DARK_WEB_MONITORING_NAME } დეტალების სანახავად და ქმედებების განსახორციელებლად. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "ანგარიშები"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-ის მაღაზია"
@@ -135,6 +140,9 @@
       ],
       "Add label": [
         "ჭდის დამატება"
+      ],
+      "Add more seats": [
+        "მეტი ადგილის დამატება"
       ],
       "Add notification": [
         "შეტყობინების დამატება"
@@ -766,6 +774,9 @@
       "Get more servers": [
         "მეტი სერვერის მიღება"
       ],
+      "Get Pass Plus": [
+        "მიიღეთ Pass Plus"
+      ],
       "Get started": [
         "დაიწყეთ"
       ],
@@ -1038,6 +1049,9 @@
       ],
       "Pay ${ price } now": [
         "${ price }-ის გადახდა"
+      ],
+      "Pay once": [
+        "ერთმაგი გადახდა"
       ],
       "Preview": [
         "გადახედვა"
@@ -1417,6 +1431,9 @@
       "Start live chat": [
         "ცოცხალი ჩატის გაშვება"
       ],
+      "Start subscription": [
+        "გამოწერის დაწყება"
+      ],
       "Stay": [
         "დარჩენა"
       ],
@@ -1431,6 +1448,9 @@
       ],
       "Submit": [
         "დამტკიცება"
+      ],
+      "Subscribe now": [
+        "გამოიწერეთ ახლავე"
       ],
       "Support": [
         "მხარდაჭერა"
@@ -1563,6 +1583,9 @@
       ],
       "User": [
         "მომხმარებელი"
+      ],
+      "users and addresses": [
+        "მომხმარებლები და მისამართები"
       ],
       "Verify": [
         "გადამოწმება"
@@ -1889,6 +1912,12 @@
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
       ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "დაზოგეთ ბევრი Drive-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "დაზოგეთ ბევრი ელფოსტის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
+      ],
       "Save big on premium Pass features with a limited-time discount.": [
         "დაზოგეთ ბევრი Pass-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
       ],
@@ -2047,6 +2076,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
+        "\"ცდაზე\" დაწკაპუნების შემთხვევაში თქვენ ეთანხმებით ჩვენს ${ termsAndConditions }."
+      ],
       "During the trial period, you can have up to 10 users.": [
         "გამოსაცდელ პერიოდში შეგიძლიათ, გქონდეთ 10-მდე მომხმარებელი."
       ],
@@ -5301,6 +5333,9 @@
       "${ user } is requesting emergency access to your account": [
         "${ user } ითხოვს სასწრაფო წვდომას თქვენ ანგარიშზე"
       ],
+      "${ user } will be able to use your account and change your data.": [
+        "${ user }-ს ექნება უფლება, გამოიყენოს თქვენი ანგარიში და შეცვალოს თქვენი მონაცემები."
+      ],
       "Access granted": [
         "წვდომა მონიჭებულია"
       ],
@@ -5468,6 +5503,9 @@
       ],
       "Wait time saved": [
         "მოლოდინის დრო შენახულია"
+      ],
+      "We’ll notify **${ user }** that you requested emergency access.": [
+        "ჩვენ გავფრთხილებთ **${ user }**-ს, რომ თქვენ სასწრაფო წვდომა მოითხოვეთ."
       ],
       "You are signed in to the account ${ account }.": [
         "შესული ბრძანდებით ანგარიშში ${ account }."
@@ -8339,6 +8377,9 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "ელფოსტის ფსევდონიმი ელფოსტის მისამართივით მუშაობს, მაგრამ ამცირებს სპამს და თქვენს ნამდვილ ელფოსის მისამართს და იდენტიფიკატორს დამალულად შეინარჩუნებს."
       ],
+      "An error occurred while communicating with **${ applicationName }**": [
+        "შეცდომა **${ applicationName }**-სთან ურთიერთობისას"
+      ],
       "An error occurred while communicating with the extension": [
         "შეცდომა გაფართოებასთან ურთიერთობისას"
       ],
@@ -8902,6 +8943,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "ბოლოწერტილის ბმული, რომელიც თქვენი იდენტიფიკატორის მომწოდებლისგან მივიღეთ (მაგ: https://idp.example.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "დასრულების თარიღია ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "გააფართოვეთ თქვენი ქსელის უსაფრთხოება"
       ],
@@ -9027,6 +9071,9 @@
       ],
       "Free forever": [
         "სამუდამოდ უფასო"
+      ],
+      "Free trial": [
+        "უფასო საცდელი პერიოდი"
       ],
       "free up space by deleting older messages or other data": [
         "გაათავისუფლეთ ადგილი ძველი შეტყობინებებისა და სხვა მონაცემების წაშლით"
@@ -10151,6 +10198,9 @@
       "Thank you": [
         "მადლობა"
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "მადლობა, რომ აირჩიეთ ${ BRAND_NAME } თქვენი ორგანიზაციის დასაცავად."
+      ],
       "Thank you for choosing ${ BRAND_NAME }.": [
         "მადლობა ${ BRAND_NAME }-ის არჩევისთვის."
       ],
@@ -10972,6 +11022,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "თქვენ არ გადაიხდით, თუ გააუქმებთ თარიღამდე ${ trialEndsOnFormatted }."
       ],
       "You won’t be able to reassign these servers to another country for 10 days.": [
         "ამ სერვერებს სხვა ქვეყანას შემდეგ 10 დღე ვერ მიანიჭებთ."
@@ -12019,6 +12072,9 @@
       "Create password": [
         "პაროლის შექმნა"
       ],
+      "Credit cards": [
+        "საკრედიტო ბარათები"
+      ],
       "Credits": [
         "კრედიტები"
       ],
@@ -12318,6 +12374,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Netshield blocker-ის ფილტრის დონე"
+      ],
+      "Limited time": [
+        "შეზღუდული დრო"
       ],
       "Link label (optional)": [
         "ბმულის ჭდე (არასავალდებულო)"
@@ -12724,6 +12783,9 @@
       ],
       "System information": [
         "სისტემის ინფორმაცია"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "${ BRAND_NAME }-ის საუკეთესო ფუნქციები ერთი გამოწერით"
       ],
       "Then": [
         "მაშინ"
@@ -14966,6 +15028,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } შეიქმნა"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "${ MEET_APP_NAME }-ის ვიდეოკონფერენციის პარამეტრები განახლდა"
+      ],
       "${ reason } has been disabled": [
         "${ reason } გაითიშა"
       ],
@@ -15190,6 +15255,9 @@
       "This offer won't be shown again.": [
         "ამ შემოთავაზებას აღარ გაჩვენებთ."
       ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "ასწიეთ თქვენი საცავი, მხოლოდ, ${ pricingTitle }-ით ${ planName }-ისთან ერთად"
+      ],
       "When you switch from a monthly to annual subscription.": [
         "როცა თვიურიდან წლიურ გამოწერაზე გადახვალთ."
       ],
@@ -15295,6 +15363,9 @@
       ],
       "Your free trial has started": [
         "თქვენი გამოსაცდელი პერიოდი დაიწყო"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "თქვენი სრული ${ planTitle } გამოწერის დაწყების თარიღია ${ boldEndDate }."
       ]
     },
     "Option": {
@@ -15589,6 +15660,11 @@
       ],
       "Load content via proxy and store as attachments": [
         "შემცველობის პროქსის გავლით ჩამოტვირთვა და მიმაგრების სახით შენახვა"
+      ]
+    },
+    "Organization": {
+      "Organization": [
+        "ორგანიზაცია"
       ]
     },
     "Organization capacity error": {
@@ -16902,6 +16978,14 @@
         "შეინახეთ თქვენი აღდგენის ფრაზა"
       ]
     },
+    "Referral": {
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "ისიამოვნეთ **${ planTitle }**-ით **${ textDate }**-მდე"
+      ],
+      "your subscription": [
+        "თქვენი გამოწერა"
+      ]
+    },
     "Remark about a key type option": {
       "Classic": [
         "კლასიკური"
@@ -17191,6 +17275,9 @@
       "Add a recovery phone number": [
         "აღდგენის ტელეფონის ნომრის დამატება"
       ],
+      "Add an alternative email address": [
+        "ალტერნატიული ელფოსტის მისამართის დამატება"
+      ],
       "Add an email": [
         "ელ-ფოსტის დამატება"
       ],
@@ -17323,6 +17410,9 @@
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "იმისათვის, რომ დავრწმუნდეთ, რომ ტელეფონის ნომერი თქვენია, შეიყვანეთ გადამოწმების კოდი, რომელიც გაგზავნილია მისამართზე ${ boldPhoneNumber }."
       ],
+      "to prevent attackers from taking over your account": [
+        "შემტევებისთვის თქვენი ანგარიშის მოპარვის ასაკრძალად"
+      ],
       "to recover your account and data if you're ever locked out": [
         "ანგარიშის და მონაცემების აღსადგენად, თუ ვერ შედიხართ"
       ],
@@ -17382,6 +17472,9 @@
       ],
       "You have previously downloaded a Recovery Kit. Downloading a new one will **deactivate the old one**.": [
         "აღდგენის ნაკრები უკვე გადმოწერეთ. ახლის გადმოწერა **ძველს გათიშავს**."
+      ],
+      "You have recommended actions to safeguard your account further.": [
+        "გაქვთ რეკომენდებული ქმედებები, რიმ კიდევ უფრო მეტად დაიცვათ თქვენი ანგარიში."
       ],
       "You have recommended actions to safeguard your account.": [
         "გაქვთ რეკომენდებული ქმედებები, რიმ დაიცვათ თქვენი ანგარიში."
@@ -18760,6 +18853,9 @@
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
         "მიიღეთ წვდომა უსწრაფეს VPN სერვერებთან 110+ ქვეყანაში"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "მიიღეთ ერთი სატარიფო გეგმა, რომელიც ყველაფერს შეიცავს. მიიღეთ ${ BRAND_NAME } Unlimited"
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "მიიღეთ შეუზღუდავი ფსევდონიმები, რომ დაიცვათ თავი და შეამციროთ სპამის რაოდენობა"
@@ -20394,6 +20490,9 @@
       "Appearance": [
         "გარეგნობა"
       ],
+      "Application access": [
+        "წვდომა აპლიკაციასთან"
+      ],
       "Apply filter to existing messages": [
         "ფილტრის არსებულ შეტყობინებებზე გადატარება"
       ],
@@ -20877,6 +20976,9 @@
         "${ failedUsers.length } მომხმარებლის შექმნის შეცდომა",
         "${ failedUsers.length } მომხმარებლის შექმნის შეცდომა"
       ],
+      "Feature access": [
+        "წვდომა ფუნქციასთან"
+      ],
       "Filter for more focus": [
         "ფილტრი მეტი კონცენტრაციისთვის"
       ],
@@ -20993,6 +21095,9 @@
       ],
       "How to refer a friend and get credits": [
         "როგორ მოვიწვიოთ მეგობარი და მივიღოთ კრედიტები"
+      ],
+      "How your free trial works": [
+        "როგორ მუშაობს საცდელი ვერსია"
       ],
       "Human verification": [
         "ადამიანის შემოწმება"
@@ -21132,6 +21237,9 @@
       ],
       "No account information was found in any data breaches": [
         "გაჟონვებში ანგარიშის ინფორმაცია აღმოჩენილი არაა"
+      ],
+      "No events": [
+        "მოვლენების გარეშე"
       ],
       "No need to empty the trash": [
         "ნაგვის ყუთის გასუფთავება საჭირო არაა"
@@ -21533,6 +21641,9 @@
       "There are no events for your account": [
         "თქვენს ანგარიშზე მოვლენები არაა"
       ],
+      "There are no events yet for your organization.": [
+        "თქვენი ორგანიზაციისთვის მოვლენები ჯერ არ არსებობს."
+      ],
       "There are no groups": [
         "ჯგუფები არ არსებობს"
       ],
@@ -21583,6 +21694,12 @@
       ],
       "Upgrade your privacy": [
         "გააუმჯობესეთ თქვენი კონფიდენციალობა"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "ასწიეთ თქვენი პროდუქტიულობა ${ formattedPrice }-ისთვის ${ planName }-ით"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "ასწიეთ თქვენი საცავი ${ formattedPrice }-ისთვის ${ planName }-ით"
       ],
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
@@ -21637,6 +21754,9 @@
       ],
       "Video conferencing": [
         "ვიდეოკონფერენცია"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "ვიდეოკონფერენცია ${ MEET_APP_NAME }-ისთან ერთად"
       ],
       "View organization events by upgrading to Professional": [
         "დაათვალიერეთ ორგანიზაციის მოვლენები სატარიფო გეგმის Professional-მდე აწევით"
@@ -22548,6 +22668,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "${ planTitlePlusMaybeBrand }-ით იღებთ უფასო წვდომას ყველა ${ BRAND_NAME }-ის კონფიდენციალობის სერვისტან."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN მარშრუტიზატორები"
       ]
     },
     "VPN info": {

@@ -63,6 +63,11 @@
         "Вашы звесткі былі знойдзены прынамсі ў адной уцечкі даных. Уключыце функцыю ${ DARK_WEB_MONITORING_NAME }, каб паглядзець падрабязнасці і прыняць адпаведныя дзеянні. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Уліковыя запісы"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Крама ${ BRAND_NAME }"
@@ -769,6 +774,12 @@
       "Get more servers": [
         "Атрымаць больш сервераў"
       ],
+      "Get Pass Family": [
+        "Атрымаць Pass Family"
+      ],
+      "Get Pass Plus": [
+        "Атрымаць Pass Plus"
+      ],
       "Get started": [
         "Пачаць працу"
       ],
@@ -783,6 +794,12 @@
       ],
       "Get the deal": [
         "Скарыстацца прапановай"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "Атрымаць пашырэнне для ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Атрымаць поўны пакет"
       ],
       "Get the writing assistant": [
         "Атрымаць памочніка ў напісанні"
@@ -1003,6 +1020,9 @@
       "No": [
         "Не"
       ],
+      "No thanks": [
+        "Не, дзякуй"
+      ],
       "No, thanks": [
         "Не, дзякуй"
       ],
@@ -1017,6 +1037,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Адкрыць налады ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Адкрыць ${ PASS_APP_NAME } у вашым браўзеры"
       ],
       "Open navigation": [
         "Адкрыць панэль навігацыі"
@@ -1041,6 +1064,9 @@
       ],
       "Pay ${ price } now": [
         "Аплаціць ${ price }"
+      ],
+      "Pay once": [
+        "Заплаціць аднаразова"
       ],
       "Preview": [
         "Папярэдні прагляд"
@@ -1422,6 +1448,9 @@
       ],
       "Start subscription": [
         "Пачаць падпіску"
+      ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Пачаць выкарыстоўваць ${ PASS_APP_NAME }"
       ],
       "Stay": [
         "Застацца"
@@ -12259,14 +12288,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
+      "/month x ${ months }": [
+        "/месяц x ${ months }"
+      ],
       "1 hour": [
         "1 гадзіна"
       ],
       "1 minute": [
         "1 хвіліна"
       ],
+      "10 hide-my-email aliases": [
+        "10 псеўданімаў hide-my-email"
+      ],
       "10 minutes": [
         "10 хвілін"
+      ],
+      "10 VPN devices": [
+        "10 прылад VPN"
+      ],
+      "15 extra email addresses": [
+        "15 дадатковых адрасоў электроннай пошты"
       ],
       "15 minutes": [
         "15 хвілін"
@@ -12282,6 +12323,12 @@
       ],
       "5 minutes": [
         "5 хвілін"
+      ],
+      "500 GB Storage": [
+        "500 ГБ сховішча"
+      ],
+      "6 Pass Plus accounts": [
+        "6 уліковых запісаў Pass Plus"
       ],
       "Account holder": [
         "Трымальнік уліковага запісу"
@@ -12312,6 +12359,9 @@
       ],
       "Addresses": [
         "Адрасы"
+      ],
+      "Admin panel for your family": [
+        "Панэль адміністратара для вашай сям'і"
       ],
       "Advanced": [
         "Дадаткова"
@@ -12484,6 +12534,9 @@
       "BTC amount": [
         "Сума BTC"
       ],
+      "Built-in 2FA authenticator": [
+        "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
       "Calendar": [
         "Каляндар"
       ],
@@ -12612,6 +12665,9 @@
       ],
       "Create password": [
         "Стварыць пароль"
+      ],
+      "Credit cards": [
+        "Крэдытныя карткі"
       ],
       "Credits": [
         "Крэдыты"
@@ -12784,6 +12840,9 @@
       "File": [
         "Файл"
       ],
+      "File attachments (up to 10GB)": [
+        "Далучаныя файлы (да 10 ГБ)"
+      ],
       "Filter Name": [
         "Назва фільтра"
       ],
@@ -12799,11 +12858,17 @@
       "Font size": [
         "Памер шрыфту"
       ],
+      "for your first month": [
+        "за ваш першы месяц"
+      ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
       ],
       "Gateway name": [
         "Назва шлюза"
+      ],
+      "Get everything in Free, plus:": [
+        "Атрымайце ўсё ў бясплатнай версіі, а таксама:"
       ],
       "Gift code": [
         "Падарункавы код"
@@ -12822,6 +12887,9 @@
       ],
       "Hide password": [
         "Схаваць пароль"
+      ],
+      "Highest VPN speed": [
+        "Найвышэйшая хуткасць VPN"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Я разумею, што мне неабходна будзе неадкладна дадаць гэты адрас электроннай пошты ў іншы ўліковы запіс, каб пазбегнуць незваротнай страты гэтага адраса."
@@ -12915,6 +12983,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Узровень фільтрацыі блакіроўшчыка NetShield"
+      ],
+      "Limited time": [
+        "Абмежаваны час"
       ],
       "Link label (optional)": [
         "Метка спасылкі (неабавязкова)"
@@ -13042,6 +13113,9 @@
       "Numbers": [
         "Лічбы"
       ],
+      "Online privacy for your whole family": [
+        "Прыватнасць у інтэрнэце для ўсёй вашай сям'і"
+      ],
       "OpenVPN / IKEv2 password": [
         "Пароль OpenVPN / IKEv2"
       ],
@@ -13153,6 +13227,9 @@
       "Read": [
         "Прачытаныя"
       ],
+      "Recommended": [
+        "Рэкамендуем"
+      ],
       "Recovery email address": [
         "Адрас электроннай пошты для аднаўлення доступу"
       ],
@@ -13170,6 +13247,9 @@
       ],
       "Remove image metadata": [
         "Выдаліць метаданыя відарыса"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Падаўжаецца за ${ renewalPrice }. Скасаваць можна ў любы час."
       ],
       "Repeat backup password": [
         "Паўтарыце рэзервовы пароль"
@@ -13203,6 +13283,9 @@
       ],
       "Second password": [
         "Другі пароль"
+      ],
+      "Secure password generator": [
+        "Надзейны генератар пароля"
       ],
       "Select Linux package format": [
         "Выберыце фармат пакета Linux"
@@ -13276,6 +13359,9 @@
       "Special characters": [
         "Спецыяльныя сімвалы"
       ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Спецыяльная прапанова: атрымайце ${ PASS_SHORT_APP_NAME } Plus за ${ offerPrice }"
+      ],
       "Starred": [
         "З зорачкай"
       ],
@@ -13324,6 +13410,9 @@
       "System information": [
         "Сістэмная інфармацыя"
       ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Лепшае ад ${ BRAND_NAME } з адной падпіскай"
+      ],
       "Then": [
         "Потым"
       ],
@@ -13356,6 +13445,12 @@
       ],
       "Undo send": [
         "Адрабіць адпраўку"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў hide-my-email"
+      ],
+      "Unlimited logins and devices": [
+        "Неабмежаваная колькасць запісаў уваходу і прылад"
       ],
       "Upload 1 or more encryption keys": [
         "Запампаваць 1 або больш ключоў шыфравання"
@@ -13392,6 +13487,9 @@
       ],
       "Value": [
         "Значэнне"
+      ],
+      "Vault, item & secure link sharing": [
+        "Абагульванне сховішча, элемента і бяспечнай спасылкі"
       ],
       "Verification code": [
         "Код спраўджання"
@@ -16315,6 +16413,11 @@
         "Загружаць змесціва праз проксі і захоўваць як далучэнні"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Арганізацыя"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink }, каб дадаць больш карыстальнікаў. Вы таксама можаце выдаліць некаторыя ўліковыя запісы карыстальнікаў, каб вызваліць месца."
@@ -16441,6 +16544,14 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Пачаць выкарыстоўваць ${ PASS_APP_NAME }"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
       ]
     },
     "pass_lifetime_signup: Info": {
@@ -19098,6 +19209,9 @@
       "30 custom email addresses": [
         "30 карыстальніцкіх адрасоў электроннай пошты"
       ],
+      "4.8+ rating": [
+        "Рэйтынг 4,8+"
+      ],
       "Advanced account protection": [
         "Пашыраная абарона ўліковага запісу"
       ],
@@ -19175,6 +19289,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Атрымайце ${ referralInfo.uiData.refereeRewardAmount } у крэдытах"
+      ],
+      "Get a new encrypted email for free": [
+        "Атрымаць новую зашыфраваную электронную пошту бясплатна"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Атрымайце бяспечны адрас ${ MAIL_APP_NAME } або ${ internalButton }"
@@ -19284,11 +19401,17 @@
       "Start free trial": [
         "Пачаць бясплатны пробны перыяд"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Пачаць выкарыстоўваць ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Сховішча"
       ],
       "Stream your favorite TV shows and movies": [
         "Глядзіце свае абраныя тэлеперадачы і фільмы"
+      ],
+      "Swiss-based": [
+        "Знаходзімся ў Швейцарыі"
       ],
       "Sync files across devices and users": [
         "Сінхранізаваць файлы паміж прыладамі і карыстальнікамі"
@@ -19304,6 +19427,9 @@
       ],
       "Total": [
         "Агулам"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "Нам давяраюць больш за 100 мільёнаў чалавек і разнастайныя кампаніі"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Паспрабуйце ${ BRAND_NAME } бясплатна на працягу ${ TRIAL_DURATION_DAYS } дзён"
@@ -19334,6 +19460,9 @@
       ],
       "Upload files of any size": [
         "Запамоўванне файлаў любога памеру"
+      ],
+      "Use your current email": [
+        "Скарыстайцеся сваёй бягучай электроннай поштай"
       ],
       "use your current email.": [
         "скарыстайцеся сваёй бягучай электроннай поштай."
@@ -20747,6 +20876,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Бясплатна назаўсёды"
+      ],
+      "Pay once, access forever.": [
+        "Аплаціце адзін раз і атрымайце пажыццёвы доступ."
+      ],
+      "per month, billed annually": [
+        "у месяц (аплачваецца адзін раз у год)"
+      ],
       "View VPN session details for your organization.": [
         "Паглядзець падрабязнасці сеанса VPN для вашай арганізацыі."
       ]
@@ -21802,6 +21940,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Спампаваць ${ PASS_APP_NAME } для вашых прылад"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Спампаваць ${ VPN_APP_NAME }"
       ],
@@ -21978,6 +22119,9 @@
       ],
       "Forward emails": [
         "Перасылка лістоў"
+      ],
+      "Free": [
+        "Бясплатна"
       ],
       "Gateway": [
         "Шлюз"
@@ -22204,6 +22348,9 @@
       "No account information was found in any data breaches": [
         "Звесткі пра ўліковы запіс не былі знойдзены ў выніку ўцечкі даных"
       ],
+      "No events": [
+        "Няма падзей"
+      ],
       "No need to empty the trash": [
         "Няма неабходнасці ачышчаць сметніцу"
       ],
@@ -22254,6 +22401,9 @@
       ],
       "Other sign-in issues": [
         "Іншыя праблемы ўваходу"
+      ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Пажыццёвы доступ да Pass Plus за ${ plusLifetimePrice }"
       ],
       "Password": [
         "Пароль"
@@ -22416,6 +22566,9 @@
       ],
       "Secure email based in Switzerland": [
         "Бяспечная пошта, якая знаходзіцца ў Швейцарыі"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "Абараняйце свае паролі. У любым месцы."
       ],
       "Security and privacy": [
         "Бяспека і прыватнасць"
@@ -22605,6 +22758,9 @@
       ],
       "There are no events for your account": [
         "Няма падзей для вашага ўліковага запісу"
+      ],
+      "There are no events yet for your organization.": [
+        "Падзеі для вашай арганізацыі пакуль адсутнічаюць."
       ],
       "There are no groups": [
         "Няма ніводнай групы"
@@ -23665,6 +23821,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Вы атрымаеце бясплатны доступ да ўсіх прыватных сэрвісаў ${ BRAND_NAME } з ${ planTitlePlusMaybeBrand }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Шлюзы VPN"
       ]
     },
     "VPN info": {
