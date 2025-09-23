@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -156,6 +156,8 @@ const ConversationComponent = ({
         buttonRef: HTMLElement | null;
     }>({ messageId: null, show: false, buttonRef: null });
 
+    const composerContainerRef = useRef<HTMLDivElement>(null);
+
     const conversationId = conversation?.id;
     const isGeneratingWithToolCall = isGenerating
         ? !!tryParseToolCall(messageChain[messageChain.length - 1]?.toolCall ?? '')
@@ -260,6 +262,7 @@ const ConversationComponent = ({
                         handleOpenSources={handleOpenSources}
                         handleOpenFiles={handleOpenFiles}
                         onRetryPanelToggle={handleRetryPanelToggle}
+                        composerContainerRef={composerContainerRef}
                     />
                     {/* TODO: update to show all conversations errors at some point */}
                     {conversationErrors.length > 0 && (
@@ -267,6 +270,7 @@ const ConversationComponent = ({
                     )}
                     {tierErrors.length > 0 && <UpsellCard error={tierErrors[0]} />}
                     <div
+                        ref={composerContainerRef}
                         className="lumo-chat-item flex flex-column w-full md:w-2/3 mx-auto max-w-custom no-print"
                         style={{
                             '--max-w-custom': '51.25rem',
