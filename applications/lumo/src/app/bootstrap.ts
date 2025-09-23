@@ -23,6 +23,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
+import initLogicalProperties from '@proton/shared/lib/logical/logical';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import noop from '@proton/utils/noop';
 
@@ -61,6 +62,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     initializeConsoleOverride();
     const appName = config.APP_NAME;
 
+    initLogicalProperties();
     initSafariFontFixClassnames();
 
     const run = async () => {

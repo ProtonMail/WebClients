@@ -52,7 +52,7 @@ const SidebarItem = ({ icon, label, onClick, showText, className }: SidebarItemP
     <Tooltip title={label} originalPlacement="right">
         <button className={clsx('sidebar-item', className)} onClick={onClick} aria-label={label}>
             <div className="sidebar-item-icon">
-                <Icon name={icon as any} size={4} />
+                <Icon name={icon as any} size={4} className="rtl:mirror" />
             </div>
             <span className={clsx('sidebar-item-text', !showText && 'hidden')}>{label}</span>
         </button>
