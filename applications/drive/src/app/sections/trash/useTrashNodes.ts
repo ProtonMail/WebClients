@@ -8,7 +8,8 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { type SortField, useSortingWithDefault } from '../../hooks/util/useSorting';
-import { useDefaultShare, useDriveEventManager } from '../../store';
+import { useStableDefaultShare } from '../../hooks/util/useStableDefaultShare';
+import { useDriveEventManager } from '../../store';
 import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import { useLegacyTrashNodes } from './useLegacyTrashNodes';
@@ -29,7 +30,7 @@ export const useTrashNodes = () => {
     const { handleError } = useSdkErrorHandler();
     const { drive } = useDrive();
     const events = useDriveEventManager();
-    const { getDefaultShare } = useDefaultShare();
+    const { getDefaultShare } = useStableDefaultShare();
     const { createTrashRestoreNotification, createTrashDeleteNotification, createEmptyTrashNotificationSuccess } =
         useTrashNotifications();
     const { items: legacyNodes, isLoading: isLegacyLoading } = useLegacyTrashNodes();
@@ -63,9 +64,7 @@ export const useTrashNodes = () => {
             }
             setLoading(false);
         },
-        // getDefaultShare will cause infinite rerenders
-
-        [drive, handleError, setLoading, setNodes]
+        [getDefaultShare, drive, handleError, setLoading, setNodes]
     );
 
     /**

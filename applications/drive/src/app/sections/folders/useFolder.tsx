@@ -25,25 +25,28 @@ export function useFolder() {
     const { navigateToRoot } = useDriveNavigation();
     const { createNotification } = useNotifications();
 
-    const handleFolderError = useCallback((error?: Error) => {
-        if (!error) {
-            return;
-        }
-        const { setError } = useFolderStore.getState();
+    const handleFolderError = useCallback(
+        (error?: Error) => {
+            if (!error) {
+                return;
+            }
+            const { setError } = useFolderStore.getState();
 
-        const errorMessage = error
-            ? ('message' in error ? error.message : error) || 'Unknown node error'
-            : 'Unknown node error';
+            const errorMessage = error
+                ? ('message' in error ? error.message : error) || 'Unknown node error'
+                : 'Unknown node error';
 
-        const enrichedError = new EnrichedError(errorMessage, {
-            tags: { component: 'drive-sdk' },
-            extra: { originalError: error },
-        });
+            const enrichedError = new EnrichedError(errorMessage, {
+                tags: { component: 'drive-sdk' },
+                extra: { originalError: error },
+            });
 
-        handleError(error);
-        setError(enrichedError);
-        navigateToRoot();
-    }, []);
+            handleError(error);
+            setError(enrichedError);
+            navigateToRoot();
+        },
+        [handleError, navigateToRoot]
+    );
 
     const load = useCallback(
         async (folderNodeUid: string, folderShareId: string, ac: AbortController) => {

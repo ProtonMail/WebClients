@@ -67,7 +67,7 @@ const FileBrowser = <T extends FileBrowserBaseItem, T1>({
 
     const handleScrollEnd = useCallback(() => {
         onScrollEnd?.();
-    }, [onScrollEnd, layout]);
+    }, [onScrollEnd]);
 
     // On content change, check scroll end (does not rebind listeners).
     useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [items, layout]);
