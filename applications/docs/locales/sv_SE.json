@@ -1131,6 +1131,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -4243,6 +4246,9 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kräver en ${ BRAND_NAME }-adress för säker synkronisering och kryptering av händelse. ${ claimAddressButton }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -8110,6 +8116,9 @@
       ],
       "Advanced threat protection": [
         "Avancerat hotskydd"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samarbeta med icke ${ BRAND_NAME }-användare"
       ],
       "Custom email domain": [
         "Anpassad e-postdomän"
