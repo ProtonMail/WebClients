@@ -7,7 +7,7 @@ import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 const GuestDisclaimer = () => {
     return (
-        <p className="text-sm color-weak m-0 text-center px-3 py-2">
+        <p className="lumo-guest-disclaimer text-sm color-weak m-0 text-center px-3 py-2">
             {c('collider_2025: Legal disclaimer').t`By using ${LUMO_SHORT_APP_NAME}, you agree to our`}{' '}
             <InlineLinkButton
                 className="text-sm color-weak text-underline"

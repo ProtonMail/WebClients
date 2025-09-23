@@ -12,16 +12,16 @@ export const LUMO_THEME_ID = 'lumo-theme';
 
 export { ThemeTypes };
 
-type ThemeConfig = { className: string; styles: string };
+type ThemeConfig = { styles: string };
 
 const getThemeConfig = (theme: ThemeTypes): ThemeConfig => {
     switch (theme) {
         case ThemeTypes.LumoLight:
-            return { className: 'lumo-light', styles: lumoLightTheme.toString() };
+            return { styles: lumoLightTheme.toString() };
         case ThemeTypes.LumoDark:
-            return { className: 'lumo-dark', styles: lumoDarkTheme.toString() };
+            return { styles: lumoDarkTheme.toString() };
         default:
-            return { className: 'lumo-light', styles: lumoLightTheme.toString() };
+            return { styles: lumoLightTheme.toString() };
     }
 };
 
@@ -167,14 +167,6 @@ export const LumoThemeProvider: FC<PropsWithChildren> = ({ children }) => {
         mediaQuery.addEventListener?.('change', listener);
         return () => mediaQuery.removeEventListener?.('change', listener);
     }, []);
-
-    // Apply theme styles and classes
-    useLayoutEffect(() => {
-        if (!isLumoDarkModeEnabled) return;
-
-        document.body.classList.add(config.className);
-        return () => document.body.classList.remove(config.className);
-    }, [config.className, isLumoDarkModeEnabled]);
 
     return (
         <LumoThemeContext.Provider value={{ theme, setTheme, setAutoTheme, isDarkLumoTheme, isAutoMode }}>

@@ -125,6 +125,10 @@
 	will-change: transform;
 	backface-visibility: hidden;
 	transform: translateZ(0);
+
+	.lumo-guest-disclaimer {
+		background-color: var(--background-weak);
+	}
 }
 
 // Sidebar backdrop - base properties (mobile enhancements in LumoSidebar.scss)
