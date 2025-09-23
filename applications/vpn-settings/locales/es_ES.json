@@ -32,6 +32,11 @@
         "Tu información fue encontrada en al menos una filtración de datos. Activa ${ DARK_WEB_MONITORING_NAME } para ver los detalles y tomar acciones. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Cuentas"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Tienda ${ BRAND_NAME }"
@@ -10429,6 +10434,11 @@
         "Combinar con el calendario"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organización"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } para añadir más usuarios, o elimina algunas cuentas de usuario para liberar espacio."
@@ -14199,6 +14209,9 @@
       "Night theme": [
         "Tema de noche"
       ],
+      "No events": [
+        "No hay eventos"
+      ],
       "No recovery method": [
         "No hay ningún método de recuperación."
       ],
@@ -14427,6 +14440,9 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "There are no events yet for your organization.": [
+        "Aún no hay eventos para tu organización."
       ],
       "There are no groups": [
         "No hay grupos."
@@ -15128,6 +15144,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Con ${ planTitlePlusMaybeBrand } obtienes acceso gratuito a todos los servicios de privacidad de ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Puertas de enlace VPN"
       ]
     },
     "VPN info": {

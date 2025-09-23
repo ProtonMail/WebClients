@@ -32,6 +32,11 @@
         "Deine Informationen wurden bei mindestens einem Datenleck gefunden. Schalte ${ DARK_WEB_MONITORING_NAME } ein, um Details anzuzeigen und Maßnahmen zu ergreifen. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Konten"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-Shop"
@@ -10432,6 +10437,11 @@
         "Mit Kalender zusammenführen"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organisation"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink }, um weitere Benutzer hinzuzufügen, oder entferne einige Benutzerkonten, um Speicherplatz freizugeben."
@@ -14195,6 +14205,9 @@
       "Night theme": [
         "Dunkles Design"
       ],
+      "No events": [
+        "Keine Ereignisse"
+      ],
       "No recovery method": [
         "Keine Wiederherstellungsmethode"
       ],
@@ -14423,6 +14436,9 @@
       ],
       "Text": [
         "Text"
+      ],
+      "There are no events yet for your organization.": [
+        "Es gibt noch keine Ereignisse für deine Organisation."
       ],
       "There are no groups": [
         "Keine Gruppen vorhanden"
@@ -15124,6 +15140,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Mit ${ planTitlePlusMaybeBrand } erhältst du kostenlosen Zugang zu allen Privatsphäre-Dienste von ${ BRAND_NAME }"
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN-Gateways"
       ]
     },
     "VPN info": {

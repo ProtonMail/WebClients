@@ -885,6 +885,9 @@
       "Start live chat": [
         "Mulai sesi live chat"
       ],
+      "Start subscription": [
+        "Mulai langganan"
+      ],
       "Stay": [
         "Tinggal"
       ],
@@ -893,6 +896,9 @@
       ],
       "Submit": [
         "Kirim"
+      ],
+      "Subscribe now": [
+        "Langgan sekarang"
       ],
       "Support": [
         "Dukung"
@@ -1378,6 +1384,9 @@
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
         "Pada saat Anda membatalkan, uji coba gratis Anda tidak akan dialihkan menjadi langganan berbayar, namun Anda masih akan tetap dapat menikmati berbagai keutamaan paket berbayar hingga akhir masa uji coba Anda. Setelahnya, Anda akan diturunkan ke paket ${ BRAND_NAME } Free."
+      ],
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "Anda dapat memiliki hingga ${ TRIAL_MAX_SCRIBE_SEATS } kuota Scribe selama masa uji coba."
       ]
     },
     "b2b_trials_2025_Label": {
@@ -5465,6 +5474,9 @@
       "Account successfully updated": [
         "Akun berhasil diperbarui"
       ],
+      "Accounts": [
+        "Akun"
+      ],
       "active": [
         "aktif"
       ],
@@ -5912,6 +5924,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL endpoint yang diperoleh dari penyedia identitas Anda (mis. https://idp.contoh.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Berakhir pada ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Tingkatkan keamanan jaringan Anda"
       ],
@@ -5995,6 +6010,9 @@
       ],
       "Free forever": [
         "Gratis untuk selamanya"
+      ],
+      "Free trial": [
+        "Uji coba gratis"
       ],
       "Gain visibility across your organization": [
         "Buat organisasi Anda lebih terlihat"
@@ -6593,6 +6611,9 @@
       "Scan QR code instead": [
         "Pindai kode QR"
       ],
+      "Scan this code with your authenticator app to set up your account. ${ switchButton }.": [
+        "Pindai kode ini dengan aplikasi autentikator Anda untuk mengatur akun Anda. ${ switchButton }"
+      ],
       "SCIM integration disabled": [
         "Integrasi SCIM dinonaktifkan"
       ],
@@ -6667,6 +6688,9 @@
       ],
       "Shared vault updated": [
         "Brankas terbagi diperbarui"
+      ],
+      "Sign in only": [
+        "Hanya masuk"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Masuk ke ${ MAIL_APP_NAME } untuk mengaktifkan alamat Anda"
@@ -11063,6 +11087,29 @@
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
     },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Apabila Anda membatalkan sebelum tanggal ini,** paket Anda akan **diturunkan** ke ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } pada saat masa uji coba berakhir."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Apabila Anda tidak berlangganan,** paket Anda akan **diturunkan** ke ${ BRAND_NAME }${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Apabila Anda tidak membatalkan langganan,** paket penuh Anda akan dimulai dan Anda akan memeroleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Apabila Anda berlangganan sebelum tanggal ini,** Anda akan memperoleh saldo senilai **${ referrerRewardAmount }**."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Nikmati **${ planTitle }** secara cuma-cuma hingga **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Anda memiliki **${ daysRemaining } hari tersisa** untuk menjelajahi seluruh fitur canggih yang dimiliki oleh **${ planTitle }**."
+      ],
+      "your subscription": [
+        "langganan Anda"
+      ]
+    },
     "Remove organization logo": {
       "Users will no longer see your custom logo or organization name.": [
         "Para pengguna Anda tidak lagi akan melihat logo atau nama organisasi khusus yang Anda tetapkan."
@@ -11105,7 +11152,7 @@
         "Hapus"
       ],
       "Delete rule": [
-        "Hapus aturan"
+        "Hapus peraturan"
       ],
       "Delete this scope": [
         "Hapus cakupan ini"
@@ -11254,7 +11301,7 @@
         "Masa penyimpanan"
       ],
       "Retention Rule": [
-        "Pengaturan Penyimpanan Data"
+        "Peraturan Penyimpanan Data"
       ]
     },
     "retention_policy_2025_TableRow": {
@@ -13707,6 +13754,9 @@
       "How to choose a good logo": [
         "Cara memilih logo yang baik"
       ],
+      "How your free trial works": [
+        "Bagaimana masa uji coba gratis Anda bekerja"
+      ],
       "Human verification": [
         "Verifikasi manusia"
       ],
@@ -14275,6 +14325,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Hal ini dapat disebabkan oleh pengaturan ulang kata sandi atau pengguna yang belum masuk."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Alamat email ini hanya dapat digunakan untuk masuk ke akun ${ BRAND_NAME } Anda."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Alamat email ini akan ditampilkan kepada seluruh anggota organisasi pada saat melangsungkan tindakan manajemen akun."
