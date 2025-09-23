@@ -418,6 +418,9 @@
       "Next month": [
         "Mes siguiente"
       ],
+      "No": [
+        "No"
+      ],
       "No expired links": [
         "No hay enlaces expirados."
       ],
@@ -693,6 +696,9 @@
       "Write us on X/Twitter": [
         "Escríbenos en X/Twitter"
       ],
+      "Yes": [
+        "Sí"
+      ],
       "Your password manager is not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
       ]
@@ -713,6 +719,14 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "No volver a preguntar"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "¿Quieres que tu portapapeles se borre automáticamente después de ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1534,6 +1548,9 @@
       "Copied to clipboard": [
         "Copiada al portapapeles"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Copiado al portapapeles (expira en ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Se ha aplicado el cupón."
       ],
@@ -2046,8 +2063,14 @@
       "Please follow the steps below to set up your domain.": [
         "Sigue los pasos a continuación para configurar tu dominio."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Mantén ${ PASS_APP_NAME } abierto para que el portapapeles se pueda borrar automáticamente."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mantén esta ventana abierta mientras tus datos son importados. Este proceso puede tomar unos minutos."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Mantén tu navegador abierto para que el portapapeles se pueda borrar automáticamente."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Una vez eliminado, el alias no puede ser restaurado. ¿Quizás deseas desactivarlo en su lugar?"
@@ -2528,6 +2551,9 @@
       ],
       "15 minutes": [
         "15 minutos"
+      ],
+      "15 seconds": [
+        "15 segundos"
       ],
       "2 minutes": [
         "2 minutos"
@@ -3125,6 +3151,9 @@
       ],
       "Network": [
         "Red"
+      ],
+      "Never": [
+        "Nunca"
       ],
       "New email": [
         "Nuevo correo electrónico"
@@ -3805,6 +3834,11 @@
         "${ price }/mes"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Requerirá un permiso de tu navegador."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Añadir una clave secreta 2FA"
@@ -4128,6 +4162,9 @@
       ],
       "Change your lock method": [
         "Cambiar el método de bloqueo"
+      ],
+      "Clear clipboard": [
+        "Vaciar portapapeles"
       ],
       "Confirm extra password": [
         "Confirmar la contraseña adicional"

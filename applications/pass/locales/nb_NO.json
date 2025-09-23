@@ -424,6 +424,9 @@
       "Next month": [
         "Neste måned"
       ],
+      "No": [
+        "Nei"
+      ],
       "No expired links": [
         "Ingen utløpte koblinger"
       ],
@@ -699,6 +702,9 @@
       "Write us on X/Twitter": [
         "Skriv til oss på X/Twitter"
       ],
+      "Yes": [
+        "Ja"
+      ],
       "Your password manager is not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
       ]
@@ -719,6 +725,14 @@
       ],
       "Expand": [
         "Utvid"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Ikke spør igjen"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Vil du at utklippstavlen skal tømmes automatisk etter ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1540,6 +1554,9 @@
       "Copied to clipboard": [
         "Kopiert til utklippstavlen"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Kopiert til utklippstavlen (utløper om ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Kupong vellykket brukt!"
       ],
@@ -2049,8 +2066,14 @@
       "Please follow the steps below to set up your domain.": [
         "Følg trinnene nedenfor for å sette opp domenet ditt."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Hold ${ PASS_APP_NAME } åpen slik at utklippstavlen kan tømmes automatisk."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Hold dette vinduet åpent mens dataene dine importeres. Denne prosessen kan ta noen minutter."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Hold nettleseren åpen slik at utklippstavlen kan tømmes automatisk."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Sørg for at det forrige aktive vinduet er der du vil fylle ut automatisk, og at markøren din var fokusert på innloggingsfeltet."
@@ -2548,6 +2571,9 @@
       ],
       "15 minutes": [
         "15 minutter"
+      ],
+      "15 seconds": [
+        "15 sekunder"
       ],
       "2 minutes": [
         "2 minutter"
@@ -3145,6 +3171,9 @@
       ],
       "Network": [
         "Nettverk"
+      ],
+      "Never": [
+        "Aldri"
       ],
       "New email": [
         "Ny e-post"
@@ -3825,6 +3854,11 @@
         "${ price }/måned"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Vil kreve en tillatelse fra nettleseren din"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Legg til 2FA-hemmelig nøkkel"
@@ -4148,6 +4182,9 @@
       ],
       "Change your lock method": [
         "Endre låsemetoden din"
+      ],
+      "Clear clipboard": [
+        "Tøm utklippstavlen"
       ],
       "Confirm extra password": [
         "Bekreft ekstra passord"

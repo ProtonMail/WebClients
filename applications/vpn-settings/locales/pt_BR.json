@@ -32,6 +32,11 @@
         "Suas informações foram encontradas em pelo menos um vazamento. Ative o ${ DARK_WEB_MONITORING_NAME } para ver detalhes e tomar medidas. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Contas"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
@@ -71,6 +76,9 @@
       ],
       "Add external address": [
         "Adicionar endereço externo"
+      ],
+      "Add more seats": [
+        "Adicionar mais licenças"
       ],
       "Add PayPal": [
         "Adicionar PayPal"
@@ -6190,6 +6198,9 @@
       "Groups": [
         "Grupos"
       ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Ajuda a escrever, responder e revisar e-mails. Gerenciar para usuários individuais em ${ userAndAddress }. ${ addMoreSeats }"
+      ],
       "here": [
         "aqui"
       ],
@@ -10456,6 +10467,11 @@
         "Mesclar com o calendário"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organização"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } para adicionar mais usuários, ou remover algumas contas de usuário para liberar espaço."
@@ -11430,11 +11446,20 @@
       ]
     },
     "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Se você cancelar antes desta data,** faremos um **downgrade** para ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando a avaliação terminar."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Se você não se inscrever,** faremos um **downgrade** para ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
       "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "**Se você não cancelar, ** seu plano completo começará e você receberá **${ referrerRewardAmount }** em créditos."
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Se você se inscrever antes desta data, ** você receberá **${ referrerRewardAmount }** em créditos."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Aproveite o **${ planTitle }** gratuitamente até **${ textDate }**."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Você tem **${ daysRemaining } dia restante** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer.",
@@ -14217,6 +14242,9 @@
       "Night theme": [
         "Tema noturno"
       ],
+      "No events": [
+        "Sem eventos"
+      ],
       "No recovery method": [
         "Nenhum método de recuperação"
       ],
@@ -14445,6 +14473,9 @@
       ],
       "Text": [
         "Texto"
+      ],
+      "There are no events yet for your organization.": [
+        "Não há nenhum evento ainda para sua organização."
       ],
       "There are no groups": [
         "Não há grupos"
@@ -15146,6 +15177,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Com ${ planTitlePlusMaybeBrand }, você obtém acesso gratuito a todos os serviços de privacidade da ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Gateways de VPN"
       ]
     },
     "VPN info": {

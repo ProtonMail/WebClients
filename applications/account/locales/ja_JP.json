@@ -63,6 +63,11 @@
         "あなたの情報が少なくとも1件のデータ漏洩で見つかりました。詳細を確認し、対策を講じるために${ DARK_WEB_MONITORING_NAME }をオンにしてください。${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "アカウント"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
@@ -135,6 +140,9 @@
       ],
       "Add label": [
         "ラベルを追加する"
+      ],
+      "Add more seats": [
+        "シートを増やす"
       ],
       "Add notification": [
         "通知を追加"
@@ -766,6 +774,12 @@
       "Get more servers": [
         "サーバーを増やす"
       ],
+      "Get Pass Family": [
+        "Pass Familyを入手"
+      ],
+      "Get Pass Plus": [
+        "Pass Plusを入手"
+      ],
       "Get started": [
         "利用開始"
       ],
@@ -780,6 +794,12 @@
       ],
       "Get the deal": [
         "割引をゲット"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "${ browser.title }拡張機能を入手"
+      ],
+      "Get the full suite": [
+        "すべてのパッケージを入手"
       ],
       "Get the writing assistant": [
         "執筆アシスタントを入手"
@@ -1000,6 +1020,9 @@
       "No": [
         "いいえ"
       ],
+      "No thanks": [
+        "いいえ結構です"
+      ],
       "No, thanks": [
         "いいえ"
       ],
@@ -1014,6 +1037,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } の設定を開く"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "${ PASS_APP_NAME } をブラウザで開く"
       ],
       "Open navigation": [
         "ナビゲーションを開く"
@@ -1038,6 +1064,9 @@
       ],
       "Pay ${ price } now": [
         "${ price } を支払う"
+      ],
+      "Pay once": [
+        "一度だけの支払い"
       ],
       "Preview": [
         "プレビュー"
@@ -1417,6 +1446,12 @@
       "Start live chat": [
         "ライブチャットを開始する"
       ],
+      "Start subscription": [
+        "サブスクリプションを始める"
+      ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "今すぐ ${ PASS_APP_NAME } の使用を開始してください"
+      ],
       "Stay": [
         "終了しない"
       ],
@@ -1431,6 +1466,9 @@
       ],
       "Submit": [
         "送信"
+      ],
+      "Subscribe now": [
+        "今すぐ登録"
       ],
       "Support": [
         "サポート"
@@ -1563,6 +1601,9 @@
       ],
       "User": [
         "ユーザー"
+      ],
+      "users and addresses": [
+        "ユーザーとアドレス"
       ],
       "Verify": [
         "検証"
@@ -8417,6 +8458,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "ユーザーが${ VPN_APP_NAME }アプリの**国**セクションから安全な共有サーバーに接続することを許可します。"
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "カレンダーの招待状にシームレスに${ MEET_APP_NAME }ビデオ会議のリンクを追加できるようにします。"
+      ],
       "Already allocated": [
         "割り当て済み"
       ],
@@ -9008,6 +9052,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "ID プロバイダーから受け取ったエンドポイント URL (例: https://idp.example.com/sso/saml)。"
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "${ formattedPeriodEndDate } に終了します"
+      ],
       "Enhance your network security": [
         "ネットワークセキュリティの強化"
       ],
@@ -9140,6 +9187,9 @@
       "Free forever": [
         "永久に無料"
       ],
+      "Free trial": [
+        "無料トライアル"
+      ],
       "free up space by deleting older messages or other data": [
         "古いメッセージやその他のデータを削除して空き容量を増やすことができます"
       ],
@@ -9199,6 +9249,9 @@
       ],
       "Groups": [
         "グループ"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "メールの作成、返信、校正をサポートします。${ userAndAddress }内の個別ユーザーを管理します。${ addMoreSeats }"
       ],
       "here": [
         "こちら"
@@ -9577,6 +9630,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "組織のメンバーがアクセスできる ${ BRAND_NAME } アプリケーションを管理します。無効にすると、管理者のみがアクセスできます。"
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "組織のメンバーがアクセスできる機能を管理します。無効にすると、管理者のみがアクセスできます。"
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "メールの通知設定を${ DOCS_APP_NAME }で管理する。"
@@ -11839,14 +11895,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
       ],
+      "/month x ${ months }": [
+        "月額 × ${ months } ヶ月"
+      ],
       "1 hour": [
         "1 時間"
       ],
       "1 minute": [
         "1 分"
       ],
+      "10 hide-my-email aliases": [
+        "10 個の hide-my-email エイリアス"
+      ],
       "10 minutes": [
         "10 分"
+      ],
+      "10 VPN devices": [
+        "10 台のVPNデバイス"
+      ],
+      "15 extra email addresses": [
+        "15 個の追加のメールアドレス"
       ],
       "15 minutes": [
         "15 分"
@@ -11862,6 +11930,12 @@
       ],
       "5 minutes": [
         "5 分"
+      ],
+      "500 GB Storage": [
+        "500 GB のストレージ"
+      ],
+      "6 Pass Plus accounts": [
+        "6 Pass Plus アカウント"
       ],
       "Account holder": [
         "アカウント所有者"
@@ -11892,6 +11966,9 @@
       ],
       "Addresses": [
         "メールアドレス"
+      ],
+      "Admin panel for your family": [
+        "家族のための管理者パネル"
       ],
       "Advanced": [
         "高度"
@@ -12064,6 +12141,9 @@
       "BTC amount": [
         "Bitcoin 金額"
       ],
+      "Built-in 2FA authenticator": [
+        "2要素認証システム内蔵"
+      ],
       "Calendar": [
         "カレンダー"
       ],
@@ -12192,6 +12272,9 @@
       ],
       "Create password": [
         "パスワードを作成"
+      ],
+      "Credit cards": [
+        "クレジットカード"
       ],
       "Credits": [
         "クレジット"
@@ -12364,6 +12447,9 @@
       "File": [
         "ファイル"
       ],
+      "File attachments (up to 10GB)": [
+        "添付ファイル (最大10GBまで)"
+      ],
       "Filter Name": [
         "フィルター名"
       ],
@@ -12379,11 +12465,17 @@
       "Font size": [
         "フォントサイズ"
       ],
+      "for your first month": [
+        "最初の1か月間"
+      ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
       ],
       "Gateway name": [
         "ゲートウェイ名"
+      ],
+      "Get everything in Free, plus:": [
+        "Freeプランのすべての機能に加え、以下もご利用いただけます:"
       ],
       "Gift code": [
         "ギフトコード"
@@ -12402,6 +12494,9 @@
       ],
       "Hide password": [
         "パスワードを隠す"
+      ],
+      "Highest VPN speed": [
+        "最高速 VPN"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "このメールアドレスを永久に失うことを避けるために、すぐに他のアカウントにこのメールアドレスを追加する必要があることを理解しています。"
@@ -12495,6 +12590,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield ブロッカーのフィルタリング強度"
+      ],
+      "Limited time": [
+        "期間限定"
       ],
       "Link label (optional)": [
         "リンクラベル(オプション)"
@@ -12622,6 +12720,9 @@
       "Numbers": [
         "数字"
       ],
+      "Online privacy for your whole family": [
+        "家族全員のためのオンラインプライバシー"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 パスワード"
       ],
@@ -12733,6 +12834,9 @@
       "Read": [
         "既読"
       ],
+      "Recommended": [
+        "推奨"
+      ],
       "Recovery email address": [
         "回復用メールアドレス"
       ],
@@ -12750,6 +12854,9 @@
       ],
       "Remove image metadata": [
         "画像のメタデータを削除する"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "${ renewalPrice }で更新、いつでもキャンセル可能。"
       ],
       "Repeat backup password": [
         "バックアップパスワードを再度入力"
@@ -12783,6 +12890,9 @@
       ],
       "Second password": [
         "セカンドパスワード"
+      ],
+      "Secure password generator": [
+        "安全なパスワード生成ツール"
       ],
       "Select Linux package format": [
         "Linuxパッケージフォーマットを選択"
@@ -12853,6 +12963,9 @@
       "Special characters": [
         "記号"
       ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "特別オファー: ${ PASS_SHORT_APP_NAME } Plus を ${ offerPrice } で手に入れましょう"
+      ],
       "Starred": [
         "スター付き"
       ],
@@ -12901,6 +13014,9 @@
       "System information": [
         "システム情報"
       ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "1つのサブスクリプションで最高の${ BRAND_NAME }"
+      ],
       "Then": [
         "その後"
       ],
@@ -12933,6 +13049,12 @@
       ],
       "Undo send": [
         "送信取り消し"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "無制限の hide-my-email エイリアス"
+      ],
+      "Unlimited logins and devices": [
+        "無制限のログインとデバイス"
       ],
       "Upload 1 or more encryption keys": [
         "1 つ以上の暗号鍵をアップロード"
@@ -12969,6 +13091,9 @@
       ],
       "Value": [
         "値"
+      ],
+      "Vault, item & secure link sharing": [
+        "保管庫、アイテム、セキュアリンク共有"
       ],
       "Verification code": [
         "認証コード"
@@ -15763,6 +15888,11 @@
         "コンテンツをプロキシー経由で読み込み添付ファイルとして保持します"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "組織"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } を使用してユーザーを追加するか、一部のユーザー アカウントを削除してスペースを解放します。"
@@ -15880,6 +16010,11 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } を使ってみる"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } ヶ月"
       ]
     },
     "pass_lifetime_signup: Info": {
@@ -17113,6 +17248,29 @@
       ],
       "Save your recovery phrase": [
         "回復用フレーズを保存"
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**この日付より前にキャンセルされた場合**、トライアル終了時にお客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**ご登録がない場合**、お客様は${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }に**ダウングレードされます**。"
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**キャンセルしない場合**、お客様のフルプランが開始され、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**この日までに登録**すると、お客様は**${ referrerRewardAmount }**のクレジットを獲得できます。"
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "**${ textDate }** まで、**${ planTitle }** を無料でお楽しみいただけます。"
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "**${ planTitle }**が提供するすべての強力な機能をお試しいただける期間は、残り**${ daysRemaining }日**です。"
+      ],
+      "your subscription": [
+        "あなたのサブスクリプション"
       ]
     },
     "Remark about a key type option": {
@@ -18403,6 +18561,9 @@
       "30 custom email addresses": [
         "30個のカスタムメールアドレス"
       ],
+      "4.8+ rating": [
+        "4.8以上の評価"
+      ],
       "Advanced account protection": [
         "高度なアカウント保護"
       ],
@@ -18480,6 +18641,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "${ referralInfo.uiData.refereeRewardAmount }分のクレジットを獲得"
+      ],
+      "Get a new encrypted email for free": [
+        "新しい暗号化済みメールを無料で取得する"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "安全な${ MAIL_APP_NAME }メールアドレスを入手するか${ internalButton }"
@@ -18586,11 +18750,17 @@
       "Start free trial": [
         "無料トライアルを開始"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } を使ってみる"
+      ],
       "Storage": [
         "ストレージ"
       ],
       "Stream your favorite TV shows and movies": [
         "お気に入りのテレビ番組や映画をストリーミングする"
+      ],
+      "Swiss-based": [
+        "スイス拠点"
       ],
       "Sync files across devices and users": [
         "デバイスやユーザー間でファイルを同期"
@@ -18606,6 +18776,9 @@
       ],
       "Total": [
         "合計"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "1億人以上の人々や企業から信頼されています"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "${ BRAND_NAME }を無料で${ TRIAL_DURATION_DAYS }日お試しください"
@@ -18636,6 +18809,9 @@
       ],
       "Upload files of any size": [
         "任意のサイズのファイルをアップロード"
+      ],
+      "Use your current email": [
+        "現在のメールアドレスを使用"
       ],
       "use your current email.": [
         "現在のメールアドレスを使用。"
@@ -19935,6 +20111,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "永久無料"
+      ],
+      "Pay once, access forever.": [
+        "一度お支払いいただくと、ずっとご利用いただけます。"
+      ],
+      "per month, billed annually": [
+        "月払い、年払い"
+      ],
       "View VPN session details for your organization.": [
         "組織のVPNセッションの詳細を閲覧"
       ]
@@ -20600,6 +20785,9 @@
       "Appearance": [
         "外観"
       ],
+      "Application access": [
+        "アプリケーションアクセス"
+      ],
       "Apply filter to existing messages": [
         "既存のメッセージにフィルターを適用する"
       ],
@@ -20948,6 +21136,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } アプリをダウンロード"
       ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "デバイスに${ PASS_APP_NAME }をダウンロード"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } をダウンロード"
       ],
@@ -21080,6 +21271,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } ユーザー アカウントの作成に失敗しました。"
       ],
+      "Feature access": [
+        "機能アクセス"
+      ],
       "Filter for more focus": [
         "より集中するためのフィルター"
       ],
@@ -21118,6 +21312,9 @@
       ],
       "Forward emails": [
         "メールを転送する"
+      ],
+      "Free": [
+        "無料"
       ],
       "Gateway": [
         "ゲートウェイ"
@@ -21199,6 +21396,9 @@
       ],
       "How to refer a friend and get credits": [
         "友人を招待し、クレジットを獲得する方法"
+      ],
+      "How your free trial works": [
+        "無料トライアルについて"
       ],
       "Human verification": [
         "人間であることの検証"
@@ -21338,6 +21538,9 @@
       "No account information was found in any data breaches": [
         "アカウント情報の漏洩は見つかりませんでした"
       ],
+      "No events": [
+        "予定がありません"
+      ],
       "No need to empty the trash": [
         "ゴミ箱を空にする必要はありません"
       ],
@@ -21388,6 +21591,9 @@
       ],
       "Other sign-in issues": [
         "その他のサインインに関する問題"
+      ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus Lifetime を ${ plusLifetimePrice } で"
       ],
       "Password": [
         "パスワード"
@@ -21550,6 +21756,9 @@
       ],
       "Secure email based in Switzerland": [
         "スイスに拠点を置くセキュアなメール"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "お客様のパスワードを保護。どこででも。"
       ],
       "Security and privacy": [
         "セキュリティとプライバシー"
@@ -21737,6 +21946,9 @@
       "There are no events for your account": [
         "お客様のアカウントには予定がありません。"
       ],
+      "There are no events yet for your organization.": [
+        "お客様の組織にはまだ予定がありません。"
+      ],
       "There are no groups": [
         "グループがありません"
       ],
@@ -21847,6 +22059,9 @@
       ],
       "Video conferencing": [
         "ビデオ会議"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } を利用したビデオ会議"
       ],
       "View organization events by upgrading to Professional": [
         "Professionalにアップグレードして組織の予定を表示"
@@ -22781,6 +22996,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "${ planTitlePlusMaybeBrand }では、 ${ BRAND_NAME } の全てのプライバシーサービスに無料でアクセスできます。"
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN ゲートウェイ"
       ]
     },
     "VPN info": {

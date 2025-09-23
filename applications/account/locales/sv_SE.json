@@ -63,6 +63,11 @@
         "Din information hittades i minst en dataläcka. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Konton"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
@@ -766,6 +771,12 @@
       "Get more servers": [
         "Skaffa fler servrar"
       ],
+      "Get Pass Family": [
+        "Skaffa Pass Family"
+      ],
+      "Get Pass Plus": [
+        "Skaffa Pass Plus"
+      ],
       "Get started": [
         "Kom igång"
       ],
@@ -780,6 +791,9 @@
       ],
       "Get the deal": [
         "Ta del av erbjudandet"
+      ],
+      "Get the full suite": [
+        "Skaffa hela sviten"
       ],
       "Get the writing assistant": [
         "Skaffa skrivassistenten"
@@ -1000,6 +1014,9 @@
       "No": [
         "Nej"
       ],
+      "No thanks": [
+        "Nej tack"
+      ],
       "No, thanks": [
         "Nej tack"
       ],
@@ -1014,6 +1031,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Öppna inställningar för ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Öppna ${ PASS_APP_NAME } i din webbläsare"
       ],
       "Open navigation": [
         "Öppna navigering"
@@ -1038,6 +1058,9 @@
       ],
       "Pay ${ price } now": [
         "Betala ${ price } nu"
+      ],
+      "Pay once": [
+        "Betala en gång"
       ],
       "Preview": [
         "Förhandsgranska"
@@ -1419,6 +1442,9 @@
       ],
       "Start subscription": [
         "Starta prenumeration"
+      ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Börja använda ${ PASS_APP_NAME } nu"
       ],
       "Stay": [
         "Stanna"
@@ -2065,6 +2091,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Genom att klicka på “Prova“ godkänner du våra ${ termsAndConditions }."
       ],
@@ -8015,6 +8044,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kräver en ${ BRAND_NAME }-adress för säker synkronisering och kryptering av händelse. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nya kalendrar"
@@ -8557,6 +8589,9 @@
       ],
       "Authenticator app 2FA disabled": [
         "Autentiseringsapp 2FA inaktiverad"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Autentiseringsapp 2FA aktiverad"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Automatiskt svar är aktivt varje månad mellan vald start- och sluttid."
@@ -9175,6 +9210,9 @@
       "free up space by deleting older messages or other data": [
         "frigör utrymme genom att radera äldre meddelanden eller annan data"
       ],
+      "Gain visibility across your organization": [
+        "Få synlighet i hela din organisation"
+      ],
       "Gateway monitor": [
         "Övervakning av gateway"
       ],
@@ -9611,6 +9649,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Hantera vilka ${ BRAND_NAME }-applikationer som medlemmarna i din organisation har åtkomst till. Om funktionen är inaktiverad har endast administratörer åtkomst."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Hantera vilka funktioner medlemmarna i din organisation kan komma åt. Om de är inaktiverade har endast administratörer åtkomst."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Hantera dina preferenser för e-postavisering för ${ DOCS_APP_NAME }."
@@ -10961,6 +11002,9 @@
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Utan aktivering kommer du inte att kunna skapa nya användare, lägga till adresser till befintliga användare eller komma åt icke-privata användarkonton."
       ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Utan en autentiseringsapp kommer du inte att kunna logga in på ${ BRAND_NAME }-applikationer som inte stöder säkerhetsnycklar än."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vill du få en ny verifieringskod eller använda en alternativ verifieringsmetod?"
       ],
@@ -11871,14 +11915,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
       ],
+      "/month x ${ months }": [
+        "/månad x ${ months }"
+      ],
       "1 hour": [
         "1 timme"
       ],
       "1 minute": [
         "1 minut"
       ],
+      "10 hide-my-email aliases": [
+        "10 hide-my-email-alias"
+      ],
       "10 minutes": [
         "10 minuter"
+      ],
+      "10 VPN devices": [
+        "10 VPN-enheter"
+      ],
+      "15 extra email addresses": [
+        "15 extra e-postadresser"
       ],
       "15 minutes": [
         "15 minuter"
@@ -11894,6 +11950,12 @@
       ],
       "5 minutes": [
         "5 minuter"
+      ],
+      "500 GB Storage": [
+        "500 GB lagringsutrymme"
+      ],
+      "6 Pass Plus accounts": [
+        "6 Pass Plus-konton"
       ],
       "Account holder": [
         "Kontoinnehavare"
@@ -11924,6 +11986,9 @@
       ],
       "Addresses": [
         "Adresser"
+      ],
+      "Admin panel for your family": [
+        "Adminpanel för din familj"
       ],
       "Advanced": [
         "Avancerat"
@@ -12096,6 +12161,9 @@
       "BTC amount": [
         "BTC-belopp"
       ],
+      "Built-in 2FA authenticator": [
+        "Inbyggd 2FA-autentiserare"
+      ],
       "Calendar": [
         "Kalender"
       ],
@@ -12224,6 +12292,9 @@
       ],
       "Create password": [
         "Skapa lösenord"
+      ],
+      "Credit cards": [
+        "Kreditkort"
       ],
       "Credits": [
         "Krediter"
@@ -12396,6 +12467,9 @@
       "File": [
         "Fil"
       ],
+      "File attachments (up to 10GB)": [
+        "Filbilagor (upp till 10 GB)"
+      ],
       "Filter Name": [
         "Filternamn"
       ],
@@ -12411,11 +12485,17 @@
       "Font size": [
         "Textstorlek"
       ],
+      "for your first month": [
+        "för din första månad"
+      ],
       "From: ${ fromEmail }": [
         "Från: ${ fromEmail }"
       ],
       "Gateway name": [
         "Gatewaynamn"
+      ],
+      "Get everything in Free, plus:": [
+        "Få allt i Free, plus:"
       ],
       "Gift code": [
         "Presentkod"
@@ -12434,6 +12514,9 @@
       ],
       "Hide password": [
         "Dölj lösenord"
+      ],
+      "Highest VPN speed": [
+        "Högsta VPN-hastighet"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Jag förstår att jag måste lägga till denna e-postadress till det andra kontot omedelbart för att undvika att förlora denna adress permanent."
@@ -12527,6 +12610,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivå på blockeringsfiltrering för NetShield"
+      ],
+      "Limited time": [
+        "Begränsad tid"
       ],
       "Link label (optional)": [
         "Länketikett (valfritt)"
@@ -12654,6 +12740,9 @@
       "Numbers": [
         "Siffror"
       ],
+      "Online privacy for your whole family": [
+        "Integritet online för hela din familj"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN/IKEv2-lösenord"
       ],
@@ -12765,6 +12854,9 @@
       "Read": [
         "Läs"
       ],
+      "Recommended": [
+        "Rekommenderat"
+      ],
       "Recovery email address": [
         "E-postadress för återställning"
       ],
@@ -12782,6 +12874,9 @@
       ],
       "Remove image metadata": [
         "Ta bort bild-metadata"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Förnyas med ${ renewalPrice }, avbryt när som helst."
       ],
       "Repeat backup password": [
         "Repetera reservlösenord"
@@ -12815,6 +12910,12 @@
       ],
       "Second password": [
         "Andra lösenord"
+      ],
+      "Secure password generator": [
+        "Säker lösenordsgenerator"
+      ],
+      "Select Linux package format": [
+        "Välj Linux-paketformat"
       ],
       "Select Linux platform": [
         "Välj Linux-plattform"
@@ -12883,6 +12984,9 @@
       "Special characters": [
         "Specialtecken"
       ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Specialerbjudande: Få ${ PASS_SHORT_APP_NAME } Plus för ${ offerPrice }"
+      ],
       "Starred": [
         "Stjärnmärkt"
       ],
@@ -12931,6 +13035,9 @@
       "System information": [
         "Systeminformation"
       ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Det bästa av ${ BRAND_NAME } med en prenumeration"
+      ],
       "Then": [
         "Sedan"
       ],
@@ -12963,6 +13070,12 @@
       ],
       "Undo send": [
         "Ångra skicka"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Obegränsat antal hide-my-email-alias"
+      ],
+      "Unlimited logins and devices": [
+        "Obegränsat antal inloggningar och enheter"
       ],
       "Upload 1 or more encryption keys": [
         "Ladda upp 1 eller flera krypteringsnycklar"
@@ -13725,6 +13838,9 @@
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
+      ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Visa ${ PASS_APP_NAME }-aktivitet i hela din organisation."
       ],
       "View changes to your organization and other administrator activities.": [
         "Visa ändringar i din organisation och andra administratörsaktiviteter."
@@ -15442,6 +15558,9 @@
       "Advanced threat protection": [
         "Avancerat hotskydd"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samarbeta med icke ${ BRAND_NAME }-användare"
+      ],
       "Custom email domain": [
         "Anpassad e-postdomän"
       ],
@@ -15845,6 +15964,11 @@
         "Ladda innehåll via proxy och lagra som bilagor"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organisation"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } för att lägga till fler användare, eller ta bort några användarkonton för att frigöra utrymme."
@@ -15965,6 +16089,12 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Börja använda ${ PASS_APP_NAME }"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } månad",
+        "${ n } månader"
       ]
     },
     "pass_signup_2023: Action": {
@@ -16949,6 +17079,11 @@
         "Uppdatera **alla dina ${ BRAND_NAME }-mobilappar** till senaste versionen."
       ]
     },
+    "PQC key generation": {
+      "This will generate a new account key and a new email encryption key for each address; these will be used to encrypt and decrypt future emails and other data.": [
+        "Detta kommer generera en ny kontonyckel och en ny krypteringsnyckel för e-post för varje adress. Dessa kommer att användas för att kryptera och dekryptera framtida e-post och annan data."
+      ]
+    },
     "PQC optin": {
       "Enable and generate keys": [
         "Aktivera och generera nycklar"
@@ -17145,14 +17280,24 @@
       ]
     },
     "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Om du avbryter före detta datum** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } när provperioden slutar."
+      ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**Om du inte prenumererar** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Om du inte avbryter** kommer ditt fullständiga paket att starta och du får **${ referrerRewardAmount }** i krediter."
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Om du prenumererar före detta datum** får du **${ referrerRewardAmount }** i krediter."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Du har **${ daysRemaining } dag kvar** att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda.",
+        "Du har **${ daysRemaining } dagar kvar** för att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
       ],
       "your subscription": [
         "din prenumeration"
@@ -17288,6 +17433,9 @@
       ],
       "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
         "Inkluderar alla meddelanden i inkorg, skickat och alla andra platser. Tömda meddelanden kan inte återställas."
+      ],
+      "Removes messages already deleted by users.": [
+        "Tar redan bort meddelanden redan borttagna av användare."
       ]
     },
     "retention_policy_2025_Label": {
@@ -18423,6 +18571,9 @@
       "30 custom email addresses": [
         "30 anpassade e-postadresser"
       ],
+      "4.8+ rating": [
+        "Betyg 4,8+"
+      ],
       "Advanced account protection": [
         "Avancerat kontoskydd"
       ],
@@ -18500,6 +18651,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Få ${ referralInfo.uiData.refereeRewardAmount } i krediter"
+      ],
+      "Get a new encrypted email for free": [
+        "Skaffa en ny krypterad e-post gratis"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Skaffa en säker ${ MAIL_APP_NAME }-adress eller ${ internalButton }"
@@ -18607,11 +18761,17 @@
       "Start free trial": [
         "Starta gratis provperiod"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Börja använda ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Lagringsutrymme"
       ],
       "Stream your favorite TV shows and movies": [
         "Streama dina favorit-TV-serier och filmer"
+      ],
+      "Swiss-based": [
+        "Schweizbaserat"
       ],
       "Sync files across devices and users": [
         "Synkronisera filer mellan enheter och användare"
@@ -18627,6 +18787,9 @@
       ],
       "Total": [
         "Totalt"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "Betrodd av över 100 miljoner personer och företag"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Prova ${ BRAND_NAME } i ${ TRIAL_DURATION_DAYS } dagar gratis"
@@ -18657,6 +18820,9 @@
       ],
       "Upload files of any size": [
         "Ladda upp filer av valfri storlek"
+      ],
+      "Use your current email": [
+        "Använd din nuvarande e-post"
       ],
       "use your current email.": [
         "använd din nuvarande e-post."
@@ -19994,6 +20160,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Gratis för alltid"
+      ],
+      "Pay once, access forever.": [
+        "Betala en gång, åtkomst för alltid."
+      ],
+      "per month, billed annually": [
+        "per månad, faktureras årligen"
+      ],
       "View VPN session details for your organization.": [
         "Visa VPN-sessionsdetaljer för din organisation."
       ]
@@ -20993,6 +21168,9 @@
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
       ],
+      "Disable two-factor authentication app?": [
+        "Inaktivera app för tvåfaktorsautentisering?"
+      ],
       "Disable two-factor authentication?": [
         "Inaktivera tvåfaktorsautentisering?"
       ],
@@ -21019,6 +21197,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Ladda ner ${ DRIVE_APP_NAME } appar"
+      ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Ladda ner ${ PASS_APP_NAME } för dina enheter"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Ladda ner ${ VPN_APP_NAME }"
@@ -21152,6 +21333,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Misslyckades att skapa ${ failedUsers.length } användarkonto.",
         "Misslyckades att skapa ${ failedUsers.length } användarkonton."
+      ],
+      "Feature access": [
+        "Funktionsåtkomst"
       ],
       "Filter for more focus": [
         "Filter för mer fokus"
@@ -21418,6 +21602,9 @@
       "No account information was found in any data breaches": [
         "Ingen kontoinformation hittades i några dataintrång"
       ],
+      "No events": [
+        "Inga händelser"
+      ],
       "No need to empty the trash": [
         "Inget behov att tömma papperskorgen"
       ],
@@ -21631,6 +21818,9 @@
       "Secure email based in Switzerland": [
         "Säker e-post baserad i Schweiz"
       ],
+      "Secure your passwords. Everywhere.": [
+        "Säkra dina lösenord. Överallt."
+      ],
       "Security and privacy": [
         "Säkerhet och integritet"
       ],
@@ -21818,6 +22008,9 @@
       "There are no events for your account": [
         "Det finns inga händelser för ditt konto"
       ],
+      "There are no events yet for your organization.": [
+        "Det finns inga händelser för din organisation än."
+      ],
       "There are no groups": [
         "Det finns inga grupper"
       ],
@@ -21928,6 +22121,9 @@
       ],
       "Video conferencing": [
         "Videokonferenser"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferens med ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Visa organisationens händelser genom att uppgradera till Professional"
@@ -22860,6 +23056,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Med ${ planTitlePlusMaybeBrand } får du gratis åtkomst till alla ${ BRAND_NAME } integritetstjänster."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN-gateways"
       ]
     },
     "VPN info": {
