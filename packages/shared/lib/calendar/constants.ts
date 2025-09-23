@@ -345,6 +345,8 @@ export const USER_ENCRYPTED_FIELDS = [] as const;
 export const ATTENDEES_SIGNED_FIELDS = [] as const;
 export const ATTENDEES_ENCRYPTED_FIELDS = ['uid', 'attendee'] as const;
 
+export const VIDEO_CONFERENCING_FIELDS = ['encryptedTitle'] as const;
+
 export const REQUIRED_SET = new Set(['uid', 'dtstamp'] as const);
 
 // Set of taken keys to put the rest
@@ -358,6 +360,7 @@ export const TAKEN_KEYS = [
         ...USER_ENCRYPTED_FIELDS,
         ...ATTENDEES_ENCRYPTED_FIELDS,
         ...ATTENDEES_SIGNED_FIELDS,
+        ...VIDEO_CONFERENCING_FIELDS,
     ]),
 ] as const;
 
