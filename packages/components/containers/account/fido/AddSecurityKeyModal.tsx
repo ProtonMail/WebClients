@@ -85,7 +85,7 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
             try {
                 setFidoError(false);
 
-                abortControllerRef.current?.abort();
+                handleAbort();
                 const abortController = new AbortController();
                 abortControllerRef.current = abortController;
 
@@ -100,7 +100,9 @@ const AddSecurityKeyModal = ({ onClose, ...rest }: ModalProps) => {
                 console.error(error);
                 return;
             } finally {
-                abortControllerRef.current = null;
+                // It's important that it's aborted after failure/success so that extensions (LastPass) function correctly
+                // without a `OperationError: A request is already pending.`.
+                handleAbort();
             }
             reset();
             setStep(Steps.Name);

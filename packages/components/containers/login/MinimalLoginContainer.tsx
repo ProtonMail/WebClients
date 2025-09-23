@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -185,11 +185,13 @@ const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
 
     const abortControllerRef = useRef<AbortController | null>(null);
 
+    const handleAbort = useCallback(() => {
+        abortControllerRef.current?.abort();
+        abortControllerRef.current = null;
+    }, []);
+
     useEffect(() => {
-        return () => {
-            abortControllerRef.current?.abort();
-            abortControllerRef.current = null;
-        };
+        return handleAbort;
     }, []);
 
     return (
@@ -212,7 +214,7 @@ const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
                             let authenticationCredentialsPayload: Fido2Data;
                             try {
                                 setFidoError(false);
-                                abortControllerRef.current?.abort();
+                                handleAbort();
                                 const abortController = new AbortController();
                                 abortControllerRef.current = abortController;
                                 authenticationCredentialsPayload = await getAuthentication(
@@ -223,6 +225,8 @@ const Fido2Form = ({ onSubmit, fido2, cancelButton }: Fido2FormProps) => {
                                 setFidoError(true);
                                 console.error(error);
                                 return;
+                            } finally {
+                                handleAbort();
                             }
                             await onSubmit(authenticationCredentialsPayload);
                         };

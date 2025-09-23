@@ -418,7 +418,7 @@ const SrpAuthModal = ({
                                     onSubmit={() => {
                                         const run = async () => {
                                             try {
-                                                abortControllerRef.current?.abort();
+                                                handleAbort();
                                                 const abortController = new AbortController();
                                                 abortControllerRef.current = abortController;
 
@@ -434,7 +434,9 @@ const SrpAuthModal = ({
                                                     },
                                                 });
                                             } finally {
-                                                abortControllerRef.current = null;
+                                                // It's important that it's aborted after failure/success so that extensions (LastPass) function correctly
+                                                // without a `OperationError: A request is already pending.`.
+                                                handleAbort();
                                             }
                                         };
 
