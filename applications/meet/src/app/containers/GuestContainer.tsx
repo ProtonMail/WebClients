@@ -4,7 +4,7 @@ import { Router } from 'react-router-dom';
 import type { App } from '@proton-meet/proton-meet-core';
 import type { ProtonThunkArguments } from 'packages/redux-shared-store-types';
 
-import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
+import { ApiContext } from '@proton/components';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
@@ -81,13 +81,13 @@ export const GuestContainer = ({ children }: GuestContainerProps) => {
             <AuthenticationProvider store={authentication}>
                 <Router history={history}>
                     <FlagProvider unleashClient={unleashClient} startClient={false}>
-                        <UnauthenticatedApiProvider unauthenticatedApi={unauthenticatedApi}>
+                        <ApiContext.Provider value={unauthenticatedApi.apiCallback}>
                             <WasmContext.Provider value={{ wasmApp: wasmAppRef.current }}>
                                 <ErrorBoundary big component={<StandardErrorPage big />}>
                                     {children}
                                 </ErrorBoundary>
                             </WasmContext.Provider>
-                        </UnauthenticatedApiProvider>
+                        </ApiContext.Provider>
                     </FlagProvider>
                 </Router>
             </AuthenticationProvider>
