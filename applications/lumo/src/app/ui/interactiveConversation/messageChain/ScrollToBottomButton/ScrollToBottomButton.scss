@@ -1,0 +1,11 @@
+.scroll-to-bottom-button {
+	inline-size: 3rem;
+	block-size: 3rem;
+	transform: scale(1);
+	transition: all 200ms ease-in-out;
+
+	&:hover,
+	&:focus {
+		transform: scale(1.05);
+	}
+}

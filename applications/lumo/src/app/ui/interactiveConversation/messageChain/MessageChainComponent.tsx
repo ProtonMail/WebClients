@@ -1,10 +1,9 @@
 import React, { useCallback, useEffect, useReducer, useRef, useState } from 'react';
 
-import { IcChevronDown } from '@proton/icons';
-
 import type { HandleEditMessage, HandleRegenerateMessage } from '../../../hooks/useLumoActions';
 import type { SiblingInfo } from '../../../hooks/usePreferredSiblings';
 import { type Message, Role } from '../../../types';
+import { ScrollToBottomButton } from './ScrollToBottomButton/ScrollToBottomButton';
 import { MessageComponent } from './message/MessageComponent';
 
 export type MessageChainComponentProps = {
@@ -19,6 +18,7 @@ export type MessageChainComponentProps = {
     isGenerating?: boolean;
     isGeneratingWithToolCall?: boolean;
     onRetryPanelToggle?: (messageId: string, show: boolean, buttonRef?: HTMLElement) => void;
+    composerContainerRef: React.RefObject<HTMLDivElement>;
 };
 
 interface ScrollState {
@@ -142,86 +142,6 @@ const useAutoScroll = (
     };
 };
 
-const ScrollToBottomButton = ({ onClick, show }: { onClick: () => void; show: boolean }) => {
-    const [sidebarWidth, setSidebarWidth] = React.useState(0);
-
-    React.useEffect(() => {
-        const checkSidebar = () => {
-            if (window.innerWidth < 768) {
-                setSidebarWidth(0);
-                return;
-            }
-
-            const sidebar =
-                document.querySelector('[data-testid="sidebar"]') ||
-                document.querySelector('.sidebar') ||
-                document.querySelector('aside');
-
-            if (sidebar) {
-                const sidebarElement = sidebar as HTMLElement;
-                const width = sidebarElement.offsetWidth;
-                setSidebarWidth(width);
-            } else {
-                setSidebarWidth(240);
-            }
-        };
-
-        checkSidebar();
-        window.addEventListener('resize', checkSidebar);
-
-        const observer = new MutationObserver(checkSidebar);
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true,
-            attributes: true,
-            attributeFilter: ['class', 'style'],
-        });
-
-        return () => {
-            window.removeEventListener('resize', checkSidebar);
-            observer.disconnect();
-        };
-    }, []);
-
-    return (
-        <div
-            className="fixed z-50"
-            style={{
-                left: `calc(50% + ${sidebarWidth / 2}px)`,
-                bottom: '140px',
-                transform: show ? 'translateX(-50%) translateY(0)' : 'translateX(-50%) translateY(8px)',
-                transition: 'all 200ms ease-in-out',
-                opacity: show ? 1 : 0,
-                pointerEvents: show ? 'auto' : 'none',
-            }}
-        >
-            <button
-                onClick={onClick}
-                className="shadow-lifted hover:shadow-norm flex items-center justify-center"
-                style={{
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: '50%',
-                    backgroundColor: 'var(--background-norm)',
-                    border: '1px solid var(--border-weak)',
-                    color: 'var(--text-norm)',
-                    cursor: 'pointer',
-                    transition: 'all 200ms ease-in-out',
-                }}
-                onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'scale(1.05)';
-                }}
-                onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'scale(1)';
-                }}
-                aria-label="Scroll to bottom"
-            >
-                <IcChevronDown />
-            </button>
-        </div>
-    );
-};
-
 export const MessageChainComponent = ({
     messageChain,
     messageChainRef,
@@ -234,6 +154,7 @@ export const MessageChainComponent = ({
     handleOpenSources,
     handleOpenFiles,
     onRetryPanelToggle,
+    composerContainerRef,
 }: MessageChainComponentProps) => {
     const newMessageRef = useRef<HTMLDivElement | null>(null);
     const { userHasScrolledUp, scrollToBottom } = useAutoScroll(messageChainRef, messageChain, isGenerating);
@@ -312,7 +233,11 @@ export const MessageChainComponent = ({
                 })}
             </div>
 
-            <ScrollToBottomButton onClick={scrollToBottom} show={showScrollIndicator} />
+            <ScrollToBottomButton
+                onClick={scrollToBottom}
+                show={showScrollIndicator}
+                composerContainerRef={composerContainerRef}
+            />
         </>
     );
 };
