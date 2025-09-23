@@ -1,24 +1,20 @@
-import { useMemo } from 'react';
-
 import { c } from 'ttag';
 
 import Radio from '@proton/components/components/input/Radio';
 import Option from '@proton/components/components/option/Option';
 import Price from '@proton/components/components/price/Price';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
-import InputField from '@proton/components/components/v2/field/InputField';
+import { InputField } from '@proton/components/components/v2/field/InputField';
 import {
-    type ADDON_NAMES,
     type CYCLE,
     type Currency,
+    type PaymentsCheckout,
     type PlanIDs,
     type PlansMap,
-    SelectedPlan,
     type SubscriptionCheckResponse,
-    getSupportedAddons,
-    isMemberAddon,
+    getCheckout,
+    getOptimisticCheckResult,
 } from '@proton/payments';
-import { type PricingMode, type TotalPricings, getTotals } from '@proton/payments';
 import clsx from '@proton/utils/clsx';
 
 import { useCouponConfig } from '../coupon-config/useCouponConfig';
@@ -26,60 +22,21 @@ import { getDiscountPrice, getShortBillingText } from '../helpers';
 import CycleItemView from './CycleItemView';
 
 const CycleItem = ({
-    totals,
-    currency,
-    cycle,
-    monthlySuffix,
+    checkout,
     loading,
-    planIDs,
     plansMap,
-    additionalCheckResults,
 }: {
-    totals: TotalPricings;
-    monthlySuffix: string;
-    cycle: CYCLE;
-    currency: Currency;
+    checkout: PaymentsCheckout;
     loading: boolean;
-    planIDs: PlanIDs;
     plansMap: PlansMap;
-    additionalCheckResults: SubscriptionCheckResponse[];
 }) => {
-    const freeMonths = 0;
-    const { discountedTotal, viewPricePerMonth, discount } = totals[cycle];
-
     const couponConfig = useCouponConfig({
-        checkResult: additionalCheckResults.find((result) => result.Cycle === cycle),
-        planIDs,
+        checkResult: checkout.checkResult,
+        planIDs: checkout.planIDs,
         plansMap,
     });
 
-    const cyclePriceCompare = couponConfig?.renderCyclePriceCompare?.({ cycle, suffix: monthlySuffix });
-
-    const cycleTitle = couponConfig?.renderCycleTitle?.({ cycle }) ?? getShortBillingText(cycle, planIDs);
-
-    return (
-        <CycleItemView
-            text={cycleTitle}
-            currency={currency}
-            discount={discount}
-            monthlySuffix={monthlySuffix}
-            freeMonths={freeMonths}
-            total={discountedTotal}
-            totalPerMonth={viewPricePerMonth}
-            cyclePriceCompare={cyclePriceCompare}
-            cycle={cycle}
-            loading={loading}
-            planIDs={planIDs}
-        />
-    );
-};
-
-const getMonthlySuffix = (planIDs: PlanIDs) => {
-    const supportedAddons = getSupportedAddons(planIDs);
-
-    return (Object.keys(supportedAddons) as ADDON_NAMES[]).some((addon) => isMemberAddon(addon))
-        ? c('Suffix').t`/user per month`
-        : c('Suffix').t`/month`;
+    return <CycleItemView loading={loading} checkout={checkout} couponConfig={couponConfig} />;
 };
 
 export interface Props {
@@ -92,7 +49,6 @@ export interface Props {
     disabled?: boolean;
     loading?: boolean;
     faded?: boolean;
-    pricingMode?: PricingMode;
     additionalCheckResults: SubscriptionCheckResponse[] | undefined;
     allowedCycles: CYCLE[];
 }
@@ -107,21 +63,31 @@ const SubscriptionCycleSelector = ({
     planIDs,
     plansMap,
     faded,
-    pricingMode,
     additionalCheckResults = [],
     allowedCycles,
 }: Props) => {
-    const monthlySuffix = getMonthlySuffix(planIDs);
+    const calculateCheckout = (cycle: CYCLE): PaymentsCheckout => {
+        const checkResult =
+            additionalCheckResults.find((it) => it.Cycle === cycle) ??
+            getOptimisticCheckResult({
+                planIDs,
+                plansMap,
+                currency,
+                cycle,
+            });
 
-    const selectedPlan = useMemo(() => {
-        return new SelectedPlan(planIDs, plansMap, selectedCycle, currency);
-    }, [planIDs, plansMap, selectedCycle, currency]);
-
-    const totals = getTotals(planIDs, plansMap, additionalCheckResults, pricingMode, selectedPlan);
+        return getCheckout({
+            planIDs,
+            plansMap,
+            checkResult,
+        });
+    };
 
     const fadedClasses = clsx(faded && 'opacity-50 *:pointer-events-none');
 
     if (mode === 'select') {
+        const selectedCycleCheckout = calculateCheckout(selectedCycle);
+
         return (
             <div className={fadedClasses}>
                 <InputField
@@ -131,18 +97,20 @@ const SubscriptionCycleSelector = ({
                     value={selectedCycle}
                     onValue={(value: any) => onChangeCycle(value)}
                     assistiveText={
-                        <Price currency={currency} suffix={monthlySuffix}>
-                            {totals[selectedCycle].perUserPerMonth}
+                        <Price currency={currency} suffix={selectedCycleCheckout.monthlySuffix}>
+                            {selectedCycleCheckout.viewPricePerMonth}
                         </Price>
                     }
                 >
                     {allowedCycles.map((cycle) => {
+                        const { discountPerCycle } = calculateCheckout(cycle);
+
                         return (
                             <Option value={cycle} title={getShortBillingText(cycle, planIDs)} key={cycle}>
                                 <div className="flex justify-space-between">
                                     <span className="shrink-0">{getShortBillingText(cycle, planIDs)}</span>
                                     <span className={clsx(['shrink-0', cycle !== selectedCycle && 'color-success'])}>
-                                        {getDiscountPrice(totals[cycle].discount, currency)}
+                                        {getDiscountPrice(discountPerCycle, currency)}
                                     </span>
                                 </div>
                             </Option>
@@ -184,16 +152,7 @@ const SubscriptionCycleSelector = ({
                                     readOnly
                                 />
                             </div>
-                            <CycleItem
-                                totals={totals}
-                                monthlySuffix={monthlySuffix}
-                                currency={currency}
-                                cycle={cycle}
-                                loading={!!loading}
-                                planIDs={planIDs}
-                                plansMap={plansMap}
-                                additionalCheckResults={additionalCheckResults}
-                            />
+                            <CycleItem checkout={calculateCheckout(cycle)} loading={!!loading} plansMap={plansMap} />
                         </button>
                     </li>
                 );
