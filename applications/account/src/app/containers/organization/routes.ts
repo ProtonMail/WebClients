@@ -4,12 +4,14 @@ import type { SectionConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import {
+    PLANS,
     type Subscription,
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
     hasBundlePro,
     hasBundlePro2024,
+    hasSomeAddonOrPlan,
     hasVpnBusiness,
     planSupportsSSO,
     upsellPlanSSO,
@@ -67,6 +69,7 @@ export const getOrganizationAppRoutes = ({
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
     const isOrgActive = organization?.State === ORGANIZATION_STATE.ACTIVE;
+    const isOrgConfigured = hasOrganizationKey || hasOrganization;
     const hasActiveOrganizationKey = isOrgActive && hasOrganizationKey;
     const hasActiveOrganization = isOrgActive && hasOrganization;
     const hasMemberCapablePlan = getHasMemberCapablePlan(organization, subscription);
@@ -79,7 +82,7 @@ export const getOrganizationAppRoutes = ({
 
     const hasExternalMemberCapableB2BPlan = getHasExternalMemberCapableB2BPlan(subscription);
 
-    const canShowB2BActivityMonitorEvents = (hasOrganizationKey || hasOrganization) && isAdmin;
+    const canShowB2BActivityMonitorEvents = isOrgConfigured && isAdmin;
 
     //vpnbiz2023, bundlepro2022, bundlepro2024 have the Connection Events feature
     const hasPlanWithEventLogging =
@@ -89,7 +92,7 @@ export const getOrganizationAppRoutes = ({
         hasPlanWithEventLogging &&
         app === APPS.PROTONVPN_SETTINGS &&
         canHaveOrganization &&
-        (hasOrganizationKey || hasOrganization);
+        isOrgConfigured;
 
     //Change the title of the section when managing a family and avoid weird UI jump when no subscription is present
     const isPartOfFamily = getOrganizationDenomination(organization) === 'familyGroup';
@@ -108,7 +111,7 @@ export const getOrganizationAppRoutes = ({
         // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete sub users
         (isOrgActive || (!isOrgActive && (organization?.UsedMembers ?? 0) > 1)) &&
         // The org must be setup to allow users to access this page
-        (hasOrganizationKey || hasOrganization);
+        isOrgConfigured;
 
     const canShowDomainNamesSection =
         // user.hasPaidMail is needed, because for example VPN B2B doesn't need domains by design
@@ -133,9 +136,14 @@ export const getOrganizationAppRoutes = ({
         user.hasPaidMail &&
         videoConferenceValidApplications.has(app);
 
-    const canShowAccessControl = hasSubUsers || hasOrganization || hasOrganizationKey;
+    const canShowAccessControl = hasSubUsers || isOrgConfigured;
 
-    const canShowRetentionPolicies = isRetentionPoliciesEnabled && (hasActiveOrganizationKey || hasActiveOrganization);
+    const canShowRetentionPolicies =
+        isRetentionPoliciesEnabled &&
+        // retention policies management is a B2B feature, only show if org is elligible for it
+        isOrgActive &&
+        isOrgConfigured &&
+        hasSomeAddonOrPlan(subscription, [PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024]);
 
     const sectionTitle = isPartOfFamily
         ? c('familyOffer_2023:Settings section title').t`Family`
@@ -345,7 +353,7 @@ export const getOrganizationAppRoutes = ({
                     (planSupportsSSO(organization?.PlanName, isSsoForPbsEnabled) ||
                         upsellPlanSSO(organization?.PlanName)) &&
                     canHaveOrganization &&
-                    (hasOrganizationKey || hasOrganization),
+                    isOrgConfigured,
             },
             accessControl: <SectionConfig>{
                 text: c('Title').t`Access control`,
