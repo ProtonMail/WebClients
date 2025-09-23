@@ -36,7 +36,7 @@ export function FolderContextMenu({
         if (position) {
             open();
         }
-    }, [position]);
+    }, [open, position]);
 
     const isEditEnabled = useIsEditEnabled();
     const { activeFolder } = useActiveShare();
