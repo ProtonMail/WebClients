@@ -2,10 +2,14 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { AuthModal, useErrorHandler, useModalState } from '@proton/components';
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
+import { TelemetryBringYourOwnEmailEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { queryCheckUsernameAvailability, queryUnlock } from '@proton/shared/lib/api/user';
-import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { AddressGenerationPayload } from '@proton/shared/lib/keys';
 import { ClaimableAddressType } from '@proton/shared/lib/keys';
@@ -63,6 +67,19 @@ const GenerateAddressStep = ({
         if (setup.mode === 'ask') {
             setUnlockModalOpen(true);
             return;
+        }
+
+        const openCalendar = toAppName === APPS_CONFIGURATION[APPS.PROTONCALENDAR].name;
+        if (openCalendar && externalEmailAddressValue && getIsBYOEAddress(externalEmailAddressValue)) {
+            await sendTelemetryReport({
+                api,
+                measurementGroup: TelemetryMeasurementGroups.bringYourOwnEmail,
+                event: TelemetryBringYourOwnEmailEvents.claim_proton_address,
+                dimensions: {
+                    source: BYOE_CLAIM_PROTON_ADDRESS_SOURCE.OPEN_CALENDAR_APP,
+                },
+                delay: false,
+            });
         }
 
         return onSubmit({

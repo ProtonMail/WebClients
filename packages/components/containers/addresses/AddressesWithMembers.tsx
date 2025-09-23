@@ -11,6 +11,7 @@ import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -246,7 +247,11 @@ const AddressesWithMembers = ({
                 <AddressModal member={tmpMember} members={members} {...addressModalProps} />
             )}
             {renderClaimProtonAddressModal && (
-                <BYOEClaimProtonAddressModal toApp={APPS.PROTONMAIL} {...claimProtonAddressModalProps} />
+                <BYOEClaimProtonAddressModal
+                    toApp={APPS.PROTONMAIL}
+                    source={BYOE_CLAIM_PROTON_ADDRESS_SOURCE.ADD_ADDRESS}
+                    {...claimProtonAddressModalProps}
+                />
             )}
             {loading ? <Loader /> : children}
         </>
