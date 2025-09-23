@@ -1,5 +1,4 @@
 import type { PropsWithChildren } from 'react';
-import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,13 +11,12 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
-import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
-import { useFileUploadInput, useFolderUploadInput, useFolderView } from '../../../store';
+import { useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import { CreateDocumentButton, CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ActionMenuButtons';
 import { CreateSheetButton } from './ActionMenuButtons/CreateSheetButton';
@@ -36,8 +34,6 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
     const isDesktop = !getDevice()?.type;
 
     const { activeFolder } = useActiveShare();
-    const folderView = useFolderView(activeFolder);
-    const isEditor = useMemo(() => getCanWrite(folderView.permissions), [folderView.permissions]);
     const {
         inputRef: fileInput,
         handleClick: fileClick,
@@ -53,12 +49,11 @@ export const ActionMenuButton = ({ disabled, className, collapsed }: PropsWithCh
     const { isDocsEnabled } = useDriveDocsFeatureFlag();
     const isSheetsEnabled = useIsSheetsEnabled();
     const parentFolderUid = generateNodeUid(activeFolder.volumeId, activeFolder.linkId);
-
     return (
         <>
             <SidebarPrimaryButton
                 ref={anchorRef}
-                disabled={disabled || !isEditor}
+                disabled={disabled}
                 className={clsx(
                     className,
                     !collapsed && 'flex justify-center items-center',
