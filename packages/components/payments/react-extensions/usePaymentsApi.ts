@@ -19,6 +19,7 @@ import {
     SubscriptionMode,
     captureWrongPlanIDs,
     getLifetimeProductType,
+    getOptimisticCheckResult,
     getPaymentMethodStatus,
     getPaymentsVersion,
     getPlanName,
@@ -313,7 +314,7 @@ export const usePaymentsApi = (
 
         const multiCheck = (
             requestData: CheckSubscriptionData[],
-            { cached, ...requestOptions }: MultiCheckOptions = {}
+            { cached, signal, silence, ...optimisticFallbackOptions }: MultiCheckOptions = {}
         ): Promise<EnrichedCheckResponse[]> => {
             return Promise.all(
                 requestData.map(async (data) => {
@@ -324,7 +325,25 @@ export const usePaymentsApi = (
                         }
                     }
 
-                    const result = await checkSubscription(data, requestOptions);
+                    let result: EnrichedCheckResponse;
+                    try {
+                        result = await checkSubscription(data, {
+                            signal: signal,
+                            silence: silence,
+                        });
+                    } catch (error: any) {
+                        if (optimisticFallbackOptions.optimisticFallback) {
+                            result = getOptimisticCheckResult({
+                                planIDs: data.Plans,
+                                plansMap: optimisticFallbackOptions.plansMap,
+                                cycle: data.Cycle,
+                                currency: data.Currency,
+                            });
+                        } else {
+                            throw error;
+                        }
+                    }
+
                     if (cached) {
                         multiCheckCache.set(data, result);
                     }

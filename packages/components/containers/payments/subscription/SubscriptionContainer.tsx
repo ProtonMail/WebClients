@@ -77,6 +77,7 @@ import {
 import {
     InclusiveVatText,
     PaymentsContextProvider,
+    computeOptimisticSubscriptionMode,
     useIsB2BTrial,
     useTaxCountry,
     useVatNumber,
@@ -617,6 +618,10 @@ const SubscriptionContainerInner = ({
             couponConfig,
         });
 
+    /**
+     * Runs subscriptionCheck for all allowed cycles, if coupon is present. That allows to display the discount for
+     * all cycles at once, so it's easier for the user to compare the prices and decide what cycle is the best for them.
+     */
     const runAdditionalChecks = async (
         newModel: Model,
         checkPayload: CheckSubscriptionData,
@@ -626,20 +631,54 @@ const SubscriptionContainerInner = ({
         setAdditionalCheckResults([]);
 
         const codes = checkPayload.Codes;
-
         const noCodes = !codes || codes.length === 0;
         if (noCodes) {
             return;
         }
 
-        paymentsApi.cacheMultiCheck(checkPayload, checkResult);
+        const allAllowedCycles = computeAllowedCycles(newModel.planIDs);
 
-        const additionalCycles = computeAllowedCycles(newModel.planIDs)
+        const additionalCycles = allAllowedCycles
             // skip the cycle that was just checked
             .filter((cycle) => cycle !== checkResult.Cycle)
 
             // skip cycles of the currently active subscription, because the backend doesn't allows to check them
             .filter((cycle) => !isSubcriptionCheckForbidden(subscription, newModel.planIDs, cycle));
+
+        const additionalCyclesHaveCustomBilling = additionalCycles.some((cycle) => {
+            const optimisticSubscriptionMode = computeOptimisticSubscriptionMode(
+                {
+                    planIDs: checkPayload.Plans,
+                    cycle,
+                    currency: checkPayload.Currency,
+                    plansMap,
+                },
+                subscription
+            );
+
+            return optimisticSubscriptionMode === SubscriptionMode.CustomBillings;
+        });
+
+        const currentCycleHasCustomBilling = checkResult.SubscriptionMode === SubscriptionMode.CustomBillings;
+
+        const hasForbiddenCheck = allAllowedCycles.some((cycle) =>
+            isSubcriptionCheckForbidden(subscription, newModel.planIDs, cycle)
+        );
+
+        // In case if we have Custom Billing for the main check, then for other cycles the subscription mode will be
+        // different (most likely, regular proration). Mix of custom billings and proration with coupons is practically
+        // guranteed to cause incosistent UI, so it's better to just skip the additional checks.
+        //
+        // Additionally, if the current set of cycles has forbidden checks then it means that the user already has a
+        // subscription and they just opened the subscription modification view but didn't make any changes in the
+        // number of addons yet. When they add an addon, then custom billing will show up, and the UI might get
+        // incosistent again. For that reason we are avoiding additional checks in this case, and simply display the
+        // full pricing.
+        if (currentCycleHasCustomBilling || additionalCyclesHaveCustomBilling || hasForbiddenCheck) {
+            return;
+        }
+
+        paymentsApi.cacheMultiCheck(checkPayload, checkResult);
 
         const additionalPayloads = additionalCycles.map(
             (Cycle) =>
@@ -652,6 +691,8 @@ const SubscriptionContainerInner = ({
             signal,
             cached: true,
             silence: true,
+            optimisticFallback: true,
+            plansMap,
         });
 
         setAdditionalCheckResults([...additionalChecks, checkResult]);

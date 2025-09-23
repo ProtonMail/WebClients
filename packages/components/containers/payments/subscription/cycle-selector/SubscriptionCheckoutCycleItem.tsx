@@ -1,16 +1,6 @@
-import { c } from 'ttag';
-
-import {
-    CYCLE,
-    DEFAULT_CURRENCY,
-    type PlanIDs,
-    type PlansMap,
-    type SubscriptionCheckResponse,
-    getCheckout,
-} from '@proton/payments';
+import { type PlanIDs, type PlansMap, type SubscriptionCheckResponse, getCheckout } from '@proton/payments';
 
 import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
-import { getShortBillingText } from '../helpers';
 import CycleItemView from './CycleItemView';
 
 const SubscriptionCheckoutCycleItem = ({
@@ -26,33 +16,11 @@ const SubscriptionCheckoutCycleItem = ({
     loading?: boolean;
     couponConfig?: CouponConfigRendered;
 }) => {
-    const cycle = checkResult?.Cycle || CYCLE.MONTHLY;
-    const currency = checkResult?.Currency || DEFAULT_CURRENCY;
-    const replacementCycle = cycle;
-    const freeMonths = 0;
-
-    const result = getCheckout({ planIDs, plansMap, checkResult });
-
-    const monthlySuffix = c('Suffix').t`/month`;
-    const cyclePriceCompare = couponConfig?.renderCyclePriceCompare?.({ cycle, suffix: monthlySuffix });
-
-    const cycleTitle = couponConfig?.renderCycleTitle?.({ cycle }) ?? getShortBillingText(replacementCycle, planIDs);
+    const checkout = getCheckout({ planIDs, plansMap, checkResult });
 
     return (
         <div className="p-4 mb-4 border rounded bg-norm flex flex-nowrap items-stretch border-primary border-2">
-            <CycleItemView
-                loading={loading}
-                text={cycleTitle}
-                currency={currency}
-                discount={result.discountPerCycle}
-                monthlySuffix={monthlySuffix}
-                freeMonths={freeMonths}
-                total={result.withDiscountPerCycle}
-                totalPerMonth={result.withDiscountPerMonth}
-                cycle={cycle}
-                planIDs={planIDs}
-                cyclePriceCompare={cyclePriceCompare}
-            />
+            <CycleItemView loading={loading} checkout={checkout} couponConfig={couponConfig} />
         </div>
     );
 };

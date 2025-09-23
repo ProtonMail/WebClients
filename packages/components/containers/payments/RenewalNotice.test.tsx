@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { addMonths } from 'date-fns';
 
 import {
     ADDON_NAMES,
@@ -402,6 +403,7 @@ describe('RenewalNotice', () => {
                             SubscriptionMode: SubscriptionMode.Regular,
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
+                            PeriodEnd: +addMonths(new Date(), cycle) / 1000,
                         },
                     })}
                     cycle={cycle}
@@ -435,6 +437,7 @@ describe('RenewalNotice', () => {
                             SubscriptionMode: SubscriptionMode.Regular,
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
+                            PeriodEnd: +addMonths(new Date(), cycle) / 1000,
                         },
                     })}
                     cycle={cycle}
@@ -468,6 +471,7 @@ describe('RenewalNotice', () => {
                             SubscriptionMode: SubscriptionMode.Regular,
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
+                            PeriodEnd: +addMonths(new Date(), cycle) / 1000,
                         },
                     })}
                     cycle={cycle}
@@ -501,6 +505,7 @@ describe('RenewalNotice', () => {
                             SubscriptionMode: SubscriptionMode.Regular,
                             BaseRenewAmount: getPrice({ [PLANS.VPN2024]: 1 }, CYCLE.YEARLY, defaultPlansMap),
                             RenewCycle: CYCLE.YEARLY,
+                            PeriodEnd: +addMonths(new Date(), cycle) / 1000,
                         },
                     })}
                     cycle={cycle}
@@ -567,6 +572,7 @@ describe('Trials (from check result)', () => {
                     SubscriptionMode: SubscriptionMode.Trial,
                     BaseRenewAmount: null,
                     RenewCycle: CYCLE.MONTHLY,
+                    PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
                 }}
                 plansMap={getDefaultPlansMap()}
                 planIDs={{ [PLANS.MAIL]: 1 }}
@@ -596,6 +602,7 @@ describe('Trials (from check result)', () => {
                     SubscriptionMode: SubscriptionMode.Trial,
                     BaseRenewAmount: null,
                     RenewCycle: CYCLE.THREE,
+                    PeriodEnd: +addMonths(new Date(), CYCLE.THREE) / 1000,
                 }}
                 plansMap={getDefaultPlansMap()}
                 planIDs={{ [PLANS.MAIL]: 1 }}
@@ -633,6 +640,7 @@ describe('Coupons - multiple redemptions', () => {
                         SubscriptionMode: SubscriptionMode.Regular,
                         BaseRenewAmount: null,
                         RenewCycle: null,
+                        PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
                     },
                 })}
                 cycle={CYCLE.MONTHLY}
@@ -668,6 +676,7 @@ describe('Coupons - multiple redemptions', () => {
                         SubscriptionMode: SubscriptionMode.Regular,
                         BaseRenewAmount: null,
                         RenewCycle: null,
+                        PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
                     },
                 })}
                 cycle={CYCLE.YEARLY}
@@ -713,6 +722,7 @@ describe('Coupons - one-time (standard notice)', () => {
                             SubscriptionMode: SubscriptionMode.Regular,
                             BaseRenewAmount: 7995,
                             RenewCycle: 12,
+                            PeriodEnd: +addMonths(new Date(), cycle) / 1000,
                         },
                     })}
                     cycle={cycle}
@@ -755,6 +765,7 @@ describe('Coupons - one-time (standard notice)', () => {
                         SubscriptionMode: SubscriptionMode.Regular,
                         BaseRenewAmount: null,
                         RenewCycle: null,
+                        PeriodEnd: +addMonths(new Date(), CYCLE.YEARLY) / 1000,
                     },
                 })}
                 cycle={CYCLE.YEARLY}
@@ -796,6 +807,7 @@ describe('Coupons - one-time (standard notice)', () => {
                         SubscriptionMode: SubscriptionMode.Regular,
                         BaseRenewAmount: null,
                         RenewCycle: null,
+                        PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
                     },
                 })}
                 cycle={CYCLE.MONTHLY}
@@ -831,6 +843,7 @@ describe('Coupons - one-time (short notice)', () => {
                         SubscriptionMode: SubscriptionMode.Regular,
                         BaseRenewAmount: null,
                         RenewCycle: null,
+                        PeriodEnd: +addMonths(new Date(), CYCLE.MONTHLY) / 1000,
                     },
                 })}
                 cycle={CYCLE.MONTHLY}

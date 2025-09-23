@@ -5,7 +5,14 @@ import { addMonths } from '@proton/shared/lib/date-fns-utc';
 
 import { ADDON_NAMES, CYCLE, DEFAULT_CYCLE, PLANS, PLAN_NAMES, PLAN_TYPES } from './constants';
 import type { Currency, FeatureLimitKey, PlanIDs, Pricing } from './interface';
-import { isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './plan/addons';
+import {
+    isDomainAddon,
+    isIpAddon,
+    isLumoAddon,
+    isMemberAddon,
+    isScribeAddon,
+    supportsMemberAddon,
+} from './plan/addons';
 import { getAddonMultiplier, getMembersFromPlanIDs } from './plan/feature-limits';
 import { getIsB2BAudienceFromPlan, getPlanFromPlanIDs, getPlanNameFromIDs } from './plan/helpers';
 import type { Plan, PlansMap } from './plan/interface';
@@ -14,24 +21,7 @@ import { SubscriptionMode } from './subscription/constants';
 import { customCycles } from './subscription/helpers';
 import type { EnrichedCheckResponse, Subscription, SubscriptionCheckResponse } from './subscription/interface';
 
-export type RequiredCheckResponse = Pick<
-    SubscriptionCheckResponse,
-    | 'Amount'
-    | 'AmountDue'
-    | 'Cycle'
-    | 'CouponDiscount'
-    | 'Proration'
-    | 'Credit'
-    | 'Coupon'
-    | 'Gift'
-    | 'Taxes'
-    | 'TaxInclusive'
-    | 'optimistic'
-    | 'Currency'
-    | 'SubscriptionMode'
-    | 'BaseRenewAmount'
-    | 'RenewCycle'
->;
+export type RequiredCheckResponse = SubscriptionCheckResponse;
 
 export interface AddonDescription {
     name: ADDON_NAMES;
@@ -183,15 +173,12 @@ export const getCheckout = ({
 }) => {
     const usersAndAddons = getUsersAndAddons(planIDs, plansMap);
 
-    const amount = (() => {
-        // when the backend returns custom billing subscription mode then it also returns only ther partial amount.
-        // so we need to manually switch back to the full amount.
-        if (checkResult.SubscriptionMode === SubscriptionMode.CustomBillings) {
-            return getPrice(planIDs, checkResult.Cycle, plansMap);
-        }
+    const amountOptimistic = getPrice(planIDs, checkResult.Cycle, plansMap);
 
-        return checkResult.Amount || 0;
-    })();
+    // when the backend returns custom billing subscription mode then it also returns only ther partial amount.
+    // so we need to manually switch back to the full amount.
+    const amount =
+        checkResult.SubscriptionMode === SubscriptionMode.CustomBillings ? amountOptimistic : checkResult.Amount || 0;
 
     const cycle = checkResult.Cycle || CYCLE.MONTHLY;
     const couponDiscount = Math.abs(checkResult.CouponDiscount || 0);
@@ -201,25 +188,20 @@ export const getCheckout = ({
     const withoutDiscountPerMonth = getPrice(planIDs, CYCLE.MONTHLY, plansMap);
 
     const withoutDiscountPerCycle = withoutDiscountPerMonth * cycle;
-    const withoutDiscountPerMostExpensiveCycle = withoutDiscountPerMonth * cycle;
     const discountPerCycle = Math.min(withoutDiscountPerCycle - withDiscountPerCycle, withoutDiscountPerCycle);
-    const discountPerMostExpensiveCycle = Math.min(
-        withoutDiscountPerMostExpensiveCycle - withDiscountPerCycle,
-        withoutDiscountPerMostExpensiveCycle
-    );
 
     const discountPercent =
-        withoutDiscountPerMostExpensiveCycle > 0
-            ? Math.round(100 * (discountPerMostExpensiveCycle / withoutDiscountPerMostExpensiveCycle))
-            : 0;
+        withoutDiscountPerCycle > 0 ? Math.round(100 * (discountPerCycle / withoutDiscountPerCycle)) : 0;
 
     const addonsPerMonth = usersAndAddons.addons.reduce((acc, { quantity, pricing }) => {
         return acc + ((pricing[cycle] || 0) * quantity) / cycle;
     }, 0);
 
-    const membersPerCycle = usersAndAddons.usersPricing?.[cycle] ?? null;
+    const oneMemberPerCycle = usersAndAddons.usersPricing?.[cycle] ?? null;
     const membersPerMonth =
-        membersPerCycle !== null ? (membersPerCycle / cycle) * usersAndAddons.users : amount / cycle - addonsPerMonth;
+        oneMemberPerCycle !== null
+            ? (oneMemberPerCycle / cycle) * usersAndAddons.users
+            : amount / cycle - addonsPerMonth;
 
     const couponDiscountPerMonth = couponDiscount / cycle;
     const withDiscountMembersPerMonth = membersPerMonth - couponDiscountPerMonth;
@@ -242,18 +224,32 @@ export const getCheckout = ({
     })();
     const renewPriceOverriden = !!checkResult.BaseRenewAmount;
 
+    const planName = usersAndAddons.planName;
+
+    const withDiscountPerMonth = withDiscountPerCycle / cycle;
+
+    /**
+     * If the selected plan has member addons, then we want to display the full price per one member - don't take into
+     * account any discount. This is because calculating the price per one member with a discount present gets messy and
+     * error-prone very quickly.
+     */
+    const isPricePerMember = supportsMemberAddon(planIDs);
+    const viewPricePerMonth = isPricePerMember ? membersPerMonth / usersAndAddons.users : withDiscountPerMonth;
+    const monthlySuffix = isPricePerMember ? c('Suffix').t`/user per month` : c('Suffix').t`/month`;
+
     return {
+        regularAmountPerCycleOptimistic: amountOptimistic,
         regularAmountPerCycle: amount,
         couponDiscount: checkResult.CouponDiscount,
         planIDs,
-        planName: usersAndAddons.planName,
+        planName,
         planTitle: usersAndAddons.planTitle,
         addons: usersAndAddons.addons,
         usersTitle: getUserTitle(usersAndAddons.viewUsers || 1), // VPN and free plan has no users
         withoutDiscountPerMonth,
         withoutDiscountPerCycle,
         withDiscountPerCycle,
-        withDiscountPerMonth: withDiscountPerCycle / cycle,
+        withDiscountPerMonth,
         membersPerMonth,
         discountPerCycle,
         discountPercent,
@@ -266,6 +262,9 @@ export const getCheckout = ({
         renewCycleOverriden,
         renewPriceOverriden,
         amountDue: checkResult.AmountDue,
+        viewPricePerMonth,
+        monthlySuffix,
+        checkResult,
     };
 };
 
@@ -296,6 +295,7 @@ export const getCheckResultFromSubscription = (
         SubscriptionMode: SubscriptionMode.Regular,
         BaseRenewAmount: null,
         RenewCycle: null,
+        PeriodEnd: +addMonths(new Date(), Cycle) / 1000,
     };
 };
 
@@ -333,6 +333,15 @@ export const getOptimisticCheckResult = ({
             Plans: planIDs || {},
         },
     };
+};
+
+export const getOptimisticCheckout = (params: Parameters<typeof getOptimisticCheckResult>[0]): PaymentsCheckout => {
+    const optimisticCheckResult = getOptimisticCheckResult(params);
+    return getCheckout({
+        planIDs: params.planIDs ?? {},
+        plansMap: params.plansMap,
+        checkResult: optimisticCheckResult,
+    });
 };
 
 export const getIsCustomCycle = (cycle: CYCLE) => {

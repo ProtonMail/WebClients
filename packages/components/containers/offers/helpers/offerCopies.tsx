@@ -4,8 +4,7 @@ import { c, msgid } from 'ttag';
 
 import type { IconName } from '@proton/components/components/icon/Icon';
 import { getDesktopAppText, getOwnDomainText } from '@proton/components/containers/payments/features/mail';
-import { CYCLE, PLANS, PLAN_NAMES, type PlanIDs } from '@proton/payments';
-import { getRenewCycle } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, type PlanIDs, getRenewCycle } from '@proton/payments';
 import {
     BRAND_NAME,
     CALENDAR_APP_NAME,
@@ -28,10 +27,6 @@ import {
     getUnlimitedHideMyEmailAliasesText,
     getUnlimitedLoginsAndNotesText,
 } from '../../payments/features/pass';
-
-export const getMonthFreeText = (n: number) => {
-    return c('specialoffer: Deal').ngettext(msgid`${n} month FREE`, `${n} months FREE`, n);
-};
 
 export const getMonthsFree = (cycle: CYCLE) => {
     if (cycle === CYCLE.THIRTY) {

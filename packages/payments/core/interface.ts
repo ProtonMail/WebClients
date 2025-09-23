@@ -36,6 +36,7 @@ import type {
     TransactionType,
 } from './constants';
 import type { PaymentProcessorType } from './payment-processors/interface';
+import type { PlansMap } from './plan/interface';
 import type { EnrichedCheckResponse } from './subscription/interface';
 
 export interface CreateCardDetailsBackend {
@@ -324,9 +325,19 @@ export type RequestOptions = {
     silence?: boolean;
 };
 
+type OptimisticFallbackOptions =
+    | {
+          plansMap: PlansMap;
+          optimisticFallback: true;
+      }
+    | {
+          optimisticFallback?: false | never;
+      };
+
 export type MultiCheckOptions = {
     cached?: boolean;
-} & RequestOptions;
+} & RequestOptions &
+    OptimisticFallbackOptions;
 
 export type GetPlansData = {
     currency?: Currency;

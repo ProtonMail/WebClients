@@ -17,8 +17,7 @@ import {
     TRIAL_DURATION_DAYS,
     TaxInclusive,
     formatTax,
-    getPricingFromPlanIDs,
-    getTotalFromPricing,
+    getOptimisticCheckout,
 } from '@proton/payments';
 import { InclusiveVatText } from '@proton/payments/ui';
 import clsx from '@proton/utils/clsx';
@@ -97,13 +96,18 @@ const PaymentSummary = ({
 
     const isTrial = options.checkResult.SubscriptionMode === SubscriptionMode.Trial;
 
-    const discountPercent = (() => {
+    const discountPercent: number = (() => {
         if (!isTrial) {
             return actualCheckout.discountPercent;
         }
-        const pricing = getPricingFromPlanIDs(options.planIDs, model.plansMap);
-        const totals = getTotalFromPricing(pricing, options.cycle);
-        return totals.discountPercentage;
+
+        // For trials, show the original plan discount instead of the 100% trial discount
+        return getOptimisticCheckout({
+            planIDs: options.planIDs,
+            plansMap: model.plansMap,
+            cycle: options.cycle,
+            currency: options.currency,
+        }).discountPercent;
     })();
 
     const tax = formatTax(options.checkResult);

@@ -125,37 +125,3 @@ export function getPricingPerMember(plan: Plan): Pricing {
         return acc;
     }, {} as Pricing);
 }
-
-interface OfferResult {
-    pricing: Pricing;
-    cycles: CYCLE[];
-    valid: boolean;
-}
-
-export const getPlanOffer = (plan: Plan) => {
-    const result = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].reduce<OfferResult>(
-        (acc, cycle) => {
-            acc.pricing[cycle] = (plan.DefaultPricing?.[cycle] ?? 0) - (getPricePerCycle(plan, cycle) ?? 0);
-            return acc;
-        },
-        {
-            valid: false,
-            cycles: [],
-            pricing: {
-                [CYCLE.MONTHLY]: 0,
-                [CYCLE.YEARLY]: 0,
-                [CYCLE.THREE]: 0,
-                [CYCLE.TWO_YEARS]: 0,
-                [CYCLE.FIFTEEN]: 0,
-                [CYCLE.EIGHTEEN]: 0,
-                [CYCLE.THIRTY]: 0,
-            },
-        }
-    );
-    const sortedResults = (Object.entries(result.pricing) as unknown as [CYCLE, number][]).sort((a, b) => b[1] - a[1]);
-    result.cycles = sortedResults.map(([cycle]) => cycle);
-    if (sortedResults[0][1] > 0) {
-        result.valid = true;
-    }
-    return result;
-};

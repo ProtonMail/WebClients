@@ -145,10 +145,13 @@ const SubscriptionCheckout = ({
         !!planIDs?.[PLANS.VPN_PASS_BUNDLE];
 
     const proration = checkResult.Proration ?? 0;
+    const unusedCredit = checkResult.UnusedCredit ?? 0;
     const credit = checkResult.Credit ?? 0;
     const amount = (() => {
         if (checkResult.Amount === 0 && trial) {
-            return checkResult.BaseRenewAmount ?? 0; // Not ideal to default to 0, but it shouldn't happen
+            // the fallback should technically never be used, but in case if BaseRenewAmount is still somehow null while
+            // trial is selected, then we will use the full optimistic amount
+            return checkResult.BaseRenewAmount ?? checkout.regularAmountPerCycleOptimistic;
         }
 
         if (couponConfig?.hidden) {
@@ -265,13 +268,12 @@ const SubscriptionCheckout = ({
                         title={
                             <>
                                 <span className="mr-2">{getTotalBillingText(cycle, planIDs)}</span>
-                                {/* Commented out until PAY-2179 is resolved */}
-                                {/* {isCustomBilling ? (
+                                {checkoutModifiers.isCustomBilling ? (
                                     <Info
                                         title={c('Payments')
                                             .t`This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.`}
                                     />
-                                ) : null} */}
+                                ) : null}
                             </>
                         }
                         amount={amount}
@@ -281,14 +283,7 @@ const SubscriptionCheckout = ({
                     />
                 </>
             )}
-            {!!couponDiscount && !couponConfig?.hidden && (
-                <CheckoutRow
-                    title={c('Title').t`Coupon`}
-                    amount={couponDiscount}
-                    currency={currency}
-                    data-testid="coupon-discount"
-                />
-            )}
+
             {checkoutModifiers.isProration && proration !== 0 && (
                 <CheckoutRow
                     title={
@@ -313,9 +308,38 @@ const SubscriptionCheckout = ({
                     data-testid="proration-value"
                 />
             )}
+            {checkoutModifiers.isCustomBilling && unusedCredit < 0 && (
+                <CheckoutRow
+                    title={
+                        <span className="inline-flex items-center">
+                            <span className="mr-2">{c('Label').t`Proration`}</span>
+                            <Info
+                                title={c('Payments.info')
+                                    .t`Credit for the unused portion of your previous plan subscription`}
+                            />
+                        </span>
+                    }
+                    amount={unusedCredit}
+                    currency={currency}
+                    data-testid="custom-billing-unused-credit-value"
+                />
+            )}
+            {!!couponDiscount && !couponConfig?.hidden && (
+                <CheckoutRow
+                    title={c('Title').t`Coupon`}
+                    amount={couponDiscount}
+                    currency={currency}
+                    data-testid="coupon-discount"
+                />
+            )}
             {credit !== 0 && (
                 <CheckoutRow
-                    title={c('Title').t`Credits`}
+                    title={
+                        <span className="inline-flex items-center">
+                            <span className="mr-2">{c('Label').t`Credits`}</span>
+                            {credit > 0 && <Info title={c('Payments.info').t`Credits will be added to your balance`} />}
+                        </span>
+                    }
                     amount={credit}
                     currency={currency}
                     data-testid="credits-value"

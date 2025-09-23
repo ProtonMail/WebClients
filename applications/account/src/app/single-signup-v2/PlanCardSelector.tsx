@@ -25,12 +25,10 @@ import {
     getCheckResultFromSubscription,
     getCheckout,
     getHasPlusPlan,
+    getOptimisticCheckout,
     getPlanFromPlanIDs,
     getPlanIDs,
-    getPlanOffer,
-    getPricingFromPlanIDs,
     getRenewCycle,
-    getTotalFromPricing,
 } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -82,10 +80,6 @@ export function isRegularPlanCard(planCard: PlanCard): planCard is RegularPlanCa
 export function isNonInteractivePlanCard(planCard: PlanCard): planCard is NonInteractivePlanCard {
     return planCard.interactive === false;
 }
-
-const getLimitedTimeOfferText = () => {
-    return c('pass_signup_2023: Header').t`Limited time offer`;
-};
 
 const getRecommendedText = () => {
     return c('pass_signup_2023: Header').t`Recommended`;
@@ -398,7 +392,6 @@ export const PlanCardSelector = ({
 
                 const isFreePlan = planCard.plan === PLANS.FREE;
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
-                const pricing = getPricingFromPlanIDs(planIDs, plansMap);
                 const plan = getPlanFromPlanIDs(plansMap, planIDs);
                 const freePlanCurrency = Object.values(plansMap)[0]?.Currency ?? plan?.Currency ?? currency;
 
@@ -414,14 +407,19 @@ export const PlanCardSelector = ({
                     return null;
                 }
 
-                const offer = getPlanOffer(planFromCard);
-                const highlight = planCard.type === 'best' || offer.valid;
+                const highlight = planCard.type === 'best';
 
-                const totals = getTotalFromPricing(pricing, cycle);
+                const optimisticCheckout = getOptimisticCheckout({
+                    planIDs,
+                    plansMap,
+                    cycle,
+                    currency: planCurrency,
+                });
+
                 const priceToDisplay = {
-                    discountPercentage: totals.discountPercentage,
-                    standardMonthlyPrice: totals.totalNoDiscountPerMonth,
-                    monthlyPrice: totals.totalPerMonth,
+                    discountPercentage: optimisticCheckout.discountPercent,
+                    standardMonthlyPrice: optimisticCheckout.withoutDiscountPerMonth,
+                    monthlyPrice: optimisticCheckout.withDiscountPerMonth,
                 };
 
                 const cycleMapping = getSubscriptionMapping({
@@ -447,9 +445,6 @@ export const PlanCardSelector = ({
                         selected={selected}
                         id={planCard.plan}
                         headerText={(() => {
-                            if (offer.valid) {
-                                return getLimitedTimeOfferText();
-                            }
                             if (planCard.type === 'best') {
                                 return getRecommendedText();
                             }

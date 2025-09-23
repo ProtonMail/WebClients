@@ -1,22 +1,13 @@
 import type { EitherOr, Organization } from '@proton/shared/lib/interfaces';
 
-import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS, PLAN_TYPES } from './constants';
+import { ADDON_NAMES, CYCLE, DEFAULT_CURRENCY, PLANS } from './constants';
 import type { FreeSubscription, PlanIDs } from './interface';
 import { getSupportedAddons, isDomainAddon, isIpAddon, isLumoAddon, isMemberAddon, isScribeAddon } from './plan/addons';
-import { getPlanFeatureLimit, getPlanMembers } from './plan/feature-limits';
+import { getPlanFeatureLimit } from './plan/feature-limits';
 import { getPlanNameFromIDs } from './plan/helpers';
 import type { Plan, PlansMap } from './plan/interface';
-import { getPricePerCycle, getPricePerMember } from './price-helpers';
-import {
-    type AggregatedPricing,
-    type PricingForCycles,
-    allCycles,
-    getPlanIDs,
-    getSubscriptionsArray,
-    hasLumoPlan,
-    isManagedExternally,
-} from './subscription/helpers';
-import type { Subscription, SubscriptionCheckResponse } from './subscription/interface';
+import { getPlanIDs, getSubscriptionsArray, hasLumoPlan, isManagedExternally } from './subscription/helpers';
+import type { Subscription } from './subscription/interface';
 import { SelectedPlan } from './subscription/selected-plan';
 import { isFreeSubscription } from './type-guards';
 
@@ -316,168 +307,6 @@ export const setQuantity = (planIDs: PlanIDs, planID: PLANS | ADDON_NAMES, newQu
 export function getPlanFromIDs(planIDs: PlanIDs, plansMap: PlansMap): Plan | undefined {
     const planName = getPlanNameFromIDs(planIDs);
     return planName ? plansMap[planName] : undefined;
-}
-
-export const getPricingFromPlanIDs = (planIDs: PlanIDs, plansMap: PlansMap): AggregatedPricing => {
-    const initial = {
-        [CYCLE.MONTHLY]: 0,
-        [CYCLE.YEARLY]: 0,
-        [CYCLE.THREE]: 0,
-        [CYCLE.SIX]: 0,
-        [CYCLE.EIGHTEEN]: 0,
-        [CYCLE.TWO_YEARS]: 0,
-        [CYCLE.FIFTEEN]: 0,
-        [CYCLE.THIRTY]: 0,
-    };
-
-    return Object.entries(planIDs).reduce<AggregatedPricing>(
-        (acc, [planName, quantity]) => {
-            const plan = plansMap[planName as keyof PlansMap];
-            if (!plan) {
-                return acc;
-            }
-
-            const members = getPlanMembers(plan, quantity);
-            acc.membersNumber += members;
-
-            const add = (target: PricingForCycles, cycle: CYCLE) => {
-                const price = getPricePerCycle(plan, cycle);
-                if (price) {
-                    target[cycle] += quantity * price;
-                }
-            };
-
-            const addMembersPricing = (target: PricingForCycles, cycle: CYCLE) => {
-                const price = getPricePerMember(plan, cycle);
-                if (price) {
-                    target[cycle] += members * price;
-                }
-            };
-
-            allCycles.forEach((cycle) => {
-                add(acc.all, cycle);
-            });
-
-            if (members !== 0) {
-                allCycles.forEach((cycle) => {
-                    addMembersPricing(acc.members, cycle);
-                });
-            }
-
-            if (plan.Type === PLAN_TYPES.PLAN) {
-                allCycles.forEach((cycle) => {
-                    add(acc.plans, cycle);
-                });
-
-                acc.defaultMonthlyPriceWithoutAddons += quantity * (getPricePerCycle(plan, CYCLE.MONTHLY) ?? 0);
-            }
-
-            const defaultMonthly = plan.DefaultPricing?.[CYCLE.MONTHLY] ?? 0;
-            const monthly = getPricePerCycle(plan, CYCLE.MONTHLY) ?? 0;
-
-            // Offers might affect Pricing both ways, increase and decrease.
-            // So if the Pricing increases, then we don't want to use the lower DefaultPricing as basis
-            // for discount calculations
-            const price = Math.max(defaultMonthly, monthly);
-
-            acc.defaultMonthlyPrice += quantity * price;
-
-            return acc;
-        },
-        {
-            defaultMonthlyPrice: 0,
-            defaultMonthlyPriceWithoutAddons: 0,
-            all: { ...initial },
-            members: {
-                ...initial,
-            },
-            plans: {
-                ...initial,
-            },
-            membersNumber: 0,
-        }
-    );
-};
-
-export type PricingMode = 'all' | 'plans';
-
-export type TotalPricing = ReturnType<typeof getTotalFromPricing>;
-
-// todo: replace signature with SelectedPlan only
-export const getTotalFromPricing = (
-    pricing: AggregatedPricing,
-    cycle: CYCLE,
-    mode: PricingMode = 'all',
-    additionalCheckResults?: SubscriptionCheckResponse[],
-    selectedPlan?: SelectedPlan
-) => {
-    type CheckedPrices = Record<
-        CYCLE,
-        {
-            Amount: number;
-            CouponDiscount: number;
-        }
-    >;
-
-    const checkedPrices =
-        additionalCheckResults?.reduce((acc, { CouponDiscount = 0, Cycle, Amount }) => {
-            acc[Cycle] = {
-                Amount,
-                CouponDiscount,
-            };
-
-            return acc;
-        }, {} as CheckedPrices) ?? ({} as CheckedPrices);
-
-    const { defaultMonthlyPrice, defaultMonthlyPriceWithoutAddons } = pricing;
-
-    const total = checkedPrices[cycle]?.Amount ?? pricing[mode][cycle];
-
-    const couponDiscount = Math.abs(checkedPrices[cycle]?.CouponDiscount ?? 0);
-
-    const discountedTotal = total - couponDiscount;
-    const totalPerMonth = discountedTotal / cycle;
-
-    const price = mode === 'all' ? defaultMonthlyPrice : defaultMonthlyPriceWithoutAddons;
-    const totalNoDiscount = price * cycle;
-    const discount = cycle === CYCLE.MONTHLY ? couponDiscount : totalNoDiscount - discountedTotal;
-
-    const membersPricePerMonthWithoutDiscount = Math.floor(pricing.members[cycle] / cycle);
-    const memberShare = membersPricePerMonthWithoutDiscount / (total / cycle);
-    const membersDiscount = Math.floor(couponDiscount * memberShare);
-    const discountPerUserPerMonth = membersDiscount / pricing.membersNumber / cycle;
-    const perUserPerMonth = membersPricePerMonthWithoutDiscount / pricing.membersNumber - discountPerUserPerMonth;
-
-    const viewPricePerMonth = selectedPlan?.isB2BPlan() ? perUserPerMonth : totalPerMonth;
-
-    return {
-        discount,
-        discountPercentage: discount > 0 ? Math.round((discount / totalNoDiscount) * 100) : 0,
-        discountedTotal,
-        totalPerMonth,
-        totalNoDiscountPerMonth: totalNoDiscount / cycle,
-        perUserPerMonth,
-        viewPricePerMonth,
-    };
-};
-
-export type TotalPricings = {
-    [key in CYCLE]: TotalPricing;
-};
-
-export function getTotals(
-    planIDs: PlanIDs,
-    plansMap: PlansMap,
-    additionalCheckResults: SubscriptionCheckResponse[],
-    mode?: PricingMode,
-    selectedPlan?: SelectedPlan
-): TotalPricings {
-    const pricing = getPricingFromPlanIDs(planIDs, plansMap);
-
-    return allCycles.reduce<{ [key in CYCLE]: TotalPricing }>((acc, cycle) => {
-        acc[cycle] = getTotalFromPricing(pricing, cycle, mode, additionalCheckResults, selectedPlan);
-        return acc;
-    }, {} as any);
 }
 
 export function planIDsPositiveDifference(oldPlanIDs: PlanIDs, newPlanIDs: PlanIDs): PlanIDs {
