@@ -63,6 +63,11 @@
         "Informațiile v-au fost găsite în cel puțin o compromitere a datelor. Activați opțiunea ${ DARK_WEB_MONITORING_NAME } pentru a vedea detalii și a lua măsuri. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Conturi"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Magazin ${ BRAND_NAME }"
@@ -135,6 +140,9 @@
       ],
       "Add label": [
         "Adăugare etichetă"
+      ],
+      "Add more seats": [
+        "Adăugare mai multe licențe"
       ],
       "Add notification": [
         "Adăugare notificare"
@@ -766,6 +774,9 @@
       "Get more servers": [
         "Obțineți mai multe servere"
       ],
+      "Get Pass Plus": [
+        "Luați Pass Plus"
+      ],
       "Get started": [
         "Să începem"
       ],
@@ -1038,6 +1049,9 @@
       ],
       "Pay ${ price } now": [
         "Plătire ${ price } acum"
+      ],
+      "Pay once": [
+        "Plată o dată"
       ],
       "Preview": [
         "Examinare"
@@ -1417,6 +1431,9 @@
       "Start live chat": [
         "Începere discuție live"
       ],
+      "Start subscription": [
+        "Start abonament"
+      ],
       "Stay": [
         "Nu închide"
       ],
@@ -1431,6 +1448,9 @@
       ],
       "Submit": [
         "Trimitere"
+      ],
+      "Subscribe now": [
+        "Abonați-vă acum"
       ],
       "Support": [
         "Asistenţă"
@@ -1563,6 +1583,9 @@
       ],
       "User": [
         "Utilizator"
+      ],
+      "users and addresses": [
+        "utilizatori și adrese"
       ],
       "Verify": [
         "Verifică"
@@ -6279,6 +6302,9 @@
       "You must set a name": [
         "Trebuie specificat un nume"
       ],
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "Trebuie să aveți o adresă de domeniu personal activă pentru a genera un cod de acces SMTP."
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "S-a atins numărul maxim de caractere. Scurtați mesajul."
       ],
@@ -8473,6 +8499,9 @@
       "Account successfully updated": [
         "Cont actualizat cu succes"
       ],
+      "Accounts": [
+        "Conturi"
+      ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activați cel puțin o metodă de recuperare a datelor pentru a vă asigura că puteți accesa conținutul din contul ${ BRAND_NAME } dacă vă pierdeți parola."
       ],
@@ -8594,6 +8623,9 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permite utilizatorilor să se conecteze la serverele securizate partajate din secțiunea **Țări** a aplicației ${ VPN_APP_NAME }."
+      ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Permite adăugarea fără probleme a legăturilor web de conferințe video ${ MEET_APP_NAME } la invitațiile personale din calendar."
       ],
       "Already allocated": [
         "Deja alocat"
@@ -9196,6 +9228,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Se încheie la ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Îmbunătățiți-vă securitatea rețelei"
       ],
@@ -9328,6 +9363,9 @@
       "Free forever": [
         "Gratuit pentru totdeauna"
       ],
+      "Free trial": [
+        "Probare gratuită"
+      ],
       "free up space by deleting older messages or other data": [
         "eliberați spațiu prin ștergerea mesajelor mai vechi sau a altor date"
       ],
@@ -9387,6 +9425,9 @@
       ],
       "Groups": [
         "Grupuri"
+      ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "Ajută la scrierea, răspunsul și corectarea mesajelor. Gestionare pentru utilizatori individuali în ${ userAndAddress }. ${ addMoreSeats }"
       ],
       "here": [
         "aici"
@@ -9770,6 +9811,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestionați aplicațiile ${ BRAND_NAME } pe care membrii organizației proprii le pot accesa. Dacă este dezactivat, numai administratorii vor avea acces."
       ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Gestionați ce funcții pot accesa membrii organizației. Dacă este dezactivat, numai administratorii vor avea acces."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestionați preferințele notificărilor pe e-mail pentru ${ DOCS_APP_NAME }."
       ],
@@ -9964,6 +10008,9 @@
         "Membrii organizației vor trebui să deblocheze ${ PASS_APP_NAME } cu parola proprie, codul PIN etc."
       ],
       "Organization monitor": [
+        "Monitorizare organizație"
+      ],
+      "Organization Monitor": [
         "Monitorizare organizație"
       ],
       "Organization size": [
@@ -10281,6 +10328,9 @@
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selectați afilierile utilizatorilor din ${ getFormattedOrganization } pe care doriți să le permiteți în organizația din ${ BRAND_NAME }:"
       ],
+      "Select users to view their activity": [
+        "Selectare utilizatori pentru a le vedea activitatea."
+      ],
       "Select what you want to import.": [
         "Selectați ce doriți să importați."
       ],
@@ -10369,6 +10419,9 @@
       ],
       "Show original message": [
         "Afișare mesaj original"
+      ],
+      "Sign in only": [
+        "Doar conectare"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
@@ -12443,6 +12496,9 @@
       "Create password": [
         "Creare parolă"
       ],
+      "Credit cards": [
+        "Carduri de plată"
+      ],
       "Credits": [
         "Credite"
       ],
@@ -12746,6 +12802,9 @@
       "Level for NetShield blocker filtering": [
         "Nivelul pentru filtrarea blocatorului NetShield"
       ],
+      "Limited time": [
+        "Timp limitat"
+      ],
       "Link label (optional)": [
         "Etichetă legătură web (opțional)"
       ],
@@ -12862,6 +12921,9 @@
       ],
       "Notification": [
         "Notificare"
+      ],
+      "Notification email address": [
+        "Adresă de e-mail pentru notificări"
       ],
       "Notifications": [
         "Notificări"
@@ -13150,6 +13212,9 @@
       "System information": [
         "Informații sistem"
       ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "Tot ce e mai bun de la ${ BRAND_NAME } cu un singur abonament"
+      ],
       "Then": [
         "Atunci"
       ],
@@ -13292,6 +13357,9 @@
     "label": {
       "Device-based recovery": [
         "Recuperare pe bază de dispozitiv"
+      ],
+      "Notification phone number": [
+        "Număr de telefon pentru notificări"
       ],
       "Recovery phone number": [
         "Număr de telefon de recuperare"
@@ -16119,6 +16187,11 @@
         "Încărcare conținut prin proxy și stocare ca atașamente"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organizația"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } pentru a adăuga mai mulți utilizatori sau eliminați câteva conturi de utilizator pentru a elibera spațiul."
@@ -17491,6 +17564,31 @@
         "Salvați-vă fraza de recuperare"
       ]
     },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de probare."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Dacă nu vă abonați**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Dacă nu anulați,** planul complet va începe și veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Dacă vă abonați înainte de această dată**, veți primi **${ referrerRewardAmount }** în credite."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Mai aveți **${ daysRemaining } zi** pentru a explora toate funcțiile puternice pe care le oferă **${ planTitle }**.",
+        "Mai aveți **${ daysRemaining } zile** pentru a explora toate funcțiile puternice pe care vi le oferă **${ planTitle }**.",
+        "Mai aveți **${ daysRemaining } de zile** pentru a explora toate funcțiile puternice pe care **${ planTitle }** le are de oferit."
+      ],
+      "your subscription": [
+        "abonament personal"
+      ]
+    },
     "Remark about a key type option": {
       "Classic": [
         "Clasică"
@@ -17803,6 +17901,9 @@
       "Add a recovery phone number": [
         "Adăugați un număr de telefon de recuperare"
       ],
+      "Add an alternative email address": [
+        "Adăugați o adresă de e-mail alternativă"
+      ],
       "Add an email": [
         "Adăugați un e-mail"
       ],
@@ -17833,8 +17934,14 @@
       "Disable recovery by email": [
         "Dezactivare recuperare prin e-mail"
       ],
+      "Disable recovery by email ": [
+        "Dezactivați recuperarea prin e-mail "
+      ],
       "Disable recovery by phone": [
         "Dezactivare recuperare cu număr de telefon"
+      ],
+      "Disable recovery by phone ": [
+        "Dezactivați recuperarea cu numărul de telefon "
       ],
       "Download ${ size }": [
         "Descărcare ${ size }"
@@ -17868,6 +17975,9 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Dacă vă pierdeți detaliile de conectare și trebuie să vă resetați contul, **este imperativ** să aveți atât o **metodă de recuperare a contului, cât și o metodă de recuperare a datelor**, altfel este posibil să nu vă puteți accesa niciunul dintre mesajele de pe e-mail, contactele, fișierele sau parolele."
+      ],
+      "in case we need to contact you": [
+        "în cazul în care trebuie să vă contactăm"
       ],
       "Invalid code": [
         "Codul nu este valid."
@@ -17925,6 +18035,9 @@
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Pentru a ne asigura că numărul de telefon vă aparține, introduceți codul de verificare trimis la ${ boldPhoneNumber }."
+      ],
+      "to prevent attackers from taking over your account": [
+        "pentru a împiedica atacatorii să vă preia controlul asupra contului."
       ],
       "to recover your account and data if you're ever locked out": [
         "pentru a vă recupera contul și datele dacă nu le mai puteți accesa"
@@ -18000,6 +18113,12 @@
       ],
       "You have recommended actions.": [
         "Aveți acțiuni recomandate."
+      ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Adresa de e-mail de recuperare v-ar putea fi utilizată abuziv de către atacatori pentru a vă prelua controlul asupra contului. ${ disableEmail } pentru a vă spori securitatea contului."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Numărul de telefon pentru recuperare ar putea fi utilizat abuziv de către atacatori pentru a vă prelua controlul asupra contului. ${ disablePhone } pentru a vă spori securitatea contului."
       ],
       "You will no longer be able to use this address to reset your account.": [
         "Nu veți mai putea utiliza această adresă pentru a vă reseta contul."
@@ -21113,6 +21232,9 @@
       "Appearance": [
         "Aspect"
       ],
+      "Application access": [
+        "Acces aplicație"
+      ],
       "Apply filter to existing messages": [
         "Aplicare filtru la mesajele existente"
       ],
@@ -21599,6 +21721,9 @@
         "Nu s-au putut crea ${ failedUsers.length } conturi de utilizator.",
         "Nu s-au putut crea ${ failedUsers.length } de conturi de utilizator."
       ],
+      "Feature access": [
+        "Accesare funcție"
+      ],
       "Filter for more focus": [
         "Filtru pentru concentrare mai bună"
       ],
@@ -21718,6 +21843,9 @@
       ],
       "How to refer a friend and get credits": [
         "Cum să recomandați o persoană și să primiți credite"
+      ],
+      "How your free trial works": [
+        "Cum funcționează probarea gratuită"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -21858,6 +21986,9 @@
       ],
       "No account information was found in any data breaches": [
         "Nu s-au găsit informații despre cont în nicio încălcare a datelor"
+      ],
+      "No events": [
+        "Nu există evenimente"
       ],
       "No need to empty the trash": [
         "Nu trebuie să goliți gunoiul"
@@ -22260,6 +22391,9 @@
       "There are no events for your account": [
         "Nu există evenimente pentru acest cont"
       ],
+      "There are no events yet for your organization.": [
+        "Încă nu există evenimente pentru organizație"
+      ],
       "There are no groups": [
         "Nu există grupuri"
       ],
@@ -22370,6 +22504,9 @@
       ],
       "Video conferencing": [
         "Conferință video"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videoconferință cu ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Vedeți evenimentele organizației trecând la planul Professional"
@@ -22745,6 +22882,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Acest lucru poate fi cauzat de o resetare a parolei sau de faptul că utilizatorul nu s-a conectat încă."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Această adresă de e-mail poate fi folosită doar pentru conectarea la contul ${ BRAND_NAME }."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Această adresă de e-mail va fi afișată tuturor membrilor organizației atunci când efectuează operațiuni de gestionare a contului."
@@ -23309,6 +23449,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Cu ${ planTitlePlusMaybeBrand }, obțineți acces gratuit la toate serviciile de confidențialitate ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Porți de acces VPN"
       ]
     },
     "VPN info": {

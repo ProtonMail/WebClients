@@ -76,6 +76,9 @@
       "Advanced options": [
         "Opções avançadas"
       ],
+      "Allow access": [
+        "Permitir acesso"
+      ],
       "Apply lifetime coupon code": [
         "Aplicar código de cupom vitalício"
       ],
@@ -433,6 +436,9 @@
       "Next month": [
         "Próximo mês"
       ],
+      "No": [
+        "Não"
+      ],
       "No expired links": [
         "Nenhum link expirado"
       ],
@@ -711,6 +717,9 @@
       "Write us on X/Twitter": [
         "Escreva-nos no X/Twitter"
       ],
+      "Yes": [
+        "Sim"
+      ],
       "Your password manager is not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
       ]
@@ -754,6 +763,14 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Não perguntar novamente"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Você quer sua área de transferência limpa automaticamente após ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1600,6 +1617,9 @@
       "Copied to clipboard": [
         "Copiado para a área de transferência"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Copiado para área de transferência (expira em ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "O cupom foi aplicado!"
       ],
@@ -1914,8 +1934,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outra pasta apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2119,8 +2138,14 @@
       "Please follow the steps below to set up your domain.": [
         "Siga as etapas abaixo para configurar seu domínio."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Por favor, mantenha o ${ PASS_APP_NAME } aberto para que a área de transferência possa ser limpa automaticamente."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mantenha esta janela aberta enquanto seus dados estão sendo importados. Este processo pode demorar alguns minutos."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Por favor, mantenha o seu navegador aberto para que a área de transferência possa ser limpa automaticamente."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Certifique-se de que a janela ativa anterior é onde você quer usar o preenchimento automático e de que seu cursor estava focado no campo de início de sessão."
@@ -3975,6 +4000,11 @@
         "${ price }/mês"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Exigirá uma permissão do seu navegador."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Adicionar chave secreta A2F"
@@ -4298,6 +4328,9 @@
       ],
       "Change your lock method": [
         "Altere seu método de bloqueio"
+      ],
+      "Clear clipboard": [
+        "Limpar área de transferência"
       ],
       "Confirm extra password": [
         "Confirmar senha adicional"
@@ -4871,6 +4904,9 @@
       ],
       "Failed to load breaches.": [
         "Falha ao carregar violações."
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Permita acesso à área de transferência para ativar a limpeza automática de senhas e dados copiados."
       ],
       "Identity could not be confirmed": [
         "A identidade não pode ser confirmada."
