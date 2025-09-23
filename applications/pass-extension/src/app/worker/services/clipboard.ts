@@ -1,6 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { setupOffscreenDocument } from 'proton-pass-extension/app/worker/offscreen/offscreen.utils';
-import { offscreenMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { backgroundMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { createExtensionAlarm } from 'proton-pass-extension/lib/utils/alarm';
 import { sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -28,7 +28,7 @@ export const extensionClipboardApi: ClipboardApi = {
             try {
                 await setupOffscreenDocument(CLIPBOARD_OFFSCREEN_PATH);
                 return await sendMessage.on(
-                    offscreenMessage({ type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ }),
+                    backgroundMessage({ type: WorkerMessageType.CLIPBOARD_OFFSCREEN_READ }),
                     (res) => (res.type === 'success' ? res.content : Promise.reject())
                 );
             } catch {
@@ -59,7 +59,7 @@ export const extensionClipboardApi: ClipboardApi = {
             try {
                 await setupOffscreenDocument(CLIPBOARD_OFFSCREEN_PATH);
                 return await sendMessage.on(
-                    offscreenMessage({ type: WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, payload: { content } }),
+                    backgroundMessage({ type: WorkerMessageType.CLIPBOARD_OFFSCREEN_WRITE, payload: { content } }),
                     (res) => (res.type === 'error' ? Promise.reject() : undefined)
                 );
             } catch {
