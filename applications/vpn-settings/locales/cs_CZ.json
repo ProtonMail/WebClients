@@ -891,6 +891,9 @@
       "Submit": [
         "Odeslat"
       ],
+      "Subscribe now": [
+        "Přihlásit se k odběru"
+      ],
       "Support": [
         "Podpora"
       ],
@@ -5827,6 +5830,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožňuje uživatelům připojit se k bezpečným sdíleným serverům ze sekce **Země** v aplikaci ${ VPN_APP_NAME }."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "Umožňuje snadno přidávat odkazy na videokonference ${ MEET_APP_NAME } do vašich pozvánek kalendáře."
+      ],
       "Already allocated": [
         "Již bylo přiděleno"
       ],
@@ -6223,6 +6229,9 @@
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL adresa endpointu, kterou jste dostali od vašeho poskytovatele identity (např. https://idp.example.com/sso/saml)."
       ],
+      "Ends on ${ formattedPeriodEndDate }": [
+        "Končí ${ formattedPeriodEndDate }"
+      ],
       "Enhance your network security": [
         "Zlepšení zabezpečení sítě"
       ],
@@ -6306,6 +6315,9 @@
       ],
       "Free forever": [
         "Navždy zdarma"
+      ],
+      "Free trial": [
+        "Bezplatná zkušební verze"
       ],
       "Gain visibility across your organization": [
         "Získejte přehled o celé organizaci"
@@ -10699,6 +10711,11 @@
         "Sloučit s kalendářem"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organizace"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } pro přidání dalších uživatelů, nebo uvolněte místo odebráním některých uživatelských účtů."
@@ -11600,6 +11617,26 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ověřením telefonního čísla zvyšujete bezpečnost účtu a umožňujete další možnosti obnovení."
+      ]
+    },
+    "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Pokud zrušíte před tímto datem,** budete **sníženi** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } po skončení zkušební verze."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Pokud nezrušíte,** váš plný tarif začne platit a získáte **${ referrerRewardAmount }** v kreditech."
+      ],
+      "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
+        "**Pokud si přihlásíte odběr před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Zbývá vám **${ daysRemaining } den** k prozkoumání všech výkonných funkcí, které **${ planTitle }** nabízí.",
+        "Zbývají vám **${ daysRemaining } dny** k prozkoumání všech výkonných funkcí, které **${ planTitle }** nabízí.",
+        "Zbývá vám **${ daysRemaining } dní** na to, abyste prozkoumali všechny výkonné funkce, které **${ planTitle }** nabízí.",
+        "Zbývá vám **${ daysRemaining } dní** na to, abyste prozkoumali všechny výkonné funkce, které **${ planTitle }** nabízí."
+      ],
+      "your subscription": [
+        "vaše předplatné"
       ]
     },
     "Remove organization logo": {
@@ -15000,6 +15037,9 @@
       ],
       "This can be caused by a password reset or the user not logging in yet.": [
         "Toto může být způsobeno resetem hesla nebo tím, že se uživatel ještě nepřihlásil."
+      ],
+      "This email address can only be used to sign in to your ${ BRAND_NAME } account.": [
+        "Tato e-mailová adresa může být použita pouze k přihlášení k vašemu ${ BRAND_NAME } účtu."
       ],
       "This email address will be shown to all organization members when performing account management operations.": [
         "Tato e-mailová adresa se zobrazí všem členům organizace při provádění operací správy účtu."

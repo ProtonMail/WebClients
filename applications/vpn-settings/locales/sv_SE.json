@@ -32,6 +32,11 @@
         "Din information hittades i minst en dataläcka. Aktivera ${ DARK_WEB_MONITORING_NAME } för att se detaljer och vidta åtgärder. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Konton"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME }-butik"
@@ -1367,6 +1372,9 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
+      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Genom att klicka på “Prova“ godkänner du våra ${ termsAndConditions }."
       ],
@@ -5345,6 +5353,9 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kräver en ${ BRAND_NAME }-adress för säker synkronisering och kryptering av händelse. ${ claimAddressButton }."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nya kalendrar"
@@ -5703,6 +5714,9 @@
       ],
       "Authenticator app 2FA disabled": [
         "Autentiseringsapp 2FA inaktiverad"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Autentiseringsapp 2FA aktiverad"
       ],
       "Awaiting transaction": [
         "Väntar på transaktion"
@@ -6117,6 +6131,9 @@
       "Free trial": [
         "Gratis provperiod"
       ],
+      "Gain visibility across your organization": [
+        "Få synlighet i hela din organisation"
+      ],
       "Gateway monitor": [
         "Övervakning av gateway"
       ],
@@ -6408,6 +6425,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Hantera vilka ${ BRAND_NAME }-applikationer som medlemmarna i din organisation har åtkomst till. Om funktionen är inaktiverad har endast administratörer åtkomst."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "Hantera vilka funktioner medlemmarna i din organisation kan komma åt. Om de är inaktiverade har endast administratörer åtkomst."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Ange denna information manuellt i din autentiseringsapp för att ställa in ditt konto. ${ switchButton }."
@@ -7303,6 +7323,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Utan aktivering kommer du inte att kunna skapa nya användare, lägga till adresser till befintliga användare eller komma åt icke-privata användarkonton."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Utan en autentiseringsapp kommer du inte att kunna logga in på ${ BRAND_NAME }-applikationer som inte stöder säkerhetsnycklar än."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vill du få en ny verifieringskod eller använda en alternativ verifieringsmetod?"
@@ -8890,6 +8913,9 @@
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Anslut din anpassade domän till ${ BRAND_NAME } för att ställa in anpassade e-postadresser (t.ex. du@dittföretag.se). Vår guide kommer guida dig genom processen."
       ],
+      "View ${ PASS_APP_NAME } activity across your organization.": [
+        "Visa ${ PASS_APP_NAME }-aktivitet i hela din organisation."
+      ],
       "View changes to your organization and other administrator activities.": [
         "Visa ändringar i din organisation och andra administratörsaktiviteter."
       ],
@@ -10178,6 +10204,9 @@
       "Advanced threat protection": [
         "Avancerat hotskydd"
       ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samarbeta med icke ${ BRAND_NAME }-användare"
+      ],
       "Custom email domain": [
         "Anpassad e-postdomän"
       ],
@@ -10373,6 +10402,11 @@
       ],
       "Merge with calendar": [
         "Slå samman med kalender"
+      ]
+    },
+    "Organization": {
+      "Organization": [
+        "Organisation"
       ]
     },
     "Organization capacity error": {
@@ -11235,14 +11269,24 @@
       ]
     },
     "Referral": {
+      "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
+        "**Om du avbryter före detta datum** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } när provperioden slutar."
+      ],
       "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
         "**Om du inte prenumererar** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
+      ],
+      "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
+        "**Om du inte avbryter** kommer ditt fullständiga paket att starta och du får **${ referrerRewardAmount }** i krediter."
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Om du prenumererar före detta datum** får du **${ referrerRewardAmount }** i krediter."
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
+      ],
+      "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
+        "Du har **${ daysRemaining } dag kvar** att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda.",
+        "Du har **${ daysRemaining } dagar kvar** för att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda."
       ],
       "your subscription": [
         "din prenumeration"
@@ -11343,6 +11387,9 @@
       ],
       "Includes all messages in Inbox, Sent, and all other locations. Purged messages cannot be recovered.": [
         "Inkluderar alla meddelanden i inkorg, skickat och alla andra platser. Tömda meddelanden kan inte återställas."
+      ],
+      "Removes messages already deleted by users.": [
+        "Tar redan bort meddelanden redan borttagna av användare."
       ]
     },
     "retention_policy_2025_Label": {
@@ -13740,6 +13787,9 @@
       "Disable two-factor authentication": [
         "Inaktivera tvåfaktorsautentisering"
       ],
+      "Disable two-factor authentication app?": [
+        "Inaktivera app för tvåfaktorsautentisering?"
+      ],
       "Disable two-factor authentication?": [
         "Inaktivera tvåfaktorsautentisering?"
       ],
@@ -13839,6 +13889,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "Misslyckades att skapa ${ failedUsers.length } användarkonto.",
         "Misslyckades att skapa ${ failedUsers.length } användarkonton."
+      ],
+      "Feature access": [
+        "Funktionsåtkomst"
       ],
       "Find email or username": [
         "Hitta e-post eller användarnamn"
@@ -13957,6 +14010,9 @@
       ],
       "Night theme": [
         "Nattema"
+      ],
+      "No events": [
+        "Inga händelser"
       ],
       "No recovery method": [
         "Ingen återställningsmetod"
@@ -14187,6 +14243,9 @@
       "Text": [
         "Text"
       ],
+      "There are no events yet for your organization.": [
+        "Det finns inga händelser för din organisation än."
+      ],
       "There are no groups": [
         "Det finns inga grupper"
       ],
@@ -14267,6 +14326,9 @@
       ],
       "Video conferencing": [
         "Videokonferenser"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonferens med ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Visa organisationens händelser genom att uppgradera till Professional"
@@ -14875,6 +14937,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Med ${ planTitlePlusMaybeBrand } får du gratis åtkomst till alla ${ BRAND_NAME } integritetstjänster."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN-gateways"
       ]
     },
     "VPN info": {
