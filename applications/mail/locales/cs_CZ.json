@@ -204,6 +204,9 @@
       "Change page": [
         "Změnit stránku"
       ],
+      "Change password": [
+        "Změnit heslo"
+      ],
       "Change sorting": [
         "Změnit řazení"
       ],
@@ -1143,8 +1146,8 @@
       "Remove this label": [
         "Odebrat štítek"
       ],
-      "Remove Zoom meeting": [
-        "Odebrat chůzku Zoom"
+      "Remove video conference": [
+        "Odebrat videokonferenci"
       ],
       "Replace": [
         "Nahradit"
@@ -1474,10 +1477,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -7581,7 +7581,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -9906,8 +9909,14 @@
       "Remember my choice": [
         "Zapamatovat si volbu"
       ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Odebrat videokonferenci ${ MEET_APP_NAME }"
+      ],
       "Remove metadata": [
         "Odebrat metadata"
+      ],
+      "Remove Zoom video conference": [
+        "Odebrat videokonferenci Zoom"
       ],
       "Reveal password": [
         "Zobrazit heslo"
@@ -10022,6 +10031,9 @@
       ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "Video conference": [
+        "Videokonference"
       ],
       "Vulnerable": [
         "Zranitelné"
@@ -14904,6 +14916,9 @@
       ],
       "Account security": [
         "Zabezpečení účtu"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasně uzamčen"
       ],
       "Action all conversations": [
         "Akce všech konverzací"
