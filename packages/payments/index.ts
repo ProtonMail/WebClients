@@ -68,6 +68,7 @@ export {
     getCheckout,
     getCheckResultFromSubscription,
     getIsCustomCycle,
+    getOptimisticCheckout,
     getOptimisticCheckResult,
     type AddonDescription,
     type PaymentsCheckout,
@@ -316,21 +317,9 @@ export type {
     StrictPlan,
     SubscriptionPlan,
 } from './core/plan/interface';
-export {
-    getPlanFromIDs,
-    getPricingFromPlanIDs,
-    getTotalFromPricing,
-    getTotals,
-    hasFreePlanIDs,
-    hasPlanIDs,
-    setQuantity,
-    switchPlan,
-    type PricingMode,
-    type TotalPricings,
-} from './core/planIDs';
+export { getPlanFromIDs, hasFreePlanIDs, hasPlanIDs, setQuantity, switchPlan } from './core/planIDs';
 export {
     getIpPricePerMonth,
-    getPlanOffer,
     getPrice,
     getPricePerCycle,
     getPricePerMember,
@@ -435,8 +424,6 @@ export {
     PLANS_WITH_AI_INCLUDED,
     regularCycles,
     willTrialExpire,
-    type AggregatedPricing,
-    type PricingForCycles,
 } from './core/subscription/helpers';
 export {
     type Coupon,
