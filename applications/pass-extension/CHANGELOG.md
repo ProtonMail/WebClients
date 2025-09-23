@@ -1,3 +1,7 @@
+### Version 1.32.8
+
+- Patch crypto fallback on legacy browsers due to openpgp update
+
 ### Version 1.32.7
 
 - [Gradual rollout] Support hiding/showing vaults
