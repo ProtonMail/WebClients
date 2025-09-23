@@ -63,6 +63,11 @@
         "사용자의 정보가 적어도 하나의 데이터 유출에서 발견되었습니다. ${ DARK_WEB_MONITORING_NAME }을 활성화하여 세부사항을 확인하고 조치를 취하십시오. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "계정"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 상점"
@@ -135,6 +140,9 @@
       ],
       "Add label": [
         "라벨 추가"
+      ],
+      "Add more seats": [
+        "사용 권한 더 추가"
       ],
       "Add notification": [
         "알림 추가"
@@ -766,6 +774,9 @@
       "Get more servers": [
         "더 많은 서버 얻기"
       ],
+      "Get Pass Plus": [
+        "Pass Plus 구매하기"
+      ],
       "Get started": [
         "시작하기"
       ],
@@ -1038,6 +1049,9 @@
       ],
       "Pay ${ price } now": [
         "${ price } 결제"
+      ],
+      "Pay once": [
+        "일회성 결제"
       ],
       "Preview": [
         "미리보기"
@@ -1569,6 +1583,9 @@
       ],
       "User": [
         "사용자"
+      ],
+      "users and addresses": [
+        "사용자 및 주소"
       ],
       "Verify": [
         "인증"
@@ -8423,6 +8440,9 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "구성원이 ${ VPN_APP_NAME } 앱의 **국가** 섹션에서 보안 공유 서버에 연결할 수 있도록 허용합니다."
       ],
+      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
+        "캘린더 초대장에 ${ MEET_APP_NAME } 화상 회의 링크를 손쉽게 추가할 수 있습니다."
+      ],
       "Already allocated": [
         "이미 할당 됨"
       ],
@@ -9212,6 +9232,9 @@
       "Groups": [
         "그룹"
       ],
+      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
+        "이메일 작성, 답장 및 교정을 지원합니다. ${ userAndAddress }에서 개별 사용자들을 관리하세요. ${ addMoreSeats }"
+      ],
       "here": [
         "여기"
       ],
@@ -9589,6 +9612,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "조직 구성원이 접근할 수 있는 ${ BRAND_NAME } 응용 프로그램을 관리합니다. 비활성화된 경우 관리자만 접근할 수 있습니다."
+      ],
+      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
+        "조직 구성원이 접근할 수 있는 기능을 관리합니다. 비활성화된 경우 관리자만 접근할 수 있습니다."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "${ DOCS_APP_NAME }의 이메일 알림 설정을 관리하세요."
@@ -11908,6 +11934,9 @@
       "Addresses": [
         "주소"
       ],
+      "Admin panel for your family": [
+        "내 가족 계정 관리를 위한 관리자 패널"
+      ],
       "Advanced": [
         "고급"
       ],
@@ -12207,6 +12236,9 @@
       ],
       "Create password": [
         "비밀번호 생성"
+      ],
+      "Credit cards": [
+        "신용카드"
       ],
       "Credits": [
         "크레딧"
@@ -12511,6 +12543,9 @@
       "Level for NetShield blocker filtering": [
         "NetShield 차단 필터링 수준"
       ],
+      "Limited time": [
+        "기간 한정"
+      ],
       "Link label (optional)": [
         "링크 라벨 (선택 사항)"
       ],
@@ -12766,6 +12801,9 @@
       "Remove image metadata": [
         "이미지 메타데이터 삭제"
       ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "${ renewalPrice }에 갱신되며 언제나 취소할 수 있습니다."
+      ],
       "Repeat backup password": [
         "백업 비밀번호 확인"
       ],
@@ -12915,6 +12953,9 @@
       ],
       "System information": [
         "시스템 정보"
+      ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "한 번의 구독으로 누리는 최고의 ${ BRAND_NAME }"
       ],
       "Then": [
         "다음"
@@ -15802,6 +15843,11 @@
         "프록시를 통해 콘텐츠를 로드하고 첨부 파일로 저장하세요"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "조직"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } 하여 사용자를 더 추가하거나, 공간을 비우기 위해 일부 사용자 계정을 삭제하세요."
@@ -17172,6 +17218,9 @@
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "**${ planTitle }**가 제공하는 강력한 기능들을 탐색할 수 있는 시간이 **${ daysRemaining }일** 남았습니다."
+      ],
+      "your subscription": [
+        "내 구독"
       ]
     },
     "Remark about a key type option": {
@@ -17610,6 +17659,9 @@
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "전화번호가 본인 것인지 확인하려면 ${ boldPhoneNumber }로 전송된 인증 코드를 입력합니다."
+      ],
+      "to prevent attackers from taking over your account": [
+        "타인에 의한 계정 탈취 방지를 위해"
       ],
       "to recover your account and data if you're ever locked out": [
         "짐금 상태에서도 내 계정 및 데이터를 복구할 수 있습니다."
@@ -18536,6 +18588,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "${ referralInfo.uiData.refereeRewardAmount }의 크레딧 받기"
+      ],
+      "Get a new encrypted email for free": [
+        "새로운 암호화된 이메일을 무료로 얻으세요"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "안전한 ${ MAIL_APP_NAME } 주소를 받거나 ${ internalButton }"
@@ -20653,6 +20708,9 @@
       "Appearance": [
         "외관"
       ],
+      "Application access": [
+        "애플리케이션 접근"
+      ],
       "Apply filter to existing messages": [
         "병합할 이메일 메시지 적용"
       ],
@@ -21133,6 +21191,9 @@
       "Failed to create ${ failedUsers.length } user\naccount.": [
         "${ failedUsers.length } 사용자 계정 생성 실패."
       ],
+      "Feature access": [
+        "기능 접근"
+      ],
       "Filter for more focus": [
         "더 집중하기 위한 필터"
       ],
@@ -21393,6 +21454,9 @@
       ],
       "No account information was found in any data breaches": [
         "어떠한 데이터 침해사례에서도 계정의 정보를 찾을 수 없습니다"
+      ],
+      "No events": [
+        "일정 없음"
       ],
       "No need to empty the trash": [
         "휴지통을 비울 필요 없어요."
@@ -21793,6 +21857,9 @@
       "There are no events for your account": [
         "사용자의 계정에 이벤트가 없습니다."
       ],
+      "There are no events yet for your organization.": [
+        "귀하의 조직에는 아직 일정이 없습니다."
+      ],
       "There are no groups": [
         "그룹이 존재하지 않습니다."
       ],
@@ -21903,6 +21970,9 @@
       ],
       "Video conferencing": [
         "화상 회의"
+      ],
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME }(으)로 화상 회의"
       ],
       "View organization events by upgrading to Professional": [
         "Professional 플랜으로 업그레이드하여 조직 이벤트 확인"
@@ -22837,6 +22907,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "${ planTitlePlusMaybeBrand }(으)로, 모든 ${ BRAND_NAME } 개인정보 보호 서비스를 무료로 접근할 수 있어요."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN 게이트웨이"
       ]
     },
     "VPN info": {

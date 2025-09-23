@@ -63,6 +63,11 @@
         "您的資料在最少一次的資料外洩之中被發現。開啟 ${ DARK_WEB_MONITORING_NAME } 來瀏覽詳細資料及採取行動。 ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "帳號"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
@@ -688,6 +693,9 @@
       "Get more servers": [
         "取得更多伺服器"
       ],
+      "Get Pass Plus": [
+        "取得Pass Plus"
+      ],
       "Get started": [
         "開始使用"
       ],
@@ -907,6 +915,9 @@
       "No": [
         "否"
       ],
+      "No thanks": [
+        "不用了，謝謝"
+      ],
       "No, thanks": [
         "不用了，謝謝"
       ],
@@ -939,6 +950,9 @@
       ],
       "Pay ${ price } now": [
         "繳款金額 ${ price }"
+      ],
+      "Pay once": [
+        "一次性支付"
       ],
       "Preview": [
         "預覽"
@@ -10157,6 +10171,9 @@
       "10 minutes": [
         "10 分鐘"
       ],
+      "10 VPN devices": [
+        "10台 VPN 裝置"
+      ],
       "15 minutes": [
         "15 分鐘"
       ],
@@ -10171,6 +10188,9 @@
       ],
       "5 minutes": [
         "5 分鐘"
+      ],
+      "500 GB Storage": [
+        "500 GB 儲存空間"
       ],
       "Account holder": [
         "帳戶持有人"
@@ -10472,6 +10492,9 @@
       "Create password": [
         "創建密碼"
       ],
+      "Credit cards": [
+        "信用卡"
+      ],
       "Credits": [
         "額度"
       ],
@@ -10649,6 +10672,9 @@
       "Font size": [
         "字體大小"
       ],
+      "for your first month": [
+        "適用於您的首個月"
+      ],
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
       ],
@@ -10762,6 +10788,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Bridge 攔截過濾等級"
+      ],
+      "Limited time": [
+        "限時"
       ],
       "Link label (optional)": [
         "連結標籤 (選擇性)"
@@ -10979,6 +11008,9 @@
       "Read": [
         "已讀取"
       ],
+      "Recommended": [
+        "推薦使用"
+      ],
       "Recovery email address": [
         "復原電郵位址"
       ],
@@ -10996,6 +11028,9 @@
       ],
       "Remove image metadata": [
         "移除圖像中繼資料"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "更新價 ${ renewalPrice }，任何時間都可取消。"
       ],
       "Repeat backup password": [
         "再次輸入備份密碼"
@@ -13719,6 +13754,11 @@
         "從代理載入內並保存為附件"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "組織"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } 點擊加入更多使用者；或是移除一些使用者帳號以釋出可用空間。"
@@ -13818,6 +13858,11 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "開始使用 ${ PASS_APP_NAME }"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } 個月"
       ]
     },
     "pass_signup_2023: Action": {
@@ -15668,8 +15713,14 @@
       "Start free trial": [
         "開始免費試用"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "開始使用 ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "雲端儲存"
+      ],
+      "Swiss-based": [
+        "總部設於瑞士"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "您的使用者只能在登入才看見組織機構的名字."
@@ -15691,6 +15742,9 @@
       ],
       "Up to 6 users": [
         "多達 6 位使用者"
+      ],
+      "Use your current email": [
+        "使用您目前的電子郵件位址"
       ],
       "Yearly": [
         "每年"
@@ -16857,6 +16911,11 @@
         "免費試用期"
       ]
     },
+    "Subtitle": {
+      "Free forever": [
+        "永久免費"
+      ]
+    },
     "Success": {
       "Account deleted. Signing out...": [
         "帳號已刪除。正在登出..."
@@ -17944,6 +18003,9 @@
       "Forward emails": [
         "轉寄電子郵件"
       ],
+      "Free": [
+        "免費"
+      ],
       "Gateway": [
         "網關"
       ],
@@ -18144,6 +18206,9 @@
       ],
       "No account information was found in any data breaches": [
         "無帳號於此資料外洩被發現"
+      ],
+      "No events": [
+        "沒有活動"
       ],
       "No need to empty the trash": [
         "不用清空垃圾桶"
@@ -19284,6 +19349,11 @@
       ],
       "Other": [
         "其他"
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN 閘道"
       ]
     },
     "VPN info": {
