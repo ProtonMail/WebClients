@@ -63,6 +63,11 @@
         "S'ha trobat la vostra informació en almenys una fuita de dades. Activeu ${ DARK_WEB_MONITORING_NAME } per a veure'n els detalls i prendre mesures. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Comptes"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
@@ -769,6 +774,12 @@
       "Get more servers": [
         "Obteniu més servidors"
       ],
+      "Get Pass Family": [
+        "Obtingueu Pass Family"
+      ],
+      "Get Pass Plus": [
+        "Obtingui Pass Plus"
+      ],
       "Get started": [
         "Comença"
       ],
@@ -783,6 +794,12 @@
       ],
       "Get the deal": [
         "Obteniu l’oferta"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "Obtingueu l'extensió per ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Obtingueu la suite completa"
       ],
       "Get the writing assistant": [
         "Obteniu l'assistent d'escriptura"
@@ -1003,6 +1020,9 @@
       "No": [
         "No"
       ],
+      "No thanks": [
+        "No, gràcies"
+      ],
       "No, thanks": [
         "No, gràcies"
       ],
@@ -1017,6 +1037,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Obriu ${ PASS_APP_NAME } al vostre navegador"
       ],
       "Open navigation": [
         "Obre la navegació"
@@ -1041,6 +1064,9 @@
       ],
       "Pay ${ price } now": [
         "Paga ${ price } ara"
+      ],
+      "Pay once": [
+        "Pagament únic"
       ],
       "Preview": [
         "Vista prèvia"
@@ -1422,6 +1448,9 @@
       ],
       "Start subscription": [
         "Iniciar la subscripció"
+      ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Comenceu a utilitzar ${ PASS_APP_NAME }"
       ],
       "Stay": [
         "Mantenir"
@@ -11997,14 +12026,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
+      "/month x ${ months }": [
+        "/mes x ${ months }"
+      ],
       "1 hour": [
         "1 hora"
       ],
       "1 minute": [
         "1 minut"
       ],
+      "10 hide-my-email aliases": [
+        "10 àlies de hide-my-email"
+      ],
       "10 minutes": [
         "10 minuts"
+      ],
+      "10 VPN devices": [
+        "10 dispositius VPN"
+      ],
+      "15 extra email addresses": [
+        "15 adreces de correu electrònic addicionals"
       ],
       "15 minutes": [
         "15 minuts"
@@ -12020,6 +12061,12 @@
       ],
       "5 minutes": [
         "5 minuts"
+      ],
+      "500 GB Storage": [
+        "500 GB d'emmagatzematge"
+      ],
+      "6 Pass Plus accounts": [
+        "6 comptes Pass Plus"
       ],
       "Account holder": [
         "Titular del compte"
@@ -12050,6 +12097,9 @@
       ],
       "Addresses": [
         "Adreces"
+      ],
+      "Admin panel for your family": [
+        "Panell d'administració per a la vostra família"
       ],
       "Advanced": [
         "Avançat"
@@ -12222,6 +12272,9 @@
       "BTC amount": [
         "Import de BTC"
       ],
+      "Built-in 2FA authenticator": [
+        "Autenticador 2FA integrat"
+      ],
       "Calendar": [
         "Calendari"
       ],
@@ -12350,6 +12403,9 @@
       ],
       "Create password": [
         "Crea una contrasenya"
+      ],
+      "Credit cards": [
+        "Targetes de crèdit"
       ],
       "Credits": [
         "Crèdits"
@@ -12522,6 +12578,9 @@
       "File": [
         "Fitxer"
       ],
+      "File attachments (up to 10GB)": [
+        "Fitxers adjunts (fins a 10 GB)"
+      ],
       "Filter Name": [
         "Nom del filtre"
       ],
@@ -12537,11 +12596,17 @@
       "Font size": [
         "Mida de la lletra"
       ],
+      "for your first month": [
+        "el primer mes"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
       "Gateway name": [
         "Nom de la passarel·la"
+      ],
+      "Get everything in Free, plus:": [
+        "Obtingueu-ho tot de la versió Gratuïta, a més de:"
       ],
       "Gift code": [
         "Codi regal"
@@ -12560,6 +12625,9 @@
       ],
       "Hide password": [
         "Amaga la contrasenya"
+      ],
+      "Highest VPN speed": [
+        "Velocitat de VPN màxima"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Entenc que he d'afegir aquesta adreça de correu electrònic a l'altre compte immediatament per a evitar perdre-la de manera permanent."
@@ -12653,6 +12721,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Nivell de filtratge del bloquejador NetShield"
+      ],
+      "Limited time": [
+        "Oferta per temps limitat"
       ],
       "Link label (optional)": [
         "Etiqueta de l'enllaç (opcional)"
@@ -12780,6 +12851,9 @@
       "Numbers": [
         "Números"
       ],
+      "Online privacy for your whole family": [
+        "Privacitat en línia per a tota la família"
+      ],
       "OpenVPN / IKEv2 password": [
         "Contrasenya OpenVPN / IKEv2"
       ],
@@ -12891,6 +12965,9 @@
       "Read": [
         "Llegeix"
       ],
+      "Recommended": [
+        "Recomanat"
+      ],
       "Recovery email address": [
         "Correu electrònic de recuperació"
       ],
@@ -12908,6 +12985,9 @@
       ],
       "Remove image metadata": [
         "Esborra les metadades de la imatge"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Es renovarà per ${ renewalPrice }. Ho podreu cancel·lar en qualsevol moment."
       ],
       "Repeat backup password": [
         "Confirma la contrasenya de recuperació"
@@ -12941,6 +13021,9 @@
       ],
       "Second password": [
         "Segona contrasenya"
+      ],
+      "Secure password generator": [
+        "Generador de contrasenyes segur"
       ],
       "Select Linux package format": [
         "Seleccioneu el format del paquet Linux"
@@ -13012,6 +13095,9 @@
       "Special characters": [
         "Caràcters especials"
       ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Oferta especial: obtingueu ${ PASS_SHORT_APP_NAME } Plus per ${ offerPrice }"
+      ],
       "Starred": [
         "Destacats"
       ],
@@ -13060,6 +13146,9 @@
       "System information": [
         "Informació del sistema"
       ],
+      "The best of ${ BRAND_NAME } with one subscription": [
+        "El millor de ${ BRAND_NAME } amb una subscripció"
+      ],
       "Then": [
         "Aleshores"
       ],
@@ -13092,6 +13181,12 @@
       ],
       "Undo send": [
         "Desfés l'enviament"
+      ],
+      "Unlimited hide-my-email aliases": [
+        "Nombre il·limitat d'àlies hide-my-email"
+      ],
+      "Unlimited logins and devices": [
+        "Nombre il·limitat d'inicis de sessió i de dispositius"
       ],
       "Upload 1 or more encryption keys": [
         "Pengeu 1 o més claus de xifratge"
@@ -13128,6 +13223,9 @@
       ],
       "Value": [
         "Valor"
+      ],
+      "Vault, item & secure link sharing": [
+        "Compartició de caixes fortes, elements i enllaços segurs"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -15965,6 +16063,11 @@
         "Carrega el contingut a través del servidor intermediari i emmagatzema com a adjunts"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organització"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } el vostre pla per afegir més usuaris o esborreu alguns comptes d'usuari per alliberar espai."
@@ -16085,6 +16188,12 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Comenceu a utilitzar ${ PASS_APP_NAME }"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
       ]
     },
     "pass_lifetime_signup: Info": {
@@ -18671,6 +18780,9 @@
       "30 custom email addresses": [
         "30 adreces de correu electrònic personalitzades"
       ],
+      "4.8+ rating": [
+        "Puntuació de 4.8+"
+      ],
       "Advanced account protection": [
         "Protecció avançada dels comptes"
       ],
@@ -18748,6 +18860,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Obtingueu ${ referralInfo.uiData.refereeRewardAmount } en crèdits"
+      ],
+      "Get a new encrypted email for free": [
+        "Obtingueu un nou correu electrònic xifrat de franc"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obtingueu una adreça segura del ${ MAIL_APP_NAME } o ${ internalButton }"
@@ -18855,11 +18970,17 @@
       "Start free trial": [
         "Inicieu el període de prova gratuït"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Comenceu a utilitzar ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Emmagatzematge"
       ],
       "Stream your favorite TV shows and movies": [
         "Reproduïu en continu les vostres sèries de televisió i pel·lícules favorites"
+      ],
+      "Swiss-based": [
+        "Amb seu a Suïssa"
       ],
       "Sync files across devices and users": [
         "Sincronitzeu fitxers entre dispositius i usuaris"
@@ -18875,6 +18996,9 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "Més de 100 milions de persones i empreses hi confien"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Proveu ${ BRAND_NAME } de franc durant ${ TRIAL_DURATION_DAYS } dies"
@@ -18905,6 +19029,9 @@
       ],
       "Upload files of any size": [
         "Carregueu fitxers de qualsevol mida"
+      ],
+      "Use your current email": [
+        "Utilitzeu el vostre correu electrònic actual"
       ],
       "use your current email.": [
         "utilitzeu el vostre correu electrònic actual."
@@ -20242,6 +20369,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Gratuït per sempre"
+      ],
+      "Pay once, access forever.": [
+        "Amb un únic pagament, accés per sempre"
+      ],
+      "per month, billed annually": [
+        "al mes, amb facturació anual"
+      ],
       "View VPN session details for your organization.": [
         "Veieu els detalls de la sessió VPN de la vostra organització."
       ]
@@ -21271,6 +21407,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarregueu aplicacions de ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Descarregueu ${ PASS_APP_NAME } per als vostres dispositius"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
       ],
@@ -21445,6 +21584,9 @@
       ],
       "Forward emails": [
         "Reenviament de correus electrònics"
+      ],
+      "Free": [
+        "Gratuït"
       ],
       "Gateway": [
         "Passarel·la"
@@ -21669,6 +21811,9 @@
       "No account information was found in any data breaches": [
         "No s'ha trobat informació del compte a cap filtració de dades"
       ],
+      "No events": [
+        "No hi ha cap esdeveniment"
+      ],
       "No need to empty the trash": [
         "No cal buidar la paperera"
       ],
@@ -21719,6 +21864,9 @@
       ],
       "Other sign-in issues": [
         "Altres problemes d'inici de sessió"
+      ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus de per vida per ${ plusLifetimePrice }"
       ],
       "Password": [
         "Contrasenya"
@@ -21881,6 +22029,9 @@
       ],
       "Secure email based in Switzerland": [
         "Correu electrònic segur amb seu a Suïssa"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "Protegiu les vostres contrasenyes. Allà on sigueu."
       ],
       "Security and privacy": [
         "Seguretat i privacitat"
@@ -22068,6 +22219,9 @@
       ],
       "There are no events for your account": [
         "No hi ha esdeveniments per al vostre compte"
+      ],
+      "There are no events yet for your organization.": [
+        "Encara no hi ha esdeveniments per la vostra organització."
       ],
       "There are no groups": [
         "No hi ha grups."
@@ -23120,6 +23274,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Amb ${ planTitlePlusMaybeBrand }, obteniu accés gratuït a tots els serveis de privadesa de ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Passarel·les VPN"
       ]
     },
     "VPN info": {
