@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import useFlag from '@proton/unleash/useFlag';
 
@@ -139,7 +139,7 @@ export const PrejoinContainer = ({
             </div>
             <div className="prejoin-container flex flex-column md:flex-row flex-nowrap w-full md:items-center md:justify-center">
                 <div
-                    className="prejoin-container-content w-full md:w-custom flex flex-column lg:flex-row gap-2 lg:gap-0 md:items-center"
+                    className="prejoin-container-content w-full md:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center px-4"
                     style={{ '--md-w-custom': '71rem' }}
                 >
                     <DeviceSettings
