@@ -88,8 +88,12 @@ export const DeviceSettings = ({
     } else if (noMicrophoneDetected) {
         microphoneLabel = c('Info').t`No microphone detected.`;
     } else {
-        const selectedMicrophone = microphones.find((microphone) => microphone.deviceId === selectedMicrophoneId);
-        microphoneLabel = selectedMicrophone?.label ?? '';
+        const audioDevice = microphones.find((mic) => mic.deviceId === selectedMicrophoneId);
+        const activeOutputDevice = speakers.find((speaker) => speaker.deviceId === selectedAudioOutputDeviceId);
+
+        const isCustomCombination =
+            audioDevice && activeOutputDevice && audioDevice.groupId !== activeOutputDevice.groupId;
+        microphoneLabel = isCustomCombination ? c('Info').t`Custom combination` : (audioDevice?.label ?? '');
     }
 
     let cameraLabel;
