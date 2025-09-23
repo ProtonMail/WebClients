@@ -1301,6 +1301,12 @@
       "Recover previous file versions": [
         "წინა ფაილის ვერსიების აღდგენა"
       ],
+      "Save big on premium Drive features with a limited-time discount.": [
+        "დაზოგეთ ბევრი Drive-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
+      ],
+      "Save big on premium Mail features with a limited-time discount.": [
+        "დაზოგეთ ბევრი ელფოსტის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
+      ],
       "Save big on premium Pass features with a limited-time discount.": [
         "დაზოგეთ ბევრი Pass-ის ფასიან ფუნქციებზე შეზღუდული დროის ფასდაკლებით."
       ],
@@ -5978,6 +5984,9 @@
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "მადლობა, რომ აირჩიეთ ${ BRAND_NAME } თქვენი ორგანიზაციის დასაცავად."
+      ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "მადლობა გამოწერისთვის. ინტერნეტში დაცულად მუშაობა ახლა იწყება."
       ],
@@ -6408,6 +6417,9 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "გადახდის დასასრულებლად PayPal-ის ვებგვერდზე გადამისამართდებით."
+      ],
+      "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
+        "თქვენ არ გადაიხდით, თუ გააუქმებთ თარიღამდე ${ trialEndsOnFormatted }."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }.": [
         "გადაიხდით ყოველ ${ renewCycle } თვეში თანხას ${ renewAmountStr }.",
@@ -9007,6 +9019,9 @@
       "This offer won't be shown again.": [
         "ამ შემოთავაზებას აღარ გაჩვენებთ."
       ],
+      "Upgrade your storage for just ${ pricingTitle } with ${ planName }": [
+        "ასწიეთ თქვენი საცავი, მხოლოდ, ${ pricingTitle }-ით ${ planName }-ისთან ერთად"
+      ],
       "When you switch from a monthly to annual subscription.": [
         "როცა თვიურიდან წლიურ გამოწერაზე გადახვალთ."
       ],
@@ -9246,6 +9261,9 @@
       ],
       "Your free trial has started": [
         "თქვენი გამოსაცდელი პერიოდი დაიწყო"
+      ],
+      "Your full ${ planTitle } subscription starts on ${ boldEndDate }.": [
+        "თქვენი სრული ${ planTitle } გამოწერის დაწყების თარიღია ${ boldEndDate }."
       ]
     },
     "Option": {
@@ -10289,6 +10307,9 @@
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
         "მიიღეთ წვდომა უსწრაფეს VPN სერვერებთან 110+ ქვეყანაში"
+      ],
+      "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
+        "მიიღეთ ერთი სატარიფო გეგმა, რომელიც ყველაფერს შეიცავს. მიიღეთ ${ BRAND_NAME } Unlimited"
       ],
       "Get unlimited aliases to protect your identity and reduce spam": [
         "მიიღეთ შეუზღუდავი ფსევდონიმები, რომ დაიცვათ თავი და შეამციროთ სპამის რაოდენობა"
@@ -12009,6 +12030,12 @@
       ],
       "Upgrade to ${ planName }": [
         "სატარიფო გეგმის განახლება: ${ planName }"
+      ],
+      "Upgrade your productivity for ${ formattedPrice } with ${ planName }": [
+        "ასწიეთ თქვენი პროდუქტიულობა ${ formattedPrice }-ისთვის ${ planName }-ით"
+      ],
+      "Upgrade your storage for ${ formattedPrice } with ${ planName }": [
+        "ასწიეთ თქვენი საცავი ${ formattedPrice }-ისთვის ${ planName }-ით"
       ],
       "Upload and share files": [
         "ფაილების ატვირთვა და გაზიარება"
