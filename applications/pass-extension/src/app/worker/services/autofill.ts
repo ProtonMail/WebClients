@@ -21,6 +21,7 @@ import {
 } from '@proton/pass/lib/items/item.utils';
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/lib/password/constants';
 import type { GetLoginCandidatesOptions } from '@proton/pass/lib/search/types';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemAutofilled } from '@proton/pass/store/actions';
 import { sagaEvents } from '@proton/pass/store/events';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
@@ -32,6 +33,7 @@ import {
     selectAutosuggestCopyToClipboard,
     selectItem,
     selectOrganizationPasswordGeneratorPolicy,
+    selectPassPlan,
     selectPasswordOptions,
     selectVaultLimits,
 } from '@proton/pass/store/selectors';
@@ -119,13 +121,14 @@ export const createAutoFillService = () => {
     });
 
     const getAutofillOptions = withContext<
-        (writableOnly?: boolean) => { needsUpgrade: boolean; shareIds: Maybe<string[]> }
+        (writableOnly?: boolean) => { needsUpgrade: boolean; shareIds: Maybe<string[]>; isPaid: boolean }
     >((ctx, writableOnly) => {
         const state = ctx.service.store.getState();
         const shareIds = selectAutofillableShareIDs(state, writableOnly);
         const needsUpgrade = selectVaultLimits(state).didDowngrade;
+        const isPaid = isPaidPlan(selectPassPlan(state));
 
-        return { needsUpgrade, shareIds };
+        return { needsUpgrade, shareIds, isPaid };
     });
 
     const sync = withContext(({ status }) => {
@@ -215,8 +218,11 @@ export const createAutoFillService = () => {
             if (!ctx.getState().authorized || tabId === undefined) throw new Error('Invalid autofill query');
 
             const state = ctx.service.store.getState();
-            const { shareIds, needsUpgrade } = getAutofillOptions();
-            const items = selectAutofillCCCandidates(shareIds)(state).map(intoCCItemPreview);
+
+            /** CC autofill is a paid feature only */
+            const { shareIds, isPaid } = getAutofillOptions();
+            const needsUpgrade = !isPaid;
+            const items = needsUpgrade ? [] : selectAutofillCCCandidates(shareIds)(state).map(intoCCItemPreview);
 
             return { items, needsUpgrade };
         })

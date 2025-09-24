@@ -71,37 +71,44 @@ export const AutofillCC: FC<Props> = ({ origin }) => {
                               key={'upgrade-autofill'}
                               icon={{ type: 'icon', icon: 'arrow-out-square' }}
                               title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
-                              subTitle={c('Warning')
-                                  .t`Your plan only allows you to autofill from your first two vaults`}
+                              subTitle={c('Warning').t`Your plan does not allow you to autofill credit-card items.`}
                               onClick={navigateToUpgrade}
                               autogrow
                           />
                       ),
-                      ...state.items.map(({ shareId, itemId, name, obfuscatedNumber, expirationDate, cardType }) => (
-                          <ListItem
-                              key={itemId}
-                              title={
-                                  <div className="flex flex-nowrap gap-2 items-center">
-                                      <span className="text-ellipsis">{name}</span>
-                                      <span className="shrink-0 color-weak text-sm">
-                                          {obfuscatedNumber.replaceAll('*', '•').slice(obfuscatedNumber.length - 8)}
-                                      </span>
-                                  </div>
-                              }
-                              subTitle={expirationDate.split('-').reverse().join('/')}
-                              icon={{ type: 'icon', icon: 'credit-card', customIcon: getCreditCardIcon(cardType) }}
-                              onClick={() =>
-                                  sendMessage.onSuccess(
-                                      contentScriptMessage({
-                                          type: WorkerMessageType.AUTOFILL_CC,
-                                          payload: { shareId, itemId, origin },
-                                      }),
-                                      () => controller.close({ refocus: false })
-                                  )
-                              }
-                              subTheme={SubTheme.LIME}
-                          />
-                      )),
+                      ...(!state.needsUpgrade
+                          ? state.items.map(({ shareId, itemId, name, obfuscatedNumber, expirationDate, cardType }) => (
+                                <ListItem
+                                    key={itemId}
+                                    title={
+                                        <div className="flex flex-nowrap gap-2 items-center">
+                                            <span className="text-ellipsis">{name}</span>
+                                            <span className="shrink-0 color-weak text-sm">
+                                                {obfuscatedNumber
+                                                    .replaceAll('*', '•')
+                                                    .slice(obfuscatedNumber.length - 8)}
+                                            </span>
+                                        </div>
+                                    }
+                                    subTitle={expirationDate.split('-').reverse().join('/')}
+                                    icon={{
+                                        type: 'icon',
+                                        icon: 'credit-card',
+                                        customIcon: getCreditCardIcon(cardType),
+                                    }}
+                                    onClick={() =>
+                                        sendMessage.onSuccess(
+                                            contentScriptMessage({
+                                                type: WorkerMessageType.AUTOFILL_CC,
+                                                payload: { shareId, itemId, origin },
+                                            }),
+                                            () => controller.close({ refocus: false })
+                                        )
+                                    }
+                                    subTheme={SubTheme.LIME}
+                                />
+                            ))
+                          : []),
                   ].filter(truthy)
                 : [],
         [state]
