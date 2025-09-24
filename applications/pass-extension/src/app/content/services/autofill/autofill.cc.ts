@@ -21,7 +21,7 @@ const getExpirationDate: CCFieldValueExtract = ({ expirationDate }, el) => {
     if (isInputElement(el)) {
         const [year, month] = expirationDate.split('-');
         const expFormat = getExpirationFormat(el);
-        return formatExpirationDate(month, year, expFormat);
+        if (expFormat) return formatExpirationDate(month, year, expFormat);
     }
 };
 

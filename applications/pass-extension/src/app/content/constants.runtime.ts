@@ -35,6 +35,7 @@ export const FORM_TRACKER_CONFIG: Record<FormType, FormTrackerFieldConfig[]> = {
         { type: FieldType.USERNAME_HIDDEN },
         { type: FieldType.EMAIL, action: DropdownAction.AUTOFILL_LOGIN, filterable: true },
         { type: FieldType.PASSWORD_CURRENT, action: DropdownAction.AUTOFILL_LOGIN },
+        { type: FieldType.CREDIT_CARD, action: DropdownAction.AUTOFILL_CC },
     ],
     [FormType.REGISTER]: [
         { type: FieldType.USERNAME },
