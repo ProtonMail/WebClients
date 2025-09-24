@@ -4,56 +4,51 @@ import { organizationActions } from '@proton/account/organization';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useVideoConfTelemetry } from '@proton/calendar';
 import { useApi, useNotifications } from '@proton/components';
-import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import useLoading from '@proton/hooks/useLoading';
-import { useDispatch } from '@proton/redux-shared-store';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { updateOrganizationSettings } from '@proton/shared/lib/api/organization';
-import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
+import ZoomLogo from '@proton/styles/assets/img/brand/zoom.svg';
 import useFlag from '@proton/unleash/useFlag';
 
 import { AccessToggle } from './AccessToggle';
 
-export const AccessToggleMeet = () => {
+export const AccessToggleZoom = () => {
     const api = useApi();
     const dispatch = useDispatch();
     const [organization] = useOrganization();
     const { createNotification } = useNotifications();
+    const { sendEventVideoConferenceSettingsToggle } = useVideoConfTelemetry();
 
-    const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
+    const isZoomEnabled = useFlag('ZoomIntegration');
 
-    const [meetLoading, withMeetLoading] = useLoading();
+    const [zoomLoading, withZoomLoading] = useLoading();
 
-    const { sentEventProtonMeetSettingsToggle } = useVideoConfTelemetry();
-
-    const handleToggleMeet = async () => {
-        sentEventProtonMeetSettingsToggle(!organization?.Settings.MeetVideoConferencingEnabled);
+    const handleToggleZoom = async () => {
+        sendEventVideoConferenceSettingsToggle(!organization?.Settings.VideoConferencingEnabled);
 
         const organizationSettings = await api<OrganizationSettings>(
             updateOrganizationSettings({
-                MeetVideoConferencingEnabled: !organization?.Settings.MeetVideoConferencingEnabled,
+                VideoConferencingEnabled: !organization?.Settings.VideoConferencingEnabled,
             })
         );
 
         dispatch(organizationActions.updateOrganizationSettings({ value: organizationSettings }));
-
-        createNotification({
-            text: c('Notification').t`${MEET_APP_NAME} video conferencing settings have been updated`,
-        });
+        createNotification({ text: c('Notification').t`Zoom video conferencing settings have been updated` });
     };
 
-    if (!isMeetVideoConferenceEnabled) {
+    if (!isZoomEnabled) {
         return null;
     }
 
     return (
         <AccessToggle
-            id="meet-toggle"
-            icon={<MeetLogo size={6} variant="glyph-only" />}
-            title={c('Title').t`Video conferencing with ${MEET_APP_NAME}`}
-            checked={!!organization?.Settings.MeetVideoConferencingEnabled}
-            loading={meetLoading}
-            onChange={() => withMeetLoading(handleToggleMeet())}
+            id="zoom-toggle"
+            icon={<img src={ZoomLogo} alt="" className="h-6 w-6" />}
+            title={c('Title').t`Video conferencing with Zoom`}
+            checked={!!organization?.Settings.VideoConferencingEnabled}
+            loading={zoomLoading}
+            onChange={() => withZoomLoading(handleToggleZoom)}
             className="mt-4"
         >
             <p className="m-0 text-sm">{c('Info').t`Add video conferencing links to calendar invitations`}</p>

@@ -372,17 +372,6 @@ export const getOrganizationAppRoutes = ({
                     },
                 ],
             },
-            videoConf: <SectionConfig>{
-                text: c('Title').t`Video conferencing`,
-                to: '/video-conferencing',
-                icon: 'camera',
-                available: canShowVideoConferenceSection,
-                subsections: [
-                    {
-                        id: 'enable-zoom',
-                    },
-                ],
-            },
         },
     };
 };
