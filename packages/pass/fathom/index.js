@@ -534,8 +534,7 @@ const IDENTITY_COUNTRY_CODE_ATTR_RE = /countrycode/i;
 const CC_PREFIX_ATTR_START_RE =
     /\b(?:(?:payments|new)card|paymentcard|c(?:red(?:it)?card|heckout|ard|[bc])|billing|stripe|vads).*/i;
 
-const CC_NUMBER_ATTR_RE =
-    /num(?:ero)?carte|c(?:ar(?:tecredit|dn(?:um|o))|reditcard|bnum|cno)|accountnum|\b(c(?:ard |c)number)\b/i;
+const CC_NUMBER_ATTR_RE = /num(?:ero)?carte|c(?:ar(?:tecredit|dn(?:um|o))|reditcard|bnum|cno)|\b(c(?:ard |c)number)\b/i;
 
 const CC_CVC_ATTR_RE = /c(?:ard(?:verification|code)|sc|v[cv])|payments?code|\b(security code|ccc(?:ode|vv|sc))\b/i;
 
