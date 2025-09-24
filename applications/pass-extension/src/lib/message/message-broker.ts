@@ -111,14 +111,9 @@ export const createMessageBroker = (options: MessageBrokerOptions) => {
         message: unknown,
         sender: Runtime.MessageSender
     ): Maybe<Promise<WorkerResponse<WorkerMessageWithSender>>> => {
-        if (isExtensionMessage(message)) {
-            /** Check if this message broker should accept and process the message.
-             * This prevents multiple extension contexts from handling the same message. */
-            if (!options.onAccept(message)) {
-                logger.warn(`[MessageBroker] Message "${message.type}" rejected from sender: ${message.sender}`);
-                return;
-            }
-
+        /** Check if this message broker should accept and process the message.
+         * This prevents multiple extension contexts from handling the same message. */
+        if (isExtensionMessage(message) && options.onAccept(message)) {
             const handler = message.type !== undefined ? handlers.get(message.type) : undefined;
             if (handler) return onExtensionMessage(message, sender, handler);
         }
