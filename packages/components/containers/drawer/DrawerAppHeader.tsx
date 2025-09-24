@@ -1,10 +1,10 @@
 import type { ReactNode } from 'react';
 import { useCallback, useEffect, useRef } from 'react';
 
+import clsx from 'clsx';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Tooltip } from '@proton/atoms';
+import { Button , Tooltip } from '@proton/atoms';
 import Icon from '@proton/components/components/icon/Icon';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -32,9 +32,16 @@ export interface PrivateIframeHeaderProps {
     // Need to set this to true for iframes apps. When inside an iframe, the window width is really small
     // So, If we want to display a dropdown "correctly" (not in a modal) we need to make a special case for now
     customDropdown?: ReactNode;
+    headerClassName?: string;
 }
 
-const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown, isUsingTabs = false }: PrivateIframeHeaderProps) => {
+const DrawerAppHeader = ({
+    title,
+    onCloseDropdown,
+    customDropdown,
+    isUsingTabs = false,
+    headerClassName,
+}: PrivateIframeHeaderProps) => {
     const { call } = useEventManager();
     const theme = useTheme();
     const { appInView, setAppInView, parentApp } = useDrawer();
@@ -141,7 +148,7 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown, isUsingTabs =
 
     return (
         <div className="relative ui-standard color-norm shrink-0" ref={wrapperRef}>
-            <Header className="header--drawer flex-column p-3" style={{ blockSize: 'auto' }}>
+            <Header className={clsx('header--drawer flex-column p-3', headerClassName)} style={{ blockSize: 'auto' }}>
                 <div className="drawer-app-header-actions flex justify-space-between items-center w-full">
                     {isUsingTabs ? title : <h2 className="text-bold text-lg">{title}</h2>}
 
