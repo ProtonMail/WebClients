@@ -42,7 +42,7 @@ export const createAliasService = () => {
             const shareId = selectMostRecentVaultShareID(state);
             if (!shareId) throw new Error("Could not resolve user's default vault.");
 
-            const { url, alias } = message.payload;
+            const { origin: url, alias } = message.payload;
             const { mailboxes, prefix, signedSuffix, aliasEmail } = alias;
             const optimisticId = uniqueId();
 

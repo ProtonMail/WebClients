@@ -28,7 +28,7 @@ import type { Maybe } from '@proton/pass/types';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
 
-export const AutosuggestPassword: FC<Props> = ({ domain, config, copy, policy }) => {
+export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
@@ -87,7 +87,7 @@ export const AutosuggestPassword: FC<Props> = ({ domain, config, copy, policy })
                         <PauseListDropdown
                             criteria="Autosuggest"
                             dense
-                            hostname={domain}
+                            hostname={origin}
                             label={c('Action').t`Do not suggest on this website`}
                         />
                     </div>

@@ -1,3 +1,4 @@
+import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
@@ -12,7 +13,7 @@ import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 import { createAsyncQueue } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
-import { resolveDomain } from '@proton/pass/utils/url/utils';
+import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOptions): AbstractInlineService => {
@@ -38,9 +39,14 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
         open: withContext((ctx, req) => {
             if (req.type === 'frame') return;
 
-            /** iframe origin may be empty for the case */
-            const url = ctx?.getExtensionContext()?.url;
-            const origin = (url ? resolveDomain(url) : null) ?? '';
+            const origin = (() => {
+                /** IFrames with `about:blank` src inherit the origin of the parent document.
+                 * TODO: Consider using the parent frame's resolved origin for these cases. */
+                const url = ctx?.getExtensionContext()?.url;
+                if (url) return req.action === DropdownAction.AUTOFILL_CC ? resolveDomain(url) : resolveSubdomain(url);
+            })();
+
+            if (!origin) return;
 
             void queue.push(async () => {
                 const anchor = req.field.getBoxElement();
