@@ -1651,6 +1651,15 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Disable categories": [
+        "Inaktivera kategorier"
+      ],
+      "Keep categories": [
+        "Behåll kategorier"
+      ],
+      "Remove video conference": [
+        "Ta bort videokonferens"
       ]
     },
     "action": {
@@ -1997,6 +2006,9 @@
       ],
       "You cannot add custom domains during the trial period.": [
         "Du kan inte lägga till anpassade domäner under provperioden."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -8708,6 +8720,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "${ CALENDAR_APP_NAME } requires a ${ BRAND_NAME } address for secure event sync and encryption. ${ claimAddressButton }.": [
+        "${ CALENDAR_APP_NAME } kräver en ${ BRAND_NAME }-adress för säker synkronisering och kryptering av händelse. ${ claimAddressButton }."
       ]
     },
     "info": {
@@ -9717,6 +9732,21 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Credits": [
+        "Krediter"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Ta bort ${ MEET_APP_NAME }-videokonferens"
+      ],
+      "Remove Zoom video conference": [
+        "Ta bort Zoom-videokonferens"
+      ],
+      "Video conference": [
+        "Videokonferens"
+      ],
+      "Which category should this be recategorized under?": [
+        "Vilken kategori ska detta omkategoriseras under?"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11484,6 +11514,9 @@
       ],
       "Unlimited aliases to protect your identity": [
         "Obegränsat antal alias för att skydda din identitet"
+      ],
+      "Collaborate with non-${ BRAND_NAME } users": [
+        "Samarbeta med icke ${ BRAND_NAME }-användare"
       ]
     },
     "Onboarding List Placeholder": {
@@ -11975,6 +12008,9 @@
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Denna åtgärd utökar den befintliga prenumerationen. Du kommer endast att debiteras för de nya utökningarna och den återstående tiden av den nuvarande faktureringsperioden. Förnyelsedatumet för din prenumeration kommer inte att ändras."
       ]
     },
     "Payments.Error": {
@@ -15230,6 +15266,15 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Disable categories?": [
+        "Inaktivera kategorier?"
+      ],
+      "Two-factor authentication": [
+        "Tvåfaktorsautentisering"
+      ],
+      "Unsubscribe not available for this sender": [
+        "Avsluta prenumeration är inte tillgängligt för denna avsändare"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15798,6 +15843,14 @@
       ],
       "Passcode:": [
         "Lösenkod:"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit för den oanvända delen av din tidigare paketprenumeration"
+      ],
+      "Credits will be added to your balance": [
+        "Krediter kommer att läggas till ditt saldo"
       ]
     }
   }

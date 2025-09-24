@@ -1651,6 +1651,15 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Disable categories": [
+        "Απενεργοποίηση κατηγοριών"
+      ],
+      "Keep categories": [
+        "Διατήρηση κατηγοριών"
+      ],
+      "Remove video conference": [
+        "Κατάργηση τηλεδιάσκεψης"
       ]
     },
     "action": {
@@ -2009,6 +2018,12 @@
       ],
       "You have reached the trial limit.": [
         "Έχετε φτάσει το όριο της δοκιμής."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε ${ renewCycle } μήνες. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Μετά τη λήξη της δοκιμαστικής περιόδου στις ${ formattedDate }, θα γίνει μια επί πληρωμή συνδρομή που ανανεώνεται αυτόματα κάθε μήνα. Δε θα χρεωθείτε αν ακυρώσετε πριν από τις ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -8763,6 +8778,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Είστε μόνο μερικά κλικ μακριά από τα εισερχόμενα χωρίς ακαταστασία"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Όλα τα μηνύματα θα εμφανίζονται στα Εισερχόμενα, και οι καρτέλες κατηγοριών και οι ετικέτες δε θα είναι πλέον ορατές. "
       ]
     },
     "info": {
@@ -9784,6 +9802,18 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Credits": [
+        "Πιστώσεις"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Κατάργηση τηλεδιάσκεψης ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Κατάργηση τηλεδιάσκεψης Zoom"
+      ],
+      "Video conference": [
+        "Τηλεδιάσκεψη"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12046,6 +12076,9 @@
       ],
       "Your payment is still being processed": [
         "Η πληρωμή σας βρίσκεται ακόμα υπό επεξεργασία"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Αυτή η ενέργεια επεκτείνει την υπάρχουσα συνδρομή. Θα χρεωθείτε μόνο για τα νέα πρόσθετα και τον υπόλοιπο χρόνο του τρέχοντος κύκλου χρέωσης. Η ημερομηνία ανανέωσης της συνδρομής σας δε θα αλλάξει."
       ]
     },
     "Payments.Error": {
@@ -15319,6 +15352,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Οι κατηγορίες έρχονται!"
+      ],
+      "Disable categories?": [
+        "Απενεργοποίηση κατηγοριών;"
+      ],
+      "Two-factor authentication": [
+        "Έλεγχος ταυτότητας δύο παραγόντων"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15890,6 +15929,14 @@
       ],
       "Passcode:": [
         "Κωδικός πρόσβασης:"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πλάνο"
+      ],
+      "Credits will be added to your balance": [
+        "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
       ]
     }
   }

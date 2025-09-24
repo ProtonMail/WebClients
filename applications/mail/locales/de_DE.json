@@ -1648,6 +1648,15 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Disable categories": [
+        "Kategorien deaktivieren"
+      ],
+      "Keep categories": [
+        "Kategorien behalten"
+      ],
+      "Remove video conference": [
+        "Videokonferenz entfernen"
       ]
     },
     "action": {
@@ -2006,6 +2015,12 @@
       ],
       "You have reached the trial limit.": [
         "Du hast das Testversions-Limit erreicht."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ]
     },
     "b2b_trials_Action": {
@@ -8760,6 +8775,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du bist nur ein paar Klicks von einem aufgeräumten Posteingang entfernt"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Alle Nachrichten werden im Posteingang angezeigt, und die Kategorien-Tabs und Tags werden nicht mehr sichtbar sein. "
       ]
     },
     "info": {
@@ -9781,6 +9799,18 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Credits": [
+        "Guthaben"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME }-Videokonferenz entfernen"
+      ],
+      "Remove Zoom video conference": [
+        "Zoom-Videokonferenz entfernen"
+      ],
+      "Video conference": [
+        "Videokonferenz"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10067,7 +10097,7 @@
         "Zurückgestellt"
       ],
       "Spam": [
-        "In Spam verschieben"
+        "Spam"
       ],
       "Starred": [
         "Markiert"
@@ -12043,6 +12073,9 @@
       ],
       "Your payment is still being processed": [
         "Deine Zahlung ist noch in Bearbeitung."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Diese Aktion erweitert dein bestehendes Abonnement. Dir werden nur die neuen Ergänzungen für die verbleibende Zeit des aktuellen Abrechnungszeitraums in Rechnung gestellt. Das Verlängerungsdatum deines Abonnements wird nicht geändert."
       ]
     },
     "Payments.Error": {
@@ -15411,6 +15444,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorien kommen."
+      ],
+      "Disable categories?": [
+        "Kategorien deaktivieren?"
+      ],
+      "Two-factor authentication": [
+        "Zwei‐Faktor‐Authentifizierung"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15982,6 +16021,14 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
+      ],
+      "Credits will be added to your balance": [
+        "Das Guthaben wird dir gutgeschrieben."
       ]
     }
   }

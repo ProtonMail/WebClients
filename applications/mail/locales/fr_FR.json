@@ -1651,6 +1651,15 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Disable categories": [
+        "Désactiver les catégories"
+      ],
+      "Keep categories": [
+        "Conserver les catégories"
+      ],
+      "Remove video conference": [
+        "Retirer la vidéoconférence"
       ]
     },
     "action": {
@@ -2009,6 +2018,12 @@
       ],
       "You have reached the trial limit.": [
         "Vous avez atteint la limite de la version d'essai."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement tous les ${ renewCycle } mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Une fois la période d'essai terminée le ${ formattedDate }, il deviendra un abonnement payant qui se renouvelle automatiquement chaque mois. Vous ne serez pas facturé si vous annulez avant le ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -6457,8 +6472,8 @@
         "${ MAIL_APP_NAME } peut également protéger votre entreprise."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
-        "Le message ${ messagesNotAuthorizedToMove } n'a pas pu être déplacé.",
-        "Les messages ${ messagesNotAuthorizedToMove } n'ont pas pu être déplacés."
+        "${ messagesNotAuthorizedToMove } message n'a pas pu être déplacé.",
+        "${ messagesNotAuthorizedToMove } messages n'ont pas pu être déplacés."
       ],
       "${ n } unread conversation": [
         "${ n } conversation non lue",
@@ -8611,12 +8626,12 @@
         "Vous avez sélectionné **${ count } messages** avec ce tag"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Vous avez sélectionné(e) **${ elementsCount } conversation** dans ${ location }",
-        "Vous avez sélectionné(e) **${ elementsCount } conversations** dans ${ location }"
+        "Vous avez sélectionné **${ elementsCount } conversation** dans ${ location }",
+        "Vous avez sélectionné **${ elementsCount } conversations** dans ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
-        "Vous avez sélectionné(e) **${ elementsCount } conversation**.",
-        "Vous avez sélectionné(e) **${ elementsCount } conversations**."
+        "Vous avez sélectionné **${ elementsCount } conversation**.",
+        "Vous avez sélectionné **${ elementsCount } conversations**."
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
         "Vous avez sélectionné(e) **${ elementsCount } messages** dans ${ location }",
@@ -8763,6 +8778,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Plus que quelques clics pour une boite de réception bien rangée"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Tous les messages seront affichés dans la boite de réception, et les encadrements de catégorie et les étiquettes ne seront plus visibles. "
       ]
     },
     "info": {
@@ -9781,6 +9799,21 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Credits": [
+        "Crédits"
+      ],
+      "Go to Primary": [
+        "Accéder à l'élément principal"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Retirer la vidéoconférence ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Retirer la vidéoconférence Zoom"
+      ],
+      "Video conference": [
+        "Vidéoconférence"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10052,7 +10085,7 @@
         "Programmés"
       ],
       "Sent": [
-        "Envoyée"
+        "Envoyés"
       ],
       "settings": [
         "paramètres"
@@ -12043,6 +12076,9 @@
       ],
       "Your payment is still being processed": [
         "Votre paiement est en cours de traitement."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Cette action étend l'abonnement existant. Vous ne serez facturé que pour les nouveaux add-ons complémentaires et le temps restant du cycle de facturation actuel. La date de renouvellement de votre abonnement ne sera pas modifiée."
       ]
     },
     "Payments.Error": {
@@ -13976,8 +14012,8 @@
         "${ elementsCount } messages supprimés de ${ labelName }."
       ],
       "${ elementsCount } message removed from Starred.": [
-        "Message ${ elementsCount } supprimé de la liste étoilée.",
-        "${ elementsCount } messages supprimés de la liste étoilée."
+        "${ elementsCount } message a été retiré des favoris.",
+        "${ elementsCount } messages ont été retirés de la liste des favoris."
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -15411,6 +15447,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Les catégories arrivent !"
+      ],
+      "Disable categories?": [
+        "Désactiver les catégories ?"
+      ],
+      "Two-factor authentication": [
+        "Authentification à deux facteurs"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15982,6 +16024,14 @@
       ],
       "Passcode:": [
         "Code d’accès :"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédit pour la période non utilisée de votre abonnement précédent"
+      ],
+      "Credits will be added to your balance": [
+        "Les crédits seront ajoutés à votre solde."
       ]
     }
   }

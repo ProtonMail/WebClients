@@ -1661,6 +1661,15 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Disable categories": [
+        "Адключыць катэгорыі"
+      ],
+      "Keep categories": [
+        "Захоўваць катэгорыі"
+      ],
+      "Remove video conference": [
+        "Выдаліць відэаканферэнцыю"
       ]
     },
     "action": {
@@ -2031,6 +2040,12 @@
       ],
       "You have reached the trial limit.": [
         "Дасягнута абмежаванне пробнага перыяду."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожныя ${ renewCycle } месяцаў пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Падпіска пяройдзе ў разрад платных падпісак і будзе аўтаматычна падаўжацца кожны месяц пасля завяршэння пробнага перыяду ${ formattedDate }. З вас не будзе спагнана плата, калі вы скасуеце яе да ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -5908,7 +5923,7 @@
         "Атрымаць праграму"
       ],
       "Keep using ${ MAIL_APP_NAME } to discover more ways ${ BRAND_NAME } protects your privacy and simplifies emailing.": [
-        "Працягвайце выкарыстоўваць ${ MAIL_APP_NAME }, каб даведацца больш спосабаў, як з ${ BRAND_NAME } абараніць сваю прыватнасць і спрасціць адпраўку лістоў."
+        "Працягвайце выкарыстоўваць ${ MAIL_APP_NAME }, каб даведацца больш спосабаў, як з дапамогай ${ BRAND_NAME } абараніць сваю прыватнасць і спрасціць адпраўку лістоў."
       ],
       "Learn more": [
         "Даведацца больш"
@@ -7557,7 +7572,7 @@
         "На наступным кроку вы можаце адправіць дэпазіт з выкарыстаннем адраса Bitcoin."
       ],
       "Include Spam/Trash.": [
-        "Уключыць Спам/Сметніцу"
+        "Уключыць папкі Спам/Сметніцу"
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Уключаць запыт і адказ, каб дапамагчы палепшыць дакладнасць."
@@ -8697,7 +8712,7 @@
         "Калі вы хочаце, каб ваша паведамленне было самазнішчана?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Пры перадачы сваёй электроннай пошты, выкарыстоўвайце ўнікальны, аднаразовы псеўданім функцыі Hide-my-email, замест вашага рэальнага адраса электроннай пошты."
+        "Пры перадачы сваёй электроннай пошты, выкарыстоўвайце ўнікальны аднаразовы псеўданім функцыі Hide-my-email, замест вашага рэальнага адраса электроннай пошты."
       ],
       "When working remotely": [
         "Пры аддаленай працы"
@@ -8841,7 +8856,7 @@
         "Вы не пазначылі тэму ліста. Вы ўсё роўна хочаце адправіць паведамленне?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Вы дасягнулі 100% ёмістасці сховішча. Паспрабуйце вызваліць крыху прасторы або павялічце аб'ём сховішча ў сваім уліковым запісе, каб працягнуць ствараць новыя паведамленні."
+        "Ёмістасць сховішча запоўнена на 100%. Паспрабуйце вызваліць крыху прасторы або павялічце аб'ём сховішча ў сваім уліковым запісе, каб працягнуць ствараць новыя паведамленні."
       ],
       "You have reached the maximum number of 5 replies.": [
         "Вы дасягнулі максімальнай колькасці ў 5 адказаў."
@@ -9043,6 +9058,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Усе паведамленні будуць паказвацца ў паштовай скрыні, а ўкладкі катэгорый і тэгі больш не будуць бачныя. "
       ]
     },
     "info": {
@@ -9122,7 +9140,7 @@
         "Пры націску кнопкі “Давяраць ключу”, вы звяжаце дадзены публічны ключ з гэтым адпраўніком. Лісты з гэтага адраса будуць аўтаматычна крыптаграфічна спраўджаны."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
-        "Пры націску кнопкі \"Давяраць ключу\", будзе створаны новы кантакт, і гэты публічны ключ прывяжацца да адпраўніка. Лісты з гэтага адрасу будуць аўтаматычна крыптаграфічна спраўджаны."
+        "Пры націску кнопкі \"Давяраць ключу\" будзе створаны новы кантакт, і гэты публічны ключ прывяжацца да адпраўніка. Лісты з гэтага адраса будуць аўтаматычна крыптаграфічна спраўджаны."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Вы сапраўды хочаце давяраць асноўнаму публічнаму ключу з наступным адбіткам?",
@@ -9649,7 +9667,7 @@
         "Перайсці ў Асноўныя"
       ],
       "Go to Promotions": [
-        "Перайсці ў Рэкламу"
+        "Перайсці да рэкламных акцый"
       ],
       "Go to Social": [
         "Перайсці ў Сацыяльныя"
@@ -9658,7 +9676,7 @@
         "Перайсці ў Трансакцыі"
       ],
       "Go to Updates": [
-        "Перайсці ў Абнаўленні"
+        "Перайсці ў абнаўленні"
       ],
       "Help us improve categories by choosing the one that best fits this email. Thanks for your help!": [
         "Дапамажыце нам палепшыць катэгорыі. Выберыце тую, якая найлепш пасуе гэтаму лісту. Дзякуй за вашу дапамогу!"
@@ -10076,6 +10094,18 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Credits": [
+        "Крэдыты"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Выдаліць відэаканферэнцыю ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Выдаліць відэаканферэнцыю Zoom"
+      ],
+      "Video conference": [
+        "Відэаканферэнцыя"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12336,7 +12366,7 @@
         "Без уліку ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Excluding ${ taxRate }% taxes: ${ taxAmount }": [
-        "Без уліку падатка ў ${ taxRate }%: ${ taxAmount }"
+        "Без уліку падаткаў у ${ taxRate }%: ${ taxAmount }"
       ],
       "Got it": [
         "Зразумела"
@@ -12348,7 +12378,7 @@
         "Уключае ${ taxRate }% ${ taxName }: ${ taxAmount }"
       ],
       "Including ${ taxRate }% taxes: ${ taxAmount }": [
-        "З улікам падатка ў ${ taxRate }%: ${ taxAmount }"
+        "З улікам падаткаў у ${ taxRate }%: ${ taxAmount }"
       ],
       "MM/YY": [
         "ММ/ГГ"
@@ -12418,6 +12448,9 @@
       ],
       "Your payment is still being processed": [
         "Ваш плацеж усё яшчэ апрацоўваецца"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Гэта дзеянне пашырае існуючую падпіску. З вас будзе спагнана плата толькі за новыя дадаткі і час, якія засталіся ў бягучым перыядзе аплаты. Дата падаўжэння вашай падпіскі не будзе зменена."
       ]
     },
     "Payments.Error": {
@@ -15251,7 +15284,7 @@
         "Пераслаць"
       ],
       "Get full access to ${ CALENDAR_APP_NAME }": [
-        "Атрымаць поўны доступ да ${ CALENDAR_APP_NAME }"
+        "Атрыманне поўнага доступу да ${ CALENDAR_APP_NAME }"
       ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
@@ -15879,6 +15912,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Неўзабаве чакайце катэгорыі!"
+      ],
+      "Disable categories?": [
+        "Адключыць катэгорыі?"
+      ],
+      "Two-factor authentication": [
+        "Двухфактарная аўтэнтыфікацыя"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16540,6 +16579,14 @@
       ],
       "Passcode:": [
         "Код доступу:"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Крэдыты для нявыкарыстанай часткі вашага папярэдняга тарыфнага плана падпіскі"
+      ],
+      "Credits will be added to your balance": [
+        "Крэдыты будуць дададзены на ваш баланс"
       ]
     }
   }

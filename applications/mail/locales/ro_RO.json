@@ -1653,6 +1653,15 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Disable categories": [
+        "Dezactivare categorii"
+      ],
+      "Keep categories": [
+        "Păstrare categorii"
+      ],
+      "Remove video conference": [
+        "Eliminare conferință video"
       ]
     },
     "action": {
@@ -2017,6 +2026,12 @@
       ],
       "You have reached the trial limit.": [
         "Ați atins limita perioadei de probare."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat la fiecare ${ renewCycle } luni. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "După ce perioada de probare se încheie la ${ formattedDate }, va deveni un abonament cu plată care se reînnoiește automat lunar. Nu veți plăti dacă anulați înainte de ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -5674,7 +5689,7 @@
     },
     "Filter option to only show message with attachments": {
       "Has attachments": [
-        "Are atașamente"
+        "Cu atașamente"
       ]
     },
     "Filter preview": {
@@ -6460,14 +6475,14 @@
         "${ elementsCount } de conversații vor fi etichetate cu:"
       ],
       "${ elementsCount } conversation will be marked as read.": [
-        "Conversații care vor fi marcate ca fiind citite: ${ elementsCount }.",
-        "Conversații care vor fi marcate ca fiind citite: ${ elementsCount }.",
-        "Conversații care vor fi marcate ca fiind citite: ${ elementsCount }."
+        "Conversații care vor fi marcate ca fiind citite: ${ elementsCount }",
+        "Conversații care vor fi marcate ca fiind citite: ${ elementsCount }",
+        "Conversații care vor fi marcate ca fiind citite: ${ elementsCount }"
       ],
       "${ elementsCount } conversation will be marked as unread.": [
-        "Conversații care vor fi marcate ca necitite: ${ elementsCount }.",
-        "Conversații care vor fi marcate ca necitite: ${ elementsCount }.",
-        "Conversații care vor fi marcate ca necitite: ${ elementsCount }."
+        "Conversații care vor fi marcate ca necitite: ${ elementsCount }",
+        "Conversații care vor fi marcate ca necitite: ${ elementsCount }",
+        "Conversații care vor fi marcate ca necitite: ${ elementsCount }"
       ],
       "${ elementsCount } conversation will be moved": [
         "Conversații care vor fi mutate: ${ elementsCount }",
@@ -6631,9 +6646,9 @@
         "Necitite: ${ subscription.UnreadMessageCount }"
       ],
       "${ total } conversation": [
-        "Conversații: ${ total }",
-        "Conversații: ${ total }",
-        "Conversații: ${ total }"
+        "${ total } conversație",
+        "${ total } conversații",
+        "${ total } de conversații"
       ],
       "${ total } message": [
         "Mesaje: ${ total }",
@@ -8680,19 +8695,19 @@
         "În «Primite» aveți: ${ unread }"
       ],
       "You have **${ count } conversation** stored in this folder": [
-        "Conversații stocate în acest folder: **${ count }**.",
-        "Conversații stocate în acest folder: **${ count }**.",
-        "Conversații stocate în acest folder: **${ count }**."
+        "Conversații stocate în acest folder: **${ count }**",
+        "Conversații stocate în acest folder: **${ count }**",
+        "Conversații stocate în acest folder: **${ count }**"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Conversații marcate cu această etichetă: **${ count }**.",
-        "Conversații marcate cu această etichetă: **${ count }**.",
-        "Conversații marcate cu această etichetă: **${ count }**."
+        "Conversații marcate cu această etichetă: **${ count }**",
+        "Conversații marcate cu această etichetă: **${ count }**",
+        "Conversații marcate cu această etichetă: **${ count }**"
       ],
       "You have **${ count } message** stored in this folder": [
-        "Mesaje stocate în acest folder: **${ count }**.",
-        "Mesaje stocate în acest folder: **${ count }**.",
-        "Mesaje stocate în acest folder: **${ count }**."
+        "Mesaje stocate în acest folder: **${ count }**",
+        "Mesaje stocate în acest folder: **${ count }**",
+        "Mesaje stocate în acest folder: **${ count }**"
       ],
       "You have **${ count } message** tagged with this label": [
         "Mesaje marcate cu această etichetă: **${ count }**.",
@@ -8721,19 +8736,19 @@
         "Trebuie să dezactivați sau să eliminați utilizatorii ${ MAIL_APP_NAME } adiționali, adresele și domeniile personale înainte de a putea retrograda."
       ],
       "You selected **${ count } conversation** from this folder": [
-        "Conversații selectate din acest folder: **${ count }**.",
-        "Conversații selectate din acest folder: **${ count }**.",
-        "Conversații selectate din acest folder: **${ count }**."
+        "Conversații selectate din acest folder: **${ count }**",
+        "Conversații selectate din acest folder: **${ count }**",
+        "Conversații selectate din acest folder: **${ count }**"
       ],
       "You selected **${ count } conversation** with this label": [
-        "Conversații selectate cu această etichetă: **${ count }**.",
-        "Conversații selectate cu această etichetă: **${ count }**.",
-        "Conversații selectate cu această etichetă: **${ count }**."
+        "Conversații selectate cu această etichetă: **${ count }**",
+        "Conversații selectate cu această etichetă: **${ count }**",
+        "Conversații selectate cu această etichetă: **${ count }**"
       ],
       "You selected **${ count } message** from this folder": [
-        "Conversații stocate în acest folder: **${ count }**.",
-        "Mesaje selectate din acest folder: **${ count }**.",
-        "Mesaje selectate din acest folder: **${ count }**."
+        "Conversații stocate în acest folder: **${ count }**",
+        "Mesaje selectate din acest folder: **${ count }**",
+        "Mesaje selectate din acest folder: **${ count }**"
       ],
       "You selected **${ count } message** with this label": [
         "Mesaje selectate cu această etichetă: **${ count }**",
@@ -8746,9 +8761,9 @@
         "Conversații selectate în „**${ location }**”: ${ elementsCount }."
       ],
       "You selected **${ elementsCount } conversation**.": [
-        "**Conversații** selectate: ${ elementsCount }.",
-        "**Conversații** selectate: ${ elementsCount }.",
-        "**Conversații** selectate: ${ elementsCount }."
+        "**Conversații** selectate: ${ elementsCount }",
+        "**Conversații** selectate: ${ elementsCount }",
+        "**Conversații** selectate: ${ elementsCount }"
       ],
       "You selected **${ elementsCount } message** in ${ location }": [
         "Mesaje selectate în „**${ location }**”: ${ elementsCount }.",
@@ -8900,6 +8915,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sunteți la doar câteva clicuri distanță de un cont cu mesaje ordonate."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Toate mesajele vor fi afișate în „Primite”, iar filele de categorii și etichetele nu vor mai fi vizibile."
       ]
     },
     "info": {
@@ -9927,6 +9945,18 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Credits": [
+        "Credite"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Eliminare conferință video ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Eliminare conferință video Zoom"
+      ],
+      "Video conference": [
+        "Conferință video"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14034,14 +14064,14 @@
         "${ countMergeableContacts } de contacte arată identic."
       ],
       "${ elementsCount } conversation added to ${ labelName }.": [
-        "Conversații adăugate în ${ labelName }: ${ elementsCount }.",
-        "Conversații adăugate în ${ labelName }: ${ elementsCount }.",
-        "Conversații adăugate în ${ labelName }: ${ elementsCount }."
+        "Conversații adăugate în ${ labelName }: ${ elementsCount }",
+        "Conversații adăugate în ${ labelName }: ${ elementsCount }",
+        "Conversații adăugate în ${ labelName }: ${ elementsCount }"
       ],
       "${ elementsCount } conversation marked as read.": [
-        "Conversații marcate ca fiind citite: ${ elementsCount }.",
-        "Conversații marcate ca fiind citite: ${ elementsCount }.",
-        "Conversații marcate ca fiind citite: ${ elementsCount }."
+        "Conversații citite: ${ elementsCount }",
+        "Conversații citite: ${ elementsCount }",
+        "Conversații citite: ${ elementsCount }"
       ],
       "${ elementsCount } conversation marked as Starred.": [
         "Conversații marcate cu stea: ${ elementsCount }",
@@ -14049,9 +14079,9 @@
         "Conversații marcate cu stea: ${ elementsCount }"
       ],
       "${ elementsCount } conversation marked as unread.": [
-        "Conversații marcate ca necitite: ${ elementsCount }.",
-        "Conversații marcate ca necitite: ${ elementsCount }.",
-        "Conversații marcate ca necitite: ${ elementsCount }."
+        "Conversații marcate ca necitite: ${ elementsCount }",
+        "Conversații marcate ca necitite: ${ elementsCount }",
+        "Conversații marcate ca necitite: ${ elementsCount }"
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
         "Conversații mutate în „${ labelName }”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise.",
@@ -14059,9 +14089,9 @@
         "Conversații mutate în „${ labelName }”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese permise."
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
-        "Conversații mutate în „${ labelName }”: ${ elementsCount }.",
-        "Conversații mutate în „${ labelName }”: ${ elementsCount }.",
-        "Conversații mutate în „${ labelName }”: ${ elementsCount }."
+        "Conversații mutate în „${ labelName }”: ${ elementsCount }",
+        "Conversații mutate în „${ labelName }”: ${ elementsCount }",
+        "Conversații mutate în „${ labelName }”: ${ elementsCount }"
       ],
       "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
         "Conversații mutate în „Nedorite”: ${ elementsCount }. Expeditorul a fost adăugat în lista de adrese blocate.",
@@ -15596,6 +15626,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "Disable categories?": [
+        "Dezactivați categoriile?"
+      ],
+      "Two-factor authentication": [
+        "Autentificare cu doi factori"
       ]
     },
     "Today icon tooltip in mini calendar": {

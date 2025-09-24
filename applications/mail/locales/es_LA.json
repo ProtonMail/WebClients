@@ -1651,6 +1651,15 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Disable categories": [
+        "Desactivar las categorías"
+      ],
+      "Keep categories": [
+        "Mantener las categorías"
+      ],
+      "Remove video conference": [
+        "Eliminar videoconferencia"
       ]
     },
     "action": {
@@ -2009,6 +2018,12 @@
       ],
       "You have reached the trial limit.": [
         "Usted ha alcanzado el límite de la prueba."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se le cobrará si cancela antes del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se le cobrará si cancela antes del ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -8763,6 +8778,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Está a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Todos los mensajes se mostrarán en la bandeja de entrada y las pestañas de categorías y etiquetas dejarán de estar visibles. "
       ]
     },
     "info": {
@@ -9784,6 +9802,18 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Credits": [
+        "Créditos"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Eliminar videoconferencia de ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Eliminar videoconferencia de Zoom"
+      ],
+      "Video conference": [
+        "Videoconferencia"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10055,7 +10085,7 @@
         "Programado"
       ],
       "Sent": [
-        "Enviada"
+        "Enviados"
       ],
       "settings": [
         "ajustes"
@@ -15414,6 +15444,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ ¡Llegan las categorías!"
+      ],
+      "Disable categories?": [
+        "¿Desactivar las categorías?"
+      ],
+      "Two-factor authentication": [
+        "Autenticación de dos factores"
       ]
     },
     "Today icon tooltip in mini calendar": {

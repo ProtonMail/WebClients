@@ -1645,6 +1645,18 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Disable categories": [
+        "Disattiva le categorie"
+      ],
+      "Edit categories": [
+        "Modifica categorie"
+      ],
+      "Keep categories": [
+        "Mantieni le categorie"
+      ],
+      "Remove video conference": [
+        "Rimuovi videoconferenza"
       ]
     },
     "action": {
@@ -2003,6 +2015,12 @@
       ],
       "You have reached the trial limit.": [
         "Hai raggiunto il limite della prova."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni ${ renewCycle } mesi. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Al termine del periodo di prova il ${ formattedDate }, diventerà un abbonamento a pagamento che si rinnova automaticamente ogni mese. Non ti verrà addebitato alcun costo se annulli prima del ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -5250,6 +5268,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Non hai ancora alcun contatto. Inizia creandone uno nuovo"
+      ],
+      "An error occurred with the categories": [
+        "Si è verificato un errore con le categorie"
       ]
     },
     "Error notification": {
@@ -8754,6 +8775,15 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Sei a pochi clic da una posta in arrivo organizzata"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Tutti i messaggi saranno mostrati nella inbox e le tab delle categorie e i tag non saranno più visibili. "
+      ],
+      "Copy your referral link": [
+        "Copia il tuo link di riferimento"
+      ],
+      "Referral link copied to your clipboard": [
+        "Link di riferimento copiato negli appunti"
       ]
     },
     "info": {
@@ -9730,6 +9760,60 @@
       ],
       "ZIP code": [
         "Codice postale"
+      ],
+      "Automated confirmations and alerts": [
+        "Conferme e avvisi automatici"
+      ],
+      "Bookings, billings, and orders": [
+        "Prenotazioni, fatturazioni e ordini"
+      ],
+      "Credits": [
+        "Crediti"
+      ],
+      "Deals, offers, marketing emails": [
+        "Offerte, promozioni, email di marketing"
+      ],
+      "Discussion board posts and threads": [
+        "Messaggi e discussioni del forum"
+      ],
+      "Go to Forums": [
+        "Vai ai forum"
+      ],
+      "Go to Newsletters": [
+        "Vai alle newsletter"
+      ],
+      "Go to Primary": [
+        "Vai su Principale"
+      ],
+      "Go to Promotions": [
+        "Vai a Promozioni"
+      ],
+      "Go to Social": [
+        "Vai al Social Feed"
+      ],
+      "Go to Transactions": [
+        "Vai a Transazioni"
+      ],
+      "Go to Updates": [
+        "Vai agli aggiornamenti"
+      ],
+      "Non-promotional content and news": [
+        "Contenuti non promozionali e notizie"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Rimuovi videoconferenza ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Rimuovi videoconferenza Zoom"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Seleziona le categorie da includere e attiva le notifiche per ricevere avvisi sulle nuove email in una categoria."
+      ],
+      "Social media updates and activity": [
+        "Aggiornamenti e attività sui social media"
+      ],
+      "Video conference": [
+        "Videoconferenza"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10001,7 +10085,7 @@
         "Programmata"
       ],
       "Sent": [
-        "Inviate"
+        "Inviata"
       ],
       "settings": [
         "impostazioni"
@@ -11997,6 +12081,9 @@
       ],
       "Your payment is still being processed": [
         "Il tuo pagamento è ancora in fase di elaborazione."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Questa azione estende l'abbonamento esistente. Ti verranno addebitati solo i nuovi add-on e il tempo rimanente del ciclo di fatturazione corrente. La data di rinnovo del tuo abbonamento non verrà modificata."
       ]
     },
     "Payments.Error": {
@@ -15362,6 +15449,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ Le categorie stanno arrivando!"
+      ],
+      "Customize categories": [
+        "Personalizza le categorie"
+      ],
+      "Disable categories?": [
+        "Disattivare le categorie?"
+      ],
+      "How does it work?": [
+        "Come funziona?"
+      ],
+      "Two-factor authentication": [
+        "Autenticazione a due fattori"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15933,6 +16032,14 @@
       ],
       "Passcode:": [
         "Codice di accesso:"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Credito per la parte non usata del tuo precedente abbonamento"
+      ],
+      "Credits will be added to your balance": [
+        "I crediti verranno aggiunti al tuo saldo."
       ]
     }
   }

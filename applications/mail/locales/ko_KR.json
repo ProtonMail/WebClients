@@ -1646,6 +1646,12 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Disable categories": [
+        "카테고리 비활성화"
+      ],
+      "Keep categories": [
+        "카테고리 유지"
       ]
     },
     "action": {
@@ -1998,6 +2004,12 @@
       ],
       "You have reached the trial limit.": [
         "무료 체험 한도에 도달했습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "${ formattedDate }에 체험판이 종료된 후, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
       ]
     },
     "b2b_trials_Action": {
@@ -2266,6 +2278,9 @@
       ],
       "Website access problem": [
         "웹사이트 접근 문제"
+      ],
+      "Meet problem": [
+        "문제 발생"
       ]
     },
     "Button": {
@@ -6387,7 +6402,7 @@
         "읽지 않은 대화 ${ n }개"
       ],
       "${ numberOfUTMTrackers } link cleaned": [
-        "${ numberOfUTMTrackers } 링크가 정리되었습니다"
+        "${ numberOfUTMTrackers }개 링크가 제거됨"
       ],
       "${ NumMessages } message in conversation": [
         "대화 내 ${ NumMessages }개의 메시지"
@@ -7437,7 +7452,7 @@
         "선택한 라벨 없음"
       ],
       "No links cleaned": [
-        "정리된 링크가 없습니다"
+        "정리된 링크가 없음"
       ],
       "No messages to show": [
         "표시할 매시지 없음"
@@ -8620,6 +8635,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "모든 메시지가 받은 편지함에 표시되며, 카테고리 탭과 태그는 더 이상 표시되지 않습니다. "
       ]
     },
     "info": {
@@ -9635,6 +9653,12 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Credits": [
+        "크레딧"
+      ],
+      "Video conference": [
+        "화상 회의"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9906,7 +9930,7 @@
         "예약됨"
       ],
       "Sent": [
-        "보낸 편지함"
+        "보낸편지함"
       ],
       "settings": [
         "설정"
@@ -15036,6 +15060,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ 카테고리를 곧 만나보세요!"
+      ],
+      "Disable categories?": [
+        "카테고리를 비활성화하시겠어요?"
+      ],
+      "Two-factor authentication": [
+        "2단계 인증"
       ]
     },
     "Today icon tooltip in mini calendar": {

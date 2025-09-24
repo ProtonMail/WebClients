@@ -1648,6 +1648,15 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Disable categories": [
+        "Deaktiver kategorier"
+      ],
+      "Keep categories": [
+        "Behold kategorier"
+      ],
+      "Remove video conference": [
+        "Fjern videokonferanse"
       ]
     },
     "action": {
@@ -2006,6 +2015,12 @@
       ],
       "You have reached the trial limit.": [
         "Du har nådd prøveperiodegrensen."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk hver ${ renewCycle } måned. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Etter at prøveperioden avsluttes på ${ formattedDate }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -8760,6 +8775,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du er bare noen få klikk unna en ryddig innboks"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Alle meldinger vises i innboksen, og kategorifanene og -taggene vil ikke lenger være synlige. "
       ]
     },
     "info": {
@@ -9781,6 +9799,18 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Credits": [
+        "Kreditter"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Fjern ${ MEET_APP_NAME }-videokonferanse"
+      ],
+      "Remove Zoom video conference": [
+        "Fjern Zoom-videokonferanse"
+      ],
+      "Video conference": [
+        "Videokonferanse"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12043,6 +12073,9 @@
       ],
       "Your payment is still being processed": [
         "Betalingen din behandles fortsatt"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Denne handlingen utvider det eksisterende abonnementet. Du vil kun bli belastet for de nye tilleggene og den gjenværende tiden av den nåværende faktureringssyklusen. Fornyelsesdatoen for abonnementet ditt vil ikke bli endret."
       ]
     },
     "Payments.Error": {
@@ -15316,6 +15349,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Disable categories?": [
+        "Deaktivere kategorier?"
+      ],
+      "Two-factor authentication": [
+        "Tofaktorautentisering"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15887,6 +15926,14 @@
       ],
       "Passcode:": [
         "Adgangskode:"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kreditt for den ubrukte delen av ditt forrige planabonnement"
+      ],
+      "Credits will be added to your balance": [
+        "Kreditter vil bli lagt til saldoen din"
       ]
     }
   }

@@ -1645,6 +1645,18 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Disable categories": [
+        "Desactivar las categorías"
+      ],
+      "Edit categories": [
+        "Editar categorías"
+      ],
+      "Keep categories": [
+        "Mantener las categorías"
+      ],
+      "Remove video conference": [
+        "Eliminar la videoconferencia"
       ]
     },
     "action": {
@@ -1997,6 +2009,15 @@
       ],
       "You have reached the trial limit.": [
         "Has alcanzado el límite del periodo de prueba."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada ${ renewCycle } meses. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Cuando finalice la prueba el ${ formattedDate }, se convertirá en una suscripción de pago que se renueva automáticamente cada mes. No se te cobrará nada si cancelas antes del ${ formattedDate }."
+      ],
+      "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } licencias durante el periodo de prueba."
       ]
     },
     "b2b_trials_Action": {
@@ -2267,6 +2288,9 @@
       ],
       "Website access problem": [
         "Problema de acceso al sitio web"
+      ],
+      "Meet problem": [
+        "Problema de Meet"
       ]
     },
     "Button": {
@@ -2663,6 +2687,9 @@
       ],
       "Add ${ LUMO_APP_NAME }": [
         "Añadir ${ LUMO_APP_NAME }"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "Chats de alta velocidad y funciones de IA avanzadas."
       ]
     },
     "color": {
@@ -5203,6 +5230,9 @@
       ],
       "You do not have any contact yet. Start by creating a new contact": [
         "Aún no tienes ningún contacto. Empieza creando un contacto."
+      ],
+      "An error occurred with the categories": [
+        "Se ha producido un error con las categorías"
       ]
     },
     "Error notification": {
@@ -8707,6 +8737,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Estás a solo unos clics de tener una bandeja de entrada ordenada"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Todos los mensajes se mostrarán en la Bandeja de entrada y las pestañas de categorías y etiquetas dejarán de estar visibles. "
       ]
     },
     "info": {
@@ -9683,6 +9716,60 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Automated confirmations and alerts": [
+        "Confirmaciones y alertas automatizadas"
+      ],
+      "Bookings, billings, and orders": [
+        "Reservaciones, facturas y órdenes"
+      ],
+      "Credits": [
+        "Créditos"
+      ],
+      "Deals, offers, marketing emails": [
+        "Ofertas, promociones, correos electrónicos de publicidad"
+      ],
+      "Discussion board posts and threads": [
+        "Publicaciones e hilos del foro de debate"
+      ],
+      "Go to Forums": [
+        "Ir a Foros"
+      ],
+      "Go to Newsletters": [
+        "Ir a Boletines"
+      ],
+      "Go to Primary": [
+        "Ir a Principal"
+      ],
+      "Go to Promotions": [
+        "Ir a Promociones"
+      ],
+      "Go to Social": [
+        "Ir a Sociales"
+      ],
+      "Go to Transactions": [
+        "Ir a Operaciones"
+      ],
+      "Go to Updates": [
+        "Ir a Actualizaciones"
+      ],
+      "Non-promotional content and news": [
+        "Contenido no promocional y noticias"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Eliminar videoconferencia de ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Eliminar videoconferencia de Zoom"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Selecciona las categorías a incluir y activa las notificaciones para recibir alertas sobre nuevos correos electrónicos en una categoría."
+      ],
+      "Social media updates and activity": [
+        "Actualizaciones y actividad en redes sociales"
+      ],
+      "Video conference": [
+        "Videoconferencia"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -14108,6 +14195,10 @@
       ],
       "You have successfully unsubscribed": [
         "Has cancelado la suscripción."
+      ],
+      "Recategorized ${ elementsCount } message.": [
+        "Recategorizado ${ elementsCount } mensaje.",
+        "Recategorizados ${ elementsCount } mensajes."
       ]
     },
     "Success notification": {
@@ -15306,6 +15397,15 @@
       ],
       "✨ Categories are coming!": [
         "✨ ¡Llegan las categorías!"
+      ],
+      "Customize categories": [
+        "Personalizar categorías"
+      ],
+      "Disable categories?": [
+        "¿Desactivar las categorías?"
+      ],
+      "Two-factor authentication": [
+        "Autenticación de dos factores"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15877,6 +15977,38 @@
       ],
       "Passcode:": [
         "Código de acceso:"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Acceso a modelos de IA avanzados"
+      ],
+      "Basic chat history": [
+        "Historial de chat básico"
+      ],
+      "Full chat history with search": [
+        "Historial de chat completo con búsqueda"
+      ],
+      "Large file upload support": [
+        "Soporte para la carga de archivos grandes"
+      ],
+      "Limited daily chats": [
+        "Chats diarios limitados"
+      ],
+      "Limited favorites": [
+        "Favoritos limitados"
+      ],
+      "Unlimited daily chats": [
+        "Chats diarios ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para un acceso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Cargar y consultar múltiples archivos de gran tamaño"
+      ],
+      "Web search access": [
+        "Acceso a la búsqueda web"
       ]
     }
   }

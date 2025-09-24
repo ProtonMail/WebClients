@@ -1661,6 +1661,15 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Disable categories": [
+        "Deaktivovať kategórie"
+      ],
+      "Keep categories": [
+        "Ponechať kategórie"
+      ],
+      "Remove video conference": [
+        "Odstrániť videokonferenciu"
       ]
     },
     "action": {
@@ -2031,6 +2040,12 @@
       ],
       "You have reached the trial limit.": [
         "Dosiahli ste limit skúšobného obdobia."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje každých ${ renewCycle } mesiacov. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení skúšobného obdobia dňa ${ formattedDate } sa stane plateným predplatným, ktoré sa automaticky obnovuje mesačne. Nebudú vám účtované poplatky, ak ho zrušíte pred ${ formattedDate }."
       ]
     },
     "b2b_trials_Action": {
@@ -9043,6 +9058,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Všetky správy sa zobrazia v priečinku Doručená pošta a záložky kategórií a značky už nebudú viditeľné. "
       ]
     },
     "info": {
@@ -10055,6 +10073,39 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Credits": [
+        "Kredity"
+      ],
+      "Go to Forums": [
+        "Prejsť na Fóra"
+      ],
+      "Go to Newsletters": [
+        "Prejsť na Newslettery"
+      ],
+      "Go to Primary": [
+        "Prejsť do zložky Hlavná"
+      ],
+      "Go to Promotions": [
+        "Prejsť na Propagačné akcie"
+      ],
+      "Go to Social": [
+        "Prejsť do zložky Sociálne"
+      ],
+      "Go to Transactions": [
+        "Prejsť na Transakcie"
+      ],
+      "Go to Updates": [
+        "Prejsť na aktualizácie"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Odstrániť videokonferenciu ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Odstrániť videokonferenciu Zoom"
+      ],
+      "Video conference": [
+        "Videokonferencia"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12397,6 +12448,9 @@
       ],
       "Your payment is still being processed": [
         "Vaša platba sa stále spracováva"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Táto akcia rozširuje existujúce predplatné. Bude vám účtovaný poplatok len za nové doplnky a zostávajúci čas aktuálneho fakturačného obdobia. Dátum obnovenia vášho predplatného sa nezmení."
       ]
     },
     "Payments.Error": {
@@ -15858,6 +15912,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "Disable categories?": [
+        "Deaktivovať kategórie?"
+      ],
+      "Two-factor authentication": [
+        "Dvojstupňové overenie"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -16519,6 +16579,14 @@
       ],
       "Passcode:": [
         "Prístupový kód:"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
+      ],
+      "Credits will be added to your balance": [
+        "Kredity budú pridané k vášmu zostatku"
       ]
     }
   }

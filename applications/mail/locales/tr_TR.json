@@ -1651,6 +1651,15 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Disable categories": [
+        "Kategorileri kapat"
+      ],
+      "Keep categories": [
+        "Kategorileri kullan"
+      ],
+      "Remove video conference": [
+        "Görüntülü görüşmeyi kaldır"
       ]
     },
     "action": {
@@ -2009,6 +2018,12 @@
       ],
       "You have reached the trial limit.": [
         "Deneme süresi sayısı sınırına ulaştınız."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve her ${ renewCycle } ayda bir otomatik olarak yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Deneme süresi ${ formattedDate } tarihinde sona erdiğinde, aboneliğiniz ücretli bir tarifeye dönüşür ve otomatik olarak her ay yenilenir. ${ formattedDate } tarihinden önce iptal ederseniz ücret ödemezsiniz."
       ]
     },
     "b2b_trials_Action": {
@@ -8763,6 +8778,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Tüm iletiler Gelen kutusunda görüntülenecek ve kategori sekmeleri ile etiketler artık görüntülenmeyecek. "
       ]
     },
     "info": {
@@ -9784,6 +9802,18 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Credits": [
+        "Kredi"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME } görüntülü görüşmesini kaldır"
+      ],
+      "Remove Zoom video conference": [
+        "Zoom görüntülü görüşmesini kaldır"
+      ],
+      "Video conference": [
+        "Görüntülü görüşme"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12046,6 +12076,9 @@
       ],
       "Your payment is still being processed": [
         "Ödeme işleminiz sürüyor"
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Bu işlem geçerli aboneliğin kapsamını genişletir. Yalnızca yeni eklentiler ve geçerli fatura döneminin kalan süresi için ücret alınır. Aboneliğinizin yenilenme tarihi değişmeyecek."
       ]
     },
     "Payments.Error": {
@@ -15414,6 +15447,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "Disable categories?": [
+        "Kategoriler kapatılsın mı?"
+      ],
+      "Two-factor authentication": [
+        "İki adımlı doğrulama"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -15985,6 +16024,14 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
+      ],
+      "Credits will be added to your balance": [
+        "Kalan kredi bakiyenize eklenecek"
       ]
     }
   }

@@ -1661,6 +1661,15 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Disable categories": [
+        "Deaktivovat kategorie"
+      ],
+      "Keep categories": [
+        "Zachovat kategorie"
+      ],
+      "Remove video conference": [
+        "Odebrat videokonferenci"
       ]
     },
     "action": {
@@ -2031,6 +2040,12 @@
       ],
       "You have reached the trial limit.": [
         "Dosáhli jste limitu zkušební verze."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+      ],
+      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ]
     },
     "b2b_trials_Action": {
@@ -9043,6 +9058,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Od doručené pošty bez nepořádku vás dělí jen několik kliknutí"
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Všechny zprávy se zobrazí v doručené poště a záložky kategorií a štítků již nebudou viditelné. "
       ]
     },
     "info": {
@@ -10031,6 +10049,60 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Automated confirmations and alerts": [
+        "Automatická potvrzení a upozornění"
+      ],
+      "Bookings, billings, and orders": [
+        "Rezervace, fakturace a objednávky"
+      ],
+      "Credits": [
+        "Kredity"
+      ],
+      "Deals, offers, marketing emails": [
+        "Nabídky, akce, marketingové e-maily"
+      ],
+      "Discussion board posts and threads": [
+        "Příspěvky a vlákna na diskuzním fóru"
+      ],
+      "Go to Forums": [
+        "Přejít na fóra"
+      ],
+      "Go to Newsletters": [
+        "Přejít na e-mailové zpravodaje"
+      ],
+      "Go to Primary": [
+        "Přejít na primární"
+      ],
+      "Go to Promotions": [
+        "Přejít ke slevám a akcím"
+      ],
+      "Go to Social": [
+        "Přejít na sociální média"
+      ],
+      "Go to Transactions": [
+        "Přejít k transakcím"
+      ],
+      "Go to Updates": [
+        "Přejít na aktualizace"
+      ],
+      "Non-promotional content and news": [
+        "Nepropagační obsah a novinky"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Odebrat videokonferenci ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Odebrat videokonferenci Zoom"
+      ],
+      "Select the categories to include, and enable notifications to be alerted about new emails in a category.": [
+        "Vyberte kategorie, které chcete zahrnout, a povolte upozornění, abyste byli upozorněni na nové e-maily v dané kategorii."
+      ],
+      "Social media updates and activity": [
+        "Aktualizace a aktivita na sociálních médiích"
+      ],
+      "Video conference": [
+        "Videokonference"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10302,7 +10374,7 @@
         "Naplánováno"
       ],
       "Sent": [
-        "Odesláno"
+        "Odeslané"
       ],
       "settings": [
         "nastavení"
@@ -15831,6 +15903,15 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorie se blíží!"
+      ],
+      "Customize categories": [
+        "Přizpůsobení kategorií"
+      ],
+      "Disable categories?": [
+        "Deaktivovat kategorie?"
+      ],
+      "Two-factor authentication": [
+        "Dvoufázové ověření"
       ]
     },
     "Today icon tooltip in mini calendar": {

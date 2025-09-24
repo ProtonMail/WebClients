@@ -1541,6 +1541,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Remove video conference": [
+        "移除視訊會議"
       ]
     },
     "action": {
@@ -8926,6 +8929,15 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Credits": [
+        "額度"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "移除 ${ MEET_APP_NAME } 視訊會議"
+      ],
+      "Remove Zoom video conference": [
+        "移除 Zoom 視訊會議"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -9149,7 +9161,7 @@
         "已排定"
       ],
       "Sent": [
-        "寄件備份"
+        "已傳送"
       ],
       "settings": [
         "設定"
@@ -13914,6 +13926,9 @@
       ],
       "Your subscriptions in one place": [
         "集中管理您的訂閱"
+      ],
+      "Two-factor authentication": [
+        "兩步驟驗證"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -14426,6 +14441,11 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "可用額度將會增加到您的餘額"
       ]
     }
   }
