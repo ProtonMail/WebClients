@@ -17,6 +17,7 @@ export const useCategoriesData = () => {
             return {
                 ...data,
                 checked: !!category.Display,
+                notify: !!category.Notify,
             };
         }) || [];
 

@@ -7,6 +7,7 @@ export interface Label {
     Order: number;
     Path: string;
     Display?: number;
+    Notify?: number;
 }
 
 export interface LabelCount {
