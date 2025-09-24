@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
 import { Button, CircleLoader } from '@proton/atoms';
 import type { ModalStateReturnObj } from '@proton/components';
 import { Icon, IconRow } from '@proton/components';
@@ -11,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 import { VideoConferencingWidget } from '../videoConferencing/VideoConferencingWidget';
 import type { ZoomAccessLevel } from '../videoConferencing/constants';
 import { VIDEO_CONF_SERVICES } from '../videoConferencing/constants';
-import { shouldSeeLoadingButton, shouldSeeLoginButton } from './ZoomRowHelpers';
+import { shouldSeeLoadingButton } from './ZoomRowHelpers';
 import type { ZoomIntegrationState } from './interface';
 
 const getIcon = (state?: ZoomIntegrationState) => {
@@ -45,18 +44,7 @@ interface Props {
     oauthTokenLoading: boolean;
 }
 
-export const ZoomRow = ({
-    model,
-    accessLevel,
-    processState,
-    handleDelete,
-    handleReconnect,
-    handleClick,
-    loadingConfig,
-    oauthTokenLoading,
-}: Props) => {
-    const [user] = useUser();
-
+export const ZoomRow = ({ model, accessLevel, processState, handleDelete, handleReconnect, loadingConfig }: Props) => {
     if (accessLevel === 'limited-access' && processState !== 'meeting-present') {
         // Paid MAIL users with setting disabled will have limited access only if meeting present
         return;
@@ -129,25 +117,6 @@ export const ZoomRow = ({
                 labelClassName={clsx(shouldSeeLoadingButton(processState) && 'my-auto p-0')}
                 title={c('Label').t`Video conference`}
             >
-                {shouldSeeLoginButton(processState) && (
-                    <div className="flex items-center gap-1">
-                        {(accessLevel === 'show-upsell' || accessLevel === 'full-access') && (
-                            <Button
-                                onClick={handleClick}
-                                disabled={loadingConfig || oauthTokenLoading}
-                                loading={loadingConfig || oauthTokenLoading}
-                                shape="underline"
-                                className="p-0"
-                                color="norm"
-                                size="small"
-                            >
-                                {c('Action').t`Add Zoom meeting`}
-                            </Button>
-                        )}
-                        {!user.hasPaidMail && <Icon name="upgrade" className="color-primary" />}
-                    </div>
-                )}
-
                 {shouldSeeLoadingButton(processState) && (
                     <Button disabled shape="ghost" className="p-0" color="norm" size="small">
                         {loadingConfig
