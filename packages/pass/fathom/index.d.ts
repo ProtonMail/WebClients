@@ -1,31 +1,34 @@
-import { rule, ruleset, Fnode } from './fathom.js';
+import { Fnode, rule, ruleset } from './fathom.js';
 import * as fathomWeb from './fathom.js';
+
 export { fathomWeb as fathom };
 
-declare const FORM_CLUSTER_ATTR = "data-protonpass-form";
-declare const kFieldSelector = "input, select, textarea";
-declare const kEmailSelector = "input[name=\"email\"], input[id=\"email\"]";
-declare const kPasswordSelector = "input[type=\"password\"], input[type=\"text\"][id=\"password\"]";
-declare const kCaptchaSelector = "[class*=\"captcha\"], [id*=\"captcha\"], [name*=\"captcha\"]";
-declare const kSocialSelector = "[class*=social], [aria-label*=with]";
+declare const FORM_CLUSTER_ATTR = 'data-protonpass-form';
+declare const kFieldSelector = 'input, select, textarea';
+declare const kEmailSelector = 'input[name="email"], input[id="email"]';
+declare const kPasswordSelector = 'input[type="password"], input[type="text"][id="password"]';
+declare const kCaptchaSelector = '[class*="captcha"], [id*="captcha"], [name*="captcha"]';
+declare const kSocialSelector = '[class*=social], [aria-label*=with]';
 declare const kEditorElements: string[];
 declare const kEditorPatterns: string[];
 declare const kEditorSelector: string;
-declare const kDomGroupSelector = "[role=\"dialog\"], [role=\"tabpanel\"], [role=\"group\"], [role=\"form\"], [id*=\"modal\"], [class*=\"modal\"], header, section, nav, footer, aside";
+declare const kDomGroupSelector =
+    '[role="dialog"], [role="tabpanel"], [role="group"], [role="form"], [id*="modal"], [class*="modal"], header, section, nav, footer, aside';
 declare const kUsernameSelector: string;
 declare const kHiddenUsernameSelector: string;
 declare const kHeadingSelector: string;
 declare const kButtonSubmitSelector: string;
-declare const kLayoutSelector = "div, section, aside, main, nav";
-declare const kAnchorLinkSelector = "a, span[role=\"button\"]";
+declare const kLayoutSelector = 'div, section, aside, main, nav';
+declare const kAnchorLinkSelector = 'a, span[role="button"]';
 declare const formCandidateSelector: string;
-declare const inputCandidateSelector = "input:not([type=\"hidden\"]):not([type=\"submit\"]):not([type=\"button\"]):not([type=\"image\"]):not([type=\"checkbox\"])";
+declare const inputCandidateSelector =
+    'input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="checkbox"])';
 declare const buttonSelector: string;
-declare const otpSelector = "[type=\"tel\"], [type=\"number\"], [type=\"text\"], input:not([type])";
+declare const otpSelector = '[type="tel"], [type="number"], [type="text"], input:not([type])';
 
 type AnyRule = ReturnType<typeof rule>;
 type Ruleset = ReturnType<typeof ruleset>;
-type BoundRuleset = ReturnType<Ruleset["against"]>;
+type BoundRuleset = ReturnType<Ruleset['against']>;
 type Coeff = [string, number];
 type Bias = [string, number];
 type RulesetAggregation = {
@@ -43,21 +46,21 @@ type Trainee = TrainingResults & {
     getRules: () => AnyRule[];
 };
 declare enum FormType {
-    LOGIN = "login",
-    NOOP = "noop",
-    PASSWORD_CHANGE = "password-change",
-    RECOVERY = "recovery",
-    REGISTER = "register"
+    LOGIN = 'login',
+    NOOP = 'noop',
+    PASSWORD_CHANGE = 'password-change',
+    RECOVERY = 'recovery',
+    REGISTER = 'register',
 }
 declare enum FieldType {
-    EMAIL = "email",
-    IDENTITY = "identity",
-    OTP = "otp",
-    PASSWORD_CURRENT = "password",
-    PASSWORD_NEW = "new-password",
-    USERNAME = "username",
-    USERNAME_HIDDEN = "username-hidden",
-    CREDIT_CARD = "cc"
+    EMAIL = 'email',
+    IDENTITY = 'identity',
+    OTP = 'otp',
+    PASSWORD_CURRENT = 'password',
+    PASSWORD_NEW = 'new-password',
+    USERNAME = 'username',
+    USERNAME_HIDDEN = 'username-hidden',
+    CREDIT_CARD = 'cc',
 }
 declare const formTypes: FormType[];
 declare const fieldTypes: FieldType[];
@@ -86,34 +89,39 @@ declare enum CCFieldType {
     CSC = 5,
     EXP = 6,
     EXP_YEAR = 7,
-    EXP_MONTH = 8
+    EXP_MONTH = 8,
 }
-declare const kCCFieldSelector = "input, select";
-declare const CC_ATTRIBUTES: string[];
-declare const CC_INPUT_TYPES: string[];
-declare const getCCHaystack: (input: HTMLElement) => string;
-declare const getCCFieldType: (input: HTMLElement) => CCFieldType | undefined;
-declare const maybeCCField: (fnode: Fnode) => boolean;
-type CCExpirationFormat = {
-    separator: string;
-    fullYear: boolean;
-    monthFirst: boolean;
-};
 type CCExpirationMonthFormat = {
     padding: boolean;
 };
 type CCExpirationYearFormat = {
     fullYear: boolean;
 };
-declare const getExpirationFormat: (input: HTMLInputElement) => CCExpirationFormat;
-declare const formatExpirationDate: (month: string, year: string, { fullYear, separator, monthFirst }: CCExpirationFormat) => string;
+type CCExpirationFormat = {
+    separator: string;
+    fullYear: boolean;
+    monthFirst: boolean;
+};
+declare const kCCFieldSelector = 'input, select';
+declare const CC_ATTRIBUTES: string[];
+declare const CC_INPUT_TYPES: string[];
+declare const getExpirationFormat: (field: HTMLElement, allowFallback?: boolean) => CCExpirationFormat | undefined;
+declare const formatExpirationDate: (
+    month: string,
+    year: string,
+    { fullYear, separator, monthFirst }: CCExpirationFormat
+) => string;
 declare const getInputExpirationYearFormat: (input: HTMLInputElement) => CCExpirationYearFormat;
 declare const getSelectExpirationYearFormat: (select: HTMLSelectElement) => CCExpirationYearFormat | undefined;
 declare const getSelectExpirationMonthFormat: (select: HTMLSelectElement) => CCExpirationMonthFormat | undefined;
+declare const getCCHaystack: (field: HTMLElement) => string;
+declare const getCCFieldType: (field: HTMLElement) => CCFieldType | undefined;
+declare const maybeCCField: (fnode: Fnode) => boolean;
 
 declare const getTypeScore: (node: Fnode | null, type: string) => any;
 
 declare const splitFieldsByVisibility: (els: HTMLElement[]) => [HTMLElement[], HTMLElement[]];
+declare const fCC: (fnode: Fnode) => boolean;
 declare const maybeEmail: (value: Fnode) => boolean;
 declare const maybePassword: (value: Fnode) => boolean;
 declare const maybeOTP: (value: Fnode) => boolean;
@@ -151,10 +159,13 @@ declare const isPredictedType: (type: string) => (fnode: Fnode) => boolean;
 declare const isPredictedForm: (value: Fnode) => boolean;
 declare const isPredictedField: (value: Fnode) => boolean;
 declare const isClassifiable: (el: HTMLElement) => boolean;
-declare const removeClassifierFlags: (target: HTMLElement, options: {
-    preserveIgnored: boolean;
-    fields?: HTMLElement[];
-}) => void;
+declare const removeClassifierFlags: (
+    target: HTMLElement,
+    options: {
+        preserveIgnored: boolean;
+        fields?: HTMLElement[];
+    }
+) => void;
 
 declare const getFormParent: (form: HTMLElement) => HTMLElement;
 type FormInputIterator = ReturnType<typeof createInputIterator>;
@@ -176,7 +187,7 @@ declare enum IdentityFieldType {
     ZIPCODE = 9,
     ORGANIZATION = 10,
     COUNTRY = 11,
-    EMAIL = 12
+    EMAIL = 12,
 }
 declare const getIdentityHaystack: (input: HTMLInputElement) => string;
 declare const getIdentityFieldType: (input: HTMLInputElement) => IdentityFieldType | undefined;
@@ -222,9 +233,141 @@ declare const getVisibilityCache: (key: string) => VisibilityCache;
 declare const clearVisibilityCache: () => void;
 declare const isVisible: (fnodeOrElement: Fnode | HTMLElement, options: IsVisibleOptions) => boolean;
 declare const isVisibleEl: (el: HTMLElement) => boolean;
-declare const isVisibleForm: (form: HTMLElement, options?: Partial<Pick<IsVisibleOptions, "skipCache">>) => boolean;
+declare const isVisibleForm: (form: HTMLElement, options?: Partial<Pick<IsVisibleOptions, 'skipCache'>>) => boolean;
 declare const isVisibleField: (field: HTMLElement) => boolean;
 
 declare const clearDetectionCache: () => void;
 
-export { type AnyRule, type Bias, type BoundRuleset, type CCExpirationFormat, type CCExpirationMonthFormat, type CCExpirationYearFormat, CCFieldType, CC_ATTRIBUTES, CC_INPUT_TYPES, type Coeff, EL_ATTRIBUTES, FIELD_ATTRIBUTES, FORM_ATTRIBUTES, FORM_CLUSTER_ATTR, FieldType, type FormInputIterator, FormType, IdentityFieldType, OVERRIDE_FIELDS, OVERRIDE_FORMS, type Ruleset, type RulesetAggregation, TEXT_ATTRIBUTES, type Trainee, type TrainingResults, addFieldOverride, addFormOverride, attrIgnored, buttonSelector, cacheContext, clearDetectionCache, clearOverrides, clearVisibilityCache, createInputIterator, fieldTypes, flagAsHidden, flagAsIgnored, flagAsProcessed, flagCluster, flagOverride, flagSubtreeAsIgnored, formCandidateSelector, formTypes, formatExpirationDate, getAttributes, getBaseAttributes, getCCFieldType, getCCHaystack, getCachedPredictionScore, getExpirationFormat, getFieldAttributes, getFormAttributes, getFormParent, getIdentityFieldType, getIdentityHaystack, getIgnoredParent, getInputExpirationYearFormat, getOverridableFields, getOverridableForms, getParentFormPrediction, getSelectExpirationMonthFormat, getSelectExpirationYearFormat, getTextAttributes, getTypeScore, getVisibilityCache, inputCandidateSelector, isBtnCandidate, isClassifiable, isClassifiableField, isCluster, isCustomElementWithShadowRoot, isEmailCandidate, isHidden, isIgnored, isOAuthCandidate, isPredictedField, isPredictedForm, isPredictedType, isPrediction, isProcessableField, isProcessed, isShadowElement, isShadowRoot, isUsernameCandidate, isVisible, isVisibleEl, isVisibleField, isVisibleForm, kAnchorLinkSelector, kButtonSubmitSelector, kCCFieldSelector, kCaptchaSelector, kDomGroupSelector, kEditorElements, kEditorPatterns, kEditorSelector, kEmailSelector, kFieldSelector, kHeadingSelector, kHiddenUsernameSelector, kLayoutSelector, kPasswordSelector, kSocialSelector, kUsernameSelector, matchPredictedType, maybeCCField, maybeEmail, maybeHiddenUsername, maybeIdentity, maybeOTP, maybePassword, maybeUsername, otpSelector, overrides, prepass, removeClassifierFlags, removeHiddenFlag, removeIgnoredFlag, removePredictionFlag, removeProcessedFlag, rulesetMaker, selectFormCandidates, selectInputCandidates, setCachedPredictionScore, shadowPiercingAncestors, shadowPiercingContains, shallowShadowQuerySelector, shouldRunClassifier, splitFieldsByVisibility, trainees };
+export {
+    type AnyRule,
+    type Bias,
+    type BoundRuleset,
+    type CCExpirationFormat,
+    type CCExpirationMonthFormat,
+    type CCExpirationYearFormat,
+    CCFieldType,
+    CC_ATTRIBUTES,
+    CC_INPUT_TYPES,
+    type Coeff,
+    EL_ATTRIBUTES,
+    FIELD_ATTRIBUTES,
+    FORM_ATTRIBUTES,
+    FORM_CLUSTER_ATTR,
+    FieldType,
+    type FormInputIterator,
+    FormType,
+    IdentityFieldType,
+    OVERRIDE_FIELDS,
+    OVERRIDE_FORMS,
+    type Ruleset,
+    type RulesetAggregation,
+    TEXT_ATTRIBUTES,
+    type Trainee,
+    type TrainingResults,
+    addFieldOverride,
+    addFormOverride,
+    attrIgnored,
+    buttonSelector,
+    cacheContext,
+    clearDetectionCache,
+    clearOverrides,
+    clearVisibilityCache,
+    createInputIterator,
+    fCC,
+    fieldTypes,
+    flagAsHidden,
+    flagAsIgnored,
+    flagAsProcessed,
+    flagCluster,
+    flagOverride,
+    flagSubtreeAsIgnored,
+    formCandidateSelector,
+    formTypes,
+    formatExpirationDate,
+    getAttributes,
+    getBaseAttributes,
+    getCCFieldType,
+    getCCHaystack,
+    getCachedPredictionScore,
+    getExpirationFormat,
+    getFieldAttributes,
+    getFormAttributes,
+    getFormParent,
+    getIdentityFieldType,
+    getIdentityHaystack,
+    getIgnoredParent,
+    getInputExpirationYearFormat,
+    getOverridableFields,
+    getOverridableForms,
+    getParentFormPrediction,
+    getSelectExpirationMonthFormat,
+    getSelectExpirationYearFormat,
+    getTextAttributes,
+    getTypeScore,
+    getVisibilityCache,
+    inputCandidateSelector,
+    isBtnCandidate,
+    isClassifiable,
+    isClassifiableField,
+    isCluster,
+    isCustomElementWithShadowRoot,
+    isEmailCandidate,
+    isHidden,
+    isIgnored,
+    isOAuthCandidate,
+    isPredictedField,
+    isPredictedForm,
+    isPredictedType,
+    isPrediction,
+    isProcessableField,
+    isProcessed,
+    isShadowElement,
+    isShadowRoot,
+    isUsernameCandidate,
+    isVisible,
+    isVisibleEl,
+    isVisibleField,
+    isVisibleForm,
+    kAnchorLinkSelector,
+    kButtonSubmitSelector,
+    kCCFieldSelector,
+    kCaptchaSelector,
+    kDomGroupSelector,
+    kEditorElements,
+    kEditorPatterns,
+    kEditorSelector,
+    kEmailSelector,
+    kFieldSelector,
+    kHeadingSelector,
+    kHiddenUsernameSelector,
+    kLayoutSelector,
+    kPasswordSelector,
+    kSocialSelector,
+    kUsernameSelector,
+    matchPredictedType,
+    maybeCCField,
+    maybeEmail,
+    maybeHiddenUsername,
+    maybeIdentity,
+    maybeOTP,
+    maybePassword,
+    maybeUsername,
+    otpSelector,
+    overrides,
+    prepass,
+    removeClassifierFlags,
+    removeHiddenFlag,
+    removeIgnoredFlag,
+    removePredictionFlag,
+    removeProcessedFlag,
+    rulesetMaker,
+    selectFormCandidates,
+    selectInputCandidates,
+    setCachedPredictionScore,
+    shadowPiercingAncestors,
+    shadowPiercingContains,
+    shallowShadowQuerySelector,
+    shouldRunClassifier,
+    splitFieldsByVisibility,
+    trainees,
+};
