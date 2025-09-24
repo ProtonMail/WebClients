@@ -8,6 +8,7 @@ import DrawerSettingsView from '@proton/components/components/drawer/views/Drawe
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import StandardErrorPage from '@proton/components/containers/app/StandardErrorPage';
 import type { CustomAction } from '@proton/components/containers/contacts/widget/types';
+import { useReferralDiscover } from '@proton/components/containers/referral/hooks/useReferralDiscover';
 import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash';
@@ -19,6 +20,7 @@ import DrawerContactModals from './DrawerContactModals';
 import DrawerSecurityCenterView from './views/DrawerSecurityCenterView';
 import { useGetBreachesCounts } from './views/SecurityCenter/BreachAlerts/slice/breachNotificationsSlice';
 import useSecurityCenter from './views/SecurityCenter/useSecurityCenter';
+import DrawerReferralView from './views/referral/DrawerReferralView';
 import DrawerVPNView from './views/vpn/DrawerVPNView';
 import useVPNDrawer from './views/vpn/useVPNDrawer';
 
@@ -50,6 +52,7 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
     const isVPNDrawerEnabled = useVPNDrawer();
     const getBreachesCount = useGetBreachesCounts();
     const canDisplayBreachNotifications = useFlag('BreachAlertsNotificationsCommon');
+    const { canShowDrawerApp } = useReferralDiscover();
 
     const isDisplayedOnMobile =
         appInView === DRAWER_NATIVE_APPS.CONTACTS || appInView === DRAWER_NATIVE_APPS.SECURITY_CENTER;
@@ -122,6 +125,8 @@ const DrawerApp = ({ customAppSettings, onCompose, onMailTo, contactCustomAction
                         )}
 
                         {isVPNDrawerEnabled && appInView === DRAWER_NATIVE_APPS.VPN && <DrawerVPNView />}
+
+                        {canShowDrawerApp && appInView === DRAWER_NATIVE_APPS.REFERRAL && <DrawerReferralView />}
                     </div>
                 </ErrorBoundary>
             </aside>
