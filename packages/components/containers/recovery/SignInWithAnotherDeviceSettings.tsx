@@ -47,7 +47,7 @@ const SignInWithAnotherDeviceSettings = () => {
                         className="text-semibold"
                         htmlFor="edmToggle"
                         onClick={(e) => {
-                            if (allowScanningQrCode && e.metaKey) {
+                            if (allowScanningQrCode && (e.metaKey || e.ctrlKey)) {
                                 e.preventDefault();
                                 e.stopPropagation();
                                 setModalState(true);
