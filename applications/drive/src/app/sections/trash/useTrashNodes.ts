@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
@@ -150,17 +150,13 @@ export const useTrashNodes = () => {
         }
     };
 
-    useEffect(() => {
-        void populateNodesFromLegacy().catch(handleError);
-    }, [populateNodesFromLegacy, handleError]);
-
-    useEffect(() => {
-        const abortController = new AbortController();
-        void populateNodesFromSDK(abortController.signal).catch(handleError);
-        return () => {
-            abortController.abort();
-        };
-    }, [populateNodesFromSDK, handleError]);
+    const populateTrashNodes = useCallback(
+        (abortController: AbortController) => {
+            void populateNodesFromSDK(abortController.signal).catch(handleError);
+            void populateNodesFromLegacy().catch(handleError);
+        },
+        [populateNodesFromSDK, populateNodesFromLegacy, handleError]
+    );
 
     return {
         trashNodes: sortedList,
@@ -170,5 +166,6 @@ export const useTrashNodes = () => {
         sortParams,
         setSorting,
         emptyTrash,
+        populateTrashNodes,
     };
 };

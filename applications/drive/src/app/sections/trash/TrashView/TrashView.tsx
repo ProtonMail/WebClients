@@ -20,6 +20,14 @@ export const TrashView = () => {
 
     const trashView = useTrashNodes();
 
+    useEffect(() => {
+        const abortController = new AbortController();
+        trashView.populateTrashNodes(abortController);
+        return () => {
+            abortController.abort();
+        };
+    }, [trashView.populateTrashNodes]);
+
     return (
         <FileBrowserStateProvider
             itemIds={trashView.trashNodes.map((item) => generateNodeUid(item.volumeId, item.linkId))}
