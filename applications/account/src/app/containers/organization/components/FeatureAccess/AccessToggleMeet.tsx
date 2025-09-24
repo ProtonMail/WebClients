@@ -12,7 +12,7 @@ import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 
-import { AccessToggle } from '../AccessToggle';
+import { AccessToggle } from './AccessToggle';
 
 export const AccessToggleMeet = () => {
     const api = useApi();
@@ -53,13 +53,10 @@ export const AccessToggleMeet = () => {
             title={c('Title').t`Video conferencing with ${MEET_APP_NAME}`}
             checked={!!organization?.Settings.MeetVideoConferencingEnabled}
             loading={meetLoading}
-            onChange={() => {
-                void withMeetLoading(handleToggleMeet());
-            }}
+            onChange={() => withMeetLoading(handleToggleMeet())}
             className="mt-4"
         >
-            <p className="m-0 text-sm">{c('Info')
-                .t`Allows to seamlessly add ${MEET_APP_NAME} video conferencing links to your calendar invitations.`}</p>
+            <p className="m-0 text-sm">{c('Info').t`Add video conferencing links to calendar invitations`}</p>
         </AccessToggle>
     );
 };

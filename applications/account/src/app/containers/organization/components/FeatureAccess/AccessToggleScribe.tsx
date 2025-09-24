@@ -19,19 +19,18 @@ import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import type { OrganizationSettings } from '@proton/shared/lib/interfaces';
 import useFlag from '@proton/unleash/useFlag';
 
-import { AccessToggle } from '../AccessToggle';
+import { AccessToggle } from './AccessToggle';
 
 export const userAndAddress = (
     <ButtonLike
         shape="underline"
-        icon
         as={SettingsLink}
         path="/users-addresses"
         app={APPS.PROTONMAIL}
         target="_self"
         className="color-weak p-0"
     >
-        {c('Action').t`users and addresses`}
+        {c('Action').t`Users and addresses`}
     </ButtonLike>
 );
 
@@ -55,13 +54,12 @@ const AddMoreSeats = () => {
 
     return (
         <ButtonLike
-            icon
             shape="underline"
             onClick={handleGetMoreLicense}
             disabled={loadingSubscriptionModal}
             className="color-weak p-0"
         >
-            {c('Action').t`Add more seats`}
+            {c('Action').t`add more seats`}
         </ButtonLike>
     );
 };
@@ -101,13 +99,14 @@ export const AccessToggleScribe = () => {
             title={c('Title').t`${BRAND_NAME} Scribe writing assistant`}
             checked={!!organization?.Settings.ShowScribeWritingAssistant}
             loading={scribeLoading}
-            onChange={() => {
-                void withScribeLoading(handleToggleScribe());
-            }}
+            onChange={() => withScribeLoading(handleToggleScribe())}
         >
             <p className="m-0 text-sm">
-                {c('Info')
-                    .jt`Helps write, reply to, and proofread emails. Manage for individual users in ${userAndAddress}. ${addMoreSeats}`}
+                {
+                    // translator: full sentence is: Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in <Users and addresses> or <add more seats>
+                    c('Info')
+                        .jt`Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${userAndAddress} or ${addMoreSeats}`
+                }
             </p>
         </AccessToggle>
     );
