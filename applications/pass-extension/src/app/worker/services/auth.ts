@@ -67,7 +67,8 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
 
             if (BUILD_TARGET === 'safari') {
-                void sendSafariMessage({ environment: getSecondLevelDomain(config.SSO_URL) });
+                const environment = getSecondLevelDomain(config.SSO_URL);
+                void sendSafariMessage({ environment });
             }
 
             /* if worker is logged out (unauthorized or locked) during an init call,
@@ -129,7 +130,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             void fileStorage.clearAll();
 
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
-            if (BUILD_TARGET === 'safari') sendSafariMessage({ credentials: null }).catch(noop);
+            if (BUILD_TARGET === 'safari') void sendSafariMessage({ credentials: null });
         }),
 
         onForkConsumeStart: async () => {
