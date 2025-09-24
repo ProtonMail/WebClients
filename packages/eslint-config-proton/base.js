@@ -25,7 +25,6 @@ export default defineConfig(
             'no-only-tests': noOnlyTests,
             // @ts-expect-error -- Temporary types incompatibility pending flat config support
             lodash,
-            // @ts-expect-error -- Temporary types incompatibility pending flat config support
             '@protontech/enforce-uint8array-arraybuffer': protontechEnforceUint8ArrayArraybuffer,
             testingLibrary,
         },
