@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { ButtonLike } from '@proton/atoms';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useUpsellConfig from '@proton/components/components/upsell/config/useUpsellConfig';
@@ -21,8 +22,10 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import useFlag from '@proton/unleash/useFlag';
 
 import PromotionButton from '../button/PromotionButton/PromotionButton';
+import TopNavReferralButton from './TopNavReferralButton';
 import TopNavbarListItem from './TopNavbarListItem';
 
 interface Props {
@@ -31,6 +34,7 @@ interface Props {
 
 const TopNavbarUpgradeButton = ({ app }: Props) => {
     const [user] = useUser();
+    const [userSettings] = useUserSettings();
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
@@ -38,6 +42,8 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     const { APP_NAME } = useConfig();
     const goToSettings = useSettingsLink();
 
+    const isReferralExpansionEnabled = useFlag('ReferralExpansion');
+    const isUserEligibleForReferral = !!userSettings?.Referral?.Eligible;
     const hasTrialPaymentMethods = useTrialOnlyPaymentMethods();
 
     const upgradePathname = getUpgradePath({ user, subscription, app: APP_NAME });
@@ -95,6 +101,14 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
                 >
                     {upgradeText}
                 </PromotionButton>
+            </TopNavbarListItem>
+        );
+    }
+
+    if (isReferralExpansionEnabled && isUserEligibleForReferral) {
+        return (
+            <TopNavbarListItem noCollapse>
+                <TopNavReferralButton />
             </TopNavbarListItem>
         );
     }

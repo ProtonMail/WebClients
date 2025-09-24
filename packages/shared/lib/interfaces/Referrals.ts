@@ -53,4 +53,9 @@ export interface ReferralStatus {
     RewardMonthsLimit: number;
     /** Number of emails user can send */
     EmailsAvailable: number;
+
+    /** Number of credits has earned */
+    RewardAmount: number;
+    /** Max number of credits user can earn */
+    RewardAmountLimit: number;
 }
