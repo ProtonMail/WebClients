@@ -99,6 +99,7 @@ export const RowVideoConference = ({
 
     const zoomAccessLevel = getAccessLevel();
     const shouldShowZoom = isZoomIntegrationEnabled && zoomAccessLevel !== 'limited-access';
+    const zoomIntegrationLoading = zoomIntegration.loadingConfig || zoomIntegration.oauthTokenLoading;
 
     const videoConferenceProviderDetails = [
         isMeetVideoConferenceEnabled &&
@@ -111,6 +112,8 @@ export const RowVideoConference = ({
                         <ProtonLogo className="mr-2" variant="glyph-only" size={4} /> {MEET_APP_NAME}
                     </>
                 ),
+                disabled: false,
+                loading: false,
             },
         shouldShowZoom && {
             id: VIDEO_CONFERENCE_PROVIDER.ZOOM,
@@ -127,6 +130,8 @@ export const RowVideoConference = ({
                     {user.hasPaidMail ? null : <Icon name="upgrade" className="ml-auto color-primary" />}
                 </>
             ),
+            disabled: zoomIntegrationLoading,
+            loading: zoomIntegrationLoading,
         },
     ].filter((item) => isTruthy(item));
 
@@ -155,6 +160,8 @@ export const RowVideoConference = ({
                             }}
                             shape="underline"
                             color="norm"
+                            disabled={defaultVideoConferenceProvider.disabled}
+                            loading={defaultVideoConferenceProvider.loading}
                         >
                             {defaultVideoConferenceProvider.buttonContent}
                         </Button>
@@ -182,24 +189,28 @@ export const RowVideoConference = ({
                                     }}
                                 >
                                     <DropdownMenu className="w-full">
-                                        {videoConferenceProviderDetails.map(({ id, onClick, itemContent }) => {
-                                            return (
-                                                <DropdownMenuButton
-                                                    key={id}
-                                                    className="text-left flex items-center gap-2 h-custom relative"
-                                                    onClick={() => {
-                                                        setIsDropdownOpen(false);
-                                                        void onClick();
-                                                    }}
-                                                    style={{
-                                                        '--h-custom': '3.125rem',
-                                                    }}
-                                                >
-                                                    <div className="w-full py-2 flex">{itemContent}</div>
-                                                    <div className="dropdown-item-hr absolute bottom-0 left-0 w-full" />
-                                                </DropdownMenuButton>
-                                            );
-                                        })}
+                                        {videoConferenceProviderDetails.map(
+                                            ({ id, onClick, itemContent, disabled, loading }) => {
+                                                return (
+                                                    <DropdownMenuButton
+                                                        key={id}
+                                                        className="text-left flex items-center gap-2 h-custom relative"
+                                                        onClick={() => {
+                                                            setIsDropdownOpen(false);
+                                                            void onClick();
+                                                        }}
+                                                        style={{
+                                                            '--h-custom': '3.125rem',
+                                                        }}
+                                                        disabled={disabled}
+                                                        loading={loading}
+                                                    >
+                                                        <div className="w-full py-2 flex">{itemContent}</div>
+                                                        <div className="dropdown-item-hr absolute bottom-0 left-0 w-full" />
+                                                    </DropdownMenuButton>
+                                                );
+                                            }
+                                        )}
                                     </DropdownMenu>
                                 </Dropdown>
                             </>
