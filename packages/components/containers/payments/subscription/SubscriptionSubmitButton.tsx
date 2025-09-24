@@ -10,10 +10,10 @@ import {
     PAYMENT_METHOD_TYPES,
     type Subscription,
     type SubscriptionCheckResponse,
+    SubscriptionMode,
     isTrial,
 } from '@proton/payments';
-import { EditCardModal } from '@proton/payments/ui';
-import { PayButton, type TaxCountryHook } from '@proton/payments/ui';
+import { EditCardModal, PayButton, type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 
 import type { SUBSCRIPTION_STEPS } from './constants';
@@ -104,7 +104,7 @@ const SubscriptionSubmitButton = ({
 
         const amountDue = checkResult?.AmountDue || 0;
         if (amountDue > 0) {
-            if (isTrial(subscription)) {
+            if (isTrial(subscription) && checkResult?.SubscriptionMode === SubscriptionMode.Regular) {
                 return {
                     children: c('Action').t`Cancel trial and pay`,
                 };
