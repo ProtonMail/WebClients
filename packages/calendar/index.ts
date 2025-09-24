@@ -21,7 +21,6 @@ export { calendarSettingsReducer, calendarSettingsThunk, selectCalendarUserSetti
 export { getVideoConferencingData } from './components/videoConferencing/modelHelpers';
 export { VideoConferencingWidgetConfig } from './components/videoConferencing/VideoConferencingWidgetConfig';
 export { useZoomOAuth } from './components/zoomIntegration/useZoomOAuth';
-export { VideoConferenceOrganizationSection } from './components/zoomIntegration/VideoConferenceOrganizationSection';
 export { VideoConferenceToggle } from './components/zoomIntegration/VideoConferenceToggle';
 export { ZoomRow } from './components/zoomIntegration/ZoomRow';
 export { ProtonMeetRow } from './components/protonMeetIntegration/ProtonMeetRow';
