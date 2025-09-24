@@ -32,6 +32,7 @@ import { LegacyToolbar } from './components/legacy/LegacyToolbar'
 import { ProtonSheetsUIStoreProvider } from './ui-store'
 import { useNewUIEnabled } from './new-ui-enabled'
 import { Dialogs } from './components/Dialogs/Dialogs'
+import { Sidebar } from './components/Sidebar/Sidebar'
 
 export type SpreadsheetRef = {
   exportData: (format: DataTypesThatDocumentCanBeExportedAs) => Promise<Uint8Array<ArrayBuffer>>
@@ -205,24 +206,29 @@ function UI({ hidden, state, isReadonly, isRevisionMode }: UIProps) {
           data-testid="editor-curtain"
         />
       )}
-      <div className="flex h-full w-full flex-1 flex-col bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
-        {!isRevisionMode && (
-          <>
-            <Menubar className="mb-2" />
-            <Toolbar />
-            {/* TODO: formula bar */}
-          </>
-        )}
-        {/* TODO: replace with new UI */}
-        <LegacyGrid
-          state={state}
-          isReadonly={isReadonly}
-          users={state.yjsState.users}
-          userName={state.yjsState.userName}
-        />
 
-        <BottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
-        <Dialogs state={state} />
+      <div className="flex h-full min-h-0 w-full min-w-0 bg-[#F9FBFC] [grid-column:1/3] [grid-row:1/3]">
+        <div className="flex h-full grow flex-col">
+          {!isRevisionMode && (
+            <>
+              <Menubar className="mb-2" />
+              <Toolbar />
+              {/* TODO: formula bar */}
+            </>
+          )}
+          {/* TODO: replace with new UI */}
+          <LegacyGrid
+            state={state}
+            isReadonly={isReadonly}
+            users={state.yjsState.users}
+            userName={state.yjsState.userName}
+          />
+
+          <BottomBar state={state} isReadonly={isReadonly} isRevisionMode={isRevisionMode} />
+          <Dialogs state={state} />
+        </div>
+
+        <Sidebar />
       </div>
     </ProtonSheetsUIStoreProvider>
   )
