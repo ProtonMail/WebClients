@@ -27,6 +27,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
 import { semver } from '@proton/pass/utils/string/semver';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
@@ -163,11 +164,11 @@ export const createActivationService = () => {
     /* Vivaldi browser does not support setting the extension badge text
      * color and does not infer it correctly through background color.
      * On vivaldi, fallback to the default badge theme */
-    const setupExtensionBadge = async () => {
+    const setupExtensionBadge = safeCall(async () => {
         if (!(await isVivaldiBrowser())) {
-            return browser.action.setBadgeBackgroundColor({ color: '#FFFFFF' }).catch(noop);
+            void browser.action.setBadgeBackgroundColor({ color: '#FFFFFF' });
         }
-    };
+    });
 
     /* When waking up from the pop-up (or page) we need to trigger the background wakeup
      * saga while immediately resolving the worker state so the UI can respond to state
