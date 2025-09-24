@@ -15,29 +15,34 @@ interface ReferralInfo {
     currency: string;
     refereeRewardAmount: number;
     referrerRewardAmount: number;
+    maxRewardAmount: number;
     uiData: {
         refereeRewardAmount: string;
         referrerRewardAmount: string;
+        maxRewardAmount: string;
     };
 }
 
 const constructReferralInfo = (
     currency: Currency,
     refereeRewardAmount: number,
-    referrerRewardAmount: number
+    referrerRewardAmount: number,
+    maxRewardAmount: number
 ): ReferralInfo => {
     return {
         currency,
         refereeRewardAmount,
         referrerRewardAmount,
+        maxRewardAmount,
         uiData: {
             refereeRewardAmount: getSimplePriceString(currency, refereeRewardAmount),
             referrerRewardAmount: getSimplePriceString(currency, referrerRewardAmount),
+            maxRewardAmount: getSimplePriceString(currency, maxRewardAmount),
         },
     };
 };
 
-export const referralInfoDefaultValue = constructReferralInfo('USD', 2_000, 2_000);
+export const referralInfoDefaultValue = constructReferralInfo('USD', 2_000, 2_000, 100_000);
 
 const name = 'referralInfo' as const;
 
@@ -51,8 +56,9 @@ type Model = NonNullable<SliceState['value']>;
 export const selectReferralInfo = (state: ReferralInfoState) => state[name];
 const getReferralInfo = async (api: Api) => {
     try {
-        const { Currency, RefereeRewardAmount, ReferrerRewardAmount } = await api(getReferralInfoApi());
-        return constructReferralInfo(Currency, RefereeRewardAmount, ReferrerRewardAmount);
+        const { Currency, RefereeRewardAmount, ReferrerRewardAmount, MaxRewardAmount } =
+            await api(getReferralInfoApi());
+        return constructReferralInfo(Currency, RefereeRewardAmount, ReferrerRewardAmount, MaxRewardAmount);
     } catch {
         return referralInfoDefaultValue;
     }
