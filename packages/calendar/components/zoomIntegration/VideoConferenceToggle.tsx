@@ -9,16 +9,10 @@ import useLoading from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import useFlag from '@proton/unleash/useFlag';
-import clsx from '@proton/utils/clsx';
 
 import { useVideoConfTelemetry } from '../videoConferencing/useVideoConfTelemetry';
 
-interface Props {
-    showProtonMeet?: boolean;
-    withInfo?: boolean;
-}
-
-export const VideoConferenceToggle = ({ withInfo, showProtonMeet = false }: Props) => {
+export const VideoConferenceToggle = () => {
     const { createNotification } = useNotifications();
     const [zoomLoading, withZoomLoading] = useLoading();
     const [protonMeetLoading, withProtonMeetLoading] = useLoading();
@@ -45,25 +39,20 @@ export const VideoConferenceToggle = ({ withInfo, showProtonMeet = false }: Prop
         });
     };
 
-    const settingsLayoutRightClass = withInfo ? undefined : 'flex justify-end';
-
     return (
         <>
             {isZoomEnabled && (
                 <SettingsLayout className="gap-4">
                     <SettingsLayoutLeft>
                         <label htmlFor="zoomToggle" className="text-semibold">
-                            <span className={clsx('mr-2', !withInfo && 'text-no-wrap')}>{c('Label')
-                                .t`Video conferencing with Zoom`}</span>
-                            {withInfo && (
-                                <Info
-                                    title={c('Tooltip')
-                                        .t`Allows to seamlessly add Zoom video conferencing links to your calendar invitations.`}
-                                />
-                            )}
+                            <span className="mr-2">{c('Label').t`Video conferencing with Zoom`}</span>
+                            <Info
+                                title={c('Tooltip')
+                                    .t`Allows to seamlessly add Zoom video conferencing links to your calendar invitations.`}
+                            />
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight isToggleContainer className={settingsLayoutRightClass}>
+                    <SettingsLayoutRight isToggleContainer>
                         <Toggle
                             id="zoomToggle"
                             checked={zoomState}
@@ -74,22 +63,18 @@ export const VideoConferenceToggle = ({ withInfo, showProtonMeet = false }: Prop
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
-            {showProtonMeet && isMeetVideoConferenceEnabled && (
+            {isMeetVideoConferenceEnabled && (
                 <SettingsLayout className="gap-4">
                     <SettingsLayoutLeft>
                         <label htmlFor="protonMeetToggle" className="text-semibold">
-                            <span className={clsx('mr-2', !withInfo && 'text-no-wrap')}>
-                                {c('Label').t`Video conferencing with ${MEET_APP_NAME}`}
-                            </span>
-                            {withInfo && (
-                                <Info
-                                    title={c('Tooltip')
-                                        .t`Allows to seamlessly add ${MEET_APP_NAME} video conferencing links to your calendar invitations.`}
-                                />
-                            )}
+                            <span className="mr-2">{c('Label').t`Video conferencing with ${MEET_APP_NAME}`}</span>
+                            <Info
+                                title={c('Tooltip')
+                                    .t`Allows to seamlessly add ${MEET_APP_NAME} video conferencing links to your calendar invitations.`}
+                            />
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight isToggleContainer className={settingsLayoutRightClass}>
+                    <SettingsLayoutRight isToggleContainer>
                         <Toggle
                             id="protonMeetToggle"
                             checked={protonMeetState}
