@@ -5,6 +5,7 @@ export interface CategoryTab {
     id: CategoryLabelID;
     icon: IconName;
     checked?: boolean;
+    notify?: boolean;
     colorShade: CATEGORIES_COLOR_SHADES;
 }
 

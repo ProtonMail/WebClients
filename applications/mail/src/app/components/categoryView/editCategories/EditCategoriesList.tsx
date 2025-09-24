@@ -1,5 +1,7 @@
 import { clsx } from 'clsx';
+import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { Checkbox, Icon, Label } from '@proton/components';
 import type { CategoryTab } from '@proton/mail';
 
@@ -7,17 +9,22 @@ import { getDescriptionFromCategoryId, getLabelFromCategoryId } from '../categor
 
 interface Props {
     categoriesToDisplay: CategoryTab[];
-    handleCategoryChange: (categoryId: CategoryTab) => void;
+    handleCategoryCheckChange: (categoryId: CategoryTab) => void;
+    handleCategoryNotifyChange: (categoryId: CategoryTab) => void;
 }
 
-export const EditCategoriesList = ({ categoriesToDisplay, handleCategoryChange }: Props) => {
+export const EditCategoriesList = ({
+    categoriesToDisplay,
+    handleCategoryCheckChange,
+    handleCategoryNotifyChange,
+}: Props) => {
     return (
         <>
             {categoriesToDisplay.map((category) => (
                 <div className="flex gap-3 items-start align-center mb-5" key={category.id}>
                     <Checkbox
                         checked={category.checked}
-                        onChange={() => handleCategoryChange(category)}
+                        onChange={() => handleCategoryCheckChange(category)}
                         id={category.id}
                     />
                     <Label htmlFor={category.id} className={clsx('p-0 flex-1 flex gap-3')}>
@@ -32,7 +39,20 @@ export const EditCategoriesList = ({ categoriesToDisplay, handleCategoryChange }
                         </div>
                     </Label>
 
-                    {/* <Icon name="bell" className="color-weak" alt={c('Action').t`Toggle notifications`} /> */}
+                    {category.checked && (
+                        <Button
+                            icon
+                            shape="ghost"
+                            aria-pressed={category.notify}
+                            onClick={() => handleCategoryNotifyChange(category)}
+                        >
+                            <Icon
+                                name={category.notify ? 'bell-filled-2' : 'bell'}
+                                className="color-weak"
+                                alt={c('Action').t`Toggle notifications`}
+                            />
+                        </Button>
+                    )}
                 </div>
             ))}
         </>
