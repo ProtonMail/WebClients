@@ -37,7 +37,7 @@ const constructReferralInfo = (
     };
 };
 
-export const defaultValue = constructReferralInfo('USD', 20_000, 20_000);
+export const referralInfoDefaultValue = constructReferralInfo('USD', 2_000, 2_000);
 
 const name = 'referralInfo' as const;
 
@@ -54,7 +54,7 @@ const getReferralInfo = async (api: Api) => {
         const { Currency, RefereeRewardAmount, ReferrerRewardAmount } = await api(getReferralInfoApi());
         return constructReferralInfo(Currency, RefereeRewardAmount, ReferrerRewardAmount);
     } catch {
-        return defaultValue;
+        return referralInfoDefaultValue;
     }
 };
 

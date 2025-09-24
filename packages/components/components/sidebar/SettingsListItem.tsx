@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,9 +19,9 @@ interface Props {
     children: ReactNode;
 }
 
-const SettingsListItem = ({ to, icon, children, notification }: Props) => {
+const SettingsListItem = forwardRef<HTMLLIElement, Props>(({ to, icon, children, notification }, ref) => {
     return (
-        <SidebarListItem>
+        <SidebarListItem ref={ref}>
             <SidebarListItemLink to={to}>
                 <SidebarListItemContent
                     left={<SidebarListItemContentIcon name={icon} />}
@@ -33,6 +34,8 @@ const SettingsListItem = ({ to, icon, children, notification }: Props) => {
             </SidebarListItemLink>
         </SidebarListItem>
     );
-};
+});
+
+SettingsListItem.displayName = 'SettingsListItem';
 
 export default SettingsListItem;

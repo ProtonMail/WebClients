@@ -71,6 +71,7 @@ export { default as DrawerAppButton } from './components/drawer/drawerAppButtons
 export { default as InboxQuickSettingsAppButton } from './components/drawer/drawerAppButtons/InboxQuickSettingsAppButton';
 export { default as QuickSettingsAppButton } from './components/drawer/drawerAppButtons/QuickSettingsAppButton';
 export { default as SecurityCenterDrawerAppButton } from './components/drawer/drawerAppButtons/SecurityCenterDrawerAppButton';
+export { default as ReferralAppButton } from './components/drawer/drawerAppButtons/ReferralAppButton';
 export { default as VPNDrawerAppButton } from './components/drawer/drawerAppButtons/VPNDrawerAppButton';
 export { default as CalendarDrawerLogo } from './components/drawer/drawerIcons/CalendarDrawerLogo';
 export { default as ContactsDrawerLogo } from './components/drawer/drawerIcons/ContactsDrawerLogo';
@@ -794,7 +795,6 @@ export { InviteSection } from './containers/referral/invite/InviteSection';
 export { getShouldOpenReferralModal } from './containers/referral/modals/helper';
 export { ReferralFeaturesList } from './containers/referral/ReferralFeaturesList';
 export { ReferralInvitesContextProvider } from './containers/referral/ReferralInvitesContext';
-export { ReferralSpotlight } from './containers/referral/ReferralSpotlight';
 export { RewardSection } from './containers/referral/rewards/RewardSection';
 export { InviteSection as InviteSectionLegacy } from './containers/referralLegacy/invite/InviteSection';
 export { getShouldOpenReferralModal as getShouldOpenReferralModalLegacy } from './containers/referralLegacy/modals/helper';

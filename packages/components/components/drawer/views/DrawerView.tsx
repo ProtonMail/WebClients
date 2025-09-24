@@ -10,6 +10,7 @@ import DrawerHeaderTitleTabs from './DrawerHeaderTitleTabs';
 export interface SelectedDrawerOption {
     text: string;
     value: string;
+    backgroundClass?: string;
 }
 
 interface Props extends Omit<HTMLAttributes<HTMLElement>, 'content'> {
@@ -57,7 +58,11 @@ const DrawerView = ({
             onAnimationEnd={handleOnAnimationEnd}
             {...rest}
         >
-            <DrawerAppHeader title={drawerHeaderTitle} isUsingTabs={isUsingTabs} />
+            <DrawerAppHeader
+                headerClassName={tab.backgroundClass}
+                title={drawerHeaderTitle}
+                isUsingTabs={isUsingTabs}
+            />
             <div className="flex-1 contacts-widget w-full">{children}</div>
             {footerButtons && <DrawerAppFooter buttons={footerButtons} />}
         </div>
