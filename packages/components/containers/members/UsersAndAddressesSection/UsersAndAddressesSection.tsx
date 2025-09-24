@@ -43,7 +43,7 @@ import { isB2bPlanSupportingScribe } from '@proton/components/helpers/assistant'
 import useAssistantFeatureEnabled from '@proton/components/hooks/assistant/useAssistantFeatureEnabled';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
-import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { useErrorWrapper } from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import {
     getHasDriveB2BPlan,
@@ -121,7 +121,7 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const [tmpMemberID, setTmpMemberID] = useState<string | null>(null);
     const normalApi = useApi();
     const api = getSilentApi(normalApi);
-    const errorHandler = useErrorHandler();
+    const wrapError = useErrorWrapper();
     const dispatch = useDispatch();
     const accessToAssistant = useAssistantFeatureEnabled();
     const unprivatizationMemberState = baseUseSelector(selectUnprivatizationState);
@@ -240,13 +240,6 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
             return availableAddressDomains.length;
         });
     })();
-
-    const wrapError = <T extends any[]>(cb: (...args: T) => Promise<void>): typeof cb => {
-        return (...args) =>
-            cb(...args).catch((error: any) => {
-                errorHandler(error);
-            });
-    };
 
     const handleDeleteUserConfirm = wrapError(async (member: Member) => {
         await dispatch(deleteMember({ api, member }));

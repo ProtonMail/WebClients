@@ -61,3 +61,25 @@ export const useNotifyErrorHandler = () => {
 
     return (error: any) => handleError(error, { notify: true, trace: false });
 };
+
+/**
+ * Will wrap a function in a try/catch and handle the error with the error handler.
+ */
+export const useErrorWrapper = () => {
+    const defaultHandler = useErrorHandler();
+    /**
+     * Wraps a function in a try/catch and handles the error with the error handler.
+     * @param cb - The function to wrap.
+     * @param additionalHandler - The additional error handler to use.
+     * @returns The wrapped function.
+     */
+    return useCallback(
+        <T extends any[]>(cb: (...args: T) => Promise<void>, additionalHandler?: (error: any) => void): typeof cb =>
+            (...args) =>
+                cb(...args).catch((error: any) => {
+                    defaultHandler(error);
+                    additionalHandler?.(error);
+                }),
+        [defaultHandler]
+    );
+};
