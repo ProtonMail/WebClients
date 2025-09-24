@@ -70,6 +70,14 @@ export const useProtonMeetIntegration = ({
         hidePassphrase: !isMeetVideoConferenceEnabled || !isCurrentUserMeetingHost || !isMeetPassphraseEnabled,
     });
 
+    const protonMeetConferenceDetails = useRef<{
+        conferenceId: string;
+        conferenceUrl: string;
+    }>({
+        conferenceId: '',
+        conferenceUrl: '',
+    });
+
     const modelRef = useRef(model);
 
     modelRef.current = model;
@@ -89,13 +97,12 @@ export const useProtonMeetIntegration = ({
 
         setActiveProvider(VIDEO_CONFERENCE_PROVIDER.PROTON_MEET);
 
-        if (
-            model.isConferenceTmpDeleted &&
-            model.conferenceUrl &&
-            model.conferenceProvider === VIDEO_CONFERENCE_PROVIDER.PROTON_MEET
-        ) {
+        if (model.isConferenceTmpDeleted && protonMeetConferenceDetails.current.conferenceUrl) {
             setModel({
                 ...model,
+                conferenceId: protonMeetConferenceDetails.current.conferenceId,
+                conferenceUrl: protonMeetConferenceDetails.current.conferenceUrl,
+                conferenceProvider: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
                 isConferenceTmpDeleted: false,
             });
 
@@ -153,6 +160,11 @@ export const useProtonMeetIntegration = ({
                 conferenceProvider: VIDEO_CONFERENCE_PROVIDER.PROTON_MEET,
                 isConferenceTmpDeleted: false,
             });
+
+            protonMeetConferenceDetails.current = {
+                conferenceId: id,
+                conferenceUrl: getAppHref(meetingLink, APPS.PROTONMEET),
+            };
 
             setMeetingObject(meeting);
 
