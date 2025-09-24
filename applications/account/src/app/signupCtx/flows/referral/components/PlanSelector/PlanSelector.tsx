@@ -112,6 +112,10 @@ interface PlanCardProps {
     onCTAClick: () => void;
 }
 
+const noCreditCardRequired = (
+    <p className="m-0 text-center color-success text-semibold">{c('Info').t`No credit card required`}</p>
+);
+
 function BundlePlanCard({ isSelected, onCTAClick }: PlanCardProps) {
     const plan = PLANS.BUNDLE;
 
@@ -128,7 +132,7 @@ function BundlePlanCard({ isSelected, onCTAClick }: PlanCardProps) {
             description={c('Plan description')
                 .t`All premium features from ${BRAND_NAME} ${MAIL_SHORT_APP_NAME}, ${CALENDAR_SHORT_APP_NAME}, ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME}, and ${PASS_SHORT_APP_NAME}.`}
             features={<BundleFeatures />}
-            footer={
+            logos={
                 <AppsLogos
                     logoSize={8}
                     apps={[
@@ -161,8 +165,9 @@ function MailPlanCard({ isSelected, onCTAClick }: PlanCardProps) {
             headerTrailing={<Pricing plan={plan} />}
             description={c('Plan description').t`Secure email with advanced features for your everyday communications.`}
             features={<MailFeatures />}
-            footer={<AppsLogos logoSize={8} apps={[APPS.PROTONMAIL, APPS.PROTONCALENDAR]} />}
+            logos={<AppsLogos logoSize={8} apps={[APPS.PROTONMAIL, APPS.PROTONCALENDAR]} />}
             onCTAClick={onCTAClick}
+            footer={noCreditCardRequired}
         />
     );
 }
@@ -182,8 +187,9 @@ function DrivePlanCard({ isSelected, onCTAClick }: PlanCardProps) {
             headerTrailing={<Pricing plan={plan} />}
             description={c('Plan description').t`Cloud storage and file sharing, secured by end-to-end encryption.`}
             features={<DriveFeatures />}
-            footer={<AppsLogos logoSize={8} apps={[APPS.PROTONDRIVE, APPS.PROTONDOCS]} />}
+            logos={<AppsLogos logoSize={8} apps={[APPS.PROTONDRIVE, APPS.PROTONDOCS]} />}
             onCTAClick={onCTAClick}
+            footer={noCreditCardRequired}
         />
     );
 }
@@ -203,8 +209,9 @@ function PassPlanCard({ isSelected, onCTAClick }: PlanCardProps) {
             headerTrailing={<Pricing plan={plan} />}
             description={c('Plan description').t`For next-level password management and identity protection.`}
             features={<PassFeatures />}
-            footer={<AppsLogos logoSize={8} apps={[APPS.PROTONPASS]} />}
+            logos={<AppsLogos logoSize={8} apps={[APPS.PROTONPASS]} />}
             onCTAClick={onCTAClick}
+            footer={noCreditCardRequired}
         />
     );
 }
@@ -225,7 +232,7 @@ function VPNPlanCard({ isSelected, onCTAClick }: PlanCardProps) {
             description={c('Plan description')
                 .t`A VPN solution that provides secure, unrestricted, high-speed access to the internet.`}
             features={<VPNFeatures />}
-            footer={<AppsLogos logoSize={8} apps={[APPS.PROTONVPN_SETTINGS]} />}
+            logos={<AppsLogos logoSize={8} apps={[APPS.PROTONVPN_SETTINGS]} />}
             onCTAClick={onCTAClick}
         />
     );
