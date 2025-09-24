@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import Loader from '@proton/components/components/loader/Loader';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
@@ -21,10 +20,6 @@ interface Props {
 }
 
 const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
-    if (loading) {
-        return <Loader />;
-    }
-
     if (referrals.length === 0) {
         return (
             <div className="border border-weak rounded-lg flex flex-column items-center gap-2 p-6 pb-12">
