@@ -26,6 +26,7 @@ export interface SectionConfig extends SettingsAreaConfig {
     icon: IconName;
     available?: boolean;
     notification?: ThemeColor;
+    sidebarSpotlight?: ReactNode;
 }
 
 export interface SidebarConfig {
