@@ -8,9 +8,11 @@ import type { FrameMessageHandler } from 'proton-pass-extension/app/content/util
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
+import { isShadowRoot } from '@proton/pass/fathom';
 import type { MaybeNull } from '@proton/pass/types';
 import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/pass/utils/dom/computed-styles';
 import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { createAsyncQueue } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
@@ -85,7 +87,11 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
                  * handler in the top-frame will not catch clicks in sub-frames */
                 activeListeners.addListener(window, 'mousedown', (event: Event) => {
                     const target = event.target as MaybeNull<HTMLElement>;
-                    if (!target || !(req.field.icon?.element === target)) handleClose();
+                    const rootNode = req.field.element.getRootNode();
+                    const host = isShadowRoot(rootNode) ? rootNode.host : null;
+                    const excludes = [req.field.icon?.element, req.field.element, host].filter(truthy);
+
+                    if (!target || !excludes.includes(target)) handleClose();
                 });
             });
         }),
