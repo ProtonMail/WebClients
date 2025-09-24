@@ -31,7 +31,7 @@ import noop from '@proton/utils/noop';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_IDENTITY }>;
 
-export const AutofillIdentity: FC<Props> = ({ domain }) => {
+export const AutofillIdentity: FC<Props> = ({ origin }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
     const [state, setState] = useMountedState<MaybeNull<AutofillIdentityResult>>(null);
@@ -114,7 +114,7 @@ export const AutofillIdentity: FC<Props> = ({ domain }) => {
                     <PauseListDropdown
                         criteria="Autofill"
                         dense
-                        hostname={domain}
+                        hostname={origin}
                         label={c('Action').t`Do not suggest on this website`}
                     />
                 }

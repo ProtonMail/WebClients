@@ -32,7 +32,7 @@ const isValidAliasOptions = (options: AliasState['aliasOptions']): options is Al
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
+export const AutosuggestEmail: FC<Props> = ({ origin, prefix }) => {
     const controller = useIFrameAppController();
     const { onTelemetry } = usePassCore();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_ALIAS });
@@ -72,7 +72,7 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                     contentScriptMessage({
                         type: WorkerMessageType.ALIAS_CREATE,
                         payload: {
-                            url: domain,
+                            origin,
                             alias: {
                                 prefix,
                                 mailboxes: [mailboxes[0]],
@@ -99,7 +99,7 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                 setLoadingText(null);
             }
         },
-        [domain]
+        [origin]
     );
 
     useEffect(() => {
@@ -127,7 +127,7 @@ export const AutosuggestEmail: FC<Props> = ({ domain, prefix }) => {
                     <PauseListDropdown
                         criteria="Autosuggest"
                         dense
-                        hostname={domain}
+                        hostname={origin}
                         label={c('Action').t`Do not suggest on this website`}
                     />
                 }

@@ -21,7 +21,8 @@ import { isHTMLElement } from '@proton/pass/utils/dom/predicates';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
-import { resolveSubdomain } from '@proton/pass/utils/url/utils';
+import type { ParsedUrl } from '@proton/pass/utils/url/types';
+import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 import noop from '@proton/utils/noop';
 
@@ -34,10 +35,10 @@ type DropdownOptions = { popover: PopoverController; onDestroy: () => void };
 
 export type DropdownActions =
     | { action: DropdownAction.AUTOFILL_CC; origin: string }
-    | { action: DropdownAction.AUTOFILL_IDENTITY; domain: string }
-    | { action: DropdownAction.AUTOFILL_LOGIN; domain: string; startsWith: string }
-    | { action: DropdownAction.AUTOSUGGEST_ALIAS; domain: string; prefix: string }
-    | ({ action: DropdownAction.AUTOSUGGEST_PASSWORD; domain: string } & PasswordAutosuggestOptions);
+    | { action: DropdownAction.AUTOFILL_IDENTITY; origin: string }
+    | { action: DropdownAction.AUTOFILL_LOGIN; origin: string; startsWith: string }
+    | { action: DropdownAction.AUTOSUGGEST_ALIAS; origin: string; prefix: string }
+    | ({ action: DropdownAction.AUTOSUGGEST_PASSWORD; origin: string } & PasswordAutosuggestOptions);
 
 export type DropdownRequest = {
     action: DropdownAction;
@@ -137,6 +138,21 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
             set: () => iframe.updatePosition(),
         });
 
+    /** Depending on the autofill action type, origin should be adapted.
+     * In the case of CC autofill, we apply loose domain checking to support
+     * cross-frame autofilling on different subdomain for the same tld.*/
+    const resolveOrigin = (request: DropdownRequest, url: ParsedUrl): MaybeNull<string> => {
+        const domain = resolveDomain(url);
+        const subdomain = resolveSubdomain(url);
+
+        switch (request.action) {
+            case DropdownAction.AUTOFILL_CC:
+                return request.type === 'frame' ? request.origin : domain;
+            default:
+                return request.type === 'frame' ? request.origin : subdomain;
+        }
+    };
+
     /** Processes a dropdown request to create a usable payload for the injected dropdown.
      * Returns undefined to cancel if the request is invalid. For login/identity autofill
      * triggered by a focus event, ensures a valid item count exists before proceeding. */
@@ -147,13 +163,13 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
             const { action, autofocused } = request;
             const field = anchor.current?.type === 'field' ? anchor.current.field : null;
 
-            const { authorized } = ctx.getState();
             const url = ctx.getExtensionContext()?.url;
-            const domain = url ? resolveSubdomain(url) : null;
-            const origin = request.type === 'frame' ? request.origin : domain;
+            const origin = url ? resolveOrigin(request, url) : null;
             const frameId = request.type === 'frame' ? request.fieldFrameId : undefined;
 
-            if (!domain || !origin) return;
+            if (!origin) return;
+
+            const { authorized } = ctx.getState();
 
             switch (action) {
                 case DropdownAction.AUTOFILL_CC: {
@@ -165,25 +181,25 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
                 case DropdownAction.AUTOFILL_IDENTITY: {
                     if (autofocused && !(await ctx.service.autofill.getIdentitiesCount())) return;
                     if (autofocused && field?.autofilled) return;
-                    if (!authorized) return { action, domain: '' };
-                    return { action, domain };
+                    if (!authorized) return { action, origin: '' };
+                    return { action, origin };
                 }
 
                 case DropdownAction.AUTOFILL_LOGIN: {
                     if (autofocused && !(await ctx.service.autofill.getCredentialsCount())) return;
-                    if (!authorized) return { action, domain: '', startsWith: '' };
-                    return { action, domain, startsWith: '' };
+                    if (!authorized) return { action, origin: '', startsWith: '' };
+                    return { action, origin, startsWith: '' };
                 }
                 case DropdownAction.AUTOSUGGEST_ALIAS: {
                     if (!url?.displayName) throw new Error();
-                    return { action, domain, prefix: deriveAliasPrefix(url.displayName) };
+                    return { action, origin, prefix: deriveAliasPrefix(url.displayName) };
                 }
                 case DropdownAction.AUTOSUGGEST_PASSWORD: {
                     return sendMessage.on(
                         contentScriptMessage({ type: WorkerMessageType.AUTOSUGGEST_PASSWORD }),
                         (res) => {
                             if (res.type === 'error') throw new Error(res.error);
-                            return { action, domain, config: res.config, copy: res.copy, policy: res.policy };
+                            return { action, origin, config: res.config, copy: res.copy, policy: res.policy };
                         }
                     );
                 }

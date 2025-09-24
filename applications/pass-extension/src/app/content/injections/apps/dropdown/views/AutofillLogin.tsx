@@ -34,7 +34,7 @@ import noop from '@proton/utils/noop';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_LOGIN }>;
 
-export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
+export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
     const { settings, visible } = useIFrameAppState();
     const controller = useIFrameAppController();
     const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
@@ -140,7 +140,7 @@ export const AutofillLogin: FC<Props> = ({ domain, startsWith }) => {
                     <PauseListDropdown
                         criteria="Autofill"
                         dense
-                        hostname={domain}
+                        hostname={origin}
                         label={c('Action').t`Do not suggest on this website`}
                     />
                 }

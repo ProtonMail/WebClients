@@ -31,7 +31,7 @@ import type { Notification } from '@proton/pass/store/actions/enhancers/notifica
 import type { FeatureFlagState, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type {
-    AliasCreationDTO,
+    AliasCreateRequest,
     AliasOptions,
     AppState,
     AutosaveFormEntry,
@@ -178,7 +178,7 @@ export type AccountAuthExtMessage = { type: WorkerMessageType.ACCOUNT_EXTENSION 
 export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, ForkPayload>;
 export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
 export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
-export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { url: string; alias: AliasCreationDTO }>;
+export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, AliasCreateRequest>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
 export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
 export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;

@@ -22,7 +22,7 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
                             startsWith: '',
                         }}
                     />
@@ -32,7 +32,7 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
                             startsWith: '',
                         }}
                     />
@@ -42,7 +42,7 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
                             startsWith: '',
                         }}
                     />
@@ -52,7 +52,7 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
                             startsWith: '',
                         }}
                     />
@@ -62,7 +62,7 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
                             startsWith: '',
                         }}
                     />
@@ -73,7 +73,7 @@ export const DropdownDebug: FC = () => {
                         initial={{
                             action: DropdownAction.AUTOSUGGEST_PASSWORD,
                             config: DEFAULT_RANDOM_PW_OPTIONS,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
                             copy: false,
                             policy: null,
                         }}
@@ -84,7 +84,7 @@ export const DropdownDebug: FC = () => {
                     <Dropdown
                         initial={{
                             action: DropdownAction.AUTOSUGGEST_ALIAS,
-                            domain: 'proton.me',
+                            origin: 'proton.me',
                             prefix: 'secret',
                         }}
                     />
