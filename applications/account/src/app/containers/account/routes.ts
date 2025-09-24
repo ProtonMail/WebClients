@@ -407,7 +407,7 @@ export const getAccountAppRoutes = ({
                     },
                     {
                         text: c('Title').t`Notifications`,
-                        id: 'two-fa',
+                        id: 'notifications',
                         available: !user.isPrivate && !isAccountRecoveryAvailable && canDisplayNonPrivateEmailPhone,
                     },
                     {
