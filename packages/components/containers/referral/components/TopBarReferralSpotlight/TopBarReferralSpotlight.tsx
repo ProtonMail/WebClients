@@ -5,11 +5,10 @@ import { c } from 'ttag';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { Button, ButtonLike, Href } from '@proton/atoms';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { getSimplePriceString } from '@proton/components/components/price/helper';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
-import { BRAND_NAME, REFERRAL_EXPANSION_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import step1 from './step1.svg';
@@ -26,9 +25,7 @@ interface Props {
 export const TopBarReferralSpotlight = ({ children, show, onClose, onDismiss }: Props) => {
     const { APP_NAME: currentApp } = useConfig();
     const [referralInfo] = useReferralInfo();
-    const { referrerRewardAmount } = referralInfo.uiData;
-
-    const maxCredits = getSimplePriceString('USD', REFERRAL_EXPANSION_PROGRAM_MAX_AMOUNT);
+    const { referrerRewardAmount, maxRewardAmount } = referralInfo.uiData;
 
     return (
         <Spotlight
@@ -98,7 +95,7 @@ export const TopBarReferralSpotlight = ({ children, show, onClose, onDismiss }: 
                     </ol>
 
                     <p className="m-0">
-                        {getBoldFormattedText(c('Referral').t`You can get up to **${maxCredits}** in credit.`)}
+                        {getBoldFormattedText(c('Referral').t`You can get up to **${maxRewardAmount}** in credit.`)}
                     </p>
 
                     <ButtonLike
