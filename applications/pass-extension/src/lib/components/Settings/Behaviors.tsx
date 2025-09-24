@@ -10,11 +10,13 @@ import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
+import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { selectFeatureFlags, selectProxiedSettings } from '@proton/pass/store/selectors';
+import { selectFeatureFlags, selectPassPlan, selectProxiedSettings } from '@proton/pass/store/selectors';
 import type { MaybeNull, RecursivePartial } from '@proton/pass/types';
+import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -39,6 +41,7 @@ type SettingsSection = {
 
 type SettingsSectionsOptions = {
     features: MaybeNull<FeatureFlagState>;
+    plan: UserPassPlan;
     settings: ProxiedSettings;
     webReqPermissions: PermissionHandles;
     dispatch: Dispatch;
@@ -46,6 +49,7 @@ type SettingsSectionsOptions = {
 
 const getSettingsSections = ({
     features,
+    plan,
     settings,
     webReqPermissions,
     dispatch,
@@ -81,6 +85,7 @@ const getSettingsSections = ({
                     description: c('Info').t`Automatically fill in your saved payment information.`,
                     checked: settings.autofill.cc ?? false,
                     hidden: !features?.PassCreditCardWebAutofill,
+                    disabled: !isPaidPlan(plan),
                     onChange: (checked) => onSettingsUpdate({ autofill: { cc: checked } }),
                 },
                 {
@@ -192,12 +197,13 @@ const getSettingsSections = ({
 export const Behaviors: FC = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectProxiedSettings);
+    const plan = useSelector(selectPassPlan);
     const webReqPermissions = usePermissions(BASIC_AUTH_PERMISSIONS);
     const features = useSelector(selectFeatureFlags);
 
     const sections = useMemo(
-        () => getSettingsSections({ features, settings, webReqPermissions, dispatch }),
-        [features, settings, webReqPermissions]
+        () => getSettingsSections({ features, plan, settings, webReqPermissions, dispatch }),
+        [features, plan, settings, webReqPermissions]
     );
 
     return (
