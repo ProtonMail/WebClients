@@ -7,7 +7,9 @@ import {
     useIFrameAppState,
 } from 'proton-pass-extension/app/content/injections/apps/components/IFrameApp';
 import { ListItem } from 'proton-pass-extension/app/content/injections/apps/components/ListItem';
+import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/components/PauseListDropdown';
 import { ScrollableItemsList } from 'proton-pass-extension/app/content/injections/apps/components/ScrollableItemsList';
+import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/iframes/dropdown';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -109,6 +111,17 @@ export const AutofillCC: FC<Props> = ({ origin }) => {
 
     return (
         <>
+            <DropdownHeader
+                title={c('Title').t`Autofill`}
+                extra={
+                    <PauseListDropdown
+                        criteria="Autofill"
+                        dense
+                        hostname={origin}
+                        label={c('Action').t`Do not suggest on this website`}
+                    />
+                }
+            />
             {dropdownItems.length > 0 ? (
                 <ScrollableItemsList>{dropdownItems}</ScrollableItemsList>
             ) : (
