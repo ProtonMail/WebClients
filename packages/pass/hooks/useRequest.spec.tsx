@@ -1,7 +1,8 @@
 import type { PropsWithChildren, ReactNode } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
-import { type UnknownAction, configureStore, createAction } from '@reduxjs/toolkit';
+import type { EnhancedStore, UnknownAction } from '@reduxjs/toolkit';
+import { configureStore, createAction } from '@reduxjs/toolkit';
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { withRequest } from '@proton/pass/store/request/enhancers';
@@ -23,9 +24,14 @@ const successCache = createAction('test::success::cache', () =>
     withRequest({ status: 'success', id: requestId, maxAge: 1 })({ payload: {} })
 );
 
-const buildHook = (useInitialRequestId: boolean = true, initialActions: UnknownAction[] = []) => {
+const buildHook = (
+    useInitialRequestId: boolean = true,
+    initialActions: UnknownAction[] = [],
+    setup?: (store: EnhancedStore) => void
+) => {
     const store = configureStore({ reducer: { request }, middleware: (mw) => mw().concat(requestMiddleware) });
-    const dispatch = jest.spyOn(store, 'dispatch');
+    setup?.(store);
+
     initialActions.forEach((action) => store.dispatch(action));
 
     const onStart = jest.fn();
@@ -34,7 +40,9 @@ const buildHook = (useInitialRequestId: boolean = true, initialActions: UnknownA
 
     return {
         store,
-        dispatch,
+        dispatch: (action: UnknownAction): void => {
+            store.dispatch(action);
+        },
         onStart,
         onSuccess,
         onFailure,
@@ -57,7 +65,7 @@ const buildHook = (useInitialRequestId: boolean = true, initialActions: UnknownA
 
 describe('useActionRequest', () => {
     test('Handles request sequence', async () => {
-        const { hook, onStart, onSuccess, onFailure, store } = buildHook();
+        const { hook, dispatch, onStart, onSuccess, onFailure } = buildHook();
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toEqual(0);
@@ -65,9 +73,7 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await act(async () => {
-            hook.result.current.dispatch();
-        });
+        act(() => hook.result.current.dispatch());
 
         expect(hook.result.current.loading).toBe(true);
         expect(hook.result.current.progress).toEqual(0);
@@ -75,9 +81,10 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await act(async () => {
-            store.dispatch(progress(42));
-        });
+        await Promise.all([
+            hook.waitForValueToChange(() => hook.result.current.progress),
+            act(() => dispatch(progress(42))),
+        ]);
 
         expect(hook.result.current.loading).toBe(true);
         expect(hook.result.current.progress).toEqual(42);
@@ -85,9 +92,10 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await act(async () => {
-            store.dispatch(progress(100));
-        });
+        await Promise.all([
+            hook.waitForValueToChange(() => hook.result.current.progress),
+            act(() => dispatch(progress(100))),
+        ]);
 
         expect(hook.result.current.loading).toBe(true);
         expect(hook.result.current.progress).toEqual(100);
@@ -95,9 +103,10 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await act(async () => {
-            store.dispatch(success());
-        });
+        await Promise.all([
+            hook.waitForValueToChange(() => hook.result.current.loading),
+            act(() => dispatch(success())),
+        ]);
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toBe(0);
@@ -105,9 +114,7 @@ describe('useActionRequest', () => {
         expect(onSuccess).toHaveBeenCalledTimes(1);
         expect(onFailure).not.toHaveBeenCalled();
 
-        await act(async () => {
-            hook.result.current.dispatch();
-        });
+        act(() => hook.result.current.dispatch());
 
         expect(hook.result.current.loading).toBe(true);
         expect(hook.result.current.progress).toEqual(0);
@@ -115,9 +122,10 @@ describe('useActionRequest', () => {
         expect(onSuccess).toHaveBeenCalledTimes(1);
         expect(onFailure).not.toHaveBeenCalled();
 
-        await act(async () => {
-            store.dispatch(failure());
-        });
+        await Promise.all([
+            hook.waitForValueToChange(() => hook.result.current.loading),
+            act(() => dispatch(failure())),
+        ]);
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toBe(0);
@@ -129,9 +137,8 @@ describe('useActionRequest', () => {
     test('Should handle cached request', async () => {
         const { hook, onStart, onSuccess, onFailure } = buildHook(true, [successCache()]);
 
-        await act(async () => {
-            await hook.result.current.dispatch();
-        });
+        act(() => hook.result.current.dispatch());
+        await hook.waitForValueToChange(() => hook.result.current.loading);
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toEqual(0);
@@ -140,12 +147,10 @@ describe('useActionRequest', () => {
         expect(onFailure).not.toHaveBeenCalled();
     });
 
-    test('Should handle revalidation if cached request', async () => {
+    test('Should handle revalidation if cached request', () => {
         const { hook, onStart, onSuccess, onFailure } = buildHook(true, [successCache()]);
 
-        await act(async () => {
-            await hook.result.current.revalidate();
-        });
+        act(() => hook.result.current.revalidate());
 
         expect(hook.result.current.loading).toBe(true);
         expect(hook.result.current.progress).toEqual(0);
@@ -155,14 +160,13 @@ describe('useActionRequest', () => {
     });
 
     test('Dispatching the same action should be throttled', async () => {
-        const { hook, store, onStart, onSuccess, onFailure } = buildHook(false, []);
+        const { hook, dispatch, onStart, onSuccess, onFailure } = buildHook(false, []);
 
-        await act(async () => {
-            hook.result.current.dispatch();
-            hook.result.current.dispatch();
-            hook.result.current.dispatch();
-            hook.result.current.dispatch();
-        });
+        act(() => hook.result.current.dispatch());
+        act(() => hook.result.current.dispatch());
+        act(() => hook.result.current.dispatch());
+        act(() => hook.result.current.dispatch());
+        act(() => hook.result.current.dispatch());
 
         expect(hook.result.current.loading).toBe(true);
         expect(hook.result.current.progress).toEqual(0);
@@ -170,9 +174,10 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await act(async () => {
-            store.dispatch(success());
-        });
+        await Promise.all([
+            hook.waitForValueToChange(() => hook.result.current.loading),
+            act(() => dispatch(success())),
+        ]);
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toBe(0);
@@ -182,12 +187,10 @@ describe('useActionRequest', () => {
     });
 
     test('Revalidating after dispatch while in-flight should noop', async () => {
-        const { hook, store, onStart, onSuccess, onFailure } = buildHook(false, []);
+        const { hook, dispatch, onStart, onSuccess, onFailure } = buildHook(false, []);
 
-        await act(async () => {
-            hook.result.current.dispatch();
-            hook.result.current.revalidate();
-        });
+        act(() => hook.result.current.dispatch());
+        act(() => hook.result.current.revalidate());
 
         expect(hook.result.current.loading).toBe(true);
         expect(hook.result.current.progress).toEqual(0);
@@ -195,9 +198,10 @@ describe('useActionRequest', () => {
         expect(onSuccess).not.toHaveBeenCalled();
         expect(onFailure).not.toHaveBeenCalled();
 
-        await act(async () => {
-            store.dispatch(success());
-        });
+        await Promise.all([
+            hook.waitForValueToChange(() => hook.result.current.loading),
+            act(() => dispatch(success())),
+        ]);
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toBe(0);
@@ -207,13 +211,15 @@ describe('useActionRequest', () => {
     });
 
     test('Should handle aysnc dispatch throwing', async () => {
-        const { hook, dispatch, onStart, onSuccess, onFailure } = buildHook(false, []);
-
-        dispatch.mockImplementation(() => Promise.reject(new Error()) as any);
-
-        await act(async () => {
-            hook.result.current.dispatch();
+        const { hook, onStart, onSuccess, onFailure } = buildHook(false, [], (store) => {
+            const dispatch = jest.spyOn(store, 'dispatch');
+            dispatch.mockImplementation(() => Promise.reject(new Error()) as any);
         });
+
+        await Promise.all([
+            hook.waitForValueToChange(() => hook.result.current.error),
+            act(() => hook.result.current.dispatch()),
+        ]);
 
         expect(hook.result.current.loading).toBe(false);
         expect(hook.result.current.progress).toEqual(0);
