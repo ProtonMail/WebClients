@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -51,6 +51,16 @@ export const useZoomIntegration = ({
     const [isLoading, setIsLoading] = useState(false);
     const [disconnectedError, setDisconnectedError] = useState(false);
 
+    const zoomConferenceDetails = useRef<{
+        conferenceId: string;
+        conferenceUrl: string;
+        conferencePassword: string | undefined;
+    }>({
+        conferenceId: '',
+        conferenceUrl: '',
+        conferencePassword: undefined,
+    });
+
     const deriveProcessState = (): ZoomIntegrationState => {
         if (isLoading) {
             return 'loading';
@@ -68,12 +78,16 @@ export const useZoomIntegration = ({
             return 'loadingConfig';
         }
 
+        if (!isUserConnectedToZoom) {
+            return 'disconnected';
+        }
+
         if (model.conferenceUrl) {
             // In case of removing the meeting we actually keep it, but set a flag
             return model.isConferenceTmpDeleted ? 'meeting-deleted' : 'meeting-present';
         }
 
-        return isUserConnectedToZoom ? 'connected' : 'disconnected';
+        return 'connected';
     };
 
     const derivedProcessState = deriveProcessState();
@@ -82,7 +96,15 @@ export const useZoomIntegration = ({
         try {
             setIsLoading(true);
 
+            setActiveProvider(VIDEO_CONFERENCE_PROVIDER.ZOOM);
+
             const data = await silentApi<VideoConferenceMeetingCreation>(createZoomMeeting());
+
+            zoomConferenceDetails.current = {
+                conferenceId: data?.VideoConference?.ID,
+                conferenceUrl: data?.VideoConference?.URL,
+                conferencePassword: data?.VideoConference?.Password,
+            };
 
             setModel({
                 ...model,
@@ -91,6 +113,7 @@ export const useZoomIntegration = ({
                 conferencePassword: data?.VideoConference?.Password,
                 conferenceHost: user.Email,
                 conferenceProvider: VIDEO_CONFERENCE_PROVIDER.ZOOM,
+                isConferenceTmpDeleted: false,
             });
 
             setDisconnectedError(false);
@@ -101,7 +124,11 @@ export const useZoomIntegration = ({
             sentEventZoom(VideoConferenceZoomIntegration.create_zoom_meeting_failed, String(code));
 
             if (code === VIDEO_CONF_API_ERROR_CODES.MEETING_PROVIDER_ERROR) {
+                setActiveProvider(null);
                 setDisconnectedError(true);
+                void triggerZoomOAuth(() => {
+                    void createVideoConferenceMeeting();
+                });
                 return;
             } else {
                 createNotification({
@@ -140,18 +167,17 @@ export const useZoomIntegration = ({
 
         if (shouldReconnectToZoom(derivedProcessState)) {
             handleReconnect(true);
-        } else if (
-            model.conferenceUrl &&
-            model.isConferenceTmpDeleted &&
-            model.conferenceProvider === VIDEO_CONFERENCE_PROVIDER.ZOOM
-        ) {
+        } else if (model.isConferenceTmpDeleted && zoomConferenceDetails.current.conferenceUrl) {
             setActiveProvider(VIDEO_CONFERENCE_PROVIDER.ZOOM);
             setModel({
                 ...model,
+                conferenceId: zoomConferenceDetails.current.conferenceId,
+                conferenceUrl: zoomConferenceDetails.current.conferenceUrl,
+                conferencePassword: zoomConferenceDetails.current.conferencePassword,
+                conferenceProvider: VIDEO_CONFERENCE_PROVIDER.ZOOM,
                 isConferenceTmpDeleted: false,
             });
         } else {
-            setActiveProvider(VIDEO_CONFERENCE_PROVIDER.ZOOM);
             await createVideoConferenceMeeting();
         }
     };
