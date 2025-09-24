@@ -116,7 +116,7 @@ const CalendarSettingsRouter = ({ user, subscription, calendarAppRoutes, redirec
                     <CalendarTimeSection calendarUserSettings={calendarUserSettings} />
                     <CalendarLayoutSection calendarUserSettings={calendarUserSettings} />
                     <CalendarInvitationsSection calendarUserSettings={calendarUserSettings} locales={locales} />
-                    <VideoConferenceToggle withInfo showProtonMeet />
+                    <VideoConferenceToggle />
                     <CalendarOtherPreferencesSection />
                 </PrivateMainSettingsArea>
             </Route>
