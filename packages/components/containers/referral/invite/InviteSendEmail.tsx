@@ -28,6 +28,10 @@ interface SendEmailInvitationResult {
 }
 
 const InviteSendEmail = ({ className }: { className?: string }) => {
+    // TODO: referral: we need to move this file into applications/account so we can use the dispatch from useAccountDispatch
+    // const dispatch = useAccountDispatch();
+    // dispatch(referralsSlice.actions.setInvitedReferrals({ invitedReferrals }));
+
     const api = useApi();
     const {
         invitedReferralsState: [invitedReferrals, setInvitedReferrals],

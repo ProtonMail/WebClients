@@ -1,40 +1,87 @@
-import { c } from 'ttag';
+import type { ReactNode } from 'react';
 
-import { getSimplePriceString } from '@proton/components/components/price/helper';
-import Meter from '@proton/components/components/progress/Meter';
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import { CYCLE, PLANS } from '@proton/payments';
+import { c, msgid } from 'ttag';
 
-interface Props {
-    rewards: number;
-    rewardsLimit: number;
-}
+import { useReferrals } from '@proton/account/referrals/hooks';
+import Price from '@proton/components/components/price/Price';
+import clsx from '@proton/utils/clsx';
 
-const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
-    const { plansMap, plansMapLoading } = usePreferredPlansMap();
-    if (plansMapLoading) {
+import moneyGrey from './img/money-grey.svg';
+import money from './img/money.svg';
+import subscribedGrey from './img/subscribed-grey.svg';
+import subscribed from './img/subscribed.svg';
+import usersGrey from './img/users-grey.svg';
+import users from './img/users.svg';
+
+const StatTitle = ({ children }: { children: ReactNode }) => <div className="h3">{children}</div>;
+const StatDescription = ({ children }: { children: ReactNode }) => <div className="color-weak">{children}</div>;
+
+const getStat = (text: string, n: number) => {
+    return text
+        .split(`${n}`)
+        .map((value, index, arr) =>
+            index !== arr.length - 1
+                ? [value, <StatTitle>{n}</StatTitle>]
+                : [<StatDescription>{value}</StatDescription>]
+        );
+};
+
+const RewardsProgress = () => {
+    const [referral, loadingReferral] = useReferrals();
+
+    const friendsInvited = referral.total;
+    const friendsSubscribed = referral.totalSubscribed;
+    const totalEarned = referral.status.rewardAmount;
+
+    const currency = referral.status.currency;
+
+    if (loadingReferral) {
         return null;
     }
 
-    const mailPlusPlan = plansMap[PLANS.MAIL];
-    if (!mailPlusPlan) {
-        return null;
-    }
-
-    const price = Math.round((mailPlusPlan.Pricing[CYCLE.MONTHLY] || 0) / 100) * 100; // Price rounded to 500
-    const current = getSimplePriceString(mailPlusPlan.Currency, rewards * price);
-    const total = getSimplePriceString(mailPlusPlan.Currency, rewardsLimit * price);
+    const borderedBoxClasses = 'border border-weak rounded p-4';
 
     return (
-        <div className="flex justify-space-between items-stretch lg:items-center gap-4 flex-column lg:flex-row">
-            <div className="lg:flex-1">
-                <b>{c('Info').t`Credits earned`}</b>
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 mb-4">
+            <div className={clsx(borderedBoxClasses, 'flex-1 flex justify-space-between flex-nowrap gap-4')}>
+                <div>
+                    {getStat(
+                        c('Title').ngettext(
+                            msgid`${friendsInvited} Friend invited`,
+                            `${friendsInvited} Friends invited`,
+                            friendsInvited
+                        ),
+                        friendsInvited
+                    )}
+                </div>
+                <img src={friendsInvited > 0 ? users : usersGrey} alt="" width={48} height={48} className="shrink-0" />
             </div>
-            <div className="lg:flex-1">{rewards > 0 && <Meter value={rewards} max={rewardsLimit} />}</div>
-            <div className="lg:flex-1 text-right">{
-                // translator: Full sentence can be something like this : "$30 of $90"
-                c('Info').t`${current} of ${total}`
-            }</div>
+            <div className={clsx(borderedBoxClasses, 'flex-1 flex justify-space-between flex-nowrap gap-4')}>
+                <div>
+                    {getStat(
+                        c('Title').ngettext(
+                            msgid`${friendsSubscribed} Friend subscribed`,
+                            `${friendsSubscribed} Friends subscribed`,
+                            friendsSubscribed
+                        ),
+                        friendsSubscribed
+                    )}
+                </div>
+                <img
+                    src={friendsSubscribed > 0 ? subscribed : subscribedGrey}
+                    alt=""
+                    width={48}
+                    height={48}
+                    className="shrink-0"
+                />
+            </div>
+            <div className={clsx(borderedBoxClasses, 'flex-1 flex justify-space-between flex-nowrap gap-4')}>
+                <div>
+                    <StatTitle>{<Price currency={currency}>{totalEarned}</Price>}</StatTitle>
+                    <StatDescription>{c('Title').t`Credit earned`}</StatDescription>
+                </div>
+                <img src={totalEarned > 0 ? money : moneyGrey} alt="" width={48} height={48} className="shrink-0" />
+            </div>
         </div>
     );
 };

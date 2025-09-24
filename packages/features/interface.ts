@@ -124,8 +124,10 @@ export enum FeatureCode {
     ProtonBadge = 'ProtonBadge',
     SpotlightVPNDrawer = 'SpotlightVPNDrawer',
     ReferralExplanationOpened = 'ReferralExplanationOpened',
-    ReferralProgram = 'ReferralProgram',
-    ReferralProgramSpotlight = 'ReferralProgramSpotlight',
+    ReferralProgram = 'ReferralProgram', // Legacy referral program
+    ReferralProgramSpotlight = 'ReferralProgramSpotlight', // Legacy referral program
+    ReferralSpotlightSettings = 'ReferralSpotlightSettings',
+    ReferralTopBarButton = 'ReferralTopBarButton',
     ScheduledSendFreemium = 'ScheduledSendFreemium',
     SeenReferralModal = 'SeenReferralModal',
     SetExpiration = 'SetExpiration',
