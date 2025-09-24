@@ -7,7 +7,7 @@ import type { RefreshSessionData } from '@proton/pass/lib/api/refresh';
 import type { PullForkCall } from '@proton/pass/lib/auth/fork';
 import type { AuthSession } from '@proton/pass/lib/auth/session';
 import browser from '@proton/pass/lib/globals/browser';
-import type { MaybeNull } from '@proton/pass/types';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { throwError } from '@proton/pass/utils/fp/throw';
 import { logger } from '@proton/pass/utils/logger';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -19,8 +19,13 @@ type NativeSafariMessage =
     | { writeToClipboard: { Content: string } }
     | { environment: string };
 
-export const sendSafariMessage = <T = unknown>(message: NativeSafariMessage) =>
-    browser.runtime.sendNativeMessage<string, T>(SAFARI_MESSAGE_KEY, JSON.stringify(message));
+export const sendSafariMessage = <T = unknown>(message: NativeSafariMessage): Maybe<Promise<T>> => {
+    try {
+        return browser.runtime.sendNativeMessage<string, T>(SAFARI_MESSAGE_KEY, JSON.stringify(message));
+    } catch (err) {
+        logger.warn(`[Safari] Native message failure`, err);
+    }
+};
 
 /** Safari does not correctly attach cookies service-worker side
  * when pulling the fork during authentication. As such, we must
