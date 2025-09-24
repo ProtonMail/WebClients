@@ -20,12 +20,11 @@
 	.modal-two-dialog-container,
 	.modal-two-dialog {
 		inline-size: 90%;
+		box-shadow: none !important;
 
 		@include media('>medium') {
 			inline-size: 24.5rem !important;
 			block-size: 19.125rem !important;
 		}
-
-		box-shadow: none !important;
 	}
 }
