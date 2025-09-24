@@ -17,6 +17,7 @@ import {
 import { createCustomElement, createElement } from '@proton/pass/utils/dom/create-element';
 import { isHTMLElement, isInputElement } from '@proton/pass/utils/dom/predicates';
 import { repaint } from '@proton/pass/utils/dom/repaint';
+import { getNthParent } from '@proton/pass/utils/dom/tree';
 
 type IconElement = {
     /** Button element injected into shadow DOM */
@@ -57,26 +58,27 @@ const getOverlayShift = (options: {
 
         if (Number.isNaN(x) || Number.isNaN(y)) return 0;
 
+        /** Prepass: `document.elementsFromPoint` will exclude elements that are
+         * set to `pointer-events: none`. These may be part of the shift we want
+         * to resolve. Set them to `auto` temporarily and restore */
+        getNthParent(anchor, isInputElement(anchor) ? 2 : 1)
+            .querySelectorAll('*')
+            .forEach((el) => {
+                if (isHTMLElement(el)) {
+                    if (window.getComputedStyle(el).pointerEvents === 'none') {
+                        const pointerEvents = el.style.pointerEvents;
+                        el.style.pointerEvents = 'auto';
+                        restore.push({ el, pointerEvents });
+                    }
+                }
+            });
+
         /** Ideally we could also recursively get all shadowRoot elements at point if
          * `https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/elementsFromPoint`
          * becomes standard. Right now, some browsers return only the shadow root elements
          * present at that location. Other browsers include elements outside of the shadow DOM,
          * from the shadow DOM element in the topmost layer to the document root node. */
         const overlays = document.elementsFromPoint(x, y);
-
-        /** Prepass: `document.elementsFromPoint` will exclude elements that are
-         * set to `pointer-events: none`. These may be part of the shift we want
-         * to resolve. Set them to `auto` temporarily and restore */
-        (isInputElement(anchor) ? anchor.parentElement! : anchor).querySelectorAll('*').forEach((el) => {
-            if (isHTMLElement(el)) {
-                if (window.getComputedStyle(el).pointerEvents === 'none') {
-                    const pointerEvents = el.style.pointerEvents;
-                    el.style.pointerEvents = 'auto';
-                    restore.push({ el, pointerEvents });
-                }
-            }
-        });
-
         let maxDx: number = 0;
 
         const skip = new Set();
