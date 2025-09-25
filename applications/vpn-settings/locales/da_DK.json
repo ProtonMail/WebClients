@@ -7325,6 +7325,9 @@
       "Country": [
         "Land"
       ],
+      "Credits": [
+        "Kreditter"
+      ],
       "Credits used": [
         "Kredit forbrugt"
       ],
@@ -7363,6 +7366,9 @@
       ],
       "Domain name": [
         "Domænenavn"
+      ],
+      "Don't show this again": [
+        "Vis ikke dette igen"
       ],
       "e.g. example.com": [
         "f.eks. example.com"
@@ -7772,9 +7778,6 @@
       ],
       "Verification code": [
         "Verifikationskode"
-      ],
-      "Video conferencing with Zoom": [
-        "Videokonferencer med Zoom"
       ],
       "Vulnerable": [
         "Sårbar"
@@ -9835,9 +9838,6 @@
       "Let's talk": [
         "Lad os snakke"
       ],
-      "Limited time offer": [
-        "Tidsbegrænset tilbud"
-      ],
       "Recommended": [
         "Anbefalet"
       ]
@@ -11134,12 +11134,6 @@
       "${ seconds } second": [
         "${ seconds } sekund",
         "${ seconds } sekunder"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } måned GRATIS",
-        "${ n } måneder GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -13266,9 +13260,6 @@
       ],
       "Verifying your payment...": [
         "Bekræfter din betaling..."
-      ],
-      "Video conferencing": [
-        "Videokonferencer"
       ],
       "Warning": [
         "Advarsel"

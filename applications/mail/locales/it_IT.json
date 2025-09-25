@@ -6604,6 +6604,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: blocca la fuga di dati bloccando la connessione Internet in caso di interruzione imprevista della VPN."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Passaggio 1:** Invita i tuoi amici a ${ BRAND_NAME } con il tuo link di affiliazione."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Passo 2:** I tuoi amici ottengono 2 settimane gratis sul piano ${ BRAND_NAME } che hanno scelto."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Passo 2:** I tuoi amici ottengono 2 settimane gratis sul loro piano."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Passaggio 3:** Ottieni ${ referrerRewardAmount } crediti per ogni amico che si abbona a un piano."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Passaggio 3:** Ottieni ${ referrerRewardAmount } crediti per ogni persona che si abbona a un piano."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } memoria bonus"
       ],
@@ -6919,6 +6934,9 @@
       ],
       "Copy the link to clipboard": [
         "Copia il link negli appunti"
+      ],
+      "Copy your referral link": [
+        "Copia il tuo link di riferimento"
       ],
       "Country code": [
         "Codice nazione"
@@ -7790,6 +7808,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Le informazioni di recupero rimarranno su questo dispositivo a meno che tu non decida di eliminarle."
+      ],
+      "Referral link copied to your clipboard": [
+        "Link di riferimento copiato negli appunti"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
@@ -9238,6 +9259,9 @@
       ],
       "Country": [
         "Paese"
+      ],
+      "Credits": [
+        "Crediti"
       ],
       "Date": [
         "Data"
@@ -12043,6 +12067,9 @@
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Questa azione estende l'abbonamento esistente. Ti verranno addebitati solo i nuovi add-on e il tempo rimanente del ciclo di fatturazione corrente. La data di rinnovo del tuo abbonamento non verrà modificata."
+      ],
       "This number will be shown on all future invoices": [
         "Questo numero sarà mostrato su tutte le fatture future"
       ],
@@ -12083,6 +12110,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Credito per la parte non usata del tuo precedente abbonamento"
+      ],
+      "Credits will be added to your balance": [
+        "I crediti verranno aggiunti al tuo saldo."
       ]
     },
     "Payments.plan_name": {
@@ -12573,6 +12608,26 @@
       ],
       "Stored with zero-access encryption": [
         "Archiviato con crittografia ad accesso zero"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per ogni affiliazione"
+      ],
+      "Invite friends. Get credits.": [
+        "Invita amici. Ottieni crediti."
+      ],
+      "Invited friends": [
+        "Amici invitati"
+      ],
+      "More sharing options": [
+        "Più opzioni di condivisione"
+      ],
+      "Refer friends": [
+        "Segnala amici"
+      ],
+      "Start earning credits": [
+        "Inizia a guadagnare crediti"
       ]
     },
     "Remaining days before the message expire": {
@@ -13099,12 +13154,6 @@
       "${ seconds } second": [
         "${ seconds } secondo",
         "${ seconds } secondi"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mese GRATIS",
-        "${ n } mesi GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -14639,9 +14688,6 @@
       "Create new group": [
         "Crea nuovo gruppo"
       ],
-      "Credits": [
-        "Crediti"
-      ],
       "Currency": [
         "Valuta"
       ],
@@ -14843,6 +14889,9 @@
         "Elevata sicurezza per il tuo account"
       ],
       "How does it all work?": [
+        "Come funziona?"
+      ],
+      "How does it work?": [
         "Come funziona?"
       ],
       "How to update your email address": [
@@ -15154,6 +15203,9 @@
       "Recover data": [
         "Recupera dati"
       ],
+      "Referral": [
+        "Segnalazione"
+      ],
       "Remove from list?": [
         "Rimuovi dall'elenco?"
       ],
@@ -15249,6 +15301,9 @@
       ],
       "Share your calendar with your team": [
         "Condividi il tuo calendario con il tuo team"
+      ],
+      "Share your link": [
+        "Condividi il tuo link"
       ],
       "Sign in and grant access": [
         "Accedi e concedi l'accesso"

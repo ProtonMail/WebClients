@@ -11168,9 +11168,6 @@
       "Allowed domain": [
         "Engedélyezett domain"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Lehetővé teszi, hogy a szervezetben mindenki zökkenőmentesen hozzáadhasson videokonferencia- hivatkozásokat a naptármeghívókhoz."
-      ],
       "Amount": [
         "Összeg"
       ],
@@ -11500,6 +11497,9 @@
       ],
       "Don't keep versions": [
         "Ne tartsa meg a korábbi változatokat"
+      ],
+      "Don't show this again": [
+        "Ne jelenjen meg többet"
       ],
       "Duration": [
         "Időtartam"
@@ -15139,9 +15139,6 @@
       "Let's talk": [
         "Beszélgessünk!"
       ],
-      "Limited time offer": [
-        "Korlátozott idejű ajánlat"
-      ],
       "Recommended": [
         "Ajánlott"
       ],
@@ -15317,9 +15314,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Bejelentkezés a ${ PASS_APP_NAME }-be"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Kiemelt indulási ajánlat: ${ title } ${ price } áron örökre!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Különleges: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a következő áron: ${ priceString }."
@@ -17455,12 +17449,6 @@
       "${ seconds } second": [
         "${ seconds } másodperc",
         "${ seconds } másodperc"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } hónap INGYEN",
-        "${ n } hónap INGYEN"
       ]
     },
     "specialoffer: Deal details": {
@@ -20447,9 +20435,6 @@
       ],
       "Version history": [
         "Változatelőzmények"
-      ],
-      "Video conferencing": [
-        "Videokonferencia"
       ],
       "VPN apps": [
         "VPN alkalmazások"

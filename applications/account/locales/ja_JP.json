@@ -141,9 +141,6 @@
       "Add label": [
         "ラベルを追加する"
       ],
-      "Add more seats": [
-        "シートを増やす"
-      ],
       "Add notification": [
         "通知を追加"
       ],
@@ -1601,9 +1598,6 @@
       ],
       "User": [
         "ユーザー"
-      ],
-      "users and addresses": [
-        "ユーザーとアドレス"
       ],
       "Verify": [
         "検証"
@@ -8458,9 +8452,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "ユーザーが${ VPN_APP_NAME }アプリの**国**セクションから安全な共有サーバーに接続することを許可します。"
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "カレンダーの招待状にシームレスに${ MEET_APP_NAME }ビデオ会議のリンクを追加できるようにします。"
-      ],
       "Already allocated": [
         "割り当て済み"
       ],
@@ -9250,9 +9241,6 @@
       "Groups": [
         "グループ"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "メールの作成、返信、校正をサポートします。${ userAndAddress }内の個別ユーザーを管理します。${ addMoreSeats }"
-      ],
       "here": [
         "こちら"
       ],
@@ -9630,9 +9618,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "組織のメンバーがアクセスできる ${ BRAND_NAME } アプリケーションを管理します。無効にすると、管理者のみがアクセスできます。"
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "組織のメンバーがアクセスできる機能を管理します。無効にすると、管理者のみがアクセスできます。"
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "メールの通知設定を${ DOCS_APP_NAME }で管理する。"
@@ -12021,9 +12006,6 @@
       "Allowed domain": [
         "許可されたドメイン"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "組織内の全員がカレンダーの招待状にビデオ会議リンクをスムーズに追加できるようにします。"
-      ],
       "Amount": [
         "金額"
       ],
@@ -12362,6 +12344,9 @@
       ],
       "Don't keep versions": [
         "バージョンを保持しない"
+      ],
+      "Don't show this again": [
+        "次回から表示しない"
       ],
       "Duration": [
         "期間"
@@ -16101,9 +16086,6 @@
       "Let's talk": [
         "話しましょう"
       ],
-      "Limited time offer": [
-        "期間限定オファー"
-      ],
       "Recommended": [
         "おすすめ"
       ],
@@ -16285,9 +16267,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } にログインしています"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "発売記念特別オファー: ${ title } を ${ price } で永久に手に入れましょう!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "特別：${ PLAN_NAMES[PLANS.PASS_LIFETIME] }が${ priceString }。"
@@ -19001,11 +18980,6 @@
       ],
       "${ seconds } second": [
         "${ seconds } 秒"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } か月無料"
       ]
     },
     "specialoffer: Deal details": {
@@ -22056,9 +22030,6 @@
       ],
       "Version history": [
         "バージョン履歴"
-      ],
-      "Video conferencing": [
-        "ビデオ会議"
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME } を利用したビデオ会議"

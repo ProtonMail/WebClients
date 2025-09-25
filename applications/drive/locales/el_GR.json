@@ -3768,6 +3768,9 @@
       "We were not able to load some invitations": [
         "Δεν μπορέσαμε να φορτώσουμε μερικές προσκλήσεις"
       ],
+      "We were not able to load some items": [
+        "Δεν μπορέσαμε να φορτώσουμε ορισμένα στοιχεία"
+      ],
       "We were not able to load some items shared with you": [
         "Δεν μπορέσαμε να φορτώσουμε μερικά αντικείμενα που κοινοποιήθηκαν σε εσάς"
       ],
@@ -4142,7 +4145,7 @@
         "Έχετε προσκληθεί να εγγραφείτε στο ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have successfully joined the family group": [
-        "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
+        "Έχετε ενταχθεί με επιτυχία στην οικογενειακή ομάδα"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Έχετε ανεξόφλητα τιμολόγια. Παρακαλούμε πληρώστε τα πριν συμμετάσχετε σε ένα οικογενειακό πλάνο."
@@ -4900,6 +4903,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Λειτουργία kill switch**: Σταματά τις διαρροές δεδομένων μπλοκάροντας το διαδίκτυο αν το VPN αποσυνδεθεί απροσδόκητα."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Βήμα 1:** Προσκαλέστε τους φίλους σας στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Βήμα 2:** Οι φίλοι σας λαμβάνουν 2 εβδομάδες δωρεάν στο επιλεγμένο ${ BRAND_NAME } πλάνο τους."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Βήμα 2:** Οι φίλοι σας λαμβάνουν 2 εβδομάδες δωρεάν στο πλάνο τους."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Βήμα 3:** Κερδίστε ${ referrerRewardAmount } πιστώσεις για κάθε φίλο που εγγράφεται σε ένα πλάνο."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Βήμα 3:** Κερδίστε ${ referrerRewardAmount } σε πιστώσεις για κάθε άτομο που εγγράφεται σε ένα πλάνο."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
       ],
@@ -5131,6 +5149,9 @@
       ],
       "Copy the link to clipboard": [
         "Αντιγραφή του συνδέσμου στο πρόχειρο"
+      ],
+      "Copy your referral link": [
+        "Αντιγράψτε τον σύνδεσμο παραπομπής σας"
       ],
       "Country code": [
         "Κωδικός χώρας"
@@ -5918,6 +5939,9 @@
       ],
       "Recovery process might take some time.": [
         "Η διαδικασία ανάκτησης ίσως διαρκέσει λίγη ώρα."
+      ],
+      "Referral link copied to your clipboard": [
+        "Ο σύνδεσμος παραπομπής αντιγράφηκε στο πρόχειρό σας"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
@@ -6957,6 +6981,9 @@
       "Created": [
         "Δημιουργήθηκε"
       ],
+      "Credits": [
+        "Πιστώσεις"
+      ],
       "Delete": [
         "Διαγραφή"
       ],
@@ -6981,6 +7008,9 @@
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
+      ],
+      "Don't show this again": [
+        "Να μην εμφανιστεί ξανά"
       ],
       "Download anyway": [
         "Λήψη οπωσδήποτε"
@@ -9679,6 +9709,9 @@
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Αυτή η ενέργεια επεκτείνει την υπάρχουσα συνδρομή. Θα χρεωθείτε μόνο για τα νέα πρόσθετα και τον υπόλοιπο χρόνο του τρέχοντος κύκλου χρέωσης. Η ημερομηνία ανανέωσης της συνδρομής σας δε θα αλλάξει."
+      ],
       "This number will be shown on all future invoices": [
         "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
@@ -9719,6 +9752,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Η κάρτα σας απορρίφθηκε. Παρακαλούμε δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πλάνο"
+      ],
+      "Credits will be added to your balance": [
+        "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
       ]
     },
     "Payments.plan_name": {
@@ -10030,6 +10071,40 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Επίσημο email από ${ BRAND_NAME }"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } ανά παραπομπή"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Κερδίστε έως και ${ maxRewardAmount } σε πίστωση. Θα λάβετε ${ referrerRewardAmount } όταν το άτομο που προσκαλέσατε εγγραφεί σε ένα πλάνο ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Φίλος εντάχθηκε",
+        "Φίλοι εντάχθηκαν"
+      ],
+      "Friend subscribed": [
+        "Φίλος εγγράφηκε",
+        "Φίλοι εγγράφηκαν"
+      ],
+      "Invite friends. Get credits.": [
+        "Προσκαλέστε φίλους. Λάβετε πιστώσεις."
+      ],
+      "Invited friends": [
+        "Προσκεκλημένοι φίλοι"
+      ],
+      "More sharing options": [
+        "Περισσότερες επιλογές κοινής χρήσης"
+      ],
+      "Refer friends": [
+        "Συστήστε φίλους"
+      ],
+      "Start earning credits": [
+        "Ξεκινήστε να κερδίζετε πιστώσεις"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Μπορείτε να λάβετε έως και **${ maxRewardAmount }** σε πίστωση."
       ]
     },
     "Safety review": {
@@ -10359,12 +10434,6 @@
       "${ seconds } second": [
         "${ seconds } δευτερόλεπτο",
         "${ seconds } δευτερόλεπτα"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } μήνας ΔΩΡΕΑΝ",
-        "${ n } μήνες ΔΩΡΕΑΝ"
       ]
     },
     "specialoffer: Deal details": {
@@ -11626,9 +11695,6 @@
       "Created by": [
         "Δημιουργήθηκε από"
       ],
-      "Credits": [
-        "Μονάδες"
-      ],
       "Currency": [
         "Νόμισμα"
       ],
@@ -11854,6 +11920,9 @@
       ],
       "How does it all work?": [
         "Πώς λειτουργούν όλα;"
+      ],
+      "How does it work?": [
+        "Πώς λειτουργεί;"
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
@@ -12165,6 +12234,9 @@
       ],
       "Share your calendar with your team": [
         "Κοινοποιήστε το ημερολόγιό σας με την ομάδα σας"
+      ],
+      "Share your link": [
+        "Κοινοποιήστε το σύνδεσμο σας"
       ],
       "Shared": [
         "Κοινοποιημένα"
