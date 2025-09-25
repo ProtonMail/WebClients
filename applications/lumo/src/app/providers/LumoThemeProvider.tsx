@@ -124,15 +124,18 @@ export const LumoThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     // Single source of truth for settings
     const [settings, setSettings] = useState<LumoLocalSettings>(() => {
         const saved = getLumoSettings();
-        return saved || { theme: getLumoDefaultTheme(), mode: ThemeModeSetting.Light };
+        // New users always start with light theme until they explicitly choose otherwise
+        return saved || { theme: ThemeTypes.LumoLight, mode: ThemeModeSetting.Light };
     });
 
     // Track system preference
     const [systemIsDark, setSystemIsDark] = useState(() => matchDarkTheme().matches);
 
-    const theme = getLumoThemeFromSettings(settings, systemIsDark);
+    const rawTheme = getLumoThemeFromSettings(settings, systemIsDark);
+    // When feature flag is disabled, always use light theme for components
+    const theme = isLumoDarkModeEnabled ? rawTheme : ThemeTypes.LumoLight;
     const config = getThemeConfig(theme);
-    const isDarkLumoTheme = theme === ThemeTypes.LumoDark;
+    const isDarkLumoTheme = isLumoDarkModeEnabled && rawTheme === ThemeTypes.LumoDark;
     const isAutoMode = settings.mode === ThemeModeSetting.Auto;
 
     const updateSettings = (newSettings: LumoLocalSettings) => {
