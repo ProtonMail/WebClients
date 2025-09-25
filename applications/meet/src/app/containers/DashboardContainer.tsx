@@ -126,7 +126,7 @@ export const DashboardContainer = () => {
             </div>
             <div className="flex flex-column gap-4 p-4 flex-nowrap w-full shrink-0">
                 <div className="flex justify-start items-center w-full">
-                    <div className="text-lg md:text-xl color-norm text-semibold">{c('Title').t`Upcoming meetings`}</div>
+                    <div className="text-lg md:text-xl color-hint text-semibold">{c('Title').t`Upcoming meetings`}</div>
                     <div
                         className="flex items-center justify-center bg-strong rounded-full w-custom h-custom ml-2 text-sm color-weak"
                         style={{ '--w-custom': '1.5rem', '--h-custom': '1.5rem' }}
