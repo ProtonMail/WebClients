@@ -9,6 +9,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { getClipboardTTLOptions } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings';
 import { ClipboardSettingsModal } from '@proton/pass/components/Settings/Clipboard/ClipboardSettingsModal';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import type { ClipboardTTL } from '@proton/pass/lib/clipboard/types';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
@@ -19,7 +20,7 @@ export type ClipboardAction = 'settings';
 
 export type ClipboardContextValue = {
     copyToClipboard: (content: string) => Promise<void>;
-    setClipboardTTL: (timeoutMs: number, silent?: boolean) => void;
+    setClipboardTTL: (timeoutMs: ClipboardTTL, silent?: boolean) => void;
 };
 
 export const ClipboardContext = createContext<MaybeNull<ClipboardContextValue>>(null);
@@ -38,24 +39,28 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
     const [modal, setModal] = useState<MaybeNull<ClipboardAction>>(null);
 
     const onCopyToClipboard = useCallback(
-        async (value: string, clipboardTTL?: number, promptForPermissions?: boolean) => {
+        async (value: string, ttl?: ClipboardTTL, promptForPermissions: boolean = false): Promise<boolean> => {
             try {
                 const options = getClipboardTTLOptions();
-                const timeoutDurationHumanReadable = options.find(([ttl]) => ttl === clipboardTTL)?.[1];
-                await writeToClipboard(value, clipboardTTL, promptForPermissions);
+                const copied = await writeToClipboard(value, ttl, promptForPermissions);
+                const granted = promptForPermissions && copied;
 
                 createNotification({
                     showCloseButton: false,
                     type: 'success',
-                    text:
-                        !clipboardTTL || clipboardTTL === -1
-                            ? c('Info').t`Copied to clipboard`
-                            : // translator: `timeoutDurationHumanReadable` may be 15 seconds, 1 minute or 2 minutes
-                              c('Info').t`Copied to clipboard (expires in ${timeoutDurationHumanReadable})`,
+                    text: (() => {
+                        if (!granted || !ttl || ttl === -1) return c('Info').t`Copied to clipboard`;
+                        const timeoutDurationHumanReadable = options.get(ttl);
+                        // translator: `timeoutDurationHumanReadable` may be 15 seconds, 1 minute or 2 minutes
+                        return c('Info').t`Copied to clipboard (expires in ${timeoutDurationHumanReadable})`;
+                    })(),
                 });
+
+                return copied;
             } catch (err) {
                 createNotification({ type: 'error', text: c('Info').t`Unable to copy to clipboard` });
                 logger.error(`[ClipboardProvider] unable to copy to clipboard`);
+                return false;
             }
         },
         []
@@ -82,12 +87,20 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
             {children}
             {modal === 'settings' && (
                 <ClipboardSettingsModal
-                    onClose={async (overrideClipboardTTL) => {
+                    onSubmit={async (ttl) => {
                         setModal(null);
-
                         if (cachedCopy !== null) {
                             setCachedCopy(null);
-                            await onCopyToClipboard(cachedCopy, overrideClipboardTTL, true);
+
+                            if (ttl !== undefined) {
+                                const promptForPermission = ttl > 0;
+                                const copied = await onCopyToClipboard(cachedCopy, ttl, promptForPermission);
+                                /** NOTE: when prompting for permission in the context of the extension
+                                 * popup this function might not finish as the permission prompt will
+                                 * close the popup. See the clipboard service implementation watching the
+                                 * permission change event to set to the default */
+                                if (copied) ctx.setClipboardTTL(ttl, true);
+                            } else await onCopyToClipboard(cachedCopy);
                         }
                     }}
                 />

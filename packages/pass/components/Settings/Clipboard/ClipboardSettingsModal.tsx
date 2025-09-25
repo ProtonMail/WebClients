@@ -1,30 +1,20 @@
-import { type FC, useState } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Checkbox, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
+import { ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
-import { useSetClipboardTTL } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 import { getDefaultClipboardTTLOption } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings';
+import { ClipboardTTL, DEFAULT_CLIPBOARD_TTL } from '@proton/pass/lib/clipboard/types';
 
-type Props = { onClose: (overrideClipboardTTL: number) => void };
+type Props = { onSubmit: (ttl?: ClipboardTTL) => void };
 
-export const ClipboardSettingsModal: FC<Props> = ({ onClose }) => {
-    const [notAgain, setNotAgain] = useState(false);
-    const setClipboardTTL = useSetClipboardTTL();
-
-    const handleClose = (overrideClipboardTTL: number) => {
-        /** set the clipboard TTL on close if user discards the modal
-         * permanently or agrees on setting the default clipboard TTL. */
-        if (notAgain || overrideClipboardTTL > 0) setClipboardTTL(overrideClipboardTTL);
-        onClose(overrideClipboardTTL);
-    };
-
-    const timeoutDurationHumanReadable = getDefaultClipboardTTLOption()[1];
+export const ClipboardSettingsModal: FC<Props> = ({ onSubmit }) => {
+    const timeoutDurationHumanReadable = getDefaultClipboardTTLOption();
 
     return (
-        <PassModal onClose={() => onClose(-1)} size="small" open>
+        <PassModal onClose={onSubmit} size="small" open>
             <ModalTwoHeader title={c('Title').t`Clear clipboard`} />
             <ModalTwoContent>
                 <p>{
@@ -35,17 +25,12 @@ export const ClipboardSettingsModal: FC<Props> = ({ onClose }) => {
                 {!DESKTOP_BUILD && (
                     <p className="color-weak">{c('Permission').t`Will require a permission from your browser`}</p>
                 )}
-                <p>
-                    <Checkbox checked={notAgain} onChange={() => setNotAgain(!notAgain)}>
-                        {c('Confirm').t`Do not ask me again`}
-                    </Checkbox>
-                </p>
             </ModalTwoContent>
             <ModalTwoFooter className="justify-between">
-                <Button color="weak" onClick={() => handleClose(-1)}>
+                <Button color="weak" onClick={() => onSubmit(ClipboardTTL.TTL_NEVER)}>
                     {c('Action').t`No`}
                 </Button>
-                <Button color="norm" onClick={() => handleClose(120_000)}>
+                <Button color="norm" onClick={() => onSubmit(DEFAULT_CLIPBOARD_TTL)}>
                     {c('Action').t`Yes`}
                 </Button>
             </ModalTwoFooter>
