@@ -63,7 +63,11 @@ export function useCurrentScreenShare() {
             mediaStreamTrack.onended = () => {
                 stopScreenShare();
             };
-        } catch (err) {
+        } catch (err: any) {
+            if (err.message === 'Permission denied by user') {
+                return;
+            }
+
             notifications.createNotification({
                 type: 'error',
                 text: c('Error').t`Failed to start screen share`,
