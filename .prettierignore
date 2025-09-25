@@ -1,13 +1,14 @@
 applications/**/locales/**/*.json
+applications/**/public/assets/sandbox.js
+applications/authenticator/src/lib/tauri/generated/__bindings__.ts
+applications/wallet/src/pkg/
+packages/metrics/types/**/*.d.ts
 packages/styles/scss/**/_index.scss
 packages/wasm/**/*
-packages/metrics/types/**/*.d.ts
 tests/account/poms/LoginPage/challenge.html
-tests/pass/hars/**/*
+tests/mail-renderer/tests/**/*.html
 tests/pass/extension/**/*
-applications/**/public/assets/sandbox.js
-applications/wallet/src/pkg/
-applications/authenticator/src/lib/tauri/generated/__bindings__.ts
+tests/pass/hars/**/*
 
 .idea
 .cache
