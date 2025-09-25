@@ -3791,6 +3791,9 @@
       "We were not able to load some invitations": [
         "Nu s-au putut încărca unele invitații"
       ],
+      "We were not able to load some items": [
+        "Nu s-au putut încărca unele articole."
+      ],
       "We were not able to load some items shared with you": [
         "Unele elemente care vi s-au partajat nu sau putut încărca."
       ],
@@ -4973,6 +4976,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Întrerupătorul de conexiune**: oprește divulgările de date prin blocarea conexiunii dacă VPN-ul cade în mod neașteptat."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Pasul 2:** Persoanele recomandare vor primi 2 săptămâni gratuite pentru planul ${ BRAND_NAME } ales."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Pasul 2:** Persoanele recomandate primesc 2 săptămâni gratuite pentru planul lor."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
       ],
@@ -5208,6 +5226,9 @@
       ],
       "Copy the link to clipboard": [
         "Copiați legătura în memorie"
+      ],
+      "Copy your referral link": [
+        "Copiere legătură web de recomandare"
       ],
       "Country code": [
         "Cod țară"
@@ -6002,6 +6023,9 @@
       ],
       "Recovery process might take some time.": [
         "Procesul de recuperare ar putea dura ceva timp."
+      ],
+      "Referral link copied to your clipboard": [
+        "Legătura de recomandare a fost copiată în memorie."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătând pagina sau ${ link } veți rezolva majoritatea problemelor."
@@ -7055,6 +7079,9 @@
       "Created": [
         "Creat la"
       ],
+      "Credits": [
+        "Credite"
+      ],
       "Delete": [
         "Ștergere"
       ],
@@ -7080,6 +7107,9 @@
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
+      ],
+      "Don't show this again": [
+        "Nu mai arăta asta"
       ],
       "Download anyway": [
         "Descărcare așa"
@@ -9837,6 +9867,9 @@
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
+      ],
       "This number will be shown on all future invoices": [
         "Acest număr va fi afișat pe toate facturile viitoare."
       ],
@@ -9877,6 +9910,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Credit pentru porțiunea neutilizată din abonamentul planului anterior."
+      ],
+      "Credits will be added to your balance": [
+        "Creditele vă vor fi adăugate în soldul personal."
       ]
     },
     "Payments.plan_name": {
@@ -10191,6 +10232,42 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Mesaj oficial de la ${ BRAND_NAME }"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per recomandare"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Câștigați până la ${ maxRewardAmount } în credite. Veți primi ${ referrerRewardAmount } atunci când persoana pe care o invitați se abonează la un plan ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Persoană alăturată",
+        "Persoane alăturate",
+        "Persoane alăturate"
+      ],
+      "Friend subscribed": [
+        "Persoană abonată",
+        "Persoane abonate",
+        "Persoane abonate"
+      ],
+      "Invite friends. Get credits.": [
+        "Invitați persoane. Obțineți credite."
+      ],
+      "Invited friends": [
+        "Persoane invitate"
+      ],
+      "More sharing options": [
+        "Mai multe opțiuni de partajare"
+      ],
+      "Refer friends": [
+        "Recomandați persoane"
+      ],
+      "Start earning credits": [
+        "Începeți să câștigați credite"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Puteți obține până la **${ maxRewardAmount }** în credite."
       ]
     },
     "Safety review": {
@@ -10537,13 +10614,6 @@
         "Secunde: ${ seconds }"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "Luni GRATUITE: ${ n }",
-        "Luni GRATUITE: ${ n }",
-        "Luni GRATUITE: ${ n }"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "Un utilizator"
@@ -10752,7 +10822,7 @@
         "Căutarea criptată este aici"
       ],
       "Get up to ${ credits } in credits.": [
-        "Obțineți până la ${ credits } de credite."
+        "Obțineți până la ${ credits } în credite."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
@@ -11837,9 +11907,6 @@
       "Created by": [
         "Creat de"
       ],
-      "Credits": [
-        "Credite"
-      ],
       "Currency": [
         "Monedă"
       ],
@@ -12069,6 +12136,9 @@
       ],
       "How does it all work?": [
         "Cum funcționează tot?"
+      ],
+      "How does it work?": [
+        "Cum funcționează?"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -12382,6 +12452,9 @@
       ],
       "Share your calendar with your team": [
         "Partajați-vă calendarul cu echipa proprie"
+      ],
+      "Share your link": [
+        "Partajați-vă legătura web"
       ],
       "Shared": [
         "Partajat"

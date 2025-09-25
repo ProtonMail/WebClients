@@ -4553,6 +4553,9 @@
       "Copy the link to clipboard": [
         "複製連結到剪貼簿"
       ],
+      "Copy your referral link": [
+        "複製您的推介連結"
+      ],
       "Country code": [
         "國家代碼"
       ],
@@ -5260,6 +5263,9 @@
       ],
       "Recovery process might take some time.": [
         "還原過程或需時。"
+      ],
+      "Referral link copied to your clipboard": [
+        "推介連結已複製到您的剪貼簿"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或${ link }將自動解決大部分問題。"
@@ -6168,6 +6174,9 @@
       "Created": [
         "已創建"
       ],
+      "Credits": [
+        "額度"
+      ],
       "Delete": [
         "刪除"
       ],
@@ -6191,6 +6200,9 @@
       ],
       "Don't ask again": [
         "不要再次詢問"
+      ],
+      "Don't show this again": [
+        "不再顯示此內容"
       ],
       "Download anyway": [
         "仍要下載"
@@ -8638,6 +8650,11 @@
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
       ]
     },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "可用額度將會增加到您的餘額"
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "免費"
@@ -9208,11 +9225,6 @@
       ],
       "${ seconds } second": [
         "${ seconds }秒"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n }個月免費"
       ]
     },
     "specialoffer: Deal details": {
@@ -10320,9 +10332,6 @@
       "Create new group": [
         "創建新群組"
       ],
-      "Credits": [
-        "儲值"
-      ],
       "Currency": [
         "貨幣"
       ],
@@ -10502,6 +10511,9 @@
       ],
       "Hm, we couldn't find that one": [
         "抱歉，我們找不到那個"
+      ],
+      "How does it work?": [
+        "那是如何運作的？"
       ],
       "Human verification": [
         "真人身分驗證"
