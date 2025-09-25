@@ -11,20 +11,20 @@ import type { MailSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/interface';
+import type { LocationCountMap } from 'proton-mail/hooks/useMailboxCounter';
+import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
 import useMoveSystemFolders, { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
-import type { UnreadCounts } from './MailSidebarList';
 import SidebarItem from './SidebarItem';
 
 interface Props {
-    counterMap: UnreadCounts;
+    counterMap: LocationCountMap;
     currentLabelID: string;
     location: Location;
     mailSettings: MailSettings;
     setFocusedItem: (id: string) => void;
-    totalMessagesMap: UnreadCounts;
     displayMoreItems: boolean;
     showScheduled: boolean;
     showSnoozed: boolean;
@@ -59,7 +59,6 @@ const MailSidebarSystemFolders = ({
     setFocusedItem,
     showScheduled,
     showSnoozed,
-    totalMessagesMap,
     displayMoreItems,
     onToggleMoreItems,
     collapsed = false,
@@ -90,8 +89,8 @@ const MailSidebarSystemFolders = ({
         currentLabelID,
         labelID,
         isConversation,
-        unreadCount: counterMap[labelID],
-        totalMessagesCount: totalMessagesMap[labelID] || 0,
+        unreadCount: getLocationCount(counterMap, labelID).Unread,
+        totalMessagesCount: getLocationCount(counterMap, labelID).Total,
     });
 
     type HandleDragOver = (
