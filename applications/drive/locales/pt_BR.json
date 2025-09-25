@@ -3768,6 +3768,9 @@
       "We were not able to load some invitations": [
         "Não foi possível carregar alguns convites"
       ],
+      "We were not able to load some items": [
+        "Não foi possível carregar alguns itens"
+      ],
       "We were not able to load some items shared with you": [
         "Não foi possível carregar alguns itens compartilhados por você."
       ],
@@ -5132,6 +5135,9 @@
       "Copy the link to clipboard": [
         "Copiar link para a área de transferência"
       ],
+      "Copy your referral link": [
+        "Copiar seu link de referência"
+      ],
       "Country code": [
         "Código do país"
       ],
@@ -5918,6 +5924,9 @@
       ],
       "Recovery process might take some time.": [
         "O processo de recuperação pode levar algum tempo."
+      ],
+      "Referral link copied to your clipboard": [
+        "Link de referência copiado para sua área de transferência"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
@@ -6960,6 +6969,9 @@
       "Created": [
         "Criado"
       ],
+      "Credits": [
+        "Créditos"
+      ],
       "Delete": [
         "Excluir"
       ],
@@ -6984,6 +6996,9 @@
       ],
       "Don't ask again": [
         "Não perguntar novamente"
+      ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
       ],
       "Download anyway": [
         "Baixar mesmo assim"
@@ -9786,6 +9801,11 @@
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
       ]
     },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito pela parte não usada no plano anterior da sua assinatura"
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -10522,12 +10542,6 @@
       "${ seconds } second": [
         "${ seconds } segundo",
         "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mês GRÁTIS",
-        "${ n } meses GRÁTIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -11789,9 +11803,6 @@
       "Created by": [
         "Criado por"
       ],
-      "Credits": [
-        "Créditos"
-      ],
       "Currency": [
         "Moeda"
       ],
@@ -12017,6 +12028,9 @@
       ],
       "How does it all work?": [
         "Como tudo isso funciona?"
+      ],
+      "How does it work?": [
+        "Como isso funciona?"
       ],
       "Human verification": [
         "Verificação humana"
@@ -12328,6 +12342,9 @@
       ],
       "Share your calendar with your team": [
         "Compartilhar seu calendário com sua equipe"
+      ],
+      "Share your link": [
+        "Compartilhe seu link"
       ],
       "Shared": [
         "Compartilhado"
