@@ -32,7 +32,7 @@ export const ModalEditCategories = ({ onDisableAll, ...rest }: Props) => {
     const [loading, withLoading] = useLoading(false);
 
     const handleSaveCategories = async () => {
-        if (categoriesListState.every((cat) => !cat.checked)) {
+        if (categoriesListState.every((cat) => !cat.display)) {
             onDisableAll();
             return;
         }
@@ -48,28 +48,29 @@ export const ModalEditCategories = ({ onDisableAll, ...rest }: Props) => {
                 return;
             }
 
-            const checkChanged = initialCategory?.checked !== category.checked;
+            const displayChanged = initialCategory?.display !== category.display;
             const notifyChanged = initialCategory?.notify !== category.notify;
+            shouldReload = shouldReload || displayChanged;
 
-            shouldReload = shouldReload || checkChanged;
-
-            if (checkChanged || notifyChanged) {
+            if (displayChanged || notifyChanged) {
                 promises.push(
                     api(
                         // TODO use new system label endpoint and remove Name / Color once created
                         updateLabel(category.id, {
                             Name: categoryFromStore.Name,
                             Color: categoryFromStore.Color,
-                            Display: category.checked ? 1 : 0,
+                            Display: category.display ? 1 : 0,
                             Notify: category.notify ? 1 : 0,
                         })
                     )
                 );
+            }
 
+            // We only do the optimistic when the user has changed the notify setting since we reload the page when changing the visibility
+            if (notifyChanged) {
                 dispatch(
                     categoriesActions.upsertCategory({
                         ...categoryFromStore,
-                        Display: category.checked ? 1 : 0,
                         Notify: category.notify ? 1 : 0,
                     })
                 );
@@ -99,7 +100,7 @@ export const ModalEditCategories = ({ onDisableAll, ...rest }: Props) => {
                 <EditCategoriesList
                     categoriesToDisplay={categoriesListState}
                     handleCategoryCheckChange={(category) =>
-                        handleCategoryUpdate({ ...category, checked: !category.checked })
+                        handleCategoryUpdate({ ...category, display: !category.display })
                     }
                     handleCategoryNotifyChange={(category) =>
                         handleCategoryUpdate({ ...category, notify: !category.notify })
