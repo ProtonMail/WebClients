@@ -727,6 +727,14 @@
         "Expandir"
       ]
     },
+    "Confirm": {
+      "Do not ask me again": [
+        "No volver a preguntar"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "¿Desea que el portapapeles se borre automáticamente después de ${ timeoutDurationHumanReadable }?"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } está disponible con un plan de pago. Mejore para obtener acceso inmediato."
@@ -1546,6 +1554,9 @@
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Copiado al portapapeles (expira en ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Se aplicó el cupón."
       ],
@@ -2055,8 +2066,14 @@
       "Please follow the steps below to set up your domain.": [
         "Siga los pasos a continuación para configurar su dominio."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Mantenga ${ PASS_APP_NAME } abierto para que el portapapeles se pueda borrar automáticamente."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mantenga esta ventana abierta mientras sus datos son importados. Este proceso puede tomar unos minutos."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Mantenga el navegador abierto para que el portapapeles se pueda borrar automáticamente."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Asegúrese de que la ventana activa anterior sea donde desea escribir automáticamente y que el cursor esté enfocado en el campo de inicio de sesión."
@@ -3837,6 +3854,11 @@
         "${ price }/mes"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Requerirá un permiso del navegador"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Agregar una clave secreta 2FA"
@@ -4160,6 +4182,9 @@
       ],
       "Change your lock method": [
         "Cambiar el método de bloqueo"
+      ],
+      "Clear clipboard": [
+        "Vaciar portapapeles"
       ],
       "Confirm extra password": [
         "Confirmar la contraseña adicional"
