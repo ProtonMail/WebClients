@@ -1138,6 +1138,9 @@
       "Remove this label": [
         "Borrar esta etiqueta"
       ],
+      "Remove video conference": [
+        "Eliminar videoconferencia"
+      ],
       "Replace": [
         "Reemplazar"
       ],
@@ -6920,6 +6923,9 @@
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
       ],
+      "Copy your referral link": [
+        "Copiar el enlace de referencia"
+      ],
       "Country code": [
         "Código de país"
       ],
@@ -7790,6 +7796,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
+      ],
+      "Referral link copied to your clipboard": [
+        "Enlace de referencia copiado al portapapeles"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
@@ -9239,6 +9248,9 @@
       "Country": [
         "País"
       ],
+      "Credits": [
+        "Créditos"
+      ],
       "Date": [
         "Fecha"
       ],
@@ -9614,8 +9626,14 @@
       "Remember my choice": [
         "Recordar mi elección"
       ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Eliminar videoconferencia de ${ MEET_APP_NAME }"
+      ],
       "Remove metadata": [
         "Eliminar los metadatos"
+      ],
+      "Remove Zoom video conference": [
+        "Eliminar videoconferencia de Zoom"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -13090,12 +13108,6 @@
         "${ seconds } segundos"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes gratis",
-        "${ n } meses gratis"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 usuario"
@@ -14628,9 +14640,6 @@
       "Create new group": [
         "Crear grupo nuevo"
       ],
-      "Credits": [
-        "Créditos"
-      ],
       "Currency": [
         "Moneda"
       ],
@@ -14832,6 +14841,9 @@
         "Alta seguridad para su cuenta"
       ],
       "How does it all work?": [
+        "¿Cómo funciona?"
+      ],
+      "How does it work?": [
         "¿Cómo funciona?"
       ],
       "How to update your email address": [

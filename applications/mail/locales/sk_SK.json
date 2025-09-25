@@ -1146,6 +1146,9 @@
       "Remove this label": [
         "Odstrániť štítok"
       ],
+      "Remove video conference": [
+        "Odstrániť videokonferenciu"
+      ],
       "Replace": [
         "Nahradiť"
       ],
@@ -1454,6 +1457,12 @@
       ],
       "Toggle Contacts app": [
         "Prepnúť na aplikáciu Kontakty"
+      ],
+      "Toggle notifications": [
+        "Prepnúť notifikácie"
+      ],
+      "Toggle referral": [
+        "Prepnúť odporúčanie"
       ],
       "Toggle security center app": [
         "Prepnúť aplikáciu centrum zabezpečenia"
@@ -6800,6 +6809,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Zabráni úniku dát tým, že zablokuje váš internet, ak sa VPN neočakávane preruší."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1:** Pozvite svojich priateľov do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Krok 2:** Vaši priatelia získajú 2 týždne zadarmo na zvolený ${ BRAND_NAME } plán."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Krok 2:** Vaši priatelia získajú 2 týždne zadarmo v rámci svojho plánu."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Krok 3:** Získajte ${ referrerRewardAmount } kreditov za každého priateľa, ktorý si predplatí niektorý z plánov."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Krok 3:** Získajte ${ referrerRewardAmount } v kreditoch za každú osobu, ktorá si predplatí plán."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového miesta na disku"
       ],
@@ -7129,6 +7153,9 @@
       ],
       "Copy the link to clipboard": [
         "Skopírovať odkaz do schránky"
+      ],
+      "Copy your referral link": [
+        "Kopírujte váš odporúčací odkaz"
       ],
       "Country code": [
         "Kód krajiny"
@@ -8026,6 +8053,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."
+      ],
+      "Referral link copied to your clipboard": [
+        "Odkaz skopírovaný do schránky"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky alebo ${ link } sa automaticky vyrieši väčšina problémov."
@@ -9531,6 +9561,9 @@
       "Country": [
         "Krajina"
       ],
+      "Credits": [
+        "Kredity"
+      ],
       "Date": [
         "Dátum"
       ],
@@ -9906,8 +9939,14 @@
       "Remember my choice": [
         "Zapamätať si voľbu"
       ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Odstrániť videokonferenciu ${ MEET_APP_NAME }"
+      ],
       "Remove metadata": [
         "Odstrániť metadáta"
+      ],
+      "Remove Zoom video conference": [
+        "Odstrániť videokonferenciu Zoom"
       ],
       "Reveal password": [
         "Odkryť heslo"
@@ -12404,6 +12443,9 @@
         "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť.",
         "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Táto akcia rozširuje existujúce predplatné. Bude vám účtovaný poplatok len za nové doplnky a zostávajúci čas aktuálneho fakturačného obdobia. Dátum obnovenia vášho predplatného sa nezmení."
+      ],
       "This number will be shown on all future invoices": [
         "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ],
@@ -12444,6 +12486,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
+      ],
+      "Credits will be added to your balance": [
+        "Kredity budú pridané k vášmu zostatku"
       ]
     },
     "Payments.plan_name": {
@@ -12850,6 +12900,44 @@
       ],
       "Stored with zero-access encryption": [
         "Uložené so šifrovaním s nulovým prístupom"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } za odporúčanie"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Získajte až ${ maxRewardAmount } v kreditoch. Získate ${ referrerRewardAmount }, keď si osoba, ktorú pozvete predplatí ${ BRAND_NAME } plán."
+      ],
+      "Friend joined": [
+        "Priateľ sa pripojil",
+        "Priatelia sa pripojili",
+        "Priateľov sa pripojilo",
+        "Priateľov sa pripojilo"
+      ],
+      "Friend subscribed": [
+        "Priateľ si predplatil",
+        "Priatelia si predplatili",
+        "Priateľov si predplatilo",
+        "Priateľov si predplatilo"
+      ],
+      "Invite friends. Get credits.": [
+        "Pozvite priateľov. Získajte kredity."
+      ],
+      "Invited friends": [
+        "Pozvite priateľov"
+      ],
+      "More sharing options": [
+        "Viac možností zdieľania"
+      ],
+      "Refer friends": [
+        "Odporučiť priateľov"
+      ],
+      "Start earning credits": [
+        "Začnite zarábať kredity"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Môžete získať kredit až **${ maxRewardAmount }**."
       ]
     },
     "Remaining days before the message expire": {
@@ -13413,14 +13501,6 @@
         "${ seconds } sekundy",
         "${ seconds } sekúnd",
         "${ seconds } sekúnd"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mesiacov ZDARMA",
-        "${ n } mesiac ZDARMA",
-        "${ n } mesiacov ZDARMA",
-        "${ n } mesiac ZDARMA"
       ]
     },
     "specialoffer: Deal details": {
@@ -15073,9 +15153,6 @@
       "Create new group": [
         "Vytvoriť novú skupinu"
       ],
-      "Credits": [
-        "Kredity"
-      ],
       "Currency": [
         "Mena"
       ],
@@ -15288,6 +15365,9 @@
       ],
       "How does it all work?": [
         "Ako to všetko funguje?"
+      ],
+      "How does it work?": [
+        "Ako to funguje?"
       ],
       "How to update your email address": [
         "Ako aktualizovať emailovú adresu"
@@ -15604,6 +15684,9 @@
       "Recover data": [
         "Obnoviť dáta"
       ],
+      "Referral": [
+        "Odporúčanie"
+      ],
       "Remove from list?": [
         "Odstrániť zo zoznamu?"
       ],
@@ -15699,6 +15782,9 @@
       ],
       "Share your calendar with your team": [
         "Zdieľajte svoj kalendár so svojím tímom"
+      ],
+      "Share your link": [
+        "Zdieľajte váš odkaz"
       ],
       "Sign in and grant access": [
         "Prihláste sa a povoľte prístup"
