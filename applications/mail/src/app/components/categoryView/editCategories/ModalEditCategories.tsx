@@ -51,7 +51,7 @@ export const ModalEditCategories = ({ onDisableAll, ...rest }: Props) => {
             const checkChanged = initialCategory?.checked !== category.checked;
             const notifyChanged = initialCategory?.notify !== category.notify;
 
-            shouldReload = checkChanged;
+            shouldReload = shouldReload || checkChanged;
 
             if (checkChanged || notifyChanged) {
                 promises.push(
@@ -108,7 +108,12 @@ export const ModalEditCategories = ({ onDisableAll, ...rest }: Props) => {
             </ModalContent>
             <ModalTwoFooter>
                 <span className="w-full">
-                    <Button fullWidth onClick={handleSaveCategories} loading={loading}>
+                    <Button
+                        fullWidth
+                        onClick={handleSaveCategories}
+                        loading={loading}
+                        data-testid="save-categories-button"
+                    >
                         {c('Action').t`Done`}
                     </Button>
                 </span>

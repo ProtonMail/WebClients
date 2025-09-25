@@ -11,7 +11,7 @@ export const mockActiveCategoriesData = [
     MAILBOX_LABEL_IDS.CATEGORY_FORUMS,
 ]
     .map(getCategoryData)
-    .map((data) => ({ ...data, checked: true }));
+    .map((data) => ({ ...data, checked: true, notify: true }));
 
 export const mockCategoriesStore = [
     {
