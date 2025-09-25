@@ -95,9 +95,6 @@
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
-      "Add Zoom meeting": [
-        "Zoom-Meeting hinzufügen"
-      ],
       "Adding conferencing details": [
         "Konferenzdetails werden hinzugefügt"
       ],
@@ -4993,6 +4990,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill Switch**: Stoppt Datenlecks, indem es das Internet blockiert, wenn die VPN-Verbindung unerwartet abbricht."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Schritt 1:** Lade deine Freunde mit deinem Empfehlungs-Link zu ${ BRAND_NAME } ein."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Schritt 2:** Deine Freunde bekommen ihr gewähltes ${ BRAND_NAME }-Abonnement 2 Wochen kostenlos."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Schritt 2:** Deine Freunde erhalten ihr Abonnement 2 Wochen kostenlos."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Schritt 3:** Erhalte ${ referrerRewardAmount } Guthaben für jeden Freund, der ein Abonnement abschließt."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Schritt 3:** Erhalte ${ referrerRewardAmount } Guthaben für jede Person, die ein Abonnement abschließt."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } Bonus-Speicherplatz"
       ],
@@ -5185,6 +5197,9 @@
       ],
       "Copy the link to clipboard": [
         "Link in die Zwischenablage kopieren"
+      ],
+      "Copy your referral link": [
+        "Einladungslink kopieren"
       ],
       "Country code": [
         "Ländercode"
@@ -5692,6 +5707,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
+      ],
+      "Referral link copied to your clipboard": [
+        "Empfehlungslink wurde in die Zwischenablage kopiert"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Durch das Aktualisieren der Seite oder ${ link } werden die meisten Probleme automatisch gelöst."
@@ -6527,6 +6545,9 @@
       "Country": [
         "Land"
       ],
+      "Credits": [
+        "Guthaben"
+      ],
       "Date and time": [
         "Datum und Zeit"
       ],
@@ -6547,6 +6568,9 @@
       ],
       "Don't ask again": [
         "Nicht erneut fragen"
+      ],
+      "Don't show this again": [
+        "Nicht erneut anzeigen"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "z. B. Amazon, eBay, Etsy"
@@ -8977,6 +9001,9 @@
         "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monat verlängert. Du kannst jederzeit kündigen.",
         "Dann wird es automatisch zu ${ renewPriceStr } für ${ renewalLength } Monate verlängert. Du kannst jederzeit kündigen."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Diese Aktion erweitert dein bestehendes Abonnement. Dir werden nur die neuen Ergänzungen für die verbleibende Zeit des aktuellen Abrechnungszeitraums in Rechnung gestellt. Das Verlängerungsdatum deines Abonnements wird nicht geändert."
+      ],
       "This number will be shown on all future invoices": [
         "Diese Nummer wird auf allen zukünftigen Rechnungen angezeigt."
       ],
@@ -9017,6 +9044,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Deine Karte wurde abgelehnt. Bitte versuche es mit einer anderen Karte oder wende dich an deine Bank, um die Belastung zu autorisieren."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Gutschrift für den ungenutzten Teil deines vorherigen Abonnements"
+      ],
+      "Credits will be added to your balance": [
+        "Das Guthaben wird dir gutgeschrieben."
       ]
     },
     "Payments.plan_name": {
@@ -9434,6 +9469,40 @@
         "für 12 Monate"
       ]
     },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } pro Empfehlung"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Verdiene bis zu ${ maxRewardAmount } Guthaben. Du erhältst ${ referrerRewardAmount }, wenn die von dir eingeladene Person ein ${ BRAND_NAME }-Abonnement abschließt."
+      ],
+      "Friend joined": [
+        "Freund ist beigetreten",
+        "Freunde sind beigetreten"
+      ],
+      "Friend subscribed": [
+        "Freund hat abonniert",
+        "Freunde haben abonniert"
+      ],
+      "Invite friends. Get credits.": [
+        "Lade Freunde ein. Erhalte Guthaben."
+      ],
+      "Invited friends": [
+        "Eingeladene Freunde"
+      ],
+      "More sharing options": [
+        "Weitere Teilen-Optionen"
+      ],
+      "Refer friends": [
+        "Freunde werben"
+      ],
+      "Start earning credits": [
+        "Fange an, Guthaben zu verdienen"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Du kannst bis zu **${ maxRewardAmount }** als Guthaben erhalten."
+      ]
+    },
     "Reload event button tooltip": {
       "Reload event": [
         "Termin neu laden"
@@ -9834,12 +9903,6 @@
       "${ seconds } second": [
         "${ seconds } Sekunde",
         "${ seconds } Sekunden"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } Monat KOSTENLOS",
-        "${ n } Monate KOSTENLOS"
       ]
     },
     "specialoffer: Deal details": {
@@ -11101,9 +11164,6 @@
       "Create public link": [
         "Öffentlichen Link erstellen"
       ],
-      "Credits": [
-        "Guthaben"
-      ],
       "Currency": [
         "Währung"
       ],
@@ -11258,6 +11318,9 @@
       ],
       "How does it all work?": [
         "Wie funktioniert das Ganze?"
+      ],
+      "How does it work?": [
+        "Wie funktioniert das?"
       ],
       "Human verification": [
         "Captcha"
@@ -11484,6 +11547,9 @@
       ],
       "Share your calendar with your team": [
         "Teile deinen Kalender mit deinem Team"
+      ],
+      "Share your link": [
+        "Deinen Link teilen"
       ],
       "Show time zones for event start and end times": [
         "Zeitzonen für Beginn und Ende des Termins anzeigen"

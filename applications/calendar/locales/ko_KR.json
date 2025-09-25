@@ -95,9 +95,6 @@
       "Add to group": [
         "그룹에 추가"
       ],
-      "Add Zoom meeting": [
-        "Zoom 미팅 추가"
-      ],
       "Adding conferencing details": [
         "화상 회의 상세 정보 추가 중"
       ],
@@ -5111,6 +5108,9 @@
       "Copy the link to clipboard": [
         "복사한 링크 붙이기"
       ],
+      "Copy your referral link": [
+        "당신의 추천인 링크를 공유하세요"
+      ],
       "Country code": [
         "국가 코드"
       ],
@@ -5611,6 +5611,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "복구 정보는 삭제하도록 설정하지 않는 한 이 기기에 유지됩니다."
+      ],
+      "Referral link copied to your clipboard": [
+        "클립보드에 추천인 코드가 복사되었습니다"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
@@ -6435,6 +6438,9 @@
       "Country": [
         "국가"
       ],
+      "Credits": [
+        "크레딧"
+      ],
       "Date and time": [
         "날짜 및 시간"
       ],
@@ -6455,6 +6461,9 @@
       ],
       "Don't ask again": [
         "다시 묻지 않기"
+      ],
+      "Don't show this again": [
+        "다시 보지 않기"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "예: Amazon, eBay, Etsy"
@@ -9563,11 +9572,6 @@
         "${ seconds }초"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n }개월 무료"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "사용자 1명"
@@ -10798,9 +10802,6 @@
       "Create public link": [
         "공개 링크 생성"
       ],
-      "Credits": [
-        "크레딧"
-      ],
       "Currency": [
         "통화"
       ],
@@ -10953,6 +10954,9 @@
       ],
       "How does it all work?": [
         "어떤 방식으로 작동하나요?"
+      ],
+      "How does it work?": [
+        "어떻게 작동하나요?"
       ],
       "Human verification": [
         "사람임을 인증"
