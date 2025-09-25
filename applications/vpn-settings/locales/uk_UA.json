@@ -6919,9 +6919,6 @@
       "Allowed domain": [
         "Дозволений домен"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Дозволяє всім співробітникам вашої організації легко додавати посилання на відеоконференції до своїх запрошень у календарі."
-      ],
       "Amount": [
         "Всього"
       ],
@@ -7054,6 +7051,9 @@
       "Country": [
         "Країна"
       ],
+      "Credits": [
+        "Кредити"
+      ],
       "Credits used": [
         "Витрата кредитів"
       ],
@@ -7092,6 +7092,9 @@
       ],
       "Domain name": [
         "Ім'я домену"
+      ],
+      "Don't show this again": [
+        "Більше не показувати"
       ],
       "e.g. example.com": [
         "наприклад, example.com"
@@ -7473,9 +7476,6 @@
       ],
       "Verification code": [
         "Код підтвердження"
-      ],
-      "Video conferencing with Zoom": [
-        "Відеоконференції із Zoom"
       ],
       "Vulnerable": [
         "Вразливий"
@@ -9373,9 +9373,6 @@
       "Let's talk": [
         "Поговорімо"
       ],
-      "Limited time offer": [
-        "Обмежена пропозиція"
-      ],
       "Recommended": [
         "Рекомендовано"
       ]
@@ -10645,14 +10642,6 @@
         "${ seconds } секунди",
         "${ seconds } секунд",
         "${ seconds } секунди"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } місяць БЕЗПЛАТНО",
-        "${ n } місяці БЕЗПЛАТНО",
-        "${ n } місяців БЕЗПЛАТНО",
-        "${ n } місяців БЕЗПЛАТНО"
       ]
     },
     "specialoffer: Deal details": {
@@ -12785,9 +12774,6 @@
       ],
       "Verifying your payment...": [
         "Перевірка оплати..."
-      ],
-      "Video conferencing": [
-        "Відеоконференція"
       ],
       "Warning": [
         "Попередження"
