@@ -95,9 +95,6 @@
       "Add to group": [
         "グループに追加"
       ],
-      "Add Zoom meeting": [
-        "Zoomミーティングを追加"
-      ],
       "Adding conferencing details": [
         "会議の詳細を追加しています"
       ],
@@ -5114,6 +5111,9 @@
       "Copy the link to clipboard": [
         "リンクをクリップボードにコピー"
       ],
+      "Copy your referral link": [
+        "招待リンクをコピー"
+      ],
       "Country code": [
         "国コード"
       ],
@@ -5614,6 +5614,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
+      ],
+      "Referral link copied to your clipboard": [
+        "招待リンクをクリップボードにコピーしました"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
@@ -6438,6 +6441,9 @@
       "Country": [
         "国"
       ],
+      "Credits": [
+        "クレジット"
+      ],
       "Date and time": [
         "日付と時刻"
       ],
@@ -6458,6 +6464,9 @@
       ],
       "Don't ask again": [
         "今後表示しない"
+      ],
+      "Don't show this again": [
+        "次回から表示しない"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "Amazon、eBay、Etsyなど"
@@ -9572,11 +9581,6 @@
         "${ seconds } 秒"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } か月無料"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 ユーザー"
@@ -10807,9 +10811,6 @@
       "Create public link": [
         "公開リンクを作成"
       ],
-      "Credits": [
-        "クレジット"
-      ],
       "Currency": [
         "通貨"
       ],
@@ -10962,6 +10963,9 @@
       ],
       "How does it all work?": [
         "どのように機能しますか？"
+      ],
+      "How does it work?": [
+        "どのように動作しますか?"
       ],
       "Human verification": [
         "人間であることの検証"
