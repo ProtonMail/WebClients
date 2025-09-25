@@ -141,8 +141,8 @@
       "Add label": [
         "Añadir una etiqueta"
       ],
-      "Add more seats": [
-        "Añadir más licencias"
+      "add more seats": [
+        "añadir más licencias"
       ],
       "Add notification": [
         "Añadir notificación"
@@ -1581,8 +1581,8 @@
       "User": [
         "Usuario"
       ],
-      "users and addresses": [
-        "usuarios y direcciones"
+      "Users and addresses": [
+        "Usuarios y direcciones"
       ],
       "Verify": [
         "Verificar"
@@ -8308,6 +8308,15 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Invita a tus amigos** a ${ BRAND_NAME } con tu enlace de referidos."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Paso 1:** Invita a tus amigos a ${ BRAND_NAME } con tu enlace de referidos."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Paso 2:** Tus amigos obtienen 2 semanas gratis en su plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Paso 3:** Consigue ${ referrerRewardAmount } créditos por cada amigo que se suscriba a un plan."
+      ],
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** en todos los dispositivos"
       ],
@@ -8422,6 +8431,9 @@
         "Añadir servidor (${ availableAddedCount } disponible)",
         "Añadir servidor (${ availableAddedCount } disponibles)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Añadir enlaces de videoconferencia a las invitaciones del calendario"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Añade tu nombre y logo para crear una experiencia más personalizada para tu organización."
       ],
@@ -8496,9 +8508,6 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permite que los usuarios se conecten a servidores compartidos seguros desde la sección **Países** de la aplicación ${ VPN_APP_NAME }."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permite añadir fácilmente enlaces a videoconferencias de ${ MEET_APP_NAME } en tus invitaciones de calendario."
       ],
       "Already allocated": [
         "Ya asignado"
@@ -9294,8 +9303,8 @@
       "Groups": [
         "Grupos"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Ayuda para escribir, responder y corregir correos electrónicos. Administrar para usuarios individuales en ${ userAndAddress }. ${ addMoreSeats }"
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Ayuda a escribir, responder y corregir correos electrónicos. Si está deshabilitado, solo los administradores tendrán acceso. Administrar para usuarios individuales en ${ userAndAddress } o ${ addMoreSeats }"
       ],
       "here": [
         "aquí"
@@ -9677,8 +9686,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administra las aplicaciones ${ BRAND_NAME } a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
       ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Administra las funciones a las que los miembros de tu organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
+      "Manage which features the members of your organization can access.": [
+        "Administra a qué funciones pueden acceder los miembros de tu organización."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestiona tus preferencias de notificaciones por correo electrónico para ${ DOCS_APP_NAME }."
@@ -12072,9 +12081,6 @@
       "Allowed domain": [
         "Dominio permitido"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permite fácilmente a todos en tu organización añadir enlaces a videoconferencias a sus invitaciones de calendario."
-      ],
       "Amount": [
         "Cantidad"
       ],
@@ -12410,6 +12416,9 @@
       ],
       "Don't keep versions": [
         "No conservar versiones"
+      ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
       ],
       "Duration": [
         "Duración"
@@ -16149,9 +16158,6 @@
       "Let's talk": [
         "Habla con nosotros"
       ],
-      "Limited time offer": [
-        "Oferta por tiempo limitado"
-      ],
       "Recommended": [
         "Recomendado"
       ],
@@ -16333,9 +16339,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Iniciando sesión en ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "¡Oferta especial de lanzamiento: obtén ${ title } por ${ price } para siempre!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Oferta: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
@@ -17393,6 +17396,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } por cada referido"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Si cancelas antes de esta fecha,** pasarás a un **plan inferior** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } cuando finalice la prueba."
       ],
@@ -17407,6 +17413,15 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Disfruta de **${ planTitle }** gratis hasta el **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Invita a tus amigos. Obtén créditos."
+      ],
+      "Refer friends": [
+        "Invitar a amigos"
+      ],
+      "Start earning credits": [
+        "Empieza a ganar créditos"
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Te queda **${ daysRemaining } día** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte.",
@@ -19171,12 +19186,6 @@
         "${ seconds } segundos"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 usuario"
@@ -19377,6 +19386,9 @@
       ]
     },
     "Spotlight": {
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Obtén créditos cuando la persona que invitas se suscribe a un plan de ${ BRAND_NAME }."
+      ],
       "Get up to ${ credits } in credits.": [
         "Consigue hasta ${ credits } en créditos."
       ],
@@ -20810,6 +20822,14 @@
       "${ feature } is now active": [
         "La funcionalidad ${ feature } ya está activada."
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } amigo invitado",
+        "${ friendsInvited } amigos invitados"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } amigo suscrito",
+        "${ friendsSubscribed } amigos suscritos"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Export Tool de ${ MAIL_APP_NAME }"
       ],
@@ -21189,6 +21209,9 @@
       ],
       "Credentials": [
         "Credenciales"
+      ],
+      "Credit earned": [
+        "Crédito ganado"
       ],
       "Credits": [
         "Créditos"
@@ -22253,11 +22276,11 @@
       "Version history": [
         "Historial de versiones"
       ],
-      "Video conferencing": [
-        "Videoconferencia"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videoconferencias con ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Videoconferencia por Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Consulta los eventos de la organización al mejorar a Professional"

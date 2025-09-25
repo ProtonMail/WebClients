@@ -141,8 +141,8 @@
       "Add label": [
         "Adicionar marcador"
       ],
-      "Add more seats": [
-        "Adicionar mais licenças"
+      "add more seats": [
+        "adicionar mais licenças"
       ],
       "Add notification": [
         "Adicionar notificação"
@@ -1602,8 +1602,8 @@
       "User": [
         "Usuário"
       ],
-      "users and addresses": [
-        "usuários e endereços"
+      "Users and addresses": [
+        "Usuários e endereços"
       ],
       "Verify": [
         "Verificar"
@@ -8553,9 +8553,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permitir que os usuários se conectem a servidores compartilhados seguros na seção **Países** do aplicativo ${ VPN_APP_NAME }."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permite facilmente adicionar links de videoconferência do ${ MEET_APP_NAME } aos seus convites de calendário."
-      ],
       "Already allocated": [
         "Já alocado"
       ],
@@ -9350,9 +9347,6 @@
       "Groups": [
         "Grupos"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Ajuda a escrever, responder e revisar e-mails. Gerenciar para usuários individuais em ${ userAndAddress }. ${ addMoreSeats }"
-      ],
       "here": [
         "aqui"
       ],
@@ -9732,9 +9726,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gerencie quais aplicativos da ${ BRAND_NAME } os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Gerencie quais recursos os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gerencie suas preferências de notificação por e-mail para o ${ DOCS_APP_NAME }."
@@ -12158,9 +12149,6 @@
       "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permite que todos na sua organização adicionem facilmente links de videoconferência aos seus convites de calendário."
-      ],
       "Amount": [
         "Valor"
       ],
@@ -12499,6 +12487,9 @@
       ],
       "Don't keep versions": [
         "Não manter as versões"
+      ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
       ],
       "Duration": [
         "Duração"
@@ -16304,9 +16295,6 @@
       "Let's talk": [
         "Vamos conversar"
       ],
-      "Limited time offer": [
-        "Oferta por tempo limitado"
-      ],
       "Recommended": [
         "Recomendado"
       ],
@@ -16488,9 +16476,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Iniciando sessão em ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Oferta especial de lançamento: obtenha ${ title } por ${ price } para sempre!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Especial: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
@@ -16876,6 +16861,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito pela parte não usada no plano anterior da sua assinatura"
       ]
     },
     "Payments.plan_name": {
@@ -19350,12 +19340,6 @@
         "${ seconds } segundos"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mês GRÁTIS",
-        "${ n } meses GRÁTIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 usuário"
@@ -19556,6 +19540,9 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Receba até ${ maxRewardAmount } em crédito"
+      ],
       "Get up to ${ credits } in credits.": [
         "Receba até ${ credits } em créditos."
       ],
@@ -21381,6 +21368,9 @@
       "Credentials": [
         "Credenciais"
       ],
+      "Credit earned": [
+        "Crédito recebido"
+      ],
       "Credits": [
         "Créditos"
       ],
@@ -22462,11 +22452,11 @@
       "Version history": [
         "Histórico de versões"
       ],
-      "Video conferencing": [
-        "Videoconferência"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videoconferência com ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Videoconferência com o Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Consulta os eventos da organização ao fazer upgrade para Professional."

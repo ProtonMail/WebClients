@@ -784,6 +784,9 @@
       "Get the deal": [
         "Využít nabídku"
       ],
+      "Get the extension for ${ browser.title }": [
+        "Získejte rozšíření pro ${ browser.title }"
+      ],
       "Get the writing assistant": [
         "Získat asistenta psaní"
       ],
@@ -1445,7 +1448,7 @@
         "Odeslat"
       ],
       "Subscribe now": [
-        "Přihlásit se k odběru"
+        "Předplatit si nyní"
       ],
       "Support": [
         "Podpora"
@@ -8708,9 +8711,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožňuje uživatelům připojit se k bezpečným sdíleným serverům ze sekce **Země** v aplikaci ${ VPN_APP_NAME }."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Umožňuje snadno přidávat odkazy na videokonference ${ MEET_APP_NAME } do vašich pozvánek kalendáře."
-      ],
       "Already allocated": [
         "Již bylo přiděleno"
       ],
@@ -12290,7 +12290,7 @@
         "5 minut"
       ],
       "500 GB Storage": [
-        "500 GB úložiště"
+        "500 GB prostoru"
       ],
       "6 Pass Plus accounts": [
         "6 Pass Plus účtů"
@@ -12378,9 +12378,6 @@
       ],
       "Allowed domain": [
         "Povolená doména"
-      ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Umožňuje všem ve vaší organizaci snadno přidávat odkazy na videokonference do jejich pozvánek kalendáře."
       ],
       "Amount": [
         "Částka"
@@ -12721,6 +12718,9 @@
       "Don't keep versions": [
         "Nezachovávat verze"
       ],
+      "Don't show this again": [
+        "Příště nezobrazovat"
+      ],
       "Duration": [
         "Doba trvání"
       ],
@@ -12833,7 +12833,7 @@
         "Název brány"
       ],
       "Get everything in Free, plus:": [
-        "Získejte vše, co je ve verzi Zdarma, a navíc:"
+        "Získejte vše, co je ve verzi Free, plus:"
       ],
       "Gift code": [
         "Dárkový kód"
@@ -16618,9 +16618,6 @@
       "Let's talk": [
         "Promluvme si"
       ],
-      "Limited time offer": [
-        "Časově omezená nabídka"
-      ],
       "Recommended": [
         "Doporučeno"
       ],
@@ -16802,9 +16799,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Přihlášení do ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Speciální akce při uvedení na trh: Získejte ${ title } za ${ price } navždy!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Speciální: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
@@ -17796,7 +17790,7 @@
         "**Pokud nezrušíte,** váš plný tarif začne platit a získáte **${ referrerRewardAmount }** v kreditech."
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
-        "**Pokud si přihlásíte odběr před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
+        "**Pokud si předplatíte službu před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Zbývá vám **${ daysRemaining } den** k prozkoumání všech výkonných funkcí, které **${ planTitle }** nabízí.",
@@ -19640,14 +19634,6 @@
         "${ seconds } sekund"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } měsíc ZDARMA",
-        "${ n } měsíce ZDARMA",
-        "${ n } měsíců ZDARMA",
-        "${ n } měsíců ZDARMA"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 uživatel"
@@ -20849,6 +20835,9 @@
     "Subtitle": {
       "Pay once, access forever.": [
         "Zaplaťte jednou a přistupujte navždy."
+      ],
+      "per month, billed annually": [
+        "za měsíc, účtováno ročně"
       ],
       "View VPN session details for your organization.": [
         "Zobrazení detailů relace VPN pro vaši organizaci."
@@ -22080,7 +22069,7 @@
         "Přeposlat e-maily"
       ],
       "Free": [
-        "Zdarma"
+        "Free"
       ],
       "Gateway": [
         "Brána"
@@ -22521,7 +22510,7 @@
         "Bezpečný e-mail se sídlem ve Švýcarsku"
       ],
       "Secure your passwords. Everywhere.": [
-        "Zabezpečte Vaše hesla. Kdekoliv."
+        "Zabezpečte svá hesla. Kdekoliv."
       ],
       "Security and privacy": [
         "Bezpečnost a soukromí"
@@ -22820,8 +22809,8 @@
       "Version history": [
         "Historie verzí"
       ],
-      "Video conferencing": [
-        "Videokonference"
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonference pomocí ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Zobrazení událostí organizace po navýšení na Professional"
@@ -23768,6 +23757,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "S tarifem ${ planTitlePlusMaybeBrand } získáte bezplatný přístup ke všem službám ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN brány"
       ]
     },
     "VPN info": {

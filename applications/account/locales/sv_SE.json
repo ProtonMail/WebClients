@@ -141,8 +141,8 @@
       "Add label": [
         "Lägg till etikett"
       ],
-      "Add more seats": [
-        "Lägg till fler licenser"
+      "add more seats": [
+        "lägg till fler licenser"
       ],
       "Add notification": [
         "Lägg till avisering"
@@ -1596,8 +1596,8 @@
       "User": [
         "Användare"
       ],
-      "users and addresses": [
-        "användare och adresser"
+      "Users and addresses": [
+        "Användare och adresser"
       ],
       "Verify": [
         "Verifiera"
@@ -2129,6 +2129,9 @@
       ]
     },
     "b2b_trials_2025_Label": {
+      "Amount due after trial": [
+        "Belopp att betala efter provperiod"
+      ],
       "Amount due now": [
         "Att betala nu"
       ]
@@ -8284,6 +8287,15 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Bjud in dina vänner** till ${ BRAND_NAME } med din hänvisningslänk."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Steg 1:** Bjud in dina vänner till ${ BRAND_NAME } med din hänvisningslänk."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt paket."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje person som prenumererar på ett paket."
+      ],
       "**Sync codes** to all your devices": [
         "**Synkronisera koder** till alla dina enheter"
       ],
@@ -8400,6 +8412,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Lägg till server (${ availableAddedCount } tillgänglig)",
         "Lägg till server (${ availableAddedCount } tillgängliga)"
+      ],
+      "Add video conferencing links to calendar invitations": [
+        "Lägg till videokonferenslänkar till kalenderinbjudningar"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Lägg till ditt namn och din logga för att skapa en mer personifierad upplevelse för din organisation."
@@ -9267,8 +9282,8 @@
       "Groups": [
         "Grupper"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Hjälper till att skriva, svara på och korrekturläsa e-post. Hantera för enskilda användare i ${ userAndAddress }. ${ addMoreSeats }"
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Hjälper till att skriva, svara på och korrekturläsa e-post. Om inaktiverad kommer endast administratörer ha åtkomst. Hantera för enskilda användare i ${ userAndAddress } eller ${ addMoreSeats }"
       ],
       "here": [
         "här"
@@ -9650,8 +9665,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Hantera vilka ${ BRAND_NAME }-applikationer som medlemmarna i din organisation har åtkomst till. Om funktionen är inaktiverad har endast administratörer åtkomst."
       ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Hantera vilka funktioner medlemmarna i din organisation kan komma åt. Om de är inaktiverade har endast administratörer åtkomst."
+      "Manage which features the members of your organization can access.": [
+        "Hantera vilka funktioner medlemmarna i din organisation kan komma åt."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Hantera dina preferenser för e-postavisering för ${ DOCS_APP_NAME }."
@@ -12041,9 +12056,6 @@
       "Allowed domain": [
         "Tillåten domän"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Tillåter alla i din organisation att sömlöst lägga till videokonferenslänkar till sina kalenderinbjudningar."
-      ],
       "Amount": [
         "Belopp"
       ],
@@ -12382,6 +12394,9 @@
       ],
       "Don't keep versions": [
         "Behåll inte versioner"
+      ],
+      "Don't show this again": [
+        "Visa inte detta igen"
       ],
       "Duration": [
         "Varaktighet"
@@ -16176,9 +16191,6 @@
       "Let's talk": [
         "Låt oss prata"
       ],
-      "Limited time offer": [
-        "Tidsbegränsat erbjudande"
-      ],
       "Recommended": [
         "Rekommenderad"
       ],
@@ -16360,9 +16372,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Loggar in på ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Speciallanseringserbjudande: Få ${ title } för ${ price } för alltid!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } till ${ priceString }."
@@ -16705,6 +16714,9 @@
         "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Denna åtgärd utökar den befintliga prenumerationen. Du kommer endast att debiteras för de nya utökningarna och den återstående tiden av den nuvarande faktureringsperioden. Förnyelsedatumet för din prenumeration kommer inte att ändras."
+      ],
       "This number will be shown on all future invoices": [
         "Detta nummer kommer att visas på alla framtida fakturor"
       ],
@@ -16739,6 +16751,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit för den oanvända delen av din tidigare paketprenumeration"
+      ],
+      "Credits will be added to your balance": [
+        "Krediter kommer att läggas till ditt saldo"
       ]
     },
     "Payments.plan_name": {
@@ -17280,6 +17300,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per hänvisning"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Om du avbryter före detta datum** kommer du att **nedgraderas** till ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } när provperioden slutar."
       ],
@@ -17294,6 +17317,18 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Njut av **${ planTitle }** gratis fram till **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Bjud in vänner. Få krediter."
+      ],
+      "Refer friends": [
+        "Hänvisa vänner"
+      ],
+      "Start earning credits": [
+        "Börja tjäna krediter"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Du kan få upp till **${ maxRewardAmount }** i kredit."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Du har **${ daysRemaining } dag kvar** att utforska alla kraftfulla funktioner som **${ planTitle }** har att erbjuda.",
@@ -19019,12 +19054,6 @@
         "${ seconds } sekunder"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } månad GRATIS",
-        "${ n } månader GRATIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 användare"
@@ -19225,6 +19254,12 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Tjäna upp till ${ maxRewardAmount } i kredit"
+      ],
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Få krediter när personen du bjuder in prenumererar på ett ${ BRAND_NAME }-paket."
+      ],
       "Get up to ${ credits } in credits.": [
         "Få upp till ${ credits } i krediter."
       ],
@@ -20667,6 +20702,10 @@
       "${ feature } is now active": [
         "${ feature } är nu aktivt"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } vän inbjuden",
+        "${ friendsInvited } vänner inbjudna"
+      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
@@ -21050,6 +21089,9 @@
       "Credentials": [
         "Inloggningsuppgifter"
       ],
+      "Credit earned": [
+        "Intjänad kredit"
+      ],
       "Credits": [
         "Krediter"
       ],
@@ -21376,6 +21418,9 @@
       "Forward emails": [
         "Vidarebefordra e-post"
       ],
+      "Free": [
+        "Gratis"
+      ],
       "Gateway": [
         "Gateway"
       ],
@@ -21658,6 +21703,9 @@
       ],
       "Other sign-in issues": [
         "Andra inloggningsproblem"
+      ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus Lifetime för ${ plusLifetimePrice }"
       ],
       "Password": [
         "Lösenord"
@@ -22119,11 +22167,11 @@
       "Version history": [
         "Versionshistorik"
       ],
-      "Video conferencing": [
-        "Videokonferenser"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videokonferens med ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Videokonferenser med Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Visa organisationens händelser genom att uppgradera till Professional"

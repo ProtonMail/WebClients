@@ -141,9 +141,6 @@
       "Add label": [
         "라벨 추가"
       ],
-      "Add more seats": [
-        "사용 권한 더 추가"
-      ],
       "Add notification": [
         "알림 추가"
       ],
@@ -1583,9 +1580,6 @@
       ],
       "User": [
         "사용자"
-      ],
-      "users and addresses": [
-        "사용자 및 주소"
       ],
       "Verify": [
         "인증"
@@ -8440,9 +8434,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "구성원이 ${ VPN_APP_NAME } 앱의 **국가** 섹션에서 보안 공유 서버에 연결할 수 있도록 허용합니다."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "캘린더 초대장에 ${ MEET_APP_NAME } 화상 회의 링크를 손쉽게 추가할 수 있습니다."
-      ],
       "Already allocated": [
         "이미 할당 됨"
       ],
@@ -9232,9 +9223,6 @@
       "Groups": [
         "그룹"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "이메일 작성, 답장 및 교정을 지원합니다. ${ userAndAddress }에서 개별 사용자들을 관리하세요. ${ addMoreSeats }"
-      ],
       "here": [
         "여기"
       ],
@@ -9612,9 +9600,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "조직 구성원이 접근할 수 있는 ${ BRAND_NAME } 응용 프로그램을 관리합니다. 비활성화된 경우 관리자만 접근할 수 있습니다."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "조직 구성원이 접근할 수 있는 기능을 관리합니다. 비활성화된 경우 관리자만 접근할 수 있습니다."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "${ DOCS_APP_NAME }의 이메일 알림 설정을 관리하세요."
@@ -11988,9 +11973,6 @@
       "Allowed domain": [
         "허용된 도메인"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "조직의 모든 구성원이 캘린더 초대장에 화상 회의 링크를 원활하게 추가할 수 있습니다."
-      ],
       "Amount": [
         "금액"
       ],
@@ -12326,6 +12308,9 @@
       ],
       "Don't keep versions": [
         "버전을 유지하지 않기"
+      ],
+      "Don't show this again": [
+        "다시 보지 않기"
       ],
       "Duration": [
         "기간"
@@ -16051,9 +16036,6 @@
       "Let's talk": [
         "상담 및 계약 필요"
       ],
-      "Limited time offer": [
-        "기간 한정 세일"
-      ],
       "Recommended": [
         "권장"
       ],
@@ -16235,9 +16217,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }로 로그인 중"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "특별 할인 제안: ${ title } 을(를) 영원히 ${ price } 가격으로 누려보세요!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "특전: ${ priceString }에 ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 구매"
@@ -18933,11 +18912,6 @@
       ],
       "${ seconds } second": [
         "${ seconds }초"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n }개월 무료"
       ]
     },
     "specialoffer: Deal details": {
@@ -21967,9 +21941,6 @@
       ],
       "Version history": [
         "버전 기록"
-      ],
-      "Video conferencing": [
-        "화상 회의"
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME }(으)로 화상 회의"

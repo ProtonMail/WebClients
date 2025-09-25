@@ -141,9 +141,6 @@
       "Add label": [
         "Legg til etikett"
       ],
-      "Add more seats": [
-        "Legg til flere lisenser"
-      ],
       "Add notification": [
         "Legg til varsel"
       ],
@@ -1601,9 +1598,6 @@
       ],
       "User": [
         "Bruker"
-      ],
-      "users and addresses": [
-        "brukere og adresser"
       ],
       "Verify": [
         "Verifiser"
@@ -8550,9 +8544,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Gjør det mulig å sømløst legge til ${ MEET_APP_NAME }-videokonferansekoblinger i kalenderinvitasjonene dine."
-      ],
       "Already allocated": [
         "Allerede allokert"
       ],
@@ -9347,9 +9338,6 @@
       "Groups": [
         "Grupper"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Hjelper med å skrive, svare på og korrekturlese e-poster. Administrer for individuelle brukere i ${ userAndAddress }. ${ addMoreSeats }"
-      ],
       "here": [
         "her"
       ],
@@ -9729,9 +9717,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrer hvilke ${ BRAND_NAME }-applikasjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Administrer hvilke funksjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Administrer innstillingene for e-postvarsler for ${ DOCS_APP_NAME }."
@@ -12155,9 +12140,6 @@
       "Allowed domain": [
         "Tillatt domene"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Gjør det mulig for alle i organisasjonen å sømløst legge til videokonferansekoblinger i kalenderinvitasjonene sine."
-      ],
       "Amount": [
         "Beløp"
       ],
@@ -12496,6 +12478,9 @@
       ],
       "Don't keep versions": [
         "Ikke behold versjoner"
+      ],
+      "Don't show this again": [
+        "Ikke vis dette igjen"
       ],
       "Duration": [
         "Varighet"
@@ -16307,9 +16292,6 @@
       "Let's talk": [
         "La oss snakke"
       ],
-      "Limited time offer": [
-        "Tidsbegrenset tilbud"
-      ],
       "Recommended": [
         "Anbefalt"
       ],
@@ -16491,9 +16473,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Logger på ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Spesielt oppstartstilbud: få ${ title } for ${ price } for alltid!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Spesialtilbud: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } til ${ priceString }."
@@ -16830,6 +16809,9 @@
         "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
         "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Denne handlingen utvider det eksisterende abonnementet. Du vil kun bli belastet for de nye tilleggene og den gjenværende tiden av den nåværende faktureringssyklusen. Fornyelsesdatoen for abonnementet ditt vil ikke bli endret."
+      ],
       "This number will be shown on all future invoices": [
         "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ],
@@ -16873,6 +16855,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kreditt for den ubrukte delen av ditt forrige planabonnement"
+      ],
+      "Credits will be added to your balance": [
+        "Kreditter vil bli lagt til saldoen din"
       ]
     },
     "Payments.plan_name": {
@@ -19250,12 +19240,6 @@
       "${ seconds } second": [
         "${ seconds } sekund",
         "${ seconds } sekunder"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } måned GRATIS",
-        "${ n } måneder GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -22354,9 +22338,6 @@
       ],
       "Version history": [
         "Versjonshistorikk"
-      ],
-      "Video conferencing": [
-        "Videokonferanse"
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videokonferanser med ${ MEET_APP_NAME }"
