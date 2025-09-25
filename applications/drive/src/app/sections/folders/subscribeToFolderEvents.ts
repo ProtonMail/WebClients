@@ -1,4 +1,4 @@
-import { getDrive, splitPublicLinkUid } from '@proton/drive/index';
+import { getDrive } from '@proton/drive/index';
 
 import type { LinkShareUrl } from '../../store';
 import { getActionEventManager } from '../../utils/ActionEventManager/ActionEventManager';
@@ -6,7 +6,6 @@ import { ActionEventName } from '../../utils/ActionEventManager/ActionEventManag
 import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
-import { dateToLegacyTimestamp } from '../../utils/sdk/legacyTime';
 import { mapNodeToLegacyItem } from '../../utils/sdk/mapNodeToLegacyItem';
 import type { FolderViewData } from './useFolder.store';
 import { useFolderStore } from './useFolder.store';
@@ -18,25 +17,6 @@ const getLegacyItemFromUid = async (uid: string, folder: FolderViewData) => {
         const drive = getDrive();
         const { node } = getNodeEntity(await drive.getNode(uid));
         legacyItem = await mapNodeToLegacyItem(node, folder.shareId);
-        if (node.isShared) {
-            const shareResult = await drive.getSharingInfo(node.uid);
-            if (shareResult && shareResult.publicLink) {
-                const { shareId, publicLinkId } = splitPublicLinkUid(shareResult.publicLink.uid);
-                shareUrl = {
-                    id: shareId,
-                    token: publicLinkId,
-                    isExpired: Boolean(
-                        shareResult.publicLink?.expirationTime &&
-                            new Date(shareResult.publicLink.expirationTime) < new Date()
-                    ),
-                    url: shareResult.publicLink.url,
-                    createTime: dateToLegacyTimestamp(shareResult.publicLink.creationTime),
-                    expireTime: shareResult.publicLink.expirationTime
-                        ? dateToLegacyTimestamp(shareResult.publicLink.expirationTime)
-                        : null,
-                };
-            }
-        }
     } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'Unhandled Error';
         sendErrorReport(new EnrichedError(errorMessage, { tags: { component: 'drive-sdk' }, extra: { uid } }));

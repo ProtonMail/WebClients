@@ -216,7 +216,11 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                 const abortController = new AbortController();
 
                 // Use the drive.iterateFolderChildren method
-                for await (const maybeNode of drive.iterateFolderChildren(targetFolderId, abortController.signal)) {
+                for await (const maybeNode of drive.iterateFolderChildren(
+                    targetFolderId,
+                    undefined,
+                    abortController.signal
+                )) {
                     // Handle the MaybeNode type - check if it's successful
                     if ('ok' in maybeNode && maybeNode.ok && maybeNode.value) {
                         const node = maybeNode.value;
@@ -228,7 +232,9 @@ export function useDriveSDK(): DriveSDKState & DriveSDKMethods {
                             nodeId: (node as any).uid || (node as any).linkId || (node as any).nodeId,
                             name: (node as any).name,
                             type: isFile ? 'file' : 'folder',
-                            size: isFile ? ((node as any).size || (node as any).fileSize || (node as any).contentSize) : undefined,
+                            size: isFile
+                                ? (node as any).size || (node as any).fileSize || (node as any).contentSize
+                                : undefined,
                             mimeType: isFile ? (node as any).mimeType : undefined,
                             mediaType: isFile ? (node as any).mediaType : undefined,
                             modifiedTime: (node as any).modifyTime || (node as any).modifiedTime,

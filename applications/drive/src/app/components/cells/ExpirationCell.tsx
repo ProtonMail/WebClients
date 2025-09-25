@@ -4,6 +4,8 @@ import { TableCell, TimeIntl, useActiveBreakpoint } from '@proton/components';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import { getPublicLinkIsExpired } from '../../utils/sdk/getPublicLinkIsExpired';
+
 interface ExpirationCellProps {
     expirationTime: Date | undefined;
 }
@@ -16,7 +18,7 @@ export const ExpirationCell = ({ expirationTime }: ExpirationCellProps) => {
     ) : (
         <span>{c('Label').t`Expired`}</span>
     );
-    const isExpired = !!expirationTime && expirationTime < new Date();
+    const isExpired = getPublicLinkIsExpired(expirationTime);
 
     const expiration = expirationTime ? (
         <div className="flex flex-nowrap">

@@ -27,7 +27,7 @@ export const useSidebarFolders = () => {
 
         updateItem(folderUid, { hasLoadedChildren: false, isLoading: true });
         try {
-            for await (const maybeNode of drive.iterateFolderChildren(folderUid)) {
+            for await (const maybeNode of drive.iterateFolderChildren(folderUid, { type: NodeType.Folder })) {
                 const { node } = getNodeEntity(maybeNode);
                 if (node.type === NodeType.Folder) {
                     setItem({

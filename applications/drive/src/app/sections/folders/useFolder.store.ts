@@ -3,7 +3,6 @@ import { devtools } from 'zustand/middleware';
 
 import { MemberRole } from '@proton/drive/index';
 
-import type { LinkShareUrl } from '../../store';
 import type { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 
 export type FolderViewItem = {
@@ -25,8 +24,6 @@ export type FolderViewItem = {
     trashed: number | null;
     rootUid?: string;
     parentUid: string | undefined;
-    // This is to support compatibility with legacy
-    shareUrl?: LinkShareUrl;
 };
 
 export type FolderViewData = {
