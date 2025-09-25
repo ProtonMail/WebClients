@@ -15,3 +15,9 @@ export interface LabelCount {
     Total?: number;
     Unread?: number;
 }
+
+export interface SafeLabelCount {
+    LabelID: string;
+    Total: number;
+    Unread: number;
+}
