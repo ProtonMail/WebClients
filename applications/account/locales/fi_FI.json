@@ -11310,9 +11310,6 @@
       "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Sallii videoneuvottelulinkkien saumattoman lisäämisen kalenterikutsuihin kaikille organisaatiosi jäsenille."
-      ],
       "Amount": [
         "Summa"
       ],
@@ -11648,6 +11645,9 @@
       ],
       "Don't keep versions": [
         "Älä säilytä versioita"
+      ],
+      "Don't show this again": [
+        "Älä näytä tätä uudelleen"
       ],
       "Duration": [
         "Kesto"
@@ -15236,9 +15236,6 @@
       "Let's talk": [
         "Keskustellaan"
       ],
-      "Limited time offer": [
-        "Vain rajoitetun ajan"
-      ],
       "Recommended": [
         "Suositus"
       ],
@@ -15420,9 +15417,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Kirjaudutaan ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Erikoistarjous: Hanki ${ title } pysyvästi hintaan ${ price }!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Erikoistarjous: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } hintaan ${ priceString }."
@@ -17720,12 +17714,6 @@
       "${ seconds } second": [
         "${ seconds } sekunti",
         "${ seconds } sekuntia"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } kuukausi ILMAISEKSI",
-        "${ n } kuukautta ILMAISEKSI"
       ]
     },
     "specialoffer: Deal details": {
@@ -20686,9 +20674,6 @@
       ],
       "Version history": [
         "Versiohistoria"
-      ],
-      "Video conferencing": [
-        "Videoneuvottelu"
       ],
       "VPN apps": [
         "VPN-sovellukset"

@@ -11995,9 +11995,6 @@
       "Allowed domain": [
         "Dozwolona domena"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Zezwalaj wszystkim w organizacji na dodawanie linków do wideokonferencji w zaproszeniach."
-      ],
       "Amount": [
         "Kwota"
       ],
@@ -12330,6 +12327,9 @@
       ],
       "Don't keep versions": [
         "Nie zachowuj wersji"
+      ],
+      "Don't show this again": [
+        "Nie pokazuj ponownie"
       ],
       "Duration": [
         "Czas trwania"
@@ -16111,9 +16111,6 @@
       "Let's talk": [
         "Porozmawiajmy"
       ],
-      "Limited time offer": [
-        "Oferta ograniczona czasowo"
-      ],
       "Recommended": [
         "Zalecany"
       ],
@@ -16295,9 +16292,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Logowanie do ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Oferta specjalna na start: Uzyskaj ${ title } za ${ price } na zawsze!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Oferta specjalna: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
@@ -19027,14 +19021,6 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Przejdź do planu Unlimited"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } miesiąc ZA DARMO",
-        "${ n } miesiące ZA DARMO",
-        "${ n } miesięcy ZA DARMO",
-        "${ n } miesiąca ZA DARMO"
       ]
     },
     "specialoffer: Deal details": {
@@ -22166,9 +22152,6 @@
       ],
       "Version history": [
         "Historia wersji"
-      ],
-      "Video conferencing": [
-        "Wideokonferencje"
       ],
       "View organization events by upgrading to Professional": [
         "Zobacz zdarzenia organizacji w planie Professional"
