@@ -26,7 +26,7 @@ const B2BOrganizationUpsellBanner = ({ organization, organizationMonitor }: Prop
             },
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             defaultAudience: Audience.B2B,
-            plan: organization?.PlanName
+            plan: organization?.PlanName,
         });
 
     return (
@@ -41,7 +41,11 @@ const B2BOrganizationUpsellBanner = ({ organization, organizationMonitor }: Prop
                         <b>{c('Info').t`Gain visibility across your organization`}</b>
                         <div>
                             {c('Info').t`Upgrade to Professional or a higher plan to unlock`}{' '}
-                            {organizationMonitor ? <b>{c('Info').t`Organization Monitor`}</b> : <b>{c('Info').t`Accounts`}</b>}
+                            {organizationMonitor ? (
+                                <b>{c('Info').t`Organization Monitor`}</b>
+                            ) : (
+                                <b>{c('Info').t`Accounts`}</b>
+                            )}
                             {c('Info').t` and other security features.`}{' '}
                             <Href
                                 href="https://proton.me/support/business-activity-monitor"
@@ -51,8 +55,7 @@ const B2BOrganizationUpsellBanner = ({ organization, organizationMonitor }: Prop
                     </div>
                 }
                 cta={
-                    user.isAdmin &&
-                    user.isSelf && (
+                    user.isAdmin && (
                         <Button
                             color="norm"
                             fullWidth
