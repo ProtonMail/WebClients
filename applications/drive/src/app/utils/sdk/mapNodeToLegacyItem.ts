@@ -37,6 +37,7 @@ export type LegacyItem = FileBrowserBaseItem & {
     isLocked?: boolean;
     thumbnailId: string;
     isShared?: boolean;
+    isSharedPublicly?: boolean;
     parentUid: string | undefined;
     deprecatedShareId?: string;
     rootUid?: string;
@@ -132,6 +133,7 @@ export const mapNodeToLegacyItem = async (
         rootShareId: rootNode.deprecatedShareId || defaultShareId,
         rootUid: rootNode.uid,
         isShared: node.isShared,
+        isSharedPublicly: node.isSharedPublicly,
         treeEventScopeId: node.treeEventScopeId,
     };
 };
