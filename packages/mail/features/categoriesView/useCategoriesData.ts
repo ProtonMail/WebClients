@@ -16,12 +16,12 @@ export const useCategoriesData = () => {
             const data = getCategoryData(category.ID);
             return {
                 ...data,
-                checked: !!category.Display,
+                display: !!category.Display,
                 notify: !!category.Notify,
             };
         }) || [];
 
-    const activeCategoriesTabs = categoriesTabs.filter((category) => category.checked);
+    const activeCategoriesTabs = categoriesTabs.filter((category) => category.display);
 
     return {
         categoriesStore,
