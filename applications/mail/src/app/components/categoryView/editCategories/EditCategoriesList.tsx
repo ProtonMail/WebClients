@@ -26,6 +26,7 @@ export const EditCategoriesList = ({
                         checked={category.checked}
                         onChange={() => handleCategoryCheckChange(category)}
                         id={category.id}
+                        data-testid={`${category.id}-display`}
                     />
                     <Label htmlFor={category.id} className={clsx('p-0 flex-1 flex gap-3')}>
                         <Icon
@@ -45,6 +46,7 @@ export const EditCategoriesList = ({
                             shape="ghost"
                             aria-pressed={category.notify}
                             onClick={() => handleCategoryNotifyChange(category)}
+                            data-testid={`${category.id}-notify`}
                         >
                             <Icon
                                 name={category.notify ? 'bell-filled-2' : 'bell'}
