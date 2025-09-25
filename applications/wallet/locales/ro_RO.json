@@ -496,25 +496,6 @@
         "Valoare"
       ]
     },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } lună",
-        "${ n } luni",
-        "${ n } de luni"
-      ],
-      "12 months": [
-        "12 luni"
-      ],
-      "15 months": [
-        "15 luni"
-      ],
-      "24 months": [
-        "24 de luni"
-      ],
-      "30 months": [
-        "30 de luni"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "Aplicații ${ BRAND_NAME }"
@@ -565,152 +546,16 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "Un utilizator"
-      ],
-      "3 TB": [
-        "3 TiB"
-      ],
-      "6 users": [
-        "6 utilizatori"
-      ],
       "Premium Password Manager": [
         "Manager de parole premium"
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
       ]
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Aplicația pentru desktop ${ MAIL_APP_NAME }"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } spațiu de stocare"
-      ],
-      "1 TB total": [
-        "1 TiB total"
-      ],
-      "1 user": [
-        "Un utilizator"
-      ],
-      "1 user account": [
-        "Un cont de utilizator"
-      ],
-      "10 email addresses": [
-        "10 adrese de e-mail"
-      ],
-      "2 users": [
-        "Doi utilizatori"
-      ],
-      "3 TB": [
-        "3 TiB"
-      ],
-      "6 user accounts": [
-        "6 conturi de utilizator"
-      ],
-      "6 users": [
-        "6 utilizatori"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Peste 8.500 de servere în peste 110 de țări"
-      ],
-      "Ad-blocker and malware protection": [
-        "Protecție programe malițioase și blocare reclame"
-      ],
-      "Admin panel to manage your family": [
-        "Panou de administrare pentru gestionarea familiei"
-      ],
-      "Advanced account protection": [
-        "Protecție avansată a contului"
-      ],
-      "Easily add or remove users": [
-        "Adăugare și eliminare ușoară utilizatori"
-      ],
-      "High speed streaming": [
-        "Transmisii în flux de mare viteză"
-      ],
-      "One-time payment, lifetime deal": [
-        "O singură plată, ofertă pe viață"
-      ],
-      "Online document editor": [
-        "Editor de documente online"
-      ],
-      "Password health alerts": [
-        "Alerte stare parole"
-      ],
-      "Private photo backup": [
-        "Conservare fotografii private"
-      ],
-      "Protect 10 devices at a time": [
-        "Protejare 10 dispozitive simultan"
-      ],
-      "Secure file storage & sharing": [
-        "Stocare și partajare securizată fișiere"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Foldere, etichete și filtre nelimitate"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Date de autentificare, carduri de plată, aliasuri hide-my-email nelimitate și altele"
-      ],
       "Use your own email domain": [
         "Utilizați propriul domeniu de e-mail"
-      ],
-      "Version history": [
-        "Istoric versiuni fișiere"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "Facturat cu ${ amount } o singură dată"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Se reînnoiește lunar cu ${ regularAmount }."
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accesați conținutul blocat și navigați în mod privat. Include peste 8.500 de servere în peste 110 țări, 10 dispozitive simultan, transmisii în flux la viteză maximă, blocare reclame și protecție malware, accelerator VPN și altele."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney +, Prime Video și altele."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Autentificări securizate pe toate dispozitivele. Include aliasuri hide-my-email nelimitate, partajare, A2F integrată, ${ DARK_WEB_MONITORING_NAME } și altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adresă de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele.",
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include ${ addresses } de adrese de e-mail, suport pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, suport pentru domenii de e-mail personale, asistentul de scriere ${ BRAND_NAME } Scribe, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Programați-vă și securizați-vă mesajele pe e-mail folosind criptarea bilaterală. Include 15 adrese de e-mail, asistență pentru domenii de e-mail personale, aliasuri nelimitate hide-my-email și multe altele."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Securizați-vă fișierele cu stocare criptată în cloud. Include editor de documente online, conservare pentru fotografii, istoricul versiunilor, partajarea fișierelor criptate și multe altele."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield special conceput să vă protejeze dispozitivele și să vă accelereze navigarea prin blocarea reclamelor, monitorizării și a programelor malițioase."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Spațiul de stocare este partajat între toate serviciile ${ BRAND_NAME }."
       ]
     },
     "Billing cycle option": {
@@ -2317,14 +2162,6 @@
         "Abonamentul pentru ${ PLAN_NAMES[PLANS.PASS] } este la un preț special de ${ price } pe an. Dacă treceți la un plan gratuit, veți pierde definitiv reducerea, chiar dacă reveniți la acest tip de plan în viitor."
       ]
     },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Istoric extins versiuni"
-      ],
-      "Priority support": [
-        "Asistență prioritară"
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Câmpurile text sunt opționale. Informațiile furnizate în acest formular vor apărea doar pe facturile emise în viitor și nu vor afecta facturile deja emise."
@@ -2541,21 +2378,6 @@
         "Cheia publică (XPUB) a fost copiată în memorie."
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TiB spațiu total"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Spațiul de stocare este partajat între membri de familie între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Maxim 6 utilizatori"
-      ]
-    },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
         "Grup de familie nerecunoscut. Mai încercați."
@@ -2586,17 +2408,6 @@
       ],
       "Delete organization?": [
         "Ștergeți organizația?"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2700 de servere în peste 65 de țări, conectați până la 10 dispozitive, accesați servicii de transmisie în flux la nivel mondial, blocare malware și reclame și multe altele."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Include suport pentru 3 domenii de e-mail personale, 90 adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
       ]
     },
     "Feature": {
@@ -3360,6 +3171,9 @@
       ],
       "Country": [
         "Țara"
+      ],
+      "Credits": [
+        "Credite"
       ],
       "Currency": [
         "Moneda"
@@ -4717,6 +4531,9 @@
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
+      ],
       "This number will be shown on all future invoices": [
         "Acest număr va fi afișat pe toate facturile viitoare."
       ],
@@ -4757,6 +4574,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Credit pentru porțiunea neutilizată din abonamentul planului anterior."
+      ],
+      "Credits will be added to your balance": [
+        "Creditele vă vor fi adăugate în soldul personal."
       ]
     },
     "Payments.plan_name": {
@@ -5065,29 +4890,7 @@
         "Folosim implicit metoda de semnare Electrum, deoarece este cea mai ușoară și cea mai comună metodă solicitată de bănci. BIP 137 este folosit pentru semnarea tranzacțiilor fără conexiune și este mai avansat."
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "Luni GRATUITE: ${ n }",
-        "Luni GRATUITE: ${ n }",
-        "Luni GRATUITE: ${ n }"
-      ]
-    },
     "specialoffer: Deal details": {
-      "1 user": [
-        "Un utilizator"
-      ],
-      "3 TB": [
-        "3 TiB"
-      ],
-      "6 users": [
-        "6 utilizatori"
-      ],
-      "All paid Mail and Calendar features": [
-        "Toate funcțiile cu plată de la Mail și Calendar"
-      ],
-      "High speed VPN": [
-        "VPN de mare viteză"
-      ],
       "Highest VPN speed": [
         "Viteză VPN maximă"
       ],
@@ -5100,17 +4903,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "${ appName1 }, ${ appName2 } și ${ appName3 } premium"
       ],
-      "Premium early access": [
-        "Acces timpuriu premium"
-      ],
-      "Secure cloud storage": [
-        "Stocare securizată în cloud"
-      ],
       "Secure streaming": [
         "Redare în flux securizată"
-      ],
-      "Support online privacy": [
-        "Susțineți confidențialitatea online"
       ]
     },
     "specialoffer: Link": {
@@ -5121,90 +4915,9 @@
         "Modificare"
       ]
     },
-    "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } lună",
-        "${ n } luni",
-        "${ n } de luni"
-      ],
-      "1 year": [
-        "Un an"
-      ],
-      "15 months": [
-        "15 luni"
-      ],
-      "2 years": [
-        "2 ani"
-      ],
-      "30 months": [
-        "30 de luni"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Facturat cu ${ amount } pentru o lună"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Facturat cu ${ amount } pentru 12 luni"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Facturat cu ${ amount } pentru 15 luni"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Facturat cu ${ amount } pentru 24 de luni"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Facturat cu ${ amount } pentru 30 de luni"
-      ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Reînnoire după un an la preț redus de ${ discountedAmount } în loc de ${ regularAmount } (${ discount }% reducere)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Reînnoire după doi ani la preț redus de ${ discountedAmount } în loc de ${ regularAmount } (${ discount }% reducere)"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Preț standard ${ amount } pentru o lună"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Preț standard ${ amount } pentru 12 luni"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Preț standard ${ amount } pentru 15 luni"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Preț standard ${ amount } pentru 24 de luni"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Preț standard ${ amount } pentru 30 de luni"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "Oferta speciala este valabilă pentru primii doi ani."
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accesați conținut blocat și navigați în mod privat. Include 1700 de servere în peste 60 de țări, cea mai mare viteză VPN, 10 conexiuni VPN per utilizator, servicii de redare în flux la nivel mondial, blocare malware și reclame și multe altele."
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accesați conținut blocat și navigați în mod privat. Include 1700 de servere în peste 60 de țări, cea mai mare viteză VPN, 10 conexiuni VPN, servicii de redare în flux la nivel mondial, blocare malware și reclame și multe altele."
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Toate serviciile noastre premium cu limitele la maxim: 100 de adrese de e-mail, suport pentru 10 domenii personale, aliasuri nelimitate hide-my-email, partajare calendar, stocare criptată în cloud și fișiere partajate și multe altele."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include suport pentru 3 domenii de e-mail personale, 15 adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfect pentru familii sau echipe mici, fiecare poate avea propria adresă de e-mail și pseudonime. Necesită un domeniu personal."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Primiți fără costuri suplimentare versiunile plătite ale tuturor serviciilor de confidențialitate pe care le lansăm în viitor, împreună cu acces anticipat la toate funcțiile și produsele viitoare."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
-      ]
-    },
     "Spotlight": {
       "Get up to ${ credits } in credits.": [
-        "Obțineți până la ${ credits } de credite."
+        "Obțineți până la ${ credits } în credite."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
@@ -5480,20 +5193,6 @@
         "per utilizator per lună"
       ]
     },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Creați detalii de conectare sigure pe toate dispozitivele. Include aliasuri nelimitate, 20 de seifuri, integrare autentificare cu doi factori, autocompletare date card de credit și multe altele."
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include peste 8.500 de servere în peste 110 țări, conectați până la 10 dispozitive, accesați servicii de transmisii în flux la nivel mondial, programe malițioase, blocare de reclame și multe altele."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Protejați-vă fișierele cu stocarea criptată în cloud. Include sincronizare automată, partajare criptată a fișierelor și multe altele."
-      ]
-    },
     "Sweep paper wallet": {
       "Cancel": [
         "Anulare"
@@ -5603,9 +5302,6 @@
       ],
       "Coupon": [
         "Cupon"
-      ],
-      "Credits": [
-        "Credite"
       ],
       "Currency": [
         "Monedă"
