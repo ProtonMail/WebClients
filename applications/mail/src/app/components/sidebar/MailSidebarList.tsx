@@ -7,8 +7,7 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import type { HotkeyTuple } from '@proton/components';
 import { SidebarList, SimpleSidebarListItemHeader, useHotkeys, useLocalState } from '@proton/components';
-import { useConversationCounts, useFolders, useLabels, useMessageCounts, useSystemFolders } from '@proton/mail';
-import { isCustomFolder, isCustomLabel } from '@proton/mail/helpers/location';
+import { useFolders, useLabels, useSystemFolders } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SOURCE_EVENT } from '@proton/shared/lib/helpers/collapsibleSidebar';
@@ -17,17 +16,17 @@ import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
-import { SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
+import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 
-import { getCounterMap } from '../../helpers/elements';
 import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
 import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
-import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { LabelActionsContextProvider } from './EditLabelContext';
 import { MailSidebarCollapsedButton } from './MailSidebarCollapsedButton';
 import { MailSidebarCustomView } from './MailSidebarCustomView';
@@ -35,8 +34,6 @@ import MailSidebarListActions from './MailSidebarListActions';
 import MailSidebarSystemFolders from './MailSidebarSystemFolders';
 import SidebarFolders from './SidebarFolders';
 import SidebarLabels from './SidebarLabels';
-
-export type UnreadCounts = { [labelID: string]: number | undefined };
 
 interface Props {
     labelID: string;
@@ -50,17 +47,10 @@ const formatFolderID = (folderID: string): string => `folder_expanded_state_${fo
 const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false, onClickExpandNav }: Props) => {
     const location = useLocation();
     const [user] = useUser();
-    const [conversationCounts] = useConversationCounts();
-    const [messageCounts] = useMessageCounts();
     const mailSettings = useMailModel('MailSettings');
     const [systemFolders] = useSystemFolders();
     const [labels] = useLabels();
     const [folders, loadingFolders] = useFolders();
-    const numFolders = folders?.length || 0;
-    const numLabels = labels?.length || 0;
-    // Use user.ID or item because in the tests user ID is undefined
-    const [displayFolders, toggleFolders] = useLocalState(numFolders > 0, `${user.ID || 'item'}-display-folders`);
-    const [displayLabels, toggleLabels] = useLocalState(numLabels > 0, `${user.ID || 'item'}-display-labels`);
     const [displayMoreItems, toggleDisplayMoreItems] = useLocalState(false, `${user.ID || 'item'}-display-more-items`);
     const sidebarRef = useRef<HTMLDivElement>(null);
     const [focusedItem, setFocusedItem] = useState<string | null>(null);
@@ -70,14 +60,14 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
     const { applyOptimisticLocationEnabled, applyLocation } = useApplyLocation();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveToSpamModal, selectAllMoveModal } =
         useMoveToFolder();
-    const mailboxCount = mailSettings.ViewMode === VIEW_MODE.GROUP ? conversationCounts : messageCounts;
 
-    const foldersUnread = !!mailboxCount?.find((labelCount) => {
-        return (labelCount?.LabelID && isCustomFolder(labelCount?.LabelID, folders) && labelCount?.Unread) || 0 > 0;
-    });
-    const labelsUnread = !!mailboxCount?.find((labelCount) => {
-        return (labelCount?.LabelID && isCustomLabel(labelCount.LabelID, labels) && labelCount?.Unread) || 0 > 0;
-    });
+    const [counterMap] = useMailboxCounter();
+
+    const numFolders = folders?.length || 0;
+    const numLabels = labels?.length || 0;
+    // Use user.ID or item because in the tests user ID is undefined
+    const [displayFolders, toggleFolders] = useLocalState(numFolders > 0, `${user.ID || 'item'}-display-folders`);
+    const [displayLabels, toggleLabels] = useLocalState(numLabels > 0, `${user.ID || 'item'}-display-labels`);
 
     useEffect(() => {
         if (folders) {
@@ -138,36 +128,8 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
         scrollIntoView(element, { block: 'nearest' });
     }, []);
 
-    const counterMap = useDeepMemo(() => {
-        if (!mailSettings || !labels || !folders || !conversationCounts || !messageCounts) {
-            return {};
-        }
-
-        const all = [...labels, ...folders];
-        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings);
-        const unreadCounterMap = Object.entries(labelCounterMap).reduce<UnreadCounts>((acc, [id, labelCount]) => {
-            acc[id] = labelCount?.Unread;
-            return acc;
-        }, {});
-        return unreadCounterMap;
-    }, [mailSettings, labels, folders, conversationCounts, messageCounts, location]);
-
-    const totalMessagesMap = useDeepMemo(() => {
-        if (!mailSettings || !labels || !folders || !conversationCounts || !messageCounts) {
-            return {};
-        }
-
-        const all = [...labels, ...folders];
-        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings);
-        const unreadCounterMap = Object.entries(labelCounterMap).reduce<UnreadCounts>((acc, [id, labelCount]) => {
-            acc[id] = labelCount?.Total;
-            return acc;
-        }, {});
-        return unreadCounterMap;
-    }, [messageCounts, conversationCounts, labels, folders, mailSettings, location]);
-
-    const showScheduled = (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
-    const showSnoozed = (totalMessagesMap[MAILBOX_LABEL_IDS.SNOOZED] || 0) > 0;
+    const showScheduled = getLocationCount(counterMap, MAILBOX_LABEL_IDS.SCHEDULED).Total > 0;
+    const showSnoozed = getLocationCount(counterMap, MAILBOX_LABEL_IDS.SNOOZED).Total > 0;
     const visibleSystemFolders = systemFolders?.filter((systemFolder) => {
         if (systemFolder.ID === MAILBOX_LABEL_IDS.OUTBOX) {
             return false;
@@ -192,6 +154,7 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
         }
         return true;
     });
+
     const sidebarListItems = useMemo(() => {
         const foldersArray = folders?.length ? reduceFolderTreeview : ['add-folder'];
         const labelsArray = labels?.length ? labels.map((f) => f.ID) : ['add-label'];
@@ -289,7 +252,6 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
                         location={location}
                         mailSettings={mailSettings}
                         setFocusedItem={setFocusedItem}
-                        totalMessagesMap={totalMessagesMap}
                         displayMoreItems={displayMoreItems}
                         showScheduled={showScheduled}
                         showSnoozed={showSnoozed}
@@ -320,10 +282,9 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
 
                     {collapsed ? (
                         <MailSidebarCollapsedButton
+                            type="folders"
                             onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_FOLDERS)}
-                            iconName="folders"
                             title={c('Action').t`Expand navigation bar to see folders`}
-                            unread={foldersUnread}
                         />
                     ) : (
                         <>
@@ -372,10 +333,9 @@ const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false
 
                     {collapsed ? (
                         <MailSidebarCollapsedButton
+                            type="labels"
                             onClick={() => onClickExpandNav?.(SOURCE_EVENT.BUTTON_LABELS)}
-                            iconName="tags"
                             title={c('Action').t`Expand navigation bar to see labels`}
-                            unread={labelsUnread}
                         />
                     ) : (
                         <>

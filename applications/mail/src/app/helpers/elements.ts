@@ -5,7 +5,7 @@ import { isCustomLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
-import type { Address, MailSettings } from '@proton/shared/lib/interfaces';
+import type { Address } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -138,24 +138,6 @@ export const sort = (elements: Element[], sort: Sort, labelID: string) => {
         return sort.desc ? valueB - valueA : valueA - valueB;
     };
     return [...elements].sort((e1, e2) => compare(e1, e2));
-};
-
-export const getCounterMap = (
-    labels: Label[],
-    conversationCounters: LabelCount[],
-    messageCounters: LabelCount[],
-    mailSettings: MailSettings
-) => {
-    const labelIDs = [...Object.values(MAILBOX_LABEL_IDS), ...labels.map((label) => label.ID || '')];
-    const conversationCountersMap = toMap(conversationCounters, 'LabelID') as { [labelID: string]: LabelCount };
-    const messageCountersMap = toMap(messageCounters, 'LabelID') as { [labelID: string]: LabelCount };
-
-    return labelIDs.reduce<{ [labelID: string]: LabelCount | undefined }>((acc, labelID) => {
-        const conversationMode = isConversationMode(labelID, mailSettings);
-        const countersMap = conversationMode ? conversationCountersMap : messageCountersMap;
-        acc[labelID] = countersMap[labelID];
-        return acc;
-    }, {});
 };
 
 export const hasAttachments = (element: Element) =>
