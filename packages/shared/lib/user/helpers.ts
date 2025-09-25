@@ -27,7 +27,7 @@ export const isMember = (user: User) => user.Role === MEMBER_ROLE;
 export const isSelf = (user: User) => !user.OrganizationPrivateKey && !user.Flags?.['delegated-access'];
 export const isDelinquent = (user: User) => !!user.Delinquent;
 export const getHasNonDelinquentScope = (user: User) => user.Delinquent < UNPAID_STATE.DELINQUENT;
-export const canPay = (user: User) => [ADMIN_ROLE, FREE_ROLE].includes(user.Role) && isSelf(user);
+export const canPay = (user: User) => [ADMIN_ROLE, FREE_ROLE].includes(user.Role);
 
 export const getInfo = (User: User): UserInfo => {
     return {
