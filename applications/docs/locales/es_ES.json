@@ -4397,6 +4397,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Interruptor de bloqueo**: Detiene las filtraciones de datos al bloquear tu conexión internet si la VPN se desconecta inesperadamente."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Paso 1:** Invita a tus amigos a ${ BRAND_NAME } con tu enlace de referidos."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Paso 2:** Tus amigos obtienen 2 semanas gratis en el plan ${ BRAND_NAME } que elijan."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Paso 2:** Tus amigos obtienen 2 semanas gratis en su plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Paso 3:** Consigue ${ referrerRewardAmount } créditos por cada amigo que se suscriba a un plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Paso 3:** Consigue ${ referrerRewardAmount } créditos por cada amigo que se suscriba a un plan."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de almacenamiento adicional"
       ],
@@ -4568,6 +4583,9 @@
       ],
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
+      ],
+      "Copy your referral link": [
+        "Copia tu enlace de referido"
       ],
       "Country code": [
         "Código de país"
@@ -5179,6 +5197,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación permanecerá en este dispositivo a menos que la elimines."
+      ],
+      "Referral link copied to your clipboard": [
+        "El enlace de referido se ha copiado en el portapapeles"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualiza la página o ${ link } para resolver automáticamente la mayoría de los problemas."
@@ -6011,6 +6032,9 @@
       "Country": [
         "País"
       ],
+      "Credits": [
+        "Créditos"
+      ],
       "Delete": [
         "Eliminar"
       ],
@@ -6022,6 +6046,9 @@
       ],
       "Don't ask again": [
         "No preguntar de nuevo"
+      ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
       ],
       "Download anyway": [
         "Descargar de todos modos"
@@ -8931,6 +8958,34 @@
         "Ayer"
       ]
     },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } por cada referido"
+      ],
+      "Friend joined": [
+        "Un amigo se unió",
+        "Amigos unidos"
+      ],
+      "Friend subscribed": [
+        "Amigo suscrito",
+        "Amigos suscritos"
+      ],
+      "Invite friends. Get credits.": [
+        "Invita a tus amigos. Obtén créditos."
+      ],
+      "Invited friends": [
+        "Invitar a amigos"
+      ],
+      "More sharing options": [
+        "Más opciones para compartir"
+      ],
+      "Refer friends": [
+        "Invitar a amigos"
+      ],
+      "Start earning credits": [
+        "Empieza a ganar créditos"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Verificar la seguridad de la cuenta"
@@ -9328,12 +9383,6 @@
       "${ seconds } second": [
         "${ seconds } segundo",
         "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -10198,9 +10247,6 @@
       "Create new group": [
         "Crear grupo"
       ],
-      "Credits": [
-        "Créditos"
-      ],
       "Currency": [
         "Moneda"
       ],
@@ -10367,6 +10413,9 @@
       ],
       "How does it all work?": [
         "¿Cómo funciona todo esto?"
+      ],
+      "How does it work?": [
+        "¿Cómo funciona?"
       ],
       "Human verification": [
         "Verificación humana"
@@ -10563,6 +10612,9 @@
       ],
       "Share your calendar with your team": [
         "Comparte tu calendario con tu equipo"
+      ],
+      "Share your link": [
+        "Comparte tu enlace"
       ],
       "Sign in and grant access": [
         "Iniciar sesión y permitir acceso"
