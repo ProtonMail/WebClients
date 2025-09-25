@@ -4371,6 +4371,9 @@
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
       ],
+      "Copy your referral link": [
+        "Kopioi suosituslinkkisi"
+      ],
       "Country code": [
         "Maakoodi"
       ],
@@ -4966,6 +4969,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
+      ],
+      "Referral link copied to your clipboard": [
+        "Suosituslinkki kopioitiin leikepöydälle"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sivun päivitys tai ${ link } korjaa useimmat ongelmat automaattisesti."
@@ -5777,6 +5783,9 @@
       "Country": [
         "Maa"
       ],
+      "Credits": [
+        "Krediitit"
+      ],
       "Delete": [
         "Poista"
       ],
@@ -5788,6 +5797,9 @@
       ],
       "Don't ask again": [
         "Älä kysy uudelleen"
+      ],
+      "Don't show this again": [
+        "Älä näytä tätä uudelleen"
       ],
       "Download anyway": [
         "Lataa silti"
@@ -8733,12 +8745,6 @@
         "${ seconds } sekuntia"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } kuukausi ILMAISEKSI",
-        "${ n } kuukautta ILMAISEKSI"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 käyttäjä"
@@ -9568,9 +9574,6 @@
       "Create new group": [
         "Luo uusi ryhmä"
       ],
-      "Credits": [
-        "Krediitit"
-      ],
       "Currency": [
         "Valuutta"
       ],
@@ -9736,6 +9739,9 @@
         "Vahva suojaus tilillesi"
       ],
       "How does it all work?": [
+        "Miten se toimii?"
+      ],
+      "How does it work?": [
         "Miten se toimii?"
       ],
       "Human verification": [
