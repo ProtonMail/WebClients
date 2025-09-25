@@ -202,7 +202,11 @@ const getPassCoreProviderProps = (
                         })
                     );
                 }
+
+                return granted;
             }
+
+            return true;
         },
 
         popup: endpoint === 'popup' ? createPopupController() : undefined,
