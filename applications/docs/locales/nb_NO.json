@@ -4569,6 +4569,9 @@
       "Copy the link to clipboard": [
         "Kopier koblingen til utklippstavlen"
       ],
+      "Copy your referral link": [
+        "Kopier vervekoblingen din"
+      ],
       "Country code": [
         "Landskode"
       ],
@@ -5179,6 +5182,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gjennopprettelsesopplysninger vil forbli på denne enheten, med mindre du velger å slette dem."
+      ],
+      "Referral link copied to your clipboard": [
+        "Vervekobling kopiert til utklippstavlen din"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Oppdatering av siden eller ${ link } løser automatisk de fleste problemer."
@@ -6011,6 +6017,9 @@
       "Country": [
         "Land"
       ],
+      "Credits": [
+        "Kreditter"
+      ],
       "Delete": [
         "Slett"
       ],
@@ -6022,6 +6031,9 @@
       ],
       "Don't ask again": [
         "Ikke spør igjen"
+      ],
+      "Don't show this again": [
+        "Ikke vis dette igjen"
       ],
       "Download anyway": [
         "Last ned uansett"
@@ -8462,6 +8474,9 @@
         "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
         "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Denne handlingen utvider det eksisterende abonnementet. Du vil kun bli belastet for de nye tilleggene og den gjenværende tiden av den nåværende faktureringssyklusen. Fornyelsesdatoen for abonnementet ditt vil ikke bli endret."
+      ],
       "This number will be shown on all future invoices": [
         "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ],
@@ -8502,6 +8517,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kreditt for den ubrukte delen av ditt forrige planabonnement"
+      ],
+      "Credits will be added to your balance": [
+        "Kreditter vil bli lagt til saldoen din"
       ]
     },
     "Payments.plan_name": {
@@ -9182,12 +9205,6 @@
       "${ seconds } second": [
         "${ seconds } sekund",
         "${ seconds } sekunder"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } måned GRATIS",
-        "${ n } måneder GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -10052,9 +10069,6 @@
       "Create new group": [
         "Opprett ny gruppe"
       ],
-      "Credits": [
-        "Kreditter"
-      ],
       "Currency": [
         "Valuta"
       ],
@@ -10221,6 +10235,9 @@
       ],
       "How does it all work?": [
         "Hvordan fungerer alt?"
+      ],
+      "How does it work?": [
+        "Hvordan fungerer det?"
       ],
       "Human verification": [
         "Menneskelig verifisering"

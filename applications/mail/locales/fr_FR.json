@@ -1450,6 +1450,12 @@
       "Toggle Contacts app": [
         "Afficher/Masquer l'application Contacts"
       ],
+      "Toggle notifications": [
+        "Activer/désactiver les notifications"
+      ],
+      "Toggle referral": [
+        "Activer/désactiver le parrainage"
+      ],
       "Toggle security center app": [
         "Activer l'application du centre de sécurité"
       ],
@@ -6607,6 +6613,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Arrêt d'urgence (kill switch)** : cette option arrête les fuites de données en bloquant votre connexion internet si le VPN se déconnecte de manière inattendue."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Étape 1 :** Invitez vos amis sur ${ BRAND_NAME } avec votre lien de parrainage."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Étape 2 :** Vos amis bénéficieront de 2 semaines gratuites sur l'abonnement ${ BRAND_NAME } qu'ils auront choisi."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Étape 2 :** Vos amis bénéficieront de 2 semaines gratuites sur leur abonnement."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Étape 3 :** Obtenez ${ referrerRewardAmount } de crédits pour chacun de vos amis qui s'abonne à un abonnement."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Étape 3 :** Obtenez ${ referrerRewardAmount } de crédits pour chaque personne qui s'abonne à un abonnement."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } d'espace de stockage supplémentaire"
       ],
@@ -6922,6 +6943,9 @@
       ],
       "Copy the link to clipboard": [
         "Copier le lien dans le presse-papiers"
+      ],
+      "Copy your referral link": [
+        "Copiez votre lien de parrainage."
       ],
       "Country code": [
         "Indicatif du pays"
@@ -7793,6 +7817,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
+      ],
+      "Referral link copied to your clipboard": [
+        "Le lien de parrainage est copié dans votre presse-papiers."
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
@@ -9241,6 +9268,9 @@
       ],
       "Country": [
         "Pays"
+      ],
+      "Credits": [
+        "Crédits"
       ],
       "Date": [
         "Date"
@@ -12041,6 +12071,9 @@
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment.",
         "Il sera ensuite renouvelé automatiquement à ${ renewPriceStr } pour ${ renewalLength } mois. Vous pouvez annuler à tout moment."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Cette action étend l'abonnement existant. Vous ne serez facturé que pour les nouveaux add-ons complémentaires et le temps restant du cycle de facturation actuel. La date de renouvellement de votre abonnement ne sera pas modifiée."
+      ],
       "This number will be shown on all future invoices": [
         "Ce numéro sera indiqué sur toutes les prochaines factures."
       ],
@@ -12081,6 +12114,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Votre carte a été refusée. Veuillez essayer une autre carte ou contactez votre banque pour autoriser le prélèvement."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédit pour la période non utilisée de votre abonnement précédent"
+      ],
+      "Credits will be added to your balance": [
+        "Les crédits seront ajoutés à votre solde."
       ]
     },
     "Payments.plan_name": {
@@ -12571,6 +12612,40 @@
       ],
       "Stored with zero-access encryption": [
         "Stocké avec un chiffrement zéro accès"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } par parrainage"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Gagnez jusqu'à ${ maxRewardAmount } en crédit. Vous recevrez ${ referrerRewardAmount } lorsque la personne que vous invitez s'abonnera à un abonnement ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Un ami a rejoint",
+        "Des amis ont rejoint"
+      ],
+      "Friend subscribed": [
+        "Un ami s'est abonné",
+        "Des amis se sont abonnés"
+      ],
+      "Invite friends. Get credits.": [
+        "Invitez vos amis et recevez des crédits."
+      ],
+      "Invited friends": [
+        "Amis invités"
+      ],
+      "More sharing options": [
+        "Plus d’options de partage"
+      ],
+      "Refer friends": [
+        "Parrainer des amis"
+      ],
+      "Start earning credits": [
+        "Commencez à gagner des crédits"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Vous pouvez obtenir jusqu'à **${ maxRewardAmount }** en crédits."
       ]
     },
     "Remaining days before the message expire": {
@@ -13097,12 +13172,6 @@
       "${ seconds } second": [
         "${ seconds } seconde",
         "${ seconds } secondes"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mois GRATUIT",
-        "${ n } mois GRATUITS"
       ]
     },
     "specialoffer: Deal details": {
@@ -14637,9 +14706,6 @@
       "Create new group": [
         "Créer un nouveau groupe"
       ],
-      "Credits": [
-        "Crédits"
-      ],
       "Currency": [
         "Devise"
       ],
@@ -14842,6 +14908,9 @@
       ],
       "How does it all work?": [
         "Comment est-ce que tout cela fonctionne ?"
+      ],
+      "How does it work?": [
+        "Comment ça marche ?"
       ],
       "How to update your email address": [
         "Comment mettre à jour votre adresse e-mail ?"
@@ -15152,6 +15221,9 @@
       "Recover data": [
         "Récupérer les données"
       ],
+      "Referral": [
+        "Parrainage"
+      ],
       "Remove from list?": [
         "Retirer de la liste ?"
       ],
@@ -15247,6 +15319,9 @@
       ],
       "Share your calendar with your team": [
         "Partagez votre calendrier avec votre équipe"
+      ],
+      "Share your link": [
+        "Partagez votre lien"
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"

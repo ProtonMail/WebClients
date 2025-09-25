@@ -95,9 +95,6 @@
       "Add to group": [
         "Agregar al grupo"
       ],
-      "Add Zoom meeting": [
-        "Agregar una reunión de Zoom"
-      ],
       "Adding conferencing details": [
         "Agregando los detalles de la conferencia"
       ],
@@ -673,6 +670,9 @@
       ],
       "Remove this participant": [
         "Eliminar a este participante"
+      ],
+      "Remove video conference": [
+        "Eliminar videoconferencia"
       ],
       "Reply with a note": [
         "Responder con una nota"
@@ -5183,6 +5183,9 @@
       "Copy the link to clipboard": [
         "Copiar el enlace al portapapeles"
       ],
+      "Copy your referral link": [
+        "Copiar el enlace de referencia"
+      ],
       "Country code": [
         "Código de país"
       ],
@@ -5689,6 +5692,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
+      ],
+      "Referral link copied to your clipboard": [
+        "Enlace de referencia copiado al portapapeles"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
@@ -6524,6 +6530,9 @@
       "Country": [
         "País"
       ],
+      "Credits": [
+        "Créditos"
+      ],
       "Date and time": [
         "Fecha y hora"
       ],
@@ -6544,6 +6553,9 @@
       ],
       "Don't ask again": [
         "No volver a preguntar"
+      ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "p. ej., Amazon, eBay, Mercado Libre"
@@ -6770,6 +6782,12 @@
       ],
       "Region": [
         "Estado"
+      ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "Eliminar videoconferencia de ${ MEET_APP_NAME }"
+      ],
+      "Remove Zoom video conference": [
+        "Eliminar videoconferencia de Zoom"
       ],
       "Reveal password": [
         "Mostrar contraseña"
@@ -9827,12 +9845,6 @@
         "${ seconds } segundos"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes gratis",
-        "${ n } meses gratis"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 usuario"
@@ -11092,9 +11104,6 @@
       "Create public link": [
         "Crear enlace público"
       ],
-      "Credits": [
-        "Créditos"
-      ],
       "Currency": [
         "Moneda"
       ],
@@ -11248,6 +11257,9 @@
         "Alta seguridad para su cuenta"
       ],
       "How does it all work?": [
+        "¿Cómo funciona?"
+      ],
+      "How does it work?": [
         "¿Cómo funciona?"
       ],
       "Human verification": [

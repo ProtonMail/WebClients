@@ -486,23 +486,6 @@
         "值"
       ]
     },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } 个月"
-      ],
-      "12 months": [
-        "12 个月"
-      ],
-      "15 months": [
-        "15 个月"
-      ],
-      "24 months": [
-        "24 个月"
-      ],
-      "30 months": [
-        "30 个月"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } 应用"
@@ -541,121 +524,16 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 位用户"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 位用户"
-      ],
       "Premium Password Manager": [
         "高级密码管理器"
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
       ]
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "${ MAIL_APP_NAME } 桌面应用"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } 与 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } 存储空间"
-      ],
-      "1 TB total": [
-        "共 1 TB"
-      ],
-      "1 user": [
-        "1 位用户"
-      ],
-      "10 email addresses": [
-        "10 个邮箱地址"
-      ],
-      "2 users": [
-        "2 位用户"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 位用户"
-      ],
-      "8500+ servers across 110+ countries": [
-        "110+ 个国家，8500+ 台服务器"
-      ],
-      "Ad-blocker and malware protection": [
-        "广告拦截及恶意软件防护"
-      ],
-      "Advanced account protection": [
-        "高级账户保护"
-      ],
-      "High speed streaming": [
-        "高速看视频"
-      ],
-      "One-time payment, lifetime deal": [
-        "一次性付款，终身有效"
-      ],
-      "Online document editor": [
-        "在线文档编辑器"
-      ],
-      "Private photo backup": [
-        "私人照片备份"
-      ],
-      "Protect 10 devices at a time": [
-        "可同时保护 10 台设备"
-      ],
-      "Secure file storage & sharing": [
-        "安全文件存储与共享"
-      ],
-      "Unlimited folders, labels and filters": [
-        "不限量文件夹、标签和筛选规则"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "无限制登录、信用卡、hide-my-email 别名等功能"
-      ],
       "Use your own email domain": [
         "个性化邮箱域名"
-      ],
-      "Version history": [
-        "各版本历史"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "按 ${ amount } 一次计费"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "次月起按 ${ regularAmount } 续费。"
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "突破网络封锁，保护线上隐私，最多可通过 10 台设备连接全球逾 110 个国家超过 8500 台服务器，畅享全球流媒体服务，拦截恶意软件和广告，还有 VPN 加速器等更多功能等您体验。"
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "随时随地访问流媒体服务内容，包括 Netflix、Disney+、Prime Video 等。"
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "在所有设备上安全登录。包括无限制 hide-my-email 别名、共享、集成 2FA、${ DARK_WEB_MONITORING_NAME } 等功能。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术保护您的邮件安全和日程规划，并且支持自有域名、 ${ addresses } 个邮箱地址、无限量的 hide-my-email邮箱别名等高级功能。"
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "采用端到端加密技术守护您的邮件安全，并且支持自有域名、15 个邮箱地址、无限量的 hide-my-email 邮箱别名、${ BRAND_NAME } Scribe 写作助手等高级功能。"
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能."
       ]
     },
     "Billing cycle option": {
@@ -2214,14 +2092,6 @@
         "您的 ${ PLAN_NAMES[PLANS.PASS] } 订阅特价为每年 ${ price }。如果降级为免费计划，您将永久失去折扣，即使将来再次升级也是如此。"
       ]
     },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "更长的版本历史"
-      ],
-      "Priority support": [
-        "优先支持"
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "文本字段可选。您在本表中提供的信息只会出现在今后开具的发票上，不会影响现有发票。"
@@ -2433,21 +2303,6 @@
         "公钥 (XPUB) 已复制到剪贴板"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB 总存储空间"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "所有家人共用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 的存储空间。"
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "最多 6 位用户"
-      ]
-    },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
         "无法识别家庭群组。请重试。"
@@ -2478,14 +2333,6 @@
       ],
       "Delete organization?": [
         "删除机构?"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "连接全球逾 65 个国家的 2700 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
     "Feature": {
@@ -3216,6 +3063,9 @@
       ],
       "Country": [
         "国家/地区"
+      ],
+      "Credits": [
+        "余额"
       ],
       "Currency": [
         "货币"
@@ -4790,27 +4640,7 @@
         "我们默认采用 Electrum 签名方式，这是银行最常要求且操作最简单的签名方法。BIP 137 则用于离线交易签名，属于更高级的签名方案。"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "免费 ${ n } 个月"
-      ]
-    },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 位用户"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 位用户"
-      ],
-      "All paid Mail and Calendar features": [
-        "享受 Mail 与 Calendar 的所有付费功能"
-      ],
-      "High speed VPN": [
-        "高速 VPN"
-      ],
       "Highest VPN speed": [
         "VPN 速度最快"
       ],
@@ -4823,17 +4653,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "高级版 ${ appName1 }、${ appName2 } 及 ${ appName3 } 账户"
       ],
-      "Premium early access": [
-        "抢先体验高级功能"
-      ],
-      "Secure cloud storage": [
-        "安全的云存储"
-      ],
       "Secure streaming": [
         "安全看视频"
-      ],
-      "Support online privacy": [
-        "支持网络隐私保护"
       ]
     },
     "specialoffer: Link": {
@@ -4842,79 +4663,6 @@
       ],
       "Upgrade": [
         "升级账户"
-      ]
-    },
-    "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } 月"
-      ],
-      "1 year": [
-        "1 年"
-      ],
-      "15 months": [
-        "15 个月"
-      ],
-      "2 years": [
-        "2 年"
-      ],
-      "30 months": [
-        "30 个月"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "一个月的费用为${ amount }"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "一年的费用为${ amount }"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "15个月的费用为${ amount }"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "两年的费用为${ amount }"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "30个月的费用为${ amount }"
-      ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "一年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "两年后续费时仍可享受折扣价 ${ discountedAmount }（优惠 ${ discount }%），无需支付原价 ${ regularAmount }"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "一个月的标准价格为${ amount }"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "一年的标准价格为${ amount }"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "15个月的标准价格为${ amount }"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "两年的的标准价格为${ amount }"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "30个月的标准价格为${ amount }"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "特别优惠的有效期为最初的两年"
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，每位用户 10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "突破网络封锁，保护线上隐私。可连接全球逾 60 个国家的 1700 台服务器，10 台设备可同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "适合家庭与小型团队，每个人都能拥有各自的邮箱和地址。需要使用自有域名。"
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "无需额外付费即可享受我们未来推出的所有隐私保护服务，还能抢先体验各类新产品和新功能。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "使用加密的云存储保护您的文件。 包括自动同步、加密文件共享等。"
       ]
     },
     "Spotlight": {
@@ -5177,20 +4925,6 @@
         "每个用户每月"
       ]
     },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "在您的所有设备上创建安全的登录详细信息。包括无限别名、20 个保险库、集成 2FA、信用卡自动填充等。"
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "连接全球逾 65 个国家的 2950 + 台服务器，多达 10 台设备同时在线，畅享全球流媒体服务，拦截恶意软件和广告，还有更多功能等您体验。"
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
-      ]
-    },
     "Sweep paper wallet": {
       "Cancel": [
         "取消"
@@ -5297,9 +5031,6 @@
       ],
       "Coupon": [
         "优惠券"
-      ],
-      "Credits": [
-        "余额"
       ],
       "Currency": [
         "货币"
