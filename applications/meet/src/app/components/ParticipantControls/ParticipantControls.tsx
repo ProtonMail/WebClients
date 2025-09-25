@@ -36,7 +36,8 @@ import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const { isMicrophoneEnabled, isCameraEnabled, localParticipant } = useLocalParticipant();
-    const { audioDeviceId, videoDeviceId, roomName, page, setPage, pageSize, participantsMap } = useMeetContext();
+    const { audioDeviceId, videoDeviceId, roomName, page, setPage, pageSize, participantsMap, isScreenShare } =
+        useMeetContext();
 
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
@@ -127,7 +128,7 @@ export const ParticipantControls = () => {
 
     return (
         <div className="w-full flex flex-nowrap flex-column">
-            {!isLargerThanMd && !isNarrowHeight && pageCount > 1 && (
+            {!isLargerThanMd && !isNarrowHeight && pageCount > 1 && !isScreenShare && (
                 <div className="w-full flex justify-center">
                     <Pagination totalPages={pageCount} currentPage={page} onPageChange={setPage} />
                 </div>
