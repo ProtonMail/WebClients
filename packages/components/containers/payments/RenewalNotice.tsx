@@ -332,12 +332,10 @@ const getTrialRenewalNoticeText = ({ renewCycle }: { renewCycle: Cycle }) => {
     const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
 
     if (renewCycle === CYCLE.MONTHLY) {
-        return c('b2b_trials_2025_Info')
-            .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${formattedDate}.`;
+        return c('Payments').jt`You will be charged on ${formattedDate}, renewing every month.`;
     }
 
-    return c('b2b_trials_2025_Info')
-        .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews every ${renewCycle} months. You won’t be charged if you cancel before ${formattedDate}.`;
+    return c('Payments').jt`You will be charged on ${formattedDate}, renewing every ${renewCycle} months.`;
 };
 
 export const getTrialRenewalNoticeTextWithTermsAndConditions = ({
