@@ -5,6 +5,7 @@ import createListeners, { type Listeners } from '@proton/shared/lib/helpers/list
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
 import { useUser } from '../../../user/hooks';
+import { getIsOutgoingDelegatedAccessAvailable } from '../../available';
 import { maxOutgoingDelegatedAccessContacts } from '../../constants';
 import { AddOutgoingEmergencyContactAction } from './AddOutgoingEmergencyContactAction';
 import { DeleteOutgoingEmergencyContactAction } from './DeleteOutgoingEmergencyContactAction';
@@ -22,6 +23,7 @@ export interface OutgoingController {
     notify: (payload: ActionPayload) => void;
     subscribe: (cb: ActionListener) => void;
     meta: {
+        available: boolean;
         hasAccess: boolean;
         hasUpsell: boolean;
         hasReachedLimit: boolean;
@@ -52,6 +54,7 @@ export const OutgoingControllerProvider = ({ app, children }: { app: APP_NAMES; 
             return listenersRef.current.subscribe(cb);
         }, []),
         meta: {
+            available: getIsOutgoingDelegatedAccessAvailable(user),
             hasAccess,
             hasUpsell: user.canPay && !hasAccess,
             hasReachedLimit,
