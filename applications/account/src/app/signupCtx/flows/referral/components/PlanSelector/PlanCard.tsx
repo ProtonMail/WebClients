@@ -9,6 +9,7 @@ const PlanCard = ({
     headerTrailing,
     description,
     features,
+    logos,
     footer,
     onCTAClick,
 }: {
@@ -16,7 +17,8 @@ const PlanCard = ({
     headerTrailing: ReactNode;
     description: ReactNode;
     features: ReactNode;
-    footer: ReactNode;
+    logos: ReactNode;
+    footer?: ReactNode;
     onCTAClick: () => void;
 }) => {
     return (
@@ -31,7 +33,7 @@ const PlanCard = ({
 
                 <ul className="unstyled m-0 flex flex-column gap-2 mb-6">{features}</ul>
 
-                <div className="mb-4">{footer}</div>
+                <div className="mb-4">{logos}</div>
             </div>
 
             <Button
@@ -43,6 +45,8 @@ const PlanCard = ({
                 pill
                 className="mt-2 py-4 text-semibold"
             >{c('Signup').t`Start free trial`}</Button>
+
+            {footer && <div className="mt-4">{footer}</div>}
         </div>
     );
 };

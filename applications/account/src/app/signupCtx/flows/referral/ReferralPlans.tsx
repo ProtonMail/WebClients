@@ -57,9 +57,9 @@ const ReferralPlans = () => {
                     <p className="mt-0 mb-10 text-center">
                         {referrerName && c('Signup').t`${referrerName} is inviting you to try ${BRAND_NAME}.`}{' '}
                         {
-                            // translator: full sentence "Select a service and enjoy the premium version for 14 days free. No credit card required."
+                            // translator: full sentence "Select a service and enjoy the premium version for 14 days free."
                             c('Signup')
-                                .t`Select a service and enjoy the premium version for ${TRIAL_DURATION_DAYS} days free. No credit card required.`
+                                .t`Select a service and enjoy the premium version for ${TRIAL_DURATION_DAYS} days free.`
                         }
                     </p>
 
