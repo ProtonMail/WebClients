@@ -89,7 +89,7 @@ export type PassCoreContextValue = {
     /** Writes text to the clipboard. `promptForPermissions` should only be used
      * for prompting clipboard permissions in extensions when setting up a TTL
      * as part of an on-going `writeToClipboard` request. (see: ClipboardSettingsModal.tsx) */
-    writeToClipboard: (text: string, clipboardTTL: Maybe<number>, promptForPermissions?: boolean) => Promise<void>;
+    writeToClipboard: (text: string, clipboardTTL: Maybe<number>, promptForPermissions?: boolean) => Promise<boolean>;
     /** Checks whether biometrics functionalities can be used */
     supportsBiometrics?: () => Promise<boolean>;
     /** Gets the unlock key via biometrics */
