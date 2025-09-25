@@ -1,5 +1,5 @@
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { isPrivate, isSelf } from '@proton/shared/lib/user/helpers';
+import { isAdmin, isPrivate, isSelf } from '@proton/shared/lib/user/helpers';
 
 // Route that is in the email links
 export const getTrustedContactRoute = (prefix = '', suffix = '') => {
@@ -18,6 +18,6 @@ export const getIsIncomingDelegatedAccessAvailable = (user: UserModel) => {
 };
 
 export const getIsOutgoingDelegatedAccessAvailable = (user: UserModel) => {
-    // Outgoing delegated access, need to manage your own keys (isPrivate)
-    return getIsIncomingDelegatedAccessAvailable(user) && isPrivate(user);
+    // Outgoing delegated access, need to manage your own keys (isPrivate or be admin)
+    return getIsIncomingDelegatedAccessAvailable(user) && (isPrivate(user) || isAdmin(user));
 };

@@ -221,6 +221,10 @@ const OutgoingTable = ({
 export const OutgoingEmergencyAccessSection = () => {
     const controller = useOutgoingController();
 
+    if (!controller.meta.available) {
+        return null;
+    }
+
     return (
         <>
             <OutgoingEmergencyAccessBanners />
