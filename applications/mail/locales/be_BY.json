@@ -7133,6 +7133,9 @@
       "Copy the link to clipboard": [
         "Скапіяваць спасылку ў буфер абмену"
       ],
+      "Copy your referral link": [
+        "Скапіяваць сваю рэферальную спасылку"
+      ],
       "Country code": [
         "Код краіны"
       ],
@@ -8029,6 +8032,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
+      ],
+      "Referral link copied to your clipboard": [
+        "Рэферальная спасылка скапіявана ў буфер абмену"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Абнаўленне старонкі або ${ link } аўтаматычна вырашыць большасць праблем."
@@ -9533,6 +9539,9 @@
       ],
       "Country": [
         "Краіна"
+      ],
+      "Credits": [
+        "Крэдыты"
       ],
       "Date": [
         "Дата"
@@ -12413,6 +12422,9 @@
         "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцаў. Скасаваць можна ў любы час.",
         "Затым ён будзе аўтаматычна падоўжаны за ${ renewPriceStr } на ${ renewalLength } месяцаў. Вы можаце скасаваць у любы час."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Гэта дзеянне пашырае існуючую падпіску. З вас будзе спагнана плата толькі за новыя дадаткі і час, якія засталіся ў бягучым перыядзе аплаты. Дата падаўжэння вашай падпіскі не будзе зменена."
+      ],
       "This number will be shown on all future invoices": [
         "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
@@ -12453,6 +12465,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Крэдыты для нявыкарыстанай часткі вашага папярэдняга тарыфнага плана падпіскі"
+      ],
+      "Credits will be added to your balance": [
+        "Крэдыты будуць дададзены на ваш баланс"
       ]
     },
     "Payments.plan_name": {
@@ -13422,14 +13442,6 @@
         "${ seconds } секунды",
         "${ seconds } секунд",
         "${ seconds } секунд"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } месяц БЯСПЛАТНА",
-        "${ n } месяцы БЯСПЛАТНА",
-        "${ n } месяцаў БЯСПЛАТНА",
-        "${ n } месяцаў БЯСПЛАТНА"
       ]
     },
     "specialoffer: Deal details": {
@@ -15082,9 +15094,6 @@
       "Create new group": [
         "Стварэнне новай групы"
       ],
-      "Credits": [
-        "Крэдыты"
-      ],
       "Currency": [
         "Валюта"
       ],
@@ -15297,6 +15306,9 @@
       ],
       "How does it all work?": [
         "Як гэта ўсё працуе?"
+      ],
+      "How does it work?": [
+        "Як гэта працуе?"
       ],
       "How to update your email address": [
         "Як абнавіць адрас электроннай пошты"

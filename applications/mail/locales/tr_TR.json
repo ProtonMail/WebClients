@@ -1138,6 +1138,9 @@
       "Remove this label": [
         "Bu etiketi kaldır"
       ],
+      "Remove video conference": [
+        "Görüntülü görüşmeyi kaldır"
+      ],
       "Replace": [
         "Değiştir"
       ],
@@ -6920,6 +6923,9 @@
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
       ],
+      "Copy your referral link": [
+        "Öneri bağlantınızı kopyalayın"
+      ],
       "Country code": [
         "Ülke kodu"
       ],
@@ -7790,6 +7796,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
+      ],
+      "Referral link copied to your clipboard": [
+        "Öneri bağlantısı panonuza kopyalandı"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
@@ -9239,6 +9248,9 @@
       "Country": [
         "Ülke"
       ],
+      "Credits": [
+        "Kredi"
+      ],
       "Date": [
         "Tarih"
       ],
@@ -9614,8 +9626,14 @@
       "Remember my choice": [
         "Seçimimi hatırla"
       ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME } görüntülü görüşmesini kaldır"
+      ],
       "Remove metadata": [
         "Üst verileri kaldır"
+      ],
+      "Remove Zoom video conference": [
+        "Zoom görüntülü görüşmesini kaldır"
       ],
       "Reveal password": [
         "Parolayı görüntüle"
@@ -12032,6 +12050,9 @@
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Bu işlem geçerli aboneliğin kapsamını genişletir. Yalnızca yeni eklentiler ve geçerli fatura döneminin kalan süresi için ücret alınır. Aboneliğinizin yenilenme tarihi değişmeyecek."
+      ],
       "This number will be shown on all future invoices": [
         "Bu numara, sonraki tüm faturalarda görüntülenecek"
       ],
@@ -12072,6 +12093,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
+      ],
+      "Credits will be added to your balance": [
+        "Kalan kredi bakiyenize eklenecek"
       ]
     },
     "Payments.plan_name": {
@@ -13088,12 +13117,6 @@
       "${ seconds } second": [
         "${ seconds } saniye",
         "${ seconds } saniye"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } ay ÜCRETSİZ",
-        "${ n } ay ÜCRETSİZ"
       ]
     },
     "specialoffer: Deal details": {
@@ -14628,9 +14651,6 @@
       "Create new group": [
         "Yeni grup ekle"
       ],
-      "Credits": [
-        "Kredi"
-      ],
       "Currency": [
         "Para birimi"
       ],
@@ -14833,6 +14853,9 @@
       ],
       "How does it all work?": [
         "Tüm bunlar nasıl işliyor?"
+      ],
+      "How does it work?": [
+        "Nasıl çalışır?"
       ],
       "How to update your email address": [
         "E-posta adresinizi nasıl güncellersiniz"

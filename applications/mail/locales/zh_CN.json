@@ -6682,6 +6682,9 @@
       "Copy the link to clipboard": [
         "复制链接到剪贴板"
       ],
+      "Copy your referral link": [
+        "复制您的推荐链接"
+      ],
       "Country code": [
         "国家/地区代码"
       ],
@@ -7527,6 +7530,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
+      ],
+      "Referral link copied to your clipboard": [
+        "邀请链接已复制"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${ link }来解决。"
@@ -8926,6 +8932,9 @@
       ],
       "Country": [
         "国家/地区"
+      ],
+      "Credits": [
+        "余额"
       ],
       "Date": [
         "日期"
@@ -12503,11 +12512,6 @@
         "${ seconds } 秒"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "免费 ${ n } 个月"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 位用户"
@@ -13945,9 +13949,6 @@
       "Create new group": [
         "创建群组"
       ],
-      "Credits": [
-        "余额"
-      ],
       "Currency": [
         "货币"
       ],
@@ -14142,6 +14143,9 @@
       ],
       "How does it all work?": [
         "这一切是如何运作的呢？"
+      ],
+      "How does it work?": [
+        "如何操作？"
       ],
       "How to update your email address": [
         "如何更新您的邮箱地址"
