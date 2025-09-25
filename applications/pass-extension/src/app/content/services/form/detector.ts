@@ -35,6 +35,7 @@ const NOOP_EL = document.createElement('form');
 const DETECTION_TIE_TRESHOLD = 0.01;
 
 type DetectorConfig = {
+    root: HTMLElement | Document;
     fieldTypes?: FieldType[];
     formTypes?: FormType[];
     onBottleneck?: (data: { detectionTime: number; hostname: string }) => void;
@@ -150,7 +151,7 @@ export const createDetectorService = (config: DetectorConfig) => {
         });
 
     const predictForms = guard((subTypes: FormType[], boundRuleset?: BoundRuleset) =>
-        getPredictionsFor<FormType>(boundRuleset ?? ruleset.against(document.body), {
+        getPredictionsFor<FormType>(boundRuleset ?? ruleset.against(config.root), {
             type: 'form',
             subTypes,
             selectBest: selectBestForm,
@@ -158,7 +159,7 @@ export const createDetectorService = (config: DetectorConfig) => {
     );
 
     const predictFields = guard((subTypes: FieldType[], boundRuleset?: BoundRuleset) =>
-        getPredictionsFor<FieldType>(boundRuleset ?? ruleset.against(document.body), {
+        getPredictionsFor<FieldType>(boundRuleset ?? ruleset.against(config.root), {
             type: 'field',
             subTypes,
             selectBest,
@@ -168,7 +169,7 @@ export const createDetectorService = (config: DetectorConfig) => {
     const predictAll = guard((options?: { excludedFieldTypes?: FieldType[] }) => {
         const fieldSubTypes = fieldTypes.filter((type) => !options?.excludedFieldTypes?.includes(type));
 
-        const boundRuleset = ruleset.against(document.body);
+        const boundRuleset = ruleset.against(config.root);
         const formPredictions = predictForms(config.formTypes ?? formTypes, boundRuleset);
         const fieldPredictions = predictFields(config.fieldTypes ?? fieldSubTypes, boundRuleset);
         const fieldMap = groupFields(formPredictions, fieldPredictions);
