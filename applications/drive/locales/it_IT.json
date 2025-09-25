@@ -3768,6 +3768,9 @@
       "We were not able to load some invitations": [
         "Non siamo riusciti a caricare alcuni inviti"
       ],
+      "We were not able to load some items": [
+        "Impossibile caricare alcuni elementi."
+      ],
       "We were not able to load some items shared with you": [
         "Non siamo riusciti a caricare alcuni elementi condivisi con te"
       ],
@@ -4900,6 +4903,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: blocca la fuga di dati bloccando la connessione Internet in caso di interruzione imprevista della VPN."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Passaggio 1:** Invita i tuoi amici a ${ BRAND_NAME } con il tuo link di affiliazione."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Passo 2:** I tuoi amici ottengono 2 settimane gratis sul piano ${ BRAND_NAME } che hanno scelto."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Passo 2:** I tuoi amici ottengono 2 settimane gratis sul loro piano."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Passaggio 3:** Ottieni ${ referrerRewardAmount } crediti per ogni amico che si abbona a un piano."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Passaggio 3:** Ottieni ${ referrerRewardAmount } crediti per ogni persona che si abbona a un piano."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } memoria bonus"
       ],
@@ -5131,6 +5149,9 @@
       ],
       "Copy the link to clipboard": [
         "Copia il link negli appunti"
+      ],
+      "Copy your referral link": [
+        "Copia il tuo link di riferimento"
       ],
       "Country code": [
         "Codice nazione"
@@ -5918,6 +5939,9 @@
       ],
       "Recovery process might take some time.": [
         "Il processo di recupero potrebbe richiedere del tempo."
+      ],
+      "Referral link copied to your clipboard": [
+        "Link di riferimento copiato negli appunti"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornare la pagina o ${ link } risolverà automaticamente la maggior parte dei problemi."
@@ -6957,6 +6981,9 @@
       "Created": [
         "Creato"
       ],
+      "Credits": [
+        "Crediti"
+      ],
       "Delete": [
         "Elimina"
       ],
@@ -6981,6 +7008,9 @@
       ],
       "Don't ask again": [
         "Non chiederlo più"
+      ],
+      "Don't show this again": [
+        "Non mostrare più"
       ],
       "Download anyway": [
         "Scarica comunque"
@@ -9732,6 +9762,9 @@
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Questa azione estende l'abbonamento esistente. Ti verranno addebitati solo i nuovi add-on e il tempo rimanente del ciclo di fatturazione corrente. La data di rinnovo del tuo abbonamento non verrà modificata."
+      ],
       "This number will be shown on all future invoices": [
         "Questo numero sarà mostrato su tutte le fatture future"
       ],
@@ -9772,6 +9805,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Credito per la parte non usata del tuo precedente abbonamento"
+      ],
+      "Credits will be added to your balance": [
+        "I crediti verranno aggiunti al tuo saldo."
       ]
     },
     "Payments.plan_name": {
@@ -10175,6 +10216,26 @@
         "per 12 mesi"
       ]
     },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per ogni affiliazione"
+      ],
+      "Invite friends. Get credits.": [
+        "Invita amici. Ottieni crediti."
+      ],
+      "Invited friends": [
+        "Amici invitati"
+      ],
+      "More sharing options": [
+        "Più opzioni di condivisione"
+      ],
+      "Refer friends": [
+        "Segnala amici"
+      ],
+      "Start earning credits": [
+        "Inizia a guadagnare crediti"
+      ]
+    },
     "Safety review": {
       "Review account safety": [
         "Controlla la sicurezza dell'account"
@@ -10510,12 +10571,6 @@
       "${ seconds } second": [
         "${ seconds } secondo",
         "${ seconds } secondi"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mese GRATIS",
-        "${ n } mesi GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -11777,9 +11832,6 @@
       "Created by": [
         "Creato da"
       ],
-      "Credits": [
-        "Crediti"
-      ],
       "Currency": [
         "Valuta"
       ],
@@ -12004,6 +12056,9 @@
         "Hm, non siamo riusciti a trovarlo"
       ],
       "How does it all work?": [
+        "Come funziona?"
+      ],
+      "How does it work?": [
         "Come funziona?"
       ],
       "Human verification": [
@@ -12316,6 +12371,9 @@
       ],
       "Share your calendar with your team": [
         "Condividi il tuo calendario con il tuo team"
+      ],
+      "Share your link": [
+        "Condividi il tuo link"
       ],
       "Shared": [
         "Condivisi"

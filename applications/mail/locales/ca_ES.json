@@ -1139,7 +1139,7 @@
         "Esborra aquesta etiqueta"
       ],
       "Remove video conference": [
-        "Elimina la videoconferència"
+        "Esborreu la videoconferència"
       ],
       "Replace": [
         "Reemplaça"
@@ -1449,6 +1449,12 @@
       ],
       "Toggle Contacts app": [
         "Alterna l'aplicació Contactes"
+      ],
+      "Toggle notifications": [
+        "Activa/desactiva les notificacions"
+      ],
+      "Toggle referral": [
+        "Activar/desactivar referit"
       ],
       "Toggle security center app": [
         "Commuta l'aplicació del centre de seguretat"
@@ -6607,6 +6613,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Interruptor de bloqueig**: atura les filtracions de dades en bloquejar la connexió a Internet si la VPN es desconnecta sobtadament."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de referència."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla ${ BRAND_NAME } escollit."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Pas 3:** Obtingueu ${ referrerRewardAmount } crèdits per cada amistat que es subscrigui a un pla."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que es subscrigui a un pla."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
       ],
@@ -6922,6 +6943,9 @@
       ],
       "Copy the link to clipboard": [
         "Copia l'enllaç al porta-retalls"
+      ],
+      "Copy your referral link": [
+        "Copieu el vostre enllaç de recomanació"
       ],
       "Country code": [
         "Codi de país"
@@ -7793,6 +7817,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
+      ],
+      "Referral link copied to your clipboard": [
+        "S'ha copiat l'enllaç de recomanació al porta-retalls"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
@@ -9242,6 +9269,9 @@
       "Country": [
         "País"
       ],
+      "Credits": [
+        "Crèdits"
+      ],
       "Date": [
         "Data"
       ],
@@ -9618,13 +9648,13 @@
         "Recordar la meva selecció"
       ],
       "Remove ${ MEET_APP_NAME } video conference": [
-        "Elimina la videoconferència de ${ MEET_APP_NAME }"
+        "Esborreu la videoconferència de ${ MEET_APP_NAME }"
       ],
       "Remove metadata": [
         "Esborra les metadades"
       ],
       "Remove Zoom video conference": [
-        "Elimina la videoconferència de Zoom"
+        "Esborreu la videoconferència de Zoom"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -12041,6 +12071,9 @@
         "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mes. Podeu cancel·lar-ho en qualsevol moment.",
         "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Aquesta acció amplia la subscripció existent. Se us cobraran només els nous complements i el temps restant del cicle de facturació actual. La data de renovació de la subscripció no es modificarà."
+      ],
       "This number will be shown on all future invoices": [
         "Aquest número es mostrarà a totes les factures futures"
       ],
@@ -12081,6 +12114,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crèdit per la part no utilitzada de la vostra subscripció al pla anterior"
+      ],
+      "Credits will be added to your balance": [
+        "Els crèdits s'afegiran al vostre saldo"
       ]
     },
     "Payments.plan_name": {
@@ -12481,6 +12522,40 @@
       ],
       "Stored with zero-access encryption": [
         "S'ha emmagatzemat amb xifratge d'accés zero"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } com a referència"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Guanyeu fins a ${ maxRewardAmount } en crèdits. Rebreu ${ referrerRewardAmount } quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Una amistat s'hi ha afegit",
+        "Unes amistats s'hi han afegit"
+      ],
+      "Friend subscribed": [
+        "Una amistat s'ha subscrit",
+        "Unes amistats s'han subscrit"
+      ],
+      "Invite friends. Get credits.": [
+        "Convideu amistats. Aconseguiu crèdits."
+      ],
+      "Invited friends": [
+        "Amistats que heu convidat"
+      ],
+      "More sharing options": [
+        "Més opcions de compartició"
+      ],
+      "Refer friends": [
+        "Recomaneu amistats"
+      ],
+      "Start earning credits": [
+        "Comenceu a guanyar crèdits"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Podeu obtenir fins a **${ maxRewardAmount }** en crèdits."
       ]
     },
     "Remaining days before the message expire": {
@@ -13002,12 +13077,6 @@
       "${ seconds } second": [
         "${ seconds } segon",
         "${ seconds } segons"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } mesos GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -14542,9 +14611,6 @@
       "Create new group": [
         "Crea un grup nou"
       ],
-      "Credits": [
-        "Crèdits"
-      ],
       "Currency": [
         "Moneda"
       ],
@@ -14747,6 +14813,9 @@
       ],
       "How does it all work?": [
         "Com funciona tot?"
+      ],
+      "How does it work?": [
+        "Com funciona?"
       ],
       "How to update your email address": [
         "Com podeu actualitzar la vostra adreça de correu electrònic?"
@@ -15057,6 +15126,9 @@
       "Recover data": [
         "Recuperar dades"
       ],
+      "Referral": [
+        "Referència"
+      ],
       "Remove from list?": [
         "Voleu eliminar-lo de la llista?"
       ],
@@ -15152,6 +15224,9 @@
       ],
       "Share your calendar with your team": [
         "Compartiu el calendari amb el vostre equip"
+      ],
+      "Share your link": [
+        "Compartiu el vostre enllaç"
       ],
       "Sign in and grant access": [
         "Iniciar sessió i concedir accés"

@@ -56,6 +56,9 @@
       "Advanced options": [
         "Opțiuni avansate"
       ],
+      "Allow access": [
+        "Permitere acces"
+      ],
       "Apply lifetime coupon code": [
         "Aplicare cupon pe viață"
       ],
@@ -725,6 +728,14 @@
       ],
       "Expand": [
         "Extindere"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Nu mă mai întreba"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Doriți golirea automată a memoriei după ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1552,6 +1563,9 @@
       "Copied to clipboard": [
         "Copiat în memorie."
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Copiat în memorie (expiră peste ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Cuponul a fost aplicat!"
       ],
@@ -2038,8 +2052,14 @@
       "Please follow the steps below to set up your domain.": [
         "Urmați pașii de mai jos pentru a vă seta domeniul."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Mențineți ${ PASS_APP_NAME } deschis, astfel încât memoria să poată fi golită automat."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Păstrați această fereastră deschisă cât timp datele se importă. Acest proces poate dura câteva minute."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Păstrați navigatorul web deschis, astfel încât memoria să poată fi golită automat."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Asigurați-vă că fereastra activă anterioară este cea în care doriți să efectuați tastarea automată și cursorul se află în câmpul de conectare."
@@ -3751,6 +3771,11 @@
         "Puteți închide această fereastră după salvarea fișierului."
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Va necesita o permisiune de la navigatorul web"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Adăugare cheie secretă A2F"
@@ -4053,6 +4078,9 @@
       ],
       "Change your lock method": [
         "Modificați metoda de blocare"
+      ],
+      "Clear clipboard": [
+        "Golire memorie"
       ],
       "Confirm extra password": [
         "Confirmare parolă suplimentară"
@@ -4553,6 +4581,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Parola suplimentară trebuie să aibă cel puțin 8 caractere."
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Permiteți accesarea memoriei pentru a activa ștergerea automată a parolelor și a datelor copiate."
       ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."

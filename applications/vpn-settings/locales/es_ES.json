@@ -77,8 +77,8 @@
       "Add external address": [
         "Añadir una dirección externa"
       ],
-      "Add more seats": [
-        "Añadir más licencias"
+      "add more seats": [
+        "añadir más licencias"
       ],
       "Add PayPal": [
         "Añadir PayPal"
@@ -1001,8 +1001,8 @@
       "User": [
         "Usuario"
       ],
-      "users and addresses": [
-        "usuarios y direcciones"
+      "Users and addresses": [
+        "Usuarios y direcciones"
       ],
       "Verify": [
         "Verificar"
@@ -5554,6 +5554,15 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importa tus códigos existentes** de otras aplicaciones 2FA, como Google Authenticator"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Paso 1:** Invita a tus amigos a ${ BRAND_NAME } con tu enlace de referidos."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Paso 2:** Tus amigos obtienen 2 semanas gratis en su plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Paso 3:** Consigue ${ referrerRewardAmount } créditos por cada amigo que se suscriba a un plan."
+      ],
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** en todos los dispositivos"
       ],
@@ -5620,6 +5629,9 @@
         "Añadir servidor (${ availableAddedCount } disponible)",
         "Añadir servidor (${ availableAddedCount } disponibles)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Añadir enlaces de videoconferencia a las invitaciones del calendario"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Añade tu nombre y logo para crear una experiencia más personalizada para tu organización."
       ],
@@ -5679,9 +5691,6 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permite que los usuarios se conecten a servidores compartidos seguros desde la sección **Países** de la aplicación ${ VPN_APP_NAME }."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permite añadir fácilmente enlaces a videoconferencias de ${ MEET_APP_NAME } en tus invitaciones de calendario."
       ],
       "Already allocated": [
         "Ya asignado"
@@ -6186,8 +6195,8 @@
       "Groups": [
         "Grupos"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Ayuda para escribir, responder y corregir correos electrónicos. Administrar para usuarios individuales en ${ userAndAddress }. ${ addMoreSeats }"
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Ayuda a escribir, responder y corregir correos electrónicos. Si está deshabilitado, solo los administradores tendrán acceso. Administrar para usuarios individuales en ${ userAndAddress } o ${ addMoreSeats }"
       ],
       "here": [
         "aquí"
@@ -6454,8 +6463,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administra las aplicaciones ${ BRAND_NAME } a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
       ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Administra las funciones a las que los miembros de tu organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
+      "Manage which features the members of your organization can access.": [
+        "Administra a qué funciones pueden acceder los miembros de tu organización."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Introduce manualmente esta información en tu aplicación de autenticación para configurar tu cuenta. ${ switchButton }."
@@ -7823,9 +7832,6 @@
       "Allowed domain": [
         "Dominio permitido"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permite fácilmente a todos en tu organización añadir enlaces a videoconferencias a sus invitaciones de calendario."
-      ],
       "Amount": [
         "Cantidad"
       ],
@@ -7970,6 +7976,9 @@
       "Country": [
         "País"
       ],
+      "Credits": [
+        "Créditos"
+      ],
       "Credits used": [
         "Créditos utilizados"
       ],
@@ -8008,6 +8017,9 @@
       ],
       "Domain name": [
         "Nombre del dominio"
+      ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
       ],
       "e.g. example.com": [
         "por ejemplo ejemplo.es"
@@ -8426,12 +8438,6 @@
       ],
       "Verification code": [
         "Código de verificación"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videoconferencias con ${ MEET_APP_NAME }"
-      ],
-      "Video conferencing with Zoom": [
-        "Videoconferencia por Zoom"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -10559,9 +10565,6 @@
       "Let's talk": [
         "Habla con nosotros"
       ],
-      "Limited time offer": [
-        "Oferta por tiempo limitado"
-      ],
       "Recommended": [
         "Recomendado"
       ]
@@ -11413,6 +11416,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } por cada referido"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Si cancelas antes de esta fecha,** pasarás a un **plan inferior** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } cuando finalice la prueba."
       ],
@@ -11427,6 +11433,15 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Disfruta de **${ planTitle }** gratis hasta el **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Invita a tus amigos. Obtén créditos."
+      ],
+      "Refer friends": [
+        "Invitar a amigos"
+      ],
+      "Start earning credits": [
+        "Empieza a ganar créditos"
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Te queda **${ daysRemaining } día** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte.",
@@ -12219,12 +12234,6 @@
       "${ seconds } second": [
         "${ seconds } segundo",
         "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } meses GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -14522,11 +14531,11 @@
       "Verifying your payment...": [
         "Verificando tu pago..."
       ],
-      "Video conferencing": [
-        "Videoconferencia"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videoconferencias con ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Videoconferencia por Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Consulta los eventos de la organización al mejorar a Professional"
@@ -14637,12 +14646,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permite añadir fácilmente enlaces a videoconferencias de ${ MEET_APP_NAME } en tus invitaciones de calendario."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Permite añadir fácilmente enlaces a videoconferencias de Zoom en tus invitaciones de calendario."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambia automáticamente entre tus temas preferidos para el día y la noche en sincronía con los modos de día y noche de tu sistema."

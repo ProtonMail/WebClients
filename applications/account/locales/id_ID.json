@@ -136,9 +136,6 @@
       "Add label": [
         "Tambah label"
       ],
-      "Add more seats": [
-        "Tambah lebih banyak kuota"
-      ],
       "Add notification": [
         "Tambah notifikasi"
       ],
@@ -1572,9 +1569,6 @@
       ],
       "User": [
         "Pengguna"
-      ],
-      "users and addresses": [
-        "pengguna dan alamat"
       ],
       "Verify": [
         "Verifikasi"
@@ -8349,9 +8343,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Memungkinkan pengguna untuk terhubung ke server terbagi yang aman dari kolom **Negara** di aplikasi ${ VPN_APP_NAME }."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Memungkinkan tautan konferensi video ${ MEET_APP_NAME } untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."
-      ],
       "Already allocated": [
         "Telah dialokasikan"
       ],
@@ -9132,9 +9123,6 @@
       "Groups": [
         "Grup"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Membantu menulis, membalas, dan mengoreksi email. Kelola fitur ini untuk pengguna individu di ${ userAndAddress }. ${ addMoreSeats }"
-      ],
       "here": [
         "di sini"
       ],
@@ -9512,9 +9500,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kelola aplikasi ${ BRAND_NAME } mana saja yang dapat diakses oleh anggota organisasi Anda. Apabila dinonaktifkan, aplikasi hanya akan dapat diakses oleh administrator."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Kelola fitur mana saja yang dapat diakses oleh anggota organisasi Anda. Apabila dinonaktifkan, fitur hanya akan dapat diakses oleh administrator."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Kelola preferensi notifikasi email Anda untuk ${ DOCS_APP_NAME }."
@@ -11867,9 +11852,6 @@
       "Allowed domain": [
         "Domain yang diizinkan"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender secara terpadu."
-      ],
       "Amount": [
         "Nominal"
       ],
@@ -12202,6 +12184,9 @@
       ],
       "Don't keep versions": [
         "Jangan simpan berkas versi lawas"
+      ],
+      "Don't show this again": [
+        "Jangan tampilkan lagi"
       ],
       "Duration": [
         "Durasi"
@@ -15889,9 +15874,6 @@
       "Let's talk": [
         "Mari berbincang"
       ],
-      "Limited time offer": [
-        "Penawaran waktu terbatas"
-      ],
       "Recommended": [
         "Direkomendasikan"
       ],
@@ -16073,9 +16055,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Memasukkan diri Anda ke ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Penawaran rilis khusus: Dapatkan ${ title } dengan harga ${ price } untuk selamanya!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Penawaran khusus: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } seharga ${ priceString }."
@@ -18702,11 +18681,6 @@
       ],
       "${ seconds } second": [
         "${ seconds } detik"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } bulan GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -21715,9 +21689,6 @@
       ],
       "Version history": [
         "Riwayat versi"
-      ],
-      "Video conferencing": [
-        "Konferensi video"
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Konferensi video dengan ${ MEET_APP_NAME }"

@@ -141,8 +141,8 @@
       "Add label": [
         "Adăugare etichetă"
       ],
-      "Add more seats": [
-        "Adăugare mai multe licențe"
+      "add more seats": [
+        "adăugați mai multe licențe"
       ],
       "Add notification": [
         "Adăugare notificare"
@@ -774,6 +774,9 @@
       "Get more servers": [
         "Obțineți mai multe servere"
       ],
+      "Get Pass Family": [
+        "Luați Pass Family"
+      ],
       "Get Pass Plus": [
         "Luați Pass Plus"
       ],
@@ -791,6 +794,12 @@
       ],
       "Get the deal": [
         "Obțineți oferta"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "Luați extensia pentru ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Luați suita completă"
       ],
       "Get the writing assistant": [
         "Luați asistentul de scriere"
@@ -1011,6 +1020,9 @@
       "No": [
         "Nu"
       ],
+      "No thanks": [
+        "Nu, mulțumesc"
+      ],
       "No, thanks": [
         "Nu, mulțumesc"
       ],
@@ -1025,6 +1037,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Deschidere setări ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Deschideți ${ PASS_APP_NAME } în navigatorul web"
       ],
       "Open navigation": [
         "Deschidere navigare"
@@ -1434,6 +1449,9 @@
       "Start subscription": [
         "Start abonament"
       ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Începeți să utilizați ${ PASS_APP_NAME } acum"
+      ],
       "Stay": [
         "Nu închide"
       ],
@@ -1584,8 +1602,8 @@
       "User": [
         "Utilizator"
       ],
-      "users and addresses": [
-        "utilizatori și adrese"
+      "Users and addresses": [
+        "Utilizatori și adrese"
       ],
       "Verify": [
         "Verifică"
@@ -4463,7 +4481,7 @@
         "Primiți notificări dacă parola sau alte date v-au fost divulgate de la un serviciu terță parte."
       ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
-        "Obțineți până la ${ credits } credite invitând persoane la ${ BRAND_NAME }."
+        "Obțineți până la ${ credits } în credite invitând persoane la ${ BRAND_NAME }."
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajutați-vă echipa să stocheze în siguranță parolele pentru informațiile private despre afaceri și clienți."
@@ -8423,6 +8441,15 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Invitați persoane** la ${ BRAND_NAME } cu legătura web personală de recomandare."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Pasul 2:** Persoanele recomandate primesc 2 săptămâni gratuite pentru planul lor."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+      ],
       "**Sync codes** to all your devices": [
         "**Vă sincronizați codurile** pe toate dispozitivele"
       ],
@@ -8543,6 +8570,9 @@
         "Adăugare server (${ availableAddedCount } disponibile)",
         "Adăugare server (${ availableAddedCount } disponibile)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Adăugați legături de conferință video la invitațiile din calendar."
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Adăugați-vă numele sau logoul pentru a crea o experiență mai personalizată pentru organizație."
       ],
@@ -8623,9 +8653,6 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permite utilizatorilor să se conecteze la serverele securizate partajate din secțiunea **Țări** a aplicației ${ VPN_APP_NAME }."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permite adăugarea fără probleme a legăturilor web de conferințe video ${ MEET_APP_NAME } la invitațiile personale din calendar."
       ],
       "Already allocated": [
         "Deja alocat"
@@ -9426,8 +9453,8 @@
       "Groups": [
         "Grupuri"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Ajută la scrierea, răspunsul și corectarea mesajelor. Gestionare pentru utilizatori individuali în ${ userAndAddress }. ${ addMoreSeats }"
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Ajută la scrierea, răspunderea și corectarea mesajelor. Dacă este dezactivat, doar administratorii vor avea acces. Pentru utilizatorii individuali puteți gestiona în ${ userAndAddress } sau ${ addMoreSeats }."
       ],
       "here": [
         "aici"
@@ -9811,8 +9838,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestionați aplicațiile ${ BRAND_NAME } pe care membrii organizației proprii le pot accesa. Dacă este dezactivat, numai administratorii vor avea acces."
       ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Gestionați ce funcții pot accesa membrii organizației. Dacă este dezactivat, numai administratorii vor avea acces."
+      "Manage which features the members of your organization can access.": [
+        "Gestionați ce funcții pot accesa membrii organizației personale."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestionați preferințele notificărilor pe e-mail pentru ${ DOCS_APP_NAME }."
@@ -12142,14 +12169,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
+      "/month x ${ months }": [
+        "/lună x ${ months }"
+      ],
       "1 hour": [
         "o oră"
       ],
       "1 minute": [
         "1 minut"
       ],
+      "10 hide-my-email aliases": [
+        "10 aliasuri hide-my-email"
+      ],
       "10 minutes": [
         "10 minute"
+      ],
+      "10 VPN devices": [
+        "10 dispozitive VPN"
+      ],
+      "15 extra email addresses": [
+        "15 adrese de e-mail suplimentare"
       ],
       "15 minutes": [
         "15 minute"
@@ -12165,6 +12204,12 @@
       ],
       "5 minutes": [
         "5 minute"
+      ],
+      "500 GB Storage": [
+        "500 GiB spațiu de stocare"
+      ],
+      "6 Pass Plus accounts": [
+        "6 conturi Pass Plus"
       ],
       "Account holder": [
         "Titular cont"
@@ -12195,6 +12240,9 @@
       ],
       "Addresses": [
         "Adrese"
+      ],
+      "Admin panel for your family": [
+        "Panou de administrare pentru familie"
       ],
       "Advanced": [
         "Avansat"
@@ -12246,9 +12294,6 @@
       ],
       "Allowed domain": [
         "Domeniu permis"
-      ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permite tuturor din organizație să adauge fără probleme legături web pentru conferințe video la invitațiile din calendar."
       ],
       "Amount": [
         "Suma"
@@ -12366,6 +12411,9 @@
       ],
       "BTC amount": [
         "Suma BTC"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentificator A2F încorporat"
       ],
       "Calendar": [
         "Calendar"
@@ -12586,6 +12634,9 @@
       "Don't keep versions": [
         "Fără păstrare versiuni"
       ],
+      "Don't show this again": [
+        "Nu mai arăta asta"
+      ],
       "Duration": [
         "Durata"
       ],
@@ -12670,6 +12721,9 @@
       "File": [
         "Fișier"
       ],
+      "File attachments (up to 10GB)": [
+        "Atașamente (până la 10 GiB)"
+      ],
       "Filter Name": [
         "Nume filtru"
       ],
@@ -12685,11 +12739,17 @@
       "Font size": [
         "Mărime font"
       ],
+      "for your first month": [
+        "pentru prima lună"
+      ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
       "Gateway name": [
         "Nume poartă de acces"
+      ],
+      "Get everything in Free, plus:": [
+        "Obțineți tot din planul gratuit, plus:"
       ],
       "Gift code": [
         "Cod cadou"
@@ -12708,6 +12768,9 @@
       ],
       "Hide password": [
         "Ascundere parolă"
+      ],
+      "Highest VPN speed": [
+        "Viteză VPN maximă"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Înțeleg că va trebui să adaug imediat această adresă de e-mail la celălalt cont, pentru a evita pierderea definitivă a acestei adrese."
@@ -12931,6 +12994,9 @@
       "Numbers": [
         "Cifre"
       ],
+      "Online privacy for your whole family": [
+        "Confidențialitate online pentru întreaga familie"
+      ],
       "OpenVPN / IKEv2 password": [
         "Parola OpenVPN/IKEv2"
       ],
@@ -13042,6 +13108,9 @@
       "Read": [
         "Citite"
       ],
+      "Recommended": [
+        "Recomandat"
+      ],
       "Recovery email address": [
         "Adresa de e-mail de recuperare"
       ],
@@ -13059,6 +13128,9 @@
       ],
       "Remove image metadata": [
         "Eliminare metadate din imagini"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Reînnoiți cu ${ renewalPrice }, anulați oricând."
       ],
       "Repeat backup password": [
         "Repetare parolă de rezervă"
@@ -13092,6 +13164,9 @@
       ],
       "Second password": [
         "Parola secundară"
+      ],
+      "Secure password generator": [
+        "Generator de parole securizat"
       ],
       "Select Linux package format": [
         "Selectați formatul pachetului Linux"
@@ -13163,6 +13238,9 @@
       ],
       "Special characters": [
         "Caractere speciale"
+      ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Ofertă specială: luați ${ PASS_SHORT_APP_NAME } Plus cu ${ offerPrice }"
       ],
       "Starred": [
         "Cu stea"
@@ -13248,6 +13326,12 @@
       "Undo send": [
         "Anulare trimitere"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Aliasuri hide-my-email nelimitate"
+      ],
+      "Unlimited logins and devices": [
+        "Conectări și dispozitive nelimitate"
+      ],
       "Upload 1 or more encryption keys": [
         "Încărcare una sau mai multe chei de criptare"
       ],
@@ -13283,6 +13367,9 @@
       ],
       "Value": [
         "Valoare"
+      ],
+      "Vault, item & secure link sharing": [
+        "Partajare seif, articole și legături web securizate"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -13926,7 +14013,7 @@
         "cu ${ price }"
       ],
       "Limited time offer: **Get up to 35% off** yearly plans": [
-        "Ofertă cu durată limitată: **Obțineți până la 35% reducere** la planurile anuale"
+        "Ofertă cu durată limitată: **obțineți până la 35% reducere** la planurile anuale."
       ],
       "Set up your account with your Porkbun domain.": [
         "Setați-vă contul cu domeniul Porkbun."
@@ -16317,6 +16404,13 @@
         "Începeți să utilizați ${ PASS_APP_NAME }"
       ]
     },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ]
+    },
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Obțineți acces pe viață la toate funcțiile premium actuale și viitoare ale ${ PASS_APP_NAME } cu o singură plată unică."
@@ -16400,9 +16494,6 @@
       ],
       "Let's talk": [
         "Să discutăm"
-      ],
-      "Limited time offer": [
-        "Ofertă limitată"
       ],
       "Recommended": [
         "Recomandat"
@@ -16585,9 +16676,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Se conectează la ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Ofertă specială de lansare: Obțineți ${ title } cu ${ price } pentru totdeauna!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } cu ${ priceString }."
@@ -16929,6 +17017,9 @@
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
+      ],
       "This number will be shown on all future invoices": [
         "Acest număr va fi afișat pe toate facturile viitoare."
       ],
@@ -16972,6 +17063,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Credit pentru porțiunea neutilizată din abonamentul planului anterior."
+      ],
+      "Credits will be added to your balance": [
+        "Creditele vă vor fi adăugate în soldul personal."
       ]
     },
     "Payments.plan_name": {
@@ -17565,6 +17664,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per recomandare"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de probare."
       ],
@@ -17579,6 +17681,18 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Invitați persoane. Obțineți credite."
+      ],
+      "Refer friends": [
+        "Recomandați persoane"
+      ],
+      "Start earning credits": [
+        "Începeți să câștigați credite"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Puteți obține până la **${ maxRewardAmount }** în credite."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Mai aveți **${ daysRemaining } zi** pentru a explora toate funcțiile puternice pe care le oferă **${ planTitle }**.",
@@ -18935,6 +19049,9 @@
       "30 custom email addresses": [
         "30 de adrese de e-mail personale"
       ],
+      "4.8+ rating": [
+        "Evaluare 4,8+"
+      ],
       "Advanced account protection": [
         "Protecție avansată a contului"
       ],
@@ -19012,6 +19129,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Obțineți ${ referralInfo.uiData.refereeRewardAmount } în credite"
+      ],
+      "Get a new encrypted email for free": [
+        "Obțineți gratuit un e-mail nou criptat"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obțineți o adresă ${ MAIL_APP_NAME } securizată sau ${ internalButton }"
@@ -19120,11 +19240,17 @@
       "Start free trial": [
         "Începeți probarea gratuită"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Începeți să utilizați ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Spațiu de stocare"
       ],
       "Stream your favorite TV shows and movies": [
         "Vizionați emisiunile TV și filme favorite"
+      ],
+      "Swiss-based": [
+        "Situat în Elveția"
       ],
       "Sync files across devices and users": [
         "Sincronizare fișiere între dispozitive și utilizatori"
@@ -19140,6 +19266,9 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "Aprobat de peste 100 de milioane de oameni și companii"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Încercați ${ BRAND_NAME } timp de ${ TRIAL_DURATION_DAYS } zile gratuit"
@@ -19170,6 +19299,9 @@
       ],
       "Upload files of any size": [
         "Încărcați fișiere de orice mărime"
+      ],
+      "Use your current email": [
+        "Utilizare adresă curentă de e-mail"
       ],
       "use your current email.": [
         "utilizați adresa curentă de e-mail."
@@ -19369,13 +19501,6 @@
         "Secunde: ${ seconds }",
         "Secunde: ${ seconds }",
         "Secunde: ${ seconds }"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "Luni GRATUITE: ${ n }",
-        "Luni GRATUITE: ${ n }",
-        "Luni GRATUITE: ${ n }"
       ]
     },
     "specialoffer: Deal details": {
@@ -19579,8 +19704,14 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Câștigați până la ${ maxRewardAmount } în credite."
+      ],
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Obțineți credite când persoana pe care o invitați se abonează la un plan ${ BRAND_NAME }."
+      ],
       "Get up to ${ credits } in credits.": [
-        "Obțineți până la ${ credits } de credite."
+        "Obțineți până la ${ credits } în credite."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
@@ -20545,6 +20676,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Gratuit întotdeauna"
+      ],
+      "Pay once, access forever.": [
+        "Plătiți o dată, accesați pe viață."
+      ],
+      "per month, billed annually": [
+        "pe lună, facturat anual"
+      ],
       "View VPN session details for your organization.": [
         "Vizualizați detaliile sesiunii VPN pentru organizație."
       ]
@@ -21053,6 +21193,16 @@
       "${ feature } is now active": [
         "${ feature } este acum activă"
       ],
+      "${ friendsInvited } Friend invited": [
+        "Persoane invitate: ${ friendsInvited }",
+        "Persoane invitate: ${ friendsInvited }",
+        "Persoane invitate: ${ friendsInvited }"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "Persoane abonate: ${ friendsSubscribed }",
+        "Persoane abonate: ${ friendsSubscribed }",
+        "Persoane abonate: ${ friendsSubscribed }"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -21435,6 +21585,9 @@
       "Credentials": [
         "Acreditări"
       ],
+      "Credit earned": [
+        "Credite câștigate"
+      ],
       "Credits": [
         "Credite"
       ],
@@ -21586,6 +21739,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Descărcați ${ PASS_APP_NAME } pentru dispozitive"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Descărcare ${ VPN_APP_NAME }"
@@ -21762,6 +21918,9 @@
       ],
       "Forward emails": [
         "Redirecționare mesaje"
+      ],
+      "Free": [
+        "Gratuit"
       ],
       "Gateway": [
         "Poartă de acces"
@@ -22041,6 +22200,9 @@
       "Other sign-in issues": [
         "Alte probleme de conectare"
       ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus pe viață cu ${ plusLifetimePrice }"
+      ],
       "Password": [
         "Parola"
       ],
@@ -22202,6 +22364,9 @@
       ],
       "Secure email based in Switzerland": [
         "E-mail securizat găzduit în Elveția"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "Securizați-vă parolele. Oriunde."
       ],
       "Security and privacy": [
         "Securitate și confidențialitate"
@@ -22502,11 +22667,11 @@
       "Version history": [
         "Istoric versiuni"
       ],
-      "Video conferencing": [
-        "Conferință video"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videoconferință cu ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Conferință video cu Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Vedeți evenimentele organizației trecând la planul Professional"

@@ -141,9 +141,6 @@
       "Add label": [
         "Etiket ekle"
       ],
-      "Add more seats": [
-        "Daha fazla koltuk ekle"
-      ],
       "Add notification": [
         "Bildirim ekle"
       ],
@@ -774,6 +771,9 @@
       "Get more servers": [
         "Daha fazla sunucu edinin"
       ],
+      "Get Pass Family": [
+        "Pass Family edinin"
+      ],
       "Get Pass Plus": [
         "Pass Plus edinin"
       ],
@@ -791,6 +791,12 @@
       ],
       "Get the deal": [
         "Tekliften yararlanın"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "${ browser.title } eklentisini edinin"
+      ],
+      "Get the full suite": [
+        "Tüm paketi edinin"
       ],
       "Get the writing assistant": [
         "Yazma yardımcısını edinin"
@@ -1011,6 +1017,9 @@
       "No": [
         "Hayır"
       ],
+      "No thanks": [
+        "Hayır, teşekkürler"
+      ],
       "No, thanks": [
         "Hayır, teşekkürler"
       ],
@@ -1025,6 +1034,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME } ayarlarını aç"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "${ PASS_APP_NAME } uygulamasını tarayıcınızda açın"
       ],
       "Open navigation": [
         "Gezinmeyi aç"
@@ -1434,6 +1446,9 @@
       "Start subscription": [
         "Aboneliği başlat"
       ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "${ PASS_APP_NAME } kullanmaya başlayın"
+      ],
       "Stay": [
         "Kal"
       ],
@@ -1583,9 +1598,6 @@
       ],
       "User": [
         "Kullanıcı"
-      ],
-      "users and addresses": [
-        "kullanıcılar ve adresler"
       ],
       "Verify": [
         "Doğrula"
@@ -8532,9 +8544,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Kullanıcıların güvenli paylaşılan sunuculara bağlanabilmesi için ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden izin verin."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Takvim davetlerinize kolayca görüntülü ${ MEET_APP_NAME } görüşmesi bağlantıları eklemenizi sağlar."
-      ],
       "Already allocated": [
         "Zaten ayrılmış"
       ],
@@ -9329,9 +9338,6 @@
       "Groups": [
         "Gruplar"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "E-posta yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Bireysel kullanıcıları ${ userAndAddress } bölümünden yönetebilirsiniz. ${ addMoreSeats }"
-      ],
       "here": [
         "buraya"
       ],
@@ -9711,9 +9717,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Kuruluşunuzun üyelerinin hangi özelliklere erişebileceğini ayarlayın. Kapatılırsa, yalnızca yöneticiler erişebilir."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "${ DOCS_APP_NAME } için e-posta bildirimi tercihlerinizi ayarlayın."
@@ -12008,14 +12011,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
+      "/month x ${ months }": [
+        "/ay x ${ months }"
+      ],
       "1 hour": [
         "1 saat"
       ],
       "1 minute": [
         "1 dakika"
       ],
+      "10 hide-my-email aliases": [
+        "10 hide-my-email takma adı"
+      ],
       "10 minutes": [
         "10 dakika"
+      ],
+      "10 VPN devices": [
+        "10 VPN aygıtı"
+      ],
+      "15 extra email addresses": [
+        "15 ek e-posta adresi"
       ],
       "15 minutes": [
         "15 dakika"
@@ -12031,6 +12046,12 @@
       ],
       "5 minutes": [
         "5 dakika"
+      ],
+      "500 GB Storage": [
+        "500 GB depolama alanı"
+      ],
+      "6 Pass Plus accounts": [
+        "6 Pass Plus hesabı"
       ],
       "Account holder": [
         "Hesap sahibi"
@@ -12061,6 +12082,9 @@
       ],
       "Addresses": [
         "Adresler"
+      ],
+      "Admin panel for your family": [
+        "Aileniz için yönetim panosu"
       ],
       "Advanced": [
         "Gelişmiş"
@@ -12112,9 +12136,6 @@
       ],
       "Allowed domain": [
         "İzin verilen etki alanı"
-      ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Kuruluşunuzdaki herkesin takvim davetlerine kolayca görüntülü görüşme bağlantıları eklemesini sağlar."
       ],
       "Amount": [
         "Tutar"
@@ -12232,6 +12253,9 @@
       ],
       "BTC amount": [
         "BTC tutarı"
+      ],
+      "Built-in 2FA authenticator": [
+        "Hazır iki adımlı kimlik doğrulayıcı"
       ],
       "Calendar": [
         "Takvim"
@@ -12452,6 +12476,9 @@
       "Don't keep versions": [
         "Sürüm geçmişi tutulmasın"
       ],
+      "Don't show this again": [
+        "Bu bir daha görüntülenmesin"
+      ],
       "Duration": [
         "Süre"
       ],
@@ -12536,6 +12563,9 @@
       "File": [
         "Dosya"
       ],
+      "File attachments (up to 10GB)": [
+        "Ek dosyalar (10GB boyutuna kadar)"
+      ],
       "Filter Name": [
         "Süzgeç adı"
       ],
@@ -12551,11 +12581,17 @@
       "Font size": [
         "Yazı boyutu"
       ],
+      "for your first month": [
+        "ilk ayınız için"
+      ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
       ],
       "Gateway name": [
         "Ağ geçidi adı"
+      ],
+      "Get everything in Free, plus:": [
+        "Free sürümündeki her şeyin yanında:"
       ],
       "Gift code": [
         "Hediye kodu"
@@ -12574,6 +12610,9 @@
       ],
       "Hide password": [
         "Parolayı gizle"
+      ],
+      "Highest VPN speed": [
+        "En yüksek VPN hızı"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Bu e-posta adresini kalıcı olarak kaybetmemek için bu adresi şu anda başka bir hesaba eklemem gerektiğini anladım."
@@ -12797,6 +12836,9 @@
       "Numbers": [
         "Rakamlar"
       ],
+      "Online privacy for your whole family": [
+        "Tüm aileniz için çevrim içi gizlilik"
+      ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 parolası"
       ],
@@ -12908,6 +12950,9 @@
       "Read": [
         "Okunmuş"
       ],
+      "Recommended": [
+        "Önerilir"
+      ],
       "Recovery email address": [
         "Kurtarma e-posta adresi"
       ],
@@ -12925,6 +12970,9 @@
       ],
       "Remove image metadata": [
         "Görsel üst verilerini kaldır"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "${ renewalPrice } tutar ile yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
       "Repeat backup password": [
         "Yedek parola onayı"
@@ -12958,6 +13006,9 @@
       ],
       "Second password": [
         "İkinci parola"
+      ],
+      "Secure password generator": [
+        "Güvenli parola oluşturucu"
       ],
       "Select Linux package format": [
         "Linux paketi biçimini seçin"
@@ -13028,6 +13079,9 @@
       ],
       "Special characters": [
         "Özel karakterler"
+      ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Özel teklif: ${ PASS_SHORT_APP_NAME } Plus tarifesini ${ offerPrice } ile edinin"
       ],
       "Starred": [
         "Yıldızlı"
@@ -13113,6 +13167,12 @@
       "Undo send": [
         "Göndermeyi geri alma süresi"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
+      ],
+      "Unlimited logins and devices": [
+        "Sınırsız sayıda oturum açma ve aygıt"
+      ],
       "Upload 1 or more encryption keys": [
         "1 ya da birkaç şifreleme anahtarı yükleyin"
       ],
@@ -13148,6 +13208,9 @@
       ],
       "Value": [
         "Değer"
+      ],
+      "Vault, item & secure link sharing": [
+        "Kasa, öge ve güvenli bağlantı paylaşımı"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -16112,6 +16175,12 @@
         "${ PASS_APP_NAME } ile başla"
       ]
     },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } ay",
+        "${ n } ay"
+      ]
+    },
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Tek seferlik ödeme ile var olan ve gelecekteki tüm ${ PASS_APP_NAME } ücretli özelliklerine ömür boyu erişim kazanın."
@@ -16195,9 +16264,6 @@
       ],
       "Let's talk": [
         "Hadi konuşalım."
-      ],
-      "Limited time offer": [
-        "Sınırlı süreli teklif"
       ],
       "Recommended": [
         "Önerilen"
@@ -16380,9 +16446,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasında oturum açılıyor"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Özel açılış teklifi: Sonsuza dek ${ title } için ${ price } ödeyin!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Özel teklif: ${ priceString } ile ${ PLAN_NAMES[PLANS.PASS_LIFETIME] }."
@@ -16719,6 +16782,9 @@
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Bu işlem geçerli aboneliğin kapsamını genişletir. Yalnızca yeni eklentiler ve geçerli fatura döneminin kalan süresi için ücret alınır. Aboneliğinizin yenilenme tarihi değişmeyecek."
+      ],
       "This number will be shown on all future invoices": [
         "Bu numara, sonraki tüm faturalarda görüntülenecek"
       ],
@@ -16762,6 +16828,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
+      ],
+      "Credits will be added to your balance": [
+        "Kalan kredi bakiyenize eklenecek"
       ]
     },
     "Payments.plan_name": {
@@ -18788,6 +18862,9 @@
       "30 custom email addresses": [
         "30 özel e-posta adresi"
       ],
+      "4.8+ rating": [
+        "4.8 üzerinde değerlendirme"
+      ],
       "Advanced account protection": [
         "Gelişmiş hesap koruması"
       ],
@@ -18865,6 +18942,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "${ referralInfo.uiData.refereeRewardAmount } kredi kazanın"
+      ],
+      "Get a new encrypted email for free": [
+        "Yeni bir ücretsiz şifrelenmiş e-posta edinin"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Güvenli bir ${ MAIL_APP_NAME } adresi edinin ya da ${ internalButton }"
@@ -18972,11 +19052,17 @@
       "Start free trial": [
         "Ücretsiz deneme süresini başlat"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } kullanmaya başlayın"
+      ],
       "Storage": [
         "Depolama alanı"
       ],
       "Stream your favorite TV shows and movies": [
         "Sevdiğiniz TV dizilerini ve filmlerini izleyin"
+      ],
+      "Swiss-based": [
+        "İsviçre merkezli"
       ],
       "Sync files across devices and users": [
         "Dosyaları aygıtlar ve kullanıcılar arasında eşitleyin"
@@ -18992,6 +19078,9 @@
       ],
       "Total": [
         "Toplam"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "100 milyonun üzerinde kişi ve kuruluş tarafından güveniliyor"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "${ BRAND_NAME } hizmetini ${ TRIAL_DURATION_DAYS } gün süreyle ücretsiz deneyin"
@@ -19022,6 +19111,9 @@
       ],
       "Upload files of any size": [
         "Her boyuttaki dosyaları yükleyin"
+      ],
+      "Use your current email": [
+        "Geçerli e-posta adresinizi kullanın"
       ],
       "use your current email.": [
         "geçerli e-posta adresinizi kullanın."
@@ -19216,12 +19308,6 @@
       "${ seconds } second": [
         "${ seconds } saniye",
         "${ seconds } saniye"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } ay ÜCRETSİZ",
-        "${ n } ay ÜCRETSİZ"
       ]
     },
     "specialoffer: Deal details": {
@@ -20359,6 +20445,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Sonsuza kadar ücretsiz"
+      ],
+      "Pay once, access forever.": [
+        "Bir kere ödeyin, ömür boyu kullanın."
+      ],
+      "per month, billed annually": [
+        "aylık, yılda bir faturalanır"
+      ],
       "View VPN session details for your organization.": [
         "Kuruluşunuzun VPN oturumu ayrıntılarını görüntüleyin."
       ]
@@ -21388,6 +21483,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "${ DRIVE_APP_NAME } uygulamalarını indirin"
       ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Aygıtlarınız için ${ PASS_APP_NAME } indirin"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } indir"
       ],
@@ -21562,6 +21660,9 @@
       ],
       "Forward emails": [
         "E-postaları iletme"
+      ],
+      "Free": [
+        "Free"
       ],
       "Gateway": [
         "Ağ geçidi"
@@ -21840,6 +21941,9 @@
       "Other sign-in issues": [
         "Diğer oturum açma sorunları"
       ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus Lifetime ${ plusLifetimePrice } ile"
+      ],
       "Password": [
         "Parola"
       ],
@@ -22001,6 +22105,9 @@
       ],
       "Secure email based in Switzerland": [
         "İsviçre merkezli güvenli e-posta"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "Parolalarınızı koruyun. Her yerde."
       ],
       "Security and privacy": [
         "Güvenlik ve gizlilik"
@@ -22299,9 +22406,6 @@
       ],
       "Version history": [
         "Sürüm geçmişi"
-      ],
-      "Video conferencing": [
-        "Görüntülü görüşme"
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME } ile görüntülü görüşme"

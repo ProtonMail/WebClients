@@ -77,9 +77,6 @@
       "Add external address": [
         "Дадаць знешні адрас"
       ],
-      "Add more seats": [
-        "Дадаць больш ліцэнзій"
-      ],
       "Add PayPal": [
         "Дадаць PayPal"
       ],
@@ -1000,9 +997,6 @@
       ],
       "User": [
         "Карыстальнік"
-      ],
-      "users and addresses": [
-        "карыстальнікі і адрасы"
       ],
       "Verify": [
         "Спраўдзіць"
@@ -5844,9 +5838,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Дазволіць карыстальнікам падключацца да бяспечна абагуленых сервераў з раздзела **Краіны** праграмы ${ VPN_APP_NAME }."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцыі ${ MEET_APP_NAME } у запрашэнні вашага календара."
-      ],
       "Already allocated": [
         "Ужо вылучана"
       ],
@@ -6360,9 +6351,6 @@
       "Groups": [
         "Групы"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Дазваляе пісаць, адказваць і вычытваць лісты. Кіраванне для асобных карыстальнікаў ${ userAndAddress }. ${ addMoreSeats }"
-      ],
       "here": [
         "тут"
       ],
@@ -6629,9 +6617,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Кіруйце, да якіх праграм ${ BRAND_NAME } могуць атрымліваць доступ удзельнікі вашай арганізацыі. Калі выключана, то толькі адміністратары будуць мець доступ да іх."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Кіруйце, да якіх функцый могуць атрымліваць доступ удзельнікі вашай арганізацыі. Калі выключана, то толькі адміністратары будуць мець доступ да іх."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Для налады свайго ўліковага запісу ўвядзіце гэту інфармацыю ўручную ў праграму аўтэнтыфікацыі. ${ switchButton }."
@@ -8055,9 +8040,6 @@
       "Allowed domain": [
         "Дазволены дамен"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Дазваляе кожнаму ўдзельніку вашай арганізацыі бесперашкодна дадаваць спасылкі на відэаканферэнцыі да іх запрашэнняў календара."
-      ],
       "Amount": [
         "Сума"
       ],
@@ -8202,6 +8184,9 @@
       "Country": [
         "Краіна"
       ],
+      "Credits": [
+        "Крэдыты"
+      ],
       "Credits used": [
         "Выкарыстана крэдытаў"
       ],
@@ -8240,6 +8225,9 @@
       ],
       "Domain name": [
         "Даменнае імя"
+      ],
+      "Don't show this again": [
+        "Больш не паказваць"
       ],
       "e.g. example.com": [
         "напрыклад, example.com"
@@ -8660,12 +8648,6 @@
       ],
       "Verification code": [
         "Код спраўджання"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Відэаканферэнцыя з ${ MEET_APP_NAME }"
-      ],
-      "Video conferencing with Zoom": [
-        "Відэаканферэнцыя з Zoom"
       ],
       "Vulnerable": [
         "Уразлівы"
@@ -10850,9 +10832,6 @@
       "Let's talk": [
         "Звяжыцеся з намі"
       ],
-      "Limited time offer": [
-        "Прапанова абмежаваная па часе"
-      ],
       "Recommended": [
         "Рэкамендавана"
       ]
@@ -11180,6 +11159,9 @@
         "Пасля гэтага адбудзецца аўтаматычнае падаўжэнне за ${ renewPriceStr } за ${ renewalLength } месяцаў. Скасаваць можна ў любы час.",
         "Затым ён будзе аўтаматычна падоўжаны за ${ renewPriceStr } на ${ renewalLength } месяцаў. Вы можаце скасаваць у любы час."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Гэта дзеянне пашырае існуючую падпіску. З вас будзе спагнана плата толькі за новыя дадаткі і час, якія засталіся ў бягучым перыядзе аплаты. Дата падаўжэння вашай падпіскі не будзе зменена."
+      ],
       "This number will be shown on all future invoices": [
         "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
@@ -11223,6 +11205,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ваша картка адхілена. Паспрабуйце іншую картку або звяжыцеся з вашым банкам для аўтарызацыі плацяжу."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Крэдыты для нявыкарыстанай часткі вашага папярэдняга тарыфнага плана падпіскі"
+      ],
+      "Credits will be added to your balance": [
+        "Крэдыты будуць дададзены на ваш баланс"
       ]
     },
     "Payments.plan_name": {
@@ -12475,14 +12465,6 @@
         "${ seconds } секунды",
         "${ seconds } секунд",
         "${ seconds } секунд"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } месяц БЯСПЛАТНА",
-        "${ n } месяцы БЯСПЛАТНА",
-        "${ n } месяцаў БЯСПЛАТНА",
-        "${ n } месяцаў БЯСПЛАТНА"
       ]
     },
     "specialoffer: Deal details": {
@@ -14858,9 +14840,6 @@
       "Verifying your payment...": [
         "Спраўджанне вашага плацяжу..."
       ],
-      "Video conferencing": [
-        "Відэаканферэнцыя"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Відэаканферэнцыя з ${ MEET_APP_NAME }"
       ],
@@ -14973,12 +14952,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Адміністратары могуць кіраваць уліковымі запісамі карыстальнікаў і даваць правы адміністратара іншым карыстальнікам. Толькі асноўны адміністратар можа рэдагаваць тарыфны план арганізацыі."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцый ${ MEET_APP_NAME } у запрашэнні вашага календара."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Дазваляе бесперашкодна дадаваць спасылкі на відэаканферэнцый Zoom у запрашэнні вашага календара."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."

@@ -56,6 +56,9 @@
       "Advanced options": [
         "Opzioni avanzate"
       ],
+      "Allow access": [
+        "Consenti l'accesso"
+      ],
       "Apply lifetime coupon code": [
         "Applica codice coupon illimitato"
       ],
@@ -723,6 +726,14 @@
       ],
       "Expand": [
         "Espandi"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Non chiedermelo più"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Vuoi che i tuoi appunti vengano puliti automaticamente dopo ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1531,6 +1542,9 @@
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Copiato negli appunti (scade tra ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Coupon applicato correttamente!"
       ],
@@ -2011,8 +2025,14 @@
       "Please follow the steps below to set up your domain.": [
         "Segui i passaggi seguenti per configurare il tuo dominio."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Per favore, tieni ${ PASS_APP_NAME } aperto così che gli appunti possano essere automaticamente puliti."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Tieni aperta questa finestra durante l'importazione dei dati. Questo processo potrebbe richiedere alcuni minuti."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Per favore, tieni il tuo browser aperto così che gli appunti possano essere automaticamente puliti."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Assicurati che la finestra precedentemente attiva sia quella in cui desideri digitare automaticamente e che il tuo cursore fosse posizionato nel campo di login."
@@ -3703,6 +3723,11 @@
         "È possibile chiudere questa finestra dopo aver salvato il file."
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Richiederà un permesso dal tuo browser"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Aggiungi chiave segreta 2FA"
@@ -4003,6 +4028,9 @@
       ],
       "Change your lock method": [
         "Cambia il metodo di blocco"
+      ],
+      "Clear clipboard": [
+        "Svuota appunti"
       ],
       "Confirm extra password": [
         "Conferma la password aggiuntiva"
@@ -4495,6 +4523,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "La password aggiuntiva deve contenere almeno 8 caratteri"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Concedi l'accesso agli appunti per attivare la cancellazione automatica delle password e dei dati copiati."
       ],
       "Invalid alias prefix": [
         "Prefisso alias non valido"

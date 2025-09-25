@@ -77,8 +77,8 @@
       "Add external address": [
         "Adăugare adresă externă"
       ],
-      "Add more seats": [
-        "Adăugare mai multe licențe"
+      "add more seats": [
+        "adăugați mai multe licențe"
       ],
       "Add PayPal": [
         "Adăugare PayPal"
@@ -1001,8 +1001,8 @@
       "User": [
         "Utilizator"
       ],
-      "users and addresses": [
-        "utilizatori și adrese"
+      "Users and addresses": [
+        "Utilizatori și adrese"
       ],
       "Verify": [
         "Verifică"
@@ -5630,6 +5630,15 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importați-vă codurile existente** din alte aplicații de A2F, precum Google Authenticator."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Pasul 1:** Invitați persoane la ${ BRAND_NAME } cu legătura web personală de recomandare."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Pasul 2:** Persoanele recomandate primesc 2 săptămâni gratuite pentru planul lor."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Pasul 3:** Obțineți ${ referrerRewardAmount } credite pentru fiecare persoană care se abonează la un plan."
+      ],
       "**Sync codes** to all your devices": [
         "**Vă sincronizați codurile** pe toate dispozitivele"
       ],
@@ -5702,6 +5711,9 @@
         "Adăugare server (${ availableAddedCount } disponibile)",
         "Adăugare server (${ availableAddedCount } disponibile)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Adăugați legături de conferință video la invitațiile din calendar."
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Adăugați-vă numele sau logoul pentru a crea o experiență mai personalizată pentru organizație."
       ],
@@ -5767,9 +5779,6 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permite utilizatorilor să se conecteze la serverele securizate partajate din secțiunea **Țări** a aplicației ${ VPN_APP_NAME }."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permite adăugarea fără probleme a legăturilor web de conferințe video ${ MEET_APP_NAME } la invitațiile personale din calendar."
       ],
       "Already allocated": [
         "Deja alocat"
@@ -6279,8 +6288,8 @@
       "Groups": [
         "Grupuri"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Ajută la scrierea, răspunsul și corectarea mesajelor. Gestionare pentru utilizatori individuali în ${ userAndAddress }. ${ addMoreSeats }"
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Ajută la scrierea, răspunderea și corectarea mesajelor. Dacă este dezactivat, doar administratorii vor avea acces. Pentru utilizatorii individuali puteți gestiona în ${ userAndAddress } sau ${ addMoreSeats }."
       ],
       "here": [
         "aici"
@@ -6548,8 +6557,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestionați aplicațiile ${ BRAND_NAME } pe care membrii organizației proprii le pot accesa. Dacă este dezactivat, numai administratorii vor avea acces."
       ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Gestionați ce funcții pot accesa membrii organizației. Dacă este dezactivat, numai administratorii vor avea acces."
+      "Manage which features the members of your organization can access.": [
+        "Gestionați ce funcții pot accesa membrii organizației personale."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Introduceți manual această informație în aplicația de autentificare pentru a vă configura contul. ${ switchButton }."
@@ -7954,9 +7963,6 @@
       "Allowed domain": [
         "Domeniu permis"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permite tuturor din organizație să adauge fără probleme legături web pentru conferințe video la invitațiile din calendar."
-      ],
       "Amount": [
         "Suma"
       ],
@@ -8101,6 +8107,9 @@
       "Country": [
         "Țara"
       ],
+      "Credits": [
+        "Credite"
+      ],
       "Credits used": [
         "Credite folosite"
       ],
@@ -8139,6 +8148,9 @@
       ],
       "Domain name": [
         "Nume domeniu"
+      ],
+      "Don't show this again": [
+        "Nu mai arăta asta"
       ],
       "e.g. example.com": [
         "ex. exemplu.com"
@@ -8558,12 +8570,6 @@
       ],
       "Verification code": [
         "Cod de verificare"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videoconferință cu ${ MEET_APP_NAME }"
-      ],
-      "Video conferencing with Zoom": [
-        "Conferință video cu Zoom"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -10723,9 +10729,6 @@
       "Let's talk": [
         "Să discutăm"
       ],
-      "Limited time offer": [
-        "Ofertă limitată"
-      ],
       "Recommended": [
         "Recomandat"
       ]
@@ -11045,6 +11048,9 @@
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } luni. Puteți anula oricând.",
         "Apoi se va reînnoi automat cu ${ renewPriceStr } pentru ${ renewalLength } de luni. Puteți anula oricând."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Această acțiune extinde abonamentul existent. Taxa se va aplica doar pentru noile module și pentru timpul rămas din ciclul de facturare actual. Data reînnoirii abonamentului actual nu va fi modificată."
+      ],
       "This number will be shown on all future invoices": [
         "Acest număr va fi afișat pe toate facturile viitoare."
       ],
@@ -11088,6 +11094,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Acest card a fost refuzat. Încercați un alt card sau contactați-vă banca pentru autorizarea plății."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Credit pentru porțiunea neutilizată din abonamentul planului anterior."
+      ],
+      "Credits will be added to your balance": [
+        "Creditele vă vor fi adăugate în soldul personal."
       ]
     },
     "Payments.plan_name": {
@@ -11491,6 +11505,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per recomandare"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Dacă anulați înainte de această dată**, contul va fi **retrogradat** la ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } când se termină perioada de probare."
       ],
@@ -11505,6 +11522,18 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Bucurați-vă de **${ planTitle }** gratuit până la **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Invitați persoane. Obțineți credite."
+      ],
+      "Refer friends": [
+        "Recomandați persoane"
+      ],
+      "Start earning credits": [
+        "Începeți să câștigați credite"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Puteți obține până la **${ maxRewardAmount }** în credite."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Mai aveți **${ daysRemaining } zi** pentru a explora toate funcțiile puternice pe care le oferă **${ planTitle }**.",
@@ -12317,13 +12346,6 @@
         "Secunde: ${ seconds }"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "Luni GRATUITE: ${ n }",
-        "Luni GRATUITE: ${ n }",
-        "Luni GRATUITE: ${ n }"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "Un utilizator"
@@ -12526,7 +12548,7 @@
     },
     "Spotlight": {
       "Get up to ${ credits } in credits.": [
-        "Obțineți până la ${ credits } de credite."
+        "Obțineți până la ${ credits } în credite."
       ],
       "Invite friends to ${ BRAND_NAME }": [
         "Invitați persoane la ${ BRAND_NAME }"
@@ -14651,11 +14673,11 @@
       "Verifying your payment...": [
         "Verificare plată..."
       ],
-      "Video conferencing": [
-        "Conferință video"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videoconferință cu ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Conferință video cu Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Vedeți evenimentele organizației trecând la planul Professional"
@@ -14766,12 +14788,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorii pot gestiona conturile de utilizatori și să acorde drepturi de administrare altor utilizatori. Doar administratorul principal poate modifica planul organizației."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permite adăugarea fără probleme a legăturilor de conferințe video ${ MEET_APP_NAME } la invitațiile personale din calendar."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Permite adăugarea fără probleme a legăturilor de conferințe video Zoom la invitațiile personale din calendar."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."

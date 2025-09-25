@@ -141,9 +141,6 @@
       "Add label": [
         "Agregar una etiqueta"
       ],
-      "Add more seats": [
-        "Añadir más licencias"
-      ],
       "Add notification": [
         "Agregar notificación"
       ],
@@ -774,6 +771,9 @@
       "Get more servers": [
         "Obtener más servidores"
       ],
+      "Get Pass Family": [
+        "Obtener Pass Family"
+      ],
       "Get Pass Plus": [
         "Obtener Pass Plus"
       ],
@@ -791,6 +791,12 @@
       ],
       "Get the deal": [
         "Obtener la promoción"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "Obtenga la extensión ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Obtener la suite completa"
       ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
@@ -1011,6 +1017,9 @@
       "No": [
         "No"
       ],
+      "No thanks": [
+        "No, gracias"
+      ],
       "No, thanks": [
         "No, gracias"
       ],
@@ -1025,6 +1034,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir ajustes de ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Abra ${ PASS_APP_NAME } en su navegador"
       ],
       "Open navigation": [
         "Abrir navegación"
@@ -1434,6 +1446,9 @@
       "Start subscription": [
         "Iniciar suscripción"
       ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Comenzar a usar ${ PASS_APP_NAME }"
+      ],
       "Stay": [
         "Permanecer"
       ],
@@ -1583,9 +1598,6 @@
       ],
       "User": [
         "Usuario"
-      ],
-      "users and addresses": [
-        "usuarios y direcciones"
       ],
       "Verify": [
         "Verificar"
@@ -8535,9 +8547,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permita que los usuarios se conecten a servidores compartidos seguros desde la sección **Países** de la aplicación ${ VPN_APP_NAME }."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permite añadir fácilmente enlaces a videoconferencias de ${ MEET_APP_NAME } en sus invitaciones de calendario."
-      ],
       "Already allocated": [
         "Ya asignado"
       ],
@@ -9332,9 +9341,6 @@
       "Groups": [
         "Grupos"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Ayuda a redactar, responder y corregir correos electrónicos. Gestionar para usuarios individuales en ${ userAndAddress }. ${ addMoreSeats }"
-      ],
       "here": [
         "aquí"
       ],
@@ -9714,9 +9720,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administre las aplicaciones de ${ BRAND_NAME } a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Administre las aplicaciones a las que los miembros de su organización pueden acceder. Si están desactivadas, solo los administradores tendrán acceso."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestione sus preferencias de notificaciones por correo electrónico para ${ DOCS_APP_NAME }."
@@ -12011,14 +12014,26 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
       ],
+      "/month x ${ months }": [
+        "/mes por ${ months }"
+      ],
       "1 hour": [
         "1 hora"
       ],
       "1 minute": [
         "1 minuto"
       ],
+      "10 hide-my-email aliases": [
+        "10 alias de hide-my-email"
+      ],
       "10 minutes": [
         "10 minutos"
+      ],
+      "10 VPN devices": [
+        "10 dispositivos con VPN"
+      ],
+      "15 extra email addresses": [
+        "15 direcciones de correo adicionales"
       ],
       "15 minutes": [
         "15 minutos"
@@ -12034,6 +12049,12 @@
       ],
       "5 minutes": [
         "5 minutos"
+      ],
+      "500 GB Storage": [
+        "500 GB de almacenamiento"
+      ],
+      "6 Pass Plus accounts": [
+        "6 cuentas de Pass Plus"
       ],
       "Account holder": [
         "Titular de la cuenta"
@@ -12064,6 +12085,9 @@
       ],
       "Addresses": [
         "Direcciones"
+      ],
+      "Admin panel for your family": [
+        "Panel de administración para su familia"
       ],
       "Advanced": [
         "Avanzado"
@@ -12115,9 +12139,6 @@
       ],
       "Allowed domain": [
         "Dominio permitido"
-      ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permite fácilmente a todos en su organización agregar enlaces a videoconferencias a sus invitaciones de calendario."
       ],
       "Amount": [
         "Monto"
@@ -12235,6 +12256,9 @@
       ],
       "BTC amount": [
         "Importe en BTC"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
       ],
       "Calendar": [
         "Calendario"
@@ -12455,6 +12479,9 @@
       "Don't keep versions": [
         "No conservar versiones"
       ],
+      "Don't show this again": [
+        "No mostrar esto de nuevo"
+      ],
       "Duration": [
         "Duración"
       ],
@@ -12539,6 +12566,9 @@
       "File": [
         "Archivo"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10 GB)"
+      ],
       "Filter Name": [
         "Nombre del filtro"
       ],
@@ -12554,11 +12584,17 @@
       "Font size": [
         "Tamaño de fuente"
       ],
+      "for your first month": [
+        "en su primer mes"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
       "Gateway name": [
         "Nombre de la puerta de enlace"
+      ],
+      "Get everything in Free, plus:": [
+        "Obtenga todo lo de Free, y:"
       ],
       "Gift code": [
         "Código de regalo"
@@ -12577,6 +12613,9 @@
       ],
       "Hide password": [
         "Ocultar contraseña"
+      ],
+      "Highest VPN speed": [
+        "Máxima velocidad de VPN"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Entiendo que debo añadir esta dirección de correo de inmediato a la otra cuenta para evitar la pérdida de esta cuenta permanentemente."
@@ -12800,6 +12839,9 @@
       "Numbers": [
         "Números"
       ],
+      "Online privacy for your whole family": [
+        "Privacidad en línea para toda la familia"
+      ],
       "OpenVPN / IKEv2 password": [
         "Contraseña OpenVPN / IKEv2"
       ],
@@ -12911,6 +12953,9 @@
       "Read": [
         "Leídos"
       ],
+      "Recommended": [
+        "Recomendado"
+      ],
       "Recovery email address": [
         "Dirección de correo de recuperación"
       ],
@@ -12928,6 +12973,9 @@
       ],
       "Remove image metadata": [
         "Eliminar los metadatos de la imagen"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Se renueva por ${ renewalPrice }, cancele en cualquier momento."
       ],
       "Repeat backup password": [
         "Repetir la contraseña de respaldo"
@@ -12961,6 +13009,9 @@
       ],
       "Second password": [
         "Segunda contraseña"
+      ],
+      "Secure password generator": [
+        "Generador de contraseñas seguro"
       ],
       "Select Linux package format": [
         "Seleccione el formato de paquete de Linux"
@@ -13031,6 +13082,9 @@
       ],
       "Special characters": [
         "Caracteres especiales"
+      ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Oferta especial: obtenga ${ PASS_SHORT_APP_NAME } Plus por ${ offerPrice }"
       ],
       "Starred": [
         "Destacados"
@@ -13116,6 +13170,12 @@
       "Undo send": [
         "Deshacer el envío"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Alias hide-my-email ilimitados"
+      ],
+      "Unlimited logins and devices": [
+        "Inicios de sesión y dispositivos ilimitados"
+      ],
       "Upload 1 or more encryption keys": [
         "Cargue 1 o más claves de cifrado"
       ],
@@ -13151,6 +13211,9 @@
       ],
       "Value": [
         "Valor"
+      ],
+      "Vault, item & secure link sharing": [
+        "Uso compartido de bóveda, elemento y enlace seguro"
       ],
       "Verification code": [
         "Código de verificación"
@@ -16115,6 +16178,12 @@
         "Comience a usar ${ PASS_APP_NAME }"
       ]
     },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ]
+    },
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Obtenga acceso de por vida a todas las funciones premium ${ PASS_APP_NAME } actuales y futuras con un solo pago único."
@@ -16198,9 +16267,6 @@
       ],
       "Let's talk": [
         "Hablemos"
-      ],
-      "Limited time offer": [
-        "Oferta por tiempo limitado"
       ],
       "Recommended": [
         "Recomendado"
@@ -16383,9 +16449,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Iniciando sesión en ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "¡Oferta especial de lanzamiento: obtenga ${ title } por ${ price } para siempre!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Oferta: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
@@ -18791,6 +18854,9 @@
       "30 custom email addresses": [
         "30 direcciones de correo electrónico personalizadas"
       ],
+      "4.8+ rating": [
+        "Calificación 4.8+"
+      ],
       "Advanced account protection": [
         "Protección de cuenta avanzada"
       ],
@@ -18868,6 +18934,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Obtenga ${ referralInfo.uiData.refereeRewardAmount } en créditos"
+      ],
+      "Get a new encrypted email for free": [
+        "Obtener una dirección de correo cifrado gratis"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obtenga una dirección segura de ${ MAIL_APP_NAME } o ${ internalButton }"
@@ -18975,11 +19044,17 @@
       "Start free trial": [
         "Iniciar prueba gratuita"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Comenzar con ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Almacenamiento"
       ],
       "Stream your favorite TV shows and movies": [
         "Disfrute sus programas de televisión y películas favoritas"
+      ],
+      "Swiss-based": [
+        "Con sede en Suiza"
       ],
       "Sync files across devices and users": [
         "Sincronizar archivos en todos los dispositivos y usuarios"
@@ -18995,6 +19070,9 @@
       ],
       "Total": [
         "Total"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "De confianza por más de 100 millones de personas y empresas"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Prueba ${ BRAND_NAME } gratis durante ${ TRIAL_DURATION_DAYS } días"
@@ -19025,6 +19103,9 @@
       ],
       "Upload files of any size": [
         "Cargar archivos de cualquier tamaño"
+      ],
+      "Use your current email": [
+        "Use su correo electrónico actual"
       ],
       "use your current email.": [
         "use su correo electrónico actual."
@@ -19219,12 +19300,6 @@
       "${ seconds } second": [
         "${ seconds } segundo",
         "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes gratis",
-        "${ n } meses gratis"
       ]
     },
     "specialoffer: Deal details": {
@@ -20362,6 +20437,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Gratis para siempre"
+      ],
+      "Pay once, access forever.": [
+        "Pago único, acceso para siempre"
+      ],
+      "per month, billed annually": [
+        "al mes con facturación anual"
+      ],
       "View VPN session details for your organization.": [
         "Ver los detalles de la sesión VPN de su organización"
       ]
@@ -21391,6 +21475,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descargue las aplicaciones de ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Descargue ${ PASS_APP_NAME } en todos sus dispositivos"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
       ],
@@ -21565,6 +21652,9 @@
       ],
       "Forward emails": [
         "Reenvío de correos electrónicos"
+      ],
+      "Free": [
+        "Gratis"
       ],
       "Gateway": [
         "Puerta de enlace"
@@ -21843,6 +21933,9 @@
       "Other sign-in issues": [
         "Otros problemas para iniciar sesión"
       ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus Lifetime por ${ plusLifetimePrice }"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -22004,6 +22097,9 @@
       ],
       "Secure email based in Switzerland": [
         "Correo electrónico seguro con sede en Suiza"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "Asegure sus contraseñas. En todo lugar."
       ],
       "Security and privacy": [
         "Seguridad y privacidad"
@@ -22302,9 +22398,6 @@
       ],
       "Version history": [
         "Historial de versiones"
-      ],
-      "Video conferencing": [
-        "Videoconferencia"
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videoconferencias con ${ MEET_APP_NAME }"

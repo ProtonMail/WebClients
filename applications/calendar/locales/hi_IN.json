@@ -89,9 +89,6 @@
       "Add to group": [
         "ग्रुप में जोड़ें"
       ],
-      "Add Zoom meeting": [
-        "ज़ूम मीटिंग जोड़ें"
-      ],
       "Apply": [
         "लागू करें"
       ],
@@ -4141,6 +4138,9 @@
       "Close this screen to exit.": [
         "बाहर निकलने के लिए इस स्क्रीन को बंद करें।"
       ],
+      "Copy your referral link": [
+        "अपना रेफरल लिंक कॉपी करें"
+      ],
       "Country code": [
         "देश का कोड"
       ],
@@ -4556,6 +4556,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "पुनर्प्राप्ति जानकारी इस उपकरण पर तब तक बनी रहेगी जब तक कि आप इसे हटाना नहीं चुनते."
+      ],
+      "Referral link copied to your clipboard": [
+        "रेफ़रल लिंक आपके क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "पृष्ठ को ताज़ा करने या ${ link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
@@ -5227,6 +5230,9 @@
       "Country": [
         "देश"
       ],
+      "Credits": [
+        "क्रेडिट"
+      ],
       "Date and time": [
         "तारीख और समय"
       ],
@@ -5247,6 +5253,9 @@
       ],
       "Don't ask again": [
         "फिर से ना पूछें"
+      ],
+      "Don't show this again": [
+        "फिर से न दिखाएं"
       ],
       "Email": [
         "ईमेल"
@@ -7578,12 +7587,6 @@
         "${ seconds } सेकंड"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } महीना मुफ्त",
-        "${ n } महीने मुफ्त"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 यूज़र"
@@ -8477,9 +8480,6 @@
       "Create public link": [
         "सार्वजनिक लिंक बनाएं"
       ],
-      "Credits": [
-        "क्रेडिट"
-      ],
       "Currency": [
         "मुद्रा"
       ],
@@ -8604,6 +8604,9 @@
       ],
       "Hide time zones for event start and end times": [
         "इवेंट के शुरू और खत्म होने के वक्त के लिए समय क्षेत्र छुपाएं"
+      ],
+      "How does it work?": [
+        "यह कैसे काम करता है?"
       ],
       "Human verification": [
         "मानव सत्यापन"

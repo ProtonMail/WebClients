@@ -4866,6 +4866,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill-switch**: Stoppar dataläckage genom att blockera ditt internet om VPN:et oväntat slutar fungera."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Steg 1:** Bjud in dina vänner till ${ BRAND_NAME } med din hänvisningslänk."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt valda ${ BRAND_NAME }-paket."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Steg 2:** Dina vänner får 2 veckor gratis på sitt paket."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje vän som prenumererar på ett paket."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Steg 3:** Få ${ referrerRewardAmount } krediter för varje person som prenumererar på ett paket."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
       ],
@@ -5097,6 +5112,9 @@
       ],
       "Copy the link to clipboard": [
         "Kopiera länken till urklipp"
+      ],
+      "Copy your referral link": [
+        "Kopiera din hänvisningslänk"
       ],
       "Country code": [
         "Landskod"
@@ -5884,6 +5902,9 @@
       ],
       "Recovery process might take some time.": [
         "Återställningsprocessen kan ta tid."
+      ],
+      "Referral link copied to your clipboard": [
+        "Hänvisningslänk kopierats till ditt urklipp"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Uppdatera sidan eller ${ link } kommer automatiskt att lösa de flesta problemen."
@@ -6905,6 +6926,9 @@
       "Created": [
         "Skapad"
       ],
+      "Credits": [
+        "Krediter"
+      ],
       "Delete": [
         "Ta bort"
       ],
@@ -6929,6 +6953,9 @@
       ],
       "Don't ask again": [
         "Fråga inte igen"
+      ],
+      "Don't show this again": [
+        "Visa inte detta igen"
       ],
       "Download anyway": [
         "Ladda ner ändå"
@@ -9692,6 +9719,9 @@
         "Därefter förnyas det automatiskt i ${ renewalLength } månad för ${ renewPriceStr }. Du kan avbryta när som helst.",
         "Därefter förnyas det automatiskt i ${ renewalLength } månader för ${ renewPriceStr }. Du kan avbryta när som helst."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Denna åtgärd utökar den befintliga prenumerationen. Du kommer endast att debiteras för de nya utökningarna och den återstående tiden av den nuvarande faktureringsperioden. Förnyelsedatumet för din prenumeration kommer inte att ändras."
+      ],
       "This number will be shown on all future invoices": [
         "Detta nummer kommer att visas på alla framtida fakturor"
       ],
@@ -9723,6 +9753,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Ditt kort nekades Prova ett annat kort eller kontakta din bank för att auktorisera debiteringen."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit för den oanvända delen av din tidigare paketprenumeration"
+      ],
+      "Credits will be added to your balance": [
+        "Krediter kommer att läggas till ditt saldo"
       ]
     },
     "Payments.plan_name": {
@@ -10019,6 +10057,32 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiell e-post från ${ BRAND_NAME }"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per hänvisning"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Tjäna upp till ${ maxRewardAmount } i kredit. Du får ${ referrerRewardAmount } när personen du bjuder in prenumererar på ett ${ BRAND_NAME }-paket."
+      ],
+      "Invite friends. Get credits.": [
+        "Bjud in vänner. Få krediter."
+      ],
+      "Invited friends": [
+        "Inbjudna vänner"
+      ],
+      "More sharing options": [
+        "Fler delningsalternativ"
+      ],
+      "Refer friends": [
+        "Hänvisa vänner"
+      ],
+      "Start earning credits": [
+        "Börja tjäna krediter"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Du kan få upp till **${ maxRewardAmount }** i kredit."
       ]
     },
     "Safety review": {
@@ -10348,12 +10412,6 @@
       "${ seconds } second": [
         "${ seconds } sekund",
         "${ seconds } sekunder"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } månad GRATIS",
-        "${ n } månader GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -11615,9 +11673,6 @@
       "Created by": [
         "Skapad av"
       ],
-      "Credits": [
-        "Krediter"
-      ],
       "Currency": [
         "Valuta"
       ],
@@ -11842,6 +11897,9 @@
         "Hm, vi kunde inte hitta den"
       ],
       "How does it all work?": [
+        "Hur fungerar det?"
+      ],
+      "How does it work?": [
         "Hur fungerar det?"
       ],
       "Human verification": [
@@ -12154,6 +12212,9 @@
       ],
       "Share your calendar with your team": [
         "Dela din kalender med ditt team"
+      ],
+      "Share your link": [
+        "Dela din länk"
       ],
       "Shared": [
         "Delade"

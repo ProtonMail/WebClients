@@ -3768,6 +3768,9 @@
       "We were not able to load some invitations": [
         "Bazı davetler yüklenemedi"
       ],
+      "We were not able to load some items": [
+        "Bazı ögeler yüklenemedi"
+      ],
       "We were not able to load some items shared with you": [
         "Sizinle paylaşılan bazı ögeler yüklenemedi"
       ],
@@ -5132,6 +5135,9 @@
       "Copy the link to clipboard": [
         "Bağlantıyı panoya kopyala"
       ],
+      "Copy your referral link": [
+        "Öneri bağlantınızı kopyalayın"
+      ],
       "Country code": [
         "Ülke kodu"
       ],
@@ -5918,6 +5924,9 @@
       ],
       "Recovery process might take some time.": [
         "Kurtarma işlemi biraz zaman alabilir."
+      ],
+      "Referral link copied to your clipboard": [
+        "Öneri bağlantısı panonuza kopyalandı"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Sayfayı yenilemek ya da ${ link } çoğu sorunu otomatik olarak çözer."
@@ -6957,6 +6966,9 @@
       "Created": [
         "Oluşturulma"
       ],
+      "Credits": [
+        "Kredi"
+      ],
       "Delete": [
         "Sil"
       ],
@@ -6981,6 +6993,9 @@
       ],
       "Don't ask again": [
         "Bir daha sorma"
+      ],
+      "Don't show this again": [
+        "Bu bir daha görüntülenmesin"
       ],
       "Download anyway": [
         "Yine de indir"
@@ -9679,6 +9694,9 @@
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Bu işlem geçerli aboneliğin kapsamını genişletir. Yalnızca yeni eklentiler ve geçerli fatura döneminin kalan süresi için ücret alınır. Aboneliğinizin yenilenme tarihi değişmeyecek."
+      ],
       "This number will be shown on all future invoices": [
         "Bu numara, sonraki tüm faturalarda görüntülenecek"
       ],
@@ -9719,6 +9737,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
+      ],
+      "Credits will be added to your balance": [
+        "Kalan kredi bakiyenize eklenecek"
       ]
     },
     "Payments.plan_name": {
@@ -10457,12 +10483,6 @@
       "${ seconds } second": [
         "${ seconds } saniye",
         "${ seconds } saniye"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } ay ÜCRETSİZ",
-        "${ n } ay ÜCRETSİZ"
       ]
     },
     "specialoffer: Deal details": {
@@ -11724,9 +11744,6 @@
       "Created by": [
         "Oluşturan"
       ],
-      "Credits": [
-        "Kredi"
-      ],
       "Currency": [
         "Para birimi"
       ],
@@ -11952,6 +11969,9 @@
       ],
       "How does it all work?": [
         "Tüm bunlar nasıl işliyor?"
+      ],
+      "How does it work?": [
+        "Nasıl çalışır?"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"

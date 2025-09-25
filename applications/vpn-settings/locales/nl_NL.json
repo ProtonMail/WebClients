@@ -7764,9 +7764,6 @@
       "Allowed domain": [
         "Domein toegestaan"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Laat iedereen in uw organisatie toe om naadloos koppelingen aan hun agenda-uitnodigingen toe te voegen."
-      ],
       "Amount": [
         "Bedrag"
       ],
@@ -7911,6 +7908,9 @@
       "Country": [
         "Land"
       ],
+      "Credits": [
+        "Tegoed"
+      ],
       "Credits used": [
         "Verbruikt tegoed"
       ],
@@ -7949,6 +7949,9 @@
       ],
       "Domain name": [
         "Domeinnaam"
+      ],
+      "Don't show this again": [
+        "Toon dit niet opnieuw"
       ],
       "e.g. example.com": [
         "bv. voorbeeld.com"
@@ -8367,9 +8370,6 @@
       ],
       "Verification code": [
         "Verificatiecode"
-      ],
-      "Video conferencing with Zoom": [
-        "Videovergadering met Zoom"
       ],
       "Vulnerable": [
         "Kwetsbaar"
@@ -10466,9 +10466,6 @@
       "Let's talk": [
         "Laten we praten!"
       ],
-      "Limited time offer": [
-        "Tijdelijke aanbieding"
-      ],
       "Recommended": [
         "Aanbevolen"
       ]
@@ -12096,12 +12093,6 @@
       "${ seconds } second": [
         "${ seconds } seconde",
         "${ seconds } seconden"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } maand GRATIS",
-        "${ n } maanden GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -14366,9 +14357,6 @@
       "Verifying your payment...": [
         "Uw betaling wordt geverifieerd..."
       ],
-      "Video conferencing": [
-        "Video conferentie"
-      ],
       "View organization events by upgrading to Professional": [
         "Bekijk organisatie afspraken door te upgraden naar Professional"
       ],
@@ -14478,9 +14466,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Beheerders kunnen gebruikersaccounts beheren en beheerdersrechten geven aan andere gebruikers. Alleen de primaire beheerder kan het abonnement van de organisatie bewerken."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Maakt het mogelijk om naadloos ${ MEET_APP_NAME } koppelingen voor videoconferenties toe te voegen aan uw agenda-uitnodigingen."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"

@@ -72,9 +72,6 @@
       "Add external address": [
         "Tambah alamat eksternal"
       ],
-      "Add more seats": [
-        "Tambah lebih banyak kuota"
-      ],
       "Add PayPal": [
         "Tambahkan akun PayPal"
       ],
@@ -995,9 +992,6 @@
       ],
       "User": [
         "Pengguna"
-      ],
-      "users and addresses": [
-        "pengguna dan alamat"
       ],
       "Verify": [
         "Verifikasi"
@@ -5549,9 +5543,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Memungkinkan pengguna untuk terhubung ke server terbagi yang aman dari kolom **Negara** di aplikasi ${ VPN_APP_NAME }."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Memungkinkan tautan konferensi video ${ MEET_APP_NAME } untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."
-      ],
       "Already allocated": [
         "Telah dialokasikan"
       ],
@@ -6041,9 +6032,6 @@
       "Groups": [
         "Grup"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Membantu menulis, membalas, dan mengoreksi email. Kelola fitur ini untuk pengguna individu di ${ userAndAddress }. ${ addMoreSeats }"
-      ],
       "here": [
         "di sini"
       ],
@@ -6307,9 +6295,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kelola aplikasi ${ BRAND_NAME } mana saja yang dapat diakses oleh anggota organisasi Anda. Apabila dinonaktifkan, aplikasi hanya akan dapat diakses oleh administrator."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Kelola fitur mana saja yang dapat diakses oleh anggota organisasi Anda. Apabila dinonaktifkan, fitur hanya akan dapat diakses oleh administrator."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -7640,9 +7625,6 @@
       "Allowed domain": [
         "Domain yang diizinkan"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Memungkinkan semua orang dalam organisasi Anda untuk menambahkan tautan konferensi video dalam undangan kalender secara terpadu."
-      ],
       "Amount": [
         "Nominal"
       ],
@@ -7787,6 +7769,9 @@
       "Country": [
         "Negara"
       ],
+      "Credits": [
+        "Saldo"
+      ],
       "Credits used": [
         "Saldo yang digunakan"
       ],
@@ -7825,6 +7810,9 @@
       ],
       "Domain name": [
         "Nama domain"
+      ],
+      "Don't show this again": [
+        "Jangan tampilkan lagi"
       ],
       "e.g. example.com": [
         "mis. contoh.com"
@@ -8242,12 +8230,6 @@
       ],
       "Verification code": [
         "Kode verifikasi"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Konferensi video dengan ${ MEET_APP_NAME }"
-      ],
-      "Video conferencing with Zoom": [
-        "Pertemuan video dengan Zoom"
       ],
       "Vulnerable": [
         "Rentan"
@@ -10331,9 +10313,6 @@
       "Let's talk": [
         "Mari berbincang"
       ],
-      "Limited time offer": [
-        "Penawaran waktu terbatas"
-      ],
       "Recommended": [
         "Direkomendasikan"
       ]
@@ -11866,11 +11845,6 @@
       ],
       "${ seconds } second": [
         "${ seconds } detik"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } bulan GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -14114,9 +14088,6 @@
       "Verifying your payment...": [
         "Memverifikasi pembayaran Anda..."
       ],
-      "Video conferencing": [
-        "Konferensi video"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Konferensi video dengan ${ MEET_APP_NAME }"
       ],
@@ -14229,12 +14200,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Memungkinkan tautan konferensi video ${ MEET_APP_NAME } untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Memungkinkan tautan konferensi video Zoom untuk ditambahkan secara terpadu ke dalam undangan kalender Anda."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"

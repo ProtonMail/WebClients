@@ -92,9 +92,6 @@
       "Add to group": [
         "Добавить в группу"
       ],
-      "Add Zoom meeting": [
-        "Добавить встречу в Zoom"
-      ],
       "Adding conferencing details": [
         "Добавление информации о конференции"
       ],
@@ -5079,6 +5076,9 @@
       "Copy the link to clipboard": [
         "Скопировать ссылку в буфер обмена"
       ],
+      "Copy your referral link": [
+        "Скопировать свою реферальную ссылку"
+      ],
       "Country code": [
         "Код страны"
       ],
@@ -5573,6 +5573,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Информация о восстановлении останется на этом устройстве, если вы не решите ее удалить."
+      ],
+      "Referral link copied to your clipboard": [
+        "Реферальная ссылка скопирована в буфер обмена"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
@@ -6385,6 +6388,9 @@
       "Country": [
         "Страна"
       ],
+      "Credits": [
+        "Кредиты"
+      ],
       "Date and time": [
         "Дата и время"
       ],
@@ -6405,6 +6411,9 @@
       ],
       "Don't ask again": [
         "Больше не спрашивать"
+      ],
+      "Don't show this again": [
+        "Больше не показывать"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "например, Amazon, eBay, Etsy"
@@ -9644,14 +9653,6 @@
         "${ seconds } секунд"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } месяц БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО",
-        "${ n } месяцев БЕСПЛАТНО",
-        "${ n } БЕСПЛАТНЫХ месяца"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 пользователь"
@@ -10906,9 +10907,6 @@
       "Create public link": [
         "Создать публичную ссылку"
       ],
-      "Credits": [
-        "Кредиты"
-      ],
       "Currency": [
         "Валюта"
       ],
@@ -11067,6 +11065,9 @@
       ],
       "How does it all work?": [
         "Как всё это работает?"
+      ],
+      "How does it work?": [
+        "Как это работает?"
       ],
       "Human verification": [
         "Проверка \"Я не робот\""

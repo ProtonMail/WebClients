@@ -1446,6 +1446,9 @@
       "Toggle Contacts app": [
         "連絡先アプリを切り替える"
       ],
+      "Toggle notifications": [
+        "通知の切り替え"
+      ],
       "Toggle security center app": [
         "セキュリティセンターアプリを切り替える"
       ],
@@ -6815,6 +6818,9 @@
       "Copy the link to clipboard": [
         "リンクをクリップボードにコピー"
       ],
+      "Copy your referral link": [
+        "招待リンクをコピー"
+      ],
       "Country code": [
         "国コード"
       ],
@@ -7672,6 +7678,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "手動で削除しない限り、回復に関する情報はこのデバイス上に保存され続けます。"
+      ],
+      "Referral link copied to your clipboard": [
+        "招待リンクをクリップボードにコピーしました"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
@@ -9092,6 +9101,9 @@
       ],
       "Country": [
         "国"
+      ],
+      "Credits": [
+        "クレジット"
       ],
       "Date": [
         "日付"
@@ -12791,11 +12803,6 @@
         "${ seconds } 秒"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } か月無料"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 ユーザー"
@@ -14269,9 +14276,6 @@
       "Create new group": [
         "新しいグループを作成"
       ],
-      "Credits": [
-        "クレジット"
-      ],
       "Currency": [
         "通貨"
       ],
@@ -14469,6 +14473,9 @@
       ],
       "How does it all work?": [
         "どのように機能しますか？"
+      ],
+      "How does it work?": [
+        "どのように動作しますか?"
       ],
       "How to update your email address": [
         "メールアドレスの更新方法"

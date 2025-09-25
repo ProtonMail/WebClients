@@ -95,9 +95,6 @@
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
-      "Add Zoom meeting": [
-        "Zoom-ის შეხვედრის დამატება"
-      ],
       "Adding conferencing details": [
         "კონფერენციის დეტალების დამატება"
       ],
@@ -5103,6 +5100,9 @@
       "Copy the link to clipboard": [
         "ბმულის ბაფერში კოპირება"
       ],
+      "Copy your referral link": [
+        "თქვენი მიმართვის ბმულის კოპირება"
+      ],
       "Country code": [
         "ქვეყნის კოდი"
       ],
@@ -5591,6 +5591,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "აღდგენის ინფორმაცია დარჩება ამ მოწყობილობაზე, თუ მას ხელით არ წაშლით."
+      ],
+      "Referral link copied to your clipboard": [
+        "ბმის ბმული დაკოპირდა ბაფერში"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ამ გვერდის განახლება ან ${ link } პრობლემების უმრავლესობას ავტომატურად წყვეტს."
@@ -6393,6 +6396,9 @@
       "Country": [
         "ქვეყანა"
       ],
+      "Credits": [
+        "კრედიტები"
+      ],
       "Date and time": [
         "თარიღი და დრო"
       ],
@@ -6413,6 +6419,9 @@
       ],
       "Don't ask again": [
         "აღარ მკითხო"
+      ],
+      "Don't show this again": [
+        "აღარ მაჩვენო"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "მაგ Amazon, eBay, Etsy"
@@ -9552,12 +9561,6 @@
         "${ seconds } წამი"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } თვე უფასოდ",
-        "${ n } თვე უფასოდ"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 მომხმარებელი"
@@ -10811,9 +10814,6 @@
       "Create public link": [
         "საჯარო ბმულის შექმნა"
       ],
-      "Credits": [
-        "კრედიტები"
-      ],
       "Currency": [
         "ვალუტა"
       ],
@@ -10968,6 +10968,9 @@
       ],
       "How does it all work?": [
         "როგორ მუშაობს ეს ყველაფერი?"
+      ],
+      "How does it work?": [
+        "როგორ მუშაობს?"
       ],
       "Human verification": [
         "ადამიანის შემოწმება"
