@@ -79,7 +79,7 @@ export const getPlanInformation = ({
         return {
             logo: <FreeLogo size={iconImgSize} app={APPS.PROTONVPN_SETTINGS} />,
             title: getFreeTitle(BRAND_NAME),
-            features: [countryPlaceholder || getCountries(freeServers), getNoAds(), getBandwidth()],
+            features: [getCountries(freeServers), getNoAds(), getBandwidth()],
         };
     }
 

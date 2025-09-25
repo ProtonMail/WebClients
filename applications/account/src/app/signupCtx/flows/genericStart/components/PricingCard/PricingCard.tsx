@@ -16,7 +16,6 @@ const PricingFeatures = () => {
     const payments = usePaymentOptimistic();
     const freePlan = payments.freePlan;
     const vpnServersCountData = payments.vpnServersCountData;
-    const vpnServersCountLoading = !payments.initializationStatus.vpnServersInitialized;
 
     const totalMailStorageSize = humanSize({ bytes: freePlan.MaxBaseRewardSpace, fraction: 0 });
     const totalDriveStorageSize = humanSize({ bytes: freePlan.MaxDriveRewardSpace, fraction: 0 });
@@ -40,12 +39,11 @@ const PricingFeatures = () => {
                 />
                 <FeatureItem
                     text={c('Signup').ngettext(
-                        msgid`VPN with servers in ${vpnServersCountData.free.countries} country`,
-                        `VPN with servers in ${vpnServersCountData.free.countries} countries`,
+                        msgid`${vpnServersCountData.free.servers}+ VPN servers in ${vpnServersCountData.free.countries} country`,
+                        `${vpnServersCountData.free.servers}+ VPN servers in ${vpnServersCountData.free.countries} countries`,
                         vpnServersCountData.free.countries
                     )}
                     highlighted
-                    loading={vpnServersCountLoading}
                 />
                 <FeatureItem
                     text={c('Signup').t`${totalDriveStorageSize} cloud storage for files and photos`}
