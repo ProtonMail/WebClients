@@ -120,6 +120,7 @@ export const getPassCoreProps = (): PassCoreProviderProps => ({
     writeToClipboard: async (content, clipboardTTL) => {
         await clipboard.write(content);
         if (clipboardTTL && clipboardTTL > 0) clipboard.autoClear(clipboardTTL, content);
+        return true;
     },
 
     isFirstLaunch,
