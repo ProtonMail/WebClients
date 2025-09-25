@@ -32,6 +32,7 @@ describe('getNodeEffectiveRole', () => {
         type: NodeType.Folder,
         mediaType: 'text/plain',
         isShared: false,
+        isSharedPublicly: false,
         creationTime: new Date(),
         trashTime: undefined,
         totalStorageSize: 0,
