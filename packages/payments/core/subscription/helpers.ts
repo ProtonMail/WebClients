@@ -595,7 +595,7 @@ export function hasPassLaunchOffer(subscription: Subscription | FreeSubscription
     return isLaunchOffer && subscription.Cycle === CYCLE.YEARLY && plan?.Name === PLANS.PASS;
 }
 
-export function getIsUpcomingSubscriptionUnpaid(subscription: Subscription): boolean {
+export function isUpcomingSubscriptionUnpaid(subscription: Subscription): boolean {
     const current = subscription;
     const upcoming = subscription.UpcomingSubscription;
 
@@ -617,9 +617,8 @@ export function getRenewalTime(subscription: Subscription): number {
     const current = subscription;
     const upcoming = subscription.UpcomingSubscription;
     const latestSubscription = upcoming ?? current;
-    const isUpcomingSubscriptionUnpaid = getIsUpcomingSubscriptionUnpaid(subscription);
 
-    return upcoming && isUpcomingSubscriptionUnpaid ? upcoming.PeriodStart : latestSubscription.PeriodEnd;
+    return upcoming && isUpcomingSubscriptionUnpaid(subscription) ? upcoming.PeriodStart : latestSubscription.PeriodEnd;
 }
 
 export function isSubscriptionUnchanged(
@@ -780,12 +779,6 @@ export function getIsPlanTransitionForbidden({
     return null;
 }
 
-function isSubscriptionPrepaid(subscription: Subscription): boolean {
-    // InvoiceID idicates whether the subscription was alread prepaid. If there is no InvoiceID, then the upcoming
-    // subscription is unpaid.
-    return !!subscription?.InvoiceID;
-}
-
 /**
  * Variable cycle offers are marked by automatically created unpaid scheduled subscriptions with different cycles than
  * the current susbcription. For example when user subscribes to vpn2024 24m then the backend will create a scheduled
@@ -800,7 +793,7 @@ function isVariableCycleOffer(subscription: Subscription | FreeSubscription | nu
     const current = subscription;
     const upcoming = subscription.UpcomingSubscription;
 
-    return !!upcoming && current.Cycle !== upcoming.Cycle && !isSubscriptionPrepaid(upcoming);
+    return !!upcoming && current.Cycle !== upcoming.Cycle && isUpcomingSubscriptionUnpaid(subscription);
 }
 
 export function isSubcriptionCheckForbidden(
@@ -824,7 +817,7 @@ export function isSubcriptionCheckForbidden(
     const variableCycleOffer = isVariableCycleOffer(subscription);
 
     const isScheduledUnpaidModification =
-        hasUpcomingSubscription && !variableCycleOffer && !isSubscriptionPrepaid(upcoming);
+        hasUpcomingSubscription && !variableCycleOffer && isUpcomingSubscriptionUnpaid(subscription);
 
     const selectedSameAsCurrentIgnorringCycle =
         !!subscription && !isFreeSubscription(subscription) ? isSubscriptionUnchanged(subscription, planIDs) : false;
