@@ -26,11 +26,11 @@ import {
     Renew,
     type Subscription,
     changeRenewState,
-    getIsUpcomingSubscriptionUnpaid,
     getPlanTitle,
     getRenewalTime,
     isFreeSubscription,
     isManagedExternally,
+    isUpcomingSubscriptionUnpaid,
 } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import isTruthy from '@proton/utils/isTruthy';
@@ -112,26 +112,18 @@ const SubscriptionRow = ({ subscription }: SubscriptionRowProps) => {
 
     const latestSubscription = upcoming ?? subscription;
 
-    const isUpcomingSubscriptionUnpaid = getIsUpcomingSubscriptionUnpaid(subscription);
+    const renewAmount =
+        upcoming && isUpcomingSubscriptionUnpaid(subscription)
+            ? // typically upcoming unpaid subscription have Amount == 0. This behavior might change in the future and take
+              // into account the actual amount that take into account coupons. But currently we need to fallback to
+              // BaseRenewAmount which is typically set to the full amount of the selected plan. And it doesn't make
+              // sense to use RenewAmount for unpaid upcoming subscription because we want to know what user will pay
+              // when we actually trigger the charge for this subscription term.
+              upcoming.Amount || upcoming.BaseRenewAmount
+            : latestSubscription.RenewAmount;
 
-    const { renewAmount, renewCurrency, renewLength } = (() => {
-        if (upcoming && isUpcomingSubscriptionUnpaid) {
-            return {
-                // using RenewAmount if BaseRenewAmount is not present. It's a fallback that can be removed in the
-                // future.
-                renewAmount: upcoming.BaseRenewAmount ?? upcoming.RenewAmount,
-                renewCurrency: upcoming.Currency,
-                renewLength: upcoming.Cycle,
-            };
-        }
-
-        return {
-            // using RenewAmount if BaseRenewAmount is not present. It's a fallback that can be removed in the future.
-            renewAmount: latestSubscription.BaseRenewAmount ?? latestSubscription.RenewAmount,
-            renewCurrency: latestSubscription.Currency,
-            renewLength: latestSubscription.Cycle,
-        };
-    })();
+    const renewCurrency = latestSubscription.Currency;
+    const renewLength = latestSubscription.Cycle;
 
     const renewalText = (() => {
         if (isManagedExternally(subscription)) {
