@@ -67,5 +67,5 @@ export const getBasicServers = (servers = 350, countries = 0) => {
 };
 
 export const getFreeServers = (servers = 0, countries = 0) => {
-    return getServersInWithoutPlus(getVpnServersWithoutPlus(servers), countries);
+    return getServersInWithoutPlus(getVpnServers(servers), countries);
 };
