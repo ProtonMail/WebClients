@@ -11291,9 +11291,6 @@
       "Allowed domain": [
         "允许的域"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "允许组织中的每个人在日历邀请中无缝添加视频会议链接。"
-      ],
       "Amount": [
         "金额"
       ],
@@ -11626,6 +11623,9 @@
       ],
       "Don't keep versions": [
         "不要保留版本"
+      ],
+      "Don't show this again": [
+        "不再显示此内容"
       ],
       "Duration": [
         "时长"
@@ -15259,9 +15259,6 @@
       "Let's talk": [
         "让我们聊聊"
       ],
-      "Limited time offer": [
-        "限时优惠"
-      ],
       "Recommended": [
         "推荐"
       ],
@@ -15437,9 +15434,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "正在登录 ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "新品特惠：${ price } 终身优惠价开通 ${ title }！"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "特别优惠：${ PLAN_NAMES[PLANS.PASS_LIFETIME] } 仅需 ${ priceString }。"
@@ -17871,11 +17865,6 @@
       ],
       "${ seconds } second": [
         "${ seconds } 秒"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "免费 ${ n } 个月"
       ]
     },
     "specialoffer: Deal details": {
@@ -20842,9 +20831,6 @@
       ],
       "Version history": [
         "版本历史"
-      ],
-      "Video conferencing": [
-        "视频会议"
       ],
       "View organization events by upgrading to Professional": [
         "升级至专业版以查看组织事件"

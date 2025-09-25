@@ -11318,9 +11318,6 @@
       "Allowed domain": [
         "Разрешённый домен"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
-      ],
       "Amount": [
         "Сумма"
       ],
@@ -11647,6 +11644,9 @@
       ],
       "Don't keep versions": [
         "Не хранить версии"
+      ],
+      "Don't show this again": [
+        "Больше не показывать"
       ],
       "Duration": [
         "Длительность"
@@ -15305,9 +15305,6 @@
       "Let's talk": [
         "Свяжитесь с нами"
       ],
-      "Limited time offer": [
-        "Ограниченное предложение"
-      ],
       "Recommended": [
         "Рекомендовано"
       ],
@@ -15483,9 +15480,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Вход в ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Специальное стартовое предложение: Получите ${ title } навсегда за ${ price }!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Специальное предложение: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } по цене ${ priceString }."
@@ -17788,14 +17782,6 @@
         "${ seconds } секунды",
         "${ seconds } секунд",
         "${ seconds } секунд"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } месяц БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО",
-        "${ n } месяцев БЕСПЛАТНО",
-        "${ n } БЕСПЛАТНЫХ месяца"
       ]
     },
     "specialoffer: Deal details": {
@@ -20825,9 +20811,6 @@
       ],
       "Version history": [
         "История версий"
-      ],
-      "Video conferencing": [
-        "Видеоконференции"
       ],
       "VPN apps": [
         "Приложения VPN"

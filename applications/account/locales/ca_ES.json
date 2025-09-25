@@ -141,8 +141,8 @@
       "Add label": [
         "Afegeix una etiqueta"
       ],
-      "Add more seats": [
-        "Afegeix més llicències"
+      "add more seats": [
+        "Afegiu-hi més llicències"
       ],
       "Add notification": [
         "Afegeix una notificació"
@@ -1602,8 +1602,8 @@
       "User": [
         "Usuari"
       ],
-      "users and addresses": [
-        "usuaris i adreces"
+      "Users and addresses": [
+        "Usuaris i adreces"
       ],
       "Verify": [
         "Verifica"
@@ -8358,6 +8358,15 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Convideu amistats** a ${ BRAND_NAME } amb el vostre enllaç de referència."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Pas 1:** Convideu amistats a ${ BRAND_NAME } amb el vostre enllaç de referència."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Pas 2:** Les vostres amistats obtindran 2 setmanes de franc en el seu pla."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que es subscrigui a un pla."
+      ],
       "**Sync codes** to all your devices": [
         "**Sincronitzeu codis** a tots els vostres dispositius"
       ],
@@ -8475,6 +8484,9 @@
         "Afegeix un servidor (${ availableAddedCount } disponible)",
         "Afegeix un servidor (${ availableAddedCount } disponibles)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Afegiu enllaços de videoconferència a les invitacions del calendari"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Afegiu el vostre nom i logo per a crear una experiència més personalitzada per a la vostra organització."
       ],
@@ -8549,9 +8561,6 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permeteu als usuaris connectar-se a servidors compartits segurs des de la secció **Països** de l'aplicació ${ VPN_APP_NAME }."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permet afegir fàcilment enllaços de videoconferència del ${ MEET_APP_NAME } a les invitacions del calendari."
       ],
       "Already allocated": [
         "Ja assignat"
@@ -9347,8 +9356,8 @@
       "Groups": [
         "Grups"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Ajuda a escriure, respondre i revisar correus. Gestioneu-ho per a usuaris individuals a ${ userAndAddress }. ${ addMoreSeats }"
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Ajuda a escriure, respondre i revisar correus electrònics. Si està desactivat, només els administradors hi tindran accés. Gestioneu-ho per a usuaris individuals a ${ userAndAddress } o ${ addMoreSeats }"
       ],
       "here": [
         "aquí"
@@ -9730,8 +9739,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestioneu a quines aplicacions ${ BRAND_NAME } poden accedir els membres de la teva organització. Si està desactivat, només els administradors tindran accés."
       ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Gestioneu a quines funcions podran accedir els membres de la vostra organització. Si ho desactiveu, només els administradors hi tindran accés."
+      "Manage which features the members of your organization can access.": [
+        "Gestioneu a quines característiques podran accedir els membres de la vostra organització."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestioneu les vostres preferències de notificació per correu electrònic per a ${ DOCS_APP_NAME }."
@@ -12152,9 +12161,6 @@
       "Allowed domain": [
         "Domini permès"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permet que tots els membres de la vostra organització afegeixin sense problemes enllaços de videoconferència a les invitacions del seu calendari."
-      ],
       "Amount": [
         "Quantitat"
       ],
@@ -12493,6 +12499,9 @@
       ],
       "Don't keep versions": [
         "No mantinguis versions"
+      ],
+      "Don't show this again": [
+        "No ho tornis a mostrar"
       ],
       "Duration": [
         "Durada"
@@ -16280,9 +16289,6 @@
       "Let's talk": [
         "Parlem-ne"
       ],
-      "Limited time offer": [
-        "Oferta per temps limitat"
-      ],
       "Recommended": [
         "Recomanat"
       ],
@@ -16464,9 +16470,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "S'està iniciant la sessió a ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Oferta especial de llançament: obteniu ${ title } per a sempre per ${ price }!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Oferta especial: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } a ${ priceString }."
@@ -16803,6 +16806,9 @@
         "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mes. Podeu cancel·lar-ho en qualsevol moment.",
         "Aleshores, es renovarà automàticament a ${ renewPriceStr } durant ${ renewalLength } mesos. Podeu cancel·lar-ho en qualsevol moment."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Aquesta acció amplia la subscripció existent. Se us cobraran només els nous complements i el temps restant del cicle de facturació actual. La data de renovació de la subscripció no es modificarà."
+      ],
       "This number will be shown on all future invoices": [
         "Aquest número es mostrarà a totes les factures futures"
       ],
@@ -16846,6 +16852,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La vostra targeta s'ha rebutjat. Proveu una altra targeta o poseu-vos en contacte amb el vostre banc per autoritzar el cobrament."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crèdit per la part no utilitzada de la vostra subscripció al pla anterior"
+      ],
+      "Credits will be added to your balance": [
+        "Els crèdits s'afegiran al vostre saldo"
       ]
     },
     "Payments.plan_name": {
@@ -17437,6 +17451,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } com a referència"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Si cancel·leu abans d'aquesta data,** se us **baixarà de categoria** a ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quan la prova finalitzi."
       ],
@@ -17451,6 +17468,18 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Gaudiu de **${ planTitle }** de franc fins al **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Convideu amistats. Aconseguiu crèdits."
+      ],
+      "Refer friends": [
+        "Recomaneu amistats"
+      ],
+      "Start earning credits": [
+        "Comenceu a guanyar crèdits"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Podeu obtenir fins a **${ maxRewardAmount }** en crèdits."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Us queda **${ daysRemaining } dia** per explorar totes les potents funcionalitats que ofereix el **${ planTitle }**.",
@@ -19228,12 +19257,6 @@
         "${ seconds } segons"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mes GRATIS",
-        "${ n } mesos GRATIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 usuari"
@@ -19434,6 +19457,12 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Obtingueu fins a ${ maxRewardAmount } en crèdits"
+      ],
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Obtingueu crèdits quan la persona que convideu es subscrigui a un pla de ${ BRAND_NAME }."
+      ],
       "Get up to ${ credits } in credits.": [
         "Obteniu fins a ${ credits } en crèdits."
       ],
@@ -20876,6 +20905,14 @@
       "${ feature } is now active": [
         "La característica ${ feature } està ara activa."
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } amistat convidada",
+        "${ friendsInvited } amistats convidades"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } amistat s'ha subscrit",
+        "${ friendsSubscribed } amistats s'han subscrit"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Eina d'exportació de ${ MAIL_APP_NAME }"
       ],
@@ -21255,6 +21292,9 @@
       ],
       "Credentials": [
         "Credencials"
+      ],
+      "Credit earned": [
+        "Crèdit obtingut"
       ],
       "Credits": [
         "Crèdits"
@@ -22331,11 +22371,11 @@
       "Version history": [
         "Historial de versions"
       ],
-      "Video conferencing": [
-        "Videoconferència"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videoconferència amb ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Videoconferència amb Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Podreu veure els esdeveniments de l'organització si milloreu al pla Professional"

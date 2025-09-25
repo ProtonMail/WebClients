@@ -10258,9 +10258,6 @@
       "Allowed domain": [
         "已允許網域"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "允許您組織內任何人無痕地添加會議連結至它們的行事曆邀請函。"
-      ],
       "Amount": [
         "金額"
       ],
@@ -10578,6 +10575,9 @@
       ],
       "Don't keep versions": [
         "不要保留版本"
+      ],
+      "Don't show this again": [
+        "不再顯示此內容"
       ],
       "Duration": [
         "期間"
@@ -13938,9 +13938,6 @@
       "Let's talk": [
         "來談談"
       ],
-      "Limited time offer": [
-        "限時促銷"
-      ],
       "Recommended": [
         "建議"
       ],
@@ -14077,9 +14074,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "登入至${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "特別促銷: 永久取得${ price }的${ title }"
       ],
       "Start using ${ PASS_APP_NAME }": [
         "開始使用 ${ PASS_APP_NAME }"
@@ -14371,6 +14365,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "您的信用卡被拒。請嘗試換另一張卡或聯絡您的銀行以授權此收費."
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "可用額度將會增加到您的餘額"
       ]
     },
     "Payments.plan_name": {
@@ -15889,11 +15888,6 @@
       ],
       "${ seconds } second": [
         "${ seconds }秒"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n }個月免費"
       ]
     },
     "specialoffer: Deal details": {
@@ -18671,9 +18665,6 @@
       ],
       "Version history": [
         "版本歷史紀錄"
-      ],
-      "Video conferencing": [
-        "視訊會議"
       ],
       "View organization events by upgrading to Professional": [
         "升級到專業版以查看組織層級事件"
