@@ -95,9 +95,6 @@
       "Add to group": [
         "Adicionar ao grupo"
       ],
-      "Add Zoom meeting": [
-        "Adicionar uma reunião do Zoom"
-      ],
       "Adding conferencing details": [
         "Adicionando os detalhes da conferência"
       ],
@@ -5186,6 +5183,9 @@
       "Copy the link to clipboard": [
         "Copiar link para a área de transferência"
       ],
+      "Copy your referral link": [
+        "Copiar seu link de referência"
+      ],
       "Country code": [
         "Código do país"
       ],
@@ -5692,6 +5692,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
+      ],
+      "Referral link copied to your clipboard": [
+        "Link de referência copiado para sua área de transferência"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver a maioria dos problemas."
@@ -6527,6 +6530,9 @@
       "Country": [
         "País"
       ],
+      "Credits": [
+        "Créditos"
+      ],
       "Date and time": [
         "Data e hora"
       ],
@@ -6547,6 +6553,9 @@
       ],
       "Don't ask again": [
         "Não perguntar novamente"
+      ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "p. ex., Amazon, eBay, Mercado Livre"
@@ -9030,6 +9039,11 @@
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
       ]
     },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito pela parte não usada no plano anterior da sua assinatura"
+      ]
+    },
     "Payments.plan_name": {
       "Free": [
         "Free"
@@ -9845,12 +9859,6 @@
       "${ seconds } second": [
         "${ seconds } segundo",
         "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mês GRÁTIS",
-        "${ n } meses GRÁTIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -11112,9 +11120,6 @@
       "Create public link": [
         "Criar link público"
       ],
-      "Credits": [
-        "Créditos"
-      ],
       "Currency": [
         "Moeda"
       ],
@@ -11269,6 +11274,9 @@
       ],
       "How does it all work?": [
         "Como tudo isso funciona?"
+      ],
+      "How does it work?": [
+        "Como isso funciona?"
       ],
       "Human verification": [
         "Verificação humana"
@@ -11495,6 +11503,9 @@
       ],
       "Share your calendar with your team": [
         "Compartilhar seu calendário com sua equipe"
+      ],
+      "Share your link": [
+        "Compartilhe seu link"
       ],
       "Show time zones for event start and end times": [
         "Mostrar fusos horários para os horários de início e término de eventos"
