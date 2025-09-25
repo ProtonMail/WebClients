@@ -4,15 +4,17 @@ import { c } from 'ttag';
 
 import type { Label } from '@proton/shared/lib/interfaces/Label';
 
+import type { LocationCountMap } from 'proton-mail/hooks/useMailboxCounter';
+import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
+
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import type { MoveParams } from '../../hooks/actions/move/useMoveToFolder';
-import type { UnreadCounts } from './MailSidebarList';
 import SidebarItem from './SidebarItem';
 import SidebarLabelActions from './SidebarLabelActions';
 
 interface LabelProps {
     currentLabelID: string;
-    counterMap: UnreadCounts;
+    counterMap: LocationCountMap;
     label: Label;
     updateFocusItem: (item: string) => void;
     moveToFolder: (params: MoveParams) => void;
@@ -40,7 +42,7 @@ const SidebarLabel = ({
             color={label.Color}
             isFolder={false}
             isLabel={true}
-            unreadCount={counterMap[label.ID]}
+            unreadCount={getLocationCount(counterMap, label.ID).Unread}
             id={label.ID}
             onFocus={updateFocusItem}
             moveToFolder={moveToFolder}
@@ -55,7 +57,7 @@ const SidebarLabel = ({
 
 interface LabelsProps {
     currentLabelID: string;
-    counterMap: UnreadCounts;
+    counterMap: LocationCountMap;
     labels: Label[];
     updateFocusItem: (item: string) => void;
     moveToFolder: (params: MoveParams) => void;
