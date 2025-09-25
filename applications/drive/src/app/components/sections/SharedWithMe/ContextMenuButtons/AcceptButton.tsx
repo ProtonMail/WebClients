@@ -13,7 +13,9 @@ export const AcceptButton = ({ invitationId, close }: Props) => {
         <ContextMenuButton
             icon="checkmark"
             name={c('Action').t`Accept`}
-            action={() => acceptInvitation(new AbortController().signal, invitationId)}
+            action={() => {
+                void acceptInvitation(new AbortController().signal, invitationId);
+            }}
             close={close}
             testId="shared-with-me-accept-invitation"
         />

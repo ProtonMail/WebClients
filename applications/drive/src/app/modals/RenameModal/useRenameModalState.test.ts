@@ -19,6 +19,7 @@ export const mockNode = (overrides: Partial<NodeEntity> = {}): NodeEntity => ({
     type: NodeType.File,
     mediaType: 'application/octet-stream',
     isShared: false,
+    isSharedPublicly: false,
     creationTime: new Date('2024-01-01T00:00:00Z'),
     trashTime: undefined,
     totalStorageSize: 12345,
