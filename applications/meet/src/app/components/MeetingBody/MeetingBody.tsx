@@ -74,6 +74,10 @@ export const MeetingBody = ({
         };
     }, [isScreenShare]);
 
+    const defaultScreenShareFlexGrow = isSideBarOpen ? 6 : 8;
+    // Using 0 instead of removing the video element to avoid reinitializing the screenshare video
+    const smallScreenScreenShareFlexGrow = isSideBarOpen ? 0 : 8;
+
     return (
         <div
             className={clsx(
@@ -114,15 +118,14 @@ export const MeetingBody = ({
             <div
                 className={clsx(
                     'flex flex-nowrap w-full flex-1 overflow-hidden',
-                    participantSideBarOpen || isSideBarOpen ? 'gap-4' : 'gap-0'
+                    (participantSideBarOpen || isSideBarOpen) && isLargerThanMd ? 'gap-4' : 'gap-0'
                 )}
             >
                 {isScreenShare && (
                     <div
                         className="bg-strong h-full overflow-hidden mx-auto my-0 rounded relative shrink-1"
                         style={{
-                            background: '#000',
-                            flexGrow: isSideBarOpen ? 6 : 8,
+                            flexGrow: isLargerThanMd ? defaultScreenShareFlexGrow : smallScreenScreenShareFlexGrow,
                             flexBasis: 0,
                         }}
                     >
