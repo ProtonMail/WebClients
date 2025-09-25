@@ -1,4 +1,4 @@
-import { generateNodeUid } from '@proton/drive/index';
+import { generateNodeUid, useDrive } from '@proton/drive';
 
 import { useCreateFileModal } from '../../../components/modals/CreateFileModal';
 import { useDetailsModal } from '../../../components/modals/DetailsModal';
@@ -11,6 +11,7 @@ import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
+import { getPublicLinkIsExpired } from '../../../utils/sdk/getPublicLinkIsExpired';
 import type { LegacyItem } from '../../../utils/sdk/mapNodeToLegacyItem';
 
 type Props = {
@@ -22,6 +23,7 @@ type Props = {
 
 export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: Props) => {
     const { createDocument } = useDocumentActions();
+    const { drive } = useDrive();
     const uid = generateNodeUid(volumeId, linkId);
 
     // Upload hooks
@@ -108,6 +110,20 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
 
     const createShare = () => showFileSharingModal({ shareId, showLinkSharingModal });
 
+    const getPublicLinkInfo = async () => {
+        if (selectedItems.length === 1) {
+            const item = selectedItems.at(0);
+            if (!item) {
+                return;
+            }
+            const shareResult = await drive.getSharingInfo(item.uid);
+            return {
+                url: shareResult?.publicLink?.url,
+                isExpired: getPublicLinkIsExpired(shareResult?.publicLink?.expirationTime),
+            };
+        }
+    };
+
     return {
         // Upload
         uploadSdkFile: { sdkFileInputRef, sdkHandleFileClick, sdkHandleFileChange },
@@ -125,6 +141,7 @@ export const useFolderActions = ({ selectedItems, shareId, linkId, volumeId }: P
             showRevisionsModal,
             createNewDocument,
             createNewSheet,
+            getPublicLinkInfo,
         },
         // Modals
         modals: {

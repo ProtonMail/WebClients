@@ -12,6 +12,7 @@ describe('getSignatureIssues', () => {
         type: NodeType.File,
         mediaType: 'text/plain',
         isShared: false,
+        isSharedPublicly: false,
         creationTime: baseDate,
         trashTime: undefined,
         totalStorageSize: 100,

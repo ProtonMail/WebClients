@@ -8,19 +8,21 @@ interface Props {
     name: string;
     icon: IconName | ReactElement<any>;
     testId: string;
-    action: () => void;
+    action: () => Promise<void> | void;
+    loading?: boolean;
     close: () => void;
 }
 
-const ContextMenuButton = ({ name, icon, testId, action, close, children }: PropsWithChildren<Props>) => {
+const ContextMenuButton = ({ name, icon, testId, action, loading, close, children }: PropsWithChildren<Props>) => {
     return (
         <DropdownMenuButton
             key={name}
+            loading={loading}
             onContextMenu={(e) => e.stopPropagation()}
             className="flex items-center justify-space-between flex-nowrap"
-            onClick={(e) => {
+            onClick={async (e) => {
                 e.stopPropagation();
-                action();
+                await action();
                 close();
             }}
             data-testid={testId}
