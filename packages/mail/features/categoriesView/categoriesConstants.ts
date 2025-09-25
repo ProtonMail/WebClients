@@ -4,7 +4,7 @@ import type { CategoryLabelID } from '@proton/shared/lib/constants';
 export interface CategoryTab {
     id: CategoryLabelID;
     icon: IconName;
-    checked?: boolean;
+    display?: boolean;
     notify?: boolean;
     colorShade: CATEGORIES_COLOR_SHADES;
 }
