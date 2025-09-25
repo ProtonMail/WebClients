@@ -630,12 +630,6 @@ const SubscriptionContainerInner = ({
     ) => {
         setAdditionalCheckResults([]);
 
-        const codes = checkPayload.Codes;
-        const noCodes = !codes || codes.length === 0;
-        if (noCodes) {
-            return;
-        }
-
         const allAllowedCycles = computeAllowedCycles(newModel.planIDs);
 
         const additionalCycles = allAllowedCycles
@@ -665,6 +659,24 @@ const SubscriptionContainerInner = ({
             isSubcriptionCheckForbidden(subscription, newModel.planIDs, cycle)
         );
 
+        const additionalPayloads = additionalCycles.map(
+            (Cycle) =>
+                ({
+                    ...checkPayload,
+                    Cycle,
+                    Codes: [
+                        ...(checkPayload.Codes ?? []),
+                        getAutoCoupon({
+                            planIDs: newModel.planIDs,
+                            cycle: Cycle,
+                            currency: newModel.currency,
+                        }),
+                    ],
+                }) as CheckSubscriptionData
+        );
+
+        const noCoupons = additionalPayloads.every((payload) => !payload.Codes || payload.Codes.length === 0);
+
         // In case if we have Custom Billing for the main check, then for other cycles the subscription mode will be
         // different (most likely, regular proration). Mix of custom billings and proration with coupons is practically
         // guranteed to cause incosistent UI, so it's better to just skip the additional checks.
@@ -674,19 +686,14 @@ const SubscriptionContainerInner = ({
         // number of addons yet. When they add an addon, then custom billing will show up, and the UI might get
         // incosistent again. For that reason we are avoiding additional checks in this case, and simply display the
         // full pricing.
-        if (currentCycleHasCustomBilling || additionalCyclesHaveCustomBilling || hasForbiddenCheck) {
+        //
+        // And of course if don't have any coupon codes, we don't need to run additional checks.
+        if (currentCycleHasCustomBilling || additionalCyclesHaveCustomBilling || hasForbiddenCheck || noCoupons) {
             return;
         }
 
         paymentsApi.cacheMultiCheck(checkPayload, checkResult);
 
-        const additionalPayloads = additionalCycles.map(
-            (Cycle) =>
-                ({
-                    ...checkPayload,
-                    Cycle,
-                }) as CheckSubscriptionData
-        );
         const additionalChecks = await paymentsApi.multiCheck(additionalPayloads, {
             signal,
             cached: true,
