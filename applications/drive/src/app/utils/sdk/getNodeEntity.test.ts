@@ -33,6 +33,7 @@ describe('getNodeEntity', () => {
         type: NodeType.File,
         mediaType: 'text/plain',
         isShared: false,
+        isSharedPublicly: false,
         creationTime: new Date('2023-01-01'),
         trashTime: undefined,
         totalStorageSize: 1024,
