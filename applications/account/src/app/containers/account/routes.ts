@@ -135,7 +135,7 @@ export const getAccountAppRoutes = ({
             !hasPaidMail);
 
     const isAccountRecoveryAvailable = getIsAccountRecoveryAvailable(user);
-    const isEmergencyAccessAvailable = getIsOutgoingDelegatedAccessAvailable(user);
+    const isEmergencyAccessAvailable = user.isPrivate && getIsOutgoingDelegatedAccessAvailable(user);
     const isNonPrivateEmergencyAccessAvailable = !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
 
     const paymentsSectionAvailable =
