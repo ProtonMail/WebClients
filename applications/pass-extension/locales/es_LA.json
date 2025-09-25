@@ -56,6 +56,9 @@
       "Advanced options": [
         "Opciones avanzadas"
       ],
+      "Allow access": [
+        "Permitir el acceso"
+      ],
       "Apply lifetime coupon code": [
         "Aplicar código de cupón vitalicio"
       ],
@@ -723,6 +726,14 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "No volver a preguntar"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "¿Desea que el portapapeles se borre automáticamente después de ${ timeoutDurationHumanReadable }?"
       ]
     },
     "Description": {
@@ -1531,6 +1542,9 @@
       "Copied to clipboard": [
         "Copiado al portapapeles"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Copiado al portapapeles (expira en ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Se aplicó el cupón."
       ],
@@ -2011,8 +2025,14 @@
       "Please follow the steps below to set up your domain.": [
         "Siga los pasos a continuación para configurar su dominio."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Mantenga ${ PASS_APP_NAME } abierto para que el portapapeles se pueda borrar automáticamente."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Mantenga esta ventana abierta mientras sus datos son importados. Este proceso puede tomar unos minutos."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Mantenga el navegador abierto para que el portapapeles se pueda borrar automáticamente."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Asegúrese de que la ventana activa anterior sea donde desea escribir automáticamente y que el cursor esté enfocado en el campo de inicio de sesión."
@@ -3703,6 +3723,11 @@
         "Puede cerrar esta ventana después de guardar el archivo."
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Requerirá un permiso del navegador"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Agregar una clave secreta 2FA"
@@ -4003,6 +4028,9 @@
       ],
       "Change your lock method": [
         "Cambiar el método de bloqueo"
+      ],
+      "Clear clipboard": [
+        "Vaciar portapapeles"
       ],
       "Confirm extra password": [
         "Confirmar la contraseña adicional"
@@ -4495,6 +4523,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "La contraseña adicional debe tener al menos 8 caracteres"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Conceda acceso al portapapeles para activar el borrado automático de contraseñas y datos copiados."
       ],
       "Invalid alias prefix": [
         "Prefijo de alias inválido"

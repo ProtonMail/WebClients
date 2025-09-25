@@ -56,6 +56,9 @@
       "Advanced options": [
         "Gelişmiş seçenekler"
       ],
+      "Allow access": [
+        "Erişime izin ver"
+      ],
       "Apply lifetime coupon code": [
         "Ömür boyu geçerli kupon kodunu uygulayın"
       ],
@@ -723,6 +726,14 @@
       ],
       "Expand": [
         "Genişlet"
+      ]
+    },
+    "Confirm": {
+      "Do not ask me again": [
+        "Bir daha sorma"
+      ],
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Panonuzun ${ timeoutDurationHumanReadable } sonra otomatik olarak temizlenmesini ister misiniz?"
       ]
     },
     "Description": {
@@ -1531,6 +1542,9 @@
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Panoya kopyalandı (${ timeoutDurationHumanReadable } sonra süresi dolacak)"
+      ],
       "Coupon successfully applied!": [
         "Kupon kodu uygulandı!"
       ],
@@ -2011,8 +2025,14 @@
       "Please follow the steps below to set up your domain.": [
         "Etki alanınızı kurmak için lütfen aşağıdaki adımları izleyin."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Lütfen panonun otomatik olarak temizlenebilmesi için ${ PASS_APP_NAME } uygulamasını açık tutun."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Verileriniz içe aktarılırken lütfen bu pencereyi açık tutun. Bu işlem birkaç dakika sürebilir."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Lütfen tarayıcınızı açık tutun. Böylece pano otomatik olarak temizlenebilir."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Lütfen daha önce etkin olan pencerenin otomatik doldurmak istediğiniz yer olduğundan ve imlecin oturum açma alanında buılunduğundan emin olun."
@@ -3703,6 +3723,11 @@
         "Dosyayı kaydettikten sonra bu pencereyi kapatabilirsiniz."
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Tarayıcınızdan bir izin vermeniz istenecek."
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "İki adımlı doğrulama gizli anahtarı ekle"
@@ -4003,6 +4028,9 @@
       ],
       "Change your lock method": [
         "Kilitleme yönteminizi değiştirin"
+      ],
+      "Clear clipboard": [
+        "Panoyu temizle"
       ],
       "Confirm extra password": [
         "Ek parolayı onayla"
@@ -4495,6 +4523,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Ek parola en az 8 karakter uzunluğunda olmalıdır"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Kopyalanan parola ve verilerin otomatik olarak temizlenmesi için panoya erişme izni verin."
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
