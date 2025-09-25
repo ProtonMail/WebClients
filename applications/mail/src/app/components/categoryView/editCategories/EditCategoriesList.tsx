@@ -23,7 +23,7 @@ export const EditCategoriesList = ({
             {categoriesToDisplay.map((category) => (
                 <div className="flex gap-3 items-start align-center mb-5" key={category.id}>
                     <Checkbox
-                        checked={category.checked}
+                        checked={category.display}
                         onChange={() => handleCategoryCheckChange(category)}
                         id={category.id}
                         data-testid={`${category.id}-display`}
@@ -40,7 +40,7 @@ export const EditCategoriesList = ({
                         </div>
                     </Label>
 
-                    {category.checked && (
+                    {category.display && (
                         <Button
                             icon
                             shape="ghost"
