@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 
 import { CYCLE, PLANS, SubscriptionPlatform } from '@proton/payments';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, FREE_COUNTRY_COUNT, FREE_SERVER_COUNT } from '@proton/shared/lib/constants';
 import { renderWithProviders } from '@proton/testing';
 import { buildSubscription, buildUser } from '@proton/testing/builders';
 
@@ -9,7 +9,7 @@ import SubscriptionPanel from './SubscriptionPanel';
 
 describe('SubscriptionPanel', () => {
     const defaultVPNServers = {
-        free: { servers: 100, countries: 3 },
+        free: { servers: FREE_SERVER_COUNT, countries: FREE_COUNTRY_COUNT },
         paid: { servers: 1700, countries: 63 },
     };
 
@@ -89,9 +89,10 @@ describe('SubscriptionPanel', () => {
             renderWithProviders(
                 <SubscriptionPanel {...defaultProps} app={APPS.PROTONVPN_SETTINGS} user={buildUser({ isFree: true })} />
             );
-
             expect(screen.getByText('1 VPN connection')).toBeInTheDocument();
-            expect(screen.getByText(/100 servers in 3 countries/)).toBeInTheDocument();
+            expect(
+                screen.getByText(new RegExp(`${FREE_SERVER_COUNT}\\+ servers in ${FREE_COUNTRY_COUNT} countries`, 'i'))
+            ).toBeInTheDocument();
         });
 
         it('should render paid VPN features for VPN Plus subscription', () => {
