@@ -77,9 +77,6 @@
       "Add external address": [
         "გარე მისამართის დამატება"
       ],
-      "Add more seats": [
-        "მეტი ადგილის დამატება"
-      ],
       "Add PayPal": [
         "PayPal-ის დამატება"
       ],
@@ -1000,9 +997,6 @@
       ],
       "User": [
         "მომხმარებელი"
-      ],
-      "users and addresses": [
-        "მომხმარებლები და მისამართები"
       ],
       "Verify": [
         "გადამოწმება"
@@ -7670,9 +7664,6 @@
       "Allowed domain": [
         "დაშვებული დომენი"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "საშუალებას აძლევს ყველას თქვენს ორგანიზაციაში, უპრობლემოდ დაამატოს ვიდეოკონფერენციის ბმულები მათი კალენდრის მოსაწვევებში."
-      ],
       "Amount": [
         "რაოდენობა"
       ],
@@ -7817,6 +7808,9 @@
       "Country": [
         "ქვეყანა"
       ],
+      "Credits": [
+        "კრედიტები"
+      ],
       "Credits used": [
         "გამოყენებული სახსრები"
       ],
@@ -7855,6 +7849,9 @@
       ],
       "Domain name": [
         "დომენის სახელი"
+      ],
+      "Don't show this again": [
+        "აღარ მაჩვენო"
       ],
       "e.g. example.com": [
         "მაგ: example.com"
@@ -8270,12 +8267,6 @@
       ],
       "Verification code": [
         "შემოწმების კოდი"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "ვიდეოკონფერენცია ${ MEET_APP_NAME }-ისთან ერთად"
-      ],
-      "Video conferencing with Zoom": [
-        "ვიდეოკონფერენციები Zoom-ით"
       ],
       "Vulnerable": [
         "მოწყვლადი"
@@ -10361,9 +10352,6 @@
       "Let's talk": [
         "ვისაუბროთ"
       ],
-      "Limited time offer": [
-        "დროში შეზღუდული შეთავაზება"
-      ],
       "Recommended": [
         "რეკომენდებულია"
       ]
@@ -11874,12 +11862,6 @@
       "${ seconds } second": [
         "${ seconds } წამი",
         "${ seconds } წამი"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } თვე უფასოდ",
-        "${ n } თვე უფასოდ"
       ]
     },
     "specialoffer: Deal details": {
@@ -14164,9 +14146,6 @@
       ],
       "Verifying your payment...": [
         "თქვენი გადახდის გადამოწმება..."
-      ],
-      "Video conferencing": [
-        "ვიდეოკონფერენცია"
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "ვიდეოკონფერენცია ${ MEET_APP_NAME }-ისთან ერთად"

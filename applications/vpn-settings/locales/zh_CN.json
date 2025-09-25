@@ -7438,9 +7438,6 @@
       "Allowed domain": [
         "允许的域"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "允许组织中的每个人在日历邀请中无缝添加视频会议链接。"
-      ],
       "Amount": [
         "金额"
       ],
@@ -7585,6 +7582,9 @@
       "Country": [
         "国家/地区"
       ],
+      "Credits": [
+        "余额"
+      ],
       "Credits used": [
         "扣除余额"
       ],
@@ -7623,6 +7623,9 @@
       ],
       "Domain name": [
         "域名"
+      ],
+      "Don't show this again": [
+        "不再显示此内容"
       ],
       "e.g. example.com": [
         "类似于 example.com"
@@ -8040,9 +8043,6 @@
       ],
       "Verification code": [
         "验证码"
-      ],
-      "Video conferencing with Zoom": [
-        "使用 Zoom 进行视频会议"
       ],
       "Vulnerable": [
         "易受攻击"
@@ -10081,9 +10081,6 @@
       "Let's talk": [
         "让我们聊聊"
       ],
-      "Limited time offer": [
-        "限时优惠"
-      ],
       "Recommended": [
         "推荐"
       ]
@@ -11452,11 +11449,6 @@
       ],
       "${ seconds } second": [
         "${ seconds } 秒"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "免费 ${ n } 个月"
       ]
     },
     "specialoffer: Deal details": {
@@ -13660,9 +13652,6 @@
       ],
       "Verifying your payment...": [
         "确认支付..."
-      ],
-      "Video conferencing": [
-        "视频会议"
       ],
       "View organization events by upgrading to Professional": [
         "升级至专业版以查看组织事件"

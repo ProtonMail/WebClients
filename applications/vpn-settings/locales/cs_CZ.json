@@ -892,7 +892,7 @@
         "Odeslat"
       ],
       "Subscribe now": [
-        "Přihlásit se k odběru"
+        "Předplatit si nyní"
       ],
       "Support": [
         "Podpora"
@@ -5830,9 +5830,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožňuje uživatelům připojit se k bezpečným sdíleným serverům ze sekce **Země** v aplikaci ${ VPN_APP_NAME }."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Umožňuje snadno přidávat odkazy na videokonference ${ MEET_APP_NAME } do vašich pozvánek kalendáře."
-      ],
       "Already allocated": [
         "Již bylo přiděleno"
       ],
@@ -8041,9 +8038,6 @@
       "Allowed domain": [
         "Povolená doména"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Umožňuje všem ve vaší organizaci snadno přidávat odkazy na videokonference do jejich pozvánek kalendáře."
-      ],
       "Amount": [
         "Částka"
       ],
@@ -8188,6 +8182,9 @@
       "Country": [
         "Země"
       ],
+      "Credits": [
+        "Kredity"
+      ],
       "Credits used": [
         "Použité kredity"
       ],
@@ -8226,6 +8223,9 @@
       ],
       "Domain name": [
         "Název domény"
+      ],
+      "Don't show this again": [
+        "Příště nezobrazovat"
       ],
       "e.g. example.com": [
         "např. priklad.cz"
@@ -8646,12 +8646,6 @@
       ],
       "Verification code": [
         "Ověřovací kód"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videokonference pomocí ${ MEET_APP_NAME }"
-      ],
-      "Video conferencing with Zoom": [
-        "Videokonference s aplikací Zoom"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -10842,9 +10836,6 @@
       "Let's talk": [
         "Promluvme si"
       ],
-      "Limited time offer": [
-        "Časově omezená nabídka"
-      ],
       "Recommended": [
         "Doporučeno"
       ]
@@ -11627,7 +11618,7 @@
         "**Pokud nezrušíte,** váš plný tarif začne platit a získáte **${ referrerRewardAmount }** v kreditech."
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
-        "**Pokud si přihlásíte odběr před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
+        "**Pokud si předplatíte službu před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Zbývá vám **${ daysRemaining } den** k prozkoumání všech výkonných funkcí, které **${ planTitle }** nabízí.",
@@ -12461,14 +12452,6 @@
         "${ seconds } sekundy",
         "${ seconds } sekund",
         "${ seconds } sekund"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } měsíc ZDARMA",
-        "${ n } měsíce ZDARMA",
-        "${ n } měsíců ZDARMA",
-        "${ n } měsíců ZDARMA"
       ]
     },
     "specialoffer: Deal details": {
@@ -14829,8 +14812,8 @@
       "Verifying your payment...": [
         "Ověřování vaší platby..."
       ],
-      "Video conferencing": [
-        "Videokonference"
+      "Video conferencing with ${ MEET_APP_NAME }": [
+        "Videokonference pomocí ${ MEET_APP_NAME }"
       ],
       "View organization events by upgrading to Professional": [
         "Zobrazení událostí organizace po navýšení na Professional"
@@ -14941,12 +14924,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Správci mohou spravovat uživatelské účty a udělovat práva správce ostatním uživatelům. Tarif organizace může upravovat pouze hlavní správce."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Umožňuje snadno přidávat odkazy na videokonference ${ MEET_APP_NAME } do vašich pozvánek kalendáře."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Umožňuje snadno přidávat odkazy na videokonference Zoom do vašich pozvánek kalendáře."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatické přepínání mezi preferovanými denními a nočními motivy v synchronizaci s denním a nočním režimem systému."
@@ -15454,6 +15431,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "S tarifem ${ planTitlePlusMaybeBrand } získáte bezplatný přístup ke všem službám ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "VPN brány"
       ]
     },
     "VPN info": {

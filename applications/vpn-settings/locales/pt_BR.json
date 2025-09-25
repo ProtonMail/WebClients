@@ -77,8 +77,8 @@
       "Add external address": [
         "Adicionar endereço externo"
       ],
-      "Add more seats": [
-        "Adicionar mais licenças"
+      "add more seats": [
+        "adicionar mais licenças"
       ],
       "Add PayPal": [
         "Adicionar PayPal"
@@ -1001,8 +1001,8 @@
       "User": [
         "Usuário"
       ],
-      "users and addresses": [
-        "usuários e endereços"
+      "Users and addresses": [
+        "Usuários e endereços"
       ],
       "Verify": [
         "Verificar"
@@ -5692,9 +5692,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Permitir que os usuários se conectem a servidores compartilhados seguros na seção **Países** do aplicativo ${ VPN_APP_NAME }."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permite facilmente adicionar links de videoconferência do ${ MEET_APP_NAME } aos seus convites de calendário."
-      ],
       "Already allocated": [
         "Já alocado"
       ],
@@ -6198,9 +6195,6 @@
       "Groups": [
         "Grupos"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Ajuda a escrever, responder e revisar e-mails. Gerenciar para usuários individuais em ${ userAndAddress }. ${ addMoreSeats }"
-      ],
       "here": [
         "aqui"
       ],
@@ -6465,9 +6459,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gerencie quais aplicativos da ${ BRAND_NAME } os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Gerencie quais recursos os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ switchButton }."
@@ -7844,9 +7835,6 @@
       "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permite que todos na sua organização adicionem facilmente links de videoconferência aos seus convites de calendário."
-      ],
       "Amount": [
         "Valor"
       ],
@@ -7991,6 +7979,9 @@
       "Country": [
         "País"
       ],
+      "Credits": [
+        "Créditos"
+      ],
       "Credits used": [
         "Créditos usados"
       ],
@@ -8029,6 +8020,9 @@
       ],
       "Domain name": [
         "Nome do domínio"
+      ],
+      "Don't show this again": [
+        "Não mostrar isso novamente"
       ],
       "e.g. example.com": [
         "por exemplo exemplo.com"
@@ -8447,12 +8441,6 @@
       ],
       "Verification code": [
         "Código de verificação"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videoconferência com ${ MEET_APP_NAME }"
-      ],
-      "Video conferencing with Zoom": [
-        "Videoconferência com o Zoom"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -10592,9 +10580,6 @@
       "Let's talk": [
         "Vamos conversar"
       ],
-      "Limited time offer": [
-        "Oferta por tempo limitado"
-      ],
       "Recommended": [
         "Recomendado"
       ]
@@ -10955,6 +10940,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "O seu cartão foi recusado. Tente um cartão diferente ou entre em contato com o seu banco para autorizar o pagamento."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito pela parte não usada no plano anterior da sua assinatura"
       ]
     },
     "Payments.plan_name": {
@@ -12252,12 +12242,6 @@
       "${ seconds } second": [
         "${ seconds } segundo",
         "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mês GRÁTIS",
-        "${ n } meses GRÁTIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -14555,11 +14539,11 @@
       "Verifying your payment...": [
         "Verificando seu pagamento..."
       ],
-      "Video conferencing": [
-        "Videoconferência"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videoconferência com ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Videoconferência com o Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Consulta os eventos da organização ao fazer upgrade para Professional."
@@ -14670,12 +14654,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Os administradores podem gerenciar contas de usuários e conceder privilégios de administrador a outros usuários. Somente o administrador principal pode editar o plano da organização."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Permite facilmente adicionar links de videoconferência do ${ MEET_APP_NAME } aos seus convites de calendário."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Permite facilmente adicionar links de videoconferência do Zoom aos seus convites de calendário."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Troque automaticamente entre seus temas preferidos para dia e noite em sincronia com os modos dia e noite do seu sistema"

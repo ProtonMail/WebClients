@@ -7575,9 +7575,6 @@
       "Allowed domain": [
         "Разрешённый домен"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Разрешает всем участникам вашей организации добавлять ссылки на видеоконференции в приглашения календаря."
-      ],
       "Amount": [
         "Сумма"
       ],
@@ -7719,6 +7716,9 @@
       "Country": [
         "Страна"
       ],
+      "Credits": [
+        "Кредиты"
+      ],
       "Credits used": [
         "Кредитов использовано"
       ],
@@ -7757,6 +7757,9 @@
       ],
       "Domain name": [
         "Доменное имя"
+      ],
+      "Don't show this again": [
+        "Больше не показывать"
       ],
       "e.g. example.com": [
         "например, primer.com"
@@ -8174,9 +8177,6 @@
       ],
       "Verification code": [
         "Код подтверждения"
-      ],
-      "Video conferencing with Zoom": [
-        "Видеоконференции с помощью Zoom"
       ],
       "Vulnerable": [
         "Уязвимый"
@@ -10242,9 +10242,6 @@
       "Let's talk": [
         "Свяжитесь с нами"
       ],
-      "Limited time offer": [
-        "Ограниченное предложение"
-      ],
       "Recommended": [
         "Рекомендовано"
       ]
@@ -11676,14 +11673,6 @@
         "${ seconds } секунды",
         "${ seconds } секунд",
         "${ seconds } секунд"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } месяц БЕСПЛАТНО",
-        "${ n } месяца БЕСПЛАТНО",
-        "${ n } месяцев БЕСПЛАТНО",
-        "${ n } БЕСПЛАТНЫХ месяца"
       ]
     },
     "specialoffer: Deal details": {
@@ -13944,9 +13933,6 @@
       ],
       "Verifying your payment...": [
         "Проверяем ваш платёж..."
-      ],
-      "Video conferencing": [
-        "Видеоконференции"
       ],
       "Warning": [
         "Предупреждение"

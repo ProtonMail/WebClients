@@ -77,9 +77,6 @@
       "Add external address": [
         "외부 주소 추가"
       ],
-      "Add more seats": [
-        "사용 권한 더 추가"
-      ],
       "Add PayPal": [
         "PayPal 추가"
       ],
@@ -1000,9 +997,6 @@
       ],
       "User": [
         "사용자"
-      ],
-      "users and addresses": [
-        "사용자 및 주소"
       ],
       "Verify": [
         "인증"
@@ -5616,9 +5610,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "구성원이 ${ VPN_APP_NAME } 앱의 **국가** 섹션에서 보안 공유 서버에 연결할 수 있도록 허용합니다."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "캘린더 초대장에 ${ MEET_APP_NAME } 화상 회의 링크를 손쉽게 추가할 수 있습니다."
-      ],
       "Already allocated": [
         "이미 할당 됨"
       ],
@@ -6117,9 +6108,6 @@
       "Groups": [
         "그룹"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "이메일 작성, 답장 및 교정을 지원합니다. ${ userAndAddress }에서 개별 사용자들을 관리하세요. ${ addMoreSeats }"
-      ],
       "here": [
         "여기"
       ],
@@ -6383,9 +6371,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "조직 구성원이 접근할 수 있는 ${ BRAND_NAME } 응용 프로그램을 관리합니다. 비활성화된 경우 관리자만 접근할 수 있습니다."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "조직 구성원이 접근할 수 있는 기능을 관리합니다. 비활성화된 경우 관리자만 접근할 수 있습니다."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "인증 앱에 이 정보를 직접 입력하여 계정을 설정하세요. ${ switchButton }."
@@ -7734,9 +7719,6 @@
       "Allowed domain": [
         "허용된 도메인"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "조직의 모든 구성원이 캘린더 초대장에 화상 회의 링크를 원활하게 추가할 수 있습니다."
-      ],
       "Amount": [
         "금액"
       ],
@@ -7881,6 +7863,9 @@
       "Country": [
         "국가"
       ],
+      "Credits": [
+        "크레딧"
+      ],
       "Credits used": [
         "사용된 크레딧"
       ],
@@ -7919,6 +7904,9 @@
       ],
       "Domain name": [
         "도메인 이름"
+      ],
+      "Don't show this again": [
+        "다시 보지 않기"
       ],
       "e.g. example.com": [
         "예시: example.com"
@@ -8336,12 +8324,6 @@
       ],
       "Verification code": [
         "인증 코드"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME }으로 화상 회의"
-      ],
-      "Video conferencing with Zoom": [
-        "Zoom 화상 회의"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -10454,9 +10436,6 @@
       "Let's talk": [
         "상담 및 계약 필요"
       ],
-      "Limited time offer": [
-        "기간 한정 세일"
-      ],
       "Recommended": [
         "권장"
       ]
@@ -11986,11 +11965,6 @@
       ],
       "${ seconds } second": [
         "${ seconds }초"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n }개월 무료"
       ]
     },
     "specialoffer: Deal details": {
@@ -14246,9 +14220,6 @@
       "Verifying your payment...": [
         "결제 수단을 인증하는 중..."
       ],
-      "Video conferencing": [
-        "화상 회의"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME }(으)로 화상 회의"
       ],
@@ -14361,12 +14332,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "조직 관리자는 다른 구성원의 사용자 계정을 관리하고 관리자 권한을 부여할 수 있습니다. 주 관리자만 조직의 플랜을 수정할 수 있습니다."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "캘린더 초대장에 ${ MEET_APP_NAME } 화상 회의 링크를 손쉽게 추가할 수 있습니다."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "캘린더 초대장에 줌 화상 회의 링크를 손쉽게 추가할 수 있습니다."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"

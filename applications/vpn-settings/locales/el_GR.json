@@ -77,8 +77,8 @@
       "Add external address": [
         "Προσθήκη εξωτερικής διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
-      "Add more seats": [
-        "Προσθήκη περισσότερων θέσεων"
+      "add more seats": [
+        "προσθήκη περισσότερων θέσεων"
       ],
       "Add PayPal": [
         "Προσθήκη PayPal"
@@ -1001,8 +1001,8 @@
       "User": [
         "Χρήστης"
       ],
-      "users and addresses": [
-        "χρήστες και διευθύνσεις"
+      "Users and addresses": [
+        "Χρήστες και διευθύνσεις"
       ],
       "Verify": [
         "Επαλήθευση"
@@ -4438,7 +4438,7 @@
         "Έχετε φτάσει το όριο των ${ n } αποδεκτών προσκλήσεων σε 6 μήνες. Θα μπορείτε να κάνετε κλικ στο κουμπί όταν θα μπορείτε να προσκαλέσετε επιπλέον χρήστες."
       ],
       "You have successfully joined the family group": [
-        "Συμμετείχατε με επιτυχία στην ομάδα οικογένειας"
+        "Έχετε ενταχθεί με επιτυχία στην οικογενειακή ομάδα"
       ],
       "You have unpaid invoices. Please pay them before joining a family plan.": [
         "Έχετε ανεξόφλητα τιμολόγια. Παρακαλούμε πληρώστε τα πριν συμμετάσχετε σε ένα οικογενειακό πλάνο."
@@ -5563,6 +5563,15 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Εισάγετε τους υπάρχοντες κωδικούς σας** από άλλες εφαρμογές 2FA, όπως το Google Authenticator"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Βήμα 1:** Προσκαλέστε τους φίλους σας στο ${ BRAND_NAME } με τον σύνδεσμο παραπομπής σας."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Βήμα 2:** Οι φίλοι σας λαμβάνουν 2 εβδομάδες δωρεάν στο πλάνο τους."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Βήμα 3:** Κερδίστε ${ referrerRewardAmount } σε πιστώσεις για κάθε άτομο που εγγράφεται σε ένα πλάνο."
+      ],
       "**Sync codes** to all your devices": [
         "**Συγχρονίστε τους κωδικούς** σε όλες τις συσκευές σας"
       ],
@@ -5632,6 +5641,9 @@
         "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)",
         "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Προσθήκη συνδέσμων τηλεδιάσκεψης σε προσκλήσεις ημερολογίου"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Προσθέστε το όνομα και το λογότυπό σας για να δημιουργήσετε μια πιο εξατομικευμένη εμπειρία για τον οργανισμό σας."
       ],
@@ -5691,9 +5703,6 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Επιτρέψτε στους χρήστες να συνδέονται σε διασφαλισμένους κοινόχρηστους διακομιστές από την ενότητα **Χώρες** της εφαρμογής ${ VPN_APP_NAME }."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης ${ MEET_APP_NAME } στις προσκλήσεις ημερολογίου σας."
       ],
       "Already allocated": [
         "Ήδη κατανεμημένος"
@@ -6198,8 +6207,8 @@
       "Groups": [
         "Ομάδες"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Βοηθά στη σύνταξη, την απάντηση και τη διόρθωση email. Διαχείριση για μεμονωμένους χρήστες στο ${ userAndAddress }. ${ addMoreSeats }"
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Βοηθά στη σύνταξη, την απάντηση και τη διόρθωση μηνυμάτων ηλεκτρονικού ταχυδρομείου. Εάν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση. Διαχείριση για μεμονωμένους χρήστες στο ${ userAndAddress } ή ${ addMoreSeats }"
       ],
       "here": [
         "εδώ"
@@ -6466,8 +6475,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Ελέγξτε ποιες εφαρμογές ${ BRAND_NAME } είναι προσβάσιμες από τα μέλη του οργανισμού σας. Αν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση."
       ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Ελέγξτε ποιες δυνατότητες είναι προσβάσιμες από τα μέλη του οργανισμού σας. Αν απενεργοποιηθεί, μόνο οι διαχειριστές θα έχουν πρόσβαση."
+      "Manage which features the members of your organization can access.": [
+        "Διαχειριστείτε τις λειτουργίες στις οποίες τα μέλη του οργανισμού σας έχουν πρόσβαση."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Καταχωρίστε χειροκίνητα αυτές τις πληροφορίες στην εφαρμογή ελέγχου ταυτότητας για να ρυθμίσετε τον λογαριασμό σας. ${ switchButton }."
@@ -7841,9 +7850,6 @@
       "Allowed domain": [
         "Επιτρεπόμενος τομέας"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Επιτρέπει σε όλους στον οργανισμό σας να προσθέτουν απρόσκοπτα συνδέσεις τηλεδιάσκεψης στις προσκλήσεις ημερολογίου τους."
-      ],
       "Amount": [
         "Ποσό"
       ],
@@ -7988,6 +7994,9 @@
       "Country": [
         "Χώρα"
       ],
+      "Credits": [
+        "Πιστώσεις"
+      ],
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
       ],
@@ -8026,6 +8035,9 @@
       ],
       "Domain name": [
         "Όνομα domain"
+      ],
+      "Don't show this again": [
+        "Να μην εμφανιστεί ξανά"
       ],
       "e.g. example.com": [
         "π.χ. example.com"
@@ -8444,12 +8456,6 @@
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Τηλεδιάσκεψη με ${ MEET_APP_NAME }"
-      ],
-      "Video conferencing with Zoom": [
-        "Τηλεδιάσκεψη με Zoom"
       ],
       "Vulnerable": [
         "Ευάλωτο"
@@ -10570,9 +10576,6 @@
       "Let's talk": [
         "Ας μιλήσουμε"
       ],
-      "Limited time offer": [
-        "Προσφορά περιορισμένου χρόνου"
-      ],
       "Recommended": [
         "Προτεινόμενο"
       ]
@@ -10887,6 +10890,9 @@
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνα. Μπορείτε να ακυρώσετε ανά πάσα στιγμή.",
         "Στη συνέχεια, θα ανανεωθεί αυτόματα στο ${ renewPriceStr } για ${ renewalLength } μήνες. Μπορείτε να ακυρώσετε ανά πάσα στιγμή."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Αυτή η ενέργεια επεκτείνει την υπάρχουσα συνδρομή. Θα χρεωθείτε μόνο για τα νέα πρόσθετα και τον υπόλοιπο χρόνο του τρέχοντος κύκλου χρέωσης. Η ημερομηνία ανανέωσης της συνδρομής σας δε θα αλλάξει."
+      ],
       "This number will be shown on all future invoices": [
         "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
@@ -10930,6 +10936,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Η κάρτα σας απορρίφθηκε. Παρακαλούμε δοκιμάστε μια διαφορετική κάρτα ή επικοινωνήστε με την τράπεζα σας για να εγκρίνετε τη χρέωση."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πλάνο"
+      ],
+      "Credits will be added to your balance": [
+        "Οι πιστώσεις θα προστεθούν στο υπόλοιπό σας"
       ]
     },
     "Payments.plan_name": {
@@ -11331,6 +11345,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } ανά παραπομπή"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Εάν ακυρώσετε πριν από αυτή την ημερομηνία,** θα **υποβαθμιστείτε** σε ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } όταν λήξει η δοκιμαστική περίοδος."
       ],
@@ -11345,6 +11362,18 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Απολαύστε το **${ planTitle }** δωρεάν μέχρι τις **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Προσκαλέστε φίλους. Λάβετε πιστώσεις."
+      ],
+      "Refer friends": [
+        "Συστήστε φίλους"
+      ],
+      "Start earning credits": [
+        "Ξεκινήστε να κερδίζετε πιστώσεις"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Μπορείτε να λάβετε έως και **${ maxRewardAmount }** σε πίστωση."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Έχετε **${ daysRemaining } ημέρα** για να εξερευνήσετε όλες τις ισχυρές λειτουργίες που προσφέρει το **${ planTitle }**.",
@@ -12132,12 +12161,6 @@
       "${ seconds } second": [
         "${ seconds } δευτερόλεπτο",
         "${ seconds } δευτερόλεπτα"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } μήνας ΔΩΡΕΑΝ",
-        "${ n } μήνες ΔΩΡΕΑΝ"
       ]
     },
     "specialoffer: Deal details": {
@@ -14435,11 +14458,11 @@
       "Verifying your payment...": [
         "Γίνεται επαλήθευση της πληρωμής σας..."
       ],
-      "Video conferencing": [
-        "Τηλεδιάσκεψη"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Τηλεδιάσκεψη με ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Τηλεδιάσκεψη με Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Προβολή εκδηλώσεων οργανισμού με αναβάθμιση σε Professional"
@@ -14550,12 +14573,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Οι διαχειριστές μπορούν να διαχειρίζονται λογαριασμούς χρηστών και να εκχωρούν δικαιώματα διαχειριστή σε άλλους χρήστες. Μόνο ο κύριος διαχειριστής μπορεί να επεξεργαστεί το πλάνο του οργανισμού."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης ${ MEET_APP_NAME } στις προσκλήσεις ημερολογίου σας."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Επιτρέπει την απρόσκοπτη προσθήκη συνδέσμων τηλεδιάσκεψης Zoom στις προσκλήσεις ημερολογίου σας."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"

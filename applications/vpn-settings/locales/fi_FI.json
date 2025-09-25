@@ -7395,9 +7395,6 @@
       "Allowed domain": [
         "Sallittu verkkotunnus"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Sallii videoneuvottelulinkkien saumattoman lisäämisen kalenterikutsuihin kaikille organisaatiosi jäsenille."
-      ],
       "Amount": [
         "Summa"
       ],
@@ -7542,6 +7539,9 @@
       "Country": [
         "Maa"
       ],
+      "Credits": [
+        "Krediitit"
+      ],
       "Credits used": [
         "Krediittejä käytetty"
       ],
@@ -7580,6 +7580,9 @@
       ],
       "Domain name": [
         "Verkkotunnus"
+      ],
+      "Don't show this again": [
+        "Älä näytä tätä uudelleen"
       ],
       "e.g. example.com": [
         "esim. esimerkki.fi"
@@ -7992,9 +7995,6 @@
       ],
       "Verification code": [
         "Vahvistuskoodi"
-      ],
-      "Video conferencing with Zoom": [
-        "Videoneuvotteu Zoomilla"
       ],
       "Vulnerable": [
         "Haavoittuvainen"
@@ -9992,9 +9992,6 @@
       "Let's talk": [
         "Keskustellaan"
       ],
-      "Limited time offer": [
-        "Vain rajoitetun ajan"
-      ],
       "Recommended": [
         "Suositus"
       ]
@@ -11384,12 +11381,6 @@
       "${ seconds } second": [
         "${ seconds } sekunti",
         "${ seconds } sekuntia"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } kuukausi ILMAISEKSI",
-        "${ n } kuukautta ILMAISEKSI"
       ]
     },
     "specialoffer: Deal details": {
@@ -13590,9 +13581,6 @@
       "Verifying your payment...": [
         "Vahvistetaan maksua..."
       ],
-      "Video conferencing": [
-        "Videoneuvottelu"
-      ],
       "Warning": [
         "Varoitus"
       ],
@@ -13699,9 +13687,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Ylläpitäjät voivat hallita käyttäjätilejä ja antaa ylläpito-oikeuksia muille käyttäjille. Vain ensisijainen ylläpitäjä voi muokata organisaation tilausta."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Mahdollistaa saumattoman Zoom-videoneuvottelulinkkien lisäämisen kalenterikutsuihin."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemiesi päivä- ja yöteemojen välillä automaattisesti järjestelmäsi päivä-/yötilan mukaisesti"

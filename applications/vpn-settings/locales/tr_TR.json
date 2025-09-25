@@ -77,9 +77,6 @@
       "Add external address": [
         "Dış e-posta adresi ekle"
       ],
-      "Add more seats": [
-        "Daha fazla koltuk ekle"
-      ],
       "Add PayPal": [
         "PayPal ekle"
       ],
@@ -1000,9 +997,6 @@
       ],
       "User": [
         "Kullanıcı"
-      ],
-      "users and addresses": [
-        "kullanıcılar ve adresler"
       ],
       "Verify": [
         "Doğrula"
@@ -5692,9 +5686,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Kullanıcıların güvenli paylaşılan sunuculara bağlanabilmesi için ${ VPN_APP_NAME } uygulamasının **Ülkeler** bölümünden izin verin."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Takvim davetlerinize kolayca görüntülü ${ MEET_APP_NAME } görüşmesi bağlantıları eklemenizi sağlar."
-      ],
       "Already allocated": [
         "Zaten ayrılmış"
       ],
@@ -6198,9 +6189,6 @@
       "Groups": [
         "Gruplar"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "E-posta yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Bireysel kullanıcıları ${ userAndAddress } bölümünden yönetebilirsiniz. ${ addMoreSeats }"
-      ],
       "here": [
         "buraya"
       ],
@@ -6465,9 +6453,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Kuruluşunuzun üyelerinin hangi özelliklere erişebileceğini ayarlayın. Kapatılırsa, yalnızca yöneticiler erişebilir."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Hesabınızı ayarlamak için bu bilgileri kimlik doğrulama uygulamanıza el ile yazın. ${ switchButton }."
@@ -7837,9 +7822,6 @@
       "Allowed domain": [
         "İzin verilen etki alanı"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Kuruluşunuzdaki herkesin takvim davetlerine kolayca görüntülü görüşme bağlantıları eklemesini sağlar."
-      ],
       "Amount": [
         "Tutar"
       ],
@@ -7984,6 +7966,9 @@
       "Country": [
         "Ülke"
       ],
+      "Credits": [
+        "Kredi"
+      ],
       "Credits used": [
         "Kullanılan kredi"
       ],
@@ -8022,6 +8007,9 @@
       ],
       "Domain name": [
         "Etki alanı adı"
+      ],
+      "Don't show this again": [
+        "Bu bir daha görüntülenmesin"
       ],
       "e.g. example.com": [
         "örnek: ornek.com"
@@ -8440,12 +8428,6 @@
       ],
       "Verification code": [
         "Doğrulama kodu"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME } ile görüntülü görüşme"
-      ],
-      "Video conferencing with Zoom": [
-        "Zoom ile görüntülü görüşme"
       ],
       "Vulnerable": [
         "Çok zayıf"
@@ -10554,9 +10536,6 @@
       "Let's talk": [
         "Hadi konuşalım."
       ],
-      "Limited time offer": [
-        "Sınırlı süreli teklif"
-      ],
       "Recommended": [
         "Önerilen"
       ]
@@ -10871,6 +10850,9 @@
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz.",
         "Ardından otomatik olarak ${ renewPriceStr } ile ${ renewalLength } ay boyunca yenilenir. İstediğiniz zaman iptal edebilirsiniz."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Bu işlem geçerli aboneliğin kapsamını genişletir. Yalnızca yeni eklentiler ve geçerli fatura döneminin kalan süresi için ücret alınır. Aboneliğinizin yenilenme tarihi değişmeyecek."
+      ],
       "This number will be shown on all future invoices": [
         "Bu numara, sonraki tüm faturalarda görüntülenecek"
       ],
@@ -10914,6 +10896,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kartınız reddedildi. Lütfen ödemeyi onaylamak için başka bir kart deneyin ya da bankanızla görüşün."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Önceki abonelik tarifenizin kullanılmayan bölümünden kalan kredi"
+      ],
+      "Credits will be added to your balance": [
+        "Kalan kredi bakiyenize eklenecek"
       ]
     },
     "Payments.plan_name": {
@@ -12211,12 +12201,6 @@
       "${ seconds } second": [
         "${ seconds } saniye",
         "${ seconds } saniye"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } ay ÜCRETSİZ",
-        "${ n } ay ÜCRETSİZ"
       ]
     },
     "specialoffer: Deal details": {
@@ -14502,9 +14486,6 @@
       "Verifying your payment...": [
         "Ödemeniz doğrulanıyor..."
       ],
-      "Video conferencing": [
-        "Görüntülü görüşme"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME } ile görüntülü görüşme"
       ],
@@ -14617,12 +14598,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir. Yalnızca birincil yönetici kuruluşun tarifesini değiştirebilir."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Takvim davetlerinize kolayca görüntülü ${ MEET_APP_NAME } görüşmesi bağlantıları eklemenizi sağlar."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Takvim davetlerinize kolayca görüntülü Zoom görüşmesi bağlantıları eklemenizi sağlar."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sisteminizin gündüz veya gece kipinde olmasına göre gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
