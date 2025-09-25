@@ -21688,6 +21688,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"diff-dom@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "diff-dom@npm:5.2.0"
+  checksum: 10c0/0c9b2a39e68dc5072440f73e5928eb504e66eacd8f6910761fb8af8e1b4f1b1736002d650cf784c9d0e392a9fa9e48f0a01936d908185517697b5d9f3d92b491
+  languageName: node
+  linkType: hard
+
 "diff@npm:^4.0.1":
   version: 4.0.2
   resolution: "diff@npm:4.0.2"
@@ -36819,6 +36826,7 @@ __metadata:
     "@types/react": "npm:^18.3.24"
     "@types/react-dom": "npm:^18.3.7"
     "@vitejs/plugin-react": "npm:^4.7.0"
+    diff-dom: "npm:^5.2.0"
     eslint: "npm:^9.35.0"
     glob: "npm:^11.0.3"
     include-media: "npm:^2.0.0"
