@@ -1,5 +1,5 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Label, LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
+import type { Label, LabelCount } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import type { SearchParameters } from '@proton/shared/lib/mail/search';
 
@@ -9,7 +9,6 @@ import type { Conversation, ConversationLabel } from '../models/conversation';
 import {
     filterElementsInState,
     getAddressID,
-    getCounterMap,
     getDate,
     getLocationElementsCount,
     isElementConversation,
@@ -125,23 +124,6 @@ describe('elements', () => {
                 { ID: '3', Size: 3 },
             ];
             expect(sort(elements, { sort: 'Size', desc: false }, 'labelID')).toEqual(elements);
-        });
-    });
-
-    describe('getCounterMap', () => {
-        it('should use conversation or message count depending the label type', () => {
-            const inboxCount = { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 5 };
-            const sentConversationCount = { LabelID: MAILBOX_LABEL_IDS.SENT, Unread: 5 };
-            const sentMessageCount = { LabelID: MAILBOX_LABEL_IDS.SENT, Unread: 10 };
-            const result = getCounterMap(
-                [],
-                [inboxCount, sentConversationCount],
-                [sentMessageCount],
-                {} as MailSettings
-            );
-            expect(result[MAILBOX_LABEL_IDS.INBOX]?.Unread).toBe(inboxCount.Unread);
-            expect(result[MAILBOX_LABEL_IDS.SENT]?.Unread).toBe(sentMessageCount.Unread);
-            expect(result[MAILBOX_LABEL_IDS.STARRED]).toBeUndefined();
         });
     });
 
