@@ -141,7 +141,7 @@ export function subscriptionExpires(
     }
 }
 
-const getVpnAutoCoupon = ({ coupon, planIDs, cycle, currency }: Parameters<typeof getAutoCoupon>[0]) => {
+const getVpnAutoCoupon = ({ coupon, planIDs, cycle }: Parameters<typeof getAutoCoupon>[0]) => {
     // user already provided a coupon
     if (coupon) {
         return;
@@ -153,34 +153,16 @@ const getVpnAutoCoupon = ({ coupon, planIDs, cycle, currency }: Parameters<typeo
         return;
     }
 
-    // This code was needed for testing purposes. After the dates mentioned below, feel free to remove the commented out
-    // code too.
-
-    // const now = (() => { if (localStorage.getItem('pretend_date')) { try { return new
-    // Date(localStorage.getItem('pretend_date') as string); } catch {}
-    //     }
-
-    //     return new Date();
-    // })();
-
-    const now = new Date();
-
     // if you're reading this code after the hardcoded dates, feel free to remove the code that's not relevant in your
-    // light cone anymore. After the date below, we don't need VPN_INTRO_2025_UK and VPN_INTRO_2024 coupons. Only
-    // VPN_INTRO_2025 should remain.
-    const isAfterVpn2025CouponStartDate = isAfter(now, new Date('2025-10-23T10:00:00.000Z'));
+    // light cone anymore. After the date below, we don't need VPN_INTRO_2025_UK coupon. Only VPN_INTRO_2025 should
+    // remain.
+    const isAfterVpn2025CouponStartDate = isAfter(new Date(), new Date('2025-10-23T10:00:00.000Z'));
 
     if (isAfterVpn2025CouponStartDate) {
         return COUPON_CODES.VPN_INTRO_2025;
     }
 
-    const isAfterUkCouponStartDate = isAfter(now, new Date('2025-09-10T10:00:00.000Z'));
-
-    if (isAfterUkCouponStartDate && currency === 'GBP') {
-        return COUPON_CODES.VPN_INTRO_2025_UK;
-    }
-
-    return COUPON_CODES.VPN_INTRO_2024;
+    return COUPON_CODES.VPN_INTRO_2025_UK;
 };
 
 export const getAutoCoupon = ({
