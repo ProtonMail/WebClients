@@ -77,9 +77,6 @@
       "Add external address": [
         "Legg til ekstern adresse"
       ],
-      "Add more seats": [
-        "Legg til flere lisenser"
-      ],
       "Add PayPal": [
         "Legg til PayPal"
       ],
@@ -1000,9 +997,6 @@
       ],
       "User": [
         "Bruker"
-      ],
-      "users and addresses": [
-        "brukere og adresser"
       ],
       "Verify": [
         "Verifiser"
@@ -5692,9 +5686,6 @@
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Tillat brukere å koble til sikre delte tjenere fra **Land**-delen av ${ VPN_APP_NAME }-appen."
       ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Gjør det mulig å sømløst legge til ${ MEET_APP_NAME }-videokonferansekoblinger i kalenderinvitasjonene dine."
-      ],
       "Already allocated": [
         "Allerede allokert"
       ],
@@ -6198,9 +6189,6 @@
       "Groups": [
         "Grupper"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Hjelper med å skrive, svare på og korrekturlese e-poster. Administrer for individuelle brukere i ${ userAndAddress }. ${ addMoreSeats }"
-      ],
       "here": [
         "her"
       ],
@@ -6465,9 +6453,6 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrer hvilke ${ BRAND_NAME }-applikasjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
-      ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Administrer hvilke funksjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Angi denne informasjonen manuelt i autentiseringsappen for å konfigurere kontoen din. ${ switchButton }."
@@ -7844,9 +7829,6 @@
       "Allowed domain": [
         "Tillatt domene"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Gjør det mulig for alle i organisasjonen å sømløst legge til videokonferansekoblinger i kalenderinvitasjonene sine."
-      ],
       "Amount": [
         "Beløp"
       ],
@@ -7991,6 +7973,9 @@
       "Country": [
         "Land"
       ],
+      "Credits": [
+        "Kreditter"
+      ],
       "Credits used": [
         "Kreditter brukt"
       ],
@@ -8029,6 +8014,9 @@
       ],
       "Domain name": [
         "Domenenavn"
+      ],
+      "Don't show this again": [
+        "Ikke vis dette igjen"
       ],
       "e.g. example.com": [
         "f.eks. eksempel.com"
@@ -8447,12 +8435,6 @@
       ],
       "Verification code": [
         "Verifiseringskode"
-      ],
-      "Video conferencing with ${ MEET_APP_NAME }": [
-        "Videokonferanser med ${ MEET_APP_NAME }"
-      ],
-      "Video conferencing with Zoom": [
-        "Videokonferanser med Zoom"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -10589,9 +10571,6 @@
       "Let's talk": [
         "La oss snakke"
       ],
-      "Limited time offer": [
-        "Tidsbegrenset tilbud"
-      ],
       "Recommended": [
         "Anbefalt"
       ]
@@ -10906,6 +10885,9 @@
         "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måned. Du kan si opp når som helst.",
         "Da vil den automatisk bli fornyet til ${ renewPriceStr } for ${ renewalLength } måneder. Du kan si opp når som helst."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Denne handlingen utvider det eksisterende abonnementet. Du vil kun bli belastet for de nye tilleggene og den gjenværende tiden av den nåværende faktureringssyklusen. Fornyelsesdatoen for abonnementet ditt vil ikke bli endret."
+      ],
       "This number will be shown on all future invoices": [
         "Dette nummeret vil bli vist på alle fremtidige fakturaer"
       ],
@@ -10949,6 +10931,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Kortet ditt ble avslått. Forsøk et annet kort eller kontakt banken din for å autorisere belastingen."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kreditt for den ubrukte delen av ditt forrige planabonnement"
+      ],
+      "Credits will be added to your balance": [
+        "Kreditter vil bli lagt til saldoen din"
       ]
     },
     "Payments.plan_name": {
@@ -12151,12 +12141,6 @@
       "${ seconds } second": [
         "${ seconds } sekund",
         "${ seconds } sekunder"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } måned GRATIS",
-        "${ n } måneder GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -14450,9 +14434,6 @@
       "Verifying your payment...": [
         "Verifiserer betalingen din..."
       ],
-      "Video conferencing": [
-        "Videokonferanse"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videokonferanser med ${ MEET_APP_NAME }"
       ],
@@ -14565,12 +14546,6 @@
     "Tooltip": {
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Gjør det mulig å sømløst legge til ${ MEET_APP_NAME }-videokonferansekoblinger i kalenderinvitasjonene dine."
-      ],
-      "Allows to seamlessly add Zoom video conferencing links to your calendar invitations.": [
-        "Gjør det mulig å sømløst legge til Zoom-videokonferansekoblinger i kalenderinvitasjonene dine."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Bytt automatisk mellom foretrukket tema for dag og natt synkronisert med systemets dag- og nattmodus."
