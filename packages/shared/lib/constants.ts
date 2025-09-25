@@ -1198,3 +1198,6 @@ export const TWO_FA_RECOVERY_CODES_FILE_NAME = `proton_2FA_recovery_codes.txt`;
 export const MAX_FOLDER_NESTING_LEVEL = 2;
 
 export const APPS_WITH_IN_APP_PAYMENTS = new Set<APP_NAMES>([APPS.PROTONMAIL, APPS.PROTONACCOUNT, APPS.PROTONCALENDAR]);
+
+export const FREE_SERVER_COUNT = 2000; // Free server count for free user
+export const FREE_COUNTRY_COUNT = 5; // Free country count for free user
