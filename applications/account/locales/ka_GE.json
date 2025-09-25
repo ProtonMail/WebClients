@@ -141,9 +141,6 @@
       "Add label": [
         "ჭდის დამატება"
       ],
-      "Add more seats": [
-        "მეტი ადგილის დამატება"
-      ],
       "Add notification": [
         "შეტყობინების დამატება"
       ],
@@ -1583,9 +1580,6 @@
       ],
       "User": [
         "მომხმარებელი"
-      ],
-      "users and addresses": [
-        "მომხმარებლები და მისამართები"
       ],
       "Verify": [
         "გადამოწმება"
@@ -11823,9 +11817,6 @@
       "Allowed domain": [
         "დაშვებული დომენი"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "საშუალებას აძლევს ყველას თქვენს ორგანიზაციაში, უპრობლემოდ დაამატოს ვიდეოკონფერენციის ბმულები მათი კალენდრის მოსაწვევებში."
-      ],
       "Amount": [
         "რაოდენობა"
       ],
@@ -12161,6 +12152,9 @@
       ],
       "Don't keep versions": [
         "ვერსიები არ შენარჩუნდება"
+      ],
+      "Don't show this again": [
+        "აღარ მაჩვენო"
       ],
       "Duration": [
         "ხანგრძლივობა"
@@ -15868,9 +15862,6 @@
       "Let's talk": [
         "ვისაუბროთ"
       ],
-      "Limited time offer": [
-        "დროში შეზღუდული შეთავაზება"
-      ],
       "Recommended": [
         "რეკომენდებულია"
       ],
@@ -16052,9 +16043,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ში შესვლა"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "პროდუქტის გაშვების სპეციალური აქცია: მიიღეთ ${ title } ${ price }-ად სამუდამოდ!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "სპეციალური: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } სულ რაღაც ${ priceString } ფასად."
@@ -18686,12 +18674,6 @@
       "${ seconds } second": [
         "${ seconds } წამი",
         "${ seconds } წამი"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } თვე უფასოდ",
-        "${ n } თვე უფასოდ"
       ]
     },
     "specialoffer: Deal details": {
@@ -21751,9 +21733,6 @@
       ],
       "Version history": [
         "ვერსიის ისტორია"
-      ],
-      "Video conferencing": [
-        "ვიდეოკონფერენცია"
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "ვიდეოკონფერენცია ${ MEET_APP_NAME }-ისთან ერთად"

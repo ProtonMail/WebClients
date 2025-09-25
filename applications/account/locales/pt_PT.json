@@ -11305,9 +11305,6 @@
       "Allowed domain": [
         "Domínio permitido"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Permite a todos da sua organização adicionar ligações de videoconferência aos convites da sua agenda."
-      ],
       "Amount": [
         "Quantia"
       ],
@@ -11637,6 +11634,9 @@
       ],
       "Don't keep versions": [
         "Não manter as versões"
+      ],
+      "Don't show this again": [
+        "Não mostrar novamente"
       ],
       "Duration": [
         "Duração"
@@ -15309,9 +15309,6 @@
       "Let's talk": [
         "Vamos conversar"
       ],
-      "Limited time offer": [
-        "Oferta por tempo limitado"
-      ],
       "Recommended": [
         "Recomendado"
       ],
@@ -15487,9 +15484,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Inicio de sessão no ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Oferta especial de lançamento: obtenha ${ title } por ${ price } para sempre!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Oferta especial: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } por ${ priceString }."
@@ -17840,12 +17834,6 @@
       "${ seconds } second": [
         "${ seconds } segundo",
         "${ seconds } segundos"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mês GRÁTIS.",
-        "${ n } meses GRÁTIS."
       ]
     },
     "specialoffer: Deal details": {
@@ -20853,9 +20841,6 @@
       ],
       "Version history": [
         "Histórico das versões"
-      ],
-      "Video conferencing": [
-        "Videoconferência"
       ],
       "View organization events by upgrading to Professional": [
         "Consulta os eventos da organização ao atualizar para Professional."

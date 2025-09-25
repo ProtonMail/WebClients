@@ -92,9 +92,6 @@
       "Add to group": [
         "Hozzáadás csoporthoz"
       ],
-      "Add Zoom meeting": [
-        "Zoom találkozó hozzáadása"
-      ],
       "Adding conferencing details": [
         "Konferencia részleteinek hozzáadása"
       ],
@@ -4958,6 +4955,9 @@
       "Copy the link to clipboard": [
         "Hivatkozás másolása a vágólapra"
       ],
+      "Copy your referral link": [
+        "Ajánló hivatkozás másolása"
+      ],
       "Country code": [
         "Országkód"
       ],
@@ -5440,6 +5440,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "A helyreállítási információk megmaradnak ezen az eszközön, kivéve ha törli."
+      ],
+      "Referral link copied to your clipboard": [
+        "Ajánló hivatkozás kimásolva a vágólapra"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
@@ -6251,6 +6254,9 @@
       "Country": [
         "Ország"
       ],
+      "Credits": [
+        "Kredit"
+      ],
       "Date and time": [
         "Dátum és idő"
       ],
@@ -6271,6 +6277,9 @@
       ],
       "Don't ask again": [
         "Ne kérdezze újra"
+      ],
+      "Don't show this again": [
+        "Ne jelenjen meg többet"
       ],
       "e.g., Amazon, eBay, Etsy": [
         "pl. Amazon, eBay, Etsy"
@@ -9316,12 +9325,6 @@
         "${ seconds } másodperc"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } hónap INGYEN",
-        "${ n } hónap INGYEN"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 felhasználó"
@@ -10557,9 +10560,6 @@
       "Create public link": [
         "Nyilvános hivatkozás létrehozása"
       ],
-      "Credits": [
-        "Kredit"
-      ],
       "Currency": [
         "Pénznem"
       ],
@@ -10714,6 +10714,9 @@
       ],
       "How does it all work?": [
         "Hogyan is működik ez az egész?"
+      ],
+      "How does it work?": [
+        "Hogyan működik?"
       ],
       "Human verification": [
         "Robot ellenőrzés"

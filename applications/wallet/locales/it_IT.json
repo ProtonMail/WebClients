@@ -491,24 +491,6 @@
         "Valore"
       ]
     },
-    "anniversary_2025: Offers": {
-      "${ n } month": [
-        "${ n } mese",
-        "${ n } mesi"
-      ],
-      "12 months": [
-        "12 mesi"
-      ],
-      "15 months": [
-        "15 mesi"
-      ],
-      "24 months": [
-        "24 mesi"
-      ],
-      "30 months": [
-        "30 mesi"
-      ]
-    },
     "Apps dropdown": {
       "${ BRAND_NAME } applications": [
         "${ BRAND_NAME } applicazioni"
@@ -559,150 +541,16 @@
       ]
     },
     "bf2023: Deal details": {
-      "1 user": [
-        "1 utente"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 utenti"
-      ],
       "Premium Password Manager": [
         "Gestore di password premium"
-      ]
-    },
-    "bf2023: Tooltip": {
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
       ]
     },
     "BF2024: Deal details": {
       "${ MAIL_APP_NAME } desktop app": [
         "Applicazione desktop di ${ MAIL_APP_NAME }"
       ],
-      "${ plan } and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ plan } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } di spazio d'archiviazione"
-      ],
-      "1 TB total": [
-        "1 TB"
-      ],
-      "1 user": [
-        "1 utente"
-      ],
-      "1 user account": [
-        "1 account utente"
-      ],
-      "10 email addresses": [
-        "10 indirizzi email"
-      ],
-      "2 users": [
-        "2 utenti"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 user accounts": [
-        "6 account utente"
-      ],
-      "6 users": [
-        "6 utenti"
-      ],
-      "8500+ servers across 110+ countries": [
-        "Oltre 8500 server in più di 110 paesi"
-      ],
-      "Ad-blocker and malware protection": [
-        "Blocco degli annunci e protezione da malware"
-      ],
-      "Admin panel to manage your family": [
-        "Pannello di amministrazione per gestire la tua famiglia"
-      ],
-      "Advanced account protection": [
-        "Protezione avanzata dell'account"
-      ],
-      "Easily add or remove users": [
-        "Aggiungi o rimuovi utenti facilmente"
-      ],
-      "High speed streaming": [
-        "Streaming ad alta velocità"
-      ],
-      "One-time payment, lifetime deal": [
-        "Pagamento una tantum, promo per sempre"
-      ],
-      "Online document editor": [
-        "Editor di documenti online"
-      ],
-      "Password health alerts": [
-        "Avvisi sullo stato di integrità delle password"
-      ],
-      "Private photo backup": [
-        "Backup privato delle foto"
-      ],
-      "Protect 10 devices at a time": [
-        "Proteggi 10 dispositivi alla volta"
-      ],
-      "Secure file storage & sharing": [
-        "Archiviazione e condivisione sicura dei file"
-      ],
-      "Unlimited folders, labels and filters": [
-        "Cartelle, etichette e filtri illimitati"
-      ],
-      "Unlimited logins, credit cards, hide-my-email aliases and more": [
-        "Login, carte di credito, alias hide-my-email illimitati e molto altro ancora"
-      ],
       "Use your own email domain": [
         "Usa il tuo dominio di posta personalizzato"
-      ],
-      "Version history": [
-        "Cronologia delle versioni"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
-      ]
-    },
-    "BF2024: Offers": {
-      "Billed at ${ amount } once": [
-        "Addebito di ${ amount } una volta"
-      ],
-      "Renews after 1 month at ${ regularAmount }.": [
-        "Si rinnova dopo 1 mese a ${ regularAmount }."
-      ]
-    },
-    "BF2024: Tooltip": {
-      "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Accedi ai contenuti bloccati e naviga in privato. Include oltre 8.500 server in più di 110 paesi, 10 dispositivi, streaming ad alta velocità, ad-blocker, protezione da malware, VPN Accelerator e molto altro."
-      ],
-      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accedi ai contenuti di servizi di streaming come Netflix, Disney+, Prime Video e molti altri, ovunque ti trovi."
-      ],
-      "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
-        "Accessi sicuri su tutti i dispositivi. Include alias hide-my-email illimitati, funzionalità di condivisione, 2FA integrata, ${ DARK_WEB_MONITORING_NAME } e molto altro."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro.",
-        "Proteggi le email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes ${ addresses } email address, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzo email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora.",
-        "Proteggi le tue email e l'agenda con la crittografia end-to-end. Include ${ addresses } indirizzi email, supporto per domini email personalizzati, alias hide-my-email illimitati e altro ancora."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, ${ BRAND_NAME } Scribe writing assistant, unlimited hide-my-email aliases and more.": [
-        "Proteggi le email e l'agenda con la crittografia end-to-end. Include 15 indirizzi email, il supporto per domini email personalizzati, l'assistente di scrittura ${ BRAND_NAME } Scribe, alias hide-my-email illimitati e molto altro."
-      ],
-      "Secure your emails and schedule with end-to-end encryption. Includes 15 email addresses, support for custom email domains, unlimited hide-my-email aliases and more.": [
-        "Proteggi le tue email e il tuo calendario con la crittografia end-to-end. Include 15 indirizzi email, supporto per domini email personalizzati, alias hide-my-email illimitati e molto altro."
-      ],
-      "Secure your files with encrypted cloud storage. Includes online document editor, photo backup, version history, encrypted file sharing, and more.": [
-        "Proteggi i file con l'archiviazione cloud crittografata. Include l'editor di documenti online, il backup delle foto, la cronologia delle versioni, la condivisione di file crittografata e molto altro."
-      ],
-      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield è progettato appositamente per proteggere i dispositivi e accelerare la navigazione bloccando annunci, tracker e malware."
-      ],
-      "Storage space is shared across all ${ BRAND_NAME } services.": [
-        "Lo spazio di archiviazione è condiviso tra tutti i servizi ${ BRAND_NAME }."
       ]
     },
     "Billing cycle option": {
@@ -2307,14 +2155,6 @@
         "Il tuo abbonamento ${ PLAN_NAMES[PLANS.PASS] } ha un prezzo speciale di ${ price } all'anno. Effettuando il downgrade a un piano gratuito, perderai definitivamente lo sconto, anche se eseguirai nuovamente l'upgrade in futuro."
       ]
     },
-    "driveplus2024: Deal details": {
-      "Extended version history": [
-        "Cronologia estesa della versione"
-      ],
-      "Priority support": [
-        "Supporto prioritario"
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
@@ -2531,21 +2371,6 @@
         "Chiave pubblica (XPUB) copiata negli appunti"
       ]
     },
-    "familyOffer_2023: Deal details": {
-      "3 TB total storage": [
-        "3 TB di archiviazione totale"
-      ]
-    },
-    "familyOffer_2023: Tooltip": {
-      "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Lo spazio di archiviazione è condiviso tra i membri della famiglia su ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
-      ]
-    },
-    "familyOffer_2023:Deal details": {
-      "Up to 6 users": [
-        "Fino a 6 utenti"
-      ]
-    },
     "familyOffer_2023:Error": {
       "Family group not recognized. Try again.": [
         "Gruppo familiare non riconosciuto. Riprova."
@@ -2576,17 +2401,6 @@
       ],
       "Delete organization?": [
         "Vuoi eliminare l'organizzazione?"
-      ]
-    },
-    "familyOffer_2023:Tooltip": {
-      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2700 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
-      ],
-      "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
-        "Include il supporto per 3 domini email personalizzati, 90 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e molto altro."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ]
     },
     "Feature": {
@@ -3335,6 +3149,9 @@
       ],
       "Country": [
         "Paese"
+      ],
+      "Credits": [
+        "Crediti"
       ],
       "Currency": [
         "Valuta"
@@ -4665,6 +4482,9 @@
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mese. Puoi annullare in qualsiasi momento.",
         "Poi verrà rinnovato automaticamente a ${ renewPriceStr } per ${ renewalLength } mesi. Puoi annullare in qualsiasi momento."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Questa azione estende l'abbonamento esistente. Ti verranno addebitati solo i nuovi add-on e il tempo rimanente del ciclo di fatturazione corrente. La data di rinnovo del tuo abbonamento non verrà modificata."
+      ],
       "This number will be shown on all future invoices": [
         "Questo numero sarà mostrato su tutte le fatture future"
       ],
@@ -4705,6 +4525,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tua carta è stata rifiutata. Prova con una carta diversa o contatta la tua banca per autorizzare l'addebito."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Credito per la parte non usata del tuo precedente abbonamento"
+      ],
+      "Credits will be added to your balance": [
+        "I crediti verranno aggiunti al tuo saldo."
       ]
     },
     "Payments.plan_name": {
@@ -5012,28 +4840,7 @@
         "Di default utilizziamo il metodo di firma Electrum perché è il metodo più semplice e più comune richiesto dalle banche. BIP 137 è utilizzato per firmare transazioni offline ed è più avanzato."
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mese GRATIS",
-        "${ n } mesi GRATIS"
-      ]
-    },
     "specialoffer: Deal details": {
-      "1 user": [
-        "1 utente"
-      ],
-      "3 TB": [
-        "3 TB"
-      ],
-      "6 users": [
-        "6 utenti"
-      ],
-      "All paid Mail and Calendar features": [
-        "Tutte le funzioni a pagamento di Mail e Calendar"
-      ],
-      "High speed VPN": [
-        "VPN a velocità elevata"
-      ],
       "Highest VPN speed": [
         "Massima velocità della VPN"
       ],
@@ -5046,17 +4853,8 @@
       "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
         "${ appName1 }, ${ appName2 } e ${ appName3 } premium"
       ],
-      "Premium early access": [
-        "Accesso anticipato premium"
-      ],
-      "Secure cloud storage": [
-        "Archiviazione sul cloud sicura"
-      ],
       "Secure streaming": [
         "Streaming sicuro"
-      ],
-      "Support online privacy": [
-        "Supporta la privacy online"
       ]
     },
     "specialoffer: Link": {
@@ -5065,86 +4863,6 @@
       ],
       "Upgrade": [
         "Effettua l'upgrade"
-      ]
-    },
-    "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } mese",
-        "${ n } mesi"
-      ],
-      "1 year": [
-        "1 anno"
-      ],
-      "15 months": [
-        "15 mesi"
-      ],
-      "2 years": [
-        "2 anni"
-      ],
-      "30 months": [
-        "30 mesi"
-      ],
-      "Billed at ${ amount } for 1 month": [
-        "Addebitato a ${ amount } per 1 mese"
-      ],
-      "Billed at ${ amount } for 12 months": [
-        "Addebitato a ${ amount } per 12 mesi"
-      ],
-      "Billed at ${ amount } for 15 months": [
-        "Addebitato a ${ amount } per 15 mesi"
-      ],
-      "Billed at ${ amount } for 24 months": [
-        "Addebitato a ${ amount } per 24 mesi"
-      ],
-      "Billed at ${ amount } for 30 months": [
-        "Addebitato a ${ amount } per 30 mesi"
-      ],
-      "Renews after 1 year at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Si rinnova dopo 1 anno al prezzo scontato di ${ discountedAmount } anziché ${ regularAmount } (${ discount }% di sconto)"
-      ],
-      "Renews after 2 years at a discounted price of ${ discountedAmount } instead of ${ regularAmount } (${ discount }% discount)": [
-        "Si rinnova dopo 2 anni al prezzo scontato di ${ discountedAmount } anziché ${ regularAmount } (${ discount }% di sconto)"
-      ],
-      "Standard price ${ amount } for 1 month": [
-        "Prezzo standard ${ amount } per 1 mese"
-      ],
-      "Standard price ${ amount } for 12 months": [
-        "Prezzo standard ${ amount } per 12 mesi"
-      ],
-      "Standard price ${ amount } for 15 months": [
-        "Prezzo standard ${ amount } per 15 mesi"
-      ],
-      "Standard price ${ amount } for 24 months": [
-        "Prezzo standard ${ amount } per 24 mesi"
-      ],
-      "Standard price ${ amount } for 30 months": [
-        "Prezzo standard ${ amount } per 30 mesi"
-      ],
-      "The special offer is valid for the first 2 years": [
-        "L'offerta speciale è valida per i primi 2 anni."
-      ]
-    },
-    "specialoffer: Tooltip": {
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità VPN, 10 connessioni VPN per utente, servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
-      ],
-      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accedi a contenuti bloccati e naviga in modalità privata. Include 1700 server in più di 60 Paesi, le più elevate velocità VPN, 10 connessioni VPN, servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
-      ],
-      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tutti i nostri servizi premium con il massimo dei limiti: 100 indirizzi email, supporto per 10 domini personalizzati, alias Hide-my-email illimitati, condivisione dei calendari, archiviazione sul cloud e condivisione dei file crittografati, e molto altro."
-      ],
-      "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 3 domini email personalizzati, 15 indirizzi email, alias Hide-my-email illimitati, condivisione del calendario e molto altro."
-      ],
-      "Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.": [
-        "Perfetto per famiglie o team di piccole dimensioni, ogni persona può avere la propria casella di posta e il proprio alias. È necessario un dominio personalizzato."
-      ],
-      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Ricevi senza costi aggiuntivi le versioni a pagamento di tutti i nuovi servizi dedicati alla privacy che lanceremo in futuro, oltre all'accesso anticipato a nuovi prodotti e funzioni."
-      ],
-      "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione su cloud crittografata. Include la sincronizzazione automatica, la condivisione crittografata dei file e molto altro."
       ]
     },
     "Spotlight": {
@@ -5416,20 +5134,6 @@
         "per utente al mese"
       ]
     },
-    "summer2023: Tooltip": {
-      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
-        "Crea dati di accesso sicuri su tutti i tuoi dispositivi. Include alias illimitati, 20 casseforti, autenticazione a due fattori integrata, compilazione automatica dei dati delle carte di credito, e molto altro."
-      ],
-      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Include 2950 server in più di 65 Paesi, possibilità di connettere fino a 10 dispositivi, accesso a servizi di streaming in tutto il mondo, blocco di malware e annunci, e molto altro."
-      ],
-      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
-      ],
-      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
-        "Proteggi i tuoi file con l'archiviazione in cloud crittografata. Sono incluse la cronologia delle versioni, la sincronizzazione automatica, la condivisione di file crittografati e altre funzioni ancora."
-      ]
-    },
     "Sweep paper wallet": {
       "Cancel": [
         "Annulla"
@@ -5539,9 +5243,6 @@
       ],
       "Coupon": [
         "Coupon"
-      ],
-      "Credits": [
-        "Crediti"
       ],
       "Currency": [
         "Valuta"

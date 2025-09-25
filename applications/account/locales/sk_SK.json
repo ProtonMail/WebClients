@@ -141,8 +141,8 @@
       "Add label": [
         "Pridať štítok"
       ],
-      "Add more seats": [
-        "Pridať viac miest"
+      "add more seats": [
+        "pridať viac miest"
       ],
       "Add notification": [
         "Pridať notifikáciu"
@@ -1602,8 +1602,8 @@
       "User": [
         "Používateľ"
       ],
-      "users and addresses": [
-        "používatelia a adresy"
+      "Users and addresses": [
+        "Používatelia a adresy"
       ],
       "Verify": [
         "Overiť"
@@ -8524,6 +8524,15 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Pozvite svojich priateľov** do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1:** Pozvite svojich priateľov do ${ BRAND_NAME } pomocou svojho odporúčacieho odkazu."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Krok 2:** Vaši priatelia získajú 2 týždne zadarmo v rámci svojho plánu."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Krok 3:** Získajte ${ referrerRewardAmount } v kreditoch za každú osobu, ktorá si predplatí plán."
+      ],
       "**Sync codes** to all your devices": [
         "**Synchronizovať kódy** do všetkých vašich zariadení"
       ],
@@ -8647,6 +8656,9 @@
         "Pridať server (${ availableAddedCount } dostupných)",
         "Pridať server (${ availableAddedCount } dostupných)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Pridať odkazy na videokonferencie do pozvánok v kalendári"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Pridajte vlastný názov a logo, aby ste vytvorili osobnejší zážitok pre vašu organizáciu."
       ],
@@ -8733,9 +8745,6 @@
       ],
       "Allow users to connect to secure shared servers from the **Countries** section of the ${ VPN_APP_NAME } app.": [
         "Umožniť používateľom pripojiť sa k zabezpečeným zdieľaným serverom v položke **Krajiny** v aplikácii ${ VPN_APP_NAME }."
-      ],
-      "Allows to seamlessly add ${ MEET_APP_NAME } video conferencing links to your calendar invitations.": [
-        "Umožňuje bezproblémové pridávanie odkazov na videokonferencie ${ MEET_APP_NAME } do pozvánok v kalendári."
       ],
       "Already allocated": [
         "Už pridelené"
@@ -9541,8 +9550,8 @@
       "Groups": [
         "Skupiny"
       ],
-      "Helps write, reply to, and proofread emails. Manage for individual users in ${ userAndAddress }. ${ addMoreSeats }": [
-        "Pomáha písať, odpovedať na emaily a opravovať ich. Spravujte jednotlivých používateľov v ${ userAndAddress }. ${ addMoreSeats }"
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Pomáha písať, odpovedať na emaily a korigovať ich. Ak je táto funkcia vypnutá, prístup k nej majú len správcovia. Spravujte ho pre jednotlivých používateľov v ${ userAndAddress } alebo ${ addMoreSeats }."
       ],
       "here": [
         "tu"
@@ -9928,8 +9937,8 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Spravujte, ku ktorým ${ BRAND_NAME } aplikáciám majú členovia vašej organizácie prístup. Ak je táto možnosť vypnutá, prístup budú mať len správcovia."
       ],
-      "Manage which features the members of your organization can access. If disabled, only administrators will have access.": [
-        "Spravujte, ku ktorým funkciám majú členovia vašej organizácie prístup. Ak je táto funkcia vypnutá, prístup budú mať len správcovia."
+      "Manage which features the members of your organization can access.": [
+        "Spravujte, ku ktorým funkciám majú členovia vašej organizácie prístup."
       ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Spravujte svoje preferencie emailových notifikácií pre ${ DOCS_APP_NAME }."
@@ -12414,9 +12423,6 @@
       "Allowed domain": [
         "Povolená doména"
       ],
-      "Allows everyone in your organization to seamlessly add video conferencing links to their calendar invitations.": [
-        "Umožňuje každému vo vašej organizácii bezproblémovo pridávať odkazy na videokonferencie do pozvánok v kalendári."
-      ],
       "Amount": [
         "Čiastka"
       ],
@@ -12755,6 +12761,9 @@
       ],
       "Don't keep versions": [
         "Neuchovávať verzie"
+      ],
+      "Don't show this again": [
+        "Nabudúce nezobrazovať"
       ],
       "Duration": [
         "Doba trvania"
@@ -16638,9 +16647,6 @@
       "Let's talk": [
         "Porozprávajme sa"
       ],
-      "Limited time offer": [
-        "Časovo obmedzená ponuka"
-      ],
       "Recommended": [
         "Odporúčané"
       ],
@@ -16822,9 +16828,6 @@
       ],
       "Signing in to ${ PASS_APP_NAME }": [
         "Prihlásenie do ${ PASS_APP_NAME }"
-      ],
-      "Special launch offer: Get ${ title } for ${ price } forever!": [
-        "Špeciálna uvádzacia ponuka: Získajte ${ title } za ${ price } navždy!"
       ],
       "Special: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } at ${ priceString }.": [
         "Špecialita: ${ PLAN_NAMES[PLANS.PASS_LIFETIME] } za ${ priceString }."
@@ -17171,6 +17174,9 @@
         "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť.",
         "Potom sa automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } mesiacov. Obnovenie môžete kedykoľvek zrušiť."
       ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Táto akcia rozširuje existujúce predplatné. Bude vám účtovaný poplatok len za nové doplnky a zostávajúci čas aktuálneho fakturačného obdobia. Dátum obnovenia vášho predplatného sa nezmení."
+      ],
       "This number will be shown on all future invoices": [
         "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ],
@@ -17214,6 +17220,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaša karta bola zamietnutá. Skúste použiť inú kartu alebo kontaktujte svoju banku a autorizujte platbu."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit za nevyužitú časť vášho predchádzajúceho predplatného plánu"
+      ],
+      "Credits will be added to your balance": [
+        "Kredity budú pridané k vášmu zostatku"
       ]
     },
     "Payments.plan_name": {
@@ -17809,6 +17823,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } za odporúčanie"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Ak zrušíte pred týmto dátumom**, po skončení skúšobnej doby dôjde k **zníženíu** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
@@ -17823,6 +17840,18 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Užite si **${ planTitle }** zadarmo až do **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Pozvite priateľov. Získajte kredity."
+      ],
+      "Refer friends": [
+        "Odporučiť priateľov"
+      ],
+      "Start earning credits": [
+        "Začnite zarábať kredity"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Môžete získať kredit až **${ maxRewardAmount }**."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Zostáva vám **${ daysRemaining } deň** na to, aby ste vyskúšali všetky pokročilé funkcie, ktoré ponúka **${ planTitle }**.",
@@ -19669,14 +19698,6 @@
         "${ seconds } sekúnd"
       ]
     },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mesiacov ZDARMA",
-        "${ n } mesiac ZDARMA",
-        "${ n } mesiacov ZDARMA",
-        "${ n } mesiac ZDARMA"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 používateľ"
@@ -19879,6 +19900,12 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Získajte až ${ maxRewardAmount } kreditov"
+      ],
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Získajte kredity, keď si pozvaná osoba predplatí ${ BRAND_NAME } plán."
+      ],
       "Get up to ${ credits } in credits.": [
         "Získajte až ${ credits } v kreditoch."
       ],
@@ -21403,6 +21430,18 @@
       "${ feature } is now active": [
         "${ feature } je teraz aktívna"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } pozvaný priateľ",
+        "${ friendsInvited } pozvaní priatelia",
+        "${ friendsInvited } pozvaných priateľov",
+        "${ friendsInvited } pozvaných priateľov"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } priateľ s predplatným",
+        "${ friendsSubscribed } priatelia s predplatným",
+        "${ friendsSubscribed } priateľov s predplatným",
+        "${ friendsSubscribed } priateľov s predplatným"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Exportný nástroj ${ MAIL_APP_NAME }"
       ],
@@ -21786,6 +21825,9 @@
       ],
       "Credentials": [
         "Poverenia"
+      ],
+      "Credit earned": [
+        "Získané kredity"
       ],
       "Credits": [
         "Kredity"
@@ -22870,11 +22912,11 @@
       "Version history": [
         "História verzií"
       ],
-      "Video conferencing": [
-        "Videokonferencie"
-      ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videokonferencie s ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Videokonferencie s aplikáciou Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Zobraziť udalosti organizácie prechodom na profesionálny plán"
