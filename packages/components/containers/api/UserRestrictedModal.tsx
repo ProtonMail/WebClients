@@ -67,6 +67,7 @@ const UserRestrictedModal = ({ message, onClose, onExit, open, actions, ...rest 
                     as={SettingsLink}
                     path={getPath(mainAction?.Code)}
                     target="_self"
+                    onClick={onClose}
                 >
                     {mainAction?.Name ?? c('Action').t`Change password`}
                 </ButtonLike>
