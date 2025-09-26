@@ -8,4 +8,5 @@ export type AutofillRequest = {
     data: CCItemData;
 };
 
-export type AutofillItem = SelectedItem & { origin: string };
+export type WithAutofillOrigin<T> = T & { origin: string; frameId: number };
+export type AutofillItem = WithAutofillOrigin<SelectedItem>;

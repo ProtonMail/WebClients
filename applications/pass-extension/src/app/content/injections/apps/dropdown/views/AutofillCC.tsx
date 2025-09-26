@@ -32,7 +32,7 @@ import noop from '@proton/utils/noop';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_CC }>;
 
-export const AutofillCC: FC<Props> = ({ origin }) => {
+export const AutofillCC: FC<Props> = ({ origin, frameId }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
     const [state, setState] = useMountedState<MaybeNull<AutofillCCResult>>(null);
@@ -100,7 +100,7 @@ export const AutofillCC: FC<Props> = ({ origin }) => {
                                         sendMessage.onSuccess(
                                             contentScriptMessage({
                                                 type: WorkerMessageType.AUTOFILL_CC,
-                                                payload: { shareId, itemId, origin },
+                                                payload: { shareId, itemId, origin, frameId },
                                             }),
                                             () => controller.close({ refocus: false })
                                         )

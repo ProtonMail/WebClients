@@ -6,7 +6,6 @@ import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 import type { AutofillCheckFormMessage, WorkerMessageResponse } from 'proton-pass-extension/types/messages';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
-import { webNavigation } from 'webextension-polyfill';
 
 import { clientReady } from '@proton/pass/lib/client';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
@@ -274,7 +273,7 @@ export const createAutoFillService = () => {
              * request's origin. This prevents cross-frame injection attacks where:
              * - Malicious iframes could receive credit card data
              * - XSS-injected frames could steal autofill information */
-            const frames = (await webNavigation.getAllFrames({ tabId })) ?? [];
+            const frames = (await browser.webNavigation.getAllFrames({ tabId })) ?? [];
             const frameIds = frames
                 .filter((frame) => resolveDomain(parseUrl(frame.url)) === payload.origin)
                 .map(prop('frameId'));
