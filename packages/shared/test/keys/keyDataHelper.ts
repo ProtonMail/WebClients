@@ -99,6 +99,23 @@ export const getAddressKeyForE2EEForwarding = async (
     return getAddressKeyHelper(ID, userKey, forwardeeKey, primary, version);
 };
 
+/**
+ * Sign-only address keys cannot be primary, and cannot currently be imported from the web-client,
+ * but are supported by the BE, hence they may be present for some users.
+ */
+export const getAddressKeySignOnly = async (
+    ID: string,
+    userKey: PrivateKeyReference,
+    email: string,
+    version?: number
+) => {
+    const signOnlyKey = await CryptoProxy.generateKey({
+        userIDs: { email },
+        subkeys: [],
+    });
+    return getAddressKeyHelper(ID, userKey, signOnlyKey, false, version);
+};
+
 export const getLegacyAddressKey = async (ID: string, password: string, email: string) => {
     const key = await generateAddressKey({
         email,

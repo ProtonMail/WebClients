@@ -72,9 +72,15 @@ export const getReactivatedAddressKeys = async ({
     // e.g. due to rare WebCrypto bugs
     const newDecryptedAddressKeys = (
         await Promise.all(
-            newDecryptedAddressKeysMaybeCorrupted.map(async (decryptedKey) =>
-                (await canKeyEncryptAndDecrypt(decryptedKey.privateKey)) ? decryptedKey : null
-            )
+            newDecryptedAddressKeysMaybeCorrupted.map(async (decryptedKey) => {
+                const isNotCorrupted =
+                    (await canKeyEncryptAndDecrypt(decryptedKey.privateKey)) ||
+                    // check whether the key is a forwarding key (which are not allowed for encryption) or sign-only.
+                    // The latter are supported as non-primary keys;
+                    // (this test matches the one done by the BE to determine whether a key can be primary)
+                    !(await CryptoProxy.canKeyEncrypt({ key: decryptedKey.privateKey }));
+                return isNotCorrupted ? decryptedKey : null;
+            })
         )
     ).filter(isTruthy);
 
