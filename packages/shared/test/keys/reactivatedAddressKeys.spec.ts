@@ -8,7 +8,7 @@ import {
     getReactivatedAddressesKeys,
     resetOrReplaceUserId,
 } from '../../lib/keys/reactivation/reactivateKeyHelper';
-import { getAddressKey, getUserKey } from './keyDataHelper';
+import { getAddressKey, getAddressKeyForE2EEForwarding, getAddressKeySignOnly, getUserKey } from './keyDataHelper';
 
 const DEFAULT_KEYPASSWORD = '1';
 
@@ -24,6 +24,8 @@ const getSetup1 = async () => {
         getAddressKey('a', userKeys[0].privateKey, address1),
         getAddressKey('b', userKeys[0].privateKey, address1),
         getAddressKey('c', userKeys[1].privateKey, address1),
+        getAddressKeyForE2EEForwarding('forwarding', userKeys[1].privateKey, address1),
+        getAddressKeySignOnly('sign-only', userKeys[1].privateKey, address1),
     ]);
     const Address = {
         ID: 'AddressID',
@@ -161,7 +163,7 @@ describe('reactivate address keys', () => {
         const payload = await getAddressReactivationPayload([result]);
         expect(payload).toEqual(
             jasmine.objectContaining({
-                AddressKeyFingerprints: [...[addressKeys[2]].map(({ privateKey }) => privateKey.getFingerprint())],
+                AddressKeyFingerprints: [...addressKeys.slice(2).map(({ privateKey }) => privateKey.getFingerprint())],
                 SignedKeyLists: {
                     [Address.ID]: {
                         Data: jasmine.any(String),
