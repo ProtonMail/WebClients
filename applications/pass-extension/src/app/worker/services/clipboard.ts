@@ -45,7 +45,9 @@ export const extensionClipboardApi: ClipboardApi = {
 
         if (BUILD_TARGET === 'safari') {
             try {
-                return await sendSafariMessage<string>({ readFromClipboard: {} });
+                const res = await sendSafariMessage<string>({ readFromClipboard: {} });
+                if (res === undefined) throw new Error();
+                return res;
             } catch {
                 logger.debug('[Clipboard] Failed to read using native Safari implementation');
             }
