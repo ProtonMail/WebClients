@@ -8,7 +8,6 @@ import {
     hasDuo,
     hasMail,
     hasPass,
-    hasSep2025Coupon,
     hasVPN2024,
     isManagedExternally,
 } from '@proton/payments';
@@ -121,14 +120,6 @@ class OfferSubscription {
         }
 
         return hasAnniversary2025Coupon(this.subscription);
-    }
-
-    usedBackToSchoolPromo() {
-        if (this.upcomingSubscription) {
-            return hasSep2025Coupon(this.upcomingSubscription) || hasSep2025Coupon(this.subscription);
-        }
-
-        return hasSep2025Coupon(this.subscription);
     }
 }
 

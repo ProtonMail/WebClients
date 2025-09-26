@@ -107,18 +107,6 @@ export enum FeatureCode {
     OfferAnniversary2025PassPlus = 'OfferAnniversary2025PassPlus',
     OfferAnniversary2025VPNPlus = 'OfferAnniversary2025VPNPlus',
 
-    // Back to school
-    OfferBackToSchoolMailPlus = 'OfferBackToSchoolMailPlus',
-    OfferBackToSchoolMailPlusToYearly = 'OfferBackToSchoolMailPlusToYearly', // user already pays on monthly basis
-    OfferBackToSchoolDrivePlus = 'OfferBackToSchoolDrivePlus', // does not have "to-yearly" offer!
-    OfferBackToSchoolVPNPlus = 'OfferBackToSchoolVPNPlus',
-    OfferBackToSchoolVPNPlusToYearly = 'OfferBackToSchoolVPNPlusToYearly',
-    OfferBackToSchoolPassPlus = 'OfferBackToSchoolPassPlus',
-    OfferBackToSchoolPassPlusToYearly = 'OfferBackToSchoolPassPlusToYearly',
-    OfferBackToSchoolBundle = 'OfferBackToSchoolBundle',
-    OfferBackToSchoolDuo = 'OfferBackToSchoolDuo',
-    OfferBackToSchoolFamily = 'OfferBackToSchoolFamily',
-
     Offers = 'Offers',
     PrivacyDropdownOpened = 'PrivacyDropdownOpened',
     ProtonBadge = 'ProtonBadge',

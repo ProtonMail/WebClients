@@ -3,8 +3,7 @@ import type { JSXElementConstructor, ReactNode } from 'react';
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms';
 import type { IconName, IconSize } from '@proton/components/components/icon/Icon';
 import type { FeatureCode } from '@proton/features';
-import type { PlanIDs } from '@proton/payments';
-import type { COUPON_CODES, CYCLE, Currency } from '@proton/payments';
+import type { COUPON_CODES, CYCLE, Currency, PlanIDs } from '@proton/payments';
 import type { Optional } from '@proton/shared/lib/interfaces';
 
 export type OfferId =
@@ -17,17 +16,7 @@ export type OfferId =
     | 'anniversary-2025-mail-plus'
     | 'anniversary-2025-drive-plus'
     | 'anniversary-2025-pass-plus'
-    | 'anniversary-2025-vpn-plus'
-    | 'back-to-school-mail-plus'
-    | 'back-to-school-mail-plus-to-yearly' // user already pays on monthly basis
-    | 'back-to-school-drive-plus' // does not have "to-yearly" offer!
-    | 'back-to-school-vpn-plus'
-    | 'back-to-school-vpn-plus-to-yearly'
-    | 'back-to-school-pass-plus'
-    | 'back-to-school-pass-plus-to-yearly'
-    | 'back-to-school-bundle'
-    | 'back-to-school-duo'
-    | 'back-to-school-family';
+    | 'anniversary-2025-vpn-plus';
 
 export type OfferGlobalFeatureCodeValue = Record<OfferId, boolean>;
 
