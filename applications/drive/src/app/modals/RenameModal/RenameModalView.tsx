@@ -14,6 +14,7 @@ import {
     ModalTwoHeader,
     Row,
 } from '@proton/components';
+import type { ModalProps } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import noop from '@proton/utils/noop';
 
@@ -31,13 +32,14 @@ export type RenameModalViewProps = {
 
 export const RenameModalView = ({
     handleSubmit,
-    onClose,
     name: originalName,
     isFile,
     ignoreExtension,
-    isDoc, // here so they don't get added to the dom with modalProps
-    ...modalProps
-}: RenameModalViewProps) => {
+    // modalProps
+    onClose,
+    onExit,
+    open,
+}: RenameModalViewProps & ModalProps) => {
     const [autofocusDone, setAutofocusDone] = useState(false);
     const [tempName, setTempName] = useState(originalName);
     const [loading, withLoading] = useLoading();
@@ -76,9 +78,10 @@ export const RenameModalView = ({
             as="form"
             disableCloseOnEscape={loading}
             onClose={onClose}
+            onExit={onExit}
+            open={open}
             onSubmit={(e: React.FormEvent) => withLoading(onSubmit(e)).catch(noop)}
             size="large"
-            {...modalProps}
         >
             <ModalTwoHeader
                 closeButtonProps={{ disabled: loading }}
