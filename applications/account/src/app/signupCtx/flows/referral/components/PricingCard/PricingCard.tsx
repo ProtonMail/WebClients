@@ -5,11 +5,14 @@ import { c } from 'ttag';
 
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import { VerticalStep, VerticalSteps } from '@proton/atoms';
-import { AppsLogos, SkeletonLoader } from '@proton/components';
+import { AppsLogos, CycleSelector, SkeletonLoader } from '@proton/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { getTrialRenewalNoticeTextWithTermsAndConditions } from '@proton/components/containers/payments/RenewalNotice';
+import {
+    getTrialRenewalAmountDueNoticeText,
+    getTrialRenewalNoticeTextWithTermsAndConditions,
+} from '@proton/components/containers/payments/RenewalNotice';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments';
+import { CYCLE, PLANS, PLAN_NAMES, TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
@@ -20,6 +23,7 @@ import { getPlanIconPath } from '../../helpers/planIcons';
 import type { SupportedReferralPlans } from '../../helpers/plans';
 import { autoRenewingPlans, plansRequiringPaymentToken } from '../../helpers/plans';
 import { FreeFeatures } from '../Features/FreeFeatures';
+import { TaxRow } from './TaxRow';
 
 const LogoIconShape = ({ children, border = true }: { children: ReactNode; border?: boolean }) => {
     return (
@@ -111,8 +115,12 @@ const TrialExplanation = () => {
     );
 };
 
-const PricingFooter = () => {
+export type PricingStep = 'account-details' | 'payment';
+
+const PricingFooter = ({ step }: { step: PricingStep }) => {
     const payments = usePaymentOptimistic();
+    const { selectedPlan } = payments;
+    const isPaidPlan = selectedPlan.name !== PLANS.FREE;
 
     const hasFullCheckoutDetails = payments.initializationStatus.pricingInitialized && !payments.loadingPaymentDetails;
 
@@ -132,38 +140,96 @@ const PricingFooter = () => {
     });
 
     const priceWithDiscountPerMonth = getSimplePriceString(uiData.currency, uiData.withDiscountPerMonth);
+    const priceWithDiscountPerCycle = getSimplePriceString(uiData.currency, uiData.withDiscountPerCycle);
 
     const willAutoRenew = autoRenewingPlans.includes(payments.selectedPlan.name as SupportedReferralPlans);
+
+    const showTaxRow = step === 'payment';
+    const taxRow = showTaxRow && <TaxRow checkResult={payments.checkResult} />;
+
+    const cycleOptions = [
+        { text: c('Signup').t`Monthly`, value: CYCLE.MONTHLY },
+        {
+            text: c('Signup').t`Yearly`,
+            value: CYCLE.YEARLY,
+        },
+    ];
+
+    const showBillingCycle = isPaidPlan && step === 'payment';
+    const billingCycle = showBillingCycle && (
+        <div className="flex justify-space-between gap-2">
+            <span>{c('Signup').t`Billing Cycle`}</span>
+            <CycleSelector
+                unstyled
+                className="w-auto color-primary"
+                cycle={uiData.cycle}
+                options={cycleOptions}
+                mode="select-two"
+                onSelect={(cycle) => {
+                    if (cycle === 'lifetime') {
+                        return;
+                    }
+                    void payments.selectCycle(cycle);
+                }}
+            />
+        </div>
+    );
+
+    const showDivider = taxRow || billingCycle;
+    const divider = showDivider && <hr className="my-4 bg-weak" />;
+
+    const copyAfterTrial = () => {
+        if (!hasFullCheckoutDetails) {
+            return <SkeletonLoader width="100%" height="1.25rem" />;
+        }
+        if (willAutoRenew) {
+            return <p className="m-0">{c('Signup').t`Then ${priceWithDiscountPerMonth} per month. Cancel anytime.`}</p>;
+        }
+        return <p className="m-0">{c('Signup').t`Then ${priceWithDiscountPerMonth} per month, if you subscribe.`}</p>;
+    };
+
+    const copyAfterTrialPayment = () => {
+        if (!hasFullCheckoutDetails) {
+            return <SkeletonLoader width="100%" height="1.25rem" />;
+        }
+        return (
+            <div className="flex justify-space-between gap-2 text-rg">
+                <span className="w-1/2">{getTrialRenewalAmountDueNoticeText()}</span>
+                <span>{priceWithDiscountPerCycle}</span>
+            </div>
+        );
+    };
 
     const total = (
         <>
             <div className="flex justify-space-between gap-2 text-lg">
-                <span className="text-semibold">{c('Signup').t`Total`}</span>
-                <span className="text-semibold">{
-                    // translator: full sentence "Free for 14 days"
-                    c('Signup').t`Free for ${TRIAL_DURATION_DAYS} days`
-                }</span>
-            </div>
-            <div>
-                {hasFullCheckoutDetails ? (
-                    <p className="m-0">
-                        {willAutoRenew
-                            ? getTrialRenewalNoticeTextWithTermsAndConditions({
-                                  renewCycle: uiData.renewCycle,
-                                  app: getAppFromPathnameSafe(location.pathname) || APPS.PROTONMAIL,
-                              })
-                            : c('Signup').t`Then ${priceWithDiscountPerMonth} per month, if you subscribe.`}
-                    </p>
+                {willAutoRenew && step === 'payment' ? (
+                    <>
+                        <span className="text-semibold">{c('Signup').t`Amount due now`}</span>
+                        <span className="text-semibold">{getSimplePriceString(uiData.currency, 0)}</span>
+                    </>
                 ) : (
-                    <SkeletonLoader width="100%" height="1.25rem" />
+                    <>
+                        <span className="text-semibold">{c('Signup').t`Total`}</span>
+                        <span className="text-semibold">{
+                            // translator: full sentence "Free for 14 days"
+                            c('Signup').t`Free for ${TRIAL_DURATION_DAYS} days`
+                        }</span>
+                    </>
                 )}
             </div>
+            <div>{step === 'payment' && willAutoRenew ? copyAfterTrialPayment() : copyAfterTrial()}</div>
         </>
     );
 
     return (
         <footer className="border-top border-weak">
-            <div className="flex flex-column px-4 lg:px-8 pt-5 gap-2">{total}</div>
+            <div className="flex flex-column px-4 lg:px-8 pt-5 gap-2">
+                {billingCycle}
+                {taxRow}
+                {divider}
+                {total}
+            </div>
         </footer>
     );
 };
@@ -209,11 +275,37 @@ const Free = () => {
     );
 };
 
-export const PricingCard = () => {
+export const PricingCard = ({ step }: { step: PricingStep }) => {
     const payments = usePaymentOptimistic();
     const { selectedPlan } = payments;
 
     const isPaidPlan = selectedPlan.name !== PLANS.FREE;
+    const willAutoRenew = autoRenewingPlans.includes(payments.selectedPlan.name as SupportedReferralPlans);
+
+    const planToCheck = {
+        planIDs: { [payments.selectedPlan.name]: 1 },
+        currency: payments.currency,
+        cycle: payments.selectedPlan.cycle,
+    };
+
+    const { uiData } = payments.getPriceOrFallback({
+        ...planToCheck,
+        coupon: payments.getCoupon(planToCheck),
+        /**
+         * Ensure we check renewal price by setting trial to false
+         */
+        trial: false,
+    });
+
+    const showRenewalNotice = willAutoRenew && step === 'payment';
+    const renewalNotice = showRenewalNotice && (
+        <p className="mb-0 mt-6 color-weak text-sm">
+            {getTrialRenewalNoticeTextWithTermsAndConditions({
+                renewCycle: uiData.renewCycle,
+                app: getAppFromPathnameSafe(location.pathname) || APPS.PROTONMAIL,
+            })}
+        </p>
+    );
 
     return (
         <section className={clsx('referral-signup-pricing-card w-full flex flex-column')}>
@@ -222,12 +314,13 @@ export const PricingCard = () => {
                     <>
                         <PricingHeader />
                         <TrialExplanation />
-                        <PricingFooter />
+                        <PricingFooter step={step} />
                     </>
                 ) : (
                     <Free />
                 )}
             </div>
+            {renewalNotice}
         </section>
     );
 };
