@@ -19,9 +19,10 @@ type NativeSafariMessage =
     | { writeToClipboard: { Content: string } }
     | { environment: string };
 
-export const sendSafariMessage = <T = unknown>(message: NativeSafariMessage): Maybe<Promise<T>> => {
+export const sendSafariMessage = async <T = unknown>(message: NativeSafariMessage): Promise<Maybe<T>> => {
     try {
-        return browser.runtime.sendNativeMessage<string, T>(SAFARI_MESSAGE_KEY, JSON.stringify(message));
+        const result = await browser.runtime.sendNativeMessage<string, T>(SAFARI_MESSAGE_KEY, JSON.stringify(message));
+        return result;
     } catch (err) {
         logger.warn(`[Safari] Native message failure`, err);
     }
