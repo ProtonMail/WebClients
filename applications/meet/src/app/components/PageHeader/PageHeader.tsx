@@ -66,7 +66,7 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
     );
 
     return (
-        <div className="meet-page-header w-full px-4 py-2 md:py-4 flex items-center justify-space-between shrink-0">
+        <div className="meet-page-header w-full px-0 py-2 md:py-4 flex items-center justify-space-between shrink-0">
             <div className="flex gap-4 items-center">
                 <img className="logo cursor-pointer" src={logo} alt="" onClick={() => history.push('/dashboard')} />
 
