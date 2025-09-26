@@ -401,7 +401,6 @@ export {
     hasPassLaunchOffer,
     hasPassPro,
     hasPlanWithAIAssistantIncluded,
-    hasSep2025Coupon,
     hasSomeAddonOrPlan,
     hasSomePlan,
     hasVisionary,
