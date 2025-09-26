@@ -73,7 +73,7 @@ export const DashboardContainer = () => {
     const personalMeetingLink = personalMeeting ? `${window.location.origin}${personalMeetingLinkPath}` : null;
 
     return (
-        <div className="w-full h-full overflow-y-auto lg:overflow-y-hidden flex flex-column flex-nowrap bg-weak">
+        <div className="w-full h-full meet-container-padding-x overflow-y-auto lg:overflow-y-hidden flex flex-column flex-nowrap bg-weak">
             {isPersonalMeetingModalOpen && personalMeetingLink && (
                 <PersonalMeetingModal
                     onClose={() => setIsPersonalMeetingModalOpen(false)}
@@ -93,8 +93,8 @@ export const DashboardContainer = () => {
                 />
             )}
             <PageHeader isScheduleInAdvanceEnabled={false} guestMode={false} />
-            <div className="flex gap-4 p-4 flex-nowrap w-full shrink-0">
-                <div className="flex flex-column md:flex-row flex-nowrap gap-1 md:gap-4 w-full">
+            <div className="flex gap-4 py-4 flex-nowrap w-full shrink-0">
+                <div className="flex flex-column md:flex-row flex-nowrap gap-1 md:gap-3 xl:gap-4 w-full">
                     <CardButton
                         className="w-full md:w-1/3"
                         title={c('Title').t`Schedule meeting`}
@@ -124,7 +124,7 @@ export const DashboardContainer = () => {
                     />
                 </div>
             </div>
-            <div className="flex flex-column gap-4 p-4 flex-nowrap w-full shrink-0">
+            <div className="flex flex-column gap-4 py-4 flex-nowrap w-full shrink-0">
                 <div className="flex justify-start items-center w-full">
                     <div className="text-lg md:text-xl color-hint text-semibold">{c('Title').t`Upcoming meetings`}</div>
                     <div
@@ -135,7 +135,7 @@ export const DashboardContainer = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-column shrink-0 lg:flex-1 w-full p-4">
+            <div className="flex flex-column shrink-0 lg:flex-1 w-full py-4">
                 <div className="flex flex-column gap-4 flex-nowrap w-full h-full overflow-y-auto">
                     {meetings === null && (
                         <CircleLoader
