@@ -33,7 +33,7 @@ export const getFrameElement = (frameId: number, frameAttributes: FrameAttribute
      * properties are missing or multiple iframes have similar attributes. */
     const candidates = Array.from(iframes).reduce<FrameScore[]>((acc, iframe) => {
         let score = 0;
-        const { width, height, src, name } = frameAttributes;
+        const { width, height, src, name, title } = frameAttributes;
 
         /** FIXME: this should support relative src's as well */
         const frameSrc = iframe.getAttribute('src');
@@ -44,6 +44,7 @@ export const getFrameElement = (frameId: number, frameAttributes: FrameAttribute
 
         if (src !== undefined && frameSrc === src) score++;
         if (name !== undefined && iframe.name === name) score++;
+        if (title !== undefined && iframe.title === title) score++;
         if (width !== undefined && Math.abs(frameWidth - width) <= 1) score++;
         if (height !== undefined && Math.abs(frameHeight - height) <= 1) score++;
 
@@ -54,15 +55,23 @@ export const getFrameElement = (frameId: number, frameAttributes: FrameAttribute
     return first(candidates.sort((a, b) => b[1] - a[1]))?.[0];
 };
 
-export const getFrameAttributes = (): FrameAttributes =>
-    BUILD_TARGET !== 'chrome' && 'getFrameId' in browser.runtime
+export const getFrameAttributes = (): FrameAttributes => {
+    const doc = document.documentElement;
+
+    return BUILD_TARGET !== 'chrome' && 'getFrameId' in browser.runtime
         ? {}
         : {
               src: location.href,
               name: window.name,
-              width: document.documentElement.clientWidth,
-              height: document.documentElement.clientHeight,
+              width: doc.clientWidth,
+              height: doc.clientHeight,
+              title:
+                  document.title ||
+                  document.head.title ||
+                  document.head.getAttribute('title') ||
+                  document.head?.querySelector('title')?.textContent,
           };
+};
 
 /** Determines if a frame's dimensions are too small to contain meaningful form elements.
  * Used as a fast pre-check to avoid expensive visibility calculations on tiny frames

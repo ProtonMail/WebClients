@@ -7,6 +7,7 @@ export type FrameAttributes = {
     name?: string;
     width?: number;
     height?: number;
+    title?: string;
 };
 
 /** Query payload sent to parent frame to get child iframe position */
