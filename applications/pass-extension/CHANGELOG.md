@@ -1,3 +1,8 @@
+### Version 1.32.9
+
+- Fix unhandled safari native messaging errors
+- Fix unhandled rejections when browser API is invalidated
+
 ### Version 1.32.8
 
 - Patch crypto fallback on legacy browsers due to openpgp update
