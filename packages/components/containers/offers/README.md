@@ -125,3 +125,4 @@ Some styles related to e.g. the size of the modal are configured outside the `la
 
 - https://gitlab.protontech.ch/web/clients/-/merge_requests/16789/diffs
 - https://gitlab.protontech.ch/web/clients/-/merge_requests/15339/diffs
+- https://gitlab.protontech.ch/web/clients/-/merge_requests/19626/diffs
