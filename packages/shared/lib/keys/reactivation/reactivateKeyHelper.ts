@@ -72,9 +72,12 @@ export const getReactivatedAddressKeys = async ({
     // e.g. due to rare WebCrypto bugs
     const newDecryptedAddressKeys = (
         await Promise.all(
-            newDecryptedAddressKeysMaybeCorrupted.map(async (decryptedKey) =>
-                (await canKeyEncryptAndDecrypt(decryptedKey.privateKey)) ? decryptedKey : null
-            )
+            newDecryptedAddressKeysMaybeCorrupted.map(async (decryptedKey) => {
+                const isNotCorrupted =
+                    (await canKeyEncryptAndDecrypt(decryptedKey.privateKey)) ||
+                    (await CryptoProxy.isE2EEForwardingKey({ key: decryptedKey.privateKey }));
+                return isNotCorrupted ? decryptedKey : null;
+            })
         )
     ).filter(isTruthy);
 
