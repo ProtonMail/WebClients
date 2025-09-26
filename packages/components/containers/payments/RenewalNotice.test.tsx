@@ -268,7 +268,7 @@ describe('RenewalNotice', () => {
                 />
             );
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}. Renewal pricing subject to change according to terms & conditions.`
+                `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}. Renewal pricing subject to change according to terms and conditions.`
             );
         });
 
@@ -291,7 +291,7 @@ describe('RenewalNotice', () => {
                 />
             );
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}. Renewal pricing subject to change according to terms & conditions.`
+                `Subscription auto-renews every 12 months. Your next billing date is ${expectedDateString}. Renewal pricing subject to change according to terms and conditions.`
             );
         });
 
@@ -315,7 +315,7 @@ describe('RenewalNotice', () => {
             const expectedDateString = 'February 3rd, 2026'; // and finally the renewal date is 02/03/2026 (3rd of February 2026)
 
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every 24 months. Your next billing date is ${expectedDateString}. Renewal pricing subject to change according to terms & conditions.`
+                `Subscription auto-renews every 24 months. Your next billing date is ${expectedDateString}. Renewal pricing subject to change according to terms and conditions.`
             );
         });
 
@@ -353,7 +353,7 @@ describe('RenewalNotice', () => {
             const expectedDateString = 'June 12th, 2025';
 
             expect(container).toHaveTextContent(
-                `Your scheduled plan starts on ${expectedDateString} and will auto-renew every 12 months. Your next billing date is ${expectedDateString}. Please contact support if you require an immediate plan change. Renewal pricing subject to change according to terms & conditions.`
+                `Your scheduled plan starts on ${expectedDateString} and will auto-renew every 12 months. Your next billing date is ${expectedDateString}. Please contact support if you require an immediate plan change. Renewal pricing subject to change according to terms and conditions.`
             );
         });
 
@@ -375,7 +375,7 @@ describe('RenewalNotice', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Your scheduled plan starts on ${expectedDateString} and will auto-renew every month. Your next billing date is ${expectedDateString}. Please contact support if you require an immediate plan change. Renewal pricing subject to change according to terms & conditions.`
+                `Your scheduled plan starts on ${expectedDateString} and will auto-renew every month. Your next billing date is ${expectedDateString}. Please contact support if you require an immediate plan change. Renewal pricing subject to change according to terms and conditions.`
             );
         });
     });
@@ -411,7 +411,7 @@ describe('RenewalNotice', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Your subscription will automatically renew on November 1st, 2025. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms & conditions.`
+                `Your subscription will automatically renew on November 1st, 2025. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms and conditions.`
             );
         });
 
@@ -445,7 +445,7 @@ describe('RenewalNotice', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Your subscription will automatically renew on November 1st, 2024. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms & conditions.`
+                `Your subscription will automatically renew on November 1st, 2024. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms and conditions.`
             );
         });
 
@@ -479,7 +479,7 @@ describe('RenewalNotice', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Your subscription will automatically renew on February 1st, 2025. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms & conditions.`
+                `Your subscription will automatically renew on February 1st, 2025. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms and conditions.`
             );
         });
 
@@ -513,7 +513,7 @@ describe('RenewalNotice', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Your subscription will automatically renew on May 1st, 2026. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms & conditions.`
+                `Your subscription will automatically renew on May 1st, 2026. You'll then be billed every 12 months at CHF 79.95. Renewal pricing subject to change according to terms and conditions.`
             );
         });
 
@@ -526,7 +526,7 @@ describe('RenewalNotice', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every month. Your next billing date is December 1st, 2023. Renewal pricing subject to change according to terms & conditions.`
+                `Subscription auto-renews every month. Your next billing date is December 1st, 2023. Renewal pricing subject to change according to terms and conditions.`
             );
         });
 
@@ -539,7 +539,7 @@ describe('RenewalNotice', () => {
             );
 
             expect(container).toHaveTextContent(
-                `Subscription auto-renews every 3 months. Your next billing date is February 1st, 2024. Renewal pricing subject to change according to terms & conditions.`
+                `Subscription auto-renews every 3 months. Your next billing date is February 1st, 2024. Renewal pricing subject to change according to terms and conditions.`
             );
         });
     });
@@ -580,7 +580,7 @@ describe('Trials (from check result)', () => {
             />
         );
         expect(container).toHaveTextContent(
-            'You will be charged on Nov 15, 2023, renewing every month. Renewal pricing subject to change according to terms & conditions.'
+            'After the trial ends on Nov 15, 2023, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before Nov 15, 2023. Renewal pricing subject to change according to terms and conditions.'
         );
     });
 
@@ -610,7 +610,7 @@ describe('Trials (from check result)', () => {
             />
         );
         expect(container).toHaveTextContent(
-            'You will be charged on Nov 15, 2023, renewing every 3 months. Renewal pricing subject to change according to terms & conditions.'
+            'After the trial ends on Nov 15, 2023, it will become a paid subscription that auto-renews every 3 months. You won’t be charged if you cancel before Nov 15, 2023. Renewal pricing subject to change according to terms and conditions.'
         );
     });
 });
@@ -648,7 +648,7 @@ describe('Coupons - multiple redemptions', () => {
         );
 
         expect(container).toHaveTextContent(
-            'The specially discounted price of CHF 1 is valid for the first month. The coupon is valid for 2 renewals. Then it will automatically be renewed at CHF 4.99 for 1 month. You can cancel at any time. Renewal pricing subject to change according to terms & conditions.'
+            'The specially discounted price of CHF 1 is valid for the first month. The coupon is valid for 2 renewals. Then it will automatically be renewed at CHF 4.99 for 1 month. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
         );
     });
 
@@ -684,7 +684,7 @@ describe('Coupons - multiple redemptions', () => {
         );
 
         expect(container).toHaveTextContent(
-            'The specially discounted price of CHF 47.88 is valid for the first 12 months. The coupon is valid for 3 renewals. Then it will automatically be renewed at CHF 47.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms & conditions.'
+            'The specially discounted price of CHF 47.88 is valid for the first 12 months. The coupon is valid for 3 renewals. Then it will automatically be renewed at CHF 47.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
         );
     });
 });
@@ -730,7 +730,7 @@ describe('Coupons - one-time (standard notice)', () => {
             );
 
             expect(container).toHaveTextContent(
-                `The specially discounted price of CHF 107.76 is valid for the first ${cycle} months. Then it will automatically be renewed at CHF 79.95 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms & conditions.`
+                `The specially discounted price of CHF 107.76 is valid for the first ${cycle} months. Then it will automatically be renewed at CHF 79.95 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.`
             );
         }
     );
@@ -773,7 +773,7 @@ describe('Coupons - one-time (standard notice)', () => {
         );
 
         expect(container).toHaveTextContent(
-            'The specially discounted price of CHF 47.88 is valid for the first 12 months. Then it will automatically be renewed at CHF 95.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms & conditions.'
+            'The specially discounted price of CHF 47.88 is valid for the first 12 months. Then it will automatically be renewed at CHF 95.88 for 12 months. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
         );
     });
 
@@ -814,7 +814,7 @@ describe('Coupons - one-time (standard notice)', () => {
             />
         );
         expect(container).toHaveTextContent(
-            'The specially discounted price of CHF 1 is valid for the first month. Then it will automatically be renewed at CHF 4.99 every month. You can cancel at any time. Renewal pricing subject to change according to terms & conditions.'
+            'The specially discounted price of CHF 1 is valid for the first month. Then it will automatically be renewed at CHF 4.99 every month. You can cancel at any time. Renewal pricing subject to change according to terms and conditions.'
         );
     });
 });
@@ -852,11 +852,11 @@ describe('Coupons - one-time (short notice)', () => {
         );
 
         expect(container).toHaveTextContent('Renews at CHF 4.99, cancel anytime.');
-        expect(container).not.toHaveTextContent('terms & conditions');
+        expect(container).not.toHaveTextContent('terms and conditions');
     });
 });
 
-describe('Terms & Conditions link', () => {
+describe('terms and Conditions link', () => {
     it('should render T&C link with correct href', () => {
         render(
             <RenewalNotice
@@ -867,7 +867,7 @@ describe('Terms & Conditions link', () => {
                 subscription={undefined}
             />
         );
-        const link = screen.getByRole('link', { name: /terms & conditions/i });
+        const link = screen.getByRole('link', { name: /terms and conditions/i });
         expect(link).toBeInTheDocument();
         expect(link).toHaveAttribute('href', getTermsURL(APPS.PROTONMAIL));
     });
@@ -957,7 +957,7 @@ describe('getPassLifetimeRenewNoticeText', () => {
         );
 
         expect(container).toHaveTextContent(
-            "Pass lifetime deal has no renewal price, it's a one-time payment for lifetime access to Pass. Your Mail Plus subscription renewal price and date remain unchanged. Renewal pricing subject to change according to terms & conditions."
+            "Pass lifetime deal has no renewal price, it's a one-time payment for lifetime access to Pass. Your Mail Plus subscription renewal price and date remain unchanged. Renewal pricing subject to change according to terms and conditions."
         );
     });
 });

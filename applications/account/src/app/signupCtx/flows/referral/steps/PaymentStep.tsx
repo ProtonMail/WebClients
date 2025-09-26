@@ -222,7 +222,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                     {paymentsForm}
                 </Main>
                 <Aside>
-                    <PricingCard />
+                    <PricingCard step="payment" />
                 </Aside>
             </Wrapper>
             <Footer />
