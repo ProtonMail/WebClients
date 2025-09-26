@@ -5,10 +5,11 @@ import type { PopupController } from '@proton/pass/components/Core/PassCoreProvi
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types';
 import { pixelParser } from '@proton/pass/utils/dom/computed-styles';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
-export const setPopupIcon = (options: { disabled: boolean; locked: boolean }): Promise<void> => {
+export const setPopupIcon = safeCall((options: { disabled: boolean; locked: boolean }): Promise<void> => {
     let suffix = '';
     if (options.disabled) suffix = '-disabled';
     if (options.locked) suffix = '-locked';
@@ -21,12 +22,13 @@ export const setPopupIcon = (options: { disabled: boolean; locked: boolean }): P
             },
         })
         .catch(noop);
-};
+});
 
 /* this function should gracefully fail if the tabId
  * does not exist or has been discarded when calling it*/
-export const setPopupIconBadge = (tabId: number, count: number): Promise<void> =>
-    browser.action.setBadgeText({ tabId, text: count === 0 ? '' : String(count) }).catch(noop);
+export const setPopupIconBadge = safeCall(async (tabId: number, count: number): Promise<void> => {
+    void browser.action.setBadgeText({ tabId, text: count === 0 ? '' : String(count) });
+});
 
 /** Adjusts the size of the popup element to account for inconsistent sizing behavior
  * when the user changes the default page zoom in their browser settings. */

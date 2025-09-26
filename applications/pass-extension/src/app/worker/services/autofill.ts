@@ -117,7 +117,7 @@ export const createAutoFillService = () => {
                     tabs.map(({ id: tabId, url }) => {
                         if (tabId) {
                             const items = getLoginCandidates({ url });
-                            setPopupIconBadge(tabId, items.length).catch(noop);
+                            void setPopupIconBadge(tabId, items.length);
 
                             WorkerMessageBroker.ports.broadcast({ type: WorkerMessageType.AUTOFILL_SYNC }, (name) =>
                                 isContentScriptPort(name, tabId)
@@ -230,7 +230,7 @@ export const createAutoFillService = () => {
                 await ctx.ensureReady();
                 if (tabId) {
                     const items = getLoginCandidates({ url: tab.url });
-                    await setPopupIconBadge(tabId, items.length);
+                    void setPopupIconBadge(tabId, items.length);
                 }
             } catch {}
         })
