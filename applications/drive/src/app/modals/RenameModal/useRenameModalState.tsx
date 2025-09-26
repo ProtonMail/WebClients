@@ -13,11 +13,12 @@ import { useSdkErrorHandler } from '../../utils/errorHandling/useSdkErrorHandler
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 export type RenameModalInnerProps = {
-    onSuccess?: (node: NodeEntity) => void;
+    onSuccess?: (newName: string) => Promise<void>;
     volumeId: string;
     linkId: string;
     name: string;
     isFile: boolean; // isFile could come from getNode but it will be slow with noticeable delay in the modal
+    /** @deprecated used only on legacy, it will not be handled here */
     onSubmit?: (newName: string) => Promise<void>;
     // Delete below props once the OLD RenameModal is removed
     isDoc?: boolean;
@@ -47,11 +48,11 @@ export const getIgnoreExtension = (node: null | NodeEntity, name: string) => {
 
 export const useRenameModalState = ({
     onClose,
-    onSubmit,
     volumeId,
     linkId,
     name,
     isFile,
+    onSuccess,
     ...modalProps
 }: UseRenameModalProps) => {
     const { drive } = useDrive();
@@ -72,18 +73,18 @@ export const useRenameModalState = ({
             }
         };
         void fetchNode();
-    }, [volumeId, linkId, createNotification, drive]);
+    }, [volumeId, linkId, createNotification, drive, handleError, onClose]);
 
     const handleSubmit = async (newName: string) => {
         const nodeUid = generateNodeUid(volumeId, linkId);
         const successNotificationText = c('Notification').t`"${newName}" renamed successfully`;
         const unhandledErrorNotificationText = c('Notification').t`"${newName}" failed to be renamed`;
-        onSubmit?.(newName);
         await drive
             .renameNode(nodeUid, newName)
             .then(async () => {
                 await events.pollEvents.volumes(volumeId); // TODO:EVENTS
                 createNotification({ text: successNotificationText, preWrap: true });
+                await onSuccess?.(newName);
                 onClose();
             })
             .catch((e) => {
