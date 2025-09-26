@@ -94,3 +94,14 @@ export const getFrameVisibility = maxAgeMemoize(
     },
     { maxAge: 1_000, cache: createWeakRefCache(identity) }
 );
+
+export const isSandboxedFrame = (): boolean => {
+    if (String(globalThis.origin).toLowerCase() === 'null' || globalThis.location.hostname === '') return true;
+
+    const sandbox = globalThis.frameElement?.getAttribute?.('sandbox');
+    if (sandbox === null || sandbox === undefined) return false;
+    if (sandbox === '') return true;
+
+    const tokens = new Set(sandbox.toLowerCase().split(' '));
+    return !['allow-scripts', 'allow-same-origin'].every((token) => tokens.has(token));
+};
