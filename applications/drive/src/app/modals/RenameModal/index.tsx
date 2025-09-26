@@ -12,13 +12,13 @@ export const RenameModal = withHoc<UseRenameModalProps, RenameModalViewProps>(us
 export const useRenameModal = () => {
     const [renameModal, showRenameModal] = useModalTwoStatic(RenameModal);
 
-    const handleShowRenameModal = ({ onSubmit, ...rest }: RenameModalInnerProps) => {
-        const submitCallback = async (newName: string) => {
+    const handleShowRenameModal = ({ onSuccess, ...rest }: RenameModalInnerProps) => {
+        const handleOnSuccess = async (newName: string) => {
             const uid = generateNodeUid(rest.volumeId, rest.linkId);
             await getActionEventManager().emit({ type: ActionEventName.RENAMED_NODES, items: [{ uid, newName }] });
-            await onSubmit?.(newName);
+            await onSuccess?.(newName);
         };
-        void showRenameModal({ onSubmit: submitCallback, ...rest });
+        void showRenameModal({ ...rest, onSuccess: handleOnSuccess });
     };
 
     return [renameModal, handleShowRenameModal] as const;
