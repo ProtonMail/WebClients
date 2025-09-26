@@ -3,8 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { PLANS, SelectedPlan, TRIAL_DURATION_DAYS } from '@proton/payments';
+import { SelectedPlan, TRIAL_DURATION_DAYS } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 
@@ -79,24 +78,6 @@ const ReferralPlans = () => {
                             });
                         }}
                     />
-
-                    <div className="flex flex-row justify-center items-center gap-4 mt-8">
-                        <Button
-                            onClick={() => {
-                                void payments.selectPlanIDs({ [PLANS.FREE]: 1 });
-
-                                history.push({
-                                    pathname: SSO_PATHS.REFERAL_SIGNUP,
-                                    search: location.search,
-                                });
-                            }}
-                            shape="ghost"
-                            color="norm"
-                            pill
-                        >
-                            {c('Signup').t`Continue with the free plan`}
-                        </Button>
-                    </div>
                 </main>
             </Wrapper>
 
