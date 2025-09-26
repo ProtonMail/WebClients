@@ -35,7 +35,7 @@ export const getRenewalPricingSubjectToChangeText = (app: APP_NAMES): string | s
     const termsAndConditionsUrl = getTermsURL(app);
     const termsAndConditionsLink = (
         <Href className="color-inherit" href={termsAndConditionsUrl}>
-            {c('Payments').t`terms & conditions`}
+            {c('Payments').t`terms and conditions`}
         </Href>
     );
 
@@ -332,10 +332,19 @@ const getTrialRenewalNoticeText = ({ renewCycle }: { renewCycle: Cycle }) => {
     const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
 
     if (renewCycle === CYCLE.MONTHLY) {
-        return c('Payments').jt`You will be charged on ${formattedDate}, renewing every month.`;
+        return c('b2b_trials_2025_Info')
+            .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${formattedDate}.`;
     }
 
-    return c('Payments').jt`You will be charged on ${formattedDate}, renewing every ${renewCycle} months.`;
+    return c('b2b_trials_2025_Info')
+        .jt`After the trial ends on ${formattedDate}, it will become a paid subscription that auto-renews every ${renewCycle} months. You won’t be charged if you cancel before ${formattedDate}.`;
+};
+
+export const getTrialRenewalAmountDueNoticeText = () => {
+    const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
+    const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
+
+    return c('Payments').jt`Amount due after trial on ${formattedDate}`;
 };
 
 export const getTrialRenewalNoticeTextWithTermsAndConditions = ({

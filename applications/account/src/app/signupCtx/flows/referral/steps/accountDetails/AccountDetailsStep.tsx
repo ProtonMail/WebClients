@@ -33,7 +33,7 @@ const AccountDetailsStep = ({ onBack, onSuccess }: { onBack: () => void; onSucce
                     <AccountDetailsForm onSuccess={onSuccess} />
                 </Main>
                 <Aside>
-                    <PricingCard />
+                    <PricingCard step="account-details" />
                 </Aside>
             </Wrapper>
 
