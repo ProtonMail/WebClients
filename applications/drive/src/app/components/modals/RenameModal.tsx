@@ -16,7 +16,6 @@ import {
     Row,
     useModalTwoStatic,
 } from '@proton/components';
-import type { NodeEntity } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 import useFlag from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
@@ -33,7 +32,7 @@ interface Props {
     name: string;
     volumeId: string;
     linkId: string;
-    onSuccess?: (node: NodeEntity) => void;
+    onSuccess?: (newName: string) => Promise<void>;
 }
 
 const RenameModalDeprecated = ({
