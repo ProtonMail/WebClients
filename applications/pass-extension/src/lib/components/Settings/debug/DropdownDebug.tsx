@@ -23,6 +23,7 @@ export const DropdownDebug: FC = () => {
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
                             origin: 'proton.me',
+                            frameId: 0,
                             startsWith: '',
                         }}
                     />
@@ -33,6 +34,7 @@ export const DropdownDebug: FC = () => {
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
                             origin: 'proton.me',
+                            frameId: 0,
                             startsWith: '',
                         }}
                     />
@@ -43,6 +45,7 @@ export const DropdownDebug: FC = () => {
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
                             origin: 'proton.me',
+                            frameId: 0,
                             startsWith: '',
                         }}
                     />
@@ -53,6 +56,7 @@ export const DropdownDebug: FC = () => {
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
                             origin: 'proton.me',
+                            frameId: 0,
                             startsWith: '',
                         }}
                     />
@@ -63,6 +67,7 @@ export const DropdownDebug: FC = () => {
                         initial={{
                             action: DropdownAction.AUTOFILL_LOGIN,
                             origin: 'proton.me',
+                            frameId: 0,
                             startsWith: '',
                         }}
                     />
@@ -74,6 +79,7 @@ export const DropdownDebug: FC = () => {
                             action: DropdownAction.AUTOSUGGEST_PASSWORD,
                             config: DEFAULT_RANDOM_PW_OPTIONS,
                             origin: 'proton.me',
+                            frameId: 0,
                             copy: false,
                             policy: null,
                         }}
@@ -85,6 +91,7 @@ export const DropdownDebug: FC = () => {
                         initial={{
                             action: DropdownAction.AUTOSUGGEST_ALIAS,
                             origin: 'proton.me',
+                            frameId: 0,
                             prefix: 'secret',
                         }}
                     />

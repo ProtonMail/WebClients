@@ -9,6 +9,7 @@ import type {
 } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
 import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import type { WithAutofillOrigin } from 'proton-pass-extension/types/autofill';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isShadowRoot } from '@proton/pass/fathom';
@@ -33,12 +34,13 @@ type DropdownAnchor = InlineFieldTarget | InlineFrameTarget;
 type DropdownAnchorRef = { current: MaybeNull<DropdownAnchor> };
 type DropdownOptions = { popover: PopoverController; onDestroy: () => void };
 
-export type DropdownActions =
-    | { action: DropdownAction.AUTOFILL_CC; origin: string }
-    | { action: DropdownAction.AUTOFILL_IDENTITY; origin: string }
-    | { action: DropdownAction.AUTOFILL_LOGIN; origin: string; startsWith: string }
-    | { action: DropdownAction.AUTOSUGGEST_ALIAS; origin: string; prefix: string }
-    | ({ action: DropdownAction.AUTOSUGGEST_PASSWORD; origin: string } & PasswordAutosuggestOptions);
+export type DropdownActions = WithAutofillOrigin<
+    | { action: DropdownAction.AUTOFILL_CC }
+    | { action: DropdownAction.AUTOFILL_IDENTITY }
+    | { action: DropdownAction.AUTOFILL_LOGIN; startsWith: string }
+    | { action: DropdownAction.AUTOSUGGEST_ALIAS; prefix: string }
+    | ({ action: DropdownAction.AUTOSUGGEST_PASSWORD } & PasswordAutosuggestOptions)
+>;
 
 export type DropdownRequest = {
     action: DropdownAction;
@@ -165,7 +167,7 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
 
             const url = ctx.getExtensionContext()?.url;
             const origin = url ? resolveOrigin(request, url) : null;
-            const frameId = request.type === 'frame' ? request.fieldFrameId : undefined;
+            const frameId = request.type === 'frame' ? request.fieldFrameId : 0;
 
             if (!origin) return;
 
@@ -181,25 +183,25 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
                 case DropdownAction.AUTOFILL_IDENTITY: {
                     if (autofocused && !(await ctx.service.autofill.getIdentitiesCount())) return;
                     if (autofocused && field?.autofilled) return;
-                    if (!authorized) return { action, origin: '' };
-                    return { action, origin };
+                    if (!authorized) return { action, origin: '', frameId };
+                    return { action, origin, frameId };
                 }
 
                 case DropdownAction.AUTOFILL_LOGIN: {
                     if (autofocused && !(await ctx.service.autofill.getCredentialsCount())) return;
-                    if (!authorized) return { action, origin: '', startsWith: '' };
-                    return { action, origin, startsWith: '' };
+                    if (!authorized) return { action, origin: '', startsWith: '', frameId };
+                    return { action, origin, startsWith: '', frameId };
                 }
                 case DropdownAction.AUTOSUGGEST_ALIAS: {
                     if (!url?.displayName) throw new Error();
-                    return { action, origin, prefix: deriveAliasPrefix(url.displayName) };
+                    return { action, origin, frameId, prefix: deriveAliasPrefix(url.displayName) };
                 }
                 case DropdownAction.AUTOSUGGEST_PASSWORD: {
                     return sendMessage.on(
                         contentScriptMessage({ type: WorkerMessageType.AUTOSUGGEST_PASSWORD }),
                         (res) => {
                             if (res.type === 'error') throw new Error(res.error);
-                            return { action, origin, config: res.config, copy: res.copy, policy: res.policy };
+                            return { action, origin, frameId, config: res.config, copy: res.copy, policy: res.policy };
                         }
                     );
                 }
