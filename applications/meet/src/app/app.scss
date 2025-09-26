@@ -139,3 +139,15 @@ $profile-colors:
 	align-items: center;
 	justify-content: center;
 }
+
+.meet-container-padding-x {
+	padding-inline: 1.5rem;
+
+	@include media('>medium') {
+		padding-inline: 2.5rem;
+	}
+
+	@include media('>large') {
+		padding-inline: 3.75rem;
+	}
+}
