@@ -42,9 +42,9 @@ export const CardButton = ({
             </div>
             <div className="flex flex-column gap-2 text-left flex-1">
                 <div className="md:text-sm lg:text-rg xl:text-lg color-norm text-semibold text-ellipsis">{title}</div>
-                <div className="color-weak hidden md:block md:text-xs lg:text-rg">{description}</div>
+                <div className="color-weak hidden lg:block md:text-xs lg:text-rg">{description}</div>
             </div>
-            <div className="ml-4 shrink-0">
+            <div className="ml-4 shrink-0 color-hint">
                 <IcChevronRight size={5} />
             </div>
         </Button>
