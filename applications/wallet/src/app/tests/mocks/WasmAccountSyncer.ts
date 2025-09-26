@@ -9,6 +9,7 @@ export const mockWasmAccountSyncer = (mockedValue?: Partial<Pick<WasmAccountSync
         partialSync: vi.fn(),
         shouldSync: vi.fn(),
         free: vi.fn(),
+        [Symbol.dispose]: vi.fn(),
         ...mockedValue,
     });
 

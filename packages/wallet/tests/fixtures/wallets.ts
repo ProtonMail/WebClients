@@ -30,6 +30,7 @@ export const getMockedWallet = (mocked?: Partial<WasmWallet>): WasmWallet => {
         getFingerprint: vi.fn(() => ''),
         clearStore: vi.fn(),
         free: vi.fn(),
+        [Symbol.dispose]: vi.fn(),
         ...mocked,
     };
 };
@@ -57,6 +58,7 @@ export const getMockedWasmAccount = (mocked?: Partial<WasmAccount>): WasmAccount
         getAddresses: vi.fn(),
         getHighestUsedAddressIndexInOutput: vi.fn().mockReturnValue(0),
         getXpub: vi.fn(),
+        [Symbol.dispose]: vi.fn(),
         ...mocked,
     };
 };
