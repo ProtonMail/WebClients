@@ -51,6 +51,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
                 ctx.service.inline.dropdown.close();
 
                 await waitUntil(() => clientStatusResolved(ctx.getState().status), 50);
+
                 if (req !== state.focusRequest) return;
 
                 const { formType } = field.getFormHandle();
