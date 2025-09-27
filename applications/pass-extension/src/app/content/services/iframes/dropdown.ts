@@ -30,7 +30,7 @@ import noop from '@proton/utils/noop';
 import type { IFrameAppService } from './factory';
 import { createIFrameApp } from './factory';
 
-type DropdownAnchor = InlineFieldTarget | InlineFrameTarget;
+export type DropdownAnchor = InlineFieldTarget | InlineFrameTarget;
 type DropdownAnchorRef = { current: MaybeNull<DropdownAnchor> };
 type DropdownOptions = { popover: PopoverController; onDestroy: () => void };
 

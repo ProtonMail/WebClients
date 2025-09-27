@@ -1,6 +1,7 @@
 import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
+import type { DropdownAnchor, DropdownRequest } from 'proton-pass-extension/app/content/services/iframes/dropdown';
 import type { IFrameMessage } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { createIFrameService } from 'proton-pass-extension/app/content/services/iframes/service';
 import type { AbstractInlineService } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
@@ -24,6 +25,22 @@ export const createInlineService = ({
     const iframes = createIFrameService(elements);
     const activeListeners = createListenerStore();
 
+    const willDropdownAnchorChange = (anchor: DropdownAnchor, payload: DropdownRequest): boolean => {
+        if (!anchor) return true;
+
+        switch (payload.type) {
+            case 'field':
+                return anchor.type !== 'field' || anchor.field.element !== payload.field.element;
+
+            case 'frame':
+                return (
+                    anchor.type !== 'frame' ||
+                    anchor.fieldFrameId !== payload.fieldFrameId ||
+                    anchor.fieldId !== payload.fieldId
+                );
+        }
+    };
+
     const dropdown: AbstractInlineService['dropdown'] = {
         attach: (layer) => iframes.attachDropdown(layer),
         open: (payload) => {
@@ -32,36 +49,15 @@ export const createInlineService = ({
 
             if (visible) dropdown.close();
 
-            switch (payload.type) {
-                case 'field': {
-                    const { field } = payload;
-                    const layer = field.getFormHandle().element;
-                    const fieldChanged =
-                        !attachedAnchor ||
-                        attachedAnchor.type !== 'field' ||
-                        attachedAnchor.field.element !== field.element;
+            const didAnchorChange = !attachedAnchor || willDropdownAnchorChange(attachedAnchor, payload);
 
-                    if (fieldChanged) iframes.attachDropdown(layer)?.open(payload);
-                    break;
-                }
+            if (didAnchorChange) {
+                const layer = payload.type === 'field' ? payload.field.getFormHandle().element : undefined;
+                iframes.attachDropdown(layer)?.open(payload);
 
-                case 'frame': {
-                    const { fieldFrameId, fieldId, formId } = payload;
-                    const fieldChanged =
-                        attachedAnchor?.type !== 'frame' ||
-                        attachedAnchor.fieldFrameId !== fieldFrameId ||
-                        attachedAnchor.fieldId !== fieldId;
-
-                    if (fieldChanged) {
-                        iframes.attachDropdown()?.open(payload);
-                        const handleClose = () => dropdown.close({ type: 'frame', fieldId, formId });
-                        /** NOTE: attaching the dropdown to a subframe field is too heavy
-                         * for repositioning on resize/scroll. Prefer auto-closing */
-                        activeListeners.addListener(window, 'resize', handleClose);
-                        activeListeners.addListener(document, 'scroll', handleClose, { capture: true });
-                    }
-                    break;
-                }
+                const handleClose = () => dropdown.close(payload);
+                activeListeners.addListener(window, 'resize', handleClose);
+                activeListeners.addListener(document, 'scroll', handleClose, { capture: true });
             }
         },
 
@@ -156,6 +152,7 @@ export const createInlineService = ({
         const left = rootRect.left + coords.left;
 
         const frame = getFrameElement(frameId, frameAttributes);
+
         if (!frame) return;
 
         return dropdown.open({

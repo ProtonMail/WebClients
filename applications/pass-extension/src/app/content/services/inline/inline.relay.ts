@@ -80,7 +80,8 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
 
                 const handleClose = () => dropdown.close({ type: 'field', field: req.field });
 
-                activeListeners.addListener(window, 'resize', handleClose);
+                /** Intercept scroll events in sub-frames. It is too costly to try to reposition
+                 * any injected UI elements in the top-frame via messaging. */
                 activeListeners.addListener(document, 'scroll', handleClose, { capture: true });
 
                 /** Intercept backdrop clicks in sub-frames. The backdrop click

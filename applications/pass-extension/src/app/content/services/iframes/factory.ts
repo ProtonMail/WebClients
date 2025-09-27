@@ -255,7 +255,6 @@ export const createIFrameApp = <A>({
 
             iframe.classList.add('visible');
             setIframeDimensions(dimensions(state));
-            // updatePosition();
             onOpen?.(state);
         }
     };
