@@ -11,7 +11,7 @@ import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.
 import {
     CLIPBOARD_PERMISSIONS,
     hasPermissions,
-    promptForPermissions,
+    requestHostPermissions,
     requestPermissions,
 } from 'proton-pass-extension/lib/utils/permissions';
 import { createPopupController } from 'proton-pass-extension/lib/utils/popup';
@@ -137,7 +137,7 @@ const getPassCoreProviderProps = (
 
         getRatingURL: getWebStoreUrl,
 
-        promptForPermissions,
+        promptForPermissions: requestHostPermissions,
 
         onLink: (url, options) =>
             options?.replace
