@@ -29,6 +29,7 @@ export const useSpotlightListener = () => {
                         setSpotlight(definitions[SpotlightMessage.UPDATE_AVAILABLE] ?? null);
                         break;
                     case WorkerMessageType.PERMISSIONS_UPDATE:
+                        if (message.payload.granted) break;
                         setSpotlight(definitions[SpotlightMessage.PERMISSIONS_REQUIRED] ?? null);
                         break;
                 }

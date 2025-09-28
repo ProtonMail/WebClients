@@ -8,7 +8,7 @@ import { API_PROXY_URL } from 'proton-pass-extension/app/worker/constants.runtim
 import { resolveMessageFactory, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { createCoreServiceBridge } from 'proton-pass-extension/lib/services/core.bridge';
 import { createMonitorBridge } from 'proton-pass-extension/lib/services/monitor.bridge';
-import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
+import { requestHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { createPopupController } from 'proton-pass-extension/lib/utils/popup';
 import { reloadManager } from 'proton-pass-extension/lib/utils/reload';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -132,7 +132,7 @@ const getPassCoreProviderProps = (
 
         getRatingURL: getWebStoreUrl,
 
-        promptForPermissions,
+        promptForPermissions: requestHostPermissions,
 
         onLink: (url, options) =>
             options?.replace
