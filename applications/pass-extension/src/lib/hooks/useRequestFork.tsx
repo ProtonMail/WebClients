@@ -1,18 +1,19 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
 
 import config from 'proton-pass-extension/app/config';
-import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { c } from 'ttag';
 
+import { InlineLinkButton } from '@proton/atoms';
 import { useNotifications } from '@proton/components';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { RequestForkData, RequestForkOptions } from '@proton/pass/lib/auth/fork';
 import { getStateKey, requestFork } from '@proton/pass/lib/auth/fork';
 import browser from '@proton/pass/lib/globals/browser';
 import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
-import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { usePermissionsGranted } from './usePermissionsGranted';
+import { getHostPermissionsWarning, useHostPermissions } from './useHostPermissions';
 
 type UseRequestForkOptions = Partial<RequestForkOptions & { data: RequestForkData; replace: boolean }>;
 type UseRequestForkWithPermissionsOptions = Partial<{ autoClose: boolean; replace: boolean }>;
@@ -34,24 +35,36 @@ export const useRequestFork = () =>
         return browser.tabs ? browser.tabs.create({ url }).catch(noop) : window.open(url, '_BLANK');
     }, []);
 
-/* before navigating to login we should prompt the
- * user for any extension permissions required for PASS
- * to work correctly. IE: on FF we absolutely need the user
- * to do so for fallback account communication to work  */
+/** Prompts for extension permissions required for login before navigating.
+ * Essential on Firefox & Safari for fallback account communication to function. */
 export const useRequestForkWithPermissions = ({ replace, autoClose }: UseRequestForkWithPermissionsOptions) => {
-    const { createNotification } = useNotifications();
+    const { createNotification, removeNotification } = useNotifications();
+
+    const { SSO_URL, API_URL } = usePassConfig();
     const accountFork = useRequestFork();
-    const permissionsGranted = usePermissionsGranted();
+
+    const notification = useRef<number>();
+    const clearNotification = () => removeNotification(notification.current ?? -1);
+
+    /** Host permissions required for successful login on Proton domains.
+     * Critical in Firefox & Safari for fallback account communication.
+     * Does not request `<all_urls>` permissions needed for autofill. */
+    const origins = useMemo(() => [`${SSO_URL}/*`, API_URL.replace(/\api$/, '*')], []);
+    const [granted, request] = useHostPermissions(origins, clearNotification);
 
     return async (forkType?: ForkType) => {
-        if (permissionsGranted || (await promptForPermissions())) {
-            return accountFork({ forkType, replace }).finally(async () => autoClose && window.close());
-        }
+        clearNotification();
+        if (granted) return accountFork({ forkType, replace }).finally(() => autoClose && window.close());
 
-        createNotification({
+        notification.current = createNotification({
             type: 'error',
-            text: c('Error').t`Please grant ${PASS_APP_NAME} the necessary extension permissions in order to continue`,
             expiration: -1,
+            text: getHostPermissionsWarning(
+                origins,
+                <InlineLinkButton className="text-strong block" onClick={request}>
+                    {c('Title').t`Grant permissions`}
+                </InlineLinkButton>
+            ),
         });
     };
 };
