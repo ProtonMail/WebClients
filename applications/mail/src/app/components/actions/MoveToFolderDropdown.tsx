@@ -3,9 +3,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
 import type { LabelModel } from '@proton/components';
-import { Checkbox, EditLabelModal, Icon, LabelsUpsellModal, useModalState } from '@proton/components';
+import { Checkbox, EditLabelModal, LabelsUpsellModal, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
@@ -30,7 +29,13 @@ import { useScrollToItem } from '../../hooks/useScrollToItem';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
-import { MoveToDivider, MoveToDropdownButtons } from './MoveToComponents';
+import {
+    ButtonCreateNewItem,
+    MoveToContentWrapper,
+    MoveToDivider,
+    MoveToDropdownButtons,
+    MoveToFolderFooterWrapper,
+} from './MoveToComponents';
 import { MoveToSearchInput } from './MoveToSearchInput';
 import { MoveToTreeView } from './MoveToTreeView';
 import { getInboxCategoriesItems, toFolderItem } from './moveToFolderDropdown.helper';
@@ -188,31 +193,25 @@ export const MoveToFolderDropdown = ({
                 />
             </div>
 
-            <MoveToTreeView
-                addRef={addRef}
-                treeView={list}
-                search={search}
-                handleSelectFolder={setSelectedFolder}
-                selectedFolder={selectedFolder}
+            <MoveToContentWrapper testid="folder-dropdown-list">
+                <MoveToTreeView
+                    addRef={addRef}
+                    treeView={list}
+                    search={search}
+                    handleSelectFolder={setSelectedFolder}
+                    selectedFolder={selectedFolder}
+                />
+            </MoveToContentWrapper>
+
+            <MoveToDivider />
+            <ButtonCreateNewItem
+                onClick={handleCreate}
+                copy={c('Action').t`Create folder`}
+                testid="move-to-create-folder"
             />
 
             <MoveToDivider />
-            <div className="px-2">
-                <Button
-                    fullWidth
-                    onClick={handleCreate}
-                    shape="ghost"
-                    className="text-left flex item-start my-2"
-                    data-testid="move-to-create-folder"
-                    data-prevent-arrow-navigation
-                >
-                    <Icon name="plus" className="mr-2 mt-0.5" />
-                    <span className="flex-1">{c('Action').t`Create folder`}</span>
-                </Button>
-            </div>
-
-            <MoveToDivider />
-            <div className="mx-4 mt-4 shrink-0">
+            <MoveToFolderFooterWrapper>
                 <Checkbox
                     id={`${uid}-always`}
                     checked={always}
@@ -222,13 +221,14 @@ export const MoveToFolderDropdown = ({
                 >
                     {c('Label').t`Apply to future messages`}
                 </Checkbox>
-            </div>
-            <MoveToDropdownButtons
-                loading={loading}
-                disabled={selectedFolder?.ID === undefined}
-                onClose={() => onClose()}
-                ctaText={c('Action').t`Move`}
-            />
+                <MoveToDropdownButtons
+                    loading={loading}
+                    disabled={selectedFolder?.ID === undefined}
+                    onClose={() => onClose()}
+                    ctaText={c('Action').t`Move`}
+                />
+            </MoveToFolderFooterWrapper>
+
             {moveScheduledModal}
             {moveSnoozedModal}
             {moveToSpamModal}

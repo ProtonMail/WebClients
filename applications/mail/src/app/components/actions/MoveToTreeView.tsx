@@ -35,7 +35,7 @@ export const MoveToTreeView = ({ treeView, selectedFolder, handleSelectFolder, s
                                 fullWidth
                                 shape={selectedFolder?.ID === folder.ID ? 'solid' : 'ghost'}
                                 color={selectedFolder?.ID === folder.ID ? 'weak' : undefined}
-                                className="text-left"
+                                className="text-left rounded-none px-6"
                                 onClick={() => handleSelectFolder(folder)}
                                 aria-pressed={selectedFolder?.ID === folder.ID}
                                 data-testid={`move-to-button-${folder.Name}`}
@@ -52,9 +52,9 @@ export const MoveToTreeView = ({ treeView, selectedFolder, handleSelectFolder, s
                                     </span>
                                     {selectedFolder?.ID === folder.ID && (
                                         <Icon
-                                            name="checkmark"
+                                            name="checkmark-strong"
                                             data-testid={`move-to-selected-icon-${folder.Name}`}
-                                            className="text-success shrink-0 mt-0.5"
+                                            className="color-primary shrink-0 mt-0.5"
                                         />
                                     )}
                                 </div>
