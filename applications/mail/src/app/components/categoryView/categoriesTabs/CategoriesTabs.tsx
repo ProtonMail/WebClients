@@ -3,6 +3,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { ErrorBoundary, Icon, useModalState } from '@proton/components';
 
+import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
+import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
+
 import { ModalEditCategories } from '../editCategories/ModalEditCategories';
 import { PromptDisableCategories } from '../editCategories/PromptDisableCategories';
 import { useCategoriesView } from '../useCategoriesView';
@@ -21,6 +24,8 @@ interface Props {
 export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
     const recategorizeElement = useRecategorizeElement();
     const { activeCategoriesTabs } = useCategoriesView();
+
+    const [counterMap] = useMailboxCounter();
 
     const [editModalProps, setEditModal, renderEditModal] = useModalState();
     const [disableModalProps, setDisableModal, renderDisableModal] = useModalState();
@@ -63,10 +68,9 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
                         >
                             <ErrorBoundary component={<CategoryTabError />}>
                                 <Tab
-                                    id={category.id}
-                                    icon={category.icon}
-                                    colorShade={category.colorShade}
+                                    category={category}
                                     tabState={tabState}
+                                    count={getLocationCount(counterMap, category.id).Unread}
                                 />
                             </ErrorBoundary>
                         </div>
