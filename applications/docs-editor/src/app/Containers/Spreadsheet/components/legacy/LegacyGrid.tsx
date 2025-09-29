@@ -1,7 +1,7 @@
 import type { CanvasGridMethods } from '@rowsncolumns/spreadsheet'
 import { CanvasGrid } from '@rowsncolumns/spreadsheet'
 import type { ProtonSheetsState } from '../../state'
-import { functionDescriptions } from '@rowsncolumns/functions'
+import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
 import { ChartComponent } from '@rowsncolumns/charts'
 import { isDevOrBlack } from '@proton/utils/env'
 import { useEffect, useRef } from 'react'

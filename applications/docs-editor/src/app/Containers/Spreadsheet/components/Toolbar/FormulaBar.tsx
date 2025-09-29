@@ -11,7 +11,7 @@ import {
 import { addressToCell, cellToAddress, convertCellToRange } from '@rowsncolumns/utils'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useUI } from '../../ui-store'
-import { functionDescriptions } from '@rowsncolumns/functions'
+import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
 import * as Ariakit from '@ariakit/react'
 import * as UI from '../ui'
 import * as Icons from '../icons'
