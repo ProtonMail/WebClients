@@ -12,7 +12,7 @@ import {
   TableEditor,
 } from '@rowsncolumns/spreadsheet-state'
 import type { ProtonSheetsState } from '../../state'
-import { functionDescriptions } from '@rowsncolumns/functions'
+import { onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
 import { ChartEditor, ChartEditorDialog } from '@rowsncolumns/charts'
 import { SheetSearch } from './SheetSearch'
 
