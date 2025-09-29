@@ -16,7 +16,7 @@ export const sendDebugLog = HTTP_DEBUGGER
                       message,
                   })
               )}`
-          );
+          ).catch(noop);
       }
     : noop;
 

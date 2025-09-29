@@ -3,7 +3,7 @@ import { EXTENSION_KEY } from 'proton-pass-extension/app/worker/constants';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import { checkExtensionPermissions } from 'proton-pass-extension/lib/utils/permissions';
+import { hasHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import type { ClientInitMessage, WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
@@ -149,14 +149,16 @@ export const createActivationService = () => {
         }
     });
 
+    /** Checks host permissions required for Pass to function properly.
+     * Broadcasts permission status to all connected clients via PERMISSIONS_UPDATE. */
     const checkPermissionsUpdate = async () => {
-        state.permissionsGranted = await checkExtensionPermissions();
+        state.permissionsGranted = await hasHostPermissions();
         if (!state.permissionsGranted) logger.info(`[Activation] missing permissions`);
 
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({
                 type: WorkerMessageType.PERMISSIONS_UPDATE,
-                payload: { check: state.permissionsGranted },
+                payload: { granted: state.permissionsGranted },
             })
         );
     };
