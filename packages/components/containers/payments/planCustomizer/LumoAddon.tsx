@@ -7,6 +7,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import type { Plan } from '@proton/payments';
 import { BRAND_NAME, LUMO_APP_NAME } from '@proton/shared/lib/constants';
 
+import useSubscriptionModalTelemetry from '../subscription/useSubscriptionModalTelemetry';
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
 
 const LumoAddonBanner = ({ onClick, price }: { onClick: () => void; price: ReactElement }) => (
@@ -39,6 +40,8 @@ interface LumoAddonProps extends Omit<NumberCustomiserProps, 'label' | 'tooltip'
 }
 
 const LumoAddon = ({ price, onAddLumo, value, ...rest }: LumoAddonProps) => {
+    const { reportAddLumo } = useSubscriptionModalTelemetry();
+
     const [showLumoBanner, setShowLumoBanner] = useState(value === 0);
 
     if (showLumoBanner) {
@@ -49,6 +52,7 @@ const LumoAddon = ({ price, onAddLumo, value, ...rest }: LumoAddonProps) => {
                     onClick={() => {
                         setShowLumoBanner(false);
                         onAddLumo();
+                        void reportAddLumo();
                     }}
                 />
             </div>
