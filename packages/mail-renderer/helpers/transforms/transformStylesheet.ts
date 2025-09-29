@@ -10,16 +10,6 @@ const replaceAbsolutePositionOnFirstElement = (document: Element) => {
     if (firstElement && /absolute/.test(firstElement.style.position)) {
         firstElement.style.position = 'inherit';
     }
-
-    const styleTags = document.querySelectorAll('style');
-    const fixedPositionRegex = /position[\s\:]fixed/gim;
-
-    styleTags.forEach((styleTag) => {
-        const styleContent = styleTag.textContent;
-        if (styleContent && fixedPositionRegex.test(styleContent)) {
-            styleTag.textContent = styleContent.replace(fixedPositionRegex, 'position: inherit !important;');
-        }
-    });
 };
 
 /**
@@ -31,20 +21,68 @@ const replaceAbsolutePositionOnFirstElement = (document: Element) => {
  *
  * https://www.caniemail.com/search/?s=fixed
  */
-const replaceFixedPositionWithInherit = (document: Element) => {
-    const styleTags = document.querySelectorAll('style');
+const replaceFixedPositionWithInherit = (styleTag: HTMLStyleElement) => {
     const fixedPositionRegex = /position[\s]*\:[\s]*fixed/gim;
+    const styleContent = styleTag.textContent;
 
-    styleTags.forEach((styleTag) => {
-        const styleContent = styleTag.textContent;
+    if (styleContent && fixedPositionRegex.test(styleContent)) {
+        styleTag.textContent = styleContent.replaceAll(fixedPositionRegex, 'position: inherit !important');
+    }
+};
 
-        if (styleContent && fixedPositionRegex.test(styleContent)) {
-            styleTag.textContent = styleContent.replaceAll(fixedPositionRegex, 'position: inherit !important');
-        }
-    });
+/**
+ * Height-dependent media queries interfere with iframe height size calculations
+ */
+const replaceHeightDependentMediaQueries = (styleTag: HTMLStyleElement) => {
+    const isSupportedRule = (rule: CSSRule): rule is CSSMediaRule | CSSContainerRule =>
+        rule.constructor.name === 'CSSMediaRule' || rule.constructor.name === 'CSSContainerRule';
+
+    const { sheet } = styleTag;
+
+    if (!sheet) {
+        return;
+    }
+
+    /**
+     * Iterate through all *top-level* CSSMediaRules looking for any that match
+     * on height, while simultaneously re-constructing the textContent from any
+     * other (valid) rules.
+     *
+     * If a height-based CSSMediaRule is found, flag the textContent to be
+     * replaced with the reconstructed version, otherwise noop.
+     *
+     * At the moment this does not support nested CSS, as the test suite chokes
+     * when parsing those. Nested CSS is still too new and too niche for email
+     * clients to risk an implementation not covered tests.
+     */
+    const result = [...sheet.cssRules].reduce(
+        (acc: { replaceTextContent: boolean; textContent: string }, rule) => {
+            if (isSupportedRule(rule) && rule.conditionText.includes('height')) {
+                return {
+                    replaceTextContent: true,
+                    textContent: acc.textContent,
+                };
+            }
+
+            return {
+                replaceTextContent: acc.replaceTextContent,
+                textContent: acc.textContent + rule.cssText + '\n',
+            };
+        },
+        { replaceTextContent: false, textContent: '' }
+    );
+
+    if (result.replaceTextContent) {
+        styleTag.textContent = result.textContent;
+    }
 };
 
 export const transformStylesheet = (document: Element) => {
     replaceAbsolutePositionOnFirstElement(document);
-    replaceFixedPositionWithInherit(document);
+
+    const styleTags = document.querySelectorAll('style');
+    styleTags.forEach((styleTag) => {
+        replaceFixedPositionWithInherit(styleTag);
+        replaceHeightDependentMediaQueries(styleTag);
+    });
 };
