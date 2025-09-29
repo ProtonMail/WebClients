@@ -8,7 +8,7 @@ import { VideoConferencingWidget } from './VideoConferencingWidget';
 import { SEPARATOR_GOOGLE_EVENTS, VIDEO_CONF_SERVICES } from './constants';
 import { getGoogleMeetDataFromDescription, getGoogleMeetDataFromLocation } from './googleMeet/googleMeetHelpers';
 import { getVideoConferencingData } from './modelHelpers';
-import { PROTON_MEET_REGEX, getProtonMeetData } from './protonMeet/protonMeetHelpers';
+import { PROTON_MEET_REGEX_LOCATION, getProtonMeetData } from './protonMeet/protonMeetHelpers';
 import { getSlackDataFromString } from './slack/slackHelpers';
 import { getTeamsDataFromDescription, getTeamsDataFromLocation } from './teams/teamsHelpers';
 import { VideoConferenceSource, useVideoConfTelemetry } from './useVideoConfTelemetry';
@@ -42,7 +42,7 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
 
     const data = getVideoConferencingData(model);
 
-    const isProtonMeet = !!data.meetingUrl && !!data.meetingUrl.match(PROTON_MEET_REGEX);
+    const isProtonMeet = !!data.meetingUrl && !!data.meetingUrl.match(PROTON_MEET_REGEX_LOCATION);
     const isZoom = !!data.meetingUrl?.includes('zoom.us');
 
     // Native Zoom integration
@@ -89,7 +89,7 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
     // Event containing a description field with a supported video conferencing link
     // We first parse the description as it contains more information than the location field
     if (data.description) {
-        if (data.description.match(PROTON_MEET_REGEX)) {
+        if (data.description.match(PROTON_MEET_REGEX_LOCATION)) {
             const protonMeetData = getProtonMeetData(data.description);
             sendTelemetryReport(VideoConferenceSource.proton_meet_desc);
             return <VideoConferencingWidget location={widgetLocation} data={protonMeetData} />;
@@ -122,7 +122,7 @@ export const VideoConferencingWidgetConfig = ({ model, widgetLocation }: Props) 
 
     // Event containing a location field with a supported video conferencing link
     if (data.location) {
-        if (data.location.match(PROTON_MEET_REGEX)) {
+        if (data.location.match(PROTON_MEET_REGEX_LOCATION)) {
             const protonMeetData = getProtonMeetData(data.location);
             sendTelemetryReport(VideoConferenceSource.proton_meet_loc);
             return <VideoConferencingWidget location={widgetLocation} data={protonMeetData} />;
