@@ -80,8 +80,17 @@ jest.mock('@proton/meet/utils/cryptoUtils', () => ({
     encryptMeetingName: jest.fn().mockResolvedValue('encrypted-title'),
 }));
 
+jest.mock('@proton/account/organization/hooks', () => ({
+    useOrganization: jest.fn().mockReturnValue([
+        {
+            Settings: { MeetVideoConferencingEnabled: true },
+        },
+    ]),
+}));
+
 const mockModel = {
     title: 'Test Meeting',
+    attendees: [],
 };
 
 const password = 'testpassword';
@@ -132,7 +141,7 @@ describe('ProtonMeetRow', () => {
         location?: Partial<Location>;
         isActive?: boolean;
     }) => {
-        const { model = mockModel, location = {}, isActive = false, setModel = jest.fn() } = params ?? {};
+        const { location = {} } = params ?? {};
 
         const history = createBrowserHistory();
 
@@ -140,14 +149,37 @@ describe('ProtonMeetRow', () => {
             history.push(location);
         }
 
-        return render(
-            <NotificationsProvider>
-                <Router history={history}>
-                    {/* @ts-expect-error - partial mock */}
-                    <WrappedProtonMeetRow model={model} setModel={setModel} isActive={isActive} />
-                </Router>
-            </NotificationsProvider>
-        );
+        const renderComponent = (renderComponentParams?: typeof params) => {
+            const props = {
+                model: mockModel,
+                setModel: jest.fn(),
+                location: {},
+                isActive: false,
+                ...params,
+                ...renderComponentParams,
+            };
+
+            if (props.location) {
+                history.push(props.location);
+            }
+
+            return (
+                <NotificationsProvider>
+                    <Router history={history}>
+                        {/* @ts-expect-error - partial mock */}
+                        <WrappedProtonMeetRow {...props} />
+                    </Router>
+                </NotificationsProvider>
+            );
+        };
+
+        const { rerender: originalRerender, ...rest } = render(renderComponent());
+
+        const rerender = (newParams?: typeof params) => {
+            return originalRerender(renderComponent(newParams));
+        };
+
+        return { rerender, ...rest };
     };
 
     it('should render a button to add a meeting', () => {
@@ -263,5 +295,29 @@ describe('ProtonMeetRow', () => {
         renderProtonMeetRow({ model: mockModel });
 
         expect(createMeeting).not.toHaveBeenCalled();
+    });
+
+    it('should automatically create a meeting when having a newly added attendee', async () => {
+        const createMeeting = jest.fn().mockResolvedValue(mockMeeting);
+
+        (useCreateMeeting as jest.Mock).mockReturnValue({
+            createMeeting,
+        });
+
+        const { rerender } = renderProtonMeetRow({ model: mockModel });
+
+        const modelWithAttendee = {
+            ...mockModel,
+            attendees: [{ email: 'attendee@proton.me' }],
+        };
+
+        // @ts-expect-error - partial mock
+        rerender({ model: modelWithAttendee });
+
+        expect(createMeeting).toHaveBeenCalled();
+
+        await waitFor(() => {
+            expect(screen.getByText('Join with Proton Meet')).toBeInTheDocument();
+        });
     });
 });
