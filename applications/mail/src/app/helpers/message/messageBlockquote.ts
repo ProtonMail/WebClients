@@ -61,11 +61,78 @@ const searchForContent = (element: Element, text: string) => {
     );
     const result: Element[] = [];
     let match = null;
-    // eslint-disable-next-line no-cond-assign
+
     while ((match = xpathResult?.iterateNext())) {
         result.push(match as Element);
     }
     return result;
+};
+
+const MICROSOFT_WORD_SEPARATOR_PATTERNS = ['border-top:solid #E1E1E1 1', 'border-top:solid #B5C4DF 1'] as const;
+
+const REQUIRED_WORD_SEPARATOR_STYLES = ['border:none', 'padding:3'] as const;
+
+const hasMicrosoftWordSeparatorStyle = (element: Element): boolean => {
+    const style = element.getAttribute('style') ?? '';
+
+    const hasRequiredStyles = REQUIRED_WORD_SEPARATOR_STYLES.every((requiredStyle) => style.includes(requiredStyle));
+
+    const hasSeparatorPattern = MICROSOFT_WORD_SEPARATOR_PATTERNS.some((pattern) => style.includes(pattern));
+
+    return hasRequiredStyles && hasSeparatorPattern;
+};
+
+const collectSiblingNodesAfter = (startNode: Node): Node[] => {
+    const nodes: Node[] = [startNode];
+    let currentNode = startNode.nextSibling;
+
+    while (currentNode) {
+        const nextSibling = currentNode.nextSibling;
+        nodes.push(currentNode);
+        currentNode = nextSibling;
+    }
+
+    return nodes;
+};
+
+const moveNodesToBlockquote = (nodes: Node[], blockquote: Element): void => {
+    nodes.forEach((node) => {
+        node.parentNode?.removeChild(node);
+        blockquote.appendChild(node);
+    });
+};
+
+const processMicrosoftWordEmail = (inputDocument: Element): Element => {
+    const wordSection = inputDocument.querySelector('div.WordSection1');
+
+    if (!wordSection) {
+        return inputDocument;
+    }
+
+    const existingSeparator = inputDocument.querySelector(BLOCKQUOTE_SELECTOR);
+    if (existingSeparator) {
+        return inputDocument;
+    }
+
+    const separatorDiv = Array.from(wordSection.querySelectorAll('div')).find(hasMicrosoftWordSeparatorStyle);
+
+    if (!separatorDiv) {
+        return inputDocument;
+    }
+
+    const blockquote = inputDocument.ownerDocument?.createElement('blockquote');
+    if (!blockquote) {
+        return inputDocument;
+    }
+
+    blockquote.setAttribute('type', 'cite');
+
+    const elementsToMove = collectSiblingNodesAfter(separatorDiv);
+    moveNodesToBlockquote(elementsToMove, blockquote);
+
+    wordSection.appendChild(blockquote);
+
+    return inputDocument;
 };
 
 /**
@@ -77,8 +144,10 @@ export const locateBlockquote = (inputDocument: Element | undefined): [content: 
         return ['', ''];
     }
 
-    const body = inputDocument.querySelector('body');
-    const tmpDocument = body || inputDocument;
+    // Process Microsoft Word emails first to transform them into standard blockquote structure
+    const processedDocument = processMicrosoftWordEmail(inputDocument);
+    const body = processedDocument.querySelector('body');
+    const tmpDocument = body || processedDocument;
 
     const parentHTML = tmpDocument.innerHTML || '';
     let result: [string, string] | null = null;
