@@ -60,6 +60,7 @@ import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { resendUnprivatizationLink } from '@proton/shared/lib/api/members';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { LUMO_SHORT_APP_NAME, MEMBER_PRIVATE, MEMBER_TYPE, ORGANIZATION_STATE } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -155,7 +156,8 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const visionary = hasVisionary(subscription);
 
     // Allow to display a toggle in the UI
-    const allowLumoConfiguration = lumoAddonAvailable && !visionary;
+    const allowLumoConfiguration =
+        lumoAddonAvailable && !visionary && app !== APPS.PROTONVPN_SETTINGS && app !== APPS.PROTONPASS;
     // Allow to update seats (this should be done automatically for visionary)
     const allowLumoUpdate = lumoAddonAvailable;
 
