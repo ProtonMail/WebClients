@@ -10,11 +10,14 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
 import { useCreateInstantMeeting } from '@proton/meet/hooks/useCreateInstantMeeting';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import { message as sanitizeMessage } from '@proton/shared/lib/sanitize/purify';
 
 import { ConnectionLostModal } from '../components/ConnectionLostModal/ConnectionLostModal';
+import { MeetingLockedModal } from '../components/MeetingLockedModal/MeetingLockedModal';
 import { PasswordPrompt } from '../components/PasswordPrompt/PasswordPrompt';
+import { MEETING_LOCKED_ERROR_CODE } from '../constants';
 import { DevicePermissionsContext } from '../contexts/DevicePermissionsContext';
 import { MLSContext } from '../contexts/MLSContext';
 import { useWasmApp } from '../contexts/WasmContext';
@@ -22,6 +25,7 @@ import type { SRPHandshakeInfo } from '../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../hooks/srp/useMeetingSetup';
 import { useDependencySetup } from '../hooks/useDependencySetup';
 import { useDevicePermissionChangeListener } from '../hooks/useDevicePermissionChangeListener';
+import { useLockMeeting } from '../hooks/useLockMeeting';
 import { useMeetingJoin } from '../hooks/useMeetingJoin';
 import { useParticipantNameMap } from '../hooks/useParticipantNameMap';
 import { useWakeLock } from '../hooks/useWakeLock';
@@ -62,8 +66,11 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const [password, setPassword] = useState('');
     const [invalidPassphrase, setInvalidPassphrase] = useState(false);
+    const [isMeetingLockedModalOpen, setIsMeetingLockedModalOpen] = useState(false);
 
     const { getRoomName, initHandshake, token, urlPassword } = useMeetingSetup();
+
+    const { toggleMeetingLock, isMeetingLocked } = useLockMeeting();
 
     const instantMeetingRef = useRef(!token);
 
@@ -114,6 +121,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
     const mlsSetupDone = useRef(false);
     const startHealthCheck = useRef(false);
+    const accessTokenRef = useRef<string | null>(null);
 
     const notifications = useNotifications();
 
@@ -287,6 +295,10 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         }
     };
 
+    const handleMeetingIsLockedError = async () => {
+        setIsMeetingLockedModalOpen(true);
+    };
+
     const handleJoin = async (participantSettings: ParticipantSettings, meetingToken: string = token) => {
         setParticipantSettings(participantSettings);
 
@@ -301,7 +313,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
             const sanitizedParticipantName = sanitizeMessage(participantSettings?.displayName as string);
 
-            const room = await join({
+            const { room, accessToken } = await join({
                 participantName: sanitizedParticipantName,
                 meetingId: meetingToken,
                 setupMls: handleMlsSetup,
@@ -310,6 +322,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
 
             await getParticipants(meetingToken);
 
+            accessTokenRef.current = accessToken;
             roomRef.current = room;
 
             room.on('disconnected', () => {
@@ -326,13 +339,19 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         } catch (error: any) {
             reportMeetError('Failed to join meeting', error);
 
+            setJoiningInProgress(false);
+            joinBlockedRef.current = false;
+
+            const { code } = getApiError(error);
+            if (code === MEETING_LOCKED_ERROR_CODE) {
+                await handleMeetingIsLockedError();
+                return;
+            }
+
             createNotification({
                 type: 'error',
                 text: error.message ?? c('Error').t`Failed to join meeting. Please try again later`,
             });
-
-            setJoiningInProgress(false);
-            joinBlockedRef.current = false;
         }
     };
 
@@ -470,6 +489,10 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         setJoinedRoom(false);
     };
 
+    const handleMeetingLockToggle = async (enable: boolean) => {
+        await toggleMeetingLock(enable, token, accessTokenRef.current as string);
+    };
+
     useEffect(() => {
         const handleUnload = () => {
             try {
@@ -523,6 +546,9 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                             invalidPassphrase={invalidPassphrase}
                         />
                     )}
+                    {isMeetingLockedModalOpen && (
+                        <MeetingLockedModal onClose={() => setIsMeetingLockedModalOpen(false)} />
+                    )}
                     {joinedRoom && roomRef.current && participantSettings ? (
                         <RoomContext.Provider value={roomRef.current}>
                             <MeetContainer
@@ -559,6 +585,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                                 instantMeeting={instantMeetingRef.current}
                                 passphrase={password}
                                 guestMode={guestMode}
+                                handleMeetingLockToggle={handleMeetingLockToggle}
+                                isMeetingLocked={isMeetingLocked}
                             />
                         </RoomContext.Provider>
                     ) : (
