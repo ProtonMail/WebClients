@@ -1,3 +1,5 @@
+import { functionDescriptions } from '@rowsncolumns/functions'
+import FormulaParser from '@rowsncolumns/fast-formula-parser'
 import { type CellFormat, getCurrencySymbol } from '@rowsncolumns/spreadsheet'
 import { getDefaultDateFormat, getLongDateFormat } from '@rowsncolumns/utils'
 
@@ -111,3 +113,8 @@ export function PATTERN_SPECS({ locale, currency }: PatternSpecsOptions) {
 export const NUMBER_PATTERN_EXAMPLE_VALUE = 1000.12
 export const PERCENT_PATTERN_EXAMPLE_VALUE = 0.1012
 export const DATE_PATTERN_EXAMPLE_VALUE = new Date('2008-09-26T15:59:00')
+
+const implementedFunctionNames = FormulaParser.getImplementedFunctionNames()
+export const onlyImplementedFunctionDescriptions = functionDescriptions.filter((fn) => {
+  return implementedFunctionNames.has(fn.title)
+})
