@@ -15,10 +15,6 @@ export const getAssistantUpsellConfigPlanAndCycle = (
 ): Pick<OpenCallbackProps, 'planIDs' | 'cycle' | 'minimumCycle' | 'maximumCycle'> | undefined => {
     const cycles = getUpgradeCycles(selectedPlan.cycle);
 
-    if (!user.isSelf) {
-        return undefined;
-    }
-
     if (isOrgAdmin) {
         // if we already have scribe addons, then we will use the current number of scribes as starting addon number
         // in the upsell
