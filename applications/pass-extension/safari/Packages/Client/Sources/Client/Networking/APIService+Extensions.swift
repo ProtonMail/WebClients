@@ -1,6 +1,6 @@
 //
-// SharedToolingContainer.swift
-// Proton Pass - Created on 21/05/2024.
+// APIService+Extensions.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,26 +19,15 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import Client
-import Factory
-import Foundation
-import SimpleKeychain
+import ProtonCoreServices
 
-final class SharedToolingContainer: SharedContainer, AutoRegistering {
-    static let shared = SharedToolingContainer()
-    let manager = ContainerManager()
-
-    func autoRegister() {
-        manager.defaultScope = .singleton
-    }
-}
-
-extension SharedToolingContainer {
-    var keychain: Factory<any KeychainProvider> {
-        self { SimpleKeychain(service: Constants.appGroup, accessGroup: Constants.keychainAccessGroup) }
-    }
-
-    var appVersion: Factory<String> {
-        self { "macos-pass-safari@\(Bundle.main.versionNumber)" }
+public extension APIService {
+    /// Async variant that can take an `Endpoint`
+    func exec<E: Endpoint>(endpoint: E) async throws -> E.Response {
+        try await withCheckedThrowingContinuation { continuation in
+            perform(request: endpoint) { _, result in
+                continuation.resume(with: result)
+            }
+        }
     }
 }

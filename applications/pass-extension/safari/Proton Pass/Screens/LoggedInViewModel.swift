@@ -19,12 +19,13 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
+import Client
 import Factory
 import Foundation
+import Models
 import os.log
 import ProtonCoreNetworking
 import ProtonCoreServices
-import Shared
 
 struct UserAndPlan: Sendable, Equatable {
     let plan: PassPlan
@@ -44,8 +45,7 @@ final class LoggedInViewModel: ObservableObject {
     private lazy var paymentsManager = PaymentsManager(appVersion: appVersion,
                                                        sessionID: credentials.sessionID,
                                                        authToken: credentials.accessToken,
-                                                       doh: PassDoH(environment: environment),
-                                                       createLogger: createLogger)
+                                                       doh: PassDoH(environment: environment))
 
     private let setCoreLoggerEnvironment = resolve(\SharedUseCaseContainer.setCoreLoggerEnvironment)
     private let createApiManager = resolve(\SharedUseCaseContainer.createApiManager)
