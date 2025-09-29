@@ -1,15 +1,11 @@
-import { c } from 'ttag';
-
-import { Button } from '@proton/atoms';
-import { ErrorBoundary, Icon, useModalState } from '@proton/components';
+import { ErrorBoundary } from '@proton/components';
 
 import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 
-import { ModalEditCategories } from '../editCategories/ModalEditCategories';
-import { PromptDisableCategories } from '../editCategories/PromptDisableCategories';
 import { useCategoriesView } from '../useCategoriesView';
 import { useRecategorizeElement } from '../useRecategorizeElement';
+import { ButtonEditCategories } from './ButtonEditCategories';
 import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrors';
 import { Tab } from './Tab';
 import { getTabState } from './categoriesTabsHelper';
@@ -27,9 +23,6 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
 
     const [counterMap] = useMailboxCounter();
 
-    const [editModalProps, setEditModal, renderEditModal] = useModalState();
-    const [disableModalProps, setDisableModal, renderDisableModal] = useModalState();
-
     const handleCategoryDrop = (categoryId: string, itemIds: string[]) => {
         void recategorizeElement(categoryId, itemIds);
     };
@@ -43,59 +36,36 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
     }
 
     return (
-        <>
-            <div
-                className="categories-tabs flex flex-row flex-nowrap px-4 h-fit-content border-bottom border-weak"
-                data-testid="categories-tabs"
-                onDragEnter={handleDragEnter}
-                onDragLeave={handleDragLeave}
-                onDragEnd={handleDragEnd}
-            >
-                {activeCategoriesTabs.map((category, index) => {
-                    const tabState = getTabState({
-                        index,
-                        category,
-                        categoriesList: activeCategoriesTabs || [],
-                        categoryLabelID,
-                        draggedOverCategoryId,
-                    });
+        <div
+            className="categories-tabs flex flex-row flex-nowrap px-4 h-fit-content border-bottom border-weak"
+            data-testid="categories-tabs"
+            onDragEnter={handleDragEnter}
+            onDragLeave={handleDragLeave}
+            onDragEnd={handleDragEnd}
+        >
+            {activeCategoriesTabs.map((category, index) => {
+                const tabState = getTabState({
+                    index,
+                    category,
+                    categoriesList: activeCategoriesTabs || [],
+                    categoryLabelID,
+                    draggedOverCategoryId,
+                });
 
-                    return (
-                        <div
-                            key={category.id}
-                            onDragOver={handleDragOver(category.id)}
-                            onDrop={handleDrop(category.id)}
-                        >
-                            <ErrorBoundary component={<CategoryTabError />}>
-                                <Tab
-                                    category={category}
-                                    tabState={tabState}
-                                    count={getLocationCount(counterMap, category.id).Unread}
-                                />
-                            </ErrorBoundary>
-                        </div>
-                    );
-                })}
-                <Button
-                    icon
-                    shape="ghost"
-                    className="ml-2 color-weak hover:color-norm"
-                    onClick={() => setEditModal(true)}
-                    data-testid="edit-categories-button"
-                >
-                    <Icon name="sliders-2" alt={c('Action').t`Edit categories`} />
-                </Button>
-            </div>
-            {renderEditModal && (
-                <ModalEditCategories
-                    onDisableAll={() => {
-                        setDisableModal(true);
-                    }}
-                    {...editModalProps}
-                />
-            )}
-            {renderDisableModal && <PromptDisableCategories {...disableModalProps} />}
-        </>
+                return (
+                    <div key={category.id} onDragOver={handleDragOver(category.id)} onDrop={handleDrop(category.id)}>
+                        <ErrorBoundary component={<CategoryTabError />}>
+                            <Tab
+                                category={category}
+                                tabState={tabState}
+                                count={getLocationCount(counterMap, category.id).Unread}
+                            />
+                        </ErrorBoundary>
+                    </div>
+                );
+            })}
+            <ButtonEditCategories />
+        </div>
     );
 };
 
