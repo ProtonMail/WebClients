@@ -18,9 +18,9 @@ import FileBrowser, {
     useItemContextMenu,
     useSelection,
 } from '../../../components/FileBrowser';
+import { GridViewItemWithThumbnail } from '../../../components/GridViewItemWithThumbnail';
 import { NameCell } from '../../../components/cells/NameCell';
 import { useLinkSharingModal } from '../../../components/modals/ShareLinkModal/ShareLinkModal';
-import { GridViewItem } from '../../../components/sections/FileBrowser/GridViewItemLink';
 import { ModifiedCell, ShareOptionsCell, SizeCell } from '../../../components/sections/FileBrowser/contentCells';
 import headerItems from '../../../components/sections/FileBrowser/headerCells';
 import { translateSortField } from '../../../components/sections/SortDropdown';
@@ -299,7 +299,7 @@ export function FolderBrowser({ activeFolder, layout, sortParams, setSorting, so
                 // components
                 Cells={Cells}
                 GridHeaderComponent={GridHeaderComponent}
-                GridViewItem={GridViewItem}
+                GridViewItem={GridViewItemWithThumbnail}
                 // handlers
                 onItemOpen={handleClick}
                 contextMenuAnchorRef={contextMenuAnchorRef}

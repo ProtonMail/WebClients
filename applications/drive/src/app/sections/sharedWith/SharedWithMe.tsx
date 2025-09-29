@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { ContactEmailsProvider, useActiveBreakpoint } from '@proton/components';
 
 import FileBrowser, { GridHeader, useItemContextMenu } from '../../components/FileBrowser';
-import { GridViewItem } from '../../components/sections/FileBrowser/GridViewItemLink';
+import { GridViewItemWithThumbnail } from '../../components/GridViewItemWithThumbnail';
 import headerItems from '../../components/sections/FileBrowser/headerCells';
 import { translateSortField } from '../../components/sections/SortDropdown';
 import { SortField } from '../../hooks/util/useSorting';
@@ -92,7 +92,7 @@ const SharedWithMe = () => {
                 sortParams={sortParams}
                 Cells={Cells}
                 GridHeaderComponent={GridHeaderComponent}
-                GridViewItem={GridViewItem}
+                GridViewItem={GridViewItemWithThumbnail}
                 contextMenuAnchorRef={contextMenuAnchorRef}
                 onItemContextMenu={browserItemContextMenu.handleContextMenu}
                 onItemOpen={handleOpenItem}
