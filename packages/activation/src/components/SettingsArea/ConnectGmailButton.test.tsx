@@ -6,6 +6,8 @@ import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { ADDRESS_FLAGS, APPS } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
+import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../constants';
+import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
 import useSetupGmailBYOEAddress from '../../hooks/useSetupGmailBYOEAddress';
 import type { Sync } from '../../logic/sync/sync.interface';
 import ConnectGmailButton from './ConnectGmailButton';
@@ -22,6 +24,9 @@ const mockUseAddresses = useAddresses as jest.MockedFunction<any>;
 
 jest.mock('../../hooks/useSetupGmailBYOEAddress');
 const mockUseSetupGmailBYOEAddress = useSetupGmailBYOEAddress as jest.MockedFunction<any>;
+
+jest.mock('../../hooks/useBYOEAddressesCounts');
+const mockUseBYOEAddressesCount = useBYOEAddressesCounts as jest.MockedFunction<any>;
 
 // mocking modals because they contain too many hooks
 jest.mock('../Modals/GmailSyncModal/GmailSyncModal', () => ({
@@ -43,6 +48,13 @@ describe('ConnectGmailButton', () => {
             isInMaintenance: false,
             handleSyncCallback: jest.fn(),
             allSyncs: [],
+        });
+        mockUseBYOEAddressesCount.mockReturnValue({
+            byoeAddresses: [],
+            activeBYOEAddresses: [],
+            addressesOrSyncs: [],
+            usedBYOEAddresses: 0,
+            maxBYOEAddresses: 0,
         });
     });
 
@@ -90,11 +102,12 @@ describe('ConnectGmailButton', () => {
 
     it('should open upsell modal when user is free and has a sync', () => {
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, false]);
-        mockUseSetupGmailBYOEAddress.mockReturnValue({
-            hasAccessToBYOE: false,
-            isInMaintenance: false,
-            handleSyncCallback: jest.fn(),
-            allSyncs: [{ id: 'syncID' } as Sync],
+        mockUseBYOEAddressesCount.mockReturnValue({
+            byoeAddresses: [],
+            activeBYOEAddresses: [],
+            addressesOrSyncs: [{ id: 'syncID' } as Sync],
+            usedBYOEAddresses: 0,
+            maxBYOEAddresses: MAX_SYNC_FREE_USER,
         });
         render(
             <ModalsProvider>
@@ -107,14 +120,15 @@ describe('ConnectGmailButton', () => {
 
     it('should open upsell limit modal when user has reached sync limit', () => {
         mockUseUser.mockReturnValue([
-            { hasNonDelinquentScope: true, Subscribed: {}, Flags: { 'has-a-byoe-address': true } },
+            { hasNonDelinquentScope: true, Subscribed: {}, Flags: { 'has-a-byoe-address': true }, isPaid: true },
             false,
         ]);
-        mockUseSetupGmailBYOEAddress.mockReturnValue({
-            hasAccessToBYOE: false,
-            isInMaintenance: false,
-            handleSyncCallback: jest.fn(),
-            allSyncs: [{ id: 'syncID1' } as Sync, { id: 'syncID2' } as Sync, { id: 'syncID3' } as Sync],
+        mockUseBYOEAddressesCount.mockReturnValue({
+            byoeAddresses: [],
+            activeBYOEAddresses: [],
+            addressesOrSyncs: [{ id: 'syncID1' } as Sync, { id: 'syncID2' } as Sync, { id: 'syncID3' } as Sync],
+            usedBYOEAddresses: 0,
+            maxBYOEAddresses: MAX_SYNC_PAID_USER,
         });
         render(
             <ModalsProvider>
@@ -127,14 +141,19 @@ describe('ConnectGmailButton', () => {
 
     it('should open upsell limit modal when user has reached BYOE limit', () => {
         mockUseUser.mockReturnValue([
-            { hasNonDelinquentScope: true, Subscribed: {}, Flags: { 'has-a-byoe-address': true } },
+            { hasNonDelinquentScope: true, Subscribed: {}, Flags: { 'has-a-byoe-address': true }, isPaid: true },
             false,
         ]);
-        mockUseSetupGmailBYOEAddress.mockReturnValue({
-            hasAccessToBYOE: false,
-            isInMaintenance: false,
-            handleSyncCallback: jest.fn(),
-            allSyncs: [{ id: 'syncID1' } as Sync, { id: 'syncID2' } as Sync, { id: 'syncID3' } as Sync],
+        mockUseBYOEAddressesCount.mockReturnValue({
+            byoeAddresses: [
+                { ID: 'address1', Flags: ADDRESS_FLAGS.BYOE } as Address,
+                { ID: 'address2', Flags: ADDRESS_FLAGS.BYOE } as Address,
+                { ID: 'address3', Flags: ADDRESS_FLAGS.BYOE } as Address,
+            ],
+            activeBYOEAddresses: [],
+            addressesOrSyncs: [{ id: 'syncID1' } as Sync, { id: 'syncID2' } as Sync, { id: 'syncID3' } as Sync],
+            usedBYOEAddresses: 3,
+            maxBYOEAddresses: MAX_SYNC_PAID_USER,
         });
         mockUseAddresses.mockReturnValue([
             [
@@ -155,23 +174,24 @@ describe('ConnectGmailButton', () => {
 
     it('should open upsell limit modal when user has reached BYOE limit and deleted syncs', () => {
         mockUseUser.mockReturnValue([
-            { hasNonDelinquentScope: true, Subscribed: {}, Flags: { 'has-a-byoe-address': true } },
+            { hasNonDelinquentScope: true, Subscribed: {}, Flags: { 'has-a-byoe-address': true }, isPaid: true },
             false,
         ]);
-        mockUseSetupGmailBYOEAddress.mockReturnValue({
-            hasAccessToBYOE: false,
-            isInMaintenance: false,
-            handleSyncCallback: jest.fn(),
-            allSyncs: [{ id: 'syncID1' } as Sync],
-        });
-        mockUseAddresses.mockReturnValue([
-            [
+        mockUseBYOEAddressesCount.mockReturnValue({
+            byoeAddresses: [
                 { ID: 'address1', Flags: ADDRESS_FLAGS.BYOE } as Address,
                 { ID: 'address2', Flags: ADDRESS_FLAGS.BYOE } as Address,
                 { ID: 'address3', Flags: ADDRESS_FLAGS.BYOE } as Address,
             ],
-            false,
-        ]);
+            activeBYOEAddresses: [],
+            addressesOrSyncs: [
+                { ID: 'address1', Flags: ADDRESS_FLAGS.BYOE } as Address,
+                { ID: 'address2', Flags: ADDRESS_FLAGS.BYOE } as Address,
+                { ID: 'address3', Flags: ADDRESS_FLAGS.BYOE } as Address,
+            ],
+            usedBYOEAddresses: 3,
+            maxBYOEAddresses: MAX_SYNC_PAID_USER,
+        });
         render(
             <ModalsProvider>
                 <ConnectGmailButton app={APPS.PROTONMAIL} showIcon />

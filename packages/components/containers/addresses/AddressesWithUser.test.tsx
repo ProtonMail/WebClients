@@ -84,6 +84,16 @@ jest.mock('@proton/activation/src/hooks/useReconnectSync', () => ({
     },
 }));
 
+jest.mock('@proton/activation/src/hooks/useBYOEAddressesCounts', () => ({
+    __esModule: true,
+    default: () => {
+        return {
+            usedBYOEAddresses: 0,
+            maxBYOEAddresses: 0,
+        };
+    },
+}));
+
 describe('addresses with user', () => {
     const user = { ID: 'abc' } as UserModel;
 

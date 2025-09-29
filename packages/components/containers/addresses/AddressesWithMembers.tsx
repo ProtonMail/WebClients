@@ -12,6 +12,7 @@ import { useProtonDomains } from '@proton/account/protonDomains/hooks';
 import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
 import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
+import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
 import { Button, Href } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -77,8 +78,10 @@ const AddressesWithMembers = ({
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
 
     const { UsedAddresses: OrganizationUsedAddresses, MaxAddresses: OrganizationMaxAddresses } = organization || {};
-    const UsedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
-    const MaxAddresses = OrganizationMaxAddresses || 1;
+    const usedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
+    const maxAddresses = OrganizationMaxAddresses || 1;
+
+    const { usedBYOEAddresses, maxBYOEAddresses } = useBYOEAddressesCounts();
 
     const memberIndex = useMemo(() => {
         if (Array.isArray(members)) {
@@ -177,29 +180,41 @@ const AddressesWithMembers = ({
                                         .jt`You must ${activateLink} the organization key before adding an email address to a non-private member.`}
                                 </Alert>
                             ) : (
-                                <Button
-                                    shape="outline"
-                                    onClick={() => handleAddAddress(currentMember)}
-                                    data-testid="settings:identity-section:add-address"
-                                >
-                                    {c('Action').t`Add address`}
-                                </Button>
-                            )}
-                            {hasAccessToBYOE && isSelfSelected && (
-                                <ConnectGmailButton
-                                    app={app}
-                                    buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`}
-                                    className="ml-2"
-                                />
+                                <div className="inline-flex flex-wrap gap-6">
+                                    <div>
+                                        <Button
+                                            shape="outline"
+                                            onClick={() => handleAddAddress(currentMember)}
+                                            data-testid="settings:identity-section:add-address"
+                                        >
+                                            {c('Action').t`Add ${BRAND_NAME} address`}
+                                        </Button>
+                                        <p className="color-weak text-sm my-2">
+                                            {c('Label').ngettext(
+                                                msgid`${usedAddresses} of ${maxAddresses} email address`,
+                                                `${usedAddresses} of ${maxAddresses} email addresses`,
+                                                maxAddresses
+                                            )}
+                                        </p>
+                                    </div>
+                                    <div>
+                                        {hasAccessToBYOE && isSelfSelected && (
+                                            <ConnectGmailButton
+                                                app={app}
+                                                buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`}
+                                            />
+                                        )}
+                                        <p className="color-weak text-sm my-2">
+                                            {c('Label BYOE').ngettext(
+                                                msgid`${usedBYOEAddresses} of ${maxBYOEAddresses} email address`,
+                                                `${usedBYOEAddresses} of ${maxBYOEAddresses} email addresses`,
+                                                usedBYOEAddresses
+                                            )}
+                                        </p>
+                                    </div>
+                                </div>
                             )}
                         </div>
-                    </div>
-                    <div className="color-weak text-sm">
-                        {c('Label').ngettext(
-                            msgid`${UsedAddresses} of ${MaxAddresses} email address`,
-                            `${UsedAddresses} of ${MaxAddresses} email addresses`,
-                            MaxAddresses
-                        )}
                     </div>
                 </>
             )}
