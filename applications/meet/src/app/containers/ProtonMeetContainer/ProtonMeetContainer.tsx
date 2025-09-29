@@ -385,33 +385,40 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
         loadingStartTimeRef.current = Date.now();
 
-        const { id, passwordBase } = await createInstantMeeting({
-            params: {},
-            isGuest: guestMode,
-        });
+        try {
+            const { id, passwordBase } = await createInstantMeeting({
+                params: {},
+                isGuest: guestMode,
+            });
 
-        const handsakeResult = await handleHandsakeInfoFetch(id);
+            const handshakeResult = await handleHandsakeInfoFetch(id);
 
-        if (!handsakeResult) {
-            return;
+            if (!handshakeResult) {
+                setJoiningInProgress(false);
+                joinBlockedRef.current = false;
+                return;
+            }
+
+            const roomName = await getRoomName({
+                token: id,
+                customPassword: '',
+                urlPassword: passwordBase,
+                handshakeInfo: handshakeResult.handshakeInfo as SRPHandshakeInfo,
+            });
+
+            setMeetingDetails({
+                meetingId: id,
+                meetingPassword: passwordBase,
+                meetingName: roomName,
+            });
+
+            await handleJoin(displayName, id);
+
+            history.push(getMeetingLink(id, passwordBase));
+        } catch (error: any) {
+            reportMeetError('Failed to create instant meeting', error);
+            setJoiningInProgress(false);
         }
-
-        const roomName = await getRoomName({
-            token: id,
-            customPassword: '',
-            urlPassword: passwordBase,
-            handshakeInfo: handsakeResult.handshakeInfo as SRPHandshakeInfo,
-        });
-
-        setMeetingDetails({
-            meetingId: id,
-            meetingPassword: passwordBase,
-            meetingName: roomName,
-        });
-
-        await handleJoin(displayName, id);
-
-        history.push(getMeetingLink(id, passwordBase));
 
         joinBlockedRef.current = false;
     };
@@ -427,39 +434,46 @@ export const ProtonMeetContainer = ({ guestMode = false, room, keyProvider }: Pr
 
         loadingStartTimeRef.current = Date.now();
 
-        const handshakeInfo = await initHandshake(meetingToken);
-
-        if (!handshakeInfo) {
-            return;
-        }
-
-        let roomName = '';
-
         try {
-            roomName = await getRoomName({
-                token: meetingToken,
-                customPassword: password,
-                urlPassword,
-                handshakeInfo: handshakeInfo as SRPHandshakeInfo,
-            });
-        } catch {
-            notifications.createNotification({
-                type: 'error',
-                text: c('Error').t`The meeting password is incorrect`,
-            });
+            const handshakeInfo = await initHandshake(meetingToken);
 
+            if (!handshakeInfo) {
+                setJoiningInProgress(false);
+                joinBlockedRef.current = false;
+                return;
+            }
+
+            let roomName = '';
+
+            try {
+                roomName = await getRoomName({
+                    token: meetingToken,
+                    customPassword: password,
+                    urlPassword,
+                    handshakeInfo: handshakeInfo as SRPHandshakeInfo,
+                });
+            } catch {
+                createNotification({
+                    type: 'error',
+                    text: c('Error').t`The meeting password is incorrect`,
+                });
+
+                setJoiningInProgress(false);
+                joinBlockedRef.current = false;
+
+                return;
+            }
+
+            setMeetingDetails((prev) => ({
+                ...prev,
+                meetingName: roomName,
+            }));
+
+            await handleJoin(displayName, meetingToken);
+        } catch (error: any) {
+            reportMeetError('Failed to join meeting', error);
             setJoiningInProgress(false);
-            joinBlockedRef.current = false;
-
-            return;
         }
-
-        setMeetingDetails((prev) => ({
-            ...prev,
-            meetingName: roomName,
-        }));
-
-        await handleJoin(displayName, meetingToken);
 
         joinBlockedRef.current = false;
     };
