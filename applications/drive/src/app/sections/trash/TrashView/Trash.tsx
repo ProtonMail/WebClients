@@ -9,7 +9,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../../components/FileBrowser';
 import type { BrowserItemId, ListViewHeaderItem } from '../../../components/FileBrowser/interface';
-import { GridViewItem } from '../../../components/sections/FileBrowser/GridViewItemLink';
+import { GridViewItemWithThumbnail } from '../../../components/GridViewItemWithThumbnail';
 import { DeletedCell, LocationCell, NameCell, SizeCell } from '../../../components/sections/FileBrowser/contentCells';
 import headerItems from '../../../components/sections/FileBrowser/headerCells';
 import { translateSortField } from '../../../components/sections/SortDropdown';
@@ -220,7 +220,7 @@ export function Trash({ shareId, trashView }: Props) {
                 sortParams={sortParams}
                 Cells={Cells}
                 GridHeaderComponent={GridHeaderComponent}
-                GridViewItem={GridViewItem}
+                GridViewItem={GridViewItemWithThumbnail}
                 onItemOpen={handleClick}
                 contextMenuAnchorRef={contextMenuAnchorRef}
                 onItemContextMenu={browserItemContextMenu.handleContextMenu}
