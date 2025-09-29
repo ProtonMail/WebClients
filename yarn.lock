@@ -8925,14 +8925,17 @@ __metadata:
   dependencies:
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
     "@proton/mail": "workspace:^"
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
     "@reduxjs/toolkit": "npm:^2.8.2"
+    eslint: "npm:^9.36.0"
     react: "npm:^18.3.1"
     react-redux: "npm:^9.2.0"
+    typescript: "npm:^5.9.2"
   languageName: unknown
   linkType: soft
 

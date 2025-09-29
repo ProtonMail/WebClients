@@ -17,7 +17,7 @@ import {
     saveHeartbeatTimestamp,
     shouldSendHeartBeat,
 } from './heartbeatHelper';
-import { type RequiredState } from './interface';
+import type { RequiredState } from './interface';
 
 type AppStartListening = TypedStartListening<RequiredState, ProtonDispatch<any>, ProtonThunkArguments>;
 

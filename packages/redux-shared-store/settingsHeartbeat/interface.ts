@@ -1,13 +1,13 @@
 import type { CategoriesState, MailSettingState } from 'packages/mail';
 
-import {
-    type AddressKeysState,
-    type OrganizationKeyState,
-    type SecurityCheckupReduxState,
-    type SubscriptionState,
-    type UserInvitationsState,
-    type UserKeysState,
-    type UserSettingsState,
+import type {
+    AddressKeysState,
+    OrganizationKeyState,
+    SecurityCheckupReduxState,
+    SubscriptionState,
+    UserInvitationsState,
+    UserKeysState,
+    UserSettingsState,
 } from '@proton/account';
 
 export interface RequiredState
