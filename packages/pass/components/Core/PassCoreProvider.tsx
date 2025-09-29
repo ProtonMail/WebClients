@@ -82,8 +82,6 @@ export type PassCoreContextValue = {
     onForceUpdate?: () => void;
     /** Open the settings view at a particular page */
     openSettings?: (page?: string) => void;
-    /** Prompts for client specific permissions */
-    promptForPermissions?: () => void;
     /** Sets the current tab's url - only relevant for extension */
     setExtensionClientState?: (current: ExtensionClientState) => void;
     /** Writes text to the clipboard. `promptForPermissions` should only be used
