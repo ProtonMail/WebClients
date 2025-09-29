@@ -6,7 +6,6 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { Button, ButtonLike, type ButtonLikeSize, Tooltip } from '@proton/atoms';
 import { Icon, useActiveBreakpoint, useModalStateObject, useMyCountry, useNotifications } from '@proton/components';
 import { TelemetryMailOnboardingEvents } from '@proton/shared/lib/api/telemetry';
-import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { CHECKLIST_DISPLAY_TYPE } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
@@ -15,25 +14,25 @@ import clsx from '@proton/utils/clsx';
 import { useMailOnboardingTelemetry } from 'proton-mail/components/onboarding/useMailOnboardingTelemetry';
 import { useGetStartedChecklist } from 'proton-mail/containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 
-import { ONLINE_SERVICES, type OnlineServicesKey } from '../constants';
+import { ONLINE_SERVICES } from '../constants';
 import UpdateMailAddressModal from './UpdateMailAddressModal';
+import { getFinanceServicesByCountry } from './onboardingAccountSwitcher.helpers';
 
 type Category = 'finance' | 'social-media' | 'shopping';
 
 interface TabProps {
     categories: { id: Category; name: string }[];
-    className?: string;
     onClick: (clickedCategory: Category) => void;
     selectedID: string;
     size: ButtonLikeSize;
 }
 
-const Pills = ({ categories, onClick, selectedID, className, size }: TabProps) => (
+const Pills = ({ categories, onClick, selectedID, size }: TabProps) => (
     <div className="inline-flex gap-0.5 sm:gap-1 md:gap-4 flex-row">
         {categories.map(({ name, id }) => (
             <Button
-                className={clsx([selectedID === id && 'button-solid-norm-light', className])}
-                color={selectedID === id ? 'norm' : 'weak'}
+                className={selectedID === id ? '' : 'color-weak'}
+                color="weak"
                 shape={selectedID === id ? 'solid' : 'ghost'}
                 key={id}
                 pill
@@ -45,40 +44,6 @@ const Pills = ({ categories, onClick, selectedID, className, size }: TabProps) =
         ))}
     </div>
 );
-
-const getFinanceServicesByCountry = ({
-    category,
-    countryLocation,
-}: {
-    category: 'finance' | 'social-media' | 'shopping';
-    countryLocation: string | undefined;
-}) => {
-    if (category === 'finance') {
-        if (countryLocation === 'GB') {
-            return ['hsbc', 'barclays', 'lloyds'] satisfies OnlineServicesKey[];
-        }
-        if (countryLocation === 'FR') {
-            return ['bnp-paribas', 'credit-agricole', 'banque-populaire'] satisfies OnlineServicesKey[];
-        }
-        if (countryLocation === 'DE') {
-            return ['deutsche-bank', 'dz-bank', 'kfw'] satisfies OnlineServicesKey[];
-        }
-        if (countryLocation === 'ES') {
-            return ['santander', 'bbva', 'caixa-bank'] satisfies OnlineServicesKey[];
-        }
-        if (countryLocation === 'CH') {
-            return ['ubs', 'raiffeisen', 'zurcher-kantonalbank'] satisfies OnlineServicesKey[];
-        }
-        // Default to US
-        return ['bank-of-america', 'american-express', 'capital-one'] satisfies OnlineServicesKey[];
-    } else if (category === 'social-media') {
-        return ['facebook', 'instagram', 'tiktok'] satisfies OnlineServicesKey[];
-    } else if (category === 'shopping') {
-        return ['amazon', 'ebay', 'aliexpress'] satisfies OnlineServicesKey[];
-    } else {
-        throw new Error('Invalid category');
-    }
-};
 
 const TabContent = memo(({ selectedCategory }: { selectedCategory: Category }) => {
     const { viewportWidth } = useActiveBreakpoint();
@@ -95,7 +60,7 @@ const TabContent = memo(({ selectedCategory }: { selectedCategory: Category }) =
                 }
 
                 return (
-                    <li key={service.key} className="flex flex-row flex-nowrap items-center py-4">
+                    <li key={service.key} className="flex flex-row flex-nowrap items-center py-3">
                         <img
                             alt=""
                             src={service.img}
@@ -105,7 +70,7 @@ const TabContent = memo(({ selectedCategory }: { selectedCategory: Category }) =
                                 '--h-custom': '2rem',
                             }}
                         />
-                        <span className="flex-1 text-left px-2 text-ellipsis" title={service.name}>
+                        <span className="flex-1 text-left px-2 color-weak text-ellipsis" title={service.name}>
                             {service.name}
                         </span>
                         <ButtonLike
@@ -180,14 +145,14 @@ const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) =
             <div
                 data-testid="onboarding-accounts-switcher"
                 className={clsx('m-auto max-w-custom py-6', className)}
-                style={{ '--max-w-custom': '35rem' }}
+                style={{ '--max-w-custom': '28rem' }}
             >
-                <div className="text-center mb-6 mx-4">
-                    <h1 className="text-4xl text-bold mb-3">{c('Onboarding List Placeholder')
+                <div className="text-center mb-4 mx-4">
+                    <h1 className="text-rg text-semibold color-weak mb-3">{c('Onboarding List Placeholder')
                         .t`Privacy for all your online accounts`}</h1>
-                    <p className="text-weak mt-0">
+                    <p className="color-weak text-sm m-0 mb-4">
                         {c('Onboarding List Placeholder')
-                            .jt`Use your ${MAIL_APP_NAME} address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${learnMoreLink}`}
+                            .jt`Change your email address for popular services now to avoid being tracked and profiled. ${learnMoreLink}`}
                     </p>
                     {!!defaultEmailAddress && (
                         <Tooltip title={c('Action').t`Click to copy ${defaultEmailAddress} to clipboard`}>
@@ -195,7 +160,7 @@ const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) =
                                 color="weak"
                                 shape="outline"
                                 size="small"
-                                className="bg-transparent inline-flex items-center flex-nowrap"
+                                className="bg-transparent color-weak inline-flex items-center flex-nowrap"
                                 onClick={() => {
                                     textToClipboard(defaultEmailAddress);
                                     createNotification({
@@ -211,7 +176,7 @@ const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) =
                 </div>
                 <div
                     className={clsx([
-                        'bg-norm border-weak pt-4 px-3 sm:px-4 md:px-8 mx-0 sm:mx-4 text-center',
+                        'border-weak pt-4 px-3 sm:px-4 md:px-6 text-center',
                         viewportWidth.xsmall ? 'border-top border-bottom' : 'border rounded-xl',
                     ])}
                 >
@@ -223,10 +188,10 @@ const UserOnboardingAccountsSwitcher = ({ className }: { className?: string }) =
                     />
                     <TabContent selectedCategory={selectedCategory} />
                 </div>
-                <div className="text-center mb-4 mx-4">
+                <div className="text-center mb-4">
                     <Button shape="underline" className="mt-4 color-weak" onClick={handleChangeChecklistDisplay}>{c(
                         'Onboarding List Placeholder'
-                    ).t`I have moved my logins to ${BRAND_NAME}`}</Button>
+                    ).t`Maybe later`}</Button>
                 </div>
             </div>
             {updateMailAddressModal.render && <UpdateMailAddressModal {...updateMailAddressModal.modalProps} />}
