@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { updateBYOEAddressConnection } from '@proton/account/addressKeys/actions';
 import { useUser } from '@proton/account/user/hooks';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import {
@@ -9,15 +10,17 @@ import {
     type OAuthProps,
 } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
-import { resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
+import { createSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncByEmail } from '@proton/activation/src/logic/sync/sync.selectors';
 import type { WithLoading } from '@proton/hooks/useLoading';
+import { useDispatch } from '@proton/redux-shared-store';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';
 
 const useReconnectSync = (address: Address) => {
     const [user] = useUser();
     const easySwitchDispatch = useEasySwitchDispatch();
+    const dispatch = useDispatch();
 
     const sync = useEasySwitchSelector((state) => selectSyncByEmail(state, address.Email));
 
@@ -25,7 +28,8 @@ const useReconnectSync = (address: Address) => {
         errorMessage: c('Error').t`Your forward will not be processed.`,
     });
 
-    const handleReconnect = (withLoading: WithLoading) => {
+    // Used to reconnect after losing a sync. We need to resume the sync.
+    const handleGrantPermission = (withLoading: WithLoading) => {
         if (!sync) {
             return;
         }
@@ -54,9 +58,39 @@ const useReconnectSync = (address: Address) => {
         });
     };
 
+    // Used to reconnect a manually disconnected address. We need to set the address flags and to create the sync again
+    const handleReconnect = (withLoading: WithLoading, address: Address) => {
+        void triggerOAuthPopup({
+            provider: OAUTH_PROVIDER.GOOGLE,
+            features: [EASY_SWITCH_FEATURES.BYOE],
+            callback: async (oAuthProps: OAuthProps) => {
+                const { Code, Provider, RedirectUri } = oAuthProps;
+                await withLoading(async () => {
+                    const result = await easySwitchDispatch(
+                        createSyncItem({
+                            Code,
+                            Provider,
+                            RedirectUri,
+                            Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_SYNC,
+                            reconnectEmailAddress: address.Email,
+                        })
+                    );
+
+                    // Do not change the address flags if creating the sync failed (e.g. user logged with the wrong google account)
+                    if (result.type.endsWith('rejected')) {
+                        return;
+                    }
+
+                    await dispatch(updateBYOEAddressConnection({ address, type: 'reconnect' }));
+                });
+            },
+        });
+    };
+
     return {
         loadingConfig,
         sync,
+        handleGrantPermission,
         handleReconnect,
     };
 };
