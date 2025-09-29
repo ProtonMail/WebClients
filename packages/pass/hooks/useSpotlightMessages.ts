@@ -15,8 +15,8 @@ import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/l
 import { toMap } from '@proton/shared/lib/helpers/object';
 import noop from '@proton/utils/noop';
 
-export const useSpotlightMessages = () => {
-    const { onLink, openSettings, promptForPermissions, getRatingURL, onForceUpdate } = usePassCore();
+export const useSpotlightMessages = (extra: SpotlightMessageDefinition[] = []) => {
+    const { onLink, openSettings, getRatingURL, onForceUpdate } = usePassCore();
     const upsell = useUpselling();
 
     return useMemo<Partial<Record<SpotlightMessage, SpotlightMessageDefinition>>>(
@@ -64,20 +64,6 @@ export const useSpotlightMessages = () => {
                             label: c('Label').t`Update`,
                             type: 'button',
                             onClick: onForceUpdate ?? noop,
-                        },
-                    },
-                    {
-                        type: SpotlightMessage.PERMISSIONS_REQUIRED,
-                        mode: 'default',
-                        id: 'permissions',
-                        title: c('Title').t`Grant permissions`,
-                        message: c('Info')
-                            .t`In order to get the best experience out of ${PASS_APP_NAME}, please grant the necessary extension permissions`,
-                        className: SubTheme.ORANGE,
-                        action: {
-                            label: c('Label').t`Grant`,
-                            type: 'button',
-                            onClick: () => promptForPermissions?.(),
                         },
                     },
                     {
@@ -134,6 +120,7 @@ export const useSpotlightMessages = () => {
                         className: SubTheme.RED,
                         weak: true,
                     },
+                    ...extra,
                 ],
                 'type'
             ),
