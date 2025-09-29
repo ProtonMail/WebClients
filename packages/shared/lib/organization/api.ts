@@ -17,6 +17,7 @@ export const getDefaultOrganizationSettings = (): OrganizationSettings => {
         ShowScribeWritingAssistant: true,
         VideoConferencingEnabled: false,
         MeetVideoConferencingEnabled: false,
+        MailCategoryViewEnabled: false,
         AllowedProducts: ['All'],
         PasswordPolicies: [],
         LogAuth: 0,
