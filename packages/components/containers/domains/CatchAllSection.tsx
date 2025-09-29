@@ -17,7 +17,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 const CatchAllSection = () => {
     const [user] = useUser();
-    const hasPermission = user.isAdmin;
+    const hasPermission = user.isAdmin && user.hasPaidMail;
 
     const plus = PLAN_NAMES[PLANS.MAIL];
     const bundle = PLAN_NAMES[PLANS.BUNDLE];
