@@ -1,6 +1,6 @@
 //
-// SharedToolingContainer.swift
-// Proton Pass - Created on 21/05/2024.
+// GetUser.swift
+// Proton Pass - Created on 27/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -20,25 +20,26 @@
 //
 
 import Client
-import Factory
 import Foundation
-import SimpleKeychain
+import Models
+import ProtonCoreServices
 
-final class SharedToolingContainer: SharedContainer, AutoRegistering {
-    static let shared = SharedToolingContainer()
-    let manager = ContainerManager()
+public protocol GetUserUseCase: Sendable {
+    func execute(_ apiService: any APIService) async throws -> User
+}
 
-    func autoRegister() {
-        manager.defaultScope = .singleton
+public extension GetUserUseCase {
+    func callAsFunction(_ apiService: any APIService) async throws -> User {
+        try await execute(apiService)
     }
 }
 
-extension SharedToolingContainer {
-    var keychain: Factory<any KeychainProvider> {
-        self { SimpleKeychain(service: Constants.appGroup, accessGroup: Constants.keychainAccessGroup) }
-    }
+public final class GetUser: Sendable, GetUserUseCase {
+    public init() {}
 
-    var appVersion: Factory<String> {
-        self { "macos-pass-safari@\(Bundle.main.versionNumber)" }
+    public func execute(_ apiService: any APIService) async throws -> User {
+        let endpoint = GetUserEndpoint()
+        let response = try await apiService.exec(endpoint: endpoint)
+        return response.user
     }
 }

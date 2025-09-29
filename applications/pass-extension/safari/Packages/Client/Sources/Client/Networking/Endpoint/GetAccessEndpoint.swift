@@ -1,6 +1,6 @@
 //
-// SharedToolingContainer.swift
-// Proton Pass - Created on 21/05/2024.
+// GetAccessEndpoint.swift
+// Proton Pass - Created on 23/05/2024.
 // Copyright (c) 2024 Proton Technologies AG
 //
 // This file is part of Proton Pass.
@@ -19,26 +19,20 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
-import Client
-import Factory
-import Foundation
-import SimpleKeychain
+import Models
+@preconcurrency import ProtonCoreNetworking
 
-final class SharedToolingContainer: SharedContainer, AutoRegistering {
-    static let shared = SharedToolingContainer()
-    let manager = ContainerManager()
-
-    func autoRegister() {
-        manager.defaultScope = .singleton
-    }
+public struct GetAccessResponse: Decodable, Equatable, Sendable {
+    public let access: Access
 }
 
-extension SharedToolingContainer {
-    var keychain: Factory<any KeychainProvider> {
-        self { SimpleKeychain(service: Constants.appGroup, accessGroup: Constants.keychainAccessGroup) }
-    }
+public struct GetAccessEndpoint: Endpoint {
+    public typealias Body = EmptyRequest
+    public typealias Response = GetAccessResponse
 
-    var appVersion: Factory<String> {
-        self { "macos-pass-safari@\(Bundle.main.versionNumber)" }
-    }
+    public let debugDescription = "Get Pass access"
+    public let path = "/pass/v1/user/access"
+    public let method: HTTPMethod = .get
+
+    public init() {}
 }

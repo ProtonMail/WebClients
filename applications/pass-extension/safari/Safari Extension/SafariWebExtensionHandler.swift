@@ -18,15 +18,15 @@
 // You should have received a copy of the GNU General Public License
 // along with SimpleLogin. If not, see https://www.gnu.org/licenses/.
 
+import Client
 import Factory
 import os.log
 import SafariServices
-import Shared
 
 final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
     private let processSafariExtensionEvent = resolve(\SharedUseCaseContainer.processSafariExtensionEvent)
     private let setEnvironment = resolve(\SharedUseCaseContainer.setEnvironment)
-    private let setCredentials = resolve(\SharedUseCaseContainer.setCredentials)
+    private let credentialProvider = resolve(\SharedUseCaseContainer.credentialProvider)
     private let updateCredentials = resolve(\SharedUseCaseContainer.updateCredentials)
     private let readFromClipboard = resolve(\SharedUseCaseContainer.readFromClipboard)
     private let writeToClipboard = resolve(\SharedUseCaseContainer.writeToClipboard)
@@ -45,7 +45,7 @@ final class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
             Task { [weak self] in
                 if let result = await self?.handle(message: String(describing: message)) {
                     let response = NSExtensionItem()
-                    response.userInfo = [ SFExtensionMessageKey: result ]
+                    response.userInfo = [SFExtensionMessageKey: result]
                     context.completeRequest(returningItems: [response], completionHandler: nil)
                 }
             }
@@ -59,9 +59,9 @@ private extension SafariWebExtensionHandler {
         do {
             switch try processSafariExtensionEvent(message) {
             case let .newCredentials(credentials):
-                try await setCredentials(credentials)
+                credentialProvider.setCredential(credentials)
             case let .updateCredentials(tokens):
-                try await updateCredentials(tokens)
+                try updateCredentials(tokens)
             case let .environment(environment):
                 try await setEnvironment(environment)
             case .readFromClipboard:
