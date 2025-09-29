@@ -31,7 +31,10 @@ export const DriveSidebarFoldersRoot = ({ shareId, linkId, rootFolder }: DriveSi
         }))
     );
 
-    const shouldShowArrow = useMemo(() => children.length || !rootFolder.hasLoadedChildren, [rootFolder]);
+    const shouldShowArrow = useMemo(
+        () => children.length || !rootFolder.hasLoadedChildren,
+        [children.length, rootFolder.hasLoadedChildren]
+    );
 
     return (
         <DriveSidebarListItem

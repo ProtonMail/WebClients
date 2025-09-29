@@ -7,7 +7,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import type { ListViewHeaderItem } from '../../components/FileBrowser';
 import FileBrowser, { GridHeader, useItemContextMenu } from '../../components/FileBrowser';
-import { GridViewItem } from '../../components/sections/FileBrowser/GridViewItemLink';
+import { GridViewItemWithThumbnail } from '../../components/GridViewItemWithThumbnail';
 import headerItems from '../../components/sections/FileBrowser/headerCells';
 import { translateSortField } from '../../components/sections/SortDropdown';
 import { SortField } from '../../hooks/util/useSorting';
@@ -122,7 +122,7 @@ export const SharedByMe = ({ shareId }: SharedByMeProps) => {
                 sortParams={sortParams}
                 Cells={Cells}
                 GridHeaderComponent={GridHeaderComponent}
-                GridViewItem={GridViewItem}
+                GridViewItem={GridViewItemWithThumbnail}
                 contextMenuAnchorRef={contextMenuAnchorRef}
                 onItemContextMenu={browserItemContextMenu.handleContextMenu}
                 onItemOpen={handleOpenItem}
