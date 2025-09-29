@@ -95,14 +95,19 @@ describe('isTrial', () => {
 });
 
 describe('isTrialExpired', () => {
+    it('should detect if subscription is no trial', () => {
+        const ts = Math.round((new Date().getTime() - 1000) / 1000);
+        expect(isTrialExpired({ ...subscription, IsTrial: false, PeriodEnd: ts })).toBe(false);
+    });
+
     it('should detect expired subscription', () => {
         const ts = Math.round((new Date().getTime() - 1000) / 1000);
-        expect(isTrialExpired({ ...subscription, PeriodEnd: ts })).toBe(true);
+        expect(isTrialExpired({ ...subscription, IsTrial: true, PeriodEnd: ts })).toBe(true);
     });
 
     it('should detect non-expired subscription', () => {
         const ts = Math.round((new Date().getTime() + 1000) / 1000);
-        expect(isTrialExpired({ ...subscription, PeriodEnd: ts })).toBe(false);
+        expect(isTrialExpired({ ...subscription, IsTrial: true, PeriodEnd: ts })).toBe(false);
     });
 });
 
