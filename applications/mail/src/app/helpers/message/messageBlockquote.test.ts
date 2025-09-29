@@ -126,6 +126,28 @@ describe('messageBlockquote', () => {
         expect(before).toContain('proton-image-anchor');
         expect(after).toEqual('');
     });
+
+    it('should detect Microsoft Word email border separator and wrap the following content in a blockquote', () => {
+        const content = `
+            <div class="WordSection1">
+                <p>Original email content</p>
+                <div style="border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm">
+                    <p><b>From:</b> sender@example.com</p>
+                    <p><b>Sent:</b> Monday, January 1, 2024</p>
+                </div>
+                <p>Previous message content</p>
+            </div>`;
+
+        const [before, after] = locateBlockquote(createDocument(content));
+
+        expect(before).toContain('Original email content');
+        expect(before).not.toContain('From:');
+        expect(before).not.toContain('Previous message content');
+        expect(after).toContain('blockquote');
+        expect(after).toContain('From:');
+        expect(after).toContain('Previous message content');
+        expect(after).toContain('border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0cm 0cm 0cm');
+    });
 });
 
 describe('locatePlaintextInternalBlockquotes', () => {
