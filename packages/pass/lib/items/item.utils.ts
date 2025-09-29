@@ -221,7 +221,7 @@ export const formatDisplayNameWithEmail = (name: string, email: string) => `${na
 
 export const formatItemsCount = (n: number) => c('Info').ngettext(msgid`${n} item`, `${n} items`, n);
 
-export const cloneItemName = (itemName: string): string => {
+export const smartCloneItemName = (itemName: string): string => {
     const copiedText = c('Title_cloned_item').t`copy`;
 
     const { name, count } = (() => {
@@ -237,6 +237,16 @@ export const cloneItemName = (itemName: string): string => {
 
     const copyCount = count > 1 ? ` ${count}` : '';
     const suffix = ` (${copiedText}${copyCount})`;
+    const maxNameLength = MAX_ITEM_NAME_LENGTH - suffix.length;
+    const truncatedName = name.length > maxNameLength ? name.substring(0, maxNameLength) : name;
+
+    return `${truncatedName}${suffix}`;
+};
+
+export const cloneItemName = (name: string): string => {
+    const copiedText = c('Title_cloned_item').t`copy`;
+
+    const suffix = ` (${copiedText})`;
     const maxNameLength = MAX_ITEM_NAME_LENGTH - suffix.length;
     const truncatedName = name.length > maxNameLength ? name.substring(0, maxNameLength) : name;
 
