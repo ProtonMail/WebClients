@@ -184,7 +184,7 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`Post-quantum protection`,
                         id: 'pqc-optin',
-                        available: isCryptoPostQuantumOptInEnabled,
+                        available: isCryptoPostQuantumOptInEnabled && user.isSelf,
                     },
                     {
                         text: c('Title').t`Email encryption keys`,
