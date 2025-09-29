@@ -43,7 +43,11 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectOrganization = (state: OrganizationState) => state[name];
 
-const freeOrganization = { Settings: {} } as unknown as OrganizationExtended;
+const freeOrganization = {
+    Settings: {
+        MailCategoryViewEnabled: true,
+    },
+} as unknown as OrganizationExtended;
 
 const initialState: SliceState = {
     value: undefined,
