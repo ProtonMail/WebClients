@@ -3,6 +3,8 @@ import { Room } from '@proton-meet/livekit-client';
 import { MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { c } from 'ttag';
 
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+
 import { qualityConstants } from '../qualityConstants';
 import { QualityScenarios } from '../types';
 import { getE2EEOptions } from '../utils/getE2EEOptions';
@@ -51,18 +53,22 @@ export const useMeetingJoin = () => {
 
             await room.connect(websocketUrl, accessToken);
 
-            return room;
+            return { room, accessToken };
         } catch (error: any) {
-            switch (error) {
+            const { message } = getApiError(error);
+            switch (message) {
                 // TODO: Show a custom error message to the user for each error
                 case MeetCoreErrorEnum.MlsServerVersionNotSupported:
-                    throw new Error(c('Error').t`This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.`);
+                    throw new Error(
+                        c('Error')
+                            .t`This meeting is on an older version, the host must end it and refresh Meet to restart with the latest version.`
+                    );
                 case MeetCoreErrorEnum.MaxRetriesReached:
                 case MeetCoreErrorEnum.MlsGroupError:
                 case MeetCoreErrorEnum.HttpClientError:
                 default:
                     console.error(error);
-                    throw new Error(c('Error').t`Failed to join meeting. Please try again later.`);
+                    throw error;
             }
         }
     };
