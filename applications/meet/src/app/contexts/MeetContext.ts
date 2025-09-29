@@ -70,6 +70,8 @@ export interface MeetContextValues {
     }) => Promise<void>;
     noiseFilter: boolean;
     toggleNoiseFilter: ({ isEnabled, audioDeviceId }: { isEnabled: boolean; audioDeviceId: string }) => Promise<void>;
+    handleMeetingLockToggle: (enable: boolean) => Promise<void>;
+    isMeetingLocked: boolean;
 }
 
 export const MeetContext = createContext<MeetContextValues>({
@@ -122,6 +124,8 @@ export const MeetContext = createContext<MeetContextValues>({
     toggleBackgroundBlur: () => Promise.resolve(),
     noiseFilter: false,
     toggleNoiseFilter: () => Promise.resolve(),
+    handleMeetingLockToggle: () => Promise.resolve(),
+    isMeetingLocked: false,
 });
 
 export const useMeetContext = () => {

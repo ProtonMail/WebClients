@@ -5,6 +5,7 @@ import type { MeetContextValues } from '../../contexts/MeetContext';
 import { MeetContext } from '../../contexts/MeetContext';
 import type { UIStateContextType } from '../../contexts/UIStateContext';
 import { UIStateContext } from '../../contexts/UIStateContext';
+import { useIsLocalParticipantHost } from '../../hooks/useIsLocalParticipantHost';
 import { MeetingSideBars } from '../../types';
 import { Settings } from './Settings';
 
@@ -13,6 +14,10 @@ vi.mock('../../hooks/useLocalParticipantResolution', () => ({
         resolution: '1080p',
         handleResolutionChange: vi.fn(),
     }),
+}));
+
+vi.mock('../../hooks/useIsLocalParticipantHost', () => ({
+    useIsLocalParticipantHost: vi.fn().mockReturnValue(false),
 }));
 
 const mockContextValues = {
@@ -83,5 +88,20 @@ describe('Settings', () => {
         await user.click(stopIncomingVideoCheckbox);
 
         expect(setDisableVideos).toHaveBeenCalledWith(!mockContextValues.disableVideos);
+    });
+
+    it('should show host options when user is a host', () => {
+        // Temporarily override the mock for this test
+        const mockUseIsLocalParticipantHost = vi.mocked(useIsLocalParticipantHost);
+        mockUseIsLocalParticipantHost.mockReturnValueOnce(true);
+
+        render(
+            <Wrapper>
+                <Settings />
+            </Wrapper>
+        );
+
+        expect(screen.getByText('Host')).toBeInTheDocument();
+        expect(screen.getByText('Lock meeting')).toBeInTheDocument();
     });
 });
