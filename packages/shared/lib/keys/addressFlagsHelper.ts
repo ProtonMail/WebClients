@@ -48,6 +48,8 @@ export const setAddressFlagsHelper = async ({
         address,
         keyTransparencyVerify
     );
+
     await api(updateAddressFlags(address.ID, !encryptionDisabled, !expectSignatureDisabled, newSignedKeyList));
+
     await onSKLPublishSuccess();
 };

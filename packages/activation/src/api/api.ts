@@ -1,3 +1,5 @@
+import type { SignedKeyList } from '@proton/shared/lib/interfaces';
+
 import type {
     CreateImportPayload,
     EASY_SWITCH_FEATURES,
@@ -17,6 +19,7 @@ export const createToken = (
     data: OAuthProps & {
         Products: ImportType[];
         Source: EASY_SWITCH_SOURCES;
+        Account?: string;
     }
 ) => ({
     url: 'oauth-token/v1/tokens',
@@ -43,6 +46,22 @@ export const resumeSync = (syncId: string) => ({
 export const deleteSync = (syncId: String) => ({
     url: `importer/v1/sync/${syncId}`,
     method: 'DELETE',
+});
+
+export const disconnectBYOEAddress = (addressID: string, SignedKeyList: SignedKeyList) => ({
+    url: `/mail/v4/byoe-addresses/${addressID}/disconnection`,
+    method: 'PUT',
+    data: {
+        SignedKeyList,
+    },
+});
+
+export const reconnectBYOEAddress = (addressID: string, SignedKeyList: SignedKeyList) => ({
+    url: `/mail/v4/byoe-addresses/${addressID}/reconnection`,
+    method: 'PUT',
+    data: {
+        SignedKeyList,
+    },
 });
 
 export const createImport = (data: CreateImportPayload) => ({
