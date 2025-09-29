@@ -82,10 +82,20 @@ const useSubscriptionModalTelemetry = () => {
         });
     };
 
+    const reportAddLumo = () => {
+        return sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.subscriptionModal,
+            event: TelemetrySubscriptionModalEvents.addLumo,
+            delay: false,
+        });
+    };
+
     return {
         reportSubscriptionModalInitialization,
         reportSubscriptionModalPayment,
         reportCancellationOnSameDay,
+        reportAddLumo,
     };
 };
 
