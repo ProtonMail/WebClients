@@ -1,0 +1,21 @@
+.blurry-backdrop {
+	backdrop-filter: blur(10px);
+
+	.modal-two-dialog-container,
+	.modal-two-dialog {
+		inline-size: 24.5rem !important;
+		block-size: 24.5rem !important;
+		border-radius: 1.5rem !important;
+	}
+}
+
+.close-meeting-locked-modal-button {
+	color: var(--text-norm);
+	background-color: var(--interaction-weak);
+
+	&:hover,
+	&:focus {
+		color: var(--text-norm);
+		background-color: var(--interaction-weak-major-1);
+	}
+}
