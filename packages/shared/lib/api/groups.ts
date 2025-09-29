@@ -1,11 +1,4 @@
-import type {
-    Address,
-    GROUP_MEMBER_PERMISSIONS,
-    GroupFlags,
-    GroupMemberType,
-    GroupPermissions,
-    ProxyInstances,
-} from '../interfaces';
+import type { Address, GroupFlags, GroupMemberType, GroupPermissions, ProxyInstances } from '../interfaces';
 
 interface GroupParameters {
     Name: string;
@@ -67,28 +60,48 @@ export const getGroupMember = (memberID: string) => ({
     url: `core/v4/groups/members/${memberID}`,
 });
 
-export interface GroupMemberParameters {
-    Type: GroupMemberType;
-    GroupID: string; // encrypted
+export interface AddGroupMemberParameters {
+    GroupID: string;
     Email: string;
     AddressSignaturePacket: string;
-    GroupMemberAddressPrivateKey?: string; // Only for internal E2EE member
-    ActivationToken?: string; // Only for internal E2EE member
-    ProxyInstances?: ProxyInstances[]; // Only for E2EE member
-    Token?: string;
-    Signature?: string;
-    Permissions?: GROUP_MEMBER_PERMISSIONS;
 }
 
-export const addGroupMember = (addMemberParams: GroupMemberParameters) => ({
+interface AddExternalGroupMemberParameters extends AddGroupMemberParameters {
+    Type: GroupMemberType.External;
+}
+
+interface BaseAddInternalGroupMemberParameters extends AddGroupMemberParameters {
+    Type: GroupMemberType.Internal;
+    GroupMemberAddressPrivateKey: string;
+    AddressSignaturePacket: string;
+    ProxyInstances: ProxyInstances[];
+}
+
+interface AddInternalNonPrivateGroupMemberParameters extends BaseAddInternalGroupMemberParameters {
+    Token: string;
+    Signature: string;
+}
+
+interface AddInternalGroupMemberParameters extends BaseAddInternalGroupMemberParameters {
+    GroupMemberAddressPrivateKey: string;
+    ActivationToken: string;
+}
+
+export const addGroupMember = (
+    data:
+        | AddExternalGroupMemberParameters
+        | AddInternalNonPrivateGroupMemberParameters
+        | AddInternalGroupMemberParameters
+) => ({
     method: 'post',
     url: 'core/v4/groups/members',
-    data: {
-        ...addMemberParams,
-    },
+    data,
 });
 
-export const updateGroupMember = (groupMemberID: string, groupMemberParams: Partial<GroupMemberParameters>) => ({
+export const updateGroupMember = (
+    groupMemberID: string,
+    groupMemberParams: { GroupID: string; Permissions: GroupPermissions }
+) => ({
     method: 'put',
     url: `core/v4/groups/members/${groupMemberID}`,
     data: {

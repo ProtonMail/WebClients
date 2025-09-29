@@ -3,7 +3,6 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';
-import type { GroupMemberParameters } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAllPublicKeys } from '@proton/shared/lib/api/keys';
 import { MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
@@ -13,14 +12,13 @@ import type {
     Address,
     Api,
     ApiKeysConfig,
+    CachedOrganizationKey,
     EnhancedMember,
     GetAllPublicKeysResponse,
-    KeyPair,
-    ProxyInstances,
 } from '@proton/shared/lib/interfaces';
 import { GroupMemberType } from '@proton/shared/lib/interfaces';
-import { getDecryptedUserKeys, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
-import { getInternalParameters } from '@proton/shared/lib/keys/forward/forward';
+import { getAddressKeyToken, getDecryptedUserKeys, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
+import { getInternalParameters, getInternalParametersPrivate } from '@proton/shared/lib/keys/forward/forward';
 import noop from '@proton/utils/noop';
 
 import type { AddressesState } from '../addresses';
@@ -33,10 +31,6 @@ import { type OrganizationKeyState, organizationKeyThunk } from '../organization
 import type { UserKeysState } from '../userKeys';
 
 type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
-
-const getMember = (members: EnhancedMember[], email: string) => {
-    return members.find((member: EnhancedMember) => member.Addresses?.some((address) => address.Email === email));
-};
 
 const signMemberEmail = async (memberEmail: string, groupKey: PrivateKeyReference) => {
     return CryptoProxy.signMessage({
@@ -139,67 +133,48 @@ const isPrivate = (member: EnhancedMember): boolean => {
     return member.Private === MEMBER_PRIVATE.UNREADABLE;
 };
 
-const isSameOrg = (
-    forwardeeKeysConfig: ApiKeysConfig,
-    forwardeeArmoredPrimaryPublicKey: string | undefined
-): boolean => {
-    return isGroupMemberTypeInternal(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey);
-};
-
-const isManagedAndSameOrg = (
-    member: EnhancedMember | undefined,
-    forwardeeKeysConfig: ApiKeysConfig,
-    forwardeeArmoredPrimaryPublicKey: string | undefined
-): boolean => {
-    if (member === undefined) {
-        return false;
-    }
-
-    return !isPrivate(member) && isSameOrg(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey);
-};
-
-const getTokenAndSignature = async ({
+const getPrimaryMemberTokenAndSignature = async ({
     member,
     forwardeeAddress,
-    forwardeeKeysConfig,
-    forwardeeArmoredPrimaryPublicKey,
+    organizationKey,
 }: {
-    member: EnhancedMember | undefined;
-    forwardeeAddress: Address | undefined;
-    forwardeeKeysConfig: ApiKeysConfig;
-    forwardeeArmoredPrimaryPublicKey: string | undefined;
-}): Promise<{
-    Token: string | undefined;
-    Signature: string | undefined;
-}> => {
-    if (
-        member === undefined ||
-        forwardeeAddress === undefined ||
-        isPrivate(member) ||
-        !isSameOrg(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey)
-    ) {
-        return {
-            Token: undefined,
-            Signature: undefined,
-        };
-    }
-
+    member: EnhancedMember;
+    forwardeeAddress: Address;
+    organizationKey: CachedOrganizationKey;
+}) => {
     const [primaryAddressKey] = forwardeeAddress.Keys;
-    if (primaryAddressKey === undefined) {
+    if (!primaryAddressKey) {
         throw new Error('Primary address key is undefined');
     }
 
     const { Token, Signature } = primaryAddressKey;
 
-    if (Token === undefined) {
+    if (!Token) {
         throw new Error('Token is undefined');
     }
-
-    if (Signature === undefined) {
+    if (!Signature) {
         throw new Error('Signature is undefined');
     }
 
+    if (!organizationKey.privateKey) {
+        throw new Error('Missing organization private key');
+    }
+
+    const userKeys = await getDecryptedUserKeys(member.Keys, '', organizationKey);
+    if (!userKeys.length) {
+        throw new Error('Member keys are not setup');
+    }
+
+    const { privateKeys, publicKeys } = splitKeys(userKeys);
+    const decryptedToken = await getAddressKeyToken({
+        Token: Token,
+        Signature: Signature,
+        privateKeys: privateKeys,
+        publicKeys: publicKeys,
+    });
+
     return {
+        decryptedToken,
         Token,
         Signature,
     };
@@ -225,71 +200,8 @@ const mapProxyInstance = (proxyInstances: {
     ProxyParam: proxyInstances.ProxyParam,
 });
 
-const getProxyParameters = async ({
-    forwardeeKeysConfig,
-    memberEmail,
-    forwarderKey,
-    Token,
-    Signature,
-    member,
-    organizationKey,
-    forwardeeArmoredPrimaryPublicKey,
-}: {
-    forwardeeKeysConfig: ApiKeysConfig;
-    memberEmail: string;
-    forwarderKey: PrivateKeyReference;
-    Token: string | undefined;
-    Signature: string | undefined;
-    member: EnhancedMember | undefined;
-    organizationKey: KeyPair;
-    forwardeeArmoredPrimaryPublicKey: string | undefined;
-}): Promise<{
-    ActivationToken: string | undefined;
-    GroupMemberAddressPrivateKey: string | undefined;
-    ProxyInstances: ProxyInstances[] | undefined;
-}> => {
-    if (!isGroupMemberTypeInternal(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey)) {
-        return {
-            ActivationToken: undefined,
-            GroupMemberAddressPrivateKey: undefined,
-            ProxyInstances: undefined,
-        };
-    }
-
-    const forwardeePublicKey = await getForwardeePublicKey(forwardeeArmoredPrimaryPublicKey);
-    const Email = getEmailFromKey(forwardeePublicKey) ?? memberEmail;
-
-    let userKeys = undefined;
-
-    if (member) {
-        userKeys = await getDecryptedUserKeys(member.Keys, '', organizationKey);
-    }
-
-    const { privateKeys, publicKeys } = splitKeys(userKeys);
-
-    const {
-        activationToken,
-        forwardeeKey: GroupMemberAddressPrivateKey,
-        proxyInstances,
-    } = await getInternalParameters(
-        forwarderKey,
-        [{ email: Email, name: Email }],
-        forwardeePublicKey,
-        Token,
-        Signature,
-        privateKeys,
-        publicKeys
-    );
-
-    return {
-        ActivationToken: activationToken,
-        GroupMemberAddressPrivateKey,
-        ProxyInstances: proxyInstances.map(mapProxyInstance),
-    };
-};
-
 export const addGroupMemberThunk = ({
-    group,
+    group: { ID: GroupID, Address: groupAddress },
     email,
     getMemberPublicKeys,
 }: {
@@ -304,7 +216,6 @@ export const addGroupMemberThunk = ({
             dispatch(membersThunk()),
             dispatch(organizationKeyThunk()),
         ]);
-        const { ID: GroupID, Address: groupAddress } = group;
 
         const { forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey } = await getPublicKeys({
             api,
@@ -312,61 +223,79 @@ export const addGroupMemberThunk = ({
             getMemberPublicKeys,
         });
 
-        const member = getMember(members, email);
-        if (member && isManagedAndSameOrg(member, forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey)) {
-            await dispatch(replaceMemberAddressTokensIfNeeded({ member }));
-        }
+        const canonicalEmail = canonicalizeInternalEmail(email);
+        const member = members.find((member) =>
+            member.Addresses?.some((address) => canonicalizeInternalEmail(address.Email) === canonicalEmail)
+        );
 
         const forwarderKey = await dispatch(getGroupKey({ groupAddress }));
 
         const Type = getGroupMemberType(forwardeeKeysConfig, forwardeeArmoredPrimaryPublicKey);
-        const canonicalEmail = canonicalizeInternalEmail(email);
         const AddressSignaturePacket = await signMemberEmail(canonicalEmail, forwarderKey.privateKey);
 
         if (isExternalForMail(forwardeeKeysConfig) && !getIsEncryptionDisabled(groupAddress)) {
             await dispatch(disableGroupAddressEncryption({ groupAddress, forwarderKey }));
         }
 
-        const memberAddresses = member ? await dispatch(getMemberAddresses({ member, retry: true })) : [];
-        const forwardeeAddress = memberAddresses.find(({ Email }) => Email === email);
+        if (Type === GroupMemberType.External) {
+            return api(addGroupMemberApi({ Type, GroupID, Email: email, AddressSignaturePacket }));
+        }
 
-        const { Token, Signature } = await getTokenAndSignature({
+        const forwardeePublicKey = await getForwardeePublicKey(forwardeeArmoredPrimaryPublicKey);
+        const Email = getEmailFromKey(forwardeePublicKey) ?? email;
+        const userIDsForForwardeeKey = [{ email: Email, name: Email }];
+
+        if (!member || isPrivate(member)) {
+            const { activationToken, forwardeeKey, proxyInstances } = await getInternalParametersPrivate(
+                forwarderKey.privateKey,
+                userIDsForForwardeeKey,
+                forwardeePublicKey
+            );
+            return api(
+                addGroupMemberApi({
+                    Type,
+                    GroupID,
+                    Email: canonicalEmail,
+                    AddressSignaturePacket,
+                    ActivationToken: activationToken,
+                    GroupMemberAddressPrivateKey: forwardeeKey,
+                    ProxyInstances: proxyInstances.map(mapProxyInstance),
+                })
+            );
+        }
+
+        await dispatch(replaceMemberAddressTokensIfNeeded({ member }));
+
+        const memberAddresses = await dispatch(getMemberAddresses({ member, retry: true }));
+        const forwardeeAddress = memberAddresses.find(
+            ({ Email }) => canonicalizeInternalEmail(Email) === canonicalEmail
+        );
+        // Should never happen since it's previously validated in `getMember`
+        if (!forwardeeAddress) {
+            throw new Error('Member without matching address');
+        }
+
+        const { decryptedToken, Token, Signature } = await getPrimaryMemberTokenAndSignature({
             member,
             forwardeeAddress,
-            forwardeeKeysConfig,
-            forwardeeArmoredPrimaryPublicKey,
+            organizationKey,
         });
-
-        if (!organizationKey.privateKey) {
-            throw new Error('Missing private key');
-        }
-        const organizationKeyPair: KeyPair = {
-            privateKey: organizationKey.privateKey,
-            publicKey: organizationKey.publicKey,
-        };
-        const { ActivationToken, GroupMemberAddressPrivateKey, ProxyInstances } = await getProxyParameters({
-            forwardeeKeysConfig,
-            memberEmail: email,
-            forwarderKey: forwarderKey.privateKey,
-            Token,
-            Signature,
-            member,
-            organizationKey: organizationKeyPair,
-            forwardeeArmoredPrimaryPublicKey,
-        });
-
-        const apiParams: GroupMemberParameters = {
-            Type,
-            GroupID,
-            Email: email,
-            AddressSignaturePacket,
-            ActivationToken,
-            GroupMemberAddressPrivateKey,
-            ProxyInstances,
-            Token,
-            Signature,
-        };
-
-        await api(addGroupMemberApi(apiParams));
+        const { forwardeeKey, proxyInstances } = await getInternalParameters(
+            forwarderKey.privateKey,
+            userIDsForForwardeeKey,
+            decryptedToken
+        );
+        return api(
+            addGroupMemberApi({
+                Type,
+                GroupID,
+                Email: canonicalEmail,
+                AddressSignaturePacket,
+                GroupMemberAddressPrivateKey: forwardeeKey,
+                ProxyInstances: proxyInstances.map(mapProxyInstance),
+                Token,
+                Signature,
+            })
+        );
     };
 };
