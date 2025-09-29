@@ -259,6 +259,11 @@ const HeaderMoreDropdown = ({
         ? [
               {
                   contentProps: moveDropdownContentProps,
+                  dropdownSize: {
+                      maxHeight: DropdownSizeUnit.Viewport,
+                      width: '19rem',
+                      maxWidth: DropdownSizeUnit.Viewport,
+                  },
                   render: ({ onClose, onLock }) => (
                       <MoveToFolderDropdown
                           labelID={fromFolderID}
@@ -271,6 +276,11 @@ const HeaderMoreDropdown = ({
               },
               {
                   contentProps: labelDropdownContentProps,
+                  dropdownSize: {
+                      maxHeight: DropdownSizeUnit.Viewport,
+                      width: '19rem',
+                      maxWidth: DropdownSizeUnit.Viewport,
+                  },
                   render: ({ onClose, onLock }) => (
                       <MoveToLabelDropdown
                           labelID={labelID}

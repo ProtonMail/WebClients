@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
+import { DropdownMenu, DropdownMenuButton, DropdownSizeUnit, Icon, useModalState } from '@proton/components';
 import { labelIncludes } from '@proton/mail/helpers/location';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -207,6 +207,11 @@ const MoreDropdown = ({
         ? [
               {
                   contentProps: moveDropdownContentProps,
+                  dropdownSize: {
+                      maxHeight: DropdownSizeUnit.Viewport,
+                      width: '19rem',
+                      maxWidth: DropdownSizeUnit.Viewport,
+                  },
                   render: ({ onClose, onLock }) => (
                       <MoveToFolderDropdown
                           labelID={labelID}
@@ -221,6 +226,11 @@ const MoreDropdown = ({
               },
               {
                   contentProps: labelDropdownContentProps,
+                  dropdownSize: {
+                      maxHeight: DropdownSizeUnit.Viewport,
+                      width: '19rem',
+                      maxWidth: DropdownSizeUnit.Viewport,
+                  },
                   render: ({ onClose, onLock }) => (
                       <MoveToLabelDropdown
                           labelID={labelID}
