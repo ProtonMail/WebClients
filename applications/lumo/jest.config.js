@@ -7,7 +7,7 @@ module.exports = {
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/app/locales.ts'],
     resolver: './jest.resolver.js',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|@protontech/interval-tree|@protontech/telemetry|pmcrypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|jsmimeparser|emoji-mart|msw|@mswjs|p-limit|yocto-queue|sw-test-env|node-fetch|data-uri-to-buffer|fetch-blob|formdata-polyfill|uuid|exceljs)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|@protontech/interval-tree|@protontech/telemetry|pmcrypto|openpgp|@openpgp/web-stream-tools|@protontech/bip39|jsmimeparser|emoji-mart|msw|@mswjs|until-async|p-limit|yocto-queue|sw-test-env|node-fetch|data-uri-to-buffer|fetch-blob|formdata-polyfill|uuid|exceljs)/)',
     ],
     transform: {
         '^.+\\.(m?js|tsx?)$': '<rootDir>/jest.transform.js',
