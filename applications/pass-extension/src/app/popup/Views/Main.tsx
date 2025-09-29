@@ -10,7 +10,6 @@ import { BulkSelectProvider } from '@proton/pass/components/Bulk/BulkSelectProvi
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { ItemActionsProvider } from '@proton/pass/components/Item/ItemActionsProvider';
 import { Items } from '@proton/pass/components/Item/Items';
-import { ThemeOnboardingModal } from '@proton/pass/components/Layout/Theme/ThemeOnboardingModal';
 import { LockOnboarding } from '@proton/pass/components/Lock/LockOnboarding';
 import { InAppNotificationProvider } from '@proton/pass/components/Notifications/InAppNotificationPortal';
 import { InAppNotifications } from '@proton/pass/components/Notifications/InAppNotifications';
@@ -43,7 +42,6 @@ const MainSwitch: FC = () => {
                     <Header />
                     <div id="pass-layout" className="flex items-center justify-center flex-nowrap w-full h-full">
                         {match && <Route component={Items} />}
-                        <ThemeOnboardingModal />
                         <InAppNotifications />
                         {isSSO && (
                             <WithSpotlight type={SpotlightMessage.SSO_CHANGE_LOCK}>
