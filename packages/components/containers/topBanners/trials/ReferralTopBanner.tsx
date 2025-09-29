@@ -333,7 +333,7 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
         return null;
     }
 
-    const continueSubscriptionAction = <ContinueSubscriptionActionButton app={app} key="trial-action-button" />;
+    const action = <ContinueSubscriptionActionButton app={app} key="trial-action-button" />;
 
     const isExpired = isTrialExpired(subscription);
 
@@ -352,7 +352,7 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
             await setShowReferralTrialEndedBanner(false);
         };
 
-        const message = c('Message').jt`Your free trial has ended. ${continueSubscriptionAction}`;
+        const message = c('Message').jt`Your free trial has ended. ${action}`;
 
         return (
             <TopBanner className="bg-info" onClose={dismiss}>
@@ -380,7 +380,7 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
                 {subscriptionWillAutoRenew
                     ? c('Warning')
                           .jt`Your trial will end on ${textDate}. You won’t be charged if you cancel before ${textDate}.`
-                    : c('Warning').jt`Your free trial ends on ${textDate}. ${continueSubscriptionAction}`}
+                    : c('Warning').jt`Your free trial ends on ${textDate}. ${action}`}
             </TopBanner>
         );
     }
