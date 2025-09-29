@@ -48,6 +48,7 @@ export const updateOrganizationSettings = (data: {
     ShowScribeWritingAssistant?: boolean;
     VideoConferencingEnabled?: boolean;
     MeetVideoConferencingEnabled?: boolean;
+    MailCategoryViewEnabled?: boolean;
     AllowedProducts?: OrganizationSettings['AllowedProducts'];
     PasswordPolicies?: OrganizationSettings['PasswordPolicies'];
 }) => ({
