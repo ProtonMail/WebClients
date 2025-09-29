@@ -10,6 +10,7 @@ import {
     SidebarListItemSettingsLink,
 } from '@proton/components';
 import { LUMO_SHORT_APP_NAME, LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import clsx from '@proton/utils/clsx';
 
 import { LUMO_PLUS_UPGRADE_PATH, LUMO_UPGRADE_TRIGGER_CLASS } from '../../constants';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
@@ -78,11 +79,12 @@ const LumoPlusSidebarContent = ({ collapsed }: { collapsed: boolean }) => {
 interface SidebarButtonWrapperProps {
     collapsed: boolean;
     children: React.ReactNode;
+    triggerMobileModal?: boolean;
 }
 
-const SidebarButtonWrapper = ({ collapsed, children }: SidebarButtonWrapperProps) => (
+const SidebarButtonWrapper = ({ collapsed, children, triggerMobileModal = false }: SidebarButtonWrapperProps) => (
     <div className="pl-1">
-        <SidebarListItem className={LUMO_UPGRADE_TRIGGER_CLASS}>{children}</SidebarListItem>
+        <SidebarListItem className={clsx(triggerMobileModal && LUMO_UPGRADE_TRIGGER_CLASS)}>{children}</SidebarListItem>
     </div>
 );
 
@@ -118,7 +120,7 @@ const LumoPlusSidebarButtonAuthenticated = ({ collapsed }: { collapsed: boolean 
 
     return (
         <>
-            <SidebarButtonWrapper collapsed={collapsed}>
+            <SidebarButtonWrapper collapsed={collapsed} triggerMobileModal>
                 <SidebarListItemButton onClick={openModal} className={getButtonClasses(delayedCollapsed)}>
                     <LumoPlusSidebarContent collapsed={delayedCollapsed} />
                 </SidebarListItemButton>
