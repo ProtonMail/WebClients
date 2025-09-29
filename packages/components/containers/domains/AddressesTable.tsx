@@ -6,7 +6,6 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import { ADDRESS_RECEIVE, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -20,7 +19,6 @@ interface Props {
 }
 
 const AddressesTable = ({ domain, domainAddresses }: Props) => {
-    const { call } = useEventManager();
     const [addresses, setAddresses] = useState(() => domainAddresses);
 
     return (
@@ -50,13 +48,9 @@ const AddressesTable = ({ domain, domainAddresses }: Props) => {
                                     onChange={(id, value) => {
                                         setAddresses(
                                             addresses.map((address) => {
-                                                return {
-                                                    ...address,
-                                                    CatchAll: address.ID === id ? value : false,
-                                                } as const;
+                                                return { ...address, CatchAll: address.ID === id ? value : false };
                                             })
                                         );
-                                        void call();
                                     }}
                                 />,
                                 <div

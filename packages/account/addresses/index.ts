@@ -93,7 +93,7 @@ export const getAddress = async (api: Api, ID: string) => {
 export const addressThunk = ({
     address: oldAddress,
 }: {
-    address: Address & { ID: string };
+    address: { ID: string };
     cache: CacheType;
 }): ThunkAction<Promise<Address>, AddressesState, ProtonThunkArguments, UnknownAction> => {
     return async (dispatch, getState, extra) => {
