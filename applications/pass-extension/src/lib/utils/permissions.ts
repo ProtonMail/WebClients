@@ -1,7 +1,9 @@
 import type { Permissions } from 'webextension-polyfill';
 
+import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Unpack } from '@proton/pass/types';
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
 export type Permission = Unpack<Permissions.Permissions['permissions']>;
 
@@ -22,6 +24,21 @@ export const CLIPBOARD_PERMISSIONS: Permission[] = ['clipboardRead', 'clipboardW
 
 const MANIFEST = browser?.runtime.getManifest() ?? {};
 const HOST_PERMISSIONS = MANIFEST.host_permissions ?? [];
+
+export const getMinimalHostPermissions = ({ SSO_URL, API_URL }: PassConfig): string[] => {
+    if (BUILD_TARGET === 'safari') {
+        /** Safari merges host permissions and externally_connectable in
+         * the extension's settings for website access. To circumvent
+         * the limitation of a user manually denying website access to account
+         * or pass domains, create a wildcard Proton domain host permission. */
+        const protonHost = `https://*.${getSecondLevelDomain(new URL(SSO_URL).hostname)}/*`;
+        return [protonHost];
+    }
+
+    const accountHost = `${SSO_URL}/*`;
+    const passHost = API_URL.replace(/\api$/, '*');
+    return [accountHost, passHost];
+};
 
 export const hasPermissions = async (permissions: Permission[]): Promise<boolean> => {
     try {
