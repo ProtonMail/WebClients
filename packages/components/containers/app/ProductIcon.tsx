@@ -12,7 +12,8 @@ interface ProductIconProps {
 }
 
 const ProductIcon = ({ appToLinkTo, current }: ProductIconProps) => {
-    const appToLinkToName = getAppShortName(appToLinkTo);
+    const appToLinkToName =
+        appToLinkTo === APPS.PROTONLUMO ? `${getAppShortName(appToLinkTo)} AI` : getAppShortName(appToLinkTo);
 
     return (
         <>
