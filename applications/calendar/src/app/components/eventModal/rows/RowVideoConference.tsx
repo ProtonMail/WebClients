@@ -6,7 +6,7 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms';
 import { ProtonMeetRow, ZoomRow, useProtonMeetIntegration, useZoomIntegration } from '@proton/calendar';
-import { PROTON_MEET_REGEX } from '@proton/calendar/components/videoConferencing/protonMeet/protonMeetHelpers';
+import { PROTON_MEET_REGEX_LOCATION } from '@proton/calendar/components/videoConferencing/protonMeet/protonMeetHelpers';
 import {
     Dropdown,
     DropdownButton,
@@ -57,7 +57,8 @@ export const RowVideoConference = ({
     });
 
     const isZoomMeeting = !!model.conferenceUrl?.includes('zoom.us') && !model.isConferenceTmpDeleted;
-    const isProtonMeetMeeting = !!model.conferenceUrl?.match(PROTON_MEET_REGEX) && !model.isConferenceTmpDeleted;
+    const isProtonMeetMeeting =
+        !!model.conferenceUrl?.match(PROTON_MEET_REGEX_LOCATION) && !model.isConferenceTmpDeleted;
 
     const anchorRef = useRef<HTMLButtonElement>(null);
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);

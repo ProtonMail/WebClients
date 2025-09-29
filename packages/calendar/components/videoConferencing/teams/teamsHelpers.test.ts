@@ -6,14 +6,16 @@ const testURL = [
     'teams.live.com/meet/MEETING_ID?p=PASSWORD',
     'some test before https://teams.live.com/meet/MEETING_ID?p=PASSWORD',
     'https://teams.live.com/meet/MEETING_ID?p=PASSWORD, some test after',
+    'http://teams.live.com/meet/MEETING_ID?p=PASSWORD',
+    'some test before teams.live.com/meet/MEETING_ID?p=PASSWORD',
+    'teams.live.com/meet/MEETING_ID?p=PASSWORD, some test after',
+    'some test before teams.live.com/meet/MEETING_ID?p=PASSWORD, some test after',
 ];
 
 describe('Teams Helpers', () => {
     it.each(testURL)('should return the correct Teams data for %s', (url) => {
         const data = getTeamsDataFromLocation(url);
-        const meetingUrl = data.meetingUrl?.startsWith('https://')
-            ? 'https://teams.live.com/meet/MEETING_ID?p=PASSWORD'
-            : 'teams.live.com/meet/MEETING_ID?p=PASSWORD';
+        const meetingUrl = 'https://teams.live.com/meet/MEETING_ID?p=PASSWORD';
 
         expect(data).toStrictEqual({
             service: VIDEO_CONF_SERVICES.TEAMS,
