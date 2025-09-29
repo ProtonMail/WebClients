@@ -32,7 +32,6 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
-import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useOrganizationModals from '../organization/useOrganizationModals';
@@ -235,7 +234,7 @@ const DomainsSectionUpgrade = () => {
 const DomainsSection = ({ onceRef }: { onceRef: MutableRefObject<boolean> }) => {
     const [customDomains] = useCustomDomains();
     const [user] = useUser();
-    const hasPermission = user.isAdmin && user.isSelf && hasPaidMail(user);
+    const hasPermission = user.isAdmin && user.hasPaidMail;
 
     return hasPermission || (!hasPermission && customDomains?.length) ? (
         <DomainsSectionInternal onceRef={onceRef} />
