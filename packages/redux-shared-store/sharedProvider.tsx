@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { Provider, type TypedUseSelectorHook } from 'react-redux';
 
 import type { Action } from '@reduxjs/toolkit';

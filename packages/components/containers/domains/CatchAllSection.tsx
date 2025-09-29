@@ -16,8 +16,8 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 const CatchAllSection = () => {
-    const [{ isAdmin, isSelf }] = useUser();
-    const hasPermission = isAdmin && isSelf;
+    const [user] = useUser();
+    const hasPermission = user.isAdmin && user.hasPaidMail;
 
     const plus = PLAN_NAMES[PLANS.MAIL];
     const bundle = PLAN_NAMES[PLANS.BUNDLE];

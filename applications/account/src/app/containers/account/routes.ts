@@ -139,11 +139,10 @@ export const getAccountAppRoutes = ({
     const isNonPrivateEmergencyAccessAvailable = !user.isPrivate && getIsIncomingDelegatedAccessAvailable(user);
 
     const paymentsSectionAvailable =
-        user.isSelf &&
-        (isFamilyOrDuoPlanMember ||
-            // we do NOT display payment sections to Visionary admins here (display only to members),
-            // because they should have them on the dashboard or subscription pages
-            (isVisionaryPlan && isMemberProton && isMember));
+        isFamilyOrDuoPlanMember ||
+        // we do NOT display payment sections to Visionary admins here (display only to members),
+        // because they should have them on the dashboard or subscription pages
+        (isVisionaryPlan && isMemberProton && isMember);
 
     return <const>{
         available: true,

@@ -1,4 +1,5 @@
-import { TypedStartListening, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
+import type { TypedStartListening } from '@reduxjs/toolkit';
+import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 import type { Action, Reducer, ReducersMapObject } from 'redux';
 
 export const getTestStore = <T, A extends Action, S = any, P = S>({

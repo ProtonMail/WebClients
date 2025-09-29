@@ -159,7 +159,7 @@ export const getMailAppRoutes = ({
                 to: '/domain-names',
                 icon: 'globe',
                 // NOTE: This configuration is tied with the organization/routes.tsx domains availability
-                available: !user.isMember && !hasOrganizationKey,
+                available: !user.isMember && !hasOrganizationKey && user.isSelf,
                 subsections: [
                     { id: 'domains' },
                     {
@@ -184,7 +184,7 @@ export const getMailAppRoutes = ({
                     {
                         text: c('Title').t`Post-quantum protection`,
                         id: 'pqc-optin',
-                        available: isCryptoPostQuantumOptInEnabled,
+                        available: isCryptoPostQuantumOptInEnabled && user.isSelf,
                     },
                     {
                         text: c('Title').t`Email encryption keys`,
