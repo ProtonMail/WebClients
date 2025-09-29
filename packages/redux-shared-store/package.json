@@ -1,6 +1,10 @@
 {
     "name": "@proton/redux-shared-store",
     "description": "Sharing dispatch and selector context",
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint --quiet"
+    },
     "dependencies": {
         "@proton/account": "workspace:^",
         "@proton/calendar": "workspace:^",
