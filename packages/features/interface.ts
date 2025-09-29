@@ -80,6 +80,7 @@ export enum FeatureCode {
 
     // Flags for the category views
     CategoryViewBadgeSpotlight = 'CategoryViewBadgeSpotlight',
+    CategoryViewEditReminderSpotlight = 'CategoryViewEditReminderSpotlight',
 
     OfferPassFamilyPlan2024Yearly = 'OfferPassFamilyPlan2024Yearly',
     OfferGoUnlimited2022 = 'OfferGoUnlimited2022',
