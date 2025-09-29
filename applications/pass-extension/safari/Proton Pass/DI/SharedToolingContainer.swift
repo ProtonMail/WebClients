@@ -19,9 +19,9 @@
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 //
 
+import Client
 import Factory
 import Foundation
-import Shared
 import SimpleKeychain
 
 final class SharedToolingContainer: SharedContainer, AutoRegistering {

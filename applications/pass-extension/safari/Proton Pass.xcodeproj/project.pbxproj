@@ -31,10 +31,12 @@
 		358AB4982BFF85150008A7EC /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358AB4972BFF85150008A7EC /* Plugin.swift */; };
 		358AB4992BFF85180008A7EC /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358AB4972BFF85150008A7EC /* Plugin.swift */; };
 		35F4EC4E2BF7DDC90086D497 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC4D2BF7DDC90086D497 /* Factory */; };
-		35F4EC512BF7DE4F0086D497 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC502BF7DE4F0086D497 /* Shared */; };
 		35F4EC532BF7DE540086D497 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC522BF7DE540086D497 /* Factory */; };
-		35F4EC552BF7DE570086D497 /* Shared in Frameworks */ = {isa = PBXBuildFile; productRef = 35F4EC542BF7DE570086D497 /* Shared */; };
 		35F4EC582BF7EA5A0086D497 /* ProtonPassApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F4EC572BF7EA5A0086D497 /* ProtonPassApp.swift */; };
+		538492122E8A7C2B00B6CFFD /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = 538492112E8A7C2B00B6CFFD /* Client */; };
+		538492142E8A7C3000B6CFFD /* UseCases in Frameworks */ = {isa = PBXBuildFile; productRef = 538492132E8A7C3000B6CFFD /* UseCases */; };
+		538492162E8A7C3600B6CFFD /* Client in Frameworks */ = {isa = PBXBuildFile; productRef = 538492152E8A7C3600B6CFFD /* Client */; };
+		538492182E8A7C3900B6CFFD /* UseCases in Frameworks */ = {isa = PBXBuildFile; productRef = 538492172E8A7C3900B6CFFD /* UseCases */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +89,6 @@
 		3535347E2BF8E7290003BE4B /* MacPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacPlugin.swift; sourceTree = "<group>"; };
 		353534822BF8E7710003BE4B /* LoggedOutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewModel.swift; sourceTree = "<group>"; };
 		353AA40F2BFA9AC70084B00C /* SharedUseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedUseCaseContainer.swift; sourceTree = "<group>"; };
-		353B23772BF7DA4200D77597 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Shared; sourceTree = "<group>"; };
 		3570308A2BFE0F5000E283F4 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
 		3570308C2BFE0F6E00E283F4 /* LoggedInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewModel.swift; sourceTree = "<group>"; };
 		3587FB3B2BFF9625006C170F /* UseCaseContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseContainer.swift; sourceTree = "<group>"; };
@@ -98,6 +99,9 @@
 		358AB4952BFF7D2D0008A7EC /* NavigationStackEmbededModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackEmbededModifier.swift; sourceTree = "<group>"; };
 		358AB4972BFF85150008A7EC /* Plugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
 		35F4EC572BF7EA5A0086D497 /* ProtonPassApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtonPassApp.swift; sourceTree = "<group>"; };
+		53305BFF2E8A7A70003CBA40 /* Client */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Client; path = Packages/Client; sourceTree = "<group>"; };
+		536F97F52E8A860500871961 /* Models */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Models; path = Packages/Models; sourceTree = "<group>"; };
+		538492102E8A7B8600B6CFFD /* UseCases */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UseCases; path = Packages/UseCases; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +109,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				538492142E8A7C3000B6CFFD /* UseCases in Frameworks */,
 				35F4EC4E2BF7DDC90086D497 /* Factory in Frameworks */,
-				35F4EC512BF7DE4F0086D497 /* Shared in Frameworks */,
+				538492122E8A7C2B00B6CFFD /* Client in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,8 +119,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				538492182E8A7C3900B6CFFD /* UseCases in Frameworks */,
 				35F4EC532BF7DE540086D497 /* Factory in Frameworks */,
-				35F4EC552BF7DE570086D497 /* Shared in Frameworks */,
+				538492162E8A7C3600B6CFFD /* Client in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +141,9 @@
 				1FEA7CF32BE8E86900EF2ED2 /* Proton Pass */,
 				1FEA7D122BE8E86A00EF2ED2 /* Safari Extension */,
 				353534782BF8E6AA0003BE4B /* MacPlugin */,
-				353B23772BF7DA4200D77597 /* Shared */,
+				53305BFF2E8A7A70003CBA40 /* Client */,
+				536F97F52E8A860500871961 /* Models */,
+				538492102E8A7B8600B6CFFD /* UseCases */,
 				1FEA7CF22BE8E86900EF2ED2 /* Products */,
 				35F4EC4F2BF7DE4F0086D497 /* Frameworks */,
 			);
@@ -250,7 +258,8 @@
 			name = "Proton Pass for Safari";
 			packageProductDependencies = (
 				35F4EC4D2BF7DDC90086D497 /* Factory */,
-				35F4EC502BF7DE4F0086D497 /* Shared */,
+				538492112E8A7C2B00B6CFFD /* Client */,
+				538492132E8A7C3000B6CFFD /* UseCases */,
 			);
 			productName = "Proton Pass";
 			productReference = 1FEA7CF12BE8E86900EF2ED2 /* Proton Pass for Safari.app */;
@@ -271,7 +280,8 @@
 			name = "Safari Extension";
 			packageProductDependencies = (
 				35F4EC522BF7DE540086D497 /* Factory */,
-				35F4EC542BF7DE570086D497 /* Shared */,
+				538492152E8A7C3600B6CFFD /* Client */,
+				538492172E8A7C3900B6CFFD /* UseCases */,
 			);
 			productName = "Proton Pass Extension";
 			productReference = 1FEA7D0E2BE8E86A00EF2ED2 /* Safari Extension.appex */;
@@ -857,18 +867,26 @@
 			package = 35F4EC4C2BF7DDC90086D497 /* XCRemoteSwiftPackageReference "Factory" */;
 			productName = Factory;
 		};
-		35F4EC502BF7DE4F0086D497 /* Shared */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Shared;
-		};
 		35F4EC522BF7DE540086D497 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 35F4EC4C2BF7DDC90086D497 /* XCRemoteSwiftPackageReference "Factory" */;
 			productName = Factory;
 		};
-		35F4EC542BF7DE570086D497 /* Shared */ = {
+		538492112E8A7C2B00B6CFFD /* Client */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = Shared;
+			productName = Client;
+		};
+		538492132E8A7C3000B6CFFD /* UseCases */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UseCases;
+		};
+		538492152E8A7C3600B6CFFD /* Client */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Client;
+		};
+		538492172E8A7C3900B6CFFD /* UseCases */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = UseCases;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
