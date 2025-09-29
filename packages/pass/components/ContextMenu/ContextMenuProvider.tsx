@@ -2,7 +2,9 @@ import type { FC, MouseEvent, PropsWithChildren } from 'react';
 import { createContext, useCallback, useState } from 'react';
 
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import type { MaybeNull } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 
 type ContextMenuState = { id: string; position: { top: number; left: number } };
 
@@ -25,9 +27,11 @@ export const useContextMenuClose = () => useContextMenu().close;
 
 export const ContextMenuProvider: FC<PropsWithChildren> = ({ children }) => {
     const [state, setState] = useState<MaybeNull<ContextMenuState>>(null);
+    const enabled = useFeatureFlag(PassFeature.PassContextMenu);
 
     const isOpen = useCallback(
         (id?: string) => {
+            if (!enabled) return false;
             if (id) return state?.id === id;
             return state !== null;
         },
@@ -37,6 +41,7 @@ export const ContextMenuProvider: FC<PropsWithChildren> = ({ children }) => {
     const open = useCallback((event: MouseEvent, id: string) => {
         event.stopPropagation();
         event.preventDefault();
+        if (!enabled) return;
         setState({ id, position: { top: event.clientY, left: event.clientX } });
     }, []);
 
