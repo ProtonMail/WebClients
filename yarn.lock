@@ -234,9 +234,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@assistant-ui/react@npm:^0.11.7":
-  version: 0.11.7
-  resolution: "@assistant-ui/react@npm:0.11.7"
+"@assistant-ui/react@npm:^0.11.14":
+  version: 0.11.14
+  resolution: "@assistant-ui/react@npm:0.11.14"
   dependencies:
     "@assistant-ui/tap": "npm:^0.1.1"
     "@radix-ui/primitive": "npm:^1.1.3"
@@ -249,7 +249,7 @@ __metadata:
     "@radix-ui/react-use-escape-keydown": "npm:^1.1.1"
     "@standard-schema/spec": "npm:^1.0.0"
     assistant-cloud: "npm:^0.1.1"
-    assistant-stream: "npm:^0.2.23"
+    assistant-stream: "npm:^0.2.28"
     json-schema: "npm:^0.4.0"
     nanoid: "npm:5.1.5"
     react-textarea-autosize: "npm:^8.5.9"
@@ -265,7 +265,7 @@ __metadata:
       optional: true
     "@types/react-dom":
       optional: true
-  checksum: 10c0/2a5ed0db6ce92b58fcba45689047666a2e0ccca9ceff0ce12ebc599d0032ccaa5ba918302da4a5f6e44c227ebc1732fc1ea244500e7260a4746c775bfbe77dec
+  checksum: 10c0/b442181a460c8b8ef180e616056671a8fbd987e968063c124ab1564376d9847ff286be1d7ece3fd2b6a2f747056a358bc2ebb8b1d7e1702f88aea0de19bc2f1c
   languageName: node
   linkType: hard
 
@@ -10786,10 +10786,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rowsncolumns/spreadsheet-mcp@workspace:vendor/rowsncolumns/spreadsheet-mcp"
   dependencies:
-    "@assistant-ui/react": "npm:^0.11.7"
+    "@assistant-ui/react": "npm:^0.11.14"
     "@modelcontextprotocol/sdk": "npm:^1.2.0"
     "@rowsncolumns/spreadsheet-state": "workspace:^"
     ws: "npm:^8.18.0"
+    zod: "npm:^4.1.11"
+  peerDependencies:
+    "@assistant-ui/react": ">=0.11.14"
   languageName: unknown
   linkType: soft
 
@@ -16425,14 +16428,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"assistant-stream@npm:^0.2.23":
-  version: 0.2.25
-  resolution: "assistant-stream@npm:0.2.25"
+"assistant-stream@npm:^0.2.23, assistant-stream@npm:^0.2.28":
+  version: 0.2.28
+  resolution: "assistant-stream@npm:0.2.28"
   dependencies:
     "@types/json-schema": "npm:^7.0.15"
     nanoid: "npm:5.1.5"
     secure-json-parse: "npm:^4.0.0"
-  checksum: 10c0/6cecf5e2fe1c963f27c2eef73d3316cb8770f63dfdad481632679e9c86c2489bbc69d9dc6a10da337ebe1e5adc2474e71be202e3ab2794afce125212fbca84d2
+  checksum: 10c0/9cbe2120e78d5ad3e6798c165febdb9dfbe4f73a361ad4611984122c84c4ad4da1051b198f13b7fb12f29f4b8d5cd80b8d3e6d2f36c1fece212e3a3ba2b99f4a
   languageName: node
   linkType: hard
 
@@ -29962,9 +29965,9 @@ __metadata:
   linkType: hard
 
 "konva@npm:^9.3.20":
-  version: 9.3.20
-  resolution: "konva@npm:9.3.20"
-  checksum: 10c0/726d52e7105c747a080ba9bfe35bf07fa9dd40c4ae122f061d55723d907b6b7a09e8476cb5277ca0bcaf5504f4f79805ae2db0c29b72c9715b96ceae5c2a1d06
+  version: 9.3.22
+  resolution: "konva@npm:9.3.22"
+  checksum: 10c0/d9bdaaffec95381e5f4225485a102b14971a3a8f6fd691a78ac55bf88104654cca876714265999eceb3bbb4fc50d1f34b0385e5876d6b918739456c2d7de37fa
   languageName: node
   linkType: hard
 
@@ -46789,10 +46792,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^4.0.17":
-  version: 4.1.8
-  resolution: "zod@npm:4.1.8"
-  checksum: 10c0/5eae39da09d7bd0564a30dfd2348811e4e2e7dd15955d8f3444f8e196f35e5422b1482eda234b722fafb0738f4a8b718adb042b860936bfdd2cc19cdbdac8a9a
+"zod@npm:^4.0.17, zod@npm:^4.1.11":
+  version: 4.1.11
+  resolution: "zod@npm:4.1.11"
+  checksum: 10c0/ce6a4c4acfbf51d7dd0f2669c82f207d62a1f00264eef608994b94eb99d86a74c99f59b0dd3e61ef82909ee136631378b709e0908f0a02a2d5c21d0c497de5db
   languageName: node
   linkType: hard
 
