@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
-import { SidebarList } from '@proton/components';
+import { Loader, SidebarList } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { type ShareWithKey, useDriveSharingFlags, useUserSettings } from '../../store';
@@ -51,17 +51,23 @@ export const DriveSidebarList = ({ shareId, userShares }: DriveSidebarListProps)
 
     return (
         <SidebarList style={{ width: sidebarWidth, maxWidth: sidebarWidth }}>
-            {userShares.map(
-                (userShare) =>
-                    rootFolder && (
-                        <DriveSidebarFolders
-                            key={userShare.shareId}
-                            rootFolder={rootFolder}
-                            shareId={userShare.shareId}
-                            linkId={userShare.rootLinkId}
-                        />
-                    )
+            {/* TODO: There is only one rootShare, we should only include the default one*/}
+            {userShares.length && rootFolder ? (
+                userShares.map((userShare) => (
+                    <DriveSidebarFolders
+                        key={userShare.shareId}
+                        rootFolder={rootFolder}
+                        shareId={userShare.shareId}
+                        linkId={userShare.rootLinkId}
+                    />
+                ))
+            ) : (
+                <DriveSidebarListItem to="/" icon="inbox" collapsed={isCollapsed}>
+                    <span className="text-ellipsis">{c('Title').t`My files`}</span>
+                    <Loader className="drive-sidebar--icon inline-flex" />
+                </DriveSidebarListItem>
             )}
+
             <DevicesSidebar collapsed={isCollapsed} />
 
             {photosEnabled && (
