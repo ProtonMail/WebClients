@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { orderAddresses } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
+import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
 import { Href, Tooltip } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -75,6 +76,7 @@ const AddressesUser = ({
     const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
+    const { usedBYOEAddresses, maxBYOEAddresses } = useBYOEAddressesCounts();
 
     useEffect(() => {
         if (addresses) {
@@ -167,14 +169,26 @@ const AddressesUser = ({
             )}
 
             {!user.hasPaidMail && (
-                <div className="mb-4 flex gap-2 self-start items-center">
+                <div className="mb-4 flex gap-6 self-start items-start">
                     <MailUpsellButton
                         onClick={() => handleUpsellModalDisplay(true)}
                         text={c('Action').t`Get more addresses`}
                     />
 
                     {hasAccessToBYOE && (
-                        <ConnectGmailButton app={app} buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`} />
+                        <div>
+                            <ConnectGmailButton
+                                app={app}
+                                buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`}
+                            />
+                            <p className="color-weak text-sm my-2">
+                                {c('Label BYOE').ngettext(
+                                    msgid`${usedBYOEAddresses} of ${maxBYOEAddresses} email address`,
+                                    `${usedBYOEAddresses} of ${maxBYOEAddresses} email addresses`,
+                                    maxBYOEAddresses
+                                )}
+                            </p>
+                        </div>
                     )}
                 </div>
             )}
