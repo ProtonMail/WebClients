@@ -4,7 +4,7 @@ import getRandomString from '@proton/utils/getRandomString';
 import lastItem from '@proton/utils/lastItem';
 
 import type { ExtensionForkPayload } from '../authentication/fork/extension';
-import { APPS, EXTENSIONS } from '../constants';
+import { APPS, BRAND_NAME, EXTENSIONS } from '../constants';
 import { browserAPI, isChromiumBased, isSafari } from '../helpers/browser';
 
 export type ExtensionForkMessage = { type: 'fork'; payload: ExtensionForkPayload };
@@ -38,12 +38,25 @@ const isValidExtensionResponse = <R = any>(response: any): response is Extension
 
 type SendMessageResult = { ok: boolean; response: ExtensionMessageResponse };
 
+const getExtensionErrorMessage = (): string => {
+    const contents = [c('Warning').t`Please check that the extension is properly installed and enabled`];
+
+    if (isSafari()) {
+        contents.push(
+            c('Info')
+                .t`Open your Safari settings for the extension and verify site permissions are enabled for ${BRAND_NAME} domains`
+        );
+    }
+
+    return contents.join(' - ');
+};
+
 const sendMessage = async (extensionId: string, message: any): Promise<SendMessageResult> => {
     const onError = (error?: string): SendMessageResult => ({
         ok: false,
         response: {
             type: 'error',
-            error: error ?? c('Warning').t`Please check that the extension is properly installed and enabled`,
+            error: error ?? getExtensionErrorMessage(),
         },
     });
 
