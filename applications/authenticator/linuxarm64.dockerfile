@@ -1,4 +1,4 @@
-FROM rust:1.89.0
+FROM rust:1.90.0
 
 RUN apt-get update && apt-get install -y \
     curl \
