@@ -55,6 +55,7 @@ enum CommonFeatureFlag {
     NewScheduleOption = 'NewScheduleOption',
     PMVC2025 = 'PMVC2025',
     SentinelSafetyReview = 'SentinelSafetyReview',
+    AutoAddMeetingLink = 'AutoAddMeetingLink',
 }
 
 enum AccountFlag {
