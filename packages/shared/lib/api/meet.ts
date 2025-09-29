@@ -89,3 +89,19 @@ export const updateMeetingNameCall = (meetingId: string, data: { Name: string })
         data,
     };
 };
+
+export const lockMeetingCall = (meetingLinkName: string, data: { AccessToken: string }) => {
+    return {
+        method: 'post',
+        url: `meet/v1/meetings/links/${meetingLinkName}/lock`,
+        data,
+    };
+};
+
+export const unlockMeetingCall = (meetingLinkName: string, data: { AccessToken: string }) => {
+    return {
+        method: 'post',
+        url: `meet/v1/meetings/links/${meetingLinkName}/unlock`,
+        data,
+    };
+};

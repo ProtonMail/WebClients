@@ -32,6 +32,8 @@ interface MeetContainerProps {
     instantMeeting: boolean;
     passphrase: string;
     guestMode: boolean;
+    handleMeetingLockToggle: (enable: boolean) => Promise<void>;
+    isMeetingLocked: boolean;
 }
 
 export const MeetContainer = ({
@@ -57,6 +59,8 @@ export const MeetContainer = ({
     instantMeeting,
     passphrase,
     guestMode,
+    handleMeetingLockToggle,
+    isMeetingLocked,
 }: MeetContainerProps) => {
     const [quality, setQuality] = useState<VideoQuality>(VideoQuality.HIGH);
     const [page, setPage] = useState(0);
@@ -154,6 +158,8 @@ export const MeetContainer = ({
                     toggleNoiseFilter,
                     backgroundBlur,
                     toggleBackgroundBlur,
+                    handleMeetingLockToggle,
+                    isMeetingLocked,
                 }}
             >
                 <UIStateProvider instantMeeting={instantMeeting}>

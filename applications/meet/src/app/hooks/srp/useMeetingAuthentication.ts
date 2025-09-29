@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useMeetErrorReporting } from '@proton/meet';
 import { decryptMeetingName, getCombinedPassword } from '@proton/meet/utils/cryptoUtils';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import type { SRPHandshakeInfo } from './useMeetSrp';
 import { useMeetSrp } from './useMeetSrp';
@@ -61,7 +60,7 @@ export const useMeetingAuthentication = () => {
             };
         } catch (error: any) {
             reportMeetError('Failed to get access details', error);
-            throw new Error(getApiError(error)?.message ?? c('Error').t`Failed to get access details`);
+            throw error;
         }
     }, []);
 
