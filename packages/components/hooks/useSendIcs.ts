@@ -63,7 +63,10 @@ const useSendIcs = () => {
             }
             const { encryptionKey, signingKeys } = await getAddressKeysByUsage({
                 AddressID: addressID,
-                withV6Support: true,
+                withV6SupportForEncryption: true,
+                // only sign with v4 keys for now, since presence of v6 signatures breaks parsing for some
+                // third-party OpenPGP libs (e.g. RNP), as well as older gopenpgp versions
+                withV6SupportForSigning: false,
             });
             const { AutoSaveContacts, Sign } = await getMailSettings();
 

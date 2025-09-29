@@ -96,7 +96,8 @@ const OutgoingForwardActions = ({
                                 // we want the v6 key to be returned is present, so that
                                 // the forwarding key generation will fail already client-side,
                                 // instead of on the BE
-                                withV6Support: true,
+                                withV6SupportForEncryption: true,
+                                withV6SupportForSigning: false, // irrelevant: signing keys are not used
                             }),
                             getPublicKeysForInbox({ email: existingForwardingConfig.ForwardeeEmail, lifetime: 0 }),
                         ]);

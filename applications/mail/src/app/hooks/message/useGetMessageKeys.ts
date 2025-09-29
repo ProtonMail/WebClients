@@ -14,7 +14,10 @@ export const useGetMessageKeys: UseGetMessageKeys = () => {
         async ({ AddressID }: Pick<Message, 'AddressID'>) => {
             const { encryptionKey, signingKeys, decryptionKeys } = await getAddressKeysByUsage({
                 AddressID,
-                withV6Support: true,
+                withV6SupportForEncryption: true,
+                // only sign with v4 keys for now, since presence of v6 signatures breaks parsing for some
+                // third-party OpenPGP libs (e.g. RNP), as well as older gopenpgp versions
+                withV6SupportForSigning: false,
             });
 
             // verificationKeys are meant to be retrieved through useGetVerificationPreferences
