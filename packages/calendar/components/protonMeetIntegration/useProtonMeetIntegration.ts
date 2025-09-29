@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { useOrganization } from '@proton/account/organization/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
 import type { SessionKey } from '@proton/crypto';
@@ -47,8 +48,13 @@ export const useProtonMeetIntegration = ({
     const history = useHistory();
     const location = useLocation();
 
+    const [organization] = useOrganization();
+
+    const isProtonMeetSettingEnabled = organization?.Settings.MeetVideoConferencingEnabled;
+
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
     const isMeetPassphraseEnabled = useFlag('MeetPassphraseEnabled');
+    const isAutoAddMeetingLinkEnabled = useFlag('AutoAddMeetingLink');
 
     const [user] = useUser();
 
@@ -216,6 +222,10 @@ export const useProtonMeetIntegration = ({
     };
 
     useEffect(() => {
+        if (!isMeetVideoConferenceEnabled) {
+            return;
+        }
+
         const searchParams = new URLSearchParams(location.search);
 
         const shouldCreateMeeting =
@@ -233,7 +243,32 @@ export const useProtonMeetIntegration = ({
                 search: searchParams.toString() ? `?${searchParams.toString()}` : '',
             });
         }
-    }, [history, location]);
+    }, [history, location, isMeetVideoConferenceEnabled]);
+
+    const validAttendeeCount = model.attendees.filter((attendee) => attendee.email !== user.Email).length;
+    const prevValidAttendeeCount = useRef(validAttendeeCount);
+
+    useEffect(() => {
+        const newlyAddedAttendees = validAttendeeCount > 0 && prevValidAttendeeCount.current === 0;
+
+        if (
+            isMeetVideoConferenceEnabled &&
+            isAutoAddMeetingLinkEnabled &&
+            isProtonMeetSettingEnabled &&
+            (!model.conferenceUrl || model.isConferenceTmpDeleted) &&
+            newlyAddedAttendees
+        ) {
+            void createVideoConferenceMeeting();
+        }
+
+        prevValidAttendeeCount.current = validAttendeeCount;
+    }, [
+        isMeetVideoConferenceEnabled,
+        validAttendeeCount,
+        model.conferenceUrl,
+        model.isConferenceTmpDeleted,
+        model.conferenceProvider,
+    ]);
 
     const setupInProgress = useRef(false);
 
