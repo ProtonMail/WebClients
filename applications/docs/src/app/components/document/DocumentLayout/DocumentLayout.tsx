@@ -9,6 +9,7 @@ import { DocsQuickSettings } from '../../DocsQuickSettings'
 import type { DocumentAction } from '@proton/drive-store'
 import { useDocsContext } from '../context'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
+import { DebugModeProvider } from '~/utils/debug-mode-context'
 
 export type DocumentLayoutProps = {
   children: ReactNode
@@ -20,13 +21,15 @@ export function DocumentLayout({ children, documentType, actionMode }: DocumentL
   const { privateContext: privateUser } = useDocsContext()
 
   return (
-    <PrivateAppContainer
-      top={privateUser ? <TopBanners app={APPS.PROTONDOCS} /> : null}
-      header={<DocumentHeader actionMode={actionMode} documentType={documentType} />}
-      sidebar={null}
-      drawerApp={privateUser ? <DrawerApp customAppSettings={<DocsQuickSettings />} /> : null}
-    >
-      <PrivateMainArea hasToolbar>{children}</PrivateMainArea>
-    </PrivateAppContainer>
+    <DebugModeProvider>
+      <PrivateAppContainer
+        top={privateUser ? <TopBanners app={APPS.PROTONDOCS} /> : null}
+        header={<DocumentHeader actionMode={actionMode} documentType={documentType} />}
+        sidebar={null}
+        drawerApp={privateUser ? <DrawerApp customAppSettings={<DocsQuickSettings />} /> : null}
+      >
+        <PrivateMainArea hasToolbar>{children}</PrivateMainArea>
+      </PrivateAppContainer>
+    </DebugModeProvider>
   )
 }
