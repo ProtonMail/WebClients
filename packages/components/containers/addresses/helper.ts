@@ -41,17 +41,20 @@ export const getStatus = (address: Address, i: number) => {
     const isNotEncrypted = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
     const isSignatureNotExpected = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
     const isBYOE = Type === ADDRESS_TYPE.TYPE_EXTERNAL && getIsBYOEAddress(address);
-    const isBYOEDisconnected = isBYOE && Send === ADDRESS_SEND.SEND_NO;
+    const isBYOESyncLost = isBYOE && Send === ADDRESS_SEND.SEND_NO && !(isNotEncrypted && isSignatureNotExpected);
+    const isBYOEDisconnected = isBYOE && Send === ADDRESS_SEND.SEND_NO && isNotEncrypted && isSignatureNotExpected;
 
     return {
         isDefault: i === 0,
-        isActive: isBYOE ? !isBYOEDisconnected : isActive,
+        isActive: isBYOE ? !(isBYOESyncLost || isBYOEDisconnected) : isActive,
         isExternal,
         isDisabled,
         isOrphan,
         isMissingKeys,
         isNotEncrypted,
         isSignatureNotExpected,
+        isBYOE,
+        isBYOESyncLost,
         isBYOEDisconnected,
     };
 };
@@ -72,7 +75,7 @@ export const getPermissions = ({
     organizationKey?: CachedOrganizationKey;
 }) => {
     const { isAdmin, canPay } = user;
-    const { ID, Status, Type, Priority, ConfirmationState } = address;
+    const { ID, Status, Type, Priority, ConfirmationState, Flags } = address;
 
     const isSpecialAddress = Type === TYPE_ORIGINAL || Type === TYPE_PREMIUM;
 
@@ -81,6 +84,8 @@ export const getPermissions = ({
     const isEnabled = Status === ADDRESS_STATUS.STATUS_ENABLED;
     const isExternal = Type === ADDRESS_TYPE.TYPE_EXTERNAL;
     const isBYOE = Type === ADDRESS_TYPE.TYPE_EXTERNAL && getIsBYOEAddress(address);
+    const isNotEncrypted = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_E2EE);
+    const isSignatureNotExpected = hasBit(Flags, ADDRESS_FLAGS.FLAG_DISABLE_EXPECTED_SIGNED);
 
     const canMakeDefault = !isDefault && !getIsNonDefault(address);
 
@@ -131,7 +136,9 @@ export const getPermissions = ({
         canDeleteAddress: adminCanDeleteCustom,
         canDeleteAddressOncePerYear: !adminCanDeleteCustom && isAdmin && !isSpecialAddress && !isExternal && !isDefault,
         canEdit: isSelf,
-        canReconnectBYOE: isBYOE,
+        canGrantBYOEPermissions: isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to reconnect a BYOE address when a sync is lost
+        canReconnectBYOE: isBYOE && isNotEncrypted && isSignatureNotExpected, // Used to reconnect a BYOE when manually disconnected by the user
+        canDisconnectBYOE: isBYOE && !isNotEncrypted && !isSignatureNotExpected, // Used to manually disconnect a BYOE address
     };
 };
 

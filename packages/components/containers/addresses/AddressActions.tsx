@@ -4,6 +4,7 @@ import { disableAllowAddressDeletion } from '@proton/account';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/account/addresses/actions';
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
+import DisconnectBYOEModal from '@proton/activation/src/components/Modals/DisconnectBYOEModal/DisconnectBYOEModal';
 import useReconnectSync from '@proton/activation/src/hooks/useReconnectSync';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -126,7 +127,7 @@ const AddressActions = ({
     const [organizationKey] = useOrganizationKey();
     const emailAddress = address.Email;
     const wrapError = useErrorWrapper();
-    const { sync, handleReconnect, loadingConfig } = useReconnectSync(address);
+    const { sync, handleGrantPermission, handleReconnect, loadingConfig } = useReconnectSync(address);
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
     const [deleteAddressPromptProps, setDeleteAddressPromptOpen, renderDeleteAddressPrompt] = useModalState();
@@ -134,6 +135,7 @@ const AddressActions = ({
     const [disableAddressProps, setDisableAddressModalOpen, renderDisableAddress] = useModalState();
     const [editInternalAddressProps, setEditInternalAddressOpen, renderEditInternalAddressModal] = useModalState();
     const [editExternalAddressProps, setEditExternalAddressOpen, renderEditExternalAddressModal] = useModalState();
+    const [disconnectBYOEProps, setDisconnectBYOEOpen, renderDisconnectBYOEModal] = useModalState();
 
     const handleDelete = wrapError(async () => {
         await dispatch(deleteAddress({ address, member }));
@@ -214,15 +216,29 @@ const AddressActions = ({
                     : c('Delete address tooltip').t`You've reached the limit of address deletions for this user.`,
                 disabled: !allowAddressDeletion,
             } as const),
-        permissions.canReconnectBYOE &&
-            sync &&
-            sync.state !== ApiSyncState.ACTIVE && {
-                text: c('Address action').t`Reconnect`,
-                key: 'address-action-reconnect-byoe',
-                onClick: () => handleReconnect(withLoading),
-                disabled: loadingConfig,
-                'aria-label': c('Address action').t`Reconnect address “${emailAddress}”`,
-            },
+        permissions.canGrantBYOEPermissions &&
+        sync &&
+        sync.state !== ApiSyncState.ACTIVE && {
+            text: c('Address action').t`Grant permission`,
+            key: 'address-action-grant-byoe-permission',
+            onClick: () => handleGrantPermission(withLoading),
+            disabled: loadingConfig,
+            'aria-label': c('Address action').t`Grant permission to “${emailAddress}”`,
+        },
+        permissions.canReconnectBYOE && {
+            text: c('Address action').t`Reconnect`,
+            key: 'address-action-reconnect-byoe',
+            onClick: () => handleReconnect(withLoading, address),
+            disabled: loadingConfig,
+            'aria-label': c('Address action').t`Reconnect address “${emailAddress}”`,
+        },
+        permissions.canDisconnectBYOE && {
+            text: c('Address action').t`Disconnect`,
+            key: 'address-action-disconnect-byoe',
+            onClick: () => setDisconnectBYOEOpen(true),
+            disabled: loadingConfig,
+            'aria-label': c('Address action').t`Disconnect address “${emailAddress}”`,
+        },
     ].filter(isTruthy);
 
     // check if saving mode is active and if the current address is being used
@@ -263,6 +279,7 @@ const AddressActions = ({
             {renderDisableAddress && (
                 <DisableAddressModal email={address.Email} onDisable={handleDisable} {...disableAddressProps} />
             )}
+            {renderDisconnectBYOEModal && <DisconnectBYOEModal address={address} {...disconnectBYOEProps} />}
 
             {list.length ? (
                 <DropdownActions size="small" list={list} loading={loading || savingIndex !== undefined} />

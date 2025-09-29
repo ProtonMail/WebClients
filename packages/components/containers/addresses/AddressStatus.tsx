@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms';
 import Badge from '@proton/components/components/badge/Badge';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -16,6 +17,8 @@ const AddressStatus = ({
     isExternal,
     isNotEncrypted,
     isSignatureNotExpected,
+    isBYOE,
+    isBYOESyncLost,
     isBYOEDisconnected,
 }: Partial<AddressStatuses>) => {
     const list = [
@@ -39,12 +42,17 @@ const AddressStatus = ({
                 text: c('Address status').t`Disabled`,
                 type: 'light',
             } as const),
+        isBYOESyncLost &&
+            ({
+                text: c('Address status').t`Permission revoked`,
+                tooltip: c('Tooltip')
+                    .t`A change on the Gmail side is blocking ${BRAND_NAME} from connecting. Grant permission to reestablish email functionality`,
+                type: 'error',
+            } as const),
         isBYOEDisconnected &&
             ({
                 text: c('Address status').t`Disconnected`,
-                tooltip: c('Tooltip')
-                    .t`The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.`,
-                type: 'light',
+                type: 'error',
             } as const),
         isOrphan &&
             ({
@@ -58,12 +66,14 @@ const AddressStatus = ({
                 tooltip: c('Tooltip').t`This can be caused by a password reset or the user not logging in yet.`,
             } as const),
         isNotEncrypted &&
+            !isBYOE &&
             ({
                 // translator: E2EE stands for end-to-end encryption. If possible, keep the abbreviation as the UI will be best with a short translated string.
                 text: c('Address status').t`No E2EE mail`,
                 type: 'error',
             } as const),
         isSignatureNotExpected &&
+            !isBYOE &&
             ({
                 text: c('Address status').t`Allow unsigned mail`,
                 type: 'error',
