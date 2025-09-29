@@ -15,6 +15,7 @@ export interface DropdownRenderProps {
 
 export interface DropdownRender {
     contentProps?: DropdownProps['contentProps'];
+    dropdownSize?: DropdownProps['size'];
     render: (props: DropdownRenderProps) => ReactNode;
 }
 
@@ -108,16 +109,21 @@ const ToolbarDropdown = ({
                 {children.render({ onClose: close, onLock: setLock, onOpenAdditional: setAdditionalOpen })}
             </Dropdown>
             {additionalDropdowns?.map((additionalDropdown, index) => {
+                const size = additionalDropdown.dropdownSize || {
+                    maxWidth: DropdownSizeUnit.Viewport,
+                    maxHeight: DropdownSizeUnit.Viewport,
+                };
+
                 return (
                     <Dropdown
-                        key={index} // eslint-disable-line react/no-array-index-key
+                        key={index}
                         id={`${uid}-${index}`}
                         className={dropDownClassName}
                         originalPlacement="bottom"
                         autoClose={false}
                         autoCloseOutside={!lock}
                         isOpen={additionalOpen === index}
-                        size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
+                        size={size}
                         anchorRef={anchorRef}
                         onClose={handleAdditionalClose}
                         contentProps={additionalDropdown.contentProps}

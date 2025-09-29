@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
-import { Button } from '@proton/atoms';
 import { Checkbox, EditLabelModal, Icon, LabelsUpsellModal, Mark, useModalState } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
@@ -30,10 +29,15 @@ import { useScrollToItem } from '../../hooks/useScrollToItem';
 import type { Element } from '../../models/element';
 import { folderLocation } from '../list/list-telemetry/listTelemetryHelper';
 import { SOURCE_ACTION } from '../list/list-telemetry/useListTelemetry';
-import { MoveToDivider, MoveToDropdownButtons, MoveToPlaceholders } from './MoveToComponents';
+import {
+    ButtonCreateNewItem,
+    MoveToContentWrapper,
+    MoveToDivider,
+    MoveToDropdownButtons,
+    MoveToFolderFooterWrapper,
+    MoveToPlaceholders,
+} from './MoveToComponents';
 import { MoveToSearchInput } from './MoveToSearchInput';
-
-import './MoveToLabelDropdown.scss';
 
 export const labelDropdownContentProps = { className: 'flex flex-column flex-nowrap items-stretch' };
 
@@ -352,10 +356,7 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
                 />
             </div>
 
-            <div
-                className="label-dropdown-list overflow-auto scrollbar-always-visible flex-auto"
-                data-testid="label-dropdown-list"
-            >
+            <MoveToContentWrapper testid="label-dropdown-list">
                 {list.length === 0 ? (
                     <MoveToPlaceholders emptyListCopy={c('Info').t`No label found`} search={search} />
                 ) : (
@@ -395,26 +396,17 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
                         ))}
                     </ul>
                 )}
-            </div>
+            </MoveToContentWrapper>
 
             <MoveToDivider />
-
-            <div className="px-2">
-                <Button
-                    fullWidth
-                    onClick={handleCreate}
-                    shape="ghost"
-                    className="text-left flex item-start my-2"
-                    data-testid="move-to-create-label"
-                    data-prevent-arrow-navigation
-                >
-                    <Icon name="plus" className="mr-2 mt-0.5" />
-                    <span className="flex-1">{c('Action').t`Create label`}</span>
-                </Button>
-            </div>
+            <ButtonCreateNewItem
+                onClick={handleCreate}
+                copy={c('Action').t`Create label`}
+                testid="move-to-create-label"
+            />
 
             <MoveToDivider />
-            <div className="px-4 mt-4 shrink-0">
+            <MoveToFolderFooterWrapper>
                 <Checkbox
                     id={alwaysCheckID}
                     checked={always}
@@ -424,25 +416,26 @@ export const MoveToLabelDropdown = ({ selectedIDs, labelID, onClose, onLock, sel
                 >
                     {c('Label').t`Apply to future messages`}
                 </Checkbox>
-            </div>
 
-            <div className="px-4 mt-4 shrink-0">
                 <Checkbox
                     id={archiveCheckID}
                     checked={alsoArchive}
                     onChange={({ target }) => updateAlsoArchive(target.checked)}
                     data-testid="label-dropdown:also-archive"
                     data-prevent-arrow-navigation
+                    className="mt-4"
                 >
                     {c('Label').t`Also archive`}
                 </Checkbox>
-            </div>
-            <MoveToDropdownButtons
-                loading={loading}
-                disabled={getIsApplyDisabled(initialState, selectedLabelIDs, checkedIDs, always, alsoArchive)}
-                onClose={() => onClose()}
-                ctaText={c('Action').t`Apply`}
-            />
+
+                <MoveToDropdownButtons
+                    loading={loading}
+                    disabled={getIsApplyDisabled(initialState, selectedLabelIDs, checkedIDs, always, alsoArchive)}
+                    onClose={() => onClose()}
+                    ctaText={c('Action').t`Apply`}
+                />
+            </MoveToFolderFooterWrapper>
+
             {moveScheduledModal}
             {moveSnoozedModal}
             {moveToSpamModal}

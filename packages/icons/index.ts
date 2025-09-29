@@ -116,6 +116,7 @@ export type IconName =
     | 'column-one'
     | 'column-two'
     | 'checkmark'
+    | 'checkmark-strong'
     | 'chart-line'
     | 'checkmark-circle'
     | 'checkmark-circle-filled'
@@ -554,6 +555,7 @@ export { IcCardIdentity } from './icons/IcCardIdentity';
 export { IcColumnOne } from './icons/IcColumnOne';
 export { IcColumnTwo } from './icons/IcColumnTwo';
 export { IcCheckmark } from './icons/IcCheckmark';
+export { IcCheckmarkStrong } from './icons/IcCheckmarkStrong';
 export { IcChartLine } from './icons/IcChartLine';
 export { IcCheckmarkCircle } from './icons/IcCheckmarkCircle';
 export { IcCheckmarkCircleFilled } from './icons/IcCheckmarkCircleFilled';
