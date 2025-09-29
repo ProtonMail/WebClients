@@ -13,17 +13,20 @@ import {
   NOTIFICATION_DEFAULT_EXPIRATION_TIME,
   useConfirmActionModal,
 } from '@proton/components'
-import type { AuthenticatedDocControllerInterface, NativeVersionHistory } from '@proton/docs-core'
-import type { EditorInvoker } from '@proton/docs-core'
+import type {
+  AuthenticatedDocControllerInterface,
+  NativeVersionHistory,
+  EditorInvoker,
+  EditorControllerInterface,
+} from '@proton/docs-core'
 import { useCallback, useMemo, useState } from 'react'
 import { c } from 'ttag'
 import { HistoryTimeline } from './HistoryTimeline'
 import { SingleRevisionViewer } from './SingleRevisionViewer'
 import { useLoading } from '@proton/hooks/index'
 import type { SerializedEditorState } from 'lexical'
-import type { EditorControllerInterface } from '@proton/docs-core'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
-import { useDebug } from '~/components/document/DocumentViewer/DebugMenu'
+import { useDebugMode } from '~/utils/debug-mode-context'
 
 type RestoreType = 'replace' | 'as-copy'
 
@@ -42,7 +45,7 @@ function HistoryViewerModalContent({
   docController,
   documentType,
 }: HistoryViewerModalContentProps) {
-  const isDebugEnabled = useDebug()
+  const { isDebugMode } = useDebugMode()
 
   const [batchThreshold, setBatchThreshold] = useState(() => versionHistory.batchThreshold)
   const [selectedBatchIndex, setSelectedBatchIndex] = useState(() => versionHistory.batches.length - 1)
@@ -223,7 +226,7 @@ function HistoryViewerModalContent({
 
         {/* Bottom-anchored content */}
         <div className="mt-auto flex flex-col items-stretch justify-end px-5 pb-3 pt-5">
-          {isDebugEnabled && (
+          {isDebugMode && (
             // eslint-disable-next-line jsx-a11y/label-has-associated-control
             <label className="my-2 flex items-center gap-2">
               <div>Batch granularity:</div>
