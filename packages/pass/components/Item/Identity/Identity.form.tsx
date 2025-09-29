@@ -42,7 +42,7 @@ export const IdentityForm: FC<IdentityFormType> = ({ form, revision, onCancel })
             formId={formId}
             handleCancelClick={onCancel}
             type="identity"
-            valid={form.isValid && form.dirty && !form.status?.isBusy}
+            valid={(!revision || form.dirty) && form.isValid && !form.status?.isBusy}
             actions={ParentPortal}
         >
             {({ didEnter }) => (
