@@ -22,6 +22,7 @@ import {
     intoSelectedItem,
     intoUserIdentifier,
     matchDraftsForShare,
+    smartCloneItemName,
     sortItems,
 } from './item.utils';
 
@@ -473,6 +474,31 @@ describe('Item utils', () => {
         });
     });
 
+    describe('`smartCloneItemName`', () => {
+        test('Should append "copy" suffix', () => {
+            expect(smartCloneItemName('Test item')).toEqual('Test item (copy)');
+            expect(smartCloneItemName('Тест элемент')).toEqual('Тест элемент (copy)');
+            expect(smartCloneItemName('テストアイテム')).toEqual('テストアイテム (copy)');
+            expect(smartCloneItemName('🔍 Test 🧪 Item 📝')).toEqual('🔍 Test 🧪 Item 📝 (copy)');
+            expect(smartCloneItemName('')).toEqual(' (copy)');
+            expect(smartCloneItemName('   ')).toEqual(' (copy)');
+        });
+
+        test('Should preserve `MAX_ITEM_NAME_LENGTH`', () => {
+            const name = '0'.repeat(MAX_ITEM_NAME_LENGTH);
+            expect(smartCloneItemName(name)).toEqual(`${name.slice(0, -7)} (copy)`);
+        });
+
+        test('Should count copies correctly', () => {
+            expect(smartCloneItemName('Test item (copy)')).toEqual('Test item (copy 2)');
+            expect(smartCloneItemName('Test item (copy 2)')).toEqual('Test item (copy 3)');
+            expect(smartCloneItemName('Test item (copy 2874)')).toEqual('Test item (copy 2875)');
+            expect(smartCloneItemName('test(copy)')).toEqual('test (copy 2)');
+            expect(smartCloneItemName('Test (copy 999999999999999999)')).toEqual('Test (copy 1000000000000000000)');
+            expect(smartCloneItemName('Test item (copy) (copy)')).toEqual('Test item (copy) (copy 2)');
+        });
+    });
+
     describe('`cloneItemName`', () => {
         test('Should append "copy" suffix', () => {
             expect(cloneItemName('Test item')).toEqual('Test item (copy)');
@@ -480,7 +506,7 @@ describe('Item utils', () => {
             expect(cloneItemName('テストアイテム')).toEqual('テストアイテム (copy)');
             expect(cloneItemName('🔍 Test 🧪 Item 📝')).toEqual('🔍 Test 🧪 Item 📝 (copy)');
             expect(cloneItemName('')).toEqual(' (copy)');
-            expect(cloneItemName('   ')).toEqual(' (copy)');
+            expect(cloneItemName('   ')).toEqual('    (copy)');
         });
 
         test('Should preserve `MAX_ITEM_NAME_LENGTH`', () => {
@@ -488,13 +514,11 @@ describe('Item utils', () => {
             expect(cloneItemName(name)).toEqual(`${name.slice(0, -7)} (copy)`);
         });
 
-        test('Should count copies correctly', () => {
-            expect(cloneItemName('Test item (copy)')).toEqual('Test item (copy 2)');
-            expect(cloneItemName('Test item (copy 2)')).toEqual('Test item (copy 3)');
-            expect(cloneItemName('Test item (copy 2874)')).toEqual('Test item (copy 2875)');
-            expect(cloneItemName('test(copy)')).toEqual('test (copy 2)');
-            expect(cloneItemName('Test (copy 999999999999999999)')).toEqual('Test (copy 1000000000000000000)');
-            expect(cloneItemName('Test item (copy) (copy)')).toEqual('Test item (copy) (copy 2)');
+        test('Should always append "(copy)" without counting', () => {
+            expect(cloneItemName('Test item (copy)')).toEqual('Test item (copy) (copy)');
+            expect(cloneItemName('Test item (copy 2)')).toEqual('Test item (copy 2) (copy)');
+            expect(cloneItemName('Test item (copy 2874)')).toEqual('Test item (copy 2874) (copy)');
+            expect(cloneItemName('test(copy)')).toEqual('test(copy) (copy)');
         });
     });
 });
