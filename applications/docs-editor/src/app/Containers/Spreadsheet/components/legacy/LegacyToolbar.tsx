@@ -45,10 +45,9 @@ import {
 } from '@rowsncolumns/ui'
 import { MagnifyingGlassIcon, DownloadIcon, ImageIcon } from '@rowsncolumns/icons'
 import type { ProtonSheetsState } from '../../state'
-import { LOCALE, CURRENCY } from '../../constants'
+import { LOCALE, CURRENCY, onlyImplementedFunctionDescriptions as functionDescriptions } from '../../constants'
 import { useRef } from 'react'
 import { c } from 'ttag'
-import { functionDescriptions } from '@rowsncolumns/functions'
 
 export type LegacyToolbarProps = {
   state: ProtonSheetsState
