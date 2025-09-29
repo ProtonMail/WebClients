@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useRef } from 'react';
 
 import config from 'proton-pass-extension/app/config';
+import { getMinimalHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms';
@@ -40,7 +41,7 @@ export const useRequestFork = () =>
 export const useRequestForkWithPermissions = ({ replace, autoClose }: UseRequestForkWithPermissionsOptions) => {
     const { createNotification, removeNotification } = useNotifications();
 
-    const { SSO_URL, API_URL } = usePassConfig();
+    const config = usePassConfig();
     const accountFork = useRequestFork();
 
     const notification = useRef<number>();
@@ -49,7 +50,7 @@ export const useRequestForkWithPermissions = ({ replace, autoClose }: UseRequest
     /** Host permissions required for successful login on Proton domains.
      * Critical in Firefox & Safari for fallback account communication.
      * Does not request `<all_urls>` permissions needed for autofill. */
-    const origins = useMemo(() => [`${SSO_URL}/*`, API_URL.replace(/\api$/, '*')], []);
+    const origins = useMemo(() => getMinimalHostPermissions(config), []);
     const [granted, request] = useHostPermissions(origins, clearNotification);
 
     return async (forkType?: ForkType) => {

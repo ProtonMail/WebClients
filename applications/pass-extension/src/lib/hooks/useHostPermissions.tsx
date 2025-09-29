@@ -18,9 +18,9 @@ export const formatOrigins = (origins: string[]): string => {
 
     return origins.reduce((str, origin, idx) => {
         const { hostname } = new URL(origin);
-        if (idx === origins.length - 1) return `${str} ${c('Action').t`and`} ${hostname}`;
-        if (idx > 0) return `${str}, ${hostname}`;
-        return hostname;
+        if (idx === origins.length - 1) return `${str} ${c('Action').t`and`} "${hostname}"`;
+        if (idx > 0) return `${str}, "${hostname}"`;
+        return `"${hostname}"`;
     }, '');
 };
 
@@ -63,7 +63,7 @@ export const getHostPermissionsError = (origins?: string[]): ReactNode => {
         if (!origins) return c('Error').t`Permission denied for website access.`;
         const domainsJSX = formatOrigins(origins);
         // translator: $domains is a list of comma seperated domains the extension needs access to
-        return c('Error').jt`Permission denied for ${domainsJSX}.`;
+        return c('Error').jt`Permission denied for ${domainsJSX} website access.`;
     })();
 
     const instructions = getHostPermissionInstructions();
