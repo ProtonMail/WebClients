@@ -12,12 +12,12 @@ import UpsellModal from '@proton/components/components/upsell/UpsellModal/Upsell
 import useConfig from '@proton/components/hooks/useConfig';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 import { type APP_NAMES, MAIL_APP_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { getIsBYOEAddress } from '@proton/shared/lib/helpers/address';
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import { isFree, isPaid } from '@proton/shared/lib/user/helpers';
 import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/easy-switch-forward.svg';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 
+import useBYOEAddressesCounts from '../../hooks/useBYOEAddressesCounts';
 import GmailSyncModal from '../Modals/GmailSyncModal/GmailSyncModal';
 
 interface Props {
@@ -37,7 +37,8 @@ const ConnectGmailButton = ({
     const [addresses, loadingAddresses] = useAddresses();
     const { APP_NAME } = useConfig();
 
-    const { hasAccessToBYOE, isInMaintenance, handleSyncCallback, allSyncs } = useSetupGmailBYOEAddress();
+    const { hasAccessToBYOE, isInMaintenance, handleSyncCallback } = useSetupGmailBYOEAddress();
+    const { addressesOrSyncs } = useBYOEAddressesCounts();
 
     const [syncModalProps, setSyncModalProps, renderSyncModal] = useModalState();
     const [reachedLimitForwardingModalProps, setReachedLimitForwardingModalProps, renderReachedLimitForwardingModal] =
@@ -66,10 +67,6 @@ const ConnectGmailButton = ({
             return;
         }
         // Users should see a limit modal if reaching the maximum of BYOE addresses or syncs included in their plan.
-        const byoeAddresses = addresses.filter((address) => getIsBYOEAddress(address));
-
-        const addressesOrSyncs = byoeAddresses.length > allSyncs.length ? byoeAddresses : allSyncs;
-
         if (isFree(user) && addressesOrSyncs.length >= MAX_SYNC_FREE_USER) {
             setUpsellForwardingModalProps(true);
         } else if (isPaid(user) && addressesOrSyncs.length >= MAX_SYNC_PAID_USER) {
