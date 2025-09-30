@@ -4404,6 +4404,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
+      ],
       "Billing Country": [
         "Faturalanacak ülke"
       ],
@@ -4455,7 +4458,7 @@
       "Taxes": [
         "Vergiler"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "hükümler ve koşullar"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [

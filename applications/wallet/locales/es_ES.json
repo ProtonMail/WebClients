@@ -1048,6 +1048,9 @@
       "Upload and query multiple large files": [
         "Cargar y consultar múltiples archivos de gran tamaño"
       ],
+      "Upload and query small files": [
+        "Cargar y consultar archivos pequeños"
+      ],
       "Web search access": [
         "Acceso a la búsqueda web"
       ]
@@ -4401,6 +4404,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Cantidad a pagar después de la prueba el ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de facturación"
       ],
@@ -4452,8 +4458,8 @@
       "Taxes": [
         "Impuestos"
       ],
-      "terms & conditions": [
-        "los términos y condiciones"
+      "terms and conditions": [
+        "términos y condiciones"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupón es válido por ${ couponRedemptions } renovación.",
@@ -4473,6 +4479,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puedes cancelar en cualquier momento.",
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puedes cancelar en cualquier momento."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Esta acción amplía la suscripción existente. Se te cobrará solo por los nuevos complementos y el tiempo restante del ciclo de facturación actual. La fecha de renovación de tu suscripción no cambiará."
       ],
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las futuras facturas"
@@ -4514,6 +4523,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito por la parte no utilizada de tu suscripción al plan anterior"
+      ],
+      "Credits will be added to your balance": [
+        "Se añadirán créditos a tu saldo."
       ]
     },
     "Payments.plan_name": {
