@@ -39,7 +39,7 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
     const handleSignInClick = () => {
         const hash = window.location.hash;
 
-        if (!isUrlPasswordValid(hash)) {
+        if (hash && !isUrlPasswordValid(hash)) {
             return window.location.pathname.replace('/guest', '');
         }
 
