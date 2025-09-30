@@ -2,19 +2,18 @@ import type { FieldHandle } from 'proton-pass-extension/app/content/services/for
 
 import { FieldType, IdentityFieldType } from '@proton/pass/fathom';
 import type { ItemContent, Maybe } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
+import { last, prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { oneOf, truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
-import lastItem from '@proton/utils/lastItem';
 
 export interface IdentityFieldConfig {
     getValue: (data: ItemContent<'identity'>) => Maybe<string>;
     subFields?: IdentityFieldType[];
 }
 
-const sanitizeName = (value?: string) => value?.trim().replace(/\s+/g, ' ');
-const splitFullName = ({ fullName }: ItemContent<'identity'>) => fullName.split(' ').filter(truthy);
+export const sanitizeName = (value?: string) => value?.trim().replace(/\s+/g, ' ');
+export const splitFullName = (fullName: string) => fullName.split(' ').filter(truthy);
 
 /** Use `fullName` if available, otherwise derive from components */
 export const getFullName = pipe((data: ItemContent<'identity'>): Maybe<string> => {
@@ -26,21 +25,21 @@ export const getFullName = pipe((data: ItemContent<'identity'>): Maybe<string> =
 /** Use `firstName` if available, otherwise derive from `fullName` */
 export const getFirstName = pipe((data: ItemContent<'identity'>): Maybe<string> => {
     if (data.firstName) return data.firstName.trim();
-    return splitFullName(data)[0];
+    return splitFullName(data.fullName)[0];
 }, sanitizeName);
 
 /** Use `middleName` if available, otherwise derive from `fullName` */
 export const getMiddleName = pipe((data: ItemContent<'identity'>): Maybe<string> => {
     if (data.middleName) return data.middleName.trim();
-    const parts = splitFullName(data);
+    const parts = splitFullName(data.fullName);
     return parts.length > 2 ? parts.slice(1, parts.length - 1).join(' ') : undefined;
 }, sanitizeName);
 
 /** Use `lastName` if available, otherwise derive from `fullName` */
 export const getLastName = pipe((data: ItemContent<'identity'>): Maybe<string> => {
     if (data.lastName) return data.lastName.trim();
-    const parts = splitFullName(data);
-    return parts.length > 1 ? lastItem(parts) : undefined;
+    const parts = splitFullName(data.fullName);
+    return parts.length > 1 ? last(parts) : undefined;
 }, sanitizeName);
 
 export const IDENTITY_FIELDS_CONFIG: Record<IdentityFieldType, (data: ItemContent<'identity'>) => Maybe<string>> = {
