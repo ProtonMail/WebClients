@@ -141,3 +141,13 @@ export interface Tax {
      */
     Amount: number;
 }
+
+export type SubscriptionCheckForbiddenReason =
+    | {
+          forbidden: false;
+          reason?: never;
+      }
+    | {
+          forbidden: true;
+          reason: 'already-subscribed' | 'already-subscribed-externally' | 'offer-not-available';
+      };

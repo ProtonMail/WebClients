@@ -2,21 +2,20 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Banner, BannerVariants, Button } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
-import { ChargebeeIframe, CountriesDropdown } from '@proton/payments/ui';
 import type { ChargebeeWrapperProps } from '@proton/payments/ui';
+import { ChargebeeIframe, CountriesDropdown } from '@proton/payments/ui';
 
 import type { ChargebeeDirectDebitProcessorHook } from '../react-extensions/useSepaDirectDebit';
 import { SepaAuthorizationText } from './SepaAuthorizationText';
 
 export interface DirectDebitProps extends ChargebeeWrapperProps {
     directDebit: ChargebeeDirectDebitProcessorHook;
-    isCurrencyOverriden: boolean;
 }
 
-export const SepaDirectDebit = ({ directDebit, isCurrencyOverriden, ...rest }: DirectDebitProps) => {
+export const SepaDirectDebit = ({ directDebit, ...rest }: DirectDebitProps) => {
     const [showCountryCode, setShowCountryCode] = useState(false);
     const { valid, requiresAddress, countryCode } = directDebit.ibanStatus;
 
@@ -167,11 +166,6 @@ export const SepaDirectDebit = ({ directDebit, isCurrencyOverriden, ...rest }: D
             <div className="my-2">
                 <SepaAuthorizationText />
             </div>
-
-            {isCurrencyOverriden && (
-                <Banner className="mt-2 mb-4" variant={BannerVariants.INFO}>{c('Payments')
-                    .t`Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.`}</Banner>
-            )}
 
             <ChargebeeIframe type="direct-debit" {...rest} />
         </div>

@@ -24,7 +24,7 @@ import {
     getPaymentsVersion,
     getPlanName,
     isLifetimePlanSelected,
-    isSubcriptionCheckForbidden,
+    isSubscriptionCheckForbidden,
     normalizeBillingAddress,
 } from '@proton/payments';
 import { APPS } from '@proton/shared/lib/constants';
@@ -444,7 +444,7 @@ export const usePaymentsApiWithCheckFallback = () => {
     const checkV5Fallback = (data: CheckSubscriptionData): EnrichedCheckResponse | null => {
         const { Cycle, Currency, Plans } = data;
 
-        const checkForbidden = isSubcriptionCheckForbidden(subscription, Plans, Cycle);
+        const checkForbidden = isSubscriptionCheckForbidden(subscription, Plans, Cycle);
         if (!checkForbidden) {
             return null;
         }

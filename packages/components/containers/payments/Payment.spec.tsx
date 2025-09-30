@@ -1,4 +1,4 @@
-import { render, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 
 import type { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import type { SavedPaymentMethod, SavedPaymentMethodExternal, SavedPaymentMethodInternal } from '@proton/payments';
@@ -363,5 +363,50 @@ describe('Payment', () => {
         await waitFor(() => {
             expect(container).not.toHaveTextContent('We use 3-D Secure to protect your payments');
         });
+    });
+
+    it('displays currency override banner when isCurrencyOverriden is true', () => {
+        render(
+            <WrappedPaymentsNoApi
+                onMethod={() => {}}
+                flow="subscription"
+                method="my-custom-method-123"
+                amount={1000}
+                isAuthenticated={true}
+                lastUsedMethod={lastUsedMethod}
+                allMethods={allMethods}
+                savedMethodInternal={undefined}
+                loading={false}
+                currency="USD"
+                iframeHandles={
+                    {
+                        iframeRef: { current: null },
+                        handles: {
+                            initializeSavedCreditCard: jest.fn(),
+                        },
+                    } as any
+                }
+                chargebeeCard={null as any}
+                chargebeePaypal={null as any}
+                bitcoinChargebee={{} as any}
+                paymentComponentLoaded={jest.fn()}
+                user={undefined}
+                directDebit={
+                    {
+                        customer: {} as any,
+                        bankAccount: {} as any,
+                    } as any
+                }
+                savedPaymentMethods={[]}
+                currencyOverride={{ isCurrencyOverriden: true } as any}
+                showTaxCountry={true}
+            />
+        );
+
+        expect(
+            screen.getByText(
+                'Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.'
+            )
+        ).toBeInTheDocument();
     });
 });

@@ -46,7 +46,7 @@ import { hasFreePlanIDs, planIDsPositiveDifference } from '../../core/planIDs';
 import { getPrice } from '../../core/price-helpers';
 import { SubscriptionMode } from '../../core/subscription/constants';
 import { FREE_PLAN } from '../../core/subscription/freePlans';
-import { isSubcriptionCheckForbidden } from '../../core/subscription/helpers';
+import { isSubscriptionCheckForbidden } from '../../core/subscription/helpers';
 import type {
     EnrichedCheckResponse,
     FullPlansMap,
@@ -234,7 +234,7 @@ const checkMultiplePlans = async ({
 }) => {
     const checkSubscriptionData = plansToCheck
         .map((planToCheck) => getSubscriptionDataFromPlanToCheck(planToCheck, billingAddress))
-        .map((datum) => (isSubcriptionCheckForbidden(subscription, datum.Plans, datum.Cycle) ? null : datum));
+        .map((datum) => (isSubscriptionCheckForbidden(subscription, datum.Plans, datum.Cycle) ? null : datum));
 
     const indexesToExcludeFromCheck: number[] = [];
     const truthySubscriptionData = checkSubscriptionData.filter((data, index) => {
