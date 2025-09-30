@@ -32,7 +32,7 @@ import { clearPlanIDs } from '../planIDs';
 import { isFreeSubscription } from '../type-guards';
 import { SubscriptionPlatform, TaxInclusive } from './constants';
 import { FREE_PLAN } from './freePlans';
-import type { Subscription, SubscriptionCheckResponse } from './interface';
+import type { Subscription, SubscriptionCheckForbiddenReason, SubscriptionCheckResponse } from './interface';
 import { SelectedPlan } from './selected-plan';
 
 export function getPlan(subscription: Subscription | FreeSubscription | undefined, service?: PLAN_SERVICES) {
@@ -785,13 +785,13 @@ function isVariableCycleOffer(subscription: Subscription | FreeSubscription | nu
     return !!upcoming && current.Cycle !== upcoming.Cycle && isUpcomingSubscriptionUnpaid(subscription);
 }
 
-export function isSubcriptionCheckForbidden(
+export function isSubscriptionCheckForbiddenWithReason(
     subscription: Subscription | FreeSubscription | null | undefined,
     planIDs: PlanIDs,
     cycle: CYCLE
-): boolean {
+): SubscriptionCheckForbiddenReason {
     if (!subscription) {
-        return false;
+        return { forbidden: false };
     }
 
     const selectedSameAsCurrent =
@@ -813,50 +813,70 @@ export function isSubcriptionCheckForbidden(
 
     const managedExternally = isManagedExternally(subscription);
 
-    const forbiddenSubscriptionMode =
-        /**
-         * Consider the table with possible cases:
-         * |                                | selectedSameAsCurrent | selectedSameAsUpcoming        |
-         * |--------------------------------|-----------------------|-------------------------------|
-         * | hasVariableCycleOffer          | check forbidden       | check forbidden               |
-         * | hasUpcomingPrepaidSubscription | check forbidden       | check forbidden               |
-         * | hasNoUpcomingSubscription      | check forbidden       | n/a                           |
-         * | hasScheduledUnpaidDowncycling  | check allowed         | check forbidden               |
-         *
-         * "check forbidden" means that the /check endpoint will return an error.
-         * "check allowed" means that the /check endpoint will work as expected.
-         *
-         * hasVariableCycleOffer - when user has an automatic scheduled unpaid subscription.
-         * For example, when user subscribes to vpn2024 24m then the backend will create a scheduled 12m subscription.
-         *
-         * hasUpcomingPrepaidSubscription - when user manually created a scheduled subscription and paid for it.
-         * This can happen when user subscribes to a higher cycle.
-         * For example, if user has 1m bundle2022 and subscribes to 12m bundle2022,
-         * then we will charge user immediately for 12m subscription, and it will start only when the 1m ends.
-         *
-         * hasNoUpcomingSubscription - the simplest case. Just subscription.
-         *
-         * hasScheduledUnpaidDowncycling - this is a special case for some addons like Scribe.
-         * If user has a B2B plan with scribe addons and they want to decrease the number of scribes
-         * then it creates a scheduled subscription with lower number of scribes.
-         *
-         * The four cases described above are handled by the first two disjunctions.
-         *
-         * The third disjunction is a special case for multi-subs. If user has a mobile subscription (for example, Lumo)
-         * and selects the same plan on web (any cycle) then the check is forbidden. Users must not be able to modify
-         * the subscription that's managed externally. In some cases, they should be allowed to create a new one, and
-         * we call it multi-subs.
-         *
-         * P2-634 is the relevant ticket.
-         */
-        (selectedSameAsCurrent && !isScheduledUnpaidModification) ||
-        selectedSameAsUpcoming ||
-        (selectedSameAsCurrentIgnorringCycle && managedExternally);
+    /**
+     * Consider the table with possible cases: |                                | selectedSameAsCurrent |
+     * selectedSameAsUpcoming        |
+     * |--------------------------------|-----------------------|-------------------------------|
+     * | hasVariableCycleOffer          | check forbidden       | check forbidden               | |
+     * hasUpcomingPrepaidSubscription | check forbidden       | check forbidden               | |
+     * hasNoUpcomingSubscription      | check forbidden       | n/a                           | |
+     * hasScheduledUnpaidDowncycling  | check allowed         | check forbidden               |
+     *
+     * "check forbidden" means that the /check endpoint will return an error. "check allowed" means that the /check
+     * endpoint will work as expected.
+     *
+     * hasVariableCycleOffer - when user has an automatic scheduled unpaid subscription. For example, when user
+     * subscribes to vpn2024 24m then the backend will create a scheduled 12m subscription.
+     *
+     * hasUpcomingPrepaidSubscription - when user manually created a scheduled subscription and paid for it. This can
+     * happen when user subscribes to a higher cycle. For example, if user has 1m bundle2022 and subscribes to 12m
+     * bundle2022, then we will charge user immediately for 12m subscription, and it will start only when the 1m ends.
+     *
+     * hasNoUpcomingSubscription - the simplest case. Just subscription.
+     *
+     * hasScheduledUnpaidDowncycling - this is a special case for some addons like Scribe. If user has a B2B plan with
+     * scribe addons and they want to decrease the number of scribes then it creates a scheduled subscription with lower
+     * number of scribes.
+     *
+     * The four cases described above are handled by: `(selectedSameAsCurrent && !isScheduledUnpaidModification) ||
+     * selectedSameAsUpcoming`
+     *
+     * The condition `selectedSameAsCurrentIgnorringCycle && managedExternally` is a special case for multi-subs. If
+     * user has a mobile subscription (for example, Lumo) and selects the same plan on web (any cycle) then the check is
+     * forbidden. Users must not be able to modify the subscription that's managed externally. In some cases, they
+     * should be allowed to create a new one, and we call it multi-subs.
+     *
+     * P2-634 is the relevant ticket.
+     *
+     * Additionally, some modification can be forbidden according to the `isForbiddenModification` function. At the time
+     * of writing this comment, it was forbidden to buy multi-user personal plans (Duo, Family, etc) while having an
+     * externally managed Lumo subscription.
+     *
+     */
 
-    // It's forbidden to change from certain plans to other plans. This constant reflects that.
+    if ((selectedSameAsCurrent && !isScheduledUnpaidModification) || selectedSameAsUpcoming) {
+        return { forbidden: true, reason: 'already-subscribed' };
+    }
+
+    if (selectedSameAsCurrentIgnorringCycle && managedExternally) {
+        return { forbidden: true, reason: 'already-subscribed-externally' };
+    }
+
     const forbiddenModificationAttempt = isForbiddenModification(subscription, planIDs);
 
-    return forbiddenSubscriptionMode || forbiddenModificationAttempt;
+    if (forbiddenModificationAttempt) {
+        return { forbidden: true, reason: 'offer-not-available' };
+    }
+
+    return { forbidden: false };
+}
+
+export function isSubscriptionCheckForbidden(
+    subscription: Subscription | FreeSubscription | null | undefined,
+    planIDs: PlanIDs,
+    cycle: CYCLE
+): boolean {
+    return isSubscriptionCheckForbiddenWithReason(subscription, planIDs, cycle).forbidden;
 }
 
 /**

@@ -1,6 +1,8 @@
+import type { PropsWithChildren } from 'react';
+
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Banner, BannerVariants, Button } from '@proton/atoms';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -9,6 +11,7 @@ import {
     type Currency,
     PAYMENT_METHOD_TYPES,
     type Subscription,
+    type SubscriptionCheckForbiddenReason,
     type SubscriptionCheckResponse,
     SubscriptionMode,
     isTrial,
@@ -16,6 +19,7 @@ import {
 import { EditCardModal, PayButton, type TaxCountryHook } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 
+import { getSubscriptionManagerName } from './InAppPurchaseModal';
 import type { SUBSCRIPTION_STEPS } from './constants';
 
 type Props = {
@@ -26,11 +30,19 @@ type Props = {
     checkResult?: SubscriptionCheckResponse;
     loading?: boolean;
     disabled?: boolean;
-    paymentForbidden?: boolean;
+    paymentForbidden: SubscriptionCheckForbiddenReason;
     subscription: Subscription;
     hasPaymentMethod: boolean;
     taxCountry: TaxCountryHook;
     paymentFacade: PaymentFacade;
+};
+
+const InfoBanner = ({ children }: PropsWithChildren) => {
+    return (
+        <Banner className="mt-2 mb-4" variant={BannerVariants.INFO}>
+            {children}
+        </Banner>
+    );
 };
 
 const SubscriptionSubmitButton = ({
@@ -49,7 +61,7 @@ const SubscriptionSubmitButton = ({
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const { APP_NAME } = useConfig();
 
-    if (paymentForbidden) {
+    if (paymentForbidden.forbidden) {
         if (isTrial(subscription) && !hasPaymentMethod) {
             return (
                 <>
@@ -62,6 +74,8 @@ const SubscriptionSubmitButton = ({
                     >
                         {c('Action').t`Add credit / debit card`}
                     </Button>
+                    <InfoBanner>{c('Payments')
+                        .t`Payment method required for the subscription to be activated after the trial ends.`}</InfoBanner>
                     {renderCreditCardModal && (
                         <EditCardModal enableRenewToggle={false} onMethodAdded={onDone} {...creditCardModalProps} />
                     )}
@@ -69,18 +83,45 @@ const SubscriptionSubmitButton = ({
             );
         }
 
+        const info = (() => {
+            let text = '';
+
+            if (paymentForbidden.reason === 'already-subscribed') {
+                text = c('Payments').t`You already have a subscription to this plan.`;
+            } else if (paymentForbidden.reason === 'already-subscribed-externally') {
+                const subscriptionPlatform = getSubscriptionManagerName(subscription.External);
+                // translator: subscription platform is either "Apple App Store" or "Google Play".
+                text = c('Payments')
+                    .t`You already have a subscription to this plan. You can change your subscription on ${subscriptionPlatform}.`;
+            } else if (paymentForbidden.reason === 'offer-not-available') {
+                text = c('Payments').t`This offer is not available with your current plan.`;
+            }
+
+            if (!text) {
+                return null;
+            }
+
+            return <InfoBanner>{text}</InfoBanner>;
+        })();
+
         // If the user is on the ProtonAccountLite app, the user should not be able to close the modal
         if (APP_NAME === APPS.PROTONACCOUNTLITE) {
             return (
-                <Button color="norm" className={className} disabled={true} loading={loading}>{c('Action')
-                    .t`Done`}</Button>
+                <>
+                    <Button color="norm" className={className} disabled={true} loading={loading}>{c('Action')
+                        .t`Done`}</Button>
+                    {info}
+                </>
             );
         }
 
         return (
-            <Button color="norm" className={className} disabled={disabled} loading={loading} onClick={onDone}>
-                {c('Action').t`Close`}
-            </Button>
+            <>
+                <Button color="norm" className={className} disabled={disabled} loading={loading} onClick={onDone}>
+                    {c('Action').t`Close`}
+                </Button>
+                {info}
+            </>
         );
     }
 

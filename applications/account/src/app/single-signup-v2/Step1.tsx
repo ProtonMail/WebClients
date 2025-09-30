@@ -47,7 +47,7 @@ import {
     getPlanFromPlanIDs,
     getPlansMap,
     isRegionalCurrency,
-    isSubcriptionCheckForbidden,
+    isSubscriptionCheckForbidden,
     switchPlan,
 } from '@proton/payments';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -260,7 +260,7 @@ const Step1 = ({
         coupon?: string;
         trial?: boolean;
     }): Promise<EnrichedCheckResponse> => {
-        if (isSubcriptionCheckForbidden(subscription, values.planIDs, values.cycle)) {
+        if (isSubscriptionCheckForbidden(subscription, values.planIDs, values.cycle)) {
             return getOptimisticCheckResult({
                 plansMap: model.plansMap,
                 planIDs: values.planIDs,
