@@ -58,7 +58,7 @@ export const useSpotlightCategoriesCustomization = ({ showEditModal }: Props) =>
         showEditModal();
     };
 
-    const menuIcon = <Icon name="sliders-2" alt={c('Action').t`Edit categories`} />;
+    const menuIcon = <Icon key="menuIcon" name="sliders-2" alt={c('Action').t`Edit categories`} />;
     const spotlightContent = (
         <div>
             <h2 className="text-semibold text-rg mb-2">{c('Title').t`Customize categories to fit your needs`}</h2>
