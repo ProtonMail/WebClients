@@ -54,9 +54,7 @@ const useStartupModals = () => {
     return [trialEndedModal, welcomeModal, docsModal, reminderModal, referralModal, lightLabellingFeatureModal];
 };
 
-const DriveStartupModals = () => {
+export const DriveStartupModals = () => {
     const modals = useStartupModals();
     return <StartupModals modals={modals} />;
 };
-
-export default DriveStartupModals;

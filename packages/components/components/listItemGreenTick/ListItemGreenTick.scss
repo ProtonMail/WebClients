@@ -1,0 +1,14 @@
+.list-item-green-tick {
+	line-height: 1.5em;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		block-size: 16px;
+		inline-size: 8px;
+		border-block-end: 2px solid var(--signal-success);
+		border-inline-end: 2px solid var(--signal-success);
+		transform: rotate(45deg);
+		margin-inline-end: 16px;
+	}
+}

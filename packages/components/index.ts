@@ -24,6 +24,7 @@ export { default as Breadcrumb } from './components/breadcrumb/Breadcrumb';
 export { default as ButtonGroup } from './components/button/ButtonGroup';
 export { default as Copy } from './components/button/Copy';
 export { default as FileButton } from './components/button/FileButton';
+export { ButtonWithTextAndIcon } from './components/button/ButtonWithTextAndIcon';
 export { default as FloatingButton } from './components/button/FloatingButton';
 export { default as SidebarExpandButton } from './components/button/SidebarExpandButton';
 export { default as TwitterButton } from './components/button/TwitterButton';
@@ -167,6 +168,7 @@ export { default as InputFieldStacked } from './components/inputFieldStacked/Inp
 export { default as InputFieldStackedGroup } from './components/inputFieldStacked/InputFieldStackedGroup';
 export { default as Label } from './components/label/Label';
 export { default as LabelStack } from './components/labelStack/LabelStack';
+export { ListItemGreenTick } from './components/listItemGreenTick/ListItemGreenTick';
 export { default as AppLink } from './components/link/AppLink';
 export type { AppLinkProps } from './components/link/AppLink';
 export { default as Info } from './components/link/Info';

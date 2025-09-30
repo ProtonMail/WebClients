@@ -23,6 +23,7 @@ import { useFolderStore } from './useFolder.store';
 
 export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
 
+// SDK-ready counterpart of DriveViewDeprecated
 export function FolderView() {
     const [renderAlbumOnboardingModal] = useAlbumOnboardingModal();
     const { activeFolder } = useActiveShare();

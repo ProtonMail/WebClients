@@ -16,6 +16,7 @@ import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import config from '../config';
+import { useRunningFreeUploadTimer } from '../hooks/drive/freeUpload/useRunningFreeUploadTimer';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
@@ -36,7 +37,7 @@ import { VolumeTypeForEvents } from '../store/_volumes';
 import { setPublicRedirectSpotlightToPending } from '../utils/publicRedirectSpotlight';
 import { getTokenFromSearchParams } from '../utils/url/token';
 import DevicesContainer from './DevicesContainer';
-import { FolderContainerWrapper } from './FolderContainer';
+import { FolderContainerWrapper } from './FolderContainerWrapper';
 import LocationErrorBoundary from './LocationErrorBoundary';
 import NoAccessContainer from './NoAccessContainer';
 import { SearchContainer } from './SearchContainer';
@@ -50,13 +51,15 @@ const DEFAULT_VOLUME_INITIAL_STATE: {
     volumeId: string | undefined;
     shareId: string | undefined;
     linkId: string | undefined;
+    createTime: number | undefined;
 } = {
     volumeId: undefined,
     shareId: undefined,
     linkId: undefined,
+    createTime: undefined,
 };
 
-const InitContainer = () => {
+function InitContainer() {
     const [user] = useUser();
     const { init: initDrive, drive } = useDrive();
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
@@ -107,8 +110,8 @@ const InitContainer = () => {
                     redirectToPublicPage(token);
                 }
 
-                await getDefaultShare().then(({ shareId, rootLinkId: linkId, volumeId }) =>
-                    setDefaultShareRoot({ volumeId, shareId, linkId })
+                await getDefaultShare().then(({ shareId, rootLinkId: linkId, volumeId, createTime }) =>
+                    setDefaultShareRoot({ volumeId, shareId, linkId, createTime })
                 );
 
                 // This is needed for the usePhotos provider
@@ -155,6 +158,8 @@ const InitContainer = () => {
         };
     }, []);
 
+    const freeUploadOverModal = useRunningFreeUploadTimer(defaultShareRoot.createTime);
+
     if (loading) {
         return (
             <>
@@ -194,6 +199,7 @@ const InitContainer = () => {
             />
         </>
     );
+
     return (
         <ActiveShareProvider defaultShareRoot={rootShare}>
             <ModalsChildren />
@@ -206,10 +212,11 @@ const InitContainer = () => {
                     <Route path="/u/:clientId">{routes}</Route>
                     {routes}
                 </Routes>
+                {freeUploadOverModal}
             </DriveWindow>
         </ActiveShareProvider>
     );
-};
+}
 
 const MainContainer: FunctionComponent = () => {
     const location = useLocation();
