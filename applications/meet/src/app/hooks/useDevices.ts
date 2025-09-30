@@ -1,50 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useMediaDevices } from '@livekit/components-react';
 
-import { useDevicePermissionsContext } from '../contexts/DevicePermissionsContext';
 import { getStoredDevices } from '../utils/deviceStorage';
-
-const getDevices = async (kind: MediaDeviceKind) => {
-    try {
-        const devices = await navigator.mediaDevices.enumerateDevices();
-
-        return devices
-            .filter((d) => d.kind === kind && !d.label?.toLocaleLowerCase()?.includes('zoom'))
-            .sort((a) => {
-                return a.deviceId === 'default' ? -1 : 1;
-            });
-    } catch (err) {
-        return [];
-    }
-};
+import { filterDevices } from '../utils/filterDevices';
 
 export const useDevices = () => {
-    const [cameras, setCameras] = useState<MediaDeviceInfo[]>([]);
-    const [microphones, setMicrophones] = useState<MediaDeviceInfo[]>([]);
-    const [speakers, setSpeakers] = useState<MediaDeviceInfo[]>([]);
-
-    const {
-        devicePermissions: { camera: cameraPermission, microphone: microphonePermission },
-    } = useDevicePermissionsContext();
-
-    const updateAllDevices = async () => {
-        setCameras(await getDevices('videoinput'));
-        setMicrophones(await getDevices('audioinput'));
-        setSpeakers(await getDevices('audiooutput'));
-    };
-
-    useEffect(() => {
-        void updateAllDevices();
-    }, [cameraPermission, microphonePermission]);
-
-    useEffect(() => {
-        navigator.mediaDevices.addEventListener('devicechange', updateAllDevices);
-
-        return () => {
-            if (navigator.mediaDevices && navigator.mediaDevices.removeEventListener) {
-                navigator.mediaDevices.removeEventListener('devicechange', updateAllDevices);
-            }
-        };
-    }, []);
+    const cameras = filterDevices(useMediaDevices({ kind: 'videoinput' }));
+    const microphones = filterDevices(useMediaDevices({ kind: 'audioinput' }));
+    const speakers = filterDevices(useMediaDevices({ kind: 'audiooutput' }));
 
     const storedDevices = getStoredDevices();
 

@@ -7,6 +7,7 @@ import { useLoading } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { SideBar } from '../../atoms/SideBar/SideBar';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLocalParticipantHost } from '../../hooks/useIsLocalParticipantHost';
@@ -15,20 +16,9 @@ import { MeetingSideBars } from '../../types';
 import './Settings.scss';
 
 export const Settings = () => {
-    const {
-        disableVideos,
-        setDisableVideos,
-        backgroundBlur,
-        toggleBackgroundBlur,
-        isVideoEnabled,
-        videoDeviceId,
-        noiseFilter,
-        toggleNoiseFilter,
-        isAudioEnabled,
-        audioDeviceId,
-        handleMeetingLockToggle,
-        isMeetingLocked,
-    } = useMeetContext();
+    const { disableVideos, setDisableVideos, handleMeetingLockToggle, isMeetingLocked } = useMeetContext();
+
+    const { backgroundBlur, toggleBackgroundBlur, noiseFilter, toggleNoiseFilter } = useMediaManagementContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
 
@@ -93,12 +83,7 @@ export const Settings = () => {
                             <Toggle
                                 id="blur-background"
                                 checked={backgroundBlur}
-                                onChange={() =>
-                                    toggleBackgroundBlur({
-                                        isEnabled: isVideoEnabled,
-                                        videoDeviceId: videoDeviceId ?? '',
-                                    })
-                                }
+                                onChange={() => toggleBackgroundBlur()}
                                 className={clsx('settings-toggle', backgroundBlur ? '' : 'settings-toggle-inactive')}
                                 aria-label={c('Alt').t`Blur background`}
                             />
@@ -114,9 +99,7 @@ export const Settings = () => {
                             <Toggle
                                 id="noise-filter"
                                 checked={noiseFilter}
-                                onChange={() =>
-                                    toggleNoiseFilter({ isEnabled: isAudioEnabled, audioDeviceId: audioDeviceId ?? '' })
-                                }
+                                onChange={() => toggleNoiseFilter()}
                                 className={clsx('settings-toggle', noiseFilter ? '' : 'settings-toggle-inactive')}
                                 aria-label={c('Alt').t`Noise filter`}
                             />

@@ -5,8 +5,7 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 
-import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
-import { useMeetContext } from '../../contexts/MeetContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useRequestPermission } from '../../hooks/useRequestPermission';
 import { PermissionPromptStatus } from '../../types';
@@ -14,11 +13,9 @@ import { PermissionPromptStatus } from '../../types';
 import './PermissionRequest.scss';
 
 export const PermissionRequest = () => {
-    const { setAudioDeviceId, setVideoDeviceId } = useMeetContext();
-
     const { permissionPromptStatus, setPermissionPromptStatus } = useUIStateContext();
 
-    const { setDevicePermissions } = useDevicePermissionsContext();
+    const { toggleVideo, toggleAudio, setDevicePermissions } = useMediaManagementContext();
 
     const requestDevicePermission = useRequestPermission();
 
@@ -38,9 +35,9 @@ export const PermissionRequest = () => {
 
             if (firstDevice) {
                 if (deviceType === 'audio') {
-                    setAudioDeviceId(firstDevice.deviceId);
+                    void toggleAudio({ audioDeviceId: firstDevice.deviceId });
                 } else {
-                    setVideoDeviceId(firstDevice.deviceId);
+                    void toggleVideo({ videoDeviceId: firstDevice.deviceId });
                 }
             }
 
