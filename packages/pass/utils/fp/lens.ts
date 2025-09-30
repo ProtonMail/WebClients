@@ -1,3 +1,5 @@
+import type { Maybe } from '@proton/pass/types';
+
 type Obj = Record<string, any>;
 
 interface PropFn {
@@ -17,19 +19,10 @@ export const prop: PropFn =
     <V extends Obj>(obj: V) =>
         keys.reduce((acc, key) => acc[key], obj);
 
-export const withPayload =
-    <T extends { payload: any }, F extends (payload: T['payload']) => any>(fn: F) =>
-    (obj: T): ReturnType<F> =>
-        fn(obj.payload);
+export const cons =
+    <T>(val: T) =>
+    () =>
+        val;
 
-export const withPayloadLens =
-    <
-        T extends { payload: { [key: string]: any } },
-        K extends keyof T['payload'],
-        F extends (payload: T['payload'][K]) => any,
-    >(
-        prop: K,
-        fn: F
-    ) =>
-    (obj: T): ReturnType<F> =>
-        fn(obj.payload[prop as any]);
+export const head = <T>(arr: ArrayLike<T>): Maybe<T> => arr?.[0];
+export const last = <T>(arr: ArrayLike<T>): Maybe<T> => arr?.[arr.length - 1];
