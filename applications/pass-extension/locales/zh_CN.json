@@ -56,6 +56,9 @@
       "Advanced options": [
         "高级选项"
       ],
+      "and": [
+        "和"
+      ],
       "Apply lifetime coupon code": [
         "使用终身优惠券代码"
       ],
@@ -538,9 +541,6 @@
       ],
       "See members": [
         "查看成员"
-      ],
-      "Select": [
-        "选择"
       ],
       "Send email": [
         "发送邮件"
@@ -1070,9 +1070,6 @@
       "PIN codes do not match": [
         "两次输入的 PIN 码不一致"
       ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "请授予 ${ PASS_APP_NAME } 必要的扩展权限以便继续"
-      ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "请固定扩展名或选择“不固定继续”。"
       ],
@@ -1477,9 +1474,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "请选择一个保存的密钥以登录到 ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "选择您喜欢的外观和感觉。"
-      ],
       "Click the icon to open it anytime.": [
         "点击图标即可随时打开。"
       ],
@@ -1765,9 +1759,6 @@
       "Loading...": [
         "加载中..."
       ],
-      "Make it your own": [
-        "让它属于您自己"
-      ],
       "Manager": [
         "管理员"
       ],
@@ -1785,6 +1776,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "正在从 \"${ payload.content.name }\" 移动所有项目"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"

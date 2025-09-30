@@ -59,6 +59,9 @@
       "Allow access": [
         "Tillåt åtkomst"
       ],
+      "and": [
+        "och"
+      ],
       "Apply lifetime coupon code": [
         "Tillämpa livstids kupongkod"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Se medlemmar"
       ],
-      "Select": [
-        "Välj"
-      ],
       "Send email": [
         "Skicka e-post"
       ],
@@ -729,9 +729,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Fråga mig inte igen"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Vill du att ditt urklipp rensas automatiskt efter ${ timeoutDurationHumanReadable }?"
       ]
@@ -1095,11 +1092,14 @@
       "Passphrase is incorrect": [
         "Lösenfras är fel"
       ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Behörighet nekad för ${ domainsJSX } webbplatsåtkomst."
+      ],
+      "Permission denied for website access.": [
+        "Behörighet nekad för webbplatsåtkomst."
+      ],
       "PIN codes do not match": [
         "PIN-koder matchar inte"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Bevilja ${ PASS_APP_NAME } de nödvändiga tilläggsbehörigheterna för att fortsätta"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fäst tillägget eller välj “Fortsätt utan att fästa“."
@@ -1386,6 +1386,9 @@
       "Access successfully confirmed": [
         "Åtkomst bekräftad"
       ],
+      "access to ${ domains }.": [
+        "åtkomst till ${ domains }."
+      ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Åtkomst till ${ PASS_APP_NAME } kommer alltid att kräva ditt ${ BRAND_NAME }-lösenord."
       ],
@@ -1517,9 +1520,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Välj en sparad passkey för att logga in på ${ domain }"
-      ],
-      "Choose your preferred look and feel.": [
-        "Välj ditt föredragna utseende och känsla."
       ],
       "Click the icon to open it anytime.": [
         "Klicka på ikonen för att öppna den när som helst."
@@ -1812,9 +1812,6 @@
       "Loading...": [
         "Laddar in …"
       ],
-      "Make it your own": [
-        "Gör den till din egen"
-      ],
       "Manager": [
         "Ägare"
       ],
@@ -1833,10 +1830,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -1882,6 +1875,9 @@
       ],
       "Open the Extensions menu": [
         "Öppna tilläggsmenyn"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Öppna Safaris inställningar, hitta ${ PASS_APP_NAME }, gå till “Behörigheter“och aktivera webbplatsbehörigheter."
       ],
       "Owner": [
         "Ägare"

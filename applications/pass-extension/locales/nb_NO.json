@@ -59,6 +59,9 @@
       "Allow access": [
         "Tillat tilgang"
       ],
+      "and": [
+        "og"
+      ],
       "Apply lifetime coupon code": [
         "Bruk livstidskupongkode"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Vis medlemmer"
       ],
-      "Select": [
-        "Velg"
-      ],
       "Send email": [
         "Send e-post"
       ],
@@ -729,9 +729,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Ikke spør igjen"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Vil du at utklippstavlen skal tømmes automatisk etter ${ timeoutDurationHumanReadable }?"
       ]
@@ -1056,6 +1053,9 @@
       "Importing items failed": [
         "Import av elementer mislyktes"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "For å fortsette trenger ${ PASS_APP_NAME } disse utvidelsestillatelsene: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Inaktive sikre koblinger kunne ikke fjernes."
       ],
@@ -1095,11 +1095,14 @@
       "Passphrase is incorrect": [
         "Passfrase er feil"
       ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Ingen nettstedtilgang for domene ${ domainsJSX }."
+      ],
+      "Permission denied for website access.": [
+        "Tillatelse nektet for nettstedstilgang."
+      ],
       "PIN codes do not match": [
         "PIN-kodene samsvarer ikke"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Gi ${ PASS_APP_NAME } de nødvendige utvidelsestillatelsene for å fortsette."
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fest utvidelsen eller velg \"fortsett uten å feste\"."
@@ -1386,6 +1389,9 @@
       "Access successfully confirmed": [
         "Tilgang bekreftet"
       ],
+      "access to ${ domains }.": [
+        "tilgang til ${ domains }."
+      ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Tilgang til ${ PASS_APP_NAME } vil alltid kreve ${ BRAND_NAME }-passordet ditt."
       ],
@@ -1520,9 +1526,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Velg en lagret tilgangsnøkkel for å logge på ${ domain }"
-      ],
-      "Choose your preferred look and feel.": [
-        "Velg ditt foretrukne utseende og følelse."
       ],
       "Click the icon to open it anytime.": [
         "Klikk på ikonet for å åpne det når som helst."
@@ -1818,9 +1821,6 @@
       "Loading...": [
         "Laster..."
       ],
-      "Make it your own": [
-        "Gjør det til ditt eget"
-      ],
       "Manager": [
         "Administrator"
       ],
@@ -1840,10 +1840,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
-      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -1855,6 +1851,9 @@
       ],
       "Moving items to trash": [
         "Flytter elementer til papirkurven"
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Gå til nettleserens utvidelsesinnstillinger og aktivere nettstedstillatelser for ${ PASS_SHORT_APP_NAME }."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Trenger du å sende e-post til noen, men vil ikke at de skal se e-postadressen din? Sett opp et kontaktalias."
@@ -1888,6 +1887,9 @@
       ],
       "Open the Extensions menu": [
         "Åpne utvidelsesmenyen"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Åpne Safari-innstillingene, finn ${ PASS_APP_NAME }, gå til \"Tillatelser\" og aktiver nettstedstillatelser."
       ],
       "Owner": [
         "Eier"
@@ -2093,6 +2095,12 @@
       ],
       "Restoring trashed items...": [
         "Gjenoppretter elementer fra papirkurven..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Høyreklikk på utvidelsesikonet og velg \"Administrer utvidelse\". Naviger til \"Tillatelser og data\" og aktiver nettstedstillatelser."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Høyreklikk på utvidelsesikonet og velg \"Administrer utvidelse\". Naviger til \"Nettstedstilgang\" og aktiver nettstedtstillatelser."
       ],
       "Save login": [
         "Lagre pålogging"

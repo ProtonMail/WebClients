@@ -56,6 +56,9 @@
       "Advanced options": [
         "Opcje zaawansowane"
       ],
+      "and": [
+        "i"
+      ],
       "Apply lifetime coupon code": [
         "Zastosuj kod kuponu dożywotniego konta"
       ],
@@ -541,9 +544,6 @@
       ],
       "See members": [
         "Pokaż użytkowników"
-      ],
-      "Select": [
-        "Wybierz"
       ],
       "Send email": [
         "Wyślij wiadomość"
@@ -1088,9 +1088,6 @@
       "PIN codes do not match": [
         "Kody PIN nie pasują do siebie"
       ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Aby kontynuować, przyznaj rozszerzeniu ${ PASS_APP_NAME } niezbędne uprawnienia."
-      ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Przypnij rozszerzenie lub kliknij \"Kontynuuj bez przypinania\"."
       ],
@@ -1543,9 +1540,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Wybierz zapisany klucz dostępu, aby zalogować się do ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Wybierz preferowany wygląd i styl."
-      ],
       "Click the icon to open it anytime.": [
         "Kliknij ikonę, aby otworzyć."
       ],
@@ -1840,9 +1834,6 @@
       "Loading...": [
         "Ładowanie..."
       ],
-      "Make it your own": [
-        "Stwórz własny"
-      ],
       "Manager": [
         "Menedżer"
       ],
@@ -1865,10 +1856,7 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
-        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"

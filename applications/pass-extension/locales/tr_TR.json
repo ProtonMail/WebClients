@@ -59,6 +59,9 @@
       "Allow access": [
         "Erişime izin ver"
       ],
+      "and": [
+        "ve"
+      ],
       "Apply lifetime coupon code": [
         "Ömür boyu geçerli kupon kodunu uygulayın"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Üyeleri görüntüle"
       ],
-      "Select": [
-        "Seçin"
-      ],
       "Send email": [
         "E-posta gönder"
       ],
@@ -729,9 +729,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Bir daha sorma"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Panonuzun ${ timeoutDurationHumanReadable } sonra otomatik olarak temizlenmesini ister misiniz?"
       ]
@@ -1097,9 +1094,6 @@
       ],
       "PIN codes do not match": [
         "PIN kodu ile onayı aynı değil"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "İlerlemek için lütfen ${ PASS_APP_NAME } için gerekli eklenti izinlerini verin"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Lütfen eklentiyi sabitleyin ya da \"Sabitlemeden ilerle\" olarak seçin."
@@ -1521,9 +1515,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain } oturumu açmak için kaydedilmiş bir geçiş anahtarı seçin"
       ],
-      "Choose your preferred look and feel.": [
-        "Kullanmak istediğiniz görünüm ve duyguyu seçin."
-      ],
       "Click the icon to open it anytime.": [
         "İstediğiniz zaman açmak için simgeye tıklayın."
       ],
@@ -1818,9 +1809,6 @@
       "Loading...": [
         "Yükleniyor..."
       ],
-      "Make it your own": [
-        "Size özel yapın"
-      ],
       "Manager": [
         "Yönetici"
       ],
@@ -1841,8 +1829,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
