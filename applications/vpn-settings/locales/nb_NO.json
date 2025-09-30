@@ -77,6 +77,9 @@
       "Add external address": [
         "Legg til ekstern adresse"
       ],
+      "add more seats": [
+        "legg til flere lisenser"
+      ],
       "Add PayPal": [
         "Legg til PayPal"
       ],
@@ -998,6 +1001,9 @@
       "User": [
         "Bruker"
       ],
+      "Users and addresses": [
+        "Brukere og adresser"
+      ],
       "Verify": [
         "Verifiser"
       ],
@@ -1104,6 +1110,12 @@
       "Disallow unsigned mail": [
         "Forby usignert post"
       ],
+      "Disconnect": [
+        "Koble fra"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Koble fra adresse “${ emailAddress }”"
+      ],
       "Edit": [
         "Rediger"
       ],
@@ -1127,6 +1139,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Generer manglende nøkler for adresse “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Gi tillatelse"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Gi tillatelse til “${ emailAddress }”"
       ],
       "Reconnect": [
         "Koble til på nytt"
@@ -1171,6 +1189,9 @@
       ],
       "Orphan": [
         "Foreldreløs"
+      ],
+      "Permission revoked": [
+        "Tillatelse tilbakekalt"
       ]
     },
     "Admin": {
@@ -4067,6 +4088,11 @@
         "Postnummer kreves"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Logg på med den samme Gmail-adressen du opprinnelig koblet til"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Det oppstod en feil under lesing av filen ${ formattedFilename }. Filen har ikke riktig format."
@@ -5557,6 +5583,15 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importer dine eksisterende koder** fra andre 2FA-apper, som Google Authenticator"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Trinn 1:** Inviter vennene dine til ${ BRAND_NAME } med vervekoblingen."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Trinn 2:** Vennene dine får 2 uker gratis på planene deres."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Trinn 3:** Få ${ referrerRewardAmount } i kreditter for hver person som abonnerer på en plan."
+      ],
       "**Sync codes** to all your devices": [
         "**Synkroniser koder** til alle enhetene dine"
       ],
@@ -5625,6 +5660,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Legg til tjener (${ availableAddedCount }) tilgjengelig",
         "Legg til tjenere (${ availableAddedCount }) tilgjengelige"
+      ],
+      "Add video conferencing links to calendar invitations": [
+        "Legg til videokonferansekoblinger i kalenderinvitasjoner"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Legg til navn og logo for å opprette en mer personlig opplevelse for organisasjonen."
@@ -6189,6 +6227,9 @@
       "Groups": [
         "Grupper"
       ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Hjelper med å skrive, svare på og korrekturlese e-poster. Hvis deaktivert, vil kun administratorer ha tilgang. Administrer for individuelle brukere i ${ userAndAddress } eller ${ addMoreSeats }"
+      ],
       "here": [
         "her"
       ],
@@ -6453,6 +6494,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Administrer hvilke ${ BRAND_NAME }-applikasjoner medlemmene i organisasjonen har tilgang til. Hvis deaktivert, vil bare administratorer ha tilgang."
+      ],
+      "Manage which features the members of your organization can access.": [
+        "Administrer hvilke funksjoner medlemmene i organisasjonen din kan få tilgang til."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Angi denne informasjonen manuelt i autentiseringsappen for å konfigurere kontoen din. ${ switchButton }."
@@ -7782,10 +7826,6 @@
       "${ nbDay } day": [
         "${ nbDay } dag",
         "${ nbDay } dager"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } av ${ MaxAddresses } e-postadresse",
-        "${ UsedAddresses } av ${ MaxAddresses } e-postadresser"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
@@ -10800,6 +10840,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
+      ],
       "Billing Country": [
         "Faktureringsland"
       ],
@@ -10860,7 +10903,7 @@
       "Taxes": [
         "Avgifter"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "vilkår og betingelser"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -11340,6 +11383,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per verving"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Hvis du avbryter før denne datoen,** vil du bli **nedgradert** til ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } når prøveperioden avsluttes."
       ],
@@ -11354,6 +11400,18 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Kos deg gratis med **${ planTitle }** frem til **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Inviter venner. Få kreditter."
+      ],
+      "Refer friends": [
+        "Verv venner"
+      ],
+      "Start earning credits": [
+        "Begynn å tjene kreditter"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Du kan få opptil **${ maxRewardAmount }** i kreditt."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Du har **${ daysRemaining } dag igjen** til å utforske alle de kraftige funksjonene som **${ planTitle }** har å tilby.",
@@ -14437,6 +14495,9 @@
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videokonferanser med ${ MEET_APP_NAME }"
       ],
+      "Video conferencing with Zoom": [
+        "Videokonferanser med Zoom"
+      ],
       "View organization events by upgrading to Professional": [
         "Se organisasjonsarrangementer ved å oppgradere til Professional"
       ],
@@ -14544,6 +14605,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "En endring på Gmail-siden blokkerer ${ BRAND_NAME } fra å koble til. Gi tillatelse til å gjenopprette e-postfunksjonaliteten"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Administratorer kan administrere brukerkontoer og gi administratorrettigheter til andre brukere. Bare den primære administratoren kan redigere planen for organisasjonen."
       ],
@@ -14618,9 +14682,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }."
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "Adressen er koblet fra. Sending og mottak av meldinger er satt på pause. Koble til på nytt for å aktivere denne adressen igjen."
       ],
       "The import will start with the most recent messages.": [
         "Importen starter med de nyeste meldingene."
