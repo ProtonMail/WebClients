@@ -39,7 +39,6 @@ const useInitIframeContent = ({
     iframeSVG,
 }: Props) => {
     const [initStatus, setInitStatus] = useState<'start' | 'done'>('start');
-    const hasBeenDone = useRef<boolean>(false);
     const iframeRootDivRef = useRef<HTMLDivElement>();
     const prevContentRef = useRef<string>(content);
     const themeIndex = theme.information.theme;
@@ -76,9 +75,8 @@ const useInitIframeContent = ({
             return;
         }
 
-        if (initStatus === 'done' && onContentLoaded && hasBeenDone.current === false) {
+        if (initStatus === 'done' && onContentLoaded) {
             onReady?.(iframeRef);
-            hasBeenDone.current = true;
 
             if (isMounted() && iframeRootDivRef.current) {
                 onContentLoaded(iframeRootDivRef.current);
