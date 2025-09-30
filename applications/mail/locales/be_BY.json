@@ -637,7 +637,7 @@
         "Атрымаць праверачны код"
       ],
       "Go to ${ planOrAppName }": [
-        "Перайдзіце ў ${ planOrAppName }"
+        "Перайсці ў ${ planOrAppName }"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -1457,6 +1457,12 @@
       ],
       "Toggle Contacts app": [
         "Пераключыць праграму Кантакты"
+      ],
+      "Toggle notifications": [
+        "Пераключыць апавяшчэнні"
+      ],
+      "Toggle referral": [
+        "Пераключыць рэфералаў"
       ],
       "Toggle security center app": [
         "Пераключыць праграму цэнтра бяспекі"
@@ -5140,6 +5146,11 @@
         "Патрабуецца ўвесці паштовы індэкс"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Увайдзіце з тым жа адрасам Gmail, які вы першапачаткова падключылі"
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "На адно запрашэнне дапускаецца не больш за ${ maxAttendees } удзельніка",
@@ -6803,6 +6814,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill Switch**: спыняе ўцечку даных блакіруючы інтэрнэт, калі падключэнне па VPN нечакана знікла."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Крок 1:** Запрашайце сваіх сяброў у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Крок 2:** Вашы сябры атрымаюць 2 тыдні бясплатнага выкарыстання на тарыфным плане ${ BRAND_NAME }, які яны выбралі."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Крок 2:** Вашы сябры атрымаюць 2 тыдні бясплатнага выкарыстання на сваім тарыфным плане."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожнага сябра, які падпішацца на тарыфны план."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожную асобу, якая падпішацца на тарыфны план."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
       ],
@@ -8394,7 +8420,7 @@
         "Гэта паведамленне было скарэктавана для правільнага адлюстравання на цёмным фоне."
       ],
       "This message is automatically generated as a response to a previous message.": [
-        "Гэта паведамленне аўтаматычна згенерыравана ў адказ на папярэдняе паведамленне."
+        "Гэта паведамленне аўтаматычна згенеравана ў адказ на папярэдняе паведамленне."
       ],
       "This message is from a ${ PASS_APP_NAME } alias.": [
         "Гэта паведамленне з псеўданіма ${ PASS_APP_NAME }."
@@ -9356,6 +9382,18 @@
       ],
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
+      ],
+      "${ count } unread conversation": [
+        "${ count } непрачытаная размова",
+        "${ count } непрачытаныя размовы",
+        "${ count } непрачытаных размоў",
+        "${ count } непрачытаных размоў"
+      ],
+      "${ count } unread message": [
+        "${ count } непрачытанае паведамленне",
+        "${ count } непрачытаныя паведамленні",
+        "${ count } непрачытаных паведамленняў",
+        "${ count } непрачытаных паведамленняў"
       ],
       "${ n } month": [
         "${ n } месяц",
@@ -11761,7 +11799,7 @@
         "${ reason } было ўключана"
       ],
       "Block removed": [
-        "Блакіраванне знята"
+        "Блакіроўка выдалена"
       ],
       "Contact group created": [
         "Група кантактаў створана"
@@ -11938,11 +11976,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Змяніце свой адрас электроннай пошты для папулярных сэрвісаў, каб пазбегнуць адсочвання і прафілявання. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Фінансы"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "Я перанёс свае запісы ўваходу ў ${ BRAND_NAME }"
+      "Maybe later": [
+        "Магчыма пазней"
       ],
       "Privacy for all your online accounts": [
         "Прыватнасць для ўсіх вашых уліковых запісаў у інтэрнэце"
@@ -11952,9 +11993,6 @@
       ],
       "Social media": [
         "Сацыяльныя сеткі"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Выкарыстоўвайце адрас ${ MAIL_APP_NAME } для ўваходу ў сеткавыя сэрвісы, каб пазбегнуць адсочвання і прафілявання. Змяніце сваю электронную пошту для папулярных сэрвісаў. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -12341,6 +12379,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
+      ],
       "Billing Country": [
         "Краіна выстаўлення рахунку"
       ],
@@ -12392,7 +12433,7 @@
       "Taxes": [
         "Падаткі"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "умовы выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -12879,6 +12920,44 @@
       ],
       "Stored with zero-access encryption": [
         "Захоўваецца з шыфраваннем нулявога доступу"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } за кожнае запрашэнне"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Зарабіце да ${ maxRewardAmount } у крэдытах. Вы атрымаеце ${ referrerRewardAmount }, калі запрошаная асоба падпішацца на тарыфны план ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Сябар далучыўся",
+        "Сябры далучылася",
+        "Сяброў далучылася",
+        "Сяброў далучылася"
+      ],
+      "Friend subscribed": [
+        "Сябар падпісаўся",
+        "Сябры падпісаліся",
+        "Сяброў падпісалася",
+        "Сяброў падпісалася"
+      ],
+      "Invite friends. Get credits.": [
+        "Запрашайце сяброў і атрымлівайце крэдыты."
+      ],
+      "Invited friends": [
+        "Запрошаныя сябры"
+      ],
+      "More sharing options": [
+        "Больш параметраў для абагульвання"
+      ],
+      "Refer friends": [
+        "Параіць сябрам"
+      ],
+      "Start earning credits": [
+        "Пачніце зарабляць крэдыты"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Вы можаце атрымаць да **${ maxRewardAmount }** у крэдытах."
       ]
     },
     "Remaining days before the message expire": {
@@ -15625,6 +15704,9 @@
       "Recover data": [
         "Аднаўленне даных"
       ],
+      "Referral": [
+        "Рэферал"
+      ],
       "Remove from list?": [
         "Выдаліць са спіса?"
       ],
@@ -15720,6 +15802,9 @@
       ],
       "Share your calendar with your team": [
         "Абагуліць каляндар са сваёй камандай"
+      ],
+      "Share your link": [
+        "Абагуліць сваю спасылку"
       ],
       "Sign in and grant access": [
         "Увайсці і даць доступ"

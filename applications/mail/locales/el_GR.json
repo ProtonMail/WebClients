@@ -379,6 +379,9 @@
       "Customize": [
         "Προσαρμογή"
       ],
+      "Customize categories": [
+        "Προσαρμογή κατηγοριών"
+      ],
       "Customize import": [
         "Προσαρμοσμένη εισαγωγή"
       ],
@@ -5080,6 +5083,11 @@
         "Απαιτείται ταχυδρομικός κώδικας"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Το πολύ ${ maxAttendees } συμμετέχων επιτρέπεται ανά πρόσκληση",
@@ -9088,6 +9096,14 @@
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "${ count } μη διαβασμένη συνομιλία",
+        "${ count } μη διαβασμένες συνομιλίες"
+      ],
+      "${ count } unread message": [
+        "${ count } μη διαβασμένο μήνυμα",
+        "${ count } μη διαβασμένα μηνύματα"
+      ],
       "${ n } month": [
         "${ n } μήνας",
         "${ n } μήνες"
@@ -9112,6 +9128,9 @@
       ],
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Προσθέστε ή αφαιρέστε κατηγορίες. Ρυθμίστε ή απενεργοποιήστε τις ειδοποιήσεις. Προσαρμόστε ανά πάσα στιγμή στο μενού ${ menuIcon }."
       ],
       "Add to group": [
         "Προσθήκη στην ομάδα"
@@ -11597,11 +11616,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Αλλάξτε τώρα την ηλεκτρονική διεύθυνσή για δημοφιλείς υπηρεσίες, ώστε να αποφύγετε την παρακολούθηση και τη δημιουργία προφίλ. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Οικονομικά"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "Έχω μετακινήσει τα στοιχεία σύνδεσής μου στο ${ BRAND_NAME }"
+      "Maybe later": [
+        "Ίσως αργότερα"
       ],
       "Privacy for all your online accounts": [
         "Απόρρητο για όλους τους online λογαριασμούς σας"
@@ -11611,9 +11633,6 @@
       ],
       "Social media": [
         "Μέσα κοινωνικής δικτύωσης"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Χρησιμοποιήστε την ${ MAIL_APP_NAME } διεύθυνσή σας για να κάνετε είσοδος σε online υπηρεσίες για να αποφύγετε την παρακολούθηση και τη δημιουργία προφίλ. Αλλάξτε την ηλεκτρονική διεύθυνσή σας για δημοφιλείς υπηρεσίες τώρα. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11998,6 +12017,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
+      ],
       "Billing Country": [
         "Χώρα χρέωσης"
       ],
@@ -12049,7 +12071,7 @@
       "Taxes": [
         "Φόροι"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -14625,6 +14647,9 @@
       ],
       "Customize categories": [
         "Προσαρμογή κατηγοριών"
+      ],
+      "Customize categories to fit your needs": [
+        "Προσαρμόστε τις κατηγορίες στις ανάγκες σας"
       ],
       "Customize your mail import": [
         "Προσαρμογή εισαγωγής μηνυμάτων"

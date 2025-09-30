@@ -1450,6 +1450,12 @@
       "Toggle Contacts app": [
         "Slå av/på Kontakter-appen"
       ],
+      "Toggle notifications": [
+        "Slå varslinger av/på"
+      ],
+      "Toggle referral": [
+        "Slå verving av/på"
+      ],
       "Toggle security center app": [
         "Veksle sikkerhetssenter-app"
       ],
@@ -5071,6 +5077,11 @@
         "Postnummer kreves"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Logg på med den samme Gmail-adressen du opprinnelig koblet til"
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "På det meste er ${ maxAttendees } deltaker tillatt per invitasjon.",
@@ -6416,8 +6427,8 @@
         "${ elementsCount } samtaler flyttes"
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
-        "${ elementsCount } samtale vil bli avmerket fra:",
-        "${ elementsCount } samtaler vil bli avmerket fra:"
+        "${ elementsCount } samtale avmerkes fra:",
+        "${ elementsCount } samtaler avmerkes fra:"
       ],
       "${ elementsCount } message will be labelled as:": [
         "${ elementsCount } melding merkes som:",
@@ -6436,8 +6447,8 @@
         "${ elementsCount } meldinger flyttes"
       ],
       "${ elementsCount } message will be unlabelled from:": [
-        "${ elementsCount } melding vil bli avmerket fra:",
-        "${ elementsCount } meldinger vil bli avmerket fra:"
+        "${ elementsCount } melding avmerkes fra:",
+        "${ elementsCount } meldinger avmerkes fra:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } innebygd bilde",
@@ -6603,6 +6614,21 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Nødstopp**: stopper datalekkasjer ved å blokkere internett hvis VPN-en dropper ut uventet."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Trinn 1:** Inviter vennene dine til ${ BRAND_NAME } med vervekoblingen."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Trinn 2:** Vennene dine får 2 uker gratis på den valgte ${ BRAND_NAME }-planen."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Trinn 2:** Vennene dine får 2 uker gratis på planene deres."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Trinn 3:** Få ${ referrerRewardAmount } kreditter for hver venn som abonnerer på en plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Trinn 3:** Få ${ referrerRewardAmount } i kreditter for hver person som abonnerer på en plan."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -8113,8 +8139,8 @@
         "Denne samtalen inneholder meldinger i papirkurven."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Denne samtalen vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
-        "Disse samtalene vil bli merket som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
+        "Denne samtalen merkes som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
+        "Disse samtalene merkes som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Denne e-posten har ikke oppfylt domenets autentiseringskrav. Den kan være forfalsket eller feilaktig videresendt."
@@ -9063,6 +9089,14 @@
       ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-brukernavn"
+      ],
+      "${ count } unread conversation": [
+        "${ count } ulest samtale",
+        "${ count } uleste samtaler"
+      ],
+      "${ count } unread message": [
+        "${ count } ulest melding",
+        "${ count } uleste meldinger"
       ],
       "${ n } month": [
         "${ n } måned",
@@ -11573,11 +11607,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Endre e-postadressen din for populære tjenester nå for å unngå sporing og profilering. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Finans"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "Jeg har flyttet påloggingene mine til ${ BRAND_NAME }"
+      "Maybe later": [
+        "Kanskje senere"
       ],
       "Privacy for all your online accounts": [
         "Personvern for alle nettkontoene dine"
@@ -11587,9 +11624,6 @@
       ],
       "Social media": [
         "Sosiale medier"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Bruk ${ MAIL_APP_NAME }-adressen din til å logge på nettjenester for å unngå å bli sporet og profilert. Endre e-postadressen din for populære tjenester nå. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11974,6 +12008,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
+      ],
       "Billing Country": [
         "Faktureringsland"
       ],
@@ -12025,7 +12062,7 @@
       "Taxes": [
         "Avgifter"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "vilkår og betingelser"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -12498,6 +12535,40 @@
       ],
       "Stored with zero-access encryption": [
         "Lagret med nulltilgangskryptering"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per verving"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Tjen opptil ${ maxRewardAmount } i kreditt. Du får ${ referrerRewardAmount } når personen du inviterer, abonnerer på en ${ BRAND_NAME }-plan."
+      ],
+      "Friend joined": [
+        "Venn ble med",
+        "Venner ble med"
+      ],
+      "Friend subscribed": [
+        "Venn abonnerte",
+        "Venner abonnerte"
+      ],
+      "Invite friends. Get credits.": [
+        "Inviter venner. Få kreditter."
+      ],
+      "Invited friends": [
+        "Inviterte venner"
+      ],
+      "More sharing options": [
+        "Flere delingsalternativer"
+      ],
+      "Refer friends": [
+        "Verv venner"
+      ],
+      "Start earning credits": [
+        "Begynn å tjene kreditter"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Du kan få opptil **${ maxRewardAmount }** i kreditt."
       ]
     },
     "Remaining days before the message expire": {
@@ -13222,7 +13293,7 @@
     },
     "Spotlight": {
       "Check out what's included with your subscription and start enjoying the benefits.": [
-        "Sjekk ut hva som er inkludert i abonnementet ditt og begynn å nyte fordelene."
+        "Sjekk ut hva som er inkludert i abonnementet ditt og begynn å kose deg over fordelene."
       ],
       "Discover your subscription benefits": [
         "Oppdag abonnementsfordelene dine"
@@ -13850,8 +13921,8 @@
         "${ elementsCount } samtaler merket som ulest."
       ],
       "${ elementsCount } conversation moved to ${ labelName } and sender added to your not spam list.": [
-        "${ elementsCount } samtale flyttet til ${ labelName } og avsender lagt til din ikke-søppelpostliste.",
-        "${ elementsCount } samtaler flyttet til ${ labelName } og avsenderene lagt til din ikke-søppelpostliste."
+        "${ elementsCount } samtale flyttet til ${ labelName } og avsender lagt til ikke-søppelpostlisten din.",
+        "${ elementsCount } samtaler flyttet til ${ labelName } og avsenderene lagt til ikke-søppelpostlisten din."
       ],
       "${ elementsCount } conversation moved to ${ labelName }.": [
         "${ elementsCount } samtale flyttet til ${ labelName }.",
@@ -15068,6 +15139,9 @@
       "Recover data": [
         "Gjenopprett data"
       ],
+      "Referral": [
+        "Verving"
+      ],
       "Remove from list?": [
         "Fjerne fra listen?"
       ],
@@ -15163,6 +15237,9 @@
       ],
       "Share your calendar with your team": [
         "Del kalenderen din med teamet ditt"
+      ],
+      "Share your link": [
+        "Del koblingen din"
       ],
       "Sign in and grant access": [
         "Logg på og gi tilgang"

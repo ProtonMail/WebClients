@@ -379,6 +379,9 @@
       "Customize": [
         "Anpassen"
       ],
+      "Customize categories": [
+        "Kategorien anpassen"
+      ],
       "Customize import": [
         "Import anpassen"
       ],
@@ -1999,7 +2002,7 @@
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem deine Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
@@ -5075,6 +5078,11 @@
       ],
       "ZIP code is required": [
         "Eine Postleitzahl ist erforderlich"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Bitte melde dich mit derselben Gmail-Adresse an, die du ursprünglich verbunden hast."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -9085,6 +9093,14 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
+      "${ count } unread conversation": [
+        "${ count } ungelesene Unterhaltung",
+        "${ count } ungelesene Unterhaltungen"
+      ],
+      "${ count } unread message": [
+        "${ count } ungelesene Nachricht",
+        "${ count } ungelesene Nachrichten"
+      ],
       "${ n } month": [
         "${ n } Monat",
         "${ n } Monate"
@@ -9109,6 +9125,9 @@
       ],
       "Add image URL": [
         "Bild-URL hinzufügen"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Kategorien hinzufügen oder entfernen. Benachrichtigungen einstellen oder ausschalten. Jederzeit im ${ menuIcon } Menü anpassen."
       ],
       "Add to group": [
         "Zu Gruppe hinzufügen"
@@ -11594,11 +11613,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Ändere jetzt deine E-Mail-Adresse für beliebte Dienste, um zu vermeiden, dass du verfolgt und profiliert wirst. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Finanzen"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "Ich habe meine Anmeldedaten nach ${ BRAND_NAME } verschoben."
+      "Maybe later": [
+        "Vielleicht später"
       ],
       "Privacy for all your online accounts": [
         "Privatsphäre für alle deine Online-Konten"
@@ -11608,9 +11630,6 @@
       ],
       "Social media": [
         "Soziale Medien"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Verwende deine ${ MAIL_APP_NAME } Adresse, um dich bei Online-Diensten anzumelden, damit du nicht verfolgt und profiliert wirst. Ändere jetzt deine E-Mail-Adresse für beliebte Dienste. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11995,6 +12014,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Betrag fällig nach der Testversion am ${ formattedDate }"
+      ],
       "Billing Country": [
         "Rechnungsland"
       ],
@@ -12046,8 +12068,8 @@
       "Taxes": [
         "Steuern"
       ],
-      "terms & conditions": [
-        "Allgemeine Geschäftsbedingungen"
+      "terms and conditions": [
+        "Allgemeinen Geschäftsbedingungen"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
@@ -14717,6 +14739,9 @@
       ],
       "Customize categories": [
         "Kategorien anpassen"
+      ],
+      "Customize categories to fit your needs": [
+        "Kategorien an deine Bedürfnisse anpassen"
       ],
       "Customize your mail import": [
         "Mail-Import anpassen"
