@@ -766,9 +766,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Fråga mig inte igen"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Vill du att ditt urklipp rensas automatiskt efter ${ timeoutDurationHumanReadable }?"
       ]
@@ -1805,9 +1802,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "I ${ PASS_SHORT_APP_NAME } så är en objektanteckning krypterad med objektets krypteringsnyckel och endast användare med åtkomst till objektet kan se anteckningen. Inte ens ${ BRAND_NAME } eller SimpleLogin kan se den."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "För att få ut den bästa upplevelsen av ${ PASS_APP_NAME }, bevilja de nödvändiga tilläggsbehörigheterna"
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Installera ${ PASS_APP_NAME } för ${ browser.title } för att snabbt fylla i dina inloggningar automatiskt."
       ],
@@ -1929,10 +1923,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
-        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -3019,9 +3009,6 @@
       ],
       "Get the extension for your browser.": [
         "Skaffa utökningen för din webbläsare."
-      ],
-      "Grant": [
-        "Bevilja"
       ],
       "Hidden": [
         "Dolt"
@@ -4423,9 +4410,6 @@
       ],
       "Get Started": [
         "Kom igång"
-      ],
-      "Grant permissions": [
-        "Bevilja behörigheter"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Dolda valv kommer inte vara synliga under sökning och automatisk ifyllning."

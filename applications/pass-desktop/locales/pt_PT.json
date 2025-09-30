@@ -1765,9 +1765,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "No ${ PASS_SHORT_APP_NAME }, uma nota de item é encriptada com a chave de encriptação do item e apenas os utilizadores com acesso ao item podem ver a nota. Nem o ${ BRAND_NAME } nem o SimpleLogin conseguem vê-la."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Para obter a melhor experiência com ${ PASS_APP_NAME }, conceda as permissões necessárias para a extensão."
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Instale o ${ PASS_APP_NAME }para ${ browser.title } para preencher automaticamente os seus inícios de sessão."
       ],
@@ -1886,10 +1883,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
@@ -2947,9 +2940,6 @@
       ],
       "Get the extension for your browser.": [
         "Obtenha a extensão para o seu navegador."
-      ],
-      "Grant": [
-        "Conceder"
       ],
       "Hidden": [
         "Oculto"
@@ -4337,9 +4327,6 @@
       ],
       "Get Started": [
         "Começar"
-      ],
-      "Grant permissions": [
-        "Conceda as permissões"
       ],
       "Hide-my-email aliases": [
         "Pseudónimos hide-my-email"
