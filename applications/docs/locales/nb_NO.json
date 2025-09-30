@@ -3431,6 +3431,11 @@
         "Postnummer kreves"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Logg på med den samme Gmail-adressen du opprinnelig koblet til"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Det oppstod en feil under lesing av filen ${ formattedFilename }. Filen har ikke riktig format."
@@ -4396,6 +4401,21 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Nødstopp**: stopper datalekkasjer ved å blokkere internett hvis VPN-en dropper ut uventet."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Trinn 1:** Inviter vennene dine til ${ BRAND_NAME } med vervekoblingen."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Trinn 2:** Vennene dine får 2 uker gratis på den valgte ${ BRAND_NAME }-planen."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Trinn 2:** Vennene dine får 2 uker gratis på planene deres."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Trinn 3:** Få ${ referrerRewardAmount } kreditter for hver venn som abonnerer på en plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Trinn 3:** Få ${ referrerRewardAmount } i kreditter for hver person som abonnerer på en plan."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonuslagring"
@@ -8401,6 +8421,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
+      ],
       "Billing Country": [
         "Faktureringsland"
       ],
@@ -8452,7 +8475,7 @@
       "Taxes": [
         "Avgifter"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "vilkår og betingelser"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -8862,6 +8885,40 @@
       ],
       "Yesterday": [
         "I går"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } per verving"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Tjen opptil ${ maxRewardAmount } i kreditt. Du får ${ referrerRewardAmount } når personen du inviterer, abonnerer på en ${ BRAND_NAME }-plan."
+      ],
+      "Friend joined": [
+        "Venn ble med",
+        "Venner ble med"
+      ],
+      "Friend subscribed": [
+        "Venn abonnerte",
+        "Venner abonnerte"
+      ],
+      "Invite friends. Get credits.": [
+        "Inviter venner. Få kreditter."
+      ],
+      "Invited friends": [
+        "Inviterte venner"
+      ],
+      "More sharing options": [
+        "Flere delingsalternativer"
+      ],
+      "Refer friends": [
+        "Verv venner"
+      ],
+      "Start earning credits": [
+        "Begynn å tjene kreditter"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Du kan få opptil **${ maxRewardAmount }** i kreditt."
       ]
     },
     "Safety review": {
@@ -10434,6 +10491,9 @@
       ],
       "Share your calendar with your team": [
         "Del kalenderen din med teamet ditt"
+      ],
+      "Share your link": [
+        "Del koblingen din"
       ],
       "Sign in and grant access": [
         "Logg på og gi tilgang"
