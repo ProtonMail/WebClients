@@ -296,7 +296,7 @@ export const ItemViewPanel: FC<PropsWithChildren<Props>> = ({
                                     <DropdownMenuButton
                                         onClick={handleCloneClick}
                                         label={c('Action').t`Duplicate`}
-                                        icon="squares"
+                                        icon="squares-plus"
                                         disabled={readOnly}
                                     />
                                 )}
