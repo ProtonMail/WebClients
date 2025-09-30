@@ -81,7 +81,7 @@ const ConnectGmailButton = ({
                     onSyncCallback={hasAccessToBYOE ? handleSyncCallback : handleCloseForwardingModal}
                     source={
                         hasAccessToBYOE
-                            ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_EXTERNAL_GMAIL
+                            ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_ADDRESSES_BYOE
                             : EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS
                     }
                     hasAccessToBYOE={hasAccessToBYOE}
