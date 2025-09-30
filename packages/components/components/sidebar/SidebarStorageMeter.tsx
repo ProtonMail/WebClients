@@ -1,16 +1,20 @@
 import Meter from '@proton/components/components/progress/Meter';
-import clsx from '@proton/utils/clsx';
+
+import { WavyMeter } from '../progress/WavyMeter';
 
 import './SidebarStorageMeter.scss';
 
-interface Props {
+export default function SidebarStorageMeter({
+    label,
+    value,
+    wavy = false,
+}: {
     label: string;
     value: number;
-    className?: string;
+    wavy?: boolean;
+}) {
+    if (wavy) {
+        return <WavyMeter />;
+    }
+    return <Meter thin label={label} value={value} className="sidebar-meter-storage" />;
 }
-
-const SidebarStorageMeter = ({ label, value, className }: Props) => {
-    return <Meter thin label={label} value={value} className={clsx('sidebar-meter-storage', className)} />;
-};
-
-export default SidebarStorageMeter;

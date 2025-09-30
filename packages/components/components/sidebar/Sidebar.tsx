@@ -38,12 +38,14 @@ const Storage = ({
     user,
     subscription,
     version,
+    wavyMeter,
 }: {
     appSpace: ReturnType<typeof getAppSpace>;
     app: APP_NAMES;
     user: UserModel;
     subscription?: Subscription;
     version?: ReactNode;
+    wavyMeter?: boolean;
 }) => {
     const spacePercentage = percentage(appSpace.maxSpace, appSpace.usedSpace);
     const spacePercentagePrecision = Math.ceil(spacePercentage * 10000) / 10000;
@@ -63,7 +65,10 @@ const Storage = ({
     const storageText = (
         <>
             <span
-                className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentagePrecision)}`])}
+                className={clsx([
+                    'used-space text-bold',
+                    `color-${wavyMeter ? 'primary' : getMeterColor(spacePercentagePrecision)}`,
+                ])}
                 style={{ '--signal-success': 'initial' }}
                 // Used by Drive E2E tests
                 data-testid="app-used-space"
@@ -79,6 +84,7 @@ const Storage = ({
             <SidebarStorageMeter
                 label={`${c('Storage').t`Your current storage:`} ${humanUsedSpace} / ${humanMaxSpace}`}
                 value={spacePercentagePrecision}
+                wavy={wavyMeter}
             />
             <div className="flex flex-nowrap justify-space-between py-2">
                 <span>
@@ -135,6 +141,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
      */
     collapsed?: boolean;
     navigationRef?: Ref<HTMLDivElement>;
+    wavyMeter?: boolean;
 }
 
 const Sidebar = ({
@@ -154,6 +161,7 @@ const Sidebar = ({
     collapsed = false,
     className,
     navigationRef,
+    wavyMeter = false,
     ...rest
 }: Props) => {
     const rootRef = useRef<HTMLDivElement>(null);
@@ -253,6 +261,7 @@ const Sidebar = ({
                             user={user}
                             subscription={subscription}
                             version={version}
+                            wavyMeter={wavyMeter}
                         />
                         {postFooter}
                     </div>

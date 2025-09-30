@@ -7,10 +7,23 @@ import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissi
 import { getCanWrite } from '@proton/shared/lib/drive/permissions';
 import emptySvg from '@proton/styles/assets/img/illustrations/empty-my-files.svg';
 
+import { useIsFreeUploadInProgress } from '../../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
+import { DriveEmptyViewFreeUpload } from '../../../sections/folders/EmptyFolder/DriveEmptyViewFreeUpload';
 import { DriveEmptyView } from '../../layout/DriveEmptyView';
 import { FolderContextMenu } from './FolderContextMenu';
 
-const EmptyFolder = ({ shareId, permissions }: { shareId: string; permissions: SHARE_MEMBER_PERMISSIONS }) => {
+/**
+ * @deprecated prefer SDK-powered EmptyFolder
+ */
+const EmptyFolder = ({
+    shareId,
+    permissions,
+    isRoot = false,
+}: {
+    shareId: string;
+    permissions: SHARE_MEMBER_PERMISSIONS;
+    isRoot: boolean;
+}) => {
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
 
@@ -41,26 +54,32 @@ const EmptyFolder = ({ shareId, permissions }: { shareId: string; permissions: S
         };
     }, [anchorRef, isOpen, close, setContextMenuPosition]);
 
+    const isFreeUploadInProgress = useIsFreeUploadInProgress();
+
     return (
         <>
-            <DriveEmptyView
-                image={emptySvg}
-                title={
-                    isEditor
-                        ? // translator: Shown as a call to action when there are no files in a folder
-                          c('Info').t`Drop files here`
-                        : c('Info').t`Empty folder`
-                }
-                subtitle={
-                    isEditor
-                        ? // translator: Shown as a call to action when there are no files in a folder
-                          c('Info').t`Or use the "+ New" button`
-                        : c('Info').t`There is nothing to see here`
-                }
-                ref={anchorRef}
-                onClick={close}
-                dataTestId="my-files-empty-placeholder"
-            />
+            {isFreeUploadInProgress && isRoot ? (
+                <DriveEmptyViewFreeUpload />
+            ) : (
+                <DriveEmptyView
+                    image={emptySvg}
+                    title={
+                        isEditor
+                            ? // translator: Shown as a call to action when there are no files in a folder
+                              c('Info').t`Drop files here`
+                            : c('Info').t`Empty folder`
+                    }
+                    subtitle={
+                        isEditor
+                            ? // translator: Shown as a call to action when there are no files in a folder
+                              c('Info').t`Or use the "+ New" button`
+                            : c('Info').t`There is nothing to see here`
+                    }
+                    ref={anchorRef}
+                    onClick={close}
+                    dataTestId="my-files-empty-placeholder"
+                />
+            )}
             <FolderContextMenu
                 permissions={permissions}
                 shareId={shareId}
