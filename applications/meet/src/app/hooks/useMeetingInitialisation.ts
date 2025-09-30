@@ -1,8 +1,6 @@
 import { useChat } from './useChat';
-import { useDynamicDeviceHandling } from './useDynamicDeviceHandling';
 import { useE2EE } from './useE2EE';
 import { useLocalParticipantQualityControl } from './useLocalParticipantQualityControl';
-import { useMediaDeviceSetup } from './useMediaDeviceSetup';
 import { usePaginationSizeUpdates } from './usePaginationSizeUpdates';
 import { useParticipantNameMapUpdate } from './useParticipantNameMapUpdate';
 import { useParticipantVideoControls } from './useParticipantVideoControls';
@@ -15,7 +13,5 @@ export const useMeetingInitialisation = () => {
     usePaginationSizeUpdates();
     useScreenShareUpdates();
     useLocalParticipantQualityControl();
-    useMediaDeviceSetup();
     useParticipantNameMapUpdate();
-    useDynamicDeviceHandling();
 };

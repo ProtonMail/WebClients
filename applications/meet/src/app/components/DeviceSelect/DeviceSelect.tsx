@@ -4,11 +4,7 @@ import React, { useRef } from 'react';
 import type { IconName } from '@proton/components/components/icon/Icon';
 import Icon from '@proton/components/components/icon/Icon';
 import SelectButton from '@proton/components/components/selectTwo/SelectButton';
-import { dropdownRootClassName } from '@proton/shared/lib/busy';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
-
-import { checkForInsideClick } from '../../utils/checkForInsideClick';
 
 import './DeviceSelect.scss';
 
@@ -19,7 +15,7 @@ interface DeviceSelectProps<T extends object> {
     disabled?: boolean;
     isOpen?: boolean;
     setIsOpen: (isOpen: boolean) => void;
-    Content?: (props: T & { anchorRef: RefObject<HTMLButtonElement> }) => React.ReactNode;
+    Content?: (props: T & { anchorRef: RefObject<HTMLButtonElement>; onClose: () => void }) => React.ReactNode;
     contentProps: T;
 }
 
@@ -38,25 +34,7 @@ export const DeviceSelect = <T extends object>({
     const preventReopen = useRef(false);
 
     return (
-        <div
-            className="w-1/2 relative"
-            onBlur={(e) => {
-                e.stopPropagation();
-                e.preventDefault();
-
-                const isInsideDropdown = checkForInsideClick(e, dropdownRootClassName);
-                const insideSelect = checkForInsideClick(e, 'device-select');
-
-                if (isOpen && !isInsideDropdown && !insideSelect) {
-                    // Safari doesn't properly support relatedTarget on events, added this workaround instead of setting up a global event listener
-                    if (isSafari()) {
-                        preventReopen.current = true;
-                    }
-
-                    setIsOpen(false);
-                }
-            }}
-        >
+        <div className="w-1/2 relative">
             <SelectButton
                 unstyled={false}
                 isOpen={isOpen}
@@ -88,7 +66,7 @@ export const DeviceSelect = <T extends object>({
                     </div>
                 </div>
             </SelectButton>
-            {Content && isOpen && <Content anchorRef={anchorRef} {...contentProps} />}
+            {Content && isOpen && <Content anchorRef={anchorRef} onClose={() => setIsOpen(false)} {...contentProps} />}
         </div>
     );
 };

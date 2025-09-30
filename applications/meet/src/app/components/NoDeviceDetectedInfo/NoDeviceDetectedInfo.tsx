@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { IcCross } from '@proton/icons';
 
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
-import { useDevices } from '../../hooks/useDevices';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { PermissionPromptStatus } from '../../types';
 
@@ -15,7 +15,7 @@ export const NoDeviceDetectedInfo = () => {
 
     const { noDeviceDetected, setNoDeviceDetected } = useUIStateContext();
 
-    const { microphones, cameras } = useDevices();
+    const { microphones, cameras } = useMediaManagementContext();
 
     const isLargerThanMd = useIsLargerThanMd();
 

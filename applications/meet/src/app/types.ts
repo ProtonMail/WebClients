@@ -1,14 +1,5 @@
 import type { ChatMessage } from '@proton-meet/livekit-client';
 
-export interface ParticipantSettings {
-    displayName: string;
-    audioDeviceId: string | null;
-    audioOutputDeviceId: string | null;
-    videoDeviceId: string | null;
-    isAudioEnabled: boolean;
-    isVideoEnabled: boolean;
-}
-
 export enum LoadingState {
     JoiningInProgress = 'JoiningInProgress',
     WaitingRoom = 'WaitingRoom',
@@ -89,3 +80,4 @@ export type MLSGroupState = {
     displayCode: string | null;
     epoch: bigint;
 };
+export type SwitchActiveDevice = (deviceType: 'audioinput' | 'audiooutput' | 'videoinput', deviceId: string) => void;

@@ -16,10 +16,9 @@ import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
 import { Pagination } from '../../atoms/Pagination/Pagination';
-import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
-import { useDevices } from '../../hooks/useDevices';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../../hooks/useIsNarrowHeight';
 import { MeetingSideBars, PermissionPromptStatus, PopUpControls } from '../../types';
@@ -36,8 +35,7 @@ import './ParticipantControls.scss';
 
 export const ParticipantControls = () => {
     const { isMicrophoneEnabled, isCameraEnabled, localParticipant } = useLocalParticipant();
-    const { audioDeviceId, videoDeviceId, roomName, page, setPage, pageSize, participantsMap, isScreenShare } =
-        useMeetContext();
+    const { roomName, page, setPage, pageSize, participantsMap, isScreenShare } = useMeetContext();
 
     const isLargerThanMd = useIsLargerThanMd();
     const isNarrowHeight = useIsNarrowHeight();
@@ -57,25 +55,28 @@ export const ParticipantControls = () => {
     const hasAdminPermission =
         participantData !== undefined ? !!participantData.IsAdmin || !!participantData.IsHost : false;
 
-    const prevDevicePermissionsRef = useRef<{ camera: PermissionState; microphone: PermissionState }>({
+    const prevDevicePermissionsRef = useRef<{ camera?: PermissionState; microphone?: PermissionState }>({
         camera: 'prompt',
         microphone: 'prompt',
     });
 
-    const { toggleVideo, toggleAudio } = useMeetContext();
-
     const pageCount = Math.ceil(participants.length / pageSize);
-
-    const anchorRef = useRef<HTMLButtonElement>(null);
 
     const {
         devicePermissions: { camera: cameraPermission, microphone: microphonePermission },
-    } = useDevicePermissionsContext();
+    } = useMediaManagementContext();
 
     const hasCameraPermission = cameraPermission === 'granted';
     const hasMicrophonePermission = microphonePermission === 'granted';
 
-    const { microphones, cameras } = useDevices();
+    const {
+        microphones,
+        cameras,
+        toggleVideo,
+        toggleAudio,
+        selectedMicrophoneId: audioDeviceId,
+        selectedCameraId: videoDeviceId,
+    } = useMediaManagementContext();
 
     // Closing popups with device selection options upon losing permissions
     useEffect(() => {
@@ -152,7 +153,6 @@ export const ParticipantControls = () => {
                     {isLargerThanMd && !isNarrowHeight ? (
                         <>
                             <ToggleButton
-                                buttonRef={anchorRef}
                                 OnIconComponent={MicrophoneWithVolumeWithMicrophoneState}
                                 OffIconComponent={IcMeetMicrophoneOff}
                                 isOn={microphones.length === 0 ? false : isMicrophoneEnabled}
@@ -198,7 +198,11 @@ export const ParticipantControls = () => {
                                     }
 
                                     if (videoDeviceId) {
-                                        void toggleVideo({ isEnabled: !isCameraEnabled, videoDeviceId });
+                                        void toggleVideo({
+                                            isEnabled: !isCameraEnabled,
+                                            videoDeviceId,
+                                            forceUpdate: true,
+                                        });
                                     }
                                 }}
                                 Content={VideoSettings}

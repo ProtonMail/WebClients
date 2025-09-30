@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import useFlag from '@proton/unleash/useFlag';
 
@@ -6,15 +6,15 @@ import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
 import { JoiningRoomLoader } from '../../components/JoiningRoomLoader';
 import { PageHeader } from '../../components/PageHeader/PageHeader';
 import { PreJoinDetails } from '../../components/PreJoinDetails/PreJoinDetails';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
-import { useDevices } from '../../hooks/useDevices';
-import { LoadingState, type ParticipantSettings } from '../../types';
+import { LoadingState } from '../../types';
 import { saveAudioDevice, saveAudioOutputDevice, saveVideoDevice } from '../../utils/deviceStorage';
 
 import './PrejoinContainer.scss';
 
 interface PrejoinContainerProps {
-    handleJoin: (settings: ParticipantSettings) => void;
+    handleJoin: (displayName: string) => void;
     loadingState: LoadingState | null;
     isLoading: boolean;
     guestMode?: boolean;
@@ -40,56 +40,22 @@ export const PrejoinContainer = ({
 }: PrejoinContainerProps) => {
     const isScheduleInAdvanceEnabled = useFlag('ScheduleInAdvance');
 
-    const { cameras, microphones, speakers, defaultCamera, defaultMicrophone, defaultSpeaker } = useDevices();
-
-    const [selectedCamera, setSelectedCamera] = useState<MediaDeviceInfo | null>(defaultCamera);
-    const [selectedMicrophone, setSelectedMicrophone] = useState<MediaDeviceInfo | null>(defaultMicrophone);
-    const [selectedAudioOutputDevice, setSelectedAudioOutputDevice] = useState<MediaDeviceInfo | null>(defaultSpeaker);
-
-    useEffect(() => {
-        if (cameras.length > 0) {
-            const isDeviceAvailable = selectedCamera
-                ? cameras.find((c) => c.deviceId === selectedCamera.deviceId)
-                : null;
-            if (!selectedCamera || !isDeviceAvailable) {
-                const deviceToSelect = defaultCamera || cameras[0];
-                if (deviceToSelect) {
-                    setSelectedCamera(deviceToSelect);
-                }
-            }
-        }
-    }, [defaultCamera, selectedCamera, cameras]);
-
-    useEffect(() => {
-        if (microphones.length > 0) {
-            const isDeviceAvailable = selectedMicrophone
-                ? microphones.find((m) => m.deviceId === selectedMicrophone.deviceId)
-                : null;
-            if (!selectedMicrophone || !isDeviceAvailable) {
-                const deviceToSelect = defaultMicrophone || microphones[0];
-                if (deviceToSelect) {
-                    setSelectedMicrophone(deviceToSelect);
-                }
-            }
-        }
-    }, [defaultMicrophone, selectedMicrophone, microphones]);
-
-    useEffect(() => {
-        if (speakers.length > 0) {
-            const isDeviceAvailable = selectedAudioOutputDevice
-                ? speakers.find((s) => s.deviceId === selectedAudioOutputDevice.deviceId)
-                : null;
-            if (!selectedAudioOutputDevice || !isDeviceAvailable) {
-                const deviceToSelect = defaultSpeaker || speakers[0];
-                if (deviceToSelect) {
-                    setSelectedAudioOutputDevice(deviceToSelect);
-                }
-            }
-        }
-    }, [defaultSpeaker, selectedAudioOutputDevice, speakers]);
-
-    const [isCameraEnabled, setIsCameraEnabled] = useState(false);
-    const [isMicrophoneEnabled, setIsMicrophoneEnabled] = useState(false);
+    const {
+        cameras,
+        microphones,
+        speakers,
+        defaultCamera,
+        defaultMicrophone,
+        defaultSpeaker,
+        selectedCameraId: activeCameraDeviceId,
+        selectedMicrophoneId: activeMicrophoneDeviceId,
+        selectedAudioOutputDeviceId: activeAudioOutputDeviceId,
+        initialCameraState,
+        initialAudioState,
+        setInitialCameraState,
+        setInitialAudioState,
+        switchActiveDevice,
+    } = useMediaManagementContext();
 
     const useDefaultDisplayName = guestMode
         ? defaultDisplayNameHooks.unauthenticated
@@ -101,33 +67,26 @@ export const PrejoinContainer = ({
 
     const participantColorIndex = useRef(Math.ceil(6 * Math.random()));
 
-    const currentSelectedCamera = selectedCamera ?? defaultCamera;
-    const currentSelectedMicrophone = selectedMicrophone ?? defaultMicrophone;
-    const currentSelectedAudioOutputDevice = selectedAudioOutputDevice ?? defaultSpeaker;
+    const currentSelectedCamera = activeCameraDeviceId ?? defaultCamera?.deviceId;
+    const currentSelectedMicrophone = activeMicrophoneDeviceId ?? defaultMicrophone?.deviceId;
+    const currentSelectedAudioOutputDevice = activeAudioOutputDeviceId ?? defaultSpeaker?.deviceId;
 
-    const handleJoinMeeting = ({ displayName }: { displayName: string }) => {
-        handleJoin({
-            displayName,
-            audioDeviceId: currentSelectedMicrophone?.deviceId as string,
-            audioOutputDeviceId: currentSelectedAudioOutputDevice?.deviceId as string,
-            videoDeviceId: currentSelectedCamera?.deviceId as string,
-            isAudioEnabled: isMicrophoneEnabled,
-            isVideoEnabled: isCameraEnabled,
-        });
+    const handleJoinMeeting = (displayName: string) => {
+        handleJoin(displayName);
     };
 
     const handleCameraChange = (camera: MediaDeviceInfo) => {
-        setSelectedCamera(camera);
+        void switchActiveDevice('videoinput', camera.deviceId);
         saveVideoDevice(camera.deviceId);
     };
 
     const handleMicrophoneChange = (microphone: MediaDeviceInfo) => {
-        setSelectedMicrophone(microphone);
+        void switchActiveDevice('audioinput', microphone.deviceId);
         saveAudioDevice(microphone.deviceId);
     };
 
     const handleAudioOutputDeviceChange = (speaker: MediaDeviceInfo) => {
-        setSelectedAudioOutputDevice(speaker);
+        void switchActiveDevice('audiooutput', speaker.deviceId);
         saveAudioOutputDevice(speaker.deviceId);
     };
 
@@ -143,16 +102,16 @@ export const PrejoinContainer = ({
                     style={{ '--md-w-custom': '71rem' }}
                 >
                     <DeviceSettings
-                        isCameraEnabled={isCameraEnabled}
-                        isMicrophoneEnabled={isMicrophoneEnabled}
-                        onCameraToggle={() => setIsCameraEnabled(!isCameraEnabled)}
-                        onMicrophoneToggle={() => setIsMicrophoneEnabled(!isMicrophoneEnabled)}
+                        isCameraEnabled={initialCameraState}
+                        isMicrophoneEnabled={initialAudioState}
+                        onCameraToggle={() => setInitialCameraState(!initialCameraState)}
+                        onMicrophoneToggle={() => setInitialAudioState(!initialAudioState)}
                         cameras={cameras}
                         microphones={microphones}
                         speakers={speakers}
-                        selectedCameraId={currentSelectedCamera?.deviceId as string}
-                        selectedMicrophoneId={currentSelectedMicrophone?.deviceId as string}
-                        selectedAudioOutputDeviceId={currentSelectedAudioOutputDevice?.deviceId as string}
+                        selectedCameraId={currentSelectedCamera}
+                        selectedMicrophoneId={currentSelectedMicrophone}
+                        selectedAudioOutputDeviceId={currentSelectedAudioOutputDevice}
                         onCameraChange={handleCameraChange}
                         onMicrophoneChange={handleMicrophoneChange}
                         onAudioOutputDeviceChange={handleAudioOutputDeviceChange}
