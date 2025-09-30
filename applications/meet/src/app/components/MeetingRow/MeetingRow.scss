@@ -1,24 +1,25 @@
 .meeting-row {
-	background-color: var(--background-card) !important;
+	background-color: var(--background-card);
 	border-radius: 2rem;
 	border-color: var(--border-card);
 
 	.join-button {
-		background-color: var(--interaction-weak) !important;
+		background-color: var(--interaction-norm);
+		color: var(--text-invert);
 
 		&:hover,
 		&:focus {
-			background-color: var(--interaction-weak-major-1) !important;
-			color: var(--text-norm) !important;
+			background-color: var(--interaction-norm-major-1);
+			color: var(--text-invert);
 		}
 	}
 
 	.copy-link-button {
-		background-color: var(--interaction-norm-minor-3) !important;
+		background-color: var(--interaction-weak);
 
 		&:hover,
 		&:focus {
-			background-color: var(--interaction-norm-minor-2) !important;
+			background-color: var(--interaction-weak-major-1);
 		}
 	}
 }
