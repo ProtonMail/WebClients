@@ -34,6 +34,7 @@ import {
     DisplayablePaymentError,
     type EnrichedCheckResponse,
     type FreePlanDefault,
+    type FullPlansMap,
     PAYMENT_METHOD_TYPES,
     PLANS,
     type PaymentMethodType,
@@ -89,7 +90,7 @@ import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/
 import { APPS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -148,6 +149,60 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
 };
 
 const getCodes = ({ gift, coupon }: Pick<Model, 'gift' | 'coupon'>): string[] => [gift, coupon].filter(isTruthy);
+
+/**
+ * There is a problem with closures. If we use the regular useState for the preferred currency and then create
+ *
+ * `const plansMap = getPlansMap(plans, preferredCurrency);`
+ *
+ * then when currency changes we'll get the old plansMap and the optimisticCheckResult will be computed with the
+ * old plansMap. That leads to situations when we have wrong price points for a given currency.
+ *
+ * Refs is a usual workaround to get the latest value of the variable, ignorring all the business with closures.
+ *
+ */
+const usePlansMapRef = ({
+    user,
+    subscription,
+    plans,
+    maybeCurrency,
+    paymentStatus,
+    plan,
+}: {
+    user: UserModel;
+    subscription: Subscription;
+    plans: Plan[];
+    maybeCurrency?: Currency;
+    paymentStatus: PaymentStatus;
+    plan?: PLANS;
+}) => {
+    const [, rerender] = useState({});
+
+    const { getPreferredCurrency } = useCurrencies();
+
+    const preferredCurrencyRef = useRef<Currency>(
+        getPreferredCurrency({
+            user,
+            subscription,
+            plans,
+            paramCurrency: maybeCurrency,
+            paymentStatus,
+            paramPlanName: plan,
+        })
+    );
+
+    const plansMapRef = useRef<FullPlansMap>(getPlansMap(plans, preferredCurrencyRef.current));
+
+    return {
+        plansMapRef,
+        setPreferredCurrency: (currency: Currency) => {
+            preferredCurrencyRef.current = currency;
+            plansMapRef.current = getPlansMap(plans, currency);
+            rerender({});
+        },
+        preferredCurrencyRef,
+    };
+};
 
 interface RenderProps {
     title: string;
@@ -292,19 +347,14 @@ const SubscriptionContainerInner = ({
 
     const latestSubscription = subscription.UpcomingSubscription ?? subscription;
 
-    const { getPreferredCurrency } = useCurrencies();
-    const [preferredCurrency, setPreferredCurrency] = useState(() =>
-        getPreferredCurrency({
-            user,
-            subscription,
-            plans,
-            paramCurrency: maybeCurrency,
-            paymentStatus,
-            paramPlanName: plan,
-        })
-    );
-
-    const plansMap = getPlansMap(plans, preferredCurrency);
+    const { plansMapRef, setPreferredCurrency, preferredCurrencyRef } = usePlansMapRef({
+        user,
+        subscription,
+        plans,
+        maybeCurrency,
+        paymentStatus,
+        plan,
+    });
 
     const planIDs = useMemo(() => {
         const subscriptionPlanIDs = getPlanIDs(latestSubscription);
@@ -326,18 +376,18 @@ const SubscriptionContainerInner = ({
         }
 
         return maybePlanIDs || subscriptionPlanIDs;
-    }, [subscription, plansMap, organization, plans, maybePlanIDs]);
+    }, [subscription, organization, plans, maybePlanIDs]);
 
     const [model, setModel] = useState<Model>(() => {
         const step = getInitialCheckoutStep(planIDs, maybeStep);
 
-        const currency = getPlanCurrencyFromPlanIDs(plansMap, planIDs) ?? preferredCurrency;
+        const currency = getPlanCurrencyFromPlanIDs(plansMapRef.current, planIDs) ?? preferredCurrencyRef.current;
 
         const cycle = getInitialCycle({
             cycleParam: maybeCycle,
             subscription,
             planIDs,
-            plansMap,
+            plansMap: plansMapRef.current,
             isPlanSelection: step === SUBSCRIPTION_STEPS.PLAN_SELECTION,
             app,
             minimumCycle,
@@ -365,7 +415,7 @@ const SubscriptionContainerInner = ({
         getFreeCheckResult(model.currency, model.cycle)
     );
 
-    const couponConfig = useCouponConfig({ checkResult, planIDs: model.planIDs, plansMap });
+    const couponConfig = useCouponConfig({ checkResult, planIDs: model.planIDs, plansMap: plansMapRef.current });
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
@@ -538,7 +588,7 @@ const SubscriptionContainerInner = ({
     };
 
     const selectedPlanCurrency = checkResult?.Currency ?? DEFAULT_CURRENCY;
-    const selectedPlanName = getPlanFromPlanIDs(plansMap, model.planIDs)?.Name;
+    const selectedPlanName = getPlanFromPlanIDs(plansMapRef.current, model.planIDs)?.Name;
 
     const paymentFacade = usePaymentFacade({
         checkResult,
@@ -613,7 +663,7 @@ const SubscriptionContainerInner = ({
             maximumCycle,
             currency: selectedPlanCurrency,
             planIDs,
-            plansMap,
+            plansMap: plansMapRef.current,
             allowDowncycling: true,
             cycleParam: maybeCycle,
             app,
@@ -647,7 +697,7 @@ const SubscriptionContainerInner = ({
                     planIDs: checkPayload.Plans,
                     cycle,
                     currency: checkPayload.Currency,
-                    plansMap,
+                    plansMap: plansMapRef.current,
                 },
                 subscription
             );
@@ -701,7 +751,7 @@ const SubscriptionContainerInner = ({
             cached: true,
             silence: true,
             optimisticFallback: true,
-            plansMap,
+            plansMap: plansMapRef.current,
         });
 
         setAdditionalCheckResults([...additionalChecks, checkResult]);
@@ -724,7 +774,7 @@ const SubscriptionContainerInner = ({
         const oldCycle = oldSubscription.Cycle;
 
         return shouldPassIsTrialPayments({
-            plansMap,
+            plansMap: plansMapRef.current,
             newPlanIDs,
             oldPlanIDs,
             newCycle,
@@ -737,7 +787,7 @@ const SubscriptionContainerInner = ({
         const allowedCycles = getAllowedCycles({
             subscription,
             planIDs: selectedPlanIDs,
-            plansMap,
+            plansMap: plansMapRef.current,
             currency,
         });
 
@@ -747,7 +797,7 @@ const SubscriptionContainerInner = ({
     const normalizeModelBeforeCheck = (newModel: Model) => {
         const planTransitionForbidden = getIsPlanTransitionForbidden({
             subscription,
-            plansMap,
+            plansMap: plansMapRef.current,
             planIDs: newModel.planIDs,
         });
         if (planTransitionForbidden?.type === 'lumo-plus') {
@@ -760,7 +810,7 @@ const SubscriptionContainerInner = ({
         if (planTransitionForbidden?.type === 'plus-to-plus') {
             setPlusToPlusUpsell({
                 unlockPlan: planTransitionForbidden.newPlanName
-                    ? plansMap[planTransitionForbidden.newPlanName]
+                    ? plansMapRef.current[planTransitionForbidden.newPlanName]
                     : undefined,
             });
             setUpsellModal(true);
@@ -802,7 +852,7 @@ const SubscriptionContainerInner = ({
         if (dontQueryCheck) {
             setCheckResult({
                 ...getOptimisticCheckResult({
-                    plansMap,
+                    plansMap: plansMapRef.current,
                     cycle: copyNewModel.cycle,
                     planIDs: copyNewModel.planIDs,
                     currency: copyNewModel.currency,
@@ -822,7 +872,7 @@ const SubscriptionContainerInner = ({
         if (paymentForbidden.forbidden) {
             setCheckResult({
                 ...getOptimisticCheckResult({
-                    plansMap,
+                    plansMap: plansMapRef.current,
                     cycle: copyNewModel.cycle,
                     planIDs: copyNewModel.planIDs,
                     currency: copyNewModel.currency,
@@ -1069,7 +1119,7 @@ const SubscriptionContainerInner = ({
     };
 
     const handleChangeCurrency = (currency: Currency, context?: { paymentMethodType: PlainPaymentMethodType }) => {
-        if (loadingCheck || currency === preferredCurrency) {
+        if (loadingCheck || currency === preferredCurrencyRef.current) {
             return;
         }
         setPreferredCurrency(currency);
@@ -1216,7 +1266,7 @@ const SubscriptionContainerInner = ({
                     freePlan={freePlan}
                     loading={loadingCheck}
                     plans={plans}
-                    currency={preferredCurrency}
+                    currency={preferredCurrencyRef.current}
                     vpnServers={vpnServers}
                     cycle={model.cycle}
                     maximumCycle={maximumCycle}
@@ -1273,7 +1323,7 @@ const SubscriptionContainerInner = ({
                                                 loading={blockAccountSizeSelector}
                                                 currency={model.currency}
                                                 cycle={model.cycle}
-                                                plansMap={plansMap}
+                                                plansMap={plansMapRef.current}
                                                 selectedPlanIDs={optimisticPlanIDs ?? model.planIDs}
                                                 onChangePlanIDs={handleOptimisticPlanIDs}
                                                 latestSubscription={latestSubscription}
@@ -1285,7 +1335,7 @@ const SubscriptionContainerInner = ({
                                             {disableCycleSelector ? (
                                                 <SubscriptionCheckoutCycleItem
                                                     checkResult={checkResult}
-                                                    plansMap={plansMap}
+                                                    plansMap={plansMapRef.current}
                                                     planIDs={model.planIDs}
                                                     loading={loadingCheck || initialLoading}
                                                     couponConfig={couponConfig}
@@ -1293,7 +1343,7 @@ const SubscriptionContainerInner = ({
                                             ) : (
                                                 <SubscriptionCycleSelector
                                                     mode="buttons"
-                                                    plansMap={plansMap}
+                                                    plansMap={plansMapRef.current}
                                                     planIDs={model.planIDs}
                                                     cycle={model.cycle}
                                                     currency={model.currency}
@@ -1331,7 +1381,7 @@ const SubscriptionContainerInner = ({
                             <SubscriptionCheckout
                                 freePlan={freePlan}
                                 subscription={subscription}
-                                plansMap={plansMap}
+                                plansMap={plansMapRef.current}
                                 checkResult={checkResult}
                                 vpnServers={vpnServers}
                                 gift={gift}
@@ -1394,7 +1444,7 @@ const SubscriptionContainerInner = ({
                 <PlusToPlusUpsell
                     {...upsellModal}
                     unlockPlan={plusToPlusUpsell.unlockPlan}
-                    plansMap={plansMap}
+                    plansMap={plansMapRef.current}
                     onUpgrade={() => {
                         upsellModal.onClose();
                         check({
