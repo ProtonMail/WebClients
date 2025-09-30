@@ -36,7 +36,7 @@ const BreachModal = ({ modalProps, breachData, securityCenter, onResolve }: Brea
     if (!breachData) {
         return;
     }
-    const { name, createdAt, severity, actions, exposedData, id } = breachData;
+    const { name, createdAt, severity, actions, exposedData, id, breachedCombos } = breachData;
 
     const hasActions = actions && actions?.length > 0;
 
@@ -77,7 +77,7 @@ const BreachModal = ({ modalProps, breachData, securityCenter, onResolve }: Brea
             <ModalTwoContent className="pb-4">
                 <div className="flex flex-column flex-nowrap gap-2">
                     <BreachInfo exposedData={exposedData} inModal />
-                    <UserBreachInfo exposedData={exposedData} inModal />
+                    <UserBreachInfo exposedData={exposedData} breachedCombos={breachedCombos} inModal />
                     {hasActions && <BreachRecommendations actions={actions} inModal />}
 
                     <BreachInfoNote />
