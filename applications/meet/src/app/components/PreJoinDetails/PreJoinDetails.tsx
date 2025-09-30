@@ -14,7 +14,7 @@ interface PreJoinDetailsProps {
     roomId: string;
     displayName: string;
     onDisplayNameChange: (displayName: string) => void;
-    onJoinMeeting: ({ displayName }: { displayName: string }) => void;
+    onJoinMeeting: (displayName: string) => void;
     shareLink: string;
     instantMeeting: boolean;
 }
@@ -105,7 +105,7 @@ export const PreJoinDetails = ({
                 color="norm"
                 size="large"
                 fullWidth
-                onClick={() => onJoinMeeting({ displayName })}
+                onClick={() => onJoinMeeting(displayName)}
                 disabled={!displayName}
             >
                 {actionLabel}
