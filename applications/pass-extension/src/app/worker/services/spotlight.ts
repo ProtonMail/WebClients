@@ -1,5 +1,6 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
+import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import type { Store } from 'redux';
 
@@ -22,7 +23,6 @@ import {
 import { createSpotlightService as createCoreSpotlightService } from '@proton/pass/lib/spotlight/service';
 import type { State } from '@proton/pass/store/types';
 import type { ExtensionStorage, TabId } from '@proton/pass/types';
-import { withPayloadLens } from '@proton/pass/utils/fp/lens';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
@@ -65,8 +65,13 @@ export const createSpotlightService = (
         return true;
     };
 
-    WorkerMessageBroker.registerMessage(WorkerMessageType.SPOTLIGHT_ACK, withPayloadLens('message', acknowledge));
-    WorkerMessageBroker.registerMessage(WorkerMessageType.SPOTLIGHT_CHECK, withPayloadLens('message', checkMessage));
+    const onAcknowledge: MessageHandlerCallback<WorkerMessageType.SPOTLIGHT_ACK> = ({ payload }) =>
+        acknowledge(payload.message);
+    const onCheck: MessageHandlerCallback<WorkerMessageType.SPOTLIGHT_CHECK> = ({ payload }) =>
+        checkMessage(payload.message);
+
+    WorkerMessageBroker.registerMessage(WorkerMessageType.SPOTLIGHT_ACK, onAcknowledge);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.SPOTLIGHT_CHECK, onCheck);
     WorkerMessageBroker.registerMessage(WorkerMessageType.SPOTLIGHT_REQUEST, getMessage);
 
     /* when reaching `account.proton.me/auth-ext` we want to
