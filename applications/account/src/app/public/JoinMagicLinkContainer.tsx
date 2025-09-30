@@ -4,7 +4,14 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
 import type { OnLoginCallback } from '@proton/components';
-import { GenericError, InputFieldTwo, useConfig, useErrorHandler, useNotifications } from '@proton/components';
+import {
+    GenericError,
+    InputFieldTwo,
+    NotificationButton,
+    useConfig,
+    useErrorHandler,
+    useNotifications,
+} from '@proton/components';
 import { AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import { handleLogin, handleNextLogin } from '@proton/components/containers/login/loginActions';
 import { createPreAuthKTVerifier } from '@proton/key-transparency';
@@ -231,6 +238,29 @@ const JoinMagicLinkContainer = ({
             await onLogin({ ...result.session, ...(subscribedToApp ? { appIntent: { app: subscribedToApp } } : {}) });
         }
     };
+    const handleSubmitPassword = async ({ password }: { password: string }) => {
+        try {
+            await handleSetup({ password });
+        } catch (error) {
+            const { status } = getApiError(error);
+            // Session expired.
+            if (status === HTTP_STATUS_CODE.UNAUTHORIZED) {
+                createNotification({
+                    type: 'error',
+                    text: (
+                        <>
+                            <span>{c('Error').t`Session expired. Please refresh the page.`}</span>
+                            <NotificationButton onClick={() => window.location.reload()}>
+                                {c('Action').t`Refresh the page`}
+                            </NotificationButton>
+                        </>
+                    ),
+                });
+                return;
+            }
+            handleError(error);
+        }
+    };
 
     if (error) {
         return (
@@ -296,22 +326,7 @@ const JoinMagicLinkContainer = ({
                 <hr className="my-6 border-bottom border-weak" />
                 <SetPasswordWithPolicyForm
                     passwordPolicies={data?.organizationData.passwordPolicies ?? []}
-                    onSubmit={async ({ password }) => {
-                        try {
-                            await handleSetup({ password });
-                        } catch (error) {
-                            const { status } = getApiError(error);
-                            // Session expired.
-                            if (status === HTTP_STATUS_CODE.UNAUTHORIZED) {
-                                createNotification({
-                                    type: 'error',
-                                    text: c('Error').t`Session expired. Please refresh the page.`,
-                                });
-                                return;
-                            }
-                            handleError(error);
-                        }
-                    }}
+                    onSubmit={handleSubmitPassword}
                 >
                     <InputFieldTwo
                         id="username"
