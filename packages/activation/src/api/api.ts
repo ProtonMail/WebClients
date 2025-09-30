@@ -27,10 +27,10 @@ export const createToken = (
     data,
 });
 
-export const createSync = (importerID: string) => ({
+export const createSync = (importerID: string, source: EASY_SWITCH_SOURCES) => ({
     url: 'importer/v1/sync',
     method: 'POST',
-    data: { ImporterID: importerID, Product: 'Mail' },
+    data: { ImporterID: importerID, Product: 'Mail', Source: source },
 });
 
 export const getSyncList = () => ({
