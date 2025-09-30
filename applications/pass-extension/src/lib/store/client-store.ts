@@ -25,7 +25,7 @@ export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {
             ),
         enhancers: (e) =>
             e().concat(
-                ENV === 'development'
+                ENV === 'development' && REDUX_DEVTOOLS
                     ? [
                           devToolsEnhancer({
                               name: `store::${endpoint}`,
