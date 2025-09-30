@@ -4,7 +4,7 @@ import { FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
 import type { ItemContent, Maybe } from '@proton/pass/types';
 import { last, prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { oneOf, truthy } from '@proton/pass/utils/fp/predicates';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 
 export interface IdentityFieldConfig {
@@ -83,16 +83,24 @@ export const autofillIdentityFields = async (
      * for each field, mimicking human-like interaction. */
     await seq(reorderedFields, async (field) => {
         const { identityType } = field;
-        const shouldAutofill = oneOf(null, FieldType.IDENTITY)(field.autofilled);
 
-        /** Autofill only for valid identity fields not yet filled in this sequence
-         * and not autofilled by another field type (ie: email via alias suggestion). */
+        const prevAutofilled = field.autofilled === FieldType.IDENTITY;
+        const notAutofilled = field.autofilled === null;
+        const shouldAutofill = prevAutofilled || notAutofilled;
+
+        /** Skip fields without identity type, processed, or filled by other types */
         if (!identityType || autofilled.has(identityType) || !shouldAutofill) return;
 
+        /** Clear fields when switching to item with missing data to prevent
+         * mixing partial data. Use empty string to clear previously autofilled
+         * fields, `undefined` to skip unfilled fields. */
         const getValue = IDENTITY_FIELDS_CONFIG[identityType];
         const value = getValue(data);
+        const next = value || (prevAutofilled ? '' : undefined);
 
-        if (value) await field.autofill(value, { type: FieldType.IDENTITY });
-        autofilled.add(identityType);
+        if (next !== undefined) {
+            await field.autofill(next, { type: FieldType.IDENTITY });
+            autofilled.add(identityType);
+        }
     });
 };

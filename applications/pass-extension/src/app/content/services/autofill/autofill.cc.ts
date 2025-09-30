@@ -10,11 +10,12 @@ import {
     getSelectExpirationMonthFormat,
     getSelectExpirationYearFormat,
 } from '@proton/pass/fathom';
-import { CCFieldType } from '@proton/pass/fathom/labels';
+import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
 import type { CCItemData, Maybe } from '@proton/pass/types';
 import { isInputElement, isSelectElement } from '@proton/pass/utils/dom/predicates';
 import { head, last, prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
 
 type CCFieldValueExtract = (data: CCItemData, el: FieldElement) => Maybe<string>;
@@ -52,7 +53,7 @@ const getExpirationMonth: CCFieldValueExtract = ({ expirationDate }, el) => {
     }
 };
 
-export const CC_FIELDS_CONFIG: Partial<Record<CCFieldType, CCFieldValueExtract>> = {
+export const CC_FIELDS_CONFIG: Record<CCFieldType, CCFieldValueExtract> = {
     [CCFieldType.CSC]: prop('verificationNumber'),
     [CCFieldType.EXP_MONTH]: getExpirationMonth,
     [CCFieldType.EXP_YEAR]: getExpirationYear,
@@ -63,14 +64,21 @@ export const CC_FIELDS_CONFIG: Partial<Record<CCFieldType, CCFieldValueExtract>>
     [CCFieldType.NUMBER]: prop('number'),
 };
 
-export const autofillCCFields = async (fields: FieldHandle[], data: CCItemData) => {
+export const autofillCCFields = async (fields: FieldHandle[], data: CCItemData): Promise<CCFieldType[]> => {
     fields.forEach(({ element }) => actionTrap(element, 250));
 
-    await seq(fields, async (field) => {
+    const result = await seq(fields, async (field): Promise<Maybe<CCFieldType>> => {
         const ccType = getCCFieldType(field.element);
         if (!ccType) return;
 
-        const value = CC_FIELDS_CONFIG[ccType]?.(data, field.element);
-        if (value) await field.autofill(value);
+        const value = CC_FIELDS_CONFIG[ccType](data, field.element);
+        const next = value || (field.autofilled === FieldType.CREDIT_CARD ? '' : undefined);
+
+        if (next !== undefined) {
+            await field.autofill(next);
+            return ccType;
+        }
     });
+
+    return result.filter(truthy);
 };
