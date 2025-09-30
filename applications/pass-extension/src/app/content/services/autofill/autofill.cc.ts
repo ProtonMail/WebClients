@@ -1,3 +1,4 @@
+import { splitFullName } from 'proton-pass-extension/app/content/services/autofill/autofill.identity';
 import type { FieldElement, FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 
@@ -12,7 +13,8 @@ import {
 } from '@proton/pass/fathom';
 import type { CCItemData, Maybe } from '@proton/pass/types';
 import { isInputElement, isSelectElement } from '@proton/pass/utils/dom/predicates';
-import { prop } from '@proton/pass/utils/fp/lens';
+import { head, last, prop } from '@proton/pass/utils/fp/lens';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { seq } from '@proton/pass/utils/fp/promises';
 
 type CCFieldValueExtract = (data: CCItemData, el: FieldElement) => Maybe<string>;
@@ -55,6 +57,8 @@ export const CC_FIELDS_CONFIG: Partial<Record<CCFieldType, CCFieldValueExtract>>
     [CCFieldType.EXP_MONTH]: getExpirationMonth,
     [CCFieldType.EXP_YEAR]: getExpirationYear,
     [CCFieldType.EXP]: getExpirationDate,
+    [CCFieldType.FIRSTNAME]: pipe(prop('cardholderName'), splitFullName, head),
+    [CCFieldType.LASTNAME]: pipe(prop('cardholderName'), splitFullName, last),
     [CCFieldType.NAME]: prop('cardholderName'),
     [CCFieldType.NUMBER]: prop('number'),
 };
