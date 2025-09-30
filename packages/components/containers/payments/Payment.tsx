@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
+import { Banner, BannerVariants } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
@@ -215,12 +216,20 @@ export const PaymentsNoApi = ({
 
     const billingCountryInput = showTaxCountry && taxCountry && <TaxCountrySelector className="mb-2" {...taxCountry} />;
 
-    const defaultPaymentMethodMessage = flow === 'subscription' && (
-        <DefaultPaymentMethodMessage
-            className="mt-4"
-            savedPaymentMethods={savedPaymentMethods}
-            selectedPaymentMethod={method}
-        />
+    const infoMessages = (
+        <>
+            {flow === 'subscription' && (
+                <DefaultPaymentMethodMessage
+                    className="mt-4"
+                    savedPaymentMethods={savedPaymentMethods}
+                    selectedPaymentMethod={method}
+                />
+            )}
+            {currencyOverride.isCurrencyOverriden && (
+                <Banner className="mt-2 mb-4" variant={BannerVariants.INFO}>{c('Payments')
+                    .t`Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.`}</Banner>
+            )}
+        </>
     );
 
     // We must collect payment method details when amount due is greater than 0, this is obvious. But also when user
@@ -283,10 +292,7 @@ export const PaymentsNoApi = ({
                         )}
                         {method === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT && (
                             <>
-                                <SepaDirectDebit
-                                    {...sharedCbProps}
-                                    isCurrencyOverriden={currencyOverride.isCurrencyOverriden}
-                                />
+                                <SepaDirectDebit {...sharedCbProps} />
 
                                 <div className="mt-2">
                                     {billingCountryInput}
@@ -349,7 +355,7 @@ export const PaymentsNoApi = ({
                                 {renderSavedChargebeeIframe && <ChargebeeSavedCardWrapper {...sharedCbProps} />}
                             </>
                         )}
-                        {defaultPaymentMethodMessage}
+                        {infoMessages}
                     </div>
                 )}
             </div>

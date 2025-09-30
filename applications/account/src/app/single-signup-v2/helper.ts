@@ -38,7 +38,7 @@ import {
     isForbiddenLumoPlus,
     isForbiddenModification,
     isLifetimePlanSelected,
-    isSubcriptionCheckForbidden,
+    isSubscriptionCheckForbidden,
     isValidPlanName,
     switchPlan,
 } from '@proton/payments';
@@ -111,7 +111,7 @@ export const getSubscriptionData = async (
     const checkResultPromise = (async () => {
         const planIDs = options.planIDs ?? {};
 
-        if (isSubcriptionCheckForbidden(options.subscription, planIDs, options.cycle)) {
+        if (isSubscriptionCheckForbidden(options.subscription, planIDs, options.cycle)) {
             return getOptimisticCheckResult({
                 plansMap: options.plansMap,
                 planIDs,
