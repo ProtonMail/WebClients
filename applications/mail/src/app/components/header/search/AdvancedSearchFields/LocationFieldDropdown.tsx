@@ -7,8 +7,6 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
-    FolderIcon,
-    Icon,
     Mark,
     SearchInput,
     usePopperAnchor,
@@ -16,6 +14,8 @@ import {
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
+import { LocationFieldDropdownItemIcon } from './LocationFieldDropdownItemIcon';
+import { isCustomFolder } from './advancesSearchFieldHelpers';
 import type { ItemsGroup } from './useLocationFieldOptions';
 import { useLocationFieldOptions } from './useLocationFieldOptions';
 
@@ -25,7 +25,7 @@ interface Props {
 }
 
 const LocationFieldDropdown = ({ value, onChange }: Props) => {
-    const { grouped: optionGroups, isLabel, isCustomFolder, isDefaultFolder } = useLocationFieldOptions();
+    const { grouped: optionGroups } = useLocationFieldOptions();
     const [search, setSearch] = useState('');
     const [options, setOptions] = useState(optionGroups);
 
@@ -94,19 +94,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                                     isCustomFolder(item) && item.className,
                                                 ])}
                                             >
-                                                {isLabel(item) && (
-                                                    <Icon
-                                                        name="circle-filled"
-                                                        color={item.color}
-                                                        className="shrink-0 mr-2"
-                                                    />
-                                                )}
-                                                {isDefaultFolder(item) && (
-                                                    <Icon name={item.icon} className="shrink-0 mr-2" />
-                                                )}
-                                                {isCustomFolder(item) && (
-                                                    <FolderIcon folder={item.folderEntity} className="shrink-0 mr-2" />
-                                                )}
+                                                <LocationFieldDropdownItemIcon item={item} value={value} />
                                                 <span className="text-ellipsis">
                                                     <Mark value={search}>{item.text}</Mark>
                                                 </span>

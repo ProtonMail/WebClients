@@ -85,14 +85,6 @@ export const mockUseLocationFieldOptions = (
         all,
         grouped,
         findItemByValue: (value: string) => all.find((item) => item.value === value),
-        isDefaultFolder: (
-            item: useLocationFieldOptionsModule.Item
-        ): item is useLocationFieldOptionsModule.ItemDefaultFolder => 'url' in item && 'icon' in item,
-        isCustomFolder: (
-            item: useLocationFieldOptionsModule.Item
-        ): item is useLocationFieldOptionsModule.ItemCustomFolder => 'folderEntity' in item,
-        isLabel: (item: useLocationFieldOptionsModule.Item): item is useLocationFieldOptionsModule.ItemLabel =>
-            'color' in item,
         ...value,
     });
 
