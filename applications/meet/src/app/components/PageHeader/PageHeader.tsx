@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import AppsDropdown, { UnAuthenticatedAppsDropdown } from '@proton/components/containers/app/AppsDropdown';
 import UserDropdown from '@proton/components/containers/heading/UserDropdown';
@@ -24,7 +25,6 @@ interface PageHeaderProps {
 
 export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeaderProps) => {
     const history = useHistory();
-
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
 
     const handleSignIn = (returnUrl: string) =>
@@ -66,13 +66,27 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
     );
 
     return (
-        <div className="meet-page-header w-full px-0 py-2 md:py-4 flex items-center justify-space-between shrink-0">
+        <div
+            className="meet-page-header w-full py-4 flex items-center justify-space-between shrink-0 h-custom"
+            style={{ '--h-custom': '5.625rem' }}
+        >
             <div className="flex gap-4 items-center">
-                <img className="logo cursor-pointer" src={logo} alt="" onClick={() => history.push('/dashboard')} />
+                <button
+                    className="interactive rounded-full hidden md:block p-2"
+                    onClick={() => history.push('/dashboard')}
+                    aria-label={c('Alt').t`Go to dashboard`}
+                >
+                    <img className="logo cursor-pointer " src={logo} alt="" />
+                </button>
+                <button
+                    className="interactive rounded-full block md:hidden p-1 flex items-center justify-center"
+                    onClick={() => history.push('/dashboard')}
+                    aria-label={c('Alt').t`Go to dashboard`}
+                >
+                    <MeetLogo variant="glyph-only" className="logo cursor-pointer" />
+                </button>
 
-                <div className="hidden md:inline-block w-custom" style={{ '--w-custom': 'fit-content' }}>
-                    {buttons}
-                </div>
+                <div className="hidden md:inline-block w-fit-content">{buttons}</div>
             </div>
 
             <div className="flex flex-nowrap gap-2 items-center">
