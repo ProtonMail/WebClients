@@ -728,9 +728,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Να μην ξαναγίνει αυτή η ερώτηση"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Θέλετε το πρόχειρο σας να διαγράφεται αυτόματα μετά από ${ timeoutDurationHumanReadable };"
       ]
@@ -1745,9 +1742,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "Στο ${ PASS_SHORT_APP_NAME }, μια σημείωση στοιχείου κρυπτογραφείται με το κλειδί κρυπτογράφησης στοιχείου και μόνο οι χρήστες που έχουν πρόσβαση στο στοιχείο μπορούν να δουν τη σημείωση. Ούτε καν η ${ BRAND_NAME } ή η SimpleLogin δεν μπορούν να το δουν."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Για να αξιοποιήσετε στο έπακρο το ${ PASS_APP_NAME }, παραχωρήστε τα απαραίτητα δικαιώματα προέκτασης"
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Εγκαταστήστε το ${ PASS_APP_NAME } για ${ browser.title } για γρήγορη αυτόματη συμπλήρωση των στοιχείων της σύνδεσής σας."
       ],
@@ -1911,6 +1905,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Η ηλεκτρονική πρόσβαση στο ${ PASS_APP_NAME } θα απαιτήσει έναν κωδικό PIN. Θα αποσυνδεθείτε μετά από 3 αποτυχημένες προσπάθειες."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Ανοίξτε τις ρυθμίσεις του Safari για την προέκταση και βεβαιωθείτε ότι τα δικαιώματα πρόσβασης στον ιστότοπο είναι ενεργοποιημένα για τους τομείς ${ BRAND_NAME }."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Οι ειδοποιήσεις μας δίνουν προτεραιότητα στην ασφάλεια. Εάν δεν αναγνωρίζετε καμία από τις παραβιασμένες πληροφορίες, μπορείτε να αγνοήσετε με ασφάλεια αυτήν την αναφορά."
@@ -2940,9 +2937,6 @@
       ],
       "Get the extension for your browser.": [
         "Αποκτήστε την προέκταση για το πρόγραμμα περιήγησής σας."
-      ],
-      "Grant": [
-        "Παραχώρηση"
       ],
       "Hidden": [
         "Κρυφό πεδίο"
@@ -4297,9 +4291,6 @@
       ],
       "Get Started": [
         "Ξεκινήστε"
-      ],
-      "Grant permissions": [
-        "Απαιτούμενα δικαιώματα"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Οι κρυφές κρύπτες δεν είναι ορατές κατά την αναζήτηση και την αυτόματη συμπλήρωση"

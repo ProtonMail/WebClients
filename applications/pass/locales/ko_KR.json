@@ -1711,9 +1711,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "${ PASS_SHORT_APP_NAME }에서 항목 메모는 항목 암호화 키로 암호화되며 항목에 접근할 수 있는 사용자만 메모를 볼 수 있습니다. ${ BRAND_NAME }나 SimpleLogin조차도 확인할 수 없습니다."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "${ PASS_APP_NAME }의 최고의 경험을 누리기 위하여, 필요한 확장 권한을 허용해 주세요."
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "빠르게 로그인 정보를 자동 완성하기 위해 ${ browser.title }용 ${ PASS_APP_NAME }를 설치하세요."
       ],
@@ -2881,9 +2878,6 @@
       ],
       "Get the extension for your browser.": [
         "브라우저용 확장 프로그램을 다운로드하세요."
-      ],
-      "Grant": [
-        "허용"
       ],
       "Hidden": [
         "숨김"
@@ -4224,9 +4218,6 @@
       ],
       "Get Started": [
         "시작하기"
-      ],
-      "Grant permissions": [
-        "권한 부여"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "숨겨진 금고는 검색과 자동 완성에서 표시되지 않습니다."
