@@ -21,6 +21,7 @@ const ENV = parseEnvVar('NODE_ENV', 'development', String);
 const HTTP_DEBUGGER = parseEnvVar('HTTP_DEBUGGER', false, parseBool);
 const HTTP_DEBUGGER_PORT = parseEnvVar('HTTP_DEBUGGER_PORT', 3000, Number);
 const MANIFEST_KEY = parseEnvVar('MANIFEST_KEY', BUILD_TARGET === 'chrome' ? 'chrome:production' : '', String);
+const REDUX_DEVTOOLS = parseEnvVar('REDUX_DEVTOOLS', false, Boolean);
 const REDUX_DEVTOOLS_PORT = parseEnvVar('REDUX_DEVTOOLS_PORT', 8000, parseInt);
 const RELEASE = parseEnvVar('RELEASE', false, parseBool);
 const RESUME_FALLBACK = parseEnvVar('RESUME_FALLBACK', false, parseBool);
@@ -43,6 +44,7 @@ export default {
     HTTP_DEBUGGER_PORT,
     HTTP_DEBUGGER,
     MANIFEST_KEY,
+    REDUX_DEVTOOLS,
     REDUX_DEVTOOLS_PORT,
     RELEASE,
     RESUME_FALLBACK,
