@@ -14,9 +14,11 @@ import {
     DropdownSizeUnit,
     Icon,
     Option,
+    RadioGroup,
     SelectTwo,
     usePopperAnchor,
 } from '@proton/components';
+import { DropdownBorderRadius } from '@proton/components/components/dropdown/Dropdown';
 
 import mdx from './Dropdown.mdx';
 
@@ -40,19 +42,41 @@ export const Basic = () => {
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
-                    {['Foo', 'Bar'].map((i) => {
-                        return (
-                            <DropdownMenuButton className="text-left" key={i}>
-                                {i}
-                            </DropdownMenuButton>
-                        );
-                    })}
+                    <DropdownMenuButton className="text-left" key="foo"></DropdownMenuButton>
+                    <DropdownMenuButton className="text-left" key="bar"></DropdownMenuButton>
                 </DropdownMenu>
                 <div className="p-4">
                     <Button className="w-full" color="norm">
                         Action
                     </Button>
                 </div>
+            </Dropdown>
+        </>
+    );
+};
+
+export const BorderRadius = () => {
+    const [borderRadius, setBorderRadius] = useState<DropdownProps['borderRadius']>(DropdownBorderRadius.MD);
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
+    return (
+        <>
+            <RadioGroup
+                name="borderRadius"
+                className="mb-4"
+                onChange={(value) => {
+                    setBorderRadius(value);
+                }}
+                value={borderRadius}
+                options={Object.values(DropdownBorderRadius).map((option) => ({ label: option, value: option }))}
+            />
+            <DropdownButton ref={anchorRef} isOpen={isOpen} onClick={toggle} hasCaret>
+                Click me
+            </DropdownButton>
+            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} borderRadius={borderRadius} className="p-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
             </Dropdown>
         </>
     );
