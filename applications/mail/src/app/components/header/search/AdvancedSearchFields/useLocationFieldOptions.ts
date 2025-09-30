@@ -4,14 +4,19 @@ import type { IconName } from '@proton/components';
 import { useFolders, useLabels } from '@proton/mail';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
+import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import type { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
+import { getLabelFromCategoryId } from 'proton-mail/components/categoryView/categoriesStringHelpers';
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
+import { useEncryptedSearchContext } from 'proton-mail/containers/EncryptedSearchProvider';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getStandardFolders } from '../../../../helpers/labels';
 import useScheduleSendFeature from '../../../composer/actions/scheduleSend/useScheduleSendFeature';
+import { buildFolderOption, folderReducer } from './advancesSearchFieldHelpers';
 
 interface ItemBase {
     text: string;
@@ -21,6 +26,8 @@ interface ItemBase {
 export interface ItemDefaultFolder extends ItemBase {
     icon: IconName;
     url: string;
+    className?: string;
+    color?: string;
 }
 
 export interface ItemCustomFolder extends ItemBase {
@@ -48,45 +55,7 @@ interface UseLocationFieldOptionsReturn {
     all: Item[];
     grouped: ItemsGroup;
     findItemByValue: (value: string) => Item | undefined;
-    isDefaultFolder(item: Item): item is ItemDefaultFolder;
-    isCustomFolder(item: Item): item is ItemCustomFolder;
-    isLabel(item: Item): item is ItemLabel;
 }
-
-const getMarginByFolderLvl = (lvl: number) => {
-    switch (lvl) {
-        case 1:
-            return 'ml-2';
-        case 2:
-        case 3:
-        case 4:
-            return 'ml-4';
-        default:
-            return '';
-    }
-};
-
-function folderReducer(acc: ItemCustomFolder[], folder: FolderWithSubFolders, level = 0) {
-    acc.push({
-        text: formatFolderName(level, folder.Name),
-        value: folder.ID,
-        className: getMarginByFolderLvl(level),
-        folderEntity: folder,
-    });
-
-    if (Array.isArray(folder.subfolders)) {
-        folder.subfolders.forEach((folder) => folderReducer(acc, folder, level + 1));
-    }
-
-    return acc;
-}
-
-const buildFolderOption = (folderMap: ReturnType<typeof getStandardFolders>, folderID: MAILBOX_LABEL_IDS) => ({
-    value: folderID,
-    text: folderMap[folderID].name,
-    url: folderMap[folderID].to,
-    icon: folderMap[folderID].icon,
-});
 
 export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const mailSettings = useMailModel('MailSettings');
@@ -95,11 +64,30 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const treeview = buildTreeview(folders);
     const { canScheduleSend } = useScheduleSendFeature();
 
-    const { AlmostAllMail } = mailSettings;
     const folderMap = getStandardFolders();
+
+    const { esStatus } = useEncryptedSearchContext();
+    const categoryView = useCategoriesView();
+    const categoriesOptions: ItemDefaultFolder[] =
+        categoryView.categoryViewAccess && !esStatus.esEnabled
+            ? categoryView.activeCategoriesTabs.map((category) => {
+                  return {
+                      value: category.id,
+                      text: getLabelFromCategoryId(category.id),
+                      url: `/${LABEL_IDS_TO_HUMAN[category.id]}`,
+                      icon: category.icon,
+                      className: 'mail-category-color',
+                      color: category.colorShade,
+                  };
+              })
+            : [buildFolderOption(folderMap, MAILBOX_LABEL_IDS.INBOX)];
+
     const defaultFolders: ItemDefaultFolder[] = [
-        buildFolderOption(folderMap, AlmostAllMail ? MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL : MAILBOX_LABEL_IDS.ALL_MAIL),
-        buildFolderOption(folderMap, MAILBOX_LABEL_IDS.INBOX),
+        buildFolderOption(
+            folderMap,
+            mailSettings.AlmostAllMail ? MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL : MAILBOX_LABEL_IDS.ALL_MAIL
+        ),
+        ...categoriesOptions,
         buildFolderOption(folderMap, MAILBOX_LABEL_IDS.SNOOZED),
         buildFolderOption(
             folderMap,
@@ -142,8 +130,5 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
             { id: 'LABELS', title: c('Group').t`Labels`, items: labelOptions },
         ],
         findItemByValue: (value: string) => all.find((item) => item.value === value),
-        isDefaultFolder: (item: Item): item is ItemDefaultFolder => 'url' in item && 'icon' in item,
-        isCustomFolder: (item: Item): item is ItemCustomFolder => 'folderEntity' in item,
-        isLabel: (item: Item): item is ItemLabel => 'color' in item,
     };
 }
