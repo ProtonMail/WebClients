@@ -1,7 +1,6 @@
 import { screen } from '@testing-library/dom';
 
 import { useUser } from '@proton/account/user/hooks';
-import { APPS } from '@proton/shared/lib/constants';
 import { useFlag, useGetFlag } from '@proton/unleash';
 
 import { easySwitchRender } from '../../tests/render';
@@ -23,7 +22,7 @@ describe('GmailForwarding', () => {
         mockUseFlag.mockReturnValue(false);
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true, Flags: [] }, false]);
 
-        easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
+        easySwitchRender(<GmailForwarding />);
 
         const gmailForward = screen.getByTestId('ProviderButton:googleCardForward').firstChild;
         expect(gmailForward).toBeEnabled();
@@ -33,7 +32,7 @@ describe('GmailForwarding', () => {
         mockUseFlag.mockReturnValue(false);
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: false, Flags: [] }, false]);
 
-        easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
+        easySwitchRender(<GmailForwarding />);
 
         const gmailForward = screen.getByTestId('ProviderButton:googleCardForward');
         expect(gmailForward).toBeDisabled();
@@ -43,7 +42,7 @@ describe('GmailForwarding', () => {
         mockUseFlag.mockReturnValue(false);
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true, Flags: [] }, true]);
 
-        easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
+        easySwitchRender(<GmailForwarding />);
 
         const gmailForward = screen.getByTestId('ProviderButton:googleCardForward');
         expect(gmailForward).toBeDisabled();
@@ -53,7 +52,7 @@ describe('GmailForwarding', () => {
         mockUseFlag.mockReturnValue(true);
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true, Flags: [] }, false]);
 
-        easySwitchRender(<GmailForwarding app={APPS.PROTONMAIL} />);
+        easySwitchRender(<GmailForwarding />);
 
         const gmailForward = screen.getByTestId('ProviderButton:googleCardForward');
         expect(gmailForward).toBeDisabled();

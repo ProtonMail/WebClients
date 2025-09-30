@@ -95,7 +95,7 @@ jest.mock('@proton/activation/src/hooks/useBYOEAddressesCounts', () => ({
 }));
 
 describe('addresses with user', () => {
-    const user = { ID: 'abc' } as UserModel;
+    const user = { ID: 'abc', Flags: { 'has-a-byoe-address': false } } as UserModel;
 
     const addresses = [
         { ID: '1', Email: 'a@proton.me', Type: ADDRESS_TYPE.TYPE_ORIGINAL, Status: 1, Receive: 1, Send: 1, HasKeys: 1 },
@@ -116,7 +116,7 @@ describe('addresses with user', () => {
     mockedUseAddresses.mockReturnValue([addresses, false]);
     mockedOrderableTable.mockImplementation(ActualOrderableTable);
     mockedUseNotifications.mockReturnValue({} as any);
-    mockedUseUser.mockReturnValue([{}] as any);
+    mockedUseUser.mockReturnValue([user] as any);
     mockedUseAddressesKeys.mockReturnValue([{}] as any);
     mockedUseKTVerifier.mockReturnValue({} as any);
     mockedUseOrganizationKey.mockReturnValue([{}] as any);

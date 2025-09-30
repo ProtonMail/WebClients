@@ -39,7 +39,6 @@ import {
 import ForwardSection from '@proton/components/containers/forward/ForwardSection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
-import { APPS } from '@proton/shared/lib/constants';
 
 import type { getMailAppRoutes } from './routes';
 import { getHasPmMeAddress } from './routes';
@@ -88,7 +87,7 @@ const MailSettingsRouter = ({
                     <PmMeSection isPMAddressActive={getHasPmMeAddress(addresses)} />
                     <IdentitySection />
                     <AliasPromotionSection />
-                    <AddressesSection isOnlySelf app={APPS.PROTONMAIL} />
+                    <AddressesSection isOnlySelf />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, folder)}>

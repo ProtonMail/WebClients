@@ -8,6 +8,9 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
+import { useEasySwitchDispatch } from '../../../logic/store';
+import { loadSyncList } from '../../../logic/sync/sync.actions';
+
 interface Props extends ModalProps {
     address: Address;
 }
@@ -16,9 +19,12 @@ const DisconnectBYOEModal = ({ address, ...rest }: Props) => {
     const { onClose } = rest;
     const [loading, withLoading] = useLoading(false);
     const dispatch = useDispatch();
+    const easySwitchDispatch = useEasySwitchDispatch();
 
     const handleSubmit = async () => {
         await dispatch(updateBYOEAddressConnection({ address, type: 'disconnect' }));
+        // also update the syncs list
+        void easySwitchDispatch(loadSyncList());
 
         onClose?.();
     };

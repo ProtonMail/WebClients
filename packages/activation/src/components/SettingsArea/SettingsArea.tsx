@@ -35,7 +35,7 @@ const SettingsArea = ({ config, app }: Props) => {
                 <PrivateMainSettingsArea config={config}>
                     <SettingsParagraph data-testid="SettingsArea:forwardSection">
                         <div className="md:max-w-custom" style={{ '--md-max-w-custom': '27rem' }}>
-                            {hasAccessToBYOE ? null : <GmailForwarding app={app} />}
+                            {hasAccessToBYOE ? null : <GmailForwarding />}
                             <ProviderCard app={app} />
                         </div>
                     </SettingsParagraph>
