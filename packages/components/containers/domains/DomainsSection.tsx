@@ -25,6 +25,7 @@ import { useDispatch } from '@proton/redux-shared-store';
 import {
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
+    DARK_WEB_MONITORING_NAME,
     MAIL_UPSELL_PATHS,
     ORGANIZATION_STATE,
     UPSELL_COMPONENT,
@@ -32,11 +33,13 @@ import {
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+import useFlag from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useOrganizationModals from '../organization/useOrganizationModals';
 import CatchAllModal from './CatchAllModal';
 import DeleteDomainModal from './DeleteDomainModal';
+import DomainDarkWebMonitoringToggle from './DomainDarkWebMonitoringToggle';
 import DomainModal from './DomainModal';
 import DomainName from './DomainName';
 import DomainStatus from './DomainStatus';
@@ -88,6 +91,14 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
     const setCatchAllText = c('Action').t`Set catch-all`;
     const deleteText = c('Action').t`Delete`;
 
+    const isB2bDarkWebMonitoringEnable = useFlag('B2BDarkWebMonitoring');
+    const headerCells = [
+        c('Header for addresses table').t`Domain`,
+        c('Header for addresses table').t`Status`,
+        isB2bDarkWebMonitoringEnable && DARK_WEB_MONITORING_NAME,
+        c('Header for addresses table').t`Actions`,
+    ].filter(isTruthy);
+
     return (
         <SettingsSectionWide>
             {organizationModals.modals}
@@ -135,14 +146,8 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                     </div>
                     {!!customDomains?.length && domainsAddressesMap && (
                         <Table hasActions responsive="cards">
-                            <TableHeader
-                                cells={[
-                                    c('Header for addresses table').t`Domain`,
-                                    c('Header for addresses table').t`Status`,
-                                    c('Header for addresses table').t`Actions`,
-                                ]}
-                            />
-                            <TableBody loading={loading} colSpan={4}>
+                            <TableHeader cells={headerCells} />
+                            <TableBody loading={loading} colSpan={headerCells.length}>
                                 {customDomains.map((domain) => {
                                     const domainAddresses = domainsAddressesMap[domain.ID] || [];
                                     return (
@@ -152,11 +157,18 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                                             labels={[
                                                 c('Header for addresses table').t`Domain`,
                                                 c('Header for addresses table').t`Status`,
+                                                isB2bDarkWebMonitoringEnable && DARK_WEB_MONITORING_NAME,
                                                 '',
-                                            ]}
+                                            ].filter(isTruthy)}
                                             cells={[
                                                 <DomainName domain={domain} />,
                                                 <DomainStatus domain={domain} domainAddresses={domainAddresses} />,
+                                                isB2bDarkWebMonitoringEnable && (
+                                                    <DomainDarkWebMonitoringToggle
+                                                        domain={domain}
+                                                        disabled={!isOrgActive}
+                                                    />
+                                                ),
                                                 <DropdownActions
                                                     size="small"
                                                     list={[
@@ -191,7 +203,7 @@ const DomainsSectionInternal = ({ onceRef }: { onceRef: MutableRefObject<boolean
                                                         } as const,
                                                     ].filter(isTruthy)}
                                                 />,
-                                            ]}
+                                            ].filter(isTruthy)}
                                         />
                                     );
                                 })}
