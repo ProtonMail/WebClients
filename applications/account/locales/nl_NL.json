@@ -1558,6 +1558,9 @@
       "User": [
         "Gebruiker"
       ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
+      ],
       "Verify": [
         "Verifiëren"
       ],
@@ -8209,6 +8212,12 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Nodig uw vrienden uit** voor ${ BRAND_NAME } met uw verwijzingslink."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Stap 3:** Ontvang ${ referrerRewardAmount } tegoed voor elke persoon die zich inschrijft voor een abonnement."
+      ],
       "**Sync codes** to all your devices": [
         "**Synchroniseer codes** naar al uw apparaten"
       ],
@@ -8322,6 +8331,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Server toevoegen (${ availableAddedCount } beschikbaar)",
         "Server toevoegen (${ availableAddedCount } beschikbaar)"
+      ],
+      "Add video conferencing links to calendar invitations": [
+        "Voeg snelkoppelingen voor videoconferenties toe aan de agenda-uitnodigingen"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Voeg uw naam en logo toe om een gepersonaliseerde ervaring voor uw organisatie te maken."
@@ -11818,10 +11830,6 @@
       "${ nbYear } year": [
         "${ nbYear } jaar",
         "${ nbYear } jaren"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen",
-        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
@@ -16463,9 +16471,6 @@
       "Taxes": [
         "Belastingen"
       ],
-      "terms & conditions": [
-        "algemene voorwaarden"
-      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
         "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
@@ -16531,6 +16536,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "Tegoed wordt toegevoegd aan uw saldo."
       ]
     },
     "Payments.plan_name": {
@@ -17209,6 +17219,14 @@
       ],
       "Save your recovery phrase": [
         "Sla uw herstelzin op"
+      ]
+    },
+    "Referral": {
+      "Invite friends. Get credits.": [
+        "Nodig vrienden uit. Ontvang tegoed."
+      ],
+      "Start earning credits": [
+        "Begin met het verdienen van tegoed"
       ]
     },
     "Remark about a key type option": {
@@ -18476,9 +18494,6 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Ga verder met ${ PLAN_NAMES[plan] }"
       ],
-      "Continue with the free plan": [
-        "Doorgaan met het gratis abonnement"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
@@ -19061,6 +19076,9 @@
       ]
     },
     "Spotlight": {
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Ontvang tegoed wanneer de persoon die u uitnodigt zich abonneert op een ${ BRAND_NAME }-abonnement."
+      ],
       "Get up to ${ credits } in credits.": [
         "Krijg tot wel ${ credits } als krediet."
       ],
@@ -20494,6 +20512,14 @@
       "${ feature } is now active": [
         "${ feature } is nu actief"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } vriend is uitgenodigd",
+        "${ friendsInvited } vrienden zijn uitgenodigd"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } Vriend is geabonneerd",
+        "${ friendsSubscribed } vrienden zijn geabonneerd"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -20870,6 +20896,9 @@
       ],
       "Credentials": [
         "Inloggegevens"
+      ],
+      "Credit earned": [
+        "Tegoed verdiend"
       ],
       "Credits": [
         "Tegoed"
@@ -21907,6 +21936,9 @@
       "Version history": [
         "Versiegeschiedenis"
       ],
+      "Video conferencing with Zoom": [
+        "Videovergadering met Zoom"
+      ],
       "View organization events by upgrading to Professional": [
         "Bekijk organisatie afspraken door te upgraden naar Professional"
       ],
@@ -22248,9 +22280,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "Het adres is losgekoppeld. Berichten verzenden en ontvangen is gepauzeerd. Maak opnieuw verbinding om dit adres opnieuw in te schakelen."
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."

@@ -1768,6 +1768,12 @@
       "Disallow unsigned mail": [
         "Zakázať nepodpísanú poštu"
       ],
+      "Disconnect": [
+        "Odpojiť"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Odpojiť adresu „${ emailAddress }”"
+      ],
       "Edit": [
         "Upraviť"
       ],
@@ -1791,6 +1797,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Vygenerovať chýbajúce kľúče pre adresu „${ emailAddress }“"
+      ],
+      "Grant permission": [
+        "Udeliť povolenie"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Udeliť povolenie pre „${ emailAddress }“"
       ],
       "Reconnect": [
         "Znova pripojiť"
@@ -1835,6 +1847,9 @@
       ],
       "Orphan": [
         "Osirelý"
+      ],
+      "Permission revoked": [
+        "Povolenie zrušené"
       ]
     },
     "Admin": {
@@ -6376,6 +6391,11 @@
         "PSČ je povinné"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Prihláste sa pomocou tej istej Gmail adresy, ktorú ste použili pri prvom prihlásení, prosím."
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Vyskytla sa chyba pri čítaní vášho súboru ${ formattedFilename }. Nesprávny formát súboru."
@@ -10030,6 +10050,9 @@
       "No countries enabled": [
         "Nie sú povolené žiadne krajiny"
       ],
+      "No credit card required": [
+        "Platobná karta nie je potrebná"
+      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Nie je nastavený žiadny spôsob obnovy údajov; ste vystavení riziku straty prístupu k svojim údajom"
       ],
@@ -12288,12 +12311,6 @@
         "${ nbYear } rokov",
         "${ nbYear } rokov"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } z ${ MaxAddresses } emailovej adresy",
-        "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
-        "${ UsedAddresses } z ${ MaxAddresses } emailových adries",
-        "${ UsedAddresses } z ${ MaxAddresses } emailových adries"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
       ],
@@ -12794,9 +12811,6 @@
       ],
       "Emails (last month)": [
         "Emaily (posledný mesiac)"
-      ],
-      "Emails categories": [
-        "Kategórie emailov"
       ],
       "Enabled": [
         "Povolené"
@@ -17078,6 +17092,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Suma splatná po skončení skúšobnej prevádzky dňa ${ formattedDate }"
+      ],
       "Billing Country": [
         "Krajina fakturácie"
       ],
@@ -17141,8 +17158,8 @@
       "Taxes": [
         "Dane"
       ],
-      "terms & conditions": [
-        "podmienky používania"
+      "terms and conditions": [
+        "zmluvnými podmienkami používania"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupón je možné použiť na ${ couponRedemptions } obnovenie.",
@@ -19211,6 +19228,12 @@
         "${ VPN_CONNECTIONS } vysokorýchlostných VPN pripojení",
         "${ VPN_CONNECTIONS } vysokorýchlostných VPN pripojení"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.servers }+ VPN serverov v ${ vpnServersCountData.free.countries } krajine",
+        "${ vpnServersCountData.free.servers }+ VPN serverov v ${ vpnServersCountData.free.countries } krajinách",
+        "${ vpnServersCountData.free.servers }+ VPN serverov v ${ vpnServersCountData.free.countries } krajinách",
+        "${ vpnServersCountData.free.servers }+ VPN serverov v ${ vpnServersCountData.free.countries } krajinách"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries } krajina",
         "${ vpnServersCountData.paid.countries }+ krajiny",
@@ -19247,6 +19270,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Amount due now": [
+        "Čiastka k zaplateniu teraz"
+      ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "A získajte ${ referralInfo.uiData.refereeRewardAmount } v kreditoch, ak si predplatíte."
       ],
@@ -19276,9 +19302,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Pokračujte s ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Pokračovať s Free planom"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Vytvoriť ${ BRAND_NAME } účet"
@@ -19403,8 +19426,8 @@
       "Select ${ title }": [
         "Vybrať ${ title }"
       ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "Vyberte si službu a užite si prémiovú verziu na ${ TRIAL_DURATION_DAYS } dní zadarmo. Nevyžaduje sa platobná karta."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Vyberte si službu a užite si prémiovú verziu na ${ TRIAL_DURATION_DAYS } dní zadarmo."
       ],
       "Selected": [
         "Vybrané"
@@ -19450,6 +19473,9 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Potom ${ priceWithDiscountPerMonth } mesačne s predplatným."
+      ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Potom ${ priceWithDiscountPerMonth } mesačne. Zrušiť môžete kedykoľvek."
       ],
       "To redeem on your next paid subscription.": [
         "Na uplatnenie pri vašom ďalšom platenom predplatnom."
@@ -23122,6 +23148,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Zmena na strane Gmailu blokuje pripojenie ${ BRAND_NAME }. Udeľte povolenie na obnovenie funkčnosti emailu."
+      ],
       "Account is disconnected": [
         "Účet je odpojený"
       ],
@@ -23268,9 +23297,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podpriečinky sa v aplikácii ${ MAIL_APP_NAME } zobrazia ako samostatné priečinky"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "Adresa bola odpojená. Odosielanie a prijímanie správ je pozastavené. Opätovným pripojením túto adresu opäť aktivujete."
       ],
       "The import will start with the most recent messages.": [
         "Import začne najnovšími správami."
