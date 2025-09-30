@@ -6,8 +6,8 @@ import WebpackDevServer from 'webpack-dev-server';
 
 import config from '../webpack.config';
 import createDebuggerServer from './debugger-server';
+import { createReduxDevServer } from './dev-server.redux';
 import envVars from './env';
-import createReduxDevTools from './redux-tools';
 import createReloadRuntimeServer from './reload-runtime';
 
 process.env.BABEL_ENV = 'development';
@@ -15,12 +15,13 @@ process.env.NODE_ENV = 'development';
 process.env.ASSET_PATH = '/';
 
 const {
-    WEBPACK_DEV_PORT,
-    REDUX_DEVTOOLS_PORT,
     HOT_MANIFEST_UPDATE,
-    RUNTIME_RELOAD,
-    RUNTIME_RELOAD_PORT,
     HTTP_DEBUGGER,
+    REDUX_DEVTOOLS_PORT,
+    REDUX_DEVTOOLS,
+    RUNTIME_RELOAD_PORT,
+    RUNTIME_RELOAD,
+    WEBPACK_DEV_PORT,
 } = envVars;
 
 const EXCLUDED_WEBPACK_ENTRIES = [
@@ -105,9 +106,12 @@ const server = new WebpackDevServer(
 );
 
 const main = async () => {
-    await server.start();
-    await createReduxDevTools({ port: REDUX_DEVTOOLS_PORT });
     let devVersion = 0;
+
+    if (REDUX_DEVTOOLS) {
+        console.info(`[ReduxDevTools] - Starting redux devtools server..`);
+        await createReduxDevServer(REDUX_DEVTOOLS_PORT);
+    }
 
     if (RUNTIME_RELOAD) {
         const { reload } = createReloadRuntimeServer({ port: RUNTIME_RELOAD_PORT });
@@ -140,6 +144,8 @@ const main = async () => {
             );
         });
     }
+
+    await server.start();
 };
 
 main().catch((err) => {
