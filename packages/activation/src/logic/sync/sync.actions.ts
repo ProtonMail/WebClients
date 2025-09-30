@@ -122,7 +122,7 @@ export const createSyncItem = createAsyncThunk<
 
         // If a sync already exists for an address, we should not create a new sync, otherwise we will get an error
         if (!sync) {
-            const { Sync } = await thunkApi.extra.api(createSync(ImporterID));
+            const { Sync } = await thunkApi.extra.api(createSync(ImporterID, Source));
             await thunkApi.extra.eventManager.call();
             sync = formatApiSync(Sync);
         }
