@@ -379,6 +379,9 @@
       "Customize": [
         "Anpassa"
       ],
+      "Customize categories": [
+        "Anpassa kategorier"
+      ],
       "Customize import": [
         "Anpassa import"
       ],
@@ -1995,9 +1998,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -5052,6 +5052,11 @@
         "Postnummer är obligatoriskt"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Logga in med samma Gmail-adress som du ursprungligen anslöt"
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Högst ${ maxAttendees } deltagare tillåts per inbjudan",
@@ -6692,6 +6697,9 @@
       ],
       "All messages stored with this label will be permanently deleted.": [
         "Alla meddelanden lagrade med denna etikett kommer att tas bort permanent."
+      ],
+      "All messages will be shown in Inbox, and the category tabs and tags will no longer be visible. ": [
+        "Alla meddelanden kommer att visas i inkorgen, och kategoriflikarna och etiketterna kommer inte längre att vara synliga. "
       ],
       "All your calendars are disabled.": [
         "Alla dina kalendrar är inaktiverade."
@@ -9035,6 +9043,14 @@
       ],
       "${ BRAND_NAME } username": [
         "Användarnamn för ${ BRAND_NAME }"
+      ],
+      "${ count } unread conversation": [
+        "${ count } oläst konversation",
+        "${ count } olästa konversationer"
+      ],
+      "${ count } unread message": [
+        "${ count } oläst meddelande",
+        "${ count } olästa meddelanden"
       ],
       "${ n } month": [
         "${ n } månad",
@@ -11541,11 +11557,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Ändra din e-postadress för populära tjänster nu för att undvika bli spårad och profileras. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Ekonomi"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "Jag har flyttat mina inloggningar till ${ BRAND_NAME }"
+      "Maybe later": [
+        "Kanske senare"
       ],
       "Privacy for all your online accounts": [
         "Integritet för alla dina konton online"
@@ -11555,9 +11574,6 @@
       ],
       "Social media": [
         "Sociala medier"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Använd din ${ MAIL_APP_NAME }-adress för att logga in på tjänster online för att undvika att bli spårad och profilerad. Ändra din e-post för populära tjänster nu. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11945,6 +11961,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Belopp att betala efter provperioden den ${ formattedDate }"
+      ],
       "Billing Country": [
         "Faktureringsland"
       ],
@@ -11996,7 +12015,7 @@
       "Taxes": [
         "Moms"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "användarvillkor"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
