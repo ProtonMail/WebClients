@@ -7,6 +7,7 @@ describe('createClipboardService', () => {
     let clipboard: jest.Mocked<ClipboardApi>;
     let alarmFactory: jest.MockedFunction<any>;
     let alarm: { set: jest.Mock; reset: jest.Mock; when: jest.Mock };
+    const date = jest.spyOn(global.Date, 'now').mockImplementation(() => 1759222063325);
 
     beforeEach(() => {
         clipboard = { read: jest.fn(), write: jest.fn() };
@@ -16,6 +17,10 @@ describe('createClipboardService', () => {
 
     afterEach(() => {
         jest.clearAllMocks();
+    });
+
+    afterAll(() => {
+        date.mockRestore();
     });
 
     describe('service creation', () => {
