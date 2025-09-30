@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { type ReactNode, useState } from 'react';
 import { useLocation } from 'react-router-dom-v5-compat';
 
 import { useUser } from '@proton/account/user/hooks';
@@ -33,11 +33,7 @@ import { DriveHeaderPrivate } from './DriveHeader';
 import { getDriveDrawerPermissions } from './drawerPermissions';
 import { DriveSidebarDeprecated } from './sidebar/DriveSidebar/DriveSidebar';
 
-interface Props {
-    children?: JSX.Element | JSX.Element[];
-}
-
-const DriveWindow = ({ children }: Props) => {
+const DriveWindow = ({ children }: { children: ReactNode }) => {
     const location = useLocation();
     const [user] = useUser();
     const { state: expanded, toggle: toggleExpanded } = useToggle();
