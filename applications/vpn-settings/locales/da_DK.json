@@ -7141,10 +7141,6 @@
         "${ nbDay } dag",
         "${ nbDay } dage"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser",
-        "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
       ],
@@ -10102,9 +10098,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, annuller når som helst."
-      ],
-      "terms & conditions": [
-        "vilkår og betingelser"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kuponen er gyldig til ${ couponRedemptions } fornyelse",

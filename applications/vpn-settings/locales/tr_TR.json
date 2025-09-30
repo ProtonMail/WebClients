@@ -77,6 +77,9 @@
       "Add external address": [
         "Dış e-posta adresi ekle"
       ],
+      "add more seats": [
+        "daha fazla koltuk ekle"
+      ],
       "Add PayPal": [
         "PayPal ekle"
       ],
@@ -997,6 +1000,9 @@
       ],
       "User": [
         "Kullanıcı"
+      ],
+      "Users and addresses": [
+        "Kullanıcılar ve adresler"
       ],
       "Verify": [
         "Doğrula"
@@ -5557,6 +5563,15 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "Google Authenticator gibi diğer iki adımlı doğrulama uygulamalarında **var olan kodlarınızı içe aktarın**."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**1. adım:** Arkadaşlarınızı öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**2. adım:** Arkadaşlarınız tarifelerine 2 hafta ücretsiz kullanım alacak."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**3. adım**: Bir tarifeye abone olan her kişi için ${ referrerRewardAmount } kredi kazanın."
+      ],
       "**Sync codes** to all your devices": [
         "Tüm aygıtlarınızda **kodları eşitleyin**"
       ],
@@ -5625,6 +5640,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)",
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)"
+      ],
+      "Add video conferencing links to calendar invitations": [
+        "Takvim davetiyelerinize görüntülü görüşme bağlantıları ekleyin."
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Kuruluşunuz için daha kişiselleştirilmiş bir deneyim oluşturmak için adınızı ve logonuzu ekleyin."
@@ -6189,6 +6207,9 @@
       "Groups": [
         "Gruplar"
       ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "E-postaları yazmaya, yanıtlamaya ve düzeltmeye yardımcı olur. Kapatılırsa yalnızca yöneticiler erişebilir. Bireysel kullanıcıları ${ userAndAddress } veya ${ addMoreSeats } içinden yönetin"
+      ],
       "here": [
         "buraya"
       ],
@@ -6453,6 +6474,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kuruluşunuzun üyelerinin hangi ${ BRAND_NAME } uygulamalarına erişebileceğini yönetin. Kullanımdan kaldırılırsa, uygulamalara yalnızca yöneticiler erişebilir."
+      ],
+      "Manage which features the members of your organization can access.": [
+        "Kuruluşunuzun üyelerinin hangi özelliklere erişebileceğini yönetin."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Hesabınızı ayarlamak için bu bilgileri kimlik doğrulama uygulamanıza el ile yazın. ${ switchButton }."
@@ -7775,10 +7799,6 @@
       "${ nbDay } day": [
         "${ nbDay } gün",
         "${ nbDay } gün"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi",
-        "${ MaxAddresses } / ${ UsedAddresses } e-posta adresi"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
@@ -10765,6 +10785,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
+      ],
       "Billing Country": [
         "Faturalanacak ülke"
       ],
@@ -10825,7 +10848,7 @@
       "Taxes": [
         "Vergiler"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "hükümler ve koşullar"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -11395,6 +11418,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "Her yönlendirme için ${ referrerRewardAmount }"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "Bu tarihten önce **iptal ederseniz**, deneme süresi sona erdiğinde ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } tarifesine **düşürüleceksiniz**."
       ],
@@ -11409,6 +11435,18 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "**${ planTitle }** tarifesini **${ textDate }** tarihine kadar ücretsiz kullanın."
+      ],
+      "Invite friends. Get credits.": [
+        "Arkadaşlarınızı davet edin. Kredi kazanın."
+      ],
+      "Refer friends": [
+        "Arkadaşlarınıza önerin"
+      ],
+      "Start earning credits": [
+        "Kredi kazanmaya başlayın"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "**${ maxRewardAmount }** tutarına kadar kredi kazanabilirsiniz."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "**${ planTitle }** tarifesinin sunduğu tüm güçlü özellikleri keşfetmek için **${ daysRemaining } gününüz kaldı**.",
@@ -14489,6 +14527,9 @@
       "Video conferencing with ${ MEET_APP_NAME }": [
         "${ MEET_APP_NAME } ile görüntülü görüşme"
       ],
+      "Video conferencing with Zoom": [
+        "Zoom ile görüntülü görüşme"
+      ],
       "View organization events by upgrading to Professional": [
         "Professional tarifesine yükselterek kuruluş etkinliklerini görüntüleyin"
       ],
@@ -14670,9 +14711,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sistem alt klasörleri ${ MAIL_APP_NAME } üzerinde ayrı klasörler olarak görünecek"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "Adresin bağlantısı kesildi. İleti gönderimi ve alımı duraklatıldı. Bu adresi kullanıma almak için yeniden bağlanın."
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."

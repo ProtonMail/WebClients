@@ -164,7 +164,7 @@
         "Атрымаць праверачны код"
       ],
       "Go to ${ planOrAppName }": [
-        "Перайдзіце ў ${ planOrAppName }"
+        "Перайсці ў ${ planOrAppName }"
       ],
       "Go to settings": [
         "Перайсці ў налады"
@@ -4504,6 +4504,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
+      ],
       "Billing Country": [
         "Краіна выстаўлення рахунку"
       ],
@@ -4555,7 +4558,7 @@
       "Taxes": [
         "Падаткі"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "умовы выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [

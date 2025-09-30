@@ -7844,12 +7844,6 @@
         "${ nbDay } dni",
         "${ nbDay } dnia"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "Adres e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
-        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
-        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
-        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
       ],
@@ -8253,7 +8247,7 @@
         "Przenieś do archiwum"
       ],
       "Move to Inbox": [
-        "Przenieś do Odebranych"
+        "Przenieś do odebranych"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Minimum ${ MIN_PASSWORD_LENGTH } znaków"
@@ -10897,9 +10891,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
-      ],
-      "terms & conditions": [
-        "regulaminem"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon jest ważny na ${ couponRedemptions } odnowienie.",

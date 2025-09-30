@@ -4919,6 +4919,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Valor devido após a avaliação em ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de Faturamento"
       ],
@@ -4970,7 +4973,7 @@
       "Taxes": [
         "Impostos"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "termos e condições"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -4991,6 +4994,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Esta ação expande a assinatura existente. Você será cobrado apenas pelos novos complementos e pelo tempo restante do ciclo de faturamento atual. A data de renovação da sua assinatura não será alterada."
       ],
       "This number will be shown on all future invoices": [
         "Este número será mostrado em todas as faturas futuras"
@@ -5037,6 +5043,9 @@
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
+      ],
+      "Credits will be added to your balance": [
+        "Créditos serão adicionados ao seu saldo."
       ]
     },
     "Payments.plan_name": {

@@ -383,10 +383,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+        "Po skončení zkušební verze ${ formattedDate } začne placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud zrušíte předplatné před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane předplatné, které bude automaticky obnoveno každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudete nic platit."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Můžete mít až ${ TRIAL_MAX_DEDICATED_IPS } vyhrazený server během zkušební doby."
@@ -1384,7 +1384,7 @@
     },
     "collider_2025: Pill": {
       "Protected by ${ BRAND_NAME }": [
-        "Chráněno ${ BRAND_NAME }"
+        "Chrání ${ BRAND_NAME }"
       ]
     },
     "collider_2025: Placeholder": {
@@ -1636,7 +1636,7 @@
     },
     "collider_2025:Info": {
       "AIs from Big Tech are built on harvesting your data. But ${ LUMO_SHORT_APP_NAME } is different. It was created by the scientists behind innovative, privacy-first services like ${ MAIL_APP_NAME } and ${ VPN_APP_NAME }. And it’s owned by a Swiss nonprofit, whose mission is to advance privacy and never make money from user data.": [
-        "AI od velkých technologických společností jsou založeny na sběru vašich dat. Ale ${ LUMO_SHORT_APP_NAME } je jiná. Byla vytvořena vědci, kteří stojí za inovativními, soukromí-prvními službami jako ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }. A vlastní ji švýcarská nezisková organizace, jejímž posláním je prosazovat soukromí a nikdy nevydělávat peníze z uživatelských dat."
+        "AI od velkých technologických společností jsou založeny na sběru vašich dat. Ale ${ LUMO_SHORT_APP_NAME } je jiná. Byla vytvořena vědci, kteří stojí za inovativními službami založenými na soukromí jako ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }. A vlastní ji švýcarská nezisková organizace, jejímž posláním je prosazovat soukromí a nikdy nevydělávat peníze z uživatelských dat."
       ],
       "Conversation encrypted": [
         "Konverzace šifrována"
@@ -5008,6 +5008,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Částka k úhradě po zkušební verzi ${ formattedDate }"
+      ],
       "Billing Country": [
         "Země fakturace"
       ],
@@ -5059,8 +5062,8 @@
       "Taxes": [
         "Daně"
       ],
-      "terms & conditions": [
-        "smluvních podmínek užívání"
+      "terms and conditions": [
+        "smluvní podmínky užívání"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupón je platný pro ${ couponRedemptions } obnovení.",
@@ -5088,6 +5091,9 @@
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíce. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Tato akce rozšiřuje stávající předplatné. Budou vám účtovány pouze nové doplňky a zbývající čas aktuálního fakturačního cyklu. Datum obnovení vašeho předplatného se nezmění."
       ],
       "This number will be shown on all future invoices": [
         "Toto číslo bude uvedeno na všech budoucích fakturách"
@@ -5129,6 +5135,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit za nevyužitou část vašeho předchozího předplatného"
+      ],
+      "Credits will be added to your balance": [
+        "Kredity budou přidány k vašemu zůstatku"
       ]
     },
     "Payments.plan_name": {

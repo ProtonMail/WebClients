@@ -2070,12 +2070,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험이 종료된 후, 유료 구독으로 전환되어 매 ${ renewCycle }개월마다 자동 갱신됩니다. ${ formattedDate } 이전에 취소 시 요금이 청구되지 않습니다."
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate }에 체험판이 종료된 후, 유료 구독으로 전환되어 매월 자동 갱신됩니다. ${ formattedDate } 이전에 취소시 요금이 청구되지 않습니다."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "\"체험\"을 클릭하면, ${ termsAndConditions }에 동의하는 것으로 간주됩니다."
       ],
@@ -11859,9 +11853,6 @@
       "${ nbYear } year": [
         "${ nbYear } 년"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "이메일 주소 ${ MaxAddresses }개 중 ${ UsedAddresses }개 사용 중"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(일시적으로 사용할 수 없습니다. 나중에 다시 확인해 주세요.)"
       ],
@@ -12341,9 +12332,6 @@
       ],
       "Emails (last month)": [
         "이마일 (지난 달)"
-      ],
-      "Emails categories": [
-        "이메일 카테고리"
       ],
       "Enabled": [
         "활성화됨"
@@ -16527,9 +16515,6 @@
       "Taxes": [
         "세금"
       ],
-      "terms & conditions": [
-        "이용 약관"
-      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "쿠폰이 ${ couponRedemptions }회 갱신까지 유효합니다."
       ],
@@ -18526,9 +18511,6 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "${ PLAN_NAMES[plan] }(으)로 계속"
       ],
-      "Continue with the free plan": [
-        "무료 플랜으로 계속하기"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } 계정 생성하기"
       ],
@@ -18648,9 +18630,6 @@
       ],
       "Select ${ title }": [
         "${ title } 선택"
-      ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "서비스를 선택하여 프리미엄 버전을 ${ TRIAL_DURATION_DAYS }일간 무료로 경험해 보세요. 신용카드 정보는 필요하지 않습니다."
       ],
       "Selected": [
         "선택됨"
@@ -22295,9 +22274,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }의 시스템 하위폴더가 별도로 폴더를 표시합니다"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "주소가 연결 해제되었습니다. 메시지 송수신이 일시 정지되었습니다. 이 주소를 다시 활성화하려면 재로그인이 필요합니다."
       ],
       "The import will start with the most recent messages.": [
         "최근의 주된 메시지 불러오기가 곧 시작됩니다."

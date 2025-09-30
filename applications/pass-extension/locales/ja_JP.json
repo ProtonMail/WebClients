@@ -59,6 +59,9 @@
       "Allow access": [
         "アクセスを許可"
       ],
+      "and": [
+        "と"
+      ],
       "Apply lifetime coupon code": [
         "生涯クーポンコードを適用"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "メンバーの表示"
       ],
-      "Select": [
-        "選択"
-      ],
       "Send email": [
         "メールを送信"
       ],
@@ -727,9 +727,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "今後表示しない"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "お客様のクリップボードを、${ timeoutDurationHumanReadable } 後に自動的にクリアしますか？"
       ]
@@ -1092,9 +1089,6 @@
       ],
       "PIN codes do not match": [
         "PINコードが一致しません"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "続行するには、${ PASS_APP_NAME } に必要な拡張機能の権限を付与してください"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "拡張機能をピン留めするか、「ピン留めせずに続行」を選択してください。"
@@ -1500,9 +1494,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain } にサインインするための保存されたパスキーを選択してください"
       ],
-      "Choose your preferred look and feel.": [
-        "お好みの外観と雰囲気を選択してください。"
-      ],
       "Click the icon to open it anytime.": [
         "アイコンをクリックするといつでも開くことができます。"
       ],
@@ -1793,9 +1784,6 @@
       ],
       "Loading...": [
         "読み込み中..."
-      ],
-      "Make it your own": [
-        "自分のものにする"
       ],
       "Manager": [
         "管理者"

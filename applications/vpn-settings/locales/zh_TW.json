@@ -6802,9 +6802,6 @@
       "${ nbDay } day": [
         "${ nbDay } 天"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "最多可有 ${ MaxAddresses } 組電郵位址，目前已有 ${ UsedAddresses } 組"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
@@ -9484,9 +9481,6 @@
       ],
       "Taxes": [
         "稅金"
-      ],
-      "terms & conditions": [
-        "條款及細則"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "此折價券可適用續約訂購 ${ couponRedemptions } 次。"

@@ -1450,6 +1450,12 @@
       "Toggle Contacts app": [
         "Pulsante app Contatti"
       ],
+      "Toggle notifications": [
+        "Attiva/disattiva notifiche"
+      ],
+      "Toggle referral": [
+        "Attiva/disattiva referral"
+      ],
       "Toggle security center app": [
         "Alterna l'app centro sicurezza"
       ],
@@ -5069,6 +5075,11 @@
       ],
       "ZIP code is required": [
         "Il codice postale è obbligatorio"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Accedi con lo stesso indirizzo email che hai usato originariamente"
       ]
     },
     "Error adding participants to a calendar event": {
@@ -9079,6 +9090,14 @@
       "${ BRAND_NAME } username": [
         "Nome utente ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "${ count } conversazione non letta",
+        "${ count } conversazioni non lette"
+      ],
+      "${ count } unread message": [
+        "${ count } messaggio non letto",
+        "${ count } messaggi non letti"
+      ],
       "${ n } month": [
         "${ n } mese",
         "${ n } mesi"
@@ -11593,11 +11612,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Cambia il tuo indirizzo email per i servizi più popolari ora per evitare di essere tracciato e profilato. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Dati finanziari"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "Ho spostato i miei accessi su ${ BRAND_NAME }"
+      "Maybe later": [
+        "Forse più tardi"
       ],
       "Privacy for all your online accounts": [
         "Privacy per tutti i tuoi account online"
@@ -11607,9 +11629,6 @@
       ],
       "Social media": [
         "Social media"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Utilizza il tuo indirizzo ${ MAIL_APP_NAME } per accedere ai servizi online per evitare di essere tracciato e profilato. Cambia subito la tua email per i servizi più diffusi. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11994,6 +12013,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Importo dovuto dopo la prova il ${ formattedDate }"
+      ],
       "Billing Country": [
         "Paese di fatturazione"
       ],
@@ -12045,8 +12067,8 @@
       "Taxes": [
         "Tasse"
       ],
-      "terms & conditions": [
-        "termini e condizioni"
+      "terms and conditions": [
+        "Termini e Condizioni"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Il coupon è valido per ${ couponRedemptions } rinnovo.",
@@ -12614,6 +12636,17 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per ogni affiliazione"
       ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Guadagna fino a ${ maxRewardAmount } in credito. Riceverai ${ referrerRewardAmount } quando la persona che inviti si abbona a un piano ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Amico associato",
+        "Amici associati"
+      ],
+      "Friend subscribed": [
+        "Amico abbonato",
+        "Amici abbonati"
+      ],
       "Invite friends. Get credits.": [
         "Invita amici. Ottieni crediti."
       ],
@@ -12628,6 +12661,9 @@
       ],
       "Start earning credits": [
         "Inizia a guadagnare crediti"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Puoi guadagnare fino a **${ maxRewardAmount }** in credito."
       ]
     },
     "Remaining days before the message expire": {
