@@ -85,3 +85,9 @@ export const readableTimeIntl = (unixTime: number, options: OptionsWithIntl = {}
 export const getCurrentUnixTimestamp = () => {
     return getUnixTime(serverTime());
 };
+
+// Convert provided time (in seconds) to minutes with remaining seconds
+// e.g. 817 -> [13, 37]
+export function toMinutesAndSeconds(seconds: number) {
+    return [Math.floor(seconds / 60), seconds % 60];
+}

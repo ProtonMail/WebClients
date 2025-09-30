@@ -31,8 +31,8 @@ const { setShares, removeShares } = useSharesStore((state) => ({
 // GOOD - useShallow when selecting multiple computed values
 const { lockedShares, defaultShareId } = useSharesStore(
     useShallow((state) => ({
-        lockedShares: state.getLockedShares(),
-        defaultShareId: state.getDefaultShareId()
+        lockedShares: state.getLockedShares,
+        defaultShareId: state.getDefaultShareId
     }))
 )
 ```
