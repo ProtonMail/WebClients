@@ -29,6 +29,7 @@ const {
     HTTP_DEBUGGER_PORT,
     HTTP_DEBUGGER,
     MANIFEST_KEY,
+    REDUX_DEVTOOLS,
     REDUX_DEVTOOLS_PORT,
     RELEASE,
     RESUME_FALLBACK,
@@ -71,6 +72,7 @@ section('Build configuration', () => {
 
     if (ENV !== 'production') {
         console.log(` HOT_MANIFEST_UPDATE = ${HOT_MANIFEST_UPDATE}`);
+        console.log(` REDUX_DEVTOOLS = ${REDUX_DEVTOOLS}`);
         console.log(` REDUX_DEVTOOLS_PORT = ${REDUX_DEVTOOLS_PORT}`);
         console.log(` RESUME_FALLBACK = ${RESUME_FALLBACK}`);
         console.log(` RUNTIME_RELOAD = ${RUNTIME_RELOAD}`);
@@ -274,6 +276,7 @@ const config: Configuration = {
             HTTP_DEBUGGER_PORT,
             HTTP_DEBUGGER,
             OFFLINE_SUPPORTED: false,
+            REDUX_DEVTOOLS,
             REDUX_DEVTOOLS_PORT,
             RESUME_FALLBACK,
             RUNTIME_RELOAD_PORT,
