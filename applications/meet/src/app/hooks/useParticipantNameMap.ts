@@ -31,13 +31,13 @@ export const useParticipantNameMap = () => {
             participants.map((participant) => [participant.ParticipantUUID, participant.DisplayName])
         );
 
-        setParticipantNameMap(updatedParticipantNameMap);
+        setParticipantNameMap((prev) => ({ ...prev, ...updatedParticipantNameMap }));
 
         const updatedParticipantsMap = Object.fromEntries(
             participants.map((participant) => [participant.ParticipantUUID, participant])
         );
 
-        setParticipantsMap(updatedParticipantsMap);
+        setParticipantsMap((prev) => ({ ...prev, ...updatedParticipantsMap }));
 
         countRef.current = participants.length;
 
