@@ -28,51 +28,58 @@ const ReactivateLink: FC<NotificationEnhancerOptions> = ({ onLink }) => {
     );
 };
 
-export const useNotificationEnhancer = () => {
+export const useNotificationEnhancer = (extra?: Partial<Record<NotificationKey, Notification>>) => {
     const { onLink } = usePassCore();
     const navigateToAccount = useNavigateToAccount(AccountPath.ACCOUNT_PASSWORD_2FA);
 
-    return useCallback((notification: Notification): Notification => {
-        const reactivateLink = <ReactivateLink onLink={onLink} key="reactactivate-link" />;
+    return useCallback(
+        (notification: Notification): Notification => {
+            const reactivateLink = <ReactivateLink onLink={onLink} key="reactactivate-link" />;
 
-        switch (notification.key) {
-            case NotificationKey.INACTIVE_SHARES: {
-                return {
-                    ...notification,
-                    text: (
-                        <div>
-                            {c('Error')
-                                .jt`Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${reactivateLink}`}
-                        </div>
-                    ),
-                };
+            switch (notification.key) {
+                case NotificationKey.INACTIVE_SHARES: {
+                    return {
+                        ...notification,
+                        text: (
+                            <div>
+                                {c('Error')
+                                    .jt`Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${reactivateLink}`}
+                            </div>
+                        ),
+                    };
+                }
+                case NotificationKey.ORG_MISSING_2FA: {
+                    return {
+                        ...notification,
+                        text: (
+                            <>
+                                <span>{c('Info')
+                                    .t`Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.`}</span>
+                                <NotificationButton onClick={navigateToAccount}>
+                                    {c('Action').t`Setup 2FA`}
+                                </NotificationButton>
+                            </>
+                        ),
+                    };
+                }
+                default: {
+                    const key = notification.key?.toString();
+                    if (key && extra && key in extra) return extra[key as NotificationKey]!;
+
+                    return {
+                        ...notification,
+                        showCloseButton: notification.showCloseButton && !notification.loading,
+                        text: notification.loading ? (
+                            <>
+                                {notification.text} <CircleLoader />
+                            </>
+                        ) : (
+                            `${notification.text}${notification.errorMessage ? ` (${notification.errorMessage})` : ''}`
+                        ),
+                    };
+                }
             }
-            case NotificationKey.ORG_MISSING_2FA: {
-                return {
-                    ...notification,
-                    text: (
-                        <>
-                            <span>{c('Info')
-                                .t`Your account is restricted because your organization has enforced two-factor authentication. Please enable two-factor authentication in your Account Settings or contact your administrator.`}</span>
-                            <NotificationButton onClick={navigateToAccount}>
-                                {c('Action').t`Setup 2FA`}
-                            </NotificationButton>
-                        </>
-                    ),
-                };
-            }
-            default:
-                return {
-                    ...notification,
-                    showCloseButton: notification.showCloseButton && !notification.loading,
-                    text: notification.loading ? (
-                        <>
-                            {notification.text} <CircleLoader />
-                        </>
-                    ) : (
-                        `${notification.text}${notification.errorMessage ? ` (${notification.errorMessage})` : ''}`
-                    ),
-                };
-        }
-    }, []);
+        },
+        [extra]
+    );
 };

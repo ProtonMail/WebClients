@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import config from 'proton-pass-extension/app/config';
 import { getMinimalHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
@@ -39,25 +39,22 @@ export const useRequestFork = () =>
 /** Prompts for extension permissions required for login before navigating.
  * Essential on Firefox & Safari for fallback account communication to function. */
 export const useRequestForkWithPermissions = ({ replace, autoClose }: UseRequestForkWithPermissionsOptions) => {
-    const { createNotification, removeNotification } = useNotifications();
+    const { createNotification, clearNotifications } = useNotifications();
 
     const config = usePassConfig();
     const accountFork = useRequestFork();
-
-    const notification = useRef<number>();
-    const clearNotification = () => removeNotification(notification.current ?? -1);
 
     /** Host permissions required for successful login on Proton domains.
      * Critical in Firefox & Safari for fallback account communication.
      * Does not request `<all_urls>` permissions needed for autofill. */
     const origins = useMemo(() => getMinimalHostPermissions(config), []);
-    const [granted, request] = useHostPermissions(origins, clearNotification);
+    const [granted, request] = useHostPermissions(origins, clearNotifications);
 
     return async (forkType?: ForkType) => {
-        clearNotification();
+        clearNotifications();
         if (granted) return accountFork({ forkType, replace }).finally(() => autoClose && window.close());
 
-        notification.current = createNotification({
+        createNotification({
             type: 'error',
             expiration: -1,
             text: getHostPermissionsWarning(

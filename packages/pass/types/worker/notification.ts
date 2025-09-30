@@ -8,4 +8,5 @@ export enum NotificationKey {
     LOCK = 'LOCK',
     AUTH = 'AUTH',
     ORG_MISSING_2FA = 'ORG_MISSING_2FA',
+    EXT_PERMISSIONS = 'EXT_PERMISSIONS',
 }
