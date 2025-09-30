@@ -211,7 +211,9 @@ function Drive({ activeFolder, folderView }: Props) {
             return <EmptyDeviceRoot />;
         }
 
-        return <EmptyFolder shareId={shareId} permissions={permissions} />;
+        return (
+            <EmptyFolder shareId={shareId} permissions={permissions} isRoot={folderView.isActiveLinkRoot ?? false} />
+        );
     }
 
     const Cells = viewportWidth['>=large'] ? myFilesLargeScreenCells : myFilesSmallScreenCells;

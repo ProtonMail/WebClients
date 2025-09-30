@@ -7,12 +7,14 @@ import { Loader, ModalTwo, ModalTwoContent, ModalTwoFooter, useDrivePlan } from 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useInitializeFreeUploadTimer } from '../../../hooks/drive/freeUpload/useInitializeFreeUploadTimer';
 import { useDesktopDownloads } from '../../../hooks/drive/useDesktopDownloads';
 import { Actions, countActionWithTelemetry } from '../../../utils/telemetry';
 import { useOnboarding } from '../../onboarding/useOnboarding';
 import { Header } from './Header';
 import { B2BInviteStep, B2BInviteStepButtons } from './steps/B2BInviteStep';
 import { DesktopAppStep, DesktopAppStepButtons } from './steps/DesktopAppStep';
+import { FreeUploadStep, FreeUploadStepButtons } from './steps/FreeUploadStep';
 import { MobileAppStep, MobileAppStepButtons } from './steps/MobileAppStep';
 import { PendingInvitationStep, PendingInvitationStepButtons } from './steps/PendingInvitationStep';
 import { ThemeStep, ThemeStepButtons } from './steps/ThemeStep';
@@ -40,8 +42,11 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
     const showDesktopAppStep = !!preferredPlatform && !isMobile();
     // Only show if we have pending invitations
     const showPendingInvitationsStep = !showB2BInviteStep && hasPendingExternalInvitations;
+
+    const { eligibleForFreeUpload, initializeTimer } = useInitializeFreeUploadTimer();
+
     // Only show upload step on desktop
-    const showUploadStep = !isMobile();
+    const showUploadStep = !eligibleForFreeUpload && !isMobile();
 
     useEffect(() => {
         if (props.open) {
@@ -76,6 +81,7 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
         showB2BInviteStep && [B2BInviteStep, B2BInviteStepButtons],
         showPendingInvitationsStep && [PendingInvitationStep, PendingInvitationStepButtons],
         showUploadStep && [UploadStep, UploadStepButtons],
+        eligibleForFreeUpload && [FreeUploadStep, FreeUploadStepButtons],
     ].filter(isTruthy) as [() => ReactNode, () => ReactNode, any][];
 
     const [Container, Buttons, extraProps] = steps[step] || [];
@@ -85,6 +91,10 @@ export const DriveOnboardingV2Modal: FC<ModalStateProps> = (props) => {
             setStep((step) => step + 1);
         } else {
             setWelcomeFlagsDone();
+
+            if (eligibleForFreeUpload) {
+                initializeTimer();
+            }
 
             props.onClose?.();
         }

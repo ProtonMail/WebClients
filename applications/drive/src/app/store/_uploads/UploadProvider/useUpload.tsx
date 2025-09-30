@@ -15,6 +15,7 @@ import useFlag from '@proton/unleash/useFlag';
 import { TransferCancel, TransferSkipped, TransferState } from '../../../components/TransferManager/transfer';
 import type { FileThresholdModalType } from '../../../components/modals/FileThresholdModal';
 import { useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
+import { useIsFreeUploadInProgress } from '../../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { getActionEventManager } from '../../../utils/ActionEventManager/ActionEventManager';
 import { ActionEventName } from '../../../utils/ActionEventManager/ActionEventManagerTypes';
 import { sendErrorReport } from '../../../utils/errorHandling';
@@ -104,12 +105,18 @@ function useBaseUpload(
 
     const [fileThresholdModal, showFileThresholdModal] = useFileThresholdModal();
 
+    const uploadingForFree = useIsFreeUploadInProgress();
+
     const getTotalFileList = (files: UploadFileList) => {
         const totalFileListSize = files.reduce((sum, item) => sum + ((item as UploadFileItem).file?.size || 0), 0);
         return totalFileListSize;
     };
 
     const checkHasEnoughSpace = async (totalFileListSize: number) => {
+        if (uploadingForFree) {
+            return true;
+        }
+
         const remaining = control.calculateRemainingUploadBytes();
         // No event on public page
         if (call) {

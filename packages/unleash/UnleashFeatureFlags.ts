@@ -134,9 +134,10 @@ enum DriveFeatureFlag {
     // Albums
     DriveAlbumsDisabled = 'DriveAlbumsDisabled',
     DriveAlbumOnboardingModal = 'DriveAlbumOnboardingModal',
-    // One-dollar offer
+    // Offers
     DrivePostSignupOneDollarPromo = 'DrivePostSignupOneDollarPromo',
-    DriveWebRecoveryASV = 'DriveWebRecoveryASV',
+    DriveFreeMinutesUpload = 'DriveFreeMinutesUpload',
+    DriveFreeMinutesUploadDisabled = 'DriveFreeMinutesUploadDisabled',
     // Video Streaming
     // TODO: Convert to Kill-Switch once launched and tested
     DriveWebVideoStreaming = 'DriveWebVideoStreaming',
@@ -154,6 +155,8 @@ enum DriveFeatureFlag {
     DriveWebSDKSidebar = 'DriveWebSDKSidebar',
     // Video Preview
     DriveWebVideoAutoPlay = 'DriveWebVideoAutoPlay',
+    // Others
+    DriveWebRecoveryASV = 'DriveWebRecoveryASV',
 }
 
 enum DocsFeatureFlag {

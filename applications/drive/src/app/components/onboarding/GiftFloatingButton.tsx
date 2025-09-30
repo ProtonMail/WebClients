@@ -21,6 +21,7 @@ import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import clsx from '@proton/utils/clsx';
 
+import { useIsFreeUploadInProgress } from '../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { useFileUploadInput } from '../../store';
 import { useFileSharingModal } from '../modals/SelectLinkToShareModal/SelectLinkToShareModal';
@@ -32,8 +33,15 @@ import './GiftFloatingButton.scss';
 export default function GiftFloatingButton() {
     const checklist = useChecklist();
     const { viewportWidth } = useActiveBreakpoint();
+    const isFreeUploadInProgress = useIsFreeUploadInProgress();
 
-    if (viewportWidth['<=small'] || checklist.isLoading || checklist.expiresInDays === 0 || !checklist.isVisible) {
+    if (
+        isFreeUploadInProgress ||
+        viewportWidth['<=small'] ||
+        checklist.isLoading ||
+        checklist.expiresInDays === 0 ||
+        !checklist.isVisible
+    ) {
         return null;
     }
 
