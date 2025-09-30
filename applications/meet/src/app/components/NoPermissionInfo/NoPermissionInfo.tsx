@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { IcCross } from '@proton/icons';
 
-import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { PermissionPromptStatus } from '../../types';
@@ -17,7 +17,7 @@ export const NoPermissionInfo = () => {
 
     const {
         devicePermissions: { camera, microphone },
-    } = useDevicePermissionsContext();
+    } = useMediaManagementContext();
 
     const isLargerThanMd = useIsLargerThanMd();
 

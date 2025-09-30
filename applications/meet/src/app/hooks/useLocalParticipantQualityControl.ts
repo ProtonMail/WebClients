@@ -1,18 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
+import { useLocalParticipant } from '@livekit/components-react';
+
+import { useMediaManagementContext } from '../contexts/MediaManagementContext';
 import { useMeetContext } from '../contexts/MeetContext';
 import { useParticipantResolution } from './useParticipantResolution';
 
 export const useLocalParticipantQualityControl = () => {
-    const { isVideoEnabled, videoDeviceId } = useMeetContext();
-
-    const { isScreenShare, toggleVideo } = useMeetContext();
+    const { isScreenShare } = useMeetContext();
+    const { toggleVideo } = useMediaManagementContext();
 
     const participantResolution = useParticipantResolution();
 
+    const { isCameraEnabled: isVideoEnabled } = useLocalParticipant();
+
+    const hasInitialized = useRef(false);
+
     useEffect(() => {
-        if (isVideoEnabled && videoDeviceId) {
-            void toggleVideo({ isEnabled: true, videoDeviceId, forceUpdate: true });
+        if (!hasInitialized.current) {
+            hasInitialized.current = true;
+            return;
         }
-    }, [videoDeviceId, isScreenShare, participantResolution]);
+
+        if (isVideoEnabled) {
+            void toggleVideo({ isEnabled: true, forceUpdate: true });
+        }
+    }, [isScreenShare, participantResolution]);
 };

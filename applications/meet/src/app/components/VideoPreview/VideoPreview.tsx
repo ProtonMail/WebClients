@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 
+import { createLocalVideoTrack } from '@proton-meet/livekit-client';
+import type { LocalVideoTrack } from '@proton-meet/livekit-client';
+
 import { isChrome } from '@proton/shared/lib/helpers/browser';
 
 import './VideoPreview.scss';
@@ -9,31 +12,33 @@ interface VideoPreviewProps {
 }
 
 export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
-    const streamRef = useRef<MediaStream | null>(null);
+    const trackRef = useRef<LocalVideoTrack | null>(null);
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
         const handleCameraToggle = async () => {
-            streamRef.current?.getTracks().forEach((track) => track.stop());
-            streamRef.current = null;
+            if (trackRef.current) {
+                trackRef.current.stop();
+                trackRef.current = null;
+            }
 
             try {
-                const stream = await navigator.mediaDevices.getUserMedia({
-                    video: selectedCameraId
-                        ? {
-                              deviceId: { exact: selectedCameraId },
-                              facingMode: 'user',
-                              ...(isChrome()
-                                  ? { width: { ideal: 3840 }, height: { ideal: 2160 }, aspectRatio: { ideal: 16 / 9 } }
-                                  : {}),
-                          }
-                        : true,
+                const videoTrack = await createLocalVideoTrack({
+                    deviceId: selectedCameraId || undefined,
+                    facingMode: 'user',
+                    ...(isChrome() && {
+                        resolution: {
+                            width: 3840,
+                            height: 2160,
+                            aspectRatio: 16 / 9,
+                        },
+                    }),
                 });
 
-                if (videoRef.current) {
-                    videoRef.current.srcObject = stream;
+                if (videoRef.current && videoTrack) {
+                    videoTrack.attach(videoRef.current);
+                    trackRef.current = videoTrack;
                 }
-                streamRef.current = stream;
             } catch (e) {
                 if (videoRef.current) {
                     videoRef.current.srcObject = null;
@@ -42,9 +47,12 @@ export const VideoPreview = ({ selectedCameraId }: VideoPreviewProps) => {
         };
 
         void handleCameraToggle();
+
         return () => {
-            streamRef.current?.getTracks().forEach((track) => track.stop());
-            streamRef.current = null;
+            if (trackRef.current) {
+                trackRef.current.stop();
+                trackRef.current = null;
+            }
         };
     }, [selectedCameraId]);
 

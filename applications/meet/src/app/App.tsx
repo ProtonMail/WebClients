@@ -13,7 +13,7 @@ import config from './config';
 import { AdminContainer } from './containers/AdminContainer';
 import { DashboardContainer } from './containers/DashboardContainer';
 import { GuestContainer } from './containers/GuestContainer';
-import { ProtonMeetContainer } from './containers/ProtonMeetContainer';
+import { WrappedProtonMeetContainer } from './containers/ProtonMeetContainer/WrappedProtonMeetContainer';
 import { ProviderContainer } from './containers/ProviderContainer';
 import { getPublicToken } from './hooks/srp/usePublicToken';
 
@@ -89,7 +89,7 @@ export const App = () => {
                 <GuestContainer>
                     <RedirectWrapper>
                         <ComingSoonWrapper>
-                            <Route path="/join" render={() => <ProtonMeetContainer guestMode={true} />} />
+                            <Route path="/join" render={() => <WrappedProtonMeetContainer guestMode={true} />} />
                         </ComingSoonWrapper>
                     </RedirectWrapper>
                 </GuestContainer>
@@ -97,7 +97,7 @@ export const App = () => {
                 <ProviderContainer>
                     <RedirectWrapper>
                         <ComingSoonWrapper>
-                            <Route path="/join" render={() => <ProtonMeetContainer />} />
+                            <Route path="/join" render={() => <WrappedProtonMeetContainer />} />
                             <Route path="/admin" component={AdminContainer} />
                             <Route path="/dashboard" component={DashboardContainer} />
                         </ComingSoonWrapper>

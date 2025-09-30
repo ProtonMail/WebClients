@@ -10,6 +10,7 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { useMeetContext } from '../../contexts/MeetContext';
 import { useUIStateContext } from '../../contexts/UIStateContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
@@ -53,8 +54,9 @@ export const MeetingBody = ({
 
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
-    const { participantNameMap, meetingLink, roomName, guestMode, handleRotateCamera, isVideoEnabled } =
-        useMeetContext();
+    const { participantNameMap, meetingLink, roomName, guestMode } = useMeetContext();
+
+    const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
     const { sideBarState } = useUIStateContext();
 

@@ -3,14 +3,14 @@ import { useRef, useState } from 'react';
 import { useLocalParticipant } from '@livekit/components-react';
 import type { KrispNoiseFilterProcessor } from '@livekit/krisp-noise-filter';
 import { KrispNoiseFilter } from '@livekit/krisp-noise-filter';
-import type { LocalAudioTrack } from '@proton-meet/livekit-client';
 import { Track } from '@proton-meet/livekit-client';
 
 import { audioQuality } from '../qualityConstants';
+import type { SwitchActiveDevice } from '../types';
 
-export const useAudioToggle = () => {
+export const useAudioToggle = (activeMicrophoneDeviceId: string, switchActiveDevice: SwitchActiveDevice) => {
     const [noiseFilter, setNoiseFilter] = useState(true);
-    const { localParticipant } = useLocalParticipant();
+    const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
     const noiseFilterProcessor = useRef<KrispNoiseFilterProcessor | null>(null);
     const audioContext = useRef<AudioContext | null>(null);
@@ -18,18 +18,27 @@ export const useAudioToggle = () => {
 
     const toggleInProgress = useRef(false);
 
-    const toggleAudio = async ({
-        isEnabled,
-        audioDeviceId,
-        enableNoiseFilter = noiseFilter,
-    }: {
-        isEnabled: boolean;
-        audioDeviceId: string | null;
-        enableNoiseFilter?: boolean;
-    }) => {
-        if (toggleInProgress.current) {
+    const prevEnabled = useRef(false);
+
+    const toggleAudio = async (
+        params: {
+            isEnabled?: boolean;
+            audioDeviceId?: string | null;
+            enableNoiseFilter?: boolean;
+        } = {}
+    ) => {
+        const {
+            isEnabled = prevEnabled.current,
+            audioDeviceId = activeMicrophoneDeviceId,
+            enableNoiseFilter = noiseFilter,
+        } = params;
+
+        if (toggleInProgress.current || !audioDeviceId) {
             return;
         }
+
+        // In case of unplugging a device LiveKit sets the enabled status to false, but we want to keep the previous state
+        prevEnabled.current = isEnabled;
 
         toggleInProgress.current = true;
 
@@ -40,51 +49,63 @@ export const useAudioToggle = () => {
             noiseSuppression: false,
         };
 
-        await localParticipant.setMicrophoneEnabled(
-            isEnabled && !!audioDeviceId,
-            audioDeviceId ? audio : undefined,
-            isEnabled
-                ? {
-                      audioPreset: {
-                          maxBitrate: audioQuality,
-                      },
-                  }
-                : undefined
-        );
+        try {
+            await localParticipant.setMicrophoneEnabled(
+                isEnabled && !!audioDeviceId,
+                audioDeviceId ? audio : undefined,
+                {
+                    audioPreset: {
+                        maxBitrate: audioQuality,
+                    },
+                }
+            );
 
-        const audioTrack = [...localParticipant.trackPublications.values()].find(
-            (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare
-        )?.track as LocalAudioTrack;
+            await switchActiveDevice('audioinput', audioDeviceId);
 
-        if (enableNoiseFilter && isEnabled && audioDeviceId) {
-            if (trackId.current === audioTrack.id) {
-                await noiseFilterProcessor.current?.setEnabled(true);
-            } else {
-                trackId.current = audioTrack.id;
+            const audioTrack = [...localParticipant.audioTrackPublications.values()].find(
+                (item) => item.kind === Track.Kind.Audio && item.source !== Track.Source.ScreenShare && item.audioTrack
+            )?.audioTrack;
 
-                noiseFilterProcessor.current = KrispNoiseFilter();
-                // @ts-ignore - webkitAudioContext is not available in all browsers
-                audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
-
-                await audioTrack?.setAudioContext(audioContext.current);
-                await audioTrack?.setProcessor(noiseFilterProcessor.current);
+            if (!audioTrack) {
+                return;
             }
-        } else {
-            await noiseFilterProcessor.current?.setEnabled(false);
+
+            if (enableNoiseFilter && isEnabled && audioDeviceId) {
+                if (trackId.current === audioTrack.id) {
+                    await noiseFilterProcessor.current?.setEnabled(true);
+                } else {
+                    trackId.current = audioTrack.id;
+
+                    noiseFilterProcessor.current = KrispNoiseFilter();
+                    // @ts-ignore - webkitAudioContext is not available in all browsers
+                    audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
+
+                    await audioTrack?.setAudioContext(audioContext.current);
+                    await audioTrack?.setProcessor(noiseFilterProcessor.current);
+                }
+            } else {
+                await noiseFilterProcessor.current?.setEnabled(false);
+            }
+
+            setNoiseFilter(enableNoiseFilter);
+        } catch (error) {
+            throw error;
+        } finally {
+            toggleInProgress.current = false;
         }
-
-        setNoiseFilter(enableNoiseFilter);
-
-        toggleInProgress.current = false;
     };
 
-    const toggleNoiseFilter = async ({ isEnabled, audioDeviceId }: { isEnabled: boolean; audioDeviceId: string }) => {
-        if (isEnabled) {
-            await toggleAudio({ isEnabled: isEnabled, audioDeviceId: audioDeviceId, enableNoiseFilter: !noiseFilter });
+    const toggleNoiseFilter = async () => {
+        if (isMicrophoneEnabled) {
+            await toggleAudio({
+                isEnabled: isMicrophoneEnabled,
+                audioDeviceId: activeMicrophoneDeviceId,
+                enableNoiseFilter: !noiseFilter,
+            });
         } else {
             setNoiseFilter((prev) => !prev);
         }
     };
 
-    return { toggleAudio, noiseFilter, toggleNoiseFilter };
+    return { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled: isMicrophoneEnabled };
 };

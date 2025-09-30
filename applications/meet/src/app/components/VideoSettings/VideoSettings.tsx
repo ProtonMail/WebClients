@@ -1,38 +1,25 @@
 import type { RefObject } from 'react';
-import { useEffect } from 'react';
 
-import { useMeetContext } from '../../contexts/MeetContext';
-import { useDevices } from '../../hooks/useDevices';
+import type { PopperPosition } from '@proton/components/components/popper/interface';
+
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { VideoSettingsDropdown } from './VideoSettingsDropdown';
 
 interface VideoSettingsProps {
-    anchorRef?: RefObject<HTMLButtonElement>;
+    anchorRef: RefObject<HTMLButtonElement>;
+    onClose: () => void;
+    anchorPosition?: PopperPosition;
 }
 
-export function VideoSettings({ anchorRef }: VideoSettingsProps) {
-    const { cameras, defaultCamera } = useDevices();
-
-    const { videoDeviceId, setVideoDeviceId } = useMeetContext();
-
-    useEffect(() => {
-        if (cameras.length > 0) {
-            const isDeviceAvailable = videoDeviceId ? cameras.find((c) => c.deviceId === videoDeviceId) : null;
-
-            if (!videoDeviceId || !isDeviceAvailable) {
-                const deviceToSelect = defaultCamera || cameras[0];
-                if (deviceToSelect) {
-                    setVideoDeviceId(deviceToSelect.deviceId);
-                }
-            }
-        }
-    }, [videoDeviceId, cameras, defaultCamera, setVideoDeviceId]);
+export function VideoSettings({ anchorRef, onClose, anchorPosition }: VideoSettingsProps) {
+    const { selectedCameraId: videoDeviceId, toggleVideo, cameras } = useMediaManagementContext();
 
     const handleCameraChange = async (deviceId: string) => {
         if (deviceId === videoDeviceId) {
             return;
         }
 
-        setVideoDeviceId(deviceId, true);
+        void toggleVideo({ videoDeviceId: deviceId });
     };
 
     return (
@@ -41,6 +28,8 @@ export function VideoSettings({ anchorRef }: VideoSettingsProps) {
             handleCameraChange={handleCameraChange}
             videoDeviceId={videoDeviceId}
             cameras={cameras}
+            onClose={onClose}
+            anchorPosition={anchorPosition}
         />
     );
 }

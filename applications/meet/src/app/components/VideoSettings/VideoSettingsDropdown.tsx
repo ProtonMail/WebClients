@@ -3,18 +3,19 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
+import type { PopperPosition } from '@proton/components/components/popper/interface';
 import { IcCheckmark } from '@proton/icons';
-import noop from '@proton/utils/noop';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
+import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
 
 interface VideoSettingsDropdownProps {
-    anchorRef?: RefObject<HTMLButtonElement>;
+    anchorRef: RefObject<HTMLButtonElement>;
     handleCameraChange: (deviceId: string) => void;
     videoDeviceId: string | null;
     cameras: MediaDeviceInfo[];
+    onClose: () => void;
+    anchorPosition?: PopperPosition;
 }
 
 const VideoSettingsDropdownComponent = ({
@@ -22,22 +23,14 @@ const VideoSettingsDropdownComponent = ({
     handleCameraChange,
     videoDeviceId,
     cameras,
+    onClose,
+    anchorPosition,
 }: VideoSettingsDropdownProps) => {
     const noCameraDetected = cameras.length === 0;
 
     return (
-        <Dropdown
-            className="device-selector-dropdown border border-norm rounded-xl shadow-none meet-radius pl-2 pr-0 py-4 overflow-x-hidden overflow-y-auto"
-            isOpen={true}
-            anchorRef={anchorRef as RefObject<HTMLElement>}
-            onClose={noop}
-            noCaret
-            originalPlacement="top-start"
-            availablePlacements={['top-start']}
-            disableDefaultArrowNavigation
-            size={{ width: DropdownSizeUnit.Dynamic, maxWidth: undefined }}
-        >
-            <div className="flex flex-column gap-2 px-2 py-0 meet-scrollbar overflow-x-hidden overflow-y-auto">
+        <DeviceSettingsDropdown anchorPosition={anchorPosition} anchorRef={anchorRef} onClose={onClose}>
+            <div className="flex flex-column gap-2 p-2 meet-scrollbar overflow-x-hidden overflow-y-auto">
                 <div className="flex flex-column gap-2">
                     <div className="color-weak meet-font-weight">
                         {noCameraDetected ? c('Info').t`No camera detected` : c('Info').t`Select a camera`}
@@ -53,7 +46,7 @@ const VideoSettingsDropdownComponent = ({
                     ))}
                 </div>
             </div>
-        </Dropdown>
+        </DeviceSettingsDropdown>
     );
 };
 
