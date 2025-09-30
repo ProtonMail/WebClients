@@ -30,7 +30,9 @@ import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getCanAddStorage } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 
+import { FreeUploadCounter } from '../../components/layout/sidebar/DriveSidebar/FreeUploadCounter';
 import SidebarStorageUpsell from '../../components/layout/sidebar/SidebarStorageUpsell';
+import { useIsFreeUploadInProgress } from '../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { useDebug } from '../../hooks/drive/useDebug';
 import type { ShareWithKey } from '../../store';
@@ -135,6 +137,8 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
      */
     const shares = defaultShare ? [defaultShare] : [];
 
+    const isFreeUploadInProgress = useIsFreeUploadInProgress();
+
     return (
         <Sidebar
             app={APPS.PROTONDRIVE}
@@ -146,10 +150,12 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
                 <ActionMenuButton className="hidden md:flex" collapsed={collapsed} disabled={isNewUploadDisabled} />
             }
             version={<DriveSidebarFooter />}
+            preFooter={isFreeUploadInProgress ? <FreeUploadCounter /> : null}
             postFooter={showStorage ? <SidebarStorageUpsell storageRef={storageRef} app={APPS.PROTONDRIVE} /> : null}
             navigationRef={navigationRef}
             collapsed={collapsed}
             showStorage={showSideBar}
+            wavyMeter={isFreeUploadInProgress}
         >
             <SidebarNav className="flex *:min-size-auto">
                 <div>

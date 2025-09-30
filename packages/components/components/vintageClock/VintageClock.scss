@@ -1,0 +1,12 @@
+.vintageClock {
+	display: grid;
+	grid-template-columns: 1fr 1fr auto 1fr 1fr;
+	column-gap: 0.25rem;
+}
+
+.twoDigits {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 0.25rem;
+	block-size: 3rem;
+}
