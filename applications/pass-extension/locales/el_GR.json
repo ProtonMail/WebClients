@@ -59,6 +59,9 @@
       "Allow access": [
         "Να επιτρέπεται η πρόσβαση"
       ],
+      "and": [
+        "και"
+      ],
       "Apply lifetime coupon code": [
         "Εφαρμόστε τον κωδικό κουπονιού διάρκειας ζωής"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Προβολή μελών"
       ],
-      "Select": [
-        "Επιλέξτε"
-      ],
       "Send email": [
         "Αποστολή μηνύματος"
       ],
@@ -729,9 +729,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Να μην ξαναγίνει αυτή η ερώτηση"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Θέλετε το πρόχειρο σας να διαγράφεται αυτόματα μετά από ${ timeoutDurationHumanReadable };"
       ]
@@ -1056,6 +1053,9 @@
       "Importing items failed": [
         "Η εισαγωγή στοιχείων απέτυχε"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Για να συνεχίσετε, το ${ PASS_APP_NAME } απαιτεί τα ακόλουθα δικαιώματα προέκτασης: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Δεν ήταν δυνατή η κατάργηση ανενεργών ασφαλών συνδέσεων."
       ],
@@ -1095,11 +1095,14 @@
       "Passphrase is incorrect": [
         "Η φράση πρόσβασης είναι εσφαλμένη"
       ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Δεν επιτρέπεται η πρόσβαση στον/ους ιστότοπο/ους ${ domainsJSX }."
+      ],
+      "Permission denied for website access.": [
+        "Δεν επιτρέπεται η πρόσβαση στον ιστότοπο."
+      ],
       "PIN codes do not match": [
         "Οι κωδικοί PIN δεν ταιριάζουν"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Παραχωρήστε ${ PASS_APP_NAME } τα απαραίτητα δικαιώματα προέκτασης για να συνεχίσετε"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Παρακαλούμε καρφιτσώστε την προέκταση ή επιλέξτε \"Συνέχεια χωρίς καρφίτσωμα\"."
@@ -1386,6 +1389,9 @@
       "Access successfully confirmed": [
         "Η πρόσβαση επιβεβαιώθηκε με επιτυχία"
       ],
+      "access to ${ domains }.": [
+        "πρόσβαση σε ${ domains }."
+      ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Η πρόσβαση στο ${ PASS_APP_NAME } θα απαιτεί πάντα τον κωδικό πρόσβασής σας ${ BRAND_NAME }."
       ],
@@ -1520,9 +1526,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Επιλέξτε ένα αποθηκευμένο κλειδί πρόσβασης για είσοδο στο ${ domain }"
-      ],
-      "Choose your preferred look and feel.": [
-        "Επιλέξτε την εμφάνιση και την αίσθηση που προτιμάτε."
       ],
       "Click the icon to open it anytime.": [
         "Κάντε κλικ στο εικονίδιο για να το ανοίξετε ανά πάσα στιγμή."
@@ -1818,9 +1821,6 @@
       "Loading...": [
         "Φόρτωση..."
       ],
-      "Make it your own": [
-        "Κάντε το δικό σας"
-      ],
       "Manager": [
         "Διαχειριστης"
       ],
@@ -1840,10 +1840,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Η μετακίνηση ενός στοιχείου σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους του.",
-        "Η μετακίνηση στοιχείων σε άλλη κρύπτη θα διαγράψει τους ασφαλείς συνδέσμους των."
-      ],
       "Moving items": [
         "Μετακίνηση στοιχείων"
       ],
@@ -1855,6 +1851,9 @@
       ],
       "Moving items to trash": [
         "Μετακίνηση στοιχείων στα Διαγραμμένα"
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Μεταβείτε στις ρυθμίσεις προεκτάσεων του προγράμματος περιήγησής σας και ενεργοποιήστε τα δικαιώματα πρόσβασης για το ${ PASS_SHORT_APP_NAME }."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Θέλετε να στείλετε μήνυμα ηλεκτρονικού ταχυδρομείου σε κάποιον, αλλά δε θέλετε να δει τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας; Ρυθμίστε ένα ψευδώνυμο επαφής."
@@ -1888,6 +1887,9 @@
       ],
       "Open the Extensions menu": [
         "Άνοιγμα του μενού \"Προεκτάσεις\""
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Ανοίξτε τις ρυθμίσεις του Safari, βρείτε το ${ PASS_APP_NAME }, μεταβείτε στην ενότητα \"Δικαιώματα\" και ενεργοποιήστε τα δικαιώματα ιστότοπου."
       ],
       "Owner": [
         "Ιδιοκτήτης"
@@ -2093,6 +2095,12 @@
       ],
       "Restoring trashed items...": [
         "Επαναφορά διαγραμμένων στοιχείων..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Κάντε δεξί κλικ στο εικονίδιο της προέκτασης και επιλέξτε \"Διαχείριση επέκτασης\". Μεταβείτε στην ενότητα \"Δικαιώματα και δεδομένα\" και ενεργοποιήστε τα δικαιωματα πρόσβασης."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Κάντε δεξί κλικ στο εικονίδιο της προέκτασης και επιλέξτε \"Διαχείριση επέκτασης\". Μεταβείτε στην ενότητα \"Πρόσβαση σε ιστότοπο\" και ενεργοποιήστε τα δικαιώματα πρόσβασης"
       ],
       "Save login": [
         "Αποθήκευση διαπιστευτηρίων"

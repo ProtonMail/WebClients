@@ -732,9 +732,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Не пытацца наступны раз"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Аўтаматычна ачышчаць буфер абмену пасля ${ timeoutDurationHumanReadable }?"
       ]
@@ -1790,9 +1787,6 @@
       ],
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "У ${ PASS_SHORT_APP_NAME } нататка элемента зашыфравана з дапамогай ключа шыфравання элемента і паглядзець яе могуць толькі карыстальнікі, якія маюць доступ да элемента. Нават супрацоўнікі ${ BRAND_NAME } або SimpleLogin не могуць убачыць яе."
-      ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Для атрымання лепшага досведу ад працы з ${ PASS_APP_NAME } дайце неабходныя дазволы пашырэнню"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Усталюйце ${ PASS_APP_NAME } для ${ browser.title }, каб хутка аўтазапаўняць вашы запісы ўваходу."
@@ -2996,7 +2990,7 @@
         "Для аднаразовага абагульвання"
       ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
-        "У мэтах бяспекі ${ PASS_SHORT_APP_NAME } аўтаматычна заблакіруецца пасля 10 хвілін не актыўнасці."
+        "У мэтах бяспекі ${ PASS_SHORT_APP_NAME } аўтаматычна заблакіруецца пасля 10 хвілін бяздзейнасці."
       ],
       "Forwards to": [
         "Перасылаць на"
@@ -3030,9 +3024,6 @@
       ],
       "Get the extension for your browser.": [
         "Атрымайце пашырэнні для свайго браўзера."
-      ],
-      "Grant": [
-        "Дазволіць"
       ],
       "Hidden": [
         "Схаванае"
@@ -4284,7 +4275,7 @@
         "Змяніць спосаб блакіроўкі"
       ],
       "Clear clipboard": [
-        "Ачысціць буфер абмену"
+        "Ачыстка буфера абмену"
       ],
       "Confirm extra password": [
         "Пацвярджэнне дадатковага пароля"
@@ -4399,9 +4390,6 @@
       ],
       "Get Started": [
         "Пачаць працу"
-      ],
-      "Grant permissions": [
-        "Даць дазволы"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Схаваныя сховішчы не будуць бачны падчас пошуку і аўтазапаўненні."

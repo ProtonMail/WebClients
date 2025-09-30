@@ -76,6 +76,9 @@
       "Advanced options": [
         "დამატებითი პარამეტრები"
       ],
+      "Allow access": [
+        "წვდომის დაშვება"
+      ],
       "Apply lifetime coupon code": [
         "სამუდამო კუპონის კოდის გამოყენება"
       ],
@@ -1588,6 +1591,9 @@
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "დაკოპირდა ბუფერში (ვადა: ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "კუპონის გამოყენება წარმატებულია!"
       ],
@@ -1770,9 +1776,6 @@
       "Imported on ${ date }": [
         "შემოტანის დრო ${ date }"
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "იმისათვის, რომ ${ PASS_APP_NAME }-სგან სრული სიამოვნება მიიღოთ, გაფართოებას საჭირო წვდომები მიეცით"
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "დააყენეთ ${ PASS_APP_NAME } ${ browser.title }-სთვის, რომ შესვლის დეტალები ავტომატურად შეივსოს."
       ],
@@ -1891,10 +1894,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2964,9 +2963,6 @@
       "Get the extension for your browser.": [
         "მიიღეთ გაფართოება თქვენი ბრაუზერისთვის"
       ],
-      "Grant": [
-        "უფლების მიცემა"
-      ],
       "Hidden": [
         "დამალული"
       ],
@@ -3918,6 +3914,11 @@
         "${ price } /თვეში"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "მოითხოვს უფლებას თქვენი ბრაუზერისგან"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "2FA საიდუმლო გასაღების დამატება"
@@ -4242,6 +4243,9 @@
       "Change your lock method": [
         "თქვენი დაბლოკვის მეთოდის შეცვლა"
       ],
+      "Clear clipboard": [
+        "ბუფერის გასუფთავება"
+      ],
       "Confirm extra password": [
         "დაადასტურეთ დამატებითი პაროლი"
       ],
@@ -4353,9 +4357,6 @@
       ],
       "Get Started": [
         "დაიწყეთ"
-      ],
-      "Grant permissions": [
-        "წვდომების მინიჭება"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "დამალული საცავები არ გამოჩნდება ძებნისას და ავტოშევსებისას."

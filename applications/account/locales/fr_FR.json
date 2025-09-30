@@ -1758,6 +1758,12 @@
       "Disallow unsigned mail": [
         "Interdire les messages non signés"
       ],
+      "Disconnect": [
+        "Se déconnecter"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Déconnecter l'adresse « ${ emailAddress } »"
+      ],
       "Edit": [
         "Modifier"
       ],
@@ -1781,6 +1787,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Générer les clés manquantes pour l'adresse « ${ emailAddress } »"
+      ],
+      "Grant permission": [
+        "Accorder l’autorisation"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Accorder l'autorisation à « ${ emailAddress } »"
       ],
       "Reconnect": [
         "Se reconnecter"
@@ -1825,6 +1837,9 @@
       ],
       "Orphan": [
         "Orpheline"
+      ],
+      "Permission revoked": [
+        "Autorisation révoquée"
       ]
     },
     "Admin": {
@@ -6308,6 +6323,11 @@
         "Le code postal est nécessaire."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Veuillez vous connecter avec la même adresse Gmail que celle que vous avez connectée à l'origine"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
@@ -9835,6 +9855,9 @@
       "No countries enabled": [
         "Aucun pays activé"
       ],
+      "No credit card required": [
+        "Aucune carte de paiement n'est nécessaire."
+      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Aucune méthode de récupération des données n'est définie : le risque est de perdre l'accès à vos données."
       ],
@@ -12031,10 +12054,6 @@
         "${ nbYear } an",
         "${ nbYear } ans"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "Nombre d'adresses e-mail : ${ UsedAddresses } sur ${ MaxAddresses }",
-        "Nombre d'adresses e-mail : ${ UsedAddresses } sur ${ MaxAddresses }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
       ],
@@ -12535,9 +12554,6 @@
       ],
       "Emails (last month)": [
         "Messages (mois dernier)"
-      ],
-      "Emails categories": [
-        "Catégories d'e-mails"
       ],
       "Enabled": [
         "Activé"
@@ -16721,6 +16737,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Montant dû après la version d'essai le ${ formattedDate }"
+      ],
       "Billing Country": [
         "Pays de facturation "
       ],
@@ -16784,8 +16803,8 @@
       "Taxes": [
         "Taxes"
       ],
-      "terms & conditions": [
-        "les conditions générales d’utilisation"
+      "terms and conditions": [
+        "conditions générales d'utilisation"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",
@@ -18884,6 +18903,10 @@
         "${ VPN_CONNECTIONS } connexion VPN ultra-rapide",
         "${ VPN_CONNECTIONS } connexions VPN ultra-rapides"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.servers }+ serveurs VPN dans ${ vpnServersCountData.free.countries } pays",
+        "${ vpnServersCountData.free.servers }+ serveurs VPN dans ${ vpnServersCountData.free.countries } pays"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ pays",
         "${ vpnServersCountData.paid.countries }+ pays"
@@ -18916,6 +18939,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tous les services de base de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Amount due now": [
+        "Montant à payer maintenant"
+      ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "Et recevez ${ referralInfo.uiData.refereeRewardAmount } en crédits, en vous abonnant."
       ],
@@ -18945,9 +18971,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Continuer avec ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Continuer avec l'abonnement gratuit"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Créer un compte ${ BRAND_NAME }"
@@ -19070,8 +19093,8 @@
       "Select ${ title }": [
         "Sélectionner ${ title }"
       ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "Sélectionnez un service et profitez de la version premium gratuitement pendant ${ TRIAL_DURATION_DAYS } jours. Aucune carte de paiement requise."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Sélectionnez un service et profitez de la version premium gratuitement pendant ${ TRIAL_DURATION_DAYS } jours."
       ],
       "Selected": [
         "Sélectionné"
@@ -19117,6 +19140,9 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Puis un rabais mensuel de ${ priceWithDiscountPerMonth }, en vous abonnant."
+      ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Puis ${ priceWithDiscountPerMonth } par mois. Annulez à tout moment."
       ],
       "To redeem on your next paid subscription.": [
         "À utiliser lors de votre prochain abonnement payant."
@@ -22679,6 +22705,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Un changement du côté de Gmail bloque ${ BRAND_NAME } de se connecter. Accordez la permission de rétablir la fonctionnalité du message."
+      ],
       "Account is disconnected": [
         "Compte déconnecté"
       ],
@@ -22825,9 +22854,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "L'adresse a été déconnectée. L'envoi et la réception de messages est suspendu. Reconnectez-vous pour activer cette adresse à nouveau."
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."

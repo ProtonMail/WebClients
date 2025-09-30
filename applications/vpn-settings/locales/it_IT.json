@@ -77,6 +77,9 @@
       "Add external address": [
         "Aggiungi indirizzo esterno"
       ],
+      "add more seats": [
+        "aggiungi più licenze"
+      ],
       "Add PayPal": [
         "Aggiungi PayPal"
       ],
@@ -998,6 +1001,9 @@
       "User": [
         "Utente"
       ],
+      "Users and addresses": [
+        "Utenti e indirizzi"
+      ],
       "Verify": [
         "Verifica"
       ],
@@ -1104,6 +1110,12 @@
       "Disallow unsigned mail": [
         "Non consentire la posta non firmata"
       ],
+      "Disconnect": [
+        "Disconnetti"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Disconnetti indirizzo “${ emailAddress }”"
+      ],
       "Edit": [
         "Modifica"
       ],
@@ -1127,6 +1139,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Genera le chiavi mancanti per l'indirizzo “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Concedi permesso"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Concedi l'autorizzazione a \"${ emailAddress }\""
       ],
       "Reconnect": [
         "Riconnetti"
@@ -1171,6 +1189,9 @@
       ],
       "Orphan": [
         "Orfano"
+      ],
+      "Permission revoked": [
+        "Permesso revocato"
       ]
     },
     "Admin": {
@@ -4067,6 +4088,11 @@
         "Il codice postale è obbligatorio"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Accedi con lo stesso indirizzo email che hai usato originariamente"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
@@ -5635,6 +5661,9 @@
         "Aggiungi server (${ availableAddedCount } disponibile)",
         "Aggiungi server (${ availableAddedCount } disponibili)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Aggiungi link per videoconferenze agli inviti del calendario"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Aggiungi il tuo nome e logo per creare un'esperienza più personalizzata per la tua organizzazione."
       ],
@@ -6198,6 +6227,9 @@
       "Groups": [
         "Gruppi"
       ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Aiuta a scrivere, rispondere a e correggere le email. Se disabilitato, solo gli amministratori avranno accesso. Gestisci per i singoli utenti in ${ userAndAddress } o ${ addMoreSeats }"
+      ],
       "here": [
         "qui"
       ],
@@ -6462,6 +6494,9 @@
       ],
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestisci le applicazioni ${ BRAND_NAME } alle quali possono accedere i membri della tua organizzazione. Se disabilitato, solo gli amministratori avranno accesso."
+      ],
+      "Manage which features the members of your organization can access.": [
+        "Gestisci a quali funzionalità i membri della tua organizzazione possono accedere."
       ],
       "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
         "Inserisci manualmente queste informazioni nella tua app di autenticazione per impostare il tuo account. ${ switchButton }."
@@ -7791,10 +7826,6 @@
       "${ nbDay } day": [
         "${ nbDay } giorno",
         "${ nbDay } giorni"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } di ${ MaxAddresses } indirizzo email",
-        "${ UsedAddresses } di ${ MaxAddresses } indirizzi email"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
@@ -10827,6 +10858,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Importo dovuto dopo la prova il ${ formattedDate }"
+      ],
       "Billing Country": [
         "Paese di fatturazione"
       ],
@@ -10887,8 +10921,8 @@
       "Taxes": [
         "Tasse"
       ],
-      "terms & conditions": [
-        "termini e condizioni"
+      "terms and conditions": [
+        "Termini e Condizioni"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Il coupon è valido per ${ couponRedemptions } rinnovo.",
@@ -11483,6 +11517,9 @@
       ],
       "Start earning credits": [
         "Inizia a guadagnare crediti"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Puoi guadagnare fino a **${ maxRewardAmount }** in credito."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Ti rimane **${ daysRemaining } giorno** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire.",
@@ -14575,6 +14612,9 @@
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videoconferenza con ${ MEET_APP_NAME }"
       ],
+      "Video conferencing with Zoom": [
+        "Videoconferenze con Zoom"
+      ],
       "View organization events by upgrading to Professional": [
         "Visualizza gli eventi dell'organizzazione effettuando l'upgrade a Professional"
       ],
@@ -14682,6 +14722,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Una modifica lato Gmail sta impedendo a ${ BRAND_NAME } di connettere. Concedi l'autorizzazione per ripristinare la funzionalità email."
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Gli amministratori possono gestire gli account utente e concedere privilegi di amministratore ad altri utenti. Solo l'amministratore principale può modificare il piano dell'organizzazione."
       ],
@@ -14756,9 +14799,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "L'indirizzo è stato disconnesso. L'invio e la ricezione dei messaggi sono stati sospesi. Riconnettiti per riattivare questo indirizzo."
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."

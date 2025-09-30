@@ -59,6 +59,9 @@
       "Allow access": [
         "Povoliť prístup"
       ],
+      "and": [
+        "a"
+      ],
       "Apply lifetime coupon code": [
         "Použiť kód doživotného kupónu"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Zobraziť členov"
       ],
-      "Select": [
-        "Vyberte"
-      ],
       "Send email": [
         "Odoslať email"
       ],
@@ -733,9 +733,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Už sa nepýtať"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Chcete, aby sa vaša schránka automaticky vymazala po ${ timeoutDurationHumanReadable }?"
       ]
@@ -1107,9 +1104,6 @@
       ],
       "PIN codes do not match": [
         "PIN kódy sa nezhodujú"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Pre pokračovanie udeľte rozšíreniu ${ PASS_APP_NAME } potrebné oprávnenia"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Pripnite rozšírenie alebo vyberte možnosť „Pokračovať bez pripnutia“, prosím."
@@ -1563,9 +1557,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vyberte uložený prístupový kľúč na prihlásenie do ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Vyberte si svoj obľúbený vzhľad."
-      ],
       "Click the icon to open it anytime.": [
         "Kliknutím na ikonu ju kedykoľvek otvoríte."
       ],
@@ -1866,9 +1857,6 @@
       "Loading...": [
         "Načítavanie..."
       ],
-      "Make it your own": [
-        "Prispôsobte si to podľa seba"
-      ],
       "Manager": [
         "Správca"
       ],
@@ -1889,12 +1877,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"

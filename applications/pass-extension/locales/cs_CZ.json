@@ -56,6 +56,12 @@
       "Advanced options": [
         "Pokročilé nastavení"
       ],
+      "Allow access": [
+        "Povolit přístup"
+      ],
+      "and": [
+        "a"
+      ],
       "Apply lifetime coupon code": [
         "Použijte doživotní kupón"
       ],
@@ -551,9 +557,6 @@
       "See members": [
         "Zobrazit členy"
       ],
-      "Select": [
-        "Vybrat"
-      ],
       "Send email": [
         "Poslat e-mail"
       ],
@@ -727,6 +730,11 @@
       ],
       "Expand": [
         "Rozbalit"
+      ]
+    },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Chcete, aby vaše schránka byla za ${ timeoutDurationHumanReadable } automaticky vyprázdněna?"
       ]
     },
     "Description": {
@@ -1096,9 +1104,6 @@
       ],
       "PIN codes do not match": [
         "PIN kódy se neshodují"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Udělte prosím rozšíření ${ PASS_APP_NAME } potřebná oprávnění, abyste mohli pokračovat."
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Připněte rozšíření nebo vyberte možnost \"Pokračovat bez připnutí\"."
@@ -1552,9 +1557,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vyberte uložený přístupový klíč pro přihlášení k ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Vyberte si svůj oblíbený vzhled."
-      ],
       "Click the icon to open it anytime.": [
         "Otevřete kdykoli kliknutím na ikonu."
       ],
@@ -1572,6 +1574,9 @@
       ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
+      ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Zkopírováno do schránky (vyprší za ${ timeoutDurationHumanReadable })"
       ],
       "Coupon successfully applied!": [
         "Kupón úspěšně použit!"
@@ -1852,9 +1857,6 @@
       "Loading...": [
         "Načítání..."
       ],
-      "Make it your own": [
-        "Přizpůsobte podle potřeby"
-      ],
       "Manager": [
         "Správce"
       ],
@@ -1877,10 +1879,7 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
-        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2065,8 +2064,14 @@
       "Please follow the steps below to set up your domain.": [
         "Při nastavování domény postupujte podle níže uvedených kroků."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Ponechte prosím otevřený ${ PASS_APP_NAME }, aby se schránka mohla automaticky vyprázdnit."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Během importu dat ponechte toto okno otevřené. Tento proces může trvat několik minut."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Ponechte prosím otevřený prohlížeč, aby se schránka mohla automaticky vyprázdnit."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Ujistěte se, že předchozí aktivní okno je tam, kde chcete provést automatické vyplnění, a že kurzor je umístěn v poli pro přihlášení."
@@ -3799,6 +3804,11 @@
         "Po uložení souboru můžete toto okno zavřít."
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Bude vyžadovat oprávnění z vašeho prohlížeče"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Přidat klíč 2FA secret"
@@ -4103,6 +4113,9 @@
       ],
       "Change your lock method": [
         "Změna způsobu zamykání"
+      ],
+      "Clear clipboard": [
+        "Vyprázdnit schránku"
       ],
       "Confirm extra password": [
         "Potvrdit dodatečné heslo"
@@ -4611,6 +4624,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "Dodatečné heslo by mělo mít alespoň 8 znaků"
+      ],
+      "Grant clipboard access to enable automatic clearing of copied passwords and data.": [
+        "Povolte přístup ke schránce, abyste umožnili automatické mazání zkopírovaných hesel a dat."
       ],
       "Invalid alias prefix": [
         "Nesprávná předpona aliasu"

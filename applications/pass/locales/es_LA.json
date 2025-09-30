@@ -728,9 +728,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "No volver a preguntar"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "¿Desea que el portapapeles se borre automáticamente después de ${ timeoutDurationHumanReadable }?"
       ]
@@ -1744,9 +1741,6 @@
       ],
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "En ${ PASS_SHORT_APP_NAME }, una nota se cifra con la clave de cifrado del elemento y solo los usuarios que tienen acceso al elemento pueden verla. Ni siquiera ${ BRAND_NAME } o SimpleLogin pueden verla."
-      ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Para obtener la mejor experiencia de ${ PASS_APP_NAME }, conceda los permisos necesarios de la extensión"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Instale ${ PASS_APP_NAME } para ${ browser.title } para completar automáticamente sus inicios de sesión."
@@ -2940,9 +2934,6 @@
       ],
       "Get the extension for your browser.": [
         "Obtenga la extensión para su navegador."
-      ],
-      "Grant": [
-        "Conceder"
       ],
       "Hidden": [
         "Oculto"
@@ -4297,9 +4288,6 @@
       ],
       "Get Started": [
         "Comenzar"
-      ],
-      "Grant permissions": [
-        "Conceder permisos"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Las bóvedas ocultas no serán visibles durante la búsqueda y el completado automático."

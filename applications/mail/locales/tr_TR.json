@@ -1450,6 +1450,12 @@
       "Toggle Contacts app": [
         "Kişiler uygulamasına geç"
       ],
+      "Toggle notifications": [
+        "Bildirimleri aç/kapat"
+      ],
+      "Toggle referral": [
+        "Öneriyi aç/kapat"
+      ],
       "Toggle security center app": [
         "Güvenlik merkezi uygulamasını aç/kapat"
       ],
@@ -6607,6 +6613,21 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Bağlantı kesici**: VPN bağlantısı beklenmedik bir şekilde kesilirse internet erişiminizi engelleyerek veri sızıntısını engeller."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**1. adım:** Arkadaşlarınızı öneri bağlantınızla ${ BRAND_NAME } kullanmaya davet edin."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**2. Adım:** Arkadaşlarınız, seçtikleri ${ BRAND_NAME } tarifesinde 2 hafta ücretsiz kullanım alacak."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**2. adım:** Arkadaşlarınız tarifelerine 2 hafta ücretsiz kullanım alacak."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**3. adım**: Bir tarifeye abone olan her arkadaşınız için ${ referrerRewardAmount } kredi kazanın."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**3. adım**: Bir tarifeye abone olan her kişi için ${ referrerRewardAmount } kredi kazanın."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
       ],
@@ -11579,9 +11600,6 @@
       "Finance": [
         "Finans"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "Oturum açma kayıtlarımı ${ BRAND_NAME } üzerine taşıdım"
-      ],
       "Privacy for all your online accounts": [
         "Tüm çevrim içi hesaplarınız için gizlilik"
       ],
@@ -11590,9 +11608,6 @@
       ],
       "Social media": [
         "Sosyal medya"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "İzlenmekten ve profilinizin çıkarılmasından kaçınmak için çevrim içi hizmetlerde oturum açarken ${ MAIL_APP_NAME } adresinizi kullanın. Yaygın kullanılan hizmetler için e-posta adresinizi şimdi değiştirin. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11977,6 +11992,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Deneme süresinden sonra ${ formattedDate } tarihinde ödenecek tutar"
+      ],
       "Billing Country": [
         "Faturalanacak ülke"
       ],
@@ -12028,7 +12046,7 @@
       "Taxes": [
         "Vergiler"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "hükümler ve koşullar"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -12591,6 +12609,40 @@
       ],
       "Stored with zero-access encryption": [
         "Sıfır erişim şifrelemesi ile kaydedildi"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "Her yönlendirme için ${ referrerRewardAmount }"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "${ maxRewardAmount } tutarına kadar kredi kazanın. Davet ettiğiniz kişi bir ${ BRAND_NAME } tarifesine abone olduğunda ${ referrerRewardAmount } alacaksınız."
+      ],
+      "Friend joined": [
+        "Katılan arkadaş",
+        "Katılan arkadaşlar"
+      ],
+      "Friend subscribed": [
+        "Abone olan arkadaş",
+        "Abone olan arkadaşlar"
+      ],
+      "Invite friends. Get credits.": [
+        "Arkadaşlarınızı davet edin. Kredi kazanın."
+      ],
+      "Invited friends": [
+        "Davet edilmiş arkadaşlar"
+      ],
+      "More sharing options": [
+        "Diğer paylaşım seçenekleri"
+      ],
+      "Refer friends": [
+        "Arkadaşlarınıza önerin"
+      ],
+      "Start earning credits": [
+        "Kredi kazanmaya başlayın"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "**${ maxRewardAmount }** tutarına kadar kredi kazanabilirsiniz."
       ]
     },
     "Remaining days before the message expire": {
@@ -15166,6 +15218,9 @@
       "Recover data": [
         "Verileri kurtar"
       ],
+      "Referral": [
+        "Yönlendirme"
+      ],
       "Remove from list?": [
         "Listeden kaldırılsın mı?"
       ],
@@ -15261,6 +15316,9 @@
       ],
       "Share your calendar with your team": [
         "Takviminizi ekibinizle paylaşın"
+      ],
+      "Share your link": [
+        "Bağlantınızı paylaşın."
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"

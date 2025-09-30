@@ -141,6 +141,9 @@
       "Add label": [
         "Aggiungi un'etichetta"
       ],
+      "add more seats": [
+        "aggiungi più licenze"
+      ],
       "Add notification": [
         "Aggiungi notifica"
       ],
@@ -771,6 +774,9 @@
       "Get more servers": [
         "Ottieni più server"
       ],
+      "Get Pass Family": [
+        "Ottieni Pass Family"
+      ],
       "Get Pass Plus": [
         "Ottieni Pass Plus"
       ],
@@ -791,6 +797,9 @@
       ],
       "Get the extension for ${ browser.title }": [
         "Ottieni l'estensione per ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Ottieni la suite completa"
       ],
       "Get the writing assistant": [
         "Ottieni l'assistente alla scrittura"
@@ -1010,6 +1019,9 @@
       ],
       "No": [
         "No"
+      ],
+      "No thanks": [
+        "No, grazie"
       ],
       "No, thanks": [
         "No, grazie"
@@ -1590,6 +1602,9 @@
       "User": [
         "Utente"
       ],
+      "Users and addresses": [
+        "Utenti e indirizzi"
+      ],
       "Verify": [
         "Verifica"
       ],
@@ -1743,6 +1758,12 @@
       "Disallow unsigned mail": [
         "Non consentire la posta non firmata"
       ],
+      "Disconnect": [
+        "Disconnetti"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Disconnetti indirizzo “${ emailAddress }”"
+      ],
       "Edit": [
         "Modifica"
       ],
@@ -1766,6 +1787,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Genera le chiavi mancanti per l'indirizzo “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Concedi permesso"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Concedi l'autorizzazione a \"${ emailAddress }\""
       ],
       "Reconnect": [
         "Riconnetti"
@@ -1810,6 +1837,9 @@
       ],
       "Orphan": [
         "Orfano"
+      ],
+      "Permission revoked": [
+        "Permesso revocato"
       ]
     },
     "Admin": {
@@ -6293,6 +6323,11 @@
         "Il codice postale è obbligatorio"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Accedi con lo stesso indirizzo email che hai usato originariamente"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
@@ -8469,6 +8504,9 @@
         "Aggiungi server (${ availableAddedCount } disponibile)",
         "Aggiungi server (${ availableAddedCount } disponibili)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Aggiungi link per videoconferenze agli inviti del calendario"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Aggiungi il tuo nome e logo per creare un'esperienza più personalizzata per la tua organizzazione."
       ],
@@ -9338,6 +9376,9 @@
       "Groups": [
         "Gruppi"
       ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Aiuta a scrivere, rispondere a e correggere le email. Se disabilitato, solo gli amministratori avranno accesso. Gestisci per i singoli utenti in ${ userAndAddress } o ${ addMoreSeats }"
+      ],
       "here": [
         "qui"
       ],
@@ -9718,6 +9759,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gestisci le applicazioni ${ BRAND_NAME } alle quali possono accedere i membri della tua organizzazione. Se disabilitato, solo gli amministratori avranno accesso."
       ],
+      "Manage which features the members of your organization can access.": [
+        "Gestisci a quali funzionalità i membri della tua organizzazione possono accedere."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gestisci le tue preferenze di notifica email per ${ DOCS_APP_NAME }."
       ],
@@ -9807,6 +9851,9 @@
       ],
       "No countries enabled": [
         "Nessun paese attivato"
+      ],
+      "No credit card required": [
+        "Nessuna carta di credito richiesta"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Non è stato impostato alcun metodo di recupero dei dati. Rischi di perdere l'accesso ai tuoi dati."
@@ -12007,10 +12054,6 @@
         "${ nbYear } anno",
         "${ nbYear } anni"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } di ${ MaxAddresses } indirizzo email",
-        "${ UsedAddresses } di ${ MaxAddresses } indirizzi email"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
       ],
@@ -12022,6 +12065,9 @@
       ],
       "1 minute": [
         "1 minuto"
+      ],
+      "10 hide-my-email aliases": [
+        "10 alias hide-my-email"
       ],
       "10 minutes": [
         "10 minuti"
@@ -12509,9 +12555,6 @@
       "Emails (last month)": [
         "Email (ultimo mese)"
       ],
-      "Emails categories": [
-        "Categorie email"
-      ],
       "Enabled": [
         "Abilitato"
       ],
@@ -12610,6 +12653,9 @@
       ],
       "Hide password": [
         "Nascondi la password"
+      ],
+      "Highest VPN speed": [
+        "VPN ad altissima velocità"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Capisco che dovrò aggiungere immediatamente questo indirizzo email all'altro account, per evitare di perderlo definitivamente."
@@ -13167,6 +13213,9 @@
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email illimitati"
       ],
+      "Unlimited logins and devices": [
+        "Accessi e dispositivi illimitati"
+      ],
       "Upload 1 or more encryption keys": [
         "Carica 1 o più chiavi di crittografia"
       ],
@@ -13202,6 +13251,9 @@
       ],
       "Value": [
         "Valore"
+      ],
+      "Vault, item & secure link sharing": [
+        "Cassaforte, elementi e condivisione di link sicuri"
       ],
       "Verification code": [
         "Codice di verifica"
@@ -16193,6 +16245,12 @@
         "Inizia a utilizzare ${ PASS_APP_NAME }"
       ]
     },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } mese",
+        "${ n } mesi"
+      ]
+    },
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Ottieni l'accesso a vita a tutte le funzionalità premium attuali e future di ${ PASS_APP_NAME } con un unico pagamento una tantum."
@@ -16706,6 +16764,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Importo dovuto dopo la prova il ${ formattedDate }"
+      ],
       "Billing Country": [
         "Paese di fatturazione"
       ],
@@ -16769,8 +16830,8 @@
       "Taxes": [
         "Tasse"
       ],
-      "terms & conditions": [
-        "termini e condizioni"
+      "terms and conditions": [
+        "Termini e Condizioni"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Il coupon è valido per ${ couponRedemptions } rinnovo.",
@@ -17555,6 +17616,9 @@
       ],
       "Start earning credits": [
         "Inizia a guadagnare crediti"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Puoi guadagnare fino a **${ maxRewardAmount }** in credito."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Ti rimane **${ daysRemaining } giorno** per esplorare tutte le potenti funzionalità che **${ planTitle }** ha da offrire.",
@@ -18863,6 +18927,10 @@
         "${ VPN_CONNECTIONS } connessione VPN ad alta velocità",
         "${ VPN_CONNECTIONS } connessioni VPN ad alta velocità"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.servers }+ server VPN in ${ vpnServersCountData.free.countries } paese",
+        "${ vpnServersCountData.free.servers }+ server VPN in ${ vpnServersCountData.free.countries } paesi"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ paese",
         "${ vpnServersCountData.paid.countries }+ paesi"
@@ -18895,6 +18963,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Amount due now": [
+        "Importo dovuto ora"
+      ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "E ricevi ${ referralInfo.uiData.refereeRewardAmount } in crediti, se ti iscrivi."
       ],
@@ -18924,9 +18995,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Continua con ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Continua con il piano gratuito"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Crea un account ${ BRAND_NAME }"
@@ -19049,8 +19117,8 @@
       "Select ${ title }": [
         "Seleziona ${ title }"
       ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "Seleziona un servizio e goditi la versione premium gratis per ${ TRIAL_DURATION_DAYS } giorni. Nessuna carta di credito richiesta."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Seleziona un servizio e goditi la versione premium gratis per ${ TRIAL_DURATION_DAYS } giorni."
       ],
       "Selected": [
         "Selezionato"
@@ -19076,6 +19144,9 @@
       "Start free trial": [
         "Inizia la prova gratuita"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Inizia a utilizzare ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Archiviazione"
       ],
@@ -19094,11 +19165,17 @@
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Poi ${ priceWithDiscountPerMonth } al mese, se ti abboni."
       ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Poi ${ priceWithDiscountPerMonth } al mese, se ti abboni."
+      ],
       "To redeem on your next paid subscription.": [
         "Per riscattare sul tuo prossimo abbonamento a pagamento."
       ],
       "Total": [
         "Totale"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "Scelto da oltre 100 milioni di persone e aziende"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Prova ${ BRAND_NAME } per ${ TRIAL_DURATION_DAYS } giorni gratis"
@@ -19528,6 +19605,12 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Guadagna fino a ${ maxRewardAmount } in crediti"
+      ],
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Ottieni crediti quando la persona che inviti si abbona a un piano ${ BRAND_NAME }."
+      ],
       "Get up to ${ credits } in credits.": [
         "Guadagna fino a ${ credits } in crediti."
       ],
@@ -20463,6 +20546,9 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Gratis per sempre"
+      ],
       "Pay once, access forever.": [
         "Paga una volta, accedi per sempre."
       ],
@@ -20967,6 +21053,14 @@
       "${ feature } is now active": [
         "${ feature } è adesso attivo"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } Amico invitato",
+        "${ friendsInvited } Amici invitati"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } amico abbonato",
+        "${ friendsSubscribed } amici abbonati"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Strumento di esportazione di ${ MAIL_APP_NAME }"
       ],
@@ -21346,6 +21440,9 @@
       ],
       "Credentials": [
         "Credenziali"
+      ],
+      "Credit earned": [
+        "Credito guadagnato"
       ],
       "Credits": [
         "Crediti"
@@ -22425,6 +22522,9 @@
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videoconferenza con ${ MEET_APP_NAME }"
       ],
+      "Video conferencing with Zoom": [
+        "Videoconferenze con Zoom"
+      ],
       "View organization events by upgrading to Professional": [
         "Visualizza gli eventi dell'organizzazione effettuando l'upgrade a Professional"
       ],
@@ -22629,6 +22729,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Una modifica lato Gmail sta impedendo a ${ BRAND_NAME } di connettere. Concedi l'autorizzazione per ripristinare la funzionalità email."
+      ],
       "Account is disconnected": [
         "L'account è disconnesso"
       ],
@@ -22775,9 +22878,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "L'indirizzo è stato disconnesso. L'invio e la ricezione dei messaggi sono stati sospesi. Riconnettiti per riattivare questo indirizzo."
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."

@@ -1957,12 +1957,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } 试用期结束后，您的订阅将自动改成每 ${ renewCycle } 个月自动续订的付费订阅。 若在 ${ formattedDate } 之前取消，您将不用付费。"
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } 试用期结束后，您的订阅将自动改成按月自动续订的付费订阅。若在${ formattedDate }之前取消，您将不用付费。"
-      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
       ],
@@ -11172,9 +11166,6 @@
       "Finance": [
         "金融"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "我已将我的登录转移至 ${ BRAND_NAME }"
-      ],
       "Privacy for all your online accounts": [
         "保护您所有在线账户的隐私"
       ],
@@ -11183,9 +11174,6 @@
       ],
       "Social media": [
         "社交媒体"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "使用您的 ${ MAIL_APP_NAME } 地址登录在线服务，避免被跟踪和剖析。现在就为常用服务更改您的电子邮件。${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11601,9 +11589,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
-      ],
-      "terms & conditions": [
-        "服务条款"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "该优惠券适用于${ couponRedemptions }次续费升级。"

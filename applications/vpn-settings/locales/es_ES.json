@@ -1110,6 +1110,12 @@
       "Disallow unsigned mail": [
         "No permitir correos sin firma"
       ],
+      "Disconnect": [
+        "Desconectar"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Reconectar la dirección “${ emailAddress }”"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -1133,6 +1139,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Generar claves faltantes para la dirección “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Conceder permiso"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Conceder permiso a “${ emailAddress }”"
       ],
       "Reconnect": [
         "Reconectar"
@@ -1177,6 +1189,9 @@
       ],
       "Orphan": [
         "Huérfana"
+      ],
+      "Permission revoked": [
+        "Permiso revocado"
       ]
     },
     "Admin": {
@@ -1387,8 +1402,14 @@
       "During the trial period, you can have up to 10 users.": [
         "Durante el período de prueba, puedes tener hasta 10 usuarios."
       ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratis durante ${ TRIAL_DURATION_DAYS } días"
+      ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Prueba ${ selected } ${ freeForNDays }"
       ],
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Pruébalo gratis durante ${ TRIAL_DURATION_DAYS } días"
@@ -1958,6 +1979,9 @@
       ],
       "Upload and query multiple large files": [
         "Cargar y consultar múltiples archivos de gran tamaño"
+      ],
+      "Upload and query small files": [
+        "Cargar y consultar archivos pequeños"
       ],
       "Web search access": [
         "Acceso a la búsqueda web"
@@ -4064,6 +4088,11 @@
         "Se requiere el código postal."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Por favor, inicia sesión con la misma dirección de Gmail que conectaste originalmente"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Se ha producido un error al leer el archivo ${ formattedFilename }. Formato de archivo incorrecto."
@@ -5610,6 +5639,9 @@
       "Account successfully updated": [
         "Cuenta actualizada"
       ],
+      "Accounts": [
+        "Cuentas"
+      ],
       "active": [
         "activa"
       ],
@@ -6591,6 +6623,9 @@
       "Organization monitor": [
         "Monitor de organización"
       ],
+      "Organization Monitor": [
+        "Monitor de organización"
+      ],
       "Organization size": [
         "Tamaño de la organización"
       ],
@@ -6796,6 +6831,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selecciona las afiliaciones de los usuarios de ${ getFormattedOrganization } que deseas permitir en tu organización ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Selecciona usuarios para ver sus actividades"
       ],
       "Select what you want to import.": [
         "Selecciona lo que quieres importar."
@@ -7785,10 +7823,6 @@
       "${ nbDay } day": [
         "${ nbDay } día",
         "${ nbDay } días"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo",
-        "${ UsedAddresses } de ${ MaxAddresses } direcciones de correo"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
@@ -10797,6 +10831,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Cantidad a pagar después de la prueba el ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de facturación"
       ],
@@ -10857,8 +10894,8 @@
       "Taxes": [
         "Impuestos"
       ],
-      "terms & conditions": [
-        "los términos y condiciones"
+      "terms and conditions": [
+        "términos y condiciones"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupón es válido por ${ couponRedemptions } renovación.",
@@ -10881,6 +10918,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puedes cancelar en cualquier momento.",
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puedes cancelar en cualquier momento."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Esta acción amplía la suscripción existente. Se te cobrará solo por los nuevos complementos y el tiempo restante del ciclo de facturación actual. La fecha de renovación de tu suscripción no cambiará."
       ],
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las futuras facturas"
@@ -10925,6 +10965,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Tu tarjeta ha sido rechazada. Por favor, prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito por la parte no utilizada de tu suscripción al plan anterior"
+      ],
+      "Credits will be added to your balance": [
+        "Se añadirán créditos a tu saldo."
       ]
     },
     "Payments.plan_name": {
@@ -11442,6 +11490,9 @@
       ],
       "Start earning credits": [
         "Empieza a ganar créditos"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Gana hasta **${ maxRewardAmount }** en crédito."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Te queda **${ daysRemaining } día** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte.",
@@ -14644,6 +14695,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Un cambio en el lado de Gmail está impidiendo que ${ BRAND_NAME } se conecte. Concede permiso para restablecer la funcionalidad del correo electrónico."
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Los administradores pueden administrar cuentas de usuario y otorgar privilegios de administrador a otros usuarios. Solo el administrador principal puede editar el plan de la organización."
       ],
@@ -14718,9 +14772,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "La dirección ha sido desconectada. El envío y la recepción de mensajes están pausados. Vuelve a conectarte para activar esta dirección de nuevo."
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."

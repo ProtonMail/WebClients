@@ -4404,6 +4404,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Beløp som forfaller etter prøveperioden på ${ formattedDate }"
+      ],
       "Billing Country": [
         "Faktureringsland"
       ],
@@ -4455,7 +4458,7 @@
       "Taxes": [
         "Avgifter"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "vilkår og betingelser"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [

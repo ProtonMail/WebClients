@@ -3929,6 +3929,11 @@
         "Απαιτείται ταχυδρομικός κώδικας"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
+      ]
+    },
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "Η προσκεκλημένη διεύθυνση δεν υπάρχει"
@@ -8928,6 +8933,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
+      ],
       "Billing Country": [
         "Χώρα χρέωσης"
       ],
@@ -8979,7 +8987,7 @@
       "Taxes": [
         "Φόροι"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [

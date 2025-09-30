@@ -59,6 +59,9 @@
       "Allow access": [
         "Consenti l'accesso"
       ],
+      "and": [
+        "e"
+      ],
       "Apply lifetime coupon code": [
         "Applica codice coupon illimitato"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Visualizza membri"
       ],
-      "Select": [
-        "Seleziona"
-      ],
       "Send email": [
         "Invia email"
       ],
@@ -729,9 +729,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Non chiedermelo più"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Vuoi che i tuoi appunti vengano puliti automaticamente dopo ${ timeoutDurationHumanReadable }?"
       ]
@@ -1056,6 +1053,9 @@
       "Importing items failed": [
         "Importazione degli elementi non riuscita"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Per continuare, ${ PASS_APP_NAME } richiede queste autorizzazioni dell'estensione: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Impossibile rimuovere i link sicuri inattivi."
       ],
@@ -1095,11 +1095,14 @@
       "Passphrase is incorrect": [
         "Passphrase non valida"
       ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Permesso negato per l'accesso al sito web ${ domainsJSX }."
+      ],
+      "Permission denied for website access.": [
+        "Permesso negato per l'accesso al sito web ."
+      ],
       "PIN codes do not match": [
         "I codici PIN non corrispondono"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Concedi a ${ PASS_APP_NAME } le autorizzazioni necessarie per continuare"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fissa l'estensione o seleziona \"Continua senza fissare\"."
@@ -1386,6 +1389,9 @@
       "Access successfully confirmed": [
         "Accesso confermato con successo"
       ],
+      "access to ${ domains }.": [
+        "accesso a ${ domains }."
+      ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accesso a ${ PASS_APP_NAME } richiederà sempre la password ${ BRAND_NAME }."
       ],
@@ -1520,9 +1526,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Scegli una passkey salvata per accedere a ${ domain }"
-      ],
-      "Choose your preferred look and feel.": [
-        "Scegli l'aspetto che preferisci."
       ],
       "Click the icon to open it anytime.": [
         "Clicca sull'icona per aprirlo in qualsiasi momento."
@@ -1818,9 +1821,6 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
-      "Make it your own": [
-        "Fallo tuo"
-      ],
       "Manager": [
         "Gestore"
       ],
@@ -1841,8 +1841,7 @@
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri.",
-        "Spostare degli elementi in un'altra cassaforte cancellerà i loro link sicuri."
+        "Spostare un elemento in un'altra cassaforte cancellerà i suoi link sicuri."
       ],
       "Moving items": [
         "Spostamento degli elementi"
@@ -1855,6 +1854,9 @@
       ],
       "Moving items to trash": [
         "Spostamento degli elementi nel cestino"
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Vai alle impostazioni dell'estensione del tuo browser e attiva i permessi del sito per ${ PASS_SHORT_APP_NAME }."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Hai bisogno di inviare un'email a qualcuno ma non vuoi che veda il tuo indirizzo email? Imposta un alias di contatto."
@@ -1888,6 +1890,9 @@
       ],
       "Open the Extensions menu": [
         "Apri il menu Estensioni"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Apri le impostazioni di Safari, trova ${ PASS_APP_NAME }, vai su \"Permessi\" e attiva i permessi del sito."
       ],
       "Owner": [
         "Proprietario"
@@ -2093,6 +2098,12 @@
       ],
       "Restoring trashed items...": [
         "Ripristino degli elementi nel cestino in corso"
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Fai clic destro sull'icona dell'estensione e seleziona \"Gestisci estensione\". Vai a \"Permessi e dati\" e attiva i permessi del sito."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Fai clic destro sull'icona dell'estensione e \"seleziona\" \"Gestisci estensione\". Vai a \"Accedi al sito\" e \"attiva\" i permessi del sito."
       ],
       "Save login": [
         "Salva il login"

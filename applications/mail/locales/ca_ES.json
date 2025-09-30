@@ -379,6 +379,9 @@
       "Customize": [
         "Personalitza"
       ],
+      "Customize categories": [
+        "Personalitzeu les categories"
+      ],
       "Customize import": [
         "Personalitzar importació"
       ],
@@ -1999,10 +2002,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+        "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+        "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
@@ -5080,6 +5083,11 @@
         "Es requereix el codi postal."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Es permet un màxim d'${ maxAttendees } assistent per invitació.",
@@ -7235,7 +7243,7 @@
         "Carpeta"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
-        "Per obtenir informació addicional i esborrar restriccions, inicieu sessió a ${ mailLink }."
+        "Per a obtenir informació addicional i eliminar restriccions, inicieu sessió a ${ mailLink }."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedir en qualsevol moment al correu electrònic i a una experiència mòbil optimitzada, descarregueu la nostra aplicació ${ androidAppLink } o ${ iosAppLink }."
@@ -7297,7 +7305,7 @@
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
       "If you believe we made a mistake, please ${ contactLink }.": [
-        "Si creieu que hem comès un error, si us plau ${ contactLink }."
+        "Si creieu que hem comès un error, ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
         "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
@@ -8268,7 +8276,7 @@
         "Per a recuperar les dades, heu de tornar a activar la clau del compte utilitzada en el moment que es van crear les dades. Això requereix que recordeu la contrasenya utilitzada quan es va generar la clau."
       ],
       "To remove restrictions, you can upgrade to a paid plan.": [
-        "Per esborrar restriccions, podeu actualitzar a un pla de pagament."
+        "Per a eliminar restriccions, podeu millorar a un pla de pagament."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "Per cancel·lar la subscripció a aquesta llista de correu, se n'enviarà un des de ${ boldFrom } amb els següents detalls definits pel remitent del butlletí:"
@@ -8448,7 +8456,7 @@
         "No hem pogut processar el vostre pagament."
       ],
       "We have plans designed specifically for users like you who need more than one email address.": [
-        "Si necessiteu més d'una adreça de correu electrònica, tenim plans dissenyats específicament a la vostra mida."
+        "Si necessiteu més d'una adreça de correu electrònic, tenim plans dissenyats específicament a la vostra mida."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Hem d'autenticar el vostre mètode de pagament amb el banc."
@@ -9088,6 +9096,14 @@
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "Teniu ${ count } conversa per llegir",
+        "Teniu ${ count } converses per llegir"
+      ],
+      "${ count } unread message": [
+        "Teniu ${ count } missatge per llegir",
+        "Teniu ${ count } missatges per llegir"
+      ],
       "${ n } month": [
         "${ n } mes",
         "${ n } mesos"
@@ -9112,6 +9128,9 @@
       ],
       "Add image URL": [
         "Afegeix l'URL de la imatge"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Afegiu o elimineu categories. Configureu o desactiveu notificacions. Ajusteu en qualsevol moment al menú de ${ menuIcon }."
       ],
       "Add to group": [
         "Afegeix al grup"
@@ -9953,7 +9972,7 @@
         "buidar la memòria cau del navegador"
       ],
       "contact us": [
-        "contacteu-nos"
+        "contacteu amb nosaltres"
       ],
       "Create a calendar linked to an active email address.": [
         "Creeu un calendari enllaçat a una adreça de correu electrònic activa."
@@ -11597,11 +11616,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Canvieu la vostra adreça de correu electrònic per serveis populars ara i eviteu ser rastrejat i perfilat. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Finances"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "He mogut els meus inicis de sessió a ${ BRAND_NAME }"
+      "Maybe later": [
+        "Potser més tard"
       ],
       "Privacy for all your online accounts": [
         "Privacitat per a tots els vostres comptes en línia"
@@ -11611,9 +11633,6 @@
       ],
       "Social media": [
         "Xarxes socials"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Utilitzeu la vostra adreça de ${ MAIL_APP_NAME } per iniciar la sessió als serveis en línia i evitar que se us faci un seguiment i se us perfili. Canvieu el vostre correu per a serveis populars ara. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11998,6 +12017,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Import a pagar després del període de prova el ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de facturació"
       ],
@@ -12049,8 +12071,8 @@
       "Taxes": [
         "Impostos"
       ],
-      "terms & conditions": [
-        "els termes i condicions"
+      "terms and conditions": [
+        "termes i condicions"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupó és vàlid per a ${ couponRedemptions } renovació.",
@@ -14443,7 +14465,7 @@
         "Recuperació de compte"
       ],
       "Account restricted": [
-        "Compte restringit"
+        "S'ha restringit el compte"
       ],
       "Account security": [
         "Seguretat del compte"
@@ -14625,6 +14647,9 @@
       ],
       "Customize categories": [
         "Personalitzar categories"
+      ],
+      "Customize categories to fit your needs": [
+        "Personalitzeu les categories perquè s'adaptin a les vostres necessitats"
       ],
       "Customize your mail import": [
         "Personalitzeu la importació del vostre correu electrònic"

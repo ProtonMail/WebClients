@@ -59,6 +59,9 @@
       "Allow access": [
         "Permitir el acceso"
       ],
+      "and": [
+        "y"
+      ],
       "Apply lifetime coupon code": [
         "Aplicar el código del cupón vitalicio"
       ],
@@ -247,6 +250,12 @@
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Do not show again": [
+        "No mostrar de nuevo"
+      ],
+      "Do not show again when I press": [
+        "No volver a mostrar cuando pulse"
       ],
       "Do not show on this website": [
         "No mostrar en este sitio web"
@@ -548,9 +557,6 @@
       "See members": [
         "Ver los miembros"
       ],
-      "Select": [
-        "Seleccionar"
-      ],
       "Send email": [
         "Enviar un correo electrónico"
       ],
@@ -723,9 +729,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "No volver a preguntar"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "¿Quieres que tu portapapeles se borre automáticamente después de ${ timeoutDurationHumanReadable }?"
       ]
@@ -1091,9 +1094,6 @@
       ],
       "PIN codes do not match": [
         "Los códigos PIN no coinciden."
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Concede a ${ PASS_APP_NAME } los permisos de extensión necesarios para continuar."
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fija la extensión o selecciona «Continuar sin fijar»."
@@ -1515,9 +1515,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Selecciona una clave de acceso guardada para iniciar sesión en ${ domain }."
       ],
-      "Choose your preferred look and feel.": [
-        "Elige tu aspecto preferido."
-      ],
       "Click the icon to open it anytime.": [
         "Pulsa el ícono para abrirlo en cualquier momento."
       ],
@@ -1812,9 +1809,6 @@
       "Loading...": [
         "Cargando..."
       ],
-      "Make it your own": [
-        "Personaliza la aplicación"
-      ],
       "Manager": [
         "Gestor"
       ],
@@ -1835,8 +1829,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
-        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2027,6 +2020,9 @@
       ],
       "Please keep your browser open so the clipboard can be automatically cleared.": [
         "Mantén tu navegador abierto para que el portapapeles se pueda borrar automáticamente."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Por favor, asegúrate de que la ventana previamente activa es donde quieres autocompletar y tu cursor estaba enfocado en el campo de inicio de sesión."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Una vez eliminado, el alias no puede ser restaurado. ¿Quizás deseas desactivarlo en su lugar?"
@@ -2399,6 +2395,12 @@
       "You may close this tab.": [
         "Puedes cerrar esta pestaña."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Quizás necesites aceptar una solicitud de permiso y quizás tengas que reiniciar la aplicación dependiendo de tu sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Puede que necesites otorgar permiso de accesibilidad a ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Necesitas una caja fuerte con permiso de edición antes de poder importar elementos."
       ],
@@ -2434,6 +2436,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -4224,6 +4234,9 @@
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
+      ],
+      "Perform autotype?": [
+        "¿Realizar autocompletado?"
       ],
       "Permanently remove all items?": [
         "¿Eliminar todos los elementos permanentemente?"

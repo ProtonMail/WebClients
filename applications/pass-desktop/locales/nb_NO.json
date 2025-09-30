@@ -766,9 +766,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Ikke spør igjen"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Vil du at utklippstavlen skal tømmes automatisk etter ${ timeoutDurationHumanReadable }?"
       ]
@@ -1808,9 +1805,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "I ${ PASS_SHORT_APP_NAME } krypteres et elementnotat med elementkrypteringsnøkkelen, og bare brukere som har tilgang til elementet, kan se notatet. Ikke engang ${ BRAND_NAME } eller SimpleLogin kan se det."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "For å få den beste opplevelsen ut av ${ PASS_APP_NAME }, gi de nødvendige utvidelsestillatelsene."
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Installer ${ PASS_APP_NAME } for ${ browser.title } for raskt å fylle ut påloggingene dine."
       ],
@@ -1932,10 +1926,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -3037,9 +3027,6 @@
       ],
       "Get the extension for your browser.": [
         "Skaff utvidelsen for nettleseren din."
-      ],
-      "Grant": [
-        "Gi"
       ],
       "Hidden": [
         "Skjult"
@@ -4444,9 +4431,6 @@
       ],
       "Get Started": [
         "Kom i gang"
-      ],
-      "Grant permissions": [
-        "Gi tillatelser"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Skjulte hvelv vil ikke være synlige under søk og automatisk utfylling."

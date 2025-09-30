@@ -1765,9 +1765,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "I ${ PASS_SHORT_APP_NAME } er en elementnote krypteret med elementets krypteringsnøgle, og kun brugere, der har adgang til elementet, kan se noten. Ikke engang ${ BRAND_NAME } eller SimpleLogin kan se den."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "For at få den bedste oplevelse ud af ${ PASS_APP_NAME }, bedes du give de nødvendige udvidelsestilladelser"
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Installer ${ PASS_APP_NAME } til ${ browser.title } for hurtigt at autoudfylde dine logins."
       ],
@@ -1886,10 +1883,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2947,9 +2940,6 @@
       ],
       "Get the extension for your browser.": [
         "Hent udvidelsen til din browser."
-      ],
-      "Grant": [
-        "Tildel"
       ],
       "Hidden": [
         "Skjult"
@@ -4331,9 +4321,6 @@
       ],
       "Get Started": [
         "Kom i gang"
-      ],
-      "Grant permissions": [
-        "Giv tilladelser"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliasser"

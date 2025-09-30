@@ -59,6 +59,9 @@
       "Allow access": [
         "Permitir el acceso"
       ],
+      "and": [
+        "y"
+      ],
       "Apply lifetime coupon code": [
         "Aplicar código de cupón vitalicio"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Ver miembros"
       ],
-      "Select": [
-        "Seleccionar"
-      ],
       "Send email": [
         "Enviar un correo electrónico"
       ],
@@ -729,9 +729,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "No volver a preguntar"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "¿Desea que el portapapeles se borre automáticamente después de ${ timeoutDurationHumanReadable }?"
       ]
@@ -1097,9 +1094,6 @@
       ],
       "PIN codes do not match": [
         "Los códigos PIN no coinciden"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Conceda a ${ PASS_APP_NAME } los permisos de extensión necesarios para continuar"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fije la extensión o seleccione Continuar sin fijar."
@@ -1521,9 +1515,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Seleccione una clave de acceso guardada para iniciar sesión en ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Elija su aspecto preferido."
-      ],
       "Click the icon to open it anytime.": [
         "Pulse el ícono para abrirlo en cualquier momento."
       ],
@@ -1818,9 +1809,6 @@
       "Loading...": [
         "Cargando..."
       ],
-      "Make it your own": [
-        "Personalice la aplicación"
-      ],
       "Manager": [
         "Gestor"
       ],
@@ -1841,8 +1829,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"

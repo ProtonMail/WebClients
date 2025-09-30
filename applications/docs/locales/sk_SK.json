@@ -3477,6 +3477,11 @@
         "PSČ je povinné"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Prihláste sa pomocou tej istej Gmail adresy, ktorú ste použili pri prvom prihlásení, prosím."
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Vyskytla sa chyba pri čítaní vášho súboru ${ formattedFilename }. Nesprávny formát súboru."
@@ -8603,6 +8608,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Suma splatná po skončení skúšobnej prevádzky dňa ${ formattedDate }"
+      ],
       "Billing Country": [
         "Krajina fakturácie"
       ],
@@ -8654,8 +8662,8 @@
       "Taxes": [
         "Dane"
       ],
-      "terms & conditions": [
-        "podmienky používania"
+      "terms and conditions": [
+        "zmluvnými podmienkami používania"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupón je možné použiť na ${ couponRedemptions } obnovenie.",

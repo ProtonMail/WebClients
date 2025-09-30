@@ -3431,6 +3431,11 @@
         "Il codice postale è obbligatorio"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Accedi con lo stesso indirizzo email che hai usato originariamente"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
@@ -8412,6 +8417,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Importo dovuto dopo la prova il ${ formattedDate }"
+      ],
       "Billing Country": [
         "Paese di fatturazione"
       ],
@@ -8463,8 +8471,8 @@
       "Taxes": [
         "Tasse"
       ],
-      "terms & conditions": [
-        "termini e condizioni"
+      "terms and conditions": [
+        "Termini e Condizioni"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Il coupon è valido per ${ couponRedemptions } rinnovo.",
@@ -8969,6 +8977,17 @@
       "${ referrerRewardAmount } per referral": [
         "${ referrerRewardAmount } per ogni affiliazione"
       ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Guadagna fino a ${ maxRewardAmount } in credito. Riceverai ${ referrerRewardAmount } quando la persona che inviti si abbona a un piano ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Amico associato",
+        "Amici associati"
+      ],
+      "Friend subscribed": [
+        "Amico abbonato",
+        "Amici abbonati"
+      ],
       "Invite friends. Get credits.": [
         "Invita amici. Ottieni crediti."
       ],
@@ -8983,6 +9002,9 @@
       ],
       "Start earning credits": [
         "Inizia a guadagnare crediti"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Puoi guadagnare fino a **${ maxRewardAmount }** in credito."
       ]
     },
     "Safety review": {

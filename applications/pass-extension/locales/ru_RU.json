@@ -56,6 +56,9 @@
       "Advanced options": [
         "Расширенные настройки"
       ],
+      "and": [
+        "и"
+      ],
       "Apply lifetime coupon code": [
         "Применить пожизненный код купона"
       ],
@@ -535,9 +538,6 @@
       ],
       "See members": [
         "Просмотреть участников"
-      ],
-      "Select": [
-        "Выбрать"
       ],
       "Send email": [
         "Отправить электронное письмо"
@@ -1076,9 +1076,6 @@
       "PIN codes do not match": [
         "PIN-коды не совпадают"
       ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Пожалуйста, предоставьте ${ PASS_APP_NAME } необходимые разрешения для расширения, чтобы продолжить"
-      ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Пожалуйста, закрепите расширение или выберите \"Продолжить без закрепления\"."
       ],
@@ -1519,9 +1516,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выберите сохраненный passkey для входа в ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Выбирайте предпочтительный внешний вид и настроение."
-      ],
       "Click the icon to open it anytime.": [
         "Нажмите на значок, чтобы открыть его в любое время."
       ],
@@ -1816,9 +1810,6 @@
       "Loading...": [
         "Загрузка..."
       ],
-      "Make it your own": [
-        "Сделайте всё по-своему"
-      ],
       "Manager": [
         "Менеджер"
       ],
@@ -1839,12 +1830,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"

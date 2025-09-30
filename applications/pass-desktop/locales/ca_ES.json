@@ -766,9 +766,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "No m'ho torneu a preguntar"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Voleu que el vostre porta-retalls es netegi automàticament després de ${ timeoutDurationHumanReadable }?"
       ]
@@ -1808,9 +1805,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "A ${ PASS_SHORT_APP_NAME }, una nota es xifra amb la clau de xifratge de l'element i només els usuaris que tenen accés a l'element poden veure-la. Ni tan sols ${ BRAND_NAME } o SimpleLogin la poden veure."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Per a obtenir la millor experiència de ${ PASS_APP_NAME }, doneu els permisos d'extensió necessaris"
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Instal·leu ${ PASS_APP_NAME } per a ${ browser.title } per a emplenar automàticament els inicis de sessió."
       ],
@@ -1933,10 +1927,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
-      ],
       "Moving items": [
         "S'estan movent elements"
       ],
@@ -1984,6 +1974,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "L'accés en línia a ${ PASS_APP_NAME } requerirà un codi PIN. Se us tancarà la sessió després de 3 intents que no han funcionat."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Obriu la configuració de l'extensió a Safari i comproveu que els permisos del lloc web estiguin activats per als dominis de ${ BRAND_NAME }"
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Les nostres alertes prioritzen la seguretat. Si no reconeixeu la informació compromesa, podeu ignorar aquest informe amb seguretat."
@@ -2997,7 +2990,7 @@
         "Planta, apartament, edifici"
       ],
       "For a one-off sharing": [
-        "Per a un sol ús"
+        "Per a una compartició puntual"
       ],
       "For security reasons, ${ PASS_SHORT_APP_NAME } automatically locks itself after 10 minutes of inactivity.": [
         "Per motius de seguretat, ${ PASS_SHORT_APP_NAME } es bloqueja automàticament després de 10 minuts d'inactivitat."
@@ -3037,9 +3030,6 @@
       ],
       "Get the extension for your browser.": [
         "Obteniu l'extensió per al vostre navegador."
-      ],
-      "Grant": [
-        "Autoritza"
       ],
       "Hidden": [
         "Ocult"
@@ -4444,9 +4434,6 @@
       ],
       "Get Started": [
         "Comenceu"
-      ],
-      "Grant permissions": [
-        "Concediu permisos"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Les caixes fortes ocultes no seran visibles durant la cerca i l'emplenament automàtic."

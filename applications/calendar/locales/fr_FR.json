@@ -3929,6 +3929,11 @@
         "Le code postal est nécessaire."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Veuillez vous connecter avec la même adresse Gmail que celle que vous avez connectée à l'origine"
+      ]
+    },
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "L'adresse e-mail invitée n'existe pas."
@@ -8928,6 +8933,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Montant dû après la version d'essai le ${ formattedDate }"
+      ],
       "Billing Country": [
         "Pays de facturation "
       ],
@@ -8979,8 +8987,8 @@
       "Taxes": [
         "Taxes"
       ],
-      "terms & conditions": [
-        "les conditions générales d’utilisation"
+      "terms and conditions": [
+        "conditions générales d'utilisation"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",

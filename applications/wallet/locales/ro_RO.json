@@ -4454,6 +4454,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Suma datorată după probare la ${ formattedDate }"
+      ],
       "Billing Country": [
         "Țara de facturare"
       ],
@@ -4505,8 +4508,8 @@
       "Taxes": [
         "Taxe"
       ],
-      "terms & conditions": [
-        "termeni și condiții"
+      "terms and conditions": [
+        "termenii și condițiile"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",

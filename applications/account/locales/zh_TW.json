@@ -8248,6 +8248,9 @@
       "No addresses exist": [
         "無任何電郵位址"
       ],
+      "No credit card required": [
+        "無需信用卡"
+      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "沒有設定任何資料還原方法，您有可能會無法存取您的資料"
       ],
@@ -10155,9 +10158,6 @@
       ],
       "${ nbYear } year": [
         "${ nbYear } 年"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "最多可有 ${ MaxAddresses } 組電郵位址，目前已有 ${ UsedAddresses } 組"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
@@ -14312,9 +14312,6 @@
       ],
       "Taxes": [
         "稅金"
-      ],
-      "terms & conditions": [
-        "條款及細則"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "此折價券可適用續約訂購 ${ couponRedemptions } 次。"

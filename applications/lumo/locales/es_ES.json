@@ -629,6 +629,9 @@
       "Add from ${ DRIVE_APP_NAME }": [
         "Añadir desde ${ DRIVE_APP_NAME }"
       ],
+      "Browse ${ DRIVE_SHORT_APP_NAME }": [
+        "Ir a ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -637,6 +640,9 @@
       ],
       "Dark": [
         "Oscuro"
+      ],
+      "Disable ghost mode": [
+        "Activar modo fantasma"
       ],
       "Dismiss": [
         "Descartar"
@@ -658,6 +664,9 @@
       ],
       "New chat": [
         "Nuevo chat"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Abrir ${ DRIVE_APP_NAME }"
       ],
       "Refresh folder contents": [
         "Actualizar el contenido de la carpeta"
@@ -691,6 +700,9 @@
       ],
       "Upload a file": [
         "Carga un archivo"
+      ],
+      "Upload file and add to knowledge base": [
+        "Cargar archivo y añadir a conocimiento base"
       ],
       "Upload from device": [
         "Cargar desde el dispositivo"
@@ -787,6 +799,9 @@
       ]
     },
     "collider_2025: Description": {
+      "Elevate your private AI experience and unlock advanced models and premium features with ${ LUMO_SHORT_APP_NAME } Plus.": [
+        "Eleva tu experiencia de IA privada y desbloquea modelos avanzados y funciones prémium con ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
       "Last updated on ${ DATE_VERSION }": [
         "Última actualización: ${ DATE_VERSION }"
       ],
@@ -811,6 +826,15 @@
       ]
     },
     "collider_2025: Error": {
+      "Error processing ${ result.fileName }: ${ result.errorMessage }": [
+        "Error al procesar ${ result.fileName }: ${ result.errorMessage }"
+      ],
+      "Error processing file: ${ file.name }": [
+        "Error al procesar el archivo: ${ file.name }"
+      ],
+      "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
+        "No se pudo procesar el archivo de ${ DRIVE_SHORT_APP_NAME }: ${ file.name }"
+      ],
       "File \"${ file.name }\" is too large (${ fileSizeFormatted }). Maximum allowed size is ${ maxSizeFormatted }.": [
         "El archivo \"${ file.name }\" es demasiado grande (${ fileSizeFormatted }). El tamaño máximo permitido es ${ maxSizeFormatted }."
       ],
@@ -819,6 +843,9 @@
       ],
       "File format not supported: ${ result.fileName }": [
         "Formato de archivo no compatible: ${ result.fileName }"
+      ],
+      "File uploaded but failed to add to knowledge base": [
+        "Archivo cargado pero no se pudo añadir a conocimiento base"
       ],
       "Please select a category to describe what went wrong with the generated text": [
         "Por favor, selecciona una categoría para describir cuál es el problema con el texto generado"
@@ -848,6 +875,9 @@
       ],
       "Your request didn't go through or couldn't be completed. Try sending it again.": [
         "Tu solicitud no se ha procesado o no ha podido completarse. Prueba a enviarla de nuevo."
+      ],
+      "Your request was queued but the connection was interrupted. This usually happens when ${ LUMO_SHORT_APP_NAME } is experiencing high demand. Please try again.": [
+        "Tu solicitud fue puesta en cola, pero la conexión fue interrumpida. Esto suele suceder cuando ${ LUMO_SHORT_APP_NAME } está experimentando una alta demanda. Por favor, inténtalo de nuevo."
       ]
     },
     "collider_2025: Error Title": {
@@ -903,6 +933,9 @@
       "Upload and query multiple large files": [
         "Cargar y consultar múltiples archivos de gran tamaño"
       ],
+      "Upload and query small files": [
+        "Cargar y consultar archivos pequeños"
+      ],
       "Web search access": [
         "Acceso a la búsqueda web"
       ]
@@ -919,6 +952,9 @@
       ],
       "Unlimited favourite chats": [
         "Chats favoritos ilimitados"
+      ],
+      "Unlimited weekly chats": [
+        "Chats semanales ilimitados"
       ],
       "Web search": [
         "Búsqueda web"
@@ -943,11 +979,23 @@
       ]
     },
     "collider_2025: Info": {
+      " ${ BRAND_NAME } file is hidden (not supported yet)": [
+        " El archivo de ${ BRAND_NAME } está oculto (aún sin soporte)"
+      ],
+      " ${ BRAND_NAME } files are hidden (not supported yet)": [
+        " El archivo de ${ BRAND_NAME } está oculto (aún sin soporte)"
+      ],
+      " file is hidden (unsupported file type)": [
+        " archivos están ocultos (tipos de archivo no compatibles)"
+      ],
       " files are hidden (unsupported file types)": [
         " archivos están ocultos (tipos de archivo no compatibles)"
       ],
       " of space": [
         " de espacio"
+      ],
+      "${ DRIVE_SHORT_APP_NAME } storage not set up yet": [
+        "El almacenamiento de ${ DRIVE_SHORT_APP_NAME } aún no está configurado."
       ],
       "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
         "${ LUMO_APP_NAME } es una IA centrada en la privacidad que te ayuda a hacer más, mientras mantiene tus datos seguros. Desbloquea todo su potencial y disfruta de acceso anticipado a nuevas funciones a medida que se introducen."
@@ -958,6 +1006,9 @@
       "1 file": [
         "1 archivo"
       ],
+      "Access ${ DRIVE_APP_NAME }": [
+        "Acceder a ${ DRIVE_APP_NAME }"
+      ],
       "Active": [
         "Activa"
       ],
@@ -966,6 +1017,9 @@
       ],
       "Add to active": [
         "Añadir a activos"
+      ],
+      "Adding to knowledge base...": [
+        "Añadiendo a conocimiento base..."
       ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Pregunta lo que quieras a ${ LUMO_SHORT_APP_NAME }"
@@ -1012,6 +1066,9 @@
       "File capacity": [
         "Capacidad del archivo"
       ],
+      "File capacity for this conversation": [
+        "Capacidad de archivo para esta conversación"
+      ],
       "File too large for preview (>150k tokens)": [
         "Archivo demasiado grande para vista previa (>150k tokens)"
       ],
@@ -1023,6 +1080,9 @@
       ],
       "files are not currently supported for content extraction.": [
         "los archivos no son actualmente compatibles para la extracción de contenido."
+      ],
+      "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
+        "Para cada conversación, ${ LUMO_SHORT_APP_NAME } tiene la capacidad de procesar una cantidad limitada de información. La barra de progreso muestra cuánta capacidad están utilizando tus archivos actuales. "
       ],
       "High-speed chats and advanced AI features.": [
         "Chats de alta velocidad y funciones de IA avanzadas."
@@ -1054,6 +1114,9 @@
       "No data rows found in this file.": [
         "No se han encontrado filas de datos en este archivo."
       ],
+      "No files available": [
+        "No hay archivos disponibles"
+      ],
       "Note:": [
         "Nota:"
       ],
@@ -1066,8 +1129,14 @@
       "Please wait for files to finish processing": [
         "Espera a que los archivos terminen de procesarse"
       ],
+      "Press ${ shiftEnterBoldText } to ask": [
+        "Pulsa ${ shiftEnterBoldText } para preguntar"
+      ],
       "Processed content": [
         "Contenido procesado"
+      ],
+      "Processing ${ uploadProgress.fileName }": [
+        "Procesando ${ uploadProgress.fileName }"
       ],
       "Processing file contents...": [
         "Procesando contenido del archivo..."
@@ -1114,11 +1183,20 @@
       "Showing first": [
         "Mostrando primero"
       ],
+      "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
+        "Inicia sesión o crea una cuenta para explorar y añadir archivos desde tu ${ DRIVE_APP_NAME } (almacenamiento en la nube cifrado de extremo a extremo) a tu conocimiento de chat."
+      ],
       "Space usage: ": [
         "Uso del espacio: "
       ],
       "Table view": [
         "Vista de tabla"
+      ],
+      "Talk to your admin for plan details": [
+        "Habla con tu administrador para obtener los detalles del plan"
+      ],
+      "Talk to your admin to add ${ LUMO_SHORT_APP_NAME } Plus": [
+        "Habla con tu administrador para añadir ${ LUMO_SHORT_APP_NAME } Plus"
       ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Ha habido un error al procesar este archivo. El contenido podría no ser legible o el formato del archivo podría no ser totalmente compatible."
@@ -1129,8 +1207,14 @@
       "This folder is empty": [
         "Esta carpeta está vacía"
       ],
+      "To get started, please open ${ DRIVE_APP_NAME } to set up your secure storage.": [
+        "Para empezar, por favor, abre ${ DRIVE_APP_NAME } para configurar tu almacenamiento seguro."
+      ],
       "To refer back to this conversation later, sign in or create an account.": [
         "Para consultar esta conversación más tarde, inicia sesión o crea una cuenta."
+      ],
+      "Try the smartest version of ${ LUMO_SHORT_APP_NAME } with advanced capabilities.": [
+        "Prueba la versión más inteligente de ${ LUMO_SHORT_APP_NAME } con capacidades avanzadas."
       ],
       "Trying...": [
         "Intentando..."
@@ -1143,6 +1227,9 @@
       ],
       "Unused ": [
         "Sin usar "
+      ],
+      "Uploading ${ uploadProgress.fileName }": [
+        "Cargando ${ uploadProgress.fileName }"
       ],
       "used": [
         "usada"
@@ -1303,6 +1390,9 @@
       ]
     },
     "collider_2025: Status": {
+      "${ LUMO_SHORT_APP_NAME }+ is included in your Visionary plan and you have access to these features:": [
+        "${ LUMO_SHORT_APP_NAME }+ está incluido en tu plan Visionary y tienes acceso a estas funciones:"
+      ],
       "You are subscribed to ${ LUMO_SHORT_APP_NAME }+ and have access to these features:": [
         "Estás suscrito a ${ LUMO_SHORT_APP_NAME }+ y tienes acceso a estas funciones:"
       ]
@@ -1310,6 +1400,12 @@
     "collider_2025: Success": {
       "All chats deleted successfully": [
         "Todos los chats han sido eliminados"
+      ],
+      "File added to knowledge base: ${ result.fileName }": [
+        "Archivo añadido a conocimiento base: ${ result.fileName }"
+      ],
+      "File uploaded and added to knowledge base": [
+        "Archivo cargado y añadido a conocimiento base"
       ],
       "Thanks for the feedback!": [
         "¡Gracias por los comentarios!"
@@ -1413,6 +1509,9 @@
       "We're experiencing high traffic right now, but as a ${ LUMO_SHORT_APP_NAME } Plus customer, you're in the fast lane. We're prioritizing your requests as always.": [
         "Estamos experimentando mucho tráfico ahora mismo, pero como cliente Plus de ${ LUMO_SHORT_APP_NAME }, tienes prioridad. Como siempre, estamos dando prioridad a tus solicitudes."
       ],
+      "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. ${ signInLink } for faster access.": [
+        "Estamos experimentando un tráfico más alto de lo normal, por lo que las respuestas pueden ser un poco más lentas de lo habitual. ${ signInLink } para un acceso más rápido."
+      ],
       "We're experiencing higher than usual traffic, so responses may be a bit slower than usual. Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for priority access during peak times.": [
         "Estamos experimentando un tráfico más alto de lo normal, por lo que las respuestas pueden ser un poco más lentas de lo habitual. Mejora a ${ LUMO_SHORT_APP_NAME } Plus para tener acceso prioritario durante las horas punta."
       ]
@@ -1428,6 +1527,9 @@
       ],
       "Add more information to improve the response": [
         "Añade más información para mejorar la respuesta"
+      ],
+      "Ask the model to be more careful and thorough": [
+        "Pide al modelo que sea más cuidadoso y exhaustivo."
       ],
       "Cancel": [
         "Cancelar"
@@ -1450,11 +1552,20 @@
       "Remove file": [
         "Eliminar archivo"
       ],
+      "Request a shorter, more focused response": [
+        "Solicita una respuesta más corta y enfocada"
+      ],
+      "Retry with the same prompt": [
+        "Reintentar con la misma indicación"
+      ],
       "Think longer": [
         "Pensar por más tiempo"
       ],
       "Try again": [
         "Reintentar"
+      ],
+      "What needs changed?": [
+        "¿Qué hay que cambiar?"
       ]
     },
     "collider_2025:Button": {
@@ -1481,6 +1592,12 @@
       ],
       "Hide sidebar": [
         "Ocultar la barra lateral"
+      ],
+      "Manage chat knowledge files (${ totalFiles })": [
+        "Administrar archivos de conocimiento del chat (${ totalFiles })"
+      ],
+      "Manage chat knowledge files(${ totalFiles })": [
+        "Administrar archivos de conocimiento del chat (${ totalFiles })"
       ],
       "New chat": [
         "Nuevo chat"
@@ -4791,6 +4908,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Cantidad a pagar después de la prueba el ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de facturación"
       ],
@@ -4842,8 +4962,8 @@
       "Taxes": [
         "Impuestos"
       ],
-      "terms & conditions": [
-        "los términos y condiciones"
+      "terms and conditions": [
+        "términos y condiciones"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupón es válido por ${ couponRedemptions } renovación.",
@@ -4863,6 +4983,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puedes cancelar en cualquier momento.",
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puedes cancelar en cualquier momento."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Esta acción amplía la suscripción existente. Se te cobrará solo por los nuevos complementos y el tiempo restante del ciclo de facturación actual. La fecha de renovación de tu suscripción no cambiará."
       ],
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las futuras facturas"
@@ -4904,6 +5027,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito por la parte no utilizada de tu suscripción al plan anterior"
+      ],
+      "Credits will be added to your balance": [
+        "Se añadirán créditos a tu saldo."
       ]
     },
     "Payments.plan_name": {

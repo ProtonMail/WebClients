@@ -766,9 +766,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Nicht erneut fragen"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Möchtest du, dass deine Zwischenablage nach ${ timeoutDurationHumanReadable } automatisch geleert wird?"
       ]
@@ -1808,9 +1805,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "In ${ PASS_SHORT_APP_NAME } wird eine Eintragsnotiz mit einem individuellen Schlüssel verschlüsselt. Nur Benutzer, die Zugriff auf den Eintrag haben, können die Notiz einsehen. Nicht einmal ${ BRAND_NAME } oder SimpleLogin können sie sehen."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Um ${ PASS_APP_NAME } optimal nutzen zu können, erteile bitte die notwendigen Erweiterungsrechte."
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Installiere ${ PASS_APP_NAME } für ${ browser.title }, um deine Logins schnell automatisch auszufüllen."
       ],
@@ -1933,10 +1927,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
-        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
-      ],
       "Moving items": [
         "Einträge verschieben"
       ],
@@ -1984,6 +1974,9 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-Zugang zu ${ PASS_APP_NAME } wird einen PIN-Code benötigen. Du wirst nach 3 falschen Versuchen abgemeldet werden."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Öffne deine Safari-Einstellungen für die Erweiterung und überprüfe, ob die Seitenberechtigungen für ${ BRAND_NAME }-Domains aktiviert sind."
       ],
       "Our alerts prioritize safety. If you don’t recognize any of the breached information, you can safely ignore this report.": [
         "Bei unseren Warnungen steht die Sicherheit im Vordergrund. Wenn du keine der gefährdeten Informationen erkennst, kannst du diesen Bericht getrost ignorieren."
@@ -3037,9 +3030,6 @@
       ],
       "Get the extension for your browser.": [
         "Hol dir die Erweiterung für deinen Browser."
-      ],
-      "Grant": [
-        "Zulassen"
       ],
       "Hidden": [
         "Ausgeblendet"
@@ -4444,9 +4434,6 @@
       ],
       "Get Started": [
         "Erste Schritte"
-      ],
-      "Grant permissions": [
-        "Berechtigungen erteilen"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Versteckte Tresore sind bei der Suche und beim automatischen Ausfüllen nicht sichtbar."
