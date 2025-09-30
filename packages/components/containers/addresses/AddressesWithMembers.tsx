@@ -199,18 +199,20 @@ const AddressesWithMembers = ({
                                     </div>
                                     <div>
                                         {hasAccessToBYOE && isSelfSelected && (
-                                            <ConnectGmailButton
-                                                app={app}
-                                                buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`}
-                                            />
+                                            <>
+                                                <ConnectGmailButton
+                                                    app={app}
+                                                    buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`}
+                                                />
+                                                <p className="color-weak text-sm my-2">
+                                                    {c('Label BYOE').ngettext(
+                                                        msgid`${usedBYOEAddresses} of ${maxBYOEAddresses} email address`,
+                                                        `${usedBYOEAddresses} of ${maxBYOEAddresses} email addresses`,
+                                                        usedBYOEAddresses
+                                                    )}
+                                                </p>
+                                            </>
                                         )}
-                                        <p className="color-weak text-sm my-2">
-                                            {c('Label BYOE').ngettext(
-                                                msgid`${usedBYOEAddresses} of ${maxBYOEAddresses} email address`,
-                                                `${usedBYOEAddresses} of ${maxBYOEAddresses} email addresses`,
-                                                usedBYOEAddresses
-                                            )}
-                                        </p>
                                     </div>
                                 </div>
                             )}
