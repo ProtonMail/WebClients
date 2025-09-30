@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import Icon from '@proton/components/components/icon/Icon';
+import { Button, ButtonLike } from '@proton/atoms';
+import Icon, { type IconName } from '@proton/components/components/icon/Icon';
+import AppLink from '@proton/components/components/link/AppLink';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import TopNavbarListItemButton from '@proton/components/components/topnavbar/TopNavbarListItemButton';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
@@ -18,21 +19,73 @@ import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import usePopperAnchor from '../popper/usePopperAnchor';
+import { useCallback, useMemo } from 'react';
+
+interface DisplayItem {
+    img: string;
+    imgAlt?: string;
+    title: string;
+    description: string;
+    type: 'dropdown' | 'link';
+    dropdownLinks?: { label: string; icon: IconName; href: string }[]
+    linkHref?: string;
+}
+
+const displayItems: DisplayItem[] = [
+    {
+        img: profilesImg,
+        title: c('Info').t`Invite your team`,
+        description: c('Info').t`Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.`,
+        type: 'dropdown',
+        dropdownLinks: [
+            // TODO get the routes from a constant like -> somehow? // import { getOrganizationAppRoutes } from '../../../../applications/account/src/app/containers/organization/routes';
+            { label: 'Add users manually', icon: 'users', href: "/users-addresses" },
+            { label: 'Set up SSO', icon: 'key', href: "/single-sign-on" }
+        ]
+    },
+    {
+        img: networkConfigurationImg,
+        title: c('Info').t`Configure your network`,
+        description: c('Info').t`Create a Gateway to give your users access to your IT resources through dedicated servers.`,
+        type: 'link',
+        linkHref: "/gateways",
+    },
+    {
+        img: globeVpnImg,
+        title: c('Info').t`Manage global VPN permissions`,
+        description: c('Info').t`Decide which users can connect to each of our 120+ shared server locations.`, // TODO this 120+ should be dynamic?
+        type: 'link',
+        linkHref: "/shared-servers",
+    },
+    {
+        img: recoveryImg,
+        title: c('Info').t`Secure your organization`,
+        description: c('Info').t`If you haven’t already, enable some recovery methods to make sure you never lose access to ${VPN_APP_NAME}.`,
+        type: 'link',
+        linkHref: "/authentication-security",
+    }
+]
 
 const TopNavbarGetStartedButton = () => {
-    const { state: renderGetStartedSpotlight, toggle: toggleGetStartedSpotlight } = useToggle(false);
+    const { state: renderGetStartedSpotlight, toggle: toggleGetStartedSpotlight, set: setGetStartedSpotlight } = useToggle(false);
+    const closeGetStartedSpotlight = useCallback(() => { setGetStartedSpotlight(false); }, []);
 
     const { viewportWidth } = useActiveBreakpoint();
 
-    const { anchorRef: b1Ref, isOpen: b1Open, toggle: b1Toggle, close: b1Close } = usePopperAnchor<any>();
-    const { anchorRef: b2Ref, isOpen: b2Open, toggle: b2Toggle, close: b2Close } = usePopperAnchor<any>();
+    const b1Dropdown = usePopperAnchor<HTMLElement>();
 
-    const b3Click = () => {
-        /* TODO add action */
-    };
-    const b4Click = () => {
-        /* TODO add action */
-    };
+    /**
+     * Provide refs and actions for dropdown menu item.
+     * Use the usePopperAnchor hook to get the anchorRef, toggle, close, and isOpen.
+     * This array must match the order of menuItems.
+     */
+    const actionsRefsObject = useMemo(() => [
+        b1Dropdown,
+        null,
+        null,
+        null
+    ], [b1Dropdown]);
+
 
     return (
         <>
@@ -50,106 +103,64 @@ const TopNavbarGetStartedButton = () => {
                         <h3 className="text-bold">{c('Info').t`Get started`}</h3>
                         <span>{c('Info').t`Set up your organization and start protecting your data in a few easy steps.`}</span>
 
-                        <Button onClick={b1Toggle} shape="ghost" color="weak">
-                            <div className="flex flex-nowrap gap-x-2 items-center text-left">
-                                <div className="shrink-0">
-                                    <img src={profilesImg} alt="" />
-                                </div>
-                                <div>
-                                    <b>{c('Info').t`Invite your team`}</b>
-                                    <br />
-                                    {c('Info')
-                                        .t`Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.`}
-                                </div>
-                                <Icon
-                                    ref={b1Ref}
-                                    name="three-dots-vertical"
-                                    size={6}
-                                    className="p-0.5 self-center shrink-0"
-                                />
-                            </div>
-                        </Button>
-                        <Dropdown isOpen={b1Open} anchorRef={b1Ref} onClose={b1Close} originalPlacement="bottom-end">
-                            <DropdownMenu>
-                                {(['alias', 'alias-slash'] as const).map((i) => {
-                                    // TODO replace with actual actions
+                        {
+                            displayItems.map((item, index) => {
+                                if (item.type === 'dropdown') {
+                                    const { anchorRef, toggle, close, isOpen } = actionsRefsObject[index] as ReturnType<typeof usePopperAnchor<HTMLElement>>;
                                     return (
-                                        <DropdownMenuButton className="text-left flex gap-2 items-center" key={i}>
-                                            <Icon name={i} size={4} />
-                                            {i}
-                                        </DropdownMenuButton>
-                                    );
-                                })}
-                            </DropdownMenu>
-                        </Dropdown>
-
-                        <Button onClick={b2Toggle} shape="ghost" color="weak">
-                            <div className="flex flex-nowrap gap-x-2 text-left">
-                                <div className="shrink-0">
-                                    <img src={networkConfigurationImg} alt="" />
-                                </div>
-                                <div>
-                                    <b>{c('Info').t`Configure your network`}</b>
-                                    <br />
-                                    {c('Info')
-                                        .t`Create a Gateway to give your users access to your IT resources through dedicated servers.`}
-                                </div>
-                                <Icon
-                                    ref={b2Ref}
-                                    name="three-dots-vertical"
-                                    size={6}
-                                    className="p-0.5 self-center shrink-0"
-                                />
-                            </div>
-                        </Button>
-                        <Dropdown isOpen={b2Open} anchorRef={b2Ref} onClose={b2Close} originalPlacement="bottom-end">
-                            <DropdownMenu>
-                                {(['alias', 'alias-slash'] as const).map((i) => {
-                                    // TODO replace with actual actions
-                                    return (
-                                        <DropdownMenuButton className="text-left flex gap-2 items-center" key={i}>
-                                            <Icon name={i} size={4} />
-                                            {i}
-                                        </DropdownMenuButton>
-                                    );
-                                })}
-                            </DropdownMenu>
-                        </Dropdown>
-
-                        <Button onClick={b3Click} shape="ghost" color="weak">
-                            <div className="flex flex-nowrap gap-x-2 text-left">
-                                <div className="shrink-0">
-                                    <img src={globeVpnImg} alt="" />
-                                </div>
-                                <div>
-                                    <b>{c('Info').t`Manage global VPN permissions`}</b>
-                                    <br />
-                                    {c('Info')
-                                        .t`Decide which users can connect to each of our 120+ shared server locations.`}
-                                </div>
-                                <Icon name="chevron-right" size={6} className="self-center shrink-0" />
-                            </div>
-                        </Button>
-
-                        <Button onClick={b4Click} shape="ghost" color="weak">
-                            <div className="flex flex-nowrap gap-x-2 text-left">
-                                <div className="shrink-0">
-                                    <img src={recoveryImg} alt="" />
-                                </div>
-                                <div>
-                                    <b>{c('Info').t`Secure your organization`}</b>
-                                    <br />
-                                    {c('Info')
-                                        .t`If you haven’t already, enable some recovery methods to make sure you never lose access to ${VPN_APP_NAME}.`}
-                                </div>
-                                <Icon name="chevron-right" size={6} className="self-center shrink-0" />
-                            </div>
-                        </Button>
+                                        <>
+                                            <Button onClick={toggle} shape="ghost" color="weak">
+                                                <div className="flex flex-nowrap gap-x-2 items-center text-left">
+                                                    <div className="shrink-0">
+                                                        <img src={item.img} alt={item.imgAlt} />
+                                                    </div>
+                                                    <div>
+                                                        <b>{item.title}</b>
+                                                        <br />
+                                                        {item.description}
+                                                    </div>
+                                                    <Icon ref={anchorRef as any} name="three-dots-vertical" size={6} className="p-0.5 self-center shrink-0" />
+                                                </div>
+                                            </Button>
+                                            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-end">
+                                                <DropdownMenu>
+                                                    {item.dropdownLinks?.map(({ label, icon, href }) => {
+                                                        return (
+                                                            <AppLink to={href} className='text-no-decoration' onClick={closeGetStartedSpotlight}>
+                                                                <DropdownMenuButton className="text-left flex gap-2 items-center" key={label}>
+                                                                    <Icon name={icon} size={4} />
+                                                                    {label}
+                                                                </DropdownMenuButton>
+                                                            </AppLink>
+                                                        );
+                                                    })}
+                                                </DropdownMenu>
+                                            </Dropdown>
+                                        </>
+                                    )
+                                }
+                                return (
+                                    <ButtonLike as={AppLink} to={item.linkHref!} onClick={closeGetStartedSpotlight} shape="ghost" color="weak">
+                                        <div className="flex flex-nowrap gap-x-2 text-left">
+                                            <div className="shrink-0">
+                                                <img src={item.img} alt={item.imgAlt} />
+                                            </div>
+                                            <div>
+                                                <b>{item.title}</b>
+                                                <br />
+                                                {item.description}
+                                            </div>
+                                            <Icon name="chevron-right" size={6} className="self-center shrink-0" />
+                                        </div>
+                                    </ButtonLike>
+                                )
+                            })
+                        }
                     </>
                 }
             >
-                {/* TODO This should not be hard-coded */}
-                <ButtonGroup>
+                {/* TODO This should not be hard-coded - What are the conditions? */}
+                <ButtonGroup className="mx-3">
                     <TopNavbarListItemButton
                         as="button"
                         shape="outline"
