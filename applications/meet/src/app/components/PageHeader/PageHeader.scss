@@ -3,7 +3,7 @@
 
 .apps-dropdown-button,
 .settings-button {
-	background-color: #2b2e42 !important;
+	background-color: var(--background-card) !important;
 	inline-size: 2.5rem !important;
 	block-size: 2.5rem !important;
 	border-radius: 100% !important;
@@ -65,6 +65,15 @@
 
 	.logo {
 		block-size: 2.5rem;
+
+		@include media('<=small') {
+			inline-size: 2.5rem;
+		}
+	}
+
+	.apps-dropdown-button,
+	.settings-button-icon {
+		border: 1px solid var(--border-card) !important;
 	}
 }
 
