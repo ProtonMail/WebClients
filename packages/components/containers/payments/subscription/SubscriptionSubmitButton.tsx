@@ -30,7 +30,7 @@ type Props = {
     checkResult?: SubscriptionCheckResponse;
     loading?: boolean;
     disabled?: boolean;
-    paymentForbidden: SubscriptionCheckForbiddenReason;
+    paymentForbiddenReason: SubscriptionCheckForbiddenReason;
     subscription: Subscription;
     hasPaymentMethod: boolean;
     taxCountry: TaxCountryHook;
@@ -52,7 +52,7 @@ const SubscriptionSubmitButton = ({
     checkResult,
     disabled,
     onDone,
-    paymentForbidden,
+    paymentForbiddenReason,
     hasPaymentMethod,
     subscription,
     taxCountry,
@@ -61,7 +61,7 @@ const SubscriptionSubmitButton = ({
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const { APP_NAME } = useConfig();
 
-    if (paymentForbidden.forbidden) {
+    if (paymentForbiddenReason.forbidden) {
         if (isTrial(subscription) && !hasPaymentMethod) {
             return (
                 <>
@@ -86,14 +86,14 @@ const SubscriptionSubmitButton = ({
         const info = (() => {
             let text = '';
 
-            if (paymentForbidden.reason === 'already-subscribed') {
+            if (paymentForbiddenReason.reason === 'already-subscribed') {
                 text = c('Payments').t`You already have a subscription to this plan.`;
-            } else if (paymentForbidden.reason === 'already-subscribed-externally') {
+            } else if (paymentForbiddenReason.reason === 'already-subscribed-externally') {
                 const subscriptionPlatform = getSubscriptionManagerName(subscription.External);
                 // translator: subscription platform is either "Apple App Store" or "Google Play".
                 text = c('Payments')
                     .t`You already have a subscription to this plan. You can change your subscription on ${subscriptionPlatform}.`;
-            } else if (paymentForbidden.reason === 'offer-not-available') {
+            } else if (paymentForbiddenReason.reason === 'offer-not-available') {
                 text = c('Payments').t`This offer is not available with your current plan.`;
             }
 
