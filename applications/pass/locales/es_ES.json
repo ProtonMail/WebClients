@@ -253,6 +253,12 @@
       "Dismiss": [
         "Descartar"
       ],
+      "Do not show again": [
+        "No mostrar de nuevo"
+      ],
+      "Do not show again when I press": [
+        "No volver a mostrar cuando pulse"
+      ],
       "Download this CSV template": [
         "Descargar esta plantilla CSV"
       ],
@@ -722,9 +728,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "No volver a preguntar"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "¿Quieres que tu portapapeles se borre automáticamente después de ${ timeoutDurationHumanReadable }?"
       ]
@@ -1739,9 +1742,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "En ${ PASS_SHORT_APP_NAME }, una nota se cifra con la clave de cifrado del elemento y solo los usuarios que tienen acceso al elemento pueden verla. Ni siquiera ${ BRAND_NAME } o SimpleLogin pueden verla."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Para obtener la mejor experiencia de ${ PASS_APP_NAME }, concede los permisos necesarios de la extensión."
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Instala ${ PASS_APP_NAME } para ${ browser.title } para rellenar automaticamente tus inicios de sesión."
       ],
@@ -2071,6 +2071,9 @@
       ],
       "Please keep your browser open so the clipboard can be automatically cleared.": [
         "Mantén tu navegador abierto para que el portapapeles se pueda borrar automáticamente."
+      ],
+      "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
+        "Por favor, asegúrate de que la ventana previamente activa es donde quieres autocompletar y tu cursor estaba enfocado en el campo de inicio de sesión."
       ],
       "Please note that once deleted, the alias can't be restored. Maybe you want to disable the alias instead?": [
         "Una vez eliminado, el alias no puede ser restaurado. ¿Quizás deseas desactivarlo en su lugar?"
@@ -2428,6 +2431,12 @@
       "You may close this tab.": [
         "Puedes cerrar esta pestaña."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Quizás necesites aceptar una solicitud de permiso y quizás tengas que reiniciar la aplicación dependiendo de tu sistema."
+      ],
+      "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
+        "Puede que necesites otorgar permiso de accesibilidad a ${ PASS_APP_NAME }."
+      ],
       "You need a vault with edit permission before you can import items.": [
         "Necesitas una caja fuerte con permiso de edición antes de poder importar elementos."
       ],
@@ -2472,6 +2481,14 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Tu organización requiere que asegures tu acceso a ${ PASS_APP_NAME }"
+      ]
+    },
+    "Keyboard key": {
+      "SHIFT": [
+        "SHIFT"
+      ],
+      "V": [
+        "V"
       ]
     },
     "Label": {
@@ -2920,9 +2937,6 @@
       ],
       "Get the extension for your browser.": [
         "Obtén la extensión para tu navegador."
-      ],
-      "Grant": [
-        "Conceder"
       ],
       "Hidden": [
         "Oculto"
@@ -4278,9 +4292,6 @@
       "Get Started": [
         "Comenzar"
       ],
-      "Grant permissions": [
-        "Conceder permisos"
-      ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Las cajas fuertes ocultas no serán visibles durante la búsqueda y el relleno automático."
       ],
@@ -4417,6 +4428,9 @@
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
+      ],
+      "Perform autotype?": [
+        "¿Realizar autocompletado?"
       ],
       "Permanently remove all items?": [
         "¿Eliminar todos los elementos permanentemente?"
@@ -4729,6 +4743,9 @@
       ],
       "Extra password should have at least 8 characters": [
         "La contraseña adicional debe tener al menos 8 caracteres."
+      ],
+      "Failed to autotype. Please make sure ${ PASS_APP_NAME } has the necessary permissions and try again (${ error }).": [
+        "Fallo al autocompletar. Asegúrate de que ${ PASS_APP_NAME } tiene los permisos necesarios e inténtalo de nuevo (${ error })."
       ],
       "Failed to load breaches.": [
         "Error al cargar las vulneraciones."
