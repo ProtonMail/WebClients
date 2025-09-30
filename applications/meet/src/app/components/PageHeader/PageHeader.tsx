@@ -57,7 +57,7 @@ export const PageHeader = ({ isScheduleInAdvanceEnabled, guestMode }: PageHeader
                 hasCaret={false}
             >
                 <IcBug
-                    size={6}
+                    size={5}
                     className="apps-dropdown-button-icon shrink-0 no-print"
                     alt={c('Alt').t`Report a problem`}
                 />
