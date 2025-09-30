@@ -3715,6 +3715,9 @@
       "We were not able to load some invitations": [
         "ჩვენ ვერ ჩავტვირთეთ ზოგიერთი მოწვევა"
       ],
+      "We were not able to load some items": [
+        "ჩვენ ვერ ჩავტვირთეთ ზოგიერთი ელემენტი"
+      ],
       "We were not able to load some items shared with you": [
         "ჩვენ ვერ ჩავტვირთეთ რამდენიმე თქვენი გაზიარებული ელემენტებიდან"
       ],
@@ -4831,6 +4834,9 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
@@ -9474,9 +9480,6 @@
       "Taxes": [
         "გადასახადები"
       ],
-      "terms & conditions": [
-        "პირობები და წესები"
-      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
@@ -9526,6 +9529,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
+      ],
+      "Credits will be added to your balance": [
+        "თქვენს ბალანსზე კრედიტები დაგემატებათ"
       ]
     },
     "Payments.plan_name": {
@@ -9823,6 +9834,37 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } თითო რეფერალისთვის"
+      ],
+      "Friend joined": [
+        "მეგობარი შემოვიდა",
+        "მეგობრები შემოვიდნენ"
+      ],
+      "Friend subscribed": [
+        "მეგობარი გამოწერილია",
+        "მეგობრები გამოწერილია"
+      ],
+      "Invite friends. Get credits.": [
+        "მოიწვიეთ მეგობრები და მიიღეთ კრედიტები."
+      ],
+      "Invited friends": [
+        "მოწვეული მეგობრები"
+      ],
+      "More sharing options": [
+        "მეტი გაზიარების პარამეტრი"
+      ],
+      "Refer friends": [
+        "რეკომენდაცია მეგობრებს"
+      ],
+      "Start earning credits": [
+        "დაიწყეთ კრედიტების გამომუშავება"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "შეგიძლიათ, გქონდეთ **${ maxRewardAmount }**-მდე კრედიტი."
       ]
     },
     "Safety review": {
@@ -11934,6 +11976,9 @@
       ],
       "Share your calendar with your team": [
         "გაუზიარეთ თქვენი კალენდარი თქვენს გუნდს"
+      ],
+      "Share your link": [
+        "გააზიარეთ თქვენი ბმული"
       ],
       "Shared": [
         "გაზიარებული"

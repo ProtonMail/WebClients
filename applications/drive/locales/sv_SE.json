@@ -1410,9 +1410,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -3265,6 +3262,9 @@
       "Calendar limit reached": [
         "Kalendergräns nådd"
       ],
+      "Can't find any secure link": [
+        "Kan inte hitta någon säker länk"
+      ],
       "Cannot export this contact": [
         "Kan inte exportera denna kontakt"
       ],
@@ -3740,6 +3740,9 @@
       "We were not able to load some invitations": [
         "Vi kunde inte ladda några inbjudningar"
       ],
+      "We were not able to load some items": [
+        "Vi kunde inte ladda några objekt"
+      ],
       "We were not able to load some items shared with you": [
         "Vi kunde inte ladda några objekt delade med dig"
       ],
@@ -3779,6 +3782,11 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Logga in med samma Gmail-adress som du ursprungligen anslöt"
       ]
     },
     "Error importing calendar": {
@@ -9145,6 +9153,9 @@
       "The spreadsheet failed to be created": [
         "Kalkylbladet misslyckades att skapas"
       ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "Denna säkra länk har löpt ut, ändra utgångsdatum i delningsinställningar"
+      ],
       "Trash failed to be emptied": [
         "Misslyckades att tömma papperskorg"
       ],
@@ -9646,6 +9657,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Belopp att betala efter provperioden den ${ formattedDate }"
+      ],
       "Billing Country": [
         "Faktureringsland"
       ],
@@ -9697,7 +9711,7 @@
       "Taxes": [
         "Moms"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "användarvillkor"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
