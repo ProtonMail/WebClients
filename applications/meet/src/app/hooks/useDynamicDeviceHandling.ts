@@ -1,116 +1,124 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import { useRoomContext } from '@livekit/components-react';
+import { ConnectionState, Room, RoomEvent } from '@proton-meet/livekit-client';
 
 import { DEFAULT_DEVICE_ID } from '../constants';
-import { useMeetContext } from '../contexts/MeetContext';
+import type { SwitchActiveDevice } from '../types';
 import { supportsSetSinkId } from '../utils/browser';
-import { useDevices } from './useDevices';
+import { filterDevices } from '../utils/filterDevices';
 
-export const useDynamicDeviceHandling = () => {
-    const {
-        audioDeviceId,
+interface UseDynamicDeviceHandlingParams {
+    toggleVideo: ({
+        isEnabled,
         videoDeviceId,
-        audioOutputDeviceId,
-        isAudioEnabled,
-        isVideoEnabled,
-        toggleAudio,
-        toggleVideo,
-    } = useMeetContext();
-    const { microphones, cameras, speakers } = useDevices();
+        forceUpdate,
+    }: {
+        isEnabled?: boolean;
+        videoDeviceId?: string;
+        forceUpdate?: boolean;
+    }) => Promise<void>;
+    toggleAudio: ({
+        isEnabled,
+        audioDeviceId,
+    }: {
+        isEnabled?: boolean;
+        audioDeviceId?: string | null;
+    }) => Promise<void>;
+    switchActiveDevice: SwitchActiveDevice;
+    activeMicrophoneDeviceId: string;
+    activeAudioOutputDeviceId: string;
+    activeCameraDeviceId: string;
+}
 
+export const useDynamicDeviceHandling = ({
+    toggleAudio,
+    toggleVideo,
+    switchActiveDevice,
+    activeMicrophoneDeviceId,
+    activeAudioOutputDeviceId,
+    activeCameraDeviceId,
+}: UseDynamicDeviceHandlingParams) => {
     const room = useRoomContext();
 
-    const currentDevices = useRef({
-        audioLabel: '',
-        videoLabel: '',
-        speakerLabel: '',
-    });
+    const dynamicDeviceUpdate = useCallback(
+        ({
+            deviceList,
+            deviceId,
+            updateFunction,
+        }: {
+            deviceList: MediaDeviceInfo[];
+            deviceId: string | null;
+            updateFunction: (newDeviceId: string) => void;
+        }) => {
+            const currentDevice = deviceList.find((device) => device.deviceId === deviceId);
+
+            if (!currentDevice && deviceList.length > 0 && deviceId !== DEFAULT_DEVICE_ID) {
+                updateFunction(deviceList[0].deviceId);
+                return;
+            }
+        },
+        []
+    );
+
+    const handleDeviceChange = useCallback(async () => {
+        // Getting the devices using the static method on Room
+        const [microphones, cameras, speakers] = await Promise.all([
+            Room.getLocalDevices('audioinput'),
+            Room.getLocalDevices('videoinput'),
+            Room.getLocalDevices('audiooutput'),
+        ]);
+
+        const microphonesAfterDeviceChange = filterDevices(microphones);
+        const camerasAfterDeviceChange = filterDevices(cameras);
+        const speakersAfterDeviceChange = filterDevices(speakers);
+
+        dynamicDeviceUpdate({
+            deviceList: microphonesAfterDeviceChange,
+            deviceId: activeMicrophoneDeviceId,
+            updateFunction: (newDeviceId: string) => {
+                if (room.state === ConnectionState.Connected) {
+                    void toggleAudio({ audioDeviceId: newDeviceId });
+                } else {
+                    void switchActiveDevice('audioinput', newDeviceId);
+                }
+            },
+        });
+        dynamicDeviceUpdate({
+            deviceList: camerasAfterDeviceChange,
+            deviceId: activeCameraDeviceId,
+            updateFunction: (newDeviceId: string) => {
+                if (room.state === ConnectionState.Connected) {
+                    void toggleVideo({ videoDeviceId: newDeviceId, forceUpdate: true });
+                } else {
+                    void switchActiveDevice('videoinput', newDeviceId);
+                }
+            },
+        });
+        dynamicDeviceUpdate({
+            deviceList: speakersAfterDeviceChange,
+            deviceId: activeAudioOutputDeviceId,
+            updateFunction: (newDeviceId: string) => {
+                if (supportsSetSinkId()) {
+                    void switchActiveDevice('audiooutput', newDeviceId);
+                }
+            },
+        });
+    }, [
+        room,
+        toggleAudio,
+        toggleVideo,
+        activeMicrophoneDeviceId,
+        activeCameraDeviceId,
+        activeAudioOutputDeviceId,
+        switchActiveDevice,
+    ]);
 
     useEffect(() => {
-        const handleDeviceChange = async () => {
-            const updateDevice = ({
-                deviceList,
-                deviceId,
-                currentLabel,
-                updateFunction,
-            }: {
-                deviceList: MediaDeviceInfo[];
-                deviceId: string | null;
-                currentLabel?: string;
-                updateFunction: (newLabel: string) => void;
-            }) => {
-                const currentDevice = deviceList.find((device) => device.deviceId === deviceId);
+        room.on(RoomEvent.MediaDevicesChanged, handleDeviceChange);
 
-                if (
-                    deviceId === DEFAULT_DEVICE_ID ||
-                    deviceId === null ||
-                    !deviceList.find((device) => device.deviceId === deviceId) ||
-                    currentDevice?.label !== currentLabel
-                ) {
-                    updateFunction(currentDevice?.label || '');
-                }
-            };
-
-            updateDevice({
-                deviceList: microphones,
-                deviceId: audioDeviceId,
-                currentLabel: currentDevices.current.audioLabel,
-                updateFunction: (newLabel: string) => {
-                    currentDevices.current.audioLabel = newLabel;
-
-                    void toggleAudio({ isEnabled: isAudioEnabled, audioDeviceId: DEFAULT_DEVICE_ID });
-                },
-            });
-
-            updateDevice({
-                deviceList: cameras,
-                deviceId: videoDeviceId,
-                currentLabel: currentDevices.current.videoLabel,
-                updateFunction: (newLabel: string) => {
-                    currentDevices.current.videoLabel = newLabel;
-
-                    void toggleVideo({
-                        isEnabled: isVideoEnabled,
-                        videoDeviceId: DEFAULT_DEVICE_ID,
-                    });
-                },
-            });
-
-            updateDevice({
-                deviceList: speakers,
-                deviceId: audioOutputDeviceId,
-                currentLabel: currentDevices.current.speakerLabel,
-                updateFunction: (newLabel: string) => {
-                    currentDevices.current.speakerLabel = newLabel;
-
-                    if (supportsSetSinkId()) {
-                        void room.switchActiveDevice('audiooutput', DEFAULT_DEVICE_ID);
-                    }
-                },
-            });
+        return () => {
+            room.off(RoomEvent.MediaDevicesChanged, handleDeviceChange);
         };
-
-        const defaultMic = microphones.find((m) => m.deviceId === DEFAULT_DEVICE_ID);
-        const defaultCamera = cameras.find((c) => c.deviceId === DEFAULT_DEVICE_ID);
-        const defaultSpeaker = speakers.find((s) => s.deviceId === DEFAULT_DEVICE_ID);
-
-        currentDevices.current = {
-            audioLabel: defaultMic?.label || '',
-            videoLabel: defaultCamera?.label || '',
-            speakerLabel: defaultSpeaker?.label || '',
-        };
-
-        navigator.mediaDevices.addEventListener('devicechange', handleDeviceChange);
-        return () => navigator.mediaDevices.removeEventListener('devicechange', handleDeviceChange);
-    }, [
-        audioDeviceId,
-        videoDeviceId,
-        audioOutputDeviceId,
-        isAudioEnabled,
-        isVideoEnabled,
-        microphones,
-        cameras,
-        speakers,
-    ]);
+    }, [room, handleDeviceChange]);
 };

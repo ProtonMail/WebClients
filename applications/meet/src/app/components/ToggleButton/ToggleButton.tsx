@@ -3,6 +3,7 @@ import { useRef } from 'react';
 
 import { Button, Tooltip } from '@proton/atoms';
 import type { IconProps } from '@proton/components/components/icon/Icon';
+import type { PopperPosition } from '@proton/components/components/popper/interface';
 import { IcChevronDown, IcChevronUp } from '@proton/icons';
 import clsx from '@proton/utils/clsx';
 
@@ -17,11 +18,14 @@ interface ToggleButtonProps {
     onClick: () => void;
     isOpen: boolean;
     onPopupButtonClick: () => void;
-    Content?: (props: { anchorRef?: RefObject<HTMLButtonElement> }) => JSX.Element;
+    Content?: (props: {
+        anchorRef: RefObject<HTMLButtonElement>;
+        onClose: () => void;
+        anchorPosition?: PopperPosition;
+    }) => JSX.Element;
     popUp: PopUpControls;
     ariaLabel?: string;
     secondaryAriaLabel?: string;
-    buttonRef?: RefObject<HTMLButtonElement>;
     hasWarning?: boolean;
     tooltipTitle?: string;
 }
@@ -39,11 +43,13 @@ export const ToggleButton = ({
     hasWarning,
     tooltipTitle,
 }: ToggleButtonProps) => {
+    const containerRef = useRef<HTMLDivElement>(null);
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const toggleButtonCircleRef = useRef<HTMLButtonElement | null>(null);
+
+    const rect = containerRef.current?.getBoundingClientRect() ?? { top: 0, left: 0 };
 
     return (
-        <div className="relative">
+        <div className="relative" ref={containerRef}>
             <Tooltip
                 title={tooltipTitle}
                 isOpen={!tooltipTitle ? false : undefined}
@@ -68,7 +74,7 @@ export const ToggleButton = ({
             </Tooltip>
 
             <Button
-                ref={(el) => (toggleButtonCircleRef.current = el)}
+                ref={buttonRef}
                 className={clsx(
                     'rounded-50 flex items-center justify-center w-custom h-custom absolute top-custom right-custom cursor-pointer border-none',
                     isOn && 'toggle-button-circle-on',
@@ -79,7 +85,6 @@ export const ToggleButton = ({
                     e.stopPropagation();
                     onPopupButtonClick();
                 }}
-                onMouseUp={(e) => (e.currentTarget as HTMLButtonElement).blur()}
                 style={{
                     '--w-custom': '3rem',
                     '--h-custom': '3rem',
@@ -107,7 +112,13 @@ export const ToggleButton = ({
                 </div>
             )}
             <div className="relative flex flex-nowrap items-center flex-column">
-                {isOpen && Content && <Content anchorRef={buttonRef} />}
+                {isOpen && Content && (
+                    <Content
+                        anchorRef={buttonRef}
+                        onClose={onPopupButtonClick}
+                        anchorPosition={{ top: rect.top, left: rect.left }}
+                    />
+                )}
             </div>
         </div>
     );

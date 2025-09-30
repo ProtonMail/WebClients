@@ -7,7 +7,7 @@ import { IcMeetCamera, IcMeetCameraOff, IcMeetMicrophoneOff } from '@proton/icon
 import clsx from '@proton/utils/clsx';
 
 import { CircleButton } from '../../atoms/CircleButton/CircleButton';
-import { useDevicePermissionsContext } from '../../contexts/DevicePermissionsContext';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { AudioSettingsDropdown } from '../AudioSettings/AudioSettingsDropdown';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
 import { MicrophoneWithVolume } from '../MicrophoneWithVolume';
@@ -56,7 +56,7 @@ export const DeviceSettings = ({
 }: DeviceSettingsProps) => {
     const {
         devicePermissions: { camera, microphone },
-    } = useDevicePermissionsContext();
+    } = useMediaManagementContext();
 
     const noCameraPermission = camera !== 'granted';
     const noMicrophonePermission = microphone !== 'granted';

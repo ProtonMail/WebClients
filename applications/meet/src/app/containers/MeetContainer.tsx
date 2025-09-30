@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 
 import { VideoQuality } from '@proton-meet/livekit-client';
 
@@ -7,22 +7,16 @@ import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { PAGE_SIZE, SMALL_SCREEN_PAGE_SIZE } from '../constants';
 import { MeetContext } from '../contexts/MeetContext';
 import { UIStateProvider } from '../contexts/UIStateContext';
-import { useAudioToggle } from '../hooks/useAudioToggle';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useIsLargerThanMd } from '../hooks/useIsLargerThanMd';
 import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { useParticipantEvents } from '../hooks/useParticipantEvents';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
-import { useVideoToggle } from '../hooks/useVideoToggle';
-import type { MLSGroupState, MeetChatMessage, ParticipantEntity, ParticipantSettings } from '../types';
+import type { MLSGroupState, MeetChatMessage, ParticipantEntity } from '../types';
 
 interface MeetContainerProps {
-    setParticipantSettings: React.Dispatch<React.SetStateAction<ParticipantSettings | null>>;
     mlsGroupState: MLSGroupState | null;
-    participantSettings: ParticipantSettings;
-    setAudioDeviceId: (deviceId: string | null, save?: boolean) => void;
-    setAudioOutputDeviceId: (deviceId: string | null, save?: boolean) => void;
-    setVideoDeviceId: (deviceId: string | null, save?: boolean) => void;
+    displayName: string;
     handleLeave: () => void;
     handleEndMeeting: () => Promise<void>;
     shareLink: string;
@@ -38,19 +32,8 @@ interface MeetContainerProps {
 }
 
 export const MeetContainer = ({
-    setParticipantSettings,
     mlsGroupState,
-    participantSettings: {
-        audioDeviceId,
-        audioOutputDeviceId,
-        videoDeviceId,
-        isAudioEnabled,
-        isVideoEnabled,
-        displayName,
-    },
-    setAudioDeviceId,
-    setAudioOutputDeviceId,
-    setVideoDeviceId,
+    displayName,
     handleLeave,
     handleEndMeeting,
     shareLink,
@@ -94,19 +77,6 @@ export const MeetContainer = ({
         screenShareTrack,
     } = useCurrentScreenShare();
 
-    const setIsVideoEnabled = useCallback(
-        (isEnabled: boolean) => {
-            setParticipantSettings(
-                (prevParticipantSettings) =>
-                    ({ ...prevParticipantSettings, isVideoEnabled: isEnabled }) as ParticipantSettings
-            );
-        },
-        [setParticipantSettings]
-    );
-
-    const { toggleVideo, handleRotateCamera, backgroundBlur, toggleBackgroundBlur } = useVideoToggle(setIsVideoEnabled);
-    const { toggleAudio, noiseFilter, toggleNoiseFilter } = useAudioToggle();
-
     return (
         <div className="w-full h-full flex flex-col flex-nowrap items-center justify-center">
             <MeetContext.Provider
@@ -115,12 +85,6 @@ export const MeetContainer = ({
                     quality,
                     setPage,
                     setQuality,
-                    audioDeviceId,
-                    videoDeviceId,
-                    setAudioDeviceId,
-                    audioOutputDeviceId,
-                    setAudioOutputDeviceId,
-                    setVideoDeviceId,
                     roomName,
                     resolution,
                     setResolution,
@@ -132,10 +96,6 @@ export const MeetContainer = ({
                     setPageSize,
                     handleLeave,
                     handleEndMeeting,
-                    isAudioEnabled,
-                    isVideoEnabled,
-                    setIsVideoEnabled,
-                    handleRotateCamera,
                     participantsMap,
                     participantNameMap,
                     getParticipants,
@@ -155,12 +115,6 @@ export const MeetContainer = ({
                     isLocalScreenShare,
                     isScreenShare,
                     screenShareParticipant,
-                    toggleVideo,
-                    toggleAudio,
-                    noiseFilter,
-                    toggleNoiseFilter,
-                    backgroundBlur,
-                    toggleBackgroundBlur,
                     handleMeetingLockToggle,
                     isMeetingLocked,
                 }}

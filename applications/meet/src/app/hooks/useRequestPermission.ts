@@ -1,9 +1,9 @@
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
-import { useDevicePermissionsContext } from '../contexts/DevicePermissionsContext';
+import { useMediaManagementContext } from '../contexts/MediaManagementContext';
 
 export const useRequestPermission = () => {
-    const { devicePermissions } = useDevicePermissionsContext();
+    const { devicePermissions } = useMediaManagementContext();
 
     const requestDevicePermission = async (deviceType: 'camera' | 'microphone') => {
         const deviceState = devicePermissions[deviceType];

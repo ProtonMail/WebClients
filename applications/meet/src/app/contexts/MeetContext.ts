@@ -11,12 +11,6 @@ export interface MeetContextValues {
     quality: VideoQuality;
     setPage: React.Dispatch<React.SetStateAction<number>>;
     setQuality: (quality: VideoQuality) => void;
-    audioDeviceId: string | null;
-    audioOutputDeviceId: string | null;
-    videoDeviceId: string | null;
-    setAudioDeviceId: (deviceId: string | null, save?: boolean) => void;
-    setAudioOutputDeviceId: (deviceId: string | null, save?: boolean) => void;
-    setVideoDeviceId: (deviceId: string | null, save?: boolean) => void;
     roomName: string;
     resolution: string | null;
     setResolution: (resolution: string | null) => void;
@@ -28,10 +22,6 @@ export interface MeetContextValues {
     setPageSize: (pageSize: number) => void;
     handleLeave: () => void;
     handleEndMeeting: () => Promise<void>;
-    isVideoEnabled: boolean;
-    setIsVideoEnabled: (isVideoEnabled: boolean) => void;
-    handleRotateCamera: () => void;
-    isAudioEnabled: boolean;
     participantsMap: Record<string, ParticipantEntity>;
     participantNameMap: Record<string, string>;
     getParticipants: () => Promise<void>;
@@ -51,26 +41,6 @@ export interface MeetContextValues {
     isLocalScreenShare: boolean;
     isScreenShare: boolean;
     screenShareParticipant: Participant | null;
-    toggleVideo: ({
-        isEnabled,
-        videoDeviceId,
-        forceUpdate,
-    }: {
-        isEnabled: boolean;
-        videoDeviceId: string;
-        forceUpdate?: boolean;
-    }) => Promise<void>;
-    toggleAudio: ({ isEnabled, audioDeviceId }: { isEnabled: boolean; audioDeviceId: string | null }) => Promise<void>;
-    backgroundBlur: boolean;
-    toggleBackgroundBlur: ({
-        isEnabled,
-        videoDeviceId,
-    }: {
-        isEnabled: boolean;
-        videoDeviceId: string;
-    }) => Promise<void>;
-    noiseFilter: boolean;
-    toggleNoiseFilter: ({ isEnabled, audioDeviceId }: { isEnabled: boolean; audioDeviceId: string }) => Promise<void>;
     handleMeetingLockToggle: (enable: boolean) => Promise<void>;
     isMeetingLocked: boolean;
 }
@@ -80,12 +50,6 @@ export const MeetContext = createContext<MeetContextValues>({
     quality: VideoQuality.HIGH,
     setPage: () => {},
     setQuality: () => {},
-    audioDeviceId: '',
-    audioOutputDeviceId: '',
-    videoDeviceId: '',
-    setAudioDeviceId: () => {},
-    setAudioOutputDeviceId: () => {},
-    setVideoDeviceId: () => {},
     roomName: '',
     resolution: null,
     setResolution: () => {},
@@ -97,10 +61,6 @@ export const MeetContext = createContext<MeetContextValues>({
     setPageSize: () => {},
     handleLeave: () => {},
     handleEndMeeting: async () => {},
-    isVideoEnabled: false,
-    setIsVideoEnabled: () => {},
-    handleRotateCamera: () => {},
-    isAudioEnabled: false,
     participantsMap: {},
     participantNameMap: {},
     getParticipants: () => Promise.resolve(),
@@ -120,12 +80,6 @@ export const MeetContext = createContext<MeetContextValues>({
     isLocalScreenShare: false,
     isScreenShare: false,
     screenShareParticipant: null,
-    toggleVideo: () => Promise.resolve(),
-    toggleAudio: () => Promise.resolve(),
-    backgroundBlur: false,
-    toggleBackgroundBlur: () => Promise.resolve(),
-    noiseFilter: false,
-    toggleNoiseFilter: () => Promise.resolve(),
     handleMeetingLockToggle: () => Promise.resolve(),
     isMeetingLocked: false,
 });

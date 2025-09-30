@@ -1,60 +1,34 @@
 import type { RefObject } from 'react';
-import { useEffect } from 'react';
 
-import { useRoomContext } from '@livekit/components-react';
+import type { PopperPosition } from '@proton/components/components/popper/interface';
 
-import { useMeetContext } from '../../contexts/MeetContext';
-import { useDevices } from '../../hooks/useDevices';
+import { useMediaManagementContext } from '../../contexts/MediaManagementContext';
 import { supportsSetSinkId } from '../../utils/browser';
 import { AudioSettingsDropdown } from './AudioSettingsDropdown';
 
 interface AudioSettingsProps {
-    anchorRef?: RefObject<HTMLButtonElement>;
+    anchorRef: RefObject<HTMLButtonElement>;
+    onClose: () => void;
+    anchorPosition?: PopperPosition;
 }
 
-export const AudioSettings = ({ anchorRef }: AudioSettingsProps) => {
-    const { microphones, speakers, defaultMicrophone, defaultSpeaker } = useDevices();
-    const room = useRoomContext();
-
-    const { audioDeviceId, setAudioDeviceId, audioOutputDeviceId, setAudioOutputDeviceId, toggleAudio } =
-        useMeetContext();
-
-    useEffect(() => {
-        if (microphones.length > 0) {
-            const isDeviceAvailable = audioDeviceId ? microphones.find((m) => m.deviceId === audioDeviceId) : null;
-            if (!audioDeviceId || !isDeviceAvailable) {
-                const deviceToSelect = defaultMicrophone || microphones[0];
-                if (deviceToSelect) {
-                    setAudioDeviceId(deviceToSelect.deviceId);
-                }
-            }
-        }
-    }, [audioDeviceId, microphones, defaultMicrophone, setAudioDeviceId]);
-
-    useEffect(() => {
-        if (speakers.length > 0) {
-            const isDeviceAvailable = audioOutputDeviceId
-                ? speakers.find((s) => s.deviceId === audioOutputDeviceId)
-                : null;
-            if (!audioOutputDeviceId || !isDeviceAvailable) {
-                const deviceToSelect = defaultSpeaker || speakers[0];
-                if (deviceToSelect) {
-                    setAudioOutputDeviceId(deviceToSelect.deviceId);
-                }
-            }
-        }
-    }, [audioOutputDeviceId, speakers, defaultSpeaker, setAudioOutputDeviceId]);
+export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSettingsProps) => {
+    const {
+        selectedMicrophoneId: audioDeviceId,
+        selectedAudioOutputDeviceId: audioOutputDeviceId,
+        toggleAudio,
+        microphones,
+        speakers,
+        switchActiveDevice,
+    } = useMediaManagementContext();
 
     const handleInputDeviceChange = async (value: string | null) => {
         if (!value) {
             void toggleAudio({ isEnabled: false, audioDeviceId: null });
-            setAudioDeviceId(value);
             return;
         }
 
-        await room.switchActiveDevice('audioinput', value);
-
-        setAudioDeviceId(value, true);
+        await toggleAudio({ audioDeviceId: value });
     };
 
     const handleOutputDeviceChange = async (value: string | null) => {
@@ -62,8 +36,7 @@ export const AudioSettings = ({ anchorRef }: AudioSettingsProps) => {
             if (!supportsSetSinkId()) {
                 return;
             }
-            await room.switchActiveDevice('audiooutput', value === null ? '' : value);
-            setAudioOutputDeviceId(value, true);
+            await switchActiveDevice('audiooutput', value === null ? '' : value);
 
             const audioElements = document.querySelectorAll('audio');
 
@@ -82,6 +55,8 @@ export const AudioSettings = ({ anchorRef }: AudioSettingsProps) => {
             activeOutputDeviceId={audioOutputDeviceId}
             microphones={microphones}
             speakers={speakers}
+            onClose={onClose}
+            anchorPosition={anchorPosition}
         />
     );
 };
