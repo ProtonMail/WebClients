@@ -5146,6 +5146,11 @@
         "PSČ je povinné"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Prihláste sa pomocou tej istej Gmail adresy, ktorú ste použili pri prvom prihlásení, prosím."
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Na jednu pozvánku je povolený najviac ${ maxAttendees } účastník",
@@ -8916,7 +8921,7 @@
         "Vybrali ste **${ elementsCount } konverzáciu** v ${ location }",
         "Vybrali ste **${ elementsCount } konverzácie** v ${ location }",
         "Vybrali ste **${ elementsCount } konverzácií** v ${ location }",
-        "Vybrali ste **${ elementsCount } konverzácie** v ${ location }"
+        "Vybrali ste **${ elementsCount } konverzácií** v ${ location }"
       ],
       "You selected **${ elementsCount } conversation**.": [
         "Vybrali ste **${ elementsCount } konverzáciu**.",
@@ -11959,11 +11964,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Zmeňte svoju emailovú adresu pre populárne služby teraz, aby ste sa vyhli sledovaniu a profilovaniu. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Financie"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "Presunul som svoje prihlasovacie údaje do ${ BRAND_NAME }"
+      "Maybe later": [
+        "Možno neskôr"
       ],
       "Privacy for all your online accounts": [
         "Ochrana súkromia všetkých vašich online účtov"
@@ -11973,9 +11981,6 @@
       ],
       "Social media": [
         "Sociálne médiá"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Na prihlásenie do online služieb používajte svoju adresu ${ MAIL_APP_NAME }, aby ste sa vyhli sledovaniu a profilovaniu. Zmeňte si teraz svoj email pre obľúbené služby. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -12362,6 +12367,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Suma splatná po skončení skúšobnej prevádzky dňa ${ formattedDate }"
+      ],
       "Billing Country": [
         "Krajina fakturácie"
       ],
@@ -12413,8 +12421,8 @@
       "Taxes": [
         "Dane"
       ],
-      "terms & conditions": [
-        "podmienky používania"
+      "terms and conditions": [
+        "zmluvnými podmienkami používania"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupón je možné použiť na ${ couponRedemptions } obnovenie.",

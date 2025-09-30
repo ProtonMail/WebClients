@@ -1441,6 +1441,12 @@
       "Toggle Contacts app": [
         "Contact app kiezen"
       ],
+      "Toggle notifications": [
+        "Meldingen in- of uitschakelen"
+      ],
+      "Toggle referral": [
+        "Verwijzing in- of uitschakelen"
+      ],
       "Toggle security center app": [
         "Beveiligingscentrumapp in-/uitschakelen"
       ],
@@ -6589,6 +6595,15 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Stop datalekken door uw internet te blokkeren als uw VPN-verbinding onverwachts stopt."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Stap 3:** Ontvang ${ referrerRewardAmount } tegoed voor elke vriend die zich inschrijft voor een abonnement."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Stap 3:** Ontvang ${ referrerRewardAmount } tegoed voor elke persoon die zich inschrijft voor een abonnement."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
       ],
@@ -11549,9 +11564,6 @@
       "Finance": [
         "Financieel"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "Ik heb mijn inloggegevens verplaatst naar ${ BRAND_NAME }"
-      ],
       "Privacy for all your online accounts": [
         "Privacy voor al uw online accounts"
       ],
@@ -11560,9 +11572,6 @@
       ],
       "Social media": [
         "Social media"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Gebruik uw ${ MAIL_APP_NAME } adres om in te loggen op de online diensten om te voorkomen dat u gevolgd en geprofileerd wordt. Wijzig uw e-mailadres voor populaire diensten nu. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11998,9 +12007,6 @@
       "Taxes": [
         "Belastingen"
       ],
-      "terms & conditions": [
-        "algemene voorwaarden"
-      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
         "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
@@ -12060,6 +12066,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "Tegoed wordt toegevoegd aan uw saldo."
       ]
     },
     "Payments.plan_name": {
@@ -12550,6 +12561,24 @@
       ],
       "Stored with zero-access encryption": [
         "Opgeslagen met zero-access-versleuteling"
+      ]
+    },
+    "Referral": {
+      "Friend subscribed": [
+        "Vriend geabonneerd",
+        "Vrienden geabonneerd"
+      ],
+      "Invite friends. Get credits.": [
+        "Nodig vrienden uit. Ontvang tegoed."
+      ],
+      "Invited friends": [
+        "Uitgenodigde vrienden"
+      ],
+      "More sharing options": [
+        "Meer opties om te delen"
+      ],
+      "Start earning credits": [
+        "Begin met het verdienen van tegoed"
       ]
     },
     "Remaining days before the message expire": {
@@ -15201,6 +15230,9 @@
       ],
       "Share your calendar with your team": [
         "Deel uw agenda met uw team"
+      ],
+      "Share your link": [
+        "Deel uw snelkoppeling"
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
