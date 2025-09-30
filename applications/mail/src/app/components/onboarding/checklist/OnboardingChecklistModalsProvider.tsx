@@ -93,7 +93,9 @@ const OnboardingChecklistModalsProvider = ({ children }: { children: ReactNode }
             {renderStorageReward && <StorageRewardModal {...storageRewardProps} />}
             {renderGmailForward && (
                 <GmailSyncModal
-                    source={EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST}
+                    source={hasAccessToBYOE
+                        ? EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST_BYOE
+                        : EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST}
                     noSkip
                     onSyncCallback={(hasError?: boolean) => {
                         if (!hasError) {

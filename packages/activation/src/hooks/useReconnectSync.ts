@@ -53,7 +53,7 @@ const useReconnectSync = (address: Address) => {
                             Code,
                             Provider,
                             RedirectUri,
-                            Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_SYNC,
+                            Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_GRANT_PERMISSION_BYOE,
                             successNotification: { text: c('action').t`Resuming forward` },
                             syncId: sync.id,
                             importerId: sync.importerID,
@@ -96,7 +96,7 @@ const useReconnectSync = (address: Address) => {
                             Code,
                             Provider,
                             RedirectUri,
-                            Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_SYNC,
+                            Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_BYOE,
                             reconnectEmailAddress: address.Email,
                         })
                     );
