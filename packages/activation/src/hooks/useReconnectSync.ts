@@ -16,11 +16,17 @@ import type { WithLoading } from '@proton/hooks/useLoading';
 import { useDispatch } from '@proton/redux-shared-store';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsBYOEAccount } from '@proton/shared/lib/keys';
+import { hasPaidMail } from '@proton/shared/lib/user/helpers';
+
+import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../constants';
+import useBYOEAddressesCounts from './useBYOEAddressesCounts';
 
 const useReconnectSync = (address: Address) => {
     const [user] = useUser();
     const easySwitchDispatch = useEasySwitchDispatch();
     const dispatch = useDispatch();
+
+    const { addressesOrSyncs } = useBYOEAddressesCounts();
 
     const sync = useEasySwitchSelector((state) => selectSyncByEmail(state, address.Email));
 
@@ -59,7 +65,26 @@ const useReconnectSync = (address: Address) => {
     };
 
     // Used to reconnect a manually disconnected address. We need to set the address flags and to create the sync again
-    const handleReconnect = (withLoading: WithLoading, address: Address) => {
+    const handleReconnect = ({
+        withLoading,
+        address,
+        setLimitModalOpen,
+        setUpsellModalOpen,
+    }: {
+        withLoading: WithLoading;
+        address: Address;
+        setUpsellModalOpen: (open: boolean) => void;
+        setLimitModalOpen: (open: boolean) => void;
+    }) => {
+        // Prevent user from reconnecting manually disconnected address if the BYOE limit has been reached
+        if (!hasPaidMail(user) && addressesOrSyncs.length >= MAX_SYNC_FREE_USER) {
+            setUpsellModalOpen(true);
+            return;
+        } else if (addressesOrSyncs.length >= MAX_SYNC_PAID_USER) {
+            setLimitModalOpen(true);
+            return;
+        }
+
         void triggerOAuthPopup({
             provider: OAUTH_PROVIDER.GOOGLE,
             features: [EASY_SWITCH_FEATURES.BYOE],
