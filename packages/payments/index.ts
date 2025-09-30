@@ -414,7 +414,8 @@ export {
     isForbiddenLumoPlus,
     isManagedExternally,
     isRegularCycle,
-    isSubcriptionCheckForbidden,
+    isSubscriptionCheckForbidden,
+    isSubscriptionCheckForbiddenWithReason,
     isTaxInclusive,
     isTrial,
     isTrialExpired,
@@ -431,6 +432,7 @@ export {
     type Subscription,
     type SubscriptionCheckResponse,
     type Tax,
+    type SubscriptionCheckForbiddenReason,
 } from './core/subscription/interface';
 export {
     getAvailableCycles,
