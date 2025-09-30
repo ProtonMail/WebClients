@@ -4404,6 +4404,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
+      ],
       "Billing Country": [
         "Χώρα χρέωσης"
       ],
@@ -4455,7 +4458,7 @@
       "Taxes": [
         "Φόροι"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [

@@ -4404,6 +4404,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Montant dû après la version d'essai le ${ formattedDate }"
+      ],
       "Billing Country": [
         "Pays de facturation "
       ],
@@ -4455,8 +4458,8 @@
       "Taxes": [
         "Taxes"
       ],
-      "terms & conditions": [
-        "les conditions générales d’utilisation"
+      "terms and conditions": [
+        "conditions générales d'utilisation"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",
