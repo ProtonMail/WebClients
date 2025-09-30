@@ -98,7 +98,7 @@ export const PrejoinContainer = ({
             </div>
             <div className="prejoin-container flex flex-column md:flex-row flex-nowrap w-full md:items-center md:justify-center">
                 <div
-                    className="prejoin-container-content w-full md:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center px-4"
+                    className="prejoin-container-content w-full md:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center px-2 md:px-4"
                     style={{ '--md-w-custom': '71rem' }}
                 >
                     <DeviceSettings
