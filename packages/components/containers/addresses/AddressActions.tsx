@@ -5,6 +5,9 @@ import { deleteAddress, disableAddress, enableAddress } from '@proton/account/ad
 import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
 import DisconnectBYOEModal from '@proton/activation/src/components/Modals/DisconnectBYOEModal/DisconnectBYOEModal';
+import ReachedLimitForwardingModal from '@proton/activation/src/components/Modals/ReachedLimitForwardingModal/ReachedLimitForwardingModal';
+import UpsellForwardingModal from '@proton/activation/src/components/Modals/UpsellForwardingModal/UpsellForwardingModal';
+import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureStatus';
 import useReconnectSync from '@proton/activation/src/hooks/useReconnectSync';
 import type { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import DropdownActions from '@proton/components/components/dropdown/DropdownActions';
@@ -127,6 +130,7 @@ const AddressActions = ({
     const [organizationKey] = useOrganizationKey();
     const emailAddress = address.Email;
     const wrapError = useErrorWrapper();
+    const hasAccessToBYOE = useBYOEFeatureStatus();
     const { sync, handleGrantPermission, handleReconnect, loadingConfig } = useReconnectSync(address);
 
     const [missingKeysProps, setMissingKeysAddressModalOpen, renderMissingKeysModal] = useModalState();
@@ -136,6 +140,9 @@ const AddressActions = ({
     const [editInternalAddressProps, setEditInternalAddressOpen, renderEditInternalAddressModal] = useModalState();
     const [editExternalAddressProps, setEditExternalAddressOpen, renderEditExternalAddressModal] = useModalState();
     const [disconnectBYOEProps, setDisconnectBYOEOpen, renderDisconnectBYOEModal] = useModalState();
+    const [reachedLimitForwardingModalProps, setReachedLimitForwardingModalOpen, renderReachedLimitForwardingModal] =
+        useModalState();
+    const [upsellForwardingModalProps, setUpsellForwardingModalOpen, renderUpsellForwardingModal] = useModalState();
 
     const handleDelete = wrapError(async () => {
         await dispatch(deleteAddress({ address, member }));
@@ -228,7 +235,12 @@ const AddressActions = ({
         permissions.canReconnectBYOE && {
             text: c('Address action').t`Reconnect`,
             key: 'address-action-reconnect-byoe',
-            onClick: () => handleReconnect(withLoading, address),
+            onClick: () => handleReconnect({
+                withLoading,
+                address,
+                setLimitModalOpen: setReachedLimitForwardingModalOpen,
+                setUpsellModalOpen: setUpsellForwardingModalOpen,
+            }),
             disabled: loadingConfig,
             'aria-label': c('Address action').t`Reconnect address “${emailAddress}”`,
         },
@@ -280,6 +292,10 @@ const AddressActions = ({
                 <DisableAddressModal email={address.Email} onDisable={handleDisable} {...disableAddressProps} />
             )}
             {renderDisconnectBYOEModal && <DisconnectBYOEModal address={address} {...disconnectBYOEProps} />}
+            {renderReachedLimitForwardingModal && <ReachedLimitForwardingModal {...reachedLimitForwardingModalProps} />}
+            {renderUpsellForwardingModal && (
+                <UpsellForwardingModal hasAccessToBYOE={hasAccessToBYOE} modalProps={upsellForwardingModalProps} />
+            )}
 
             {list.length ? (
                 <DropdownActions size="small" list={list} loading={loading || savingIndex !== undefined} />

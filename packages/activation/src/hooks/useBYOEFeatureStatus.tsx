@@ -17,7 +17,7 @@ const useBYOEFeatureStatus = () => {
      * Note, both InboxBringYourOwnEmailSignup & InboxBringYourOwnEmailClient are children feature flags of InboxBringYourOwnEmail, that we use as a kill switch.
      * So disabling the kill switch will disable the 2 children feature flags too.
      *
-     * So, only users having the client feature OR users who created an account using BYOE (and who have the BYOE account flag)
+     * So, only users having the client feature OR users who created an account using BYOE (and who have the BYOE account flag).
      * Of course, we need to make sure that the kill switch is ON to see the feature for BYOE accounts.
      */
     const userHasBYOEAccount = getIsBYOEAccount(user);
