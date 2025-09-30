@@ -4913,6 +4913,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Importo dovuto dopo la prova il ${ formattedDate }"
+      ],
       "Billing Country": [
         "Paese di fatturazione"
       ],
@@ -4964,8 +4967,8 @@
       "Taxes": [
         "Tasse"
       ],
-      "terms & conditions": [
-        "termini e condizioni"
+      "terms and conditions": [
+        "Termini e Condizioni"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Il coupon è valido per ${ couponRedemptions } rinnovo.",
