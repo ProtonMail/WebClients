@@ -84,3 +84,8 @@ export enum PermissionPromptStatus {
     MICROPHONE = 'MICROPHONE',
     CLOSED = 'CLOSED',
 }
+
+export type MLSGroupState = {
+    displayCode: string | null;
+    epoch: bigint;
+};

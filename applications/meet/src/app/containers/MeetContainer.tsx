@@ -14,10 +14,11 @@ import { useIsNarrowHeight } from '../hooks/useIsNarrowHeight';
 import { useParticipantEvents } from '../hooks/useParticipantEvents';
 import { useSortedParticipants } from '../hooks/useSortedParticipants';
 import { useVideoToggle } from '../hooks/useVideoToggle';
-import type { MeetChatMessage, ParticipantEntity, ParticipantSettings } from '../types';
+import type { MLSGroupState, MeetChatMessage, ParticipantEntity, ParticipantSettings } from '../types';
 
 interface MeetContainerProps {
     setParticipantSettings: React.Dispatch<React.SetStateAction<ParticipantSettings | null>>;
+    mlsGroupState: MLSGroupState | null;
     participantSettings: ParticipantSettings;
     setAudioDeviceId: (deviceId: string | null, save?: boolean) => void;
     setAudioOutputDeviceId: (deviceId: string | null, save?: boolean) => void;
@@ -38,6 +39,7 @@ interface MeetContainerProps {
 
 export const MeetContainer = ({
     setParticipantSettings,
+    mlsGroupState,
     participantSettings: {
         audioDeviceId,
         audioOutputDeviceId,
@@ -147,6 +149,7 @@ export const MeetContainer = ({
                     pageCount,
                     passphrase,
                     guestMode,
+                    mlsGroupState,
                     startScreenShare,
                     stopScreenShare,
                     isLocalScreenShare,

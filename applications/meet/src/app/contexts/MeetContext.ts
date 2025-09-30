@@ -4,7 +4,7 @@ import { VideoQuality } from '@proton-meet/livekit-client';
 import type { LocalParticipant, Participant, RemoteParticipant } from '@proton-meet/livekit-client';
 
 import { PAGE_SIZE } from '../constants';
-import type { MeetChatMessage, ParticipantEntity, ParticipantEventRecord } from '../types';
+import type { MLSGroupState, MeetChatMessage, ParticipantEntity, ParticipantEventRecord } from '../types';
 
 export interface MeetContextValues {
     page: number;
@@ -45,6 +45,7 @@ export interface MeetContextValues {
     pageCount: number;
     passphrase: string;
     guestMode: boolean;
+    mlsGroupState: MLSGroupState | null;
     startScreenShare: () => void;
     stopScreenShare: () => void;
     isLocalScreenShare: boolean;
@@ -113,6 +114,7 @@ export const MeetContext = createContext<MeetContextValues>({
     pageCount: 0,
     passphrase: '',
     guestMode: false,
+    mlsGroupState: null,
     startScreenShare: () => {},
     stopScreenShare: () => {},
     isLocalScreenShare: false,
