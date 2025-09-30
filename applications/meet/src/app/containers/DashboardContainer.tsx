@@ -136,7 +136,7 @@ export const DashboardContainer = () => {
                 </div>
             </div>
             <div className="flex flex-column shrink-0 lg:flex-1 w-full py-4">
-                <div className="flex flex-column gap-4 flex-nowrap w-full h-full overflow-y-auto">
+                <div className="flex flex-column gap-1 flex-nowrap w-full h-full overflow-y-auto">
                     {meetings === null && (
                         <CircleLoader
                             className="color-primary w-custom h-custom m-auto"
