@@ -11778,9 +11778,6 @@
       "Finance": [
         "Finanțe"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "Mi-am transferat date de autentificare în ${ BRAND_NAME }"
-      ],
       "Privacy for all your online accounts": [
         "Confidențialitate pentru toate conturile online personale"
       ],
@@ -11789,9 +11786,6 @@
       ],
       "Social media": [
         "Rețele sociale"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Folosiți adresa din ${ MAIL_APP_NAME } pentru a vă conecta la serviciile online pentru a evita să vă fie urmărită activitatea și să vi se creeze profilul. Modificați-vă acum adresa de e-mail folosită în serviciile populare. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -12177,6 +12171,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Suma datorată după probare la ${ formattedDate }"
+      ],
       "Billing Country": [
         "Țara de facturare"
       ],
@@ -12228,8 +12225,8 @@
       "Taxes": [
         "Taxe"
       ],
-      "terms & conditions": [
-        "termeni și condiții"
+      "terms and conditions": [
+        "termenii și condițiile"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Număr de reînnoiri disponibile pentru acest cupon: ${ couponRedemptions }",

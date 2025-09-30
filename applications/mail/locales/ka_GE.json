@@ -1138,6 +1138,9 @@
       "Remove this label": [
         "ამ ჭდის წაშლა"
       ],
+      "Remove video conference": [
+        "ვიდეოკონფერენციის წაშლა"
+      ],
       "Replace": [
         "ჩანაცვლება"
       ],
@@ -1446,6 +1449,12 @@
       ],
       "Toggle Contacts app": [
         "კონტაქტების აპის გადართვა"
+      ],
+      "Toggle notifications": [
+        "გაფრთხილებების გადართვა"
+      ],
+      "Toggle referral": [
+        "რეფერალის გადართვა"
       ],
       "Toggle security center app": [
         "უსაფრთხოების ცენტრის აპის გადართვა"
@@ -6533,6 +6542,9 @@
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: აჩერებს მონაცემების გაჟონვას თქვენი ინტერნეტის დაბლოკვით, თუ VPN გაითიშება."
       ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**ნაბიჯი 2:** თქვენი მეგობრები მიიღებენ 2 კვირას უფასოდ თავიანთ სატარიფო გეგმაზე."
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
       ],
@@ -9462,8 +9474,14 @@
       "Remember my choice": [
         "დაიმახსოვრე ჩემი არჩევანი"
       ],
+      "Remove ${ MEET_APP_NAME } video conference": [
+        "${ MEET_APP_NAME }-ის ვიდეოკონფერენციის წაშლა"
+      ],
       "Remove metadata": [
         "მეტამონაცემების წაშლა"
+      ],
+      "Remove Zoom video conference": [
+        "Zoom ვიდეოკონფერენციის წაშლა"
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
@@ -11385,9 +11403,6 @@
       "Finance": [
         "ფინანსები"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "მე გადავიტანე ჩემი შესვლის დეტალები ${ BRAND_NAME }-ზე"
-      ],
       "Privacy for all your online accounts": [
         "კონფიდენციალობა ყველა თქვენი ინტერნეტ-ანგარიშებისთვის"
       ],
@@ -11819,9 +11834,6 @@
       "Taxes": [
         "გადასახადები"
       ],
-      "terms & conditions": [
-        "პირობები და წესები"
-      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის.",
         "კუპონი გამოსადეგია ${ couponRedemptions }-ის განახლებისთვის."
@@ -11871,6 +11883,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "ბარათი უარყოფილია. სცადეთ სხვა ბარათი, ან გადახდის ავტორიზაციისთვის დაუკავშირდით ბანკს."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "წინა გამოწერის დარჩენილი ნაწილის კრედიტი"
+      ],
+      "Credits will be added to your balance": [
+        "თქვენს ბალანსზე კრედიტები დაგემატებათ"
       ]
     },
     "Payments.plan_name": {
@@ -12257,6 +12277,37 @@
       ],
       "Stored with zero-access encryption": [
         "ინახება ნულოცავნი წვდომის შიფრაციით"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } თითო რეფერალისთვის"
+      ],
+      "Friend joined": [
+        "მეგობარი შემოვიდა",
+        "მეგობრები შემოვიდნენ"
+      ],
+      "Friend subscribed": [
+        "მეგობარი გამოწერილია",
+        "მეგობრები გამოწერილია"
+      ],
+      "Invite friends. Get credits.": [
+        "მოიწვიეთ მეგობრები და მიიღეთ კრედიტები."
+      ],
+      "Invited friends": [
+        "მოწვეული მეგობრები"
+      ],
+      "More sharing options": [
+        "მეტი გაზიარების პარამეტრი"
+      ],
+      "Refer friends": [
+        "რეკომენდაცია მეგობრებს"
+      ],
+      "Start earning credits": [
+        "დაიწყეთ კრედიტების გამომუშავება"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "შეგიძლიათ, გქონდეთ **${ maxRewardAmount }**-მდე კრედიტი."
       ]
     },
     "Remaining days before the message expire": {
@@ -14821,6 +14872,9 @@
       "Recover data": [
         "მონაცემების აღდგენა"
       ],
+      "Referral": [
+        "რეფერალი"
+      ],
       "Remove from list?": [
         "წავშალო სიიდან?"
       ],
@@ -14916,6 +14970,9 @@
       ],
       "Share your calendar with your team": [
         "გაუზიარეთ თქვენი კალენდარი თქვენს გუნდს"
+      ],
+      "Share your link": [
+        "გააზიარეთ თქვენი ბმული"
       ],
       "Sign in and grant access": [
         "შესვლა და წვდომის მინიჭება"

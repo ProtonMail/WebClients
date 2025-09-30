@@ -5080,6 +5080,11 @@
         "Le code postal est nécessaire."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Veuillez vous connecter avec la même adresse Gmail que celle que vous avez connectée à l'origine"
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Au maximum ${ maxAttendees } participant par invitation",
@@ -9088,6 +9093,14 @@
       "${ BRAND_NAME } username": [
         "Nom d'utilisateur ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "${ count } conversation non lue",
+        "${ count } conversations non lues"
+      ],
+      "${ count } unread message": [
+        "${ count } message non lu",
+        "${ count } messages non lus"
+      ],
       "${ n } month": [
         "${ n } mois",
         "${ n } mois"
@@ -11597,11 +11610,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Changez votre adresse e-mail pour les services populaires dès maintenant afin d'éviter d'être suivi et profilé. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Finance"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "J'ai transféré mes identifiants vers ${ BRAND_NAME }"
+      "Maybe later": [
+        "Peut-être plus tard"
       ],
       "Privacy for all your online accounts": [
         "Confidentialité pour tous vos comptes en ligne"
@@ -11611,9 +11627,6 @@
       ],
       "Social media": [
         "Réseaux sociaux"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "Utilisez votre adresse ${ MAIL_APP_NAME } pour vous connecter aux services en ligne afin d'éviter d'être suivi et profilé. Modifiez dès à présent votre e-mail pour les services que vous utilisez le plus. ${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11998,6 +12011,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Montant dû après la version d'essai le ${ formattedDate }"
+      ],
       "Billing Country": [
         "Pays de facturation "
       ],
@@ -12049,8 +12065,8 @@
       "Taxes": [
         "Taxes"
       ],
-      "terms & conditions": [
-        "les conditions générales d’utilisation"
+      "terms and conditions": [
+        "conditions générales d'utilisation"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",

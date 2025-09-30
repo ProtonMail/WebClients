@@ -1131,9 +1131,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kan ha upp till ${ TRIAL_MAX_DEDICATED_IPS } dedikerad server under provperioden."
       ],
@@ -3401,6 +3398,11 @@
       ],
       "ZIP code is required": [
         "Postnummer är obligatoriskt"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Logga in med samma Gmail-adress som du ursprungligen anslöt"
       ]
     },
     "Error importing calendar": {
@@ -8378,6 +8380,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Belopp att betala efter provperioden den ${ formattedDate }"
+      ],
       "Billing Country": [
         "Faktureringsland"
       ],
@@ -8429,7 +8434,7 @@
       "Taxes": [
         "Moms"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "användarvillkor"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [

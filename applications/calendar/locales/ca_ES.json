@@ -1236,10 +1236,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+        "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+        "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
@@ -3927,6 +3927,11 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
       ]
     },
     "Error accepting calendar invitation": {
@@ -8928,6 +8933,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Import a pagar després del període de prova el ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de facturació"
       ],
@@ -8979,8 +8987,8 @@
       "Taxes": [
         "Impostos"
       ],
-      "terms & conditions": [
-        "els termes i condicions"
+      "terms and conditions": [
+        "termes i condicions"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupó és vàlid per a ${ couponRedemptions } renovació.",
@@ -10927,7 +10935,7 @@
         "Recuperació de compte"
       ],
       "Account restricted": [
-        "Compte restringit"
+        "S'ha restringit el compte"
       ],
       "Account security": [
         "Seguretat del compte"

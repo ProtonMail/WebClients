@@ -56,6 +56,12 @@
       "Advanced options": [
         "დამატებითი პარამეტრები"
       ],
+      "Allow access": [
+        "წვდომის დაშვება"
+      ],
+      "and": [
+        "და"
+      ],
       "Apply lifetime coupon code": [
         "სამუდამო კუპონის კოდის გამოყენება"
       ],
@@ -550,9 +556,6 @@
       ],
       "See members": [
         "წევრების ნახვა"
-      ],
-      "Select": [
-        "მონიშვნა"
       ],
       "Send email": [
         "ელფოსტის გაგზავნა"
@@ -1069,9 +1072,6 @@
       "PIN codes do not match": [
         "Pin-კოდები არ ემთხვევა"
       ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "გასაგრძელებლად აუცილებელია ${ PASS_APP_NAME }-ს საჭირო წვდომები მისცეთ"
-      ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "მიამაგრეთ გაფართოება ან აირჩიეთ \"გაგრძელება მიმაგრების გარეშე\"."
       ],
@@ -1492,9 +1492,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "აირჩიეთ შენახული წვდომის გასაღები ${ domain }-ში შესასვლელად"
       ],
-      "Choose your preferred look and feel.": [
-        "აირჩიეთ სასურველი გარეგნობა."
-      ],
       "Click the icon to open it anytime.": [
         "მის გასახსნელად ნებისმიერ დროს შეგიძლიათ, ხატულაზე დააწკაპუნოთ."
       ],
@@ -1512,6 +1509,9 @@
       ],
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
+      ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "დაკოპირდა ბუფერში (ვადა: ${ timeoutDurationHumanReadable })"
       ],
       "Coupon successfully applied!": [
         "კუპონის გამოყენება წარმატებულია!"
@@ -1780,9 +1780,6 @@
       "Loading...": [
         "ჩატვირთვა..."
       ],
-      "Make it your own": [
-        "გახადეთ ის თქვენი"
-      ],
       "Manager": [
         "მენეჯერი"
       ],
@@ -1801,10 +1798,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
-        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -3661,6 +3654,11 @@
         "ფაილის შენახვის შემდეგ შეგიძლიათ, დახუროთ ეს ფანჯარა."
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "მოითხოვს უფლებას თქვენი ბრაუზერისგან"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "2FA საიდუმლო გასაღების დამატება"
@@ -3961,6 +3959,9 @@
       ],
       "Change your lock method": [
         "თქვენი დაბლოკვის მეთოდის შეცვლა"
+      ],
+      "Clear clipboard": [
+        "ბუფერის გასუფთავება"
       ],
       "Confirm extra password": [
         "დაადასტურეთ დამატებითი პაროლი"

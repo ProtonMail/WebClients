@@ -1981,12 +1981,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "トライアル期間中、最大${ TRIAL_MAX_DEDICATED_IPS }の専用サーバーをご利用いただけます。"
       ],
@@ -11398,9 +11392,6 @@
       "Finance": [
         "ファイナンス"
       ],
-      "I have moved my logins to ${ BRAND_NAME }": [
-        "ログイン情報を${ BRAND_NAME }に移動しました"
-      ],
       "Privacy for all your online accounts": [
         "すべてのオンラインのアカウントのためのプライバシー"
       ],
@@ -11409,9 +11400,6 @@
       ],
       "Social media": [
         "ソーシャルメディア"
-      ],
-      "Use your ${ MAIL_APP_NAME } address to sign in to online services to avoid being tracked and profiled. Change your email for popular services now. ${ learnMoreLink }": [
-        "オンラインサービスにサインインする際には、${ MAIL_APP_NAME } アドレスを使用して、追跡やプロファイリングを避けましょう。今すぐ人気のあるサービスのメールアドレスを変更しましょう。${ learnMoreLink }"
       ]
     },
     "Onboarding modal": {
@@ -11845,9 +11833,6 @@
       ],
       "Taxes": [
         "税金"
-      ],
-      "terms & conditions": [
-        "利用規約"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "クーポンは ${ couponRedemptions } の更新で有効です。"

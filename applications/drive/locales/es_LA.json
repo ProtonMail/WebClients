@@ -3293,6 +3293,9 @@
       "Calendar limit reached": [
         "Límite del calendario alcanzado"
       ],
+      "Can't find any secure link": [
+        "No se encuentra ningún enlace seguro"
+      ],
       "Cannot export this contact": [
         "No se puede exportar este contacto"
       ],
@@ -4902,6 +4905,21 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Interruptor de bloqueo**: Detiene las filtraciones de datos al bloquear su conexión internet si la VPN se desconecta inesperadamente."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Paso 1.** Invite a sus amistades a ${ BRAND_NAME } con su enlace de referidos."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Paso 2:** Sus amistades obtienen 2 semanas gratis en el plan de ${ BRAND_NAME } que elijan."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Paso 2:** Sus amistades obtienen 2 semanas gratis en el plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Paso 3:** Obtenga ${ referrerRewardAmount } créditos por cada amistad que se suscriba a un plan."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Paso 3:** Obtenga ${ referrerRewardAmount } créditos por cada persona que se suscriba a un plan."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } almacenamiento adicional"
@@ -9183,6 +9201,9 @@
       "The spreadsheet failed to be created": [
         "Error al crear la hoja de cálculo"
       ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "El enlace seguro expiró, cambie la fecha de expiración en los ajustes de compartir"
+      ],
       "Trash failed to be emptied": [
         "Error al vaciar la papelera"
       ],
@@ -9681,6 +9702,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Cantidad por pagar después de la prueba el ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de facturación"
       ],
@@ -9732,8 +9756,8 @@
       "Taxes": [
         "Impuestos"
       ],
-      "terms & conditions": [
-        "los términos y condiciones"
+      "terms and conditions": [
+        "términos y condiciones"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupón es válido por ${ couponRedemptions } renovación.",
@@ -9753,6 +9777,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puede cancelar en cualquier momento.",
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puede cancelar en cualquier momento."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Esta acción ampliará la suscripción existente. Solo se le cargará por las adiciones y el tiempo restante del ciclo de facturación actual. La fecha de renovación de la suscripción no cambiará."
       ],
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las facturas futuras"
@@ -9794,6 +9821,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "La tarjeta fue rechazada. Pruebe otra tarjeta o póngase en contacto con el banco para autorizar el cargo."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito por la parte no usada de la suscripción al plan anterior"
+      ],
+      "Credits will be added to your balance": [
+        "Se añadirán los créditos a su balance"
       ]
     },
     "Payments.plan_name": {
@@ -10195,6 +10230,40 @@
       ],
       "for 12 months": [
         "durante 12 meses"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } por referido"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Gane hasta ${ maxRewardAmount } en créditos. Obtendrá ${ referrerRewardAmount } cuando la persona a quien invite se suscriba a un plan de ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Amistad que se unió",
+        "Amistades que se unieron"
+      ],
+      "Friend subscribed": [
+        "Amistad suscrita",
+        "Amistades suscritas"
+      ],
+      "Invite friends. Get credits.": [
+        "Invite a sus amistades. Obtenga créditos."
+      ],
+      "Invited friends": [
+        "Amistades invitadas"
+      ],
+      "More sharing options": [
+        "Más opciones para compartir"
+      ],
+      "Refer friends": [
+        "Referir una amistad"
+      ],
+      "Start earning credits": [
+        "Comience a ganar créditos"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Puede obtener hasta **${ maxRewardAmount }** en créditos."
       ]
     },
     "Safety review": {
@@ -12332,6 +12401,9 @@
       ],
       "Share your calendar with your team": [
         "Comparta su calendario con su equipo"
+      ],
+      "Share your link": [
+        "Comparta su enlace"
       ],
       "Shared": [
         "Compartido"

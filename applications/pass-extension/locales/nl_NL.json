@@ -56,6 +56,9 @@
       "Advanced options": [
         "Geavanceerde instellingen"
       ],
+      "and": [
+        "en"
+      ],
       "Apply lifetime coupon code": [
         "Pas de lifetime kortingscode toe"
       ],
@@ -544,9 +547,6 @@
       ],
       "See members": [
         "Bekijk leden"
-      ],
-      "Select": [
-        "Selecteer"
       ],
       "Send email": [
         "E-mail verzenden"
@@ -1081,9 +1081,6 @@
       "PIN codes do not match": [
         "Pincodes komen niet overeen"
       ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Verleen de vereiste extensie-toestemmingen aan ${ PASS_APP_NAME } om verder te gaan."
-      ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Pin de extensie vast of kies \"Doorgaan zonder vastpinnen\"."
       ],
@@ -1504,9 +1501,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Kies een opgeslagen toegangssleutel om aan te melden bij ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Kies uw favoriete look & feel."
-      ],
       "Click the icon to open it anytime.": [
         "Klik op het icoon om het op eender welk moment te openen"
       ],
@@ -1798,9 +1792,6 @@
       "Loading...": [
         "Laden..."
       ],
-      "Make it your own": [
-        "Pas naar eigen wens aan"
-      ],
       "Manager": [
         "Beheerder"
       ],
@@ -1821,8 +1812,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"

@@ -1758,6 +1758,12 @@
       "Disallow unsigned mail": [
         "Não permitir e-mails sem assinatura"
       ],
+      "Disconnect": [
+        "Desconectar"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Desconectar endereço “${ emailAddress }”"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -1781,6 +1787,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Gerar chaves ausentes para o endereço “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Conceder permissão"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Conceder permissão a “${ emailAddress }”"
       ],
       "Reconnect": [
         "Reconectar"
@@ -1825,6 +1837,9 @@
       ],
       "Orphan": [
         "Órfão"
+      ],
+      "Permission revoked": [
+        "Permissão revogada"
       ]
     },
     "Admin": {
@@ -6308,6 +6323,11 @@
         "O CEP é obrigatório."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Inicie sessão com o mesmo endereço do Gmail que você conectou originalmente"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O formato do aquivo não é correto."
@@ -8361,6 +8381,15 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Convide seus amigos** para ${ BRAND_NAME } com seu link de indicação."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Passo 1:** Convide seus amigos para a ${ BRAND_NAME } com seu link de indicação."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Passo 2:** Seus amigos ganham 2 semanas grátis no plano deles."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Passo 3:** Ganhe ${ referrerRewardAmount } em créditos para cada pessoa que se inscrever para um plano."
+      ],
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** para todos os seus dispositivos"
       ],
@@ -8477,6 +8506,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Adicionar servidor (${ availableAddedCount } disponíveis)",
         "Adicionar servidor (${ availableAddedCount } disponíveis)"
+      ],
+      "Add video conferencing links to calendar invitations": [
+        "Adicionar links de videoconferência a convites de calendário"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Adicione o nome e logotipo para criar uma experiência mais personalizada para sua organização."
@@ -9347,6 +9379,9 @@
       "Groups": [
         "Grupos"
       ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Ajuda a escrever, responder e revisar e-mails. Se desativado, apenas os administradores terão acesso. Gerencie para usuários individuais em ${ userAndAddress } ou ${ addMoreSeats }"
+      ],
       "here": [
         "aqui"
       ],
@@ -9727,6 +9762,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Gerencie quais aplicativos da ${ BRAND_NAME } os membros da sua organização podem acessar. Se desativado, apenas os administradores terão acesso."
       ],
+      "Manage which features the members of your organization can access.": [
+        "Gerencie quais recursos os membros da sua organização podem acessar."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Gerencie suas preferências de notificação por e-mail para o ${ DOCS_APP_NAME }."
       ],
@@ -9816,6 +9854,9 @@
       ],
       "No countries enabled": [
         "Não há países ativados"
+      ],
+      "No credit card required": [
+        "Não é necessário cartão de crédito"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Nenhum método de recuperação de dados definido. Você está correndo risco de perder acesso aos seus dados"
@@ -12016,9 +12057,9 @@
         "${ nbYear } ano",
         "${ nbYear } anos"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } de ${ MaxAddresses } endereço de e-mail",
-        "${ UsedAddresses } de ${ MaxAddresses } endereços de e-mail"
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } de ${ maxAddresses } endereço de e-mail",
+        "${ usedAddresses } de ${ maxAddresses } endereços de e-mail"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
@@ -12503,6 +12544,9 @@
       "Email address": [
         "Endereço de e-mail"
       ],
+      "Email categories": [
+        "Categorias de e-mail"
+      ],
       "Email or username": [
         "E-mail ou nome de usuário"
       ],
@@ -12520,9 +12564,6 @@
       ],
       "Emails (last month)": [
         "E-mails (último mês)"
-      ],
-      "Emails categories": [
-        "Categorias de e-mails"
       ],
       "Enabled": [
         "Ativado"
@@ -13316,6 +13357,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Para"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } endereço de e-mail",
+        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } endereços de e-mail"
       ]
     },
     "Label for adding a new custom domain": {
@@ -16730,6 +16777,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Valor devido após a avaliação em ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de Faturamento"
       ],
@@ -16793,7 +16843,7 @@
       "Taxes": [
         "Impostos"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "termos e condições"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -16817,6 +16867,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Esta ação expande a assinatura existente. Você será cobrado apenas pelos novos complementos e pelo tempo restante do ciclo de faturamento atual. A data de renovação da sua assinatura não será alterada."
       ],
       "This number will be shown on all future invoices": [
         "Este número será mostrado em todas as faturas futuras"
@@ -16866,6 +16919,9 @@
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
+      ],
+      "Credits will be added to your balance": [
+        "Créditos serão adicionados ao seu saldo."
       ]
     },
     "Payments.plan_name": {
@@ -17547,6 +17603,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } por indicação"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Se você cancelar antes desta data,** faremos um **downgrade** para ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } quando a avaliação terminar."
       ],
@@ -17561,6 +17620,18 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Aproveite o **${ planTitle }** gratuitamente até **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Convide amigos. Ganhe créditos."
+      ],
+      "Refer friends": [
+        "Indicar amigos"
+      ],
+      "Start earning credits": [
+        "Comece a ganhar créditos"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Você pode receber até **${ maxRewardAmount }** em crédito."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Você tem **${ daysRemaining } dia restante** para explorar todos os poderosos recursos que o **${ planTitle }** tem a oferecer.",
@@ -18869,6 +18940,10 @@
         "${ VPN_CONNECTIONS } conexão VPN de alta velocidade",
         "${ VPN_CONNECTIONS } conexões VPN de alta velocidade"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "Mais de ${ vpnServersCountData.free.servers } servidores de VPN em ${ vpnServersCountData.free.countries } país",
+        "Mais de ${ vpnServersCountData.free.servers } servidores de VPN em ${ vpnServersCountData.free.countries } países"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ país",
         "${ vpnServersCountData.paid.countries }+ países"
@@ -18901,6 +18976,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Amount due now": [
+        "Valor devido agora"
+      ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "E ganhe ${ referralInfo.uiData.refereeRewardAmount } em créditos, se você se inscrever."
       ],
@@ -18930,9 +19008,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Continuar com ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Continuar com o plano grátis"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Criar uma conta na ${ BRAND_NAME }"
@@ -19055,8 +19130,8 @@
       "Select ${ title }": [
         "Selecionar ${ title }"
       ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "Selecione um serviço e aproveite a versão premium por ${ TRIAL_DURATION_DAYS } dias grátis. Não é necessário cartão de crédito."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Selecione um serviço e aproveite a versão premium por ${ TRIAL_DURATION_DAYS } dias grátis."
       ],
       "Selected": [
         "Selecionado"
@@ -19102,6 +19177,9 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Então ${ priceWithDiscountPerMonth } por mês, se você se inscrever."
+      ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Então ${ priceWithDiscountPerMonth } por mês. Cancele a qualquer momento."
       ],
       "To redeem on your next paid subscription.": [
         "Para resgatar na sua próxima assinatura paga."
@@ -19542,6 +19620,9 @@
     "Spotlight": {
       "Earn up to ${ maxRewardAmount } in credit": [
         "Receba até ${ maxRewardAmount } em crédito"
+      ],
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Ganhe créditos quando a pessoa que você convida se inscreve em um plano ${ BRAND_NAME }."
       ],
       "Get up to ${ credits } in credits.": [
         "Receba até ${ credits } em créditos."
@@ -20985,6 +21066,14 @@
       "${ feature } is now active": [
         "O recurso ${ feature } agora está ativo."
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } amigo(a) convidado(a)",
+        "${ friendsInvited } amigos(as) convidados(as)"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } amigo(a) inscrito(a)",
+        "${ friendsSubscribed } amigos(as) inscritos(as)"
+      ],
       "${ MAIL_APP_NAME } Bridge": [
         "${ MAIL_APP_NAME } Bridge"
       ],
@@ -21593,6 +21682,9 @@
       ],
       "Email breaches": [
         "Violações de e-mail"
+      ],
+      "Email categories": [
+        "Categorias de e-mail"
       ],
       "Email composer": [
         "Compositor de e-mail"
@@ -22811,9 +22903,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "As subpastas do sistema aparecerão como pastas separadas no ${ MAIL_APP_NAME }"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "O endereço foi desconectado. O envio e o recebimento de mensagens estão pausados. Reconecte-se para ativar este endereço novamente."
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."
