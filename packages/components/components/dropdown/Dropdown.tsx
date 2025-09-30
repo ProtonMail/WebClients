@@ -31,6 +31,13 @@ interface ContentProps extends HTMLAttributes<HTMLDivElement> {
     ref?: RefObject<HTMLDivElement>;
 }
 
+export enum DropdownBorderRadius {
+    XL = 'xl',
+    LG = 'lg',
+    MD = 'md',
+    SM = 'sm',
+}
+
 export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
     anchorRef: RefObject<HTMLElement>;
     anchorPosition?: PopperPosition | null;
@@ -53,6 +60,11 @@ export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
     autoCloseOutsideAnchor?: boolean;
     contentProps?: ContentProps;
     disableDefaultArrowNavigation?: boolean;
+    /**
+     * Change the default radius (md) of the spotlight
+     * allowed value is `xl`, `lg`, `md`, `sm`
+     */
+    borderRadius?: DropdownBorderRadius;
 }
 
 const Dropdown = ({
@@ -77,6 +89,7 @@ const Dropdown = ({
     autoCloseOutsideAnchor = true,
     contentProps,
     disableDefaultArrowNavigation = false,
+    borderRadius = DropdownBorderRadius.MD,
     ...rest
 }: DropdownProps) => {
     const [popperEl, setPopperEl] = useState<HTMLDivElement | null>(null);
@@ -216,6 +229,7 @@ const Dropdown = ({
         isClosing && `is-dropdown-out`,
         noCaret && 'dropdown--no-caret',
         adaptiveForTouchScreens && 'adaptive-for-touch-screens',
+        borderRadius === 'md' ? 'rounded' : `rounded-${borderRadius}`,
         className,
         'outline-none',
     ]);

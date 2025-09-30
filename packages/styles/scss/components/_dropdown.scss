@@ -25,7 +25,6 @@
 	left: var(--left);
 	/* stylelint-enable */
 	transform: scale(1);
-	border-radius: var(--border-radius-md);
 	box-shadow: var(--shadow-lifted);
 	border: #{$border-size}px solid var(--border-norm);
 	background-color: var(--background-norm);

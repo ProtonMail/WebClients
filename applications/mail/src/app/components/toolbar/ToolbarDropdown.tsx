@@ -4,6 +4,7 @@ import { useImperativeHandle, useState } from 'react';
 import { Tooltip } from '@proton/atoms';
 import type { DropdownButtonProps, DropdownProps } from '@proton/components';
 import { Dropdown, DropdownButton, DropdownSizeUnit, usePopperAnchor } from '@proton/components';
+import type { DropdownBorderRadius } from '@proton/components/components/dropdown/Dropdown';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -38,6 +39,7 @@ interface Props extends Omit<DropdownButtonProps<'button'>, 'title' | 'content' 
     externalCloseRef?: Ref<() => void>;
     // Used to know when the button is clicked and perform action afterwards
     clickCallback?: () => void;
+    borderRadius?: DropdownBorderRadius;
 }
 
 const ToolbarDropdown = ({
@@ -54,6 +56,7 @@ const ToolbarDropdown = ({
     externalToggleRef,
     externalCloseRef,
     clickCallback,
+    borderRadius,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -104,6 +107,7 @@ const ToolbarDropdown = ({
                 anchorRef={anchorRef}
                 onClose={close}
                 className={clsx(['toolbar-dropdown', dropDownClassName])}
+                borderRadius={borderRadius}
                 contentProps={children.contentProps}
             >
                 {children.render({ onClose: close, onLock: setLock, onOpenAdditional: setAdditionalOpen })}
