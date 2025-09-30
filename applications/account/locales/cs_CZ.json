@@ -63,6 +63,11 @@
         "Vaše údaje byly nalezeny při nejméně jednom úniku informací. Zapnutím ${ DARK_WEB_MONITORING_NAME } zobrazíte podrobnosti a provedete akci. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Účty"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Obchod ${ BRAND_NAME }"
@@ -135,6 +140,9 @@
       ],
       "Add label": [
         "Přidat štítek"
+      ],
+      "add more seats": [
+        "přidat více licencí"
       ],
       "Add notification": [
         "Přidat upozornění"
@@ -766,6 +774,9 @@
       "Get more servers": [
         "Získat více serverů"
       ],
+      "Get Pass Family": [
+        "Získat Pass Family"
+      ],
       "Get Pass Plus": [
         "Získejte Pass Plus"
       ],
@@ -786,6 +797,9 @@
       ],
       "Get the extension for ${ browser.title }": [
         "Získejte rozšíření pro ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Získat kompletní balíček"
       ],
       "Get the writing assistant": [
         "Získat asistenta psaní"
@@ -1005,6 +1019,9 @@
       ],
       "No": [
         "Ne"
+      ],
+      "No thanks": [
+        "Ne, děkuji"
       ],
       "No, thanks": [
         "Ne, děkuji"
@@ -1429,6 +1446,9 @@
       "Start live chat": [
         "Spustit živý chat"
       ],
+      "Start subscription": [
+        "Zahájit předplatné"
+      ],
       "Start using ${ PASS_APP_NAME } now": [
         "Začněte nyní používat ${ PASS_APP_NAME }"
       ],
@@ -1581,6 +1601,9 @@
       ],
       "User": [
         "Uživatel"
+      ],
+      "Users and addresses": [
+        "Uživatelé a adresy"
       ],
       "Verify": [
         "Ověřit"
@@ -1745,6 +1768,12 @@
       "Disallow unsigned mail": [
         "Zakázat nepodepsanou poštu"
       ],
+      "Disconnect": [
+        "Odpojit"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Odpojit adresu “${ emailAddress }”"
+      ],
       "Edit": [
         "Upravit"
       ],
@@ -1768,6 +1797,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Generovat chybějící klíče pro adresu “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Udělit oprávnění"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Udělit oprávnění pro “${ emailAddress }”"
       ],
       "Reconnect": [
         "Znovu připojit"
@@ -1812,6 +1847,9 @@
       ],
       "Orphan": [
         "Sirotek"
+      ],
+      "Permission revoked": [
+        "Oprávnění zamítnuto"
       ]
     },
     "Admin": {
@@ -2090,10 +2128,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+        "Po skončení zkušební verze ${ formattedDate } začne placené předplatné, které se automaticky obnovuje každých ${ renewCycle } měsíců. Pokud zrušíte předplatné před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Po skončení zkušební verze ${ formattedDate } se z ní stane placené předplatné, které se automaticky obnovuje každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudou vám účtovány žádné poplatky."
+        "Po skončení zkušební verze ${ formattedDate } se z ní stane předplatné, které bude automaticky obnoveno každý měsíc. Pokud předplatné zrušíte před ${ formattedDate }, nebudete nic platit."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na \"Vyzkoušet\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
@@ -6353,6 +6391,11 @@
         "PSČ je potřeba vyplnit"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Přihlaste se prosím pomocí stejné adresy Gmail, kterou jste původně použili pro připojení"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
@@ -8501,6 +8544,15 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Pozvěte své přátele** do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Krok 1:** Pozvěte své přátele do ${ BRAND_NAME } pomocí svého doporučujícího odkazu."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Krok 2:** Vaši přátelé získají 2 týdny zdarma na svém tarifu."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Krok 3:** Získejte ${ referrerRewardAmount } kreditů za každou osobu, která se přihlásí k odběru tarifu."
+      ],
       "**Sync codes** to all your devices": [
         "**Synchronizovat kódy** na všechny vaše zařízení"
       ],
@@ -8623,6 +8675,9 @@
         "Přidat servery (${ availableAddedCount } k dispozici)",
         "Přidat servery (${ availableAddedCount } k dispozici)",
         "Přidat servery (${ availableAddedCount } k dispozici)"
+      ],
+      "Add video conferencing links to calendar invitations": [
+        "Přidat odkazy na videokonference do pozvánek kalendáře"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Přidejte své jméno a logo a vytvořte pro svou organizaci personalizované prostředí."
@@ -9515,6 +9570,9 @@
       "Groups": [
         "Skupiny"
       ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Pomáhá psát, kontrolovat a odpovídat na e-maily. Po deaktivaci budou mít přístup pouze správci. Spravujte pro jednotlivé uživatele v ${ userAndAddress } nebo ${ addMoreSeats }"
+      ],
       "here": [
         "zde"
       ],
@@ -9899,6 +9957,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Spravujte, ke kterým aplikacím ${ BRAND_NAME } mají členové vaší organizace přístup. Pokud je deaktivováno, budou mít přístup pouze správci."
       ],
+      "Manage which features the members of your organization can access.": [
+        "Spravujte, ke kterým funkcím mají přístup členové vaší organizace."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Správa předvoleb e-mailových upozornění pro ${ DOCS_APP_NAME }."
       ],
@@ -9988,6 +10049,9 @@
       ],
       "No countries enabled": [
         "Žádné povolené země"
+      ],
+      "No credit card required": [
+        "Platební karta není vyžadována"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Není nastavena žádná metoda obnovy dat; jste vystaveni riziku ztráty přístupu ke svým datům"
@@ -10510,6 +10574,9 @@
       ],
       "Show original message": [
         "Zobrazit původní zprávu"
+      ],
+      "Sign in only": [
+        "Pouze přihlášení"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Přihlaste se do ${ MAIL_APP_NAME } pro aktivaci adresy"
@@ -12247,12 +12314,6 @@
         "${ nbYear } let",
         "${ nbYear } let"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } z ${ MaxAddresses } e-mailové adresy",
-        "${ UsedAddresses } ze ${ MaxAddresses } e-mailových adres",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
-        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
@@ -12264,6 +12325,9 @@
       ],
       "1 minute": [
         "1 minuta"
+      ],
+      "10 hide-my-email aliases": [
+        "10 aliasů hide-my-email"
       ],
       "10 minutes": [
         "10 minut"
@@ -12751,9 +12815,6 @@
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
       ],
-      "Emails categories": [
-        "Kategorie e-mailů"
-      ],
       "Enabled": [
         "Povoleno"
       ],
@@ -12852,6 +12913,9 @@
       ],
       "Hide password": [
         "Skrýt heslo"
+      ],
+      "Highest VPN speed": [
+        "Nejvyšší rychlost VPN"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Chápu, že budu muset tuto e-mailovou adresu okamžitě přidat k jinému účtu, aby se předešlo její trvalé ztrátě."
@@ -13411,6 +13475,9 @@
       "Unlimited hide-my-email aliases": [
         "Neomezený počet aliasů hide-my-email"
       ],
+      "Unlimited logins and devices": [
+        "Neomezený počet přihlášení a zařízení"
+      ],
       "Upload 1 or more encryption keys": [
         "Nahrát 1 nebo více dešifrovacích klíčů"
       ],
@@ -13446,6 +13513,9 @@
       ],
       "Value": [
         "Hodnota"
+      ],
+      "Vault, item & secure link sharing": [
+        "Sdílení trezorů, položek a bezpečných odkazů"
       ],
       "Verification code": [
         "Ověřovací kód"
@@ -17049,6 +17119,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Částka k úhradě po zkušební verzi ${ formattedDate }"
+      ],
       "Billing Country": [
         "Země fakturace"
       ],
@@ -17112,8 +17185,8 @@
       "Taxes": [
         "Daně"
       ],
-      "terms & conditions": [
-        "smluvních podmínek užívání"
+      "terms and conditions": [
+        "smluvní podmínky užívání"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupón je platný pro ${ couponRedemptions } obnovení.",
@@ -17144,6 +17217,9 @@
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíce. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit.",
         "Poté se automaticky obnoví za ${ renewPriceStr } na ${ renewalLength } měsíců. Předplatné můžete kdykoli zrušit."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Tato akce rozšiřuje stávající předplatné. Budou vám účtovány pouze nové doplňky a zbývající čas aktuálního fakturačního cyklu. Datum obnovení vašeho předplatného se nezmění."
       ],
       "This number will be shown on all future invoices": [
         "Toto číslo bude uvedeno na všech budoucích fakturách"
@@ -17188,6 +17264,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Vaše karta byla zamítnuta. Zadejte prosím jinou kartu nebo kontaktujte svou banku pro autorizaci platby."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit za nevyužitou část vašeho předchozího předplatného"
+      ],
+      "Credits will be added to your balance": [
+        "Kredity budou přidány k vašemu zůstatku"
       ]
     },
     "Payments.plan_name": {
@@ -17783,14 +17867,35 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } za doporučení"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Pokud zrušíte před tímto datem,** budete **sníženi** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } po skončení zkušební verze."
+      ],
+      "**If you don't subscribe,** you'll be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }.": [
+        "**Pokud si nepředplatíte službu,** budete **sníženi** na ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] }."
       ],
       "**If you don’t cancel,** your full plan will start and you’ll get **${ referrerRewardAmount }** in credits.": [
         "**Pokud nezrušíte,** váš plný tarif začne platit a získáte **${ referrerRewardAmount }** v kreditech."
       ],
       "**If you subscribe before this date,** you'll get **${ referrerRewardAmount }** in credits.": [
         "**Pokud si předplatíte službu před tímto datem,** získáte **${ referrerRewardAmount }** v kreditech."
+      ],
+      "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
+        "Užívejte si **${ planTitle }** zdarma až do **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Pozvěte přátele. Získejte kredity."
+      ],
+      "Refer friends": [
+        "Doporučte přátele"
+      ],
+      "Start earning credits": [
+        "Začněte získávat kredity"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Můžete získat až **${ maxRewardAmount }** v kreditech."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Zbývá vám **${ daysRemaining } den** k prozkoumání všech výkonných funkcí, které **${ planTitle }** nabízí.",
@@ -18255,7 +18360,7 @@
         "Pro ověření, že jde o vaše telefonní číslo, zadejte ověřovací kód zaslaný na adresu ${ boldPhoneNumber }."
       ],
       "to prevent attackers from taking over your account": [
-        "zabránit útočníkům v převzetí vašeho účtu"
+        "abyste zabránili útočníkům v převzetí vašeho účtu"
       ],
       "to recover your account and data if you're ever locked out": [
         "pro obnovení vašeho účtu a dat, pokud kdykoli ztratíte přístup"
@@ -19150,6 +19255,12 @@
         "${ VPN_CONNECTIONS } vysokorychlostních připojení VPN",
         "${ VPN_CONNECTIONS } vysokorychlostních připojení VPN"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.servers }+ VPN serverů v ${ vpnServersCountData.free.countries } zemi",
+        "${ vpnServersCountData.free.servers }+ VPN serverů ve ${ vpnServersCountData.free.countries }+ zemích",
+        "${ vpnServersCountData.free.servers }+ VPN serverů ve ${ vpnServersCountData.free.countries }+ zemích",
+        "${ vpnServersCountData.free.servers }+ VPN serverů ve ${ vpnServersCountData.free.countries }+ zemích"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ země",
         "${ vpnServersCountData.paid.countries }+ země",
@@ -19186,6 +19297,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Amount due now": [
+        "Částka splatná nyní"
+      ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "A získejte ${ referralInfo.uiData.refereeRewardAmount } v kreditech, pokud se přihlásíte k odběru."
       ],
@@ -19215,9 +19329,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Pokračovat s ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Pokračovat s bezplatným tarifem"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Vytvořte účet ${ BRAND_NAME }"
@@ -19342,8 +19453,8 @@
       "Select ${ title }": [
         "Vybrat ${ title }"
       ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "Vyberte si službu a užijte si prémiovou verzi na ${ TRIAL_DURATION_DAYS } dnů zdarma. Platební karta není vyžadována."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Vyberte si službu a užijte si prémiovou verzi na ${ TRIAL_DURATION_DAYS } dnů zdarma."
       ],
       "Selected": [
         "Vybráno"
@@ -19369,6 +19480,9 @@
       "Start free trial": [
         "Spustit zkušební verzi zdarma"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Začněte používat ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Úložiště"
       ],
@@ -19387,6 +19501,9 @@
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Poté ${ priceWithDiscountPerMonth } měsíčně, pokud se přihlásíte k odběru."
       ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Poté ${ priceWithDiscountPerMonth } měsíčně. Lze kdykoli zrušit."
+      ],
       "To redeem on your next paid subscription.": [
         "Uplatnit na vaši další platbu předplatného."
       ],
@@ -19394,7 +19511,7 @@
         "Celkem"
       ],
       "Trusted by over 100 million people and businesses": [
-        "Důvěryhodný pro více než 100 milionů lidí a firem"
+        "Důvěra více než 100 milionů lidí a firem"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Vyzkoušejte zdarma ${ BRAND_NAME } na ${ TRIAL_DURATION_DAYS } dnů"
@@ -19836,6 +19953,12 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Získejte až ${ maxRewardAmount } v kreditech"
+      ],
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Získejte kredity, pokud si osoba, kterou pozvete, předplatí ${ BRAND_NAME } tarif."
+      ],
       "Get up to ${ credits } in credits.": [
         "Získejte až ${ credits } v kreditech."
       ],
@@ -20833,6 +20956,9 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Navždy zdarma"
+      ],
       "Pay once, access forever.": [
         "Zaplaťte jednou a přistupujte navždy."
       ],
@@ -21357,6 +21483,18 @@
       "${ feature } is now active": [
         "${ feature } je nyní aktivní"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } pozvaný přítel",
+        "${ friendsInvited } pozvaní přátelé",
+        "${ friendsInvited } pozvaných přátel",
+        "${ friendsInvited } pozvaných přátel"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } přítel si předplatil tarif",
+        "${ friendsSubscribed } přátelé si předplatili tarif",
+        "${ friendsSubscribed } přátel si předplatilo tarif",
+        "${ friendsSubscribed } přátel si předplatilo tarif"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -21536,6 +21674,9 @@
       ],
       "Appearance": [
         "Vzhled"
+      ],
+      "Application access": [
+        "Přístup aplikace"
       ],
       "Apply filter to existing messages": [
         "Použít filtr na existující zprávy"
@@ -21737,6 +21878,9 @@
       ],
       "Credentials": [
         "Přihlašovací údaje"
+      ],
+      "Credit earned": [
+        "Získané kredity"
       ],
       "Credits": [
         "Kredity"
@@ -22029,6 +22173,9 @@
         "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů.",
         "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů."
       ],
+      "Feature access": [
+        "Přístup k funkcím"
+      ],
       "Filter for more focus": [
         "Filtrace pošty pro větší zaměření"
       ],
@@ -22151,6 +22298,9 @@
       ],
       "How to refer a friend and get credits": [
         "Jak doporučit známého a získat kredity"
+      ],
+      "How your free trial works": [
+        "Jak funguje bezplatná zkušební verze"
       ],
       "Human verification": [
         "Lidské ověření"
@@ -22292,6 +22442,9 @@
       ],
       "No account information was found in any data breaches": [
         "V uniklých datech nebyly nalezeny žádné informace o vašich účtech"
+      ],
+      "No events": [
+        "Žádné události"
       ],
       "No need to empty the trash": [
         "Nemusíte sami vyprazdňovat koš"
@@ -22701,6 +22854,9 @@
       "There are no events for your account": [
         "Pro váš účet nejsou k dispozici žádné události"
       ],
+      "There are no events yet for your organization.": [
+        "Pro vaši organizaci zatím nejsou k dispozici žádné události."
+      ],
       "There are no groups": [
         "Nejsou zde žádné skupiny"
       ],
@@ -22811,6 +22967,9 @@
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Videokonference pomocí ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Videokonference s aplikací Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Zobrazení událostí organizace po navýšení na Professional"
@@ -23016,6 +23175,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Změna na straně Gmailu blokuje připojení ${ BRAND_NAME }. Udělte oprávnění k obnovení funkčnosti e-mailu"
+      ],
       "Account is disconnected": [
         "Účet je odpojen"
       ],
@@ -23162,9 +23324,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "Adresa byla odpojena. Odesílání a přijímání zpráv je pozastaveno. Znovu se připojte, abyste tuto adresu znovu povolili."
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."

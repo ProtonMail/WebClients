@@ -99,6 +99,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Lägg till ${ BRAND_NAME }-konto"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Lägg till ${ BRAND_NAME }-adress"
+      ],
       "Add account": [
         "Lägg till konto"
       ],
@@ -1752,6 +1755,12 @@
       "Disallow unsigned mail": [
         "Tillåt ej osignerad e-post"
       ],
+      "Disconnect": [
+        "Koppla från"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Koppla från adress ”${ emailAddress }”"
+      ],
       "Edit": [
         "Redigera"
       ],
@@ -1775,6 +1784,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Generera saknade nycklar för adress “${ emailAddress }“"
+      ],
+      "Grant permission": [
+        "Bevilja behörighet"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Bevilja behörighet till ”${ emailAddress }”"
       ],
       "Reconnect": [
         "Anslut igen"
@@ -1819,6 +1834,9 @@
       ],
       "Orphan": [
         "Övergiven"
+      ],
+      "Permission revoked": [
+        "Behörighet återkallad"
       ]
     },
     "Admin": {
@@ -2091,9 +2109,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Efter provperioden slutar den ${ formattedDate } kommer den bli en betald prenumeration som förnyas automatiskt var ${ renewCycle }:e månad. Du kommer inte att debiteras om du avbryter före ${ formattedDate }."
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "Genom att klicka på “Prova“ godkänner du våra ${ termsAndConditions }."
       ],
@@ -6237,6 +6252,11 @@
         "Postnummer är obligatoriskt"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Logga in med samma Gmail-adress som du ursprungligen anslöt"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Ett fel uppstod vid läsning av din fil ${ formattedFilename }. Felaktigt filformat."
@@ -9755,6 +9775,9 @@
       "No countries enabled": [
         "Inga länder aktiverade"
       ],
+      "No credit card required": [
+        "Inget kreditkort krävs"
+      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Ingen dataåterställningsmetod inställd, du riskerar att förlora åtkomst till dina data"
       ],
@@ -11008,6 +11031,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME }-tjänster"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Med e-postkategorier hamnar viktiga meddelanden i en primär inkorg. Allt annat organiseras i kategorier."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Med grupper kan du snabbt och enkelt skicka e-post till alla personer i en specificerad grupp."
       ],
@@ -11923,10 +11949,6 @@
         "${ nbYear } år",
         "${ nbYear } år"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } av ${ MaxAddresses } e-postadress",
-        "${ UsedAddresses } av ${ MaxAddresses } e-postadresser"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
       ],
@@ -12410,6 +12432,9 @@
       "Email address": [
         "E-postadress"
       ],
+      "Email categories": [
+        "E-postkategorier"
+      ],
       "Email or username": [
         "E-post eller användarnamn"
       ],
@@ -12427,9 +12452,6 @@
       ],
       "Emails (last month)": [
         "E-post (senaste månaden)"
-      ],
-      "Emails categories": [
-        "E-postkategorier"
       ],
       "Enabled": [
         "Aktiverat"
@@ -15321,6 +15343,9 @@
       "${ Filter.Name } created": [
         "${ Filter.Name } skapat"
       ],
+      "${ MEET_APP_NAME } video conferencing settings have been updated": [
+        "Inställningar för ${ MEET_APP_NAME }-videokonferenser har uppdaterats"
+      ],
       "${ reason } has been disabled": [
         "${ reason } har inaktiverats"
       ],
@@ -15389,6 +15414,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tvåfaktorsautentisering krävs inte längre"
+      ],
+      "Zoom video conferencing settings have been updated": [
+        "Inställningar för Zoom-videokonferenser har uppdaterats"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -16626,6 +16654,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Belopp att betala efter provperioden den ${ formattedDate }"
+      ],
       "Billing Country": [
         "Faktureringsland"
       ],
@@ -16689,7 +16720,7 @@
       "Taxes": [
         "Moms"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "användarvillkor"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -18583,6 +18614,10 @@
         "${ VPN_CONNECTIONS } höghastighets VPN-anslutning",
         "${ VPN_CONNECTIONS } höghastighets VPN-anslutningar"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.servers }+ VPN-serverar i ${ vpnServersCountData.free.countries } land",
+        "${ vpnServersCountData.free.servers }+ VPN-serverar i ${ vpnServersCountData.free.countries } länder"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ land",
         "${ vpnServersCountData.paid.countries }+ länder"
@@ -18615,6 +18650,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alla grundläggande tjänster för ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Amount due now": [
+        "Att betala nu"
+      ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "Och få ${ referralInfo.uiData.refereeRewardAmount } i krediter, om du prenumererar."
       ],
@@ -18644,9 +18682,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Fortsätt med ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Fortsätt med gratispaket"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
@@ -18769,8 +18804,8 @@
       "Select ${ title }": [
         "Välj ${ title }"
       ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "Välj en tjänst och njut av premiumversionen gratis i ${ TRIAL_DURATION_DAYS } dagar. Inget kreditkort krävs."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Välj en tjänst och njut av premiumversionen i ${ TRIAL_DURATION_DAYS } dagar gratis."
       ],
       "Selected": [
         "Vald"
@@ -18816,6 +18851,9 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Sedan ${ priceWithDiscountPerMonth } per månad, om du prenumererar."
+      ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Sedan ${ priceWithDiscountPerMonth } per månad. Avbryt när som helst."
       ],
       "To redeem on your next paid subscription.": [
         "För att lösa in på din nästa betalda prenumeration."
@@ -21312,6 +21350,9 @@
       "Email breaches": [
         "E-postintrång"
       ],
+      "Email categories": [
+        "E-postkategorier"
+      ],
       "Email composer": [
         "E-postkompositör"
       ],
@@ -22520,9 +22561,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermappar kommer att visas som separata mappar i ${ MAIL_APP_NAME }"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "Adressen har kopplats från. Sändning och mottagning av meddelanden är pausad. Återanslut för att aktivera denna adress igen."
       ],
       "The import will start with the most recent messages.": [
         "Importering kommer att börja med de senaste meddelandena."

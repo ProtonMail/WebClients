@@ -76,7 +76,7 @@
         "Accepta"
       ],
       "Access account": [
-        "Accés al compte"
+        "Accedeix al compte"
       ],
       "activate": [
         "activar"
@@ -98,6 +98,9 @@
       ],
       "Add ${ BRAND_NAME } Account": [
         "Afegeix un compte de ${ BRAND_NAME }"
+      ],
+      "Add ${ BRAND_NAME } address": [
+        "Afegiu l'adreça de ${ BRAND_NAME }"
       ],
       "Add account": [
         "Afegeix un compte"
@@ -1758,6 +1761,12 @@
       "Disallow unsigned mail": [
         "No permetis correus sense signar"
       ],
+      "Disconnect": [
+        "Desconnecteu"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Desconnecteu l'adreça “${ emailAddress }”"
+      ],
       "Edit": [
         "Edita"
       ],
@@ -1781,6 +1790,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Genera les claus que falten per a l'adreça «${ emailAddress }»"
+      ],
+      "Grant permission": [
+        "Doneu-li permís"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Doneu permís a “${ emailAddress }“"
       ],
       "Reconnect": [
         "Torneu a connectar-vos"
@@ -1825,6 +1840,9 @@
       ],
       "Orphan": [
         "Orfà"
+      ],
+      "Permission revoked": [
+        "S'ha revocat el permís"
       ]
     },
     "Admin": {
@@ -2101,10 +2119,10 @@
     },
     "b2b_trials_2025_Info": {
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+        "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada ${ renewCycle } mesos. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Un cop finalitzi el període de prova el ${ formattedDate }, es convertirà en una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
+        "Un cop finalitzi el període de prova el ${ formattedDate }, passarà a ser una subscripció de pagament que es renovarà automàticament cada mes. No se us cobrarà si la cancel·leu abans del ${ formattedDate }."
       ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "En fer clic a \"Prova\", accepteu els nostres ${ termsAndConditions }."
@@ -4810,7 +4828,7 @@
         "**Protegida** amb xifratge d’extrem a extrem"
       ],
       "**Simple and user-friendly:** import your files and setup in minutes": [
-        "**Senzill i fàcil d'utilitzar:** importeu els vostres fitxers i configureu-los en qüestió de minuts."
+        "**Senzilla i fàcil d'utilitzar:** importeu els vostres fitxers i configureu-los en qüestió de minuts."
       ],
       "Advanced protection that goes beyond industry standards": [
         "Protecció avançada que va més enllà dels estàndards de la indústria"
@@ -5600,8 +5618,8 @@
         "Podrien demanar d'accedir al meu compte en cas d'emergència."
       ],
       "They will receive access automatically in **${ days } day**, on **${ formattedAccessibleAt }**, you can reject their request or give them access immediately at any time.": [
-        "Rebran accés automàticament en **${ days } dia**, el **${ formattedAccessibleAt }**, podreu rebutjar la seva sol·licitud o donar-los accés immediat en qualsevol moment.",
-        "Rebran accés automàticament en **${ days } dies**, el **${ formattedAccessibleAt }**, podreu rebutjar la seva sol·licitud o donar-los accés immediat en qualsevol moment."
+        "Es rebrà l'accés automàticament en **${ days } dia**, el **${ formattedAccessibleAt }**. Podreu rebutjar la sol·licitud o donar accés immediat en qualsevol moment.",
+        "Es rebrà l'accés automàticament en **${ days } dies**, el **${ formattedAccessibleAt }**. Podreu rebutjar la sol·licitud o donar accés immediat en qualsevol moment."
       ],
       "This will take effect immediately.": [
         "Això tindrà efecte immediat."
@@ -5668,8 +5686,8 @@
         "Obtindràs accés al seu compte de manera immediata."
       ],
       "You'll receive access to their account in **${ days } day**, or when they approve your request.": [
-        "Rebreu accés al seu compte en **${ days } dia**, o quan aprovin la vostra sol·licitud.",
-        "Rebreu accés al seu compte en **${ days } dies**, o quan aprovin la vostra sol·licitud."
+        "Rebreu accés al seu compte en **${ days } dia** o quan aprovin la vostra sol·licitud.",
+        "Rebreu accés al seu compte en **${ days } dies** o quan aprovin la vostra sol·licitud."
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "El contacte d'emergència ${ name } està sol·licitant accés al vostre compte."
@@ -6306,6 +6324,11 @@
       ],
       "ZIP code is required": [
         "Es requereix el codi postal."
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Inicieu la sessió amb la mateixa adreça de Gmail amb la que us vau connectar originalment"
       ]
     },
     "Error importing calendar": {
@@ -8551,7 +8574,7 @@
         "Assignat"
       ],
       "Allow logging of location and connection details": [
-        "Permeteu el registre de la ubicació i els detalls de connexió"
+        "Permet el registre de la ubicació i els detalls de connexió"
       ],
       "Allow recovery by email": [
         "Permet la recuperació per correu electrònic"
@@ -9832,6 +9855,9 @@
       "No countries enabled": [
         "Cap país activat"
       ],
+      "No credit card required": [
+        "No es requereix targeta de crèdit"
+      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "No s'ha establert cap mètode de recuperació de dades. Esteu en risc de perdre l'accés a les vostres dades"
       ],
@@ -9912,6 +9938,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Obriu la guia per obtenir accions recomanades i enllaços útils."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Obriu la configuració de l'extensió a Safari i comproveu que els permisos del lloc web estiguin activats per als dominis de ${ BRAND_NAME }"
       ],
       "or ${ selectFileButton }": [
         "o ${ selectFileButton }"
@@ -11091,6 +11120,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Amb les categories de correu electrònic, els missatges importants arriben a una safata d'entrada principal. La resta s'organitza en categories."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Amb els grups, podeu enviar correus electrònics de manera ràpida i senzilla a totes les persones d'un grup determinat."
       ],
@@ -12028,9 +12060,9 @@
         "${ nbYear } any",
         "${ nbYear } anys"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } de ${ MaxAddresses } adreça de correu electrònic",
-        "${ UsedAddresses } de ${ MaxAddresses } adreces de correu electrònic"
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } de ${ maxAddresses } adreça de correu electrònic",
+        "${ usedAddresses } de ${ maxAddresses } adreces de correu electrònic"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
@@ -12515,6 +12547,9 @@
       "Email address": [
         "Adreça de correu electrònic"
       ],
+      "Email categories": [
+        "Categories de correu electrònic"
+      ],
       "Email or username": [
         "Correu electrònic o nom d'usuari"
       ],
@@ -12532,9 +12567,6 @@
       ],
       "Emails (last month)": [
         "Correus electrònics (el mes passat)"
-      ],
-      "Emails categories": [
-        "Categories de correus"
       ],
       "Enabled": [
         "Habilitat"
@@ -13325,6 +13357,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Per a"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } adreça de correu electrònic",
+        "${ usedBYOEAddresses } de ${ maxBYOEAddresses } adreces de correu electrònic"
       ]
     },
     "Label for adding a new custom domain": {
@@ -16718,6 +16756,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Import a pagar després del període de prova el ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de facturació"
       ],
@@ -16781,8 +16822,8 @@
       "Taxes": [
         "Impostos"
       ],
-      "terms & conditions": [
-        "els termes i condicions"
+      "terms and conditions": [
+        "termes i condicions"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupó és vàlid per a ${ couponRedemptions } renovació.",
@@ -17797,7 +17838,7 @@
         "Afegeix un número de telèfon de recuperació"
       ],
       "Add an alternative email address": [
-        "Afegiu una adreça de correu alternativa"
+        "Afegeix una adreça de correu electrònic alternativa"
       ],
       "Add an email": [
         "Afegiu un correu electrònic"
@@ -18786,13 +18827,17 @@
         "${ VPN_CONNECTIONS } connexió VPN d\"alta velocitat",
         "${ VPN_CONNECTIONS } connexions VPN d'alta velocitat"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "Més de ${ vpnServersCountData.free.servers } servidors VPN a ${ vpnServersCountData.free.countries } país",
+        "més de ${ vpnServersCountData.free.servers } servidors VPN a ${ vpnServersCountData.free.countries } països"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
-        "${ vpnServersCountData.paid.countries }+ país",
-        "${ vpnServersCountData.paid.countries }+ països"
+        "Més d'${ vpnServersCountData.paid.countries } país",
+        "Més de ${ vpnServersCountData.paid.countries } països"
       ],
       "${ vpnServersCountData.paid.servers }+ server across": [
-        "${ vpnServersCountData.paid.servers }+ servidor a través de",
-        "${ vpnServersCountData.paid.servers }+ servidors a través de"
+        "Més d'${ vpnServersCountData.paid.servers } servidor a",
+        "Més de ${ vpnServersCountData.paid.servers } servidors a"
       ],
       "/user": [
         "/usuari"
@@ -18817,6 +18862,9 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tots els serveis bàsics de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Amount due now": [
+        "Import a pagar ara"
       ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "I si us subscriviu, obtindreu ${ referralInfo.uiData.refereeRewardAmount } en crèdits."
@@ -18847,9 +18895,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Continua amb ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Continua amb el pla gratuït"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Creeu un compte de ${ BRAND_NAME }"
@@ -18972,8 +19017,8 @@
       "Select ${ title }": [
         "Selecciona ${ title }"
       ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "Seleccioneu un servei i gaudiu de la versió prèmium de franc durant ${ TRIAL_DURATION_DAYS } dies. No cal targeta de crèdit."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Seleccioneu un servei i gaudiu de la versió prèmium de franc durant ${ TRIAL_DURATION_DAYS } dies."
       ],
       "Selected": [
         "Seleccionat"
@@ -19019,6 +19064,9 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Aleshores ${ priceWithDiscountPerMonth } al mes, si us subscriviu."
+      ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Aleshores, ${ priceWithDiscountPerMonth } al mes. Cancel·leu en qualsevol moment."
       ],
       "To redeem on your next paid subscription.": [
         "Per bescanviar-ho en la propera subscripció de pagament."
@@ -20906,8 +20954,8 @@
         "La característica ${ feature } està ara activa."
       ],
       "${ friendsInvited } Friend invited": [
-        "${ friendsInvited } amistat convidada",
-        "${ friendsInvited } amistats convidades"
+        "S'ha convidat ${ friendsInvited } amistat",
+        "S'han convidat ${ friendsInvited } amistats"
       ],
       "${ friendsSubscribed } Friend subscribed": [
         "${ friendsSubscribed } amistat s'ha subscrit",
@@ -20971,7 +21019,7 @@
         "Recuperació de compte"
       ],
       "Account restricted": [
-        "Compte restringit"
+        "S'ha restringit el compte"
       ],
       "Account suspended": [
         "Compte suspès"
@@ -21518,6 +21566,9 @@
       ],
       "Email breaches": [
         "Violacions del correu electrònic"
+      ],
+      "Email categories": [
+        "Categories de correu electrònic"
       ],
       "Email composer": [
         "Editor de correu electrònic"
@@ -22581,6 +22632,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Un canvi per part de Gmail està bloquejant que ${ BRAND_NAME } es pugui connectar. Concediu permís per restablir la funcionalitat del correu electrònic"
+      ],
       "Account is disconnected": [
         "El compte està desconnectat"
       ],
@@ -22727,9 +22781,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les subcarpetes del sistema es mostraran com a carpetes independents a ${ MAIL_APP_NAME }"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "L'adreça s'ha desconnectat. L'enviament i la recepció de missatges estan pausats. Torneu a connectar-vos per habilitar aquesta adreça de nou."
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
