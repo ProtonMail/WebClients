@@ -766,9 +766,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Bir daha sorma"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Panonuzun ${ timeoutDurationHumanReadable } sonra otomatik olarak temizlenmesini ister misiniz?"
       ]
@@ -1808,9 +1805,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "${ PASS_SHORT_APP_NAME }, bir öge notunu öge şifreleme anahtarıyla şifreler ve notu yalnızca ögeye erişimi olan kullanıcılar görüntüleyebilir. ${ BRAND_NAME } veya SimpleLogin bile notu göremez."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "En iyi ${ PASS_APP_NAME } deneyimine ulaşmak için lütfen gerekli eklenti izinlerini verin"
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Oturum açma kayıtlarınızı hızla otomatik olarak doldurmak için ${ browser.title } için ${ PASS_APP_NAME } kurun."
       ],
@@ -1934,8 +1928,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3037,9 +3030,6 @@
       ],
       "Get the extension for your browser.": [
         "Tarayıcınıza uygun eklentiyi edinin."
-      ],
-      "Grant": [
-        "İzin ver"
       ],
       "Hidden": [
         "Gizli"
@@ -4444,9 +4434,6 @@
       ],
       "Get Started": [
         "Başlayalım"
-      ],
-      "Grant permissions": [
-        "İzinleri ver"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Gizli kasalar arama ve otomatik doldurma sırasında görüntülenmez."

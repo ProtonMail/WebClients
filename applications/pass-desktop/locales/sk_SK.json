@@ -770,9 +770,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Už sa nepýtať"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Chcete, aby sa vaša schránka automaticky vymazala po ${ timeoutDurationHumanReadable }?"
       ]
@@ -1854,9 +1851,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "V ${ PASS_SHORT_APP_NAME } je poznámka k položke zašifrovaná pomocou šifrovacieho kľúča položky a poznámku môžu zobraziť len používatelia, ktorí majú prístup k položke. Nemôže ju vidieť ani ${ BRAND_NAME } ani SimpleLogin."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Pre čo najlepší zážitok z rozšírenia ${ PASS_APP_NAME }, udeľte rozšíreniu potrebné oprávnenia"
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Nainštalujte ${ PASS_APP_NAME } pre ${ browser.title } na rýchle automatické vyplnenie prihlasovacích údajov."
       ],
@@ -1982,12 +1976,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
-        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
       ],
       "Moving items": [
         "Presúvanie položiek"
@@ -3129,9 +3117,6 @@
       ],
       "Get the extension for your browser.": [
         "Získajte rozšírenie pre svoj prehliadač."
-      ],
-      "Grant": [
-        "Povoliť"
       ],
       "Hidden": [
         "Skrytý"
@@ -4548,9 +4533,6 @@
       ],
       "Get Started": [
         "Začíname"
-      ],
-      "Grant permissions": [
-        "Udeliť oprávnenia"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Skryté trezory nebudú viditeľné počas vyhľadávania a automatického dopĺňania."

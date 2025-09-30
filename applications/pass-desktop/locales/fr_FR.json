@@ -766,9 +766,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Ne plus me demander"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Voulez-vous que votre presse-papiers soit automatiquement effacé après ${ timeoutDurationHumanReadable } ?"
       ]
@@ -1808,9 +1805,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "Dans ${ PASS_SHORT_APP_NAME }, une note est chiffrée avec la clé de chiffrement de l'élément et seuls les utilisateurs ayant accès à l'élément peuvent voir la note. Ni ${ BRAND_NAME } ni SimpleLogin ne peuvent la voir."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Pour utiliser ${ PASS_APP_NAME } dans les meilleures conditions, accordez les autorisations nécessaires à l'extension."
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Installez ${ PASS_APP_NAME } pour ${ browser.title } et profitez de la fonctionnalité de remplissage automatique de vos identifiants."
       ],
@@ -1932,10 +1926,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
-        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2507,6 +2497,9 @@
       "You may close this tab.": [
         "Vous pouvez fermer cet onglet."
       ],
+      "You may need to accept a permission prompt and may have to restart the application depending on your system.": [
+        "Vous devrez peut-être accepter un prompt d'autorisation et devrez peut-être redémarrer l'application en fonction de votre système."
+      ],
       "You may need to grant accessiblity permission to ${ PASS_APP_NAME }.": [
         "Vous devrez peut-être accorder l'autorisation d'accessibilité à ${ PASS_APP_NAME }."
       ],
@@ -3034,9 +3027,6 @@
       ],
       "Get the extension for your browser.": [
         "Obtenez l'extension pour votre navigateur."
-      ],
-      "Grant": [
-        "Autoriser"
       ],
       "Hidden": [
         "Masqué"
@@ -4441,9 +4431,6 @@
       ],
       "Get Started": [
         "Commencer"
-      ],
-      "Grant permissions": [
-        "Accordez les autorisations"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Les coffres-forts cachés ne seront pas visibles lors de la recherche et du remplissage automatique."

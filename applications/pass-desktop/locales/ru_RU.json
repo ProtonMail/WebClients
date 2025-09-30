@@ -1793,9 +1793,6 @@
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "В ${ PASS_SHORT_APP_NAME } заметка элемента шифруется с помощью ключа шифрования элемента, и только пользователи, имеющие доступ к элементу, могут просмотреть заметку. Даже ${ BRAND_NAME } или SimpleLogin не смогут ее увидеть."
       ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Для того чтобы получить лучший опыт использования ${ PASS_APP_NAME }, пожалуйста, предоставьте необходимые разрешения расширению."
-      ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Установите ${ PASS_APP_NAME } для ${ browser.title }, чтобы быстро автозаполнять логины."
       ],
@@ -1918,12 +1915,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
-        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -3015,9 +3006,6 @@
       ],
       "Get the extension for your browser.": [
         "Получить расширение для браузера."
-      ],
-      "Grant": [
-        "Предоставить"
       ],
       "Hidden": [
         "Скрыто"
@@ -4342,9 +4330,6 @@
       ],
       "Get Started": [
         "Начать"
-      ],
-      "Grant permissions": [
-        "Предоставить разрешения"
       ],
       "Hide-my-email aliases": [
         "Псевдонимы hide-my-email"
