@@ -6,6 +6,7 @@ import { useNotifications } from '@proton/components';
 import {
     AbortError,
     ConnectionError,
+    DecryptionError,
     ProtonDriveError,
     RateLimitedError,
     ServerError,
@@ -19,7 +20,12 @@ export const shouldTrackError = (err: Error) =>
     !(err instanceof ValidationError) &&
     !(err instanceof AbortError) &&
     !(err instanceof RateLimitedError) &&
-    !(err instanceof ConnectionError);
+    !(err instanceof ConnectionError) &&
+    // All decryption errors are handled by the metric system.
+    // It goes to metrics and for cases we need to investigate we also report
+    // individual cases to Sentry. This error will be thrown to client in cases
+    // where client is listing nodes and some nodes cannot be returned.
+    !(err instanceof DecryptionError);
 
 export const shouldShowNotification = (err: Error) => !(err instanceof AbortError);
 
