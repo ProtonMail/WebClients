@@ -49,7 +49,7 @@ const store = configureStore({
         ),
     enhancers: (enhancers) =>
         enhancers().concat(
-            ENV === 'development'
+            ENV === 'development' && REDUX_DEVTOOLS
                 ? [
                       devToolsEnhancer({
                           name: `store::sw::${uniqueId()}`,
