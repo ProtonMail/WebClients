@@ -4,13 +4,13 @@ import { HashRouter as Router } from 'react-router-dom';
 import { ExtensionClient } from 'proton-pass-extension/lib/components/Extension/ExtensionClient';
 import { ExtensionError } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
 import { ExtensionStore } from 'proton-pass-extension/lib/components/Extension/ExtensionStore';
+import { useExtensionNotificationEnhancer } from 'proton-pass-extension/lib/hooks/useExtensionNotificationEnhancer';
 import { WorkerMessageType, type WorkerMessageWithSender } from 'proton-pass-extension/types/messages';
 
 import { ErrorBoundary, NotificationsContext, useNotifications } from '@proton/components';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { ClipboardProvider } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
-import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 
 import { AppGuard } from './AppGuard';
 import { PopupProvider } from './PopupProvider';
@@ -20,7 +20,7 @@ import './Popup.scss';
 export const Popup = () => {
     const notificationsManager = useContext(NotificationsContext);
     const { createNotification } = useNotifications();
-    const enhance = useNotificationEnhancer();
+    const enhance = useExtensionNotificationEnhancer();
 
     const onWorkerMessage = useCallback((message: WorkerMessageWithSender) => {
         if (message.type === WorkerMessageType.NOTIFICATION) {
