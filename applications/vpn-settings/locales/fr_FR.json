@@ -1110,6 +1110,12 @@
       "Disallow unsigned mail": [
         "Interdire les messages non signés"
       ],
+      "Disconnect": [
+        "Se déconnecter"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Déconnecter l'adresse « ${ emailAddress } »"
+      ],
       "Edit": [
         "Modifier"
       ],
@@ -1133,6 +1139,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Générer les clés manquantes pour l'adresse « ${ emailAddress } »"
+      ],
+      "Grant permission": [
+        "Accorder l’autorisation"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Accorder l'autorisation à « ${ emailAddress } »"
       ],
       "Reconnect": [
         "Se reconnecter"
@@ -1177,6 +1189,9 @@
       ],
       "Orphan": [
         "Orpheline"
+      ],
+      "Permission revoked": [
+        "Autorisation révoquée"
       ]
     },
     "Admin": {
@@ -4071,6 +4086,11 @@
       ],
       "ZIP code is required": [
         "Le code postal est nécessaire."
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Veuillez vous connecter avec la même adresse Gmail que celle que vous avez connectée à l'origine"
       ]
     },
     "Error importing calendar": {
@@ -7804,10 +7824,6 @@
         "${ nbDay } jour",
         "${ nbDay } jours"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "Nombre d'adresses e-mail : ${ UsedAddresses } sur ${ MaxAddresses }",
-        "Nombre d'adresses e-mail : ${ UsedAddresses } sur ${ MaxAddresses }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
       ],
@@ -10815,6 +10831,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Montant dû après la version d'essai le ${ formattedDate }"
+      ],
       "Billing Country": [
         "Pays de facturation "
       ],
@@ -10875,8 +10894,8 @@
       "Taxes": [
         "Taxes"
       ],
-      "terms & conditions": [
-        "les conditions générales d’utilisation"
+      "terms and conditions": [
+        "conditions générales d'utilisation"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",
@@ -14676,6 +14695,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Un changement du côté de Gmail bloque ${ BRAND_NAME } de se connecter. Accordez la permission de rétablir la fonctionnalité du message."
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Un administrateur peut gérer les comptes utilisateur ou accorder des droits administrateur aux autres utilisateurs. Seul l'administrateur principal peut modifier l'abonnement de l'organisation."
       ],
@@ -14750,9 +14772,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "L'adresse a été déconnectée. L'envoi et la réception de messages est suspendu. Reconnectez-vous pour activer cette adresse à nouveau."
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."

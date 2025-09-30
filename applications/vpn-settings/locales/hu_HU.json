@@ -7388,10 +7388,6 @@
         "${ nbDay } nap",
         "${ nbDay } nap"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből",
-        "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
       ],
@@ -10348,9 +10344,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Az előfizetés megújul ${ renewPriceStr }, de bármikor lemondhatja."
-      ],
-      "terms & conditions": [
-        "szerződési feltételek"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "A kupon ${ couponRedemptions } megújításra érvényes.",

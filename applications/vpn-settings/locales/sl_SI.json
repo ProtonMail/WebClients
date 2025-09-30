@@ -6863,12 +6863,6 @@
         "${ nbDay } dneva",
         "${ nbDay } dni"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } od ${ MaxAddresses } e-poštnega naslova",
-        "${ UsedAddresses } od ${ MaxAddresses } e-poštnih naslovov",
-        "${ UsedAddresses } od ${ MaxAddresses } e-poštnih naslovov",
-        "${ UsedAddresses } od ${ MaxAddresses } e-poštnih naslovov"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"
       ],
@@ -9760,9 +9754,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovi se za ${ renewPriceStr }. Prekliči kadar koli."
-      ],
-      "terms & conditions": [
-        "pogoji storitve"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon velja za ${ couponRedemptions } podaljšanje.",

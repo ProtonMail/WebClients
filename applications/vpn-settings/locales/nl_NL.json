@@ -987,6 +987,9 @@
       "User": [
         "Gebruiker"
       ],
+      "Users and addresses": [
+        "Gebruikers en adressen"
+      ],
       "Verify": [
         "Verifiëren"
       ],
@@ -5531,6 +5534,12 @@
       "**Import your existing codes** from other 2FA apps, like Google Authenticator": [
         "**Importeer uw bestaande codes** van andere 2FA-apps, zoals Google Authenticator"
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Stap 1:** Nodig uw vrienden uit voor ${ BRAND_NAME } met uw verwijzingssnelkoppeling."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Stap 3:** Ontvang ${ referrerRewardAmount } tegoed voor elke persoon die zich inschrijft voor een abonnement."
+      ],
       "**Sync codes** to all your devices": [
         "**Synchroniseer codes** naar al uw apparaten"
       ],
@@ -5596,6 +5605,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Server toevoegen (${ availableAddedCount } beschikbaar)",
         "Server toevoegen (${ availableAddedCount } beschikbaar)"
+      ],
+      "Add video conferencing links to calendar invitations": [
+        "Voeg snelkoppelingen voor videoconferenties toe aan de agenda-uitnodigingen"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Voeg uw naam en logo toe om een gepersonaliseerde ervaring voor uw organisatie te maken."
@@ -7717,10 +7729,6 @@
       "${ nbDay } day": [
         "${ nbDay } dag",
         "${ nbDay } dagen"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen",
-        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
@@ -10752,9 +10760,6 @@
       "Taxes": [
         "Belastingen"
       ],
-      "terms & conditions": [
-        "algemene voorwaarden"
-      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "De kortingscode is geldig voor ${ couponRedemptions } verlenging.",
         "De kortingscode is geldig voor ${ couponRedemptions } verlengingen."
@@ -10820,6 +10825,11 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Uw kaart werd geweigerd. Probeer een andere kaart of neem contact op met uw bank voor het machtigen van de betaling."
+      ]
+    },
+    "Payments.info": {
+      "Credits will be added to your balance": [
+        "Tegoed wordt toegevoegd aan uw saldo."
       ]
     },
     "Payments.plan_name": {
@@ -11308,6 +11318,14 @@
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
+      ]
+    },
+    "Referral": {
+      "Invite friends. Get credits.": [
+        "Nodig vrienden uit. Ontvang tegoed."
+      ],
+      "Start earning credits": [
+        "Begin met het verdienen van tegoed"
       ]
     },
     "Remove organization logo": {
@@ -14357,6 +14375,9 @@
       "Verifying your payment...": [
         "Uw betaling wordt geverifieerd..."
       ],
+      "Video conferencing with Zoom": [
+        "Videovergadering met Zoom"
+      ],
       "View organization events by upgrading to Professional": [
         "Bekijk organisatie afspraken door te upgraden naar Professional"
       ],
@@ -14538,9 +14559,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systeemsubmappen worden weergegeven als aparte mappen in ${ MAIL_APP_NAME }"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "Het adres is losgekoppeld. Berichten verzenden en ontvangen is gepauzeerd. Maak opnieuw verbinding om dit adres opnieuw in te schakelen."
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."

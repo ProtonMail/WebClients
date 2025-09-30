@@ -6871,12 +6871,6 @@
         "${ nbDay } днів",
         "${ nbDay } днів"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } з ${ MaxAddresses } адреси електронної пошти",
-        "${ UsedAddresses } з ${ MaxAddresses } адрес електронної пошти",
-        "${ UsedAddresses } з ${ MaxAddresses } адрес електронної пошти",
-        "${ UsedAddresses } з ${ MaxAddresses } адрес електронної пошти"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
       ],
@@ -9624,9 +9618,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Поновлюється за ціною ${ renewPriceStr }, скасувати можна будь-коли."
-      ],
-      "terms & conditions": [
-        "положення та умови"
       ],
       "The specially discounted price of ${ priceWithDiscount } is valid for the first month. Then it will automatically be renewed at ${ renewPriceStr } every month. You can cancel at any time.": [
         "Спеціальна ціна зі знижкою ${ priceWithDiscount } діє протягом першого місяця. Потім вона буде автоматично поновлюватися за ціною ${ renewPriceStr } щомісяця. Ви можете скасувати її в будь-який момент."

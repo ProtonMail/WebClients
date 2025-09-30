@@ -72,6 +72,9 @@
       "Add external address": [
         "Tambah alamat eksternal"
       ],
+      "add more seats": [
+        "tambah lebih banyak kuota"
+      ],
       "Add PayPal": [
         "Tambahkan akun PayPal"
       ],
@@ -1094,6 +1097,12 @@
       "Disallow unsigned mail": [
         "Larang email tanpa Ttd."
       ],
+      "Disconnect": [
+        "Putuskan"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Putuskan alamat \"${ emailAddress }\""
+      ],
       "Edit": [
         "Sunting"
       ],
@@ -1117,6 +1126,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Hasilkan kunci yang hilang untuk alamat “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Berikan izin"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Berikan izin bagi \"${ emailAddress }\""
       ],
       "Reconnect": [
         "Hubungkan Ulang"
@@ -1161,6 +1176,9 @@
       ],
       "Orphan": [
         "Tidak berinduk"
+      ],
+      "Permission revoked": [
+        "Izin dicabut"
       ]
     },
     "Admin": {
@@ -1891,6 +1909,11 @@
       ],
       "Expand": [
         "Lebarkan"
+      ]
+    },
+    "collider_2025: feature": {
+      "Access to advanced AI models": [
+        "Akses ke berbagai model AI lanjutan"
       ]
     },
     "collider_2025: Info": {
@@ -3978,6 +4001,11 @@
       ],
       "ZIP code is required": [
         "Kode pos diperlukan"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Silakan masuk dengan alamat Gmail yang sama dengan yang Anda gunakan pertama kali untuk terhubung"
       ]
     },
     "Error importing calendar": {
@@ -7580,9 +7608,6 @@
       "${ nbDay } day": [
         "${ nbDay } hari"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } dari ${ MaxAddresses } alamat email"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
@@ -10603,9 +10628,6 @@
       ],
       "Taxes": [
         "Pajak"
-      ],
-      "terms & conditions": [
-        "syarat & ketentuan"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon ini valid untuk ${ couponRedemptions } kali pembaruan."
@@ -14198,6 +14220,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Terdapat perubahan dari Gmail yang menghalangi ${ BRAND_NAME } untuk dapat terhubung. Berikan izin untuk mengukuhkan ulang fungsionalitas email"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Para admin dapat mengelola akun pengguna dan memberikan hak admin kepada pengguna lain. Hanya admin utama yang dapat menyunting paket organisasi."
       ],
@@ -14272,9 +14297,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "Alamat ini telah diputuskan. Pengiriman dan penerimaan pesan sedang dijeda. Hubungkan ulang alamat untuk mengaktifkan kembali alamat ini."
       ],
       "The import will start with the most recent messages.": [
         "Proses impor akan dimulai dari pesan yang paling baru."
