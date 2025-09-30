@@ -3293,6 +3293,9 @@
       "Calendar limit reached": [
         "Le nombre maximum de calendriers a été atteint."
       ],
+      "Can't find any secure link": [
+        "Impossible de trouver un lien sécurisé."
+      ],
       "Cannot export this contact": [
         "Impossible d'exporter ce contact"
       ],
@@ -3816,6 +3819,11 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Veuillez vous connecter avec la même adresse Gmail que celle que vous avez connectée à l'origine"
       ]
     },
     "Error importing calendar": {
@@ -9198,6 +9206,9 @@
       "The spreadsheet failed to be created": [
         "La feuille de calcul n'a pas pu être créée."
       ],
+      "This secure link expired, please change expire date in sharing settings": [
+        "Ce lien sécurisé a expiré. Veuillez modifier la date d'expiration dans les paramètres de partage."
+      ],
       "Trash failed to be emptied": [
         "Le dossier Corbeille n'a pas pu être vidé."
       ],
@@ -9696,6 +9707,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Montant dû après la version d'essai le ${ formattedDate }"
+      ],
       "Billing Country": [
         "Pays de facturation "
       ],
@@ -9747,8 +9761,8 @@
       "Taxes": [
         "Taxes"
       ],
-      "terms & conditions": [
-        "les conditions générales d’utilisation"
+      "terms and conditions": [
+        "conditions générales d'utilisation"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Le code cadeau est valide pour ${ couponRedemptions } renouvellement.",
