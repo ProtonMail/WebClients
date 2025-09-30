@@ -76,5 +76,6 @@ export interface Domain {
     Flags: {
         'mail-intent': boolean;
         'sso-intent': boolean;
+        'dark-web-monitoring': boolean;
     };
 }

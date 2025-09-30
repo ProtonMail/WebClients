@@ -20,3 +20,13 @@ export const updateBreachEmailNotificationsState = (data: any) => ({
     method: 'PATCH',
     data,
 });
+
+export const enableDomainBreachAlert = (domainId: string) => ({
+    url: `account/v1/breaches/domains/${domainId}/breach-alerts`,
+    method: 'PUT',
+});
+
+export const disableDomainBreachAlert = (domainId: string) => ({
+    url: `account/v1/breaches/domains/${domainId}/breach-alerts`,
+    method: 'PATCH',
+});
