@@ -69,7 +69,7 @@ const PrivateHeader = ({
             <TopNavbar>
                 <TopNavbarList>
                     {!isSmallViewport && <TopNavbarB2BOnboardingButton />}
-                    {!isSmallViewport && <TopNavbarGetStartedButton />}
+                    {!isSmallViewport && <TopNavbarGetStartedButton />/* TODO: This needs some better condition. */}
                     {upsellButton !== undefined ? upsellButton : !hideUpsellButton && <TopNavbarUpsell app={app} />}
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {settingsButton && !hideSettingsButton ? (
