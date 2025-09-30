@@ -391,6 +391,7 @@ export type IconName =
     | 'sliders-2'
     | 'squares'
     | 'squares-in-square'
+    | 'squares-plus'
     | 'star'
     | 'star-filled'
     | 'star-slash'
@@ -830,6 +831,7 @@ export { IcSliders } from './icons/IcSliders';
 export { IcSliders2 } from './icons/IcSliders2';
 export { IcSquares } from './icons/IcSquares';
 export { IcSquaresInSquare } from './icons/IcSquaresInSquare';
+export { IcSquaresPlus } from './icons/IcSquaresPlus';
 export { IcStar } from './icons/IcStar';
 export { IcStarFilled } from './icons/IcStarFilled';
 export { IcStarSlash } from './icons/IcStarSlash';
