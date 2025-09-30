@@ -376,7 +376,7 @@
         "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich alle ${ renewCycle } Monate automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "Nachdem deine Testversion am ${ formattedDate } endet, wird es zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
+        "Nachdem deine Testversion am ${ formattedDate } endet, wird sie zu einem kostenpflichtigen Abonnement, das sich monatlich automatisch verlängert. Du wirst nicht belastet, wenn du vor dem ${ formattedDate } kündigst."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Du kannst während des Testzeitraums bis zu ${ TRIAL_MAX_DEDICATED_IPS } dedizierte Server haben."
@@ -4908,6 +4908,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Betrag fällig nach der Testversion am ${ formattedDate }"
+      ],
       "Billing Country": [
         "Rechnungsland"
       ],
@@ -4959,8 +4962,8 @@
       "Taxes": [
         "Steuern"
       ],
-      "terms & conditions": [
-        "Allgemeine Geschäftsbedingungen"
+      "terms and conditions": [
+        "Allgemeinen Geschäftsbedingungen"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Der Gutschein ist für ${ couponRedemptions } Verlängerung gültig.",
