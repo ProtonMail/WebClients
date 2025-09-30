@@ -99,6 +99,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Προσθήκη Λογαριασμού ${ BRAND_NAME }"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Προσθήκη διεύθυνσης ${ BRAND_NAME }"
+      ],
       "Add account": [
         "Προσθήκη λογαριασμού"
       ],
@@ -1758,6 +1761,12 @@
       "Disallow unsigned mail": [
         "Να μην επιτρέπεται η ανυπόγραφη αλληλογραφία"
       ],
+      "Disconnect": [
+        "Αποσύνδεση"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Αποσύνδεση διεύθυνσης “${ emailAddress }”"
+      ],
       "Edit": [
         "Επεξεργασία"
       ],
@@ -1781,6 +1790,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Δημιουργία κλειδιών που λείπουν για τη διεύθυνση “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Παραχώρηση άδειας"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Παραχώρηση άδειας σε “${ emailAddress }”"
       ],
       "Reconnect": [
         "Επανασύνδεση"
@@ -1825,6 +1840,9 @@
       ],
       "Orphan": [
         "Ορφανό"
+      ],
+      "Permission revoked": [
+        "Η άδεια έχει ανακληθεί"
       ]
     },
     "Admin": {
@@ -6308,6 +6326,11 @@
         "Απαιτείται ταχυδρομικός κώδικας"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου σας ${ formattedFilename }. Εσφαλμένη μορφή αρχείου."
@@ -9832,6 +9855,9 @@
       "No countries enabled": [
         "Δεν υπάρχουν ενεργοποιημένες χώρες"
       ],
+      "No credit card required": [
+        "Δεν απαιτείται πιστωτική κάρτα"
+      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Δεν έχει οριστεί μέθοδος ανάκτησης δεδομένων. Διακινδυνεύεται απώλεια πρόσβασης στα δεδομένα σας"
       ],
@@ -9912,6 +9938,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Ανοίξτε τον οδηγό για προτεινόμενες ενέργειες και χρήσιμους συνδέσμους."
+      ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Ανοίξτε τις ρυθμίσεις του Safari για την προέκταση και βεβαιωθείτε ότι τα δικαιώματα πρόσβασης στον ιστότοπο είναι ενεργοποιημένα για τους τομείς ${ BRAND_NAME }."
       ],
       "or ${ selectFileButton }": [
         "ή ${ selectFileButton }"
@@ -11091,6 +11120,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Με κρυπτογραφημένη διεύθυνση ${ BRAND_NAME }, μπορείτε να χρησιμοποιήσετε όλες τις ${ BRAND_NAME } υπηρεσίες"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Με τις κατηγορίες email, τα σημαντικά μηνύματα καταλήγουν στον κύριο φάκελο εισερχομένων. Όλα τα άλλα οργανώνονται σε κατηγορίες."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Με τις ομάδες, μπορείτε γρήγορα και εύκολα να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα άτομα μιας συγκεκριμένης ομάδας."
       ],
@@ -12028,9 +12060,9 @@
         "${ nbYear } έτος",
         "${ nbYear } έτη"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } από ${ MaxAddresses } διεύθυνση email",
-        "${ UsedAddresses } από ${ MaxAddresses } διευθύνσεων email"
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } από ${ maxAddresses } διεύθυνση email",
+        "${ usedAddresses } από ${ maxAddresses } διευθύνσεων email"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
@@ -12515,6 +12547,9 @@
       "Email address": [
         "Διεύθυνση email"
       ],
+      "Email categories": [
+        "Κατηγορίες ηλεκτρονικών μηνυμάτων"
+      ],
       "Email or username": [
         "Διεύθυνση ή όνομα χρήστη"
       ],
@@ -12532,9 +12567,6 @@
       ],
       "Emails (last month)": [
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
-      ],
-      "Emails categories": [
-        "Κατηγορίες ηλεκτρονικών μηνυμάτων"
       ],
       "Enabled": [
         "Ενεργοποιημένο"
@@ -13325,6 +13357,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Έως"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } από ${ maxBYOEAddresses } διεύθυνση email",
+        "${ usedBYOEAddresses } από ${ maxBYOEAddresses } διευθύνσεων email"
       ]
     },
     "Label for adding a new custom domain": {
@@ -16718,6 +16756,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Ποσό οφειλής μετά τη δοκιμή στις ${ formattedDate }"
+      ],
       "Billing Country": [
         "Χώρα χρέωσης"
       ],
@@ -16781,7 +16822,7 @@
       "Taxes": [
         "Φόροι"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "όροι και προϋποθέσεις"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -18783,6 +18824,10 @@
         "${ VPN_CONNECTIONS } σύνδεση υψηλής ταχύτητας",
         "${ VPN_CONNECTIONS } συνδέσεις υψηλής ταχύτητας"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.servers }+ διακομιστές VPN σε ${ vpnServersCountData.free.countries } χώρα",
+        "${ vpnServersCountData.free.servers }+ διακομιστές VPN σε ${ vpnServersCountData.free.countries } χώρες"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ χώρα",
         "${ vpnServersCountData.paid.countries }+ χώρες"
@@ -18815,6 +18860,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Amount due now": [
+        "Οφειλόμενο ποσό τώρα"
+      ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "Και λάβετε ${ referralInfo.uiData.refereeRewardAmount } σε πιστώσεις, αν εγγραφείτε."
       ],
@@ -18844,9 +18892,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Συνεχίστε με ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Συνέχεια με το δωρεάν πλάνο"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
@@ -18969,8 +19014,8 @@
       "Select ${ title }": [
         "Επιλογή ${ title }"
       ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "Επιλέξτε μια υπηρεσία και απολαύστε την premium έκδοση για ${ TRIAL_DURATION_DAYS } ημέρες δωρεάν. Δεν απαιτείται πιστωτική κάρτα."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Επιλέξτε μια υπηρεσία και απολαύστε την premium έκδοση για ${ TRIAL_DURATION_DAYS } ημέρες δωρεάν."
       ],
       "Selected": [
         "Επιλεγμένο"
@@ -19016,6 +19061,9 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Τότε ${ priceWithDiscountPerMonth } ανά μήνα, εάν εγγραφείτε."
+      ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Τότε ${ priceWithDiscountPerMonth } ανά μήνα. Ακύρωση ανά πάσα στιγμή."
       ],
       "To redeem on your next paid subscription.": [
         "Για να εξαργυρώσετε στην επόμενη επί πληρωμή συνδρομή σας."
@@ -21516,6 +21564,9 @@
       "Email breaches": [
         "Παραβιάσεις ηλεκτρονικού ταχυδρομείου"
       ],
+      "Email categories": [
+        "Κατηγορίες ηλεκτρονικών μηνυμάτων"
+      ],
       "Email composer": [
         "Συντάκτης μηνύματος"
       ],
@@ -22578,6 +22629,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Μια αλλαγή από την πλευρά του Gmail εμποδίζει τη σύνδεση του ${ BRAND_NAME }. Χορηγήστε άδεια για την επαναφορά της λειτουργικότητας του ηλεκτρονικού ταχυδρομείου."
+      ],
       "Account is disconnected": [
         "Ο λογαριασμός είναι αποσυνδεδεμένος"
       ],
@@ -22724,9 +22778,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Οι υποφάκελοι συστήματος θα εμφανιστούν στο ${ MAIL_APP_NAME } ως χωριστοί φάκελοι"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "Η διεύθυνση έχει αποσυνδεθεί. Η αποστολή και η λήψη μηνυμάτων έχει τεθεί σε παύση. Επανασυνδεθείτε για να ενεργοποιήσετε ξανά αυτή τη διεύθυνση."
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."

@@ -11207,12 +11207,6 @@
         "${ nbYear } лет",
         "${ nbYear } лет"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } из ${ MaxAddresses } адреса электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
       ],
@@ -15762,9 +15756,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Продлевается по цене ${ renewPriceStr }, можно отменить в любое время."
-      ],
-      "terms & conditions": [
-        "правила и условия"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Купон действителен для ${ couponRedemptions } продления.",

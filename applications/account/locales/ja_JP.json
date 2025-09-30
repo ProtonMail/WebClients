@@ -2088,12 +2088,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、${ renewCycle } か月ごとに自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } にトライアルが終了すると、毎月自動更新される有料サブスクリプションに移行します。${ formattedDate } までにキャンセルされれば、課金されることはありません。"
-      ],
       "By clicking on \"Try\", you agree to our ${ termsAndConditions }.": [
         "「試す」をクリックすると、${ termsAndConditions } に同意したものとみなされます。"
       ],
@@ -11874,9 +11868,6 @@
       "${ nbYear } year": [
         "${ nbYear } 年"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ MaxAddresses } 件のうち ${ UsedAddresses } 件のメールアドレス"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
       ],
@@ -12377,9 +12368,6 @@
       ],
       "Emails (last month)": [
         "メール (過去 1 か月)"
-      ],
-      "Emails categories": [
-        "メールカテゴリ"
       ],
       "Enabled": [
         "有効"
@@ -16577,9 +16565,6 @@
       "Taxes": [
         "税金"
       ],
-      "terms & conditions": [
-        "利用規約"
-      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "クーポンは ${ couponRedemptions } の更新で有効です。"
       ],
@@ -18579,9 +18564,6 @@
       "Continue with ${ PLAN_NAMES[plan] }": [
         "${ PLAN_NAMES[plan] }で続行"
       ],
-      "Continue with the free plan": [
-        "無料プランで続行"
-      ],
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを作成する"
       ],
@@ -18701,9 +18683,6 @@
       ],
       "Select ${ title }": [
         "${ title } を選択"
-      ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "サービスを選んで、プレミアムバージョンを${ TRIAL_DURATION_DAYS }日間無料でお楽しみください。クレジットカードは不要です。"
       ],
       "Selected": [
         "選択済"
@@ -22384,9 +22363,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれぞれのフォルダーとして表示されます"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "アドレスは接続解除されました。メッセージの送信および受信は一時停止されています。このアドレスを再び有効にするには、再接続してください。"
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"

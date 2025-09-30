@@ -200,7 +200,7 @@
         "Uwierzytelnianie"
       ],
       "Auto-delete spam and trash": [
-        "Auto usuwanie spamu i kosza"
+        "Automatyczne usuwanie spamu i kosza"
       ],
       "Back": [
         "Wstecz"
@@ -11619,25 +11619,25 @@
         "Przekaż dalej"
       ],
       "Go to All Mail": [
-        "Przejdź do Wszystkich wiadomości"
+        "Przejdź do wszystkich wiadomości"
       ],
       "Go to Archive": [
         "Przejdź do archiwum"
       ],
       "Go to Drafts": [
-        "Przejdź do Szkiców"
+        "Przejdź do szkiców"
       ],
       "Go to Inbox": [
-        "Przejdź do Odebranych"
+        "Przejdź do odebranych"
       ],
       "Go to Sent": [
-        "Przejdź do Wysłanych"
+        "Przejdź do wysłanych"
       ],
       "Go to Spam": [
         "Przejdź do spamu"
       ],
       "Go to Starred": [
-        "Przejdź do Wyróżnionych"
+        "Przejdź do wyróżnionych"
       ],
       "Go to Trash": [
         "Przejdź do kosza"
@@ -11685,7 +11685,7 @@
         "Przenieś do archiwum"
       ],
       "Move to Inbox": [
-        "Przenieś do Odebranych"
+        "Przenieś do odebranych"
       ],
       "Move to Spam": [
         "Przenieś do spamu"
@@ -11883,12 +11883,6 @@
         "${ nbYear } lata",
         "${ nbYear } lat",
         "${ nbYear } roku"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "Adres e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
-        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
-        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }",
-        "Adresy e-mail: ${ UsedAddresses } / ${ MaxAddresses }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"
@@ -12617,7 +12611,7 @@
         "Przenieś do archiwum"
       ],
       "Move to Inbox": [
-        "Przenieś do Odebranych"
+        "Przenieś do odebranych"
       ],
       "Must have at least ${ MIN_PASSWORD_LENGTH } characters": [
         "Minimum ${ MIN_PASSWORD_LENGTH } znaków"
@@ -16581,9 +16575,6 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Odnowienie za ${ renewPriceStr }. Anuluj w dowolnym momencie."
       ],
-      "terms & conditions": [
-        "regulaminem"
-      ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Kupon jest ważny na ${ couponRedemptions } odnowienie.",
         "Kupon jest ważny na ${ couponRedemptions } odnowienia.",
@@ -18654,9 +18645,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Kontynuuj z planem ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Kontynuuj z planem Free"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"

@@ -774,6 +774,9 @@
       "Get more servers": [
         "Obtener más servidores"
       ],
+      "Get Pass Family": [
+        "Obtén Pass Family"
+      ],
       "Get Pass Plus": [
         "Consigue Pass Plus"
       ],
@@ -791,6 +794,12 @@
       ],
       "Get the deal": [
         "Obtener la promoción"
+      ],
+      "Get the extension for ${ browser.title }": [
+        "Obtén la extensión para ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Consigue la suite completa"
       ],
       "Get the writing assistant": [
         "Obtener el asistente de escritura"
@@ -1011,6 +1020,9 @@
       "No": [
         "No"
       ],
+      "No thanks": [
+        "No, gracias"
+      ],
       "No, thanks": [
         "No, gracias"
       ],
@@ -1020,8 +1032,14 @@
       "Open": [
         "Abierto"
       ],
+      "Open ${ applicationName }": [
+        "Abrir ${ applicationName }"
+      ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Abrir la configuración de ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Abre ${ PASS_APP_NAME } en tu navegador"
       ],
       "Open navigation": [
         "Abrir la navegación"
@@ -1431,6 +1449,9 @@
       "Start subscription": [
         "Iniciar suscripción"
       ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Comenzar a utilizar ${ PASS_APP_NAME }"
+      ],
       "Stay": [
         "Permanecer"
       ],
@@ -1737,6 +1758,12 @@
       "Disallow unsigned mail": [
         "No permitir correos sin firma"
       ],
+      "Disconnect": [
+        "Desconectar"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Reconectar la dirección “${ emailAddress }”"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -1760,6 +1787,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Generar claves faltantes para la dirección “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Conceder permiso"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Conceder permiso a “${ emailAddress }”"
       ],
       "Reconnect": [
         "Reconectar"
@@ -1804,6 +1837,9 @@
       ],
       "Orphan": [
         "Huérfana"
+      ],
+      "Permission revoked": [
+        "Permiso revocado"
       ]
     },
     "Admin": {
@@ -2091,8 +2127,14 @@
       "During the trial period, you can have up to 10 users.": [
         "Durante el período de prueba, puedes tener hasta 10 usuarios."
       ],
+      "free for ${ TRIAL_DURATION_DAYS } days": [
+        "gratis durante ${ TRIAL_DURATION_DAYS } días"
+      ],
       "on ${ formattedDate }": [
         "el ${ formattedDate }"
+      ],
+      "Try ${ selected } ${ freeForNDays }": [
+        "Prueba ${ selected } ${ freeForNDays }"
       ],
       "Try it free for ${ TRIAL_DURATION_DAYS } days": [
         "Pruébalo gratis durante ${ TRIAL_DURATION_DAYS } días"
@@ -2929,8 +2971,16 @@
       "Upload and query multiple large files": [
         "Cargar y consultar múltiples archivos de gran tamaño"
       ],
+      "Upload and query small files": [
+        "Cargar y consultar archivos pequeños"
+      ],
       "Web search access": [
         "Acceso a la búsqueda web"
+      ]
+    },
+    "collider_2025: Feature": {
+      "Built and based in Europe": [
+        "Construido y con sede en Europa"
       ]
     },
     "collider_2025: Info": {
@@ -2972,6 +3022,15 @@
       ],
       "Unlimited daily chats": [
         "Chats diarios ilimitados"
+      ],
+      "Unlimited favorites for quick access": [
+        "Favoritos ilimitados para un acceso rápido"
+      ],
+      "Upload and query multiple large files": [
+        "Cargar y consultar múltiples archivos de gran tamaño"
+      ],
+      "Upload and query small files": [
+        "Cargar y consultar archivos pequeños"
       ],
       "Web search access": [
         "Acceso a la búsqueda web"
@@ -5498,6 +5557,9 @@
       "Less than a day": [
         "Menos de un día"
       ],
+      "Less than a minute left": [
+        "Falta menos de un minuto."
+      ],
       "None": [
         "Ninguna"
       ],
@@ -6239,6 +6301,9 @@
       "You must set a name": [
         "Debes establecer un nombre."
       ],
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "Necesitas tener una dirección de dominio personalizado activa para generar un token de envío SMTP."
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Has alcanzado el número máximo de caracteres. Acorta tu mensaje."
       ],
@@ -6256,6 +6321,11 @@
       ],
       "ZIP code is required": [
         "Se requiere el código postal."
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Por favor, inicia sesión con la misma dirección de Gmail que conectaste originalmente"
       ]
     },
     "Error importing calendar": {
@@ -8138,6 +8208,9 @@
       "${ name } for GNU/Linux": [
         "${ name } para GNU/Linux"
       ],
+      "${ name } for iOS": [
+        "${ name } para iOS"
+      ],
       "${ name } for macOS": [
         "${ name } para macOS"
       ],
@@ -8390,6 +8463,9 @@
       ],
       "Account successfully updated": [
         "Cuenta actualizada"
+      ],
+      "Accounts": [
+        "Cuentas"
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Activa como mínimo un método de recuperación de datos para asegurarte de que puedes continuar accediendo a los contenidos de tu cuenta ${ BRAND_NAME } si pierdes tu contraseña."
@@ -9779,6 +9855,9 @@
       "No countries enabled": [
         "Sin países activados"
       ],
+      "No credit card required": [
+        "No se requiere tarjeta de crédito."
+      ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "No has establecido ningún método de recuperación de datos. Corres el riesgo de perder el acceso a tus datos."
       ],
@@ -9881,6 +9960,9 @@
         "Los miembros de la organización necesitarán desbloquear ${ PASS_APP_NAME } con su contraseña o código PIN, etc."
       ],
       "Organization monitor": [
+        "Monitor de organización"
+      ],
+      "Organization Monitor": [
         "Monitor de organización"
       ],
       "Organization size": [
@@ -10191,6 +10273,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Selecciona las afiliaciones de los usuarios de ${ getFormattedOrganization } que deseas permitir en tu organización ${ BRAND_NAME }:"
+      ],
+      "Select users to view their activity": [
+        "Selecciona usuarios para ver sus actividades"
       ],
       "Select what you want to import.": [
         "Selecciona lo que quieres importar."
@@ -11969,12 +12054,11 @@
         "${ nbYear } año",
         "${ nbYear } años"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo",
-        "${ UsedAddresses } de ${ MaxAddresses } direcciones de correo"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Vuelve a comprobarlo más tarde.)"
+      ],
+      "/month x ${ months }": [
+        "al mes x ${ months } meses"
       ],
       "1 hour": [
         "1 hora"
@@ -11982,8 +12066,17 @@
       "1 minute": [
         "1 minuto"
       ],
+      "10 hide-my-email aliases": [
+        "10 alias de hide-my-email"
+      ],
       "10 minutes": [
         "10 minutos"
+      ],
+      "10 VPN devices": [
+        "10 Dispositivos VPN"
+      ],
+      "15 extra email addresses": [
+        "15 direcciones de correo electrónico extra"
       ],
       "15 minutes": [
         "15 minutos"
@@ -11999,6 +12092,12 @@
       ],
       "5 minutes": [
         "5 minutos"
+      ],
+      "500 GB Storage": [
+        "500 GB de almacenamiento"
+      ],
+      "6 Pass Plus accounts": [
+        "6 cuentas de Pass Plus"
       ],
       "Account holder": [
         "Titular de la cuenta"
@@ -12029,6 +12128,9 @@
       ],
       "Addresses": [
         "Direcciones"
+      ],
+      "Admin panel for your family": [
+        "Panel de administración para tu familia"
       ],
       "Advanced": [
         "Avanzado"
@@ -12197,6 +12299,9 @@
       ],
       "BTC amount": [
         "Importe en BTC"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
       ],
       "Calendar": [
         "Calendario"
@@ -12450,9 +12555,6 @@
       "Emails (last month)": [
         "Correos electrónicos (último mes)"
       ],
-      "Emails categories": [
-        "Categorías de correo electrónico"
-      ],
       "Enabled": [
         "Activado"
       ],
@@ -12504,6 +12606,9 @@
       "File": [
         "Archivo"
       ],
+      "File attachments (up to 10GB)": [
+        "Archivos adjuntos (hasta 10GB)"
+      ],
       "Filter Name": [
         "Nombre del filtro"
       ],
@@ -12519,11 +12624,17 @@
       "Font size": [
         "Tamaño de fuente"
       ],
+      "for your first month": [
+        "en tu primer mes"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
       "Gateway name": [
         "Nombre de la puerta de enlace"
+      ],
+      "Get everything in Free, plus:": [
+        "Obtén todo lo de la versión gratuita, además:"
       ],
       "Gift code": [
         "Código promocional"
@@ -12542,6 +12653,9 @@
       ],
       "Hide password": [
         "Ocultar contraseña"
+      ],
+      "Highest VPN speed": [
+        "VPN a máxima velocidad"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Entiendo que debo añadir esta dirección de correo de inmediato a la otra cuenta para evitar la pérdida de esta cuenta permanentemente."
@@ -12756,11 +12870,17 @@
       "Notification": [
         "Notificación"
       ],
+      "Notification email address": [
+        "Dirección de correo electrónico de notificación"
+      ],
       "Notifications": [
         "Notificaciones"
       ],
       "Numbers": [
         "Números"
+      ],
+      "Online privacy for your whole family": [
+        "Privacidad online para toda la familia"
       ],
       "OpenVPN / IKEv2 password": [
         "Contraseña OpenVPN / IKEv2"
@@ -12873,6 +12993,9 @@
       "Read": [
         "Leído"
       ],
+      "Recommended": [
+        "Recomendado"
+      ],
       "Recovery email address": [
         "Correo electrónico de recuperación"
       ],
@@ -12890,6 +13013,9 @@
       ],
       "Remove image metadata": [
         "Eliminar los metadatos de la imagen"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Se renueva por ${ renewalPrice }, cancela cuando quieras."
       ],
       "Repeat backup password": [
         "Repite la contraseña de respaldo"
@@ -12923,6 +13049,9 @@
       ],
       "Second password": [
         "Segunda contraseña"
+      ],
+      "Secure password generator": [
+        "Generador de contraseñas seguro"
       ],
       "Select Linux package format": [
         "Selecciona el formato de paquete para Linux"
@@ -12993,6 +13122,9 @@
       ],
       "Special characters": [
         "Caracteres especiales"
+      ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Oferta especial: Obtén ${ PASS_SHORT_APP_NAME } Plus por ${ offerPrice }"
       ],
       "Starred": [
         "Destacados"
@@ -13078,6 +13210,12 @@
       "Undo send": [
         "Deshacer el envío"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Alias hide-my-email ilimitados"
+      ],
+      "Unlimited logins and devices": [
+        "Número ilimitado de inicios de sesión y dispositivos"
+      ],
       "Upload 1 or more encryption keys": [
         "Carga 1 o más claves de cifrado"
       ],
@@ -13113,6 +13251,9 @@
       ],
       "Value": [
         "Valor"
+      ],
+      "Vault, item & secure link sharing": [
+        "Uso compartido de caja fuerte, elemento y enlace"
       ],
       "Verification code": [
         "Código de verificación"
@@ -13184,6 +13325,9 @@
     "label": {
       "Device-based recovery": [
         "Recuperación desde un dispositivo"
+      ],
+      "Notification phone number": [
+        "Número de teléfono de notificación"
       ],
       "Recovery phone number": [
         "Número de teléfono de recuperación"
@@ -16074,6 +16218,12 @@
         "Comienza a usar ${ PASS_APP_NAME }"
       ]
     },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } meses"
+      ]
+    },
     "pass_lifetime_signup: Info": {
       "Gain lifetime access to all current and future ${ PASS_APP_NAME } premium features with a single one-time payment.": [
         "Obtén acceso de por vida a todas las funciones premium ${ PASS_APP_NAME } actuales y futuras con un solo pago único."
@@ -16587,6 +16737,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Cantidad a pagar después de la prueba el ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de facturación"
       ],
@@ -16629,6 +16782,9 @@
       "More plans are available in other currencies": [
         "Hay más planes disponibles en otras divisas."
       ],
+      "Offer unavailable": [
+        "Oferta no disponible"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiva primero la suscripción para disminuir la cantidad de complementos."
       ],
@@ -16647,8 +16803,8 @@
       "Taxes": [
         "Impuestos"
       ],
-      "terms & conditions": [
-        "los términos y condiciones"
+      "terms and conditions": [
+        "términos y condiciones"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "El cupón es válido por ${ couponRedemptions } renovación.",
@@ -16671,6 +16827,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } mes. Puedes cancelar en cualquier momento.",
         "Después se renovará automáticamente a ${ renewPriceStr } por ${ renewalLength } meses. Puedes cancelar en cualquier momento."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Esta acción amplía la suscripción existente. Se te cobrará solo por los nuevos complementos y el tiempo restante del ciclo de facturación actual. La fecha de renovación de tu suscripción no cambiará."
       ],
       "This number will be shown on all future invoices": [
         "Este número se mostrará en todas las futuras facturas"
@@ -16715,6 +16874,14 @@
       ],
       "Your card was declined. Please try a different card or contact your bank to authorize the charge.": [
         "Tu tarjeta ha sido rechazada. Prueba con una tarjeta diferente o contacta con tu banco para autorizar el cargo."
+      ]
+    },
+    "Payments.info": {
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito por la parte no utilizada de tu suscripción al plan anterior"
+      ],
+      "Credits will be added to your balance": [
+        "Se añadirán créditos a tu saldo."
       ]
     },
     "Payments.plan_name": {
@@ -17422,6 +17589,9 @@
       ],
       "Start earning credits": [
         "Empieza a ganar créditos"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Gana hasta **${ maxRewardAmount }** en crédito."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "Te queda **${ daysRemaining } día** para explorar todas las ventajosas funciones que **${ planTitle }** tiene para ofrecerte.",
@@ -18733,6 +18903,10 @@
         "${ VPN_CONNECTIONS } conexión VPN de alta velocidad",
         "${ VPN_CONNECTIONS } conexiones VPN de alta velocidad"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.servers } servidores VPN en ${ vpnServersCountData.free.countries } país",
+        "Más de ${ vpnServersCountData.free.servers } servidores VPN en ${ vpnServersCountData.free.countries } países"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ país",
         "${ vpnServersCountData.paid.countries }+ países"
@@ -18756,11 +18930,17 @@
       "30 custom email addresses": [
         "30 direcciones de correo electrónico personalizadas"
       ],
+      "4.8+ rating": [
+        "Valoración de 4,8+"
+      ],
       "Advanced account protection": [
         "Protección de cuenta avanzada"
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Amount due now": [
+        "Importe a pagar ahora"
       ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "Y obtén ${ referralInfo.uiData.refereeRewardAmount } en créditos, si te suscribes."
@@ -18791,9 +18971,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Continuar con ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Continuar con el plan gratuito"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
@@ -18833,6 +19010,9 @@
       ],
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Consigue ${ referralInfo.uiData.refereeRewardAmount } en créditos"
+      ],
+      "Get a new encrypted email for free": [
+        "Obtén un nuevo correo electrónico cifrado gratis"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obtén una dirección de correo segura de ${ MAIL_APP_NAME }, o ${ internalButton }"
@@ -18913,8 +19093,8 @@
       "Select ${ title }": [
         "Selecciona ${ title }"
       ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "Selecciona un servicio y disfruta gratis de la versión prémium durante ${ TRIAL_DURATION_DAYS } días. No se requiere tarjeta de débito o crédito."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Selecciona un servicio y disfruta gratis de la versión prémium durante ${ TRIAL_DURATION_DAYS } días."
       ],
       "Selected": [
         "Seleccionado"
@@ -18940,11 +19120,17 @@
       "Start free trial": [
         "Inicia la prueba gratuita"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Comenzar a utilizar ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Almacenamiento"
       ],
       "Stream your favorite TV shows and movies": [
         "Disfruta tus programas de televisión y películas favoritas"
+      ],
+      "Swiss-based": [
+        "Con sede en Suiza"
       ],
       "Sync files across devices and users": [
         "Sincronizar archivos en todos los dispositivos y usuarios"
@@ -18955,11 +19141,17 @@
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Luego ${ priceWithDiscountPerMonth } al mes, si te suscribes."
       ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Después ${ priceWithDiscountPerMonth } al mes. Cancela cuando quieras."
+      ],
       "To redeem on your next paid subscription.": [
         "Para canjear en tu próxima suscripción de pago."
       ],
       "Total": [
         "Total"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "De confianza para más de 100 millones de personas y empresas"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Prueba ${ BRAND_NAME } gratis durante ${ TRIAL_DURATION_DAYS } días"
@@ -18990,6 +19182,9 @@
       ],
       "Upload files of any size": [
         "Carga archivos de cualquier tamaño"
+      ],
+      "Use your current email": [
+        "Usa tu correo electrónico actual"
       ],
       "use your current email.": [
         "usa tu correo electrónico actual."
@@ -19386,6 +19581,9 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Gana hasta ${ maxRewardAmount } en crédito"
+      ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "Obtén créditos cuando la persona que invitas se suscribe a un plan de ${ BRAND_NAME }."
       ],
@@ -20324,6 +20522,15 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Gratis para siempre"
+      ],
+      "Pay once, access forever.": [
+        "Único pago, acceso para siempre."
+      ],
+      "per month, billed annually": [
+        "al mes con facturación anual"
+      ],
       "View VPN session details for your organization.": [
         "Ver los detalles de la sesión VPN de tu organización"
       ]
@@ -21364,6 +21571,9 @@
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarga las aplicaciones de ${ DRIVE_APP_NAME }"
       ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Descarga ${ PASS_APP_NAME } para tus dispositivos"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
       ],
@@ -21538,6 +21748,9 @@
       ],
       "Forward emails": [
         "Reenvío de correos electrónicos"
+      ],
+      "Free": [
+        "Gratuito"
       ],
       "Gateway": [
         "Puerta de enlace"
@@ -21816,6 +22029,9 @@
       "Other sign-in issues": [
         "Otros problemas para iniciar sesión"
       ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus Lifetime por ${ plusLifetimePrice }"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -21977,6 +22193,9 @@
       ],
       "Secure email based in Switzerland": [
         "Correo electrónico seguro con sede en Suiza"
+      ],
+      "Secure your passwords. Everywhere.": [
+        "Asegura tus contraseñas. En todo lugar."
       ],
       "Security and privacy": [
         "Seguridad y privacidad"
@@ -22327,6 +22546,9 @@
       "You have no resolved alerts": [
         "No tienes alertas resueltas."
       ],
+      "You've successfully signed in!": [
+        "¡Has iniciado sesión correctamente!"
+      ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Tu prueba gratuita de ${ planName } Plus termina el ${ textDate }."
       ],
@@ -22483,6 +22705,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Un cambio en el lado de Gmail está impidiendo que ${ BRAND_NAME } se conecte. Concede permiso para restablecer la funcionalidad del correo electrónico."
+      ],
       "Account is disconnected": [
         "La cuenta está desconectada"
       ],
@@ -22629,9 +22854,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Las carpetas secundarias del sistema se mostrarán como carpetas separadas en ${ MAIL_APP_NAME }."
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "La dirección ha sido desconectada. El envío y la recepción de mensajes están pausados. Vuelve a conectarte para activar esta dirección de nuevo."
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."

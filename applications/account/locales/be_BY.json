@@ -141,6 +141,9 @@
       "Add label": [
         "Дадаць метку"
       ],
+      "add more seats": [
+        "дадаць больш ліцэнзій"
+      ],
       "Add notification": [
         "Дадаць апавяшчэнне"
       ],
@@ -808,7 +811,7 @@
         "Вярнуцца"
       ],
       "Go to ${ planOrAppName }": [
-        "Перайдзіце ў ${ planOrAppName }"
+        "Перайсці ў ${ planOrAppName }"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -1599,6 +1602,9 @@
       "User": [
         "Карыстальнік"
       ],
+      "Users and addresses": [
+        "Карыстальнікі і адрасы"
+      ],
       "Verify": [
         "Спраўдзіць"
       ],
@@ -1762,6 +1768,12 @@
       "Disallow unsigned mail": [
         "Забар. непадпіс. пошту"
       ],
+      "Disconnect": [
+        "Адключыцца"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Адключыць адрас “${ emailAddress }”"
+      ],
       "Edit": [
         "Рэдагаваць"
       ],
@@ -1785,6 +1797,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Згенераваць прапушчаныя ключы для адраса “${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Даць дазвол"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Даць дазвол для “${ emailAddress }”"
       ],
       "Reconnect": [
         "Перападключыцца"
@@ -1829,6 +1847,9 @@
       ],
       "Orphan": [
         "Не прывязана"
+      ],
+      "Permission revoked": [
+        "Дазвол адкліканы"
       ]
     },
     "Admin": {
@@ -6370,6 +6391,11 @@
         "Патрабуецца ўвесці паштовы індэкс"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Увайдзіце з тым жа адрасам Gmail, які вы першапачаткова падключылі"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Адбылася памылка пры чытанні вашага файла ${ formattedFilename }. Файл мае няправільны фармат."
@@ -8518,6 +8544,15 @@
       "**Invite your friends** to ${ BRAND_NAME } with your referral link.": [
         "**Запрашайце сваіх сяброў** у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
       ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Крок 1:** Запрашайце сваіх сяброў у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Крок 2:** Вашы сябры атрымаюць 2 тыдні бясплатнага выкарыстання на сваім тарыфным плане."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожную асобу, якая падпішацца на тарыфны план."
+      ],
       "**Sync codes** to all your devices": [
         "**Сінхранізуйце коды** з усімі вашымі прыладамі"
       ],
@@ -8640,6 +8675,9 @@
         "Дадаць сервер (${ availableAddedCount } даступны)",
         "Дадаць сервер (${ availableAddedCount } даступны)",
         "Дадаць сервер (${ availableAddedCount } даступны)"
+      ],
+      "Add video conferencing links to calendar invitations": [
+        "Дадаванне спасылак на відэаканферэнцыі ў запрашэнні календара"
       ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Дадайце свае назву і лагатып, каб стварыць больш персаналізаванае ўражанне для сваёй арганізацыі."
@@ -9532,6 +9570,9 @@
       "Groups": [
         "Групы"
       ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Дапамагае пісаць, адказваць і вычытваць лісты. Калі адключана, то толькі адміністратары будуць мець доступ да гэтай функцыі. Кіраванне для асобных карыстальнікаў у ${ userAndAddress } або ${ addMoreSeats }"
+      ],
       "here": [
         "тут"
       ],
@@ -9916,6 +9957,9 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Кіруйце, да якіх праграм ${ BRAND_NAME } могуць атрымліваць доступ удзельнікі вашай арганізацыі. Калі выключана, то толькі адміністратары будуць мець доступ да іх."
       ],
+      "Manage which features the members of your organization can access.": [
+        "Вызначайце функцыі, якімі могуць карыстацца ўдзельнікі вашай арганізацыі."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Кіраванне вашымі параметрамі апавяшчэнняў па электроннай пошце для ${ DOCS_APP_NAME }"
       ],
@@ -10005,6 +10049,9 @@
       ],
       "No countries enabled": [
         "Няма ўключаных краін"
+      ],
+      "No credit card required": [
+        "Крэдытная картка не патрабуецца"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Не зададзены спосаб аднаўлення вашых даных і гэта азначае, што вы можаце страціць доступ да іх"
@@ -12264,12 +12311,6 @@
         "${ nbYear } гадоў",
         "${ nbYear } гадоў"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } адрас электроннай пошты з ${ MaxAddresses }",
-        "${ UsedAddresses } адрасы электроннай пошты з ${ MaxAddresses }",
-        "${ UsedAddresses } адрасоў электроннай пошты з ${ MaxAddresses }",
-        "${ UsedAddresses } адрасоў электроннай пошты з ${ MaxAddresses }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
@@ -12770,9 +12811,6 @@
       ],
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
-      ],
-      "Emails categories": [
-        "Катэгорыі электроннай пошты"
       ],
       "Enabled": [
         "Уключана"
@@ -17054,6 +17092,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
+      ],
       "Billing Country": [
         "Краіна выстаўлення рахунку"
       ],
@@ -17117,7 +17158,7 @@
       "Taxes": [
         "Падаткі"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "умовы выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -17799,6 +17840,9 @@
       ]
     },
     "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } за кожнае запрашэнне"
+      ],
       "**If you cancel before this date,** you will be **downgraded** to ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } when the trial ends.": [
         "**Калі вы скасуеце падпіску да гэтай даты,** то будзеце **паніжаны** да ${ BRAND_NAME } ${ PLAN_NAMES[PLANS.FREE] } пасля завяршэння пробнага перыяду."
       ],
@@ -17813,6 +17857,18 @@
       ],
       "Enjoy **${ planTitle }** for free until **${ textDate }**.": [
         "Атрымлівайце асалоду ад **${ planTitle }** бясплатна да **${ textDate }**."
+      ],
+      "Invite friends. Get credits.": [
+        "Запрашайце сяброў і атрымлівайце крэдыты."
+      ],
+      "Refer friends": [
+        "Параіць сябрам"
+      ],
+      "Start earning credits": [
+        "Пачніце зарабляць крэдыты"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Вы можаце атрымаць да **${ maxRewardAmount }** у крэдытах."
       ],
       "You have **${ daysRemaining } day left** to explore all the powerful features that **${ planTitle }** has to offer.": [
         "У вас застаўся **${ daysRemaining } дзень**, каб даследаваць усе магутныя функцыі, якія прапануе **${ planTitle }**.",
@@ -19172,6 +19228,12 @@
         "${ VPN_CONNECTIONS } высакахуткасных падключэнняў па VPN",
         "${ VPN_CONNECTIONS } высакахуткасных падключэнняў па VPN"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "Больш за ${ vpnServersCountData.free.servers } сервераў VPN у ${ vpnServersCountData.free.countries } краіне",
+        "Больш за ${ vpnServersCountData.free.servers } сервераў VPN у ${ vpnServersCountData.free.countries } краінах",
+        "Больш за ${ vpnServersCountData.free.servers } сервераў VPN у ${ vpnServersCountData.free.countries } краінах",
+        "Больш за ${ vpnServersCountData.free.servers } сервераў VPN у ${ vpnServersCountData.free.countries } краінах"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "Больш чым у ${ vpnServersCountData.paid.countries } краіне",
         "Больш чым у ${ vpnServersCountData.paid.countries } краінах",
@@ -19208,6 +19270,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Amount due now": [
+        "Сума да аплаты"
+      ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
         "І атрымайце ${ referralInfo.uiData.refereeRewardAmount } у крэдытах, калі падпішацеся."
       ],
@@ -19237,9 +19302,6 @@
       ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Працягнуць з тарыфным планам ${ PLAN_NAMES[plan] }"
-      ],
-      "Continue with the free plan": [
-        "Працягнуць карыстацца бясплатным тарыфным планам"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
@@ -19364,8 +19426,8 @@
       "Select ${ title }": [
         "Выберыце ${ title }"
       ],
-      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free. No credit card required.": [
-        "Выберыце сэрвіс і атрымлівайце асалоду ад прэміяльнай версіі на працягу ${ TRIAL_DURATION_DAYS } дзён бясплатна. Крэдытная картка не патрабуецца."
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Выберыце сэрвіс і атрымлівайце асалоду ад прэміяльнай версіі на працягу ${ TRIAL_DURATION_DAYS } дзён бясплатна."
       ],
       "Selected": [
         "Выбрана"
@@ -19411,6 +19473,9 @@
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Пасля вашай падпіскі кошт складзе ${ priceWithDiscountPerMonth } у месяц."
+      ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Пасля гэтага перыяду кошт складзе ${ priceWithDiscountPerMonth } у месяц. Скасаваць можна ў любы час."
       ],
       "To redeem on your next paid subscription.": [
         "Для пагашэння вашай наступнай платнай падпіскі."
@@ -19861,6 +19926,12 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Зарабіце да ${ maxRewardAmount } у крэдытах"
+      ],
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Атрымлівайце крэдыты, калі запрошаная асоба падпішацца на тарыфны план ${ BRAND_NAME }."
+      ],
       "Get up to ${ credits } in credits.": [
         "Атрымайце да ${ credits } у крэдытах."
       ],
@@ -21385,6 +21456,18 @@
       "${ feature } is now active": [
         "${ feature } цяпер у актыўным стане"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } запрошаны сябар",
+        "${ friendsInvited } запрошаныя сябры",
+        "${ friendsInvited } запрошаных сяброў",
+        "${ friendsInvited } запрошаных сяброў"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } сябар падпісаўся",
+        "${ friendsSubscribed } сябры падпісалася",
+        "${ friendsSubscribed } сяброў падпісалася",
+        "${ friendsSubscribed } сяброў падпісалася"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -21768,6 +21851,9 @@
       ],
       "Credentials": [
         "Уліковыя даныя"
+      ],
+      "Credit earned": [
+        "Зароблена крэдытаў"
       ],
       "Credits": [
         "Крэдыты"
@@ -22855,6 +22941,9 @@
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Відэаканферэнцыя з ${ MEET_APP_NAME }"
       ],
+      "Video conferencing with Zoom": [
+        "Відэаканферэнцыя з Zoom"
+      ],
       "View organization events by upgrading to Professional": [
         "Палепшыце да тарыфнага плана Professional, каб паглядзець падзеі арганізацыі"
       ],
@@ -23059,6 +23148,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Змены на баку Gmail блакіруюць падключэнне ${ BRAND_NAME }. Дайце дазвол, каб аднавіць функцыянальнасць электроннай пошты."
+      ],
       "Account is disconnected": [
         "Уліковы запіс адключаны"
       ],
@@ -23205,9 +23297,6 @@
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
-      ],
-      "The address has been disconnected. Message sending and receiving is paused. Reconnect to enable this address again.": [
-        "Адрас адключаны. Функцыя адпраўкі і атрымання паведамленняў прыпынена. Перападключыцеся, каб уключыць гэты адрас яшчэ раз."
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
