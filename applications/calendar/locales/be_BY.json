@@ -396,7 +396,7 @@
         "Атрымаць праверачны код"
       ],
       "Go to ${ planOrAppName }": [
-        "Перайдзіце ў ${ planOrAppName }"
+        "Перайсці ў ${ planOrAppName }"
       ],
       "Go to label": [
         "Перайсці ў меткі"
@@ -3997,6 +3997,11 @@
         "Патрабуецца ўвесці паштовы індэкс"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Увайдзіце з тым жа адрасам Gmail, які вы першапачаткова падключылі"
+      ]
+    },
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "Запрошаны адрас не існуе"
@@ -5125,6 +5130,21 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill Switch**: спыняе ўцечку даных блакіруючы інтэрнэт, калі падключэнне па VPN нечакана знікла."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Крок 1:** Запрашайце сваіх сяброў у ${ BRAND_NAME } са сваёй рэферальнай спасылкай."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Крок 2:** Вашы сябры атрымаюць 2 тыдні бясплатнага выкарыстання на тарыфным плане ${ BRAND_NAME }, які яны выбралі."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Крок 2:** Вашы сябры атрымаюць 2 тыдні бясплатнага выкарыстання на сваім тарыфным плане."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожнага сябра, які падпішацца на тарыфны план."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Крок 3:** Атрымайце ${ referrerRewardAmount } крэдытаў за кожную асобу, якая падпішацца на тарыфны план."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
@@ -9215,6 +9235,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Сума да аплаты пасля пробнага перыяду на ${ formattedDate }"
+      ],
       "Billing Country": [
         "Краіна выстаўлення рахунку"
       ],
@@ -9266,7 +9289,7 @@
       "Taxes": [
         "Падаткі"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "умовы выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -9678,6 +9701,44 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Афіцыйныя лісты ад ${ BRAND_NAME }"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } за кожнае запрашэнне"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Зарабіце да ${ maxRewardAmount } у крэдытах. Вы атрымаеце ${ referrerRewardAmount }, калі запрошаная асоба падпішацца на тарыфны план ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Сябар далучыўся",
+        "Сябры далучылася",
+        "Сяброў далучылася",
+        "Сяброў далучылася"
+      ],
+      "Friend subscribed": [
+        "Сябар падпісаўся",
+        "Сябры падпісаліся",
+        "Сяброў падпісалася",
+        "Сяброў падпісалася"
+      ],
+      "Invite friends. Get credits.": [
+        "Запрашайце сяброў і атрымлівайце крэдыты."
+      ],
+      "Invited friends": [
+        "Запрошаныя сябры"
+      ],
+      "More sharing options": [
+        "Больш параметраў для абагульвання"
+      ],
+      "Refer friends": [
+        "Параіць сябрам"
+      ],
+      "Start earning credits": [
+        "Пачніце зарабляць крэдыты"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Вы можаце атрымаць да **${ maxRewardAmount }** у крэдытах."
       ]
     },
     "Reload event button tooltip": {
@@ -11820,6 +11881,9 @@
       ],
       "Share your calendar with your team": [
         "Абагуліць каляндар са сваёй камандай"
+      ],
+      "Share your link": [
+        "Абагуліць сваю спасылку"
       ],
       "Show time zones for event start and end times": [
         "Паказаць часавыя паясы пачатку і завяршэння падзеі"
