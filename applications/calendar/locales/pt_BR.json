@@ -3929,6 +3929,11 @@
         "O CEP é obrigatório."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Inicie sessão com o mesmo endereço do Gmail que você conectou originalmente"
+      ]
+    },
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "Endereço de convite não existe"
@@ -4989,6 +4994,21 @@
       ],
       "**Kill switch**: Stops data leaks by blocking your internet if the VPN drops unexpectedly.": [
         "**Kill switch**: Impede vazamentos de dados bloqueando sua conexão com a internet se a VPN cair inesperadamente."
+      ],
+      "**Step 1:** Invite your friends to ${ BRAND_NAME } with your referral link.": [
+        "**Passo 1:** Convide seus amigos para a ${ BRAND_NAME } com seu link de indicação."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their chosen ${ BRAND_NAME } plan.": [
+        "**Passo 2:** Seus amigos ganham 2 semanas grátis no plano ${ BRAND_NAME } escolhido por eles."
+      ],
+      "**Step 2:** Your friends get 2 weeks for free on their plan.": [
+        "**Passo 2:** Seus amigos ganham 2 semanas grátis no plano deles."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } credits for every friend that subscribes to a plan.": [
+        "**Passo 3:** Ganhe ${ referrerRewardAmount } créditos para cada amigo que se inscrever para um plano."
+      ],
+      "**Step 3:** Get ${ referrerRewardAmount } in credits for every person that subscribes to a plan.": [
+        "**Passo 3:** Ganhe ${ referrerRewardAmount } em créditos para cada pessoa que se inscrever para um plano."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de armazenamento bônus"
@@ -8924,6 +8944,9 @@
       ]
     },
     "Payments": {
+      "Amount due after trial on ${ formattedDate }": [
+        "Valor devido após a avaliação em ${ formattedDate }"
+      ],
       "Billing Country": [
         "País de Faturamento"
       ],
@@ -8975,7 +8998,7 @@
       "Taxes": [
         "Impostos"
       ],
-      "terms & conditions": [
+      "terms and conditions": [
         "termos e condições"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
@@ -8996,6 +9019,9 @@
       "Then it will automatically be renewed at ${ renewPriceStr } for ${ renewalLength } month. You can cancel at any time.": [
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } mês. Você pode cancelar a qualquer momento.",
         "Então ele será renovado automaticamente por ${ renewPriceStr } por ${ renewalLength } meses. Você pode cancelar a qualquer momento."
+      ],
+      "This action expands the existing subscription. You will be charged only for the new add-ons and the remaining time of the current billing cycle. The renewal date of your subscription will not be changed.": [
+        "Esta ação expande a assinatura existente. Você será cobrado apenas pelos novos complementos e pelo tempo restante do ciclo de faturamento atual. A data de renovação da sua assinatura não será alterada."
       ],
       "This number will be shown on all future invoices": [
         "Este número será mostrado em todas as faturas futuras"
@@ -9042,6 +9068,9 @@
     "Payments.info": {
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito pela parte não usada no plano anterior da sua assinatura"
+      ],
+      "Credits will be added to your balance": [
+        "Créditos serão adicionados ao seu saldo."
       ]
     },
     "Payments.plan_name": {
@@ -9457,6 +9486,40 @@
       ],
       "for 12 months": [
         "por 12 meses"
+      ]
+    },
+    "Referral": {
+      "${ referrerRewardAmount } per referral": [
+        "${ referrerRewardAmount } por indicação"
+      ],
+      "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Ganhe até ${ maxRewardAmount } em crédito. Você receberá ${ referrerRewardAmount } quando a pessoa que você convidar se inscrever em um plano ${ BRAND_NAME }."
+      ],
+      "Friend joined": [
+        "Amigo entrou",
+        "Amigos entraram"
+      ],
+      "Friend subscribed": [
+        "Amigo se inscreveu",
+        "Amigos se inscreveram"
+      ],
+      "Invite friends. Get credits.": [
+        "Convide amigos. Ganhe créditos."
+      ],
+      "Invited friends": [
+        "Amigos convidados"
+      ],
+      "More sharing options": [
+        "Mais opções de compartilhamento"
+      ],
+      "Refer friends": [
+        "Indicar amigos"
+      ],
+      "Start earning credits": [
+        "Comece a ganhar créditos"
+      ],
+      "You can get up to **${ maxRewardAmount }** in credit.": [
+        "Você pode receber até **${ maxRewardAmount }** em crédito."
       ]
     },
     "Reload event button tooltip": {

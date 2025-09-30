@@ -1210,12 +1210,6 @@
       ]
     },
     "b2b_trials_2025_Info": {
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } 试用期结束后，您的订阅将自动改成每 ${ renewCycle } 个月自动续订的付费订阅。 若在 ${ formattedDate } 之前取消，您将不用付费。"
-      ],
-      "After the trial ends on ${ formattedDate }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate }.": [
-        "${ formattedDate } 试用期结束后，您的订阅将自动改成按月自动续订的付费订阅。若在${ formattedDate }之前取消，您将不用付费。"
-      ],
       "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
         "您在试用期内可以使用到达${ TRIAL_MAX_SCRIBE_SEATS }个Scribe席位。"
       ],
@@ -8610,9 +8604,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
-      ],
-      "terms & conditions": [
-        "服务条款"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "该优惠券适用于${ couponRedemptions }次续费升级。"
