@@ -726,9 +726,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "今後表示しない"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "お客様のクリップボードを、${ timeoutDurationHumanReadable } 後に自動的にクリアしますか？"
       ]
@@ -1721,9 +1718,6 @@
       ],
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "${ PASS_SHORT_APP_NAME }では、アイテムのメモはアイテム暗号化キーで暗号化されており、アイテムにアクセス権を持つユーザーのみがメモを表示できます。\n${ BRAND_NAME }やSimpleLoginでさえ、それを見ることはできません。"
-      ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "${ PASS_APP_NAME } を最大限に活用するには、必要な拡張機能の権限を付与してください"
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "${ browser.title } に ${ PASS_APP_NAME } をインストールすると、ログインがすぐに自動入力されます。"
@@ -2895,9 +2889,6 @@
       ],
       "Get the extension for your browser.": [
         "ブラウザ拡張機能を入手"
-      ],
-      "Grant": [
-        "付与"
       ],
       "Hidden": [
         "非表示"
@@ -4246,9 +4237,6 @@
       ],
       "Get Started": [
         "利用開始"
-      ],
-      "Grant permissions": [
-        "権限を付与する"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "非表示の保管庫は、検索および自動入力中は表示されません。"

@@ -731,6 +731,11 @@
         "Rozbalit"
       ]
     },
+    "Confirm": {
+      "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
+        "Chcete, aby vaše schránka byla za ${ timeoutDurationHumanReadable } automaticky vyprázdněna?"
+      ]
+    },
     "Description": {
       "${ DARK_WEB_MONITORING_NAME } is available with a paid plan. Upgrade for immediate access.": [
         "${ DARK_WEB_MONITORING_NAME } je k dispozici s placeným tarifem. Navyšte tarif pro okamžitý přístup."
@@ -1588,6 +1593,9 @@
       "Copied to clipboard": [
         "Zkopírováno do schránky"
       ],
+      "Copied to clipboard (expires in ${ timeoutDurationHumanReadable })": [
+        "Zkopírováno do schránky (vyprší za ${ timeoutDurationHumanReadable })"
+      ],
       "Coupon successfully applied!": [
         "Kupón úspěšně použit!"
       ],
@@ -1779,9 +1787,6 @@
       ],
       "In ${ PASS_SHORT_APP_NAME }, an item note is encrypted with the item encryption key and only users who have access to the item can view the note. Not even ${ BRAND_NAME } or SimpleLogin can see it.": [
         "V ${ PASS_SHORT_APP_NAME } je poznámka k položce šifrována šifrovacím klíčem položky a mohou ji zobrazit pouze uživatelé, kteří mají k položce přístup. Nevidí ji ani ${ BRAND_NAME } nebo SimpleLogin."
-      ],
-      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
-        "Abyste mohli plně využívat rozšíření ${ PASS_APP_NAME }, udělte mu prosím potřebná oprávnění."
       ],
       "Install ${ PASS_APP_NAME } for ${ browser.title } to quickly autofill your logins.": [
         "Nainstalujte si ${ PASS_APP_NAME } pro ${ browser.title } a nechte si přihlašovací údaje vyplňovat automaticky."
@@ -2110,8 +2115,14 @@
       "Please follow the steps below to set up your domain.": [
         "Při nastavování domény postupujte podle níže uvedených kroků."
       ],
+      "Please keep ${ PASS_APP_NAME } open so the clipboard can be automatically cleared.": [
+        "Ponechte prosím otevřený ${ PASS_APP_NAME }, aby se schránka mohla automaticky vyprázdnit."
+      ],
       "Please keep this window open while your data is being imported. This process may take a few minutes.": [
         "Během importu dat ponechte toto okno otevřené. Tento proces může trvat několik minut."
+      ],
+      "Please keep your browser open so the clipboard can be automatically cleared.": [
+        "Ponechte prosím otevřený prohlížeč, aby se schránka mohla automaticky vyprázdnit."
       ],
       "Please make sure the previously active window is where you want to autotype and your cursor was focused on the login field.": [
         "Ujistěte se, že předchozí aktivní okno je tam, kde chcete provést automatické vyplnění, a že kurzor je umístěn v poli pro přihlášení."
@@ -3016,9 +3027,6 @@
       ],
       "Get the extension for your browser.": [
         "Získejte rozšíření pro svůj prohlížeč."
-      ],
-      "Grant": [
-        "Udělit"
       ],
       "Hidden": [
         "Skrytý"
@@ -3936,6 +3944,11 @@
         "${ price }/měsíc"
       ]
     },
+    "Permission": {
+      "Will require a permission from your browser": [
+        "Bude vyžadovat oprávnění z vašeho prohlížeče"
+      ]
+    },
     "Placeholder": {
       "Add 2FA secret key": [
         "Přidat klíč 2FA secret"
@@ -4264,6 +4277,9 @@
       "Change your lock method": [
         "Změna způsobu zamykání"
       ],
+      "Clear clipboard": [
+        "Vyprázdnit schránku"
+      ],
       "Confirm extra password": [
         "Potvrdit dodatečné heslo"
       ],
@@ -4377,9 +4393,6 @@
       ],
       "Get Started": [
         "Začínáme"
-      ],
-      "Grant permissions": [
-        "Udělit oprávnění"
       ],
       "Hidden vaults won’t be visible during search and autofill.": [
         "Skryté trezory nebudou viditelné během vyhledávání a automatického vyplňování."
