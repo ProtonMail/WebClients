@@ -205,7 +205,7 @@ export class MetricHandler {
             this.reportIntegrityErroringUsers(metric);
 
             captureMessage('Metric event details: decryption error', {
-                level: 'debug', // Debug as we need it only when we investigate metric reports.
+                level: 'error',
                 tags: {
                     driveSdkMetricEvent: 'decryptionError',
                 },
