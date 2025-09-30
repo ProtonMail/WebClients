@@ -9,6 +9,7 @@ declare global {
     const ENV: string;
     const EXTENSION_BUILD: boolean;
     const OFFLINE_SUPPORTED: boolean;
+    const REDUX_DEVTOOLS: boolean;
     const REDUX_DEVTOOLS_PORT: number;
     const RESUME_FALLBACK: boolean;
     const RUNTIME_RELOAD_PORT: number;
