@@ -2,6 +2,7 @@ import config from 'proton-pass-extension/app/config';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
+import { getMinimalHostPermissions, hasHostPermissions } from 'proton-pass-extension/lib/utils/permissions';
 import { safariPullFork, sendSafariMessage } from 'proton-pass-extension/lib/utils/safari';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -31,6 +32,7 @@ import {
 } from '@proton/pass/store/actions';
 import { getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { type Api, AppStatus, type MaybeNull } from '@proton/pass/types';
+import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
@@ -76,6 +78,16 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
              * return as the authentication store will have been configured */
             if (or(clientUnauthorized, clientSessionLocked)(ctx.status)) return false;
             if (clientAuthorized(ctx.status)) return true;
+
+            /** Early permission check on auth init - this avoids failing
+             * with an `Internet connection lost` error if the extension
+             * permissions are too strict for session resuming */
+            if (!(await hasHostPermissions(getMinimalHostPermissions(config)))) {
+                authService.config.onNotification?.({ type: 'error', key: NotificationKey.EXT_PERMISSIONS, text: '' });
+                void authService.config.onSessionFailure?.({ retryable: false });
+                return false;
+            }
+
             return ctx.service.auth.resumeSession(undefined, options);
         }),
 
