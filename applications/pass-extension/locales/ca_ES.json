@@ -59,6 +59,9 @@
       "Allow access": [
         "Permeteu l'accés"
       ],
+      "and": [
+        "i"
+      ],
       "Apply lifetime coupon code": [
         "Aplica un cupó de codi vitalici"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Mostra els membres"
       ],
-      "Select": [
-        "Selecciona"
-      ],
       "Send email": [
         "Envia un correu electrònic"
       ],
@@ -729,9 +729,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "No m'ho torneu a preguntar"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Voleu que el vostre porta-retalls es netegi automàticament després de ${ timeoutDurationHumanReadable }?"
       ]
@@ -1056,6 +1053,9 @@
       "Importing items failed": [
         "No s'ha pogut importar els elements."
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Per poder continuar, ${ PASS_APP_NAME } requereix aquests permisos de l'extensió: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Els enllaços segurs inactius no es van poder esborrar."
       ],
@@ -1095,11 +1095,14 @@
       "Passphrase is incorrect": [
         "La frase de contrasenya no és correcta"
       ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "S'ha denegat el permís per accedir al lloc web ${ domainsJSX }."
+      ],
+      "Permission denied for website access.": [
+        "S'ha denegat el permís per accedir al lloc web."
+      ],
       "PIN codes do not match": [
         "Els codis PIN no coincideixen"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Concediu a ${ PASS_APP_NAME } els permisos d'extensió necessaris per a continuar"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fixeu l'extensió o seleccioneu Continua sense fixar."
@@ -1386,6 +1389,9 @@
       "Access successfully confirmed": [
         "S'ha confirmat l'accés."
       ],
+      "access to ${ domains }.": [
+        "accés a ${ domains }."
+      ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "L'accés a ${ PASS_APP_NAME } sempre requerirà la vostra contrasenya de ${ BRAND_NAME }."
       ],
@@ -1520,9 +1526,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Trieu una clau d'accés desada per a iniciar la sessió a ${ domain }"
-      ],
-      "Choose your preferred look and feel.": [
-        "Trieu el vostre aspecte preferit."
       ],
       "Click the icon to open it anytime.": [
         "Feu clic a la icona per obrir-la en qualsevol moment."
@@ -1818,9 +1821,6 @@
       "Loading...": [
         "S'està carregant..."
       ],
-      "Make it your own": [
-        "Personalitzeu l'aplicació"
-      ],
       "Manager": [
         "Gestor"
       ],
@@ -1841,8 +1841,7 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
-        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -1855,6 +1854,9 @@
       ],
       "Moving items to trash": [
         "S'estan desplaçant els elements a la paperera…"
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Navegueu a la configuració de l'extensió del navegador i activeu els permisos del lloc per a ${ PASS_SHORT_APP_NAME }."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Necessiteu enviar un correu electrònic a algú, però no voleu que vegi la vostra adreça? Configureu un àlies de contacte."
@@ -1888,6 +1890,9 @@
       ],
       "Open the Extensions menu": [
         "Obre el menú d'Extensions"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Obriu la configuració de Safari, busqueu ${ PASS_APP_NAME }, aneu a \"Permisos\" i activeu-hi els corresponents al lloc."
       ],
       "Owner": [
         "Propietari"
@@ -2093,6 +2098,12 @@
       ],
       "Restoring trashed items...": [
         "S'estan restaurant els elements de la paperera..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Feu clic amb el botó dret a la icona de l'extensió i seleccioneu \"Gestioneu l'extensió\". Navegueu fins a \"Permisos i dades\" i activeu-li els permisos."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Feu clic amb el botó dret a la icona de l'extensió i seleccioneu \"Gestioneu l'extensió\". Navegueu fins a \"Accés al lloc\" i activeu-ne els permisos."
       ],
       "Save login": [
         "Desa l'inici de sessió"
@@ -2870,7 +2881,7 @@
         "Planta, apartament, edifici"
       ],
       "For a one-off sharing": [
-        "Per a un sol ús"
+        "Per a una compartició puntual"
       ],
       "Forwards to": [
         "Reenvia a"

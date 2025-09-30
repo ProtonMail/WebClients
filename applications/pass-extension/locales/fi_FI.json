@@ -56,6 +56,9 @@
       "Advanced options": [
         "Lisävalinnat"
       ],
+      "and": [
+        "ja"
+      ],
       "Apply lifetime coupon code": [
         "Käytä elinikäistä etukoodia"
       ],
@@ -538,9 +541,6 @@
       ],
       "See members": [
         "Näytä jäsenet"
-      ],
-      "Select": [
-        "Valitse"
       ],
       "Send email": [
         "Lähetä sähköposti"
@@ -1048,9 +1048,6 @@
       "PIN codes do not match": [
         "PIN-koodit eivät täsmää"
       ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Jatka myöntämällä ${ PASS_APP_NAME }ille tarvittavat laajennusoikeudet."
-      ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Kiinnitä laajennus tai valitse \"Jatka kiinnittämättä\"."
       ],
@@ -1452,9 +1449,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Valitse tallennettu pääsyavain, jolla kirjaudutaan osoitteeseen ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Valitse haluamasi ulkoasu ja tunnelma."
-      ],
       "Click the icon to open it anytime.": [
         "Avaa se koska tahansa klikkaamalla kuvaketta."
       ],
@@ -1743,9 +1737,6 @@
       "Loading...": [
         "Ladataan..."
       ],
-      "Make it your own": [
-        "Tee siitä omasi"
-      ],
       "Manager": [
         "Hallitsija"
       ],
@@ -1764,10 +1755,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
-        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"

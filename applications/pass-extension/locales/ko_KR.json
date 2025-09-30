@@ -56,6 +56,9 @@
       "Advanced options": [
         "고급 옵션"
       ],
+      "and": [
+        "및"
+      ],
       "Apply lifetime coupon code": [
         "평생 쿠폰 코드 적용"
       ],
@@ -550,9 +553,6 @@
       ],
       "See members": [
         "회원 보기"
-      ],
-      "Select": [
-        "선택"
       ],
       "Send email": [
         "이메일 전송"
@@ -1082,9 +1082,6 @@
       "PIN codes do not match": [
         "PIN 코드가 일치하지 않습니다."
       ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "계속 하기 위해 ${ PASS_APP_NAME }에 필요한 확장 권한을 허용해 주세요."
-      ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "확장 프로그램을 고정하거나 '고정하지 않고 계속하기'를 선택하세요."
       ],
@@ -1489,9 +1486,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "${ domain }에 로그인할 저장된 패스키를 선택하세요."
       ],
-      "Choose your preferred look and feel.": [
-        "마음에 드는 모양과 느낌을 골라주세요."
-      ],
       "Click the icon to open it anytime.": [
         "언제든지 아이콘을 클릭해 여세요."
       ],
@@ -1780,9 +1774,6 @@
       "Loading...": [
         "불러오는 중..."
       ],
-      "Make it your own": [
-        "나만의 것으로 만들기"
-      ],
       "Manager": [
         "중간 관리자"
       ],
@@ -1800,6 +1791,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"

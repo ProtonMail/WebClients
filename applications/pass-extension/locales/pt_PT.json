@@ -56,6 +56,9 @@
       "Advanced options": [
         "Opções avançadas"
       ],
+      "and": [
+        "e"
+      ],
       "Apply lifetime coupon code": [
         "Aplicar o código do cupão da conta vitalícia"
       ],
@@ -538,9 +541,6 @@
       ],
       "See members": [
         "Ver os membros"
-      ],
-      "Select": [
-        "Selecionar"
       ],
       "Send email": [
         "Enviar um e-mail"
@@ -1075,9 +1075,6 @@
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
       ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Conceda a ${ PASS_APP_NAME } as permissões de extensão necessárias para continuar"
-      ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fixe a extensão ou selecione \"Continuar sem fixar\"."
       ],
@@ -1498,9 +1495,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Escolha uma Chave de acesso guardada para iniciar sessão em ${ domain }."
       ],
-      "Choose your preferred look and feel.": [
-        "Escolha a aparência e o estilo que prefere."
-      ],
       "Click the icon to open it anytime.": [
         "Clique no ícone para abri-lo a qualquer momento."
       ],
@@ -1789,9 +1783,6 @@
       "Loading...": [
         "A carregar..."
       ],
-      "Make it your own": [
-        "Personalize-o"
-      ],
       "Manager": [
         "Gestor"
       ],
@@ -1812,8 +1803,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover um item para outro cofre apagará as suas ligações seguras.",
-        "Mover itens para outro cofre apagará as suas ligações seguras."
+        "Mover um item para outro cofre apagará as suas ligações seguras."
       ],
       "Moving items": [
         "A mover itens"
