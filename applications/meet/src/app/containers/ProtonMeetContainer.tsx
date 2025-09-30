@@ -29,7 +29,7 @@ import { useLockMeeting } from '../hooks/useLockMeeting';
 import { useMeetingJoin } from '../hooks/useMeetingJoin';
 import { useParticipantNameMap } from '../hooks/useParticipantNameMap';
 import { useWakeLock } from '../hooks/useWakeLock';
-import { LoadingState, type ParticipantSettings } from '../types';
+import { LoadingState, type MLSGroupState, type ParticipantSettings } from '../types';
 import { saveAudioDevice, saveAudioOutputDevice, saveVideoDevice } from '../utils/deviceStorage';
 import { setupWasmDependencies } from '../utils/wasmUtils';
 import { MeetContainer } from './MeetContainer';
@@ -112,6 +112,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     };
 
     const loadingStartTimeRef = useRef(0);
+    const [mlsGroupState, setMlsGroupState] = useState<MLSGroupState | null>(null);
 
     const keyProviderRef = useRef<ExternalE2EEKeyProvider | null>(null);
 
@@ -129,6 +130,11 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         try {
             const newGroupKeyInfo = (await wasmApp?.getGroupKey()) as GroupKeyInfo;
             currentKeyRef.current = newGroupKeyInfo.key;
+            const displayCode = await wasmApp?.getGroupDisplayCode();
+            setMlsGroupState({
+                displayCode: displayCode?.full_code || null,
+                epoch: newGroupKeyInfo.epoch,
+            });
             return { key: newGroupKeyInfo.key, epoch: newGroupKeyInfo.epoch };
         } catch (err: any) {
             reportMeetError('Error while calling getGroupKeyInfo', err);
@@ -139,6 +145,8 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
     const onNewGroupKeyInfo = async (key: string, epoch: bigint) => {
         try {
             await keyProviderRef.current?.setKey(key, epoch);
+            const displayCode = await wasmApp?.getGroupDisplayCode();
+            setMlsGroupState({ displayCode: displayCode?.full_code || null, epoch: epoch });
         } catch (err) {
             reportMeetError('Could not set new encryption key', err);
         }
@@ -162,6 +170,9 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
         const groupKeyData = await wasmApp.getGroupKey();
 
         currentKeyRef.current = groupKeyData.key;
+
+        const displayCode = await wasmApp?.getGroupDisplayCode();
+        setMlsGroupState({ displayCode: displayCode?.full_code || null, epoch: groupKeyData.epoch });
 
         startHealthCheck.current = true;
 
@@ -553,6 +564,7 @@ export const ProtonMeetContainer = ({ guestMode = false }: ProtonMeetContainerPr
                         <RoomContext.Provider value={roomRef.current}>
                             <MeetContainer
                                 participantSettings={participantSettings}
+                                mlsGroupState={mlsGroupState}
                                 setAudioDeviceId={(deviceId, save) => {
                                     if (deviceId !== null && !!save) {
                                         saveAudioDevice(deviceId);
