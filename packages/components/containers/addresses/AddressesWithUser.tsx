@@ -4,9 +4,11 @@ import { c, msgid } from 'ttag';
 
 import { orderAddresses } from '@proton/account/addresses/actions';
 import { useAddresses } from '@proton/account/addresses/hooks';
+import BYOEClaimProtonAddressModal from '@proton/activation/src/components/Modals/BYOEClaimProtonAddressModal/BYOEClaimProtonAddressModal';
 import ConnectGmailButton from '@proton/activation/src/components/SettingsArea/ConnectGmailButton';
+import { BYOE_CLAIM_PROTON_ADDRESS_SOURCE } from '@proton/activation/src/constants';
 import useBYOEAddressesCounts from '@proton/activation/src/hooks/useBYOEAddressesCounts';
-import { Href, Tooltip } from '@proton/atoms';
+import { Button, Href, Tooltip } from '@proton/atoms';
 import Alert from '@proton/components/components/alert/Alert';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import OrderableTable from '@proton/components/components/orderableTable/OrderableTable';
@@ -22,12 +24,13 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { TelemetryPostSubscriptionTourEvents } from '@proton/shared/lib/api/telemetry';
 import {
     ADDRESS_TYPE,
-    type APP_NAMES,
+    APPS,
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
     MAIL_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
+import { getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
@@ -49,7 +52,6 @@ interface Props {
     hasDescription?: boolean;
     allowAddressDeletion: boolean;
     hasAccessToBYOE?: boolean;
-    app?: APP_NAMES;
 }
 
 const upsellRef = getUpsellRef({
@@ -66,7 +68,6 @@ const AddressesUser = ({
     hasDescription = true,
     allowAddressDeletion,
     hasAccessToBYOE,
-    app,
 }: Props) => {
     const { createNotification } = useNotifications();
     const [savingIndex, setSavingIndex] = useState<number | undefined>();
@@ -76,7 +77,11 @@ const AddressesUser = ({
     const sendTelemetryEvent = usePostSubscriptionTourTelemetry();
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
+    const [claimProtonAddressModalProps, setClaimProtonAddressModalOpen, renderClaimProtonAddressModal] =
+        useModalState();
     const { usedBYOEAddresses, maxBYOEAddresses } = useBYOEAddressesCounts();
+
+    const isBYOEOnlyAccount = getIsBYOEOnlyAccount(addresses);
 
     useEffect(() => {
         if (addresses) {
@@ -175,12 +180,15 @@ const AddressesUser = ({
                         text={c('Action').t`Get more addresses`}
                     />
 
+                    {isBYOEOnlyAccount && user.isFree && getIsBYOEOnlyAccount(addresses) && (
+                        <Button onClick={() => setClaimProtonAddressModalOpen(true)}>
+                            {c('Action').t`Claim ${BRAND_NAME} address`}
+                        </Button>
+                    )}
+
                     {hasAccessToBYOE && (
                         <div>
-                            <ConnectGmailButton
-                                app={app}
-                                buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`}
-                            />
+                            <ConnectGmailButton buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`} />
                             <p className="color-weak text-sm my-2">
                                 {c('Label BYOE').ngettext(
                                     msgid`${usedBYOEAddresses} of ${maxBYOEAddresses} email address`,
@@ -261,6 +269,14 @@ const AddressesUser = ({
                     modalProps={upsellModalProps}
                     illustration={addressesImg}
                     upsellRef={upsellRef}
+                />
+            )}
+
+            {renderClaimProtonAddressModal && (
+                <BYOEClaimProtonAddressModal
+                    toApp={APPS.PROTONMAIL}
+                    source={BYOE_CLAIM_PROTON_ADDRESS_SOURCE.ADD_ADDRESS_FREE}
+                    {...claimProtonAddressModalProps}
                 />
             )}
         </>

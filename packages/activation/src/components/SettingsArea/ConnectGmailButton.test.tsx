@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
-import { ADDRESS_FLAGS, APPS } from '@proton/shared/lib/constants';
+import { ADDRESS_FLAGS, PRODUCT_BIT } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';
 
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../constants';
@@ -59,7 +59,7 @@ describe('ConnectGmailButton', () => {
     });
 
     it('should render the button with default text', () => {
-        render(<ConnectGmailButton app={APPS.PROTONMAIL} />);
+        render(<ConnectGmailButton />);
         expect(screen.getByTestId('ProviderButton:googleCardForward')).toHaveTextContent(
             'Set up auto-forwarding from Gmail'
         );
@@ -67,13 +67,13 @@ describe('ConnectGmailButton', () => {
 
     it('should render a disabled button if user is loading', () => {
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, true]);
-        render(<ConnectGmailButton app={APPS.PROTONMAIL} showIcon />);
+        render(<ConnectGmailButton showIcon />);
         expect(screen.getByTestId('ProviderButton:googleCardForward')).toBeDisabled();
     });
 
     it('should render a disabled button if user is delinquent', () => {
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: false }, false]);
-        render(<ConnectGmailButton app={APPS.PROTONMAIL} showIcon />);
+        render(<ConnectGmailButton showIcon />);
         expect(screen.getByTestId('ProviderButton:googleCardForward')).toBeDisabled();
     });
 
@@ -85,7 +85,7 @@ describe('ConnectGmailButton', () => {
             handleSyncCallback: jest.fn(),
             allSyncs: [],
         });
-        render(<ConnectGmailButton app={APPS.PROTONMAIL} showIcon />);
+        render(<ConnectGmailButton showIcon />);
         expect(screen.getByTestId('ProviderButton:googleCardForward')).toBeDisabled();
     });
 
@@ -93,7 +93,7 @@ describe('ConnectGmailButton', () => {
         mockUseUser.mockReturnValue([{ hasNonDelinquentScope: true }, false]);
         render(
             <ModalsProvider>
-                <ConnectGmailButton app={APPS.PROTONMAIL} showIcon />
+                <ConnectGmailButton showIcon />
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
@@ -111,16 +111,16 @@ describe('ConnectGmailButton', () => {
         });
         render(
             <ModalsProvider>
-                <ConnectGmailButton app={APPS.PROTONMAIL} showIcon />
+                <ConnectGmailButton showIcon />
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
         expect(screen.getByTestId('UpsellModal')).toBeInTheDocument();
     });
 
-    it('should open upsell limit modal when user has reached sync limit', () => {
+    it('should open limit modal when user has reached sync limit', () => {
         mockUseUser.mockReturnValue([
-            { hasNonDelinquentScope: true, Subscribed: {}, Flags: { 'has-a-byoe-address': true }, isPaid: true },
+            { hasNonDelinquentScope: true, Subscribed: PRODUCT_BIT.MAIL, Flags: { 'has-a-byoe-address': true } },
             false,
         ]);
         mockUseBYOEAddressesCount.mockReturnValue({
@@ -132,16 +132,16 @@ describe('ConnectGmailButton', () => {
         });
         render(
             <ModalsProvider>
-                <ConnectGmailButton app={APPS.PROTONMAIL} showIcon />
+                <ConnectGmailButton showIcon />
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
         screen.getByText('Limit reached');
     });
 
-    it('should open upsell limit modal when user has reached BYOE limit', () => {
+    it('should open limit modal when user has reached BYOE limit', () => {
         mockUseUser.mockReturnValue([
-            { hasNonDelinquentScope: true, Subscribed: {}, Flags: { 'has-a-byoe-address': true }, isPaid: true },
+            { hasNonDelinquentScope: true, Subscribed: PRODUCT_BIT.MAIL, Flags: { 'has-a-byoe-address': true } },
             false,
         ]);
         mockUseBYOEAddressesCount.mockReturnValue({
@@ -165,16 +165,21 @@ describe('ConnectGmailButton', () => {
         ]);
         render(
             <ModalsProvider>
-                <ConnectGmailButton app={APPS.PROTONMAIL} showIcon />
+                <ConnectGmailButton showIcon />
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
         screen.getByText('Limit reached');
     });
 
-    it('should open upsell limit modal when user has reached BYOE limit and deleted syncs', () => {
+    it('should open limit modal when user has reached BYOE limit and deleted syncs', () => {
         mockUseUser.mockReturnValue([
-            { hasNonDelinquentScope: true, Subscribed: {}, Flags: { 'has-a-byoe-address': true }, isPaid: true },
+            {
+                hasNonDelinquentScope: true,
+                Subscribed: PRODUCT_BIT.MAIL,
+                Flags: { 'has-a-byoe-address': true },
+                isPaid: true,
+            },
             false,
         ]);
         mockUseBYOEAddressesCount.mockReturnValue({
@@ -194,7 +199,7 @@ describe('ConnectGmailButton', () => {
         });
         render(
             <ModalsProvider>
-                <ConnectGmailButton app={APPS.PROTONMAIL} showIcon />
+                <ConnectGmailButton showIcon />
             </ModalsProvider>
         );
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
