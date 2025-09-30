@@ -92,10 +92,10 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
 
     return (
         <div
-            className="meeting-row border w-full flex flex-column md:flex-row flex-nowrap items-center justify-space-between gap-6 min-h-custom p-4 md:p-8 h-fit-content shrink-0"
+            className="meeting-row border w-full flex flex-column md:flex-row flex-nowrap justify-centet items-start md:items-center md:justify-space-between gap-6 min-h-custom p-6 md:p-8 h-fit-content shrink-0"
             style={{ '--min-h-custom': '8.25rem' }}
         >
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex flex-column md:flex-row items-start md:items-center gap-2 shrink-0 gap-6">
                 <div
                     className={clsx(
                         'flex flex-column items-center justify-center w-custom h-custom meet-radius',
@@ -104,11 +104,11 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
                     )}
                     style={{ '--w-custom': '4.25rem', '--h-custom': '4.25rem' }}
                 >
-                    <div>{month}</div>
-                    <div>{day}</div>
+                    <div className="text-lg">{month}</div>
+                    <div className="color-norm text-xl">{day}</div>
                 </div>
                 <div className="flex flex-column gap-2">
-                    <div className="text-lg color-norm text-semibold">
+                    <div className="text-xl color-norm text-semibold">
                         {meeting.MeetingName ? meeting.MeetingName : c('Title').t`Secure meeting`}
                     </div>
                     <div className="color-weak">
@@ -117,9 +117,9 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
                 </div>
             </div>
 
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex items-center gap-2 shrink-0 w-full md:w-auto">
                 <Button
-                    className="border-none rounded-full copy-link-button min-w-custom"
+                    className="border-none rounded-full copy-link-button min-w-custom flex-1 md:flex-none"
                     style={{ '--min-w-custom': '7.125rem' }}
                     size="large"
                     onClick={handleCopyLink}
@@ -127,7 +127,7 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
                     {c('Action').t`Copy link`}
                 </Button>
                 <Button
-                    className="border-none rounded-full join-button min-w-custom"
+                    className="border-none rounded-full join-button min-w-custom flex-1 md:flex-none"
                     style={{ '--min-w-custom': '7.125rem' }}
                     size="large"
                     onClick={handleJoin}
@@ -135,7 +135,7 @@ export const MeetingRow = ({ meeting, index }: MeetingRowProps) => {
                     {c('Action').t`Join`}
                 </Button>
                 <Button
-                    className="text-disabled rounded-full w-custom h-custom"
+                    className="color-disabled rounded-full w-custom h-custom"
                     size="small"
                     shape="ghost"
                     onClick={() => handleEditMeeting()}
