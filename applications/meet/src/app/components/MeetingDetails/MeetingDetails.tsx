@@ -22,7 +22,7 @@ import './MeetingDetails.scss';
 export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting }) => {
     const copyTextToClipboard = useCopyTextToClipboard();
 
-    const { meetingLink, roomName, passphrase } = useMeetContext();
+    const { meetingLink, roomName, passphrase, mlsGroupState } = useMeetContext();
 
     const { sideBarState, toggleSideBarState } = useUIStateContext();
 
@@ -98,7 +98,9 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                             <TableCell colSpan={2} className="text-break-all overflow-hidden">
                                 <div
                                     className="w-full color-primary cursor-pointer"
-                                    onClick={() => copyTextToClipboard(meetingLink)}
+                                    onClick={() => {
+                                        copyTextToClipboard(meetingLink);
+                                    }}
                                 >
                                     {meetingLink}
                                 </div>
@@ -112,9 +114,58 @@ export const MeetingDetails = ({ currentMeeting }: { currentMeeting?: Meeting })
                                 <TableCell colSpan={2}>
                                     <div
                                         className="w-full color-primary cursor-pointer"
-                                        onClick={() => copyTextToClipboard(passphrase)}
+                                        onClick={() => {
+                                            copyTextToClipboard(passphrase);
+                                        }}
                                     >
                                         {passphrase}
+                                    </div>
+                                </TableCell>
+                            </TableRow>
+                        )}
+                    </TableBody>
+                </Table>
+            </div>
+
+            <div className="meeting-info-wrapper meeting-info-mls-wrapper meet-radius overflow-hidden p-4">
+                <div className="text-semibold pl-2 mb-4">{c('Title').t`MLS state`}</div>
+                <Table>
+                    <TableBody>
+                        <TableRow>
+                            <TableCell colSpan={3} className="color-weak text-left">
+                                {c('Info')
+                                    .t`This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).`}
+                            </TableCell>
+                        </TableRow>
+                        {mlsGroupState && (
+                            <TableRow>
+                                <TableCell className="color-weak" colSpan={1}>{c('Title').t`Epoch`}</TableCell>
+                                <TableCell colSpan={2} className="text-break-all overflow-hidden">
+                                    <div>{mlsGroupState.epoch.toString()}</div>
+                                </TableCell>
+                            </TableRow>
+                        )}
+                        {mlsGroupState && mlsGroupState.displayCode !== null && (
+                            <TableRow>
+                                <TableCell className="color-weak" colSpan={1}>{c('Title').t`Authenticator`}</TableCell>
+                                <TableCell colSpan={2} className="text-break-all overflow-hidden">
+                                    <div
+                                        className="w-full color-primary cursor-pointer"
+                                        onClick={() => {
+                                            copyTextToClipboard(mlsGroupState.displayCode!);
+                                        }}
+                                    >
+                                        {mlsGroupState
+                                            .displayCode!.match(/.{1,4}/g) // seperate every 4 characters
+                                            ?.map((group, i) => (
+                                                <span
+                                                    key={i}
+                                                    className={i % 2 === 0 ? 'color-norm' : 'color-hint'}
+                                                    style={{ display: 'inline-block', marginRight: '0.25em' }}
+                                                >
+                                                    {group}
+                                                </span>
+                                            ))}
                                     </div>
                                 </TableCell>
                             </TableRow>
