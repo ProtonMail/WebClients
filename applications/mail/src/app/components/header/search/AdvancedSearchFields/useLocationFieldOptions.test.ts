@@ -2,13 +2,24 @@ import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
 import { mockUseFolders, mockUseLabels } from '@proton/testing';
 import { mockUseMailSettings } from '@proton/testing/lib/mockUseMailSettings';
 
+import { mockUseEncryptedSearchContext } from 'proton-mail/helpers/test/mockUseEncryptedSearchContext';
 import { mockUseScheduleSendFeature } from 'proton-mail/helpers/test/mockUseScheduleSendFeature';
 
+import { isCustomFolder, isDefaultFolder, isLabel } from './advancesSearchFieldHelpers';
 import { useLocationFieldOptions } from './useLocationFieldOptions';
 import { expectedAll, expectedGrouped } from './useLocationFieldOptions.test.data';
 
+jest.mock('proton-mail/components/categoryView/useCategoriesView', () => ({
+    useCategoriesView: jest.fn(() => ({
+        categoriesStore: [],
+        categoriesTabs: [],
+        activeCategoriesTabs: [],
+    })),
+}));
+
 describe('useLocationFieldOptions', () => {
     beforeEach(() => {
+        mockUseEncryptedSearchContext();
         mockUseMailSettings();
         mockUseScheduleSendFeature();
         mockUseLabels([
@@ -49,14 +60,14 @@ describe('useLocationFieldOptions', () => {
 
         expect(helper.findItemByValue('highlighted')).toStrictEqual(labels.items[0]);
 
-        expect(helper.isDefaultFolder(defaults.items[0])).toBe(true);
-        expect(helper.isDefaultFolder(customs.items[0])).toBe(false);
+        expect(isDefaultFolder(defaults.items[0])).toBe(true);
+        expect(isDefaultFolder(customs.items[0])).toBe(false);
 
-        expect(helper.isCustomFolder(customs.items[0])).toBe(true);
-        expect(helper.isCustomFolder(defaults.items[0])).toBe(false);
+        expect(isCustomFolder(customs.items[0])).toBe(true);
+        expect(isCustomFolder(defaults.items[0])).toBe(false);
 
-        expect(helper.isLabel(labels.items[0])).toBe(true);
-        expect(helper.isLabel(customs.items[0])).toBe(false);
+        expect(isLabel(labels.items[0])).toBe(true);
+        expect(isLabel(customs.items[0])).toBe(false);
     });
 
     describe('when Almost All Mail is true', () => {
