@@ -7349,10 +7349,6 @@
         "${ nbDay } päivä",
         "${ nbDay } päivää"
       ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses }/${ MaxAddresses } sähköpostiosoite",
-        "${ UsedAddresses }/${ MaxAddresses } sähköpostiosoitetta"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen.)"
       ],
@@ -10259,9 +10255,6 @@
       ],
       "Taxes": [
         "Verot"
-      ],
-      "terms & conditions": [
-        "käyttöehdot"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Etukoodi on voimassa ${ couponRedemptions } uudistuksen ajan.",
