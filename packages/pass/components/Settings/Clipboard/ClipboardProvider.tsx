@@ -9,7 +9,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { getClipboardTTLOptions } from '@proton/pass/components/Settings/Clipboard/ClipboardSettings';
 import { ClipboardSettingsModal } from '@proton/pass/components/Settings/Clipboard/ClipboardSettingsModal';
 import { createUseContext } from '@proton/pass/hooks/useContextFactory';
-import type { ClipboardTTL } from '@proton/pass/lib/clipboard/types';
+import { ClipboardTTL } from '@proton/pass/lib/clipboard/types';
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectClipboardTTL } from '@proton/pass/store/selectors';
 import type { State } from '@proton/pass/store/types';
@@ -43,13 +43,13 @@ export const ClipboardProvider: FC<PropsWithChildren> = ({ children }) => {
             try {
                 const options = getClipboardTTLOptions();
                 const copied = await writeToClipboard(value, ttl, promptForPermissions);
-                const granted = promptForPermissions && copied;
+                const blocked = promptForPermissions && !copied;
 
                 createNotification({
                     showCloseButton: false,
                     type: 'success',
                     text: (() => {
-                        if (!granted || !ttl || ttl === -1) return c('Info').t`Copied to clipboard`;
+                        if (blocked || !ttl || ttl === ClipboardTTL.TTL_NEVER) return c('Info').t`Copied to clipboard`;
                         const timeoutDurationHumanReadable = options.get(ttl);
                         // translator: `timeoutDurationHumanReadable` may be 15 seconds, 1 minute or 2 minutes
                         return c('Info').t`Copied to clipboard (expires in ${timeoutDurationHumanReadable})`;
