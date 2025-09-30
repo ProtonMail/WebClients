@@ -47,6 +47,9 @@
       "Allow access": [
         "允許存取"
       ],
+      "and": [
+        "與"
+      ],
       "Authenticate": [
         "驗證"
       ],
@@ -479,9 +482,6 @@
       "See members": [
         "檢視成員"
       ],
-      "Select": [
-        "選取"
-      ],
       "Send email": [
         "發送電郵"
       ],
@@ -631,11 +631,6 @@
       ],
       "Expand": [
         "展開"
-      ]
-    },
-    "Confirm": {
-      "Do not ask me again": [
-        "不要再詢問"
       ]
     },
     "Description": {
@@ -821,11 +816,11 @@
       "Passphrase is incorrect": [
         "密碼不正確"
       ],
+      "Permission denied for website access.": [
+        "網站存取權限遭到拒絕。"
+      ],
       "PIN codes do not match": [
         "PIN 碼不符"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "請賦予${ PASS_APP_NAME }擴的全限以繼續使用以繼續使用"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "請釘至擴充或選取「繼續不釘至」。"
@@ -1039,6 +1034,9 @@
       "Access successfully confirmed": [
         "存取權成功確認"
       ],
+      "access to ${ domains }.": [
+        "存取 ${ domains }。"
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "於移動裝置的應用程式存取密碼"
       ],
@@ -1092,9 +1090,6 @@
       ],
       "Choose a saved passkey to sign-in to ${ domain }": [
         "選擇一個通行密鑰登入${ domain }"
-      ],
-      "Choose your preferred look and feel.": [
-        "選擇您喜歡的外觀與感覺。"
       ],
       "Click the icon to open it anytime.": [
         "點擊圖示以隨時打開。"
@@ -1278,9 +1273,6 @@
       ],
       "Loading...": [
         "載入中‧‧‧"
-      ],
-      "Make it your own": [
-        "讓它專屬於您"
       ],
       "Manager": [
         "管理員"

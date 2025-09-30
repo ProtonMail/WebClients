@@ -56,6 +56,9 @@
       "Advanced options": [
         "Avancerede indstillinger"
       ],
+      "and": [
+        "og"
+      ],
       "Apply lifetime coupon code": [
         "Anvend livstids-kuponkode"
       ],
@@ -538,9 +541,6 @@
       ],
       "See members": [
         "Vis medlemmer"
-      ],
-      "Select": [
-        "Vælg"
       ],
       "Send email": [
         "Send e-mail"
@@ -1075,9 +1075,6 @@
       "PIN codes do not match": [
         "Pinkoder stemmer ikke overens"
       ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Giv venligst ${ PASS_APP_NAME } de nødvendige udvidelsestilladelser for at kunne fortsætte"
-      ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fastgør udvidelsen, eller vælg \"Fortsæt uden at fastgøre\"."
       ],
@@ -1498,9 +1495,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Vælg en gemt adgangsnøgle til at logge ind på ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Vælg dit foretrukne udseende og stil."
-      ],
       "Click the icon to open it anytime.": [
         "Du kan åbne den når som helst ved at klikke på ikonet."
       ],
@@ -1789,9 +1783,6 @@
       "Loading...": [
         "Indlæser..."
       ],
-      "Make it your own": [
-        "Gør den til din egen"
-      ],
       "Manager": [
         "Leder"
       ],
@@ -1810,10 +1801,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links.",
-        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"

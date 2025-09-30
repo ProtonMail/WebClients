@@ -59,6 +59,9 @@
       "Allow access": [
         "Permitere acces"
       ],
+      "and": [
+        "și"
+      ],
       "Apply lifetime coupon code": [
         "Aplicare cupon pe viață"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Afișare membri"
       ],
-      "Select": [
-        "Selectare"
-      ],
       "Send email": [
         "Trimitere mesaj"
       ],
@@ -731,9 +731,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Nu mă mai întreba"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Doriți golirea automată a memoriei după ${ timeoutDurationHumanReadable }?"
       ]
@@ -1102,9 +1099,6 @@
       ],
       "PIN codes do not match": [
         "Codurile PIN nu coincid."
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Trebuie să acordați permisiunile de extensie necesare pentru ${ PASS_APP_NAME } pentru a continua."
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fixați extensia sau selectați „Continuare fără fixare”."
@@ -1542,9 +1536,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Alegeți o cheie de acces salvată pentru a vă conecta la ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Alegeți stilul și aspectul preferat."
-      ],
       "Click the icon to open it anytime.": [
         "Faceți clic pe pictogramă pentru deschide aplicația."
       ],
@@ -1842,9 +1833,6 @@
       "Loading...": [
         "Se încarcă…"
       ],
-      "Make it your own": [
-        "Personalizați aplicația"
-      ],
       "Manager": [
         "Manager"
       ],
@@ -1864,11 +1852,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
-        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."

@@ -59,6 +59,9 @@
       "Allow access": [
         "Дазволіць доступ"
       ],
+      "and": [
+        "і"
+      ],
       "Apply lifetime coupon code": [
         "Ужыць пажыццёвы код купона"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Паглядзець удзельнікаў"
       ],
-      "Select": [
-        "Выбраць"
-      ],
       "Send email": [
         "Адправіць ліст"
       ],
@@ -733,9 +733,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Не пытацца наступны раз"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Аўтаматычна ачышчаць буфер абмену пасля ${ timeoutDurationHumanReadable }?"
       ]
@@ -1107,9 +1104,6 @@
       ],
       "PIN codes do not match": [
         "PIN-коды не супадаюць"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Вы павінны даць пашырэнню ${ PASS_APP_NAME } неабходныя дазволы, каб працягнуць."
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Замацуйце пашырэнне або выберыце \"Працягнуць без замацавання\"."
@@ -1563,9 +1557,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Выбраць захаваны ключ доступу для ўваходу ў ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Выберыце пажаданы выгляд і стыль."
-      ],
       "Click the icon to open it anytime.": [
         "Націсніце па значку, каб адкрыць яго ў любы час."
       ],
@@ -1866,9 +1857,6 @@
       "Loading...": [
         "Загрузка..."
       ],
-      "Make it your own": [
-        "Персаналізуйце выгляд"
-      ],
       "Manager": [
         "Менеджар"
       ],
@@ -1889,12 +1877,6 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
-      ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
-        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -4130,7 +4112,7 @@
         "Змяніць спосаб блакіроўкі"
       ],
       "Clear clipboard": [
-        "Ачысціць буфер абмену"
+        "Ачыстка буфера абмену"
       ],
       "Confirm extra password": [
         "Пацвярджэнне дадатковага пароля"

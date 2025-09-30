@@ -59,6 +59,9 @@
       "Allow access": [
         "Permitir acesso"
       ],
+      "and": [
+        "e"
+      ],
       "Apply lifetime coupon code": [
         "Aplicar código de cupom vitalício"
       ],
@@ -554,9 +557,6 @@
       "See members": [
         "Ver membros"
       ],
-      "Select": [
-        "Selecionar"
-      ],
       "Send email": [
         "Enviar e-mail"
       ],
@@ -729,9 +729,6 @@
       ]
     },
     "Confirm": {
-      "Do not ask me again": [
-        "Não perguntar novamente"
-      ],
       "Do you want your clipboard automatically cleared after ${ timeoutDurationHumanReadable }?": [
         "Você quer sua área de transferência limpa automaticamente após ${ timeoutDurationHumanReadable }?"
       ]
@@ -1097,9 +1094,6 @@
       ],
       "PIN codes do not match": [
         "Os códigos PIN não correspondem"
-      ],
-      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
-        "Conceda as permissões de extensão necessárias ao ${ PASS_APP_NAME } para continuar"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
         "Fixe a extensão ou selecione \"Continuar sem fixar\"."
@@ -1521,9 +1515,6 @@
       "Choose a saved passkey to sign-in to ${ domain }": [
         "Escolha uma chave de acesso salva para iniciar sessão em ${ domain }"
       ],
-      "Choose your preferred look and feel.": [
-        "Escolha sua aparência preferida."
-      ],
       "Click the icon to open it anytime.": [
         "Clique no ícone para abri-lo a qualquer momento."
       ],
@@ -1818,9 +1809,6 @@
       "Loading...": [
         "Carregando..."
       ],
-      "Make it your own": [
-        "Deixe do seu jeito"
-      ],
       "Manager": [
         "Gerente"
       ],
@@ -1841,8 +1829,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"
