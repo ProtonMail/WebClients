@@ -2,7 +2,6 @@ import { useAllowAddressDeletion } from '@proton/account/allowAddressDeletion/ho
 import { useUser } from '@proton/account/user/hooks';
 import EasySwitchStoreInitializer from '@proton/activation/src/logic/EasySwitchStoreInitializer';
 import EasySwitchStoreProvider from '@proton/activation/src/logic/StoreProvider';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import AddressesWithMembers from './AddressesWithMembers';
@@ -14,10 +13,9 @@ interface AddressesProps {
     memberID?: string;
     hasDescription?: boolean;
     hasAccessToBYOE?: boolean;
-    app?: APP_NAMES;
 }
 
-const Addresses = ({ isOnlySelf, organization, memberID, hasDescription, hasAccessToBYOE, app }: AddressesProps) => {
+const Addresses = ({ isOnlySelf, organization, memberID, hasDescription, hasAccessToBYOE }: AddressesProps) => {
     const [user] = useUser();
     const [allowAddressDeletion] = useAllowAddressDeletion();
 
@@ -33,11 +31,9 @@ const Addresses = ({ isOnlySelf, organization, memberID, hasDescription, hasAcce
                         allowAddressDeletion={allowAddressDeletion ?? false}
                         hasDescription={hasDescription}
                         hasAccessToBYOE={hasAccessToBYOE}
-                        app={app}
                     />
                 ) : (
                     <AddressesWithUser
-                        app={app}
                         user={user}
                         allowAddressDeletion={allowAddressDeletion ?? false}
                         hasDescription={hasDescription}
