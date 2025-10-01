@@ -116,9 +116,6 @@
       "Clear search": [
         "Tøm søk"
       ],
-      "Clone item": [
-        "Klon element"
-      ],
       "Close": [
         "Lukk"
       ],
@@ -268,6 +265,9 @@
       ],
       "Download this CSV template": [
         "Last ned denne CSV-malen"
+      ],
+      "Duplicate": [
+        "Dupliser"
       ],
       "Edit": [
         "Rediger"
@@ -1096,7 +1096,7 @@
         "Passfrase er feil"
       ],
       "Permission denied for ${ domainsJSX } website access.": [
-        "Ingen nettstedtilgang for domene ${ domainsJSX }."
+        "Nettstedstilgang nektet for domenene ${ domainsJSX }."
       ],
       "Permission denied for website access.": [
         "Tillatelse nektet for nettstedstilgang."
@@ -1839,6 +1839,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"

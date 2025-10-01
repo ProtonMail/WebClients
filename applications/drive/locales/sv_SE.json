@@ -9356,9 +9356,15 @@
       ],
       "Upload folder": [
         "Ladda upp mapp"
+      ],
+      "Upload more files": [
+        "Ladda upp fler filer"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 minuter"
+      ],
       "Access your files on the go": [
         "Kom åt dina filer när du är på språng"
       ],
@@ -9382,6 +9388,9 @@
       ],
       "Edit documents online": [
         "Redigera dokument online"
+      ],
+      "Encryption happens automatically": [
+        "Kryptering sker automatiskt"
       ],
       "End-to-end encrypted storage for your files": [
         "End-to-end krypterat lagringsutrymme för dina filer"
@@ -9449,6 +9458,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Ägaren måste bekräfta delningsåtkomst. Du kommer få ett e-postmeddelande när det är klart."
       ],
+      "Upload files, folders, photos": [
+        "Ladda upp filer, mappar, foton"
+      ],
       "Upload your first file": [
         "Ladda upp din första fil"
       ],
@@ -9457,6 +9469,12 @@
       ],
       "Work together": [
         "Arbeta tillsammans"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Du har precis fått lite gratis data och säkrat dina filer med end-to-end-kryptering – på rekordtid!"
+      ],
+      "Your storage limit won’t be affected": [
+        "Din lagringsutrymmesgräns kommer inte att påverkas."
       ]
     },
     "Onboarding Trial": {
@@ -9739,11 +9757,20 @@
       "This number will be shown on all future invoices": [
         "Detta nummer kommer att visas på alla framtida fakturor"
       ],
+      "This offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Denna betalningsmetod kommer bli din nya standard för alla framtida förnyelser."
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
+      ],
+      "You already have a subscription to this plan.": [
+        "Du har redan en prenumeration på detta paket."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
       ],
       "Your payment is still being processed": [
         "Din betalning håller fortfarande på att behandlas"
@@ -12139,6 +12166,9 @@
       "Re-signing contacts": [
         "Återsignerar kontakter"
       ],
+      "Ready, set, upload.": [
+        "Klara, färdiga, ladda upp."
+      ],
       "Recommended": [
         "Rekommenderad"
       ],
@@ -12404,6 +12434,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Vi kunde inte verifiera att en anonym användare laddade upp denna mapp."
       ],
+      "Welcome offer": [
+        "Välkomsterbjudande"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Välkommen till ${ BRAND_NAME } för Business"
       ],
@@ -12430,6 +12463,9 @@
       ],
       "You have no folders yet": [
         "Du har inga mappar ännu"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "Din ${ freeUploadLength } har startat."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Din gratis provperiod för ${ planName } slutar den ${ textDate }"

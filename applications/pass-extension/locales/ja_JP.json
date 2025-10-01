@@ -116,9 +116,6 @@
       "Clear search": [
         "検索をクリア"
       ],
-      "Clone item": [
-        "アイテムを複製"
-      ],
       "Close": [
         "閉じる"
       ],
@@ -268,6 +265,9 @@
       ],
       "Download this CSV template": [
         "この CSV テンプレートをダウンロード"
+      ],
+      "Duplicate": [
+        "複製"
       ],
       "Edit": [
         "編集"
@@ -1802,6 +1802,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "「${ payload.content.name }」からすべてのアイテムを移動します"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"

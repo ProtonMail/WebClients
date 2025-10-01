@@ -781,10 +781,10 @@
         "Poslať pozvánku na ${ email }"
       ],
       "This email is not using a ${ WALLET_APP_NAME } yet. Invite them to create their own wallet for easier transactions.": [
-        "Tento email zatiaľ nepoužíva ${ WALLET_APP_NAME }. Pozvite ich, nech si vytvoria vlastnú peňaženku pre jednoduchšie transakcie."
+        "Tento email ešte nepoužíva ${ WALLET_APP_NAME }. Pozvite ich, nech si vytvoria vlastnú peňaženku pre jednoduchšie transakcie."
       ],
       "This user may not have a ${ WALLET_APP_NAME } integrated with their email yet. Send them an email to tell them you would like to send them bitcoin.": [
-        "Tento používateľ zatiaľ nemá ${ WALLET_APP_NAME } integrovanú so svojím emailom. Pozvite im email a napíšte im, že by ste im chceli poslať bitcoin."
+        "Tento používateľ nemusí mať ešte integrovanú aplikáciu ${ WALLET_APP_NAME } so svojím emailom. Pošlite mu email, v ktorom mu oznámite, že mu chcete poslať bitcoiny."
       ],
       "To": [
         "Pre"
@@ -4546,6 +4546,9 @@
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Spôsob platby potrebný na aktiváciu predplatného po skončení skúšobnej doby."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
@@ -4594,6 +4597,9 @@
       "This number will be shown on all future invoices": [
         "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ],
+      "This offer is not available with your current plan.": [
+        "Táto ponuka nie je s vaším aktuálnym programom dostupná."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Tento spôsob platby sa stane vaším novým predvoleným pre všetky budúce obnovenia."
       ],
@@ -4605,6 +4611,12 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "You already have a subscription to this plan.": [
+        "Tento plán už máte predplatený."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Tento plán už máte predplatený. Predplatné môžete zmeniť na ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaša mena bola zmenená na eurá (€), pretože SEPA bankové prevody podporujú platby len v eurách."
@@ -5751,7 +5763,7 @@
         "Chýbajúce krajiny. Obnovte stránku a skúste to znova alebo kontaktujte podporu"
       ],
       "Missing quote. Please refresh and try again or contact support": [
-        "Chýbajúci kurz. Obnovte stránku a skúste to znova alebo kontaktujte podporu"
+        "Chýbajúci kurz. Obnovte stránku a skúste to znova alebo kontaktujte podporu, prosím"
       ]
     },
     "wallet dashboard": {
@@ -5798,7 +5810,7 @@
         "Spoznávajte"
       ],
       "Secure your wallet": [
-        "Vyberte vašu peňaženku"
+        "Zabezpečte svoju peňaženku"
       ],
       "Set up 2FA to secure your account": [
         "Nastavte si 2FA na zabezpečenie svojho konta"
@@ -5892,7 +5904,7 @@
         "Varovanie: príjemca nebude môcť na túto emailovú adresu posielať Bitcoin cez email."
       ],
       "You need to select an email to send from": [
-        "Vyberte email z ktorého sa bude odosielať"
+        "Vyberte email, z ktorého sa bude odosielať"
       ],
       "Your email (visible to recipient)": [
         "Váš email (viditeľný pre príjemcov)"
@@ -5911,13 +5923,13 @@
         "Digitálny odtlačok nezodpovedá tomu, ktorý je uložený"
       ],
       "My wallet passphrase": [
-        "Moje heslo peňaženky"
+        "Prístupová fráza mojej peňaženky"
       ],
       "To use this wallet, you need to input the passphrase": [
         "Ak chcete používať túto peňaženku, musíte zadať prístupovú frázu"
       ],
       "Wallet passphrase": [
-        "Heslo peňaženky"
+        "Prístupová fráza peňaženky"
       ]
     },
     "Wallet preference": {
@@ -5967,10 +5979,10 @@
         "Emailová adresa je neplatná"
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, we recommend using this primary BTC account without enabling Receive Bitcoin via Email and transacting with your other BTC accounts with Receive Bitcoin via Email enabled. This will improve your blockchain privacy by keeping BTC in this account separate from any BTC that you receive automatically.": [
-        "Väčšine ľudí to nevadí, pretože dostávajú BTC od ľudí, ktorým dôverujú. Ak sa toho však obávate, odporúčame používať tento primárny BTC účet bez zapnutej funkcie príjmu bitcoínov cez email a vykonávať transakcie s ostatnými vašimi BTC účtami s touto funkciou povolenou. Tým sa zlepší vaše súkromie v blockchaine, pretože BTC na tomto účte budú oddelené od všetkých BTC, ktoré dostávate automaticky."
+        "Väčšine ľudí to nevadí, pretože dostávajú BTC od ľudí, ktorým dôverujú. Ak sa toho však obávate, odporúčame používať tento primárny BTC účet bez zapnutej funkcie príjmu bitcoínov cez email a vykonávať transakcie s ostatnými vašimi BTC účtami s touto funkciou povolenou. Tým sa zvýši vaše súkromie v blockchaine, pretože BTC na tomto účte budú oddelené od všetkých BTC, ktoré dostávate automaticky."
       ],
       "For most people, this does not matter because they are receiving BTC from people they trust. However, if you are worried about this, you can create a new BTC account so that the new BTC you receive is separated from your existing BTC.": [
-        "Väčšine ľudí to nevadí, pretože dostávajú BTC od ľudí, ktorým dôverujú. Ak sa toho však obávate, môžete si vytvoriť nový účet BTC, aby boli nové BTC, ktoré dostanete, oddelené od vašich existujúcich BTC."
+        "Väčšine ľudí to nevadí, pretože dostávajú BTC od ľudí, ktorým dôverujú. Ak sa toho však obávate, môžete si vytvoriť nový BTC účet, aby boli nové BTC, ktoré dostanete oddelené od vašich existujúcich BTC."
       ],
       "My super account": [
         "Môj super účet"
@@ -6119,7 +6131,7 @@
         "Upraviť"
       ],
       "Edit recipients": [
-        "Upraviť príjemcu"
+        "Upraviť príjemcov"
       ],
       "Fast": [
         "Rýchla"
@@ -6158,7 +6170,7 @@
         "Suma jedného z príjemcov je nižšia ako minimálna hodnota"
       ],
       "Please grant camera permission to use QRCode scanner": [
-        "Pre použitie skenera QR kódu prosím dajte právo používať fotoaparát"
+        "Udeľte, prosím, fotoaparátu povolenie používať skener QR kódov"
       ],
       "Please setup an email address in your account settings in order to send messages": [
         "V nastaveniach konta si, prosím, nastavte emailovú adresu, aby ste mohli posielať správy."
@@ -6185,7 +6197,7 @@
         "Poslať všetko"
       ],
       "The transaction could not be sent. Please try again later": [
-        "Nepodarilo sa odoslať transakciu. Prosím, skúste to znova neskôr"
+        "Nepodarilo sa odoslať transakciu. Skúste to znova neskôr, prosím"
       ],
       "Transaction was successfully boosted": [
         "Transakcia bola úspešne urýchlená"
@@ -6215,7 +6227,7 @@
         "Váš Bitcoin je na ceste!"
       ],
       "Your transaction has been broadcasted to the Bitcoin network. It may take around one hour for the network to confirm the transaction.": [
-        "Vaša transakcia bola zverejnená na sieti Bitcoin. Potvrdenie transakcie sietí môže trvať približne jednu hodinu."
+        "Vaša transakcia bola odoslaná do siete Bitcoin. Potvrdenie transakcie sieťou môže trvať približne jednu hodinu."
       ],
       "~${ minutes } minute": [
         "~${ minutes } minúta",
@@ -6325,10 +6337,10 @@
         "Prístupová fráza slúži ako druhé heslo. Nedá sa neskôr zmeniť ani pridať. Bezpečne si ju zálohujte, aby ste mohli peňaženku odomknúť pri každom prihlásení."
       ],
       "Add a passphrase": [
-        "Pridajte heslo"
+        "Pridať prístupovú frázu"
       ],
       "Add a passphrase (optional)": [
-        "Pridajte heslo (voliteľné)"
+        "Pridajte prístupovú frázu (nepovinné)"
       ],
       "Bitcoin via Email": [
         "Bitcoin cez email"
@@ -6340,7 +6352,7 @@
         "Potvrdiť"
       ],
       "Confirm Passphrase": [
-        "Potvrdiť prístupovú frázu"
+        "Potvrďte prístupovú frázu"
       ],
       "Create new wallet": [
         "Vytvoriť novú peňaženku"
@@ -6364,7 +6376,7 @@
         "Pomenujte túto peňaženku"
       ],
       "Import": [
-        "Import"
+        "Importovať"
       ],
       "Import wallet": [
         "Importovať peňaženku"
@@ -6489,7 +6501,7 @@
         "Odhlásiť sa"
       ],
       "Upgrade": [
-        "Upgrade"
+        "Zvýšiť úroveň"
       ],
       "User settings": [
         "Používateľské nastavenia"

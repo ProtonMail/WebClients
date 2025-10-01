@@ -158,6 +158,9 @@
       "Choose my own password": [
         "Välj mitt eget lösenord"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Gör anspråk på ${ BRAND_NAME }-adress"
+      ],
       "Claim this address": [
         "Gör anspråk på denna adress"
       ],
@@ -7780,6 +7783,10 @@
         "${ nbDay } dag",
         "${ nbDay } dagar"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } av ${ maxAddresses } e-postadress",
+        "${ usedAddresses } av ${ maxAddresses } e-postadresser"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tillfälligt otillgänglig. Återkom senare.)"
       ],
@@ -8485,6 +8492,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Till"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } av ${ maxBYOEAddresses } e-postadress",
+        "${ usedBYOEAddresses } av ${ maxBYOEAddresses } e-postadresser"
       ]
     },
     "Label for adding a new custom domain": {
@@ -10110,6 +10123,12 @@
       "Key copied to the clipboard": [
         "Nyckel kopierad till urklipp"
       ],
+      "Monitoring disabled": [
+        "Övervakning inaktiverad"
+      ],
+      "Monitoring enabled": [
+        "Övervakning aktiverad"
+      ],
       "Number of records exceeds the download limit of 10000": [
         "Antalet poster överskrider nedladdningsgränsen på 10 000"
       ],
@@ -10892,11 +10911,20 @@
       "This number will be shown on all future invoices": [
         "Detta nummer kommer att visas på alla framtida fakturor"
       ],
+      "This offer is not available with your current plan.": [
+        "Detta erbjudande är inte tillgängligt med ditt nuvarande paket."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Denna betalningsmetod kommer bli din nya standard för alla framtida förnyelser."
       ],
       "Timeout exceeded": [
         "Timeout överskriden"
+      ],
+      "You already have a subscription to this plan.": [
+        "Du har redan en prenumeration på detta paket."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du har redan en prenumeration på detta paket. Du kan ändra din prenumeration på ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Du kommer att debiteras ${ amountToCharge } från din valda betalningsmetod."

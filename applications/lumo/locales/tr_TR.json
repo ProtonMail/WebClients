@@ -1270,7 +1270,7 @@
     },
     "collider_2025: Invite Info": {
       "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Gizlilik odaklı bir yapay zekadan faydalanacak birilerini tanıyor musunuz? Onları ${ LUMO_SHORT_APP_NAME } bekleme listesine katılmaya davet edin. Gönderebileceğiniz ${ remainingInvitesText } davetiyeniz var."
+        "Gizlilik odaklı bir yapay zekadan faydalanacak birilerini tanıyor musunuz? Onları ${ LUMO_SHORT_APP_NAME } bekleme listesine katılmaya davet edin. ${ remainingInvitesText } davet gönderebilirsiniz."
       ],
       "You have ${ remainingInvitesText } invitations remaining.": [
         "${ remainingInvitesText } davet hakkınız kaldı."
@@ -1289,7 +1289,7 @@
         "Gönderilebilecek bir davet kalmamış  "
       ],
       "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Başkalarının ${ LUMO_SHORT_APP_NAME } yardımcısını keşfetmesine yardım ettiğiniz için teşekkür ederiz! Daha fazla davet hakkı verebilirsek, sizi bilgilendireceğiz."
+        "Başkalarının ${ LUMO_SHORT_APP_NAME } yardımcısını keşfetmesine yardım ettiğiniz için teşekkür ederiz! Daha fazla davet hakkı verebilirsek sizi bilgilendireceğiz."
       ],
       "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
         "${ emailText } davet edildi. Bekleme listesine nasıl katılacağı ile ilgili yönerge gönderildi."
@@ -4950,6 +4950,9 @@
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
@@ -4990,6 +4993,9 @@
       "This number will be shown on all future invoices": [
         "Bu numara, sonraki tüm faturalarda görüntülenecek"
       ],
+      "This offer is not available with your current plan.": [
+        "Bu teklif, geçerli tarifeniz ile kullanılamıyor."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
@@ -5001,6 +5007,12 @@
       ],
       "VAT number": [
         "KDV numarası"
+      ],
+      "You already have a subscription to this plan.": [
+        "Bu tarife için zaten bir aboneliğiniz var."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Bu tarifeye zaten bir aboneliğiniz var. Aboneliğinizi ${ subscriptionPlatform } üzerinden değiştirebilirsiniz."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."

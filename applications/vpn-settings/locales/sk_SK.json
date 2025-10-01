@@ -53,6 +53,9 @@
       "Add": [
         "Pridať"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Pridať ${ BRAND_NAME } adresu"
+      ],
       "Add account": [
         "Pridať účet"
       ],
@@ -154,6 +157,9 @@
       ],
       "Choose my own password": [
         "Vybrať moje vlastné heslo"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Nárokovať si ${ BRAND_NAME } adresu"
       ],
       "Claim this address": [
         "Nárokovať si túto adresu"
@@ -7574,6 +7580,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "So šifrovanou ${ BRAND_NAME } adresou môžete používať všetky služby ${ BRAND_NAME }"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Vďaka kategóriám emailov sa dôležité správy dostanú do primárnej doručenej pošty. Všetko ostatné je usporiadané do kategórií."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Pomocou skupín môžete rýchlo a jednoducho posielať emaily všetkým ľuďom v určitej skupine."
       ],
@@ -8041,6 +8050,12 @@
         "${ nbDay } dni",
         "${ nbDay } dní",
         "${ nbDay } dní"
+      ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } z ${ maxAddresses } emailovej adresy",
+        "${ usedAddresses } z ${ maxAddresses } emailových adries",
+        "${ usedAddresses } z ${ maxAddresses } emailových adries",
+        "${ usedAddresses } z ${ maxAddresses } emailových adries"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasne nedostupné. Skúste to neskôr.)"
@@ -8746,6 +8761,14 @@
     "Label (end date/advanced search)": {
       "To": [
         "Pre"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } emailovej adresy",
+        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } emailových adries",
+        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } emailových adries",
+        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } emailových adries"
       ]
     },
     "Label for adding a new custom domain": {
@@ -11140,6 +11163,9 @@
       "More plans are available in other currencies": [
         "Ďalšie plány sú k dispozícii v iných menách"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Spôsob platby potrebný na aktiváciu predplatného po skončení skúšobnej doby."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Najskôr si znovu aktivujte predplatné, aby ste znížili počet doplnkov."
       ],
@@ -11197,6 +11223,9 @@
       "This number will be shown on all future invoices": [
         "Toto číslo bude uvedené na všetkých budúcich faktúrach."
       ],
+      "This offer is not available with your current plan.": [
+        "Táto ponuka nie je s vaším aktuálnym programom dostupná."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Tento spôsob platby sa stane vaším novým predvoleným pre všetky budúce obnovenia."
       ],
@@ -11208,6 +11237,12 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "You already have a subscription to this plan.": [
+        "Tento plán už máte predplatený."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Tento plán už máte predplatený. Predplatné môžete zmeniť na ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Z vybraného spôsobu platby vám bude účtovaná suma ${ amountToCharge }."
@@ -14421,6 +14456,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Email categories": [
+        "Kategórie emailu"
       ],
       "Email subscriptions": [
         "Zasielanie pravidelných emailov"

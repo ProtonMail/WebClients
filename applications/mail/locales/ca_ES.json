@@ -307,6 +307,9 @@
       "Continue import": [
         "Continuar importació"
       ],
+      "Continue with categories": [
+        "Continua amb categories"
+      ],
       "Continue with Google": [
         "Continua amb Google"
       ],
@@ -586,7 +589,7 @@
         "Ajusta a la finestra"
       ],
       "Font": [
-        "Tipus de lletra"
+        "Font"
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
@@ -766,6 +769,9 @@
       "Invite members": [
         "Convideu membres"
       ],
+      "Is this private?": [
+        "És això privat?"
+      ],
       "Italic": [
         "Cursiva"
       ],
@@ -774,6 +780,9 @@
       ],
       "Keep categories": [
         "Conserveu les categories"
+      ],
+      "Keep inbox as before": [
+        "Mantingueu la bústia d'entrada com abans"
       ],
       "Keep my subscription": [
         "Mantén la subscripció"
@@ -1499,7 +1508,7 @@
         "Desbloqueja"
       ],
       "Underline": [
-        "Subratllat"
+        "Subratlla"
       ],
       "Undo": [
         "Desfés"
@@ -2876,7 +2885,7 @@
         "corall"
       ],
       "ruddy pink": [
-        "rosa vermellós"
+        "rosa rogenc"
       ],
       "sahara": [
         "sahara"
@@ -6895,6 +6904,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
       ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Les categories funcionen com filtres de correu brossa. Només cerquem patrons en les dades tècniques i de capçalera sense xifrar. No llegim el contingut del correu electrònic, no compartim les vostres dades ni infringim la vostra Privacitat."
+      ],
       "Center": [
         "Centre"
       ],
@@ -7136,7 +7148,7 @@
         "corrreu electrònic"
       ],
       "Email address": [
-        "Adreça electrònica"
+        "Adreça de correu electrònic"
       ],
       "Email copied to clipboard": [
         "S'ha copiat el correu electrònic al porta-retalls."
@@ -7373,6 +7385,18 @@
       ],
       "Included for free with your plan": [
         "S'inclou de franc amb el vostre pla"
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Inclou factures, rebuts, comandes i reserves."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Inclou correus electrònics de màrqueting com ara ofertes i anuncis de productes."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Inclou resums de notícies i altres continguts no promocionals. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Inclou actualitzacions de xarxes socials i de llocs per compartir contingut multimèdia."
       ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
@@ -8907,7 +8931,7 @@
         "Aplica / obre"
       ],
       "Attach file": [
-        "Adjunta un arxiu"
+        "Adjunta un fitxer"
       ],
       "Cancel / close": [
         "Cancel·la / tanca"
@@ -8985,7 +9009,7 @@
         "Mou cap avall"
       ],
       "Move left / collapse": [
-        "Cap a l'esquerra / reduir"
+        "Mou a l'esquerra / redueix"
       ],
       "Move right / expand": [
         "Cap a la dreta / expandir"
@@ -9130,7 +9154,7 @@
         "Afegeix l'URL de la imatge"
       ],
       "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
-        "Afegiu o elimineu categories. Configureu o desactiveu notificacions. Ajusteu en qualsevol moment al menú de ${ menuIcon }."
+        "Afegiu o esborreu categories. Configureu o desactiveu notificacions. Ajusteu en qualsevol moment al menú de ${ menuIcon }."
       ],
       "Add to group": [
         "Afegeix al grup"
@@ -9560,6 +9584,9 @@
       ],
       "No label found": [
         "No s'ha trobat cap etiqueta"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "No us perdreu mai més cap missatge important! Ara apareixen a ${ primaryCopy }. Tota la resta està ordenada per categories, de manera que us serà fàcil trobar-los i no us ompliran la bústia d'entrada."
       ],
       "No results found": [
         "No s'ha trobat cap resultat"
@@ -11739,7 +11766,7 @@
         "Comenceu a utilitzar la versió més curta i atractiva de la vostra adreça de correu electrònic."
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
+        "Per a començar, trieu un nom per a mostrar. Això és el que les persones veuran quan els envieu un correu electrònic, les convideu a un esdeveniment o compartiu un fitxer amb elles."
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Us donem la benvinguda a ${ MAIL_APP_NAME }"
@@ -12059,6 +12086,9 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Es requereix un mètode de pagament perquè la subscripció s'activi un cop finalitzi la prova."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
@@ -12099,6 +12129,9 @@
       "This number will be shown on all future invoices": [
         "Aquest número es mostrarà a totes les factures futures"
       ],
+      "This offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Aquest mètode de pagament esdevindrà el vostre nou mètode per defecte per a totes les renovacions futures."
       ],
@@ -12110,6 +12143,12 @@
       ],
       "VAT number": [
         "Número d'IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Ja teniu una subscripció a aquest pla."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ja teniu una subscripció a aquest pla. Podeu canviar-la a ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
@@ -14231,7 +14270,7 @@
         " ara està actiu"
       ],
       "${ label.Name } removed": [
-        "${ label.Name } esborrat"
+        "S'ha esborrat ${ label.Name }"
       ],
       "The filter has been disabled": [
         "S'ha desactivat el filtre."
@@ -14554,6 +14593,9 @@
       ],
       "Block sender": [
         "Bloqueja el remitent"
+      ],
+      "Built for privacy": [
+        "Dissenyat per a la privadesa"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancel·la la subscripció de ${ MAIL_SHORT_APP_NAME }"
@@ -14882,6 +14924,9 @@
       "Insert contacts": [
         "Introduiu els contactes"
       ],
+      "Introducing email categories": [
+        "Presentació de les categories de correu electrònic"
+      ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
       ],
@@ -15179,7 +15224,7 @@
         "Programeu l'enviament"
       ],
       "Schedule send:": [
-        "Programeu l'enviament:"
+        "Programa l'enviament:"
       ],
       "Security center": [
         "Centre de seguretat"
@@ -15567,7 +15612,7 @@
         "Actualitza la lletra i la mida per defecte"
       ],
       "Your default font will look like following:": [
-        "La font per defecte serà com la següent:"
+        "La font predeterminada es mostrarà així:"
       ]
     },
     "Validation": {
