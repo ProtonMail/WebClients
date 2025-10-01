@@ -1,4 +1,4 @@
-import type { AutofillItem, AutofillRequest } from 'proton-pass-extension/types/autofill';
+import type { AutofillItem, AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
 import type {
     FrameAttributes,
     FrameCheckResult,
@@ -362,6 +362,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_CHECK_FORM]: { hasLoginForm: boolean };
     [WorkerMessageType.AUTOFILL_IDENTITY]: ItemContent<'identity'>;
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
+    [WorkerMessageType.AUTOFILL_REQUEST]: AutofillResult;
     [WorkerMessageType.AUTOFILL_LOGIN]: FormCredentials;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOSUGGEST_PASSWORD]: PasswordAutosuggestOptions;

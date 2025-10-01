@@ -19,7 +19,6 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
-import noop from '@proton/utils/noop';
 
 import { autofillIdentityFields } from './autofill.identity';
 
@@ -197,7 +196,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
     });
 
     const onAutofillRequest: FrameMessageHandler<WorkerMessageType.AUTOFILL_REQUEST> = withContext(
-        (ctx, { payload }) => {
+        (ctx, { payload }, _, sendResponse) => {
             switch (payload.type) {
                 case 'creditCard':
                     /** Origin check is enforced service-worker side. */
@@ -205,7 +204,11 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                         .getTrackedForms()
                         .map((form) => form.getFieldsFor(FieldType.CREDIT_CARD));
 
-                    if (ccFields) seq(ccFields, (fields) => autofillCCFields(fields, payload.data)).catch(noop);
+                    seq(ccFields ?? [], (fields) => autofillCCFields(fields, payload.data))
+                        .then((autofilled) => sendResponse({ type: 'creditCard', autofilled: autofilled.flat() }))
+                        .catch(() => sendResponse({ type: 'creditCard', autofilled: [] }));
+
+                    return true;
             }
         }
     );
