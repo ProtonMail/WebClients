@@ -11,7 +11,7 @@ import { getClientID } from '@proton/shared/lib/apps/helper';
 import { registerSessionRemovalListener } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafariFontFixClassnames';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
-import type { ProtonConfig } from '@proton/shared/lib/interfaces';
+import type { ProtonConfig, User } from '@proton/shared/lib/interfaces';
 import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
@@ -37,6 +37,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     userSuccessMetrics.init();
     setupGuestCrossStorage({ appMode, appName });
     initSafariFontFixClassnames();
+    const streamsPolyfillPromise = loadStreamsPolyfill();
 
     const run = async () => {
         const sessionFeature = measureFeaturePerformance(api, Features.globalBootstrapAppLoadSession);
@@ -101,11 +102,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             ]);
             userInitFeature.end();
 
-            await userSuccessMetrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
-            await userSuccessMetrics.setLocalUser(
-                authentication.getUID(),
-                getMetricsUserPlan({ user, isPublicContext: false })
-            );
             return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
         };
 
@@ -128,10 +124,29 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             cryptoFeature.end();
         });
 
+        // Start the drive user setting request early (at the same time as the other requests). Errors are only dealt with after post load (which handles e.g. missing drive scopes etc).
+        const driveUserSettingFeature = measureFeaturePerformance(api, Features.globalBootstrapAppDriveUserSettings);
+        driveUserSettingFeature.start();
+        const driveUserSettingsPromise = api<UserSettingsResponse>(queryUserSettings()).finally(() => {
+            driveUserSettingFeature.end();
+        });
         const userDataFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserData);
         userDataFeature.start();
         const [userData] = await Promise.all([userPromise, cryptoPromise, unleashPromise]);
         userDataFeature.end();
+
+        const setUserSuccessMetrics = (user: User) => {
+            return Promise.all([
+                userSuccessMetrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION),
+                userSuccessMetrics.setLocalUser(
+                    authentication.getUID(),
+                    getMetricsUserPlan({ user, isPublicContext: false })
+                ),
+            ]);
+        };
+
+        // Just about reporting if the user session load was fine, no need to wait for it
+        setUserSuccessMetrics(userData.user).catch(noop);
 
         const postLoadFeature = measureFeaturePerformance(api, Features.globalBootstrapAppPostLoad);
         postLoadFeature.start();
@@ -139,15 +154,10 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
         postLoadFeature.end();
 
-        const userSettingFeature = measureFeaturePerformance(api, Features.globalBootstrapAppUserSettingsAddress);
-        userSettingFeature.start();
-        // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
-        const [driveUserSettings] = await Promise.all([
-            api<UserSettingsResponse>(queryUserSettings()),
-            loadStreamsPolyfill(),
-        ]).finally(() => {
-            userSettingFeature.end();
-        });
+        // Note: Streams polyfill is only awaited for legacy browsers
+        await streamsPolyfillPromise;
+        // TODO: Make drive user settings a persisted request to avoid having to wait for it in bootstrap.
+        const driveUserSettings = await driveUserSettingsPromise;
 
         const eventManager = bootstrap.eventManager({ api: silentApi });
         extendStore({ eventManager });

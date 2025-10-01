@@ -32,7 +32,7 @@ export enum Features {
     globalBootstrapAppCrypto = 'globalBootstrapAppCrypto',
     globalBootstrapAppUserData = 'globalBootstrapAppUserData',
     globalBootstrapAppPostLoad = 'globalBootstrapAppPostLoad',
-    globalBootstrapAppUserSettingsAddress = 'globalBootstrapAppUserSettingsAddress',
+    globalBootstrapAppDriveUserSettings = 'globalBootstrapAppDriveUserSettings',
     globalBootstrapAppLoadSession = 'globalBootstrapAppLoadSession',
 
     // session specific features
