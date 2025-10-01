@@ -49,16 +49,12 @@ const ConnectGmailButton = ({
         if (!addresses) {
             return;
         }
-        console.log({ hasPaid: hasPaidMail(user), addressesOrSyncs: addressesOrSyncs.length });
         // Users should see a limit modal if reaching the maximum of BYOE addresses or syncs included in their plan.
         if (!hasPaidMail(user) && addressesOrSyncs.length >= MAX_SYNC_FREE_USER) {
-            console.log('0');
             setUpsellForwardingModalOpen(true);
         } else if (addressesOrSyncs.length >= MAX_SYNC_PAID_USER) {
-            console.log('1');
             setReachedLimitForwardingModalOpen(true);
         } else {
-            console.log('2');
             setSyncModalOpen(true);
         }
     };
