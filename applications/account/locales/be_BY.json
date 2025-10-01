@@ -99,6 +99,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Дадаць уліковы запіс ${ BRAND_NAME }"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Дадаць адрас ${ BRAND_NAME }"
+      ],
       "Add account": [
         "Дадаць уліковы запіс"
       ],
@@ -260,6 +263,9 @@
       ],
       "Choose my own password": [
         "Выбраць свой уласны пароль"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Атрымаць адрас ${ BRAND_NAME }"
       ],
       "Claim it": [
         "Атрымаць яго"
@@ -10134,6 +10140,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Адкрыццё дапаможніка з рэкамендаванымі дзеяннямі і карыснымі спасылкамі."
       ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Адкрыйце свае налады Safari для пашырэння і пераканайцеся, што дазволы вэб-сайта ўключаны для даменаў ${ BRAND_NAME }"
+      ],
       "or ${ selectFileButton }": [
         "або ${ selectFileButton }"
       ],
@@ -11334,6 +11343,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME }"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "З катэгорыямі электроннай пошты важныя паведамленні трапляюць у асноўную паштовую скрыню. Усё астатняе размяркоўваецца па катэгорыях."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Пры дапамозе груп, вы можаце хутка і лёгка адпраўляць лісты ўсім людзям у канкрэтнай групе."
       ],
@@ -12311,6 +12323,12 @@
         "${ nbYear } гадоў",
         "${ nbYear } гадоў"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } адрас электроннай пошты з ${ maxAddresses }",
+        "${ usedAddresses } адрасы электроннай пошты з ${ maxAddresses }",
+        "${ usedAddresses } адрасоў электроннай пошты з ${ maxAddresses }",
+        "${ usedAddresses } адрасоў электроннай пошты з ${ maxAddresses }"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступна. Паспрабуйце яшчэ раз пазней.)"
       ],
@@ -12794,6 +12812,9 @@
       "Email address": [
         "Адрас электроннай пошты"
       ],
+      "Email categories": [
+        "Катэгорыі электроннай пошты"
+      ],
       "Email or username": [
         "Электронная пошта або імя карыстальніка"
       ],
@@ -12811,6 +12832,9 @@
       ],
       "Emails (last month)": [
         "Лісты (за апошні месяц)"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
+        "Уключыць ${ DARK_WEB_MONITORING_NAME } для ${ domain.DomainName }"
       ],
       "Enabled": [
         "Уключана"
@@ -13603,6 +13627,14 @@
     "Label (end date/advanced search)": {
       "To": [
         "Каму"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } адрас электроннай пошты з ${ maxBYOEAddresses }",
+        "${ usedBYOEAddresses } адрасы электроннай пошты з ${ maxBYOEAddresses }",
+        "${ usedBYOEAddresses } адрасоў электроннай пошты з ${ maxBYOEAddresses }",
+        "${ usedBYOEAddresses } адрасоў электроннай пошты з ${ maxBYOEAddresses }"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15828,6 +15860,12 @@
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
+      "Monitoring disabled": [
+        "Назіранне адключана"
+      ],
+      "Monitoring enabled": [
+        "Назіранне ўключана"
+      ],
       "Number of records exceeds the download limit of 10000": [
         "Колькасць запісаў перавышае абмежаванне спампоўвання ў 10 000"
       ],
@@ -17140,6 +17178,9 @@
       "Offer unavailable": [
         "Прапанова недаступна"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Спосаб аплаты патрабуецца для актывацыі падпіскі пасля завяршэння пробнага перыяду."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Першапачаткова паўторна актывуйце сваю падпіску, каб паменшыць колькасць дадаткаў."
       ],
@@ -17159,7 +17200,7 @@
         "Падаткі"
       ],
       "terms and conditions": [
-        "умовы выкарыстання"
+        "ўмовы выкарыстання"
       ],
       "The coupon is valid for ${ couponRedemptions } renewal.": [
         "Купон дзейнічае для ${ couponRedemptions } падаўжэння.",
@@ -17197,6 +17238,9 @@
       "This number will be shown on all future invoices": [
         "Гэты нумар будзе паказаны ва ўсіх будучых рахунках"
       ],
+      "This offer is not available with your current plan.": [
+        "Гэта прапанова недаступна з вашым бягучым тарыфным планам."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Гэты спосаб аплаты стане новым прадвызначаным спосабам для ўсіх будучых падаўжэнняў."
       ],
@@ -17208,6 +17252,12 @@
       ],
       "VAT number": [
         "Нумар ПДВ"
+      ],
+      "You already have a subscription to this plan.": [
+        "У вас ужо ёсць падпіска на гэты тарыфны план."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "У вас ужо ёсць падпіска на гэты тарыфны план. Вы можаце змяніць сваю падпіску на ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "З вас будзе спагнана сума ў памеры ${ amountToCharge } са спосабу аплаты, які вы выбралі."
@@ -22079,6 +22129,9 @@
       ],
       "Email breaches": [
         "Уцечкі электроннай пошты"
+      ],
+      "Email categories": [
+        "Катэгорыі электроннай пошты"
       ],
       "Email composer": [
         "Рэдактар лістоў"
