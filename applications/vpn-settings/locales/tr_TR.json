@@ -53,6 +53,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresini ekle"
+      ],
       "Add account": [
         "Hesap ekle"
       ],
@@ -154,6 +157,9 @@
       ],
       "Choose my own password": [
         "Kendi parolamı seçeceğim"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "${ BRAND_NAME } adresini al"
       ],
       "Claim this address": [
         "Bu adresi al"
@@ -1110,6 +1116,12 @@
       "Disallow unsigned mail": [
         "İmzasız e-posta kullanma"
       ],
+      "Disconnect": [
+        "Bağlantıyı kes"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "“${ emailAddress }” adresinin bağlantısını kes"
+      ],
       "Edit": [
         "Düzenle"
       ],
@@ -1133,6 +1145,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "“${ emailAddress }” adresinin eksik anahtarlarını oluştur"
+      ],
+      "Grant permission": [
+        "İzin ver"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "\"${ emailAddress }\" adresine izin ver"
       ],
       "Reconnect": [
         "Yeniden bağlan"
@@ -1177,6 +1195,9 @@
       ],
       "Orphan": [
         "Sahipsiz"
+      ],
+      "Permission revoked": [
+        "İzin geri alındı"
       ]
     },
     "Admin": {
@@ -4071,6 +4092,11 @@
       ],
       "ZIP code is required": [
         "Posta kodunun yazılması zorunludur"
+      ]
+    },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Lütfen başlangıçta bağlandığınızla aynı Gmail adresiyle oturum açın"
       ]
     },
     "Error importing calendar": {
@@ -7370,6 +7396,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME } hizmetlerini kullanabilirsiniz"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "E-posta kategorileri ile önemli iletiler birincil gelen kutusuna gelir. Diğer her şey kategoriler halinde düzenlenir."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Grupları kullanarak, belirli bir gruptaki kullanıcılara kolayca e-postalar gönderebilirsiniz."
       ],
@@ -7800,6 +7829,10 @@
         "${ nbDay } gün",
         "${ nbDay } gün"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ maxAddresses } / ${ usedAddresses } e-posta adresi",
+        "${ maxAddresses } / ${ usedAddresses } e-posta adresi"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
@@ -8057,6 +8090,9 @@
       ],
       "Emails (last month)": [
         "E-postalar (son 1 ay)"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
+        "${ domain.DomainName } için ${ DARK_WEB_MONITORING_NAME } özelliğini aç"
       ],
       "Enabled": [
         "Kullanılıyor"
@@ -8502,6 +8538,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Bitiş"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } / ${ maxBYOEAddresses } e-posta adresi",
+        "${ usedBYOEAddresses } / ${ maxBYOEAddresses } e-posta adresi"
       ]
     },
     "Label for adding a new custom domain": {
@@ -10118,6 +10160,12 @@
       "Key copied to the clipboard": [
         "Anahtar panoya kopyalandı"
       ],
+      "Monitoring disabled": [
+        "İzleme kapalı"
+      ],
+      "Monitoring enabled": [
+        "İzleme açık"
+      ],
       "Number of records exceeds the download limit of 10000": [
         "Kayıt sayısı 10.000 indirme sayısı sınırını aşıyor"
       ],
@@ -10830,6 +10878,9 @@
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
@@ -10879,6 +10930,9 @@
       "This number will be shown on all future invoices": [
         "Bu numara, sonraki tüm faturalarda görüntülenecek"
       ],
+      "This offer is not available with your current plan.": [
+        "Bu teklif, geçerli tarifeniz ile kullanılamıyor."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
@@ -10890,6 +10944,12 @@
       ],
       "VAT number": [
         "KDV numarası"
+      ],
+      "You already have a subscription to this plan.": [
+        "Bu tarife için zaten bir aboneliğiniz var."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Bu tarifeye zaten bir aboneliğiniz var. Aboneliğinizi ${ subscriptionPlatform } üzerinden değiştirebilirsiniz."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Seçilmiş ödeme yönteminizden ${ amountToCharge } ödeme alınacak."
@@ -14059,6 +14119,9 @@
       "Email": [
         "E-posta"
       ],
+      "Email categories": [
+        "E-posta kategorileri"
+      ],
       "Email subscriptions": [
         "E-posta abonelikleri"
       ],
@@ -14637,6 +14700,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "Gmail tarafındaki bir değişiklik, ${ BRAND_NAME } bağlantısının kurulmasını engelliyor. E-posta özelliğini yeniden kullanabilmek için izin verin"
+      ],
       "Admins can manage user accounts and give admin privileges to other users. Only the primary admin can edit the plan of the organization.": [
         "Yöneticiler kullanıcı hesaplarını yönetebilir ve diğer kullanıcılara yönetici yetkisi verebilir. Yalnızca birincil yönetici kuruluşun tarifesini değiştirebilir."
       ],
