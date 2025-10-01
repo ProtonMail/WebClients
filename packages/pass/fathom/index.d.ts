@@ -1,5 +1,6 @@
 import { Fnode, rule, ruleset } from './fathom.js';
 import * as fathomWeb from './fathom.js';
+import { CCFieldType, IdentityFieldType } from './labels.js';
 
 export { fathomWeb as fathom };
 
@@ -45,25 +46,6 @@ type Trainee = TrainingResults & {
     name: string;
     getRules: () => AnyRule[];
 };
-declare enum FormType {
-    LOGIN = 'login',
-    NOOP = 'noop',
-    PASSWORD_CHANGE = 'password-change',
-    RECOVERY = 'recovery',
-    REGISTER = 'register',
-}
-declare enum FieldType {
-    EMAIL = 'email',
-    IDENTITY = 'identity',
-    OTP = 'otp',
-    PASSWORD_CURRENT = 'password',
-    PASSWORD_NEW = 'new-password',
-    USERNAME = 'username',
-    USERNAME_HIDDEN = 'username-hidden',
-    CREDIT_CARD = 'cc',
-}
-declare const formTypes: FormType[];
-declare const fieldTypes: FieldType[];
 
 declare const trainees: {
     forms: Record<string, Trainee>;
@@ -81,16 +63,6 @@ declare const getTextAttributes: (el: HTMLElement) => string[];
 declare const getFieldAttributes: (el: HTMLElement) => string[];
 declare const getFormAttributes: (el: HTMLElement) => string[];
 
-declare enum CCFieldType {
-    NAME = 1,
-    FIRSTNAME = 2,
-    LASTNAME = 3,
-    NUMBER = 4,
-    CSC = 5,
-    EXP = 6,
-    EXP_YEAR = 7,
-    EXP_MONTH = 8,
-}
 type CCExpirationMonthFormat = {
     padding: boolean;
 };
@@ -175,20 +147,6 @@ declare const createInputIterator: (form: HTMLElement) => {
 };
 declare const selectFormCandidates: (root?: Document | HTMLElement) => HTMLElement[];
 
-declare enum IdentityFieldType {
-    FULLNAME = 1,
-    FIRSTNAME = 2,
-    MIDDLENAME = 3,
-    LASTNAME = 4,
-    TELEPHONE = 5,
-    ADDRESS = 6,
-    STATE = 7,
-    CITY = 8,
-    ZIPCODE = 9,
-    ORGANIZATION = 10,
-    COUNTRY = 11,
-    EMAIL = 12,
-}
 declare const getIdentityHaystack: (input: HTMLInputElement) => string;
 declare const getIdentityFieldType: (input: HTMLInputElement) => IdentityFieldType | undefined;
 declare const maybeIdentity: (fnode: Fnode) => boolean;
@@ -245,7 +203,6 @@ export {
     type CCExpirationFormat,
     type CCExpirationMonthFormat,
     type CCExpirationYearFormat,
-    CCFieldType,
     CC_ATTRIBUTES,
     CC_INPUT_TYPES,
     type Coeff,
@@ -253,10 +210,7 @@ export {
     FIELD_ATTRIBUTES,
     FORM_ATTRIBUTES,
     FORM_CLUSTER_ATTR,
-    FieldType,
     type FormInputIterator,
-    FormType,
-    IdentityFieldType,
     OVERRIDE_FIELDS,
     OVERRIDE_FORMS,
     type Ruleset,
@@ -274,7 +228,6 @@ export {
     clearVisibilityCache,
     createInputIterator,
     fCC,
-    fieldTypes,
     flagAsHidden,
     flagAsIgnored,
     flagAsProcessed,
@@ -282,7 +235,6 @@ export {
     flagOverride,
     flagSubtreeAsIgnored,
     formCandidateSelector,
-    formTypes,
     formatExpirationDate,
     getAttributes,
     getBaseAttributes,
