@@ -3,6 +3,7 @@ import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.stat
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
 import type { AbstractInlineService } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
+import { createInlineFrameListeners } from 'proton-pass-extension/app/content/services/inline/inline.listeners';
 import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
@@ -26,8 +27,10 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
      * order. As some events are processed asynchronously via messaging, this
      * ensures the the top and sub-frame states remain in sync */
     const queue = createAsyncQueue();
-    const activeListeners = createListenerStore();
     const { channel } = controller;
+
+    const activeListeners = createListenerStore();
+    const inlineListeners = createInlineFrameListeners(channel);
 
     const dropdown: AbstractInlineService['dropdown'] = {
         attach: () => {
@@ -41,6 +44,9 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
         open: withContext((ctx, req) => {
             if (req.type === 'frame') return;
 
+            const { fieldId } = req.field;
+            const formId = req.field.getFormHandle().formId;
+
             const origin = (() => {
                 /** IFrames with `about:blank` src inherit the origin of the parent document.
                  * TODO: Consider using the parent frame's resolved origin for these cases. */
@@ -52,9 +58,6 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
 
             void queue.push(async () => {
                 const anchor = req.field.getBoxElement();
-                const { fieldId } = req.field;
-                const formId = req.field.getFormHandle().formId;
-
                 const styles = createStyleParser(anchor);
                 const { left, top } = anchor.getBoundingClientRect();
                 const { value: height } = getComputedHeight(styles, 'outer');
@@ -80,9 +83,18 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
 
                 const handleClose = () => dropdown.close({ type: 'field', field: req.field });
 
+                const handleBlur = () =>
+                    sendMessage(
+                        contentScriptMessage({
+                            type: WorkerMessageType.INLINE_FRAME_BLUR,
+                            payload: { formId, fieldId },
+                        })
+                    ).catch(noop);
+
                 /** Intercept scroll events in sub-frames. It is too costly to try to reposition
                  * any injected UI elements in the top-frame via messaging. */
                 activeListeners.addListener(document, 'scroll', handleClose, { capture: true });
+                activeListeners.addListener(window, 'blur', handleBlur, { once: true });
 
                 /** Intercept backdrop clicks in sub-frames. The backdrop click
                  * handler in the top-frame will not catch clicks in sub-frames */
@@ -158,9 +170,11 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
     return {
         init: () => {
             channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onInlineDropdownClosed);
+            inlineListeners.init();
         },
         destroy: () => {
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSED, onInlineDropdownClosed);
+            inlineListeners.destroy();
         },
 
         setTheme: noop,

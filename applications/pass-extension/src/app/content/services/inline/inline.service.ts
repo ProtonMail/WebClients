@@ -7,6 +7,7 @@ import { createIFrameService } from 'proton-pass-extension/app/content/services/
 import type { AbstractInlineService } from 'proton-pass-extension/app/content/services/inline/inline.abstract';
 import { getFrameElement } from 'proton-pass-extension/app/content/utils/frame';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/utils/frame.message-broker';
+import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { clientNeedsSession, clientSessionLocked } from '@proton/pass/lib/client';
@@ -57,9 +58,10 @@ export const createInlineService = ({
                 const layer = payload.type === 'field' ? payload.field.getFormHandle().element : undefined;
                 iframes.attachDropdown(layer)?.open(payload);
 
-                const handleClose = () => dropdown.close(payload);
-                activeListeners.addListener(window, 'resize', handleClose);
-                activeListeners.addListener(document, 'scroll', handleClose, { capture: true });
+                const close = () => dropdown.close(payload);
+
+                activeListeners.addListener(window, 'resize', close, { once: true, passive: true });
+                activeListeners.addListener(document, 'scroll', close, { once: true, passive: true, capture: true });
             }
         },
 
@@ -196,6 +198,15 @@ export const createInlineService = ({
         iframes.attachDropdown();
     };
 
+    /** When sub-frame loses focus but top-level UI gains focus, don't close dropdown
+     * as this indicates legitimate user interaction with our UI elements */
+    const onInlineFrameBlur: FrameMessageHandler<WorkerMessageType.INLINE_FRAME_BLUR> = ({ payload }) => {
+        if (iframes.dropdown?.getState().visible && !isActiveElement(iframes.root.customElement)) {
+            const { formId, fieldId } = payload;
+            dropdown.close({ type: 'frame', formId, fieldId });
+        }
+    };
+
     return {
         init: () => {
             iframes.init();
@@ -203,6 +214,7 @@ export const createInlineService = ({
             channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onInlineDropdownClose);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onInlineDropdownState);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onInlineDropdownAttach);
+            channel.register(WorkerMessageType.INLINE_FRAME_BLUR, onInlineFrameBlur);
         },
 
         setTheme: iframes.setTheme,
@@ -213,6 +225,7 @@ export const createInlineService = ({
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onInlineDropdownClose);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onInlineDropdownState);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onInlineDropdownAttach);
+            channel.unregister(WorkerMessageType.INLINE_FRAME_BLUR, onInlineFrameBlur);
         },
 
         sync,

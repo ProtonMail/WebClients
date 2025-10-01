@@ -3,6 +3,8 @@ import type { FrameAttributes, FrameField, FrameRelay } from 'proton-pass-extens
 
 import type { Coords } from '@proton/pass/types';
 
+export type DropdownStateDTO = { visible: boolean; attachedField?: FrameField };
+
 export type DropdownOpenDTO = FrameRelay<
     {
         /** Type of autofill action (login, identity, credit card, etc.) */
@@ -23,6 +25,6 @@ export type DropdownOpenDTO = FrameRelay<
     { fieldFrameId: number; frameId: number }
 >;
 
+export type DropdownOpenedDTO = Required<FrameField>;
 export type DropdownCloseDTO = { field?: FrameField };
-export type DropdownStateDTO = { visible: boolean; attachedField?: FrameField };
-export type DropdownClosedDTO = { refocus: boolean; fieldFrameId: number } & FrameField;
+export type DropdownClosedDTO = { refocus: boolean } & Required<FrameField>;
