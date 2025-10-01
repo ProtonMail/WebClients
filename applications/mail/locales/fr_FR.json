@@ -307,6 +307,9 @@
       "Continue import": [
         "Continuer l'importation"
       ],
+      "Continue with categories": [
+        "Continuer avec les catégories"
+      ],
       "Continue with Google": [
         "Continuer avec Google"
       ],
@@ -763,6 +766,9 @@
       "Invite members": [
         "Invitez des membres"
       ],
+      "Is this private?": [
+        "Est-ce privé ?"
+      ],
       "Italic": [
         "Italique"
       ],
@@ -771,6 +777,9 @@
       ],
       "Keep categories": [
         "Conserver les catégories"
+      ],
+      "Keep inbox as before": [
+        "Conserver la boite de réception telle quelle"
       ],
       "Keep my subscription": [
         "Conserver mon abonnement"
@@ -6892,6 +6901,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
       ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Les catégories fonctionnent comme des filtres anti-indésirables/spam. Nous recherchons uniquement des schémas dans les en-têtes non chiffrés et les données techniques. Nous ne lisons pas le contenu des messages, ne partageons pas vos données et n'empiétons pas sur votre respect de la vie privée."
+      ],
       "Center": [
         "Centrer"
       ],
@@ -7370,6 +7382,18 @@
       ],
       "Included for free with your plan": [
         "Inclus gratuitement dans votre abonnement"
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Comprend les factures, les accusés de réception, les commandes et les réservations."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Comprend les messages marketing tels que les offres et les annonces de produits."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Inclut des résumés d'actualités et d'autres contenus non promotionnels. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Comprend les mises à jour des réseaux sociaux et des sites de partage de médias."
       ],
       "Inherited from parent folder": [
         "Similaire au dossier principal"
@@ -9554,6 +9578,9 @@
       ],
       "No label found": [
         "Aucun label n'a été trouvé."
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Vous ne manquerez plus de messages importants ! Ceux-ci apparaissent désormais sous ${ primaryCopy }. Tout le reste est trié par catégorie, ce qui les rend faciles à trouver et évite d'encombrer votre boîte de réception."
       ],
       "No results found": [
         "Aucun résultat trouvé."
@@ -12053,6 +12080,9 @@
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Un moyen de paiement est requis pour que l'abonnement soit activé après la fin de la version d'essai."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
@@ -12093,6 +12123,9 @@
       "This number will be shown on all future invoices": [
         "Ce numéro sera indiqué sur toutes les prochaines factures."
       ],
+      "This offer is not available with your current plan.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
       ],
@@ -12104,6 +12137,12 @@
       ],
       "VAT number": [
         "Numéro de TVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Vous êtes déjà abonné à cet abonnement."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Vous avez déjà un abonnement. Vous pouvez modifier votre abonnement sur ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
@@ -14644,6 +14683,9 @@
       "Block sender": [
         "Bloquer l'expéditeur"
       ],
+      "Built for privacy": [
+        "Conçu pour le respect de la vie privée"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Annuler l'abonnement ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -14967,6 +15009,9 @@
       ],
       "Insert contacts": [
         "Insérer des contacts"
+      ],
+      "Introducing email categories": [
+        "Présentation des catégories de messages"
       ],
       "Invalid verification code": [
         "Le code de vérification n'est pas valide."
