@@ -30,12 +30,20 @@ export const Location = ({ onConfirm }: Props) => {
     const allCountries = uniqBy(Object.values(countriesByProviders ?? {}).flat(), (country) => country.Code);
     const allCountryOptions = allCountries.map((country) => ({ countryCode: country.Code, countryName: country.Name }));
 
-    const rampLink = <Href href="https://rampnetwork.com">{c('bitcoin buy').t`Ramp Network`}</Href>;
-    const banxaLink = <Href href="https://banxa.com">{c('bitcoin buy').t`Banxa`}</Href>;
-    const moonpayLink = <Href href="https://moonpay.com">{c('bitcoin buy').t`MoonPay`}</Href>;
-    const binanceLink = <Href href="https://binance.com">{c('bitcoin buy').t`Binance`}</Href>;
-    const coinbaseLink = <Href href="https://coinbase.com">{c('bitcoin buy').t`Coinbase`}</Href>;
-    const krakenLink = <Href href="https://kraken.com">{c('bitcoin buy').t`Kraken`}</Href>;
+    const rampLink = (
+        <Href href="https://rampnetwork.com" key="eslint-autofix-BBCFBB">{c('bitcoin buy').t`Ramp Network`}</Href>
+    );
+    const banxaLink = <Href href="https://banxa.com" key="eslint-autofix-86BACE">{c('bitcoin buy').t`Banxa`}</Href>;
+    const moonpayLink = (
+        <Href href="https://moonpay.com" key="eslint-autofix-905EE8">{c('bitcoin buy').t`MoonPay`}</Href>
+    );
+    const binanceLink = (
+        <Href href="https://binance.com" key="eslint-autofix-C5DDB6">{c('bitcoin buy').t`Binance`}</Href>
+    );
+    const coinbaseLink = (
+        <Href href="https://coinbase.com" key="eslint-autofix-97ECDE">{c('bitcoin buy').t`Coinbase`}</Href>
+    );
+    const krakenLink = <Href href="https://kraken.com" key="eslint-autofix-BE2CAD">{c('bitcoin buy').t`Kraken`}</Href>;
     const isAztecoEnabled = useFlag('WalletAztecoWeb');
 
     return (

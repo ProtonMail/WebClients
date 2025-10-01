@@ -24,9 +24,13 @@ const TrialCanceledModal = (props: ModalStateProps) => {
         return null;
     }
 
-    const boldPlanTitle = <span className="text-bold">{planTitle}</span>;
+    const boldPlanTitle = (
+        <span className="text-bold" key="plan-title">
+            {planTitle}
+        </span>
+    );
     const boldEndDate = (
-        <span className="text-bold">
+        <span className="text-bold" key="end-date">
             <Time>{trialEndsOn}</Time>
         </span>
     );

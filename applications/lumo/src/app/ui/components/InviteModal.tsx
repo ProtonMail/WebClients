@@ -58,7 +58,11 @@ export const InviteModal = ({ defaultInviterAddressID, onInviteSent, remainingIn
         }
     };
 
-    const remainingInvitesText = <span className="text-bold color-primary">{remainingInvites}</span>;
+    const remainingInvitesText = (
+        <span className="text-bold color-primary" key="eslint-autofix-D303D6">
+            {remainingInvites}
+        </span>
+    );
 
     return (
         <LumoPrompt

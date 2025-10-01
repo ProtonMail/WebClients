@@ -1,12 +1,18 @@
+import rule from '../validate-ttag';
+
 /* eslint-env es6 */
 
 const { RuleTester } = require('eslint');
-const rule = require('../validate-ttag');
 
 const ruleTester = new RuleTester({
-    parserOptions: {
+    languageOptions: {
         ecmaVersion: 2020,
         sourceType: 'module',
+        parserOptions: {
+            ecmaFeatures: {
+                jsx: true,
+            },
+        },
     },
 });
 

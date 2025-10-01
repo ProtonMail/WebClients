@@ -38,7 +38,7 @@ export function DriveEmptyViewFreeUpload() {
     } = useFolderUploadInput(activeFolder.shareId, activeFolder.linkId);
 
     const freeUploadLength = (
-        <span className="color-primary">{
+        <span className="color-primary" key="eslint-autofix-9BF6E8">{
             // translator: length of free upload period after starting the application
             c('Onboarding Info').t`10 minutes`
         }</span>

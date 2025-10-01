@@ -49,7 +49,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
     const warning = useMemo(() => {
         if (canManage && limitReached) {
-            const upgradeLink = <AccessUpgrade />;
+            const upgradeLink = <AccessUpgrade key="eslint-autofix-3D8F17" />;
             return (
                 <Card type="primary" className="text-sm">
                     {plan === UserPassPlan.FREE
