@@ -116,9 +116,6 @@
       "Clear search": [
         "Vyčistiť vyhľadávanie"
       ],
-      "Clone item": [
-        "Klonovať položku"
-      ],
       "Close": [
         "Zatvoriť"
       ],
@@ -268,6 +265,9 @@
       ],
       "Download this CSV template": [
         "Stiahnuť si túto CSV šablónu"
+      ],
+      "Duplicate": [
+        "Duplikovať"
       ],
       "Edit": [
         "Upraviť"
@@ -1063,6 +1063,9 @@
       "Importing items failed": [
         "Importovanie položiek zlyhalo"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Pre pokračovanie ${ PASS_APP_NAME } vyžaduje povolenia k týmto rozšíreniam: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Neaktívne bezpečné odkazy nebolo možné odstrániť."
       ],
@@ -1101,6 +1104,12 @@
       ],
       "Passphrase is incorrect": [
         "Prístupová fráza je nesprávna"
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Prístup na webovú stránku ${ domainsJSX } bol zamietnutý."
+      ],
+      "Permission denied for website access.": [
+        "Prístup na webovú stránku bol zamietnutý."
       ],
       "PIN codes do not match": [
         "PIN kódy sa nezhodujú"
@@ -1421,6 +1430,9 @@
       ],
       "Access successfully confirmed": [
         "Prístup bol úspešne potvrdený"
+      ],
+      "access to ${ domains }.": [
+        "prístup k ${ domains }."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Prístup k ${ PASS_APP_NAME } bude vždy vyžadovať vaše heslo do ${ BRAND_NAME }"
@@ -1878,6 +1890,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -1889,6 +1907,9 @@
       ],
       "Moving items to trash": [
         "Presúvanie položiek do koša"
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Prejdite do nastavení rozšírení svojho prehliadača a povoľte oprávnenia pre webovú stránku pre ${ PASS_SHORT_APP_NAME }."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Potrebujete niekomu poslať email, ale nechcete, aby videl vašu emailovú adresu? Vytvorte si alias kontaktu."
@@ -1922,6 +1943,9 @@
       ],
       "Open the Extensions menu": [
         "Otvorte menu rozšírenia"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Otvorte nastavenia Safari, nájdite ${ PASS_APP_NAME }, prejdite do časti „Oprávnenia“ a povolte oprávnenia pre webové stránky."
       ],
       "Owner": [
         "Vlastník"
@@ -2129,6 +2153,12 @@
       ],
       "Restoring trashed items...": [
         "Obnovovanie položiek z koša..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Kliknite pravým tlačidlom na ikonu rozšírenia a vyberte možnosť „Spravovať rozšírenie“. Prejdite na „Povolenia a údaje“ a povoľte oprávnenia pre web."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Kliknite pravým tlačidlom na ikonu rozšírenia a vyberte možnosť „Spravovať rozšírenie“. Prejdite na „Prístup k webu“ a povoľte oprávnenia pre web."
       ],
       "Save login": [
         "Uložiť prihlásenie"
