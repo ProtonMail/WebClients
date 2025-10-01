@@ -32,7 +32,11 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
     };
 
     const nameDeleted = (
-        <strong className="text-ellipsis inline-block max-w-full align-bottom" title={label.Name}>
+        <strong
+            className="text-ellipsis inline-block max-w-full align-bottom"
+            title={label.Name}
+            key="eslint-autofix-FBDE77"
+        >
             {label.Name}
         </strong>
     );

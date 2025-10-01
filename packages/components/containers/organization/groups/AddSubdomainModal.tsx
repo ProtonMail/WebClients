@@ -33,8 +33,14 @@ const AddSubdomainModal = ({ prefilledDomainName, open, setSelectedDomain, onClo
     const api = useApi();
     const { call } = useEventManager();
 
-    const protonSubdomain = <span className="text-bold">{pmMeDomain}</span>;
-    const learnMoreLink = <Href href={getKnowledgeBaseUrl('')}>{c('cta').t`Learn more`}</Href>;
+    const protonSubdomain = (
+        <span className="text-bold" key="eslint-autofix-B187AD">
+            {pmMeDomain}
+        </span>
+    );
+    const learnMoreLink = (
+        <Href href={getKnowledgeBaseUrl('')} key="eslint-autofix-3DAEF2">{c('cta').t`Learn more`}</Href>
+    );
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

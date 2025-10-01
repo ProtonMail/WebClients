@@ -24,7 +24,11 @@ const PayPalView = ({ amount, currency, method }: Props) => {
     const minAmount = isChargebeePaypal ? MIN_PAYPAL_AMOUNT_CHARGEBEE : MIN_PAYPAL_AMOUNT_INHOUSE;
 
     if (amount < minAmount) {
-        const minimumAmount = <Price currency={currency}>{minAmount}</Price>;
+        const minimumAmount = (
+            <Price currency={currency} key="minimum-amount">
+                {minAmount}
+            </Price>
+        );
 
         return (
             <Alert className="mb-4" type="error">

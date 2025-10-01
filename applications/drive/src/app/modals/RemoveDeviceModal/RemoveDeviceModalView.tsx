@@ -27,7 +27,11 @@ export const RemoveDeviceModalView = ({
     onClose,
     ...modalProps
 }: RemoveDeviceModalViewProps) => {
-    const deviceName = <strong className="text-break">{name}</strong>;
+    const deviceName = (
+        <strong className="text-break" key="eslint-autofix-28D306">
+            {name}
+        </strong>
+    );
 
     return (
         <ModalTwo

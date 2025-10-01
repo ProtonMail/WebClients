@@ -60,7 +60,11 @@ export const RemoveDeviceModalDeprecated = ({ device, onClose, ...modalProps }: 
         deviceNameValidator(model.name, device.name),
     ]);
 
-    const deviceName = <strong className="text-break">{device.name}</strong>;
+    const deviceName = (
+        <strong className="text-break" key="eslint-autofix-68C3FC">
+            {device.name}
+        </strong>
+    );
 
     return (
         <ModalTwo

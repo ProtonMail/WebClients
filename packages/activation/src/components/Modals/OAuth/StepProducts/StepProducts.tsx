@@ -37,7 +37,7 @@ const StepProducts = ({ triggerOAuth }: Props) => {
     const { isEmailsEnabled, isCalendarsEnabled, isContactsEnabled } = enabledFeatures;
 
     const claimAddressButton = (
-        <InlineLinkButton onClick={() => setClaimProtonAddressModalProps(true)}>
+        <InlineLinkButton onClick={() => setClaimProtonAddressModalProps(true)} key="eslint-autofix-B7FCA2">
             {c('Action').t`Get a free ${BRAND_NAME} address`}
         </InlineLinkButton>
     );

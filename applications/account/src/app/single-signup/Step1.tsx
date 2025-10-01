@@ -138,7 +138,8 @@ const getPlanTitle = (selected: string, trial?: boolean) => {
     if (trial) {
         // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
         const freeForNDays = (
-            <span className="color-success">{c('b2b_trials_2025_Info').t`free for ${TRIAL_DURATION_DAYS} days`}</span>
+            <span className="color-success" key="eslint-autofix-F5288F">{c('b2b_trials_2025_Info')
+                .t`free for ${TRIAL_DURATION_DAYS} days`}</span>
         );
         // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
         return c('b2b_trials_2025_Info').jt`Try ${selected} ${freeForNDays}`;

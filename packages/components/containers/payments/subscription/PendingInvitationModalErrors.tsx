@@ -36,13 +36,23 @@ const PendingInvitationModalErrors = ({ errors, invite, onClose }: Props) => {
 
     // translator: full sentence is: You can only accept 3 invitations in a 6-month period. Please contact <customer support> if you require an exception.
     const supportLink = (
-        <Button className="p-0 align-baseline" shape="underline" color="norm" onClick={() => setBugReportOpen(true)}>{c(
-            'familyOffer_2023:Family plan'
-        ).t`customer support`}</Button>
+        <Button
+            className="p-0 align-baseline"
+            shape="underline"
+            color="norm"
+            onClick={() => setBugReportOpen(true)}
+            key="customer-support"
+        >{c('familyOffer_2023:Family plan').t`customer support`}</Button>
     );
 
     const addressSettingsLink = (
-        <SettingsLink app={APPS.PROTONMAIL} path="/identity-addresses" onClick={onClose} target="_self">
+        <SettingsLink
+            app={APPS.PROTONMAIL}
+            path="/identity-addresses"
+            onClick={onClose}
+            target="_self"
+            key="manage-addresses"
+        >
             {c('familyOffer_2023:Family plan').t`Manage addresses`}
         </SettingsLink>
     );

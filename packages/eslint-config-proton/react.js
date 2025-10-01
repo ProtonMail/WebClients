@@ -64,6 +64,8 @@ export default defineConfig(
             'custom-rules/deprecate-classes': 'warn',
             'custom-rules/no-template-in-translator-context': 'error',
             'custom-rules/validate-ttag': 'error',
+            'custom-rules/validate-ttag-key': 'error',
+            'custom-rules/validate-ttag-key-autofix-warning': 'warn',
             'custom-rules/date-formatting-locale': 'warn',
         },
         settings: {

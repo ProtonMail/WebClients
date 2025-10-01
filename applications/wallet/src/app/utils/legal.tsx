@@ -8,7 +8,9 @@ import config from '../config';
 const termsLink = `${getAppStaticUrl(config.APP_NAME)}/legal/terms`;
 
 export const getTermAndConditionsSentence = () => {
-    const termsAndConditionsLink = <Href className="" href={termsLink}>{`terms and conditions`}</Href>;
+    const termsAndConditionsLink = (
+        <Href className="" href={termsLink} key="eslint-autofix-F8A7DD">{`terms and conditions`}</Href>
+    );
 
     return c('Wallet Upgrade').jt`By continuing, you agree to our ${termsAndConditionsLink}`;
 };

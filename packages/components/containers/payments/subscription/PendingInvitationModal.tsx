@@ -63,8 +63,10 @@ const PendingInvitationModal = ({ invite, ...modalProps }: Props) => {
         }
     };
 
-    const inviteEmail = <strong>{`${invite.InviterEmail}`}</strong>;
-    const assignedStorage = <strong>{humanSize({ bytes: invite.MaxSpace, fraction: 0 })}</strong>;
+    const inviteEmail = <strong key="invite-email">{`${invite.InviterEmail}`}</strong>;
+    const assignedStorage = (
+        <strong key="assigned-storage">{humanSize({ bytes: invite.MaxSpace, fraction: 0 })}</strong>
+    );
 
     const brandOrAppName = invite.OrganizationPlanName === PLANS.PASS_FAMILY ? PASS_APP_NAME : BRAND_NAME;
 

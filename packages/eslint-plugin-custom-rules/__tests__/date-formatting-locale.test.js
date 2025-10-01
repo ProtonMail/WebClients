@@ -1,10 +1,11 @@
+import rule from '../date-formatting-locale';
+
 /* eslint-env es6 */
 
 const { RuleTester } = require('eslint');
-const rule = require('../date-formatting-locale');
 
 const ruleTester = new RuleTester({
-    parserOptions: {
+    languageOptions: {
         ecmaVersion: 2020,
         sourceType: 'module',
     },
