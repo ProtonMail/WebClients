@@ -323,19 +323,19 @@ export const filterElementsInState = ({
             return false;
         }
 
-        const elementContainsDisabledCategory = isElementMessage(element)
-            ? element.LabelIDs.some((labelID) => disabledCategoriesIDs?.includes(labelID))
-            : disabledCategoriesIDs?.some((category) =>
-                  (element as Conversation)?.Labels?.some((label) => label.ID === category)
-              );
-
-        const hasDisabledCategoryLabel =
-            disabledCategoriesIDs && labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT && elementContainsDisabledCategory;
+        // We only want to compute the disabled category if we're in the default label, this prevents unnecessary computation
+        const isDefaultCategory = labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
+        let hasDisabledCategoryLabel = false;
+        if (isDefaultCategory && disabledCategoriesIDs?.length) {
+            hasDisabledCategoryLabel = isElementMessage(element)
+                ? (element.LabelIDs?.some((id) => disabledCategoriesIDs.includes(id)) ?? false)
+                : disabledCategoriesIDs.some((categoryId) =>
+                      (element as Conversation)?.Labels?.some((label) => label.ID === categoryId)
+                  );
+        }
 
         if (
-            // If the element doesn't have the required label
             !hasLabel(element, labelID) &&
-            // Or if the element doesn't have a disabled category label while being on the primary category
             !hasDisabledCategoryLabel &&
             labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS
         ) {
