@@ -25,7 +25,7 @@ const getTrialInfo = (subscriptionEnd?: number, planTitle?: string) => {
         return [];
     }
 
-    const cancelDate = <Time>{subscriptionEnd}</Time>;
+    const cancelDate = <Time key="eslint-autofix-560DB6">{subscriptionEnd}</Time>;
 
     const cancelAnytimeTitle = <b>{c('Onboarding Trial').jt`Cancel anytime before ${cancelDate}.`}</b>;
     const cancelAnytimeDescription = c('Onboarding Trial')
@@ -41,12 +41,14 @@ const getTrialInfo = (subscriptionEnd?: number, planTitle?: string) => {
 
     // translator: full sentence is: If you need help, visit our help center or contact our support team.
     const helpCenterLink = (
-        <Href href="https://proton.me/support/business">{c('Onboarding Trial').t`help center`}</Href>
+        <Href href="https://proton.me/support/business" key="eslint-autofix-EF1560">{c('Onboarding Trial')
+            .t`help center`}</Href>
     );
 
     // translator: full sentence is: If you need help, visit our help center or contact our support team.
     const contactSupportLink = (
-        <Href href="https://proton.me/support/business">{c('Onboarding Trial').t`contact our support team`}</Href>
+        <Href href="https://proton.me/support/business" key="eslint-autofix-EEF3DD">{c('Onboarding Trial')
+            .t`contact our support team`}</Href>
     );
 
     // translator: full sentence is: If you need help, visit our help center or contact our support team.
@@ -107,7 +109,7 @@ const OnboardingTrialStep = ({ onNext }: Props) => {
         return null;
     }
 
-    const trialEndsOnFormatted = <Time>{trialEndsOn}</Time>;
+    const trialEndsOnFormatted = <Time key="eslint-autofix-FC02AC">{trialEndsOn}</Time>;
 
     return (
         <>

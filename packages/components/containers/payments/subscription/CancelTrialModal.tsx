@@ -59,7 +59,11 @@ const FeatureList = () => {
     }
 
     const planTitle = subscription?.Plans?.[0]?.Title;
-    const boldPlanTitle = <span className="text-bold">{planTitle}</span>;
+    const boldPlanTitle = (
+        <span className="text-bold" key="plan-title">
+            {planTitle}
+        </span>
+    );
 
     return (
         <>
@@ -93,10 +97,12 @@ const CancelTrialModal = ({ onConfirm, onClose, ...rest }: CancelTrialModalProps
         return null;
     }
 
-    const boldProtonFree = <span className="text-bold">{`${BRAND_NAME} ${FREE_PLAN.Title}`}</span>;
+    const boldProtonFree = (
+        <span className="text-bold" key="proton-free-plan">{`${BRAND_NAME} ${FREE_PLAN.Title}`}</span>
+    );
 
     const boldCancelDate = (
-        <span className="text-bold">
+        <span className="text-bold" key="cancel-date">
             {'('}
             <Time>{trialEndsOn}</Time>
             {')'}

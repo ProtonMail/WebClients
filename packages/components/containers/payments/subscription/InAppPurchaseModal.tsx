@@ -26,7 +26,9 @@ export function getSubscriptionManagerName(externalCode: SubscriptionPlatform): 
 }
 
 export const InAppText = ({ subscription }: { subscription: Subscription | undefined }) => {
-    const subscriptions = <span className="text-bold">{c('Subscription change warning').t`Subscriptions`}</span>;
+    const subscriptions = (
+        <span className="text-bold" key="subscriptions">{c('Subscription change warning').t`Subscriptions`}</span>
+    );
 
     let firstLine: string;
     let secondLine: string | string[];

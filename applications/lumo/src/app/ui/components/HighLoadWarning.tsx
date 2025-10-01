@@ -68,7 +68,7 @@ const HighLoadWarning = () => {
         return () => clearInterval(interval);
     }, [checkAndShowBanner]);
 
-    const signInLink = <SignInLink className="py-0 color-inherit" />;
+    const signInLink = <SignInLink className="py-0 color-inherit" key="eslint-autofix-C8320B" />;
 
     if (!showBanner) {
         return null;

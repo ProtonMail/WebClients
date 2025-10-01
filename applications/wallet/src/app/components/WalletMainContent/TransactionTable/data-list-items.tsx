@@ -136,7 +136,11 @@ export const SenderOrRecipientDataListItem = ({ tx, loading }: TxDataListItemPro
 
     const message = tx && getTransactionMessage(tx);
 
-    const senderOrRecipientName = <span className="text-ellipsis">{transactionRecipientsHumanReadableNameList}</span>;
+    const senderOrRecipientName = (
+        <span className="text-ellipsis" key="eslint-autofix-D42C72">
+            {transactionRecipientsHumanReadableNameList}
+        </span>
+    );
 
     const senderOrRecipientLabel = isSent
         ? // transalators: example translation -> To: bob@proton.me

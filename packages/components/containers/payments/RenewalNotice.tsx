@@ -34,7 +34,7 @@ import { getTermsURL } from '@proton/shared/lib/helpers/url';
 export const getRenewalPricingSubjectToChangeText = (app: APP_NAMES): string | string[] | null => {
     const termsAndConditionsUrl = getTermsURL(app);
     const termsAndConditionsLink = (
-        <Href className="color-inherit" href={termsAndConditionsUrl}>
+        <Href className="color-inherit" href={termsAndConditionsUrl} key="terms-and-conditions">
             {c('Payments').t`terms and conditions`}
         </Href>
     );
@@ -329,7 +329,7 @@ export const getCheckoutRenewNoticeText = ({
 
 const getTrialRenewalNoticeText = ({ renewCycle }: { renewCycle: Cycle }) => {
     const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
-    const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
+    const formattedDate = <Time key="trial-end-date">{getUnixTime(trialEndDate)}</Time>;
 
     if (renewCycle === CYCLE.MONTHLY) {
         return c('b2b_trials_2025_Info')
@@ -342,7 +342,7 @@ const getTrialRenewalNoticeText = ({ renewCycle }: { renewCycle: Cycle }) => {
 
 export const getTrialRenewalAmountDueNoticeText = () => {
     const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
-    const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
+    const formattedDate = <Time key="trial-end-date">{getUnixTime(trialEndDate)}</Time>;
 
     return c('Payments').jt`Amount due after trial on ${formattedDate}`;
 };

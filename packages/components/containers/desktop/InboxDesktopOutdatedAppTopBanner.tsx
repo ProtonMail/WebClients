@@ -81,7 +81,7 @@ const DisplayTopBanner = ({ displayTopBanner, link }: { displayTopBanner: boolea
         return null;
     }
 
-    const downloadUpdate = <DownloadButton link={link} />;
+    const downloadUpdate = <DownloadButton link={link} key="eslint-autofix-7A3D3F" />;
     return (
         <TopBanner className="bg-info">{c('Action')
             .jt`Important update available. To continue to use the app, please update to the latest version. ${downloadUpdate}`}</TopBanner>

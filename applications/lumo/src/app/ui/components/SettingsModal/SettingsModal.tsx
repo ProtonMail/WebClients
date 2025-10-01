@@ -205,7 +205,7 @@ const AccountSettingsPanel = () => {
 };
 
 const AccountSettingsPanelGuest = () => {
-    const createLink = <CreateFreeAccountLink />;
+    const createLink = <CreateFreeAccountLink key="eslint-autofix-5730D5" />;
     return (
         <>
             <LumoSettingsUpgradePanel isGuest />

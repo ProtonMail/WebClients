@@ -17,8 +17,16 @@ type Props = ModalOwnProps & InviteSentConfirmModalOwnProps;
 
 export const InviteSuccessModal = ({ email, remainingInvites, ...modalProps }: Props) => {
     const hasInvitesRemaining = remainingInvites > 0;
-    const remainingInvitesText = <span className="text-bold color-primary">{remainingInvites}</span>;
-    const emailText = <span className="text-bold">{email}</span>;
+    const remainingInvitesText = (
+        <span className="text-bold color-primary" key="eslint-autofix-33EFF3">
+            {remainingInvites}
+        </span>
+    );
+    const emailText = (
+        <span className="text-bold" key="eslint-autofix-36942D">
+            {email}
+        </span>
+    );
     return (
         <LumoPrompt
             {...modalProps}

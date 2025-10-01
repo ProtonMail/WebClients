@@ -85,7 +85,7 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
             type: NodeType;
         }
     ) => {
-        const invitationName = <strong>{`${name} `}</strong>;
+        const invitationName = <strong key="eslint-autofix-947A46">{`${name} `}</strong>;
 
         let message: ReactNode;
 

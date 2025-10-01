@@ -210,8 +210,8 @@ const B2BTrialTopBanner = () => {
         return null;
     }
 
-    const timeRemaining = <TimeRemaining expiry={trialEndsOn} />;
-    const trialEndsOnFormatted = <Time>{trialEndsOn}</Time>;
+    const timeRemaining = <TimeRemaining expiry={trialEndsOn} key="eslint-autofix-3C8894" />;
+    const trialEndsOnFormatted = <Time key="eslint-autofix-194343">{trialEndsOn}</Time>;
 
     return (
         <>

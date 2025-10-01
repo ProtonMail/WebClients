@@ -49,7 +49,11 @@ const formatListWithAnd = (items: string[]) => {
             : [...acc, <i className="text-nowrap">{cur}</i>];
     }, []);
 
-    const lastItem = <i className="text-nowrap">{items[items.length - 1]}</i>;
+    const lastItem = (
+        <i className="text-nowrap" key="eslint-autofix-5BD23E">
+            {items[items.length - 1]}
+        </i>
+    );
 
     // translator: This is the list of the calendar with visibility turned off, used to warn the user when he gets no result on search but has some in hidden calendars
     return c('Info').jt`${firstItems} and ${lastItem}`;

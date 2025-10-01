@@ -55,7 +55,7 @@ const serializePolicyState = (state: PasswordPoliciesState): PasswordPolicySetti
     });
 };
 
-const defaultLabel = <span className="color-hint ml-0.5">{c('Info').t`(default)`}</span>;
+const defaultLabel = <span className="color-hint ml-0.5" key="eslint-autofix-43BFDA">{c('Info').t`(default)`}</span>;
 
 const MIN_CHARS = MIN_PASSWORD_LENGTH;
 const MAX_CHARS = 70;

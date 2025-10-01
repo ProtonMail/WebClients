@@ -32,12 +32,23 @@ const start = c('Info').ngettext(
     cycle
 )
 
+// ❌ Wrong - React elements in jt templates need key prop
+const price = <Price currency={currency}>{amount}</Price>;
+const text = c('Addon').jt`${price} per domain`; // Error: React element variable 'price' used in jt template must have a key prop
+
+// ❌ Wrong - Direct React elements in jt templates need key prop
+const text = c('Addon').jt`${<Price currency={currency}>{amount}</Price>} per domain`; // Error: React elements used in jt templates must have a key prop
+
 // ✅ Correct
 c('Context').ngettext(
     msgid`Hello ${n}`,
     `Hello ${n}`,
     n
 )
+
+// ✅ Correct - React element with key prop
+const price = <Price key="price" currency={currency}>{amount}</Price>;
+const text = c('Addon').jt`${price} per domain`;
 
 */
 
@@ -150,7 +161,8 @@ const ensureVariablesAreNotUsedTwiceNgettext = (node, context, singularArg, plur
 export default {
     meta: {
         docs: {
-            description: 'Ensure proper usage of msgid template tag and counter variable in ngettext calls',
+            description:
+                'Ensure proper usage of msgid template tag and counter variable in ngettext calls, and key props on React elements in jt templates',
             category: 'Possible Errors',
             recommended: true,
         },

@@ -21,7 +21,7 @@ export const GuestChatDisclaimerModal = ({ onClick, ...modalProps }: Props & Mod
         history.replace('/');
         onClick?.();
     };
-    const linkSignup = <SignInLink />;
+    const linkSignup = <SignInLink key="eslint-autofix-4008E8" />;
     const footnote = c('collider_2025: Link').jt`Already have an account? ${linkSignup}`;
 
     return (

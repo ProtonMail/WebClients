@@ -52,7 +52,7 @@ export const LinuxUpdateBar: FC = () => {
     }, []);
 
     const changelogLink = (
-        <Href href={PASS_DESKTOP_CHANGELOG_URL}>
+        <Href href={PASS_DESKTOP_CHANGELOG_URL} key="eslint-autofix-CAAF0E">
             {
                 // translator: the text here is a link for the full sentence "The changelog can be found here."
                 c('Info').t`here`

@@ -92,14 +92,14 @@ const LearnMoreModal = (props: ModalStateProps) => {
         return null;
     }
 
-    const timeRemaining = <TimeRemaining expiry={trialEndsOn} />;
+    const timeRemaining = <TimeRemaining expiry={trialEndsOn} key="eslint-autofix-85E064" />;
 
     // translator: full sentence is: "Your free trial ends in 14 days" or "Your free trial ends in 14 hours" or "Your free trial ends in 14 minutes"
     // translator: the most common case is "days"
     const title = c('b2b_trials_Title').jt`Your free trial ends in ${timeRemaining}`;
 
     const boldEndDate = (
-        <span className="text-bold">
+        <span className="text-bold" key="eslint-autofix-AC0828">
             <Time>{trialEndsOn}</Time>
         </span>
     );
