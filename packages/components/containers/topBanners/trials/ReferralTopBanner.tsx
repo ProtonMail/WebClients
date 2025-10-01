@@ -18,13 +18,12 @@ import {
     CYCLE,
     FREE_PLAN,
     PLANS,
-    Renew,
     getPlan,
     getPlanIDs,
     getPlanName,
     getPlanTitle,
     hasTrialExpiredLessThan4Weeks,
-    isTrial,
+    isAutoRenewTrial,
     isTrialExpired,
     willTrialExpireInLessThan1Week,
 } from '@proton/payments';
@@ -329,10 +328,6 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
         return null;
     }
 
-    if (isTrial(subscription)) {
-        return null;
-    }
-
     const action = <ContinueSubscriptionActionButton app={app} key="trial-action-button" />;
 
     const isExpired = isTrialExpired(subscription);
@@ -366,8 +361,6 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
             return null;
         }
 
-        const subscriptionWillAutoRenew = subscription.Renew === Renew.Enabled;
-
         const dismiss = async () => {
             setDismissing(true);
             await setShowReferralTrialWillEndBanner(false);
@@ -377,7 +370,7 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
 
         return (
             <TopBanner className="bg-info" onClose={dismiss}>
-                {subscriptionWillAutoRenew
+                {isAutoRenewTrial(subscription)
                     ? c('Warning')
                           .jt`Your trial will end on ${textDate}. You won’t be charged if you cancel before ${textDate}.`
                     : c('Warning').jt`Your free trial ends on ${textDate}. ${action}`}
