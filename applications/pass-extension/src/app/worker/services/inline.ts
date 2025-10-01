@@ -1,5 +1,7 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import type { FrameData, FrameID } from 'proton-pass-extension/lib/utils/frames';
+import { getTabFrames } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes, FrameQueryResponse, FrameQueryResult } from 'proton-pass-extension/types/frames';
 import type { DropdownStateDTO } from 'proton-pass-extension/types/inline';
 import type { FrameQueryMessage, InlineDropdownStateMessage } from 'proton-pass-extension/types/messages';
@@ -10,9 +12,6 @@ import browser from '@proton/pass/lib/globals/browser';
 import type { Coords, MaybeNull, TabId } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-type FrameID = number;
-type FrameData = { parent: MaybeNull<FrameID>; frameId: number };
-type Frames = Partial<Record<FrameID, FrameData>>;
 type CurrentFrame = { frame: FrameData; frameAttributes: FrameAttributes; coords: Coords };
 
 const withSender =
@@ -34,29 +33,6 @@ const withSender =
  * calculated absolute position in top-level document.
  */
 export const createInlineService = () => {
-    /** Frame hierarchy tracker: Creates parent-child relationship map
-     * for all frames in a tab. Used by `getFrameCoords` to walk up the
-     * frame tree. Excludes orphaned frames (missing parents). */
-    const getTabFrames = async (tabId: TabId): Promise<Frames> =>
-        browser.webNavigation.getAllFrames({ tabId }).then((frames) => {
-            return (frames ?? []).reduce<Frames>((res, frame) => {
-                const { parentFrameId, frameId } = frame;
-
-                /** Main frame (frameId 0) or orphaned frame */
-                if (frameId === 0 || parentFrameId === -1) {
-                    res[frameId] = { parent: null, frameId };
-                    return res;
-                }
-
-                const parent = res[parentFrameId];
-                if (!parent) return res;
-
-                res[frameId] = { parent: parentFrameId, frameId };
-
-                return res;
-            }, {});
-        });
-
     /** Frame position query: Gets coordinates of target frame relative to its parent.
      * Sends `FRAME_QUERY` message to parent frame to determine child iframe position.
      * Part of the coordinate calculation chain for absolute positioning. Frame query

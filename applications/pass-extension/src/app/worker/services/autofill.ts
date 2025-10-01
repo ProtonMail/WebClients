@@ -2,6 +2,7 @@ import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { createBasicAuthController } from 'proton-pass-extension/app/worker/listeners/auth-required';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
+import { getAutofillableFrameIDs } from 'proton-pass-extension/lib/utils/frames';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 import type { AutofillCheckFormMessage, WorkerMessageResponse } from 'proton-pass-extension/types/messages';
@@ -46,11 +47,9 @@ import type {
     SelectedItem,
     TabId,
 } from '@proton/pass/types';
-import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { parseUrl } from '@proton/pass/utils/url/parser';
-import { resolveDomain } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 type AutofillServiceState = {
@@ -268,21 +267,10 @@ export const createAutoFillService = () => {
             const data = getCreditCard(payload);
             if (!(data && tabId)) throw new Error('Could not get credit card for autofill request');
 
-            /** security policy: Same-origin autofill only
-             * Query all frames in the tab and filter to only those matching the
-             * request's origin. This prevents cross-frame injection attacks where:
-             * - Malicious iframes could receive credit card data
-             * - XSS-injected frames could steal autofill information */
-            const frames = (await browser.webNavigation.getAllFrames({ tabId })) ?? [];
-            const frameIds = frames
-                .filter((frame) => resolveDomain(parseUrl(frame.url)) === payload.origin)
-                .map(prop('frameId'));
+            const frameIds = await getAutofillableFrameIDs(tabId, payload.origin, payload.frameId);
 
-            /** Send autofill data only to frames matching the trigger origin
-             * Each frame will receive the same data and decide locally which
-             * fields to fill based on their DOM content. */
-            frameIds.forEach((frameId) => {
-                browser.tabs
+            for (const frameId of frameIds) {
+                await browser.tabs
                     .sendMessage(
                         tabId,
                         backgroundMessage({
@@ -292,8 +280,7 @@ export const createAutoFillService = () => {
                         { frameId }
                     )
                     .catch(noop);
-            });
-
+            }
             return true;
         })
     );
