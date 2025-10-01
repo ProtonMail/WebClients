@@ -13,7 +13,11 @@ interface Props extends ModalProps {
 }
 
 const PassLaunchOfferDowngradeModal = ({ subscription, onConfirm, onClose, ...rest }: Props) => {
-    const price = <Price currency={subscription.Currency}>{subscription.Amount}</Price>;
+    const price = (
+        <Price currency={subscription.Currency} key="price">
+            {subscription.Amount}
+        </Price>
+    );
 
     return (
         <Prompt

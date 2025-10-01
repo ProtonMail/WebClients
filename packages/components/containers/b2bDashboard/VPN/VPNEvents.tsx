@@ -302,7 +302,11 @@ export const VPNEvents = () => {
             </TimeIntl>
         );
 
-        const boldValue = <span className="text-semibold">{formattedDateAndTime}</span>;
+        const boldValue = (
+            <span className="text-semibold" key="eslint-autofix-F3CE6C">
+                {formattedDateAndTime}
+            </span>
+        );
 
         const timeOfEvent = monitoring
             ? /** translator: formattedDateAndTime be like "25 Sep 2023, 15:37" or just "15:37" if it's on the same day */ c(

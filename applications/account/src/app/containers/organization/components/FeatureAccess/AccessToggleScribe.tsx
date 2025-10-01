@@ -29,6 +29,7 @@ export const userAndAddress = (
         app={APPS.PROTONMAIL}
         target="_self"
         className="color-weak p-0"
+        key="eslint-autofix-833E97"
     >
         {c('Action').t`Users and addresses`}
     </ButtonLike>
@@ -90,7 +91,7 @@ export const AccessToggleScribe = () => {
         return null;
     }
 
-    const addMoreSeats = <AddMoreSeats />;
+    const addMoreSeats = <AddMoreSeats key="eslint-autofix-6B1773" />;
 
     return (
         <AccessToggle
