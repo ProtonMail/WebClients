@@ -1,10 +1,11 @@
+import rule from '../no-playwright-string-tag';
+
 /* eslint-env es6 */
 
 const { RuleTester } = require('eslint');
-const rule = require('../no-playwright-string-tag');
 
 const ruleTester = new RuleTester({
-    parserOptions: {
+    languageOptions: {
         ecmaVersion: 2020,
         sourceType: 'module',
     },

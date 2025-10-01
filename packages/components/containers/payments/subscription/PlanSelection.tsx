@@ -127,10 +127,17 @@ const getCycleSelectorOptions = () => {
 };
 
 const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency; cycle: Cycle }) => {
-    const serverPrice = <Price currency={currency}>{getIpPricePerMonth(cycle)}</Price>;
-    // translator: example of full sentence: "VPN Business requires at least 1 dedicated server (CHF 39.99 /month)"
+    const serverPrice = (
+        <Price currency={currency} key="server-price">
+            {getIpPricePerMonth(cycle)}
+        </Price>
+    );
     const serverPriceStr = c('Info').jt`(${serverPrice}/month)`;
-    const serverPricePerMonth = <span className="text-nowrap">{serverPriceStr}</span>;
+    const serverPricePerMonth = (
+        <span className="text-nowrap" key="server-price-per-month">
+            {serverPriceStr}
+        </span>
+    );
 
     return (
         <div className="mt-6 flex flex-nowrap color-weak">

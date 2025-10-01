@@ -56,7 +56,11 @@ const RemoveDeviceModal = ({ device, onClose, ...modalProps }: Props) => {
         deviceNameValidator(model.name, device.name),
     ]);
 
-    const deviceName = <strong className="text-break">{device.name}</strong>;
+    const deviceName = (
+        <strong className="text-break" key="eslint-autofix-F3E510">
+            {device.name}
+        </strong>
+    );
 
     return (
         <ModalTwo

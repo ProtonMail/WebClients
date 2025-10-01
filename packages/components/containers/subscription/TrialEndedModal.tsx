@@ -37,7 +37,7 @@ const TrialEndedModal = ({ onClose, ...rest }: ModalStateProps) => {
     };
 
     const nextBillingDate = (
-        <span className="text-bold">
+        <span className="text-bold" key="next-billing-date">
             <Time>{subscription?.PeriodEnd}</Time>
         </span>
     );

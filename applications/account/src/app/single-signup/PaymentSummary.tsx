@@ -34,7 +34,7 @@ const TrialSummary = ({ loading, options }: { loading: boolean; options: Optimis
     const loaderNode = <SkeletonLoader width="4em" index={0} />;
 
     const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
-    const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
+    const formattedDate = <Time key="eslint-autofix-8E16F6">{getUnixTime(trialEndDate)}</Time>;
 
     return (
         <>

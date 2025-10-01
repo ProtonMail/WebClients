@@ -25,7 +25,7 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
     const subscriptionEndDateString = format(subscriptionEndDate, 'PPP', {
         locale: dateLocale,
     });
-    const boldedDate = <strong>{subscriptionEndDateString}</strong>;
+    const boldedDate = <strong key="subscription-end-date">{subscriptionEndDateString}</strong>;
 
     const ResubscribeButton = () => {
         if (plan === PLANS.VISIONARY) {

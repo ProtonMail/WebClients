@@ -22,7 +22,11 @@ export const AddonTooltip = ({
     pricePerAddon: number;
     currency: Currency;
 }) => {
-    const price = <Price currency={currency}>{pricePerAddon}</Price>;
+    const price = (
+        <Price currency={currency} key="price">
+            {pricePerAddon}
+        </Price>
+    );
 
     let text: ReactNode;
     switch (true) {
