@@ -1,6 +1,6 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 
-import { FieldType, IdentityFieldType } from '@proton/pass/fathom';
+import { FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 
 import { autofillIdentityFields, getFirstName, getFullName, getLastName, getMiddleName } from './autofill.identity';

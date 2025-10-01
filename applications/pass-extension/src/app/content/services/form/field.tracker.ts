@@ -4,7 +4,7 @@ import type { FormTracker } from 'proton-pass-extension/app/content/services/for
 import { IFramePortMessageType } from 'proton-pass-extension/app/content/services/iframes/messages';
 import { actionPrevented } from 'proton-pass-extension/app/content/utils/action-trap';
 
-import { FieldType, FormType } from '@proton/pass/fathom';
+import { FieldType, FormType } from '@proton/pass/fathom/labels';
 import { clientStatusResolved } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';

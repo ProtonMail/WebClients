@@ -6,7 +6,8 @@ import type { PopoverController } from 'proton-pass-extension/app/content/servic
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { FieldType, flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
+import { flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
+import { FieldType } from '@proton/pass/fathom/labels';
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { AutosaveFormEntry, AutosavePayload, Item, LoginItemPreview } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';

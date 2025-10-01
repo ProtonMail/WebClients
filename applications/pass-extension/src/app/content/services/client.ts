@@ -11,7 +11,7 @@ import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/mes
 import { matchExtensionMessage } from 'proton-pass-extension/lib/message/utils';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { FormType } from '@proton/pass/fathom';
+import { FormType } from '@proton/pass/fathom/labels';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { AppState } from '@proton/pass/types';

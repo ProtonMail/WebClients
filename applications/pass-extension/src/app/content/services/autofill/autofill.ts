@@ -9,7 +9,7 @@ import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/ut
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { FieldType, FormType } from '@proton/pass/fathom';
+import { FieldType, FormType } from '@proton/pass/fathom/labels';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { FormCredentials, ItemContent, MaybeNull } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';

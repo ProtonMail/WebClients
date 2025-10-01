@@ -2,7 +2,8 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
 import { createFormHandles } from 'proton-pass-extension/app/content/services/form/form';
 
-import { FieldType, clearDetectionCache } from '@proton/pass/fathom';
+import { clearDetectionCache } from '@proton/pass/fathom';
+import { FieldType } from '@proton/pass/fathom/labels';
 import { logger } from '@proton/pass/utils/logger';
 import throttle from '@proton/utils/throttle';
 

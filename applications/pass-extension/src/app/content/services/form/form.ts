@@ -9,14 +9,14 @@ import { canAutosave } from 'proton-pass-extension/app/content/utils/autosave';
 import { hasProcessableFields, isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 
 import {
-    FieldType,
-    type FormType,
     buttonSelector,
     isIgnored,
     isVisibleForm,
     removeClassifierFlags,
     shadowPiercingContains,
 } from '@proton/pass/fathom';
+import type { FormType } from '@proton/pass/fathom/labels';
+import { FieldType } from '@proton/pass/fathom/labels';
 import type { Maybe } from '@proton/pass/types';
 import { isElementBusy, isParentBusy } from '@proton/pass/utils/dom/form';
 import { findScrollableParent } from '@proton/pass/utils/dom/scroll';

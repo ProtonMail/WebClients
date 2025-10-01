@@ -3,7 +3,6 @@ import type { FieldElement, FieldHandle } from 'proton-pass-extension/app/conten
 import { actionTrap } from 'proton-pass-extension/app/content/utils/action-trap';
 
 import {
-    CCFieldType,
     formatExpirationDate,
     getCCFieldType,
     getExpirationFormat,
@@ -11,6 +10,7 @@ import {
     getSelectExpirationMonthFormat,
     getSelectExpirationYearFormat,
 } from '@proton/pass/fathom';
+import { CCFieldType } from '@proton/pass/fathom/labels';
 import type { CCItemData, Maybe } from '@proton/pass/types';
 import { isInputElement, isSelectElement } from '@proton/pass/utils/dom/predicates';
 import { head, last, prop } from '@proton/pass/utils/fp/lens';

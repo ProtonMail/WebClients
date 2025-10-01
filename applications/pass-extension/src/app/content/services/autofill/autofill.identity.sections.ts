@@ -1,6 +1,7 @@
 import type { FieldHandle } from 'proton-pass-extension/app/content/services/form/field';
 
-import { FieldType, IdentityFieldType, getIdentityFieldType } from '@proton/pass/fathom';
+import { getIdentityFieldType } from '@proton/pass/fathom';
+import { FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 
 type IdentitySection = { types: Set<IdentityFieldType>; fields: { field: FieldHandle; type: IdentityFieldType }[] };

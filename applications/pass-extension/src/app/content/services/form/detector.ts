@@ -4,14 +4,10 @@ import { selectNodeFromPath } from 'proton-pass-extension/app/content/utils/node
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import type { FieldType } from '@proton/pass/fathom';
 import {
-    FormType,
     clearDetectionCache,
-    fieldTypes,
     flagOverride,
     flagSubtreeAsIgnored,
-    formTypes,
     getTypeScore,
     prepass,
     rulesetMaker,
@@ -19,6 +15,8 @@ import {
     shouldRunClassifier,
 } from '@proton/pass/fathom';
 import type { Fnode } from '@proton/pass/fathom/fathom';
+import type { FieldType } from '@proton/pass/fathom/labels';
+import { FormType, fieldTypes, formTypes } from '@proton/pass/fathom/labels';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
 import type { Callback, MaybeNull } from '@proton/pass/types';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
