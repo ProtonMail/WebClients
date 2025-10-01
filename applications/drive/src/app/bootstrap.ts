@@ -1,11 +1,4 @@
-import {
-    addressesThunk,
-    initEvent,
-    serverEvent,
-    userSettingsThunk,
-    userThunk,
-    welcomeFlagsActions,
-} from '@proton/account';
+import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
 import { getDecryptedPersistedState } from '@proton/account/persist/helper';
@@ -151,7 +144,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
         const [driveUserSettings] = await Promise.all([
             api<UserSettingsResponse>(queryUserSettings()),
-            dispatch(addressesThunk()),
             loadStreamsPolyfill(),
         ]).finally(() => {
             userSettingFeature.end();
