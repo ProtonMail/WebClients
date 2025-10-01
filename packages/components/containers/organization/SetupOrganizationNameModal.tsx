@@ -21,7 +21,6 @@ import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { Organization } from '@proton/shared/lib/interfaces';
-
 import welcomeImg from '@proton/styles/assets/img/onboarding/b2b/welcome-b2b.svg';
 
 interface Props extends ModalProps {
@@ -82,7 +81,8 @@ const SetupOrganizationNameModal = ({ onClose, organization, ...rest }: Props) =
                     disableChange={loading}
                     value={name}
                     onValue={(value: string) => setName(value)}
-                    assistiveText="This is how your organization will appear to users. You can change it at any time."
+                    assistiveText={c('Input assistive text')
+                        .t`This is how your organization will appear to users. You can change it at any time.`}
                 />
             </ModalContent>
             <ModalFooter className="p-4 pt-0 mt-0.5">
