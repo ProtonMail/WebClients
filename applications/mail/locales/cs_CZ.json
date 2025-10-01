@@ -381,6 +381,9 @@
       "Customize": [
         "Přizpůsobit"
       ],
+      "Customize categories": [
+        "Přizpůsobit kategore"
+      ],
       "Customize import": [
         "Přizpůsobit import"
       ],
@@ -9383,6 +9386,18 @@
       "${ BRAND_NAME } username": [
         "Uživatelské jméno ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "${ count } nepřečtená konverzace",
+        "${ count } nepřečtené konverzace",
+        "${ count } nepřečtených konverzací",
+        "${ count } nepřečtených konverzací"
+      ],
+      "${ count } unread message": [
+        "${ count } nepřečtená zpráva",
+        "${ count } nepřečtené zprávy",
+        "${ count } nepřečtených zpráv",
+        "${ count } nepřečtených zpráv"
+      ],
       "${ n } month": [
         "${ n } měsíc",
         "${ n } měsíce",
@@ -9409,6 +9424,9 @@
       ],
       "Add image URL": [
         "Přidat odkaz obrázku"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Přidávejte nebo odebírejte kategorie. Nastavujte nebo vypínejte upozornění. Upravujte kdykoli v menu ${ menuIcon }."
       ],
       "Add to group": [
         "Přidat do skupiny"
@@ -12409,6 +12427,9 @@
       "More plans are available in other currencies": [
         "Další tarify jsou k dispozici v jiných měnách"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Platební metoda požadovaná pro aktivaci předplatného po skončení zkušební doby."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
@@ -12457,6 +12478,9 @@
       "This number will be shown on all future invoices": [
         "Toto číslo bude uvedeno na všech budoucích fakturách"
       ],
+      "This offer is not available with your current plan.": [
+        "Tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Tato platební metoda se stane vaším novým výchozím způsobem pro všechna budoucí obnovení."
       ],
@@ -12468,6 +12492,12 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "You already have a subscription to this plan.": [
+        "Již máte předplatné tohoto tarifu."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Již máte předplatné tohoto tarifu. Můžete si změnit své předplatné na ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Vaše měna byla změněna na euro (€), protože bankovní převody SEPA podporují pouze platby v eurech."
@@ -15175,6 +15205,9 @@
       ],
       "Customize categories": [
         "Přizpůsobení kategorií"
+      ],
+      "Customize categories to fit your needs": [
+        "Přizpůsobte kategorie svým potřebám"
       ],
       "Customize your mail import": [
         "Přizpůsobte si proces importování e-mailů"

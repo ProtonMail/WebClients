@@ -307,6 +307,9 @@
       "Continue import": [
         "Συνεχίστε την εισαγωγή"
       ],
+      "Continue with categories": [
+        "Συνεχίστε με κατηγορίες"
+      ],
       "Continue with Google": [
         "Συνεχίστε με Google"
       ],
@@ -766,6 +769,9 @@
       "Invite members": [
         "Προσκαλέστε μέλη"
       ],
+      "Is this private?": [
+        "Είναι αυτό ιδιωτικό;"
+      ],
       "Italic": [
         "Πλάγια γραφή"
       ],
@@ -774,6 +780,9 @@
       ],
       "Keep categories": [
         "Διατήρηση κατηγοριών"
+      ],
+      "Keep inbox as before": [
+        "Διατηρήστε τα εισερχόμενά σας όπως πριν"
       ],
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
@@ -6895,6 +6904,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Δεν μπορείτε να θυμηθείτε τον κωδικό σας; Μπορούμε να σας βοηθήσουμε να διαγράψετε τα κρυπτογραφημένα δεδομένα όλων των επαφών που κρυπτογραφούνται με αυτό το κλειδί και κατά τη διάρκεια της διαδικασίας να απορρίψετε την ειδοποίηση."
       ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Οι κατηγορίες λειτουργούν όπως τα φίλτρα ανεπιθύμητων. Αναζητούμε μόνο μοτίβα σε μη κρυπτογραφημένες κεφαλίδες και τεχνικά δεδομένα. Δε διαβάζουμε το περιεχόμενο των ηλεκτρονικών μηνυμάτων σας, δε μοιραζόμαστε τα δεδομένα σας και δεν παραβιάζουμε την ιδιωτικότητά σας."
+      ],
       "Center": [
         "Κέντρο"
       ],
@@ -7373,6 +7385,18 @@
       ],
       "Included for free with your plan": [
         "Συμπεριλαμβάνεται δωρεάν με το πλάνο σας"
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Περιλαμβάνει λογαριασμούς, αποδείξεις, παραγγελίες και κρατήσεις."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Περιλαμβάνει διαφημιστικά μηνύματα ηλεκτρονικού ταχυδρομείου, όπως προσφορές και ανακοινώσεις προϊόντων."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Περιλαμβάνει ανακεφαλαιώσεις ειδήσεων και άλλο μη διαφημιστικό περιεχόμενο. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Περιλαμβάνει ενημερώσεις από κοινωνικά δίκτυα και ιστότοπους κοινής χρήσης πολυμέσων."
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
@@ -9560,6 +9584,9 @@
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Δε θα χάσετε πια σημαντικά μηνύματα! Αυτά εμφανίζονται πλέον κάτω από το ${ primaryCopy }. Όλα τα άλλα ταξινομούνται ανά κατηγορία, ώστε να είναι εύκολο να τα βρείτε και να μη γεμίζουν τα εισερχόμενά σας."
       ],
       "No results found": [
         "Δε βρέθηκαν αποτελέσματα"
@@ -12059,6 +12086,9 @@
       "More plans are available in other currencies": [
         "Περισσότερα πλάνα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Η μέθοδος πληρωμής απαιτείται για την ενεργοποίηση της συνδρομής μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
       ],
@@ -12099,6 +12129,9 @@
       "This number will be shown on all future invoices": [
         "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
+      "This offer is not available with your current plan.": [
+        "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
       ],
@@ -12110,6 +12143,12 @@
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
+      ],
+      "You already have a subscription to this plan.": [
+        "Έχετε ήδη μια συνδρομή σε αυτό το πλάνο."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Έχετε ήδη συνδρομή σε αυτό το πλάνο. Μπορείτε να αλλάξετε τη συνδρομή σας στο ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
@@ -14555,6 +14594,9 @@
       "Block sender": [
         "Αποκλεισμός αποστολέα"
       ],
+      "Built for privacy": [
+        "Κατασκευασμένο για ιδιωτικότητα"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Ακύρωση συνδρομής ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -14881,6 +14923,9 @@
       ],
       "Insert contacts": [
         "Εισαγωγή επαφών"
+      ],
+      "Introducing email categories": [
+        "Παρουσιάζουμε κατηγορίες ηλεκτρονικών μηνυμάτων"
       ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
