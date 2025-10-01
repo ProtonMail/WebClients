@@ -9409,9 +9409,15 @@
       ],
       "Upload folder": [
         "Importez un dossier"
+      ],
+      "Upload more files": [
+        "Importer plus de fichiers"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 minutes"
+      ],
       "Access your files on the go": [
         "Accédez à vos fichiers où que vous soyez"
       ],
@@ -9436,11 +9442,20 @@
       "Edit documents online": [
         "Éditez vos documents en ligne"
       ],
+      "Encryption happens automatically": [
+        "Le chiffrement s'effectue automatiquement"
+      ],
       "End-to-end encrypted storage for your files": [
         "Stockage chiffré de bout en bout pour vos fichiers"
       ],
       "Faster uploads for large or multiple files": [
         "Des importations plus rapides de vos fichiers, quelle que soit leur taille ou leur nombre."
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Les fichiers importés pendant cette période ne seront pas comptabilisés dans votre limite d'espace de stockage."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Les fichiers importés maintenant ne seront pas comptabilisés dans votre limite d\"espace de stockage."
       ],
       "Final approval in progress": [
         "L'approbation finale est en cours."
@@ -9475,6 +9490,9 @@
       "Invite team members": [
         "Invitez les membres de l'équipe"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Poursuivez sur votre lancée en important plus de fichiers grâce à l'espace de stockage inclus dans votre abonnement."
+      ],
       "Manage access": [
         "Gérer l'accès"
       ],
@@ -9502,6 +9520,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Le propriétaire doit confirmer l'accès au partage. Vous recevrez un e-mail une fois que ce sera fait."
       ],
+      "Upload files, folders, photos": [
+        "Importer des fichiers, des dossiers, des photos"
+      ],
       "Upload your first file": [
         "Importez votre premier fichier"
       ],
@@ -9510,6 +9531,12 @@
       ],
       "Work together": [
         "Travaillez en équipe"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Vous avez récupéré du stockage gratuit et sécuriser vos fichiers avec le chiffrement de bout en bout — en un temps record !"
+      ],
+      "Your storage limit won’t be affected": [
+        "Votre limite d'espace de stockage ne sera pas affectée"
       ]
     },
     "Onboarding Trial": {
@@ -9749,6 +9776,9 @@
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Un moyen de paiement est requis pour que l'abonnement soit activé après la fin de la version d'essai."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
@@ -9789,6 +9819,9 @@
       "This number will be shown on all future invoices": [
         "Ce numéro sera indiqué sur toutes les prochaines factures."
       ],
+      "This offer is not available with your current plan.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
       ],
@@ -9800,6 +9833,12 @@
       ],
       "VAT number": [
         "Numéro de TVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Vous êtes déjà abonné à cet abonnement."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Vous avez déjà un abonnement. Vous pouvez modifier votre abonnement sur ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."
@@ -12069,6 +12108,9 @@
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Bénéficiez de 10 minutes d'importations gratuites, offertes."
+      ],
       "Get the apps": [
         "Obtenir les applications"
       ],
@@ -12318,6 +12360,9 @@
       ],
       "Re-signing contacts": [
         "Nouvelle signature des contacts"
+      ],
+      "Ready, set, upload.": [
+        "Prêt, configuré et importez."
       ],
       "Recommended": [
         "Recommandé"
@@ -12590,6 +12635,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Nous n'avons pas pu vérifier qu'un utilisateur anonyme a importé ce dossier."
       ],
+      "Welcome offer": [
+        "Offre de bienvenue"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bienvenue dans ${ BRAND_NAME } for Business"
       ],
@@ -12616,6 +12664,9 @@
       ],
       "You have no folders yet": [
         "Vous n'avez aucun dossier pour le moment."
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "Votre ${ freeUploadLength } a commencé."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Votre essai gratuit ${ planName } se termine le ${ textDate }."
@@ -12646,6 +12697,9 @@
       ],
       "Your welcome actions": [
         "Vos actions de bienvenue"
+      ],
+      "You’re off to a great start!": [
+        "Vous avez pris un excellent départ !"
       ],
       "You’ve got 5 GB of storage": [
         "Vous avez 5 Go d'espace de stockage."
