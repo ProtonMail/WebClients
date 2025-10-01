@@ -99,6 +99,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Legg til ${ BRAND_NAME }-konto"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Legg til ${ BRAND_NAME }-adresse"
+      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -260,6 +263,9 @@
       ],
       "Choose my own password": [
         "Velg mitt eget passord"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Gjør krav på ${ BRAND_NAME }-adresse"
       ],
       "Claim it": [
         "Gjør krav på det"
@@ -9936,6 +9942,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Åpne veiledningen for anbefalte handlinger og nyttige koblinger."
       ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Åpne Safari-innstillingene for utvidelsen og kontroller at nettstedstillatelser er aktivert for ${ BRAND_NAME }-domener"
+      ],
       "or ${ selectFileButton }": [
         "eller ${ selectFileButton }"
       ],
@@ -11117,6 +11126,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en kryptert ${ BRAND_NAME }-adresse, kan du bruke alle ${ BRAND_NAME }-tjenester"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Med e-postkategorier havner viktige meldinger i en primær innboks. Alt annet organiseres i kategorier."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Med grupper kan du raskt og enkelt sende e-post til alle personene i en bestemt gruppe."
       ],
@@ -12054,6 +12066,10 @@
         "${ nbYear } år",
         "${ nbYear } år"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } av ${ maxAddresses } e-postadresse",
+        "${ usedAddresses } av ${ maxAddresses } e-postadresser"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
       ],
@@ -12536,6 +12552,9 @@
       ],
       "Email address": [
         "E-postadresse"
+      ],
+      "Email categories": [
+        "E-postkategorier"
       ],
       "Email or username": [
         "E-post eller brukernavn"
@@ -13347,6 +13366,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Til"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } av ${ maxBYOEAddresses } e-postadresse",
+        "${ usedBYOEAddresses } av ${ maxBYOEAddresses } e-postadresser"
       ]
     },
     "Label for adding a new custom domain": {
@@ -21568,6 +21593,9 @@
       ],
       "Email breaches": [
         "E-postbrudd"
+      ],
+      "Email categories": [
+        "E-postkategorier"
       ],
       "Email composer": [
         "Redigeringsvindu for e-post"
