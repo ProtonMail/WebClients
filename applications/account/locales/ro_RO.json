@@ -99,6 +99,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Adăugare cont ${ BRAND_NAME }"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Adăugare adresă ${ BRAND_NAME }"
+      ],
       "Add account": [
         "Adăugare cont"
       ],
@@ -260,6 +263,9 @@
       ],
       "Choose my own password": [
         "Aleg parola mea"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Revendicați adresa ${ BRAND_NAME }"
       ],
       "Claim it": [
         "Revendicați"
@@ -1763,6 +1769,12 @@
       "Disallow unsigned mail": [
         "Refuzare mesaje nesemnate"
       ],
+      "Disconnect": [
+        "Deconectare"
+      ],
+      "Disconnect address “${ emailAddress }”": [
+        "Deconectare adresa „${ emailAddress }”"
+      ],
       "Edit": [
         "Editare"
       ],
@@ -1786,6 +1798,12 @@
       ],
       "Generate missing keys for address “${ emailAddress }”": [
         "Generare chei lipsă pentru adresa „${ emailAddress }”"
+      ],
+      "Grant permission": [
+        "Acordare permisiune"
+      ],
+      "Grant permission to “${ emailAddress }”": [
+        "Acordați permisiune către „${ emailAddress }”"
       ],
       "Reconnect": [
         "Reconectare"
@@ -1830,6 +1848,9 @@
       ],
       "Orphan": [
         "Neasociată"
+      ],
+      "Permission revoked": [
+        "Permisiune revocată"
       ]
     },
     "Admin": {
@@ -6342,6 +6363,11 @@
         "Codul poștal este obligatoriu."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
@@ -10015,6 +10041,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Deschideți ghidul pentru acțiuni recomandate și legături web utile."
       ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Deschideți setările Safari pentru extensie și verificați dacă permisiunile de site sunt activate pentru domeniile ${ BRAND_NAME }."
+      ],
       "or ${ selectFileButton }": [
         "sau ${ selectFileButton }"
       ],
@@ -11207,6 +11236,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME }."
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Cu categoriile de e-mail, mesajele importante ajung în folderul de mesaje primite. Restul sunt organizate pe categorii."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Cu grupuri, puteți trimite rapid și ușor mesaje tuturor persoanelor dintr-un anumit grup."
       ],
@@ -12164,6 +12196,11 @@
         "${ nbYear } ani",
         "${ nbYear } de ani"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } din ${ maxAddresses } adresă de e-mail",
+        "${ usedAddresses } din ${ maxAddresses } adrese de e-mail",
+        "${ usedAddresses } din ${ maxAddresses } de adrese de e-mail"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Reveniți mai târziu.)"
       ],
@@ -12647,6 +12684,9 @@
       "Email address": [
         "Adresă e-mail"
       ],
+      "Email categories": [
+        "Categorii de e-mail"
+      ],
       "Email or username": [
         "E-mail sau utilizator"
       ],
@@ -12664,6 +12704,9 @@
       ],
       "Emails (last month)": [
         "Mesaje (ultima lună)"
+      ],
+      "Enable ${ DARK_WEB_MONITORING_NAME } for ${ domain.DomainName }": [
+        "Activare ${ DARK_WEB_MONITORING_NAME } pentru ${ domain.DomainName }"
       ],
       "Enabled": [
         "Activă"
@@ -13458,6 +13501,13 @@
     "Label (end date/advanced search)": {
       "To": [
         "Către"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } din ${ maxBYOEAddresses } adresă de e-mail",
+        "${ usedBYOEAddresses } din ${ maxBYOEAddresses } adrese de e-mail",
+        "${ usedBYOEAddresses } din ${ maxBYOEAddresses } de adrese de e-mail"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15645,6 +15695,12 @@
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
       ],
+      "Monitoring disabled": [
+        "Monitorizare dezactivată"
+      ],
+      "Monitoring enabled": [
+        "Monitorizare activată"
+      ],
       "Number of records exceeds the download limit of 10000": [
         "Numărul de înregistrări depășește limita de descărcare de 10.000."
       ],
@@ -16968,6 +17024,9 @@
       "Offer unavailable": [
         "Ofertă indisponibilă"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de probare."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
       ],
@@ -17021,6 +17080,9 @@
       "This number will be shown on all future invoices": [
         "Acest număr va fi afișat pe toate facturile viitoare."
       ],
+      "This offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă cu planul actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
@@ -17032,6 +17094,12 @@
       ],
       "VAT number": [
         "Valoare TVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Deja aveți un abonament la acest plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Aveți deja un abonament la acest plan. Vă puteți schimba abonamentul pe ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Vi se va retrage suma de ${ amountToCharge } folosind metoda de plată selectată."
@@ -21818,6 +21886,9 @@
       "Email breaches": [
         "Breșe adrese de e-mail"
       ],
+      "Email categories": [
+        "Categorii de e-mail"
+      ],
       "Email composer": [
         "Editor mesaj e-mail"
       ],
@@ -22883,6 +22954,9 @@
       ]
     },
     "Tooltip": {
+      "A change on the Gmail side is blocking ${ BRAND_NAME } from connecting. Grant permission to reestablish email functionality": [
+        "O modificare din partea Gmail blochează ${ BRAND_NAME } să se conecteze. Acordați permisiunea pentru a restabili funcționalitatea e-mailului."
+      ],
       "Account is disconnected": [
         "Contul este deconectat"
       ],

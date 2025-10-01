@@ -264,6 +264,9 @@
       "Choose my own password": [
         "Επιλέγω τον δικό μου κωδικό πρόσβασης"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Διεκδικήστε τη διεύθυνση ${ BRAND_NAME }"
+      ],
       "Claim it": [
         "Διεκδικήστε το"
       ],
@@ -16804,6 +16807,9 @@
       "Offer unavailable": [
         "Η προσφορά δεν είναι διαθέσιμη"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Η μέθοδος πληρωμής απαιτείται για την ενεργοποίηση της συνδρομής μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
       ],
@@ -16853,6 +16859,9 @@
       "This number will be shown on all future invoices": [
         "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
+      "This offer is not available with your current plan.": [
+        "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
       ],
@@ -16864,6 +16873,12 @@
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
+      ],
+      "You already have a subscription to this plan.": [
+        "Έχετε ήδη μια συνδρομή σε αυτό το πλάνο."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Έχετε ήδη συνδρομή σε αυτό το πλάνο. Μπορείτε να αλλάξετε τη συνδρομή σας στο ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Θα χρεωθείτε ${ amountToCharge } από τον επιλεγμένο τρόπο πληρωμής."
