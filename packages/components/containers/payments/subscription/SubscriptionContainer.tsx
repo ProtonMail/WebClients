@@ -140,7 +140,7 @@ export interface Model {
     gift?: string;
     initialCheckComplete: boolean;
     taxBillingAddress: BillingAddress;
-    paymentForbidden: SubscriptionCheckForbiddenReason;
+    paymentForbiddenReason: SubscriptionCheckForbiddenReason;
     zipCodeValid: boolean;
 }
 
@@ -404,7 +404,7 @@ const SubscriptionContainerInner = ({
             planIDs,
             initialCheckComplete: false,
             taxBillingAddress: getBillingAddressFromPaymentStatus(paymentStatus),
-            paymentForbidden: { forbidden: false },
+            paymentForbiddenReason: { forbidden: false },
             zipCodeValid: true,
         };
 
@@ -835,7 +835,7 @@ const SubscriptionContainerInner = ({
         const copyNewModel: Model = {
             ...newModel,
             initialCheckComplete: true,
-            paymentForbidden: { forbidden: false },
+            paymentForbiddenReason: { forbidden: false },
             zipCodeValid: true,
         };
 
@@ -864,12 +864,12 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        const paymentForbidden = isSubscriptionCheckForbiddenWithReason(
+        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(
             subscription,
             copyNewModel.planIDs,
             copyNewModel.cycle
         );
-        if (paymentForbidden.forbidden) {
+        if (paymentForbiddenReason.forbidden) {
             setCheckResult({
                 ...getOptimisticCheckResult({
                     plansMap: plansMapRef.current,
@@ -883,7 +883,7 @@ const SubscriptionContainerInner = ({
             });
             setModel({
                 ...copyNewModel,
-                paymentForbidden,
+                paymentForbiddenReason,
             });
             return;
         }
@@ -1153,7 +1153,7 @@ const SubscriptionContainerInner = ({
     const onSubmit = (e: FormEvent) => {
         e.preventDefault();
 
-        if (model.paymentForbidden) {
+        if (model.paymentForbiddenReason.forbidden) {
             onCancel?.();
             return;
         }
@@ -1195,7 +1195,7 @@ const SubscriptionContainerInner = ({
                 checkResult={checkResult}
                 className="w-full"
                 disabled={isFreeUserWithFreePlanSelected}
-                paymentForbidden={model.paymentForbidden}
+                paymentForbiddenReason={model.paymentForbiddenReason}
                 subscription={subscription}
                 hasPaymentMethod={hasPaymentMethod}
                 taxCountry={taxCountry}
@@ -1205,7 +1205,7 @@ const SubscriptionContainerInner = ({
         </>
     );
 
-    const gift = !model.paymentForbidden && !couponConfig?.hidden && (
+    const gift = !model.paymentForbiddenReason.forbidden && !couponConfig?.hidden && (
         <>
             {couponCode && (
                 <div className="flex items-center mb-1">
@@ -1394,7 +1394,7 @@ const SubscriptionContainerInner = ({
                                 paymentFacade={paymentFacade}
                                 paymentMethods={paymentFacade.methods}
                                 showPlanDescription={audience !== Audience.B2B}
-                                paymentNeeded={!model.paymentForbidden}
+                                paymentNeeded={!model.paymentForbiddenReason.forbidden}
                                 taxCountry={taxCountry}
                                 user={user}
                                 couponConfig={couponConfig}
