@@ -24,15 +24,24 @@ export const useCategoriesData = () => {
             };
         }) || [];
 
-    const activeCategoriesTabs = categoriesTabs.filter((category) => category.display);
-
     const settingAccess = organization?.Settings?.MailCategoryViewEnabled ? !!mailSettings.MailCategoryView : false;
     const categoryViewAccess = categoryViewFlag && settingAccess;
+
+    const activeCategoriesTabs: CategoryTab[] = [];
+    const disabledCategoriesIDs: string[] = [];
+    categoriesTabs.forEach((categoryTab) => {
+        if (categoryTab.display) {
+            activeCategoriesTabs.push(categoryTab);
+        } else {
+            disabledCategoriesIDs.push(categoryTab.id);
+        }
+    });
 
     return {
         categoriesStore,
         categoriesTabs: categoryViewAccess ? categoriesTabs : [],
         activeCategoriesTabs: categoryViewAccess ? activeCategoriesTabs : [],
+        disabledCategoriesIDs: categoryViewAccess ? disabledCategoriesIDs : [],
         categoryViewAccess,
     };
 };
