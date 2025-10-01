@@ -13,10 +13,12 @@ export const getDecryptedPersistedState = async <T>({
     authentication,
     persistedSession: maybePersistedSession,
     user,
+    measure,
 }: {
     authentication: AuthenticationStore;
     persistedSession?: PersistedSession;
     user: User | undefined;
+    measure?: (type: 'start' | 'end') => void;
 }) => {
     const localID = authentication.localID;
     const persistedSession = maybePersistedSession ?? getPersistedSession(localID);
@@ -30,6 +32,7 @@ export const getDecryptedPersistedState = async <T>({
     }
 
     try {
+        measure?.('start');
         const encryptedCache = await readStore(persistedSession.UserID);
         if (!encryptedCache) {
             return;
@@ -44,6 +47,8 @@ export const getDecryptedPersistedState = async <T>({
     } catch (e) {
         await deleteStore(persistedSession.UserID).catch(noop);
         return;
+    } finally {
+        measure?.('end');
     }
 };
 
