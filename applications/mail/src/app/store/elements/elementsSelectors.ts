@@ -3,6 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import type { ESStatus } from '@proton/encrypted-search';
 import { ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
 import type { NormalizedSearchParams } from '@proton/encrypted-search/lib/models/mail';
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import type { MailSettingState } from '@proton/mail/store/mailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
@@ -93,8 +94,8 @@ export const contextTotal = createSelector([params, total], (params, total) => {
 });
 
 export const elements = createSelector(
-    [elementsMap, params, page, pageSize, contextPages, bypassFilter, addresses],
-    (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
+    [elementsMap, params, page, pageSize, contextPages, bypassFilter, addresses, selectDisabledCategoriesIDs],
+    (elements, params, page, pageSize, pages, bypassFilter, addresses, selectDisabledCategoriesIDs) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any de-synchronization between cache and the output of the memo
         const { labelID, sort, filter, conversationMode, search } = params;
@@ -134,6 +135,7 @@ export const elements = createSelector(
                   conversationMode,
                   search,
                   newsletterSubscriptionID: params.newsletterSubscriptionID,
+                  disabledCategoriesIDs: selectDisabledCategoriesIDs,
               })
             : [];
 
