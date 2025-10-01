@@ -68,6 +68,20 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
             onDestroy();
         },
         onError: () => iframe.destroy(),
+
+        onOpen: () => {
+            const target = anchor.current;
+            if (target?.type === 'frame') {
+                const { formId, fieldId, fieldFrameId } = target;
+                void sendMessage(
+                    contentScriptMessage({
+                        type: WorkerMessageType.INLINE_DROPDOWN_OPENED,
+                        payload: { fieldFrameId, formId, fieldId },
+                    })
+                );
+            }
+        },
+
         onClose: (_, options) => {
             const target = anchor.current;
 

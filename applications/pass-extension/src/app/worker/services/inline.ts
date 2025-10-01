@@ -1,7 +1,7 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { FrameData, FrameID } from 'proton-pass-extension/lib/utils/frames';
-import { getTabFrames } from 'proton-pass-extension/lib/utils/frames';
+import type { FrameData, FrameID, Frames } from 'proton-pass-extension/lib/utils/frames';
+import { getFramePath, getTabFrames } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes, FrameQueryResponse, FrameQueryResult } from 'proton-pass-extension/types/frames';
 import type { DropdownStateDTO } from 'proton-pass-extension/types/inline';
 import type { FrameQueryMessage, InlineDropdownStateMessage } from 'proton-pass-extension/types/messages';
@@ -65,10 +65,10 @@ export const createInlineService = () => {
     const getFrameCoords = async (
         tabId: TabId,
         frameId: FrameID,
-        { coords, frameAttributes }: FrameQueryResponse
+        { coords, frameAttributes }: FrameQueryResponse,
+        frames: Frames
     ): Promise<MaybeNull<CurrentFrame>> => {
         try {
-            const frames = await getTabFrames(tabId);
             if (!(frames[frameId] && frameAttributes)) return null;
 
             const current: CurrentFrame = { frame: frames[frameId]!, frameAttributes, coords };
@@ -105,8 +105,20 @@ export const createInlineService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.FRAME_VISIBILITY,
         withSender(async ({ payload: frameAttributes }, tabId, frameId) => {
-            const result = await getFrameCoords(tabId, frameId, { coords: { top: 0, left: 0 }, frameAttributes });
+            const frames = await getTabFrames(tabId);
+            const res: FrameQueryResponse = { coords: { top: 0, left: 0 }, frameAttributes };
+            const result = await getFrameCoords(tabId, frameId, res, frames);
             return { visible: result !== null };
+        })
+    );
+
+    /** Propagates a frame blur if an inline element was
+     * opened from a sub-frame. UX purposes. */
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.INLINE_FRAME_BLUR,
+        withSender(async (message, tabId) => {
+            await browser.tabs.sendMessage(tabId, backgroundMessage(message), { frameId: 0 });
+            return true;
         })
     );
 
@@ -138,13 +150,18 @@ export const createInlineService = () => {
         })
     );
 
-    /** Forward dropdown closed event to sub-frame */
+    /** Forward dropdown closed event to all frames in target frame's hierarchy.
+     * Ensures cross-frame listeners are properly cleaned up when dropdown closes. */
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.INLINE_DROPDOWN_CLOSED,
         withSender(async (message, tabId) => {
-            await browser.tabs
-                .sendMessage(tabId, backgroundMessage(message), { frameId: message.payload.fieldFrameId })
-                .catch(noop);
+            const frames = await getTabFrames(tabId);
+            const path = getFramePath(frames, message.payload.fieldFrameId);
+
+            for (const frameId of path) {
+                if (frameId === 0) continue;
+                await browser.tabs.sendMessage(tabId, backgroundMessage(message), { frameId }).catch(noop);
+            }
 
             return true;
         })
@@ -159,7 +176,8 @@ export const createInlineService = () => {
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.INLINE_DROPDOWN_OPEN,
         withSender(async ({ payload }, tabId, frameId) => {
-            const result = await getFrameCoords(tabId, frameId, payload);
+            const frames = await getTabFrames(tabId);
+            const result = await getFrameCoords(tabId, frameId, payload, frames);
             if (!result) return true;
 
             await browser.tabs
@@ -179,6 +197,33 @@ export const createInlineService = () => {
                     { frameId: 0 }
                 )
                 .catch(noop);
+
+            return true;
+        })
+    );
+
+    /** Notify all parent frames in hierarchy that dropdown opened.
+     * Sets up cross-frame event listeners for scroll/focus auto-close. */
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.INLINE_DROPDOWN_OPENED,
+        withSender(async ({ payload }, tabId) => {
+            const frames = await getTabFrames(tabId);
+            const path = getFramePath(frames, payload.fieldFrameId);
+
+            for (const frameId of path) {
+                if (frameId === payload.fieldFrameId) continue;
+                if (frameId === 0) continue;
+                await browser.tabs
+                    .sendMessage(
+                        tabId,
+                        backgroundMessage({
+                            type: WorkerMessageType.INLINE_DROPDOWN_OPENED,
+                            payload,
+                        }),
+                        { frameId }
+                    )
+                    .catch(noop);
+            }
 
             return true;
         })

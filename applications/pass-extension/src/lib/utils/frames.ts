@@ -31,6 +31,22 @@ export const getTabFrames = async (tabId: TabId): Promise<Frames> =>
         }, {});
     });
 
+/** Returns the path from target frame to root frame (leaf to root order) */
+export const getFramePath = (frames: Frames, frameId: FrameID): FrameID[] => {
+    if (frameId === 0) return [0];
+
+    const path = [];
+    let current = frames[frameId];
+
+    while (current) {
+        path.push(current.frameId);
+        if (current.parent !== null) current = frames[current.parent];
+        else current = undefined;
+    }
+
+    return path;
+};
+
 export const getAutofillableFrameIDs = async (tabId: TabId, origin: string, frameID: FrameID): Promise<FrameID[]> => {
     /** security policy: Same-origin autofill only
      * Query all frames in the tab and filter to only those matching the

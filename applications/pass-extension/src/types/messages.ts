@@ -2,6 +2,7 @@ import type { AutofillItem, AutofillRequest, AutofillResult } from 'proton-pass-
 import type {
     FrameAttributes,
     FrameCheckResult,
+    FrameField,
     FrameQueryDTO,
     FrameQueryResult,
 } from 'proton-pass-extension/types/frames';
@@ -9,6 +10,7 @@ import type {
     DropdownCloseDTO,
     DropdownClosedDTO,
     DropdownOpenDTO,
+    DropdownOpenedDTO,
     DropdownStateDTO,
 } from 'proton-pass-extension/types/inline';
 import type { Action } from 'redux';
@@ -126,11 +128,13 @@ export enum WorkerMessageType {
     FS_WRITE = 'FS_WRITE',
     FS_ERROR = 'FS_ERROR',
 
+    INLINE_DROPDOWN_ATTACH = 'INLINE_DROPDOWN_ATTACH',
     INLINE_DROPDOWN_CLOSE = 'INLINE_DROPDOWN_CLOSE',
     INLINE_DROPDOWN_CLOSED = 'INLINE_DROPDOWN_CLOSED',
     INLINE_DROPDOWN_OPEN = 'INLINE_DROPDOWN_OPEN',
+    INLINE_DROPDOWN_OPENED = 'INLINE_DROPDOWN_OPENED',
     INLINE_DROPDOWN_STATE = 'INLINE_DROPDOWN_STATE',
-    INLINE_DROPDOWN_ATTACH = 'INLINE_DROPDOWN_ATTACH',
+    INLINE_FRAME_BLUR = 'INLINE_FRAME_BLUR',
 
     FRAME_QUERY = 'FRAME_QUERY',
     FRAME_VISIBILITY = 'FRAME_VISIBILITY',
@@ -218,11 +222,13 @@ export type FileTransferErrorMessage = WithPayload<WorkerMessageType.FS_ERROR, F
 export type FrameQueryMessage = WithPayload<WorkerMessageType.FRAME_QUERY, FrameQueryDTO>;
 export type FrameVisibilityMessage = WithPayload<WorkerMessageType.FRAME_VISIBILITY, FrameAttributes>;
 
-export type InlineDropdownOpenMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPEN, DropdownOpenDTO>;
-export type InlineDropdownCloseMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSE, DropdownCloseDTO>;
-export type InlineDropdownClosedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSED, DropdownClosedDTO>;
-export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDOWN_STATE };
 export type InlineDropdownAttachMessage = { type: WorkerMessageType.INLINE_DROPDOWN_ATTACH };
+export type InlineDropdownClosedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSED, DropdownClosedDTO>;
+export type InlineDropdownCloseMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_CLOSE, DropdownCloseDTO>;
+export type InlineDropdownOpenedMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPENED, DropdownOpenedDTO>;
+export type InlineDropdownOpenMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_OPEN, DropdownOpenDTO>;
+export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDOWN_STATE };
+export type InlineFrameBlurMessage = WithPayload<WorkerMessageType.INLINE_FRAME_BLUR, FrameField>;
 
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
@@ -300,11 +306,13 @@ export type WorkerMessage =
     | FormStatusMessage
     | FileTransferWriteMessage
     | FileTransferErrorMessage
-    | InlineDropdownCloseMessage
-    | InlineDropdownClosedMessage
-    | InlineDropdownOpenMessage
-    | InlineDropdownStateMessage
     | InlineDropdownAttachMessage
+    | InlineDropdownClosedMessage
+    | InlineDropdownCloseMessage
+    | InlineDropdownOpenMessage
+    | InlineDropdownOpenedMessage
+    | InlineDropdownStateMessage
+    | InlineFrameBlurMessage
     | FrameQueryMessage
     | FrameVisibilityMessage
     | LoadContentScriptMessage
