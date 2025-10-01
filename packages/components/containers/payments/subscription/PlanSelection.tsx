@@ -50,7 +50,7 @@ import {
     isAnyManagedExternally,
     isFreeSubscription,
     isRegionalCurrency,
-    isSubcriptionCheckForbidden,
+    isSubscriptionCheckForbidden,
     isTrial,
     mainCurrencies,
     switchPlan,
