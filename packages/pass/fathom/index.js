@@ -1,48 +1,8 @@
 import { clusters as clusters$1, dom, domQuery, out, rule, ruleset, score, type, utils } from './fathom.js';
 import * as fathomWeb from './fathom.js';
+import { CCFieldType, FieldType, FormType, IdentityFieldType } from './labels.js';
 
 export { fathomWeb as fathom };
-
-var FormType;
-
-(function (FormType) {
-    FormType['LOGIN'] = 'login';
-    FormType['NOOP'] = 'noop';
-    FormType['PASSWORD_CHANGE'] = 'password-change';
-    FormType['RECOVERY'] = 'recovery';
-    FormType['REGISTER'] = 'register';
-})(FormType || (FormType = {}));
-
-var FieldType;
-
-(function (FieldType) {
-    FieldType['EMAIL'] = 'email';
-    FieldType['IDENTITY'] = 'identity';
-    FieldType['OTP'] = 'otp';
-    FieldType['PASSWORD_CURRENT'] = 'password';
-    FieldType['PASSWORD_NEW'] = 'new-password';
-    FieldType['USERNAME'] = 'username';
-    FieldType['USERNAME_HIDDEN'] = 'username-hidden';
-    FieldType['CREDIT_CARD'] = 'cc';
-})(FieldType || (FieldType = {}));
-
-const formTypes = Object.values(FormType);
-
-const fieldTypes = Object.values(FieldType);
-
-const and =
-    (...predicates) =>
-    (value) =>
-        predicates.every((pred) => pred(value));
-
-const or =
-    (...predicates) =>
-    (value) =>
-        predicates.some((pred) => pred(value));
-
-const not = (predicate) => (value) => !predicate(value);
-
-const any = (predicate) => (values) => values.some(predicate);
 
 const FORM_CLUSTER_ATTR = 'data-protonpass-form';
 
@@ -122,6 +82,20 @@ const buttonSelector = `button:not([type]), a[role="button"], ${kButtonSubmitSel
 
 const otpSelector = '[type="tel"], [type="number"], [type="text"], input:not([type])';
 
+const and =
+    (...predicates) =>
+    (value) =>
+        predicates.every((pred) => pred(value));
+
+const or =
+    (...predicates) =>
+    (value) =>
+        predicates.some((pred) => pred(value));
+
+const not = (predicate) => (value) => !predicate(value);
+
+const any = (predicate) => (values) => values.some(predicate);
+
 const closestParent = (start, match) => {
     const parent = start.parentElement;
     if (!parent) return null;
@@ -129,7 +103,7 @@ const closestParent = (start, match) => {
 };
 
 const closest = (start, match, maxIterations = 1) => {
-    const parent = start === null || start === void 0 ? void 0 : start.parentElement;
+    const parent = start?.parentElement;
     if (!parent) return null;
     const result = match(parent);
     return result || maxIterations <= 0 ? result : closest(parent, match, maxIterations - 1);
@@ -168,8 +142,7 @@ const getSiblingWith = (el, match) => {
 };
 
 const getLabelFor = (el) => {
-    var _a;
-    const forId = (_a = el.getAttribute('id')) !== null && _a !== void 0 ? _a : el.getAttribute('name');
+    const forId = el.getAttribute('id') ?? el.getAttribute('name');
     const label = document.querySelector(`label[for="${forId}"]`);
     if (label) return label;
     const parentLabel = el.closest('label');
@@ -279,10 +252,7 @@ const TYPE_SEPARATOR = ',';
 
 const SCORE_SEPARATOR = ':';
 
-const matchPredictedType = (type) => (str) => {
-    var _a;
-    return ((_a = str.split(SCORE_SEPARATOR)) === null || _a === void 0 ? void 0 : _a[0]) === type;
-};
+const matchPredictedType = (type) => (str) => str.split(SCORE_SEPARATOR)?.[0] === type;
 
 const setCachedPredictionScore = (_el, type, score) => {
     const el = _el;
@@ -318,7 +288,6 @@ const isPredictedField = or(...Object.values(FieldType).map((type) => isPredicte
 const isClassifiable = (el) => !(isPrediction(el) || isIgnored(el) || attrIgnored(el));
 
 const removeClassifierFlags = (target, options) => {
-    var _a;
     const clean = (el) => {
         removeProcessedFlag(el);
         removePredictionFlag(el);
@@ -326,7 +295,7 @@ const removeClassifierFlags = (target, options) => {
     };
     clean(target);
     target.querySelectorAll(kFieldSelector).forEach(clean);
-    (_a = options.fields) === null || _a === void 0 ? void 0 : _a.forEach(clean);
+    options.fields?.forEach(clean);
 };
 
 const isShadowRoot = (el) => el instanceof ShadowRoot;
@@ -339,10 +308,7 @@ const shadowPiercingAncestors = function* (element) {
     yield element;
     let current = element;
     let parent;
-    while (
-        (parent = getShadowPiercingParent(current)) &&
-        (parent === null || parent === void 0 ? void 0 : parent.nodeType) === Node.ELEMENT_NODE
-    ) {
+    while ((parent = getShadowPiercingParent(current)) && parent?.nodeType === Node.ELEMENT_NODE) {
         yield parent;
         current = parent;
     }
@@ -360,8 +326,7 @@ const shadowPiercingContains = (container, el) => {
     if (container.contains(el)) return true;
     if (!isShadowElement(el)) return false;
     const containerShadowRoot = 'shadowRoot' in container ? container.shadowRoot : null;
-    if (containerShadowRoot === null || containerShadowRoot === void 0 ? void 0 : containerShadowRoot.contains(el))
-        return true;
+    if (containerShadowRoot?.contains(el)) return true;
     while (current) {
         const rootNode = current.getRootNode();
         if (rootNode === document) return false;
@@ -369,26 +334,15 @@ const shadowPiercingContains = (container, el) => {
         const host = rootNode.host;
         if (host === container) return true;
         if (container.contains(host)) return true;
-        if (
-            containerShadowRoot === null || containerShadowRoot === void 0 ? void 0 : containerShadowRoot.contains(host)
-        )
-            return true;
+        if (containerShadowRoot?.contains(host)) return true;
         current = host;
     }
     return false;
 };
 
 const shallowShadowQuerySelector = (el, selector) => {
-    var _a, _b, _c;
     if (!(el instanceof HTMLElement)) return el.querySelector(selector);
-    return (_c =
-        (_a = el.querySelector(selector)) !== null && _a !== void 0
-            ? _a
-            : (_b = el.shadowRoot) === null || _b === void 0
-              ? void 0
-              : _b.querySelector(selector)) !== null && _c !== void 0
-        ? _c
-        : null;
+    return el.querySelector(selector) ?? el.shadowRoot?.querySelector(selector) ?? null;
 };
 
 const MAX_FORM_FIELD_WALK_UP = 3;
@@ -564,12 +518,10 @@ const reSanityCheck = (cb, options) => (str) => {
 const test = (re, options) =>
     reSanityCheck(
         (str) => re.test(str),
-        options !== null && options !== void 0
-            ? options
-            : {
-                  maxLength: 5e3,
-                  minLength: 2,
-              }
+        options ?? {
+            maxLength: 5e3,
+            minLength: 2,
+        }
     );
 
 const notRe = (reg, options) => (str) => !test(reg, options)(str);
@@ -704,20 +656,16 @@ const sanitizeStringWithSpaces = (str) => normalizeString(str, '\\s\\[\\]');
 
 const cacheContext = {};
 
-const getVisibilityCache = (key) => {
-    var _a;
-    return (cacheContext[key] = (_a = cacheContext[key]) !== null && _a !== void 0 ? _a : new WeakMap());
-};
+const getVisibilityCache = (key) => (cacheContext[key] = cacheContext[key] ?? new WeakMap());
 
 const clearVisibilityCache = () => Object.keys(cacheContext).forEach((key) => delete cacheContext[key]);
 
 const SCROLLBAR_WIDTH = 16;
 
 const getCachedVisbility = (el, options) => {
-    var _a;
     const opacityCache = getVisibilityCache('visibility:op');
     const cache = getVisibilityCache('visibility');
-    if (options.opacity) return (_a = opacityCache.get(el)) !== null && _a !== void 0 ? _a : cache.get(el);
+    if (options.opacity) return opacityCache.get(el) ?? cache.get(el);
     else return cache.get(el);
 };
 
@@ -766,15 +714,11 @@ const isVisible = (fnodeOrElement, options) => {
         );
     };
     const check = () => {
-        var _a;
         let prevRef = null;
         for (const ancestor of shadowPiercingAncestors(element)) {
             let rect = null;
-            const getRect = () => (rect = rect !== null && rect !== void 0 ? rect : ancestor.getBoundingClientRect());
-            if (ancestor === doc.body)
-                return (prevRef === null || prevRef === void 0 ? void 0 : prevRef.absolute)
-                    ? isOnScreen(prevRef.rect)
-                    : true;
+            const getRect = () => (rect = rect ?? ancestor.getBoundingClientRect());
+            if (ancestor === doc.body) return prevRef?.absolute ? isOnScreen(prevRef.rect) : true;
             const cachedVisibility = getCachedVisbility(ancestor, options);
             if (useCache && cachedVisibility !== undefined) return cachedVisibility;
             const { opacity, display, position, overflow, visibility, clip, clipPath } = win.getComputedStyle(ancestor);
@@ -785,36 +729,24 @@ const isVisible = (fnodeOrElement, options) => {
                 return false;
             }
             if (visibility === 'hidden' || display === 'none') return false;
-            if ((prevRef === null || prevRef === void 0 ? void 0 : prevRef.absolute) && position === 'static') {
+            if (prevRef?.absolute && position === 'static') {
                 seen.pop();
                 continue;
             }
             if (isClipped(clip, clipPath)) return false;
             if (overflow === 'hidden') {
-                if (
-                    (prevRef === null || prevRef === void 0 ? void 0 : prevRef.rect) &&
-                    !containedInAncestor(prevRef.rect, getRect())
-                )
-                    return false;
+                if (prevRef?.rect && !containedInAncestor(prevRef.rect, getRect())) return false;
                 if (isNegligibleRect(getRect())) return false;
             }
             if (position === 'absolute' && !isOnScreen(getRect())) return false;
-            if (position === 'fixed')
-                return isOnScreen(
-                    (_a = prevRef === null || prevRef === void 0 ? void 0 : prevRef.rect) !== null && _a !== void 0
-                        ? _a
-                        : getRect()
-                );
+            if (position === 'fixed') return isOnScreen(prevRef?.rect ?? getRect());
             if (display === 'contents') {
                 prevRef = null;
                 continue;
             }
-            prevRef =
-                prevRef !== null && prevRef !== void 0
-                    ? prevRef
-                    : {
-                          rect: getRect(),
-                      };
+            prevRef = prevRef ?? {
+                rect: getRect(),
+            };
             prevRef.rect = getRect();
             prevRef.absolute = position === 'absolute';
             continue;
@@ -860,15 +792,10 @@ const isVisibleEl = (el) =>
 const isVisibleForm = (form, options = {}) => {
     const visible = (() => {
         if (
-            !isVisible(
-                form,
-                Object.assign(
-                    {
-                        opacity: true,
-                    },
-                    options
-                )
-            )
+            !isVisible(form, {
+                opacity: true,
+                ...options,
+            })
         )
             return false;
         if (isCustomElementWithShadowRoot(form) || isShadowElement(form)) return true;
@@ -876,15 +803,10 @@ const isVisibleForm = (form, options = {}) => {
         return (
             inputs.length > 0 &&
             inputs.some((input) =>
-                isVisible(
-                    input,
-                    Object.assign(
-                        {
-                            opacity: false,
-                        },
-                        options
-                    )
-                )
+                isVisible(input, {
+                    opacity: false,
+                    ...options,
+                })
             )
         );
     })();
@@ -993,16 +915,9 @@ const getFieldAttributes = getAttributes(FIELD_ATTRIBUTES);
 const getFormAttributes = getAttributes(FORM_ATTRIBUTES);
 
 const getPageDescriptionText = (doc) => {
-    var _a;
     const pageTitle = doc.title;
     const metaDescription = doc.querySelector('meta[name="description"]');
-    const descriptionContent =
-        (_a =
-            metaDescription === null || metaDescription === void 0
-                ? void 0
-                : metaDescription.getAttribute('content')) !== null && _a !== void 0
-            ? _a
-            : '';
+    const descriptionContent = metaDescription?.getAttribute('content') ?? '';
     return sanitizeString(`${pageTitle} ${descriptionContent}`);
 };
 
@@ -1047,7 +962,6 @@ const getAllFieldHaystacks = (field) => {
 };
 
 const getNearestHeadingsText = (el) => {
-    var _a, _b;
     const originRect = el.getBoundingClientRect();
     const parent = walkUpWhile(
         el,
@@ -1064,15 +978,10 @@ const getNearestHeadingsText = (el) => {
         return dx < MAX_HEADING_HORIZONTAL_DIST && dy < MAX_HEADING_VERTICAL_DIST;
     });
     const textAbove =
-        (_b =
-            (_a =
-                headings.length === 0
-                    ? getSiblingWith(el, (el) => el instanceof HTMLElement && el.innerText.trim().length > 0)
-                    : null) === null || _a === void 0
-                ? void 0
-                : _a.innerText) !== null && _b !== void 0
-            ? _b
-            : '';
+        (headings.length === 0
+            ? getSiblingWith(el, (el) => el instanceof HTMLElement && el.innerText.trim().length > 0)
+            : null
+        )?.innerText ?? '';
     return sanitizeString(textAbove + headings.map((el) => el.innerText).join(''));
 };
 
@@ -1123,10 +1032,8 @@ const getParentFormFnode = (fieldFnode) => {
 const typeScoreToleranceTest = (type) => (fnode) => fnode.scoreFor(type) > TOLERANCE_LEVEL;
 
 const getTypeScore = (node, type) => {
-    var _a;
     if (!node) return 0;
-    if (node.hasNoteFor(`${type}-prediction`))
-        return (_a = node.noteFor(`${type}-prediction`)) !== null && _a !== void 0 ? _a : 0;
+    if (node.hasNoteFor(`${type}-prediction`)) return node.noteFor(`${type}-prediction`) ?? 0;
     return node.scoreFor(type);
 };
 
@@ -1245,22 +1152,12 @@ const createInputIterator = (form) => {
     const formEls = Array.from(form.querySelectorAll(inputCandidateSelector)).filter(isVisibleField);
     return {
         prev(input) {
-            var _a;
             const idx = formEls.indexOf(input);
-            return idx === -1
-                ? null
-                : (_a = formEls === null || formEls === void 0 ? void 0 : formEls[idx - 1]) !== null && _a !== void 0
-                  ? _a
-                  : null;
+            return idx === -1 ? null : (formEls?.[idx - 1] ?? null);
         },
         next(input) {
-            var _a;
             const idx = formEls.indexOf(input);
-            return idx === -1
-                ? null
-                : (_a = formEls === null || formEls === void 0 ? void 0 : formEls[idx + 1]) !== null && _a !== void 0
-                  ? _a
-                  : null;
+            return idx === -1 ? null : (formEls?.[idx + 1] ?? null);
         },
     };
 };
@@ -1282,15 +1179,9 @@ const getFormFeatures = (fnode) => {
     const visibleInputs = visibleFields.filter((el) => el.matches('input:not([type="submit"])'));
     const fieldsets = form.querySelectorAll('fieldset');
     const textareas = visibleFields.filter((el) => el.matches('textarea'));
-    const selects = visibleFields.filter((el, idx, fields) => {
-        var _a;
-        return (
-            el.matches('select') &&
-            ((_a = fields === null || fields === void 0 ? void 0 : fields[idx + 1]) === null || _a === void 0
-                ? void 0
-                : _a.type) !== 'tel'
-        );
-    });
+    const selects = visibleFields.filter(
+        (el, idx, fields) => el.matches('select') && fields?.[idx + 1]?.type !== 'tel'
+    );
     const optionsCount = selects.reduce((total, el) => total + el.querySelectorAll('option').length, 0);
     const submits = visibleFields.filter((el) => el.matches('[type="submit"]'));
     const hidden = inputs.filter((el) => el.matches('[type="hidden"]'));
@@ -1678,18 +1569,10 @@ const results$9 = {
 
 const login = {
     name: FormType.LOGIN,
-    coeffs: FORM_COMBINED_FEATURES.map((feat) => {
-        var _a, _b;
-        return [
-            `login-${feat}`,
-            (_b =
-                (_a = results$9.coeffs.find(([feature]) => feature === `login-${feat}`)) === null || _a === void 0
-                    ? void 0
-                    : _a[1]) !== null && _b !== void 0
-                ? _b
-                : 0,
-        ];
-    }),
+    coeffs: FORM_COMBINED_FEATURES.map((feat) => [
+        `login-${feat}`,
+        results$9.coeffs.find(([feature]) => feature === `login-${feat}`)?.[1] ?? 0,
+    ]),
     bias: results$9.bias,
     cutoff: results$9.cutoff,
     getRules: () => [
@@ -1816,18 +1699,10 @@ const results$8 = {
 
 const passwordChange = {
     name: FormType.PASSWORD_CHANGE,
-    coeffs: FORM_COMBINED_FEATURES.map((key) => {
-        var _a, _b;
-        return [
-            `pw-change-${key}`,
-            (_b =
-                (_a = results$8.coeffs.find(([feature]) => feature === `pw-change-${key}`)) === null || _a === void 0
-                    ? void 0
-                    : _a[1]) !== null && _b !== void 0
-                ? _b
-                : 0,
-        ];
-    }),
+    coeffs: FORM_COMBINED_FEATURES.map((key) => [
+        `pw-change-${key}`,
+        results$8.coeffs.find(([feature]) => feature === `pw-change-${key}`)?.[1] ?? 0,
+    ]),
     bias: results$8.bias,
     cutoff: results$8.cutoff,
     getRules: () => [
@@ -1954,18 +1829,10 @@ const results$7 = {
 
 const recovery = {
     name: FormType.RECOVERY,
-    coeffs: FORM_COMBINED_FEATURES.map((key) => {
-        var _a, _b;
-        return [
-            `recovery-${key}`,
-            (_b =
-                (_a = results$7.coeffs.find(([feature]) => feature === `recovery-${key}`)) === null || _a === void 0
-                    ? void 0
-                    : _a[1]) !== null && _b !== void 0
-                ? _b
-                : 0,
-        ];
-    }),
+    coeffs: FORM_COMBINED_FEATURES.map((key) => [
+        `recovery-${key}`,
+        results$7.coeffs.find(([feature]) => feature === `recovery-${key}`)?.[1] ?? 0,
+    ]),
     bias: results$7.bias,
     cutoff: results$7.cutoff,
     getRules: () => [
@@ -2092,18 +1959,10 @@ const results$6 = {
 
 const register = {
     name: FormType.REGISTER,
-    coeffs: FORM_COMBINED_FEATURES.map((key) => {
-        var _a, _b;
-        return [
-            `register-${key}`,
-            (_b =
-                (_a = results$6.coeffs.find(([feature]) => feature === `register-${key}`)) === null || _a === void 0
-                    ? void 0
-                    : _a[1]) !== null && _b !== void 0
-                ? _b
-                : 0,
-        ];
-    }),
+    coeffs: FORM_COMBINED_FEATURES.map((key) => [
+        `register-${key}`,
+        results$6.coeffs.find(([feature]) => feature === `register-${key}`)?.[1] ?? 0,
+    ]),
     bias: results$6.bias,
     cutoff: results$6.cutoff,
     getRules: () => [
@@ -2174,18 +2033,10 @@ const results$5 = {
 
 const email = {
     name: FieldType.EMAIL,
-    coeffs: EMAIL_FIELD_FEATURES.map((key) => {
-        var _a, _b;
-        return [
-            `email-${key}`,
-            (_b =
-                (_a = results$5.coeffs.find(([feature]) => feature === `email-${key}`)) === null || _a === void 0
-                    ? void 0
-                    : _a[1]) !== null && _b !== void 0
-                ? _b
-                : 0,
-        ];
-    }),
+    coeffs: EMAIL_FIELD_FEATURES.map((key) => [
+        `email-${key}`,
+        results$5.coeffs.find(([feature]) => feature === `email-${key}`)?.[1] ?? 0,
+    ]),
     bias: results$5.bias,
     cutoff: results$5.cutoff,
     getRules: () => [
@@ -2198,23 +2049,6 @@ const email = {
         ...outRuleWithCache('field-candidate', FieldType.EMAIL),
     ],
 };
-
-var IdentityFieldType;
-
-(function (IdentityFieldType) {
-    IdentityFieldType[(IdentityFieldType['FULLNAME'] = 1)] = 'FULLNAME';
-    IdentityFieldType[(IdentityFieldType['FIRSTNAME'] = 2)] = 'FIRSTNAME';
-    IdentityFieldType[(IdentityFieldType['MIDDLENAME'] = 3)] = 'MIDDLENAME';
-    IdentityFieldType[(IdentityFieldType['LASTNAME'] = 4)] = 'LASTNAME';
-    IdentityFieldType[(IdentityFieldType['TELEPHONE'] = 5)] = 'TELEPHONE';
-    IdentityFieldType[(IdentityFieldType['ADDRESS'] = 6)] = 'ADDRESS';
-    IdentityFieldType[(IdentityFieldType['STATE'] = 7)] = 'STATE';
-    IdentityFieldType[(IdentityFieldType['CITY'] = 8)] = 'CITY';
-    IdentityFieldType[(IdentityFieldType['ZIPCODE'] = 9)] = 'ZIPCODE';
-    IdentityFieldType[(IdentityFieldType['ORGANIZATION'] = 10)] = 'ORGANIZATION';
-    IdentityFieldType[(IdentityFieldType['COUNTRY'] = 11)] = 'COUNTRY';
-    IdentityFieldType[(IdentityFieldType['EMAIL'] = 12)] = 'EMAIL';
-})(IdentityFieldType || (IdentityFieldType = {}));
 
 const IDENTITY_RE_MAP = [
     [IdentityFieldType.FIRSTNAME, matchFirstName],
@@ -2235,20 +2069,13 @@ const IDENTITY_ATTRIBUTES = ['autocomplete', 'name', 'id', 'data-bhw'];
 const IDENTITY_INPUT_TYPES = ['tel', 'phone', 'text', 'number'];
 
 const getIdentityHaystack = (input) => {
-    const attrs = IDENTITY_ATTRIBUTES.map((attr) => {
-        var _a;
-        return (_a = input === null || input === void 0 ? void 0 : input.getAttribute(attr)) !== null && _a !== void 0
-            ? _a
-            : '';
-    });
+    const attrs = IDENTITY_ATTRIBUTES.map((attr) => input?.getAttribute(attr) ?? '');
     return sanitizeStringWithSpaces(attrs.join(' '));
 };
 
 const getIdentityFieldType = (input) => {
-    var _a;
     const haystack = getIdentityHaystack(input);
-    if (haystack)
-        return (_a = IDENTITY_RE_MAP.find(([, test]) => test(haystack))) === null || _a === void 0 ? void 0 : _a[0];
+    if (haystack) return IDENTITY_RE_MAP.find(([, test]) => test(haystack))?.[0];
 };
 
 const isAutocompleteListInput = (el) => el.getAttribute('aria-autocomplete') === 'list' || el.role === 'combobox';
@@ -2277,20 +2104,14 @@ const identity = [
 ];
 
 const getOTPFieldFeatures = (fnode) => {
-    var _a, _b, _c, _d, _e;
     const field = fnode.element;
     const fieldFeatures = fnode.noteFor('field');
     const { fieldAttrs, fieldText, labelText, prevField, nextField, type, minLength, maxLength } = fieldFeatures;
     const formFeatures = fieldFeatures.formFeatures;
-    const formMFA = Boolean(formFeatures === null || formFeatures === void 0 ? void 0 : formFeatures.formMFA);
-    const formOTPOutlier = Boolean(
-        formFeatures === null || formFeatures === void 0 ? void 0 : formFeatures.formOTPOutlier
-    );
-    const linkOutlier = Boolean(
-        formFeatures === null || formFeatures === void 0 ? void 0 : formFeatures.linkOTPOutlier
-    );
-    const visibleInputsCount =
-        formFeatures === null || formFeatures === void 0 ? void 0 : formFeatures.visibleInputsCount;
+    const formMFA = Boolean(formFeatures?.formMFA);
+    const formOTPOutlier = Boolean(formFeatures?.formOTPOutlier);
+    const linkOutlier = Boolean(formFeatures?.linkOTPOutlier);
+    const visibleInputsCount = formFeatures?.visibleInputsCount;
     const patternOTP = OTP_PATTERNS.some(
         ([maxLength, pattern]) => field.pattern.includes(pattern) && maxLength === field.maxLength
     );
@@ -2301,24 +2122,12 @@ const getOTPFieldFeatures = (fnode) => {
     const maybeGroup = width < 100;
     const prevRect = prevField ? getNodeRect(prevField) : null;
     const nextRect = nextField ? getNodeRect(nextField) : null;
-    const prevCheck =
-        maybeGroup &&
-        prevField &&
-        (prevField === null || prevField === void 0 ? void 0 : prevField.getAttribute('type')) === type;
-    const nextCheck =
-        maybeGroup &&
-        nextField &&
-        (nextField === null || nextField === void 0 ? void 0 : nextField.getAttribute('type')) === type;
-    const prevAligned = prevCheck
-        ? top === (prevRect === null || prevRect === void 0 ? void 0 : prevRect.top) &&
-          bottom === (prevRect === null || prevRect === void 0 ? void 0 : prevRect.bottom)
-        : false;
-    const prevArea = prevCheck ? area === (prevRect === null || prevRect === void 0 ? void 0 : prevRect.area) : false;
-    const nextAligned = nextCheck
-        ? top === (nextRect === null || nextRect === void 0 ? void 0 : nextRect.top) &&
-          bottom === (nextRect === null || nextRect === void 0 ? void 0 : nextRect.bottom)
-        : false;
-    const nextArea = nextCheck ? area === (nextRect === null || nextRect === void 0 ? void 0 : nextRect.area) : false;
+    const prevCheck = maybeGroup && prevField && prevField?.getAttribute('type') === type;
+    const nextCheck = maybeGroup && nextField && nextField?.getAttribute('type') === type;
+    const prevAligned = prevCheck ? top === prevRect?.top && bottom === prevRect?.bottom : false;
+    const prevArea = prevCheck ? area === prevRect?.area : false;
+    const nextAligned = nextCheck ? top === nextRect?.top && bottom === nextRect?.bottom : false;
+    const nextArea = nextCheck ? area === nextRect?.area : false;
     const attrOTP = any(matchOtpAttr)(fieldAttrs);
     const attrMFA = any(matchMfaAttr)(fieldAttrs);
     const attrOutlier = any(matchOtpOutlier)(fieldAttrs);
@@ -2327,17 +2136,7 @@ const getOTPFieldFeatures = (fnode) => {
     const labelOTP = matchOtpAttr(labelText);
     const labelMFA = matchMfa(labelText);
     const labelOutlier = matchOtpOutlier(labelText);
-    const formText =
-        (_c =
-            (_b =
-                (_a = fieldFeatures === null || fieldFeatures === void 0 ? void 0 : fieldFeatures.formFnode) === null ||
-                _a === void 0
-                    ? void 0
-                    : _a.element) === null || _b === void 0
-                ? void 0
-                : _b.innerText) !== null && _c !== void 0
-            ? _c
-            : '';
+    const formText = fieldFeatures?.formFnode?.element?.innerText ?? '';
     const parents = [getNthParent(field)(1), getNthParent(field)(2)];
     const wrapperAttrs = parents.flatMap(getBaseAttributes);
     const wrapperOTP = any(matchOtpAttr)(wrapperAttrs);
@@ -2347,11 +2146,7 @@ const getOTPFieldFeatures = (fnode) => {
     const maxLengthInvalid = maxLength > 10;
     const siblingOfInterest = prevAligned || nextAligned;
     const otpSmells = wrapperOTP || attrOTP || textOTP || labelOTP;
-    const emailOutlierCount = otpSmells
-        ? (_e = (_d = formText.match(/@/g)) === null || _d === void 0 ? void 0 : _d.length) !== null && _e !== void 0
-            ? _e
-            : 0
-        : 0;
+    const emailOutlierCount = otpSmells ? (formText.match(/@/g)?.length ?? 0) : 0;
     return {
         formMFA: boolInt(fieldFeatures.isFormNoop && formMFA),
         formOutlier: boolInt(formOTPOutlier),
@@ -2470,18 +2265,10 @@ const results$4 = {
 
 const otp = {
     name: FieldType.OTP,
-    coeffs: OTP_FIELD_FEATURES.map((key) => {
-        var _a, _b;
-        return [
-            `otp-${key}`,
-            (_b =
-                (_a = results$4.coeffs.find(([feature]) => feature === `otp-${key}`)) === null || _a === void 0
-                    ? void 0
-                    : _a[1]) !== null && _b !== void 0
-                ? _b
-                : 0,
-        ];
-    }),
+    coeffs: OTP_FIELD_FEATURES.map((key) => [
+        `otp-${key}`,
+        results$4.coeffs.find(([feature]) => feature === `otp-${key}`)?.[1] ?? 0,
+    ]),
     bias: results$4.bias,
     cutoff: results$4.cutoff,
     getRules: () => [
@@ -2500,7 +2287,6 @@ const isAutocompleteCurrentPassword = (value) => value === 'current-password' ||
 const isAutocompleteNewPassword = (value) => value === 'new-password';
 
 const getPasswordFieldFeatures = (fnode) => {
-    var _a, _b;
     const fieldFeatures = fnode.noteFor('field');
     const { autocomplete, fieldAttrs, fieldText, labelText, prevField, nextField } = fieldFeatures;
     const attrCreate = any(matchPasswordCreateAttr)(fieldAttrs);
@@ -2520,15 +2306,13 @@ const getPasswordFieldFeatures = (fnode) => {
     const nextPwField = nextField && nextField.getAttribute('type') === 'password' ? nextField : null;
     const prevPwHaystack = prevPwField ? getAllFieldHaystacks(prevPwField) : [];
     const nextPwHaystack = nextPwField ? getAllFieldHaystacks(nextPwField) : [];
-    const prevAutocomplete =
-        prevPwField === null || prevPwField === void 0 ? void 0 : prevPwField.getAttribute('autocomplete');
+    const prevAutocomplete = prevPwField?.getAttribute('autocomplete');
     const prevAutocompleteCurrent = isAutocompleteCurrentPassword(prevAutocomplete);
     const prevPwCurrent = prevAutocompleteCurrent || any(matchPasswordCurrent)(prevPwHaystack);
     const prevAutocompleteNew = isAutocompleteNewPassword(prevAutocomplete);
     const prevPwNew = prevAutocompleteNew || any(matchPasswordCreate)(prevPwHaystack);
     const prevPwConfirm = any(matchPasswordConfirm)(prevPwHaystack);
-    const nextAutocomplete =
-        nextPwField === null || nextPwField === void 0 ? void 0 : nextPwField.getAttribute('autocomplete');
+    const nextAutocomplete = nextPwField?.getAttribute('autocomplete');
     const nextAutocompleteCurrent = isAutocompleteCurrentPassword(nextAutocomplete);
     const nextPwCurrent = nextAutocompleteCurrent || any(matchPasswordCurrent)(nextPwHaystack);
     const nextAutocompleteNew = isAutocompleteNewPassword(nextAutocomplete);
@@ -2542,11 +2326,7 @@ const getPasswordFieldFeatures = (fnode) => {
         autocompleteNew: boolInt(isAutocompleteNewPassword(autocomplete)),
         autocompleteCurrent: boolInt(isAutocompleteCurrentPassword(autocomplete)),
         autocompleteOff: boolInt(fieldFeatures.autocomplete === 'off'),
-        isOnlyPassword:
-            (_b = (_a = fieldFeatures.formFeatures) === null || _a === void 0 ? void 0 : _a.onePassword) !== null &&
-            _b !== void 0
-                ? _b
-                : 0,
+        isOnlyPassword: fieldFeatures.formFeatures?.onePassword ?? 0,
         prevPwField: boolInt(prevPwField !== null),
         nextPwField: boolInt(nextPwField !== null),
         attrCreate: boolInt(attrCreate),
@@ -2644,18 +2424,10 @@ const results$3 = {
 
 const password = {
     name: FieldType.PASSWORD_CURRENT,
-    coeffs: PW_FIELD_FEATURES.map((key) => {
-        var _a, _b;
-        return [
-            `pw-${key}`,
-            (_b =
-                (_a = results$3.coeffs.find(([feature]) => feature === `pw-${key}`)) === null || _a === void 0
-                    ? void 0
-                    : _a[1]) !== null && _b !== void 0
-                ? _b
-                : 0,
-        ];
-    }),
+    coeffs: PW_FIELD_FEATURES.map((key) => [
+        `pw-${key}`,
+        results$3.coeffs.find(([feature]) => feature === `pw-${key}`)?.[1] ?? 0,
+    ]),
     bias: results$3.bias,
     cutoff: results$3.cutoff,
     getRules: () => [
@@ -2708,18 +2480,10 @@ const results$2 = {
 
 const newPassword = {
     name: FieldType.PASSWORD_NEW,
-    coeffs: PW_FIELD_FEATURES.map((key) => {
-        var _a, _b;
-        return [
-            `pw[new]-${key}`,
-            (_b =
-                (_a = results$2.coeffs.find(([feature]) => feature === `pw[new]-${key}`)) === null || _a === void 0
-                    ? void 0
-                    : _a[1]) !== null && _b !== void 0
-                ? _b
-                : 0,
-        ];
-    }),
+    coeffs: PW_FIELD_FEATURES.map((key) => [
+        `pw[new]-${key}`,
+        results$2.coeffs.find(([feature]) => feature === `pw[new]-${key}`)?.[1] ?? 0,
+    ]),
     bias: results$2.bias,
     cutoff: results$2.cutoff,
     getRules: () => [
@@ -2791,18 +2555,10 @@ const results$1 = {
 
 const username = {
     name: FieldType.USERNAME,
-    coeffs: USERNAME_FIELD_FEATURES.map((key) => {
-        var _a, _b;
-        return [
-            `username-${key}`,
-            (_b =
-                (_a = results$1.coeffs.find(([feature]) => feature === `username-${key}`)) === null || _a === void 0
-                    ? void 0
-                    : _a[1]) !== null && _b !== void 0
-                ? _b
-                : 0,
-        ];
-    }),
+    coeffs: USERNAME_FIELD_FEATURES.map((key) => [
+        `username-${key}`,
+        results$1.coeffs.find(([feature]) => feature === `username-${key}`)?.[1] ?? 0,
+    ]),
     bias: results$1.bias,
     cutoff: results$1.cutoff,
     getRules: () => [
@@ -2876,19 +2632,10 @@ const results = {
 
 const usernameHidden = {
     name: FieldType.USERNAME_HIDDEN,
-    coeffs: HIDDEN_USER_FIELD_FEATURES.map((key) => {
-        var _a, _b;
-        return [
-            `username[hidden]-${key}`,
-            (_b =
-                (_a = results.coeffs.find(([feature]) => feature === `username[hidden]-${key}`)) === null ||
-                _a === void 0
-                    ? void 0
-                    : _a[1]) !== null && _b !== void 0
-                ? _b
-                : 0,
-        ];
-    }),
+    coeffs: HIDDEN_USER_FIELD_FEATURES.map((key) => [
+        `username[hidden]-${key}`,
+        results.coeffs.find(([feature]) => feature === `username[hidden]-${key}`)?.[1] ?? 0,
+    ]),
     bias: results.bias,
     cutoff: results.cutoff,
     getRules: () => [
@@ -2903,12 +2650,11 @@ const usernameHidden = {
 };
 
 const getFieldFeature = (fnode) => {
-    var _a, _b;
     const field = fnode.element;
     const fieldHaystacks = getFieldHaystacks(field);
     const formFnode = getParentFormFnode(fnode);
     if (formFnode !== null && !formFnode.hasNoteFor('form')) formFnode.setNoteFor('form', getFormFeatures(formFnode));
-    const formFeatures = formFnode === null || formFnode === void 0 ? void 0 : formFnode.noteFor('form');
+    const formFeatures = formFnode?.noteFor('form');
     const formClassification = getFormClassification(formFnode);
     const value = field.value;
     const type = field.getAttribute('type');
@@ -2929,62 +2675,33 @@ const getFieldFeature = (fnode) => {
         : false;
     if (typeValid) (visible ? removeHiddenFlag : flagAsHidden)(field);
     const searchField = visible && any(matchSearchAction)(fieldHaystacks.fieldAttrs.concat(fieldHaystacks.fieldText));
-    const prevField = typeValid
-        ? (_a =
-              formFeatures === null || formFeatures === void 0
-                  ? void 0
-                  : formFeatures.formInputIterator.prev(field)) !== null && _a !== void 0
-            ? _a
-            : null
-        : null;
-    const nextField = typeValid
-        ? (_b =
-              formFeatures === null || formFeatures === void 0
-                  ? void 0
-                  : formFeatures.formInputIterator.next(field)) !== null && _b !== void 0
-            ? _b
-            : null
-        : null;
-    return Object.assign(
-        {
-            formFnode,
-            formFeatures,
-            isFormLogin: formClassification.login,
-            isFormRegister: formClassification.register,
-            isFormPWChange: formClassification.pwChange,
-            isFormRecovery: formClassification.recovery,
-            isFormNoop: formClassification.noop,
-            value,
-            visible,
-            type,
-            readonly,
-            required,
-            disabled,
-            pattern,
-            autocomplete,
-            minLength,
-            maxLength,
-            tabIndex,
-            prevField,
-            nextField,
-            searchField,
-        },
-        fieldHaystacks
-    );
+    const prevField = typeValid ? (formFeatures?.formInputIterator.prev(field) ?? null) : null;
+    const nextField = typeValid ? (formFeatures?.formInputIterator.next(field) ?? null) : null;
+    return {
+        formFnode,
+        formFeatures,
+        isFormLogin: formClassification.login,
+        isFormRegister: formClassification.register,
+        isFormPWChange: formClassification.pwChange,
+        isFormRecovery: formClassification.recovery,
+        isFormNoop: formClassification.noop,
+        value,
+        visible,
+        type,
+        readonly,
+        required,
+        disabled,
+        pattern,
+        autocomplete,
+        minLength,
+        maxLength,
+        tabIndex,
+        prevField,
+        nextField,
+        searchField,
+        ...fieldHaystacks,
+    };
 };
-
-var CCFieldType;
-
-(function (CCFieldType) {
-    CCFieldType[(CCFieldType['NAME'] = 1)] = 'NAME';
-    CCFieldType[(CCFieldType['FIRSTNAME'] = 2)] = 'FIRSTNAME';
-    CCFieldType[(CCFieldType['LASTNAME'] = 3)] = 'LASTNAME';
-    CCFieldType[(CCFieldType['NUMBER'] = 4)] = 'NUMBER';
-    CCFieldType[(CCFieldType['CSC'] = 5)] = 'CSC';
-    CCFieldType[(CCFieldType['EXP'] = 6)] = 'EXP';
-    CCFieldType[(CCFieldType['EXP_YEAR'] = 7)] = 'EXP_YEAR';
-    CCFieldType[(CCFieldType['EXP_MONTH'] = 8)] = 'EXP_MONTH';
-})(CCFieldType || (CCFieldType = {}));
 
 const kCCFieldSelector = 'input, select';
 
@@ -3065,11 +2782,10 @@ const getExpirationFormatFromPattern = (pattern) => {
         const regex = new RegExp(`^${pattern}$`);
         for (const format of CC_EXP_FORMATS) {
             for (const separator of CC_EXP_SEPARATOR) {
-                const testString = generateExpirationString(
-                    Object.assign(Object.assign({}, format), {
-                        separator,
-                    })
-                );
+                const testString = generateExpirationString({
+                    ...format,
+                    separator,
+                });
                 if (regex.test(testString)) {
                     return {
                         separator,
@@ -3079,22 +2795,14 @@ const getExpirationFormatFromPattern = (pattern) => {
                 }
             }
         }
-    } catch (_a) {}
+    } catch {}
 };
 
 const getCCFormatHaystack = (input) => {
-    var _a;
     const { placeholder, className, id, name } = input;
     const ariaLabel = input.getAttribute('aria-label');
-    const label = (_a = getLabelFor(input)) === null || _a === void 0 ? void 0 : _a.innerText;
-    return [
-        className,
-        id,
-        name,
-        ariaLabel,
-        placeholder.replace(/\s/g, ''),
-        label === null || label === void 0 ? void 0 : label.replace(/\s/g, ''),
-    ]
+    const label = getLabelFor(input)?.innerText;
+    return [className, id, name, ariaLabel, placeholder.replace(/\s/g, ''), label?.replace(/\s/g, '')]
         .filter(Boolean)
         .join(' ')
         .toUpperCase();
@@ -3193,25 +2901,17 @@ const CC_RE_MAP = [
 ];
 
 const getCCHaystack = (field) => {
-    const attrs = CC_ATTRIBUTES.map((attr) => {
-        var _a;
-        return (_a = field === null || field === void 0 ? void 0 : field.getAttribute(attr)) !== null && _a !== void 0
-            ? _a
-            : '';
-    });
+    const attrs = CC_ATTRIBUTES.map((attr) => field?.getAttribute(attr) ?? '');
     return sanitizeStringWithSpaces(attrs.join(' '));
 };
 
 const getCCFieldType = (field) => {
-    var _a;
     const haystack = getCCHaystack(field);
     if (haystack)
-        return (_a = CC_RE_MAP.find(([, test, predicate]) => {
+        return CC_RE_MAP.find(([, test, predicate]) => {
             const match = test(haystack);
             return match && predicate ? predicate(field) : match;
-        })) === null || _a === void 0
-            ? void 0
-            : _a[0];
+        })?.[0];
 };
 
 const maybeCCField = (fnode) => {
@@ -3317,14 +3017,10 @@ const context = {
 };
 
 const getElementData = (el) => {
-    var _a;
-    const data =
-        (_a = context.cache.get(el)) !== null && _a !== void 0
-            ? _a
-            : {
-                  isField: el.matches(kFieldSelector) && el.matches(':not([type="submit"])'),
-                  rect: el.getBoundingClientRect(),
-              };
+    const data = context.cache.get(el) ?? {
+        isField: el.matches(kFieldSelector) && el.matches(':not([type="submit"])'),
+        rect: el.getBoundingClientRect(),
+    };
     context.cache.set(el, data);
     return data;
 };
@@ -3504,16 +3200,12 @@ const clearDetectionCache = () => {
 };
 
 export {
-    CCFieldType,
     CC_ATTRIBUTES,
     CC_INPUT_TYPES,
     EL_ATTRIBUTES,
     FIELD_ATTRIBUTES,
     FORM_ATTRIBUTES,
     FORM_CLUSTER_ATTR,
-    FieldType,
-    FormType,
-    IdentityFieldType,
     OVERRIDE_FIELDS,
     OVERRIDE_FORMS,
     TEXT_ATTRIBUTES,
@@ -3527,7 +3219,6 @@ export {
     clearVisibilityCache,
     createInputIterator,
     fCC,
-    fieldTypes,
     flagAsHidden,
     flagAsIgnored,
     flagAsProcessed,
@@ -3535,7 +3226,6 @@ export {
     flagOverride,
     flagSubtreeAsIgnored,
     formCandidateSelector,
-    formTypes,
     formatExpirationDate,
     getAttributes,
     getBaseAttributes,
