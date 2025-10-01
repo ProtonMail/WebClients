@@ -116,9 +116,6 @@
       "Clear search": [
         "Limpiar búsqueda"
       ],
-      "Clone item": [
-        "Clonar elemento"
-      ],
       "Close": [
         "Cerrar"
       ],
@@ -268,6 +265,9 @@
       ],
       "Download this CSV template": [
         "Descargar esta plantilla CSV"
+      ],
+      "Duplicate": [
+        "Duplicar"
       ],
       "Edit": [
         "Editar"
@@ -1829,7 +1829,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"

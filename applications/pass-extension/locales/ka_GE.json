@@ -116,9 +116,6 @@
       "Clear search": [
         "ძებნის გასუფთავება"
       ],
-      "Clone item": [
-        "ელემენტის კლონირება"
-      ],
       "Close": [
         "დახურვა"
       ],
@@ -268,6 +265,9 @@
       ],
       "Download this CSV template": [
         "გადმოწერეთ ეს CSV ნიმუში"
+      ],
+      "Duplicate": [
+        "დუბლირება"
       ],
       "Edit": [
         "ჩასწორება"
@@ -1798,6 +1798,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"

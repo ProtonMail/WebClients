@@ -116,9 +116,6 @@
       "Clear search": [
         "Aramayı temizle"
       ],
-      "Clone item": [
-        "Ögeyi çoğalt"
-      ],
       "Close": [
         "Kapat"
       ],
@@ -268,6 +265,9 @@
       ],
       "Download this CSV template": [
         "Bu CSV kalıbını indir"
+      ],
+      "Duplicate": [
+        "Çoğalt"
       ],
       "Edit": [
         "Düzenle"
@@ -1053,6 +1053,9 @@
       "Importing items failed": [
         "Ögeler içe aktarılamadı"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "İlerlemek için ${ PASS_APP_NAME } uygulamasına şu izinlerin verilmesi gerekiyor: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Etkin olmayan güvenli bağlantılar kaldırılamadı."
       ],
@@ -1091,6 +1094,12 @@
       ],
       "Passphrase is incorrect": [
         "Parola ifadesi doğru değil"
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "${ domainsJSX } sitesine erişme izni reddedildi."
+      ],
+      "Permission denied for website access.": [
+        "Siteye erişme izniniz reddedildi."
       ],
       "PIN codes do not match": [
         "PIN kodu ile onayı aynı değil"
@@ -1379,6 +1388,9 @@
       ],
       "Access successfully confirmed": [
         "Erişim onaylandı"
+      ],
+      "access to ${ domains }.": [
+        "${ domains } adreslerine erişin"
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "${ PASS_APP_NAME } uygulamasına erişim için her zaman ${ BRAND_NAME } parolanız istenir."
@@ -1829,7 +1841,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -1842,6 +1855,9 @@
       ],
       "Moving items to trash": [
         "Ögeler çöpe atılıyor"
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Tarayıcınızın eklenti ayarlarına gidin ve ${ PASS_SHORT_APP_NAME } için site izinlerini açın."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Birine e-posta göndermeniz gerekiyor ancak e-posta adresinizi görmesini istemiyor musunuz? Bir kişi takma adı ayarlayın."
@@ -1875,6 +1891,9 @@
       ],
       "Open the Extensions menu": [
         "Eklenti menüsünü açın"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Safari ayarlarını açın, ${ PASS_APP_NAME } uygulamasını bulun. Ardından \"İzinler\" bölümüne gidin ve site izinlerini açın"
       ],
       "Owner": [
         "Sahibi"
@@ -2080,6 +2099,12 @@
       ],
       "Restoring trashed items...": [
         "Çöpe atılmış ögeler geri yükleniyor..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Eklenti simgesine sağ tıklayın ve “Eklentiyi yönet” seçeneğini seçin. “İzinler ve veriler” bölümüne gidin ve site izinlerini açın."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Eklenti simgesine sağ tıklayın ve “Eklenti yönetimi” seçeneğini seçin. “Site erişimi” bölümüne gidin ve site izinlerini açın."
       ],
       "Save login": [
         "Oturum açmayı kaydet"
