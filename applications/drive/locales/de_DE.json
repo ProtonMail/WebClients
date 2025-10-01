@@ -9406,9 +9406,15 @@
       ],
       "Upload folder": [
         "Ordner hochladen"
+      ],
+      "Upload more files": [
+        "Weitere Dateien hochladen"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 Minuten"
+      ],
       "Access your files on the go": [
         "Zugriff auf deine Dateien von unterwegs aus"
       ],
@@ -9433,11 +9439,20 @@
       "Edit documents online": [
         "Bearbeite Dokumente online"
       ],
+      "Encryption happens automatically": [
+        "Verschlüsselung erfolgt automatisch"
+      ],
       "End-to-end encrypted storage for your files": [
         "Ende-zu-Ende verschlüsselter Speicher für deine Dateien"
       ],
       "Faster uploads for large or multiple files": [
         "Schnellere Uploads für große oder mehrere Dateien"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "In dieser Zeit hochgeladene Dateien zählen nicht auf dein Speicherlimit."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Jetzt hochgeladene Dateien zählen nicht auf dein Speicherlimit"
       ],
       "Final approval in progress": [
         "Endgültige Genehmigung in Bearbeitung"
@@ -9472,6 +9487,9 @@
       "Invite team members": [
         "Teammitglieder einladen"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Bleib dran, indem du weitere Dateien hochlädst und so den in deinem Abonnement enthaltenen Speicher nutzt."
+      ],
       "Manage access": [
         "Zugriff verwalten"
       ],
@@ -9499,6 +9517,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Der Besitzer muss den geteilten Zugang bestätigen. Sobald dies erledigt wurde, wirst du eine E-Mail erhalten."
       ],
+      "Upload files, folders, photos": [
+        "Lade Dateien, Ordner, Fotos hoch"
+      ],
       "Upload your first file": [
         "Lade deine erste Datei hoch"
       ],
@@ -9507,6 +9528,12 @@
       ],
       "Work together": [
         "Arbeite gemeinsam"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Du hast dir gerade kostenlosen Speicherplatz gesichert und deine Dateien mit Ende-zu-Ende-Verschlüsselung geschützt – in Rekordzeit."
+      ],
+      "Your storage limit won’t be affected": [
+        "Dein Speicherlimit wird nicht beeinflusst."
       ]
     },
     "Onboarding Trial": {
@@ -9746,6 +9773,9 @@
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
       ],
@@ -9786,6 +9816,9 @@
       "This number will be shown on all future invoices": [
         "Diese Nummer wird auf allen zukünftigen Rechnungen angezeigt."
       ],
+      "This offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement nicht verfügbar."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Diese Zahlungsmethode wird dein neuer Standard für alle zukünftigen Verlängerungen."
       ],
@@ -9797,6 +9830,12 @@
       ],
       "VAT number": [
         "Umsatzsteuernummer"
+      ],
+      "You already have a subscription to this plan.": [
+        "Du hast dieses Abonnement bereits."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du hast dieses Abonnement bereits. Du kannst dein Abonnement auf ${ subscriptionPlatform } ändern."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."
@@ -12066,6 +12105,9 @@
       "Get more from your VPN": [
         "Hole mehr aus deinem VPN heraus"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Starte mit 10 Minuten kostenlosem Hochladen, das geht auf uns."
+      ],
       "Get the apps": [
         "Apps herunterladen"
       ],
@@ -12315,6 +12357,9 @@
       ],
       "Re-signing contacts": [
         "Kontakte neu signieren"
+      ],
+      "Ready, set, upload.": [
+        "Auf die Plätze, fertig, hochladen."
       ],
       "Recommended": [
         "Empfohlen"
@@ -12587,6 +12632,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Wir konnten nicht verifizieren, dass ein anonymer Benutzer diesen Ordner hochgeladen hat."
       ],
+      "Welcome offer": [
+        "Willkommensangebot"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Willkommen bei ${ BRAND_NAME } for Business"
       ],
@@ -12613,6 +12661,9 @@
       ],
       "You have no folders yet": [
         "Du hast noch keine Ordner"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "Dein ${ freeUploadLength } hat begonnen."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Deine kostenlose Testversion von ${ planName } endet am ${ textDate }."
@@ -12643,6 +12694,9 @@
       ],
       "Your welcome actions": [
         "Deine Begrüßungsaktionen"
+      ],
+      "You’re off to a great start!": [
+        "Du hast einen tollen Start hingelegt."
       ],
       "You’ve got 5 GB of storage": [
         "Du hast 5 GB Speicherplatz."

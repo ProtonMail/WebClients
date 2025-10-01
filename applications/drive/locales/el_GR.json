@@ -9349,9 +9349,15 @@
       ],
       "Upload folder": [
         "Ανέβασμα φακέλου"
+      ],
+      "Upload more files": [
+        "Μεταφόρτωση περισσότερων αρχείων"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 λεπτά"
+      ],
       "Access your files on the go": [
         "Πρόσβαση στα αρχεία σας εν κινήσει"
       ],
@@ -9376,11 +9382,20 @@
       "Edit documents online": [
         "Επεξεργασία εγγράφων online"
       ],
+      "Encryption happens automatically": [
+        "Η κρυπτογράφηση γίνεται αυτόματα"
+      ],
       "End-to-end encrypted storage for your files": [
         "Χώρος αποθήκευσης για τα αρχεία σας, κρυπτογραφημένος από άκρο σε άκρο"
       ],
       "Faster uploads for large or multiple files": [
         "Ταχύτερες μεταφορτώσεις για μεγάλα ή πολλαπλά αρχεία"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Τα αρχεία που μεταφορτώθηκαν κατά τη διάρκεια αυτής της περιόδου δε θα υπολογίζονται στο όριο αποθήκευσης σας."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Τα αρχεία που ανεβάζετε τώρα δε θα υπολογίζονται στο όριο αποθήκευσης σας."
       ],
       "Final approval in progress": [
         "Τελική έγκριση σε εξέλιξη"
@@ -9415,6 +9430,9 @@
       "Invite team members": [
         "Πρόσκληση μελών ομάδας"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Διατηρήστε τη δυναμική σας ανεβάζοντας περισσότερα αρχεία χρησιμοποιώντας τον αποθηκευτικό χώρο που περιλαμβάνεται στο πακέτο σας."
+      ],
       "Manage access": [
         "Διαχείριση πρόσβασης"
       ],
@@ -9442,6 +9460,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Ο κάτοχος πρέπει να επιβεβαιώσει την πρόσβαση κοινής χρήσης. Θα λάβετε μήνυμα ηλεκτρονικού ταχυδρομείου μόλις ολοκληρωθεί."
       ],
+      "Upload files, folders, photos": [
+        "Μεταμορφώστε αρχεία, φακέλους, φωτογραφίες"
+      ],
       "Upload your first file": [
         "Ανεβάστε το πρώτο σας αρχείο"
       ],
@@ -9450,6 +9471,12 @@
       ],
       "Work together": [
         "Συνεργαστείτε"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Μόλις αποκτήσατε δωρεάν δεδομένα και ασφαλίσατε τα αρχεία σας με κρυπτογράφηση από άκρο σε άκρο － σε χρόνο ρεκόρ!"
+      ],
+      "Your storage limit won’t be affected": [
+        "Το όριο αποθήκευσης σας δε θα επηρεαστεί."
       ]
     },
     "Onboarding Trial": {
@@ -9689,6 +9716,9 @@
       "More plans are available in other currencies": [
         "Περισσότερα πλάνα είναι διαθέσιμα σε άλλα νομίσματα"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Η μέθοδος πληρωμής απαιτείται για την ενεργοποίηση της συνδρομής μετά τη λήξη της δοκιμαστικής περιόδου."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Ενεργοποιήστε ξανά τη συνδρομή σας πρώτα για να μειώσετε τον αριθμό των πρόσθετων."
       ],
@@ -9729,6 +9759,9 @@
       "This number will be shown on all future invoices": [
         "Αυτός ο αριθμός θα εμφανίζεται σε όλα τα μελλοντικά τιμολόγια."
       ],
+      "This offer is not available with your current plan.": [
+        "Αυτή η προσφορά δεν είναι διαθέσιμη με το τρέχον πλάνο σας."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Αυτή η μέθοδος πληρωμής θα γίνει η νέα σας προεπιλογή για όλες τις μελλοντικές ανανεώσεις."
       ],
@@ -9740,6 +9773,12 @@
       ],
       "VAT number": [
         "Αριθμός ΑΦΜ"
+      ],
+      "You already have a subscription to this plan.": [
+        "Έχετε ήδη μια συνδρομή σε αυτό το πλάνο."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Έχετε ήδη συνδρομή σε αυτό το πλάνο. Μπορείτε να αλλάξετε τη συνδρομή σας στο ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Το νόμισμά σας άλλαξε σε ευρώ (€) επειδή οι τραπεζικές μεταφορές SEPA υποστηρίζουν μόνο πληρωμές σε ευρώ."
@@ -11911,6 +11950,9 @@
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Ξεκινήστε με 10 λεπτά δωρεάν μεταφορτώσεων, κερασμένα από εμάς."
+      ],
       "Get the apps": [
         "Αποκτήστε τις εφαρμογές"
       ],
@@ -12160,6 +12202,9 @@
       ],
       "Re-signing contacts": [
         "Επανυπογραφή επαφών"
+      ],
+      "Ready, set, upload.": [
+        "Λάβετε θέσεις, έτοιμοι, μεταμορφώστε."
       ],
       "Recommended": [
         "Προτεινόμενο"
@@ -12432,6 +12477,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι κάποιος ανώνυμος χρήστης μεταφόρτωσε αυτόν τον φάκελο."
       ],
+      "Welcome offer": [
+        "Προσφορά καλωσορίσματος"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Καλώς ορίσατε στο ${ BRAND_NAME } για Business"
       ],
@@ -12458,6 +12506,9 @@
       ],
       "You have no folders yet": [
         "Δεν έχετε ακόμη φακέλους"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "Το ${ freeUploadLength } σας έχει ξεκινήσει."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Η δωρεάν δοκιμή του ${ planName } λήγει στις ${ textDate }"
@@ -12488,6 +12539,9 @@
       ],
       "Your welcome actions": [
         "Οι ευπρόσδεκτες ενέργειές σας"
+      ],
+      "You’re off to a great start!": [
+        "Έχετε κάνει μια εξαιρετική αρχή!"
       ],
       "You’ve got 5 GB of storage": [
         "Έχετε 5 GB αποθηκευτικού χώρου"
