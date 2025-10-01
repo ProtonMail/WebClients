@@ -1,5 +1,4 @@
 import { SupportedMimeTypes, VIDEO_THUMBNAIL_MAX_TIME_LOCATION } from '@proton/shared/lib/drive/constants';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { logError } from '../../../utils/errorHandling';
 import { canvasToThumbnail } from './canvasUtil';
@@ -15,8 +14,6 @@ type ListenerContainer = readonly {
 interface Props extends Media {
     thumbnails?: ThumbnailInfo[];
 }
-// Unfortunately Safari doesn't support Canvas.drawImage using videos anymore.
-export const canGenerateThumbnail = (): boolean => !isSafari();
 
 // Creating video thumbnails can be resource heavy operation. Especially if we load multiple, high-res videos.
 // Another risk factor is memory leakage. Video elements should be cleared carefully after using them.
@@ -44,28 +41,16 @@ export const getVideoInfo = async (file: Blob) => {
             URL.revokeObjectURL(objectUrl);
         };
 
-        // Let's set up events before we start loading the video
         const listeners: ListenerContainer = [
             {
                 type: 'loadedmetadata',
                 listener: () => {
-                    // Seeking in the video happens asynchronously, we will need another event handler
                     video.currentTime = Math.min(VIDEO_THUMBNAIL_MAX_TIME_LOCATION, video.duration / 10);
                 },
             },
             {
-                type: 'timeupdate',
+                type: 'seeked',
                 listener: async () => {
-                    if (!canGenerateThumbnail()) {
-                        destruct(
-                            {
-                                width: video.videoWidth,
-                                height: video.videoHeight,
-                                duration: video.duration,
-                            },
-                            listeners
-                        );
-                    }
                     if (video.currentTime === 0) {
                         // To test if we were able to create a thumbnail, we have to check if the browser
                         // was able to play the video
@@ -80,7 +65,8 @@ export const getVideoInfo = async (file: Blob) => {
                             .catch(() => destruct(undefined, listeners));
                         return;
                     }
-                    const canvas: HTMLCanvasElement = document.createElement('canvas') as HTMLCanvasElement;
+
+                    const canvas: HTMLCanvasElement = document.createElement('canvas');
                     const [width, height] = calculateThumbnailSize({
                         width: video.videoWidth,
                         height: video.videoHeight,
@@ -88,13 +74,16 @@ export const getVideoInfo = async (file: Blob) => {
 
                     canvas.width = width;
                     canvas.height = height;
-                    const context = canvas.getContext('2d');
+                    const context = canvas.getContext('2d', { willReadFrequently: true });
+
                     if (!context) {
                         reject("Couldn't create canvas context for video thumbnail creation.");
                         return;
                     }
-                    await context.drawImage(video, 0, 0, width, height);
+
                     try {
+                        context.drawImage(video, 0, 0, width, height);
+
                         destruct(
                             {
                                 width: video.videoWidth,
@@ -106,7 +95,7 @@ export const getVideoInfo = async (file: Blob) => {
                                             await canvasToThumbnail(
                                                 canvas,
                                                 ThumbnailType.PREVIEW,
-                                                isSafari() ? SupportedMimeTypes.jpg : SupportedMimeTypes.webp
+                                                SupportedMimeTypes.webp
                                             )
                                         ),
                                         thumbnailType: ThumbnailType.PREVIEW,
