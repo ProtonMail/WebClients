@@ -13,6 +13,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { subscriptionExpires } from '@proton/components/containers/payments/subscription/helpers';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useConfig from '@proton/components/hooks/useConfig';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
@@ -31,7 +32,7 @@ const TrialInfoHeader = () => {
 };
 
 const TrialInfoContent = () => {
-    const [subscription, loadingSubscription] = useSubscription();
+    const [subscription] = useSubscription();
     const [referralInfo] = useReferralInfo();
     const { referrerRewardAmount } = referralInfo.uiData;
 
@@ -39,10 +40,6 @@ const TrialInfoContent = () => {
     const textDate = format(fromUnixTime(PeriodEnd), 'PPP', { locale: dateLocale });
     const daysRemaining = getDifferenceInDays(new Date(), new Date(PeriodEnd * 1000));
     const planTitle = getPlanTitle(subscription) || c('Referral').t`your subscription`;
-
-    if (loadingSubscription) {
-        return <Loader />;
-    }
 
     return (
         <>
@@ -123,13 +120,18 @@ const TrialInfoContent = () => {
             </div>
 
             <p className="my-4">
-                {getBoldFormattedText(
-                    c('Referral').ngettext(
-                        msgid`You have **${daysRemaining} day left** to explore all the powerful features that **${planTitle}** has to offer.`,
-                        `You have **${daysRemaining} days left** to explore all the powerful features that **${planTitle}** has to offer.`,
-                        daysRemaining
-                    )
-                )}
+                {daysRemaining > 0
+                    ? getBoldFormattedText(
+                          c('Referral').ngettext(
+                              msgid`You have **${daysRemaining} day left** to explore all the powerful features that **${planTitle}** has to offer.`,
+                              `You have **${daysRemaining} days left** to explore all the powerful features that **${planTitle}** has to offer.`,
+                              daysRemaining
+                          )
+                      )
+                    : getBoldFormattedText(
+                          c('Referral')
+                              .t`Last chance to explore all the powerful features that **${planTitle}** has to offer.`
+                      )}
             </p>
         </>
     );
@@ -207,8 +209,19 @@ const TrialInfoFooter = (props?: Partial<ModalStateProps>) => {
 };
 
 const TrialInfo = () => {
+    const [subscription, loadingSubscription] = useSubscription();
+    const { subscriptionExpiresSoon, renewDisabled } = subscriptionExpires(subscription);
+
+    if (loadingSubscription) {
+        return <Loader />;
+    }
+
+    if (subscriptionExpiresSoon && renewDisabled) {
+        return null;
+    }
+
     return (
-        <div>
+        <div className="relative border rounded px-6 py-5 self-start panel">
             <h3 className="h3 text-bold m-0 pt-0 pb-1">
                 <TrialInfoHeader />
             </h3>
