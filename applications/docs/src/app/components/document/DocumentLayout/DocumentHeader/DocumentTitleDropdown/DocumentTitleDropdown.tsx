@@ -18,7 +18,13 @@ import {
   usePopperAnchor,
   useConfig,
 } from '@proton/components'
-import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
+import type {
+  AuthenticatedDocControllerInterface,
+  DocumentState,
+  PublicDocumentState,
+  EditorControllerInterface,
+  RenameControllerInterface,
+} from '@proton/docs-core'
 import { isDocumentState, PostApplicationError } from '@proton/docs-core'
 import type { SheetImportData } from '@proton/docs-shared'
 import { type DocTrashState, isWordCountSupported } from '@proton/docs-shared'
@@ -31,15 +37,14 @@ import { AutoGrowingInput } from './AutoGrowingInput'
 import { useHistoryViewerModal } from '../HistoryViewerModal/HistoryViewerModal'
 import { TrashedDocumentModal } from './TrashedDocumentModal'
 import { useWordCount } from '../../../WordCount'
-import type { EditorControllerInterface } from '@proton/docs-core'
 import { useExportToPDFModal } from './ExportToPDFModal'
-import type { RenameControllerInterface } from '@proton/docs-core'
 import { useDocsContext } from '../../../context'
 import { WordCountIcon } from '../icons'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { useSheetImportModal } from './SheetImportModal'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
 import { useIsDownloadLogsAllowed } from '~/utils/misc'
+import { useDebugMode } from '~/utils/debug-mode-context'
 
 export type DocumentTitleDropdownProps = {
   authenticatedController: AuthenticatedDocControllerInterface | undefined
@@ -74,6 +79,8 @@ export function DocumentTitleDropdown({
   const [historyModal, showHistoryModal] = useHistoryViewerModal()
   const [sheetImportModal, openSheetImportModal] = useSheetImportModal()
   const [showVersionNumber, setShowVersionNumber] = useState(false)
+  const [showDebugToggle, setShowDebugToggle] = useState(false)
+  const { toggleDebugMode } = useDebugMode()
   const isDownloadLogsAllowed = useIsDownloadLogsAllowed()
   const { APP_VERSION } = useConfig()
 
@@ -92,12 +99,19 @@ export function DocumentTitleDropdown({
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.shiftKey) {
         setShowVersionNumber(true)
+        if (event.ctrlKey) {
+          setShowDebugToggle(true)
+        }
       }
     }
 
     const handleKeyUp = (event: KeyboardEvent) => {
       if (!event.shiftKey) {
         setShowVersionNumber(false)
+        setShowDebugToggle(false)
+      }
+      if (!event.ctrlKey) {
+        setShowDebugToggle(false)
       }
     }
 
@@ -641,6 +655,18 @@ export function DocumentTitleDropdown({
               {c('Action').t`Download logs`}
             </DropdownMenuButton>
           )}
+
+          {showDebugToggle && (
+            <DropdownMenuButton
+              className="flex items-center text-left"
+              onClick={toggleDebugMode}
+              data-testid="dropdown-download-logs"
+            >
+              <Icon name="cog-wheel" className="color-weak mr-2" />
+              {c('Action').t`Toggle debug mode`}
+            </DropdownMenuButton>
+          )}
+
           <hr className="mb-0 mt-1 min-h-px" />
 
           <div

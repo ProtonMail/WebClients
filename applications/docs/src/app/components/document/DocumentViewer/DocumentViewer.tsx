@@ -17,7 +17,7 @@ import {
   isDocumentState,
 } from '@proton/docs-core'
 import { CircleLoader } from '@proton/atoms'
-import { DebugMenu, useDebug } from './DebugMenu'
+import { DebugMenu } from './DebugMenu'
 import type {
   CommentMarkNodeChangeData,
   EditorInitializationConfig,
@@ -62,6 +62,7 @@ import { tmpConvertNewDocTypeToOld, type DocumentType } from '@proton/drive-stor
 import type { ProtonDocumentType } from '@proton/shared/lib/helpers/mimetype'
 import { UserSettingsProvider } from '@proton/drive-store/store'
 import { useDocsContext } from '../context'
+import { useDebugMode } from '~/utils/debug-mode-context'
 
 export function useSuggestionsFeatureFlag() {
   const isDisabled = useFlag('DocsSuggestionsDisabled')
@@ -88,7 +89,7 @@ export function DocumentViewer({
   const application = useApplication()
   const { getLocalID } = useAuthentication()
   const getUserSettings = useGetUserSettings()
-  const debug = useDebug()
+  const { isDebugMode } = useDebugMode()
 
   const { removeLocalIDFromUrl } = useDocsUrlBar()
 
@@ -468,7 +469,7 @@ export function DocumentViewer({
 
   return (
     <div className="relative h-full w-full">
-      {ready && debug && docController && editorController && documentState && (
+      {ready && isDebugMode && docController && editorController && documentState && (
         <DebugMenu
           docController={docController}
           editorController={editorController}
