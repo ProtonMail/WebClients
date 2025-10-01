@@ -32,6 +32,11 @@
         "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Akun"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
@@ -47,6 +52,9 @@
       ],
       "Add": [
         "Tambah"
+      ],
+      "Add ${ BRAND_NAME } address": [
+        "Tambah alamat ${ BRAND_NAME }"
       ],
       "Add account": [
         "Tambah akun"
@@ -149,6 +157,9 @@
       ],
       "Choose my own password": [
         "Pilih kata sandi saya sendiri"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Klaim alamat ${ BRAND_NAME }"
       ],
       "Claim this address": [
         "Klaim alamat ini"
@@ -995,6 +1006,9 @@
       ],
       "User": [
         "Pengguna"
+      ],
+      "Users and addresses": [
+        "Pengguna dan perangkat"
       ],
       "Verify": [
         "Verifikasi"
@@ -5517,6 +5531,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Tambah server (${ availableAddedCount } tersedia)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Tambah tautan konferensi video ke undangan kalender"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Tambahkan nama dan logo Anda untuk menghasilkan pengalaman yang lebih personal bagi organisasi Anda."
       ],
@@ -5627,6 +5644,12 @@
       ],
       "Attention required": [
         "Diperlukan perhatian"
+      ],
+      "Authenticator app 2FA disabled": [
+        "Aplikasi autentikator 2FA dinonaktifkan"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Aplikasi autentikator 2FA diaktifkan"
       ],
       "Awaiting transaction": [
         "Menunggu transaksi"
@@ -5810,6 +5833,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "Dinonaktifkan pada ${ boldValue }"
+      ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Dengan menonaktifkan 2FA milik aplikasi autentikator, akun Anda akan menjadi lebih rentan. Mohon untuk hanya melanjutkan proses ini apabila benar-benar dibutuhkan."
       ],
       "Discover new features unlocked and start using them right away!": [
         "Telusuri berbagai fitur yang terbuka dan gunakan fitur-fitur ini sekarang juga!"
@@ -6059,6 +6085,9 @@
       ],
       "Groups": [
         "Grup"
+      ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Membantu menulis, membalas, dan mengoreksi email. Apabila dinonaktifkan, fitur ini hanya akan dapat diakses oleh administrator. Kelola fitur ini bagi pengguna individu di ${ userAndAddress } atau ${ addMoreSeats }"
       ],
       "here": [
         "di sini"
@@ -6324,6 +6353,12 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kelola aplikasi ${ BRAND_NAME } mana saja yang dapat diakses oleh anggota organisasi Anda. Apabila dinonaktifkan, aplikasi hanya akan dapat diakses oleh administrator."
       ],
+      "Manage which features the members of your organization can access.": [
+        "Kelola fitur mana saja yang dapat diakses oleh anggota organisasi Anda."
+      ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Masukkan informasi ini secara manual ke aplikasi autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
+      ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
       ],
@@ -6443,6 +6478,9 @@
       ],
       "Organization monitor": [
         "Monitor organisasi"
+      ],
+      "Organization Monitor": [
+        "Monitor Organisasi"
       ],
       "Organization size": [
         "Ukuran organisasi"
@@ -6647,6 +6685,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Pilih afiliasi pengguna dari ${ getFormattedOrganization } yang ingin Anda izinkan masuk ke dalam organisasi ${ BRAND_NAME } milik Anda:"
+      ],
+      "Select users to view their activity": [
+        "Pilih pengguna yang aktivitasnya ingin ditampilkan"
       ],
       "Select what you want to import.": [
         "Pilih hal-hal apa saja yang ingin Anda impor."
@@ -7197,11 +7238,17 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Dengan alamat ${ BRAND_NAME } yang terenkripsi, Anda dapat menggunakan seluruh layanan ${ BRAND_NAME }"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Dengan kategori email, pesan yang penting akan diantarkan ke kotak masuk utama. Segala pesan lainnya akan diatur berdasarkan kategori."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Dengan grup, Anda dapat mengirim email dengan cepat dan mudah ke semua orang dalam grup tertentu."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Tanpa aplikasi autentikator, Anda tidak akan dapat masuk ke aplikasi ${ BRAND_NAME } yang belum mendukung kunci keamanan."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda ingin menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
@@ -7607,6 +7654,9 @@
       ],
       "${ nbDay } day": [
         "${ nbDay } hari"
+      ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } dari ${ maxAddresses } alamat email"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
@@ -8309,6 +8359,11 @@
     "Label (end date/advanced search)": {
       "To": [
         "Hingga"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } dari ${ maxBYOEAddresses } alamat email"
       ]
     },
     "Label for adding a new custom domain": {
@@ -10219,6 +10274,11 @@
       ],
       "Merge with calendar": [
         "Gabungkan dengan kalender"
+      ]
+    },
+    "Organization": {
+      "Organization": [
+        "Organisasi"
       ]
     },
     "Organization capacity error": {
@@ -13588,6 +13648,9 @@
       "Disable two-factor authentication": [
         "Nonaktifkan autentikasi dua faktor"
       ],
+      "Disable two-factor authentication app?": [
+        "Nonaktifkan aplikasi autentikasi dua-faktor?"
+      ],
       "Disable two-factor authentication?": [
         "Nonaktifkan autentikasi dua faktor?"
       ],
@@ -13656,6 +13719,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Email categories": [
+        "Kategori email"
       ],
       "Email subscriptions": [
         "Langganan email"
@@ -13807,6 +13873,9 @@
       "Night theme": [
         "Tema malam"
       ],
+      "No events": [
+        "Tidak ada acara"
+      ],
       "No recovery method": [
         "Tidak ada metode pemulihan"
       ],
@@ -13954,6 +14023,9 @@
       "Set recovery methods": [
         "Atur metode pemulihan"
       ],
+      "Set up authenticator app": [
+        "Atur aplikasi autentikator"
+      ],
       "Set up email forwarding": [
         "Atur penerusan email"
       ],
@@ -14031,6 +14103,9 @@
       ],
       "Text": [
         "Teks"
+      ],
+      "There are no events yet for your organization.": [
+        "Belum ada acara untuk organisasi Anda."
       ],
       "There are no groups": [
         "Tidak ada grup"
@@ -14112,6 +14187,9 @@
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Konferensi video dengan ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Konferensi video dengan Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Tinjau rekaman peristiwa organisasi dengan meningkatkan ke Professional"
@@ -14659,6 +14737,9 @@
       "Private": [
         "Privat"
       ],
+      "Security key": [
+        "Kunci keamanan"
+      ],
       "SSO": [
         "SSO"
       ],
@@ -14717,6 +14798,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Dengan ${ planTitlePlusMaybeBrand }, Anda akan memperoleh akses gratis ke seluruh layanan privasi ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Gateway VPN"
       ]
     },
     "VPN info": {

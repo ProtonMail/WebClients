@@ -53,6 +53,9 @@
       "Add": [
         "Legg til"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Legg til ${ BRAND_NAME }-adresse"
+      ],
       "Add account": [
         "Legg til konto"
       ],
@@ -154,6 +157,9 @@
       ],
       "Choose my own password": [
         "Velg mitt eget passord"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Gjør krav på ${ BRAND_NAME }-adresse"
       ],
       "Claim this address": [
         "Gjør krav på denne adressen"
@@ -7393,6 +7399,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en kryptert ${ BRAND_NAME }-adresse, kan du bruke alle ${ BRAND_NAME }-tjenester"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Med e-postkategorier havner viktige meldinger i en primær innboks. Alt annet organiseres i kategorier."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Med grupper kan du raskt og enkelt sende e-post til alle personene i en bestemt gruppe."
       ],
@@ -7826,6 +7835,10 @@
       "${ nbDay } day": [
         "${ nbDay } dag",
         "${ nbDay } dager"
+      ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } av ${ maxAddresses } e-postadresse",
+        "${ usedAddresses } av ${ maxAddresses } e-postadresser"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidig utilgjengelig. Kom tilbake senere)."
@@ -8532,6 +8545,12 @@
     "Label (end date/advanced search)": {
       "To": [
         "Til"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } av ${ maxBYOEAddresses } e-postadresse",
+        "${ usedBYOEAddresses } av ${ maxBYOEAddresses } e-postadresser"
       ]
     },
     "Label for adding a new custom domain": {
@@ -14026,6 +14045,9 @@
       ],
       "Email": [
         "E-post"
+      ],
+      "Email categories": [
+        "E-postkategorier"
       ],
       "Email subscriptions": [
         "E-post abonnementer"
