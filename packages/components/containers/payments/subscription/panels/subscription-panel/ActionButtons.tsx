@@ -8,6 +8,7 @@ import {
     getIsB2BAudienceFromSubscription,
     hasCustomCycle,
     hasVPNPassBundle,
+    isAutoRenewTrial,
     isManagedExternally,
     isTrial,
 } from '@proton/payments';
@@ -66,7 +67,8 @@ export const ActionButtons = ({
 
     const showCustomizePlan = user.isPaid && user.canPay && getIsB2BAudienceFromSubscription(subscription);
 
-    const showStartSubscription = isTrial(subscription) && isReferralExpansionEnabled;
+    const showStartSubscription =
+        isTrial(subscription) && !isAutoRenewTrial(subscription) && isReferralExpansionEnabled;
 
     const showEditBillingDetails =
         user.isPaid &&
