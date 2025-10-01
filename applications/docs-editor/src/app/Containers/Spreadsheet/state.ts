@@ -187,12 +187,17 @@ type OmitDepsKey = 'localState' | 'spreadsheetState' | 'onChangeHistory'
 type ProtonSheetsStateDependencies = Omit<SpreadsheetStateDependencies, OmitDepsKey> &
   Omit<ChartsStateDependencies, OmitDepsKey> &
   Omit<SearchStateDependencies, OmitDepsKey> &
-  Omit<YjsStateDependencies, OmitDepsKey>
+  Omit<YjsStateDependencies, OmitDepsKey> & { isReadonly: boolean }
 
 export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
-  const onChangeHistory: UseSpreadsheetProps['onChangeHistory'] = (patches) =>
+  const onChangeHistory: UseSpreadsheetProps['onChangeHistory'] = (patches) => {
+    if (deps.isReadonly) {
+      console.error('Attempted to modify readonly spreadsheet')
+      return
+    }
     // eslint-disable-next-line @typescript-eslint/no-use-before-define
     yjsState.onBroadcastPatch(patches)
+  }
 
   const localState = useLocalSpreadsheetState()
   const depsWithLocalState = { localState, onChangeHistory, ...deps }
