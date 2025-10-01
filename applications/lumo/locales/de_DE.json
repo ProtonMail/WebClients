@@ -1241,65 +1241,6 @@
         "Du bist dabei, eine externe Webseite zu besuchen:"
       ]
     },
-    "collider_2025: Invite": {
-      "Email address is not valid": [
-        "E-Mail-Adresse ist ungültig"
-      ],
-      "Email address is required": [
-        "E-Mail-Adresse benötigt"
-      ]
-    },
-    "collider_2025: Invite Button": {
-      "Close": [
-        "Schließen"
-      ],
-      "Invite friends": [
-        "Freunde einladen"
-      ],
-      "Maybe later": [
-        "Vielleicht später"
-      ],
-      "Send invitation": [
-        "Einladung versenden"
-      ]
-    },
-    "collider_2025: Invite Email Placeholder": {
-      "Your friend's email": [
-        "E-Mail-Adresse deines Freundes"
-      ]
-    },
-    "collider_2025: Invite Info": {
-      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Kennst du jemanden, dem eine datenschutzorientierte KI nützen würde? Lade ihn ein, der ${ LUMO_SHORT_APP_NAME }-Warteliste beizutreten. Du hast noch ${ remainingInvitesText } Einladungen übrig."
-      ],
-      "You have ${ remainingInvitesText } invitations remaining.": [
-        "Du hast noch ${ remainingInvitesText } Einladungen übrig."
-      ]
-    },
-    "collider_2025: Invite Sent": {
-      "Invitation sent": [
-        "Einladung gesendet"
-      ]
-    },
-    "collider_2025: Invite Success": {
-      "Invite sent!": [
-        "Einladung gesendet!"
-      ],
-      "No invites left  ": [
-        "Keine Einladungen mehr übrig  "
-      ],
-      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Danke, dass du anderen hilfst, ${ LUMO_SHORT_APP_NAME } zu entdecken. Falls weitere Einladungen verfügbar werden, benachrichtigen wir dich."
-      ],
-      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Wir haben ${ emailText } eingeladen. Sie erhalten Anweisungen, wie sie der Warteliste beitreten können."
-      ]
-    },
-    "collider_2025: Invite Title": {
-      "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Lade Freunde ein, ${ LUMO_APP_NAME } zu erleben"
-      ]
-    },
     "collider_2025: Label": {
       "Did not follow instructions": [
         "Hat die Anweisungen nicht befolgt"
@@ -4950,6 +4891,9 @@
       "More plans are available in other currencies": [
         "Weitere Pläne sind in anderen Währungen verfügbar"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Für die Aktivierung des Abonnements nach dem Ende der Testversion ist eine Zahlungsmethode erforderlich."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Bitte reaktiviere zuerst dein Abonnement, um die Anzahl der Add-ons zu verringern."
       ],
@@ -4990,6 +4934,9 @@
       "This number will be shown on all future invoices": [
         "Diese Nummer wird auf allen zukünftigen Rechnungen angezeigt."
       ],
+      "This offer is not available with your current plan.": [
+        "Dieses Angebot ist mit deinem aktuellen Abonnement nicht verfügbar."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Diese Zahlungsmethode wird dein neuer Standard für alle zukünftigen Verlängerungen."
       ],
@@ -5001,6 +4948,12 @@
       ],
       "VAT number": [
         "Umsatzsteuernummer"
+      ],
+      "You already have a subscription to this plan.": [
+        "Du hast dieses Abonnement bereits."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Du hast dieses Abonnement bereits. Du kannst dein Abonnement auf ${ subscriptionPlatform } ändern."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Deine Währung wurde zu Euro (€) geändert, da SEPA-Banküberweisungen Zahlungen nur in Euro unterstützen."

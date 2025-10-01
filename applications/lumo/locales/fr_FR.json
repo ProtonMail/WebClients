@@ -1241,65 +1241,6 @@
         "Vous êtes sur le point de consulter un site web externe :"
       ]
     },
-    "collider_2025: Invite": {
-      "Email address is not valid": [
-        "L'adresse e-mail n'est pas valide."
-      ],
-      "Email address is required": [
-        "L'adresse e-mail est nécessaire."
-      ]
-    },
-    "collider_2025: Invite Button": {
-      "Close": [
-        "Fermer"
-      ],
-      "Invite friends": [
-        "Inviter des amis"
-      ],
-      "Maybe later": [
-        "Peut-être plus tard"
-      ],
-      "Send invitation": [
-        "Envoyer l'invitation"
-      ]
-    },
-    "collider_2025: Invite Email Placeholder": {
-      "Your friend's email": [
-        "E-mail de votre ami"
-      ]
-    },
-    "collider_2025: Invite Info": {
-      "Know someone who'd benefit from a privacy-first AI? Invite them to join the ${ LUMO_SHORT_APP_NAME } waitlist. You have ${ remainingInvitesText } invitations remaining.": [
-        "Vous connaissez quelqu'un qui bénéficierait d'une IA respectueuse de la vie privée ? Invitez-le à rejoindre la liste d'attente de ${ LUMO_SHORT_APP_NAME }. Il vous reste ${ remainingInvitesText } invitations."
-      ],
-      "You have ${ remainingInvitesText } invitations remaining.": [
-        "Il vous reste ${ remainingInvitesText } invitations."
-      ]
-    },
-    "collider_2025: Invite Sent": {
-      "Invitation sent": [
-        "L'invitation a été envoyée."
-      ]
-    },
-    "collider_2025: Invite Success": {
-      "Invite sent!": [
-        "Invitation envoyée."
-      ],
-      "No invites left  ": [
-        "Il ne reste aucune invitation.  "
-      ],
-      "Thanks for helping others discover ${ LUMO_SHORT_APP_NAME }! If more invites become available, we’ll let you know.": [
-        "Merci d'aider les autres à découvrir ${ LUMO_SHORT_APP_NAME } ! Si d'autres invitations deviennent disponibles, nous vous en informerons."
-      ],
-      "We've invited ${ emailText }. They'll get instructions on how to join the waitlist.": [
-        "Nous avons invité ${ emailText }. Le destinataire recevra des instructions sur la façon de rejoindre la liste d'attente."
-      ]
-    },
-    "collider_2025: Invite Title": {
-      "Invite friends to experience ${ LUMO_APP_NAME }": [
-        "Invitez des amis à profiter de ${ LUMO_APP_NAME }"
-      ]
-    },
     "collider_2025: Label": {
       "Did not follow instructions": [
         "Les instructions n'ont pas été suivies."
@@ -4950,6 +4891,9 @@
       "More plans are available in other currencies": [
         "D'autres abonnements sont disponibles dans d'autres devises."
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Un moyen de paiement est requis pour que l'abonnement soit activé après la fin de la version d'essai."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Veuillez réactiver votre abonnement avant de réduire le nombre d'extensions."
       ],
@@ -4990,6 +4934,9 @@
       "This number will be shown on all future invoices": [
         "Ce numéro sera indiqué sur toutes les prochaines factures."
       ],
+      "This offer is not available with your current plan.": [
+        "Cette offre n'est pas disponible avec votre abonnement actuel."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Ce moyen de paiement deviendra votre nouveau moyen par défaut pour tous les futurs renouvellements."
       ],
@@ -5001,6 +4948,12 @@
       ],
       "VAT number": [
         "Numéro de TVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Vous êtes déjà abonné à cet abonnement."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Vous avez déjà un abonnement. Vous pouvez modifier votre abonnement sur ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Votre devise a été changée en euros (€) car les virements bancaires SEPA prennent uniquement en charge les paiements en euros."

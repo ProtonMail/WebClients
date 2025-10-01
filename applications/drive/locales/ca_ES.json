@@ -9409,9 +9409,15 @@
       ],
       "Upload folder": [
         "Carrega una carpeta"
+      ],
+      "Upload more files": [
+        "Carregueu més fitxers"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 minuts"
+      ],
       "Access your files on the go": [
         "Accediu als vostres fitxers allà on sigueu"
       ],
@@ -9436,11 +9442,20 @@
       "Edit documents online": [
         "Editeu documents en línia"
       ],
+      "Encryption happens automatically": [
+        "El xifratge és automàtic"
+      ],
       "End-to-end encrypted storage for your files": [
         "Emmagatzematge xifrat d'extrem a extrem per als vostres fitxers"
       ],
       "Faster uploads for large or multiple files": [
         "Importacions més ràpides dels vostres fitxers, independentment de la seva mida o nombre."
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Els fitxers carregats durant aquest temps no comptaran per al vostre límit d'emmagatzematge."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Els fitxers carregats ara no comptaran per al límit del vostre emmagatzematge"
       ],
       "Final approval in progress": [
         "L'aprovació final està en curs."
@@ -9475,6 +9490,9 @@
       "Invite team members": [
         "Convida els membres de l'equip"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "No perdeu el ritme: carregueu més fitxers amb l'emmagatzematge que inclou el vostre pla."
+      ],
       "Manage access": [
         "Gestiona l'accés"
       ],
@@ -9502,6 +9520,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "El propietari ha de confirmar l'accés per a compartir. Rebreu un correu electrònic un cop estigui fet."
       ],
+      "Upload files, folders, photos": [
+        "Carregueu fitxers, carpetes, fotos"
+      ],
       "Upload your first file": [
         "Carregueu el vostre primer fitxer"
       ],
@@ -9510,6 +9531,12 @@
       ],
       "Work together": [
         "Treballeu en equip"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Acabeu d'obtenir dades gratuïtes i d'assegurar els vostres fitxers amb xifratge d'extrem a extrem, en un temps rècord!"
+      ],
+      "Your storage limit won’t be affected": [
+        "El vostre límit d'emmagatzematge no es veurà afectat"
       ]
     },
     "Onboarding Trial": {
@@ -9749,6 +9776,9 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Es requereix un mètode de pagament perquè la subscripció s'activi un cop finalitzi la prova."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
@@ -9789,6 +9819,9 @@
       "This number will be shown on all future invoices": [
         "Aquest número es mostrarà a totes les factures futures"
       ],
+      "This offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Aquest mètode de pagament esdevindrà el vostre nou mètode per defecte per a totes les renovacions futures."
       ],
@@ -9800,6 +9833,12 @@
       ],
       "VAT number": [
         "Número d'IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Ja teniu una subscripció a aquest pla."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ja teniu una subscripció a aquest pla. Podeu canviar-la a ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "La moneda s'ha canviat a euros (€) perquè les transferències bancàries SEPA només admeten pagaments en euros."
@@ -11971,6 +12010,9 @@
       "Get more from your VPN": [
         "Obteniu més de la vostra VPN"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Comenceu amb 10 minuts de càrregues gratuïtes, de franc."
+      ],
       "Get the apps": [
         "Aconseguiu les aplicacions"
       ],
@@ -12220,6 +12262,9 @@
       ],
       "Re-signing contacts": [
         "Tornant a signar contactes"
+      ],
+      "Ready, set, upload.": [
+        "Preparats, llestos, carregueu."
       ],
       "Recommended": [
         "Recomanat"
@@ -12492,6 +12537,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "No hem pogut verificar que un usuari anònim hagi carregat aquesta carpeta."
       ],
+      "Welcome offer": [
+        "Oferta de benvinguda"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Us donem la benvinguda a ${ BRAND_NAME } for Business"
       ],
@@ -12518,6 +12566,9 @@
       ],
       "You have no folders yet": [
         "Encara no tens cap carpeta"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "El vostre període de ${ freeUploadLength } ha començat."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "La vostra prova gratuïta de ${ planName } acaba el ${ textDate }"
@@ -12548,6 +12599,9 @@
       ],
       "Your welcome actions": [
         "Les vostres accions de benvinguda"
+      ],
+      "You’re off to a great start!": [
+        "Heu començat molt bé!"
       ],
       "You’ve got 5 GB of storage": [
         "Teniu 5 GB d'emmagatzematge"

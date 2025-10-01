@@ -308,6 +308,9 @@
       "Continue import": [
         "Continuare importare"
       ],
+      "Continue with categories": [
+        "Continuare cu categorii"
+      ],
       "Continue with Google": [
         "Continuare cu Google"
       ],
@@ -379,6 +382,9 @@
       ],
       "Customize": [
         "Personalizare"
+      ],
+      "Customize categories": [
+        "Personalizare categorii"
       ],
       "Customize import": [
         "Personalizare importare"
@@ -767,6 +773,9 @@
       "Invite members": [
         "Invitați membri"
       ],
+      "Is this private?": [
+        "Este privat?"
+      ],
       "Italic": [
         "Înclinat"
       ],
@@ -775,6 +784,9 @@
       ],
       "Keep categories": [
         "Păstrare categorii"
+      ],
+      "Keep inbox as before": [
+        "Păstrare mesaje ca înainte"
       ],
       "Keep my subscription": [
         "Îmi păstrez abonamentul"
@@ -5110,6 +5122,11 @@
         "Codul poștal este obligatoriu."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Participanți permiși per invitație: ${ maxAttendees }.",
@@ -6989,6 +7006,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
       ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Categoriile funcționează ca filtrele de mesaje nedorite. Căutăm tipare doar în anteturile necriptate și în datele tehnice. Nu citim conținutul mesajelor, nu vă partajăm datele și nu vă încălcăm confidențialitatea."
+      ],
       "Center": [
         "Centrare"
       ],
@@ -7478,6 +7498,18 @@
       ],
       "Included for free with your plan": [
         "Inclus gratuit cu planul actual"
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Include facturi, confirmări de primire, comenzi și rezervări."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Include e-mailuri de marketing, cum ar fi oferte și anunțuri de produse."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Include rezumate de știri și alt conținut non-promoțional."
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Include actualizări de la rețelele sociale și site-uri de partajare media."
       ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
@@ -9230,6 +9262,16 @@
       "${ BRAND_NAME } username": [
         "Nnume de utilizator ${ BRAND_NAME }"
       ],
+      "${ count } unread conversation": [
+        "${ count } conversație necitită",
+        "${ count } conversații necitite",
+        "${ count } de conversații necitite"
+      ],
+      "${ count } unread message": [
+        "${ count } mesaj necitit",
+        "${ count } mesaje necitite",
+        "${ count } de mesaje necitite"
+      ],
       "${ n } month": [
         "O lună",
         "${ n } luni",
@@ -9255,6 +9297,9 @@
       ],
       "Add image URL": [
         "Adăugare URL imagine"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Adăugați sau eliminați categorii. Activați sau dezactivați notificări. Ajustați oricând în meniul ${ menuIcon }."
       ],
       "Add to group": [
         "Adăugare la grup"
@@ -9684,6 +9729,9 @@
       ],
       "No label found": [
         "Nu există etichete"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Nu mai ratați mesajele importante! Acestea apar acum în ${ primaryCopy }. Toate celelalte sunt sortate pe categorii, astfel încât sunt ușor de găsit și nu aglomerează folderul de mesaje primite."
       ],
       "No results found": [
         "Nu s-au găsit rezultate."
@@ -11775,8 +11823,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "Schimbați-vă adresa de e-mail pentru servicii populare acum, pentru a evita urmărirea și profilarea. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Finanțe"
+      ],
+      "Maybe later": [
+        "Poate mai târziu"
       ],
       "Privacy for all your online accounts": [
         "Confidențialitate pentru toate conturile online personale"
@@ -12213,6 +12267,9 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de probare."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
       ],
@@ -12257,6 +12314,9 @@
       "This number will be shown on all future invoices": [
         "Acest număr va fi afișat pe toate facturile viitoare."
       ],
+      "This offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă cu planul actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
@@ -12268,6 +12328,12 @@
       ],
       "VAT number": [
         "Valoare TVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Deja aveți un abonament la acest plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Aveți deja un abonament la acest plan. Vă puteți schimba abonamentul pe ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
@@ -14798,6 +14864,9 @@
       "Block sender": [
         "Blocare expeditor"
       ],
+      "Built for privacy": [
+        "Construit pentru confidențialitate"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anulare abonare ${ MAIL_SHORT_APP_NAME }"
       ],
@@ -14890,6 +14959,9 @@
       ],
       "Customize categories": [
         "Personalizare categorii"
+      ],
+      "Customize categories to fit your needs": [
+        "Personalizați categoriile pentru a se potrivi nevoilor personale"
       ],
       "Customize your mail import": [
         "Personalizare importare mesaje"
@@ -15127,6 +15199,9 @@
       ],
       "Insert contacts": [
         "Inserare contacte"
+      ],
+      "Introducing email categories": [
+        "Vă prezentăm categoriile de e-mail"
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"

@@ -3454,6 +3454,11 @@
         "Codul poștal este obligatoriu."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
@@ -8523,6 +8528,9 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de probare."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
       ],
@@ -8567,6 +8575,9 @@
       "This number will be shown on all future invoices": [
         "Acest număr va fi afișat pe toate facturile viitoare."
       ],
+      "This offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă cu planul actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
@@ -8578,6 +8589,12 @@
       ],
       "VAT number": [
         "Valoare TVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Deja aveți un abonament la acest plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Aveți deja un abonament la acest plan. Vă puteți schimba abonamentul pe ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."

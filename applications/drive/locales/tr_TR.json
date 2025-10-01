@@ -3821,6 +3821,11 @@
         "⚠️ Şifresi çözülemeyen ad"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Lütfen başlangıçta bağlandığınızla aynı Gmail adresiyle oturum açın"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
@@ -9344,9 +9349,15 @@
       ],
       "Upload folder": [
         "Klasör yükle"
+      ],
+      "Upload more files": [
+        "Daha fazla dosya yükleyin"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 dakika"
+      ],
       "Access your files on the go": [
         "Yolculuk yaparken dosyalarınıza erişin"
       ],
@@ -9371,11 +9382,20 @@
       "Edit documents online": [
         "Belgeleri çevrim içi düzenleyin"
       ],
+      "Encryption happens automatically": [
+        "Şifreleme otomatik olarak yapılır"
+      ],
       "End-to-end encrypted storage for your files": [
         "Dosyalarınız için uçtan uca şifrelenmiş depolama alanı"
       ],
       "Faster uploads for large or multiple files": [
         "Büyük ya da çok sayıda dosyayı daha hızlı yükleme"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Bu süre içinde yüklenen dosyalar, depolama alanı sınırınıza katılmayacak."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Şimdi yüklenen dosyalar depolama alanı sınırınızdan sayılmayacak."
       ],
       "Final approval in progress": [
         "Son onay işleniyor"
@@ -9410,6 +9430,9 @@
       "Invite team members": [
         "Takıma üyeler davet edin"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Tarifenizdeki depolama alanını kullanarak daha fazla dosya yükleyerek geçişinizi sürdürün."
+      ],
       "Manage access": [
         "Erişim izinlerini yönetin"
       ],
@@ -9437,6 +9460,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Sahibi paylaşım erişimi iznini onaylamalıdır. İşlem tamamlandığında bir e-posta alacaksınız."
       ],
+      "Upload files, folders, photos": [
+        "Dosyaları, klasörleri, fotoğrafları yükleyin"
+      ],
       "Upload your first file": [
         "İlk dosyanızı yükleyin"
       ],
@@ -9445,6 +9471,12 @@
       ],
       "Work together": [
         "Birlikte çalışın"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Az önce ücretsiz veri hakkı kazandınız ve dosyalarınızı uçtan uca şifrelemeyle rekor sürede korudunuz!"
+      ],
+      "Your storage limit won’t be affected": [
+        "Depolama alanı sınırınız etkilenmeyecek"
       ]
     },
     "Onboarding Trial": {
@@ -9684,6 +9716,9 @@
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
@@ -9724,6 +9759,9 @@
       "This number will be shown on all future invoices": [
         "Bu numara, sonraki tüm faturalarda görüntülenecek"
       ],
+      "This offer is not available with your current plan.": [
+        "Bu teklif, geçerli tarifeniz ile kullanılamıyor."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
@@ -9735,6 +9773,12 @@
       ],
       "VAT number": [
         "KDV numarası"
+      ],
+      "You already have a subscription to this plan.": [
+        "Bu tarife için zaten bir aboneliğiniz var."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Bu tarifeye zaten bir aboneliğiniz var. Aboneliğinizi ${ subscriptionPlatform } üzerinden değiştirebilirsiniz."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
@@ -12004,6 +12048,9 @@
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Bizden 10 dakikalık ücretsiz yükleme süresiyle başlayın."
+      ],
       "Get the apps": [
         "Uygulamaları indirme"
       ],
@@ -12253,6 +12300,9 @@
       ],
       "Re-signing contacts": [
         "Kişiler yeniden imzalanıyor"
+      ],
+      "Ready, set, upload.": [
+        "Hazırla, ayarla, yükle."
       ],
       "Recommended": [
         "Önerilen"
@@ -12525,6 +12575,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Bu klasörü anonim bir kullanıcının yüklediği doğrulanamadı."
       ],
+      "Welcome offer": [
+        "Karşılama teklifi"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "${ BRAND_NAME } for Business uygulamasına hoş geldiniz"
       ],
@@ -12551,6 +12604,9 @@
       ],
       "You have no folders yet": [
         "Henüz bir klasörünüz yok"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "${ freeUploadLength } süreniz başladı."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "${ planName } ücretsiz deneme süreniz ${ textDate } tarihinde sonra erecek"
@@ -12581,6 +12637,9 @@
       ],
       "Your welcome actions": [
         "Karşılama işlemleriniz"
+      ],
+      "You’re off to a great start!": [
+        "Harika bir başlangıç yaptınız!"
       ],
       "You’ve got 5 GB of storage": [
         "5 GB depolama alanı kazandınız"

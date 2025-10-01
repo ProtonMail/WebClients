@@ -264,6 +264,9 @@
       "Choose my own password": [
         "Deixa'm triar la meva contrasenya"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Aconseguiu l'adreça de ${ BRAND_NAME }"
+      ],
       "Claim it": [
         "Reclameu-la"
       ],
@@ -712,7 +715,7 @@
         "Ajusta a la finestra"
       ],
       "Font": [
-        "Tipus de lletra"
+        "Font"
       ],
       "Forgot password?": [
         "Heu oblidat la contrasenya?"
@@ -1231,7 +1234,7 @@
         "Revoca ${ name }"
       ],
       "Revoke access": [
-        "Revocar l'accés"
+        "Revoca l'accés"
       ],
       "Revoke all other sessions": [
         "Revoca totes les altres sessions"
@@ -1510,7 +1513,7 @@
         "Habilita ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Underline": [
-        "Subratllat"
+        "Subratlla"
       ],
       "Undo import": [
         "Desfés la importació"
@@ -1762,10 +1765,10 @@
         "No permetis correus sense signar"
       ],
       "Disconnect": [
-        "Desconnecteu"
+        "Desconnecta"
       ],
       "Disconnect address “${ emailAddress }”": [
-        "Desconnecteu l'adreça “${ emailAddress }”"
+        "Desconnecta l'adreça “${ emailAddress }”"
       ],
       "Edit": [
         "Edita"
@@ -2143,7 +2146,7 @@
         "Proveu-ho gratuïtament durant ${ TRIAL_DURATION_DAYS } dies"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "En cas que cancel·leu, la prova gratuïta no es convertirà en una subscripció de pagament, però podreu gaudir dels avantatges del pla fins al final del període de prova. Després d'això, passareu al pla gratuït ${ BRAND_NAME }."
+        "En cas que cancel·leu, la prova gratuïta no es convertirà en una subscripció de pagament, però podreu gaudir dels avantatges del pla fins al final del període de prova. Després, passareu al pla gratuït ${ BRAND_NAME }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
@@ -3190,7 +3193,7 @@
         "corall"
       ],
       "ruddy pink": [
-        "rosa vermellós"
+        "rosa rogenc"
       ],
       "sahara": [
         "sahara"
@@ -5456,7 +5459,7 @@
         "${ n } dies"
       ],
       "${ user } is requesting emergency access to your account": [
-        "${ user } sol·licita accés d'emergència al seu compte"
+        "${ user } sol·licita accés d'emergència al vostre compte"
       ],
       "${ user } will be able to use your account and change your data.": [
         "${ user } podrà utilitzar el vostre compte i canviar les vostres dades."
@@ -5468,7 +5471,7 @@
         "${ user } ja no podrà sol·licitar accés al teu compte en cas d'emergència."
       ],
       "${ user } will not be able to access your account until the next emergency access.": [
-        "${ user } no podrà accedir al seu compte fins al següent accés d'emergència."
+        "${ user } no podrà accedir al vostre compte fins al següent accés d'emergència."
       ],
       "Access granted": [
         "S'ha concedit l'accés."
@@ -5516,13 +5519,13 @@
         "No perdeu l'accés d'emergència. Activeu la renovació automàtica avui mateix."
       ],
       "Emergency access": [
-        "Accés d\"emergència"
+        "Accés d'emergència"
       ],
       "Emergency access for ${ user } removed": [
-        "Accés d'emergència per a ${ user } eliminat"
+        "S'ha eliminat l'accés d'emergència per a ${ user }"
       ],
       "Emergency access granted": [
-        "S\"ha concedit l\"accés d\"emergència"
+        "S'ha concedit l'accés d'emergència"
       ],
       "Emergency access refused": [
         "S'ha denegat l'accés d'emergència"
@@ -5588,7 +5591,7 @@
         "Voleu denegar-ne l'accés?"
       ],
       "Remove trusted contact": [
-        "Esborrar contacte de confiança"
+        "Esborra el contacte de confiança"
       ],
       "Renew to get emergency access again.": [
         "Renoveu per tornar a tenir accés d'emergència."
@@ -5652,7 +5655,7 @@
         "Temps d'espera per obtenir accés"
       ],
       "Wait time saved": [
-        "El temps d'espera s'ha desat"
+        "S'ha desat el temps d'espera"
       ],
       "We’ll notify **${ user }** that you requested emergency access.": [
         "Notificarem **${ user }** que heu sol·licitat accés d'emergència."
@@ -6305,7 +6308,7 @@
         "Heu d'establir un nom"
       ],
       "You need to have an active custom domain address in order to generate an SMTP submission token.": [
-        "Heu de tenir una adreça de domini personalitzada activa per generar un testimoni de tramesa SMTP."
+        "Heu de tenir una adreça de domini personalitzat activa per a generar un testimoni de tramesa SMTP."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Heu arribat al nombre màxim de caràcters. Escurceu el missatge."
@@ -7047,7 +7050,7 @@
         "Estríming segur"
       ],
       "Stream from Netflix, HBO, and more": [
-        "Reproduïu en continu des de Netflix, HBO i més"
+        "Reproduïu en estríming des de Netflix, HBO, etc."
       ]
     },
     "Features: Tooltip": {
@@ -8206,13 +8209,13 @@
         "${ name } per Android"
       ],
       "${ name } for GNU/Linux": [
-        "${ name } per GNU/Linux"
+        "${ name } per a GNU/Linux"
       ],
       "${ name } for iOS": [
         "${ name } per l'iOS"
       ],
       "${ name } for macOS": [
-        "${ name } per al macOS"
+        "${ name } per a macOS"
       ],
       "${ name } for Web": [
         "${ name } per al web"
@@ -8391,7 +8394,7 @@
         "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que es subscrigui a un pla."
       ],
       "**Sync codes** to all your devices": [
-        "**Sincronitzeu codis** a tots els vostres dispositius"
+        "**Sincronitzeu els codis** a tots els dispositius"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } més",
@@ -9113,7 +9116,7 @@
         "corrreu electrònic"
       ],
       "Email address": [
-        "Adreça electrònica"
+        "Adreça de correu electrònic"
       ],
       "Email and calendar, integrated with ${ CONTACTS_APP_NAME }": [
         "Correu electrònic i calendari, integrats amb ${ CONTACTS_APP_NAME }"
@@ -9182,7 +9185,7 @@
         "S'ha rebut l'URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.com/sso/saml)."
       ],
       "Ends on ${ formattedPeriodEndDate }": [
-        "S'acaba el ${ formattedPeriodEndDate }"
+        "Acaba el ${ formattedPeriodEndDate }"
       ],
       "Enhance your network security": [
         "Milloreu la seguretat de la vostra xarxa"
@@ -10968,7 +10971,7 @@
         "Visualitzeu i gestioneu els vostres grups."
       ],
       "View VPN session details for your organization.": [
-        "Visualitzeu els detalls de la sessió VPN de la vostra organització."
+        "Mostra els detalls de la sessió VPN de la vostra organització."
       ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
@@ -11773,7 +11776,7 @@
         "Aplica / obre"
       ],
       "Attach file": [
-        "Adjunta un arxiu"
+        "Adjunta un fitxer"
       ],
       "Cancel / close": [
         "Cancel·la / tanca"
@@ -11860,7 +11863,7 @@
         "Mou cap avall"
       ],
       "Move left / collapse": [
-        "Cap a l'esquerra / reduir"
+        "Mou a l'esquerra / redueix"
       ],
       "Move right / expand": [
         "Cap a la dreta / expandir"
@@ -13064,7 +13067,7 @@
         "Segona contrasenya"
       ],
       "Secure password generator": [
-        "Generador de contrasenyes segur"
+        "Generador de contrasenyes segures"
       ],
       "Select Linux package format": [
         "Seleccioneu el format del paquet Linux"
@@ -14010,7 +14013,7 @@
         "Visualitzeu els canvis a la vostra organització i altres activitats de l'administració."
       ],
       "View user sign-in, recovery and security events.": [
-        "Visualitzeu els esdeveniments d'inici de sessió, recuperació i seguretat de l'usuari."
+        "Mostra els esdeveniments d'inici de sessió, recuperació i seguretat de l'usuari."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
@@ -15766,7 +15769,7 @@
         "Escriptori"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
+        "Per a començar, trieu un nom per a mostrar. Això és el que les persones veuran quan els envieu un correu electrònic, les convideu a un esdeveniment o compartiu un fitxer amb elles."
       ]
     },
     "Onboarding Trial": {
@@ -16804,6 +16807,9 @@
       "Offer unavailable": [
         "Aquesta oferta no està disponible"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Es requereix un mètode de pagament perquè la subscripció s'activi un cop finalitzi la prova."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
@@ -16853,6 +16859,9 @@
       "This number will be shown on all future invoices": [
         "Aquest número es mostrarà a totes les factures futures"
       ],
+      "This offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Aquest mètode de pagament esdevindrà el vostre nou mètode per defecte per a totes les renovacions futures."
       ],
@@ -16864,6 +16873,12 @@
       ],
       "VAT number": [
         "Número d'IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Ja teniu una subscripció a aquest pla."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ja teniu una subscripció a aquest pla. Podeu canviar-la a ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se us cobrarà ${ amountToCharge } al vostre mètode de pagament seleccionat."
@@ -17212,7 +17227,7 @@
         "Ideal per a ús diari i còpies de seguretat de fotos."
       ],
       "Perfect for getting started with secure cloud storage.": [
-        "Perfecte per començar amb emmagatzematge segur al núvol."
+        "Perfecte per a començar amb l'emmagatzematge segur al núvol."
       ],
       "Secure cloud storage and collaboration for teams.": [
         "Emmagatzematge segur al núvol i col·laboració per a equips."
@@ -17913,7 +17928,7 @@
         "Si perdeu les dades d'inici de sessió i necessiteu restablir el compte, **és imprescindible** que tingueu un **mètode de recuperació del compte i de les dades**. En cas contrari, és possible que no pugueu accedir a cap dels vostres correus electrònics, contactes, fitxers o contrasenyes."
       ],
       "in case we need to contact you": [
-        "en cas que necessitem contactar-vos"
+        "en cas que necessitem posar-nos en contacte"
       ],
       "Invalid code": [
         "El codi no és vàlid."
@@ -18051,7 +18066,7 @@
         "Teniu accions recomanades."
       ],
       "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
-        "Els atacants podrien fer un ús indegut del vostre correu de recuperació per prendre el control del vostre compte. ${ disableEmail } n'augmentarà la seguretat."
+        "Els atacants podrien fer un ús indegut del vostre correu de recuperació per prendre el control del vostre compte. ${ disableEmail } per augmentar la seguretat del vostre compte."
       ],
       "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
         "Els atacants podrien fer un ús indegut del vostre telèfon de recuperació per prendre el control del vostre compte. ${ disablePhone } n'augmentarà la seguretat."
@@ -18855,7 +18870,7 @@
         "30 adreces de correu electrònic personalitzades"
       ],
       "4.8+ rating": [
-        "Puntuació de 4.8+"
+        "Puntuació de 4,8+"
       ],
       "Advanced account protection": [
         "Protecció avançada dels comptes"
@@ -18867,7 +18882,7 @@
         "Import a pagar ara"
       ],
       "And get ${ referralInfo.uiData.refereeRewardAmount } in credits, if you subscribe.": [
-        "I si us subscriviu, obtindreu ${ referralInfo.uiData.refereeRewardAmount } en crèdits."
+        "I, si us subscriviu, obtindreu ${ referralInfo.uiData.refereeRewardAmount } en crèdits."
       ],
       "Billing Cycle": [
         "Cicle de facturació"
@@ -18936,7 +18951,7 @@
         "Obtingueu ${ referralInfo.uiData.refereeRewardAmount } en crèdits"
       ],
       "Get a new encrypted email for free": [
-        "Obtingueu un nou correu electrònic xifrat de franc"
+        "Obteniu un nou correu electrònic xifrat de franc"
       ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Obtingueu una adreça segura del ${ MAIL_APP_NAME } o ${ internalButton }"
@@ -19066,7 +19081,7 @@
         "Aleshores ${ priceWithDiscountPerMonth } al mes, si us subscriviu."
       ],
       "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
-        "Aleshores, ${ priceWithDiscountPerMonth } al mes. Cancel·leu en qualsevol moment."
+        "Després, ${ priceWithDiscountPerMonth } al mes. Cancel·leu en qualsevol moment."
       ],
       "To redeem on your next paid subscription.": [
         "Per bescanviar-ho en la propera subscripció de pagament."
@@ -19509,7 +19524,7 @@
         "Obtingueu fins a ${ maxRewardAmount } en crèdits"
       ],
       "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
-        "Obtingueu crèdits quan la persona que convideu es subscrigui a un pla de ${ BRAND_NAME }."
+        "Obtingueu crèdits quan la persona que convideu se subscrigui a un pla de ${ BRAND_NAME }."
       ],
       "Get up to ${ credits } in credits.": [
         "Obteniu fins a ${ credits } en crèdits."
@@ -20718,7 +20733,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } esborrat"
+        "S'ha esborrat ${ label.Name }"
       ],
       "Address deleted": [
         "Adreça eliminada"
@@ -21583,7 +21598,7 @@
         "Privacitat del correu"
       ],
       "Emergency access": [
-        "Accés d\"emergència"
+        "Accés d'emergència"
       ],
       "Enable advanced account protection": [
         "Activació de la protecció avançada del compte"
@@ -21665,7 +21680,7 @@
         "Per Windows"
       ],
       "Forgot password": [
-        "Contrasenya oblidada"
+        "He oblidat la contrasenya."
       ],
       "Forgot recovery method": [
         "Oblideu el mètode de recuperació"
@@ -22116,7 +22131,7 @@
         "Programeu reunions amb un sol clic"
       ],
       "Schedule send:": [
-        "Programeu l'enviament:"
+        "Programa l'enviament:"
       ],
       "Secure email based in Switzerland": [
         "Correu electrònic segur amb seu a Suïssa"
@@ -22182,7 +22197,7 @@
         "Configura un mètode de recuperació"
       ],
       "Set up authenticator app": [
-        "Configureu l'aplicació d'autenticació"
+        "Configura l'aplicació d'autenticació"
       ],
       "Set up email forwarding": [
         "Configuració del reenviament de correu"
@@ -22729,7 +22744,7 @@
         "Si heu comprat un codi regal o n'heu rebut un del nostre equip de suport, escriviu-lo aquí."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible. Single sign-on users will not receive the email reminder.": [
-        "Els membres que no utilitzin l'autenticació 2FA rebran un correu electrònic per demanar-los que l'habilitin com més aviat millor. Els usuaris de l'inici de sessió únic no rebran el recordatori."
+        "Els membres que no utilitzin l'autenticació de doble factor (2FA) rebran un correu electrònic per demanar-los que l'habilitin com més aviat millor. Els usuaris de l'inici de sessió únic no rebran el recordatori."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Els missatges a la carpeta d'Enviats o Esborranys continuaran apareixent a aquestes carpetes, fins i tot si els moveu a una altra carpeta."
@@ -23137,7 +23152,7 @@
         "Actualitza la lletra i la mida per defecte"
       ],
       "Your default font will look like following:": [
-        "La font per defecte serà com la següent:"
+        "La font predeterminada es mostrarà així:"
       ]
     },
     "Upgrade": {

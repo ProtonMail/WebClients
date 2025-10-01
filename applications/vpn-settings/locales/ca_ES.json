@@ -158,6 +158,9 @@
       "Choose my own password": [
         "Deixa'm triar la meva contrasenya"
       ],
+      "Claim ${ BRAND_NAME } address": [
+        "Aconseguiu l'adreça de ${ BRAND_NAME }"
+      ],
       "Claim this address": [
         "Aconseguiu aquesta adreça"
       ],
@@ -1114,10 +1117,10 @@
         "No permetis correus sense signar"
       ],
       "Disconnect": [
-        "Desconnecteu"
+        "Desconnecta"
       ],
       "Disconnect address “${ emailAddress }”": [
-        "Desconnecteu l'adreça “${ emailAddress }”"
+        "Desconnecta l'adreça “${ emailAddress }”"
       ],
       "Edit": [
         "Edita"
@@ -1418,7 +1421,7 @@
         "Proveu-ho gratuïtament durant ${ TRIAL_DURATION_DAYS } dies"
       ],
       "When you cancel, your free trial won’t be converted to a paid subscription, but you can still enjoy plan benefits until the end of the trial period. After that, you will be downgraded to the ${ BRAND_NAME } Free plan.": [
-        "En cas que cancel·leu, la prova gratuïta no es convertirà en una subscripció de pagament, però podreu gaudir dels avantatges del pla fins al final del període de prova. Després d'això, passareu al pla gratuït ${ BRAND_NAME }."
+        "En cas que cancel·leu, la prova gratuïta no es convertirà en una subscripció de pagament, però podreu gaudir dels avantatges del pla fins al final del període de prova. Després, passareu al pla gratuït ${ BRAND_NAME }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Podeu tenir fins a ${ TRIAL_MAX_DEDICATED_IPS } servidors dedicats durant el període de prova."
@@ -4673,7 +4676,7 @@
         "Estríming segur"
       ],
       "Stream from Netflix, HBO, and more": [
-        "Reproduïu en continu des de Netflix, HBO i més"
+        "Reproduïu en estríming des de Netflix, HBO, etc."
       ]
     },
     "Features: Tooltip": {
@@ -5596,7 +5599,7 @@
         "**Pas 3:** Obtingueu ${ referrerRewardAmount } en crèdits per cada persona que es subscrigui a un pla."
       ],
       "**Sync codes** to all your devices": [
-        "**Sincronitzeu codis** a tots els vostres dispositius"
+        "**Sincronitzeu els codis** a tots els dispositius"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } més",
@@ -6114,7 +6117,7 @@
         "S'ha rebut l'URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.com/sso/saml)."
       ],
       "Ends on ${ formattedPeriodEndDate }": [
-        "S'acaba el ${ formattedPeriodEndDate }"
+        "Acaba el ${ formattedPeriodEndDate }"
       ],
       "Enhance your network security": [
         "Milloreu la seguretat de la vostra xarxa"
@@ -7277,7 +7280,7 @@
         "El número de versió s'ha copiat al porta-retalls."
       ],
       "View VPN session details for your organization.": [
-        "Visualitzeu els detalls de la sessió VPN de la vostra organització."
+        "Mostra els detalls de la sessió VPN de la vostra organització."
       ],
       "View, download, and manage your invoices.": [
         "Veieu, descarregueu i gestioneu les factures."
@@ -9014,7 +9017,7 @@
         "Visualitzeu els canvis a la vostra organització i altres activitats de l'administració."
       ],
       "View user sign-in, recovery and security events.": [
-        "Visualitzeu els esdeveniments d'inici de sessió, recuperació i seguretat de l'usuari."
+        "Mostra els esdeveniments d'inici de sessió, recuperació i seguretat de l'usuari."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
@@ -10892,6 +10895,9 @@
       "More plans are available in other currencies": [
         "Hi ha més plans disponibles en altres divises."
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Es requereix un mètode de pagament perquè la subscripció s'activi un cop finalitzi la prova."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactiveu primer la subscripció per disminuir el nombre de complements."
       ],
@@ -10941,6 +10947,9 @@
       "This number will be shown on all future invoices": [
         "Aquest número es mostrarà a totes les factures futures"
       ],
+      "This offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Aquest mètode de pagament esdevindrà el vostre nou mètode per defecte per a totes les renovacions futures."
       ],
@@ -10952,6 +10961,12 @@
       ],
       "VAT number": [
         "Número d'IVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Ja teniu una subscripció a aquest pla."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Ja teniu una subscripció a aquest pla. Podeu canviar-la a ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Se us cobrarà ${ amountToCharge } al vostre mètode de pagament seleccionat."
@@ -14344,7 +14359,7 @@
         "Configuració dels mètodes de recuperació"
       ],
       "Set up authenticator app": [
-        "Configureu l'aplicació d'autenticació"
+        "Configura l'aplicació d'autenticació"
       ],
       "Set up email forwarding": [
         "Configuració del reenviament de correu"

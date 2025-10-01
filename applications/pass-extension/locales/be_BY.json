@@ -116,9 +116,6 @@
       "Clear search": [
         "Ачысціць пошук"
       ],
-      "Clone item": [
-        "Кланіраваць элемент"
-      ],
       "Close": [
         "Закрыць"
       ],
@@ -268,6 +265,9 @@
       ],
       "Download this CSV template": [
         "Спампаваць гэты шаблон CSV"
+      ],
+      "Duplicate": [
+        "Дубліраваць"
       ],
       "Edit": [
         "Рэдагаваць"
@@ -1063,6 +1063,9 @@
       "Importing items failed": [
         "Збой імпартавання элементаў"
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Каб працягнуць, ${ PASS_APP_NAME } патрабуе гэтыя дазволы пашырэння: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Не ўдалося выдаліць неактыўныя бяспечныя спасылкі."
       ],
@@ -1101,6 +1104,12 @@
       ],
       "Passphrase is incorrect": [
         "Няправільная парольная фраза"
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Доступ да вэб-сайта ${ domainsJSX } забаронены."
+      ],
+      "Permission denied for website access.": [
+        "Доступ да вэб-сайта забаронены."
       ],
       "PIN codes do not match": [
         "PIN-коды не супадаюць"
@@ -1421,6 +1430,9 @@
       ],
       "Access successfully confirmed": [
         "Доступ паспяхова пацверджаны"
+      ],
+      "access to ${ domains }.": [
+        "доступ да ${ domains }."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Для доступу да ${ PASS_APP_NAME } заўсёды будзе патрабавацца ваш пароль ад ${ BRAND_NAME }"
@@ -1878,6 +1890,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
+      ],
       "Moving items": [
         "Перамяшчэнне элементаў"
       ],
@@ -1889,6 +1907,9 @@
       ],
       "Moving items to trash": [
         "Перамяшчэнне элементаў у сметніцу"
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Перайдзіце ў налады пашырэння вашага браўзера і ўключыце дазволы вэб-сайта для ${ PASS_SHORT_APP_NAME }."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Неабходна адправіць некаму ліст, але вы не хочаце раскрываць свой адрас электроннай пошты? Наладзьце псеўданім кантакту."
@@ -1922,6 +1943,9 @@
       ],
       "Open the Extensions menu": [
         "Адкрыйце меню з пашырэннямі"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Адкрыйце налады Safari, знайдзіце ${ PASS_APP_NAME }, перайдзіце ў \"Дазволы\" і ўключыце дазволы вэб-сайта."
       ],
       "Owner": [
         "Уладальнік"
@@ -2129,6 +2153,12 @@
       ],
       "Restoring trashed items...": [
         "Аднаўленне выдаленых элементаў..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Націсніце правай кнопкай мышы на значок пашырэння і выберыце \"Кіраваць пашырэннем\". Перайдзіце ў раздзел \"Дазволы і даныя\" і ўключыце дазволы вэб-сайта."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Націсніце правай кнопкай мышы на значок пашырэння і выберыце \"Кіраваць пашырэннем\". Перайдзіце ў раздзел \"Доступ да вэб-сайта\" і ўключыце дазволы вэб-сайта."
       ],
       "Save login": [
         "Захаваць запіс уваходу"
