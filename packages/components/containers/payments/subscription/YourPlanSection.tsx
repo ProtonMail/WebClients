@@ -129,9 +129,7 @@ const YourPlanSectionInner = ({ app }: Props) => {
                 )}
                 {shouldRenderUpsells && <UpsellPanels upsells={upsells} subscription={subscription} />}
                 {shouldRenderTrialInfo && (
-                    <div className="relative border rounded px-6 py-5 self-start panel">
-                        <TrialInfo />
-                    </div>
+                    <TrialInfo />
                 )}
                 {shouldRenderPendingInvitation && <PendingInvitationsPanel invites={invites} />}
             </div>
