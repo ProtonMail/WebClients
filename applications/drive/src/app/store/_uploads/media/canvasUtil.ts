@@ -4,8 +4,15 @@ import {
     THUMBNAIL_MAX_SIZE,
     THUMBNAIL_QUALITIES,
 } from '@proton/shared/lib/drive/constants';
+import { isIos, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { ThumbnailType } from './interface';
+
+// Safari and iOS browsers doesn't support image/webp for canvas.toBlob/convertToBlob type parameter which will fallback to png by default
+// We force jpeg to prevent generating really large png.
+function getEffectiveMimeType(mimeType: SupportedMimeTypes): SupportedMimeTypes {
+    return (isSafari() || isIos()) && mimeType === SupportedMimeTypes.webp ? SupportedMimeTypes.jpg : mimeType;
+}
 
 export async function canvasToThumbnail(
     canvas: HTMLCanvasElement | OffscreenCanvas,
@@ -40,6 +47,7 @@ function canvasToArrayBuffer(
 }
 
 function canvasToArrayBufferHTML(canvas: HTMLCanvasElement, mimeType: string, quality: number): Promise<ArrayBuffer> {
+    const effectiveMimeType = getEffectiveMimeType(mimeType as SupportedMimeTypes.webp | SupportedMimeTypes.jpg);
     return new Promise((resolve, reject) =>
         canvas.toBlob(
             (d) => {
@@ -54,7 +62,7 @@ function canvasToArrayBufferHTML(canvas: HTMLCanvasElement, mimeType: string, qu
                 r.addEventListener('error', reject);
                 r.readAsArrayBuffer(d);
             },
-            mimeType,
+            effectiveMimeType,
             quality
         )
     );
@@ -65,9 +73,10 @@ async function canvasToArrayBufferOffscreen(
     mimeType: SupportedMimeTypes.webp | SupportedMimeTypes.jpg,
     quality: number
 ): Promise<ArrayBuffer> {
+    const effectiveMimeType = getEffectiveMimeType(mimeType);
     try {
         const blob = await canvas.convertToBlob({
-            type: mimeType,
+            type: effectiveMimeType,
             quality: quality,
         });
         return await blob.arrayBuffer();
