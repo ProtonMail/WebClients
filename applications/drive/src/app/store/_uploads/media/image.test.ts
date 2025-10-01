@@ -7,6 +7,23 @@ let mockImageSize = 500;
 describe('scaleImageFile', () => {
     beforeEach(() => {
         global.URL.createObjectURL = jest.fn(() => 'url');
+
+        // Mock createImageBitmap
+        global.createImageBitmap = jest.fn((source: any, options?: any) => {
+            const width = options?.resizeWidth || (source as any)?.width || mockImageSize;
+            const height = options?.resizeHeight || (source as any)?.height || mockImageSize;
+            return Promise.resolve({
+                width,
+                height,
+                close: jest.fn(),
+            } as ImageBitmap);
+        });
+
+        // Mock canvas.toBlob to return small thumbnail data
+        global.HTMLCanvasElement.prototype.toBlob = jest.fn((callback) => {
+            callback(new Blob(['abc']));
+        });
+
         // Image under test does not handle events.
         // @ts-ignore
         global.Image = class {
