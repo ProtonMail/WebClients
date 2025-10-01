@@ -7,14 +7,16 @@ const testURLs = [
     'ttps://meet.google.com/xxx-yyyy-zzz this is after',
     'this is before https://meet.google.com/xxx-yyyy-zzz this is after',
     'this is before https://meet.google.com/xxx-yyyy-zzz this is after',
+    'http://meet.google.com/xxx-yyyy-zzz this is after',
+    'meet.google.com/xxx-yyyy-zzz',
+    'this is before meet.google.com/xxx-yyyy-zzz',
+    'this is before meet.google.com/xxx-yyyy-zzz this is after',
 ];
 
 describe('Google meet locations', () => {
     it.each(testURLs)('should format the URLs %s', (url) => {
         const data = getGoogleMeetDataFromLocation(url);
-        const meetingUrl = data?.meetingUrl?.startsWith('https://')
-            ? 'https://meet.google.com/xxx-yyyy-zzz'
-            : 'meet.google.com/xxx-yyyy-zzz';
+        const meetingUrl = 'https://meet.google.com/xxx-yyyy-zzz';
 
         expect(data).toStrictEqual({
             meetingUrl,
