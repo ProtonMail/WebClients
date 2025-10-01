@@ -3,8 +3,7 @@ import * as Comlink from 'comlink';
 import type { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import { canvasToThumbnail } from './canvasUtil';
-import type { ThumbnailInfo } from './interface';
-import type { ThumbnailType } from './interface';
+import type { ThumbnailInfo, ThumbnailType } from './interface';
 import { calculateThumbnailSize } from './util';
 
 export interface WorkerThumbnailRequest {
@@ -27,6 +26,8 @@ export class ThumbnailWorker {
             }
 
             return results;
+        } catch (error) {
+            throw error;
         } finally {
             imageBitmap.close();
         }
