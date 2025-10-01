@@ -67,7 +67,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
   const isRevisionMode = systemMode === EditorSystemMode.Revision
   const isReadonly = editingLocked || isRevisionMode
 
-  const state = useProtonSheetsState({ docState, locale: LOCALE, functions })
+  const state = useProtonSheetsState({ docState, locale: LOCALE, functions, isReadonly })
   const { getStateToLog } = useLogState(state, updateLatestStateToLog)
 
   const exportData = async (format: DataTypesThatDocumentCanBeExportedAs) => {
@@ -75,7 +75,10 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       return docState.getDocState()
     }
     if (format === 'xlsx') {
-      const buffer = await createExcelFile(state)
+      const buffer = await createExcelFile({
+        ...state,
+        cellXfs: state.cellXfs ?? undefined,
+      })
       return new Uint8Array(buffer)
     }
     if (format === 'csv') {
@@ -149,19 +152,6 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
       }, SheetImportEvent),
     [application.eventBus, calculateNow, onCreateNewSheet, onInsertFile, onRenameSheet],
   )
-
-  // TODO: is there a better way to handle this?
-  const createdInitialSheetRef = useRef(false)
-  useEffect(() => {
-    if (
-      editorInitializationConfig &&
-      editorInitializationConfig.mode === 'creation' &&
-      !createdInitialSheetRef.current
-    ) {
-      onCreateNewSheet()
-      createdInitialSheetRef.current = true
-    }
-  }, [editorInitializationConfig, onCreateNewSheet])
 
   const downloadLogs = () => {
     const editorAdapter = {
