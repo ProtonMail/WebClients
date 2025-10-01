@@ -84,7 +84,10 @@ const TimeOutOfSyncTopBanner = () => {
         return null;
     }
 
-    const learnMore = <Href href={getKnowledgeBaseUrl('/device-time-warning')}>{c('Link').t`Learn more`}</Href>;
+    const learnMore = (
+        <Href href={getKnowledgeBaseUrl('/device-time-warning')} key="eslint-autofix-DCC4C8">{c('Link')
+            .t`Learn more`}</Href>
+    );
 
     return (
         <TopBanner onClose={() => setIgnore(true)} className="bg-warning">

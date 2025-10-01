@@ -23,7 +23,7 @@ const BYOESyncLostModal = ({ disconnectedEmails, onCustomClose, onResolve, onRej
         onReject();
     };
 
-    const boldEmails = <strong>{disconnectedEmails.join(', ')}</strong>;
+    const boldEmails = <strong key="eslint-autofix-E272A0">{disconnectedEmails.join(', ')}</strong>;
 
     return (
         <ModalTwo size="small" {...rest} onClose={handleClose}>

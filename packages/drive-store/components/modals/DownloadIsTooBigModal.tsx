@@ -23,7 +23,7 @@ export default function DownloadIsTooBigModal({
     };
 
     const recommendedBrowser = (
-        <a href={getKnowledgeBaseUrl('/recommended-browsers')} target="_blank">
+        <a href={getKnowledgeBaseUrl('/recommended-browsers')} target="_blank" key="eslint-autofix-FAD76D">
             {c('Info').t`recommended browser`}
         </a>
     );

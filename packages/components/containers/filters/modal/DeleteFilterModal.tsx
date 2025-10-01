@@ -18,7 +18,11 @@ const DeleteFilterModal = ({ filterName, handleDelete, ...rest }: Props) => {
     };
 
     const nameDeleted = (
-        <strong className="text-ellipsis inline-block max-w-full align-bottom" title={filterName}>
+        <strong
+            className="text-ellipsis inline-block max-w-full align-bottom"
+            title={filterName}
+            key="eslint-autofix-E37807"
+        >
             {filterName}
         </strong>
     );

@@ -55,7 +55,7 @@ export const UpsellPrompt = ({ position, onClose, type }: Props) => {
         };
     }, []);
 
-    const linkSignup = <SignInLink />;
+    const linkSignup = <SignInLink key="eslint-autofix-217F23" />;
 
     return (
         <div

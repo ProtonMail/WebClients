@@ -12,6 +12,7 @@ const Cash = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="text-bold"
+            key="how-to-send-cash-payment"
         >{c('Info for cash payment method').t`How to send a cash payment?`}</a>
     );
 

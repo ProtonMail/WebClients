@@ -56,7 +56,7 @@ const TrialSummary = ({
     });
 
     const trialEndDate = addDays(new Date(), TRIAL_DURATION_DAYS);
-    const formattedDate = <Time>{getUnixTime(trialEndDate)}</Time>;
+    const formattedDate = <Time key="eslint-autofix-D89FEF">{getUnixTime(trialEndDate)}</Time>;
 
     return (
         <>
