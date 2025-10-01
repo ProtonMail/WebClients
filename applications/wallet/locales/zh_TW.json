@@ -73,6 +73,9 @@
       "Confirm": [
         "確認"
       ],
+      "Connect apps and devices": [
+        "連線應用程式和裝置"
+      ],
       "Connect to video conferencing": [
         "連接視訊會議"
       ],
@@ -105,6 +108,9 @@
       ],
       "Downgrade": [
         "降級"
+      ],
+      "Download ${ DRIVE_APP_NAME } apps": [
+        "下載 ${ DRIVE_APP_NAME } 應用程式"
       ],
       "Download logs": [
         "下載日誌"
@@ -162,6 +168,9 @@
       ],
       "Hide more benefits": [
         "隱藏更多好處"
+      ],
+      "Import emails, calendars, contacts": [
+        "匯入電子郵件、行事曆、聯絡人"
       ],
       "Increase": [
         "加"
@@ -340,6 +349,9 @@
       "Use ${ address.Email }": [
         "使用：${ address.Email }"
       ],
+      "Use ${ PASS_APP_NAME } for Business": [
+        "將 ${ PASS_APP_NAME } 用於商務"
+      ],
       "Use a different card": [
         "改用另一張卡"
       ],
@@ -422,6 +434,11 @@
     "Assistant toggle": {
       "Take email productivity to new levels. Let ${ BRAND_NAME } Scribe help you write, reply to, and proofread your emails.": [
         "使電子郵件生產力至新的等級。讓${ BRAND_NAME }以幫助書寫，回覆至，和校閱您的電子郵件。"
+      ]
+    },
+    "b2b_trials_2025_Info": {
+      "You can have up to ${ TRIAL_MAX_SCRIBE_SEATS } Scribe seats during the trial period.": [
+        "您可以在試用期間擁有最多 ${ TRIAL_MAX_SCRIBE_SEATS } 個抄寫座席。"
       ]
     },
     "b2b_trials_Action": {
@@ -753,6 +770,34 @@
       ],
       "Expand": [
         "展開"
+      ]
+    },
+    "collider_2025: feature": {
+      "Basic chat history": [
+        "基本聊天記錄"
+      ],
+      "Full chat history with search": [
+        "具備搜尋功能的完整聊天記錄"
+      ],
+      "Large file upload support": [
+        "大型檔案上載支援"
+      ],
+      "Unlimited daily chats": [
+        "無限每日聊天"
+      ],
+      "Upload and query multiple large files": [
+        "上載及查詢多個大型檔案"
+      ],
+      "Web search access": [
+        "網頁搜尋存取"
+      ]
+    },
+    "collider_2025: Info": {
+      "${ LUMO_APP_NAME } is a privacy-first AI that helps you get more done while keeping your data secure. Unlock its full potential and enjoy early access to new features as they’re introduced.": [
+        "${ LUMO_APP_NAME } 是一款隱私優先的人工智慧，可協助您提高效率，同時確保您的資料安全。釋放其全部潛力，並搶先體驗隨著它們推出而帶來的新功能。"
+      ],
+      "High-speed chats and advanced AI features.": [
+        "高速聊天和先進的人工智慧功能。"
       ]
     },
     "color": {
@@ -1682,8 +1727,20 @@
       ]
     },
     "Description": {
+      "Ensure secure access to organization data, even if your team is remote or using public WiFi.": [
+        "確保安全存取組織資料，即使您的團隊是遠端工作或使用公共 WiFi。"
+      ],
+      "Ensure top-notch security for your account with the ${ PROTON_SENTINEL_NAME } program.": [
+        "透過 ${ PROTON_SENTINEL_NAME } 程式，確保您的帳號擁有頂級安全性。"
+      ],
       "Get notified if your password or other data was leaked from a third-party service.": [
         "當您的密碼或其他資料在第三方服務中洩漏時取得通知。"
+      ],
+      "Let's you instantly add meeting links to your event invitations.": [
+        "讓您可以立即新增會議連結到您的活動邀請。"
+      ],
+      "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
+        "設定所有使用者的帳號，並邀請他們加入 ${ BRAND_NAME }。"
       ]
     },
     "Discover": {
@@ -2380,6 +2437,9 @@
       "Please authenticate your payment in the verification tab.": [
         "請在驗證索引標籤中認證您的付款。"
       ],
+      "Please fill in all required fields.": [
+        "請填寫所有必填的欄位"
+      ],
       "Please try again using a different payment method, or contact your bank.": [
         "諘換另一個繳款方式再試一次，或聯絡您的銀行尋求協助。"
       ],
@@ -2843,11 +2903,23 @@
       "How to add users": [
         "如何新增使用者"
       ],
+      "How to add Zoom links": [
+        "如何新增 Zoom 連結"
+      ],
       "How to pay with Bitcoin?": [
         "如何以比特幣繳款？"
       ],
+      "How to share via email": [
+        "如何透過電子郵件共享"
+      ],
       "How to use ${ DARK_WEB_MONITORING_NAME }": [
         "如何使用${ DARK_WEB_MONITORING_NAME }"
+      ],
+      "How to use email forwarding": [
+        "如何使用電子郵件轉發"
+      ],
+      "How to use Groups": [
+        "如何使用群組"
       ],
       "Learn more": [
         "瞭解詳情"
@@ -3162,6 +3234,9 @@
       "Limited support": [
         "有限度支援"
       ],
+      "Manage user permissions and access": [
+        "管理使用者權限和存取"
+      ],
       "Multiple admin roles": [
         "多重管理員角色"
       ],
@@ -3342,6 +3417,9 @@
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
       ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 TB 的雲端儲存空間，讓您可以輕鬆儲存、同步及共享檔案。受端對端加密保護。"
+      ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "具有專用安全閘道器的進階網路安全與存取管理"
       ],
@@ -3380,6 +3458,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "保持敏感資料安全及安全地合作。"
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "透過${ plusTitle }頂級功能保護家庭及6位使用者。"
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務保護您家庭的隱私。"
@@ -3697,6 +3778,12 @@
       ]
     },
     "Onboarding Trial": {
+      " visit our ${ helpCenterLink } or ${ contactSupportLink }.": [
+        " 參閱我們的 ${ helpCenterLink } 或 ${ contactSupportLink }。"
+      ],
+      "contact our support team": [
+        "聯絡我們的客戶支援團隊"
+      ],
       "Continue": [
         "下一步"
       ],
@@ -3706,8 +3793,14 @@
       "help center": [
         "說明中心"
       ],
+      "If you need help,": [
+        "如果您需要協助，"
+      ],
       "Once your full subscription starts...": [
         "您的正式訂購授權一旦開始..."
+      ],
+      "Your free trial has started": [
+        "您的免費試用已開始"
       ]
     },
     "Option": {
@@ -3718,6 +3811,9 @@
     "pass_signup_2023: Info": {
       "Secure vault sharing": [
         "安全分享保管庫"
+      ],
+      "Secure vault, item and link sharing": [
+        "安全保管庫、項目和共享連結"
       ]
     },
     "pass_signup_2023: Title": {
@@ -3824,6 +3920,9 @@
       "More plans are available in other currencies": [
         "其他貨幣有更多的方案"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "為了讓訂閱在試用期結束後啟用，需要付款方式。"
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "請先重新啟用訂閱以減少添加數量。"
       ],
@@ -3851,6 +3950,9 @@
       "This number will be shown on all future invoices": [
         "未來所有的帳單將會顯示此統一編號"
       ],
+      "This offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
       "Timeout exceeded": [
         "已經逾時"
       ],
@@ -3859,6 +3961,9 @@
       ],
       "VAT number": [
         "增值稅編號（VAT）"
+      ],
+      "You already have a subscription to this plan.": [
+        "您已訂閱此方案。"
       ],
       "Your payment is still being processed": [
         "您的付款仍在處理中"
@@ -4436,6 +4541,9 @@
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "確認失去 ${ BRAND_NAME } 獎勵"
       ],
+      "Connect to video conferencing": [
+        "連接視訊會議"
+      ],
       "Coupon": [
         "優惠券"
       ],
@@ -4453,6 +4561,9 @@
       ],
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
+      ],
+      "Enhance security with 2FA": [
+        "透過雙重驗證強化安全性"
       ],
       "Enter your password": [
         "輸入您的密碼"
@@ -4523,6 +4634,9 @@
       "Sign out": [
         "登出"
       ],
+      "Simplify email distribution": [
+        "簡化電子郵件發送"
+      ],
       "Summary": [
         "總結"
       ],
@@ -4546,6 +4660,9 @@
       ],
       "Wallet": [
         "我的錢包"
+      ],
+      "Welcome to ${ BRAND_NAME } for Business": [
+        "歡迎使用 ${ BRAND_NAME } 商務版"
       ],
       "You can now create unlimited folders and labels": [
         "您現在可創建無上限標籤和資料夾"

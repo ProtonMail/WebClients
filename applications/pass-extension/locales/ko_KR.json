@@ -113,9 +113,6 @@
       "Clear search": [
         "검색 지우기"
       ],
-      "Clone item": [
-        "항목 복제"
-      ],
       "Close": [
         "닫기"
       ],
@@ -265,6 +262,9 @@
       ],
       "Download this CSV template": [
         "CSV 양식 다운로드"
+      ],
+      "Duplicate": [
+        "복제"
       ],
       "Edit": [
         "편집"
@@ -1793,7 +1793,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"

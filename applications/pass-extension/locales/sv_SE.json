@@ -116,9 +116,6 @@
       "Clear search": [
         "Rensa sök"
       ],
-      "Clone item": [
-        "Klona objekt"
-      ],
       "Close": [
         "Stäng"
       ],
@@ -268,6 +265,9 @@
       ],
       "Download this CSV template": [
         "Ladda ner denna CSV-mall"
+      ],
+      "Duplicate": [
+        "Duplicera"
       ],
       "Edit": [
         "Redigera"
@@ -1830,6 +1830,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"

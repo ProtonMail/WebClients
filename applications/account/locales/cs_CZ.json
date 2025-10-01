@@ -99,6 +99,9 @@
       "Add ${ BRAND_NAME } Account": [
         "Přidat ${ BRAND_NAME } Účet"
       ],
+      "Add ${ BRAND_NAME } address": [
+        "Přidat adresu ${ BRAND_NAME }"
+      ],
       "Add account": [
         "Přidat účet"
       ],
@@ -260,6 +263,9 @@
       ],
       "Choose my own password": [
         "Zvolit si vlastní heslo"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Získat adresu ${ BRAND_NAME }"
       ],
       "Claim it": [
         "Získat ji"
@@ -10134,6 +10140,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Otevřete průvodce, kde najdete doporučené kroky a užitečné odkazy."
       ],
+      "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
+        "Otevřete nastavení Safari pro rozšíření a ověřte, zda jsou oprávnění pro domény ${ BRAND_NAME } povolena."
+      ],
       "or ${ selectFileButton }": [
         "nebo ${ selectFileButton }"
       ],
@@ -11337,6 +11346,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "S šifrovanou ${ BRAND_NAME } adresou můžete používat všechny služby ${ BRAND_NAME }"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Díky kategoriím e-mailů se důležité zprávy dostanou do primární doručené pošty. Všechno ostatní je uspořádáno do kategorií."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Pomocí skupin můžete snadno a rychle odesílat e-maily všem lidem v určité skupině."
       ],
@@ -12314,6 +12326,12 @@
         "${ nbYear } let",
         "${ nbYear } let"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } z ${ maxAddresses } e-mailové adresy",
+        "${ usedAddresses } ze ${ maxAddresses } e-mailových adres",
+        "${ usedAddresses } z ${ maxAddresses } e-mailových adres",
+        "${ usedAddresses } z ${ maxAddresses } e-mailových adres"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
@@ -12796,6 +12814,9 @@
       ],
       "Email address": [
         "E-mailová adresa"
+      ],
+      "Email categories": [
+        "Kategorie e-mailů"
       ],
       "Email or username": [
         "E-mail nebo uživatelské jméno"
@@ -13609,6 +13630,14 @@
     "Label (end date/advanced search)": {
       "To": [
         "Komu"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } e-mailové adresy",
+        "${ usedBYOEAddresses } ze ${ maxBYOEAddresses } e-mailových adres",
+        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } e-mailových adres",
+        "${ usedBYOEAddresses } z ${ maxBYOEAddresses } e-mailových adres"
       ]
     },
     "Label for adding a new custom domain": {
@@ -17167,6 +17196,9 @@
       "Offer unavailable": [
         "Nabídka je nedostupná"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Platební metoda požadovaná pro aktivaci předplatného po skončení zkušební doby."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Nejprve si prosím znovu aktivujte své předplatné, abyste snížili počet doplňků."
       ],
@@ -17224,6 +17256,9 @@
       "This number will be shown on all future invoices": [
         "Toto číslo bude uvedeno na všech budoucích fakturách"
       ],
+      "This offer is not available with your current plan.": [
+        "Tato nabídka není s vaším aktuálním tarifem k dispozici."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Tato platební metoda se stane vaším novým výchozím způsobem pro všechna budoucí obnovení."
       ],
@@ -17235,6 +17270,12 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "You already have a subscription to this plan.": [
+        "Již máte předplatné tohoto tarifu."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Již máte předplatné tohoto tarifu. Můžete si změnit své předplatné na ${ subscriptionPlatform }."
       ],
       "You will be charged ${ amountToCharge } from your selected payment method.": [
         "Z vybrané platební metody vám bude účtována částka ${ amountToCharge }."
@@ -22106,6 +22147,9 @@
       ],
       "Email breaches": [
         "Úniky e-mailových adres"
+      ],
+      "Email categories": [
+        "Kategorie e-mailů"
       ],
       "Email composer": [
         "E-mailový editor"

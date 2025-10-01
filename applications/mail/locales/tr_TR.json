@@ -307,6 +307,9 @@
       "Continue import": [
         "İçe aktarmayı sürdür"
       ],
+      "Continue with categories": [
+        "Kategoriler ile ilerleyin"
+      ],
       "Continue with Google": [
         "Google ile ilerle"
       ],
@@ -378,6 +381,9 @@
       ],
       "Customize": [
         "Özelleştir"
+      ],
+      "Customize categories": [
+        "Kategorileri özelleştir"
       ],
       "Customize import": [
         "İçe aktarmayı özelleştir"
@@ -763,6 +769,9 @@
       "Invite members": [
         "Üyeleri davet edin"
       ],
+      "Is this private?": [
+        "Bu gizli midir?"
+      ],
       "Italic": [
         "Yatık"
       ],
@@ -771,6 +780,9 @@
       ],
       "Keep categories": [
         "Kategorileri kullan"
+      ],
+      "Keep inbox as before": [
+        "Gelen kutusu eskisi gibi kalsın"
       ],
       "Keep my subscription": [
         "Aboneliğimi sürdür"
@@ -5080,6 +5092,11 @@
         "Posta kodunun yazılması zorunludur"
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Lütfen başlangıçta bağlandığınızla aynı Gmail adresiyle oturum açın"
+      ]
+    },
     "Error adding participants to a calendar event": {
       "At most ${ maxAttendees } participant is allowed per invitation": [
         "Bir davette en fazla ${ maxAttendees } katılımcı bulunabilir",
@@ -6887,6 +6904,9 @@
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
       ],
+      "Categories work like spam filters. We only look for patterns in unencrypted header and technical data. We do not read email content, share your data, or infringe on your privacy.": [
+        "Kategoriler, istenmeyen süzgeçleri gibi çalışır. Yalnızca şifrelenmemiş üst bilgi ve teknik verilerdeki modellere bakarız. E-posta içeriğinizi okumayız, verilerinizi paylaşmayız ve gizliliğinize aykırı davranmayız."
+      ],
       "Center": [
         "Ortaya"
       ],
@@ -7365,6 +7385,18 @@
       ],
       "Included for free with your plan": [
         "Tarifenizde ücretsiz olarak bulunur"
+      ],
+      "Includes bills, receipts, orders, and bookings.": [
+        "Faturalar, alındılar, siparişler ve rezervasyonlar bulunur."
+      ],
+      "Includes marketing emails like offers and product announcements.": [
+        "Teklifler ve ürün duyuruları gibi pazarlama e-postaları bulunur."
+      ],
+      "Includes news recaps and other non-promotional content. ": [
+        "Haber özetleri ve diğer tanıtım amaçlı olmayan içerikler bulunur. "
+      ],
+      "Includes updates from social networks and media-sharing sites.": [
+        "Sosyal ağlardan ve medya paylaşım sitelerinden gelen güncellemeler bulunur."
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
@@ -9088,6 +9120,14 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
+      "${ count } unread conversation": [
+        "${ count } okunmamış yazışma",
+        "${ count } okunmamış yazışma"
+      ],
+      "${ count } unread message": [
+        "${ count } okunmamış ileti",
+        "${ count } okunmamış ileti"
+      ],
       "${ n } month": [
         "${ n } ay",
         "${ n } ay"
@@ -9112,6 +9152,9 @@
       ],
       "Add image URL": [
         "Adresten görsel ekle"
+      ],
+      "Add or remove categories. Set or turn off notifications. Adjust anytime in the ${ menuIcon } menu.": [
+        "Kategorileri ekleyin veya kaldırın. Bildirimleri açın veya kapatın. ${ menuIcon } menüsünden istediğiniz zaman ayarlayın."
       ],
       "Add to group": [
         "Gruba ekle"
@@ -9541,6 +9584,9 @@
       ],
       "No label found": [
         "Herhangi bir etiket bulunamadı"
+      ],
+      "No more missing important messages! These now show up under ${ primaryCopy }. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.": [
+        "Artık önemli iletileri kaçırmayacaksınız! Bunlar artık ${ primaryCopy } altında görüntüleniyor. Diğer her şey kategoriye göre sıralandığı için kolayca bulunabilir ve gelen kutunuzu dağıtmaz."
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
@@ -11597,8 +11643,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Change your email address for popular services now to avoid being tracked and profiled. ${ learnMoreLink }": [
+        "İzlenmekten ve profillenizin çıkarılmasından kaçınmak için yaygın kullanılan hizmetlerdeki e-posta adresinizi şimdi değiştirin. ${ learnMoreLink }"
+      ],
       "Finance": [
         "Finans"
+      ],
+      "Maybe later": [
+        "Belki sonra"
       ],
       "Privacy for all your online accounts": [
         "Tüm çevrim içi hesaplarınız için gizlilik"
@@ -12034,6 +12086,9 @@
       "More plans are available in other currencies": [
         "Farklı para birimlerinde başka tarifeler de var"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Deneme süresi sona erdikten sonra aboneliğin etkinleştirilmesi için bir ödeme yöntemi gereklidir."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Eklenti sayısını azaltmak için öncelikle lütfen aboneliğinizi yeniden etkinleştirin."
       ],
@@ -12074,6 +12129,9 @@
       "This number will be shown on all future invoices": [
         "Bu numara, sonraki tüm faturalarda görüntülenecek"
       ],
+      "This offer is not available with your current plan.": [
+        "Bu teklif, geçerli tarifeniz ile kullanılamıyor."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Gelecekteki tüm yenilemeler için varsayılan olarak bu ödeme yöntemi kullanılacak."
       ],
@@ -12085,6 +12143,12 @@
       ],
       "VAT number": [
         "KDV numarası"
+      ],
+      "You already have a subscription to this plan.": [
+        "Bu tarife için zaten bir aboneliğiniz var."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Bu tarifeye zaten bir aboneliğiniz var. Aboneliğinizi ${ subscriptionPlatform } üzerinden değiştirebilirsiniz."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "SEPA banka havaleleri yalnızca avro ödemelerini desteklediği için para biriminiz avroya (€) dönüştürüldü."
@@ -14625,6 +14689,9 @@
       "Block sender": [
         "Göndericiyi engelle"
       ],
+      "Built for privacy": [
+        "Gizlilik için yapıldı"
+      ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } aboneliğinizi iptal edin"
       ],
@@ -14717,6 +14784,9 @@
       ],
       "Customize categories": [
         "Kategorileri özelleştir"
+      ],
+      "Customize categories to fit your needs": [
+        "Eklentileri gereksinimlerinize göre özelleştirin"
       ],
       "Customize your mail import": [
         "Posta içe aktarma işleminizi özelleştirin"
@@ -14948,6 +15018,9 @@
       ],
       "Insert contacts": [
         "Kişileri ekle"
+      ],
+      "Introducing email categories": [
+        "E-posta kategorileriyle tanışın"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"

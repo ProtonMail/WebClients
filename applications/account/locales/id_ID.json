@@ -63,6 +63,11 @@
         "Informasi Anda ditemukan pada setidaknya satu insiden kebocoran data. Aktifkan ${ DARK_WEB_MONITORING_NAME } untuk melihat rincian kebocoran ini dan mengambil tindakan. ${ link }"
       ]
     },
+    "Accounts": {
+      "Accounts": [
+        "Akun"
+      ]
+    },
     "Action": {
       "${ BRAND_NAME } shop": [
         "Toko ${ BRAND_NAME }"
@@ -93,6 +98,9 @@
       ],
       "Add ${ BRAND_NAME } Account": [
         "Tambah Akun ${ BRAND_NAME }"
+      ],
+      "Add ${ BRAND_NAME } address": [
+        "Tambah alamat ${ BRAND_NAME }"
       ],
       "Add account": [
         "Tambah akun"
@@ -255,6 +263,9 @@
       ],
       "Choose my own password": [
         "Pilih kata sandi saya sendiri"
+      ],
+      "Claim ${ BRAND_NAME } address": [
+        "Klaim alamat ${ BRAND_NAME }"
       ],
       "Claim it": [
         "Klaim"
@@ -556,6 +567,12 @@
       "Download CSV sample": [
         "Unduh sampel CSV"
       ],
+      "Download for macOS": [
+        "Unduh untuk macOS"
+      ],
+      "Download for Windows": [
+        "Unduh untuk Windows"
+      ],
       "Download ICS": [
         "Unduh ICS"
       ],
@@ -763,6 +780,9 @@
       "Get more servers": [
         "Dapatkan lebih banyak server"
       ],
+      "Get Pass Family": [
+        "Dapatkan Pass Family"
+      ],
       "Get Pass Plus": [
         "Dapatkan Pass Plus"
       ],
@@ -783,6 +803,9 @@
       ],
       "Get the extension for ${ browser.title }": [
         "Dapatkan ekstensi untuk ${ browser.title }"
+      ],
+      "Get the full suite": [
+        "Dapatkan paket layanan yang lengkap"
       ],
       "Get the writing assistant": [
         "Dapatkan asisten penulisan"
@@ -1003,6 +1026,9 @@
       "No": [
         "Tidak"
       ],
+      "No thanks": [
+        "Tidak, terima kasih"
+      ],
       "No, thanks": [
         "Tidak, terima kasih"
       ],
@@ -1017,6 +1043,9 @@
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Buka pengaturan ${ CALENDAR_APP_NAME }"
+      ],
+      "Open ${ PASS_APP_NAME } in your browser": [
+        "Buka ${ PASS_APP_NAME } di browser Anda"
       ],
       "Open navigation": [
         "Buka navigasi"
@@ -1426,6 +1455,9 @@
       "Start subscription": [
         "Mulai langganan"
       ],
+      "Start using ${ PASS_APP_NAME } now": [
+        "Mulai gunakan ${ PASS_APP_NAME } sekarang juga"
+      ],
       "Stay": [
         "Tinggal"
       ],
@@ -1575,6 +1607,9 @@
       ],
       "User": [
         "Pengguna"
+      ],
+      "Users and addresses": [
+        "Pengguna dan perangkat"
       ],
       "Verify": [
         "Verifikasi"
@@ -4687,6 +4722,9 @@
       ]
     },
     "Download link": {
+      ".deb for Debian / Ubuntu": [
+        ".dev untuk Debian / Ubuntu"
+      ],
       ".rpm for Fedora / Red Hat": [
         ".rpm untuk Fedora / Red Hat"
       ]
@@ -6178,6 +6216,9 @@
       "You must set a name": [
         "Anda harus mengatur nama"
       ],
+      "You need to have an active custom domain address in order to generate an SMTP submission token.": [
+        "Anda perlu memiliki alamat domain khusus yang aktif untuk dapat membuat token submisi SMTP."
+      ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Anda telah mencapai batas jumlah karakter yang diperkenankan. Silakan persingkat isi pesan Anda."
       ],
@@ -7241,6 +7282,9 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ appName } on App Store": [
+        "${ appName } di App Store"
+      ],
       "${ appName } on Play Store": [
         "${ appName } di Play Store"
       ]
@@ -8305,6 +8349,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Tambah server (${ availableAddedCount } tersedia)"
       ],
+      "Add video conferencing links to calendar invitations": [
+        "Tambah tautan konferensi video ke undangan kalender"
+      ],
       "Add your name and logo to create a more personalized experience for your organization.": [
         "Tambahkan nama dan logo Anda untuk menghasilkan pengalaman yang lebih personal bagi organisasi Anda."
       ],
@@ -8484,6 +8531,12 @@
       ],
       "Attention required": [
         "Diperlukan perhatian"
+      ],
+      "Authenticator app 2FA disabled": [
+        "Aplikasi autentikator 2FA dinonaktifkan"
+      ],
+      "Authenticator app 2FA enabled": [
+        "Aplikasi autentikator 2FA diaktifkan"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Pesan balasan otomatis akan aktif setiap bulannya pada rentang waktu yang ditentukan."
@@ -8775,6 +8828,9 @@
       ],
       "Disabled on ${ boldValue }": [
         "Dinonaktifkan pada ${ boldValue }"
+      ],
+      "Disabling authenticator app 2FA will make your account less secure. Only proceed if absolutely necessary.": [
+        "Dengan menonaktifkan 2FA milik aplikasi autentikator, akun Anda akan menjadi lebih rentan. Mohon untuk hanya melanjutkan proses ini apabila benar-benar dibutuhkan."
       ],
       "Discount": [
         "Diskon"
@@ -9154,6 +9210,9 @@
       "Groups": [
         "Grup"
       ],
+      "Helps write, reply to, and proofread emails. If disabled only administrators will have access. Manage for individual users in ${ userAndAddress } or ${ addMoreSeats }": [
+        "Membantu menulis, membalas, dan mengoreksi email. Apabila dinonaktifkan, fitur ini hanya akan dapat diakses oleh administrator. Kelola fitur ini bagi pengguna individu di ${ userAndAddress } atau ${ addMoreSeats }"
+      ],
       "here": [
         "di sini"
       ],
@@ -9532,8 +9591,14 @@
       "Manage which ${ BRAND_NAME } applications the members of your organization can access. If disabled, only administrators will have access.": [
         "Kelola aplikasi ${ BRAND_NAME } mana saja yang dapat diakses oleh anggota organisasi Anda. Apabila dinonaktifkan, aplikasi hanya akan dapat diakses oleh administrator."
       ],
+      "Manage which features the members of your organization can access.": [
+        "Kelola fitur mana saja yang dapat diakses oleh anggota organisasi Anda."
+      ],
       "Manage your email notification preferences for ${ DOCS_APP_NAME }.": [
         "Kelola preferensi notifikasi email Anda untuk ${ DOCS_APP_NAME }."
+      ],
+      "Manually enter this information into your authenticator app to set up your account. ${ switchButton }.": [
+        "Masukkan informasi ini secara manual ke aplikasi autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ switchButton }."
       ],
       "Mastercard SecureCode logo": [
         "Logo Mastercard SecureCode"
@@ -9618,6 +9683,9 @@
       ],
       "No countries enabled": [
         "Tidak ada negara yang diaktifkan"
+      ],
+      "No credit card required": [
+        "Tanpa perlu kartu kredit"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Tidak ada metode pemulihan data yang ditentukan; Anda berisiko untuk kehilangan akses ke data Anda"
@@ -9720,6 +9788,9 @@
       ],
       "Organization monitor": [
         "Monitor organisasi"
+      ],
+      "Organization Monitor": [
+        "Monitor Organisasi"
       ],
       "Organization size": [
         "Ukuran organisasi"
@@ -10026,6 +10097,9 @@
       ],
       "Select the user affiliations from ${ getFormattedOrganization } that you want to allow into your ${ BRAND_NAME } organization:": [
         "Pilih afiliasi pengguna dari ${ getFormattedOrganization } yang ingin Anda izinkan masuk ke dalam organisasi ${ BRAND_NAME } milik Anda:"
+      ],
+      "Select users to view their activity": [
+        "Pilih pengguna yang aktivitasnya ingin ditampilkan"
       ],
       "Select what you want to import.": [
         "Pilih hal-hal apa saja yang ingin Anda impor."
@@ -10861,6 +10935,9 @@
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Dengan alamat ${ BRAND_NAME } yang terenkripsi, Anda dapat menggunakan seluruh layanan ${ BRAND_NAME }"
       ],
+      "With email categories, important messages land in a primary inbox. Everything else is organized into categories.": [
+        "Dengan kategori email, pesan yang penting akan diantarkan ke kotak masuk utama. Segala pesan lainnya akan diatur berdasarkan kategori."
+      ],
       "With groups, you can quickly and easily send emails to all the people in a specified group.": [
         "Dengan grup, Anda dapat mengirim email dengan cepat dan mudah ke semua orang dalam grup tertentu."
       ],
@@ -10869,6 +10946,9 @@
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
+      ],
+      "Without an authenticator app, you will not be able to sign in to the ${ BRAND_NAME } applications that don’t yet support security keys.": [
+        "Tanpa aplikasi autentikator, Anda tidak akan dapat masuk ke aplikasi ${ BRAND_NAME } yang belum mendukung kunci keamanan."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda ingin menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
@@ -11772,8 +11852,14 @@
       "${ nbYear } year": [
         "${ nbYear } tahun"
       ],
+      "${ usedAddresses } of ${ maxAddresses } email address": [
+        "${ usedAddresses } dari ${ maxAddresses } alamat email"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
+      ],
+      "/month x ${ months }": [
+        "/bulan x ${ months }"
       ],
       "1 hour": [
         "1 jam"
@@ -11781,8 +11867,17 @@
       "1 minute": [
         "1 menit"
       ],
+      "10 hide-my-email aliases": [
+        "10 alias hide-my-email"
+      ],
       "10 minutes": [
         "10 menit"
+      ],
+      "10 VPN devices": [
+        "10 perangkat VPN"
+      ],
+      "15 extra email addresses": [
+        "15 alamat email tambahan"
       ],
       "15 minutes": [
         "15 menit"
@@ -11798,6 +11893,12 @@
       ],
       "5 minutes": [
         "5 menit"
+      ],
+      "500 GB Storage": [
+        "Ruang Penyimpanan 500 GB"
+      ],
+      "6 Pass Plus accounts": [
+        "6 akun Pass Plus"
       ],
       "Account holder": [
         "Pemilik akun"
@@ -11828,6 +11929,9 @@
       ],
       "Addresses": [
         "Alamat"
+      ],
+      "Admin panel for your family": [
+        "Panel admin untuk keluarga Anda"
       ],
       "Advanced": [
         "Lanjutan"
@@ -11967,6 +12071,9 @@
       "Backup password": [
         "Kata sandi cadangan"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -11993,6 +12100,9 @@
       ],
       "BTC amount": [
         "Jumlah BTC"
+      ],
+      "Built-in 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
       ],
       "Calendar": [
         "Kalender"
@@ -12228,6 +12338,9 @@
       "Email address": [
         "Alamat email"
       ],
+      "Email categories": [
+        "Kategori email"
+      ],
       "Email or username": [
         "Email atau nama pengguna"
       ],
@@ -12297,6 +12410,9 @@
       "File": [
         "Berkas"
       ],
+      "File attachments (up to 10GB)": [
+        "Lampiran berkas (hingga 10GB)"
+      ],
       "Filter Name": [
         "Nama Filter"
       ],
@@ -12311,6 +12427,9 @@
       ],
       "Font size": [
         "Ukuran huruf"
+      ],
+      "for your first month": [
+        "untuk bulan pertama Anda"
       ],
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
@@ -12338,6 +12457,9 @@
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
+      ],
+      "Highest VPN speed": [
+        "Kecepatan VPN tertinggi"
       ],
       "I understand that I'll need to add this email address to the other account immediately, to avoid losing this address permanently.": [
         "Saya mengerti bahwa saya harus menambahkan alamat email ini ke akun lain dengan segera untuk menghindari kehilangan alamat ini secara permanen."
@@ -12552,11 +12674,17 @@
       "Notification": [
         "Pemberitahuan"
       ],
+      "Notification email address": [
+        "Alamat email notifikasi"
+      ],
       "Notifications": [
         "Notifikasi"
       ],
       "Numbers": [
         "Angka"
+      ],
+      "Online privacy for your whole family": [
+        "Privasi online untuk seluruh keluarga Anda"
       ],
       "OpenVPN / IKEv2 password": [
         "Kata sandi OpenVPN / IKEv2"
@@ -12669,6 +12797,9 @@
       "Read": [
         "Telah dibaca"
       ],
+      "Recommended": [
+        "Direkomendasikan"
+      ],
       "Recovery email address": [
         "Alamat email pemulihan"
       ],
@@ -12686,6 +12817,9 @@
       ],
       "Remove image metadata": [
         "Hapus metadata gambar"
+      ],
+      "Renews at ${ renewalPrice }, cancel anytime.": [
+        "Diperbarui seharga ${ renewalPrice }, batalkan kapan saja."
       ],
       "Repeat backup password": [
         "Ulangi kata sandi cadangan"
@@ -12719,6 +12853,9 @@
       ],
       "Second password": [
         "Kata sandi kedua"
+      ],
+      "Secure password generator": [
+        "Penghasil kata sandi aman"
       ],
       "Select Linux package format": [
         "Pilih format paket Linux"
@@ -12788,6 +12925,9 @@
       ],
       "Special characters": [
         "Karakter khusus"
+      ],
+      "Special Offer: Get ${ PASS_SHORT_APP_NAME } Plus for ${ offerPrice }": [
+        "Penawaran Spesial: Dapatkan ${ PASS_SHORT_APP_NAME } Plus seharga ${ offerPrice }"
       ],
       "Starred": [
         "Dibintangi"
@@ -12873,6 +13013,12 @@
       "Undo send": [
         "Tenggat waktu pengurungan kiriman"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Tanpa batasan jumlah alias hide-my-email"
+      ],
+      "Unlimited logins and devices": [
+        "Tanpa batasan jumlah entri masuk dan perangkat"
+      ],
       "Upload 1 or more encryption keys": [
         "Unggah setidaknya 1 kunci enkripsi"
       ],
@@ -12908,6 +13054,9 @@
       ],
       "Value": [
         "Nilai"
+      ],
+      "Vault, item & secure link sharing": [
+        "Pembagian brankas, item, dan tautan yang aman"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -12998,6 +13147,11 @@
     "Label (end date/advanced search)": {
       "To": [
         "Hingga"
+      ]
+    },
+    "Label BYOE": {
+      "${ usedBYOEAddresses } of ${ maxBYOEAddresses } email address": [
+        "${ usedBYOEAddresses } dari ${ maxBYOEAddresses } alamat email"
       ]
     },
     "Label for adding a new custom domain": {
@@ -15702,6 +15856,11 @@
         "Muat konten via proxy dan simpan sebagai lampiran"
       ]
     },
+    "Organization": {
+      "Organization": [
+        "Organisasi"
+      ]
+    },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
         "${ upgradeLink } untuk menambahkan lebih banyak pengguna, atau hapus sebagian pengguna untuk mengosongkan ruang penyimpanan Anda."
@@ -15819,6 +15978,11 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Mulai gunakan ${ PASS_APP_NAME }"
+      ]
+    },
+    "Pass signup: info": {
+      "${ n } month": [
+        "${ n } bulan"
       ]
     },
     "pass_lifetime_signup: Info": {
@@ -16374,6 +16538,9 @@
       ],
       "More plans are available in other currencies": [
         "Lebih banyak paket tersedia pada mata uang lainnya"
+      ],
+      "Offer unavailable": [
+        "Penawaran tidak tersedia"
       ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Silakan aktifkan kembali langganan Anda terlebih dahulu untuk menurunkan jumlah pengaya."
@@ -17340,11 +17507,23 @@
       "${ enableDeviceRecovery } to ensure your data can be recovered.": [
         "${ enableDeviceRecovery } untuk memastikan data Anda dapat dipulihkan."
       ],
+      "**Disable account reset by email** to ensure highest possible security of your account.": [
+        "**Nonaktifkan pengaturan ulang akun melalui email** untuk memastikan keamanan yang setinggi mungkin pada akun Anda."
+      ],
       "**Enable recovery by email** to regain access to your account if you forget your password.": [
         "**Aktifkan pemulihan melalui email** untuk memperoleh kembali akses ke akun Anda apabila Anda lupa kata sandi Anda."
       ],
+      "Account reset by email has been disabled": [
+        "Pengaturan ulang akun melalui email telah dinonaktifkan"
+      ],
+      "Account reset by phone has been disabled": [
+        "Pemulihan akun melalui telepon telah dinonaktifkan"
+      ],
       "Account safety review": [
         "Peninjauan keamanan akun"
+      ],
+      "Add a phone number": [
+        "Tambah nomor telepon"
       ],
       "Add a recovery email": [
         "Tambah email pemulihan"
@@ -17357,6 +17536,9 @@
       ],
       "Add an alternative email address": [
         "Tambah alamat email alternatif"
+      ],
+      "Add an email": [
+        "Tambah email"
       ],
       "Back to Safety Review": [
         "Kembali ke Peninjauan Keamanan"
@@ -17379,6 +17561,18 @@
       "Device-based recovery enabled": [
         "Pemulihan berbasis perangkat diaktifkan"
       ],
+      "Disable account reset by email": [
+        "Nonaktifkan pengaturan ulang akun melalui email"
+      ],
+      "Disable recovery by email": [
+        "Nonaktifkan pemulihan akun melalui email"
+      ],
+      "Disable recovery by email ": [
+        "Nonaktifkan pemulihan melalui email "
+      ],
+      "Disable recovery by phone": [
+        "Nonaktiffkan pemulihan melalui telepon"
+      ],
       "Disable recovery by phone ": [
         "Nonaktifkan pemulihan melalui nomor telepon "
       ],
@@ -17387,6 +17581,9 @@
       ],
       "Download your Recovery Kit": [
         "Unduh Kit Pemulihan Anda"
+      ],
+      "Email address": [
+        "Alamat email"
       ],
       "Enable device-based recovery": [
         "Aktifkan pemulihan berbasis perangkat"
@@ -17454,6 +17651,9 @@
       "There was an error generating your Recovery Kit": [
         "Terjadi kesalahan membuat Kit Pemulihan Anda"
       ],
+      "There was an error verifying your email": [
+        "Terjadi kesalahan dalam memverifikasi email Anda"
+      ],
       "There was an error verifying your recovery email": [
         "Terjadi kesalahan memverifikasi email pemulihan Anda"
       ],
@@ -17468,6 +17668,9 @@
       ],
       "To make sure the phone number is yours, enter the verification code sent to ${ boldPhoneNumber }.": [
         "Untuk memastikan nomor ponsel ini adalah benar milik Anda, masukkan kode verifikasi yang dikirim ke ${ boldPhoneNumber }."
+      ],
+      "to prevent attackers from taking over your account": [
+        "untuk mencegah penyerang siber mengambil alih akun Anda"
       ],
       "to recover your account and data if you're ever locked out": [
         "untuk memulihkan akun Anda jika Anda terkunci"
@@ -17484,6 +17687,9 @@
       "Verify": [
         "Verifikasi"
       ],
+      "Verify your email address": [
+        "Verifikasi alamat email Anda"
+      ],
       "Verify your phone number": [
         "Verifikasi nomor telepon Anda"
       ],
@@ -17495,6 +17701,9 @@
       ],
       "We encountered an error while generating your Recovery Kit. Please try again later, or contact support if the issue continues.": [
         "Kami mengalami kesalahan saat membuat Kit Pemulihan Anda. Silakan coba lagi, atau hubungi layanan dukungan jika masalah masih berlanjut."
+      ],
+      "We encountered an error while verifying your email. Please try again later, or contact support if the issue continues.": [
+        "Kami menemukan kesalahan pada saat memverifikasi email Anda. Silakan coba lagi nanti, atau hubungi layanan dukungan apabila masalah ini terus berlanjut."
       ],
       "We encountered an error while verifying your recovery email. Please try again later, or contact support if the issue continues.": [
         "Kami mengalami kesalahan saat memverifikasi email pemulihan Anda. Silakan coba lagi, atau hubungi layanan dukungan jika masalah masih berlanjut."
@@ -17517,6 +17726,9 @@
       "You can use the recovery phrase in this Recovery Kit to fully restore your account when you reset your password, so make sure you keep it somewhere safe.": [
         "Anda dapat menggunakan frasa pemulihan dalam Kit Pemulihan Anda untuk memulihkan akun Anda secara penuh ketika Anda mengatur ulang kata sandi Anda, jadi pastikan untuk menyimpannya di tempat yang aman."
       ],
+      "You can use your email to regain access to your account if you forget your password.": [
+        "Anda dapat menggunakan email Anda untuk memperoleh kembali akses menuju akun Anda apabila Anda lupa kata sandi."
+      ],
       "You can use your recovery email to regain access to your account if you forget your password.": [
         "Anda dapat menggunakan email pemulihan Anda untuk memulihkan akses ke akun Anda jika Anda lupa kata sandi Anda."
       ],
@@ -17529,11 +17741,29 @@
       "You have recommended actions to safeguard your account further.": [
         "Anda memiliki tindakan yang disarankan untuk melindungi akun Anda lebih jauh."
       ],
+      "You have recommended actions to safeguard your account.": [
+        "Anda memiliki tindakan yang disarankan untuk melindungi akun Anda."
+      ],
       "You have recommended actions.": [
         "Anda memiliki tindakan yang disarankan."
       ],
+      "You recovery email could be abused by attackers to take over your account. ${ disableEmail } to increase your account security.": [
+        "Email pemulihan Anda dapat disalahgunakan oleh penyerang siber untuk mengambil alih akun Anda. ${ disableEmail } untuk meningkatkan keamanan akun Anda."
+      ],
+      "You recovery phone could be abused by attackers to take over your account. ${ disablePhone } to increase your account security.": [
+        "Nomor telepon pemulihan Anda dapat disalahgunakan oleh penyerang siber untuk mengambil alih akun Anda. ${ disablePhone } untuk meningkatkan keamanan akun Anda."
+      ],
+      "You will no longer be able to use this address to reset your account.": [
+        "Anda tidak akan lagi dapat menggunakan alamat ini untuk mengatur ulang akun Anda."
+      ],
+      "You will no longer be able to use this phone number to reset your account.": [
+        "Anda tidak akan lagi dapat menggunakan nomor telepon ini untuk mengatur ulang akun Anda."
+      ],
       "Your account and data can be recovered": [
         "Akun dan data Anda dapat dipulihkan"
+      ],
+      "Your account and data can be recovered.": [
+        "Akun dan data Anda dapat dipulihkan."
       ],
       "Your account and data can be recovered. Check if you can still access your recovery methods.": [
         "Akun dan data Anda dapat dipulihkan. Periksa bahwa Anda masih dapat mengakses metode pemulihan Anda."
@@ -17549,6 +17779,9 @@
       ],
       "Your account is secure.": [
         "Akun Anda aman."
+      ],
+      "Your email address is:": [
+        "Alamat email Anda adalah:"
       ],
       "Your email is set": [
         "Email Anda telah siap"
@@ -18266,6 +18499,9 @@
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } koneksi VPN berkecepatan tinggi"
       ],
+      "${ vpnServersCountData.free.servers }+ VPN servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.servers }+ server VPN di ${ vpnServersCountData.free.countries } negara"
+      ],
       "${ vpnServersCountData.paid.countries }+ country": [
         "${ vpnServersCountData.paid.countries }+ negara"
       ],
@@ -18286,6 +18522,9 @@
       ],
       "30 custom email addresses": [
         "30 alamat email khusus"
+      ],
+      "4.8+ rating": [
+        "Rating 4.8+"
       ],
       "Advanced account protection": [
         "Perlindungan akun tingkat lanjut"
@@ -18365,6 +18604,9 @@
       "Get ${ referralInfo.uiData.refereeRewardAmount } in credits": [
         "Dapatkan saldo senilai ${ referralInfo.uiData.refereeRewardAmount }"
       ],
+      "Get a new encrypted email for free": [
+        "Dapatkan email terenkripsi baru secara cuma-cuma"
+      ],
       "Get a secure ${ MAIL_APP_NAME } address, or ${ internalButton }": [
         "Dapatkan alamat ${ MAIL_APP_NAME } yang aman, atau ${ internalButton }"
       ],
@@ -18443,6 +18685,9 @@
       "Select ${ title }": [
         "Pilih ${ title }"
       ],
+      "Select a service and enjoy the premium version for ${ TRIAL_DURATION_DAYS } days free.": [
+        "Pilih salah satu layanan dan nikmasi versi premium layanan ini selama ${ TRIAL_DURATION_DAYS } hari secara cuma-cuma."
+      ],
       "Selected": [
         "Terpilih"
       ],
@@ -18467,11 +18712,17 @@
       "Start free trial": [
         "Mulai uji coba gratis"
       ],
+      "Start using ${ PASS_APP_NAME }": [
+        "Mulai gunakan ${ PASS_APP_NAME }"
+      ],
       "Storage": [
         "Ruang penyimpanan"
       ],
       "Stream your favorite TV shows and movies": [
         "Tonton tayangan TV dan film streaming kesayangan Anda"
+      ],
+      "Swiss-based": [
+        "Berbasis di Swiss"
       ],
       "Sync files across devices and users": [
         "Sinkronkan berkas antar perangkat dan pengguna"
@@ -18482,11 +18733,17 @@
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
         "Dilanjut dengan harga ${ priceWithDiscountPerMonth } per bulan, apabila Anda berlangganan."
       ],
+      "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
+        "Dilanjut dengan harga ${ priceWithDiscountPerMonth } per bulan. Batalkan kapan saja."
+      ],
       "To redeem on your next paid subscription.": [
         "Untuk ditebus pada langganan berbayar Anda yang akan datang."
       ],
       "Total": [
         "Total"
+      ],
+      "Trusted by over 100 million people and businesses": [
+        "Dipercaya oleh lebih dari 100 juta orang dan bisnis"
       ],
       "Try ${ BRAND_NAME } for ${ TRIAL_DURATION_DAYS } days free": [
         "Coba ${ BRAND_NAME } gratis selama ${ TRIAL_DURATION_DAYS } hari"
@@ -18517,6 +18774,9 @@
       ],
       "Upload files of any size": [
         "Unggah berkas sebesar apa pun"
+      ],
+      "Use your current email": [
+        "Gunakan email Anda saat ini"
       ],
       "use your current email.": [
         "gunakan email Anda saat ini."
@@ -18907,6 +19167,12 @@
       ]
     },
     "Spotlight": {
+      "Earn up to ${ maxRewardAmount } in credit": [
+        "Dapatkan saldo hingga ${ maxRewardAmount }"
+      ],
+      "Get credits when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
+        "Dapatkan saldo pada saat pengguna yang Anda undang berlangganan ke paket ${ BRAND_NAME }."
+      ],
       "Get up to ${ credits } in credits.": [
         "Dapatkan saldo hingga ${ credits }."
       ],
@@ -19811,6 +20077,12 @@
       ]
     },
     "Subtitle": {
+      "Free forever": [
+        "Gratis untuk selamanya"
+      ],
+      "Pay once, access forever.": [
+        "Bayar satu kali, akses selamanya."
+      ],
       "per month, billed annually": [
         "per bulan, ditagihkan tahunan"
       ],
@@ -20302,6 +20574,12 @@
       "${ feature } is now active": [
         "${ feature } kini telah aktif"
       ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } Teman diundang"
+      ],
+      "${ friendsSubscribed } Friend subscribed": [
+        "${ friendsSubscribed } Teman berlangganan"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -20680,6 +20958,9 @@
       "Credentials": [
         "Kredensial"
       ],
+      "Credit earned": [
+        "Saldo yang diperoleh"
+      ],
       "Credits": [
         "Saldo"
       ],
@@ -20800,6 +21081,9 @@
       "Disable two-factor authentication": [
         "Nonaktifkan autentikasi dua faktor"
       ],
+      "Disable two-factor authentication app?": [
+        "Nonaktifkan aplikasi autentikasi dua-faktor?"
+      ],
       "Disable two-factor authentication?": [
         "Nonaktifkan autentikasi dua faktor?"
       ],
@@ -20826,6 +21110,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Unduh aplikasi ${ DRIVE_APP_NAME }"
+      ],
+      "Download ${ PASS_APP_NAME } for your devices": [
+        "Unduh ${ PASS_APP_NAME } untuk perangkat Anda"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"
@@ -20895,6 +21182,9 @@
       ],
       "Email breaches": [
         "Pembobolan email"
+      ],
+      "Email categories": [
+        "Kategori email"
       ],
       "Email composer": [
         "Komposer email"
@@ -20980,6 +21270,15 @@
       "Folders and labels": [
         "Folder dan label"
       ],
+      "For Linux": [
+        "Untuk Linux"
+      ],
+      "For macOS": [
+        "Untuk macOS"
+      ],
+      "For Windows": [
+        "Untuk Windows"
+      ],
       "Forgot password": [
         "Lupa kata sandi"
       ],
@@ -20991,6 +21290,9 @@
       ],
       "Forward emails": [
         "Penerusan email"
+      ],
+      "Free": [
+        "Free"
       ],
       "Gateway": [
         "Gateway"
@@ -21214,6 +21516,9 @@
       "No account information was found in any data breaches": [
         "Tidak ada informasi akun yang ditemukan pada kebocoran data mana pun"
       ],
+      "No events": [
+        "Tidak ada acara"
+      ],
       "No need to empty the trash": [
         "Tanpa perlu mengosongkan kotak sampah"
       ],
@@ -21264,6 +21569,9 @@
       ],
       "Other sign-in issues": [
         "Masalah masuk lainnya"
+      ],
+      "Pass Plus Lifetime for ${ plusLifetimePrice }": [
+        "Pass Plus Lifetime untuk ${ plusLifetimePrice }"
       ],
       "Password": [
         "Kata sandi"
@@ -21427,6 +21735,9 @@
       "Secure email based in Switzerland": [
         "Email aman berbasis di Swiss"
       ],
+      "Secure your passwords. Everywhere.": [
+        "Amankan kata sandi Anda. Di mana pun Anda berada."
+      ],
       "Security and privacy": [
         "Keamanan dan privasi"
       ],
@@ -21483,6 +21794,9 @@
       ],
       "Set up a recovery method": [
         "Siapkan metode pemulihan"
+      ],
+      "Set up authenticator app": [
+        "Atur aplikasi autentikator"
       ],
       "Set up email forwarding": [
         "Atur penerusan email"
@@ -21610,6 +21924,9 @@
       "There are no events for your account": [
         "Akun Anda tidak memiliki peristiwa"
       ],
+      "There are no events yet for your organization.": [
+        "Belum ada acara untuk organisasi Anda."
+      ],
       "There are no groups": [
         "Tidak ada grup"
       ],
@@ -21720,6 +22037,9 @@
       ],
       "Video conferencing with ${ MEET_APP_NAME }": [
         "Konferensi video dengan ${ MEET_APP_NAME }"
+      ],
+      "Video conferencing with Zoom": [
+        "Konferensi video dengan Zoom"
       ],
       "View organization events by upgrading to Professional": [
         "Tinjau rekaman peristiwa organisasi dengan meningkatkan ke Professional"
@@ -21978,6 +22298,9 @@
       ],
       "Edit label names": [
         "Sunting nama label"
+      ],
+      "Emails in your inbox are shown organized into categories": [
+        "Email pada kotak masuk Anda ditampilkan sesuai kategori"
       ],
       "Enable/disable desktop and mobile notifications": [
         "Aktifkan/nonaktifkan notifikasi desktop dan seluler"
@@ -22590,6 +22913,9 @@
       "Private": [
         "Privat"
       ],
+      "Security key": [
+        "Kunci keamanan"
+      ],
       "SSO": [
         "SSO"
       ],
@@ -22648,6 +22974,11 @@
       ],
       "With ${ planTitlePlusMaybeBrand }, you get free access to all ${ BRAND_NAME } privacy services.": [
         "Dengan ${ planTitlePlusMaybeBrand }, Anda akan memperoleh akses gratis ke seluruh layanan privasi ${ BRAND_NAME }."
+      ]
+    },
+    "VPN Gateways": {
+      "VPN Gateways": [
+        "Gateway VPN"
       ]
     },
     "VPN info": {

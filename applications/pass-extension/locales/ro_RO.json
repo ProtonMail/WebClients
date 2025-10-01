@@ -116,9 +116,6 @@
       "Clear search": [
         "Golire căutare"
       ],
-      "Clone item": [
-        "Clonare articol"
-      ],
       "Close": [
         "Închidere"
       ],
@@ -268,6 +265,9 @@
       ],
       "Download this CSV template": [
         "Descărcați acest șablon de fișier CSV"
+      ],
+      "Duplicate": [
+        "Duplicare"
       ],
       "Edit": [
         "Editare"
@@ -1058,6 +1058,9 @@
       "Importing items failed": [
         "Importarea articolelor a eșuat."
       ],
+      "In order to continue, ${ PASS_APP_NAME } requires these extension permissions: ${ permissionsJSX }": [
+        "Pentru a continua, ${ PASS_APP_NAME } necesită aceste permisiuni de extensie: ${ permissionsJSX }"
+      ],
       "Inactive secure links could not be removed.": [
         "Legăturile web securizate inactive nu au putut fi eliminate."
       ],
@@ -1096,6 +1099,12 @@
       ],
       "Passphrase is incorrect": [
         "Fraza de acces nu este corectă."
+      ],
+      "Permission denied for ${ domainsJSX } website access.": [
+        "Permisiune refuzată pentru accesarea site-ului web ${ domainsJSX }."
+      ],
+      "Permission denied for website access.": [
+        "Permisiune refuzată pentru accesarea site-ului web."
       ],
       "PIN codes do not match": [
         "Codurile PIN nu coincid."
@@ -1400,6 +1409,9 @@
       ],
       "Access successfully confirmed": [
         "Acces confirmat."
+      ],
+      "access to ${ domains }.": [
+        "acces la ${ domains }."
       ],
       "Access to ${ PASS_APP_NAME } will always require your ${ BRAND_NAME } password.": [
         "Accesul la ${ PASS_APP_NAME } va necesita întotdeauna parola ${ BRAND_NAME }."
@@ -1853,6 +1865,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
+      ],
       "Moving items": [
         "Se mută articolele."
       ],
@@ -1864,6 +1881,9 @@
       ],
       "Moving items to trash": [
         "Se mută articolele în gunoi."
+      ],
+      "Navigate to your browser's extension settings and enable site permissions for ${ PASS_SHORT_APP_NAME }.": [
+        "Navigați la setările extensiei navigatorului web și activați permisiunile pentru site pentru ${ PASS_SHORT_APP_NAME }."
       ],
       "Need to email someone but don’t want them to see your email address? Set up a contact alias.": [
         "Trebuie să trimiteți un mesaj cuiva, dar nu doriți ca acesta să vă vadă adresa de e-mail? Configurați un alias de contact."
@@ -1897,6 +1917,9 @@
       ],
       "Open the Extensions menu": [
         "Deschideți meniul de extensii"
+      ],
+      "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
+        "Deschideți setările Safari, găsiți ${ PASS_APP_NAME }, accesați „Permisiuni” și activați permisiunile pentru site."
       ],
       "Owner": [
         "Proprietar"
@@ -2103,6 +2126,12 @@
       ],
       "Restoring trashed items...": [
         "Se restaurează articolele din gunoi..."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Permissions & data\" and enable site permissions.": [
+        "Faceți clic dreapta pe pictograma extensiei și selectați „Gestionare extensie\". Navigați la „Permisiuni & date\" și activați permisiunile pentru site."
+      ],
+      "Right-click the extension icon and select \"Manage extension\". Navigate to \"Site access\" and enable site permissions.": [
+        "Faceți clic dreapta pe pictograma extensiei și selectați „Gestionare extensie\". Navigați la „Acces site\" și activați permisiunile pentru site."
       ],
       "Save login": [
         "Salvare autentificare"

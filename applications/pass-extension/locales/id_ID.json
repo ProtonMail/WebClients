@@ -113,9 +113,6 @@
       "Clear search": [
         "Hapus pencarian"
       ],
-      "Clone item": [
-        "Gandakan item"
-      ],
       "Close": [
         "Tutup"
       ],
@@ -262,6 +259,9 @@
       ],
       "Download this CSV template": [
         "Unduh template CSV ini"
+      ],
+      "Duplicate": [
+        "Gandakan"
       ],
       "Edit": [
         "Sunting"
@@ -1788,6 +1788,9 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Memindahkan item ke brankas lain akan menghapus tautan amannya."
       ],
       "Moving items": [
         "Memindahkan item"

@@ -3845,6 +3845,11 @@
         "⚠️ Nume nedecriptabil."
       ]
     },
+    "error": {
+      "Please sign in with the same Gmail address you originally connected": [
+        "Conectați-vă cu aceeași adresă Gmail cu care v-ați conectat inițial."
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "A apărut o eroare la citirea fișierului ${ formattedFilename }. Fișierul nu are formatul corect."
@@ -9497,9 +9502,15 @@
       ],
       "Upload folder": [
         "Încărcare folder"
+      ],
+      "Upload more files": [
+        "Încărcați mai multe fișiere"
       ]
     },
     "Onboarding Info": {
+      "10 minutes": [
+        "10 minute"
+      ],
       "Access your files on the go": [
         "Accesați-vă fișierele de pe drum"
       ],
@@ -9524,11 +9535,20 @@
       "Edit documents online": [
         "Editați documentele online"
       ],
+      "Encryption happens automatically": [
+        "Criptarea se face automat"
+      ],
       "End-to-end encrypted storage for your files": [
         "Stocare cu criptare bilaterală pentru fișiere"
       ],
       "Faster uploads for large or multiple files": [
         "Încărcări mai rapide pentru fișiere multiple și mari"
+      ],
+      "Files uploaded during this time won’t count towards your storage limit.": [
+        "Fișierele încărcate acum nu vor conta la limita de stocare."
+      ],
+      "Files uploaded now will not count towards your storage limit": [
+        "Fișierele încărcate acum nu vor conta la limita de stocare."
       ],
       "Final approval in progress": [
         "Aprobarea finală în desfășurare"
@@ -9563,6 +9583,9 @@
       "Invite team members": [
         "Invitați membrii echipei"
       ],
+      "Keep the momentum going by uploading more files using the storage included with your plan.": [
+        "Mențineți ritmul încărcând mai multe fișiere, folosind stocarea inclusă în planul actual."
+      ],
       "Manage access": [
         "Gestionați accesul"
       ],
@@ -9590,6 +9613,9 @@
       "The owner needs to confirm sharing access. You'll get an email once it's done.": [
         "Proprietarul trebuie să confirme accesul la partajare. Veți primi un e-mail după confirmare."
       ],
+      "Upload files, folders, photos": [
+        "Încărcați fișiere, foldere, fotografii"
+      ],
       "Upload your first file": [
         "Încărcați primul fișier"
       ],
@@ -9598,6 +9624,12 @@
       ],
       "Work together": [
         "Lucrați împreună"
+      ],
+      "You just snagged some free data and secured your files with end-to-end encryption － in record time!": [
+        "Ați obținut date gratuite și v-ați securizat fișierele cu criptare bilaterală — într-un timp record!"
+      ],
+      "Your storage limit won’t be affected": [
+        "Limita de stocare nu va fi afectată"
       ]
     },
     "Onboarding Trial": {
@@ -9838,6 +9870,9 @@
       "More plans are available in other currencies": [
         "Există alte planuri în monede diferite"
       ],
+      "Payment method required for the subscription to be activated after the trial ends.": [
+        "Metoda de plată este necesară pentru activarea abonamentului după încheierea perioadei de probare."
+      ],
       "Please reactivate your subscription first to decrease the number of add-ons.": [
         "Reactivați mai întâi abonamentul pentru a reduce numărul de module."
       ],
@@ -9882,6 +9917,9 @@
       "This number will be shown on all future invoices": [
         "Acest număr va fi afișat pe toate facturile viitoare."
       ],
+      "This offer is not available with your current plan.": [
+        "Această ofertă nu este disponibilă cu planul actual."
+      ],
       "This payment method will become your new default for all future renewals.": [
         "Această metodă de plată va deveni noua metodă implicită pentru toate reînnoirile viitoare."
       ],
@@ -9893,6 +9931,12 @@
       ],
       "VAT number": [
         "Valoare TVA"
+      ],
+      "You already have a subscription to this plan.": [
+        "Deja aveți un abonament la acest plan."
+      ],
+      "You already have a subscription to this plan. You can change your subscription on ${ subscriptionPlatform }.": [
+        "Aveți deja un abonament la acest plan. Vă puteți schimba abonamentul pe ${ subscriptionPlatform }."
       ],
       "Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.": [
         "Moneda a fost schimbată în euro (€) deoarece transferurile bancare SEPA acceptă doar plăți în euro."
@@ -12122,6 +12166,9 @@
       "Get more from your VPN": [
         "Obțineți mai mult de la VPN"
       ],
+      "Get started with 10 minutes of free uploads, on the house.": [
+        "Începeți cu 10 minute de încărcări gratuite, din partea noastră."
+      ],
       "Get the apps": [
         "Luați aplicațiile"
       ],
@@ -12372,6 +12419,9 @@
       ],
       "Re-signing contacts": [
         "Resemnare contacte"
+      ],
+      "Ready, set, upload.": [
+        "Pregătit, gata, încărcați"
       ],
       "Recommended": [
         "Recomandat"
@@ -12645,6 +12695,9 @@
       "We couldn’t verify that an anonymous user uploaded this folder.": [
         "Nu s-a putut verifica dacă un utilizator anonim a încărcat acest folder."
       ],
+      "Welcome offer": [
+        "Ofertă de bun venit"
+      ],
       "Welcome to ${ BRAND_NAME } for Business": [
         "Bun venit la ${ BRAND_NAME } for Business"
       ],
@@ -12671,6 +12724,9 @@
       ],
       "You have no folders yet": [
         "Încă nu aveți foldere"
+      ],
+      "Your ${ freeUploadLength } has started.": [
+        "A început ${ freeUploadLength }."
       ],
       "Your ${ planName } free trial ends on ${ textDate }": [
         "Probarea gratuită pentru ${ planName } se încheie ${ textDate }"
@@ -12701,6 +12757,9 @@
       ],
       "Your welcome actions": [
         "Acțiuni de bun venit"
+      ],
+      "You’re off to a great start!": [
+        "Ați început foarte bine!"
       ],
       "You’ve got 5 GB of storage": [
         "Ați primit 5 GiB spațiu de stocare"
