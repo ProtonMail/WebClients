@@ -10,7 +10,7 @@ import { createWebAuthNService } from 'proton-pass-extension/app/content/service
 import { IGNORED_TAGS } from 'proton-pass-extension/app/content/utils/nodes';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
-import { FieldType } from '@proton/pass/fathom';
+import { FieldType } from '@proton/pass/fathom/labels';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { type ProxiedSettings, getInitialSettings } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';

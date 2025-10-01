@@ -12,7 +12,8 @@ import { createAutofill } from 'proton-pass-extension/app/content/utils/autofill
 import { getFrameParentVisibility } from 'proton-pass-extension/app/content/utils/frame';
 import { isActiveElement } from 'proton-pass-extension/app/content/utils/nodes';
 
-import { type FieldType, type FormType, type IdentityFieldType, isVisible } from '@proton/pass/fathom';
+import { isVisible } from '@proton/pass/fathom';
+import type { FieldType, FormType, IdentityFieldType } from '@proton/pass/fathom/labels';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { findInputBoundingElement } from '@proton/pass/utils/dom/input';

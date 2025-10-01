@@ -6,7 +6,8 @@ import type { FrameMessageHandler } from 'proton-pass-extension/app/content/util
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { FieldType, isBtnCandidate, kButtonSubmitSelector } from '@proton/pass/fathom';
+import { isBtnCandidate, kButtonSubmitSelector } from '@proton/pass/fathom';
+import { FieldType } from '@proton/pass/fathom/labels';
 import type { AutosaveFormEntry, FormCredentials, MaybeNull } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { parseFormAction } from '@proton/pass/utils/dom/form';

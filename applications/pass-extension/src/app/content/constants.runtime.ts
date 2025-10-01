@@ -1,4 +1,4 @@
-import { FieldType, FormType } from '@proton/pass/fathom';
+import { FieldType, FormType } from '@proton/pass/fathom/labels';
 import browser from '@proton/pass/lib/globals/browser';
 
 export const ACTIVE_ICON_SRC = browser.runtime.getURL('/assets/protonpass-icon-active.svg');
