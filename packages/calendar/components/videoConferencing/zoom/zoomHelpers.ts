@@ -1,83 +1,45 @@
 import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from '../constants';
 
-// Regular regex expecting a Zoom URL https://us05web.zoom.us/j/...
 const ZOOM_REGEX_LOCATION =
-    /(?:https?:\/\/)?(?:[a-zA-Z0-9.-]+)\.zoom\.us\/j\/([a-zA-Z0-9]+)(?:\?pwd=([a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)?))?/;
-
-// Regular regex expecting a Zoom URL https://zoom.us/j/...
-const ZOOM_SIMPLER_REGEX_LOCATION =
-    /(?:https?:\/\/)zoom\.us\/j\/([a-zA-Z0-9]+)(?:\?pwd=([a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)?))?/;
-
-const ZOOM_PERSONAL_REGEX_LOCATION = /(?:https?:\/\/)?(?:[a-zA-Z0-9.-]+)\.zoom\.us\/(?:my|j)\/([a-zA-Z0-9]+)/;
-
+    /(https:\/\/)?(?:[a-zA-Z0-9.-]+\.)?zoom\.us\/(?:my|j)\/([a-zA-Z0-9]+)(?:\?pwd=([a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)?))?/;
 const ZOOM_REGEX_PASSCODE = /passcode: (\w+)/i;
 const ZOOM_REGEX_JOINING_INSTRUCTIONS =
     /Joining instructions: (https:\/\/www\.google\.com\/url\?q=https:\/\/applications\.zoom\.us\/addon\/invitation\/detail\?[^ ]+)/;
 
-export const getZoomDataFromLocation = (location: string): BaseMeetingUrls => {
-    const match = location.match(ZOOM_REGEX_LOCATION);
-    const matchSimpler = location.match(ZOOM_SIMPLER_REGEX_LOCATION);
-    const matchPersonal = location.match(ZOOM_PERSONAL_REGEX_LOCATION);
+const DEFAULT_MATCH_RESULT = {
+    service: VIDEO_CONF_SERVICES.ZOOM,
+    meetingUrl: undefined,
+    meetingId: undefined,
+    password: undefined,
+    joiningInstructions: undefined,
+};
 
-    if (!match && matchSimpler) {
-        return {
-            service: VIDEO_CONF_SERVICES.ZOOM,
-            meetingUrl: matchSimpler?.[0],
-            meetingId: matchSimpler?.[1],
-            password: match?.[2],
-            joiningInstructions: undefined,
-        };
+const getZoomData = (text: string, isDescription: boolean): BaseMeetingUrls => {
+    const [match, schemePart, meetingId, locationPassword] = text.match(ZOOM_REGEX_LOCATION) ?? [];
+
+    if (!match) {
+        return DEFAULT_MATCH_RESULT;
     }
 
-    if (!match && matchPersonal) {
-        return {
-            service: VIDEO_CONF_SERVICES.ZOOM,
-            meetingUrl: matchPersonal?.[0],
-            meetingId: matchPersonal?.[1],
-            password: undefined,
-            joiningInstructions: undefined,
-        };
-    }
+    const meetingUrl = schemePart ? match : `https://${match}`;
+    const password = isDescription
+        ? (text.match(ZOOM_REGEX_PASSCODE)?.[1].trim() ?? locationPassword)
+        : locationPassword;
+    const joiningInstructions = isDescription ? text.match(ZOOM_REGEX_JOINING_INSTRUCTIONS)?.[1].trim() : undefined;
 
     return {
-        service: VIDEO_CONF_SERVICES.ZOOM,
-        meetingUrl: match?.[0],
-        meetingId: match?.[1],
-        password: match?.[2],
-        joiningInstructions: undefined,
+        ...DEFAULT_MATCH_RESULT,
+        meetingUrl,
+        meetingId,
+        password,
+        joiningInstructions,
     };
 };
 
+export const getZoomDataFromLocation = (location: string): BaseMeetingUrls => {
+    return getZoomData(location, false);
+};
+
 export const getZoomFromDescription = (description: string): BaseMeetingUrls => {
-    const match = description.match(ZOOM_REGEX_LOCATION);
-    const matchSimpler = description.match(ZOOM_SIMPLER_REGEX_LOCATION);
-    const matchPersonal = description.match(ZOOM_PERSONAL_REGEX_LOCATION);
-
-    if (!match && matchSimpler) {
-        return {
-            service: VIDEO_CONF_SERVICES.ZOOM,
-            meetingUrl: matchSimpler?.[0],
-            meetingId: matchSimpler?.[1],
-            password: description.match(ZOOM_REGEX_PASSCODE)?.[1].trim(),
-            joiningInstructions: description.match(ZOOM_REGEX_JOINING_INSTRUCTIONS)?.[1].trim(),
-        };
-    }
-
-    if (!match && matchPersonal) {
-        return {
-            service: VIDEO_CONF_SERVICES.ZOOM,
-            meetingUrl: matchPersonal?.[0],
-            meetingId: matchPersonal?.[1],
-            password: undefined,
-            joiningInstructions: undefined,
-        };
-    }
-
-    return {
-        service: VIDEO_CONF_SERVICES.ZOOM,
-        meetingUrl: match?.[0],
-        meetingId: match?.[1],
-        password: description.match(ZOOM_REGEX_PASSCODE)?.[1].trim(),
-        joiningInstructions: description.match(ZOOM_REGEX_JOINING_INSTRUCTIONS)?.[1].trim(),
-    };
+    return getZoomData(description, true);
 };

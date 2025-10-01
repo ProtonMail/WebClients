@@ -1,30 +1,43 @@
 import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from '../constants';
 
-const teamsRegex = /\b(?:https?:\/\/)?teams\.live\.com\/meet\/([^?\s,]+)\?p=([^>\s,]+)/;
+const TEAMS_REGEX_LOCATION = /\b(https:\/\/)?teams\.live\.com\/meet\/([^?\s,]+)\?p=([^>\s,]+)/;
+const TEAMS_REGEX_MEETING_ID = /Meeting ID:\s*([\d\s]+)/;
+const TEAMS_REGEX_PASSWORD = /Passcode:\s*([\w]+)/;
 
-const meetingIdRegex = /Meeting ID:\s*([\d\s]+)/;
-const passwordRegex = /Passcode:\s*([\w]+)/;
+const DEFAULT_MATCH_RESULT = {
+    service: VIDEO_CONF_SERVICES.TEAMS,
+    meetingUrl: undefined,
+    meetingId: undefined,
+    password: undefined,
+};
 
-export const getTeamsDataFromDescription = (
-    description: string
-): BaseMeetingUrls & { meetingId?: string; passcode?: string } => {
-    const match = description.match(teamsRegex);
-    const meetingIdMatch = description.match(meetingIdRegex);
-    const passwordMatch = description.match(passwordRegex);
+const getTeamsData = (text: string, isDescription: boolean): BaseMeetingUrls => {
+    const [match, schemePart, locationMeetingId, locationPassword] = text.match(TEAMS_REGEX_LOCATION) ?? [];
+
+    if (!match) {
+        return DEFAULT_MATCH_RESULT;
+    }
+
+    const meetingUrl = schemePart ? match : `https://${match}`;
+    const meetingId = isDescription
+        ? (text.match(TEAMS_REGEX_MEETING_ID)?.[1].trim() ?? locationMeetingId)
+        : locationMeetingId;
+    const password = isDescription
+        ? (text.match(TEAMS_REGEX_PASSWORD)?.[1].trim() ?? locationPassword)
+        : locationPassword;
+
     return {
-        service: VIDEO_CONF_SERVICES.TEAMS,
-        meetingUrl: match?.[0],
-        meetingId: meetingIdMatch?.[1].trim() ?? match?.[1],
-        password: passwordMatch?.[1].trim() ?? match?.[2],
+        ...DEFAULT_MATCH_RESULT,
+        meetingUrl,
+        meetingId,
+        password,
     };
 };
 
-export const getTeamsDataFromLocation = (text: string): BaseMeetingUrls & { meetingId?: string; password?: string } => {
-    const match = text.match(teamsRegex);
-    return {
-        service: VIDEO_CONF_SERVICES.TEAMS,
-        meetingUrl: match?.[0],
-        meetingId: match?.[1],
-        password: match?.[2],
-    };
+export const getTeamsDataFromLocation = (location: string): BaseMeetingUrls => {
+    return getTeamsData(location, false);
+};
+
+export const getTeamsDataFromDescription = (description: string): BaseMeetingUrls => {
+    return getTeamsData(description, true);
 };

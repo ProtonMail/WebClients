@@ -1,11 +1,23 @@
 import { type BaseMeetingUrls, VIDEO_CONF_SERVICES } from '../constants';
 
-const slackRegex = /\b(?:https?:\/\/)?app\.slack\.com\/huddle\/([^>\s,]+)/;
+const SLACK_REGEX_LOCATION = /\b(https:\/\/)?app\.slack\.com\/huddle\/([^>\s,]+)/;
+
+const DEFAULT_MATCH_RESULT = {
+    service: VIDEO_CONF_SERVICES.SLACK,
+    meetingUrl: undefined,
+};
 
 export const getSlackDataFromString = (text: string): BaseMeetingUrls => {
-    const match = text.match(slackRegex);
+    const [match, schemePart] = text.match(SLACK_REGEX_LOCATION) || [];
+
+    if (!match) {
+        return DEFAULT_MATCH_RESULT;
+    }
+
+    const meetingUrl = schemePart ? match : `https://${match}`;
+
     return {
-        service: VIDEO_CONF_SERVICES.SLACK,
-        meetingUrl: match?.[0],
+        ...DEFAULT_MATCH_RESULT,
+        meetingUrl,
     };
 };
