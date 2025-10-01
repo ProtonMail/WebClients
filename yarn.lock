@@ -9744,6 +9744,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@radix-ui/react-progress@npm:^1.1.7":
+  version: 1.1.7
+  resolution: "@radix-ui/react-progress@npm:1.1.7"
+  dependencies:
+    "@radix-ui/react-context": "npm:1.1.2"
+    "@radix-ui/react-primitive": "npm:2.1.3"
+  peerDependencies:
+    "@types/react": "*"
+    "@types/react-dom": "*"
+    react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+    react-dom: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    "@types/react-dom":
+      optional: true
+  checksum: 10c0/bed5349682a75db02d362c07ac99fefddbbdc0152c4d5035719498223b9d490ebd834e2d9f64d498424048eb3da7eb7e55ba696e202cd0a048d6e319390e69d3
+  languageName: node
+  linkType: hard
+
 "@radix-ui/react-roving-focus@npm:1.1.10":
   version: 1.1.10
   resolution: "@radix-ui/react-roving-focus@npm:1.1.10"
@@ -10636,6 +10656,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rowsncolumns/ai@workspace:vendor/rowsncolumns/ai":
+  version: 0.0.0-use.local
+  resolution: "@rowsncolumns/ai@workspace:vendor/rowsncolumns/ai"
+  dependencies:
+    "@assistant-ui/react": "npm:^0.11.14"
+    "@modelcontextprotocol/sdk": "npm:^1.2.0"
+    "@rowsncolumns/spreadsheet": "workspace:^"
+    "@rowsncolumns/spreadsheet-state": "workspace:^"
+    "@rowsncolumns/ui": "workspace:^"
+    ws: "npm:^8.18.0"
+    zod: "npm:^4.1.11"
+  peerDependencies:
+    "@assistant-ui/react": ">=0.11.14"
+    "@rowsncolumns/spreadsheet": "workspace:^"
+    "@rowsncolumns/spreadsheet-state": "workspace:^"
+    "@rowsncolumns/ui": "workspace:^"
+  languageName: unknown
+  linkType: soft
+
 "@rowsncolumns/calculator-worker@workspace:vendor/rowsncolumns/calculator-worker":
   version: 0.0.0-use.local
   resolution: "@rowsncolumns/calculator-worker@workspace:vendor/rowsncolumns/calculator-worker"
@@ -10655,6 +10694,7 @@ __metadata:
     "@rowsncolumns/dag": "workspace:^"
     "@rowsncolumns/fast-formula-parser": "workspace:^"
     "@rowsncolumns/utils": "workspace:^"
+    calculator: "link:../../../../Library/pnpm/global/5/node_modules/@rowsncolumns/calculator"
   languageName: unknown
   linkType: soft
 
@@ -10754,7 +10794,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@rowsncolumns/grid@workspace:vendor/rowsncolumns/grid"
   dependencies:
-    konva: "npm:^9.3.20"
+    canvas: "npm:^3.2.0"
+    konva: "npm:^10.0.2"
     react-konva: "npm:18.2.10"
     scheduler: "npm:^0.26.0"
     tiny-invariant: "npm:^1.3.3"
@@ -10782,20 +10823,6 @@ __metadata:
   peerDependencies:
     "@rowsncolumns/fast-formula-parser": "workspace:^"
     "@rowsncolumns/functions": "workspace:^"
-  languageName: unknown
-  linkType: soft
-
-"@rowsncolumns/spreadsheet-mcp@workspace:vendor/rowsncolumns/spreadsheet-mcp":
-  version: 0.0.0-use.local
-  resolution: "@rowsncolumns/spreadsheet-mcp@workspace:vendor/rowsncolumns/spreadsheet-mcp"
-  dependencies:
-    "@assistant-ui/react": "npm:^0.11.14"
-    "@modelcontextprotocol/sdk": "npm:^1.2.0"
-    "@rowsncolumns/spreadsheet-state": "workspace:^"
-    ws: "npm:^8.18.0"
-    zod: "npm:^4.1.11"
-  peerDependencies:
-    "@assistant-ui/react": ">=0.11.14"
   languageName: unknown
   linkType: soft
 
@@ -10922,6 +10949,7 @@ __metadata:
     "@radix-ui/react-dialog": "npm:^1.1.14"
     "@radix-ui/react-dropdown-menu": "npm:^2.1.15"
     "@radix-ui/react-popover": "npm:^1.1.14"
+    "@radix-ui/react-progress": "npm:^1.1.7"
     "@radix-ui/react-select": "npm:^2.2.5"
     "@radix-ui/react-separator": "npm:^1.1.7"
     "@radix-ui/react-tabs": "npm:^1.1.12"
@@ -18688,6 +18716,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"calculator@link:../../../../Library/pnpm/global/5/node_modules/@rowsncolumns/calculator::locator=%40rowsncolumns%2Fcalculator%40workspace%3Avendor%2Frowsncolumns%2Fcalculator":
+  version: 0.0.0-use.local
+  resolution: "calculator@link:../../../../Library/pnpm/global/5/node_modules/@rowsncolumns/calculator::locator=%40rowsncolumns%2Fcalculator%40workspace%3Avendor%2Frowsncolumns%2Fcalculator"
+  languageName: node
+  linkType: soft
+
 "call-bind-apply-helpers@npm:^1.0.0, call-bind-apply-helpers@npm:^1.0.1, call-bind-apply-helpers@npm:^1.0.2":
   version: 1.0.2
   resolution: "call-bind-apply-helpers@npm:1.0.2"
@@ -18843,6 +18877,17 @@ __metadata:
     node-gyp: "npm:latest"
     simple-get: "npm:^3.0.3"
   checksum: 10c0/943368798ad1b66b18633aa34b6181e1038dac5433fc9727cd07be35f0a633f572b60d9edb95f5ff90b6a9128e86d5312035f91a2934101c73185b15d906230a
+  languageName: node
+  linkType: hard
+
+"canvas@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "canvas@npm:3.2.0"
+  dependencies:
+    node-addon-api: "npm:^7.0.0"
+    node-gyp: "npm:latest"
+    prebuild-install: "npm:^7.1.3"
+  checksum: 10c0/2655f0e1f6dca973738d754ec17901766ceafe183e3c5e413b5cb21e8a32dc0b007d44c567b820c6bce73e28b14e311302f16e3c35796b06a22ef78440014a03
   languageName: node
   linkType: hard
 
@@ -30089,10 +30134,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"konva@npm:^9.3.20":
-  version: 9.3.22
-  resolution: "konva@npm:9.3.22"
-  checksum: 10c0/d9bdaaffec95381e5f4225485a102b14971a3a8f6fd691a78ac55bf88104654cca876714265999eceb3bbb4fc50d1f34b0385e5876d6b918739456c2d7de37fa
+"konva@npm:^10.0.2":
+  version: 10.0.2
+  resolution: "konva@npm:10.0.2"
+  checksum: 10c0/2c8ca3cded72a220cc39272f56174940a8a502ca75edff4f7743bb36e241a0e64e0bc0d0f8ee8e52bbd5e22924bb86cccfc395f48e6dbb983b37c2c30f02f555
   languageName: node
   linkType: hard
 
@@ -32675,10 +32720,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"napi-build-utils@npm:^1.0.1":
-  version: 1.0.2
-  resolution: "napi-build-utils@npm:1.0.2"
-  checksum: 10c0/37fd2cd0ff2ad20073ce78d83fd718a740d568b225924e753ae51cb69d68f330c80544d487e5e5bd18e28702ed2ca469c2424ad948becd1862c1b0209542b2e9
+"napi-build-utils@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "napi-build-utils@npm:2.0.0"
+  checksum: 10c0/5833aaeb5cc5c173da47a102efa4680a95842c13e0d9cc70428bd3ee8d96bb2172f8860d2811799b5daa5cbeda779933601492a2028a6a5351c6d0fcf6de83db
   languageName: node
   linkType: hard
 
@@ -35667,16 +35712,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prebuild-install@npm:^7.1.1":
-  version: 7.1.2
-  resolution: "prebuild-install@npm:7.1.2"
+"prebuild-install@npm:^7.1.1, prebuild-install@npm:^7.1.3":
+  version: 7.1.3
+  resolution: "prebuild-install@npm:7.1.3"
   dependencies:
     detect-libc: "npm:^2.0.0"
     expand-template: "npm:^2.0.3"
     github-from-package: "npm:0.0.0"
     minimist: "npm:^1.2.3"
     mkdirp-classic: "npm:^0.5.3"
-    napi-build-utils: "npm:^1.0.1"
+    napi-build-utils: "npm:^2.0.0"
     node-abi: "npm:^3.3.0"
     pump: "npm:^3.0.0"
     rc: "npm:^1.2.7"
@@ -35685,7 +35730,7 @@ __metadata:
     tunnel-agent: "npm:^0.6.0"
   bin:
     prebuild-install: bin.js
-  checksum: 10c0/e64868ba9ef2068fd7264f5b03e5298a901e02a450acdb1f56258d88c09dea601eefdb3d1dfdff8513fdd230a92961712be0676192626a3b4d01ba154d48bdd3
+  checksum: 10c0/25919a42b52734606a4036ab492d37cfe8b601273d8dfb1fa3c84e141a0a475e7bad3ab848c741d2f810cef892fcf6059b8c7fe5b29f98d30e0c29ad009bedff
   languageName: node
   linkType: hard
 
