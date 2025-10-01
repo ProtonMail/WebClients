@@ -1,3 +1,5 @@
+import { useCallback, useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
@@ -19,7 +21,6 @@ import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import usePopperAnchor from '../popper/usePopperAnchor';
-import { useCallback, useMemo } from 'react';
 
 interface DisplayItem {
     img: string;
@@ -27,65 +28,71 @@ interface DisplayItem {
     title: string;
     description: string;
     type: 'dropdown' | 'link';
-    dropdownLinks?: { label: string; icon: IconName; href: string }[]
+    dropdownLinks?: { label: string; icon: IconName; href: string }[];
     linkHref?: string;
 }
 
-const displayItems: DisplayItem[] = [
+const displayItems = [
     {
         img: profilesImg,
+        imgAlt: c('Info:img-alt').t`Profile cards illustration`,
         title: c('Info').t`Invite your team`,
         description: c('Info').t`Create new user accounts or import users with SSO (single sign-on) SCIM provisioning.`,
         type: 'dropdown',
         dropdownLinks: [
             // TODO get the routes from a constant like -> somehow? // import { getOrganizationAppRoutes } from '../../../../applications/account/src/app/containers/organization/routes';
-            { label: 'Add users manually', icon: 'users', href: "/users-addresses" },
-            { label: 'Set up SSO', icon: 'key', href: "/single-sign-on" }
-        ]
+            { label: 'Add users manually', icon: 'users', href: '/users-addresses' },
+            { label: 'Set up SSO', icon: 'key', href: '/single-sign-on' },
+        ],
     },
     {
         img: networkConfigurationImg,
+        imgAlt: c('Info:img-alt').t`Server with user-bubbles flying around`,
         title: c('Info').t`Configure your network`,
-        description: c('Info').t`Create a Gateway to give your users access to your IT resources through dedicated servers.`,
+        description: c('Info')
+            .t`Create a Gateway to give your users access to your IT resources through dedicated servers.`,
         type: 'link',
-        linkHref: "/gateways",
+        linkHref: '/gateways',
     },
     {
         img: globeVpnImg,
+        imgAlt: c('Info:img-alt').t`Globe with data lines`,
         title: c('Info').t`Manage global VPN permissions`,
         description: c('Info').t`Decide which users can connect to each of our 120+ shared server locations.`, // TODO this 120+ should be dynamic?
         type: 'link',
-        linkHref: "/shared-servers",
+        linkHref: '/shared-servers',
     },
     {
         img: recoveryImg,
+        imgAlt: c('Info:img-alt').t`A lock with arrows`,
         title: c('Info').t`Secure your organization`,
-        description: c('Info').t`If you haven’t already, enable some recovery methods to make sure you never lose access to ${VPN_APP_NAME}.`,
+        description: c('Info')
+            .t`If you haven’t already, enable some recovery methods to make sure you never lose access to ${VPN_APP_NAME}.`,
         type: 'link',
-        linkHref: "/authentication-security",
-    }
-]
+        linkHref: '/authentication-security',
+    },
+] as const satisfies DisplayItem[];
 
 const TopNavbarGetStartedButton = () => {
-    const { state: renderGetStartedSpotlight, toggle: toggleGetStartedSpotlight, set: setGetStartedSpotlight } = useToggle(false);
-    const closeGetStartedSpotlight = useCallback(() => { setGetStartedSpotlight(false); }, []);
+    const {
+        state: renderGetStartedSpotlight,
+        toggle: toggleGetStartedSpotlight,
+        set: setGetStartedSpotlight,
+    } = useToggle(false);
+    const closeGetStartedSpotlight = useCallback(() => {
+        setGetStartedSpotlight(false);
+    }, []);
 
     const { viewportWidth } = useActiveBreakpoint();
 
     const b1Dropdown = usePopperAnchor<HTMLElement>();
 
     /**
-     * Provide refs and actions for dropdown menu item.
+     * Provide refs and actions for dropdown menu items.
      * Use the usePopperAnchor hook to get the anchorRef, toggle, close, and isOpen.
      * This array must match the order of menuItems.
      */
-    const actionsRefsObject = useMemo(() => [
-        b1Dropdown,
-        null,
-        null,
-        null
-    ], [b1Dropdown]);
-
+    const actionsRefsObject = useMemo(() => [b1Dropdown, null, null, null], [b1Dropdown]);
 
     return (
         <>
@@ -101,61 +108,85 @@ const TopNavbarGetStartedButton = () => {
                 content={
                     <>
                         <h3 className="text-bold">{c('Info').t`Get started`}</h3>
-                        <span>{c('Info').t`Set up your organization and start protecting your data in a few easy steps.`}</span>
+                        <span>{c('Info')
+                            .t`Set up your organization and start protecting your data in a few easy steps.`}</span>
 
-                        {
-                            displayItems.map((item, index) => {
-                                if (item.type === 'dropdown') {
-                                    const { anchorRef, toggle, close, isOpen } = actionsRefsObject[index] as ReturnType<typeof usePopperAnchor<HTMLElement>>;
-                                    return (
-                                        <>
-                                            <Button onClick={toggle} shape="ghost" color="weak">
-                                                <div className="flex flex-nowrap gap-x-2 items-center text-left">
-                                                    <div className="shrink-0">
-                                                        <img src={item.img} alt={item.imgAlt} />
-                                                    </div>
-                                                    <div>
-                                                        <b>{item.title}</b>
-                                                        <br />
-                                                        {item.description}
-                                                    </div>
-                                                    <Icon ref={anchorRef as any} name="three-dots-vertical" size={6} className="p-0.5 self-center shrink-0" />
-                                                </div>
-                                            </Button>
-                                            <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-end">
-                                                <DropdownMenu>
-                                                    {item.dropdownLinks?.map(({ label, icon, href }) => {
-                                                        return (
-                                                            <AppLink to={href} className='text-no-decoration' onClick={closeGetStartedSpotlight}>
-                                                                <DropdownMenuButton className="text-left flex gap-2 items-center" key={label}>
-                                                                    <Icon name={icon} size={4} />
-                                                                    {label}
-                                                                </DropdownMenuButton>
-                                                            </AppLink>
-                                                        );
-                                                    })}
-                                                </DropdownMenu>
-                                            </Dropdown>
-                                        </>
-                                    )
-                                }
+                        {displayItems.map((item, index) => {
+                            if (item.type === 'dropdown') {
+                                const { anchorRef, toggle, close, isOpen } = actionsRefsObject[index] as ReturnType<
+                                    typeof usePopperAnchor<HTMLElement>
+                                >;
                                 return (
-                                    <ButtonLike as={AppLink} to={item.linkHref!} onClick={closeGetStartedSpotlight} shape="ghost" color="weak">
-                                        <div className="flex flex-nowrap gap-x-2 text-left">
-                                            <div className="shrink-0">
-                                                <img src={item.img} alt={item.imgAlt} />
+                                    <>
+                                        <Button onClick={toggle} shape="ghost" color="weak">
+                                            <div className="flex flex-nowrap gap-x-2 items-center text-left">
+                                                <div className="shrink-0">
+                                                    <img src={item.img} alt={item.imgAlt} />
+                                                </div>
+                                                <div>
+                                                    <b>{item.title}</b>
+                                                    <br />
+                                                    {item.description}
+                                                </div>
+                                                <Icon
+                                                    ref={anchorRef as any}
+                                                    name="three-dots-vertical"
+                                                    size={6}
+                                                    className="p-0.5 self-center shrink-0"
+                                                />
                                             </div>
-                                            <div>
-                                                <b>{item.title}</b>
-                                                <br />
-                                                {item.description}
-                                            </div>
-                                            <Icon name="chevron-right" size={6} className="self-center shrink-0" />
+                                        </Button>
+                                        <Dropdown
+                                            isOpen={isOpen}
+                                            anchorRef={anchorRef}
+                                            onClose={close}
+                                            originalPlacement="bottom-end"
+                                        >
+                                            <DropdownMenu>
+                                                {item.dropdownLinks?.map(({ label, icon, href }) => {
+                                                    return (
+                                                        <AppLink
+                                                            to={href}
+                                                            className="text-no-decoration"
+                                                            onClick={closeGetStartedSpotlight}
+                                                        >
+                                                            <DropdownMenuButton
+                                                                className="text-left flex gap-2 items-center"
+                                                                key={label}
+                                                            >
+                                                                <Icon name={icon} size={4} />
+                                                                {label}
+                                                            </DropdownMenuButton>
+                                                        </AppLink>
+                                                    );
+                                                })}
+                                            </DropdownMenu>
+                                        </Dropdown>
+                                    </>
+                                );
+                            }
+                            return (
+                                <ButtonLike
+                                    as={AppLink}
+                                    to={item.linkHref!}
+                                    onClick={closeGetStartedSpotlight}
+                                    shape="ghost"
+                                    color="weak"
+                                >
+                                    <div className="flex flex-nowrap gap-x-2 text-left">
+                                        <div className="shrink-0">
+                                            <img src={item.img} alt={item.imgAlt} />
                                         </div>
-                                    </ButtonLike>
-                                )
-                            })
-                        }
+                                        <div>
+                                            <b>{item.title}</b>
+                                            <br />
+                                            {item.description}
+                                        </div>
+                                        <Icon name="chevron-right" size={6} className="self-center shrink-0" />
+                                    </div>
+                                </ButtonLike>
+                            );
+                        })}
                     </>
                 }
             >
