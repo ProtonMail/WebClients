@@ -292,6 +292,7 @@ export const filterElementsInState = ({
     conversationMode,
     search,
     newsletterSubscriptionID,
+    disabledCategoriesIDs,
 }: {
     elements: Element[];
     addresses?: Address[];
@@ -301,6 +302,7 @@ export const filterElementsInState = ({
     conversationMode: boolean;
     search: SearchParameters;
     newsletterSubscriptionID?: string;
+    disabledCategoriesIDs?: string[];
 }) => {
     const bypassFilterSet = new Set(bypassFilter);
     return elements.filter((element) => {
@@ -321,20 +323,21 @@ export const filterElementsInState = ({
             return false;
         }
 
-        const disabledCategoriesIDs: string[] = [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT];
-
         const elementContainsDisabledCategory = isElementMessage(element)
-            ? element.LabelIDs.some((labelID) => disabledCategoriesIDs.includes(labelID))
-            : disabledCategoriesIDs.some((category) =>
+            ? element.LabelIDs.some((labelID) => disabledCategoriesIDs?.includes(labelID))
+            : disabledCategoriesIDs?.some((category) =>
                   (element as Conversation)?.Labels?.some((label) => label.ID === category)
               );
-        const isPrimaryAndDisabledCategory =
-            labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT && elementContainsDisabledCategory;
+
+        const hasDisabledCategoryLabel =
+            disabledCategoriesIDs && labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT && elementContainsDisabledCategory;
 
         if (
+            // If the element doesn't have the required label
             !hasLabel(element, labelID) &&
-            labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS &&
-            isPrimaryAndDisabledCategory
+            // Or if the element doesn't have a disabled category label while being on the primary category
+            !hasDisabledCategoryLabel &&
+            labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS
         ) {
             return false;
         }
