@@ -1,19 +1,18 @@
 import { Button } from '@proton/atoms'
-import { Icon, useLocalState } from '@proton/components'
-import { DOCS_DEBUG_KEY } from '@proton/docs-shared'
+import { Icon } from '@proton/components'
 import { useEffect, useState } from 'react'
 import { useApplication } from '~/utils/application-context'
 import { downloadLogsAsJSON } from '~/utils/downloadLogs'
-import type { EditorControllerInterface } from '@proton/docs-core'
-import type { AuthenticatedDocControllerInterface, DocumentState, PublicDocumentState } from '@proton/docs-core'
+import type {
+  EditorControllerInterface,
+  AuthenticatedDocControllerInterface,
+  DocumentState,
+  PublicDocumentState,
+} from '@proton/docs-core'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import clsx from '@proton/utils/clsx'
 import { ConnectionCloseReason } from '@proton/docs-proto'
-
-export function useDebug() {
-  const [debug] = useLocalState(false, DOCS_DEBUG_KEY)
-  return Boolean(debug)
-}
+import { isDevOrBlack } from '@proton/docs-shared'
 
 export type DebugMenuProps = {
   docController: AuthenticatedDocControllerInterface
@@ -136,26 +135,28 @@ export function DebugMenu({ docController, editorController, documentState, docu
             <div>ClientID: {clientId}</div>
           </>
         )}
-        <Button size="small" onClick={commitToRTS}>
-          Commit Doc with RTS
-        </Button>
-        <Button size="small" onClick={squashDocument}>
-          Squash Last Commit with DX
-        </Button>
-        <Button size="small" onClick={createInitialCommit} data-testid="create-initial-commit">
-          Create Initial Commit
-        </Button>
-        <Button size="small" onClick={closeConnection}>
-          Close Connection
-        </Button>
+        {isDevOrBlack() && (
+          <>
+            <Button size="small" onClick={commitToRTS}>
+              Commit Doc with RTS
+            </Button>
+            <Button size="small" onClick={squashDocument}>
+              Squash Last Commit with DX
+            </Button>
+            <Button size="small" onClick={createInitialCommit} data-testid="create-initial-commit">
+              Create Initial Commit
+            </Button>
+            <Button size="small" onClick={closeConnection}>
+              Close Connection
+            </Button>
+          </>
+        )}
         <Button size="small" onClick={copyYDocAsJSON}>
           Copy Y.Doc as JSON
         </Button>
-        {isSpreadsheet && (
-          <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
-            Download Logs as JSON
-          </Button>
-        )}
+        <Button size="small" onClick={() => downloadLogsAsJSON(editorController, documentType)}>
+          Download Logs as JSON
+        </Button>
         {isDocument && (
           <>
             <Button size="small" onClick={copyEditorJSON}>
