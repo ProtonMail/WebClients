@@ -26,6 +26,7 @@ export enum Features {
     globalBootstrapAppUrls = 'globalBootstrapAppUrls',
     globalBootstrapAppUserSettings = 'globalBootstrapAppUserSettings',
     globalBootstrapAppUserInit = 'globalBootstrapAppUserInit',
+    globalBootstrapAppCache = 'globalBootstrapAppCache',
     globalBootstrapAppLoadUser = 'globalBootstrapAppLoadUser',
     globalBootstrapAppUnleash = 'globalBootstrapAppUnleash',
     globalBootstrapAppCrypto = 'globalBootstrapAppCrypto',

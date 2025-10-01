@@ -41,10 +41,13 @@ const bootstrapApp = async () => {
     const authentication = bootstrap.createAuthentication({ initialAuth: false });
     bootstrap.init({ config, locales, authentication });
 
-    await userSuccessMetrics.init();
+    userSuccessMetrics.init();
     await userSuccessMetrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
-    const store = setupStore();
+    const store = setupStore({
+        // Account sessions (switcher) feature, or Account persistence (state) feature is not used in unauthenticated context
+        features: { accountSessions: false, accountPersist: false },
+    });
     const api = createApi({ config });
     const history = createBrowserHistory();
     const unleashClient = bootstrap.createUnleash({ api: getSilentApi(api) });

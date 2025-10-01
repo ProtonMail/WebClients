@@ -8,6 +8,7 @@ import {
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
@@ -23,7 +24,7 @@ import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
 
 import locales from './locales';
-import { extendStore, setupStore } from './redux-store/store';
+import { type DriveState, extendStore, setupStore } from './redux-store/store';
 import { getMetricsUserPlan } from './store/_user/getMetricsUserPlan';
 import { userSuccessMetrics } from './utils/metrics/userSuccessMetrics';
 import { clearOPFS } from './utils/opfs';
@@ -62,9 +63,25 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
         const user = sessionResult.session?.User;
         extendStore({ config, api, authentication, unleashClient, history });
-
         unleashVanillaStore.getState().setClient(unleashClient);
-        const store = setupStore();
+
+        const appCacheFeature = measureFeaturePerformance(api, Features.globalBootstrapAppCache);
+        const persistedState = await getDecryptedPersistedState<Partial<DriveState>>({
+            measure: (type) => {
+                if (type === 'start') {
+                    appCacheFeature.start();
+                } else if (type === 'end') {
+                    appCacheFeature.end();
+                }
+            },
+            authentication,
+            user,
+        });
+
+        const store = setupStore({
+            preloadedState: persistedState?.state,
+            features: { accountPersist: true, accountSessions: true },
+        });
         const dispatch = store.dispatch;
 
         if (user) {
