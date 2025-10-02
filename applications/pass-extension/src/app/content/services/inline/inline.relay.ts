@@ -57,7 +57,7 @@ export const createInlineRelay = ({ controller }: ContentScriptContextFactoryOpt
             if (!origin) return;
 
             void queue.push(async () => {
-                const anchor = req.field.getBoxElement();
+                const anchor = req.field.getAnchor().element;
                 const styles = createStyleParser(anchor);
                 const { left, top } = anchor.getBoundingClientRect();
                 const { value: height } = getComputedHeight(styles, 'outer');

@@ -2,6 +2,7 @@ import { DropdownAction } from 'proton-pass-extension/app/content/constants.runt
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { IconController } from 'proton-pass-extension/app/content/injections/icon/controller';
 import { createIconController } from 'proton-pass-extension/app/content/injections/icon/controller';
+import { type FieldAnchor, createFieldAnchor } from 'proton-pass-extension/app/content/services/form/field.anchor';
 import type { FieldTracker } from 'proton-pass-extension/app/content/services/form/field.tracker';
 import { createFieldTracker } from 'proton-pass-extension/app/content/services/form/field.tracker';
 import type { FormHandle } from 'proton-pass-extension/app/content/services/form/form';
@@ -17,7 +18,6 @@ import { isVisible } from '@proton/pass/fathom';
 import type { FieldType, FormType, IdentityFieldType } from '@proton/pass/fathom/labels';
 import { enableLoginAutofill } from '@proton/pass/lib/settings/utils';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { findInputBoundingElement } from '@proton/pass/utils/dom/input';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import noop from '@proton/utils/noop';
@@ -42,8 +42,6 @@ export interface FieldHandle {
      * means the current field value was a user input. Otherwise, it
      * stores the FieldType that triggered the autofilled value */
     autofilled: MaybeNull<FieldType>;
-    /** bounding element of input field */
-    boxElement: HTMLElement;
     /** underlying input element */
     element: FieldElement;
     /** predicted field type */
@@ -67,7 +65,7 @@ export interface FieldHandle {
     detach: () => void;
     detachIcon: () => void;
     focus: (options?: { preventAction?: boolean }) => void;
-    getBoxElement: (options?: { reflow: boolean }) => HTMLElement;
+    getAnchor: (options?: { reflow: boolean }) => FieldAnchor;
     getFormHandle: () => FormHandle;
     getVisibility: () => Promise<boolean>;
     matches: (field?: FrameField) => boolean;
@@ -101,11 +99,12 @@ export const createFieldHandles = ({
     zIndex,
     getFormHandle,
 }: CreateFieldHandlesOptions): FieldHandle => {
+    let anchor: Maybe<FieldAnchor>;
+
     const field: FieldHandle = {
         fieldId: uniqueId(8),
         fieldType,
         element,
-        boxElement: findInputBoundingElement(element),
         icon: null,
         action: null,
         value: element.value,
@@ -114,9 +113,10 @@ export const createFieldHandles = ({
         tracker: null,
         zIndex,
         getFormHandle,
-        getBoxElement: (options) => {
-            if (options?.reflow) field.boxElement = findInputBoundingElement(element);
-            return field.boxElement;
+        getAnchor: (options) => {
+            if (!anchor) anchor = createFieldAnchor(element);
+            if (options?.reflow) anchor.revalidate();
+            return anchor;
         },
         setValue: (value) => {
             field.autofilled = null;
@@ -164,6 +164,7 @@ export const createFieldHandles = ({
         attachIcon: withContext((ctx) => {
             if (!ctx || !isInputElement(field.element)) return;
 
+            field.getAnchor().observe();
             field.icon =
                 field.icon ??
                 createIconController({
@@ -171,7 +172,7 @@ export const createFieldHandles = ({
                     form: field.getFormHandle().element,
                     tag: ctx.elements.control,
                     zIndex: field.zIndex,
-                    getAnchor: field.getBoxElement,
+                    getAnchor: field.getAnchor,
                     onClick: () => {
                         if (field.action) {
                             ctx.service.inline.dropdown.open({
@@ -202,6 +203,7 @@ export const createFieldHandles = ({
         }),
 
         detachIcon() {
+            field.getAnchor().disconnect();
             field.icon?.detach();
             field.icon = null;
         },

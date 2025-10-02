@@ -128,7 +128,8 @@ export const createDropdown = ({ popover, onDestroy }: DropdownOptions): Injecte
 
             if (!target || target.type === 'frame') return { top: 0, left: 0 };
 
-            const { boxElement, element } = target.field;
+            const { element } = target.field;
+            const boxElement = target.field.getAnchor().element;
             const boxed = boxElement !== element;
             const bodyTop = root.getBoundingClientRect().top;
 
