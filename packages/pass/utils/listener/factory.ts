@@ -1,4 +1,5 @@
 import type { Callback, Maybe } from '@proton/pass/types';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import type { PubSub, Subscriber } from '@proton/pass/utils/pubsub/factory';
 import noop from '@proton/utils/noop';
 
@@ -59,12 +60,18 @@ export const createListenerStore = () => {
         if (element !== undefined) {
             const listener: Listener = { kind: 'listener', element, type, fn };
             listeners.push(listener);
-            element.addEventListener(type as string, fn as EventListener, options);
 
-            return () => {
-                element.removeEventListener(type as string, fn as EventListener);
+            const cleanup = () => {
                 const idx = listeners.indexOf(listener);
                 listeners.splice(idx, 1);
+            };
+
+            const handler = (options?.once ? pipe(fn, cleanup) : fn) as EventListener;
+            element.addEventListener(type as string, handler, options);
+
+            return () => {
+                element.removeEventListener(type as string, handler);
+                cleanup();
             };
         }
 
