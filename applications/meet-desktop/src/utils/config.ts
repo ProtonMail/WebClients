@@ -64,5 +64,7 @@ export const getAppTransportSecuity = () => {
                 "calendar.proton.me": { ...transportSecuirityException },
             },
         },
+        NSCameraUsageDescription: "Proton Meet needs access to your camera for video calls.",
+        NSMicrophoneUsageDescription: "Proton Meet needs access to your microphone for audio calls.",
     };
 };
