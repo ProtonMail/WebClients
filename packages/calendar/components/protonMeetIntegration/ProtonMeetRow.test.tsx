@@ -320,4 +320,46 @@ describe('ProtonMeetRow', () => {
             expect(screen.getByText('Join with Proton Meet')).toBeInTheDocument();
         });
     });
+
+    it('should not automatically create a meeting when having a newly added attendee and having a valid video conference in the description', async () => {
+        const createMeeting = jest.fn().mockResolvedValue(mockMeeting);
+
+        (useCreateMeeting as jest.Mock).mockReturnValue({
+            createMeeting,
+        });
+
+        const { rerender } = renderProtonMeetRow({ model: mockModel });
+
+        const modelWithAttendee = {
+            ...mockModel,
+            attendees: [{ email: 'attendee@proton.me' }],
+            description: 'https://meet.proton.me/join/id-abcdefgh#pwd-1234567890',
+        };
+
+        // @ts-expect-error - partial mock
+        rerender({ model: modelWithAttendee });
+
+        expect(createMeeting).not.toHaveBeenCalled();
+    });
+
+    it('should not automatically create a meeting when having a newly added attendee and having a valid video conference in the location', async () => {
+        const createMeeting = jest.fn().mockResolvedValue(mockMeeting);
+
+        (useCreateMeeting as jest.Mock).mockReturnValue({
+            createMeeting,
+        });
+
+        const { rerender } = renderProtonMeetRow({ model: mockModel });
+
+        const modelWithAttendee = {
+            ...mockModel,
+            attendees: [{ email: 'attendee@proton.me' }],
+            location: 'https://meet.proton.me/join/id-abcdefgh#pwd-1234567890',
+        };
+
+        // @ts-expect-error - partial mock
+        rerender({ model: modelWithAttendee });
+
+        expect(createMeeting).not.toHaveBeenCalled();
+    });
 });
