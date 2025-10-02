@@ -48,7 +48,9 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         const req = requestAnimationFrame(async () => {
             try {
                 field.attachIcon();
-                ctx.service.inline.dropdown.close();
+
+                const { visible, attachedField } = await ctx.service.inline.dropdown.getState();
+                if (!(visible && field.matches(attachedField))) ctx.service.inline.dropdown.close();
 
                 await waitUntil(() => clientStatusResolved(ctx.getState().status), 50);
 
@@ -85,11 +87,7 @@ export const createFieldTracker = (field: FieldHandle, formTracker?: FormTracker
         if (!ctx) return;
 
         const { visible, attachedField } = await ctx.service.inline.dropdown.getState();
-        const { formId } = field.getFormHandle();
-        const { fieldId } = field;
-
-        const activeAnchor = attachedField && attachedField.fieldId === fieldId && attachedField.formId === formId;
-        if (!(activeAnchor && visible)) field.detachIcon();
+        if (!(visible && field.matches(attachedField))) field.detachIcon();
     });
 
     /* on input change : close the dropdown if it was visible

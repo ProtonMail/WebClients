@@ -46,10 +46,12 @@ export const createInlineService = ({
         open: (payload) => {
             const attachedAnchor = iframes.dropdown?.getCurrentAnchor();
             const visible = iframes.dropdown?.getState().visible;
-
-            if (visible) dropdown.close();
+            const { autofocused } = payload;
 
             const didAnchorChange = !attachedAnchor || willDropdownAnchorChange(attachedAnchor, payload);
+            const autoclose = visible && (didAnchorChange || !autofocused);
+
+            if (autoclose) dropdown.close();
 
             if (didAnchorChange) {
                 const layer = payload.type === 'field' ? payload.field.getFormHandle().element : undefined;
