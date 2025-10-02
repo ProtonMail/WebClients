@@ -70,7 +70,7 @@ const useAddAttendees = () => {
             contactEmailsMap?: SimpleMap<ContactEmail>;
         }) => {
             const mailSettings = await getMailSettings();
-            const maxAttendees = mailSettings?.RecipientLimit || MAX_ATTENDEES;
+            const maxAttendees = mailSettings.RecipientLimit || MAX_ATTENDEES;
             if ((eventComponent.attendee?.length || 0) > maxAttendees) {
                 throw new AddAttendeeError(ADD_EVENT_ERROR_TYPE.TOO_MANY_PARTICIPANTS, undefined, maxAttendees);
             }

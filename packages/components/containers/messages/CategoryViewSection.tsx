@@ -24,13 +24,12 @@ export const CategoryViewSection = () => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const [organization, loadingOrganization] = useOrganization();
 
-    const isCategoryViewEnabled = useFlag('CategoryView');
-
     const [loading, withLoading] = useLoading();
+    const { state, toggle } = useToggle(mailSettings.MailCategoryView);
     const { createNotification } = useNotifications();
-    const { state, toggle } = useToggle(mailSettings?.MailCategoryView);
-
     const dispatch = useDispatch();
+
+    const isCategoryViewEnabled = useFlag('CategoryView');
 
     const loadingData = loadingMailSettings || loadingOrganization;
 

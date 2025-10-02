@@ -12,15 +12,15 @@ import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updateHideEmbeddedImages } from '@proton/shared/lib/api/mailSettings';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
-import { DEFAULT_MAILSETTINGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
+import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 
 interface Props {
     id: string;
 }
 
 const EmbeddedToggle = ({ id }: Props) => {
-    const [{ HideEmbeddedImages } = DEFAULT_MAILSETTINGS] = useMailSettings();
-    const [hideEmbeddedImages, setHideEmbeddedImages] = useState(HideEmbeddedImages);
+    const [mailSettings] = useMailSettings();
+    const [hideEmbeddedImages, setHideEmbeddedImages] = useState(mailSettings.HideEmbeddedImages);
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const api = useApi();

@@ -37,7 +37,7 @@ export const shouldOpenConfirmationModalForMessages = ({
     }
 
     if (destinationLabelID === MAILBOX_LABEL_IDS.SPAM) {
-        if (mailSettings?.SpamAction === null) {
+        if (mailSettings.SpamAction === null) {
             const canBeUnsubscribed = elements.some((message) => isUnsubscribable(message));
             if (canBeUnsubscribed) {
                 return ModalType.Unsubscribe;

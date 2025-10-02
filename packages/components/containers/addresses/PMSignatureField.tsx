@@ -45,7 +45,7 @@ const PMSignature = ({ id }: Props) => {
     const loadingData = loadingMailSettings || loadingUserSettings || loadingUser || loadingOrganization;
 
     const [loading, withLoading] = useLoading();
-    const { state, toggle } = useToggle(!!mailSettings?.PMSignature);
+    const { state, toggle } = useToggle(!!mailSettings.PMSignature);
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const pmSignatureEnabled = canUpdateSignature(user, organization, mailSettings);
@@ -65,12 +65,11 @@ const PMSignature = ({ id }: Props) => {
         <div className="flex flex-1 align-items-center">
             <div
                 className="border-container flex-1 pr-4 py-2 mb-4"
-                // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                     __html: getProtonMailSignature(
-                        !!mailSettings?.PMSignatureReferralLink,
+                        !!mailSettings.PMSignatureReferralLink,
                         userSettings.Referral?.Link,
-                        mailSettings?.PMSignatureContent
+                        mailSettings.PMSignatureContent
                     ),
                 }}
             />

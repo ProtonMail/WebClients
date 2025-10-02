@@ -92,7 +92,7 @@ export default function FoldersSection({ showPromptOnAction = false }: Props) {
                         </SettingsLayoutRight>
                     </SettingsLayout>
 
-                    {mailSettings?.EnableFolderColor ? (
+                    {mailSettings.EnableFolderColor ? (
                         <SettingsLayout>
                             <SettingsLayoutLeft>
                                 <label htmlFor="parent-folder-color" className="text-semibold">
