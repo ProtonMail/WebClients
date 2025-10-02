@@ -14,6 +14,7 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { useFolders, useLabels } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { CATEGORY_LABELS_TO_ROUTE_ARRAY, CUSTOM_VIEWS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
@@ -22,7 +23,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { shouldDisplayTotal } from '../../helpers/labels';
@@ -104,7 +104,7 @@ const SidebarItem = ({
 }: Props) => {
     const { call } = useEventManager();
     const history = useHistory();
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [{ Shortcuts }] = useMailSettings();
     const getElementsFromIDs = useGetElementsFromIDs();
     const { selectAll } = useSelectAll({ labelID });
     const { checkAllRef } = useCheckAllRef();

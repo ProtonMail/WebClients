@@ -4,9 +4,8 @@ import { c } from 'ttag';
 
 import { Kbd, Tooltip } from '@proton/atoms';
 import { Icon, SidebarPrimaryButton } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import clsx from '@proton/utils/clsx';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {
     collapsed: boolean;
@@ -15,7 +14,7 @@ interface Props {
 
 const MailSidebarPrimaryButton = ({ collapsed = false, handleCompose }: Props) => {
     const anchorRef = useRef<HTMLButtonElement>(null);
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [{ Shortcuts }] = useMailSettings();
 
     const titlePrimaryButton = Shortcuts ? (
         <>

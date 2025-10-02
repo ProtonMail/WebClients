@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Banner, Button } from '@proton/atoms';
 import { Icon, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -14,7 +15,6 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../../constants';
@@ -34,7 +34,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     const { createNotification } = useNotifications();
     const location = useLocation();
     const history = useHistory();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [loading, setLoading] = useState(false);
 
     const [nowDate, setNowDate] = useState(() => Date.now());

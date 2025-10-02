@@ -1,4 +1,5 @@
 import { useFolders, useLabels } from '@proton/mail/index';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -6,7 +7,6 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { isElementMessage } from 'proton-mail/helpers/elements';
 import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useRouterNavigation } from 'proton-mail/router/hooks/useRouterNavigation';
 import { params } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
@@ -54,7 +54,7 @@ const executeCallback = ({ sourceLabelID, props, handleBack, labels, folders }: 
 export const useMoveBackAction = () => {
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
 
     const getConversation = useGetConversation();
 

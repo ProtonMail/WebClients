@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTheme } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import MessageBodyIframe from '@proton/mail-renderer/components/MessageBodyIframe';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { isAutoFlaggedPhishing, isPlainText, isSuspicious } from '@proton/shared/lib/mail/messages';
@@ -14,7 +15,6 @@ import MessageBodyPlaceholder from 'proton-mail/components/message/MessageBodyPl
 import MessageBodyPrint from 'proton-mail/components/message/MessageBodyPrint';
 import useMessageImagesLoadError from 'proton-mail/components/message/hooks/useMessageImagesLoadError';
 import { useMailboxContainerContext } from 'proton-mail/containers/mailbox/MailboxContainerProvider';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -63,7 +63,7 @@ const MessageBody = ({
     const theme = useTheme();
     const { highlightString, shouldHighlight } = useEncryptedSearchContext();
     const onMailTo = useOnMailTo();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const highlightBody = shouldHighlight();
     const plain = isPlainText(message.data);
     const handleMessageImageLoadError = useMessageImagesLoadError({

@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import SelectionPane from './SelectionPane';
 import WelcomePane from './WelcomePane';
@@ -14,7 +14,7 @@ interface Props {
 
 const PlaceholderView = ({ welcomeFlag, labelID = '', checkedIDs = [], onCheckAll }: Props) => {
     const location = useLocation();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
 
     if (welcomeFlag) {
         return <WelcomePane mailSettings={mailSettings} location={location} />;

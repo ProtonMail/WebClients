@@ -4,11 +4,11 @@ import { Button } from '@proton/atoms';
 import type { ModalProps } from '@proton/components';
 import { Prompt } from '@proton/components';
 import { useConversationCounts, useFolders, useLabels, useMessageCounts } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { getLocationElementsCount } from 'proton-mail/helpers/elements';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getLabelNames } from '../../../../helpers/labels';
 
@@ -32,7 +32,7 @@ const SelectAllLabelModal = ({
     onCloseCustomAction,
     ...rest
 }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
     const [conversationCounts] = useConversationCounts();

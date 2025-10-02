@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { DropdownMenu, DropdownMenuButton, DropdownSizeUnit, Icon, useModalState } from '@proton/components';
 import { labelIncludes } from '@proton/mail/helpers/location';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { canMoveAll } from '../../helpers/labels';
@@ -70,7 +70,7 @@ const MoreDropdown = ({
     onDelete,
     onCheckAll,
 }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const { selectAll } = useSelectAll({ labelID });
     let [firstActions, actions] = useLabelActions(labelID);
     if (isExtraTiny) {

@@ -8,6 +8,7 @@ import { Icon, useApi, useModalState, useNotifications } from '@proton/component
 import type { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { mailSettingsActions } from '@proton/mail/store/mailSettings';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageVerification, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
@@ -18,8 +19,6 @@ import type { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces
 import { MAIL_VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { PROMPT_PIN } from '@proton/shared/lib/mail/mailSettings';
 import { isInternal } from '@proton/shared/lib/mail/messages';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getContactEmail } from '../../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../../hooks/contact/useContacts';
@@ -120,7 +119,7 @@ interface Props {
 
 const ExtraPinKey = ({ message, messageVerification }: Props) => {
     const api = useApi();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [addresses] = useAddresses();
     const [loadingDisablePromptPin, withLoadingDisablePromptPin] = useLoading();
     const { createNotification } = useNotifications();
