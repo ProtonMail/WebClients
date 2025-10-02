@@ -12,6 +12,7 @@ import { getHasAssistantStatus } from '@proton/llm/lib';
 import type { OpenedAssistant } from '@proton/llm/lib/types';
 import { OpenedAssistantStatus } from '@proton/llm/lib/types';
 import { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import type { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
@@ -30,7 +31,6 @@ import { insertSignature } from 'proton-mail/helpers/message/messageSignature';
 import { MOVE_BACK_ACTION_TYPES } from 'proton-mail/hooks/actions/moveBackAction/interfaces';
 import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useMoveBackAction';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from 'proton-mail/hooks/message/useLoadImages';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { selectComposer } from 'proton-mail/store/composers/composerSelectors';
 import { composerActions } from 'proton-mail/store/composers/composersSlice';
 import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
@@ -85,7 +85,7 @@ export type EditorArgs = {
 
 export const useComposerContent = (args: EditorArgs) => {
     const [addresses = []] = useAddresses();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const isRemoveReplyStyleEnabled = useFlag('RemoveReplyStyles');
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();

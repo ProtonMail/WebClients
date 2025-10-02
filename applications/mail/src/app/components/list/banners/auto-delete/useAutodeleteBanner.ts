@@ -1,8 +1,7 @@
 import { useUser } from '@proton/account/user/hooks';
 import { FeatureCode } from '@proton/features';
 import useFeature from '@proton/features/useFeature';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 
 import {
     isAllowedAutoDeleteLabelID,
@@ -16,7 +15,7 @@ export type AutoDeleteBannerType = 'disabled' | 'enabled' | 'paid-banner' | 'fre
 const useAutoDeleteBanner = (labelID: string) => {
     const { feature } = useFeature(FeatureCode.AutoDelete);
     const [user, userLoading] = useUser();
-    const mailSetting = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
 
     const type: AutoDeleteBannerType = (() => {
         const isFeatureActive = feature?.Value === true;
@@ -28,15 +27,15 @@ const useAutoDeleteBanner = (labelID: string) => {
             return 'free-banner';
         }
 
-        if (isAutoDeleteExplicitlyDisabled(mailSetting)) {
+        if (isAutoDeleteExplicitlyDisabled(mailSettings)) {
             return 'disabled';
         }
 
-        if (isAutoDeleteNotEnabled(user, mailSetting)) {
+        if (isAutoDeleteNotEnabled(user, mailSettings)) {
             return 'paid-banner';
         }
 
-        if (isAutoDeleteEnabled(user, mailSetting)) {
+        if (isAutoDeleteEnabled(user, mailSettings)) {
             return 'enabled';
         }
 

@@ -1,9 +1,8 @@
 import { Tooltip } from '@proton/atoms';
 import { useFolders } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getCurrentFolders, getStandardFolders } from '../../helpers/labels';
 import type { Element } from '../../models/element';
@@ -26,7 +25,7 @@ const ItemLocation = ({
     withDefaultMargin = true,
     ignoreIconFilter = false,
 }: Props) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [customFolders = []] = useFolders();
     let infos = getCurrentFolders(element, labelID, customFolders, mailSettings);
 

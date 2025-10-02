@@ -22,6 +22,7 @@ import { FeatureCode, useFeature } from '@proton/features';
 import { useLoading } from '@proton/hooks';
 import { useFolders } from '@proton/mail';
 import { getCurrentFolderID } from '@proton/mail/helpers/location';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {
     MessageState,
     MessageStateWithData,
@@ -38,7 +39,6 @@ import useFlag from '@proton/unleash/useFlag';
 import { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 import { newsletterSubscriptionsActions } from 'proton-mail/store/newsletterSubscriptions/newsletterSubscriptionsSlice';
 
@@ -121,7 +121,7 @@ const HeaderMoreDropdown = ({
     const [folders = []] = useFolders();
     const { markAs } = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
-    const { Shortcuts } = useMailModel('MailSettings');
+    const [{ Shortcuts }] = useMailSettings();
     const [CustomExpirationModalProps, openCustomExpirationModal, renderCustomExpirationModal] = useModalState();
     const dataRetentionPolicyEnabled = useFlag('DataRetentionPolicy');
 

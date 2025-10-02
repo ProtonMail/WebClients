@@ -6,12 +6,12 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Prompt, useModalState } from '@proton/components';
 import { useConversationCounts, useMessageCounts } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState, MessageStateWithData } from '@proton/mail/store/messages/messagesTypes';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
@@ -50,7 +50,7 @@ export const useScheduleSend = ({
 
     const [waitBeforeScheduleModalProps, setWaitBeforeScheduleModalOpen] = useModalState();
 
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [conversationCounts, loadingConversationCounts] = useConversationCounts();
     const [messageCounts, loadingMessageCounts] = useMessageCounts();
     const { preliminaryVerifications } = useSendVerifications(

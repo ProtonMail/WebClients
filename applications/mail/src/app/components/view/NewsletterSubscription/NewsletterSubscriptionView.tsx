@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 
 import { ErrorBoundary, StandardErrorPage, useActiveBreakpoint, useModalStateObject } from '@proton/components';
 import { FeatureCode, useFeature } from '@proton/features';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { domIsBusy } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import {
@@ -17,7 +18,6 @@ import { ResizeHandlePosition } from 'proton-mail/components/list/ResizeHandle';
 import type { SOURCE_ACTION } from 'proton-mail/components/list/list-telemetry/useListTelemetry';
 import MessageOnlyView from 'proton-mail/components/message/MessageOnlyView';
 import type { ElementsStructure } from 'proton-mail/hooks/mailbox/useElements';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { DEFAULT_MIN_WIDTH_OF_MAILBOX_LIST } from 'proton-mail/hooks/useResizableUtils';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import type { MailboxActions, RouterNavigation } from 'proton-mail/router/interface';
@@ -74,7 +74,7 @@ export const NewsletterSubscriptionView = ({
 
     const { resizeAreaRef } = useMailboxLayoutProvider();
     const breakpoints = useActiveBreakpoint();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const dispatch = useMailDispatch();
 
     const loadingSubscriptions = useMailSelector(selectTabLoadingState);

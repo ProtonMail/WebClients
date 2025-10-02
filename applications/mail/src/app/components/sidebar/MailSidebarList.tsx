@@ -8,6 +8,7 @@ import { useUser } from '@proton/account/user/hooks';
 import type { HotkeyTuple } from '@proton/components';
 import { SidebarList, SimpleSidebarListItemHeader, useHotkeys, useLocalState } from '@proton/components';
 import { useFolders, useLabels, useSystemFolders } from '@proton/mail';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SOURCE_EVENT } from '@proton/shared/lib/helpers/collapsibleSidebar';
@@ -21,7 +22,6 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 
@@ -47,7 +47,7 @@ const formatFolderID = (folderID: string): string => `folder_expanded_state_${fo
 const MailSidebarList = ({ labelID: currentLabelID, postItems, collapsed = false, onClickExpandNav }: Props) => {
     const location = useLocation();
     const [user] = useUser();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const [systemFolders] = useSystemFolders();
     const [labels] = useLabels();
     const [folders, loadingFolders] = useFolders();

@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 
 import { useApi, useAuthentication } from '@proton/components';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type {
     LoadEmbeddedResults,
     MessageRemoteImage,
@@ -11,7 +12,6 @@ import type { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { transformEmbedded } from 'proton-mail/helpers/transforms/transformEmbedded';
 import { transformRemote } from 'proton-mail/helpers/transforms/transformRemote';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 import type { DecryptedAttachment } from 'proton-mail/store/attachments/attachmentsTypes';
 import { useMailDispatch } from 'proton-mail/store/hooks';
 
@@ -31,7 +31,7 @@ export const useLoadRemoteImages = (localID: string) => {
     const dispatch = useMailDispatch();
     const api = useApi();
     const getMessage = useGetMessage();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
     const authentication = useAuthentication();
 
     return useCallback(async () => {
@@ -68,7 +68,7 @@ export const useLoadEmbeddedImages = (localID: string) => {
     const getAttachment = useGetAttachment();
     const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
 
     const onUpdateAttachment = (ID: string, attachment: DecryptedAttachment) => {
         dispatch(updateAttachment({ ID, attachment }));

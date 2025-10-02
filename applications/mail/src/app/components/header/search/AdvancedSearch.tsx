@@ -14,6 +14,7 @@ import type { ESIndexingState } from '@proton/encrypted-search';
 import { contentIndexingProgress } from '@proton/encrypted-search';
 import useSearchTelemetry from '@proton/encrypted-search/lib/useSearchTelemetry';
 import { getHumanLabelID } from '@proton/mail/helpers/location';
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -23,7 +24,6 @@ import type { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
 import AddressInput from 'proton-mail/components/composer/addresses/AddressInput';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { extractSearchParameters, keywordToString } from '../../../helpers/mailboxUrl';
@@ -131,7 +131,7 @@ const AdvancedSearch = ({
     const isSmallViewport = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
 
     const { sendClearSearchFieldsReport } = useSearchTelemetry();
-    const { AlmostAllMail } = useMailModel('MailSettings');
+    const [{ AlmostAllMail }] = useMailSettings();
 
     const DEFAULT_MODEL: SearchModel = {
         ...DEFAULT_MODEL_WITHOUT_LABEL_ID,

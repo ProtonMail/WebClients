@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
 
+import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
-
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import {
     getImageTrackerText,
@@ -18,7 +17,7 @@ export interface Tracker {
 }
 
 export const useMessageTrackers = (message: MessageState) => {
-    const mailSettings = useMailModel('MailSettings');
+    const [mailSettings] = useMailSettings();
 
     const hasProtection =
         (mailSettings.ImageProxy ? mailSettings.ImageProxy : IMAGE_PROXY_FLAGS.NONE) > IMAGE_PROXY_FLAGS.NONE;
