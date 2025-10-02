@@ -1,0 +1,209 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "pl_PL"
+  },
+  "contexts": {
+    "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "O aplikacji ${ MAIL_APP_NAME }"
+      ],
+      "Actual Size": [
+        "Rozmiar rzeczywisty"
+      ],
+      "Check spelling while typing": [
+        "Sprawdź pisownię podczas pisania"
+      ],
+      "Clear application data": [
+        "Wyczyść dane aplikacji"
+      ],
+      "Close Window": [
+        "Zamknij okno"
+      ],
+      "Copy": [
+        "Kopiuj"
+      ],
+      "Cut": [
+        "Wytnij"
+      ],
+      "Delete": [
+        "Usuń"
+      ],
+      "Force Reload": [
+        "Odśwież"
+      ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Ukryj ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Ukryj inne"
+      ],
+      "Minimize": [
+        "Minimalizuj"
+      ],
+      "Paste": [
+        "Wklej"
+      ],
+      "Paste and Match Style": [
+        "Wklej jako zwykły tekst"
+      ],
+      "Quit": [
+        "Zakończ"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "Zakończ ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Powtórz"
+      ],
+      "Reload": [
+        "Odśwież"
+      ],
+      "Select All": [
+        "Zaznacz wszystko"
+      ],
+      "Show All": [
+        "Pokaż wszystko"
+      ],
+      "Show logs": [
+        "Pokaż logi"
+      ],
+      "Speech": [
+        "Mowa"
+      ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Uruchom ${ MAIL_APP_NAME } podczas logowania"
+      ],
+      "Start Speaking": [
+        "Zacznij mówić"
+      ],
+      "Stop Speaking": [
+        "Przestań mówić"
+      ],
+      "Toggle Full Screen": [
+        "Pełny ekran"
+      ],
+      "Undo": [
+        "Cofnij"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Odinstaluj ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Powiększenie"
+      ],
+      "Zoom In": [
+        "Powiększ"
+      ],
+      "Zoom Out": [
+        "Pomniejsz"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "Usługi"
+      ]
+    },
+    "Context menu": {
+      "Add to dictionary": [
+        "Dodaj do słownika"
+      ],
+      "Copy link": [
+        "Kopiuj link"
+      ],
+      "Emoji and Symbols": [
+        "Emoji i znaki specjalne"
+      ],
+      "Save image as…": [
+        "Zapisz grafikę jako…"
+      ],
+      "Speech": [
+        "Mowa"
+      ],
+      "Start Speaking": [
+        "Zacznij mówić"
+      ],
+      "Stop Speaking": [
+        "Przestań mówić"
+      ]
+    },
+    "Context Menu": {
+      "Copy": [
+        "Kopiuj"
+      ],
+      "Cut": [
+        "Wytnij"
+      ],
+      "Look Up “${ text }”": [
+        "Znajdź “${ text }“"
+      ],
+      "Paste": [
+        "Wklej"
+      ],
+      "Paste and Match Style": [
+        "Wklej jako zwykły tekst"
+      ],
+      "Redo": [
+        "Powtórz"
+      ],
+      "Select All": [
+        "Zaznacz wszystko"
+      ],
+      "Undo": [
+        "Cofnij"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Aplikacja zostanie zamknięta z powodu błędu. Spróbuj uruchomić ją ponownie. Jeśli problem powtarza się, skontaktuj się z nami. Szczegóły błędu możesz znaleźć w logach aplikacji."
+      ],
+      "Unexpected error": [
+        "Wystąpił nieoczekiwany błąd"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "Nie można ustanowić połączenia"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Sprawdź połączenie internetowe lub ustawienia sieciowe. Jeśli problem będzie się powtarzał, skontaktuj się ze wsparciem klienta."
+      ],
+      "Try again": [
+        "Spróbuj ponownie"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "Ładowanie ${ title }..."
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Edytuj"
+      ],
+      "File": [
+        "Plik"
+      ],
+      "View": [
+        "Widok"
+      ],
+      "Window": [
+        "Okno"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Zmiany mogą nie zostać zapisane."
+      ],
+      "Leave": [
+        "Opuść"
+      ],
+      "Leave page?": [
+        "Opuścić stronę?"
+      ],
+      "Stay": [
+        "Pozostań"
+      ]
+    }
+  }
+}

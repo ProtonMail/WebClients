@@ -38615,6 +38615,57 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"proton-meet-desktop@workspace:applications/meet-desktop":
+  version: 0.0.0-use.local
+  resolution: "proton-meet-desktop@workspace:applications/meet-desktop"
+  dependencies:
+    "@doyensec/electronegativity": "npm:^1.10.3"
+    "@electron-forge/cli": "npm:^7.3.0"
+    "@electron-forge/maker-deb": "npm:^7.3.0"
+    "@electron-forge/maker-dmg": "npm:^7.3.0"
+    "@electron-forge/maker-rpm": "npm:^7.3.0"
+    "@electron-forge/maker-squirrel": "npm:^7.3.0"
+    "@electron-forge/maker-zip": "npm:^7.3.0"
+    "@electron-forge/plugin-auto-unpack-natives": "npm:^7.3.0"
+    "@electron-forge/plugin-fuses": "npm:^7.3.0"
+    "@electron-forge/plugin-webpack": "npm:^7.3.0"
+    "@electron-forge/publisher-github": "npm:^7.3.0"
+    "@electron/fuses": "npm:^1.7.0"
+    "@proton/i18n": "workspace:^"
+    "@proton/shared": "workspace:^"
+    "@sentry/electron": "npm:^5.12.0"
+    "@types/lodash": "npm:^4.17.20"
+    "@types/minimist": "npm:^1.2.5"
+    "@types/node": "npm:^22.18.6"
+    "@vercel/webpack-asset-relocator-loader": "npm:1.7.3"
+    cross-env: "npm:^10.0.0"
+    css-loader: "npm:^7.1.2"
+    dotenv: "npm:^16.6.1"
+    electron: "npm:35.7.5"
+    electron-log: "npm:^5.4.3"
+    electron-squirrel-startup: "npm:^1.0.1"
+    electron-store: "npm:^8.2.0"
+    eslint: "npm:^9.36.0"
+    eslint-plugin-import: "npm:^2.32.0"
+    execa: "npm:^8.0.1"
+    fork-ts-checker-webpack-plugin: "npm:^9.1.0"
+    lodash: "npm:^4.17.21"
+    mac-appify: "npm:^2019.4.13"
+    minimist: "npm:^1.2.8"
+    node-loader: "npm:^2.1.0"
+    prettier: "npm:3.6.2"
+    style-loader: "npm:^4.0.0"
+    ts-loader: "npm:^9.5.4"
+    ts-node: "npm:^10.9.2"
+    ttag: "npm:^1.8.12"
+    ttag-cli: "npm:^1.11.2"
+    typescript: "npm:^5.9.2"
+    typescript-eslint: "npm:^8.44.1"
+    update-electron-app: "npm:^3.1.1"
+    zod: "npm:^3.25.76"
+  languageName: unknown
+  linkType: soft
+
 "proton-meet@workspace:applications/meet":
   version: 0.0.0-use.local
   resolution: "proton-meet@workspace:applications/meet"

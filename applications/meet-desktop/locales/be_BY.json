@@ -1,0 +1,209 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);",
+    "language": "be_BY"
+  },
+  "contexts": {
+    "App menu": {
+      "About ${ MAIL_APP_NAME }": [
+        "Аб ${ MAIL_APP_NAME }"
+      ],
+      "Actual Size": [
+        "Актуальны памер"
+      ],
+      "Check spelling while typing": [
+        "Правяраць правапіс падчас друку"
+      ],
+      "Clear application data": [
+        "Ачысціць даныя праграмы"
+      ],
+      "Close Window": [
+        "Закрыць акно"
+      ],
+      "Copy": [
+        "Скапіяваць"
+      ],
+      "Cut": [
+        "Выразаць"
+      ],
+      "Delete": [
+        "Выдаліць"
+      ],
+      "Force Reload": [
+        "Прымусовая перазагрузка"
+      ],
+      "Hide ${ MAIL_APP_NAME }": [
+        "Схаваць ${ MAIL_APP_NAME }"
+      ],
+      "Hide Others": [
+        "Схаваць іншыя"
+      ],
+      "Minimize": [
+        "Згарнуць"
+      ],
+      "Paste": [
+        "Уставіць"
+      ],
+      "Paste and Match Style": [
+        "Уставіць і дапасаваць стыль"
+      ],
+      "Quit": [
+        "Выйсці"
+      ],
+      "Quit ${ MAIL_APP_NAME }": [
+        "Выйсці з ${ MAIL_APP_NAME }"
+      ],
+      "Redo": [
+        "Узнавіць"
+      ],
+      "Reload": [
+        "Перазагрузіць"
+      ],
+      "Select All": [
+        "Выбраць усе"
+      ],
+      "Show All": [
+        "Паказаць усе"
+      ],
+      "Show logs": [
+        "Паказаць журналы"
+      ],
+      "Speech": [
+        "Маўленне"
+      ],
+      "Start ${ MAIL_APP_NAME } at login": [
+        "Запускаць ${ MAIL_APP_NAME } пры ўваходзе"
+      ],
+      "Start Speaking": [
+        "Пачаць агучванне"
+      ],
+      "Stop Speaking": [
+        "Спыніць агучванне"
+      ],
+      "Toggle Full Screen": [
+        "Пераключыцца ў поўнаэкранны рэжым"
+      ],
+      "Undo": [
+        "Адрабіць"
+      ],
+      "Uninstall ${ MAIL_APP_NAME }": [
+        "Выдаліць ${ MAIL_APP_NAME }"
+      ],
+      "Zoom": [
+        "Маштаб"
+      ],
+      "Zoom In": [
+        "Павялічыць"
+      ],
+      "Zoom Out": [
+        "Паменшыць"
+      ]
+    },
+    "App Menu": {
+      "Services": [
+        "Сэрвісы"
+      ]
+    },
+    "Context menu": {
+      "Add to dictionary": [
+        "Дадаць у слоўнік"
+      ],
+      "Copy link": [
+        "Скапіяваць спасылку"
+      ],
+      "Emoji and Symbols": [
+        "Эмодзі і сімвалы"
+      ],
+      "Save image as…": [
+        "Захаваць відарыс як..."
+      ],
+      "Speech": [
+        "Маўленне"
+      ],
+      "Start Speaking": [
+        "Пачаць агучванне"
+      ],
+      "Stop Speaking": [
+        "Спыніць агучванне"
+      ]
+    },
+    "Context Menu": {
+      "Copy": [
+        "Скапіяваць"
+      ],
+      "Cut": [
+        "Выразаць"
+      ],
+      "Look Up “${ text }”": [
+        "Шукаць “${ text }”"
+      ],
+      "Paste": [
+        "Уставіць"
+      ],
+      "Paste and Match Style": [
+        "Уставіць і дапасаваць стыль"
+      ],
+      "Redo": [
+        "Узнавіць"
+      ],
+      "Select All": [
+        "Выбраць усе"
+      ],
+      "Undo": [
+        "Адрабіць"
+      ]
+    },
+    "Error dialog": {
+      "Due to an error, the app will close. Try running it again and, if the problem persists, contact us. Information about the error can be found in the application log.": [
+        "Праграма будзе закрыта з прычыны памылкі. Паспрабуйце запусціць яе яшчэ раз. Звяжыцеся з нашай службай падтрымкі, калі праблема застанецца. Звесткі аб памылцы можна знайсці ў журнале праграмы."
+      ],
+      "Unexpected error": [
+        "Нечаканая памылка"
+      ]
+    },
+    "error screen": {
+      "Cannot establish connection": [
+        "Не атрымалася ўсталяваць падключэнне"
+      ],
+      "Check your internet connection or network settings. If the issue persists, please contact customer support.": [
+        "Праверце сваё падключэнне да інтэрнэту або сеткавыя налады. Звярніцеся ў службу падтрымкі кліентаў, калі праблема застанецца."
+      ],
+      "Try again": [
+        "Паспрабаваць яшчэ раз"
+      ]
+    },
+    "loading screen": {
+      "Loading ${ title }…": [
+        "Загрузка ${ title }…"
+      ]
+    },
+    "Menu": {
+      "Edit": [
+        "Рэдагаваць"
+      ],
+      "File": [
+        "Файл"
+      ],
+      "View": [
+        "Выгляд"
+      ],
+      "Window": [
+        "Акно"
+      ]
+    },
+    "Unload warning": {
+      "Changes you made may not be saved.": [
+        "Змены, якія вы зрабілі, магчыма не будуць захаваны."
+      ],
+      "Leave": [
+        "Выйсці"
+      ],
+      "Leave page?": [
+        "Пакінуць старонку?"
+      ],
+      "Stay": [
+        "Застацца"
+      ]
+    }
+  }
+}
