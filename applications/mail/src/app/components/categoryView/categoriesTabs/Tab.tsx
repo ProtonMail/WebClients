@@ -11,7 +11,7 @@ import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { getLabelFromCategoryId } from '../categoriesStringHelpers';
-import { TabState } from './tabsInterface';
+import { TabState, categoryColorClassName } from './tabsInterface';
 
 interface Props {
     category: CategoryTab;
@@ -39,7 +39,7 @@ export const Tab = ({ category, count, tabState }: Props) => {
             data-color={category.colorShade}
         >
             <Icon
-                className={clsx('shrink-0', tabState === TabState.ACTIVE && 'mail-category-color')}
+                className={clsx('shrink-0', tabState === TabState.ACTIVE && categoryColorClassName)}
                 name={category.icon}
             />
             <span
